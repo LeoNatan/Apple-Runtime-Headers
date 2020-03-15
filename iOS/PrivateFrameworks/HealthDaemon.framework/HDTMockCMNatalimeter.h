@@ -13,10 +13,10 @@
     CDUnknownBlockType _handleStopNatalimeteryUpdates;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handleStopNatalimeteryUpdates; // @synthesize handleStopNatalimeteryUpdates=_handleStopNatalimeteryUpdates;
 @property(copy, nonatomic) CDUnknownBlockType handleStartNatalimetryUpdates; // @synthesize handleStartNatalimetryUpdates=_handleStartNatalimetryUpdates;
 @property(copy, nonatomic) CDUnknownBlockType handleQueryDataSinceRecord; // @synthesize handleQueryDataSinceRecord=_handleQueryDataSinceRecord;
-- (void).cxx_destruct;
 - (void)stopAbsoluteNatalimetryDataUpdates;
 - (void)startAbsoluteNatalimetryDataUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (void)queryAbsoluteNatalimetryDataSinceDataRecord:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

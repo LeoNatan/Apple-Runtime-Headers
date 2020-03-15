@@ -16,8 +16,8 @@
 }
 
 + (id)sharedCPLService;
-@property(copy, nonatomic) CDUnknownBlockType uploadCallbackHandler; // @synthesize uploadCallbackHandler=_uploadCallbackHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType uploadCallbackHandler; // @synthesize uploadCallbackHandler=_uploadCallbackHandler;
 - (void)_updateUploadCallbackHandler:(id)arg1;
 @property(readonly, nonatomic) _Bool hasCompletedInitialUpload;
 - (void)_initCPLService;

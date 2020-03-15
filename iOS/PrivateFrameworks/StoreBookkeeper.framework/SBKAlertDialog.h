@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_acceptButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *acceptButtonTitle; // @synthesize acceptButtonTitle=_acceptButtonTitle;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy) NSString *cancelButtonTitle; // @synthesize cancelButtonTitle=_cancelButtonTitle;
 @property(copy) NSString *message; // @synthesize message=_message;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_runAsCFUserNotificationDisplayAlert;
 - (_Bool)_runAsUIAlertView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;

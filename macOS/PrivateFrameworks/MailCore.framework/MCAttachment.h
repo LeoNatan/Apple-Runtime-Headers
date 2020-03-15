@@ -53,6 +53,7 @@
 
 + (id)keyPathsForValuesAffectingIsDataDownloaded;
 + (id)log;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *originalMimeType; // @synthesize originalMimeType=_originalMimeType;
 @property(nonatomic) BOOL hasResourceForkData; // @synthesize hasResourceForkData=_hasResourceForkData;
 @property(nonatomic) unsigned short finderFlags; // @synthesize finderFlags=_finderFlags;
@@ -83,7 +84,6 @@
 @property(retain, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(nonatomic) BOOL isAutoArchiveAttachment; // @synthesize isAutoArchiveAttachment=_isAutoArchiveAttachment;
 @property(retain, nonatomic) id <MCAttachmentDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasPendingBackgroundRead;
 - (void)configureWithFileWrapper:(id)arg1;
 - (id)_preferredFilenameForFileWrapper:(id)arg1;

@@ -14,9 +14,9 @@
     NSTextField *_cardLastDigits;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *cardLastDigits; // @synthesize cardLastDigits=_cardLastDigits;
 @property(retain) NSImageView *cardIcon; // @synthesize cardIcon=_cardIcon;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 
 @end

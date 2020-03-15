@@ -13,8 +13,8 @@
     NSDictionary *_lookupDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 @property(readonly, copy, nonatomic) NSURL *url;
 @property(readonly, copy, nonatomic) NSURL *hlsURL;
 @property(readonly, copy, nonatomic) NSString *flavor;

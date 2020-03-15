@@ -14,9 +14,9 @@
     double _time;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double time; // @synthesize time=_time;
 @property(readonly) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithThumbnailImage:(id)arg1 time:(double)arg2;
 - (id)init;
 

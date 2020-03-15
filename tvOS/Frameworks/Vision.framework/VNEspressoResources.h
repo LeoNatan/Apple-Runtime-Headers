@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_modelName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) void *context; // @synthesize context=_context;
 @property(readonly) void *plan; // @synthesize plan=_plan;
 @property(readonly) CDStruct_2bc666a5 network; // @synthesize network=_network;
 @property(readonly) NSString *modelName; // @synthesize modelName=_modelName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (void)free;

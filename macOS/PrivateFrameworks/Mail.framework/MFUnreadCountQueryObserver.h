@@ -20,6 +20,7 @@
     MFMailbox *_mailbox;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFMailbox *mailbox; // @synthesize mailbox=_mailbox;
 @property(readonly, nonatomic) NSMutableDictionary *messageIDsFromAttachments; // @synthesize messageIDsFromAttachments=_messageIDsFromAttachments;
 @property(readonly, nonatomic) NSMutableDictionary *seenIDs; // @synthesize seenIDs=_seenIDs;
@@ -27,7 +28,6 @@
 @property(nonatomic) BOOL useTotalCount; // @synthesize useTotalCount=_useTotalCount;
 @property(nonatomic) long long nextIndexToProcess; // @synthesize nextIndexToProcess=_nextIndexToProcess;
 @property(nonatomic) BOOL queryIsCancelled; // @synthesize queryIsCancelled=_queryIsCancelled;
-- (void).cxx_destruct;
 - (void)clearMailbox;
 - (struct __MDQuery *)query;
 - (void)dealloc;

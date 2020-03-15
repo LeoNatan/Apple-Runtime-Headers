@@ -8,7 +8,7 @@
 
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSString, NSURL;
+@class NSDictionary, NSString, NSURL;
 
 @interface _WKWebsiteDataStoreConfiguration : NSObject <WKObject>
 {
@@ -17,9 +17,25 @@
 
 @property(readonly) struct Object *_apiObject;
 @property(nonatomic) BOOL allLoadsBlockedByDeviceManagementRestrictionsForTesting;
+@property(copy, nonatomic) NSDictionary *proxyConfiguration;
+@property(copy, nonatomic) NSString *dataConnectionServiceType;
+@property(nonatomic) BOOL legacyTLSEnabled;
+@property(nonatomic) BOOL allowsCellularAccess;
+@property(copy, nonatomic) NSString *boundInterfaceIdentifier;
+@property(nonatomic) BOOL allowsServerPreconnect;
+@property(nonatomic) BOOL suppressesConnectionTerminationOnSystemChange;
+@property(nonatomic) unsigned long long testSpeedMultiplier;
+@property(nonatomic) unsigned long long perOriginStorageQuota;
+@property(nonatomic) BOOL fastServerTrustEvaluationEnabled;
+@property(nonatomic) BOOL networkCacheSpeculativeValidationEnabled;
 @property(nonatomic) BOOL deviceManagementRestrictionsEnabled;
+@property(copy, nonatomic) NSURL *mediaKeysStorageDirectory;
+@property(copy, nonatomic) NSURL *mediaCacheDirectory;
+@property(copy, nonatomic) NSString *applicationCacheFlatFileSubdirectoryName;
+@property(copy, nonatomic) NSURL *applicationCacheDirectory;
 @property(copy, nonatomic) NSString *sourceApplicationSecondaryIdentifier;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier;
+@property(nonatomic) BOOL serviceWorkerProcessTerminationDelayEnabled;
 @property(copy, nonatomic, setter=_setServiceWorkerRegistrationDirectory:) NSURL *_serviceWorkerRegistrationDirectory;
 @property(copy, nonatomic, setter=_setCacheStorageDirectory:) NSURL *_cacheStorageDirectory;
 @property(copy, nonatomic, setter=_setResourceLoadStatisticsDirectory:) NSURL *_resourceLoadStatisticsDirectory;
@@ -27,9 +43,12 @@
 @property(copy, nonatomic, setter=setHTTPSProxy:) NSURL *httpsProxy;
 @property(copy, nonatomic, setter=setHTTPProxy:) NSURL *httpProxy;
 @property(copy, nonatomic, setter=_setWebSQLDatabaseDirectory:) NSURL *_webSQLDatabaseDirectory;
+@property(copy, nonatomic) NSURL *deviceIdHashSaltsStorageDirectory;
+@property(copy, nonatomic) NSURL *networkCacheDirectory;
 @property(copy, nonatomic, setter=_setIndexedDBDatabaseDirectory:) NSURL *_indexedDBDatabaseDirectory;
 @property(copy, nonatomic, setter=_setWebStorageDirectory:) NSURL *_webStorageDirectory;
 @property(readonly, nonatomic, getter=isPersistent) BOOL persistent;
+- (void)dealloc;
 - (id)initNonPersistentConfiguration;
 - (id)init;
 

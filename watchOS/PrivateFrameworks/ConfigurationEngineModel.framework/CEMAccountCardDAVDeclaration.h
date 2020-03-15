@@ -28,6 +28,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadCardDAVCredentials; // @synthesize payloadCardDAVCredentials=_payloadCardDAVCredentials;
 @property(copy, nonatomic) CEMAccountCardDAVDeclaration_CommunicationServiceRules *payloadCommunicationServiceRules; // @synthesize payloadCommunicationServiceRules=_payloadCommunicationServiceRules;
 @property(copy, nonatomic) NSNumber *payloadCardDAVPort; // @synthesize payloadCardDAVPort=_payloadCardDAVPort;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *payloadCardDAVPrincipalURL; // @synthesize payloadCardDAVPrincipalURL=_payloadCardDAVPrincipalURL;
 @property(copy, nonatomic) NSString *payloadCardDAVHostName; // @synthesize payloadCardDAVHostName=_payloadCardDAVHostName;
 @property(copy, nonatomic) NSString *payloadCardDAVAccountDescription; // @synthesize payloadCardDAVAccountDescription=_payloadCardDAVAccountDescription;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -16,11 +16,11 @@
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(readonly) UILabel *label; // @synthesize label=_label;
 @property(readonly) UITextView *textView; // @synthesize textView=_textView;
 @property(readonly) UIImageView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) _UIFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateFloatingViewStateAnimated:(_Bool)arg1;

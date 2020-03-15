@@ -24,6 +24,7 @@
     NSArray *_commonConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *commonConstraints; // @synthesize commonConstraints=_commonConstraints;
 @property(retain, nonatomic) NSArray *landscapeConstraints; // @synthesize landscapeConstraints=_landscapeConstraints;
 @property(retain, nonatomic) NSArray *portraitConstraints; // @synthesize portraitConstraints=_portraitConstraints;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UIButton *denyButton; // @synthesize denyButton=_denyButton;
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) UIView *interimLoadingView; // @synthesize interimLoadingView=_interimLoadingView;
-- (void).cxx_destruct;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;

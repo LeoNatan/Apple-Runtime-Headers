@@ -24,6 +24,7 @@
     NSString *_serialNumber;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(nonatomic) unsigned long long rank; // @synthesize rank=_rank;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSURL *passURL; // @synthesize passURL=_passURL;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)_isEqualToCredential:(id)arg1;

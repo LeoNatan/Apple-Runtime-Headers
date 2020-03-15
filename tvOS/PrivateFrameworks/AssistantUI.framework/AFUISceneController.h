@@ -23,8 +23,8 @@
     id <AFUISceneControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AFUISceneControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AFUISceneControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)transaction:(id)arg1 didLaunchProcess:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 oldClientSettings:(id)arg3 transitionContext:(id)arg4;
 - (void)sceneDidInvalidate:(id)arg1;

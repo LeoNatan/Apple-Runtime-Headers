@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _totalContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long totalContentSize; // @synthesize totalContentSize=_totalContentSize;
 @property(nonatomic) unsigned long long itemCount; // @synthesize itemCount=_itemCount;
 @property(nonatomic) _Bool isRecursiveDownload; // @synthesize isRecursiveDownload=_isRecursiveDownload;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool didSucceed; // @synthesize didSucceed=_didSucceed;
 @property(retain, nonatomic) NSMutableSet *docIDs; // @synthesize docIDs=_docIDs;
 @property(retain, nonatomic) NSUUID *operationID; // @synthesize operationID=_operationID;
-- (void).cxx_destruct;
 - (id)subDescription;
 - (id)additionalPayload;
 - (id)init;

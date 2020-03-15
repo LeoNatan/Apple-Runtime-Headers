@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long event; // @synthesize event=_event;
-- (void).cxx_destruct;
 
 @end
 

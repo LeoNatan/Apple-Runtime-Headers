@@ -13,8 +13,8 @@
     MLMultiArray *_multiArray;
 }
 
-@property(retain) MLMultiArray *multiArray; // @synthesize multiArray=_multiArray;
 - (void).cxx_destruct;
+@property(retain) MLMultiArray *multiArray; // @synthesize multiArray=_multiArray;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 - (id)initWrappingMultiArray:(id)arg1;

@@ -38,6 +38,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *weekStartDate; // @synthesize weekStartDate=_weekStartDate;
 @property(copy, nonatomic) NSNumber *storefront; // @synthesize storefront=_storefront;
 @property(copy, nonatomic) NSNumber *startTime; // @synthesize startTime=_startTime;
@@ -60,7 +61,6 @@
 @property(copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

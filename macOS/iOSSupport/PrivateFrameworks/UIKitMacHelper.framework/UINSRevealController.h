@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedRevealController;
-@property(retain, nonatomic) id <UIRVPresenterHighlightDelegate> highlighter; // @synthesize highlighter=_highlighter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <UIRVPresenterHighlightDelegate> highlighter; // @synthesize highlighter=_highlighter;
 - (void)revealContext:(id)arg1 highlightRangeChangedForItem:(id)arg2;
 - (void)revealContext:(id)arg1 stopHighlightingItem:(id)arg2;
 - (void)revealContext:(id)arg1 completeHighlightingItem:(id)arg2;

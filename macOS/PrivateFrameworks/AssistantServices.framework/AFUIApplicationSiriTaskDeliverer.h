@@ -20,8 +20,8 @@
     AFSiriTaskmaster *_taskmaster;
 }
 
-@property(nonatomic) __weak AFSiriTaskmaster *taskmaster; // @synthesize taskmaster=_taskmaster;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AFSiriTaskmaster *taskmaster; // @synthesize taskmaster=_taskmaster;
 - (void)_invalidateAssertionTimer;
 - (void)_invalidateBackboardServices;
 - (void)_handleSuccessfulAppLaunchToBackground:(BOOL)arg1 forRequest:(id)arg2 completion:(CDUnknownBlockType)arg3;

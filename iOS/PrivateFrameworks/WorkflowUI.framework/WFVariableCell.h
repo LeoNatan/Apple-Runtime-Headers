@@ -16,9 +16,9 @@
 
 + (double)widthWithVariable:(id)arg1 height:(double)arg2;
 + (id)titleFont;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
-- (void).cxx_destruct;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;
 - (void)setHighlighted:(_Bool)arg1;

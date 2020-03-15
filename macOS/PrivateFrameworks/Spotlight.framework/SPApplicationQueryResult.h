@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSArray *displayNameInitials; // @synthesize displayNameInitials=_displayNameInitials;
 - (void).cxx_destruct;
+@property(retain) NSArray *displayNameInitials; // @synthesize displayNameInitials=_displayNameInitials;
 - (BOOL)isFile;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

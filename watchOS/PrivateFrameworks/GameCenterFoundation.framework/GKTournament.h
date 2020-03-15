@@ -28,6 +28,7 @@
 + (void)lookForAcceptedCustomTournament;
 + (id)defaultCustomTournamentForTournamentDefinition:(id)arg1;
 + (void)loadTournamentWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain) GKTournamentInternal *internal; // @synthesize internal=_internal;
 @property(retain, nonatomic) NSObject<GKCustomTournamentDelegate> *customTournamentDelegate; // @synthesize customTournamentDelegate=_customTournamentDelegate;
 @property(retain, nonatomic) GKLeaderboard *leaderboard; // @synthesize leaderboard=_leaderboard;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) GKPlayer *winningPlayer; // @synthesize winningPlayer=_winningPlayer;
 @property(retain, nonatomic) GKScore *bestScore; // @synthesize bestScore=_bestScore;
 @property(retain, nonatomic) GKTournamentDefinition *tournamentDefinition; // @synthesize tournamentDefinition=_tournamentDefinition;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)getShareURLWithCompletionHandler:(CDUnknownBlockType)arg1;

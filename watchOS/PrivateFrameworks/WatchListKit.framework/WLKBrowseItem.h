@@ -19,13 +19,13 @@
 }
 
 + (id)browseItemsWithDictionaries:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WLKComingSoonInfo *contentComingSoonInfo; // @synthesize contentComingSoonInfo=_contentComingSoonInfo;
 @property(readonly, nonatomic, getter=isWatchlistable) _Bool watchlistable; // @synthesize watchlistable=_watchlistable;
 @property(readonly, nonatomic, getter=isWatchlisted) _Bool watchlisted; // @synthesize watchlisted=_watchlisted;
 @property(readonly, nonatomic) NSArray *playables; // @synthesize playables=_playables;
 @property(readonly, nonatomic) WLKBrowseItem *currentEpisode; // @synthesize currentEpisode=_currentEpisode;
 @property(readonly, nonatomic) WLKBasicContentMetadata *content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (id)preferredComingSoonInfo;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 

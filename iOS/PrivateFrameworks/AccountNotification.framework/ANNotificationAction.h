@@ -22,10 +22,10 @@
 + (id)actionForLaunchingApp:(id)arg1 withOptions:(id)arg2;
 + (id)actionForOpeningWebURL:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInternalURL; // @synthesize isInternalURL=_isInternalURL;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)perform;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

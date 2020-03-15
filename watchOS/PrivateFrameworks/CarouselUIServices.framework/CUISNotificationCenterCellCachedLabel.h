@@ -17,12 +17,12 @@
     CDStruct_e1c9cff6 _metrics;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) unsigned int labelType; // @synthesize labelType=_labelType;
 @property(nonatomic) CDStruct_e1c9cff6 metrics; // @synthesize metrics=_metrics;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 

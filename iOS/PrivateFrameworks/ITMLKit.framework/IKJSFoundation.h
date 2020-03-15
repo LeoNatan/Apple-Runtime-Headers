@@ -17,11 +17,11 @@
     id <IKAppDeviceConfig> _deviceConfig;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 @property(retain, nonatomic) NSMutableDictionary *dateFormatterCache; // @synthesize dateFormatterCache=_dateFormatterCache;
 @property(retain, nonatomic) NSMutableDictionary *jsTimers; // @synthesize jsTimers=_jsTimers;
 @property(nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (id)_stringForKey:(id)arg1 fromDict:(id)arg2;
 - (void)clearCookies;
 - (void)setCookie:(id)arg1 useSSCookieStorage:(_Bool)arg2;

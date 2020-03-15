@@ -6,12 +6,12 @@
 
 #import <RelevanceEngine/RELocationManager.h>
 
-@class NTKLocationManager;
+@class NSString, NTKLocationManager;
 
 @interface _NTKRelevanceEngineLocationManager : RELocationManager
 {
     NTKLocationManager *_locationManager;
-    struct NSString *_token;
+    NSString *_token;
 }
 
 - (void).cxx_destruct;

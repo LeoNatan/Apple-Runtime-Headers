@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSArray *_offers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *offers; // @synthesize offers=_offers;
 @property(retain, nonatomic) LPiTunesMediaAsset *artwork; // @synthesize artwork=_artwork;
 @property(copy, nonatomic) NSString *lyrics; // @synthesize lyrics=_lyrics;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
-- (void).cxx_destruct;
 - (id)assetsToFetch;
 - (id)resolve;
 

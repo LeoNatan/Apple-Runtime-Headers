@@ -16,9 +16,9 @@
     NSSet *_pidSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _wantsNotEqual; // @synthesize _wantsNotEqual=__wantsNotEqual;
 @property(readonly, nonatomic) NSSet *pidSet; // @synthesize pidSet=_pidSet;
-- (void).cxx_destruct;
 - (void)addPIDNumberSet:(id)arg1;
 - (void)addPIDNumber:(id)arg1;
 @property(readonly, nonatomic) NSPredicate *predicateEquivalent;

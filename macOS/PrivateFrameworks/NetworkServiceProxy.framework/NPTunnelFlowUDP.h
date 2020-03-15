@@ -17,12 +17,12 @@
     NWEndpoint *_remoteEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NWEndpoint *remoteEndpoint; // @synthesize remoteEndpoint=_remoteEndpoint;
 @property(retain) NSDate *firstPacketDate; // @synthesize firstPacketDate=_firstPacketDate;
 @property(retain) NWUDPSession *directSession; // @synthesize directSession=_directSession;
 @property unsigned long long savedDataSize; // @synthesize savedDataSize=_savedDataSize;
 @property(retain) NSMutableArray *savedDirectData; // @synthesize savedDirectData=_savedDirectData;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)sendDataOnDirectSession:(id)arg1;
 - (void)startHandlingIncomingData;

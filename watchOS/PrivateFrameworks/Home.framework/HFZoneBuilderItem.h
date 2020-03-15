@@ -13,8 +13,8 @@
     HFZoneBuilder *_zoneBuilder;
 }
 
-@property(readonly, nonatomic) HFZoneBuilder *zoneBuilder; // @synthesize zoneBuilder=_zoneBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFZoneBuilder *zoneBuilder; // @synthesize zoneBuilder=_zoneBuilder;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithZoneBuilder:(id)arg1;
 

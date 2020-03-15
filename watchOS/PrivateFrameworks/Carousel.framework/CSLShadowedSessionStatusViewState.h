@@ -16,8 +16,8 @@
     _Bool _statusViewStateActive;
 }
 
-@property(nonatomic, getter=statusViewIsStateActive) _Bool statusViewStateActive; // @synthesize statusViewStateActive=_statusViewStateActive;
 - (void).cxx_destruct;
+@property(nonatomic, getter=statusViewIsStateActive) _Bool statusViewStateActive; // @synthesize statusViewStateActive=_statusViewStateActive;
 - (double)statusViewTransitionOutDuration;
 - (double)statusViewTransitionInDuration;
 - (id)statusViewIndicatorView;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     long long _buttonStyle;
 }
 
-@property(readonly, nonatomic) long long buttonStyle; // @synthesize buttonStyle=_buttonStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long buttonStyle; // @synthesize buttonStyle=_buttonStyle;
 - (void)_updateHighlightImageView;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2;

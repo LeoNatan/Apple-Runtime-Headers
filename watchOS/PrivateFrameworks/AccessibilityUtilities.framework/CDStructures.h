@@ -73,10 +73,6 @@ struct MIDIPacketList {
     struct MIDIPacket _field2[1];
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct _AXEventDataStorage {
     long eventSenderIdentifier;
 };

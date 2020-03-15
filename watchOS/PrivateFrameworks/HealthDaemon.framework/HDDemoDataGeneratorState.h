@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDDemoDataGeneratorWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
 @property(nonatomic, getter=isFirstRun) _Bool firstRun; // @synthesize firstRun=_firstRun;
 @property(nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSDate *lastRunDate; // @synthesize lastRunDate=_lastRunDate;
 @property(retain, nonatomic) NSDate *lastSampleDate; // @synthesize lastSampleDate=_lastSampleDate;
 @property(retain, nonatomic) NSDate *firstSampleDate; // @synthesize firstSampleDate=_firstSampleDate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) int calendarDay;

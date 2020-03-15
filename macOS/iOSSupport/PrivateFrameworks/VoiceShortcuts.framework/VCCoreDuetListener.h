@@ -27,6 +27,7 @@
 
 + (double)rateLimitingTimeoutForTrigger:(id)arg1 runEvents:(id)arg2;
 + (BOOL)shouldRunTrigger:(id)arg1 forEvent:(id)arg2 runEvents:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFConfiguredTrigger *inProgressTrigger; // @synthesize inProgressTrigger=_inProgressTrigger;
 @property(retain, nonatomic) WFWorkflowRunEvent *inProgressRunEvent; // @synthesize inProgressRunEvent=_inProgressRunEvent;
 @property(retain, nonatomic) WFOutOfProcessWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) id <VCDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) id <_CDUserContext> userContext; // @synthesize userContext=_userContext;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)logMetricForTrigger:(id)arg1;
 - (void)deleteTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)checkTriggerStateWithKeyPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -64,6 +64,7 @@
 - (BOOL)queue_registerAllTriggers:(id *)arg1;
 - (id)queue_configuredTriggerForIdentifier:(id)arg1 workflowReference:(id *)arg2 error:(out id *)arg3;
 @property(readonly, nonatomic) WFDatabase *database;
+- (void)significantTimeChangeDidOccur;
 - (void)deviceDidUnlockForFirstTime;
 - (void)dealloc;
 - (id)initWithDatabaseProvider:(id)arg1 eventHandler:(id)arg2;

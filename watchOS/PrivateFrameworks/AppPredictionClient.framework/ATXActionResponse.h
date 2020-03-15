@@ -32,6 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSData *cacheFileData; // @synthesize cacheFileData=_cacheFileData;
 @property(readonly, nonatomic) NSString *engagedAppString; // @synthesize engagedAppString=_engagedAppString;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) NSDate *predictionDate; // @synthesize predictionDate=_predictionDate;
 @property(readonly, nonatomic) NSArray *scoredActions; // @synthesize scoredActions=_scoredActions;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isActionSpotlightCaptureRateAppEngagementType;

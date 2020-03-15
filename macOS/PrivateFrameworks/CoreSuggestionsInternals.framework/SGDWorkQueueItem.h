@@ -16,8 +16,8 @@
     NSObject<NSSecureCoding> *_object;
 }
 
-@property(readonly, nonatomic) NSObject<NSSecureCoding> *object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<NSSecureCoding> *object; // @synthesize object=_object;
 - (id)description;
 - (void)markAsFailed;
 - (void)finish;

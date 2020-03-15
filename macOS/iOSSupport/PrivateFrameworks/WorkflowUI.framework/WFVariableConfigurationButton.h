@@ -22,12 +22,12 @@
 
 + (struct CGSize)sizeForVariable:(id)arg1;
 + (id)titleFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVariableConfigurationResponder *variableResponder; // @synthesize variableResponder=_variableResponder;
 @property(nonatomic) unsigned long long resultType; // @synthesize resultType=_resultType;
 @property(nonatomic) BOOL showsVariableAccessoryActions; // @synthesize showsVariableAccessoryActions=_showsVariableAccessoryActions;
 @property(copy, nonatomic) CDUnknownBlockType revealBlock; // @synthesize revealBlock=_revealBlock;
 @property(retain, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
-- (void).cxx_destruct;
 - (void)variableDidChange:(id)arg1;
 - (void)variableResponder:(id)arg1 presentPromptWithTitle:(id)arg2 message:(id)arg3 fieldConfigurationHandler:(CDUnknownBlockType)arg4 commitHandler:(CDUnknownBlockType)arg5;
 - (void)variableResponderDidRevealAction:(id)arg1;

@@ -18,13 +18,13 @@
     NSString *_runtimeCollectionClassName;
 }
 
+- (void).cxx_destruct;
 @property _Bool addsContentToExistingCollection; // @synthesize addsContentToExistingCollection=_addsContentToExistingCollection;
 @property(copy) NSString *runtimeCollectionClassName; // @synthesize runtimeCollectionClassName=_runtimeCollectionClassName;
 @property(copy) NSString *designtimeCollectionClassName; // @synthesize designtimeCollectionClassName=_designtimeCollectionClassName;
 @property(retain) id destination; // @synthesize destination=_destination;
 @property(retain) id source; // @synthesize source=_source;
 @property(copy) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 
 @end
 

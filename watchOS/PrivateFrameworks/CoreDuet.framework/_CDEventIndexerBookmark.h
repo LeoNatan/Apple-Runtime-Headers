@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)baseBookmarkWithVersion:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int version; // @synthesize version=_version;
 @property(readonly, copy, nonatomic) NSDate *latestTombstoneDate; // @synthesize latestTombstoneDate=_latestTombstoneDate;
 @property(readonly, copy, nonatomic) NSDate *latestCreationDate; // @synthesize latestCreationDate=_latestCreationDate;
 @property(readonly, copy, nonatomic) NSDate *earliestCreationDate; // @synthesize earliestCreationDate=_earliestCreationDate;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

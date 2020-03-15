@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     _HMFCFHTTPMessage *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HMFCFHTTPMessage *response; // @synthesize response=_response;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) _HMFCFHTTPServerRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _CFHTTPServerResponse *responseRef; // @synthesize responseRef=_responseRef;
 - (void)setBody:(id)arg1;
 - (id)body;

@@ -17,6 +17,7 @@
     NSMutableDictionary *_parameterCombinationDictionary;
     NSMutableDictionary *_configurableParameterCombinationDictionary;
     NSDictionary *_typeForClassDictionary;
+    NSDictionary *_typeForSemanticKeypathDictionary;
     NSMutableDictionary *_enums;
     NSMutableDictionary *_types;
 }
@@ -31,21 +32,23 @@
 + (id)systemSchema;
 + (id)defaultSchema;
 + (_Bool)_defaultSchemaCanSupportIntent:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSystem) _Bool system; // @synthesize system=_system;
 @property(readonly, nonatomic) NSMutableDictionary *_types; // @synthesize _types;
 @property(readonly, nonatomic) NSMutableDictionary *_enums; // @synthesize _enums;
+@property(readonly, nonatomic) NSDictionary *_typeForSemanticKeypathDictionary; // @synthesize _typeForSemanticKeypathDictionary;
 @property(readonly, nonatomic) NSDictionary *_typeForClassDictionary; // @synthesize _typeForClassDictionary;
 @property(readonly, nonatomic) NSMutableDictionary *_configurableParameterCombinationDictionary; // @synthesize _configurableParameterCombinationDictionary;
 @property(readonly, nonatomic) NSMutableDictionary *_parameterCombinationDictionary; // @synthesize _parameterCombinationDictionary;
 @property(readonly, nonatomic) NSMutableDictionary *_schemaDictionary; // @synthesize _schemaDictionary;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_dictionaryRepresentationForIntentCodableDescription:(id)arg1 intentResponseCodableDescription:(id)arg2 appInfo:(id)arg3 language:(id)arg4;
-- (id)dictionaryRepresentationForIntent:(id)arg1 language:(id)arg2;
+- (id)_objectDescriptionWithSemanticKeypath:(id)arg1;
+- (id)_dictionaryRepresentationForIntentCodableDescription:(id)arg1 intentResponseCodableDescription:(id)arg2 appInfo:(id)arg3 localizer:(id)arg4;
+- (id)dictionaryRepresentationForIntent:(id)arg1 localizer:(id)arg2;
 - (id)dictionaryRepresentationForIntent:(id)arg1;
 - (id)_objectDescriptionForTypeOfClass:(Class)arg1;
 - (id)_codableDescriptionsForClass:(Class)arg1;
@@ -57,7 +60,7 @@
 - (void)_setObjectDescription:(id)arg1 forClass:(Class)arg2 identifier:(id)arg3;
 - (void)_loadIntentsFromArrayOfDictionaries:(id)arg1 intentDefinitionNamespace:(id)arg2 fromFile:(id)arg3 bundleIdentifier:(id)arg4 referencedCodableDescriptions:(id)arg5 contentOptions:(unsigned int)arg6;
 - (id)_intentResponseWithDictionary:(id)arg1 intentDefinitionNamespace:(id)arg2 className:(id)arg3 filename:(id)arg4 bundleIdentifier:(id)arg5 referencedCodableDescriptions:(id)arg6;
-- (id)_intentWithDictionary:(id)arg1 intentDefinitionNamespace:(id)arg2 filename:(id)arg3 bundleIdentifier:(id)arg4 referencedCodableDescriptions:(id)arg5;
+- (id)_intentWithDictionary:(id)arg1 intentDefinitionNamespace:(id)arg2 filename:(id)arg3 bundleIdentifier:(id)arg4;
 - (id)_typesWithDictionary:(id)arg1 filename:(id)arg2 bundleIdentifier:(id)arg3;
 - (id)_codableDescriptionWithDictionary:(id)arg1 intentDefinitionNamespace:(id)arg2 filename:(id)arg3 bundleIdentifier:(id)arg4 codableDescriptionClass:(Class)arg5;
 - (id)intentWithName:(id)arg1;

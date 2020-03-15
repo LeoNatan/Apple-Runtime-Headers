@@ -15,10 +15,10 @@
     NSString *_localizedMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedMessage; // @synthesize localizedMessage=_localizedMessage;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSArray *noContentGadgets; // @synthesize noContentGadgets=_noContentGadgets;
-- (void).cxx_destruct;
 - (void)generateGadgets;
 - (unsigned long long)estimatedNumberOfGadgets;
 - (id)initWithLocalizedTitle:(id)arg1 localizedMessage:(id)arg2;

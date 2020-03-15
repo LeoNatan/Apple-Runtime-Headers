@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSIndexPath, PUPhotoSelectionManager, PXUIAutoScroller;
+@class NSIndexPath, NSMutableDictionary, PUPhotoSelectionManager, PXUIAutoScroller;
 @protocol PUSwipeSelectionManagerDataSource, PUSwipeSelectionManagerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PUSwipeSelectionManager : NSObject
 {
-    struct NSMutableDictionary *_oldIndexesPaths;
+    NSMutableDictionary *_oldIndexesPaths;
     id <PUSwipeSelectionManagerDelegate> _delegate;
     id <PUSwipeSelectionManagerDataSource> _datasource;
     PXUIAutoScroller *_selectionAutoScroller;
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _screenTouchLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPausingChangesToken:) id _pausingChangesToken; // @synthesize _pausingChangesToken=__pausingChangesToken;
 @property(retain, nonatomic, setter=_setRestorePhotoSelectionManager:) PUPhotoSelectionManager *_restorePhotoSelectionManager; // @synthesize _restorePhotoSelectionManager=__restorePhotoSelectionManager;
 @property(copy, nonatomic, setter=_setStartingIndexPath:) NSIndexPath *_startingIndexPath; // @synthesize _startingIndexPath=__startingIndexPath;
@@ -31,12 +32,11 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PXUIAutoScroller *selectionAutoScroller; // @synthesize selectionAutoScroller=_selectionAutoScroller;
 @property(nonatomic) __weak id <PUSwipeSelectionManagerDataSource> datasource; // @synthesize datasource=_datasource;
 @property(nonatomic) __weak id <PUSwipeSelectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateSelectionWithCurrentIndexPath:(id)arg1 leftClosestIndexPath:(id)arg2 aboveClosestIndexPath:(id)arg3;
 - (void)endSelection;
 - (void)beginSelectionFromIndexPath:(id)arg1;
 - (long long)_selectionModeForRestoringStateOfIndexPath:(id)arg1;
-- (struct NSMutableDictionary *)_indexesPathsRangeForIndexPath:(id)arg1;
+- (id)_indexesPathsRangeForIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)initWithSelectionMode:(long long)arg1 photoSelectionManager:(id)arg2;
 - (id)init;

@@ -34,13 +34,13 @@ __attribute__((visibility("hidden")))
     } _ticFlags;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPopoverTouchBarItem *trackpadHandwritingPopoverTouchBarItem; // @synthesize trackpadHandwritingPopoverTouchBarItem=_trackpadHandwritingPopoverTouchBarItem;
 @property(retain) NSPopoverTouchBarItem *pressAndHoldPopoverTouchBarItem; // @synthesize pressAndHoldPopoverTouchBarItem=_pressAndHoldPopoverTouchBarItem;
 @property(retain, nonatomic) NSViewController *characterPickerViewController; // @synthesize characterPickerViewController=_characterPickerViewController;
 @property(retain, nonatomic) NSViewController *keyboardInputSourceViewController; // @synthesize keyboardInputSourceViewController=_keyboardInputSourceViewController;
 @property(retain, nonatomic) NSArray *functionRowItemIdentifiers; // @synthesize functionRowItemIdentifiers=_functionRowItemIdentifiers;
 @property(readonly) NSTextInputContext *inputContext; // @synthesize inputContext=_inputContext;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(retain, nonatomic) NSViewController *trackpadHandwritingTouchBarItemViewController; // @dynamic trackpadHandwritingTouchBarItemViewController;

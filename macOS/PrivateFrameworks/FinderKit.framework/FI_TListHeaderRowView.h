@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     struct TNSWeakPtr<NSObject<TListHeaderRowViewDelegate>, void> _weakDelegate;
 }
 
-@property(nonatomic, getter=isSortAscending) _Bool sortAscending; // @synthesize sortAscending=_isSortAscending;
-@property(nonatomic) long long sortColumnIndex; // @synthesize sortColumnIndex=_sortColumnIndex;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isSortAscending) _Bool sortAscending; // @synthesize sortAscending=_isSortAscending;
+@property(nonatomic) long long sortColumnIndex; // @synthesize sortColumnIndex=_sortColumnIndex;
 - (void)setNeedsDisplayForColumn:(long long)arg1 draggedDelta:(double)arg2;
 - (void)rightMouseDown:(id)arg1;
 - (void)mouseDown:(id)arg1;

@@ -18,10 +18,10 @@
 + (id)comparators;
 + (id)groupResultWithDisplayName:(id)arg1 date:(id)arg2;
 + (id)contactResultWithDisplayName:(id)arg1 value:(id)arg2 lastSendingAddress:(id)arg3 date:(id)arg4;
+- (void).cxx_destruct;
 @property _Bool completesChosenGroup; // @synthesize completesChosenGroup=_completesChosenGroup;
 @property _Bool matchesSendingAddress; // @synthesize matchesSendingAddress=_matchesSendingAddress;
 @property(readonly) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 
 @end
 

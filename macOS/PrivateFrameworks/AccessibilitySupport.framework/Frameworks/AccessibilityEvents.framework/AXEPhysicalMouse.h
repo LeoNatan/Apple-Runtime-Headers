@@ -20,11 +20,11 @@
 + (id)_mouseHIDReportDescriptorData;
 + (id)_reportWithLeftButtonDown:(BOOL)arg1 rightButtonDown:(BOOL)arg2 xMovement:(double)arg3 yMovement:(double)arg4;
 + (id)_mouseHIDDeviceProperties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_reportingQueue; // @synthesize _reportingQueue=__reportingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_hidUserDeviceQueue; // @synthesize _hidUserDeviceQueue=__hidUserDeviceQueue;
 @property(retain, nonatomic) HIDUserDevice *_hidUserDevice; // @synthesize _hidUserDevice=__hidUserDevice;
 @property(nonatomic) BOOL _activated; // @synthesize _activated=__activated;
-- (void).cxx_destruct;
 - (void)_deactivateOnReportingQueue;
 - (void)_moveOnReportingQueue:(double)arg1:(double)arg2;
 - (void)_activateOnReportingQueue;

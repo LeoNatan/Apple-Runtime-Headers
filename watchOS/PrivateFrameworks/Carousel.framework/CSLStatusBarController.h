@@ -19,12 +19,12 @@
     PUICStatusBarGlobalContextProperties *_globalContextProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICStatusBarGlobalContextProperties *globalContextProperties; // @synthesize globalContextProperties=_globalContextProperties;
 @property(retain, nonatomic) PUICApplicationStatusBarItem *applicationStatusBarItem; // @synthesize applicationStatusBarItem=_applicationStatusBarItem;
 @property(readonly, nonatomic) CSLStatusBarGlobalContextView *globalContextView; // @synthesize globalContextView=_globalContextView;
 @property(readonly, nonatomic) PUICStatusBarAppContextView *appContextView; // @synthesize appContextView=_appContextView;
 @property(nonatomic, getter=isStatusBarHidden) _Bool statusBarHidden; // @synthesize statusBarHidden=_statusBarHidden;
-- (void).cxx_destruct;
 - (void)globalContextView:(id)arg1 didUpdateVisibleWidth:(float)arg2;
 @property(readonly, copy) NSString *debugDescription;
 - (void)layoutSubviews;

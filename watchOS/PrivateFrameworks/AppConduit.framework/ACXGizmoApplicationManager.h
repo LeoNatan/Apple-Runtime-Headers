@@ -14,8 +14,8 @@
 }
 
 + (id)sharedConnection;
-@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (_Bool)installRequestFailedForApp:(id)arg1 failureReason:(id)arg2 wasUserInitiated:(_Bool)arg3 error:(id *)arg4;
 - (unsigned int)installabilityForDeletableSystemAppWithBundleID:(id)arg1 error:(id *)arg2;
 - (_Bool)deletableSystemAppCanBeInstalledOnWatchWithBundleID:(id)arg1 error:(id *)arg2;

@@ -19,10 +19,10 @@
     id <SBUIBiometricResource> _biometricResource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBUIBiometricResource> biometricResource; // @synthesize biometricResource=_biometricResource;
 @property(nonatomic) _Bool seenMatchResultSinceScreenOn; // @synthesize seenMatchResultSinceScreenOn=_seenMatchResultSinceScreenOn;
 @property(nonatomic) __weak id <SBPearlMatchingStateProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)biometricResource:(id)arg1 observeEvent:(unsigned long long)arg2;
 - (void)setSeenMatchResultSinceScreenOn:(_Bool)arg1 notifyDelegate:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool pearlMatchEnabledAndPossible;

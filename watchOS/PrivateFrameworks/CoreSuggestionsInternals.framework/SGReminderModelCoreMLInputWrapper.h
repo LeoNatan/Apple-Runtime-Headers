@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     MLMultiArray *_bi_lstm_1_c_in_rev;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLMultiArray *bi_lstm_1_c_in_rev; // @synthesize bi_lstm_1_c_in_rev=_bi_lstm_1_c_in_rev;
 @property(retain, nonatomic) MLMultiArray *bi_lstm_1_h_in_rev; // @synthesize bi_lstm_1_h_in_rev=_bi_lstm_1_h_in_rev;
 @property(retain, nonatomic) MLMultiArray *bi_lstm_1_c_in; // @synthesize bi_lstm_1_c_in=_bi_lstm_1_c_in;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MLMultiArray *L; // @synthesize L=_L;
 @property(retain, nonatomic) MLMultiArray *D; // @synthesize D=_D;
 @property(retain, nonatomic) MLMultiArray *R; // @synthesize R=_R;
-- (void).cxx_destruct;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
 - (id)initWithR:(id)arg1 D:(id)arg2 L:(id)arg3 I:(id)arg4 A:(id)arg5 bi_lstm_0_h_in:(id)arg6 bi_lstm_0_c_in:(id)arg7 bi_lstm_0_h_in_rev:(id)arg8 bi_lstm_0_c_in_rev:(id)arg9 bi_lstm_1_h_in:(id)arg10 bi_lstm_1_c_in:(id)arg11 bi_lstm_1_h_in_rev:(id)arg12 bi_lstm_1_c_in_rev:(id)arg13;

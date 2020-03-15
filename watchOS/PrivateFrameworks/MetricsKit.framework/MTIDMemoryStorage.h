@@ -15,8 +15,8 @@
     NSMutableDictionary *_namespaces;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *namespaces; // @synthesize namespaces=_namespaces;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *namespaces; // @synthesize namespaces=_namespaces;
 - (id)optionsForNamespace:(id)arg1 cachePolicy:(int)arg2;
 - (id)deleteNamespace:(id)arg1;
 - (id)updateNamespace:(id)arg1 options:(id)arg2 resetSeed:(_Bool)arg3;

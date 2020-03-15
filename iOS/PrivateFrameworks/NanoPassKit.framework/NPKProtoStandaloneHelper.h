@@ -21,19 +21,21 @@
 + (id)toNPKProtoStandalonePaymentSetupProduct:(id)arg1;
 + (id)toNPKProtoStandalonePaymentProvisioningFlowPickerItem:(id)arg1;
 + (id)toNPKProtoStandalonePaymentProvisioningFlowPickerSection:(id)arg1;
-+ (id)toNPKProtoStandaloneCreditAccountCredential:(id)arg1;
-+ (id)toNPKProtoStandalonePaymentRemoteCredential:(id)arg1;
-+ (id)toNPKProtoStandalonePaymentCredentialUnion:(id)arg1 withFlowIdentifier:(id)arg2;
++ (id)toNPKProtoStandaloneCreditAccountCredential:(id)arg1 thumbnailSize:(_Bool)arg2;
++ (id)toNPKProtoStandalonePaymentRemoteCredential:(id)arg1 thumbnailSize:(_Bool)arg2;
++ (id)toNPKProtoStandalonePaymentCredentialUnion:(id)arg1 withFlowIdentifier:(id)arg2 thumbnailSize:(_Bool)arg3;
 + (id)toNPKProtoStandalonePaymentCredential:(id)arg1;
 + (int)toNPKProtoStandalonePaymentApplicationState:(long long)arg1;
 + (id)toNPKProtoStandaloneVerificationChannel:(id)arg1;
 + (int)toNPKProtoStandaloneVerificationChannelType:(unsigned long long)arg1;
-+ (id)toNPKProtoStandalonePaymentPass:(id)arg1;
++ (id)toNPKProtoStandalonePaymentPass:(id)arg1 thumbnailSize:(_Bool)arg2;
 + (id)sha1hash:(id)arg1;
-+ (id)toNPKProtoStandalonePass:(id)arg1;
++ (id)toNPKProtoStandalonePass:(id)arg1 thumbnailSize:(_Bool)arg2;
 + (int)toNPKProtoStandalonePaymentPassActivationState:(unsigned long long)arg1;
 + (int)toNPKProtoStandalonePassType:(unsigned long long)arg1;
 + (id)toNPKProtoStandalonePaymentSetupMoreInfoItem:(id)arg1;
++ (id)fromNPKProtoStandalonePaymentProvisioningFlowStepContext:(id)arg1 requestContext:(id)arg2;
++ (id)_convertProtoWelcomeStepContext:(id)arg1 requestContext:(id)arg2;
 + (void)_convertIssuerVerificationCodeStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertMoreInformationStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertIssuerVerificationFieldsStepContext:(id)arg1 protoContext:(id)arg2;
@@ -41,6 +43,7 @@
 + (void)_convertProvisioningResultStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertProvisioningProgressStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertTermsAndConditionsStepContext:(id)arg1 protoContext:(id)arg2;
++ (void)_convertPasscodeUpgradeStepContext:(id)arg1 protoContext:(id)arg2;
 + (void)_convertLocalDeviceManualEntryProgress:(id)arg1 protoContext:(id)arg2;
 + (void)_convertLocalDeviceManualEntry:(id)arg1 protoContext:(id)arg2;
 + (void)_convertSecondaryManualEntryStepContext:(id)arg1 protoContext:(id)arg2;
@@ -59,6 +62,10 @@
 + (id)toNPKProtoStandaloneError:(id)arg1;
 + (int)toNPKProtoStandalonePaymentSetupFieldType:(unsigned long long)arg1;
 + (id)toNPKProtoStandalonePaymentProvisioningFlowStepContext:(id)arg1 fromStep:(int)arg2 toStep:(int)arg3;
++ (struct CGSize)passThumbnailImageSize;
++ (void)setPassThumbnailImageSize:(struct CGSize)arg1;
++ (struct CGSize)passImageSize;
++ (void)setPassImageSize:(struct CGSize)arg1;
 
 @end
 

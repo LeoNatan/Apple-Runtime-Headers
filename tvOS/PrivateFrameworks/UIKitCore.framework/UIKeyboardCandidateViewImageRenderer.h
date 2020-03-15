@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedImageRenderer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(nonatomic) __weak UIView *viewForTraitCollection; // @synthesize viewForTraitCollection=_viewForTraitCollection;
-- (void).cxx_destruct;
 - (id)extensionMaskImage;
 - (id)handwritingCellBackgroundImageForDarkKeyboard:(_Bool)arg1 highlighted:(_Bool)arg2;
 - (id)pocketShadowImageForDarkKeyboard:(_Bool)arg1 fadesToBottom:(_Bool)arg2 drawShadow:(_Bool)arg3 topPadding:(double)arg4 bottomPadding:(double)arg5 height:(double)arg6;

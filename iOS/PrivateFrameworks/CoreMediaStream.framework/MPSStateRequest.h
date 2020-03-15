@@ -23,13 +23,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long originalLibrarySize; // @synthesize originalLibrarySize=_originalLibrarySize;
 @property(retain, nonatomic) NSString *backupDeviceUDID; // @synthesize backupDeviceUDID=_backupDeviceUDID;
 @property(retain, nonatomic) NSString *backupDeviceUUID; // @synthesize backupDeviceUUID=_backupDeviceUUID;
 @property(retain, nonatomic) NSString *backupDeviceID; // @synthesize backupDeviceID=_backupDeviceID;
 @property(retain, nonatomic) NSString *iCPLDeviceID; // @synthesize iCPLDeviceID=_iCPLDeviceID;
 @property(retain, nonatomic) NSString *mPSDeviceID; // @synthesize mPSDeviceID=_mPSDeviceID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNTransportButton *transportIcon; // @synthesize transportIcon=_transportIcon;
 @property(retain, nonatomic) UILabel *faceTimeLabel; // @synthesize faceTimeLabel=_faceTimeLabel;
 @property(copy, nonatomic) NSDictionary *labelTextAttributes; // @synthesize labelTextAttributes=_labelTextAttributes;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_cnui_applyContactStyle;
 - (void)transportButtonClicked:(id)arg1;
 - (void)performDefaultAction;

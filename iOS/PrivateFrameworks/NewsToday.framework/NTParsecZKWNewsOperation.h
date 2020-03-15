@@ -20,6 +20,7 @@
     NSString *_keyboardInputMode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(copy, nonatomic) CDUnknownBlockType newsCompletionHandler; // @synthesize newsCompletionHandler=_newsCompletionHandler;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSOrderedSet *resultSearchResultIDs; // @synthesize resultSearchResultIDs=_resultSearchResultIDs;
 @property(copy, nonatomic) NSDate *fetchDate; // @synthesize fetchDate=_fetchDate;
 @property(retain, nonatomic) PARSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (void)setTimeoutDuration:(double)arg1;

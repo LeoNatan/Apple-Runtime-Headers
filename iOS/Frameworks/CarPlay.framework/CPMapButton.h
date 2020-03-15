@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPMapButtonDelegate> controlDelegate; // @synthesize controlDelegate=_controlDelegate;
 @property(retain, nonatomic) CPImageSet *imageSet; // @synthesize imageSet=_imageSet;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)handlePrimaryAction;
 @property(retain, nonatomic) UIImage *image;
 @property(readonly, copy) NSString *description;

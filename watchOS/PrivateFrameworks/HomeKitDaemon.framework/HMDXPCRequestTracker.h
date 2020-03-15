@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
 @class HMFTimer, NSMutableDictionary, NSObject, NSSet, NSString;
-@protocol HMFLocking, OS_dispatch_group, OS_dispatch_queue;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDXPCRequestTracker : HMFObject <HMFTimerDelegate>
 {
@@ -17,13 +17,11 @@
     NSObject<OS_dispatch_queue> *_queue;
     HMFTimer *_timer;
     NSString *_clientName;
-    NSObject<OS_dispatch_group> *_activeMessageTracker;
     NSMutableDictionary *_pendingRequests;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
-@property(retain, nonatomic) NSObject<OS_dispatch_group> *activeMessageTracker; // @synthesize activeMessageTracker=_activeMessageTracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 - (void)timerDidFire:(id)arg1;
 - (void)clear;
 - (void)setClientName:(id)arg1;
@@ -31,9 +29,10 @@
 @property(readonly, copy) NSSet *requestIdentifiers;
 - (_Bool)containsMessageWithIdentifier:(id)arg1;
 - (void)removeRequestWithIdentifier:(id)arg1 response:(id)arg2 error:(id)arg3;
-- (void)addRequestWithIdentifier:(id)arg1 messageName:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
+- (void)addRequestWithIdentifier:(id)arg1 messageName:(id)arg2 qualityOfService:(int)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)__sendReponseForRequest:(id)arg1 response:(id)arg2 error:(id)arg3;
-- (id)initWithGroup:(id)arg1;
+- (id)initWithQueue:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

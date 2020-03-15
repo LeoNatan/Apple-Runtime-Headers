@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 
 + (id)supportedPasteboardTypes;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) NSArray *variableConstraints; // @synthesize variableConstraints=_variableConstraints;
 @property(nonatomic) _Bool isAnimatingBounce; // @synthesize isAnimatingBounce=_isAnimatingBounce;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool modified; // @synthesize modified=_modified;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (void)avatarView:(id)arg1 willShowActions:(id)arg2;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)_bounceSmallPhoto;

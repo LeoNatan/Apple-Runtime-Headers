@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_regionCode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

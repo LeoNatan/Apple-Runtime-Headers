@@ -15,8 +15,8 @@
     HUItemTableSectionHeaderFooterView *_headerFooterView;
 }
 
-@property(readonly, nonatomic) HUItemTableSectionHeaderFooterView *headerFooterView; // @synthesize headerFooterView=_headerFooterView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUItemTableSectionHeaderFooterView *headerFooterView; // @synthesize headerFooterView=_headerFooterView;
 @property(readonly, nonatomic) _Bool prefersSeparatorsHidden;
 - (void)prepareForReuse;
 - (struct CGSize)intrinsicContentSize;

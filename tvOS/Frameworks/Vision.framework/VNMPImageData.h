@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     long long _exifTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long exifTimestamp; // @synthesize exifTimestamp=_exifTimestamp;
 @property(readonly) NSString *externalImageId; // @synthesize externalImageId=_externalImageId;
 @property _Bool freeImageInDealloc; // @synthesize freeImageInDealloc=_freeImageInDealloc;
 @property(retain) NSString *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
 @property(readonly) struct __CVBuffer *imageCVPixelBuffer; // @synthesize imageCVPixelBuffer=_imageCVPixelBuffer;
 @property(readonly) struct vImage_Buffer *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithCVPixelBufferImage:(struct __CVBuffer *)arg1 externalImageId:(id)arg2 andExifTimestampValue:(long long)arg3 error:(id *)arg4;
 - (id)initWithCVPixelBufferImage:(struct __CVBuffer *)arg1 externalImageId:(id)arg2 andExifTimestampString:(id)arg3 error:(id *)arg4;

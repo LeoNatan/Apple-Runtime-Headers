@@ -24,13 +24,13 @@
 + (id)keylineForSelectableRow;
 + (id)keylineWithDefaultInsets;
 + (id)keyline;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isVeritical, setter=_setVertical:) BOOL veritical; // @synthesize veritical=_veritical;
 @property(retain, nonatomic) NSColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) double customRightPadding; // @synthesize customRightPadding=_customRightPadding;
 @property(nonatomic) double customLeftPadding; // @synthesize customLeftPadding=_customLeftPadding;
 @property(nonatomic) long long keylineType; // @synthesize keylineType=_keylineType;
 @property(retain) NSView *keylineView; // @synthesize keylineView=_keylineView;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)wantsLayer;

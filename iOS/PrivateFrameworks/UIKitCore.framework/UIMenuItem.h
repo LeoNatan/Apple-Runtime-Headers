@@ -15,10 +15,10 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dontDismiss; // @synthesize dontDismiss=_dontDismiss;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2;
 - (id)init;
 

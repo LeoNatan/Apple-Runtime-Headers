@@ -19,6 +19,7 @@
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property double numberOfBytesDownloadedCell; // @synthesize numberOfBytesDownloadedCell=_numberOfBytesDownloadedCell;
 @property double numberOfBytesUploadedCell; // @synthesize numberOfBytesUploadedCell=_numberOfBytesUploadedCell;
@@ -26,7 +27,6 @@
 @property double numberOfBytesUploadedWiFi; // @synthesize numberOfBytesUploadedWiFi=_numberOfBytesUploadedWiFi;
 @property(retain) NSDate *stopDate; // @synthesize stopDate=_stopDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

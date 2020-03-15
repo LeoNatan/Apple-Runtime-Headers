@@ -15,10 +15,10 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(nonatomic) float fraction; // @synthesize fraction=_fraction;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithColor:(id)arg1 fraction:(float)arg2;
 

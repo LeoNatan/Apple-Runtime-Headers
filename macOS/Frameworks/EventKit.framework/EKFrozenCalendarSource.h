@@ -43,6 +43,7 @@
 }
 
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(retain) EKFrozenReminderSource *reminderSource; // @synthesize reminderSource=_reminderSource;
 @property(readonly, nonatomic) BOOL supportsUnbind; // @synthesize supportsUnbind;
 @property(readonly, nonatomic) NSURL *serverURL; // @synthesize serverURL;
@@ -71,7 +72,6 @@
 @property(readonly, nonatomic) BOOL isDelegate; // @synthesize isDelegate;
 @property(readonly, nonatomic) int displayOrder; // @synthesize displayOrder;
 @property(readonly, copy, nonatomic) NSString *externalSourceIdentifier; // @synthesize externalSourceIdentifier;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 
 // Remaining properties

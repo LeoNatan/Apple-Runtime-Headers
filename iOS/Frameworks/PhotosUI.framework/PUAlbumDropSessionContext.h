@@ -16,10 +16,10 @@
 }
 
 + (id)contextWithViewController:(id)arg1 assetCollection:(id)arg2 numberOfAssets:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numberOfAssets; // @synthesize numberOfAssets=_numberOfAssets;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,9 +14,9 @@
     NSString *_fingerprint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fingerprint; // @synthesize fingerprint=_fingerprint;
 @property(nonatomic) unsigned int sharedStreamsType; // @synthesize sharedStreamsType=_sharedStreamsType;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

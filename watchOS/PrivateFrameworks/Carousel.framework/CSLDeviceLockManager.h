@@ -31,9 +31,9 @@
 + (id)_sharedInstanceIfExists;
 + (id)sharedInstance;
 + (id)sharedInstanceCreateIfNecessary:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSHashTable *blockStateObservers; // @synthesize blockStateObservers=_blockStateObservers;
 @property(readonly) NSHashTable *lockStateObservers; // @synthesize lockStateObservers=_lockStateObservers;
-- (void).cxx_destruct;
 - (_Bool)isLockStateObserver:(id)arg1;
 - (void)notifyBlockState;
 - (void)_notifyBlockedStateChanged:(_Bool)arg1;

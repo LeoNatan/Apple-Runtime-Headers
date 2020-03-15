@@ -16,9 +16,9 @@
 }
 
 + (id)_newRequestWithSyncState:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *currentSyncState; // @synthesize currentSyncState=_currentSyncState;
 @property(nonatomic) __weak id <MFEWSSyncFolderHierarchyTaskOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_folderIsHidden:(id)arg1;
 - (void)main;
 - (id)init;

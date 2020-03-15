@@ -13,8 +13,8 @@
     NSData *_clientStateData;
 }
 
-@property(readonly) NSData *clientStateData; // @synthesize clientStateData=_clientStateData;
 - (void).cxx_destruct;
+@property(readonly) NSData *clientStateData; // @synthesize clientStateData=_clientStateData;
 - (void)main;
 
 @end

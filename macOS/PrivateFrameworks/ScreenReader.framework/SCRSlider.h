@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_valueDescriptionAtLastValueChange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _handlingValueChangeNotification; // @synthesize _handlingValueChangeNotification=__handlingValueChangeNotification;
 @property(copy, nonatomic) NSString *valueDescriptionAtLastValueChange; // @synthesize valueDescriptionAtLastValueChange=_valueDescriptionAtLastValueChange;
 @property(nonatomic) unsigned char echoState; // @synthesize echoState=_echoState;
-- (void).cxx_destruct;
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
 - (void)echoValueChangeToRequest:(id)arg1;
 - (BOOL)handleReadValueChangeCallbackForEvent:(id)arg1 request:(id)arg2;

@@ -25,6 +25,7 @@
 @property(readonly, nonatomic) NSArray *faviconURLs;
 @property(readonly, nonatomic) NSArray *appleTouchIconURLs;
 @property(readonly, nonatomic) _WKFrameHandle *handle;
+@property(readonly, nonatomic) _Bool isMainFrame;
 @property(readonly, nonatomic) _Bool containsAnyFormElements;
 @property(readonly, nonatomic) NSArray *childFrames;
 @property(readonly, nonatomic) NSURL *URL;

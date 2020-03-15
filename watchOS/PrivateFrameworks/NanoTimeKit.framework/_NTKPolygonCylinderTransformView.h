@@ -19,10 +19,10 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float faceDistanceToCenter; // @synthesize faceDistanceToCenter=_faceDistanceToCenter;
 @property(readonly, nonatomic) unsigned int numberOfVisibleFaces; // @synthesize numberOfVisibleFaces=_numberOfVisibleFaces;
 @property(readonly, nonatomic) unsigned int numberOfFaces; // @synthesize numberOfFaces=_numberOfFaces;
-- (void).cxx_destruct;
 - (struct CATransform3D)_transformForFaceIndex:(unsigned int)arg1;
 - (void)layoutSubviews;
 - (void)setBounds:(struct CGRect)arg1;

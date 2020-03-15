@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     long long _style;
 }
 
-@property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long style; // @synthesize style=_style;
 - (void)setPressed:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setRoundedCornerPosition:(unsigned long long)arg1;

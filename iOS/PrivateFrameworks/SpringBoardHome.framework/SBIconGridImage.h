@@ -22,10 +22,10 @@
 + (id)gridImageForLayout:(id)arg1 pool:(id)arg2 cellImageDrawBlock:(CDUnknownBlockType)arg3;
 + (id)gridImageForLayout:(id)arg1 cellImageDrawBlock:(CDUnknownBlockType)arg2;
 + (id)gridImageForLayout:(id)arg1 previousGridImage:(id)arg2 previousGridCellIndexToUpdate:(unsigned long long)arg3 pool:(id)arg4 cellImageDrawBlock:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int treatedCells; // @synthesize treatedCells=_treatedCells;
 @property(retain, nonatomic) CPMemoryPool *pool; // @synthesize pool=_pool;
 @property(retain, nonatomic) id <SBIconListLayout> listLayout; // @synthesize listLayout=_listLayout;
-- (void).cxx_destruct;
 - (_Bool)isIconImageTreatedAtIndex:(unsigned long long)arg1;
 - (id)iconImageAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfRows;

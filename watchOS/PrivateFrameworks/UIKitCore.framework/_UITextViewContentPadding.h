@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     id <_UITextViewContentPaddingDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UITextViewContentPaddingDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) float currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) float targetValue; // @synthesize targetValue=_targetValue;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)_checkNewCurrentValue;
 - (void)resetCurrentValue;
 - (void)increaseToValue:(float)arg1;

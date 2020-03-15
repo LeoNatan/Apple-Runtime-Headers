@@ -17,11 +17,11 @@
 }
 
 + (id)contactsSearchQueryWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3 consumer:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool calendarInitiated; // @synthesize calendarInitiated=_calendarInitiated;
 @property(nonatomic) _Bool includePhotos; // @synthesize includePhotos=_includePhotos;
 @property(copy, nonatomic) NSString *searchScope; // @synthesize searchScope=_searchScope;
 @property(copy, nonatomic) NSString *searchBase; // @synthesize searchBase=_searchBase;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1 consumer:(id)arg2;
 - (id)initWithSearchString:(id)arg1 searchBase:(id)arg2 searchScope:(id)arg3 consumer:(id)arg4;

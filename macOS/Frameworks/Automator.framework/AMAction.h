@@ -33,6 +33,7 @@
 + (id)actionsFromDescriptions:(id)arg1 error:(id *)arg2;
 + (BOOL)writeCustomActionToDiskWithProperties:(id)arg1;
 + (BOOL)checkCustomActionsDirectoryOnDisk;
+- (void).cxx_destruct;
 @property(nonatomic) __weak AMAction *loopParent; // @synthesize loopParent=_loopParent;
 @property(nonatomic) __weak AMWorkflowRunner *runner; // @synthesize runner=_currentRunner;
 @property(copy, nonatomic) NSString *error; // @synthesize error=_error;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak AMWorkflow *workflow; // @synthesize workflow=_future3;
 @property(nonatomic) __weak id <AMActionDelegate> _delegate; // @synthesize _delegate=_future2;
 @property(retain, nonatomic) NSMutableDictionary *_definition; // @synthesize _definition;
-- (void).cxx_destruct;
 - (id)tokenField:(id)arg1 readFromPasteboard:(id)arg2;
 - (BOOL)tokenField:(id)arg1 writeRepresentedObjects:(id)arg2 toPasteboard:(id)arg3;
 - (unsigned long long)tokenField:(id)arg1 styleForRepresentedObject:(id)arg2;

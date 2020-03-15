@@ -22,13 +22,12 @@
     double _implicitConfirmationDelay;
 }
 
-+ (double)defaultImplicitConfirmationDelay;
-@property(readonly) double implicitConfirmationDelay; // @synthesize implicitConfirmationDelay=_implicitConfirmationDelay;
+- (void).cxx_destruct;
+@property double implicitConfirmationDelay; // @synthesize implicitConfirmationDelay=_implicitConfirmationDelay;
 @property(readonly) CDUnknownFunctionPointerType cgEventPostFunc; // @synthesize cgEventPostFunc=_cgEventPostFunc;
 @property(readonly) id <XCUIAccessibilityInterface> accessibilityInterface; // @synthesize accessibilityInterface=_accessibilityInterface;
 @property(retain) id <XCUIEventGeneratorRequest> currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(readonly) struct __CGEventSource *eventSource; // @synthesize eventSource=_eventSource;
-- (void).cxx_destruct;
 - (void)postMacOSEvent:(id)arg1 forRequest:(id)arg2;
 - (void)_notifyWhenConfirmationIsReceivedForEvent:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_handleEventConfirmation:(id)arg1;

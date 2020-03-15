@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSString *apsEnvironmentString; // @synthesize apsEnvironmentString=_apsEnvironmentString;
 @property(retain, nonatomic) NSData *apsToken; // @synthesize apsToken=_apsToken;
-- (void).cxx_destruct;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)sourceApplicationSecondaryIdentifier;
 - (id)sourceApplicationBundleIdentifier;

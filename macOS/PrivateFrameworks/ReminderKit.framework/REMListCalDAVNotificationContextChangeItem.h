@@ -13,8 +13,8 @@
     REMListChangeItem *_listChangeItem;
 }
 
-@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMListChangeItem *listChangeItem; // @synthesize listChangeItem=_listChangeItem;
 - (void)updateCalDAVNotification:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)clearCalDAVNotifications;
 - (void)removeCalDAVNotication:(id)arg1;

@@ -18,13 +18,13 @@
     unsigned long long _hardResultsLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long hardResultsLimit; // @synthesize hardResultsLimit=_hardResultsLimit;
 @property(nonatomic) unsigned long long softResultsLimit; // @synthesize softResultsLimit=_softResultsLimit;
 @property(nonatomic) unsigned long long orderLimit; // @synthesize orderLimit=_orderLimit;
 @property(nonatomic) unsigned long long startOrder; // @synthesize startOrder=_startOrder;
 @property(copy, nonatomic) NSData *startCursor; // @synthesize startCursor=_startCursor;
 @property(copy, nonatomic) NSString *feedID; // @synthesize feedID=_feedID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

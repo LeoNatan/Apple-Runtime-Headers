@@ -17,12 +17,12 @@
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL deadConnection; // @synthesize deadConnection=_deadConnection;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(nonatomic) __weak id <AXHeardServerMessageDelegate> messageDelegate; // @synthesize messageDelegate=_messageDelegate;
 @property(nonatomic) __weak id <AXHeardServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleMessageError:(id)arg1 destructive:(BOOL)arg2;
 - (void)handleMessageWithPayload:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)sendMessageWithPayload:(id)arg1 andIdentifier:(unsigned long long)arg2;

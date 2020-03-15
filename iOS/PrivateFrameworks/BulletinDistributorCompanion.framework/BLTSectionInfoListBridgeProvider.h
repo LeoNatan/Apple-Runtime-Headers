@@ -21,9 +21,9 @@
     BLTSectionConfiguration *_sectionConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLTSectionConfiguration *sectionConfiguration; // @synthesize sectionConfiguration=_sectionConfiguration;
 @property(nonatomic) __weak id <BLTSectionInfoListProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)removeSectionWithSectionID:(id)arg1;
 - (void)enableCustomSettingsForWatchSectionID:(id)arg1;
 - (id)_companionSetupNotificationSettingsDictionaryForSectionInfo:(id)arg1 sectionID:(id)arg2;

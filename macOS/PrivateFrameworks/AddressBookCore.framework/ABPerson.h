@@ -28,6 +28,7 @@
 + (long long)addPropertiesAndTypes:(id)arg1 withAddressBook:(id)arg2;
 + (long long)addPropertiesAndTypes:(id)arg1 withAddressBook:(id)arg2 acquireLock:(BOOL)arg3;
 + (long long)addPropertiesAndTypes:(id)arg1 withAddressBook:(id)arg2 acquireLock:(BOOL)arg3 save:(BOOL)arg4;
++ (id)makeBuiltInProperties;
 + (id)builtInProperties;
 + (void)cancelLoadingImageDataForTag:(long long)arg1;
 + (id)_netInfoImageData;
@@ -46,6 +47,7 @@
 + (void)setVCardField:(id)arg1 isPrivate:(BOOL)arg2;
 + (void)setPrivateVCardEnabled:(BOOL)arg1;
 + (BOOL)privateVCardEnabled;
+- (BOOL)isGuardianWhitelisted;
 - (id)_mapURLForAddressWithId:(id)arg1;
 - (void)nts_setTexttone:(id)arg1;
 - (void)setTexttone:(id)arg1;
@@ -55,6 +57,7 @@
 - (void)setRingtone:(id)arg1;
 - (id)nts_ringtone;
 - (id)ringtone;
+- (BOOL)isPersisted;
 - (BOOL)isTransient;
 - (void)nts_setDowntimeWhitelist:(id)arg1;
 @property(copy) NSString *downtimeWhitelist;
@@ -73,6 +76,7 @@
 - (void)linkWithPerson:(id)arg1;
 @property(copy) NSString *linkId;
 - (BOOL)_propertyHasChanged:(id)arg1;
+- (id)firstPropertyWithNonEmptyValue:(id)arg1;
 - (BOOL)isEmptyPersonIgnoringProperties:(id)arg1;
 - (BOOL)isEmptyPerson;
 - (id)valueSanitizer;

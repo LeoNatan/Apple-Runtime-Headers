@@ -36,6 +36,7 @@
     unsigned long long _excludedProperties;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL connected; // @synthesize connected=_connected;
 @property(nonatomic) unsigned long long excludedProperties; // @synthesize excludedProperties=_excludedProperties;
 @property(nonatomic) int type; // @synthesize type=_type;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) NSArray *model; // @synthesize model=_model;
 @property(retain, nonatomic) NSArray *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)setNewName:(id)arg1;
 - (void)registerWriteBlock:(CDUnknownBlockType)arg1;
 - (void)persist;

@@ -29,6 +29,7 @@
     NSString *_invitedBy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *invitedBy; // @synthesize invitedBy=_invitedBy;
 @property(retain, nonatomic) EKCalendarEventInvitationNotificationAttendee *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSArray *attendees; // @synthesize attendees=_attendees;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSDate *startDateForNextOccurrence; // @synthesize startDateForNextOccurrence=_startDateForNextOccurrence;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (_Bool)hasRecurrenceRules;
 - (id)eventFromEventStore:(id)arg1;
 - (id)initWithEvent:(id)arg1;

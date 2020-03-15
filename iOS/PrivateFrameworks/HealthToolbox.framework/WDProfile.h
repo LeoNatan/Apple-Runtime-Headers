@@ -33,6 +33,7 @@
     _HKWheelchairUseCharacteristicCache *_wheelchairUseCharacteristicCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HKWheelchairUseCharacteristicCache *wheelchairUseCharacteristicCache; // @synthesize wheelchairUseCharacteristicCache=_wheelchairUseCharacteristicCache;
 @property(readonly, nonatomic) WDUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly, nonatomic) WDUserActivityManager *userActivityManager; // @synthesize userActivityManager=_userActivityManager;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) HKDisplayTypeController *displayTypeController; // @synthesize displayTypeController=_displayTypeController;
 @property(readonly, nonatomic) HKDisplayCategoryController *displayCategoryController; // @synthesize displayCategoryController=_displayCategoryController;
 @property(readonly, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *presentationContext;
 - (id)_createHealthStore;
 @property(readonly, nonatomic) WDNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;

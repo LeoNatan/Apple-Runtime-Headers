@@ -17,11 +17,11 @@
     NSMutableDictionary *_lastResendIntervalByIDSIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *lastResendIntervalByIDSIdentifier; // @synthesize lastResendIntervalByIDSIdentifier=_lastResendIntervalByIDSIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *datesForIDSIdentifiersScheduledToBeResent; // @synthesize datesForIDSIdentifiersScheduledToBeResent=_datesForIDSIdentifiersScheduledToBeResent;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resendingQueue; // @synthesize resendingQueue=_resendingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *endpointQueue; // @synthesize endpointQueue=_endpointQueue;
-- (void).cxx_destruct;
 - (void)resendObjectsForIDSIdentifier:(id)arg1;
 - (void)dequeueIDSIdentifierForResend:(id)arg1;
 - (unsigned long long)newResendIntervalForPreviousResendInterval:(unsigned long long)arg1 errorCode:(long long)arg2;

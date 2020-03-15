@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     WDAnnotation *parent;
 }
 
+- (void).cxx_destruct;
 @property WDAnnotation *parent; // @synthesize parent;
 @property BOOL isResolved; // @synthesize isResolved;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)lastParagraphId;
 - (id)paragraphIds;

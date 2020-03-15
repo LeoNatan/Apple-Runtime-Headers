@@ -20,8 +20,8 @@
 }
 
 + (id)dataLoaderWithDefaultConfigurationForPhotoLibrary:(id)arg1;
-@property(retain, nonatomic) id <PHADownloadRequestManagement> downloadRequestManager; // @synthesize downloadRequestManager=_downloadRequestManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PHADownloadRequestManagement> downloadRequestManager; // @synthesize downloadRequestManager=_downloadRequestManager;
 - (void)_inq_cancelAllDownloads;
 - (void)_inq_downloadAssetResource:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cancelAllDownloads;

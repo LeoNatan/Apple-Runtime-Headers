@@ -16,8 +16,8 @@
     int _action;
     int _longPressAction;
     NSString *_name;
-    struct NSString *_source;
-    struct NSString *_type;
+    NSString *_source;
+    NSString *_type;
     NSString *_productName;
     NSString *_manufacturerName;
     NSUUID *_uuid;
@@ -29,8 +29,9 @@
     NSString *_remoteDeviceIdentifier;
 }
 
-+ (id)switchWithAction:(int)arg1 name:(id)arg2 source:(struct NSString *)arg3 type:(struct NSString *)arg4;
++ (id)switchWithAction:(int)arg1 name:(id)arg2 source:(id)arg3 type:(id)arg4;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *remoteDeviceIdentifier; // @synthesize remoteDeviceIdentifier=_remoteDeviceIdentifier;
 @property(copy, nonatomic) NSString *remoteDeviceName; // @synthesize remoteDeviceName=_remoteDeviceName;
 @property(copy, nonatomic) NSString *remoteSwitchIdentifier; // @synthesize remoteSwitchIdentifier=_remoteSwitchIdentifier;
@@ -46,14 +47,13 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int longPressAction; // @synthesize longPressAction=_longPressAction;
 @property(nonatomic) int action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
 @property(readonly, nonatomic) NSString *localizedSourceDescription;
 @property(readonly, nonatomic) _Bool supportsLongPress;
 @property(readonly, nonatomic) _Bool hasLongPressAction;
-- (id)initWithAction:(int)arg1 name:(id)arg2 source:(struct NSString *)arg3 type:(struct NSString *)arg4;
+- (id)initWithAction:(int)arg1 name:(id)arg2 source:(id)arg3 type:(id)arg4;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

@@ -16,11 +16,11 @@
     NSDictionary *_addressComponents;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *addressComponents; // @synthesize addressComponents=_addressComponents;
 @property(copy, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

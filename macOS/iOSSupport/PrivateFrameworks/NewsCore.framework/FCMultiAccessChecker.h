@@ -13,8 +13,8 @@
     NSArray *_accessCheckers;
 }
 
-@property(readonly, copy, nonatomic) NSArray *accessCheckers; // @synthesize accessCheckers=_accessCheckers;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *accessCheckers; // @synthesize accessCheckers=_accessCheckers;
 - (void)checkAccessToItem:(id)arg1 withQualityOfService:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)hasAccessToItem:(id)arg1 blockedReason:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)canSynchronouslyCheckAccessToItem:(id)arg1;

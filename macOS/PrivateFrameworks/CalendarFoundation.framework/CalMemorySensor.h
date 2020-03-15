@@ -16,9 +16,9 @@
     CDUnknownBlockType _fireBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fireBlock; // @synthesize fireBlock=_fireBlock;
 @property(readonly, nonatomic) unsigned long long usage; // @synthesize usage=_usage;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)logMemoryUsageForApp:(id)arg1 memoryUsageWarning:(id)arg2;
 - (void)defaultMessageTraceForApp:(id)arg1;

@@ -15,10 +15,10 @@
     NSCountedSet *_indentationLevels;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCountedSet *indentationLevels; // @synthesize indentationLevels=_indentationLevels;
 @property(readonly, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (unsigned long long)indentationLevelForAction:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

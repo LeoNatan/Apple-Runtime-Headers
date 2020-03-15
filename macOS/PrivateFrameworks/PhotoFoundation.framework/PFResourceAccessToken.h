@@ -12,7 +12,7 @@
 
 @interface PFResourceAccessToken : NSObject <PFResourceAccessClient>
 {
-    struct NSObject *_resource;
+    NSObject *_resource;
     int _stackDepth;
     void *_stack[10];
     char **_symbols;
@@ -20,15 +20,15 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property BOOL invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly) NSObject *resource; // @synthesize resource=_resource;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)backtraceForLog;
-- (void)resourceWillShutdown:(struct NSObject *)arg1;
+- (void)resourceWillShutdown:(id)arg1;
 - (void)dealloc;
-- (id)initWithResource:(struct NSObject *)arg1 reason:(id)arg2;
+- (id)initWithResource:(id)arg1 reason:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

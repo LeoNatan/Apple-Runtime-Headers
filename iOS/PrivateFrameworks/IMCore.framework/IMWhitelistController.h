@@ -24,13 +24,13 @@
 + (id)sharedInstance;
 + (id)STConversation;
 + (_Bool)isContactLimitsFeatureEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DMFApplicationPolicyMonitor *appPolicyMonitor; // @synthesize appPolicyMonitor=_appPolicyMonitor;
 @property(retain, nonatomic) NSMutableDictionary *bundleIDPolicyMap; // @synthesize bundleIDPolicyMap=_bundleIDPolicyMap;
 @property(retain, nonatomic) IMCommLimitsPolicyCache *policyCache; // @synthesize policyCache=_policyCache;
 @property(retain, nonatomic) NSSet *emergencyNumbersSet; // @synthesize emergencyNumbersSet=_emergencyNumbersSet;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *screenTimeDispatchQueue; // @synthesize screenTimeDispatchQueue=_screenTimeDispatchQueue;
 @property(retain, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;
-- (void).cxx_destruct;
 - (void)fetchScreenTimeAppPolicy;
 - (_Bool)allowedToShowAppExtensionWithBundleIdentifier:(id)arg1;
 - (void)providersChangedForProviderManager:(id)arg1;

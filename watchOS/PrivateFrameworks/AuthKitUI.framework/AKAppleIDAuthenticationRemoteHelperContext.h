@@ -22,11 +22,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationRemoteHelperDelegate> remoteHelperDelegate; // @synthesize remoteHelperDelegate=_remoteHelperDelegate;
 @property(retain, nonatomic) AKDevice *companionClientDevice; // @synthesize companionClientDevice=_companionClientDevice;
 @property(nonatomic) _Bool shouldSendDeviceModel; // @synthesize shouldSendDeviceModel=_shouldSendDeviceModel;
 @property(nonatomic) _Bool shouldShowWarranty; // @synthesize shouldShowWarranty=_shouldShowWarranty;
-- (void).cxx_destruct;
 - (void)presentSecondFactorUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentSecondFactorAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)presentNativeRecoveryUIWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;

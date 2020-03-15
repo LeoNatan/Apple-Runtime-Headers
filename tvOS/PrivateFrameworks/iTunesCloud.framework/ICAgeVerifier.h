@@ -16,9 +16,9 @@
     NSDate *_verificationExpirationDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *verificationExpirationDate; // @synthesize verificationExpirationDate=_verificationExpirationDate;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

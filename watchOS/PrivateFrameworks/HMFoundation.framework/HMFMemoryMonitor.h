@@ -19,10 +19,10 @@
 }
 
 + (id)memoryMonitor;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMonitoring) _Bool monitoring; // @synthesize monitoring=_monitoring;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *memoryPressure; // @synthesize memoryPressure=_memoryPressure;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int memoryState; // @synthesize memoryState=_memoryState;
 - (void)stop;
 - (void)start;

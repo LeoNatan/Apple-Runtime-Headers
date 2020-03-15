@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_label;
 }
 
-@property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)description;

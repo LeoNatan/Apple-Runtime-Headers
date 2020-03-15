@@ -50,6 +50,7 @@
     UIPopoverPresentationController *__imagePickerPopoverPresentationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDidPresentPhotoLibrary:) _Bool _didPresentPhotoLibrary; // @synthesize _didPresentPhotoLibrary=__didPresentPhotoLibrary;
 @property(nonatomic, setter=_setImagePickerPopoverPresentationController:) __weak UIPopoverPresentationController *_imagePickerPopoverPresentationController; // @synthesize _imagePickerPopoverPresentationController=__imagePickerPopoverPresentationController;
 @property(nonatomic, setter=_setImagePickerSenderView:) __weak UIView *_imagePickerSenderView; // @synthesize _imagePickerSenderView=__imagePickerSenderView;
@@ -72,7 +73,6 @@
 @property(readonly, nonatomic) PXPhotoKitAssetsDataSourceManager *_dataSourceManager; // @synthesize _dataSourceManager=__dataSourceManager;
 @property(readonly, nonatomic) AEPackageTransport *_packageTransport; // @synthesize _packageTransport=__packageTransport;
 @property(nonatomic) __weak id <AEExplorerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)checkInTile:(void *)arg1 withIdentifier:(struct PXTileIdentifier)arg2;
 - (void *)checkOutTileForIdentifier:(struct PXTileIdentifier)arg1 layout:(id)arg2;
 - (void)_attachGestureRecognizersIfNeeded:(void *)arg1;
@@ -138,7 +138,7 @@
 - (Class)assetsSceneClass;
 - (void)dealloc;
 - (id)initWithPackageTransport:(id)arg1 mediaProvider:(id)arg2 dataSourceManager:(id)arg3 statisticsManager:(id)arg4 additionalGestureRecognizers:(id)arg5;
-- (_Bool)confirmAsset:(id)arg1 matchesView:(id)arg2 alertOnInternal:(_Bool)arg3;
+- (_Bool)confirmAsset:(id)arg1 matchesView:(id)arg2;
 - (void)associateAsset:(id)arg1 withTile:(void *)arg2;
 - (void)ppt_scrollThumbnailGridWithTestName:(id)arg1 fakeExpensiveBadges:(_Bool)arg2;
 - (void)ppt_openPhotoLibrary;

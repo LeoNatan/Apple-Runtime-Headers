@@ -23,8 +23,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak id <BSSettingDescriptionProvider> descriptionProvider; // @synthesize descriptionProvider=_descriptionProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BSSettingDescriptionProvider> descriptionProvider; // @synthesize descriptionProvider=_descriptionProvider;
 - (id)basicDescriptionWithPrefix:(id)arg1;
 - (id)_valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3 multilinePrefix:(id)arg4;
 - (id)_keyDescriptionForSetting:(unsigned int)arg1;

@@ -15,10 +15,10 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) BOOL allowsSelfSizing; // @synthesize allowsSelfSizing=_allowsSelfSizing;
-- (void).cxx_destruct;
 - (void)_updateContentViewControllerHeight;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;

@@ -16,10 +16,10 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, nonatomic) id <NSXPCListenerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)initWithDelegate:(id)arg1 serviceName:(id)arg2 displayName:(id)arg3;
 - (id)init;
 

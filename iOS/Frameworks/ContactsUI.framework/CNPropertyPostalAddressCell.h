@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <CNCancelable> _tileGeneratorToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNCancelable> tileGeneratorToken; // @synthesize tileGeneratorToken=_tileGeneratorToken;
 @property(retain, nonatomic) UIImageView *mapImageView; // @synthesize mapImageView=_mapImageView;
 @property(nonatomic) _Bool shouldUseMapTiles; // @synthesize shouldUseMapTiles=_shouldUseMapTiles;
-- (void).cxx_destruct;
 - (void)tapGesture:(id)arg1;
 - (void)setMapImage:(id)arg1;
 - (id)variableConstraints;

@@ -16,8 +16,8 @@
 }
 
 + (id)predicateWithControlItemClass:(Class)arg1;
-@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) unsigned long long maximumNumberOfMatches;
 - (id)matchingControlItemsForControlItems:(id)arg1;
 - (_Bool)matchesControlItem:(id)arg1;

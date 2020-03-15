@@ -30,12 +30,12 @@
 + (unsigned long long)counterpartForTransportType:(unsigned long long)arg1;
 + (BOOL)isLikelyToReturnETAForLocation:(id)arg1;
 + (double)_maxDistanceToRequestETA;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL fetchAllTransportTypes; // @synthesize fetchAllTransportTypes=_fetchAllTransportTypes;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(nonatomic) __weak NSObject<MKQuickRouteConfigurableView> *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <MKQuickRouteTransportTypeFinding> transportTypeFinder; // @synthesize transportTypeFinder=_transportTypeFinder;
 @property(nonatomic) __weak id <MKQuickRouteManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isOnlyDriving;
 - (BOOL)haveETAsForPreferredTransportType:(unsigned long long)arg1;
 - (unsigned long long)guessTransportTypeForDistance:(double)arg1 preferredDirectionsType:(unsigned long long)arg2;

@@ -16,12 +16,12 @@
     PKPaymentWebService *_paymentWebService;
 }
 
-@property(retain, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
 - (void)appletsDidUpdate;
 - (void)completePassUpgradeForPassUniqueID:(id)arg1 withError:(id)arg2;
 - (void)downloadUpgradedPassForPassUniqueID:(id)arg1 atURL:(id)arg2;
-- (void)requestPassUpgrade:(id)arg1 pass:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestPassUpgrade:(id)arg1 pass:(id)arg2 diagnosticReason:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithWebService:(id)arg1 addPaymentPassToLibrary:(CDUnknownBlockType)arg2;
 
 @end

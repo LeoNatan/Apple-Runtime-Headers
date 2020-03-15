@@ -28,11 +28,11 @@ __attribute__((visibility("hidden")))
 
 + (struct CGPoint)offsetBetweenStackedThumbnails;
 + (double)thumbnailYOffset;
+- (void).cxx_destruct;
 @property(nonatomic) long long tileContainerType; // @synthesize tileContainerType=_tileContainerType;
 @property(nonatomic) __weak NSVisualTabPickerGridView *visualTabPickerGridView; // @synthesize visualTabPickerGridView=_visualTabPickerGridView;
 @property(nonatomic) __weak id <NSVisualTabPickerTileContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NSVisualTabPickerTileContainerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (struct CATransform3D)_tile3DTransform;
 - (struct CGRect)_tileFrameForTileWithIndex:(unsigned long long)arg1;
 - (void)_updateTilesLayout;

@@ -24,11 +24,11 @@
 + (id)buttonWithTitle:(id)arg1 glyphData:(id)arg2 action:(id)arg3 identifier:(id)arg4;
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2 identifier:(id)arg3;
 + (id)buttonWithTitle:(id)arg1 action:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) BBAction *action; // @synthesize action=_action;
 @property(copy, nonatomic) BBImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

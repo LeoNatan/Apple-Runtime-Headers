@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HMDSelectedAudioParameters *audioParameters; // @synthesize audioParameters=_audioParameters;
 @property(readonly, copy, nonatomic) HMDSelectedVideoParameters *videoParameters; // @synthesize videoParameters=_videoParameters;
 @property(readonly, copy, nonatomic) HMDSessionControl *sessionControl; // @synthesize sessionControl=_sessionControl;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;

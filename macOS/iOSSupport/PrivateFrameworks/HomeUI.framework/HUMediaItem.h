@@ -13,8 +13,8 @@
     MPPlaybackArchiveDisplayProperties *_playbackArchiveDisplayProperties;
 }
 
-@property(retain, nonatomic) MPPlaybackArchiveDisplayProperties *playbackArchiveDisplayProperties; // @synthesize playbackArchiveDisplayProperties=_playbackArchiveDisplayProperties;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPPlaybackArchiveDisplayProperties *playbackArchiveDisplayProperties; // @synthesize playbackArchiveDisplayProperties=_playbackArchiveDisplayProperties;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithPlaybackArchiveDisplayProperties:(id)arg1;
 

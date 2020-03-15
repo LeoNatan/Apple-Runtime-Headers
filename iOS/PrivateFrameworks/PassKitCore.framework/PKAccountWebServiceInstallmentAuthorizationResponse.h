@@ -13,8 +13,8 @@
     NSString *_authorizationToken;
 }
 
-@property(readonly, copy, nonatomic) NSString *authorizationToken; // @synthesize authorizationToken=_authorizationToken;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *authorizationToken; // @synthesize authorizationToken=_authorizationToken;
 - (id)initWithData:(id)arg1;
 
 @end

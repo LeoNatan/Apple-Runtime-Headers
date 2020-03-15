@@ -40,6 +40,7 @@
     CDUnknownBlockType _cdpDeletionCompletion;
 }
 
+- (void).cxx_destruct;
 @property BOOL preflightShouldSignOut; // @synthesize preflightShouldSignOut=_preflightShouldSignOut;
 @property BOOL preflightDialogIsDone; // @synthesize preflightDialogIsDone=_preflightDialogIsDone;
 @property(copy, nonatomic) CDUnknownBlockType cdpDeletionCompletion; // @synthesize cdpDeletionCompletion=_cdpDeletionCompletion;
@@ -59,7 +60,6 @@
 @property(retain) MMAuthenticatingPasswordSheet *applicantDialog; // @synthesize applicantDialog=_applicantDialog;
 @property(retain) MMModalDialog *pendingApprovalDialog; // @synthesize pendingApprovalDialog=_pendingApprovalDialog;
 @property(retain) MMTermsOfServiceController *tosController; // @synthesize tosController=_tosController;
-- (void).cxx_destruct;
 - (void)_displayErrorAlertIfNeeded:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)mmCSCRecoveryControllerDidCancel:(id)arg1;
 - (void)mmCSCRecoveryControllerDidEnd:(id)arg1 error:(id)arg2;

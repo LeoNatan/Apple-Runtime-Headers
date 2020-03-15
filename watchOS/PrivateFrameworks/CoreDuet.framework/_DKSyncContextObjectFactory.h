@@ -16,9 +16,9 @@
 }
 
 + (id)objectFactoryForClass:(Class)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class class; // @synthesize class=_class;
 @property(readonly, nonatomic) _DKSyncContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)instance;
 - (id)initWithContext:(id)arg1 fabricateClass:(Class)arg2;
 

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) TIAutocorrectionList *candidates; // @synthesize candidates=_candidates;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TIAutocorrectionList *candidates; // @synthesize candidates=_candidates;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCandidates:(id)arg1 keyboardState:(id)arg2;

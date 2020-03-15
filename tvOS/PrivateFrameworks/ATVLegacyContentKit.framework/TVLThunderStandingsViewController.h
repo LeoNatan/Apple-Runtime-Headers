@@ -27,6 +27,7 @@
     NSArray *_sectionHeaderViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionHeaderViews; // @synthesize sectionHeaderViews=_sectionHeaderViews;
 @property(nonatomic) unsigned long long gradientState; // @synthesize gradientState=_gradientState;
 @property(retain, nonatomic) CAGradientLayer *scrollGradient; // @synthesize scrollGradient=_scrollGradient;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSArray *sectionDefinitions; // @synthesize sectionDefinitions=_sectionDefinitions;
 @property(retain, nonatomic) UIView *collectionContainerView; // @synthesize collectionContainerView=_collectionContainerView;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)_updateWithDictionary:(id)arg1;
 - (id)_imageProxyForBrandingImage;
 - (void)_addProxyToBrandingImage;

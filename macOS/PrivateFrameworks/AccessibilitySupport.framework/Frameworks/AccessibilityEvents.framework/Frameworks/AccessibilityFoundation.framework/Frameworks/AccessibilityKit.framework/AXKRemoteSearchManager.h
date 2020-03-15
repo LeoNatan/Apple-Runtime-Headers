@@ -14,8 +14,8 @@
 }
 
 + (BOOL)elementSupportsSearch:(id)arg1;
-@property(nonatomic) __weak AXKApplicationController *_applicationController; // @synthesize _applicationController=__applicationController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AXKApplicationController *_applicationController; // @synthesize _applicationController=__applicationController;
 - (id)previousNavigableResult;
 - (id)nextNavigableResult;
 - (id)previousResult;

@@ -18,10 +18,10 @@
 + (id)keyPathsForValuesAffectingDisplayState;
 + (id)keyPathsForValuesAffectingVolumeName;
 + (id)guiMonitorKeys;
+- (void).cxx_destruct;
 @property(retain) NSString *humanName; // @synthesize humanName;
 @property(retain) NSString *shareName; // @synthesize shareName;
 @property(readonly) long long sharedSystems; // @synthesize sharedSystems;
-- (void).cxx_destruct;
 - (void)pressedActionButton:(id)arg1;
 - (id)availableActionLabel;
 - (id)displayState;

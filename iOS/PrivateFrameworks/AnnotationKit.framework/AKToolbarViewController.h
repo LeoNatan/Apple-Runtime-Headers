@@ -18,8 +18,8 @@
 + (id)imageForToolbarButtonItemOfType:(unsigned long long)arg1;
 + (id)_imageNameForToolbarButtonItemOfType:(unsigned long long)arg1;
 + (id)titleForToolbarButtonItemOfType:(unsigned long long)arg1;
-@property __weak AKController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak AKController *controller; // @synthesize controller=_controller;
 - (id)_toolbarButtonItemOfType:(unsigned long long)arg1;
 - (void)setStrokeColorUIDisplayToColor:(id)arg1;
 - (void)setFillColorUIDisplayToColor:(id)arg1;

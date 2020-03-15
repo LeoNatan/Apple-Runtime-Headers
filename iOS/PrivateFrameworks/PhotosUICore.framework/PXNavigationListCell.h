@@ -16,9 +16,9 @@
 
 + (id)_symbolConfigurationForFont:(id)arg1;
 + (id)cellFont;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) id <PXNavigationListItem> listItem; // @synthesize listItem=_listItem;
-- (void).cxx_destruct;
 - (id)_currentCellColor;
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;

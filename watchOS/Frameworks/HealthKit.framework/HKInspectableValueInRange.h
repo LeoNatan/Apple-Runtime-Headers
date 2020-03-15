@@ -21,12 +21,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)valueInRangeWithLow:(id)arg1 high:(id)arg2 currentValue:(id)arg3 unit:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(readonly, nonatomic) HKInspectableValueCollection *currentValue; // @synthesize currentValue=_currentValue;
 @property(readonly, nonatomic) HKInspectableValue *highValue; // @synthesize highValue=_highValue;
 @property(readonly, nonatomic) HKInspectableValue *lowValue; // @synthesize lowValue=_lowValue;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

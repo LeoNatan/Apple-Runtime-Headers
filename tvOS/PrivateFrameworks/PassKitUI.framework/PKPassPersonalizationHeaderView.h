@@ -12,8 +12,8 @@
     unsigned long long _state;
 }
 
-@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void)_configureForCurrentState;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

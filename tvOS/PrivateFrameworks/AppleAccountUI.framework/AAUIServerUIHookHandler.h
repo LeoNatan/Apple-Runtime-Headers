@@ -18,9 +18,9 @@
     NSArray *_serverHooks;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *serverHooks; // @synthesize serverHooks=_serverHooks;
 @property(retain, nonatomic) UIViewController *presentingControllerOverride; // @synthesize presentingControllerOverride=_presentingControllerOverride;
-- (void).cxx_destruct;
 - (id)_refreshRequestWithInfo:(id)arg1 initiatingObjectModel:(id)arg2 attributes:(id)arg3;
 - (void)_reloadUIWithInfo:(id)arg1 attributes:(id)arg2 initiatingObjectModel:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)refreshWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

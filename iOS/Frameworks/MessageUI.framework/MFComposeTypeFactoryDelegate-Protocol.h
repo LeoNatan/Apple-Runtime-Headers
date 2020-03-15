@@ -29,6 +29,7 @@
 - (id <MFMailAccountProxyGenerator>)accountProxyGenerator;
 
 @optional
+- (void)setOriginalMessageWasEncrypted:(_Bool)arg1;
 - (unsigned long long)contentVariationIndex;
 - (void)contentDidChange;
 - (void)addSignature:(_Bool)arg1;

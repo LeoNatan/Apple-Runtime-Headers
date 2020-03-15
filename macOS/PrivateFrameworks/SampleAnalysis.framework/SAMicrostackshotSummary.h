@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _onACCount;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long onACCount; // @synthesize onACCount=_onACCount;
 @property unsigned long long onBatteryCount; // @synthesize onBatteryCount=_onBatteryCount;
 @property unsigned long long userIdleCount; // @synthesize userIdleCount=_userIdleCount;
 @property unsigned long long userActiveCount; // @synthesize userActiveCount=_userActiveCount;
 @property(readonly) NSMutableDictionary *microstackshotStateCounts; // @synthesize microstackshotStateCounts=_microstackshotStateCounts;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

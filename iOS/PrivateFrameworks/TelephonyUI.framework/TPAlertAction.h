@@ -14,8 +14,8 @@
 + (id)preferencesURLForClassName:(id)arg1;
 + (id)actionWithType:(unsigned long long)arg1;
 + (id)actionWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3;
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 
 @end
 

@@ -19,11 +19,11 @@
 }
 
 + (id)providerWithConnectionInfo:(id)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *connectionListener; // @synthesize connectionListener=_connectionListener;
 @property(retain, nonatomic) NSMutableSet *clients; // @synthesize clients=_clients;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) CalXPCConnectionInfo *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, copy) NSString *description;
 - (void)stopListening;

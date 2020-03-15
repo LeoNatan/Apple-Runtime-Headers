@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_searchFieldRightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *searchFieldRightConstraint; // @synthesize searchFieldRightConstraint=_searchFieldRightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *searchFieldLeftConstraint; // @synthesize searchFieldLeftConstraint=_searchFieldLeftConstraint;
 @property(retain, nonatomic) _UIDocumentSearchListController *resultsController; // @synthesize resultsController=_resultsController;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
-- (void).cxx_destruct;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchCanceled:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;

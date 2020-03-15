@@ -18,11 +18,11 @@
     struct CGVector _pointsOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly) struct CGVector pointsOffset; // @synthesize pointsOffset=_pointsOffset;
 @property(readonly) struct CGVector normalizedOffset; // @synthesize normalizedOffset=_normalizedOffset;
 @property(readonly) XCUICoordinate *coordinate; // @synthesize coordinate=_coordinate;
 @property(readonly) XCUIElement *element; // @synthesize element=_element;
-- (void).cxx_destruct;
 @property(readonly) struct CGPoint screenPoint;
 - (struct CGPoint)_untransformedScreenPoint;
 - (id)device;
@@ -37,6 +37,7 @@
 - (void)pressForDuration:(double)arg1;
 - (void)doubleTap;
 - (void)tap;
+- (void)pressForDuration:(double)arg1 thenDragToCoordinate:(id)arg2 withVelocity:(double)arg3 thenHoldForDuration:(double)arg4;
 - (void)_pressWithPressure:(double)arg1 pressDuration:(double)arg2 holdDuration:(double)arg3 releaseDuration:(double)arg4 activityTitle:(id)arg5;
 - (void)pressWithPressure:(double)arg1 duration:(double)arg2;
 - (void)forcePress;
@@ -46,6 +47,7 @@
 - (void)doubleClick;
 - (void)click;
 - (void)hover;
+- (void)clickForDuration:(double)arg1 thenDragToCoordinate:(id)arg2 withVelocity:(double)arg3 thenHoldForDuration:(double)arg4;
 - (void)_clickForDuration:(double)arg1 thenDragToCoordinate:(id)arg2 dragVelocity:(double)arg3;
 - (void)forceClick;
 

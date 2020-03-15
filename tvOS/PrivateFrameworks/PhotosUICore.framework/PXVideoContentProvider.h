@@ -15,10 +15,10 @@
     NSString *_contentIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *contentIdentifier; // @synthesize contentIdentifier=_contentIdentifier;
 @property(nonatomic) double loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 @property(retain, nonatomic) PXVideoContentProviderLoadingResult *loadingResult; // @synthesize loadingResult=_loadingResult;
-- (void).cxx_destruct;
 - (void)cancelLoading;
 - (void)beginLoadingWithPriority:(long long)arg1;
 - (id)mutableChangeObject;

@@ -69,6 +69,7 @@
 + (id)springAnimationWithKeyPath:(id)arg1 speed:(float)arg2;
 + (id)meshTransform;
 + (_Bool)supportsForceTouch;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasMovedToWindow; // @synthesize hasMovedToWindow=_hasMovedToWindow;
 @property(nonatomic, getter=isScaledDown) _Bool scaledDown; // @synthesize scaledDown=_scaledDown;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
@@ -118,7 +119,6 @@
 @property(nonatomic) _Bool canRotate; // @synthesize canRotate=_canRotate;
 @property(nonatomic) _Bool canScale; // @synthesize canScale=_canScale;
 @property(nonatomic) __weak id <CKBrowserDragViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)reversePeelAnimationToPoint:(struct CGPoint)arg1 forPlacement:(_Bool)arg2 shouldShrink:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)animateScaleDown;
 - (void)animatePeelWithCompletion:(CDUnknownBlockType)arg1;

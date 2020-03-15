@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UIShapeView *_shadowMaskView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIShapeView *shadowMaskView; // @synthesize shadowMaskView=_shadowMaskView;
 @property(nonatomic) BOOL punchOut; // @synthesize punchOut=_punchOut;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIBezierPath *shadowPath;
 @property(nonatomic) struct CGSize shadowOffset;
 @property(nonatomic) double shadowOpacity;

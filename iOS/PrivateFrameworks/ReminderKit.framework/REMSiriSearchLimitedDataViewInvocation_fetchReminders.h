@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSNumber *hasLocation; // @synthesize hasLocation=_hasLocation;
 @property(readonly, nonatomic) NSNumber *completed; // @synthesize completed=_completed;
 @property(readonly, nonatomic) NSDate *dueBefore; // @synthesize dueBefore=_dueBefore;
 @property(readonly, nonatomic) NSDate *dueAfter; // @synthesize dueAfter=_dueAfter;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

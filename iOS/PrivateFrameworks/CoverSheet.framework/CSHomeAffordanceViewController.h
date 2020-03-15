@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <CoverSheet/CSCoverSheetViewControllerBase.h>
 
 @class CSHomeAffordanceView, NSMutableArray, SBFHomeGrabberSettings, UIView;
 
-@interface CSHomeAffordanceViewController : UIViewController
+@interface CSHomeAffordanceViewController : CSCoverSheetViewControllerBase
 {
     UIView *_counterRotationView;
     NSMutableArray *_rotationWrapperViews;
@@ -18,15 +18,17 @@
     struct CGPoint _homeAffordanceOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint homeAffordanceOffset; // @synthesize homeAffordanceOffset=_homeAffordanceOffset;
 @property(readonly, nonatomic) CSHomeAffordanceView *homeAffordanceView; // @synthesize homeAffordanceView=_homeAffordanceView;
-- (void).cxx_destruct;
 - (id)_addWrapperViewWithOrientation:(long long)arg1;
 - (struct CGRect)_homeAffordanceRestingFrame;
 - (void)_layoutHomeAffordance;
 - (void)setLegibilitySettings:(id)arg1;
 - (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

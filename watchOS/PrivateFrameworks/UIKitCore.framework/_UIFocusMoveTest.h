@@ -34,6 +34,7 @@
     double _movementDelay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UIFocusMoveTestDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) _Bool resetsFocusBeforeIterations; // @synthesize resetsFocusBeforeIterations=_resetsFocusBeforeIterations;
 @property(nonatomic) unsigned int movementHeading; // @synthesize movementHeading=_movementHeading;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned int maximumMovesPerIteration; // @synthesize maximumMovesPerIteration=_maximumMovesPerIteration;
 @property(nonatomic) unsigned int numberOfIterations; // @synthesize numberOfIterations=_numberOfIterations;
 @property(nonatomic) __weak id <UIFocusEnvironment> containerFocusEnvironment; // @synthesize containerFocusEnvironment=_containerFocusEnvironment;
-- (void).cxx_destruct;
 - (_Bool)_dataSourceShouldResetFocusBeforeIteration:(unsigned int)arg1;
 - (unsigned int)_dataSourceHeadingForMove:(unsigned int)arg1 duringIteration:(unsigned int)arg2;
 - (double)_dataSourceDelayBeforeMove:(unsigned int)arg1 duringIteration:(unsigned int)arg2;

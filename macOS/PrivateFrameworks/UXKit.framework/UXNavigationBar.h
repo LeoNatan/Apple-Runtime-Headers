@@ -36,6 +36,7 @@
 }
 
 + (id)_itemKeyPathsToObserve;
+- (void).cxx_destruct;
 @property(nonatomic) double centerYOffset; // @synthesize centerYOffset=_centerYOffset;
 @property(nonatomic) double rightInteritemSpacing; // @synthesize rightInteritemSpacing=_rightInteritemSpacing;
 @property(nonatomic) double leftInteritemSpacing; // @synthesize leftInteritemSpacing=_leftInteritemSpacing;
@@ -56,7 +57,6 @@
 @property(nonatomic) struct NSEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 @property(nonatomic) __weak id <UXNavigationBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setNeedsRecalcuateWindowKeyViewLoop;
 - (void)recalculateKeyViewLoop;
 - (void)_completeInteractiveTransition:(BOOL)arg1 duration:(double)arg2;

@@ -16,9 +16,9 @@
 
 + (id)defaultPushOptions:(id)arg1;
 + (id)defaultFetchOptions:(id)arg1 cloudConflict:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCloudConflict) BOOL cloudConflict; // @synthesize cloudConflict=_cloudConflict;
 @property(readonly, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_initWithZone:(id)arg1 cloudConflict:(BOOL)arg2;
 

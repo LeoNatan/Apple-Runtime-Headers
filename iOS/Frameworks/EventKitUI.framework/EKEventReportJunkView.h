@@ -15,8 +15,8 @@
     _Bool _isLargeDayView;
 }
 
-@property _Bool isLargeDayView; // @synthesize isLargeDayView=_isLargeDayView;
 - (void).cxx_destruct;
+@property _Bool isLargeDayView; // @synthesize isLargeDayView=_isLargeDayView;
 - (void)tapped:(id)arg1;
 - (id)initWithViewController:(id)arg1;
 

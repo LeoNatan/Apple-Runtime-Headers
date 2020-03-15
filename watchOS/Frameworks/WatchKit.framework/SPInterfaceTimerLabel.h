@@ -22,6 +22,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool checkedIsInNotificationUI; // @synthesize checkedIsInNotificationUI=_checkedIsInNotificationUI;
 @property(copy, nonatomic) NSNumber *forcedTimeInterval; // @synthesize forcedTimeInterval=_forcedTimeInterval;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) _Bool timerEnabled; // @synthesize timerEnabled=_timerEnabled;
 @property(retain, nonatomic) NSDateComponentsFormatter *formatter; // @synthesize formatter=_formatter;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInNotificationUI) _Bool inNotificationUI; // @synthesize inNotificationUI=_inNotificationUI;
 - (void)contentSizeCategoryDidChange;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;

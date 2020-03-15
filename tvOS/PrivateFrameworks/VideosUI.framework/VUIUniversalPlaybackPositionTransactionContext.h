@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_changes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *changes; // @synthesize changes=_changes;
 @property(readonly, nonatomic) VUIUPPClientState *clientState; // @synthesize clientState=_clientState;
-- (void).cxx_destruct;
 - (id)lastSyncedDomainVersion;
 - (id)initWithClientState:(id)arg1 changes:(id)arg2;
 

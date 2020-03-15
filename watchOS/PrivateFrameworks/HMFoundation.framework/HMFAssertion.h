@@ -18,9 +18,9 @@
 
 + (id)logCategory;
 + (id)bundleIdentifier;
+- (void).cxx_destruct;
 @property(getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)mark;
 - (void)invalidate;

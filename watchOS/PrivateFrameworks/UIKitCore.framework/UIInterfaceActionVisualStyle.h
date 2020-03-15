@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)idiomSpecificStyleForTraitCollection:(id)arg1 presentationStyle:(int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIInterfaceActionOverrideVisualStyle *visualStyleOverride; // @synthesize visualStyleOverride=_visualStyleOverride;
 @property(copy, nonatomic) CDUnknownBlockType fontForViewStateBlock; // @synthesize fontForViewStateBlock=_fontForViewStateBlock;
 @property(retain, nonatomic) UIInterfaceActionConcreteVisualStyle<UIInterfaceActionConcreteVisualStyleImpl> *concreteVisualStyle; // @synthesize concreteVisualStyle=_concreteVisualStyle;
 @property(readonly, nonatomic) UIInterfaceActionGroupViewState *groupViewState; // @synthesize groupViewState=_groupViewState;
-- (void).cxx_destruct;
 - (void)configureAttributesForActionRepresentationView:(id)arg1 actionViewState:(id)arg2;
 - (id)actionPropertiesAffectingActionRepresentationViewStyling;
 - (void)configureAttributesForImageView:(id)arg1 imageProperty:(id)arg2 actionViewState:(id)arg3;

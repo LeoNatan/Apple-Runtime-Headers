@@ -40,6 +40,7 @@
     HDPairedSyncManager *_pairedSyncManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDPairedSyncManager *pairedSyncManager; // @synthesize pairedSyncManager=_pairedSyncManager;
 @property _Bool enablePeriodicSyncTimer; // @synthesize enablePeriodicSyncTimer=_enablePeriodicSyncTimer;
 @property double restoreTimeout; // @synthesize restoreTimeout=_restoreTimeout;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(retain) HKNanoSyncPairedDevicesSnapshot *pairedDevicesSnapshot; // @synthesize pairedDevicesSnapshot=_pairedDevicesSnapshot;
-- (void).cxx_destruct;
 - (void)foregroundClientProcessesDidChange:(id)arg1 previouslyForegroundBundleIdentifiers:(id)arg2;
 - (void)_didReceiveChangeRequest;
 - (id)diagnosticDescription;

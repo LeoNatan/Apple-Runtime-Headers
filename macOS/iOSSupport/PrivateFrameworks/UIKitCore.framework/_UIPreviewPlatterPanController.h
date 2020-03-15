@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     CDStruct_6f807b77 _menuAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIVelocityIntegrator *velocityIntegrator; // @synthesize velocityIntegrator=_velocityIntegrator;
 @property(nonatomic) __weak UIView *actionsView; // @synthesize actionsView=_actionsView;
 @property(nonatomic) __weak UIView *platterView; // @synthesize platterView=_platterView;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(nonatomic) __weak id <_UIPreviewPlatterPanControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updatePlatterGestureDebugUIWithGesture:(id)arg1 invalidate:(BOOL)arg2;
 - (struct CGPoint)_rubberBandedTranslationForGestureTranslation:(struct CGPoint)arg1;
 - (BOOL)_initialPointInPlatterIsValid;

@@ -16,11 +16,11 @@
     PUICStatusBarTextAttributes *_globalContextTextAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICStatusBarTextAttributes *globalContextTextAttributes; // @synthesize globalContextTextAttributes=_globalContextTextAttributes;
 @property(retain, nonatomic) PUICStatusBarTextAttributes *appContextTextAttributes; // @synthesize appContextTextAttributes=_appContextTextAttributes;
 @property(nonatomic) int deviceVariant; // @synthesize deviceVariant=_deviceVariant;
 @property(nonatomic) float height; // @synthesize height=_height;
-- (void).cxx_destruct;
 
 @end
 

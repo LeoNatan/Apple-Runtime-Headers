@@ -19,10 +19,10 @@
 + (id)zoneSubscriptionName:(id)arg1;
 + (id)zoneSharedRootRecordName;
 + (id)zoneRootRecordName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *perUserShareGroups; // @synthesize perUserShareGroups=_perUserShareGroups;
 @property(retain, nonatomic) HMDCloudShareGroup *shareGroup; // @synthesize shareGroup=_shareGroup;
 @property(readonly, nonatomic, getter=isSharedHome) BOOL sharedHome; // @synthesize sharedHome=_sharedHome;
-- (void).cxx_destruct;
 - (void)setServerChangeToken:(id)arg1;
 - (id)createCloudZoneChangeTemporaryCache:(BOOL)arg1;
 - (void)updateCloudRecord:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

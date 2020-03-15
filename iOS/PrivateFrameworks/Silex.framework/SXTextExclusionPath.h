@@ -29,6 +29,7 @@
     struct CGRect _exclusionRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect exclusionRect; // @synthesize exclusionRect=_exclusionRect;
 @property(readonly, nonatomic) SXTextExclusionPathWrapper *wrapper; // @synthesize wrapper=_wrapper;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) struct CGPoint position; // @synthesize position=_position;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) struct CGPoint actualPosition; // @synthesize actualPosition=_actualPosition;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBezierPath *path;
 - (void)callCompletionBlock;
 - (void)adjustYPositionWithCurrentPosition:(struct CGPoint)arg1;

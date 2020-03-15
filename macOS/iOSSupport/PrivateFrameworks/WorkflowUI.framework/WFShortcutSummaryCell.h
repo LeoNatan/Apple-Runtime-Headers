@@ -15,10 +15,10 @@
     UIStackView *_mainStackView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIStackView *mainStackView; // @synthesize mainStackView=_mainStackView;
 @property(retain, nonatomic) UILabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
 @property(retain, nonatomic) WFRowOfIconsView *actionIconsView; // @synthesize actionIconsView=_actionIconsView;
-- (void).cxx_destruct;
 - (void)addActionViewIfNeeded;
 - (void)removeActionViewIfNeeded;
 - (void)configureWithTitle:(id)arg1 actionIcons:(id)arg2;

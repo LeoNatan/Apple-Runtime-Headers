@@ -22,8 +22,8 @@
     NSString *_identifier;
 }
 
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)_descriptionForErrorCode:(int)arg1;
 - (id)_errorWithCode:(int)arg1;
 - (void)_postFinishNotificationWithError:(id)arg1;

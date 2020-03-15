@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSBodyType *NewBodyContent; // @synthesize NewBodyContent=_NewBodyContent;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSBodyType *NewBodyContent; // @synthesize NewBodyContent=_NewBodyContent;
 
 @end
 

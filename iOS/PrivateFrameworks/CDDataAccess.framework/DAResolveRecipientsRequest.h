@@ -17,12 +17,12 @@
     NSDate *_endTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) _Bool retrieveAvailablilty; // @synthesize retrieveAvailablilty=_retrieveAvailablilty;
 @property(nonatomic) _Bool retrieveCertificates; // @synthesize retrieveCertificates=_retrieveCertificates;
 @property(retain, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

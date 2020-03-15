@@ -10,15 +10,15 @@
 {
 }
 
-+ (id)accountIdentifierForAccount:(struct NFAccount *)arg1;
-+ (struct NFAccount *)legacyAccountForLocalAccountWithContext:(struct NSManagedObjectContext *)arg1;
-+ (struct NFAccount *)legacyAccountForPrimaryICloudAccountWithContext:(struct NSManagedObjectContext *)arg1;
-+ (struct NFAccount *)accountForAccountIdentifier:(id)arg1 context:(struct NSManagedObjectContext *)arg2;
-+ (BOOL)isLegacyLocalAccount:(struct NFAccount *)arg1;
-+ (struct NFAccount *)legacyAccountForLegacyAccountType:(long long)arg1 context:(struct NSManagedObjectContext *)arg2;
++ (id)accountIdentifierForAccount:(id)arg1;
++ (id)legacyAccountForLocalAccountWithContext:(id)arg1;
++ (id)legacyAccountForPrimaryICloudAccountWithContext:(id)arg1;
++ (id)accountForAccountIdentifier:(id)arg1 context:(id)arg2;
++ (BOOL)isLegacyLocalAccount:(id)arg1;
++ (id)legacyAccountForLegacyAccountType:(long long)arg1 context:(id)arg2;
 + (BOOL)didChooseToMigrateLegacyAccountType:(long long)arg1;
-+ (BOOL)didChooseToMigrateAccount:(struct NFAccount *)arg1 context:(struct NSManagedObjectContext *)arg2;
-+ (BOOL)didChooseToMigrateAccountsForContext:(struct NSManagedObjectContext *)arg1 forAccountPassingTest:(CDUnknownBlockType)arg2;
++ (BOOL)didChooseToMigrateAccount:(id)arg1 context:(id)arg2;
++ (BOOL)didChooseToMigrateAccountsForContext:(id)arg1 forAccountPassingTest:(CDUnknownBlockType)arg2;
 
 @end
 

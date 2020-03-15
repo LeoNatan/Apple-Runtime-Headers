@@ -20,6 +20,7 @@
     double _sampleRate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSArray *effectsChain; // @synthesize effectsChain=_effectsChain;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned int currentSampleIndex; // @synthesize currentSampleIndex=_currentSampleIndex;
 @property(nonatomic) unsigned int length; // @synthesize length=_length;
 @property(readonly, nonatomic) vector_3203cf93 *sampleBuffer; // @synthesize sampleBuffer=_sampleBuffer;
-- (void).cxx_destruct;
 - (void)normalizeAudio;
 - (id)description;
 - (void)processEffects:(unsigned int)arg1;

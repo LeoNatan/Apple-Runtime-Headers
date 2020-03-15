@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CNContactStore *_contactStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) CNContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (void)performActionWithSender:(id)arg1;
 - (BOOL)canPerformAction;
 - (BOOL)isDestructive;

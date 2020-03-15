@@ -14,9 +14,9 @@
     NSArray *_userIdentityLookupInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *userIdentityLookupInfos; // @synthesize userIdentityLookupInfos=_userIdentityLookupInfos;
 @property(copy, nonatomic) CDUnknownBlockType discoverUserIdentitiesProgressBlock; // @synthesize discoverUserIdentitiesProgressBlock=_discoverUserIdentitiesProgressBlock;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;
 - (void)_discoverIdentitiesWithLookupInfos:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

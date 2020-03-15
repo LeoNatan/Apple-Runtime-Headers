@@ -15,8 +15,8 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
-@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) NSArray *personNames;
 @property(readonly, nonatomic) NSArray *keywordValues;
 - (id)shutterSpeedValuesWithFormatter:(id)arg1;

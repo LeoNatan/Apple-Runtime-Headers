@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool trackLiverpool; // @synthesize trackLiverpool=_trackLiverpool;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain, nonatomic) BDSICloudIdentityToken *currentToken; // @synthesize currentToken=_currentToken;
 @property(retain, nonatomic) NSURL *plistURL; // @synthesize plistURL=_plistURL;
 @property(retain, nonatomic) NSMutableDictionary *plistContents; // @synthesize plistContents=_plistContents;
-- (void).cxx_destruct;
 - (void)acknowledgeiCloudIdentity;
 - (_Bool)didUnacknowledgediCloudLogoutOccur;
 - (void)forceUpdateTokenWithString:(id)arg1;

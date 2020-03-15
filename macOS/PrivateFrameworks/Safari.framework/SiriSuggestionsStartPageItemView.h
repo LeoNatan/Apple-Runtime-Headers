@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_expandAnimation;
+- (void).cxx_destruct;
 @property(nonatomic) double headerBottomMargin; // @synthesize headerBottomMargin=_headerBottomMargin;
 @property(nonatomic) long long headerStyle; // @synthesize headerStyle=_headerStyle;
 @property(retain, nonatomic) NSView *leadingAccessoryView; // @synthesize leadingAccessoryView=_leadingAccessoryView;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(retain, nonatomic) NSView *hostedView; // @synthesize hostedView=_hostedView;
 @property(nonatomic) __weak id <SiriSuggestionsStartPageItemViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateTopSpace;
 - (void)_applyHeaderFontStyling;
 - (void)setContentHeight:(double)arg1 animated:(BOOL)arg2;

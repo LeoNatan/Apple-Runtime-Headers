@@ -19,8 +19,8 @@
     NSString *_name;
 }
 
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void)_resetCategory:(id)arg1;
 - (void)_setSignpostPersisted:(BOOL)arg1 forCategory:(id)arg2;
 - (void)_setSignpostEnabled:(BOOL)arg1 forCategory:(id)arg2;

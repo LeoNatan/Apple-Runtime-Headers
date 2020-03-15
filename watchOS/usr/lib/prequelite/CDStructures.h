@@ -8,24 +8,6 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct PQLResultSet {
-    Class _field1;
-    id _field2;
-    Class _field3;
-    SEL _field4;
-    _Bool _field5;
-    CDUnknownBlockType _field6;
-    id _field7;
-    _Bool _field8;
-    id _field9;
-    id _field10;
-    unsigned int _field11;
-    unsigned int _field12;
-    id _field13;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

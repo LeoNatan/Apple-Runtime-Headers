@@ -18,10 +18,10 @@
     MKArtworkDataSourceCache *_artworkCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKArtworkDataSourceCache *artworkCache; // @synthesize artworkCache=_artworkCache;
 @property(readonly, nonatomic) int shieldSize; // @synthesize shieldSize=_shieldSize;
 @property(readonly, nonatomic) id <GEOTransitArtworkDataSource> artwork; // @synthesize artwork=_artwork;
-- (void).cxx_destruct;
 - (id)badgeImageToDisplayWithScreenScale:(float)arg1 nightMode:(_Bool)arg2;
 - (id)imageToDisplayWithScreenScale:(float)arg1 nightMode:(_Bool)arg2;
 @property(readonly) unsigned int hash;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     TLKIconsView *_iconView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKIconsView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) TLKStarsView *starRatingView; // @synthesize starRatingView=_starRatingView;
 @property(retain, nonatomic) TLKRoundedCornerLabels *roundedCornerLabels; // @synthesize roundedCornerLabels=_roundedCornerLabels;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TLKRichText *richText; // @synthesize richText=_richText;
 @property BOOL inBatchUpdate; // @synthesize inBatchUpdate;
 @property __weak id <TLKObserver> observer; // @synthesize observer;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)attributedString;
 - (id)viewForLastBaselineLayout;

@@ -18,13 +18,13 @@
     UIView *_offImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *offImageView; // @synthesize offImageView=_offImageView;
 @property(retain, nonatomic) UIView *onImageView; // @synthesize onImageView=_onImageView;
 @property(nonatomic) _Bool showOnOffImages; // @synthesize showOnOffImages=_showOnOffImages;
 @property(nonatomic) _Bool on; // @synthesize on=_on;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *onTintColor; // @synthesize onTintColor=_onTintColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)updateWellColor;
 - (id)initWithTintColor:(id)arg1 onTintColor:(id)arg2;

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     VSFontCenter *_fontCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(retain, nonatomic) UILabel *footerLabel; // @synthesize footerLabel=_footerLabel;
 @property(retain, nonatomic) UIButton *regenerateCodeButton; // @synthesize regenerateCodeButton=_regenerateCodeButton;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *webPagePreamble; // @synthesize webPagePreamble=_webPagePreamble;
 @property(copy, nonatomic) NSString *logoAccessibilityLabel; // @synthesize logoAccessibilityLabel=_logoAccessibilityLabel;
 @property(nonatomic) __weak id <VSOnscreenCodeViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(copy, nonatomic) NSString *footerText;
 @property(copy, nonatomic) NSString *regenerateCodeButtonTitle;

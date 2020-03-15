@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fp_queryFetchAttributes;
-@property(readonly, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
 @property(readonly, copy) NSString *fp_cloudContainerIdentifier;
 @property(readonly) BOOL fp_isContainerPristine;
 @property(readonly) BOOL fp_isContainer;
@@ -89,8 +89,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSNumber *hasUnresolvedConflicts;
 @property(readonly) unsigned long long hash;
 @property(readonly, getter=isHidden) BOOL hidden;
+@property(readonly, copy, nonatomic) NSData *quarantineBlob;
 @property(readonly, copy) NSString *sharingPermissions;
 @property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) NSString *symlinkTargetPath;
+@property(getter=isSyncRoot) BOOL syncRoot;
 
 @end
 

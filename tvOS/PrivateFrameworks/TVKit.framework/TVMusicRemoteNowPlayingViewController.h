@@ -21,11 +21,11 @@
 
 + (id)_remoteViewControllerInterface;
 + (id)_exportedInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *nowPlayingWallPaper; // @synthesize nowPlayingWallPaper=_nowPlayingWallPaper;
 @property(retain, nonatomic) id <TVPPlayback> player; // @synthesize player=_player;
 @property(retain, nonatomic) UITapGestureRecognizer *menuGestureRecognizer; // @synthesize menuGestureRecognizer=_menuGestureRecognizer;
 @property(retain, nonatomic) TVNavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)_menuPressed:(id)arg1;
 - (void)_dismissRemoteViewController;
 - (void)_playerDidChangeState:(id)arg1;

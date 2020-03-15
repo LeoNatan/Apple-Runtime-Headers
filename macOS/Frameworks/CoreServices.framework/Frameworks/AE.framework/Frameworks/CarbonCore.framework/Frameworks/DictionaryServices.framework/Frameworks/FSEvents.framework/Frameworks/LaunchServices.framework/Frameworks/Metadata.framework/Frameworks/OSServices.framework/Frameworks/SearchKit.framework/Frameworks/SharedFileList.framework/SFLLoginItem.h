@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     id _bookmark;
 }
 
+- (void).cxx_destruct;
 @property(copy) SFLBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(retain) BTMLoginItem *internalLoginItem; // @synthesize internalLoginItem=_internalLoginItem;
-- (void).cxx_destruct;
 @property unsigned long long seed;
 @property(copy) NSDictionary *properties;
 @property(copy) NSString *name;

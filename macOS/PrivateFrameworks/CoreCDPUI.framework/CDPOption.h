@@ -22,6 +22,7 @@
     unsigned long long _setupMutlipleiCSCsOrNot;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long setupMutlipleiCSCsOrNot; // @synthesize setupMutlipleiCSCsOrNot=_setupMutlipleiCSCsOrNot;
 @property(retain) CDPContext *cdpContext; // @synthesize cdpContext=_cdpContext;
 @property BOOL makeSheetCritical; // @synthesize makeSheetCritical=_makeSheetCritical;
@@ -32,7 +33,6 @@
 @property(retain) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(retain) NSTextField *instructionMessageLabel; // @synthesize instructionMessageLabel=_instructionMessageLabel;
 @property(retain) NSTextField *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
-- (void).cxx_destruct;
 - (void)nextButtonPressed:(id)arg1;
 - (void)showError:(id)arg1;
 - (void)awakeFromNib;

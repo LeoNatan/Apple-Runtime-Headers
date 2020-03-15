@@ -33,6 +33,7 @@
     long long _initialNumberOfAssetsInMovie;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long initialNumberOfAssetsInMovie; // @synthesize initialNumberOfAssetsInMovie=_initialNumberOfAssetsInMovie;
 @property(nonatomic) BOOL downloadInProgress; // @synthesize downloadInProgress=_downloadInProgress;
 @property(nonatomic) BOOL isFirstTime; // @synthesize isFirstTime=_isFirstTime;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) AVPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
 @property(retain, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 - (void)playerItemDidReachEnd:(id)arg1;
 - (void)signalScheduling:(CDStruct_1b6d18a9)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

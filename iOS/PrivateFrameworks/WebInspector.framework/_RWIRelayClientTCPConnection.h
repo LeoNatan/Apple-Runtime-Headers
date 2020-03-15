@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)connectionFromTCPConnection:(id)arg1 delegate:(id)arg2;
-@property(retain, nonatomic) _RWITCPConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _RWITCPConnection *connection; // @synthesize connection=_connection;
 - (void)sendMessage:(id)arg1;
 - (void)tcpConnection:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)tcpConnectionDidClose:(id)arg1;

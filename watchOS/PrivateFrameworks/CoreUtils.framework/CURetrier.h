@@ -20,13 +20,13 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(nonatomic) double leeway; // @synthesize leeway=_leeway;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
-- (void).cxx_destruct;
 - (void)succeededDirect;
 - (void)succeeded;
 - (void)failedDirect;

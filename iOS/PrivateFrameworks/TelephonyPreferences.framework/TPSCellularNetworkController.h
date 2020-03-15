@@ -21,6 +21,7 @@
     CTXPCServiceSubscriptionContext *_subscriptionContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 @property(retain, nonatomic) CTNetworkSelectionInfo *networkSelectionInfo; // @synthesize networkSelectionInfo=_networkSelectionInfo;
 @property(copy, nonatomic) NSArray *networks; // @synthesize networks=_networks;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSArray *networkItems; // @synthesize networkItems=_networkItems;
 @property(retain, nonatomic) TPSCellularNetworkItem *selectedNetworkItem; // @synthesize selectedNetworkItem=_selectedNetworkItem;
 @property(nonatomic) long long networkSelectionMode; // @synthesize networkSelectionMode=_networkSelectionMode;
-- (void).cxx_destruct;
 - (void)networkSelectionInfoChangedForRegistrationController:(id)arg1;
 - (void)networksChangedForRegistrationController:(id)arg1;
 - (id)networkItemForNetwork:(id)arg1;

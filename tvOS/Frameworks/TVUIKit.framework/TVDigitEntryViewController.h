@@ -24,6 +24,7 @@
     unsigned long long _numberOfDigits;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfDigits; // @synthesize numberOfDigits=_numberOfDigits;
 @property(nonatomic, getter=isSecureDigitEntry) _Bool secureDigitEntry; // @synthesize secureDigitEntry=_secureDigitEntry;
 @property(copy, nonatomic) CDUnknownBlockType entryCompletionHandler; // @synthesize entryCompletionHandler=_entryCompletionHandler;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UILabel *_promptLabel; // @synthesize _promptLabel;
 @property(retain, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel;
 @property(retain, nonatomic) UIStackView *_stackView; // @synthesize _stackView;
-- (void).cxx_destruct;
 - (void)_addSystemInputViewControllerIfNeeded;
 - (void)_setupTextField:(id)arg1;
 - (void)_reset;

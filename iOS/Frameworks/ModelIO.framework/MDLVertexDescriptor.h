@@ -16,9 +16,9 @@
     NSMutableArray *_layouts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *layouts; // @synthesize layouts=_layouts;
 @property(retain, nonatomic) NSMutableArray *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

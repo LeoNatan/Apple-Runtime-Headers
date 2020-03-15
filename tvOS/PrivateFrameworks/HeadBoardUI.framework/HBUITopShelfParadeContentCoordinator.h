@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     HBUITopShelfParadePhotosTitleView *_photosTitleView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HBUITopShelfParadePhotosTitleView *photosTitleView; // @synthesize photosTitleView=_photosTitleView;
 @property(readonly, nonatomic) HBUITopShelfParadeMusicTitleView *musicTitleView; // @synthesize musicTitleView=_musicTitleView;
 @property(readonly, nonatomic) HBUITopShelfParadePromotionTitleView *promotionTitleView; // @synthesize promotionTitleView=_promotionTitleView;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIViewController<HBUITopShelfParadeContentViewController> *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(readonly, nonatomic) UIViewController<HBUITopShelfParadeBackgroundViewController> *backgroundViewController; // @synthesize backgroundViewController=_backgroundViewController;
 @property(readonly, nonatomic) unsigned long long contentOptions; // @synthesize contentOptions=_contentOptions;
-- (void).cxx_destruct;
 - (void)paradeContentViewController:(id)arg1 didSelectAction:(id)arg2 forItem:(id)arg3;
 - (void)paradeBackgroundViewControllerDidFinish:(id)arg1;
 - (void)paradeBackgroundViewControllerContentStateDidChange:(id)arg1;

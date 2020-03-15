@@ -14,9 +14,9 @@
     NSTextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 @property(retain, nonatomic) NSString *text;
 @property(nonatomic) double progress;

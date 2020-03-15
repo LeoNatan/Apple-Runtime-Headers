@@ -27,9 +27,9 @@
 + (id)referenceDate;
 + (id)_currentTimeWithRoundedSeconds;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <MKTransitItemReferenceDateUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)initWithDelegate:(id)arg1;
 
 @end

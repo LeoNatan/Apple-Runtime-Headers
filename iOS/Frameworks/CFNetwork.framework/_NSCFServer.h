@@ -24,6 +24,7 @@
 + (_Bool)stopAll;
 + (_Bool)startSocksServerWithPort:(long long)arg1;
 + (id)listeners;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_tcp_listener> *listener; // @synthesize listener=_listener;
 @property(retain) NSNumber *listenerID; // @synthesize listenerID=_listenerID;
 @property(getter=isCoprocessorInterfaceEnabled) _Bool enableCoprocessorInterface; // @synthesize enableCoprocessorInterface=_enableCoprocessorInterface;
@@ -31,7 +32,6 @@
 @property(retain) NSString *interface; // @synthesize interface=_interface;
 @property long long listenerPort; // @synthesize listenerPort=_listenerPort;
 @property long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)stop;
 - (_Bool)startWithAcceptHandler:(CDUnknownBlockType)arg1;

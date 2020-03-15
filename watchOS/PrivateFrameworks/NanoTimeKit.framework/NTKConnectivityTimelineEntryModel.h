@@ -13,8 +13,8 @@
     NSString *_connectivity;
 }
 
-@property(retain, nonatomic) NSString *connectivity; // @synthesize connectivity=_connectivity;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *connectivity; // @synthesize connectivity=_connectivity;
 - (id)_newUtilitarianLargeTemplate;
 - (id)templateForComplicationFamily:(int)arg1;
 

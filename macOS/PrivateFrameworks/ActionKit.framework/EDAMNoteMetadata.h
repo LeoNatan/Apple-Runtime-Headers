@@ -26,6 +26,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *largestResourceSize; // @synthesize largestResourceSize=_largestResourceSize;
 @property(retain, nonatomic) NSString *largestResourceMime; // @synthesize largestResourceMime=_largestResourceMime;
 @property(retain, nonatomic) EDAMNoteAttributes *attributes; // @synthesize attributes=_attributes;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSNumber *contentLength; // @synthesize contentLength=_contentLength;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 
 @end
 

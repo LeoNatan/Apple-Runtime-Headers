@@ -28,6 +28,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long competitionStage; // @synthesize competitionStage=_competitionStage;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSData *snapshotData; // @synthesize snapshotData=_snapshotData;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *friendUUID; // @synthesize friendUUID=_friendUUID;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

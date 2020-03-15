@@ -20,13 +20,13 @@
     NSNumber *_isCloudLockedNum;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isCloudLockedNum; // @synthesize isCloudLockedNum=_isCloudLockedNum;
 @property(retain, nonatomic) NSNumber *isCloudProfileNum; // @synthesize isCloudProfileNum=_isCloudProfileNum;
 @property(nonatomic) _Bool isMDMProfile; // @synthesize isMDMProfile=_isMDMProfile;
 @property(nonatomic) _Bool isCloudLocked; // @synthesize isCloudLocked=_isCloudLocked;
 @property(nonatomic) _Bool isCloudProfile; // @synthesize isCloudProfile=_isCloudProfile;
 @property(retain, nonatomic) MCProfileServiceProfile *OTAProfile; // @synthesize OTAProfile=_OTAProfile;
-- (void).cxx_destruct;
 - (void)replacePayloadWithUUID:(id)arg1 withPayload:(id)arg2;
 - (id)earliestCertificateExpiryDate;
 - (id)localizedManagedPayloadSummaryByType;

@@ -17,9 +17,9 @@
     id <_SBAlertControllerDelegate> _alertControllerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SBAlertControllerDelegate> alertControllerDelegate; // @synthesize alertControllerDelegate=_alertControllerDelegate;
 @property(nonatomic) __weak SBAlertItem *alertItem; // @synthesize alertItem=_alertItem;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

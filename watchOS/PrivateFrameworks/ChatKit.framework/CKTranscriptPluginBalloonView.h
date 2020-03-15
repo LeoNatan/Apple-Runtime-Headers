@@ -27,6 +27,7 @@
     UIView *_pluginSnapshotView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressMask; // @synthesize suppressMask=_suppressMask;
 @property(retain, nonatomic) UIView *pluginSnapshotView; // @synthesize pluginSnapshotView=_pluginSnapshotView;
 @property(retain, nonatomic) CKBalloonImageView *outlineMask; // @synthesize outlineMask=_outlineMask;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak UIViewController *pluginViewController; // @synthesize pluginViewController=_pluginViewController;
 - (int)userInterfaceLevel;
 - (int)userInterfaceStyle;
-- (void).cxx_destruct;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldMaskWhenOpaque;

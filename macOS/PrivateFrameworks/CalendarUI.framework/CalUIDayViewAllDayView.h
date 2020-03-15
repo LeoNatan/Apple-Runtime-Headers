@@ -22,6 +22,7 @@
     NSLayoutConstraint *_labelVerticalAlignmentConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *labelVerticalAlignmentConstraint; // @synthesize labelVerticalAlignmentConstraint=_labelVerticalAlignmentConstraint;
 @property(nonatomic) __weak id <CalUIDayViewGadgetAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
 @property BOOL hasNewOccurrenceViews; // @synthesize hasNewOccurrenceViews=_hasNewOccurrenceViews;
@@ -31,7 +32,6 @@
 @property(nonatomic) __weak id <CalUIBoxOccurrenceContentDelegate> boxOccurrenceContentDelegate; // @synthesize boxOccurrenceContentDelegate=_boxOccurrenceContentDelegate;
 @property(nonatomic) __weak CalUIDayViewGadgetController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <CalUIDayViewGadgetDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (double)horizontalInset;
 - (double)bottomInset;
 - (double)topInset;

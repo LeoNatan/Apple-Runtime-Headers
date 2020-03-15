@@ -20,13 +20,13 @@
 
 + (id)_hanjaCharacterSet;
 + (id)_hanjaToHangulMap;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCharacterSet *secondaryLanguageRange; // @synthesize secondaryLanguageRange=_secondaryLanguageRange;
 @property(retain, nonatomic) NSCharacterSet *speakableCharacters; // @synthesize speakableCharacters=_speakableCharacters;
 @property(copy, nonatomic) NSString *specificLanguageID; // @synthesize specificLanguageID=_specificLanguageID;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(copy, nonatomic) NSString *voiceName; // @synthesize voiceName=_voiceName;
 @property(nonatomic) __weak AXLangMap *langMap; // @synthesize langMap=_langMap;
-- (void).cxx_destruct;
 - (id)_stringByTransliterationHanjaToHangul:(id)arg1;
 - (id)_transliteratedSpeechCharacters;
 - (id)transliteratedStringForString:(id)arg1;

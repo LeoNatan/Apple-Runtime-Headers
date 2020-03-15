@@ -16,9 +16,9 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSCopying> targetValue; // @synthesize targetValue=_targetValue;
 @property(retain, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 - (id)commitItem;
 - (id)performValidation;
 - (BOOL)hasSameTargetAsAction:(id)arg1;

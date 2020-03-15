@@ -26,6 +26,7 @@
 }
 
 + (double)defaultRowHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *horizontalConstraintsWithoutInset; // @synthesize horizontalConstraintsWithoutInset=_horizontalConstraintsWithoutInset;
 @property(retain, nonatomic) NSArray *horizontalConstraintsWithInset; // @synthesize horizontalConstraintsWithInset=_horizontalConstraintsWithInset;
 @property(retain, nonatomic) UITextField *shortcutNameTextField; // @synthesize shortcutNameTextField=_shortcutNameTextField;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL useDoneButtonOnKeyboard; // @synthesize useDoneButtonOnKeyboard=_useDoneButtonOnKeyboard;
 @property(nonatomic) BOOL showsHeySiri; // @synthesize showsHeySiri=_showsHeySiri;
 @property(nonatomic) __weak id <WFWorkflowWizardNameCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didTapClearButton;
 - (void)didTapRecordButton;
 - (void)didTapIconButton;
@@ -45,7 +45,6 @@
 - (void)updateButtonVisibility;
 - (void)textFieldDidChange;
 - (BOOL)shortcutNameIsEmpty;
-- (void)textFieldDidEndEditing:(id)arg1 reason:(long long)arg2;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;

@@ -19,11 +19,11 @@
     float _maxNotchViewY;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool minorDetentEdgesSet; // @synthesize minorDetentEdgesSet=_minorDetentEdgesSet;
 @property(nonatomic) float maxNotchViewY; // @synthesize maxNotchViewY=_maxNotchViewY;
 @property(nonatomic) float minNotchViewY; // @synthesize minNotchViewY=_minNotchViewY;
 @property _Bool pendingChangesStillInflight; // @synthesize pendingChangesStillInflight=_pendingChangesStillInflight;
-- (void).cxx_destruct;
 - (void)removeNotch:(CDStruct_b31d0695)arg1;
 - (void)addNotches:(id)arg1 toNotches:(id)arg2;
 - (_Bool)addNotch:(CDStruct_b31d0695)arg1;

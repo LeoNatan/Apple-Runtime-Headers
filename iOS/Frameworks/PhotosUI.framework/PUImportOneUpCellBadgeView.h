@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsBadgeUpdate; // @synthesize needsBadgeUpdate=_needsBadgeUpdate;
 @property(nonatomic) _Bool inUpdateBlock; // @synthesize inUpdateBlock=_inUpdateBlock;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *badgeContainerView; // @synthesize badgeContainerView=_badgeContainerView;
 @property(nonatomic) _Bool selectable; // @synthesize selectable=_selectable;
 @property(nonatomic) long long badgeType; // @synthesize badgeType=_badgeType;
-- (void).cxx_destruct;
 - (void)_createSpinnerIfNecessary;
 - (void)performBadgeUpdates:(CDUnknownBlockType)arg1;
 - (void)updateBadgeUIIfNeeded;

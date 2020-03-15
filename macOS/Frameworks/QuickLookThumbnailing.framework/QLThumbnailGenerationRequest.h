@@ -25,6 +25,7 @@
     unsigned long long _representationTypes;
     FPSandboxingURLWrapper *_quicklookSandboxWrapper;
     FPSandboxingURLWrapper *_genericSandboxWrapper;
+    FPSandboxingURLWrapper *_parentDirectorySandboxWrapper;
     NSURL *_fileURL;
     FPItem *_item;
     NSUUID *_uuid;
@@ -50,6 +51,7 @@
 + (id)_basicFileIdentifierForURL:(id)arg1 error:(id *)arg2;
 + (id)_fileProviderFileIdentifierForFPItem:(id)arg1;
 + (id)requestWithThumbnailRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *overriddenContentType; // @synthesize overriddenContentType=_overriddenContentType;
 @property(nonatomic) unsigned long long typesForWhichUpdateBlockHasBeenCalled; // @synthesize typesForWhichUpdateBlockHasBeenCalled=_typesForWhichUpdateBlockHasBeenCalled;
 @property(copy, nonatomic) NSString *saveURLContentType; // @synthesize saveURLContentType=_saveURLContentType;
@@ -73,6 +75,7 @@
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) FPItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
+@property(retain, nonatomic) FPSandboxingURLWrapper *parentDirectorySandboxWrapper; // @synthesize parentDirectorySandboxWrapper=_parentDirectorySandboxWrapper;
 @property(retain, nonatomic) FPSandboxingURLWrapper *genericSandboxWrapper; // @synthesize genericSandboxWrapper=_genericSandboxWrapper;
 @property(retain, nonatomic) FPSandboxingURLWrapper *quicklookSandboxWrapper; // @synthesize quicklookSandboxWrapper=_quicklookSandboxWrapper;
 @property(nonatomic) unsigned long long representationTypes; // @synthesize representationTypes=_representationTypes;
@@ -80,7 +83,6 @@
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) BOOL iconMode; // @synthesize iconMode=_iconMode;
 @property(nonatomic) double minimumDimension; // @synthesize minimumDimension=_minimumDimension;
-- (void).cxx_destruct;
 - (void)noteUpdateBlockHasBeenCalledForType:(long long)arg1;
 - (BOOL)isValid;
 - (BOOL)prepareForSending;

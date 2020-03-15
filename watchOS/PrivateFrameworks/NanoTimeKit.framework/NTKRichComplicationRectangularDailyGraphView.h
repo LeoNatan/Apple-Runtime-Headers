@@ -22,6 +22,7 @@
 
 + (struct CGSize)graphSize;
 + (id)dailyFormattedNoData;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *timeMarkerLabels; // @synthesize timeMarkerLabels=_timeMarkerLabels;
 @property(readonly, nonatomic) UIColor *graphLabelAndGridColor; // @synthesize graphLabelAndGridColor=_graphLabelAndGridColor;
 @property(readonly, nonatomic) UIColor *noDataTextColor; // @synthesize noDataTextColor=_noDataTextColor;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) UILabel *dailyLowLabel; // @synthesize dailyLowLabel=_dailyLowLabel;
 @property(readonly, nonatomic) UILabel *dailyHighLabel; // @synthesize dailyHighLabel=_dailyHighLabel;
 @property(readonly, nonatomic) NTKColoringLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 @property(readonly, nonatomic) float timeMarkerPadding;

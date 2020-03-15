@@ -8,26 +8,28 @@
 
 #import <ARKit/ARReplaySensorDelegate-Protocol.h>
 
-@class NSString, NSURL;
+@class NSNumber, NSString, NSURL;
 @protocol ARReplayConfigurationDelegate, ARReplaySensorProtocol;
 
 @interface ARReplayConfiguration : ARCustomTechniquesConfiguration <ARReplaySensorDelegate>
 {
     id <ARReplaySensorProtocol> _replaySensor;
+    NSNumber *_vioSessionID;
     NSURL *_fileURL;
     id <ARReplayConfigurationDelegate> _delegate;
 }
 
 + (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ARReplayConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (void)replaySensorDidFinishReplayingData;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)secondaryTechniques;
-- (id)imageSensorSettingsForSuperWide;
+- (void)ensureTechniqueAndCustomSensorCompatibility;
+- (id)imageSensorSettingsForUltraWide;
 - (id)imageSensorSettings;
 - (id)parentImageSensorSettings;
 - (long long)worldAlignment;
@@ -35,7 +37,7 @@
 - (void)play;
 - (id)initPrivate;
 - (id)initWithBaseConfiguration:(id)arg1 replaySensor:(id)arg2 replayingResultDataClasses:(id)arg3;
-- (id)initWithBaseConfiguration:(id)arg1 fileURL:(id)arg2 outError:(id *)arg3 manualMode:(_Bool)arg4 synchronousMode:(_Bool)arg5;
+- (id)initWithBaseConfiguration:(id)arg1 fileURL:(id)arg2 replayMode:(long long)arg3 outError:(id *)arg4;
 - (id)initWithBaseConfiguration:(id)arg1 fileURL:(id)arg2 outError:(id *)arg3;
 
 // Remaining properties

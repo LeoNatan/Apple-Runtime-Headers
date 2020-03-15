@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView<CRSUIDashboardFocusableItemProviding> *focusProvidingItem; // @synthesize focusProvidingItem=_focusProvidingItem;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) struct CGRect frameInWindow; // @synthesize frameInWindow=_frameInWindow;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFocusableView:(id)arg1;

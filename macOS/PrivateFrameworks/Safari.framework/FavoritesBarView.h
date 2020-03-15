@@ -37,8 +37,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _dropIndex;
 }
 
-@property(nonatomic) unsigned long long dropIndex; // @synthesize dropIndex=_dropIndex;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long dropIndex; // @synthesize dropIndex=_dropIndex;
 - (id)accessibilityRole;
 - (id)accessibilityLabel;
 - (void)_windowDidResignMain:(id)arg1;

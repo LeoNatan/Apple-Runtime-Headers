@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     BOOL mIgnoreFormulas;
 }
 
-@property(nonatomic) BOOL ignoreFormulas; // @synthesize ignoreFormulas=mIgnoreFormulas;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL ignoreFormulas; // @synthesize ignoreFormulas=mIgnoreFormulas;
 - (id)autoStyling;
 - (void)popDefaultTextProperties;
 - (void)pushDefaultTextProperties:(id)arg1;

@@ -20,14 +20,13 @@
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMVisionAnalysisOptions *analysisOptions; // @synthesize analysisOptions=_analysisOptions;
 @property(nonatomic) __weak id <AXMAVCaptureSessionNodeFrameDelegate> frameDelegate; // @synthesize frameDelegate=_frameDelegate;
 @property(nonatomic) __weak id <AXMAVCaptureSessionNodeDelegate> captureSessionNodeDelegate; // @synthesize captureSessionNodeDelegate=_captureSessionNodeDelegate;
-- (void).cxx_destruct;
 - (void)endVideoFrameEvents;
 - (void)endAutoTriggerOfVideoFrameEvents;
 - (void)beginFrameEventsWithAVCaptureSession:(id)arg1 delegate:(id)arg2 queue:(id)arg3;
-- (void)autoTriggerVideoFrameEventsWithAVCaptureSession:(id)arg1 options:(id)arg2 delegate:(id)arg3;
 - (void)nodeInitialize;
 - (void)produceImage:(id)arg1;
 - (void)setShouldProcessRemotely:(_Bool)arg1;

@@ -15,8 +15,8 @@
 
 + (id)requiredProperties;
 + (id)primaryKey;
-@property(copy) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;
+@property(copy) NSString *className; // @synthesize className=_className;
 
 @end
 

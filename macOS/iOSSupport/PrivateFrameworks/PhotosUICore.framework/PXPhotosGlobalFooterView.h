@@ -34,12 +34,11 @@
 }
 
 + (id)attributedStringForInputString:(id)arg1 actionTitle:(id)arg2 textAttributes:(id)arg3 linkTextAttributes:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXPhotosGlobalFooterViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
 @property(nonatomic) __weak id <PXPhotosGlobalFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXFooterViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(readonly, nonatomic) double currentHeight; // @synthesize currentHeight=_currentHeight;
-- (void).cxx_destruct;
-- (void)textViewDidChangeSelection:(id)arg1;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)layoutSubviews;

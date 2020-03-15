@@ -17,9 +17,9 @@
 
 + (double)_schedulingAssertionTimeout;
 + (double)defaultAssertionTimeOutForNotification:(id)arg1 type:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(retain, nonatomic) NSMutableArray *listeners; // @synthesize listeners=_listeners;
-- (void).cxx_destruct;
 - (void)_handleNotificationWithName:(id)arg1 type:(long long)arg2;
 - (void)_registerForXPCStream:(id)arg1 notificationType:(long long)arg2;
 - (void)dealloc;

@@ -31,9 +31,9 @@
     ICDelegationServiceSecuritySettings *_securitySettings;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICDelegationServiceSecuritySettings *securitySettings; // @synthesize securitySettings=_securitySettings;
 @property(readonly, nonatomic) long long connectionRole; // @synthesize connectionRole=_connectionRole;
-- (void).cxx_destruct;
 - (void)_streamEncounteredError:(id)arg1;
 - (void)_finishPendingRequestsWithError:(id)arg1;
 - (void)_streamDidParseMessage:(id)arg1;

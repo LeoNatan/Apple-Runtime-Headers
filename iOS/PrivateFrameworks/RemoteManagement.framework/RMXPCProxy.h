@@ -12,6 +12,8 @@
 
 + (id)newInterface;
 + (id)newConnectionWithListenerEndpoint:(id)arg1;
++ (id)newDaemonConnection;
++ (id)newAgentConnection;
 + (id)newConnection;
 
 @end

@@ -28,6 +28,7 @@
     NSNumber *_lastMinutesRemaining;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *lastMinutesRemaining; // @synthesize lastMinutesRemaining=_lastMinutesRemaining;
 @property(retain) NSNumber *lastPercentDone; // @synthesize lastPercentDone=_lastPercentDone;
 @property(retain) NSString *lastProcessingText; // @synthesize lastProcessingText=_lastProcessingText;
@@ -40,7 +41,6 @@
 @property __weak SMMigrateEngine *engine; // @synthesize engine=_engine;
 @property(retain) NSMutableArray *delegates; // @synthesize delegates=_delegates;
 @property(retain) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-- (void).cxx_destruct;
 - (void)didAttemptWirelessNetworkSwitch:(BOOL)arg1;
 - (void)willAttemptWirelessNetworkSwitch:(BOOL)arg1;
 - (void)disassociatedFromCurrentNetwork;

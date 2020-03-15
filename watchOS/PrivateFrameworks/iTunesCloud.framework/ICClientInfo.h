@@ -26,13 +26,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)defaultInfo;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *requestingBundleVersion; // @synthesize requestingBundleVersion=_requestingBundleVersion;
 @property(readonly, copy, nonatomic) NSString *requestingBundleIdentifier; // @synthesize requestingBundleIdentifier=_requestingBundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_clientInfoCopyWithClass:(Class)arg1;
@@ -41,6 +41,8 @@
 @property(readonly, copy, nonatomic) NSString *clientBundleIdentifier;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)description;
 - (id)initWithSystemApplicationType:(int)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;

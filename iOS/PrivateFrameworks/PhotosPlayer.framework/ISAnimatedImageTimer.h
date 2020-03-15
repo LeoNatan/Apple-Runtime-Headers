@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedTimer;
-@property(nonatomic, setter=_setTimestamp:) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setTimestamp:) double timestamp; // @synthesize timestamp=_timestamp;
 - (void)_iosDealloc;
 - (void)_iosAnimationTimerFired:(id)arg1;
 - (void)_iosUpdateDisplayLink;

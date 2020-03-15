@@ -18,12 +18,12 @@
 }
 
 + (id)relevanceSimulatorID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) double accuracy; // @synthesize accuracy=_accuracy;
 @property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)_hash;
 - (_Bool)isEqual:(id)arg1;

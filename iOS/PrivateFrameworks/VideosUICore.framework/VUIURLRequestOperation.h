@@ -19,6 +19,7 @@
     unsigned long long _taskStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long taskStartTime; // @synthesize taskStartTime=_taskStartTime;
 @property(copy, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
 @property(copy, nonatomic) NSURLSession *session; // @synthesize session=_session;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1 responseData:(id)arg2 error:(id)arg3;
 - (void)cancel;
 - (void)executionDidBegin;

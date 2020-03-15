@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tournamentDefinitionID; // @synthesize tournamentDefinitionID=_tournamentDefinitionID;
 @property(retain, nonatomic) UIColor *secondaryTintColor; // @synthesize secondaryTintColor=_secondaryTintColor;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long viewType; // @synthesize viewType=_viewType;
 @property(nonatomic) long long playerGroup; // @synthesize playerGroup=_playerGroup;
 @property(retain, nonatomic) GKTournament *tournament; // @synthesize tournament=_tournament;
-- (void).cxx_destruct;
 - (id)initWithViewType:(long long)arg1 tournamentDefinitionID:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

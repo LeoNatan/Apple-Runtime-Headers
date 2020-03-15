@@ -39,6 +39,7 @@
     struct UIEdgeInsets _maskInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVFullScreenBrowserCenterCellContext *centerCellContext; // @synthesize centerCellContext=_centerCellContext;
 @property(retain, nonatomic) _TVFullScreenBrowserTransitionContext *transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(readonly, nonatomic) _TVCollectionViewFullScreenBrowserLayout *paradeLayout; // @synthesize paradeLayout=_paradeLayout;
@@ -50,7 +51,6 @@
 @property(nonatomic) struct UIEdgeInsets maskInset; // @synthesize maskInset=_maskInset;
 @property(nonatomic) __weak id <_TVFullScreenBrowserViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <_TVFullScreenBrowserViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_evaluateTransition;
 - (id)_makeParadeLayout;
 - (id)_makeParadeTransitionLayoutWithLayoutAttributes:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_initialCode;
 }
 
-@property(readonly, nonatomic) NSString *initialCode; // @synthesize initialCode=_initialCode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *initialCode; // @synthesize initialCode=_initialCode;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

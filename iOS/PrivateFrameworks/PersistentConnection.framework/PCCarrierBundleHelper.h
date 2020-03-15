@@ -23,8 +23,8 @@
 }
 
 + (id)helper;
-@property(copy, nonatomic) NSDictionary *cachedPushSettings; // @synthesize cachedPushSettings=_cachedPushSettings;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *cachedPushSettings; // @synthesize cachedPushSettings=_cachedPushSettings;
 - (void)currentDataSimChanged:(id)arg1;
 - (void)operatorBundleChange:(id)arg1;
 - (void)_updateCurrentDataSimContext:(id)arg1;

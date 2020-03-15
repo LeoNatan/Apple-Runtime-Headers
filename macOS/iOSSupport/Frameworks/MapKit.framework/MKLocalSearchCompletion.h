@@ -24,6 +24,7 @@
     MKLocalSearchCompletion *_directionIntentDestination;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKLocalSearchCompletion *directionIntentDestination; // @synthesize directionIntentDestination=_directionIntentDestination;
 @property(retain, nonatomic) MKLocalSearchCompletion *directionIntentOrigin; // @synthesize directionIntentOrigin=_directionIntentOrigin;
 @property(readonly, nonatomic, getter=_alreadySentFeedback) BOOL alreadySentFeedback; // @synthesize alreadySentFeedback=_alreadySentFeedback;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;
 @property(readonly, nonatomic) unsigned long long serverItemIndexInSection; // @synthesize serverItemIndexInSection=_serverItemIndexInSection;
 @property(readonly, nonatomic) unsigned long long serverSectionIndex; // @synthesize serverSectionIndex=_serverSectionIndex;
-- (void).cxx_destruct;
 - (id)iconWithScale:(double)arg1;
 - (id)highlightsForLine:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *displayLines;

@@ -28,6 +28,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)serviceDescription;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *serviceDictionary; // @synthesize serviceDictionary=_serviceDictionary;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property unsigned long long mask; // @synthesize mask=_mask;
@@ -40,7 +41,6 @@
 @property(copy) NSImage *image; // @synthesize image=_image;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -19,8 +19,9 @@
 + (void)setDefaultMessageHeadersClass:(Class)arg1;
 + (Class)classForMimePart;
 + (Class)headersClass;
-@property(readonly, retain, nonatomic) MFMessageStoreObjectCache *objectCache; // @synthesize objectCache=_objectCache;
++ (id)log;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) MFMessageStoreObjectCache *objectCache; // @synthesize objectCache=_objectCache;
 - (void)setMessageClass:(Class)arg1;
 - (_Bool)wantsLineEndingConversionForMIMEPart:(id)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(_Bool)arg2 isEncrypted:(_Bool)arg3 forMessage:(id)arg4;

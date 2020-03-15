@@ -15,10 +15,10 @@
     unsigned int _batchCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int batchCount; // @synthesize batchCount=_batchCount;
 @property(nonatomic) unsigned int bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_execute:(id *)arg1;
 - (unsigned int)type;
 

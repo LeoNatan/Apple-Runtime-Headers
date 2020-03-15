@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 
 + (void)debugAttemptedInvalidStateTransitionFromState:(unsigned long long)arg1 withEvent:(unsigned long long)arg2;
 + (void)debugStateTransitionFromState:(unsigned long long)arg1 withEvent:(unsigned long long)arg2 toState:(unsigned long long)arg3;
-@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void)_iterateTransitionTable:(CDUnknownBlockType)arg1;
 - (id)_transitionDescriptions;
 - (void)handleEvent:(unsigned long long)arg1 withContext:(id)arg2;

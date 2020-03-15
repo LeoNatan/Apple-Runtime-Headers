@@ -15,8 +15,8 @@
     NSMutableOrderedSet *_objects;
 }
 
-@property(retain, nonatomic) NSMutableOrderedSet *objects; // @synthesize objects=_objects;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableOrderedSet *objects; // @synthesize objects=_objects;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

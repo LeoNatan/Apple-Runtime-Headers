@@ -14,9 +14,9 @@
     NSString *_emailAddress;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(retain) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
-- (void).cxx_destruct;
 
 @end
 

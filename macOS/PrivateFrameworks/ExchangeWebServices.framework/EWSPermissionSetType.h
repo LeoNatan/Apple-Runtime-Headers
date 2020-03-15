@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *UnknownEntries; // @synthesize UnknownEntries=_UnknownEntries;
 @property(copy, nonatomic) NSArray *Permissions; // @synthesize Permissions=_Permissions;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

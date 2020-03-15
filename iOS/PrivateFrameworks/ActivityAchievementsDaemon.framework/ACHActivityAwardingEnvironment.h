@@ -15,10 +15,10 @@
     ACHActivityAwardingDateCache *_dateCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACHActivityAwardingDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(retain, nonatomic) ACHActivityAwardingDataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 @property(nonatomic) _Bool valueForKeyLoggingEnabled; // @synthesize valueForKeyLoggingEnabled=_valueForKeyLoggingEnabled;
-- (void).cxx_destruct;
 - (id)requiredDaysOfActivityHistoryForStreaks;
 - (id)requiredDaysOfActivityHistoryForRecords;
 - (id)dayOfMonthForToday;

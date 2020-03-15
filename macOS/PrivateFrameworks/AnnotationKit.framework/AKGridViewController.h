@@ -21,6 +21,7 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain) NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
@@ -28,7 +29,6 @@
 @property(copy) CDUnknownBlockType potentialActionBlock; // @synthesize potentialActionBlock=_potentialActionBlock;
 @property(copy) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 dragOperation:(unsigned long long)arg4;
 - (id)collectionView:(id)arg1 pasteboardWriterForItemAtIndex:(unsigned long long)arg2;
 - (void)performActionOnPotentialSelection;

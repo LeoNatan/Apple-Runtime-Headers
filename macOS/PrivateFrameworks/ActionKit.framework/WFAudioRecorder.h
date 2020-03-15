@@ -23,6 +23,7 @@
     NSTimer *_updateTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasFinished; // @synthesize hasFinished=_hasFinished;
 @property(nonatomic) BOOL paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
@@ -31,7 +32,6 @@
 @property(nonatomic) double recordingDuration; // @synthesize recordingDuration=_recordingDuration;
 @property(nonatomic) long long outputFormat; // @synthesize outputFormat=_outputFormat;
 @property(nonatomic) __weak id <WFAudioRecorderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)audioRecorderEncodeErrorDidOccur:(id)arg1 error:(id)arg2;
 - (void)audioRecorderDidFinishRecording:(id)arg1 successfully:(BOOL)arg2;
 @property(nonatomic) BOOL runningUpdateTimer;

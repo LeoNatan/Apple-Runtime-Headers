@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Safari/ChromeImportEngine.h>
 
 #import <Safari/BrowserBookmarkImportEngine-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface ChromeBookmarkImporter : NSObject <BrowserBookmarkImportEngine>
+@interface ChromeBookmarkImporter : ChromeImportEngine <BrowserBookmarkImportEngine>
 {
 }
 

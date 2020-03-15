@@ -24,10 +24,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)componentsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *components; // @synthesize components=_components;
 @property(nonatomic) float aggregateScore; // @synthesize aggregateScore=_aggregateScore;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

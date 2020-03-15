@@ -15,10 +15,10 @@
     SASBulletinCacheNode *_nextNode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SASBulletinCacheNode *nextNode; // @synthesize nextNode=_nextNode;
 @property(retain, nonatomic) SASBulletinCacheNode *previousNode; // @synthesize previousNode=_previousNode;
 @property(retain, nonatomic) AFBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 
 @end
 

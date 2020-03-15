@@ -95,11 +95,11 @@
 + (id)writeRulesScheduler;
 + (void)initialize;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numMessagesRoutedSoFar; // @synthesize numMessagesRoutedSoFar=_numMessagesRoutedSoFar;
 @property(nonatomic) unsigned long long estimatedNumberOfMessagesToRoute; // @synthesize estimatedNumberOfMessagesToRoute=_estimatedNumberOfMessagesToRoute;
 @property(nonatomic) __weak MFMessageStore *store; // @synthesize store=_store;
 @property(nonatomic) BOOL isUserAction; // @synthesize isUserAction=_isUserAction;
-- (void).cxx_destruct;
 - (void)waitForRoutingToFinish;
 - (void)_routeQueuedMessages;
 - (void)asynchronouslyRouteMessages:(id)arg1;

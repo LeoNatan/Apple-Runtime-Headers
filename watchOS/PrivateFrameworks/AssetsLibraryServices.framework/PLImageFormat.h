@@ -24,6 +24,7 @@
 
 + (id)formatWithID:(unsigned short)arg1;
 + (id)_syncFormats;
+- (void).cxx_destruct;
 @property(nonatomic) int thumbnailKind; // @synthesize thumbnailKind=_thumbnailKind;
 @property(readonly, nonatomic) const CDStruct_064f6571 *bakedFormatInfo; // @synthesize bakedFormatInfo=_bakedFormatInfo;
 @property(readonly, nonatomic) int version; // @synthesize version=_version;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned short formatID; // @synthesize formatID=_formatID;
-- (void).cxx_destruct;
 - (id)thumbnailSpecification;
 - (struct CGSize)scaledSizeForSourceSize:(struct CGSize)arg1 capLength:(_Bool)arg2;
 - (struct CGSize)scaledSizeForSourceSize:(struct CGSize)arg1;

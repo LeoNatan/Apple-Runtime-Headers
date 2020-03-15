@@ -54,6 +54,7 @@
     SiriUITranscriptItem *_anchor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL reachedMaximumContentHeight; // @synthesize reachedMaximumContentHeight=_reachedMaximumContentHeight;
 @property(nonatomic) BOOL usingReducedMotion; // @synthesize usingReducedMotion=_usingReducedMotion;
 @property(retain, nonatomic) SiriUITranscriptItem *anchor; // @synthesize anchor=_anchor;
@@ -77,7 +78,6 @@
 @property(nonatomic) __weak id <SVSTranscriptViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SVSTranscriptViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property __weak SiriUINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (id)_accessibilityWindowElementToFocus;
 - (void)_accessibilitySetFocusOnWindowLevelElement;
 - (void)_accessibilityFocusCard:(id)arg1;

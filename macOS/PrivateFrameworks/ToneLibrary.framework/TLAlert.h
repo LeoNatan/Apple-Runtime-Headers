@@ -22,11 +22,11 @@
 + (id)alertWithConfiguration:(id)arg1;
 + (void)playAlertForType:(long long)arg1;
 + (void)playToneAndVibrationForType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *toneIdentifier; // @synthesize toneIdentifier=_toneIdentifier;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) TLAlertConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <TLAlertPlaybackObserver> playbackObserver; // @synthesize playbackObserver=_playbackObserver;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)_descriptionForDebugging:(BOOL)arg1;

@@ -17,10 +17,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MSDAutosaveProtocol> remoteService; // @synthesize remoteService=_remoteService;
 @property(retain, nonatomic) id <MSDAutosaveSessionProtocol> remoteSession; // @synthesize remoteSession=_remoteSession;
 @property(readonly, copy, nonatomic) NSString *autosaveIdentifier; // @synthesize autosaveIdentifier=_autosaveIdentifier;
-- (void).cxx_destruct;
 - (void)remoteSessionDisconnectedWithError:(id)arg1;
 - (void)didReconnectRemoteSession:(id)arg1 remoteService:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 remoteSession:(id)arg2 remoteService:(id)arg3;

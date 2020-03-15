@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly) ISImageSpecification *largerSpecification; // @synthesize largerSpecification=_largerSpecification;
 @property(readonly) ISImageSpecification *smallerSpecification; // @synthesize smallerSpecification=_smallerSpecification;
 @property(readonly) double scale; // @synthesize scale=_scale;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)setSmallerSpecification:(id)arg1;
 - (void)setLargerSpecification:(id)arg1;
 - (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2;

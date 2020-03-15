@@ -21,6 +21,7 @@
 }
 
 + (id)disambiguationItem;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsFavoriteStar; // @synthesize showsFavoriteStar=_showsFavoriteStar;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct _NSRange titleBoldedRange; // @synthesize titleBoldedRange=_titleBoldedRange;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *headingText; // @synthesize headingText=_headingText;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

@@ -17,11 +17,11 @@
     CSSpIdContext *_spIdCtx;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSSpIdContext *spIdCtx; // @synthesize spIdCtx=_spIdCtx;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *nviQueue; // @synthesize nviQueue=_nviQueue;
 @property(retain, nonatomic) CSSpeakerIdNviSignalReceiver *resultRxNvi; // @synthesize resultRxNvi=_resultRxNvi;
 @property(retain, nonatomic) NviSignalProvidersController *signalControllerNvi; // @synthesize signalControllerNvi=_signalControllerNvi;
-- (void).cxx_destruct;
 - (void)_uploadDirectionVectorToAFAnalyticsOnQueue;
 - (void)_endSpIdNviSignalProcessing;
 - (void)_startSpIdNviSignalProcessing;

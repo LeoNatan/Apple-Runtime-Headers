@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)removeDefaultsAndSignedRemoteConfigurationPlist;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *lastDownloadedTimePreferenceKey; // @synthesize lastDownloadedTimePreferenceKey=_lastDownloadedTimePreferenceKey;
 @property(readonly, nonatomic) double updateTimeInterval; // @synthesize updateTimeInterval=_updateTimeInterval;
 @property(readonly, nonatomic) NSURL *localConfigurationFileURL; // @synthesize localConfigurationFileURL=_localConfigurationFileURL;
 @property(readonly, nonatomic) NSURL *remoteConfigurationURL; // @synthesize remoteConfigurationURL=_remoteConfigurationURL;
 @property(nonatomic) __weak id <RemoteConfigurationsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_didRemoteConfigurationRequestSucceed:(id)arg1;
 - (void)_downloadRemoteConfiguration;
 - (void)_scheduleNextDownloadAfterLastDownloadTime:(id)arg1;

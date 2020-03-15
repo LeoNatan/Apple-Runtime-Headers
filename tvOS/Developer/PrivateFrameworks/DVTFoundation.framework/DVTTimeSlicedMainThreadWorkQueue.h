@@ -31,12 +31,12 @@
 + (id)weakUnorderedQueueWithItemProcessingBlock:(CDUnknownBlockType)arg1;
 + (id)unorderedQueueWithItemProcessingBlock:(CDUnknownBlockType)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property _Bool workIsEnqueued; // @synthesize workIsEnqueued=_workIsEnqueued;
 @property(copy) CDUnknownBlockType batchFinishingBlock; // @synthesize batchFinishingBlock=_batchFinishingBlock;
 @property(copy) CDUnknownBlockType batchStartingBlock; // @synthesize batchStartingBlock=_batchStartingBlock;
 @property(copy) CDUnknownBlockType itemProcessingBlock; // @synthesize itemProcessingBlock=_itemProcessingBlock;
 @property(retain) DVTStackBacktrace *creationBacktrace; // @synthesize creationBacktrace=_creationBacktrace;
-- (void).cxx_destruct;
 - (void)_processWithDeadline:(unsigned long long)arg1;
 - (void)_evaluateProcessingStatus;
 @property long long qualityOfService;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <AVTAvatarRecord> _avatarRecord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(retain, nonatomic) AVTStickerGenerator *generator; // @synthesize generator=_generator;
-- (void).cxx_destruct;
 - (id)initWithAvatarRecord:(id)arg1;
 
 @end

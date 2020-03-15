@@ -15,10 +15,10 @@
     NUSubsampleNode *_subsampleNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NUSubsampleNode *subsampleNode; // @synthesize subsampleNode=_subsampleNode;
 @property(readonly) long long sampleMode; // @synthesize sampleMode=_sampleMode;
 @property(readonly) long long subsampleFactor; // @synthesize subsampleFactor=_subsampleFactor;
-- (void).cxx_destruct;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (BOOL)isGeometryNode;
 - (id)_evaluateImage:(out id *)arg1;

@@ -8,14 +8,15 @@
 
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UIInteraction-Protocol.h>
+#import <UIKitCore/UIInteraction_Internal-Protocol.h>
 #import <UIKitCore/UIInteraction_Private-Protocol.h>
-#import <UIKitCore/_UIClickInteractionDelegateInternal-Protocol.h>
+#import <UIKitCore/_UIClickInteractionDriverDelegate-Protocol.h>
 #import <UIKitCore/_UIDragInteractionPresentationDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, UIDragInteraction, UIGestureRecognizer, UIView, _UIClickInteraction, _UIClickPresentation, _UIRelationshipGestureRecognizer, _UIStateMachine;
-@protocol UIInteractionEffect, _UIClickPresentationAssisting, _UIClickPresentationInteractionDelegate;
+@class NSArray, NSMutableArray, NSString, UIDragInteraction, UIGestureRecognizer, UIView, _UIClickPresentation, _UIRelationshipGestureRecognizer, _UIStateMachine;
+@protocol UIInteractionEffect, _UIClickInteractionDriving, _UIClickPresentationAssisting, _UIClickPresentationInteractionDelegate;
 
-@interface _UIClickPresentationInteraction : NSObject <_UIClickInteractionDelegateInternal, UIInteraction_Private, UIGestureRecognizerDelegate, _UIDragInteractionPresentationDelegate, UIInteraction>
+@interface _UIClickPresentationInteraction : NSObject <_UIClickInteractionDriverDelegate, UIInteraction_Private, UIInteraction_Internal, UIGestureRecognizerDelegate, _UIDragInteractionPresentationDelegate, UIInteraction>
 {
     struct {
         char shouldBegin;
@@ -39,7 +40,8 @@
     id <UIInteractionEffect> _interactionEffect;
     NSMutableArray *_stateBreadCrumbs;
     _UIStateMachine *_stateMachine;
-    _UIClickInteraction *_previewClickInteraction;
+    id <_UIClickInteractionDriving> _activeDriver;
+    NSArray *_allDrivers;
     _UIRelationshipGestureRecognizer *_exclusionRelationshipGestureRecognizer;
     _UIRelationshipGestureRecognizer *_failureRelationshipGestureRecognizer;
     id <_UIClickPresentationAssisting> _presentationAssistant;
@@ -49,9 +51,12 @@
     UIDragInteraction *_associatedDragInteraction;
     NSString *_debugIdentifier;
     NSString *_presentationTypeDebugString;
+    NSArray *_overrideDrivers;
     struct CGPoint _initialLocation;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *overrideDrivers; // @synthesize overrideDrivers=_overrideDrivers;
 @property(copy, nonatomic) NSString *presentationTypeDebugString; // @synthesize presentationTypeDebugString=_presentationTypeDebugString;
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) __weak UIDragInteraction *associatedDragInteraction; // @synthesize associatedDragInteraction=_associatedDragInteraction;
@@ -62,14 +67,14 @@
 @property(retain, nonatomic) id <_UIClickPresentationAssisting> presentationAssistant; // @synthesize presentationAssistant=_presentationAssistant;
 @property(retain, nonatomic) _UIRelationshipGestureRecognizer *failureRelationshipGestureRecognizer; // @synthesize failureRelationshipGestureRecognizer=_failureRelationshipGestureRecognizer;
 @property(retain, nonatomic) _UIRelationshipGestureRecognizer *exclusionRelationshipGestureRecognizer; // @synthesize exclusionRelationshipGestureRecognizer=_exclusionRelationshipGestureRecognizer;
-@property(retain, nonatomic) _UIClickInteraction *previewClickInteraction; // @synthesize previewClickInteraction=_previewClickInteraction;
+@property(retain, nonatomic) NSArray *allDrivers; // @synthesize allDrivers=_allDrivers;
+@property(retain, nonatomic) id <_UIClickInteractionDriving> activeDriver; // @synthesize activeDriver=_activeDriver;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(nonatomic) BOOL allowSimultaneousRecognition; // @synthesize allowSimultaneousRecognition=_allowSimultaneousRecognition;
 @property(readonly, nonatomic) NSMutableArray *stateBreadCrumbs; // @synthesize stateBreadCrumbs=_stateBreadCrumbs;
 @property(retain, nonatomic) id <UIInteractionEffect> interactionEffect; // @synthesize interactionEffect=_interactionEffect;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) __weak id <_UIClickPresentationInteractionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_dragInteractionPresentation:(id)arg1 sessionDidEnd:(id)arg2 withoutBeginning:(BOOL)arg3;
 - (void)_dragInteractionPresentation:(id)arg1 item:(id)arg2 willAnimateCancelWithAnimator:(id)arg3;
 - (id)_dragInteractionPresentation:(id)arg1 previewForCancellingItem:(id)arg2 defaultPreview:(id)arg3 proposedPreview:(id)arg4;
@@ -98,25 +103,31 @@
 - (unsigned long long)_currentState;
 - (BOOL)_isActive;
 - (void)_prepareStateMachine;
-- (void)_beginDragIfPossibleWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
+- (BOOL)_beginDragIfPossibleWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
 - (void)_attemptDragLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(BOOL)arg2;
 - (id)_clickDragDriver;
 - (void)_associateWithActiveDragInteraction;
-- (void)_clickInteractionDidUpdateDriver:(id)arg1;
-- (unsigned long long)_clickInteractionDefaultDriverType:(id)arg1;
-- (void)clickInteractionDidClickUp:(id)arg1;
-- (void)clickInteractionDidClickDown:(id)arg1;
-- (id)highlightEffectForClickInteraction:(id)arg1;
-- (void)clickInteractionDidEnd:(id)arg1;
-- (void)_clickInteraction:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
+- (void)_cancelAllDrivers;
+- (void)_refreshAllDrivers;
+- (Class)_primaryDriverClass;
+- (void)_driverEnded;
+- (void)_driverClickedUp;
+- (void)_driverClickedDown;
+- (BOOL)clickDriver:(id)arg1 shouldDelayGestureRecognizer:(id)arg2;
+- (void)clickDriver:(id)arg1 didPerformEvent:(unsigned long long)arg2;
+- (void)clickDriver:(id)arg1 didUpdateHighlightProgress:(double)arg2;
+- (void)clickDriver:(id)arg1 shouldBegin:(CDUnknownBlockType)arg2;
 - (void)_performPresentation;
+@property(readonly, nonatomic) unsigned long long activationMode;
 - (BOOL)_canPerformPresentation;
 - (void)_performPreviewPresentation;
+- (void)_viewTraitCollectionDidChange:(id)arg1;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
 - (void)_delegate_interactionEndedWithContext:(id)arg1;
 - (BOOL)_delegate_shouldAllowDragAfterDismiss;
 @property(readonly, nonatomic, getter=_reachedForceThreshold) BOOL reachedForceThreshold;
+@property(readonly, nonatomic) unsigned long long inputPrecision;
 - (struct CGPoint)locationInView:(id)arg1;
 - (void)beginDragWithTouch:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 fenceHandler:(CDUnknownBlockType)arg3;
 - (void)endPanInteraction;

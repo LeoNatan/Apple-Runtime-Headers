@@ -19,10 +19,10 @@
     NSDate *_currentDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(retain, nonatomic) NSDateComponents *currentDateComponents; // @synthesize currentDateComponents=_currentDateComponents;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *dayOfMonthForToday; // @synthesize dayOfMonthForToday=_dayOfMonthForToday;
 @property(readonly, nonatomic) NSNumber *numberOfDaysInThisMonth; // @synthesize numberOfDaysInThisMonth=_numberOfDaysInThisMonth;
 @property(readonly, nonatomic) NSNumber *dayOfWeekForLastDayOfFitnessWeek; // @synthesize dayOfWeekForLastDayOfFitnessWeek=_dayOfWeekForLastDayOfFitnessWeek;

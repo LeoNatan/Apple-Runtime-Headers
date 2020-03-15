@@ -17,9 +17,9 @@
     id <PUDisplayAssetCollection> __containingAssetCollection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PUDisplayAssetCollection> _containingAssetCollection; // @synthesize _containingAssetCollection=__containingAssetCollection;
 @property(readonly, nonatomic) id <PUTransientDataSource> _transientDataSource; // @synthesize _transientDataSource=__transientDataSource;
-- (void).cxx_destruct;
 - (void)transientDataSourceDidChange:(id)arg1;
 - (void)_updateWithTransientDataSource:(id)arg1;
 - (id)initWithTransientDataSource:(id)arg1;

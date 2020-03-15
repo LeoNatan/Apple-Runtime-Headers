@@ -107,8 +107,8 @@ __attribute__((visibility("hidden")))
     NSTableColumn *_highlightedTableColumn;
 }
 
-@property __weak NSTableColumn *highlightedTableColumn; // @synthesize highlightedTableColumn=_highlightedTableColumn;
 - (void).cxx_destruct;
+@property __weak NSTableColumn *highlightedTableColumn; // @synthesize highlightedTableColumn=_highlightedTableColumn;
 
 @end
 

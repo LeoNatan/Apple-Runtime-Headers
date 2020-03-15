@@ -14,9 +14,9 @@
     id <_UXSourceSplitViewCursorProvider> _cursorProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UXSourceSplitViewCursorProvider> cursorProvider; // @synthesize cursorProvider=_cursorProvider;
 @property(nonatomic) __weak NSView *separatorView; // @synthesize separatorView=_separatorView;
-- (void).cxx_destruct;
 - (id)description;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)resetCursorRects;

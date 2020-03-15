@@ -37,13 +37,13 @@
 
 + (void)clearCachedProgramForVertexShader:(id)arg1 fragmentShader:(id)arg2;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool viewIsVisible; // @synthesize viewIsVisible=_viewIsVisible;
 @property(nonatomic) _Bool shouldBypassApplicationStateChecking; // @synthesize shouldBypassApplicationStateChecking=_shouldBypassApplicationStateChecking;
 @property(nonatomic) int drawableDepthFormat; // @synthesize drawableDepthFormat=_drawableDepthFormat;
 @property(nonatomic) _Bool use4XMSAA; // @synthesize use4XMSAA=_use4XMSAA;
 @property(nonatomic) float preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
 @property(nonatomic) _Bool synchronizesWithCA; // @synthesize synchronizesWithCA=_synchronizesWithCA;
-- (void).cxx_destruct;
 - (void)_context_checkAndRepairFramebuffer;
 - (_Bool)_context_presentFramebuffer;
 - (void)_context_resolveAndDiscardFramebuffer;

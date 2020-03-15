@@ -34,6 +34,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TIKeyboardSecureCandidateRGBColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *inputTextTraits; // @synthesize inputTextTraits=_inputTextTraits;
 @property(retain, nonatomic) TIKeyboardSecureCandidateTextTraits *headerTextTraits; // @synthesize headerTextTraits=_headerTextTraits;
 @property(retain, nonatomic) TIKeyboardSecureCandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

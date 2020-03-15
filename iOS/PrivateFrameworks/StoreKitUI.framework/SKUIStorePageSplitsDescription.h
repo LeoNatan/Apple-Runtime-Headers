@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     SKUIStorePageSplit *_topSplit;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) SKUIStorePageSplit *topSplit; // @synthesize topSplit=_topSplit;
 @property(copy, nonatomic) SKUIStorePageSplit *rightSplit; // @synthesize rightSplit=_rightSplit;
 @property(copy, nonatomic) SKUIStorePageSplit *leftSplit; // @synthesize leftSplit=_leftSplit;
 @property(copy, nonatomic) SKUIStorePageSplit *bottomSplit; // @synthesize bottomSplit=_bottomSplit;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)sizeSplitsToFitWidth:(double)arg1 usingBlock:(CDUnknownBlockType)arg2;

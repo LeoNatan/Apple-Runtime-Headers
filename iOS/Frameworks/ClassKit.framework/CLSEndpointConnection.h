@@ -31,10 +31,10 @@
 + (id)classKitEnvironment;
 + (id)instanceForEndpoint:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onConnect; // @synthesize onConnect=_onConnect;
 @property(copy, nonatomic) CDUnknownBlockType onInterupt; // @synthesize onInterupt=_onInterupt;
 @property(copy, nonatomic) NSString *overrideBundleIdentifier; // @synthesize overrideBundleIdentifier=_overrideBundleIdentifier;
-- (void).cxx_destruct;
 - (void)devModeChanged;
 - (void)accountChanged;
 - (void)addBarrierBlock:(CDUnknownBlockType)arg1;
@@ -50,9 +50,8 @@
 - (id)dataServer:(CDUnknownBlockType)arg1;
 - (id)syncDataServer:(CDUnknownBlockType)arg1;
 - (void)invalidate;
-- (void)connectionBorked;
-- (void)connectionInterupted;
-- (void)_envokeOnInteruptCallback;
+- (void)connectionBorked:(id)arg1;
+- (void)connectionInterrupted:(id)arg1;
 - (id)serverConnection;
 - (_Bool)isBorked;
 - (void)_registerForDarwinNotifications;

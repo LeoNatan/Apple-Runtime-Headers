@@ -18,9 +18,9 @@
     Class _derivativeGeneratorClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class derivativeGeneratorClass; // @synthesize derivativeGeneratorClass=_derivativeGeneratorClass;
 @property(readonly, copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
-- (void).cxx_destruct;
 - (void)generateDerivativesForChange:(id)arg1 derivativesFilter:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_checkGeneratedResources:(id)arg1 error:(id *)arg2;
 - (BOOL)_checkResource:(id)arg1 name:(id)arg2 error:(id *)arg3;

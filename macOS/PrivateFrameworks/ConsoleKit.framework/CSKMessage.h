@@ -26,13 +26,13 @@
 + (id)localizedAccessibilityMessageTypeNameForType:(long long)arg1;
 + (id)localizedMessageTypeNameForType:(long long)arg1;
 + (id)nameForType:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payload; // @synthesize payload=_payload;
 @property(copy, nonatomic) NSNumber *activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(readonly, copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)stringDescriptionLengthForIndexer;
 - (id)stringDescriptionForIndexer;
 - (id)description;

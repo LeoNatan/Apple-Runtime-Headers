@@ -19,10 +19,10 @@
     NSMutableDictionary *_commandCompletionBlocksDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *commandCompletionBlocksDictionary; // @synthesize commandCompletionBlocksDictionary=_commandCompletionBlocksDictionary;
 @property(retain, nonatomic) NSMutableDictionary *commandWorkflowControllersDictionary; // @synthesize commandWorkflowControllersDictionary=_commandWorkflowControllersDictionary;
 @property(retain, nonatomic) WFLWorkflowController *currentWorkflowController; // @synthesize currentWorkflowController=_currentWorkflowController;
-- (void).cxx_destruct;
 - (void)_releaseWorkflowController:(id)arg1;
 - (id)_commandIdentifierForWorkflowController:(id)arg1;
 - (void)_handleCardCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;

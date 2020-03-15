@@ -24,8 +24,8 @@
 + (id)sharedSlideshowPreferences;
 + (_Bool)_isValidStyle:(id)arg1;
 + (id)sharedScreenSaverPreferences;
-@property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (_Bool)setBool:(_Bool)arg1 forKey:(id)arg2;
 - (_Bool)boolForKey:(id)arg1 defaultValue:(_Bool)arg2;
 - (_Bool)boolForKey:(id)arg1;

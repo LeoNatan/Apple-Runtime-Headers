@@ -28,6 +28,7 @@
 + (id)imageNameForIdentifier:(id)arg1 sizeState:(unsigned long long)arg2 imageType:(id)arg3;
 + (struct CGSize)_toolBaseImageSizeForIdentifier:(id)arg1 sizeState:(unsigned long long)arg2;
 + (id)buttonWithIdentifier:(id)arg1 color:(id)arg2 sizeState:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PKInkToolOpacityLabel *opacityLabel; // @synthesize opacityLabel=_opacityLabel;
 @property(retain, nonatomic) UIImageView *nibEmbossImageView; // @synthesize nibEmbossImageView=_nibEmbossImageView;
 @property(retain, nonatomic) UIImageView *nibImageView; // @synthesize nibImageView=_nibImageView;
@@ -38,7 +39,6 @@
 @property(nonatomic) unsigned long long sizeState; // @synthesize sizeState=_sizeState;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (double)embossAlphaForColor:(id)arg1;
 - (id)nibEmbossImageName;
 - (id)nibImageName;

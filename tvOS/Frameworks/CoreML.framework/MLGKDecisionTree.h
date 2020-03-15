@@ -16,9 +16,9 @@
     NSMutableOrderedSet *__objectStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *_objectStore; // @synthesize _objectStore=__objectStore;
 @property(retain, nonatomic) NSMutableArray *_attributes; // @synthesize _attributes=__attributes;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)_makeInferenceFromAnswers:(id)arg1 withError:(id)arg2;
 - (void)_loadModelAssetWithModelAtPath:(id)arg1 withError:(id)arg2;

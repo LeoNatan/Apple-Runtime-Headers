@@ -16,8 +16,8 @@
 }
 
 + (id)applicationDelegate;
-@property(retain) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain) NSError *error; // @synthesize error=_error;
 - (id)eventDidFail:(const struct AEDesc *)arg1 withError:(id)arg2;
 
 @end

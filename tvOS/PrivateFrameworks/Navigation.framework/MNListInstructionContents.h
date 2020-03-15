@@ -32,6 +32,7 @@
 }
 
 + (id)contentsWithStep:(id)arg1 transportType:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressFallback; // @synthesize suppressFallback=_suppressFallback;
 @property(nonatomic) _Bool suppressNames; // @synthesize suppressNames=_suppressNames;
 @property(retain, nonatomic) NSString *destinationName; // @synthesize destinationName=_destinationName;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) id <GEOServerFormattedString> distanceFormat; // @synthesize distanceFormat=_distanceFormat;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(retain, nonatomic) NSString *roadName; // @synthesize roadName=_roadName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasServerContent;
 - (id)instructionForStage:(unsigned long long)arg1 distance:(double)arg2;
 - (id)instruction;

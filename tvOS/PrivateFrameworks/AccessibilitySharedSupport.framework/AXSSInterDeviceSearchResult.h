@@ -15,9 +15,9 @@
 }
 
 + (id)searchResultWithPeerID:(id)arg1 deviceType:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MCPeerID *peerID; // @synthesize peerID=_peerID;
 @property(copy, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *name;

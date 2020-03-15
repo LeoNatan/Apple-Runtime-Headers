@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(nonatomic) unsigned long long code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (id)error;
 - (id)description;
 - (id)init;

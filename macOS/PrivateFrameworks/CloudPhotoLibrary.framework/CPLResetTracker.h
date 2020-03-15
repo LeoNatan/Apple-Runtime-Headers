@@ -27,8 +27,8 @@
 + (void)_registerReasonLocked:(id)arg1;
 + (void)_storeReasonsLocked;
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSArray *resetReasons; // @synthesize resetReasons=_resetReasons;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *resetReasons; // @synthesize resetReasons=_resetReasons;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) BOOL hasReasons;

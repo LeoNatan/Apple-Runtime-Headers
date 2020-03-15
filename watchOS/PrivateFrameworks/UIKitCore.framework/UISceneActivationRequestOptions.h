@@ -15,10 +15,10 @@
     UIScene *_requestingScene;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRequestFullscreen:) _Bool _requestFullscreen; // @synthesize _requestFullscreen=__requestFullscreen;
 @property(nonatomic) _Bool preserveLayout; // @synthesize preserveLayout=_preserveLayout;
 @property(retain, nonatomic) UIScene *requestingScene; // @synthesize requestingScene=_requestingScene;
-- (void).cxx_destruct;
 
 @end
 

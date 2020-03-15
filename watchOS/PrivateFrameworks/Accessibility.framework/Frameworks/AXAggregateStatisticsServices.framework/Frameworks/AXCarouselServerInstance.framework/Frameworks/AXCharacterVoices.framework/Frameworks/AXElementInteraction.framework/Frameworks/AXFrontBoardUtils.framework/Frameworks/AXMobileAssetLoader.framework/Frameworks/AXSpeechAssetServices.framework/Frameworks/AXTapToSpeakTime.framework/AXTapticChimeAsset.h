@@ -19,11 +19,11 @@
 + (id)quarterHourAssetForType:(int)arg1;
 + (id)hourAssetForType:(int)arg1 hour:(unsigned int)arg2;
 + (id)_assetPathForChimeSoundType:(int)arg1 fileName:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *hapticDictionary; // @synthesize hapticDictionary=_hapticDictionary;
 @property(readonly, nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) double prePlayTimeInterval; // @synthesize prePlayTimeInterval=_prePlayTimeInterval;
 @property(readonly, nonatomic) NSString *audioFilePath; // @synthesize audioFilePath=_audioFilePath;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long)createSystemSoundIDForStartTime:(double)arg1;
 @property(readonly, nonatomic) NSArray *hapticAtomEntries;

@@ -21,8 +21,8 @@
 
 + (void)createRemoteTransportPairWithTransport:(id *)arg1 andTransport:(id *)arg2;
 + (id)new;
-@property(nonatomic) __weak id <CATRemoteTransportDelegate> remoteTransportDelegate; // @synthesize remoteTransportDelegate=_remoteTransportDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CATRemoteTransportDelegate> remoteTransportDelegate; // @synthesize remoteTransportDelegate=_remoteTransportDelegate;
 - (void)remoteTransportSendMessageOperation:(id)arg1 sendData:(id)arg2;
 - (void)connectionDidClose:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

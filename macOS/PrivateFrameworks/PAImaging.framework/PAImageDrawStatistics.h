@@ -13,8 +13,8 @@
     NSMutableArray *_items;
 }
 
-@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (double)sharpness;
 - (void)addItem:(id)arg1;
 - (id)description;

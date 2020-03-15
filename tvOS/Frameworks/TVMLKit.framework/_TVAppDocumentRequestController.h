@@ -44,6 +44,7 @@
     IKUpdateServiceRequest *_updateServiceRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKUpdateServiceRequest *updateServiceRequest; // @synthesize updateServiceRequest=_updateServiceRequest;
 @property(retain, nonatomic) TVObservableEventController *observableEventController; // @synthesize observableEventController=_observableEventController;
 @property(retain, nonatomic) _TVSwipeUpMessageView *swipeUpMessageView; // @synthesize swipeUpMessageView=_swipeUpMessageView;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) TVMediaPlaybackManager *mediaPlaybackManager; // @synthesize mediaPlaybackManager=_mediaPlaybackManager;
 @property(retain, nonatomic) UIViewController<TVMediaController> *mediaController; // @synthesize mediaController=_mediaController;
 @property(readonly, nonatomic) IKDocumentServiceRequest *documentServiceRequest; // @synthesize documentServiceRequest=_documentServiceRequest;
-- (void).cxx_destruct;
 - (void)_updateShowcaseFactor;
 - (void)_updateMediaInfo;
 - (id)_hostingFocusEnvironment;

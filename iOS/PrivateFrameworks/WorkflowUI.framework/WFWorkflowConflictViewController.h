@@ -19,11 +19,11 @@
     WFWorkflow *_workflowBeingPreviewed;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflow *workflowBeingPreviewed; // @synthesize workflowBeingPreviewed=_workflowBeingPreviewed;
 @property(nonatomic) __weak UIBarButtonItem *keepItem; // @synthesize keepItem=_keepItem;
 @property(readonly, nonatomic) WFWorkflowConflict *conflict; // @synthesize conflict=_conflict;
 @property(nonatomic) __weak id <WFWorkflowConflictViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)workflowForRow:(unsigned long long)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _cropRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
 @property(readonly) __weak HMICameraVideoFrame *frame; // @synthesize frame=_frame;
 @property(readonly) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(readonly) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)main;
 - (id)initWithFrame:(id)arg1 size:(struct CGSize)arg2;

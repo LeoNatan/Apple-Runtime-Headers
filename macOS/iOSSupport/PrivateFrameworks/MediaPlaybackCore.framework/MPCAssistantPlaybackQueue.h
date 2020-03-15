@@ -19,6 +19,7 @@
     NSDictionary *_siriWHAMetricsInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *siriWHAMetricsInfo; // @synthesize siriWHAMetricsInfo=_siriWHAMetricsInfo;
 @property(copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(copy, nonatomic) NSString *siriAssetInfo; // @synthesize siriAssetInfo=_siriAssetInfo;
@@ -26,7 +27,6 @@
 @property(nonatomic) BOOL shouldImmediatelyStartPlayback; // @synthesize shouldImmediatelyStartPlayback=_shouldImmediatelyStartPlayback;
 @property(nonatomic) BOOL shouldOverrideManuallyCuratedQueue; // @synthesize shouldOverrideManuallyCuratedQueue=_shouldOverrideManuallyCuratedQueue;
 @property(readonly, copy, nonatomic) NSString *contextID; // @synthesize contextID=_contextID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL supportedOnCurrentPlatform;
 - (struct _MRSystemAppPlaybackQueue *)createRemotePlaybackQueue;
 - (id)initWithContextID:(id)arg1;

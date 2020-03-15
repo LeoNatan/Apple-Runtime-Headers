@@ -21,6 +21,7 @@
 }
 
 + (id)sortDescriptorsForRankingStrategy:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long searchResultType; // @synthesize searchResultType=_searchResultType;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
@@ -29,7 +30,6 @@
 @property(nonatomic) unsigned long long relevanceBitField; // @synthesize relevanceBitField=_relevanceBitField;
 @property(nonatomic) double rankingScore; // @synthesize rankingScore=_rankingScore;
 @property(retain, nonatomic) CSSearchableItem *searchableItem; // @synthesize searchableItem=_searchableItem;
-- (void).cxx_destruct;
 - (id)initWithSearchableItem:(id)arg1 rankingScore:(double)arg2 relevanceBitField:(unsigned long long)arg3 modificationDateBucket:(unsigned long long)arg4 searchResultType:(unsigned long long)arg5 isPrefixMatch:(_Bool)arg6;
 
 @end

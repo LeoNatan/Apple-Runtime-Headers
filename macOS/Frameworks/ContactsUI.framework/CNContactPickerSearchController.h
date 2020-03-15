@@ -17,8 +17,8 @@
     NSTimer *_deferProgressTimer;
 }
 
-@property(retain) NSTimer *deferProgressTimer; // @synthesize deferProgressTimer=_deferProgressTimer;
 - (void).cxx_destruct;
+@property(retain) NSTimer *deferProgressTimer; // @synthesize deferProgressTimer=_deferProgressTimer;
 - (void)resetCountsOfSearchesPerformed;
 @property(readonly) unsigned long long countOfServerSearchesPerformed;
 @property(readonly) unsigned long long countOfLocalSearchesPerformed;

@@ -25,6 +25,7 @@
 }
 
 + (id)oldDate;
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic, getter=isSeen) _Bool seen; // @synthesize seen=_seen;
 @property(nonatomic) _Bool userIsSender; // @synthesize userIsSender=_userIsSender;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *inboxModelTitle; // @synthesize inboxModelTitle=_inboxModelTitle;
 @property(readonly, nonatomic) long long inboxModelType; // @synthesize inboxModelType=_inboxModelType;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *assetsForOneUp; // @synthesize assetsForOneUp=_assetsForOneUp;
 @property(readonly, nonatomic) NSArray *leftPreviewItems;
 - (id)copyWithZone:(struct _NSZone *)arg1;

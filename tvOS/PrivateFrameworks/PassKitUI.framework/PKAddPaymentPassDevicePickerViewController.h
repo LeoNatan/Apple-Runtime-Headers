@@ -17,8 +17,8 @@
     id <PKAddPaymentPassDevicePickerDelegate> _delegate;
 }
 
-@property(nonatomic) id <PKAddPaymentPassDevicePickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <PKAddPaymentPassDevicePickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;

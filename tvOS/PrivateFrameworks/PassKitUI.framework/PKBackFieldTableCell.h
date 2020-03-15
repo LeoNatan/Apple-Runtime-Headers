@@ -21,9 +21,9 @@
 + (id)valueFont;
 + (id)titleFont;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showLinks; // @synthesize showLinks=_showLinks;
 @property(retain, nonatomic) PKPassField *field; // @synthesize field=_field;
-- (void).cxx_destruct;
 - (void)_setupTextAttributes;
 - (struct CGRect)_textBounds;
 - (void)layoutSubviews;

@@ -18,12 +18,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property void *oldRefCon; // @synthesize oldRefCon=_oldRefCon;
 @property CDUnknownFunctionPointerType oldSendProc; // @synthesize oldSendProc=_oldSendProc;
 @property CDUnknownFunctionPointerType sendProc; // @synthesize sendProc=_sendProc;
 @property(retain) OSALanguage *language; // @synthesize language=_language;
 @property(retain) AMWorkflowRunner *runner; // @synthesize runner=_runner;
-- (void).cxx_destruct;
 - (void)cleanUp;
 - (id)initWithRunner:(id)arg1 forLanguage:(id)arg2;
 

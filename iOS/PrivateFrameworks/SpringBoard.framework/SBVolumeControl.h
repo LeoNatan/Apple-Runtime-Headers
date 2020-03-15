@@ -41,8 +41,8 @@
 
 + (_Bool)_isVolumeChangeAllowedForState:(id)arg1 error:(out id *)arg2;
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSString *lastDisplayedCategory; // @synthesize lastDisplayedCategory=_lastDisplayedCategory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *lastDisplayedCategory; // @synthesize lastDisplayedCategory=_lastDisplayedCategory;
 - (_Bool)_shouldRouteChangeResultInPresentingVolumeHUDWhenTransitioningFrom:(id)arg1 toAudioRoutes:(id)arg2;
 - (void)cache:(id)arg1 didUpdateVolumeLimitEnforced:(_Bool)arg2;
 - (void)cache:(id)arg1 didUpdateActiveAudioRoutingWithRoute:(id)arg2 routeAttributes:(id)arg3 activeOutputDevices:(id)arg4;

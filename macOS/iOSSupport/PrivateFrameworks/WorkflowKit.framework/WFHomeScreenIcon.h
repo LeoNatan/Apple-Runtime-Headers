@@ -14,9 +14,9 @@
     NSData *_customImageData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *customImageData; // @synthesize customImageData=_customImageData;
 @property(readonly, nonatomic) WFWorkflowIcon *workflowIcon; // @synthesize workflowIcon=_workflowIcon;
-- (void).cxx_destruct;
 - (id)initWithWorkflowIcon:(id)arg1 customImageData:(id)arg2;
 
 @end

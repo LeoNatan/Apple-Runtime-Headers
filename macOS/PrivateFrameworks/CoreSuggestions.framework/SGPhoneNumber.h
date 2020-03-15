@@ -17,8 +17,8 @@
 + (id)phoneNumber:(id)arg1 label:(id)arg2 extractionType:(unsigned long long)arg3 recordId:(id)arg4 origin:(id)arg5;
 + (id)phoneNumber:(id)arg1 label:(id)arg2 extractionInfo:(id)arg3 recordId:(id)arg4;
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqualToPhoneNumber:(id)arg1;

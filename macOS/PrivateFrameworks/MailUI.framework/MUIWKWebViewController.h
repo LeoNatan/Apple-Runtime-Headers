@@ -38,6 +38,7 @@
 }
 
 + (id)webKitLog;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *cacheDisplayInRectToken; // @synthesize cacheDisplayInRectToken=_cacheDisplayInRectToken;
 @property(retain, nonatomic) NSSharingServicePicker *sharingServicePicker; // @synthesize sharingServicePicker=_sharingServicePicker;
 @property(retain, nonatomic) NSMapTable *sharingItems; // @synthesize sharingItems=_sharingItems;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) MUILinkEditWindowController *linkEditController; // @synthesize linkEditController=_linkEditController;
 @property(retain, nonatomic) NSMapTable *attachmentControllersByAttachment; // @synthesize attachmentControllersByAttachment=_attachmentControllersByAttachment;
 @property(retain, nonatomic) MUIWebDocumentViewGroup *viewGroup; // @synthesize viewGroup=_viewGroup;
-- (void).cxx_destruct;
 - (void)cancelCacheDisplayInRect;
 - (void)cacheDisplayInRect:(struct CGRect)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_noteFileSystemChanged:(id)arg1;

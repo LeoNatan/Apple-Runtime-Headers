@@ -17,8 +17,8 @@
     NSString *_fieldName;
 }
 
-@property(readonly) NSString *fieldName; // @synthesize fieldName=_fieldName;
 - (void).cxx_destruct;
+@property(readonly) NSString *fieldName; // @synthesize fieldName=_fieldName;
 @property(retain) id value;
 - (void)setIntegerValue:(unsigned long long)arg1;
 - (void)createBuckets:(struct _HIDAnalyticsHistogramSegmentConfig *)arg1 count:(long long)arg2;

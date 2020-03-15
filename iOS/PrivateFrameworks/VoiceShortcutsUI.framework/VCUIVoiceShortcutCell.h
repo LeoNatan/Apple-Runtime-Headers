@@ -14,9 +14,9 @@
     UIView *_cardView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) VCVoiceShortcut *voiceShortcut; // @synthesize voiceShortcut=_voiceShortcut;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateCardView;

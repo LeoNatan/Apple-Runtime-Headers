@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fmdIDSIdentifier; // @synthesize fmdIDSIdentifier=_fmdIDSIdentifier;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
 @property(retain, nonatomic) NSString *userGUID; // @synthesize userGUID=_userGUID;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *fmmAuthToken; // @synthesize fmmAuthToken=_fmmAuthToken;
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) BOOL hasMandatoryInfo;
 - (void)encodeWithCoder:(id)arg1;

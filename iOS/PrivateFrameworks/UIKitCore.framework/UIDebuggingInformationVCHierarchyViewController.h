@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     UITableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSArray *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

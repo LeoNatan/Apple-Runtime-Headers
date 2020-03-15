@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)newNoteBasedOnModernNote:(id)arg1 inFolder:(id)arg2 context:(struct NSManagedObjectContext *)arg3;
-+ (void)addAttachmentFromWebResource:(id)arg1 toNote:(id)arg2 context:(struct NSManagedObjectContext *)arg3;
-+ (id)createAttachmentForNote:(id)arg1 withName:(id)arg2 context:(struct NSManagedObjectContext *)arg3;
++ (id)newNoteBasedOnModernNote:(id)arg1 inFolder:(id)arg2 context:(id)arg3;
++ (void)addAttachmentFromWebResource:(id)arg1 toNote:(id)arg2 context:(id)arg3;
++ (id)createAttachmentForNote:(id)arg1 withName:(id)arg2 context:(id)arg3;
 + (id)generateContentID;
 + (id)suggestedFilenameForURL:(id)arg1 mimeType:(id)arg2;
 + (id)contentStringFromWebArchive:(id)arg1;

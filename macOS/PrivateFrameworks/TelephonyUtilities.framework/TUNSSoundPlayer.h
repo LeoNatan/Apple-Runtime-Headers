@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _iterationComplete;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType iterationComplete; // @synthesize iterationComplete=_iterationComplete;
 @property(retain, nonatomic) NSSound *sound; // @synthesize sound=_sound;
 @property(retain, nonatomic) TURepeatingActor *repeatingActor; // @synthesize repeatingActor=_repeatingActor;
-- (void).cxx_destruct;
 - (void)sound:(id)arg1 didFinishPlaying:(BOOL)arg2;
 @property(readonly, nonatomic, getter=isPlaying) BOOL playing;
 - (void)stopPlaying;

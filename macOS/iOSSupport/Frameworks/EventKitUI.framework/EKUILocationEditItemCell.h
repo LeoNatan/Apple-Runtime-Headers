@@ -17,8 +17,8 @@
     CDUnknownBlockType _clearButtonTapped;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType clearButtonTapped; // @synthesize clearButtonTapped=_clearButtonTapped;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType clearButtonTapped; // @synthesize clearButtonTapped=_clearButtonTapped;
 - (void)_clearButtonTapped:(id)arg1;
 - (void)updateWithName:(id)arg1 sourceSupportsAvailability:(BOOL)arg2 availabilityRequestInProgress:(BOOL)arg3 availabilityType:(long long)arg4;
 - (id)description;

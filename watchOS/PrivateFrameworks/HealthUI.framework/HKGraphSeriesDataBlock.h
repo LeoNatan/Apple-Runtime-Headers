@@ -14,9 +14,9 @@
     HKValueRange *_yValueRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKValueRange *yValueRange; // @synthesize yValueRange=_yValueRange;
 @property(copy, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
-- (void).cxx_destruct;
 
 @end
 

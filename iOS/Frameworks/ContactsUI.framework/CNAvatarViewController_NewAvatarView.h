@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)defaultThreeDTouchSupport;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *likenessProviders; // @synthesize likenessProviders=_likenessProviders;
 @property(nonatomic) __weak _CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)contacts;
-- (void).cxx_destruct;
 - (void)setContacts:(id)arg1;
 - (void)loadView;
 - (id)initWithSettings:(id)arg1;

@@ -10,6 +10,7 @@
 
 @protocol AFConversationStorable <NSObject>
 - (AFDataStore *)associatedDataStore;
+- (_Bool)isTransient;
 - (_Bool)isVirgin;
 - (long long)presentationState;
 - (NSString *)aceCommandIdentifier;

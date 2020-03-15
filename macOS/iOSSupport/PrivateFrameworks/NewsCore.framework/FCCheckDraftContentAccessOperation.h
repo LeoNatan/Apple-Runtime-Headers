@@ -19,13 +19,13 @@
     NSDictionary *_resultAccessByContentID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *resultAccessByContentID; // @synthesize resultAccessByContentID=_resultAccessByContentID;
 @property(copy, nonatomic) CDUnknownBlockType checkAccessCompletion; // @synthesize checkAccessCompletion=_checkAccessCompletion;
 @property(copy, nonatomic) NSSet *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(copy, nonatomic) NSSet *issueIDs; // @synthesize issueIDs=_issueIDs;
 @property(copy, nonatomic) NSArray *channelMemberships; // @synthesize channelMemberships=_channelMemberships;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

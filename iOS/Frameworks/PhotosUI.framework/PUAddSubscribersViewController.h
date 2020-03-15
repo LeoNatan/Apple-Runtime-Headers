@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     PLCloudSharedAlbum *_album;
 }
 
-@property(readonly, nonatomic) PLCloudSharedAlbum *album; // @synthesize album=_album;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PLCloudSharedAlbum *album; // @synthesize album=_album;
 - (void)recipientViewController:(id)arg1 didEnterText:(id)arg2;
 - (void)recipientViewControllerDidRemoveRecipient:(id)arg1;
 - (void)recipientViewControllerDidAddRecipient:(id)arg1;

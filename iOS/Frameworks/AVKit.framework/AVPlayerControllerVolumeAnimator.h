@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _volumeToRestore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimatingAwayFromZero) _Bool animatingAwayFromZero; // @synthesize animatingAwayFromZero=_animatingAwayFromZero;
 @property(nonatomic, getter=isAnimatingTowardsZero) _Bool animatingTowardsZero; // @synthesize animatingTowardsZero=_animatingTowardsZero;
 @property(nonatomic) double volumeToRestore; // @synthesize volumeToRestore=_volumeToRestore;
 @property(readonly, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)restoreVolumeIfNeeded;
 - (void)setProgressAwayFromZero:(double)arg1;
 - (void)setProgressTowardsZero:(double)arg1;

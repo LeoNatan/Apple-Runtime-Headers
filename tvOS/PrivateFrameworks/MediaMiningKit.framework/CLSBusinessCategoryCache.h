@@ -14,8 +14,8 @@
 }
 
 + (_Bool)cachedRegion:(id)arg1 isMatchingOtherRegion:(id)arg2;
-@property(readonly, nonatomic) NSPredicate *predicateEntryWithUpdateTimestamp; // @synthesize predicateEntryWithUpdateTimestamp=_predicateEntryWithUpdateTimestamp;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSPredicate *predicateEntryWithUpdateTimestamp; // @synthesize predicateEntryWithUpdateTimestamp=_predicateEntryWithUpdateTimestamp;
 - (id)updateBusinessItems:(id)arg1;
 - (void)_updateManagedBusinessItem:(id)arg1 withBusinessItem:(id)arg2;
 - (id)_fetchBusinessItemsForMUIDs:(id)arg1;

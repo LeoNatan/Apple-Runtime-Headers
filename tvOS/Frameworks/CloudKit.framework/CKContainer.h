@@ -71,6 +71,7 @@
 + (id)accountChangeNotificationRegistrationQueue;
 + (id)defaultContainer;
 + (id)uploadRequestFetchAllNotificationName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *underlyingDispatchQueue; // @synthesize underlyingDispatchQueue=_underlyingDispatchQueue;
 @property(nonatomic) unsigned long long stateHandle; // @synthesize stateHandle=_stateHandle;
@@ -101,7 +102,6 @@
 @property(retain, nonatomic) CKRecordID *orgAdminUserID; // @synthesize orgAdminUserID=_orgAdminUserID;
 @property(retain, nonatomic) CKRecordID *containerScopedUserID; // @synthesize containerScopedUserID=_containerScopedUserID;
 @property(retain, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
-- (void).cxx_destruct;
 - (id)findTrackedAssetByUUID:(id)arg1;
 - (void)trackAssets:(id)arg1;
 - (void)dumpDaemonStatusReport;

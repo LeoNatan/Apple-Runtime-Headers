@@ -37,6 +37,7 @@
 + (_Bool)shouldShowTimeStringForOccurrence:(id)arg1;
 + (id)languageAwareInsetsCache;
 + (id)locationCache;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) struct CGRect textRect; // @synthesize textRect=_textRect;
 @property(nonatomic) _Bool usesSmallText; // @synthesize usesSmallText=_usesSmallText;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) UIColor *displayColor; // @synthesize displayColor=_displayColor;
 @property(nonatomic) _Bool isProposedTime; // @synthesize isProposedTime=_isProposedTime;
 @property(retain, nonatomic) EKEvent *occurrence; // @synthesize occurrence=_occurrence;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;

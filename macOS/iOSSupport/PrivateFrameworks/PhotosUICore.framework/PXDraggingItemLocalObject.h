@@ -13,8 +13,8 @@
     PXAssetReference *_assetReference;
 }
 
-@property(readonly, nonatomic) PXAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 @property(readonly, nonatomic) BOOL needsImport;
 - (id)initWithAssetReference:(id)arg1;
 - (id)init;

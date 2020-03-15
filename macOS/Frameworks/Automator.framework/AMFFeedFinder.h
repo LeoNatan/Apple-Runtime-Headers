@@ -25,12 +25,12 @@
 + (id)_interestingLinkStrings;
 + (id)_parseResultsFromHeadElement:(id)arg1 sourceURL:(id)arg2 error:(id *)arg3;
 + (id)feedFinderURLsFromInputURLs:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) AMFFeedController *_feedController; // @synthesize _feedController=__feedController;
 @property(retain) NSUUID *_currentFeedControllerFindUUID; // @synthesize _currentFeedControllerFindUUID=__currentFeedControllerFindUUID;
 @property(retain) WebView *_webView; // @synthesize _webView=__webView;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property __weak id <AMFFeedFinderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didFinishLoadForFrame:(id)arg2;
 - (void)webView:(id)arg1 didFailProvisionalLoadWithError:(id)arg2 forFrame:(id)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2 forFrame:(id)arg3;

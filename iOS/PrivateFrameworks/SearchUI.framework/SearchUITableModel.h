@@ -27,10 +27,10 @@
 + (id)tableModelWithCardSections:(id)arg1 isInline:(_Bool)arg2 queryId:(unsigned long long)arg3;
 + (_Bool)resultHasHorizontallyScrollingCardSections:(id)arg1;
 + (id)tableModelWithSections:(id)arg1 expandedSections:(id)arg2 queryId:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSArray *tableRowModel; // @synthesize tableRowModel=_tableRowModel;
 @property(readonly) unsigned long long queryId; // @synthesize queryId=_queryId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)indexPathForRowModel:(id)arg1;
 - (_Bool)shouldLeaveSpaceForChevronForIndexPath:(id)arg1;

@@ -16,9 +16,9 @@
     NSMutableSet *_ownerNodes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *ownerNodes; // @synthesize ownerNodes=_ownerNodes;
 @property(readonly, nonatomic) NSMutableSet *momentNodes; // @synthesize momentNodes=_momentNodes;
-- (void).cxx_destruct;
 - (id)initWithMomentNodes:(id)arg1 ownerNodes:(id)arg2;
 
 // Remaining properties

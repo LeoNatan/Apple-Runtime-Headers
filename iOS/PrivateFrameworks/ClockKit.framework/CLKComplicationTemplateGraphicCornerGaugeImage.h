@@ -16,11 +16,11 @@
     CLKFullColorImageProvider *_imageProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKFullColorImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(copy, nonatomic) CLKTextProvider *trailingTextProvider; // @synthesize trailingTextProvider=_trailingTextProvider;
 @property(copy, nonatomic) CLKTextProvider *leadingTextProvider; // @synthesize leadingTextProvider=_leadingTextProvider;
 @property(copy, nonatomic) CLKGaugeProvider *gaugeProvider; // @synthesize gaugeProvider=_gaugeProvider;
-- (void).cxx_destruct;
 - (void)_enumerateFullColorImageProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateGaugeProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;

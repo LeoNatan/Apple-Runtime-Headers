@@ -23,11 +23,11 @@
 + (id)colorGradientWithConfigDict:(id)arg1;
 + (id)colorGradientWithColors:(id)arg1 locations:(id)arg2;
 + (id)colorGradientWithPBColorGradient:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(readonly, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(readonly, nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(readonly, nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

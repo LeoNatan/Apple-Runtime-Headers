@@ -21,6 +21,7 @@
     GKAccountViewController *_webViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) GKAccountViewController *webViewController; // @synthesize webViewController=_webViewController;
 @property(retain) NSImageView *bubbleImageView; // @synthesize bubbleImageView=_bubbleImageView;
 @property(retain) NSButton *outerLeftButton; // @synthesize outerLeftButton=_outerLeftButton;
@@ -29,7 +30,6 @@
 @property(retain) NSButton *innerRightButton; // @synthesize innerRightButton=_innerRightButton;
 @property(retain) NSView *mainView; // @synthesize mainView=_mainView;
 @property(retain) NSWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)startLoadingURLForLocalPlayer:(id)arg1;
 - (void)awakeFromNib;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @dynamic completionHandler;

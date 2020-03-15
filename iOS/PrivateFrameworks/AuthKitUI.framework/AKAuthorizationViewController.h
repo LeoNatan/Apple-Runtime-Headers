@@ -20,11 +20,11 @@
     AKAuthorizationScopeChoices *_scopeChoices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *scopeChoices; // @synthesize scopeChoices=_scopeChoices;
 @property(readonly, nonatomic) AKAuthorizationNavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak id <AKAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
-- (void).cxx_destruct;
 - (void)performPasswordAuthenticationForPaneViewController:(id)arg1;
 - (void)performAppleIDAuthorizationForPaneViewController:(id)arg1;
 - (void)authorizationPaneViewController:(id)arg1 pushEditScope:(id)arg2 presentationContext:(id)arg3 options:(id)arg4;

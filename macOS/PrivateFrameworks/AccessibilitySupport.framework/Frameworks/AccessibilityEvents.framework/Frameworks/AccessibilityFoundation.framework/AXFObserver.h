@@ -18,11 +18,11 @@
     NSOperationQueue *__callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *_callbackQueue; // @synthesize _callbackQueue=__callbackQueue;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) AXFUIElement *element; // @synthesize element=_element;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)fireWithElement:(id)arg1 userInfo:(id)arg2;
 - (id)copyForFiring;

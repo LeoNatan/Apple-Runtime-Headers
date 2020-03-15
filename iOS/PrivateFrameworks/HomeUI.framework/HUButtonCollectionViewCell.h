@@ -20,10 +20,10 @@
     UIView *_bottomSeparatorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(readonly, nonatomic) UIView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
 @property(readonly, nonatomic) HUButtonCell *buttonView; // @synthesize buttonView=_buttonView;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isDisabled) _Bool disabled;
 @property(nonatomic) _Bool bottomSeparatorVisible;
 @property(nonatomic) _Bool topSeparatorVisible;

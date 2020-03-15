@@ -32,6 +32,7 @@
     NSView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL dividerLineHidden; // @synthesize dividerLineHidden=_dividerLineHidden;
 @property(nonatomic) __weak NSView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak NSSearchField *searchField; // @synthesize searchField=_searchField;
@@ -41,7 +42,6 @@
 @property(copy) NSString *searchResultKeyPath; // @synthesize searchResultKeyPath=_searchResultKeyPath;
 @property(copy) NSString *searchDescription; // @synthesize searchDescription=_searchDescription;
 @property __weak id <NCWidgetSearchViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_listItemViewControllerForContentViewController:(id)arg1;
 - (void)_removeListItemViewController:(id)arg1;
 - (id)_addContentViewController:(id)arg1;

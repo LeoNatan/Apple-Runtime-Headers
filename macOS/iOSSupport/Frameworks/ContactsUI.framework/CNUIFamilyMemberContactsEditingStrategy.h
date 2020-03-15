@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)whitelistedContactsStrategy;
 + (id)managedContactsStrategy;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType sensitiveDataContactFilter; // @synthesize sensitiveDataContactFilter=_sensitiveDataContactFilter;
 @property(readonly, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
-- (void).cxx_destruct;
 - (id)initWithProhibitedPropertyKeys:(id)arg1 sensitiveDataContactFilter:(CDUnknownBlockType)arg2;
 
 @end

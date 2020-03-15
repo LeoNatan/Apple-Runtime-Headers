@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSArray *_processIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *processIdentifiers; // @synthesize processIdentifiers=_processIdentifiers;
 @property(retain) NSString *perfDataName; // @synthesize perfDataName=_perfDataName;
 @property(retain) NSString *perfDataPath; // @synthesize perfDataPath=_perfDataPath;
 @property(retain, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) unsigned short serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, nonatomic) NSDictionary *performanceMetrics; // @synthesize performanceMetrics=_performanceMetrics;
-- (void).cxx_destruct;
 - (id)endAndReturnPerformanceMetrics;
 - (void)begin;
 - (id)initWithProcessIdentifiers:(id)arg1;

@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property double baselineHeight; // @synthesize baselineHeight=_baselineHeight;
 @property(retain) NSBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

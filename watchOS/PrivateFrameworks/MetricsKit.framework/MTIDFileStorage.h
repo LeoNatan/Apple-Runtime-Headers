@@ -18,11 +18,11 @@
     NSArray *_entitledNamespaces;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDisableChangeNotifications; // @synthesize shouldDisableChangeNotifications=_shouldDisableChangeNotifications;
 @property(retain, nonatomic) NSArray *entitledNamespaces; // @synthesize entitledNamespaces=_entitledNamespaces;
 @property(retain, nonatomic) NSMutableDictionary *namespaceFiles; // @synthesize namespaceFiles=_namespaceFiles;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (_Bool)isEntitledNamespace:(id)arg1;
 - (id)fileForNamespace:(id)arg1 error:(id *)arg2;
 - (id)fileNameForNamespace:(id)arg1;

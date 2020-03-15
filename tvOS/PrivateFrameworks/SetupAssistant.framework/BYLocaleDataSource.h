@@ -16,10 +16,10 @@
 }
 
 + (id)newWithLanguage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *moreCountries; // @synthesize moreCountries=_moreCountries;
 @property(retain, nonatomic) NSMutableArray *suggestedCountries; // @synthesize suggestedCountries=_suggestedCountries;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (id)otherLocaleAtIndex:(unsigned long long)arg1;
 - (id)recommendedLocaleAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfOtherLocales;

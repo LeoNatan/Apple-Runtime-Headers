@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     id <NACRoutingControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NACRoutingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NACRoutingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)routingController:(id)arg1 didFailToPickRouteWithError:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 @property(readonly, nonatomic) NSArray *availableAudioRoutes;

@@ -19,10 +19,10 @@
     UIView *_bottomSeparatorView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(readonly, nonatomic) UIView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
 @property(readonly, nonatomic) HULinkedApplicationView *linkedApplicationView; // @synthesize linkedApplicationView=_linkedApplicationView;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL bottomSeparatorVisible;
 @property(nonatomic) BOOL topSeparatorVisible;
 - (void)updateUIWithAnimation:(BOOL)arg1;

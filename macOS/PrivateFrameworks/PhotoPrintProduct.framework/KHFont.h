@@ -16,8 +16,8 @@
 + (id)safelyLoadFontWithName:(id)arg1 size:(double)arg2;
 + (id)systemFontOfSize:(double)arg1;
 + (id)fontWithName:(id)arg1 size:(double)arg2;
-@property(retain) NSFont *internalFont; // @synthesize internalFont=_internalFont;
 - (void).cxx_destruct;
+@property(retain) NSFont *internalFont; // @synthesize internalFont=_internalFont;
 - (id)systemFont;
 
 @end

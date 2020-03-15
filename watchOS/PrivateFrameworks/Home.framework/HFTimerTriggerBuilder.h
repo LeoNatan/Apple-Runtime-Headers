@@ -15,9 +15,9 @@
     HFConcreteTimeTriggerBuilder *_concreteTriggerBuilder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFConcreteTimeTriggerBuilder *concreteTriggerBuilder; // @synthesize concreteTriggerBuilder=_concreteTriggerBuilder;
 @property(nonatomic) unsigned int preferredHomeKitObjectType; // @synthesize preferredHomeKitObjectType=_preferredHomeKitObjectType;
-- (void).cxx_destruct;
 - (id)_performValidation;
 - (_Bool)_supportsEventBasedTimeTriggers;
 - (_Bool)_currentStateRequiresEventBasedTimeTriggers;

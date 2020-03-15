@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     long long _bytesNeededToResume;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long bytesNeededToResume; // @synthesize bytesNeededToResume=_bytesNeededToResume;
 @property(retain, nonatomic) NSMutableData *resumeBuffer; // @synthesize resumeBuffer=_resumeBuffer;
 @property(retain, nonatomic) CNMutableContact *pendingContact; // @synthesize pendingContact=_pendingContact;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(copy, nonatomic) CNContactKeyVector *keyDescriptorToMakeAvailable; // @synthesize keyDescriptorToMakeAvailable=_keyDescriptorToMakeAvailable;
 @property(nonatomic) _Bool mutableResults; // @synthesize mutableResults=_mutableResults;
-- (void).cxx_destruct;
 - (void)_applyPropertiesFromFromByteCursor:(char **)arg1 end:(char *)arg2;
 - (void)_applyImageDataFromByteCursor:(char **)arg1 end:(char *)arg2;
 - (void)_applyMultivalueFromByteCursor:(char **)arg1 end:(char *)arg2 abPropertyID:(int)arg3;

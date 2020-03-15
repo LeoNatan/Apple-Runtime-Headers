@@ -23,13 +23,13 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needToSendGreeting; // @synthesize needToSendGreeting=_needToSendGreeting;
 @property(nonatomic) long long greeting; // @synthesize greeting=_greeting;
 @property(nonatomic) int lastReplyCode; // @synthesize lastReplyCode=_lastReplyCode;
 @property(nonatomic) double originalSocketTimeout; // @synthesize originalSocketTimeout=_originalSocketTimeout;
 @property(readonly, nonatomic) _MFSMTPEnhancedStatusCode *lastStatusCode; // @synthesize lastStatusCode=_lastStatusCode;
 @property(nonatomic) double timeLastCommandWasSent; // @synthesize timeLastCommandWasSent=_timeLastCommandWasSent;
-- (void).cxx_destruct;
 - (long long)sendDatas:(id)arg1;
 - (long long)rcptTo:(id)arg1;
 - (long long)mailFrom:(id)arg1;

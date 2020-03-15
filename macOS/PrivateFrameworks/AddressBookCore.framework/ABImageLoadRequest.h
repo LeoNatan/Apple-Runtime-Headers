@@ -21,6 +21,7 @@
 
 + (id)requestWithCoreDataContact:(id)arg1 addressBook:(id)arg2;
 + (id)requestWithAddressBookPerson:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *primaryImagePath; // @synthesize primaryImagePath=_primaryImagePath;
 @property(readonly, copy) NSData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
 @property(readonly, copy) NSData *imageData; // @synthesize imageData=_imageData;
@@ -28,7 +29,6 @@
 @property(readonly) BOOL isMe; // @synthesize isMe=_isMe;
 @property(copy) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly, copy) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (void)logDebugInfoWithName:(id)arg1;
 - (id)initWithContactIdentifier:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 isMe:(BOOL)arg4 imageData:(id)arg5 thumbnailImageData:(id)arg6;
 

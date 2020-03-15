@@ -28,8 +28,8 @@
     PKPaymentInstallmentConfiguration *_installmentConfiguration;
 }
 
-@property(retain, nonatomic) PKPaymentInstallmentConfiguration *installmentConfiguration; // @synthesize installmentConfiguration=_installmentConfiguration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentInstallmentConfiguration *installmentConfiguration; // @synthesize installmentConfiguration=_installmentConfiguration;
 - (id)paymentSetupMarker;
 - (void)_handleNotifyRequested;
 - (void)_openTermsAndConditions;

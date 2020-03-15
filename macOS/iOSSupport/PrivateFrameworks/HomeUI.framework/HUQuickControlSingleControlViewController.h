@@ -27,6 +27,7 @@
 
 + (Class)controlItemClass;
 + (id)controlItemPredicate;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasSetControlSize; // @synthesize hasSetControlSize=_hasSetControlSize;
 @property(nonatomic) double horizontalControlCompressionFactor; // @synthesize horizontalControlCompressionFactor=_horizontalControlCompressionFactor;
 @property(nonatomic) double verticalDirectionalControlStretchFactor; // @synthesize verticalDirectionalControlStretchFactor=_verticalDirectionalControlStretchFactor;
@@ -37,7 +38,6 @@
 @property(nonatomic, getter=areWritesInProgressOrPossible) BOOL writesInProgressOrPossible; // @synthesize writesInProgressOrPossible=_writesInProgressOrPossible;
 @property(readonly, nonatomic) id modelValue; // @synthesize modelValue=_modelValue;
 @property(retain, nonatomic) HUQuickControlInteractionCoordinator *interactionCoordinator; // @synthesize interactionCoordinator=_interactionCoordinator;
-- (void).cxx_destruct;
 - (id)viewForTouchContinuation;
 - (void)interactionCoordinator:(id)arg1 updateControlVerticalStretchFactor:(double)arg2;
 - (void)interactionCoordinator:(id)arg1 updateControlHorizontalCompressionFactor:(double)arg2;

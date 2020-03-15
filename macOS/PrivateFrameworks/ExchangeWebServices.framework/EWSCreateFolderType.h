@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *Folders; // @synthesize Folders=_Folders;
 @property(retain, nonatomic) EWSTargetFolderIdType *ParentFolderId; // @synthesize ParentFolderId=_ParentFolderId;
-- (void).cxx_destruct;
 
 @end
 

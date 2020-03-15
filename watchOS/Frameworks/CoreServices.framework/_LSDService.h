@@ -29,8 +29,8 @@ __attribute__((visibility("hidden")))
 + (id)dispatchQueue;
 + (_Bool)XPCConnectionIsAlwaysPrivileged;
 + (_Bool)isEnabled;
-@property(readonly) __weak NSXPCListener *XPCListener; // @synthesize XPCListener=_listener;
 - (void).cxx_destruct;
+@property(readonly) __weak NSXPCListener *XPCListener; // @synthesize XPCListener=_listener;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)initWithXPCListener:(id)arg1;
 

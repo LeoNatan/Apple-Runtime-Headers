@@ -18,11 +18,11 @@
 
 + (id)hidStepWithDebugId:(unsigned int)arg1 pid:(int)arg2 tid:(unsigned long long)arg3;
 + (id)hidStepWithKTraceEvent:(struct trace_point *)arg1 fromSession:(struct ktrace_session *)arg2;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long tid; // @synthesize tid=_tid;
 @property(readonly) int pid; // @synthesize pid=_pid;
 @property(retain) SATimestamp *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) unsigned int debugid; // @synthesize debugid=_debugid;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithKTraceEvent:(struct trace_point *)arg1 fromSession:(struct ktrace_session *)arg2;
 - (id)initWithTimestamp:(id)arg1 debugID:(unsigned int)arg2 pid:(int)arg3 tid:(unsigned long long)arg4;

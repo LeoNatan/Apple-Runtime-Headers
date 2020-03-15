@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_stateFromStoreDownload:(id)arg1;
-@property(retain, nonatomic) MPStoreDownload *storeDownload; // @synthesize storeDownload=_storeDownload;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPStoreDownload *storeDownload; // @synthesize storeDownload=_storeDownload;
 - (void)_removeStoreObserver;
 - (void)_addStoreObserver;
 - (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;

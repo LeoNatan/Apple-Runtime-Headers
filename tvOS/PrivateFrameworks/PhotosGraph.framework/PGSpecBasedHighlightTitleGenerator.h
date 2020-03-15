@@ -16,10 +16,10 @@
     NSString *_meaningLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool createVerboseTitle; // @synthesize createVerboseTitle=_createVerboseTitle;
 @property(readonly, nonatomic) NSString *meaningLabel; // @synthesize meaningLabel=_meaningLabel;
 @property(readonly, nonatomic) id <PGEventEnrichment> collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (void)_generateTitleAndSubtitleWithResult:(CDUnknownBlockType)arg1;
 - (id)initWithCollection:(id)arg1 meaningLabel:(id)arg2 createVerboseTitle:(_Bool)arg3;
 

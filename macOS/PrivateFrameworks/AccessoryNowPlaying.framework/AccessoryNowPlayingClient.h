@@ -20,12 +20,12 @@
     NSSet *_subscriberList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *subscriberList; // @synthesize subscriberList=_subscriberList;
 @property(retain, nonatomic) id <AccessoryNowPlayingXPCServerProtocol> remoteObject; // @synthesize remoteObject=_remoteObject;
 @property(retain, nonatomic) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
 @property(nonatomic) BOOL shouldSendArtwork; // @synthesize shouldSendArtwork=_shouldSendArtwork;
 @property(nonatomic) __weak id <AccessoryNowPlayingClientProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setPlaybackQueueIndex:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setPlaybackElapsedTime:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)cancelRequestPlaybackQueueListInfo:(id)arg1 requestID:(id)arg2;

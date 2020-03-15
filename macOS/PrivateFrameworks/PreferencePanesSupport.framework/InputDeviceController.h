@@ -16,8 +16,8 @@
     BOOL mEnableLogs;
 }
 
-@property(readonly) BOOL enableLogs; // @synthesize enableLogs=mEnableLogs;
 - (void).cxx_destruct;
+@property(readonly) BOOL enableLogs; // @synthesize enableLogs=mEnableLogs;
 - (void)updateButtons;
 - (void)willSwitchOut;
 - (void)willUnselect;

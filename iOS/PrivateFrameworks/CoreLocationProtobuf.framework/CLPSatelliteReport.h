@@ -18,11 +18,11 @@
     CLPSatelliteInfo *_qzss;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLPSatelliteInfo *galileo; // @synthesize galileo=_galileo;
 @property(retain, nonatomic) CLPSatelliteInfo *qzss; // @synthesize qzss=_qzss;
 @property(retain, nonatomic) CLPSatelliteInfo *glonass; // @synthesize glonass=_glonass;
 @property(retain, nonatomic) CLPSatelliteInfo *gps; // @synthesize gps=_gps;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

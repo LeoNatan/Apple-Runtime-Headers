@@ -23,6 +23,7 @@
     NSArray *_linkLevel1Parameters;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *linkLevel1Parameters; // @synthesize linkLevel1Parameters=_linkLevel1Parameters;
 @property(retain) NSArray *linkDuration; // @synthesize linkDuration=_linkDuration;
 @property(retain) NSArray *linkCost; // @synthesize linkCost=_linkCost;
@@ -34,7 +35,6 @@
 @property double powerlevel3Duration; // @synthesize powerlevel3Duration=_powerlevel3Duration;
 @property double powerlevel2Duration; // @synthesize powerlevel2Duration=_powerlevel2Duration;
 @property double powerlevel1Duration; // @synthesize powerlevel1Duration=_powerlevel1Duration;
-- (void).cxx_destruct;
 - (void)reportEnergyToPowerlogWithClientID:(short)arg1;
 - (void)updateAllLevelTimesWithLevel1Time:(double)arg1 withUpdateDuration:(double)arg2;
 - (double)computeLevel1TimeWithBytes:(double)arg1;

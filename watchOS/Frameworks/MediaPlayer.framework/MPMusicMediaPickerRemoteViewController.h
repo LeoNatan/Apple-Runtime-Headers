@@ -17,8 +17,8 @@
 
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
-@property(nonatomic) __weak MPMediaPickerController *mediaPickerController; // @synthesize mediaPickerController=_mediaPickerController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MPMediaPickerController *mediaPickerController; // @synthesize mediaPickerController=_mediaPickerController;
 - (void)remoteMediaPickerDidPickPlaybackArchive:(id)arg1;
 - (void)remoteMediaPickerDidPickMediaItems:(id)arg1;
 - (void)remoteMediaPickerDidCancel;

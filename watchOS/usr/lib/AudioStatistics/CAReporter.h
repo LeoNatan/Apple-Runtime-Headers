@@ -22,6 +22,7 @@
 }
 
 + (void)sendSingleMessage:(id)arg1 category:(unsigned int)arg2 type:(unsigned short)arg3;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(retain) CAReportingPerformanceObject *perfObject; // @synthesize perfObject=_perfObject;
 @property _Bool connected; // @synthesize connected=_connected;
@@ -30,7 +31,6 @@
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned short serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly) long long reporterID; // @synthesize reporterID=_reporterID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)stop;
 - (void)sendMessage:(id)arg1 category:(unsigned int)arg2 type:(unsigned short)arg3;

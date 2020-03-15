@@ -32,6 +32,7 @@
 
 + (id)inputGeneratorWithModel:(id)arg1;
 + (id)inputGeneratorWithModel:(id)arg1 seed:(long long)arg2 monteCarloIterations:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property unsigned long long monteCarloCount; // @synthesize monteCarloCount=_monteCarloCount;
 @property long long seed; // @synthesize seed=_seed;
 @property(retain, nonatomic) _MLTInputGeneratorUtils *util; // @synthesize util=_util;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *vecDataKey; // @synthesize vecDataKey=_vecDataKey;
 @property(copy, nonatomic) NSString *inputDataKey; // @synthesize inputDataKey=_inputDataKey;
 @property BOOL dataAvailable; // @synthesize dataAvailable=_dataAvailable;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)nextDataSet:(id *)arg1;
 - (id)allDataSets:(id *)arg1;

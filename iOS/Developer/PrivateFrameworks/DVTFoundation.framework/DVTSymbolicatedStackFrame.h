@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *lineNumber; // @synthesize lineNumber=_lineNumber;
 @property(readonly, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly, nonatomic) NSNumber *offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSString *library; // @synthesize library=_library;
 @property(readonly, nonatomic) NSString *symbolName; // @synthesize symbolName=_symbolName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSymbolName:(id)arg1 library:(id)arg2 offset:(id)arg3 fileName:(id)arg4 lineNumber:(id)arg5;

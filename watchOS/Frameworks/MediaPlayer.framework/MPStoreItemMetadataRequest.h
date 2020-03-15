@@ -27,6 +27,7 @@
     double _retryDelay;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICUserIdentityStore *userIdentityStore; // @synthesize userIdentityStore=_userIdentityStore;
 @property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(copy, nonatomic) ICUserIdentity *delegatedUserIdentity; // @synthesize delegatedUserIdentity=_delegatedUserIdentity;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSArray *itemIdentifiers; // @synthesize itemIdentifiers=_itemIdentifiers;
 @property(nonatomic) unsigned int reason; // @synthesize reason=_reason;
 @property(nonatomic) _Bool allowLocalEquivalencies; // @synthesize allowLocalEquivalencies=_allowLocalEquivalencies;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICStorePlatformRequest *storePlatformRequest;
 @property(copy, nonatomic) NSString *requestingBundleVersion;
 @property(copy, nonatomic) NSString *requestingBundleIdentifier;

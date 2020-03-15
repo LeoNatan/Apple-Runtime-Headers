@@ -18,12 +18,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long selectionLocation; // @synthesize selectionLocation=_selectionLocation;
 @property(nonatomic) struct _NSRange inWordRange; // @synthesize inWordRange=_inWordRange;
 @property(copy, nonatomic) NSString *inWord; // @synthesize inWord=_inWord;
 @property(nonatomic) BOOL extendsPriorWord; // @synthesize extendsPriorWord=_extendsPriorWord;
 @property(nonatomic) BOOL isSelection; // @synthesize isSelection=_isSelection;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

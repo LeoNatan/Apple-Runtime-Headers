@@ -34,6 +34,7 @@
     NSMutableData *_outputNonce;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *outputNonce; // @synthesize outputNonce=_outputNonce;
 @property(retain, nonatomic) NSData *outputKey; // @synthesize outputKey=_outputKey;
 @property(retain, nonatomic) NSMutableData *inputNonce; // @synthesize inputNonce=_inputNonce;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned int pairingFlags; // @synthesize pairingFlags=_pairingFlags;
 @property(readonly, nonatomic) _Bool hasExchangedMessage; // @synthesize hasExchangedMessage=_hasExchangedMessage;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_onQueueDeriveEncryptionKeys;
 - (void)_handleSetupExchangeComplete;
 - (void)_delegateDidEnterPasscode:(id)arg1;

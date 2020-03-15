@@ -18,13 +18,13 @@
     double _standbyTimeInSeconds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasChargedPartially; // @synthesize hasChargedPartially=_hasChargedPartially;
 @property(nonatomic) double standbyTimeInSeconds; // @synthesize standbyTimeInSeconds=_standbyTimeInSeconds;
 @property(nonatomic) double usageTimeInSeconds; // @synthesize usageTimeInSeconds=_usageTimeInSeconds;
 @property(nonatomic) int voltage; // @synthesize voltage=_voltage;
 @property(nonatomic) int capacity; // @synthesize capacity=_capacity;
 @property(retain, nonatomic) NSArray *foregroundApplications; // @synthesize foregroundApplications=_foregroundApplications;
-- (void).cxx_destruct;
 
 @end
 

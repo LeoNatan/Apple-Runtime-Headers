@@ -45,6 +45,7 @@
 
 + (id)withURLString:(id)arg1 queryParameters:(id)arg2;
 + (id)withURLString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *blockQueue; // @synthesize blockQueue=_blockQueue;
 @property(copy) CDUnknownBlockType willSendRequestRedirectBlock; // @synthesize willSendRequestRedirectBlock=_willSendRequestRedirectBlock;
 @property(copy) CDUnknownBlockType willCacheResponseBlock; // @synthesize willCacheResponseBlock=_willCacheResponseBlock;
@@ -75,7 +76,6 @@
 @property(retain) NSString *uniqueString; // @synthesize uniqueString=_uniqueString;
 @property(retain) NSObject<JXHTTPRequestBody> *requestBody; // @synthesize requestBody=_requestBody;
 @property __weak NSObject<JXHTTPOperationDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (id)connection:(id)arg1 willCacheResponse:(id)arg2;
 - (id)connection:(id)arg1 needNewBodyStream:(id)arg2;

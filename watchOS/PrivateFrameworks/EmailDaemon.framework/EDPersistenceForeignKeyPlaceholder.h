@@ -16,11 +16,11 @@
     unsigned int _updateAction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int updateAction; // @synthesize updateAction=_updateAction;
 @property(readonly, nonatomic) unsigned int deleteAction; // @synthesize deleteAction=_deleteAction;
 @property(readonly, copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, nonatomic) EFSQLColumnSchema *column; // @synthesize column=_column;
-- (void).cxx_destruct;
 - (_Bool)resolveToStringForTableNames:(id)arg1;
 - (_Bool)resolveWithSchema:(id)arg1;
 - (id)description;

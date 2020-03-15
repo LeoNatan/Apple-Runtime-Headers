@@ -20,8 +20,8 @@
     float _alpha;
 }
 
-@property(readonly, nonatomic) id <MKOverlay> overlay; // @synthesize overlay=_overlay;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MKOverlay> overlay; // @synthesize overlay=_overlay;
 - (void)_updateRenderColors;
 - (id)vectorDataForOverlay:(id)arg1;
 - (_Bool)overlayCanProvideVectorData:(id)arg1;

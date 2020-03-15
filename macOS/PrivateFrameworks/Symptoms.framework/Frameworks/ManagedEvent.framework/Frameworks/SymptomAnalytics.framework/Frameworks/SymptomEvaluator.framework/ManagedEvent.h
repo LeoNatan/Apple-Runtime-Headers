@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     DecisionDetails *_details;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DecisionDetails *details; // @synthesize details=_details;
 @property(nonatomic) unsigned long long id_number; // @synthesize id_number=_id_number;
-- (void).cxx_destruct;
 - (void)serializeToXPCObject:(id)arg1;
 - (id)initWithId:(unsigned long long)arg1 details:(id)arg2;
 - (id)description;

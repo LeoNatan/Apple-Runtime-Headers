@@ -17,10 +17,10 @@
     NSData *_timeDeltas;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *colors; // @synthesize colors=_colors;
 @property(retain, nonatomic) NSData *points; // @synthesize points=_points;
 @property(retain, nonatomic) NSData *timeDeltas; // @synthesize timeDeltas=_timeDeltas;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

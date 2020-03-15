@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) VUIAccessViewController *accessViewController; // @synthesize accessViewController=_accessViewController;
 @property(retain, nonatomic) VUIAppInstallerViewController *installerViewController; // @synthesize installerViewController=_installerViewController;
 @property(retain, nonatomic) NSString *contentTitle; // @synthesize contentTitle=_contentTitle;
 @property(retain, nonatomic) WLKChannelDetails *channelDetails; // @synthesize channelDetails=_channelDetails;
-- (void).cxx_destruct;
 - (void)_installAppWithChannel:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)installAppWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isEqual:(id)arg1;

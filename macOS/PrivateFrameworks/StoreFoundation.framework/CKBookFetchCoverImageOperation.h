@@ -14,9 +14,9 @@
     NSImage *_coverImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSImage *coverImage; // @synthesize coverImage=_coverImage;
 @property(readonly) CKBook *book; // @synthesize book=_book;
-- (void).cxx_destruct;
 - (id)_downloadCoverImageFromURL:(id)arg1 returningError:(id *)arg2;
 - (void)run;
 - (id)initWithBook:(id)arg1 storeClient:(id)arg2;

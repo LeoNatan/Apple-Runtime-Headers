@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)emptyThumbnailBackgroundColor;
+- (void).cxx_destruct;
 @property(nonatomic) long long thumbnailRequestID; // @synthesize thumbnailRequestID=_thumbnailRequestID;
 @property(nonatomic) _Bool needsBadgeUpdate; // @synthesize needsBadgeUpdate=_needsBadgeUpdate;
 @property(readonly, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long badgeType; // @synthesize badgeType=_badgeType;
 @property(retain, nonatomic) PXImportItemViewModel *importItem; // @synthesize importItem=_importItem;
 @property(nonatomic) __weak id <PUImportOneUpScrubberCellDisplayDelegate> displayDelegate; // @synthesize displayDelegate=_displayDelegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_createSpinnerIfNecessary;
 - (void)updateToThumbnail:(id)arg1;

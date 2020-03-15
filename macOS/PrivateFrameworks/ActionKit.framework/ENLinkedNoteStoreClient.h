@@ -16,9 +16,9 @@
 }
 
 + (id)noteStoreClientForLinkedNotebookRef:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENLinkedNotebookRef *linkedNotebookRef; // @synthesize linkedNotebookRef=_linkedNotebookRef;
 @property(nonatomic) __weak id <ENLinkedNoteStoreClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)noteStoreUrl;
 - (id)authenticationToken;
 

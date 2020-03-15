@@ -25,13 +25,13 @@
 + (id)starActive;
 + (id)starHollowPressed;
 + (id)starHollow;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *cachedAccessibilityChildren; // @synthesize cachedAccessibilityChildren=_cachedAccessibilityChildren;
 @property(nonatomic) BOOL isMouseDown; // @synthesize isMouseDown=_isMouseDown;
 @property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property(retain, nonatomic) NSNumber *prospectiveRating; // @synthesize prospectiveRating=_prospectiveRating;
 @property(copy, nonatomic) CDUnknownBlockType didChangeCallback; // @synthesize didChangeCallback=_didChangeCallback;
 @property(retain, nonatomic) NSNumber *rating; // @synthesize rating=_rating;
-- (void).cxx_destruct;
 - (id)accessibilityChildren;
 - (id)makeAccessibilityChildForStarAtIndex:(long long)arg1;
 - (id)inputRatingAtPoint:(struct CGPoint)arg1;

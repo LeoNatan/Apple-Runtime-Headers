@@ -17,11 +17,11 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly, nonatomic) NSString *message; // @synthesize message=_message;
 @property(readonly, nonatomic) NSString *acknowledgeOptionTitle; // @synthesize acknowledgeOptionTitle=_acknowledgeOptionTitle;
-- (void).cxx_destruct;
 - (void)main;
 - (void)cancel;
 - (BOOL)isAsynchronous;

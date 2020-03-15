@@ -15,10 +15,10 @@
     HFItem *_optionItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem *optionItem; // @synthesize optionItem=_optionItem;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) HUTriggerTimeConditionDetailEditorViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 
 @end
 

@@ -25,6 +25,7 @@
 
 + (id)makeTextField;
 + (id)implicitAnimatedActionsToDisable;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCircular) BOOL circular; // @synthesize circular=_circular;
 @property(retain, nonatomic) CAGradientLayer *circleGradient; // @synthesize circleGradient=_circleGradient;
 @property(retain, nonatomic) NSLayoutConstraint *textFieldYOffset; // @synthesize textFieldYOffset=_textFieldYOffset;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic) BOOL bordered; // @synthesize bordered=_bordered;
 @property(retain, nonatomic) PRMonogram *monogram; // @synthesize monogram=_monogram;
-- (void).cxx_destruct;
 - (void)saveMonogramString;
 - (void)restoreMonogramString;
 - (void)controlTextDidEndEditing:(id)arg1;

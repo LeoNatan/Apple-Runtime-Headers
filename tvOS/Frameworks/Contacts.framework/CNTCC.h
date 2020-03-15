@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) double simulateAccessPromptDelay; // @synthesize simulateAccessPromptDelay=_simulateAccessPromptDelay;
 @property(nonatomic) _Bool simulateAccessPromptGranted; // @synthesize simulateAccessPromptGranted=_simulateAccessPromptGranted;
 @property(nonatomic) _Bool simulateAccessPrompt; // @synthesize simulateAccessPrompt=_simulateAccessPrompt;
 @property(nonatomic) long long simulateType; // @synthesize simulateType=_simulateType;
 @property(readonly, nonatomic) id <CNContactsLogger> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (id)_simulateQueue;
 - (void)simulateIfAccessPromptDisplayedThenUserGrantedAccess:(_Bool)arg1 withDelay:(double)arg2;
 - (void)simulate:(long long)arg1;

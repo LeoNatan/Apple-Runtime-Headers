@@ -13,8 +13,8 @@
     PKDiscoveryShelfView *_shelfView;
 }
 
-@property(retain, nonatomic) PKDiscoveryShelfView *shelfView; // @synthesize shelfView=_shelfView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKDiscoveryShelfView *shelfView; // @synthesize shelfView=_shelfView;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

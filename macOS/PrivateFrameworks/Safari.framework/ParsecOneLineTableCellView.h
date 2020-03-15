@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _configuredDescriptionAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long configuredDescriptionAlignment; // @synthesize configuredDescriptionAlignment=_configuredDescriptionAlignment;
 @property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)identifier;
-- (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;
+-     // Error parsing type: v32@0:8^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16@24, name: configureUsingCompletionListItem:session:
 - (void)_updateImageView:(id)arg1;
 - (void)_updateImageView:(id)arg1 withSize:(struct CGSize)arg2 isTemplate:(BOOL)arg3;
 

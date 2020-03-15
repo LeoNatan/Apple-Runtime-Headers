@@ -26,6 +26,7 @@
     unsigned long long _logSection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long logSection; // @synthesize logSection=_logSection;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSMutableDictionary *progressCompletionsByRoot; // @synthesize progressCompletionsByRoot=_progressCompletionsByRoot;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) FPDRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) __weak FPDExtensionManager *manager; // @synthesize manager=_manager;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1;
 - (void)registerFrameworkClient:(id)arg1 operationCompletion:(CDUnknownBlockType)arg2;
 - (void)sendPastUpdatesToClient:(id)arg1;

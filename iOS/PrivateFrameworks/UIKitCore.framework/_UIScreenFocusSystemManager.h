@@ -15,6 +15,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIScreenFocusSystemManager : NSObject <BKSHIDEventDeliveryPolicyObserving, _UIFocusSystemDelegate, _UIFocusMovementPerformerDelegate>
 {
+    _Bool _disableFocusDeferral;
     BKSHIDEventDeliveryPolicyObserver *_observer;
     _Bool _allowsForwardingFocusMovementActions;
     UIScreen *_screen;
@@ -22,11 +23,11 @@ __attribute__((visibility("hidden")))
     _UIFocusScrollManager *_scrollManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_uiktest_allowsForwardingFocusMovementActions, setter=_uiktest_setAllowsForwardingFocusMovementActions:) _Bool allowsForwardingFocusMovementActions; // @synthesize allowsForwardingFocusMovementActions=_allowsForwardingFocusMovementActions;
 @property(readonly, nonatomic) _UIFocusScrollManager *scrollManager; // @synthesize scrollManager=_scrollManager;
 @property(readonly, nonatomic) UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
 @property(readonly, nonatomic) __weak UIScreen *screen; // @synthesize screen=_screen;
-- (void).cxx_destruct;
 - (void)observerDeliveryPolicyDidChange:(id)arg1;
 - (_Bool)_shouldForwardFocusMovementRequest:(id)arg1;
 - (_Bool)_handleFailedFocusMovementRequest:(id)arg1 withPerformer:(id)arg2;

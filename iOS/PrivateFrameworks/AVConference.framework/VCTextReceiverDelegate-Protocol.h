@@ -6,7 +6,9 @@
 
 #import <AVConference/NSObject-Protocol.h>
 
+@class NSString;
+
 @protocol VCTextReceiverDelegate <NSObject>
-- (void)didReceiveText:(struct NSString *)arg1;
+- (void)didReceiveText:(NSString *)arg1;
 @end
 

@@ -31,6 +31,7 @@
     struct CGRect _contentsRect;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setOverlaySpecs:) NSArray *_overlaySpecs; // @synthesize _overlaySpecs=__overlaySpecs;
 @property(retain, nonatomic, setter=_setCornerView:) PXRoundedCornerOverlayView *_cornerView; // @synthesize _cornerView=__cornerView;
 @property(readonly, nonatomic) PXFocusableUIImageView *_imageView; // @synthesize _imageView=__imageView;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) PXImageViewSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) struct CGRect contentsRect; // @synthesize contentsRect=_contentsRect;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setAnimating:(_Bool)arg1 withFlags:(unsigned long long)arg2;
 - (void)_updateSubviewsOrdering;

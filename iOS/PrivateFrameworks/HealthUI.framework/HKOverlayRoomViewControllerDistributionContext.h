@@ -16,11 +16,11 @@
     NSDictionary *_styleToMetricColors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *styleToMetricColors; // @synthesize styleToMetricColors=_styleToMetricColors;
 @property(retain, nonatomic) HKInteractiveChartOverlayPredicate *namedPredicate; // @synthesize namedPredicate=_namedPredicate;
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(nonatomic) long long distributionStyle; // @synthesize distributionStyle=_distributionStyle;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)_selectedMetricColorsForDistributionStyle:(long long)arg1;
 - (id)_computeTitleFromStyleAndPredicate;

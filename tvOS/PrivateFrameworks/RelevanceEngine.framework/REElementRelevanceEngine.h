@@ -37,8 +37,8 @@
     id <REElementRelevanceEngineDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <REElementRelevanceEngineDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <REElementRelevanceEngineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) RERelevanceProviderEnvironment *providerEnvironment;
 @property(readonly, nonatomic) REPredictorManager *predictorManager;
 @property(readonly, nonatomic) NSDictionary *sectionsMap;

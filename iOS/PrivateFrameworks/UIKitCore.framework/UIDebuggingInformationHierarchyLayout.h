@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *allLineAttributes; // @synthesize allLineAttributes=_allLineAttributes;
 @property(retain, nonatomic) NSDictionary *allAttributes; // @synthesize allAttributes=_allAttributes;
 @property(nonatomic) __weak id <UIDebuggingInformationHierarchyLayoutDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)collectionViewContentSize;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;

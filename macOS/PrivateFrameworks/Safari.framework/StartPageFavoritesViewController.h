@@ -36,10 +36,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)dragOperationForProposedIndexPath:(id *)arg1 proposedDropOperation:(long long *)arg2 currentFolder:(id)arg3 sourceIndexPathAndFolderUUID:(id)arg4 isPerformingSameCollectionViewDrag:(BOOL)arg5 pasteboard:(id)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesPrivateBrowsing; // @synthesize usesPrivateBrowsing=_usesPrivateBrowsing;
 @property(nonatomic) BOOL hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
 @property(retain, nonatomic) NSView *leadingAccessoryView; // @synthesize leadingAccessoryView=_leadingAccessoryView;
-- (void).cxx_destruct;
 - (void)_cancelPendingMetadataRequests;
 - (id)_enqueuedSiteMetadataRequestForRecommendationItem:(id)arg1;
 - (void)_suppressFullReloadsWhilePerformingBlock:(CDUnknownBlockType)arg1;

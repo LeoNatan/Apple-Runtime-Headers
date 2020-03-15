@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)needsDisplayForKey:(id)arg1;
-@property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
-@property double endAngle; // @synthesize endAngle=_endAngle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
+@property double endAngle; // @synthesize endAngle=_endAngle;
 - (void)callProgressAnimationDidCompleteHandlerIfNeeded;
 @property(readonly, nonatomic) _Bool isProgressAnimationCompleted; // @dynamic isProgressAnimationCompleted;
 - (void)setProgressDidCompleteHandler:(const function_b1fce659 *)arg1;

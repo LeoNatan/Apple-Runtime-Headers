@@ -23,11 +23,11 @@
 
 + (id)logCategory;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly) NSMutableSet *registeredMetadata; // @synthesize registeredMetadata=_registeredMetadata;
 @property(readonly, nonatomic) HMFNetMonitor *netMonitor; // @synthesize netMonitor=_netMonitor;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)networkMonitorIsReachable:(id)arg1;
 - (void)auditAsset:(id)arg1;
 - (id)assetForDocumentationMetadata:(id)arg1;

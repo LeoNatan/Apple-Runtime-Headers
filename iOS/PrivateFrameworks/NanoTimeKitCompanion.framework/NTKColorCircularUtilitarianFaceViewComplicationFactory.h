@@ -17,8 +17,8 @@
     id <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKColorCircularUtilitarianFaceViewComplicationFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)curvedMaskForSlot:(id)arg1;
 - (void)curvedCircleRadius:(double *)arg1 centerAngle:(double *)arg2 maxAngularWidth:(double *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)slotUsesCurvedText:(long long)arg1;

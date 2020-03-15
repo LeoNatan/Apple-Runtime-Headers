@@ -30,6 +30,7 @@
     TLKTextButton *_footnoteButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKTextButton *footnoteButton; // @synthesize footnoteButton=_footnoteButton;
 @property(retain, nonatomic) NSBezierPath *moreButtonExclusionPath; // @synthesize moreButtonExclusionPath=_moreButtonExclusionPath;
 @property(retain, nonatomic) NSBezierPath *imageViewExclusionPath; // @synthesize imageViewExclusionPath=_imageViewExclusionPath;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
 @property(retain, nonatomic) TLKMultilineText *text; // @synthesize text=_text;
 @property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)exclusionPathsForTextView;
 - (BOOL)moreButtonIsHidden;
 - (long long)numberOfLines;

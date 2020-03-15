@@ -17,10 +17,10 @@
     PKPeerPaymentAccountResolutionController *_accountResolutionController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPeerPaymentAccountResolutionController *accountResolutionController; // @synthesize accountResolutionController=_accountResolutionController;
 @property(retain, nonatomic) PKPeerPaymentIdentityVerificationResponse *identityVerificationResponse; // @synthesize identityVerificationResponse=_identityVerificationResponse;
 @property(retain, nonatomic) PKPeerPaymentWebService *webService; // @synthesize webService=_webService;
-- (void).cxx_destruct;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
 - (void)peerPaymentAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)contactApplePressed;

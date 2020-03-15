@@ -21,9 +21,9 @@
     CDUnknownBlockType _onDismiss;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onDismiss; // @synthesize onDismiss=_onDismiss;
 @property(readonly, nonatomic) __weak TVLLegacyJSContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)_rootViewController;
 - (void)_showWithDocument:(id)arg1;
 - (void)_onDismiss;

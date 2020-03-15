@@ -18,12 +18,12 @@
 }
 
 + (id)downwardsPointingArrow;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *arrowImage; // @synthesize arrowImage=_arrowImage;
 @property(nonatomic) struct CGRect arrowFrame; // @synthesize arrowFrame=_arrowFrame;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
 @property(nonatomic) double arrowOffset; // @synthesize arrowOffset=_arrowOffset;
 @property(nonatomic) unsigned long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
-- (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1;
 - (struct NSEdgeInsets)edgeInsets;
 - (void)calculateFramesWithContentSize:(struct CGSize)arg1;

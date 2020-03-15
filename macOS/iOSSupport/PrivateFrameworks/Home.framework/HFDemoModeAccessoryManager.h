@@ -32,9 +32,9 @@
 + (BOOL)isValidExternalType:(id)arg1;
 + (id)accessoryProfileName:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *demoAccessories; // @synthesize demoAccessories=_demoAccessories;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
-- (void).cxx_destruct;
 - (void)dispatchUpdateMessageForAccessory:(id)arg1;
 - (void)saveAccessories;
 - (id)accessories;

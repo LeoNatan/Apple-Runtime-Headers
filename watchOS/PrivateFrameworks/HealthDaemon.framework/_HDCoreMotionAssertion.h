@@ -15,10 +15,10 @@
     CMWorkout *_cmWorkout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CMWorkout *cmWorkout; // @synthesize cmWorkout=_cmWorkout;
 @property(readonly, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(readonly, nonatomic) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
-- (void).cxx_destruct;
 - (id)initWithOwnerIdentifier:(id)arg1 sessionUUID:(id)arg2 workoutConfiguration:(id)arg3;
 
 @end

@@ -16,11 +16,11 @@
     NSMutableDictionary *_processNamesByPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *processNamesByPath; // @synthesize processNamesByPath=_processNamesByPath;
 @property(readonly, nonatomic) NSDateFormatter *formatter; // @synthesize formatter=_formatter;
 @property(retain, nonatomic) CKLEventFilter *filter; // @synthesize filter=_filter;
 @property(nonatomic) BOOL colorOutput; // @synthesize colorOutput=_colorOutput;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)eventMatched:(id)arg1;
 - (void)_handleEvent:(id)arg1;

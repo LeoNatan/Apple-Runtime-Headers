@@ -41,6 +41,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDPBInteractionEventMarkedMuteThread *markedMuteThread; // @synthesize markedMuteThread=_markedMuteThread;
 @property(retain, nonatomic) EDPBInteractionEventForwardSent *forwardSent; // @synthesize forwardSent=_forwardSent;
 @property(retain, nonatomic) EDPBInteractionEventReplySent *replySent; // @synthesize replySent=_replySent;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) EDPBInteractionEventMessageFetched *messageFetched; // @synthesize messageFetched=_messageFetched;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,9 +16,9 @@
     CDUnknownBlockType _deactivationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType deactivationHandler; // @synthesize deactivationHandler=_deactivationHandler;
 @property(copy, nonatomic) CDUnknownBlockType activationHandler; // @synthesize activationHandler=_activationHandler;
-- (void).cxx_destruct;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)remoteAlertHandleDidActivate:(id)arg1;

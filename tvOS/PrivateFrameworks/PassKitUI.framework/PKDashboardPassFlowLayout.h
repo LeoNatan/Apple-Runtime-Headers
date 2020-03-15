@@ -29,8 +29,8 @@
     _Bool _fade;
 }
 
-@property(nonatomic) _Bool fade; // @synthesize fade=_fade;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool fade; // @synthesize fade=_fade;
 - (void)passPanDidEnd;
 - (void)passPanDidBegin;
 - (id)_customAttribuesForPassAtTheTop:(id)arg1;

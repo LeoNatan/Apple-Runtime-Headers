@@ -15,9 +15,9 @@
     FTRegion *_parentRegion;
 }
 
+- (void).cxx_destruct;
 @property(retain) FTRegion *_parentRegion; // @synthesize _parentRegion;
 @property(retain) NSDictionary *_dictionary; // @synthesize _dictionary;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *regionID;
 @property(readonly) NSString *basePhoneNumber;

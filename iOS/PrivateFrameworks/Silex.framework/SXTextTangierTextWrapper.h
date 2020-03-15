@@ -18,11 +18,11 @@
     struct CGAffineTransform _wrapSpaceToCanvasSpace;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tangierExclusionPaths; // @synthesize tangierExclusionPaths=_tangierExclusionPaths;
 @property(nonatomic) struct CGAffineTransform wrapSpaceToCanvasSpace; // @synthesize wrapSpaceToCanvasSpace=_wrapSpaceToCanvasSpace;
 @property(nonatomic) struct CGAffineTransform canvasSpaceToWrapSpace; // @synthesize canvasSpaceToWrapSpace=_canvasSpaceToWrapSpace;
 @property(retain, nonatomic) NSArray *exclusionPaths; // @synthesize exclusionPaths=_exclusionPaths;
-- (void).cxx_destruct;
 - (unsigned long long)splitLineRect:(struct CGRect)arg1 lineSegmentRects:(struct CGRect [128])arg2 wrappable:(id)arg3 wrapContext:(id)arg4;
 - (unsigned long long)splitLineRect:(struct CGRect)arg1 lineSegmentRects:(struct CGRect [128])arg2 wrappableRect:(struct CGRect)arg3;
 - (_Bool)textShouldFlowAroundWrappable:(id)arg1 inTarget:(id)arg2 inColumn:(id)arg3;

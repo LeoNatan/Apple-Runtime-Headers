@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/AFServiceCommand-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDAssistantCommandHelper, HMDAssistantGather, HMDHome, HMDHomeManager, NSArray, NSObject, NSString, NSUUID;
+@class HMDAssistantCommandHelper, HMDAssistantGather, HMDHome, HMDHomeManager, HMFLogEventSession, NSArray, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDAssistantCommand : SAHACommand <AFServiceCommand, HMFLogging>
@@ -26,11 +26,14 @@
     NSUUID *_currentHomeUUID;
     HMDAssistantCommandHelper *_assistantCommandHelper;
     HMDHome *_home;
+    HMFLogEventSession *_logEventSession;
     unsigned long long _startTime;
 }
 
 + (void)initialize;
 + (id)logCategory;
+- (void).cxx_destruct;
+@property(retain, nonatomic) HMFLogEventSession *logEventSession; // @synthesize logEventSession=_logEventSession;
 @property(nonatomic) unsigned long long startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) HMDHome *home; // @synthesize home=_home;
 @property(nonatomic) _Bool completionHandlerCalled; // @synthesize completionHandlerCalled=_completionHandlerCalled;
@@ -44,9 +47,8 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) HMDAssistantGather *gather; // @synthesize gather=_gather;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
-- (void).cxx_destruct;
 - (void)timeoutAndReportResults;
-- (void)performWithGather:(id)arg1 queue:(id)arg2 msgDispatcher:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)performWithGather:(id)arg1 queue:(id)arg2 msgDispatcher:(id)arg3 logEventSession:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)handleGetColor:(id)arg1 forObjects:(id)arg2 serviceType:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)handleSetColor:(id)arg1 forObjects:(id)arg2 service:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)readRequestsForCharacteristic:(id)arg1;

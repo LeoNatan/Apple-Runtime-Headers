@@ -17,9 +17,9 @@
     id <SVVideoLoadingStateObserverFactory> _loadingStateObserverFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserverFactory> loadingStateObserverFactory; // @synthesize loadingStateObserverFactory=_loadingStateObserverFactory;
 @property(readonly, nonatomic) id <SVVideoPlaybackStateObserverFactory> playbackStateObserverFactory; // @synthesize playbackStateObserverFactory=_playbackStateObserverFactory;
-- (void).cxx_destruct;
 - (id)createEventTrackerForVideo:(id)arg1;
 - (id)initWithPlaybackStateObserverFactory:(id)arg1 loadingStateObserverFactory:(id)arg2;
 

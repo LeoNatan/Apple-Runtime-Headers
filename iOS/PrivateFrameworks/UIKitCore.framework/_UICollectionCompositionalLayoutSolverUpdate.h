@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)solverUpdateWithUpdateItems:(id)arg1 updateTranslator:(id)arg2 finalDataSourceSnapshot:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIDataSourceSnapshotter *finalDataSourceSnapshot; // @synthesize finalDataSourceSnapshot=_finalDataSourceSnapshot;
 @property(readonly, nonatomic) id <_UICollectionViewUpdateTranslating> updateTranslator; // @synthesize updateTranslator=_updateTranslator;
 @property(readonly, nonatomic) NSArray *updateItems; // @synthesize updateItems=_updateItems;
-- (void).cxx_destruct;
 - (id)initWithUpdateItems:(id)arg1 updateTranslator:(id)arg2 finalDataSourceSnapshot:(id)arg3;
 
 @end

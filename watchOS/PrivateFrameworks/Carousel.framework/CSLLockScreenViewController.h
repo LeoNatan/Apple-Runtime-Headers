@@ -35,13 +35,13 @@
 }
 
 + (_Bool)shouldAppear;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLWaterLock *waterLock; // @synthesize waterLock=_waterLock;
 @property(retain, nonatomic) NSArray *states; // @synthesize states=_states;
 @property(retain, nonatomic) NSObject<CSLUILockScreenState> *currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool justUnlocked; // @synthesize justUnlocked=_justUnlocked;
 @property(nonatomic) __weak id <CSLLockScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateCurrentStateIfNecessary;
 - (void)animateAlertTransition:(id)arg1;
 - (double)alertTransitionDuration:(id)arg1;

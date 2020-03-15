@@ -8,36 +8,6 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct NSObject {
-    Class _field1;
-};
-
-struct _opaque_pthread_mutex_t {
-    long long __sig;
-    char __opaque[56];
-};
-
-#if 0
-// Names with conflicting types:
-typedef struct {
-    Class _field1;
-} EKPersistentObject_556b3b22;
-
-typedef struct {
-    Class _field1;
-    struct _opaque_pthread_mutex_t _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    unsigned int _field6;
-    id _field7;
-    id _field8;
-} EKPersistentObject_e5dd8935;
-
-#endif
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

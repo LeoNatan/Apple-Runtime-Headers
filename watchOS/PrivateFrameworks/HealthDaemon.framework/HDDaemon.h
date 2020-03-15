@@ -51,6 +51,7 @@
     id <HDDaemonTester> _daemonTester;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HDDaemonTester> daemonTester; // @synthesize daemonTester=_daemonTester;
 @property(readonly, nonatomic) HDXPCAlarmScheduler *alarmScheduler; // @synthesize alarmScheduler=_alarmScheduler;
 @property(readonly, nonatomic) HDDevicePowerMonitor *devicePowerMonitor; // @synthesize devicePowerMonitor=_devicePowerMonitor;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) id <HDNanoAlertSuppressionService> alertSuppressionService; // @synthesize alertSuppressionService=_alertSuppressionService;
 @property(retain, nonatomic) HDAnalyticsSubmissionCoordinator *analyticsSubmissionCoordinator; // @synthesize analyticsSubmissionCoordinator=_analyticsSubmissionCoordinator;
 @property(readonly, copy) NSString *medicalIDDirectoryPath; // @synthesize medicalIDDirectoryPath=_medicalIDDirectoryPath;
-- (void).cxx_destruct;
 - (void)unitTest_taskServerDidInit:(id)arg1;
 - (void)unitTest_queryServerDidInit:(id)arg1;
 - (void)unitTest_didCreateProfile:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)clusterObjectWithObject:(id)arg1 index:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property unsigned long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) id <PLRegionsClusteringItem> object; // @synthesize object=_object;
-- (void).cxx_destruct;
 
 @end
 

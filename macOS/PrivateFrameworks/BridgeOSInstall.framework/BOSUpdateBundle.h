@@ -18,13 +18,13 @@
     NSURL *_buildManifestURL;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURL *buildManifestURL; // @synthesize buildManifestURL=_buildManifestURL;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain) BOSBundleComponentVersion *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property unsigned long long payloadArchiveSize; // @synthesize payloadArchiveSize=_payloadArchiveSize;
-- (void).cxx_destruct;
 @property(readonly) NSString *payloadArchivePath;
 - (id)description;
 - (id)initWithBundleURL:(id)arg1;

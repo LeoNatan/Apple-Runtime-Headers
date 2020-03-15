@@ -13,8 +13,8 @@
     id <CSSPGEndpointAnalyzerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSSPGEndpointAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSSPGEndpointAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
 - (int)getFrameDurationMs;
 - (void)addAudio:(id)arg1 numSamples:(unsigned int)arg2;
 - (void)reset;

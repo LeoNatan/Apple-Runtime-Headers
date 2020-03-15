@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_stateLock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateLock; // @synthesize stateLock=_stateLock;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSMutableArray *consumers; // @synthesize consumers=_consumers;
-- (void).cxx_destruct;
 - (void)consumer:(id)arg1 willConsumeRenderingResourceForEstimatedDuration:(double)arg2;
 - (void)unregisterConsumer:(id)arg1;
 - (void)registerConsumer:(id)arg1;

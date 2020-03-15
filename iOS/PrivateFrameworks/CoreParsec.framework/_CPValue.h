@@ -24,8 +24,8 @@
     unsigned long long _whichKind;
 }
 
-@property(readonly, nonatomic) unsigned long long whichKind; // @synthesize whichKind=_whichKind;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long whichKind; // @synthesize whichKind=_whichKind;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -17,12 +17,12 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
+- (void).cxx_destruct;
 @property(retain) WFLocation *geocodedResult; // @synthesize geocodedResult=_geocodedResult;
 @property(retain) MKLocalSearchCompletion *autocompleteSearchResult; // @synthesize autocompleteSearchResult=_autocompleteSearchResult;
 @property(retain) NSString *searchString; // @synthesize searchString=_searchString;
 @property struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(readonly) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
-- (void).cxx_destruct;
 - (void)cleanup;
 - (void)handleCancellation;
 - (void)handleResponse:(id)arg1;

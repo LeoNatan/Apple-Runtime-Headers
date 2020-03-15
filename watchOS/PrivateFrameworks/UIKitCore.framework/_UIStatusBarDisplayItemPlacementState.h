@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)stateForDisplayItemPlacement:(id)arg1 region:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *relations; // @synthesize relations=_relations;
 @property(readonly, nonatomic) __weak _UIStatusBarRegion *region; // @synthesize region=_region;
 @property(readonly, nonatomic) _UIStatusBarDisplayItemPlacement *placement; // @synthesize placement=_placement;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled;
 @property(readonly, nonatomic) _Bool canBeEnabled;

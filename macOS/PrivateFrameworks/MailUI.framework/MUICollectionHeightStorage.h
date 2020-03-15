@@ -18,10 +18,10 @@
 }
 
 + (id)keyPathsForValuesAffectingCount;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets margins; // @synthesize margins=_margins;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) double height; // @synthesize height=_height;
-- (void).cxx_destruct;
 - (unsigned long long)indexAtY:(double)arg1;
 - (double)maxYOfIndex:(unsigned long long)arg1;
 - (double)minYOfIndex:(unsigned long long)arg1;

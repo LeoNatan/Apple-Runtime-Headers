@@ -57,6 +57,7 @@
 - (void)addClone:(id)arg1;
 - (void)addClone:(id)arg1 options:(id)arg2;
 @property(readonly) NSSet *clones;
+- (struct CATransform3D)transformFromLayerId:(unsigned long long)arg1 inContextId:(unsigned int)arg2;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromContextId:(unsigned int)arg2;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 toContextId:(unsigned int)arg2;
 - (unsigned int)taskNamePortOfContextId:(unsigned int)arg1;

@@ -16,8 +16,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithWorkoutUUID:(id)arg1;
-@property(readonly, nonatomic) NSUUID *workoutUUID; // @synthesize workoutUUID=_workoutUUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUUID *workoutUUID; // @synthesize workoutUUID=_workoutUUID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

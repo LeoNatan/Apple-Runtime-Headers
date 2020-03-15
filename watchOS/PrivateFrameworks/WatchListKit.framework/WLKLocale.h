@@ -14,9 +14,9 @@
     NSLocale *_locale;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 

@@ -15,9 +15,9 @@
     NSMutableString *_plistKeyPathMutableString;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableString *plistKeyPathMutableString; // @synthesize plistKeyPathMutableString=_plistKeyPathMutableString;
 @property(retain) NSData *propertyListData; // @synthesize propertyListData=_propertyListData;
-- (void).cxx_destruct;
 - (BOOL)needsWrite;
 - (id)actionWithBundleIdentifier:(id)arg1;
 - (id)valueForKey:(id)arg1 forActionWithBundleIdentifier:(id)arg2;

@@ -7,14 +7,13 @@
 #import <UIKit/UIViewController.h>
 
 #import <SafariServices/MCProfileConnectionObserver-Protocol.h>
-#import <SafariServices/SFWatchWebViewControllerDelegate-Protocol.h>
+#import <SafariServices/_SFBrowserContentViewControllerDelegate-Protocol.h>
 
-@class NSString, PUICContentUnavailableView, SFNanoDomainContainerView, SFWatchWebViewController;
+@class NSString, PUICContentUnavailableView, SFWatchWebViewController;
 
-@interface _SFNanoBrowserViewController : UIViewController <MCProfileConnectionObserver, SFWatchWebViewControllerDelegate>
+@interface _SFNanoBrowserViewController : UIViewController <MCProfileConnectionObserver, _SFBrowserContentViewControllerDelegate>
 {
     SFWatchWebViewController *_webViewController;
-    SFNanoDomainContainerView *_domainContainerView;
     PUICContentUnavailableView *_contentUnavailableView;
     NSString *_pageTitle;
     NSString *_domain;
@@ -23,18 +22,14 @@
 + (_Bool)canLoadWebpage;
 + (void)clearWebsiteData;
 + (void)prewarm;
-+ (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSString *pageTitle; // @synthesize pageTitle=_pageTitle;
-- (void).cxx_destruct;
 - (_Bool)test_readerIsAvailable;
 - (id)test_webView;
 - (void)_closeButtonTapped;
-- (void)_updateStatusBarTitle:(id)arg1 isSecure:(_Bool)arg2;
 - (_Bool)prefersStatusBarHidden;
-- (void)webViewcontroller:(id)arg1 updateTopBarHeight:(float)arg2;
-- (void)webViewController:(id)arg1 didUpdateNavigationBarItem:(id)arg2;
-- (void)webViewControllerDidCommitNavigation:(id)arg1;
+- (void)browserControllerDidCommitNavigation:(id)arg1;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_setShowingSafariRestrictedOverlayIfNeeded;
 - (void)loadURL:(id)arg1;

@@ -23,12 +23,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scanTimestamp; // @synthesize scanTimestamp=_scanTimestamp;
 @property(nonatomic) double age; // @synthesize age=_age;
 @property(nonatomic) int channel; // @synthesize channel=_channel;
 @property(nonatomic) int rssi; // @synthesize rssi=_rssi;
 @property(retain, nonatomic) NSString *mac; // @synthesize mac=_mac;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

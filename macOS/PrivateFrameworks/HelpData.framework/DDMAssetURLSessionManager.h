@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_activeTasksQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *activeTasksQueue; // @synthesize activeTasksQueue=_activeTasksQueue;
 @property(retain) NSMutableDictionary *activeTasks; // @synthesize activeTasks=_activeTasks;
 @property(retain) NSOperationQueue *sessionDelegateQueue; // @synthesize sessionDelegateQueue=_sessionDelegateQueue;
 @property(readonly) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, copy) NSURLSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 willCacheResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didBecomeDownloadTask:(id)arg3;

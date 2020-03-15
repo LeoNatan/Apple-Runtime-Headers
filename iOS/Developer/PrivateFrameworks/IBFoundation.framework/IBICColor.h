@@ -14,7 +14,7 @@
 
 @interface IBICColor : NSObject <NSCoding, NSCopying, IBBinaryArchiving>
 {
-    double *_components;
+    double _components[4];
     struct CGColorSpace *_colorSpace;
     long long _componentCount;
     long long _colorSpaceID;

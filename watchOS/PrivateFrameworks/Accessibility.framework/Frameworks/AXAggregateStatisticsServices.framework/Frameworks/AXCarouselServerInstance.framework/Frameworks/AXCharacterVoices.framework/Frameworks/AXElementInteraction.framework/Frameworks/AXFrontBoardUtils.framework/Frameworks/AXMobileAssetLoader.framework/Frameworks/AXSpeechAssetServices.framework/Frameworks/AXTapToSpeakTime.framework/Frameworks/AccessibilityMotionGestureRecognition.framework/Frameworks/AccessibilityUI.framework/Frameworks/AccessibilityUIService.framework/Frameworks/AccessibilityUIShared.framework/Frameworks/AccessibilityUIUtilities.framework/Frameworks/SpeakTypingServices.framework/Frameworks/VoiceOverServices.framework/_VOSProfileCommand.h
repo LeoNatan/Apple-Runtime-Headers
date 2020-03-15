@@ -23,13 +23,13 @@
 + (_Bool)supportsSecureCoding;
 + (id)profileCommandWithStringValue:(id)arg1;
 + (id)profileCommandWithCommand:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _VOSProfileMode *mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSMutableSet *slaveCommands; // @synthesize slaveCommands=_slaveCommands;
 @property(retain, nonatomic) NSMutableSet *quickNavShortcuts; // @synthesize quickNavShortcuts=_quickNavShortcuts;
 @property(retain, nonatomic) NSMutableSet *keyboardShortcuts; // @synthesize keyboardShortcuts=_keyboardShortcuts;
 @property(retain, nonatomic) NSMutableSet *gestures; // @synthesize gestures=_gestures;
 @property(retain, nonatomic) VOSCommand *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)slaveCommandsForPressCount:(int)arg1;
 @property(readonly, nonatomic) _Bool hasSlaveCommands;
 - (void)removeSlaveCommand:(id)arg1;

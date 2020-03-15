@@ -24,10 +24,10 @@
     NSString *_debugName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
 @property(readonly, nonatomic) NSUUID *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
 @property(readonly, nonatomic) NSString *collectionIdentifier; // @synthesize collectionIdentifier=_collectionIdentifier;
-- (void).cxx_destruct;
 - (void)_updateLogIdentifier;
 - (void)_throwIfNotLoaded:(SEL)arg1;
 - (void)_systemAppStateDidChange;

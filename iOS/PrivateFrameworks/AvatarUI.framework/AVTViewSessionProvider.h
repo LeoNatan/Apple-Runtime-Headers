@@ -31,6 +31,7 @@
 + (struct CGSize)backingSizeForEnvironment:(id)arg1;
 + (CDUnknownBlockType)creatorForAVTRecordView;
 + (CDUnknownBlockType)creatorForAVTView;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) AVTViewSession *pausedTrackingSession; // @synthesize pausedTrackingSession=_pausedTrackingSession;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) AVTFaceTrackingManager *faceTrackingManager; // @synthesize faceTrackingManager=_faceTrackingManager;
 @property(nonatomic) __weak id <AVTViewSessionProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) struct CGSize avtViewBackingSize; // @synthesize avtViewBackingSize=_avtViewBackingSize;
-- (void).cxx_destruct;
 - (void)sessionDidTearDown:(id)arg1;
 - (void)recoverPrimaryStatus;
 - (void)handleProviderReleasesPrimaryStatusNotification:(id)arg1;

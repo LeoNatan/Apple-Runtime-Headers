@@ -16,10 +16,10 @@
 }
 
 + (id)eventWithPath:(id)arg1 flags:(unsigned int)arg2 event:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property unsigned int flags; // @synthesize flags=_flags;
 @property unsigned long long evtID; // @synthesize evtID=_evtID;
 @property(retain) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 
 @end
 

@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     _Bool _cancelled;
 }
 
+- (void).cxx_destruct;
 - (_Bool)wasCancelled;
 - (void)setCanRollback:(_Bool)arg1;
 - (_Bool)canRollback;
 - (void)setCanRestart:(_Bool)arg1;
 - (_Bool)canRestart;
-- (void).cxx_destruct;
 - (void)_peerProcessedMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)_sentMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
 - (void)cancelWithError:(id)arg1;

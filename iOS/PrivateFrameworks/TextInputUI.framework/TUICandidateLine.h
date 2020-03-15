@@ -14,8 +14,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
 
 @end
 

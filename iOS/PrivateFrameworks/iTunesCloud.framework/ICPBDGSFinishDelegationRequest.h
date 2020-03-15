@@ -16,8 +16,8 @@
 }
 
 + (Class)playerDelegateInfoTokenType;
-@property(retain, nonatomic) NSMutableArray *playerDelegateInfoTokens; // @synthesize playerDelegateInfoTokens=_playerDelegateInfoTokens;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *playerDelegateInfoTokens; // @synthesize playerDelegateInfoTokens=_playerDelegateInfoTokens;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

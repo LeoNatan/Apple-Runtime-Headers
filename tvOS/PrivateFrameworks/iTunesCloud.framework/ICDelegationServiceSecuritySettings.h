@@ -16,9 +16,9 @@
 
 + (void)getDeviceSenderSettingsForReceiverName:(id)arg1 securityMode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)getDeviceReceiverSettingsWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, nonatomic) long long securityMode; // @synthesize securityMode=_securityMode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_init;
 

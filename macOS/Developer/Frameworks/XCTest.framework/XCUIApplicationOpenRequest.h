@@ -20,12 +20,12 @@
 + (id)activationRequestFromLaunchRequest:(id)arg1;
 + (id)activationRequestWithLaunchArguments:(id)arg1 environmentVariables:(id)arg2 usePlatformLauncher:(BOOL)arg3;
 + (id)launchRequestWithLaunchArguments:(id)arg1 environmentVariables:(id)arg2 usePlatformLauncher:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *environmentVariables; // @synthesize environmentVariables=_environmentVariables;
 @property(copy) NSArray *launchArguments; // @synthesize launchArguments=_launchArguments;
 @property BOOL usePlatformLauncher; // @synthesize usePlatformLauncher=_usePlatformLauncher;
 @property BOOL terminateIfRunning; // @synthesize terminateIfRunning=_terminateIfRunning;
 @property BOOL activateIfRunning; // @synthesize activateIfRunning=_activateIfRunning;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
 - (id)shortDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,10 +17,10 @@
     CALayer *_overlayLayerHost;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *overlayLayerHost; // @synthesize overlayLayerHost=_overlayLayerHost;
 @property(retain, nonatomic) CALayer *underRepsLayerHost; // @synthesize underRepsLayerHost=_underRepsLayerHost;
 @property(retain, nonatomic) CALayer *aboveRepsLayerHost; // @synthesize aboveRepsLayerHost=_aboveRepsLayerHost;
-- (void).cxx_destruct;
 - (void)directLayerHostUpdateRepOverlayLayers:(id)arg1;
 - (void)directLayerHostUpdateAdditionalLayersAboveRepLayers:(id)arg1;
 - (void)directLayerHostUpdateAdditionalLayersUnderRepLayers:(id)arg1;

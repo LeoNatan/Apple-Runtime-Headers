@@ -35,6 +35,7 @@
 }
 
 + (void)_setupLayoutSpec;
+- (void).cxx_destruct;
 @property(nonatomic) float bottomDetailTrailingHorizontalPadding; // @synthesize bottomDetailTrailingHorizontalPadding=_bottomDetailTrailingHorizontalPadding;
 @property(nonatomic) float bottomDetailLeadingHorizontalPadding; // @synthesize bottomDetailLeadingHorizontalPadding=_bottomDetailLeadingHorizontalPadding;
 @property(nonatomic) float bottomDetailToTitleBaselineOffset; // @synthesize bottomDetailToTitleBaselineOffset=_bottomDetailToTitleBaselineOffset;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) UILabel *bottomDetailLabel; // @synthesize bottomDetailLabel=_bottomDetailLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UILabel *topDetailLabel; // @synthesize topDetailLabel=_topDetailLabel;
-- (void).cxx_destruct;
 - (float)bottomDetailPaddingConstraintConstant;
 - (float)bottomDetailBaselineOffsetConstraintConstant;
 - (float)titleBaselineOffsetConstraintConstant;

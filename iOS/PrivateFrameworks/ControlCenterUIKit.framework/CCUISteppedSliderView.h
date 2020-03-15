@@ -29,11 +29,11 @@
     unsigned long long _step;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long step; // @synthesize step=_step;
 @property(nonatomic) _Bool firstStepIsOff; // @synthesize firstStepIsOff=_firstStepIsOff;
 @property(nonatomic) _Bool firstStepIsDisabled; // @synthesize firstStepIsDisabled=_firstStepIsDisabled;
 @property(nonatomic) unsigned long long numberOfSteps; // @synthesize numberOfSteps=_numberOfSteps;
-- (void).cxx_destruct;
 - (void)_updateStepFromValue:(float)arg1 playHaptic:(_Bool)arg2 toggleCurrentStep:(_Bool)arg3;
 - (void)_updateStepFromValue:(float)arg1 playHaptic:(_Bool)arg2;
 - (void)_updateValueForPanGestureRecognizer:(id)arg1 withAbsolutePosition:(_Bool)arg2 forContinuedGesture:(_Bool)arg3;

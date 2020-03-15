@@ -24,13 +24,13 @@
 }
 
 + (id)_supportedDictionaryEncodingKeys;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REElementAction *action; // @synthesize action=_action;
 @property(readonly, nonatomic) NSArray *relevanceProviders; // @synthesize relevanceProviders=_relevanceProviders;
 @property(readonly, nonatomic) REContent *idealizedContent; // @synthesize idealizedContent=_idealizedContent;
 @property(readonly, nonatomic) REContent *content; // @synthesize content=_content;
 @property(readonly, nonatomic) unsigned int privacyBehavior; // @synthesize privacyBehavior=_privacyBehavior;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_relevanceProvidersEqualToElement:(id)arg1;
 - (unsigned int)hash;

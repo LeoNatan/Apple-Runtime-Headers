@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) _UIStatusBarDataBatteryEntry *batteryEntry; // @synthesize batteryEntry=_batteryEntry;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

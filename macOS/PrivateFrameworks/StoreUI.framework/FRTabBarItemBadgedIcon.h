@@ -14,9 +14,9 @@
     struct CGRect _badgeRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect badgeRect; // @synthesize badgeRect=_badgeRect;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (id)initWithIcon:(id)arg1 badgeRect:(struct CGRect)arg2;
 
 @end

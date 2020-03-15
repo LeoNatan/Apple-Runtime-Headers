@@ -15,8 +15,8 @@
 
 + (id)structFields;
 + (id)structName;
-@property(retain, nonatomic) EDAMSearchRecord *searchRecord; // @synthesize searchRecord=_searchRecord;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EDAMSearchRecord *searchRecord; // @synthesize searchRecord=_searchRecord;
 
 @end
 

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *__firingCopies;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setFiringCopies:) NSMutableArray *_firingCopies; // @synthesize _firingCopies=__firingCopies;
 @property(nonatomic, setter=_setValid:) BOOL _isValid; // @synthesize _isValid=__isValid;
 @property(retain, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRUIElement *origUIElement; // @synthesize origUIElement=_origUIElement;
 @property(nonatomic) unsigned int cancelMask; // @synthesize cancelMask=_cancelMask;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (const struct __AXUIElement *)axElement;
 - (void)_setAXElement:(struct __AXUIElement *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

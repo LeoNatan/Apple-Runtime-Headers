@@ -19,12 +19,12 @@
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MCActivityAggregate *downloadingContentAggregate; // @synthesize downloadingContentAggregate=_downloadingContentAggregate;
 @property(readonly, nonatomic) MCActivityAggregate *synchronizingActivityAggregate; // @synthesize synchronizingActivityAggregate=_synchronizingActivityAggregate;
 @property(readonly, nonatomic) MCActivityAggregate *save; // @synthesize save=_save;
 @property(readonly, nonatomic) MCActivityAggregate *out; // @synthesize out=_out;
 @property(readonly, nonatomic) MCActivityAggregate *in; // @synthesize in=_in;
-- (void).cxx_destruct;
 - (void)activityMonitor:(id)arg1 didChangeTypeFrom:(long long)arg2;
 - (void)dealloc;
 - (id)init;

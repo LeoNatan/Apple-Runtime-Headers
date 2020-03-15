@@ -30,6 +30,7 @@
 
 + (double)defaultPadding;
 + (id)videoItem;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType preCommitBlock; // @synthesize preCommitBlock=_preCommitBlock;
 @property(retain, nonatomic) AVTUILogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) AVTTouchDownGestureRecognizer *dismissGestureRecognizer; // @synthesize dismissGestureRecognizer=_dismissGestureRecognizer;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak id <AVTPaddleViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double padding; // @synthesize padding=_padding;
 @property(nonatomic) _Bool automaticallyStartsPlaying; // @synthesize automaticallyStartsPlaying=_automaticallyStartsPlaying;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)pauseVideo;
 - (void)playVideo;

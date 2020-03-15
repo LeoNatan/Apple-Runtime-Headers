@@ -15,8 +15,8 @@
     TVLMenuItemView *_menuItemView;
 }
 
-@property(readonly) TVLMenuItemView *menuItemView; // @synthesize menuItemView=_menuItemView;
 - (void).cxx_destruct;
+@property(readonly) TVLMenuItemView *menuItemView; // @synthesize menuItemView=_menuItemView;
 - (id)labelForMarquee;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)configureWithMenuItemElement:(id)arg1;

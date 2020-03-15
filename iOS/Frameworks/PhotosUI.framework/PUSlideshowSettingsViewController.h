@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     PUSlideshowMediaItem *__pendingMediaItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPendingMediaItem:) PUSlideshowMediaItem *_pendingMediaItem; // @synthesize _pendingMediaItem=__pendingMediaItem;
 @property(retain, nonatomic, setter=_setPendingPreset:) OKProducerPreset *_pendingPreset; // @synthesize _pendingPreset=__pendingPreset;
 @property(nonatomic, setter=_setNeedsUpdateMusicOn:) _Bool _needsUpdateMusicOn; // @synthesize _needsUpdateMusicOn=__needsUpdateMusicOn;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setNeedsUpdateTableView:) _Bool _needsUpdateTableView; // @synthesize _needsUpdateTableView=__needsUpdateTableView;
 @property(nonatomic, setter=_setNeedsUpdateSpec:) _Bool _needsUpdateSpec; // @synthesize _needsUpdateSpec=__needsUpdateSpec;
 @property(nonatomic) __weak id <PUSlideshowSettingsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)PUSlideshowSpeedCell:(id)arg1 stepDurationDidChange:(double)arg2;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)viewControllerSpec:(id)arg1 didChange:(id)arg2;

@@ -32,6 +32,7 @@
 + (id)defaultSpringAnimationForKey:(id)arg1 mass:(double)arg2 stiffness:(double)arg3 damping:(double)arg4 velocity:(double)arg5;
 + (long long)_contentModeForLayerContentsGravity:(id)arg1;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL accessibilityChildrenHidden; // @synthesize accessibilityChildrenHidden=_accessibilityChildrenHidden;
 @property(readonly) NSVisualEffectView *_visualEffectsView; // @synthesize _visualEffectsView=__visualEffectsView;
 @property(nonatomic) __weak UXViewController *viewControllerProxy; // @synthesize viewControllerProxy=_viewControllerProxy;
@@ -40,7 +41,6 @@
 @property(nonatomic) BOOL userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic, getter=isExclusiveTouch) BOOL exclusiveTouch; // @synthesize exclusiveTouch=_exclusiveTouch;
 @property(getter=isOpaque) BOOL opaque; // @synthesize opaque=_opaque;
-- (void).cxx_destruct;
 - (id)accessibilityChildren;
 - (id)menuForEvent:(id)arg1;
 - (id)snapshotViewFromRect:(struct CGRect)arg1;

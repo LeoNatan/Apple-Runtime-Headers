@@ -32,14 +32,14 @@
     NSString *_accessoryText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accessoryText; // @synthesize accessoryText=_accessoryText;
 @property(retain, nonatomic) CNContact *lastFilledContact; // @synthesize lastFilledContact=_lastFilledContact;
 @property(nonatomic) _Bool metadataCorrectionsEnabled; // @synthesize metadataCorrectionsEnabled=_metadataCorrectionsEnabled;
-- (void).cxx_destruct;
 - (void)_didFocusSensitiveFormField;
 - (void)_setUpFormContextViewWithSensitiveInput:(_Bool)arg1;
 @property(readonly, nonatomic) UIView *formContextView;
-- (void)_simulateCarriageReturnKeyEvents;
+- (void)_dismissKeyboardAndSimulateCarriageReturnKeyEvents:(_Bool)arg1;
 - (id)_simulatedWebEventForReturnKeyWithType:(int)arg1;
 - (void)autoFillDidFinishWithUpdatedFormMetadata:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)_removeUniqueIDsOfAutoFilledForm:(id)arg1;

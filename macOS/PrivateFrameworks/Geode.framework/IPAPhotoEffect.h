@@ -38,6 +38,7 @@
 + (id)_createPortraitWithName:(id)arg1;
 + (id)_createEffectWithName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *portraitV2Name; // @synthesize portraitV2Name=_portraitV2Name;
 @property(readonly, nonatomic) NSString *portraitV1Name; // @synthesize portraitV1Name=_portraitV1Name;
 @property(readonly, nonatomic) NSString *portraitGlyphPrefix; // @synthesize portraitGlyphPrefix=_portraitGlyphPrefix;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) long long number; // @synthesize number=_number;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqualToEffect:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)debugDescription;

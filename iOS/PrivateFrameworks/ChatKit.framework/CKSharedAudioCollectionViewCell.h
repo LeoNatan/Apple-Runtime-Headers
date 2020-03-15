@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) CKAudioProgressView *audioPlaybackView; // @synthesize audioPlaybackView=_audioPlaybackView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKAudioProgressView *audioPlaybackView; // @synthesize audioPlaybackView=_audioPlaybackView;
 - (void)layoutSubviews;
 - (id)formattedCreatedDateTextFromDate:(id)arg1;
 - (id)formattedDurationTextForAsset:(id)arg1;

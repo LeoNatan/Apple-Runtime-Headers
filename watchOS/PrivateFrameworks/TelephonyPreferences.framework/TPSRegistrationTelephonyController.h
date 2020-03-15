@@ -17,8 +17,8 @@
     CTXPCServiceSubscriptionContext *_subscriptionContext;
 }
 
-@property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 - (void)networkSelected:(id)arg1 success:(_Bool)arg2 mode:(id)arg3;
 - (void)networkListAvailable:(id)arg1 list:(id)arg2;
 - (void)performDelegateSelector:(SEL)arg1;

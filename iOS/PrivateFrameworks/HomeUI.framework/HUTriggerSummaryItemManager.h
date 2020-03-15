@@ -34,6 +34,7 @@
     HFStaticItemProvider *_staticItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(retain, nonatomic) HFItem *mediaInstructionsItem; // @synthesize mediaInstructionsItem=_mediaInstructionsItem;
 @property(retain, nonatomic) HFItem *shortcutsInstructionItem; // @synthesize shortcutsInstructionItem=_shortcutsInstructionItem;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) HFStaticItemProvider *unsupportedItemProvider; // @synthesize unsupportedItemProvider=_unsupportedItemProvider;
 @property(retain, nonatomic) HUTriggerActionFlow *currentFlow; // @synthesize currentFlow=_currentFlow;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
-- (void).cxx_destruct;
 - (id)_triggerDeleteInstructionItemString;
 - (id)_triggerServiceActionsInstructionDescription;
 - (id)_triggerTestActionsInstructionDescription;

@@ -35,10 +35,10 @@
 
 + (id)sharedtrainingSessionQueue;
 + (id)trainingManagerWithLocaleID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) _Bool speechRecognizerAvailable; // @synthesize speechRecognizerAvailable=_speechRecognizerAvailable;
 @property(nonatomic) __weak id <CSVTUITrainingManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property float rms; // @synthesize rms=_rms;
-- (void).cxx_destruct;
 - (void)didDetectForceEndPoint;
 - (void)endpointer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2 withMetrics:(id)arg3;
 - (void)endpointer:(id)arg1 didDetectStartpointAtTime:(double)arg2;

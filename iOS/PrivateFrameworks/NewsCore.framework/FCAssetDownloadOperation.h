@@ -31,6 +31,7 @@
 
 + (id)sharedURLRequestScheduler;
 + (id)sharedURLSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long responseSize; // @synthesize responseSize=_responseSize;
 @property(retain, nonatomic) NSHTTPURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;
@@ -48,7 +49,6 @@
 @property(nonatomic) long long downloadDestination; // @synthesize downloadDestination=_downloadDestination;
 @property(copy, nonatomic) NSString *loggingKey; // @synthesize loggingKey=_loggingKey;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)throttleGroup;
 - (void)resetForRetry;
 - (void)operationWillFinishWithError:(id)arg1;

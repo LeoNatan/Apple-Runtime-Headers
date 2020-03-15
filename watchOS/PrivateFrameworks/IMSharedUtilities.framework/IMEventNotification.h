@@ -17,11 +17,11 @@
 + (id)eventNotification:(id)arg1;
 + (id)eventNotification:(id)arg1 sender:(id)arg2 eventNotificationBlock:(CDUnknownBlockType)arg3;
 + (id)eventNotification:(id)arg1 eventNotificationBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType eventNotificationBlock; // @synthesize eventNotificationBlock=_eventNotificationBlock;
 @property(copy) CDUnknownBlockType eventNotificationWithSenderBlock; // @synthesize eventNotificationWithSenderBlock=_eventNotificationWithSenderBlock;
 @property __weak id sender; // @synthesize sender=_sender;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)cache;
 - (_Bool)wasCancelled;
 - (void)cancel;

@@ -18,10 +18,10 @@
     CDStruct_c223d907 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(nonatomic) long long representativeItemCloudID; // @synthesize representativeItemCloudID=_representativeItemCloudID;
 @property(retain, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

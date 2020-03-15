@@ -35,6 +35,7 @@
     NSTextField *_formTitleTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *formTitleTextField; // @synthesize formTitleTextField=_formTitleTextField;
 @property(nonatomic) __weak id <PXFeedbackExportLogs> exportLogsDelegate; // @synthesize exportLogsDelegate=_exportLogsDelegate;
 @property(retain, nonatomic) NSButton *sendButton; // @synthesize sendButton=_sendButton;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(retain, nonatomic) NSView *headerBox; // @synthesize headerBox=_headerBox;
 @property(copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (void)_createFormTableView;

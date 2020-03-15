@@ -16,11 +16,11 @@
     NSArray *_recentDeletions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *recentDeletions; // @synthesize recentDeletions=_recentDeletions;
 @property(readonly, nonatomic) NSString *inputPrefix; // @synthesize inputPrefix=_inputPrefix;
 @property(readonly, nonatomic) NSArray *filteredRecognizedStrings; // @synthesize filteredRecognizedStrings=_filteredRecognizedStrings;
 @property(readonly, nonatomic) NSArray *originalRecognizerResults; // @synthesize originalRecognizerResults=_originalRecognizerResults;
-- (void).cxx_destruct;
 - (void)_reorderResultStrings:(id)arg1 withRecentDeletions:(id)arg2;
 - (void)_computeFilteredResults;
 - (id)initWithRecognizerResults:(id)arg1 inputPrefix:(id)arg2 recentDeletions:(id)arg3;

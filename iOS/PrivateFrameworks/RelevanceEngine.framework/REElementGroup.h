@@ -20,10 +20,10 @@
 
 + (id)adjoiningElementGroupWithIdentifier:(id)arg1;
 + (id)topElementGroupWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long maxElementCount; // @synthesize maxElementCount=_maxElementCount;
 @property(nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;

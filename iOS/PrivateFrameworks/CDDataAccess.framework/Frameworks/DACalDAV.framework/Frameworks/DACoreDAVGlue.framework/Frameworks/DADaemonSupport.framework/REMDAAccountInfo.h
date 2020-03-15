@@ -17,10 +17,10 @@
     NSString *_accountDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
 @property(retain, nonatomic) REMObjectID *rem_accountObjectID; // @synthesize rem_accountObjectID=_rem_accountObjectID;
 @property(retain, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (id)loggingDescription;
 - (id)initWithAccountID:(id)arg1 remAccountObjectID:(id)arg2 accountDescription:(id)arg3;
 

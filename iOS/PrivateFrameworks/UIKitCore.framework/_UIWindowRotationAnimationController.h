@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool updateStatusBarIfNecessary; // @synthesize updateStatusBarIfNecessary=_updateStatusBarIfNecessary;
 @property(nonatomic) _Bool skipCallbacks; // @synthesize skipCallbacks=_skipCallbacks;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) CDUnknownBlockType animations; // @synthesize animations=_animations;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (void)dealloc;

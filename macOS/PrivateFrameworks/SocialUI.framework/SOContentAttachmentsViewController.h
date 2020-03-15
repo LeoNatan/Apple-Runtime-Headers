@@ -18,8 +18,8 @@
     QLPreviewPanel *_previewPanel;
 }
 
-@property(retain) QLPreviewPanel *previewPanel; // @synthesize previewPanel=_previewPanel;
 - (void).cxx_destruct;
+@property(retain) QLPreviewPanel *previewPanel; // @synthesize previewPanel=_previewPanel;
 - (void)chatDisplayControllerWillChange:(id)arg1;
 - (void)attachmentsDidChange;
 - (void)deleteSelection:(id)arg1;

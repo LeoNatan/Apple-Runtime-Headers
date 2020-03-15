@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *pairingPublicKey; // @synthesize pairingPublicKey=_pairingPublicKey;
 @property(copy, nonatomic) NSString *bonjourServiceName; // @synthesize bonjourServiceName=_bonjourServiceName;
-- (void).cxx_destruct;
 - (void)_cloneFromPairableEndpoint:(id)arg1;
 - (_Bool)_isEqualToPairableEndpoint:(id)arg1;
 - (id)initWithCoder:(id)arg1;

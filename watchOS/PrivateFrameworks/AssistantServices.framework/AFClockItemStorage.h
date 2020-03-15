@@ -24,11 +24,11 @@
     unsigned long long _generation;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *itemsByID; // @synthesize itemsByID=_itemsByID;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned long long generation; // @synthesize generation=_generation;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)deleteAllItems;
 - (void)deleteItemsWithIDs:(id)arg1;

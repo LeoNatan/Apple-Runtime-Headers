@@ -15,9 +15,9 @@
     MFEWSGateway *_gateway;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFEWSGateway *gateway; // @synthesize gateway=_gateway;
 @property(retain, nonatomic) MFEWSResponseOperation *responseOperation; // @synthesize responseOperation=_responseOperation;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setupOfflineResponse;
 - (void)goOffline;

@@ -14,9 +14,9 @@
     NSMutableArray *__toolbarIdentifiersAfterBasePanel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *_toolbarIdentifiersAfterBasePanel; // @synthesize _toolbarIdentifiersAfterBasePanel=__toolbarIdentifiersAfterBasePanel;
 @property(retain, nonatomic) NSMutableArray *_toolbarIdentifiersPriorToBasePanel; // @synthesize _toolbarIdentifiersPriorToBasePanel=__toolbarIdentifiersPriorToBasePanel;
-- (void).cxx_destruct;
 - (void)reorderToolbarIdentifiersPrior:(id)arg1 after:(id)arg2;
 @property(readonly, copy, nonatomic) NSArray *_allToolbarIdentifiers;
 - (id)allToolbarIdentifiersWithBasePanelIdentifier:(id)arg1;

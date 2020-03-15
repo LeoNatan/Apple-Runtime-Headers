@@ -18,11 +18,11 @@
     NSArray *_hiddenElements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *hiddenElements; // @synthesize hiddenElements=_hiddenElements;
 @property(readonly, copy, nonatomic) NSString *lastGroupID; // @synthesize lastGroupID=_lastGroupID;
 @property(readonly, copy, nonatomic) NSString *firstGroupID; // @synthesize firstGroupID=_firstGroupID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithHiddenElements:(id)arg1;
 - (id)copyWithIdentifier:(id)arg1;

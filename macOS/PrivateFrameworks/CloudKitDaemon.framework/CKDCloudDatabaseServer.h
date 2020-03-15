@@ -25,6 +25,7 @@
 }
 
 + (id)sharedServer;
+- (void).cxx_destruct;
 @property(nonatomic) int tccToken; // @synthesize tccToken=_tccToken;
 @property(retain, nonatomic) NSMutableArray *statusReportCallbacks; // @synthesize statusReportCallbacks=_statusReportCallbacks;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *statusReportCallbackQueue; // @synthesize statusReportCallbackQueue=_statusReportCallbackQueue;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSMutableDictionary *recentClientsByProcessName; // @synthesize recentClientsByProcessName=_recentClientsByProcessName;
 @property(retain, nonatomic) NSMutableArray *connectedClients; // @synthesize connectedClients=_connectedClients;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
-- (void).cxx_destruct;
 - (void)kickOffPendingLongLivedOperations;
 - (void)statusReportWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dumpStatusReportToFileHandle:(id)arg1;

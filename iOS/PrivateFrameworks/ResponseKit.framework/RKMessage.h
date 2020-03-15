@@ -16,11 +16,11 @@
     unsigned long long _position;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long position; // @synthesize position=_position;
 @property(readonly, copy) NSDate *dateSent; // @synthesize dateSent=_dateSent;
 @property(readonly, copy) NSUUID *senderUUID; // @synthesize senderUUID=_senderUUID;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)annotateRange:(struct _NSRange)arg1 type:(unsigned long long)arg2 field:(unsigned long long)arg3;
 - (id)initWithString:(id)arg1 title:(id)arg2 languageIdentifier:(id)arg3 senderUUID:(id)arg4 dateSent:(id)arg5 position:(unsigned long long)arg6;
 

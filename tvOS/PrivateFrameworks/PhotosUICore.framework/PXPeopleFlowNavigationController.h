@@ -22,13 +22,13 @@
     UIViewController<PXPeopleFlowViewController> *_currentViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController<PXPeopleFlowViewController> *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain, nonatomic) UIBarButtonItem *backButton; // @synthesize backButton=_backButton;
 @property(retain, nonatomic) UIBarButtonItem *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) id <PXPeopleFlowController> flowController; // @synthesize flowController=_flowController;
-- (void).cxx_destruct;
 - (void)requestCancel;
 - (void)requestAdvanceToNextInFlow;
 - (void)setAdvanceButtonEnabled:(_Bool)arg1;

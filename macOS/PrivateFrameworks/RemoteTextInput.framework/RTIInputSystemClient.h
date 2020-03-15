@@ -26,6 +26,7 @@
     NSMutableSet *_endpointConnections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *endpointConnections; // @synthesize endpointConnections=_endpointConnections;
 @property(retain, nonatomic) NSMutableDictionary *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSArray *machNames; // @synthesize machNames=_machNames;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSMutableDictionary *activeSessions; // @synthesize activeSessions=_activeSessions;
 @property(nonatomic) __weak id <RTIInputSystemClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long currentEnvironmentOptions; // @synthesize currentEnvironmentOptions=_currentEnvironmentOptions;
-- (void).cxx_destruct;
 - (oneway void)performTextOperations:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (oneway void)performTextOperations:(id)arg1;
 - (oneway void)endRemoteTextInputSessionWithID:(id)arg1;

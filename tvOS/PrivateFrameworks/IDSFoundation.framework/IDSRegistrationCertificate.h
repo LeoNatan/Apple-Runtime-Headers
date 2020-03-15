@@ -13,8 +13,8 @@
     IDSServerCertificate *_backingCertificate;
 }
 
-@property(readonly, nonatomic) IDSServerCertificate *backingCertificate; // @synthesize backingCertificate=_backingCertificate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDSServerCertificate *backingCertificate; // @synthesize backingCertificate=_backingCertificate;
 - (id)description;
 @property(readonly, nonatomic) NSData *dataRepresentation;
 - (id)initWithBackingCertificate:(id)arg1;

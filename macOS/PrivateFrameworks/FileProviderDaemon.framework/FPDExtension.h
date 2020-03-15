@@ -19,10 +19,10 @@
 }
 
 + (id)instanceWithExtension:(id)arg1 queue:(id)arg2 server:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sharedSessionQueue; // @synthesize sharedSessionQueue=_sharedSessionQueue;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *presentersQueue; // @synthesize presentersQueue=_presentersQueue;
-- (void).cxx_destruct;
 - (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
 - (void)currentMaterializedSetSyncAnchorForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)enumerateMaterializedSetForDomain:(id)arg1 syncAnchor:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

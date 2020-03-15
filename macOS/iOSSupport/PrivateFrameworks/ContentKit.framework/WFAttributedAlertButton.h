@@ -15,9 +15,9 @@
 }
 
 + (id)buttonWithAttributedTitle:(id)arg1 label:(id)arg2 selected:(BOOL)arg3 style:(long long)arg4 handler:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
-- (void).cxx_destruct;
 
 @end
 

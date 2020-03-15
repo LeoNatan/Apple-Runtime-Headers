@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_bundleControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bundleControllers; // @synthesize bundleControllers=_bundleControllers;
 @property(nonatomic) __weak PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
-- (void).cxx_destruct;
 - (id)specifiers;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2 parentSpecifier:(id)arg3;

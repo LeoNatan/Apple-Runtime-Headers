@@ -19,13 +19,13 @@
     NSError *_completedError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *completedError; // @synthesize completedError=_completedError;
 @property(retain, nonatomic) NSData *completedCredential; // @synthesize completedCredential=_completedCredential;
 @property(retain, nonatomic) LAContext *completedContext; // @synthesize completedContext=_completedContext;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *localAuthenticationQueue; // @synthesize localAuthenticationQueue=_localAuthenticationQueue;
-- (void).cxx_destruct;
 - (void)_performDelegateCallback:(CDUnknownBlockType)arg1;
 - (void)_invokeCompletionHandlerForInvalidation;
 - (void)invalidateLocalAuthenticationContexts;

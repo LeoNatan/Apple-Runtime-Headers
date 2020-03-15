@@ -9,29 +9,26 @@
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKMedicalCodingCollection, HKSampleType, NSString;
+@class HKMedicalCodingCollection, NSString;
 
 @interface HKMedicalCodingContext : NSObject <NSCopying, NSSecureCoding>
 {
     HKMedicalCodingCollection *_collection;
-    HKSampleType *_sampleType;
-    NSString *_keyPath;
+    NSString *_country;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)contextWithCodings:(id)arg1 sampleType:(id)arg2 keyPath:(id)arg3;
-+ (id)contextWithCollection:(id)arg1 sampleType:(id)arg2 keyPath:(id)arg3;
-@property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-@property(readonly, copy, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
-@property(readonly, copy, nonatomic) HKMedicalCodingCollection *collection; // @synthesize collection=_collection;
++ (id)contextWithCodings:(id)arg1 country:(id)arg2;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *country; // @synthesize country=_country;
+@property(readonly, copy, nonatomic) HKMedicalCodingCollection *collection; // @synthesize collection=_collection;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;
-- (id)initWithCollection:(id)arg1 sampleType:(id)arg2 keyPath:(id)arg3;
+- (id)initWithCollection:(id)arg1 country:(id)arg2;
 - (id)init;
 
 @end

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_identityProviders;
 }
 
-@property(copy, nonatomic) NSArray *identityProviders; // @synthesize identityProviders=_identityProviders;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *identityProviders; // @synthesize identityProviders=_identityProviders;
 - (id)init;
 
 @end

@@ -15,10 +15,10 @@
     HFAccessorySettingAdapter *_mobileTimerAdapter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFAccessorySettingAdapter *mobileTimerAdapter; // @synthesize mobileTimerAdapter=_mobileTimerAdapter;
 @property(retain, nonatomic) HFAccessorySettingSiriLanguageAdapter *siriLanguageAdapter; // @synthesize siriLanguageAdapter=_siriLanguageAdapter;
 @property(retain, nonatomic) HFAccessorySettingManagedConfigurationAdapter *managedConfigurationAdapter; // @synthesize managedConfigurationAdapter=_managedConfigurationAdapter;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allAdapters;
 
 @end

@@ -16,15 +16,17 @@
 @interface NEContentFilter : NSObject <NEConfigurationValidating, NEPrettyDescription, NSSecureCoding, NSCopying>
 {
     _Bool _enabled;
+    _Bool _enableManualMode;
     NEFilterProviderConfiguration *_provider;
     long long _grade;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property _Bool enableManualMode; // @synthesize enableManualMode=_enableManualMode;
 @property(nonatomic) long long grade; // @synthesize grade=_grade;
 @property(copy) NEFilterProviderConfiguration *provider; // @synthesize provider=_provider;
 @property(getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (_Bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

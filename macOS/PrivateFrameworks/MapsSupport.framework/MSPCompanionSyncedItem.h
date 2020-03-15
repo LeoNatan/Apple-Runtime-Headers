@@ -23,11 +23,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPHistoryEntryStorage *searchRequest; // @synthesize searchRequest=_searchRequest;
 @property(retain, nonatomic) MSPPinStorage *pin; // @synthesize pin=_pin;
 @property(retain, nonatomic) MSPBookmarkStorage *bookmark; // @synthesize bookmark=_bookmark;
 @property(retain, nonatomic) NSString *syncId; // @synthesize syncId=_syncId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

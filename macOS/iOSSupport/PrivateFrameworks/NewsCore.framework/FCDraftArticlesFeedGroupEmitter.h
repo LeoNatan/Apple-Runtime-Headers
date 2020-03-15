@@ -16,8 +16,8 @@
 }
 
 + (id)groupEmitterIdentifier;
-@property(readonly, nonatomic) NSString *articleList; // @synthesize articleList=_articleList;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *articleList; // @synthesize articleList=_articleList;
 @property(readonly, nonatomic) BOOL shouldEmitContentInFavoritesOnlyMode;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;

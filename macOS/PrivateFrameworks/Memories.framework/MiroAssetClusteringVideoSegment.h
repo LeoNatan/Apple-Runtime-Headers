@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)videoSegmentFromAsset:(id)arg1 starting:(double)arg2 duration:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) float frameRate; // @synthesize frameRate=_frameRate;
 @property(retain, nonatomic) MiroMetadataRange *trimRange; // @synthesize trimRange=_trimRange;
 @property(retain, nonatomic) MiroMetadataRange *sourceRange; // @synthesize sourceRange=_sourceRange;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) PHAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) PHAsset *asset;
 - (id)rangeScoreExplanation;

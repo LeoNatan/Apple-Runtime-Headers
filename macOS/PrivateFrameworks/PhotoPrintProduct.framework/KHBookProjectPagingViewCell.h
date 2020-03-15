@@ -16,11 +16,11 @@
     NSMutableArray *_decorationConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *decorationConstraints; // @synthesize decorationConstraints=_decorationConstraints;
 @property(readonly, nonatomic) UXImageView *overlayImageView; // @synthesize overlayImageView=_overlayImageView;
 @property(readonly, nonatomic) UXImageView *shadowImageView; // @synthesize shadowImageView=_shadowImageView;
 @property(readonly, nonatomic) UXImageView *decorationImageView; // @synthesize decorationImageView=_decorationImageView;
-- (void).cxx_destruct;
 - (void)_updateDecorationConstraintsForProjectLayouts:(id)arg1;
 - (void)configureAccessoryButton:(id)arg1 forLayout:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)updateDecorationsForProjectLayouts:(id)arg1;

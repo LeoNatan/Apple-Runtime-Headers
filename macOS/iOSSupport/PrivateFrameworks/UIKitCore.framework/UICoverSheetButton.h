@@ -34,6 +34,7 @@
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *statisticsIdentifier; // @synthesize statisticsIdentifier=_statisticsIdentifier;
 @property(copy, nonatomic) NSString *backgroundEffectViewGroupName; // @synthesize backgroundEffectViewGroupName=_backgroundEffectViewGroupName;
 @property(copy, nonatomic) NSString *localizedAccessoryTitle; // @synthesize localizedAccessoryTitle=_localizedAccessoryTitle;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic, getter=isLatching) BOOL latching; // @synthesize latching=_latching;
 @property(nonatomic, getter=isPronounced) BOOL pronounced; // @synthesize pronounced=_pronounced;
-- (void).cxx_destruct;
 - (id)_maxForceStatWithActivation:(BOOL)arg1;
 - (id)_firstActivationDurationStat;
 - (id)_interactionDurationStat;

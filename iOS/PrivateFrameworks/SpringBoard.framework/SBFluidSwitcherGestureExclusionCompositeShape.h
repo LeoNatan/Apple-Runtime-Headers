@@ -18,10 +18,10 @@
 }
 
 + (id)exclusionCompositeShapeWithRects:(id)arg1 allowHorizontalSwipes:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double topEdgeY; // @synthesize topEdgeY=_topEdgeY;
 @property(nonatomic) _Bool allowHorizontalSwipesInsideShapes; // @synthesize allowHorizontalSwipesInsideShapes=_allowHorizontalSwipesInsideShapes;
 @property(retain, nonatomic) NSArray *rects; // @synthesize rects=_rects;
-- (void).cxx_destruct;
 - (_Bool)shouldBeginGestureAtStartingPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2 bounds:(struct CGRect)arg3;
 - (id)debugView;
 

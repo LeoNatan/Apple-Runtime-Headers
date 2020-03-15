@@ -31,6 +31,7 @@
 + (void)reset;
 + (void)setSharedFactory:(id)arg1;
 + (id)sharedFactory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NUSlowMotionVideoFactory> slomoFactory; // @synthesize slomoFactory=_slomoFactory;
 @property(retain, nonatomic) NUCacheNodeRegistry *cacheNodeRegistry; // @synthesize cacheNodeRegistry=_cacheNodeRegistry;
 @property(retain, nonatomic) NUJSContextPool *sharedJavaScriptContextPool; // @synthesize sharedJavaScriptContextPool=_sharedJavaScriptContextPool;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) NSString *defaultNameSpace; // @synthesize defaultNameSpace=_defaultNameSpace;
 @property(retain, nonatomic) NURenderPipelineRegistry *renderPipelineRegistry; // @synthesize renderPipelineRegistry=_renderPipelineRegistry;
 @property(retain, nonatomic) NUSchemaRegistry *schemaRegistry; // @synthesize schemaRegistry=_schemaRegistry;
-- (void).cxx_destruct;
 - (void)shutdown;
 - (void)start;
 

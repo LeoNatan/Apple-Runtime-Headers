@@ -14,9 +14,9 @@
     NSMutableDictionary *_headerFields;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(readonly, nonatomic) NSURLComponents *URLComponents; // @synthesize URLComponents=_URLComponents;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOURLWithHeaders *URLWithHeaders;
 @property(readonly, nonatomic) NSURL *URL;
 - (void)updateQueryItemsWithBlock:(CDUnknownBlockType)arg1;

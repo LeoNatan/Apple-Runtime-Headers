@@ -19,10 +19,10 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) id trust; // @synthesize trust=_trust;
 @property(nonatomic) __weak id <TVCSWiFiCertificateTrustDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)wantsModalPresentation;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

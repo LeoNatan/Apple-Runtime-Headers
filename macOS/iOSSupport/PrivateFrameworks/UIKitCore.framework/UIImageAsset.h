@@ -31,12 +31,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)_dynamicAssetNamed:(id)arg1 generator:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *assetName; // @synthesize assetName=_assetName;
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(copy, nonatomic, setter=_setRebuildStackImage:) CDUnknownBlockType _rebuildStackImage; // @synthesize _rebuildStackImage;
 @property(nonatomic, setter=_setUnpinObserver:) __weak id _unpinObserver; // @synthesize _unpinObserver;
 @property(readonly, nonatomic) __weak _UIAssetManager *_assetManager; // @synthesize _assetManager;
-- (void).cxx_destruct;
 - (id)_cachedRenditionWithSize:(struct CGSize)arg1 tintColor:(id)arg2 traitCollection:(id)arg3 bold:(BOOL)arg4 letterpress:(BOOL)arg5 drawMode:(unsigned int)arg6;
 - (void)_cacheRendition:(id)arg1 forSize:(struct CGSize)arg2 tintColor:(id)arg3 traitCollection:(id)arg4 bold:(BOOL)arg5 letterpress:(BOOL)arg6 drawMode:(unsigned int)arg7;
 - (id)_renditionCache:(BOOL)arg1;

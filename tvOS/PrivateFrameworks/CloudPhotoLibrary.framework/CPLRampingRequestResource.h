@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long numRequested; // @synthesize numRequested=_numRequested;
 @property(retain, nonatomic) NSString *resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

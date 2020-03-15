@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSUUID *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSURL *advertisedURI; // @synthesize advertisedURI=_advertisedURI;
-- (void).cxx_destruct;
 
 @end
 

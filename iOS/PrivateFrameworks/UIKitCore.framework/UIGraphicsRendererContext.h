@@ -15,9 +15,9 @@
     _Bool ___createsImages;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool __createsImages; // @synthesize __createsImages=___createsImages;
 @property(readonly, nonatomic) UIGraphicsRendererFormat *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (void)clipToRect:(struct CGRect)arg1;
 - (void)strokeRect:(struct CGRect)arg1 blendMode:(int)arg2;
 - (void)strokeRect:(struct CGRect)arg1;

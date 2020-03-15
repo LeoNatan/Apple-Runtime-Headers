@@ -17,9 +17,9 @@
 + (id)yesNoFormatter;
 + (id)onOffFormatter;
 + (id)formatterWithOnTitle:(id)arg1 offTitle:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *offTitle; // @synthesize offTitle=_offTitle;
 @property(readonly, copy, nonatomic) NSString *onTitle; // @synthesize onTitle=_onTitle;
-- (void).cxx_destruct;
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (id)initWithOnTitle:(id)arg1 andOffTitle:(id)arg2;

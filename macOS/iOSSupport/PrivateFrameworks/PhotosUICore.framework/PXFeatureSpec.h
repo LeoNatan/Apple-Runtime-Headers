@@ -33,6 +33,7 @@
     struct UIEdgeInsets _layoutMargins;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL _shouldUseMiniMargins; // @synthesize _shouldUseMiniMargins=__shouldUseMiniMargins;
 @property(readonly, nonatomic) PXLayoutMetricInterpolator *_horizontalContentGuideInsetsInterpolator; // @synthesize _horizontalContentGuideInsetsInterpolator=__horizontalContentGuideInsetsInterpolator;
 @property(readonly, nonatomic) PXExtendedTraitCollection *_extendedTraitCollection; // @synthesize _extendedTraitCollection=__extendedTraitCollection;
@@ -54,13 +55,12 @@
 @property(readonly, nonatomic) long long sizeSubclass; // @synthesize sizeSubclass=_sizeSubclass;
 @property(readonly, nonatomic) long long sizeClass; // @synthesize sizeClass=_sizeClass;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)_textAttributesForFontName:(id)arg1 fontSize:(double)arg2 lineHeight:(double)arg3 tracking:(double)arg4 stroke:(double)arg5;
 - (long long)_capitalizationStyleFromTextAttributes:(id)arg1 defaultCapitalizationStyle:(long long)arg2;
 @property(readonly, nonatomic) long long localizedLeadingTextAlignment;
 @property(readonly, nonatomic) double collectionTileImageCornerRadius;
-- (struct UIColor *)collectionTileImageOverlayColorHighlighted;
-- (struct UIColor *)collectionTileImageOverlayColor;
+- (id)collectionTileImageOverlayColorHighlighted;
+- (id)collectionTileImageOverlayColor;
 @property(readonly, nonatomic) double defaultDarkenSourceOverAmount;
 @property(readonly, nonatomic) UIColor *defaultPlacesPlaceholderColor;
 @property(readonly, nonatomic) UIColor *defaultPlaceholderColor;

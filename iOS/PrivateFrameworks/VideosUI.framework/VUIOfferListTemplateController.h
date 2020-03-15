@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     VUIOfferListContainerView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIOfferListContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) VUICollectionFooterView *computationFooterView; // @synthesize computationFooterView=_computationFooterView;
 @property(retain, nonatomic) VUICollectionHeaderView *computationHeaderView; // @synthesize computationHeaderView=_computationHeaderView;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKHeaderElement *headerElement; // @synthesize headerElement=_headerElement;
 @property(retain, nonatomic) IKSectionElement *sectionElement; // @synthesize sectionElement=_sectionElement;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)didCancel;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;

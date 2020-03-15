@@ -19,11 +19,11 @@
     SXJSONObjectMerger *_componentTextStyleMerger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXJSONObjectMerger *componentTextStyleMerger; // @synthesize componentTextStyleMerger=_componentTextStyleMerger;
 @property(readonly, nonatomic) SXJSONObjectMerger *componentStyleMerger; // @synthesize componentStyleMerger=_componentStyleMerger;
 @property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
 @property(retain, nonatomic) SXDOM *DOM; // @synthesize DOM=_DOM;
-- (void).cxx_destruct;
 - (id)imageResourceForIdentifier:(id)arg1;
 - (id)resourceForIdentifier:(id)arg1;
 - (id)componentTextStyleForIdentifier:(id)arg1 inheritingFromComponentTextStyle:(id)arg2;

@@ -22,6 +22,7 @@
     CDStruct_1b6d18a9 _time;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int childCode; // @synthesize childCode=_childCode;
 @property(nonatomic) unsigned int parentCode; // @synthesize parentCode=_parentCode;
 @property(retain, nonatomic) id userContext; // @synthesize userContext=_userContext;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) struct CGSize outputSize; // @synthesize outputSize=_outputSize;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 time; // @synthesize time=_time;
 @property(readonly, nonatomic) NSArray *outputNodes; // @synthesize outputNodes=_outputNodes;
-- (void).cxx_destruct;
 - (id)initWithOutputs:(id)arg1 atTime:(CDStruct_1b6d18a9)arg2 outputSize:(struct CGSize)arg3;
 
 @end

@@ -13,8 +13,8 @@
     SBHIDUILockAssertion *_proxLockAssertion;
 }
 
-@property(retain, nonatomic) SBHIDUILockAssertion *proxLockAssertion; // @synthesize proxLockAssertion=_proxLockAssertion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBHIDUILockAssertion *proxLockAssertion; // @synthesize proxLockAssertion=_proxLockAssertion;
 - (void)_cancelPreviousResumeProxRequests;
 - (void)_resumeProxAfterMultiplePressIntervalForReason:(id)arg1;
 - (void)_resumeProxForReason:(id)arg1;

@@ -26,9 +26,9 @@
     UILabel *_statusSubtitleView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *statusSubtitleView; // @synthesize statusSubtitleView=_statusSubtitleView;
 @property(retain, nonatomic) UILabel *statusField; // @synthesize statusField=_statusField;
-- (void).cxx_destruct;
 - (void)_keyboardDidRequestDismissalNotification:(id)arg1;
 - (void)_keyboardDidHideNotification:(id)arg1;
 - (void)_keyboardWillShowNotification:(id)arg1;

@@ -24,8 +24,8 @@
     id <SBUIPowerDownViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBUIPowerDownViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBUIPowerDownViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_animatePowerDown;
 - (void)_notifyDelegateCancelled;
 - (void)_notifyDelegatePowerDown;

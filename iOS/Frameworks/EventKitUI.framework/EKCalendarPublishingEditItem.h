@@ -17,8 +17,8 @@
     UIActivityIndicatorView *_spinner;
 }
 
-@property(nonatomic) _Bool published; // @synthesize published=_published;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool published; // @synthesize published=_published;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id)pubishURL;

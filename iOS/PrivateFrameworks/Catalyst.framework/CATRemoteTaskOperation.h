@@ -17,9 +17,9 @@
 
 + (_Bool)isCancelable;
 + (id)invalidRemoteTaskWithRequest:(id)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *remotePhase; // @synthesize remotePhase=_remotePhase;
 @property(readonly, nonatomic) CATTaskClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)updateProgressWithRemoteProgress:(id)arg1;
 - (void)updateCompletedUnitCount:(long long)arg1 andTotalUnitCount:(long long)arg2;
 - (void)clientFailedWithError:(id)arg1;

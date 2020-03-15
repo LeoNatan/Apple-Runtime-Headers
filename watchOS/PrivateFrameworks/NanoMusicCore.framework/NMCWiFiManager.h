@@ -20,12 +20,12 @@
     unsigned int _wifiTimerLengthInSeconds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int wifiTimerLengthInSeconds; // @synthesize wifiTimerLengthInSeconds=_wifiTimerLengthInSeconds;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool holdingWiFiAssertion; // @synthesize holdingWiFiAssertion=_holdingWiFiAssertion;
 @property(retain, nonatomic) NMRNowPlayingController *nowPlayingController; // @synthesize nowPlayingController=_nowPlayingController;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *directWiFiAssertionTimer; // @synthesize directWiFiAssertionTimer=_directWiFiAssertionTimer;
-- (void).cxx_destruct;
 - (void)_removeWoWClient;
 - (void)_addWoWClient;
 - (void)_scheduleDisablingWiFiAssertion;

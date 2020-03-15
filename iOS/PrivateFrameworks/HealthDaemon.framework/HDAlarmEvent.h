@@ -18,13 +18,13 @@
     NSTimeZone *__unitTest_localTimeZoneOverride;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSTimeZone *_unitTest_localTimeZoneOverride; // @synthesize _unitTest_localTimeZoneOverride=__unitTest_localTimeZoneOverride;
 @property(readonly, nonatomic) unsigned long long eventOptions; // @synthesize eventOptions=_eventOptions;
 @property(readonly, copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
 @property(readonly, copy, nonatomic) NSDate *dueDate; // @synthesize dueDate=_dueDate;
 @property(readonly, copy, nonatomic) NSString *eventIdentifier; // @synthesize eventIdentifier=_eventIdentifier;
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requiresDeviceUnlocked;
 @property(readonly, nonatomic) _Bool requiresDeviceOnWrist;
 - (id)description;

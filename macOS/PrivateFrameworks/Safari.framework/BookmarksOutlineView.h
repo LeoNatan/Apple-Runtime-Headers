@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     SidebarSearchFieldView *_searchFieldView;
 }
 
-@property(readonly, nonatomic) SidebarSearchFieldView *searchFieldView; // @synthesize searchFieldView=_searchFieldView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SidebarSearchFieldView *searchFieldView; // @synthesize searchFieldView=_searchFieldView;
 - (void)_didRecogizeLongPress:(id)arg1;
 - (double)_totalHeightOfTableView;
 - (struct CGRect)accessibilityFrame;

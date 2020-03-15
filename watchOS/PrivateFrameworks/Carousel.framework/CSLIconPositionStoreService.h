@@ -17,9 +17,9 @@
     NSXPCListener *_listener;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly, nonatomic) CSLIconPositionsStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (oneway void)resetIconPositionsWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;

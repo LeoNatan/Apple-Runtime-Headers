@@ -14,9 +14,9 @@
     NSString *_attachmentName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *attachmentName; // @synthesize attachmentName=_attachmentName;
 @property(copy, nonatomic) NSString *messageID; // @synthesize messageID=_messageID;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

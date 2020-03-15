@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HKValueRange *_requestedVisibleRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKValueRange *requestedVisibleRange; // @synthesize requestedVisibleRange=_requestedVisibleRange;
 @property(readonly, nonatomic) HKValueRange *computedAxisRange; // @synthesize computedAxisRange=_computedAxisRange;
-- (void).cxx_destruct;
 - (struct CGSize)extentOfData:(id)arg1;
 - (id)tachogramSeriesWithData:(id)arg1 unit:(id)arg2 maximumY:(double)arg3 axis:(id)arg4 irregularBeatStyle:(_Bool)arg5;
 - (void)viewDidLoad;

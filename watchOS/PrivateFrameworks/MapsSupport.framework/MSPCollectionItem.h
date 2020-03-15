@@ -21,9 +21,9 @@
 + (Class)mutableObjectClass;
 + (id)immutableObjectProtocol;
 + (Class)immutableObjectClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 - (id)storageIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyIfValidWithError:(out id *)arg1;

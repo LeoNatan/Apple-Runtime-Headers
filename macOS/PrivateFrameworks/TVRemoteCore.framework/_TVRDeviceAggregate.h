@@ -16,11 +16,11 @@
     _TVRXDevice *_publicDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVRXDevice *publicDevice; // @synthesize publicDevice=_publicDevice;
 @property(retain, nonatomic) _TVRCHMServiceWrapper *homeKit; // @synthesize homeKit=_homeKit;
 @property(retain, nonatomic) _TVRCRPCompanionLinkClientWrapper *rapport; // @synthesize rapport=_rapport;
 @property(retain, nonatomic) _TVRCMRTelevisionWrapper *mediaRemote; // @synthesize mediaRemote=_mediaRemote;
-- (void).cxx_destruct;
 - (id)bestImpl;
 - (BOOL)isEmpty;
 

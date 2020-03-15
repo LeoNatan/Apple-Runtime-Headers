@@ -14,9 +14,9 @@
     NSMutableSet *_notificationGeneratingServicesWithCamera;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *notificationGeneratingServicesWithCamera; // @synthesize notificationGeneratingServicesWithCamera=_notificationGeneratingServicesWithCamera;
 @property(readonly, nonatomic) HMDCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCameraProfile:(id)arg1;
 

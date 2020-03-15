@@ -28,12 +28,12 @@
 + (id)sendBackContextTimeLocationMatching:(id)arg1 sourceType:(unsigned long long)arg2;
 + (id)sendBackContextOverlappingTimeFromStartDate:(id)arg1 endDate:(id)arg2 sourceType:(unsigned long long)arg3;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldShowBanner; // @synthesize shouldShowBanner=_shouldShowBanner;
 @property(readonly, nonatomic) PXCMMContext *sendBackContext; // @synthesize sendBackContext=_sendBackContext;
 @property(readonly, nonatomic) PXCMMSendBackSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(readonly, nonatomic) PHMomentShare *originatingMomentShare; // @synthesize originatingMomentShare=_originatingMomentShare;
 @property(readonly, nonatomic) PXAssetsDataSource *assetsDataSource; // @synthesize assetsDataSource=_assetsDataSource;
-- (void).cxx_destruct;
 - (id)_sendBackFetchResultUsingPhotosGraph;
 - (id)sendBackContextPhotosGraphBasedWithSourceType:(unsigned long long)arg1;
 - (id)_createSendBackContext;

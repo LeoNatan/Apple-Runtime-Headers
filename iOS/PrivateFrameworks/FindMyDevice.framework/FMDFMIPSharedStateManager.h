@@ -16,9 +16,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateManagerQueue; // @synthesize stateManagerQueue=_stateManagerQueue;
 @property(retain) NSURL *fmipSharedFileStaticURL; // @synthesize fmipSharedFileStaticURL=_fmipSharedFileStaticURL;
-- (void).cxx_destruct;
 - (id)_fmipSharedFileURL;
 - (_Bool)_removeSharedInfo;
 - (_Bool)_writeSharedInfo:(id)arg1;

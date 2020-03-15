@@ -13,8 +13,8 @@
     UIView *_containedView;
 }
 
-@property(readonly, nonatomic) __weak UIView *containedView; // @synthesize containedView=_containedView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIView *containedView; // @synthesize containedView=_containedView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithEffect:(id)arg1 containingView:(id)arg2;

@@ -20,12 +20,12 @@
 }
 
 + (id)sectionWithRows:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(copy, nonatomic) NSString *footerTitle; // @synthesize footerTitle=_footerTitle;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

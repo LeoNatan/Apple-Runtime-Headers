@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)cacheKeyFromOptions:(id)arg1 error:(id *)arg2;
 + (id)cacheOptionsKeys;
-@property(readonly) NSString *espressoModelName; // @synthesize espressoModelName=_espressoModelName;
 - (void).cxx_destruct;
+@property(readonly) NSString *espressoModelName; // @synthesize espressoModelName=_espressoModelName;
 - (void)dealloc;
 - (id)espressoResourcesFromOptions:(id)arg1 error:(id *)arg2;
 - (id)initWithRPNEspressoModelName:(id)arg1;

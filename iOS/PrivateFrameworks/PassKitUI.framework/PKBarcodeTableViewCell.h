@@ -15,8 +15,8 @@
     struct CGSize _maximumBarcodeSize;
 }
 
-@property(nonatomic) struct CGSize maximumBarcodeSize; // @synthesize maximumBarcodeSize=_maximumBarcodeSize;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize maximumBarcodeSize; // @synthesize maximumBarcodeSize=_maximumBarcodeSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithPass:(id)arg1;

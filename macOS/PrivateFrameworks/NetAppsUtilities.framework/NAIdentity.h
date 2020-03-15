@@ -16,8 +16,8 @@
 }
 
 + (id)na_identity;
-@property(copy, nonatomic) NSArray *characteristics; // @synthesize characteristics=_characteristics;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *characteristics; // @synthesize characteristics=_characteristics;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isObject:(id)arg1 equalToObject:(id)arg2;

@@ -27,6 +27,7 @@
     UIImage *_placeholderImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) NSMutableDictionary *cachedAppIconForBundleId; // @synthesize cachedAppIconForBundleId=_cachedAppIconForBundleId;
 @property(retain, nonatomic) NSMutableOrderedSet *selectedApps; // @synthesize selectedApps=_selectedApps;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <WFAppSearchViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;

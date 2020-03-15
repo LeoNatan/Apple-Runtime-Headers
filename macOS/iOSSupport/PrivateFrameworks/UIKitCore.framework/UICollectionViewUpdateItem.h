@@ -19,12 +19,12 @@
     NSUUID *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isAppendingSectionInsert; // @synthesize isAppendingSectionInsert=_isAppendingSectionInsert;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) long long updateAction; // @synthesize updateAction=_updateAction;
 @property(readonly, nonatomic) NSIndexPath *indexPathAfterUpdate; // @synthesize indexPathAfterUpdate=_finalIndexPath;
 @property(readonly, nonatomic) NSIndexPath *indexPathBeforeUpdate; // @synthesize indexPathBeforeUpdate=_initialIndexPath;
-- (void).cxx_destruct;
 - (BOOL)isNOOP;
 - (BOOL)isEqualToUpdate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

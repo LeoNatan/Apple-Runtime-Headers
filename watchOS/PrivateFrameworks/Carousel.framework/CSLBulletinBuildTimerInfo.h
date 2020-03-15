@@ -15,10 +15,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) __weak CSLBulletinBuildItem *buildItem; // @synthesize buildItem=_buildItem;
 @property(retain, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

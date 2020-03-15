@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)nodeWithChildren:(id)arg1 rule:(id)arg2 rangeOfString:(struct _NSRange)arg3;
-@property(readonly, nonatomic) _HKCFGReplacementRule *rule; // @synthesize rule=_rule;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _HKCFGReplacementRule *rule; // @synthesize rule=_rule;
 - (id)evaluate;
 
 @end

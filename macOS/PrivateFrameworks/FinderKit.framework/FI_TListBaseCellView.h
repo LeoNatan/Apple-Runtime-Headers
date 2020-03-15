@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TListTextField, void> _titleTextField;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInBatchUpdate) _Bool inBatchUpdate; // @synthesize inBatchUpdate=_inBatchUpdate;
 @property(nonatomic) int mainProperty; // @synthesize mainProperty=_mainProperty;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct CGSize)idealSize;
 - (void)setTitleNeedsDisplay;
 @property(copy, nonatomic) NSFont *titleFont; // @dynamic titleFont;

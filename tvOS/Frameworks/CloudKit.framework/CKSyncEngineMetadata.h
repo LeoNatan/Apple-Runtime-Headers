@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *fakeRecordIDsToDeleteForSerializationTests; // @synthesize fakeRecordIDsToDeleteForSerializationTests=_fakeRecordIDsToDeleteForSerializationTests;
 @property(retain, nonatomic) NSMutableOrderedSet *fakeRecordIDsToSaveForSerializationTests; // @synthesize fakeRecordIDsToSaveForSerializationTests=_fakeRecordIDsToSaveForSerializationTests;
 @property(nonatomic) unsigned long long internalChangeCount; // @synthesize internalChangeCount=_internalChangeCount;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSMutableDictionary *serverChangeTokensByZoneID; // @synthesize serverChangeTokensByZoneID=_serverChangeTokensByZoneID;
 @property(retain, nonatomic) NSMutableSet *zoneIDsNeedingToFetchChangesSet; // @synthesize zoneIDsNeedingToFetchChangesSet=_zoneIDsNeedingToFetchChangesSet;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool needsToSaveDatabaseSubscription; // @synthesize needsToSaveDatabaseSubscription=_needsToSaveDatabaseSubscription;
 @property(nonatomic) _Bool needsToFetchDatabaseChanges; // @synthesize needsToFetchDatabaseChanges=_needsToFetchDatabaseChanges;
 @property(retain, nonatomic) CKServerChangeToken *serverChangeTokenForDatabase; // @synthesize serverChangeTokenForDatabase=_serverChangeTokenForDatabase;

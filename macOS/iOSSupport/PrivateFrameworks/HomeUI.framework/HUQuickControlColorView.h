@@ -30,6 +30,7 @@
     UISegmentedControl *_colorPickerModeSegmentedControl;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUserInteractionActive) BOOL userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
 @property(retain, nonatomic) UISegmentedControl *colorPickerModeSegmentedControl; // @synthesize colorPickerModeSegmentedControl=_colorPickerModeSegmentedControl;
 @property(retain, nonatomic) HUColorPickerView *colorPickerView; // @synthesize colorPickerView=_colorPickerView;
@@ -43,7 +44,6 @@
 @property(nonatomic) __weak id <HUQuickControlColorViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(copy, nonatomic) HUQuickControlColorViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)cancelColorPicking;
 - (void)controlView:(id)arg1 didSelectColorAtIndexPath:(id)arg2;
 - (void)presentFullColorViewForControlView:(id)arg1 selectedColorIndexPath:(id)arg2;

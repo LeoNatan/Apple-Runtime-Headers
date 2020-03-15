@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     _UIPlatterView *_updatedTarget;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIPlatterView *updatedTarget; // @synthesize updatedTarget=_updatedTarget;
 @property(retain, nonatomic) _UIPlatterView *target; // @synthesize target=_target;
 @property(retain, nonatomic) _UIPlatterView *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)_updateTransforms;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;

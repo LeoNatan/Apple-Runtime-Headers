@@ -18,11 +18,11 @@
 }
 
 + (_Bool)needsDisplayForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showProgressTray; // @synthesize showProgressTray=_showProgressTray;
 @property(nonatomic) double progressLineWidth; // @synthesize progressLineWidth=_progressLineWidth;
 @property(retain, nonatomic) UIColor *progressBackgroundColor; // @synthesize progressBackgroundColor=_progressBackgroundColor;
 @property(retain, nonatomic) UIColor *progressColor; // @synthesize progressColor=_progressColor;
-- (void).cxx_destruct;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (id)initWithLayer:(id)arg1;
 - (id)init;

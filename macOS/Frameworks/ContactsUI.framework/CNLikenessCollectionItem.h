@@ -15,10 +15,10 @@
     CNLikenessSelectionView *_selectionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNLikenessSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property __weak NSTextField *label; // @synthesize label=_label;
 @property __weak CNRecentLikenessesViewController *recentsViewController; // @synthesize recentsViewController=_recentsViewController;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (struct CGRect)accessibilityFrame;
 - (BOOL)accessibilityPerformPress;

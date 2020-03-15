@@ -15,8 +15,8 @@
 
 + (id)structFields;
 + (id)structName;
-@property(retain, nonatomic) NSString *suggestionText; // @synthesize suggestionText=_suggestionText;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *suggestionText; // @synthesize suggestionText=_suggestionText;
 
 @end
 

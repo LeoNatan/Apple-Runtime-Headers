@@ -16,8 +16,8 @@
     NSDictionary *_dictionary;
 }
 
-@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 @property(readonly, nonatomic) NSSet *featureNames;

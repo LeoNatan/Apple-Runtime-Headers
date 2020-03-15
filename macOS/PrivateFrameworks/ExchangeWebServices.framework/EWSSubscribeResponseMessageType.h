@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *Watermark; // @synthesize Watermark=_Watermark;
 @property(copy, nonatomic) NSString *SubscriptionId; // @synthesize SubscriptionId=_SubscriptionId;
-- (void).cxx_destruct;
 
 @end
 

@@ -28,6 +28,7 @@
 + (id)_jitterTransformAnimationWithAspectRatio:(double)arg1;
 + (id)_jitterPositionAnimation;
 + (Class)layoutOptionsClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *gridForegroundView; // @synthesize gridForegroundView=_gridForegroundView;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) HUGridCellBackgroundView *gridBackgroundView; // @synthesize gridBackgroundView=_gridBackgroundView;
@@ -38,7 +39,6 @@
 @property(nonatomic, getter=isRearranging) BOOL rearranging; // @synthesize rearranging=_rearranging;
 @property(retain, nonatomic) HUGridCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic, getter=areCellContentsHidden) BOOL cellContentsHidden; // @synthesize cellContentsHidden=_cellContentsHidden;
-- (void).cxx_destruct;
 - (void)_updateTintColorSettingsForSubviewsOfView:(id)arg1 desiredDisplayStyle:(unsigned long long)arg2;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 @property(readonly, nonatomic) unsigned long long iconDisplayStyle;

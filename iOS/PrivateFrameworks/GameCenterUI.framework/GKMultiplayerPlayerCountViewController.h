@@ -20,11 +20,11 @@
     struct _NSRange _pickerMinimumAndRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedRowIndexPath; // @synthesize selectedRowIndexPath=_selectedRowIndexPath;
 @property(nonatomic) struct _NSRange pickerMinimumAndRange; // @synthesize pickerMinimumAndRange=_pickerMinimumAndRange;
 @property(nonatomic) __weak id <GKMultiplayerPlayerCountViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long selectedCount; // @synthesize selectedCount=_selectedCount;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

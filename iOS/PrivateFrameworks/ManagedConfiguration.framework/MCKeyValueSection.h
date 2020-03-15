@@ -17,10 +17,10 @@
 
 + (id)sectionWithLocalizedArray:(id)arg1 title:(id)arg2 footer:(id)arg3;
 + (id)sectionWithKeyValues:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sectionKeyValues; // @synthesize sectionKeyValues=_sectionKeyValues;
 @property(retain, nonatomic) NSString *sectionFooter; // @synthesize sectionFooter=_sectionFooter;
 @property(retain, nonatomic) NSString *sectionTitle; // @synthesize sectionTitle=_sectionTitle;
-- (void).cxx_destruct;
 - (id)initWithSectionTitle:(id)arg1 footer:(id)arg2 keyValues:(id)arg3;
 
 @end

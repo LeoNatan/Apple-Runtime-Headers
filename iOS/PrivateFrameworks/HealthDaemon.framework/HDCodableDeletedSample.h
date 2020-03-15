@@ -15,8 +15,8 @@
     HDCodableSample *_sample;
 }
 
-@property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

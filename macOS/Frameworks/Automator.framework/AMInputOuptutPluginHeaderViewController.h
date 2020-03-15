@@ -23,6 +23,7 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _updatingAutomaticInputType; // @synthesize _updatingAutomaticInputType=__updatingAutomaticInputType;
 @property(retain, nonatomic) AMType *_guessedAutomaticInputType; // @synthesize _guessedAutomaticInputType=__guessedAutomaticInputType;
 @property __weak NSButton *replacesButton; // @synthesize replacesButton;
@@ -33,7 +34,6 @@
 @property __weak NSPopUpButton *inputPopUpButton; // @synthesize inputPopUpButton;
 @property __weak AMApplicationPickerPopUpButton *appPopUpButton; // @synthesize appPopUpButton;
 @property BOOL stateOfOutputCheckboxWhenLastEnabled; // @synthesize stateOfOutputCheckboxWhenLastEnabled=_stateOfOuptutCheckboxWhenLastEnabled;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)inputPopUpButtonChanged:(id)arg1;
 - (void)_updateGuessedAutomaticInputType;

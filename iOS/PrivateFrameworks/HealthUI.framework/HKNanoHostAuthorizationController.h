@@ -17,9 +17,9 @@
     NSXPCConnection *_xpcConnection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(nonatomic) __weak id <HKHealthPrivacyHostAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_remoteObjectProxyWithCompletion:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)show;
 - (void)setRequestRecord:(id)arg1 presentationRequests:(id)arg2;

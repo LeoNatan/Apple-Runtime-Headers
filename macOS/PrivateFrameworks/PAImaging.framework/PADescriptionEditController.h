@@ -9,13 +9,13 @@
 #import <PAImaging/DGDescriptionCompositionProvider-Protocol.h>
 #import <PAImaging/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSUUID, NUComposition, PLEditSource;
-@protocol OS_dispatch_queue;
+@class NSMutableArray, NSUUID, NUComposition, PFAsyncDispatchMulticaster, PLEditSource;
+@protocol OS_dispatch_queue, PADescriptionEditMulticaster;
 
 @interface PADescriptionEditController : NSObject <DGDescriptionCompositionProvider, NSCopying>
 {
     NSMutableArray *_operations;
-    struct PFAsyncDispatchMulticaster *_multicaster;
+    PFAsyncDispatchMulticaster<PADescriptionEditMulticaster> *_multicaster;
     NSObject<OS_dispatch_queue> *_operationQueue;
     long long _orientation;
     long long _pipelineVersion;
@@ -27,15 +27,15 @@
     PLEditSource *_source;
 }
 
-@property(readonly, nonatomic) struct PFIntSize_st inputSize; // @synthesize inputSize=_inputSize;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct PFIntSize_st inputSize; // @synthesize inputSize=_inputSize;
 - (BOOL)isRAWInput;
 - (struct PFIntSize_st)inputSizeSync;
 - (void)inputSize:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)newGeometryRequest;
-- (void)removeReceiver:(struct NSObject *)arg1;
-- (void)addWeakReceiver:(struct NSObject *)arg1;
-- (void)addReceiver:(struct NSObject *)arg1;
+- (void)removeReceiver:(id)arg1;
+- (void)addWeakReceiver:(id)arg1;
+- (void)addReceiver:(id)arg1;
 - (void)notifyVideoComplementVisibilityChanged:(BOOL)arg1;
 - (void)_abortInteractiveChange;
 - (void)_abortInteractiveChangeIfNeeded;

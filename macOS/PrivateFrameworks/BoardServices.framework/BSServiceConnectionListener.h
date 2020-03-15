@@ -30,11 +30,11 @@
 
 + (void)disableLaunchWhitelist;
 + (id)listenerWithConfigurator:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BSServiceConnectionEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(readonly, copy, nonatomic) NSString *instance; // @synthesize instance=_instance;
 @property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
 @property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)didReceiveConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;

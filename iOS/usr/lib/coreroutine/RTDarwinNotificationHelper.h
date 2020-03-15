@@ -13,8 +13,8 @@
     NSMutableDictionary *_registrations;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *registrations; // @synthesize registrations=_registrations;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *registrations; // @synthesize registrations=_registrations;
 - (void)removeObserver:(id)arg1 center:(struct __CFNotificationCenter *)arg2 key:(id)arg3 info:(void *)arg4;
 - (void)addObserver:(id)arg1 center:(struct __CFNotificationCenter *)arg2 key:(id)arg3 callback:(CDUnknownFunctionPointerType)arg4 info:(void *)arg5 suspensionBehavior:(long long)arg6;
 - (void)_handleDarwinNotificationCallback:(id)arg1;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     double _displayedTimeInterval;
 }
 
-@property(nonatomic) double displayedTimeInterval; // @synthesize displayedTimeInterval=_displayedTimeInterval;
 - (void).cxx_destruct;
+@property(nonatomic) double displayedTimeInterval; // @synthesize displayedTimeInterval=_displayedTimeInterval;
 - (void)updateTimeDisplay;
 - (void)didMoveToSuperview;
 

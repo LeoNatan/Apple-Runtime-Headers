@@ -20,11 +20,11 @@
 
 + (id)kextWithCDHash:(id)arg1 andBundleIDHash:(id)arg2 andTeamID:(id)arg3 andVersion:(id)arg4;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *version; // @synthesize version=_version;
 @property(retain) NSString *teamID; // @synthesize teamID=_teamID;
 @property(retain) NSData *bundleIDHash; // @synthesize bundleIDHash=_bundleIDHash;
 @property(retain) NSData *cdHash; // @synthesize cdHash=_cdHash;
-- (void).cxx_destruct;
 - (_Bool)xpcDictionary:(id *)arg1;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;

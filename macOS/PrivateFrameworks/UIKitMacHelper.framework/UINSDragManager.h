@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedDragManager;
-@property(retain) NSMutableArray *sessions; // @synthesize sessions=_sessions;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *sessions; // @synthesize sessions=_sessions;
 - (long long)_indexForDraggingSession:(id)arg1;
 - (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;

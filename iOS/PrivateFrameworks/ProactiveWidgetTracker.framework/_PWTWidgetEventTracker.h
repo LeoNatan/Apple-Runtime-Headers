@@ -28,8 +28,8 @@
     NSObject<OS_dispatch_queue> *_loggingQueue;
 }
 
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)userEngagedWithWidget;
 - (void)widgetDidBecomeForeground:(_Bool)arg1;
 - (void)widgetActiveDisplayModeDidChange:(long long)arg1 withMaximumSize:(struct CGSize)arg2;

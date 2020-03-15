@@ -19,10 +19,10 @@
 }
 
 + (id)attachmentViewControllerForAttachment:(id)arg1 notificationRequest:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UNNotificationAttachment *attachment; // @synthesize attachment=_attachment;
 @property(retain, nonatomic) NCNotificationRequest *notificationRequest; // @synthesize notificationRequest=_notificationRequest;
 @property(nonatomic) __weak id <NCNotificationCustomContentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)_preferredContentSizeForContainerSize:(struct CGSize)arg1 contentSize:(struct CGSize)arg2;
 - (unsigned long long)customContentLocation;
 - (_Bool)userInteractionEnabled;

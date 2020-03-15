@@ -18,10 +18,10 @@
 
 + (id)defaultSessionDescriptorForModelId:(id)arg1 featureVersion:(id)arg2 language:(id)arg3 windowAndNgrams:(id)arg4;
 + (id)defaultWindowAndNgrams;
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 @property(retain, nonatomic) id <PMLTransformerProtocol> transformer; // @synthesize transformer=_transformer;
 @property(retain, nonatomic) PMLSessionDescriptor *sessionDescriptor; // @synthesize sessionDescriptor=_sessionDescriptor;
-- (void).cxx_destruct;
 - (id)trainingFeaturesOf:(id)arg1;
 - (id)initWithTransformer:(id)arg1 sessionDescriptor:(id)arg2 modelClass:(Class)arg3;
 

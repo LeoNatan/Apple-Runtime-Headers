@@ -21,11 +21,11 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <KeychainSyncPhoneSettingsFragmentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) KeychainSyncCountryInfo *countryInfo; // @synthesize countryInfo=_countryInfo;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-- (void).cxx_destruct;
 - (void)textFieldChanged:(id)arg1;
 @property(readonly, nonatomic) PSEditableTableCell *phoneNumberCell;
 - (id)unformattedPhoneNumber;

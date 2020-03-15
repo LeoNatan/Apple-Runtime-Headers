@@ -21,12 +21,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)textFieldWithPlaceholder:(id)arg1 secure:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
 @property(nonatomic) _Bool secure; // @synthesize secure=_secure;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

@@ -15,8 +15,8 @@
     NSMutableArray *_stack;
 }
 
-@property(retain, nonatomic) NSMutableArray *stack; // @synthesize stack=_stack;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *stack; // @synthesize stack=_stack;
 - (id)encodedDictionary;
 - (id)_dictionaryForProtocolObject:(id)arg1;
 - (id)_serializingProtocol;

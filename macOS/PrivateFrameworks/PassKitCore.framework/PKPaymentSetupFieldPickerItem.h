@@ -17,9 +17,9 @@
 }
 
 + (id)_itemWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *submissionValue; // @synthesize submissionValue=_submissionValue;
 @property(readonly, copy, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithName:(id)arg1 value:(id)arg2;
 

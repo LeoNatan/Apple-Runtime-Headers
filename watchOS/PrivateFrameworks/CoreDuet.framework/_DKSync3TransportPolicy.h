@@ -27,6 +27,7 @@
 }
 
 + (id)policyForSyncTransportType:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int deletionsBucketCountTriggeringSync; // @synthesize deletionsBucketCountTriggeringSync=_deletionsBucketCountTriggeringSync;
 @property(nonatomic) unsigned int additionsBucketCountTriggeringSync; // @synthesize additionsBucketCountTriggeringSync=_additionsBucketCountTriggeringSync;
 @property(nonatomic) unsigned int singleDevicePeriodicSyncCadenceInDays; // @synthesize singleDevicePeriodicSyncCadenceInDays=_singleDevicePeriodicSyncCadenceInDays;
@@ -39,7 +40,6 @@
 @property(nonatomic) _Bool isSyncDisabled; // @synthesize isSyncDisabled=_isSyncDisabled;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 properties:(id)arg2;
 - (id)init;

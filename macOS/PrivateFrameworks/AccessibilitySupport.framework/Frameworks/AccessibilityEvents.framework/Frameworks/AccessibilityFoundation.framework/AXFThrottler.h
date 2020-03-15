@@ -20,6 +20,7 @@
 }
 
 + (id)throttlerWithMinimumInterval:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *_queuedSelectorTimer; // @synthesize _queuedSelectorTimer=__queuedSelectorTimer;
 @property(retain, nonatomic) id _selectorArgument; // @synthesize _selectorArgument=__selectorArgument;
 @property(nonatomic) __weak id _target; // @synthesize _target=__target;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSDate *_lastFireTime; // @synthesize _lastFireTime=__lastFireTime;
 @property(nonatomic) double _minimumInterval; // @synthesize _minimumInterval=__minimumInterval;
 @property(nonatomic) BOOL shouldTryFilteringSameNotification; // @synthesize shouldTryFilteringSameNotification=_shouldTryFilteringSameNotification;
-- (void).cxx_destruct;
 - (void)_performQueuedBlock:(id)arg1;
 - (void)performSelector:(SEL)arg1 onTarget:(id)arg2 withObject:(id)arg3;
 - (void)dealloc;

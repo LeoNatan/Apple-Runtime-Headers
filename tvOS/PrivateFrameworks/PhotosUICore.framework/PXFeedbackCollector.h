@@ -13,8 +13,8 @@
     PXFeedbackStore *_feedbackStore;
 }
 
-@property(readonly, nonatomic) PXFeedbackStore *feedbackStore; // @synthesize feedbackStore=_feedbackStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXFeedbackStore *feedbackStore; // @synthesize feedbackStore=_feedbackStore;
 - (id)_appVersion;
 - (id)_uniqueSystemIdentifier;
 - (void)removeFeedbackEntry:(id)arg1;

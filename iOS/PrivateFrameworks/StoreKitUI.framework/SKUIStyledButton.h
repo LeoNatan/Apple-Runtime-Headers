@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)sizeForTextSize:(struct CGSize)arg1 buttonType:(long long)arg2 borderStyle:(id)arg3;
 + (struct CGSize)sizeForTextSize:(struct CGSize)arg1 buttonType:(long long)arg2;
 + (long long)buttonTypeForElement:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets buttonPadding; // @synthesize buttonPadding=_buttonPadding;
 @property(nonatomic) _Bool usesTintColor; // @synthesize usesTintColor=_usesTintColor;
 @property(nonatomic) _Bool useBigHitTarget; // @synthesize useBigHitTarget=_useBigHitTarget;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
 @property(copy, nonatomic) SKUIButtonBorderStyle *borderStyle; // @synthesize borderStyle=_borderStyle;
 @property(nonatomic) struct UIEdgeInsets bigHitInsets; // @synthesize bigHitInsets=_bigHitInsets;
-- (void).cxx_destruct;
 - (_Bool)_usesTintColor;
 - (id)_textColor;
 - (id)_textBackgroundColor;

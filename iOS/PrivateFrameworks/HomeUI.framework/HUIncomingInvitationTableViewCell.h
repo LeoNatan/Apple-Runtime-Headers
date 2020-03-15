@@ -25,6 +25,7 @@
 }
 
 + (id)_formatDate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(retain, nonatomic) HUPillButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 @property(retain, nonatomic) HUPillButton *declineButton; // @synthesize declineButton=_declineButton;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak id <HUIncomingInvitationTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
 @property(retain, nonatomic) HMIncomingHomeInvitation *invitation; // @synthesize invitation=_invitation;
-- (void).cxx_destruct;
 - (void)_hideInvitationSpinner;
 - (void)_showInvitationSpinner;
 - (void)acceptButtonPressed:(id)arg1;

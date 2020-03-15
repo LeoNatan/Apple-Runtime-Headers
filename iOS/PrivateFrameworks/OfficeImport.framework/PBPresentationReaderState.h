@@ -38,10 +38,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mTargetShapeToSourceTextBoxContainerHolderMap;
 }
 
+- (void).cxx_destruct;
 @property _Bool hasSlideNumberPlaceholder; // @synthesize hasSlideNumberPlaceholder=mHasSlideNumberPlaceholder;
 @property(retain, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancel;
 @property(retain) ESDContainer *sourceSlideListHolder; // @synthesize sourceSlideListHolder=mSrcSlideListHolder;
-- (void).cxx_destruct;
 - (void)setSourceTextBoxContainerHolder:(id)arg1 forTargetShape:(id)arg2;
 - (id)sourceTextBoxContainerHolderForTargetShape:(id)arg1;
 - (id)hyperlinkInfoWithId:(unsigned int)arg1 createIfAbsent:(_Bool)arg2;

@@ -20,10 +20,10 @@
     id <SBPressSequenceObserverDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBPressSequenceObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) SBPressCollector *pressCollector; // @synthesize pressCollector=_pressCollector;
 @property(readonly, nonatomic) NSString *pressName; // @synthesize pressName=_pressName;
-- (void).cxx_destruct;
 - (void)_setPressCollector:(id)arg1;
 - (void)_notePowerDownImminent;
 - (void)metricDidPost:(id)arg1 data:(id)arg2;

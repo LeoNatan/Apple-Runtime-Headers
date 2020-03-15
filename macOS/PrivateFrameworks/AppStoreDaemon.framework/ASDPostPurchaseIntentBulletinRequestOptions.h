@@ -15,10 +15,10 @@
     NSString *_iapName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *iapName; // @synthesize iapName=_iapName;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(copy, nonatomic) NSString *appBundleId; // @synthesize appBundleId=_appBundleId;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -19,12 +19,12 @@
     NSString *_relatedLocalizedTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relatedLocalizedTitle; // @synthesize relatedLocalizedTitle=_relatedLocalizedTitle;
 @property(readonly, nonatomic) PHObject *referenceObject; // @synthesize referenceObject=_referenceObject;
 @property(readonly, nonatomic) PHFetchResult *keyAssetFetchResult; // @synthesize keyAssetFetchResult=_keyAssetFetchResult;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) NSString *relatedTitleFontName; // @synthesize relatedTitleFontName=_relatedTitleFontName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) PHObject *relatedReferenceObject;
 @property(readonly, nonatomic) PHAssetCollection *relatedAssetCollection;

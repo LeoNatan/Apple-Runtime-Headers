@@ -16,9 +16,9 @@
     PLForegroundMonitor *_foregroundMonitor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLForegroundMonitor *foregroundMonitor; // @synthesize foregroundMonitor=_foregroundMonitor;
 @property(readonly, nonatomic) BOOL isCameraRunning; // @synthesize isCameraRunning=_isCameraRunning;
-- (void).cxx_destruct;
 - (void)foregroundMonitor:(id)arg1 changedStateToForeground:(BOOL)arg2 forBundleIdentifier:(id)arg3;
 - (id)init;
 

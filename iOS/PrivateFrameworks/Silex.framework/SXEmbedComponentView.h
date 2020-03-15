@@ -44,6 +44,7 @@
     struct CGSize _currentViewportSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXRelatedWebViewCache *relatedWebViewCache; // @synthesize relatedWebViewCache=_relatedWebViewCache;
 @property(readonly, nonatomic) WKWebsiteDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(readonly, nonatomic) NFMultiDelegate *scriptMessageHandler; // @synthesize scriptMessageHandler=_scriptMessageHandler;
@@ -68,7 +69,6 @@
 @property(readonly, nonatomic) id <SXComponentActionHandler> actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(readonly, nonatomic) id <SXEmbedService> embedService; // @synthesize embedService=_embedService;
 @property(readonly, nonatomic) id <SWReachabilityProvider> reachabilityProvider; // @synthesize reachabilityProvider=_reachabilityProvider;
-- (void).cxx_destruct;
 - (_Bool)allowHierarchyRemoval;
 - (void)removeScriptMessageHandlers;
 - (void)addScriptMessageHandlers;

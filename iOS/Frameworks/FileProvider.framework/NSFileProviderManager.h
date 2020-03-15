@@ -44,8 +44,8 @@
 + (_Bool)writePlaceholderAtURL:(id)arg1 withDictionary:(id)arg2 error:(id *)arg3;
 + (id)defaultManager;
 + (void)importDomain:(id)arg1 fromDirectoryAtURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(copy) NSArray *presentedFiles; // @synthesize presentedFiles=_presentedFiles;
 - (void).cxx_destruct;
+@property(copy) NSArray *presentedFiles; // @synthesize presentedFiles=_presentedFiles;
 - (void)removeAllDomainsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getDomainsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

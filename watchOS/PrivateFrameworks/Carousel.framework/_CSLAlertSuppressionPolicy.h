@@ -17,12 +17,12 @@
     CUISAlertSuppressionPolicy *_policy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISAlertSuppressionPolicy *policy; // @synthesize policy=_policy;
 @property(retain, nonatomic) BSProcessDeathWatcher *watcher; // @synthesize watcher=_watcher;
 @property(nonatomic) _Bool anyPID; // @synthesize anyPID=_anyPID;
 @property(nonatomic) int processID; // @synthesize processID=_processID;
 @property(retain, nonatomic) NSString *assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (_Bool)hasSuppressionRuleForAlertItem:(id)arg1;

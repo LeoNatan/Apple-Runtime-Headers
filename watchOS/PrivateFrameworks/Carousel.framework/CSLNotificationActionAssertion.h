@@ -18,10 +18,10 @@
     id <CSLNotificationActionAssertionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLNotificationActionAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) RBSAssertion *assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)assertion:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)dealloc;

@@ -24,6 +24,7 @@
     NSLayoutConstraint *_dividerTrailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *dividerTrailingConstraint; // @synthesize dividerTrailingConstraint=_dividerTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *dividerLeadingConstraint; // @synthesize dividerLeadingConstraint=_dividerLeadingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *buttonTextBaselineConstraint; // @synthesize buttonTextBaselineConstraint=_buttonTextBaselineConstraint;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 @property(retain, nonatomic) NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 @property(readonly, nonatomic) PXGadgetSectionHeader *headerModel; // @synthesize headerModel=_headerModel;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (void)_buttonClicked;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

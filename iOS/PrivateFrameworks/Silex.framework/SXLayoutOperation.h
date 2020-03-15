@@ -27,6 +27,7 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) SXLayoutTask *task; // @synthesize task=_task;
 @property(readonly, nonatomic) SXColumnLayouter *layouter; // @synthesize layouter=_layouter;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) SXLayoutBlueprint *layoutBlueprint; // @synthesize layoutBlueprint=_layoutBlueprint;
 @property _Bool finished; // @synthesize finished=_finished;
 @property _Bool executing; // @synthesize executing=_executing;
-- (void).cxx_destruct;
 - (void)layouter:(id)arg1 didFinishLayoutForComponentBlueprint:(id)arg2 layoutBlueprint:(id)arg3 shouldContinueLayout:(_Bool *)arg4;
 - (void)registerComponent:(id)arg1 layoutBlueprint:(id)arg2 componentIndex:(unsigned long long)arg3;
 - (id)createLayoutBlueprintForComponents:(id)arg1;

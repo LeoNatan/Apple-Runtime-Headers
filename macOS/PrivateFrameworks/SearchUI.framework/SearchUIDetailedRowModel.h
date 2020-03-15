@@ -31,6 +31,7 @@
 }
 
 + (BOOL)urlIsDraggable:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *contactIdentifiersNeeded; // @synthesize contactIdentifiersNeeded=_contactIdentifiersNeeded;
 @property(retain) SFFormattedText *trailingBottomText; // @synthesize trailingBottomText=_trailingBottomText;
 @property(retain) SFFormattedText *trailingMiddleText; // @synthesize trailingMiddleText=_trailingMiddleText;
@@ -49,7 +50,6 @@
 @property(retain) SFButton *leadingButton; // @synthesize leadingButton=_leadingButton;
 @property(retain) SFImage *fallbackImage; // @synthesize fallbackImage=_fallbackImage;
 @property(retain) SFImage *leadingImage; // @synthesize leadingImage=_leadingImage;
-- (void).cxx_destruct;
 - (Class)customCardSectionViewClass;
 - (int)separatorStyle;
 - (id)punchouts;

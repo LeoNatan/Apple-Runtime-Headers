@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _titleLabelOriginFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect titleLabelOriginFrame; // @synthesize titleLabelOriginFrame=_titleLabelOriginFrame;
 @property(nonatomic) struct CGRect iconViewOriginFrame; // @synthesize iconViewOriginFrame=_iconViewOriginFrame;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak UIView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic) __weak MCProfileTitlePageMetaDataSectionController *sectionController; // @synthesize sectionController=_sectionController;
-- (void).cxx_destruct;
 - (unsigned long long)_binarySearch:(id)arg1 target:(double)arg2;
 - (double)_alphaWithProgress:(double)arg1 keys:(id)arg2 values:(id)arg3;
 - (void)_animateView:(id)arg1 progress:(double)arg2 startFrame:(struct CGRect)arg3 endY:(double)arg4 endScale:(double)arg5 extraYOffset:(double)arg6;

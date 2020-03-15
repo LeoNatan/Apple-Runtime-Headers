@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldReduceTransparency; // @synthesize shouldReduceTransparency=_shouldReduceTransparency;
 @property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) BOOL forcesActiveWindowState; // @synthesize forcesActiveWindowState=_forcesActiveWindowState;
 @property(nonatomic) BOOL hasMouseOverHighlight; // @synthesize hasMouseOverHighlight=_hasMouseOverHighlight;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)_removeVisualEffectViewForFullScreenToolbarWindow;
 - (void)_addVisualEffectViewForFullScreenToolbarWindow;
 - (void)_unregisterBackgroundHighlightLayer:(id)arg1;

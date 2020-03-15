@@ -15,6 +15,7 @@
     int _resultType;
     int _secondaryResultType;
     unsigned int _skipOrder;
+    unsigned int _passFlags;
     unsigned int _controlUnit;
     NSString *_interfaceName;
     NSUUID *_agentUUID;
@@ -36,17 +37,19 @@
 + (id)divertSocketToControlUnit:(unsigned int)arg1;
 + (id)drop;
 + (id)skipWithOrder:(unsigned int)arg1;
++ (id)passWithFlags:(unsigned int)arg1;
 + (id)pass;
+- (void).cxx_destruct;
 @property(copy) NSArray *routeRules; // @synthesize routeRules=_routeRules;
 @property unsigned int serviceData; // @synthesize serviceData=_serviceData;
 @property(copy) NSUUID *serviceUUID; // @synthesize serviceUUID=_serviceUUID;
 @property(copy) NSUUID *agentUUID; // @synthesize agentUUID=_agentUUID;
 @property(copy) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property unsigned int controlUnit; // @synthesize controlUnit=_controlUnit;
+@property unsigned int passFlags; // @synthesize passFlags=_passFlags;
 @property unsigned int skipOrder; // @synthesize skipOrder=_skipOrder;
 @property int secondaryResultType; // @synthesize secondaryResultType=_secondaryResultType;
 @property int resultType; // @synthesize resultType=_resultType;
-- (void).cxx_destruct;
 - (_Bool)addTLVsToMessage:(id)arg1;
 - (unsigned char)secondaryResultTypeValue;
 - (unsigned char)resultTypeValue;

@@ -12,9 +12,9 @@
     CDUnknownBlockType _generator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType generator; // @synthesize generator=_generator;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)initWithGenerator:(CDUnknownBlockType)arg1;
 
 @end

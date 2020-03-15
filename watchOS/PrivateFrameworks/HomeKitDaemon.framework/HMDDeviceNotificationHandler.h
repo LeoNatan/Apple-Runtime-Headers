@@ -23,6 +23,7 @@
     NSUUID *_notificationUpdateIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *notificationUpdateIdentifier; // @synthesize notificationUpdateIdentifier=_notificationUpdateIdentifier;
 @property(nonatomic) _Bool delaySupported; // @synthesize delaySupported=_delaySupported;
 @property(retain, nonatomic) HMFTimer *delayTimer; // @synthesize delayTimer=_delayTimer;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSString *destination; // @synthesize destination=_destination;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (id)_dispatchNotification;
 - (id)_beginCoalesce:(_Bool)arg1;

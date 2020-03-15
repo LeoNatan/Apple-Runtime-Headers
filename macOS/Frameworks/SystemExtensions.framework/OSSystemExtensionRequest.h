@@ -21,11 +21,11 @@
 
 + (id)deactivationRequestForExtension:(id)arg1 queue:(id)arg2;
 + (id)activationRequestForExtension:(id)arg1 queue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <OSSystemExtensionRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)failedWithError:(id)arg1;
 - (void)activatedWithResult:(long long)arg1;
 - (void)needsUserApproval;

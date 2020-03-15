@@ -14,9 +14,9 @@
     SEL _selector;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 selector:(SEL)arg2;
 
 @end

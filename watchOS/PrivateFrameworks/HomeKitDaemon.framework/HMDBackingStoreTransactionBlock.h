@@ -20,11 +20,11 @@
 
 + (id)logCategory;
 + (void)sort:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool committed; // @synthesize committed=_committed;
 @property(retain, nonatomic) NSMutableArray *objects; // @synthesize objects=_objects;
 @property(nonatomic) __weak HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) HMDBackingStoreTransactionOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)dumpDebug;
 - (void)dumpDebug:(id)arg1;

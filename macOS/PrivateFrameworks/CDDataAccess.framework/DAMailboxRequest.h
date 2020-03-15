@@ -15,10 +15,10 @@
     NSString *_messageID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *messageID; // @synthesize messageID=_messageID;
 @property(nonatomic) int bodyFormat; // @synthesize bodyFormat=_bodyFormat;
 @property(nonatomic) int requestType; // @synthesize requestType=_requestType;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

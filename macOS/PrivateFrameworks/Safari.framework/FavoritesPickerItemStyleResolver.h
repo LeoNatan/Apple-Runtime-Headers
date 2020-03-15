@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSCountedSet *_hostCounts;
 }
 
-@property(copy, nonatomic) NSArray *favorites; // @synthesize favorites=_favorites;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *favorites; // @synthesize favorites=_favorites;
 - (id)_hostForFavorite:(id)arg1;
 - (void)_populateHostCountsIfNeeded;
 - (int)styleForFavoriteAtIndex:(unsigned long long)arg1;

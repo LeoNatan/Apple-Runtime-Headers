@@ -13,8 +13,8 @@
     NSDictionary *_dictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)processedContentClasses:(id)arg1;

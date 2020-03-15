@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *browserState; // @synthesize browserState=_browserState;
 @property(retain) NSXPCConnection *XPCConnection; // @synthesize XPCConnection=_XPCConnection;
 @property(retain) _LSOpenConfiguration *openConfiguration; // @synthesize openConfiguration=_openConfiguration;
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -12,8 +12,14 @@
     float _maxValue;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) float maxValue; // @synthesize maxValue=_maxValue;
 @property(nonatomic) float minValue; // @synthesize minValue=_minValue;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)init;
 - (id)minValue:(float)arg1 maxValue:(float)arg2;
 

@@ -22,13 +22,13 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property __weak id <HMCameraProfileUserSettingsDelegate> userSettingsDelegate; // @synthesize userSettingsDelegate=_userSettingsDelegate;
 @property(retain, nonatomic) HMCameraAudioControl *microphoneControl; // @synthesize microphoneControl=_microphoneControl;
 @property(retain, nonatomic) HMCameraAudioControl *speakerControl; // @synthesize speakerControl=_speakerControl;
 @property(retain, nonatomic) HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
 @property(retain, nonatomic) HMCameraSnapshotControl *snapshotControl; // @synthesize snapshotControl=_snapshotControl;
 @property(retain, nonatomic) HMCameraStreamControl *streamControl; // @synthesize streamControl=_streamControl;
-- (void).cxx_destruct;
 - (void)deleteAllClipsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)logIdentifier;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;

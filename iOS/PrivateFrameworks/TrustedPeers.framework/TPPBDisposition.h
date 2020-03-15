@@ -19,12 +19,12 @@
     TPPBUnknownMachineID *_unknownMachineID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TPPBDispositionDisallowedMachineID *disallowedMachineID; // @synthesize disallowedMachineID=_disallowedMachineID;
 @property(retain, nonatomic) TPPBDispositionDuplicateMachineID *duplicateMachineID; // @synthesize duplicateMachineID=_duplicateMachineID;
 @property(retain, nonatomic) TPPBUnknownMachineID *unknownMachineID; // @synthesize unknownMachineID=_unknownMachineID;
 @property(retain, nonatomic) TPPBPolicyProhibits *policyProhibits; // @synthesize policyProhibits=_policyProhibits;
 @property(retain, nonatomic) TPPBAncientEpoch *ancientEpoch; // @synthesize ancientEpoch=_ancientEpoch;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

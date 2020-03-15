@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_defaultLabelColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *carplayConstraints; // @synthesize carplayConstraints=_carplayConstraints;
 @property(readonly, nonatomic) __weak UITabBar *tabBar; // @synthesize tabBar=_tabBar;
 @property(retain, nonatomic) UIVibrancyEffect *itemVibrantEffect; // @synthesize itemVibrantEffect=_itemVibrantEffect;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(retain, nonatomic, setter=_setAppearanceGuideClass:) Class _appearanceGuideClass; // @synthesize _appearanceGuideClass;
 @property(nonatomic, setter=_setShowsHighlightedState:) _Bool _showsHighlightedState; // @synthesize _showsHighlightedState;
-- (void).cxx_destruct;
 - (void)set_info:(id)arg1;
 - (id)_info;
 @property(readonly, nonatomic) UIColor *_defaultUnselectedLabelTintColor;
@@ -130,6 +130,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithImage:(id)arg1 landscapeImage:(id)arg2 selectedImage:(id)arg3 landscapeSelectedImage:(id)arg4 label:(id)arg5 withInsets:(struct UIEdgeInsets)arg6 landscapeInsets:(struct UIEdgeInsets)arg7 tabBar:(id)arg8;
 - (id)_selectedIndicatorView;
 @property(readonly, nonatomic, getter=isDefaultTVLayout) _Bool _defaultTVLayout;
+@property(readonly, nonatomic) struct CGRect _contentRect;
 @property(nonatomic, getter=isSpringLoaded) _Bool springLoaded;
 
 // Remaining properties

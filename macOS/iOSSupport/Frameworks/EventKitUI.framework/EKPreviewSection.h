@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sectionWithDate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (void)addEvent:(id)arg1;
 - (id)initWithDate:(id)arg1;
 

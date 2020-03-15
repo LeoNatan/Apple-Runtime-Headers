@@ -24,6 +24,7 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *lines; // @synthesize lines=_lines;
 @property(nonatomic) double minimumTruncatedScaleFactor; // @synthesize minimumTruncatedScaleFactor=_minimumTruncatedScaleFactor;
 @property(nonatomic) BOOL allowTruncation; // @synthesize allowTruncation=_allowTruncation;
@@ -34,15 +35,14 @@
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(readonly, nonatomic) struct CGContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_setLines:(id)arg1;
 - (void)didPerformChanges;
 - (id)mutableChangeObject;
 - (void)performChanges:(CDUnknownBlockType)arg1;
-- (BOOL)_allowTextOverlapForFont:(struct UIFont *)arg1;
+- (BOOL)_allowTextOverlapForFont:(id)arg1;
 - (unsigned long long)_adjustCutoffLocation:(unsigned long long)arg1 forLineStartingAtIndex:(unsigned long long)arg2;
 - (void)_updateLines;
-- (void)shiftLinesVerticallyToAvoidOverlap:(id)arg1 referenceFont:(struct UIFont *)arg2;
+- (void)shiftLinesVerticallyToAvoidOverlap:(id)arg1 referenceFont:(id)arg2;
 - (id)initWithContext:(struct CGContext *)arg1;
 - (id)init;
 

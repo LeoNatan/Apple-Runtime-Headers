@@ -15,10 +15,10 @@
     unsigned long long _internalInfoLabelType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long internalInfoLabelType; // @synthesize internalInfoLabelType=_internalInfoLabelType;
 @property(readonly, nonatomic) UILabel *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property(nonatomic) double marginInset; // @synthesize marginInset=_marginInset;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long infoLabelType;
 - (id)titleFont;
 - (id)messageFont;

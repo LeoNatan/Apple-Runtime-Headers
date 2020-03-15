@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (id)_fillColor:(BOOL)arg1;
 + (id)_strokeColor:(BOOL)arg1;
 + (Class)layerClass;
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (id)_fillColor:(BOOL)arg1;
 - (id)_strokeColor:(BOOL)arg1;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;

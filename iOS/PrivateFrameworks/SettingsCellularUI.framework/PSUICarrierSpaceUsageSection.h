@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_barCategories;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *barCategories; // @synthesize barCategories=_barCategories;
 @property(retain) NSMutableArray *otherMetrics; // @synthesize otherMetrics=_otherMetrics;
 @property(retain) CTCarrierSpaceUsageAccountMetrics *accountMetrics; // @synthesize accountMetrics=_accountMetrics;
 @property(retain) CTCarrierSpaceUsagePlanMetrics *primaryMetrics; // @synthesize primaryMetrics=_primaryMetrics;
 @property(retain) NSString *sharedPlanIdentifier; // @synthesize sharedPlanIdentifier=_sharedPlanIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isSharedPlan;
 

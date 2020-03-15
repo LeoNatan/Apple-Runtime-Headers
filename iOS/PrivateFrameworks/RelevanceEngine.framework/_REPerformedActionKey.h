@@ -16,9 +16,9 @@
 }
 
 + (id)keyForBundleIdentifier:(id)arg1 identifier:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) id <REDonatedActionIdentifierProviding> identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

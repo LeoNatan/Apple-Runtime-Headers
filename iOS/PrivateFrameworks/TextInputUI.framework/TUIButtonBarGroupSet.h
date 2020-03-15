@@ -15,10 +15,10 @@
     NSArray *_unifiedButtonGroups;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unifiedButtonGroups; // @synthesize unifiedButtonGroups=_unifiedButtonGroups;
 @property(retain, nonatomic) NSArray *trailingButtonGroups; // @synthesize trailingButtonGroups=_trailingButtonGroups;
 @property(retain, nonatomic) NSArray *leadingButtonGroups; // @synthesize leadingButtonGroups=_leadingButtonGroups;
-- (void).cxx_destruct;
 
 @end
 

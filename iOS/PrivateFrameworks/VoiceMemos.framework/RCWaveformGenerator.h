@@ -35,12 +35,12 @@
     long long _overviewUnitsPerSecond;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) long long overviewUnitsPerSecond; // @synthesize overviewUnitsPerSecond=_overviewUnitsPerSecond;
 @property(readonly, nonatomic) double segmentFlushInterval; // @synthesize segmentFlushInterval=_segmentFlushInterval;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_onQueue_appendPowerMeterValuesFromRawAudioData:(void *)arg1 frameCount:(long long)arg2 format:(const struct AudioStreamBasicDescription *)arg3 isPredigest:(_Bool)arg4;
 - (void)_onQueue_appendSegment:(id)arg1;
 - (void)_onQueue_pushAveragePowerLevel:(float)arg1;

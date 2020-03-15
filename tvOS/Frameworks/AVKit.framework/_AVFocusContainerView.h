@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <_AVFocusContainerDelegate> _focusContainerDelegate;
 }
 
-@property(nonatomic) __weak id <_AVFocusContainerDelegate> focusContainerDelegate; // @synthesize focusContainerDelegate=_focusContainerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_AVFocusContainerDelegate> focusContainerDelegate; // @synthesize focusContainerDelegate=_focusContainerDelegate;
 - (id)debugDescription;
 - (id)description;
 - (id)_extraDescription;

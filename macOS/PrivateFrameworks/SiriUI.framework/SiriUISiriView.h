@@ -30,6 +30,7 @@
     SiriUIFlamesAndAuraView *_flamesAndAuraView;
 }
 
+- (void).cxx_destruct;
 @property(retain) SiriUIFlamesAndAuraView *flamesAndAuraView; // @synthesize flamesAndAuraView=_flamesAndAuraView;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) long long siriSessionState; // @synthesize siriSessionState=_siriSessionState;
@@ -43,7 +44,6 @@
 @property(retain) SiriUIHelpButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(retain) SiriUISiriStatusView *statusView; // @synthesize statusView=_statusView;
 @property(retain, nonatomic) NSView *remoteContentView; // @synthesize remoteContentView=_remoteContentView;
-- (void).cxx_destruct;
 - (struct CGRect)flamesBoundsForViewBounds:(struct CGRect)arg1;
 - (void)flamesAndAuraDidDisappear;
 - (float)audioLevel;

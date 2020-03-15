@@ -13,8 +13,8 @@
     IOSSHLApplication *_application;
 }
 
-@property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 - (id)initWithApplication:(id)arg1;
 
 @end

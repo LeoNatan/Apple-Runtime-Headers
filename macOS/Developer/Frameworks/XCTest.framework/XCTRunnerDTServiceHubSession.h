@@ -14,8 +14,8 @@
 }
 
 + (id)sharedSession;
-@property(readonly) DTXConnection *dtxConnection; // @synthesize dtxConnection=_dtxConnection;
 - (void).cxx_destruct;
+@property(readonly) DTXConnection *dtxConnection; // @synthesize dtxConnection=_dtxConnection;
 - (id)initWithConnection:(id)arg1;
 
 @end

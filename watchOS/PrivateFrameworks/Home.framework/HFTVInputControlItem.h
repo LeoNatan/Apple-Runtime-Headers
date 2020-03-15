@@ -17,8 +17,8 @@
 + (Class)valueClass;
 + (id)readOnlyOptionalInputCharacteristicTypes;
 + (id)inputCharacteristicTypes;
-@property(readonly, copy, nonatomic) NSArray *inputs; // @synthesize inputs=_inputs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *inputs; // @synthesize inputs=_inputs;
 - (id)writeValue:(id)arg1;
 - (id)valueForCharacteristicType:(id)arg1 inBatchReadResponse:(id)arg2;
 - (id)valueForCharacteristicValues:(id)arg1;

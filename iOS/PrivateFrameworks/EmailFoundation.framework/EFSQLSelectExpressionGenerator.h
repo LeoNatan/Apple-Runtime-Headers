@@ -14,9 +14,9 @@
     NSSet *_tableExpressionGenerators;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *tableExpressionGenerators; // @synthesize tableExpressionGenerators=_tableExpressionGenerators;
 @property(readonly, nonatomic) NSArray *columnExpressionGenerators; // @synthesize columnExpressionGenerators=_columnExpressionGenerators;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqualToSelectExpressionGenerator:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

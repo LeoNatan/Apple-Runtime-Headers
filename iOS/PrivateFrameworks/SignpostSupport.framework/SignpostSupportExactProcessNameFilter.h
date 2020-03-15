@@ -15,8 +15,8 @@
     NSSet *_processNameSet;
 }
 
-@property(readonly, nonatomic) NSSet *processNameSet; // @synthesize processNameSet=_processNameSet;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *processNameSet; // @synthesize processNameSet=_processNameSet;
 @property(readonly, nonatomic) unsigned long long _compoundPredicateType;
 @property(readonly, nonatomic) _Bool _wantsNotEqual;
 @property(readonly, nonatomic) NSPredicate *predicateEquivalent;

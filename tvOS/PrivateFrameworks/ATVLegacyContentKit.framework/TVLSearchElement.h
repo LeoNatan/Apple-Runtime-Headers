@@ -17,12 +17,12 @@
     NSString *_initialSearchString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *initialSearchString; // @synthesize initialSearchString=_initialSearchString;
 @property(nonatomic) _Bool searchesEmptyString; // @synthesize searchesEmptyString=_searchesEmptyString;
 @property(nonatomic) _Bool showPreview; // @synthesize showPreview=_showPreview;
 @property(copy, nonatomic) NSString *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain, nonatomic) TVLHeaderElement *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

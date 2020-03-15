@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     EspressoMetalKernelsCache *_cached;
 }
 
-@property __weak EspressoMetalKernelsCache *cached; // @synthesize cached=_cached;
 - (void).cxx_destruct;
+@property __weak EspressoMetalKernelsCache *cached; // @synthesize cached=_cached;
 
 @end
 

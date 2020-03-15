@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)currentContext;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldRestoreVoucher; // @synthesize shouldRestoreVoucher=_shouldRestoreVoucher;
 @property(retain, nonatomic) NSObject<OS_voucher> *voucher; // @synthesize voucher=_voucher;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly) NSThread *thread; // @synthesize thread=_thread;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

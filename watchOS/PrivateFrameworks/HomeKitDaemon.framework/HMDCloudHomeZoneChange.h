@@ -13,8 +13,8 @@
     HMDCloudShareGroupChange *_shareGroupChange;
 }
 
-@property(retain, nonatomic) HMDCloudShareGroupChange *shareGroupChange; // @synthesize shareGroupChange=_shareGroupChange;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMDCloudShareGroupChange *shareGroupChange; // @synthesize shareGroupChange=_shareGroupChange;
 - (id)objectChanges;
 - (id)changeWithRecordName:(id)arg1;
 - (id)changeWithObjectID:(id)arg1;

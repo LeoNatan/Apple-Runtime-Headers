@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(readonly, nonatomic) WLKPlaybackSummary *summary; // @synthesize summary=_summary;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

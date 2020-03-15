@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICLibraryAuthServiceClientTokenIdentifier *tokenIdentitifer; // @synthesize tokenIdentitifer=_tokenIdentitifer;
 @property(readonly, nonatomic) long long lifespanMillis; // @synthesize lifespanMillis=_lifespanMillis;
 @property(readonly, nonatomic) long long timeToLiveMillis; // @synthesize timeToLiveMillis=_timeToLiveMillis;
 @property(readonly, nonatomic) long long generatedAtMillis; // @synthesize generatedAtMillis=_generatedAtMillis;
 @property(readonly, copy, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

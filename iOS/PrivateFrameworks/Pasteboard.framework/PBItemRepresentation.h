@@ -19,12 +19,12 @@
     id <PBItemRepresentationDataTransferDelegate> _dataTransferDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PBItemRepresentationDataTransferDelegate> dataTransferDelegate; // @synthesize dataTransferDelegate=_dataTransferDelegate;
 @property(nonatomic) _Bool isDataAvailableImmediately; // @synthesize isDataAvailableImmediately=_isDataAvailableImmediately;
 @property(nonatomic) long long visibility; // @synthesize visibility=_visibility;
 @property(nonatomic) unsigned long long preferredRepresentation; // @synthesize preferredRepresentation=_preferredRepresentation;
 @property(readonly, copy, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
-- (void).cxx_destruct;
 - (id)loadOpenInPlaceWithCompletion:(CDUnknownBlockType)arg1;
 - (id)v2_loadOpenInPlaceWithCompletion:(CDUnknownBlockType)arg1;
 - (id)loadFileCopyWithCompletion:(CDUnknownBlockType)arg1;

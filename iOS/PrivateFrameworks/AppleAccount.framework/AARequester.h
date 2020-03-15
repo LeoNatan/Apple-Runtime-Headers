@@ -29,11 +29,11 @@
     NSObject<OS_dispatch_queue> *_handlerQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(nonatomic, getter=isExecuting) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(getter=isCanceled) _Bool canceled; // @synthesize canceled=_isCanceled;
 @property(getter=isFinished) _Bool finished; // @synthesize finished=_isFinished;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

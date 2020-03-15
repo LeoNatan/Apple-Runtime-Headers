@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UITextView *_descriptionTextView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateDescriptionTextViewProperties:(_Bool)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

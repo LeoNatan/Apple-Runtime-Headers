@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSString *_filterName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *filterName; // @synthesize filterName=_filterName;
 @property(nonatomic) double identityScaleHint; // @synthesize identityScaleHint=_identityScaleHint;
 @property(nonatomic) double requestedScaleHint; // @synthesize requestedScaleHint=_requestedScaleHint;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSDictionary *requestedValues; // @synthesize requestedValues=_requestedValues;
 @property(copy, nonatomic) NSDictionary *configurationValues; // @synthesize configurationValues=_configurationValues;
 @property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)forceUniqueName;
 - (void)convertToIdentity;

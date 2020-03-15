@@ -15,10 +15,10 @@
     NSDictionary *_styleKeyValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *styleKeyValues; // @synthesize styleKeyValues=_styleKeyValues;
 @property(nonatomic) float ratingPercentage; // @synthesize ratingPercentage=_ratingPercentage;
 @property(copy, nonatomic) NSString *freshness; // @synthesize freshness=_freshness;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, retain, nonatomic) UIColor *labelColor;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

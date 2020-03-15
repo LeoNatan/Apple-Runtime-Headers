@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)sizeForEntry:(id)arg1 dataSource:(id)arg2 fittingSize:(struct CGSize)arg3 inTraitEnvironment:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bottomSeparator; // @synthesize bottomSeparator=_bottomSeparator;
 @property(retain, nonatomic) UIView *topSeparator; // @synthesize topSeparator=_topSeparator;
 @property(nonatomic) __weak id <TFFeedbackDataUpdateProxy> updateProxy; // @synthesize updateProxy=_updateProxy;
-- (void).cxx_destruct;
 - (struct CGRect)_separatorFrameForTop:(_Bool)arg1 inLayoutBounds:(struct CGRect)arg2;
 - (id)_createSeparatorSubview;
 - (void)_setupSeparatorViewsForAppearingInSectionLocation:(int)arg1;

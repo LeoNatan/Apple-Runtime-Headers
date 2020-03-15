@@ -6,25 +6,24 @@
 
 #import <HomeKitDaemon/HMDAccessoryProfile.h>
 
-@class HMDAccessorySettingContainer, HMDAppleMediaAccessory, HMDMediaSession, HMDMediaSystem, NSObject;
-@protocol OS_dispatch_queue;
+#import <HomeKitDaemon/HMFLocking-Protocol.h>
 
-@interface HMDMediaProfile : HMDAccessoryProfile
+@class HMDMediaSession, HMFUnfairLock;
+
+@interface HMDMediaProfile : HMDAccessoryProfile <HMFLocking>
 {
+    HMFUnfairLock *_lock;
     HMDMediaSession *_mediaSession;
-    HMDMediaSystem *_mediaSystem;
-    HMDAccessorySettingContainer *_container;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
++ (id)uniqueIdentifierFromAccessory:(id)arg1;
 + (id)sessionNamespace;
 + (id)namespace;
-@property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(retain, nonatomic) HMDAccessorySettingContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
 - (void)sessionAudioControlUpdated:(id)arg1;
@@ -36,19 +35,25 @@
 - (void)handleSetValue:(id)arg1 withRequestProperty:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_sessionPlaybackStateUpdated:(id)arg1 notifyXPCClients:(_Bool)arg2;
 - (void)updateWithResponses:(id)arg1 message:(id)arg2;
+- (void)_handleMediaResponses:(id)arg1 message:(id)arg2;
 - (void)_handleMediaSessionSetAudioControl:(id)arg1;
+- (_Bool)_updateAudioControl:(id)arg1;
 - (void)_handleRefreshPlayback:(id)arg1;
-- (void)handleMediaResponses:(id)arg1 message:(id)arg2;
+- (_Bool)_updateRefreshPlayback:(id)arg1;
 - (void)_handleSetPlayback:(id)arg1;
+- (_Bool)_updatePlayback:(id)arg1;
 @property(retain) HMDMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
-@property(nonatomic) __weak HMDMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
-@property(readonly) __weak HMDAppleMediaAccessory *mediaAccessory;
+@property(readonly, nonatomic) unsigned long long capability;
+- (void)registerForNotifications;
 - (void)registerForMessages;
 - (void)configureWithMessageDispatcher:(id)arg1 configurationTracker:(id)arg2;
 - (id)initWithAccessory:(id)arg1;
-- (id)initWithAccessory:(id)arg1 uniqueIdentifier:(id)arg2 services:(id)arg3;
+- (id)initWithAccessory:(id)arg1 uniqueIdentifier:(id)arg2 services:(id)arg3 workQueue:(id)arg4;
+- (void)performBlock:(CDUnknownBlockType)arg1;
+- (void)unlock;
+- (void)lock;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 
 @end
 

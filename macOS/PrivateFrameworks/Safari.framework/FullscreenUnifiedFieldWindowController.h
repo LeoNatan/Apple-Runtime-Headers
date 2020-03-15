@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     PopupWindowUnifiedField *_unifiedField;
 }
 
-@property(readonly, nonatomic) PopupWindowUnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PopupWindowUnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (void)unifiedFieldSecurityUIManagerDidEndShowingCertificateSheet:(id)arg1;
 - (id)unifiedFieldFallbackURLForAboutBlank:(id)arg1;
 - (void)unifiedFieldPerSitePreferencesContextMenuItemWasSelected:(id)arg1;

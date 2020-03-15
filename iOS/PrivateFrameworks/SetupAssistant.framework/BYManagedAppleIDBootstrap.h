@@ -24,9 +24,10 @@
 + (_Bool)isMultiUser;
 + (id)delegateBundleIDsForManagedAccount;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) long long silentLoginUpgradeRetryCount; // @synthesize silentLoginUpgradeRetryCount=_silentLoginUpgradeRetryCount;
 @property(nonatomic) _Bool shouldRetrySilentLoginUpgrade; // @synthesize shouldRetrySilentLoginUpgrade=_shouldRetrySilentLoginUpgrade;
-- (void).cxx_destruct;
+- (void)_modifyAuthenticationContextIfNeeded:(id)arg1;
 - (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (id)_fetchAKURLBagSynchronously;
 - (void)writeAccountConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;

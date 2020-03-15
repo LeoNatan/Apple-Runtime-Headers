@@ -27,6 +27,7 @@
 
 + (id)configurationToRenderForPreset:(id)arg1 overrides:(id)arg2 baseConfiguration:(id)arg3;
 + (id)presetImageCacheWithEnvironment:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTRenderingScope *defaultScope; // @synthesize defaultScope=_defaultScope;
 @property(readonly, nonatomic) AVTRenderingScope *colorScope; // @synthesize colorScope=_colorScope;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <AVTImageCache> cache; // @synthesize cache=_cache;
 @property(nonatomic) __weak id <AVTDeviceResourceConsumerDelegate> consumerDelegate; // @synthesize consumerDelegate=_consumerDelegate;
-- (void).cxx_destruct;
 - (void)releaseRenderingResourceForEstimatedDuration:(double)arg1;
 - (CDUnknownBlockType)providerForThumbnailForModelPreset:(id)arg1 presetOverrides:(id)arg2 poseOverride:(id)arg3 avatarConfiguration:(id)arg4 framingMode:(id)arg5;
 - (CDUnknownBlockType)providerForImageForItem:(id)arg1 scope:(id)arg2 queue:(id)arg3 renderingHandler:(CDUnknownBlockType)arg4;

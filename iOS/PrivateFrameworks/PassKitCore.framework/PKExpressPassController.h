@@ -18,9 +18,9 @@
     long long _apiVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long apiVersion; // @synthesize apiVersion=_apiVersion;
 @property(nonatomic) __weak id presentingViewController; // @synthesize presentingViewController=_presentingViewController;
-- (void).cxx_destruct;
 - (_Bool)deviceUsesAutomaticAuthorization;
 - (id)expressState;
 - (void)disableExpressModeForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

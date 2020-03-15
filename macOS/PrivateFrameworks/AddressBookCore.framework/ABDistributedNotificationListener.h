@@ -20,13 +20,13 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <ABDistributedNotificationListenerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSData *lastHistoryToken; // @synthesize lastHistoryToken=_lastHistoryToken;
 @property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) NSMutableArray *notificationTokens; // @synthesize notificationTokens=_notificationTokens;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
-- (void).cxx_destruct;
 - (void)processChangesSinceLastNotification:(id)arg1;
 - (void)stopListeningForDistributedNotifications;
 - (void)startListeningForDistributedNotificationsWithNames:(id)arg1;

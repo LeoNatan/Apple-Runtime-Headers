@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *previewOption; // @synthesize previewOption=_previewOption;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *stateOption; // @synthesize stateOption=_stateOption;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *facesOption; // @synthesize facesOption=_facesOption;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)options;

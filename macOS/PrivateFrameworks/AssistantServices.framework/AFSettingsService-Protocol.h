@@ -18,6 +18,7 @@
 - (oneway void)setSiriDataSharingOptInStatus:(long long)arg1 completion:(void (^)(void))arg2;
 - (oneway void)clearOpportuneSpeakingEdgeDetectorSignalOverride;
 - (oneway void)setOpportuneSpeakingEdgeDetectorSignalOverride:(long long)arg1;
+- (oneway void)setSpokenNotificationProxCardSeen:(BOOL)arg1;
 - (oneway void)setSpokenNotificationShouldSkipTriggerlessReplies:(BOOL)arg1;
 - (oneway void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(void (^)(BOOL))arg1;
 - (oneway void)setSpokenNotificationShouldAlwaysSpeakNotifications:(BOOL)arg1;
@@ -40,7 +41,7 @@
 - (oneway void)homeOnboardingFlowInvoked:(BOOL)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)fetchMultiUserVoiceIdentificationSetting:(void (^)(BOOL))arg1;
 - (oneway void)getSharedUserID:(void (^)(NSString *, NSString *, NSError *))arg1;
-- (oneway void)updateMultiUserWithSharedUserId:(NSString *)arg1 companionId:(NSString *)arg2 companionSpeechId:(NSString *)arg3 idsIdentifier:(NSString *)arg4 productPrefix:(NSString *)arg5 completion:(void (^)(NSError *))arg6;
+- (oneway void)updateMultiUserWithSharedUserId:(NSString *)arg1 companionId:(NSString *)arg2 companionSpeechId:(NSString *)arg3 idsIdentifier:(NSString *)arg4 productPrefix:(NSString *)arg5 aceHost:(NSString *)arg6 completion:(void (^)(NSError *))arg7;
 - (oneway void)getSharedUserIdForHomeUserId:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (oneway void)getHomeUserIdForSharedUserId:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (oneway void)forceMultiUserSync:(BOOL)arg1 download:(BOOL)arg2 completion:(void (^)(BOOL))arg3;
@@ -87,7 +88,9 @@
 - (oneway void)startRemoteRequest:(AFRequestInfo *)arg1 onPeer:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (oneway void)startUIMockServerRequestWithReplayFileURL:(NSURL *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)dismissUI;
+- (oneway void)startMultiUserUIRequestWithText:(NSString *)arg1 expectedSpeakerSharedUserID:(NSString *)arg2 expectedSpeakerConfidenceScore:(unsigned long long)arg3 nonspeakerConfidenceScores:(NSDictionary *)arg4 completion:(void (^)(NSError *))arg5;
 - (oneway void)startUIRequestWithSpeechAudioFileURL:(NSURL *)arg1;
+- (oneway void)startUIRequestWithInfo:(AFRequestInfo *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)startUIRequestWithText:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)setOfflineDictationProfileOverridePath:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)createOfflineSpeechProfileWithLanguage:(NSString *)arg1 JSONData:(NSData *)arg2 completion:(void (^)(NSData *, NSError *))arg3;

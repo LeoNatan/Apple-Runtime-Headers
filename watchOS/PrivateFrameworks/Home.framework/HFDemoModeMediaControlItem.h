@@ -17,9 +17,9 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) HFNullValueSource *mediaValueSource; // @synthesize mediaValueSource=_mediaValueSource;
-- (void).cxx_destruct;
 - (id)toggleValue;
 - (id)normalizedValueForValue:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;

@@ -18,9 +18,9 @@
     TVLRelatedContentLoadOperation *_relatedContentLoadOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLRelatedContentLoadOperation *relatedContentLoadOperation; // @synthesize relatedContentLoadOperation=_relatedContentLoadOperation;
 @property(retain, nonatomic) UIView *javascriptOverlay; // @synthesize javascriptOverlay=_javascriptOverlay;
-- (void).cxx_destruct;
 - (void)_currentMediaItemDidChangeNotification:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;

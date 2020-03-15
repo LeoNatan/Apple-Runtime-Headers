@@ -24,6 +24,7 @@
 }
 
 + (id)sharedRootViewModel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDrawerActive) _Bool drawerActive; // @synthesize drawerActive=_drawerActive;
 @property(readonly, copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) unsigned long long selectedActivityType; // @synthesize selectedActivityType=_selectedActivityType;
 @property(readonly, nonatomic) NSURL *selectedURL; // @synthesize selectedURL=_selectedURL;
 @property(readonly, nonatomic) id <PXCMMSuggestion> selectedSuggestion; // @synthesize selectedSuggestion=_selectedSuggestion;
-- (void).cxx_destruct;
 - (void)setRecipients:(id)arg1;
 - (void)clearSelection;
 - (void)setSelectedMessageDate:(id)arg1;

@@ -20,11 +20,11 @@
 
 + (BOOL)_isMediaButtonEvent:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) BOOL hasTapAction; // @synthesize hasTapAction=_hasTapAction;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToButton:(id)arg1;
 - (unsigned long long)hash;

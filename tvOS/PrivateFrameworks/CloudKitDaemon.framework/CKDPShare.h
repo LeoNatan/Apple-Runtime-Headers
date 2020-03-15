@@ -38,6 +38,7 @@
 + (Class)invitedKeyToRemoveType;
 + (Class)potentialMatchType;
 + (Class)participantType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) NSData *shortTokenHash; // @synthesize shortTokenHash=_shortTokenHash;
 @property(retain, nonatomic) NSString *displayedHostname; // @synthesize displayedHostname=_displayedHostname;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) CKDPProtectionInfo *invitedPcs; // @synthesize invitedPcs=_invitedPcs;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(retain, nonatomic) CKDPShareIdentifier *shareId; // @synthesize shareId=_shareId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

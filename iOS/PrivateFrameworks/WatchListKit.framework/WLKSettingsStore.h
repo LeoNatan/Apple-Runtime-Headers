@@ -34,12 +34,12 @@
 + (void)synchronizeSettingsDefaultsForKeys:(id)arg1;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)sharedSettings;
+- (void).cxx_destruct;
 @property _Bool hasOutstandingChanges; // @synthesize hasOutstandingChanges=_hasOutstandingChanges;
 @property int ignoreChangesCount; // @synthesize ignoreChangesCount=_ignoreChangesCount;
 @property(readonly, copy, nonatomic) NSDate *lastSyncToCloudDate; // @synthesize lastSyncToCloudDate=_lastSyncToCloudDate;
 @property(readonly, copy, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(copy, nonatomic) NSNumber *optedInVal; // @synthesize optedInVal=_optedInVal;
-- (void).cxx_destruct;
 - (id)_connection;
 - (void)endIgnoringChanges;
 - (void)beginIgnoringChanges;

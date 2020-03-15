@@ -14,8 +14,8 @@
 }
 
 + (int)actionID;
-@property(retain) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (BOOL)expectsAResult;
 - (id)requestPayload;
 - (id)description;

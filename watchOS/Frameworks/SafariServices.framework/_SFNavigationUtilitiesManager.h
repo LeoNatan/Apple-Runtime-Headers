@@ -17,9 +17,9 @@
     unsigned int _persona;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int persona; // @synthesize persona=_persona;
 @property(nonatomic) __weak _SFReloadOptionsController *reloadOptionsController; // @synthesize reloadOptionsController=_reloadOptionsController;
-- (void).cxx_destruct;
 - (_Bool)_shouldOverrideUserAgentSettingForFacebookAuthURL:(id)arg1;
 - (void)websitePoliciesForURL:(id)arg1 isForMainFrameNavigation:(_Bool)arg2 navigationType:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_applyAutoplayQuirksToWebsitePolicies:(id)arg1 desktopSiteSetting:(int)arg2;

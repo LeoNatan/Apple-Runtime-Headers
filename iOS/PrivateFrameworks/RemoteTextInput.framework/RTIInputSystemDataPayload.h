@@ -22,11 +22,11 @@
 + (id)payloadWithData:(id)arg1 version:(unsigned long long)arg2;
 + (id)payloadWithData:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(retain, nonatomic) RTITextOperations *textOperations; // @synthesize textOperations=_textOperations;
 @property(retain, nonatomic) RTIDocumentState *documentState; // @synthesize documentState=_documentState;
 @property(retain, nonatomic) RTIDocumentTraits *documentTraits; // @synthesize documentTraits=_documentTraits;
-- (void).cxx_destruct;
 - (void)_unarchiveData;
 - (void)updateData;
 - (id)data;

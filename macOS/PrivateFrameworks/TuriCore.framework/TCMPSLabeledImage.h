@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *annotations; // @synthesize annotations=_annotations;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic) CIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

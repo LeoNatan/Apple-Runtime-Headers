@@ -13,8 +13,8 @@
     NSString *_voLanguage;
 }
 
-@property(retain) NSString *voLanguage; // @synthesize voLanguage=_voLanguage;
 - (void).cxx_destruct;
+@property(retain) NSString *voLanguage; // @synthesize voLanguage=_voLanguage;
 - (id)accessibilityAttributeValue:(id)arg1 forParameter:(id)arg2;
 
 @end

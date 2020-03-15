@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long totalUnitCount; // @synthesize totalUnitCount=_totalUnitCount;
 @property _Bool reportRemotely; // @synthesize reportRemotely=_reportRemotely;
 @property long long completedUnitCount; // @synthesize completedUnitCount=_completedUnitCount;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

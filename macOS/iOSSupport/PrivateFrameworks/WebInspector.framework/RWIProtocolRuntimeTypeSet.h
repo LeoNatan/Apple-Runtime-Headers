@@ -10,6 +10,7 @@
 {
 }
 
+@property(nonatomic) BOOL isBigInt;
 @property(nonatomic) BOOL isSymbol;
 @property(nonatomic) BOOL isObject;
 @property(nonatomic) BOOL isString;
@@ -19,7 +20,7 @@
 @property(nonatomic) BOOL isNull;
 @property(nonatomic) BOOL isUndefined;
 @property(nonatomic) BOOL isFunction;
-- (id)initWithIsFunction:(BOOL)arg1 isUndefined:(BOOL)arg2 isNull:(BOOL)arg3 isBoolean:(BOOL)arg4 isInteger:(BOOL)arg5 isNumber:(BOOL)arg6 isString:(BOOL)arg7 isObject:(BOOL)arg8 isSymbol:(BOOL)arg9;
+- (id)initWithIsFunction:(BOOL)arg1 isUndefined:(BOOL)arg2 isNull:(BOOL)arg3 isBoolean:(BOOL)arg4 isInteger:(BOOL)arg5 isNumber:(BOOL)arg6 isString:(BOOL)arg7 isObject:(BOOL)arg8 isSymbol:(BOOL)arg9 isBigInt:(BOOL)arg10;
 
 @end
 

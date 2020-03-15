@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <AppStoreKit/_TtP11AppStoreKit20LocalizationProtocol_-Protocol.h>
-
 @class NSString;
 
-@interface _TtC11AppStoreKit12Localization : NSObject <_TtP11AppStoreKit20LocalizationProtocol_>
+@interface _TtC11AppStoreKit12Localization : NSObject
 {
     // Error parsing type: , name: locale
     // Error parsing type: , name: extendedLocale

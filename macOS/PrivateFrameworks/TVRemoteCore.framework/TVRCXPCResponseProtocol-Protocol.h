@@ -10,7 +10,7 @@
 
 @protocol TVRCXPCResponseProtocol <NSObject>
 - (void)deviceQueryUpdatedDiscoveredDevices:(NSSet *)arg1;
-- (void)deviceWithState:(_TVRCDeviceState *)arg1 encounteredAuthChallengeOfType:(long long)arg2 attributes:(long long)arg3 codeToEnterOnDevice:(NSString *)arg4;
+- (void)deviceWithState:(_TVRCDeviceState *)arg1 encounteredAuthChallengeOfType:(long long)arg2 attributes:(long long)arg3 codeToEnterOnDevice:(NSString *)arg4 throttleSeconds:(long long)arg5;
 - (void)deviceUpdatedState:(_TVRCDeviceState *)arg1;
 @end
 

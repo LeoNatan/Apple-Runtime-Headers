@@ -15,8 +15,8 @@
     REFeature *_feature;
 }
 
-@property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
 - (void)enumerateValuesUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned int)countOfValuesBetweenMinValue:(unsigned long)arg1 maxValue:(unsigned long)arg2;
 - (unsigned int)countForValue:(unsigned long)arg1;

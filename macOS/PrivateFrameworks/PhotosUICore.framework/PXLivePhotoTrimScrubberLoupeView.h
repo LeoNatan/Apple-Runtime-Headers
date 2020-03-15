@@ -24,13 +24,13 @@
     CDStruct_1b6d18a9 _sourceTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double innerCornerRadius; // @synthesize innerCornerRadius=_innerCornerRadius;
 @property(nonatomic) double outerCornerRadius; // @synthesize outerCornerRadius=_outerCornerRadius;
 @property(retain, nonatomic) UXView *playerView; // @synthesize playerView=_playerView;
 @property(nonatomic) CDStruct_1b6d18a9 sourceTime; // @synthesize sourceTime=_sourceTime;
 @property(copy, nonatomic) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(copy, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_updateBorderLayerPath;
 - (void)_PXLivePhotoTrimScrubberLoupeView_commonInit;
 - (void)_presentImage:(id)arg1 forSourceTime:(CDStruct_1b6d18a9)arg2;

@@ -22,6 +22,7 @@
     struct CGRect _infoRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCompactHeight; // @synthesize isCompactHeight=_isCompactHeight;
 @property(nonatomic) struct CGRect infoRect; // @synthesize infoRect=_infoRect;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UILabel *artistLabel; // @synthesize artistLabel=_artistLabel;
 @property(readonly, nonatomic) MCDTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) unsigned long long fontStyle; // @synthesize fontStyle=_fontStyle;
-- (void).cxx_destruct;
 - (void)_updateFont;
 - (double)_preferredHeight;
 - (void)_updateNumberOfLines;

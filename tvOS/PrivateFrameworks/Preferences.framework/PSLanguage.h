@@ -16,10 +16,10 @@
 }
 
 + (id)languageWithCode:(id)arg1 name:(id)arg2 localizedName:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedLanguageName; // @synthesize localizedLanguageName=_localizedLanguageName;
 @property(retain, nonatomic) NSString *languageName; // @synthesize languageName=_languageName;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-- (void).cxx_destruct;
 - (_Bool)displayNamesAreEqual;
 
 @end

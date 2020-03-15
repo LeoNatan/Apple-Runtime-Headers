@@ -25,6 +25,7 @@
     struct CGRect _liveResizeImageDrawingFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL currentModeIsDarkMode; // @synthesize currentModeIsDarkMode=_currentModeIsDarkMode;
 @property(nonatomic) struct CGRect liveResizeImageDrawingFrame; // @synthesize liveResizeImageDrawingFrame=_liveResizeImageDrawingFrame;
 @property(retain, nonatomic) NSImage *liveResizeImage; // @synthesize liveResizeImage=_liveResizeImage;
@@ -36,7 +37,6 @@
 @property(nonatomic) struct CGSize currentImageSize; // @synthesize currentImageSize=_currentImageSize;
 @property(retain, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
 @property(nonatomic) __weak NSTextAttachment *textAttachment; // @synthesize textAttachment=_textAttachment;
-- (void).cxx_destruct;
 - (void)_liveResizeDidEnd;
 - (void)_liveResizeWillStart;
 - (void)viewDidEndLiveResize;

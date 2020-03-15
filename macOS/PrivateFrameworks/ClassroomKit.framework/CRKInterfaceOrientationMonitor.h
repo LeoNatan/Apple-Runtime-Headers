@@ -15,8 +15,8 @@
     unsigned long long _interfaceOrientation;
 }
 
-@property(nonatomic) unsigned long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (void)interfaceOrientationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 - (void)dealloc;

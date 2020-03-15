@@ -32,6 +32,7 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)defaultThemeStyle;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets titleEdgeInsets; // @synthesize titleEdgeInsets=_titleEdgeInsets;
 @property(nonatomic) double minFontSize; // @synthesize minFontSize=_minFontSize;
 @property(retain, nonatomic) NSDictionary *disabledTextAttributes; // @synthesize disabledTextAttributes=_disabledTextAttributes;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSImage *pressedBezelImage; // @synthesize pressedBezelImage=_pressedBezelImage;
 @property(retain, nonatomic) NSImage *alternateBezelImage; // @synthesize alternateBezelImage=_alternateBezelImage;
 @property(retain, nonatomic) NSImage *normalBezelImage; // @synthesize normalBezelImage=_normalBezelImage;
-- (void).cxx_destruct;
 - (BOOL)_shouldDrawTextWithDisabledAppearance;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;

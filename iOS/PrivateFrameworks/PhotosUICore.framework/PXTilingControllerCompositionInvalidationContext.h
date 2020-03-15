@@ -16,9 +16,9 @@
 }
 
 + (id)defaultAnimationOptionsForTilingController:(id)arg1 withInvalidationContexts:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXTilingController *originatingTilingController; // @synthesize originatingTilingController=_originatingTilingController;
 @property(retain, nonatomic) id <NSObject> animationOptions; // @synthesize animationOptions=_animationOptions;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

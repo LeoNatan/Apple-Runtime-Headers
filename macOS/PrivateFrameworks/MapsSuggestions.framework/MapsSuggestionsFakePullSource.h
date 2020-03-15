@@ -8,13 +8,13 @@
 
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class NSSet, NSString;
+@class NSArray, NSSet, NSString;
 @protocol MapsSuggestionsSourceDelegate;
 
 @interface MapsSuggestionsFakePullSource : MapsSuggestionsBaseSource <MapsSuggestionsSource>
 {
     struct ReadWriteQueue _readwrite;
-    struct NSArray *_entriesToPull;
+    NSArray *_entriesToPull;
     NSSet *_fakeCanProduceEntriesOfType;
     unsigned long long _calledStart;
     unsigned long long _calledUpdateSuggestionEntries;
@@ -32,15 +32,15 @@
 
 + (unsigned long long)disposition;
 + (BOOL)isEnabled;
-@property BOOL configSendCopies; // @synthesize configSendCopies=_configSendCopies;
-@property double configFrequency; // @synthesize configFrequency=_configFrequency;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property BOOL configSendCopies; // @synthesize configSendCopies=_configSendCopies;
+@property double configFrequency; // @synthesize configFrequency=_configFrequency;
 - (void)startDebugTest;
-- (void)setPullResponseEntries:(struct NSArray *)arg1;
-- (void)pushEntries:(struct NSArray *)arg1;
-- (unsigned long long)_addEntries:(struct NSArray *)arg1;
-- (struct NSArray *)_copyEntriesIfNecessary:(struct NSArray *)arg1;
+- (void)setPullResponseEntries:(id)arg1;
+- (void)pushEntries:(id)arg1;
+- (unsigned long long)_addEntries:(id)arg1;
+- (id)_copyEntriesIfNecessary:(id)arg1;
 - (void)feedbackForContact:(id)arg1 action:(long long)arg2;
 - (void)feedbackForMapItem:(id)arg1 action:(long long)arg2;
 - (void)feedbackForEntry:(id)arg1 action:(long long)arg2;

@@ -15,9 +15,9 @@
     NSTimer *_faceTimeMultiwayCallTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *faceTimeMultiwayCallTimer; // @synthesize faceTimeMultiwayCallTimer=_faceTimeMultiwayCallTimer;
 @property(nonatomic) __weak id <SOFaceTimeCallHandlerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateIfNeeded;
 @property(readonly, nonatomic) BOOL hasActiveFaceTimeCall; // @dynamic hasActiveFaceTimeCall;
 - (void)_handleMultiwayConversationChanged:(id)arg1;

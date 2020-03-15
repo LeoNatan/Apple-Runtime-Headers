@@ -21,13 +21,13 @@
 
 + (id)actionWithIdentifier:(id)arg1 localizedTitle:(id)arg2;
 + (id)keyPathsForValuesAffecting_propChangeWatcher;
+- (void).cxx_destruct;
 @property BOOL _propChangeWatcher; // @synthesize _propChangeWatcher;
 @property __weak id <_NSSavePanelCommonIPI> owningPanel; // @synthesize owningPanel;
 @property(copy) NSArray *supportedContentTypes; // @synthesize supportedContentTypes;
 @property BOOL supportsMultipleItems; // @synthesize supportsMultipleItems;
 @property(copy) NSString *localizedTitle; // @synthesize localizedTitle;
 @property(copy) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)createXPCClone;

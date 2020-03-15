@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
 + (id)uiChildElementsForSearchDirection:(long long)arg1 containerElement:(id)arg2 uiStartElement:(id)arg3 limit:(long long)arg4;
 + (id)resultsWithSearchKeys:(id)arg1 containerElement:(id)arg2 searchDirection:(long long)arg3 limit:(unsigned long long)arg4 startResult:(id)arg5 searchText:(id)arg6 immediateDescendantsOnly:(BOOL)arg7;
 + (id)allResultsWithSearchKey:(long long)arg1 containerElement:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRChooserItemResult *prevStartResult; // @synthesize prevStartResult=_prevStartResult;
 @property(retain, nonatomic) SCRChooserItemResult *nextStartResult; // @synthesize nextStartResult=_nextStartResult;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(nonatomic) long long searchKey; // @synthesize searchKey=_searchKey;
 @property(retain, nonatomic) SCRElement *containerElement; // @synthesize containerElement=_containerElement;
-- (void).cxx_destruct;
 - (id)prevNavigableResult;
 - (id)nextNavigableResult;
 - (id)prevResultsWithLimit:(unsigned long long)arg1;

@@ -21,9 +21,9 @@
 + (id)defaultWallpaperLookupURL;
 + (id)_pathForStillWallpapers;
 + (id)defaultWallpaperManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WKWallpaperBundleImporter *_defaultWallpaperBundleImporter; // @synthesize _defaultWallpaperBundleImporter=__defaultWallpaperBundleImporter;
 @property(retain, nonatomic) NSDictionary *_defaultWallpaperLookup; // @synthesize _defaultWallpaperLookup=__defaultWallpaperLookup;
-- (void).cxx_destruct;
 - (id)defaultWallpaperBundle;
 - (void)_loadDefaultWallpaperFile;
 - (id)init;

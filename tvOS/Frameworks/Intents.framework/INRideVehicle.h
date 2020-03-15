@@ -24,12 +24,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) INImage *mapAnnotationImage; // @synthesize mapAnnotationImage=_mapAnnotationImage;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(copy, nonatomic) NSString *registrationPlate; // @synthesize registrationPlate=_registrationPlate;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSCache *_entriesByAdamID;
 }
 
-@property(retain, nonatomic) NSCache *entriesByAdamID; // @synthesize entriesByAdamID=_entriesByAdamID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCache *entriesByAdamID; // @synthesize entriesByAdamID=_entriesByAdamID;
 - (void)setItem:(id)arg1 forAdamID:(id)arg2 withExpirationDate:(id)arg3;
 - (id)itemForAdamID:(id)arg1;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;

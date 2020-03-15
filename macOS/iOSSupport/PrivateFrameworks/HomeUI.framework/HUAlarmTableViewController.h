@@ -30,6 +30,7 @@
     id <HFMediaProfileContainer> _mediaProfileContainer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) BOOL isAlarmsSettingReady; // @synthesize isAlarmsSettingReady=_isAlarmsSettingReady;
 @property(readonly, nonatomic) BOOL isAccessoryControllable; // @synthesize isAccessoryControllable=_isAccessoryControllable;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) HUHomePodAlarmItemModuleController *alarmModuleController; // @synthesize alarmModuleController=_alarmModuleController;
 @property(retain, nonatomic) UIBarButtonItem *doneButtonItem; // @synthesize doneButtonItem=_doneButtonItem;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)mobileTimerAdapterDidUpdateReadiness:(id)arg1;
 - (void)accessoryDidUpdateControllable:(id)arg1;
 - (void)accessoryDidUpdateReachableTransports:(id)arg1;

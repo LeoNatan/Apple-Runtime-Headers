@@ -31,12 +31,11 @@ __attribute__((visibility("hidden")))
 + (id)plugInNameForBundleIdentifier:(id)arg1;
 + (id)supportedPlugInList;
 + (BOOL)isPlugInSupported:(id)arg1;
-+ (BOOL)isPlugInHidden:(id)arg1;
 + (BOOL)isJavaPlugIn:(id)arg1;
 + (BOOL)isFlashPlugInBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ManagedPlugInsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL needsTurnOffOffByDefaultPlugIns; // @synthesize needsTurnOffOffByDefaultPlugIns=_needsTurnOffOffByDefaultPlugIns;
-- (void).cxx_destruct;
 - (void)_determineFlashAvailabilityRefreshingPlugInsStateIfNeeded:(CDUnknownBlockType)arg1;
 - (void)_refreshPagesRequiringFlashIfFlashBecameAvailable;
 - (BOOL)isPlugInEnabled:(id)arg1;
@@ -51,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)plugInAvailabilityManagerDidUpdatePlugInsState:(id)arg1;
 - (void)managedPlugIn:(id)arg1 didUpdateHostPolicy:(id)arg2;
 - (void)managedPlugIn:(id)arg1 didCreateHostPolicy:(id)arg2;
-- (BOOL)userHasFlashOrSilverlightInstalledForWebsitesKnownToUsePlugInsController:(id)arg1;
+- (BOOL)userHasFlashInstalledForWebsitesKnownToUsePlugInsController:(id)arg1;
 - (id)_hostPolicyForPlugInWithInfo:(id)arg1;
 - (void)_asyncUpdatePlugInEligibleForWhitelistedAskPolicy:(id)arg1;
 - (void)_getHostPolicy:(id)arg1 knownToUsePlugInWithBlock:(CDUnknownBlockType)arg2;

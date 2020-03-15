@@ -14,9 +14,9 @@
     NCEBalloons *_balloonsView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCEBalloons *balloonsView; // @synthesize balloonsView=_balloonsView;
 @property(nonatomic) _Bool didWarmup; // @synthesize didWarmup=_didWarmup;
-- (void).cxx_destruct;
 - (id)statisticsSuffix;
 - (id)name;
 - (void)stop;

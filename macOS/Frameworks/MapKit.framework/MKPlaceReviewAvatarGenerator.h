@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <MKInfoCardTheme> _theme;
 }
 
-@property(nonatomic) __weak id <MKInfoCardTheme> theme; // @synthesize theme=_theme;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MKInfoCardTheme> theme; // @synthesize theme=_theme;
 - (void)avatarForReview:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)monogramForReviewerName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;

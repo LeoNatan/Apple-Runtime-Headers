@@ -34,8 +34,8 @@
 + (unsigned int)_serverPort;
 + (const char *)serviceName;
 + (void)runServer;
-@property(retain, nonatomic) id <UIStatusBarServerClient> statusBar; // @synthesize statusBar=_statusBar;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <UIStatusBarServerClient> statusBar; // @synthesize statusBar=_statusBar;
 - (void)_receivedDoubleHeightStatus:(const char *)arg1 forStyle:(long long)arg2;
 - (void)_receivedGlowAnimationState:(_Bool)arg1 forStyle:(long long)arg2;
 - (void)_receivedStyleOverrides:(int)arg1;

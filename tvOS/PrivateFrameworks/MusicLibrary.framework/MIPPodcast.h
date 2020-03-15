@@ -18,11 +18,11 @@
     MIPSeries *_series;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *feedUrl; // @synthesize feedUrl=_feedUrl;
 @property(retain, nonatomic) NSString *externalGuid; // @synthesize externalGuid=_externalGuid;
 @property(retain, nonatomic) MIPSeries *series; // @synthesize series=_series;
 @property(retain, nonatomic) MIPArtist *artist; // @synthesize artist=_artist;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

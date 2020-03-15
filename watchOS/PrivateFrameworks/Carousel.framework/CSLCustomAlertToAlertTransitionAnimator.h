@@ -19,10 +19,10 @@
     CSLViewControllerTransitionContext *_wrapperContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLViewControllerTransitionContext *wrapperContext; // @synthesize wrapperContext=_wrapperContext;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(readonly, nonatomic) id <CUISAlertToAlertAnimatedTransitioning> animator; // @synthesize animator=_animator;
-- (void).cxx_destruct;
 - (void)completeCurrentTransitionImmediately;
 - (void)animateTransition:(id)arg1;
 - (void)completeWrappedTransition:(_Bool)arg1;

@@ -8,7 +8,7 @@
 
 #import <PhotosUI/PUTrimToolControllerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSMutableArray, NSString, PUTrimToolController, UIButton, UILabel, UIView, _UIBackdropView;
+@class NSLayoutConstraint, NSMutableArray, NSString, PUTrimToolController, PXUIButton, UIButton, UILabel, UIView, _UIBackdropView;
 
 __attribute__((visibility("hidden")))
 @interface PUPhotoEditLivePhotoVideoToolController : PUPhotoEditToolController <PUTrimToolControllerDelegate>
@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_trailingWidthConstraint;
     NSMutableArray *_constraints;
     PUTrimToolController *_trimController;
-    UIButton *_muteLivePhotoButton;
-    UIButton *_livePhotoButton;
+    PXUIButton *_muteLivePhotoButton;
+    PXUIButton *_livePhotoButton;
     UILabel *_videoLabelView;
     _Bool _trimControllerVisible;
     _Bool _viewHasAppeared;
@@ -36,13 +36,13 @@ __attribute__((visibility("hidden")))
     double _verticalButtonOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useTranslucentBackground; // @synthesize useTranslucentBackground=_useTranslucentBackground;
 @property(nonatomic) double verticalButtonOffset; // @synthesize verticalButtonOffset=_verticalButtonOffset;
 @property(readonly, nonatomic) double horizontalPrimaryViewPaddingOffset; // @synthesize horizontalPrimaryViewPaddingOffset=_horizontalPrimaryViewPaddingOffset;
 @property(nonatomic) double horizontalControlPadding; // @synthesize horizontalControlPadding=_horizontalControlPadding;
 @property(retain, nonatomic) UIView *primaryView; // @synthesize primaryView=_primaryView;
 @property(nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
-- (void).cxx_destruct;
 - (void)trimToolControllerDidChange:(id)arg1 state:(unsigned long long)arg2;
 - (void)_updateLivePhotoButton:(id)arg1;
 - (void)_handleLivePhotoButton:(id)arg1;

@@ -16,9 +16,9 @@
     CDUnknownBlockType _contextProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType contextProvider; // @synthesize contextProvider=_contextProvider;
 @property(copy, nonatomic, setter=uponInteraction:) CDUnknownBlockType interactionBlock; // @synthesize interactionBlock;
-- (void).cxx_destruct;
 - (void)performWithObject:(id)arg1;
 - (id)initWithContextProvider:(CDUnknownBlockType)arg1;
 

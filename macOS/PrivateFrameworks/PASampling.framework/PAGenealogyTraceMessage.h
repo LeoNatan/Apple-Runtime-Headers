@@ -22,9 +22,9 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) unsigned int binaryOffset; // @synthesize binaryOffset=_binaryOffset;
 @property(readonly) NSUUID *binaryUuid; // @synthesize binaryUuid=_binaryUuid;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)message;
 - (id)initWithId:(unsigned long long)arg1 andOffset:(unsigned int)arg2 intoBinaryWithUUID:(id)arg3 withBuffer:(const void *)arg4 ofLength:(unsigned long long)arg5 atMachTime:(double)arg6 withActivityId:(unsigned long long)arg7;

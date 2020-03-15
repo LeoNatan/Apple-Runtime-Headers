@@ -24,8 +24,8 @@
     id <CSLSessionXPCServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSessionXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_checkIfConnectionWithPID:(int)arg1 isAllowed:(id)arg2;
 - (void)sessionStarted:(id)arg1 connection:(id)arg2 error:(id)arg3;
 - (void)_informClientThatSessionStarted:(id)arg1 connection:(id)arg2 error:(id)arg3;

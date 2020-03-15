@@ -18,9 +18,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EFScheduler> contentLoadScheduler; // @synthesize contentLoadScheduler=_contentLoadScheduler;
 @property(retain, nonatomic) MFMessageTransformer *libraryMessageTransformer; // @synthesize libraryMessageTransformer=_libraryMessageTransformer;
-- (void).cxx_destruct;
 - (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
 - (unsigned int)_optionsForQuery:(id)arg1;
 - (unsigned int)_loadOptions;

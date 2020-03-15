@@ -27,6 +27,7 @@
     unsigned long long _eventCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasConflicts; // @synthesize hasConflicts=_hasConflicts;
 @property(nonatomic) unsigned long long eventCount; // @synthesize eventCount=_eventCount;
 @property(retain, nonatomic) NSArray *otherEventColors; // @synthesize otherEventColors=_otherEventColors;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NTKPillView *verticalPill2; // @synthesize verticalPill2=_verticalPill2;
 @property(retain, nonatomic) NTKPillView *verticalPill; // @synthesize verticalPill=_verticalPill;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)updateLayout;
 - (id)initForDevice:(id)arg1;
 

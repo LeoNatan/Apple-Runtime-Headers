@@ -18,12 +18,12 @@
     NSArray *_failedTests;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *failedTests; // @synthesize failedTests=_failedTests;
 @property(readonly) IMUnitTestFrameworkLoader *frameworkLoader; // @synthesize frameworkLoader=_frameworkLoader;
 @property(readonly) IMUnitTestLogger *logger; // @synthesize logger=_logger;
 @property(readonly) IMUnitTestBundleLoader *bundleLoader; // @synthesize bundleLoader=_bundleLoader;
 @property __weak id <IMUnitTestRunnerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)logBanner:(id)arg1;
 - (long long)runTestsInBundleAtPath:(id)arg1;
 - (void)log:(id)arg1;

@@ -15,8 +15,8 @@
 }
 
 + (void)initialize;
-@property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(retain, nonatomic) UIColor *textColor;
 @property(nonatomic) long long textAlignment;
 - (id)initWithFrame:(struct CGRect)arg1;

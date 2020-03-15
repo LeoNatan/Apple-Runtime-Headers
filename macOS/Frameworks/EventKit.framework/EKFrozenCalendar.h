@@ -67,6 +67,7 @@
 + (Class)meltedClass;
 + (id)propertiesUnavailableForPartialObjects;
 + (id)frozenObjectForObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3 forceUpdate:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *cachedPreFrozenRelationshipObjects; // @synthesize cachedPreFrozenRelationshipObjects=_cachedPreFrozenRelationshipObjects;
 @property(readonly, nonatomic) BOOL suppressEventSchedulingNotifications; // @synthesize suppressEventSchedulingNotifications=_suppressEventSchedulingNotifications;
 @property(readonly, nonatomic) BOOL isAffectingAvailability; // @synthesize isAffectingAvailability;
@@ -115,7 +116,6 @@
 @property(readonly, nonatomic) BOOL allowsScheduling; // @synthesize allowsScheduling;
 @property(readonly, nonatomic) BOOL allowReminders; // @synthesize allowReminders;
 @property(readonly, nonatomic) BOOL allowEvents; // @synthesize allowEvents;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) unsigned long long supportedEventAvailabilities;
 @property(readonly, nonatomic) unsigned long long sharingStatus;

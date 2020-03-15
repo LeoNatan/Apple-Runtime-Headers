@@ -13,8 +13,8 @@
     SBApplication *_sbApplication;
 }
 
-@property(retain, nonatomic) SBApplication *sbApplication; // @synthesize sbApplication=_sbApplication;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBApplication *sbApplication; // @synthesize sbApplication=_sbApplication;
 - (id)descriptorForOutputObject:(id)arg1;
 - (id)outputObjectArrayForInput:(id)arg1;
 - (id)sbObjectForDescriptor:(id)arg1;

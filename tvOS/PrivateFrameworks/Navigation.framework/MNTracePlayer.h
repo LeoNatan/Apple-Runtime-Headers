@@ -30,6 +30,7 @@
     MNTracePlayerTimelineStream *_etaUpdatesStream;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDirectionsResponsesFromTrace; // @synthesize forceDirectionsResponsesFromTrace=_forceDirectionsResponsesFromTrace;
 @property(nonatomic) _Bool shouldPlayETARequests; // @synthesize shouldPlayETARequests=_shouldPlayETARequests;
 @property(nonatomic) double speedMultiplier; // @synthesize speedMultiplier=_speedMultiplier;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(readonly, nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(readonly, nonatomic) MNTrace *trace; // @synthesize trace=_trace;
-- (void).cxx_destruct;
 - (id)_locationWithCurrentDate:(id)arg1;
 - (double)_responseTimeForRequestAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) MNSessionUpdateManager *sessionUpdater;

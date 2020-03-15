@@ -15,10 +15,10 @@
     AKGridViewController *_gridViewController;
 }
 
+- (void).cxx_destruct;
 @property BOOL itemsShowSelection; // @synthesize itemsShowSelection=_itemsShowSelection;
 @property BOOL itemsAllowDrag; // @synthesize itemsAllowDrag=_itemsAllowDrag;
 @property __weak AKGridViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
-- (void).cxx_destruct;
 - (void)selectAll:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)keyDown:(id)arg1;

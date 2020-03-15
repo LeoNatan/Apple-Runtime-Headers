@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     PUAlbumListViewController *__albumListViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAlbumListViewController:) PUAlbumListViewController *_albumListViewController; // @synthesize _albumListViewController=__albumListViewController;
 @property(nonatomic) _Bool didLoadSubviews; // @synthesize didLoadSubviews=_didLoadSubviews;
 @property(retain, nonatomic, setter=_setSessionInfo:) PUAlbumPickerSessionInfo *albumPickerSessionInfo; // @synthesize albumPickerSessionInfo=_albumPickerSessionInfo;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) PHCollectionList *collectionList; // @synthesize collectionList=_collectionList;
 @property(retain, nonatomic, setter=_setContentNavigationController:) UINavigationController *contentNavigationController; // @synthesize contentNavigationController=_contentNavigationController;
-- (void).cxx_destruct;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)_loadSubviewsIfNeeded;
 - (unsigned long long)supportedInterfaceOrientations;

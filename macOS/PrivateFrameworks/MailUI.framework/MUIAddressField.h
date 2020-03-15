@@ -59,6 +59,7 @@
 + (id)_contactPicker;
 + (id)readablePasteboardTypes;
 + (id)keyPathsForValuesAffectingAddresses;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MUITokenAddressDelegate> tokenAddressDelegate; // @synthesize tokenAddressDelegate=_tokenAddressDelegate;
 @property(retain, nonatomic) NSLayoutConstraint *addressFieldHeightConstraint; // @synthesize addressFieldHeightConstraint=_addressFieldHeightConstraint;
 @property(nonatomic) BOOL ignoreCompletionForTextChange; // @synthesize ignoreCompletionForTextChange=_ignoreCompletionForTextChange;
@@ -90,7 +91,6 @@
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(nonatomic) __weak id <MUIAddressFieldSenderAddressHandler> senderAddressHandler; // @synthesize senderAddressHandler=_senderAddressHandler;
 @property(nonatomic) __weak id <MUIAddressFieldContextProvider> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityChildren;
 - (void)setAccessibilityTitleUIElement:(id)arg1;
 - (void)drawFocusRingMask;

@@ -19,9 +19,9 @@
     NSString *_recoveryKey;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *recoveryKey; // @synthesize recoveryKey=_recoveryKey;
 @property(nonatomic) _Bool recoveryKeyVerified; // @synthesize recoveryKeyVerified=_recoveryKeyVerified;
-- (void).cxx_destruct;
 - (void)generateRecoveryKey:(CDUnknownBlockType)arg1;
 - (void)confirmRecoveryKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithContext:(id)arg1 delegate:(id)arg2;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSRecursiveLock *_updateLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *updateLock; // @synthesize updateLock=_updateLock;
 @property(retain, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(retain) NSSet *assetURLs; // @synthesize assetURLs=_assetURLs;
 @property(retain) NSSet *insertedAssetURLs; // @synthesize insertedAssetURLs=_insertedAssetURLs;
 @property(retain) NSMutableDictionary *identifierURLsToClipsMap; // @synthesize identifierURLsToClipsMap=_identifierURLsToClipsMap;
 @property(retain, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
-- (void).cxx_destruct;
 - (void)addClipWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)clips;
 - (long long)countForAllClips;

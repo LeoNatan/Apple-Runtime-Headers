@@ -13,8 +13,8 @@
     CRKIdentityConfiguration *_configuration;
 }
 
-@property(readonly, copy, nonatomic) CRKIdentityConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CRKIdentityConfiguration *configuration; // @synthesize configuration=_configuration;
 - (const void *)CMSHashingAlgorithmForSecAlgorithm:(unsigned int)arg1;
 - (void)addClientAndServerAuthEKUsToParameters:(id)arg1;
 - (id)certificateParametersWithCMSAlgorithm:(const void *)arg1;

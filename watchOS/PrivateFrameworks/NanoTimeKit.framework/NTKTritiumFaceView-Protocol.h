@@ -6,10 +6,11 @@
 
 #import <NanoTimeKit/NTKTritiumAnimator-Protocol.h>
 
-@class NSArray, NSDictionary, NTKFaceView, NTKTritiumFrameSpecifier, UIView;
+@class NSArray, NSDictionary, NTKFaceView, NTKTritiumFaceAnimatorStatusBarStep, NTKTritiumFrameSpecifier, UIView;
 
 @protocol NTKTritiumFaceView <NTKTritiumAnimator>
 + (Class)tritium_frameSpecifierClass;
+- (NTKTritiumFaceAnimatorStatusBarStep *)tritium_statusBarStep;
 - (double)tritium_durationForTritiumOffAnimation;
 - (double)tritium_durationForTritiumOnAnimation;
 - (struct NTKTritiumTimeAnimationConfiguration)tritium_timeTransitionAnimationConfiguration;

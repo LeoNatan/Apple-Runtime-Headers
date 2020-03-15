@@ -22,8 +22,8 @@
     _Bool _hasObservers;
 }
 
-@property(readonly, nonatomic) _Bool hasObservers; // @synthesize hasObservers=_hasObservers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasObservers; // @synthesize hasObservers=_hasObservers;
 - (void)_observersQueue_copyChangeObserversForWriteIfNeeded;
 - (void)_applyPendingChanges;
 - (void)_publishChanges;

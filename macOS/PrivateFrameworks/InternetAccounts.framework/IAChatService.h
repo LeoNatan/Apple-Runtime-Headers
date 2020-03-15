@@ -22,6 +22,7 @@
     BOOL _showKerberosCheckbox;
 }
 
+- (void).cxx_destruct;
 @property BOOL showKerberosCheckbox; // @synthesize showKerberosCheckbox=_showKerberosCheckbox;
 @property BOOL showUseSSLCheckbox; // @synthesize showUseSSLCheckbox=_showUseSSLCheckbox;
 @property BOOL showServerPortField; // @synthesize showServerPortField=_showServerPortField;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *domainLabel; // @synthesize domainLabel=_domainLabel;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

@@ -16,9 +16,9 @@
     PUICTextField *_detailTextField;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUICTextField *detailTextField; // @synthesize detailTextField=_detailTextField;
 @property(retain, nonatomic) AKTextFieldActionItem *textFieldActionItem; // @synthesize textFieldActionItem=_textFieldActionItem;
-- (void).cxx_destruct;
 - (void)textInputValueCancelled:(id)arg1;
 - (void)textField:(id)arg1 textInputValueDidChange:(id)arg2;
 - (void)_setupDetailTextField;

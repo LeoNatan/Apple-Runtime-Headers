@@ -24,9 +24,9 @@
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEdit) _Bool edit; // @synthesize edit=_edit;
 @property(retain, nonatomic) SKUIWriteAReviewTemplateViewElement *templateViewElement; // @synthesize templateViewElement=_templateViewElement;
-- (void).cxx_destruct;
 - (void)_sendDidCancel;
 - (void)_sendDidSubmit;
 - (void)_loadReviewWithURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

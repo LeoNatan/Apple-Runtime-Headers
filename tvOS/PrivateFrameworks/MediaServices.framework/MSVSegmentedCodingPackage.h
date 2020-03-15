@@ -18,11 +18,11 @@
 }
 
 + (id)packageTypeIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
 @property(retain, nonatomic) NSMutableDictionary *segmentEncoderMap; // @synthesize segmentEncoderMap=_segmentEncoderMap;
 @property(retain, nonatomic) Class archivedClass; // @synthesize archivedClass=_archivedClass;
 @property(copy, nonatomic) NSURL *packageURL; // @synthesize packageURL=_packageURL;
-- (void).cxx_destruct;
 - (_Bool)deleteWithError:(id *)arg1;
 - (_Bool)saveWithError:(id *)arg1;
 @property(readonly, nonatomic) NSDictionary *allVersions;

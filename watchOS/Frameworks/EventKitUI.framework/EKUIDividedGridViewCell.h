@@ -17,11 +17,11 @@
     NSLayoutConstraint *_widthConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
 @property __weak EKUIDividedGridViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain) UITextLabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)selectedTextColor;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)init;

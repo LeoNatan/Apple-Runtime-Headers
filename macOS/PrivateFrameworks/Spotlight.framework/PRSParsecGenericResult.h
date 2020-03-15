@@ -27,6 +27,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL is_vibrant; // @synthesize is_vibrant=_is_vibrant;
 @property(retain) NSArray *card_sections; // @synthesize card_sections;
 @property int card_alignment; // @synthesize card_alignment;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSImage *thumbnail; // @synthesize thumbnail;
 @property BOOL section_scroll; // @synthesize section_scroll;
 @property(retain, nonatomic) NSString *footnote; // @synthesize footnote;
-- (void).cxx_destruct;
 - (BOOL)isFlight;
 - (BOOL)isMovie;
 - (BOOL)isTV;

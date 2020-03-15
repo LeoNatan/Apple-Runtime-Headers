@@ -13,15 +13,16 @@
 @interface PXViewSpec : NSObject <NSCopying>
 {
     BOOL _hidden;
-    struct NSColor *_backgroundColor;
-    struct NSColor *_selectionHighlightColor;
-    struct NSColor *_borderColor;
+    NSColor *_backgroundColor;
+    NSColor *_selectionHighlightColor;
+    NSColor *_borderColor;
     double _borderWidth;
     double _cornerRadius;
     double _displayScale;
     long long _compositingFilterType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) long long compositingFilterType; // @synthesize compositingFilterType=_compositingFilterType;
 @property(nonatomic) double displayScale; // @synthesize displayScale=_displayScale;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(copy, nonatomic) NSColor *selectionHighlightColor; // @synthesize selectionHighlightColor=_selectionHighlightColor;
 @property(copy, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

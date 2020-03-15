@@ -30,11 +30,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long currentIrisMode; // @synthesize currentIrisMode=_currentMode;
 @property(readonly, copy, nonatomic) NSURL *videoFileURL; // @synthesize videoFileURL=_videoFileURL;
 @property(readonly, nonatomic) double stillTimeInVideo; // @synthesize stillTimeInVideo=_stillTimeInVideo;
 @property(nonatomic) __weak id <SBFIrisWallpaperViewDelegate> irisDelegate; // @synthesize irisDelegate=_irisDelegate;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 variant:(long long)arg3 cacheGroup:(id)arg4 delegate:(id)arg5 options:(unsigned long long)arg6;
 - (id)videoPlayerForPlayerView:(id)arg1;
 - (void)playerViewIsInteractingDidChange:(id)arg1;

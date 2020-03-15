@@ -25,10 +25,10 @@
     NSString *_instruction;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *instruction; // @synthesize instruction=_instruction;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_setOnScreen:(_Bool)arg1;
 - (void)_removePeriodicAnimationForKey:(id)arg1 fromLayer:(id)arg2;
 - (void)_endAnimationIfNecessary;

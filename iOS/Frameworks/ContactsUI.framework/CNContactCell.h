@@ -15,8 +15,8 @@
     CNCardGroupItem *_cardGroupItem;
 }
 
-@property(retain, nonatomic) CNCardGroupItem *cardGroupItem; // @synthesize cardGroupItem=_cardGroupItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNCardGroupItem *cardGroupItem; // @synthesize cardGroupItem=_cardGroupItem;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 @property(readonly, nonatomic) double minCellHeight;
 - (void)updateConstraints;

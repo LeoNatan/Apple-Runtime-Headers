@@ -36,6 +36,7 @@
 + (double)defaultUpdateIntervalForBundleIdentifier:(id)arg1;
 + (id)externalChangesLogHandle;
 + (id)backingStoreLogHandle;
+- (void).cxx_destruct;
 @property double ensureExternalUpdateInterval; // @synthesize ensureExternalUpdateInterval=_ensureExternalUpdateInterval;
 @property(retain) NSDate *lastExternalChangeProcessed; // @synthesize lastExternalChangeProcessed=_lastExternalChangeProcessed;
 @property(retain) CalAgentLinkQueueStatusOperation *queueStatusOperation; // @synthesize queueStatusOperation=_queueStatusOperation;
@@ -45,7 +46,6 @@
 @property BOOL persistenceAvailable; // @synthesize persistenceAvailable=_persistenceAvailable;
 @property BOOL isPrefetching; // @synthesize isPrefetching=_isPrefetching;
 @property(retain) EKBackingStoreAccounting *accounting; // @synthesize accounting=_accounting;
-- (void).cxx_destruct;
 - (id)_managedObjectsForClass:(Class)arg1 withManagedObjectIDs:(id)arg2 managedObjectContext:(id)arg3;
 - (void)_forceUpdateBackingStoreSourcesWithObjectIDs:(id)arg1;
 - (void)_forceUpdateBackingStoreCalendarsWithObjectIDs:(id)arg1 inContext:(id)arg2;

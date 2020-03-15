@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isHighlighted;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) _MKUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (id)viewForLastBaselineLayout;
 @property(retain, nonatomic) UIImage *image;

@@ -19,7 +19,7 @@
 - (void)cancelAndRemoveDownload;
 - (void)resumeDownload;
 - (void)pauseDownload;
-- (void)startDownloadWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)startDownloadAllowingCellular:(_Bool)arg1 quality:(long long)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)invalidate;
 @end
 

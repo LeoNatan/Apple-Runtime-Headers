@@ -13,12 +13,12 @@
     id _labelRender;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id labelRender; // @synthesize labelRender=_labelRender;
 @property(nonatomic) _Bool isRectangleSideLength; // @synthesize isRectangleSideLength=_isRectangleSideLength;
 @property(nonatomic) _Bool isRectangleArea; // @synthesize isRectangleArea=_isRectangleArea;
-- (void).cxx_destruct;
 - (unsigned long long)accessibilityTraits;
-- (struct CGRect)accessibilityFrame;
+- (struct CGRect)accessibilityFrameInContainerSpace;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;

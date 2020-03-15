@@ -14,9 +14,9 @@
     double _confidence;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, copy, nonatomic) NSString *outputDeviceID; // @synthesize outputDeviceID=_outputDeviceID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithOutputDeviceID:(id)arg1 confidence:(double)arg2;
 

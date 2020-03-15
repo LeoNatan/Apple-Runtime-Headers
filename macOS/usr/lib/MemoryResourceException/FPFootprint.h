@@ -29,8 +29,8 @@
 + (BOOL)isSharingAnalysisDisabled;
 + (void)setBreakDownPhysFootprint:(BOOL)arg1;
 + (BOOL)breakDownPhysFootprint;
-@property(readonly, nonatomic) NSArray *processes; // @synthesize processes=_processes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *processes; // @synthesize processes=_processes;
 - (id)_processesBySortingFootprint:(id)arg1;
 - (id)_notHiddenProcesses;
 - (void)_buildProcessToFootprintMap;

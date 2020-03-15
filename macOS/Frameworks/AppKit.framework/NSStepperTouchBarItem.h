@@ -18,9 +18,9 @@
 
 + (id)stepperTouchBarItemWithIdentifier:(id)arg1 drawingHandler:(CDUnknownBlockType)arg2;
 + (id)stepperTouchBarItemWithIdentifier:(id)arg1 formatter:(id)arg2;
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action;
 @property __weak id target; // @synthesize target;
-- (void).cxx_destruct;
 - (void)_configureAsGraphicalStepperWithDrawingHandler:(CDUnknownBlockType)arg1;
 - (void)_configureAsTextualStepperWithFormatter:(id)arg1;
 - (void)_stepperValueDidChange:(id)arg1;

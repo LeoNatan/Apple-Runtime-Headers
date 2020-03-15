@@ -16,8 +16,8 @@
     id <AXKActionDelegate> _actionDelegate;
 }
 
-@property(nonatomic) __weak id <AXKActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXKActionDelegate> actionDelegate; // @synthesize actionDelegate=_actionDelegate;
 - (BOOL)mainWithElementController:(id)arg1;
 - (BOOL)performActionWithElementController:(id)arg1;
 @property(readonly, nonatomic) NSString *actionDescription;

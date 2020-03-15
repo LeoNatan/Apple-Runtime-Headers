@@ -24,6 +24,7 @@
 }
 
 + (id)_definitionsFromSerializedDefinitions:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _hasSetMaxLength; // @synthesize _hasSetMaxLength;
 @property(readonly, nonatomic) long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(readonly, nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_isSecure;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (void)_copyPropertiesToDefinition:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

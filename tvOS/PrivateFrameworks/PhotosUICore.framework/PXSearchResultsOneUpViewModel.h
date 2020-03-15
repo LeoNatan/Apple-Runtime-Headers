@@ -16,11 +16,11 @@
     PXAssetReference *_initialAssetReference;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXAssetReference *initialAssetReference; // @synthesize initialAssetReference=_initialAssetReference;
 @property(retain, nonatomic) PXPhotosDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) PXAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 @property(retain, nonatomic) PXPhotoKitUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-- (void).cxx_destruct;
 - (void)updateDataSourceWithFetchResult:(id)arg1;
 - (id)initWithOneUpWithAsset:(id)arg1 atIndex:(unsigned long long)arg2 inAssetCollection:(id)arg3;
 

@@ -15,10 +15,10 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isSelected; // @synthesize isSelected=_isSelected;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, copy, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithHFMultiStateControlItemValue:(id)arg1 text:(id)arg2 isSelected:(BOOL)arg3;
 - (id)initWithHFTVInputControlItemValue:(id)arg1;

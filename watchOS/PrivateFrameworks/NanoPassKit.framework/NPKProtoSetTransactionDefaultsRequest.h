@@ -19,12 +19,12 @@
     NSData *_defaultShippingAddress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *defaultContactName; // @synthesize defaultContactName=_defaultContactName;
 @property(retain, nonatomic) NSData *defaultContactPhone; // @synthesize defaultContactPhone=_defaultContactPhone;
 @property(retain, nonatomic) NSData *defaultContactEmail; // @synthesize defaultContactEmail=_defaultContactEmail;
 @property(retain, nonatomic) NSData *defaultBillingAddresses; // @synthesize defaultBillingAddresses=_defaultBillingAddresses;
 @property(retain, nonatomic) NSData *defaultShippingAddress; // @synthesize defaultShippingAddress=_defaultShippingAddress;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

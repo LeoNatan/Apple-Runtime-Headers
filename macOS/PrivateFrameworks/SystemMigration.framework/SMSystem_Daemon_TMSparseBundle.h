@@ -24,6 +24,7 @@
 
 + (id)keyPathsForValuesAffectingModelIcon;
 + (id)keyPathsForValuesAffectingAvailableAction;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *mountPointsQueue; // @synthesize mountPointsQueue;
 @property(retain) NSObject<OS_dispatch_queue> *timeMachineSystemsQueue; // @synthesize timeMachineSystemsQueue;
 @property(retain) NSString *systemName; // @synthesize systemName;
@@ -33,11 +34,10 @@
 @property(retain) NSURL *sparseBundleURL; // @synthesize sparseBundleURL;
 @property(retain) NSURL *volume; // @synthesize volume;
 @property(retain) NSMutableSet *timeMachineSystems; // @synthesize timeMachineSystems;
-- (void).cxx_destruct;
 - (BOOL)isMounted;
 - (void)volumeMounted:(id)arg1;
 - (void)unmount;
-- (void)mountSparseBundleBackups:(BOOL)arg1;
+- (void)mountSparseBundleBackupsWithPassword:(id)arg1;
 - (void)mountWithCredentials:(id)arg1;
 - (void)mount;
 - (id)modelIcon;

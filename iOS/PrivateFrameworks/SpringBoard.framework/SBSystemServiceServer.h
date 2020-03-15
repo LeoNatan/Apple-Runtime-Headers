@@ -19,13 +19,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBSystemServiceServerStateDumpDelegate> stateDumpDelegate; // @synthesize stateDumpDelegate=_stateDumpDelegate;
 @property(nonatomic) __weak id <SBSystemServiceServerTestAutomationDelegate> testAutomationDelegate; // @synthesize testAutomationDelegate=_testAutomationDelegate;
 @property(nonatomic) __weak id <SBSystemServiceServerSoftwareUpdateDelegate> softwareUpdateDelegate; // @synthesize softwareUpdateDelegate=_softwareUpdateDelegate;
 @property(nonatomic) __weak id <SBSystemServiceServerHardwareButtonDelegate> hardwareButtonDelegate; // @synthesize hardwareButtonDelegate=_hardwareButtonDelegate;
 @property(nonatomic) __weak id <SBSystemServiceServerBiometricsDelegate> biometricsDelegate; // @synthesize biometricsDelegate=_biometricsDelegate;
 @property(nonatomic) __weak id <SBSystemServiceServerAppSwitcherDelegate> appSwitcherDelegate; // @synthesize appSwitcherDelegate=_appSwitcherDelegate;
-- (void).cxx_destruct;
 - (void)_handleStateDumpServiceClientMessageTypeDisableRemoteStateDump:(id)arg1 fromClient:(id)arg2;
 - (void)_handleStateDumpServiceClientMessageTypeEnableRemoteStateDump:(id)arg1 fromClient:(id)arg2;
 - (void)_handleStateDumpServiceClientMessageTypeStateDump:(id)arg1 fromClient:(id)arg2;

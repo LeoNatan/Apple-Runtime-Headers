@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_trustActionGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *trustActionGroup; // @synthesize trustActionGroup=_trustActionGroup;
 @property(nonatomic) _Bool isNetworkReachable; // @synthesize isNetworkReachable=_isNetworkReachable;
 @property(retain, nonatomic) UIAlertController *activeAlertController; // @synthesize activeAlertController=_activeAlertController;
 @property(retain, nonatomic) MCUIAppSigner *appSigner; // @synthesize appSigner=_appSigner;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_cancelActiveAlertController:(_Bool)arg1;
 - (void)_presentAppRemovalAlert;

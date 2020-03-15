@@ -14,10 +14,10 @@
     _Bool _eoFill;
 }
 
-@property(nonatomic) _Bool EOFill; // @synthesize EOFill=_eoFill;
-@property(nonatomic, getter=isAntialiased) _Bool antialiased; // @synthesize antialiased=_antialiased;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool EOFill; // @synthesize EOFill=_eoFill;
+@property(nonatomic, getter=isAntialiased) _Bool antialiased; // @synthesize antialiased=_antialiased;
 - (void)setStroke:(id)arg1;
 - (void)setStrokedGlyph:(unsigned short)arg1 font:(struct CGFont *)arg2 transform:(struct CGAffineTransform)arg3 lineWidth:(float)arg4 lineCap:(int)arg5 lineJoin:(int)arg6 miterLimit:(float)arg7 dashPhase:(float)arg8 dashPattern:(const float *)arg9 dashCount:(int)arg10;
 - (void)setGlyphs:(const unsigned short *)arg1 positions:(const struct CGPoint *)arg2 count:(unsigned long)arg3 font:(struct CGFont *)arg4 renderingStyle:(unsigned int)arg5;

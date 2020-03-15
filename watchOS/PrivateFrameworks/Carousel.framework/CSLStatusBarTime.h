@@ -20,12 +20,12 @@
     int _deviceVariant;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int deviceVariant; // @synthesize deviceVariant=_deviceVariant;
 @property(nonatomic) __weak id <CSLStatusBarTimeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) float timeYOffset; // @synthesize timeYOffset=_timeYOffset;
 @property(readonly, nonatomic) struct CGSize timeSize; // @synthesize timeSize=_timeSize;
 @property(readonly, nonatomic) CLKUITimeLabel *time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (void)updateLabels:(id)arg1;
 - (void)scheduleMinuteTimer:(id)arg1;
 - (void)timerFired;

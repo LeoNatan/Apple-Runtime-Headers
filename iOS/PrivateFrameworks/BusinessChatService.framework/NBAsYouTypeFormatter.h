@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     NBPhoneMetaData *_defaultMetaData_;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NBPhoneMetaData *defaultMetaData_; // @synthesize defaultMetaData_=_defaultMetaData_;
 @property(retain, nonatomic) NBPhoneMetaData *currentMetaData_; // @synthesize currentMetaData_=_currentMetaData_;
 @property(retain, nonatomic) NSMutableArray *possibleFormats_; // @synthesize possibleFormats_=_possibleFormats_;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *currentFormattingPattern_; // @synthesize currentFormattingPattern_=_currentFormattingPattern_;
 @property(retain, nonatomic) NSString *currentOutput_; // @synthesize currentOutput_=_currentOutput_;
 @property(readonly, nonatomic) _Bool isSuccessfulFormatting; // @synthesize isSuccessfulFormatting=_isSuccessfulFormatting;
-- (void).cxx_destruct;
 - (id)description;
 - (id)inputDigitHelper_:(id)arg1;
 - (id)normalizeAndAccrueDigitsAndPlusSign_:(id)arg1 rememberPosition:(_Bool)arg2;

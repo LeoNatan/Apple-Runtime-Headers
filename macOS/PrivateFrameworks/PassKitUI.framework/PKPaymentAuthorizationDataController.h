@@ -24,16 +24,16 @@
     NSArray *_allPreferenceControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *allPreferenceControllers; // @synthesize allPreferenceControllers=_allPreferenceControllers;
 @property(retain, nonatomic) PKPaymentShippingContactPreferenceController *shippingContactPreferenceController; // @synthesize shippingContactPreferenceController=_shippingContactPreferenceController;
 @property(retain, nonatomic) PKPaymentShippingMethodPreferenceController *shippingMethodPreferenceController; // @synthesize shippingMethodPreferenceController=_shippingMethodPreferenceController;
 @property(retain, nonatomic) PKPaymentShippingAddressPreferenceController *shippingAddressPreferenceController; // @synthesize shippingAddressPreferenceController=_shippingAddressPreferenceController;
 @property(retain, nonatomic) PKPaymentRemoteDevicePreferenceController *remoteDevicePreferenceController; // @synthesize remoteDevicePreferenceController=_remoteDevicePreferenceController;
 @property(retain, nonatomic) PKPaymentPassPreferenceController *paymentPassPreferenceController; // @synthesize paymentPassPreferenceController=_paymentPassPreferenceController;
-@property(nonatomic) id <PKPaymentAuthorizationDataControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PKPaymentAuthorizationDataControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentAuthorizationLayout *paymentAuthorizationLayout; // @synthesize paymentAuthorizationLayout=_paymentAuthorizationLayout;
 @property(retain, nonatomic) PKPaymentAuthorizationDataModel *dataModel; // @synthesize dataModel=_dataModel;
-- (void).cxx_destruct;
 - (BOOL)_updateMeCardContact:(id)arg1 newContact:(id)arg2 keys:(id)arg3;
 - (id)_preferenceControllerForItemAtIndex:(unsigned long long)arg1;
 - (id)_valuesForPaymentSummaryItems:(id)arg1;

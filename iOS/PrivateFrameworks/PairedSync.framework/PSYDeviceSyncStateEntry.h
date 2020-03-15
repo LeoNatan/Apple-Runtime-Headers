@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int migrationIndex; // @synthesize migrationIndex=_migrationIndex;
 @property(nonatomic) unsigned int syncSwitchIndex; // @synthesize syncSwitchIndex=_syncSwitchIndex;
 @property(nonatomic) unsigned long long initialSyncState; // @synthesize initialSyncState=_initialSyncState;
 @property(retain, nonatomic) NSUUID *pairingID; // @synthesize pairingID=_pairingID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -21,6 +21,7 @@
 }
 
 + (id)summaryFromSummaries:(id)arg1 targetTimeScale:(int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(nonatomic) float peakValue; // @synthesize peakValue=_peakValue;
 @property(nonatomic) double lkfsValue; // @synthesize lkfsValue=_lkfsValue;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSArray *allBars; // @synthesize allBars=_allBars;
 @property(readonly, nonatomic) NSArray *allBeats; // @synthesize allBeats=_allBeats;
 @property(retain, nonatomic) NSDictionary *videoCues; // @synthesize videoCues=_videoCues;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 targetTimeScale:(int)arg2;
 
 @end

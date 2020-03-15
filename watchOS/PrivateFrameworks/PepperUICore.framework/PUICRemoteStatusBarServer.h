@@ -17,8 +17,8 @@
     id <PUICRemoteStatusBarServerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUICRemoteStatusBarServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICRemoteStatusBarServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleSetNetworkActivityIndicatorAnimatingForMessage:(id)arg1 bundleID:(id)arg2;
 - (void)_handleSuppressDisconnectedForMessage:(id)arg1 bundleID:(id)arg2;
 - (void)_handleSuppressAirplaneModeForMessage:(id)arg1 bundleID:(id)arg2;

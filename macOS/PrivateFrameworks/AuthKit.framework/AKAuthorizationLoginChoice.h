@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL createAppleID; // @synthesize createAppleID=_createAppleID;
 @property(nonatomic) BOOL appleIDAuth; // @synthesize appleIDAuth=_appleIDAuth;
 @property(copy, nonatomic) NSString *site; // @synthesize site=_site;
 @property(copy, nonatomic) NSString *user; // @synthesize user=_user;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

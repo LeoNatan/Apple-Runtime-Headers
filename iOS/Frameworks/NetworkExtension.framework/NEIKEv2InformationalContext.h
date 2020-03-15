@@ -18,12 +18,12 @@
     CDUnknownBlockType _callback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) unsigned long long retryIntervalInMilliseconds; // @synthesize retryIntervalInMilliseconds=_retryIntervalInMilliseconds;
 @property(nonatomic) unsigned int maxRetries; // @synthesize maxRetries=_maxRetries;
 @property(retain, nonatomic) NSArray *privateNotifies; // @synthesize privateNotifies=_privateNotifies;
-- (void).cxx_destruct;
 - (void)sendCallbackSuccess:(_Bool)arg1 session:(id)arg2;
 - (id)description;
 

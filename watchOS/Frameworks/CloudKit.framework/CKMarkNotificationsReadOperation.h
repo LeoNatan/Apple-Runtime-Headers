@@ -16,10 +16,10 @@
     NSMutableDictionary *_errorsByNotificationID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *errorsByNotificationID; // @synthesize errorsByNotificationID=_errorsByNotificationID;
 @property(retain, nonatomic) NSMutableArray *notificationIDsMarkedRead; // @synthesize notificationIDsMarkedRead=_notificationIDsMarkedRead;
 @property(copy, nonatomic) NSArray *notificationIDs; // @synthesize notificationIDs=_notificationIDs;
-- (void).cxx_destruct;
 - (id)activityCreate;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)performCKOperation;

@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
     float _nlreg_sigma_w;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float nlreg_sigma_w; // @synthesize nlreg_sigma_w=_nlreg_sigma_w;
 @property(nonatomic) float nlreg_sigma_c; // @synthesize nlreg_sigma_c=_nlreg_sigma_c;
 @property(nonatomic) float nlreg_sigma_l; // @synthesize nlreg_sigma_l=_nlreg_sigma_l;
@@ -64,7 +65,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int width; // @synthesize width=_width;
 @property(nonatomic) _Bool needConversionBGRA2YUVA; // @synthesize needConversionBGRA2YUVA=_needConversionBGRA2YUVA;
 @property(readonly, nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
-- (void).cxx_destruct;
 - (int)_doNLRegularizationWithCommandBuffer:(id)arg1 in_uv_tex:(id)arg2 join_tex:(id)arg3 w_tex:(id)arg4 out_uv_tex:(id)arg5;
 - (int)_doSolverWithCommandBuffer:(id)arg1 scale:(int)arg2 scale_xy_inv:(id)arg3 coeff:(id)arg4 in_uv_tex:(id)arg5 out_uv_tex:out_w_tex: /* Error: Ran out of types for this method. */;
 - (int)_computeFeaturesDerivativesWithCommandBuffer:(id)arg1 in_tex:(id)arg2 out_tex:(id)arg3;

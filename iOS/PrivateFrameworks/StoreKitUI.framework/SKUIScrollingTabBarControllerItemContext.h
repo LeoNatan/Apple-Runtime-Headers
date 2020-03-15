@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) unsigned long long lastSelectedPageIndex; // @synthesize lastSelectedPageIndex=_lastSelectedPageIndex;
 @property(nonatomic) __weak id <SKUIScrollingTabBarControllerItemContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIViewControllerContainerCollectionViewCell *collectionViewCell; // @synthesize collectionViewCell=_collectionViewCell;
-- (void).cxx_destruct;
 - (void)_updateAppliedContentInsetsAdjustment;
 - (void)_prepareViewControllerForTearDown;
 - (void)_prepareViewControllerForDisplayWithViewFrame:(struct CGRect)arg1 updateContentOffset:(_Bool)arg2 contentOffset:(struct CGPoint)arg3;

@@ -22,6 +22,7 @@
 }
 
 + (id)event;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAccepted) BOOL accepted; // @synthesize accepted=_accepted;
 @property(nonatomic, getter=isOrganizedByMe) BOOL organizedByMe; // @synthesize organizedByMe=_organizedByMe;
 @property(nonatomic, getter=hasMeetingRoom) BOOL meetingRoom; // @synthesize meetingRoom=_meetingRoom;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSArray *attendees; // @synthesize attendees=_attendees;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqualToEvent:(id)arg1;

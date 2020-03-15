@@ -14,9 +14,9 @@
     int _speechTranscriptionType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int speechTranscriptionType; // @synthesize speechTranscriptionType=_speechTranscriptionType;
 @property(copy, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

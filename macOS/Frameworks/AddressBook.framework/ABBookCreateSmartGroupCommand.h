@@ -17,8 +17,11 @@
     ABAccount *_account;
     NSString *_smartGroupUid;
     NSString *_name;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 @property(copy) NSString *name; // @synthesize name=_name;
 - (id)smartGroup;
 - (void)executeUndo;

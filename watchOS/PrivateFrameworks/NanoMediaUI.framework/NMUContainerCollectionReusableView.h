@@ -14,9 +14,9 @@
     UIViewController *_contentViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) __weak UIViewController *containerViewController; // @synthesize containerViewController=_containerViewController;
-- (void).cxx_destruct;
 - (void)_addContentViewController;
 - (void)_removeContentViewController;
 - (void)didMoveToWindow;

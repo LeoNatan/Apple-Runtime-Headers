@@ -19,12 +19,12 @@
     NSDictionary *_downloadedDataByCopyItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *downloadedDataByCopyItems; // @synthesize downloadedDataByCopyItems=_downloadedDataByCopyItems;
 @property(copy, nonatomic) NSArray *createdServerMessages; // @synthesize createdServerMessages=_createdServerMessages;
 @property(copy, nonatomic) NSArray *failedItems; // @synthesize failedItems=_failedItems;
 @property(copy, nonatomic) NSArray *completedItems; // @synthesize completedItems=_completedItems;
 @property(nonatomic) long long phaseForResults; // @synthesize phaseForResults=_phaseForResults;
-- (void).cxx_destruct;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;
 
 // Remaining properties

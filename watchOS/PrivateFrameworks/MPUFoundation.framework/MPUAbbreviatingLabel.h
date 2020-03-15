@@ -14,8 +14,8 @@
     NSArray *_textRepresentations;
 }
 
-@property(copy, nonatomic) NSArray *textRepresentations; // @synthesize textRepresentations=_textRepresentations;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *textRepresentations; // @synthesize textRepresentations=_textRepresentations;
 - (void)_setTextRepresentation:(id)arg1;
 - (void)_selectBestRepresentation;
 - (void)_calculateTextSizes;

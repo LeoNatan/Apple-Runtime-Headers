@@ -17,9 +17,9 @@
 + (id)_dashTrackingTextProviderWithDashes:(id)arg1 tracking:(float)arg2 weight:(float)arg3;
 + (id)_dashTrackingTextProviderWithDashes:(id)arg1 tracking:(float)arg2;
 + (id)textProviderWithText:(id)arg1 overrideBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType overrideBlock; // @synthesize overrideBlock=_overrideBlock;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (_Bool)tritium_requiresCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;

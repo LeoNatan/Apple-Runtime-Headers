@@ -15,9 +15,9 @@
     struct Token _quasarToken;
 }
 
-@property(readonly, nonatomic) struct Token quasarToken; // @synthesize quasarToken=_quasarToken;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct Token quasarToken; // @synthesize quasarToken=_quasarToken;
 - (id)description;
 @property(readonly, nonatomic) NSString *ipaPhoneSequence;
 @property(readonly, nonatomic) NSString *phoneSequence;

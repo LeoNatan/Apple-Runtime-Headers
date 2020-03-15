@@ -21,12 +21,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSString *heroFrameDirPath; // @synthesize heroFrameDirPath=_heroFrameDirPath;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly) HMDHeroFrameDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly) HMDDeviceFileManager *fileManager; // @synthesize fileManager=_fileManager;
 @property(readonly) HMDBulletinBoard *bulletinBoard; // @synthesize bulletinBoard=_bulletinBoard;
-- (void).cxx_destruct;
 - (void)removeEventNotificationForClipWithUUID:(id)arg1;
 - (void)postSignificantEventNotification:(id)arg1 forCameraProfile:(id)arg2;
 - (unsigned int)_effectiveReasonForSignificantEvent:(id)arg1;

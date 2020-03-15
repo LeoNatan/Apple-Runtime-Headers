@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     ALAsset *_asset;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSCondition *condition; // @synthesize condition=_condition;
 @property(retain) ALAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithURL:(id)arg1 assetsLibrary:(id)arg2;
 

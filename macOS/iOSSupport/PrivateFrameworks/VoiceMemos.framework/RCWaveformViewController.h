@@ -63,6 +63,7 @@
     CDStruct_73a5d3ca _selectedTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showPlayBarOnly; // @synthesize showPlayBarOnly=_showPlayBarOnly;
 @property(nonatomic) BOOL selectionOverlayShouldUseInsertMode; // @synthesize selectionOverlayShouldUseInsertMode=_selectionOverlayShouldUseInsertMode;
 @property(nonatomic, getter=isSelectedTimeRangeEditingEnabled) BOOL selectedTimeRangeScrubbingEnabled; // @synthesize selectedTimeRangeScrubbingEnabled=_selectedTimeRangeScrubbingEnabled;
@@ -83,7 +84,6 @@
 @property(nonatomic) BOOL scrubbingEnabled; // @synthesize scrubbingEnabled=_scrubbingEnabled;
 @property(nonatomic) BOOL isPlayback; // @synthesize isPlayback=_isPlayback;
 @property(nonatomic) __weak id <RCWaveformViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_scrollViewPanGestureRecognized:(id)arg1;
 - (void)_layoutTimeMarkerViewsForCurrentlyVisibleTimeRange;
 - (void)_setTimeMarkerViewsNeedInitialLayout:(BOOL)arg1;

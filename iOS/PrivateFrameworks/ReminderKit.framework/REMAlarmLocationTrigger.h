@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)cdEntityName;
+- (void).cxx_destruct;
 @property(nonatomic) long long proximity; // @synthesize proximity=_proximity;
 @property(copy, nonatomic) REMStructuredLocation *structuredLocation; // @synthesize structuredLocation=_structuredLocation;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

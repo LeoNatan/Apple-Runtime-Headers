@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isFile; // @synthesize isFile=_isFile;
 @property(readonly, nonatomic) long long count; // @synthesize count=_count;
 @property(readonly, copy, nonatomic) NSString *subtype; // @synthesize subtype=_subtype;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

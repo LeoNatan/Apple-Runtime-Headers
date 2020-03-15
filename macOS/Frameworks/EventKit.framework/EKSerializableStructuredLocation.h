@@ -14,8 +14,8 @@
 }
 
 + (id)classesForKey;
-@property(copy, nonatomic) CalLocation *calLocation; // @synthesize calLocation=_calLocation;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CalLocation *calLocation; // @synthesize calLocation=_calLocation;
 - (id)createStructuredLocation;
 - (id)initWithStructuredLocation:(id)arg1;
 

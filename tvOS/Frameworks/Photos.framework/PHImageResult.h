@@ -14,8 +14,8 @@
     NSNumber *_exifOrientation;
 }
 
-@property(copy, nonatomic) NSNumber *exifOrientation; // @synthesize exifOrientation=_exifOrientation;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *exifOrientation; // @synthesize exifOrientation=_exifOrientation;
 - (long long)uiOrientation;
 - (id)imageUTI;
 - (void)setImageUTI:(id)arg1;

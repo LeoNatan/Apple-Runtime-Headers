@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
     double _visualCenterXOffset;
 }
 
+- (void).cxx_destruct;
 @property double visualCenterXOffset; // @synthesize visualCenterXOffset=_visualCenterXOffset;
 @property double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property Class presetRepresentedObjectClass; // @synthesize presetRepresentedObjectClass=_presetRepresentedObjectClass;
 @property double presetScale; // @synthesize presetScale=_presetScale;
 @property struct CGSize presetSize; // @synthesize presetSize=_presetSize;
 @property __weak id <NSTouchBarCustomizationPaletteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 dragOperation:(unsigned long long)arg4;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 willBeginAtPoint:(struct CGPoint)arg3 forItemsAtIndexPaths:(id)arg4;
 - (id)collectionView:(id)arg1 draggingImageForItemsAtIndexPaths:(id)arg2 withEvent:(id)arg3 offset:(struct CGPoint *)arg4;

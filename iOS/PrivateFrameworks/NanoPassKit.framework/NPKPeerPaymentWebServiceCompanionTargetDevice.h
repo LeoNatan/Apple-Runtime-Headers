@@ -17,9 +17,9 @@
 }
 
 + (void)attemptToDownloadPeerPaymentPassAtURL:(id)arg1 withWebService:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPSManager *preferencesSyncManager; // @synthesize preferencesSyncManager=_preferencesSyncManager;
 @property(retain, nonatomic) NPSDomainAccessor *globalDomainAccessor; // @synthesize globalDomainAccessor=_globalDomainAccessor;
-- (void).cxx_destruct;
 - (id)appleAccountInformation;
 - (void)_handleAccountChanged:(id)arg1;
 - (id)deviceRegion;

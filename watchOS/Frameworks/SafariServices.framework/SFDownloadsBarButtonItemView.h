@@ -4,25 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <UIKit/UIButton.h>
 
 #import <SafariServices/CAStateControllerDelegate-Protocol.h>
 #import <SafariServices/SFDeferrableUpdateView-Protocol.h>
 
-@class CAStateController, UIBarButtonItem, UIButton, UIProgressView;
+@class CAStateController, UIBarButtonItem, UIProgressView;
 
 __attribute__((visibility("hidden")))
-@interface SFDownloadsBarButtonItemView : UIView <SFDeferrableUpdateView, CAStateControllerDelegate>
+@interface SFDownloadsBarButtonItemView : UIButton <SFDeferrableUpdateView, CAStateControllerDelegate>
 {
-    UIButton *_innerButton;
     UIProgressView *_progressView;
-    UIBarButtonItem *_item;
+    float _barButtonItemWidth;
     double _progress;
     CDStruct_4e0a34f2 deferrableUpdateViewState;
     CAStateController *_stateController;
+    UIBarButtonItem *_barButtonItem;
 }
 
++ (id)buttonWithBarButtonItem:(id)arg1;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIBarButtonItem *barButtonItem; // @synthesize barButtonItem=_barButtonItem;
 - (void)stateController:(id)arg1 transitionDidStop:(id)arg2 completed:(_Bool)arg3;
 - (void)updateContents;
 - (CDStruct_4e0a34f2 *)deferrableUpdateViewState;
@@ -35,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)tintColorDidChange;
 - (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)intrinsicContentSize;
-- (id)initWithBarButtonItem:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

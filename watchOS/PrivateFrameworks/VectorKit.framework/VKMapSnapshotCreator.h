@@ -33,19 +33,20 @@
 }
 
 + (_Bool)supportsSharingThumbnails;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VKRouteContext *routeContext; // @synthesize routeContext=_routeContext;
 @property(retain, nonatomic) id <VKRouteOverlay> routeOverlay; // @synthesize routeOverlay=_routeOverlay;
 @property(nonatomic) struct VKEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(retain, nonatomic) GEOPOICategoryFilter *pointsOfInterestFilter; // @synthesize pointsOfInterestFilter=_pointsOfInterestFilter;
 @property(nonatomic) CDStruct_80aa614a mapDisplayStyle; // @synthesize mapDisplayStyle=_mapDisplayStyle;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)selectedLabelMarkerWillDisappear:(const shared_ptr_2d33c5e4 *)arg1;
 - (void)labelMarkerDidChangeState:(const shared_ptr_2d33c5e4 *)arg1;
 - (void)labelManagerDidLayout;
 - (void)didStartLoadingData;
 - (void)didFinishLoadingDataWithError:(id)arg1;
 - (void)didFinishLoadingData;
+- (void)venueCreated:(const struct Venue *)arg1 building:(const struct VenueBuilding *)arg2;
 - (void)nearestVenueDidChange:(const struct Venue *)arg1 building:(const struct VenueBuilding *)arg2;
 - (_Bool)wantsTimerTick;
 - (void)didPresent;

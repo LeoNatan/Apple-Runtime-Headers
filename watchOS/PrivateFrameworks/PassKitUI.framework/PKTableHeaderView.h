@@ -25,6 +25,7 @@
     float _minimumHeight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKCheckGlyphLayer *checkmarkLayer; // @synthesize checkmarkLayer=_checkmarkLayer;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -34,7 +35,6 @@
 @property(nonatomic) float topPadding; // @synthesize topPadding=_topPadding;
 @property(nonatomic) _Bool shouldResizeImageToFit; // @synthesize shouldResizeImageToFit=_shouldResizeImageToFit;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_updateCheckmarkColor;
 - (id)_subtitleFont;
 - (id)_titleFont;

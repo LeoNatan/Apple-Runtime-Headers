@@ -18,13 +18,13 @@
     IPFeatureData *_dateInSubjectFeatureData;
 }
 
+- (void).cxx_destruct;
 @property(retain) IPFeatureData *dateInSubjectFeatureData; // @synthesize dateInSubjectFeatureData=_dateInSubjectFeatureData;
 @property _Bool subjectContainsDate; // @synthesize subjectContainsDate=_subjectContainsDate;
 @property(retain) NSMutableArray *subjectAndBodyDataDetectorsFeatures; // @synthesize subjectAndBodyDataDetectorsFeatures=_subjectAndBodyDataDetectorsFeatures;
 @property(retain) NSMutableArray *subjectKeywordFeatures; // @synthesize subjectKeywordFeatures=_subjectKeywordFeatures;
 @property(retain) NSArray *subjectSentenceFeatures; // @synthesize subjectSentenceFeatures=_subjectSentenceFeatures;
 @property(retain) NSArray *subjectDataDetectorsFeatures; // @synthesize subjectDataDetectorsFeatures=_subjectDataDetectorsFeatures;
-- (void).cxx_destruct;
 - (id)emailParticipantNames;
 - (double)confidenceForEvent:(id)arg1 baseConfidence:(double)arg2;
 - (void)resetScanState;

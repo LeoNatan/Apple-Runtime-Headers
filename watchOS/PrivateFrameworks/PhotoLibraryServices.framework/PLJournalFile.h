@@ -19,9 +19,9 @@
 + (_Bool)moveURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (_Bool)createEmptyURL:(id)arg1 error:(id *)arg2;
 + (_Bool)removeURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PLJournal *journal; // @synthesize journal=_journal;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)fileExists;
 @property(readonly, nonatomic) unsigned long long allocatedFileSize;
 @property(readonly, nonatomic) unsigned long long fileSize;

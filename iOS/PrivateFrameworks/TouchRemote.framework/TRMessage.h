@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

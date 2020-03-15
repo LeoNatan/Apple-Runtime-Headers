@@ -23,6 +23,7 @@
     double _accessDateTimeAdjustment;
 }
 
+- (void).cxx_destruct;
 @property double accessDateTimeAdjustment; // @synthesize accessDateTimeAdjustment=_accessDateTimeAdjustment;
 @property double maxAllowedTimeSinceGeneration; // @synthesize maxAllowedTimeSinceGeneration=_maxAllowedTimeSinceGeneration;
 @property double maxAllowedTimeSinceLastAccess; // @synthesize maxAllowedTimeSinceLastAccess=_maxAllowedTimeSinceLastAccess;
@@ -31,7 +32,6 @@
 @property __weak id <SBFFileCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <SBFFileCacheFaultHandler> faultHandler; // @synthesize faultHandler=_faultHandler;
 @property(readonly, nonatomic) id <SBFFileCacheStore> store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)_queue_resetManifestUsingStore:(id)arg1;
 - (void)_queue_evictFileWithInfo:(id)arg1 usingStore:(id)arg2;
 - (void)_queue_evictFilesAtManifestIndexes:(id)arg1 usingStore:(id)arg2;

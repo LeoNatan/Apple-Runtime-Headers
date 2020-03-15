@@ -22,13 +22,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) RBSAssertion *assertion; // @synthesize assertion=_assertion;
 @property(retain, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)assertion:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)_queue_invalidate;
 - (void)_queue_acquire:(CDUnknownBlockType)arg1;

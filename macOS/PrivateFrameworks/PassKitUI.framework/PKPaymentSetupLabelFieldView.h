@@ -13,8 +13,8 @@
     NSTextField *_textField;
 }
 
-@property(retain) NSTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(retain) NSTextField *textField; // @synthesize textField=_textField;
 - (id)label;
 - (id)initWithSetupField:(id)arg1;
 

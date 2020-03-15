@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int originatorVersion; // @synthesize originatorVersion=_originatorVersion;
 @property(nonatomic) int originatorType; // @synthesize originatorType=_originatorType;
 @property(retain, nonatomic) NSMutableArray *containerItems; // @synthesize containerItems=_containerItems;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

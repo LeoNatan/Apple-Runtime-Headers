@@ -17,9 +17,9 @@
     id <CPSButtonDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPSButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)didSelectButton:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setTitle:(id)arg1;

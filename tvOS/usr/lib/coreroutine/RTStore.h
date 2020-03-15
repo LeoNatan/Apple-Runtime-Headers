@@ -18,11 +18,11 @@
 
 + (id)contextTypeToString:(unsigned long long)arg1;
 + (id)availabilityToString:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 @property(nonatomic) unsigned long long availability; // @synthesize availability=_availability;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) NSMutableDictionary *contexts; // @synthesize contexts=_contexts;
-- (void).cxx_destruct;
 - (void)_fetchReadableObjectsOfType:(Class)arg1 fetchRequest:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchReadableObjectsOfType:(Class)arg1 fetchRequest:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)enumerateType:(Class)arg1 fetchRequest:(id)arg2 enumerationBlock:(CDUnknownBlockType)arg3;

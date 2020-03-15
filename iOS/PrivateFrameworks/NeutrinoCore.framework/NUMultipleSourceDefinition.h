@@ -13,8 +13,8 @@
     NSArray *_sourceDefinitions;
 }
 
-@property(readonly) NSArray *sourceDefinitions; // @synthesize sourceDefinitions=_sourceDefinitions;
 - (void).cxx_destruct;
+@property(readonly) NSArray *sourceDefinitions; // @synthesize sourceDefinitions=_sourceDefinitions;
 - (id)description;
 - (long long)mediaType;
 - (id)initWithSourceDefinitions:(id)arg1;

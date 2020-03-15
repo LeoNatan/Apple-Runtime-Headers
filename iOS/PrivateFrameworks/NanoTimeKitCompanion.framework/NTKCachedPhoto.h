@@ -15,10 +15,10 @@
     long long _index;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) NTKPhoto *photo; // @synthesize photo=_photo;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (_Bool)load;
 - (id)initWithPhoto:(id)arg1 index:(long long)arg2;
 - (id)initWithPhoto:(id)arg1;

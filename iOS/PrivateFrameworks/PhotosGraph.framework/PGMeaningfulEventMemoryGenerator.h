@@ -18,13 +18,13 @@
     unsigned long long _memoryCategory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long memoryCategory; // @synthesize memoryCategory=_memoryCategory;
 @property(nonatomic) _Bool skipsCollectionTitle; // @synthesize skipsCollectionTitle=_skipsCollectionTitle;
 @property(retain, nonatomic) NSString *meaningfulEventUUID; // @synthesize meaningfulEventUUID=_meaningfulEventUUID;
 @property(nonatomic) unsigned long long meaning; // @synthesize meaning=_meaning;
 @property(nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSDate *lowerBoundLocalDate; // @synthesize lowerBoundLocalDate=_lowerBoundLocalDate;
-- (void).cxx_destruct;
 - (id)_potentialMemoriesForDryTesting;
 - (id)_additionalInfoKeywordsForPotentialMemory:(id)arg1;
 - (void)_postProcessMemory:(id)arg1 withPotentialMemory:(id)arg2;

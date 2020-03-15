@@ -63,6 +63,7 @@
 
 + (id)stringFromDepth:(int)arg1;
 + (unsigned int)uniqueQueryID;
+- (void).cxx_destruct;
 @property _Bool totalBytesWasProcessedAsAbnormallyLarge; // @synthesize totalBytesWasProcessedAsAbnormallyLarge=_totalBytesWasProcessedAsAbnormallyLarge;
 @property(nonatomic) _Bool ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions=_ignoresGuardianRestrictions;
 @property(retain, nonatomic) NSDictionary *requestProperties; // @synthesize requestProperties=_requestProperties;
@@ -81,7 +82,6 @@
 @property(nonatomic) __weak id <CoreDAVTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CoreDAVAccountInfoProvider> accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
 @property(nonatomic) __weak id <CoreDAVTaskManager> taskManager; // @synthesize taskManager=_taskManager;
-- (void).cxx_destruct;
 - (id)_requestForLogging;
 - (id)_connectionForLogging;
 - (void)reportStatusWithError:(id)arg1;

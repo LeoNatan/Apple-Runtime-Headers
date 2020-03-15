@@ -24,13 +24,13 @@
 + (id)gHDRtoPPKernel;
 + (id)colorBalanceKernels;
 + (id)customAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *inputIsRaw; // @synthesize inputIsRaw=_inputIsRaw;
 @property(retain, nonatomic) NSNumber *inputHasFace; // @synthesize inputHasFace=_inputHasFace;
 @property(retain, nonatomic) NSNumber *inputStrength; // @synthesize inputStrength=_inputStrength;
 @property(retain, nonatomic) NSNumber *inputWarmTint; // @synthesize inputWarmTint=_inputWarmTint;
 @property(retain, nonatomic) NSNumber *inputWarmTemp; // @synthesize inputWarmTemp=_inputWarmTemp;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)applyOutputConversion:(id)arg1;
 - (id)applyInputConversion:(id)arg1;

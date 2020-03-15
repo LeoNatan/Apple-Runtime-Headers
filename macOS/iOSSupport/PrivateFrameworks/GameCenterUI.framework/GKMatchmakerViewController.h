@@ -26,6 +26,7 @@
     id <GKMatchmakerViewControllerDelegate> matchmakerDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <GKMatchmakerViewControllerDelegate> matchmakerDelegate; // @synthesize matchmakerDelegate;
 @property BOOL didRequestRemoteViewController; // @synthesize didRequestRemoteViewController=_internalFlag;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) GKInvite *acceptedInvite; // @synthesize acceptedInvite=_acceptedInvite;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
 @property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-- (void).cxx_destruct;
 - (void)authenticationChanged:(id)arg1;
 - (void)playersToInvite:(id)arg1;
 - (void)localPlayerAcceptedGameInvite:(id)arg1;

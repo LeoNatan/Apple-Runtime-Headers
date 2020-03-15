@@ -14,8 +14,8 @@
     NSString *_reason;
 }
 
-@property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSString *identifier;
 - (void)invalidate;
 - (void)dealloc;

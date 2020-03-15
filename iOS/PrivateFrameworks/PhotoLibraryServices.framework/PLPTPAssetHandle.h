@@ -17,12 +17,12 @@
     NSSet *_siblingAssetHandleTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *siblingAssetHandleTypes; // @synthesize siblingAssetHandleTypes=_siblingAssetHandleTypes;
 @property(readonly, nonatomic) _Bool requiresConversion; // @synthesize requiresConversion=_requiresConversion;
 @property(readonly, copy, nonatomic) NSManagedObjectID *sidecarID; // @synthesize sidecarID=_sidecarID;
 @property(readonly, copy, nonatomic) NSManagedObjectID *assetID; // @synthesize assetID=_assetID;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *auxiliaryResourceFilenameMarker;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

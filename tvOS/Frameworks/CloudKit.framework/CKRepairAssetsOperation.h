@@ -21,6 +21,7 @@
     CKUploadRequestConfiguration *_uploadRequestConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(retain, nonatomic) NSMutableDictionary *perItemErrorsByRecordID; // @synthesize perItemErrorsByRecordID=_perItemErrorsByRecordID;
 @property(retain, nonatomic) NSArray *unavailablePackages; // @synthesize unavailablePackages=_unavailablePackages;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSArray *assetMetadata; // @synthesize assetMetadata=_assetMetadata;
 @property(retain, nonatomic) NSArray *packages; // @synthesize packages=_packages;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (id)includedMetadata;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;

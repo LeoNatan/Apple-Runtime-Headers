@@ -21,11 +21,11 @@
     UIContextMenuInteraction *_contextMenuInteraction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
 @property(nonatomic) double backgroundScale; // @synthesize backgroundScale=_backgroundScale;
 @property(copy, nonatomic) NSString *groupNameBase; // @synthesize groupNameBase=_groupNameBase;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 - (void)_applyPreferredContentSizeChange:(struct CGSize)arg1;
 - (void)recentsDocumentExtensionViewControllerRequestsDismiss:(id)arg1;
 - (void)remoteViewControllerViewDidAppearForWidgetViewController:(id)arg1;

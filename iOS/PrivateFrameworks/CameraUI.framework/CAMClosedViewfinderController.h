@@ -17,11 +17,11 @@
     long long __referenceTimeEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setReferenceTimeEvent:) long long _referenceTimeEvent; // @synthesize _referenceTimeEvent=__referenceTimeEvent;
 @property(nonatomic, setter=_setReferenceTime:) double _referenceTime; // @synthesize _referenceTime=__referenceTime;
 @property(readonly, nonatomic) NSMutableSet *_reasonsForClosingViewfinder; // @synthesize _reasonsForClosingViewfinder=__reasonsForClosingViewfinder;
 @property(nonatomic) __weak id <CAMClosedViewfinderControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_descriptionForReasons:(id)arg1;
 - (id)_descriptionStringForReason:(long long)arg1;
 - (id)_descriptionStringForReferenceTimeEvent:(long long)arg1;

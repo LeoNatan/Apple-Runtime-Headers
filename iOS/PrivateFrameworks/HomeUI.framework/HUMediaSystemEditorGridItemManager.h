@@ -15,9 +15,9 @@
 }
 
 + (CDUnknownBlockType)defaultItemProviderCreatorForMediaSystemBuilder:(id)arg1 options:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *prioritizedRooms; // @synthesize prioritizedRooms=_prioritizedRooms;
 @property(readonly, nonatomic) HFMediaSystemBuilder *mediaSystemBuilder; // @synthesize mediaSystemBuilder=_mediaSystemBuilder;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_roomComparator;
 - (id)_sortedItems:(id)arg1 forSectionIdentifier:(id)arg2;
 - (id)_itemsToHideInSet:(id)arg1;

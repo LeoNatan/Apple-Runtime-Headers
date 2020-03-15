@@ -24,7 +24,7 @@
     BOOL _deferContentOffsetUpdates;
     id <PXTilingScrollControllerUpdateDelegate> _updateDelegate;
     PXTilingScrollInfo *_scrollInfo;
-    struct NSObject *_scrollView;
+    NSObject<PXAnonymousScrollView> *_scrollView;
     NSView<PXAnonymousCoordinateSpace> *_contentCoordinateSpace;
     NSHashTable *__observers;
     long long _activeScrollAnimations;
@@ -32,6 +32,7 @@
     struct NSEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize scrollViewContentSize; // @synthesize scrollViewContentSize=_scrollViewContentSize;
 @property(readonly, nonatomic) long long activeScrollAnimations; // @synthesize activeScrollAnimations=_activeScrollAnimations;
 @property(readonly, nonatomic) NSHashTable *_observers; // @synthesize _observers=__observers;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSObject<PXAnonymousScrollView> *scrollView; // @synthesize scrollView=_scrollView;
 @property(copy, nonatomic) PXTilingScrollInfo *scrollInfo; // @synthesize scrollInfo=_scrollInfo;
 @property(nonatomic) __weak id <PXTilingScrollControllerUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGRect contentBounds;
 @property(nonatomic) struct CGPoint visibleOrigin;
 - (void)updateIfNeeded;
@@ -70,8 +70,8 @@
 - (void)scrollRectToVisible:(struct CGRect)arg1 animated:(BOOL)arg2;
 - (BOOL)isScrolledAtEdge:(unsigned int)arg1 tolerance:(double)arg2;
 - (void)scrollToEdge:(unsigned int)arg1;
-- (void)addSubviewToScrollView:(struct NSObject *)arg1;
-- (void)addSubview:(struct NSObject *)arg1;
+- (void)addSubviewToScrollView:(id)arg1;
+- (void)addSubview:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation;
 - (void)scrollViewWillBeginScrollingAnimationTowardsContentEdges:(unsigned long long)arg1;
 - (BOOL)scrollViewShouldScrollToTop;

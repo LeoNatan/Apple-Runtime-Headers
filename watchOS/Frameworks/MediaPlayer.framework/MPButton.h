@@ -21,10 +21,10 @@
 + (id)easyTouchButtonWithType:(int)arg1;
 + (float)easyTouchDefaultCharge;
 + (struct UIEdgeInsets)easyTouchDefaultHitRectInsets;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hitTestDebugEnabled; // @synthesize hitTestDebugEnabled=_hitTestDebugEnabled;
 @property(nonatomic) double holdDelayInterval; // @synthesize holdDelayInterval=_holdDelayInterval;
 @property(nonatomic) struct UIEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
-- (void).cxx_destruct;
 - (void)_handleTouchUp;
 - (void)_handleTouchDown;
 - (void)_handleTouchCancel;

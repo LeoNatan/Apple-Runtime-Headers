@@ -23,13 +23,13 @@
     IKJSTabBar *_owner;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IKJSTabBar *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) JSManagedValue *managedSelf; // @synthesize managedSelf=_managedSelf;
 @property(retain, nonatomic) JSManagedValue *managedNavigationDocument; // @synthesize managedNavigationDocument=_managedNavigationDocument;
 @property(readonly, nonatomic) IKJSNavigationDocument *navigationDocument; // @synthesize navigationDocument=_navigationDocument;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak id <IKAppNavigationController> navigationControllerDelegate; // @synthesize navigationControllerDelegate=_navigationControllerDelegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithAppContext:(id)arg1 identifier:(id)arg2 navigationController:(id)arg3 owner:(id)arg4;
 - (id)asPrivateIKJSTabBarItem;

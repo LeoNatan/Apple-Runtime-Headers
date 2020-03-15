@@ -18,9 +18,9 @@
 }
 
 + (BOOL)shouldNotRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DPStorage *db; // @synthesize db=_db;
 @property(readonly, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (BOOL)retireReports:(id)arg1 inDirectory:(id)arg2;
 - (void)retireReports:(id)arg1 withReply:(CDUnknownBlockType)arg2;

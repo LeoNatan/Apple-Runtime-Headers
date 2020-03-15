@@ -17,9 +17,9 @@
     NSString *_fbr;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(copy, nonatomic) NSArray *cardSections; // @synthesize cardSections=_cardSections;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -376,6 +376,7 @@
 - (_Bool)isSmartPunctuationAllowed;
 - (_Bool)isAutoCorrectionAllowed;
 - (_Bool)isMusicArtistActivityAllowed;
+- (_Bool)isMusicVideoViewingAllowed;
 - (_Bool)isMusicServiceAllowed;
 - (_Bool)isScreenRecordingAllowed;
 - (_Bool)isScreenShotAllowed;
@@ -468,6 +469,8 @@
 - (_Bool)isPasswordAutoFillAllowed;
 - (_Bool)isAuthenticationBeforeAutoFillRequired;
 - (_Bool)isSafariPasswordAutoFillAllowedForURL:(id)arg1;
+- (_Bool)isDeprecatedWebKitSynchronousXHRLoadsAllowed;
+- (_Bool)isDeprecatedWebKitTLSAllowed;
 - (id)managedMedia;
 - (id)associatedDomainsForManagedApps;
 - (id)managedAppIDs;

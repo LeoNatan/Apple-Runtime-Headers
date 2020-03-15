@@ -22,12 +22,12 @@
 }
 
 + (id)probe;
+- (void).cxx_destruct;
 @property _Bool _shouldStop; // @synthesize _shouldStop=__shouldStop;
 @property _Bool _updating; // @synthesize _updating=__updating;
 @property(nonatomic) __weak id <MXMProbeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(copy, nonatomic) MXMSampleFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (_Bool)performPreIterationActions;
 - (id)sampleWithTimeout:(double)arg1 stopReason:(unsigned long long *)arg2;
 - (id)sampleWithTimeout:(double)arg1;

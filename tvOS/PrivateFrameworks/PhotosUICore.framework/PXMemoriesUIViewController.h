@@ -50,6 +50,7 @@
     struct CGPoint _anchorMemoryOrigin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEmbedded) _Bool embedded; // @synthesize embedded=_embedded;
 @property(readonly, nonatomic) PXUIScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(readonly, nonatomic) PXTilingController *tilingController; // @synthesize tilingController=_tilingController;
@@ -71,7 +72,6 @@
 @property(readonly, nonatomic) PXMemoriesSpecManager *_specManager; // @synthesize _specManager=__specManager;
 @property(readonly, nonatomic) PXMemoriesFeedViewControllerHelper *_helper; // @synthesize _helper=__helper;
 @property(readonly, nonatomic) PXMemoriesDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 @property(readonly, nonatomic) long long userInterfaceFeature;
 - (id)memoriesTileSource:(id)arg1 memoryToPreheatForIndexPath:(struct PXSimpleIndexPath)arg2;
@@ -81,8 +81,8 @@
 - (id)regionOfInterestForTransition:(id)arg1;
 - (id)px_endPointForTransition:(id)arg1;
 - (_Bool)px_canPerformZoomTransitionWithDetailViewController:(id)arg1;
-- (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
+- (_Bool)actionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (void)scrollViewControllerWillBeginScrolling:(id)arg1;
 - (id)_sourceViewForMemoryActionsController;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
@@ -97,7 +97,7 @@
 - (void)_configureLayout:(id)arg1;
 - (void)_reconfigureTargetLayout;
 - (void)_handleTouch:(id)arg1;
-- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (void)_presentMemoryAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (void)_handleScrollViewTap:(id)arg1;
 - (struct PXSimpleIndexPath)_indexPathForMemoryInScrollViewAtPoint:(struct CGPoint)arg1;
 - (struct PXSimpleIndexPath)_indexPathForMemoryAtPoint:(struct CGPoint)arg1;
@@ -117,7 +117,9 @@
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (void)tilingController:(id)arg1 prepareForChange:(id)arg2;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;

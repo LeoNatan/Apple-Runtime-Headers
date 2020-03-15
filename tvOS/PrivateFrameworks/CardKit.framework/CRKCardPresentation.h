@@ -31,11 +31,11 @@
 + (void)unregisterProvider:(id)arg1;
 + (void)registerProvider:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool debugModeEnabled; // @synthesize debugModeEnabled=_debugModeEnabled;
 @property(nonatomic) __weak id <CRKCardPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIViewController<CRKCardViewControlling> *cardViewController; // @synthesize cardViewController=_cardViewController;
 @property(copy, nonatomic) CRKCardPresentationConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)cardViewController:(id)arg1 requestCardSectionViewSourceForCard:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)transitionAnimator:(id)arg1 willTransitionFromCardViewController:(id)arg2 toCardViewController:(id)arg3 withAnimationCoordinator:(id)arg4;
 - (long long)cardSectionViewLoader:(id)arg1 compareCardSectionViewProviderOne:(id)arg2 providerTwo:(id)arg3;

@@ -75,6 +75,7 @@
 }
 
 + (float)focusLensPositionCurrentSentinel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMRemoteShutterController *_remoteShutterController; // @synthesize _remoteShutterController=__remoteShutterController;
 @property(readonly, nonatomic) CAMIrisVideoController *_irisVideoController; // @synthesize _irisVideoController=__irisVideoController;
 @property(readonly, nonatomic) CAMPowerController *_powerController; // @synthesize _powerController=__powerController;
@@ -131,7 +132,6 @@
 @property(nonatomic) __weak id <CAMStillImageCapturingVideoDelegate> stillImageCapturingVideoDelegate; // @synthesize stillImageCapturingVideoDelegate=_stillImageCapturingVideoDelegate;
 @property(nonatomic) __weak id <CAMPreviewLayerOverCaptureStatusDelegate> previewLayerOverCaptureStatusDelegate; // @synthesize previewLayerOverCaptureStatusDelegate=_previewLayerOverCaptureStatusDelegate;
 @property(readonly, nonatomic, getter=isPreviewDisabled) _Bool previewDisabled; // @synthesize previewDisabled=_previewDisabled;
-- (void).cxx_destruct;
 - (void)_endCaptureSignpostIntervalForPersistenceUUID:(id)arg1;
 - (void)_startCaptureSignpostIntervalForPersistenceUUID:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

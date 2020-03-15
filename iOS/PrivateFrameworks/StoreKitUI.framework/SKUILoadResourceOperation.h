@@ -17,8 +17,8 @@
     long long __loadReason;
 }
 
-@property(nonatomic, setter=_setLoadReason:) long long _loadReason; // @synthesize _loadReason=__loadReason;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setLoadReason:) long long _loadReason; // @synthesize _loadReason=__loadReason;
 - (void)cancel;
 - (void)main;
 @property(copy) CDUnknownBlockType outputBlock;

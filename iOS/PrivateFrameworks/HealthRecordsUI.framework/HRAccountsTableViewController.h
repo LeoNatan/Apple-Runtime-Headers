@@ -17,11 +17,11 @@
     HRContentStatusView *_loadingView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HRContentStatusView *loadingView; // @synthesize loadingView=_loadingView;
 @property(retain, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 @property(retain, nonatomic) id <HRRecordViewControllerFactory> factory; // @synthesize factory=_factory;
 @property(readonly, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

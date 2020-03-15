@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)publicKeyIDFromIdentity:(struct _OpaquePCSShareProtection *)arg1;
 + (id)noMatchingIdentityErrorForPCSError:(struct __CFError *)arg1 withErrorCode:(int)arg2 description:(id)arg3;
 + (id)_legacyServiceNameForContainerIDMapping:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizeQueue; // @synthesize synchronizeQueue=_synchronizeQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *pcsUpdateSource; // @synthesize pcsUpdateSource=_pcsUpdateSource;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 @property(readonly, nonatomic) __weak id <CKDContainerScopedUserIDProvider> containerScopedUserIDProvider; // @synthesize containerScopedUserIDProvider=_containerScopedUserIDProvider;
 @property(retain) CKDAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)etagFromPCSData:(id)arg1;
 - (struct _OpaquePCSShareProtection *)_copyShareProtectionFromExportedData:(id)arg1 ofType:(unsigned int)arg2 identities:(struct _PCSIdentitySetData *)arg3 error:(struct __CFError **)arg4;
 - (void)_onSynchronizeQueue:(CDUnknownBlockType)arg1;

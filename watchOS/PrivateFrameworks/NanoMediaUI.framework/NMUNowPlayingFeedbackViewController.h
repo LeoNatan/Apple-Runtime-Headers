@@ -24,11 +24,11 @@
 
 + (id)_defaultLocalizedTitleForFeedbackAction:(int)arg1 forFirstPartyMusicApp:(_Bool)arg2;
 + (id)_defaultLocalizedTextForFeedbackAction:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) __weak id <NMUNowPlayingFeedbackViewControllerDelegate> feedbackActionSheetControllerDelegate; // @synthesize feedbackActionSheetControllerDelegate=_feedbackActionSheetControllerDelegate;
 @property(nonatomic) int likeCommandPresentationStyle; // @synthesize likeCommandPresentationStyle=_likeCommandPresentationStyle;
 @property(nonatomic, getter=isForFirstPartyMusicApp) _Bool forFirstPartyMusicApp; // @synthesize forFirstPartyMusicApp=_forFirstPartyMusicApp;
-- (void).cxx_destruct;
 - (void)actionSheetController:(id)arg1 willDismissWithActionAtIndexPath:(id)arg2;
 - (void)actionContentControllerCancel:(id)arg1;
 - (void)reloadActionSheet;

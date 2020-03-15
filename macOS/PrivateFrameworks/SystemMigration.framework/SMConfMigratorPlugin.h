@@ -16,10 +16,10 @@
     NSObject<SMSystem_FileManagerProtocol> *_targetFilesystem;
 }
 
+- (void).cxx_destruct;
 @property __weak NSObject<SMSystem_FileManagerProtocol> *targetFilesystem; // @synthesize targetFilesystem=_targetFilesystem;
 @property __weak NSObject<SMSystem_FileManagerProtocol> *sourceFilesystem; // @synthesize sourceFilesystem=_sourceFilesystem;
 @property __weak SMMigrationRequest *migrationRequest; // @synthesize migrationRequest=_migrationRequest;
-- (void).cxx_destruct;
 - (void)run;
 - (double)estimateTime;
 - (id)initWithRequest:(id)arg1;

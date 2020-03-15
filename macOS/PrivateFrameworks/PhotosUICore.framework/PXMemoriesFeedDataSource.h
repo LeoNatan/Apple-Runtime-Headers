@@ -16,9 +16,9 @@
     struct PXSimpleIndexPath _indexPathForFirstPastMemorySection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct PXSimpleIndexPath indexPathForFirstPastMemorySection; // @synthesize indexPathForFirstPastMemorySection=_indexPathForFirstPastMemorySection;
 @property(readonly, copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
-- (void).cxx_destruct;
 - (id)inputForItem:(id)arg1;
 - (id)sectionedObjectReferenceForMemoryUUID:(id)arg1;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;

@@ -23,10 +23,10 @@
 + (id)highlightedBlurViewEffects;
 + (id)normalBlurViewEffects;
 + (id)badgeView;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(readonly, nonatomic) ASVBadgeDescription *badgeDescription; // @synthesize badgeDescription=_badgeDescription;
 @property(nonatomic) struct CGSize thumbnailSize; // @synthesize thumbnailSize=_thumbnailSize;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)intrinsicContentSize;
 - (void)_updateShadow;

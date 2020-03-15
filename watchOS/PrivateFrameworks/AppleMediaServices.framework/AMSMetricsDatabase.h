@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     int _keepAliveCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int keepAliveCount; // @synthesize keepAliveCount=_keepAliveCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) AMSSQLiteConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSString *containerId; // @synthesize containerId=_containerId;
-- (void).cxx_destruct;
 - (void)_performTransaction:(CDUnknownBlockType)arg1;
 - (id)_lockedById;
 - (_Bool)connectionNeedsResetForCorruption:(id)arg1;

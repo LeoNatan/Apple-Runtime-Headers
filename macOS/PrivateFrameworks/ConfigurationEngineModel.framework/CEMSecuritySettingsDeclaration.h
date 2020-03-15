@@ -26,12 +26,12 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowEnablingRestrictions; // @synthesize payloadAllowEnablingRestrictions=_payloadAllowEnablingRestrictions;
 @property(copy, nonatomic) NSNumber *payloadAllowEraseContentAndSettings; // @synthesize payloadAllowEraseContentAndSettings=_payloadAllowEraseContentAndSettings;
 @property(copy, nonatomic) NSNumber *payloadForceEncryptedBackup; // @synthesize payloadForceEncryptedBackup=_payloadForceEncryptedBackup;
 @property(copy, nonatomic) NSNumber *payloadAllowOTAPKIUpdates; // @synthesize payloadAllowOTAPKIUpdates=_payloadAllowOTAPKIUpdates;
 @property(copy, nonatomic) NSNumber *payloadAllowUntrustedTLSPrompt; // @synthesize payloadAllowUntrustedTLSPrompt=_payloadAllowUntrustedTLSPrompt;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -20,12 +20,12 @@
     CDStruct_a125a100 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(retain, nonatomic) NSData *dateSynced; // @synthesize dateSynced=_dateSynced;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -24,6 +24,7 @@
     struct CGAffineTransform _localTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *localRotationView; // @synthesize localRotationView=_localRotationView;
 @property(retain, nonatomic) CALayer *maskRightLayer; // @synthesize maskRightLayer=_maskRightLayer;
 @property(retain, nonatomic) CALayer *maskLeftLayer; // @synthesize maskLeftLayer=_maskLeftLayer;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UIView *arrowContainer; // @synthesize arrowContainer=_arrowContainer;
 @property(nonatomic) struct CGAffineTransform localTransform; // @synthesize localTransform=_localTransform;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
-- (void).cxx_destruct;
 - (void)_updateCallToActionLabelFont;
 - (void)layoutSubviews;
 - (void)_removeAnimations;

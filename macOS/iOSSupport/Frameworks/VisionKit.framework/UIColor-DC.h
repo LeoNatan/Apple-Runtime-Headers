@@ -7,15 +7,15 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (DC)
-+ (struct UIColor *)dc_labelBackgroundColor;
-+ (struct UIColor *)dc_editBackgroundColor;
-+ (struct UIColor *)dc_barColor;
-+ (struct UIColor *)dc_lightPaperTexture;
-+ (struct UIColor *)dc_paperTexture;
-+ (struct UIImage *)dc_lightPaperImage;
-+ (struct UIImage *)dc_paperImage;
-+ (struct UIColor *)DCExtractedDocumentViewControllerBackgroundColor;
-+ (struct UIColor *)colorInBundleWithName:(id)arg1;
++ (id)dc_labelBackgroundColor;
++ (id)dc_editBackgroundColor;
++ (id)dc_barColor;
++ (id)dc_lightPaperTexture;
++ (id)dc_paperTexture;
++ (id)dc_lightPaperImage;
++ (id)dc_paperImage;
++ (id)DCExtractedDocumentViewControllerBackgroundColor;
++ (id)colorInBundleWithName:(id)arg1;
 + (id)dc_darkerAccessibilityColorForColor:(id)arg1;
 - (BOOL)dc_colorIsLight;
 @end

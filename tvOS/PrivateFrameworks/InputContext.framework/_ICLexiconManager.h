@@ -27,9 +27,9 @@
 }
 
 + (unsigned long long)countWords:(id)arg1;
+- (void).cxx_destruct;
 @property int namedEntityLoadState; // @synthesize namedEntityLoadState=_namedEntityLoadState;
 @property int contactLoadState; // @synthesize contactLoadState=_contactLoadState;
-- (void).cxx_destruct;
 - (void)provideFeedbackForString:(id)arg1 type:(unsigned char)arg2 style:(unsigned char)arg3;
 - (int)debugEntityLoadState;
 - (unsigned long long)getContactCount;

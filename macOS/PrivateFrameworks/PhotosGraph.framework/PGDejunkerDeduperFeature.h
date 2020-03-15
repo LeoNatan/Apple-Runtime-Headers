@@ -17,10 +17,10 @@
     NSSet *_peopleScenes;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL isVideo; // @synthesize isVideo=_isVideo;
 @property(readonly) NSSet *peopleScenes; // @synthesize peopleScenes=_peopleScenes;
 @property(readonly) NSSet *personLocalIdentifiers; // @synthesize personLocalIdentifiers=_personLocalIdentifiers;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) BOOL hasPeopleScenes;
 @property(readonly) BOOL hasPersons;

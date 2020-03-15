@@ -52,6 +52,7 @@
 + (_Bool)finishAllWorkoutSessionsForClient:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)postRestartRecoveredSessionServerWithProfile:(id)arg1 workoutManager:(id)arg2 error:(id *)arg3;
 + (id)recoveredSessionServerWithProfile:(id)arg1 sessionUUID:(id)arg2 workoutManager:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *stopDate; // @synthesize stopDate=_stopDate;
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, copy, nonatomic) HKSource *clientSource; // @synthesize clientSource=_clientSource;
@@ -61,7 +62,6 @@
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(readonly, copy, nonatomic) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_queue_latestActivityUpdateTimerDidFire;
 - (void)_queue_stopLatestActivityUpdateTimer;
 - (void)_queue_startLatestActivityUpdateTimer;
@@ -120,6 +120,7 @@
 - (id)taskServerConfigurationForRecoveryWithError:(id *)arg1;
 - (_Bool)_recoverPersistedState;
 - (void)_loadOrCreatePersistentEntity;
+@property(readonly, nonatomic) _Bool isFirstParty;
 - (id)currentWorkoutSnapshot;
 - (void)setWorkoutDataAccumulator:(id)arg1;
 - (void)setAssociatedWorkoutBuilderEntity:(id)arg1;

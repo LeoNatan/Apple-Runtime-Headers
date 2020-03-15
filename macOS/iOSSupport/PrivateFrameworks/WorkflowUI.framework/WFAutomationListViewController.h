@@ -30,6 +30,7 @@
     WFEditAutomationCoordinator *_editAutomationCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFEditAutomationCoordinator *editAutomationCoordinator; // @synthesize editAutomationCoordinator=_editAutomationCoordinator;
 @property(retain, nonatomic) WFCreateAutomationCoordinator *createAutomationCoordinator; // @synthesize createAutomationCoordinator=_createAutomationCoordinator;
 @property(retain, nonatomic) WFHomeManager *homeManager; // @synthesize homeManager=_homeManager;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) UIView *subheadWrapperView; // @synthesize subheadWrapperView=_subheadWrapperView;
 @property(retain, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)triggerEditor:(id)arg1 didFinishWithTriggerBuilder:(id)arg2;
 - (BOOL)showHomeAutomationEditorForTriggerItem:(id)arg1;
 - (void)editAutomationCoordinatorDidCancel:(id)arg1;

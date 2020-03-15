@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *dmdStateDescription; // @synthesize dmdStateDescription=_dmdStateDescription;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *dmdStateDescription; // @synthesize dmdStateDescription=_dmdStateDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStateDescription:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)bundleAtPath:(id)arg1;
 + (id)bundleWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)privacyFlow;
 - (id)initWithBundle:(id)arg1;
 

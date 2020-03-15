@@ -26,6 +26,7 @@
     UIView *_removeControlView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *removeControlView; // @synthesize removeControlView=_removeControlView;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isRestricted) _Bool restricted; // @synthesize restricted=_restricted;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) UIView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(nonatomic, getter=isIconImageHidden) _Bool iconImageHidden; // @synthesize iconImageHidden=_iconImageHidden;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (_Bool)_useCloudButtonForItemState:(id)arg1;
 - (void)_reloadItemOfferVisibility;
 - (void)_reloadItemOfferButton:(_Bool)arg1;

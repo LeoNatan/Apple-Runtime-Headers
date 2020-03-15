@@ -27,6 +27,7 @@
 }
 
 + (id)createFromNib;
+- (void).cxx_destruct;
 @property BOOL disableControls; // @synthesize disableControls=_disableControls;
 @property BOOL spinOnSelection; // @synthesize spinOnSelection=_spinOnSelection;
 @property(retain) id delegate; // @synthesize delegate=_delegate;
@@ -34,7 +35,6 @@
 @property(retain) NSString *appDisplayName; // @synthesize appDisplayName=_appDisplayName;
 @property(retain) NSString *serviceDisplayName; // @synthesize serviceDisplayName=_serviceDisplayName;
 @property(retain, nonatomic) IAApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)checkboxClicked:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)deselect;

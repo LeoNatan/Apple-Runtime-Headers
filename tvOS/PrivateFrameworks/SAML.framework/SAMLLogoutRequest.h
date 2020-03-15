@@ -14,8 +14,8 @@
     SAMLLogoutRequestElement *_requestElement;
 }
 
-@property(retain, nonatomic) SAMLLogoutRequestElement *requestElement; // @synthesize requestElement=_requestElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SAMLLogoutRequestElement *requestElement; // @synthesize requestElement=_requestElement;
 @property(retain, nonatomic) NSDate *notOnOrAfter;
 @property(retain, nonatomic) NSString *reason;
 @property(retain, nonatomic) NSString *issuer;

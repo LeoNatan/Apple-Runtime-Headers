@@ -90,14 +90,6 @@ struct ModelPropertyBase {
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _field4;
 };
 
-struct NSMapTable {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct Predicate;
 
 struct PropertiesQuery;

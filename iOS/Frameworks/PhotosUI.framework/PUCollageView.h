@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)maximumNumberOfItems;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setRoundedCornerOverlayView:) PXRoundedCornerOverlayView *_roundedCornerOverlayView; // @synthesize _roundedCornerOverlayView=__roundedCornerOverlayView;
 @property(retain, nonatomic) UIColor *cornersBackgroundColor; // @synthesize cornersBackgroundColor=_cornersBackgroundColor;
 @property(readonly, nonatomic) NSPointerArray *_imageSizes; // @synthesize _imageSizes=__imageSizes;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) struct CGSize collageSize; // @synthesize collageSize=_collageSize;
-- (void).cxx_destruct;
 - (void)_updateRoundedCornerOverlayView;
 - (void)_updateImageViews;
 - (void)setHasRoundedCorners:(_Bool)arg1 withCornersBackgroundColor:(id)arg2;

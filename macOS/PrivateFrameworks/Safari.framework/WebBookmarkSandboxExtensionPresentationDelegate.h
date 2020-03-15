@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak BrowserWindowController *browserWindowController; // @synthesize browserWindowController=_browserWindowController;
-- (void).cxx_destruct;
 - (id)sandboxExtensionPresentationController:(id)arg1 windowForURL:(id)arg2;
 - (void)sandboxExtensionPresentationController:(id)arg1 configureOpenPanel:(id)arg2 forURL:(id)arg3;
 

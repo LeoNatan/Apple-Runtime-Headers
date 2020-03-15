@@ -14,9 +14,9 @@
     PLManagedAsset *_asset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLManagedAsset *asset; // @synthesize asset=_asset;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 
 @end
 

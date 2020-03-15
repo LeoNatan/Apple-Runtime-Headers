@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) DNDState *state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) DNDState *previousState; // @synthesize previousState=_previousState;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

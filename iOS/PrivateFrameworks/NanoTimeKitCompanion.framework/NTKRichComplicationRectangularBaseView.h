@@ -15,8 +15,8 @@
 
 + (void)updateCustomDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 animationType:(unsigned long long)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6;
 + (id)viewWithLegacyComplicationType:(unsigned long long)arg1;
-@property(nonatomic) __weak id <NTKRichComplicationRectangularBaseViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKRichComplicationRectangularBaseViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_transitToHighlightState:(_Bool)arg1 fraction:(double)arg2;
 - (id)_createAndAddColoringLabelWithFontSize:(double)arg1 weight:(double)arg2 usesTextProviderTintColoring:(_Bool)arg3;
 - (id)initWithFamily:(long long)arg1;

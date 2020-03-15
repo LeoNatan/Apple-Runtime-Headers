@@ -18,8 +18,8 @@
 + (_Bool)_shouldCopySpatialOverCaptureResourcesMetadataCopyOptions:(id)arg1;
 + (_Bool)_shouldCopyTitleDescriptionAndKeywordsForMetadataCopyOptions:(id)arg1;
 + (_Bool)_shouldBakeInAdjustmentsAndFlattenLivePhoto:(_Bool *)arg1 forSourceAsset:(id)arg2 adjustmentBakeInOptions:(id)arg3;
-@property(readonly, nonatomic) __weak NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 - (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (_Bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;

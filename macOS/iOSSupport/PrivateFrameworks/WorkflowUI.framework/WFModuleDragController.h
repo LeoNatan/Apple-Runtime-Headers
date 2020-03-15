@@ -15,9 +15,9 @@
 }
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFAction *sourceAction; // @synthesize sourceAction=_sourceAction;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (void)componentHostingViewDidInvalidateSize:(id)arg1;
 - (void)updateCurrentViewControllers;
 - (void)loadView;

@@ -32,6 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *tripPreviews; // @synthesize tripPreviews=_tripPreviews;
 @property(retain, nonatomic) id <CPNavigationSessionProviding> navigationSessionProvider; // @synthesize navigationSessionProvider=_navigationSessionProvider;
 @property(retain, nonatomic) id <CPBannerProviding> bannerProvider; // @synthesize bannerProvider=_bannerProvider;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSArray *mapButtons; // @synthesize mapButtons=_mapButtons;
 @property(nonatomic) unsigned long long tripEstimateStyle; // @synthesize tripEstimateStyle=_tripEstimateStyle;
 @property(retain, nonatomic) UIColor *guidanceBackgroundColor; // @synthesize guidanceBackgroundColor=_guidanceBackgroundColor;
-- (void).cxx_destruct;
 - (void)_updateBannerIfNecessaryForManeuver:(id)arg1 travelEstimates:(id)arg2;
 - (void)_postBannerIfNecessaryForNavigationAlert:(id)arg1;
 - (void)_postBannerIfNecessaryForManeuver:(id)arg1;

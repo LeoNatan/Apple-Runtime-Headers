@@ -16,10 +16,10 @@
 }
 
 + (id)tupleWithAccessoryUUID:(id)arg1 reachable:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool currentReachability; // @synthesize currentReachability=_currentReachability;
 @property(nonatomic) _Bool previouslySentReachability; // @synthesize previouslySentReachability=_previouslySentReachability;
 @property(retain, nonatomic) NSString *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

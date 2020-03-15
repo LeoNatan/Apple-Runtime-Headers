@@ -16,11 +16,11 @@
     NSString *_remainingInputString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *remainingInputString; // @synthesize remainingInputString=_remainingInputString;
 @property(copy) NSArray *remainingMecabraInputs; // @synthesize remainingMecabraInputs=_remainingMecabraInputs;
 @property(readonly, copy, nonatomic) NSString *convertedInput; // @synthesize convertedInput=_convertedInput;
 @property(readonly, copy, nonatomic) NSString *candidateText; // @synthesize candidateText=_candidateText;
-- (void).cxx_destruct;
 - (BOOL)canComposeNew:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCandidateText:(id)arg1 convertedInput:(id)arg2;

@@ -25,6 +25,7 @@
     CSLTimeBucketedCounter *_addCountMirrored;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool unbalancedCount; // @synthesize unbalancedCount=_unbalancedCount;
 @property(retain, nonatomic) CSLTimeBucketedCounter *addCountMirrored; // @synthesize addCountMirrored=_addCountMirrored;
 @property(retain, nonatomic) CSLTimeBucketedCounter *addCountLocal; // @synthesize addCountLocal=_addCountLocal;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool isRead; // @synthesize isRead=_isRead;
 @property(nonatomic) _Bool isCleared; // @synthesize isCleared=_isCleared;
 @property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool isWithdrawn;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)rebalanceCountWithTimeBucketInterval:(double)arg1;

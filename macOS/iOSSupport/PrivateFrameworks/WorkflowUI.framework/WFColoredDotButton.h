@@ -14,9 +14,9 @@
     UIView *_dotView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *dotView; // @synthesize dotView=_dotView;
 @property(copy, nonatomic) UIColor *dotColor; // @synthesize dotColor=_dotColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)contentEdgeInsets;
 

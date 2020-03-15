@@ -14,10 +14,9 @@ __attribute__((visibility("hidden")))
     BOOL _internalBuild;
     BOOL _seedBuild;
     BOOL _carrierBuild;
-    BOOL _dualSIMCapable;
-    BOOL _dualSIMEnabled;
     BOOL _basebandCapability;
     BOOL _internalBuildDisabledByOverride;
+    int _dualSIMCapability;
     int _deviceClass;
     NSString *_buildVariant;
     NSString *_productType;
@@ -31,7 +30,9 @@ __attribute__((visibility("hidden")))
     NSNumber *_seedBuildOverride;
 }
 
++ (void)setDeviceConfigTypeForSerialNumber:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *seedBuildOverride; // @synthesize seedBuildOverride=_seedBuildOverride;
 @property(retain, nonatomic) NSNumber *carrierSeedBuildOverride; // @synthesize carrierSeedBuildOverride=_carrierSeedBuildOverride;
 @property(nonatomic) BOOL internalBuildDisabledByOverride; // @synthesize internalBuildDisabledByOverride=_internalBuildDisabledByOverride;
@@ -44,9 +45,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL basebandCapability; // @synthesize basebandCapability=_basebandCapability;
 @property(readonly, nonatomic) int deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(readonly, nonatomic) NSString *productType; // @synthesize productType=_productType;
-@property(readonly, nonatomic) BOOL dualSIMEnabled; // @synthesize dualSIMEnabled=_dualSIMEnabled;
-@property(readonly, nonatomic) BOOL dualSIMCapable; // @synthesize dualSIMCapable=_dualSIMCapable;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) int dualSIMCapability; // @synthesize dualSIMCapability=_dualSIMCapability;
 @property(readonly, nonatomic) NSString *buildVariant; // @synthesize buildVariant=_buildVariant;
 @property(readonly, nonatomic) BOOL carrierSeedBuild; // @dynamic carrierSeedBuild;
 @property(readonly, nonatomic) BOOL carrierBuild; // @synthesize carrierBuild=_carrierBuild;
@@ -54,6 +53,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL seedBuild; // @synthesize seedBuild=_seedBuild;
 @property(readonly, nonatomic) BOOL internalBuild; // @synthesize internalBuild=_internalBuild;
 @property(readonly, nonatomic) NSString *deviceClassString;
+- (const char *)dualSIMCapabilityString;
 - (id)init;
 - (id)description;
 

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_backViewToContentConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *backViewToContentConstraint; // @synthesize backViewToContentConstraint=_backViewToContentConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *maxTitleViewWidthConstraint; // @synthesize maxTitleViewWidthConstraint=_maxTitleViewWidthConstraint;
 @property(retain, nonatomic) NSArray *buttonConstraints; // @synthesize buttonConstraints=_buttonConstraints;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImageView *backView; // @synthesize backView=_backView;
 @property(retain, nonatomic) UIView *focusedView; // @synthesize focusedView=_focusedView;
 @property(nonatomic) __weak id <_UIButtonBarAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
-- (void).cxx_destruct;
 - (void)_setupAlternateTitlesFromBarButtonItem:(id)arg1;
 - (id)_titleAlternativeForTitle:(id)arg1;
 - (BOOL)supportsBackButtons;

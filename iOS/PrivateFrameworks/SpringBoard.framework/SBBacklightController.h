@@ -21,10 +21,10 @@
 + (id)sharedInstanceIfExists;
 + (id)sharedInstance;
 + (id)_sharedInstanceCreateIfNeeded:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBHIDUILockAssertion *currentHIDUILockAssertion; // @synthesize currentHIDUILockAssertion=_currentHIDUILockAssertion;
 @property(readonly, nonatomic) long long lastBacklightChangeSource; // @synthesize lastBacklightChangeSource=_lastBacklightChangeSource;
 @property(readonly, nonatomic) _Bool isPendingScreenUnblankAfterCACommit; // @synthesize isPendingScreenUnblankAfterCACommit=_isPendingScreenUnblankAfterCACommit;
-- (void).cxx_destruct;
 - (double)defaultLockScreenDimIntervalWhenNotificationsPresent;
 - (double)defaultLockScreenDimInterval;
 - (void)preventIdleSleepForNumberOfSeconds:(float)arg1;

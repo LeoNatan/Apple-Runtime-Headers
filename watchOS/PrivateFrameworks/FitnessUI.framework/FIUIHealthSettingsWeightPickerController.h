@@ -18,8 +18,8 @@
     CDUnknownBlockType _weightUpdateHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType weightUpdateHandler; // @synthesize weightUpdateHandler=_weightUpdateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType weightUpdateHandler; // @synthesize weightUpdateHandler=_weightUpdateHandler;
 - (void)_updateWithWeightQuantity:(id)arg1;
 - (void)setWeightQuantity:(id)arg1;
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;

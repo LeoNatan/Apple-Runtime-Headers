@@ -30,6 +30,7 @@
     NSDictionary *_environmentVariables;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isExtension; // @synthesize isExtension=_isExtension;
 @property(readonly, nonatomic) _Bool usesSocketMonitoring; // @synthesize usesSocketMonitoring=_usesSocketMonitoring;
 @property(readonly, nonatomic) _Bool supportsUnboundedTaskCompletion; // @synthesize supportsUnboundedTaskCompletion=_supportsUnboundedTaskCompletion;
@@ -45,7 +46,6 @@
 @property(readonly, copy, nonatomic) NSString *executablePath;
 @property(readonly, copy, nonatomic) NSString *bundlePath;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier;
-- (void).cxx_destruct;
 - (id)bundleInfoValuesForKeys:(id)arg1;
 - (id)initWithApplicationProxy:(id)arg1;
 - (id)initWithBundleProxy:(id)arg1;

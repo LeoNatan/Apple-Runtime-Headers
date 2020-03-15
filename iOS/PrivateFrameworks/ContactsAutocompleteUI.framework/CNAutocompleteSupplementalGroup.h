@@ -15,10 +15,10 @@
     NSArray *_groupMembers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *groupMembers; // @synthesize groupMembers=_groupMembers;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 title:(id)arg2 members:(id)arg3;
 
 @end

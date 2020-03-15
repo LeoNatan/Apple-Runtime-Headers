@@ -20,10 +20,10 @@
 }
 
 + (id)sharedExtensionQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) CDUnknownBlockType requestInterruptionBlock; // @synthesize requestInterruptionBlock=_requestInterruptionBlock;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id)_hostContextForExtension:(id)arg1;

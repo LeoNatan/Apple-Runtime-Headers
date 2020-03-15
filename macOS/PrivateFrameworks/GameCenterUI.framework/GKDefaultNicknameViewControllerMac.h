@@ -31,6 +31,7 @@
     NSTextField *_mainTitle;
 }
 
+- (void).cxx_destruct;
 @property NSTextField *mainTitle; // @synthesize mainTitle=_mainTitle;
 @property GKGradientView *deleteLabelContainer; // @synthesize deleteLabelContainer=_deleteLabelContainer;
 @property NSTextField *deleteLabel; // @synthesize deleteLabel=_deleteLabel;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSMutableDictionary *analyticsPayload; // @synthesize analyticsPayload=_analyticsPayload;
 @property NSView *bubblePlaceholder; // @synthesize bubblePlaceholder=_bubblePlaceholder;
 @property __weak id <GKOnboardingFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didSelectToDeleteAvatar;
 - (void)mouseDidLeaveAvatarContainer;
 - (void)mouseDidEnterAvatarContainer;

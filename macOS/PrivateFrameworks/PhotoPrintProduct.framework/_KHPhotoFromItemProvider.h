@@ -19,10 +19,10 @@
 
 + (void)dumpCache:(id)arg1;
 + (id)_internalImageCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSExtensionContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSExtensionItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 - (id)pageLayoutImageSuitableForSize:(struct CGSize)arg1 quality:(unsigned long long)arg2;
 - (id)pageLayoutImageSuitableForSize:(struct CGSize)arg1;
 - (id)pageLayoutAspectRatioThumbnailImage;

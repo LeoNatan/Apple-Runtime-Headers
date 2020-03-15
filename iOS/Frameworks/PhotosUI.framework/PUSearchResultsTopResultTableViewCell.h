@@ -21,16 +21,17 @@
     NSMutableDictionary *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *items; // @synthesize items=_items;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(copy, nonatomic) NSArray *localAssetIdentifiers; // @synthesize localAssetIdentifiers=_localAssetIdentifiers;
 @property(nonatomic) __weak id <PUTopResultDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)numberOfItemsInCollectionView;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)_collectionViewCellSize;
 - (struct CGRect)frameForItemAtIndex:(unsigned long long)arg1;

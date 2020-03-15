@@ -15,8 +15,8 @@
 
 + (_Bool)isRunningInSiriPluggin;
 + (id)sharedInstance;
-@property(nonatomic) __weak UINavigationController *currentSiriNavController; // @synthesize currentSiriNavController=_currentSiriNavController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UINavigationController *currentSiriNavController; // @synthesize currentSiriNavController=_currentSiriNavController;
 - (id)init;
 
 @end

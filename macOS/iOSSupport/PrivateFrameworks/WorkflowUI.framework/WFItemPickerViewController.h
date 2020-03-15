@@ -23,17 +23,18 @@
 }
 
 + (void)presentAlert:(id)arg1 withUserInterface:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFAlertButton *leadingNavigationButton; // @synthesize leadingNavigationButton=_leadingNavigationButton;
 @property(copy, nonatomic) NSArray *trailingNavigationButtons; // @synthesize trailingNavigationButtons=_trailingNavigationButtons;
 @property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(copy, nonatomic) NSArray *allButtons; // @synthesize allButtons=_allButtons;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)replaceButtonAtIndex:(unsigned long long)arg1 withButton:(id)arg2 forAlert:(id)arg3;
 - (void)setButtons:(id)arg1 forAlert:(id)arg2;
 - (void)dismissAlert:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)presentationControllerDidDismiss:(id)arg1;
+- (void)scrollViewDidChangeAdjustedContentInset:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -44,6 +45,7 @@
 - (void)cancel;
 - (BOOL)accessibilityPerformEscape;
 - (void)trailingNavigationButtonTapped:(id)arg1;
+- (void)updatePreferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithAlert:(id)arg1;

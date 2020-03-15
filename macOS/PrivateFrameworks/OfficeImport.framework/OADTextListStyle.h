@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultObject;
-@property(retain, nonatomic) NSString *language; // @synthesize language=mLanguage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *language; // @synthesize language=mLanguage;
 - (id)description;
 - (void)enumerateParagraphPropertiesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeUnnecessaryOverrides;

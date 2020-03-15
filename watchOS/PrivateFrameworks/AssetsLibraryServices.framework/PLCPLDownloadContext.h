@@ -18,13 +18,13 @@
     double _updateLastQueuedTime;
 }
 
+- (void).cxx_destruct;
 @property double updateLastQueuedTime; // @synthesize updateLastQueuedTime=_updateLastQueuedTime;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property _Bool completed; // @synthesize completed=_completed;
 @property double progress; // @synthesize progress=_progress;
 @property(retain) NSString *resourceTypeDescription; // @synthesize resourceTypeDescription=_resourceTypeDescription;
 @property(retain) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
-- (void).cxx_destruct;
 - (void)updateFromDownloadStatusUserInfo:(id)arg1;
 - (id)description;
 

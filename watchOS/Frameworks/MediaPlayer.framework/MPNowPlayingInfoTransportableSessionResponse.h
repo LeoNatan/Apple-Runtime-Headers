@@ -16,10 +16,10 @@
 }
 
 + (id)responseWithIdentifier:(id)arg1 sessionType:(id)arg2 data:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) NSString *sessionType; // @synthesize sessionType=_sessionType;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_init;
 
 @end

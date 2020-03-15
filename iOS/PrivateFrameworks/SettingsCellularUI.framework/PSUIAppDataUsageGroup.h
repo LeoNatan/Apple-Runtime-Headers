@@ -19,10 +19,10 @@
     CTUIListLoadingGroup *_loadingGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CTUIListLoadingGroup *loadingGroup; // @synthesize loadingGroup=_loadingGroup;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
 - (void)calculateUsage;
 - (void)presentAlert:(id)arg1;
 - (void)didFailToSetPolicy:(id)arg1 forSpecifier:(id)arg2;

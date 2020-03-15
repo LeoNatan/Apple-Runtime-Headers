@@ -14,8 +14,8 @@
     KHFrame *_frameObject;
 }
 
-@property(readonly, nonatomic) KHFrame *frameObject; // @synthesize frameObject=_frameObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) KHFrame *frameObject; // @synthesize frameObject=_frameObject;
 - (void)viewDidLoad;
 - (void)zoomChanged:(id)arg1;
 @property(readonly, nonatomic) NSSlider *zoomSlider;

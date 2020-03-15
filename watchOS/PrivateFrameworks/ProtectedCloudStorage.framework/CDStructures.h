@@ -10,10 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSString {
-    Class _field1;
-};
-
 struct PCSAttributes {
     unsigned int _field1;
     struct PCSTypeValue *_field2;

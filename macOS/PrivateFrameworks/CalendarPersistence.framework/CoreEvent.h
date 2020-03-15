@@ -21,8 +21,8 @@
 + (id)event;
 + (id)entityFromManagedObject:(id)arg1 omitAttendees:(BOOL)arg2;
 + (id)entityFromManagedObject:(id)arg1;
-@property(readonly) BOOL hasEverUsedWorkingElswhere; // @synthesize hasEverUsedWorkingElswhere=_hasEverUsedWorkingElswhere;
 - (void).cxx_destruct;
+@property(readonly) BOOL hasEverUsedWorkingElswhere; // @synthesize hasEverUsedWorkingElswhere=_hasEverUsedWorkingElswhere;
 - (id)humanReadableRepeatDescription;
 - (void)_makeAlarmExchangeCompatible:(id)arg1;
 - (BOOL)_isAlarmExchangeCompatible:(id)arg1;

@@ -22,11 +22,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)build:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, copy, nonatomic) BKSHIDEventDeferringEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, copy, nonatomic) BKSHIDEventDisplay *display; // @synthesize display=_display;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

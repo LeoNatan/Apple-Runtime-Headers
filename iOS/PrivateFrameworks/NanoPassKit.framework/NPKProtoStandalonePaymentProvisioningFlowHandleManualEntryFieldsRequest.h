@@ -17,9 +17,9 @@
 }
 
 + (Class)manualEntryFieldsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *manualEntryFields; // @synthesize manualEntryFields=_manualEntryFields;
 @property(retain, nonatomic) NPKProtoStandaloneRequestHeader *requestHeader; // @synthesize requestHeader=_requestHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

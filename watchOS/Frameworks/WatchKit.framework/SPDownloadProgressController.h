@@ -34,6 +34,7 @@
     long long _fileSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float doneButtonTopMargin; // @synthesize doneButtonTopMargin=_doneButtonTopMargin;
 @property(nonatomic) float doneButtonLeftMargin; // @synthesize doneButtonLeftMargin=_doneButtonLeftMargin;
 @property(retain, nonatomic) NSError *moveFileError; // @synthesize moveFileError=_moveFileError;
@@ -51,7 +52,6 @@
 @property(nonatomic) __weak id <SPDownloadProgressControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSData *extensionATSContext; // @synthesize extensionATSContext=_extensionATSContext;
 @property(readonly, nonatomic) NSURL *assetURL; // @synthesize assetURL=_assetURL;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)cacheDirectoryURL;

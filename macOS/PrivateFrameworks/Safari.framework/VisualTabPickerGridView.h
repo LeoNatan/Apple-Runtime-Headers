@@ -28,11 +28,11 @@ __attribute__((visibility("hidden")))
     VisualTabPickerViewController *_visualTabPickerViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL gridAnimationInProgress; // @synthesize gridAnimationInProgress=_gridAnimationInProgress;
 @property(nonatomic) __weak VisualTabPickerViewController *visualTabPickerViewController; // @synthesize visualTabPickerViewController=_visualTabPickerViewController;
 @property(nonatomic) __weak id <VisualTabPickerGridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <VisualTabPickerGridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_updateVisibilityOfTileContainerViews;
 - (void)visibleBoundsDidChange;
 - (void)_computeArrayOfTabItemsPerContainer;

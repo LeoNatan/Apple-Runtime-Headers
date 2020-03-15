@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *certificate; // @synthesize certificate=_certificate;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) NSData *digest; // @synthesize digest=_digest;
 @property(readonly, nonatomic) NSString *modelHash; // @synthesize modelHash=_modelHash;
 @property(readonly, nonatomic) NSString *modelLocale; // @synthesize modelLocale=_modelLocale;
 @property(readonly, nonatomic) NSData *modelData; // @synthesize modelData=_modelData;
-- (void).cxx_destruct;
 - (id)description;
 - (id)builtInRTModelDictionary;
 - (void)encodeWithCoder:(id)arg1;

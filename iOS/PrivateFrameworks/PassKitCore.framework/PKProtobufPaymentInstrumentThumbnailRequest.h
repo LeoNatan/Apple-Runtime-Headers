@@ -22,11 +22,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(retain, nonatomic) NSString *manifestHash; // @synthesize manifestHash=_manifestHash;
 @property(retain, nonatomic) NSString *passIdentifier; // @synthesize passIdentifier=_passIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

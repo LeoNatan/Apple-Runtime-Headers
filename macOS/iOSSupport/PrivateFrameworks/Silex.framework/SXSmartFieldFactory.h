@@ -17,9 +17,9 @@
     id <SXActionSerializer> _actionSerializer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXActionSerializer> actionSerializer; // @synthesize actionSerializer=_actionSerializer;
 @property(readonly, nonatomic) id <SXActionProvider> actionProvider; // @synthesize actionProvider=_actionProvider;
-- (void).cxx_destruct;
 - (id)smartFieldForAddition:(id)arg1 withContext:(id)arg2;
 - (id)initWithActionProvider:(id)arg1 actionSerializer:(id)arg2;
 

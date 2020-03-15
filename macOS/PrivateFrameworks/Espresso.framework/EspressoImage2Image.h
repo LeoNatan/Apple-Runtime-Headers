@@ -46,10 +46,10 @@
 + (BOOL)loadStylesConfigAtDefaultsKey:(id)arg1;
 + (BOOL)loadStylesConfigAtPath:(id)arg1;
 + (void)setDefaultOption:(id)arg1 toValue:(id)arg2;
-@property(nonatomic) int flip_y; // @synthesize flip_y=_flip_y;
-@property(nonatomic) int rotation_degrees; // @synthesize rotation_degrees=_rotation_degrees;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) int flip_y; // @synthesize flip_y=_flip_y;
+@property(nonatomic) int rotation_degrees; // @synthesize rotation_degrees=_rotation_degrees;
 - (float)benchmark;
 - (void)aggregateWisdom:(struct wisdom_trainer2 *)arg1;
 - (void)_tune;

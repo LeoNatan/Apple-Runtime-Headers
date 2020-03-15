@@ -16,9 +16,9 @@
     ICShareNoteExporter *_noteExporter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICShareNoteExporter *noteExporter; // @synthesize noteExporter=_noteExporter;
 @property(retain, nonatomic) ICNote *note; // @synthesize note=_note;
-- (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

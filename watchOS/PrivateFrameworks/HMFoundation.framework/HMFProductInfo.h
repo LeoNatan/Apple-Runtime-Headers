@@ -24,9 +24,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)shortDescription;
 + (id)productInfo;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFSoftwareVersion *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
 @property(readonly) int productVariant; // @synthesize productVariant=_productVariant;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

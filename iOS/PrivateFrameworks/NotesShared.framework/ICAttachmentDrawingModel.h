@@ -16,8 +16,8 @@
 
 + (id)sharedDrawingController;
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
-@property(nonatomic) _Bool observingAttachment; // @synthesize observingAttachment=_observingAttachment;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool observingAttachment; // @synthesize observingAttachment=_observingAttachment;
 - (id)previewItemURL;
 - (id)previewItemTitle;
 - (id)previewImageURL;

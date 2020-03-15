@@ -16,9 +16,9 @@
     CDUnknownBlockType _didBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType didBlock; // @synthesize didBlock=_didBlock;
 @property(readonly, nonatomic) CDUnknownBlockType willBlock; // @synthesize willBlock=_willBlock;
-- (void).cxx_destruct;
 - (void)didHandleInteractionWithContext:(id)arg1;
 - (void)willHandleInteractionWithContext:(id)arg1;
 - (id)initWithDidHandleInteractionBlock:(CDUnknownBlockType)arg1;

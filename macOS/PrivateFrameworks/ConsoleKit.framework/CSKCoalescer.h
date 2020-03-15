@@ -28,6 +28,7 @@
     NSMutableArray *_itemsBuffer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *itemsBuffer; // @synthesize itemsBuffer=_itemsBuffer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *eventsSerialQueue; // @synthesize eventsSerialQueue=_eventsSerialQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *isolatedSerialQueue; // @synthesize isolatedSerialQueue=_isolatedSerialQueue;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) unsigned long long batchItemsLimit; // @synthesize batchItemsLimit=_batchItemsLimit;
 @property(readonly, nonatomic) float batchIntervalLeeway; // @synthesize batchIntervalLeeway=_batchIntervalLeeway;
 @property(readonly, nonatomic) double batchInterval; // @synthesize batchInterval=_batchInterval;
-- (void).cxx_destruct;
 - (void)_fireBatchEvent;
 - (CDUnknownBlockType)_timerInvocationHandler;
 - (id)_newTimer;

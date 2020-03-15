@@ -18,9 +18,9 @@
     struct CGSize _maximumSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize maximumSize; // @synthesize maximumSize=_maximumSize;
 @property(nonatomic) struct CGSize minimumSize; // @synthesize minimumSize=_minimumSize;
-- (void).cxx_destruct;
 - (void)_setMinimumSizeForScreen:(struct CGSize)arg1;
 - (void)_updateCompatibleSizeRestrictions;
 - (BOOL)_shouldOptOutOfCompatibleSizeRestrictions;

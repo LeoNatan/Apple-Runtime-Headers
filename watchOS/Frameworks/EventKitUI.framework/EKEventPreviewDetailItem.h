@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSDate *_proposedTime;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *proposedTime; // @synthesize proposedTime=_proposedTime;
 @property(nonatomic) _Bool inlineDayViewRespectsSelectedCalendarsFilter; // @synthesize inlineDayViewRespectsSelectedCalendarsFilter=_inlineDayViewRespectsSelectedCalendarsFilter;
-- (void).cxx_destruct;
 - (void)eventViewController:(id)arg1 didSelectReadOnlySubitem:(unsigned int)arg2;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (id)_dayPreviewViewController;

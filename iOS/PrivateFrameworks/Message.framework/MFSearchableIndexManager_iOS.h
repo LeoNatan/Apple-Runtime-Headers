@@ -18,10 +18,10 @@
     EDSearchableIndexScheduler *_scheduler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDSearchableIndexScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) EDSearchableIndexPersistence *persistence; // @synthesize persistence=_persistence;
 @property(retain, nonatomic) EDSearchableIndex *index; // @synthesize index=_index;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *currentReasons;
 @property(readonly, copy, nonatomic) NSSet *exclusionReasons;
 @property(readonly, copy, nonatomic) NSSet *purgeReasons;

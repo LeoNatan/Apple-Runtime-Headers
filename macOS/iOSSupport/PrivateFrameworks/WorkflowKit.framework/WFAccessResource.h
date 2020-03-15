@@ -22,11 +22,11 @@
 + (Class)perWorkflowStateClass;
 + (BOOL)isSystemResource;
 + (id)accessResourceFromDatabaseState:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NSObject> resourceAvailabilityChangedNotificationObserver; // @synthesize resourceAvailabilityChangedNotificationObserver=_resourceAvailabilityChangedNotificationObserver;
 @property(readonly, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(retain, nonatomic) id <WFAccessResourcePerWorkflowState> currentPerWorkflowState; // @synthesize currentPerWorkflowState=_currentPerWorkflowState;
 @property(nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (id)localizedAttemptRecoveryFromErrorMessage;
 @property(readonly, nonatomic) NSString *attemptRecoveryFromGlobalLevelErrorMessage;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 userInterface:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

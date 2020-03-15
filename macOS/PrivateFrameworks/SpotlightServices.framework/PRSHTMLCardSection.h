@@ -13,8 +13,8 @@
     NSString *_htmlString;
 }
 
-@property(retain, nonatomic) NSString *htmlString; // @synthesize htmlString=_htmlString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *htmlString; // @synthesize htmlString=_htmlString;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 

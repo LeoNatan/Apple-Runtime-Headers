@@ -14,8 +14,8 @@
     unsigned long long _acceptedTermsVersion;
 }
 
-@property(nonatomic) unsigned long long acceptedTermsVersion; // @synthesize acceptedTermsVersion=_acceptedTermsVersion;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long acceptedTermsVersion; // @synthesize acceptedTermsVersion=_acceptedTermsVersion;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)cancel;
 

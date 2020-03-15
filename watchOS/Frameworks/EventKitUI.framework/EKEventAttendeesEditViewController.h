@@ -18,10 +18,10 @@
     NSArray *_attendees;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appendOnly; // @synthesize appendOnly=_appendOnly;
 @property(copy, nonatomic) NSArray *attendees; // @synthesize attendees=_attendees;
 @property(nonatomic) _Bool disableShowingButtons; // @synthesize disableShowingButtons=_disableShowingButtons;
-- (void).cxx_destruct;
 - (_Bool)prefersToBePresentedFromUINavigationController;
 - (void)setSearchAccountID:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;

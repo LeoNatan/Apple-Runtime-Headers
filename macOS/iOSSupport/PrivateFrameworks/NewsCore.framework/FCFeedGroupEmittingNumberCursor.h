@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSNumber *number; // @synthesize number=_number;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *number; // @synthesize number=_number;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNumber:(id)arg1;

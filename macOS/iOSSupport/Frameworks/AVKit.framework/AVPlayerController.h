@@ -146,6 +146,7 @@
 + (id)canonicalLanguageIdentifierFromString:(id)arg1;
 + (id)keyPathsForValuesAffectingMaximumVideoResolution;
 + (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
 @property(nonatomic) double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
 @property(nonatomic) BOOL hasBegunInspection; // @synthesize hasBegunInspection=_hasBegunInspection;
@@ -182,7 +183,6 @@
 @property(nonatomic, getter=isAtMaxTime) BOOL atMaxTime; // @synthesize atMaxTime=_atMaxTime;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;
 - (void)_updateRateForScrubbingAndSeeking;

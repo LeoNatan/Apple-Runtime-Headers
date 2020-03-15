@@ -20,13 +20,13 @@
     NSSet *_disabledActionTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *disabledActionTypes; // @synthesize disabledActionTypes=_disabledActionTypes;
 @property(readonly, nonatomic, getter=isFaceModeEnabled) _Bool faceModeEnabled; // @synthesize faceModeEnabled=_faceModeEnabled;
 @property(readonly, nonatomic) _Bool supportsFaceMode; // @synthesize supportsFaceMode=_supportsFaceMode;
 @property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(readonly, nonatomic) _Bool supportsSelection; // @synthesize supportsSelection=_supportsSelection;
 @property(readonly, nonatomic, getter=isSelecting) _Bool selecting; // @synthesize selecting=_selecting;
-- (void).cxx_destruct;
 - (void)setDisabledActionTypes:(id)arg1;
 - (void)setFaceModeEnabled:(_Bool)arg1;
 - (void)setSupportsFaceMode:(_Bool)arg1;

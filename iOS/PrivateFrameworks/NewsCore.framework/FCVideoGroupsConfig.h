@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *configDictionary; // @synthesize configDictionary=_configDictionary;
 @property(copy, nonatomic) NTPBVideoGroupsConfig *pbVideoGroupsConfig; // @synthesize pbVideoGroupsConfig=_pbVideoGroupsConfig;
 @property(nonatomic) unsigned long long moreVideosGroupFilterOption; // @synthesize moreVideosGroupFilterOption=_moreVideosGroupFilterOption;
 @property(nonatomic) unsigned long long moreVideosGroupSortOption; // @synthesize moreVideosGroupSortOption=_moreVideosGroupSortOption;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

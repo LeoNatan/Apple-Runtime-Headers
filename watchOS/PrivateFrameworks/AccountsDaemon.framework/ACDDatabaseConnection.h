@@ -19,14 +19,17 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ACDDatabaseConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
-- (void).cxx_destruct;
 - (void)_delegate_databaseConnectionEncounteredUnrecoverableError:(id)arg1;
 - (void)_endObservingManagedObjectContextDidSaveNotifications;
 - (void)_managedObjectContextDidSave:(id)arg1;
 - (void)_beginObservingManagedObjectContextDidSaveNotifications;
+- (id)_managedObjectModificationDescription:(id)arg1;
+- (id)_managedObjectContextModificationDescription;
+- (void)_traceDatabaseEvents;
 - (void)_handleManagedObjectContextError:(id)arg1;
 - (void)_setupManagedObjectContextWithPersistentStoreCoodinator:(id)arg1;
 - (_Bool)saveWithError:(id *)arg1 rollbackOnFailure:(_Bool)arg2;

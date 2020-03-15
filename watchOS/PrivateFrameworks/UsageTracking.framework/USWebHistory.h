@@ -13,8 +13,8 @@
     id <_DKKnowledgeDeleting><_DKKnowledgeQuerying> _eventStorage;
 }
 
-@property(readonly) id <_DKKnowledgeDeleting><_DKKnowledgeQuerying> eventStorage; // @synthesize eventStorage=_eventStorage;
 - (void).cxx_destruct;
+@property(readonly) id <_DKKnowledgeDeleting><_DKKnowledgeQuerying> eventStorage; // @synthesize eventStorage=_eventStorage;
 - (void)_deleteEventsWithPredicate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteAllHistoryForApplication:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteHistoryDuringInterval:(id)arg1 webApplication:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

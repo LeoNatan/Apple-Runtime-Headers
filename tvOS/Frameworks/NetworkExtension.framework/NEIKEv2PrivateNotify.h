@@ -16,9 +16,9 @@
     NSData *_notifyData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *notifyData; // @synthesize notifyData=_notifyData;
 @property(nonatomic) unsigned short notifyStatus; // @synthesize notifyStatus=_notifyStatus;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

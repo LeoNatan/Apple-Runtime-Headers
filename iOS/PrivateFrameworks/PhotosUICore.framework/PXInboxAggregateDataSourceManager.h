@@ -16,8 +16,8 @@
     NSArray *_dataSourceManagers;
 }
 
-@property(readonly, nonatomic) NSArray *dataSourceManagers; // @synthesize dataSourceManagers=_dataSourceManagers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *dataSourceManagers; // @synthesize dataSourceManagers=_dataSourceManagers;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)_dataSourceSnapshot;
 - (void)_updateDataSource;

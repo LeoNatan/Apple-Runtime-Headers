@@ -22,11 +22,11 @@
     float _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_updateDownloadingRingProgressLayerStrokeEnd;
 - (id)_ringPath;
 - (struct CGRect)_contentFrame;

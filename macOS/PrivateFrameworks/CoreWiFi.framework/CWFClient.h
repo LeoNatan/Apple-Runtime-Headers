@@ -24,12 +24,12 @@
     NSXPCConnection *_XPCConnection;
 }
 
+- (void).cxx_destruct;
 @property BOOL invalidated; // @synthesize invalidated=_invalidated;
 @property BOOL activated; // @synthesize activated=_activated;
 @property(readonly, nonatomic) NSXPCConnection *XPCConnection; // @synthesize XPCConnection=_XPCConnection;
 @property(readonly) long long XPCServiceType; // @synthesize XPCServiceType=_XPCServiceType;
 @property(copy) SFAuthorization *authorization; // @synthesize authorization=_authorization;
-- (void).cxx_destruct;
 - (void)proxy:(id)arg1 receivedEvent:(id)arg2;
 - (id)deviceUUID;
 - (unsigned int)reachabilityFlags;

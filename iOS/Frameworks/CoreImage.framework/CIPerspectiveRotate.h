@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)customAttributes;
+- (id).cxx_construct;
 @property(copy, nonatomic) NSNumber *inputRoll; // @synthesize inputRoll;
 @property(copy, nonatomic) NSNumber *inputYaw; // @synthesize inputYaw;
 @property(copy, nonatomic) NSNumber *inputPitch; // @synthesize inputPitch;
 @property(copy, nonatomic) NSNumber *inputFocalLength; // @synthesize inputFocalLength;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage;
-- (id).cxx_construct;
 - (id)outputImage;
 // Error parsing type for property outputTransform:
 // Property attributes: T{?=[3]},R,N

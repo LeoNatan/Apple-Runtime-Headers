@@ -16,11 +16,11 @@
     NSHashTable *_labels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *labels; // @synthesize labels=_labels;
 @property(nonatomic) double additionalPaddingInsets; // @synthesize additionalPaddingInsets=_additionalPaddingInsets;
 @property(nonatomic) double outlineAlpha; // @synthesize outlineAlpha=_outlineAlpha;
 @property(retain, nonatomic) UIColor *outlineColor; // @synthesize outlineColor=_outlineColor;
-- (void).cxx_destruct;
 - (id)_newUnderlyingLabel:(_Bool)arg1;
 - (id)initWithTimeLabelOptions:(unsigned long long)arg1 forDevice:(id)arg2 additionalPaddingInsets:(double)arg3;
 

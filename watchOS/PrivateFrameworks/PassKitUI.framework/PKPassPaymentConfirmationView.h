@@ -9,12 +9,11 @@
 #import <PassKitUI/PKPassPaymentPayStateViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class NSDate, NSMutableDictionary, NSObject, NSString, PKExpressTransactionState, PKFooterTransactionView, PKPassPaymentPayStateView, PKPaymentService, PKTransitBalanceModel;
-@protocol OS_dispatch_source;
+@class NSDate, NSMutableDictionary, NSObject, NSString, PKExpressTransactionState, PKPassPaymentPayStateView, PKPaymentService, PKTransitBalanceModel, UIView;
+@protocol OS_dispatch_source, PKPaymentDashboardCellActionHandleable;
 
 @interface PKPassPaymentConfirmationView : PKPassFooterContentView <PKPassPaymentPayStateViewDelegate, PKPaymentServiceDelegate>
 {
-    PKFooterTransactionView *_transactionView;
     PKPassPaymentPayStateView *_payStateView;
     _Bool _animated;
     PKExpressTransactionState *_expressState;
@@ -31,6 +30,10 @@
     NSMutableDictionary *_registeredExpressObservers;
     PKPaymentService *_paymentService;
     PKTransitBalanceModel *_transitBalanceModel;
+    UIView<PKPaymentDashboardCellActionHandleable> *_singleValueCellPrimary;
+    UIView<PKPaymentDashboardCellActionHandleable> *_singleValueCellSecondary;
+    UIView<PKPaymentDashboardCellActionHandleable> *_dualValueCellPrimary;
+    UIView<PKPaymentDashboardCellActionHandleable> *_displayedCellPrimary;
 }
 
 - (void).cxx_destruct;
@@ -45,9 +48,6 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)payStateView:(id)arg1 revealingCheckmark:(_Bool)arg2;
-- (void)_updateContentViewsWithTransaction:(id)arg1 transitBalanceModel:(id)arg2;
-- (void)_updateContentViewsWithTransitBalanceModel:(id)arg1;
-- (void)_updateContentViewsWithTransaction:(id)arg1;
 - (void)_resolveActivityIfNecessary;
 - (void)_resolveActivityIfNecessaryWithDelay;
 - (void)_beginResolution;
@@ -60,6 +60,13 @@
 - (void)layoutSubviews;
 - (void)layoutIfNeededAnimated:(_Bool)arg1;
 - (void)dealloc;
+- (void)_updateContentSecondaryView;
+- (void)_updateContentPrimaryView;
+- (_Bool)_shouldDisplaySecondaryView;
+- (_Bool)_shouldDisplayPrimaryView;
+- (id)_findOrCreateSecondaryView;
+- (id)_findOrCreatePrimaryFusedDoubleCellView;
+- (id)_findOrCreatePrimaryAdjustableSingleCellView;
 - (id)initWithPass:(id)arg1 context:(id)arg2;
 
 // Remaining properties

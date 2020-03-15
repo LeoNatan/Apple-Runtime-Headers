@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)stringForInsufficientDiskSpaceMessageWithFileName:(id)arg1 volumeName:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DownloadAlertsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DownloadAlertsManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)alertInsufficientDiskSpaceSheetForDownloadWithFilename:(id)arg1 atPath:(id)arg2;
 - (void)alertInvalidDownloadFileErrorForPath:(id)arg1;
 - (void)_showTerminationPrompt;

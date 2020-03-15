@@ -29,8 +29,8 @@
     _Bool _isPreinstallingViewControllerActive;
 }
 
-@property _Bool isPreinstallingViewControllerActive; // @synthesize isPreinstallingViewControllerActive=_isPreinstallingViewControllerActive;
 - (void).cxx_destruct;
+@property _Bool isPreinstallingViewControllerActive; // @synthesize isPreinstallingViewControllerActive=_isPreinstallingViewControllerActive;
 - (void)_requestPendingInstallItems;
 - (void)_requestTransferPlanList;
 - (void)_maybeShowPreinstallConsentOnViewController:(id)arg1;

@@ -15,10 +15,10 @@
     EKEventMapDetailItem *_detailItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL mapViewSetup; // @synthesize mapViewSetup=_mapViewSetup;
 @property(nonatomic) BOOL currentlyLoading; // @synthesize currentlyLoading=_currentlyLoading;
 @property(nonatomic) __weak EKEventMapDetailItem *detailItem; // @synthesize detailItem=_detailItem;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)_drawSeparatorInRect:(struct CGRect)arg1;

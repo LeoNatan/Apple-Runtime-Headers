@@ -13,8 +13,8 @@
     WFModuleOutputModel *_model;
 }
 
-@property(retain, nonatomic) WFModuleOutputModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFModuleOutputModel *model; // @synthesize model=_model;
 - (void)updateImages;
 - (void)tintColorDidChange;
 

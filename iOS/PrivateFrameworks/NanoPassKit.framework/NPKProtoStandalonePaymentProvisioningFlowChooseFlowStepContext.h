@@ -16,8 +16,8 @@
 }
 
 + (Class)sectionsType;
-@property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

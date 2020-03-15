@@ -32,6 +32,7 @@
     double __timestampBeganShowing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setTimestampBeganShowing:) double _timestampBeganShowing; // @synthesize _timestampBeganShowing=__timestampBeganShowing;
 @property(nonatomic, setter=_setCurrentState:) long long _currentState; // @synthesize _currentState=__currentState;
 @property(nonatomic) BOOL showsBackground; // @synthesize showsBackground=_showsBackground;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *localizedMessage; // @synthesize localizedMessage=_localizedMessage;
 @property(nonatomic) double currentProgress; // @synthesize currentProgress=_currentProgress;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_endShowingProgressIfReady;
 - (void)endShowingProgressImmediately:(BOOL)arg1 animated:(BOOL)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_handleBeginShowingAnimated:(BOOL)arg1 wasImmediate:(BOOL)arg2;

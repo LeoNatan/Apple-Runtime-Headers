@@ -19,10 +19,10 @@
 }
 
 + (struct CGSize)fileIconSize;
+- (void).cxx_destruct;
 @property __weak EKUIAttachmentGadget *gadget; // @synthesize gadget=_gadget;
 @property(retain) EKUITokenField *tokenField; // @synthesize tokenField=_tokenField;
 @property(retain, nonatomic) EKAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (BOOL)tokenField:(id)arg1 writeRepresentedObjects:(id)arg2 toPasteboard:(id)arg3;
 - (BOOL)tokenField:(id)arg1 hasMenuForRepresentedObject:(id)arg2;
 - (id)tokenField:(id)arg1 menuForRepresentedObject:(id)arg2;

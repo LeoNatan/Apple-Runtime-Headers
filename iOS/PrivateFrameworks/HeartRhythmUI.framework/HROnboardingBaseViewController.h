@@ -21,6 +21,7 @@
     NSLayoutConstraint *_scrollViewBottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *scrollViewBottomConstraint; // @synthesize scrollViewBottomConstraint=_scrollViewBottomConstraint;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) id <HROnboardingPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic, getter=isOnboarding) _Bool onboarding; // @synthesize onboarding=_onboarding;
-- (void).cxx_destruct;
 - (double)contentTop;
 - (double)titleTopToFirstBaseline;
 - (double)_titleTopToFirstBaselineLeading;

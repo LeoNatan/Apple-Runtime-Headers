@@ -14,9 +14,9 @@
     struct UIEdgeInsets _glyphInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFWorkflowIconDrawer *iconDrawer; // @synthesize iconDrawer=_iconDrawer;
 @property(nonatomic) struct UIEdgeInsets glyphInsets; // @synthesize glyphInsets=_glyphInsets;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *glyphColor;
 @property(nonatomic) unsigned short glyphCharacter;
 - (void)drawRect:(struct CGRect)arg1;

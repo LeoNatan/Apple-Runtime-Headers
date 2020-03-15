@@ -17,13 +17,12 @@
     CDStruct_4c969caf _auditToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(readonly, nonatomic) CDStruct_4c969caf auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (void)relatedExtensionsForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)changeUserWebSearchProviderInfoTo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)loadLinkPresentationMetdataForMessageWithGUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_sandboxFileExtensionForURL:(id)arg1 class:(const char *)arg2;
 - (id)_URLsRelatedToURL:(id)arg1 containingOriginalURL:(char *)arg2;
 - (id)initWithPID:(int)arg1 auditToken:(CDStruct_4c969caf)arg2;

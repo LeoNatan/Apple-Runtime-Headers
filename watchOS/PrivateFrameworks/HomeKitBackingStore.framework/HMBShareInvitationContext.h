@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) CKUserIdentityLookupInfo *lookupInfo; // @synthesize lookupInfo=_lookupInfo;
 @property _Bool shouldGrantWriteAccess; // @synthesize shouldGrantWriteAccess=_shouldGrantWriteAccess;
 @property(readonly, copy) NSUUID *participantClientIdentifier; // @synthesize participantClientIdentifier=_participantClientIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -17,9 +17,9 @@
     NSMapTable *_timerMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMapTable *timerMap; // @synthesize timerMap=_timerMap;
 @property(readonly) NSObject<OS_dispatch_queue> *timerQueue; // @synthesize timerQueue=_timerQueue;
-- (void).cxx_destruct;
 - (void)_queue_handleTimerFired:(id)arg1;
 - (void)scheduleTimer:(id)arg1;
 - (id)init;

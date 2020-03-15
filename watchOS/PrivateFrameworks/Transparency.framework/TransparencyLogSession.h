@@ -13,31 +13,25 @@
 
 @interface TransparencyLogSession : NSObject <NSURLSessionDelegate>
 {
+    NSObject<OS_dispatch_workloop> *_workloop;
     unsigned int _fetchCount;
     unsigned int _downloadCount;
     NSURLSession *_backgroundSession;
     NSURLSession *_foregroundSession;
-    NSObject<OS_dispatch_workloop> *_workloop;
 }
 
-+ (id)requestDownloadLocation:(id)arg1 error:(id *)arg2;
-+ (id)requestDownloadFilename:(id)arg1;
-+ (id)requestIdentifier:(id)arg1;
-@property(retain) NSObject<OS_dispatch_workloop> *workloop; // @synthesize workloop=_workloop;
++ (id)createErrorFromURLResonse:(id)arg1 data:(id)arg2 error:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSURLSession *foregroundSession; // @synthesize foregroundSession=_foregroundSession;
 @property(retain) NSURLSession *backgroundSession; // @synthesize backgroundSession=_backgroundSession;
 @property unsigned int downloadCount; // @synthesize downloadCount=_downloadCount;
 @property unsigned int fetchCount; // @synthesize fetchCount=_fetchCount;
-- (void).cxx_destruct;
-- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
-- (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
-- (void)URLSession:(id)arg1 task:(id)arg2 _willSendRequestForEstablishedConnection:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (_Bool)download:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(retain) NSObject<OS_dispatch_workloop> *workloop; // @synthesize workloop=_workloop;
+- (void)download:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)fetch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)createErrorFromURLResonse:(id)arg1 data:(id)arg2 error:(id)arg3;
 - (id)createAuthenticatedForegroundSession;
-- (id)initWithWorkloop:(id)arg1;
+- (id)createAuthenticatedBackgroundSession:(id)arg1 delegateQueue:(id)arg2;
+- (id)initWithWorkloop:(id)arg1 sessionDelegate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

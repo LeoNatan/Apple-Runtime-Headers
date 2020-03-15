@@ -14,9 +14,9 @@
     WKNavigationAction *_navigationAction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WKNavigationAction *navigationAction; // @synthesize navigationAction=_navigationAction;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (id)initWithWebView:(id)arg1 navigationAction:(id)arg2;
 
 @end

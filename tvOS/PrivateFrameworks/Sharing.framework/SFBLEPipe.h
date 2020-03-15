@@ -9,7 +9,7 @@
 #import <Sharing/CBCentralManagerDelegate-Protocol.h>
 #import <Sharing/CBScalablePipeManagerDelegate-Protocol.h>
 
-@class CBCentralManager, CBScalablePipe, CBScalablePipeManager, NSData, NSDate, NSMutableData, NSString, SFBLEData;
+@class CBCentralManager, CBScalablePipe, CBScalablePipeManager, NSData, NSDate, NSMutableArray, NSMutableData, NSMutableDictionary, NSString, SFBLEData;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFBLEPipe : NSObject <CBCentralManagerDelegate, CBScalablePipeManagerDelegate>
@@ -33,13 +33,13 @@
     unsigned long long _btWriteLen;
     unsigned long long _btWriteOffset;
     const char *_btWritePtr;
-    struct NSMutableArray *_btWriteQueue;
+    NSMutableArray *_btWriteQueue;
     struct channel_ring_desc *_btWriteRing;
     NSObject<OS_dispatch_source> *_btWriteSource;
     _Bool _btWriteSuspended;
     CBScalablePipe *_btPipe;
     CBScalablePipeManager *_btPipeManager;
-    struct NSMutableDictionary *_frameHandlers;
+    NSMutableDictionary *_frameHandlers;
     _Bool _invalidateCalled;
     NSDate *_lastDisconnectDate;
     struct LogCategory *_ucat;
@@ -52,6 +52,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool manualConnect; // @synthesize manualConnect=_manualConnect;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) CDUnknownBlockType frameHandler; // @synthesize frameHandler=_frameHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionStateChangedHandler; // @synthesize connectionStateChangedHandler=_connectionStateChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
-- (void).cxx_destruct;
 - (void)postedConnectionStateChanged;
 - (void)scalablePipeManager:(id)arg1 pipeDidDisconnect:(id)arg2 error:(id)arg3;
 - (void)scalablePipeManager:(id)arg1 pipeDidConnect:(id)arg2;

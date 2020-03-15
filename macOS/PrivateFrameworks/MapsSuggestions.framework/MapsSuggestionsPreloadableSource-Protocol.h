@@ -6,9 +6,9 @@
 
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class CLLocation;
+@class CLLocation, NSDateInterval;
 
 @protocol MapsSuggestionsPreloadableSource <MapsSuggestionsSource>
-- (BOOL)suggestionsEntriesAtLocation:(CLLocation *)arg1 period:(struct NSDateInterval *)arg2 handler:(void (^)(struct NSArray *, NSError *))arg3;
+- (BOOL)suggestionsEntriesAtLocation:(CLLocation *)arg1 period:(NSDateInterval *)arg2 handler:(void (^)(NSArray *, NSError *))arg3;
 @end
 

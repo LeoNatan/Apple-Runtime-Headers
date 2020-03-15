@@ -22,13 +22,13 @@
 
 + (unsigned long long)criteriaForLocationLabel:(id)arg1;
 + (id)contextItemWithRelatedType:(unsigned long long)arg1 score:(double)arg2 criteria:(unsigned long long)arg3 referenceNode:(id)arg4 matchedNode:(id)arg5 contextNodes:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *contextNodes; // @synthesize contextNodes=_contextNodes;
 @property(readonly, nonatomic) PGGraphNode *matchedNode; // @synthesize matchedNode=_matchedNode;
 @property(readonly, nonatomic) PGGraphNode *referenceNode; // @synthesize referenceNode=_referenceNode;
 @property(nonatomic) unsigned long long criteria; // @synthesize criteria=_criteria;
 @property(readonly, nonatomic) unsigned long long relatedType; // @synthesize relatedType=_relatedType;
 @property(nonatomic) double score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToContextItem:(id)arg1;

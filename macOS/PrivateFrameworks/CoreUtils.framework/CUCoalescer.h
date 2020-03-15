@@ -22,13 +22,13 @@
     double _minDelay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minDelay; // @synthesize minDelay=_minDelay;
 @property(nonatomic) double maxDelay; // @synthesize maxDelay=_maxDelay;
 @property(nonatomic) double leeway; // @synthesize leeway=_leeway;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
-- (void).cxx_destruct;
 - (void)_timerFired;
 - (void)_cancel;
 - (void)cancel;

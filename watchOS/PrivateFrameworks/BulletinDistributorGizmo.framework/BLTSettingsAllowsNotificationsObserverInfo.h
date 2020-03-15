@@ -15,9 +15,9 @@
     NSMutableSet *_sectionIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *sectionIDs; // @synthesize sectionIDs=_sectionIDs;
 @property(nonatomic) __weak id <BLTSettingsAllowsNotificationsObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,9 +16,9 @@
     NSDictionary *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) unsigned char triggerSourceType; // @synthesize triggerSourceType=_triggerSourceType;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

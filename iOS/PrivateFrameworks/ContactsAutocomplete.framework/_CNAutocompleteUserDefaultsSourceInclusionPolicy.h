@@ -15,8 +15,8 @@
     CNUserDefaults *_userDefaults;
 }
 
-@property(readonly) CNUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (void).cxx_destruct;
+@property(readonly) CNUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly) _Bool includeSupplementalResults;
 @property(readonly) _Bool includeCalendarServers;
 @property(readonly) _Bool includeDirectoryServers;

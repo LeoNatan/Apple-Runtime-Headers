@@ -17,8 +17,8 @@
     NSTimer *_timeoutTimer;
 }
 
-@property(readonly, retain, nonatomic) SSRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) SSRequest *request; // @synthesize request=_request;
 - (void)_timerDidFire:(id)arg1;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;

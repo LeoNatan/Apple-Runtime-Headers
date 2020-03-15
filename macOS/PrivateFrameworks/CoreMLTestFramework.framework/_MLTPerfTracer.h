@@ -15,10 +15,10 @@
     NSMutableDictionary *__energyMeasurements;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *_energyMeasurements; // @synthesize _energyMeasurements=__energyMeasurements;
 @property(retain) NSMutableDictionary *_cpuMemoryMeasurements; // @synthesize _cpuMemoryMeasurements=__cpuMemoryMeasurements;
 @property(retain) NSMutableDictionary *_timingMeasurements; // @synthesize _timingMeasurements=__timingMeasurements;
-- (void).cxx_destruct;
 - (id)allMemoryMeasurementsForComputeUnit:(long long)arg1 error:(id *)arg2;
 - (id)memoryMeasurementsForComputeUnit:(long long)arg1 label:(id)arg2 error:(id *)arg3;
 - (id)memoryMeasurementsForComputeUnit:(long long)arg1;

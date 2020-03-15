@@ -16,10 +16,11 @@
     UIView *_view;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) long long subviewIndex; // @synthesize subviewIndex=_subviewIndex;
 @property(nonatomic) __weak id <UIAccessibilityElementMockViewDelegateProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (_Bool)canBecomeFocused;
 - (unsigned long long)_accessibilityPositionInDirection:(long long)arg1 offset:(unsigned long long)arg2 forPosition:(unsigned long long)arg3;
 - (struct _NSRange)_accessibilityRangeForLineNumberAndColumn:(id)arg1;
 - (struct _NSRange)_accessibilityLineRangeForPosition:(unsigned long long)arg1;

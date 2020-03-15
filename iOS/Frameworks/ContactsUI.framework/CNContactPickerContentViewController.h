@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     _Bool _allowsEditing;
     _Bool _allowsCancel;
     _Bool _allowsDeletion;
+    _Bool _allowsDone;
     _Bool _hidesPromptInLandscape;
     id <CNContactPickerContentDelegate> _delegate;
     CNContactNavigationController *_contactNavigationController;
@@ -45,6 +46,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptorForContactPropertiesSupportingPredicateEvaluation;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
 @property(retain, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 @property(retain, nonatomic) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
@@ -55,6 +57,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *bannerTitle; // @synthesize bannerTitle=_bannerTitle;
 @property(nonatomic) _Bool hidesPromptInLandscape; // @synthesize hidesPromptInLandscape=_hidesPromptInLandscape;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
+@property(nonatomic) _Bool allowsDone; // @synthesize allowsDone=_allowsDone;
 @property(nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;
 @property(nonatomic) _Bool allowsCancel; // @synthesize allowsCancel=_allowsCancel;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
@@ -72,7 +75,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool clientWantsSingleProperty; // @synthesize clientWantsSingleProperty=_clientWantsSingleProperty;
 @property(nonatomic) _Bool clientWantsSingleContact; // @synthesize clientWantsSingleContact=_clientWantsSingleContact;
 @property(nonatomic) __weak id <CNContactPickerContentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_selectedProperties:(id)arg1;
 - (void)_selectedContacts:(id)arg1;
 - (void)_selectedProperty:(id)arg1;

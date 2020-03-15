@@ -23,12 +23,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double creditLimit; // @synthesize creditLimit=_creditLimit;
 @property(nonatomic) double currentBalance; // @synthesize currentBalance=_currentBalance;
 @property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(retain, nonatomic) NPKProtoStandalonePaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(retain, nonatomic) NPKProtoStandalonePaymentCredential *paymentCredential; // @synthesize paymentCredential=_paymentCredential;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

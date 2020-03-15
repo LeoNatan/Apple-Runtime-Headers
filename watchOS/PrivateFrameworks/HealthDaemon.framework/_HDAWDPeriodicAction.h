@@ -35,9 +35,9 @@
     NSString *_taskName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *taskName; // @synthesize taskName=_taskName;
 @property(readonly, nonatomic) int waitingToRun; // @synthesize waitingToRun=_waitingToRun;
-- (void).cxx_destruct;
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)periodicActivity:(id)arg1 configureXPCActivityCriteria:(id)arg2;
 - (_Bool)doForced;

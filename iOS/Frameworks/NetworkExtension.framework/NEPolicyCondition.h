@@ -65,6 +65,7 @@
 + (id)effectivePID:(int)arg1;
 + (id)realApplication:(id)arg1;
 + (id)effectiveApplication:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *agentType; // @synthesize agentType=_agentType;
 @property(copy) NSString *agentDomain; // @synthesize agentDomain=_agentDomain;
 @property(copy) NSString *customEntitlement; // @synthesize customEntitlement=_customEntitlement;
@@ -83,7 +84,6 @@
 @property(copy) NSUUID *applicationUUID; // @synthesize applicationUUID=_applicationUUID;
 @property(getter=isNegative) _Bool negative; // @synthesize negative=_negative;
 @property long long conditionType; // @synthesize conditionType=_conditionType;
-- (void).cxx_destruct;
 - (_Bool)addTLVsToMessage:(id)arg1;
 - (unsigned char)conditionTypeValue;
 - (id)conditionTypeString;

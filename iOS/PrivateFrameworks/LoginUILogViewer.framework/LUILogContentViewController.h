@@ -26,6 +26,7 @@
     UILabel *_scrollIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *scrollIndicatorView; // @synthesize scrollIndicatorView=_scrollIndicatorView;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(retain, nonatomic) UIView *textViewHolderView; // @synthesize textViewHolderView=_textViewHolderView;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) LUILogOptionsView *logOptionsView; // @synthesize logOptionsView=_logOptionsView;
 @property(nonatomic) __weak id <LUILogContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;

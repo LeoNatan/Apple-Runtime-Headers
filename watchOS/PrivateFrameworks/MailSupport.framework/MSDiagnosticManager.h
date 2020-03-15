@@ -16,8 +16,8 @@
 }
 
 + (id)log;
-@property(readonly, nonatomic) AWDServerConnection *awdServerConnection; // @synthesize awdServerConnection=_awdServerConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AWDServerConnection *awdServerConnection; // @synthesize awdServerConnection=_awdServerConnection;
 - (void)submitFetchMetricsReport:(id)arg1;
 - (void)submitComposeAttachmentReport:(id)arg1;
 - (void)submitMessageLoadingReport:(id)arg1;

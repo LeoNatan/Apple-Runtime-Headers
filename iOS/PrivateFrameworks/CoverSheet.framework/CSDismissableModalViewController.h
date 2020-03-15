@@ -19,9 +19,9 @@
     id <CSModalHomeAffordanceControlling> _homeAffordanceController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CSModalHomeAffordanceControlling> homeAffordanceController; // @synthesize homeAffordanceController=_homeAffordanceController;
 @property(nonatomic) __weak id <CSDismissableModalViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)aggregateBehavior:(id)arg1;
 - (_Bool)wouldHandleButtonEvent:(id)arg1;
 - (_Bool)handleEvent:(id)arg1;

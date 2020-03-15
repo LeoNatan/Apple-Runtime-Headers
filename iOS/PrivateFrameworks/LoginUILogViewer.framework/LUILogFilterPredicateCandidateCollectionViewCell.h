@@ -13,8 +13,8 @@
     UILabel *_titleLabel;
 }
 
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (id)_createTitleLabel;
 - (void)layoutSubViews;
 - (void)setSelected:(_Bool)arg1;

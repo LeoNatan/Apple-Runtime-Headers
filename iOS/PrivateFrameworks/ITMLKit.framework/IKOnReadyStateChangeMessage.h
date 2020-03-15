@@ -16,11 +16,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSString *statusText; // @synthesize statusText=_statusText;
 @property(readonly, nonatomic) unsigned int statusCode; // @synthesize statusCode=_statusCode;
 @property(readonly, nonatomic) unsigned int readyState; // @synthesize readyState=_readyState;
-- (void).cxx_destruct;
 - (id)initWithReadyState:(unsigned int)arg1 statusCode:(unsigned int)arg2 statusText:(id)arg3 error:(id)arg4;
 
 @end

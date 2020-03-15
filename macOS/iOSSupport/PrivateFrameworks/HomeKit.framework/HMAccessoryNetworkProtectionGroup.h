@@ -23,9 +23,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (void)_configureWithHome:(id)arg1;
 - (void)updateProtectionMode:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSArray *accessories;

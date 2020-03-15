@@ -33,9 +33,9 @@
 + (void)setIsEffectsViewEnabled:(BOOL)arg1;
 + (BOOL)isEffectsViewEnabled;
 + (void)initialize;
+- (void).cxx_destruct;
 @property long long queryTaskId; // @synthesize queryTaskId=_queryTaskId;
 @property double timeout; // @synthesize timeout=_timeout;
-- (void).cxx_destruct;
 - (long long)matchQualityForAttribute:(id)arg1 queryString:(id)arg2;
 - (void)setRankingQueries:(id)arg1;
 - (id)groupNameForResult:(id)arg1;

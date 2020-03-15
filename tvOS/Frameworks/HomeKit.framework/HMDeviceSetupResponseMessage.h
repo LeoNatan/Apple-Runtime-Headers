@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPayload:(id)arg1;

@@ -22,6 +22,7 @@
     NSArray *_payloadInfoSectionSummaries;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *payloadInfoSectionSummaries; // @synthesize payloadInfoSectionSummaries=_payloadInfoSectionSummaries;
 @property(readonly, nonatomic) NSArray *restrictionSections; // @synthesize restrictionSections=_restrictionSections;
 @property(readonly, nonatomic) NSArray *moreDetailsSections; // @synthesize moreDetailsSections=_moreDetailsSections;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) MCProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) long long finalInstallationWarningStyle; // @synthesize finalInstallationWarningStyle=_finalInstallationWarningStyle;
 @property(nonatomic) _Bool showManagedPayloads; // @synthesize showManagedPayloads=_showManagedPayloads;
-- (void).cxx_destruct;
 - (void)_profileListChanged:(id)arg1;
 - (void)_managedBooksChanged:(id)arg1;
 - (void)_managedAppsChanged:(id)arg1;

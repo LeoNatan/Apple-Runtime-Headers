@@ -15,10 +15,10 @@
     NSArray *_flags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int internalDateAsInt; // @synthesize internalDateAsInt=_internalDateAsInt;
 @property(copy, nonatomic) NSArray *flags; // @synthesize flags=_flags;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDate *internalDate;
 - (void)serializeIntoData:(id)arg1;

@@ -15,8 +15,8 @@
 }
 
 + (void)registerWithCRCoder;
-@property(retain, nonatomic) NSMutableDictionary *columnTextStorages; // @synthesize columnTextStorages=_columnTextStorages;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *columnTextStorages; // @synthesize columnTextStorages=_columnTextStorages;
 - (id)subtableWithDocument:(id)arg1 forSelectionContainingColumnIndices:(id)arg2 rowIndices:(id)arg3;
 - (BOOL)isEmptyAtColumnIdentifiers:(id)arg1 rowIdentifiers:(id)arg2;
 - (BOOL)isEmptyAtColumnIndexes:(id)arg1 rowIndexes:(id)arg2;

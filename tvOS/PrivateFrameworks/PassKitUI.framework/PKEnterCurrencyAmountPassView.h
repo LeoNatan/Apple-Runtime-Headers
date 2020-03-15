@@ -19,11 +19,11 @@
     PKPass *_pass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) PKEnterValueNewBalanceView *balanceView; // @synthesize balanceView=_balanceView;
 @property(readonly, nonatomic) PKEnterCurrencyAmountView *enterCurrencyAmountView; // @synthesize enterCurrencyAmountView=_enterCurrencyAmountView;
 @property(nonatomic) __weak id <PKEnterCurrencyAmountPassViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)_passViewSize;
 - (double)_topPadding;
 - (void)shakePassView;

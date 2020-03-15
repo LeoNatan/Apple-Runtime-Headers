@@ -11,7 +11,7 @@
 @interface WAKWindow : WAKResponder
 {
     CALayer *_hostLayer;
-    // Error parsing type: ^{LegacyTileCache=@{RetainPtr<CGImage *>=^v}{RetainPtr<LegacyTileCacheTombstone>=^v}{Optional<WebCore::FloatRect>=B(constexpr_storage_t<WebCore::FloatRect>=C{FloatRect={FloatPoint=ff}{FloatSize=ff}})}{IntSize=ii}iiBBBBBBBBBB{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{Timer=^^?{MonotonicTime=d}{Seconds=d}{RefPtr<WebCore::ThreadTimerHeapItem, WTF::DumbPtrTraits<WebCore::ThreadTimerHeapItem> >=^{ThreadTimerHeapItem}}{Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread> >=^{Thread}}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}{Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow, 16>=^{IntRect}II}fff{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}}, name: _tileCache
+    // Error parsing type: ^{LegacyTileCache=@{RetainPtr<CGImage *>=^v}{RetainPtr<LegacyTileCacheTombstone>=^v}{Optional<WebCore::FloatRect>=B(constexpr_storage_t<WebCore::FloatRect>=C{FloatRect={FloatPoint=ff}{FloatSize=ff}})}{IntSize=ii}iiBBBBBBBBBB{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{Timer=^^?{MonotonicTime=d}{Seconds=d}{RefPtr<WebCore::ThreadTimerHeapItem, WTF::DumbPtrTraits<WebCore::ThreadTimerHeapItem> >=^{ThreadTimerHeapItem}}{Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread> >=^{Thread}}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}{Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{IntRect}II}fff{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}}, name: _tileCache
     struct CGRect _frozenVisibleRect;
     CALayer *_rootLayer;
     struct CGSize _screenSize;
@@ -25,15 +25,15 @@
     _Bool _isInSnapshottingPaint;
     _Bool _useOrientationDependentFontAntialiasing;
     _Bool _entireWindowVisibleForTesting;
-    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: _exposedScrollViewRectLock
+    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"{__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >="__a_value"AC}}}}, name: _exposedScrollViewRectLock
     struct CGRect _exposedScrollViewRect;
 }
 
 + (id)currentEvent;
 + (_Bool)hasLandscapeOrientation;
 + (void)setOrientationProvider:(id)arg1;
-@property(nonatomic) _Bool useOrientationDependentFontAntialiasing; // @synthesize useOrientationDependentFontAntialiasing=_useOrientationDependentFontAntialiasing;
 - (id).cxx_construct;
+@property(nonatomic) _Bool useOrientationDependentFontAntialiasing; // @synthesize useOrientationDependentFontAntialiasing=_useOrientationDependentFontAntialiasing;
 - (id)recursiveDescription;
 - (id)description;
 - (void)setTileControllerShouldUseLowScaleTiles:(_Bool)arg1;
@@ -49,7 +49,7 @@
 - (void)displayRect:(struct CGRect)arg1;
 @property(nonatomic) struct CGImage *contentReplacementImage;
 - (_Bool)hasPendingDraw;
--     // Error parsing type: ^{LegacyTileCache=@{RetainPtr<CGImage *>=^v}{RetainPtr<LegacyTileCacheTombstone>=^v}{Optional<WebCore::FloatRect>=B(constexpr_storage_t<WebCore::FloatRect>=C{FloatRect={FloatPoint=ff}{FloatSize=ff}})}{IntSize=ii}iiBBBBBBBBBB{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{Timer=^^?{MonotonicTime=d}{Seconds=d}{RefPtr<WebCore::ThreadTimerHeapItem, WTF::DumbPtrTraits<WebCore::ThreadTimerHeapItem> >=^{ThreadTimerHeapItem}}{Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread> >=^{Thread}}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}{Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow, 16>=^{IntRect}II}fff{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}}8@0:4, name: tileCache
+-     // Error parsing type: ^{LegacyTileCache=@{RetainPtr<CGImage *>=^v}{RetainPtr<LegacyTileCacheTombstone>=^v}{Optional<WebCore::FloatRect>=B(constexpr_storage_t<WebCore::FloatRect>=C{FloatRect={FloatPoint=ff}{FloatSize=ff}})}{IntSize=ii}iiBBBBBBBBBB{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{unique_ptr<WebCore::LegacyTileGrid, std::__1::default_delete<WebCore::LegacyTileGrid> >={__compressed_pair<WebCore::LegacyTileGrid *, std::__1::default_delete<WebCore::LegacyTileGrid> >=^{LegacyTileGrid}}}{Timer=^^?{MonotonicTime=d}{Seconds=d}{RefPtr<WebCore::ThreadTimerHeapItem, WTF::DumbPtrTraits<WebCore::ThreadTimerHeapItem> >=^{ThreadTimerHeapItem}}{Ref<WTF::Thread, WTF::DumbPtrTraits<WTF::Thread> >=^{Thread}}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}{Vector<WebCore::IntRect, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc>=^{IntRect}II}fff{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}{Lock={Atomic<unsigned char>={atomic<unsigned char>={__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >=AC}}}}}8@0:4, name: tileCache
 - (_Bool)keepsZoomedOutTiles;
 - (void)setKeepsZoomedOutTiles:(_Bool)arg1;
 - (float)currentTileScale;
@@ -93,7 +93,7 @@
 - (struct CGRect)frame;
 - (void)setFrame:(struct CGRect)arg1 display:(_Bool)arg2;
 - (_Bool)makeFirstResponder:(id)arg1;
-- (int)keyViewSelectionDirection;
+- (unsigned int)keyViewSelectionDirection;
 - (void)setVisible:(_Bool)arg1;
 - (_Bool)isVisible;
 - (void)makeKeyWindow;

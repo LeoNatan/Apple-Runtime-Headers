@@ -15,8 +15,8 @@
     id <IKAppUserDefaultsStoring> _userDefaultsStorage;
 }
 
-@property(nonatomic) __weak id <IKAppUserDefaultsStoring> userDefaultsStorage; // @synthesize userDefaultsStorage=_userDefaultsStorage;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IKAppUserDefaultsStoring> userDefaultsStorage; // @synthesize userDefaultsStorage=_userDefaultsStorage;
 - (void)removeData:(id)arg1;
 - (void)setData:(id)arg1:(id)arg2;
 - (id)getData:(id)arg1;

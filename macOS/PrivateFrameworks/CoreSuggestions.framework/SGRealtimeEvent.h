@@ -31,11 +31,11 @@
 + (id)realtimeEventForNewEvent:(id)arg1 harvested:(BOOL)arg2;
 + (id)realtimeEventForNewEvent:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isHarvested; // @synthesize isHarvested=_isHarvested;
 @property(readonly, nonatomic) NSString *eventIdentifier; // @synthesize eventIdentifier=_eventIdentifier;
 @property(readonly, nonatomic) SGEvent *event; // @synthesize event=_event;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToRealtimeEvent:(id)arg1;

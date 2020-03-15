@@ -32,6 +32,7 @@
 + (id)emptyStarTextAttachmentWithFont:(id)arg1;
 + (id)fullStarTextAttachmentWithFont:(id)arg1;
 + (id)colorForRating:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *emptyStarHighlightedImage; // @synthesize emptyStarHighlightedImage=_emptyStarHighlightedImage;
 @property(retain, nonatomic) UIImage *halfStarHighlightedImage; // @synthesize halfStarHighlightedImage=_halfStarHighlightedImage;
 @property(retain, nonatomic) UIImage *fullStarHighlightedImage; // @synthesize fullStarHighlightedImage=_fullStarHighlightedImage;
@@ -42,7 +43,6 @@
 @property(nonatomic) double rating; // @synthesize rating=_rating;
 @property(nonatomic) unsigned long long numberOfRatingLevels; // @synthesize numberOfRatingLevels=_numLevels;
 @property(nonatomic) long long starStyle; // @synthesize starStyle=_starStyle;
-- (void).cxx_destruct;
 - (void)setPadding:(double)arg1;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;

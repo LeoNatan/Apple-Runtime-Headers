@@ -13,8 +13,8 @@
     NSDate *_localDate;
 }
 
-@property(retain) NSDate *localDate; // @synthesize localDate=_localDate;
 - (void).cxx_destruct;
+@property(retain) NSDate *localDate; // @synthesize localDate=_localDate;
 - (id)_potentialMemoriesForDryTesting;
 - (void)_postProcessMemory:(id)arg1 withPotentialMemory:(id)arg2;
 - (void)_enumeratePotentialMemoriesUsingBlock:(CDUnknownBlockType)arg1;

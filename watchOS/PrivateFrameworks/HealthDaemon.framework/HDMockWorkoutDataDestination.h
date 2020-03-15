@@ -26,6 +26,7 @@
     HKWorkoutConfiguration *_workoutConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
 @property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) NSMutableArray *dataSources; // @synthesize dataSources=_dataSources;
@@ -34,7 +35,6 @@
 @property(copy) CDUnknownBlockType sampleHandler; // @synthesize sampleHandler=_sampleHandler;
 @property(readonly, nonatomic) id <HDWorkoutDataAccumulator> workoutDataAccumulator; // @synthesize workoutDataAccumulator;
 @property unsigned int workoutDataDestinationState; // @synthesize workoutDataDestinationState=_workoutDataDestinationState;
-- (void).cxx_destruct;
 - (void)addMetadata:(id)arg1 dataSource:(id)arg2;
 - (void)addWorkoutEvents:(id)arg1 dataSource:(id)arg2;
 - (void)addSamples:(id)arg1 dataSource:(id)arg2;

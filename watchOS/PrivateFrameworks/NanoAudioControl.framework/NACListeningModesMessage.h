@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)availableListeningModeType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *error; // @synthesize error=_error;
 @property(nonatomic) int originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *currentListeningMode; // @synthesize currentListeningMode=_currentListeningMode;
 @property(retain, nonatomic) NSMutableArray *availableListeningModes; // @synthesize availableListeningModes=_availableListeningModes;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

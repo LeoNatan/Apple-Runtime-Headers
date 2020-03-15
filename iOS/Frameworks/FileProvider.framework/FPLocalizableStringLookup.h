@@ -15,10 +15,10 @@
     NSString *_tableName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(retain, nonatomic) id cfBundle; // @synthesize cfBundle=_cfBundle;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)localizedStringForKey:(id)arg1;
 
 @end

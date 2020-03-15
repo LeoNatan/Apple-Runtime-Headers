@@ -13,8 +13,8 @@
     PETScalarEventTracker *_tracker;
 }
 
-@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void)trackEventWithScalar:(unsigned int)arg1 bundleId:(id)arg2 mappingId:(id)arg3 resultSizeLog10:(unsigned int)arg4 timeLimited:(struct PPMTypeSafeBool_)arg5 exclusionSpec:(struct PPMTypeSafeBool_)arg6 error:(struct PPMTypeSafeBool_)arg7;
 - (id)init;
 

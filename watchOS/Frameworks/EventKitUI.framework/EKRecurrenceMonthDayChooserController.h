@@ -14,8 +14,8 @@
     _Bool _prohibitsMultipleDaysInMonthlyRecurrence;
 }
 
-@property(nonatomic) _Bool prohibitsMultipleDaysInMonthlyRecurrence; // @synthesize prohibitsMultipleDaysInMonthlyRecurrence=_prohibitsMultipleDaysInMonthlyRecurrence;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool prohibitsMultipleDaysInMonthlyRecurrence; // @synthesize prohibitsMultipleDaysInMonthlyRecurrence=_prohibitsMultipleDaysInMonthlyRecurrence;
 - (void)selectCell:(id)arg1 atIndex:(int)arg2;
 - (void)refreshCells;
 - (void)prepareForDisplay;

@@ -18,10 +18,10 @@
 
 + (BOOL)_getBoolValueFromCGSSessionProperty:(struct __CFString *)arg1;
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_localQueue; // @synthesize _localQueue=__localQueue;
 @property(nonatomic) BOOL _observingNotifications; // @synthesize _observingNotifications=__observingNotifications;
 @property(retain, nonatomic) NSPointerArray *_observers; // @synthesize _observers=__observers;
-- (void).cxx_destruct;
 - (void)_handleNotification:(id)arg1;
 - (void)_stopObservingNotifications;
 - (void)_startObservingNotifications;

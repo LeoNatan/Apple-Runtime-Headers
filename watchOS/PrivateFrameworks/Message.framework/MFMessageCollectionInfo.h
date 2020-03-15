@@ -15,8 +15,8 @@
 }
 
 + (unsigned int)stateForMessages:(id)arg1;
-@property(readonly, nonatomic) long long messageCollectionHash; // @synthesize messageCollectionHash=_messageCollectionHash;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long messageCollectionHash; // @synthesize messageCollectionHash=_messageCollectionHash;
 @property(copy, nonatomic) CDUnknownBlockType duplicatePreferenceComparator;
 @property(readonly, nonatomic) unsigned int state;
 - (void)mergeWithCollection:(id)arg1;

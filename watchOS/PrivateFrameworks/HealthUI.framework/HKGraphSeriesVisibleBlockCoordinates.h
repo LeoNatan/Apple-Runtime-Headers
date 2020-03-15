@@ -15,10 +15,10 @@
     id <HKGraphSeriesBlockCoordinate> _last;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinate> last; // @synthesize last=_last;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinate> maximum; // @synthesize maximum=_maximum;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinate> minimum; // @synthesize minimum=_minimum;
-- (void).cxx_destruct;
 - (id)initWithMinimum:(id)arg1 maximum:(id)arg2 last:(id)arg3;
 
 @end

@@ -16,11 +16,11 @@
     NSMutableData *_internalData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableData *internalData; // @synthesize internalData=_internalData;
 @property BOOL isRanging; // @synthesize isRanging=_isRanging;
 @property(retain) NSMutableSet *types; // @synthesize types=_types;
 @property long long advertRate; // @synthesize advertRate=_advertRate;
-- (void).cxx_destruct;
 - (BOOL)isValidWithAdditionalRequest:(id)arg1;
 - (BOOL)isEqualToData:(id)arg1;
 @property(readonly, getter=getData) NSData *data;

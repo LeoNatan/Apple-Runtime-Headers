@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _onMouseExit;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onMouseExit; // @synthesize onMouseExit=_onMouseExit;
 @property(copy, nonatomic) CDUnknownBlockType onMouseEnter; // @synthesize onMouseEnter=_onMouseEnter;
-- (void).cxx_destruct;
 - (void)updateTrackingAreas;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

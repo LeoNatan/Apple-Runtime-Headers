@@ -21,7 +21,7 @@
     NSMutableSet *_pendingMessageIDs;
     _Bool _rejectedNewSessionFromSamePeer;
     _Bool _sessionStarted;
-    struct NSMutableDictionary *_stateResponders;
+    NSMutableDictionary *_stateResponders;
     struct os_unfair_lock_s _setDelegateLock;
     _Bool _isSending;
     int _priority;
@@ -45,6 +45,7 @@
 
 + (id)unarchiveMetadata:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableDictionary *peerGenerationIDs; // @synthesize peerGenerationIDs=_peerGenerationIDs;
 @property(nonatomic) unsigned long long sessionSignpost; // @synthesize sessionSignpost=_sessionSignpost;
 @property(nonatomic) double birthDate; // @synthesize birthDate=_birthDate;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) id <SYChangeSerializer> serializer; // @synthesize serializer=_serializer;
 @property(nonatomic) __weak id <SYSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBCodable *stateForLogging;
 - (id)CPSafeDescription;
 - (void)_peerProcessedMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;

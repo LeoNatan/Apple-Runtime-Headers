@@ -21,11 +21,11 @@
     double _defaultWorkExpirationPeriod;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long maxWorkPerKey; // @synthesize maxWorkPerKey=_maxWorkPerKey;
 @property(readonly, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSMutableDictionary *workItemsPerKey; // @synthesize workItemsPerKey=_workItemsPerKey;
 @property(nonatomic) double defaultWorkExpirationPeriod; // @synthesize defaultWorkExpirationPeriod=_defaultWorkExpirationPeriod;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)_notifyObserversWorkDidChange;

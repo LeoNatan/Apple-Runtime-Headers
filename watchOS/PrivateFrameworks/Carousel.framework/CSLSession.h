@@ -40,6 +40,7 @@
 + (const char *)selectAllSQL;
 + (void)upgradeProperties:(id)arg1;
 + (const char *)createSQL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSDateComponents *startDateComponents; // @synthesize startDateComponents=_startDateComponents;
 @property(readonly, nonatomic) NSString *startCalendarID; // @synthesize startCalendarID=_startCalendarID;
@@ -54,7 +55,6 @@
 @property(getter=isPersisted) _Bool persisted; // @synthesize persisted=_persisted;
 @property(getter=isLaunchable) _Bool launchable; // @synthesize launchable=_launchable;
 @property __weak id connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBlocked;
 - (void)computeExpirationDateWithOffset:(double)arg1;
 - (void)computeExpirationDate;

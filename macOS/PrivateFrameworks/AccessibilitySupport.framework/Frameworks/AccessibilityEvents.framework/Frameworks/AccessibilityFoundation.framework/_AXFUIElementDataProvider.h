@@ -16,9 +16,9 @@
     NSString *_applicationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(nonatomic, getter=isValid) BOOL valid; // @synthesize valid=_valid;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)convertOutgoingValueForAttribute:(id)arg1 value:(id)arg2;
 - (id)outgoingRepresentation;

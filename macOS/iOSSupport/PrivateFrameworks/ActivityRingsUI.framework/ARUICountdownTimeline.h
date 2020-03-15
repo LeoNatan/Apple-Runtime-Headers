@@ -17,11 +17,11 @@
     NSArray *_cancelAnimations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cancelAnimations; // @synthesize cancelAnimations=_cancelAnimations;
 @property(retain, nonatomic) id <ARUICountdownAnimation> prepareToCancel; // @synthesize prepareToCancel=_prepareToCancel;
 @property(retain, nonatomic) NSArray *animations; // @synthesize animations=_animations;
 @property(retain, nonatomic) id <ARUICountdownAnimation> prepareToAnimate; // @synthesize prepareToAnimate=_prepareToAnimate;
-- (void).cxx_destruct;
 
 @end
 

@@ -4,18 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/_UIClickHighlightPlatterView.h>
+#import <UIKitCore/_UIHighlightPlatterView.h>
 
 @class UIView;
 
 __attribute__((visibility("hidden")))
-@interface _UIAnchoredClickHighlightPlatterView : _UIClickHighlightPlatterView
+@interface _UIAnchoredClickHighlightPlatterView : _UIHighlightPlatterView
 {
     UIView *_anchorView;
 }
 
-@property(nonatomic) __weak UIView *anchorView; // @synthesize anchorView=_anchorView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *anchorView; // @synthesize anchorView=_anchorView;
 - (void)deAnchor;
 - (void)anchorToContainer;
 - (id)initWithTargetedPreview:(id)arg1;

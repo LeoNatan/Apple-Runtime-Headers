@@ -24,6 +24,7 @@
     id <REMReplicaManagerProviding> _replicaManagerProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <REMReplicaManagerProviding> replicaManagerProvider; // @synthesize replicaManagerProvider=_replicaManagerProvider;
 @property(nonatomic) _Bool applyCRDTsWithoutMerging; // @synthesize applyCRDTsWithoutMerging=_applyCRDTsWithoutMerging;
 @property(nonatomic) _Bool cloneCompletedRecurrentRemindersAtSave; // @synthesize cloneCompletedRecurrentRemindersAtSave=_cloneCompletedRecurrentRemindersAtSave;
@@ -35,7 +36,6 @@
 @property(nonatomic, getter=isSaved) _Bool saved; // @synthesize saved=_saved;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (id)_copyReminderChangeItem:(id)arg1 toReminderSubtaskContextChangeItem:(id)arg2;
 - (id)_copyReminderChangeItem:(id)arg1 toListChangeItem:(id)arg2;
 - (id)_copyReminder:(id)arg1 toReminderSubtaskContextChangeItem:(id)arg2;

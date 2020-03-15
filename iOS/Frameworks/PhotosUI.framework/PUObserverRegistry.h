@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *__observerQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_observerQueue; // @synthesize _observerQueue=__observerQueue;
 @property(readonly, nonatomic) NSPointerArray *_observers; // @synthesize _observers=__observers;
-- (void).cxx_destruct;
 - (void)enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;

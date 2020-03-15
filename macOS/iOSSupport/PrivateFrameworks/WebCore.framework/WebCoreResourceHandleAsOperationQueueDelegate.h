@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
 @interface WebCoreResourceHandleAsOperationQueueDelegate : NSObject <NSURLConnectionDelegate>
 {
     struct ResourceHandle *m_handle;
-    // Error parsing type: {BinarySemaphore="m_isSet"B"m_lock"{Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}"m_condition"{Condition="m_hasWaiters"{Atomic<bool>="value"{atomic<bool>="__a_"AB}}}}, name: m_semaphore
-    // Error parsing type: ^{MessageQueue<WTF::Function<void ()> >={Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Condition={Atomic<bool>={atomic<bool>=AB}}}{Deque<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=QQ{VectorBuffer<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=^{unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >}II}}B}, name: m_messageQueue
+    // Error parsing type: {BinarySemaphore="m_isSet"B"m_lock"{Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"{__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >="__a_value"AC}}}}"m_condition"{Condition="m_hasWaiters"{Atomic<bool>="value"{atomic<bool>="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}}}}, name: m_semaphore
+    RefPtr_99a3c709 m_messageQueue;
     struct RetainPtr<NSURLRequest> m_requestResult;
-    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"AC}}}, name: m_mutex
+    // Error parsing type: {Lock="m_byte"{Atomic<unsigned char>="value"{atomic<unsigned char>="__a_"{__cxx_atomic_impl<unsigned char, std::__1::__cxx_atomic_base_impl<unsigned char> >="__a_value"AC}}}}, name: m_mutex
     struct RetainPtr<NSCachedURLResponse> m_cachedResponseResult;
     struct Optional<WTF::HashSet<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>, WTF::SchedulePairHash, WTF::HashTraits<WTF::RefPtr<WTF::SchedulePair, WTF::DumbPtrTraits<WTF::SchedulePair>>>>> m_scheduledPairs;
     BOOL m_boolResult;
@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)dealloc;
 - (void)detachHandle;
--     // Error parsing type: @32@0:8^{ResourceHandle=^^?I{unique_ptr<WebCore::ResourceHandleInternal, std::__1::default_delete<WebCore::ResourceHandleInternal> >={__compressed_pair<WebCore::ResourceHandleInternal *, std::__1::default_delete<WebCore::ResourceHandleInternal> >=^{ResourceHandleInternal}}}}16^{MessageQueue<WTF::Function<void ()> >={Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Condition={Atomic<bool>={atomic<bool>=AB}}}{Deque<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=QQ{VectorBuffer<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=^{unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >}II}}B}24, name: initWithHandle:messageQueue:
+- (id)initWithHandle:(struct ResourceHandle *)arg1 messageQueue:(RefPtr_99a3c709 *)arg2;
 - (void)callFunctionOnMainThread:(Function_7e9efc80 *)arg1;
 
 // Remaining properties

@@ -14,8 +14,8 @@
 }
 
 + (id)requestWithMarshallableObjectPackage:(id)arg1 arbitrationUnit:(id)arg2 constraints:(id)arg3;
-@property(readonly, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 - (id)debugDescription;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

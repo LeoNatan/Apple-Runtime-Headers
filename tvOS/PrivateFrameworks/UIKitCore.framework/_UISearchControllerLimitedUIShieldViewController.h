@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UISearchControllerLimitedAccessView *_limitedAccessView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UISearchControllerLimitedAccessView *limitedAccessView; // @synthesize limitedAccessView=_limitedAccessView;
 @property(copy, nonatomic) CDUnknownBlockType dismissAction; // @synthesize dismissAction=_dismissAction;
-- (void).cxx_destruct;
 - (void)_backButtonPressed:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;

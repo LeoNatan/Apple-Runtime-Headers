@@ -15,9 +15,9 @@
 }
 
 + (id)unprotectedMigrationTransactionForMigrationTransaction:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDSQLiteDatabase *protectedDatabase; // @synthesize protectedDatabase=_protectedDatabase;
 @property(readonly, nonatomic) HDSQLiteDatabase *unprotectedDatabase; // @synthesize unprotectedDatabase=_unprotectedDatabase;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isProtectedMigration;
 - (id)databaseNameForProtectionClass:(long long)arg1;
 - (id)initWithUnprotectedDatabase:(id)arg1 protectedDatabase:(id)arg2;

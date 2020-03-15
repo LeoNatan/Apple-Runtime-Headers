@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     _Bool _hidden;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inputViewsHidden; // @synthesize inputViewsHidden=_hidden;
 @property(readonly, nonatomic) struct CGRect endFrame; // @synthesize endFrame=_endFrame;
 @property(readonly, nonatomic) struct CGRect startFrame; // @synthesize startFrame=_startFrame;
-- (void).cxx_destruct;
 - (void)complete;
 @property(readonly, retain, nonatomic) UIView *animatingView;
 - (id)initWithHost:(id)arg1 startPlacement:(id)arg2 endPlacement:(id)arg3;

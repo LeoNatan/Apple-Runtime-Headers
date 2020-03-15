@@ -8,7 +8,7 @@
 
 #import <Contacts/NSCopying-Protocol.h>
 
-@class NSArray, NSPersistentStoreCoordinator, NSURL;
+@class CNCDPersistenceStack, NSArray, NSURL;
 @protocol CNAccountCollection, CNContactsLoggerProvider, CNSchedulerProvider, CNSiriIntelligenceSettingsProtocol, SGSuggestionsServiceContactsProtocol;
 
 @interface CNContactsEnvironment : NSObject <NSCopying>
@@ -16,7 +16,7 @@
     BOOL _shouldUseNativeStack;
     id <CNSchedulerProvider> _schedulerProvider;
     id <CNAccountCollection> _accountCollection;
-    NSPersistentStoreCoordinator *_existingPersistentStoreCoordinator;
+    CNCDPersistenceStack *_existingPersistenceStack;
     id <SGSuggestionsServiceContactsProtocol> _suggestionsService;
     id <CNSiriIntelligenceSettingsProtocol> _siriIntelligenceSettings;
     NSArray *_delegateInfos;
@@ -33,15 +33,15 @@
 + (id)inMemoryURL;
 + (id)currentEnvironment;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNContactsLoggerProvider> loggerProvider; // @synthesize loggerProvider=_loggerProvider;
 @property(retain, nonatomic) NSArray *delegateInfos; // @synthesize delegateInfos=_delegateInfos;
 @property(retain) id <CNSiriIntelligenceSettingsProtocol> siriIntelligenceSettings; // @synthesize siriIntelligenceSettings=_siriIntelligenceSettings;
 @property(retain) id <SGSuggestionsServiceContactsProtocol> suggestionsService; // @synthesize suggestionsService=_suggestionsService;
 @property(nonatomic, setter=setUseNativeStack:) BOOL shouldUseNativeStack; // @synthesize shouldUseNativeStack=_shouldUseNativeStack;
-@property(retain) NSPersistentStoreCoordinator *existingPersistentStoreCoordinator; // @synthesize existingPersistentStoreCoordinator=_existingPersistentStoreCoordinator;
+@property(retain) CNCDPersistenceStack *existingPersistenceStack; // @synthesize existingPersistenceStack=_existingPersistenceStack;
 @property(retain) id <CNAccountCollection> accountCollection; // @synthesize accountCollection=_accountCollection;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-- (void).cxx_destruct;
 - (id)copyWithDelegateInfos:(id)arg1;
 - (BOOL)isUITestEnvironment;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -32,6 +32,7 @@
     CADDatabaseInitializationOptions *_databaseInitializationOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool initializationOptionsSet; // @synthesize initializationOptionsSet=_initializationOptionsSet;
 @property(retain, nonatomic) CADDatabaseInitializationOptions *databaseInitializationOptions; // @synthesize databaseInitializationOptions=_databaseInitializationOptions;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
@@ -41,7 +42,6 @@
 
 @property(nonatomic) __weak id <ClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CADOperationProxy *cadOperationProxy; // @synthesize cadOperationProxy=_cadOperationProxy;
-- (void).cxx_destruct;
 - (_Bool)isCalendarItemManaged:(void *)arg1;
 - (_Bool)isCalendarManaged:(void *)arg1;
 - (_Bool)isStoreManaged:(void *)arg1;

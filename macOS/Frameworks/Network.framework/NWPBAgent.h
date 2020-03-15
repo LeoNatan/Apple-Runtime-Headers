@@ -30,6 +30,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *agentData; // @synthesize agentData=_agentData;
 @property(nonatomic) BOOL nexusProvider; // @synthesize nexusProvider=_nexusProvider;
 @property(nonatomic) BOOL networkProvider; // @synthesize networkProvider=_networkProvider;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSString *agentDescription; // @synthesize agentDescription=_agentDescription;
 @property(retain, nonatomic) NSString *agentIdentifier; // @synthesize agentIdentifier=_agentIdentifier;
 @property(retain, nonatomic) NWPBAgentClass *agentClass; // @synthesize agentClass=_agentClass;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

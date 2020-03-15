@@ -15,10 +15,10 @@
     CSLAppSwitcherDisplaySession *_displaySession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak CSLAppSwitcherDisplaySession *displaySession; // @synthesize displaySession=_displaySession;
 @property(retain, nonatomic) CSLAppSwitcherDisplaySessionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)didEnterWithPreviousState:(id)arg1;
 - (void)willExitWithNextState:(id)arg1;
 - (id)initWithSession:(id)arg1 configuration:(id)arg2;

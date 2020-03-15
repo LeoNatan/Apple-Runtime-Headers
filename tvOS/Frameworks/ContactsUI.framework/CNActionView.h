@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) NSArray *activatedContstrants; // @synthesize activatedContstrants=_activatedContstrants;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)handleLongPressGesture:(id)arg1;
 - (void)handleTapGesture:(id)arg1;
 - (void)updateLabelState;

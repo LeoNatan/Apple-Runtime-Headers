@@ -18,9 +18,9 @@
     UIColor *_pegDotColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *pegDotColor; // @synthesize pegDotColor=_pegDotColor;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)layoutSubviews;

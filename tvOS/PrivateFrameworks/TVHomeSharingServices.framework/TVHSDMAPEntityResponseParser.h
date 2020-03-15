@@ -20,10 +20,10 @@
 + (id)_errorFromUpdateResponsePayload:(id)arg1;
 + (id)_errorFromErrorResponsePayload:(id)arg1;
 + (id)_errorFromErrorResponseData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHSDMAPEntityKind *entityKind; // @synthesize entityKind=_entityKind;
 @property(nonatomic) unsigned long long protocol; // @synthesize protocol=_protocol;
 @property(nonatomic) unsigned long long maxEntities; // @synthesize maxEntities=_maxEntities;
-- (void).cxx_destruct;
 - (id)_parsedResponseFromDPAPResponseCode:(unsigned int)arg1 responsePayload:(id)arg2 requestType:(unsigned long long)arg3;
 - (unsigned int)_expectedDPAPResponseCodeForRequestType:(unsigned long long)arg1;
 - (id)_parsedResponseFromDAAPResponseCode:(unsigned int)arg1 responsePayload:(id)arg2 requestType:(unsigned long long)arg3;

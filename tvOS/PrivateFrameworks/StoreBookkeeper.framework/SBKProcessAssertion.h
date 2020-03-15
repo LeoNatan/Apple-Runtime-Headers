@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id _expirationObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain) id expirationObserver; // @synthesize expirationObserver=_expirationObserver;
 @property(readonly) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)_expireBackgroundTask;
 @property(retain) BKSProcessAssertion *bkProcessAssertion; // @synthesize bkProcessAssertion=_bkProcessAssertion;

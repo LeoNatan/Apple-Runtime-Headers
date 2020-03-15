@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class EDThreadScopeManager, EMMailboxObjectID, EMMailboxScope, NSArray;
+@class EDThreadScopeManager, EMMailboxObjectID, EMMailboxScope, NSArray, NSDictionary;
 
 @protocol EDThreadScopeManagerDataSource
 - (_Bool)threadScopeManager:(EDThreadScopeManager *)arg1 evictThreadScopesWithDatabaseIDs:(NSArray *)arg2 completionBlock:(void (^)(_Bool))arg3;
-- (void)threadScopeManager:(EDThreadScopeManager *)arg1 gatherStatisticsForThreadScopes:(NSArray *)arg2 block:(void (^)(long long, NSDate *, unsigned long long))arg3;
+- (void)threadScopeManager:(EDThreadScopeManager *)arg1 gatherStatisticsForThreadScopesWithDatabaseIDs:(NSDictionary *)arg2 block:(void (^)(long long, NSDate *, unsigned long long))arg3;
 - (void)threadScopeManager:(EDThreadScopeManager *)arg1 populateThreadScopesWithBlock:(void (^)(long long, NSString *, NSNumber *, NSData *, _Bool, NSDate *))arg2;
 - (_Bool)threadScopeManager:(EDThreadScopeManager *)arg1 isValidMailboxObjectID:(EMMailboxObjectID *)arg2;
 - (_Bool)threadScopeManager:(EDThreadScopeManager *)arg1 mailboxScopeExists:(EMMailboxScope *)arg2;

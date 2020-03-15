@@ -16,8 +16,8 @@
     NSDictionary *_responseDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 - (id)mediaItemsWithStoreOfferVariant:(long long)arg1;
 - (id)initWithResponseDictionary:(id)arg1;
 

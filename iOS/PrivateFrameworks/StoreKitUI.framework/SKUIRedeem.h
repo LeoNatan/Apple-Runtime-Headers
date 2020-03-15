@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double ITunesPassLearnMoreAlertInterval; // @synthesize ITunesPassLearnMoreAlertInterval=_ITunesPassLearnMoreAlertInterval;
 @property(nonatomic) _Bool hideItemView; // @synthesize hideItemView=_hideItemView;
 @property(retain, nonatomic) NSArray *links; // @synthesize links=_links;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *inAppPurchase; // @synthesize inAppPurchase=_inAppPurchase;
 @property(retain, nonatomic) NSArray *downloads; // @synthesize downloads=_downloads;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_inputFaceObservations;
 }
 
-@property(copy, nonatomic) NSArray *inputFaceObservations; // @synthesize inputFaceObservations=_inputFaceObservations;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *inputFaceObservations; // @synthesize inputFaceObservations=_inputFaceObservations;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

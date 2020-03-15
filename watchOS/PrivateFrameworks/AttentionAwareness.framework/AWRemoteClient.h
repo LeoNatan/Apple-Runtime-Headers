@@ -35,12 +35,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _samplingDelay;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int clientIndex; // @synthesize clientIndex=_clientIndex;
 @property(readonly, nonatomic) _Bool invalid; // @synthesize invalid=_invalid;
 @property(readonly, nonatomic) unsigned long long samplingDelay; // @synthesize samplingDelay=_samplingDelay;
 @property(readonly, nonatomic) unsigned long long samplingInterval; // @synthesize samplingInterval=_samplingInterval;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)pingWithReply:(CDUnknownBlockType)arg1;
 - (unsigned long long)nextTimerForTime:(unsigned long long)arg1;
 - (void)updateDeadlinesForTime:(unsigned long long)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1;
 - (id)init;
 

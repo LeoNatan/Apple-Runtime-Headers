@@ -19,10 +19,10 @@
 }
 
 + (id)generateLineImageForTag:(long long)arg1 selected:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *lineWidthTags; // @synthesize lineWidthTags=_lineWidthTags;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

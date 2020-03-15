@@ -16,7 +16,7 @@
 @interface MTTimerManager : NSObject <MTTimerManagerIntentSupport, MTTimerManagerProviding, MTUserDefaultNotificationObserver>
 {
     MTTimerManagerExportedObject *_exportedObject;
-    struct MTXPCConnectionProvider *_connectionProvider;
+    MTXPCConnectionProvider *_connectionProvider;
     MTMetrics *_metrics;
     MTTimerCache *_cache;
     NSNotificationCenter *_notificationCenter;
@@ -25,12 +25,12 @@
 + (void)setDefaultDuration:(double)arg1;
 + (double)defaultDuration;
 + (void)warmUp;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) MTTimerCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) MTMetrics *metrics; // @synthesize metrics=_metrics;
 @property(readonly, nonatomic) MTXPCConnectionProvider *connectionProvider; // @synthesize connectionProvider=_connectionProvider;
 @property(retain, nonatomic) MTTimerManagerExportedObject *exportedObject; // @synthesize exportedObject=_exportedObject;
-- (void).cxx_destruct;
 - (_Bool)resumeCurrentTimerSync;
 - (_Bool)pauseCurrentTimerSync;
 - (_Bool)stopCurrentTimerSync;

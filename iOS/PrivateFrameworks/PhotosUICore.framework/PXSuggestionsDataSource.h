@@ -13,8 +13,8 @@
     id <PXDisplaySuggestionFetchResult> _suggestions;
 }
 
-@property(readonly, nonatomic) id <PXDisplaySuggestionFetchResult> suggestions; // @synthesize suggestions=_suggestions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PXDisplaySuggestionFetchResult> suggestions; // @synthesize suggestions=_suggestions;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;
 - (long long)numberOfItemsInSection:(long long)arg1;

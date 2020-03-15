@@ -20,6 +20,7 @@
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) TVLImageElement *badgeImage; // @synthesize badgeImage=_badgeImage;
 @property(retain, nonatomic) TVLImageElement *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

@@ -21,9 +21,9 @@
 + (id)collectionWithSpecificUsers:(id)arg1;
 + (id)currentUserCollection;
 + (id)allUsersCollection;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *specificUsers; // @synthesize specificUsers=_specificUsers;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)resolveSelectedUsersWithHome:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

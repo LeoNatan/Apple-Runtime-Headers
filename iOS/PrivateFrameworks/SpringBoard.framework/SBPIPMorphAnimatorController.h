@@ -20,13 +20,13 @@
     long long _completedTargetAnimations;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long completedTargetAnimations; // @synthesize completedTargetAnimations=_completedTargetAnimations;
 @property(nonatomic) long long startedSourceAnimations; // @synthesize startedSourceAnimations=_startedSourceAnimations;
 @property(nonatomic) __weak PGPictureInPictureViewController *pictureInPictureViewController; // @synthesize pictureInPictureViewController=_pictureInPictureViewController;
 @property(readonly, nonatomic) SBPIPMorphAnimatorDataSource *viewMorphAnimatorDataSource; // @synthesize viewMorphAnimatorDataSource=_viewMorphAnimatorDataSource;
 @property(readonly, nonatomic) SBViewMorphAnimator *viewMorphAnimator; // @synthesize viewMorphAnimator=_viewMorphAnimator;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)animatorWasInterrupted:(id)arg1;
 - (void)didEndTargetAnimations:(unsigned long long)arg1 finished:(_Bool)arg2 continueBlock:(CDUnknownBlockType)arg3;
 - (void)didEndSourceAnimations:(unsigned long long)arg1 finished:(_Bool)arg2 continueBlock:(CDUnknownBlockType)arg3;

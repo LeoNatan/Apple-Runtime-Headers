@@ -23,6 +23,7 @@
     unsigned long long _connType;
 }
 
+- (void).cxx_destruct;
 @property _Bool started; // @synthesize started=_started;
 @property _Bool isDaemon; // @synthesize isDaemon=_isDaemon;
 @property unsigned long long connType; // @synthesize connType=_connType;
@@ -31,7 +32,6 @@
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property __weak id <DEDXPCConnectorDaemonDelegate> daemonDelegate; // @synthesize daemonDelegate=_daemonDelegate;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)_whitelistedXPCInterface;
 - (id)connectionWithEndpoint:(id)arg1 forMachService:(id)arg2;
 - (void)startForApp;

@@ -28,6 +28,7 @@
     _PXUIRelatedPreviewOrbContext *__previewOrbContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPreviewOrbContext:) _PXUIRelatedPreviewOrbContext *_previewOrbContext; // @synthesize _previewOrbContext=__previewOrbContext;
 @property(readonly, nonatomic) PXTouchingUIGestureRecognizer *_touchGestureRecognizer; // @synthesize _touchGestureRecognizer=__touchGestureRecognizer;
 @property(readonly, nonatomic) PXUITapGestureRecognizer *_tapGestureRecognizer; // @synthesize _tapGestureRecognizer=__tapGestureRecognizer;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSMutableSet *_tilesInUse; // @synthesize _tilesInUse=__tilesInUse;
 @property(readonly, nonatomic) PXReusableObjectPool *_tileReusePool; // @synthesize _tileReusePool=__tileReusePool;
 @property(nonatomic, getter=isUserInteractionEnabled) _Bool userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
-- (void).cxx_destruct;
 - (id)_assetsBySizeWithTileIdentifiers:(const struct PXTileIdentifier *)arg1 withGeometries:(const struct PXTileGeometry *)arg2 count:(unsigned long long)arg3;
 - (void)stopPreheatingTilesForIdentifiers:(const struct PXTileIdentifier *)arg1 withGeometries:(const struct PXTileGeometry *)arg2 count:(unsigned long long)arg3 context:(void *)arg4;
 - (void)startPreheatingTilesForIdentifiers:(const struct PXTileIdentifier *)arg1 withGeometries:(const struct PXTileGeometry *)arg2 count:(unsigned long long)arg3 context:(void *)arg4;
@@ -66,7 +66,7 @@
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (id)_scrollViewController;
 - (void)commitPreviewViewController:(id)arg1;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
+- (id)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(id)arg2;
 - (void)_registerTileClass:(Class)arg1 forReuseIdentifier:(long long)arg2;
 - (id)extendedTraitCollection;
 - (id)createTileAnimator;

@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *maximumObjectAgeByType; // @synthesize maximumObjectAgeByType=_maximumObjectAgeByType;
 @property(readonly, copy, nonatomic) NSNumber *defaultMaximumTombstoneAge; // @synthesize defaultMaximumTombstoneAge=_defaultMaximumTombstoneAge;
 @property(readonly, copy, nonatomic) NSNumber *defaultMaximumObjectAge; // @synthesize defaultMaximumObjectAge=_defaultMaximumObjectAge;
 @property(readonly, copy, nonatomic) NSSet *includedObjectTypes; // @synthesize includedObjectTypes=_includedObjectTypes;
 @property(readonly, copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, copy, nonatomic) NSSet *excludedSyncProvenances; // @synthesize excludedSyncProvenances=_excludedSyncProvenances;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

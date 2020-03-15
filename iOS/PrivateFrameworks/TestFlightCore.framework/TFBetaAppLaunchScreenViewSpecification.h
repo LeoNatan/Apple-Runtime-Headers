@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _buttonModuleContentLayoutInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFontMetrics *bodyTextFontMetrics; // @synthesize bodyTextFontMetrics=_bodyTextFontMetrics;
 @property(readonly, nonatomic) UIFontMetrics *bodyTitleFontMetrics; // @synthesize bodyTitleFontMetrics=_bodyTitleFontMetrics;
 @property(readonly, nonatomic) UIFontMetrics *subtitleFontMetrics; // @synthesize subtitleFontMetrics=_subtitleFontMetrics;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double bottommostLabelLastBaselineToLockupTopEdge; // @synthesize bottommostLabelLastBaselineToLockupTopEdge=_bottommostLabelLastBaselineToLockupTopEdge;
 @property(readonly, nonatomic) double viewTopMarginAdditionalPaddingAsFractionOfTotalHeight; // @synthesize viewTopMarginAdditionalPaddingAsFractionOfTotalHeight=_viewTopMarginAdditionalPaddingAsFractionOfTotalHeight;
 @property(readonly, nonatomic) struct UIEdgeInsets scrollViewContentLayoutInsets; // @synthesize scrollViewContentLayoutInsets=_scrollViewContentLayoutInsets;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *textColor;
 @property(readonly, nonatomic) UIColor *overButtonTintTextColor;
 @property(readonly, nonatomic) UIColor *buttonTintColor;

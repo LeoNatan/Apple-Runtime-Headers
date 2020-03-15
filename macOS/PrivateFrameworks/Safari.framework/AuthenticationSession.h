@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     ASWebAuthenticationSessionRequest *_request;
 }
 
-@property(readonly, nonatomic) ASWebAuthenticationSessionRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ASWebAuthenticationSessionRequest *request; // @synthesize request=_request;
 - (void)_windowWillClose:(id)arg1;
 - (void)_tearDown;
 - (void)_unregisterForWindowCloseNotification;

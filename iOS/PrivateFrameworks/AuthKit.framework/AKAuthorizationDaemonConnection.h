@@ -17,8 +17,8 @@
     NSXPCListenerEndpoint *_listenerEndpoint;
 }
 
-@property(readonly, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 - (void)_connectionInvalidationHandler;
 - (void)_connectionInterruptionHandler;
 - (id)_connection;

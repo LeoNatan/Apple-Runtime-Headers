@@ -17,19 +17,23 @@
     NSString *_l2version;
     NSString *_l3version;
     NSArray *_localContextualSuggestions;
+    long long _exp;
     SFSearchSuggestion *_engagedSuggestion;
     NSArray *_completionCacheSuggestions;
+    NSString *_previouslyEngagedQuery;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *previouslyEngagedQuery; // @synthesize previouslyEngagedQuery=_previouslyEngagedQuery;
 @property(retain, nonatomic) NSArray *completionCacheSuggestions; // @synthesize completionCacheSuggestions=_completionCacheSuggestions;
 @property(retain, nonatomic) SFSearchSuggestion *engagedSuggestion; // @synthesize engagedSuggestion=_engagedSuggestion;
+@property(nonatomic) long long exp; // @synthesize exp=_exp;
 @property(copy, nonatomic) NSArray *localContextualSuggestions; // @synthesize localContextualSuggestions=_localContextualSuggestions;
 @property(copy, nonatomic) NSString *l3version; // @synthesize l3version=_l3version;
 @property(copy, nonatomic) NSString *l2version; // @synthesize l2version=_l2version;
 @property(copy, nonatomic) NSDictionary *topics; // @synthesize topics=_topics;
 @property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (void).cxx_destruct;
 - (unsigned int)nwActivityLabel;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

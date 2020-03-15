@@ -31,6 +31,7 @@
     CDUnknownBlockType _userInputCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType userInputCompletionHandler; // @synthesize userInputCompletionHandler=_userInputCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType authenticationPreparationHandler; // @synthesize authenticationPreparationHandler=_authenticationPreparationHandler;
 @property(copy, nonatomic) CDUnknownBlockType authenticationCompletionHandler; // @synthesize authenticationCompletionHandler=_authenticationCompletionHandler;
@@ -43,7 +44,6 @@
 @property(nonatomic) double metaDataSectionHeight; // @synthesize metaDataSectionHeight=_metaDataSectionHeight;
 @property(retain, nonatomic) MCProfileTitlePageView *profileTitlePageView; // @synthesize profileTitlePageView=_profileTitlePageView;
 @property(retain, nonatomic) MCProfileTitlePageViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)signInViewController:(id)arg1 willAuthenticateWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)signInViewControllerDidCancelAuthentication:(id)arg1;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;

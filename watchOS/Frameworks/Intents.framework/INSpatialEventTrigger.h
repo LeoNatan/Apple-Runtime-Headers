@@ -22,11 +22,11 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int mobileSpace; // @synthesize mobileSpace=_mobileSpace;
 @property(readonly, copy, nonatomic) NSArray *suggestedValues; // @synthesize suggestedValues=_suggestedValues;
 @property(readonly, nonatomic) int event; // @synthesize event=_event;
 @property(readonly, copy, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
@@ -40,7 +40,7 @@
 - (id)initWithPlacemark:(id)arg1 event:(int)arg2 suggestedValues:(id)arg3 mobileSpace:(int)arg4;
 - (id)initWithPlacemark:(id)arg1 event:(int)arg2;
 - (id)init;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _Bool _showsNotSecureAnotation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsNotSecureAnotation; // @synthesize showsNotSecureAnotation=_showsNotSecureAnotation;
 @property(nonatomic) _Bool isSecure; // @synthesize isSecure=_isSecure;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)updateConstraints;

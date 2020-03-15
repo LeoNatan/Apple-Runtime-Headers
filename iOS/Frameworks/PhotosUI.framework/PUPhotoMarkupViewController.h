@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSURL *__workaroundInputWriteURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setWorkaroundInputWriteURL:) NSURL *_workaroundInputWriteURL; // @synthesize _workaroundInputWriteURL=__workaroundInputWriteURL;
 @property(nonatomic, setter=_setSourceImageVersion:) long long _sourceImageVersion; // @synthesize _sourceImageVersion=__sourceImageVersion;
 @property(readonly, nonatomic) PUObserverRegistry *_observerRegistry; // @synthesize _observerRegistry=__observerRegistry;
 @property(readonly, nonatomic) MarkupViewController *_markupViewController; // @synthesize _markupViewController=__markupViewController;
 @property(readonly, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PUReviewAsset *reviewAsset; // @synthesize reviewAsset=_reviewAsset;
-- (void).cxx_destruct;
 - (id)controller:(id)arg1 willSetToolbarItems:(id)arg2;
 - (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;

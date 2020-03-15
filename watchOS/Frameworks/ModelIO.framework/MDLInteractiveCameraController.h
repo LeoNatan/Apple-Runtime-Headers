@@ -29,6 +29,8 @@
     // Error parsing type: , name: _trackVector
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) float zoom; // @synthesize zoom=_zoom;
 // Error parsing type for property viewSize:
 // Property attributes: T,N,V_viewSize
@@ -45,8 +47,6 @@
 // Property attributes: T,N,V_dragPoint
 
 @property(copy, nonatomic) MDLStereoscopicCamera *camera; // @synthesize camera=_camera;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)update:(float)arg1;
 - (void)frameObject;
 - (void)mouseMotionX:(float)arg1 Y:(float)arg2;

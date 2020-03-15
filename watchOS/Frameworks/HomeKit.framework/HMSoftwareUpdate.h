@@ -30,12 +30,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly) unsigned long long downloadSize; // @synthesize downloadSize=_downloadSize;
 @property(readonly, copy) HMFSoftwareVersion *version; // @synthesize version=_version;
 @property __weak id <HMSoftwareUpdateDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;

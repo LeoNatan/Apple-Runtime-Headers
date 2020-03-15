@@ -27,6 +27,7 @@
 
 + (id)contactByRemovingSensitiveDataFromContact:(id)arg1;
 + (id)propertyKeysContainingSenstiveData;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNCancelable> contactStoreDidChangeToken; // @synthesize contactStoreDidChangeToken=_contactStoreDidChangeToken;
 @property(retain, nonatomic) CNFuture *updateContactListByRemovingContactsFuture; // @synthesize updateContactListByRemovingContactsFuture=_updateContactListByRemovingContactsFuture;
 @property(retain, nonatomic) CNFuture *updateContactListByAddingContactsFuture; // @synthesize updateContactListByAddingContactsFuture=_updateContactListByAddingContactsFuture;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsModelFetching> modelFetcher; // @synthesize modelFetcher=_modelFetcher;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 @property(nonatomic) __weak id <CNUICoreFamilyMemberContactsObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)updateListByRemovingContacts:(id)arg1;
 - (void)updateListByAddingContacts:(id)arg1;
 - (id)countOfFamilyMemberContactsFutureFromFetcher;

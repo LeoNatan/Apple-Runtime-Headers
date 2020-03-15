@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(nonatomic) __weak id <ENLoadingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cancel:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;

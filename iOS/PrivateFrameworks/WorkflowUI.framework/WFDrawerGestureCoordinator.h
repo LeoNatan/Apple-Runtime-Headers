@@ -31,6 +31,7 @@
     struct CGPoint _unmodifiedInitialContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool correctingContentOffset; // @synthesize correctingContentOffset=_correctingContentOffset;
 @property(nonatomic) struct CGPoint unmodifiedInitialContentOffset; // @synthesize unmodifiedInitialContentOffset=_unmodifiedInitialContentOffset;
 @property(nonatomic) struct CGPoint initialContentOffset; // @synthesize initialContentOffset=_initialContentOffset;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(readonly, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(readonly, nonatomic) __weak id <WFDrawerGestureCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)clampedDrawerHeight:(double)arg1;
 - (double)containerHeight;
 - (double)drawerHeight;

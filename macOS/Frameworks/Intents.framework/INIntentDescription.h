@@ -25,6 +25,7 @@
     SEL _confirmSelector;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL confirmSelector; // @synthesize confirmSelector=_confirmSelector;
 @property(readonly, nonatomic) SEL handleSelector; // @synthesize handleSelector=_handleSelector;
 @property(readonly, nonatomic) BOOL isPrivate; // @synthesize isPrivate=_isPrivate;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) Class facadeClass; // @synthesize facadeClass=_facadeClass;
 @property(readonly, copy, nonatomic) NSString *responseName; // @synthesize responseName=_responseName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *slotsByName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

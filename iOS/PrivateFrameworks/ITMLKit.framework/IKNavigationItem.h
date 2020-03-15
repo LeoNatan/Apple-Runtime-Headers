@@ -14,9 +14,9 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(retain, nonatomic) IKAppDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (id)initWithDocument:(id)arg1 presentationOptions:(id)arg2;
 
 @end

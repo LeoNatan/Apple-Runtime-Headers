@@ -21,8 +21,8 @@
 + (id)featureWithType:(unsigned long long)arg1 name:(id)arg2;
 + (id)featureWithMeaningfulEvent:(id)arg1;
 + (id)featureWithType:(unsigned long long)arg1 node:(id)arg2;
-@property(readonly) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long type; // @synthesize type=_type;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

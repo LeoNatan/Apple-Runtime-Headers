@@ -23,8 +23,8 @@
     id <NUViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NUViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NUViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)resourceProviderKey;
 - (id)provideAtlasBacking:(id)arg1;
 - (void)quadViewWillDisplay:(id)arg1 forTime:(double)arg2;

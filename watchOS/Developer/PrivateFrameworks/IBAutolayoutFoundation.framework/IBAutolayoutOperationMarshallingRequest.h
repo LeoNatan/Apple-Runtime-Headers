@@ -15,8 +15,8 @@
 }
 
 + (id)requestWithMarshallableObjectPackage:(id)arg1 arbitrationUnit:(id)arg2;
-@property(readonly, nonatomic) IBAutolayoutArbitrationUnit *arbitrationUnit; // @synthesize arbitrationUnit=_arbitrationUnit;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBAutolayoutArbitrationUnit *arbitrationUnit; // @synthesize arbitrationUnit=_arbitrationUnit;
 - (id)debugDescription;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

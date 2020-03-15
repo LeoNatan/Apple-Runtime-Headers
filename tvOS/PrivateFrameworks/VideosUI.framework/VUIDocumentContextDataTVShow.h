@@ -14,9 +14,9 @@
     NSString *_episodeID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *episodeID; // @synthesize episodeID=_episodeID;
 @property(readonly, copy, nonatomic) NSString *showID; // @synthesize showID=_showID;
-- (void).cxx_destruct;
 - (id)jsonData;
 - (id)initWithShowID:(id)arg1 episodeID:(id)arg2;
 

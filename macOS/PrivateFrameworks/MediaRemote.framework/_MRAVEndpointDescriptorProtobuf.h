@@ -32,6 +32,7 @@
 
 + (Class)personalOutputDevicesType;
 + (Class)outputDevicesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *personalOutputDevices; // @synthesize personalOutputDevices=_personalOutputDevices;
 @property(nonatomic) BOOL canModifyGroupMembership; // @synthesize canModifyGroupMembership=_canModifyGroupMembership;
 @property(nonatomic) BOOL isProxyGroupPlayer; // @synthesize isProxyGroupPlayer=_isProxyGroupPlayer;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSMutableArray *outputDevices; // @synthesize outputDevices=_outputDevices;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

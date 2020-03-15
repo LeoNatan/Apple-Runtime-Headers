@@ -30,6 +30,7 @@
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, getter=isSubscribed) id subscribed; // @synthesize subscribed=_subscribed;
 @property(readonly) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly) SUScriptDictionary *rawResponseData; // @synthesize rawResponseData=_rawResponseData;
@@ -46,7 +47,6 @@
 @property(readonly) NSString *accountStatus; // @synthesize accountStatus=_accountStatus;
 @property(readonly) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(readonly) NSNumber *acceptedStoreTermsVersion; // @synthesize acceptedStoreTermsVersion=_acceptedStoreTermsVersion;
-- (void).cxx_destruct;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 @property(readonly) NSString *eligibilityStatusUnknown;

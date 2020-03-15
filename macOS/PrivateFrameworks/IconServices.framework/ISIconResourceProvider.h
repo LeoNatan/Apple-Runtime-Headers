@@ -15,10 +15,10 @@
     NSArray *_decorations;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *decorations; // @synthesize decorations=_decorations;
 @property(readonly) id <LSIconResourceProvider> lsResourceProvider; // @synthesize lsResourceProvider=_lsResourceProvider;
-- (void).cxx_destruct;
-- (struct NSData *)generateValidationToken;
+- (id)generateValidationToken;
 - (void)configureCompositor:(id)arg1 backgroundStyle:(unsigned long long)arg2;
 - (id)initWithLSIconResourceProvider:(id)arg1 decorations:(id)arg2;
 

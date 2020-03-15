@@ -14,9 +14,9 @@
     UIImage *_thumbnailImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqualToEffect:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

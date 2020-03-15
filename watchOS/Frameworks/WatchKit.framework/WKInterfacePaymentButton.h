@@ -16,9 +16,9 @@
     id _actionTarget;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(nonatomic) SEL actionSelector; // @synthesize actionSelector=_actionSelector;
-- (void).cxx_destruct;
 - (id)interfaceDescriptionForDynamicCreation;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 

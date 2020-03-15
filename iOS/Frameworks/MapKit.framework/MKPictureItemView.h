@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didDownloadImage; // @synthesize didDownloadImage=_didDownloadImage;
 @property(readonly, nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *providerName; // @synthesize providerName=_providerName;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) id <GEOPictureItem> pictureItem; // @synthesize pictureItem=_pictureItem;
-- (void).cxx_destruct;
 - (void)updateUIForTheme:(id)arg1;
 - (void)fetchImageIfNecessary;
 - (void)setupSubviews;

@@ -14,8 +14,8 @@
 }
 
 + (id)assetInfoWithAssetPath:(id)arg1;
-@property(retain) NSString *assetPath; // @synthesize assetPath;
 - (void).cxx_destruct;
+@property(retain) NSString *assetPath; // @synthesize assetPath;
 
 @end
 

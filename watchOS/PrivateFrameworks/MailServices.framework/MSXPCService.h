@@ -18,8 +18,8 @@
 
 + (id)remoteProxyForXPCInterface:(id)arg1 shouldLaunchMobileMail:(_Bool)arg2 connectionErrorHandler:(CDUnknownBlockType)arg3;
 + (id)remoteProxyForXPCInterface:(id)arg1 connectionErrorHandler:(CDUnknownBlockType)arg2;
-@property(nonatomic) _Bool shouldLaunchMobileMail; // @synthesize shouldLaunchMobileMail=_shouldLaunchMobileMail;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool shouldLaunchMobileMail; // @synthesize shouldLaunchMobileMail=_shouldLaunchMobileMail;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxy;
 - (id)newConnectionForInterface:(id)arg1;

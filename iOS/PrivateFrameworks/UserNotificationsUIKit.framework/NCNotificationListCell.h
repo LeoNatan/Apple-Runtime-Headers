@@ -19,6 +19,7 @@
 {
     _Bool _adjustsFontForContentSizeCategory;
     _Bool _configured;
+    _Bool _sideSwipedWithoutTouch;
     _Bool _executingDefaultAction;
     _Bool _performingSwipeHinting;
     _Bool _performingOrbHinting;
@@ -38,6 +39,7 @@
     struct UIEdgeInsets _insetMargins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPerformingOrbHinting) _Bool performingOrbHinting; // @synthesize performingOrbHinting=_performingOrbHinting;
 @property(nonatomic) double panGestureStartingPosition; // @synthesize panGestureStartingPosition=_panGestureStartingPosition;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
@@ -50,6 +52,7 @@
 @property(retain, nonatomic) UIView *leftActionButtonsClippingRevealView; // @synthesize leftActionButtonsClippingRevealView=_leftActionButtonsClippingRevealView;
 @property(retain, nonatomic) NCNotificationListCellActionButtonsView *rightActionButtonsView; // @synthesize rightActionButtonsView=_rightActionButtonsView;
 @property(retain, nonatomic) NCNotificationListCellActionButtonsView *leftActionButtonsView; // @synthesize leftActionButtonsView=_leftActionButtonsView;
+@property(nonatomic, getter=isSideSwipedWithoutTouch) _Bool sideSwipedWithoutTouch; // @synthesize sideSwipedWithoutTouch=_sideSwipedWithoutTouch;
 @property(nonatomic, getter=isConfigured) _Bool configured; // @synthesize configured=_configured;
 @property(nonatomic) struct UIEdgeInsets insetMargins; // @synthesize insetMargins=_insetMargins;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -57,7 +60,6 @@
 @property(retain, nonatomic) NCNotificationViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (_Bool)_delegateAllowsPerformingClipping;
 - (_Bool)_shouldPerformClipping;

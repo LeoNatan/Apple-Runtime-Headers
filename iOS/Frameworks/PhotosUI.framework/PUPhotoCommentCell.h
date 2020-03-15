@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 + (double)heightForComment:(id)arg1 forWidth:(double)arg2 forInterfaceOrientation:(long long)arg3;
 + (Class)layerClass;
 + (id)_synthesizedAttributedString:(id)arg1 withWordWrapping:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesCompactSeparators; // @synthesize usesCompactSeparators=_usesCompactSeparators;
 @property(copy, nonatomic) PLCloudSharedComment *comment; // @synthesize comment=_comment;
 @property(readonly, retain, nonatomic) UIView *styledSeparatorView; // @synthesize styledSeparatorView=_styledSeparatorView;
 @property(readonly, retain, nonatomic) UILabel *commentBylineLabel; // @synthesize commentBylineLabel=_commentBylineLabel;
 @property(readonly, retain, nonatomic) UITextView *commentContentTextView; // @synthesize commentContentTextView=_commentContentTextView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateContent;
 - (void)delete:(id)arg1;

@@ -26,6 +26,7 @@
     SBWorkspaceTransientOverlayTransitionContext *_transientOverlayContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBWorkspaceTransientOverlayTransitionContext *transientOverlayContext; // @synthesize transientOverlayContext=_transientOverlayContext;
 @property(retain, nonatomic) SBWorkspaceApplicationSceneTransitionContext *applicationContext; // @synthesize applicationContext=_applicationContext;
 @property(copy, nonatomic) NSString *eventLabel; // @synthesize eventLabel=_eventLabel;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSUUID *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(readonly, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
 @property(readonly, nonatomic) SBWorkspace *workspace; // @synthesize workspace=_workspace;
-- (void).cxx_destruct;
 - (id)previousLayoutStateForApplicationTransitionContext:(id)arg1;
 - (id)layoutStateForApplicationTransitionContext:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

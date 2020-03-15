@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSString *__command;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *_command; // @synthesize _command=__command;
 @property(nonatomic) BOOL forceSpeakWrittenTitle; // @synthesize forceSpeakWrittenTitle=_forceSpeakWrittenTitle;
 @property(retain, nonatomic) NSString *alernativeCommandActivator; // @synthesize alernativeCommandActivator=_alernativeCommandActivator;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) SCRKeyboardKey *key; // @synthesize key=_key;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak SCRGuide *guide; // @synthesize guide=_guide;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)sortDescendingByTitle:(id)arg1;
 - (long long)sortAscendingByTitle:(id)arg1;

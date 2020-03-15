@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     SKUIRedeemViewControllerLegacy *_redeemViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SKUIRedeemViewControllerLegacy *redeemViewController; // @synthesize redeemViewController=_redeemViewController;
 @property(copy) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
-- (void).cxx_destruct;
 - (void)_logResultsForSuccess:(_Bool)arg1 shouldVerify:(_Bool)arg2 failureReason:(id)arg3 error:(id)arg4;
 - (id)_subOperationWithBagKey:(id)arg1;
 - (id)_authenticationContext;

@@ -24,6 +24,7 @@
     long long _footerIndexSection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long footerIndexSection; // @synthesize footerIndexSection=_footerIndexSection;
 @property(nonatomic) long long junkIndexSection; // @synthesize junkIndexSection=_junkIndexSection;
 @property(retain, nonatomic) UITextView *stickyFooterTextView; // @synthesize stickyFooterTextView=_stickyFooterTextView;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UITableViewDiffableDataSource *tableViewDataSource; // @synthesize tableViewDataSource=_tableViewDataSource;
 @property(retain, nonatomic) CKConversationListController *conversationListController; // @synthesize conversationListController=_conversationListController;
-- (void).cxx_destruct;
 - (_Bool)_spamFilteringEnabled;
 - (void)_spamFilteringStateChanged;
 - (void)_chatUnreadCountDidChange:(id)arg1;

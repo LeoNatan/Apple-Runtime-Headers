@@ -17,10 +17,10 @@
 
 + (id)optionsFromData:(id)arg1 error:(id *)arg2;
 + (id)dataFromOptions:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTInterprocessChangeNotifier *changeNotifier; // @synthesize changeNotifier=_changeNotifier;
 @property(retain) NSDictionary *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
-- (void).cxx_destruct;
 - (id)lockFileWithFlags:(int)arg1 block:(CDUnknownBlockType)arg2;
 - (id)optionsWithCachePolicy:(long long)arg1;
 - (id)deleteFile;

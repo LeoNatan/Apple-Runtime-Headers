@@ -13,8 +13,8 @@
     NSString *_name;
 }
 
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (_Bool)hasSpecialName;
 - (id)matchRanges;
 - (unsigned int)matchCount;

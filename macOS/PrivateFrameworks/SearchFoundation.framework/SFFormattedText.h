@@ -26,11 +26,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) BOOL isBold; // @synthesize isBold=_isBold;
 @property(nonatomic) BOOL isEmphasized; // @synthesize isEmphasized=_isEmphasized;
 @property(retain, nonatomic) SFImage *glyph; // @synthesize glyph=_glyph;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

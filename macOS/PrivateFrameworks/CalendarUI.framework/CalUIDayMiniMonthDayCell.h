@@ -35,6 +35,7 @@
 + (id)_todayBorderGradient;
 + (id)_todayGradient;
 + (id)_localizedStringForNumber:(id)arg1;
+- (void).cxx_destruct;
 @property struct CGSize backgroundSize; // @synthesize backgroundSize=_backgroundSize;
 @property BOOL backgroundSizeIsStatic; // @synthesize backgroundSizeIsStatic=_backgroundSizeIsStatic;
 @property double backgroundYOffset; // @synthesize backgroundYOffset=_backgroundYOffset;
@@ -54,7 +55,6 @@
 @property BOOL isHovered; // @synthesize isHovered=_isHovered;
 @property(retain) NSDate *date; // @synthesize date=_date;
 @property struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)initTextCellWithDate:(id)arg1 calendar:(id)arg2 isActive:(BOOL)arg3 font:(id)arg4 textColor:(id)arg5 alignment:(long long)arg6;

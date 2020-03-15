@@ -20,8 +20,8 @@
 
 + (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4 error:(id *)arg5;
 + (Class)queryClass;
-@property(nonatomic) __weak HDActivityCacheManager *activityCacheManager; // @synthesize activityCacheManager=_activityCacheManager;
 - (void).cxx_destruct;
+@property(nonatomic) __weak HDActivityCacheManager *activityCacheManager; // @synthesize activityCacheManager=_activityCacheManager;
 - (void)activityCacheManager:(id)arg1 changedTodayActivityCache:(id)arg2;
 - (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (void)_queue_stop;

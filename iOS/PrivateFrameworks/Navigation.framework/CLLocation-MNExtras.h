@@ -17,7 +17,6 @@
 @property(readonly, nonatomic, getter=_navigation_rawShiftedCoordinate) struct CLLocationCoordinate2D rawShiftedCoordinate;
 @property(readonly, nonatomic, getter=_navigation_hasMatch) _Bool hasMatch;
 - (double)_navigation_speedAccuracy;
-@property(readonly, nonatomic, getter=_navigation_courseAccuracy) double courseAccuracy;
 - (_Bool)_navigation_isEqualToLocationCoordinate:(struct CLLocationCoordinate2D)arg1;
 @property(readonly, nonatomic, getter=_navigation_locationDescription) NSString *locationDescription;
 @property(readonly, nonatomic, getter=_navigation_routeMatch) GEORouteMatch *routeMatch;

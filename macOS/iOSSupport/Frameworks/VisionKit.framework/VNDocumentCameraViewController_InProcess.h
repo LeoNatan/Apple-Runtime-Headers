@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     ICDocCamViewController *_viewController;
 }
 
-@property(retain, nonatomic) ICDocCamViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICDocCamViewController *viewController; // @synthesize viewController=_viewController;
 - (void)_autoDismiss;
 - (id)scanDataDelegateWithIdentifier:(id)arg1;
 - (void)documentCameraControllerDidCancel:(id)arg1;

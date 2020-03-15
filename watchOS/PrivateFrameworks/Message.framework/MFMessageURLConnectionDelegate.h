@@ -17,8 +17,8 @@
     NSURLResponse *_response;
 }
 
-@property(readonly, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) EFFuture *future;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;

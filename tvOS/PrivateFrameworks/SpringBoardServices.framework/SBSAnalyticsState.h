@@ -18,8 +18,8 @@
 
 + (id)withTimestamp:(double)arg1 payload:(id)arg2;
 + (id)withTimestamp:(double)arg1;
-@property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *UserIds; // @synthesize UserIds=_UserIds;
 @property(nonatomic) BOOL IncludePermissions; // @synthesize IncludePermissions=_IncludePermissions;
-- (void).cxx_destruct;
 
 @end
 

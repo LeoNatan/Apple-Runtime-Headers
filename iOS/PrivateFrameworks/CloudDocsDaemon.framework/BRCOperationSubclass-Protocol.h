@@ -9,7 +9,9 @@
 @class NSError;
 
 @protocol BRCOperationSubclass <NSObject>
-- (_Bool)shouldRetryForError:(NSError *)arg1;
 - (void)main;
+
+@optional
+- (_Bool)shouldRetryForError:(NSError *)arg1;
 @end
 

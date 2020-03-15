@@ -18,12 +18,12 @@
 }
 
 + (void)_configureFloatingContentViewAppearance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _TVSMVibrantHeaderFooterView *vibrantFooterView; // @synthesize vibrantFooterView=_vibrantFooterView;
 @property(readonly, nonatomic) _TVSMMonogramContentView *monogramContentView; // @synthesize monogramContentView=_monogramContentView;
 @property(nonatomic) _Bool showSelection; // @synthesize showSelection=_showSelection;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSPersonNameComponents *personNameComponents; // @synthesize personNameComponents=_personNameComponents;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title;
 - (id)initWithFrame:(struct CGRect)arg1;
 

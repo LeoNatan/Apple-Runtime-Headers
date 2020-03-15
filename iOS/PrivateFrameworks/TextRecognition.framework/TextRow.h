@@ -16,9 +16,9 @@
     double _cachedScore;
 }
 
+- (void).cxx_destruct;
 @property double cachedScore; // @synthesize cachedScore=_cachedScore;
 @property(retain, nonatomic) NSMutableArray *mutableTokens; // @synthesize mutableTokens=_mutableTokens;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NSArray *features;
 @property(readonly) double score;

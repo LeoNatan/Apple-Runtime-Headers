@@ -69,6 +69,7 @@
 }
 
 + (id)defaultFont;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setPreserveSearchBarAcrossTransitions:) BOOL _preserveSearchBarAcrossTransitions; // @synthesize _preserveSearchBarAcrossTransitions=__preserveSearchBarAcrossTransitions;
 @property(retain, nonatomic) NSArray *_alternateLargeTitles; // @synthesize _alternateLargeTitles=__alternateLargeTitles;
 @property(nonatomic) BOOL useRelativeLargeTitleInsets; // @synthesize useRelativeLargeTitleInsets=_useRelativeLargeTitleInsets;
@@ -102,7 +103,6 @@
 @property(copy, nonatomic, setter=_setPendingTitle:) NSString *_pendingTitle; // @synthesize _pendingTitle;
 @property(retain, nonatomic, setter=_setBottomPalette:) _UINavigationBarPalette *_bottomPalette; // @synthesize _bottomPalette;
 @property(nonatomic, setter=_setFontScaleAdjustment:) double _fontScaleAdjustment; // @synthesize _fontScaleAdjustment;
-- (void).cxx_destruct;
 - (void)appearance:(id)arg1 categoriesChanged:(long long)arg2;
 - (id)_independentShadowImage;
 - (id)_independentBackgroundImageForBarMetrics:(long long)arg1;

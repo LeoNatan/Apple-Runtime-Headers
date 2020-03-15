@@ -19,11 +19,11 @@
     NSMutableSet *_profileGroupItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *profileGroupItems; // @synthesize profileGroupItems=_profileGroupItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFAccessoryProfileGroupOptions *groupOptions; // @synthesize groupOptions=_groupOptions;
 @property(retain, nonatomic) HFAccessoryProfileFilterOptions *filterOptions; // @synthesize filterOptions=_filterOptions;
-- (void).cxx_destruct;
 - (id)_profileGroupItemForProfiles:(id)arg1 groupIdentifier:(id)arg2;
 - (id)_supportedProfileClasses;
 - (id)invalidationReasons;

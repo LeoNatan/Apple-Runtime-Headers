@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
     struct PolylineCoordinate _routeUserOffset;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableTransitLines; // @synthesize disableTransitLines=_disableTransitLines;
 @property(nonatomic) struct PolylineCoordinate routeUserOffset; // @synthesize routeUserOffset=_routeUserOffset;
 @property(nonatomic) unsigned char labelScaleFactor; // @synthesize labelScaleFactor=_labelScaleFactor;
@@ -50,8 +52,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float navMapZoomLevelTransitionZ; // @synthesize navMapZoomLevelTransitionZ=_navMapZoomLevelTransitionZ;
 @property(nonatomic) float navigationPuckSize; // @synthesize navigationPuckSize=_navigationPuckSize;
 @property(nonatomic) id <VKMapModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float currentRoadSignOffset;
 - (shared_ptr_430519ce)featureMarkerAtScreenPoint:(struct CGPoint)arg1 groundPoint:(Matrix_6e1d3589)arg2;
 - (void)debugHighlightObjectAtPoint:(struct CGPoint)arg1 highlightTarget:(unsigned char)arg2;

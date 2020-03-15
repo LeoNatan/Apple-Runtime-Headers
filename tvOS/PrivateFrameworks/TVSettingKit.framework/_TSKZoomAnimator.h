@@ -18,9 +18,9 @@
     id <_TSKAnimatorDelegate> _animatorDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_TSKAnimatorDelegate> animatorDelegate; // @synthesize animatorDelegate=_animatorDelegate;
 @property(nonatomic) long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (void)_animatePush:(_Bool)arg1 withContext:(id)arg2;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;

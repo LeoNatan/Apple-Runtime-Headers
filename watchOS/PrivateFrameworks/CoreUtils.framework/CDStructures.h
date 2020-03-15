@@ -33,18 +33,6 @@ struct LogCategoryPrivate;
 
 struct LogOutput;
 
-struct NSMutableArray {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSMutableSet {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned int location;
     unsigned int length;
@@ -144,6 +132,19 @@ struct sockaddr_in6 {
 typedef struct {
     unsigned char bytes[6];
 } CDStruct_83abfce7;
+
+typedef struct {
+    int _field1;
+    long _field2;
+    long _field3;
+    char *_field4;
+    int _field5;
+    long _field6;
+    long _field7;
+    int _field8;
+    struct _opaque_pthread_mutex_t _field9;
+    struct _telldir *_field10;
+} CDStruct_51f420f1;
 
 #pragma mark Typedef'd Unions
 

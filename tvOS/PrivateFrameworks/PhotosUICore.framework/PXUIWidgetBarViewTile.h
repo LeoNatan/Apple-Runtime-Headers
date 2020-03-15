@@ -15,8 +15,8 @@
     UIView *_view;
 }
 
-@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;
 
 // Remaining properties

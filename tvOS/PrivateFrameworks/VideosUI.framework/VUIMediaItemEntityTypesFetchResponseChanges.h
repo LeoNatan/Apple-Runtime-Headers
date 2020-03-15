@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     VUICollectionChangeSet *_mediaItemEntityTypesChangeSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool localMediaItemsAvailableDidChange; // @synthesize localMediaItemsAvailableDidChange=_localMediaItemsAvailableDidChange;
 @property(readonly, nonatomic) VUICollectionChangeSet *mediaItemEntityTypesChangeSet; // @synthesize mediaItemEntityTypesChangeSet=_mediaItemEntityTypesChangeSet;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithMediaItemEntityTypesChangeSet:(id)arg1 localMediaItemsAvailableDidChange:(_Bool)arg2;
 - (id)init;

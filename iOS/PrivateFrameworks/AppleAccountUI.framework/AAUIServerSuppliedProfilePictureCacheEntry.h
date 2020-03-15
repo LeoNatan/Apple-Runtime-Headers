@@ -16,10 +16,10 @@
     NSString *_serverCacheTag;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool updating; // @synthesize updating=_updating;
 @property(copy, nonatomic) NSString *serverCacheTag; // @synthesize serverCacheTag=_serverCacheTag;
 @property(retain, nonatomic) UIImage *picture; // @synthesize picture=_picture;
-- (void).cxx_destruct;
 - (id)description;
 - (void)expire;
 @property(readonly, nonatomic) _Bool expired;

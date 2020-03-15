@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int virtualKeyCode; // @synthesize virtualKeyCode=_virtualKeyCode;
 @property(nonatomic) unsigned int keyCode; // @synthesize keyCode=_keyCode;
 @property(nonatomic) unsigned int modifiers; // @synthesize modifiers=_modifiers;
 @property(retain, nonatomic) NSString *keyString; // @synthesize keyString=_keyString;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

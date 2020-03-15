@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (struct PQLResultSet *)_itemsNeedingSyncUpEnumerator;
+- (id)_itemsNeedingSyncUpEnumerator;
 - (void)main;
 - (void)_syncUpRecordBatchWithModifiedRecords:(id)arg1 deletedRecordIDs:(id)arg2 recordIDToZoneMap:(id)arg3 requestID:(unsigned long long)arg4;
 - (void)_markItemsFailedSync;

@@ -15,8 +15,8 @@
 
 + (id)valueWithNoDuration;
 + (id)valueWithDuration:(double)arg1;
-@property(readonly, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) _Bool hasDuration;
 - (id)initWithDuration:(id)arg1;
 - (id)init;

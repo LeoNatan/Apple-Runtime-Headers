@@ -17,9 +17,9 @@
 + (void)setInferredNameOrder:(long long *)arg1 toTokenizerNameOrder:(int)arg2;
 + (id)tokenizeNameString:(id)arg1 usingLocale:(id)arg2 inferredNameOrder:(long long *)arg3;
 + (id)tokenizeNameString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(readonly, nonatomic) struct __CFStringTokenizer *tokenizer; // @synthesize tokenizer=_tokenizer;
-- (void).cxx_destruct;
 - (id)tokenizeNameString:(id)arg1 inferredNameOrder:(long long *)arg2;
 - (void)dealloc;
 - (id)initWithLocale:(id)arg1;

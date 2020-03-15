@@ -15,15 +15,16 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(nonatomic) void *outputDevice; // @synthesize outputDevice=_outputDevice;
-- (void).cxx_destruct;
 - (_Bool)shouldCreateAppleMediaAccessory;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;
+@property(readonly, nonatomic) _Bool supportsHAP;
 @property(readonly, nonatomic) _Bool supportsWHA;
 @property(readonly, nonatomic) NSString *modelID;
 @property(readonly, nonatomic) unsigned int deviceSubtype;

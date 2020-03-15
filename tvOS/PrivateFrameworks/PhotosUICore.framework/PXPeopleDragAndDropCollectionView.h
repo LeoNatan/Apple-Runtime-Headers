@@ -19,13 +19,13 @@
     UIVisualEffect *_blurEffect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffect *blurEffect; // @synthesize blurEffect=_blurEffect;
 @property(nonatomic) _Bool validDrop; // @synthesize validDrop=_validDrop;
 @property(retain, nonatomic) NSIndexPath *dragSourceIndexPath; // @synthesize dragSourceIndexPath=_dragSourceIndexPath;
 @property(retain, nonatomic) PXPeopleCollectionViewCell *dragSourceCell; // @synthesize dragSourceCell=_dragSourceCell;
 @property(nonatomic) _Bool interactiveMode; // @synthesize interactiveMode=_interactiveMode;
 @property(nonatomic) __weak id <PXPeopleDragAndDropCollectionViewDelegate> dragDropDelegate; // @synthesize dragDropDelegate=_dragDropDelegate;
-- (void).cxx_destruct;
 - (long long)sectionAtPoint:(struct CGPoint)arg1;
 - (id)_footerAttributes;
 - (double)_highestVisibleCellZOrder;

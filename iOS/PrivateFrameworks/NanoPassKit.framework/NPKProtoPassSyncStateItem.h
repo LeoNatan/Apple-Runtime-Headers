@@ -23,12 +23,12 @@
 }
 
 + (Class)manifestEntryType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *manifestEntrys; // @synthesize manifestEntrys=_manifestEntrys;
 @property(retain, nonatomic) NSData *manifestHash; // @synthesize manifestHash=_manifestHash;
 @property(nonatomic) unsigned int sequenceCounter; // @synthesize sequenceCounter=_sequenceCounter;
 @property(retain, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(retain, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)textFieldWithTitle:(id)arg1 secure:(BOOL)arg2;
 + (id)textFieldWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(nonatomic, getter=isSecure) BOOL secure; // @synthesize secure=_secure;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1;
 
 @end

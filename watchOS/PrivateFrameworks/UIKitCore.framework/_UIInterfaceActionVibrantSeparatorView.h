@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _UIInterfaceActionSeparatorConstraintController *_separatorViewConstraints;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) _UIInterfaceActionSeparatorConstraintController *separatorViewConstraints; // @synthesize separatorViewConstraints=_separatorViewConstraints;
 @property(nonatomic) float horizontalLineLeadingInset; // @synthesize horizontalLineLeadingInset=_horizontalLineLeadingInset;
-- (void).cxx_destruct;
 - (void)_updateContentDirectionalInsets;
 - (void)updateConstraints;
 - (int)constantSizedAxis;

@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _disappearanceReason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long disappearanceReason; // @synthesize disappearanceReason=_disappearanceReason;
 @property(retain, nonatomic) UITapGestureRecognizer *internalMenuGestureRecognizer; // @synthesize internalMenuGestureRecognizer=_internalMenuGestureRecognizer;
 @property(nonatomic) _Bool waitingForPostPlayDocumentUpdateToShowPostPlay; // @synthesize waitingForPostPlayDocumentUpdateToShowPostPlay=_waitingForPostPlayDocumentUpdateToShowPostPlay;
@@ -75,7 +76,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIMediaController *mediaController; // @synthesize mediaController=_mediaController;
 @property(retain, nonatomic) TVMediaPlaybackManager *mediaPlaybackManager; // @synthesize mediaPlaybackManager=_mediaPlaybackManager;
 @property(nonatomic) __weak id <VUINowPlayingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_sendPostPlayShouldUpdateNotificationExcludingCanonicals:(id)arg1;
@@ -126,7 +126,7 @@ __attribute__((visibility("hidden")))
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
 - (void)showMoreInfo;
 - (void)showStillWatchingAlertWithFinishedHandler:(CDUnknownBlockType)arg1;
-- (void)showSkipIntro:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)showSkipIntro:(_Bool)arg1 localizedTitle:(id)arg2 animated:(_Bool)arg3;
 - (void)showAdvisory:(_Bool)arg1 image:(id)arg2 animated:(_Bool)arg3;
 - (void)showPostPlay:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)showNowPlayingHud:(_Bool)arg1 animated:(_Bool)arg2;

@@ -13,8 +13,8 @@
     NSDictionary *_srvRecord;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *srvRecord; // @synthesize srvRecord=_srvRecord;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *srvRecord; // @synthesize srvRecord=_srvRecord;
 - (id)description;
 @property(readonly, nonatomic) NSNumber *weight;
 @property(readonly, nonatomic) NSNumber *priority;

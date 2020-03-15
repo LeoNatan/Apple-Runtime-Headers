@@ -27,6 +27,7 @@
 }
 
 + (id)stateAsStringForPaymentApplicationState:(int)arg1 showContactlessApplicationErrorMessage:(_Bool)arg2 merchantName:(id)arg3 pass:(id)arg4 instructionType:(unsigned int)arg5 loyalty:(_Bool)arg6 includeSummary:(_Bool)arg7 peerPaymentAccount:(id)arg8;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loyalty; // @synthesize loyalty=_loyalty;
 @property(nonatomic) int contactlessPaymentApplicationState; // @synthesize contactlessPaymentApplicationState=_contactlessPaymentApplicationState;
 @property(nonatomic) int primaryPaymentApplicationState; // @synthesize primaryPaymentApplicationState=_primaryPaymentApplicationState;
@@ -41,7 +42,6 @@
 @property(nonatomic) _Bool includePaymentSummary; // @synthesize includePaymentSummary=_includePaymentSummary;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) NSString *merchantName; // @synthesize merchantName=_merchantName;
-- (void).cxx_destruct;
 - (id)_paymentFont;
 - (void)_updateBounceAnimationAnimated:(_Bool)arg1;
 - (void)_updateUI;

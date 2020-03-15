@@ -21,12 +21,12 @@
     NSString *_bootstrapICCID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bootstrapICCID; // @synthesize bootstrapICCID=_bootstrapICCID;
 @property(readonly, copy, nonatomic) NSString *CSN; // @synthesize CSN=_CSN;
 @property(readonly, copy, nonatomic) NSString *ICCID; // @synthesize ICCID=_ICCID;
 @property(readonly, copy, nonatomic) NSString *IMEI; // @synthesize IMEI=_IMEI;
 @property(readonly, copy, nonatomic) NSString *MEID; // @synthesize MEID=_MEID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(nonatomic) _Bool supportsSystemDrag; // @synthesize supportsSystemDrag=_supportsSystemDrag;
 @property(retain, nonatomic) NSXPCListenerEndpoint *axEndpoint; // @synthesize axEndpoint=_axEndpoint;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIDraggingSystemTouchRoutingPolicy *routingPolicy; // @synthesize routingPolicy=_routingPolicy;
 @property(nonatomic) struct CGPoint initialCentroid; // @synthesize initialCentroid=_initialCentroid;
 @property(retain, nonatomic) NSArray *touchIDs; // @synthesize touchIDs=_touchIDs;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

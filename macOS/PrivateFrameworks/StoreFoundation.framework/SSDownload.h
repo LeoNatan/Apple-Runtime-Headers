@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL isInServerQueue; // @synthesize isInServerQueue=_isInServerQueue;
 @property BOOL needsDisplayInDock; // @synthesize needsDisplayInDock=_needsDisplayInDock;
 @property BOOL skipAssetDownloadIfNotAlreadyOnDisk; // @synthesize skipAssetDownloadIfNotAlreadyOnDisk=_skipAssetDownloadIfNotAlreadyOnDisk;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) SSDownloadStatus *status; // @synthesize status=_status;
 @property(copy, nonatomic) SSDownloadMetadata *metadata; // @synthesize metadata=_metadata;
 @property(copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 @property BOOL skipInstallPhase;
 - (void)setUseUniqueDownloadFolder:(BOOL)arg1;
 @property(copy) NSString *customDownloadPath;

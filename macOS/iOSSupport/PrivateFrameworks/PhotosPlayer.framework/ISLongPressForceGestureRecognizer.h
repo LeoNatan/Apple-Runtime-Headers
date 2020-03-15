@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _is_force;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double is_force; // @synthesize is_force=_is_force;
 @property(nonatomic) double maximumPressure; // @synthesize maximumPressure=_maximumPressure;
 @property(nonatomic) double minimumPressure; // @synthesize minimumPressure=_minimumPressure;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

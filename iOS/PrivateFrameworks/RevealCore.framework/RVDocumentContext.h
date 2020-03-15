@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *coreSpotlightUniqueIdentifier; // @synthesize coreSpotlightUniqueIdentifier;
 @property(copy, nonatomic) NSArray *existingDDResultsList; // @synthesize existingDDResultsList;
 @property(copy, nonatomic) NSURL *documentURL; // @synthesize documentURL;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *authorContactUUID; // @synthesize authorContactUUID;
 @property(copy, nonatomic) NSString *authorEmailAddress; // @synthesize authorEmailAddress;
 @property(copy, nonatomic) NSString *authorName; // @synthesize authorName;
-- (void).cxx_destruct;
 - (void)setNameAndEmailWithRawSenderField:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -37,6 +37,7 @@
 
 + (void)_initializeFileCache;
 + (id)_cachedICSFilesDirectory;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSString *startRunloopDescriptionString; // @synthesize startRunloopDescriptionString=_startRunloopDescriptionString;
 @property(retain, nonatomic) NSTimer *idleTimer; // @synthesize idleTimer=_idleTimer;
@@ -55,7 +56,6 @@
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(nonatomic) __weak id <SubCalURLRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)_receivedDataForFile:(id)arg1;
 - (void)_openFileHandle;
 - (void)_handleAuthenticationChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

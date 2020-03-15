@@ -20,15 +20,15 @@
 + (id)buildRequiredOnlyWithDataURL:(id)arg1 contentType:(id)arg2 size:(id)arg3 hashSHA256:(id)arg4;
 + (id)buildWithDataURL:(id)arg1 contentType:(id)arg2 size:(id)arg3 hashSHA256:(id)arg4 certificatePinningIdentifiers:(id)arg5;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadCertificatePinningIdentifiers; // @synthesize payloadCertificatePinningIdentifiers=_payloadCertificatePinningIdentifiers;
 @property(copy, nonatomic) NSString *payloadHashSHA256; // @synthesize payloadHashSHA256=_payloadHashSHA256;
 @property(copy, nonatomic) NSNumber *payloadSize; // @synthesize payloadSize=_payloadSize;
 @property(copy, nonatomic) NSString *payloadContentType; // @synthesize payloadContentType=_payloadContentType;
 @property(copy, nonatomic) NSString *payloadDataURL; // @synthesize payloadDataURL=_payloadDataURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

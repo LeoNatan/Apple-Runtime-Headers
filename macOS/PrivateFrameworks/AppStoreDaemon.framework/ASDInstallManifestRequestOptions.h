@@ -13,8 +13,8 @@
     ASDJobManifest *_manifest;
 }
 
-@property(copy, nonatomic) ASDJobManifest *manifest; // @synthesize manifest=_manifest;
 - (void).cxx_destruct;
+@property(copy, nonatomic) ASDJobManifest *manifest; // @synthesize manifest=_manifest;
 - (id)initWithManifest:(id)arg1;
 - (id)init;
 

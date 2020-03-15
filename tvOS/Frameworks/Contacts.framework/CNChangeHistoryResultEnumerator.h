@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 
 + (id)groupEnumeratorWithChanges:(id)arg1 contactStore:(id)arg2;
 + (id)contactEnumeratorWithChanges:(id)arg1 keysToFetch:(id)arg2 unifyResults:(_Bool)arg3 contactStore:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNEnumeratorRefillStrategy> refillStrategy; // @synthesize refillStrategy=_refillStrategy;
 @property(readonly, nonatomic) CNQueue *batchFetchQueue; // @synthesize batchFetchQueue=_batchFetchQueue;
 @property(readonly, copy, nonatomic) CNQueue *changes; // @synthesize changes=_changes;
-- (void).cxx_destruct;
 - (void)_fetchNextBatch;
 - (id)nextObject;
 - (id)initWithChanges:(id)arg1 refillStrategy:(id)arg2;

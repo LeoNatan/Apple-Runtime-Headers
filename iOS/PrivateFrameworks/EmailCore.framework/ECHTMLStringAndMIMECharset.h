@@ -15,9 +15,9 @@
     id <ECMIMECharset> _charset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <ECMIMECharset> charset; // @synthesize charset=_charset;
 @property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)initWithString:(id)arg1 charset:(id)arg2;
 
 @end

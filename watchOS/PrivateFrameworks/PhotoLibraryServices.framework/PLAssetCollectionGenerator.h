@@ -22,6 +22,7 @@
     NSDateFormatter *_debugDateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *debugDateFormatter; // @synthesize debugDateFormatter=_debugDateFormatter;
 @property(retain, nonatomic) NSMutableArray *momentsFromAssetClusters; // @synthesize momentsFromAssetClusters=_momentsFromAssetClusters;
 @property(retain, nonatomic) NSMutableSet *insertedOrUpdatedMoments; // @synthesize insertedOrUpdatedMoments=_insertedOrUpdatedMoments;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) PLLocalCreationDateCreator *localCreationDateCreator; // @synthesize localCreationDateCreator=_localCreationDateCreator;
 @property(retain, nonatomic) PLFrequentLocationManager *frequentLocationManager; // @synthesize frequentLocationManager=_frequentLocationManager;
 @property(nonatomic) __weak id <PLMomentGenerationDataManagement> manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (id)libraryClusterer:(id)arg1 createYearListForMoments:(id)arg2 year:(int)arg3;
 - (id)libraryClusterer:(id)arg1 createMonthListForMoments:(id)arg2 month:(int)arg3 year:(int)arg4;
 - (id)libraryClusterer:(id)arg1 createMomentClustersForAssetClusters:(id)arg2 existingMomentDataForAssets:(id)arg3;

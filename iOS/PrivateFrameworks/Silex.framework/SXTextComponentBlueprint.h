@@ -13,8 +13,8 @@
     NSDictionary *_exclusionPaths;
 }
 
-@property(readonly, nonatomic) NSDictionary *exclusionPaths; // @synthesize exclusionPaths=_exclusionPaths;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *exclusionPaths; // @synthesize exclusionPaths=_exclusionPaths;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)invalidateSize;
 - (void)addExclusionPath:(id)arg1 forIdentifier:(id)arg2;

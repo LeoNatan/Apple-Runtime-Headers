@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CALayer *_borderLayer;
 }
 
-@property(retain, nonatomic) CALayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CALayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 - (void)setAnimating:(_Bool)arg1;
 - (void)showCellBorder:(_Bool)arg1;
 @property(retain, nonatomic) id <MSStickerPrivate> sticker;

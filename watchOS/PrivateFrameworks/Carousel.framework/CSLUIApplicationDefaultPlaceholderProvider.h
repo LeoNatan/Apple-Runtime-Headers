@@ -16,9 +16,9 @@
     IOSSHLApplicationsManager *_applicationsManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IOSSHLApplicationsManager *applicationsManager; // @synthesize applicationsManager=_applicationsManager;
 @property(readonly, nonatomic) FBSApplicationLibrary *applicationLibrary; // @synthesize applicationLibrary=_applicationLibrary;
-- (void).cxx_destruct;
 - (void)applyClassicConfiguration:(id)arg1 toStatusBarItem:(id)arg2;
 - (void)_logStatusBarItem:(id)arg1 forBundleIdentifier:(id)arg2 action:(const char *)arg3;
 - (id)_findLaunchStatusBarDictionary:(id)arg1 launchURL:(id)arg2;

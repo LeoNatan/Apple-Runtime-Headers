@@ -21,11 +21,11 @@
 + (id)dataFromViewport:(id)arg1 prune:(_Bool)arg2 preserveBookmark:(id)arg3;
 + (id)viewportFromPBViewport:(id)arg1;
 + (id)pbViewportFromViewport:(id)arg1 prune:(_Bool)arg2 preserveBookmark:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *externalElements; // @synthesize externalElements=_externalElements;
 @property(readonly, copy, nonatomic) NSArray *internalElements; // @synthesize internalElements=_internalElements;
 @property(readonly, copy, nonatomic) NSArray *groupElements; // @synthesize groupElements=_groupElements;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)enumerateInternalHeadlinesFromBookmark:(id)arg1 toBookmark:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)internalIndexPathForBookmark:(id)arg1;
 - (id)externalIndexPathForBookmark:(id)arg1;

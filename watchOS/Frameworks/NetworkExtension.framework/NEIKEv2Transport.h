@@ -30,6 +30,7 @@
 + (id)createTransportWithConnection:(id)arg1 queue:(id)arg2;
 + (id)copyExistingTransport:(unsigned int)arg1 remote:(id)arg2 local:(id)arg3 localPort:(unsigned short)arg4 boundInterface:(id)arg5 packetDelegate:(id)arg6;
 + (id)stringForTransport:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *clients; // @synthesize clients=_clients;
 @property(retain) NSObject<OS_dispatch_queue> *receiveQueue; // @synthesize receiveQueue=_receiveQueue;
 @property _Bool cancelled; // @synthesize cancelled=_cancelled;
@@ -41,7 +42,6 @@
 @property _Bool connected; // @synthesize connected=_connected;
 @property(retain) NWAddressEndpoint *remote; // @synthesize remote=_remote;
 @property(retain) NWAddressEndpoint *local; // @synthesize local=_local;
-- (void).cxx_destruct;
 - (_Bool)sendPacket:(id)arg1;
 - (_Bool)sendData:(id)arg1 sendCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)waitForTransport:(CDUnknownBlockType)arg1;

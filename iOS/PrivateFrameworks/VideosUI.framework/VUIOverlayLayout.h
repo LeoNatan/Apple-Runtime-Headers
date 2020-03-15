@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 
 + (id)layoutWithLayout:(id)arg1 overlayType:(long long)arg2 mediaItem:(id)arg3;
 + (id)layoutWithLayout:(id)arg1 overlayType:(long long)arg2 element:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIProgressBarLayout *progressBarLayout; // @synthesize progressBarLayout=_progressBarLayout;
 @property(retain, nonatomic) TVImageLayout *badgeLayout; // @synthesize badgeLayout=_badgeLayout;
 @property(retain, nonatomic) VUITextBadgeLayout *textBadgeLayout; // @synthesize textBadgeLayout=_textBadgeLayout;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(nonatomic) long long overlayType; // @synthesize overlayType=_overlayType;
-- (void).cxx_destruct;
 - (id)_ribbonTitleLayout;
 - (id)_spotlightTitleLayout;
 - (id)_editorialTitleLayout;

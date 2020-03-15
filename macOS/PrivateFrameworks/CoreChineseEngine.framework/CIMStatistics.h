@@ -15,9 +15,9 @@
 }
 
 + (id)sharedStatistics;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *inputModeToAggregateStatistic; // @synthesize inputModeToAggregateStatistic=_inputModeToAggregateStatistic;
 @property(retain) NSTimer *aggregatedStatisticsTimer; // @synthesize aggregatedStatisticsTimer=_aggregatedStatisticsTimer;
-- (void).cxx_destruct;
 - (void)applicationWillTerminate:(id)arg1;
 - (void)aggregatedStatisticsTimerFired:(id)arg1;
 - (void)flushAggregatedStatistics;

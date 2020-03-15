@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property(nonatomic) _Bool presentingExtensionUI; // @synthesize presentingExtensionUI=_presentingExtensionUI;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool presentingExtensionUI; // @synthesize presentingExtensionUI=_presentingExtensionUI;
 - (void)messageReceivedWithName:(id)arg1 userInfo:(id)arg2;
 - (void)_completeRequest;
 - (void)_completeRequestAfterDelay;

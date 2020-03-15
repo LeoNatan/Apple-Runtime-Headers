@@ -15,8 +15,8 @@
     _Bool _highlighted;
 }
 
-@property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateViewConfiguration;

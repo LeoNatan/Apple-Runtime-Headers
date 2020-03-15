@@ -24,6 +24,7 @@
 
 + (id)snapshotFromIOEntry:(unsigned int)arg1;
 + (id)snapshotFromIOEntry:(unsigned int)arg1 forKey:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) PLOperator *operator; // @synthesize operator=_operator;
 @property(copy, nonatomic) CDUnknownBlockType matchBlock; // @synthesize matchBlock=_matchBlock;
 @property(copy, nonatomic) CDUnknownBlockType operatorBlock; // @synthesize operatorBlock=_operatorBlock;
@@ -34,7 +35,6 @@
 @property unsigned int service; // @synthesize service=_service;
 @property unsigned int notificationRef; // @synthesize notificationRef=_notificationRef;
 @property struct IONotificationPort *ioNotifyPort; // @synthesize ioNotifyPort=_ioNotifyPort;
-- (void).cxx_destruct;
 - (id)properties;
 - (id)propertiesForKey:(id)arg1;
 - (id)propertiesFromIOEntry:(unsigned int)arg1;

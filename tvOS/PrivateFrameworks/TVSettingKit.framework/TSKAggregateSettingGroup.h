@@ -17,8 +17,8 @@
 
 + (id)groupWithTitle:(id)arg1 settingItems:(id)arg2;
 + (id)groupWithTitle:(id)arg1 settingGroups:(id)arg2;
-@property(copy, nonatomic) NSArray *settingGroups; // @synthesize settingGroups=_settingGroups;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *settingGroups; // @synthesize settingGroups=_settingGroups;
 - (void)_refreshSettingItemsWithGroups:(id)arg1;
 - (void)settingGroup:(id)arg1 willRemoveItems:(id)arg2;
 - (void)settingGroup:(id)arg1 didInsertItems:(id)arg2;

@@ -14,9 +14,9 @@
     NSString *_extensionToken;
 }
 
-@property(readonly, copy, nonatomic) NSString *extensionToken; // @synthesize extensionToken=_extensionToken;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *extensionToken; // @synthesize extensionToken=_extensionToken;
 - (void)releaseResource;
 - (BOOL)consumeResource;
 - (id)initWithURL:(id)arg1 extensionToken:(id)arg2;

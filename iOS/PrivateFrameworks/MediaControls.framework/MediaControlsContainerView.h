@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIVisualEffectView *_primaryVisualEffectView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *primaryVisualEffectView; // @synthesize primaryVisualEffectView=_primaryVisualEffectView;
 @property(retain, nonatomic) MediaControlsTimeControl *timeControl; // @synthesize timeControl=_timeControl;
 @property(retain, nonatomic) MediaControlsTransportStackView *transportStackView; // @synthesize transportStackView=_transportStackView;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateStyle;
 @property(retain, nonatomic) MPCPlayerResponse *response;

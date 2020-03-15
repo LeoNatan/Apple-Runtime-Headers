@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_altDSID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(retain, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
-- (void).cxx_destruct;
 - (id)initWithAppleID:(id)arg1 altDSID:(id)arg2;
 
 @end

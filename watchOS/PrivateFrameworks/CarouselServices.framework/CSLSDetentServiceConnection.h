@@ -24,9 +24,9 @@
 + (id)exportedInterface;
 + (id)serverInterface;
 + (id)serviceName;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool assertionTaken; // @synthesize assertionTaken=_assertionTaken;
 @property(readonly, nonatomic) __weak id <CSLSDetentClient> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)recordMetrics:(id)arg1;
 - (void)detentsChanged:(id)arg1;
 - (void)flashDetentsChanged:(_Bool)arg1;

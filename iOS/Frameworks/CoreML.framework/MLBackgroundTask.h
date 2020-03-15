@@ -21,14 +21,14 @@
 + (_Bool)cancelAllTasks;
 + (_Bool)cancelTaskWithIdentifier:(id)arg1;
 + (_Bool)scheduleTask:(id)arg1;
-@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (struct NSString *)activityForScheduling;
+- (id)activityForScheduling;
 - (id)init;
 
 @end

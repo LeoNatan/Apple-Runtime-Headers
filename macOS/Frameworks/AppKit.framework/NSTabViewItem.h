@@ -36,6 +36,7 @@
 
 + (id)_labelCell;
 + (id)tabViewItemWithViewController:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSView *_view; // @synthesize _view;
 @property(copy) NSString *_label; // @synthesize _label=__label;
 @property __weak NSView *_initialFirstResponder; // @synthesize _initialFirstResponder=__initialFirstResponder;
@@ -43,7 +44,6 @@
 @property(readonly) unsigned long long tabState; // @synthesize tabState=_tabState;
 @property(retain) id identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSTabView *tabView; // @synthesize tabView=_tabView;
-- (void).cxx_destruct;
 - (void)_tabViewWillRemoveFromSuperview;
 - (void)_resetToolTipIfNecessary;
 - (void)_removeToolTip;

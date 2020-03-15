@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     INCodableAttribute *_codableAttribute;
 }
 
-@property(readonly, nonatomic) __weak INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 - (id)transformedValue:(id)arg1;
 - (id)initWithCodableAttribute:(id)arg1;
 

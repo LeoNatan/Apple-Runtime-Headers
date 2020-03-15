@@ -21,13 +21,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *subitems; // @synthesize subitems=_subitems;
 @property(copy, nonatomic) NSString *contentDescription; // @synthesize contentDescription=_contentDescription;
 @property(nonatomic) _Bool isClipped; // @synthesize isClipped=_isClipped;
 @property(nonatomic) _Bool hasAmbiguousLayout; // @synthesize hasAmbiguousLayout=_hasAmbiguousLayout;
 @property(nonatomic) struct CGRect absoluteFrame; // @synthesize absoluteFrame=_absoluteFrame;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)data;
 - (_Bool)isValidForGeometryValidation:(unsigned long long)arg1 offendingGeometry:(id *)arg2;
 - (_Bool)isEqualToTemplate:(id)arg1 diagnostic:(id *)arg2;

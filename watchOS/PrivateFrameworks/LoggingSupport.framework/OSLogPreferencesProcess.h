@@ -19,8 +19,8 @@
     NSString *_bundleID;
 }
 
-@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void)reset;
 @property(nonatomic) int persistedLevel;
 @property(nonatomic) int enabledLevel;

@@ -17,12 +17,12 @@
     CDUnknownBlockType _fetchResult;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(readonly) BOOL migration; // @synthesize migration=_migration;
 @property(readonly) BOOL update; // @synthesize update=_update;
 @property(retain, nonatomic) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithGroup:(id)arg1 update:(BOOL)arg2 migration:(BOOL)arg3 fetchResult:(CDUnknownBlockType)arg4;
 - (id)initWithShareGroup:(id)arg1 update:(BOOL)arg2 migration:(BOOL)arg3 fetchResult:(CDUnknownBlockType)arg4;

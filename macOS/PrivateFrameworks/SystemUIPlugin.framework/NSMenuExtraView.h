@@ -16,9 +16,9 @@
     NSImage *_alternateImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *alternateImage; // @synthesize alternateImage=_alternateImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setMenu:(id)arg1;

@@ -28,6 +28,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) _MRReceivedCommandAppOptionsProtobuf *appOptions; // @synthesize appOptions=_appOptions;
 @property(retain, nonatomic) NSString *remoteControlInterfaceID; // @synthesize remoteControlInterfaceID=_remoteControlInterfaceID;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *senderAppDisplayID; // @synthesize senderAppDisplayID=_senderAppDisplayID;
 @property(nonatomic) int originUID; // @synthesize originUID=_originUID;
 @property(retain, nonatomic) _MRCommandOptionsProtobuf *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

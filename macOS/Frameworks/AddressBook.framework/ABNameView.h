@@ -57,12 +57,12 @@
 + (id)largeFontKeysForDisplayStyle:(unsigned long long)arg1;
 + (id)keyToPreferenceMap;
 + (id)alwaysVisibleKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *propetyKeysToDisplay; // @synthesize propetyKeysToDisplay=_propetyKeysToDisplay;
 @property(nonatomic) __weak id <ABNameViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) ABNameViewCompanyCheckBox *companyCheckbox; // @synthesize companyCheckbox=mCompanyCheckbox;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(retain, nonatomic) id <ABCardViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)newKeyToFieldMap;
 - (id)newFieldToKeyMap;
 - (id)phoneticNameKeys;

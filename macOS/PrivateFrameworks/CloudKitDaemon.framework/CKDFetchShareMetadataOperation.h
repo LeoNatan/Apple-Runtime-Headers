@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_shareInvitationTokensByShareURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *shareInvitationTokensByShareURL; // @synthesize shareInvitationTokensByShareURL=_shareInvitationTokensByShareURL;
 @property(nonatomic) BOOL clientWillDisplaySystemAcceptPrompt; // @synthesize clientWillDisplaySystemAcceptPrompt=_clientWillDisplaySystemAcceptPrompt;
 @property(retain, nonatomic) NSSet *rootRecordDesiredKeysSet; // @synthesize rootRecordDesiredKeysSet=_rootRecordDesiredKeysSet;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType shareMetadataFetchedBlock; // @synthesize shareMetadataFetchedBlock=_shareMetadataFetchedBlock;
 @property(nonatomic) BOOL errorOnOON; // @synthesize errorOnOON=_errorOnOON;
 @property(nonatomic) BOOL forceDSRefetch; // @synthesize forceDSRefetch=_forceDSRefetch;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_prepareShortTokens;

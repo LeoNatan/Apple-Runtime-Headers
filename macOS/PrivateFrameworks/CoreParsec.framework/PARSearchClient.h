@@ -8,7 +8,7 @@
 
 #import <CoreParsec/PARClientXPC-Protocol.h>
 
-@class NSMutableArray, NSString, NSXPCConnection, NSXPCListenerEndpoint, PARImageLoader, PARSessionConfiguration;
+@class NSMutableArray, NSString, NSXPCConnection, PARImageLoader;
 @protocol OS_dispatch_queue, PARDaemonXPC;
 
 @interface PARSearchClient : NSObject <PARClientXPC>
@@ -17,18 +17,14 @@
     NSMutableArray *_sessions;
     NSObject<OS_dispatch_queue> *_queue;
     // Error parsing type: AB, name: _configured
-    PARSessionConfiguration *_configuration;
     NSXPCConnection *_connection;
     PARImageLoader *_imageLoader;
 }
 
 + (id)sharedClient;
-+ (id)daemonConnection;
-+ (id)_deafListenerEndpoint;
+- (void).cxx_destruct;
 @property(readonly) PARImageLoader *imageLoader; // @synthesize imageLoader=_imageLoader;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(retain) PARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)updateParameters:(double)arg1 safariLast1day:(double)arg2 safariLast1week:(double)arg3 safariLast1month:(double)arg4 safariAll:(double)arg5 safariMostRecent:(double)arg6 minThresholdToSend:(double)arg7;
 - (void)clearCompletionsFromDate:(id)arg1 toDate:(id)arg2;
 - (void)addCompletion:(id)arg1 forInput:(id)arg2;
@@ -40,7 +36,6 @@
 - (void)forceFetchBag:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)bag:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)configure:(id)arg1;
-@property(retain) NSXPCListenerEndpoint *endpoint;
 - (void)addSession:(id)arg1;
 - (void)dealloc;
 - (void)_invalidateConnection;

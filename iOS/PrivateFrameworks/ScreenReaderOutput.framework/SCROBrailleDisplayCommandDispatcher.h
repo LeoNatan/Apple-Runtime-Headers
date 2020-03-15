@@ -17,8 +17,8 @@
     id <SCROBrailleDisplayCommandDispatcherDelegate> delegate;
 }
 
-@property(nonatomic) __weak id <SCROBrailleDisplayCommandDispatcherDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SCROBrailleDisplayCommandDispatcherDelegate> delegate; // @synthesize delegate;
 - (_Bool)handleBrailleKeyEvent:(id)arg1;
 - (void)_handleUnsupportedEvent:(id)arg1;
 - (void)_handleToggleEightDotBrailleEvent:(id)arg1;

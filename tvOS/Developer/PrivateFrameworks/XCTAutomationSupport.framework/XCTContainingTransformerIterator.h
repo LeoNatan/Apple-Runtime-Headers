@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     XCTElementContainingTransformer *_containingTransformer;
 }
 
-@property(readonly) XCTElementContainingTransformer *containingTransformer; // @synthesize containingTransformer=_containingTransformer;
 - (void).cxx_destruct;
+@property(readonly) XCTElementContainingTransformer *containingTransformer; // @synthesize containingTransformer=_containingTransformer;
 - (id)nextMatch;
 - (id)initWithInput:(id)arg1 containingTransformer:(id)arg2;
 

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CNUIUserActionListDataSource *_actionsDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIUserActionListDataSource *actionsDataSource; // @synthesize actionsDataSource=_actionsDataSource;
 @property(retain, nonatomic) CNContactActionsController *actionsController; // @synthesize actionsController=_actionsController;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
-- (void).cxx_destruct;
 - (void)contactActionsController:(id)arg1 didSelectAction:(id)arg2;
 - (void)presentDisambiguationAlertWithSender:(id)arg1;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;

@@ -15,10 +15,10 @@
     NSDictionary *_schema;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *schema; // @synthesize schema=_schema;
 @property(copy, nonatomic) CDUnknownBlockType encryptHandler; // @synthesize encryptHandler=_encryptHandler;
 @property(copy, nonatomic) CDUnknownBlockType decryptHandler; // @synthesize decryptHandler=_decryptHandler;
-- (void).cxx_destruct;
 - (void)_writeValue:(unsigned long long)arg1 bitCount:(unsigned int)arg2 bitVector:(struct __CFBitVector *)arg3;
 - (unsigned long long)_readValue:(struct __CFBitVector *)arg1 bitCount:(unsigned int)arg2 bitIndex:(unsigned int *)arg3 err:(int *)arg4;
 - (id)encodeFields:(id)arg1 variantIdentifier:(id)arg2 info:(id)arg3 error:(id *)arg4;

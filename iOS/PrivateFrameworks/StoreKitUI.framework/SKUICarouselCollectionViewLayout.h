@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layoutAttributesClass;
-@property(retain, nonatomic) NSIndexPath *startScrollingIndexPath; // @synthesize startScrollingIndexPath=_startScrollingIndexPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSIndexPath *startScrollingIndexPath; // @synthesize startScrollingIndexPath=_startScrollingIndexPath;
 - (void)_panGestureRecognized:(id)arg1;
 - (struct CGPoint)_collectionViewBoundsCenter;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;

@@ -8,17 +8,16 @@
 
 #import <AssetsLibraryServices/PLPhotoLibraryPathManager-Protocol.h>
 
-@class NSFileManager, NSString, NSURL, PLFileSystemCapabilities;
+@class NSString, NSURL, PLFileSystemCapabilities;
 
 @interface PLPhotoLibraryPathManagerCore : NSObject <PLPhotoLibraryPathManager>
 {
-    struct os_unfair_lock_s _folderCreationLock;
+    struct os_unfair_lock_s _folderCreationAndCapabilitiesLock;
     unsigned int _photoDirectoriesExists;
     unsigned int _privateSubDirectoriesExists;
     unsigned int _privateCacheSubDirectoriesExists;
     unsigned int _externalDirectoriesExists;
     unsigned int _persistedAlbumDataDirectoryExists;
-    NSFileManager *_fm;
     PLFileSystemCapabilities *_capabilities;
     NSURL *_libraryURL;
     NSString *_baseDirectory;
@@ -45,15 +44,14 @@
 + (void)listenForSystemPhotoLibraryURLChanges;
 + (_Bool)setTimeMachineExclusionAttribute:(_Bool)arg1 url:(id)arg2 error:(id *)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *legacyMemoriesRelatedSnapshotDirectory; // @synthesize legacyMemoriesRelatedSnapshotDirectory=_legacyMemoriesRelatedSnapshotDirectory;
 @property(retain, nonatomic) NSString *legacyModelInterestDatabasePath; // @synthesize legacyModelInterestDatabasePath=_legacyModelInterestDatabasePath;
 @property(retain, nonatomic) NSString *iTunesPhotosDirectory; // @synthesize iTunesPhotosDirectory=_iTunesPhotosDirectory;
 @property(copy) NSString *assetUUIDRecoveryMappingPath; // @synthesize assetUUIDRecoveryMappingPath=_assetUUIDRecoveryMappingPath;
 @property(copy) NSString *baseDirectory; // @synthesize baseDirectory=_baseDirectory;
 @property(copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
-@property(readonly, nonatomic) PLFileSystemCapabilities *capabilities; // @synthesize capabilities=_capabilities;
-- (void).cxx_destruct;
-- (id)pathsGroupedByAssetBasePathFromFilePaths:(id)arg1;
+- (id)pathsGroupedByAssetBasePathFromFilePaths:(id)arg1 populateInvalidAdjustmentPaths:(id)arg2;
 - (id)assetBaseFilenameForAdjustmentFilePath:(id)arg1;
 - (id)photoMetadataDirectoryForMediaInMainDirectory:(id)arg1;
 - (id)persistedAlbumDataDirectoryCreateIfNeeded:(_Bool)arg1 error:(id *)arg2;
@@ -112,6 +110,7 @@
 - (void)privateDirectoryCreationMaskResetWithSubType:(unsigned char)arg1;
 - (void)photoDirectoryCreationMaskResetWithType:(unsigned char)arg1;
 - (void)postInit;
+@property(readonly, nonatomic) PLFileSystemCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 - (id)initWithLibraryURL:(id)arg1;
 - (id)initWithBaseDirectory:(id)arg1;
 - (id)init;

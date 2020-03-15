@@ -21,13 +21,13 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool resignedActiveWhileOpeningURL; // @synthesize resignedActiveWhileOpeningURL=_resignedActiveWhileOpeningURL;
 @property(nonatomic) _Bool enteringForeground; // @synthesize enteringForeground=_enteringForeground;
 @property(retain, nonatomic) NSLock *queueLock; // @synthesize queueLock=_queueLock;
 @property(retain, nonatomic) NSMutableArray *queuedRequests; // @synthesize queuedRequests=_queuedRequests;
 @property(nonatomic) _Bool allowsOpeningFromBackground; // @synthesize allowsOpeningFromBackground=_allowsOpeningFromBackground;
 @property(retain, nonatomic) ICScheme *callbackScheme; // @synthesize callbackScheme=_callbackScheme;
-- (void).cxx_destruct;
 - (void)_performRequest:(id)arg1;
 - (void)performRequest:(id)arg1;
 - (void)performQueuedRequestIfApplicable;

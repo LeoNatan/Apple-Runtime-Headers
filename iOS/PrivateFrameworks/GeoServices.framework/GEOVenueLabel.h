@@ -17,10 +17,10 @@
     NSString *_detail;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(readonly, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)initWithName:(id)arg1 shortName:(id)arg2 detail:(id)arg3;

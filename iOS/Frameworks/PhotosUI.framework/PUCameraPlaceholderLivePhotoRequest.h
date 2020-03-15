@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _resultHandler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) _Bool videoRequestFinished; // @synthesize videoRequestFinished=_videoRequestFinished;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSValue *stillDisplayTime; // @synthesize stillDisplayTime=_stillDisplayTime;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithAsset:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 
 @end

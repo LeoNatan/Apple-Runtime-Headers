@@ -22,6 +22,7 @@
 + (id)autoSubtitleOption;
 + (id)offSubtitleOptionWithAVMediaSelectionOption:(id)arg1;
 + (id)offSubtitleOption;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *cachedSubtitleType; // @synthesize cachedSubtitleType=_cachedSubtitleType;
 @property(retain, nonatomic) NSNumber *cachedContainsOnlyForcedSubtitles; // @synthesize cachedContainsOnlyForcedSubtitles=_cachedContainsOnlyForcedSubtitles;
 @property(copy, nonatomic) NSString *localizedDisplayString; // @synthesize localizedDisplayString=_localizedDisplayString;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *languageCodeBCP47; // @synthesize languageCodeBCP47=_languageCodeBCP47;
 @property(copy, nonatomic) NSString *languageCodeFromLocale; // @synthesize languageCodeFromLocale=_languageCodeFromLocale;
 @property(retain, nonatomic) AVMediaSelectionOption *avMediaSelectionOption; // @synthesize avMediaSelectionOption=_avMediaSelectionOption;
-- (void).cxx_destruct;
 - (void)_currentLocaleDidChange:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) long long subtitleType;

@@ -19,8 +19,8 @@
     NSNumber *_measurement;
 }
 
-@property(retain) NSNumber *measurement; // @synthesize measurement=_measurement;
 - (void).cxx_destruct;
+@property(retain) NSNumber *measurement; // @synthesize measurement=_measurement;
 - (void)dealloc;
 - (void)cancel;
 - (void)stopWithEvent:(id)arg1 result:(id)arg2;

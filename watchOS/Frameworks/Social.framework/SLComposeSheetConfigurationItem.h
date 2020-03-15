@@ -18,11 +18,11 @@
     CDUnknownBlockType _tapHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tapHandler; // @synthesize tapHandler=_tapHandler;
 @property(nonatomic) _Bool valuePending; // @synthesize valuePending=_valuePending;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)setChangeObserver:(id)arg1;
 - (id)changeObserver;
 - (id)init;

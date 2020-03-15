@@ -26,6 +26,7 @@
 + (id)artworkWithIcon:(id)arg1 accessibilityText:(id)arg2;
 + (id)artworkWithText:(id)arg1;
 + (id)artworkWithShield:(id)arg1 accessibilityText:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasRoutingIncidentBadge; // @synthesize hasRoutingIncidentBadge=_hasRoutingIncidentBadge;
 @property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource; // @synthesize textDataSource=_textDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> iconFallbackShieldDataSource; // @synthesize iconFallbackShieldDataSource=_iconFallbackShieldDataSource;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) id <GEOTransitIconDataSource> iconDataSource; // @synthesize iconDataSource=_iconDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource; // @synthesize shieldDataSource=_shieldDataSource;
 @property(readonly, nonatomic) int artworkSourceType; // @synthesize artworkSourceType=_artworkSourceType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *accessibilityText;
 - (id)initWithIcon:(id)arg1 fallbackShield:(id)arg2 accessibilityText:(id)arg3;
 - (id)initWithIcon:(id)arg1 accessibilityText:(id)arg2;

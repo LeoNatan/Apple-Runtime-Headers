@@ -11,8 +11,8 @@
     id _observer;
 }
 
-@property(readonly, nonatomic) id observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id observer; // @synthesize observer=_observer;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithObserver:(id)arg1;

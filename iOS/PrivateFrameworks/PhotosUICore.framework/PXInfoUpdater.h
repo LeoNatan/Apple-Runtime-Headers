@@ -28,6 +28,7 @@
     NSProgress *_currentUpdateProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *currentUpdateProgress; // @synthesize currentUpdateProgress=_currentUpdateProgress;
 @property(nonatomic) long long currentUpdatePriority; // @synthesize currentUpdatePriority=_currentUpdatePriority;
 @property(nonatomic) long long currentUpdateGeneration; // @synthesize currentUpdateGeneration=_currentUpdateGeneration;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak id <PXInfoUpdaterObserver> observer; // @synthesize observer=_observer;
 @property(readonly, copy, nonatomic) NSString *infoKind; // @synthesize infoKind=_infoKind;
 @property(readonly, nonatomic) __weak id <PXInfoProvider> infoProvider; // @synthesize infoProvider=_infoProvider;
-- (void).cxx_destruct;
 - (void)performBlockWhenDoneUpdating:(CDUnknownBlockType)arg1;
 - (void)_handleCurrentUpdateWithInfo:(id)arg1 generation:(long long)arg2;
 - (void)_updateInfo;

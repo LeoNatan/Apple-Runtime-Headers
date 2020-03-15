@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _MKMapLayerHostingView *_hostView;
 }
 
-@property(nonatomic) __weak _MKMapLayerHostingView *hostView; // @synthesize hostView=_hostView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _MKMapLayerHostingView *hostView; // @synthesize hostView=_hostView;
 
 @end
 

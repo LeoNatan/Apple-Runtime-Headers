@@ -27,6 +27,8 @@
 + (unsigned int)inputRecordingSampleBitDepth;
 + (float)inputRecordingDurationInSecs;
 + (unsigned int)inputRecordingNumberOfChannels;
++ (unsigned int)hearstNumberOfSamplesPerChunk;
++ (unsigned int)hearstNumberOfBytesPerChunk;
 + (unsigned int)inputRecordingBytesPerPacket;
 + (unsigned int)inputRecordingBytesPerFrame;
 + (unsigned int)inputRecordingFramesPerPacket;

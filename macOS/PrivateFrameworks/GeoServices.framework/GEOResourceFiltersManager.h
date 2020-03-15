@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <GEOResourceFiltersManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <GEOResourceFiltersManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GEOResourceFiltersManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)deactivateScenario:(int)arg1;
 - (void)activateScenario:(int)arg1;
 - (void)deactivateScale:(int)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AXSSKeyboardCommandMap, AXVoiceOverActivity, NSArray, NSData, NSDate, NSDictionary, NSLock, NSMutableDictionary, NSMutableSet, NSNumber, NSOrderedSet, NSSet, NSString, NSURL, NSUUID;
+@class AXVoiceOverActivity, NSArray, NSData, NSDate, NSDictionary, NSLock, NSMutableDictionary, NSMutableSet, NSNumber, NSOrderedSet, NSSet, NSString, NSURL, NSUUID;
 
 @interface AXSettings : NSObject
 {
@@ -31,6 +31,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *updateBlocks; // @synthesize updateBlocks=_updateBlocks;
 @property(retain, nonatomic) NSMutableDictionary *synchronizeDomains; // @synthesize synchronizeDomains=_synchronizeDomains;
 @property(retain, nonatomic) NSMutableSet *registeredNotifications; // @synthesize registeredNotifications=_registeredNotifications;
@@ -46,7 +47,6 @@
 @property(nonatomic) _Bool writeAXLogsToFile; // @synthesize writeAXLogsToFile=_writeAXLogsToFile;
 @property(nonatomic) _Bool assistiveTouchInternalOnlyHiddenNubbitModeEnabled; // @synthesize assistiveTouchInternalOnlyHiddenNubbitModeEnabled=_assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
 @property(nonatomic) _Bool assistiveTouchMotionTrackerShouldOffsetBufferPoints; // @synthesize assistiveTouchMotionTrackerShouldOffsetBufferPoints=_assistiveTouchMotionTrackerShouldOffsetBufferPoints;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool voltaDataCollectionEnabled;
 @property(nonatomic) _Bool voltaEnabled;
 @property(nonatomic) _Bool callAudioRoutingAutoAnswerEnabled;
@@ -91,9 +91,13 @@
 - (void)gizmoSetAutoSpeakEnabledForComplication:(id)arg1 slot:(id)arg2 face:(id)arg3 toggle:(_Bool)arg4;
 @property(nonatomic) _Bool gizmoApplicationAccessibilityEnabled;
 @property(nonatomic) _Bool appValidationTestingMode;
+@property(nonatomic) _Bool fullKeyboardAccessShouldShowTextEditingModeInstructions;
+@property(nonatomic) long long fullKeyboardAccessFocusRingColor;
+@property(nonatomic) _Bool fullKeyboardAccessFocusRingHighContrastEnabled;
+@property(nonatomic) _Bool fullKeyboardAccessLargeFocusRingEnabled;
 @property(nonatomic) _Bool fullKeyboardAccessFocusRingTimeoutEnabled;
 @property(nonatomic) double fullKeyboardAccessFocusRingTimeout;
-@property(retain, nonatomic) AXSSKeyboardCommandMap *fullKeyboardAccessCommandMap;
+@property(retain, nonatomic) NSData *fullKeyboardAccessCommandMapData;
 @property(nonatomic) double magnifierBrightness;
 @property(nonatomic) double magnifierContrast;
 @property(nonatomic) _Bool magnifierFilterInverted;
@@ -473,9 +477,9 @@
 @property(nonatomic) long long assistiveTouchMouseKeysDelay;
 @property(nonatomic) _Bool assistiveTouchMouseAllowAppleBluetoothDevicesPairing;
 @property(nonatomic) _Bool assistiveTouchMouseAlwaysShowSoftwareKeyboardEnabled;
+@property(nonatomic) _Bool assistiveTouchMouseKeysUseMainKeyboardKeys;
 @property(nonatomic) _Bool assistiveTouchMouseKeysOptionToggleEnabled;
 @property(nonatomic) _Bool assistiveTouchMouseKeysEnabled;
-@property(nonatomic) _Bool assistiveTouchMouseDragLockEnabled;
 @property(nonatomic) _Bool assistiveTouchOpenMenuSwaggleEnabled;
 @property(nonatomic) _Bool supportsAdvancedDisplayFilters;
 @property(nonatomic) _Bool assistiveTouchAlwaysShowMenuEnabled;

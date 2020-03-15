@@ -26,6 +26,7 @@
     struct UIEdgeInsets _contentBleed;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_preferredMaskedContentSize, setter=_setPreferredMaskedContentSize:) struct CGSize preferredMaskedContentSize; // @synthesize preferredMaskedContentSize=_preferredMaskedContentSize;
 @property(nonatomic, getter=_preferredUnmaskedContentSize, setter=_setPreferredUnmaskedContentSize:) struct CGSize preferredUnmaskedContentSize; // @synthesize preferredUnmaskedContentSize=_preferredUnmaskedContentSize;
 @property(readonly, nonatomic) UIView *maskContainerView; // @synthesize maskContainerView=_maskContainerView;
@@ -38,7 +39,6 @@
 @property(nonatomic) double parallaxOffset; // @synthesize parallaxOffset=_parallaxOffset;
 @property(nonatomic) struct UIEdgeInsets contentBleed; // @synthesize contentBleed=_contentBleed;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_showingMaskedContent;
 - (void)_layoutMaskedContent;

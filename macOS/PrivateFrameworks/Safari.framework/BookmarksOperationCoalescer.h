@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     id <BookmarksOperationCoalescerDelegate> _delegate;
 }
 
-@property __weak id <BookmarksOperationCoalescerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <BookmarksOperationCoalescerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)bookmarksOperationCoalescingTimerDidFire:(id)arg1;
 - (void)addOperation:(id)arg1;
 - (id)init;

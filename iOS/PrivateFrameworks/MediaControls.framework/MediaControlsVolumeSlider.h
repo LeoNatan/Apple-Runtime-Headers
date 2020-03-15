@@ -16,9 +16,10 @@ __attribute__((visibility("hidden")))
     MTVisualStylingProvider *_visualStylingProvider;
 }
 
-@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 - (void)providedStylesDidChangeForProvider:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)setMaximumTrackVisualProvider:(id)arg1;
 - (void)setMinimumTrackVisualProvider:(id)arg1;
 - (void)tintColorDidChange;

@@ -28,10 +28,10 @@
 + (id)changeRequestForAssetCollection:(id)arg1 assets:(id)arg2;
 + (id)changeRequestForAssetCollection:(id)arg1;
 + (id)_changeRequestForAssetCollection:(id)arg1 optionalAssets:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *customKeyAssetHelper; // @synthesize customKeyAssetHelper=_customKeyAssetHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *assetsHelper; // @synthesize assetsHelper=_assetsHelper;
 @property(retain, nonatomic) PHAssetCollection *originalAssetCollection; // @synthesize originalAssetCollection=_originalAssetCollection;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
 - (_Bool)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;

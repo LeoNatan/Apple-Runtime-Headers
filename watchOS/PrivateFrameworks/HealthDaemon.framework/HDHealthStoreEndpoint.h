@@ -24,10 +24,10 @@
 + (id)endpointWithClient:(id)arg1 healthDaemon:(id)arg2;
 + (_Bool)_isClientEntitled:(id)arg1 error:(id *)arg2;
 + (_Bool)_isDeviceSupportedWithBehavior:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDHealthStoreServer *server; // @synthesize server=_server;
 @property(readonly, nonatomic) HDXPCClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (void)connectionInvalidated;
 - (void)connectionConfigured;
 - (id)remoteInterface;

@@ -13,8 +13,8 @@
     CHRecognitionSessionIndexableContent *_chIndexableContent;
 }
 
-@property(retain) CHRecognitionSessionIndexableContent *chIndexableContent; // @synthesize chIndexableContent=_chIndexableContent;
 - (void).cxx_destruct;
+@property(retain) CHRecognitionSessionIndexableContent *chIndexableContent; // @synthesize chIndexableContent=_chIndexableContent;
 @property(readonly, nonatomic) NSString *presentableTextRepresentation;
 @property(readonly, nonatomic) NSString *indexableTextRepresentation;
 - (id)initWithIndexableContent:(id)arg1;

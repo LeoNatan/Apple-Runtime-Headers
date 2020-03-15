@@ -32,6 +32,7 @@
     IASetupManager *_me;
 }
 
+- (void).cxx_destruct;
 @property(retain) IASetupManager *me; // @synthesize me=_me;
 @property(readonly) IANewAccountChooserController *accountChooser; // @synthesize accountChooser=_accountChooser;
 @property(retain) NSString *otherRowLabel; // @synthesize otherRowLabel=_otherRowLabel;
@@ -48,7 +49,6 @@
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSButton *nextButton; // @synthesize nextButton=_nextButton;
 @property __weak NSButton *backButton; // @synthesize backButton=_backButton;
-- (void).cxx_destruct;
 - (void)updateCancelButtons;
 - (id)_childAccountsFromFoundAListAccounts:(id)arg1;
 - (id)_accountWithProvider:(id)arg1 fromArray:(id)arg2;

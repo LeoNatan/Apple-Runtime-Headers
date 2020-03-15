@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     id <FavoritesPickerViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <FavoritesPickerViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_goBack;
 - (BOOL)_shouldShowBackButton;
 - (int)_styleForFavoriteAtIndex:(unsigned long long)arg1;

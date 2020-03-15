@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)wantsChevron;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(readonly, nonatomic) UILabel *sourceLabel; // @synthesize sourceLabel=_sourceLabel;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)setCardGroupItem:(id)arg1;
 - (void)performDefaultAction;

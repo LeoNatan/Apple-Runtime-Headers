@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSArray *_lockupElements;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *lockupElements; // @synthesize lockupElements=_lockupElements;
 @property(retain, nonatomic) IKAudioElement *audioElement; // @synthesize audioElement=_audioElement;
 @property(retain, nonatomic) UIImage *bgImage; // @synthesize bgImage=_bgImage;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak UIViewController *activeViewController; // @synthesize activeViewController=_activeViewController;
 @property(nonatomic) __weak _TVOneupTemplateController *oneupViewController; // @synthesize oneupViewController=_oneupViewController;
 @property(nonatomic) __weak _TVShowcaseViewController *showcaseViewController; // @synthesize showcaseViewController=_showcaseViewController;
-- (void).cxx_destruct;
 - (void)_updateWithShowcaseElement:(id)arg1 update:(_Bool)arg2;
 - (void)_updateDisabledFocusView;
 - (void)_transitionControllersWithMenuAction:(_Bool)arg1;

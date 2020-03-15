@@ -24,12 +24,12 @@
     CSLAppPrelauncher *_prelauncher;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLAppPrelauncher *prelauncher; // @synthesize prelauncher=_prelauncher;
 @property(readonly, nonatomic) CSLAppPrelauncherOptions *prelauncherOptions; // @synthesize prelauncherOptions=_prelauncherOptions;
 @property(readonly, nonatomic) unsigned int launchBehavior; // @synthesize launchBehavior=_launchBehavior;
 @property(readonly, nonatomic) CSLSSnapshotScheduleItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)transactionDidComplete:(id)arg1;
 - (void)failPrelaunchWithReason:(id)arg1 error:(id)arg2;
 - (_Bool)isCancellable;

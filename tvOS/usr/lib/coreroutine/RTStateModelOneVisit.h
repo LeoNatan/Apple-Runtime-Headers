@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long numOfDataPts; // @synthesize numOfDataPts=_numOfDataPts;
 @property(retain, nonatomic) RTStateModelEntryExit *EntryExit_s; // @synthesize EntryExit_s=_EntryExit_s;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) RTStateModelLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -23,21 +23,22 @@
 
 + (id)baseAttributesFromResolution:(id)arg1;
 + (id)protobufSchema;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned short options; // @synthesize options=_options;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(retain, nonatomic) BKSHIDEventDeferringToken *token; // @synthesize token=_token;
 @property(retain, nonatomic) BKSHIDEventDisplay *display; // @synthesize display=_display;
 @property(retain, nonatomic) BKSHIDEventDeferringEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

@@ -14,8 +14,8 @@
     NSArray *_hiddenApplicationBundleIDs;
 }
 
-@property(copy, nonatomic) NSArray *hiddenApplicationBundleIDs; // @synthesize hiddenApplicationBundleIDs=_hiddenApplicationBundleIDs;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *hiddenApplicationBundleIDs; // @synthesize hiddenApplicationBundleIDs=_hiddenApplicationBundleIDs;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 

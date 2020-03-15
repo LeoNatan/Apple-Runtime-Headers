@@ -19,10 +19,10 @@
     PLManagedAsset *_tertiaryKeyAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset; // @synthesize tertiaryKeyAsset=_tertiaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset; // @synthesize secondaryKeyAsset=_secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *localizedLocationNames;
 @property(readonly, nonatomic) _Bool canShowAvalancheStacks;
 @property(readonly, nonatomic) _Bool canShowComments;

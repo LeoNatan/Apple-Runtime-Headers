@@ -7,6 +7,7 @@
 #import <iTunesCloud/ICInAppMessageMetadataEntry.h>
 
 @interface ICInAppMessageMetadataEntry (Utilities)
+@property(nonatomic) _Bool didCancelUserNotification;
 @property(nonatomic) unsigned long long numberOfDisplays;
 @end
 

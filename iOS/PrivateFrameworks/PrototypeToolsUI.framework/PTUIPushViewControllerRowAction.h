@@ -12,8 +12,8 @@
 }
 
 + (id)actionWithViewControllerCreator:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) CDUnknownBlockType viewControllerCreator; // @synthesize viewControllerCreator=_viewControllerCreator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType viewControllerCreator; // @synthesize viewControllerCreator=_viewControllerCreator;
 - (CDUnknownBlockType)defaultHandler;
 - (_Bool)deselectsRowOnSuccess;
 

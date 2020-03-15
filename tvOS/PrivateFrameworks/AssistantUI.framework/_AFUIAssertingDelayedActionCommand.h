@@ -14,9 +14,9 @@
     BKSProcessAssertion *_assertion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
 @property(readonly, nonatomic) SAUIDelayedActionCommand *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 assertion:(id)arg2;
 
 @end

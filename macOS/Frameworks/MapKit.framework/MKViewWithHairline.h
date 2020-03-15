@@ -17,10 +17,10 @@
     double _rightHairlineInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double rightHairlineInset; // @synthesize rightHairlineInset=_rightHairlineInset;
 @property(nonatomic) double leftHairlineInset; // @synthesize leftHairlineInset=_leftHairlineInset;
 @property(retain, nonatomic) NSColor *hairlineColor; // @synthesize hairlineColor=_hairlineColor;
-- (void).cxx_destruct;
 - (void)layout;
 @property(nonatomic, getter=isBottomHairlineHidden) BOOL bottomHairlineHidden;
 @property(nonatomic, getter=isTopHairlineHidden) BOOL topHairlineHidden;

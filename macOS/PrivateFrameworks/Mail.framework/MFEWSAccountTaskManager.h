@@ -19,11 +19,11 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFEWSLocalActionSyncTask *localActionSyncTask; // @synthesize localActionSyncTask=_localActionSyncTask;
 @property(retain, nonatomic) EWSSubscription *subscription; // @synthesize subscription=_subscription;
 @property(retain, nonatomic) MFEWSAccountSyncActivity *syncActivity; // @synthesize syncActivity=_syncActivity;
 @property(readonly, nonatomic) __weak MFEWSAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)addLocalAction:(id)arg1;
 - (void)checkForNewLocalActions;
 - (void)_systemDidWake:(id)arg1;

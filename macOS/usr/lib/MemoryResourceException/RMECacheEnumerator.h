@@ -18,9 +18,9 @@
 + (id)getLogPathsSortedByTime;
 + (id)getEPLProfilePath;
 + (id)getLogContainer:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *volume; // @synthesize volume=_volume;
 @property(copy, nonatomic) NSDirectoryEnumerator *internalEnumerator; // @synthesize internalEnumerator=_internalEnumerator;
-- (void).cxx_destruct;
 - (id)nextValidURL;
 - (id)initCacheEnumerator;
 - (id)initCacheEnumeratorWithVolume:(id)arg1;

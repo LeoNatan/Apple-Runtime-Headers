@@ -22,13 +22,13 @@
 
 + (id)descriptionTextJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(readonly, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(readonly, nonatomic) NSNumber *price; // @synthesize price=_price;
 @property(readonly, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
 @property(readonly, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(readonly, nonatomic) NSString *artistID; // @synthesize artistID=_artistID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *formattedPrice;
 
 // Remaining properties

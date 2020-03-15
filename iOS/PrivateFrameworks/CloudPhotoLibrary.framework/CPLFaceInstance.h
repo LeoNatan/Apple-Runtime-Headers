@@ -29,6 +29,7 @@
 }
 
 + (Class)rejectedPersonIdentifiersType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int nameSource; // @synthesize nameSource=_nameSource;
 @property(retain, nonatomic) NSMutableArray *rejectedPersonIdentifiers; // @synthesize rejectedPersonIdentifiers=_rejectedPersonIdentifiers;
 @property(nonatomic) unsigned int faceState; // @synthesize faceState=_faceState;
@@ -36,7 +37,6 @@
 @property(nonatomic) double centerY; // @synthesize centerY=_centerY;
 @property(nonatomic) double centerX; // @synthesize centerX=_centerX;
 @property(retain, nonatomic) NSString *personIdentifier; // @synthesize personIdentifier=_personIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

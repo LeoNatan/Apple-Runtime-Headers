@@ -19,9 +19,9 @@
 + (double)knobPositionFromValue:(double)arg1 trackRect:(struct CGRect)arg2;
 + (struct CGRect)trackRectForNominalRect:(struct CGRect)arg1;
 + (struct CGRect)nominalRectForProposedRect:(struct CGRect)arg1;
+- (void).cxx_destruct;
 @property double value; // @synthesize value=_value;
 @property(retain) NSArray *highlightedRanges; // @synthesize highlightedRanges=_highlightedRanges;
-- (void).cxx_destruct;
 - (void)getMetricsForProposedRect:(struct CGRect)arg1 outNominalRect:(struct CGRect *)arg2 outExtent:(struct CGRect *)arg3;
 - (void)renderInContext:(struct CGContext *)arg1 withRect:(struct CGRect)arg2;
 - (void)highlightUnhighlightedRangesWithContext:(struct CGContext *)arg1 nominalRect:(struct CGRect)arg2;

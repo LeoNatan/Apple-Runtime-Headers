@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_subscribedScrollers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *subscribedScrollers; // @synthesize subscribedScrollers=_subscribedScrollers;
 @property(nonatomic) __weak id <SKScreenTrackingDelegate> screenTrakingDelegate; // @synthesize screenTrakingDelegate=_screenTrakingDelegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopListeningForScrollingOfView:(id)arg1;
 - (void)findAndListenForScrollingOfView:(id)arg1;

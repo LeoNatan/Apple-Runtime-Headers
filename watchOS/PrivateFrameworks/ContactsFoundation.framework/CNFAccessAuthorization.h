@@ -16,12 +16,13 @@
     int _addressBookPreflightStatus;
     int _contactsFullPreflightStatus;
     int _contactsLimitedPreflightStatus;
-    struct NSNumber *_isClientLegacyImpl;
-    struct NSNumber *_isNotesAccessGrantedCachedValue;
+    NSNumber *_isClientLegacyImpl;
+    NSNumber *_isNotesAccessGrantedCachedValue;
 }
 
 + (id)sharedInstance;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *isNotesAccessGrantedCachedValue; // @synthesize isNotesAccessGrantedCachedValue=_isNotesAccessGrantedCachedValue;
 @property(retain, nonatomic) NSNumber *isClientLegacyImpl; // @synthesize isClientLegacyImpl=_isClientLegacyImpl;
 @property(nonatomic) int contactsLimitedPreflightStatus; // @synthesize contactsLimitedPreflightStatus=_contactsLimitedPreflightStatus;
@@ -29,20 +30,19 @@
 @property(nonatomic) int addressBookPreflightStatus; // @synthesize addressBookPreflightStatus=_addressBookPreflightStatus;
 @property(retain, nonatomic) CNFAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(retain, nonatomic) id <CNTCC> tcc; // @synthesize tcc=_tcc;
-- (void).cxx_destruct;
 - (id)_readFileData:(int)arg1 offset:(int)arg2 size:(unsigned int)arg3;
 - (_Bool)_isPid:(int)arg1 linkedOnOrAfter:(CDStruct_c0454aff)arg2;
 @property(readonly, nonatomic) _Bool isClientLegacy;
 @property(readonly, nonatomic) _Bool isClientWhitelisted;
 - (_Bool)doesClientHaveNotesEntitlement;
-- (struct NSNumber *)resolveFuture:(id)arg1;
+- (id)resolveFuture:(id)arg1;
 - (_Bool)isAccessGrantedRequestingAccessIfNeeded;
 - (void)updatePreflightStatus:(int)arg1 forService:(int)arg2;
 - (id)accessGrantedFutureForService:(int)arg1;
 - (id)sharedAccessGrantedFutureForRequest:(int)arg1;
 - (_Bool)isAccessGrantedWithError:(id *)arg1;
 - (void)requestAuthorizationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (struct NSNumber *)_checkIfNotesAccessGranted;
+- (id)_checkIfNotesAccessGranted;
 @property(readonly, nonatomic) _Bool isNotesAccessGranted;
 - (_Bool)isAddressBookAccessGranted;
 @property(readonly, nonatomic) _Bool isFullAccessGranted;

@@ -21,14 +21,15 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property __weak NSObject<OS_dispatch_queue> *weakDelegateQueue; // @synthesize weakDelegateQueue=_weakDelegateQueue;
 @property __weak id <AssetCacheServicesManagerEventsProtocol_Private> weakPrivateDelegate; // @synthesize weakPrivateDelegate=_weakPrivateDelegate;
 @property __weak id <AssetCacheServicesManagerEventsProtocol> weakDelegate; // @synthesize weakDelegate=_weakDelegate;
 @property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 @property(retain) id <AssetCacheServicesManagerProtocol> proxy; // @synthesize proxy=_proxy;
-- (void).cxx_destruct;
 - (id)_connectToManagerServiceWithCallback:(CDUnknownBlockType)arg1;
+- (oneway void)notifyAboutUpdatedSettings:(id)arg1;
 - (oneway void)notifyAboutUpdatedStatus:(id)arg1;
 - (oneway void)notifyAboutCompletedDataMigrationWithError:(id)arg1;
 - (oneway void)notifyAboutDataMigrationProgress:(double)arg1;

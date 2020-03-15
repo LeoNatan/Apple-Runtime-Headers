@@ -24,9 +24,9 @@
 + (id)pathToTermsWithDigest:(id)arg1;
 + (id)pathToTermsCache;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool writable; // @synthesize writable=_writable;
 @property(retain, nonatomic) NSString *termsDigest; // @synthesize termsDigest=_termsDigest;
-- (void).cxx_destruct;
 - (void)_setLoggingProcessName:(id)arg1;
 - (void)setLoggingProcessName:(id)arg1;
 - (void)updateEventDate;

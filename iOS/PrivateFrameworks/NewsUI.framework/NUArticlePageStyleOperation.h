@@ -16,11 +16,11 @@
     NUPageStyle *_pageStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUPageStyle *pageStyle; // @synthesize pageStyle=_pageStyle;
 @property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) unsigned long long pageNextAction; // @synthesize pageNextAction=_pageNextAction;
 @property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
-- (void).cxx_destruct;
 - (void)operationDidFinishWithError:(id)arg1;
 - (void)performOperation;
 - (_Bool)validateOperation;

@@ -17,11 +17,11 @@
     NSArray *_locationsOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *locationsOfInterest; // @synthesize locationsOfInterest=_locationsOfInterest;
 @property(copy, nonatomic) NSString *calendarColor; // @synthesize calendarColor=_calendarColor;
 @property(copy, nonatomic) NSString *calendarName; // @synthesize calendarName=_calendarName;
 @property(nonatomic) BOOL compress; // @synthesize compress=_compress;
-- (void).cxx_destruct;
 - (BOOL)writeToURL:(id)arg1 error:(id *)arg2;
 @property(readonly) NSData *data;
 - (id)document;

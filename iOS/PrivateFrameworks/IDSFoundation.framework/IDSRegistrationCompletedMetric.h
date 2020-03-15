@@ -22,12 +22,12 @@
     long long _circleStatus;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long circleStatus; // @synthesize circleStatus=_circleStatus;
 @property(readonly, nonatomic) long long registrationError; // @synthesize registrationError=_registrationError;
 @property(readonly, nonatomic) _Bool wasSuccessful; // @synthesize wasSuccessful=_wasSuccessful;
 @property(readonly, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(readonly, nonatomic) int registrationType; // @synthesize registrationType=_registrationType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short rtcType;
 @property(readonly, nonatomic) PBCodable<NSCopying> *awdRepresentation;
 @property(readonly) unsigned int awdIdentifier;

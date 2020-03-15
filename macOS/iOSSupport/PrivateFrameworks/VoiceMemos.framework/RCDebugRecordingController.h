@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak UIAlertController *durationAlertController; // @synthesize durationAlertController=_durationAlertController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIAlertController *durationAlertController; // @synthesize durationAlertController=_durationAlertController;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)_createDebugContentWithDuration:(float)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_recordingNameForRequiredDuration:(float)arg1;

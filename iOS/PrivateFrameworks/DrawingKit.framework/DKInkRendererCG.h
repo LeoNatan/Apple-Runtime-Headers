@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _invalidRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *currentInterpolatedBrushStroke; // @synthesize currentInterpolatedBrushStroke=_currentInterpolatedBrushStroke;
 @property(retain, nonatomic) NSMutableArray *cachedInterpolatedBrushStrokes; // @synthesize cachedInterpolatedBrushStrokes=_cachedInterpolatedBrushStrokes;
 @property(nonatomic) struct CGRect invalidRect; // @synthesize invalidRect=_invalidRect;
@@ -34,14 +35,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool scaleDrawingToFitCanvas; // @synthesize scaleDrawingToFitCanvas;
 @property(nonatomic) __weak id <DKInkRendererDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) UIColor *inkColor; // @synthesize inkColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)display;
 @property(readonly, nonatomic) _Bool initialized;
 - (void)teardown;
 @property(readonly, nonatomic) unsigned long long maximumPointsForBleedAnimation;
 @property(readonly, nonatomic) _Bool supportsBleedAnimation;
-- (id)snapshot;
+- (id)snapshotImage;
 - (void)flush;
 - (void)force;
 - (void)removeLastStroke;

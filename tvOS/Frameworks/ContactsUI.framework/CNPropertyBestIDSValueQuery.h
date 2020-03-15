@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     CNPropertyIDSRequest *_idsRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNPropertyIDSRequest *idsRequest; // @synthesize idsRequest=_idsRequest;
 @property(retain, nonatomic) NSArray *propertyItems; // @synthesize propertyItems=_propertyItems;
 @property(nonatomic) __weak id <CNPropertyBestIDSValueQueryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *validIDSItems; // @synthesize validIDSItems=_validIDSItems;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CNPropertyGroupItem *bestIDSProperty;
 - (void)cancel;
 - (id)initWithPropertyItems:(id)arg1 service:(id)arg2;

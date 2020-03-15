@@ -8,21 +8,19 @@
 
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKConceptAttribute, HKConceptIdentifier, NSArray, NSMutableArray, NSString;
+@class HKConceptAttribute, HKConceptIdentifier, HKMedicalCoding, NSArray, NSMutableArray, NSSet, NSString;
 
 @interface HKConcept : NSObject <NSSecureCoding>
 {
     NSMutableArray *_relationships;
+    NSMutableArray *_attributes;
     _Bool _relationshipsAreLoaded;
-    NSString *preferredName;
-    NSString *nodeName;
+    _Bool _isUndefined;
     HKConceptIdentifier *_identifier;
-    NSArray *_attributes;
-    HKConcept *_groupByConcept;
+    NSString *_nodeName;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)undefinedConcept;
 + (id)_conceptWithIdentifier:(id)arg1 attributes:(id)arg2;
 + (id)unknownCategoryIdentifier;
 + (id)vitalCategoryIdentifier;
@@ -33,29 +31,35 @@
 + (id)conditionCategoryIdentifier;
 + (id)allergyCategoryIdentifier;
 + (id)_buildCategoryIdentifierWithCode:(unsigned int)arg1;
-@property(copy, nonatomic) NSArray *relationships; // @synthesize relationships=_relationships;
-@property(copy, nonatomic) HKConcept *groupByConcept; // @synthesize groupByConcept=_groupByConcept;
-@property(nonatomic) _Bool relationshipsAreLoaded; // @synthesize relationshipsAreLoaded=_relationshipsAreLoaded;
-@property(copy, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
-@property(copy, nonatomic) HKConceptIdentifier *identifier; // @synthesize identifier=_identifier;
-@property(copy, nonatomic) NSString *nodeName; // @synthesize nodeName;
-@property(copy, nonatomic) NSString *preferredName; // @synthesize preferredName;
++ (id)preferredLanguages;
++ (id)fallbackLanguagesForLocale:(id)arg1;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *nodeName; // @synthesize nodeName=_nodeName;
+@property(readonly, nonatomic) _Bool isUndefined; // @synthesize isUndefined=_isUndefined;
+@property(nonatomic) _Bool relationshipsAreLoaded; // @synthesize relationshipsAreLoaded=_relationshipsAreLoaded;
+@property(readonly, copy, nonatomic) HKConceptIdentifier *identifier; // @synthesize identifier=_identifier;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)addRelationship:(id)arg1;
+- (void)addRelationships:(id)arg1;
 - (void)addAttribute:(id)arg1;
-- (id)_attributesMutableArray;
-- (void)updateRelationshipsOwners;
+@property(readonly, copy, nonatomic) HKMedicalCoding *LOINCCode;
 @property(readonly, copy, nonatomic) HKConceptAttribute *adHocCode;
+@property(readonly, nonatomic) _Bool hidesOutOfRangeFilter;
+@property(readonly, nonatomic) _Bool chartsBloodPressure;
+@property(readonly, nonatomic) _Bool isNebulous;
 @property(readonly, nonatomic) _Bool isAdHoc;
-@property(readonly, nonatomic) _Bool isUndefined;
 - (id)attributesForName:(id)arg1;
 - (id)firstAttributeForName:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *localizedPreferredName;
+@property(readonly, copy, nonatomic) NSString *preferredName;
+@property(readonly, copy, nonatomic) NSSet *validInRegions;
 @property(readonly, nonatomic) long long version;
 @property(readonly, copy, nonatomic) HKConcept *chartedWithConcept;
+@property(readonly, copy, nonatomic) HKConcept *groupByConcept;
 - (id)_firstConceptOfRelationshipType:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *relationships;
+@property(readonly, copy, nonatomic) NSArray *attributes;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

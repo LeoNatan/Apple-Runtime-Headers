@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedManager;
 + (int)cellViewTypeForResult:(id)arg1;
-@property(readonly, nonatomic) UnifiedFieldCompletionStyledTableCellView<ParsecTableCellView> *mostRecentlyUsedParsecCellView; // @synthesize mostRecentlyUsedParsecCellView=_mostRecentlyUsedParsecCellView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UnifiedFieldCompletionStyledTableCellView<ParsecTableCellView> *mostRecentlyUsedParsecCellView; // @synthesize mostRecentlyUsedParsecCellView=_mostRecentlyUsedParsecCellView;
 - (id)_identifierForParsecCellViewType:(int)arg1;
 - (id)_createCellViewWithIdentifier:(id)arg1 fromNib:(id)arg2;
 - (id)_nextCellViewOfClass:(Class)arg1;

@@ -22,14 +22,14 @@
     CDUnknownBlockType _dataChangedHandler;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType dataChangedHandler; // @synthesize dataChangedHandler=_dataChangedHandler;
 @property(retain) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(retain) NLTagger *namedEntityTagger; // @synthesize namedEntityTagger=_namedEntityTagger;
 @property(retain) TITransientLexiconManager *transientLexiconManager; // @synthesize transientLexiconManager=_transientLexiconManager;
 @property(retain) NSLocale *locale; // @synthesize locale=_locale;
 @property unsigned long long options; // @synthesize options=_options;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct _NSRange)selectionRangeForTextInDocument:(id)arg1 inRange:(struct _NSRange)arg2 language:(id)arg3 options:(unsigned long long)arg4;
 - (void)loadStaticPhraseDictionary;
 - (struct _NSRange)longestRangeEncapsulatingSubstringInDocument:(id)arg1 containingRange:(struct _NSRange)arg2 tokenizedRanges:(id)arg3 meetingCondition:(CDUnknownBlockType)arg4;

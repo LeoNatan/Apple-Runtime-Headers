@@ -17,9 +17,9 @@
 + (_Bool)verifyMessage:(id)arg1 signature:(id)arg2 spkiHash:(id)arg3 trustedKeys:(id)arg4 algorithm:(struct __CFString *)arg5 error:(id *)arg6;
 + (int)protoAlgorithmForSecKeyAlgorithm:(struct __CFString *)arg1;
 + (const struct __CFString *)secKeyAlgorithmForProtoAlgorithm:(int)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *trustedKeys; // @synthesize trustedKeys=_trustedKeys;
 @property _Bool needsRefresh; // @synthesize needsRefresh=_needsRefresh;
-- (void).cxx_destruct;
 - (_Bool)verifyMessage:(id)arg1 signature:(id)arg2 spkiHash:(id)arg3 algorithm:(struct __CFString *)arg4 error:(id *)arg5;
 - (id)initWithTrustedKeys:(id)arg1;
 

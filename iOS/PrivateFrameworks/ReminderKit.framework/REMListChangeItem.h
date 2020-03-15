@@ -21,11 +21,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMAccount *parentAccount; // @synthesize parentAccount=_parentAccount;
 @property(retain, nonatomic) REMChangedKeysObserver *changedKeysObserver; // @synthesize changedKeysObserver=_changedKeysObserver;
 @property(readonly, copy, nonatomic) REMListStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) REMSaveRequest *saveRequest; // @synthesize saveRequest=_saveRequest;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canBeIncludedInGroup;
 @property(readonly, nonatomic) _Bool isSharedToMe;
 - (id)resolutionTokenKeyForChangedKey:(id)arg1;

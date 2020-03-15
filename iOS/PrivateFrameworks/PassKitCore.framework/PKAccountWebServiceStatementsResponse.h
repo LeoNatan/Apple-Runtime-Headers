@@ -13,8 +13,8 @@
     NSArray *_statements;
 }
 
-@property(readonly, copy, nonatomic) NSArray *statements; // @synthesize statements=_statements;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *statements; // @synthesize statements=_statements;
 - (id)initWithData:(id)arg1;
 
 @end

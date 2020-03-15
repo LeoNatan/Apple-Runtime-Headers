@@ -16,8 +16,8 @@
     long long _desiredTextAlignment;
 }
 
-@property(nonatomic) long long alignment; // @synthesize alignment=_desiredTextAlignment;
 - (void).cxx_destruct;
+@property(nonatomic) long long alignment; // @synthesize alignment=_desiredTextAlignment;
 - (void)layoutSubviews;
 - (double)preferredHeightForWidth:(double)arg1;
 - (id)initWithButton:(id)arg1;

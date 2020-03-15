@@ -16,8 +16,8 @@
     NSMutableDictionary *_handlesByService;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *handlesByService; // @synthesize handlesByService=_handlesByService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *handlesByService; // @synthesize handlesByService=_handlesByService;
 - (void)remoteAlertHandle:(id)arg1 didInvalidateWithError:(id)arg2;
 - (void)remoteAlertHandleDidDeactivate:(id)arg1;
 - (void)remoteAlertHandleDidActivate:(id)arg1;

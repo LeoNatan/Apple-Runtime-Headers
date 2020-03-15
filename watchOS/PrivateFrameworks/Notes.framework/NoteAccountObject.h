@@ -15,8 +15,8 @@
 }
 
 + (_Bool)shouldDataAccessCreateAccountForACAccount:(id)arg1;
-@property(retain, nonatomic) NSDictionary *constraints; // @synthesize constraints=_constraints;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *constraints; // @synthesize constraints=_constraints;
 @property(readonly, nonatomic) _Bool isICloudIMAPAccount;
 - (void)didTurnIntoFault;
 - (_Bool)isAllNotesContainer;

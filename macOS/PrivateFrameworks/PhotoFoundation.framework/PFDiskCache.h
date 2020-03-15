@@ -36,10 +36,10 @@
     unsigned long long _maxPendingWrites;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long maxPendingWrites; // @synthesize maxPendingWrites=_maxPendingWrites;
 @property(readonly) NSArray *expirationPolicies; // @synthesize expirationPolicies=_expirationPolicies;
 @property(readonly) NSString *cacheDirectoryPath; // @synthesize cacheDirectoryPath=_cacheDirectoryPath;
-- (void).cxx_destruct;
 - (void)runExpiration;
 - (void)purge;
 - (void)setCacheData:(id)arg1 forKey:(id)arg2 preparationBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;

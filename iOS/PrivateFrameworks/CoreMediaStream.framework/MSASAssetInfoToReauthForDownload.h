@@ -14,9 +14,9 @@
     MSASAlbum *_album;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSASAlbum *album; // @synthesize album=_album;
 @property(retain, nonatomic) MSAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 
 @end
 

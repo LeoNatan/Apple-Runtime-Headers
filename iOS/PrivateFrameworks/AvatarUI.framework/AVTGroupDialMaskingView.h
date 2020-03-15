@@ -13,8 +13,8 @@
     CAGradientLayer *_maskLayer;
 }
 
-@property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAGradientLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

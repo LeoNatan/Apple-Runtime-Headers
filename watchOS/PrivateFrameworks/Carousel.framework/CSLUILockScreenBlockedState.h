@@ -18,9 +18,9 @@
 }
 
 + (_Bool)isValid;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) __weak id <CSLUILockScreenStateTransitionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)initWithDelegate:(id)arg1;
 
 // Remaining properties

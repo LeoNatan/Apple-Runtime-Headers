@@ -22,13 +22,13 @@
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ISVitalitySpecificSettings *orbPreviewSettings; // @synthesize orbPreviewSettings=_orbPreviewSettings;
 @property(retain, nonatomic) ISVitalitySpecificSettings *activityViewSettings; // @synthesize activityViewSettings=_activityViewSettings;
 @property(retain, nonatomic) ISVitalitySpecificSettings *shareViewSettings; // @synthesize shareViewSettings=_shareViewSettings;
 @property(retain, nonatomic) ISVitalitySpecificSettings *oneUpSettings; // @synthesize oneUpSettings=_oneUpSettings;
 @property(nonatomic) _Bool useLegacyBehavior; // @synthesize useLegacyBehavior=_useLegacyBehavior;
 @property(nonatomic) _Bool shouldPreroll; // @synthesize shouldPreroll=_shouldPreroll;
-- (void).cxx_destruct;
 - (double)maxVitalityDelay;
 - (id)_defaultSettings;
 - (double)maximumDelayBeforePlayback;

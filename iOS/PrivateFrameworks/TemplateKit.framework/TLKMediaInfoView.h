@@ -16,11 +16,11 @@
     TLKContentsContainerView *_contentsContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKContentsContainerView *contentsContainer; // @synthesize contentsContainer=_contentsContainer;
 @property(retain, nonatomic) TLKImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 @property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)detailLabelStrings;
 - (id)titleLabelStrings;
 - (_Bool)imageViewIsHidden;

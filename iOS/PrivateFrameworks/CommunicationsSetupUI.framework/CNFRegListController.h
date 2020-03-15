@@ -21,12 +21,12 @@
     CNFRegController *_regController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool appeared; // @synthesize appeared=_appeared;
 @property(retain, nonatomic) CNFRegController *regController; // @synthesize regController=_regController;
 @property(nonatomic) _Bool shouldRerootPreferences; // @synthesize shouldRerootPreferences=_shouldRerootPreferences;
 @property(nonatomic) _Bool showingChildController; // @synthesize showingChildController=_showingChildController;
 @property(copy, nonatomic) CDUnknownBlockType appearBlock; // @synthesize appearBlock=_appearBlock;
-- (void).cxx_destruct;
 - (void)removeAllHandlers;
 - (void)_setupEventHandlers;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

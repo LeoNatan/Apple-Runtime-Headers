@@ -18,13 +18,13 @@
     struct CGPoint _dotOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAReplicatorLayer *thinkingDots; // @synthesize thinkingDots=_thinkingDots;
 @property(retain, nonatomic) CALayer *thinkingDot; // @synthesize thinkingDot=_thinkingDot;
 @property(nonatomic) _Bool thinking; // @synthesize thinking=_thinking;
 @property(nonatomic) float dotSpacing; // @synthesize dotSpacing=_dotSpacing;
 @property(nonatomic) struct CGPoint dotOffset; // @synthesize dotOffset=_dotOffset;
 @property(nonatomic) float dotRadius; // @synthesize dotRadius=_dotRadius;
-- (void).cxx_destruct;
 - (void)stopThinking;
 - (void)startThinking;
 - (id)initWithFrame:(struct CGRect)arg1;

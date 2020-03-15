@@ -41,6 +41,7 @@
 }
 
 + (Class)locationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) long long parentEntityType; // @synthesize parentEntityType=_parentEntityType;
 @property(retain, nonatomic) SGDCKInteractionInfo *interactionInfo; // @synthesize interactionInfo=_interactionInfo;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *sourceKey; // @synthesize sourceKey=_sourceKey;
 @property(retain, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

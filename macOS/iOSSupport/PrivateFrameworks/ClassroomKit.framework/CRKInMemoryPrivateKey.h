@@ -15,8 +15,8 @@
     CRKIdentityConfiguration *_configuration;
 }
 
-@property(readonly, copy, nonatomic) CRKIdentityConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CRKIdentityConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) struct __SecKey *underlyingPrivateKey;
 @property(readonly, copy, nonatomic) NSData *dataRepresentation;
 - (id)initWithConfiguration:(id)arg1;

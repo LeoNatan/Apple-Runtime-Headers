@@ -18,13 +18,13 @@
     UIView *_backgroundFillView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *backgroundFillView; // @synthesize backgroundFillView=_backgroundFillView;
 @property(retain, nonatomic) UIVisualEffectView *backgroundEffectView; // @synthesize backgroundEffectView=_backgroundEffectView;
 @property(retain, nonatomic) UIVisualEffectView *contentEffectView; // @synthesize contentEffectView=_contentEffectView;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) HULayeredBackgroundEffect *backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
 @property(retain, nonatomic) HULayeredContentEffect *contentEffect; // @synthesize contentEffect=_contentEffect;
-- (void).cxx_destruct;
 - (void)_applyCornerRadius;
 - (void)_updateSubviewOrder;
 - (void)_updateBackgroundEffects;

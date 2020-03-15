@@ -11,6 +11,7 @@
 @protocol _SFLinkPreviewHeaderDelegate <NSObject>
 
 @optional
+- (void)linkPreviewHeaderBoundsDidChange:(_SFLinkPreviewHeader *)arg1;
 - (void)linkPreviewHeader:(_SFLinkPreviewHeader *)arg1 didEnableLinkPreview:(_Bool)arg2;
 @end
 

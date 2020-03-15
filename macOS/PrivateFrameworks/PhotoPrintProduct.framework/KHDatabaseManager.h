@@ -20,11 +20,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly) NSMutableSet *transientThemeDatabases; // @synthesize transientThemeDatabases=_transientThemeDatabases;
 @property(readonly) NSMutableDictionary *openThemeDatabases; // @synthesize openThemeDatabases=_openThemeDatabases;
 @property(readonly) NSMutableDictionary *openProjectDatabases; // @synthesize openProjectDatabases=_openProjectDatabases;
 @property(readonly) NSMutableDictionary *projectDatabasePaths; // @synthesize projectDatabasePaths=_projectDatabasePaths;
-- (void).cxx_destruct;
 - (void)closeProjectDBForUuid:(id)arg1 context:(id)arg2;
 - (void)closeProjectDBForUuid:(id)arg1;
 - (void)closeProjectDBForURL:(id)arg1 context:(id)arg2;

@@ -15,8 +15,8 @@
     NSString *_label;
 }
 
-@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void)ulogv:(int)arg1 format:(id)arg2 args:(char *)arg3;
 - (void)ulogf:(int)arg1 format:(id)arg2;
 - (void)ulog:(int)arg1 message:(id)arg2;

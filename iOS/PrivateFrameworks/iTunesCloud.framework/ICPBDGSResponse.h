@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICPBDGSFinishDelegationResponse *finishDelegationResponse; // @synthesize finishDelegationResponse=_finishDelegationResponse;
 @property(retain, nonatomic) ICPBDGSStartDelegationResponse *startDelegationResponse; // @synthesize startDelegationResponse=_startDelegationResponse;
 @property(nonatomic) unsigned int requestUniqueID; // @synthesize requestUniqueID=_requestUniqueID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

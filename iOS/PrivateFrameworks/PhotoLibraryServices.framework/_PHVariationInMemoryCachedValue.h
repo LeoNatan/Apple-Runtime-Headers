@@ -15,10 +15,10 @@
     NSDate *_expectedDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expectedDate; // @synthesize expectedDate=_expectedDate;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) NSDictionary *info; // @synthesize info=_info;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (id)_currentFileModificationDate;
 - (id)initWithInfo:(id)arg1 fileURL:(id)arg2;

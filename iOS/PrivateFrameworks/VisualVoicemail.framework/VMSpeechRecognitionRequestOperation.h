@@ -14,9 +14,9 @@
     id <VMSpeechRecognitionRequest> _speechRecognitionRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <VMSpeechRecognitionRequest> speechRecognitionRequest; // @synthesize speechRecognitionRequest=_speechRecognitionRequest;
 @property _Bool forceOfflineRecognition; // @synthesize forceOfflineRecognition=_forceOfflineRecognition;
-- (void).cxx_destruct;
 - (id)initWithSpeechRecognizer:(id)arg1 speechRecognitionRequest:(id)arg2;
 - (id)initWithSpeechRecognizer:(id)arg1;
 

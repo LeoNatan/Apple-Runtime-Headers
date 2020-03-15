@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <ICDocCamImageQuadEditPanGestureRecognizerDelegate> _quadEditorDelegate;
 }
 
-@property(nonatomic) __weak id <ICDocCamImageQuadEditPanGestureRecognizerDelegate> quadEditorDelegate; // @synthesize quadEditorDelegate=_quadEditorDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ICDocCamImageQuadEditPanGestureRecognizerDelegate> quadEditorDelegate; // @synthesize quadEditorDelegate=_quadEditorDelegate;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 
 @end

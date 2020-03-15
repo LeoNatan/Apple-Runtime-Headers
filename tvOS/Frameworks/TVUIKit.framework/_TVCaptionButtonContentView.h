@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UILabel *_contentTextMask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *contentTextMask; // @synthesize contentTextMask=_contentTextMask;
 @property(retain, nonatomic) UILabel *contentTextLabel; // @synthesize contentTextLabel=_contentTextLabel;
 @property(retain, nonatomic) CALayer *contentImageMask; // @synthesize contentImageMask=_contentImageMask;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) _UIFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
-- (void).cxx_destruct;
 - (struct CGSize)_label:(id)arg1 textSizeForWidth:(double)arg2;
 - (struct CGRect)_centeredFrameForSize:(struct CGSize)arg1 inView:(id)arg2;
 - (void)_createComponentViews;

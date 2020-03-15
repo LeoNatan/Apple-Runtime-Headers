@@ -17,11 +17,11 @@
     unsigned long long _revision;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long revision; // @synthesize revision=_revision;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSObject<VUIMediaLibraryIdentifier> *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak VUIMediaLibraryManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (unsigned long long)_incrementRevision;
 - (void)_updateWithTitle:(id)arg1 connectionState:(unsigned long long)arg2;
 - (void)_postContentsDidChangeNotification;

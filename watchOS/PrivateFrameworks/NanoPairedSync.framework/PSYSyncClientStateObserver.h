@@ -22,9 +22,9 @@
 }
 
 + (id)sharedSyncSessionState;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *syncStateObservers; // @synthesize syncStateObservers=_syncStateObservers;
 @property(retain, nonatomic) NSMapTable *syncClientObservers; // @synthesize syncClientObservers=_syncClientObservers;
-- (void).cxx_destruct;
 - (void)syncStateObserverDidChangeSyncState:(id)arg1;
 - (void)_queue_enumerateSyncStateObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)_queue_enumerateSyncClientObserversWithBlock:(CDUnknownBlockType)arg1;

@@ -156,7 +156,8 @@ __attribute__((visibility("hidden")))
 - (int)_registerNewQueryGenerationSnapshot:(id)arg1;
 - (BOOL)_isQueryGenerationSupportActive;
 - (BOOL)supportsGenerationalQuerying;
-- (void)_initializeQueryGenerationTrackingConnection;
+- (void)_initializeQueryGenerationConnectionForProtectionClasses;
+- (BOOL)_initializeQueryGenerationTrackingConnection;
 - (void)_updateAutoVacuumMetadataWithValues:(id)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)_setMetadata:(id)arg1;
@@ -196,6 +197,7 @@ __attribute__((visibility("hidden")))
 - (id)newValuesForObjectWithID:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (void)removeRowCacheForGenerationWithIdentifier:(id)arg1;
 - (id)rowCacheForContext:(id)arg1;
+- (id)failableRowCacheForGeneration:(id)arg1;
 - (id)rowCacheForGeneration:(id)arg1;
 - (void)writeSerializationUnlock;
 - (void)writeSerializationLock;
@@ -221,9 +223,10 @@ __attribute__((visibility("hidden")))
 - (void)_repairDatabaseCorrelationTables:(id)arg1 brokenHashModel:(id)arg2 storeVersionNumber:(id)arg3 recurse:(BOOL)arg4 usingConnection:(id)arg5;
 - (BOOL)load:(id *)arg1;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
-- (struct _NSScalarObjectID *)newForeignKeyID:(long long)arg1 entity:(id)arg2;
+- (BOOL)_isCloudKitOptioned;
+- (id)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
-- (struct _NSScalarObjectID *)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
+- (id)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
 - (Class)objectIDFactoryForPersistentHistoryEntity:(id)arg1;
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (Class)objectIDFactoryForEntity:(id)arg1;

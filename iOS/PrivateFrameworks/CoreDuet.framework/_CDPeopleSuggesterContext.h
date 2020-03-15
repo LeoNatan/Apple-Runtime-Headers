@@ -24,6 +24,7 @@
 }
 
 + (id)currentContext;
+- (void).cxx_destruct;
 @property(retain) _CDInteraction *activeInteraction; // @synthesize activeInteraction=_activeInteraction;
 @property(retain) NSSet *contentUTIs; // @synthesize contentUTIs=_contentUTIs;
 @property(retain) NSString *consumerIdentifier; // @synthesize consumerIdentifier=_consumerIdentifier;
@@ -33,7 +34,6 @@
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *locationUUID; // @synthesize locationUUID=_locationUUID;
 @property(retain) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

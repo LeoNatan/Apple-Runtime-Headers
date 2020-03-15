@@ -24,6 +24,7 @@
 
 + (id)componentsWithFirstName:(id)arg1 lastName:(id)arg2 middleName:(id)arg3 title:(id)arg4 suffix:(id)arg5 companyName:(id)arg6 isCompany:(_Bool)arg7;
 + (id)components;
+- (void).cxx_destruct;
 @property(readonly) _Bool isCompany; // @synthesize isCompany=_isCompany;
 @property(readonly) NSString *companyName; // @synthesize companyName=_companyName;
 @property(readonly) NSString *suffix; // @synthesize suffix=_suffix;
@@ -32,7 +33,6 @@
 @property(readonly) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, copy) NSString *formattedName; // @synthesize formattedName=_formattedName;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

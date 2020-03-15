@@ -14,8 +14,8 @@
     unsigned long long _direction;
 }
 
-@property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 - (struct NSEdgeInsets)templatedContentMargins;
 - (void)cardSectionSubviewWantsToBeRemovedFromHierarchy:(id)arg1;
 - (void)addCardSectionSubview:(id)arg1 withKeyline:(long long)arg2;

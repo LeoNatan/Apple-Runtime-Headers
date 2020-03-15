@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     id _maskControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id maskControl; // @synthesize maskControl=_maskControl;
 @property(retain, nonatomic) id control; // @synthesize control=_control;
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -16,11 +16,11 @@
     CDUnknownBlockType _forgotAction;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType forgotAction; // @synthesize forgotAction=_forgotAction;
 @property(copy) CDUnknownBlockType cancelAction; // @synthesize cancelAction=_cancelAction;
 @property(retain) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(retain) NSImageCell *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)forgotButtonPressed:(id)arg1;
 - (void)cancelButtonPressed:(id)arg1;
 - (void)awakeFromNib;

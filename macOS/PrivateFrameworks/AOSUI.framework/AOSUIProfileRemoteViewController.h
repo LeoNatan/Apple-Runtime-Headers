@@ -16,8 +16,8 @@
 }
 
 + (void)requestViewControllerWithCompletion:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <AOSUIProfileRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AOSUIProfileRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewHost_updateOverlayPrefPane:(BOOL)arg1 prefPanesToHide:(id)arg2;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;

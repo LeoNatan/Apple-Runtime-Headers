@@ -29,6 +29,7 @@
 - (void)changeSelectionWithGestureAt:(struct CGPoint)arg1 withGesture:(int)arg2 withState:(int)arg3;
 
 @optional
+- (_Bool)supportsTextSelectionWithCharacterGranularity;
 - (_Bool)shouldAllowHidingSelectionCommands;
 - (void)willFinishIgnoringCalloutBarFadeAfterPerformingAction;
 - (void)pasteWithCompletionHandler:(void (^)(void))arg1;

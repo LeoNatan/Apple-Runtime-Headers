@@ -16,11 +16,11 @@
     NSMutableArray *_pyramidScaleSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pyramidScaleSize; // @synthesize pyramidScaleSize=_pyramidScaleSize;
 @property(retain, nonatomic) NSMutableArray *pyramidPostInterScaleNMSTextFeatures; // @synthesize pyramidPostInterScaleNMSTextFeatures=_pyramidPostInterScaleNMSTextFeatures;
 @property(retain, nonatomic) NSMutableArray *pyramidPostIntraScaleNMSTextFeatures; // @synthesize pyramidPostIntraScaleNMSTextFeatures=_pyramidPostIntraScaleNMSTextFeatures;
 @property(retain, nonatomic) NSMutableArray *pyramidPreIntraScaleNMSTextFeatures; // @synthesize pyramidPreIntraScaleNMSTextFeatures=_pyramidPreIntraScaleNMSTextFeatures;
-- (void).cxx_destruct;
 - (id)initWithNumberOfScales:(long long)arg1;
 
 @end

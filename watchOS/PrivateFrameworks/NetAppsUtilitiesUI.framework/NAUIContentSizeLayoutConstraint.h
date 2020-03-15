@@ -31,12 +31,12 @@
 + (id)constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(int)arg3 relatedBy:(int)arg4 toItem:(id)arg5 attribute:(int)arg6 multiplier:(float)arg7 defaultConstant:(float)arg8;
 + (id)constraintForAutoitem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 defaultConstant:(float)arg7;
 + (id)_constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(int)arg3 relatedBy:(int)arg4 toItem:(id)arg5 attribute:(int)arg6 multiplier:(float)arg7 defaultConstant:(float)arg8 additionalConstant:(float)arg9 initialize:(_Bool)arg10;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType constantLoadingBlock; // @synthesize constantLoadingBlock=_constantLoadingBlock;
 @property(copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic) float additionalConstant; // @synthesize additionalConstant=_additionalConstant;
 @property(nonatomic) float defaultConstant; // @synthesize defaultConstant=_defaultConstant;
 @property(nonatomic) _Bool autoUpdatingConstantShrinks; // @synthesize autoUpdatingConstantShrinks=_autoUpdatingConstantShrinks;
-- (void).cxx_destruct;
 - (void)_reloadPreferredContentSize:(_Bool)arg1;
 - (void)_updatePreferredContentSize;
 - (void)_forceUpdatePreferredContentSize;

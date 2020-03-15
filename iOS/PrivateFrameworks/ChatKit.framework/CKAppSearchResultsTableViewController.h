@@ -18,10 +18,10 @@
     NSArray *_searchResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 @property(nonatomic) __weak id <CKBrowserAppManagerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *allPlugins; // @synthesize allPlugins=_allPlugins;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

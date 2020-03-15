@@ -10,11 +10,11 @@
 @protocol _UIDragInteractionDriverDelegate;
 
 @protocol _UIDragInteractionDriving <NSObject>
+@property(readonly, nonatomic, getter=isActive) _Bool active;
 @property(readonly, nonatomic) _Bool shouldAnimateLift;
 @property(readonly, nonatomic) struct CGPoint initialLocationInWindow;
 @property(copy, nonatomic) NSArray *allowedTouchTypes;
 @property(nonatomic) _Bool automaticallyAddsFailureRelationships;
-@property(nonatomic, getter=isAcceleratedDragGestureEnabled) _Bool acceleratedDragGestureEnabled;
 @property(nonatomic) _Bool cancellationTimerEnabled;
 @property(nonatomic) double competingLongPressDelay;
 @property(nonatomic) double cancellationDelay;

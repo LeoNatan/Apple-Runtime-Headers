@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) MSMessageTemplateLayout *alternateLayout; // @synthesize alternateLayout=_alternateLayout;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MSMessageTemplateLayout *alternateLayout; // @synthesize alternateLayout=_alternateLayout;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

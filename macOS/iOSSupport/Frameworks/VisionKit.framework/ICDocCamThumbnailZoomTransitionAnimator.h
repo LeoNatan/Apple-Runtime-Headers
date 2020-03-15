@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(nonatomic) BOOL presenting; // @synthesize presenting=_presenting;
-- (void).cxx_destruct;
 - (BOOL)_shouldCrossFadeNavigationBar;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

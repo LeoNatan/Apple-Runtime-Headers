@@ -13,8 +13,8 @@
     TIKeyboardCandidate *_candidate;
 }
 
-@property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIKeyboardCandidate *candidate; // @synthesize candidate=_candidate;
 - (void)reportToSession:(id)arg1;
 - (id)description;
 - (id)init:(id)arg1 order:(long long)arg2;

@@ -18,11 +18,11 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) unsigned long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)next;
 - (void)_executeNextRun;

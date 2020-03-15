@@ -19,6 +19,7 @@
     double _autoCalcDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double autoCalcDuration; // @synthesize autoCalcDuration=_autoCalcDuration;
 @property(nonatomic) double resourceLoadingDuration; // @synthesize resourceLoadingDuration=_resourceLoadingDuration;
 @property(nonatomic) double resourceDownloadDuration; // @synthesize resourceDownloadDuration=_resourceDownloadDuration;
@@ -26,7 +27,6 @@
 @property(nonatomic) double enterEditDuration; // @synthesize enterEditDuration=_enterEditDuration;
 @property(nonatomic, getter=isEditingWithRaw) _Bool editingWithRaw; // @synthesize editingWithRaw=_editingWithRaw;
 @property(retain, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)buildEvent;
 
 @end

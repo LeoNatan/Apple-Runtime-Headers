@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (oneway void)handleCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleCommand:(id)arg1 afterCurrentRequest:(_Bool)arg2 isOneWay:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)dealloc;
 - (id)initAndHandleCommand:(id)arg1 afterCurrentRequest:(_Bool)arg2 isOneWay:(_Bool)arg3 commandHandler:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end

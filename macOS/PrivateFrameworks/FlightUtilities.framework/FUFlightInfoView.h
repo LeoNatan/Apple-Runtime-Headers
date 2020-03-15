@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)flightViewForStyle:(unsigned long long)arg1 compact:(BOOL)arg2;
+- (void).cxx_destruct;
 @property __weak NSButton *flightButton; // @synthesize flightButton=_flightButton;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property __weak FUFlightProgressView *progressView; // @synthesize progressView=_progressView;
@@ -104,7 +105,6 @@ __attribute__((visibility("hidden")))
 @property __weak id <FUFlightInfoViewProtocol> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FUFlightLeg *leg; // @synthesize leg=_leg;
 @property(readonly, nonatomic) FUFlight *flight; // @synthesize flight=_flight;
-- (void).cxx_destruct;
 - (void)updateLabelVisibility:(id)arg1 constraint:(id)arg2;
 - (void)flightButtonTapped:(id)arg1;
 - (void)updateFlightStatus;

@@ -14,9 +14,9 @@
     NSEvent *_recognitionEvent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSEvent *recognitionEvent; // @synthesize recognitionEvent=_recognitionEvent;
 @property(nonatomic) BOOL extending; // @synthesize extending=_extending;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseDown:(id)arg1;

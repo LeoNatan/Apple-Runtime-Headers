@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *bundleShortVersion; // @synthesize bundleShortVersion=_bundleShortVersion;
 @property(retain) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3 shortVersion:(id)arg4;

@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSRecurrenceRangeBaseType *RecurrenceRange; // @synthesize RecurrenceRange=_RecurrenceRange;
 @property(retain, nonatomic) EWSRecurrencePatternBaseType *RecurrencePattern; // @synthesize RecurrencePattern=_RecurrencePattern;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

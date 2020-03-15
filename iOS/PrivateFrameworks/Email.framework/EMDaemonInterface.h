@@ -40,6 +40,7 @@
 + (id)_remoteConnection;
 + (id)remoteObjectInterface;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly) id <NSXPCProxyCreating> proxyCreator; // @synthesize proxyCreator=_proxyCreator;
 @property(readonly) EMSearchableIndex *searchableIndex; // @synthesize searchableIndex=_searchableIndex;
 @property(readonly) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
@@ -53,9 +54,9 @@
 @property(readonly) EMMailboxRepository *mailboxRepository; // @synthesize mailboxRepository=_mailboxRepository;
 @property(readonly) EMOutgoingMessageRepository *outgoingMessageRepository; // @synthesize outgoingMessageRepository=_outgoingMessageRepository;
 @property(readonly) EMMessageRepository *messageRepository; // @synthesize messageRepository=_messageRepository;
-- (void).cxx_destruct;
 - (void)handleDaemonAvailability;
 @property _Bool allowsBackgroundResume;
+- (void)launchDaemon;
 - (void)resetProtocolConnections;
 - (id)connectionForProtocol:(id)arg1;
 - (id)_connectionForProtocol:(id)arg1 error:(id *)arg2;

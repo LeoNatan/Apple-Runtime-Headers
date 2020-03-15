@@ -23,12 +23,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (CDUnknownBlockType)matchingIdentifierTest:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *serializationVersion; // @synthesize serializationVersion=_serializationVersion;
 @property(readonly, nonatomic) NSNumber *frequencySum; // @synthesize frequencySum=_frequencySum;
 @property(readonly, copy, nonatomic) NSString *stickerConfigurationIdentifier; // @synthesize stickerConfigurationIdentifier=_stickerConfigurationIdentifier;
 @property(readonly, copy, nonatomic) NSString *avatarRecordIdentifier; // @synthesize avatarRecordIdentifier=_avatarRecordIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

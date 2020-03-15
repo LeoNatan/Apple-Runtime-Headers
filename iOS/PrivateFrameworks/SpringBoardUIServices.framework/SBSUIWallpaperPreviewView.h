@@ -32,6 +32,7 @@
     UIButton *_setButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *setButton; // @synthesize setButton=_setButton;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIButton *parallaxButton; // @synthesize parallaxButton=_parallaxButton;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) SBFWallpaperView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
 @property(retain, nonatomic) SBFLockScreenDateView *dateView; // @synthesize dateView=_dateView;
 @property(nonatomic) __weak id <SBSUIWallpaperPreviewViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)irisWallpaperViewPlaybackStateDidChange:(id)arg1;
 - (void)_layoutSetButton;
 - (void)_layoutCancelButton;

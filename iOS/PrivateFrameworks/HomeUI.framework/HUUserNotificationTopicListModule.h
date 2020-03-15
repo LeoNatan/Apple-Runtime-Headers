@@ -15,9 +15,9 @@
 }
 
 + (id)sectionID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFUserNotificationServiceTopicItemProvider *notificationTopicItemProvider; // @synthesize notificationTopicItemProvider=_notificationTopicItemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)topicForItem:(id)arg1;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)itemProviders;

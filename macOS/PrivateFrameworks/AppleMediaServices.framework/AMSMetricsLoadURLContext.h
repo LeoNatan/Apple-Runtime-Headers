@@ -21,6 +21,7 @@
     NSDictionary *_decodedResponseBody;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *decodedResponseBody; // @synthesize decodedResponseBody=_decodedResponseBody;
 @property(retain) NSURLSessionTaskMetrics *taskMetrics; // @synthesize taskMetrics=_taskMetrics;
 @property(retain) NSURLSessionTask *task; // @synthesize task=_task;
@@ -29,7 +30,6 @@
 @property(retain) AMSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
-- (void).cxx_destruct;
 - (void)setBagContract:(id)arg1;
 - (id)bagContract;
 - (id)initWithTaskInfo:(id)arg1 serverPayload:(id)arg2;

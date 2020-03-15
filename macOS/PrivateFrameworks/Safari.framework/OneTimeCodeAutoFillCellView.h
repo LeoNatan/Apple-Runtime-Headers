@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WBSOneTimeCode *_oneTimeCode;
 }
 
-@property(retain, nonatomic) WBSOneTimeCode *oneTimeCode; // @synthesize oneTimeCode=_oneTimeCode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WBSOneTimeCode *oneTimeCode; // @synthesize oneTimeCode=_oneTimeCode;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)awakeFromNib;

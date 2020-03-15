@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasBeenPersisted; // @synthesize hasBeenPersisted=_hasBeenPersisted;
 @property(readonly, nonatomic) int whitelistStatus; // @synthesize whitelistStatus=_whitelistStatus;
 @property(readonly, nonatomic) int contactType; // @synthesize contactType=_contactType;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, nonatomic) NSString *formattedName; // @synthesize formattedName=_formattedName;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

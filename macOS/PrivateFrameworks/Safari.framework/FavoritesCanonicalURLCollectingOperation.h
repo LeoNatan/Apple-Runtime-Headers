@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)cachedResultIsInvalidatedWhenBookmarksChange;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *canonicalURLs; // @synthesize canonicalURLs=_canonicalURLs;
 @property(readonly, nonatomic) WebBookmarkList *rootBookmarkListForFavorites; // @synthesize rootBookmarkListForFavorites=_rootBookmarkListForFavorites;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NSCopying> cacheKey;
 @property(retain, nonatomic) id result;
 - (void)main;

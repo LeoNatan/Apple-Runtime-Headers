@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSData *_legacyJSON;
 }
 
-@property(copy, nonatomic) NSData *legacyJSON; // @synthesize legacyJSON=_legacyJSON;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *legacyJSON; // @synthesize legacyJSON=_legacyJSON;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

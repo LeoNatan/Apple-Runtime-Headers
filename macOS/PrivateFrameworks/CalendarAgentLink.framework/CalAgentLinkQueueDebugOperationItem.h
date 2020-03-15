@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isPendingRetry; // @synthesize isPendingRetry=_isPendingRetry;
 @property(nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(nonatomic) long long maxRetries; // @synthesize maxRetries=_maxRetries;
 @property(nonatomic) long long retryCounter; // @synthesize retryCounter=_retryCounter;
 @property(retain, nonatomic) NSString *readableDescription; // @synthesize readableDescription=_readableDescription;
 @property(retain, nonatomic) NSString *className; // @synthesize className=_className;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

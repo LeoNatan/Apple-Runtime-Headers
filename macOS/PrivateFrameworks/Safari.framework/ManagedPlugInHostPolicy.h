@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (int)policyFromString:(id)arg1;
 + (id)stringFromPolicy:(int)arg1;
 + (id)managedPlugInHostPolicyFromDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isUsedForSingleVisit; // @synthesize isUsedForSingleVisit=_isUsedForSingleVisit;
 @property(nonatomic, getter=wasExplicitlyCreatedByAdmin) BOOL explicitlyCreatedByAdmin; // @synthesize explicitlyCreatedByAdmin=_explicitlyCreatedByAdmin;
 @property(nonatomic, getter=isManagedByAdmin) BOOL managedByAdmin; // @synthesize managedByAdmin=_managedByAdmin;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *pageURLString; // @synthesize pageURLString=_pageURLString;
 @property(copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(nonatomic) __weak ManagedPlugIn *plugIn; // @synthesize plugIn=_plugIn;
-- (void).cxx_destruct;
 @property(nonatomic) int policy;
 - (id)dictionaryRepresentation;
 - (id)hostnameForDisplay;

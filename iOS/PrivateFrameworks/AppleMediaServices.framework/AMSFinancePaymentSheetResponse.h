@@ -24,10 +24,11 @@ __attribute__((visibility("hidden")))
 + (long long)_salableIconForString:(id)arg1;
 + (long long)_payeeInferredFromEnumeratedTitle:(id)arg1;
 + (long long)_payeeForRequestorValue:(id)arg1;
++ (id)_flexListDictionaryForValues:(id)arg1 account:(id)arg2 shouldUppercaseText:(_Bool)arg3;
 + (id)_createRequestFromDictionary:(id)arg1 confirmationOnly:(_Bool)arg2 authenticateResponse:(id)arg3 taskInfo:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AMSFinanceAuthenticateResponse *authenticateResponse; // @synthesize authenticateResponse=_authenticateResponse;
 @property(readonly, nonatomic) AMSPaymentSheetRequest *paymentSheetRequest; // @synthesize paymentSheetRequest=_paymentSheetRequest;
-- (void).cxx_destruct;
 - (id)performWithTaskInfo:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1 confirmationOnly:(_Bool)arg2 taskInfo:(id)arg3;
 

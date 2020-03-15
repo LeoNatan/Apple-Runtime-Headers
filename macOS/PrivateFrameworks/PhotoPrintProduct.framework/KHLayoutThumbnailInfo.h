@@ -17,9 +17,9 @@
     NSDate *_modificationDate;
 }
 
+- (void).cxx_destruct;
 @property BOOL fullResolutionRequested; // @synthesize fullResolutionRequested=_fullResolutionRequested;
 @property(retain) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
-- (void).cxx_destruct;
 @property(readonly) NSSet *requests;
 - (void)removeRequest:(id)arg1;
 - (void)addRequest:(id)arg1;

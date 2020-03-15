@@ -23,12 +23,12 @@
 + (id)actionLocationsForDomain:(long long)arg1;
 + (id)_automatorLibraryFolderURLsForDomainMask:(unsigned long long)arg1;
 + (unsigned long long)_actionDiscoveryDomainMaskForActionDomain:(long long)arg1;
+- (void).cxx_destruct;
 @property BOOL cacheIsDirty; // @synthesize cacheIsDirty=_cacheIsDirty;
 @property BOOL didLoadAllActions; // @synthesize didLoadAllActions=_didLoadAllActions;
 @property(retain) NSURL *cacheFileURL; // @synthesize cacheFileURL=_cacheFileURL;
 @property(retain) NSArray *actionLocations; // @synthesize actionLocations=_actionLocations;
 @property(retain) NSArray *cacheLocationEntries; // @synthesize cacheLocationEntries=_cacheLocationEntries;
-- (void).cxx_destruct;
 - (id)dateAddedForActionWithBundleIdentifier:(id)arg1;
 - (void)writeUpdatedCacheFileIfNeeded;
 - (BOOL)_writeCacheFileForLocationEntries:(id)arg1 toURL:(id)arg2 error:(id *)arg3;

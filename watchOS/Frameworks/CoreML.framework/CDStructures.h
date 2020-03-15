@@ -228,10 +228,6 @@ struct MultiArrayBuffer {
     unsigned short _field7;
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct NetworkUpdateParameters {
     CDUnknownFunctionPointerType *_field1;
     struct InternalMetadataWithArenaLite _field2;

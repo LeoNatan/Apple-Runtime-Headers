@@ -20,9 +20,9 @@
 + (id)stringForActionType:(unsigned long long)arg1;
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(readonly, nonatomic) __weak HMDAccessory *hmdAccessory; // @synthesize hmdAccessory=_hmdAccessory;
-- (void).cxx_destruct;
 - (id)initWithActionType:(unsigned long long)arg1 hmdAccessory:(id)arg2;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

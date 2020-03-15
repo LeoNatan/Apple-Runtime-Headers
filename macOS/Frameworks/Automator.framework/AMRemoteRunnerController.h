@@ -34,6 +34,7 @@
 + (id)remoteRunnerControllerWithWorkflowURL:(id)arg1 workingDirectoryURL:(id)arg2 error:(id *)arg3;
 + (id)remoteRunnerControllerWithPropertyList:(id)arg1 workflowURL:(id)arg2 workingDirectoryURL:(id)arg3 error:(id *)arg4;
 + (id)remoteRunnerControllerWithWorkflow:(id)arg1 workingDirectoryURL:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain) NSURL *workingDirectoryURL; // @synthesize workingDirectoryURL=_workingDirectoryURL;
 @property(retain) AMWorkflowCompletionResults *workflowCompletionResults; // @synthesize workflowCompletionResults=_workflowCompletionResults;
 @property BOOL workflowDelegateHasFinished; // @synthesize workflowDelegateHasFinished=_workflowDelegateHasFinished;
@@ -46,7 +47,6 @@
 @property(retain) AMWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) BOOL shouldDisplayProgressInMenuBar; // @synthesize shouldDisplayProgressInMenuBar=_shouldDisplayProgressInMenuBar;
 @property(copy) id propertyList; // @synthesize propertyList=_propertyList;
-- (void).cxx_destruct;
 - (void)remoteRunnerXPCDelegateHasReceivedFinished;
 - (void)_completeWorkflowIfAppropriate;
 - (void)_completeWorkflowWithOuput:(id)arg1 error:(id)arg2;

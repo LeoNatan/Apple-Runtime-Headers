@@ -17,11 +17,11 @@
     long long _shadowMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long shadowMode; // @synthesize shadowMode=_shadowMode;
 @property(readonly, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
 @property(readonly, nonatomic) MTMaterialShadowView *baseMaterialView; // @synthesize baseMaterialView=_baseMaterialView;
 @property(readonly, nonatomic) SBElasticSliderView *sliderView; // @synthesize sliderView=_sliderView;
-- (void).cxx_destruct;
 - (void)_updateShadowMode;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)layoutSubviews;

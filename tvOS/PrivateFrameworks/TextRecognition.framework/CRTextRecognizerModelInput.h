@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     MLMultiArray *_img_input;
 }
 
-@property(retain, nonatomic) MLMultiArray *img_input; // @synthesize img_input=_img_input;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MLMultiArray *img_input; // @synthesize img_input=_img_input;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
 - (id)initWithImg_input:(id)arg1;

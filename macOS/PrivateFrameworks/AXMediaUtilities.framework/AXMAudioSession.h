@@ -13,8 +13,8 @@
     NSMutableArray *_notificationObserverTokens;
 }
 
-@property(retain, nonatomic) NSMutableArray *notificationObserverTokens; // @synthesize notificationObserverTokens=_notificationObserverTokens;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *notificationObserverTokens; // @synthesize notificationObserverTokens=_notificationObserverTokens;
 - (BOOL)activateSessionWithError:(id *)arg1;
 - (BOOL)deactivateSessionWithError:(id *)arg1;
 - (void)dealloc;

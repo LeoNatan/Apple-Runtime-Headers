@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canSort; // @synthesize canSort=_canSort;
 @property(nonatomic) _Bool canDisable; // @synthesize canDisable=_canDisable;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *description; // @synthesize description=_description;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

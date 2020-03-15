@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned long long seqno; // @synthesize seqno=_seqno;
-- (void).cxx_destruct;
 
 @end
 

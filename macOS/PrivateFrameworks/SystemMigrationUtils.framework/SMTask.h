@@ -21,6 +21,7 @@
     NSFileHandle *_outputFileHandle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSFileHandle *outputFileHandle; // @synthesize outputFileHandle=_outputFileHandle;
 @property(retain) NSObject<OS_dispatch_queue> *parentProgressQueue; // @synthesize parentProgressQueue=_parentProgressQueue;
 @property double parentProgressPendingUnits; // @synthesize parentProgressPendingUnits=_parentProgressPendingUnits;
@@ -29,7 +30,6 @@
 @property int terminationStatus; // @synthesize terminationStatus=_terminationStatus;
 @property(retain) NSString *logPrefix; // @synthesize logPrefix=_logPrefix;
 @property(retain) NSTask *task; // @synthesize task=_task;
-- (void).cxx_destruct;
 - (void)fileHandleReadCompleted:(id)arg1;
 - (void)processOutput:(id)arg1;
 - (void)processRemainingData;

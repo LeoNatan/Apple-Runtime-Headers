@@ -54,6 +54,7 @@
 + (Class)notificationChannelIdsType;
 + (Class)paidSubscriptionChannelIdsType;
 + (Class)lastVisibleViewsType;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL syncedOtherUserIdDuringSession; // @synthesize syncedOtherUserIdDuringSession=_syncedOtherUserIdDuringSession;
 @property(nonatomic) int internalAutoSubscribeFeedCount; // @synthesize internalAutoSubscribeFeedCount=_internalAutoSubscribeFeedCount;
 @property(nonatomic) int appsAutoSubscribeFeedCount; // @synthesize appsAutoSubscribeFeedCount=_appsAutoSubscribeFeedCount;
@@ -72,7 +73,6 @@
 @property(nonatomic) int topicSubscriptionCount; // @synthesize topicSubscriptionCount=_topicSubscriptionCount;
 @property(nonatomic) int channelSubscriptionCount; // @synthesize channelSubscriptionCount=_channelSubscriptionCount;
 @property(retain, nonatomic) NSMutableArray *lastVisibleViews; // @synthesize lastVisibleViews=_lastVisibleViews;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

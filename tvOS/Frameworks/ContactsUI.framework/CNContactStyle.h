@@ -53,6 +53,7 @@
 + (id)darkStyle;
 + (id)defaultStyle;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool blurSupported; // @synthesize blurSupported=_blurSupported;
 @property(nonatomic) _Bool shouldPresentInCurrentContext; // @synthesize shouldPresentInCurrentContext=_shouldPresentInCurrentContext;
 @property(nonatomic) long long keyboardAppearance; // @synthesize keyboardAppearance=_keyboardAppearance;
@@ -82,7 +83,6 @@
 @property(retain, nonatomic) UIColor *disabledTextColor; // @synthesize disabledTextColor=_disabledTextColor;
 @property(retain, nonatomic) UIColor *taglineTextColor; // @synthesize taglineTextColor=_taglineTextColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFont *boldTextFont;
 @property(readonly, nonatomic) UIFont *textFont;
 - (void)encodeWithCoder:(id)arg1;

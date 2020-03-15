@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     struct CGPoint _origin;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) double originalOpacity; // @synthesize originalOpacity=_originalOpacity;
 @property(nonatomic) struct CGPoint origin; // @synthesize origin=_origin;
 @property(retain, nonatomic) NSMutableArray *specImages; // @synthesize specImages=_specImages;
 @property(retain, nonatomic) UIView *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (_Bool)startMediaBrowserFromViewController:(id)arg1;

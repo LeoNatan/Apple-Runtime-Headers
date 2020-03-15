@@ -19,9 +19,9 @@
 + (unsigned long long)storageBehaviorForPropertyWithKey:(id)arg1;
 + (id)JSONKeyPathsByPropertyKey;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
-- (void).cxx_destruct;
 - (id)initWithLocalIdentifier:(id)arg1 localizedTitle:(id)arg2;
 
 @end

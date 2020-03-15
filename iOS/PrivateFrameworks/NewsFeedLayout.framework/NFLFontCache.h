@@ -13,8 +13,8 @@
     FCThreadSafeMutableDictionary *_fontCache;
 }
 
-@property(retain, nonatomic) FCThreadSafeMutableDictionary *fontCache; // @synthesize fontCache=_fontCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCThreadSafeMutableDictionary *fontCache; // @synthesize fontCache=_fontCache;
 - (void)clearCache;
 - (id)fontWithName:(id)arg1 size:(double)arg2;
 - (id)init;

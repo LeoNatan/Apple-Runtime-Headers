@@ -40,6 +40,7 @@
 }
 
 + (_Bool)settingEnabled;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType passcodeOptionsHandler; // @synthesize passcodeOptionsHandler=_passcodeOptionsHandler;
 @property(copy, nonatomic) NSString *passcodeOptionsTitle; // @synthesize passcodeOptionsTitle=_passcodeOptionsTitle;
 @property(nonatomic) _Bool allowOptionsButton; // @synthesize allowOptionsButton=_allowOptionsButton;
@@ -48,7 +49,6 @@
 @property(nonatomic) _Bool hidesCancelButton; // @synthesize hidesCancelButton=_hidesCancelButton;
 @property(nonatomic) _Bool hidesNavigationButtons; // @synthesize hidesNavigationButtons=_hidesNavigationButtons;
 @property(nonatomic) __weak id <DevicePINControllerDelegate> pinDelegate; // @synthesize pinDelegate=_pinDelegate;
-- (void).cxx_destruct;
 - (void)setSuccess:(_Bool)arg1;
 - (_Bool)success;
 - (id)title;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSAttributedString, NSString, UIImage, UIView;
+@class NSArray, NSAttributedString, NSString, UIColor, UIImage, UIView;
 @protocol SFSettingsAlertItemView;
 
 @interface _SFSettingsAlertItem : NSObject
@@ -16,8 +16,10 @@
     NSString *_title;
     NSAttributedString *_attributedTitle;
     NSString *_textStyle;
+    UIColor *_tintColor;
     UIImage *_icon;
     CDUnknownBlockType _handler;
+    NSString *_accessibilityIdentifier;
     UIView<SFSettingsAlertItemView> *_view;
     id _controller;
     CDUnknownBlockType _viewConfigurationBlock;
@@ -31,20 +33,22 @@
 + (id)stepperWithController:(id)arg1 handler:(CDUnknownBlockType)arg2;
 + (id)buttonWithTitle:(id)arg1 textStyle:(id)arg2 icon:(id)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)buttonWithAttributedTitle:(id)arg1 textStyle:(id)arg2 icon:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak _SFSettingsAlertItem *group; // @synthesize group=_group;
 @property(copy, nonatomic) NSArray *subItems; // @synthesize subItems=_subItems;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(copy, nonatomic) CDUnknownBlockType viewConfigurationBlock; // @synthesize viewConfigurationBlock=_viewConfigurationBlock;
 @property(retain, nonatomic) id controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak UIView<SFSettingsAlertItemView> *view; // @synthesize view=_view;
+@property(copy, nonatomic) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
+@property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)updateOptionsGroupDetailLabel;
 - (id)initWithType:(long long)arg1;
 

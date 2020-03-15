@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     UIResponder *_selectedResponder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIResponder *selectedResponder; // @synthesize selectedResponder=_selectedResponder;
 @property(retain, nonatomic) id <EKStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) __weak id <EKCalendarItemEditItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableViewDidScroll;
 - (id)trailingSwipeActionsConfigurationForRowAtIndex:(int)arg1;
 - (id)viewForActionSheet;

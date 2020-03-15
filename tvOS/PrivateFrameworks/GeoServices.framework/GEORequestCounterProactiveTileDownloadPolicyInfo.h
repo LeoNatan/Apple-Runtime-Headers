@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bytesDownloaded; // @synthesize bytesDownloaded=_bytesDownloaded;
 @property(readonly, nonatomic) unsigned long long failureCount; // @synthesize failureCount=_failureCount;
 @property(readonly, nonatomic) unsigned long long successCount; // @synthesize successCount=_successCount;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSDate *endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(readonly, nonatomic) NSDate *startTimestamp; // @synthesize startTimestamp=_startTimestamp;
 @property(readonly, nonatomic) unsigned char policy; // @synthesize policy=_policy;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPolicy:(unsigned char)arg1 startTimestamp:(id)arg2 endTimestamp:(id)arg3 tilesConsidered:(unsigned long long)arg4 successCount:(unsigned long long)arg5 failureCount:(unsigned long long)arg6 bytesDownloaded:(unsigned long long)arg7;

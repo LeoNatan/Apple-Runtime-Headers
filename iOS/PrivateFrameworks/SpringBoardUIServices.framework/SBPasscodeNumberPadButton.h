@@ -23,8 +23,8 @@
 + (struct CGSize)defaultSize;
 + (id)_stringCharacterForCharacter:(unsigned int)arg1;
 + (int)_characterTypeForCharacter:(unsigned int)arg1;
-@property(retain, nonatomic) UIColor *reduceTransparencyButtonColor; // @synthesize reduceTransparencyButtonColor=_reduceTransparencyButtonColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *reduceTransparencyButtonColor; // @synthesize reduceTransparencyButtonColor=_reduceTransparencyButtonColor;
 - (id)stringCharacter;
 - (int)characterType;
 - (id)initForCharacter:(unsigned int)arg1;

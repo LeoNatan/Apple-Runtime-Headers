@@ -19,12 +19,12 @@
 }
 
 + (id)businessItemsForRegion:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *queryPerformers; // @synthesize queryPerformers=_queryPerformers;
 @property(nonatomic) unsigned long long numberOfRetries; // @synthesize numberOfRetries=_numberOfRetries;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(nonatomic, getter=isSimulatingTimeout) _Bool simulatesTimeout; // @synthesize simulatesTimeout=_simulatesTimeout;
 @property(retain, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
-- (void).cxx_destruct;
 - (_Bool)createCacheForRegions:(id)arg1 progressBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (id)initWithQueryPerformers:(id)arg1;
 

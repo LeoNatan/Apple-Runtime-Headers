@@ -20,11 +20,11 @@
     unsigned int _count;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int count; // @synthesize count=_count;
 @property(readonly, nonatomic) int expireStatusType; // @synthesize expireStatusType=_expireStatusType;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
 @property(readonly, nonatomic) int statusType; // @synthesize statusType=_statusType;
-- (void).cxx_destruct;
 - (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4 expireStatusType:(int)arg5;
 - (id)_initWithItem:(id)arg1 expireStatusType:(int)arg2 count:(unsigned int)arg3;
 - (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4;

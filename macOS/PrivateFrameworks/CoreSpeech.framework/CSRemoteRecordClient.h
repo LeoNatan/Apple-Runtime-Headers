@@ -20,9 +20,9 @@
     OS_remote_device *_device;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OS_remote_device *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CSRemoteRecordClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)hasPendingTwoShotBeep;
 - (id)voiceTriggerEventInfo;
 - (BOOL)isRecording;

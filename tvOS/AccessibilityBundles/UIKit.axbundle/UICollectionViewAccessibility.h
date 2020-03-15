@@ -22,6 +22,7 @@
 - (unsigned long long)_accessibilityScanningBehaviorTraits;
 - (id)_accessibilitySupplementaryHeaderViewAtIndexPath:(id)arg1;
 - (id)_accessibilitySupplementaryFooterViews;
+- (id)_accessibilityCollectionViewSupplementaryViews;
 - (id)_accessibilitySupplementaryHeaderViews;
 - (id)_axIndexBar;
 - (id)_accessibilityReusableViewForOpaqueElement:(id)arg1;

@@ -20,8 +20,8 @@
 
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 - (BOOL)isEqualToFSGenerationID:(unsigned int)arg1;
 - (BOOL)isEqualToGenerationID:(id)arg1 orSignature:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

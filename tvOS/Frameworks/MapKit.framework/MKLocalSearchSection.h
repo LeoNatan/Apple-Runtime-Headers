@@ -16,11 +16,11 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool enforceServerResultsOrder; // @synthesize enforceServerResultsOrder=_enforceServerResultsOrder;
 @property(readonly, nonatomic) _Bool shouldInterleaveClientResults; // @synthesize shouldInterleaveClientResults=_shouldInterleaveClientResults;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (id)initWithResults:(id)arg1 title:(id)arg2 shouldInterleaveClientResults:(_Bool)arg3 enforceServerResultsOrder:(_Bool)arg4;
 
 @end

@@ -21,9 +21,9 @@
 + (id)logCategory;
 + (id)processInfoForXPCConnection:(id)arg1;
 + (id)processInfo;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)getAuditToken:(CDStruct_6ad76789 *)arg1;
 - (id)attributeDescriptions;
 - (id)shortDescription;

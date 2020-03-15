@@ -27,6 +27,7 @@
     id <SKUIArtworkProviding> _thumbnailArtworkProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SKUIArtworkProviding> thumbnailArtworkProvider; // @synthesize thumbnailArtworkProvider=_thumbnailArtworkProvider;
 @property(readonly, nonatomic) long long titleFontWeight; // @synthesize titleFontWeight=_titleFontWeight;
 @property(readonly, nonatomic) float titleFontSize; // @synthesize titleFontSize=_titleFontSize;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(readonly, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
-- (void).cxx_destruct;
 - (id)valueForMetricsField:(id)arg1;
 - (id)metricsElementName;
 - (long long)componentType;

@@ -38,6 +38,7 @@
 + (id)needsValue;
 + (id)confirmationRequiredWithItemToConfirm:(id)arg1 forReason:(int)arg2;
 + (id)unsupportedWithReason:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) INIntent *intentToExecute; // @synthesize intentToExecute=_intentToExecute;
 @property(nonatomic) unsigned int confirmationReason; // @synthesize confirmationReason=_confirmationReason;
 @property(nonatomic) unsigned int unsupportedReason; // @synthesize unsupportedReason=_unsupportedReason;
@@ -46,12 +47,12 @@
 @property(retain, nonatomic) NSArray *alternatives; // @synthesize alternatives=_alternatives;
 @property(retain, nonatomic) NSArray *disambiguationItems; // @synthesize disambiguationItems=_disambiguationItems;
 @property(nonatomic) int resolutionResultCode; // @synthesize resolutionResultCode=_resolutionResultCode;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)_stringForResultCode:(int)arg1;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
 - (id)_JSONDictionaryRepresentationForIntent:(id)arg1 parameterName:(id)arg2;
+- (id)initWithJSONDictionary:(id)arg1 forIntent:(id)arg2;
 - (id)_initWithIntentSlotResolutionResult:(id)arg1 slotDescription:(id)arg2;
 - (id)_initWithResolutionResult:(id)arg1;
 - (id)_vocabularyValueForObject:(id)arg1 slotDescription:(id)arg2;

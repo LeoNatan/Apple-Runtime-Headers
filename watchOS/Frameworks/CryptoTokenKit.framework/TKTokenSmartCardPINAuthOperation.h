@@ -19,13 +19,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(copy) NSString *PIN; // @synthesize PIN=_PIN;
 @property(retain) TKSmartCard *smartCard; // @synthesize smartCard=_smartCard;
 @property int PINByteOffset; // @synthesize PINByteOffset=_PINByteOffset;
 @property(copy) NSData *APDUTemplate; // @synthesize APDUTemplate=_APDUTemplate;
 @property(retain) TKSmartCardPINFormat *PINFormat; // @synthesize PINFormat=_PINFormat;
-- (void).cxx_destruct;
 - (_Bool)finishWithError:(id *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

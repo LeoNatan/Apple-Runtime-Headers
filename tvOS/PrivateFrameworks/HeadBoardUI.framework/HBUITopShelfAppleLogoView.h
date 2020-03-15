@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIImageView *_logoImageView;
 }
 
-@property(readonly, nonatomic) UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *logoImageView; // @synthesize logoImageView=_logoImageView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateLogoImageViewTintColor;
 - (void)layoutSubviews;

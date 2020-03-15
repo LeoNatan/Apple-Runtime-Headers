@@ -9,7 +9,7 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INCodableAttribute, NSString;
+@class INCodableAttribute, NSArray, NSString;
 
 @interface INIntentCodableDescription : INRootCodableDescription <NSSecureCoding, NSCopying>
 {
@@ -27,9 +27,12 @@
     NSString *_defaultImageName;
     int _intentCategory;
     NSString *_verb;
+    NSArray *_entityVerbs;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *entityVerbs; // @synthesize entityVerbs=_entityVerbs;
 @property(nonatomic, getter=isEligibleForSuggestions) _Bool eligibleForSuggestions; // @synthesize eligibleForSuggestions=_eligibleForSuggestions;
 @property(nonatomic, getter=isConfigurable) _Bool configurable; // @synthesize configurable=_configurable;
 @property(nonatomic) _Bool userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
@@ -42,20 +45,21 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic, setter=_setKeyAttributeName:) NSString *_keyAttributeName; // @synthesize _keyAttributeName;
 @property(copy, nonatomic, setter=_setInputAttributeName:) NSString *_inputAttributeName; // @synthesize _inputAttributeName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)_reestablishReferencedCodableDescriptionsUsingTypes:(id)arg1 intentResponseCodableDescription:(id)arg2;
+- (void)_establishReferencedCodableDescriptionsUsingTypes:(id)arg1 intentResponseCodableDescription:(id)arg2;
 - (void)_updateWithIntentCodableDescription:(id)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 - (id)_attributesKeyPrefix;
 - (id)_attributeKeyPrefix;
 - (id)keyPrefix;
 - (id)_ignoredAttributeTags;
-- (id)localizedDescriptiveTextForLanguage:(id)arg1;
+- (id)localizedDescriptiveTextWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDescriptiveText;
-- (id)localizedTitleForLanguage:(id)arg1;
+- (id)localizedTitleWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedTitle;
 @property(readonly, nonatomic) INCodableAttribute *keyAttribute;
 @property(readonly, nonatomic) INCodableAttribute *inputAttribute;

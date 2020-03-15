@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _cachedTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAsset *weakAVAsset; // @synthesize weakAVAsset=_weakAVAsset;
 @property(nonatomic) BOOL cacheWillDieDuringLoad; // @synthesize cacheWillDieDuringLoad=_cacheWillDieDuringLoad;
 @property(nonatomic) BOOL cacheMovieIsPlayable; // @synthesize cacheMovieIsPlayable=_cacheMovieIsPlayable;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize cachedNaturalSize; // @synthesize cachedNaturalSize=_cachedNaturalSize;
 @property(nonatomic) BOOL audioProxyExists; // @synthesize audioProxyExists=_audioProxyExists;
 @property(copy, nonatomic) NSURL *audioProxyURL; // @synthesize audioProxyURL=_audioProxyURL;
-- (void).cxx_destruct;
 - (void)updateLocation;
 - (void)updateCreationDate;
 - (void)updateAssetAvailability;

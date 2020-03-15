@@ -19,8 +19,8 @@
     CDUnknownBlockType _archiveCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType archiveCompletionBlock; // @synthesize archiveCompletionBlock=_archiveCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType archiveCompletionBlock; // @synthesize archiveCompletionBlock=_archiveCompletionBlock;
 - (void)didUnarchiveItemAtURL:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)presendNotifications;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSString *_profileVersion;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *profileVersion; // @synthesize profileVersion=_profileVersion;
 @property(retain) NSString *profile; // @synthesize profile=_profile;
 @property(retain) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain) NSDictionary *data; // @synthesize data=_data;
 @property(retain) NSArray *cookies; // @synthesize cookies=_cookies;
 @property(retain) AMSBagKeySet *bagKeySet; // @synthesize bagKeySet=_bagKeySet;
-- (void).cxx_destruct;
 - (id)createFrozenDataSource;
 - (id)initWithFrozenDataSource:(id)arg1;
 

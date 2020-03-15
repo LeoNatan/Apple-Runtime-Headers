@@ -13,8 +13,8 @@
     SFSearchResult *_originalResult;
 }
 
-@property(retain, nonatomic) SFSearchResult *originalResult; // @synthesize originalResult=_originalResult;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFSearchResult *originalResult; // @synthesize originalResult=_originalResult;
 - (id)description;
 - (id)initWithResult:(id)arg1;
 - (Class)classForKeyedArchiver;

@@ -16,10 +16,10 @@
     MFEWSMailboxItemsBatch *_batch;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSMailboxItemsBatch *batch; // @synthesize batch=_batch;
 @property(readonly, copy, nonatomic) NSString *mailboxURL; // @synthesize mailboxURL=_mailboxURL;
 @property(nonatomic) __weak id <MFEWSPersistMessageMetadataOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_headersNeedUpdateForLibraryMessage:(id)arg1 withEWSItemType:(id)arg2;
 - (void)main;
 - (id)init;

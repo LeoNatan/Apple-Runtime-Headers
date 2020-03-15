@@ -31,6 +31,7 @@
 }
 
 + (_Bool)adoptsDefaultGridLayoutMargins;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasViewEverAppeared; // @synthesize hasViewEverAppeared=_hasViewEverAppeared;
 @property(readonly, nonatomic) NSMutableDictionary *actionGridViewControllersByEditorType; // @synthesize actionGridViewControllersByEditorType=_actionGridViewControllersByEditorType;
 @property(copy, nonatomic) NSString *editingName; // @synthesize editingName=_editingName;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) _Bool requiresPresentingViewControllerDismissal; // @synthesize requiresPresentingViewControllerDismissal=_requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (id)mediaSelectionViewControllerMessageForMediaActionPlayUnavailable:(id)arg1;
 - (id)mediaSelectionViewController:(id)arg1 messageForMediaPickerUnavailableReason:(long long)arg2;
 - (void)serviceGridViewController:(id)arg1 didTapItem:(id)arg2;

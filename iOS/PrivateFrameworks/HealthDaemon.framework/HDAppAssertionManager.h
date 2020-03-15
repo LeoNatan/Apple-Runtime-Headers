@@ -18,12 +18,12 @@
     NSMutableArray *_pendingAssertions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingAssertions; // @synthesize pendingAssertions=_pendingAssertions;
 @property(retain, nonatomic) NSMutableSet *activeAssertions; // @synthesize activeAssertions=_activeAssertions;
 @property(retain, nonatomic) NSMutableDictionary *appAssertions; // @synthesize appAssertions=_appAssertions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)_queue_assertionDidFinish:(id)arg1;
 - (id)_queue_pendingAssertionsReadyForLaunch;
 - (void)_queue_retryAppLaunchForAssertion:(id)arg1;

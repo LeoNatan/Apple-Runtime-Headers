@@ -29,6 +29,7 @@
     _Bool _textIsNaturallyRTL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets titleInsets; // @synthesize titleInsets=_titleInsets;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) _Bool textIsNaturallyRTL; // @synthesize textIsNaturallyRTL=_textIsNaturallyRTL;
@@ -36,7 +37,6 @@
 @property(nonatomic) double rating; // @synthesize rating=_rating;
 @property(nonatomic) long long numberOfVisibleLines; // @synthesize numberOfVisibleLines=_numberOfVisibleLines;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (struct CGSize)_textSizeToFitSize:(struct CGSize)arg1;
 - (struct __CTFrame *)_textFrame;
 - (id)_moreButtonLabel;

@@ -15,8 +15,8 @@
     NSData *_address;
 }
 
-@property(retain, nonatomic) NSData *address; // @synthesize address=_address;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *address; // @synthesize address=_address;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

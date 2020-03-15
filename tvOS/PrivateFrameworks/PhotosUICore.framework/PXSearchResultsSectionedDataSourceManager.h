@@ -24,6 +24,7 @@
     NSTimer *_searchIndexStatusTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *searchIndexStatusTimer; // @synthesize searchIndexStatusTimer=_searchIndexStatusTimer;
 @property(retain, nonatomic) PSIDatabase *searchIndex; // @synthesize searchIndex=_searchIndex;
 @property(retain, nonatomic) PLSearchMetadataStore *searchMetadataStore; // @synthesize searchMetadataStore=_searchMetadataStore;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) PXSearchResultsSectionedDataSource *searchResultsDataSource; // @synthesize searchResultsDataSource=_searchResultsDataSource;
 @property(retain, nonatomic) PHCachingImageManager *cachingImageManager; // @synthesize cachingImageManager=_cachingImageManager;
 @property(retain, nonatomic) PXSearchActiveSearch *activeSearch; // @synthesize activeSearch=_activeSearch;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *debugDictionary;
 - (void)dealloc;
 - (void)searchResultsDataSource:(id)arg1 didChangeThumbnailAssetsForSearchResult:(id)arg2 atIndexes:(id)arg3;

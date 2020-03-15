@@ -20,6 +20,7 @@
     UIImage *_localImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *localImage; // @synthesize localImage=_localImage;
 @property(copy, nonatomic) NSString *localDetailText; // @synthesize localDetailText=_localDetailText;
 @property(copy, nonatomic) NSString *localTitle; // @synthesize localTitle=_localTitle;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) CDUnknownBlockType constraintForLayoutFactory; // @synthesize constraintForLayoutFactory=_constraintForLayoutFactory;
 @property(retain, nonatomic) OBWelcomeController *backingController; // @synthesize backingController=_backingController;
 @property(nonatomic) BOOL enableStickyHeader; // @synthesize enableStickyHeader=_enableStickyHeader;
-- (void).cxx_destruct;
 - (void)_relayoutContentSubviewIfNeeded;
 - (void)_updateScrollUnderLayout;
 - (void)resetLayoutTo:(long long)arg1;

@@ -22,12 +22,12 @@
     struct CGSize _shadowOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(retain, nonatomic) NSColor *highlightedTextColor; // @synthesize highlightedTextColor=_highlightedTextColor;
 @property(nonatomic) struct CGSize shadowOffset; // @synthesize shadowOffset=_shadowOffset;
 @property(retain, nonatomic) NSColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
-- (void).cxx_destruct;
 - (id)accessibilityRoleDescription;
 - (void)setAccessibilityRoleDescription:(id)arg1;
 - (id)accessibilityRole;

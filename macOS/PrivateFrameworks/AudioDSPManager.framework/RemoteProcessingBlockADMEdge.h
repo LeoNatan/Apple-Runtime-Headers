@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
     struct WireDescription _wireDescription;
 }
 
-@property(readonly) struct WireDescription wireDescription; // @synthesize wireDescription=_wireDescription;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) struct WireDescription wireDescription; // @synthesize wireDescription=_wireDescription;
 - (id)initWithWireDescription:(const struct WireDescription *)arg1;
 
 @end

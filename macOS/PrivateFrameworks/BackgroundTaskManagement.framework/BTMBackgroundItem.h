@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long type; // @synthesize type=_type;
 @property long long userElection; // @synthesize userElection=_userElection;
 @property(retain) NSData *bookmark; // @synthesize bookmark=_bookmark;
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

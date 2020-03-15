@@ -15,8 +15,8 @@
     NSSet *_meContactIdentifiersFound;
 }
 
-@property(retain, nonatomic) NSSet *meContactIdentifiersFound; // @synthesize meContactIdentifiersFound=_meContactIdentifiersFound;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *meContactIdentifiersFound; // @synthesize meContactIdentifiersFound=_meContactIdentifiersFound;
 - (id)identifierAndLinkIdentifierAndLinkedContactIdentifiersFromContact:(id)arg1;
 - (_Bool)isMeContact:(id)arg1;
 - (id)meContactIdentifiers;

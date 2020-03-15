@@ -25,8 +25,8 @@
     NSIndexPath *_indexPathForLastFocusedItem;
 }
 
-@property(readonly, copy, nonatomic) NSIndexPath *indexPathForLastFocusedItem; // @synthesize indexPathForLastFocusedItem=_indexPathForLastFocusedItem;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSIndexPath *indexPathForLastFocusedItem; // @synthesize indexPathForLastFocusedItem=_indexPathForLastFocusedItem;
 - (void)_getGradientMaskBounds:(out struct CGRect *)arg1 startInsets:(out struct UIEdgeInsets *)arg2 endInsets:(out struct UIEdgeInsets *)arg3 intensities:(out struct UIEdgeInsets *)arg4;
 - (struct UIEdgeInsets)_gradientBoundsInsets;
 - (void)_setGradientBoundsInsets:(struct UIEdgeInsets)arg1;

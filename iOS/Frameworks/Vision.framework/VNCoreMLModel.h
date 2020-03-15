@@ -30,6 +30,7 @@
 }
 
 + (id)modelForMLModel:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) long long inputScenePrintMLMultiArrayDataType; // @synthesize inputScenePrintMLMultiArrayDataType=_inputScenePrintMLMultiArrayDataType;
 @property(retain) NSString *inputScenePrintKey; // @synthesize inputScenePrintKey=_inputScenePrintKey;
 @property(readonly) unsigned long long scenePrintRevision; // @synthesize scenePrintRevision=_scenePrintRevision;
@@ -43,7 +44,6 @@
 @property int modelType; // @synthesize modelType=_modelType;
 @property(retain) MLModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) id <MLFeatureProvider> featureProvider; // @synthesize featureProvider=_featureProvider;
-- (void).cxx_destruct;
 - (id)sequencedRequestPreviousObservationsKey;
 - (_Bool)wantsSequencedRequestObservationsRecording;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> cachingIdentifier;

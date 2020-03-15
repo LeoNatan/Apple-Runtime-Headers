@@ -40,12 +40,12 @@
 + (BOOL)TTYHardwareEnabledForAnyActiveContext;
 + (BOOL)isAppleInternalBuild;
 + (id)sharedUtilityProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *telephonyUpdateQueue; // @synthesize telephonyUpdateQueue=_telephonyUpdateQueue;
 @property(retain, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(nonatomic) BOOL headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;
 @property(nonatomic) unsigned long long activeContextCount; // @synthesize activeContextCount=_activeContextCount;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *defaultVoiceContext; // @synthesize defaultVoiceContext=_defaultVoiceContext;
-- (void).cxx_destruct;
 - (id)relayNumberForContext:(id)arg1;
 - (BOOL)isTTYSupportedForContext:(id)arg1;
 - (BOOL)isTTYOverIMSSupportedForContext:(id)arg1;

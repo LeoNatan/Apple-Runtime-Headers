@@ -15,9 +15,9 @@
 }
 
 + (id)sharedContext;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *waitingQueue; // @synthesize waitingQueue=_waitingQueue;
 @property(readonly, nonatomic) NSOperationQueue *filesystemQueue; // @synthesize filesystemQueue=_filesystemQueue;
-- (void).cxx_destruct;
 - (id)async_cacheBodyForMessage:(id)arg1 monitor:(id)arg2;
 - (void)setJunkMailLevel:(long long)arg1 forMessages:(id)arg2;
 - (void)async_setJunkMailLevel:(long long)arg1 forMessages:(id)arg2;

@@ -14,9 +14,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy, nonatomic) NSString *testName; // @synthesize testName=_testName;
-- (void).cxx_destruct;
 - (void)stopSubtestWithName:(id)arg1;
 - (void)startSubtestWithName:(id)arg1;
 - (void)failedTestwithReason:(id)arg1;

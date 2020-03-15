@@ -14,9 +14,9 @@
     id <NUScalePolicy> _scalePolicy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useLargeResolution; // @synthesize useLargeResolution=_useLargeResolution;
 @property(retain, nonatomic) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
-- (void).cxx_destruct;
 - (id)submitGenericSynchronous:(out id *)arg1;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;

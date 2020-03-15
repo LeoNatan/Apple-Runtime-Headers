@@ -74,6 +74,7 @@
     struct UIEdgeInsets __maxPreheatPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXTilingDebugDelegate> debugDelegate; // @synthesize debugDelegate=_debugDelegate;
 @property(copy, nonatomic) NSArray *compositionInvalidationContexts; // @synthesize compositionInvalidationContexts=_compositionInvalidationContexts;
 @property(nonatomic) __weak id <PXTilingControllerObserver> observer; // @synthesize observer=_observer;
@@ -103,7 +104,6 @@
 @property(nonatomic) __weak id <PXTilingScrollController> scrollController; // @synthesize scrollController=_scrollController;
 @property(retain, nonatomic, setter=_setCurrentLayout:) PXTilingLayout *currentLayout; // @synthesize currentLayout=_currentLayout;
 @property(retain, nonatomic, setter=_setTargetLayout:) PXTilingLayout *targetLayout; // @synthesize targetLayout=_targetLayout;
-- (void).cxx_destruct;
 - (void)tilingLayout:(id)arg1 invalidatedWithContext:(id)arg2;
 - (void)_updateDebugDelegateIfNeeded;
 - (void)_updateScrollInfoIfNeeded;

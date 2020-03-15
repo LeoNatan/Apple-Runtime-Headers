@@ -13,8 +13,6 @@
 
 @interface NEFilterSocketFlow : NEFilterFlow <NSSecureCoding, NSCopying>
 {
-    struct sockaddr_storage _lastLocalAddress;
-    struct sockaddr_storage _lastRemoteAddress;
     long long _generateIdentifierOnce;
     int _socketFamily;
     int _socketType;
@@ -27,7 +25,9 @@
     NSUUID *_socketUUID;
 }
 
++ (BOOL)writeMessageWithControlSocket:(int)arg1 drop:(BOOL)arg2 socketID:(unsigned long long)arg3 inboundPassOffset:(unsigned long long)arg4 inboundPeekOffset:(unsigned long long)arg5 outboundPassOffset:(unsigned long long)arg6 outboundPeekOffset:(unsigned long long)arg7 statsReportFrequency:(long long)arg8;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSUUID *socketUUID; // @synthesize socketUUID=_socketUUID;
 @property unsigned long long socketID; // @synthesize socketID=_socketID;
 @property(copy, nonatomic) NSUUID *euuid; // @synthesize euuid=_euuid;
@@ -37,11 +37,16 @@
 @property int socketFamily; // @synthesize socketFamily=_socketFamily;
 @property(copy) NWEndpoint *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
 @property(copy) NWEndpoint *remoteEndpoint; // @synthesize remoteEndpoint=_remoteEndpoint;
-- (void).cxx_destruct;
+- (void)writeXPCMessage:(id)arg1 drop:(BOOL)arg2 inboundPassOffset:(unsigned long long)arg3 inboundPeekOffset:(unsigned long long)arg4 outboundPassOffset:(unsigned long long)arg5 outboundPeekOffset:(unsigned long long)arg6 statsReportFrequency:(long long)arg7;
+- (void)writeCurrentVerdictWithMessage:(id)arg1 controlSocket:(int)arg2;
+- (BOOL)createDataCompleteReply:(id)arg1 controlSocket:(int)arg2 direction:(long long)arg3 verdict:(id)arg4 context:(id)arg5;
+- (BOOL)createDataReply:(id)arg1 controlSocket:(int)arg2 direction:(long long)arg3 verdict:(id)arg4 context:(id)arg5;
+- (BOOL)createNewFlowReply:(id)arg1 controlSocket:(int)arg2 verdict:(id)arg3 context:(id)arg4;
+- (id)identifierString;
 - (id)identifier;
-- (id)description;
-- (void)lastLocalAddress:(struct sockaddr *)arg1;
-- (void)lastRemoteAddress:(struct sockaddr *)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
+- (void)setLocalAddress:(struct sockaddr *)arg1;
+- (void)setRemoteAddress:(struct sockaddr *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

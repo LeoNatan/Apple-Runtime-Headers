@@ -20,13 +20,13 @@
     NSString *_cachedImageVariableName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cachedImageVariableName; // @synthesize cachedImageVariableName=_cachedImageVariableName;
 @property(retain, nonatomic) UIColor *cachedImageTintColor; // @synthesize cachedImageTintColor=_cachedImageTintColor;
 @property(retain, nonatomic) UIFont *cachedImageFont; // @synthesize cachedImageFont=_cachedImageFont;
 @property(nonatomic) unsigned long long cachedImageControlState; // @synthesize cachedImageControlState=_cachedImageControlState;
 @property(retain, nonatomic) UIImage *cachedImage; // @synthesize cachedImage=_cachedImage;
 @property(nonatomic) __weak WFVariableAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (void)clearCachedImage;
 - (id)attachmentImageForSize:(struct CGSize)arg1;
 - (unsigned long long)currentControlState;

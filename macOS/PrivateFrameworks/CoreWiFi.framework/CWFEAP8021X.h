@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _eventHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(readonly, copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
-- (void).cxx_destruct;
 - (id)clientStatus:(id *)arg1;
 - (id)controlMode:(id *)arg1;
 - (id)supplicantState:(id *)arg1;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     id <MKAnnotationPrivate> annotation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double course; // @synthesize course;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CLLocation *predictedLocation; // @synthesize predictedLocation;
 @property(retain, nonatomic) CLLocation *fixedLocation; // @synthesize fixedLocation;
 @property(nonatomic, getter=isUpdating) _Bool updating; // @synthesize updating;
-- (void).cxx_destruct;
 
 @end
 

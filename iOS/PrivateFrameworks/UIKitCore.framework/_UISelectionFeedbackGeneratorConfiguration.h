@@ -24,12 +24,12 @@
 + (id)strongConfiguration;
 + (id)lightConfiguration;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) double fastHapticVolume; // @synthesize fastHapticVolume=_fastHapticVolume;
 @property(nonatomic) double slowHapticVolume; // @synthesize slowHapticVolume=_slowHapticVolume;
 @property(nonatomic) double fastAudioVolume; // @synthesize fastAudioVolume=_fastAudioVolume;
 @property(nonatomic) double slowAudioVolume; // @synthesize slowAudioVolume=_slowAudioVolume;
 @property(nonatomic) double maxSpeed; // @synthesize maxSpeed=_maxSpeed;
-- (void).cxx_destruct;
 @property(nonatomic) double minimumInterval; // @synthesize minimumInterval=_minimumInterval;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *feedback; // @synthesize feedback=_feedback;
 - (id)feedbackKeyPaths;

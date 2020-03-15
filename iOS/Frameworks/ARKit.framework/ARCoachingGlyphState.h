@@ -19,6 +19,7 @@
     // Error parsing type: , name: _bottomPlaneTranslationTarget
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isVertical; // @synthesize isVertical=_isVertical;
 // Error parsing type for property bottomPlaneTranslationTarget:
 // Property attributes: T,R,N,V_bottomPlaneTranslationTarget
@@ -27,7 +28,6 @@
 // Property attributes: T,R,N,V_topPlaneTranslationTarget
 
 @property(nonatomic) __weak id <ARCoachingGlyphStateDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 -     // Error parsing type: 16@0:8, name: computeBottomPlaneTranslationTarget
 -     // Error parsing type: 16@0:8, name: computeTopPlaneTranslationTarget
 -     // Error parsing type: 16@0:8, name: computeScaleTarget

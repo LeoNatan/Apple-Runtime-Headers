@@ -19,13 +19,13 @@
     struct CGSize _textOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKLabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) struct CGSize textOffset; // @synthesize textOffset=_textOffset;
 @property(retain, nonatomic) TLKMultilineText *text; // @synthesize text=_text;
 @property(nonatomic) BOOL shouldBadge; // @synthesize shouldBadge=_shouldBadge;
-- (void).cxx_destruct;
 - (void)layout;
 - (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)tlk_updateForAppearance:(id)arg1;

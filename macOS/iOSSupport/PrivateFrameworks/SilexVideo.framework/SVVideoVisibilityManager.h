@@ -20,12 +20,12 @@
     NSMutableDictionary *_visibilityMonitors;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *visibilityMonitors; // @synthesize visibilityMonitors=_visibilityMonitors;
 @property(readonly, nonatomic) id <SVVideoVisiblePercentageManager> visiblePercentageManager; // @synthesize visiblePercentageManager=_visiblePercentageManager;
 @property(readonly, nonatomic) id <SVVideoQueueObserving> queueObserver; // @synthesize queueObserver=_queueObserver;
 @property(readonly, nonatomic) id <SVVideoTransitionManager> transitionManager; // @synthesize transitionManager=_transitionManager;
 @property(readonly, nonatomic) id <SVVideoVisibilityMonitorProviding> visibilityMonitorProvider; // @synthesize visibilityMonitorProvider=_visibilityMonitorProvider;
-- (void).cxx_destruct;
 - (void)unlock;
 - (void)lock;
 - (void)updateVisibility;

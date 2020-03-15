@@ -14,9 +14,9 @@
     MPSVector *_velocity;
 }
 
+- (void).cxx_destruct;
 @property(retain) MPSVector *velocity; // @synthesize velocity=_velocity;
 @property(retain) MPSVector *momentum; // @synthesize momentum=_momentum;
-- (void).cxx_destruct;
 - (void)encodeToCommandBuffer:(id)arg1 inputGradientVector:(id)arg2 inputValuesVector:(id)arg3;
 - (id)initWithNetwork:(id)arg1 momentum:(CDUnknownBlockType)arg2 velocity:(CDUnknownBlockType)arg3;
 

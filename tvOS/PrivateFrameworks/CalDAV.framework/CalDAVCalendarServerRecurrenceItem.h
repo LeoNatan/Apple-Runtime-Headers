@@ -15,10 +15,10 @@
     CalDAVCalendarServerChangesItem *_changes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalDAVCalendarServerChangesItem *changes; // @synthesize changes=_changes;
 @property(retain, nonatomic) CoreDAVLeafItem *recurrenceID; // @synthesize recurrenceID=_recurrenceID;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *master; // @synthesize master=_master;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isMaster;
 - (id)copyParseRules;
 - (id)init;

@@ -24,6 +24,7 @@
     GKLocalPlayer *_localPlayer;
 }
 
+- (void).cxx_destruct;
 @property(retain) GKLocalPlayer *localPlayer; // @synthesize localPlayer=_localPlayer;
 @property BOOL didRequestRemoteViewController; // @synthesize didRequestRemoteViewController=_didRequestRemoteViewController;
 @property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_remoteViewController;
@@ -31,7 +32,6 @@
 @property(retain) NSString *lastPersonalizationVersionDisplayed; // @synthesize lastPersonalizationVersionDisplayed=_lastPersonalizationVersionDisplayed;
 @property unsigned long long signInViewControllerMode; // @synthesize signInViewControllerMode=_signInViewControllerMode;
 @property __weak id <GKRemoteSignInViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)remoteViewControllerRequestingDismiss:(id)arg1;
 - (void)remoteViewController:(id)arg1 receivedMessageFromService:(id)arg2;
 - (void)applicationWillTerminate:(id)arg1;

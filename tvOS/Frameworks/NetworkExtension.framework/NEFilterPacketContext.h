@@ -13,8 +13,8 @@
     NEFilterPacketInterpose *_interpose;
 }
 
-@property(retain) NEFilterPacketInterpose *interpose; // @synthesize interpose=_interpose;
 - (void).cxx_destruct;
+@property(retain) NEFilterPacketInterpose *interpose; // @synthesize interpose=_interpose;
 
 @end
 

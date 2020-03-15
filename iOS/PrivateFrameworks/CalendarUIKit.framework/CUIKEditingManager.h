@@ -16,11 +16,11 @@
     NSMutableDictionary *_changedObjectMap;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *changedObjectMap; // @synthesize changedObjectMap=_changedObjectMap;
 @property(retain) NSMutableDictionary *changeHistory; // @synthesize changeHistory=_changeHistory;
 @property(retain) NSMutableSet *editingContextGroups; // @synthesize editingContextGroups=_editingContextGroups;
 @property __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 
 @end
 

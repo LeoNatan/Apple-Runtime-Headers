@@ -24,13 +24,13 @@
 }
 
 + (void)_setupTextFieldSpec;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *textContentTypesToCheckFor; // @synthesize textContentTypesToCheckFor=_textContentTypesToCheckFor;
 @property(nonatomic) __weak PUICTextField *secondaryTextField; // @synthesize secondaryTextField=_secondaryTextField;
 @property(retain, nonatomic) PUICQuickboardController *quickboardController; // @synthesize quickboardController=_quickboardController;
 @property(retain, nonatomic) _UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) int minimumLength; // @synthesize minimumLength=_minimumLength;
 @property(nonatomic) __weak id <PUICTextFieldDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 @property(nonatomic) int returnKeyType;
 @property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(copy, nonatomic) NSString *textContentType;

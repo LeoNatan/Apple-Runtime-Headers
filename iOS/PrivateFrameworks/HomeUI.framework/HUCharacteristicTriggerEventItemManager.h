@@ -23,6 +23,7 @@
 + (id)_titleForItemSection:(id)arg1;
 + (CDUnknownBlockType)_optionItemComparator;
 + (id)serviceVendingItemForCharacteristicTriggerBuilder:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUCharacteristicEventOptionProvider *optionProvider; // @synthesize optionProvider=_optionProvider;
 @property(retain, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(retain, nonatomic) HFItem *serviceNameItem; // @synthesize serviceNameItem=_serviceNameItem;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) HUTriggerConditionEditorItemModule *conditionModule; // @synthesize conditionModule=_conditionModule;
 @property(retain, nonatomic) HFItem *activeOptionItem; // @synthesize activeOptionItem=_activeOptionItem;
 @property(retain, nonatomic) HFItem<HFServiceVendor> *serviceVendingItem; // @synthesize serviceVendingItem=_serviceVendingItem;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)initWithCharacteristicTriggerBuilder:(id)arg1 delegate:(id)arg2;

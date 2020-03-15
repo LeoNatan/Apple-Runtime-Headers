@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_itemsByURLString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldSuppressChangeNotifications; // @synthesize shouldSuppressChangeNotifications=_shouldSuppressChangeNotifications;
 @property(copy, nonatomic) NSDictionary *itemsByURLString; // @synthesize itemsByURLString=_itemsByURLString;
 @property(copy, nonatomic) NSDictionary *itemsByUUID; // @synthesize itemsByUUID=_itemsByUUID;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)_postReadingListChangedNotificationWithAddedItems:(id)arg1 removedItems:(id)arg2 modifiedItems:(id)arg3 forceRebuildUnreadItems:(BOOL)arg4;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)itemsWereAdded:(id)arg1 removed:(id)arg2 modified:(id)arg3 forceRebuildUnreadItems:(BOOL)arg4;

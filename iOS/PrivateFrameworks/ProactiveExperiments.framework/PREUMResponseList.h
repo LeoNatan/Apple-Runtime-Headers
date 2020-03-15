@@ -26,12 +26,12 @@
 }
 
 + (Class)itemsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long responseTimePerf; // @synthesize responseTimePerf=_responseTimePerf;
 @property(nonatomic) _Bool isCached; // @synthesize isCached=_isCached;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) PREUMMessageMetadata *msgMetadata; // @synthesize msgMetadata=_msgMetadata;
 @property(retain, nonatomic) PREUMTrialExperiment *experiment; // @synthesize experiment=_experiment;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

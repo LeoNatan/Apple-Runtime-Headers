@@ -20,11 +20,11 @@
     UIAlertController *_appleMusicLoadingViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *appleMusicLoadingViewController; // @synthesize appleMusicLoadingViewController=_appleMusicLoadingViewController;
 @property(retain, nonatomic) NADeallocationSentinel *appleMusicLoadingViewControllerDeallocationSentinel; // @synthesize appleMusicLoadingViewControllerDeallocationSentinel=_appleMusicLoadingViewControllerDeallocationSentinel;
 @property(retain, nonatomic) NAFuture *accountArbitrationFuture; // @synthesize accountArbitrationFuture=_accountArbitrationFuture;
 @property(retain, nonatomic) HUAppleMusicAccountModuleController *appleMusicAccountModuleController; // @synthesize appleMusicAccountModuleController=_appleMusicAccountModuleController;
-- (void).cxx_destruct;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_accessorySupportsMultiUser;
 - (id)_appleMusicFooterMessage;

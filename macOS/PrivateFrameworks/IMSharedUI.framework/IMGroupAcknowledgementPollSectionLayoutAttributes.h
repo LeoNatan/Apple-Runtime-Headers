@@ -19,13 +19,13 @@
 }
 
 + (id)testSectionFooterView;
+- (void).cxx_destruct;
 @property(nonatomic) double distanceFromLeadingEdge; // @synthesize distanceFromLeadingEdge=_distanceFromLeadingEdge;
 @property BOOL shouldHideAll; // @synthesize shouldHideAll=_shouldHideAll;
 @property(getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
 @property(retain) NSCollectionViewLayoutAttributes *footerLayoutAttributes; // @synthesize footerLayoutAttributes=_footerLayoutAttributes;
 @property(retain) NSArray *avatarLabelLayoutAttributes; // @synthesize avatarLabelLayoutAttributes=_avatarLabelLayoutAttributes;
 @property(readonly) NSArray *avatarCellLayoutAttributes; // @synthesize avatarCellLayoutAttributes=_avatarCellLayoutAttributes;
-- (void).cxx_destruct;
 - (void)_calculateLayoutAttributes;
 - (void)_translateXBy:(double)arg1;
 - (id)initForSection:(unsigned long long)arg1 cellCount:(unsigned long long)arg2 expanded:(BOOL)arg3 shouldHideAll:(BOOL)arg4;

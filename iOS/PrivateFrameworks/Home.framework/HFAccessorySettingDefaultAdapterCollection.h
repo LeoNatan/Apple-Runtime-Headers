@@ -11,14 +11,14 @@
 @interface HFAccessorySettingDefaultAdapterCollection : NSObject
 {
     HFAccessorySettingManagedConfigurationAdapter *_managedConfigurationAdapter;
-    HFAccessorySettingAdapter *_mobileTimerAdapter;
     HFAccessorySettingSiriLanguageAdapter *_siriLanguageAdapter;
+    HFAccessorySettingAdapter *_mobileTimerAdapter;
 }
 
-@property(retain, nonatomic) HFAccessorySettingSiriLanguageAdapter *siriLanguageAdapter; // @synthesize siriLanguageAdapter=_siriLanguageAdapter;
-@property(retain, nonatomic) HFAccessorySettingAdapter *mobileTimerAdapter; // @synthesize mobileTimerAdapter=_mobileTimerAdapter;
-@property(retain, nonatomic) HFAccessorySettingManagedConfigurationAdapter *managedConfigurationAdapter; // @synthesize managedConfigurationAdapter=_managedConfigurationAdapter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HFAccessorySettingAdapter *mobileTimerAdapter; // @synthesize mobileTimerAdapter=_mobileTimerAdapter;
+@property(retain, nonatomic) HFAccessorySettingSiriLanguageAdapter *siriLanguageAdapter; // @synthesize siriLanguageAdapter=_siriLanguageAdapter;
+@property(retain, nonatomic) HFAccessorySettingManagedConfigurationAdapter *managedConfigurationAdapter; // @synthesize managedConfigurationAdapter=_managedConfigurationAdapter;
 @property(readonly, nonatomic) NSSet *allAdapters;
 
 @end

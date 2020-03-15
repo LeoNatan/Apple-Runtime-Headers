@@ -16,9 +16,9 @@
 
 + (id)collectionWithCatalogPaths:(id)arg1 results:(id)arg2;
 + (id)catalogsFromPaths:(id)arg1 results:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSSet *catalogs; // @synthesize catalogs=_catalogs;
 @property(readonly) NSArray *catalogsOrderedByPath; // @synthesize catalogsOrderedByPath=_catalogsOrderedByPath;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allTags;
 - (id)itemsFromCatalogPathsToIdentifierPaths:(id)arg1;
 - (id)catalogPathsToIdentifierPathsForItems:(id)arg1;

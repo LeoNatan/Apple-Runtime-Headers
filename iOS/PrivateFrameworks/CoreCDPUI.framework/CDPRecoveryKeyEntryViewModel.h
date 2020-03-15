@@ -19,10 +19,10 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property _Bool shouldSuppressCancelButton; // @synthesize shouldSuppressCancelButton=_shouldSuppressCancelButton;
 @property(readonly) int mode; // @synthesize mode=_mode;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)handleCancel;
 - (void)processCollectedRecoveryKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)recoveryKey;

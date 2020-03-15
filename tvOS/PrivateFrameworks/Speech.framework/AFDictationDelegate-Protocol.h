@@ -6,7 +6,7 @@
 
 #import <Speech/NSObject-Protocol.h>
 
-@class AFDictationConnection, AFSpeechPackage, NSArray, NSDictionary, NSError, NSFileHandle, NSString, SASMultilingualSpeechRecognized, SASSpeechPartialResult;
+@class AFDictationConnection, AFDictationOptions, AFSpeechPackage, NSArray, NSDictionary, NSError, NSFileHandle, NSString, SASMultilingualSpeechRecognized, SASSpeechPartialResult;
 
 @protocol AFDictationDelegate <NSObject>
 
@@ -30,6 +30,8 @@
 - (void)dictationConnection:(AFDictationConnection *)arg1 speechRecordingDidFail:(NSError *)arg2;
 - (void)dictationConnectionSpeechRecordingDidCancel:(AFDictationConnection *)arg1;
 - (void)dictationConnectionSpeechRecordingDidEnd:(AFDictationConnection *)arg1;
+- (void)dictationConnection:(AFDictationConnection *)arg1 didBeginLocalRecognitionWithModelInfo:(NSString *)arg2;
+- (void)dictationConnection:(AFDictationConnection *)arg1 speechRecordingDidBeginWithOptions:(AFDictationOptions *)arg2;
 - (void)dictationConnectionSpeechRecordingDidBegin:(AFDictationConnection *)arg1;
 - (void)dictationConnectionSpeechRecordingWillBegin:(AFDictationConnection *)arg1;
 @end

@@ -20,10 +20,10 @@
     PUICVignetteView *_vignetteView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICVignetteView *vignetteView; // @synthesize vignetteView=_vignetteView;
 @property(retain, nonatomic) PUICStatusBarProjectionTile *title2Label; // @synthesize title2Label=_title2Label;
 @property(retain, nonatomic) PUICStatusBarProjectionTile *title1Label; // @synthesize title1Label=_title1Label;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float progress;
 @property(readonly, nonatomic) UIColor *titleColor;
 @property(readonly, nonatomic) NSString *visibleTitle;

@@ -15,8 +15,8 @@
     NSData *_activationError;
 }
 
-@property(retain, nonatomic) NSData *activationError; // @synthesize activationError=_activationError;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *activationError; // @synthesize activationError=_activationError;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

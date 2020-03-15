@@ -8,14 +8,14 @@
 
 #import <FrontBoard/FBSApplicationDataStoreRepositoryClient-Protocol.h>
 
-@class NSCountedSet, NSHashTable, NSString;
+@class NSCountedSet, NSHashTable, NSMutableDictionary, NSString;
 @protocol FBApplicationDataStoreRepository, OS_dispatch_queue;
 
 @interface FBApplicationDataStoreInProcessRepositoryClient : NSObject <FBSApplicationDataStoreRepositoryClient>
 {
     id <FBApplicationDataStoreRepository> _dataStore;
     NSCountedSet *_prefetchedKeys;
-    struct NSMutableDictionary *_prefetchedKeyValues;
+    NSMutableDictionary *_prefetchedKeyValues;
     NSObject<OS_dispatch_queue> *_prefetchQueue;
     NSObject<OS_dispatch_queue> *_clientCalloutQueue;
     struct os_unfair_lock_s _observersLock;

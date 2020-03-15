@@ -22,8 +22,8 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
-@property(copy, nonatomic) NSString *payloadMode; // @synthesize payloadMode=_payloadMode;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadMode; // @synthesize payloadMode=_payloadMode;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

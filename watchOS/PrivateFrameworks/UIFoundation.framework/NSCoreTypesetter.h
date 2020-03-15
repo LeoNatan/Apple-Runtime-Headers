@@ -21,12 +21,12 @@
 + (void)_lineMetricsFromAttributedString:(id)arg1 range:(struct _NSRange)arg2 typesetterBehavior:(int)arg3 usesFontLeading:(_Bool)arg4 applySpacings:(_Bool)arg5 usesSystemFontLeading:(_Bool)arg6 usesNegativeFontLeading:(_Bool)arg7 lineHeight:(float *)arg8 baselineOffset:(float *)arg9 spacing:(float *)arg10 applicationFrameworkContext:(int)arg11 wantsTextLineFragments:(_Bool)arg12;
 + (void)_lineMetricsForAttributes:(id)arg1 typesetterBehavior:(int)arg2 usesFontLeading:(_Bool)arg3 applySpacings:(_Bool)arg4 usesSystemFontLeading:(_Bool)arg5 usesNegativeFontLeading:(_Bool)arg6 lineHeight:(float *)arg7 baselineOffset:(float *)arg8 spacing:(float *)arg9 applicationFrameworkContext:(int)arg10 wantsTextLineFragments:(_Bool)arg11;
 + (_Bool)_supportsStringDrawingPath:(unsigned char)arg1;
+- (void).cxx_destruct;
 @property _Bool wantsExtraLineFragment; // @synthesize wantsExtraLineFragment=_wantsExtraLineFragment;
 @property __weak id <NSCoreTypesetterDelegate> delegate; // @synthesize delegate;
 @property(copy) CDUnknownBlockType laidOutLineFragment; // @synthesize laidOutLineFragment;
 @property struct CGSize textContainerSize; // @synthesize textContainerSize;
 @property struct _NSRange characterRange; // @synthesize characterRange;
-- (void).cxx_destruct;
 - (struct CGRect)_stringDrawingCoreTextEngineWithOriginalString:(id)arg1 rect:(struct CGRect)arg2 padding:(float)arg3 graphicsContext:(id)arg4 forceClipping:(_Bool)arg5 attributes:(id)arg6 stringDrawingOptions:(int)arg7 drawingContext:(id)arg8 wantsTextLineFragments:(_Bool)arg9 validatedAttributedString:(id)arg10 firstNonRenderedCharacterIndex:(int *)arg11 foundSoftHyphenAtEOL:(_Bool *)arg12 enginePathUsed:(unsigned char *)arg13;
 - (int)_NSFastDrawString:(id)arg1 length:(unsigned int)arg2 attributes:(id)arg3 paragraphStyle:(id)arg4 typesetterBehavior:(int)arg5 lineBreakMode:(int)arg6 rect:(struct CGRect)arg7 padding:(float)arg8 graphicsContext:(id)arg9 baselineRendering:(_Bool)arg10 usesFontLeading:(_Bool)arg11 usesScreenFont:(_Bool)arg12 scrollable:(_Bool)arg13 syncAlignment:(_Bool)arg14 mirrored:(_Bool)arg15 boundingRectPointer:(struct CGRect *)arg16 baselineOffsetPointer:(float *)arg17 wantsTextLineFragments:(_Bool)arg18 drawingContext:(id)arg19;
 - (void)layout;

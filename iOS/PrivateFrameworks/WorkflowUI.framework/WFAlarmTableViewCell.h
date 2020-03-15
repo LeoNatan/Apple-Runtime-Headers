@@ -14,9 +14,9 @@
     MTUIAlarmView *_alarmView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) MTUIAlarmView *alarmView; // @synthesize alarmView=_alarmView;
-- (void).cxx_destruct;
 - (void)refreshUI:(id)arg1 animated:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

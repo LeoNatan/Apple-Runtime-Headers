@@ -16,9 +16,9 @@
     RUIStyle *_remoteUIStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RUIStyle *remoteUIStyle; // @synthesize remoteUIStyle=_remoteUIStyle;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
-- (void).cxx_destruct;
 - (void)willPresentModalNavigationController:(id)arg1;
 - (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentLoginAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;

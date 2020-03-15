@@ -24,8 +24,8 @@
 + (BOOL)_isValidRemovalsSet:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)diffFromSettings:(id)arg1 toSettings:(id)arg2;
-@property(nonatomic) __weak id <BSSettingDescriptionProvider> descriptionProvider; // @synthesize descriptionProvider=_descriptionProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BSSettingDescriptionProvider> descriptionProvider; // @synthesize descriptionProvider=_descriptionProvider;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -29,6 +29,8 @@
 - (id)argMaxForOutputIndex:(id)arg1 index:(int)arg2 shape:(id)arg3;
 - (id)argMaxForLastOutput:(id)arg1;
 - (id)argMaxForSequence:(id)arg1;
+- (struct _NSRange)_whitelistedVerbRangeInContent:(id)arg1;
+- (id)whitelistedVerbInContent:(id)arg1;
 - (_Bool)hasWhitelistedVerbInContent:(id)arg1;
 - (id)reminderOverrides;
 - (id)enrichments;

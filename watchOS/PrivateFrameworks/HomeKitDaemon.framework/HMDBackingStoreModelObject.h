@@ -41,6 +41,7 @@
 + (id)schemaHashRoot;
 + (id)properties;
 + (Class)backedObjectClass;
+- (void).cxx_destruct;
 @property _Bool bsoDataVersionOverride; // @synthesize bsoDataVersionOverride=_bsoDataVersionOverride;
 @property(retain, nonatomic) CKRecord *bsoRecord; // @synthesize bsoRecord=_bsoRecord;
 @property(nonatomic) unsigned int objectChangeType; // @synthesize objectChangeType=_objectChangeType;
@@ -50,7 +51,6 @@
 @property(nonatomic) __weak id <HMDBackingStoreObjectProtocol> bsoDelegate; // @synthesize bsoDelegate=_bsoDelegate;
 @property(retain, nonatomic) NSUUID *parentUUID; // @synthesize parentUUID=_parentUUID;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)logIdentifier;
 - (void)dumpDebug;

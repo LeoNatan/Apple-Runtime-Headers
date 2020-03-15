@@ -16,9 +16,9 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pathForPersonInfoDictionary; // @synthesize pathForPersonInfoDictionary=_pathForPersonInfoDictionary;
 @property(retain, nonatomic) NSMutableDictionary *personIDToPersonInfoDictionary; // @synthesize personIDToPersonInfoDictionary=_personIDToPersonInfoDictionary;
-- (void).cxx_destruct;
 - (id)emailForPersonID:(id)arg1;
 - (id)fullNameForPersonID:(id)arg1;
 - (id)lastNameForPersonID:(id)arg1;

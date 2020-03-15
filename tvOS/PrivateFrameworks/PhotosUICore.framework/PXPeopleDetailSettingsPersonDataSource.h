@@ -16,9 +16,9 @@
     PHFetchResult *_persons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *persons; // @synthesize persons=_persons;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)modelObjectForIndex:(long long)arg1;
 @property(readonly, nonatomic) long long action;
 - (long long)verifyTypeAtIndex:(long long)arg1;

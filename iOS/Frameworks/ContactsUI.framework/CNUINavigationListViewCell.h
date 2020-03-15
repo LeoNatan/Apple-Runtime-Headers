@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 + (double)subtitleLabelFirstBaselineAnchorConstraintConstantForSubtitle:(id)arg1 navigationListStyle:(id)arg2;
 + (double)contentViewBottomAnchorConstraintConstantForNavigationListStyle:(id)arg1;
 + (double)titleLabelFirstBaselineAnchorConstraintConstantForNavigationListStyle:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSeparator; // @synthesize showSeparator=_showSeparator;
 @property(readonly, nonatomic) UILayoutGuide *titleImageViewLayoutGuide; // @synthesize titleImageViewLayoutGuide=_titleImageViewLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *accessoryImageViewLayoutGuide; // @synthesize accessoryImageViewLayoutGuide=_accessoryImageViewLayoutGuide;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIImageView *titleImageView; // @synthesize titleImageView=_titleImageView;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UIImageView *accessoryImageView; // @synthesize accessoryImageView=_accessoryImageView;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updateVisualStateAnimated:(_Bool)arg1;
 - (void)updateConstraintsConstants;

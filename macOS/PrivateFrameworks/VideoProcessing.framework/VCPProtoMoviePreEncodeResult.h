@@ -17,8 +17,8 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
-@property(retain, nonatomic) NSData *statisticsBlob; // @synthesize statisticsBlob=_statisticsBlob;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *statisticsBlob; // @synthesize statisticsBlob=_statisticsBlob;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

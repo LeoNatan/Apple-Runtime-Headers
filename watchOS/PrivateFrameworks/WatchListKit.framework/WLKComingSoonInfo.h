@@ -19,13 +19,13 @@
 }
 
 + (id)comingSoonItemsWithDictionaries:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *brandID; // @synthesize brandID=_brandID;
 @property(readonly, nonatomic) unsigned int precision; // @synthesize precision=_precision;
 @property(readonly, copy, nonatomic) NSString *dateFormat; // @synthesize dateFormat=_dateFormat;
 @property(readonly, copy, nonatomic) NSString *dateStringShort; // @synthesize dateStringShort=_dateStringShort;
 @property(readonly, copy, nonatomic) NSString *dateString; // @synthesize dateString=_dateString;
 @property(readonly, nonatomic, getter=isComingSoon) _Bool comingSoon; // @synthesize comingSoon=_comingSoon;
-- (void).cxx_destruct;
 - (void)_initializeDatesStrings;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1 brandID:(id)arg2;

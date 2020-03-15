@@ -101,8 +101,8 @@
 + (id)_personMassUnitForLocale:(id)arg1;
 + (id)_distanceUnitForLocale:(id)arg1;
 + (id)_heightUnitForLocale:(id)arg1;
-@property(readonly, nonatomic) double scaleOffset; // @synthesize scaleOffset=_scaleOffset;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double scaleOffset; // @synthesize scaleOffset=_scaleOffset;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (double)_convertFromBaseUnit:(double)arg1;

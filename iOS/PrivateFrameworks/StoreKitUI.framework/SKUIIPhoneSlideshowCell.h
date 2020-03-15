@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     struct CGSize _imageSize;
 }
 
-@property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (void)setHighlighted:(_Bool)arg1;

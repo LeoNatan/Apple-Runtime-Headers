@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_edgeBuilders;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType edgeHandler; // @synthesize edgeHandler=_edgeHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType edgeHandler; // @synthesize edgeHandler=_edgeHandler;
 - (BOOL)_checkEdgeForDuplicates:(const shared_ptr_035a2da2 *)arg1;
 - (void)_buildersInTile:(id)arg1 localPoint:(const Matrix_8746f91e *)arg2 localRadiusSqr:(float)arg3 localSearch:(const Box_3fb92e00 *)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)findEdges:(CDUnknownBlockType)arg1;

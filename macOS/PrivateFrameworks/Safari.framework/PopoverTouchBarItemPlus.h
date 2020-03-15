@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <PopoverTouchBarItemPlusDelegate> _popoverItemPlusDelegate;
 }
 
-@property(nonatomic) __weak id <PopoverTouchBarItemPlusDelegate> popoverItemPlusDelegate; // @synthesize popoverItemPlusDelegate=_popoverItemPlusDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PopoverTouchBarItemPlusDelegate> popoverItemPlusDelegate; // @synthesize popoverItemPlusDelegate=_popoverItemPlusDelegate;
 - (id)collapsedRepresentation;
 - (id)makeViewForCustomizationPalette;
 

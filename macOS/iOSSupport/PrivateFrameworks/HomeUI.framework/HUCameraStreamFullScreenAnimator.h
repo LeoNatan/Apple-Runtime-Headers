@@ -13,8 +13,8 @@
     HUGridCameraCell *_sourceCameraCell;
 }
 
-@property(readonly, nonatomic) HUGridCameraCell *sourceCameraCell; // @synthesize sourceCameraCell=_sourceCameraCell;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HUGridCameraCell *sourceCameraCell; // @synthesize sourceCameraCell=_sourceCameraCell;
 - (struct CGRect)_adjustPresentedViewFrame:(struct CGRect)arg1 forTransitionContext:(id)arg2;
 - (struct CGRect)_toViewFinalFrame:(id)arg1;
 - (double)transitionDuration:(id)arg1;

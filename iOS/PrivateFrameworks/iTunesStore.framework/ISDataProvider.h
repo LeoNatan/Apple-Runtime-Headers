@@ -29,6 +29,7 @@
 }
 
 + (id)provider;
+- (void).cxx_destruct;
 @property id <ISBiometricSessionDelegate> biometricSessionDelegate; // @synthesize biometricSessionDelegate=_biometricSessionDelegate;
 @property(retain) SSBiometricAuthenticationContext *biometricAuthenticationContext; // @synthesize biometricAuthenticationContext=_biometricAuthenticationContext;
 @property(retain) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
@@ -42,7 +43,6 @@
 @property(retain) NSNumber *authenticatedAccountDSID; // @synthesize authenticatedAccountDSID=_authenticatedAccountDSID;
 @property unsigned long long authenticatedAccountCredentialSource; // @synthesize authenticatedAccountCredentialSource=_authenticatedAccountCredentialSource;
 @property(retain) SSAuthenticationContext *authenticationContext; // @synthesize authenticationContext=_authenticationContext;
-- (void).cxx_destruct;
 - (_Bool)_runServerAuthenticationOperation:(id)arg1 error:(id *)arg2;
 - (void)_performActionsForButton:(id)arg1 withDialog:(id)arg2;
 - (_Bool)runTouchIDAuthorizationDialog:(id)arg1 fallbackDialog:(id)arg2 metricsDictionary:(id)arg3 error:(id *)arg4;

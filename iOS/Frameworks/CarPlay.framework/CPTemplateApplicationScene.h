@@ -14,31 +14,33 @@
 @class CPInterfaceController, CPWindow, NSString, UIScreen, UITraitCollection, _UIContextBinder;
 @protocol CPTemplateApplicationSceneDelegate, NSObject, UICoordinateSpace;
 
-@interface CPTemplateApplicationScene : UIScene <_UIContextBinderContextCreationPolicyHolding, CPWindowProviding, _UISceneUIWindowHosting, UICoordinateSpace>
+@interface CPTemplateApplicationScene : UIScene <_UISceneUIWindowHosting, _UIContextBinderContextCreationPolicyHolding, UICoordinateSpace, CPWindowProviding>
 {
+    id <NSObject> _sceneWillConnectObserver;
+    id <NSObject> _didFinishLaunchingObserver;
+    _Bool _sceneWillConnect;
     _UIContextBinder *_contextBinder;
     UIScreen *_screen;
     UITraitCollection *_traitCollection;
     long long _screenRequestedOverscanCompensation;
-    id <NSObject> _sceneWillConnectObserver;
-    id <NSObject> _didFinishLaunchingObserver;
-    _Bool _sceneWillConnect;
     CPWindow *_carWindow;
     CPInterfaceController *_interfaceController;
-    struct CGRect _bounds;
 }
 
-+ (_Bool)_hostsWindows;
 + (id)activeTemplateScene;
++ (_Bool)_hostsWindows;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPInterfaceController *interfaceController; // @synthesize interfaceController=_interfaceController;
 @property(retain, nonatomic) CPWindow *carWindow; // @synthesize carWindow=_carWindow;
-- (void).cxx_destruct;
+- (void)_deliverInterfaceControllerToDelegate;
+- (_Bool)_sceneWillConnect;
+- (void)updateLayoutGuideWithInsets:(struct UIEdgeInsets)arg1;
+- (void)_invalidate;
+- (void)_readySceneForConnection;
 - (struct UIEdgeInsets)_safeAreaInsetsForInterfaceOrientation:(long long)arg1;
 - (id)_definition;
-- (void)_deliverInterfaceControllerToDelegate;
 - (id)_componentForKey:(id)arg1;
 - (id)_fbsSceneLayerForWindow:(id)arg1;
-- (void)updateLayoutGuideWithInsets:(struct UIEdgeInsets)arg1;
 - (_Bool)_permitContextCreationForBindingDescription:(CDStruct_a002d41c)arg1;
 - (struct CGRect)convertRect:(struct CGRect)arg1 toCoordinateSpace:(id)arg2;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromCoordinateSpace:(id)arg2;
@@ -51,12 +53,10 @@
 - (void)_detachWindow:(id)arg1;
 - (void)_attachWindow:(id)arg1;
 @property(readonly, nonatomic) UITraitCollection *_traitCollection;
-@property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
+@property(readonly, nonatomic) struct CGRect bounds;
 @property(readonly, nonatomic) id <UICoordinateSpace> _coordinateSpace;
 @property(readonly, nonatomic) long long _interfaceOrientation;
 @property(readonly, nonatomic) UIScreen *_screen;
-- (void)_invalidate;
-- (void)_readySceneForConnection;
 - (id)initWithSession:(id)arg1 connectionOptions:(id)arg2;
 
 // Remaining properties

@@ -15,10 +15,10 @@
     HKWorkoutDurationNumberFormatter *_durationFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKWorkoutDurationNumberFormatter *durationFormatter; // @synthesize durationFormatter=_durationFormatter;
 @property(retain, nonatomic) NSDateComponentsFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) HKWorkout *workout; // @synthesize workout=_workout;
-- (void).cxx_destruct;
 - (void)selectCellForIndex:(unsigned long long)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (id)cellForIndex:(unsigned long long)arg1 tableView:(id)arg2;
 - (unsigned long long)numberOfRowsInSection;

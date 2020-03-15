@@ -24,6 +24,7 @@
     BOOL _radarButtonVisible;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL radarButtonVisible; // @synthesize radarButtonVisible=_radarButtonVisible;
 @property(retain, nonatomic) IMKUICandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
 @property(nonatomic) double totalButtonWidth; // @synthesize totalButtonWidth=_totalButtonWidth;
@@ -35,7 +36,6 @@
 @property(nonatomic) BOOL needsToCalculateLayout; // @synthesize needsToCalculateLayout=_needsToCalculateLayout;
 @property __weak id <IMKUICandidateSortingBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property long long alignment; // @synthesize alignment=_alignment;
-- (void).cxx_destruct;
 - (void)radarButtonPressed:(id)arg1;
 - (id)makeRadarButton;
 - (void)drawRect:(struct CGRect)arg1;

@@ -18,9 +18,9 @@
 }
 
 + (id)sharedNavigationServer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) CSLSafeMutableSet *clientConnections; // @synthesize clientConnections=_clientConnections;
-- (void).cxx_destruct;
 - (void)navigateToLocation:(unsigned int)arg1 dockBundleID:(id)arg2 activateDockApp:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)_removeClientConnection:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

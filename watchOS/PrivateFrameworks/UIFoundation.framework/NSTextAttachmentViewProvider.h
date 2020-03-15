@@ -17,11 +17,11 @@
     NSLayoutManager *_layoutManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int characterIndex; // @synthesize characterIndex=_characterIndex;
 @property _Bool tracksTextAttachmentViewBounds; // @synthesize tracksTextAttachmentViewBounds=_tracksTextAttachmentViewBounds;
 @property __weak NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 @property __weak NSTextAttachment *textAttachment; // @synthesize textAttachment=_textAttachment;
-- (void).cxx_destruct;
 - (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned int)arg4;
 - (void)dealloc;
 - (void)removeView;

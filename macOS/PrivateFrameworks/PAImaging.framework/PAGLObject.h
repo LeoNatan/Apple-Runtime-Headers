@@ -15,9 +15,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int objectID; // @synthesize objectID=_objectID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_deleteOpenGLResourcesAsync;
 - (void)deleteIfNeeded;
 - (void)deleteIfNeededWithContext:(id)arg1;

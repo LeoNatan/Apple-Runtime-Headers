@@ -40,9 +40,9 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) _Bool generateHDROutput; // @synthesize generateHDROutput=_generateHDROutput;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool generateHDROutput; // @synthesize generateHDROutput=_generateHDROutput;
 - (id)generateSeamSmoothingTexture;
 - (id)grayCubemapOfSize:(unsigned long long)arg1;
 - (id)toTexture:(CDStruct_cf098810)arg1;

@@ -23,9 +23,9 @@
     id <_SFDialogViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <_SFDialogViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_keyboardDismissGesture:(id)arg1;
 - (void)willDisappear;
 - (void)didAppear;

@@ -16,11 +16,11 @@
     struct NSEdgeInsets _lastLayoutEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property struct NSEdgeInsets lastLayoutEdgeInsets; // @synthesize lastLayoutEdgeInsets=_lastLayoutEdgeInsets;
 @property(readonly) NSMutableArray *sectionLayoutAttributesArray; // @synthesize sectionLayoutAttributesArray=_sectionLayoutAttributesArray;
 @property(copy) NSNumber *expandedSection; // @synthesize expandedSection=_expandedSection;
 @property __weak IMGroupAcknowledgementPollViewController *groupAcknowledgementPollViewController; // @synthesize groupAcknowledgementPollViewController=_groupAcknowledgementPollViewController;
-- (void).cxx_destruct;
 - (id)initWithGroupAcknowledgementPollViewController:(id)arg1;
 - (long long)scrollDirection;
 - (struct CGSize)collectionViewContentSize;

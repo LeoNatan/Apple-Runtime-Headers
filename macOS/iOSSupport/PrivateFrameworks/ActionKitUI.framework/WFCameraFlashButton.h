@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIImageView *_flashView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsHiding; // @synthesize needsHiding=_needsHiding;
 @property(nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) __weak UIImageView *flashView; // @synthesize flashView=_flashView;
 @property(retain, nonatomic) UILabel *selectedLabel; // @synthesize selectedLabel=_selectedLabel;
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
-- (void).cxx_destruct;
 @property(nonatomic) long long flashMode;
 - (struct CGSize)intrinsicContentSize;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

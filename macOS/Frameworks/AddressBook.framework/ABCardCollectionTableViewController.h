@@ -22,12 +22,12 @@
     BOOL _allowsScrolling;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowsScrolling; // @synthesize allowsScrolling=_allowsScrolling;
 @property(nonatomic) __weak id <ABCardCollectionViewPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) CNScrollableContainerView *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

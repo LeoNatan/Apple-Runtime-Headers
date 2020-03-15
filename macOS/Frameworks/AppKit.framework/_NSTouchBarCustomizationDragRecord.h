@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     BOOL _pending;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSIndexPath *postReplacementInsertionIndexPath; // @synthesize postReplacementInsertionIndexPath=_postReplacementInsertionIndexPath;
 @property struct CGSize backupDragSize; // @synthesize backupDragSize=_backupDragSize;
 @property(readonly, copy) NSDate *startTime; // @synthesize startTime=_startTime;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct CGPoint originalLocation; // @synthesize originalLocation=_originalLocation;
 @property(readonly) __weak NSView *coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 @property(readonly) id draggedItem; // @synthesize draggedItem=_draggedItem;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (id)initWithItem:(id)arg1 coordinateSpace:(id)arg2 originalLocation:(struct CGPoint)arg3 dragLocation:(struct CGPoint)arg4 dragType:(long long)arg5 anchorPoint:(struct CGPoint)arg6;

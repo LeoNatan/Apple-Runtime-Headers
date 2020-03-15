@@ -15,8 +15,8 @@
 
 + (id)_prefixedKeyWithTimerKey:(id)arg1;
 + (id)timerWithKey:(id)arg1;
-@property(retain, nonatomic) NSString *fullTimerKey; // @synthesize fullTimerKey=_fullTimerKey;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *fullTimerKey; // @synthesize fullTimerKey=_fullTimerKey;
 - (unsigned long long)elapsedNanoseconds;
 - (unsigned long long)elapsedSeconds;
 - (id)timerValue;

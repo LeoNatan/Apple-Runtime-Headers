@@ -14,9 +14,9 @@
     AKController *_controller;
 }
 
+- (void).cxx_destruct;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) NSCursor *currentCursorOrNil; // @synthesize currentCursorOrNil=_currentCursorOrNil;
-- (void).cxx_destruct;
 - (void)updateCursorForDraggableArea:(unsigned long long)arg1 ofAnnotation:(id)arg2;
 - (void)setCurrentCursorOrNil:(id)arg1 updateSystemCursor:(BOOL)arg2;
 - (id)initWithController:(id)arg1;

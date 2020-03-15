@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *address; // @synthesize address=_address;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *address; // @synthesize address=_address;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

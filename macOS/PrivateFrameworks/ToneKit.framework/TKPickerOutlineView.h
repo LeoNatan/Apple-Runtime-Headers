@@ -14,8 +14,8 @@
     id <TKPickerOutlineViewEventHandlingDelegate> _eventHandlingDelegate;
 }
 
-@property(nonatomic) __weak id <TKPickerOutlineViewEventHandlingDelegate> eventHandlingDelegate; // @synthesize eventHandlingDelegate=_eventHandlingDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TKPickerOutlineViewEventHandlingDelegate> eventHandlingDelegate; // @synthesize eventHandlingDelegate=_eventHandlingDelegate;
 - (void)keyDown:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)scrollRowToVisible:(long long)arg1;

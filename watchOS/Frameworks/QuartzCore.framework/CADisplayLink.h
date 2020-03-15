@@ -20,6 +20,7 @@
 @property(nonatomic) int preferredFramesPerSecond;
 @property(readonly, nonatomic) double targetTimestamp;
 @property(nonatomic) int frameInterval;
+@property(nonatomic) int priority;
 @property(nonatomic, getter=isPaused) _Bool paused;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) double timestamp;

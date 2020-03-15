@@ -15,8 +15,8 @@
     NSString *_inputString;
 }
 
-@property(readonly) NSString *inputString; // @synthesize inputString=_inputString;
 - (void).cxx_destruct;
+@property(readonly) NSString *inputString; // @synthesize inputString=_inputString;
 - (int)type;
 - (BOOL)isCalculation;
 -     // Error parsing type: T16@0:8, name: rank

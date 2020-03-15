@@ -38,6 +38,7 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDecimalNumber *rewardsLifetime; // @synthesize rewardsLifetime=_rewardsLifetime;
 @property(copy, nonatomic) NSDecimalNumber *rewardsYTD; // @synthesize rewardsYTD=_rewardsYTD;
 @property(copy, nonatomic) NSDecimalNumber *rewardsRedeemed; // @synthesize rewardsRedeemed=_rewardsRedeemed;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSDate *closingDate; // @synthesize closingDate=_closingDate;
 @property(copy, nonatomic) NSDate *openingDate; // @synthesize openingDate=_openingDate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

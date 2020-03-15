@@ -37,7 +37,6 @@
     UILabel *_primaryLabel;
     UIView *_labelsBackgroundView;
     UILongPressGestureRecognizer *_longPressPanGestureRecognizer;
-    UIView *_overlappingSupplementaryValueMarkingView;
     UIView *_supplementaryValueMarkingView;
     NSMutableArray *_gradationMarkingViews;
     NSMutableDictionary *_markingValuesAndViewsDictionary;
@@ -48,6 +47,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showOffState; // @synthesize showOffState=_showOffState;
 @property(retain, nonatomic) NSMutableArray *currentDirectionTapticValues; // @synthesize currentDirectionTapticValues=_currentDirectionTapticValues;
 @property(nonatomic) unsigned long long prevSlidingDirection; // @synthesize prevSlidingDirection=_prevSlidingDirection;
@@ -55,7 +55,6 @@
 @property(retain, nonatomic) NSMutableDictionary *markingValuesAndViewsDictionary; // @synthesize markingValuesAndViewsDictionary=_markingValuesAndViewsDictionary;
 @property(retain, nonatomic) NSMutableArray *gradationMarkingViews; // @synthesize gradationMarkingViews=_gradationMarkingViews;
 @property(retain, nonatomic) UIView *supplementaryValueMarkingView; // @synthesize supplementaryValueMarkingView=_supplementaryValueMarkingView;
-@property(retain, nonatomic) UIView *overlappingSupplementaryValueMarkingView; // @synthesize overlappingSupplementaryValueMarkingView=_overlappingSupplementaryValueMarkingView;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressPanGestureRecognizer; // @synthesize longPressPanGestureRecognizer=_longPressPanGestureRecognizer;
 @property(retain, nonatomic) UIView *labelsBackgroundView; // @synthesize labelsBackgroundView=_labelsBackgroundView;
 @property(retain, nonatomic) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
@@ -78,7 +77,6 @@
 @property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlRingSliderViewProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (double)_getMaximumMarkingValue;
 - (double)_getMinimumMarkingValue;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -128,8 +126,8 @@
 - (void)_updatePrimaryHandleViewPositionToSliderValue;
 - (void)_updateTransform;
 - (void)_updateRingViewAndHandleViews;
-- (void)_updateSupplementaryValueLineViewColor;
-- (void)_updateSupplementaryValueLineView;
+- (void)_updateSupplementaryValueMarkingViewColor;
+- (void)_updateSupplementaryValueMarkingView;
 - (void)layoutSubviews;
 - (void)_updateModelValue:(CDStruct_c3b9c2ee)arg1 roundValue:(BOOL)arg2 notifyInteractionDelegate:(BOOL)arg3;
 - (void)_updateModelValueWithNewSecondarySliderValue:(double)arg1 roundValue:(BOOL)arg2 notifyInteractionDelegate:(BOOL)arg3;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HMICameraVideoFrame *_frame;
 }
 
+- (void).cxx_destruct;
 @property(readonly) float score; // @synthesize score=_score;
 @property(readonly) HMICameraVideoFrame *frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFrame:(id)arg1 score:(float)arg2;
 

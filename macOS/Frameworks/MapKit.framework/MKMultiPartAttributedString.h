@@ -20,9 +20,9 @@
 + (id)multiPartAttributedStringWithString:(id)arg1;
 + (id)multiPartAttributedStringWithComponents:(id)arg1 repeatedSeparator:(id)arg2;
 + (id)_mapkit_multiPartAttributedStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *separators; // @synthesize separators=_separators;
 @property(readonly, copy, nonatomic) NSArray *components; // @synthesize components=_components;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (id)description;

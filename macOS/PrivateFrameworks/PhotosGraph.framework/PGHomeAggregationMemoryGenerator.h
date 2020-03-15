@@ -15,8 +15,8 @@
 
 + (unsigned long long)numberOfPotentialMemoriesWithGraph:(id)arg1;
 + (id)_monthNodeForMomentNode:(id)arg1;
-@property(retain, nonatomic) NSDate *localDate; // @synthesize localDate=_localDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *localDate; // @synthesize localDate=_localDate;
 - (id)_potentialMemoriesForDryTesting;
 - (void)_postProcessMemory:(id)arg1 withPotentialMemory:(id)arg2;
 - (void)_enumeratePotentialMemoriesUsingBlock:(CDUnknownBlockType)arg1;

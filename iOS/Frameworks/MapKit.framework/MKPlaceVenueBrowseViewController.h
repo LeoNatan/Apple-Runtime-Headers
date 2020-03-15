@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canDisplayForMapItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(retain, nonatomic) UIColor *cellTitleLabelTextColor; // @synthesize cellTitleLabelTextColor=_cellTitleLabelTextColor;
 @property(retain, nonatomic) UIFont *preferredCellTitleLabelFont; // @synthesize preferredCellTitleLabelFont=_preferredCellTitleLabelFont;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <GEOVenueComponentIdentifier> componentIdentifier; // @synthesize componentIdentifier=_componentIdentifier;
 @property(nonatomic) unsigned long long venueID; // @synthesize venueID=_venueID;
 @property(nonatomic) __weak id <MKPlaceVenueBrowseViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_ppt_postNotificationName:(id)arg1 object:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

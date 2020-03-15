@@ -39,6 +39,7 @@
 + (id)busyExtensionInstances:(id)arg1;
 + (double)backgroundTimeRemaining;
 + (id)currentProcess;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool recordingAudio; // @synthesize recordingAudio=_recordingAudio;
 @property(nonatomic) _Bool nowPlayingWithAudio; // @synthesize nowPlayingWithAudio=_nowPlayingWithAudio;
 @property(nonatomic) _Bool connectedToExternalAccessories; // @synthesize connectedToExternalAccessories=_connectedToExternalAccessories;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) BSProcessHandle *handle; // @synthesize handle=_handle;
 @property(nonatomic) int terminationReason; // @synthesize terminationReason=_terminationReason;
 @property(nonatomic) int visibility; // @synthesize visibility=_visibility;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

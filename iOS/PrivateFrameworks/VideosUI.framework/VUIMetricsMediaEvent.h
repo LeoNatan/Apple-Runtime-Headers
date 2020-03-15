@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)recordTVPMediaItemPlay:(id)arg1 isBackgroundVideo:(_Bool)arg2;
 + (void)recordPunchout:(id)arg1 isUrlForPlay:(_Bool)arg2;
 + (void)recordPlay:(id)arg1 isLaunchingExtras:(_Bool)arg2;
 

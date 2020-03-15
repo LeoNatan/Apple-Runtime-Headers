@@ -28,6 +28,7 @@
     SXLayoutOptions *_layoutOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(readonly, nonatomic) id <SXLayoutPolicyManager> layoutPolicyManager; // @synthesize layoutPolicyManager=_layoutPolicyManager;
 @property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) id <SXLayoutIntegrator> integrator; // @synthesize integrator=_integrator;
 @property(readonly, nonatomic) id <SXLayoutPipeline> pipeline; // @synthesize pipeline=_pipeline;
 @property(nonatomic) __weak id <SXLayoutCoordinatorDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (id)taskWithOptions:(id)arg1 layoutBlueprint:(id)arg2 instructions:(id)arg3;
 - (void)startTask:(id)arg1;
 - (void)layoutInvalidationManager:(id)arg1 didInvalidateBlueprint:(id)arg2;

@@ -18,10 +18,10 @@
     UITabBar *_tabBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITabBar *tabBar; // @synthesize tabBar=_tabBar;
 @property(nonatomic) __weak id <WFGlyphPickerTabBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long selectedTabIndex; // @synthesize selectedTabIndex=_selectedTabIndex;
-- (void).cxx_destruct;
 - (void)tabBar:(id)arg1 didSelectItem:(id)arg2;
 - (id)initWithTabNames:(id)arg1 tabCharacters:(id)arg2;
 

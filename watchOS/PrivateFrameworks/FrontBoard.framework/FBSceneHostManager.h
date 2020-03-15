@@ -37,6 +37,7 @@
     struct CGAffineTransform _defaultHostViewTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *defaultMinificationFilterName; // @synthesize defaultMinificationFilterName=_defaultMinificationFilterName;
 @property(nonatomic) unsigned int defaultRenderingMode; // @synthesize defaultRenderingMode=_defaultRenderingMode;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <FBSceneHostManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

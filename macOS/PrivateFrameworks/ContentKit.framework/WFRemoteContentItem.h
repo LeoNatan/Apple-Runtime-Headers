@@ -13,13 +13,13 @@
     NSDictionary *_serializedItem;
 }
 
-+ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3;
-@property(copy, nonatomic) NSDictionary *serializedItem; // @synthesize serializedItem=_serializedItem;
++ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3 contentSource:(id)arg4;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *serializedItem; // @synthesize serializedItem=_serializedItem;
 - (id)preferredFileType;
 - (id)name;
 - (id)metadataForSerialization;
-- (id)initWithSerializedItem:(id)arg1 named:(id)arg2;
+- (id)initWithSerializedItem:(id)arg1 named:(id)arg2 contentSource:(id)arg3;
 
 @end
 

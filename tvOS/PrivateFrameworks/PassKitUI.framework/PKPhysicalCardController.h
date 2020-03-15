@@ -24,13 +24,13 @@
 }
 
 + (_Bool)deviceSupportsContactlessActivation;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPhysicalCard *primaryPhysicalCard; // @synthesize primaryPhysicalCard=_primaryPhysicalCard;
 @property(readonly, nonatomic) PKPhysicalCard *unactivatedPhysicalCard; // @synthesize unactivatedPhysicalCard=_unactivatedPhysicalCard;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(retain, nonatomic) id <PKSetupFlowControllerProtocol> parentFlowController; // @synthesize parentFlowController=_parentFlowController;
 @property(readonly, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_updatePhysicalCards;
 - (void)nextViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)orderFlowViewControllerForReason:(unsigned long long)arg1 content:(long long)arg2 completion:(CDUnknownBlockType)arg3;

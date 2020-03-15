@@ -13,8 +13,8 @@
     NSArray *orderedSuggestions;
 }
 
-@property(retain) NSArray *orderedSuggestions; // @synthesize orderedSuggestions;
 - (void).cxx_destruct;
+@property(retain) NSArray *orderedSuggestions; // @synthesize orderedSuggestions;
 
 @end
 

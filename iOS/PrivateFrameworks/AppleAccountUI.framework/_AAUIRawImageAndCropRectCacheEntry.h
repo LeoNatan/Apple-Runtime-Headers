@@ -17,11 +17,11 @@
 }
 
 + (id)entryWithRawImage:(id)arg1 rawCropRect:(struct CGRect)arg2 serverCacheTag:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSString *serverCacheTag; // @synthesize serverCacheTag=_serverCacheTag;
 @property(readonly, nonatomic) struct CGRect rawCropRect; // @synthesize rawCropRect=_rawCropRect;
 @property(readonly, nonatomic) UIImage *rawImage; // @synthesize rawImage=_rawImage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 
 @end

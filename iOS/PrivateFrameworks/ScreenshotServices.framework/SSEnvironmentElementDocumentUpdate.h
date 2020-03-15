@@ -17,9 +17,9 @@
     SSHarvestedApplicationDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSHarvestedApplicationDocument *document; // @synthesize document=_document;
 @property(copy, nonatomic) NSString *environmentElementIdentifier; // @synthesize environmentElementIdentifier=_environmentElementIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *loggableDescription;
 @property(readonly, nonatomic) BSSettings *bsSettings;
 - (id)initWithXPCDictionary:(id)arg1;

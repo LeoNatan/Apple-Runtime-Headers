@@ -17,11 +17,11 @@
     FCAsyncSerialQueue *_serialQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCAsyncSerialQueue *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) id <FCStreaming> underlyingStream; // @synthesize underlyingStream=_underlyingStream;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)fetchObjectsUpToCount:(unsigned long long)arg1 qualityOfService:(long long)arg2 batchSize:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;

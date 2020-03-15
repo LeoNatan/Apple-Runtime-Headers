@@ -22,9 +22,9 @@
 
 + (id)logCategory;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _HMFRate rate; // @synthesize rate=_rate;
 @property(readonly, nonatomic) unsigned long long limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (BOOL)decrementByCount:(unsigned long long)arg1;
 - (BOOL)decrement;

@@ -7,7 +7,6 @@
 #import <objc/NSObject.h>
 
 @class NSData, NSNumber, NSString;
-@protocol OS_dispatch_queue;
 
 @interface ICDeviceInfo : NSObject
 {
@@ -37,7 +36,7 @@
     NSNumber *_screenClassValue;
     NSNumber *_isInternalBuildNumber;
     NSString *_systemReleaseType;
-    NSObject<OS_dispatch_queue> *_accessQueue;
+    struct os_unfair_lock_s _lock;
 }
 
 + (id)defaultInfo;

@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     id <UICursorInteractionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIHoverGestureRecognizer *hoverGestureRecognizer; // @synthesize hoverGestureRecognizer=_hoverGestureRecognizer;
 @property(nonatomic) __weak id <UICursorInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIView *view; // @synthesize view;
-- (void).cxx_destruct;
 - (BOOL)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_hoverGestureRecognizerChanged:(id)arg1;

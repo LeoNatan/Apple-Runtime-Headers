@@ -13,8 +13,8 @@
     NSMutableSet *_childActivities;
 }
 
-@property(readonly, nonatomic) NSMutableSet *childActivities; // @synthesize childActivities=_childActivities;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableSet *childActivities; // @synthesize childActivities=_childActivities;
 - (void)cancel;
 - (void)childActivityFinished:(id)arg1;
 @property(readonly, nonatomic) unsigned long long childCount;

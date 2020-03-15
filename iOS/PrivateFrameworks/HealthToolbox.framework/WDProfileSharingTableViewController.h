@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_sourceToAuthRecord;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *sourceToAuthRecord; // @synthesize sourceToAuthRecord=_sourceToAuthRecord;
 @property(retain, nonatomic) HKSourceListDataSource *sourceListDataSource; // @synthesize sourceListDataSource=_sourceListDataSource;
-- (void).cxx_destruct;
 - (void)sourceListDataSourceDidUpdate:(id)arg1;
 - (void)switchCellValueChanged:(id)arg1 value:(_Bool)arg2;
 - (id)_sourceForIndexPath:(id)arg1;

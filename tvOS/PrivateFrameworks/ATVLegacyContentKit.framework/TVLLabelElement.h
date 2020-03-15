@@ -13,8 +13,8 @@
     NSString *_label;
 }
 
-@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

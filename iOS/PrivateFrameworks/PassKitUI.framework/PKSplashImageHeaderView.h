@@ -27,6 +27,7 @@
     NSString *_attributionProviderName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *attributionProviderName; // @synthesize attributionProviderName=_attributionProviderName;
 @property(retain, nonatomic) UIColor *fallbackColor; // @synthesize fallbackColor=_fallbackColor;
 @property(nonatomic) _Bool showsGradientOverlay; // @synthesize showsGradientOverlay=_showsGradientOverlay;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(copy, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(copy, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
-- (void).cxx_destruct;
 - (void)setBackgroundImage:(id)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

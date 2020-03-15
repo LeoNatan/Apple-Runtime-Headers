@@ -15,10 +15,10 @@
     HDSQLitePredicate *_firstPartyPredicate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDSQLitePredicate *firstPartyPredicate; // @synthesize firstPartyPredicate=_firstPartyPredicate;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(copy, nonatomic) HDDatabaseTransactionContext *databaseContext; // @synthesize databaseContext=_databaseContext;
-- (void).cxx_destruct;
 - (unsigned long long)_countOfSamplesWithPredicate:(id)arg1;
 - (id)_predicateWithDuration:(double)arg1 withType:(id)arg2 startingAtOrAfterDate:(id)arg3 endingOnOrBeforeDate:(id)arg4 firstPartyOnly:(_Bool)arg5;
 - (id)bestEnergyBurnedForFirstPartyWorkoutsWithType:(unsigned long long)arg1 endingBeforeDate:(id)arg2;

@@ -15,9 +15,9 @@
     id <CUISPasscodeAlertViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CUISPasscodeAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CUISPasscodeViewController *passcodeViewController; // @synthesize passcodeViewController=_passcodeViewController;
-- (void).cxx_destruct;
 - (_Bool)allowAutoDismissAfterBacklightOff;
 - (_Bool)allowsCrownButtonDismissal;
 - (id)animationControllerForDismissal;

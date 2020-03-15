@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     UIImage *_serviceIconImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *serviceIconImage; // @synthesize serviceIconImage=_serviceIconImage;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak SLComposeServiceViewController *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

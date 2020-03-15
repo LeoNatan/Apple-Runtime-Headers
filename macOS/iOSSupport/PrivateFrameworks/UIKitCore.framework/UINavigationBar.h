@@ -69,6 +69,7 @@
 + (id)_statusBarBaseTintColorForStyle:(long long)arg1 translucent:(BOOL)arg2 tintColor:(id)arg3;
 + (id)_statusBarBaseTintColorForStyle:(long long)arg1 translucent:(BOOL)arg2 tintColor:(id)arg3 backgroundImage:(id)arg4 viewSize:(struct CGSize)arg5;
 + (BOOL)_forceLegacyVisualProvider;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAlwaysUseDefaultMetrics:) BOOL alwaysUseDefaultMetrics; // @synthesize alwaysUseDefaultMetrics=_alwaysUseDefaultMetrics;
 @property(nonatomic) long long requestedContentSize; // @synthesize requestedContentSize=_requestedContentSize;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
@@ -83,7 +84,6 @@
 @property(retain, nonatomic, setter=_setAccessibilityButtonBackgroundTintColor:) UIColor *_accessibilityButtonBackgroundTintColor; // @synthesize _accessibilityButtonBackgroundTintColor;
 @property(nonatomic, setter=_setRequestedMaxBackButtonWidth:) double _requestedMaxBackButtonWidth; // @synthesize _requestedMaxBackButtonWidth;
 @property(readonly, nonatomic) long long barPosition; // @synthesize barPosition=_barPosition;
-- (void).cxx_destruct;
 - (id)preferredFocusedView;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;

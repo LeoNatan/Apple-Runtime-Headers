@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreTelephony/CoreTelephonyClientDataDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientRegistrationDelegate-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientDataDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientRegistrationDelegateInternal-Protocol.h>
 
 @class CTCarrier, CTServiceDescriptorContainer, CoreTelephonyClient, NSDictionary, NSMutableDictionary, NSString;
 @protocol CTTelephonyNetworkInfoDelegate;
 
-@interface CTTelephonyNetworkInfo : NSObject <CoreTelephonyClientDataDelegate, CoreTelephonyClientRegistrationDelegate>
+@interface CTTelephonyNetworkInfo : NSObject <CoreTelephonyClientDataDelegateInternal, CoreTelephonyClientRegistrationDelegateInternal>
 {
     CoreTelephonyClient *_client;
     CDUnknownBlockType _serviceSubscriberCellularProvidersDidUpdateNotifier;
@@ -27,6 +27,7 @@
     NSMutableDictionary *_cachedCellIds;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *cachedCellIds; // @synthesize cachedCellIds=_cachedCellIds;
 @property(retain) NSMutableDictionary *cachedSignalStrength; // @synthesize cachedSignalStrength=_cachedSignalStrength;
 @property(retain) NSMutableDictionary *cachedCurrentRadioAccessTechnology; // @synthesize cachedCurrentRadioAccessTechnology=_cachedCurrentRadioAccessTechnology;
@@ -34,7 +35,6 @@
 @property(retain) NSMutableDictionary *serviceSubscriberCellularProviders; // @synthesize serviceSubscriberCellularProviders=_serviceSubscriberCellularProviders;
 @property(readonly, copy) NSString *dataServiceIdentifier; // @synthesize dataServiceIdentifier=_dataServiceIdentifier;
 @property __weak id <CTTelephonyNetworkInfoDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)radioAccessTechnology;
 @property(readonly, retain) CTCarrier *subscriberCellularProvider;
 - (id)getFirstCellId;

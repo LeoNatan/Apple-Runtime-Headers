@@ -29,11 +29,11 @@
     UICollectionView *_predictionsCollectionView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isHandlingKeyboardFrameChanged; // @synthesize isHandlingKeyboardFrameChanged=_isHandlingKeyboardFrameChanged;
 @property(retain, nonatomic) UICollectionView *predictionsCollectionView; // @synthesize predictionsCollectionView=_predictionsCollectionView;
 @property(retain, nonatomic) NSArray *ttyAbbreviations; // @synthesize ttyAbbreviations=_ttyAbbreviations;
 @property(nonatomic) BOOL showTTYPredictions; // @synthesize showTTYPredictions=_showTTYPredictions;
-- (void).cxx_destruct;
 - (unsigned long long)accessibilityTraits;
 - (BOOL)_accessibilityIsRealtimeElement;
 - (id)accessibilityIdentifier;

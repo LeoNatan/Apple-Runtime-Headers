@@ -15,10 +15,10 @@
     NSMutableArray *_graphSeriesInOrderAdded;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *graphSeriesInOrderAdded; // @synthesize graphSeriesInOrderAdded=_graphSeriesInOrderAdded;
 @property(retain, nonatomic) NSMutableDictionary *graphSeriesUUIDToConfiguration; // @synthesize graphSeriesUUIDToConfiguration=_graphSeriesUUIDToConfiguration;
 @property(retain, nonatomic) NSMutableDictionary *displayTypeIdentifierToConfiguration; // @synthesize displayTypeIdentifierToConfiguration=_displayTypeIdentifierToConfiguration;
-- (void).cxx_destruct;
 - (id)_displayTypeIdentifierForDisplayType:(id)arg1;
 - (id)allGraphSeries;
 - (id)allDisplayTypes;

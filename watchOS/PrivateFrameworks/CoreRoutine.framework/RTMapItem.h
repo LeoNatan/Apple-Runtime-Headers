@@ -33,6 +33,7 @@
 + (id)sourceToString:(unsigned int)arg1;
 + (_Bool)hasKnownTypeItem:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
@@ -46,7 +47,6 @@
 @property(nonatomic) unsigned int source; // @synthesize source=_source;
 @property(readonly, nonatomic) NSData *geoMapItemHandle; // @synthesize geoMapItemHandle=_geoMapItemHandle;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)updateWeightWithSource:(unsigned int)arg1 extendedAttributes:(id)arg2;
 - (_Bool)validMUID;
 - (id)copyWithZone:(struct _NSZone *)arg1;

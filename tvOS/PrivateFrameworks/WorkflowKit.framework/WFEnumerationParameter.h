@@ -15,10 +15,10 @@
     NSArray *_displayNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *displayNames; // @synthesize displayNames=_displayNames;
 @property(readonly, nonatomic) NSArray *staticPossibleStates; // @synthesize staticPossibleStates=_staticPossibleStates;
 @property(readonly, nonatomic) _Bool alwaysShowsButton; // @synthesize alwaysShowsButton=_alwaysShowsButton;
-- (void).cxx_destruct;
 - (void)stopUpdatingPossibleValues;
 - (void)startUpdatingPossibleValues;
 - (void)possibleStatesDidChange;

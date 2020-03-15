@@ -26,10 +26,10 @@
     unsigned long long _problemFlags;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) unsigned long long problemFlags; // @synthesize problemFlags=_problemFlags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_authenticateAccount:(id)arg1 serviceType:(int)arg2 password:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_authenticateAccount:(id)arg1 serviceType:(int)arg2 companionDevice:(id)arg3 anisetteDataProvider:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_handleFinishRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;

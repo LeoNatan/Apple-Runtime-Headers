@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *backupsQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *backupsQueue; // @synthesize backupsQueue;
 @property(retain) NSString *humanName; // @synthesize humanName;
 @property(retain) NSMutableArray *availableBackups; // @synthesize availableBackups;
-- (void).cxx_destruct;
 - (id)accessibilityDescription;
 - (void)addBackup:(id)arg1;
 - (double)estimatedTransferRate;

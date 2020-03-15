@@ -18,10 +18,10 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) BOOL muted;
 @property(readonly, nonatomic) float volume;
-- (void).cxx_destruct;
 - (void)setMuted:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (void)removeVolumeObserver:(id)arg1;

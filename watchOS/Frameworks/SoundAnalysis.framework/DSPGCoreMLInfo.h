@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     NSArray *_outputLabels;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *outputLabels; // @synthesize outputLabels=_outputLabels;
 @property(retain, nonatomic) NSArray *outputs; // @synthesize outputs=_outputs;
 @property(retain, nonatomic) id <MLFeatureProvider> outputProvider; // @synthesize outputProvider=_outputProvider;
 @property(retain, nonatomic) DSPGMLInputProvider *inputProvider; // @synthesize inputProvider=_inputProvider;
 @property(retain, nonatomic) MLModelDescription *modelDescription; // @synthesize modelDescription=_modelDescription;
 @property(retain, nonatomic) id <DSPGMLModel> model; // @synthesize model=_model;
-- (void).cxx_destruct;
 
 @end
 

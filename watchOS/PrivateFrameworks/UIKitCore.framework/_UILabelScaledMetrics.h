@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _unscaledAndPossiblyTooLargeSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float unscaledFirstBaselineOffset; // @synthesize unscaledFirstBaselineOffset=_unscaledFirstBaselineOffset;
 @property(nonatomic) struct CGSize unscaledAndPossiblyTooLargeSize; // @synthesize unscaledAndPossiblyTooLargeSize=_unscaledAndPossiblyTooLargeSize;
 @property(retain, nonatomic) NSAttributedString *scaledAttributedText; // @synthesize scaledAttributedText=_scaledAttributedText;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float actualScaleFactor; // @synthesize actualScaleFactor=_actualScaleFactor;
 @property(nonatomic) struct CGSize scaledSize; // @synthesize scaledSize=_scaledSize;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
-- (void).cxx_destruct;
 
 @end
 

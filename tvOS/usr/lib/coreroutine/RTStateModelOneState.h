@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stateTransitions; // @synthesize stateTransitions=_stateTransitions;
 @property(retain, nonatomic) RTStateDepiction *stateDepiction; // @synthesize stateDepiction=_stateDepiction;
 @property(retain, nonatomic) NSUUID *uniqueId; // @synthesize uniqueId=_uniqueId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

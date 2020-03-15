@@ -22,12 +22,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(copy, nonatomic, setter=_setImageName:) NSString *_imageName; // @synthesize _imageName;
 @property(copy, nonatomic, setter=_setUserInfo:) NSDictionary *_userInfo; // @synthesize _userInfo;
 @property(nonatomic, setter=_setShowShroud:) _Bool _showShroud; // @synthesize _showShroud;
 @property(copy, nonatomic, setter=_setTitle:) NSString *_title; // @synthesize _title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

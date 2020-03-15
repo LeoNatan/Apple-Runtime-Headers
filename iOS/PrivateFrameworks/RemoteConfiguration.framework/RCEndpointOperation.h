@@ -19,13 +19,13 @@
     NSDictionary *_configurationResourcesByRequestKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *configurationResourcesByRequestKey; // @synthesize configurationResourcesByRequestKey=_configurationResourcesByRequestKey;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(copy, nonatomic) CDUnknownBlockType configurationCompletionHandler; // @synthesize configurationCompletionHandler=_configurationCompletionHandler;
 @property(retain, nonatomic) NSURL *endpointURL; // @synthesize endpointURL=_endpointURL;
 @property(retain, nonatomic) NSDictionary *changeTagsByRequestKey; // @synthesize changeTagsByRequestKey=_changeTagsByRequestKey;
 @property(retain, nonatomic) RCConfigurationSettings *configurationSettings; // @synthesize configurationSettings=_configurationSettings;
-- (void).cxx_destruct;
 - (void)resetForRetry;
 - (_Bool)canRetryWithError:(id)arg1 retryAfter:(id *)arg2;
 - (unsigned long long)maxRetries;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     CNAvatarView *_avatarView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(nonatomic) __weak id <NSObject><CNAvatarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)contacts;
-- (void).cxx_destruct;
 - (void)didUpdateContentForAvatarView:(id)arg1;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)setContacts:(id)arg1;

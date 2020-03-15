@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CUBonjourAdvertiser, CUNetLinkManager, NSString;
+@class CUBonjourAdvertiser, CUNetLinkManager, NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUTCPServer : NSObject
 {
-    struct NSMutableSet *_connections;
+    NSMutableSet *_connections;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     NSObject<OS_dispatch_source> *_listenerSourceV4;
@@ -33,6 +33,7 @@
     CDUnion_fab80606 _interfaceAddress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int tcpListeningPort; // @synthesize tcpListeningPort=_tcpListeningPort;
 @property(nonatomic) int tcpListenPort; // @synthesize tcpListenPort=_tcpListenPort;
 @property(retain, nonatomic) CUNetLinkManager *netLinkManager; // @synthesize netLinkManager=_netLinkManager;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) CDUnknownBlockType connectionStartedHandler; // @synthesize connectionStartedHandler=_connectionStartedHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionAcceptHandler; // @synthesize connectionAcceptHandler=_connectionAcceptHandler;
 @property(retain, nonatomic) CUBonjourAdvertiser *bonjourAdvertiser; // @synthesize bonjourAdvertiser=_bonjourAdvertiser;
-- (void).cxx_destruct;
 - (void)_handleConnectionInvalidated:(id)arg1 addr:(const CDUnion_fab80606 *)arg2;
 - (void)_handleConnectionAccept:(int)arg1;
 - (void)_invalidated;

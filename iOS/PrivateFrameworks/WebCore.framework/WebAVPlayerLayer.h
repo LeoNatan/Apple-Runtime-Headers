@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingVideoRect;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property struct CGRect modelVideoLayerFrame; // @synthesize modelVideoLayerFrame=_modelVideoLayerFrame;
 @property struct CGSize videoDimensions; // @synthesize videoDimensions=_videoDimensions;
 @property(copy, nonatomic) NSDictionary *pixelBufferAttributes; // @synthesize pixelBufferAttributes=_pixelBufferAttributes;
 @property(nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay; // @synthesize readyForDisplay=_readyForDisplay;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct CGRect)videoRect;
 @property(retain, nonatomic) NSString *videoGravity;
 - (void)resolveBounds;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CALayer *videoSublayer;
 @property(retain, nonatomic) AVPlayerController *playerController;
 // Error parsing type for property fullscreenInterface:
-// Property attributes: T^{VideoFullscreenInterfaceAVKit=^^?^^?{atomic<unsigned int>=AI}{Mode=I}{Mode=I}{Ref<WebCore::PlaybackSessionInterfaceAVKit, WTF::DumbPtrTraits<WebCore::PlaybackSessionInterfaceAVKit> >=^{PlaybackSessionInterfaceAVKit}}{RetainPtr<WebAVPlayerViewControllerDelegate>=^v}{RetainPtr<WebAVPlayerViewController>=^v}^{VideoFullscreenModel}^{VideoFullscreenChangeObserver}{RetainPtr<UIWindow>=^v}{RetainPtr<UIViewController>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIWindow>=^v}{RetainPtr<WebAVPlayerLayerView>=^v}{Function<void (bool)>={unique_ptr<WTF::Detail::CallableWrapperBase<void, bool>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, bool> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void, bool> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, bool> > >=^{CallableWrapperBase<void, bool>}}}}{Timer<WebCore::VideoFullscreenInterfaceAVKit>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{VideoFullscreenInterfaceAVKit}}{FloatRect={FloatPoint=ff}{FloatSize=ff}}C{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}BBBBBBBBBBBBBBBBBBBBBBB},N
+// Property attributes: T^{VideoFullscreenInterfaceAVKit=^^?^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}{Mode=I}{Mode=I}{Ref<WebCore::PlaybackSessionInterfaceAVKit, WTF::DumbPtrTraits<WebCore::PlaybackSessionInterfaceAVKit> >=^{PlaybackSessionInterfaceAVKit}}{RetainPtr<WebAVPlayerViewControllerDelegate>=^v}{RetainPtr<WebAVPlayerViewController>=^v}^{VideoFullscreenModel}^{VideoFullscreenChangeObserver}{RetainPtr<UIWindow>=^v}{RetainPtr<UIViewController>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIView>=^v}{RetainPtr<UIWindow>=^v}{RetainPtr<WebAVPlayerLayerView>=^v}{Function<void (bool)>={unique_ptr<WTF::Detail::CallableWrapperBase<void, bool>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, bool> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void, bool> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, bool> > >=^{CallableWrapperBase<void, bool>}}}}{Timer<WebCore::VideoFullscreenInterfaceAVKit>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{VideoFullscreenInterfaceAVKit}}{FloatRect={FloatPoint=ff}{FloatSize=ff}}C{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}BBBBBBBBBBBBBBBBBBBBBBB},N
 
 - (void)dealloc;
 - (id)init;

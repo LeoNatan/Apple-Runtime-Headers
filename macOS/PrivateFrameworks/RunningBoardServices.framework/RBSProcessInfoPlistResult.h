@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsBSXPCSecureCoding;
-@property(copy, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(copy, nonatomic) id value; // @synthesize value=_value;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 

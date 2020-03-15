@@ -18,8 +18,8 @@
 }
 
 + (id)defaultInstance;
-@property(nonatomic, getter=isMeCardCachingEnabled) _Bool meCardCachingEnabled; // @synthesize meCardCachingEnabled=_meCardCachingEnabled;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isMeCardCachingEnabled) _Bool meCardCachingEnabled; // @synthesize meCardCachingEnabled=_meCardCachingEnabled;
 - (void)_addContactToKeychain:(id)arg1 forPreference:(id)arg2;
 - (void)_setKeychainData:(id)arg1 forKey:(id)arg2;
 - (id)_keychainDataForKey:(id)arg1;

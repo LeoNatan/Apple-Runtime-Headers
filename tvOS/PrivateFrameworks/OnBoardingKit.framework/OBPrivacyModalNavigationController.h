@@ -11,8 +11,8 @@
     CDUnknownBlockType _dismissHandler;
 }
 
-@property(copy) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 - (void)_doneButtonPressed;
 - (void)addDismissButtonWithHandler:(CDUnknownBlockType)arg1;
 

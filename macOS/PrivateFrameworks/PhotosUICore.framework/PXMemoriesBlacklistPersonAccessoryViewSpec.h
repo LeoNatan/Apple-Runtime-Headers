@@ -14,8 +14,8 @@
 }
 
 + (id)specWithPerson:(id)arg1;
-@property(readonly, nonatomic) id <PXPerson> person; // @synthesize person=_person;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PXPerson> person; // @synthesize person=_person;
 - (id)initWithPerson:(id)arg1;
 
 @end

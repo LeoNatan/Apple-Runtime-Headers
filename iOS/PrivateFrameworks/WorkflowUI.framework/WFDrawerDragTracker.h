@@ -19,12 +19,12 @@
     double _initialHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool tracking; // @synthesize tracking=_tracking;
 @property(readonly, nonatomic) double initialHeight; // @synthesize initialHeight=_initialHeight;
 @property(readonly, nonatomic) __weak WFDrawerGestureCoordinator *gestureCoordinator; // @synthesize gestureCoordinator=_gestureCoordinator;
 @property(readonly) double maxTranslationY; // @synthesize maxTranslationY=_maxTranslationY;
 @property(readonly) double minTranslationY; // @synthesize minTranslationY=_minTranslationY;
-- (void).cxx_destruct;
 - (double)currentHeight;
 - (void)updateDragForVerticalTranslation:(double)arg1;
 - (void)endDraggingWithAnimation:(id)arg1;

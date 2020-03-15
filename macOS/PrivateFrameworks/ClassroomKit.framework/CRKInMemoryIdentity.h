@@ -18,9 +18,9 @@
 }
 
 + (id)identityWithConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CRKPrivateKey> privateKey; // @synthesize privateKey=_privateKey;
 @property(readonly, nonatomic) id <CRKCertificate> certificate; // @synthesize certificate=_certificate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __SecIdentity *underlyingIdentity;
 - (id)initWithCertificate:(id)arg1 privateKey:(id)arg2;
 

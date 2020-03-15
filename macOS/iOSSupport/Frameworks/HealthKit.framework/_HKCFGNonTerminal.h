@@ -16,8 +16,8 @@
 }
 
 + (id)nonTerminalWithLabel:(id)arg1;
-@property(copy, nonatomic) NSCharacterSet *charactersToBeSkipped; // @synthesize charactersToBeSkipped=_charactersToBeSkipped;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSCharacterSet *charactersToBeSkipped; // @synthesize charactersToBeSkipped=_charactersToBeSkipped;
 - (void)_invalidate;
 - (void)_checkForCycles:(id)arg1;
 - (void)_checkForCycles;

@@ -17,12 +17,12 @@
     NSMutableArray *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool areAttributesLoaded; // @synthesize areAttributesLoaded=_areAttributesLoaded;
 @property(retain, nonatomic) NSMutableArray *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) _Bool areAllRelationshipsLoaded; // @synthesize areAllRelationshipsLoaded=_areAllRelationshipsLoaded;
 @property(retain, nonatomic) NSMutableArray *relationships; // @synthesize relationships=_relationships;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)work_attributesWithError:(id *)arg1;
 - (_Bool)work_loadAttributesWithError:(id *)arg1;

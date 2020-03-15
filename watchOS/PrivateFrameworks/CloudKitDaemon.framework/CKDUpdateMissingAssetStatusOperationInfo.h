@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_assetPutReceipts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *assetPutReceipts; // @synthesize assetPutReceipts=_assetPutReceipts;
 @property(retain, nonatomic) NSArray *assetSizes; // @synthesize assetSizes=_assetSizes;
 @property(nonatomic) _Bool isPackage; // @synthesize isPackage=_isPackage;
 @property(nonatomic) _Bool recovered; // @synthesize recovered=_recovered;
 @property(retain, nonatomic) CKRecordID *repairRecordID; // @synthesize repairRecordID=_repairRecordID;
-- (void).cxx_destruct;
 
 @end
 

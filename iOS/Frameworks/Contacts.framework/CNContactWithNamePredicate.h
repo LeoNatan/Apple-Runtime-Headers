@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)descriptionForOptions:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
 + (_Bool)doesPerson:(id)arg1 matchName:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

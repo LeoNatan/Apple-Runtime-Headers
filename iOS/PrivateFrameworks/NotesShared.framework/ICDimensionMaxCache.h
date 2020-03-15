@@ -15,10 +15,10 @@
     CDUnknownBlockType _comparator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(readonly, nonatomic) NSMutableArray *sortedDimensions; // @synthesize sortedDimensions=_sortedDimensions;
 @property(readonly, nonatomic) NSMutableDictionary *dimensions; // @synthesize dimensions=_dimensions;
-- (void).cxx_destruct;
 - (void)removeDimensionForKey:(id)arg1;
 - (void)setDimension:(double)arg1 forKey:(id)arg2;
 - (double)dimensionForKey:(id)arg1;

@@ -18,13 +18,13 @@
     NSError *_responseError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *responseError; // @synthesize responseError=_responseError;
 @property(retain, nonatomic) GEODirectionsResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) GEODirectionsRequest *request; // @synthesize request=_request;
 @property(nonatomic) double responseTimestamp; // @synthesize responseTimestamp=_responseTimestamp;
 @property(nonatomic) double requestTimestamp; // @synthesize requestTimestamp=_requestTimestamp;
 @property(nonatomic) unsigned long long destinationID; // @synthesize destinationID=_destinationID;
-- (void).cxx_destruct;
 
 @end
 

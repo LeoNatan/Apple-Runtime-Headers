@@ -7,6 +7,7 @@
 #import <SpringBoardUIServices/SBUIRemoteAlertServiceViewController.h>
 
 #import <PassKitUI/PKCompactNavigationContainerControllerDelegate-Protocol.h>
+#import <PassKitUI/PKLoadingViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentAuthorizationHostProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentAuthorizationServiceViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupDelegate-Protocol.h>
@@ -16,7 +17,7 @@
 @class NSString, NSXPCConnection, PKAssertion, PKInAppPaymentService, PKPaymentAuthorizationRemoteAlertViewControllerExportedObject, PKPaymentAuthorizationServiceCompactNavigationContainerController, PKPaymentAuthorizationServiceNavigationController, PKPaymentProvisioningController, PKPaymentRequest, PKPaymentSetupNavigationController, PKPeerPaymentAccount;
 @protocol BSInvalidatable;
 
-@interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKCompactNavigationContainerControllerDelegate, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentSetupDelegate, SBSHardwareButtonEventConsuming, PKPaymentSetupViewControllerDelegate>
+@interface PKPaymentAuthorizationRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKCompactNavigationContainerControllerDelegate, PKPaymentAuthorizationServiceViewControllerDelegate, PKPaymentAuthorizationHostProtocol, PKPaymentSetupDelegate, SBSHardwareButtonEventConsuming, PKPaymentSetupViewControllerDelegate, PKLoadingViewControllerDelegate>
 {
     _Bool _didDismiss;
     _Bool _didSendAuthorizationDidPresent;
@@ -49,13 +50,13 @@
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPerformingPaymentSetup; // @synthesize isPerformingPaymentSetup=_isPerformingPaymentSetup;
 @property(nonatomic) _Bool dismissAfterPaymentSetup; // @synthesize dismissAfterPaymentSetup=_dismissAfterPaymentSetup;
 @property(retain, nonatomic) PKPaymentRequest *paymentRequest; // @synthesize paymentRequest=_paymentRequest;
 @property(retain, nonatomic) NSXPCConnection *hostConnection; // @synthesize hostConnection=_hostConnection;
 @property(retain, nonatomic) PKInAppPaymentService *inAppPaymentService; // @synthesize inAppPaymentService=_inAppPaymentService;
 @property(retain, nonatomic) PKPaymentAuthorizationRemoteAlertViewControllerExportedObject *exportedObject; // @synthesize exportedObject=_exportedObject;
-- (void).cxx_destruct;
 - (void)_invalidateLockButtonObserver;
 - (void)dismissWithRemoteOrigination:(_Bool)arg1;
 - (void)_dismiss;
@@ -70,6 +71,7 @@
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
 - (void)authorizationDidAuthorizePurchase:(id)arg1;
 - (void)authorizationDidAuthorizePayment:(id)arg1;
+- (void)authorizationDidAuthorizeContext;
 - (void)authorizationDidFinishWithError:(id)arg1;
 - (void)authorizationDidRequestMerchantSession;
 - (void)authorizationWillStart;
@@ -81,6 +83,7 @@
 - (void)_bindFeatureApplication:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewController:(id)arg1 canProceedWithInstallment:(_Bool)arg2 featureApplication:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
+- (void)loadingViewControllerDidCancel:(id)arg1;
 - (void)consumeDoublePressUpForButtonKind:(long long)arg1;
 - (void)consumeSinglePressUpForButtonKind:(long long)arg1;
 - (void)handleButtonActions:(id)arg1;

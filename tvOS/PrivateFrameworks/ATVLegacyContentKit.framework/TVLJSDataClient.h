@@ -20,8 +20,8 @@
 + (id)_dataTypeToFeedType:(id)arg1;
 + (id)dataPropertyToFeedProperty:(id)arg1;
 + (id)dataTypeFromFeedType:(id)arg1;
-@property(readonly, nonatomic) TVLAppliance *appliance; // @synthesize appliance=_appliance;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVLAppliance *appliance; // @synthesize appliance=_appliance;
 - (void)cancelLoad:(id)arg1;
 - (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)imageKeyForObject:(id)arg1;

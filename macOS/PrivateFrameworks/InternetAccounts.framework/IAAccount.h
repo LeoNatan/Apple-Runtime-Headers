@@ -34,10 +34,10 @@
 + (id)_pluginIDForChatAccountType:(id)arg1 server:(id)arg2 emailHost:(id)arg3;
 + (id)_pluginForSettings:(id)arg1;
 + (id)accountWithProviderType:(id)arg1 loginName:(id)arg2;
+- (void).cxx_destruct;
 @property BOOL persistentStorage; // @synthesize persistentStorage=_persistentStorage;
 @property(retain) NSString *parentUID; // @synthesize parentUID=_parentUID;
 @property(retain) NSString *uid; // @synthesize uid=_uid;
-- (void).cxx_destruct;
 - (void)saveToPersistentStore;
 - (BOOL)parentAcceptsChildWithUID:(id)arg1;
 - (void)mergeStoredData;

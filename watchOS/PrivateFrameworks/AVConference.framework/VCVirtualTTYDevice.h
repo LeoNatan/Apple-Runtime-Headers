@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)setPause:(_Bool)arg1;
 - (void)stopAudioWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)stop;
-- (void)sendText:(struct NSString *)arg1;
+- (void)sendText:(id)arg1;
 - (void)sendCharacter:(unsigned short)arg1;
 - (void)startVirtualTTYWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)start;

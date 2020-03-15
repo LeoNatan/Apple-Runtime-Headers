@@ -20,12 +20,12 @@
 + (id)libraryObjectWithLibrary:(id)arg1;
 + (id)applicationObjectWithApplication:(id)arg1;
 + (id)objectWithSpecifier:(id)arg1 classCode:(unsigned int)arg2 container:(id)arg3 scriptableEntity:(id)arg4;
+- (void).cxx_destruct;
 @property(retain) AEScriptableEntity *scriptableEntity; // @synthesize scriptableEntity=_scriptableEntity;
 @property(retain) AEObject *container; // @synthesize container=_container;
 @property(retain) NSString *className; // @synthesize className=_className;
 @property unsigned int classCode; // @synthesize classCode=_classCode;
 @property(retain) NSAppleEventDescriptor *specifier; // @synthesize specifier=_specifier;
-- (void).cxx_destruct;
 - (BOOL)isApplicationObject;
 - (id)qualifiedDescriptor;
 - (id)containmentRecord;

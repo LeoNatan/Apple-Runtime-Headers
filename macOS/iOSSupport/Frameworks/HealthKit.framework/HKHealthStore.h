@@ -45,12 +45,12 @@
 
 + (BOOL)_applicationHasRunningWorkout;
 + (BOOL)isHealthDataAvailable;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(copy, nonatomic) NSString *researchStudyUsageDescriptionOverride; // @synthesize researchStudyUsageDescriptionOverride=_researchStudyUsageDescriptionOverride;
 @property(copy, nonatomic) NSString *clinicalReadAuthorizationUsageDescriptionOverride; // @synthesize clinicalReadAuthorizationUsageDescriptionOverride=_clinicalReadAuthorizationUsageDescriptionOverride;
 @property(copy, nonatomic) NSString *readAuthorizationUsageDescriptionOverride; // @synthesize readAuthorizationUsageDescriptionOverride=_readAuthorizationUsageDescriptionOverride;
 @property(copy, nonatomic) NSString *writeAuthorizationUsageDescriptionOverride; // @synthesize writeAuthorizationUsageDescriptionOverride=_writeAuthorizationUsageDescriptionOverride;
-- (void).cxx_destruct;
 - (void)containerAppExtensionEntitlementsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)generateFakeDataForActivityType:(long long)arg1 minutes:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidateActivityAlertSuppressionForIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -14,9 +14,9 @@
     KHPhotoLibraryGenericSection *_section;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) KHPhotoLibraryGenericSection *section; // @synthesize section=_section;
 @property(retain, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
-- (void).cxx_destruct;
 - (id)collectionForPath:(id)arg1;
 - (void)executeHydration;
 - (id)sectionAtIndex:(unsigned long long)arg1;

@@ -13,8 +13,8 @@
     REMStore *_store;
 }
 
-@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (id)accountsFromStorages:(id)arg1;
 - (id)fetchAccountsWithExternalIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)fetchAccountWithExternalIdentifier:(id)arg1 error:(id *)arg2;

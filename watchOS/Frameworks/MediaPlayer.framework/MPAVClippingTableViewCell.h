@@ -18,13 +18,13 @@
     struct UIEdgeInsets _clippingInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets clippingInsets; // @synthesize clippingInsets=_clippingInsets;
 @property(retain, nonatomic) UIView *clippingMaskView; // @synthesize clippingMaskView=_clippingMaskView;
 @property(retain, nonatomic) UIView *clippingContentView; // @synthesize clippingContentView=_clippingContentView;
 @property(nonatomic) _Bool shouldHideSectionBottomSeparator; // @synthesize shouldHideSectionBottomSeparator=_shouldHideSectionBottomSeparator;
 @property(readonly, nonatomic) UIView *bottomSeparatorView; // @synthesize bottomSeparatorView=_bottomSeparatorView;
 @property(readonly, nonatomic) UIView *topSeparatorView; // @synthesize topSeparatorView=_topSeparatorView;
-- (void).cxx_destruct;
 - (void)_setShouldHaveFullLengthBottomSeparator:(_Bool)arg1;
 - (void)_setShouldHaveFullLengthTopSeparator:(_Bool)arg1;
 - (void)layoutSubviews;

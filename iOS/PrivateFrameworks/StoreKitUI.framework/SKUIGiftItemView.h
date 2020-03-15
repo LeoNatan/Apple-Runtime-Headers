@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     _Bool _leftToRight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(nonatomic) float userRating; // @synthesize userRating=_userRating;
 @property(copy, nonatomic) SKUIGiftTheme *theme; // @synthesize theme=_theme;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long giftItemStyle; // @synthesize giftItemStyle=_itemStyle;
 @property(copy, nonatomic) NSString *categoryName; // @synthesize categoryName=_categoryName;
 @property(copy, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
-- (void).cxx_destruct;
 - (id)_userRatingColor;
 - (id)_titleColor;
 - (id)_subtitleColor;

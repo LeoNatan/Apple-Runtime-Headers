@@ -13,8 +13,8 @@
     PKBarcode *_barcode;
 }
 
-@property(retain, nonatomic) PKBarcode *barcode; // @synthesize barcode=_barcode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKBarcode *barcode; // @synthesize barcode=_barcode;
 - (id)accessoryImageViewForSize:(struct CGSize)arg1;
 - (id)initWithBarcode:(id)arg1;
 

@@ -18,8 +18,8 @@
     id <CSLSThermalTrapDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLSThermalTrapDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSThermalTrapDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didChangeState:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isTrapped) _Bool trapped;
 - (id)initWithDelegate:(id)arg1;

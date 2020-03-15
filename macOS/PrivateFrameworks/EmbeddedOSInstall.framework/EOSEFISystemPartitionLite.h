@@ -19,12 +19,12 @@
 }
 
 + (id)internalEFISystemPartition;
+- (void).cxx_destruct;
 @property struct __DASession *diskArbSession; // @synthesize diskArbSession=_diskArbSession;
 @property(retain) NSObject<OS_dispatch_queue> *diskArbQueue; // @synthesize diskArbQueue=_diskArbQueue;
 @property(retain) NSURL *mountPointURL; // @synthesize mountPointURL=_mountPointURL;
 @property BOOL wasAlreadyMounted; // @synthesize wasAlreadyMounted=_wasAlreadyMounted;
 @property(retain) NSString *bsdName; // @synthesize bsdName=_bsdName;
-- (void).cxx_destruct;
 - (void)_unregisterUnmountDissenter;
 - (void)_registerUnmountDissenter;
 - (id)fdrDataURL;

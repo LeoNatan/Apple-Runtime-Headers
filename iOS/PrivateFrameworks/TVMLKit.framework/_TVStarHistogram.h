@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (id)_histogramViewWithElement:(id)arg1 existingView:(id)arg2;
 + (id)histogramViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(retain, nonatomic) UIColor *barFillColor; // @synthesize barFillColor=_barFillColor;
 @property(retain, nonatomic) UIColor *barEmptyColor; // @synthesize barEmptyColor=_barEmptyColor;
 @property(retain, nonatomic) UIImage *starImage; // @synthesize starImage=_starImage;
 @property(copy, nonatomic) NSArray *starBars; // @synthesize starBars=_starBars;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)canBecomeFocused;
 

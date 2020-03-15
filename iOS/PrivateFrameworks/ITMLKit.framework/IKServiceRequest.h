@@ -20,10 +20,10 @@
     id <IKServiceRequestDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IKServiceRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IKServiceContext *serviceContext; // @synthesize serviceContext=_serviceContext;
 @property(readonly, nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void)_completedWithStatus:(long long)arg1 errorDictionary:(id)arg2;
 - (void)cancel;
 - (void)send;

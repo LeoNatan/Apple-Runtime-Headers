@@ -21,12 +21,12 @@
 + (struct CGSize)defaultSize;
 + (struct CGSize)_defaultContentSize;
 + (double)borderInsetWidth;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *_clippingView; // @synthesize _clippingView=__clippingView;
 @property(readonly, nonatomic) UIView *_selectionDotView; // @synthesize _selectionDotView=__selectionDotView;
 @property(nonatomic) long long dotPlacement; // @synthesize dotPlacement=_dotPlacement;
 @property(nonatomic) double selectionDotCenterTopSpacing; // @synthesize selectionDotCenterTopSpacing=_selectionDotCenterTopSpacing;
 @property(readonly, nonatomic) UIView *itemView; // @synthesize itemView=_itemView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setSelected:(_Bool)arg1;
 - (double)_selectionDotDiameter;

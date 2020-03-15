@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) struct TVCornerRadii borderRadii; // @synthesize borderRadii=_borderRadii;
 @property(readonly, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 @property(readonly, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

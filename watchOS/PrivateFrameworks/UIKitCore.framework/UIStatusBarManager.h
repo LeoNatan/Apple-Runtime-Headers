@@ -23,6 +23,7 @@
 }
 
 + (id)_implicitStatusBarAnimationParametersWithClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType debugMenuHandler; // @synthesize debugMenuHandler=_debugMenuHandler;
 @property(readonly, nonatomic) float statusBarAlpha; // @synthesize statusBarAlpha=_statusBarAlpha;
 @property(readonly, nonatomic, getter=isInStatusBarFadeAnimation) _Bool inStatusBarFadeAnimation; // @synthesize inStatusBarFadeAnimation=_inStatusBarFadeAnimation;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
 @property(readonly, nonatomic, getter=isStatusBarHidden) _Bool statusBarHidden; // @synthesize statusBarHidden=_statusBarHidden;
 @property(readonly, nonatomic) int statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
-- (void).cxx_destruct;
 - (_Bool)statusBarHidden;
 - (void)_handleScrollToTopAtXPosition:(float)arg1;
 - (struct CGPoint)_adjustedLocationForXPosition:(float)arg1;

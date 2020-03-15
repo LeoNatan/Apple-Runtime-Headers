@@ -14,9 +14,9 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain) NSMutableArray *buttonViews; // @synthesize buttonViews=_buttonViews;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

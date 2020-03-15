@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <VideosExtrasCarouselCollectionViewDelegate> _carouselCollectionViewDelegate;
 }
 
-@property(nonatomic) __weak id <VideosExtrasCarouselCollectionViewDelegate> carouselCollectionViewDelegate; // @synthesize carouselCollectionViewDelegate=_carouselCollectionViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <VideosExtrasCarouselCollectionViewDelegate> carouselCollectionViewDelegate; // @synthesize carouselCollectionViewDelegate=_carouselCollectionViewDelegate;
 - (void)didAddSubview:(id)arg1;
 
 @end

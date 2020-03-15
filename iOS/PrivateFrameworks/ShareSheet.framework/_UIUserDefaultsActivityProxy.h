@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double platterTextHeight; // @synthesize platterTextHeight=_platterTextHeight;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(nonatomic) _Bool canHide; // @synthesize canHide=_canHide;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSNumber *labelSlot; // @synthesize labelSlot=_labelSlot;
 @property(retain, nonatomic) NSNumber *imageSlot; // @synthesize imageSlot=_imageSlot;
 @property(retain, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

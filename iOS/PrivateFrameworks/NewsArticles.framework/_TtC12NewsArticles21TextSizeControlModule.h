@@ -6,10 +6,8 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsArticles/NATextSizeControlModule-Protocol.h>
-
 __attribute__((visibility("hidden")))
-@interface _TtC12NewsArticles21TextSizeControlModule : NSObject <NATextSizeControlModule>
+@interface _TtC12NewsArticles21TextSizeControlModule : NSObject
 {
     // Error parsing type: , name: resolver
 }

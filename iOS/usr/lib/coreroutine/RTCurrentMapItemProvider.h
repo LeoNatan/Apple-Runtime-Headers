@@ -24,6 +24,7 @@
 + (void)logPredictedLocationsOfInterest:(id)arg1 prestring:(id)arg2;
 + (void)logMapItems:(id)arg1 prestring:(id)arg2;
 + (id)convertMapItemsToPredictedLocationsOfInterest:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool registeredForNotifications; // @synthesize registeredForNotifications=_registeredForNotifications;
 @property(readonly, nonatomic) NSMutableArray *futureAccessPoints; // @synthesize futureAccessPoints=_futureAccessPoints;
 @property(readonly, nonatomic) NSMutableArray *futureLocations; // @synthesize futureLocations=_futureLocations;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(readonly, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_shutdown;
 - (void)shutdown;
 - (void)onWiFiScanNotification:(id)arg1;

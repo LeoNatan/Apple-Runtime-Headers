@@ -18,12 +18,12 @@
     NSDictionary *_resultHeadlinesByIssue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *resultHeadlinesByIssue; // @synthesize resultHeadlinesByIssue=_resultHeadlinesByIssue;
 @property(retain, nonatomic) NSArray *issueIDs; // @synthesize issueIDs=_issueIDs;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property(copy, nonatomic) FCCachePolicy *cachePolicy; // @synthesize cachePolicy=_cachePolicy;
-- (void).cxx_destruct;
 - (id)_promiseHeldRecordsByType;
 - (id)_promiseConfiguration;
 - (void)operationWillFinishWithError:(id)arg1;

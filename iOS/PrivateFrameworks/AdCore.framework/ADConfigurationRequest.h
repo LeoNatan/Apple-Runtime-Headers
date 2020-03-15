@@ -18,9 +18,9 @@
 
 + (Class)currentConfigurationType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *iAdID; // @synthesize iAdID=_iAdID;
 @property(retain, nonatomic) NSMutableArray *currentConfigurations; // @synthesize currentConfigurations=_currentConfigurations;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

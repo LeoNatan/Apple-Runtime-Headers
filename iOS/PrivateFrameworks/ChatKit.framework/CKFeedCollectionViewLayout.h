@@ -32,6 +32,7 @@
     struct UIEdgeInsets _floatPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets floatPadding; // @synthesize floatPadding=_floatPadding;
 @property(nonatomic) double floatingBottomDecorationHeight; // @synthesize floatingBottomDecorationHeight=_floatingBottomDecorationHeight;
 @property(nonatomic) _Bool shouldFloatOverShortDistances; // @synthesize shouldFloatOverShortDistances=_shouldFloatOverShortDistances;
@@ -49,7 +50,6 @@
 @property(nonatomic) long long flowDirection; // @synthesize flowDirection=_flowDirection;
 @property(nonatomic) unsigned long long compositeLayoutSection; // @synthesize compositeLayoutSection=_compositeLayoutSection;
 @property(nonatomic) id <CKFeedCollectionViewLayoutDatasource> feedDatasource; // @synthesize feedDatasource=_feedDatasource;
-- (void).cxx_destruct;
 - (void)updateCollectionViewWithDeletedSections:(id)arg1 insertedSections:(id)arg2 updatedSections:(id)arg3;
 - (void)_getSizeForHorizontalFlowDirection:(out struct CGSize *)arg1 headerSize:(out struct CGSize *)arg2 footerSize:(out struct CGSize *)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out long long *)arg7 forSection:(long long)arg8 isJoined:(_Bool)arg9;
 - (void)_getSizeForVerticalFlowDirection:(out struct CGSize *)arg1 headerSize:(out struct CGSize *)arg2 footerSize:(out struct CGSize *)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out long long *)arg7 forSection:(long long)arg8 isJoined:(_Bool)arg9;

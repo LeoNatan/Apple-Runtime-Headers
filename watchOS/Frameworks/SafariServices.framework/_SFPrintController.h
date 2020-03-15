@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <SafariServices/SFPrintPageRendererDelegate-Protocol.h>
 #import <SafariServices/UIPrintInteractionControllerDelegate-Protocol.h>
-#import <SafariServices/WBUPrintPageRendererDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, SFPrintQueueItem, UIPrintInfo, UIPrintInteractionController, WBUPrintPageRenderer, WKWebView, _SFReaderController;
+@class NSMutableArray, NSString, SFPrintPageRenderer, SFPrintQueueItem, UIPrintInfo, UIPrintInteractionController, WKWebView, _SFReaderController;
 @protocol _SFDialogPresenting, _SFPrintControllerDelegate;
 
-@interface _SFPrintController : NSObject <UIPrintInteractionControllerDelegate, WBUPrintPageRendererDelegate>
+@interface _SFPrintController : NSObject <UIPrintInteractionControllerDelegate, SFPrintPageRendererDelegate>
 {
     UIPrintInfo *_cachedPrintInfo;
-    WBUPrintPageRenderer *_cachedPrintPageRenderer;
+    SFPrintPageRenderer *_cachedPrintPageRenderer;
     UIPrintInteractionController *_printInteractionController;
     NSString *_urlString;
     NSString *_pageTitle;
@@ -31,11 +31,11 @@
 }
 
 + (_Bool)isDisplayingPrintUI;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SFPrintControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <_SFDialogPresenting> dialogPresenter; // @synthesize dialogPresenter=_dialogPresenter;
 @property(nonatomic) __weak _SFReaderController *readerController; // @synthesize readerController=_readerController;
 @property(nonatomic) __weak WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (id)printInteractionControllerParentViewController:(id)arg1;
 - (id)presentingViewControllerForPrintPageRenderer:(id)arg1;
 - (void)printInteractionControllerDidFinish;
@@ -43,7 +43,8 @@
 - (_Bool)reservePrintInteractionController;
 - (void)updatePrintInfo;
 @property(readonly, nonatomic) UIPrintInfo *printInfo;
-@property(readonly, nonatomic) WBUPrintPageRenderer *printRenderer;
+@property(readonly, nonatomic) NSString *suggestedPDFFileName;
+@property(readonly, nonatomic) SFPrintPageRenderer *printRenderer;
 - (void)clearQueue;
 - (void)resetPrintUISuppression;
 - (void)handleNextPrintRequest;

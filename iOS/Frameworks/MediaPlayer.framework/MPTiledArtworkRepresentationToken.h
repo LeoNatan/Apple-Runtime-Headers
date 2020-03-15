@@ -15,9 +15,9 @@
     NSArray *_tileArtworkVisualIdenticalityIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tileArtworkVisualIdenticalityIdentifiers; // @synthesize tileArtworkVisualIdenticalityIdentifiers=_tileArtworkVisualIdenticalityIdentifiers;
 @property(copy, nonatomic) id <NSCopying> revisionIdentifier; // @synthesize revisionIdentifier=_revisionIdentifier;
-- (void).cxx_destruct;
 
 @end
 

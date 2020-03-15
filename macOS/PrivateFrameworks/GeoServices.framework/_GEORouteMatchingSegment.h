@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     GEOComposedRouteStep *_step;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOComposedRouteStep *step; // @synthesize step=_step;
 @property(nonatomic) CDStruct_c3b9c2ee endCoordinate; // @synthesize endCoordinate=_endCoordinate;
 @property(nonatomic) CDStruct_c3b9c2ee startCoordinate; // @synthesize startCoordinate=_startCoordinate;
 @property(nonatomic) unsigned int startPointIndex; // @synthesize startPointIndex=_startPointIndex;
-- (void).cxx_destruct;
 - (id)description;
 - (double)distanceFromCoordinate:(CDStruct_c3b9c2ee)arg1 outCoordinateOnSegment:(CDStruct_c3b9c2ee *)arg2 outRouteCoordinate:(struct PolylineCoordinate *)arg3;
 

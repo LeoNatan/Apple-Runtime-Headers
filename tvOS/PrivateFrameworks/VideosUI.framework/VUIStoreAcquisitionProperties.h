@@ -22,13 +22,13 @@
 
 + (id)acquisitionPropertiesWithBuyParams:(id)arg1 urlbagKey:(id)arg2;
 + (id)metricsAugumentedBuyParamsWithBuyParams:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresForcedPasswordRestriction; // @synthesize ignoresForcedPasswordRestriction=_ignoresForcedPasswordRestriction;
 @property(copy, nonatomic) NSString *strongToken; // @synthesize strongToken=_strongToken;
 @property(copy, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(copy, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(copy, nonatomic) NSString *urlBagKey; // @synthesize urlBagKey=_urlBagKey;
 @property(copy, nonatomic) NSString *buyParams; // @synthesize buyParams=_buyParams;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

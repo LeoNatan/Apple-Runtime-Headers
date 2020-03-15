@@ -15,9 +15,9 @@
     CDUnknownBlockType _recognizerDidLoadBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType recognizerDidLoadBlock; // @synthesize recognizerDidLoadBlock=_recognizerDidLoadBlock;
 @property(readonly) NSLocale *recognitionLanguage; // @synthesize recognitionLanguage=_recognitionLanguage;
-- (void).cxx_destruct;
 - (void)unloadRecognizer;
 - (void)provideRecognizerToBlock:(CDUnknownBlockType)arg1;
 @property(readonly) CHRecognizer *recognizer; // @synthesize recognizer=_recognizer;

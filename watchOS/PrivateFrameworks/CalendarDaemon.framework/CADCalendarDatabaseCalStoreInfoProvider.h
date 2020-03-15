@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <CADDatabaseProvider> _databaseProvider;
 }
 
-@property(readonly, nonatomic) __weak id <CADDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <CADDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 - (id)storeInfoList;
 - (id)initWithDatabaseProvider:(id)arg1;
 

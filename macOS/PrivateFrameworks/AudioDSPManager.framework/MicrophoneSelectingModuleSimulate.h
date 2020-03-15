@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     id <AVAudioMicrophoneConfiguration> _defaultConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVAudioMicrophoneConfiguration> defaultConfiguration; // @synthesize defaultConfiguration=_defaultConfiguration;
 @property(readonly, nonatomic) id <AVAudioMicrophoneConfiguration> selectedConfiguration; // @synthesize selectedConfiguration=_selectedConfiguration;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) NSArray *availableConfigurations; // @synthesize availableConfigurations=_availableConfigurations;
-- (void).cxx_destruct;
 - (BOOL)setConfiguration:(id)arg1 error:(id *)arg2;
 - (BOOL)enable:(BOOL)arg1 error:(id *)arg2;
 - (void)fetchAvailableAndDefaultConfigurations;

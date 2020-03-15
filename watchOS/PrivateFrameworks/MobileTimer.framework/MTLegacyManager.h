@@ -28,6 +28,7 @@
 + (id)alarmFromOldAlarm:(id)arg1;
 + (id)_bundleIDForUNSchedule;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool purged; // @synthesize purged=_purged;
 @property(nonatomic) _Bool loaded; // @synthesize loaded=_loaded;
 @property(retain, nonatomic) NSArray *scheduledNotifications; // @synthesize scheduledNotifications=_scheduledNotifications;
@@ -37,7 +38,6 @@
 @property(nonatomic) double defaultDuration; // @synthesize defaultDuration=_defaultDuration;
 @property(retain, nonatomic) Alarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) NSArray *alarms; // @synthesize alarms=_alarms;
-- (void).cxx_destruct;
 - (void)_cancelNotifications;
 - (void)cancelNotifications;
 - (void)_purgeAlarmsAndTimers;

@@ -37,12 +37,15 @@
 - (id)expressAppletIdentifiers;
 - (BOOL)expressModesEnabledWithError:(id *)arg1;
 - (BOOL)expressModesEnabled;
+- (long long)getAndResetLPEMCounter:(id *)arg1;
 - (id)transitAppletState:(id)arg1 error:(id *)arg2;
 - (id)felicaAppletState:(id)arg1 error:(id *)arg2;
 - (id)felicaAppletState:(id)arg1;
+- (BOOL)disableAuthorizationForApplet:(id)arg1 andKey:(id)arg2 authorization:(id)arg3 error:(id *)arg4;
 - (BOOL)disableAuthorizationForApplet:(id)arg1 andKeys:(id)arg2 authorization:(id)arg3 error:(id *)arg4;
 - (BOOL)disableAuthorizationForApplet:(id)arg1 authorization:(id)arg2 error:(id *)arg3;
 - (BOOL)disableAuthorizationForApplet:(id)arg1 authorization:(id)arg2;
+- (BOOL)restoreAuthorizarionForKeys:(id)arg1 onApplet:(id)arg2 error:(id *)arg3;
 - (BOOL)restoreAuthorizationForAllAppletsExcept:(id)arg1 error:(id *)arg2;
 - (BOOL)restoreAuthorizationForAllAppletsExcept:(id)arg1;
 - (id)getExpressConfigWithError:(id *)arg1;
@@ -77,6 +80,7 @@
 - (id)signChallenge:(id)arg1 useOSVersion:(BOOL)arg2 signatureInfo:(id *)arg3;
 - (id)signChallenge:(id)arg1 certs:(id *)arg2 error:(id *)arg3;
 - (id)signChallenge:(id)arg1 certs:(id *)arg2;
+- (id)stateInformationWithRedirectInfo:(id)arg1 error:(id *)arg2;
 - (id)stateInformationWithError:(id *)arg1;
 - (id)stateInformation;
 - (id)_appletsById;

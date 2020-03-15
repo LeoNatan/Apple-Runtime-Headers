@@ -13,8 +13,8 @@
     NSArray *_collections;
 }
 
-@property(retain, nonatomic) NSArray *collections; // @synthesize collections=_collections;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *collections; // @synthesize collections=_collections;
 - (id)description;
 - (id)createDataSourceWithSortDescriptors:(id)arg1;
 - (id)initWithCollections:(id)arg1;

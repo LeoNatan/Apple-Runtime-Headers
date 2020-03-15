@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool byCopy; // @synthesize byCopy=_byCopy;
 @property(nonatomic) _Bool shouldBounce; // @synthesize shouldBounce=_shouldBounce;
 @property(nonatomic) unsigned long long lastUsedDatePolicy; // @synthesize lastUsedDatePolicy=_lastUsedDatePolicy;
 @property(retain, nonatomic) NSArray *rootFilenames; // @synthesize rootFilenames=_rootFilenames;
 @property(retain, nonatomic) FPActionOperationLocator *targetFolder; // @synthesize targetFolder=_targetFolder;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool byMoving;
 - (id)description;
 - (id)initWithCoder:(id)arg1;

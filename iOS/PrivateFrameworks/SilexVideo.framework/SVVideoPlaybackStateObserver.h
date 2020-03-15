@@ -22,6 +22,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) id <SVVideoPlaybackPositionObserving> playbackPositionObserver; // @synthesize playbackPositionObserver=_playbackPositionObserver;
 @property(readonly, nonatomic) id <SVPlayerStatusObserving> statusObserver; // @synthesize statusObserver=_statusObserver;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing;
 - (id)initWithStatusObserver:(id)arg1 playbackPositionObserver:(id)arg2 timeControlStatusObserver:(id)arg3;
 

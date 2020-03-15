@@ -35,6 +35,7 @@
 + (id)allUsers;
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *iTunesUsername; // @synthesize iTunesUsername=_iTunesUsername;
 @property(nonatomic) _Bool allowsAccess; // @synthesize allowsAccess=_allowsAccess;
 @property(readonly, nonatomic) _Bool isHomeUserSharingSameiTunesAccount; // @synthesize isHomeUserSharingSameiTunesAccount=_isHomeUserSharingSameiTunesAccount;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSString *homeID; // @synthesize homeID=_homeID;
 @property(readonly, nonatomic) NSString *homeUserID; // @synthesize homeUserID=_homeUserID;
 @property(readonly, nonatomic) NSString *iTunesAltDSID; // @synthesize iTunesAltDSID=_iTunesAltDSID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -29,6 +29,7 @@
     NSArray *_contactsSearchResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contactsSearchResults; // @synthesize contactsSearchResults=_contactsSearchResults;
 @property(retain, nonatomic) NSArray *completionSearchResults; // @synthesize completionSearchResults=_completionSearchResults;
 @property(retain, nonatomic) CNPostalAddress *selectedAddress; // @synthesize selectedAddress=_selectedAddress;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
 @property(retain, nonatomic) NSArray *requiredKeys; // @synthesize requiredKeys=_requiredKeys;
 @property(nonatomic) id <PKAddressSearcherViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)addressEditorViewControllerDidCancel:(id)arg1;
 - (void)addressEditorViewController:(id)arg1 selectedContact:(id)arg2;
 - (void)selectedAddress:(id)arg1 withError:(id)arg2;

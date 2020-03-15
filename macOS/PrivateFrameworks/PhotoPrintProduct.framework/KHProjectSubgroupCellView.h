@@ -22,13 +22,13 @@
 
 + (id)newLabel;
 + (struct CGSize)thumbnailSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *contentConstraints; // @synthesize contentConstraints=_contentConstraints;
 @property(readonly, nonatomic) NSView *labelContainer; // @synthesize labelContainer=_labelContainer;
 @property(readonly, nonatomic) NSTextField *amountLabel; // @synthesize amountLabel=_amountLabel;
 @property(readonly, nonatomic) NSTextField *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) NSImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
-- (void).cxx_destruct;
 - (long long)accessibilityIndex;
 - (void)updateConstraints;
 - (void)setBackgroundStyle:(long long)arg1;

@@ -11,8 +11,8 @@
     CDUnknownBlockType _transformerBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType transformerBlock; // @synthesize transformerBlock=_transformerBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType transformerBlock; // @synthesize transformerBlock=_transformerBlock;
 - (id)transformedValue:(id)arg1;
 - (id)init;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;

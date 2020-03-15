@@ -6,25 +6,33 @@
 
 #import <AVKit/_AVFocusContainerView.h>
 
-@class AVNowPlayingPlaybackControlsViewController, UIView;
+#import <AVKit/AVTouchEventForwardingProtocol-Protocol.h>
+
+@class AVNowPlayingPlaybackControlsViewController, UIEvent, UIView;
 
 __attribute__((visibility("hidden")))
-@interface _AVPlayerViewControllerContainerView : _AVFocusContainerView
+@interface _AVPlayerViewControllerContainerView : _AVFocusContainerView <AVTouchEventForwardingProtocol>
 {
+    UIEvent *_mostRecentEndOrCancelTouchesEvent;
     _Bool _fullScreen;
     UIView *_forwardFocusView;
     AVNowPlayingPlaybackControlsViewController *_nowPlayingPlaybackControlsViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AVNowPlayingPlaybackControlsViewController *nowPlayingPlaybackControlsViewController; // @synthesize nowPlayingPlaybackControlsViewController=_nowPlayingPlaybackControlsViewController;
 @property(nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
 @property(retain, nonatomic) UIView *forwardFocusView; // @synthesize forwardFocusView=_forwardFocusView;
-- (void).cxx_destruct;
 - (id)accessibilityElements;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesCancelled:(id)arg1 withForwardedEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withForwardedEvent:(id)arg2;
+- (void)touchesMoved:(id)arg1 withForwardedEvent:(id)arg2;
+- (void)touchesBegan:(id)arg1 withForwardedEvent:(id)arg2;
+- (void)forwardTouches:(id)arg1 event:(id)arg2 toSelector:(SEL)arg3;
 - (id)preferredFocusEnvironments;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)layoutSubviews;

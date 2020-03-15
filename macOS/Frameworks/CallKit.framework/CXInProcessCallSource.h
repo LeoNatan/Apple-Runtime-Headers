@@ -15,10 +15,10 @@
     CXInProcessProvider *_provider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CXInProcessProvider *provider; // @synthesize provider=_provider;
 - (id)bundleURL;
 - (id)bundleIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isPermittedToUsePrivateAPI;
 - (BOOL)isPermittedToUsePublicAPI;
 - (int)processIdentifier;

@@ -14,9 +14,9 @@
     NSManagedObjectContext *_destinationContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSManagedObjectContext *destinationContext; // @synthesize destinationContext=_destinationContext;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *sourceCoordinator; // @synthesize sourceCoordinator=_sourceCoordinator;
-- (void).cxx_destruct;
 - (void)postNotesPasswordStatusDidChangeNotification;
 - (void)postAccountDidChangeNotification;
 - (void)registerForAccountNotifications;

@@ -15,10 +15,10 @@
     double _confidence;
 }
 
+- (void).cxx_destruct;
 @property double confidence; // @synthesize confidence=_confidence;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (double)duration;
 
 @end

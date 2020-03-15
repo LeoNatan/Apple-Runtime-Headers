@@ -19,10 +19,10 @@
 }
 
 + (float)normalizedPowerLevelForPowerSpectrum:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVCAudioPowerSpectrumMeter *powerSpectrumMeter; // @synthesize powerSpectrumMeter=_powerSpectrumMeter;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak id <TUAudioFrequencyControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)meterServerDidDisconnect:(id)arg1;
 - (void)audioPowerSpectrumMeter:(id)arg1 didUpdateAudioPowerSpectrums:(id)arg2;
 - (void)unregisterParticipantPowerSpectrum:(long long)arg1;

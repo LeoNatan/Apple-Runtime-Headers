@@ -26,6 +26,7 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *inviteeHashedPersonID; // @synthesize inviteeHashedPersonID=_inviteeHashedPersonID;
 @property(readonly, nonatomic) NSNumber *inviteeEmailKey; // @synthesize inviteeEmailKey=_inviteeEmailKey;
 @property(readonly, nonatomic) int invitationStateLocal; // @synthesize invitationStateLocal=_invitationStateLocal;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSString *inviteeLastName; // @synthesize inviteeLastName=_inviteeLastName;
 @property(readonly, nonatomic) NSString *inviteeFirstName; // @synthesize inviteeFirstName=_inviteeFirstName;
 @property(readonly, nonatomic) int invitationState; // @synthesize invitationState=_invitationState;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *invitationStateDescription;
 @property(readonly, nonatomic) NSArray *inviteePhones;
 @property(readonly, nonatomic) NSArray *inviteeEmails;

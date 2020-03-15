@@ -41,6 +41,7 @@
     double _transferRateAtStart;
 }
 
+- (void).cxx_destruct;
 @property double transferRateAtStart; // @synthesize transferRateAtStart=_transferRateAtStart;
 @property BOOL hasDiscreteSizes; // @synthesize hasDiscreteSizes=_hasDiscreteSizes;
 @property(retain) NSObject<OS_dispatch_queue> *transferRateHistoryQueue; // @synthesize transferRateHistoryQueue=_transferRateHistoryQueue;
@@ -69,7 +70,6 @@
 @property(retain) NSURL *sourceSystemPath; // @synthesize sourceSystemPath=_sourceSystemPath;
 @property __weak SMSystem_Daemon *targetSystem; // @synthesize targetSystem=_targetSystem;
 @property __weak SMSystem_Daemon *sourceSystem; // @synthesize sourceSystem=_sourceSystem;
-- (void).cxx_destruct;
 - (void)errorForFileAtPath:(id)arg1;
 - (void)finishedFileAtPath:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

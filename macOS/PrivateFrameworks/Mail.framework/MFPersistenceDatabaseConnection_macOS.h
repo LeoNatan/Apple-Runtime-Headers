@@ -16,9 +16,9 @@
     double _busyStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double busyStartTime; // @synthesize busyStartTime=_busyStartTime;
 @property(nonatomic) BOOL needsUnreadCountUpdate; // @synthesize needsUnreadCountUpdate=_needsUnreadCountUpdate;
-- (void).cxx_destruct;
 - (BOOL)detachProtectedDatabase;
 - (BOOL)attachProtectedDatabaseWithName:(id)arg1;
 - (BOOL)protectedDatabaseAttached;

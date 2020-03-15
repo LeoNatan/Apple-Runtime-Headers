@@ -16,8 +16,8 @@
     NSDate *_lastProcessedDate;
 }
 
-@property(retain, nonatomic) NSDate *lastProcessedDate; // @synthesize lastProcessedDate=_lastProcessedDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *lastProcessedDate; // @synthesize lastProcessedDate=_lastProcessedDate;
 - (id)process:(id)arg1;
 - (id)motionActivityVisitClustersFromVisitCluster:(id)arg1 error:(id *)arg2;
 - (id)motionActivityVisitClustersFromVisitCluster:(id)arg1 automotiveDateIntervals:(id)arg2;

@@ -32,6 +32,7 @@
 }
 
 + (id)standardiForgotURL;
+- (void).cxx_destruct;
 @property BOOL shouldOfferSecurityUpgrade; // @synthesize shouldOfferSecurityUpgrade=_shouldOfferSecurityUpgrade;
 @property BOOL shouldForceInteractiveAuth; // @synthesize shouldForceInteractiveAuth=_shouldForceInteractiveAuth;
 @property(copy) NSURL *iForgotURL; // @synthesize iForgotURL=_iForgotURL;
@@ -48,7 +49,6 @@
 @property(copy) NSString *rawPassword; // @synthesize rawPassword=_rawPassword;
 @property(copy) NSString *password; // @synthesize password=_password;
 @property(copy) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)helpButtonPressed:(id)arg1;
 - (void)iForgotButtonPressed:(id)arg1;
 - (void)showAuthPasswordSheetUsingWindow:(id)arg1 shouldNest:(BOOL)arg2 helpHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;

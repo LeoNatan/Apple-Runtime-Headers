@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CALayer *_ringLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *ringLayer; // @synthesize ringLayer=_ringLayer;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (void)setLayerHighlightImage:(id)arg1;
 - (struct CGRect)_contentsImageFrame;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;

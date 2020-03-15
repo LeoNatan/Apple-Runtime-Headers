@@ -13,8 +13,8 @@
     FlexMLSummary *_summary;
 }
 
-@property(retain, nonatomic) FlexMLSummary *summary; // @synthesize summary=_summary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FlexMLSummary *summary; // @synthesize summary=_summary;
 - (id)_buildOutroFadeoutMixParams;
 - (void)_buildTracks;
 - (void)_calculateDuration:(CDStruct_1b6d18a9)arg1;

@@ -13,7 +13,6 @@
 + (id)wideGoToArtistButton;
 + (id)wideShuffleButton;
 + (id)normalMoreButton;
-+ (id)normalShuffleButton;
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;

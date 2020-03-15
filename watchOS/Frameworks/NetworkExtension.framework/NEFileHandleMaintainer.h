@@ -20,13 +20,13 @@
 }
 
 + (id)sharedMaintainer;
+- (void).cxx_destruct;
 @property(retain) NSString *eventName; // @synthesize eventName=_eventName;
 @property(retain) NSObject<OS_xpc_object> *auxiliaryDataDictionary; // @synthesize auxiliaryDataDictionary=_auxiliaryDataDictionary;
 @property _Bool isOwnerMode; // @synthesize isOwnerMode=_isOwnerMode;
 @property(copy) CDUnknownBlockType receivedHandlesCallback; // @synthesize receivedHandlesCallback=_receivedHandlesCallback;
 @property _Bool changed; // @synthesize changed=_changed;
 @property(retain) NSMutableArray *fileHandles; // @synthesize fileHandles=_fileHandles;
-- (void).cxx_destruct;
 - (id)copyAuxiliaryDataForKey:(id)arg1;
 - (void)setAuxiliaryData:(id)arg1 forKey:(id)arg2;
 - (void)iterateFileHandlesWithBlock:(CDUnknownBlockType)arg1;

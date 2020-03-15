@@ -15,10 +15,10 @@
     CDUnknownBlockType _additionalMatchingBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType additionalMatchingBlock; // @synthesize additionalMatchingBlock=_additionalMatchingBlock;
 @property(readonly, nonatomic) NSSet *negativeNodes; // @synthesize negativeNodes=_negativeNodes;
 @property(readonly, nonatomic) NSSet *nodes; // @synthesize nodes=_nodes;
-- (void).cxx_destruct;
 - (id)debugDescriptionWithMomentNode:(id)arg1;
 - (_Bool)isActive;
 - (id)initWithNodes:(id)arg1 negativeNodes:(id)arg2;

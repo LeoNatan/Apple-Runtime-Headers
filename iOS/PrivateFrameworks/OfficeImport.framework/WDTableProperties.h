@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     WDDocument *mDocument;
 }
 
-@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (void).cxx_destruct;
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isTableFloating;

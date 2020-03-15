@@ -14,9 +14,9 @@
     HUAccessorySettingsItemModule *_accessorySettingsSectionItemModule;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUAccessorySettingsItemModule *accessorySettingsSectionItemModule; // @synthesize accessorySettingsSectionItemModule=_accessorySettingsSectionItemModule;
 @property(retain, nonatomic) HFAccessorySettingGroupItem *groupItem; // @synthesize groupItem=_groupItem;
-- (void).cxx_destruct;
 - (void)_unregisterForExternalUpdates;
 - (void)_registerForExternalUpdates;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;

@@ -38,6 +38,7 @@
 }
 
 + (id)_participantsInArray:(id)arg1 thatAreNotInArray:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKInviteeAlternativeTimeSearcher *availabilitySearcher; // @synthesize availabilitySearcher=_availabilitySearcher;
 @property(retain, nonatomic) EKUIInviteesViewAllInviteesCanAttendSection *allInviteesCanAttendSection; // @synthesize allInviteesCanAttendSection=_allInviteesCanAttendSection;
 @property(retain, nonatomic) EKUIInviteesViewSomeInviteesCanAttendSection *someInviteesCanAttendSection; // @synthesize someInviteesCanAttendSection=_someInviteesCanAttendSection;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSDate *originalDate; // @synthesize originalDate=_originalDate;
 @property(readonly, nonatomic) NSDate *selectedEndDate; // @synthesize selectedEndDate=_selectedEndDate;
 @property(readonly, nonatomic) NSDate *selectedStartDate; // @synthesize selectedStartDate=_selectedStartDate;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)defaultAlertTitleForEditItem:(id)arg1;
 - (void)editItem:(id)arg1 wantsRowsScrolledToVisible:(id)arg2;

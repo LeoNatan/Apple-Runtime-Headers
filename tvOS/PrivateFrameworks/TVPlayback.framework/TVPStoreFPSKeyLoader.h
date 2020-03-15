@@ -33,6 +33,7 @@
 
 + (void)preFetchFPSCertificate;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *keyDataURL; // @synthesize keyDataURL=_keyDataURL;
 @property(copy, nonatomic) NSURL *certificateDataURL; // @synthesize certificateDataURL=_certificateDataURL;
 @property(retain, nonatomic) TVPSecureKeyStandardLoader *fpsCertLoader; // @synthesize fpsCertLoader=_fpsCertLoader;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) TVPPlaybackReportingEventCollection *eventCollection; // @synthesize eventCollection=_eventCollection;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) __weak NSObject<TVPStoreFPSKeyLoaderDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_failPendingKeyRequestsWithError:(id)arg1;
 - (void)_preFetchFPSCertificate;
 - (void)secureKeyLoader:(id)arg1 didReceiveUpdatedRentalExpirationDate:(id)arg2;

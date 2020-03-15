@@ -26,6 +26,7 @@
     UINavigationBar *_transparencyNavBar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isClientTodayWidget; // @synthesize isClientTodayWidget=_isClientTodayWidget;
 @property(nonatomic) _Bool isiPad; // @synthesize isiPad=_isiPad;
 @property(retain, nonatomic) UINavigationBar *transparencyNavBar; // @synthesize transparencyNavBar=_transparencyNavBar;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSString *transparencyRendererPayload; // @synthesize transparencyRendererPayload=_transparencyRendererPayload;
 @property(readonly, nonatomic) NSString *transparencyDetailsUnavailableMessage; // @synthesize transparencyDetailsUnavailableMessage=_transparencyDetailsUnavailableMessage;
 @property(retain, nonatomic) id <NewsTransparencyViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)bundleForTransparencyDetailsViewFramework;
 - (id)normalizeChineseLanguage:(id)arg1;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;

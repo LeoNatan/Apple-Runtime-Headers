@@ -31,13 +31,13 @@
     UITextField *_zipCodeTextField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *zipCodeTextField; // @synthesize zipCodeTextField=_zipCodeTextField;
 @property(retain, nonatomic) UITextField *cityTextField; // @synthesize cityTextField=_cityTextField;
 @property(retain, nonatomic) UITextField *stateTextField; // @synthesize stateTextField=_stateTextField;
 @property(retain, nonatomic) UITextField *streetTwoTextField; // @synthesize streetTwoTextField=_streetTwoTextField;
 @property(retain, nonatomic) UITextField *streetOneTextField; // @synthesize streetOneTextField=_streetOneTextField;
 @property(nonatomic) __weak id <HKSimpleDataEntryCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)textFieldDidChangeValue:(id)arg1;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
 - (void)setEditDisabled:(_Bool)arg1;

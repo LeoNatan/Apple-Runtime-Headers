@@ -14,9 +14,9 @@
     NSString *_fullName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(readonly, copy, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithShortName:(id)arg1 fullName:(id)arg2;
 - (id)init;

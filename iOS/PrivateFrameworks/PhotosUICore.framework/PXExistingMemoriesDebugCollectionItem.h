@@ -15,10 +15,10 @@
     PHMemory *_memory;
 }
 
+- (void).cxx_destruct;
 @property(readonly) PHMemory *memory; // @synthesize memory=_memory;
 @property(readonly) NSString *description; // @synthesize description=_description;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithMemory:(id)arg1;
 
 @end

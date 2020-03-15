@@ -15,9 +15,9 @@
 }
 
 + (id)descriptionForPackageNamed:(id)arg1 inBundle:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *packageURL; // @synthesize packageURL=_packageURL;
 @property(nonatomic) _Bool flipsForRightToLeftLayoutDirection; // @synthesize flipsForRightToLeftLayoutDirection=_flipsForRightToLeftLayoutDirection;
-- (void).cxx_destruct;
 - (id)initWithPackageName:(id)arg1 inBundle:(id)arg2;
 
 @end

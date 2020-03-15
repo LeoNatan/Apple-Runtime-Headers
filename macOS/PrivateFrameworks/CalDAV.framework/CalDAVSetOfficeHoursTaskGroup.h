@@ -17,9 +17,9 @@
     ICSDocument *_calendarAvailability;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICSDocument *calendarAvailability; // @synthesize calendarAvailability=_calendarAvailability;
 @property(retain, nonatomic) NSURL *inboxURL; // @synthesize inboxURL=_inboxURL;
-- (void).cxx_destruct;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)startTaskGroup;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 calendarAvailability:(id)arg3 taskManager:(id)arg4;

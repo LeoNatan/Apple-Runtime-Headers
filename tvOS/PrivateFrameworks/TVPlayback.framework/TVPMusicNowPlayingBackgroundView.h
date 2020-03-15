@@ -6,9 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImage, UIImageView, UIViewPropertyAnimator;
+#import <TVPlayback/TVPMusicNowPlayingBackgroundProvider-Protocol.h>
 
-@interface TVPMusicNowPlayingBackgroundView : UIView
+@class NSString, UIImage, UIImageView, UIViewPropertyAnimator;
+
+@interface TVPMusicNowPlayingBackgroundView : UIView <TVPMusicNowPlayingBackgroundProvider>
 {
     UIImage *_artworkImage;
     UIImage *_resizedImage;
@@ -19,9 +21,9 @@
     double _transitionDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double transitionDuration; // @synthesize transitionDuration=_transitionDuration;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_artworkImage;
-- (void).cxx_destruct;
 - (id)_resizedImageWithCGImage:(struct CGImage *)arg1 targetSize:(struct CGSize)arg2;
 - (void)_setupAnimatedViews;
 - (double)_imageFullSize;
@@ -38,8 +40,16 @@
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
 - (void)dealloc;
+@property(readonly, nonatomic) UIView *view;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithImage:(id)arg1;
+
+// Remaining properties
+@property(readonly, nonatomic, getter=isBlurDisabled) _Bool blurDisabled;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

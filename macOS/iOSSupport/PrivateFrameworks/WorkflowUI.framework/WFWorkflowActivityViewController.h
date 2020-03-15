@@ -13,8 +13,8 @@
     WFFileRepresentation *_workflowFile;
 }
 
-@property(retain, nonatomic) WFFileRepresentation *workflowFile; // @synthesize workflowFile=_workflowFile;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFFileRepresentation *workflowFile; // @synthesize workflowFile=_workflowFile;
 - (id)initWithWorkflow:(id)arg1 applicationActivities:(id)arg2;
 
 @end

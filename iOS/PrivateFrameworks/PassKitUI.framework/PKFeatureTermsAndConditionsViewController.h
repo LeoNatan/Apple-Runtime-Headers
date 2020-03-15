@@ -30,10 +30,10 @@
     long long _context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useModalPresentation; // @synthesize useModalPresentation=_useModalPresentation;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
-- (void).cxx_destruct;
 - (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)previewControllerWillDismiss:(id)arg1;

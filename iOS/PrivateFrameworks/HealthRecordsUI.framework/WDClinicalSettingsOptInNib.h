@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <UITextViewDelegate> _textViewDelegate;
 }
 
-@property(nonatomic) __weak id <UITextViewDelegate> textViewDelegate; // @synthesize textViewDelegate=_textViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UITextViewDelegate> textViewDelegate; // @synthesize textViewDelegate=_textViewDelegate;
 - (id)_footerTextViewString;
 - (id)instantiateWithOwner:(id)arg1 options:(id)arg2;
 

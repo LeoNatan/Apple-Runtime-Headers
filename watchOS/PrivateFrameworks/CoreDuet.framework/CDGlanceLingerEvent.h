@@ -15,10 +15,10 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain) NSString *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

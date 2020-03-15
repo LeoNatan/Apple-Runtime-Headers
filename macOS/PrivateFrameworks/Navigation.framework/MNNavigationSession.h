@@ -51,6 +51,7 @@
     BOOL _isAllowedToSwitchTransportTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isConnectedToCarplay; // @synthesize isConnectedToCarplay=_isConnectedToCarplay;
 @property(nonatomic) BOOL guidancePromptsEnabled; // @synthesize guidancePromptsEnabled=_guidancePromptsEnabled;
 @property(readonly, nonatomic) int navigationType; // @synthesize navigationType=_navigationType;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) GEOComposedWaypoint *destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(retain, nonatomic) id <MNAudioSession> audioSession; // @synthesize audioSession=_audioSession;
-- (void).cxx_destruct;
 - (id)userLocationForUpdateManager:(id)arg1;
 - (id)routeInfoForUpdateManager:(id)arg1;
 - (BOOL)wantsETAUpdates;

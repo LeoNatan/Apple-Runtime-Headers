@@ -13,8 +13,8 @@
     NSString *_bundleID;
 }
 
-@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (_Bool)isAppDormant;
 - (_Bool)_exceedsDormancyIntervalForDate:(id)arg1;
 - (id)description;

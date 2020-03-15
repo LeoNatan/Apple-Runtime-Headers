@@ -18,17 +18,17 @@
     _MXExtension *_extensionProxy;
     unsigned long long _state;
     id <_MXExtensionURLHandling> _URLHandlingDelegate;
-    struct UIViewController *_remoteViewController;
+    UIViewController *_remoteViewController;
 }
 
 + (id)extensionCompletionQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id <_MXExtensionURLHandling> URLHandlingDelegate; // @synthesize URLHandlingDelegate=_URLHandlingDelegate;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) _MXExtension *extensionProxy; // @synthesize extensionProxy=_extensionProxy;
 @property(retain, nonatomic) NSExtension *realExtension; // @synthesize realExtension=_realExtension;
 @property(retain, nonatomic) NSUUID *connectionIdentifier; // @synthesize connectionIdentifier=_connectionIdentifier;
-- (void).cxx_destruct;
 - (int)processIdentifier;
 - (id)description;
 - (id)vendorContextWithErrorHandler:(CDUnknownBlockType)arg1;

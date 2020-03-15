@@ -18,9 +18,9 @@
 
 + (id)_buildWithBinaryValue:(id)arg1 error:(id *)arg2;
 + (id)uuid;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *averageSpeed; // @synthesize averageSpeed=_averageSpeed;
 @property(retain, nonatomic) NSNumber *instantaneousSpeed; // @synthesize instantaneousSpeed=_instantaneousSpeed;
-- (void).cxx_destruct;
 - (id)description;
 - (id)generateDatums:(id)arg1;
 - (id)getBinaryValueWithError:(id *)arg1;

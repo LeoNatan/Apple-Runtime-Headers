@@ -13,8 +13,8 @@
     PGGraphNode *_placeNode;
 }
 
-@property(retain, nonatomic) PGGraphNode *placeNode; // @synthesize placeNode=_placeNode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PGGraphNode *placeNode; // @synthesize placeNode=_placeNode;
 - (id)_placeTitle;
 - (void)_generateTitleAndSubtitleWithResult:(CDUnknownBlockType)arg1;
 - (id)initWithMomentNodes:(id)arg1 placeNode:(id)arg2;

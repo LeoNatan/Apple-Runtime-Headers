@@ -14,9 +14,9 @@
     IMUnitTestLogger *_logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IMUnitTestLogger *logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) IMUnitTestBundleLoader *bundleLoader; // @synthesize bundleLoader=_bundleLoader;
-- (void).cxx_destruct;
 - (id)frameworkSearchPaths;
 - (_Bool)readXCTestFrameworkDependencies:(id *)arg1 error:(id *)arg2;
 - (_Bool)loadFrameworkNamesFromTextFile:(id)arg1 outNames:(id *)arg2 error:(id *)arg3;

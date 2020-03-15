@@ -16,8 +16,8 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-@property(retain, nonatomic) NTSStopwatchModel *stopwatchModel; // @synthesize stopwatchModel=_stopwatchModel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTSStopwatchModel *stopwatchModel; // @synthesize stopwatchModel=_stopwatchModel;
 - (void)_handleStopwatchChange:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;

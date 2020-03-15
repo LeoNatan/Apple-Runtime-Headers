@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     VSFontCenter *_fontCenter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(retain, nonatomic) UISearchContainerViewController *searchContainerController; // @synthesize searchContainerController=_searchContainerController;
 @property(retain, nonatomic) UIView *container; // @synthesize container=_container;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *identityProviders; // @synthesize identityProviders=_identityProviders;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
 @property(nonatomic) __weak id <VSIdentityProviderPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)identityProviderSearchResultsViewControllerDidPickAdditionalIdentityProviders:(id)arg1;

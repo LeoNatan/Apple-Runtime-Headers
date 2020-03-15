@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool copyTraceToCrashReporter; // @synthesize copyTraceToCrashReporter=_copyTraceToCrashReporter;
 @property(copy, nonatomic) NSString *traceRecordingNameOverride; // @synthesize traceRecordingNameOverride=_traceRecordingNameOverride;
 @property(nonatomic) _Bool shouldSimulateLocations; // @synthesize shouldSimulateLocations=_shouldSimulateLocations;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) GEORouteAttributes *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
 @property(nonatomic) _Bool fullGuidance; // @synthesize fullGuidance=_fullGuidance;
 @property(nonatomic) int navigationType; // @synthesize navigationType=_navigationType;
-- (void).cxx_destruct;
 - (id)_findRouteWithUUID:(id)arg1;
 @property(readonly, nonatomic) NSString *fullDescription;
 - (id)description;

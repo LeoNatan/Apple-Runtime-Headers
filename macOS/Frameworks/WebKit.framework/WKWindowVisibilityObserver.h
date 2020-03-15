@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (void)_activeSpaceDidChange:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_screenDidChangeColorSpace:(id)arg1;
 - (void)_windowDidChangeOcclusionState:(id)arg1;
 - (void)_windowDidChangeLayerHosting:(id)arg1;
 - (void)_windowDidChangeScreen:(id)arg1;

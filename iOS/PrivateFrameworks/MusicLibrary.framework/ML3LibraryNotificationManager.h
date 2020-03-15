@@ -20,8 +20,8 @@
     ML3MusicLibrary *_library;
 }
 
-@property(readonly, nonatomic) __weak ML3MusicLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak ML3MusicLibrary *library; // @synthesize library=_library;
 - (void)_postEnqueuedDistributedNotifications;
 - (void)_postEnqueuedLocalNotifications;
 - (id)_observerForDistributedName:(id)arg1;

@@ -39,10 +39,10 @@
     unsigned long long _outputTranslationMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long outputTranslationMode; // @synthesize outputTranslationMode=_outputTranslationMode;
 @property(nonatomic) unsigned long long inputTranslationMode; // @synthesize inputTranslationMode=_inputTranslationMode;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
-- (void).cxx_destruct;
 - (struct _NSRange)scriptRangeOfBrailleCellRepresentingCharacterAtScriptIndex:(unsigned long long)arg1;
 - (struct _NSRange)scriptRangeForBrailleRange:(struct _NSRange)arg1;
 - (struct _NSRange)brailleRangeForScriptRange:(struct _NSRange)arg1;

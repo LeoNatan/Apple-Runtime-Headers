@@ -22,11 +22,11 @@
 + (id)logCategory;
 + (_Bool)supportsSecureCoding;
 + (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dumpState; // @synthesize dumpState=_dumpState;
 @property(readonly, nonatomic) NSDictionary *actionInformation; // @synthesize actionInformation=_actionInformation;
 @property(copy, nonatomic) id targetValue; // @synthesize targetValue=_targetValue;
 @property(readonly, nonatomic) __weak HMDCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-- (void).cxx_destruct;
 - (id)modelObjectWithChangeType:(unsigned int)arg1;
 - (void)_processWriteActionModelUpdated:(id)arg1 message:(id)arg2;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;

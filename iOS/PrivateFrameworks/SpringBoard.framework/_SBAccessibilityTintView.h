@@ -21,11 +21,11 @@
     SBWallpaperController *_wallpaperController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak SBWallpaperController *wallpaperController; // @synthesize wallpaperController=_wallpaperController;
 @property(nonatomic) __weak id <_SBFakeBlurObserver> observer; // @synthesize observer=_observer;
 @property(nonatomic) unsigned long long transformOptions; // @synthesize transformOptions=_transformOptions;
 @property(nonatomic, getter=isFullscreen) _Bool fullscreen; // @synthesize fullscreen=_fullscreen;
-- (void).cxx_destruct;
 - (void)_updateBackgroundColor;
 - (void)wallpaperLegibilitySettingsDidChange:(id)arg1 forVariant:(long long)arg2;
 - (void)wallpaperDidChangeForVariant:(long long)arg1;

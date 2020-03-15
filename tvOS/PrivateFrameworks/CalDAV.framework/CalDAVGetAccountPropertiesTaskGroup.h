@@ -22,6 +22,7 @@
     CalDAVServerVersion *_serverVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool supportsCalendarUserSearch; // @synthesize supportsCalendarUserSearch=_supportsCalendarUserSearch;
 @property(readonly, nonatomic) CalDAVServerVersion *serverVersion; // @synthesize serverVersion=_serverVersion;
 @property(readonly, nonatomic) NSURL *updatedPrincipalURL; // @synthesize updatedPrincipalURL=_updatedPrincipalURL;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSSet *preferredUserAddresses; // @synthesize preferredUserAddresses=_preferredUserAddresses;
 @property(readonly, nonatomic) NSSet *calendarHomes; // @synthesize calendarHomes=_calendarHomes;
 @property(retain, nonatomic) NSURL *delegatePrincipalURL; // @synthesize delegatePrincipalURL=_delegatePrincipalURL;
-- (void).cxx_destruct;
 - (void)processPrincipalHeaders:(id)arg1;
 - (_Bool)forceOptionsRequest;
 - (id)userAddresses;

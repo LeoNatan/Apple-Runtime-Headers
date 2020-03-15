@@ -9,6 +9,9 @@
 @interface PXGridKitSettings : PXSettings
 {
     BOOL _pauseWhenIdle;
+    BOOL _enableXcodeCustomDebugHierarchy;
+    BOOL _sortSpritesInXcodeCustomDebugHierarchy;
+    BOOL _includeLayoutsLocalSpritesInDebugHierarchy;
     BOOL _enableMetalRenderer;
     BOOL _enableViewRenderer;
     BOOL _enableAccessibilityRenderer;
@@ -33,6 +36,8 @@
     BOOL _wantsRectDiagnosticsDebugHUD;
     BOOL _enableAnchoringRectDiagnostics;
     BOOL _enableAssetsRectDiagnostics;
+    BOOL _enableFocusRectDiagnostics;
+    BOOL _enableCurrentFocusRectDiagnostics;
     BOOL _enableRectDiagnosticsForUndefinedSprites;
     BOOL _enableRectDiagnosticsForNamedImageSprites;
     BOOL _enableRectDiagnosticsForDisplayAssetSprites;
@@ -77,6 +82,8 @@
 @property(nonatomic) BOOL enableRectDiagnosticsForDisplayAssetSprites; // @synthesize enableRectDiagnosticsForDisplayAssetSprites=_enableRectDiagnosticsForDisplayAssetSprites;
 @property(nonatomic) BOOL enableRectDiagnosticsForNamedImageSprites; // @synthesize enableRectDiagnosticsForNamedImageSprites=_enableRectDiagnosticsForNamedImageSprites;
 @property(nonatomic) BOOL enableRectDiagnosticsForUndefinedSprites; // @synthesize enableRectDiagnosticsForUndefinedSprites=_enableRectDiagnosticsForUndefinedSprites;
+@property(nonatomic) BOOL enableCurrentFocusRectDiagnostics; // @synthesize enableCurrentFocusRectDiagnostics=_enableCurrentFocusRectDiagnostics;
+@property(nonatomic) BOOL enableFocusRectDiagnostics; // @synthesize enableFocusRectDiagnostics=_enableFocusRectDiagnostics;
 @property(nonatomic) BOOL enableAssetsRectDiagnostics; // @synthesize enableAssetsRectDiagnostics=_enableAssetsRectDiagnostics;
 @property(nonatomic) BOOL enableAnchoringRectDiagnostics; // @synthesize enableAnchoringRectDiagnostics=_enableAnchoringRectDiagnostics;
 @property(nonatomic) BOOL wantsRectDiagnosticsDebugHUD; // @synthesize wantsRectDiagnosticsDebugHUD=_wantsRectDiagnosticsDebugHUD;
@@ -113,6 +120,9 @@
 @property(nonatomic) BOOL enableAccessibilityRenderer; // @synthesize enableAccessibilityRenderer=_enableAccessibilityRenderer;
 @property(nonatomic) BOOL enableViewRenderer; // @synthesize enableViewRenderer=_enableViewRenderer;
 @property(nonatomic) BOOL enableMetalRenderer; // @synthesize enableMetalRenderer=_enableMetalRenderer;
+@property(nonatomic) BOOL includeLayoutsLocalSpritesInDebugHierarchy; // @synthesize includeLayoutsLocalSpritesInDebugHierarchy=_includeLayoutsLocalSpritesInDebugHierarchy;
+@property(nonatomic) BOOL sortSpritesInXcodeCustomDebugHierarchy; // @synthesize sortSpritesInXcodeCustomDebugHierarchy=_sortSpritesInXcodeCustomDebugHierarchy;
+@property(nonatomic) BOOL enableXcodeCustomDebugHierarchy; // @synthesize enableXcodeCustomDebugHierarchy=_enableXcodeCustomDebugHierarchy;
 @property(nonatomic) BOOL pauseWhenIdle; // @synthesize pauseWhenIdle=_pauseWhenIdle;
 - (void)setDefaultValues;
 - (BOOL)anySpritesRectDiagnosticsEnabled;

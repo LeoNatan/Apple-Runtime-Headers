@@ -14,9 +14,10 @@
     UIPickerView *_picker;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIPickerView *picker; // @synthesize picker=_picker;
 @property(nonatomic) unsigned long long component; // @synthesize component=_component;
-- (void).cxx_destruct;
+- (_Bool)canBecomeFocused;
 - (id)accessibilityUserInputLabels;
 - (id)_axSpeechInputLabelForTimeIntervalCalendarUnit:(unsigned long long)arg1;
 - (id)_axSpeechInputLabelForDateCalendarUnit:(unsigned long long)arg1;
@@ -31,6 +32,7 @@
 - (struct CGRect)accessibilityFrame;
 - (struct _NSRange)accessibilityRowRange;
 - (id)accessibilityValue;
+- (double)_accessibilityNumberValue;
 - (unsigned long long)_accessibilityDatePickerComponentType;
 - (id)_accessibilityDateTimePickerValues;
 - (id)_accessibilityViewForComponent;

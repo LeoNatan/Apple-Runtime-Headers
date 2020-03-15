@@ -20,11 +20,11 @@
     long long _storyTypeTimeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long storyTypeTimeout; // @synthesize storyTypeTimeout=_storyTypeTimeout;
 @property(readonly, nonatomic) NSDictionary *styleConfigurations; // @synthesize styleConfigurations=_styleConfigurations;
 @property(readonly, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(readonly, nonatomic, getter=isPromotingEnabled) _Bool promotingEnabled; // @synthesize promotingEnabled=_promotingEnabled;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

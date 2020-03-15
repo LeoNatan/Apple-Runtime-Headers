@@ -40,6 +40,7 @@
 
 + (id)bootDateForTurboLibraryRegistration;
 + (void)unregisterBackgroundActivities;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_xpc_object> *backgroundAnalysisActivity; // @synthesize backgroundAnalysisActivity=_backgroundAnalysisActivity;
 @property(retain) NSObject<OS_dispatch_source> *backgroundAnalysisMonitorTimer; // @synthesize backgroundAnalysisMonitorTimer=_backgroundAnalysisMonitorTimer;
 @property long long countOfCoordinatorsRunningBackgroundAnalysis; // @synthesize countOfCoordinatorsRunningBackgroundAnalysis=_countOfCoordinatorsRunningBackgroundAnalysis;
@@ -49,7 +50,6 @@
 @property(retain) NSMutableDictionary *managersByLibraryPath; // @synthesize managersByLibraryPath=_managersByLibraryPath;
 @property(retain) NSMutableSet *clients; // @synthesize clients=_clients;
 @property(readonly) PHAActivityLog *activityLog; // @synthesize activityLog=_activityLog;
-- (void).cxx_destruct;
 - (void)_registerTurboActivity;
 - (void)_runTurboProcessing:(id)arg1;
 - (void)_cleanupAfterBackgroundActivityFinishedForDefer:(BOOL)arg1 skipActivityStateCheck:(BOOL)arg2;

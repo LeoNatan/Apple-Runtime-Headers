@@ -29,6 +29,7 @@
 + (id)internalAllowedTypes;
 + (id)allowedTypes;
 + (void)start;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HMDBackingStoreObjectProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HMDObjectLookup *lookup; // @synthesize lookup=_lookup;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) HMDBackingStoreLocal *local; // @synthesize local=_local;
 @property(readonly, nonatomic) CKRecordID *root; // @synthesize root=_root;
-- (void).cxx_destruct;
 - (id)__fetchWithGroup:(id)arg1 uuids:(id)arg2 error:(id *)arg3;
 - (void)submitBlock:(CDUnknownBlockType)arg1;
 - (void)saveToPersistentStoreWithReason:(id)arg1 incrementGeneration:(_Bool)arg2;

@@ -50,9 +50,9 @@
 + (BOOL)requiresConstraintBasedLayout;
 + (void)setEnableAPIMisuseAssertions:(BOOL)arg1;
 + (BOOL)enableAPIMisuseAssertions;
-@property(nonatomic) struct NSEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct NSEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 - (id)description;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;

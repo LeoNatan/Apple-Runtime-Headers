@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     BOOL _isSpeaking;
 }
 
-@property BOOL isSpeaking; // @synthesize isSpeaking=_isSpeaking;
 - (void).cxx_destruct;
+@property BOOL isSpeaking; // @synthesize isSpeaking=_isSpeaking;
 - (void)_speakStringLiterally:(id)arg1;
 - (id)_stringToSpeakForString:(id)arg1;
 - (id)_speechSubstitutions;

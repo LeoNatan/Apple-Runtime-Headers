@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isLeaf; // @synthesize isLeaf=_isLeaf;
 @property(nonatomic) struct _KDBoundingBox boundingBox; // @synthesize boundingBox=_boundingBox;
 @property(retain, nonatomic) _KDNode *rightChild; // @synthesize rightChild=_rightChild;
@@ -32,8 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float splitValue; // @synthesize splitValue=_splitValue;
 @property(nonatomic) unsigned long long splitIndex; // @synthesize splitIndex=_splitIndex;
 @property(nonatomic) unsigned long long splitDimension; // @synthesize splitDimension=_splitDimension;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)print;
 - (void)assignSplitsForData:(const float *)arg1 indices:(unsigned long long *)arg2 numDimensions:(unsigned long long)arg3;
 - (void)partitionDataPoints:(const float *)arg1 indices:(unsigned long long *)arg2 numDimensions:(unsigned long long)arg3;

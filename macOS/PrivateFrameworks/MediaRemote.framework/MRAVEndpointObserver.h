@@ -18,9 +18,9 @@
     MRAVEndpoint *_endpoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MRAVEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(readonly, nonatomic) NSString *outputDeviceUID; // @synthesize outputDeviceUID=_outputDeviceUID;
-- (void).cxx_destruct;
 - (id)_endpointContainingOutputDevice:(id)arg1;
 - (void)_reevaluateEndpoint;
 - (void)_handleOutputContextDidChangeNotification;

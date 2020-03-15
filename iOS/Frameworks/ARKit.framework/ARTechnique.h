@@ -6,30 +6,39 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber;
-@protocol ARTechniqueDelegate;
+#import <ARKit/ARLoggingFullDescription-Protocol.h>
 
-@interface ARTechnique : NSObject
+@class NSArray, NSNumber, NSString;
+@protocol ARTechniqueDelegate, ARTechniqueForwardingStrategy;
+
+@interface ARTechnique : NSObject <ARLoggingFullDescription>
 {
     id <ARTechniqueDelegate> _delegate;
     unsigned long long _powerUsage;
     double _bonusLatency;
     NSNumber *_traceKey;
+    NSArray *_splitTechniques;
+    id <ARTechniqueForwardingStrategy> _splitTechniqueFowardingStrategy;
 }
 
++ (id)techniqueMatchingPredicate:(id)arg1 inArray:(id)arg2;
 + (id)techniqueOfClass:(Class)arg1 inArray:(id)arg2;
+- (void).cxx_destruct;
+@property(retain) id <ARTechniqueForwardingStrategy> splitTechniqueFowardingStrategy; // @synthesize splitTechniqueFowardingStrategy=_splitTechniqueFowardingStrategy;
+@property(retain) NSArray *splitTechniques; // @synthesize splitTechniques=_splitTechniques;
 @property(readonly) NSNumber *traceKey; // @synthesize traceKey=_traceKey;
 @property double bonusLatency; // @synthesize bonusLatency=_bonusLatency;
 @property unsigned long long powerUsage; // @synthesize powerUsage=_powerUsage;
 @property __weak id <ARTechniqueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)replaceTechniques:(id)arg1;
 - (id)initWithParallelTechniques:(id)arg1;
 - (id)initWithTechniques:(id)arg1;
+- (id)_fullDescription;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
-- (id)description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *description;
 - (id)techniques;
+- (id)techniqueMatchingPredicate:(id)arg1;
 - (id)techniqueOfClass:(Class)arg1;
 - (void)mergeResultData:(id)arg1 intoData:(id)arg2 context:(id)arg3;
 - (id)processResultData:(id)arg1 timestamp:(double)arg2 context:(id)arg3;
@@ -39,13 +48,18 @@
 - (void)siblingTechniquesDidChange:(id)arg1;
 - (void)reconfigureFrom:(id)arg1;
 - (_Bool)reconfigurableFrom:(id)arg1;
-- (void)prepare;
+- (void)prepare:(_Bool)arg1;
 - (id)resultDataClasses;
 - (_Bool)deterministicMode;
 - (long long)captureBehavior;
 - (double)requiredTimeInterval;
 - (unsigned long long)requiredSensorDataTypes;
 - (id)init;
+- (id)nodeName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

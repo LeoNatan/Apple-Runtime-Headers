@@ -14,9 +14,9 @@
     CDUnknownBlockType _resultsBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultsBlock; // @synthesize resultsBlock=_resultsBlock;
 @property(readonly, nonatomic) HMUser *user; // @synthesize user=_user;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithUser:(id)arg1 resultsBlock:(CDUnknownBlockType)arg2;
 

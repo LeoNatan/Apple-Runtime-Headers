@@ -14,9 +14,9 @@
     NSSet *_moments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *moments; // @synthesize moments=_moments;
 @property(readonly, nonatomic) NSSet *momentLocalIdentifiers; // @synthesize momentLocalIdentifiers=_momentLocalIdentifiers;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)changeCount;
 - (unsigned long long)type;

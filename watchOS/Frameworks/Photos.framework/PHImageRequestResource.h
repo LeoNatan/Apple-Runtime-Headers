@@ -24,6 +24,7 @@
 }
 
 + (id)imageRequestResourceForDataStoreKey:(id)arg1 store:(id)arg2 assetObjectID:(id)arg3 context:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long unorientedHeight; // @synthesize unorientedHeight=_unorientedHeight;
 @property(readonly, nonatomic) long long unorientedWidth; // @synthesize unorientedWidth=_unorientedWidth;
 @property(readonly, nonatomic) unsigned int orientation; // @synthesize orientation=_orientation;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) unsigned int recipeID; // @synthesize recipeID=_recipeID;
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 @property(readonly, nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
 - (id)initWithResource:(id)arg1;

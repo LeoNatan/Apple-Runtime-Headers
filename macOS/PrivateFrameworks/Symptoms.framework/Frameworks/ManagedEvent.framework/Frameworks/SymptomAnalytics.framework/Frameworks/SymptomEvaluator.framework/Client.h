@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_subscribedNOIs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *subscribedNOIs; // @synthesize subscribedNOIs=_subscribedNOIs;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_decrementMessageCounter:(long long)arg1;
 - (void)_incrementMessageCounter:(long long)arg1;
 - (void)_sendBarrierIfNecessaryWithBlock:(CDUnknownBlockType)arg1;

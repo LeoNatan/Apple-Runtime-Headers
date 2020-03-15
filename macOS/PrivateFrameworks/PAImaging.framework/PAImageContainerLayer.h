@@ -17,9 +17,9 @@
     struct CGSize _minSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PAImageLayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(nonatomic) struct CGSize minLayerSize; // @synthesize minLayerSize=_minSize;
-- (void).cxx_destruct;
 - (void)_notifyEndAnimate;
 - (void)_notifyBeginAnimate;
 - (void)_abortAnim;

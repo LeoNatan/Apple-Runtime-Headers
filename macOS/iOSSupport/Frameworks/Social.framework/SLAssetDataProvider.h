@@ -20,8 +20,8 @@
     CDUnknownBlockType _fetchCompletion;
 }
 
-@property(copy) CDUnknownBlockType fetchCompletion; // @synthesize fetchCompletion=_fetchCompletion;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType fetchCompletion; // @synthesize fetchCompletion=_fetchCompletion;
 - (void)mappedDataFromVideoAtFileURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exportDataFromVideoAssetURL:(id)arg1 toFileURL:(id)arg2 exportPreset:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_generateTemporaryFilename;

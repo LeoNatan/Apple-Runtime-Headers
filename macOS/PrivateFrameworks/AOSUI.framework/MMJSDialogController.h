@@ -15,9 +15,9 @@
     struct OpaqueJSContext *_jsContext;
 }
 
+- (void).cxx_destruct;
 @property struct OpaqueJSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(retain) MMJSDialog *mmJSDialog; // @synthesize mmJSDialog=_mmJSDialog;
-- (void).cxx_destruct;
 @property(readonly, retain) NSWindow *parentWindow; // @dynamic parentWindow;
 - (id)initWithParentView:(id)arg1;
 

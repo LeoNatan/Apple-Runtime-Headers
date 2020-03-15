@@ -25,9 +25,9 @@
 + (id)buttonWithMediumWeightFont;
 + (id)buttonWithLightWeightFont;
 + (id)button;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets hitTestEdgeInsets; // @synthesize hitTestEdgeInsets=_hitTestEdgeInsets;
 @property(nonatomic) _Bool usePlatterStyle; // @synthesize usePlatterStyle=_usePlatterStyle;
-- (void).cxx_destruct;
 - (void)_updateTintColor;
 - (void)setHighlightColorForTemplate:(id)arg1;
 - (void)setDefaultColorForTemplate:(id)arg1;

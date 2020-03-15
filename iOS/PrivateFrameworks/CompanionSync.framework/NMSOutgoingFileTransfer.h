@@ -25,6 +25,7 @@
     NMSMessageCenter *_messageCenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NMSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(retain, nonatomic) NSDictionary *extraIDSOptions; // @synthesize extraIDSOptions=_extraIDSOptions;
 @property(retain, nonatomic) NSDictionary *persistentUserInfo; // @synthesize persistentUserInfo=_persistentUserInfo;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(copy, nonatomic) NSSet *targetDeviceIDs; // @synthesize targetDeviceIDs;
-- (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
 @property(readonly, copy) NSString *description;
 

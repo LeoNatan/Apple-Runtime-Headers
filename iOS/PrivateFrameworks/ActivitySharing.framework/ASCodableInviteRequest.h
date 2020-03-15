@@ -23,13 +23,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASCodableActivityDataPreview *activityDataPreview; // @synthesize activityDataPreview=_activityDataPreview;
 @property(nonatomic) unsigned int inviterVersion; // @synthesize inviterVersion=_inviterVersion;
 @property(retain, nonatomic) NSString *inviterBuildNumber; // @synthesize inviterBuildNumber=_inviterBuildNumber;
 @property(retain, nonatomic) NSString *inviterCallerID; // @synthesize inviterCallerID=_inviterCallerID;
 @property(retain, nonatomic) NSString *inviterCloudKitAddress; // @synthesize inviterCloudKitAddress=_inviterCloudKitAddress;
 @property(retain, nonatomic) NSString *handshakeToken; // @synthesize handshakeToken=_handshakeToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *lostInheritances; // @synthesize lostInheritances=_lostInheritances;
 @property(readonly, copy, nonatomic) NSSet *gainedInheritances; // @synthesize gainedInheritances=_gainedInheritances;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

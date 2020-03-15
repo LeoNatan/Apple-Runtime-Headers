@@ -13,6 +13,7 @@
     // Error parsing type: , name: needsRootViewUpdate
     // Error parsing type: , name: needsEnvironmentUpdate
     // Error parsing type: , name: isRendering
+    // Error parsing type: , name: externalUpdateCount
     // Error parsing type: , name: currentTimestamp
 }
 

@@ -21,6 +21,7 @@
     NSData *_publicKeyHash;
 }
 
+- (void).cxx_destruct;
 @property(getter=isSuitableForLogin) _Bool suitableForLogin; // @synthesize suitableForLogin=_suitableForLogin;
 @property _Bool canPerformKeyExchange; // @synthesize canPerformKeyExchange=_canPerformKeyExchange;
 @property _Bool canSign; // @synthesize canSign=_canSign;
@@ -30,7 +31,6 @@
 @property int keySizeInBits; // @synthesize keySizeInBits=_keySizeInBits;
 @property(copy) NSData *applicationTag; // @synthesize applicationTag=_applicationTag;
 @property(copy) NSString *keyType; // @synthesize keyType=_keyType;
-- (void).cxx_destruct;
 - (_Bool)satisfiesKeyUsage:(unsigned int)arg1;
 @property(readonly) unsigned int keyUsage;
 - (void)createConstraints:(unsigned char)arg1;

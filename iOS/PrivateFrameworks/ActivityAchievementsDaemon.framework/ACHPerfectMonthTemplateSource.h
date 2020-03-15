@@ -16,8 +16,8 @@
     NSCalendar *_utcGregorianCalendar;
 }
 
-@property(retain, nonatomic) NSCalendar *utcGregorianCalendar; // @synthesize utcGregorianCalendar=_utcGregorianCalendar;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCalendar *utcGregorianCalendar; // @synthesize utcGregorianCalendar=_utcGregorianCalendar;
 - (id)stickerBundleURLForTemplate:(id)arg1;
 - (id)_monthStringFromTemplateName:(id)arg1;
 - (id)_modelsDirectoryBasePathForTemplate:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
-@property(retain, nonatomic) NSArray *array; // @synthesize array=_array;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *array; // @synthesize array=_array;
 - (void)removeAllObjects;
 - (void)remove:(unsigned long long)arg1;
 - (void)append:(id)arg1;

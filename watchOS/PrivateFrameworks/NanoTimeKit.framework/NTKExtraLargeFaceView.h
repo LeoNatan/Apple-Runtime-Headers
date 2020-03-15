@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NTKFaceView.h>
 
-@class NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKExtraLargeTimeView, NTKFaceColorScheme, UILabel, UITapGestureRecognizer, UIView;
+@class NSNumber, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKExtraLargeTimeView, NTKFaceColorScheme, UILabel, UITapGestureRecognizer, UIView;
 
 @interface NTKExtraLargeFaceView : NTKFaceView
 {
@@ -28,7 +28,7 @@
     _Bool _complicationIsVisible;
     _Bool _snapshotContentViewsLoaded;
     UIView *_complicationEditingTimeOverlayView;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
 }
 
 - (void).cxx_destruct;

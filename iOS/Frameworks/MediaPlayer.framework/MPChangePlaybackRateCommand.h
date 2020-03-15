@@ -14,8 +14,8 @@
     NSArray *_supportedPlaybackRates;
 }
 
-@property(copy, nonatomic) NSArray *supportedPlaybackRates; // @synthesize supportedPlaybackRates=_supportedPlaybackRates;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *supportedPlaybackRates; // @synthesize supportedPlaybackRates=_supportedPlaybackRates;
 - (id)newCommandEventWithPlaybackRate:(float)arg1;
 - (id)_mediaRemoteCommandInfoOptions;
 - (void)setPreferredRate:(float)arg1;

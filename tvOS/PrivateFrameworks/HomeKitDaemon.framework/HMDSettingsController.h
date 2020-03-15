@@ -25,13 +25,13 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *settingsMap; // @synthesize settingsMap=_settingsMap;
 @property(retain) NSMapTable *groupsMap; // @synthesize groupsMap=_groupsMap;
 @property(retain) id <HMDSettingGroupOwnerProtocol> rootGroup; // @synthesize rootGroup=_rootGroup;
 @property(readonly) __weak id <HMDSettingsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) id <HMDSettingsControllerDependency> dependency; // @synthesize dependency=_dependency;
 @property(readonly) id <HMDSettingsMessageHandlerProtocol> messageHandler; // @synthesize messageHandler=_messageHandler;
-- (void).cxx_destruct;
 - (void)transactionSettingConstraintModelRemoved:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionSettingConstraintModelUpdated:(id)arg1 previousModel:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)transactionSettingModelRemoved:(id)arg1 completion:(CDUnknownBlockType)arg2;

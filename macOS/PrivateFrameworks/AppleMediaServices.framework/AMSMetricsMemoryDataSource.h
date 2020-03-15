@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_sortedEvents;
 }
 
-@property(retain) NSMutableArray *sortedEvents; // @synthesize sortedEvents=_sortedEvents;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *sortedEvents; // @synthesize sortedEvents=_sortedEvents;
 - (void)willStartBatchingWithLogKey:(id)arg1 error:(id *)arg2;
 - (void)skipEvents:(id)arg1 error:(id *)arg2;
 - (void)removeEvents:(id)arg1 error:(id *)arg2;

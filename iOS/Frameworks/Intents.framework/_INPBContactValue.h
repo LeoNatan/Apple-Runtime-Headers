@@ -45,6 +45,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)aliasesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) int suggestionType; // @synthesize suggestionType=_suggestionType;
@@ -68,7 +69,6 @@
 @property(copy, nonatomic) NSString *customIdentifier; // @synthesize customIdentifier=_customIdentifier;
 @property(retain, nonatomic) _INPBContactHandle *contactHandle; // @synthesize contactHandle=_contactHandle;
 @property(copy, nonatomic) NSArray *aliases; // @synthesize aliases=_aliases;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

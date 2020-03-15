@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
 + (id)mirroringContainer;
 + (id)sharedContainer;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
 @property(readonly, nonatomic) RCDatabaseMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSPersistentStore *cloudStore; // @synthesize cloudStore=_cloudStore;
 @property(readonly, nonatomic) NSPersistentStore *localStore; // @synthesize localStore=_localStore;
-- (void).cxx_destruct;
 - (void)_migrateDatabaseIfNecessary;
 - (id)_legacyRecordingWithUniqueID:(id)arg1 context:(id)arg2;
 - (id)_cloudRecordingsInContext:(id)arg1;

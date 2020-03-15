@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HMBModel *_model;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMBModel *model; // @synthesize model=_model;
 @property(retain, nonatomic) NSData *encoded; // @synthesize encoded=_encoded;
-- (void).cxx_destruct;
 - (id)initWithModel:(id)arg1 encoded:(id)arg2;
 
 @end

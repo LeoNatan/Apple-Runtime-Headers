@@ -19,9 +19,9 @@
 }
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak CKComponentHostingView *hostingView; // @synthesize hostingView=_hostingView;
 @property(retain, nonatomic) id <NSObject> model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)componentHostingViewDidInvalidateSize:(id)arg1;
 - (void)animateToModels:(id)arg1 atPositions:(id)arg2 inSourceView:(id)arg3 withWidth:(double)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)animateFromModels:(id)arg1 atPositions:(id)arg2 inSourceView:(id)arg3;

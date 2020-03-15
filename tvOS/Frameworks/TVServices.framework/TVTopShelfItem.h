@@ -8,30 +8,34 @@
 
 #import <TVServices/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSDictionary, NSMutableDictionary, NSString, TVTopShelfAction;
+@class NSDate, NSDictionary, NSMutableDictionary, NSString, TVTopShelfAction, TVTopShelfInsetItemTextOverlay;
 
 @interface TVTopShelfItem : TVTopShelfObject <NSSecureCoding>
 {
     unsigned long long _mediaType;
     NSDictionary *_userInfo;
+    TVTopShelfAction *_addToLibraryAction;
     NSString *_identifier;
     TVTopShelfAction *_playAction;
     TVTopShelfAction *_displayAction;
     NSDate *_expirationDate;
     NSMutableDictionary *_mutableImageRequestByTraits;
     NSMutableDictionary *_mutableOverlayImageRequestByTraits;
+    TVTopShelfInsetItemTextOverlay *__insetItemTextOverlay;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setInsetItemTextOverlay:) TVTopShelfInsetItemTextOverlay *_insetItemTextOverlay; // @synthesize _insetItemTextOverlay=__insetItemTextOverlay;
 @property(retain, nonatomic) NSMutableDictionary *mutableOverlayImageRequestByTraits; // @synthesize mutableOverlayImageRequestByTraits=_mutableOverlayImageRequestByTraits;
 @property(retain, nonatomic) NSMutableDictionary *mutableImageRequestByTraits; // @synthesize mutableImageRequestByTraits=_mutableImageRequestByTraits;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) TVTopShelfAction *displayAction; // @synthesize displayAction=_displayAction;
 @property(retain, nonatomic) TVTopShelfAction *playAction; // @synthesize playAction=_playAction;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic, setter=_setAddToLibraryAction:) TVTopShelfAction *_addToLibraryAction; // @synthesize _addToLibraryAction;
 @property(copy, nonatomic, setter=_setUserInfo:) NSDictionary *_userInfo; // @synthesize _userInfo;
 @property(nonatomic, setter=_setMediaType:) unsigned long long _mediaType; // @synthesize _mediaType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

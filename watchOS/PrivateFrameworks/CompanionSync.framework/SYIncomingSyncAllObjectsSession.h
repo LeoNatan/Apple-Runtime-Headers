@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     _Bool canRollback;
 }
 
+- (void).cxx_destruct;
 - (void)setCanRollback:(_Bool)arg1;
 - (_Bool)canRollback;
 - (void)setCanRestart:(_Bool)arg1;
 - (_Bool)canRestart;
-- (void).cxx_destruct;
 - (void)_continueProcessing;
 - (void)_sendEndSessionResponse:(id)arg1;
 - (id)initWithService:(id)arg1 message:(id)arg2 completion:(CDUnknownBlockType)arg3;

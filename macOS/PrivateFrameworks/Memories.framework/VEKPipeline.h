@@ -15,10 +15,10 @@
     CDUnknownBlockType _progressBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 @property(retain, nonatomic) VEKResult *initialResult; // @synthesize initialResult=_initialResult;
 @property(copy) NSArray *stages; // @synthesize stages=_stages;
-- (void).cxx_destruct;
 - (id)runPipeline;
 - (void)runPipelineWithOptions:(long long)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithStages:(id)arg1;

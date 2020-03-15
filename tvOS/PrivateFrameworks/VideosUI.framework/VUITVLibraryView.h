@@ -6,16 +6,22 @@
 
 #import <UIKit/UIView.h>
 
+@class NSString, VUIPageHeaderView;
+
 __attribute__((visibility("hidden")))
 @interface VUITVLibraryView : UIView
 {
     UIView *_menuView;
-    UIView *_gridView;
+    UIView *_detailView;
+    NSString *_headerTitle;
+    VUIPageHeaderView *_headerView;
 }
 
-@property(retain, nonatomic) UIView *gridView; // @synthesize gridView=_gridView;
-@property(retain, nonatomic) UIView *menuView; // @synthesize menuView=_menuView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIPageHeaderView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
+@property(retain, nonatomic) UIView *detailView; // @synthesize detailView=_detailView;
+@property(retain, nonatomic) UIView *menuView; // @synthesize menuView=_menuView;
 - (struct CGSize)_layoutWithSize:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

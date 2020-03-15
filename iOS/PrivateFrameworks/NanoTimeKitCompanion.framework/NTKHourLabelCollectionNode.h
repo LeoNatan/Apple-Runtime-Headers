@@ -13,8 +13,8 @@
     NSArray *_valid;
 }
 
-@property(retain, nonatomic) NSArray *valid; // @synthesize valid=_valid;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *valid; // @synthesize valid=_valid;
 - (void)createSubNodes;
 - (id)createParentNodesForHours:(id)arg1 withPositions:(struct CGPoint *)arg2 validHours:(id)arg3;
 

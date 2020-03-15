@@ -18,13 +18,13 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) unsigned long long encoding; // @synthesize encoding=_encoding;
 @property(readonly, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) HMDBackingStoreCacheGroup *group; // @synthesize group=_group;
 @property(readonly, nonatomic) HMDBackingStoreCacheShareGroup *share; // @synthesize share=_share;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithGroup:(id)arg1 share:(id)arg2 record:(id)arg3 data:(id)arg4 encoding:(unsigned long long)arg5 uuid:(id)arg6;
 

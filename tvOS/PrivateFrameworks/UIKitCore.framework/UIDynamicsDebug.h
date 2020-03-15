@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     GLKView *_debugView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GLKView *debugView; // @synthesize debugView=_debugView;
 @property(nonatomic) __weak UIDynamicAnimator *animator; // @synthesize animator=_animator;
 @property(nonatomic) _Bool showFields; // @synthesize showFields=_showFields;
 @property(nonatomic) _Bool showOutlineInterior; // @synthesize showOutlineInterior=_showOutlineInterior;
 @property(nonatomic) _Bool showPhysics; // @synthesize showPhysics=_showPhysics;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)glkView:(id)arg1 drawInRect:(struct CGRect)arg2;
 - (void)_teardownDebugView;
 - (void)_setupDebugViewIfNeccessary;

@@ -26,6 +26,7 @@
     NSDate *_lastTimeRemainingEstimate;
 }
 
+- (void).cxx_destruct;
 @property BOOL logProgress; // @synthesize logProgress=_logProgress;
 @property(retain) NSDate *lastTimeRemainingEstimate; // @synthesize lastTimeRemainingEstimate=_lastTimeRemainingEstimate;
 @property double totalEstimatedTime; // @synthesize totalEstimatedTime=_totalEstimatedTime;
@@ -39,7 +40,6 @@
 @property(retain) NSString *action; // @synthesize action=_action;
 @property(retain) EOSRestoreRequest *request; // @synthesize request=_request;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)_releasePowerAssertionWithID:(unsigned int)arg1;
 - (unsigned int)_createPowerAssertion;
 - (double)_timeRemaining;

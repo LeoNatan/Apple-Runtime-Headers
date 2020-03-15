@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CRRecentContactsLibrary *_library;
 }
 
-@property(readonly, nonatomic) CRRecentContactsLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CRRecentContactsLibrary *library; // @synthesize library=_library;
 - (id)recentContactsForHandle:(id)arg1;
 - (id)initWithRecentContactsLibrary:(id)arg1;
 - (id)init;

@@ -18,9 +18,9 @@
     _Bool _suppressAffordance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressAffordance; // @synthesize suppressAffordance=_suppressAffordance;
 @property(nonatomic) _Bool wantsToBeActiveAffordance; // @synthesize wantsToBeActiveAffordance=_wantsToBeActiveAffordance;
-- (void).cxx_destruct;
 - (void)_updateActiveState;
 - (void)_stopTryingToBecomeActiveAffordance;
 - (void)_beginTryingToBecomeActiveAffordance;

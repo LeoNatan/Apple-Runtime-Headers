@@ -20,9 +20,9 @@
 + (id)_defaultEvent;
 + (id)entitlements;
 + (id)eventStream;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastIdentifierSet; // @synthesize lastIdentifierSet=_lastIdentifierSet;
 @property(nonatomic) void *lsNotificationID; // @synthesize lsNotificationID=_lsNotificationID;
-- (void).cxx_destruct;
 - (void)synchronouslyReflectCurrentValue;
 - (void)deactivate;
 - (void)stop;

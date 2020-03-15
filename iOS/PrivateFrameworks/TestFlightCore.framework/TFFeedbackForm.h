@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_entryGroups;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *entryGroups; // @synthesize entryGroups=_entryGroups;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 entryGroups:(id)arg2;
 
 @end

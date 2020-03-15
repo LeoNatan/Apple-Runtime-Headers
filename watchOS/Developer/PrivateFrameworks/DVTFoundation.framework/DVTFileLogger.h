@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property unsigned long long indentLevel; // @synthesize indentLevel=_indentLevel;
-- (void).cxx_destruct;
 - (void)decreaseIndentLevelForAspect:(id)arg1;
 - (void)increaseIndentLevelForAspect:(id)arg1;
 - (void)logMessage:(id)arg1 forAspect:(id)arg2 logLevel:(unsigned long long)arg3;

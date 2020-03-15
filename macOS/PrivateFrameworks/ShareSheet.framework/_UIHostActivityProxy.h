@@ -22,6 +22,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRestricted) BOOL restricted; // @synthesize restricted=_restricted;
 @property(nonatomic, getter=isFavorite) BOOL favorite; // @synthesize favorite=_favorite;
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSNumber *labelSlot; // @synthesize labelSlot=_labelSlot;
 @property(retain, nonatomic) NSNumber *imageSlot; // @synthesize imageSlot=_imageSlot;
 @property(retain, nonatomic) NSUUID *proxyIdentifier; // @synthesize proxyIdentifier=_proxyIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

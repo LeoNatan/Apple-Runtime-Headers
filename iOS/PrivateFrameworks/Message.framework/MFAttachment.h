@@ -24,6 +24,7 @@
 }
 
 + (_Bool)isSinglePagePDF:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize imageDimensions; // @synthesize imageDimensions=_imageDimensions;
 @property(nonatomic) _Bool wantsCompletionBlockOffMainThread; // @synthesize wantsCompletionBlockOffMainThread=_wantsCompletionBlockOffMainThread;
 @property(retain, nonatomic) id <MFDataConsumer> customConsumer; // @synthesize customConsumer=_customConsumer;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *disposition; // @synthesize disposition=_disposition;
 @property(retain, nonatomic) MFMimePart *part; // @synthesize part=_part;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)contentTypeConformsToIWork;
 - (_Bool)contentTypeConformsToPassbook;
 - (_Bool)contentTypeConformsToMarkup;

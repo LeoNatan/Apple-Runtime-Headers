@@ -17,8 +17,8 @@
     _Bool _poseIsMarginal;
 }
 
-@property(readonly, nonatomic) _Bool poseIsMarginal; // @synthesize poseIsMarginal=_poseIsMarginal;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool poseIsMarginal; // @synthesize poseIsMarginal=_poseIsMarginal;
 - (void)cycleState;
 @property(readonly, nonatomic) _Bool matchRunning;
 @property(readonly, nonatomic) _Bool presenceDetectRunning;

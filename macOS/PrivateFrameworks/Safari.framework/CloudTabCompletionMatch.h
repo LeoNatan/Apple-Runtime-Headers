@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WBSCloudTab *_cloudTab;
 }
 
-@property(readonly, nonatomic) WBSCloudTab *cloudTab; // @synthesize cloudTab=_cloudTab;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSCloudTab *cloudTab; // @synthesize cloudTab=_cloudTab;
 - (id)parsecDomainIdentifier;
 - (id)initWithCloudTab:(id)arg1 userInput:(id)arg2 forQueryID:(long long)arg3;
 - (id)init;

@@ -24,11 +24,11 @@
 }
 
 + (id)_sharedCollectionViewController;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHostedInTestApp) _Bool hostedInTestApp; // @synthesize hostedInTestApp=_hostedInTestApp;
 @property(readonly, nonatomic) CCUIStatusLabelViewController *statusLabelViewController; // @synthesize statusLabelViewController=_statusLabelViewController;
 @property(readonly, nonatomic) CCUIModuleInstanceManager *moduleInstanceManager; // @synthesize moduleInstanceManager=_moduleInstanceManager;
 @property(nonatomic) __weak id <CCUIModularControlCenterViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reparentCollectionViewController;
 - (id)_safeModuleCollectionViewContainerView;
 - (id)_moduleCollectionViewContainerView;

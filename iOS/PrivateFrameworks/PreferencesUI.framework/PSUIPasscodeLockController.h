@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)passcodeGracePeriod;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(nonatomic) _Bool canUnlockWatch; // @synthesize canUnlockWatch=_canUnlockWatch;
-- (void).cxx_destruct;
 - (void)profileNotification:(id)arg1;
 - (void)disablePasscodeRequiredSpecifiers:(id)arg1;
 - (void)setEnabledInLockScreenForUSB:(id)arg1 specifier:(id)arg2;

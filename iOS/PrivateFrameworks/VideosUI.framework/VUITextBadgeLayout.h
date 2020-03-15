@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)textBadgeTypeFromString:(id)arg1;
 + (id)layoutWithViewElement:(id)arg1 withTextBadgeType:(unsigned long long)arg2;
 + (id)layoutWithViewElement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 @property(retain, nonatomic) NSArray *gradientBgColors; // @synthesize gradientBgColors=_gradientBgColors;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) unsigned long long badgeKind; // @synthesize badgeKind=_badgeKind;
-- (void).cxx_destruct;
 - (void)_updateTextColorWithViewElement:(id)arg1 defaultColor:(id)arg2;
 - (void)_updateBgColorWithViewElement:(id)arg1 defaultColor:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

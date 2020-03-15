@@ -13,8 +13,8 @@
     NSMutableArray *_timerHolders;
 }
 
-@property(readonly, nonatomic) NSMutableArray *timerHolders; // @synthesize timerHolders=_timerHolders;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *timerHolders; // @synthesize timerHolders=_timerHolders;
 - (id)newTimer;
 - (void)afterInterval:(double)arg1 async:(CDUnknownBlockType)arg2;
 - (void)updateLatchedAbsoluteTimestamp;

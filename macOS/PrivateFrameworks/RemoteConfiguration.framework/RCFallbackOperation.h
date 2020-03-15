@@ -21,6 +21,7 @@
     RCConfigurationResource *_configurationResource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RCConfigurationResource *configurationResource; // @synthesize configurationResource=_configurationResource;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(copy, nonatomic) CDUnknownBlockType configurationCompletionHandler; // @synthesize configurationCompletionHandler=_configurationCompletionHandler;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) RCConfigurationResource *cachedConfigurationResource; // @synthesize cachedConfigurationResource=_cachedConfigurationResource;
 @property(retain, nonatomic) NSURL *fallbackURL; // @synthesize fallbackURL=_fallbackURL;
 @property(retain, nonatomic) NSString *requestKey; // @synthesize requestKey=_requestKey;
-- (void).cxx_destruct;
 - (void)_parseFallbackResponse:(id)arg1 fallbackURL:(id)arg2 requestKey:(id)arg3 enableExtraLogs:(BOOL)arg4 maxAge:(id)arg5 etag:(id)arg6 lastModifiedString:(id)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)_fetchConfigurationWithURL:(id)arg1 requestKey:(id)arg2 enableExtraLogs:(BOOL)arg3;
 - (void)operationWillFinishWithError:(id)arg1;

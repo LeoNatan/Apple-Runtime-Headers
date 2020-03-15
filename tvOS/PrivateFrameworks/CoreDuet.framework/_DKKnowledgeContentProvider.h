@@ -16,8 +16,8 @@
     id <_DKKnowledgeQuerying> _knowledgeStore;
 }
 
-@property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (void)executeQuery:(id)arg1 queue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)executeQuery:(id)arg1 error:(id *)arg2;
 - (id)initWithKnowledgeStore:(id)arg1;

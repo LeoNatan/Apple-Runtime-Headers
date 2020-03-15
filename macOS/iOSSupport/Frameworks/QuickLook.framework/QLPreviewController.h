@@ -23,13 +23,13 @@
 + (id)keyPathsForValuesAffectingCurrentPreviewItemIndex;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (BOOL)canPreviewItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long quickLookVisibility; // @synthesize quickLookVisibility=_quickLookVisibility;
 @property(retain) NSURL *currentlyPresentedThumbnailURL; // @synthesize currentlyPresentedThumbnailURL=_currentlyPresentedThumbnailURL;
 @property unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(retain) id <QLIosmacPanelHelper> bridgedPreviewPanel; // @synthesize bridgedPreviewPanel=_bridgedPreviewPanel;
 @property(nonatomic) __weak id <QLPreviewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <QLPreviewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)previewPanel:(id)arg1 didSaveEditedCopyOfPreviewItem:(id)arg2 atURL:(id)arg3;
 - (void)previewPanel:(id)arg1 didUpdateContentsOfPreviewItem:(id)arg2;
 - (long long)previewPanel:(id)arg1 saveModeForItem:(id)arg2;

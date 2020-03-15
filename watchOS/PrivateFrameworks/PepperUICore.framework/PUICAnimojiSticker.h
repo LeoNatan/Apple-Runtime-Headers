@@ -18,10 +18,10 @@
     NSString *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isMemoji; // @synthesize isMemoji=_isMemoji;
 @property(retain, nonatomic) NSString *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_thumbnailData;
 - (id)IMSticker;
 @property(readonly, nonatomic) UIImage *thumbnail;

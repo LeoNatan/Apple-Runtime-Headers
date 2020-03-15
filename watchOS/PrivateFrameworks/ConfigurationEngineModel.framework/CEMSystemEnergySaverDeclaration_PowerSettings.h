@@ -23,6 +23,7 @@
 + (id)buildRequiredOnly;
 + (id)buildWithDisplaySleepTimer:(id)arg1 withDiskSleepTimer:(id)arg2 withSystemSleepTimer:(id)arg3 withReduceProcessorSpeed:(id)arg4 withDynamicPowerStep:(id)arg5 withWakeOnLAN:(id)arg6 withWakeOnModemRing:(id)arg7 withAutomaticRestartOnPowerLoss:(id)arg8;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAutomaticRestartOnPowerLoss; // @synthesize payloadAutomaticRestartOnPowerLoss=_payloadAutomaticRestartOnPowerLoss;
 @property(copy, nonatomic) NSNumber *payloadWakeOnModemRing; // @synthesize payloadWakeOnModemRing=_payloadWakeOnModemRing;
 @property(copy, nonatomic) NSNumber *payloadWakeOnLAN; // @synthesize payloadWakeOnLAN=_payloadWakeOnLAN;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSNumber *payloadSystemSleepTimer; // @synthesize payloadSystemSleepTimer=_payloadSystemSleepTimer;
 @property(copy, nonatomic) NSNumber *payloadDiskSleepTimer; // @synthesize payloadDiskSleepTimer=_payloadDiskSleepTimer;
 @property(copy, nonatomic) NSNumber *payloadDisplaySleepTimer; // @synthesize payloadDisplaySleepTimer=_payloadDisplaySleepTimer;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

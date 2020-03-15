@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _totalFittingSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize totalFittingSize; // @synthesize totalFittingSize=_totalFittingSize;
 @property(readonly, nonatomic) double fittingCellSpacing; // @synthesize fittingCellSpacing=_fittingCellSpacing;
 @property(readonly, nonatomic) UIFontDescriptor *fittingFontDescriptor; // @synthesize fittingFontDescriptor=_fittingFontDescriptor;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIFontDescriptor *minimumFontDescriptor; // @synthesize minimumFontDescriptor=_minimumFontDescriptor;
 @property(retain, nonatomic) UIFontDescriptor *desiredFontDescriptor; // @synthesize desiredFontDescriptor=_desiredFontDescriptor;
 @property(nonatomic) __weak id <VideosExtrasMainMenuSectionMetricsDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (struct CGSize)_horizontalFittingSizeForFontDescriptor:(id)arg1 gutterSize:(double)arg2 itemCount:(long long)arg3 itemSizes:(out struct CGSize *)arg4;
 - (void)_updateAllMetrics;
 - (void)updateSizes;

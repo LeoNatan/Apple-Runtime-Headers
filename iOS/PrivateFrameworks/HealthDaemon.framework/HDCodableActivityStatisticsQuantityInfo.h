@@ -19,11 +19,11 @@
     CDStruct_2d5b04fb _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *unit; // @synthesize unit=_unit;
 @property(nonatomic) double endDate; // @synthesize endDate=_endDate;
 @property(nonatomic) double startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

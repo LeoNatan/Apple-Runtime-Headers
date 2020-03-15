@@ -16,11 +16,11 @@
     unsigned long long _quantityDataReceived;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long quantityDataReceived; // @synthesize quantityDataReceived=_quantityDataReceived;
 @property(retain) SMWindowsComponent *windowsComponent; // @synthesize windowsComponent=_windowsComponent;
 @property(retain) SMWindowsMacPathMapper *windowsMacPathMap; // @synthesize windowsMacPathMap=_windowsMacPathMap;
 @property(retain) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (BOOL)createLocalizedDirectoryAtPath:(id)arg1 localizedName:(id)arg2 attributes:(id)arg3 error:(id *)arg4;
 - (id)copyPathForXMURLString:(id)arg1 sandboxed:(BOOL)arg2;
 - (id)rootPathForUser:(id)arg1 sandboxed:(BOOL)arg2;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

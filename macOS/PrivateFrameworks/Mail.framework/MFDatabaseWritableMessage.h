@@ -38,6 +38,7 @@
     MFMessageWritePreparedStatements *_preparedStatements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFMessageWritePreparedStatements *preparedStatements; // @synthesize preparedStatements=_preparedStatements;
 @property(retain, nonatomic) ECAngleBracketIDHash *listIDHash; // @synthesize listIDHash=_listIDHash;
 @property(copy, nonatomic) NSArray *referencesHashes; // @synthesize referencesHashes=_referencesHashes;
@@ -63,7 +64,6 @@
 @property(nonatomic) long long conversationID; // @synthesize conversationID=_conversationID;
 @property(nonatomic) long long senderID; // @synthesize senderID=_senderID;
 @property(nonatomic) long long subjectID; // @synthesize subjectID=_subjectID;
-- (void).cxx_destruct;
 - (long long)_rowIDForSubject:(id)arg1 subjectRowIDsCache:(id)arg2 cacheIsExhaustive:(BOOL)arg3;
 - (id)propertyListFromMessage:(id)arg1 remoteID:(id)arg2 gmailLabels:(id)arg3;
 - (void)setupLibraryMessage:(id)arg1 fromMessage:(id)arg2;

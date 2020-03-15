@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)metadataWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *summary; // @synthesize summary=_summary;
 @property(retain) NSString *description; // @synthesize description=_description;
 @property(retain) NSArray *attendee; // @synthesize attendee=_attendee;
 @property(retain) NSArray *attach; // @synthesize attach=_attach;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)dataRepresentation;

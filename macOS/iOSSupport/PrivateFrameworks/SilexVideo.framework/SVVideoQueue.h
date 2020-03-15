@@ -18,9 +18,9 @@
     NSOrderedSet *_videos;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *videos; // @synthesize videos=_videos;
 @property(retain, nonatomic) id <SVVideo> video; // @synthesize video=_video;
-- (void).cxx_destruct;
 - (unsigned long long)indexOfVideo:(id)arg1;
 - (id)videoAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfVideos;

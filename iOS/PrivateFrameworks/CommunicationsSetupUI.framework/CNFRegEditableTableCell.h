@@ -22,12 +22,12 @@
     UIImage *_customCheckmarkImageSelected;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *customCheckmarkImageSelected; // @synthesize customCheckmarkImageSelected=_customCheckmarkImageSelected;
 @property(retain, nonatomic) UIImage *customCheckmarkImage; // @synthesize customCheckmarkImage=_customCheckmarkImage;
 @property(retain, nonatomic) CNFRegShadowView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage=_shadowImage;
 @property(nonatomic) _Bool skipDelegateCallback; // @synthesize skipDelegateCallback=_skipDelegateCallback;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)layoutSubviews;
 - (void)setChecked:(_Bool)arg1;

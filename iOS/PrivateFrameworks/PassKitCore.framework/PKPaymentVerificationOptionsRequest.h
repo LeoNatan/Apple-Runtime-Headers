@@ -15,9 +15,9 @@
 }
 
 + (id)requestWithPass:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(copy, nonatomic) NSString *stepIdentifier; // @synthesize stepIdentifier=_stepIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 
 @end

@@ -14,9 +14,9 @@
     CLKFullColorImageProvider *_imageProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKFullColorImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
-- (void).cxx_destruct;
 - (void)_enumerateFullColorImageProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isCompatibleWithFamily:(long long)arg1;

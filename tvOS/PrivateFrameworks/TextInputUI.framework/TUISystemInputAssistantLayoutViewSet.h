@@ -16,11 +16,11 @@
     UIView *_centerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *centerView; // @synthesize centerView=_centerView;
 @property(retain, nonatomic) TUIAssistantButtonBarView *unifiedButtonBar; // @synthesize unifiedButtonBar=_unifiedButtonBar;
 @property(retain, nonatomic) TUIAssistantButtonBarView *rightButtonBar; // @synthesize rightButtonBar=_rightButtonBar;
 @property(retain, nonatomic) TUIAssistantButtonBarView *leftButtonBar; // @synthesize leftButtonBar=_leftButtonBar;
-- (void).cxx_destruct;
 
 @end
 

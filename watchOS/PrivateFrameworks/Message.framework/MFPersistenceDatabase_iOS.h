@@ -19,10 +19,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool createdTempTable; // @synthesize createdTempTable=_createdTempTable;
 @property(nonatomic) _Bool migrationHasRun; // @synthesize migrationHasRun=_migrationHasRun;
 @property(readonly, nonatomic) id migrationLock; // @synthesize migrationLock=_migrationLock;
-- (void).cxx_destruct;
 - (void)mailMessageLibraryMigratorScheduleSpotlightReindex:(id)arg1;
 - (void)mailMessageLibraryMigrator:(id)arg1 isInitializingDatabaseWithConnection:(id)arg2;
 - (void)mailMessageLibraryMigrator:(id)arg1 detachProtectedDatabaseWithConnection:(id)arg2;

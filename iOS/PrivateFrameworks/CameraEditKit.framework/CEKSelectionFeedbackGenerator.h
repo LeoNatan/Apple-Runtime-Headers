@@ -17,12 +17,12 @@
     UISelectionFeedbackGenerator *__feedbackGenerator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int _overscrollTickSoundID; // @synthesize _overscrollTickSoundID=__overscrollTickSoundID;
 @property(readonly, nonatomic) unsigned int _minorTickSoundID; // @synthesize _minorTickSoundID=__minorTickSoundID;
 @property(readonly, nonatomic) unsigned int _majorTickSoundID; // @synthesize _majorTickSoundID=__majorTickSoundID;
 @property(readonly, nonatomic) unsigned int _endStopSoundID; // @synthesize _endStopSoundID=__endStopSoundID;
 @property(readonly, nonatomic) UISelectionFeedbackGenerator *_feedbackGenerator; // @synthesize _feedbackGenerator=__feedbackGenerator;
-- (void).cxx_destruct;
 - (void)playOverscrollTickSound;
 - (void)playEndTickSound;
 - (void)playMajorTickSound;

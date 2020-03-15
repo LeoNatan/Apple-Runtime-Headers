@@ -14,9 +14,9 @@
     TILRUDictionaryNode *prev;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(readonly, nonatomic) id key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 object:(id)arg2;
 
 @end

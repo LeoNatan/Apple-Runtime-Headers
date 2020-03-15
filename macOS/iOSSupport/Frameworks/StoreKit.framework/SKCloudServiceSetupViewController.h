@@ -6,13 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <StoreKit/SFSafariViewControllerDelegate-Protocol.h>
 #import <StoreKit/SKCloudServiceSetupRemoteViewControllerDelegate-Protocol.h>
 
-@class NSString, SFSafariViewController, SKCloudServiceSetupConfiguration, SKCloudServiceSetupReloadContext, _UIResilientRemoteViewContainerViewController;
+@class NSString, SKCloudServiceSetupConfiguration, SKCloudServiceSetupReloadContext, _UIResilientRemoteViewContainerViewController;
 @protocol SKCloudServiceSetupViewControllerDelegate;
 
-@interface SKCloudServiceSetupViewController : UIViewController <SFSafariViewControllerDelegate, SKCloudServiceSetupRemoteViewControllerDelegate>
+@interface SKCloudServiceSetupViewController : UIViewController <SKCloudServiceSetupRemoteViewControllerDelegate>
 {
     _UIResilientRemoteViewContainerViewController *_remoteViewContainerViewController;
     BOOL _isRemoteViewControllerReady;
@@ -21,14 +20,13 @@
     BOOL _isFullyAppeared;
     SKCloudServiceSetupReloadContext *_activeCloudServiceSetupReloadContext;
     CDUnknownBlockType _loadCompletionHandler;
-    SFSafariViewController *_safariViewController;
     id <SKCloudServiceSetupViewControllerDelegate> _delegate;
     SKCloudServiceSetupConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SKCloudServiceSetupConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <SKCloudServiceSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_remoteViewControllerExtensionWasInterrupted;
 - (void)_dismissCloudServiceSetupViewControllerWithAnimation:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_reloadWithActiveCloudServiceSetupReloadContext;
@@ -45,8 +43,6 @@
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsPresentingSafariViewControllerWithURL:(id)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 requestsDismissalWithAnimation:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cloudServiceSetupRemoteViewController:(id)arg1 didFinishLoadingWithSuccess:(BOOL)arg2 error:(id)arg3;
-- (void)safariViewControllerDidFinish:(id)arg1;
-- (void)safariViewController:(id)arg1 didCompleteInitialLoad:(BOOL)arg2;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

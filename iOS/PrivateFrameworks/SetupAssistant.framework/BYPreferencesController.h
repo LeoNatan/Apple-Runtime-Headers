@@ -18,9 +18,9 @@
 + (void)persistEverything;
 + (id)buddyPreferencesExcludedFromBackup;
 + (id)buddyPreferences;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *preferences; // @synthesize preferences=_preferences;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)flush;
 - (void)persist;
 - (void)reset;

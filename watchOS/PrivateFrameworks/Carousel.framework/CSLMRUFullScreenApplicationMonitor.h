@@ -19,8 +19,8 @@
 
 + (id)sharedFullScreenMonitor;
 + (void)initialize;
-@property(retain, nonatomic) NSString *lastLocation; // @synthesize lastLocation=_lastLocation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *lastLocation; // @synthesize lastLocation=_lastLocation;
 - (void)sessionManager:(id)arg1 sessionDidStart:(id)arg2;
 - (void)_appForegrounded:(id)arg1;
 - (void)transactionDidComplete:(id)arg1;

@@ -16,10 +16,10 @@
 }
 
 + (id)newWithText:(id)arg1 editable:(BOOL)arg2 updateBlock:(CDUnknownBlockType)arg3 size:(const struct CKComponentSize *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(readonly, nonatomic) BOOL editable; // @synthesize editable=_editable;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

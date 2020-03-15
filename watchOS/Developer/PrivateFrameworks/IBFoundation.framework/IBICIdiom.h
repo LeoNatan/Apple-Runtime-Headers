@@ -25,11 +25,11 @@
 + (id)unspecifiedValuePlaceholder;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
+- (void).cxx_destruct;
 @property(readonly) _Bool isMarketingIdiom; // @synthesize isMarketingIdiom=_isMarketingIdiom;
 @property(readonly) NSString *infoPlistSuffix; // @synthesize infoPlistSuffix=_infoPlistSuffix;
 @property(readonly) long long coreUIIdiom; // @synthesize coreUIIdiom=_coreUIIdiom;
 @property(readonly) NSString *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

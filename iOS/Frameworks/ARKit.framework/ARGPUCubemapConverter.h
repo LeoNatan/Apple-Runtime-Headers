@@ -19,7 +19,7 @@
 
 - (void).cxx_destruct;
 -     // Error parsing type: @80@0:8@16{?=[3]}24Q72, name: cubemapTextureFromEquirectangularTexture:rotation:size:
--     // Error parsing type: @80@0:8@16{?=[3]}24Q72, name: equirectangularTextureFromCubemapTexture:rotation:size:
+-     // Error parsing type: @88@0:8@16{?=[3]}24Q72Q80, name: equirectangularTextureFromCubemapTexture:rotation:width:height:
 - (id)init;
 
 @end

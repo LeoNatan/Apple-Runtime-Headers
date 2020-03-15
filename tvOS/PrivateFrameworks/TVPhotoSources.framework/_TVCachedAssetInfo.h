@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)assetInfoWithIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *assetPath; // @synthesize assetPath=_assetPath;
 @property(retain, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
-- (void).cxx_destruct;
 - (id)_comparisonString;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

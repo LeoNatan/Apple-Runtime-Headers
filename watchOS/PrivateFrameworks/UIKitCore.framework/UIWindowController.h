@@ -31,13 +31,13 @@
 
 + (void)windowWillBeDeallocated:(id)arg1;
 + (id)windowControllerForWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isInteractiveTransition, setter=_setInteractiveTransition:) _Bool _interactiveTransition; // @synthesize _interactiveTransition=__interactiveTransition;
 @property(nonatomic) __weak UIWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic, setter=_setInteractionController:) id <UIViewControllerInteractiveTransitioning> _interactionController; // @synthesize _interactionController;
 @property(retain, nonatomic, setter=_setTransitionController:) id <UIViewControllerAnimatedTransitioning> _transitionController; // @synthesize _transitionController;
 @property(nonatomic) _Bool presenting; // @synthesize presenting=_presenting;
 @property(readonly, nonatomic) UITransitionView *transitionView; // @synthesize transitionView=_transitionView;
-- (void).cxx_destruct;
 - (_Bool)transitionViewShouldUseViewControllerCallbacks;
 - (struct CGPoint)transitionView:(id)arg1 endOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint)arg4;
 - (struct CGPoint)transitionView:(id)arg1 beginOriginForToView:(id)arg2 forTransition:(int)arg3 defaultOrigin:(struct CGPoint)arg4;

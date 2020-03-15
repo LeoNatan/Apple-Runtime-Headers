@@ -22,10 +22,10 @@
 + (BOOL)_makeMachineStoreDirectoryAtURL:(id)arg1 error:(id *)arg2;
 + (id)URLForBuildUnderURL:(id)arg1 error:(id *)arg2;
 + (id)structureType;
+- (void).cxx_destruct;
 @property(retain) TMDisk *liveVolumeDisk; // @synthesize liveVolumeDisk=_liveVolumeDisk;
 @property __weak TMNodeCache *nodeCache; // @synthesize nodeCache=_nodeCache;
 @property __weak TMSidecarVolume *sidecar; // @synthesize sidecar=_sidecar;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)tearDownSidecar:(id *)arg1;
 - (id)prepareSidecarForBrowsing:(id *)arg1;

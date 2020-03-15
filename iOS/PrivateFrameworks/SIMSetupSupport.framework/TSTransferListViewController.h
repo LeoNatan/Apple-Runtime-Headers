@@ -26,12 +26,12 @@
     NSMutableArray *_chosenUseIndexPaths;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *chosenUseIndexPaths; // @synthesize chosenUseIndexPaths=_chosenUseIndexPaths;
 @property(retain) UIView *tableFooter; // @synthesize tableFooter=_tableFooter;
 @property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
 @property(retain) NSArray *transferItems; // @synthesize transferItems=_transferItems;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)_startPlanTransfer:(id)arg1 withDeviceID:(id)arg2;
 - (void)_preparePlanTransfer:(id)arg1 withDeviceID:(id)arg2;

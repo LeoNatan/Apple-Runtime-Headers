@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     _Bool _debugSnapToTransitLines;
 }
 
-@property(nonatomic) _Bool debugSnapToTransitLines; // @synthesize debugSnapToTransitLines=_debugSnapToTransitLines;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool debugSnapToTransitLines; // @synthesize debugSnapToTransitLines=_debugSnapToTransitLines;
 - (_Bool)_isInaccurateLocation:(id)arg1;
 - (double)_timeToDisplayStaleGPSLocation;
 - (id)_roadMatchForOffRouteLocation:(id)arg1 routeMatch:(id)arg2;

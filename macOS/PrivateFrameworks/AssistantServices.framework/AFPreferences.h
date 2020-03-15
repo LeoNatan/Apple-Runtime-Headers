@@ -77,6 +77,7 @@
 - (void)setValue:(id)arg1 forSessionContextKey:(id)arg2;
 - (id)valueForSessionContextPreferenceKey:(id)arg1;
 - (void)_registerForNavStatusIfNeeded;
+- (id)dictationRequestSamplingRateMap;
 - (BOOL)isLanguageDetectorEnabledByServer;
 - (BOOL)isLanguageDetectorEnabled;
 - (void)setLanguageDetectorEnabled:(BOOL)arg1;
@@ -173,6 +174,8 @@
 - (void)setSiriDataSharingOptInStatus:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setDesignModeEnabled:(BOOL)arg1;
 - (BOOL)designModeIsEnabled;
+- (BOOL)spokenNotificationsEnabledForNano;
+- (void)setSpokenNotificationsEnabledForNano:(BOOL)arg1;
 - (void)getSpokenNotificationShouldSkipTriggerlessRepliesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setSpokenNotificationShouldSkipTriggerlessReplies:(BOOL)arg1;
 - (void)getSpokenNotificationShouldAlwaysSpeakNotificationsWithCompletion:(CDUnknownBlockType)arg1;
@@ -196,6 +199,8 @@
 - (BOOL)listenAfterSpeakingDisabled;
 - (void)setCrownActivationEnabled:(BOOL)arg1;
 - (BOOL)crownActivationEnabled;
+- (void)setAlwaysAllowVoiceActivation:(BOOL)arg1;
+- (BOOL)alwaysAllowVoiceActivation;
 - (void)_setSuppressDictationOptInLocal:(BOOL)arg1;
 - (void)setSuppressDictationOptIn:(BOOL)arg1;
 - (BOOL)suppressDictationOptIn;

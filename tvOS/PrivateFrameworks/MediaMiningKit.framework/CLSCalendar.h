@@ -62,6 +62,8 @@
 + (id)dateComponentsWithLocalDate:(id)arg1;
 + (id)dateComponentsWithUTCDate:(id)arg1 localDate:(id)arg2;
 + (id)currentLocalDate;
++ (id)validDateForDate:(id)arg1;
++ (_Bool)isDateValid:(id)arg1;
 + (void)initialize;
 
 @end

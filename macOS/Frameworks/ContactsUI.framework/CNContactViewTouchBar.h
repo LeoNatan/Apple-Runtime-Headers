@@ -28,6 +28,7 @@
     NSGroupTouchBarItem *_groupItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSGroupTouchBarItem *groupItem; // @synthesize groupItem=_groupItem;
 @property(retain, nonatomic) NSSharingServicePickerTouchBarItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(retain, nonatomic) CNUIVCardSharingTask *sharingTask; // @synthesize sharingTask=_sharingTask;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak CNUIUserActionListDataSource *userActionListDataSource; // @synthesize userActionListDataSource=_userActionListDataSource;
 @property(nonatomic) __weak id <CNContactViewTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)addField:(id)arg1;
 - (void)addGroup;
 - (void)addContact;

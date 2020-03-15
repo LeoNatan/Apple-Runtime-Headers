@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_recoveryAttemptingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *recoveryAttemptingQueue; // @synthesize recoveryAttemptingQueue=_recoveryAttemptingQueue;
 @property(copy, nonatomic) NSArray *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (_Bool)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2;
 - (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 delegate:(id)arg3 didRecoverSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (id)init;

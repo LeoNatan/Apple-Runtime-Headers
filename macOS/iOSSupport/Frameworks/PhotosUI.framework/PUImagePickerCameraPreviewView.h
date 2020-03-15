@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
-@property(readonly, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer; // @synthesize videoPreviewLayer=_videoPreviewLayer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer; // @synthesize videoPreviewLayer=_videoPreviewLayer;
 @property(retain, nonatomic) AVCaptureSession *session;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -15,8 +15,8 @@
     float _displayScale;
 }
 
-@property(nonatomic) float displayScale; // @synthesize displayScale=_displayScale;
 - (void).cxx_destruct;
+@property(nonatomic) float displayScale; // @synthesize displayScale=_displayScale;
 - (void)_invalidate;
 - (id)_borderView;
 - (void)_applicationDidReceiveMemoryWarning:(id)arg1;

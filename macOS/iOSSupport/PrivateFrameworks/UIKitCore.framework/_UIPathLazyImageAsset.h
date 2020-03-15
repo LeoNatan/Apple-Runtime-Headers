@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSArray *_imagePaths;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL haveCGCacheImages; // @synthesize haveCGCacheImages=_haveCGCacheImages;
 @property(copy, nonatomic) NSArray *imagePaths; // @synthesize imagePaths=_imagePaths;
-- (void).cxx_destruct;
 - (BOOL)_containsImagesInPath:(id)arg1;
 - (void)_clearResolvedImageResources;
 - (id)imageWithConfiguration:(id)arg1;

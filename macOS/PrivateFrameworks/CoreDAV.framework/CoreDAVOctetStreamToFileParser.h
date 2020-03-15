@@ -13,8 +13,8 @@
     NSFileHandle *_fileHandle;
 }
 
-@property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 - (BOOL)processData:(id)arg1 forTask:(id)arg2;
 - (id)initWithFileHandle:(id)arg1;
 

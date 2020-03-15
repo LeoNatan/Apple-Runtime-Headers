@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_endedConnections;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *endedConnections; // @synthesize endedConnections=_endedConnections;
 @property(retain, nonatomic) NSMutableArray *pendingConnections; // @synthesize pendingConnections=_pendingConnections;
 @property(retain, nonatomic) NSMutableDictionary *allConnections; // @synthesize allConnections=_allConnections;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)sessionEnded:(id)arg1;
 - (void)sessionEnded:(id)arg1 withReason:(unsigned int)arg2 error:(id)arg3;
 - (void)sessionStarted:(id)arg1;

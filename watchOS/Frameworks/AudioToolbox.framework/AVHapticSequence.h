@@ -22,13 +22,13 @@
     unsigned int _activeChannel;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int channelCount; // @synthesize channelCount=_channelCount;
 @property unsigned int activeChannel; // @synthesize activeChannel=_activeChannel;
 @property double lastStartTime; // @synthesize lastStartTime=_lastStartTime;
 @property double duration; // @synthesize duration=_duration;
 @property unsigned int seqID; // @synthesize seqID=_seqID;
 @property __weak AVHapticPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (_Bool)setVolume:(float)arg1 atTime:(double)arg2 error:(id *)arg3;
 - (_Bool)activateChannelByIndex:(unsigned int)arg1 atTime:(double)arg2 error:(id *)arg3;
 - (_Bool)cancelAndReturnError:(id *)arg1;

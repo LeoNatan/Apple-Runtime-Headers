@@ -34,6 +34,7 @@
 }
 
 + (id)policyForFeature:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL deletionTriggersImmediateSync; // @synthesize deletionTriggersImmediateSync=_deletionTriggersImmediateSync;
 @property(nonatomic) BOOL additionTriggersImmediateSync; // @synthesize additionTriggersImmediateSync=_additionTriggersImmediateSync;
 @property(nonatomic) BOOL deletionsCountTowardTriggeredSyncBucket; // @synthesize deletionsCountTowardTriggeredSyncBucket=_deletionsCountTowardTriggeredSyncBucket;
@@ -53,7 +54,6 @@
 @property(nonatomic) BOOL isSyncDisabled; // @synthesize isSyncDisabled=_isSyncDisabled;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 properties:(id)arg2;
 - (id)init;

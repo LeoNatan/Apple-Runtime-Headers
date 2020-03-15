@@ -9,6 +9,7 @@
 @class NSArray, NSDictionary, NSString;
 
 @protocol WeatherPreferencesPersistence <NSObject>
+- (void)synchronizeWithCompletionHandler:(void (^)(NSError *))arg1;
 - (BOOL)synchronize;
 - (void)setBool:(BOOL)arg1 forKey:(NSString *)arg2;
 - (BOOL)boolForKey:(NSString *)arg1;

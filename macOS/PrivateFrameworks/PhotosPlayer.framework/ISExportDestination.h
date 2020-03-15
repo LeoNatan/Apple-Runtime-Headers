@@ -15,9 +15,9 @@
 }
 
 + (id)destinationWithPhotoURL:(id)arg1 videoURL:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(readonly) NSURL *photoURL; // @synthesize photoURL=_photoURL;
-- (void).cxx_destruct;
 - (id)initWithPhotoURL:(id)arg1 videoURL:(id)arg2;
 
 @end

@@ -20,8 +20,8 @@
     id <AAUIServerHookDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_completionWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
 - (void)manager:(id)arg1 didCompleteWithError:(id)arg2;

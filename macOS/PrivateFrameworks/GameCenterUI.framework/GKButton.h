@@ -15,8 +15,8 @@
 }
 
 + (void)initialize;
-@property(retain, nonatomic) GKTextStyle *appliedStyle; // @synthesize appliedStyle=_appliedStyle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GKTextStyle *appliedStyle; // @synthesize appliedStyle=_appliedStyle;
 - (void)setAttributedTitle:(id)arg1;
 - (void)applyTextStyle:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

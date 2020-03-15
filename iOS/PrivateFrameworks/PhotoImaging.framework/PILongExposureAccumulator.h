@@ -29,8 +29,8 @@
     NSError *__accumError;
 }
 
-@property(retain) NSError *_accumError; // @synthesize _accumError=__accumError;
 - (void).cxx_destruct;
+@property(retain) NSError *_accumError; // @synthesize _accumError=__accumError;
 - (_Bool)_exportOutputImage:(id)arg1 format:(int)arg2 colorSpace:(struct CGColorSpace *)arg3 toURL:(id)arg4 uti:(id)arg5 error:(out id *)arg6;
 - (id)_dynamismMapWithMinImage:(id)arg1 maxImage:(id)arg2 extent:(CDStruct_996ac03c)arg3;
 - (_Bool)writeMaskImage:(id)arg1 UTI:(id)arg2 error:(out id *)arg3;

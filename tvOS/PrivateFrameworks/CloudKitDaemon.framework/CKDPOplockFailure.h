@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKDPRecord *_recordForOplockFailure;
 }
 
-@property(retain, nonatomic) CKDPRecord *recordForOplockFailure; // @synthesize recordForOplockFailure=_recordForOplockFailure;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKDPRecord *recordForOplockFailure; // @synthesize recordForOplockFailure=_recordForOplockFailure;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

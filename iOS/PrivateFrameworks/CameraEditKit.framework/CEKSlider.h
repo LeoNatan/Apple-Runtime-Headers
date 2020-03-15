@@ -58,6 +58,7 @@
     struct CGSize _tickMarkSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *_levelIndicatorBackgroundView; // @synthesize _levelIndicatorBackgroundView=__levelIndicatorBackgroundView;
 @property(nonatomic, getter=_isDimmed, setter=_setDimmed:) _Bool _dimmed; // @synthesize _dimmed=__dimmed;
 @property(nonatomic, getter=_isreAdjustingOffsets) _Bool _reAdjustingOffsets; // @synthesize _reAdjustingOffsets=__reAdjustingOffsets;
@@ -92,7 +93,6 @@
 @property(nonatomic) double sliderVerticalOffset; // @synthesize sliderVerticalOffset=_sliderVerticalOffset;
 @property(nonatomic) long long sliderVerticalAlignment; // @synthesize sliderVerticalAlignment=_sliderVerticalAlignment;
 @property(nonatomic) double labelVerticalPadding; // @synthesize labelVerticalPadding=_labelVerticalPadding;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useLegibilityShadows;
 - (void)tickMarksViewDidChangeWidthForTickMarkCount:(id)arg1;
 - (void)_sliderDidEndScrolling;

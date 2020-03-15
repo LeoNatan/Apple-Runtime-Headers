@@ -14,9 +14,9 @@
     CAShapeLayer *_glyphLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *glyphLayer; // @synthesize glyphLayer=_glyphLayer;
 @property(readonly, nonatomic) CAShapeLayer *outlineLayer; // @synthesize outlineLayer=_outlineLayer;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)finishWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;

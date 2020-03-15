@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct _NSRange _foundRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long textMarkerMask; // @synthesize textMarkerMask=_textMarkerMask;
 @property(retain, nonatomic) SCRCIndexMap *textAttributes; // @synthesize textAttributes=_textAttributes;
 @property(nonatomic) BOOL didWrap; // @synthesize didWrap=_didWrap;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(nonatomic) long long originalElementRoleHash; // @synthesize originalElementRoleHash=_originalElementRoleHash;
 @property(retain, nonatomic) SCRElement *originalElement; // @synthesize originalElement=_originalElement;
-- (void).cxx_destruct;
 
 @end
 

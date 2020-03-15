@@ -28,6 +28,8 @@
     UIColor *_platterProgressBarTintColor;
 }
 
++ (id)textColorForBackgroundColor:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *platterProgressBarTintColor; // @synthesize platterProgressBarTintColor=_platterProgressBarTintColor;
 @property(readonly, nonatomic) UIColor *platterSelectionColor; // @synthesize platterSelectionColor=_platterSelectionColor;
 @property(readonly, nonatomic) UIColor *platterPlaceholderTextColor; // @synthesize platterPlaceholderTextColor=_platterPlaceholderTextColor;
@@ -44,7 +46,6 @@
 @property(readonly, nonatomic) _Bool backdropIsGreen; // @synthesize backdropIsGreen=_backdropIsGreen;
 @property(readonly, nonatomic) _Bool backdropIsRed; // @synthesize backdropIsRed=_backdropIsRed;
 @property(readonly, nonatomic) _Bool backdropIsExtreme; // @synthesize backdropIsExtreme=_backdropIsExtreme;
-- (void).cxx_destruct;
 - (id)_colorForPlatterTextColor:(id)arg1 regularColor:(id)arg2 withPlatterAlpha:(float)arg3;
 - (id)annotationTextColorForPlatterAlpha:(float)arg1;
 - (id)platterWarningTextColorForPlatterAlpha:(float)arg1;

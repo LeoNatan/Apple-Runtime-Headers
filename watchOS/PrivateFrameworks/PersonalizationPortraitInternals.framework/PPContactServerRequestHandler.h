@@ -18,8 +18,8 @@
     NSString *_clientProcessName;
 }
 
-@property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void)contactNameRecordChangesForClient:(id)arg1 queryId:(unsigned long long)arg2;
 - (void)contactNameRecordChangesForClient:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)contactNameRecordsForClient:(id)arg1 queryId:(unsigned long long)arg2;

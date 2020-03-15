@@ -29,11 +29,11 @@
     struct CGSize _parentChatItemSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float filterLevel; // @synthesize filterLevel=_filterLevel;
 @property(nonatomic) struct CGSize parentChatItemSize; // @synthesize parentChatItemSize=_parentChatItemSize;
 @property(retain, nonatomic) CKChatItem *chatItem; // @synthesize chatItem=_chatItem;
 @property(readonly, nonatomic) struct CATransform3D contentTransform3D; // @synthesize contentTransform3D=_contentTransform3D;
-- (void).cxx_destruct;
 - (void)setAlphaOrFilterLevel:(float)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

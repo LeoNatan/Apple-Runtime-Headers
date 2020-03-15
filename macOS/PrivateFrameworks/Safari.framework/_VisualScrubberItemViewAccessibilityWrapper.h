@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     VisualScrubberItemView *_parentItemView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak VisualScrubberItemView *parentItemView; // @synthesize parentItemView=_parentItemView;
 @property(nonatomic) __weak id <VisualScrubberItemViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
-- (void).cxx_destruct;
 - (id)accessibilityRoleDescription;
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityRole;

@@ -13,8 +13,8 @@
     PUICActivityIndicatorView *_activityView;
 }
 
-@property(retain, nonatomic) PUICActivityIndicatorView *activityView; // @synthesize activityView=_activityView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICActivityIndicatorView *activityView; // @synthesize activityView=_activityView;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;

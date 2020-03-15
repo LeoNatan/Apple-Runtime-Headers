@@ -23,12 +23,12 @@
     CDUnknownBlockType _layoutSubviewsPostflightHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType layoutSubviewsPostflightHandler; // @synthesize layoutSubviewsPostflightHandler=_layoutSubviewsPostflightHandler;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) long long destinationPlaceholderStyle; // @synthesize destinationPlaceholderStyle=_destinationPlaceholderStyle;
 @property(copy, nonatomic) NSString *destinationName; // @synthesize destinationName=_destinationName;
 @property(retain, nonatomic) UIView *backgroundPlaceholderPosterImageView; // @synthesize backgroundPlaceholderPosterImageView=_backgroundPlaceholderPosterImageView;
-- (void).cxx_destruct;
 - (void)_updateDestinationBackgroundViewAnimated:(BOOL)arg1;
 - (void)_tvOutCapabilityDidChangeNotification:(id)arg1;
 - (void)setShowDestinationPlaceholder:(BOOL)arg1 animated:(BOOL)arg2;

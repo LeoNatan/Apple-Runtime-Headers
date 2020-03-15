@@ -17,11 +17,11 @@
 }
 
 + (id)playerItemWithAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(readonly, nonatomic) WKAudioFileAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)setCurrentTime:(double)arg1;
 @property(readonly, nonatomic) double currentTime;
 - (void)dealloc;

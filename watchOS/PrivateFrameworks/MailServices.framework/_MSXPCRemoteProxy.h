@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     id ____nsxpc_remoteObjectProxy;
 }
 
-@property(retain, nonatomic, setter=___setNSXPCRemoteObjectProxy:) id ___nsxpc_remoteObjectProxy; // @synthesize ___nsxpc_remoteObjectProxy=____nsxpc_remoteObjectProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=___setNSXPCRemoteObjectProxy:) id ___nsxpc_remoteObjectProxy; // @synthesize ___nsxpc_remoteObjectProxy=____nsxpc_remoteObjectProxy;
 - (void)forwardInvocation:(id)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxy;

@@ -14,9 +14,9 @@
     NSPredicate *_predicate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) unsigned long long queryType; // @synthesize queryType=_queryType;
-- (void).cxx_destruct;
 - (id)initWithQueryType:(unsigned long long)arg1 predicate:(id)arg2;
 
 @end

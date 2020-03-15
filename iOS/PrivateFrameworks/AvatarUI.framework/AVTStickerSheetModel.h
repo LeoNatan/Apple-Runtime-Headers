@@ -20,13 +20,13 @@
 }
 
 + (id)sheetModelForAvatarRecord:(id)arg1 withConfigurations:(id)arg2 cache:(id)arg3 taskScheduler:(id)arg4 renderingQueue:(id)arg5 encodingQueue:(id)arg6 stickerGeneratorPool:(id)arg7 imageProvider:(id)arg8 environment:(id)arg9;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *stickerItems; // @synthesize stickerItems=_stickerItems;
 @property(readonly, nonatomic) AVTUIStickerPlaceholderProviderFactory *placeholderProviderFactory; // @synthesize placeholderProviderFactory=_placeholderProviderFactory;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) AVTUIStickerRenderer *stickerRenderer; // @synthesize stickerRenderer=_stickerRenderer;
 @property(readonly, nonatomic) id <AVTTaskScheduler> taskScheduler; // @synthesize taskScheduler=_taskScheduler;
 @property(readonly, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
-- (void).cxx_destruct;
 - (id)initWithAvatarRecord:(id)arg1 stickerItems:(id)arg2 stickerRenderer:(id)arg3 taskScheduler:(id)arg4 placeholderProviderFactory:(id)arg5 environment:(id)arg6;
 
 @end

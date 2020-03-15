@@ -15,10 +15,10 @@
     NSString *_uuid;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *uuid; // @synthesize uuid=_uuid;
 @property unsigned int lifetime; // @synthesize lifetime=_lifetime;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

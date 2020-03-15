@@ -26,8 +26,8 @@
 + (id)keyForNormalizedPhone:(id)arg1;
 + (id)keyForNormalizedEmail:(id)arg1;
 + (id)keyForEmail:(id)arg1;
-@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *externalId;
 - (id)identityKey;
 - (id)phone;

@@ -45,6 +45,7 @@
 + (id)deviceOpsWithType:(int)arg1 params:(id)arg2 inDeltaData:(id)arg3 outDeltaData:(id)arg4 weightsDeltaData:(id)arg5 biasDeltaData:(id)arg6 weightsMomentumData:(id)arg7 biasMomentumData:(id)arg8;
 + (id)deviceOpsWithType:(int)arg1 params:(id)arg2 inDeltaData:(id)arg3 outDeltaData:(id)arg4;
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *gammaMomentumDataBytes; // @synthesize gammaMomentumDataBytes=_gammaMomentumDataBytes;
 @property(retain, nonatomic) NSData *betaMomentumDataBytes; // @synthesize betaMomentumDataBytes=_betaMomentumDataBytes;
 @property(retain, nonatomic) NSData *gammaDeltaDataBytes; // @synthesize gammaDeltaDataBytes=_gammaDeltaDataBytes;
@@ -74,7 +75,6 @@
 @property(nonatomic) unsigned long long sourceStride; // @synthesize sourceStride=_sourceStride;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(readonly, nonatomic) int deviceOpType; // @synthesize deviceOpType=_deviceOpType;
-- (void).cxx_destruct;
 - (id)initWithType:(int)arg1 params:(id)arg2 inDeltaData:(id)arg3 outDeltaData:(id)arg4 weightsDeltaData:(id)arg5 biasDeltaData:(id)arg6 weightsMomentumData:(id)arg7 biasMomentumData:(id)arg8;
 - (id)initWithType:(int)arg1 params:(id)arg2 inDeltaData:(id)arg3 outDeltaData:(id)arg4 betaDeltaData:(id)arg5 gammaDeltaData:(id)arg6 betaMomentumData:(id)arg7 gammaMomentumData:(id)arg8;
 - (id)init;

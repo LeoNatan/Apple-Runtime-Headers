@@ -14,12 +14,12 @@
     struct PathResampler _resampler;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) int drawHand; // @synthesize drawHand=_drawHand;
 @property(readonly, nonatomic) struct PathResampler *resampler; // @synthesize resampler=_resampler;
 @property(readonly, nonatomic) struct CGRect currentLayoutCharacterKeysFrame; // @synthesize currentLayoutCharacterKeysFrame=_currentLayoutCharacterKeysFrame;
 @property(readonly, nonatomic) RefPtr_54d74a7c keyboardLayout; // @synthesize keyboardLayout=_keyboardLayout;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_updateSampledInputsWithResampler:(const struct PathResampler *)arg1 permanentlyFinalized:(_Bool)arg2;
 - (void)_updateSampledInputs;
 @property(readonly, nonatomic) _Bool isDrawing;

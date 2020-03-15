@@ -34,6 +34,7 @@
 + (id)stateWithContentsOfFile:(id)arg1;
 + (double)maxTimeToWaitForWrittenFrameAfterStop;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool preferHEVC; // @synthesize preferHEVC=_preferHEVC;
 @property(nonatomic) struct CGSize nominalIntermediateFrameSize; // @synthesize nominalIntermediateFrameSize=_nominalIntermediateFrameSize;
 @property(nonatomic) float focusLensPosition; // @synthesize focusLensPosition=_focusLensPosition;
@@ -50,7 +51,6 @@
 @property(nonatomic) long long captureDevice; // @synthesize captureDevice=_captureDevice;
 @property(nonatomic) unsigned short sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(retain, nonatomic) NSString *timelapseUUID; // @synthesize timelapseUUID=_timelapseUUID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long connectionMode;
 - (_Bool)writeToFile:(id)arg1 createDirectoryIfNeeded:(_Bool)arg2;
 - (void)forceCompleted;

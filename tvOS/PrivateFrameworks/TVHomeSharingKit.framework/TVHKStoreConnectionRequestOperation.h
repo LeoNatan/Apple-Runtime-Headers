@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SSURLConnectionRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSURLConnectionRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) SSURLConnectionResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)executionDidBegin;
 - (id)initWithRequest:(id)arg1;

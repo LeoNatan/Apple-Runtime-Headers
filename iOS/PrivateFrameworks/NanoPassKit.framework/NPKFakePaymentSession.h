@@ -25,6 +25,7 @@
     unsigned long long _changeCardToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long changeCardToken; // @synthesize changeCardToken=_changeCardToken;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) PKFieldDetector *fieldDetector; // @synthesize fieldDetector=_fieldDetector;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *ourCallbackQueue; // @synthesize ourCallbackQueue=_ourCallbackQueue;
 @property(retain, nonatomic) NSDictionary *ourVasPasses; // @synthesize ourVasPasses=_ourVasPasses;
 @property(retain, nonatomic) PKPass *ourCurrentPass; // @synthesize ourCurrentPass=_ourCurrentPass;
-- (void).cxx_destruct;
 - (void)_handleTransactionCompleteDarwinNotification;
 - (void)_handleTimeoutTimer;
 - (void)_setTimeoutTimer;

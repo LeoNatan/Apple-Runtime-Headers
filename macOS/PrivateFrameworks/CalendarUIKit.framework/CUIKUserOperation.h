@@ -22,6 +22,7 @@
 
 + (id)operationWithObjects:(id)arg1 span:(long long)arg2;
 + (id)operationForContext:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL inverseOperationPrecomputed; // @synthesize inverseOperationPrecomputed=_inverseOperationPrecomputed;
 @property(retain) CUIKUserOperation *precomputedInverseOperation; // @synthesize precomputedInverseOperation=_precomputedInverseOperation;
 @property(retain) NSString *precomputedActionName; // @synthesize precomputedActionName=_precomputedActionName;
@@ -30,7 +31,6 @@
 @property long long span; // @synthesize span=_span;
 @property(retain) NSArray *objects; // @synthesize objects=_objects;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)_objectsForInverse;
 - (Class)_inverseOperationClass;
 - (id)_inverseOperation;

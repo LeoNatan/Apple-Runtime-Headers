@@ -14,9 +14,9 @@
     struct CGRect _originalCrop;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect originalCrop; // @synthesize originalCrop=_originalCrop;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

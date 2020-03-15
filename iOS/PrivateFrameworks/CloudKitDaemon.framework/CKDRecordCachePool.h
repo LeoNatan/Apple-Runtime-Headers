@@ -18,10 +18,10 @@
 
 + (void)performWithClientContext:(id)arg1 scope:(long long)arg2 block:(CDUnknownBlockType)arg3;
 + (id)sharedPool;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recordExpiryQueue; // @synthesize recordExpiryQueue=_recordExpiryQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableDictionary *pools; // @synthesize pools=_pools;
-- (void).cxx_destruct;
 - (void)releaseCache:(id)arg1;
 - (id)acquireCacheWithContext:(id)arg1 scope:(long long)arg2;
 - (id)_poolForContext:(id)arg1;

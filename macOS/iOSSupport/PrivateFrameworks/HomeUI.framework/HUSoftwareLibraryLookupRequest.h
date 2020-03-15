@@ -16,9 +16,9 @@
     NSString *_storeID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *storeID; // @synthesize storeID=_storeID;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBundleID:(id)arg1 storeID:(id)arg2;
 

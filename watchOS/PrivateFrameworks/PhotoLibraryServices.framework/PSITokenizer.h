@@ -21,8 +21,8 @@
 + (id)fts5StringFromString:(id)arg1 useWildcard:(_Bool)arg2;
 + (id)fts5StringFromString:(id)arg1 forMatchType:(unsigned int)arg2;
 + (id)ftsTokenizerName;
-@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (id)newTokensFromString:(id)arg1 withOptions:(int)arg2 outCopyRanges:(id *)arg3 error:(id *)arg4;
 - (void)tokenizePersonName:(id)arg1 tokenOutput:(struct tokenOutput_t *)arg2;
 - (void)_tokenizeString:(id)arg1 withContext:(CDStruct_6d183dde *)arg2;

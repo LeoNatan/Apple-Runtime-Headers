@@ -19,9 +19,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)profileGestureWithStringValue:(id)arg1;
 + (id)profileGestureWithGesture:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _VOSProfileCommand *command; // @synthesize command=_command;
 @property(retain, nonatomic) VOSGesture *gesture; // @synthesize gesture=_gesture;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

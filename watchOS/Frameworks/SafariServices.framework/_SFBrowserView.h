@@ -6,17 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class WKWebView, _SFBrowserToolbar, _SFCrashBanner, _SFLinkPreviewHeader, _SFNavigationBar;
+@class SFNanoDomainContainerView, WKWebView, _SFCrashBanner, _SFLinkPreviewHeader, _SFNavigationBar, _SFToolbar;
 @protocol SFBrowserViewDelegate;
 
 @interface _SFBrowserView : UIView
 {
-    _Bool _contentReadyForDisplay;
     UIView *_initialLoadBlankingView;
+    _Bool _contentReadyForDisplay;
     _Bool _shouldUseScrollToTopView;
     _Bool _hasReceivedTouchEvents;
     UIView *_contentContainerView;
-    _SFBrowserToolbar *_toolbar;
+    _SFToolbar *_toolbar;
     _SFNavigationBar *_navigationBar;
     float _bottomBarOffset;
     float _topBarHeight;
@@ -27,12 +27,17 @@
     UIView *_scrollToTopView;
     _SFCrashBanner *_crashBanner;
     float _crashBannerOffset;
+    UIView *_quickLookDocumentView;
     float _minimalUITopOffset;
     id <SFBrowserViewDelegate> _delegate;
+    SFNanoDomainContainerView *_nanoDomainContainerView;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) SFNanoDomainContainerView *nanoDomainContainerView; // @synthesize nanoDomainContainerView=_nanoDomainContainerView;
 @property(nonatomic) __weak id <SFBrowserViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) float minimalUITopOffset; // @synthesize minimalUITopOffset=_minimalUITopOffset;
+@property(retain, nonatomic) UIView *quickLookDocumentView; // @synthesize quickLookDocumentView=_quickLookDocumentView;
 @property(readonly, nonatomic) _Bool hasReceivedTouchEvents; // @synthesize hasReceivedTouchEvents=_hasReceivedTouchEvents;
 @property(nonatomic) float crashBannerOffset; // @synthesize crashBannerOffset=_crashBannerOffset;
 @property(retain, nonatomic) _SFCrashBanner *crashBanner; // @synthesize crashBanner=_crashBanner;
@@ -45,9 +50,9 @@
 @property(nonatomic) float topBarHeight; // @synthesize topBarHeight=_topBarHeight;
 @property(nonatomic) float bottomBarOffset; // @synthesize bottomBarOffset=_bottomBarOffset;
 @property(retain, nonatomic) _SFNavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
-@property(retain, nonatomic) _SFBrowserToolbar *toolbar; // @synthesize toolbar=_toolbar;
+@property(retain, nonatomic) _SFToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(readonly, nonatomic) UIView *contentContainerView; // @synthesize contentContainerView=_contentContainerView;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isContentReadyForDisplay; // @synthesize isContentReadyForDisplay=_contentReadyForDisplay;
 @property(nonatomic) _Bool initialLoadBlankingViewHidden;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updatePreviewHeader;

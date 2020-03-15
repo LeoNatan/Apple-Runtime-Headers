@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSURL *_url;
 }
 
-@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

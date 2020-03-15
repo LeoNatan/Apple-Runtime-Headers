@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     struct TFENode _browserTargetNode;
 }
 
-@property struct TFENode browserTargetNode; // @synthesize browserTargetNode=_browserTargetNode;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property struct TFENode browserTargetNode; // @synthesize browserTargetNode=_browserTargetNode;
 - (id)previewView:(id)arg1 draggingItemsForPreviewItem:(id)arg2;
 - (id)previewView:(id)arg1 pasteboardWriterForPreviewItem:(id)arg2;
 - (BOOL)previewView:(id)arg1 acceptDrop:(id)arg2 onPreviewItem:(id)arg3;

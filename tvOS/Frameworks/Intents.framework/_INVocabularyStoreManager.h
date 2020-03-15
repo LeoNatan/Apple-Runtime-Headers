@@ -29,10 +29,10 @@
 + (id)_hashOfAppPath:(id)arg1;
 + (id)_customVocabularyDirectory;
 + (id)_globalClassQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appBundlePath; // @synthesize appBundlePath=_appBundlePath;
 @property(readonly, copy, nonatomic) NSString *baseDirectoryPath; // @synthesize baseDirectoryPath=_baseDirectoryPath;
 @property(copy, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
-- (void).cxx_destruct;
 - (void)writeLatestVocabularyItems:(id)arg1 forIntentSlot:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)checkIfSyncSlot:(id)arg1 isAllowedWithCompletion:(CDUnknownBlockType)arg2;
 - (void)_writeLatestVocabularyItems:(id)arg1 forIntentSlot:(id)arg2 completion:(CDUnknownBlockType)arg3;

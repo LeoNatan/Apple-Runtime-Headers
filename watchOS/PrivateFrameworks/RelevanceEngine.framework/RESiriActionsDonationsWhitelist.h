@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet;
+@class NSDictionary, NSSet;
 
 @interface RESiriActionsDonationsWhitelist : NSObject
 {
-    struct NSDictionary *_whitelist;
+    NSDictionary *_whitelist;
     struct os_unfair_lock_s _lock;
     NSSet *_intentWhitelistBundleIDs;
     NSSet *_userActivityWhitelistBundleIDs;

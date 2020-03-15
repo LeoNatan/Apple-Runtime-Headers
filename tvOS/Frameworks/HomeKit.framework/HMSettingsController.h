@@ -28,6 +28,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSString *codingKey; // @synthesize codingKey=_codingKey;
 @property(readonly) NSUUID *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
 @property(retain) _HMContext *context; // @synthesize context=_context;
@@ -38,7 +39,6 @@
 @property(retain) HMSettingGroup *rootGroup; // @synthesize rootGroup=_rootGroup;
 @property __weak id <HMSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) HMSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)__notifyDelegateSettingsDidUpdate;
 - (void)__notifyDelegateSettingsWillUpdateWithCompletionHandler:(CDUnknownBlockType)arg1;

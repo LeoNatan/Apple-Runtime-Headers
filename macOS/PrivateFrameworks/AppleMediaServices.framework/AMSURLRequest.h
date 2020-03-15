@@ -16,8 +16,8 @@
     AMSURLRequestProperties *_properties;
 }
 
-@property(retain) AMSURLRequestProperties *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(retain) AMSURLRequestProperties *properties; // @synthesize properties=_properties;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequest:(id)arg1;

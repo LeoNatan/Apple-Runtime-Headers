@@ -22,6 +22,7 @@
 
 + (void)animate:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)itemWithImageTemplate:(id)arg1 tintColor:(id)arg2 highlightedTintColor:(id)arg3 target:(id)arg4 action:(SEL)arg5;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 @property(retain, nonatomic) UILabel<CKActionMenuItemView> *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIView<CKActionMenuItemView> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)sendAction;
 - (void)updateForState:(long long)arg1 touchInside:(_Bool)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

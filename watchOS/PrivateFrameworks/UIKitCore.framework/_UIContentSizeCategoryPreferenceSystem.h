@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIContentSizeCategoryPreference *_overridePreferences;
 }
 
-@property(retain, nonatomic) UIContentSizeCategoryPreference *overridePreferences; // @synthesize overridePreferences=_overridePreferences;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIContentSizeCategoryPreference *overridePreferences; // @synthesize overridePreferences=_overridePreferences;
 - (void)_endObservingPreferredContentSizeChangedNotification;
 - (void)_beginObservingPreferredContentSizeChangedNotification;
 - (void)setPreferredContentSizeCategory:(id)arg1;

@@ -22,12 +22,12 @@
     unsigned int _flags;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
 @property(copy, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
-- (void).cxx_destruct;
 - (void)_invalidated;
 - (void)_invalidate;
 - (void)invalidate;

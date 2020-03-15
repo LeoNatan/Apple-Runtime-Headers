@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     PUActivityViewController *_internalActivityViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PUActivityViewController *internalActivityViewController; // @synthesize internalActivityViewController=_internalActivityViewController;
 @property(readonly, nonatomic) _Bool excludeShareActivity; // @synthesize excludeShareActivity=_excludeShareActivity;
 @property(retain, nonatomic) PUCarouselSharingViewController *carouselViewController; // @synthesize carouselViewController=_carouselViewController;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSDictionary *assetsFetchResultsByAssetCollection; // @synthesize assetsFetchResultsByAssetCollection=_assetsFetchResultsByAssetCollection;
 @property(retain, nonatomic) PUActivitySharingViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(nonatomic) __weak id <PXActivitySharingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (void)carouselSharingViewController:(id)arg1 replaceAssetItem:(id)arg2 withAssetItem:(id)arg3;

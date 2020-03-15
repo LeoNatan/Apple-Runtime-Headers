@@ -22,6 +22,7 @@
     NSDate *_dateSent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *dateSent; // @synthesize dateSent=_dateSent;
 @property(retain, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(copy, nonatomic) NSArray *recipientAddresses; // @synthesize recipientAddresses=_recipientAddresses;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(readonly, nonatomic) NSURL *attachmentFileURL; // @synthesize attachmentFileURL=_attachmentFileURL;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canReadAttachmentFile;
 - (id)initWithAttachmentFileURL:(id)arg1 builder:(CDUnknownBlockType)arg2;
 

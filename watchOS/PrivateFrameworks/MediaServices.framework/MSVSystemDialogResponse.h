@@ -14,9 +14,9 @@
     NSArray *_textFieldValues;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *textFieldValues; // @synthesize textFieldValues=_textFieldValues;
 @property(readonly, nonatomic) int buttonIdentifier; // @synthesize buttonIdentifier=_buttonIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIdentifier:(int)arg1 textFieldValues:(id)arg2;
 

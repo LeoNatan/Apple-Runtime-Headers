@@ -22,6 +22,7 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(retain, nonatomic) NSNumber *indexedAsEmptySubject; // @synthesize indexedAsEmptySubject=_indexedAsEmptySubject;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *deleted; // @synthesize deleted=_deleted;
 @property(copy, nonatomic) NSArray *toEmailAddresses; // @synthesize toEmailAddresses=_toEmailAddresses;
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

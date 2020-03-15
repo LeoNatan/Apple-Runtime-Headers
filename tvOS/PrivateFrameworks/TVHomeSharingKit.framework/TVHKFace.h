@@ -16,9 +16,9 @@
 
 + (id)_stringRepresentationFromFractionRect:(struct CGRect)arg1;
 + (struct CGRect)_fractionRectFromStringRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect fractionalRect; // @synthesize fractionalRect=_fractionalRect;
 @property(retain, nonatomic) TVHKMediaEntityIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

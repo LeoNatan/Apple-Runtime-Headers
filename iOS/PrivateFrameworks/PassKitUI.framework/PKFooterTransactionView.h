@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKPeerPaymentContactResolverDelegate-Protocol.h>
 
-@class NSString, PKContinuousButton, PKPaymentPass, PKPaymentPassAction, PKPaymentTransaction, PKPeerPaymentContactResolver, PKStackedTextItemGroup, PKStackedTextItemGroupView, PKTransitBalanceModel, UIImageView;
+@class NSArray, NSString, PKContinuousButton, PKPaymentPass, PKPaymentPassAction, PKPaymentTransaction, PKPeerPaymentContactResolver, PKStackedTextItemGroup, PKStackedTextItemGroupView, PKTransitBalanceModel, UIImageView;
 
 @interface PKFooterTransactionView : UIView <PKPeerPaymentContactResolverDelegate>
 {
@@ -30,26 +30,29 @@
     PKPaymentPass *_pass;
     PKPaymentTransaction *_transaction;
     PKTransitBalanceModel *_transitBalanceModel;
+    NSArray *_transitCommutePlans;
     PKPeerPaymentContactResolver *_peerPaymentContactResolver;
     NSString *_requiredActionPropertyIdentifier;
     CDUnknownBlockType _actionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(retain, nonatomic) NSString *requiredActionPropertyIdentifier; // @synthesize requiredActionPropertyIdentifier=_requiredActionPropertyIdentifier;
 @property(readonly, nonatomic) _Bool contentRequiresDisclosure; // @synthesize contentRequiresDisclosure=_contentRequiresDisclosure;
 @property(nonatomic) _Bool enableDisclosure; // @synthesize enableDisclosure=_enableDisclosure;
 @property(nonatomic) _Bool disableCommutePlanDisplay; // @synthesize disableCommutePlanDisplay=_disableCommutePlanDisplay;
 @property(readonly, nonatomic) PKPeerPaymentContactResolver *peerPaymentContactResolver; // @synthesize peerPaymentContactResolver=_peerPaymentContactResolver;
+@property(readonly, copy, nonatomic) NSArray *transitCommutePlans; // @synthesize transitCommutePlans=_transitCommutePlans;
 @property(copy, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
 @property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
 @property(readonly, nonatomic) _Bool hasContent;
 - (void)endUpdates:(_Bool)arg1;
 - (void)beginUpdates;
+- (void)setTransitCommutePlans:(id)arg1 animated:(_Bool)arg2;
 - (void)setTransitBalanceModel:(id)arg1 animated:(_Bool)arg2;
 - (void)setTransaction:(id)arg1 animated:(_Bool)arg2;
 - (void)setPass:(id)arg1 animated:(_Bool)arg2;

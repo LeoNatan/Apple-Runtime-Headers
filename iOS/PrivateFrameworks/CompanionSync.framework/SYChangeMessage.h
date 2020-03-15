@@ -17,9 +17,9 @@
 }
 
 + (Class)changesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *changes; // @synthesize changes=_changes;
 @property(retain, nonatomic) SYMessageHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

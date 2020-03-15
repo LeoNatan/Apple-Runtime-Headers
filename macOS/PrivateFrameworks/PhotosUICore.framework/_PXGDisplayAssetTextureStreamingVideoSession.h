@@ -15,8 +15,8 @@
     id <PXGDisplayAssetPixelBufferSource> _pixelBufferSource;
 }
 
-@property(readonly, nonatomic) id <PXGDisplayAssetPixelBufferSource> pixelBufferSource; // @synthesize pixelBufferSource=_pixelBufferSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PXGDisplayAssetPixelBufferSource> pixelBufferSource; // @synthesize pixelBufferSource=_pixelBufferSource;
 - (void)removeTextureRequestIDs:(id)arg1;
 - (void)removeTextureRequestID:(int)arg1;
 - (void)addTextureRequestID:(int)arg1;

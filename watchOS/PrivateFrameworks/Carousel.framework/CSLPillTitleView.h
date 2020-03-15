@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 - (void)animateOut;
 - (void)animateIn;
 - (void)layoutSubviews;

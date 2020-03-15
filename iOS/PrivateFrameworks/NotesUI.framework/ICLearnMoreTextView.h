@@ -17,12 +17,12 @@
     UIViewController *_parentViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingLearnMore; // @synthesize isShowingLearnMore=_isShowingLearnMore;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) NSString *helpVersion; // @synthesize helpVersion=_helpVersion;
 @property(retain, nonatomic) NSString *helpTopicID; // @synthesize helpTopicID=_helpTopicID;
-- (void).cxx_destruct;
 - (void)updateForAccessibilityDarkerSystemColors;
 - (_Bool)_accessibilityHasTextOperations;
 - (id)accessibilityHint;

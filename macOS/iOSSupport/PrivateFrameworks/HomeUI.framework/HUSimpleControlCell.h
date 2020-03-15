@@ -15,9 +15,9 @@
     NSArray *_controlViewConstraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *controlViewConstraints; // @synthesize controlViewConstraints=_controlViewConstraints;
 @property(retain, nonatomic) UIView<HUControlView> *controlView; // @synthesize controlView=_controlView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)_updateSliderConstraints;
 - (id)allControlViews;

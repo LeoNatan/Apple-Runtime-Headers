@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     _Bool _enabled;
 }
 
-@property(nonatomic) __weak id <SKUIRedeemCameraViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIRedeemCameraViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_resumeRedeemer;
 - (void)_pauseRedeemer;
 - (id)_newTextFieldWithClientContext:(id)arg1;

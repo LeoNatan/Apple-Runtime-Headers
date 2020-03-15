@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     int _status;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasPendingArchivedRecords; // @synthesize hasPendingArchivedRecords=_hasPendingArchivedRecords;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSData *resultClientChangeTokenData; // @synthesize resultClientChangeTokenData=_resultClientChangeTokenData;
 @property(retain, nonatomic) NSData *resultServerChangeTokenData; // @synthesize resultServerChangeTokenData=_resultServerChangeTokenData;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)schedule;
 - (void)invalidate;
 - (void)displayLinkFired:(id)arg1;
+- (void)setPreferredFramesPerSecond:(long long)arg1;
 - (void)dealloc;
 - (id)initWithDrawingAreaProxy:(struct RemoteLayerTreeDrawingAreaProxy *)arg1;
 

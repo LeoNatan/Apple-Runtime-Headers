@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     SKUICellImageView *_userRatingImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUICellImageView *userRatingImageView; // @synthesize userRatingImageView=_userRatingImageView;
 @property(retain, nonatomic) UILabel *userRatingLabel; // @synthesize userRatingLabel=_userRatingLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *indexNumberLabel; // @synthesize indexNumberLabel=_indexNumberLabel;
-- (void).cxx_destruct;
 - (void)setBackgroundColor:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

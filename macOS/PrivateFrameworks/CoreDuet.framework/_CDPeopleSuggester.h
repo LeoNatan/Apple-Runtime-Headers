@@ -28,10 +28,10 @@
 + (id)peopleSuggesterUsingDaemon;
 + (id)peopleSuggesterWithDirectDBAccess;
 + (id)peopleSuggester;
+- (void).cxx_destruct;
 @property double cacheTimeoutSeconds; // @synthesize cacheTimeoutSeconds=_cacheTimeoutSeconds;
 @property(retain) _CDPeopleSuggesterSettings *settings; // @synthesize settings=_settings;
 @property(retain) _CDPeopleSuggesterContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)suggestPeopleWithError:(id *)arg1;
 - (void)suggestPeopleWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateSettings;

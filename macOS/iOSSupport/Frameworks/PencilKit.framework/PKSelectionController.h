@@ -28,6 +28,7 @@
     struct CGAffineTransform _selectionTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property(nonatomic) BOOL isCurrentlyAddingSpace; // @synthesize isCurrentlyAddingSpace=_isCurrentlyAddingSpace;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *selectionHullQueue; // @synthesize selectionHullQueue=_selectionHullQueue;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) PKStrokeSelection *currentStrokeSelection; // @synthesize currentStrokeSelection=_currentStrokeSelection;
 @property(nonatomic) BOOL hasCurrentSelection; // @synthesize hasCurrentSelection=_hasCurrentSelection;
 @property(nonatomic) __weak PKTiledView *tiledView; // @synthesize tiledView=_tiledView;
-- (void).cxx_destruct;
 - (struct CGPoint)closestPointForPastedSelectionRect:(struct CGRect)arg1 withDrawing:(id *)arg2;
 - (id)_attachmentForSelectionRect:(struct CGRect)arg1;
 - (struct CGRect)_extendedBoundsForDrawing:(id)arg1;

@@ -15,9 +15,9 @@
     NSMutableSet *_pendingBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *pendingBlocks; // @synthesize pendingBlocks=_pendingBlocks;
 @property(readonly, nonatomic) id <CalAsyncBlockPerformer> blockPerformer; // @synthesize blockPerformer=_blockPerformer;
-- (void).cxx_destruct;
 - (void)cancelAllPendingBlocks;
 - (void)performAfterDelay:(double)arg1 block:(CDUnknownBlockType)arg2;
 - (void)performAsync:(CDUnknownBlockType)arg1;

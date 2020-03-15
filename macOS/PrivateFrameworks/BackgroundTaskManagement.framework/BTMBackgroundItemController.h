@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain) NSSet *internalItems; // @synthesize internalItems=_internalItems;
 @property __weak id <BTMBackgroundItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDidChangeItems;
 - (void)_setBackgroundItems:(id)arg1;
 - (void)fetchBackgroundTasks;

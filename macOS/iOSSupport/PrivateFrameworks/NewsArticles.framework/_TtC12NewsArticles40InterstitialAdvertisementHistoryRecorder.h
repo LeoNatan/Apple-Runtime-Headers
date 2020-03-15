@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <NewsArticles/NAInterstitialAdvertisementHistoryRecorder-Protocol.h>
-
-@interface _TtC12NewsArticles40InterstitialAdvertisementHistoryRecorder : _TtCs12_SwiftObject <NAInterstitialAdvertisementHistoryRecorder>
+@interface _TtC12NewsArticles40InterstitialAdvertisementHistoryRecorder : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: articlesViewedCount
 }

@@ -17,6 +17,7 @@
 - (void)setUserEntered:(CTXPCServiceSubscriptionContext *)arg1 monthlyBudget:(NSNumber *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)userEnteredMonthlyBudget:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSNumber *, NSError *))arg2;
 - (void)billingCycleEndDatesForLastPeriods:(unsigned int)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (void)dataUsageForLastPeriodsOnActivePairedDevice:(unsigned int)arg1 completion:(void (^)(CTDeviceDataUsage *, NSError *))arg2;
 - (void)dataUsageForLastPeriods:(unsigned int)arg1 completion:(void (^)(CTDeviceDataUsage *, NSError *))arg2;
 @end
 

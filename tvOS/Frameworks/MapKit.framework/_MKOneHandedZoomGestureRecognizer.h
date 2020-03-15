@@ -21,10 +21,10 @@
     id <MKZoomingGestureControlConfiguration> _configuration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <MKZoomingGestureControlConfiguration> configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) _MKZoomingPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
-- (void).cxx_destruct;
 - (void)_tooSlow:(id)arg1;
 - (void)_startTapTimer:(double)arg1;
 - (void)_clearTapTimer;

@@ -9,6 +9,13 @@
 @class NSString, RWIProtocolNetworkHeaders;
 
 @protocol RWIProtocolNetworkDomainHandler <NSObject>
+
+@optional
+- (void)interceptWithResponseWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 requestId:(NSString *)arg3 content:(NSString *)arg4 base64Encoded:(_Bool)arg5 mimeType:(id *)arg6 status:(int *)arg7 statusText:(id *)arg8 headers:(id *)arg9;
+- (void)interceptContinueWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 requestId:(NSString *)arg3;
+- (void)removeInterceptionWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 url:(NSString *)arg3 caseSensitive:(_Bool *)arg4 isRegex:(_Bool *)arg5 stage:(long long *)arg6;
+- (void)addInterceptionWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 url:(NSString *)arg3 caseSensitive:(_Bool *)arg4 isRegex:(_Bool *)arg5 stage:(long long *)arg6;
+- (void)setInterceptionEnabledWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(void))arg2 enabled:(_Bool)arg3;
 - (void)resolveWebSocketWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(RWIProtocolRuntimeRemoteObject *))arg2 requestId:(NSString *)arg3 objectGroup:(id *)arg4;
 - (void)getSerializedCertificateWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(NSString *))arg2 requestId:(NSString *)arg3;
 - (void)loadResourceWithErrorCallback:(void (^)(NSString *))arg1 successCallback:(void (^)(NSString *, NSString *, int))arg2 frameId:(NSString *)arg3 url:(NSString *)arg4;

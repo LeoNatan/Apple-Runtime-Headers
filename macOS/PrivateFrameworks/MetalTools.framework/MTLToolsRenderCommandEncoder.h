@@ -87,6 +87,8 @@
 - (void)setFragmentBytes:(const void *)arg1 length:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
 - (void)setDepthClipModeSPI:(unsigned long long)arg1;
 - (void)setDepthClipMode:(unsigned long long)arg1;
+- (void)setVertexAmplificationCount:(unsigned long long)arg1 viewMappings:(const CDStruct_c0454aff *)arg2;
+- (void)setVertexAmplificationMode:(unsigned long long)arg1 value:(unsigned long long)arg2;
 - (void)setTriangleFillMode:(unsigned long long)arg1;
 - (void)setScissorRect:(CDStruct_33dcf794)arg1;
 - (void)setDepthBias:(float)arg1 slopeScale:(float)arg2 clamp:(float)arg3;

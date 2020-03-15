@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     SKUIGiftTextTableViewCell *_messageCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIGiftTextTableViewCell *messageCell; // @synthesize messageCell=_messageCell;
 @property(nonatomic) id <UITextFieldDelegate> textFieldDelegate; // @synthesize textFieldDelegate=_textFieldDelegate;
 @property(retain, nonatomic) SKUIGift *gift; // @synthesize gift=_gift;
-- (void).cxx_destruct;
 - (id)_textFieldTableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)_recipientTableViewCell;
 - (id)_footerString;

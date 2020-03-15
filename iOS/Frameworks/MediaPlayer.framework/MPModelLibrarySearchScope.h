@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) MPPropertySet *itemProperties; // @synthesize itemProperties=_itemProperties;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) MPModelKind *itemKind; // @synthesize itemKind=_itemKind;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) shared_ptr_c450ebdb coreScope;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

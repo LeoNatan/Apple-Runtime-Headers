@@ -63,7 +63,9 @@ __attribute__((visibility("hidden")))
     unsigned int _mostBurstLoss;
     unsigned int _maxBurstyLoss;
     double _roundTripTime;
+    double _worstRecentRoundTripTime;
     double _packetLossRate;
+    unsigned int _worstRecentBurstLoss;
     unsigned int _nwConnectionMaxThroughput;
     unsigned int _nwConnectionAvgThroughput;
     int _nwConnectionRateTrendSuggestion;
@@ -79,12 +81,15 @@ __attribute__((visibility("hidden")))
     double _packetLossRateVideo;
 }
 
+@property(readonly, nonatomic) BOOL isSendBitrateLimited; // @synthesize isSendBitrateLimited=_isSendBitrateLimited;
 @property(nonatomic) BOOL didMBLRampDown; // @synthesize didMBLRampDown=_didMBLRampDown;
-@property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualBitrate;
+@property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualSendBitrate;
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic) double owrd; // @synthesize owrd=_owrd;
 @property(nonatomic) unsigned int localBandwidthEstimation; // @synthesize localBandwidthEstimation=_localBandwidthEstimation;
 @property(readonly, nonatomic) BOOL isNewRateSentOut; // @synthesize isNewRateSentOut=_isNewRateSentOut;
+@property(readonly, nonatomic) unsigned int worstRecentBurstLoss; // @synthesize worstRecentBurstLoss=_worstRecentBurstLoss;
+@property(readonly, nonatomic) double worstRecentRoundTripTime; // @synthesize worstRecentRoundTripTime=_worstRecentRoundTripTime;
 @property(readonly, nonatomic) double roundTripTime; // @synthesize roundTripTime=_roundTripTime;
 @property(readonly, nonatomic) unsigned int totalPacketReceived; // @synthesize totalPacketReceived=_totalPacketReceived;
 @property(readonly, nonatomic) double packetLossRateVideo; // @synthesize packetLossRateVideo=_packetLossRateVideo;

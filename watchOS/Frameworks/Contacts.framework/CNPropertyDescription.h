@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isNonnull; // @synthesize isNonnull=_isNonnull;
 @property(readonly, copy, nonatomic) CDUnknownBlockType valueForKeyTransform; // @synthesize valueForKeyTransform=_valueForKeyTransform;
 @property(readonly, nonatomic) SEL writeSelector; // @synthesize writeSelector=_writeSelector;
 @property(readonly, nonatomic) SEL readSelector; // @synthesize readSelector=_readSelector;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)resetGuardianManagedValueOnContact:(id)arg1;
 - (id)stringForIndexingForContact:(id)arg1;
 - (id)CNValueForContact:(id)arg1;

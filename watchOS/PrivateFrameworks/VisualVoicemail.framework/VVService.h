@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <VisualVoicemail/VVMSharedNetworkObserverDelegate-Protocol.h>
+
 @class NSArray, NSDictionary, NSError, NSMutableDictionary, NSRecursiveLock, NSString, VMCarrierStateRequestController, VMTranscriptionService, VVVerifier;
 @protocol OS_dispatch_queue, VMTelephonySubscription;
 
-@interface VVService : NSObject
+@interface VVService : NSObject <VVMSharedNetworkObserverDelegate>
 {
     NSRecursiveLock *_lock;
     int _mailboxUsage;
@@ -38,6 +40,7 @@
     _Bool _WiFiNetworkSupported;
     _Bool _mailboxUsageUpdated;
     NSString *_isoCountryCode;
+    NSString *_smscAddress;
     NSMutableDictionary *_stateRequestAttemptCount;
     unsigned int _trashedCount;
     unsigned int _unreadCount;
@@ -66,6 +69,7 @@
 + (id)serviceWithIdentifier:(id)arg1 destinationID:(id)arg2 name:(id)arg3 isoCountryCode:(id)arg4 subscription:(id)arg5 stateRequestController:(id)arg6;
 + (void)_subscriptionStateChanged;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VMCarrierStateRequestController *stateRequestController; // @synthesize stateRequestController=_stateRequestController;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(retain, nonatomic) NSDictionary *accountDictionary; // @synthesize accountDictionary=_accountDictionary;
@@ -77,7 +81,7 @@
 @property(retain, nonatomic) VMTranscriptionService *transcriptionService; // @synthesize transcriptionService=_transcriptionService;
 @property(copy, nonatomic) NSString *serviceDestinationID; // @synthesize serviceDestinationID=_serviceDestinationID;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-- (void).cxx_destruct;
+@property(nonatomic, getter=isWiFiNetworkReachable) _Bool WiFiNetworkReachable; // @synthesize WiFiNetworkReachable=_WiFiNetworkReachable;
 - (void)removeServiceInformation;
 - (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
 - (void)performAtomicAccessorBlock:(CDUnknownBlockType)arg1;
@@ -85,7 +89,7 @@
 - (void)removeAttemptCountForStateRequest:(id)arg1;
 - (void)incrementAttemptCountForStateRequest:(id)arg1;
 - (int)attemptCountForStateRequest:(id)arg1;
-- (void)handleCPNetworkObserverNetworkReachableNotification:(id)arg1;
+- (void)networkReachabilityChangedSync:(_Bool)arg1;
 - (void)handleVVServiceDataAvailableNotification:(id)arg1;
 - (void)handleVoicemailInfoUpdate:(id)arg1;
 - (struct __CFString *)dataConnectionServiceTypeOverride;
@@ -153,7 +157,6 @@
 - (void)_enterFallbackMode;
 - (void)_deliverFallbackNotification;
 - (void)cancelNotificationFallback;
-- (void)_handleSMSCAvailable;
 - (void)clearActivationError;
 - (id)activationError;
 - (void)_setActivationError:(id)arg1;
@@ -167,9 +170,9 @@
 @property(nonatomic) unsigned int unreadCount; // @synthesize unreadCount=_unreadCount;
 @property(nonatomic) unsigned int trashedCount; // @synthesize trashedCount=_trashedCount;
 @property(nonatomic, getter=isSMSReady) _Bool SMSReady; // @synthesize SMSReady=_SMSReady;
+@property(copy, nonatomic) NSString *smscAddress; // @synthesize smscAddress=_smscAddress;
 @property(nonatomic, getter=isMailboxUsageUpdated) _Bool mailboxUsageUpdated; // @synthesize mailboxUsageUpdated=_mailboxUsageUpdated;
 @property(nonatomic, getter=isWiFiNetworkSupported) _Bool WiFiNetworkSupported; // @synthesize WiFiNetworkSupported=_WiFiNetworkSupported;
-@property(nonatomic, getter=isWiFiNetworkReachable) _Bool WiFiNetworkReachable; // @synthesize WiFiNetworkReachable=_WiFiNetworkReachable;
 @property(readonly, nonatomic, getter=isWiFiNetworkAvailable) _Bool WiFiNetworkAvailable;
 @property(readonly, copy, nonatomic) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(nonatomic, getter=isCellularNetworkAvailable) _Bool cellularNetworkAvailable; // @synthesize cellularNetworkAvailable=_cellularNetworkAvailable;
@@ -195,6 +198,12 @@
 - (_Bool)doTrashCompaction;
 - (_Bool)shouldTrashCompactRecord:(void *)arg1;
 - (double)trashCompactionAge;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

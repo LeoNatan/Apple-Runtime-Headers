@@ -19,12 +19,12 @@
     NSArray *_userSectionModules;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *userSectionModules; // @synthesize userSectionModules=_userSectionModules;
 @property(retain, nonatomic) HFItemProvider *headerItemProvider; // @synthesize headerItemProvider=_headerItemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) unsigned long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (id)didSelectItem:(id)arg1;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)expandableModules;

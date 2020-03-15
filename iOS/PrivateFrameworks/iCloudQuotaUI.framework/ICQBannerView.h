@@ -25,12 +25,13 @@
     ICQUpgradeFlowOptions *_flowOptions;
     _ICQTextView *_textView;
     NSArray *_activeConstraints;
-    ICQUpgradeFlowManager *_upgradeFlowManager;
+    ICQUpgradeFlowManager *_localFlowManager;
     struct NSDirectionalEdgeInsets _textMargins;
 }
 
 + (_Bool)shouldShowForOffer:(id)arg1;
-@property(retain, nonatomic) ICQUpgradeFlowManager *upgradeFlowManager; // @synthesize upgradeFlowManager=_upgradeFlowManager;
+- (void).cxx_destruct;
+@property(retain, nonatomic) ICQUpgradeFlowManager *localFlowManager; // @synthesize localFlowManager=_localFlowManager;
 @property(retain, nonatomic) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
 @property(readonly, nonatomic) _ICQTextView *textView; // @synthesize textView=_textView;
 @property(copy, nonatomic) ICQUpgradeFlowOptions *flowOptions; // @synthesize flowOptions=_flowOptions;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) __weak id <ICQBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)textViewDidChangeSelection:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3;
 - (void)upgradeFlowManagerDidComplete:(id)arg1;

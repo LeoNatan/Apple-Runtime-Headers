@@ -14,8 +14,8 @@
 }
 
 + (id)takeLocalAssertionWithIdentifier:(id)arg1 delegate:(id)arg2;
-@property(nonatomic) __weak id <CSLEnableOrientationEventsAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLEnableOrientationEventsAssertionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_releaseAssertion;
 - (void)_takeAssertion;
 - (void)_deviceOrientationDidChange:(id)arg1;

@@ -19,11 +19,11 @@
     float _dividerVerticalCenter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float dividerVerticalCenter; // @synthesize dividerVerticalCenter=_dividerVerticalCenter;
 @property(nonatomic) float dividerHeight; // @synthesize dividerHeight=_dividerHeight;
 @property(nonatomic) float labelYOrigin; // @synthesize labelYOrigin=_labelYOrigin;
 @property(retain, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;
-- (void).cxx_destruct;
 - (id)_trianglePointerView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

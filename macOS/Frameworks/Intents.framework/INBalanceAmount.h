@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(readonly) long long balanceType; // @synthesize balanceType=_balanceType;
 @property(readonly, copy) NSDecimalNumber *amount; // @synthesize amount=_amount;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)description;

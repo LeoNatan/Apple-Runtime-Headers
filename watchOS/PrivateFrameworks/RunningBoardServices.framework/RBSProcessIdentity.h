@@ -41,12 +41,12 @@
 + (id)identityForEmbeddedApplicationIdentifier:(id)arg1 euid:(unsigned int)arg2;
 + (id)identityForEmbeddedApplicationIdentifier:(id)arg1;
 + (id)identityOfCurrentProcess;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *daemonJobLabel; // @synthesize daemonJobLabel=_daemonJobLabel;
 @property(readonly, copy, nonatomic) NSString *embeddedApplicationIdentifier; // @synthesize embeddedApplicationIdentifier=_embeddedApplicationIdentifier;
 @property(readonly, copy) NSString *description; // @synthesize description=_description;
 @property(readonly, nonatomic) NSString *picoDesc; // @synthesize picoDesc=_picoDesc;
 @property(readonly, copy, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;

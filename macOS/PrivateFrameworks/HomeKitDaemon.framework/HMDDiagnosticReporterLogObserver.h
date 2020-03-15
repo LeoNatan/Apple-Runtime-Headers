@@ -24,9 +24,9 @@
 + (id)typeForEvent:(id)arg1;
 + (BOOL)shouldSubmitEvent:(id)arg1;
 + (id)supportedEventTypes;
+- (void).cxx_destruct;
 @property(readonly) SDRDiagnosticReporter *reporter; // @synthesize reporter=_reporter;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)dispatcher:(id)arg1 didReceiveEvent:(id)arg2;
 - (void)stop;
 - (void)start;

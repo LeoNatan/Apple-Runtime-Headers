@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *appInstallationID; // @synthesize appInstallationID=_appInstallationID;
 @property(readonly, copy) NSSet *pairedDevicesPairingIDs; // @synthesize pairedDevicesPairingIDs=_pairedDevicesPairingIDs;
 @property(readonly, copy) NSString *pairingID; // @synthesize pairingID=_pairingID;
@@ -37,7 +38,6 @@
 @property(readonly, getter=isAppInstalled) _Bool appInstalled; // @synthesize appInstalled=_appInstalled;
 @property(readonly, getter=isPaired) _Bool paired; // @synthesize paired=_paired;
 @property(readonly, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSURL *watchDirectoryURL;

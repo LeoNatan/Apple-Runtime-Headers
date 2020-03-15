@@ -14,8 +14,8 @@
 }
 
 + (id)buildStateFromCoreModel:(id)arg1 avatarConfiguration:(id)arg2;
-@property(retain, nonatomic) NSMutableDictionary *pairedStates; // @synthesize pairedStates=_pairedStates;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *pairedStates; // @synthesize pairedStates=_pairedStates;
 - (void)setCategory:(long long)arg1 inPairedState:(_Bool)arg2;
 - (_Bool)isCategoryPaired:(long long)arg1;
 - (id)initWithPairedStates:(id)arg1;

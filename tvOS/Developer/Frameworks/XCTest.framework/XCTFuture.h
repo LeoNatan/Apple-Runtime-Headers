@@ -25,6 +25,7 @@
 
 + (id)futureWithDescription:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)futureWithTimeout:(double)arg1 description:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSMutableSet *cancelationExpectations; // @synthesize cancelationExpectations=_cancelationExpectations;
 @property _Bool hasFinished; // @synthesize hasFinished=_hasFinished;
 @property _Bool hasWaited; // @synthesize hasWaited=_hasWaited;
@@ -34,7 +35,6 @@
 @property(readonly) double startTime; // @synthesize startTime=_startTime;
 @property(readonly) double executionTime; // @synthesize executionTime=_executionTime;
 @property(readonly, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
-- (void).cxx_destruct;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) NSError *error; // @synthesize error=_error;
 - (void)addCancelationExpectation:(id)arg1;

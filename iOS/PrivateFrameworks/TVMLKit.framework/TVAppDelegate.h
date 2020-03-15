@@ -20,11 +20,11 @@
     BKSProcessAssertion *_launchAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSProcessAssertion *launchAssertion; // @synthesize launchAssertion=_launchAssertion;
 @property(nonatomic) _Bool shouldTerminateOnEnterBackground; // @synthesize shouldTerminateOnEnterBackground=_shouldTerminateOnEnterBackground;
 @property(retain, nonatomic) TVApplicationController *appController; // @synthesize appController=_appController;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)_presetDialogWithError:(long long)arg1 appController:(id)arg2;
 - (void)_controllerDidDisplay:(id)arg1;
 - (id)_launchContext;

@@ -26,6 +26,7 @@
     UILabel *_valueLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) UIStepper *stepper; // @synthesize stepper=_stepper;
 @property(nonatomic) __weak id <HUStepperCellDelegate> stepperCellDelegate; // @synthesize stepperCellDelegate=_stepperCellDelegate;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSNumber *stepperValue; // @synthesize stepperValue=_stepperValue;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)_valueDescription;
 - (void)_toggleValueChange:(id)arg1;
 - (void)_stepperValueDidChange:(id)arg1;

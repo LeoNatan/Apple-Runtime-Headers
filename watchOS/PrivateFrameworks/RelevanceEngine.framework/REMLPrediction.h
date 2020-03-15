@@ -21,12 +21,12 @@
 }
 
 + (id)predictionWithProbability:(float)arg1 mean:(float)arg2 variance:(float)arg3 pessimistic:(float)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) float bias; // @synthesize bias=_bias;
 @property(readonly, nonatomic) float pessimistic; // @synthesize pessimistic=_pessimistic;
 @property(readonly, nonatomic) float probability; // @synthesize probability=_probability;
 @property(readonly, nonatomic) float variance; // @synthesize variance=_variance;
 @property(readonly, nonatomic) float mean; // @synthesize mean=_mean;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *explanations;
 - (id)explanationDescription;
 - (void)addExplanation:(id)arg1;

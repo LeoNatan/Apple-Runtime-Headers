@@ -14,9 +14,9 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) CSLBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 
 @end
 

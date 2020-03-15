@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *rxagc; // @synthesize rxagc=_rxagc;
 @property(retain, nonatomic) NSNumber *ecio; // @synthesize ecio=_ecio;
 @property(retain, nonatomic) NSNumber *snr; // @synthesize snr=_snr;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSNumber *ecn0; // @synthesize ecn0=_ecn0;
 @property(retain, nonatomic) NSNumber *rscp; // @synthesize rscp=_rscp;
 @property(retain, nonatomic) NSNumber *rssi; // @synthesize rssi=_rssi;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

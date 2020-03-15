@@ -21,6 +21,7 @@
 }
 
 + (id)sharedTypeRegistry;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *typesByHeaderInputType; // @synthesize typesByHeaderInputType=_typesByHeaderInputType;
 @property(retain, nonatomic) NSMutableDictionary *_typesByAutomatorIdentifier; // @synthesize _typesByAutomatorIdentifier=__typesByAutomatorIdentifier;
 @property(retain) NSDictionary *categorizedCustomApplicationTypes; // @synthesize categorizedCustomApplicationTypes=_categorizedCustomApplicationTypes;
@@ -29,7 +30,6 @@
 @property(retain) AMType *unknownType; // @synthesize unknownType=_unknownType;
 @property(retain) AMType *nothingType; // @synthesize nothingType=_nothingType;
 @property(copy, nonatomic) NSDictionary *categorizedBasicTypes; // @synthesize categorizedBasicTypes=_categorizedBasicTypes;
-- (void).cxx_destruct;
 - (id)_automaticallyGuessedInputTypeForActionInputTypes:(id)arg1 allowNothingType:(BOOL)arg2;
 - (id)orderedTypesIncludingApplicationIdentifier:(id)arg1 includeNothing:(BOOL)arg2 includeUnkown:(BOOL)arg3;
 @property(readonly, nonatomic) NSArray *orderedCategoryIdentifiers;

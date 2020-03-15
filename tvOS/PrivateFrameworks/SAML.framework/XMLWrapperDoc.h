@@ -19,12 +19,12 @@
     XMLWrapperQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) XMLWrapperQuery *query; // @synthesize query=_query;
 @property(readonly, nonatomic) NSDictionary *namespaces; // @synthesize namespaces=_namespaces;
 @property(retain, nonatomic) XMLWrapperElement *documentElement; // @synthesize documentElement=_documentElement;
 @property(retain, nonatomic) NSData *schemaData; // @synthesize schemaData=_schemaData;
 @property(retain, nonatomic) NSData *xmlData; // @synthesize xmlData=_xmlData;
-- (void).cxx_destruct;
 - (id)createDocumentElement:(id *)arg1;
 - (_Bool)setXMLDoc:(id *)arg1;
 - (_Bool)createDocument:(id *)arg1;

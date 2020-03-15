@@ -15,9 +15,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) ELSSnapshot *snapshot; // @synthesize snapshot=_snapshot;
-- (void).cxx_destruct;
 - (void)getBugSessionActivityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)refreshWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)object:(id)arg1 isEqualToObject:(id)arg2;

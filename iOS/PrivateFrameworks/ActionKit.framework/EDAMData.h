@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSNumber *size; // @synthesize size=_size;
 @property(retain, nonatomic) NSData *bodyHash; // @synthesize bodyHash=_bodyHash;
-- (void).cxx_destruct;
 
 @end
 

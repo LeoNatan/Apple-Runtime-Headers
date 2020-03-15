@@ -8,13 +8,14 @@
 
 #import <NanoTimeKitCompanion/NTKCircularAnalogDialColorPalette-Protocol.h>
 
-@class NSString, UIColor;
+@class CLKDevice, NSString, UIColor;
 
 @interface NTKOlympusColorPalette : NSObject <NTKCircularAnalogDialColorPalette>
 {
     unsigned long long _color;
     unsigned long long _style;
     unsigned long long _dial;
+    CLKDevice *_device;
     UIColor *_mainColor;
     UIColor *_darkMainColor;
     UIColor *_accentColor;
@@ -34,7 +35,8 @@
     UIColor *_circularDialSubtickColor;
 }
 
-+ (id)paletteForColor:(unsigned long long)arg1 dial:(unsigned long long)arg2 style:(unsigned long long)arg3;
++ (id)paletteForDevice:(id)arg1 color:(unsigned long long)arg2 dial:(unsigned long long)arg3 style:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *circularDialSubtickColor; // @synthesize circularDialSubtickColor=_circularDialSubtickColor;
 @property(retain, nonatomic) UIColor *cornerComplicationsAccentColor; // @synthesize cornerComplicationsAccentColor=_cornerComplicationsAccentColor;
 @property(retain, nonatomic) UIColor *secondHandColor; // @synthesize secondHandColor=_secondHandColor;
@@ -52,10 +54,10 @@
 @property(retain, nonatomic) UIColor *accentColor; // @synthesize accentColor=_accentColor;
 @property(retain, nonatomic) UIColor *darkMainColor; // @synthesize darkMainColor=_darkMainColor;
 @property(retain, nonatomic) UIColor *mainColor; // @synthesize mainColor=_mainColor;
+@property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) unsigned long long dial; // @synthesize dial=_dial;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) unsigned long long color; // @synthesize color=_color;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBlackBackground;
 - (_Bool)isEqual:(id)arg1;
 - (id)circularDialFillColor;
@@ -63,7 +65,7 @@
 @property(readonly, nonatomic) UIColor *bezelComplicationColor;
 @property(readonly, nonatomic) UIColor *secondaryOutlineTextColor;
 @property(readonly, nonatomic) UIColor *primaryOutlineTextColor;
-- (id)initWithColor:(unsigned long long)arg1 dial:(unsigned long long)arg2 style:(unsigned long long)arg3;
+- (id)initWithDevice:(id)arg1 color:(unsigned long long)arg2 dial:(unsigned long long)arg3 style:(unsigned long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

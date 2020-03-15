@@ -15,8 +15,8 @@
 
 + (BOOL)isURLAnInternetLocator:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) NSURL *targetURL; // @synthesize targetURL=_targetURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *targetURL; // @synthesize targetURL=_targetURL;
 - (BOOL)writeToURL:(id)arg1 dataWritingOptions:(unsigned long long)arg2 error:(id *)arg3;
 - (id)initWithContentsOfURL:(id)arg1 error:(id *)arg2;
 - (id)initWithTargetURL:(id)arg1;

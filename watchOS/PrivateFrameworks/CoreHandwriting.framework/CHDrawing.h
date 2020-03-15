@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) struct CHDrawingStrokes drawing; // @synthesize drawing=_drawing;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct CHDrawingStrokes drawing; // @synthesize drawing=_drawing;
 - (id)debugQuickLookObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (float)averageCharacterHeightEstimation:(float)arg1 minChunkHeight:(float)arg2;

@@ -37,6 +37,7 @@
 
 + (Class)frameInstructionsType;
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int version; // @synthesize version=_version;
 @property(nonatomic) int minVersion; // @synthesize minVersion=_minVersion;
 @property(retain, nonatomic) VCPProtoLivePhotoVariationParams *stabilize; // @synthesize stabilize=_stabilize;
@@ -53,7 +54,6 @@
 @property(nonatomic) int cropRectX; // @synthesize cropRectX=_cropRectX;
 @property(nonatomic) long long outputFrameDurValue; // @synthesize outputFrameDurValue=_outputFrameDurValue;
 @property(nonatomic) int stabilizeResult; // @synthesize stabilizeResult=_stabilizeResult;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

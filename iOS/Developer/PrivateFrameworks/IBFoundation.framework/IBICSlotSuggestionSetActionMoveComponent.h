@@ -14,9 +14,9 @@
     NSSet *_destinationSlotComponents;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *destinationSlotComponents; // @synthesize destinationSlotComponents=_destinationSlotComponents;
 @property(readonly) NSSet *sourceSlotComponents; // @synthesize sourceSlotComponents=_sourceSlotComponents;
-- (void).cxx_destruct;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;
 - (id)description;
 - (id)initWithSourceSlotComponents:(id)arg1 destinationSlotComponents:(id)arg2;

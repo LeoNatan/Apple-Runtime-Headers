@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (id)defaultCategories;
 + (_Bool)hasActionsForContact:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subManagers; // @synthesize subManagers=_subManagers;
 @property(retain, nonatomic) CNQuickActionsUsageManager *usageManager; // @synthesize usageManager=_usageManager;
 @property(retain, nonatomic) CNQuickFaceTimeAction *faceTimeAudioAction; // @synthesize faceTimeAudioAction=_faceTimeAudioAction;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(nonatomic) __weak id <CNQuickActionsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (void)contactAction:(id)arg1 presentViewController:(id)arg2;
 - (void)contactActionDidUpdate:(id)arg1;
 - (id)quickActions;

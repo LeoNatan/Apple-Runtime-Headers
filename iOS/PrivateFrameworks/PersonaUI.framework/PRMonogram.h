@@ -24,11 +24,11 @@
 + (id)_fontSpecs;
 + (id)monogram;
 + (id)monogramWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PRMonogramColor *monogramColor; // @synthesize monogramColor=_monogramColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long fontIndex; // @synthesize fontIndex=_fontIndex;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_renderTextInContext:(struct CGContext *)arg1 frame:(struct CGRect)arg2;
 - (id)snapshotWithSize:(struct CGSize)arg1 scale:(double)arg2 options:(id)arg3;
@@ -44,6 +44,8 @@
 - (id)init;
 - (void)_takeValuesFromDataRepresentation:(id)arg1;
 - (id)dataRepresentationWithVersion:(unsigned char)arg1;
+- (void)appendToRecipe:(id)arg1 text:(id)arg2 fontIndex:(unsigned char)arg3;
+- (void)appendToRecipe:(id)arg1 text:(id)arg2;
 - (id)dataRepresentation;
 - (id)_initWithData:(id)arg1;
 

@@ -20,12 +20,12 @@
 + (id)kernelCacheTags;
 + (id)bootloaderTags;
 + (id)allTags;
+- (void).cxx_destruct;
 @property(retain) NSData *payloadData; // @synthesize payloadData=_payloadData;
 @property(retain) OSPDevice *device; // @synthesize device=_device;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property unsigned long long policy; // @synthesize policy=_policy;
 @property(retain) NSArray *validTags; // @synthesize validTags=_validTags;
-- (void).cxx_destruct;
 - (BOOL)_verifyManifest:(id)arg1 withTag:(unsigned int)arg2;
 - (BOOL)verify;
 - (id)initWithBootFileURL:(id)arg1 device:(id)arg2;

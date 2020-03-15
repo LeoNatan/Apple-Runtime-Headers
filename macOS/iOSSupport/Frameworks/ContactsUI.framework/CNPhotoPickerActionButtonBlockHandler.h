@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _actionBlock;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 - (void)performAction;
 - (id)initWithActionBlock:(CDUnknownBlockType)arg1;
 

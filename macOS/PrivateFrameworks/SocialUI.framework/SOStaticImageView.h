@@ -14,9 +14,9 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property BOOL imageIsOpaque; // @synthesize imageIsOpaque=_imageIsOpaque;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)viewDidChangeBackingProperties;
 - (void)updateLayer;

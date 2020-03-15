@@ -19,8 +19,8 @@
 }
 
 + (void)load;
-@property(retain, nonatomic) FBApplicationUpdateScenesTransaction *currentTransaction; // @synthesize currentTransaction=_currentTransaction;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FBApplicationUpdateScenesTransaction *currentTransaction; // @synthesize currentTransaction=_currentTransaction;
 - (void)_updateAppsToBringUpFromPreferences;
 - (void)_toggle;
 - (void)handleVolumeDecrease;

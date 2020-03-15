@@ -19,11 +19,11 @@
     PKColorPicker *_colorPicker;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowTitleBar; // @synthesize shouldShowTitleBar=_shouldShowTitleBar;
 @property(retain, nonatomic) PKColorPicker *colorPicker; // @synthesize colorPicker=_colorPicker;
 @property(retain, nonatomic) UIColor *selectedColor; // @synthesize selectedColor=_selectedColor;
 @property(nonatomic) __weak id <MFComposeColorPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)colorPickerDidChangeSelectedColor:(id)arg1;
 - (void)closeColorPicker:(id)arg1;
 - (void)viewDidLoad;

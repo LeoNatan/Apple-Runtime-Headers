@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSHashTable *relatedObjects;
 }
 
+- (void).cxx_destruct;
 @property(readonly) ABPerson *person; // @synthesize person;
 @property __weak id <SGTABPersonImageAsyncLoaderDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 @property(readonly) NSArray *relatedObjects;
 - (void)addRelatedObject:(id)arg1;
 - (void)consumeImageData:(id)arg1 forTag:(long long)arg2;

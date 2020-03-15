@@ -17,9 +17,9 @@
     STTelephonyStatusDomainPublisher *_telephonyDomainPublisher;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) STTelephonyStatusDomainPublisher *telephonyDomainPublisher; // @synthesize telephonyDomainPublisher=_telephonyDomainPublisher;
 @property(readonly, nonatomic) STTelephonyStateProvider *telephonyStateProvider; // @synthesize telephonyStateProvider=_telephonyStateProvider;
-- (void).cxx_destruct;
 - (unsigned int)_dataNetworkTypeForDataConnectionType:(unsigned int)arg1;
 - (_Bool)_shouldShowEmergencyOnlyStatusForStateProvider:(id)arg1 registrationStatus:(unsigned int)arg2 countryCode:(id)arg3;
 - (id)_displayStringForRegistrationStatus:(unsigned int)arg1;

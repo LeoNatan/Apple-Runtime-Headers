@@ -13,8 +13,8 @@
     NSString *_possibleName;
 }
 
-@property(readonly, nonatomic) NSString *possibleName; // @synthesize possibleName=_possibleName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *possibleName; // @synthesize possibleName=_possibleName;
 - (id)initWithQuestionType:(long long)arg1 targetPerson:(id)arg2 possibleName:(id)arg3;
 
 @end

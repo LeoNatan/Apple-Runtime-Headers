@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
 + (id)snapshotsIn:(id)arg1 olderThan:(id)arg2;
 + (unsigned long long)coalescingFactor;
 + (id)epochWithPrimaryKey:(id)arg1 interfaceName:(id)arg2 isCell:(_Bool)arg3 maxBars:(int)arg4 roamingEvent:(_Bool)arg5 roamingAttrs:(long long)arg6 supportsIPv4:(BOOL)arg7 supportsIPv6:(BOOL)arg8 inWorkspace:(id)arg9 andQueue:(id)arg10;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool deleteNetworkAttachmentsWhenDone; // @synthesize deleteNetworkAttachmentsWhenDone=_deleteNetworkAttachmentsWhenDone;
 @property(readonly) unsigned int seqno; // @synthesize seqno=_seqno;
 @property _Bool knownGoodNotified; // @synthesize knownGoodNotified=_knownGoodNotified;
@@ -96,7 +97,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct __NStatSource *defRoute4; // @synthesize defRoute4=_defRoute4;
 @property(readonly) _Bool oncell; // @synthesize oncell=_oncell;
 @property(readonly) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)mapLOIToString;
 - (long long)getMatchingRTLocationOfInterestType;
 - (_Bool)matchesLOI:(long long)arg1;

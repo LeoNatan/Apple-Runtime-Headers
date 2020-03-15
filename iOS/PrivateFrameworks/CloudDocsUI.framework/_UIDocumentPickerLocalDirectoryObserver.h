@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_queryWorkerQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool afterInitialUpdate; // @synthesize afterInitialUpdate=_afterInitialUpdate;
 @property(retain, nonatomic) NSOperationQueue *queryWorkerQueue; // @synthesize queryWorkerQueue=_queryWorkerQueue;
 @property(retain, nonatomic) NSDate *lastSnapshotDate; // @synthesize lastSnapshotDate=_lastSnapshotDate;
-- (void).cxx_destruct;
 - (void)dispatchSourceDidReceiveEvent:(id)arg1;
 - (void)updateResultsForSource:(id)arg1;
 - (void)initialUpdate;

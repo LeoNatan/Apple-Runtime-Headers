@@ -22,10 +22,10 @@
 }
 
 + (_Bool)_trackingEnabledForSleepAlarm:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s alarmLock; // @synthesize alarmLock=_alarmLock;
 @property(retain, nonatomic) MTAlarmStorage *alarmStorage; // @synthesize alarmStorage=_alarmStorage;
 @property(nonatomic) __weak id <MTBedtimeSessionTrackerDelegate> bedtimeSessionTrackerDelegate; // @synthesize bedtimeSessionTrackerDelegate=_bedtimeSessionTrackerDelegate;
-- (void).cxx_destruct;
 - (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
 - (void)endSessionWithDate:(id)arg1 reason:(unsigned long long)arg2;

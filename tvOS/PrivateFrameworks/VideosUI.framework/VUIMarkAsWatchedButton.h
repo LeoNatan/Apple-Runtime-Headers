@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_channelID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(retain, nonatomic) NSString *itemType; // @synthesize itemType=_itemType;
 @property(retain, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (void)_selectButtonAction:(id)arg1 eventType:(id)arg2;
 - (void)updateWithElement:(id)arg1;
 - (id)initWithLayout:(id)arg1 interfaceStyle:(long long)arg2;

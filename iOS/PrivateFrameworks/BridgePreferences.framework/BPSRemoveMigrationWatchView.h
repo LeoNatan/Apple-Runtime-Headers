@@ -15,10 +15,10 @@
     BPSWatchView *_watch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BPSWatchView *watch; // @synthesize watch=_watch;
 @property(retain, nonatomic) PBBridgeAssetsManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(copy, nonatomic) NSString *advertisingName; // @synthesize advertisingName=_advertisingName;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

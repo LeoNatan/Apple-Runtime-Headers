@@ -12,6 +12,7 @@
 {
     NSArray *_nonLocalizableKeys;
     NSArray *_localizableKeys;
+    NSArray *_alwaysLocalizedKeys;
 }
 
 + (id)canaryRecordName;
@@ -20,9 +21,10 @@
 + (id)changeTagFromCKRecord:(id)arg1;
 + (id)identifierFromCKRecord:(id)arg1;
 + (_Bool)useTaggedImages;
+- (void).cxx_destruct;
+- (id)alwaysLocalizedKeys;
 - (id)localizableKeys;
 - (id)nonLocalizableKeys;
-- (void).cxx_destruct;
 - (id)saveFeedItemAndArticleRecords:(id)arg1;
 - (id)saveArticleRecords:(id)arg1;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;

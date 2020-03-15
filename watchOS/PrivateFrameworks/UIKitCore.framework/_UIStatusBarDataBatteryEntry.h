@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *detailString; // @synthesize detailString=_detailString;
 @property(nonatomic) _Bool prominentlyShowsDetailString; // @synthesize prominentlyShowsDetailString=_prominentlyShowsDetailString;
 @property(nonatomic) _Bool saverModeActive; // @synthesize saverModeActive=_saverModeActive;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) int capacity; // @synthesize capacity=_capacity;
-- (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

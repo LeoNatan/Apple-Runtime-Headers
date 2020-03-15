@@ -20,9 +20,9 @@
     CDStruct_81fb2dc1 _flags;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clusteringIdentifier; // @synthesize clusteringIdentifier=_clusteringIdentifier;
 @property(readonly, nonatomic) NSArray *memberAnnotations; // @synthesize memberAnnotations=_memberAnnotations;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (struct CLLocationCoordinate2D)_averageCoordinate;
 - (_Bool)_isMKClusterAnnotation;

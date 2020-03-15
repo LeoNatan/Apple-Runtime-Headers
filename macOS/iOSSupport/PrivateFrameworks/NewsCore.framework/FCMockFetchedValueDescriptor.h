@@ -22,6 +22,7 @@
     NSArray *_myInputManagers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *myInputManagers; // @synthesize myInputManagers=_myInputManagers;
 @property(nonatomic) unsigned long long lastFetchCachePolicy; // @synthesize lastFetchCachePolicy=_lastFetchCachePolicy;
 @property(nonatomic) long long lastFetchQualityOfService; // @synthesize lastFetchQualityOfService=_lastFetchQualityOfService;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSError *fetchError; // @synthesize fetchError=_fetchError;
 @property(copy, nonatomic) id <NFCopying> fetchValue; // @synthesize fetchValue=_fetchValue;
 @property(copy, nonatomic) CDUnknownBlockType willFetchBlock; // @synthesize willFetchBlock=_willFetchBlock;
-- (void).cxx_destruct;
 - (id)inputManagers;
 - (BOOL)isValue:(id)arg1 equalToValue:(id)arg2;
 - (void)fetchValueWithCachePolicy:(unsigned long long)arg1 qualityOfService:(long long)arg2 completion:(CDUnknownBlockType)arg3;

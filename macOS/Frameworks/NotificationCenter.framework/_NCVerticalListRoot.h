@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NCVerticalListController *_owner;
 }
 
-@property(nonatomic) __weak NCVerticalListController *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NCVerticalListController *owner; // @synthesize owner=_owner;
 
 @end
 

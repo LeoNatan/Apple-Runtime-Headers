@@ -19,12 +19,12 @@
 
 + (id)mergedClusterFrom:(id)arg1;
 + (id)dataClusterWithDataVector:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(readonly) NSArray *vectors; // @synthesize vectors=_vectors;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDataVector:(id)arg1;
 

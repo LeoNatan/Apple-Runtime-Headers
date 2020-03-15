@@ -39,6 +39,7 @@
 + (Class)cityNamesType;
 + (Class)streetNamesType;
 + (Class)relatedNamesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cityNames; // @synthesize cityNames=_cityNames;
 @property(retain, nonatomic) NSMutableArray *streetNames; // @synthesize streetNames=_streetNames;
 @property(retain, nonatomic) NSMutableArray *relatedNames; // @synthesize relatedNames=_relatedNames;
@@ -56,7 +57,6 @@
 @property(nonatomic) unsigned char source; // @synthesize source=_source;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

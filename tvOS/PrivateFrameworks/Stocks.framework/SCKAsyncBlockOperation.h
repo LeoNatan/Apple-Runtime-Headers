@@ -13,8 +13,8 @@
     CDUnknownBlockType _block;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void)start;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;

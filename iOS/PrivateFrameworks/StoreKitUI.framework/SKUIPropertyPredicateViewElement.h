@@ -16,10 +16,10 @@
 }
 
 + (_Bool)shouldParseChildDOMElements;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *property; // @synthesize property=_property;
 @property(readonly, nonatomic) long long comparisonType; // @synthesize comparisonType=_comparisonType;
-- (void).cxx_destruct;
 - (id)entityValuePredicate;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

@@ -12,9 +12,9 @@
     id _largeMonthViewOccurrence;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id largeMonthViewOccurrence; // @synthesize largeMonthViewOccurrence=_largeMonthViewOccurrence;
 @property(retain, nonatomic) id padMonthOccurrencesView; // @synthesize padMonthOccurrencesView=_padMonthOccurrencesView;
-- (void).cxx_destruct;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
 - (struct CGRect)accessibilityFrame;

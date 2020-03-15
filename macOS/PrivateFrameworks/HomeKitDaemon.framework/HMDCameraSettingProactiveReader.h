@@ -24,6 +24,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain) HMFMessage *pendingMessage; // @synthesize pendingMessage=_pendingMessage;
 @property(readonly) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
@@ -32,7 +33,6 @@
 @property(readonly) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly) __weak id <HMDCameraSettingProactiveReaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)_callDidCompleteReadDelegateCallback;
 - (void)_handleStreamStatusMultireadResponse:(id)arg1;
 - (void)readSetting;

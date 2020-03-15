@@ -29,6 +29,7 @@
 }
 
 + (id)serializationTypeNumber;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasNonScalarDynamicData; // @synthesize hasNonScalarDynamicData=_hasNonScalarDynamicData;
 @property(nonatomic) unsigned long long _machContinuousTimestamp; // @synthesize _machContinuousTimestamp=__machContinuousTimestamp;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
@@ -43,7 +44,6 @@
 @property(nonatomic) int tz_minuteswest; // @synthesize tz_minuteswest=_tz_minuteswest;
 @property(nonatomic) int tv_usec; // @synthesize tv_usec=_tv_usec;
 @property(nonatomic) long long tv_sec; // @synthesize tv_sec=_tv_sec;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)durationMachContinuousTime;

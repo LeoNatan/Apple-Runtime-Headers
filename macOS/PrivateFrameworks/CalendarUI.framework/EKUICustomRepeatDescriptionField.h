@@ -13,8 +13,8 @@
     EKUICustomRepeatDescriptionGadget *_controller;
 }
 
-@property __weak EKUICustomRepeatDescriptionGadget *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak EKUICustomRepeatDescriptionGadget *controller; // @synthesize controller=_controller;
 - (void)mouseDown:(id)arg1;
 
 @end

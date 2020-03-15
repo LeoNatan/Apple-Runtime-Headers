@@ -23,10 +23,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool last; // @synthesize last=_last;
 @property(nonatomic) _Bool synchronousMode; // @synthesize synchronousMode=_synchronousMode;
 @property(retain, nonatomic) NSString *operationUUID; // @synthesize operationUUID=_operationUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

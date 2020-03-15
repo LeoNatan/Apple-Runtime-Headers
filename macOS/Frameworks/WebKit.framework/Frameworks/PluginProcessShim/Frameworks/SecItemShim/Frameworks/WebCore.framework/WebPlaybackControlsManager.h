@@ -30,6 +30,8 @@
     BOOL canTogglePictureInPicture;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property BOOL canTogglePictureInPicture; // @synthesize canTogglePictureInPicture;
 @property(getter=isPictureInPictureActive) BOOL pictureInPictureActive; // @synthesize pictureInPictureActive;
 @property BOOL allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback;
@@ -39,16 +41,14 @@
 @property(nonatomic) BOOL hasEnabledAudio; // @synthesize hasEnabledAudio=_hasEnabledAudio;
 @property(nonatomic) double seekToTime; // @synthesize seekToTime=_seekToTime;
 @property double contentDuration; // @synthesize contentDuration=_contentDuration;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)togglePictureInPicture;
 @property(getter=isPlaying) BOOL playing;
 - (void)togglePlayback;
 @property struct PlaybackSessionInterfaceMac *playbackSessionInterfaceMac;
 - (void)setLegibleMediaSelectionIndex:(unsigned long long)arg1;
 - (void)setAudioMediaSelectionIndex:(unsigned long long)arg1;
-- (void)setLegibleMediaSelectionOptions:(const Vector_68c27e8a *)arg1 withSelectedIndex:(unsigned long long)arg2;
-- (void)setAudioMediaSelectionOptions:(const Vector_68c27e8a *)arg1 withSelectedIndex:(unsigned long long)arg2;
+- (void)setLegibleMediaSelectionOptions:(const Vector_7e116daf *)arg1 withSelectedIndex:(unsigned long long)arg2;
+- (void)setAudioMediaSelectionOptions:(const Vector_7e116daf *)arg1 withSelectedIndex:(unsigned long long)arg2;
 @property(retain) AVTouchBarMediaSelectionOption *currentLegibleTouchBarMediaSelectionOption;
 - (void)setLegibleTouchBarMediaSelectionOptions:(id)arg1;
 @property(readonly) NSArray *legibleTouchBarMediaSelectionOptions;

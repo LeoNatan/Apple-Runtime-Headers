@@ -14,9 +14,9 @@
     NSLayoutConstraint *_tableWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *tableWidthConstraint; // @synthesize tableWidthConstraint=_tableWidthConstraint;
 @property(nonatomic) BOOL tableWidthAdjusted; // @synthesize tableWidthAdjusted=_tableWidthAdjusted;
-- (void).cxx_destruct;
 - (void)adjustColumnWidth;
 
 @end

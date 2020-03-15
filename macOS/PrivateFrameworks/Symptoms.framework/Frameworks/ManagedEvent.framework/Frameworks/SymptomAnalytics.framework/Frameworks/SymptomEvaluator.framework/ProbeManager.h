@@ -25,13 +25,14 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CoreTelephonyDumpProbe *ctDumpProbe; // @synthesize ctDumpProbe=_ctDumpProbe;
 @property(retain, nonatomic) id probeDetails; // @synthesize probeDetails=_probeDetails;
 @property(readonly, nonatomic) NSMutableDictionary *probes; // @synthesize probes=_probes;
 @property(retain, nonatomic) id <ProbeManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)coreTelephonyDumpProbeCompleted:(id)arg1 success:(BOOL)arg2;
+- (void)coreTelephonyDumpProbeStarted:(id)arg1;
 - (void)fetchCoreTelephonyLoggingEnabledStatus;
 - (void)startCoreTelephonyDumpProbeForDiagSession:(id)arg1 previousDumpTimestamp:(id)arg2 previousDumpFolderPath:(id)arg3 previousDumpFolderPrefix:(id)arg4 timeout:(id)arg5 startNewDump:(id)arg6 maximumSingleFileSize:(id)arg7 dumpReason:(id)arg8;
 - (void)icmpPingProbe:(id)arg1 echoResponseReceived:(id)arg2 success:(BOOL)arg3;

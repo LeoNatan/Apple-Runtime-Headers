@@ -40,6 +40,7 @@
     unsigned long long _lastVisualPositionsChangeToDataSourceIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastVisualPositionsChangeToDataSourceIdentifier; // @synthesize lastVisualPositionsChangeToDataSourceIdentifier=_lastVisualPositionsChangeToDataSourceIdentifier;
 @property(nonatomic) unsigned long long lastVisualPositionsChangeFromDataSourceIdentifier; // @synthesize lastVisualPositionsChangeFromDataSourceIdentifier=_lastVisualPositionsChangeFromDataSourceIdentifier;
 @property(nonatomic) long long lastTransitionType; // @synthesize lastTransitionType=_lastTransitionType;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) NSPredicate *allPhotosFilterPredicate; // @synthesize allPhotosFilterPredicate=_allPhotosFilterPredicate;
 @property(readonly, nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(nonatomic) __weak id <PXCuratedLibraryAssetsDataSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateDataSource;
 - (void)_invalidateDataSource;

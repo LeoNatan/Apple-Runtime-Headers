@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <_MSStickerSendManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_MSStickerSendManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)startDragSticker:(id)arg1 frameInRemoteView:(struct CGRect)arg2 fence:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)insertSticker:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 

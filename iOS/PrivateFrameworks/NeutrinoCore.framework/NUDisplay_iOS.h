@@ -17,8 +17,8 @@
 
 + (id)mainDisplay;
 + (id)displays;
-@property(readonly, nonatomic) CADisplay *display; // @synthesize display=_display;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CADisplay *display; // @synthesize display=_display;
 @property(readonly) NUColorSpace *colorSpace;
 @property(readonly) NUPixelFormat *pixelFormat;
 - (_Bool)wideColor;

@@ -21,10 +21,10 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
 @property(readonly, nonatomic) id <REMReminderCreationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic, setter=setChildViewController:) NSRemoteViewController *childViewController; // @synthesize childViewController=_childViewController;
-- (void).cxx_destruct;
 - (void)viewServiceDidFinish;
 - (void)viewServiceDidFailWithError:(id)arg1;
 - (void)viewServiceDidCancel;

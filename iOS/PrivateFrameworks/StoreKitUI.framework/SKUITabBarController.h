@@ -19,11 +19,11 @@
 }
 
 + (Class)_moreNavigationControllerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sizeTransitionInProgress; // @synthesize sizeTransitionInProgress=_sizeTransitionInProgress;
 - (void)setForcedUserInterfaceStyle:(long long)arg1;
 - (long long)forcedUserInterfaceStyle;
 - (id)floatingOverlayViewController;
-- (void).cxx_destruct;
 - (void)_layoutFloatingOverlayView;
 - (void)moreNavigationController:(id)arg1 didSelectItemAtIndex:(long long)arg2;
 - (id)traitCollection;

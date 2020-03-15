@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_results;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *results; // @synthesize results=_results;
 @property(copy) NSDictionary *context; // @synthesize context=_context;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 context:(id)arg2;
 

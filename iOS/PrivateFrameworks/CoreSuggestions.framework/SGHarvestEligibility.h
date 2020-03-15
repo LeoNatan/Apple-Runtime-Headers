@@ -15,6 +15,7 @@
 + (CDUnknownBlockType)messagesAppItemEligibilityCheckBlock;
 + (CDUnknownBlockType)mailAppItemEligibilityCheckBlock;
 + (_Bool)searchableItemIsEligibleForHarvesting:(id)arg1 eligibleExceptForAge:(_Bool *)arg2;
++ (_Bool)searchableItemIsStoredEncrypted:(id)arg1 bundleIdentifier:(id)arg2;
 + (_Bool)searchableItemIsEligibleForDissectorPipeline:(id)arg1;
 + (_Bool)searchableItemIsEligibleForDeferredHarvesting:(id)arg1;
 

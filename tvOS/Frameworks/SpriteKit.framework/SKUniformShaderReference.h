@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKShader *_targetShader;
 }
 
-@property(nonatomic) __weak SKShader *targetShader; // @synthesize targetShader=_targetShader;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SKShader *targetShader; // @synthesize targetShader=_targetShader;
 
 @end
 

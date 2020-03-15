@@ -26,6 +26,7 @@
     _Bool _hasProvisialAuthorization;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasProvisionalAuthorization; // @synthesize hasProvisionalAuthorization=_hasProvisialAuthorization;
 @property(readonly, nonatomic) _Bool isDeliveredQuietly; // @synthesize isDeliveredQuietly=_isDeliveredQuietly;
 @property(readonly, nonatomic) _Bool showsCustomSettingsLink; // @synthesize showsCustomSettingsLink=_showsCustomSettingsLink;
@@ -36,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *subSectionIdentifier; // @synthesize subSectionIdentifier=_subSectionIdentifier;
 @property(readonly, copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

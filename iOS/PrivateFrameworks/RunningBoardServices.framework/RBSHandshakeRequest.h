@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *assertionDescriptors; // @synthesize assertionDescriptors=_assertionDescriptors;
 @property(nonatomic) unsigned int euid; // @synthesize euid=_euid;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 @property(readonly) unsigned long long hash;

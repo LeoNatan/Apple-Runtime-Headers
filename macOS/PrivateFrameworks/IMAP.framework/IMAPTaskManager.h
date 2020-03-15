@@ -47,6 +47,7 @@
 + (void)initialize;
 + (id)powerLog;
 + (id)syncActivityLog;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canPerformLocalActions; // @synthesize canPerformLocalActions=_canPerformLocalActions;
 @property(retain, nonatomic) IMAPLocalActionSyncTask *localActionSyncTask; // @synthesize localActionSyncTask=_localActionSyncTask;
 @property(nonatomic) __weak IMAPAccountSyncTask *accountSyncTask; // @synthesize accountSyncTask=_accountSyncTask;
@@ -55,7 +56,6 @@
 @property __weak id <IMAPAccount> account; // @synthesize account=_account;
 @property(copy) NSString *defaultIdleMailboxName; // @synthesize defaultIdleMailboxName=_defaultIdleMailboxName;
 @property(nonatomic) BOOL networkIsLimited; // @synthesize networkIsLimited=_networkIsLimited;
-- (void).cxx_destruct;
 - (BOOL)hasLocalActions;
 - (void)addLocalAction:(id)arg1;
 - (void)_checkForNewLocalActions;

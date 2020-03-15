@@ -16,10 +16,10 @@
     id <AMSPushHandlerContract> _bagContract;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <AMSPushHandlerContract> bagContract; // @synthesize bagContract=_bagContract;
 @property(readonly) AMSPushConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
-- (void).cxx_destruct;
 - (id)initWithConfiguration:(id)arg1 bagContract:(id)arg2;
 - (id)_enabledParsables;
 - (BOOL)shouldHandleNotification:(id)arg1;

@@ -23,6 +23,7 @@
     PUICButton *_doneButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) PUICButton *stickerButton; // @synthesize stickerButton=_stickerButton;
 @property(retain, nonatomic) PUICButton *acknowledgeButton; // @synthesize acknowledgeButton=_acknowledgeButton;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) CKMessagePartChatItem *chatItem; // @synthesize chatItem=_chatItem;
 @property(nonatomic) __weak id <CKNanoRevealBalloonViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stickerListControllerFinished:(id)arg1;
 - (void)done:(id)arg1;
 - (void)dismiss:(id)arg1;

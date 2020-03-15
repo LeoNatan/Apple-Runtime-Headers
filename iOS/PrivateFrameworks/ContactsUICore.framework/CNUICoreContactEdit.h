@@ -14,9 +14,9 @@
     CNContact *_modified;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *modified; // @synthesize modified=_modified;
 @property(readonly, nonatomic) CNContact *original; // @synthesize original=_original;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

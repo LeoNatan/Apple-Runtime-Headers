@@ -8,7 +8,6 @@
 
 @class UISystemGestureView;
 
-__attribute__((visibility("hidden")))
 @interface _UISystemGestureWindow : _UIRootWindow
 {
     UISystemGestureView *_systemGestureView;

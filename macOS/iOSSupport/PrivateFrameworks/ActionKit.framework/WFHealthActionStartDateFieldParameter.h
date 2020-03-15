@@ -13,8 +13,8 @@
     HKSampleType *_sampleType;
 }
 
-@property(retain, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
 - (id)localizedLabel;
 
 @end

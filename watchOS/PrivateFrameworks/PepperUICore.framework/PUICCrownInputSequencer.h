@@ -73,6 +73,7 @@
     double _offsetPerRevolution;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICCrownInputSequencerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) double offsetPerRevolution; // @synthesize offsetPerRevolution=_offsetPerRevolution;
 @property(nonatomic, getter=_screenPointsPerRevolution, setter=_setScreenPointsPerRevolution:) double screenPointsPerRevolution; // @synthesize screenPointsPerRevolution=_screenPointsPerRevolution;
@@ -94,7 +95,6 @@
 @property(nonatomic) _Bool useWideIdleCheck; // @synthesize useWideIdleCheck=_useWideIdleCheck;
 @property(nonatomic) double end; // @synthesize end=_end;
 @property(nonatomic) double start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (void)enumerateDebugDescriptionOfNotches:(CDUnknownBlockType)arg1;
 - (id)debugDescriptionOfNotches;
 - (void)_uiInvertedDidChangeNotification:(id)arg1;

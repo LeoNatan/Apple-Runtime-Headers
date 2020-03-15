@@ -16,9 +16,9 @@
     struct CGSize _allowedSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) struct CGSize allowedSize; // @synthesize allowedSize=_allowedSize;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

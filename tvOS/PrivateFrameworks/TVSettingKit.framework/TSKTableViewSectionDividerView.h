@@ -16,8 +16,8 @@
 }
 
 + (double)heightForDividerType:(unsigned long long)arg1;
-@property(nonatomic) unsigned long long dividerType; // @synthesize dividerType=_dividerType;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long dividerType; // @synthesize dividerType=_dividerType;
 - (void)_updatePadding;
 - (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;

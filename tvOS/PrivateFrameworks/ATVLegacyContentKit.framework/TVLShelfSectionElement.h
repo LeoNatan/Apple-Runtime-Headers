@@ -14,9 +14,9 @@
     NSArray *_shelfItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *shelfItems; // @synthesize shelfItems=_shelfItems;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

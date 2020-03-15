@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSArray *_nameAttributesCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *nameAttributesCollection; // @synthesize nameAttributesCollection=_nameAttributesCollection;
 @property(retain, nonatomic) NSArray *avatarAttributesCollection; // @synthesize avatarAttributesCollection=_avatarAttributesCollection;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *ackIconAttributes; // @synthesize ackIconAttributes=_ackIconAttributes;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *voteCountAttributes; // @synthesize voteCountAttributes=_voteCountAttributes;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *containerAttributes; // @synthesize containerAttributes=_containerAttributes;
-- (void).cxx_destruct;
 - (void)_applyAlphaToAllAttributesAlpha:(double)arg1;
 - (void)_setContainerAttributes:(id)arg1 forLayoutMode:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -19,10 +19,10 @@
 
 + (id)buttonEventForButton:(id)arg1 eventType:(long long)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long eventType; // @synthesize eventType=_eventType;
 @property(readonly, nonatomic) TVRCButton *button; // @synthesize button=_button;
 @property(readonly, copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

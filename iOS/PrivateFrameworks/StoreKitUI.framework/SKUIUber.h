@@ -16,10 +16,10 @@
     id <SKUIArtworkProviding> _artworkProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SKUIArtworkProviding> artworkProvider; // @synthesize artworkProvider=_artworkProvider;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (id)initWithUberDictionary:(id)arg1;
 
 @end

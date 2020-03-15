@@ -19,10 +19,10 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCPProtoVideoKeyFrame *keyFrame; // @synthesize keyFrame=_keyFrame;
 @property(nonatomic) float curationScore; // @synthesize curationScore=_curationScore;
 @property(retain, nonatomic) VCPProtoTimeRange *timeRange; // @synthesize timeRange=_timeRange;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

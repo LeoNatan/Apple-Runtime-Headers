@@ -19,10 +19,10 @@
 
 + (id)termIdJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *taxonomy; // @synthesize taxonomy=_taxonomy;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSNumber *termId; // @synthesize termId=_termId;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

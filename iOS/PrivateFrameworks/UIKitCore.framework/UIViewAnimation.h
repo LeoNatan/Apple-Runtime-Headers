@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _endRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldClipToBoundsAfterAnimation; // @synthesize shouldClipToBoundsAfterAnimation=_shouldClipToBoundsAfterAnimation;
 @property(nonatomic) _Bool shouldAllowGroupOpacityAfterAnimation; // @synthesize shouldAllowGroupOpacityAfterAnimation=_shouldAllowGroupOpacityAfterAnimation;
 @property(nonatomic) _Bool shouldResetGroupOpacityAfterAnimation; // @synthesize shouldResetGroupOpacityAfterAnimation=_shouldResetGroupOpacityAfterAnimation;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int viewType; // @synthesize viewType=_viewType;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithView:(id)arg1 indexPath:(id)arg2 viewType:(int)arg3 endRect:(struct CGRect)arg4 endAlpha:(double)arg5 startFraction:(double)arg6 endFraction:(double)arg7 curve:(int)arg8 animateFromCurrentPosition:(_Bool)arg9 shouldDeleteAfterAnimation:(_Bool)arg10 editing:(_Bool)arg11;
 

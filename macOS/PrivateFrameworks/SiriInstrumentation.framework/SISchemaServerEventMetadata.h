@@ -16,11 +16,11 @@
     NSString *_serverPod;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serverPod; // @synthesize serverPod=_serverPod;
 @property(copy, nonatomic) NSData *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
 @property(nonatomic) long long timestampNs; // @synthesize timestampNs=_timestampNs;
 @property(copy, nonatomic) NSData *turnID; // @synthesize turnID=_turnID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

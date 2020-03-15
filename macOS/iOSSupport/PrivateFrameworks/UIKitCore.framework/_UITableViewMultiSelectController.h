@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIMultiSelectInteractionState *_currentSelectionState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIMultiSelectInteractionState *currentSelectionState; // @synthesize currentSelectionState=_currentSelectionState;
 @property(retain, nonatomic) UIMultiSelectInteraction *multiSelectInteraction; // @synthesize multiSelectInteraction=_multiSelectInteraction;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)didCancelMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)multiSelectInteractionGestureShouldPreventDragLiftGesture:(id)arg1;
 - (void)multiSelectInteraction:(id)arg1 appendSelectionAtPoint:(struct CGPoint)arg2;

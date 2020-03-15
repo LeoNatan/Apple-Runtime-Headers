@@ -9,6 +9,8 @@
 @class NSString;
 
 @interface NSDictionary (IntentsFoundation)
++ (id)if_dictionaryWithObjects:(const id *)arg1 forKeys:(const id *)arg2 count:(unsigned long long)arg3 uniquingKeysWith:(CDUnknownBlockType)arg4;
++ (id)if_dictionaryWithObjects:(id)arg1 forKeys:(id)arg2 uniquingKeysWith:(CDUnknownBlockType)arg3;
 - (id)if_compactMap:(CDUnknownBlockType)arg1;
 - (id)if_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 - (id)if_dictionaryWithNonEmptyValues;

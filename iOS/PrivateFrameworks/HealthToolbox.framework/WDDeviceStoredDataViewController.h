@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) HKDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)deleteAllStoredData;
 - (_Bool)shouldShowDeleteAllDataButton;
 - (id)storedDataDisplayName;

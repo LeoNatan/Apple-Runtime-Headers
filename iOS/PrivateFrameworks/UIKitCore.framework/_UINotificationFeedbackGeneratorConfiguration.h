@@ -16,8 +16,8 @@
 
 + (id)privateConfiguration;
 + (id)defaultConfiguration;
-@property(nonatomic) _Bool includePrivateEvents; // @synthesize includePrivateEvents=_includePrivateEvents;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool includePrivateEvents; // @synthesize includePrivateEvents=_includePrivateEvents;
 @property(retain, nonatomic) NSDictionary *feedbacks; // @synthesize feedbacks=_feedbacks;
 - (id)feedbackKeyPaths;
 - (_Bool)defaultEnabled;

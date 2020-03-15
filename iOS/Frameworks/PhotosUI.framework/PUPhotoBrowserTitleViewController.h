@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _playbackDuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTapGestureRecognizer:) UITapGestureRecognizer *_tapGestureRecognizer; // @synthesize _tapGestureRecognizer=__tapGestureRecognizer;
 @property(retain, nonatomic, setter=_setPlayClockDescription:) NSString *_playClockDescription; // @synthesize _playClockDescription=__playClockDescription;
 @property(retain, nonatomic, setter=_setTimeDescription:) NSString *_timeDescription; // @synthesize _timeDescription=__timeDescription;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isTappable) _Bool tappable; // @synthesize tappable=_tappable;
 @property(nonatomic) __weak id <PUPhotoBrowserTitleViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (void)_updateGestureRecognizersIfNeeded;
 - (void)_invalidateGestureRecognizers;

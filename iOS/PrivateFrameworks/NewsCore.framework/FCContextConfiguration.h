@@ -23,6 +23,7 @@
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *privateDataContainerCombinationIdentifier; // @synthesize privateDataContainerCombinationIdentifier=_privateDataContainerCombinationIdentifier;
 @property(readonly, copy, nonatomic) NSString *privateDataSecureContainerIdentifier; // @synthesize privateDataSecureContainerIdentifier=_privateDataSecureContainerIdentifier;
 @property(readonly, copy, nonatomic) NSString *privateDataContainerIdentifier; // @synthesize privateDataContainerIdentifier=_privateDataContainerIdentifier;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSString *contentContainerCombinationIdentifier; // @synthesize contentContainerCombinationIdentifier=_contentContainerCombinationIdentifier;
 @property(readonly, copy, nonatomic) NSString *contentContainerIdentifier; // @synthesize contentContainerIdentifier=_contentContainerIdentifier;
 @property(readonly, nonatomic) long long environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)initWithEnvironment:(long long)arg1;
 - (id)initWithProductionContentEnvironment:(_Bool)arg1 productionPrivateDataEnvironment:(_Bool)arg2 contentContainerIdentifier:(id)arg3 privateDataContainerIdentifier:(id)arg4 privateDataSecureContainerIdentifier:(id)arg5 storeFrontID:(id)arg6 environment:(long long)arg7;
 - (id)copyWithZone:(struct _NSZone *)arg1;

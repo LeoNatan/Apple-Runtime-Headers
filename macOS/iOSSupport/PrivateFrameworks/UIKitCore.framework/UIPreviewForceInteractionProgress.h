@@ -26,9 +26,9 @@
     BOOL _completesAtTargetState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL completesAtTargetState; // @synthesize completesAtTargetState=_completesAtTargetState;
 @property(nonatomic, setter=_setTargetState:) long long _targetState; // @synthesize _targetState;
-- (void).cxx_destruct;
 @property(nonatomic, setter=_setClassifierShouldRespectSystemGestureTouchFiltering:) BOOL _classifierShouldRespectSystemGestureTouchFiltering;
 - (void)_forceLevelClassifierDidReset:(id)arg1;
 - (void)_forceLevelClassifier:(id)arg1 currentForceLevelDidChange:(long long)arg2;

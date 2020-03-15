@@ -25,11 +25,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serverInfo; // @synthesize serverInfo=_serverInfo;
 @property(retain, nonatomic) AWDMailError *mailError; // @synthesize mailError=_mailError;
 @property(retain, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -13,8 +13,8 @@
     SBApplicationSceneEntity *_applicationSceneEntity;
 }
 
-@property(retain, nonatomic) SBApplicationSceneEntity *applicationSceneEntity; // @synthesize applicationSceneEntity=_applicationSceneEntity;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBApplicationSceneEntity *applicationSceneEntity; // @synthesize applicationSceneEntity=_applicationSceneEntity;
 - (_Bool)isInProcessAction;
 - (id)initWithType:(unsigned long long)arg1 applicationSceneEntity:(id)arg2 handler:(CDUnknownBlockType)arg3;
 

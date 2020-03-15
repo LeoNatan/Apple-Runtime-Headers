@@ -16,19 +16,19 @@
     NSString *_serviceType;
 }
 
-+ (id)createWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 ruleDictionary:(struct NSDictionary *)arg8 error:(id *)arg9;
-+ (BOOL)__decodeServiceType:(struct NSDictionary *)arg1 serviceType:(id *)arg2 error:(id *)arg3;
-+ (BOOL)__decodeFlags:(struct NSDictionary *)arg1 advertisingOnly:(char *)arg2 error:(id *)arg3;
-+ (BOOL)__decodeAdvertisingProtocol:(struct NSDictionary *)arg1 advertisingProtocol:(unsigned char *)arg2 error:(id *)arg3;
++ (id)createWithJSONDictionary:(id)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 ruleDictionary:(id)arg8 error:(id *)arg9;
++ (BOOL)__decodeServiceType:(id)arg1 serviceType:(id *)arg2 error:(id *)arg3;
++ (BOOL)__decodeFlags:(id)arg1 advertisingOnly:(char *)arg2 error:(id *)arg3;
++ (BOOL)__decodeAdvertisingProtocol:(id)arg1 advertisingProtocol:(unsigned char *)arg2 error:(id *)arg3;
 + (id)__advertisingProtocolToString:(unsigned char)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, nonatomic, getter=isAdvertisingOnly) BOOL advertisingOnly; // @synthesize advertisingOnly=_advertisingOnly;
 @property(readonly, nonatomic) unsigned char advertisingProtocol; // @synthesize advertisingProtocol=_advertisingProtocol;
 @property(readonly, nonatomic) unsigned char transportProtocol; // @synthesize transportProtocol=_transportProtocol;
-- (void).cxx_destruct;
-- (struct NSDictionary *)prettyJSONDictionary;
+- (id)prettyJSONDictionary;
 - (id)attributeDescriptions;
-- (id)initWithJSONDictionary:(struct NSDictionary *)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 transportProtocol:(unsigned char)arg8 advertisingProtocol:(unsigned char)arg9 advertisingOnly:(BOOL)arg10 serviceType:(id)arg11;
+- (id)initWithJSONDictionary:(id)arg1 name:(id)arg2 critical:(BOOL)arg3 purpose:(unsigned long long)arg4 allowInterAccessoryConnections:(BOOL)arg5 direction:(unsigned char)arg6 requiredForHAPFunctionality:(BOOL)arg7 transportProtocol:(unsigned char)arg8 advertisingProtocol:(unsigned char)arg9 advertisingOnly:(BOOL)arg10 serviceType:(id)arg11;
 
 @end
 

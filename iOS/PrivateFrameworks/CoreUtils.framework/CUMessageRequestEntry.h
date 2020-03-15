@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 
 @end
 

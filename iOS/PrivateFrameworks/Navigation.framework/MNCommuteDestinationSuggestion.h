@@ -31,6 +31,7 @@
 + (id)fakeDestinationSuggestion:(id)arg1;
 + (id)_fakeBitsAndPiecesForSuggestion:(id)arg1;
 + (void)_setupFakes;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAllDay) _Bool allDay; // @synthesize allDay=_allDay;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(retain, nonatomic) NSData *rawSuggestion; // @synthesize rawSuggestion=_rawSuggestion;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

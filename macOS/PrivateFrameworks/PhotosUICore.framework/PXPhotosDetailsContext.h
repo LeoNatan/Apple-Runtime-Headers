@@ -38,6 +38,7 @@
 + (id)photosDetailsContextForMemory:(id)arg1;
 + (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 keyAssets:(id)arg3 enableCuration:(BOOL)arg4 enableKeyAssets:(BOOL)arg5 useVerboseSmartDescription:(BOOL)arg6 viewSourceOrigin:(unsigned long long)arg7;
 + (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 viewSourceOrigin:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldUseKeyFace; // @synthesize shouldUseKeyFace=_shouldUseKeyFace;
 @property(readonly, nonatomic) BOOL hasLocation; // @synthesize hasLocation=_hasLocation;
 @property(readonly, nonatomic) BOOL shouldShowMovieHeader; // @synthesize shouldShowMovieHeader=_shouldShowMovieHeader;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) __weak PXPhotosDetailsContext *parentContext; // @synthesize parentContext=_parentContext;
 @property(readonly, nonatomic) PXDisplayTitleInfo *displayTitleInfo; // @synthesize displayTitleInfo=_displayTitleInfo;
 @property(readonly, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (void)setPhotosDataSource:(id)arg1;

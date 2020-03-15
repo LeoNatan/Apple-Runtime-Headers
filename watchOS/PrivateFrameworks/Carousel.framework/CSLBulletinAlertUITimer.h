@@ -17,10 +17,10 @@
     double _fireInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alertVisible; // @synthesize alertVisible=_alertVisible;
 @property(nonatomic) __weak id <CSLBulletinAlertTimerActionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double fireInterval; // @synthesize fireInterval=_fireInterval;
-- (void).cxx_destruct;
 - (void)appearanceStateDidChange:(_Bool)arg1;
 - (void)backlightWillTurnOff;
 - (void)backlightWillTurnOn;

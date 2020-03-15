@@ -6,23 +6,21 @@
 
 #import <RemoteManagementModel/RMModelPayloadBase.h>
 
-@class NSString, RMProtocolSupportedFeatures;
+@class NSString, RMProtocolServerCapabilities;
 
 @interface RMProtocolServerCapabilitiesResponse : RMModelPayloadBase
 {
     NSString *_responseCapabilitiesToken;
-    NSString *_responseVersion;
-    RMProtocolSupportedFeatures *_responseSupportedFeatures;
+    RMProtocolServerCapabilities *_responseCapabilities;
 }
 
-+ (id)requestWithCapabilitiesToken:(id)arg1 version:(id)arg2 supportedFeatures:(id)arg3;
-@property(copy, nonatomic) RMProtocolSupportedFeatures *responseSupportedFeatures; // @synthesize responseSupportedFeatures=_responseSupportedFeatures;
-@property(copy, nonatomic) NSString *responseVersion; // @synthesize responseVersion=_responseVersion;
-@property(copy, nonatomic) NSString *responseCapabilitiesToken; // @synthesize responseCapabilitiesToken=_responseCapabilitiesToken;
++ (id)requestWithCapabilitiesToken:(id)arg1 capabilities:(id)arg2;
 - (void).cxx_destruct;
+@property(copy, nonatomic) RMProtocolServerCapabilities *responseCapabilities; // @synthesize responseCapabilities=_responseCapabilities;
+@property(copy, nonatomic) NSString *responseCapabilitiesToken; // @synthesize responseCapabilitiesToken=_responseCapabilitiesToken;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

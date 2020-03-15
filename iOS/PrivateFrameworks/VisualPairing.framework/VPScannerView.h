@@ -32,10 +32,10 @@
     CDUnknownBlockType _scannedCodeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scannedCodeHandler; // @synthesize scannedCodeHandler=_scannedCodeHandler;
 @property(nonatomic) long long focusMode; // @synthesize focusMode=_focusMode;
 @property(nonatomic) long long autoFocusRangeRestriction; // @synthesize autoFocusRangeRestriction=_autoFocusRangeRestriction;
-- (void).cxx_destruct;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)_handleCaptureSessionInterruptionEnded:(id)arg1;
 - (void)_handleCaptureSessionInterrupted:(id)arg1;

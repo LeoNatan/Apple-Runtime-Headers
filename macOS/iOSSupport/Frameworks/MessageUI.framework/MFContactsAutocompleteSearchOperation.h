@@ -24,6 +24,7 @@
 }
 
 + (id)operationWithOwner:(id)arg1 text:(id)arg2 taskID:(id)arg3 autocompleteStore:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNAutocompleteStore *autocompleteStore; // @synthesize autocompleteStore=_autocompleteStore;
 @property(copy, nonatomic) CNAutocompleteFetchContext *fetchContext; // @synthesize fetchContext=_fetchContext;
 @property(nonatomic) BOOL simulateResults; // @synthesize simulateResults=_simulateResults;
@@ -31,7 +32,6 @@
 @property(nonatomic) BOOL includeSuggestions; // @synthesize includeSuggestions=_includeSuggestions;
 @property(nonatomic) BOOL includeRecents; // @synthesize includeRecents=_includeRecents;
 @property(nonatomic) BOOL includeContacts; // @synthesize includeContacts=_includeContacts;
-- (void).cxx_destruct;
 - (void)autocompleteFetchDidFinish:(id)arg1;
 - (void)autocompleteFetch:(id)arg1 didReceiveResults:(id)arg2;
 - (id)_simulatedRecipientResults;

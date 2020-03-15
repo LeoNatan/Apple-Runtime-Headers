@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 + (id)constraintWithPoint:(struct CGPoint)arg1 distanceRange:(id)arg2;
 + (id)constraintWithNode:(id)arg1 distanceRange:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property struct CGPoint point; // @synthesize point=_point;
 @property __weak SKNode *node; // @synthesize node=_node;
 @property(copy) SKRange *distanceRange; // @synthesize distanceRange=_distanceRange;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqualToDistanceConstraint:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

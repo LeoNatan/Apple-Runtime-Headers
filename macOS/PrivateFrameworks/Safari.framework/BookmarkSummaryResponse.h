@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSSiteMetadataResponse.h>
+#import <SafariSharedUI/WBSSiteMetadataResponse.h>
 
 @class NSImage, NSString, NSURL, ReadingListFetcherInfo;
 
@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     int _pageFetchResult;
 }
 
-@property(readonly, nonatomic) int pageFetchResult; // @synthesize pageFetchResult=_pageFetchResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int pageFetchResult; // @synthesize pageFetchResult=_pageFetchResult;
 @property(readonly, nonatomic) NSImage *mainImage;
 @property(readonly, nonatomic) NSURL *mainImageURL;
 @property(readonly, nonatomic, getter=isReaderAvailable) BOOL readerAvailable;

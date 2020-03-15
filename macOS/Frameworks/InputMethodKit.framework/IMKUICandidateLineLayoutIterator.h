@@ -13,8 +13,8 @@
     IMKUICandidateLineLayout *_lineLayout;
 }
 
-@property(retain, nonatomic) IMKUICandidateLineLayout *lineLayout; // @synthesize lineLayout=_lineLayout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMKUICandidateLineLayout *lineLayout; // @synthesize lineLayout=_lineLayout;
 - (id)layoutEntryForIndex:(long long)arg1;
 
 @end

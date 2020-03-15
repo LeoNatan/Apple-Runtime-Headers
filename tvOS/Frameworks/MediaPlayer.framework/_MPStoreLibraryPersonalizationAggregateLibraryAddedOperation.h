@@ -15,11 +15,11 @@
     vector_bbba3654 _persistentIDs;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(nonatomic) vector_bbba3654 persistentIDs; // @synthesize persistentIDs=_persistentIDs;
 @property(nonatomic) MPMediaLibraryView *libraryView; // @synthesize libraryView=_libraryView;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)execute;
 
 @end

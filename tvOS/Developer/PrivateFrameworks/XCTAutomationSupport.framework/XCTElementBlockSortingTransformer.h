@@ -18,14 +18,13 @@
 }
 
 + (void)provideCapabilitiesToBuilder:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property _Bool stopsOnFirstMatch; // @synthesize stopsOnFirstMatch;
 @property(copy) NSString *transformationDescription; // @synthesize transformationDescription;
-- (void).cxx_destruct;
 - (id)iteratorForInput:(id)arg1;
 - (id)requiredKeyPathsOrError:(id *)arg1;
 @property(readonly) _Bool supportsAttributeKeyPathAnalysis;
-@property(readonly) _Bool supportsRemoteEvaluation;
 - (_Bool)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

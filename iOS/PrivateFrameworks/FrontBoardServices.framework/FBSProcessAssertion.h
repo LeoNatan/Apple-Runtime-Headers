@@ -21,13 +21,13 @@
     BKSProcessAssertion *_assertion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
 @property(readonly, nonatomic) unsigned long long activationCount; // @synthesize activationCount=_activationCount;
 @property(readonly, nonatomic) FBSProcessExecutionPolicy *policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) __weak id <FBSProcess> process; // @synthesize process=_process;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

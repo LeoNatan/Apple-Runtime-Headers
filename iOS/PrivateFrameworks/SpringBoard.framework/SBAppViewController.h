@@ -36,6 +36,7 @@
     SBActivationSettings *_supplementalActivationSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBActivationSettings *supplementalActivationSettings; // @synthesize supplementalActivationSettings=_supplementalActivationSettings;
 @property(nonatomic) _Bool wantsSecureRendering; // @synthesize wantsSecureRendering=_wantsSecureRendering;
 @property(nonatomic) _Bool ignoresOcclusions; // @synthesize ignoresOcclusions=_ignoresOcclusions;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSSet *actionsToDeliver; // @synthesize actionsToDeliver=_actionsToDeliver;
 @property(readonly, nonatomic) long long currentMode; // @synthesize currentMode=_currentMode;
 @property(readonly, nonatomic) SBSceneHandle *sceneHandle;
-- (void).cxx_destruct;
 - (void)_installedAppsDidChange:(id)arg1;
 - (void)_deactivateHostedApp;
 - (id)_createSceneUpdateTransactionForApplicationSceneEntity:(id)arg1 deliveringActions:(_Bool)arg2;

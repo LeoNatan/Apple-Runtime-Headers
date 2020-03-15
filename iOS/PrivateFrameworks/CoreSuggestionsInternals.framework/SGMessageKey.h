@@ -17,9 +17,9 @@
 }
 
 + (_Bool)isSupportedEntityType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *source; // @synthesize source=_source;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqualToMessageKey:(id)arg1;

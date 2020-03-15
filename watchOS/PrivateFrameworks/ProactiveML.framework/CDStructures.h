@@ -39,6 +39,11 @@ typedef struct {
     unsigned int size;
 } CDStruct_d570ea55;
 
+typedef struct {
+    void *plan;
+    int network_index;
+} CDStruct_2bc666a5;
+
 // Ambiguous groups
 typedef struct {
     unsigned int timestamp:1;

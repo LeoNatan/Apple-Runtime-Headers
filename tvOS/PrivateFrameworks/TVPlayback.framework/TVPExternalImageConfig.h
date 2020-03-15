@@ -18,13 +18,13 @@
     NSString *_version;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *imageNameFormatString; // @synthesize imageNameFormatString=_imageNameFormatString;
 @property(nonatomic) _Bool usesOneBasedImageIndexes; // @synthesize usesOneBasedImageIndexes=_usesOneBasedImageIndexes;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(nonatomic) long long imageCount; // @synthesize imageCount=_imageCount;
 @property(nonatomic) double imageInterval; // @synthesize imageInterval=_imageInterval;
-- (void).cxx_destruct;
 
 @end
 

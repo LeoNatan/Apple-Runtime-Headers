@@ -6,7 +6,7 @@
 
 #import <TVMLKit/TVMediaInfo.h>
 
-@class IKAppContext, TVPPlaylist;
+@class IKAppContext, TVImageProxy, TVPPlaylist;
 
 __attribute__((visibility("hidden")))
 @interface VUIMediaInfo : TVMediaInfo
@@ -25,9 +25,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _playbackContext;
     IKAppContext *_appContext;
     double _playbackDelayInterval;
+    TVImageProxy *_alphaImageProxy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool overridesStartTimeWithResumeTime; // @synthesize overridesStartTimeWithResumeTime=_overridesStartTimeWithResumeTime;
+@property(retain, nonatomic) TVImageProxy *alphaImageProxy; // @synthesize alphaImageProxy=_alphaImageProxy;
 @property(nonatomic) double playbackDelayInterval; // @synthesize playbackDelayInterval=_playbackDelayInterval;
 @property(nonatomic) _Bool allowsPictureInPicture; // @synthesize allowsPictureInPicture=_allowsPictureInPicture;
 @property(retain, nonatomic) IKAppContext *appContext; // @synthesize appContext=_appContext;
@@ -41,13 +44,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showsSecondaryVideoView; // @synthesize showsSecondaryVideoView=_showsSecondaryVideoView;
 @property(retain, nonatomic) TVPPlaylist *tvpPlaylist; // @synthesize tvpPlaylist=_tvpPlaylist;
 @property(readonly, nonatomic) _Bool hasProgress; // @synthesize hasProgress=_hasProgress;
-- (void).cxx_destruct;
 - (id)_playbackOverridesForURL:(id)arg1 orAdamID:(id)arg2;
 - (id)_tvpMediaTypeFromPlayableType:(id)arg1 isRental:(_Bool)arg2;
 - (void)_populateMediaItem:(id)arg1 withMetadataOverrides:(id)arg2;
 - (void)_populateMediaItem:(id)arg1 withMetadataFromVideosPlayable:(id)arg2;
 - (id)_auxMediaItemFromVideosPlayable:(id)arg1;
-- (id)_storeMediaItemsFromVideosPlayable:(id)arg1 andStoreDictionary:(id)arg2;
+- (id)_storeMediaItemFromVideosPlayable:(id)arg1 andStoreDictionary:(id)arg2;
 - (id)_playlistFromVideosPlayables:(id)arg1 andStoreDictionary:(id)arg2;
 - (id)_tvpRatingDomainFromUTSRatingDomain:(id)arg1;
 - (void)_updatePlaybackStartReason;

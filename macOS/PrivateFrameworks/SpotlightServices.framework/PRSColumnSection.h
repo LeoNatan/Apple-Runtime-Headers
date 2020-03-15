@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL text_nowrap; // @synthesize text_nowrap=_text_nowrap;
 @property(nonatomic) int text_weight; // @synthesize text_weight=_text_weight;
 @property(retain, nonatomic) NSArray *text_lines; // @synthesize text_lines=_text_lines;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithArray:(id)arg1;

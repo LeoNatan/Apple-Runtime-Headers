@@ -16,10 +16,10 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *controlConstraints; // @synthesize controlConstraints=_controlConstraints;
 @property(retain, nonatomic) UIView *controlView; // @synthesize controlView=_controlView;
 @property(nonatomic) _Bool requiresWellDefinedSize; // @synthesize requiresWellDefinedSize=_requiresWellDefinedSize;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (id)initWithControlView:(id)arg1;
 

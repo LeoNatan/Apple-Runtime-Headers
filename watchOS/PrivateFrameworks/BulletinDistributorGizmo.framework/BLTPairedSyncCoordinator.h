@@ -18,8 +18,8 @@
 + (void)reportProgress:(double)arg1;
 + (void)syncDidComplete;
 + (id)syncState;
-@property(retain, nonatomic) PSYSyncClientStateObserver *pairedSyncClientStateObserver; // @synthesize pairedSyncClientStateObserver=_pairedSyncClientStateObserver;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PSYSyncClientStateObserver *pairedSyncClientStateObserver; // @synthesize pairedSyncClientStateObserver=_pairedSyncClientStateObserver;
 - (void)syncClientActivity:(id)arg1 didChangeToSyncState:(int)arg2;
 - (id)init;
 

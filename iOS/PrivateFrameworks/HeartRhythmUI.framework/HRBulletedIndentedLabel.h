@@ -16,9 +16,9 @@
 
 + (id)_bodyFont;
 + (id)_bodyFontTextStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)lastBaselineAnchor;
 - (id)firstBaselineAnchor;
 - (void)_updateLeadingDetailAttributedTextSize;

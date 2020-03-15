@@ -17,8 +17,8 @@
     HDDaemon *_daemon;
 }
 
-@property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 - (id)createTaskServerEndpointForIdentifier:(id)arg1 taskUUID:(id)arg2 configuration:(id)arg3 client:(id)arg4 connectionQueue:(id)arg5 delegate:(id)arg6 error:(id *)arg7;
 - (void)didCreateTaskServer:(id)arg1;
 - (id)taskServerForTaskUUID:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) int responseType; // @synthesize responseType=_responseType;
-- (void).cxx_destruct;
 - (_Bool)_hasActiveICloudAccount;
 - (int)_mapCorrectSelectedButtonWithDialog:(id)arg1;
 - (id)_newCreateAccountDialog;

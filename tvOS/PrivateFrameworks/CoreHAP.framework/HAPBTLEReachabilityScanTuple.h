@@ -17,10 +17,10 @@
 }
 
 + (id)reachabilityScanTupleWithCompletion:(CDUnknownBlockType)arg1 workQueue:(id)arg2 identifier:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 
 @end
 

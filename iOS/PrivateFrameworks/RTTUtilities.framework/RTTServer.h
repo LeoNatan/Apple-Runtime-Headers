@@ -19,9 +19,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
 @property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
-- (void).cxx_destruct;
 - (void)primeRTTServer;
 - (void)setTTYDictionaryAvailability:(_Bool)arg1;
 - (void)_takeStackshot;
@@ -43,6 +43,7 @@
 - (void)_managerAXPIDState:(_Bool)arg1;
 - (void)resetConnection;
 - (void)_registerForServerSettingsUpdates;
+- (void)terminateConnectionAndNotify:(_Bool)arg1;
 - (void)dealloc;
 - (id)init;
 

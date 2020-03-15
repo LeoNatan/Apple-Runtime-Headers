@@ -15,9 +15,9 @@
 }
 
 + (id)eventWithName:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqualToEvent:(id)arg1;
 - (void)_execute;
 - (void)executeFromEventQueue;

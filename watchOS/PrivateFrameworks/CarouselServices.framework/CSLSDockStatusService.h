@@ -16,8 +16,8 @@
 + (id)log;
 + (id)serviceName;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)retrieveDockStatusForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)isDocked:(id)arg1;
 - (id)_synchronousRemoteObjectProxy;

@@ -19,11 +19,11 @@
     TVPRelatedContent *_relatedContent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPRelatedContent *relatedContent; // @synthesize relatedContent=_relatedContent;
 @property(readonly, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(readonly, nonatomic) TVLVideoPlayerElement *videoPlayerElement; // @synthesize videoPlayerElement=_videoPlayerElement;
 @property(readonly, nonatomic) id <TVPPlayback> player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)start;
 - (_Bool)isAsynchronous;
 - (_Bool)isFinished;

@@ -18,8 +18,8 @@
     id <SBFLegibilitySettingsProviderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)wallpaperLegibilitySettingsDidChange:(id)arg1 forVariant:(long long)arg2;
 - (void)wallpaperDidChangeForVariant:(long long)arg1;
 @property(readonly, nonatomic) _UILegibilitySettings *legibilitySettings;

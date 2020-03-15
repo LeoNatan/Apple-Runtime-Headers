@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSMutableArray *__interactiveChangeHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setInteractiveChangeHandlers:) NSMutableArray *_interactiveChangeHandlers; // @synthesize _interactiveChangeHandlers=__interactiveChangeHandlers;
 @property(retain, nonatomic, setter=_setAlongsideCompletions:) NSMutableArray *_alongsideCompletions; // @synthesize _alongsideCompletions=__alongsideCompletions;
 @property(retain, nonatomic, setter=_setAlongsideAnimationViews:) NSMutableArray *_alongsideAnimationViews; // @synthesize _alongsideAnimationViews=__alongsideAnimationViews;
 @property(retain, nonatomic, setter=_setAlongsideAnimations:) NSMutableArray *_alongsideAnimations; // @synthesize _alongsideAnimations=__alongsideAnimations;
 @property(retain, nonatomic, setter=_setSystemAlongsideAnimations:) NSMutableArray *_systemAlongsideAnimations; // @synthesize _systemAlongsideAnimations=__systemAlongsideAnimations;
 @property(nonatomic, setter=_setMainContext:) _UIViewControllerTransitionContext *_mainContext; // @synthesize _mainContext=__mainContext;
-- (void).cxx_destruct;
 - (void)notifyWhenInteractionEndsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)notifyWhenInteractionChangesUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)animateAlongsideTransition:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

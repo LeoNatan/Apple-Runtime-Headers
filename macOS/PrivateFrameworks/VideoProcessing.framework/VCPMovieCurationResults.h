@@ -14,9 +14,9 @@
     NSMutableArray *_highlights;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSMutableArray *highlights; // @synthesize highlights=_highlights;
 @property(readonly, nonatomic) PHAsset *phAsset; // @synthesize phAsset=_phAsset;
-- (void).cxx_destruct;
 - (id)initWithPHAsset:(id)arg1;
 
 @end

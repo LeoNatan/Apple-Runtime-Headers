@@ -20,11 +20,11 @@
 + (void)unregisterByPort:(unsigned int)arg1;
 + (id)lookupByPort:(unsigned int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CFRunLoopSource *replyMachPortSource; // @synthesize replyMachPortSource=_replyMachPortSource;
 @property(readonly, nonatomic) CDUnknownBlockType replyHandler; // @synthesize replyHandler=_replyHandler;
 @property(readonly, nonatomic) unsigned int replyPort; // @synthesize replyPort=_replyPort;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *replyQueue; // @synthesize replyQueue=_replyQueue;
-- (void).cxx_destruct;
 - (void)initialSendAborted;
 - (void)sendOnceRightDestroyed;
 - (void)rawResponseReceived:(id)arg1;

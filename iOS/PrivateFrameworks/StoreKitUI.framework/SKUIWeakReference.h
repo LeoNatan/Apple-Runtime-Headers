@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     NSObject *_object;
 }
 
-@property(nonatomic) __weak NSObject *object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject *object; // @synthesize object=_object;
 
 @end
 

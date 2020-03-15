@@ -17,11 +17,11 @@
     NSNumber *_capacity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) NSMutableArray *pendingDispatchBlocks; // @synthesize pendingDispatchBlocks=_pendingDispatchBlocks;
 @property(readonly, nonatomic) CDUnknownBlockType originalBlock; // @synthesize originalBlock=_originalBlock;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)cancelPendingExecutions;
 - (void)enqueueExecutionWithTarget:(id)arg1 afterDelay:(double)arg2;
 - (id)initWithNumberCapacity:(id)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;

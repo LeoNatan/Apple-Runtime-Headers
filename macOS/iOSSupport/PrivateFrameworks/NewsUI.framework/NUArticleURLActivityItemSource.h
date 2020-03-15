@@ -13,8 +13,8 @@
     NSURL *_articleURL;
 }
 
-@property(readonly, nonatomic) NSURL *articleURL; // @synthesize articleURL=_articleURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *articleURL; // @synthesize articleURL=_articleURL;
 - (id)bodyStringForMailMessage;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;

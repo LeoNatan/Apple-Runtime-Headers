@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntityIdentifier *_sourceSeasonIdentifier;
 }
 
-@property(copy, nonatomic) TVHKMediaEntityIdentifier *sourceSeasonIdentifier; // @synthesize sourceSeasonIdentifier=_sourceSeasonIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) TVHKMediaEntityIdentifier *sourceSeasonIdentifier; // @synthesize sourceSeasonIdentifier=_sourceSeasonIdentifier;
 - (_Bool)_useFetchCache;
 - (id)_episodesFetchRequest;
 - (id)_mediaEntitiesWithFetchedEpisodes:(id)arg1 andMediaEntityCache:(id)arg2;

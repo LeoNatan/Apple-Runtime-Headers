@@ -17,9 +17,9 @@
     CDStruct_b5306035 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *extension; // @synthesize extension=_extension;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

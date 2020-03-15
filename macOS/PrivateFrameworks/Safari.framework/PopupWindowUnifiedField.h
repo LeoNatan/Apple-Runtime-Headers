@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (double)mediaIndicatorYOffset;
 + (double)urlTextYOffset;
 - (void)_windowChangedKeyState;
 - (void)setNeedsDisplay:(BOOL)arg1;
@@ -26,10 +25,9 @@ __attribute__((visibility("hidden")))
 - (id)pageStatusStringColor;
 - (void)setBrowsingMode:(unsigned long long)arg1;
 - (id)lockButtonColor;
-- (id)evCertificateTextColorForPrivateWindow;
-- (id)evCertificateTextColor;
 - (id)deemphasizedTextColor;
 - (double)mainContentViewTrailingMarginWithLeadingMargin:(double)arg1;
+- (double)mediaIndicatorYOffset;
 - (void)_commonInitialization;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

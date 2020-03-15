@@ -17,8 +17,8 @@
 }
 
 + (id)handlerWithMessageHandler:(id)arg1;
-@property(readonly, nonatomic) __weak id <SWMessageHandler> messageHandler; // @synthesize messageHandler=_messageHandler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <SWMessageHandler> messageHandler; // @synthesize messageHandler=_messageHandler;
 - (void)didReceiveMessage:(id)arg1 securityOrigin:(id)arg2;
 
 // Remaining properties

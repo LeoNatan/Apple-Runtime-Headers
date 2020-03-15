@@ -21,6 +21,8 @@
 - (id)passWithUniqueID:(id)arg1;
 - (id)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (id)paymentPasses;
+- (_Bool)canProvisionAccessPassWithConfiguration:(id)arg1;
+- (_Bool)canAddSecureElementPassWithConfiguration:(id)arg1;
 @property(readonly, nonatomic) _Bool canAddPaymentPass;
 - (id)initWithPassLibrary:(id)arg1;
 - (id)init;

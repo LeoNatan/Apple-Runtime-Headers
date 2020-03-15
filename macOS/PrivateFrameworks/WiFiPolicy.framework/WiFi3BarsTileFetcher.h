@@ -14,9 +14,9 @@
     unsigned long long _currentTileKey;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentTileKey; // @synthesize currentTileKey=_currentTileKey;
 @property(retain, nonatomic) TBDataSourceMediator *dataSourceMediator; // @synthesize dataSourceMediator=_dataSourceMediator;
-- (void).cxx_destruct;
 - (void)_handleLocationManagerCallbackWithLocation:(id)arg1 error:(id)arg2;
 - (void)_locationUpdateNotificationHandler:(id)arg1;
 - (void)dealloc;

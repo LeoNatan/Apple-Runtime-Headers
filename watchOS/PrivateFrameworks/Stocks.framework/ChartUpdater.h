@@ -19,9 +19,9 @@
 }
 
 + (id)_rangeStringForInterval:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly) int interval; // @synthesize interval=_interval;
 @property(nonatomic) __weak id <ChartUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)dataSeries;
 - (id)aggregateDictionaryDomain;
 - (void)failWithError:(id)arg1;

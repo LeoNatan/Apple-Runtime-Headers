@@ -17,9 +17,9 @@
     unsigned long long _ambiguityStatusMask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long ambiguityStatusMask; // @synthesize ambiguityStatusMask=_ambiguityStatusMask;
 @property(readonly, nonatomic) NSObject<IBAutolayoutItem> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isMissingScrollableContentHeightConstraint) _Bool missingScrollableContentHeightConstraint;
 @property(readonly, nonatomic, getter=isMissingScrollableContentWidthConstraint) _Bool missingScrollableContentWidthConstraint;
 @property(readonly, nonatomic, getter=isMissingVerticalSizeConstraint) _Bool missingVerticalSizeConstraint;

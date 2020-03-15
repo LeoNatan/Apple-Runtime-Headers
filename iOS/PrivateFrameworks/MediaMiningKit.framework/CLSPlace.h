@@ -20,12 +20,12 @@
 + (id)placeWithPlacemark:(id)arg1;
 + (id)placeWithLocation:(id)arg1;
 + (id)placeWithBusinessItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLSBusinessItem *businessItem; // @synthesize businessItem=_businessItem;
 @property(retain, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(readonly, nonatomic) CLSLitePlacemark *placemark; // @synthesize placemark=_placemark;
 @property(readonly, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,10 +15,10 @@
     NSUUID *_clientIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain, nonatomic) NWParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) NWBrowseDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (void).cxx_destruct;
 
 @end
 

@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 + (id)colorFromRGBString:(id)arg1;
 + (id)colorFromRGBArray:(id)arg1;
 + (id)avatarBackgroundsFromDictionary:(id)arg1;
-@property(retain, nonatomic) NSArray *avatarBackgrounds; // @synthesize avatarBackgrounds=_avatarBackgrounds;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *avatarBackgrounds; // @synthesize avatarBackgrounds=_avatarBackgrounds;
 - (id)init;
 
 @end

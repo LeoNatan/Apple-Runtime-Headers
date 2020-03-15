@@ -22,11 +22,11 @@
 
 + (void)_initializeMessageStoreIfNeeded:(id)arg1 path:(id)arg2 dataProtectionClass:(unsigned int)arg3;
 + (void)_invalidateCachesForMessageStore:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int dataProtectionClass; // @synthesize dataProtectionClass=_dataProtectionClass;
 @property(retain, nonatomic) CSDBThreadedRecordStore *messageStore; // @synthesize messageStore=_messageStore;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *storeName; // @synthesize storeName=_storeName;
-- (void).cxx_destruct;
 - (void)_onIvarQueue_performBlock:(CDUnknownBlockType)arg1 initializeStore:(_Bool)arg2 waitUntilDone:(_Bool)arg3;
 - (void)_onIvarQueue_performBlock:(CDUnknownBlockType)arg1 initializeStore:(_Bool)arg2;
 - (void)deleteDatabase;

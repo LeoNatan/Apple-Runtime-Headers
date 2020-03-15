@@ -25,12 +25,12 @@
 + (_Bool)_boolFromDictionary:(id)arg1 key:(id)arg2 error:(_Bool *)arg3;
 + (id)activityForActivity:(id)arg1;
 + (id)activityForDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(retain, nonatomic) NSSet *activityKeywords; // @synthesize activityKeywords=_activityKeywords;
 @property(retain, nonatomic) NSString *activitySubtitle; // @synthesize activitySubtitle=_activitySubtitle;
 @property(retain, nonatomic) NSString *activityTitle; // @synthesize activityTitle=_activityTitle;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)updateActivity:(id)arg1;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;

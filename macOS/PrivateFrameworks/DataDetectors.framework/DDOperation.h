@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     long long _jobIdentifier;
 }
 
+- (void).cxx_destruct;
 @property int failuresCount; // @synthesize failuresCount=_failuresCount;
 @property int tag; // @synthesize tag=_tag;
 @property(retain) NSArray *results; // @synthesize results=_results;
 @property __weak id viewOrController; // @synthesize viewOrController=_viewOrController;
 @property(copy) NSString *scannedTextID; // @synthesize scannedTextID=_scannedTextID;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)scan;
 - (void)_scanDone;

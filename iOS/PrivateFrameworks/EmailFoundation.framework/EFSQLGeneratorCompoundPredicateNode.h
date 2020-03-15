@@ -16,9 +16,9 @@
     NSArray *_childPredicates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *childPredicates; // @synthesize childPredicates=_childPredicates;
 @property(readonly, nonatomic) unsigned long long predicateType; // @synthesize predicateType=_predicateType;
-- (void).cxx_destruct;
 - (void)traverseTreeWithAliasMap:(id)arg1;
 - (id)sqlExpressableWithTableExpressions:(id)arg1;
 - (id)initWithPredicateType:(unsigned long long)arg1 childPredicates:(id)arg2;

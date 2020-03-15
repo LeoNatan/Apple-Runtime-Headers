@@ -14,9 +14,9 @@
     LSPlugInKitProxy *_proxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LSPlugInKitProxy *proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
-- (void).cxx_destruct;
 - (BOOL)isLaunchProhibited;
 - (id)plugin;
 - (void)setIsEnabled:(BOOL)arg1;

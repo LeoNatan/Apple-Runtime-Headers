@@ -38,6 +38,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *episodeDescription; // @synthesize episodeDescription=_episodeDescription;
 @property(readonly, nonatomic) long long showSyncID; // @synthesize showSyncID=_showSyncID;
 @property(readonly, nonatomic) NSURL *episodePageUrl; // @synthesize episodePageUrl=_episodePageUrl;
@@ -59,7 +60,6 @@
 @property(readonly, nonatomic) NSString *shortDescription; // @synthesize shortDescription=_shortDescription;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initUsingPropertiesFrom:(id)arg1 playMetadata:(id)arg2;

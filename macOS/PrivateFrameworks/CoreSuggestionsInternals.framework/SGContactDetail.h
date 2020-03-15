@@ -25,6 +25,7 @@
 
 + (id)contactDetailFromEntity:(id)arg1;
 + (id)contactDetail:(id)arg1 label:(id)arg2 type:(unsigned long long)arg3 recordId:(id)arg4 duplicateKey:(id)arg5 sourceKey:(id)arg6 context:(id)arg7 extractionInfo:(id)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGDuplicateKey *duplicateKey; // @synthesize duplicateKey=_duplicateKey;
 @property(readonly, nonatomic) NSString *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *sourceKey; // @synthesize sourceKey=_sourceKey;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToContactDetail:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

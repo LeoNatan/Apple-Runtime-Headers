@@ -24,12 +24,12 @@
 + (id)keyPathsForValuesAffectingUiRank;
 + (id)guiInterestedKeys;
 + (id)guiMonitorKeys;
+- (void).cxx_destruct;
 @property(retain) NSString *protocol; // @synthesize protocol=_protocol;
 @property BOOL isFilevault; // @synthesize isFilevault=_isFilevault;
 @property BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property BOOL isDefaultEffaceable; // @synthesize isDefaultEffaceable=_isDefaultEffaceable;
 @property BOOL isPasswordLocked; // @synthesize isPasswordLocked=_isPasswordLocked;
-- (void).cxx_destruct;
 - (BOOL)validateFDEPassword:(id)arg1;
 - (void)pressedActionButton:(id)arg1;
 - (BOOL)availableAction;

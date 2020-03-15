@@ -16,9 +16,9 @@
     unsigned long long _interpolation;
 }
 
-@property(nonatomic) unsigned long long interpolation; // @synthesize interpolation=_interpolation;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long interpolation; // @synthesize interpolation=_interpolation;
 - (_Bool)isAnimated;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2 time:(double)arg3;
 - (void)resetWithUsdAttribute:(const struct UsdAttribute *)arg1 timeScale:(double)arg2;

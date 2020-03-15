@@ -17,6 +17,7 @@
     // Error parsing type: {?="columns"[4]}, name: _pose
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL bufferRotated; // @synthesize bufferRotated=_bufferRotated;
 // Error parsing type for property vertices:
 // Property attributes: Tr^,R,N,V_vertices
@@ -26,7 +27,6 @@
 // Error parsing type for property pose:
 // Property attributes: T{?=[4]},R,N,V_pose
 
-- (void).cxx_destruct;
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withFaceRect:(struct CGRect)arg2 withRotation:(int)arg3 withTimestamp:(CDStruct_1b6d18a9)arg4;
 - (BOOL)isTracked;
 - (BOOL)updateFocalLengthInPixels:(float)arg1;

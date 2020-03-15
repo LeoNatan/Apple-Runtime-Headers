@@ -15,9 +15,9 @@
     UIImage *_landscapeImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *landscapeImage; // @synthesize landscapeImage=_landscapeImage;
 @property(retain, nonatomic) UIImage *portraitImage; // @synthesize portraitImage=_portraitImage;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

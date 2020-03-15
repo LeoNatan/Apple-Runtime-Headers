@@ -25,6 +25,7 @@
 
 + (id)subtitleLabelWithText:(id)arg1;
 + (id)titleLabelWithText:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSLayoutConstraint *subtitleLabelBottom; // @synthesize subtitleLabelBottom=_subtitleLabelBottom;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelBottom; // @synthesize titleLabelBottom=_titleLabelBottom;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelTop; // @synthesize titleLabelTop=_titleLabelTop;
 @property(nonatomic) _Bool showsOnlyWhenAncestorFocused; // @synthesize showsOnlyWhenAncestorFocused=_showsOnlyWhenAncestorFocused;
-- (void).cxx_destruct;
 - (struct CGSize)_intrinsicContentSize;
 - (void)_updateVisibilityForFocus:(_Bool)arg1;
 - (void)_addLabel:(id)arg1 position:(long long)arg2;

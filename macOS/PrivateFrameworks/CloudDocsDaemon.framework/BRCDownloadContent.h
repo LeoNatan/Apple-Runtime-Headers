@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSIndexSet *_desiredIndices;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long liveFileID; // @synthesize liveFileID=_liveFileID;
 @property(readonly, nonatomic) NSIndexSet *desiredIndices; // @synthesize desiredIndices=_desiredIndices;
 @property(readonly, nonatomic) unsigned int liveDocumentID; // @synthesize liveDocumentID=_liveDocumentID;
 @property(readonly, nonatomic) BOOL liveItemIsPackage; // @synthesize liveItemIsPackage=_liveItemIsPackage;
 @property(readonly, nonatomic) BOOL requiresTwoPhase; // @synthesize requiresTwoPhase=_requiresTwoPhase;
-- (void).cxx_destruct;
 - (BOOL)_stageWithSession:(id)arg1 error:(id *)arg2;
 - (BOOL)_stageWithSession:(id)arg1 manifest:(id)arg2 package:(id)arg3 xattrsPackage:(id)arg4 error:(id *)arg5;
 - (BOOL)_prepareSecondStageWithSession:(id)arg1 manifest:(id)arg2 package:(id)arg3 error:(id *)arg4;

@@ -18,11 +18,11 @@
 
 + (id)stringForRoleType:(long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool isEditable; // @synthesize isEditable=_isEditable;
 @property(nonatomic) long long sourceType; // @synthesize sourceType=_sourceType;
 @property(copy, nonatomic) NSArray *privileges; // @synthesize privileges=_privileges;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

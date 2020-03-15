@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *WorkingPeriodArray; // @synthesize WorkingPeriodArray=_WorkingPeriodArray;
 @property(retain, nonatomic) EWSSerializableTimeZone *TimeZone; // @synthesize TimeZone=_TimeZone;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

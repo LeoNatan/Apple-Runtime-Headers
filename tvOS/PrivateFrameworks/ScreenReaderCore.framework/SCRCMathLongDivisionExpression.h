@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SCRCMathExpression *_divisor;
 }
 
-@property(retain, nonatomic) SCRCMathExpression *divisor; // @synthesize divisor=_divisor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCRCMathExpression *divisor; // @synthesize divisor=_divisor;
 - (id)speakableDescriptionWithSpeakingStyle:(long long)arg1 arePausesAllowed:(_Bool)arg2;
 - (id)initWithDictionary:(id)arg1;
 

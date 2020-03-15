@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     long long _maxZoneSaveAttempts;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maxZoneSaveAttempts; // @synthesize maxZoneSaveAttempts=_maxZoneSaveAttempts;
 @property(nonatomic) long long numZoneSaveAttempts; // @synthesize numZoneSaveAttempts=_numZoneSaveAttempts;
 @property BOOL isHandlingPCSOplockFailure; // @synthesize isHandlingPCSOplockFailure=_isHandlingPCSOplockFailure;
 @property(retain, nonatomic) NSMutableDictionary *zonePCSDataByZoneID; // @synthesize zonePCSDataByZoneID=_zonePCSDataByZoneID;
 @property(retain, nonatomic) CKRecordZone *targetZone; // @synthesize targetZone=_targetZone;
 @property(retain, nonatomic) NSArray *sourceZoneIDs; // @synthesize sourceZoneIDs=_sourceZoneIDs;
-- (void).cxx_destruct;
 - (void)_setPermanentOplockFailure;
 - (void)_handleZoneSavedWithID:(id)arg1 responseCode:(id)arg2;
 - (BOOL)_saveTargetZone;

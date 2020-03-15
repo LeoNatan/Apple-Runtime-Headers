@@ -12,9 +12,9 @@
     id _data;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id data; // @synthesize data=_data;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 
 @end
 

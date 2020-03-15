@@ -23,6 +23,7 @@
     HDQuietModeManager *_quietModeManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDQuietModeManager *quietModeManager; // @synthesize quietModeManager=_quietModeManager;
 @property(readonly, nonatomic) HDPowerSavingModeManager *powerSavingModeManager; // @synthesize powerSavingModeManager=_powerSavingModeManager;
 @property(readonly, nonatomic) HDHeartRateRecoveryManager *heartRateRecoveryManager; // @synthesize heartRateRecoveryManager=_heartRateRecoveryManager;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) HDAppLauncher *appLauncher; // @synthesize appLauncher=_appLauncher;
 @property(readonly, nonatomic) HDAlertSuppressor *alertSuppressor; // @synthesize alertSuppressor=_alertSuppressor;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
-- (void).cxx_destruct;
 - (id)initWithDaemon:(id)arg1;
 
 // Remaining properties

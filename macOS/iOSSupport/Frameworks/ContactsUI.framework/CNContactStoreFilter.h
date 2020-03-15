@@ -19,10 +19,10 @@
 + (BOOL)getContainerIdentifiers:(id *)arg1 groupIdentifiers:(id *)arg2 serverFilter:(char *)arg3 fromPreSundanceDictionary:(id)arg4 contactStore:(id)arg5;
 + (BOOL)getContainerIdentifiers:(id *)arg1 groupIdentifiers:(id *)arg2 serverFilter:(char *)arg3 fromSundanceToOkemoAndAddressBookUIDictionary:(id)arg4 contactStore:(id)arg5;
 + (BOOL)getContainerIdentifiers:(id *)arg1 groupIdentifiers:(id *)arg2 serverFilter:(char *)arg3 fromLegacyDictionary:(id)arg4 contactStore:(id)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isServerFilter; // @synthesize isServerFilter=_isServerFilter;
 @property(retain, nonatomic) NSSet *containerIdentifiers; // @synthesize containerIdentifiers=_containerIdentifiers;
 @property(retain, nonatomic) NSSet *groupIdentifiers; // @synthesize groupIdentifiers=_groupIdentifiers;
-- (void).cxx_destruct;
 - (void)saveToPreferencesWithContactStore:(id)arg1;
 @property(readonly, nonatomic) BOOL showsEverything;
 - (BOOL)supportsSections;

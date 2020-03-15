@@ -16,9 +16,9 @@
     NSHashTable *_componentEditingSessions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *componentEditingSessions; // @synthesize componentEditingSessions=_componentEditingSessions;
 @property(readonly, nonatomic) __weak UIViewController *componentHostingViewController; // @synthesize componentHostingViewController=_componentHostingViewController;
-- (void).cxx_destruct;
 - (void)cancelEditingSessionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)componentDidEndEditingSession:(id)arg1;
 - (void)componentWillBeginEditingSession:(id)arg1;

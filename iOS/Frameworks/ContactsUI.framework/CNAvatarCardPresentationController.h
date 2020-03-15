@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) UIView *dimmingView; // @synthesize dimmingView=_dimmingView;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) struct CGRect sourceTargetRect; // @synthesize sourceTargetRect=_sourceTargetRect;
-- (void).cxx_destruct;
 - (void)tapGestureRecognized:(id)arg1;
 - (struct CGRect)_frameOfPresentedViewControllerViewInSuperview;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;

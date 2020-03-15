@@ -24,6 +24,7 @@
 }
 
 + (id)splashPageWithBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCombined; // @synthesize isCombined=_isCombined;
 @property _Bool useModalStyle; // @synthesize useModalStyle=_useModalStyle;
 @property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool showLinkToPrivacyGateway; // @synthesize showLinkToPrivacyGateway=_showLinkToPrivacyGateway;
 @property _Bool allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property _Bool suppressPerPageAnalyticsLogging; // @synthesize suppressPerPageAnalyticsLogging=_suppressPerPageAnalyticsLogging;
-- (void).cxx_destruct;
 - (void)setDismissHandlerForDefaultButton:(CDUnknownBlockType)arg1;
 - (void)_initializeFromBundle;
 - (void)viewDidLoad;

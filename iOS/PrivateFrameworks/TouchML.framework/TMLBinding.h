@@ -24,8 +24,8 @@
 
 + (id)bindingForTarget:(id)arg1 withKeyPath:(id)arg2 valueType:(unsigned long long)arg3;
 + (id)bindingForTarget:(id)arg1 withKeyPath:(id)arg2;
-@property(readonly, nonatomic) id target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id target; // @synthesize target=_target;
 - (unsigned long long)valueType;
 - (id)value;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

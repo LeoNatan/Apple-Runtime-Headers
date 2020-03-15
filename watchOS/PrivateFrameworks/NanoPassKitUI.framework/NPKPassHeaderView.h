@@ -18,12 +18,12 @@
     UIFont *_font;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool valueFirst; // @synthesize valueFirst=_valueFirst;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) UIColor *valueColor; // @synthesize valueColor=_valueColor;
 @property(retain, nonatomic) UIColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(copy, nonatomic) NSArray *fields; // @synthesize fields=_fields;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateLabel;

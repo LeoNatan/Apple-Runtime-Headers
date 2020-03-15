@@ -27,6 +27,7 @@
     struct UIEdgeInsets _minimumMargins;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets minimumMargins; // @synthesize minimumMargins=_minimumMargins;
 @property(readonly, nonatomic) _Bool shouldUpdateContentOnResize; // @synthesize shouldUpdateContentOnResize=_shouldUpdateContentOnResize;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(readonly, nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) id <PXProtoFeature> feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 - (void)_updateContentIfNeeded;
 - (void)_invalidateContent;
 - (void)_updateIfNeeded;

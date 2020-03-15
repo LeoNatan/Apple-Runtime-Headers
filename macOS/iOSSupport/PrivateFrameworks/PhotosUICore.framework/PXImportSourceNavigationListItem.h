@@ -14,9 +14,9 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) PHImportSource *importSource; // @synthesize importSource=_importSource;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)representedObject;

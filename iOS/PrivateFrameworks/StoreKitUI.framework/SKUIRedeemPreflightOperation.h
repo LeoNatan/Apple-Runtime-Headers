@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     SKUIRedeemViewControllerLegacy *_redeemViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forcesAuthentication; // @synthesize forcesAuthentication=_forcesAuthentication;
 @property(nonatomic) __weak SKUIRedeemViewControllerLegacy *redeemViewController; // @synthesize redeemViewController=_redeemViewController;
-- (void).cxx_destruct;
 - (id)_redeemCodeMetadataWithClientContext:(id)arg1;
 - (id)_authenticationContext;
 - (void)main;

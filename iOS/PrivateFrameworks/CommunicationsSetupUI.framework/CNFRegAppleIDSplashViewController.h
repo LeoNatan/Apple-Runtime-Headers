@@ -17,10 +17,10 @@
 
 + (id)_inProgressRegisteringNonPhoneAccountForService:(id)arg1;
 + (_Bool)shouldShowSplashViewForService:(id)arg1 inProgressRegisteringNonPhoneAccount:(id *)arg2;
+- (void).cxx_destruct;
 @property _Bool showBusyUIOnAppearance; // @synthesize showBusyUIOnAppearance=_showBusyUIOnAppearance;
 @property long long serviceType; // @synthesize serviceType=_serviceType;
 @property(retain) CNFRegController *regController; // @synthesize regController=_regController;
-- (void).cxx_destruct;
 - (id)_iCloudUserName;
 - (void)_cnfSignInWithUsername:(id)arg1 password:(id)arg2;
 - (void)_handleRegistarResults:(_Bool)arg1 alertController:(id)arg2;

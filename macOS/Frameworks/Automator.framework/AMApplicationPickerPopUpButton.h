@@ -17,9 +17,9 @@
 + (id)_applicationURLsFromPasteboard:(id)arg1;
 + (id)_cleanedUpURLs:(id)arg1;
 + (id)_displayNameForURL:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *customURLs; // @synthesize customURLs=_customURLs;
 @property(copy, nonatomic) NSArray *chosenURLs; // @synthesize chosenURLs=_chosenURLs;
-- (void).cxx_destruct;
 - (void)concludeDragOperation:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;

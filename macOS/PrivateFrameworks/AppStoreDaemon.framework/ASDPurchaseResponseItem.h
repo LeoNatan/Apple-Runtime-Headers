@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *transationIDs; // @synthesize transationIDs=_transationIDs;
 @property(readonly, nonatomic) NSDictionary *responseMetrics; // @synthesize responseMetrics=_responseMetrics;
 @property(nonatomic) double responseStartTime; // @synthesize responseStartTime=_responseStartTime;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, copy, nonatomic) ASDPurchase *purchase; // @synthesize purchase=_purchase;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)_setTransactionIDs:(id)arg1;
 - (void)_setSuccess:(BOOL)arg1;
 - (void)_setResponseMetrics:(id)arg1;

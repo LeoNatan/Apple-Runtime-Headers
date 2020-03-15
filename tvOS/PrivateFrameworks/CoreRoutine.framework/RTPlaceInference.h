@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned long long placeType; // @synthesize placeType=_placeType;
 @property(readonly, nonatomic) unsigned long long userType; // @synthesize userType=_userType;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) RTLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)nameFromUserType:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *preferredName;

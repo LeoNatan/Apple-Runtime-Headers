@@ -18,11 +18,11 @@
     unsigned int _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) int column; // @synthesize column=_column;
 @property(readonly, nonatomic) int line; // @synthesize line=_line;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

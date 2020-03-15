@@ -15,9 +15,9 @@
     unsigned long long _usedStorage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long usedStorage; // @synthesize usedStorage=_usedStorage;
 @property(nonatomic) unsigned long long totalStorage; // @synthesize totalStorage=_totalStorage;
-- (void).cxx_destruct;
 - (unsigned int)storageInUseForMediaKind:(int)arg1;
 - (void)setStorageInUse:(unsigned int)arg1 forMediaKind:(int)arg2;
 - (id)init;

@@ -10,13 +10,13 @@
 
 @interface ICCollapsibleImageView : ICCollapsibleBaseView
 {
-    struct NSImage *_image;
-    struct NSImageView *_imageView;
+    NSImage *_image;
+    NSImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)setAccessibilityElement:(BOOL)arg1;
 - (void)performSetup;
 

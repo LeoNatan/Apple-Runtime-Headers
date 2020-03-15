@@ -10,7 +10,7 @@
 
 @protocol PKCloudStoreCoding <NSSecureCoding>
 - (unsigned long long)itemType;
-- (NSArray *)recordTypesAndNames;
+- (NSArray *)recordTypesAndNamesIncludingServerData:(BOOL)arg1;
 - (void)encodeWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 - (id)initWithCloudStoreCoder:(PKCloudStoreRecord *)arg1;
 

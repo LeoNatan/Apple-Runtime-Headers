@@ -23,6 +23,7 @@
     CDPOption *_cdpOptionViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CDPOption *cdpOptionViewController; // @synthesize cdpOptionViewController=_cdpOptionViewController;
 @property(retain, nonatomic) CDPRecoveryKeySheetController *recoveryKeyController; // @synthesize recoveryKeyController=_recoveryKeyController;
 @property(retain, nonatomic) NSView *iCDPContentView; // @synthesize iCDPContentView=_iCDPContentView;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) CDPEnrollViewController *cdpViewController; // @synthesize cdpViewController=_cdpViewController;
 @property(retain, nonatomic) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-- (void).cxx_destruct;
 - (void)generateNewRecoveryKey:(CDUnknownBlockType)arg1;
 - (void)cdpContext:(id)arg1 promptForRecoveryKeyWithValidator:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cdpContext:(id)arg1 presentRecoveryKeyWithValidator:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -43,7 +43,7 @@
 - (void)cdpContext:(id)arg1 promptForAdoptionOfMultipleICSC:(CDUnknownBlockType)arg2;
 - (void)cdpContext:(id)arg1 promptForICSCWithIsNumeric:(BOOL)arg2 numericLength:(id)arg3 isRandom:(BOOL)arg4 validator:(id)arg5;
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(BOOL)arg3 validator:(id)arg4;
-- (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
+- (void)cdpContext:(id)arg1 promptForLocalSecretWithCompletion:(CDUnknownBlockType)arg2;
 - (void)endCDPView;
 - (void)changeView:(id)arg1;
 - (id)initWithParentWindow:(id)arg1;

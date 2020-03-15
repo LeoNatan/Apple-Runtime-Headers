@@ -28,6 +28,7 @@
 }
 
 + (id)_cursorImageIfChanged;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint _lastMouseButtonPressLocation; // @synthesize _lastMouseButtonPressLocation=__lastMouseButtonPressLocation;
 @property(nonatomic) double _cursorScaleCache; // @synthesize _cursorScaleCache=__cursorScaleCache;
 @property(retain, nonatomic) NSTimer *_cursorTypeUpdateTimer; // @synthesize _cursorTypeUpdateTimer=__cursorTypeUpdateTimer;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) AXFMouseCursorImage *cursorImage; // @synthesize cursorImage=_cursorImage;
 @property(nonatomic) BOOL keepCursorImageSynchronizedWithSystem; // @synthesize keepCursorImageSynchronizedWithSystem=_keepCursorImageSynchronizedWithSystem;
 @property(nonatomic) BOOL accumulateClickCount; // @synthesize accumulateClickCount=_accumulateClickCount;
-- (void).cxx_destruct;
 - (struct __CGEventSource *)_eventSource;
 - (void)_updateCursorScaleCacheAndPostKVO:(BOOL)arg1;
 - (void)_mouseSettingsChanged:(id)arg1;
@@ -48,6 +48,8 @@
 - (void)_pressButton:(long long)arg1 count:(unsigned long long)arg2 withModifiers:(unsigned long long)arg3 markupHandler:(CDUnknownBlockType)arg4;
 - (unsigned long long)_buttonPressCountForAction:(long long)arg1;
 - (long long)_buttonForAction:(long long)arg1;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2 markupHandler:(CDUnknownBlockType)arg3;
+- (void)scrollWheelByDelta:(struct CGPoint)arg1 unit:(unsigned int)arg2;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 markupHandler:(CDUnknownBlockType)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)moveToLocation:(struct CGPoint)arg1 delta:(struct CGSize)arg2 eventType:(unsigned long long)arg3;

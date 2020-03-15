@@ -17,10 +17,10 @@
     long long _pointType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long pointType; // @synthesize pointType=_pointType;
 @property(readonly, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)userInfo;
 - (id)maxYValue;
 - (id)minYValue;

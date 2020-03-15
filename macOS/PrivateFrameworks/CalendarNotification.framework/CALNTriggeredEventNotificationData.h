@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *lastTimeNotificationAdded; // @synthesize lastTimeNotificationAdded=_lastTimeNotificationAdded;
 @property(readonly, nonatomic) BOOL hasDisplayedRunningLateMessage; // @synthesize hasDisplayedRunningLateMessage=_hasDisplayedRunningLateMessage;
 @property(readonly, nonatomic) BOOL hasDisplayedLeaveNowMessage; // @synthesize hasDisplayedLeaveNowMessage=_hasDisplayedLeaveNowMessage;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSDate *lastFireTimeOfAlertOffsetFromTravelTime; // @synthesize lastFireTimeOfAlertOffsetFromTravelTime=_lastFireTimeOfAlertOffsetFromTravelTime;
 @property(readonly, nonatomic) BOOL isOffsetFromTravelTimeStart; // @synthesize isOffsetFromTravelTimeStart=_isOffsetFromTravelTimeStart;
 @property(readonly, copy, nonatomic) NSString *alarmID; // @synthesize alarmID=_alarmID;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToNotificationData:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

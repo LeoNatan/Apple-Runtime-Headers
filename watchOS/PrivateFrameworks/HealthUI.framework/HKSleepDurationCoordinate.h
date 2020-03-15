@@ -15,10 +15,10 @@
     NSNumber *_goalLineYValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(copy, nonatomic) NSNumber *goalLineYValue; // @synthesize goalLineYValue=_goalLineYValue;
 @property(copy, nonatomic) NSArray *stackPoints; // @synthesize stackPoints=_stackPoints;
-- (void).cxx_destruct;
 - (id)copyWithTransform:(struct CGAffineTransform)arg1 roundToViewScale:(_Bool)arg2;
 - (id)initWithStackPoints:(id)arg1 goalLineYValue:(id)arg2 highlighted:(_Bool)arg3 userInfo:(id)arg4;
 

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 + (id)sharedPropertiesMapTable;
 + (id)accessQueue;
 + (id)propertiesForMediaTask:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AMSMediaTokenServiceProtocol> tokenService; // @synthesize tokenService=_tokenService;
 @property(readonly, nonatomic) AMSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithMediaTask:(id)arg1;
 

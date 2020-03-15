@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSCache *_resizedImageCache;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType resizingBlock; // @synthesize resizingBlock=_resizingBlock;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resizingBlock; // @synthesize resizingBlock=_resizingBlock;
 - (id)_resizedImage:(id)arg1 toSize:(struct CGSize)arg2;
 - (void)_cacheImage:(id)arg1 forKey:(id)arg2;
 - (id)_cachedImageForKey:(id)arg1;

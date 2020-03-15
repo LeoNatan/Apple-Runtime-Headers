@@ -18,11 +18,11 @@
     long long _timeControlStatus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long timeControlStatus; // @synthesize timeControlStatus=_timeControlStatus;
 @property(readonly, nonatomic) SVKeyValueObserver *timeControlStatusObserver; // @synthesize timeControlStatusObserver=_timeControlStatusObserver;
 @property(readonly, nonatomic) SVPlayer *player; // @synthesize player=_player;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock;
-- (void).cxx_destruct;
 - (id)initWithPlayer:(id)arg1;
 
 // Remaining properties

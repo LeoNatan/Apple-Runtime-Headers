@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIImage *_comparisonImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *comparisonImage; // @synthesize comparisonImage=_comparisonImage;
 @property(readonly, nonatomic, getter=isSuccesfull) _Bool succesfull; // @synthesize succesfull=_succesfull;
-- (void).cxx_destruct;
 - (id)initWithComparisonImage:(id)arg1 isSuccesfull:(_Bool)arg2;
 
 @end

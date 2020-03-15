@@ -22,6 +22,7 @@
     UIImageView *__bottomRightCornerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *_bottomRightCornerView; // @synthesize _bottomRightCornerView=__bottomRightCornerView;
 @property(readonly, nonatomic) UIImageView *_bottomLeftCornerView; // @synthesize _bottomLeftCornerView=__bottomLeftCornerView;
 @property(readonly, nonatomic) UIImageView *_topRightCornerView; // @synthesize _topRightCornerView=__topRightCornerView;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long maskingStyle; // @synthesize maskingStyle=_maskingStyle;
 @property(readonly, nonatomic) double viewportBottomInset; // @synthesize viewportBottomInset=_viewportBottomInset;
 @property(readonly, nonatomic) double viewportTopInset; // @synthesize viewportTopInset=_viewportTopInset;
-- (void).cxx_destruct;
 - (void)setViewportTopInset:(double)arg1 bottomInset:(double)arg2 animated:(_Bool)arg3;
 - (id)_newViewportTemplateImage;
 - (id)_newViewportCornerImage;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UITableViewCell *_cell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableViewCell *cell; // @synthesize cell=_cell;
 @property(nonatomic) BOOL didSearchForCell; // @synthesize didSearchForCell=_didSearchForCell;
 @property(retain, nonatomic) UIDragPreviewTarget *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)cellForTargetContainerInTableView:(id)arg1;
 - (id)initWithDragItem:(id)arg1 target:(id)arg2;
 

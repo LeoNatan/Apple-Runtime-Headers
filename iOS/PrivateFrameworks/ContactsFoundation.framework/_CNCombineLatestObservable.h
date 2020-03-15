@@ -19,13 +19,13 @@
     id <CNScheduler> _resultScheduler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> resultScheduler; // @synthesize resultScheduler=_resultScheduler;
 @property(readonly, nonatomic) NSMutableIndexSet *silentObservableIndexes; // @synthesize silentObservableIndexes=_silentObservableIndexes;
 @property(readonly, nonatomic) NSMutableIndexSet *activeObservableIndexes; // @synthesize activeObservableIndexes=_activeObservableIndexes;
 @property(readonly, nonatomic) NSMutableArray *tokens; // @synthesize tokens=_tokens;
 @property(readonly, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) NSArray *observables; // @synthesize observables=_observables;
-- (void).cxx_destruct;
 - (void)observableAtIndex:(unsigned long long)arg1 didFailWithError:(id)arg2 forObserver:(id)arg3;
 - (void)observableAtIndexDidComplete:(unsigned long long)arg1 forObserver:(id)arg2;
 - (void)observableAtIndex:(unsigned long long)arg1 didReceiveResult:(id)arg2 forObserver:(id)arg3;

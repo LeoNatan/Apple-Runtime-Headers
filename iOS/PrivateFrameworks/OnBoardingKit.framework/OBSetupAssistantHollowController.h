@@ -13,8 +13,8 @@
     OBHollowButton *_contentButton;
 }
 
-@property(retain, nonatomic) OBHollowButton *contentButton; // @synthesize contentButton=_contentButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) OBHollowButton *contentButton; // @synthesize contentButton=_contentButton;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)addHollowButtonWithTitle:(id)arg1 target:(id)arg2 downPressSelector:(SEL)arg3 upLiftSelector:(SEL)arg4;
 - (void)viewDidLoad;

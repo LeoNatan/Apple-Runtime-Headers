@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) optional_74709a54 microphonePreferences; // @synthesize microphonePreferences;
 @property(nonatomic) optional_b75ce017 initiationTrigger; // @synthesize initiationTrigger;
 @property(nonatomic) struct StringRef mode; // @synthesize mode;
@@ -34,8 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) vector_123a35f9 deviceDescriptions; // @synthesize deviceDescriptions=_deviceDescriptions;
 @property(nonatomic) vector_d1b3d51b streamDescriptions; // @synthesize streamDescriptions=_streamDescriptions;
 @property(nonatomic) vector_66ffd461 portDescriptions; // @synthesize portDescriptions=_portDescriptions;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -22,12 +22,12 @@
 + (id)allNaturalLanguageEventsWithSearchString:(id)arg1 eventStore:(id)arg2;
 + (id)firstNaturalLanguageEventWithSearchString:(id)arg1 eventStore:(id)arg2;
 + (id)eventWithSuggestedTimeFromString:(id)arg1 referenceDate:(id)arg2 inEventStore:(id)arg3 options:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(retain) CUIKEventSuggestion *lastDefaultSuggestion; // @synthesize lastDefaultSuggestion=_lastDefaultSuggestion;
 @property(retain) NSString *lastQueryString; // @synthesize lastQueryString=_lastQueryString;
 @property(retain) NSArray *lastSuggestions; // @synthesize lastSuggestions=_lastSuggestions;
 @property(retain) NSObject<OS_dispatch_queue> *queryQueue; // @synthesize queryQueue=_queryQueue;
 @property(retain) EKPredicateSearch *runningTitleSearch; // @synthesize runningTitleSearch=_runningTitleSearch;
-- (void).cxx_destruct;
 - (id)createSearchWithTitleMatchingQuery:(id)arg1 inEventStore:(id)arg2;
 - (void)_completeSuggestion:(id)arg1 timeDetectionResults:(id)arg2 referenceDate:(id)arg3 event:(id)arg4;
 - (id)_createPartialSuggestionWithTimeDetectionResults:(id)arg1 event:(id)arg2;

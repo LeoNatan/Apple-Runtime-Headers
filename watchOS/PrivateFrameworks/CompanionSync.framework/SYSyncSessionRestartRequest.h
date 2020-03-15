@@ -16,9 +16,9 @@
     NSString *_sessionID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic) SYMessageHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

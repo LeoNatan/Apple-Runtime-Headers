@@ -19,9 +19,9 @@
 + (id)bitValueMapForKey:(id)arg1 bitValueMapsDirectory:(id)arg2;
 + (id)bitValueMapForKey:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *map; // @synthesize map=_map;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)bitValueForString:(id)arg1;
 - (id)initWithKey:(id)arg1 bitValueMapsDirectory:(id)arg2;
 - (id)init;

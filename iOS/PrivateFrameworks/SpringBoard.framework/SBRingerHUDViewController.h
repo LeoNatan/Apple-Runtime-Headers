@@ -25,6 +25,7 @@
     double _overshoot;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double overshoot; // @synthesize overshoot=_overshoot;
 @property(nonatomic) _Bool lastEventIsAVolumeChange; // @synthesize lastEventIsAVolumeChange=_lastEventIsAVolumeChange;
 @property(retain, nonatomic) NSTimer *dismissalTimer; // @synthesize dismissalTimer=_dismissalTimer;
@@ -34,7 +35,6 @@
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(nonatomic) __weak id <SBRingerHUDViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool ringerSilent; // @synthesize ringerSilent=_ringerSilent;
-- (void).cxx_destruct;
 - (void)_extendDismissalTimer;
 - (void)dismissAnimatedWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)definesAnimatedDismissal;

@@ -19,10 +19,10 @@
 
 + (Class)accessPointsType;
 + (Class)locationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *accessPoints; // @synthesize accessPoints=_accessPoints;
 @property(retain, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
 @property(retain, nonatomic) CLPPoiTriggerEvent *triggerEvent; // @synthesize triggerEvent=_triggerEvent;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

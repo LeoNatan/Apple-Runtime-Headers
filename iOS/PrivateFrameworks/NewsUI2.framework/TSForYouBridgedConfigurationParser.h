@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/FCForYouBridgedConfigurationParser-Protocol.h>
-
-@interface TSForYouBridgedConfigurationParser : NSObject <FCForYouBridgedConfigurationParser>
+@interface TSForYouBridgedConfigurationParser : NSObject
 {
 }
 

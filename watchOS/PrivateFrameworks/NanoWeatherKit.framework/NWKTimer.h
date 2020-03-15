@@ -14,8 +14,8 @@
 }
 
 + (id)scheduledTimerWithTimeInterval:(double)arg1 handler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (void)invalidate;
 - (_Bool)scheduleTimerWithTimeInterval:(double)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;

@@ -30,6 +30,7 @@
     id <BSInvalidatable> _deferOrientationUpdatesAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> deferOrientationUpdatesAssertion; // @synthesize deferOrientationUpdatesAssertion=_deferOrientationUpdatesAssertion;
 @property(nonatomic) _Bool didPlayLockSound; // @synthesize didPlayLockSound=_didPlayLockSound;
 @property(nonatomic) _Bool undidFadeOutFromLockButton; // @synthesize undidFadeOutFromLockButton=_undidFadeOutFromLockButton;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) SBBacklightController *backlightController; // @synthesize backlightController=_backlightController;
 @property(nonatomic, getter=isSOSGestureActive) _Bool SOSGestureActive; // @synthesize SOSGestureActive=_SOSGestureActive;
 @property(nonatomic) _Bool inhibitNextSinglePressUp; // @synthesize inhibitNextSinglePressUp=_inhibitNextSinglePressUp;
-- (void).cxx_destruct;
 - (void)_playLockSound;
 - (void)_performSleep;
 - (void)_performWake;

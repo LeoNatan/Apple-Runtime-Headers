@@ -12,10 +12,10 @@
     shared_ptr_e9f752ce _currentModel;
 }
 
-@property(readonly, nonatomic) RefPtr_9bddf3b2 dictionaries; // @synthesize dictionaries=_dictionaries;
-@property(nonatomic) shared_ptr_e9f752ce currentModel; // @synthesize currentModel=_currentModel;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RefPtr_9bddf3b2 dictionaries; // @synthesize dictionaries=_dictionaries;
+@property(nonatomic) shared_ptr_e9f752ce currentModel; // @synthesize currentModel=_currentModel;
 - (void)didFinishLearning;
 - (void)adaptToParagraph:(id)arg1 timeStamp:(double)arg2 adaptationType:(int)arg3;
 - (void)load;

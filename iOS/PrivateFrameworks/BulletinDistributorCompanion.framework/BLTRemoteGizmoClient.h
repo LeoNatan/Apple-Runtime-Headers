@@ -20,9 +20,9 @@
     BLTGizmoLegacyMap *_gizmoLegacyMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLTGizmoLegacyMap *gizmoLegacyMap; // @synthesize gizmoLegacyMap=_gizmoLegacyMap;
 @property(nonatomic) __weak id <BLTCompanionServer> server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (void)queuePendingRequests;
 - (void)handleFileURL:(id)arg1 extraMetadata:(id)arg2;
 - (void)handleWillSendLightsAndSirensRequest:(id)arg1;

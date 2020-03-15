@@ -49,6 +49,7 @@
 + (_Bool)_shouldForwardViewWillTransitionToSize;
 + (id)_imageAttachmentLoadDownsamplePreviewQueue;
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxImageAttachmentSize; // @synthesize maxImageAttachmentSize=_maxImageAttachmentSize;
 @property(nonatomic) _Bool suppressKeyboard; // @synthesize suppressKeyboard=_suppressKeyboard;
 @property(readonly) _Bool wasPresented; // @synthesize wasPresented=_wasPresented;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) SLSheetContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIViewController *autoCompletionViewController; // @synthesize autoCompletionViewController=_autoCompletionViewController;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
-- (void).cxx_destruct;
 - (void)networkActivityIndicatorNotification:(id)arg1;
 - (void)shouldShowNetworkActivityIndicator:(_Bool)arg1;
 - (void)didReceiveMemoryWarning;

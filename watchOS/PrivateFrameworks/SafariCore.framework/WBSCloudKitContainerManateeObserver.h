@@ -23,8 +23,8 @@
     NSString *_containerIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 - (void)determineManateeStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_determineManateeStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_accountChanged:(id)arg1;

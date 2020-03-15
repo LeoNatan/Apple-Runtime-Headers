@@ -20,13 +20,13 @@
     NSMutableDictionary *_contentTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *contentTypes; // @synthesize contentTypes=_contentTypes;
 @property(retain) NSMutableDictionary *attachments; // @synthesize attachments=_attachments;
 @property(retain) NSMutableSet *attendeePrincipalURLs; // @synthesize attendeePrincipalURLs=_attendeePrincipalURLs;
 @property(retain) CALEntity *masterEntity; // @synthesize masterEntity=_masterEntity;
 @property(retain) NSString *attachmentName; // @synthesize attachmentName=_attachmentName;
 @property(retain) NSString *dropBoxPath; // @synthesize dropBoxPath=_dropBoxPath;
-- (void).cxx_destruct;
 - (id)readableDescription;
 - (BOOL)_isLowPriority;
 - (void)abortOperation;

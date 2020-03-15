@@ -15,9 +15,9 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDefaultActionButton) _Bool defaultActionButton; // @synthesize defaultActionButton=_defaultActionButton;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL selector;
 - (id)initWithTitle:(id)arg1 selector:(SEL)arg2 defaultActionButton:(_Bool)arg3;
 

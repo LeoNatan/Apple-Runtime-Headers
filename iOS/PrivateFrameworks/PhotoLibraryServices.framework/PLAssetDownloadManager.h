@@ -19,8 +19,8 @@
 }
 
 + (id)defaultManager;
-@property(nonatomic) __weak id <PLAssetDownloadManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PLAssetDownloadManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cancelRequest:(int)arg1;
 - (int)requestRequiredResourcesForManagedAssetObjectUUID:(id)arg1 library:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)init;

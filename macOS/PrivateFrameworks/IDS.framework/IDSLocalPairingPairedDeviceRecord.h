@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSUUID *cbuuid; // @synthesize cbuuid=_cbuuid;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSUUID *cbuuid; // @synthesize cbuuid=_cbuuid;
 - (id)publicIdentityClassD:(id *)arg1;
 - (id)publicIdentityClassC:(id *)arg1;
 - (id)publicIdentityClassA:(id *)arg1;

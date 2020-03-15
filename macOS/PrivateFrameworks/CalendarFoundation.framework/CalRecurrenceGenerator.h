@@ -28,6 +28,7 @@
     unsigned long long _weekStart;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldPinMonthDays; // @synthesize shouldPinMonthDays=_shouldPinMonthDays;
 @property(nonatomic) unsigned long long weekStart; // @synthesize weekStart=_weekStart;
 @property(nonatomic) int frequency; // @synthesize frequency=_frequency;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSTimeZone *eventTimeZone; // @synthesize eventTimeZone=_eventTimeZone;
 @property(copy, nonatomic) NSDate *eventEndDate; // @synthesize eventEndDate=_eventEndDate;
 @property(copy, nonatomic) NSDate *eventStartDate; // @synthesize eventStartDate=_eventStartDate;
-- (void).cxx_destruct;
 - (id)_copyYearlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;
 - (BOOL)_validateCalDate:(CDStruct_b0fa4487)arg1 pinned:(BOOL)arg2;
 - (id)_copyMonthlyOccurrencesWithInitialDate:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 count:(unsigned long long)arg4;

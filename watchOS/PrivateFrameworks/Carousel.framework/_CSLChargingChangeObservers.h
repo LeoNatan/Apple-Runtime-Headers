@@ -14,9 +14,9 @@
     NSLock *_observersLock;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLock *observersLock; // @synthesize observersLock=_observersLock;
 @property(retain, nonatomic) NSPointerArray *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)iterateThroughObservers:(CDUnknownBlockType)arg1;

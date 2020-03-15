@@ -9,12 +9,12 @@
 #import <SpringBoard/SBGestureRecognizerPanGestureProviding-Protocol.h>
 #import <SpringBoard/SBGestureRecognizerTouchHistoryProviding-Protocol.h>
 
-@class NSString, SBFluidSwitcherViewController, SBTouchHistory;
+@class NSString, SBTouchHistory;
 
 @interface SBFluidScrunchGestureRecognizer : SBTouchTemplateGestureRecognizer <SBGestureRecognizerTouchHistoryProviding, SBGestureRecognizerPanGestureProviding>
 {
-    SBFluidSwitcherViewController *_switcherViewController;
     double _absoluteScale;
+    long long _recognizedTouchType;
     double _lastPerimeter;
     SBTouchHistory *_touchHistory;
     struct CGPoint _initialCentroid;
@@ -22,21 +22,24 @@
     struct CGPoint _additionalTranslationDueToChangingAnchorPoints;
 }
 
++ (id)_panTemplatesForTouchType:(long long)arg1;
++ (id)_scrunchTemplatesForTouchType:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBTouchHistory *touchHistory; // @synthesize touchHistory=_touchHistory;
 @property(nonatomic) double lastPerimeter; // @synthesize lastPerimeter=_lastPerimeter;
 @property(nonatomic) struct CGPoint additionalTranslationDueToChangingAnchorPoints; // @synthesize additionalTranslationDueToChangingAnchorPoints=_additionalTranslationDueToChangingAnchorPoints;
 @property(nonatomic) struct CGPoint absoluteTranslation; // @synthesize absoluteTranslation=_absoluteTranslation;
+@property(readonly, nonatomic) long long recognizedTouchType; // @synthesize recognizedTouchType=_recognizedTouchType;
 @property(nonatomic) struct CGPoint initialCentroid; // @synthesize initialCentroid=_initialCentroid;
 @property(nonatomic) double absoluteScale; // @synthesize absoluteScale=_absoluteScale;
-@property(nonatomic) __weak SBFluidSwitcherViewController *switcherViewController; // @synthesize switcherViewController=_switcherViewController;
-- (void).cxx_destruct;
 - (double)incrementalGestureMotionForCandidate:(id)arg1 withTransformAnalyzerInfo:(id)arg2;
 - (double)animationDistance;
 - (id)logCategory;
+- (void)_updateRecognizedTouchTypeIfNecessaryWithTouches:(id)arg1;
 - (_Bool)_isMatchedTemplateScrunchTemplate;
 - (void)_installTemplates;
-- (struct CGPoint)_centroidInSwitcherViewForPolygon:(id)arg1;
-- (id)_switcherView;
+- (struct CGPoint)_centroidInGestureViewForPolygon:(id)arg1;
+- (id)_gestureView;
 - (double)peakSpeed;
 - (double)averageTouchPathAngleOverTimeDuration:(double)arg1;
 - (struct CGPoint)averageTouchVelocityOverTimeDuration:(double)arg1;
@@ -46,6 +49,7 @@
 - (struct CGPoint)locationInView:(id)arg1;
 - (double)_hysteresis;
 @property(readonly, nonatomic) struct CGPoint centroid;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
@@ -54,6 +58,7 @@
 - (void)_computeGestureMotionWithTouches:(id)arg1 polygon:(id)arg2;
 - (void)_setMatchedPolygon:(id)arg1;
 - (void)setState:(long long)arg1;
+- (void)setAllowedTouchTypes:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 // Remaining properties

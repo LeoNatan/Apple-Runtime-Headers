@@ -60,6 +60,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadADTrustChangePassIntervalDays; // @synthesize payloadADTrustChangePassIntervalDays=_payloadADTrustChangePassIntervalDays;
 @property(copy, nonatomic) NSNumber *payloadADTrustChangePassIntervalDaysFlag; // @synthesize payloadADTrustChangePassIntervalDaysFlag=_payloadADTrustChangePassIntervalDaysFlag;
 @property(copy, nonatomic) NSArray *payloadADRestrictDDNS; // @synthesize payloadADRestrictDDNS=_payloadADRestrictDDNS;
@@ -99,7 +100,6 @@
 @property(copy, nonatomic) NSString *payloadPassword; // @synthesize payloadPassword=_payloadPassword;
 @property(copy, nonatomic) NSString *payloadUserName; // @synthesize payloadUserName=_payloadUserName;
 @property(copy, nonatomic) NSString *payloadHostName; // @synthesize payloadHostName=_payloadHostName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -24,6 +24,7 @@
     NSMutableArray *_foundAppGroups;
 }
 
+- (void).cxx_destruct;
 @property BOOL update; // @synthesize update=_update;
 @property(retain) NSMutableArray *foundAppGroups; // @synthesize foundAppGroups=_foundAppGroups;
 @property(retain) NSMutableDictionary *appGroups; // @synthesize appGroups=_appGroups;
@@ -36,7 +37,6 @@
 @property __weak SMSystem_Daemon *system; // @synthesize system=_system;
 @property(retain) NSURL *alternateListRoot; // @synthesize alternateListRoot=_alternateListRoot;
 @property(retain) NSURL *alternateQuarantineFolderLocation; // @synthesize alternateQuarantineFolderLocation=_alternateQuarantineFolderLocation;
-- (void).cxx_destruct;
 - (BOOL)removeGlimmerBlockerProxy;
 - (BOOL)sourcePathExists:(id)arg1;
 - (id)findSafeQuarantinePath:(id)arg1;

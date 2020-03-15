@@ -20,11 +20,11 @@
 
 + (id)recordForAssertion:(id)arg1;
 + (id)recordForDictionary:(id)arg1 keys:(const CDStruct_0a6492a9 *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DNDSModeAssertionSourceRecord *source; // @synthesize source=_source;
 @property(retain, nonatomic) DNDSModeAssertionDetailsRecord *details; // @synthesize details=_details;
 @property(retain, nonatomic) NSNumber *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)object;
 - (id)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1 options:(unsigned long long)arg2;
 

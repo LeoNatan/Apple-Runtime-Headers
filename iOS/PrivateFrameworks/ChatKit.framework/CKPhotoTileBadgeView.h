@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (double)verticalBadgeInset;
 + (double)horizontalBadgeInset;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *_textLabel; // @synthesize _textLabel=__textLabel;
 @property(readonly, nonatomic) UIImageView *_badgeImageView; // @synthesize _badgeImageView=__badgeImageView;
 @property(readonly, nonatomic) UIView *_backgroundView; // @synthesize _backgroundView=__backgroundView;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
-- (void).cxx_destruct;
 - (struct CGSize)maximumSize;
 - (void)_updateBadgeImage;
 - (void)_updateBadgeText;

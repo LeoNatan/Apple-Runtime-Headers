@@ -14,9 +14,9 @@
     id <ASPolicyManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ASPolicyManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool updatingPolicy; // @synthesize updatingPolicy=_updatingPolicy;
-- (void).cxx_destruct;
 - (id)currentPolicyKey;
 - (void)policyFailedToUpdate;
 - (void)policyKeyChanged:(id)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSURL *_sortURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *sortURL; // @synthesize sortURL=_sortURL;
 @property(nonatomic) __weak id <SKUISortDataRequestDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)newLoadOperation;
 - (void)finishWithResource:(id)arg1;

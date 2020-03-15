@@ -23,12 +23,12 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)contactPathIsMe:(id)arg1;
 + (id)utteranceWithContactPath:(id)arg1 andText:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastChangeDate; // @synthesize lastChangeDate=_lastChangeDate;
 @property(nonatomic) _Bool ignoreTimeoutTemporarily; // @synthesize ignoreTimeoutTemporarily=_ignoreTimeoutTemporarily;
 @property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *contactPath; // @synthesize contactPath=_contactPath;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isComplete;

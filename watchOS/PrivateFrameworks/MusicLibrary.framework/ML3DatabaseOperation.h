@@ -23,6 +23,7 @@
 }
 
 + (id)databaseOperationForType:(unsigned int)arg1 withLibrary:(id)arg2 writer:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
 @property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) ML3Client *originatingClient; // @synthesize originatingClient=_originatingClient;
 @property(readonly, nonatomic) ML3MusicLibrary *library; // @synthesize library=_library;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_operationTypeDescription;
 - (_Bool)_verifyLibraryConnectionAndAttributesProperties:(id *)arg1;
 - (void)setError:(id)arg1;

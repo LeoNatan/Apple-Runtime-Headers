@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_action;
 }
 
-@property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 - (id)_performWithDestinationViewController:(id)arg1 sender:(id)arg2;
 - (id)_perform:(id)arg1;
 - (id)segueWithDestinationViewController:(id)arg1;

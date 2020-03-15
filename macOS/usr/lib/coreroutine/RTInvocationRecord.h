@@ -17,10 +17,10 @@
     NSString *_invocationDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *invocationDescription; // @synthesize invocationDescription=_invocationDescription;
 @property(copy, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (void)invokeFailure;
 - (void)invoke;
 - (id)copyWithZone:(struct _NSZone *)arg1;

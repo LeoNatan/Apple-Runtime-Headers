@@ -18,11 +18,11 @@
     NSSharingServicePicker *_sharingServicePicker;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSharingServicePicker *sharingServicePicker; // @synthesize sharingServicePicker=_sharingServicePicker;
 @property(retain) NSButton *shareButton; // @synthesize shareButton=_shareButton;
 @property(retain) CalUILabel *urlField; // @synthesize urlField=_urlField;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (id)menuItemTitleForSharingService:(id)arg1;
 - (id)servicesForShareButtonMenu;
 - (id)publicURLSharingServices;

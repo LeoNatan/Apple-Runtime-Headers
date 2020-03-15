@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNStarkActionView *actionView; // @synthesize actionView=_actionView;
 @property(retain, nonatomic) UILabel *faceTimeLabel; // @synthesize faceTimeLabel=_faceTimeLabel;
 @property(copy, nonatomic) NSDictionary *labelTextAttributes; // @synthesize labelTextAttributes=_labelTextAttributes;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)actionViewTapped:(id)arg1;
 - (void)updateTransportButtons;
 - (BOOL)shouldShowStar;

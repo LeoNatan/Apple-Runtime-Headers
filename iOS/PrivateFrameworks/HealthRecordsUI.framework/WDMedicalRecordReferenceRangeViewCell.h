@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UILabel *_subtitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) HKReferenceRangeView *referenceRangeView; // @synthesize referenceRangeView=_referenceRangeView;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) HKInspectableValueInRange *valueInRange; // @synthesize valueInRange=_valueInRange;
-- (void).cxx_destruct;
 - (void)setupSubviews;
 
 @end

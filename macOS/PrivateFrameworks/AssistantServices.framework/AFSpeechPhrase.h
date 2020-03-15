@@ -17,16 +17,16 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isLowConfidence; // @synthesize isLowConfidence=_isLowConfidence;
 @property(copy, nonatomic) NSArray *interpretations; // @synthesize interpretations=_interpretations;
-- (void).cxx_destruct;
 - (id)initWithInterpretations:(id)arg1 isLowConfidence:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (struct NSDictionary *)allInterpretationStringsAndScores;
+- (id)allInterpretationStringsAndScores;
 - (id)bestInterpretation;
 - (id)firstInterpretation;
 

@@ -24,6 +24,7 @@
 + (id)_extractLeaseAssetFromLeaseResponse:(id)arg1;
 + (_Bool)isPendingStartLeaseSession;
 + (void)setPendingStartLeaseSession:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVCKMutableBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(retain, nonatomic) SSVPlaybackLeaseAsset *currentLeaseAsset; // @synthesize currentLeaseAsset=_currentLeaseAsset;
 @property(nonatomic) unsigned long long loadingContext; // @synthesize loadingContext=_loadingContext;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool isMusicVideo; // @synthesize isMusicVideo=_isMusicVideo;
 @property(retain, nonatomic) TVCKDataItem *dataItem; // @synthesize dataItem=_dataItem;
 @property(nonatomic) long long adamID; // @synthesize adamID=_adamID;
-- (void).cxx_destruct;
 - (id)_bookmarkNetTime;
 - (id)_propertyNameMappings;
 - (void)cleanUpMediaItem;

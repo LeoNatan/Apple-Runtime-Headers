@@ -16,9 +16,9 @@
     NSString *_mode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *mode; // @synthesize mode=_mode;
 @property(readonly, copy, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqualToAudioRouteCollectionKey:(id)arg1;

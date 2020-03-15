@@ -19,11 +19,11 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<NUNode> *supernode; // @synthesize supernode=_supernode;
 @property(retain, nonatomic) NSMutableArray *subnodes; // @synthesize subnodes=_subnodes;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (void)resolveViewsInView:(id)arg1;
 - (void)removeFromSupernode;
 - (void)addSubnode:(id)arg1;

@@ -19,13 +19,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL pinToTop; // @synthesize pinToTop=_pinToTop;
 @property(nonatomic) unsigned int domain; // @synthesize domain=_domain;
 @property BOOL doNotFold; // @synthesize doNotFold=_doNotFold;
 @property(retain, nonatomic) NSMutableOrderedSet *resultSet; // @synthesize resultSet=_resultSet;
 @property(retain, nonatomic) NSNumber *groupId; // @synthesize groupId=_groupId;
 @property(retain, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
-- (void).cxx_destruct;
 - (void)sortUsingComparator:(CDUnknownBlockType)arg1;
 - (void)replaceResultsAtIndex:(unsigned long long)arg1 withResults:(id)arg2;
 - (void)removeResultsInArray:(id)arg1;

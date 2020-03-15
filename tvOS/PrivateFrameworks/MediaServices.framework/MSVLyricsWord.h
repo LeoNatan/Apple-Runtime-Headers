@@ -14,9 +14,9 @@
     MSVLyricsWord *_nextWord;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSVLyricsWord *nextWord; // @synthesize nextWord=_nextWord;
 @property(retain, nonatomic) MSVLyricsLine *parentLine; // @synthesize parentLine=_parentLine;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

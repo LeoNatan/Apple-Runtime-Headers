@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     double _topMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL topKeylineHidden; // @synthesize topKeylineHidden=_topKeylineHidden;
 @property(nonatomic) BOOL bottomKeylineHidden; // @synthesize bottomKeylineHidden=_bottomKeylineHidden;
 @property(nonatomic) double topMargin; // @synthesize topMargin=_topMargin;
 @property(retain, nonatomic) NSView *suggestionsView; // @synthesize suggestionsView=_suggestionsView;
 @property(readonly, nonatomic) SiriUITranscriptClumpView *transcriptClumpView; // @synthesize transcriptClumpView=_transcriptClumpView;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 @property(readonly, nonatomic) double bottomMargin;
 - (void)layout;

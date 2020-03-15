@@ -13,8 +13,8 @@
     ACHEarnedInstanceStore *_earnedInstanceStore;
 }
 
-@property(retain, nonatomic) ACHEarnedInstanceStore *earnedInstanceStore; // @synthesize earnedInstanceStore=_earnedInstanceStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACHEarnedInstanceStore *earnedInstanceStore; // @synthesize earnedInstanceStore=_earnedInstanceStore;
 - (id)_cleanupNewExerciseRecordAchievements;
 - (id)_cleanupLongestMoveStreakAchievements;
 - (id)_cleanupBestWorkoutAchievements;

@@ -19,11 +19,11 @@
     AXFDispatchGroup *__group;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AXFDispatchGroup *_group; // @synthesize _group=__group;
 @property(readonly, nonatomic) AXFDispatchSemaphore *_semaphore; // @synthesize _semaphore=__semaphore;
 @property(readonly, nonatomic) AXFDispatchQueue *_stagingQueue; // @synthesize _stagingQueue=__stagingQueue;
 @property(readonly, nonatomic) AXFDispatchQueue *_workQueue; // @synthesize _workQueue=__workQueue;
-- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *underlyingQueue;
 - (void)notifyWithQueue:(id)arg1 workItem:(id)arg2;
 - (void)notifyWithQueue:(id)arg1 block:(CDUnknownBlockType)arg2;

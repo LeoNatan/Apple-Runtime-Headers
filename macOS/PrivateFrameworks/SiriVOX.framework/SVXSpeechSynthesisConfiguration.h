@@ -18,9 +18,9 @@
 
 + (id)configurationWithOutputVoiceInfo:(id)arg1;
 + (id)configurationWithLocale:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, copy, nonatomic) AFVoiceInfo *outputVoiceInfo; // @synthesize outputVoiceInfo=_outputVoiceInfo;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithLocale:(id)arg1 outputVoiceInfo:(id)arg2;
 

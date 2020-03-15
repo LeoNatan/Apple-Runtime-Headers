@@ -30,6 +30,7 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL isDeprecated; // @synthesize isDeprecated=_isDeprecated;
 @property(copy) NSArray *outputTypes; // @synthesize outputTypes=_outputTypes;
 @property(copy) NSArray *inputTypes; // @synthesize inputTypes=_inputTypes;
@@ -47,7 +48,6 @@
 @property(copy) NSString *summary; // @synthesize summary=_summary;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(retain) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *relatedItemsDescription;
 @property(readonly, copy, nonatomic) NSString *outputDescription;
 @property(readonly, copy, nonatomic) NSString *inputDescription;

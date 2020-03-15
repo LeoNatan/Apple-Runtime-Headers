@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     KenBurnsClip *_kenBurnsClip;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KenBurnsClip *kenBurnsClip; // @synthesize kenBurnsClip=_kenBurnsClip;
 @property(nonatomic) double maximumPhotoDuration; // @synthesize maximumPhotoDuration=_maximumPhotoDuration;
 @property(nonatomic) double idealPhotoDuration; // @synthesize idealPhotoDuration=_idealPhotoDuration;
 @property(nonatomic) double minimumPhotoDuration; // @synthesize minimumPhotoDuration=_minimumPhotoDuration;
-- (void).cxx_destruct;
 - (id)addTransitionsWithName:(id)arg1 transitionDuration:(int)arg2 transitionEffectProperties:(id)arg3 betweenClips:(id)arg4;
 - (id)addTransitionsWithName:(id)arg1 transitionDuration:(int)arg2 betweenClips:(id)arg3;
 - (void)turnOffKenBurnsForClips:(id)arg1;

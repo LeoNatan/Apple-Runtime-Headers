@@ -15,8 +15,8 @@
     NSBundle *_bundle;
 }
 
-@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (id)textForBraille:(id)arg1 parameters:(id)arg2 locations:(out id *)arg3;
 - (id)brailleForText:(id)arg1 parameters:(id)arg2 locations:(out id *)arg3;
 @property(readonly, nonatomic) id <BRLTTranslatorProtocol> translator; // @synthesize translator=_translator;

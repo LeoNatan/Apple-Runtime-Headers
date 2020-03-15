@@ -15,8 +15,8 @@
     MWFeedParser *_parser;
 }
 
-@property(retain, nonatomic) MWFeedParser *parser; // @synthesize parser=_parser;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MWFeedParser *parser; // @synthesize parser=_parser;
 - (void)feedParser:(id)arg1 didFailWithError:(id)arg2;
 - (void)feedParserDidFinish:(id)arg1;
 - (void)feedParser:(id)arg1 didParseFeedItem:(id)arg2;

@@ -16,10 +16,10 @@
     UITextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_setupTextField;
 - (void)_setupVisualEffectView;

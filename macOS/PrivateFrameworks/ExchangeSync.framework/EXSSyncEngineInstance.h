@@ -24,6 +24,7 @@
     NSArray *_dataConsumerInstances;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dataConsumerInstances; // @synthesize dataConsumerInstances=_dataConsumerInstances;
 @property(retain, nonatomic) EXSSyncProtocol *syncProtocol; // @synthesize syncProtocol=_syncProtocol;
 @property BOOL isRunning; // @synthesize isRunning=_isRunning;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *dispatchWorkloop; // @synthesize dispatchWorkloop=_dispatchWorkloop;
 @property(nonatomic) __weak EXSDataManager *dataManager; // @synthesize dataManager=_dataManager;
 @property(readonly, nonatomic) EXSAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)dispatchOnWorkQueue:(CDUnknownBlockType)arg1;
 - (void)dataConsumerInstance:(id)arg1 needsFoldersRepushed:(id)arg2;
 - (void)dataConsumerInstance:(id)arg1 hasItemChangesInFolder:(id)arg2;

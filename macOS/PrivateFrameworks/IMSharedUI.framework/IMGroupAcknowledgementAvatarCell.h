@@ -13,8 +13,8 @@
     CNAvatarViewController *_avatarViewController;
 }
 
-@property(retain) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 - (void).cxx_destruct;
+@property(retain) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setRepresentedObject:(id)arg1;
 - (void)viewDidLoad;

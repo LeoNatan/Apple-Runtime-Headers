@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 
 + (id)sourceWithEnvironment:(id)arg1 contactStore:(id)arg2;
 + (id)sourceKind;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fetching; // @synthesize fetching=_fetching;
 @property(retain, nonatomic) NSArray *cachedPeople; // @synthesize cachedPeople=_cachedPeople;
 @property(retain, nonatomic) NSArray *fmfHandles; // @synthesize fmfHandles=_fmfHandles;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNUIFMFFacade *fmfFacade; // @synthesize fmfFacade=_fmfFacade;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)friendContactFromFriendHandleTransformWithKeysToFetch:(id)arg1;
 - (void)fetchFriends;
 - (id)peopleInGroup:(id)arg1 keysToFetch:(id)arg2;

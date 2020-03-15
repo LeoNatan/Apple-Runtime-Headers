@@ -15,8 +15,8 @@
 
 + (unsigned long long)atvStateFromState:(struct BTStatus *)arg1;
 + (void)addTuple:(id)arg1 ToLUT:(id)arg2;
-@property(retain) NSDictionary *atvLUT; // @synthesize atvLUT=_atvLUT;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *atvLUT; // @synthesize atvLUT=_atvLUT;
 - (id)findTupleForATVState:(unsigned long long)arg1;
 - (id)init;
 

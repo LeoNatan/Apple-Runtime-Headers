@@ -15,8 +15,8 @@
     CDUnknownBlockType _completionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 
 // Remaining properties

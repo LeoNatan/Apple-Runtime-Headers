@@ -25,6 +25,7 @@
             unsigned int synthesizedByAcceptingCandidate:1;
             unsigned int doubleSpace:1;
             unsigned int rapidDelete:1;
+            unsigned int shiftDown:1;
         } fields;
     } _flags;
     _Bool _backspace;
@@ -33,21 +34,24 @@
     TIKeyboardTouchEvent *_touchEvent;
     TIKeyboardCandidate *_acceptedCandidate;
     NSString *_inputManagerHint;
+    long long _transliterationType;
     double _timestamp;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) long long transliterationType; // @synthesize transliterationType=_transliterationType;
 @property(copy, nonatomic) NSString *inputManagerHint; // @synthesize inputManagerHint=_inputManagerHint;
 @property(retain, nonatomic) TIKeyboardCandidate *acceptedCandidate; // @synthesize acceptedCandidate=_acceptedCandidate;
 @property(retain, nonatomic) TIKeyboardTouchEvent *touchEvent; // @synthesize touchEvent=_touchEvent;
 @property(nonatomic, getter=isBackspace) _Bool backspace; // @synthesize backspace=_backspace;
 @property(copy, nonatomic) id <NSCopying><NSObject><NSSecureCoding> object; // @synthesize object=_object;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic, getter=isShiftDown) _Bool shiftDown;
 @property(nonatomic, getter=isRapidDelete) _Bool rapidDelete;
 @property(nonatomic, getter=isDoubleSpace) _Bool doubleSpace;
 @property(nonatomic, getter=isSynthesizedByAcceptingCandidate) _Bool synthesizedByAcceptingCandidate;

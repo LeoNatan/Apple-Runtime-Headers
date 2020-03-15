@@ -39,6 +39,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool disableInitialContact; // @synthesize disableInitialContact=_disableInitialContact;
 @property int tunnelKind; // @synthesize tunnelKind=_tunnelKind;
 @property _Bool opportunisticPFS; // @synthesize opportunisticPFS=_opportunisticPFS;
@@ -65,7 +66,6 @@
 @property(copy) NSString *serverCertificateCommonName; // @synthesize serverCertificateCommonName=_serverCertificateCommonName;
 @property(copy) NSString *serverCertificateIssuerCommonName; // @synthesize serverCertificateIssuerCommonName=_serverCertificateIssuerCommonName;
 @property int deadPeerDetectionRate; // @synthesize deadPeerDetectionRate=_deadPeerDetectionRate;
-- (void).cxx_destruct;
 - (id)copyLegacyDictionary;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (_Bool)checkValidityAndCollectErrors:(id)arg1;

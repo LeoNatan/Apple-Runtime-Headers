@@ -19,6 +19,7 @@
     NSString *_noContentMessage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dismissesActionControllerOnSelection; // @synthesize dismissesActionControllerOnSelection=_dismissesActionControllerOnSelection;
 @property(copy, nonatomic) NSString *noContentMessage; // @synthesize noContentMessage=_noContentMessage;
 @property(copy, nonatomic) PUICActionItem *noContentActionItem; // @synthesize noContentActionItem=_noContentActionItem;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(readonly, nonatomic) int actionStyle; // @synthesize actionStyle=_actionStyle;
 @property(copy, nonatomic) NSArray *actionItems; // @synthesize actionItems=_actionItems;
-- (void).cxx_destruct;
 - (void)_postDidUpdateNotification;
 @property(readonly, nonatomic) int _effectiveActionStyle;
 - (void)setActionStyle:(int)arg1;

@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)listValuesType;
 + (Class)fieldValuesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *listValues; // @synthesize listValues=_listValues;
 @property(retain, nonatomic) NSMutableArray *fieldValues; // @synthesize fieldValues=_fieldValues;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long longValue; // @synthesize longValue=_longValue;
 @property(nonatomic) _Bool boolValue; // @synthesize boolValue=_boolValue;
 @property(retain, nonatomic) NSData *bytesValue; // @synthesize bytesValue=_bytesValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

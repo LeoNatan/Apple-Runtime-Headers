@@ -15,10 +15,10 @@
     NSExtension *_weakExtension;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReadyToDisplay) _Bool readyToDisplay; // @synthesize readyToDisplay=_readyToDisplay;
 @property(nonatomic) __weak NSExtension *weakExtension; // @synthesize weakExtension=_weakExtension;
 @property(retain, nonatomic) NSUUID *requestUUID; // @synthesize requestUUID=_requestUUID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)viewDidLayoutSubviews;
 - (_Bool)__shouldRemoteViewControllerFenceOperations;

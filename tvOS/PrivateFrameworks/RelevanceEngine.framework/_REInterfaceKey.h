@@ -19,9 +19,9 @@
     Protocol *_protocol;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
 @property(retain, nonatomic) Class cls; // @synthesize cls=_cls;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

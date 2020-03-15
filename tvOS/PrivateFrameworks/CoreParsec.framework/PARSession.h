@@ -27,11 +27,11 @@
 + (id)sessionWithConfiguration:(id)arg1;
 + (id)sharedSession;
 + (id)sharedPARSessionWithConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSSet *allowedAppsForSiriSuggestions; // @synthesize allowedAppsForSiriSuggestions=_allowedAppsForSiriSuggestions;
 @property __weak id <PARSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) PARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-@property(retain, nonatomic) PARSearchClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) PARSearchClient *client; // @synthesize client=_client;
 - (void)didUpdateSiriSuggestionsAppWhitelist;
 - (void)sendCBAEngagementFeedback:(id)arg1 query:(unsigned long long)arg2;
 - (void)reportFeedback:(id)arg1 queryId:(unsigned long long)arg2;
@@ -72,7 +72,6 @@
 - (void)fileHandleAndAttributesForResource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadTask:(id)arg1;
 - (id)taskWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)awaitBag;
 @property(retain) PARBag *bag;
 @property(readonly, nonatomic) NSXPCConnection *connection;
 - (void)start;

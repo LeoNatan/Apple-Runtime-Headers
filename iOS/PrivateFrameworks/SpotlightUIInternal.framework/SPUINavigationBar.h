@@ -14,8 +14,8 @@
 }
 
 + (_Bool)_supportsCanvasView;
-@property(retain) SearchUISeparatorView *topDividerView; // @synthesize topDividerView=_topDividerView;
 - (void).cxx_destruct;
+@property(retain) SearchUISeparatorView *topDividerView; // @synthesize topDividerView=_topDividerView;
 - (void)performShowSeparator:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)showSeparator:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)didAddSubview:(id)arg1;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIView *_view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, retain, nonatomic) UIViewPropertyAnimator *animationObject; // @synthesize animationObject=_animationObject;
 @property(readonly, retain, nonatomic) CAAnimation *pendingAnimation; // @synthesize pendingAnimation=_pendingAnimation;
-- (void).cxx_destruct;
 - (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
 - (id)initWithPendingAnimation:(id)arg1 withAnimationObject:(id)arg2 forView:(id)arg3;
 

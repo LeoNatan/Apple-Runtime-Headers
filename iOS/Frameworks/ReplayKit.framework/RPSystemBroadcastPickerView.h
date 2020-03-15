@@ -19,11 +19,11 @@
     UIButton *_broadcastPickerButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *broadcastPickerButton; // @synthesize broadcastPickerButton=_broadcastPickerButton;
 @property(retain, nonatomic) RPBroadcastPickerStandaloneViewController *broadcastPickerViewController; // @synthesize broadcastPickerViewController=_broadcastPickerViewController;
 @property(nonatomic) _Bool showsMicrophoneButton; // @synthesize showsMicrophoneButton=_showsMicrophoneButton;
 @property(retain, nonatomic) NSString *preferredExtension; // @synthesize preferredExtension=_preferredExtension;
-- (void).cxx_destruct;
 - (void)viewControllerDidFinish;
 - (void)buttonPressed:(id)arg1;
 - (void)screenCaptureChanged;

@@ -17,12 +17,12 @@
     NSURL *_exportArchiveURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *exportArchiveURL; // @synthesize exportArchiveURL=_exportArchiveURL;
 @property(readonly, nonatomic) HKCDAPDFGenerator *generator; // @synthesize generator=_generator;
 @property(readonly, nonatomic) NSData *shareData; // @synthesize shareData=_shareData;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, nonatomic) HKCDADocumentSample *documentSample; // @synthesize documentSample=_documentSample;
-- (void).cxx_destruct;
 - (id)item;
 - (void)_loadShareDataWithHealthStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_generatePDFforCDA:(id)arg1 completion:(CDUnknownBlockType)arg2;

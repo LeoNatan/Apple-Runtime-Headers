@@ -25,9 +25,9 @@
 + (id)synchronousServer;
 + (void)setAsynchronousServer:(id)arg1;
 + (id)asynchronousServer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)synchronousServerWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)serverWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)updateOutgoingLocalParticipantUUID:(id)arg1 forCallsWithOutgoingLocalParticipantUUID:(id)arg2;

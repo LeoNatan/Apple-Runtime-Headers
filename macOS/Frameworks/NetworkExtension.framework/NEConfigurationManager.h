@@ -44,6 +44,7 @@
 + (void)updateFlags:(unsigned long long *)arg1 withConfiguration:(id)arg2;
 + (id)sharedManagerForAllUsers;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property long long configurationChangeSource; // @synthesize configurationChangeSource=_configurationChangeSource;
 @property(retain) id <NEConfigurationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSUUID *userUUID; // @synthesize userUUID=_userUUID;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *outerQueue; // @synthesize outerQueue=_outerQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
-- (void).cxx_destruct;
 - (id)getCurrentUserUUIDForConfigurationID:(id)arg1 fromIndex:(id)arg2;
 - (void)addAppToKeychainACLsForConfiguration:(id)arg1;
 - (void)upgradeLegacyPluginConfigurationsWithUpgradeInfo:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;

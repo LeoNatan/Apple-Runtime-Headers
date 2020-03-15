@@ -27,6 +27,7 @@
     id <IANewAccountChooserControllerDelegateProtocol> _delegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL showHelp; // @synthesize showHelp=_showHelp;
 @property(readonly) IANewAccountChooserRadioCollection *radioCollection; // @synthesize radioCollection=_radioCollection;
 @property unsigned long long style; // @synthesize style=_style;
@@ -35,7 +36,6 @@
 @property BOOL showOther; // @synthesize showOther=_showOther;
 @property __weak id <IANewAccountChooserControllerDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSTableView *table; // @synthesize table=_table;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)_rowItemWithPlugin:(id)arg1;
 - (id)selectedPluginID;

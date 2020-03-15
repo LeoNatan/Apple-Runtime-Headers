@@ -28,6 +28,7 @@
 + (id)buttonForActionType:(long long)arg1 withActionBlock:(CDUnknownBlockType)arg2;
 + (unsigned long long)maximumNumberOfButtons;
 + (id)localizedTitleForActionType:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool buttonsDisabled; // @synthesize buttonsDisabled=_buttonsDisabled;
 @property(nonatomic) _Bool isCreatingAvatar; // @synthesize isCreatingAvatar=_isCreatingAvatar;
 @property(retain, nonatomic) NSArray *currentInlineActionButtons; // @synthesize currentInlineActionButtons=_currentInlineActionButtons;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) _Bool allowCreate; // @synthesize allowCreate=_allowCreate;
 @property(retain, nonatomic) AVTAvatarRecord *avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(nonatomic) __weak id <AVTAvatarActionsModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)avatarEditorViewControllerDidCancel:(id)arg1;
 - (void)avatarEditorViewController:(id)arg1 didFinishWithAvatarRecord:(id)arg2;
 - (void)presentEditor:(id)arg1 forCreating:(_Bool)arg2;

@@ -19,12 +19,12 @@
 
 + (unsigned short)defaultTargetEventDomain;
 + (id)optionsWithRelatedType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsKeywords; // @synthesize needsKeywords=_needsKeywords;
 @property(retain, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) NSSet *focusedNodes; // @synthesize focusedNodes=_focusedNodes;
 @property(nonatomic) unsigned short targetEventDomain; // @synthesize targetEventDomain=_targetEventDomain;
 @property(nonatomic) unsigned long long relatedType; // @synthesize relatedType=_relatedType;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

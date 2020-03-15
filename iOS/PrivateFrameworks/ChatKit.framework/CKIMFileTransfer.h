@@ -35,12 +35,12 @@
     NSDictionary *_attributionInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
 @property(copy, nonatomic) NSURL *linkFileURL; // @synthesize linkFileURL=_linkFileURL;
 @property(readonly, nonatomic) _Bool isDirectory; // @synthesize isDirectory=_isDirectory;
 @property(nonatomic) long long transferState; // @synthesize transferState=_transferState;
 @property(readonly, copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 - (void)attachmentRestored:(id)arg1;
 - (void)fetchHighQualityFile:(CDUnknownBlockType)arg1;
 - (void)transferUpdated:(id)arg1;

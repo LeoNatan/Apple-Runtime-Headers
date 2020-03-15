@@ -13,8 +13,11 @@
     ABRecordContext *_recordContext;
     ABLazyGroup *_lazyGroup;
     NSSet *_newSubgroupUids;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (id)newSubgroups;
 - (void)removeSubgroupsFromGroup:(id)arg1;
 - (void)executeUndo;

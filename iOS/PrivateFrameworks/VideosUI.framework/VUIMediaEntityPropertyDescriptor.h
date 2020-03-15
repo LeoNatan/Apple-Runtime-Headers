@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_classNameFromPropertyType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sourceFilterBlock; // @synthesize sourceFilterBlock=_sourceFilterBlock;
 @property(copy, nonatomic) CDUnknownBlockType sourceFilterValueBlock; // @synthesize sourceFilterValueBlock=_sourceFilterValueBlock;
 @property(nonatomic) _Bool sourceSupportsFiltering; // @synthesize sourceSupportsFiltering=_sourceSupportsFiltering;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long propertyType; // @synthesize propertyType=_propertyType;
 @property(copy, nonatomic) NSString *sortAsName; // @synthesize sortAsName=_sortAsName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_updateSourceSupportsFiltering;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

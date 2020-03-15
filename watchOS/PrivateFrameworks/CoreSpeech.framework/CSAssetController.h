@@ -29,11 +29,11 @@
 + (void)addKeyValuePairForQuery:(id *)arg1 assetType:(unsigned int)arg2;
 + (id)filteredAssetsForAssets:(id)arg1 assetType:(unsigned int)arg2 language:(id)arg3;
 + (id)filteredAssetsForFetchRemoteMetaDataForAssets:(id)arg1 assetType:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSDictionary *csAssetsDictionary; // @synthesize csAssetsDictionary=_csAssetsDictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetsMigrationQueue; // @synthesize assetsMigrationQueue=_assetsMigrationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)CSEventMonitorDidReceiveEvent:(id)arg1;
 - (void)removeObserver:(id)arg1 forAssetType:(unsigned int)arg2;
 - (void)addObserver:(id)arg1 forAssetType:(unsigned int)arg2;

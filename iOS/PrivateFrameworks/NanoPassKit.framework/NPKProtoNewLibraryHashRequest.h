@@ -19,11 +19,11 @@
     CDStruct_02c44088 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int syncID; // @synthesize syncID=_syncID;
 @property(nonatomic) unsigned int lastKnownResyncID; // @synthesize lastKnownResyncID=_lastKnownResyncID;
 @property(nonatomic) unsigned int resyncID; // @synthesize resyncID=_resyncID;
 @property(retain, nonatomic) NPKProtoHash *libraryHash; // @synthesize libraryHash=_libraryHash;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

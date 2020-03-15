@@ -23,11 +23,11 @@
 + (void)processGraphForRunNode:(id)arg1 withQualityOfService:(long long)arg2;
 + (void)processGraphForRunNode:(id)arg1;
 + (id)_defaultNodeRunnerWithQualityOfService:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLock *_operationLock; // @synthesize _operationLock=__operationLock;
 @property(readonly, nonatomic) NSSet *_dependencySet; // @synthesize _dependencySet=__dependencySet;
 @property(nonatomic) __weak id <PXRunNodeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *dependencies; // @synthesize dependencies=_dependencies;
-- (void).cxx_destruct;
 - (void)didCancel;
 - (void)cancelWithError:(id)arg1;
 - (void)cancel;

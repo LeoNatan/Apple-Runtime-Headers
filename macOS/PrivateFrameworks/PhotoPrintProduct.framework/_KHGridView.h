@@ -16,8 +16,8 @@
     id <NSDraggingDestination> _dragDestinationForwardingTarget;
 }
 
-@property(nonatomic) __weak id <NSDraggingDestination> dragDestinationForwardingTarget; // @synthesize dragDestinationForwardingTarget=_dragDestinationForwardingTarget;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NSDraggingDestination> dragDestinationForwardingTarget; // @synthesize dragDestinationForwardingTarget=_dragDestinationForwardingTarget;
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (BOOL)wantsPeriodicDraggingUpdates;
 - (void)draggingEnded:(id)arg1;

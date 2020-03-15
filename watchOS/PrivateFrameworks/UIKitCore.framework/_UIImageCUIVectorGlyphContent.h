@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     struct CGSize _sizeInPixels;
 }
 
-@property(nonatomic) float glyphScaleFactor; // @synthesize glyphScaleFactor=_glyphScaleFactor;
 - (void).cxx_destruct;
+@property(nonatomic) float glyphScaleFactor; // @synthesize glyphScaleFactor=_glyphScaleFactor;
 - (struct CGImage *)_CGImageWithSize:(struct CGSize)arg1 scale:(float)arg2;
 - (void)_drawWithoutEffectInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
 - (void)_prepareforDrawingInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;

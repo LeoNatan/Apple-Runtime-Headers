@@ -15,8 +15,8 @@
 }
 
 + (Class)valueClass;
-@property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 - (id)normalizedValueForValue:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;

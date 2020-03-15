@@ -14,9 +14,9 @@
     unsigned long long _view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long view; // @synthesize view=_view;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isTomorrow;
 - (void)updateActivity:(id)arg1;
 - (id)dictionary;

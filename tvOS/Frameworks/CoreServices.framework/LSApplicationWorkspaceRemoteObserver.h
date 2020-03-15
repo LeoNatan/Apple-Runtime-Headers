@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(getter=isObservinglsd) _Bool observinglsd; // @synthesize observinglsd=_observinglsd;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)deviceManagementPolicyDidChange:(id)arg1;
 - (void)networkUsageChanged:(_Bool)arg1;
 - (void)applicationIconDidChange:(id)arg1;

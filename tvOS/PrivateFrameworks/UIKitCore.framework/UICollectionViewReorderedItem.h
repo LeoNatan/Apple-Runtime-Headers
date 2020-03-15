@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct CGPoint _pinnedPreviousContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pinningTest; // @synthesize pinningTest=_pinningTest;
 @property(nonatomic) struct CGPoint pinnedPreviousContentOffset; // @synthesize pinnedPreviousContentOffset=_pinnedPreviousContentOffset;
 @property(nonatomic) _Bool pinned; // @synthesize pinned=_pinned;
 @property(retain, nonatomic) NSIndexPath *targetIndexPath; // @synthesize targetIndexPath=_targetIndexPath;
 @property(retain, nonatomic) NSIndexPath *originalIndexPath; // @synthesize originalIndexPath=_originalIndexPath;
 @property(readonly, nonatomic) UICollectionViewCell *cell; // @synthesize cell=_cell;
-- (void).cxx_destruct;
 - (_Bool)isNOOP;
 - (id)description;
 - (id)initWithCell:(id)arg1 indexPath:(id)arg2;

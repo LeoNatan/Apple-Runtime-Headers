@@ -20,13 +20,13 @@
 
 + (id)sharedPowerAssertionManager;
 + (void)vendDaemons:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *contextToPowerAssertionRef; // @synthesize contextToPowerAssertionRef=_contextToPowerAssertionRef;
 @property(retain, nonatomic) NSCountedSet *heldAsideContexts; // @synthesize heldAsideContexts=_heldAsideContexts;
 @property(retain, nonatomic) NSMutableSet *heldAsideGroupIdentifiers; // @synthesize heldAsideGroupIdentifiers=_heldAsideGroupIdentifiers;
 @property(retain, nonatomic) NSMapTable *contextToGroupIdentifier; // @synthesize contextToGroupIdentifier=_contextToGroupIdentifier;
 @property(retain, nonatomic) NSMapTable *groupIdentifierToContexts; // @synthesize groupIdentifierToContexts=_groupIdentifierToContexts;
 @property(retain, nonatomic) NSCountedSet *contexts; // @synthesize contexts=_contexts;
-- (void).cxx_destruct;
 - (_Bool)_releaseAssertionForContext:(id)arg1;
 - (_Bool)_retainAssertionForContext:(id)arg1;
 - (void)reattainPowerAssertionsForGroupIdentifier:(id)arg1;

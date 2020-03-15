@@ -17,10 +17,10 @@
     IBUITraitCollection *_traitCollection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *removedObjectIDs; // @synthesize removedObjectIDs=_removedObjectIDs;
 @property(readonly, copy, nonatomic) NSSet *addedObjectIDs; // @synthesize addedObjectIDs=_addedObjectIDs;
 @property(readonly, copy, nonatomic) IBUITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (void)removeObjectIDs:(id)arg1;

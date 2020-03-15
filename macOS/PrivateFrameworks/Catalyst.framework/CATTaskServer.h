@@ -25,9 +25,9 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak id <CATTaskServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)delegateClientSession:(id)arg1 didReceiveNotificationWithName:(id)arg2 userInfo:(id)arg3;
 - (void)delegateSessionDidInvalidate:(id)arg1;
 - (void)delegateClientSessionDidDisconnect:(id)arg1;

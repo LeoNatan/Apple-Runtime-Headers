@@ -14,8 +14,8 @@
 }
 
 + (_Bool)enabled;
-@property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void)slurpAndRemoveLookasideFile:(id)arg1 prefixString:(id)arg2 suffixString:(id)arg3;
 - (void)logSnippet:(id)arg1;
 - (id)initWithFilename:(id)arg1;

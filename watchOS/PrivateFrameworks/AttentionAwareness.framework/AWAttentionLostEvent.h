@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id associatedObject; // @synthesize associatedObject=_associatedObject;
 @property(readonly, nonatomic) double attentionLostTimeout; // @synthesize attentionLostTimeout=_attentionLostTimeout;
-- (void).cxx_destruct;
 - (void)updateWithConfig:(id)arg1;
 - (id)description;
 - (id)initWithTimestamp:(double)arg1 tagIndex:(unsigned long long)arg2 attentionLostTimeout:(double)arg3;

@@ -21,6 +21,7 @@
     CLSLocationOfInterestVisit *_lastLocationOfInterestVisit;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CLSLocationOfInterestVisit *lastLocationOfInterestVisit; // @synthesize lastLocationOfInterestVisit=_lastLocationOfInterestVisit;
 @property(readonly) NSDate *earliestVisitStartDate; // @synthesize earliestVisitStartDate=_earliestVisitStartDate;
 @property(readonly) unsigned long long numberOfLocationsOfInterestVisits; // @synthesize numberOfLocationsOfInterestVisits=_numberOfLocationsOfInterestVisits;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableSet *allLocationsOfInterest; // @synthesize allLocationsOfInterest=_allLocationsOfInterest;
 @property(retain, nonatomic) NSMutableDictionary *transitionsCache; // @synthesize transitionsCache=_transitionsCache;
 @property(retain, nonatomic) NSMutableDictionary *visitsCache; // @synthesize visitsCache=_visitsCache;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long numberOfLocationsOfInterestTransitions;
 - (id)locationsOfInterestTransitionInDateInterval:(id)arg1;
 - (void)addLocationOfInterestTransition:(id)arg1;

@@ -41,6 +41,7 @@
 
 + (void)start;
 + (id)sharedDetentManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool deviceLocked; // @synthesize deviceLocked=_deviceLocked;
 @property(nonatomic) _Bool uiIsLive; // @synthesize uiIsLive=_uiIsLive;
 @property(retain, nonatomic) NSMutableArray *preventDetentAssertions; // @synthesize preventDetentAssertions=_preventDetentAssertions;
@@ -57,7 +58,6 @@
 @property(nonatomic) _Bool userDebugDetents; // @synthesize userDebugDetents=_userDebugDetents;
 @property(nonatomic) _Bool detentsDisabledByPreference; // @synthesize detentsDisabledByPreference=_detentsDisabledByPreference;
 @property(retain, nonatomic) CSLDetentServiceEndpoint *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

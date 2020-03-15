@@ -12,17 +12,17 @@
 @interface SiriUIInstrumentationManager : NSObject
 {
     NSString *_lastDismissedIdentifier;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_instrumenrationManagerQueue;
     int _currentSiriUIState;
     AFAnalyticsTurnBasedInstrumentationContext *_currentInstrumentationTurnContext;
     NSString *_clientGeneratedDialogIdentifier;
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientGeneratedDialogIdentifier; // @synthesize clientGeneratedDialogIdentifier=_clientGeneratedDialogIdentifier;
 @property int currentSiriUIState; // @synthesize currentSiriUIState=_currentSiriUIState;
 @property(retain) AFAnalyticsTurnBasedInstrumentationContext *currentInstrumentationTurnContext; // @synthesize currentInstrumentationTurnContext=_currentInstrumentationTurnContext;
-- (void).cxx_destruct;
 - (_Bool)_hasDismissedForTurnContext:(id)arg1;
 - (void)emitPunchOutEventWithURL:(id)arg1 appID:(id)arg2;
 - (void)emitDialogOutputEventWith:(id)arg1 canUseServerTTS:(_Bool)arg2 spokenDialogOutput:(id)arg3 displayedDialogOutput:(id)arg4;
@@ -35,6 +35,7 @@
 - (void)emitUIStateTransitionForSiriDismissal:(int)arg1;
 - (void)emitUIStateTransitionEventWithFromState:(int)arg1 toState:(int)arg2 withPresentationType:(int)arg3;
 - (void)storeClientGeneratedDUC:(id)arg1;
+- (void)_emitInstrumentation:(id)arg1;
 - (void)emitInstrumentation:(id)arg1;
 - (void)storeCurrentInstrumentationTurnContext:(id)arg1;
 - (id)init;

@@ -16,11 +16,11 @@
     unsigned long long _visibleContent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visibleContent; // @synthesize visibleContent=_visibleContent;
 @property(retain, nonatomic) CEKSlider *intensitySlider; // @synthesize intensitySlider=_intensitySlider;
 @property(retain, nonatomic) CEKApertureSlider *apertureSlider; // @synthesize apertureSlider=_apertureSlider;
 @property(retain, nonatomic) CEKWheelScrubberView *filterScrubberView; // @synthesize filterScrubberView=_filterScrubberView;
-- (void).cxx_destruct;
 - (void)_layoutSliderView:(id)arg1;
 - (void)_layoutPortraitApertureSlider;
 - (void)_layoutFilterScrubberView;

@@ -14,7 +14,7 @@
     NSString *localizedDescription;
     _SFKeySpecifier *keySpecifier;
     NSString *identityName;
-    struct NSString *privateKeyDomain;
+    NSString *privateKeyDomain;
     _Bool hasCertificate;
 }
 

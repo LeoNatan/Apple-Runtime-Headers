@@ -22,12 +22,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)supportedPropertyClasses;
+- (void).cxx_destruct;
 @property unsigned long long seed; // @synthesize seed=_seed;
 @property(copy) NSDictionary *properties; // @synthesize properties=_properties;
 @property(copy) NSData *bookmark; // @synthesize bookmark=_bookmark;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

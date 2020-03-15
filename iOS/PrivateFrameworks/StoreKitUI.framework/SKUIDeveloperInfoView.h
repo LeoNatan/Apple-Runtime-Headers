@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_lineViews;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIDeveloperInfo *developerInfo; // @synthesize developerInfo=_developerInfo;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)layoutSubviews;

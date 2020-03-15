@@ -17,8 +17,8 @@
     id <TVSTransactionManagerObserver> _observer;
 }
 
-@property(nonatomic) __weak id <TVSTransactionManagerObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVSTransactionManagerObserver> observer; // @synthesize observer=_observer;
 - (void)transactionManager:(id)arg1 didCompleteTransaction:(id)arg2;
 - (void)transactionManager:(id)arg1 willBeginTransaction:(id)arg2;
 - (_Bool)isEqual:(id)arg1;

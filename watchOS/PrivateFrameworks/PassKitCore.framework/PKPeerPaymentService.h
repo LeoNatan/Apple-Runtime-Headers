@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/PKPeerPaymentRegistrationDelegate-Protocol.h>
+
 @class PKPeerPaymentAccount, PKPeerPaymentWebServiceContext, PKXPCService;
 @protocol OS_dispatch_queue;
 
-@interface PKPeerPaymentService : NSObject
+@interface PKPeerPaymentService : NSObject <PKPeerPaymentRegistrationDelegate>
 {
     PKXPCService *_remoteService;
     PKPeerPaymentAccount *_account;
@@ -28,6 +30,7 @@
 - (void)cloudStoreStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(CDUnknownBlockType)arg1;
 - (void)unregisterDeviceWithCompletion:(CDUnknownBlockType)arg1;
+- (void)registerDeviceWithRegistrationURL:(id)arg1 pushToken:(id)arg2 forceReregister:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)registerDeviceWithForceReregister:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)downloadPassIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;

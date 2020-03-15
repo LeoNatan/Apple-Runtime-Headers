@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
     struct CGPoint _maximumContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) struct CGPoint maximumContentOffset; // @synthesize maximumContentOffset=_maximumContentOffset;
 @property(nonatomic) struct CGPoint minimumContentOffset; // @synthesize minimumContentOffset=_minimumContentOffset;
 @property(nonatomic) long long focusProminence; // @synthesize focusProminence=_focusProminence;
 @property(copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
-- (void).cxx_destruct;
 - (id)_backgroundLabelTextColor;
 - (_Bool)_shouldUseDarkAppearance;
 - (id)_indicatorShadowPath;

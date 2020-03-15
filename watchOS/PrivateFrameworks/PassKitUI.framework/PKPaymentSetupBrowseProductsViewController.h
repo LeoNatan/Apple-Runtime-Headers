@@ -29,11 +29,11 @@
     PKPaymentSetupProduct *_selectedProduct;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentSetupProduct *selectedProduct; // @synthesize selectedProduct=_selectedProduct;
 @property(nonatomic) __weak id <PKPaymentSetupBrowseProductsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentSetupBrowseProductsModel *model; // @synthesize model=_model;
 @property(nonatomic) _Bool showScanCardButton; // @synthesize showScanCardButton=_showScanCardButton;
-- (void).cxx_destruct;
 - (void)_setNavigationBarEnabled:(_Bool)arg1;
 - (void)hideActivitySpinner;
 - (void)showActivitySpinner;

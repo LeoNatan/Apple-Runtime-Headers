@@ -18,12 +18,14 @@ __attribute__((visibility("hidden")))
     _Bool _suppressServerConfigNotifications;
 }
 
-@property _Bool suppressServerConfigNotifications; // @synthesize suppressServerConfigNotifications=_suppressServerConfigNotifications;
 - (void).cxx_destruct;
+@property _Bool suppressServerConfigNotifications; // @synthesize suppressServerConfigNotifications=_suppressServerConfigNotifications;
 - (id)_connection;
 - (void)_handlePlaybackReport:(id)arg1;
 - (void)_handleServerConfigChange:(id)arg1;
 - (void)_handleAppLibChange:(id)arg1;
+- (void)AMSURLSession:(id)arg1 task:(id)arg2 handleAuthenticateRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)AMSURLSession:(id)arg1 task:(id)arg2 handleDialogRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (long long)_requestOptionsFromJSOptions:(id)arg1;
 - (void)_enqueueNetworkOp:(id)arg1 withJSCallback:(id)arg2;
 - (void)invalidateConfiguration;

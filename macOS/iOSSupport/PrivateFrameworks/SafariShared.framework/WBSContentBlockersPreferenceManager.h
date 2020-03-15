@@ -18,8 +18,8 @@
     WBSPerSitePreference *_contentBlockersPreference;
 }
 
-@property(readonly, nonatomic) WBSPerSitePreference *contentBlockersPreference; // @synthesize contentBlockersPreference=_contentBlockersPreference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSPerSitePreference *contentBlockersPreference; // @synthesize contentBlockersPreference=_contentBlockersPreference;
 - (id)offValueForPreference:(id)arg1;
 - (id)onValueForPreference:(id)arg1;
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ARPointCloud *featurePoints; // @synthesize featurePoints=_featurePoints;
 @property(retain, nonatomic) ARPointCloud *visionFeaturePoints; // @synthesize visionFeaturePoints=_visionFeaturePoints;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)encodeWithCoder:(id)arg1;

@@ -23,12 +23,12 @@
     struct os_unfair_lock_s _contextLock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s contextLock; // @synthesize contextLock=_contextLock;
 @property(nonatomic) long long carrierShortcodeSupported; // @synthesize carrierShortcodeSupported=_carrierShortcodeSupported;
 @property(nonatomic) __weak id <IDSCTPNRDelegate> PNRDelegate; // @synthesize PNRDelegate=_PNRDelegate;
 @property(retain, nonatomic) NSString *labelID; // @synthesize labelID=_labelID;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
-- (void).cxx_destruct;
 - (void)subscriptionInfoDidChange;
 - (void)pnrResponseReceived:(id)arg1 pnrRspData:(id)arg2;
 - (void)pnrRequestSent:(id)arg1 pnrReqData:(id)arg2;

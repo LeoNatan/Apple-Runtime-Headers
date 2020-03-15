@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) WDFavoriteDisplayTypesController *favoriteDisplayTypesController; // @synthesize favoriteDisplayTypesController=_favoriteDisplayTypesController;
-- (void).cxx_destruct;
 - (void)favoriteDisplayTypesControllerDidUpdate:(id)arg1;
 - (void)switchCellValueChanged:(id)arg1 value:(_Bool)arg2;
 - (void)updateSwitchValue;

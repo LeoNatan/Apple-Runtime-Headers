@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_backingSetAccessQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *backingSetAccessQueue; // @synthesize backingSetAccessQueue=_backingSetAccessQueue;
 @property(retain) NSMutableSet *backingSet; // @synthesize backingSet=_backingSet;
-- (void).cxx_destruct;
 - (void)removeObject:(id)arg1;
 - (void)addObject:(id)arg1;
 @property(readonly) unsigned long long count;

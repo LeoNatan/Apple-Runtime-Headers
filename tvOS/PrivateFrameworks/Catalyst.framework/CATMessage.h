@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSUUID *messageUUID; // @synthesize messageUUID=_messageUUID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUUID *messageUUID; // @synthesize messageUUID=_messageUUID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

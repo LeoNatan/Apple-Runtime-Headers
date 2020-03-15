@@ -15,8 +15,8 @@
     SXAnalyticsEvent *_event;
 }
 
-@property(readonly, nonatomic) SXAnalyticsEvent *event; // @synthesize event=_event;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXAnalyticsEvent *event; // @synthesize event=_event;
 - (id)initWithEvent:(id)arg1;
 
 // Remaining properties

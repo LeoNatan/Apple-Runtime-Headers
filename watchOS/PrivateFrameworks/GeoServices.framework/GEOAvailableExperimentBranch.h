@@ -17,10 +17,10 @@
     NSArray *_clientConfig;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_clientConfig, setter=_setClientConfig:) NSArray *clientConfig; // @synthesize clientConfig=_clientConfig;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
 @property(readonly, nonatomic, getter=_dictionaryRepresentation) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) NSDictionary *clientConfigValues;

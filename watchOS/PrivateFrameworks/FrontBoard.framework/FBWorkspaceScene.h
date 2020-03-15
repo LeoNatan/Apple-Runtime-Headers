@@ -36,11 +36,11 @@
     FBProcess *_process;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_workspaceQueue_sceneSettings, setter=_workspaceQueue_setSceneSettings:) FBSSceneSettings *sceneSettings; // @synthesize sceneSettings=_settings;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak id <FBSceneHost> host; // @synthesize host=_host;
 @property(readonly, nonatomic) __weak FBWorkspace *parentWorkspace; // @synthesize parentWorkspace=_workspace;
-- (void).cxx_destruct;
 - (void)sceneDidReceiveMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)sceneDidReceiveActions:(id)arg1;
 - (void)sceneDidUpdateClientSettings:(id)arg1 transitionContext:(id)arg2;

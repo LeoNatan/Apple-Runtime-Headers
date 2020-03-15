@@ -25,9 +25,9 @@
 + (id)_displayTextForComment:(id)arg1 characterLimit:(long long)arg2;
 + (long long)defaultCharacterLimit;
 + (struct NSEdgeInsets)_defaultEdgeInsets;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) long long characterLimit; // @synthesize characterLimit=_characterLimit;
-- (void).cxx_destruct;
 - (void)layout;
 - (id)_relativeStringFromDate:(id)arg1;
 - (void)_setAuthor:(id)arg1 andDate:(id)arg2 timeZoneId:(id)arg3 hasRatingView:(BOOL)arg4;

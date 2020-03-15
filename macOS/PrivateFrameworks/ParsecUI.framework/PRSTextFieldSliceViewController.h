@@ -19,6 +19,7 @@
     long long _alignment;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasSyncedAttributes; // @synthesize hasSyncedAttributes=_hasSyncedAttributes;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) NSFont *textFont; // @synthesize textFont=_textFont;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(nonatomic) double gapAbove; // @synthesize gapAbove=_gapAbove;
 @property(nonatomic) BOOL noWrap; // @synthesize noWrap=_noWrap;
-- (void).cxx_destruct;
 - (id)aboveConstraint;
 @property(readonly) NSTextField *textField;
 @property(readonly) PRSTextFieldSliceView *textFieldSliceView;

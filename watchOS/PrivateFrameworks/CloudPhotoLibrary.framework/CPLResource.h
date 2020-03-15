@@ -37,12 +37,12 @@
 + (_Bool)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (_Bool)cplShouldIgnorePropertyForCoding:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canGenerateDerivative; // @synthesize canGenerateDerivative=_canGenerateDerivative;
 @property(nonatomic) unsigned int sourceResourceType; // @synthesize sourceResourceType=_sourceResourceType;
 @property(nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;
 @property(copy, nonatomic) CPLScopedIdentifier *itemScopedIdentifier; // @synthesize itemScopedIdentifier=_itemScopedIdentifier;
 @property(retain, nonatomic) CPLResourceIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (void)_setBackgroundDownloadTaskIdentifier:(unsigned int)arg1;
 - (unsigned int)_backgroundDownloadTaskIdentifier;
 - (unsigned long long)estimatedResourceSize;

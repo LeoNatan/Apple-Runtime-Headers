@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)flowControlInfoWithEndDate:(id)arg1 error:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *flowControlEndDate; // @synthesize flowControlEndDate=_flowControlEndDate;
 @property(retain, nonatomic) NSError *lastError; // @synthesize lastError=_lastError;
-- (void).cxx_destruct;
 
 @end
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_resourceName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isTemplatedImage) _Bool templatedImage; // @synthesize templatedImage=_templatedImage;
 @property(readonly, copy, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
-- (void).cxx_destruct;
 - (id)initWithResourceName:(id)arg1 isTemplatedImage:(_Bool)arg2;
 
 @end

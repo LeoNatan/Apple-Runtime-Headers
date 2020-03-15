@@ -24,10 +24,10 @@
 + (id)scriptWithURL:(id)arg1 enabled:(id)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)keyInContainer;
+- (void).cxx_destruct;
 @property BOOL propagateChangesToFolderActionsDispatcher; // @synthesize propagateChangesToFolderActionsDispatcher=_propagateChangesToFolderActionsDispatcher;
 @property BOOL isWorkflow; // @synthesize isWorkflow=_isWorkflow;
 @property(retain) NSData *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)deleteVerb:(id)arg1;
 - (void)updateName;

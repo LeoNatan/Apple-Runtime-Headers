@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasChapters; // @synthesize hasChapters=_hasChapters;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSURL *webURL; // @synthesize webURL=_webURL;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)imageDescription;

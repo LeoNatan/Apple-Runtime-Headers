@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIView *_customView;
 }
 
-@property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 - (void)viewDidLayoutSubviews;
 @property(readonly, nonatomic) NSArray *displayedCandidates;
 - (BOOL)hidesExpandableButton;

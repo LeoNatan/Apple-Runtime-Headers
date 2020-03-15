@@ -26,6 +26,7 @@
 + (_Bool)cplShouldIgnorePropertyForCoding:(id)arg1;
 + (_Bool)serverSupportsMergeTargetRef;
 + (_Bool)serverSupportsGraphPeopleHome;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *contactDescriptor; // @synthesize contactDescriptor=_contactDescriptor;
 @property(copy, nonatomic) NSString *mergeTargetPersonIdentifier; // @synthesize mergeTargetPersonIdentifier=_mergeTargetPersonIdentifier;
 @property(nonatomic) int verifiedType; // @synthesize verifiedType=_verifiedType;
@@ -33,7 +34,6 @@
 @property(nonatomic) int manualSortOrder; // @synthesize manualSortOrder=_manualSortOrder;
 @property(nonatomic) int personType; // @synthesize personType=_personType;
 @property(copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *contactMatchingDictionary;
 - (void)setRelatedIdentifier:(id)arg1;
 - (id)relatedIdentifier;

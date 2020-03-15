@@ -27,11 +27,11 @@
 + (id)snapshotFinishMarkerURLForBaseURL:(id)arg1;
 + (id)metadataURLForBaseURL:(id)arg1 payloadClassId:(id)arg2 pending:(_Bool)arg3;
 + (id)journalURLForBaseURL:(id)arg1 payloadClassId:(id)arg2 journalType:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLJournalFile *prepareMarker; // @synthesize prepareMarker=_prepareMarker;
 @property(readonly, nonatomic) PLJournalFile *pendingJournal; // @synthesize pendingJournal=_pendingJournal;
 @property(readonly, nonatomic) Class payloadClass; // @synthesize payloadClass=_payloadClass;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (_Bool)enumerateEntriesUsingBlock:(CDUnknownBlockType)arg1 decodePayload:(_Bool)arg2 error:(id *)arg3;
 - (unsigned int)currentPayloadVersionWithError:(id *)arg1;
 - (unsigned int)countOfInsertEntriesWithError:(id *)arg1;

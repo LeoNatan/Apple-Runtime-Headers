@@ -70,6 +70,7 @@
 + (int)goToSafeModeAfterCount;
 + (void)initialize;
 + (id)snapshotExtendedDataClasses;
+- (void).cxx_destruct;
 @property(nonatomic, getter=hasCommittedSceneUpdate) _Bool committedSceneUpdate; // @synthesize committedSceneUpdate=_committedSceneUpdate;
 @property(nonatomic, getter=isRestricted) _Bool restricted; // @synthesize restricted=_restricted;
 @property(retain, nonatomic) CSLSceneSnapshot *cachedSceneSnapshot; // @synthesize cachedSceneSnapshot=_cachedSceneSnapshot;
@@ -86,7 +87,6 @@
 @property(readonly, nonatomic) NSSet *idleTimerDisabledReasons; // @synthesize idleTimerDisabledReasons=_idleTimerDisabledReasons;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) _Bool appSnapshotSequenceID; // @synthesize appSnapshotSequenceID=_appSnapshotSequenceID;
-- (void).cxx_destruct;
 - (void)stuckTransactionDialogDidTapButton:(id)arg1;
 - (void)stuckTransactionDialogDidDismiss:(id)arg1;
 - (void)_showCanaryDialog;
@@ -179,8 +179,6 @@
 - (void)processWillLaunch:(id)arg1;
 - (void)_setNewlyInstalled:(_Bool)arg1;
 - (_Bool)_isNewlyInstalled;
-- (_Bool)hasStartedLaunching;
-- (id)processState;
 - (id)extensionProcess;
 - (id)applicationProcess;
 - (id)process;

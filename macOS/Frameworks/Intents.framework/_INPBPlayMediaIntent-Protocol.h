@@ -32,6 +32,8 @@
 @property(nonatomic) int playbackQueueLocation;
 @property(nonatomic) BOOL hasPlayShuffled;
 @property(nonatomic) BOOL playShuffled;
+@property(nonatomic) BOOL hasParsecCategory;
+@property(nonatomic) int parsecCategory;
 @property(readonly, nonatomic) BOOL hasMusicArtistName;
 @property(retain, nonatomic) _INPBString *musicArtistName;
 @property(readonly, nonatomic) BOOL hasMediaUserContext;
@@ -62,6 +64,8 @@
 - (NSString *)playbackRepeatModeAsString:(int)arg1;
 - (int)StringAsPlaybackQueueLocation:(NSString *)arg1;
 - (NSString *)playbackQueueLocationAsString:(int)arg1;
+- (int)StringAsParsecCategory:(NSString *)arg1;
+- (NSString *)parsecCategoryAsString:(int)arg1;
 - (_INPBMediaItemValue *)mediaItemsAtIndex:(unsigned long long)arg1;
 - (void)addMediaItems:(_INPBMediaItemValue *)arg1;
 - (void)clearMediaItems;

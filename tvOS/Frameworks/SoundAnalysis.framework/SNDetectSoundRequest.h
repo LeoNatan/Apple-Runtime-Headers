@@ -18,8 +18,8 @@
     NSString *_soundIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *soundIdentifier; // @synthesize soundIdentifier=_soundIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *soundIdentifier; // @synthesize soundIdentifier=_soundIdentifier;
 @property(readonly, nonatomic) __weak id <SNAnalyzing> analyzer;
 - (id)initWithVGGishBasedMLModel:(id)arg1 soundIdentifier:(id)arg2;
 - (id)initWithSoundIdentifier:(id)arg1;

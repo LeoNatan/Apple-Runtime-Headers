@@ -17,8 +17,8 @@
     id <AAUIFamilySetupPrompterDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AAUIFamilySetupPrompterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AAUIFamilySetupPrompterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)familySetupPrompterDidFinish:(id)arg1;
 - (void)promptIfEligibleWithPresentingViewController:(id)arg1 isFirstRun:(_Bool)arg2;
 - (id)initWithiTunesAccount:(id)arg1;

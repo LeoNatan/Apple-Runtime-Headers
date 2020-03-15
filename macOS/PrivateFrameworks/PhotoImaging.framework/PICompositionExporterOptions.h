@@ -17,11 +17,11 @@
     id <NUScalePolicy> _scalePolicy;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
 @property(copy) NSString *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(retain) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(retain) NUPriority *priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

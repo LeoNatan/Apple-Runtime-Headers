@@ -64,9 +64,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setLastInterestingElement:) SCRUIElement *_lastInterestingElement; // @synthesize _lastInterestingElement=__lastInterestingElement;
 @property(retain, nonatomic, setter=_setTopLevelWebArea:) SCRCWeakReferenceContainer *_topLevelWebArea; // @synthesize _topLevelWebArea=__topLevelWebArea;
-- (void).cxx_destruct;
 - (void)handleTextNavigationWithUIElement:(id)arg1 command:(CDStruct_97f7034d)arg2 lastSelectedTextMarkerRange:(id)arg3 selectedTextMarkerRange:(id)arg4 outputRequest:(id)arg5;
 - (CDStruct_d7010776)shouldMoveFocusFromElement:(id)arg1 toElement:(id)arg2;
 - (id)navigationTextMarkerRangeForDiscontiguousNavigationWithUIElement:(id)arg1 lastSelectedTextMarkerRange:(id)arg2 selectedTextMarkerRange:(id)arg3;

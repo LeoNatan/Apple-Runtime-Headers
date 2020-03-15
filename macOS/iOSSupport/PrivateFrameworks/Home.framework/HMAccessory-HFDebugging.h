@@ -45,6 +45,7 @@
 @property(readonly, nonatomic) BOOL hf_needsSoftwareUpdateToSupportBeingAddedToMediaSystem;
 @property(readonly, nonatomic) unsigned long long hf_mediaAccessControlCapabilities;
 - (BOOL)hf_supportsMultiUserLanguage:(id)arg1;
+@property(readonly, nonatomic) BOOL hf_isAudioReceiver;
 @property(readonly, nonatomic) BOOL hf_isSpeaker;
 @property(readonly, nonatomic) BOOL hf_isDumbSpeaker;
 @property(readonly, nonatomic) BOOL hf_isAirPortExpressSpeaker;

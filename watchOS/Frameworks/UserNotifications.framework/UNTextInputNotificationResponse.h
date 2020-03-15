@@ -19,8 +19,8 @@
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4 targetSceneIdentifier:(id)arg5 userText:(id)arg6;
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4 userText:(id)arg5;
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 userText:(id)arg3;
-@property(readonly, copy, nonatomic) NSString *userText; // @synthesize userText=_userText;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *userText; // @synthesize userText=_userText;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

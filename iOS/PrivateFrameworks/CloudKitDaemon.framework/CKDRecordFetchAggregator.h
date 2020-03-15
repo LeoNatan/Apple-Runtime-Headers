@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     CKDFetchRecordsOperation *_currentFetchOp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceDecryptionAttempt; // @synthesize forceDecryptionAttempt=_forceDecryptionAttempt;
 @property(getter=isMarkedToFinishByParent) _Bool markedToFinishByParent; // @synthesize markedToFinishByParent=_markedToFinishByParent;
 @property _Bool started; // @synthesize started=_started;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool fetchAssetContents; // @synthesize fetchAssetContents=_fetchAssetContents;
 @property(copy, nonatomic) CDUnknownBlockType fetchAggregatorCompletionBlock; // @synthesize fetchAggregatorCompletionBlock=_fetchAggregatorCompletionBlock;
 @property(nonatomic) _Bool useRecordCache; // @synthesize useRecordCache=_useRecordCache;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_finishRecordFetchAggregator;
 - (void)finishIfAppropriate;

@@ -16,8 +16,8 @@
 }
 
 + (id)animationDelegateWithDidStopBlock:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType animationDidStopBlock; // @synthesize animationDidStopBlock=_animationDidStopBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType animationDidStopBlock; // @synthesize animationDidStopBlock=_animationDidStopBlock;
 - (void)associateLifetimeWithAnimation:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 

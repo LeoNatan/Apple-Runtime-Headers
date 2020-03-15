@@ -18,10 +18,10 @@
     NSArray *_contentRects;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canGenerateDocument; // @synthesize canGenerateDocument=_canGenerateDocument;
 @property(copy, nonatomic) NSArray *contentRects; // @synthesize contentRects=_contentRects;
 @property(copy, nonatomic) NSString *userActivityTitle; // @synthesize userActivityTitle=_userActivityTitle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *loggableDescription;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

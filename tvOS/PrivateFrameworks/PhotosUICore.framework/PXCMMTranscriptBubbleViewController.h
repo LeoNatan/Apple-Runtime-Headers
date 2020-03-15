@@ -40,6 +40,7 @@
 
 + (_Bool)_isPermanentFailureURL:(id)arg1;
 + (void)_registerPermanentFailureURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXMomentShareStatusPresentation *momentShareStatusPresentation; // @synthesize momentShareStatusPresentation=_momentShareStatusPresentation;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) _Bool isPending; // @synthesize isPending=_isPending;
 @property(readonly, nonatomic) _Bool isSender; // @synthesize isSender=_isSender;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)touchingUIGestureRecognizerWillEndTouching:(id)arg1;

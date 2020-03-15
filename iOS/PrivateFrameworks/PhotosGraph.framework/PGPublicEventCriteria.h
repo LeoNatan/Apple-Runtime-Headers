@@ -20,6 +20,7 @@
     NSArray *_prohibitedCriteria;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *prohibitedCriteria; // @synthesize prohibitedCriteria=_prohibitedCriteria;
 @property(retain, nonatomic) NSArray *highConfidenceCriteria; // @synthesize highConfidenceCriteria=_highConfidenceCriteria;
 @property(retain, nonatomic) NSArray *disambiguationCriteria; // @synthesize disambiguationCriteria=_disambiguationCriteria;
@@ -28,7 +29,6 @@
 @property(nonatomic) double maximumDistance; // @synthesize maximumDistance=_maximumDistance;
 @property(nonatomic) double minimumTimeAttendance; // @synthesize minimumTimeAttendance=_minimumTimeAttendance;
 @property(retain, nonatomic) NSString *eventCategory; // @synthesize eventCategory=_eventCategory;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasMinimumAttendance;
 - (_Bool)isMatchingEvent:(id)arg1 matchingOptions:(id)arg2 withHighConfidence:(_Bool *)arg3 matchingDistance:(double *)arg4;
 - (_Bool)_isMatchingMeaningDisambiguationForEvent:(id)arg1 matchingOptions:(id)arg2 withHighConfidence:(_Bool *)arg3;

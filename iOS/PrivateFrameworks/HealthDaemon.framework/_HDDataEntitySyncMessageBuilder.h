@@ -25,11 +25,11 @@
     HDSyncSession *_syncSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDSyncSession *syncSession; // @synthesize syncSession=_syncSession;
 @property(readonly, nonatomic) long long lastSyncAnchor; // @synthesize lastSyncAnchor=_lastSyncAnchor;
 @property(readonly, nonatomic) long long currentEncodedBytes; // @synthesize currentEncodedBytes=_currentEncodedBytes;
 @property(readonly, nonatomic) long long maxEncodedBytesPerMessage; // @synthesize maxEncodedBytesPerMessage=_maxEncodedBytesPerMessage;
-- (void).cxx_destruct;
 - (_Bool)finishAndFlush:(_Bool)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSArray *orderedProperties;
 - (_Bool)_sendCurrentCollectionWithAnchor:(long long)arg1 final:(_Bool)arg2 error:(id *)arg3;

@@ -33,6 +33,7 @@
 }
 
 + (Class)agentsType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool direct; // @synthesize direct=_direct;
 @property(nonatomic) _Bool local; // @synthesize local=_local;
 @property(nonatomic) _Bool ipv6; // @synthesize ipv6=_ipv6;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSString *clientUUID; // @synthesize clientUUID=_clientUUID;
 @property(retain, nonatomic) NWPBParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) NWPBEndpoint *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

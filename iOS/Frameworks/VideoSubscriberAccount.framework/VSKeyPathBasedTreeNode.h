@@ -13,8 +13,8 @@
     NSString *_keyPath;
 }
 
-@property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 - (id)initWithRepresentedObject:(id)arg1 keyPath:(id)arg2;
 - (id)initWithRepresentedObject:(id)arg1;
 - (id)init;

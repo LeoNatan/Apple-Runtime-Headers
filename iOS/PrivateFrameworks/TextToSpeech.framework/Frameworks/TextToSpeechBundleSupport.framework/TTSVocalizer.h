@@ -25,6 +25,7 @@
 - (unsigned int)_ttsVocalizerSetParameters:(struct _VE_HSAFE *)arg1 rate:(float)arg2 pitch:(float)arg3 volume:(float)arg4 footprintID:(long long)arg5;
 - (double)_ttsVocalizerGetSampleRate:(struct _VE_HSAFE *)arg1;
 - (unsigned int)_ttsVocalizerDestroyInstance:(struct _VE_HSAFE *)arg1;
+- (void)stopSynthesis;
 - (_Bool)readyForSynthesis:(struct _VE_HSAFE *)arg1;
 - (unsigned int)_ttsVocalizerCreateInstance:(struct _VE_HSAFE *)arg1 desiredVoiceName:(char **)arg2 desiredFootprint:(long long)arg3 languageCode:(struct __CFString *)arg4 voiceType:(long long)arg5;
 - (unsigned int)_ttsVocalizerVoiceInfoForActiveLanguage:(CDStruct_3f1f4513 *)arg1;

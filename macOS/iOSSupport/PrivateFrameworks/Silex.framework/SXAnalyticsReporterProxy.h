@@ -16,8 +16,8 @@
     id <SXAnalyticsReporting> _analyticsReporter;
 }
 
-@property(readonly, nonatomic) __weak id <SXAnalyticsReporting> analyticsReporter; // @synthesize analyticsReporter=_analyticsReporter;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <SXAnalyticsReporting> analyticsReporter; // @synthesize analyticsReporter=_analyticsReporter;
 - (void)reportEvent:(id)arg1;
 - (id)initWithAnalyticsReporter:(id)arg1;
 

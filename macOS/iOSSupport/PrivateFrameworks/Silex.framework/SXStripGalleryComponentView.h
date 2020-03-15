@@ -36,6 +36,7 @@
     NSMutableSet *_exposedGalleryItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *exposedGalleryItems; // @synthesize exposedGalleryItems=_exposedGalleryItems;
 @property(retain, nonatomic) SXImageView *targetGalleryItem; // @synthesize targetGalleryItem=_targetGalleryItem;
 @property(nonatomic) unsigned long long lastPreloadViewIndex; // @synthesize lastPreloadViewIndex=_lastPreloadViewIndex;
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) double xOffset; // @synthesize xOffset=_xOffset;
 @property(readonly, nonatomic) id <SXFullscreenCanvasControllerFactory> canvasControllerFactory; // @synthesize canvasControllerFactory=_canvasControllerFactory;
 @property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
-- (void).cxx_destruct;
 - (BOOL)allowHierarchyRemoval;
 - (void)preloadAdjacentViewsForIndex:(unsigned long long)arg1;
 - (void)finishMediaViewEvent;

@@ -25,7 +25,7 @@
 @property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (_Bool)containsAttributeWithDomain:(id)arg1 andName:(id)arg2;
 - (_Bool)areTargetPropertiesValid:(id)arg1 forAttributeWithDomain:(id)arg2 andName:(id)arg3;
-- (struct NSString *)endowmentNamespaceForDomain:(id)arg1 andName:(id)arg2;
+- (id)endowmentNamespaceForDomain:(id)arg1 andName:(id)arg2;
 - (id)originatorEntitlementsForDomain:(id)arg1 andName:(id)arg2;
 - (id)allEntitlements;
 - (id)attributesForDomain:(id)arg1 andName:(id)arg2 targetProperties:(id)arg3 withError:(id *)arg4;

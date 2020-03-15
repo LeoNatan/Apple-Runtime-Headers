@@ -16,8 +16,8 @@
     id _observer;
 }
 
-@property(retain, nonatomic) id observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id observer; // @synthesize observer=_observer;
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
 - (id)possibleStatesForEnumeration:(id)arg1;
 - (id)defaultSerializedRepresentationForEnumeration:(id)arg1;

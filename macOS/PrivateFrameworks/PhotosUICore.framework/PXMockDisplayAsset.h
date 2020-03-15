@@ -15,8 +15,8 @@
     NSDictionary *_backingDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
 @property(readonly, nonatomic) Class defaultImageProviderClass;
 @property(readonly, nonatomic) long long playbackVariation;
 @property(readonly, nonatomic) long long playbackStyle;

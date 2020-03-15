@@ -21,12 +21,12 @@
     BOOL _coldestFrameIsNotThreadId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *excludedFrames; // @synthesize excludedFrames=_excludedFrames;
 @property(readonly) VMUVMRegionTracker *regionTracker; // @synthesize regionTracker=_regionTracker;
 @property(readonly) BOOL coldestFrameIsNotThreadId; // @synthesize coldestFrameIsNotThreadId=_coldestFrameIsNotThreadId;
 @property(readonly) BOOL usesLiteMode; // @synthesize usesLiteMode=_usesLiteMode;
 @property(readonly) unsigned int task; // @synthesize task=_task;
-- (void).cxx_destruct;
 - (int)enumerateRecords:(CDUnknownBlockType)arg1;
 - (id)sourceFileNameAndLineNumberForPCaddress:(unsigned long long)arg1 fullPath:(BOOL)arg2;
 - (id)vmuVMRegionForAddress:(unsigned long long)arg1;

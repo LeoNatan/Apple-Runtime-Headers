@@ -35,6 +35,7 @@
     id <_UIDocumentSharingControllerDelegate_Private> __privateDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_legacyAppearance, setter=_setLegacyAppearance:) _Bool legacyAppearance; // @synthesize legacyAppearance=_legacyAppearance;
 @property(nonatomic, getter=_privateDelegate, setter=_setPrivateDelegate:) __weak id <_UIDocumentSharingControllerDelegate_Private> _privateDelegate; // @synthesize _privateDelegate=__privateDelegate;
 @property(copy, nonatomic, getter=_appName, setter=_setAppName:) NSString *appName; // @synthesize appName=_appName;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic, getter=_strongReferenceToOurself, setter=_setStrongReferenceToOurself:) UIViewController *strongReferenceToOurself; // @synthesize strongReferenceToOurself=_strongReferenceToOurself;
 @property(nonatomic, getter=_originalPresentingViewController, setter=_setOriginalPresentingViewController:) __weak UIViewController *originalPresentingViewController; // @synthesize originalPresentingViewController=_originalPresentingViewController;
 @property(retain, nonatomic, getter=_childViewController, setter=_setChildViewController:) _UIResilientRemoteViewContainerViewController *childViewController; // @synthesize childViewController=_childViewController;
-- (void).cxx_destruct;
 - (void)_representFullscreenAfterActivityDismissal:(CDUnknownBlockType)arg1;
 - (void)_dismissForActivityRepresentation:(CDUnknownBlockType)arg1;
 - (id)_sharingViewPresentationController;

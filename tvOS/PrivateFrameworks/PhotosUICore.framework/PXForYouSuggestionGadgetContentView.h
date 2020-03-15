@@ -37,14 +37,15 @@
 + (id)darkPlaceholderFilters;
 + (id)lightPlaceholderFilters;
 + (id)_gaussianBlurFilter;
-+ (struct UIFont *)titleLabelFont;
-+ (struct UIFont *)suggestionLabelFont;
++ (id)titleLabelFont;
++ (id)suggestionLabelFont;
 + (double)scaledSubtitleBaselineDistance;
 + (double)scaledTitleWithSuggestionBaselineDistance;
 + (double)scaledTitleBaselineDistance;
 + (double)scaledSuggestionBaselineDistance;
 + (void)preloadResources;
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 withSuggestion:(id)arg2 title:(id)arg3 subtitle:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long badgeTypes; // @synthesize badgeTypes=_badgeTypes;
 @property(copy, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(retain, nonatomic) PXRoundedCornerOverlayView *roundedOverlayView; // @synthesize roundedOverlayView=_roundedOverlayView;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) id <PXDisplayAsset> keyAsset; // @synthesize keyAsset=_keyAsset;
 @property(retain, nonatomic) id <PXDisplaySuggestion> suggestion; // @synthesize suggestion=_suggestion;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)_handleChangedAsset:(id)arg1;
 - (void)_updateBadgeContents;

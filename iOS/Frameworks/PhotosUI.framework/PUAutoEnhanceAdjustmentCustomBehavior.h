@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     PUAdjustmentsDataSource *_dataSource;
 }
 
-@property(nonatomic) __weak PUAdjustmentsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PUAdjustmentsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void)dataSource:(id)arg1 adjustmentInfo:(id)arg2 setEnabled:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties

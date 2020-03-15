@@ -17,11 +17,11 @@
     unsigned int _displayableTimeUnits;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool usingLegacyOperatorBehavior; // @synthesize usingLegacyOperatorBehavior=_usingLegacyOperatorBehavior;
 @property(readonly, nonatomic) unsigned int displayableTimeUnits; // @synthesize displayableTimeUnits=_displayableTimeUnits;
 @property(readonly, nonatomic) int contentType; // @synthesize contentType=_contentType;
 @property(readonly, nonatomic) NSArray *possibleContentOperators; // @synthesize possibleContentOperators=_possibleContentOperators;
-- (void).cxx_destruct;
 - (_Bool)parameterStateIsValid:(id)arg1;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;

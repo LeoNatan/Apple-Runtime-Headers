@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <PrototypeTools/NSCopying-Protocol.h>
+#import <PrototypeTools/NSSecureCoding-Protocol.h>
 #import <PrototypeTools/PTSettingsKeyPathObserver-Protocol.h>
 
 @class NSHashTable, NSPredicate, NSString, PTRowAction, PTSection, PTSettings, UIImage;
 
-@interface PTRow : NSObject <PTSettingsKeyPathObserver>
+@interface PTRow : NSObject <PTSettingsKeyPathObserver, NSCopying, NSSecureCoding>
 {
     NSHashTable *_observers;
+    BOOL _isEncodable;
     NSString *_valueKeyPath;
     NSString *_staticTitle;
     NSString *_titleKeyPath;
@@ -30,10 +33,13 @@
     PTSettings *_settings;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)rowWithTitle:(id)arg1 valueGetter:(CDUnknownBlockType)arg2 valueSetter:(CDUnknownBlockType)arg3;
 + (id)rowWithTitle:(id)arg1 valueKeyPath:(id)arg2;
 + (id)row;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PTSettings *settings; // @synthesize settings=_settings;
+@property(nonatomic) BOOL isEncodable; // @synthesize isEncodable=_isEncodable;
 @property(nonatomic) __weak PTSection *section; // @synthesize section=_section;
 @property(copy, nonatomic) CDUnknownBlockType unregisterBlock; // @synthesize unregisterBlock=_unregisterBlock;
 @property(copy, nonatomic) CDUnknownBlockType externalCondition; // @synthesize externalCondition=_externalCondition;
@@ -48,12 +54,17 @@
 @property(copy, nonatomic) NSString *titleKeyPath; // @synthesize titleKeyPath=_titleKeyPath;
 @property(copy, nonatomic) NSString *staticTitle; // @synthesize staticTitle=_staticTitle;
 @property(copy, nonatomic) NSString *valueKeyPath; // @synthesize valueKeyPath=_valueKeyPath;
-- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly) unsigned long long hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)_sendRowDidReload;
 - (void)_sendImageChanged;
 - (void)_sendTitleChanged;
 - (void)_sendValueChanged;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
+- (id)_validatedValue:(id)arg1;
 - (id)_defaultAction;
 - (void)reloadRow;
 - (void)removeObserver:(id)arg1;
@@ -78,7 +89,6 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

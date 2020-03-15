@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _sockSbMBFloor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long sockSbMBFloor; // @synthesize sockSbMBFloor=_sockSbMBFloor;
 @property(readonly, nonatomic) unsigned long long mbufDrainCount; // @synthesize mbufDrainCount=_mbufDrainCount;
 @property(readonly, nonatomic) unsigned long long mbufMemReleased; // @synthesize mbufMemReleased=_mbufMemReleased;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long mbuf2KBTotal; // @synthesize mbuf2KBTotal=_mbuf2KBTotal;
 @property(readonly, nonatomic) unsigned long long mbuf256BTotal; // @synthesize mbuf256BTotal=_mbuf256BTotal;
 @property(readonly, nonatomic) NSDate *reportTime; // @synthesize reportTime=_reportTime;
-- (void).cxx_destruct;
 - (BOOL)isHighWaterMarkGiven:(id)arg1;
 - (id)description;
 - (id)initWithReport:(id)arg1;

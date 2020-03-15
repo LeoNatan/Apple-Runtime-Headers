@@ -24,6 +24,7 @@
     WFAction *_action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 @property(nonatomic) __weak CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)actionRunningStateDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)updateShadowColorAnimated:(BOOL)arg1;

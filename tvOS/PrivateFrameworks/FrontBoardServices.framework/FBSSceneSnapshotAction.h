@@ -20,10 +20,10 @@
     BSSettings *_clientExtendedData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) BSSettings *clientExtendedData; // @synthesize clientExtendedData=_clientExtendedData;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType requestHandler; // @synthesize requestHandler=_requestHandler;
-- (void).cxx_destruct;
 - (Class)fallbackXPCEncodableClass;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

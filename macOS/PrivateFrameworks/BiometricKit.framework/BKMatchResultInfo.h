@@ -16,11 +16,11 @@
     long long _lockoutState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL credentialAdded; // @synthesize credentialAdded=_credentialAdded;
 @property(nonatomic) BOOL unlocked; // @synthesize unlocked=_unlocked;
 @property(nonatomic) long long lockoutState; // @synthesize lockoutState=_lockoutState;
 @property(retain, nonatomic) BKIdentity *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 - (id)initWithServerIdentity:(id)arg1 details:(id)arg2;
 
 @end

@@ -30,12 +30,14 @@
 
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
++ (id)reloadValueForSpecifier:(id)arg1;
 + (id)valueForSpecifier:(id)arg1 isSingleItemTitleContext:(_Bool)arg2;
 + (id)valueForSpecifier:(id)arg1;
 + (id)_configurationSpecifiersForBundle:(id)arg1 specifierTarget:(id)arg2;
 + (id)configurationSpecifiersForBundlesInPath:(id)arg1 specifierTarget:(id)arg2 bundleEnumerator:(CDUnknownBlockType)arg3;
 + (id)specifierSetFromBundle:(id)arg1 withPlistNamed:(id)arg2 specifierTarget:(id)arg3 parentSpecifier:(id)arg4;
 + (id)specifierSetWithSpecifierTarget:(id)arg1 parentSpecifier:(id)arg2 specifiers:(id)arg3;
+- (void).cxx_destruct;
 @property __weak id <NPRFSpecifierSetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSArray *errors; // @synthesize errors;
 @property(retain) NSArray *bundleControllers; // @synthesize bundleControllers;
@@ -43,7 +45,6 @@
 @property(retain) NSDictionary *sourcePlistContents; // @synthesize sourcePlistContents;
 @property(retain) NSString *sourcePlistName; // @synthesize sourcePlistName;
 @property(retain) NSBundle *sourceBundle; // @synthesize sourceBundle;
-- (void).cxx_destruct;
 - (void)_appendAndReportErrorWithMessage:(id)arg1;
 - (id)description;
 - (id)specifiersInGroupNumber:(int)arg1;

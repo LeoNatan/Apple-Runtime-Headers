@@ -18,10 +18,10 @@
     NSURL *_fileURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(nonatomic) _Bool allowsContentScaling; // @synthesize allowsContentScaling=_allowsContentScaling;
 @property(retain, nonatomic) NSURL *canonicalWebPageURL; // @synthesize canonicalWebPageURL=_canonicalWebPageURL;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *previewOptions;
 @property(readonly, nonatomic) NSURL *previewItemURL;
 - (id)initWithFileAtURL:(id)arg1;

@@ -29,6 +29,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)createCoreMLToEspressoParamsMap;
 + (id)loadModelFromCompiledArchive:(struct _MLModelInputArchiver *)arg1 modelVersionInfo:(id)arg2 compilerVersionInfo:(id)arg3 configuration:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MLParameterContainer *parameterContainer; // @synthesize parameterContainer=_parameterContainer;
 @property(retain, nonatomic) MLShufflingBatchProvider *shuffableTrainingData; // @synthesize shuffableTrainingData=_shuffableTrainingData;
 @property(nonatomic) _Bool continueWithUpdate; // @synthesize continueWithUpdate=_continueWithUpdate;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *lossTargetName; // @synthesize lossTargetName=_lossTargetName;
 @property(retain, nonatomic) ETTaskDefinition *task; // @synthesize task=_task;
 @property(retain, nonatomic) ETTaskState *snapshot; // @synthesize snapshot=_snapshot;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)biasForLayer:(id)arg1 error:(id *)arg2;

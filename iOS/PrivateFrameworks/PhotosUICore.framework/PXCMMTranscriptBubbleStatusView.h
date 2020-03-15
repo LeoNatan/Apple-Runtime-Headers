@@ -20,10 +20,10 @@
     struct UIEdgeInsets _bubbleSafeAreaInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsActivityIndicator; // @synthesize showsActivityIndicator=_showsActivityIndicator;
 @property(nonatomic) struct UIEdgeInsets bubbleSafeAreaInsets; // @synthesize bubbleSafeAreaInsets=_bubbleSafeAreaInsets;
 @property(retain, nonatomic) PXCMMSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (void)_updateRoundedCornerOverlayView;
 - (void)_updateActivityIndicator;
 - (struct CGSize)_performLayoutInSize:(struct CGSize)arg1 minimizingSize:(_Bool)arg2 updateSubviewFrames:(_Bool)arg3;

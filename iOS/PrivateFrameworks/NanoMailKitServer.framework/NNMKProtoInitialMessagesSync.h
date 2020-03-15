@@ -32,6 +32,7 @@
 }
 
 + (Class)initialMessageType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool organizedByThread; // @synthesize organizedByThread=_organizedByThread;
 @property(nonatomic) unsigned int mailboxSyncVersion; // @synthesize mailboxSyncVersion=_mailboxSyncVersion;
 @property(retain, nonatomic) NNMKProtoMailbox *mailbox; // @synthesize mailbox=_mailbox;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSMutableArray *initialMessages; // @synthesize initialMessages=_initialMessages;
 @property(retain, nonatomic) NSData *dateSynced; // @synthesize dateSynced=_dateSynced;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

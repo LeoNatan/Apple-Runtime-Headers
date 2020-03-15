@@ -19,12 +19,12 @@
 }
 
 + (id)sharedEvaluator;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimer *javaScriptVirtualMachineDestructionTimer; // @synthesize javaScriptVirtualMachineDestructionTimer=_javaScriptVirtualMachineDestructionTimer;
 @property(readonly, nonatomic) struct __CFRunLoop *javaScriptEvaluationThreadRunLoop; // @synthesize javaScriptEvaluationThreadRunLoop=_javaScriptEvaluationThreadRunLoop;
 @property(readonly, nonatomic) NSThread *javaScriptEvaluationThread; // @synthesize javaScriptEvaluationThread=_javaScriptEvaluationThread;
 @property(nonatomic) __weak id <WFRemoteQuarantinePolicyEvaluatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) JSVirtualMachine *javaScriptVirtualMachine; // @synthesize javaScriptVirtualMachine=_javaScriptVirtualMachine;
-- (void).cxx_destruct;
 - (void)_evaluatePolicyForRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)evaluatePolicyForRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;

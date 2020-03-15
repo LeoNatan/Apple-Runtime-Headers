@@ -27,10 +27,9 @@
     long long _animationState;
 }
 
-@property(nonatomic) long long animationState; // @synthesize animationState=_animationState;
 - (void).cxx_destruct;
+@property(nonatomic) long long animationState; // @synthesize animationState=_animationState;
 - (void)updateMetalLayer;
-- (void)orientationChanged;
 - (void)layoutSubviews;
 - (void)drawInDrawable:(id)arg1 withCommandBuffer:(id)arg2 timeDelta:(double)arg3;
 - (void)updateForCurrentTime:(double)arg1 timeDelta:(double)arg2;
@@ -40,11 +39,12 @@
 - (double)calcNextAnimationSwitchTime:(double)arg1 forState:(unsigned long long)arg2;
 - (void)clampCubeToQuarterRotation;
 - (void)updateCubeRotation:(id)arg1 motionTracker:(id)arg2;
+- (void)orientationChanged;
 - (void)updateWithFrame:(id)arg1 motionTracker:(id)arg2;
 - (void)killCoachingAnimation;
 - (void)startCoachingAnimation:(long long)arg1;
+- (struct CGSize)intrinsicContentSize;
 - (void)setupView;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -31,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canDecryptBAAEncryptedData; // @synthesize canDecryptBAAEncryptedData=_canDecryptBAAEncryptedData;
 @property(retain, nonatomic) NSError *policyError; // @synthesize policyError=_policyError;
 @property(nonatomic) BOOL canMakeRemotePayments; // @synthesize canMakeRemotePayments=_canMakeRemotePayments;
@@ -46,7 +47,6 @@
 @property(nonatomic) unsigned long long ownershipState; // @synthesize ownershipState=_ownershipState;
 @property(nonatomic) BOOL hasRemoteDevices; // @synthesize hasRemoteDevices=_hasRemoteDevices;
 @property(nonatomic) BOOL hasSecureElement; // @synthesize hasSecureElement=_hasSecureElement;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_isDemoModeActive) BOOL _isDemoModeActive;
 - (BOOL)canAddCardWithError:(id *)arg1;
 @property(readonly, nonatomic) BOOL canMakeLocalPayments;

@@ -16,9 +16,9 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IKMutableArray *declarations; // @synthesize declarations=_declarations;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)count;
 - (id)lastDeclaration;

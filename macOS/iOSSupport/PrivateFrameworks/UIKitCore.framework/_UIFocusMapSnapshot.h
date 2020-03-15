@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     id <_UIFocusMapArea> _searchArea;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_searchArea) id <_UIFocusMapArea> searchArea; // @synthesize searchArea=_searchArea;
 @property(retain, nonatomic) _UIFocusSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
 @property(readonly, nonatomic) __weak id <_UIFocusRegionContainer> regionsContainer; // @synthesize regionsContainer=_regionsContainer;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <_UIFocusMapArea> mapArea; // @synthesize mapArea=_mapArea;
 @property(readonly, nonatomic) __weak id <_UIFocusRegionContainer> rootContainer; // @synthesize rootContainer=_rootContainer;
 @property(readonly, nonatomic) __weak UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
-- (void).cxx_destruct;
 - (void)addRegionsInContainers:(id)arg1;
 - (void)addRegionsInContainer:(id)arg1;
 - (void)addRegions:(id)arg1;

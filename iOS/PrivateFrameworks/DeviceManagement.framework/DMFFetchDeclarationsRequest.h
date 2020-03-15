@@ -21,11 +21,11 @@
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includePayloadContents; // @synthesize includePayloadContents=_includePayloadContents;
 @property(nonatomic) _Bool includeInternalState; // @synthesize includeInternalState=_includeInternalState;
 @property(copy, nonatomic) NSArray *payloadIdentifiers; // @synthesize payloadIdentifiers=_payloadIdentifiers;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

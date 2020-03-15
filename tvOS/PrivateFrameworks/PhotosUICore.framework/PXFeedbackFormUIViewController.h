@@ -27,9 +27,9 @@
     id <PXFeedbackFormDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXFeedbackFormDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UITableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
-- (void).cxx_destruct;
 - (long long)_feedbackFormSectionForSectionIndex:(long long)arg1;
 - (void)_markCell:(id)arg1 asSelected:(_Bool)arg2;
 - (id)_feedbackKeyForIndexPath:(id)arg1;

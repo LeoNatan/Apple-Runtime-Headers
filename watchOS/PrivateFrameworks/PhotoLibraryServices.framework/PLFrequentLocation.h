@@ -19,11 +19,11 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *items; // @synthesize items=_items;
 @property(readonly) id <PLMomentProtocol> centroid; // @synthesize centroid=_centroid;
 @property(readonly) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (_Bool)isWithinDistance:(double)arg1 toCoordinate:(struct CLLocationCoordinate2D)arg2;
 - (_Bool)isSimilarToFrequentLocation:(id)arg1;
 @property(readonly, copy) NSString *description;

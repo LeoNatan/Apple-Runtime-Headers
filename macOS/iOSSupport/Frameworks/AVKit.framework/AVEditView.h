@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     UIMovieScrubber *_movieScrubber;
 }
 
+- (void).cxx_destruct;
 @property(retain) UIMovieScrubber *movieScrubber; // @synthesize movieScrubber=_movieScrubber;
 @property(nonatomic, getter=isTrimming) BOOL trimming; // @synthesize trimming=_trimming;
 @property(nonatomic, getter=isScrubbing) BOOL scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) BOOL prefersThumbVisible; // @synthesize prefersThumbVisible=_prefersThumbVisible;
 @property(nonatomic) __weak id <AVEditViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AVEditViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)movieScrubberDidFinishRequestingThumbnails:(id)arg1;
 - (void)movieScrubberWillBeginRequestingThumbnails:(id)arg1;
 - (void)movieScrubber:(id)arg1 editingEndValueDidChange:(double)arg2;

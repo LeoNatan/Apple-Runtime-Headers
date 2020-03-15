@@ -13,8 +13,8 @@
     SMMigrationCustomizeViewController *controller;
 }
 
-@property(retain) SMMigrationCustomizeViewController *controller; // @synthesize controller;
 - (void).cxx_destruct;
+@property(retain) SMMigrationCustomizeViewController *controller; // @synthesize controller;
 - (void)pressedEdit:(id)arg1;
 - (void)dealloc;
 

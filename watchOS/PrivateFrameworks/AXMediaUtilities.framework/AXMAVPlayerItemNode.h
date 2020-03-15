@@ -19,9 +19,9 @@
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMVisionAnalysisOptions *analysisOptions; // @synthesize analysisOptions=_analysisOptions;
 @property(readonly, nonatomic, getter=isTriggeringLegibilityEvents) _Bool triggeringLegibilityEvents; // @synthesize triggeringLegibilityEvents=_triggeringLegibilityEvents;
-- (void).cxx_destruct;
 - (void)endAutoTriggerOfLegibilityEvents;
 - (void)autoTriggerLegibilityEventsWithAVPlayerItem:(id)arg1;
 - (void)nodeInitialize;

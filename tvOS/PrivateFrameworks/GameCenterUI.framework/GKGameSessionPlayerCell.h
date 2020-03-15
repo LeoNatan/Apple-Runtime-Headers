@@ -23,6 +23,7 @@
 
 + (double)preferredCollectionHeight;
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(nonatomic) double playerViewBottomToNameLabelTopConstant; // @synthesize playerViewBottomToNameLabelTopConstant=_playerViewBottomToNameLabelTopConstant;
 @property(retain, nonatomic) UIColor *statusColor; // @synthesize statusColor=_statusColor;
 @property(retain, nonatomic) UIColor *nameColor; // @synthesize nameColor=_nameColor;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak GKGameSessionPlayerShadowView *playerView; // @synthesize playerView=_playerView;
 @property(nonatomic) _Bool onDarkBackground; // @synthesize onDarkBackground=_onDarkBackground;
 @property(retain, nonatomic) GKCloudPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

@@ -18,10 +18,10 @@
     CNContact *_contact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) id <CNContactLikenessMutator> contactStoreMutator; // @synthesize contactStoreMutator=_contactStoreMutator;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
-- (void).cxx_destruct;
 - (id)setLikenessAsCurrent:(id)arg1;
 - (id)deleteLikeness:(id)arg1;
 - (id)updateLikeness:(id)arg1;

@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_indexColumnList;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *indexColumnList; // @synthesize indexColumnList=_indexColumnList;
 @property(readonly, nonatomic) NSMutableArray *availableOptions; // @synthesize availableOptions;
 @property(readonly, nonatomic) NSMutableArray *nsRemapTable; // @synthesize nsRemapTable;
 @property(readonly, nonatomic) NSMutableString *schemaHeaderWithType; // @synthesize schemaHeaderWithType;
 @property(readonly, nonatomic) NSMutableString *schemaHeader; // @synthesize schemaHeader;
 @property(readonly, nonatomic) NSMutableArray *attribute; // @synthesize attribute;
-- (void).cxx_destruct;
 - (id)getSubstituteValue:(unsigned long long)arg1;
 - (_Bool)matchSubstituteValue:(unsigned long long)arg1 theValue:(id)arg2;
 - (unsigned long long)getUserDefinedCategoricalDataCount:(unsigned long long)arg1;

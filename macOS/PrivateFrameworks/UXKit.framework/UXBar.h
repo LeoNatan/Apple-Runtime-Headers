@@ -32,6 +32,7 @@
     struct NSEdgeInsets _decorationInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets decorationInsets; // @synthesize decorationInsets=_decorationInsets;
 @property(retain, nonatomic) UXView<_UXBarItemsContainer> *barItemsContainer; // @synthesize barItemsContainer=_barItemsContainer;
 @property(nonatomic) double globalTrailingViewWidthMultiplier; // @synthesize globalTrailingViewWidthMultiplier=_globalTrailingViewWidthMultiplier;
@@ -44,7 +45,6 @@
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(retain, nonatomic) NSColor *barTintColor; // @synthesize barTintColor=_barTintColor;
-- (void).cxx_destruct;
 - (void)_updateDecorationLine;
 @property(readonly, nonatomic) long long barPosition;
 - (struct CGSize)intrinsicContentSize;

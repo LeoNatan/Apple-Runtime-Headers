@@ -15,15 +15,15 @@
 {
     _ICQPageSpecification *_pageSpecification;
     UIColor *_buttonTintColor;
-    id <ICQPageDelegate> _delegate;
+    id <ICQPageDelegate> _pageDelegate;
 }
 
 + (_Bool)supportsPageClassIdentifier:(id)arg1;
 + (Class)viewControllerClassForPageClassIdentifier:(id)arg1;
-@property(nonatomic) __weak id <ICQPageDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
+@property(nonatomic) __weak id <ICQPageDelegate> pageDelegate; // @synthesize pageDelegate=_pageDelegate;
 @property(copy, nonatomic) UIColor *buttonTintColor; // @synthesize buttonTintColor=_buttonTintColor;
 @property(readonly, nonatomic) _ICQPageSpecification *pageSpecification; // @synthesize pageSpecification=_pageSpecification;
-- (void).cxx_destruct;
 - (void)sender:(id)arg1 action:(long long)arg2 parameters:(id)arg3;
 - (id)initWithPageSpecification:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -19,9 +19,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)requestWithURLs:(id)arg1 andSceneIdentifiers:(id)arg2;
 + (id)requestWithURLs:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sceneIdentifiers; // @synthesize sceneIdentifiers=_sceneIdentifiers;
 @property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURLs:(id)arg1 andSceneIdentifiers:(id)arg2;

@@ -20,6 +20,7 @@
 }
 
 + (id)templateWithName:(id)arg1 andKeyPath:(id)arg2 andValueName:(id)arg3 andValue:(BOOL)arg4;
+- (void).cxx_destruct;
 @property BOOL hasCreatedViews; // @synthesize hasCreatedViews=_hasCreatedViews;
 @property(copy) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property BOOL value; // @synthesize value=_value;
@@ -27,7 +28,6 @@
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(retain) NSPopUpButton *valuePopup; // @synthesize valuePopup=_valuePopup;
 @property(retain) NSPopUpButton *leftExpressionPopup; // @synthesize leftExpressionPopup=_leftExpressionPopup;
-- (void).cxx_destruct;
 - (id)predicateWithSubpredicates:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (double)matchForPredicate:(id)arg1;

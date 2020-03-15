@@ -13,8 +13,8 @@
     NSMutableDictionary *_ads;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *ads; // @synthesize ads=_ads;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *ads; // @synthesize ads=_ads;
 - (void)removeAd:(id)arg1;
 - (void)addAd:(id)arg1;
 - (id)adsForState:(unsigned long long)arg1;

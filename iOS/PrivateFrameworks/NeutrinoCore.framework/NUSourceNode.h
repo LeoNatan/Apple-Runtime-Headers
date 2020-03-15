@@ -14,9 +14,9 @@
     id <NUSourceDerivation> _sourceDerivation;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NUSourceDerivation> sourceDerivation; // @synthesize sourceDerivation=_sourceDerivation;
 @property __weak NURenderNode *originalNode; // @synthesize originalNode=_originalNode;
-- (void).cxx_destruct;
 - (id)_evaluateVideoComposition:(out id *)arg1;
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;

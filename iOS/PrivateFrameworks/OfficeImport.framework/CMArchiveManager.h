@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
 + (id)resourceTypeToExtension:(int)arg1;
 + (id)resourceTypeToMIME:(int)arg1;
 + (int)blipTypeToResourceType:(int)arg1;
+- (void).cxx_destruct;
 @property _Bool noDecorations; // @synthesize noDecorations=_noDecorations;
 @property(copy) NSString *passphrase; // @synthesize passphrase=mPassphrase;
-- (void).cxx_destruct;
 - (_Bool)isCancelled;
 - (void)setHTMLWidth:(int)arg1;
 - (void)setHTMLHeight:(int)arg1;

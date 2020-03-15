@@ -22,6 +22,7 @@
     long long _dislikeCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long dislikeCount; // @synthesize dislikeCount=_dislikeCount;
 @property(nonatomic) long long likeCount; // @synthesize likeCount=_likeCount;
 @property(retain, nonatomic) NSArray *metadataValues; // @synthesize metadataValues=_metadataValues;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(copy, nonatomic) NSString *rightLabel; // @synthesize rightLabel=_rightLabel;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

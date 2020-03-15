@@ -18,9 +18,9 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *interposes; // @synthesize interposes=_interposes;
 @property(retain) NSObject<OS_nw_interpose> *nw_interpose; // @synthesize nw_interpose=_nw_interpose;
-- (void).cxx_destruct;
 - (void)stopWithReason:(int)arg1;
 - (void)dealloc;
 - (void)startFilterWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

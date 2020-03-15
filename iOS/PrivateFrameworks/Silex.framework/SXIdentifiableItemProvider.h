@@ -13,8 +13,8 @@
     NSString *_identifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)initWithObject:(id)arg1 identifier:(id)arg2;
 
 @end

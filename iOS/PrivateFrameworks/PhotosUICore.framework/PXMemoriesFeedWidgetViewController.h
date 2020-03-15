@@ -34,6 +34,7 @@
     PXMemoriesFeedWidgetLayoutMetrics *__metrics;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setMetrics:) PXMemoriesFeedWidgetLayoutMetrics *_metrics; // @synthesize _metrics=__metrics;
 @property(nonatomic) _Bool hasAnyMemories; // @synthesize hasAnyMemories=_hasAnyMemories;
 @property(nonatomic, setter=_setRequestDismissalID:) long long _requestDismissalID; // @synthesize _requestDismissalID=__requestDismissalID;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) PXMemoriesFeedViewControllerHelper *_helper; // @synthesize _helper=__helper;
 @property(nonatomic, setter=_setAvailableNumberOfRows:) unsigned long long availableNumberOfRows; // @synthesize availableNumberOfRows=_availableNumberOfRows;
 @property(nonatomic) __weak id <PXMemoriesFeedWidgetViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleSpecChange;
 - (void)_handleDataSourceChange;
 - (void)_updateAvailableNumberOfRows;

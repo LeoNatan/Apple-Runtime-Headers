@@ -14,9 +14,9 @@
     NSArray *_matchingContacts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *matchingContacts; // @synthesize matchingContacts=_matchingContacts;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)containsFamilyMember:(id)arg1;
 @property(readonly, nonatomic) _Bool isParent;

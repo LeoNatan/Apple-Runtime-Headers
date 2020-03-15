@@ -8,22 +8,24 @@
 
 #import <XCTest/NSCopying-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, XCUIKeyboardKeyMap;
+@class NSMutableArray, NSMutableDictionary, NSString, XCUIKeyboardKeyMap;
 
 @interface XCKeyboardInputSolver : NSObject <NSCopying>
 {
+    BOOL _includeModifierKeys;
     XCUIKeyboardKeyMap *_keyMap;
     NSString *_string;
     unsigned long long _requiredFlags;
     unsigned long long _excludedFlags;
     unsigned long long _currentFlags;
-    BOOL _includeModifierKeys;
-    struct _NSRange _unsolvedRange;
     NSMutableArray *_solvedInputs;
     NSMutableDictionary *_solvingPaths;
+    struct _NSRange _unsolvedRange;
 }
 
-@property(readonly) NSArray *solvedInputs; // @synthesize solvedInputs=_solvedInputs;
+- (void).cxx_destruct;
+@property(readonly) NSMutableDictionary *solvingPaths; // @synthesize solvingPaths=_solvingPaths;
+@property(readonly) NSMutableArray *solvedInputs; // @synthesize solvedInputs=_solvedInputs;
 @property(readonly) struct _NSRange unsolvedRange; // @synthesize unsolvedRange=_unsolvedRange;
 @property BOOL includeModifierKeys; // @synthesize includeModifierKeys=_includeModifierKeys;
 @property unsigned long long currentFlags; // @synthesize currentFlags=_currentFlags;
@@ -31,7 +33,6 @@
 @property unsigned long long requiredFlags; // @synthesize requiredFlags=_requiredFlags;
 @property(readonly, copy) NSString *string; // @synthesize string=_string;
 @property(readonly) XCUIKeyboardKeyMap *keyMap; // @synthesize keyMap=_keyMap;
-- (void).cxx_destruct;
 - (id)_solve;
 - (id)solve;
 - (void)solveWithSolutionRange:(struct _NSRange)arg1 results:(id)arg2;

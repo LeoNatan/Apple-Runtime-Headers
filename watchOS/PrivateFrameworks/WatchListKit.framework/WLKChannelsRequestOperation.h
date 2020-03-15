@@ -15,10 +15,10 @@
     NSString *_caller;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *caller; // @synthesize caller=_caller;
 @property(retain, nonatomic) WLKChannelsResponse *channelsResponse; // @synthesize channelsResponse=_channelsResponse;
 @property(nonatomic) _Bool filtered; // @synthesize filtered=_filtered;
-- (void).cxx_destruct;
 - (void)processResponse;
 - (id)initWithCaller:(id)arg1 filtered:(_Bool)arg2;
 - (id)initWithCaller:(id)arg1;

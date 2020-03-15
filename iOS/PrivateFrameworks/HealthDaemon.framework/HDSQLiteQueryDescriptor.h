@@ -21,6 +21,7 @@
     NSArray *_preferredEntityJoinOrder;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *preferredEntityJoinOrder; // @synthesize preferredEntityJoinOrder=_preferredEntityJoinOrder;
 @property(copy, nonatomic) NSString *groupBy; // @synthesize groupBy=_groupBy;
 @property(copy, nonatomic) HDSQLitePredicate *predicate; // @synthesize predicate=_predicate;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSArray *orderingTerms; // @synthesize orderingTerms=_orderingTerms;
 @property(nonatomic) long long limitCount; // @synthesize limitCount=_limitCount;
 @property(nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
-- (void).cxx_destruct;
 - (id)_SQLForDeleteWithError:(id *)arg1;
 - (id)_joinClauseForProperties:(id)arg1;
 - (id)_SQLForSelectWithProperties:(id)arg1 columns:(id)arg2;

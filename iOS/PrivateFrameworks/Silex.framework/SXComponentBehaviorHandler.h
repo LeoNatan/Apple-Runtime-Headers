@@ -15,10 +15,10 @@
     SXComponentBehavior *_behavior;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isSetup; // @synthesize isSetup=_isSetup;
 @property(readonly, nonatomic) SXComponentBehavior *behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) SXComponentView *componentView; // @synthesize componentView=_componentView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requiresContinuousUpdates;
 @property(readonly, nonatomic) UIView *behaviorView;
 - (void)destroyWithBehaviorController:(id)arg1;

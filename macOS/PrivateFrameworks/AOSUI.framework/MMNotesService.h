@@ -17,9 +17,9 @@
     BOOL _addressCreationPending;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL addressCreationPending; // @synthesize addressCreationPending=_addressCreationPending;
 @property(retain, nonatomic) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
-- (void).cxx_destruct;
 - (void)_closeModalWindow;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 - (void)configureRuntimeResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 

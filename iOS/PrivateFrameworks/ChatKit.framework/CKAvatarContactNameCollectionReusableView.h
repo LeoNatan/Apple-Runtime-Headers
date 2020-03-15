@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)supplementaryViewKind;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool shouldDisplayTitle; // @synthesize shouldDisplayTitle=_shouldDisplayTitle;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)configureWithEntity:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

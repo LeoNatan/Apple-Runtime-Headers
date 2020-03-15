@@ -78,13 +78,14 @@
     id <EKEventViewDelegate> _delegate;
     int _editorShowTransition;
     int _editorHideTransition;
-    struct NSDictionary *_context;
+    NSDictionary *_context;
     struct UIEdgeInsets _layoutMargins;
 }
 
 + (void)adjustLayoutForCell:(id)arg1 tableViewWidth:(float)arg2 numRowsInSection:(unsigned int)arg3 cellRow:(unsigned int)arg4 forceLayout:(_Bool)arg5;
 + (id)_orderedActionsForMask:(int)arg1;
 + (void)setDefaultDatesForEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) int editorHideTransition; // @synthesize editorHideTransition=_editorHideTransition;
@@ -105,7 +106,6 @@
 @property _Bool viewIsVisible; // @synthesize viewIsVisible=_viewIsVisible;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) __weak id <EKEventViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFirstResponder;
 - (void)_performEditKeyCommand;
 - (void)_setUpkeyCommands;
@@ -249,7 +249,7 @@
 - (void)dealloc;
 - (void)_teardownTableView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithContext:(struct NSDictionary *)arg1;
+- (id)initWithContext:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

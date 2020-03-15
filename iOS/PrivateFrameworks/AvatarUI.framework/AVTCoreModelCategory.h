@@ -12,21 +12,21 @@
 {
     NSArray *_colorPalettes;
     NSArray *_presets;
-    struct NSDictionary *_tags;
+    NSDictionary *_tags;
     NSArray *_rows;
     long long _presetCategory;
     AVTCoreModelCategoryPairing *_pairing;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) AVTCoreModelCategoryPairing *pairing; // @synthesize pairing=_pairing;
 @property(readonly, nonatomic) long long presetCategory; // @synthesize presetCategory=_presetCategory;
 @property(readonly, copy, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(readonly, copy, nonatomic) NSDictionary *tags; // @synthesize tags=_tags;
 @property(readonly, copy, nonatomic) NSArray *presets; // @synthesize presets=_presets;
 @property(readonly, nonatomic) NSArray *colorPalettes; // @synthesize colorPalettes=_colorPalettes;
-- (void).cxx_destruct;
 - (id)description;
-- (id)initWithPresetCategory:(long long)arg1 colorPalettes:(id)arg2 presets:(id)arg3 tags:(struct NSDictionary *)arg4 rows:(id)arg5 pairing:(id)arg6;
+- (id)initWithPresetCategory:(long long)arg1 colorPalettes:(id)arg2 presets:(id)arg3 tags:(id)arg4 rows:(id)arg5 pairing:(id)arg6;
 
 @end
 

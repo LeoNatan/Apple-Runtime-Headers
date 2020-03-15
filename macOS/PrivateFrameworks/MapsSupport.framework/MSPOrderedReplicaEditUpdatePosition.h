@@ -14,9 +14,9 @@
     MSPVectorTimestamp *_positionTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSPVectorTimestamp *positionTimestamp; // @synthesize positionTimestamp=_positionTimestamp;
 @property(readonly, nonatomic) MSPPosition *position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

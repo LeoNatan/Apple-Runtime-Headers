@@ -30,6 +30,7 @@
 }
 
 + (Class)bundleIdentifierHierarchyType;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isEmptyDeprecated; // @synthesize isEmptyDeprecated=_isEmptyDeprecated;
 @property(retain, nonatomic) NSMutableArray *bundleIdentifierHierarchys; // @synthesize bundleIdentifierHierarchys=_bundleIdentifierHierarchys;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *parentApplicationBundleIdentifier; // @synthesize parentApplicationBundleIdentifier=_parentApplicationBundleIdentifier;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

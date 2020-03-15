@@ -18,12 +18,12 @@
     NSTimer *_acknowledgementTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTimer *acknowledgementTimer; // @synthesize acknowledgementTimer=_acknowledgementTimer;
 @property(retain, nonatomic) NSMutableArray *typedStringsAwaitingAcknowledgement; // @synthesize typedStringsAwaitingAcknowledgement=_typedStringsAwaitingAcknowledgement;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) __weak id <_TVRCMediaRemoteKeyboardAdapterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) _TVRCMRTelevisionWrapper *television; // @synthesize television=_television;
-- (void).cxx_destruct;
 - (void)_resetTextValueToSessionValue;
 - (void)_acknowledgementTimerExpired:(id)arg1;
 - (void)receivedRemotelyUpdatedText:(id)arg1;

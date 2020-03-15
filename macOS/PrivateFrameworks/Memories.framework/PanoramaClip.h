@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedRandomNumberGenerator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) KenBurnsClip *templateClip; // @synthesize templateClip=_templateClip;
 @property(retain, nonatomic) NSArray *containedClips; // @synthesize containedClips=_containedClips;
 @property(retain, nonatomic) NSArray *detectedFaceRects; // @synthesize detectedFaceRects=_detectedFaceRects;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double panoramaTransitionDuration; // @synthesize panoramaTransitionDuration=_panoramaTransitionDuration;
 @property(nonatomic) unsigned long long panoramaDirection; // @synthesize panoramaDirection=_panoramaDirection;
 @property(nonatomic) unsigned long long panoramaStyle; // @synthesize panoramaStyle=_panoramaStyle;
-- (void).cxx_destruct;
 - (void)logDetectedFaceRects;
 - (struct CGRect)rectEnclosingAllFacesWithFaceScale:(double)arg1 imageRect:(struct CGRect)arg2;
 - (struct CGSize)panoramaViewportSizeForImageSize:(struct CGSize)arg1;

@@ -8,7 +8,7 @@
 
 #import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
 
-@class CLInUseAssertion, NSArray, NSObject, NSString, OBPrivacyLinkController, PKAddPaymentPassRequest, PKAddPaymentPassRequestConfiguration, PKPasscodeUpgradeFlowController, PKPaymentProvisioningController, PKPaymentWebService, PKTableHeaderView, RemoteUIController;
+@class CLInUseAssertion, NSArray, NSObject, NSString, OBPrivacyLinkController, PKAddPaymentPassRequest, PKAddPaymentPassRequestConfiguration, PKPasscodeUpgradeFlowController, PKPaymentProvisioningController, PKPaymentProvisioningTracker, PKPaymentWebService, PKTableHeaderView, RemoteUIController;
 @protocol NSObject, OS_dispatch_source, PKAddPaymentPassRequestViewControllerDelegate, PKPaymentSetupViewControllerDelegate;
 
 @interface PKAddPaymentPassRequestViewController : UITableViewController <PKPaymentSetupViewControllerDelegate>
@@ -32,6 +32,7 @@
     PKTableHeaderView *_headerView;
     OBPrivacyLinkController *_privacyController;
     RemoteUIController *_termsController;
+    PKPaymentProvisioningTracker *_provisioningTracker;
     _Bool _hidePrivacy;
     _Bool _singleTarget;
     id <PKAddPaymentPassRequestViewControllerDelegate> _delegate;
@@ -40,13 +41,15 @@
 }
 
 + (id)backgroundColor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) __weak id <PKAddPaymentPassRequestViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool singleTarget; // @synthesize singleTarget=_singleTarget;
 @property(nonatomic) _Bool hidePrivacy; // @synthesize hidePrivacy=_hidePrivacy;
-- (void).cxx_destruct;
 - (void)_provisioningLocalizedProgressDescriptionDidChange:(id)arg1;
+- (void)_promptHSA2Required;
+- (void)_handleRawResponseData:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_presentDisplayableError:(id)arg1 allowEarlyExit:(_Bool)arg2;
 - (void)_presentDisplayableError:(id)arg1;
 - (void)_setupTermsControllerHandlerWithNavigationController:(id)arg1 forCompletion:(CDUnknownBlockType)arg2;

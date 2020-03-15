@@ -22,8 +22,8 @@
 
 + (void)_deallocInstance:(id)arg1;
 + (id)sharedInstanceWithPixelFormat:(unsigned long long)arg1;
-@property(readonly, nonatomic) id <MTLBuffer> mtlBuffer; // @synthesize mtlBuffer=_mtlBuffer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <MTLBuffer> mtlBuffer; // @synthesize mtlBuffer=_mtlBuffer;
 - (id)getGeometryBuffer;
 - (id)getPipelineForShaderType:(unsigned long long)arg1 blending:(_Bool)arg2;
 - (void)_queue_loadPrograms;

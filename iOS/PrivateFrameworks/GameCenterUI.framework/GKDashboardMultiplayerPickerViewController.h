@@ -44,6 +44,7 @@
     struct UIEdgeInsets _initialInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *composeController; // @synthesize composeController=_composeController;
 @property(retain, nonatomic) GKDashboardCollectionViewController *searchResultsCollectionViewController; // @synthesize searchResultsCollectionViewController=_searchResultsCollectionViewController;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
@@ -70,7 +71,6 @@
 @property(nonatomic) _Bool supportsNearby; // @synthesize supportsNearby=_supportsNearby;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)_updateCollectionView;
 - (void)scrollViewDidScroll:(id)arg1;

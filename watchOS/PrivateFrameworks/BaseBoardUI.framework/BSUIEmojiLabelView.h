@@ -15,8 +15,8 @@
     NSString *_rawText;
 }
 
-@property(readonly, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 - (id)_newLabel;
 @property(nonatomic) _Bool adjustsFontSizeToFitWidth;
 @property(nonatomic) int lineBreakMode;

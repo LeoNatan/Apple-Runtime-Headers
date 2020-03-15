@@ -18,9 +18,9 @@
 
 + (id)messageWithBuffer:(char *)arg1 length:(int)arg2;
 + (id)messageWithCommand:(long long)arg1 attributes:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSData *hmacKeyData; // @synthesize hmacKeyData=_hmacKeyData;
 @property(readonly, nonatomic) long long command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (_Bool)read:(char *)arg1 inputLength:(int)arg2;
 - (_Bool)write:(char *)arg1 outputLength:(int *)arg2;
 - (_Bool)verifyHMacDigestWithKey:(id)arg1 inputBuffer:(char *)arg2 inputLength:(int)arg3;

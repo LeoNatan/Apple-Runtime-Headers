@@ -46,6 +46,7 @@
 + (int)fallbackReasonToErrno:(long long)arg1;
 + (id)getFallbackReasonDescription:(long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *timingIntervals; // @synthesize timingIntervals=_timingIntervals;
 @property(retain, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(retain, nonatomic) NSDictionary *exceptions; // @synthesize exceptions=_exceptions;
@@ -72,7 +73,6 @@
 @property(nonatomic) double fallbackDelay; // @synthesize fallbackDelay=_fallbackDelay;
 @property(readonly, nonatomic) long long fallbackReasonCategory; // @synthesize fallbackReasonCategory=_fallbackReasonCategory;
 @property(nonatomic) long long pathType; // @synthesize pathType=_pathType;
-- (void).cxx_destruct;
 - (id)timingIntervalAtIndex:(unsigned long long)arg1 forKey:(id)arg2;
 @property(nonatomic) long long fallbackReason;
 - (id)copyDictionary;

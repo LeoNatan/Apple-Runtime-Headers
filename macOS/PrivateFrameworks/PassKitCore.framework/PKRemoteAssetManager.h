@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, NSURL;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface PKRemoteAssetManager : NSObject
@@ -16,9 +16,11 @@
     NSMutableDictionary *_manifestItemsByRelativeURL;
     NSMutableDictionary *_sha1HexFromRelativeManifest;
     NSMutableArray *_completionHandlers;
+    NSArray *_seids;
 }
 
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *seids; // @synthesize seids=_seids;
 - (void)_flushBundleCaches;
 - (BOOL)addRemoteAssetData:(id)arg1 shouldWriteData:(BOOL)arg2 forManifestItem:(id)arg3 error:(id *)arg4;
 - (BOOL)addRemoteAssetData:(id)arg1 forManifestItem:(id)arg2 error:(id *)arg3;

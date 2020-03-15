@@ -17,15 +17,15 @@
     WFPropertyListParameterValue *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFPropertyListParameterValue *value; // @synthesize value=_value;
 @property(readonly, nonatomic) WFVariableString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializedRepresentation;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
 - (id)containedVariables;
-- (void)getProcessedPair:(CDUnknownBlockType)arg1 variableSource:(id)arg2 parameter:(id)arg3 userInputRequiredHandler:(CDUnknownBlockType)arg4;
+- (void)getProcessedPair:(CDUnknownBlockType)arg1 context:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3;
 - (id)initWithKey:(id)arg1 value:(id)arg2;
 
 // Remaining properties

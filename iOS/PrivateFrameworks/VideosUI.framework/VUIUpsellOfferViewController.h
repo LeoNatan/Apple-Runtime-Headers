@@ -17,13 +17,14 @@ __attribute__((visibility("hidden")))
     VUIUpsellOfferTransactionView *_transactionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIUpsellOfferTransactionView *transactionView; // @synthesize transactionView=_transactionView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) VUIUpsellOfferView *upsellView; // @synthesize upsellView=_upsellView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_iOS_updateViews;
 - (void)traitCollectionDidChange:(id)arg1;
+- (long long)_overrideLargeTitleDisplayMode;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)updateWithViewElement:(id)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _fetchCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType fetchCompletionBlock; // @synthesize fetchCompletionBlock=_fetchCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType fetchCompletionBlock; // @synthesize fetchCompletionBlock=_fetchCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)actionMain;
 - (id)initForApplicationProxy:(id)arg1 providerDomain:(id)arg2;

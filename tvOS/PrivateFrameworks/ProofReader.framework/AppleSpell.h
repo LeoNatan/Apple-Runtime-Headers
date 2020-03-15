@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSBundle, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL;
+@class NSArray, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface AppleSpell : NSObject
@@ -50,7 +50,6 @@
     NSMutableArray *_retainedSamples;
     NSMutableDictionary *_lastSampleRecorded;
     double _lastSampleRecording;
-    NSBundle *_dataBundle;
     NSMutableArray *_altBundleURLs;
     NSObject<OS_dispatch_queue> *_assetDataBundleSerialQueue;
     NSMutableDictionary *_assetDataBundleURLDictionary;
@@ -111,6 +110,7 @@
 - (id)fallbackLocalizationForLanguage:(id)arg1;
 - (id)localizationForLanguage:(id)arg1;
 - (id)localizationsForLanguage:(id)arg1;
+- (void)resetDataBundlesForAllLanguages;
 - (void)resetDataBundlesForLanguage:(id)arg1;
 - (id)dataBundlesForLanguage:(id)arg1;
 - (id)dataBundle;
@@ -177,6 +177,7 @@
 - (_Bool)validateUntilLearnedWord:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateNoCapAbbreviation:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateVariantWord:(id)arg1 inLexiconForLanguage:(id)arg2;
+- (_Bool)validateAdditionalWord:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateWord:(id)arg1 inLexiconForLanguage:(id)arg2;
 - (_Bool)validateWord:(id)arg1 inLexicons:(id)arg2 forLanguage:(id)arg3 requiredMetaFlags:(unsigned int)arg4 alternativeRequiredMetaFlags:(unsigned int)arg5 prohibitedMetaFlags:(unsigned int)arg6 caseInsensitive:(_Bool)arg7;
 - (void)updateAllLexicons;
@@ -199,6 +200,7 @@
 - (_Bool)validateWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 connection:(struct _PR_DB_IO *)arg4 sender:(id)arg5 checkBase:(_Bool)arg6 checkDict:(_Bool)arg7 checkTemp:(_Bool)arg8 checkNames:(_Bool)arg9 checkHyphens:(_Bool)arg10 checkIntercaps:(_Bool)arg11 checkOptions:(_Bool)arg12 depth:(unsigned long long)arg13;
 - (_Bool)validateWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 connection:(struct _PR_DB_IO *)arg4 sender:(id)arg5 checkBase:(_Bool)arg6 checkDict:(_Bool)arg7 checkTemp:(_Bool)arg8 checkUser:(_Bool)arg9 checkNames:(_Bool)arg10 checkHyphens:(_Bool)arg11 checkIntercaps:(_Bool)arg12 checkOptions:(_Bool)arg13 depth:(unsigned long long)arg14;
 - (_Bool)validateWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 connection:(struct _PR_DB_IO *)arg4 sender:(id)arg5 checkBase:(_Bool)arg6 checkDict:(_Bool)arg7 checkTemp:(_Bool)arg8 checkUser:(_Bool)arg9 checkNames:(_Bool)arg10 checkHyphens:(_Bool)arg11 checkIntercaps:(_Bool)arg12 checkOptions:(_Bool)arg13 forCorrection:(_Bool)arg14 depth:(unsigned long long)arg15;
+- (id)stringByRemovingArabicDiacriticsFromString:(id)arg1;
 - (_Bool)checkSpecialPrefixesForWordBuffer:(char *)arg1 length:(unsigned long long)arg2;
 - (_Bool)validateAbbreviationOrNumberWordBuffer:(char *)arg1 length:(unsigned long long)arg2 language:(id)arg3 encoding:(unsigned int)arg4 connection:(struct _PR_DB_IO *)arg5 sender:(id)arg6;
 - (_Bool)validateWordPrefixBuffer:(char *)arg1 length:(unsigned long long)arg2 connection:(struct _PR_DB_IO *)arg3;

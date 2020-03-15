@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSArray *_videoLoaders;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *videoLoaders; // @synthesize videoLoaders=_videoLoaders;
 @property(retain, nonatomic) _TVStackedMediaDocument *document; // @synthesize document=_document;
 @property(nonatomic) __weak id <_TVStackedMediaLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_prettyState:(long long)arg1;
 - (id)_prettyEvent:(long long)arg1;
 - (void)stackedVideoAssetLoader:(id)arg1 completedWithSuccess:(_Bool)arg2 playerLayer:(id)arg3 error:(id)arg4 forEntry:(id)arg5;

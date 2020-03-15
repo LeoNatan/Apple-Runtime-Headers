@@ -22,11 +22,11 @@
 + (id)serviceViewControllerClassName;
 + (void)requestViewControllerFromExtension:(id)arg1 sizeHint:(struct CGSize)arg2 connectionHandler:(CDUnknownBlockType)arg3;
 + (void)requestViewControllerFromExtension:(id)arg1 inputItems:(id)arg2 sizeHint:(struct CGSize)arg3 connectionHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHExtensionHostViewPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
 @property(copy, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <PHExtensionRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)preferredMaximumSize;
 - (struct CGSize)preferredMinimumSize;
 - (void)updatePreferredSizes:(id)arg1;

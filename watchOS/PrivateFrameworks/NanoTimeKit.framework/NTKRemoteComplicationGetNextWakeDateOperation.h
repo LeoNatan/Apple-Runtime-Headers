@@ -11,8 +11,8 @@
     CDUnknownBlockType _wakeDateHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType wakeDateHandler; // @synthesize wakeDateHandler=_wakeDateHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType wakeDateHandler; // @synthesize wakeDateHandler=_wakeDateHandler;
 - (_Bool)prolongsWakeSession;
 - (_Bool)requiresActiveComplications;
 - (void)activateWithClient:(id)arg1 completion:(CDUnknownBlockType)arg2;

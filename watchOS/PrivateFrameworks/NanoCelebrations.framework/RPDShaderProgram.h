@@ -15,10 +15,10 @@
     NSString *_logMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *logMessage; // @synthesize logMessage=_logMessage;
 @property(nonatomic) _Bool linkSucceeded; // @synthesize linkSucceeded=_linkSucceeded;
 @property(nonatomic) unsigned int program; // @synthesize program=_program;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) RPDProgramBinary *programBinary;
 - (void)dealloc;
 - (id)initWithProgramBinary:(id)arg1;

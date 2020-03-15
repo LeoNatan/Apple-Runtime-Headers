@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     long long _windowNumber;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) long long windowNumber; // @synthesize windowNumber=_windowNumber;
 @property(nonatomic) _Bool isSidebarItem; // @synthesize isSidebarItem=_isSidebarItem;
 @property(nonatomic) vector_a82b476a clippingData; // @synthesize clippingData=_clippingData;
 @property(nonatomic) struct CGRect globalBounds; // @synthesize globalBounds=_globalBounds;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)typesForClippings;

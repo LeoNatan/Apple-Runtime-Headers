@@ -14,9 +14,9 @@
     AKSignature *_signature;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) AKSignature *signature; // @synthesize signature=_signature;
 @property BOOL showsOutput; // @synthesize showsOutput=_showsOutput;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)showsOutput:(BOOL)arg1;
 - (void)awakeFromNib;

@@ -17,9 +17,9 @@
     RTMapsSupportManager *_mapsSupportManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) RTMapsSupportManager *mapsSupportManager; // @synthesize mapsSupportManager=_mapsSupportManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)fetchPredictedExitDatesWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchNextPredictedLocationsOfInterestWithCriteria:(id)arg1 handler:(CDUnknownBlockType)arg2;

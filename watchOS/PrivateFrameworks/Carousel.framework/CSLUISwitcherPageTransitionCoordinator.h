@@ -24,6 +24,7 @@
     float _percentComplete;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool transitionWasCancelled; // @synthesize transitionWasCancelled=_transitionWasCancelled;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(readonly, nonatomic, getter=isStarted) _Bool started; // @synthesize started=_started;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) unsigned int targetEnvironment; // @synthesize targetEnvironment=_targetEnvironment;
 @property(readonly, nonatomic) unsigned int sourceEnvironment; // @synthesize sourceEnvironment=_sourceEnvironment;
 @property(readonly, nonatomic) UIViewController<CSLUISwitcherPageTransitionCoordinating> *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

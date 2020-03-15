@@ -14,9 +14,9 @@
     unsigned long _metricId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long metricId; // @synthesize metricId=_metricId;
 @property(retain, nonatomic) PBCodable *metric; // @synthesize metric=_metric;
-- (void).cxx_destruct;
 - (id)initWithMetricId:(unsigned long)arg1;
 
 @end

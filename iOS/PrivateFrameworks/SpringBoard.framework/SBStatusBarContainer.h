@@ -14,9 +14,9 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) __weak UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 

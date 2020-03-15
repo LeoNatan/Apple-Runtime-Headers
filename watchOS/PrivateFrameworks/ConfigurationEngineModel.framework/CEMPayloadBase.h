@@ -18,8 +18,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)load:(id)arg1 error:(id *)arg2;
-@property(readonly, copy) NSSet *unknownPayloadKeys; // @synthesize unknownPayloadKeys=_unknownPayloadKeys;
 - (void).cxx_destruct;
+@property(readonly, copy) NSSet *unknownPayloadKeys; // @synthesize unknownPayloadKeys=_unknownPayloadKeys;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,8 +15,8 @@
     NSMutableDictionary *prototypeCellViews;
 }
 
-@property(retain) NSMutableDictionary *prototypeCellViews; // @synthesize prototypeCellViews;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *prototypeCellViews; // @synthesize prototypeCellViews;
 - (double)outlineView:(id)arg1 heightOfRowByItem:(id)arg2;
 - (id)outlineView:(id)arg1 viewForTableColumn:(id)arg2 item:(id)arg3;
 - (id)prototypeViewForIdentifier:(id)arg1 inOutlineView:(id)arg2;

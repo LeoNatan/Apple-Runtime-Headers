@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) _TRUserNotification *activeUserNotification; // @synthesize activeUserNotification=_activeUserNotification;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TRUserNotification *activeUserNotification; // @synthesize activeUserNotification=_activeUserNotification;
 - (void)presentLegacyAuthenticationFailedDialogWithMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestLegacyAuthenticationWithAccountID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancel;

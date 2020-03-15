@@ -13,8 +13,8 @@
     NSArray *_possibleStates;
 }
 
-- (id)possibleStates;
 - (void).cxx_destruct;
+- (id)possibleStates;
 - (Class)singleStateClass;
 
 @end

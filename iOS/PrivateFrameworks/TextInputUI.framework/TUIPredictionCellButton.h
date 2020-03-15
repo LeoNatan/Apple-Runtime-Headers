@@ -13,8 +13,8 @@
     TUIPredictionViewCell *_cellView;
 }
 
-@property(readonly, nonatomic) TUIPredictionViewCell *cellView; // @synthesize cellView=_cellView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TUIPredictionViewCell *cellView; // @synthesize cellView=_cellView;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

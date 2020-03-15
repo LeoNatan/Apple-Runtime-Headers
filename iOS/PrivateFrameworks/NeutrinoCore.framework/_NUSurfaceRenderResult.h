@@ -16,8 +16,8 @@
     id <NUSurfaceImage> _image;
 }
 
-@property(retain) id <NUSurfaceImage> image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain) id <NUSurfaceImage> image; // @synthesize image=_image;
 @property(readonly, copy) NSString *debugDescription;
 
 // Remaining properties

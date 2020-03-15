@@ -24,9 +24,9 @@
     CDUnknownBlockType _updateHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(nonatomic, getter=isUsingDarkLabels) _Bool useDarkLabels; // @synthesize useDarkLabels=_useDarkLabels;
-- (void).cxx_destruct;
 - (void)_updateDisplayItemIcons;
 - (void)_performUpdateHandler;
 - (void)_loadIconForDisplayItem:(id)arg1;

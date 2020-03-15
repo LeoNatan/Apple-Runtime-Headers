@@ -27,6 +27,7 @@
 }
 
 + (id)_diagnosticDictionaryForTimer:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTPersistence> persistence; // @synthesize persistence=_persistence;
 @property(retain, nonatomic) MTObserverStore *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(retain, nonatomic) NSMutableArray *orderedTimers; // @synthesize orderedTimers=_orderedTimers;
 @property(nonatomic) __weak MTTimerScheduler *scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 - (void)_removeTimerDataIfNecessary:(id)arg1;
 - (void)observedApplicationDidUninstallForBundleIdentifier:(id)arg1;
 - (void)scheduler:(id)arg1 didFireTimer:(id)arg2;

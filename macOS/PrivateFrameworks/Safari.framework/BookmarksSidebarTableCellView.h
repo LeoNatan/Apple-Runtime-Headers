@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     RolloverImageButton *_removeButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak RolloverImageButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(nonatomic) __weak NSTextField *bookmarkTitleTextField; // @synthesize bookmarkTitleTextField=_bookmarkTitleTextField;
 @property(nonatomic) __weak NSImageView *faviconView; // @synthesize faviconView=_faviconView;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL usesFavoriteStyle; // @synthesize usesFavoriteStyle=_usesFavoriteStyle;
 @property(nonatomic) BOOL usesFolderStyle; // @synthesize usesFolderStyle=_usesFolderStyle;
 @property(nonatomic) __weak id <BookmarksSidebarTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;

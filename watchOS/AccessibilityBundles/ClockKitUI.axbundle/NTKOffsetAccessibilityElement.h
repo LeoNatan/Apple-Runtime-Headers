@@ -13,8 +13,8 @@
     CLKUIWheelsOfTimeViewAccessibility *_wotView;
 }
 
-@property __weak CLKUIWheelsOfTimeViewAccessibility *wotView; // @synthesize wotView=_wotView;
 - (void).cxx_destruct;
+@property __weak CLKUIWheelsOfTimeViewAccessibility *wotView; // @synthesize wotView=_wotView;
 - (id)accessibilityPath;
 - (struct CGRect)accessibilityFrame;
 - (void)accessibilityDecrement;

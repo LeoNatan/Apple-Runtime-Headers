@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSURL *reference; // @synthesize reference=_reference;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSArray *to; // @synthesize to=_to;
 @property(copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

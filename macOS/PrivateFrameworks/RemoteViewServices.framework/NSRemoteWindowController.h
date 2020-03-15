@@ -33,6 +33,7 @@
 }
 
 + (Class)localWindowClass;
+- (void).cxx_destruct;
 @property(copy) NSString *remoteWindowClass; // @synthesize remoteWindowClass=_remoteWindowClass;
 @property unsigned int disableAutomaticTermination; // @synthesize disableAutomaticTermination=_disableAutomaticTermination;
 @property BOOL canBecomeMainWindow; // @synthesize canBecomeMainWindow=_canBecomeMainWindow;
@@ -42,7 +43,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property id delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain) NSPanel *window; // @synthesize window=_localProxyWindow;
-- (void).cxx_destruct;
 - (int)_completeWindowRightsGrant:(const CDStruct_a41f6e61 *)arg1;
 - (void)connection:(id)arg1 didReceiveError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;

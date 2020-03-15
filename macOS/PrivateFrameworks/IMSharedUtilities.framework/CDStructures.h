@@ -44,14 +44,6 @@ struct IMRequirementFailed_t {
     unsigned char _field4;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSString {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;

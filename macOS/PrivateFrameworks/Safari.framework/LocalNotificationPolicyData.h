@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_originString;
 }
 
-@property(readonly, nonatomic) NSString *originString; // @synthesize originString=_originString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *originString; // @synthesize originString=_originString;
 - (void)updatePermission:(int)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithOrigin:(id)arg1 policy:(int)arg2;

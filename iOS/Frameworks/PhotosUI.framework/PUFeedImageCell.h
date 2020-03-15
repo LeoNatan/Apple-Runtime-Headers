@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 + (long long)_videoOverlayButtonStyle;
 + (_Bool)_allowHighQualityVideoOverlayButton;
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *likeBadgeView; // @synthesize likeBadgeView=_likeBadgeView;
 @property(retain, nonatomic) PXRoundedCornerOverlayView *roundedCornerOverlayView; // @synthesize roundedCornerOverlayView=_roundedCornerOverlayView;
 @property(retain, nonatomic, setter=_setPhotoIrisBadgeView:) PXUIAssetBadgeView *_photoIrisBadgeView; // @synthesize _photoIrisBadgeView=__photoIrisBadgeView;
@@ -76,7 +77,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int playerItemRequestID; // @synthesize playerItemRequestID=_playerItemRequestID;
 @property(retain, nonatomic) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_handleCommentButton:(id)arg1;
 - (void)_handlePlayButton:(id)arg1;
 - (id)_imageCellDelegate;

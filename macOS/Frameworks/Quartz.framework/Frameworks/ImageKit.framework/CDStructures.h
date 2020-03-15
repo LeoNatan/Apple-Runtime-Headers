@@ -14,16 +14,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AVCaptureDevice {
-    Class _field1;
-    id _field2;
-};
-
-struct AVCaptureSession {
-    Class _field1;
-    id _field2;
-};
-
 struct CATransform3D {
     double m11;
     double m12;

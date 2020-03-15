@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIColor *_dividerColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *dividerColor; // @synthesize dividerColor=_dividerColor;
 @property(retain, nonatomic) UIColor *inputColor; // @synthesize inputColor=_inputColor;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
-- (void).cxx_destruct;
 - (double)minimumFontScaleBeforeTruncation;
 - (double)summaryLineSpacing;
 - (double)summaryLineHeight;

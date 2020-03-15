@@ -20,8 +20,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) _Bool hasReceivedInitialData; // @synthesize hasReceivedInitialData=_hasReceivedInitialData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasReceivedInitialData; // @synthesize hasReceivedInitialData=_hasReceivedInitialData;
 - (void)_withWriteLockAsync:(CDUnknownBlockType)arg1;
 - (void)_withWriteLockSync:(CDUnknownBlockType)arg1;
 - (void)_withReadLockSync:(CDUnknownBlockType)arg1;

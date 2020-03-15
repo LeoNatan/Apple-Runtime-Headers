@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)wrapperWithHandler:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 
 @end
 

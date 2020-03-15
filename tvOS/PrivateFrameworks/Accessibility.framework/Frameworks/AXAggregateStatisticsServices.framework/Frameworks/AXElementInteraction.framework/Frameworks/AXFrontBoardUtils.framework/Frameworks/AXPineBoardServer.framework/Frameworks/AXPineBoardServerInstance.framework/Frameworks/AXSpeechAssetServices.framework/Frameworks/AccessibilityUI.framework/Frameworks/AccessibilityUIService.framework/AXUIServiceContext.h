@@ -16,10 +16,10 @@
     NSMutableArray *_clientMessengers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clientMessengers; // @synthesize clientMessengers=_clientMessengers;
 @property(copy, nonatomic) id <NSObject><NSCopying> serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
 @property(retain, nonatomic) id <AXUIService> service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (void)enumerateClientsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)clientMessengerWithIdentifier:(id)arg1;
 - (_Bool)hasClientWithIdentifier:(id)arg1;

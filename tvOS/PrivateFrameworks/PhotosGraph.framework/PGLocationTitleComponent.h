@@ -19,6 +19,7 @@
     NSString *_personName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSString *personName; // @synthesize personName=_personName;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) float weight; // @synthesize weight=_weight;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSSet *addressNodes; // @synthesize addressNodes=_addressNodes;
 @property(retain, nonatomic) PGGraphEdge *edge; // @synthesize edge=_edge;
 @property(retain, nonatomic) PGGraphNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)updateWithMomentNodes:(id)arg1;

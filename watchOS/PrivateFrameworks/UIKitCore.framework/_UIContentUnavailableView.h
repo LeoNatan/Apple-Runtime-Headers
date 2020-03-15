@@ -32,12 +32,12 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int vibrantOptions; // @synthesize vibrantOptions=_vibrantOptions;
 @property(copy, nonatomic) CDUnknownBlockType buttonAction; // @synthesize buttonAction=_buttonAction;
 @property(copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_actionButton;
 - (id)_messageLabel;
 - (id)_titleLabel;

@@ -14,9 +14,9 @@
     NSArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) NSDictionary *linkedDataContext; // @synthesize linkedDataContext=_linkedDataContext;
-- (void).cxx_destruct;
 - (id)linkedDataDictionary;
 
 @end

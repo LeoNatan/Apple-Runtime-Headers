@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     MPAVOutputDeviceRoute *_secondaryOutputDeviceRoute;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPAVOutputDeviceRoute *secondaryOutputDeviceRoute; // @synthesize secondaryOutputDeviceRoute=_secondaryOutputDeviceRoute;
 @property(retain, nonatomic) MPAVOutputDeviceRoute *primaryOutputDeviceRoute; // @synthesize primaryOutputDeviceRoute=_primaryOutputDeviceRoute;
 @property(retain, nonatomic) MPAVOutputDeviceRoute *systemOutputDeviceRoute; // @synthesize systemOutputDeviceRoute=_systemOutputDeviceRoute;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MPAVEndpointRoute *systemRoute; // @synthesize systemRoute=_systemRoute;
 @property(copy, nonatomic) NSString *volumeAudioCategory; // @synthesize volumeAudioCategory=_volumeAudioCategory;
 @property(readonly, nonatomic) _Bool isSplitRoute; // @synthesize isSplitRoute=_isSplitRoute;
-- (void).cxx_destruct;
 - (_Bool)_setupOutputDevicesAndVolumeControllersIfNeeded;
 - (unsigned int)_routeForVolumeController:(id)arg1;
 - (void)_notifyVolumeChangedForVolumeController:(id)arg1 volumeControlAvailable:(_Bool)arg2 effectiveVolume:(float)arg3;

@@ -13,8 +13,8 @@
     CKMediaObject *_mediaObject;
 }
 
-@property(retain, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
 - (id)IMAssociatedStickerChatItem;
 - (BOOL)transcriptOrientation;
 - (Class)cellClass;

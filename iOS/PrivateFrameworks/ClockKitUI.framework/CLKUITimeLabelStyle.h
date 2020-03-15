@@ -17,10 +17,10 @@
     CLKFont *_designatorFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKFont *designatorFont; // @synthesize designatorFont=_designatorFont;
 @property(retain, nonatomic) CLKFont *fourDigitFont; // @synthesize fourDigitFont=_fourDigitFont;
 @property(retain, nonatomic) CLKFont *threeDigitFont; // @synthesize threeDigitFont=_threeDigitFont;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

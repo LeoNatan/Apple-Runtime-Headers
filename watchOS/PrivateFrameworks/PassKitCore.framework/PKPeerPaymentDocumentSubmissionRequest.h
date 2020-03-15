@@ -18,13 +18,13 @@
     NSArray *_certificates;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool devSigned; // @synthesize devSigned=_devSigned;
 @property(copy, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
 @property(nonatomic) unsigned int documentType; // @synthesize documentType=_documentType;
 @property(copy, nonatomic) NSString *documentCountryCode; // @synthesize documentCountryCode=_documentCountryCode;
 @property(copy, nonatomic) NSData *backImageData; // @synthesize backImageData=_backImageData;
 @property(copy, nonatomic) NSData *frontImageData; // @synthesize frontImageData=_frontImageData;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 
 @end

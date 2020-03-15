@@ -26,12 +26,12 @@
 + (_Bool)isProductTypeJ42;
 + (id)qosMap;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *preferenceOverridesInternal; // @synthesize preferenceOverridesInternal=_preferenceOverridesInternal;
 @property(readonly, nonatomic) NSMutableDictionary *preferenceLoggedValues; // @synthesize preferenceLoggedValues=_preferenceLoggedValues;
 @property(readonly, nonatomic) NSMutableDictionary *preferenceCache; // @synthesize preferenceCache=_preferenceCache;
 @property(readonly) HMFTimer *preferenceCacheFlushTimer; // @synthesize preferenceCacheFlushTimer=_preferenceCacheFlushTimer;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (id)stringPreferenceForKey:(id)arg1 defaultValue:(id)arg2;
 - (_Bool)boolPreferenceForKey:(id)arg1 defaultValue:(_Bool)arg2;
 - (_Bool)hasPreferenceForKey:(id)arg1;

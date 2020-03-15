@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_moreListControllerClass;
-@property(nonatomic) __weak id <SKUIMoreNavigationControllerDelegate> storeKitDelegate; // @synthesize storeKitDelegate=_storeKitDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIMoreNavigationControllerDelegate> storeKitDelegate; // @synthesize storeKitDelegate=_storeKitDelegate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)didShowViewController:(id)arg1 animated:(_Bool)arg2;

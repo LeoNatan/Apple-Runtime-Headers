@@ -17,8 +17,8 @@
 }
 
 + (void)initialize;
-@property(readonly) NSMutableSet *actionCoordinators; // @synthesize actionCoordinators=_actionCoordinators;
 - (void).cxx_destruct;
+@property(readonly) NSMutableSet *actionCoordinators; // @synthesize actionCoordinators=_actionCoordinators;
 - (void)loadCallOutQueueIfNeeded;
 @property(readonly, nonatomic) FBSSerialQueue *callOutQueue;
 - (void)logEvent:(id)arg1 forScene:(id)arg2 withPrefix:(id)arg3;

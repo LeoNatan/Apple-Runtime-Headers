@@ -15,9 +15,9 @@
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property _Bool negated; // @synthesize negated=_negated;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)count;
 - (id)subQueryAtIndex:(unsigned long long)arg1;

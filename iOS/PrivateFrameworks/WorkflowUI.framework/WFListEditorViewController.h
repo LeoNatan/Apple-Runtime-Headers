@@ -16,8 +16,8 @@
 }
 
 + (Class)editorViewClass;
-@property(readonly, nonatomic) WFListEditorView *editorView; // @synthesize editorView=_editorView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFListEditorView *editorView; // @synthesize editorView=_editorView;
 @property(readonly, nonatomic) __weak UIViewController *componentHostingViewController;
 - (void)done;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

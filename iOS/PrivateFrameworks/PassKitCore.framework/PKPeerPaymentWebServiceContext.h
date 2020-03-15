@@ -21,6 +21,7 @@
 
 + (id)contextWithArchive:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *signedEnrollmentDataSignature; // @synthesize signedEnrollmentDataSignature=_signedEnrollmentDataSignature;
 @property(readonly, copy, nonatomic) NSString *companionSerialNumber; // @synthesize companionSerialNumber=_companionSerialNumber;
 @property(nonatomic) _Bool devSigned; // @synthesize devSigned=_devSigned;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSString *pushTopic; // @synthesize pushTopic=_pushTopic;
 @property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(readonly, copy, nonatomic) NSURL *serviceURL; // @synthesize serviceURL=_serviceURL;
-- (void).cxx_destruct;
 - (void)updateContextWithDeviceRegistrationData:(id)arg1 registrationResponse:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

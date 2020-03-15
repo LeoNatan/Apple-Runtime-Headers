@@ -19,8 +19,8 @@
 + (id)gazetteerWithMLModel:(id)arg1 error:(id *)arg2;
 + (id)gazetteerWithData:(id)arg1 error:(id *)arg2;
 + (id)gazetteerWithContentsOfURL:(id)arg1 error:(id *)arg2;
-@property(readonly, copy) NSString *language; // @synthesize language=_language;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *language; // @synthesize language=_language;
 - (void)_addImplementationToArray:(struct __CFArray *)arg1;
 - (_Bool)writeMLModelToURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)modelDescription;

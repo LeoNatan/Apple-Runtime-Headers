@@ -66,6 +66,7 @@
 }
 
 + (unsigned long long)_defaultEdgesScrollingContentIntoSafeArea;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onNextTileControllersUpdateBlock; // @synthesize onNextTileControllersUpdateBlock=_onNextTileControllersUpdateBlock;
 @property(readonly, nonatomic) NSMutableDictionary *_postLayoutBlocks; // @synthesize _postLayoutBlocks=__postLayoutBlocks;
 @property(nonatomic, setter=_setPagingFrictionAdjustment:) double _pagingFrictionAdjustment; // @synthesize _pagingFrictionAdjustment=__pagingFrictionAdjustment;
@@ -98,7 +99,6 @@
 @property(retain, nonatomic, setter=_setLayout:) PUTilingLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) struct UIEdgeInsets loadingInsets; // @synthesize loadingInsets=_loadingInsets;
 @property(nonatomic) __weak id <PUTilingViewTileSource> tileSource; // @synthesize tileSource=_tileSource;
-- (void).cxx_destruct;
 - (void)_transferTileControllersToDataSource:(id)arg1 usingDataSourceConverter:(id)arg2;
 - (id)_dataSourceWithIdentifier:(id)arg1;
 - (void)_registerDataSource:(id)arg1;

@@ -17,11 +17,11 @@
 }
 
 + (id)layoutItemWithRect:(struct CGRect)arg1 contentType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *layoutRects; // @synthesize layoutRects=_layoutRects;
 @property(nonatomic) struct CGRect initialRect; // @synthesize initialRect=_initialRect;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) struct CGRect rect;
 @property(readonly, nonatomic) NSValue *rectValue;

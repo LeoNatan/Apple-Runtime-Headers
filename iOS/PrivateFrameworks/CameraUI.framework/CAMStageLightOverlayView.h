@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, CAMStageLightAnimator, CAMStageLightOverlayCircleView, UIImageView;
+@class CAGradientLayer, CAMStageLightAnimator, CAShapeLayer, UIImageView;
 
 @interface CAMStageLightOverlayView : UIView
 {
@@ -16,7 +16,7 @@
     double _bottomContentInset;
     UIView *__tintView;
     UIImageView *__vignetteView;
-    CAMStageLightOverlayCircleView *__circleView;
+    CAShapeLayer *__circleLayer;
     unsigned long long __activeTimerID;
     CAGradientLayer *__gradientLayer;
     CAMStageLightAnimator *__animator;
@@ -26,10 +26,11 @@
 + (struct CGRect)circleFrameForViewport:(struct CGRect)arg1 orientation:(long long)arg2 bottomContentInset:(double)arg3;
 + (double)_circleDiameterForViewportSize:(struct CGSize)arg1 orientation:(long long)arg2;
 + (_Bool)_useLargeLayoutForViewportSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAnimator:) CAMStageLightAnimator *_animator; // @synthesize _animator=__animator;
 @property(readonly, nonatomic) CAGradientLayer *_gradientLayer; // @synthesize _gradientLayer=__gradientLayer;
 @property(nonatomic, setter=_setActiveTimerID:) unsigned long long _activeTimerID; // @synthesize _activeTimerID=__activeTimerID;
-@property(readonly, nonatomic) CAMStageLightOverlayCircleView *_circleView; // @synthesize _circleView=__circleView;
+@property(readonly, nonatomic) CAShapeLayer *_circleLayer; // @synthesize _circleLayer=__circleLayer;
 @property(readonly, nonatomic) UIImageView *_vignetteView; // @synthesize _vignetteView=__vignetteView;
 @property(readonly, nonatomic) UIView *_tintView; // @synthesize _tintView=__tintView;
 @property(nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
@@ -37,7 +38,6 @@
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGRect)_circleFrameForOrientation:(long long)arg1;
 - (void)_updateAnimatorState;

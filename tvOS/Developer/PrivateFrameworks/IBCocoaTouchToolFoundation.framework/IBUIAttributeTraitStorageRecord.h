@@ -17,9 +17,9 @@
     NSObject<IBBinaryArchiving> *_value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSObject<IBBinaryArchiving> *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) IBUITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (void)encodeWithBinaryArchiver:(id)arg1;

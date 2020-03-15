@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
     struct CGRect __targetAspectRatioSourceFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEnding:) _Bool _isEnding; // @synthesize _isEnding=__isEnding;
 @property(retain, nonatomic, setter=_setShouldFinishFilter:) PUValueFilter *_shouldFinishFilter; // @synthesize _shouldFinishFilter=__shouldFinishFilter;
 @property(retain, nonatomic, setter=_setProgressFilter:) PUValueFilter *_progressFilter; // @synthesize _progressFilter=__progressFilter;
@@ -77,7 +78,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setDirection:) unsigned long long direction; // @synthesize direction=_direction;
 @property(nonatomic) _Bool appliesScaleViaTransform; // @synthesize appliesScaleViaTransform=_appliesScaleViaTransform;
 @property(nonatomic) _Bool autoUpdates; // @synthesize autoUpdates=_autoUpdates;
-- (void).cxx_destruct;
 - (void)_endWithTranslationVelocity:(struct CGPoint)arg1 rotationVelocity:(double)arg2 scaleVelocity:(double)arg3 shouldBounce:(_Bool)arg4 finish:(_Bool)arg5 animated:(_Bool)arg6;
 - (void)_autoUpdate:(id)arg1;
 - (void)_updateAutoUpdateDisplayLink;

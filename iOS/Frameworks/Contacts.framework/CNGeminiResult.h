@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *availableChannels; // @synthesize availableChannels=_availableChannels;
 @property(readonly, nonatomic) long long usage; // @synthesize usage=_usage;
 @property(readonly, nonatomic) CNGeminiChannel *channel; // @synthesize channel=_channel;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

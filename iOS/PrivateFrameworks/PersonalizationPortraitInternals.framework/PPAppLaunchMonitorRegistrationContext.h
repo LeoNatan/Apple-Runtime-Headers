@@ -16,10 +16,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSNumber *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (id)initWithToken:(id)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 
 @end

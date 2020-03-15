@@ -14,8 +14,8 @@
 }
 
 + (id)preferencesForDomain:(id)arg1;
-@property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (id)objectForKey:(id)arg1 havingClass:(Class)arg2;
 - (void)removeObjectForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;

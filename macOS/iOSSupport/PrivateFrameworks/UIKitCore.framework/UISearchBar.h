@@ -13,7 +13,7 @@
 #import <UIKitCore/_UINavigationBarAugmentedTitleView-Protocol.h>
 #import <UIKitCore/_UISearchBarVisualProvidingDelegate-Protocol.h>
 
-@class NSArray, NSIndexSet, NSString, UIButton, UIColor, UIImage, UIInputContextHistory, UISearchBarTextField, UISearchController, UITapGestureRecognizer, UITextInputAssistantItem, UITextInputPasswordRules, UITextInputTraits, _UINavigationControllerPalette;
+@class NSArray, NSIndexSet, NSString, UIButton, UIColor, UIImage, UIInputContextHistory, UISearchBarTextField, UISearchController, UISearchTextField, UITapGestureRecognizer, UITextInputAssistantItem, UITextInputPasswordRules, UITextInputTraits, _UINavigationControllerPalette;
 @protocol UISearchBarDelegate, UISearchBarDelegate><UISearchBarDelegate_Private, _UISearchBarVisualProviding;
 
 @interface UISearchBar : UIView <_UISearchBarVisualProvidingDelegate, UITextInputTraits_Private, _UIBarPositioningInternal, _UINavigationBarAugmentedTitleView, UIBarPositioning, UITextInputTraits>
@@ -29,13 +29,13 @@
 }
 
 + (void)_initializeForIdiom:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setTransplanting:) BOOL _transplanting; // @synthesize _transplanting=__transplanting;
 @property(nonatomic, setter=_setSearchController:) UISearchController *_searchController; // @synthesize _searchController=__searchController;
 @property(nonatomic) BOOL _forceCenteredPlaceholderLayout; // @synthesize _forceCenteredPlaceholderLayout=__forceCenteredPlaceholderLayout;
 @property(readonly, nonatomic) id <_UISearchBarVisualProviding> _visualProvider; // @synthesize _visualProvider;
 @property(retain, nonatomic) UIView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(nonatomic) __weak id <UISearchBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_uiktest_placeholderLabelColor;
 - (void)_setCancelButtonWantsLetterpress;
 - (BOOL)_shouldUseNavigationBarHeight;
@@ -198,7 +198,7 @@
 @property(copy, nonatomic) NSString *placeholder;
 @property(copy, nonatomic) NSString *prompt;
 @property(copy, nonatomic) NSString *text;
-- (id)searchTextField;
+@property(readonly, nonatomic) UISearchTextField *searchTextField;
 @property(nonatomic, getter=isTranslucent) BOOL translucent;
 @property(nonatomic) long long barStyle;
 - (void)didMoveToSuperview;

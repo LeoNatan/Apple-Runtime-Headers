@@ -26,6 +26,7 @@
 
 + (id)competitionWithCodableCompetition:(id)arg1;
 + (id)codableDatabaseCompetitionsFromCompetitions:(id)arg1 withFriendWithUUID:(id)arg2 withType:(long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *currentDateOverride; // @synthesize currentDateOverride=_currentDateOverride;
 @property(nonatomic) unsigned long long maximumNumberOfPointsPerDay; // @synthesize maximumNumberOfPointsPerDay=_maximumNumberOfPointsPerDay;
 @property(retain, nonatomic) NSArray *preferredVictoryBadgeStyles; // @synthesize preferredVictoryBadgeStyles=_preferredVictoryBadgeStyles;
@@ -36,7 +37,6 @@
 @property(nonatomic) long long lastPushedCacheIndex; // @synthesize lastPushedCacheIndex=_lastPushedCacheIndex;
 @property(nonatomic) long long currentCacheIndex; // @synthesize currentCacheIndex=_currentCacheIndex;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)_scoresForParticipant:(long long)arg1;
 - (id)currentDate;
 - (_Bool)isEqualToCompetition:(id)arg1;

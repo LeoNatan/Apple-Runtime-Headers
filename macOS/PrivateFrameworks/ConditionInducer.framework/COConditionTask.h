@@ -29,6 +29,7 @@
     NSObject<OS_dispatch_queue> *_taskQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(nonatomic) BOOL slowTimeout; // @synthesize slowTimeout=_slowTimeout;
 @property(nonatomic) double executionTime; // @synthesize executionTime=_executionTime;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *termination_sem; // @synthesize termination_sem=_termination_sem;
 @property BOOL running; // @synthesize running=_running;
 @property(nonatomic) int endStatus; // @synthesize endStatus=_endStatus;
-- (void).cxx_destruct;
 - (id)description;
 - (int)signalRunningTask:(int)arg1;
 - (BOOL)resume;

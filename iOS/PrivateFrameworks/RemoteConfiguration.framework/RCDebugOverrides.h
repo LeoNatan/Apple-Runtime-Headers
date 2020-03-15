@@ -22,6 +22,7 @@
 }
 
 + (id)defaultDebugOverrides;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool enableExtraLogs; // @synthesize enableExtraLogs=_enableExtraLogs;
 @property(readonly, nonatomic) _Bool ignoreCache; // @synthesize ignoreCache=_ignoreCache;
 @property(readonly, nonatomic) unsigned long long debugEnvironment; // @synthesize debugEnvironment=_debugEnvironment;
@@ -29,7 +30,6 @@
 @property(readonly, copy, nonatomic) NSArray *additionalSegmentSetIDs; // @synthesize additionalSegmentSetIDs=_additionalSegmentSetIDs;
 @property(readonly, copy, nonatomic) NSArray *overrideSegmentSetIDs; // @synthesize overrideSegmentSetIDs=_overrideSegmentSetIDs;
 @property(readonly, nonatomic) _Bool disableAbTesting; // @synthesize disableAbTesting=_disableAbTesting;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool onlyUseFallbackURL;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;

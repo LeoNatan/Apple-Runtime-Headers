@@ -25,13 +25,14 @@
 }
 
 + (id)defaultTitleColor;
-+ (struct NSFont *)defaultTitleFont;
++ (id)defaultTitleFont;
 + (void)_getSize:(out struct CGSize *)arg1 titleFrame:(out struct CGRect *)arg2 captionFrame:(out struct CGRect *)arg3 iconFrame:(out struct CGRect *)arg4 forConfiguration:(id)arg5 title:(id)arg6;
 + (struct CGSize)sizeWithConfiguration:(id)arg1;
-+ (struct CGSize)_sizeOfTitle:(id)arg1 withFont:(struct NSFont *)arg2;
++ (struct CGSize)_sizeOfTitle:(id)arg1 withFont:(id)arg2;
 + (id)roundedCornerMaskImage:(CDStruct_2bd92d94)arg1 size:(struct CGSize)arg2;
 + (id)buttonSizeCache;
 + (id)titleSizeCache;
+- (void).cxx_destruct;
 @property(nonatomic) struct NSEdgeInsets hitTestInsets; // @synthesize hitTestInsets=_hitTestInsets;
 @property(retain, nonatomic) UXLabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) UXLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(copy, nonatomic) PXCuratedLibraryOverlayButtonConfiguration *userData; // @synthesize userData=_userData;
-- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)isAccessibilityElement;

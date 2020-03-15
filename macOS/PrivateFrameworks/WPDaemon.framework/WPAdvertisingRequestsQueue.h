@@ -14,9 +14,9 @@
     NSMutableSet *_clientTypes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *clientTypes; // @synthesize clientTypes=_clientTypes;
 @property(retain, nonatomic) NSMutableArray *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (unsigned long long)count;
 - (id)allRequests;
 - (void)removeAll;

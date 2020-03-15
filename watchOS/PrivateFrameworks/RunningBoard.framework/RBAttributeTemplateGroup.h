@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_targetBundleProperties;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *targetBundleProperties; // @synthesize targetBundleProperties=_targetBundleProperties;
 @property(copy, nonatomic) NSDictionary *originatorEntitlements; // @synthesize originatorEntitlements=_originatorEntitlements;
 @property(retain, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

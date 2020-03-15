@@ -21,12 +21,12 @@
     INInteraction *_lastInteraction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) INInteraction *lastInteraction; // @synthesize lastInteraction=_lastInteraction;
 @property(readonly, nonatomic) WFWorkflowController *controller; // @synthesize controller=_controller;
 @property(nonatomic) long long executionContext; // @synthesize executionContext=_executionContext;
 @property(nonatomic) __weak id <WFLWorkflowControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *airPlayRouteIDs; // @synthesize airPlayRouteIDs=_airPlayRouteIDs;
-- (void).cxx_destruct;
 - (void)configureIntent:(id)arg1;
 - (_Bool)executeIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)openUserActivity:(id)arg1 bundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

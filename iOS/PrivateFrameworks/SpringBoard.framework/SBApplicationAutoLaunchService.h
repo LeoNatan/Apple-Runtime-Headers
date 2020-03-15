@@ -23,10 +23,10 @@
     _Bool _autoLaunchSynchronously;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_queuedApplicationsThrottledForRelaunch) NSArray *queuedApplicationsThrottledForRelaunch; // @synthesize queuedApplicationsThrottledForRelaunch=_queuedApplicationsThrottledForRelaunch;
 @property(readonly, nonatomic, getter=_queuedApplicationsThrottledForRelaunchTimer) NSTimer *queuedApplicationsThrottledForRelaunchTimer; // @synthesize queuedApplicationsThrottledForRelaunchTimer=_queuedApplicationsThrottledForRelaunchTimer;
 @property(nonatomic, getter=_autoLaunchSynchronously, setter=_setAutoLaunchSynchronously:) _Bool autoLaunchSynchronously; // @synthesize autoLaunchSynchronously=_autoLaunchSynchronously;
-- (void).cxx_destruct;
 - (void)_memoryPressureRelieved:(id)arg1;
 - (void)_memoryPressureWarn:(id)arg1;
 - (void)_installedApplicationsDidChange:(id)arg1;

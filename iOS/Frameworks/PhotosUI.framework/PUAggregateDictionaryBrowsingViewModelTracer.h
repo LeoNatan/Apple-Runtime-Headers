@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     double __oneUpSessionStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setOneUpSessionStartTime:) double _oneUpSessionStartTime; // @synthesize _oneUpSessionStartTime=__oneUpSessionStartTime;
 @property(nonatomic, setter=_setOneUpSessionActive:) _Bool _oneUpSessionActive; // @synthesize _oneUpSessionActive=__oneUpSessionActive;
 @property(nonatomic, setter=_setNeedsUpdateOneUpSessionActive:) _Bool _needsUpdateOneUpSessionActive; // @synthesize _needsUpdateOneUpSessionActive=__needsUpdateOneUpSessionActive;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setPerformingChanges:) _Bool _isPerformingChanges; // @synthesize _isPerformingChanges=__isPerformingChanges;
 @property(readonly, nonatomic) NSHashTable *_viewingContexts; // @synthesize _viewingContexts=__viewingContexts;
 @property(readonly, nonatomic) __weak PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
-- (void).cxx_destruct;
 - (void)_handleScheduledCurrentAssetChange;
 - (void)_scheduleCurrentAssetChange;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

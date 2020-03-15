@@ -30,6 +30,7 @@
     NSString *_virtualCPLTaskIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool cachingAllowed; // @synthesize cachingAllowed=_cachingAllowed;
 @property _Bool CPLPrefetchingWasCancelled; // @synthesize CPLPrefetchingWasCancelled=_CPLPrefetchingWasCancelled;
 @property _Bool didCompleteCPLPrefetchingWithSuccessOrError; // @synthesize didCompleteCPLPrefetchingWithSuccessOrError=_didCompleteCPLPrefetchingWithSuccessOrError;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) long long imageType; // @synthesize imageType=_imageType;
 @property(nonatomic) unsigned short bestFormat; // @synthesize bestFormat=_bestFormat;
 @property(readonly, nonatomic) unsigned short format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (_Bool)isRetained;
 - (long long)decrementRequestCount;
 - (long long)incrementRequestCount;
@@ -49,8 +49,8 @@
 - (void)cancelPreheatRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startPreheatRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)addImageHandler:(CDUnknownBlockType)arg1;
-- (struct NSObject *)cachedImageIfAvailable:(_Bool *)arg1;
-- (struct NSObject *)cachedImage:(_Bool *)arg1;
+- (id)cachedImageIfAvailable:(_Bool *)arg1;
+- (id)cachedImage:(_Bool *)arg1;
 - (id)description;
 - (id)initForCPLPrefetchingWithAssetUUID:(id)arg1 format:(unsigned short)arg2 assetsdClient:(id)arg3;
 

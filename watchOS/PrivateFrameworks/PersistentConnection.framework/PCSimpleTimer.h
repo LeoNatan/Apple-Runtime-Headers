@@ -36,8 +36,8 @@
 
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
-@property(nonatomic) _Bool disableSystemWaking; // @synthesize disableSystemWaking=_disableSystemWaking;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool disableSystemWaking; // @synthesize disableSystemWaking=_disableSystemWaking;
 - (id)debugDescription;
 - (void)_setSignificantTimeChangeMonitoringEnabled:(_Bool)arg1;
 - (void)_significantTimeChange;

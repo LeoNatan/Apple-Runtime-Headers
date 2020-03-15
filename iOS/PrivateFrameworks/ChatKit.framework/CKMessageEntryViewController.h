@@ -15,9 +15,9 @@
 }
 
 + (_Bool)_requiresProxyInterface;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inputAccessoryViewControllerEnabled; // @synthesize inputAccessoryViewControllerEnabled=_inputAccessoryViewControllerEnabled;
 @property(readonly, nonatomic) CKMessageEntryView *entryView; // @synthesize entryView=_entryView;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)initWithEntryView:(id)arg1;
 

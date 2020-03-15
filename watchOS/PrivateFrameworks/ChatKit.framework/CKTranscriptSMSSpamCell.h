@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSAttributedString *_attributedButtonText;
 }
 
-@property(copy, nonatomic) NSAttributedString *attributedButtonText; // @synthesize attributedButtonText=_attributedButtonText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSAttributedString *attributedButtonText; // @synthesize attributedButtonText=_attributedButtonText;
 - (void)clearFilters;
 - (void)addFilter:(id)arg1;
 - (void)layoutSubviewsForAlignmentContents;

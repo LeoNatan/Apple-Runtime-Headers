@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(copy, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 
 @end
 

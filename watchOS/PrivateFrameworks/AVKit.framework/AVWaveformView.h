@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     double _currentTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVWaveformViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic, getter=isRecording) _Bool recording; // @synthesize recording=_recording;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
-- (void).cxx_destruct;
 - (int)_numberOfSamplesForWidth:(float)arg1;
 - (float)_pointsPerSecond;
 - (float)_offsetForTime:(double)arg1;

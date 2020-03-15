@@ -16,8 +16,8 @@
     unsigned long long _cursor;
 }
 
-@property(nonatomic) unsigned long long cursor; // @synthesize cursor=_cursor;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long cursor; // @synthesize cursor=_cursor;
 - (id)description;
 @property(readonly, nonatomic) BRLTBrailleString *brailleString;
 - (void)deleteBrailleChar;

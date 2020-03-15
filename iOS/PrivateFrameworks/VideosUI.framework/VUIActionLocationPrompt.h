@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_dialogMetrics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dialogMetrics; // @synthesize dialogMetrics=_dialogMetrics;
 @property(nonatomic) _Bool geoLocationEnforced; // @synthesize geoLocationEnforced=_geoLocationEnforced;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)_locationAuthorizationStatusDidChange:(id)arg1;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1;

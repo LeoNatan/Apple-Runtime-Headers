@@ -15,6 +15,7 @@
 - (void)ams_addStoreFrontHeaderForAccount:(id)arg1 client:(id)arg2 withBag:(id)arg3;
 - (void)ams_addSilentEnrollmentHeadersForAccount:(id)arg1;
 - (void)ams_addRequestingProcessWithClient:(id)arg1;
+- (void)ams_addRequestTimestampHeader;
 - (void)ams_addPrimaryiCloudIdentifierHeader;
 - (void)ams_addParameters:(id)arg1 encoding:(long long)arg2 compressBody:(BOOL)arg3 error:(id *)arg4;
 - (void)ams_addMescalHeaderWithType:(long long)arg1 bag:(id)arg2 logKey:(id)arg3;

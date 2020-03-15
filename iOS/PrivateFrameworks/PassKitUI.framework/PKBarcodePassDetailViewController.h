@@ -51,11 +51,11 @@
 + (_Bool)isWifiEnabled;
 + (id)_linkColor;
 + (id)_linkTextAttributes;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showDoneButton; // @synthesize showDoneButton=_showDoneButton;
 @property(nonatomic) id <PKPassDeleteHandler> deleteOverrider; // @synthesize deleteOverrider=_deleteOverrider;
 @property(nonatomic) unsigned long long suppressedContent; // @synthesize suppressedContent=_suppressedContent;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)_passSettingsChanged:(id)arg1;
 - (void)pushSettingsFromViewToModel;
 - (id)_relevantBuckets;

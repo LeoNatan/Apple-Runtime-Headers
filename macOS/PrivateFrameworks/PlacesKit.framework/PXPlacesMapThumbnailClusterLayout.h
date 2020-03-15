@@ -18,12 +18,12 @@
     NSArray *_geotaggablesSortDescriptors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *geotaggablesSortDescriptors; // @synthesize geotaggablesSortDescriptors=_geotaggablesSortDescriptors;
 @property(nonatomic) unsigned long long currentChangeType; // @synthesize currentChangeType=_currentChangeType;
 @property(retain, nonatomic) id <PXPlacesMapLayoutResult> currentMapLayoutResult; // @synthesize currentMapLayoutResult=_currentMapLayoutResult;
 @property(nonatomic) double verticalClusteringDistancePixels; // @synthesize verticalClusteringDistancePixels=_verticalClusteringDistancePixels;
 @property(nonatomic) double horizontalClusteringDistancePixels; // @synthesize horizontalClusteringDistancePixels=_horizontalClusteringDistancePixels;
-- (void).cxx_destruct;
 - (id)_copyLayoutItem:(id)arg1;
 - (long long)_substractRect:(CDStruct_02837cd9)arg1 from:(CDStruct_02837cd9)arg2 into:(CDStruct_02837cd9 *)arg3;
 - (long long)_divideRectsOf:(id)arg1 from:(id)arg2 into:(CDStruct_02837cd9 *)arg3;

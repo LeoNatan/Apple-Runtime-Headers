@@ -13,8 +13,8 @@
     WLKCanonicalContainerResponse *_containerResponse;
 }
 
-@property(readonly, nonatomic) WLKCanonicalContainerResponse *containerResponse; // @synthesize containerResponse=_containerResponse;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WLKCanonicalContainerResponse *containerResponse; // @synthesize containerResponse=_containerResponse;
 - (void)processResponse;
 
 @end

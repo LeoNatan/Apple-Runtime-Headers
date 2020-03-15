@@ -18,13 +18,13 @@
     NSDictionary *_creatorDefined;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *creatorDefined; // @synthesize creatorDefined=_creatorDefined;
 @property(readonly) NSString *license; // @synthesize license=_license;
 @property(readonly) NSString *author; // @synthesize author=_author;
 @property(readonly) NSString *versionString; // @synthesize versionString=_versionString;
 @property(readonly) NSString *shortDescription; // @synthesize shortDescription=_shortDescription;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithName:(id)arg1 shortDescription:(id)arg2 versionString:(id)arg3 author:(id)arg4 license:(id)arg5 creatorDefined:(id)arg6;
 - (id)initWithName:(id)arg1;

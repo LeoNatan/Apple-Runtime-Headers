@@ -19,13 +19,13 @@
 }
 
 + (id)typeToString:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *resourceString; // @synthesize resourceString=_resourceString;
 @property(readonly) unsigned long long dataLength; // @synthesize dataLength=_dataLength;
 @property(readonly) unsigned long long timeToLive; // @synthesize timeToLive=_timeToLive;
 @property(readonly) long long recordClass; // @synthesize recordClass=_recordClass;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initFromByteParser:(id)arg1;
 
 @end

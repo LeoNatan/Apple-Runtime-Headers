@@ -14,9 +14,9 @@
     NSDictionary *_rootFoldersByEWSFolderId;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *rootFoldersByEWSFolderId; // @synthesize rootFoldersByEWSFolderId=_rootFoldersByEWSFolderId;
 @property(copy, nonatomic) NSArray *EWSFolderIds; // @synthesize EWSFolderIds=_EWSFolderIds;
-- (void).cxx_destruct;
 - (id)rootFolderForEWSFolderId:(id)arg1;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;

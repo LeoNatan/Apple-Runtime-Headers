@@ -25,6 +25,7 @@
     NSSet *_uuidsOfRequiredAssets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL focusOnInterestingItems; // @synthesize focusOnInterestingItems=_focusOnInterestingItems;
 @property(nonatomic) BOOL focusOnPeople; // @synthesize focusOnPeople=_focusOnPeople;
 @property(copy, nonatomic) NSSet *uuidsOfRequiredAssets; // @synthesize uuidsOfRequiredAssets=_uuidsOfRequiredAssets;
@@ -36,7 +37,6 @@
 @property(nonatomic) BOOL includesAllFaces; // @synthesize includesAllFaces=_includesAllFaces;
 @property(nonatomic) unsigned long long precision; // @synthesize precision=_precision;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;

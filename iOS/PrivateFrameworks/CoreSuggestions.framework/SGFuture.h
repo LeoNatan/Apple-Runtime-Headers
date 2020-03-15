@@ -30,9 +30,9 @@
 + (id)createWithImmediateResult:(id)arg1 error:(id)arg2;
 + (id)createAfter:(id)arg1 onCreate:(CDUnknownBlockType)arg2;
 + (id)futureForObject:(id)arg1 withKey:(void *)arg2 onCreate:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) _Bool isComplete; // @synthesize isComplete=_isComplete;
-- (void).cxx_destruct;
 - (void)disassociateFromParentObject;
 - (id)waitWithTimeout:(double)arg1;
 - (void)_clearTimeoutNonThreadSafe;

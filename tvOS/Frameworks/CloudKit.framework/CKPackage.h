@@ -52,6 +52,7 @@
 + (id)packageInClientWithBasePath:(id)arg1 error:(id *)arg2;
 + (id)packageWithPackage:(id)arg1 error:(id *)arg2;
 + (id)packageWithError:(id *)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;
 @property(nonatomic) __weak CKRecord *record; // @synthesize record=_record;
 @property(copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
@@ -74,7 +75,6 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSString *databaseBasePath; // @synthesize databaseBasePath=_databaseBasePath;
 @property(nonatomic) struct _OpaquePCSShareProtection *recordPCS; // @synthesize recordPCS=_recordPCS;
-- (void).cxx_destruct;
 - (double)earliestUploadReceiptExpiration;
 - (_Bool)claimOwnershipWithError:(id *)arg1;
 @property(copy, nonatomic) NSData *signature;

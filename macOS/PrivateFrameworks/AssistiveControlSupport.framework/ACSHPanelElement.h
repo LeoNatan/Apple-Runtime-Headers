@@ -30,6 +30,7 @@
 
 + (Class)classForDict:(id)arg1;
 + (id)keysForValuesToObserveForView;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 @property(copy, nonatomic) NSString *parentGroupID; // @synthesize parentGroupID=_parentGroupID;
 @property(retain, nonatomic) NSString *soundIdentifier; // @synthesize soundIdentifier=_soundIdentifier;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSColor *displayColor; // @synthesize displayColor=_displayColor;
 @property(nonatomic) struct CGRect extraRect; // @synthesize extraRect=_extraRect;
 @property(nonatomic) __weak ACSHPanelElement *parentElement; // @synthesize parentElement=_parentElement;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *resolvedDisplayColor;
 - (void)didChangeInheritedDisplayTheme;
 - (void)willChangeInheritedDisplayTheme;

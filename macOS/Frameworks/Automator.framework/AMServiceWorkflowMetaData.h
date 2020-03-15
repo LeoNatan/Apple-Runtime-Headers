@@ -19,13 +19,13 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *backgroundColorName; // @synthesize backgroundColorName=_backgroundColorName;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(copy, nonatomic) NSString *customImageFileExtension; // @synthesize customImageFileExtension=_customImageFileExtension;
 @property(copy, nonatomic) NSData *customImageFileData; // @synthesize customImageFileData=_customImageFileData;
 @property(copy, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_updatePresentationModeBasedOnMetaData;
 @property(readonly, nonatomic) unsigned long long _presentationModeFromAppKit;

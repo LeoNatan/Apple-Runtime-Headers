@@ -24,6 +24,7 @@
     NSView *_condensedTitleView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *condensedTitleView; // @synthesize condensedTitleView=_condensedTitleView;
 @property(nonatomic) BOOL leftItemsSupplementBackButton; // @synthesize leftItemsSupplementBackButton=_leftItemsSupplementBackButton;
 @property(nonatomic) BOOL hidesGlobalTrailingView; // @synthesize hidesGlobalTrailingView=_hidesGlobalTrailingView;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) UXBarButtonItem *backBarButtonItem; // @synthesize backBarButtonItem=_backBarButtonItem;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(retain, nonatomic) UXBarButtonItem *rightBarButtonItem;
 @property(retain, nonatomic) NSArray *rightBarButtonItems;
 @property(retain, nonatomic) NSArray *leftBarButtonItems;

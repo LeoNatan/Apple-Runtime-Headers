@@ -16,8 +16,8 @@
 }
 
 + (id)decode:(const struct ProtobufCMessage *)arg1;
-@property(readonly, nonatomic) NSString *signalName; // @synthesize signalName=_signalName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *signalName; // @synthesize signalName=_signalName;
 - (void)encode:(struct ProtobufCMessage *)arg1;
 - (id)initWithSignalName:(id)arg1 functionName:(id)arg2 body:(id)arg3;
 

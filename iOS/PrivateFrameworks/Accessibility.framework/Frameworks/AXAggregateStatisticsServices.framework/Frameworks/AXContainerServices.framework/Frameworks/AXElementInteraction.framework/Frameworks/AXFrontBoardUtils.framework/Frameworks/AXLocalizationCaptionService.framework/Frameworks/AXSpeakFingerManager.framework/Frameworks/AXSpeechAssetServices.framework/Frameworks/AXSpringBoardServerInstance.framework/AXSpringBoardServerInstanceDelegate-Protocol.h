@@ -10,8 +10,6 @@
 
 @protocol AXSpringBoardServerInstanceDelegate <NSObject>
 - (void)updateFrontMostApplicationWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
-- (void)setLockScreenDimTimerEnabled:(_Bool)arg1 withServerInstance:(_AXSpringBoardServerInstance *)arg2;
-- (void)userEventOccurredWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)isMagnifierVisibleWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)launchMagnifierAppWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)reactivateInCallServiceWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
@@ -35,6 +33,7 @@
 - (_Bool)isDarkModeActiveWithServiceInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)toggleDarkModeWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)isGuidedAccessActiveWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
+- (_Bool)isPIPWindowVisibleWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (_Bool)isSpotlightVisibleWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)revealSpotlightWithServerInstance:(_AXSpringBoardServerInstance *)arg1;
 - (void)toggleSpotlightWithServerInstance:(_AXSpringBoardServerInstance *)arg1;

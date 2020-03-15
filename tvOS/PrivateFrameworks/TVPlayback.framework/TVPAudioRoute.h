@@ -20,6 +20,7 @@
     NSDictionary *_routeDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *routeDescription; // @synthesize routeDescription=_routeDescription;
 @property(retain, nonatomic) TVPAudioRouteVolume *volumeControl; // @synthesize volumeControl=_volumeControl;
 @property(readonly, nonatomic, getter=isDefaultRoute) _Bool defaultRoute; // @synthesize defaultRoute=_defaultRoute;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) long long routeDeviceType; // @synthesize routeDeviceType=_routeDeviceType;
 @property(readonly, nonatomic) NSString *routeIdentifier; // @synthesize routeIdentifier=_routeIdentifier;
 @property(readonly, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *comparisonIdentifier;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

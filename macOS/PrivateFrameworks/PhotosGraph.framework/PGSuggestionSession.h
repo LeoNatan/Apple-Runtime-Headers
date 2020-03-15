@@ -23,13 +23,13 @@
 + (id)availableSuggestionTypeInfosWithProfile:(unsigned char)arg1;
 + (id)suggesterClassesWithProfile:(unsigned char)arg1;
 + (id)suggestionTypesWithProfile:(unsigned char)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PGSuggestionNotificationProfile *notificationProfile; // @synthesize notificationProfile=_notificationProfile;
 @property(retain, nonatomic) NSArray *existingMemories; // @synthesize existingMemories=_existingMemories;
 @property(retain, nonatomic) NSArray *existingSuggestions; // @synthesize existingSuggestions=_existingSuggestions;
 @property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 @property(readonly, nonatomic) PGManager *graphManager; // @synthesize graphManager=_graphManager;
 @property(readonly, nonatomic) unsigned char profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)infosWithSuggestions:(id)arg1;
 - (id)infoWithSuggestion:(id)arg1;
 - (BOOL)suggestion:(id)arg1 isEqualToSuggestion:(id)arg2;

@@ -36,6 +36,7 @@
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *dPID; // @synthesize dPID=_dPID;
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(retain, nonatomic) NSString *osVersionAndBuild; // @synthesize osVersionAndBuild=_osVersionAndBuild;
@@ -47,7 +48,6 @@
 @property(nonatomic) _Bool isFirstPartyIdentifier; // @synthesize isFirstPartyIdentifier=_isFirstPartyIdentifier;
 @property(retain, nonatomic) NSString *segmentInfo; // @synthesize segmentInfo=_segmentInfo;
 @property(retain, nonatomic) NSData *iAdID; // @synthesize iAdID=_iAdID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

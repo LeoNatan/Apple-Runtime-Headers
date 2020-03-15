@@ -15,8 +15,8 @@
     BLTBulletinDistributorSubscriber *_subscriber;
 }
 
-@property(retain, nonatomic) BLTBulletinDistributorSubscriber *subscriber; // @synthesize subscriber=_subscriber;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BLTBulletinDistributorSubscriber *subscriber; // @synthesize subscriber=_subscriber;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)sendBulletinSummary:(id)arg1;

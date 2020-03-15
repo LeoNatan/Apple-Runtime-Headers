@@ -17,10 +17,10 @@
     double _eventTime;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(nonatomic) double eventTime; // @synthesize eventTime=_eventTime;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

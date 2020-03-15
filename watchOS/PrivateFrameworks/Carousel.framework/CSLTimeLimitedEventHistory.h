@@ -18,8 +18,8 @@
     double _interval;
 }
 
-@property(readonly, nonatomic) double interval; // @synthesize interval=_interval;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double interval; // @synthesize interval=_interval;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

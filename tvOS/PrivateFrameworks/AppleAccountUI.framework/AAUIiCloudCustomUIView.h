@@ -13,8 +13,8 @@
     UIColor *_lockedColor;
 }
 
-@property(retain, nonatomic) UIColor *lockedColor; // @synthesize lockedColor=_lockedColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *lockedColor; // @synthesize lockedColor=_lockedColor;
 - (void)setBackgroundColor:(id)arg1;
 
 @end

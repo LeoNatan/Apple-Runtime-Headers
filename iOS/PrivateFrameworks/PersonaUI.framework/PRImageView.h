@@ -14,9 +14,9 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCircular) _Bool circular; // @synthesize circular=_circular;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

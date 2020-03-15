@@ -16,11 +16,11 @@
     NSError *_snapshotError;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *snapshotError; // @synthesize snapshotError=_snapshotError;
 @property(readonly, nonatomic) _Bool snapshotSucceeded; // @synthesize snapshotSucceeded=_snapshotSucceeded;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) CSLSSnapshotScheduleItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (_Bool)_deviceUnlockedSinceBoot;
 - (id)_customizedDescriptionProperties;
 - (void)_begin;

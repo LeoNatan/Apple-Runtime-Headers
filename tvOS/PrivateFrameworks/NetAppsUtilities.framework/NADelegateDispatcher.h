@@ -20,13 +20,13 @@
 
 + (id)_findMethodSignatureForSelector:(SEL)arg1 inProtocol:(id)arg2;
 + (id)dispatcherWithProtocol:(id)arg1 logSettings:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *overrideObservers; // @synthesize overrideObservers=_overrideObservers;
 @property(readonly, nonatomic) NSMapTable *cachedMethodMetadataBySelector; // @synthesize cachedMethodMetadataBySelector=_cachedMethodMetadataBySelector;
 @property(readonly, nonatomic) NSHashTable *observerTable; // @synthesize observerTable=_observerTable;
 @property(readonly, nonatomic) Protocol *protocol; // @synthesize protocol=_protocol;
 @property(readonly, nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NADelegateMethodLogSettings *logSettings; // @synthesize logSettings=_logSettings;
-- (void).cxx_destruct;
 - (void)_logEventForInvocation:(id)arg1 metadata:(id)arg2;
 - (void)_logEventForSelector:(SEL)arg1 metadata:(id)arg2 formatArgs:(_Bool)arg3 arg0:(id)arg4 arg1:(id)arg5 arg2:(id)arg6 arg3:(id)arg7 arg4:(id)arg8 arg5:(id)arg9;
 - (void)_logEventForSelector:(SEL)arg1 metadata:(id)arg2 formatArgs:(_Bool)arg3 arg0:(id)arg4 arg1:(id)arg5 arg2:(id)arg6 arg3:(id)arg7 arg4:(id)arg8;

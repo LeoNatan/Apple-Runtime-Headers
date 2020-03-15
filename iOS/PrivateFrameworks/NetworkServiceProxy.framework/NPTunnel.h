@@ -38,6 +38,7 @@
 }
 
 + (void)initializeProtocol;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableIdleTimeout; // @synthesize disableIdleTimeout=_disableIdleTimeout;
 @property(nonatomic) _Bool handledDisconnected; // @synthesize handledDisconnected=_handledDisconnected;
 @property(nonatomic) _Bool eof; // @synthesize eof=_eof;
@@ -59,7 +60,6 @@
 @property(readonly, nonatomic) NSObject<OS_nw_endpoint> *endpoint; // @synthesize endpoint=_endpoint;
 @property(readonly, nonatomic) NSObject<OS_nw_parameters> *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_nw_interface> *outputInterface;
 - (void)teardownOutputHandler;
 - (void)destroyConnection;

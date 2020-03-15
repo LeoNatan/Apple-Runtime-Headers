@@ -62,6 +62,7 @@
 
 + (id)_configureEnvironment:(id)arg1 withInfo:(id)arg2 isPreApex:(BOOL)arg3;
 + (unsigned long long)_applicationTypeForProxy:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fallbackFolderName; // @synthesize fallbackFolderName=_fallbackFolderName;
 @property(readonly, nonatomic) NSArray *folderNames; // @synthesize folderNames=_folderNames;
 @property(readonly, nonatomic, getter=isBlockedForScreenTimeExpiration) BOOL blockedForScreenTimeExpiration; // @synthesize blockedForScreenTimeExpiration=_blockedForScreenTimeExpiration;
@@ -101,7 +102,6 @@
 @property(readonly, nonatomic) NSURL *dataContainerURL; // @synthesize dataContainerURL=_dataContainerURL;
 @property(readonly, nonatomic) NSURL *bundleContainerURL; // @synthesize bundleContainerURL=_bundleContainerURL;
 @property(readonly, nonatomic) NSURL *executableURL; // @synthesize executableURL=_executableURL;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (void)_loadFromProxy:(id)arg1;

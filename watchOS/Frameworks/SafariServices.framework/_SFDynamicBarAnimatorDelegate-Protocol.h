@@ -4,15 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariServices/NSObject-Protocol.h>
+#import <SafariServices/_SFDynamicBarAnimatorStateObserver-Protocol.h>
 
 @class _SFDynamicBarAnimator;
 
-@protocol _SFDynamicBarAnimatorDelegate <NSObject>
-- (void)dynamicBarAnimatorStateDidChange:(_SFDynamicBarAnimator *)arg1;
+@protocol _SFDynamicBarAnimatorDelegate <_SFDynamicBarAnimatorStateObserver>
 - (void)dynamicBarAnimatorOutputsDidChange:(_SFDynamicBarAnimator *)arg1;
-- (void)dynamicBarAnimatorWillLeaveSteadyState:(_SFDynamicBarAnimator *)arg1;
-- (void)dynamicBarAnimatorWillEnterSteadyState:(_SFDynamicBarAnimator *)arg1;
 - (float)dynamicBarAnimator:(_SFDynamicBarAnimator *)arg1 minimumTopBarHeightForOffset:(float)arg2;
 - (_Bool)dynamicBarAnimator:(_SFDynamicBarAnimator *)arg1 canTransitionToState:(int)arg2 byDraggingWithOffset:(float)arg3;
 @end

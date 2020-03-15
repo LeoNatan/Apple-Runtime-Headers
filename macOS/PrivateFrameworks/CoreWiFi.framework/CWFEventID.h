@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)eventIDWithType:(long long)arg1 interfaceName:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

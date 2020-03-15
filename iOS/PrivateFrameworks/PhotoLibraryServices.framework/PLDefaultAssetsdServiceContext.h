@@ -19,8 +19,8 @@
     NSError *_replyWarning;
 }
 
-@property(copy, nonatomic) NSError *replyWarning; // @synthesize replyWarning=_replyWarning;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSError *replyWarning; // @synthesize replyWarning=_replyWarning;
 @property(readonly, copy, nonatomic) NSString *clientDebugDescription;
 - (void)awaitLibraryState:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)hasEntitlement:(id)arg1;

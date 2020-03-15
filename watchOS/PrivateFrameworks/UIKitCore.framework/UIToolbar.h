@@ -46,6 +46,7 @@
 + (id)defaultButtonFont;
 + (id)_visualProviderForToolbar:(id)arg1;
 + (_Bool)_forceLegacyVisualProvider;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool centerTextButtons; // @synthesize centerTextButtons=_centerTextButtons;
 @property(nonatomic, setter=_setWantsLetterpressContent:) _Bool _wantsLetterpressContent; // @synthesize _wantsLetterpressContent=__wantsLetterpressContent;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) int barPosition; // @synthesize barPosition=_barPosition;
 @property(retain, nonatomic, setter=_setShadowView:) UIView *_shadowView; // @synthesize _shadowView;
 @property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
-- (void).cxx_destruct;
 - (void)_46877859;
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
 - (id)initInView:(id)arg1 withFrame:(struct CGRect)arg2 withItemList:(id)arg3;

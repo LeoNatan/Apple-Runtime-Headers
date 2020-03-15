@@ -17,12 +17,12 @@
     NSArray *_textFeatures;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *textFeatures; // @synthesize textFeatures=_textFeatures;
 @property(retain, nonatomic) CRTextRecognizerResults *recognizerResults; // @synthesize recognizerResults=_recognizerResults;
 @property(retain, nonatomic) CRTextDetectorResults *detectorResults; // @synthesize detectorResults=_detectorResults;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 
 @end
 

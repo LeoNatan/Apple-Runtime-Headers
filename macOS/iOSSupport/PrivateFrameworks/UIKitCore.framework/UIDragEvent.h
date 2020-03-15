@@ -33,10 +33,10 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)_isSessionIDValid:(unsigned int)arg1;
 + (void)_invalidateSessionID:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_sessionSource) _UIInternalDraggingSessionSource *sessionSource; // @synthesize sessionSource=_sessionSource;
 @property(readonly, nonatomic, getter=_sessionDestination) _UIInternalDraggingSessionDestination *sessionDestination; // @synthesize sessionDestination=_sessionDestination;
 @property(readonly, nonatomic) unsigned int dragSessionID; // @synthesize dragSessionID=_dragSessionID;
-- (void).cxx_destruct;
 - (void)_reset;
 - (void)dealloc;
 - (void)_setNeedsHitTestReset;

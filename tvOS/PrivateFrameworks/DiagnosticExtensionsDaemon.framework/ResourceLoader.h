@@ -19,10 +19,10 @@
 
 + (id)_localDateFormatter;
 + (id)_rfc1123DateFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLCache *urlCache; // @synthesize urlCache=_urlCache;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (double)_simulatedLatency;
 - (void)flushCache;
 - (void)asynchronousDataFromURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

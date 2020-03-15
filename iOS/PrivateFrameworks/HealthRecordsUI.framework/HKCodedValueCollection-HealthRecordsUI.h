@@ -6,7 +6,10 @@
 
 #import <HealthKit/HKCodedValueCollection.h>
 
+@class NSString;
+
 @interface HKCodedValueCollection (HealthRecordsUI)
+@property(nonatomic, readonly) NSString *canonicalBloodPressureDisplay;
 @property(nonatomic, readonly) _Bool representsCanonicalBloodPressure;
 @end
 

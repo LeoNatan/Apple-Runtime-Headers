@@ -25,11 +25,13 @@
 + (id)_iosParameterFromPlatformParameter:(id)arg1;
 + (id)translationObjectFromUIKitObject:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXUIElement *systemWideElement; // @synthesize systemWideElement=_systemWideElement;
 @property(retain, nonatomic) AXUIElement *systemAppElement; // @synthesize systemAppElement=_systemAppElement;
 @property(retain, nonatomic) struct __AXObserver *axEventObserver; // @synthesize axEventObserver=_axEventObserver;
 - (_Bool)accessibilityEnabled;
-- (void).cxx_destruct;
+- (id)remoteTranslationDataWithTranslation:(id)arg1 pid:(int)arg2;
+- (id)translationObjectFromData:(id)arg1;
 - (id)platformElementFromTranslation:(id)arg1;
 - (void)processPlatformNotification:(unsigned long long)arg1 data:(id)arg2 associatedObject:(id)arg3;
 - (id)translationObjectFromPlatformElement:(struct __AXUIElement *)arg1;
@@ -55,6 +57,7 @@
 - (id)_processingSmuggledMarzipanRequest:(id)arg1 parameter:(id)arg2 error:(unsigned long long *)arg3;
 - (id)_processRawElementDataRequest:(id)arg1 error:(unsigned long long *)arg2;
 - (id)_processMoveFocusToOpaqueElementAttributeRequest:(id)arg1 parameter:(id)arg2 direction:(long long)arg3 error:(unsigned long long *)arg4;
+- (id)_processLineRangeAttributeRequest:(id)arg1 parameter:(id)arg2 error:(unsigned long long *)arg3;
 - (id)_processClassNameAttributeRequest:(id)arg1 error:(unsigned long long *)arg2;
 - (id)_processChildrenAttributeRequest:(id)arg1 error:(unsigned long long *)arg2;
 - (id)_processAttributedLabelAttributeRequest:(id)arg1 error:(unsigned long long *)arg2;

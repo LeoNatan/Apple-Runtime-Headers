@@ -16,8 +16,8 @@
     _Bool _clockwise;
 }
 
-@property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
 - (id)initWithCurveWidth:(float)arg1 padding:(float)arg2 forDevice:(id)arg3;
 
 @end

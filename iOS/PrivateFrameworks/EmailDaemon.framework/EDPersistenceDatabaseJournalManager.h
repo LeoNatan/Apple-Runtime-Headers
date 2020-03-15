@@ -25,10 +25,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *deleteQueue; // @synthesize deleteQueue=_deleteQueue;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *checkExistingQueue; // @synthesize checkExistingQueue=_checkExistingQueue;
 @property(readonly, copy, nonatomic) NSString *journalDirectoryPath; // @synthesize journalDirectoryPath=_journalDirectoryPath;
-- (void).cxx_destruct;
 - (void)waitForDeletes;
 - (id)_getJournalWithBlock:(CDUnknownBlockType)arg1;
 - (void)_deleteJournalNumber:(unsigned long long)arg1;

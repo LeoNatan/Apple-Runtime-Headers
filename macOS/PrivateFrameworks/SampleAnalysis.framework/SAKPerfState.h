@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)kperfStateWithSession:(struct ktrace_session *)arg1;
+- (void).cxx_destruct;
 @property BOOL mostRecentSampleIsPET; // @synthesize mostRecentSampleIsPET=_mostRecentSampleIsPET;
 @property(retain) SATimestamp *mostRecentSampleTimestamp; // @synthesize mostRecentSampleTimestamp=_mostRecentSampleTimestamp;
 @property(readonly) struct ktrace_session *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (BOOL)isNextSampleisOnCoreForCpu:(unsigned int)arg1;
 - (void)nextSampleForCpu:(unsigned int)arg1 isOnCore:(BOOL)arg2;
 - (id)initWithSession:(struct ktrace_session *)arg1;

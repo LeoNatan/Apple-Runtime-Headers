@@ -26,8 +26,8 @@
     NSMutableArray *_pendingWork;
 }
 
-@property(readonly, nonatomic) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_identity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_identity;
 - (void)_handleDisplayConnectIfPossible;
 - (void)_appProcessStateDidChange:(id)arg1;
 - (void)_authenicationStateDidChange:(id)arg1;

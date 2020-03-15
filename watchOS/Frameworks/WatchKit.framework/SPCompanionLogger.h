@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak SPExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SPExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
 - (void)logMessage:(id)arg1;
 
 @end

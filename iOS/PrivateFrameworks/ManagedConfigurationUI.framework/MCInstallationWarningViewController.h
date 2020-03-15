@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <MCInstallationWarningDelegate> _warningDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MCInstallationWarningDelegate> warningDelegate; // @synthesize warningDelegate=_warningDelegate;
 @property(retain, nonatomic) NSArray *warnings; // @synthesize warnings=_warnings;
 @property(nonatomic) _Bool isMDMInstall; // @synthesize isMDMInstall=_isMDMInstall;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;

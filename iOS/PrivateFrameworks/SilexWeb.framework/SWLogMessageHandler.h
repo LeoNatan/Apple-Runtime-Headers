@@ -16,8 +16,8 @@
     id <SWLogger> _logger;
 }
 
-@property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 - (void)didReceiveMessage:(id)arg1 securityOrigin:(id)arg2;
 - (id)initWithLogger:(id)arg1;
 

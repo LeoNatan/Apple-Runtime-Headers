@@ -15,10 +15,10 @@
     UIAccessibilityElementTraversalOptions *_traversalOptions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResolveRemoteElements; // @synthesize shouldResolveRemoteElements=_shouldResolveRemoteElements;
 @property(retain, nonatomic) UIAccessibilityElementTraversalOptions *traversalOptions; // @synthesize traversalOptions=_traversalOptions;
 @property(retain, nonatomic) id rootElement; // @synthesize rootElement=_rootElement;
-- (void).cxx_destruct;
 - (void)_resolveLeafElementsForRemoteElement:(id)arg1 rootElement:(id)arg2 addingToLeafElementDescriptions:(id)arg3;
 - (struct CGRect)_convertAccessibilityFrameOfElement:(id)arg1 toViewSpaceOfContainer:(id)arg2 remoteParent:(id)arg3;
 - (id)encodeWithError:(id *)arg1;

@@ -20,6 +20,7 @@
     PHAVisionServiceFaceProcessingWorker *_worker;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PHAVisionServiceFaceProcessingWorker *worker; // @synthesize worker=_worker;
 @property(retain, nonatomic) PVPersonPromoter *personPromoter; // @synthesize personPromoter=_personPromoter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *backgroundTaskQueue; // @synthesize backgroundTaskQueue=_backgroundTaskQueue;
@@ -27,7 +28,6 @@
 - (float)completionScore;
 - (void)setFinished:(_Bool)arg1;
 - (_Bool)finished;
-- (void).cxx_destruct;
 - (id)densityClusteringForObjects:(id)arg1 maximumDistance:(double)arg2 minimumNumberOfObjects:(unsigned long long)arg3 withDistanceBlock:(CDUnknownBlockType)arg4;
 - (id)performSocialGroupsIdentifiersWithPersonClusterManager:(id)arg1 forPersons:(id)arg2 overTheYearsComputation:(_Bool)arg3 updateBlock:(CDUnknownBlockType)arg4;
 - (id)suggestedMeIdentifierWithPersonClusterManager:(id)arg1 forPersons:(id)arg2 updateBlock:(CDUnknownBlockType)arg3;

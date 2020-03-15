@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CLLocationCoordinate2D _lastUserLocationCoordinate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D lastUserLocationCoordinate; // @synthesize lastUserLocationCoordinate=_lastUserLocationCoordinate;
 @property(nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) FMAnnotationView *selectedAnnotationView; // @synthesize selectedAnnotationView=_selectedAnnotationView;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool respondingToUserTouch; // @synthesize respondingToUserTouch=_respondingToUserTouch;
 @property(nonatomic) __weak id <FMFMapViewDelegateInternalDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isMapCenteringDisabled; // @synthesize isMapCenteringDisabled=_isMapCenteringDisabled;
-- (void).cxx_destruct;
 - (_Bool)regionIsValid:(CDStruct_26e8d939)arg1;
 - (struct UIEdgeInsets)edgeInsetsWithMinApplied:(struct UIEdgeInsets)arg1;
 - (CDStruct_90e2a262)mapRectMakeWithRadialDistanceForCoordinate:(struct CLLocationCoordinate2D)arg1 andRadius:(double)arg2;

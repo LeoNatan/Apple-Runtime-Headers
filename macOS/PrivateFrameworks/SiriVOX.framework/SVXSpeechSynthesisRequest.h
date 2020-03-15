@@ -24,6 +24,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *streamID; // @synthesize streamID=_streamID;
 @property(readonly, copy, nonatomic) SVXSpeechSynthesisAudio *presynthesizedAudio; // @synthesize presynthesizedAudio=_presynthesizedAudio;
 @property(readonly, copy, nonatomic) NSString *localizationKey; // @synthesize localizationKey=_localizationKey;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSString *speakableText; // @synthesize speakableText=_speakableText;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

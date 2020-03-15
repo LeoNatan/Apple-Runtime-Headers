@@ -120,6 +120,7 @@
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3 forElement:(id)arg4 warnOnMissingString:(BOOL)arg5;
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3 warnOnMissingString:(BOOL)arg4;
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double _shieldWindowRaisedTime; // @synthesize _shieldWindowRaisedTime=__shieldWindowRaisedTime;
 @property(retain, nonatomic) NSTimer *_sleepAssertionFailsafeTimer; // @synthesize _sleepAssertionFailsafeTimer=__sleepAssertionFailsafeTimer;
 @property(nonatomic) long long _preventSleepRequestCount; // @synthesize _preventSleepRequestCount=__preventSleepRequestCount;
@@ -135,7 +136,6 @@
 @property(nonatomic, setter=setLoggedIn:) BOOL isLoggedIn; // @synthesize isLoggedIn=_isLoggedIn;
 @property(nonatomic) int primaryBrailleDisplayToken; // @synthesize primaryBrailleDisplayToken=_primaryBrailleDisplayToken;
 @property(nonatomic, setter=setKeyboardHelpEnabled:) BOOL isKeyboardHelpEnabled; // @synthesize isKeyboardHelpEnabled=_isKeyboardHelpEnabled;
-- (void).cxx_destruct;
 - (void)updateCapsLockModifierMask;
 - (BOOL)isSafeToLaunchAnotherApp;
 - (void)_setupCloudKitSync;

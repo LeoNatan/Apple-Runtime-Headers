@@ -15,8 +15,8 @@
 
 + (id)identifier;
 + (id)sharedInstance;
-@property(nonatomic) __weak id <PPConnectionsLocationSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PPConnectionsLocationSourceDelegate> delegate; // @synthesize delegate=_delegate;
 
 @end
 

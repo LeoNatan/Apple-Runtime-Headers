@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *metrics; // @synthesize metrics=_metrics;
 @property(retain) NSDate *datestamp; // @synthesize datestamp=_datestamp;
 @property long long sourceID; // @synthesize sourceID=_sourceID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithSourceID:(long long)arg1 withDateStamp:(id)arg2 andMetrics:(id)arg3;

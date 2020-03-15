@@ -13,8 +13,8 @@
     NSString *_systemImageName;
 }
 
-@property(readonly, copy, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 - (void)main;
 - (id)initWithSystemImageName:(id)arg1;
 

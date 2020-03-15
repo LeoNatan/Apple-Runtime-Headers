@@ -16,8 +16,8 @@
     NSObject<NUAdManagerConfiguration> *_configuration;
 }
 
-@property(readonly, copy, nonatomic) NSObject<NUAdManagerConfiguration> *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSObject<NUAdManagerConfiguration> *configuration; // @synthesize configuration=_configuration;
 - (void)fetchConfigurationWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithConfiguration:(id)arg1;
 - (id)init;

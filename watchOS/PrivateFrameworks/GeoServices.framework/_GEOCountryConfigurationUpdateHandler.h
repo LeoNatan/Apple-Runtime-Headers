@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
-- (void).cxx_destruct;
 
 @end
 

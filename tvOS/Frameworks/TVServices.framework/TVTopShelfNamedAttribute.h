@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

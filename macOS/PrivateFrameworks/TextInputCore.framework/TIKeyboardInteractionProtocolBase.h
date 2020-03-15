@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithKeyboardState:(id)arg1;

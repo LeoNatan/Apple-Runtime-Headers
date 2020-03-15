@@ -147,6 +147,7 @@
     unsigned long long _pptSampledCountOfEmptyCells;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint liveResizeAnchorOffset; // @synthesize liveResizeAnchorOffset=_liveResizeAnchorOffset;
 @property(retain, nonatomic) NSIndexPath *liveResizeAnchorIndexPath; // @synthesize liveResizeAnchorIndexPath=_liveResizeAnchorIndexPath;
 @property(retain, nonatomic) MOCollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -183,7 +184,6 @@
 @property(readonly, nonatomic) MOMediaViewLayout *mediaViewLayout; // @synthesize mediaViewLayout=_mediaViewLayout;
 @property(nonatomic) __weak id <MOMediaViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MOMediaViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)scrollingDebugInformation;
 - (void)rescheduleOperations;
 - (void)_rescheduleOperations;

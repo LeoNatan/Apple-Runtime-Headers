@@ -18,8 +18,8 @@
     _Bool _textureVisible;
 }
 
-@property(nonatomic) _Bool textureVisible; // @synthesize textureVisible=_textureVisible;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool textureVisible; // @synthesize textureVisible=_textureVisible;
 - (BOOL)_shouldAutoFlattenLayerTree;
 - (void)layout;
 - (void)_createBackdropLayers;

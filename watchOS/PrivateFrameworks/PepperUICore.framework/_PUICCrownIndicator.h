@@ -25,11 +25,11 @@
 + (id)_sharedIndicator;
 + (id)acquireCrownIndicatorFor:(id)arg1;
 + (id)sharedIndicatorForDisplayer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize trackEdgePadding; // @synthesize trackEdgePadding=_trackEdgePadding;
 @property(nonatomic) __weak id displayer; // @synthesize displayer=_displayer;
 @property(retain, nonatomic) PUICCrownView *crownView; // @synthesize crownView=_crownView;
 @property(retain, nonatomic) PUICCrownIndicatorWindow *crownWindow; // @synthesize crownWindow=_crownWindow;
-- (void).cxx_destruct;
 - (void)setVisible:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isVisible) _Bool visible;
 - (void)_resetWindowLevel;

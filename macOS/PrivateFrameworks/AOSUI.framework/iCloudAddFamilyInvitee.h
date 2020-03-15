@@ -18,13 +18,13 @@
     NSString *_displayString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *displayString; // @synthesize displayString=_displayString;
 @property ABPerson *abPerson; // @synthesize abPerson=_abPerson;
 @property(copy) NSString *nickname; // @synthesize nickname=_nickname;
 @property(copy) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(copy) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 nickname:(id)arg3 emailAddress:(id)arg4 abPerson:(id)arg5 displayString:(id)arg6;
 
 @end

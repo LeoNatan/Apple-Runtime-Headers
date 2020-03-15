@@ -21,17 +21,18 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
 @property(nonatomic) BOOL skipPropagateFavoriteToServices; // @synthesize skipPropagateFavoriteToServices=_skipPropagateFavoriteToServices;
 @property(nonatomic) BOOL isFavorite; // @synthesize isFavorite;
 @property(retain, nonatomic) HFRoomBuilder *room; // @synthesize room;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 - (id)_lazilyUpdateFavorite;
 - (id)_lazilyUpdateRoom;
 - (id)_lazilyUpdateName;
 - (id)commitItem;
 - (id)_performValidation;
+- (BOOL)_shouldUpdateNilNameWithRoomName;
 - (id)removeItemFromHome;
 @property(readonly, nonatomic) BOOL supportsFavoriting;
 - (id)accessories;

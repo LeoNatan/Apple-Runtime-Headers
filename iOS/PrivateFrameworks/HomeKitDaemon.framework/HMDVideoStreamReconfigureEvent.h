@@ -14,9 +14,9 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

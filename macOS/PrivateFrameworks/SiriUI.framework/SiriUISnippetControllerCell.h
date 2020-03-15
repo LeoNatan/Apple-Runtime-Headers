@@ -28,9 +28,9 @@
 + (id)elementKind;
 + (double)defaultHeight;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_snippetEdgeInsets, setter=_setSnippetEdgeInsets:) struct NSEdgeInsets snippetEdgeInsets; // @synthesize snippetEdgeInsets=_snippetEdgeInsets;
 @property(nonatomic) __weak SiriUISnippetViewController *snippetViewController; // @synthesize snippetViewController=_snippetViewController;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (void)_snippetPunchOutButtonTapped:(id)arg1;
 - (void)animateSnippetConfirmationWithCompletion:(CDUnknownBlockType)arg1;

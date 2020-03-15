@@ -20,12 +20,12 @@
     SBHomeGestureArbiter *_arbiter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBHomeGestureArbiter *arbiter; // @synthesize arbiter=_arbiter;
 @property(copy, nonatomic) NSIndexSet *trumpsAdditionalIdentifiers; // @synthesize trumpsAdditionalIdentifiers=_trumpsAdditionalIdentifiers;
 @property(nonatomic) __weak id <SBHomeGestureParticipantDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool ownsHomeGesture; // @synthesize ownsHomeGesture=_ownsHomeGesture;
 @property(nonatomic) long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSString *_lastName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(copy, nonatomic) NSString *personId; // @synthesize personId=_personId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAccount:(id)arg1;
 

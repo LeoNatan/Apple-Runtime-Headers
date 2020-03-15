@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSXPCConnection *_connection;
 }
 
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (id)serviceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;

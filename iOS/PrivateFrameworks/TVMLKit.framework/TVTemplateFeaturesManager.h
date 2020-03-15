@@ -16,8 +16,8 @@
 }
 
 + (id)featuresManagerForAppDocument:(id)arg1;
-@property(nonatomic) __weak id <TVTemplateFeaturesManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVTemplateFeaturesManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (long long)_rankForContext:(id)arg1;
 - (id)_contextsForFeature:(id)arg1;
 - (id)currentContextForFeature:(id)arg1;

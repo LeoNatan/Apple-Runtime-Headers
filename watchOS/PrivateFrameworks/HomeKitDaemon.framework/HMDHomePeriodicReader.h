@@ -19,10 +19,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDBackgroundTaskAgentTimer *btaReadTimer; // @synthesize btaReadTimer=_btaReadTimer;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property __weak HMDHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)_startTimer;
 - (void)_issueCharacteristicRequests:(id)arg1;
 - (void)_checkToIssueRead;

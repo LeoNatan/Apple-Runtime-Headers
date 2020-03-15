@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long order; // @synthesize order=_order;
 @property(retain, nonatomic) CALayer *bottomKeyline; // @synthesize bottomKeyline=_bottomKeyline;
 @property(retain, nonatomic) CALayer *topKeyline; // @synthesize topKeyline=_topKeyline;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIButton *updateButton; // @synthesize updateButton=_updateButton;
 @property(retain, nonatomic) CKNicknameBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(nonatomic) id <CKNicknameUpdatesCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

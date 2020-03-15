@@ -16,11 +16,11 @@
     NSString *_stage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *stage; // @synthesize stage=_stage;
 @property(readonly) NSString *agent; // @synthesize agent=_agent;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)initWithState:(unsigned long long)arg1 reason:(id)arg2 agent:(id)arg3 stage:(id)arg4;
 
 @end

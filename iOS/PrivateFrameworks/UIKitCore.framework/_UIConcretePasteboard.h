@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (id)pasteboardWithName:(id)arg1 create:(_Bool)arg2;
 + (id)generalPasteboard;
 + (id)_pasteboardNamed:(id)arg1 createIfNotFound:(_Bool)arg2;
-@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (_Bool)hasColors;
 - (_Bool)hasImages;
 - (_Bool)hasURLs;

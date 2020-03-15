@@ -14,9 +14,9 @@
     unsigned long long _numberOfItemsToElect;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long numberOfItemsToElect; // @synthesize numberOfItemsToElect=_numberOfItemsToElect;
 @property(readonly) PLDataCluster *cluster; // @synthesize cluster=_cluster;
-- (void).cxx_destruct;
 - (id)initWithCluster:(id)arg1 numberOfItemsToElect:(unsigned long long)arg2;
 
 @end

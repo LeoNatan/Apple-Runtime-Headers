@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSAttributedString *_attributedString;
 }
 
-@property(readonly, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (id)initWithAttributedString:(id)arg1;
 
 // Remaining properties

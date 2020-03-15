@@ -18,11 +18,11 @@
     NSAttributedString *_attributedText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool containsExcessiveLineHeightCharacters; // @synthesize containsExcessiveLineHeightCharacters=_containsExcessiveLineHeightCharacters;
 @property(nonatomic) _Bool centerTextWhenSkinny; // @synthesize centerTextWhenSkinny=_centerTextWhenSkinny;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(retain, nonatomic) CKBalloonTextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)restoreFromLargeTextTruncation;
 - (void)truncateForLargeText;
 - (void)detachInvisibleInkEffectView;

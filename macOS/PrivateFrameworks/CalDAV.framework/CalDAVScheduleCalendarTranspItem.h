@@ -13,8 +13,8 @@
     CoreDAVItemWithNoChildren *_transparent;
 }
 
-@property(retain, nonatomic) CoreDAVItemWithNoChildren *transparent; // @synthesize transparent=_transparent;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CoreDAVItemWithNoChildren *transparent; // @synthesize transparent=_transparent;
 - (id)copyParseRules;
 @property(readonly, nonatomic) BOOL isScheduleTransparent;
 

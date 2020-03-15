@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <UIDocumentInteractionControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <UIDocumentInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UIDocumentInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)documentInteractionControllerDidDismissOptionsMenu:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 

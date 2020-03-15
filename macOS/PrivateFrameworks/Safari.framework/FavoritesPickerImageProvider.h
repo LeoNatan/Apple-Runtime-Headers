@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_sanitizeThemeColor:(id)arg1;
 + (id)sharedProvider;
-@property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (void)siteMetadataImageCache:(id)arg1 didRemoveImageFromCacheForKeyString:(id)arg2;
 - (void)siteMetadataImageCache:(id)arg1 didFinishLoadingImage:(id)arg2 forKeyString:(id)arg3;
 - (void)_setCachedImageThemeColor:(id)arg1 forRequestURL:(id)arg2;

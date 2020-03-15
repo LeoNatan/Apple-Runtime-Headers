@@ -15,10 +15,10 @@
     NSMutableSet *_guidsForAllOwnedTransfers;
 }
 
+- (void).cxx_destruct;
 @property BOOL singleOptionPressed; // @synthesize singleOptionPressed=_singleOptionPressed;
 @property BOOL altFunction; // @synthesize altFunction=_altFunction;
 @property(retain) NSMutableSet *guidsForAllOwnedTransfers; // @synthesize guidsForAllOwnedTransfers=_guidsForAllOwnedTransfers;
-- (void).cxx_destruct;
 - (void)updateDOMElement:(id)arg1 forDarkAppearance:(BOOL)arg2;
 - (BOOL)isThemeableTranscriptResource:(id)arg1;
 - (void)_flagsChanged:(id)arg1;

@@ -16,11 +16,11 @@
     CDStruct_1b6d18a9 _time;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double renderScale; // @synthesize renderScale=_renderScale;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) CDStruct_1b6d18a9 time; // @synthesize time=_time;
 @property(retain, nonatomic) CIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

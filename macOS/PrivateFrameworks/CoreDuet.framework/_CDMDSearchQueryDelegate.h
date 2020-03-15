@@ -17,9 +17,9 @@
     NSMutableArray *_recentMDSearchQueryResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *recentMDSearchQueryResults; // @synthesize recentMDSearchQueryResults=_recentMDSearchQueryResults;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *mdQuerySem; // @synthesize mdQuerySem=_mdQuerySem;
-- (void).cxx_destruct;
 - (void)searchQuery:(id)arg1 statusChanged:(unsigned long long)arg2;
 - (void)searchQuery:(id)arg1 didFailWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 didReturnItems:(id)arg2;

@@ -20,12 +20,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *TimeZoneName; // @synthesize TimeZoneName=_TimeZoneName;
 @property(retain, nonatomic) NSDateComponents *Time; // @synthesize Time=_Time;
 @property(retain, nonatomic) id TimeChangePattern; // @synthesize TimeChangePattern=_TimeChangePattern;
 @property(nonatomic) BOOL IsOffsetSpecified; // @synthesize IsOffsetSpecified=_IsOffsetSpecified;
 @property(nonatomic) double Offset; // @synthesize Offset=_Offset;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

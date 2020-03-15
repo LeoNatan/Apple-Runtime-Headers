@@ -6,10 +6,8 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsArticles/SXMailPresenter-Protocol.h>
-
 __attribute__((visibility("hidden")))
-@interface _TtC12NewsArticles13MailPresenter : NSObject <SXMailPresenter>
+@interface _TtC12NewsArticles13MailPresenter : NSObject
 {
     // Error parsing type: , name: host
     // Error parsing type: , name: viewControllerPresenting

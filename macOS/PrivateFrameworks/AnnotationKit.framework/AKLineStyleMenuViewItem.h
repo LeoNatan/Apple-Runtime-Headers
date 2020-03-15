@@ -19,11 +19,11 @@
     NSButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *button; // @synthesize button=_button;
 @property(retain) NSImageView *stateIndicatorView; // @synthesize stateIndicatorView=_stateIndicatorView;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *image;
 - (long long)tag;
 - (id)initWithFrame:(struct CGRect)arg1 tag:(long long)arg2 toolTip:(id)arg3 image:(id)arg4 target:(id)arg5 action:(SEL)arg6;

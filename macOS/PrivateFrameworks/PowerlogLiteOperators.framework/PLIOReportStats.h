@@ -18,13 +18,13 @@
     NSString *_driverName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *driverName; // @synthesize driverName=_driverName;
 @property(retain) NSDictionary *subscribedChannels; // @synthesize subscribedChannels=_subscribedChannels;
 @property struct __IOReportSubscriptionCF *subscription; // @synthesize subscription=_subscription;
 @property(retain) NSDate *sampleTimePrevious; // @synthesize sampleTimePrevious=_sampleTimePrevious;
 @property(retain) NSDate *sampleTime; // @synthesize sampleTime=_sampleTime;
 @property(retain) NSDictionary *ioReportSample; // @synthesize ioReportSample=_ioReportSample;
-- (void).cxx_destruct;
 - (id)deltaValueForStateChannel:(id)arg1 atIndex:(int)arg2;
 - (id)currentValueForStateChannel:(id)arg1 atIndex:(int)arg2;
 - (id)deltaValueForSimpleChannel:(id)arg1;

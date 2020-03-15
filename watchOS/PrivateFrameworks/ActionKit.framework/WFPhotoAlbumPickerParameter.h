@@ -19,8 +19,8 @@
 
 + (id)referencedActionResourceClasses;
 + (_Bool)hasPhotosAccess;
-@property(retain, nonatomic) WFPhotoAccessResource *photoAccessResource; // @synthesize photoAccessResource=_photoAccessResource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFPhotoAccessResource *photoAccessResource; // @synthesize photoAccessResource=_photoAccessResource;
 - (void)photoLibraryDidChange:(id)arg1;
 - (id)defaultSerializedRepresentation;
 - (id)localizedLabelForPossibleState:(id)arg1;

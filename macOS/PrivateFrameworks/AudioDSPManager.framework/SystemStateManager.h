@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned long long systemState; // @synthesize systemState=_systemState;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long systemState; // @synthesize systemState=_systemState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

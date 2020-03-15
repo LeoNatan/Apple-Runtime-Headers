@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
+@class NSDictionary;
+
 @interface PPLabelMatcher : NSObject
 {
-    struct NSDictionary *_map;
+    NSDictionary *_map;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (struct NSDictionary *)_generateMap;
+- (id)_generateMap;
 - (unsigned long long)matchFromLabel:(id)arg1 toLabel:(id)arg2;
 - (id)init;
 

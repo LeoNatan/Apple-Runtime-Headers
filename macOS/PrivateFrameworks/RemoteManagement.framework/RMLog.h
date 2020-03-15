@@ -11,12 +11,17 @@
 }
 
 + (id)assetResolver;
-+ (id)configurationRepository;
-+ (id)configurationSubscription;
++ (id)configurationEventStreamSubscriber;
++ (id)configurationStatusUpdater;
++ (id)configurationSubscriberClient;
++ (id)enrollmentController;
 + (id)extensionConfigurationSubscriber;
 + (id)extensionContext;
 + (id)extensionRequestHandler;
 + (id)extensionStatusPublisher;
++ (id)httpLogging;
++ (id)locations;
++ (id)personaHelper;
 + (id)unresolvedDataAsset;
 + (id)unresolvedFileAsset;
 

@@ -33,6 +33,7 @@
     struct CGSize _viewportSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long layoutColumns; // @synthesize layoutColumns=_layoutColumns;
 @property(readonly, nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;
 @property(readonly, nonatomic) double rightScreenMargin; // @synthesize rightScreenMargin=_rightScreenMargin;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) id <SXDocumentLayout> documentLayout; // @synthesize documentLayout=_documentLayout;
 @property(readonly, nonatomic) struct CGSize viewportSize; // @synthesize viewportSize=_viewportSize;
 @property(readonly, nonatomic) struct CGSize constrainedViewportSize; // @synthesize constrainedViewportSize=_constrainedViewportSize;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

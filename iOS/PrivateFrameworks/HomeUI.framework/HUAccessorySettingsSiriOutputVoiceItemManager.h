@@ -17,10 +17,10 @@
     HUSiriLanguageOptionItemProvider *_genderOptionItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUSiriLanguageOptionItemProvider *genderOptionItemProvider; // @synthesize genderOptionItemProvider=_genderOptionItemProvider;
 @property(retain, nonatomic) HUSiriLanguageOptionItemProvider *accentOptionItemProvider; // @synthesize accentOptionItemProvider=_accentOptionItemProvider;
 @property(readonly, nonatomic) HFAccessorySettingSiriLanguageAdapter *adapter; // @synthesize adapter=_adapter;
-- (void).cxx_destruct;
 - (void)siriLanguageAdapter:(id)arg1 availableLanguageOptionsDidChange:(id)arg2;
 - (void)siriLanguageAdapter:(id)arg1 selectedLanguageOptionDidChange:(id)arg2;
 - (void)_unregisterForExternalUpdates;

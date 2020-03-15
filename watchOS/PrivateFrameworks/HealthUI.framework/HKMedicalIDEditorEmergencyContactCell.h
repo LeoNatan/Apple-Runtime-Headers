@@ -13,8 +13,8 @@
     _HKEmergencyContact *_contact;
 }
 
-@property(retain, nonatomic) _HKEmergencyContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HKEmergencyContact *contact; // @synthesize contact=_contact;
 - (void)_labelTapped:(id)arg1;
 - (id)formattedValue;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_containerIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (BOOL)evaluateWithObject:(id)arg1;
 - (id)initWithContainerIdentifier:(id)arg1;

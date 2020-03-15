@@ -15,9 +15,9 @@
 }
 
 + (id)condition:(id)arg1 fromDate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *intervals; // @synthesize intervals=_intervals;
 @property(retain, nonatomic) NSMutableArray *conditions; // @synthesize conditions=_conditions;
-- (void).cxx_destruct;
 - (id)description;
 - (id)idealIntervals;
 - (void)addCondition:(id)arg1 atDate:(id)arg2;

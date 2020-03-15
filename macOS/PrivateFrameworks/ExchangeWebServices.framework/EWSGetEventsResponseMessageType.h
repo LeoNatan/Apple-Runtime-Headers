@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSNotificationType *Notification; // @synthesize Notification=_Notification;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSNotificationType *Notification; // @synthesize Notification=_Notification;
 
 @end
 

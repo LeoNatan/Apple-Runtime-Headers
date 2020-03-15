@@ -29,6 +29,7 @@
 }
 
 + (id)entitlements;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 @property(retain, nonatomic) NSMutableDictionary *statusDictionary; // @synthesize statusDictionary=_statusDictionary;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NWNetworkOfInterestManager *noiManager; // @synthesize noiManager=_noiManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *noiManagerQueue; // @synthesize noiManagerQueue=_noiManagerQueue;
 @property(retain, nonatomic) NSArray *noiKeyPaths; // @synthesize noiKeyPaths=_noiKeyPaths;
-- (void).cxx_destruct;
 - (id)loadState;
 - (void)saveState;
 - (void)synchronouslyReflectCurrentValue;

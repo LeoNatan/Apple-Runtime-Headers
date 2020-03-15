@@ -37,11 +37,11 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)initialize;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *spotlightQueue; // @synthesize spotlightQueue=_spotlightQueue;
 @property long long unreadQueryCount; // @synthesize unreadQueryCount=_unreadQueryCount;
 @property BOOL suspendSmartMailboxUnreadCountCalculations; // @synthesize suspendSmartMailboxUnreadCountCalculations=_suspendSmartMailboxUnreadCountCalculations;
 @property double lastModificationToUpdate; // @synthesize lastModificationToUpdate=_lastModificationToUpdate;
-- (void).cxx_destruct;
 - (void)_updateObsoleteMessageKeys;
 - (void)_addObsoleteMessageKeys:(id)arg1;
 - (id)_messageKeysWaitingToBeIndexes;

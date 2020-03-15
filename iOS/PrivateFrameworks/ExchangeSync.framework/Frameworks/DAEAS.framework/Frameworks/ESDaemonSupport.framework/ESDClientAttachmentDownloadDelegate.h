@@ -16,9 +16,9 @@
     id _downloadID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id downloadID; // @synthesize downloadID=_downloadID;
 @property(retain, nonatomic) NSString *attachmentUUID; // @synthesize attachmentUUID=_attachmentUUID;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)downloadFinishedError:(id)arg1;
 - (void)downloadProgressDownloadedByteCount:(long long)arg1 totalByteCount:(long long)arg2;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UINavigationController *_parentController;
 }
 
-@property(retain, nonatomic) UIViewController *disappearingViewController; // @synthesize disappearingViewController=_disappearingViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIViewController *disappearingViewController; // @synthesize disappearingViewController=_disappearingViewController;
 - (_Bool)_isSupportedInterfaceOrientation:(int)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

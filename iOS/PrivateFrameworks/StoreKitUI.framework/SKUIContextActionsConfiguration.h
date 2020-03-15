@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     SKUIDialogTemplateViewElement *_dialogTemplate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIDialogTemplateViewElement *dialogTemplate; // @synthesize dialogTemplate=_dialogTemplate;
 @property(retain, nonatomic) SKUIContextActionsPresentationSource *presentationSource; // @synthesize presentationSource=_presentationSource;
-- (void).cxx_destruct;
 - (id)_resourceImageForImageElement:(id)arg1;
 - (id)contextActions;
 - (id)initWithDialogTemplate:(id)arg1;

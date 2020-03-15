@@ -14,8 +14,8 @@
     NSDictionary *_lookupDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *lookupDictionary; // @synthesize lookupDictionary=_lookupDictionary;
 - (id)storeItem;
 - (id)initWithLookupDictionary:(id)arg1 additionalTrackMetadata:(id)arg2;
 

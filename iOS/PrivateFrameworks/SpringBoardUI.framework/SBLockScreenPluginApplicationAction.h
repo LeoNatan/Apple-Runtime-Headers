@@ -17,10 +17,10 @@
 
 + (id)actionWithBundleID:(id)arg1;
 + (id)actionWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 @property(retain, nonatomic, setter=setURL:) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -46,13 +46,13 @@
     id <PXOneUpPresentationImplementationDelegate> _implementationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXOneUpPresentationImplementationDelegate> implementationDelegate; // @synthesize implementationDelegate=_implementationDelegate;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak UIViewController *originalPresentingViewController; // @synthesize originalPresentingViewController=_originalPresentingViewController;
 @property(readonly, nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) __weak id <PXOneUpPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setImplementationDelegate:) __weak id <PXOneUpPresentationImplementationDelegate> _implementationDelegate; // @synthesize _implementationDelegate=__implementationDelegate;
-- (void).cxx_destruct;
 - (void)_updateImplementationDelegate;
 @property(readonly, nonatomic) UIScrollView *scrollView;
 - (void)setHiddenAssetReferences:(id)arg1;

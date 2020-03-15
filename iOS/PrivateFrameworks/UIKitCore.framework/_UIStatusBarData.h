@@ -51,6 +51,7 @@
 
 + (id)entryKeys;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *forwardNavigationEntry; // @synthesize forwardNavigationEntry=_forwardNavigationEntry;
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *backNavigationEntry; // @synthesize backNavigationEntry=_backNavigationEntry;
 @property(copy, nonatomic) _UIStatusBarDataBackgroundActivityEntry *backgroundActivityEntry; // @synthesize backgroundActivityEntry=_backgroundActivityEntry;
@@ -85,7 +86,6 @@
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *dateEntry; // @synthesize dateEntry=_dateEntry;
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *shortTimeEntry; // @synthesize shortTimeEntry=_shortTimeEntry;
 @property(copy, nonatomic) _UIStatusBarDataStringEntry *timeEntry; // @synthesize timeEntry=_timeEntry;
-- (void).cxx_destruct;
 - (void)makeUpdateFromData:(id)arg1;
 - (id)updateFromData:(id)arg1;
 - (id)dataByApplyingUpdate:(id)arg1 keys:(id)arg2;

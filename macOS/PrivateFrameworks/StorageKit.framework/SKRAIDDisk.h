@@ -18,13 +18,13 @@
     NSDictionary *_contentDiskDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *contentDiskDictionary; // @synthesize contentDiskDictionary=_contentDiskDictionary;
 @property(retain) NSString *status; // @synthesize status=_status;
 @property(retain) NSArray *setSpareUUIDs; // @synthesize setSpareUUIDs=_setSpareUUIDs;
 @property(retain) NSArray *setMemberUUIDs; // @synthesize setMemberUUIDs=_setMemberUUIDs;
 @property BOOL isRAIDSet; // @synthesize isRAIDSet=_isRAIDSet;
 @property(retain) NSString *raidUUID; // @synthesize raidUUID=_raidUUID;
-- (void).cxx_destruct;
 - (void)deleteRAIDWithProgress:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)removeDiskFromRAID:(id)arg1 progress:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)repairRAIDWithDisk:(id)arg1 progress:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;

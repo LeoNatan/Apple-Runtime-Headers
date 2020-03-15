@@ -19,8 +19,8 @@
 }
 
 + (id)_explanationLabelDefaultAttributes;
-@property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 - (id)_warningLabel;
 - (id)_secureLabel;
 - (id)_signedLabel;

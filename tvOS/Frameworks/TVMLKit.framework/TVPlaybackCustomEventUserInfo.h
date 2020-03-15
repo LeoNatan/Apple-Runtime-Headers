@@ -17,10 +17,10 @@
     id _returnValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id returnValue; // @synthesize returnValue=_returnValue;
 @property(nonatomic) _Bool expectsReturnValue; // @synthesize expectsReturnValue=_expectsReturnValue;
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (void)processReturnJSValue:(id)arg1 inContext:(id)arg2;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)initWithProperties:(id)arg1 expectsReturnValue:(_Bool)arg2;

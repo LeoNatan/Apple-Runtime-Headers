@@ -23,6 +23,7 @@
     WFVariableAttachmentCell *_wf_attachmentCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFVariableAttachmentCell *wf_attachmentCell; // @synthesize wf_attachmentCell=_wf_attachmentCell;
 @property(copy, nonatomic) NSString *overrideVariableName; // @synthesize overrideVariableName=_overrideVariableName;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (id)attachmentCell;
 - (id)accessibilityLabel;
 - (void)variableDidChange:(id)arg1;

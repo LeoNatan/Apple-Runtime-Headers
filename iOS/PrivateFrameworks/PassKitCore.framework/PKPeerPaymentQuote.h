@@ -33,6 +33,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
 @property(copy, nonatomic) NSString *routingNumber; // @synthesize routingNumber=_routingNumber;
 @property(copy, nonatomic) NSString *bankName; // @synthesize bankName=_bankName;
@@ -51,7 +52,7 @@
 @property(readonly, copy, nonatomic) NSString *disclosureText; // @synthesize disclosureText=_disclosureText;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
+- (_Bool)preservesCurrentBalance;
 - (id)firstQuoteItemOfType:(unsigned long long)arg1;
 - (_Bool)hasExpired;
 - (id)description;

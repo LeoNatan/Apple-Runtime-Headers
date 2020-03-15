@@ -113,6 +113,7 @@
 + (int)uiSensitivity;
 + (id)newFaceViewOfStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 + (id)newFaceViewOfStyle:(int)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float editModeTransitionFraction; // @synthesize editModeTransitionFraction=_editModeTransitionFraction;
 @property(readonly, nonatomic) int toEditMode; // @synthesize toEditMode=_toEditMode;
 @property(readonly, nonatomic) int fromEditMode; // @synthesize fromEditMode=_fromEditMode;
@@ -155,7 +156,7 @@
 @property(retain, nonatomic) UIView *complicationContainerView; // @synthesize complicationContainerView=_complicationContainerView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UIView *foregroundContainerView; // @synthesize foregroundContainerView=_foregroundContainerView;
-- (void).cxx_destruct;
+- (id)tritium_statusBarStep;
 - (double)tritium_durationForTritiumOffAnimation;
 - (double)tritium_durationForTritiumOnAnimation;
 - (id)tritium_createFaceAnimator;

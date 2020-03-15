@@ -13,8 +13,8 @@
     CPLProxyLibraryManager *_proxyLibraryManager;
 }
 
-@property(retain, nonatomic) CPLProxyLibraryManager *proxyLibraryManager; // @synthesize proxyLibraryManager=_proxyLibraryManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CPLProxyLibraryManager *proxyLibraryManager; // @synthesize proxyLibraryManager=_proxyLibraryManager;
 - (void)cancelTask;
 
 @end

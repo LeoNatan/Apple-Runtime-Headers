@@ -15,8 +15,8 @@
     NSDate *_cachedPriorityDate;
 }
 
-@property(retain, nonatomic) NSDate *cachedPriorityDate; // @synthesize cachedPriorityDate=_cachedPriorityDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *cachedPriorityDate; // @synthesize cachedPriorityDate=_cachedPriorityDate;
 - (void)resetPriorityDate;
 @property(readonly, nonatomic) long long defaultPriority;
 @property(readonly, nonatomic) long long priorityType;

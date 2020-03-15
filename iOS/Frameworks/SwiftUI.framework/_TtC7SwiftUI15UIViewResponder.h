@@ -11,6 +11,7 @@
     // Error parsing type: , name: hostView
     // Error parsing type: , name: representedView
     // Error parsing type: , name: focusAccessibilityNode
+    // Error parsing type: , name: helper
 }
 
 @end

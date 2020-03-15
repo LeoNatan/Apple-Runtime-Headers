@@ -17,10 +17,10 @@
 
 + (BOOL)shouldLogCropRectReadError:(id)arg1;
 + (id)temporaryImagesDirectory;
+- (void).cxx_destruct;
 @property(readonly) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly) NSString *imagesDirectory; // @synthesize imagesDirectory=_imagesDirectory;
-- (void).cxx_destruct;
 - (id)imageDataInLibrary:(id)arg1;
 - (id)libraryImageData;
 - (id)thumbnailImagePath;

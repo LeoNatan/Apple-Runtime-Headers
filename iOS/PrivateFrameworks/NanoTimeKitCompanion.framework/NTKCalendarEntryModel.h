@@ -51,6 +51,7 @@
 + (id)contentForSignatureRectangular:(id)arg1;
 + (id)contentForLargeModular:(id)arg1;
 + (id)largeModular:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool displayEntryDateInGraphicCircularView; // @synthesize displayEntryDateInGraphicCircularView=_displayEntryDateInGraphicCircularView;
 @property(retain, nonatomic) NSArray *eventColors; // @synthesize eventColors=_eventColors;
 @property(retain, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
@@ -67,7 +68,6 @@
 @property(retain, nonatomic) NSDate *eventEndDate; // @synthesize eventEndDate=_eventEndDate;
 @property(retain, nonatomic) NSDate *eventStartDate; // @synthesize eventStartDate=_eventStartDate;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)templateForComplicationFamily:(long long)arg1;
 

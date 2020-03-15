@@ -17,9 +17,9 @@
     HMHome *_home;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HMRoom *room; // @synthesize room=_room;
-- (void).cxx_destruct;
 - (id)togglePowerState;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, copy) NSString *description;

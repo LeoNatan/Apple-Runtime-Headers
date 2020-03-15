@@ -22,6 +22,7 @@
     NSUUID *_identifierUUID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *identifierUUID; // @synthesize identifierUUID=_identifierUUID;
 @property(copy, nonatomic) NSString *identifierStr; // @synthesize identifierStr=_identifierStr;
 @property(copy, nonatomic) NSDictionary *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned int)updateWithBonjourDeviceInfo:(id)arg1;
 - (void)_updateTXTDictionary:(id)arg1;
 - (void)reconfirm;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     double _repeatCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool autoreverses; // @synthesize autoreverses=_autoreverses;
 @property(nonatomic) double repeatCount; // @synthesize repeatCount=_repeatCount;
 @property(retain, nonatomic) id initialValue; // @synthesize initialValue=_initialValue;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic, getter=isFinalized) _Bool finalized; // @synthesize finalized=_finalized;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)description;
 - (void)calculateFrameValues:(id)arg1 frameTimes:(id)arg2 withFrameInterval:(double)arg3 valueTransformer:(CDUnknownBlockType)arg4;
 - (void)_enumerateAnimationFramesForKeyframes:(CDUnknownBlockType)arg1;

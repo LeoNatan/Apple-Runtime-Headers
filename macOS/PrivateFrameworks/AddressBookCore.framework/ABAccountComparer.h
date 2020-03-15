@@ -16,8 +16,8 @@
 + (id)iCloudDomains;
 + (id)comparisonKeys;
 + (id)os_log;
-@property(retain) NSDictionary *accountConfigurationsByIdentifier; // @synthesize accountConfigurationsByIdentifier=_accountConfigurationsByIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSDictionary *accountConfigurationsByIdentifier; // @synthesize accountConfigurationsByIdentifier=_accountConfigurationsByIdentifier;
 - (BOOL)isUseSSLConfiguration:(id)arg1 equivalentToProposedConfig:(id)arg2;
 - (unsigned long long)effectiveServerPortForConfiguration:(id)arg1;
 - (BOOL)isServerPortConfiguration:(id)arg1 equivalentToProposedConfig:(id)arg2;

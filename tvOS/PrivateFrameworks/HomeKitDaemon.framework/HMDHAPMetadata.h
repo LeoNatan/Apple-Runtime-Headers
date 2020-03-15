@@ -48,6 +48,7 @@
 + (id)getBuiltinInstance;
 + (id)initWithDictionary:(id)arg1 error:(id *)arg2;
 + (id)initWithURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *assistantUnits; // @synthesize assistantUnits=_assistantUnits;
 @property(retain, nonatomic) NSDictionary *assistantChrHAPTypeNameMap; // @synthesize assistantChrHAPTypeNameMap=_assistantChrHAPTypeNameMap;
 @property(retain, nonatomic) NSDictionary *assistantCharacteristics; // @synthesize assistantCharacteristics=_assistantCharacteristics;
@@ -69,7 +70,6 @@
 @property(nonatomic) _Bool incomplete; // @synthesize incomplete=_incomplete;
 @property(retain, nonatomic) NSNumber *schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (id)protoBufObjectWithEncodingOption:(id)arg1;
 - (id)statusHAPCharacteristicTypesForServiceType;
 - (id)aliasedHAPServiceTypes;

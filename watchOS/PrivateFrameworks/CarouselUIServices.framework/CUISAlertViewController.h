@@ -24,13 +24,13 @@
     CUISAlertBackground *_background;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool stopButtonHandler; // @synthesize stopButtonHandler=_stopButtonHandler;
 @property(readonly, nonatomic) CUISAlertBackground *background; // @synthesize background=_background;
 @property(nonatomic) _Bool consumeAllTouches; // @synthesize consumeAllTouches=_consumeAllTouches;
 @property(readonly, nonatomic) NSString *alertServiceName; // @synthesize alertServiceName=_alertServiceName;
 @property(readonly, nonatomic, getter=isSuppressed) _Bool suppressed; // @synthesize suppressed=_suppressed;
 @property(readonly, nonatomic) _Bool activated; // @synthesize activated=_activated;
-- (void).cxx_destruct;
 - (_Bool)occludesBackgroundDuringPresentation;
 - (id)alertSuppressionContexts;
 - (void)suppressionStateDidChange;

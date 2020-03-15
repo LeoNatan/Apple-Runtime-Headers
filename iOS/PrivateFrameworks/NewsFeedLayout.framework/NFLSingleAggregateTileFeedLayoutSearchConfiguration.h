@@ -19,12 +19,12 @@
     long long _rowSpan;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long rowSpan; // @synthesize rowSpan=_rowSpan;
 @property(nonatomic) long long cellType; // @synthesize cellType=_cellType;
 @property(retain, nonatomic) Class rankedLayoutGenerationOperationClass; // @synthesize rankedLayoutGenerationOperationClass=_rankedLayoutGenerationOperationClass;
 @property(retain, nonatomic) Class subBatchLayoutTilingOperationClass; // @synthesize subBatchLayoutTilingOperationClass=_subBatchLayoutTilingOperationClass;
 @property(nonatomic, getter=isShowingAccessoryText) _Bool showAccessoryText; // @synthesize showAccessoryText=_showAccessoryText;
-- (void).cxx_destruct;
 - (Class)rankedLayoutGenerationOperationClassForRequest:(id)arg1;
 - (double)transitionRankFromRowTypeToNone:(unsigned long long)arg1;
 - (double)transitionRankFromRowType:(unsigned long long)arg1 toRowType:(unsigned long long)arg2;

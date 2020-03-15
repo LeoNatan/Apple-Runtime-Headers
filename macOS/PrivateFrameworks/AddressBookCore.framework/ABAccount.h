@@ -46,6 +46,7 @@
 + (CDUnknownBlockType)defaultAccountComparator;
 + (id)os_log;
 + (long long)coreDataContainerTypeFromAccountType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) ABAccount *parentAccount; // @synthesize parentAccount=_parentAccount;
 @property(readonly, retain) id <ABAccountSearchPolicy> searchPolicy; // @synthesize searchPolicy=_searchPolicy;
 @property(readonly, retain) id <ABAccountCustomizationPolicy> customizationPolicy; // @synthesize customizationPolicy=_customizationPolicy;
@@ -64,7 +65,6 @@
 @property(copy) NSArray *childAccounts; // @synthesize childAccounts=_childAccounts;
 @property(readonly, copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)unloadSource;
 - (id)accountOrParentAccountTypeIdentifier;
 - (id)accountTypeIdentifier;
@@ -80,7 +80,6 @@
 @property(readonly, getter=isInitialSyncComplete) BOOL initialSyncComplete;
 - (id)aListPluginIdentifier;
 - (BOOL)requiresSeparateBirthdayCalendar;
-@property(getter=isGuardianRestricted) BOOL guardianRestricted;
 - (long long)sortOrderForGroup:(id)arg1;
 - (BOOL)groupsCanRemoveMembers;
 - (BOOL)canRemoveGroup:(id)arg1;
@@ -118,6 +117,11 @@
 - (id)initWithIdentifier:(id)arg1 baseURL:(id)arg2;
 - (id)initWithBuilder:(id)arg1;
 - (void)applyChangesFromABCDContainerDiff:(id)arg1;
+- (void)setGuardianRestricted:(BOOL)arg1;
+- (BOOL)isGuardianRestrictedInManagedObjectContext:(id)arg1;
+- (id)makeManagedObjectContextFromNewAddressBook;
+- (id)makeManagedObjectContextFromMyAddressBook;
+- (id)makeManagedObjectContext;
 - (long long)coreDataContainerType;
 - (id)containerRepresentation;
 - (id)initWithRemoteAccount:(id)arg1 baseURL:(id)arg2;

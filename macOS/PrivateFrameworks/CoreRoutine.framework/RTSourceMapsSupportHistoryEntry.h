@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSDate *usageDate; // @synthesize usageDate=_usageDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *usageDate; // @synthesize usageDate=_usageDate;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

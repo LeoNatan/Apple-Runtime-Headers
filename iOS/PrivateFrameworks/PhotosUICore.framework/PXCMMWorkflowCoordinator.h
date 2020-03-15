@@ -22,8 +22,8 @@
     id <PXCMMWorkflowCoordinatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PXCMMWorkflowCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXCMMWorkflowCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_alertControllerForSession:(id)arg1 withSuccess:(_Bool)arg2 error:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_presentAlertController:(id)arg1;
 - (id)_presentingViewControllerForViewController:(id)arg1;
@@ -34,8 +34,8 @@
 - (void)_session:(id)arg1 finishedAccepting:(_Bool)arg2 withError:(id)arg3;
 - (id)completeMyMomentViewController:(id)arg1 performSendBackActionForSession:(id)arg2;
 - (id)completeMyMomentViewController:(id)arg1 performActionForSession:(id)arg2;
-- (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
+- (_Bool)actionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (void)_completeActionForSession:(id)arg1 withSuccess:(_Bool)arg2 error:(id)arg3;
 - (void)_completeSendBackActionForSession:(id)arg1 withContext:(id)arg2 error:(id)arg3;
 - (void)_completeMessageComposeActionForSession:(id)arg1 withSuccess:(_Bool)arg2 error:(id)arg3;
@@ -55,7 +55,7 @@
 - (id)_performActionWithType:(id)arg1 forSession:(id)arg2;
 - (void)cancelWorkflow;
 - (id)workflowViewControllerWithContext:(id)arg1 embedInNavigationControllerOfClass:(Class)arg2;
-- (struct NSObject *)workflowViewControllerWithContext:(id)arg1;
+- (id)workflowViewControllerWithContext:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

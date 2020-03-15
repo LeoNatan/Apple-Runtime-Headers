@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)selectionOutlineImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSelectionView:) UIImageView *_selectionView; // @synthesize _selectionView=__selectionView;
 @property(retain, nonatomic, setter=_setHighlightView:) UIView *_highlightView; // @synthesize _highlightView=__highlightView;
 @property(retain, nonatomic, setter=_setNameLabel:) UILabel *_nameLabel; // @synthesize _nameLabel=__nameLabel;
 @property(retain, nonatomic, setter=_setImageView:) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_setSubview:(id)arg1 visible:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)_colorForIsSelected:(_Bool)arg1;

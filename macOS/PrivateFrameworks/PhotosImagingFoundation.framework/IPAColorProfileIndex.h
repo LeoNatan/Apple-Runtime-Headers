@@ -21,8 +21,8 @@
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) unsigned int cacheSeed; // @synthesize cacheSeed=_cacheSeed;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int cacheSeed; // @synthesize cacheSeed=_cacheSeed;
 - (id)profilesForProfileClass:(struct __CFString *)arg1;
 - (id)profilesForColorSpaceType:(struct __CFString *)arg1;
 - (void)cacheProfile:(id)arg1;

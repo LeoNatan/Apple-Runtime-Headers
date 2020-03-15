@@ -14,8 +14,8 @@
 }
 
 + (id)properties;
-@property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 
 // Remaining properties
 @property(retain, nonatomic) NSNumber *configState; // @dynamic configState;

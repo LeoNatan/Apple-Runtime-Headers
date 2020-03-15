@@ -34,6 +34,7 @@
     NSString *_passcodeOptionsTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *passcodeOptionsTitle; // @synthesize passcodeOptionsTitle=_passcodeOptionsTitle;
 @property(retain, nonatomic) UIView<PINEntryView> *pinView; // @synthesize pinView=_pinView;
 @property(copy, nonatomic) CDUnknownBlockType passcodeOptionsHandler; // @synthesize passcodeOptionsHandler=_passcodeOptionsHandler;
@@ -42,7 +43,6 @@
 @property(nonatomic) int keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(nonatomic) int autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
 @property(nonatomic) int autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
-- (void).cxx_destruct;
 - (void)keyboardWillChangeFrame:(id)arg1;
 - (void)layoutSubviews;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;

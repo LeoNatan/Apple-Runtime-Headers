@@ -31,8 +31,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) int clipTransformInitialStartOffset; // @synthesize clipTransformInitialStartOffset=_clipTransformInitialStartOffset;
 - (void).cxx_destruct;
+@property(nonatomic) int clipTransformInitialStartOffset; // @synthesize clipTransformInitialStartOffset=_clipTransformInitialStartOffset;
 - (void)applyTransform:(struct PVTransformAnimationInfo *)arg1 shouldCommit:(BOOL)arg2 outTransform:(id *)arg3;
 - (void)endEditingTransform:(id)arg1 transformType:(int)arg2 outTransform:(id *)arg3;
 - (void)updateTransform:(id)arg1 location:(struct CGPoint)arg2 atTime:(int)arg3 delta:(struct CGPoint)arg4 transformType:(int)arg5 outTransform:(id *)arg6;

@@ -18,11 +18,11 @@
     long long _auxiliaryKind;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isSupplementary; // @synthesize isSupplementary=_isSupplementary;
 @property(readonly, nonatomic) long long auxiliaryKind; // @synthesize auxiliaryKind=_auxiliaryKind;
 @property(readonly, nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) NSString *elementKind; // @synthesize elementKind=_elementKind;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

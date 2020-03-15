@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_listIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *listIdentifier; // @synthesize listIdentifier=_listIdentifier;
 @property(retain, nonatomic) AMSDoubleLinkedListNode *tail; // @synthesize tail=_tail;
 @property(retain, nonatomic) AMSDoubleLinkedListNode *head; // @synthesize head=_head;
 @property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (id)description;
 - (void)removeNode:(id)arg1;
 - (void)removeAllNodes;

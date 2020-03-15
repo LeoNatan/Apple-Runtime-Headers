@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSDictionary *_dataDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *dataDictionary; // @synthesize dataDictionary=_dataDictionary;
 @property(readonly, nonatomic) IKAppPrototypeIdentifier *prototypeIdentifier; // @synthesize prototypeIdentifier=_prototypeIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)valueForPropertyPath:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

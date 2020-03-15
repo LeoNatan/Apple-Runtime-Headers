@@ -24,9 +24,9 @@
 }
 
 + (id)formatList:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsToShowBanner; // @synthesize wantsToShowBanner=_wantsToShowBanner;
 @property(nonatomic) __weak id <SGSuggestionPresenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_dismissPresentedViewController:(id)arg1;
 - (void)_dismissViewControllerAnimated:(BOOL)arg1;
 - (void)_presentModalViewController:(id)arg1 fromSourceView:(id)arg2;

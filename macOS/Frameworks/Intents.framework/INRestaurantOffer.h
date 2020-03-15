@@ -20,10 +20,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *offerIdentifier; // @synthesize offerIdentifier=_offerIdentifier;
 @property(copy) NSString *offerDetailText; // @synthesize offerDetailText=_offerDetailText;
 @property(copy) NSString *offerTitleText; // @synthesize offerTitleText=_offerTitleText;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

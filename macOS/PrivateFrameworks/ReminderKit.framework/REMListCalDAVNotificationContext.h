@@ -13,8 +13,8 @@
     REMList *_list;
 }
 
-@property(retain, nonatomic) REMList *list; // @synthesize list=_list;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMList *list; // @synthesize list=_list;
 @property(readonly, nonatomic) NSArray *calDAVNotifications;
 - (id)initWithList:(id)arg1;
 

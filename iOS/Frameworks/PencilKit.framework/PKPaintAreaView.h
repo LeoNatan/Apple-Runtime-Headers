@@ -23,11 +23,11 @@
     PKInk *_ink;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
 @property(nonatomic) _Bool fingerDrawingEnabled; // @synthesize fingerDrawingEnabled=_fingerDrawingEnabled;
 @property(nonatomic) _Bool switchSurfacesDuringStrokes; // @synthesize switchSurfacesDuringStrokes=_switchSurfacesDuringStrokes;
 @property(nonatomic) __weak id <PKPaintAreaViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)drawingEstimatedPropertiesUpdated:(id)arg1;
 - (void)drawingCancelled;
 - (void)drawingEnded:(id)arg1;

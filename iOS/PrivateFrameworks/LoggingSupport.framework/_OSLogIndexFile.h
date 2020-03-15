@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     char *_path;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) char *path; // @synthesize path=_path;
 @property(readonly, nonatomic) unsigned long long oldestTime; // @synthesize oldestTime=_ot;
 @property(readonly, nonatomic) unsigned long long endTime; // @synthesize endTime=_et;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) const char *bootUUID;
 - (id)copyMappedChunkStore:(id *)arg1;
 - (_Bool)_determineTimespan;

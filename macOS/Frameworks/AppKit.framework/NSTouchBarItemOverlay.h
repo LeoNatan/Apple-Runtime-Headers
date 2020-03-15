@@ -36,8 +36,8 @@
 + (id)_createContainerViewWithFrame:(struct CGRect)arg1;
 + (id)makePopoverCloseButtonWithTarget:(id)arg1 action:(SEL)arg2;
 + (id)activeOverlay;
-@property(copy) CDUnknownBlockType closeButtonHandler; // @synthesize closeButtonHandler=_closeButtonHandler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType closeButtonHandler; // @synthesize closeButtonHandler=_closeButtonHandler;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, getter=isTrackingTouches) BOOL trackingTouches;
 - (void)trackTouches;

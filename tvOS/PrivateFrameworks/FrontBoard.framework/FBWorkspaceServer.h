@@ -22,8 +22,8 @@
     NSMutableDictionary *_sceneIDToSceneHandlerMap;
 }
 
-@property(readonly, nonatomic) __weak id <FBWorkspaceServerDelegate> delegate; // @synthesize delegate=_weak_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <FBWorkspaceServerDelegate> delegate; // @synthesize delegate=_weak_delegate;
 - (oneway void)sceneID:(id)arg1 sendMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
 - (oneway void)sceneID:(id)arg1 didReceiveActions:(id)arg2;
 - (oneway void)sceneID:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;

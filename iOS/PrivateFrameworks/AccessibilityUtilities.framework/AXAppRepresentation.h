@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)appWithPID:(int)arg1 bundleID:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long layoutRole; // @synthesize layoutRole=_layoutRole;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isLayoutFullscreenModal;
 @property(readonly, nonatomic) _Bool isLayoutPrimary;
 - (id)initWithCoder:(id)arg1;

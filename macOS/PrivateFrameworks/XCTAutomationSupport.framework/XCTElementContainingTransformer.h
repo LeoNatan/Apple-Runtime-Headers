@@ -15,14 +15,13 @@
 
 + (void)provideCapabilitiesToBuilder:(id)arg1;
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(readonly, copy) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (id)iteratorForInput:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)requiredKeyPathsOrError:(id *)arg1;
 - (BOOL)supportsAttributeKeyPathAnalysis;
-- (BOOL)supportsRemoteEvaluation;
 - (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
 - (BOOL)_elementMatches:(id)arg1 relatedElement:(id *)arg2;

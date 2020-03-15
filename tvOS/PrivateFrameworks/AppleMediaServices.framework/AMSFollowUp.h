@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_followUpQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *followUpQueue; // @synthesize followUpQueue=_followUpQueue;
 @property(retain, nonatomic) FLFollowUpController *followUpController; // @synthesize followUpController=_followUpController;
-- (void).cxx_destruct;
 - (id)_pendingFollowUpWithBackingIdentifier:(id)arg1 error:(id *)arg2;
 - (id)postFollowUpItem:(id)arg1;
 - (id)pendingFollowUpWithIdentifier:(id)arg1 account:(id)arg2;

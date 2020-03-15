@@ -16,10 +16,10 @@
     id <NSCopying> _requestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <NSCopying> requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(retain, nonatomic) CXProviderExtensionHostContext *extensionContext; // @synthesize extensionContext=_extensionContext;
-- (void).cxx_destruct;
 - (void)beginWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (int)processIdentifier;
 - (id)bundle;

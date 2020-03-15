@@ -14,9 +14,9 @@
     NSSet *_itemType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *itemRef; // @synthesize itemRef=_itemRef;
 @property(readonly, nonatomic) NSSet *itemType; // @synthesize itemType=_itemType;
-- (void).cxx_destruct;
 - (id)initWithItemType:(id)arg1 itemRef:(id)arg2;
 - (void)resolveItemRefsWithDocument:(id)arg1;
 

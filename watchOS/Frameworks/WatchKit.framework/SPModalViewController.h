@@ -17,12 +17,12 @@
     PUICNotchProvider *_notchProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool classicMode; // @synthesize classicMode=_classicMode;
 @property(retain, nonatomic) PUICNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(retain, nonatomic) PUICButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) _Bool descriptionOnlyContainsTableView; // @synthesize descriptionOnlyContainsTableView=_descriptionOnlyContainsTableView;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
-- (void).cxx_destruct;
 - (id)_firstTableViewSubView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)viewDidLayoutSubviews;

@@ -19,9 +19,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)profileKeyChordWithStringValue:(id)arg1;
 + (id)profileKeyChordWithKeyChord:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak _VOSProfileCommand *command; // @synthesize command=_command;
 @property(retain, nonatomic) AXSSKeyChord *keyChord; // @synthesize keyChord=_keyChord;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

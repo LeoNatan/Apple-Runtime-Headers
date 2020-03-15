@@ -14,8 +14,8 @@
 }
 
 + (id)parseBuffer:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) REScriptToken *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REScriptToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSSet *dependencies;
 - (id)initWithToken:(id)arg1;
 

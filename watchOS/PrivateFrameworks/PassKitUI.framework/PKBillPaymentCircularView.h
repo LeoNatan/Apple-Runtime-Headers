@@ -19,9 +19,9 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) UIColor *secondaryColor; // @synthesize secondaryColor=_secondaryColor;
-- (void).cxx_destruct;
 - (id)_defaultSecondaryColor;
 @property(copy, nonatomic) UIColor *primaryColor;
 - (void)_updateColors;

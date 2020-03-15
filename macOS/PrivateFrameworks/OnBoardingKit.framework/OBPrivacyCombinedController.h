@@ -20,10 +20,10 @@
 + (void)presentPrivacyCombinedControllerOnWindow:(id)arg1 identifiers:(id)arg2 dismissHandler:(CDUnknownBlockType)arg3;
 + (void)presentPrivacyCombinedControllerOnWindow:(id)arg1 dismissHandler:(CDUnknownBlockType)arg2;
 + (id)new;
+- (void).cxx_destruct;
 @property BOOL presentedFromPrivacyPane; // @synthesize presentedFromPrivacyPane=_presentedFromPrivacyPane;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property BOOL allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
-- (void).cxx_destruct;
 - (void)reloadWindow;
 - (void)prepareToPresent;
 - (id)initWithIdentifiers:(id)arg1;

@@ -26,6 +26,7 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) INCurrencyAmount *feeAmount; // @synthesize feeAmount=_feeAmount;
 @property(readonly, copy) INPaymentMethod *paymentMethod; // @synthesize paymentMethod=_paymentMethod;
 @property(readonly) long long status; // @synthesize status=_status;
@@ -33,7 +34,6 @@
 @property(readonly, copy) INCurrencyAmount *currencyAmount; // @synthesize currencyAmount=_currencyAmount;
 @property(readonly, copy) INPerson *payer; // @synthesize payer=_payer;
 @property(readonly, copy) INPerson *payee; // @synthesize payee=_payee;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

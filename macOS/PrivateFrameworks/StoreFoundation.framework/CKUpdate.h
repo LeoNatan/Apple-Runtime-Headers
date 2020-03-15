@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long softwareUpdateState; // @synthesize softwareUpdateState=_softwareUpdateState;
 @property(readonly) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *autoUpdateAbortReason;
 @property(nonatomic) BOOL hasBeenSeenByUser;
 @property(readonly, nonatomic) BOOL didFailToAutoInstall;

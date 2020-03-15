@@ -14,8 +14,8 @@
     SBFluidSwitcherViewController *_switcherViewController;
 }
 
-@property(nonatomic) __weak SBFluidSwitcherViewController *switcherViewController; // @synthesize switcherViewController=_switcherViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SBFluidSwitcherViewController *switcherViewController; // @synthesize switcherViewController=_switcherViewController;
 - (long long)_touchInterfaceOrientation;
 - (void)reset;
 - (void)setState:(long long)arg1;

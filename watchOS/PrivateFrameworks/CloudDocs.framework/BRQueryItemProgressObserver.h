@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(readonly, nonatomic) BRQueryItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)start;
 - (void)stop;

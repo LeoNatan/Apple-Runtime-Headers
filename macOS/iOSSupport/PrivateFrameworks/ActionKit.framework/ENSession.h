@@ -53,6 +53,7 @@
 + (id)sharedSession;
 + (void)setSharedSessionDeveloperToken:(id)arg1 noteStoreUrl:(id)arg2;
 + (void)setSharedSessionConsumerKey:(id)arg1 consumerSecret:(id)arg2 optionalHost:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENUserStoreClient *userStorePendingRevocation; // @synthesize userStorePendingRevocation=_userStorePendingRevocation;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *thumbnailQueue; // @synthesize thumbnailQueue=_thumbnailQueue;
 @property(retain, nonatomic) NSDate *notebooksCacheDate; // @synthesize notebooksCacheDate=_notebooksCacheDate;
@@ -76,7 +77,6 @@
 @property(nonatomic) BOOL isAuthenticated; // @synthesize isAuthenticated=_isAuthenticated;
 @property(copy, nonatomic) NSString *sourceApplication; // @synthesize sourceApplication=_sourceApplication;
 @property(retain, nonatomic) id <ENSDKLogging> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)storeClientFailedAuthentication:(id)arg1;
 - (void)authenticatorDidFailWithError:(id)arg1;
 - (void)authenticatorDidAuthenticateWithCredentials:(id)arg1 authInfo:(id)arg2;

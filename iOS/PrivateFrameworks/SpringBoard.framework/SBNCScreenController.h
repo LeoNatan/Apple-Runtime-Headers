@@ -23,6 +23,7 @@
     DNDEventBehaviorResolutionService *_dndEventBehaviorResolutionService;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DNDEventBehaviorResolutionService *dndEventBehaviorResolutionService; // @synthesize dndEventBehaviorResolutionService=_dndEventBehaviorResolutionService;
 @property(nonatomic) unsigned int powerAssertionID; // @synthesize powerAssertionID=_powerAssertionID;
 @property(copy, nonatomic) NSString *powerAssertionName; // @synthesize powerAssertionName=_powerAssertionName;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) SBLockStateAggregator *lockStateAggregator; // @synthesize lockStateAggregator=_lockStateAggregator;
 @property(retain, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
 @property(retain, nonatomic) SBBacklightController *backlightController; // @synthesize backlightController=_backlightController;
-- (void).cxx_destruct;
 - (void)pocketStateManager:(id)arg1 didUpdateState:(long long)arg2;
 - (void)_releasePowerAssertion;
 - (void)_createOrResetPowerAssertionWithTimeout:(double)arg1;

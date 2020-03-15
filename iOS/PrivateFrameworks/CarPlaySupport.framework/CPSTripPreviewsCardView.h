@@ -22,6 +22,7 @@
     UIButton *_goButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *goButton; // @synthesize goButton=_goButton;
 @property(readonly, nonatomic) __weak id <CPSTripInitiating> tripDelegate; // @synthesize tripDelegate=_tripDelegate;
 @property(readonly, nonatomic) CPSCardPlatterView *platterView; // @synthesize platterView=_platterView;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak CPTrip *selectedTrip; // @synthesize selectedTrip=_selectedTrip;
 @property(retain, nonatomic) CPTripPreviewTextConfiguration *textConfiguration; // @synthesize textConfiguration=_textConfiguration;
 @property(readonly, copy, nonatomic) NSArray *trips; // @synthesize trips=_trips;
-- (void).cxx_destruct;
 - (id)_linearFocusItems;
 - (void)notifyDidSelectRouteChoice:(id)arg1;
 - (void)startTripButtonPressed:(id)arg1;

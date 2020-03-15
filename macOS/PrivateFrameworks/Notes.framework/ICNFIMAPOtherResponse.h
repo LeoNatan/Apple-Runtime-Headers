@@ -14,9 +14,9 @@
     NSArray *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
 @property(copy, nonatomic) NSString *responseName; // @synthesize responseName=_responseName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

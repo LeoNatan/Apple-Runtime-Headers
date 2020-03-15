@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <EKEventDetailNotesCellDelegate> _noteDelegate;
 }
 
-@property(nonatomic) __weak id <EKEventDetailNotesCellDelegate> noteDelegate; // @synthesize noteDelegate=_noteDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <EKEventDetailNotesCellDelegate> noteDelegate; // @synthesize noteDelegate=_noteDelegate;
 - (unsigned long long)maximumNumberOfSubItems;
 - (BOOL)requiresLayoutForSubitemCount;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;

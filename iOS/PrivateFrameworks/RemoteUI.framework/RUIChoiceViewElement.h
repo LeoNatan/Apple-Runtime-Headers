@@ -22,12 +22,12 @@
     RUISubHeaderElement *_subHeader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RUIElement *helpLinkElement; // @synthesize helpLinkElement=_helpLinkElement;
 @property(retain, nonatomic) RUISubHeaderElement *subHeader; // @synthesize subHeader=_subHeader;
 @property(retain, nonatomic) RUIElement *header; // @synthesize header=_header;
 @property(nonatomic) __weak RUIPage *page; // @synthesize page=_page;
 @property(nonatomic) __weak RUIObjectModel *objectModel; // @synthesize objectModel=_objectModel;
-- (void).cxx_destruct;
 - (id)sourceURL;
 - (void)choiceViewTappedHelpLink:(id)arg1;
 - (void)choiceView:(id)arg1 tappedChoiceAtIndex:(unsigned long long)arg2;

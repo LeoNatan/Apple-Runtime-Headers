@@ -23,6 +23,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *maxCols; // @synthesize maxCols=_maxCols;
 @property(retain) NSMutableDictionary *minCols; // @synthesize minCols=_minCols;
 @property(retain) NSMutableDictionary *maxRows; // @synthesize maxRows=_maxRows;
@@ -30,7 +31,6 @@
 @property(readonly) NSMutableArray *quantizedFrames; // @synthesize quantizedFrames=_quantizedFrames;
 @property(readonly) NSMutableArray *frames; // @synthesize frames=_frames;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (_Bool)quantizedAndBinarizeFrame:(float *)arg1 quantizedFrames:(id)arg2;
 - (long long)connectedComponentsQuantizedFrames:(id)arg1;
 - (float)computeFlowMagnitudeMatrixFromOriginal:(struct __CVBuffer *)arg1 flowArray:(float *)arg2 error:(id *)arg3;

@@ -22,11 +22,11 @@
 }
 
 + (_Bool)_notifyClientsForTriggerType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(readonly, nonatomic, getter=isSystemReady) _Bool systemReady; // @synthesize systemReady=_systemReady;
 @property(readonly, nonatomic) MTXPCConnectionListenerProvider *connectionListenerProvider; // @synthesize connectionListenerProvider=_connectionListenerProvider;
 @property(readonly, nonatomic) MTAlarmStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)source:(id)arg1 didChangeNextAlarm:(id)arg2;

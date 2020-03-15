@@ -73,6 +73,7 @@
 @property(readonly) unsigned long long bufferBytesPerRow;
 @property(readonly) unsigned long long arrayLength;
 @property(readonly) BOOL allowGPUOptimizedContents;
+@property(readonly) unsigned long long allocationID;
 @property(readonly) unsigned long long allocatedSize;
 - (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;

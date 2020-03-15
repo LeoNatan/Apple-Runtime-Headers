@@ -16,8 +16,8 @@
 }
 
 + (id)sharedFormatter;
-@property(retain, nonatomic) NSNumberFormatter *indexNumberFormatter; // @synthesize indexNumberFormatter=_indexNumberFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumberFormatter *indexNumberFormatter; // @synthesize indexNumberFormatter=_indexNumberFormatter;
 - (id)_graphicRectangularTemplateWithTextProvider:(id)arg1 conditions:(id)arg2 sevenDayDailyForecastedConditions:(id)arg3 timeZone:(id)arg4;
 - (id)_localizedIndexForConditions:(id)arg1;
 - (id)switcherTemplateWithFamily:(long long)arg1;

@@ -15,19 +15,20 @@
 
 @interface AMSURLSession : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 {
-    _Bool _invalidated;
-    id <AMSURLHandling> _protocolHandler;
     NSURLSessionConfiguration *_configuration;
+    AMSURLDelegateProxy *_delegateProxy;
     NSOperationQueue *_delegateQueue;
-    id <AMSRequestEncoding> _requestEncoder;
+    id <AMSURLHandling> _protocolHandler;
     id <AMSResponseDecoding> _responseDecoder;
     NSURLSession *_session;
-    AMSURLDelegateProxy *_delegateProxy;
+    _Bool _invalidated;
+    id <AMSRequestEncoding> _requestEncoder;
     AMSURLSecurityPolicy *_securityPolicy;
 }
 
 + (id)sharedAuthKitSession;
 + (id)defaultSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMSURLSecurityPolicy *securityPolicy; // @synthesize securityPolicy=_securityPolicy;
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) AMSURLDelegateProxy *delegateProxy; // @synthesize delegateProxy=_delegateProxy;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) id <AMSRequestEncoding> requestEncoder; // @synthesize requestEncoder=_requestEncoder;
 @property(readonly, nonatomic) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) NSURLSessionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (id)_prepareRequest:(id)arg1 properties:(id)arg2 error:(id *)arg3;
 - (void)_retryTask:(id)arg1 action:(id)arg2 error:(id *)arg3;
 - (id)_handleURLAction:(id)arg1 task:(id)arg2 error:(id *)arg3;

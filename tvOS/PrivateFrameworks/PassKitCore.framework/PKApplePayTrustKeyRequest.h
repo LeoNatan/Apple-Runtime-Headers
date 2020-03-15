@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *subjectIdentifier; // @synthesize subjectIdentifier=_subjectIdentifier;
 @property(readonly, nonatomic) NSString *keyIdentifier; // @synthesize keyIdentifier=_keyIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

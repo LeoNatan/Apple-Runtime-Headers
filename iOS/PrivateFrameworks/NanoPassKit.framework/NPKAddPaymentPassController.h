@@ -19,10 +19,10 @@
 }
 
 + (_Bool)canAddPaymentPass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didFinishCallbackSent; // @synthesize didFinishCallbackSent=_didFinishCallbackSent;
 @property(retain, nonatomic) PKXPCService *remoteService; // @synthesize remoteService=_remoteService;
 @property(retain, nonatomic) PKAddPaymentPassRequestConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_sendDidFinishWithPass:(id)arg1 error:(id)arg2;
 - (id)_remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)didFinishWithPass:(id)arg1 error:(id)arg2;

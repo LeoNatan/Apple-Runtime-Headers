@@ -8,28 +8,32 @@
 
 #import <ZoomServices/AXUIClientDelegate-Protocol.h>
 
-@class AXUIClient, NSMutableArray, NSString;
+@class AXUIClient, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface ZoomServices : NSObject <AXUIClientDelegate>
 {
     NSMutableArray *_zoomListeners;
+    NSMutableDictionary *_zoomAttributeListeners;
     _Bool _showingZoomLens;
     _Bool _springBoardReady;
     _Bool _triedToShowLensBeofreSBReady;
     _Bool _registeredForZoomListener;
+    _Bool _registeredForZoomAttributeListeners;
     _Bool _shouldRegisterForZoomListeners;
     AXUIClient *_zoomWindowClient;
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldRegisterForZoomListeners; // @synthesize shouldRegisterForZoomListeners=_shouldRegisterForZoomListeners;
+@property(nonatomic) _Bool registeredForZoomAttributeListeners; // @synthesize registeredForZoomAttributeListeners=_registeredForZoomAttributeListeners;
 @property(nonatomic) _Bool registeredForZoomListener; // @synthesize registeredForZoomListener=_registeredForZoomListener;
 @property(nonatomic) _Bool triedToShowLensBeofreSBReady; // @synthesize triedToShowLensBeofreSBReady=_triedToShowLensBeofreSBReady;
 @property(nonatomic) _Bool springBoardReady; // @synthesize springBoardReady=_springBoardReady;
 @property(nonatomic, getter=isShowingZoomLens) _Bool showingZoomLens; // @synthesize showingZoomLens=_showingZoomLens;
 @property(retain, nonatomic) AXUIClient *zoomWindowClient; // @synthesize zoomWindowClient=_zoomWindowClient;
-- (void).cxx_destruct;
 - (_Bool)shouldSuppressKeyCommandHUD;
+- (_Bool)inStandbyMode;
 - (id)activeZoomMode;
 - (void)autoPanZoomUsingLocation:(struct CGPoint)arg1 withPanningStyle:(unsigned long long)arg2;
 - (void)panDown;
@@ -75,8 +79,10 @@
 - (_Bool)notifyZoomFocusDidChangeWithType:(long long)arg1 rect:(struct CGRect)arg2 contextId:(unsigned int)arg3 keyboardFrame:(struct CGRect)arg4;
 - (_Bool)notifyZoomFocusDidChangeWithType:(long long)arg1 rect:(struct CGRect)arg2 contextId:(unsigned int)arg3;
 - (_Bool)notifyZoomSpeakUnderFingerSettingChanged;
-- (void)removeZoomLevelHandler:(id)arg1;
-- (id)registerZoomAttributesChangeHandler:(CDUnknownBlockType)arg1;
+- (void)removeZoomAttributesChangedHandler:(id)arg1;
+- (id)registerForZoomAttributes:(id)arg1 updatesImmediatelyWithChangedHandler:(CDUnknownBlockType)arg2;
+- (void)removeCoalescedZoomAttributesChangedHandler:(id)arg1;
+- (id)registerForCoalescedZoomAttributesWithChangedHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_isPrimaryZoomWindowClient;
 - (_Bool)_isAllowedMagnifierClient;
 - (void)_applicationWillSuspend:(id)arg1;

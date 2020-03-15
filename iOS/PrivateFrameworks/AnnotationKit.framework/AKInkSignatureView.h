@@ -19,12 +19,12 @@
     PKDrawing *_latestDrawing;
 }
 
+- (void).cxx_destruct;
 @property(retain) PKDrawing *latestDrawing; // @synthesize latestDrawing=_latestDrawing;
 @property(copy) PKInk *ink; // @synthesize ink=_ink;
 @property(retain) PKCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property _Bool hasStrokes; // @synthesize hasStrokes=_hasStrokes;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
-- (void).cxx_destruct;
 - (void)canvasViewDrawingDidChange:(id)arg1;
 - (struct CGPath *)copyPotracedPathAndReturnDrawing:(id *)arg1;
 - (void)clear;

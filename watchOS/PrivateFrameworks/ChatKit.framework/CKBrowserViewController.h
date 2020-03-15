@@ -29,6 +29,7 @@
 
 + (id)currentPPTTestName;
 + (_Bool)supportsMessagesAppExtendedLaunchTest;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isTransitioningToExpandedPresentation; // @synthesize isTransitioningToExpandedPresentation=_isTransitioningToExpandedPresentation;
 @property(retain, nonatomic) CKBrowserDragManager *browserDragManager; // @synthesize browserDragManager=_browserDragManager;
 @property(nonatomic) __weak UIView *dragTargetView; // @synthesize dragTargetView=_dragTargetView;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool isiMessage; // @synthesize isiMessage=_isiMessage;
 @property(readonly, nonatomic) IMBalloonPlugin *balloonPlugin; // @synthesize balloonPlugin=_balloonPlugin;
 @property(nonatomic) __weak NSObject<CKBrowserViewControllerSendDelegate> *sendDelegate; // @synthesize sendDelegate=_sendDelegate;
-- (void).cxx_destruct;
 - (void)endDisablingUserInteraction;
 - (void)beginDisablingUserInteraction;
 @property(readonly, nonatomic) _Bool mayBeKeptInViewHierarchy;

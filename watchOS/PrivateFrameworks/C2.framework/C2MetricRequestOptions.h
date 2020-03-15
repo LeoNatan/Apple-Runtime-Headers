@@ -18,13 +18,13 @@
     C2MetricOptions *_metricOptions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) C2MetricOptions *metricOptions; // @synthesize metricOptions=_metricOptions;
 @property(retain, nonatomic) NSUUID *metricUUID; // @synthesize metricUUID=_metricUUID;
 @property(retain, nonatomic) NSString *_sourceApplicationSecondaryIdentifier; // @synthesize _sourceApplicationSecondaryIdentifier=__sourceApplicationSecondaryIdentifier;
 @property(retain, nonatomic) NSString *_sourceApplicationBundleIdentifier; // @synthesize _sourceApplicationBundleIdentifier=__sourceApplicationBundleIdentifier;
 @property(nonatomic) unsigned char _allowsPowerNapScheduling; // @synthesize _allowsPowerNapScheduling=__allowsPowerNapScheduling;
 @property(nonatomic) unsigned char _allowsExpensiveAccess; // @synthesize _allowsExpensiveAccess=__allowsExpensiveAccess;
-- (void).cxx_destruct;
 - (id)metricRequestTransportOptions;
 - (id)initWithRequestOptions:(id)arg1;
 - (id)init;

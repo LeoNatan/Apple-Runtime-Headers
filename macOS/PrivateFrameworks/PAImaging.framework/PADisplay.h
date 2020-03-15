@@ -25,12 +25,12 @@
 + (long long)bitDepthForDisplayID:(unsigned int)arg1;
 + (BOOL)_enableDeepColor;
 + (id)displayWithScreen:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) id <PARenderFormat> format; // @synthesize format=_format;
 @property(readonly, nonatomic) IPAColorProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) unsigned int displayID; // @synthesize displayID=_displayID;
 @property(readonly, nonatomic) PADevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqualToDisplay:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

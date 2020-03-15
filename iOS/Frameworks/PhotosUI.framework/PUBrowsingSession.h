@@ -30,6 +30,9 @@
     PUTileAnimator *_tileAnimator;
 }
 
++ (id)uiKeyCommandAdditionalActions;
++ (id)uiKeyCommandAvailableActions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUTileAnimator *tileAnimator; // @synthesize tileAnimator=_tileAnimator;
 @property(readonly, nonatomic) PXAssetEditOperationManager *editOperationManager; // @synthesize editOperationManager=_editOperationManager;
 @property(readonly, nonatomic) PUOneUpMergedVideoProvider *mergedVideoProvider; // @synthesize mergedVideoProvider=_mergedVideoProvider;
@@ -42,7 +45,6 @@
 @property(readonly, nonatomic) PUAssetActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PUAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)configureTilingView:(id)arg1;
 - (void)assetEditOperationManager:(id)arg1 didChangeEditOperationStatusForAsset:(id)arg2 context:(void *)arg3;
 - (void)assetEditOperationManager:(id)arg1 didChangeEditOperationsPerformedOnAsset:(id)arg2 context:(void *)arg3;
@@ -54,6 +56,12 @@
 - (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3 photosDetailsContext:(id)arg4;
 - (id)initWithDataSourceManager:(id)arg1 actionManager:(id)arg2 mediaProvider:(id)arg3;
 - (id)init;
+- (void)_toggleDetails;
+- (void)_setVideoToDesiredPlayState:(long long)arg1;
+- (void)_performAdditionalKeyCommand:(long long)arg1 withDelegate:(id)arg2;
+- (void)_performActionForActionType:(unsigned long long)arg1 withDelegate:(id)arg2;
+- (void)performKeyCommand:(id)arg1 withDelegate:(id)arg2;
+- (void)addKeyCommandsIntoArray:(id)arg1 withDelegate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

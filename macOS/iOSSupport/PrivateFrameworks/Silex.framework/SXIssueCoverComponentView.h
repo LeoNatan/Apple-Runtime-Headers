@@ -15,9 +15,9 @@
     UIView *_coverView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *coverView; // @synthesize coverView=_coverView;
 @property(readonly, nonatomic) id <SXIssueCoverViewProvider> viewProvider; // @synthesize viewProvider=_viewProvider;
-- (void).cxx_destruct;
 - (void)renderIssueCover;
 - (void)discardContents;
 - (void)renderContents;

@@ -34,8 +34,9 @@
 + (unsigned long long)proposedResolutionForError:(id)arg1;
 + (id)_displayableErrorOverrideForUnderlyingError:(id)arg1;
 + (id)displayableErrorForError:(id)arg1;
-@property(readonly, nonatomic) PKPeerPaymentWebService *webService; // @synthesize webService=_webService;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPeerPaymentWebService *webService; // @synthesize webService=_webService;
+- (void)_updatePreservePeerPaymentBalanceSetting:(_Bool)arg1;
 @property(readonly, copy) NSString *description;
 - (void)_setPerformQuoteSuccess:(_Bool)arg1;
 - (id)internalState;

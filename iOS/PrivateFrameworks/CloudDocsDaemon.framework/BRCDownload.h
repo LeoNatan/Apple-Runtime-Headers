@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     BRCClientZone *_clientZone;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BRCClientZone *clientZone; // @synthesize clientZone=_clientZone;
 @property(readonly, nonatomic) NSString *stageID; // @synthesize stageID=_stageID;
 @property(readonly, nonatomic) NSString *etag; // @synthesize etag=_etag;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) BRCItemID *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDocument:(id)arg1 stageID:(id)arg2;
 @property(retain, nonatomic) CKRecord *secondaryRecord;

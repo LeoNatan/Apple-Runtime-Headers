@@ -23,6 +23,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *registeredSubscriptions; // @synthesize registeredSubscriptions=_registeredSubscriptions;
 @property(copy, nonatomic) NSArray *registeredPhoneNumbers; // @synthesize registeredPhoneNumbers=_registeredPhoneNumbers;
 @property(copy, nonatomic) NSArray *registeredSIMIDs; // @synthesize registeredSIMIDs=_registeredSIMIDs;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) IMCTXPCServiceSubscriptionInfo *ctSubscriptionInfo; // @synthesize ctSubscriptionInfo=_ctSubscriptionInfo;
 @property(retain, nonatomic) NSMutableDictionary *cachedCarrierSettings; // @synthesize cachedCarrierSettings=_cachedCarrierSettings;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
-- (void).cxx_destruct;
 - (void)subscriptionInfoDidChange;
 - (void)_resetSubscriptionInfo;
 - (_Bool)deviceSupportsMultipleSubscriptions;

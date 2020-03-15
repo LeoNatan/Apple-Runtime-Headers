@@ -18,10 +18,10 @@
 }
 
 + (Class)previewImageDataType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cropRectString; // @synthesize cropRectString=_cropRectString;
 @property(retain, nonatomic) NSString *keyAssetIdentifier; // @synthesize keyAssetIdentifier=_keyAssetIdentifier;
 @property(retain, nonatomic) NSMutableArray *previewImageDatas; // @synthesize previewImageDatas=_previewImageDatas;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

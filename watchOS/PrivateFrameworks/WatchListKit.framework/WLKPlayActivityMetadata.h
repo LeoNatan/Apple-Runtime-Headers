@@ -22,6 +22,7 @@
     NSNumber *_isShowClosed;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *isShowClosed; // @synthesize isShowClosed=_isShowClosed;
 @property(readonly, copy, nonatomic) NSNumber *isCurrentEpisode; // @synthesize isCurrentEpisode=_isCurrentEpisode;
 @property(readonly, copy, nonatomic) NSArray *siriActionsCategories; // @synthesize siriActionsCategories=_siriActionsCategories;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSString *externalShowID; // @synthesize externalShowID=_externalShowID;
 @property(readonly, nonatomic) unsigned int contentType; // @synthesize contentType=_contentType;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 dictionary:(id)arg2;
 
 @end

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedNotifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *underlyingRemoteConnection; // @synthesize underlyingRemoteConnection=_underlyingRemoteConnection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
-- (void).cxx_destruct;
 - (id)_newRemoteConnection;
 - (id)_remoteConnection;
 @property(readonly, nonatomic) id <ConnectionProtocol> remoteObjectProxy;

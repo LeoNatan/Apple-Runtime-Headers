@@ -21,9 +21,9 @@
     NSString *_remoteProcessApplicationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *remoteProcessApplicationIdentifier; // @synthesize remoteProcessApplicationIdentifier=_remoteProcessApplicationIdentifier;
 @property(readonly, nonatomic) int remoteProcessIdentifier; // @synthesize remoteProcessIdentifier=_remoteProcessIdentifier;
-- (void).cxx_destruct;
 - (void)serviceSuspended;
 - (void)serviceResumed;
 @property(readonly, nonatomic) NSString *remoteProcessBundleIdentifier;

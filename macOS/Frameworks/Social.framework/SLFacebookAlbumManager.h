@@ -18,10 +18,10 @@
     SLFacebookAlbum *_selectedAlbum;
 }
 
+- (void).cxx_destruct;
 @property(retain) SLFacebookAlbum *selectedAlbum; // @synthesize selectedAlbum=_selectedAlbum;
 @property __weak id <SLFacebookAlbumManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)loadCoverImageForAlbum:(id)arg1;
 - (void)performAlbumRequestWithBatchRequests:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchDefaultAlbum:(CDUnknownBlockType)arg1;

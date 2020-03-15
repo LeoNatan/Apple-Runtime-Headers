@@ -26,6 +26,7 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reasonCode; // @synthesize reasonCode=_reasonCode;
 @property(copy, nonatomic) PKCurrencyAmount *amount; // @synthesize amount=_amount;
 @property(copy, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

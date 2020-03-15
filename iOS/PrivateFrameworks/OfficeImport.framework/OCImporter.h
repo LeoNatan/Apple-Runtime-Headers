@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
 + (Class)xmlReaderClass;
 + (Class)binaryReaderClass;
 + (id)xmlPathExtensions;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *lastPasswordAttempted; // @synthesize lastPasswordAttempted=_lastPasswordAttempted;
 @property(copy, nonatomic) CDUnknownBlockType officeDOMInspector; // @synthesize officeDOMInspector=mOfficeDOMInspector;
 @property(retain) OITSUProgressContext *progressContext; // @synthesize progressContext=mProgressContext;
-- (void).cxx_destruct;
 - (Class)readerClass;
 - (_Bool)isXML;
 - (void)finalizeWithDocumentState:(id)arg1;

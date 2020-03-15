@@ -12,8 +12,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) id activeSyncSessionIdentifier; // @synthesize activeSyncSessionIdentifier=_activeSyncSessionIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id activeSyncSessionIdentifier; // @synthesize activeSyncSessionIdentifier=_activeSyncSessionIdentifier;
 
 @end
 

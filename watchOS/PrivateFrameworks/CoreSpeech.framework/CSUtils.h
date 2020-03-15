@@ -34,6 +34,7 @@
 + (_Bool)shouldDelayPhaticForMyriadDecision;
 + (_Bool)supportPhatic;
 + (_Bool)supportPremiumModel;
++ (_Bool)isIOSDeviceSupportingBargeIn;
 + (_Bool)supportPremiumWatchAssets;
 + (_Bool)supportCompactPlus;
 + (_Bool)supportRaiseToSpeak;
@@ -79,7 +80,7 @@
 + (id)spIdSiriDebugTrainedUsersFilePathForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectoryForLocale:(id)arg1;
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
-+ (id)spIdSiriDebugGradingDataRootDirectory;
++ (id)spIdDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
 + (void)getHomeUserIdForVoiceProfile:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (id)getContentsOfDirectory:(id)arg1;
@@ -108,7 +109,7 @@
 + (id)spidAudioTrainUtterancesDir;
 + (void)cleanupOrphanedVoiceIdGradingFiles;
 + (_Bool)spIdAudioLogsCountLimitReached;
-+ (id)spIdAudioLogsGradingDir;
++ (id)spIdAudioLogsDir2;
 + (id)spIdAudioLogsDir;
 + (void)createDirectoryIfDoesNotExist:(id)arg1;
 + (id)spIdVoiceProfileImportRootDir;
@@ -128,7 +129,6 @@
 + (id)stringForCSSpIdType:(unsigned int)arg1;
 + (id)stringForInvocationStyle:(unsigned int)arg1;
 + (_Bool)hasRemoteBuiltInMic;
-+ (_Bool)supportIOSBargeIn;
 + (id)alertMuteBehaviorDict;
 + (id)alertMuteSettings;
 + (id)speexRecordSettings;

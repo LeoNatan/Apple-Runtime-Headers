@@ -14,9 +14,9 @@
     long long _allowExternalOof;
 }
 
+- (void).cxx_destruct;
 @property long long allowExternalOof; // @synthesize allowExternalOof=_allowExternalOof;
 @property(retain) EWSUserOofSettingsType *oofSettings; // @synthesize oofSettings=_oofSettings;
-- (void).cxx_destruct;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSGetUserOofSettingsResponseType *response;

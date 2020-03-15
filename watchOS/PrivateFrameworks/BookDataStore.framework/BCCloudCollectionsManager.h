@@ -24,6 +24,7 @@
 
 + (id)sharedClientXPCProxy;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BDSServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(nonatomic) _Bool proxyMode; // @synthesize proxyMode=_proxyMode;
 @property(retain, nonatomic) BCCloudChangeTokenController *changeTokenController; // @synthesize changeTokenController=_changeTokenController;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSObject<BCCloudCollectionDetailManager> *collectionDetailManager; // @synthesize collectionDetailManager=_collectionDetailManager;
 @property(retain, nonatomic) BCCloudDataSource *collectionDataSource; // @synthesize collectionDataSource=_collectionDataSource;
 @property(retain, nonatomic) NSManagedObjectModel *objectModel; // @synthesize objectModel=_objectModel;
-- (void).cxx_destruct;
 - (void)deleteCloudDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dissociateCloudDataFromSyncWithCompletion:(CDUnknownBlockType)arg1;
 @property(nonatomic) _Bool enableCloudSync; // @dynamic enableCloudSync;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     _Bool _valid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) NSString *totalGiftAmountString; // @synthesize totalGiftAmountString=_totalGiftAmountString;
 @property(readonly, nonatomic) NSString *giftKey; // @synthesize giftKey=_giftKey;
 @property(readonly, nonatomic) NSString *errorString; // @synthesize errorString=_errorString;
-- (void).cxx_destruct;
 - (id)initWithValidationDictionary:(id)arg1;
 
 @end

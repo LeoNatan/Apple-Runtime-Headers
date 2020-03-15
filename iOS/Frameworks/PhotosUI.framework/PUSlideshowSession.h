@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     id __disablingIdleTimerToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDisablingIdleTimerToken:) id _disablingIdleTimerToken; // @synthesize _disablingIdleTimerToken=__disablingIdleTimerToken;
 @property(nonatomic, setter=_setDisablingIdleTimer:) _Bool _disablingIdleTimer; // @synthesize _disablingIdleTimer=__disablingIdleTimer;
 @property(readonly, nonatomic) OKPresentationViewController *presentationViewController; // @synthesize presentationViewController=_presentationViewController;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) PUSlideshowViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) PHFetchResult *fetchResult; // @synthesize fetchResult=_fetchResult;
-- (void).cxx_destruct;
 - (void)_endDisablingIdleTimerIfNecessary;
 - (void)_beginDisablingIdleTimer;
 - (void)_slideshowSettingsViewModel:(id)arg1 didChange:(id)arg2;

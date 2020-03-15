@@ -47,6 +47,7 @@
 + (double)verticalSpacingBetweenWidgets;
 + (_Bool)_isPortrait;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak CSPaddingHeaderViewController *timePaddingViewController; // @synthesize timePaddingViewController=_timePaddingViewController;
 @property(retain, nonatomic) id <CSWidgetGroupViewControllerProviding> widgetGroupViewControllerProvider; // @synthesize widgetGroupViewControllerProvider=_widgetGroupViewControllerProvider;
 @property(retain, nonatomic) id <SBFAuthenticationStatusProvider> authenticationStatusProvider; // @synthesize authenticationStatusProvider=_authenticationStatusProvider;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) id <CSSpotlightPresenting> spotlightPresenter; // @synthesize spotlightPresenter=_spotlightPresenter;
 @property(retain, nonatomic) CSLayoutStrategy *layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
 @property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)_timePaddingSize;
 - (_Bool)_allowsDateViewScroll;
 - (void)_widgetEditViewDidDisappearImplementation;

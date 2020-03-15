@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     struct CGSize _scaleToSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <VUIImageLoadParams> params; // @synthesize params=_params;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long scalingResult; // @synthesize scalingResult=_scalingResult;
 @property(retain, nonatomic) TVImage *image; // @synthesize image=_image;
 @property(nonatomic) _Bool cropToFit; // @synthesize cropToFit=_cropToFit;
 @property(nonatomic) struct CGSize scaleToSize; // @synthesize scaleToSize=_scaleToSize;
-- (void).cxx_destruct;
 - (id)initWithParams:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3;
 - (id)init;
 

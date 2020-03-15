@@ -16,9 +16,9 @@
     long long _modificationDatePolicy;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long modificationDatePolicy; // @synthesize modificationDatePolicy=_modificationDatePolicy;
 @property(readonly) NSDate *earliestKnownSyncDate; // @synthesize earliestKnownSyncDate=_earliestKnownSyncDate;
-- (void).cxx_destruct;
 - (id)initWithEarliestKnownSyncDate:(id)arg1 modificationDatePolicy:(long long)arg2;
 
 // Remaining properties

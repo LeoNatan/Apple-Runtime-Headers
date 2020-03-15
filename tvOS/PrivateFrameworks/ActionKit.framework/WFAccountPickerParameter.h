@@ -15,9 +15,9 @@
     id _observer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) Class accountClass; // @synthesize accountClass=_accountClass;
-- (void).cxx_destruct;
 - (id)accountWithName:(id)arg1;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;

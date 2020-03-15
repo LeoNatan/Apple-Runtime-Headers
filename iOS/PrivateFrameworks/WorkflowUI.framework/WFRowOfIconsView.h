@@ -16,11 +16,11 @@
     double _height;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
 @property(readonly, nonatomic) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly, nonatomic) unsigned long long maxNumberOfIcons; // @synthesize maxNumberOfIcons=_maxNumberOfIcons;
-- (void).cxx_destruct;
 - (void)rebuildSubviewsForItems:(id)arg1;
 - (void)setHomeIcons:(id)arg1;
 - (void)setIcons:(id)arg1;

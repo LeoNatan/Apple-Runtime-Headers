@@ -28,6 +28,7 @@
 + (id)faceTimeRegistrationController;
 + (id)registrationController;
 + (void)resetSharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSTimer *authenticationTimer; // @synthesize authenticationTimer=_authenticationTimer;
 @property(nonatomic) BOOL isSignedIn; // @synthesize isSignedIn=_isSignedIn;
 @property(nonatomic) BOOL isSigningOut; // @synthesize isSigningOut=_isSigningOut;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) IMAccount *account; // @synthesize account=_account;
 @property(nonatomic) long long enabledState; // @synthesize enabledState=_enabledState;
 @property(nonatomic) long long registrationState; // @synthesize registrationState=_registrationState;
-- (void).cxx_destruct;
 - (BOOL)cloudKitEventNotificationManagerAccountHasiMessageEnabled:(id)arg1;
 - (void)_clearAliasController;
 - (void)_setupAliasController;

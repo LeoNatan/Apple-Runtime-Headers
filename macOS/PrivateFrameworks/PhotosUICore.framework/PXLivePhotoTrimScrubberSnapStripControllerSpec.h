@@ -17,12 +17,12 @@
     NSColor *_suggestedMarkerColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL alwaysShowKeyTime; // @synthesize alwaysShowKeyTime=_alwaysShowKeyTime;
 @property(retain, nonatomic) NSColor *suggestedMarkerColor; // @synthesize suggestedMarkerColor=_suggestedMarkerColor;
 @property(retain, nonatomic) NSColor *originalPositionMarkerColor; // @synthesize originalPositionMarkerColor=_originalPositionMarkerColor;
 @property(retain, nonatomic) NSColor *currentPositionMarkerColor; // @synthesize currentPositionMarkerColor=_currentPositionMarkerColor;
 @property(retain, nonatomic) NSColor *disabledColor; // @synthesize disabledColor=_disabledColor;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

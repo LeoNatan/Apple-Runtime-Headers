@@ -14,8 +14,8 @@
     UIView<CKAttachmentView> *_attachmentView;
 }
 
-@property(retain, nonatomic) UIView<CKAttachmentView> *attachmentView; // @synthesize attachmentView=_attachmentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView<CKAttachmentView> *attachmentView; // @synthesize attachmentView=_attachmentView;
 - (void)richIconDidChange:(id)arg1;
 - (void)transferUpdated:(id)arg1;
 - (void)setMediaObject:(id)arg1;

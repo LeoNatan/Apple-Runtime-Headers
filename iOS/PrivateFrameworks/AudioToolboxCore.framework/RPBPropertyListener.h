@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     id <RemoteProcessingBlockPropertyListener> _listener;
 }
 
+- (void).cxx_destruct;
 @property __weak id <RemoteProcessingBlockPropertyListener> listener; // @synthesize listener=_listener;
 @property unsigned int propertyID; // @synthesize propertyID=_propertyID;
 @property unsigned int blockID; // @synthesize blockID=_blockID;
 @property unsigned int serverID; // @synthesize serverID=_serverID;
-- (void).cxx_destruct;
 
 @end
 

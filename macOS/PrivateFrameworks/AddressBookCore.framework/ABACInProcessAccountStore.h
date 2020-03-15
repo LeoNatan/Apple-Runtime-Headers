@@ -22,10 +22,10 @@
 + (id)ABACAccountStoreFromACAccountStore:(id)arg1;
 + (id)sharedAccountStore;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) double migrationDelay; // @synthesize migrationDelay=_migrationDelay;
 @property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (id)cachedAccountWithIdentifier:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1 returnCachedVersion:(BOOL)arg2;
 - (void)removeAccount:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

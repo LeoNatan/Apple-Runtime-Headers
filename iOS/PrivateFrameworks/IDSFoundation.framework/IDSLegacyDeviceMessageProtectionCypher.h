@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)cypherWithEndpoint:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) IDSMPPublicLegacyIdentity *publicIdentity; // @synthesize publicIdentity=_publicIdentity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IDSMPPublicLegacyIdentity *publicIdentity; // @synthesize publicIdentity=_publicIdentity;
 - (id)_fullIdentityFromAccountIdentity:(id)arg1 error:(id *)arg2;
 - (id)decypherData:(id)arg1 withAccountIdentity:(id)arg2 signingDevicePublicKey:(id)arg3 identifier:(id)arg4 error:(id *)arg5;
 - (id)cypherData:(id)arg1 withAccountIdentity:(id)arg2 identifier:(id *)arg3 error:(id *)arg4;

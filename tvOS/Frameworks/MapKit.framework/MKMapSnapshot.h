@@ -16,9 +16,9 @@
 }
 
 + (id)createSnapshotWithOptions:(id)arg1 timeoutInSeconds:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (_Bool)_hasNoDataPlaceholders;
 - (struct CLLocationCoordinate2D)_coordinateForPoint:(struct CGPoint)arg1;
 - (struct CGPoint)pointForCoordinate:(struct CLLocationCoordinate2D)arg1;

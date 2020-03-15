@@ -23,6 +23,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didSiriSessionStop; // @synthesize didSiriSessionStop=_didSiriSessionStop;
 @property(nonatomic) _Bool didSiriSessionStart; // @synthesize didSiriSessionStart=_didSiriSessionStart;
 @property(nonatomic) _Bool didBulkSendSessionComplete; // @synthesize didBulkSendSessionComplete=_didBulkSendSessionComplete;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) id <HMDDataStreamBulkSendSession> bulkSendSession; // @synthesize bulkSendSession=_bulkSendSession;
 @property(nonatomic) __weak id <HMDActiveSiriSessionInfoDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)_handleFrame:(id)arg1;
 - (void)_bulkSendDidComplete;
 - (void)_bulkSendDidFail;

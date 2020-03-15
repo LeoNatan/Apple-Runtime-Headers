@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *updateCount; // @synthesize updateCount=_updateCount;
 @property(retain, nonatomic) NSArray *searchedWords; // @synthesize searchedWords=_searchedWords;
 @property(retain, nonatomic) NSArray *stoppedWords; // @synthesize stoppedWords=_stoppedWords;
 @property(retain, nonatomic) NSArray *notes; // @synthesize notes=_notes;
 @property(retain, nonatomic) NSNumber *totalNotes; // @synthesize totalNotes=_totalNotes;
 @property(retain, nonatomic) NSNumber *startIndex; // @synthesize startIndex=_startIndex;
-- (void).cxx_destruct;
 
 @end
 

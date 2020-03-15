@@ -29,11 +29,11 @@
 + (id)_assetURLForMobileAsset:(id)arg1;
 + (id)compatibilityFilterPredicate;
 + (id)assetWithNewestContentVersionInAssets:(id)arg1 preferInstalled:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL XMLPresent; // @synthesize XMLPresent=_XMLPresent;
 @property(nonatomic) BOOL includeArtworkInQueries; // @synthesize includeArtworkInQueries=_includeArtworkInQueries;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *triggerDownloadAndPurgeQueue; // @synthesize triggerDownloadAndPurgeQueue=_triggerDownloadAndPurgeQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *purgeQueue; // @synthesize purgeQueue=_purgeQueue;
-- (void).cxx_destruct;
 - (id)_mobileAssetQueryResultStringValue:(long long)arg1;
 - (id)_mobileAssetPurgeResultStringValue:(long long)arg1;
 - (id)_mobileAssetDownloadResultStringValue:(long long)arg1;

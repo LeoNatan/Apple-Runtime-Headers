@@ -6,11 +6,12 @@
 
 #import <VideosUI/NSObject-Protocol.h>
 
-@class NSSet;
+@class NSArray, NSDictionary;
 
 @protocol VUIDebugMetricsTermCollector <NSObject>
-@property(readonly, nonatomic) NSSet *commonTerms;
-@property(readonly, nonatomic) NSSet *baseTerms;
-@property(readonly, nonatomic) NSSet *timingTerms;
+@property(readonly, nonatomic) NSArray *filteredTerms;
+@property(readonly, nonatomic) NSArray *metricsKitTerms;
+@property(readonly, nonatomic) NSArray *baseTerms;
+@property(readonly, nonatomic) NSDictionary *primaryTerms;
 @end
 

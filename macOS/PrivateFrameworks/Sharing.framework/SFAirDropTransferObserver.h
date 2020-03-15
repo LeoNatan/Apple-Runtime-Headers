@@ -17,9 +17,9 @@
     NSMutableDictionary *_transferIdentifierToTransfer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *transferIdentifierToTransfer; // @synthesize transferIdentifierToTransfer=_transferIdentifierToTransfer;
 @property(nonatomic) __weak id <SFAirDropTransferObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)shouldEscapeXpcTryCatch;
 - (id)remoteObjectInterface;
 - (id)exportedInterface;

@@ -17,11 +17,11 @@
     BOOL _isEditable;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSManagedObjectID *sessionID; // @synthesize sessionID=_sessionID;
 @property(retain) CALAddress *meForSource; // @synthesize meForSource=_meForSource;
 @property BOOL isDelegate; // @synthesize isDelegate=_isDelegate;
 @property(retain) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (BOOL)isSourceInSameAccount:(id)arg1;
 - (BOOL)calendarUserAddressIsEquivalentToURL:(id)arg1;
 - (BOOL)hasCapability:(int)arg1;

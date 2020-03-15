@@ -26,6 +26,7 @@
     NSObject<NSCopying> *_objectID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<NSCopying> *objectID; // @synthesize objectID=_objectID;
 @property(retain, nonatomic) PLDateRangeTitleGenerator *dateRangeTitleGenerator; // @synthesize dateRangeTitleGenerator=_dateRangeTitleGenerator;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSSet *assets; // @synthesize assets=_assets;
 @property(readonly, nonatomic) NSSet *moments; // @synthesize moments=_moments;
-- (void).cxx_destruct;
 - (void)_calculatePropertyValues;
 - (void)setMoments:(id)arg1;
 - (id)initWithMoments:(id)arg1 dateRangeTitleGenerator:(id)arg2;

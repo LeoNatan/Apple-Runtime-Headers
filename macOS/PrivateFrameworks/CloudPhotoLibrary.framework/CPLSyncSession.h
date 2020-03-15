@@ -17,10 +17,10 @@
 }
 
 + (id)detachedSyncSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CPLSyncSessionRescheduler> rescheduler; // @synthesize rescheduler=_rescheduler;
 @property(readonly, nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) NSDate *expectedDate; // @synthesize expectedDate=_expectedDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *whenItWillStartDescription;
 @property(readonly, nonatomic) BOOL mightNeedForegroundToStart;
 - (void)engineIsClosing;

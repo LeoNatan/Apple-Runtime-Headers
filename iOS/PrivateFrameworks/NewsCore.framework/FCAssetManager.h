@@ -29,6 +29,7 @@
     NSObject<OS_dispatch_queue> *_initQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *initQueue; // @synthesize initQueue=_initQueue;
 @property(retain, nonatomic) id <FCAssetKeyManagerType> keyManager; // @synthesize keyManager=_keyManager;
 @property(retain, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSURL *directoryURLForCachedAssets; // @synthesize directoryURLForCachedAssets=_directoryURLForCachedAssets;
 @property(nonatomic) _Bool shouldUseSecureConnectionForCKAssetDownloads; // @synthesize shouldUseSecureConnectionForCKAssetDownloads=_shouldUseSecureConnectionForCKAssetDownloads;
-- (void).cxx_destruct;
 - (long long)_anefFileDataProviderOptions;
 - (void)_importFileAtPath:(id)arg1 method:(long long)arg2 key:(id)arg3 mimeType:(id)arg4 lifetimeHint:(long long)arg5;
 - (_Bool)_dataIsGzipped:(id)arg1;

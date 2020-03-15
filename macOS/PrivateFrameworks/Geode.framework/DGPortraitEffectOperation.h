@@ -18,10 +18,10 @@
 + (id)attributes;
 + (id)outputKeys;
 + (id)inputKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *strength; // @synthesize strength=_strength;
 @property(copy, nonatomic) NSString *portraitEffectFilterName; // @synthesize portraitEffectFilterName=_portraitEffectFilterName;
 @property(copy, nonatomic) NSDictionary *portraitInfo; // @synthesize portraitInfo=_portraitInfo;
-- (void).cxx_destruct;
 - (id)settingsDictionary;
 - (BOOL)applySettingsDictionary:(id)arg1;
 - (id)initWithOperation:(id)arg1;

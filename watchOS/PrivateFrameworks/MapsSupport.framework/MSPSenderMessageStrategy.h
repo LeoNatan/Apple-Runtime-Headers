@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_messagesParticipants;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *messagesParticipants; // @synthesize messagesParticipants=_messagesParticipants;
 @property(nonatomic) __weak id <MSPSenderMessageStrategyDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)sendMessageIfNeeded;
 - (id)participants;
 - (void)removeParticipants:(id)arg1;

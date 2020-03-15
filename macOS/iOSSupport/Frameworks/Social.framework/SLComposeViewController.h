@@ -52,10 +52,10 @@
 + (id)_extensionIdentifierForServiceType:(id)arg1;
 + (id)_serviceTypeToExtensionIdentifierMap;
 + (id)_unsupportedServiceTypes;
+- (void).cxx_destruct;
 @property(retain) UIViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidUnload;

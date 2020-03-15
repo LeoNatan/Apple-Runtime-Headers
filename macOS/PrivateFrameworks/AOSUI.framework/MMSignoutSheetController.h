@@ -26,6 +26,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) NSMutableArray *serviceInfoList; // @synthesize serviceInfoList=_serviceInfoList;
@@ -35,7 +36,6 @@
 @property __weak NSTableView *serviceTable; // @synthesize serviceTable=_serviceTable;
 @property __weak NSWindow *signoutSheet; // @synthesize signoutSheet=_signoutSheet;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (long long)countOfEnabledCheckboxes;
 - (id)enabledServices;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;

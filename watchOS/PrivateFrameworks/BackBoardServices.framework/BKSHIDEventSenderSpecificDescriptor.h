@@ -13,9 +13,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSHIDEventDescriptor *sourceDescriptor; // @synthesize sourceDescriptor=_sourceDescriptor;
 @property(readonly) unsigned long long senderID; // @synthesize senderID=_senderID;
-- (void).cxx_destruct;
 - (_Bool)matchesHIDEvent:(struct __IOHIDEvent *)arg1;
 - (_Bool)describes:(id)arg1;
 - (id)initWithCoder:(id)arg1;

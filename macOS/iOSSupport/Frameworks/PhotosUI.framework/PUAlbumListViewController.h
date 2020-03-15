@@ -88,6 +88,7 @@
 
 + (id)newSharedAlbumsViewControllerWithSpec:(id)arg1 sessionInfo:(id)arg2;
 + (id)newMyAlbumsViewControllerWithSpec:(id)arg1 sessionInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserActivity *siriActionActivity; // @synthesize siriActionActivity=_siriActionActivity;
 @property(readonly, nonatomic) PXEditableNavigationTitleView *editableTitleView; // @synthesize editableTitleView=_editableTitleView;
 @property(retain, nonatomic, setter=_setFeatureSpec:) PXFeatureSpec *_featureSpec; // @synthesize _featureSpec=__featureSpec;
@@ -129,7 +130,6 @@
 @property(retain, nonatomic) PXPhotoKitCollectionsDataSourceManagerConfiguration *dataSourceManagerConfiguration; // @synthesize dataSourceManagerConfiguration=_dataSourceManagerConfiguration;
 @property(retain, nonatomic) PUSessionInfo *sessionInfo; // @synthesize sessionInfo=_sessionInfo;
 @property(readonly, nonatomic) BOOL isRootSharedAlbumList; // @synthesize isRootSharedAlbumList=_isRootSharedAlbumList;
-- (void).cxx_destruct;
 - (BOOL)canPresentPicker;
 - (CDUnknownBlockType)completionHandler;
 - (id)hostViewContoller;
@@ -301,7 +301,7 @@
 - (void)_updateStackView:(id)arg1 forAssets:(id)arg2 collection:(id)arg3 withCustomEmptyPlaceholderImage:(id)arg4;
 - (void)_prepareStackView:(id)arg1 forCollection:(id)arg2 withStackCount:(long long)arg3 withCustomEmptyPlaceHolderImage:(id)arg4;
 - (id)_keyAssetsForMoments;
-- (void)updatePlaceholderListCellContentView:(struct PUAlbumListCellContentView *)arg1 forItemAtIndexPath:(id)arg2 animated:(BOOL)arg3;
+- (void)updatePlaceholderListCellContentView:(id)arg1 forItemAtIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (void)setTitleForCell:(id)arg1 withCollection:(id)arg2;
 - (void)updateAlbumListCellContentView:(id)arg1 forItemAtIndexPath:(id)arg2 animated:(BOOL)arg3;
 - (void)updateListCellForItemAtIndexPath:(id)arg1 animated:(BOOL)arg2;
@@ -312,7 +312,7 @@
 - (id)_pickerBannerView;
 - (void)_updatePeripheralInterfaceAnimated:(BOOL)arg1;
 - (BOOL)canShowSyncProgress;
-- (struct PUAlbumListCellContentView *)_preparedPlaceholderListCellContentViewAtIndexPath:(id)arg1;
+- (id)_preparedPlaceholderListCellContentViewAtIndexPath:(id)arg1;
 - (id)_preparedAlbumListCellContentViewAtIndexPath:(id)arg1;
 - (id)indexPathForAlbumListCellContentView:(id)arg1;
 - (id)indexPathsForItemsInRect:(struct CGRect)arg1;

@@ -16,9 +16,9 @@
     id <PXGImageRequestPerformer> _imageRequestPerformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXGImageRequestPerformer> imageRequestPerformer; // @synthesize imageRequestPerformer=_imageRequestPerformer;
 @property(nonatomic) long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (void)_discardIndexes:(id)arg1;
 - (void)_removeAllRequests;
 - (void)cancelTextureRequests:(id)arg1;

@@ -17,10 +17,10 @@
     NSString *_storefrontIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storefrontIdentifier; // @synthesize storefrontIdentifier=_storefrontIdentifier;
 @property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
-- (void).cxx_destruct;
 - (id)stringRepresentation;
 - (id)initWithStringRepresentation:(id)arg1;
 - (id)dictionaryRepresentationIncludingDSID:(_Bool)arg1;

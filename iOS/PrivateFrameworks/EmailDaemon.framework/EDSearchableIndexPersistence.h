@@ -29,10 +29,10 @@
 + (id)searchableMessagesTableName;
 + (id)signpostLog;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s lastProcessedAttachmentIDLock; // @synthesize lastProcessedAttachmentIDLock=_lastProcessedAttachmentIDLock;
 @property(readonly, nonatomic) __weak id <EDSearchableIndexHookResponder> hookResponder; // @synthesize hookResponder=_hookResponder;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_assignIndexedAttachmentItems:(id)arg1 transaction:(long long)arg2 connection:(id)arg3;
 - (id)_identifiersForAttachmentsWithQuery:(id)arg1 usingConnection:(id)arg2;
 - (id)_identifiersForAttachmentsInTransactions:(id)arg1 usingConnection:(id)arg2;
@@ -62,7 +62,7 @@
 - (long long)indexingTypeForSearchableIndex:(id)arg1 item:(id)arg2;
 - (id)_messagesRequiringIndexingForType:(long long)arg1 excludingIdentifiers:(id)arg2 limit:(long long)arg3;
 - (id)updatesForSearchableIndex:(id)arg1 excludingIdentifiers:(id)arg2 count:(unsigned long long)arg3 cancelationToken:(id)arg4;
-@property(readonly, nonatomic) NSString *messagesRowIDWhereSubClause;
+@property(readonly, nonatomic) NSString *additionalFilterClause;
 - (id)verificationDataSamplesFromMessageIDTransactionIDDictionary:(id)arg1;
 - (void)attachmentItemMetadataForAttachmentID:(id)arg1 messagePersistentID:(id)arg2 name:(id)arg3 result:(CDUnknownBlockType)arg4;
 - (id)searchableIndexItemsFromMessages:(id)arg1 type:(long long)arg2;

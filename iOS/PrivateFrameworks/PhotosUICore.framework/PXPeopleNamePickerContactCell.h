@@ -17,12 +17,12 @@
     NSArray *_constraintsForHiddenSubtitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraintsForHiddenSubtitle; // @synthesize constraintsForHiddenSubtitle=_constraintsForHiddenSubtitle;
 @property(retain, nonatomic) NSArray *constraintsForVisibleSubtitle; // @synthesize constraintsForVisibleSubtitle=_constraintsForVisibleSubtitle;
 @property(nonatomic) __weak UIView *labelsContainer; // @synthesize labelsContainer=_labelsContainer;
 @property(readonly, nonatomic) __weak UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) __weak CNAvatarView *contactAvatarView; // @synthesize contactAvatarView=_contactAvatarView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -16,8 +16,8 @@
     WFAction *_action;
 }
 
-@property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
 - (void)possibleStatesDidChange;
 - (_Bool)isHidden;

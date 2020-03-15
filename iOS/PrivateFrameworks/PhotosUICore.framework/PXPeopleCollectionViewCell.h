@@ -36,6 +36,7 @@
     struct CGSize _avatarSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize avatarSize; // @synthesize avatarSize=_avatarSize;
 @property(nonatomic) _Bool blurApplied; // @synthesize blurApplied=_blurApplied;
 @property(retain, nonatomic) UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
@@ -56,7 +57,6 @@
 @property(nonatomic) double textAlpha; // @synthesize textAlpha=_textAlpha;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;
-- (void).cxx_destruct;
 - (id)_stretchableGradientImageWithSize:(struct CGSize)arg1 scale:(double)arg2 gradientColor:(id)arg3;
 - (void)_updateTitleAndFavoriteBadgeForLayoutChange;
 - (void)_updateType;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _accountStore;
 }
 
-@property(readonly, nonatomic) id accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id accountStore; // @synthesize accountStore=_accountStore;
 - (void)fetchiCloudFamilyMembersWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithAccountStore:(id)arg1 requestRunner:(id)arg2;
 - (id)init;

@@ -16,11 +16,11 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool submitted; // @synthesize submitted=_submitted;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) struct mach_timebase_info timebaseInfo; // @synthesize timebaseInfo=_timebaseInfo;
 @property(retain, nonatomic) NSString *requestType; // @synthesize requestType=_requestType;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)requestTimedOut;
 - (void)requestCompletedWithErrorCode:(unsigned int)arg1 andDuration:(double)arg2;

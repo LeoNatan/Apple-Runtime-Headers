@@ -17,10 +17,10 @@
     NSAttributedString *_valueString;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool separatorHidden; // @synthesize separatorHidden=_separatorHidden;
 @property(retain, nonatomic) NSAttributedString *valueString; // @synthesize valueString=_valueString;
 @property(retain, nonatomic) NSAttributedString *titleString; // @synthesize titleString=_titleString;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 value:(id)arg2 separatorHidden:(_Bool)arg3;
 - (id)initWithTitle:(id)arg1 value:(id)arg2;
 

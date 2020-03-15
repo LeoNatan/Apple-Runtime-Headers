@@ -8,24 +8,31 @@
 
 #import <TextInput/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface TIKeyboardIntermediateText : NSObject <NSSecureCoding>
 {
     unsigned int _selectionOffset;
     NSString *_inputString;
     NSString *_displayString;
+    int _candidateOffset;
+    NSArray *_liveConversionSegments;
+    int _highlightSegmentIndex;
     NSString *_searchString;
 }
 
++ (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned int)arg3 searchString:(id)arg4 candidateOffset:(int)arg5 liveConversionSegments:(id)arg6 highlightSegmentIndex:(int)arg7;
 + (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned int)arg3 searchString:(id)arg4;
 + (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned int)arg3;
 + (id)intermediateTextWithInputString:(id)arg1 displayString:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
+@property(readonly, nonatomic) int highlightSegmentIndex; // @synthesize highlightSegmentIndex=_highlightSegmentIndex;
+@property(readonly, nonatomic) NSArray *liveConversionSegments; // @synthesize liveConversionSegments=_liveConversionSegments;
+@property(readonly, nonatomic) int candidateOffset; // @synthesize candidateOffset=_candidateOffset;
 @property(readonly, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(readonly, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) struct _NSRange selectedRange;
 - (unsigned int)hash;
@@ -33,7 +40,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned int)arg3 searchString:(id)arg4;
+- (id)initWithInputString:(id)arg1 displayString:(id)arg2 selectionLocation:(unsigned int)arg3 searchString:(id)arg4 candidateOffset:(unsigned int)arg5 liveConversionSegments:(id)arg6 highlightSegmentIndex:(int)arg7;
 
 @end
 

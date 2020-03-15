@@ -14,9 +14,9 @@
     _Bool _endContentOffsetInvarient;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEndContentOffsetInvarient) _Bool endContentOffsetInvarient; // @synthesize endContentOffsetInvarient=_endContentOffsetInvarient;
 @property(nonatomic, getter=isStartContentOffsetInvarient) _Bool startContentOffsetInvarient; // @synthesize startContentOffsetInvarient=_startContentOffsetInvarient;
-- (void).cxx_destruct;
 - (struct Hex)hexAtPoint:(struct CGPoint)arg1;
 - (CDStruct_727cf631)layoutAttributesForItemAtHex:(struct Hex)arg1;
 - (void)updateWithBounds:(struct CGRect)arg1;

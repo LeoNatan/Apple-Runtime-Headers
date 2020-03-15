@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *faceprintInputPath; // @synthesize faceprintInputPath=_faceprintInputPath;
 @property unsigned int profile; // @synthesize profile=_profile;
 @property unsigned int platform; // @synthesize platform=_platform;
 @property(copy) NSString *key; // @synthesize key=_key;
 @property(retain) NSData *faceprint; // @synthesize faceprint=_faceprint;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -18,12 +18,12 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL doubleBuffered; // @synthesize doubleBuffered=_doubleBuffered;
 @property(readonly, nonatomic) struct CGSize fixedPixelSize; // @synthesize fixedPixelSize=_fixedPixelSize;
 @property(readonly, nonatomic) BOOL isFixedPixelSize; // @synthesize isFixedPixelSize=_isFixedPixelSize;
 @property(readonly, nonatomic) BOOL isWideGamut; // @synthesize isWideGamut=_isWideGamut;
 @property(nonatomic) __weak PKDisplayLink *displayLink; // @synthesize displayLink=_displayLink;
-- (void).cxx_destruct;
 - (void)flushDrawables;
 - (void)resizeDrawableIfNecessary;
 - (void)setFixedPixelSize:(struct CGSize)arg1;

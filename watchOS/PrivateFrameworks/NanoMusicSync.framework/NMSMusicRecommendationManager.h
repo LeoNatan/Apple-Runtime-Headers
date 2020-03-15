@@ -26,8 +26,8 @@
 }
 
 + (id)sharedManager;
-@property(nonatomic) _Bool wantsContentsUpdate; // @synthesize wantsContentsUpdate=_wantsContentsUpdate;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool wantsContentsUpdate; // @synthesize wantsContentsUpdate=_wantsContentsUpdate;
 - (void)_invalidateArtworkRetryTimer;
 - (void)_startArtworkRetryTimer;
 - (void)_deleteCachedArtworksWithTokens:(id)arg1;

@@ -21,6 +21,7 @@
     CALayer *_mainLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain) CALayer *mainLayer; // @synthesize mainLayer=_mainLayer;
 @property double barWidth; // @synthesize barWidth=_barWidth;
 @property(retain) UIColor *backgroundBarColor; // @synthesize backgroundBarColor=_backgroundBarColor;
@@ -30,7 +31,6 @@
 @property long long state; // @synthesize state=_state;
 @property double duration; // @synthesize duration=_duration;
 @property double remainingTime; // @synthesize remainingTime=_remainingTime;
-- (void).cxx_destruct;
 - (_Bool)isStarted;
 - (void)resume;
 - (void)stop;

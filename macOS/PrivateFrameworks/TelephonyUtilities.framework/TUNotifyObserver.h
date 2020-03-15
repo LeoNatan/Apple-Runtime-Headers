@@ -19,10 +19,10 @@
     NSString *_notificationName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int token; // @synthesize token=_token;
 @property(copy, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_endObserving;
 - (void)endObserving;
 - (void)beginObserving;

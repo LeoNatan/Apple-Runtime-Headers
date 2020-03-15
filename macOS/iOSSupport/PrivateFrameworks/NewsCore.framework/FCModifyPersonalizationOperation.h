@@ -24,6 +24,7 @@
 + (void)applyDeltas:(id)arg1 toProfile:(id)arg2 treatment:(id)arg3 prune:(BOOL)arg4;
 + (void)applyChangeGroups:(id)arg1 toProfile:(id)arg2 treatment:(id)arg3 prune:(BOOL)arg4;
 + (id)personalizationProfileFromRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *resultError; // @synthesize resultError=_resultError;
 @property(retain, nonatomic) CKRecord *savedRecord; // @synthesize savedRecord=_savedRecord;
 @property(retain, nonatomic) NTPBPersonalizationProfile *savedProfile; // @synthesize savedProfile=_savedProfile;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) FCPersonalizationTreatment *treatment; // @synthesize treatment=_treatment;
 @property(retain, nonatomic) NSArray *changeGroups; // @synthesize changeGroups=_changeGroups;
 @property(retain, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)resetForRetry;
 - (BOOL)canRetryWithError:(id)arg1 retryAfter:(id *)arg2;
 - (unsigned long long)maxRetries;

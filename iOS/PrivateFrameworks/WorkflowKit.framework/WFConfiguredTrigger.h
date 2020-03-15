@@ -16,11 +16,11 @@
     WFTrigger *_trigger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) _Bool shouldPrompt; // @synthesize shouldPrompt=_shouldPrompt;
 @property(readonly, nonatomic) WFTrigger *trigger; // @synthesize trigger=_trigger;
 @property(readonly, nonatomic) NSString *workflowID; // @synthesize workflowID=_workflowID;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 workflowID:(id)arg2 trigger:(id)arg3 shouldPrompt:(_Bool)arg4 enabled:(_Bool)arg5;
 
 @end

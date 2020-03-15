@@ -16,10 +16,10 @@
 }
 
 + (id)relativeDateContentProviderWithDate:(id)arg1 style:(int)arg2 units:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int units; // @synthesize units=_units;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)clockKitTextProviderRepresentation;

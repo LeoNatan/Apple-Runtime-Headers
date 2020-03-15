@@ -20,11 +20,11 @@
     id <IMAPSyncSkeletonsOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <IMAPSyncSkeletonsOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BOOL includeLabels; // @synthesize includeLabels=_includeLabels;
 @property(readonly, nonatomic) BOOL useUIDs; // @synthesize useUIDs=_useUIDs;
 @property(readonly, copy, nonatomic) NSIndexSet *messageNumbers; // @synthesize messageNumbers=_messageNumbers;
-- (void).cxx_destruct;
 - (id)_findFetchResponseWithMessageNumber:(unsigned long long)arg1 inIndexRange:(struct _NSRange)arg2;
 - (id)_findFetchResponseWithMessageNumber:(unsigned long long)arg1;
 - (BOOL)handleResponse:(id)arg1 forCommand:(id)arg2;

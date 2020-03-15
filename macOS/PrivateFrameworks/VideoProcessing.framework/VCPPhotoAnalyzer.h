@@ -24,9 +24,9 @@
 + (id)analyzerWithVCPAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
 + (BOOL)canAnalyzeUndegraded:(id)arg1 withResources:(id)arg2;
 + (id)resourceForAsset:(id)arg1 withResources:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) long long status; // @synthesize status=_status;
 @property(nonatomic) BOOL allowStreaming; // @synthesize allowStreaming=_allowStreaming;
-- (void).cxx_destruct;
 - (id)analyzeAsset:(CDUnknownBlockType)arg1;
 - (int)analyzeImage:(unsigned long long *)arg1 performedAnalyses:(unsigned long long *)arg2 movingObjectResults:(id)arg3 cancel:(CDUnknownBlockType)arg4;
 - (int)downscaleImage:(struct __CVBuffer *)arg1 scaledImage:(struct __CVBuffer **)arg2 majorDimension:(int)arg3;

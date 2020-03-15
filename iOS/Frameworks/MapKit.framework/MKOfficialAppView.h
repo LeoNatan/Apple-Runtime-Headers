@@ -25,11 +25,11 @@ __attribute__((visibility("hidden")))
     id <MKOfficialAppViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppInstalled; // @synthesize isAppInstalled=_isAppInstalled;
 @property(nonatomic) __weak id <MKOfficialAppViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIImage *storeItemImage; // @synthesize storeItemImage=_storeItemImage;
 @property(retain, nonatomic) SSLookupItem *storeItem; // @synthesize storeItem=_storeItem;
-- (void).cxx_destruct;
 - (void)_createConstraints;
 - (void)_updateLabelText;
 - (void)updateButtonText;

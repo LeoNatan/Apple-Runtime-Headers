@@ -23,12 +23,12 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDTransactionService *dataReplicationTransaction; // @synthesize dataReplicationTransaction=_dataReplicationTransaction;
 @property(retain, nonatomic) EDConversationRemoteCloudKitStorage *cloudKitStorage; // @synthesize cloudKitStorage=_cloudKitStorage;
 @property(retain, nonatomic) id <EDConversationRemoteStorage> kvsStorage; // @synthesize kvsStorage=_kvsStorage;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *privateQueue; // @synthesize privateQueue=_privateQueue;
 @property(nonatomic) __weak id <EDConversationRemoteStorageDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_replicateAllContentFromStore:(id)arg1 toStore:(id)arg2 synchronize:(_Bool)arg3;
 - (void)_handleStorageReady:(id)arg1;
 - (void)_saveChanges:(id)arg1 fromStorage:(id)arg2 toStorage:(id)arg3 synchronize:(_Bool)arg4;

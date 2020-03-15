@@ -12,7 +12,7 @@
 #import <coreroutine/RTPersistenceMirroringRequestDelegate-Protocol.h>
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, RTAccountManager, RTDefaultsManager, RTInvocationDispatcher, RTPersistenceCloudDeletionEnforcer, RTPersistenceManager, RTPersistenceMirroringRequest, RTPlatform, RTPowerAssertion, RTReachabilityManager, RTTimerManager, RTXPCActivityManager;
+@class NSMutableArray, NSMutableDictionary, NSString, RTAccountManager, RTDefaultsManager, RTInvocationDispatcher, RTPersistenceCloudDeletionEnforcer, RTPersistenceExpirationEnforcer, RTPersistenceManager, RTPersistenceMirroringRequest, RTPlatform, RTPowerAssertion, RTReachabilityManager, RTTimerManager, RTXPCActivityManager;
 @protocol OS_dispatch_queue, OS_os_transaction, RTPersistenceMirroringMetricsDelegate;
 
 @interface RTPersistenceMirroringManager : NSObject <RTPersistenceMirroringMetricsDelegate, RTPersistenceMirroringRequestDelegate, RTPersistenceMirroringDelegate, RTPurgable, RTDiagnosticProvider>
@@ -22,8 +22,9 @@
     RTAccountManager *_accountManager;
     RTReachabilityManager *_reachabilityManager;
     long long _cloudSyncAuthorizationState;
-    long long _currentReachability;
+    unsigned long long _currentReachability;
     BOOL _syncDisabledForPerProcessMemoryLimit;
+    BOOL _exportingAvailable;
     id <RTPersistenceMirroringMetricsDelegate> _metricsDelegate;
     RTPersistenceManager *_persistenceManager;
     RTPowerAssertion *_powerAssertion;
@@ -36,10 +37,14 @@
     RTXPCActivityManager *_xpcActivityManager;
     RTPlatform *_platform;
     RTPersistenceCloudDeletionEnforcer *_persistenceCloudDeletionEnforcer;
+    RTPersistenceExpirationEnforcer *_persistenceExpirationEnforcer;
     RTInvocationDispatcher *_dispatcher;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) BOOL exportingAvailable; // @synthesize exportingAvailable=_exportingAvailable;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
+@property(retain, nonatomic) RTPersistenceExpirationEnforcer *persistenceExpirationEnforcer; // @synthesize persistenceExpirationEnforcer=_persistenceExpirationEnforcer;
 @property(retain, nonatomic) RTPersistenceCloudDeletionEnforcer *persistenceCloudDeletionEnforcer; // @synthesize persistenceCloudDeletionEnforcer=_persistenceCloudDeletionEnforcer;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
@@ -52,7 +57,6 @@
 @property(retain, nonatomic) RTPowerAssertion *powerAssertion; // @synthesize powerAssertion=_powerAssertion;
 @property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 @property __weak id <RTPersistenceMirroringMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
-- (void).cxx_destruct;
 - (void)_onMirroringDelegateInitialization:(id)arg1;
 - (void)onMirroringDelegateInitialization:(id)arg1;
 - (BOOL)_fetchZoneChangesForDatabase:(id)arg1 outputURL:(id)arg2 error:(id *)arg3;
@@ -67,6 +71,7 @@
 - (void)onReachabilityChange:(id)arg1;
 - (void)_onCloudSyncAuthorizationChange:(id)arg1;
 - (void)onCloudSyncAuthorizationChange:(id)arg1;
+- (void)_updateExportingAvailability:(unsigned long long)arg1;
 - (void)_persistenceAvailabilityDidChange:(id)arg1;
 - (void)persistenceAvailabilityDidChange:(id)arg1;
 - (void)_scheduleRetryAttemptForRequest:(id)arg1 referenceDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
@@ -91,10 +96,12 @@
 - (void)shutdown;
 - (void)unregisterForXPCActivities;
 - (void)registerForXPCActivities;
-- (BOOL)disableSyncForPerProcessMemoryLimit:(id)arg1 platform:(id)arg2;
-- (id)initWithAccountManager:(id)arg1 persistenceCloudDeletionEnforcer:(id)arg2 persistenceManager:(id)arg3 defaultsManager:(id)arg4 mirroringPolicies:(id)arg5 platform:(id)arg6 reachabilityManager:(id)arg7 timerManager:(id)arg8 xpcActivityManager:(id)arg9;
+- (BOOL)disableMirroringForPerProcessMemoryLimitViolation:(id)arg1 platform:(id)arg2;
+- (BOOL)exportMirroringIsAvailableWithExpirationEnforcer:(id)arg1 expirationDate:(id)arg2 context:(id)arg3 error:(id *)arg4;
+- (id)initWithAccountManager:(id)arg1 defaultsManager:(id)arg2 mirroringPolicies:(id)arg3 persistenceCloudDeletionEnforcer:(id)arg4 persistenceExpirationEnforcer:(id)arg5 persistenceManager:(id)arg6 platform:(id)arg7 reachabilityManager:(id)arg8 timerManager:(id)arg9 xpcActivityManager:(id)arg10;
 - (id)initWithAccountManager:(id)arg1 defaultsManager:(id)arg2 persistenceManager:(id)arg3 platform:(id)arg4 reachabilityManager:(id)arg5 xpcActivityManager:(id)arg6;
 - (id)init;
+- (id)persistenceOperationMetricWithMirroringRequest:(id)arg1 lastMirroringTransactionDate:(id)arg2 recordsChanged:(unsigned long long)arg3 error:(id)arg4;
 - (void)collectMetricsFromMirroringRequest:(id)arg1 error:(id)arg2;
 - (void)mirroringManager:(id)arg1 mirroringRequest:(id)arg2 didFailWithError:(id)arg3;
 - (void)mirroringManager:(id)arg1 mirroringRequestDidSucceed:(id)arg2;

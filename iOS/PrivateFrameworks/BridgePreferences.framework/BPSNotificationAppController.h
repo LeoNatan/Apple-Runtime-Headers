@@ -20,6 +20,7 @@
     unsigned long long _settingsMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long settingsMode; // @synthesize settingsMode=_settingsMode;
 @property(readonly, nonatomic) NSMutableDictionary *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 @property(readonly, nonatomic) _Bool mirrorSettings; // @synthesize mirrorSettings=_mirrorSettings;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSMutableArray *notificationApplicationSpecifiers; // @synthesize notificationApplicationSpecifiers=_notificationApplicationSpecifiers;
 @property(retain, nonatomic) BBSectionInfo *bbSectionInfo; // @synthesize bbSectionInfo=_bbSectionInfo;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)localizedPreviewGroupFooter;
 - (id)localizedPreviewGroupLabel;
 - (_Bool)wantsPreviewChoice;

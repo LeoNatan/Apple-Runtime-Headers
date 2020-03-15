@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSData *accountAuthToken; // @synthesize accountAuthToken=_accountAuthToken;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *accountAuthToken; // @synthesize accountAuthToken=_accountAuthToken;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAccountAuthToken:(id)arg1;

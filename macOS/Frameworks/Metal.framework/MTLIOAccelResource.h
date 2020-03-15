@@ -20,9 +20,10 @@
     MTLIOAccelDevice<MTLDevice> *weakDevice;
 }
 
-@property(readonly) __weak MTLIOAccelDevice<MTLDevice> *weakDevice; // @synthesize weakDevice;
 - (void).cxx_destruct;
+@property(readonly) __weak MTLIOAccelDevice<MTLDevice> *weakDevice; // @synthesize weakDevice;
 - (void)releaseStrongDevice;
+@property(readonly) unsigned long long allocationID;
 @property(readonly) unsigned long long allocatedSize;
 - (BOOL)doesAliasAnyResources:(const id *)arg1 count:(unsigned long long)arg2;
 - (BOOL)doesAliasAllResources:(const id *)arg1 count:(unsigned long long)arg2;

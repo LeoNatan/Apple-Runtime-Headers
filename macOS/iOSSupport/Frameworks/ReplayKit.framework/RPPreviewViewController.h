@@ -24,12 +24,12 @@
 + (void)viewControllerForExtension:(id)arg1 inputItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)loadPreviewViewControllerWithMovieURL:(id)arg1 attachmentURL:(id)arg2 overrideShareMessage:(id)arg3 overrideTintColor:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)loadPreviewViewControllerWithMovieURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ReplayKitMacHelper> replayKitMacHelper; // @synthesize replayKitMacHelper=_replayKitMacHelper;
 @property(retain, nonatomic) NSURL *movieURL; // @synthesize movieURL=_movieURL;
 @property(nonatomic) BOOL wasStatusBarHidden; // @synthesize wasStatusBarHidden=_wasStatusBarHidden;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <RPPreviewViewControllerDelegate> previewControllerDelegate; // @synthesize previewControllerDelegate=_previewControllerDelegate;
-- (void).cxx_destruct;
 - (id)popoverPresentationController;
 @property(nonatomic) long long modalPresentationStyle;
 - (void)replayKitMacHelper:(id)arg1 didDismissVideoEditorSheetWithActivityTypes:(id)arg2;

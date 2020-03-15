@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 
 + (id)_listItemSelectedOverlayFillColor;
 + (id)_listItemTextColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(nonatomic) __weak id <_TVSearchBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)_insertSpace:(id)arg1;
 - (void)_submit:(id)arg1;
 - (void)deleteBackward;

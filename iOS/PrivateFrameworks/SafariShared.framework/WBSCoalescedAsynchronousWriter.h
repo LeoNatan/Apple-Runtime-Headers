@@ -26,9 +26,9 @@
     id <WBSCoalescedAsynchronousWriterDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WBSCoalescedAsynchronousWriterDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WBSCoalescedAsynchronousWriterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cancelPendingWriteSynchronously;
 - (void)completePendingWriteSynchronously;
 - (void)performScheduledWriteSynchronously;

@@ -23,6 +23,7 @@
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *insetsString; // @synthesize insetsString=_insetsString;
 @property(copy, nonatomic) NSString *insetsString720; // @synthesize insetsString720=_insetsString720;
 @property(copy, nonatomic) NSString *insetsString1080; // @synthesize insetsString1080=_insetsString1080;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *style; // @synthesize style=_style;
 @property(nonatomic) _Bool required; // @synthesize required=_required;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

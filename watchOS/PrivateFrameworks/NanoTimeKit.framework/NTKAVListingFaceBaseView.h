@@ -29,12 +29,12 @@
     id <NTKAVListing> _currentListing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool contentUnloadedForFaceSwiping; // @synthesize contentUnloadedForFaceSwiping=_contentUnloadedForFaceSwiping;
 @property(nonatomic) _Bool shouldChangeVariantForScreenWake; // @synthesize shouldChangeVariantForScreenWake=_shouldChangeVariantForScreenWake;
 @property(retain, nonatomic) id <NTKAVListing> currentListing; // @synthesize currentListing=_currentListing;
 @property(readonly, nonatomic) _Bool shouldPause; // @synthesize shouldPause=_shouldPause;
 @property(readonly, nonatomic) _Bool paused; // @synthesize paused=_isPaused;
-- (void).cxx_destruct;
 - (void)tritium_willTransitionToTritiumOffFromFrameSpecifier:(id)arg1;
 - (void)_reset;
 - (void)_updateImageToBlur;

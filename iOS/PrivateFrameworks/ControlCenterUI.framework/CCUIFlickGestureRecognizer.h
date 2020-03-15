@@ -20,10 +20,10 @@
     unsigned long long _allowedFlickDirections;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long allowedFlickDirections; // @synthesize allowedFlickDirections=_allowedFlickDirections;
 @property(nonatomic) double minimumFlickVelocity; // @synthesize minimumFlickVelocity=_minimumFlickVelocity;
 @property(nonatomic) double maximumFlickTime; // @synthesize maximumFlickTime=_maximumFlickTime;
-- (void).cxx_destruct;
 - (void)_evaluateFlickAtTimeout;
 - (_Bool)_validateFlickWithTouch:(id)arg1;
 - (void)_beginFlickWithTouch:(id)arg1;

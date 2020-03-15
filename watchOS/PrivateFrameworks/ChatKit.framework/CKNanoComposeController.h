@@ -25,13 +25,13 @@
     IMSticker *_sticker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMSticker *sticker; // @synthesize sticker=_sticker;
 @property(retain, nonatomic) CKBrowserItemPayload *pluginPayload; // @synthesize pluginPayload=_pluginPayload;
 @property(retain, nonatomic) NSURL *audioFileURL; // @synthesize audioFileURL=_audioFileURL;
 @property(retain, nonatomic) CKAudioMediaObject *audioMediaObject; // @synthesize audioMediaObject=_audioMediaObject;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) id <CKNanoComposeControllerDismissalDelegate> dismissalDelegate; // @synthesize dismissalDelegate=_dismissalDelegate;
-- (void).cxx_destruct;
 - (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)resetMessageContent;

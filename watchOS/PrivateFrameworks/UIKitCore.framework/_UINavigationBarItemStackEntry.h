@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)newEntryForItem:(id)arg1;
 + (id)entryForItem:(id)arg1 replaceExistingWithNew:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UINavigationBarLayout *searchLayout; // @synthesize searchLayout=_searchLayout;
 @property(retain, nonatomic) _UINavigationBarLayout *normalLayout; // @synthesize normalLayout=_normalLayout;
 @property(nonatomic, getter=isSearchActive) _Bool searchActive; // @synthesize searchActive=_searchActive;
 @property(readonly, nonatomic) UINavigationItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateStateFromCounterpart:(id)arg1;
 @property(readonly, nonatomic) _UINavigationBarLayout *inactiveLayout;

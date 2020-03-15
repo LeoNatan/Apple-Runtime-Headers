@@ -32,6 +32,7 @@
 + (id)predicateDescriptorForRemindersWithListID:(id)arg1;
 + (id)orPredicateDescriptorWithDescriptors:(id)arg1;
 + (id)andPredicateDescriptorWithDescriptors:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *descriptors; // @synthesize descriptors=_descriptors;
 @property(nonatomic) BOOL completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) NSDate *endingDueDate; // @synthesize endingDueDate=_endingDueDate;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) REMObjectID *parentReminderID; // @synthesize parentReminderID=_parentReminderID;
 @property(retain, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

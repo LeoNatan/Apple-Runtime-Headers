@@ -28,6 +28,7 @@
     CDStruct_e83c9415 _bestPlaybackTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) struct CGRect desiredContentsRect; // @synthesize desiredContentsRect=_desiredContentsRect;
 @property(retain, nonatomic) PXVideoSession *videoSession; // @synthesize videoSession=_videoSession;
@@ -35,7 +36,6 @@
 @property(nonatomic) long long desiredPlayState; // @synthesize desiredPlayState=_desiredPlayState;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_reloadVideoSessionIfNecessary;
 - (void)_updateVideoSession;

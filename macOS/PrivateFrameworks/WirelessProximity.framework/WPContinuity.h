@@ -18,10 +18,10 @@
 
 + (long long)continuityTypeFromClientType:(unsigned char)arg1;
 + (unsigned char)clientTypeFromContinuityType:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *transfers; // @synthesize transfers=_transfers;
 @property(nonatomic) __weak id <WPContinuityDelegate> delegate; // @synthesize delegate=_delegate;
 @property long long btBandwidthState; // @synthesize btBandwidthState=_btBandwidthState;
-- (void).cxx_destruct;
 - (void)peerTrackingAvailable;
 - (void)peerTrackingFull;
 - (void)stateDidChange:(long long)arg1;

@@ -19,8 +19,8 @@
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 + (id)presentRemoteQuickboardViewControllerWithTextInputContext:(id)arg1 connectionHandler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) id <PUICQuickboardRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PUICQuickboardRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)quickboardDidCancelEditing;
 - (void)quickboardDidEndEditing;

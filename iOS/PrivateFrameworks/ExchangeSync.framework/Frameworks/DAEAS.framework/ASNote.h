@@ -30,6 +30,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
 @property(retain, nonatomic) NSString *messageClass; // @synthesize messageClass=_messageClass;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSNumber *bodyTruncated; // @synthesize bodyTruncated=_bodyTruncated;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NoteObject *localRecord; // @synthesize localRecord=_localRecord;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)deleteFromContainer:(void *)arg1;

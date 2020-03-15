@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _canvasFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDecelerating) _Bool decelerating; // @synthesize decelerating=_decelerating;
 @property(readonly, nonatomic, getter=isTracking) _Bool tracking; // @synthesize tracking=_tracking;
 @property(nonatomic) struct CGRect canvasFrame; // @synthesize canvasFrame=_canvasFrame;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NUComposition *autoloopComposition; // @synthesize autoloopComposition=_autoloopComposition;
 @property(retain, nonatomic) PHLivePhoto *livePhoto; // @synthesize livePhoto=_livePhoto;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)setVideoComposition:(id)arg1 withSeekTime:(CDStruct_1b6d18a9)arg2;
 - (void)setNeedsLayerTransformsUpdateAnimated:(_Bool)arg1;
 - (void)setImageCropRectFromViewCropRect:(struct CGRect)arg1 animated:(_Bool)arg2;

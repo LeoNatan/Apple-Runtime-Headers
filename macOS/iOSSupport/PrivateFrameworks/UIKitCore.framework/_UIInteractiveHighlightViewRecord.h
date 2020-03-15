@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSHashTable *_interactiveHighlightEffects;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *interactiveHighlightEffects; // @synthesize interactiveHighlightEffects=_interactiveHighlightEffects;
 @property(retain, nonatomic) _UIPortalView *portalView; // @synthesize portalView=_portalView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) __weak UIView *superview; // @synthesize superview=_superview;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 
 @end
 

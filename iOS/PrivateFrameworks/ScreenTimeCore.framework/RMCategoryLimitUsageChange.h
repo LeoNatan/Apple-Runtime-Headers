@@ -24,12 +24,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool noCreationDate; // @synthesize noCreationDate=_noCreationDate;
 @property(retain, nonatomic) NSString *limitType; // @synthesize limitType=_limitType;
 @property(nonatomic) long long changeInUsage; // @synthesize changeInUsage=_changeInUsage;
 @property(nonatomic) unsigned long long daysSinceCreationDate; // @synthesize daysSinceCreationDate=_daysSinceCreationDate;
 @property(retain, nonatomic) NSString *limitedCategory; // @synthesize limitedCategory=_limitedCategory;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

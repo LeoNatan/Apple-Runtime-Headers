@@ -19,9 +19,9 @@
 
 + (id)recordType;
 + (id)recordFromInsertEdit:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MSPVectorTimestamp *positionTimestamp; // @synthesize positionTimestamp=_positionTimestamp;
 @property(readonly, nonatomic) MSPPosition *position; // @synthesize position=_position;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)recordZoneName;
 - (id)recordRepresentation;

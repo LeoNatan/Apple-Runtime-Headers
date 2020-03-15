@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     VUITVSeriesManagedObject *_seriesManagedObject;
 }
 
-@property(retain, nonatomic) VUITVSeriesManagedObject *seriesManagedObject; // @synthesize seriesManagedObject=_seriesManagedObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUITVSeriesManagedObject *seriesManagedObject; // @synthesize seriesManagedObject=_seriesManagedObject;
 - (id)seasonCount;
 - (id)title;
 - (id)showIdentifier;

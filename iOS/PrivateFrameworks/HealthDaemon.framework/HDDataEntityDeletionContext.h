@@ -23,6 +23,7 @@
     unsigned long long _deletedObjectCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long deletedObjectCount; // @synthesize deletedObjectCount=_deletedObjectCount;
 @property(readonly, copy, nonatomic) NSSet *deletedObjectTypeSet; // @synthesize deletedObjectTypeSet=_deletedObjectTypeSet;
 @property(readonly, nonatomic) NSNumber *lastInsertedDeletedObjectPersistentID; // @synthesize lastInsertedDeletedObjectPersistentID=_lastInsertedDeletedObjectPersistentID;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool insertDeletedObjects; // @synthesize insertDeletedObjects=_insertDeletedObjects;
 @property(copy, nonatomic) CDUnknownBlockType recursiveDeleteAuthorizationBlock; // @synthesize recursiveDeleteAuthorizationBlock=_recursiveDeleteAuthorizationBlock;
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)finish;
 - (id)_localSourceIDForSourceID:(id)arg1 error:(id *)arg2;
 - (id)_provenanceIDForDeletedObjectWithOriginalProvenanceID:(id)arg1 error:(id *)arg2;

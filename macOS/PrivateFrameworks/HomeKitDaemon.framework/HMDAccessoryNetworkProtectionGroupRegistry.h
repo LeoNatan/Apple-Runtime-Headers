@@ -22,10 +22,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)accessoriesForGroupWithUUID:(id)arg1;
 - (BOOL)updateTargetProtectionModeForGroupWithUUID:(id)arg1 protectionMode:(long long)arg2 error:(id *)arg3 requestMessage:(id)arg4;
 - (BOOL)updateTargetProtectionModeForGroupWithUUID:(id)arg1 protectionMode:(long long)arg2 error:(id *)arg3;

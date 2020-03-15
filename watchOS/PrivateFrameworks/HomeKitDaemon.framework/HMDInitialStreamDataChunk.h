@@ -13,8 +13,8 @@
     NSString *_type;
 }
 
-@property(readonly, copy) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *type; // @synthesize type=_type;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)attributeDescriptions;

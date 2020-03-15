@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSNumber *transport; // @synthesize transport=_transport;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *transport; // @synthesize transport=_transport;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

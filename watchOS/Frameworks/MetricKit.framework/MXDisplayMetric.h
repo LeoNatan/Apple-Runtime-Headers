@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) MXAverage *averagePixelLuminance; // @synthesize averagePixelLuminance=_averagePixelLuminance;
 - (void).cxx_destruct;
+@property(readonly) MXAverage *averagePixelLuminance; // @synthesize averagePixelLuminance=_averagePixelLuminance;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,8 +15,8 @@
     SBInlineAppExposeContainerViewController *_inlineAppExposeContainerViewController;
 }
 
-@property(readonly, nonatomic) SBInlineAppExposeContainerViewController *inlineAppExposeContainerViewController; // @synthesize inlineAppExposeContainerViewController=_inlineAppExposeContainerViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBInlineAppExposeContainerViewController *inlineAppExposeContainerViewController; // @synthesize inlineAppExposeContainerViewController=_inlineAppExposeContainerViewController;
 - (void)setUsesBrightSceneViewBackgroundMaterial:(_Bool)arg1;
 - (void)setStatusBarHidden:(_Bool)arg1 nubViewHidden:(_Bool)arg2 animator:(CDUnknownBlockType)arg3;
 - (void)setRasterizationStyle:(long long)arg1 withMinificationFilterEnabled:(_Bool)arg2;

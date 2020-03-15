@@ -19,9 +19,9 @@
 }
 
 + (_Bool)isValidBase64:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isBound; // @synthesize isBound=_bound;
 @property(readonly, nonatomic) unsigned long unconverted; // @synthesize unconverted=_validBytes;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool convertCommas;
 - (void)done;
 - (int)appendData:(id)arg1;

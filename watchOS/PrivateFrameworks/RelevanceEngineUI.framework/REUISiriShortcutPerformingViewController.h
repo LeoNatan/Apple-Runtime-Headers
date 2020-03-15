@@ -29,11 +29,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType iconTapHandler; // @synthesize iconTapHandler=_iconTapHandler;
 @property(copy, nonatomic) CDUnknownBlockType confirmHandler; // @synthesize confirmHandler=_confirmHandler;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
 @property(nonatomic) _Bool forceExecution; // @synthesize forceExecution=_forceExecution;
-- (void).cxx_destruct;
 - (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_setupScrollView:(id)arg1;

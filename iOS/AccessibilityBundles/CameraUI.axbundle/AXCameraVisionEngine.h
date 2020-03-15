@@ -54,6 +54,7 @@
 + (_Bool)_isContainedWithinScreenBoundsForNormalizedFrame:(struct CGRect)arg1;
 + (struct CGAffineTransform)_scaleNormalizedCoordinatesToSceneCoordinates:(struct CGRect)arg1;
 + (id)sharedEngine;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMCameraFrameContext *lastCameraFrameContext; // @synthesize lastCameraFrameContext=_lastCameraFrameContext;
 @property(retain, nonatomic) CMDeviceMotion *lastDeviceMotion; // @synthesize lastDeviceMotion=_lastDeviceMotion;
 @property(readonly, nonatomic) AXCameraLevelingMotionAnalyzer *_levelingMotionAnalyzer; // @synthesize _levelingMotionAnalyzer=__levelingMotionAnalyzer;
@@ -89,7 +90,6 @@
 @property(nonatomic, getter=isAppActive) _Bool appActive; // @synthesize appActive=_appActive;
 @property(nonatomic) __weak UIView *sceneObjectElementContainerView; // @synthesize sceneObjectElementContainerView=_sceneObjectElementContainerView;
 @property(retain, nonatomic) AXMAVCaptureSessionNode *captureSessionNode; // @synthesize captureSessionNode=_captureSessionNode;
-- (void).cxx_destruct;
 - (void)_handleCameraMetadataObjects:(id)arg1 fromConnection:(id)arg2;
 - (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 forMetadataObjectTypes:(id)arg3 fromConnection:(id)arg4;
 - (void)captureSessionNode:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;

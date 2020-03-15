@@ -20,9 +20,9 @@
 + (_Bool)specialPOINameIsInString:(id)arg1;
 + (unsigned long long)specialPOIsContainingCoordinate:(struct CLLocationCoordinate2D)arg1;
 + (_Bool)specialPOIContainsCoordinate:(struct CLLocationCoordinate2D)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *countBySpecialPOI; // @synthesize countBySpecialPOI=_countBySpecialPOI;
 @property(readonly, nonatomic) NSArray *momentNodes; // @synthesize momentNodes=_momentNodes;
-- (void).cxx_destruct;
 - (unsigned long long)_numberOfMomentsInRegions:(id)arg1 containingAOIName:(id)arg2;
 - (unsigned long long)_numberOfMomentsMatchingSpecialPOI:(unsigned long long)arg1;
 - (_Bool)anyMomentHasPOIAmusementPark;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     PUConnection *_connection;
 }
 
-@property(nonatomic) __weak PUConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PUConnection *connection; // @synthesize connection=_connection;
 - (void)didGetRemoteDeviceState:(id)arg1 error:(id)arg2;
 - (void)remoteDeviceDidRemoveLockout:(_Bool)arg1 error:(id)arg2;
 - (void)remoteDeviceDidUnlock;

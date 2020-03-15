@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     id <CRKSettingsUIVisibilityProvider> _visibilityProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CRKSettingsUIVisibilityProvider> visibilityProvider; // @synthesize visibilityProvider=_visibilityProvider;
 @property(copy, nonatomic) CDUnknownBlockType visibilityStateChangeHandler; // @synthesize visibilityStateChangeHandler=_visibilityStateChangeHandler;
 @property(nonatomic) unsigned long long visibilityState; // @synthesize visibilityState=_visibilityState;
-- (void).cxx_destruct;
 - (void)connectToDaemon;
 - (void)reloadVisibilityState;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

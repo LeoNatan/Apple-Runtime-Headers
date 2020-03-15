@@ -18,8 +18,8 @@
     NSString *_domain;
 }
 
-@property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *domain; // @synthesize domain=_domain;
 - (id)bestAvailableMetadataFromControlMetadata:(id)arg1;
 - (id)bestAvailableMetadataFromMetadata:(id)arg1;
 - (_Bool)hasAttemptedToCorrectMetadata:(id)arg1;

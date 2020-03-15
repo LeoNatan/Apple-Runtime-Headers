@@ -42,6 +42,7 @@
 
 + (id)knownClientWithIdentifier:(id)arg1 frameworkVersion:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL isDaemon; // @synthesize isDaemon=_isDaemon;
 @property(copy) NSString *agentListenerName; // @synthesize agentListenerName=_agentListenerName;
 @property(readonly) int pid; // @synthesize pid=_pid;
@@ -68,7 +69,6 @@
 @property long long clientType; // @synthesize clientType=_clientType;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property unsigned long long frameworkVersion; // @synthesize frameworkVersion=_frameworkVersion;
-- (void).cxx_destruct;
 @property(readonly) NSString *mediaType;
 - (id)callerIdentity;
 - (BOOL)isEqualToStoreClient:(id)arg1;

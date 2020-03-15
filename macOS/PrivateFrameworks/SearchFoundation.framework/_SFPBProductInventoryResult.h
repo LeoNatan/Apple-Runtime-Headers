@@ -17,9 +17,9 @@
     NSArray *_availabilitys;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *availabilitys; // @synthesize availabilitys=_availabilitys;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

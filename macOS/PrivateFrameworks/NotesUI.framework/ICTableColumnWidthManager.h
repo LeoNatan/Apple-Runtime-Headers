@@ -19,13 +19,13 @@
     NSMutableDictionary *_cachedMinimumColumnWidths;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *cachedMinimumColumnWidths; // @synthesize cachedMinimumColumnWidths=_cachedMinimumColumnWidths;
 @property(readonly, nonatomic) NSMutableDictionary *cachedActualColumnWidths; // @synthesize cachedActualColumnWidths=_cachedActualColumnWidths;
 @property(readonly, nonatomic) NSMutableDictionary *cachedIdealColumnWidths; // @synthesize cachedIdealColumnWidths=_cachedIdealColumnWidths;
 @property(readonly, nonatomic) ICTextController *styler; // @synthesize styler=_styler;
 @property(readonly, nonatomic) __weak NSObject<ICAvailableTableWidthProviding> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak ICTable *table; // @synthesize table=_table;
-- (void).cxx_destruct;
 - (id)recalculateActualWidths;
 - (id)invalidateAvailableWidth;
 - (id)invalidateWidthForColumns:(id)arg1;

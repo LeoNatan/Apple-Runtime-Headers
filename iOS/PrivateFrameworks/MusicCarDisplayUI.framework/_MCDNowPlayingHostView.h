@@ -13,8 +13,8 @@
     NSArray *_responderViews;
 }
 
-@property(retain, nonatomic) NSArray *responderViews; // @synthesize responderViews=_responderViews;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *responderViews; // @synthesize responderViews=_responderViews;
 
 @end
 

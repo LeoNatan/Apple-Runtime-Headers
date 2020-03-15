@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     _HBUITopShelfParadeSwipeAffordanceView *_trailingSwipeAffordanceView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HBUITopShelfParadeSwipeAffordanceView *trailingSwipeAffordanceView; // @synthesize trailingSwipeAffordanceView=_trailingSwipeAffordanceView;
 @property(readonly, nonatomic) _HBUITopShelfParadeSwipeAffordanceView *leadingSwipeAffordanceView; // @synthesize leadingSwipeAffordanceView=_leadingSwipeAffordanceView;
 @property(nonatomic, getter=isTrailingSwipeAffordanceViewHidden) _Bool trailingSwipeAffordanceViewHidden; // @synthesize trailingSwipeAffordanceViewHidden=_trailingSwipeAffordanceViewHidden;
 @property(nonatomic, getter=isLeadingSwipeAffordanceViewHidden) _Bool leadingSwipeAffordanceViewHidden; // @synthesize leadingSwipeAffordanceViewHidden=_leadingSwipeAffordanceViewHidden;
 @property(readonly, nonatomic) UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

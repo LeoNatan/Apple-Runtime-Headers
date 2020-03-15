@@ -21,6 +21,7 @@
     NSString *_defaultMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSString *defaultMode; // @synthesize defaultMode=_defaultMode;
 @property(nonatomic) __weak NSXPCConnection *connectionToDiscoveryService; // @synthesize connectionToDiscoveryService=_connectionToDiscoveryService;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) DeviceRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak NSView *targetView; // @synthesize targetView=_targetView;
 @property(readonly, nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)willBeDisposed;
 - (void)establishSideConnection;

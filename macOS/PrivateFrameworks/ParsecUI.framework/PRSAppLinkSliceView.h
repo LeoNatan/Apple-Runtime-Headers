@@ -15,10 +15,10 @@
     PRSCardSection *_cardSection;
 }
 
+- (void).cxx_destruct;
 @property(retain) PRSCardSection *cardSection; // @synthesize cardSection=_cardSection;
 @property NSView *containerView; // @synthesize containerView=_containerView;
 @property NSTextField *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (void)addAppLinkCardSectionLinks:(id)arg1;
 - (void)openURL:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;

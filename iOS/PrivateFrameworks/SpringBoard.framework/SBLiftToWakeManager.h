@@ -25,13 +25,13 @@
     _Bool _invalidated;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_liftToWakeController, setter=_setLiftToWakeController:) SBLiftToWakeController *liftToWakeController; // @synthesize liftToWakeController=_liftToWakeController;
 @property(nonatomic, getter=_gestureWokeScreen, setter=_setGestureWokeScreen:) _Bool gestureWokeScreen; // @synthesize gestureWokeScreen=_gestureWokeScreen;
 @property(retain, nonatomic, getter=_idleTimerCoordinator, setter=_setIdleTimerCoordinator:) SBIdleTimerGlobalCoordinator *idleTimerCoordinator; // @synthesize idleTimerCoordinator=_accessor_idleTimerCoordinator;
 @property(retain, nonatomic, getter=_backlightController, setter=_setBacklightController:) SBBacklightController *backlightController; // @synthesize backlightController=_accessor_backlightController;
 @property(retain, nonatomic, getter=_lockScreenManager, setter=_setLockScreenManager:) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_accessor_lockScreenManager;
 @property(retain, nonatomic, getter=_policyAggregator, setter=_setPolicyAggregator:) SBMainDisplayPolicyAggregator *policyAggregator; // @synthesize policyAggregator=_accessor_policyAggregator;
-- (void).cxx_destruct;
 - (_Bool)wouldHandleButtonEvent:(id)arg1;
 - (_Bool)handleEvent:(id)arg1;
 @property(readonly, nonatomic) long long participantState;

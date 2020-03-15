@@ -12,19 +12,23 @@
 
 @interface CRKFeatureDataStore_macOS : NSObject <CRKFeatureDataStoreProtocol>
 {
+    NSString *_applicationID;
     CRKFeatureDataStoreHeuristics_macOS *_heuristicsManager;
 }
 
 + (id)sharedDataStore;
-@property(retain, nonatomic) CRKFeatureDataStoreHeuristics_macOS *heuristicsManager; // @synthesize heuristicsManager=_heuristicsManager;
 - (void).cxx_destruct;
-- (void)storeFeature:(struct __CFString *)arg1 value:(void *)arg2;
+@property(retain, nonatomic) CRKFeatureDataStoreHeuristics_macOS *heuristicsManager; // @synthesize heuristicsManager=_heuristicsManager;
+@property(readonly, copy, nonatomic) NSString *applicationID; // @synthesize applicationID=_applicationID;
+- (void)removeDuplicateEntriesFromStoredClassroomRoles;
+- (struct __CFString *)cfApplicationID;
+- (void)storeFeature:(struct __CFString *)arg1 value:(const void *)arg2;
 - (id)keyForFeature:(id)arg1 configurationUUID:(id)arg2 ask:(BOOL)arg3;
 - (void)setRole:(id)arg1 enabled:(BOOL)arg2;
 - (BOOL)isRoleEnabled:(id)arg1;
 - (void)removeActiveClassroomRole:(id)arg1;
 - (void)addActiveClassroomRole:(id)arg1;
-@property(retain, nonatomic) NSSet *activeClassroomRoles;
+@property(copy, nonatomic) NSSet *activeClassroomRoles;
 - (BOOL)isFeatureForced:(id)arg1;
 @property(nonatomic, getter=isClassroomInstructorRoleEnabled) BOOL classroomInstructorRoleEnabled;
 @property(nonatomic, getter=isClassroomStudentRoleEnabled) BOOL classroomStudentRoleEnabled;
@@ -36,6 +40,7 @@
 - (unsigned long long)boolRestrictionForFeature:(id)arg1;
 - (void)setBoolValue:(BOOL)arg1 ask:(BOOL)arg2 forSetting:(id)arg3;
 - (unsigned long long)effectiveBoolValueForSetting:(id)arg1 outAsk:(char *)arg2;
+- (id)initWithApplicationID:(id)arg1;
 - (id)init;
 
 // Remaining properties

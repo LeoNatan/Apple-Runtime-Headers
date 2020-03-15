@@ -28,13 +28,13 @@
     double _borderWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowOffscreen; // @synthesize allowOffscreen=_allowOffscreen;
 @property(nonatomic) int preferredTabPosition; // @synthesize preferredTabPosition=_preferredTabPosition;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) double cursorRadius; // @synthesize cursorRadius=_cursorRadius;
 @property(nonatomic) BOOL isContainerCursorView; // @synthesize isContainerCursorView=_isContainerCursorView;
 @property(nonatomic) int cursorType; // @synthesize cursorType=_cursorType;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_drawTabs;
 - (void)_drawTab:(id)arg1 atIndex:(unsigned long long)arg2;

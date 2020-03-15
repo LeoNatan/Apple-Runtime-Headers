@@ -14,8 +14,8 @@
 }
 
 + (id)interestedChangeKeys;
-@property(retain) EKUIPopUpButton *priorityPicker; // @synthesize priorityPicker=_priorityPicker;
 - (void).cxx_destruct;
+@property(retain) EKUIPopUpButton *priorityPicker; // @synthesize priorityPicker=_priorityPicker;
 - (BOOL)shouldDisplay;
 - (void)priorityChanged:(id)arg1;
 - (void)updateWithChanges:(id)arg1;

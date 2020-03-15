@@ -15,8 +15,8 @@
 
 + (double)widthWithTitle:(id)arg1 icon:(id)arg2;
 + (id)titleFont;
-@property(readonly, nonatomic) UIButton *contentButton; // @synthesize contentButton=_contentButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIButton *contentButton; // @synthesize contentButton=_contentButton;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

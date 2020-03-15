@@ -15,10 +15,10 @@
     _DKEvent *_event;
 }
 
+- (void).cxx_destruct;
 @property(retain) _DKEvent *event; // @synthesize event=_event;
 @property unsigned int type; // @synthesize type=_type;
 @property(retain) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithDate:(id)arg1 type:(unsigned int)arg2 event:(id)arg3;
 
 @end

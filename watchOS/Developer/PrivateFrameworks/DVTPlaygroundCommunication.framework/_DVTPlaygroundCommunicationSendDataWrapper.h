@@ -17,12 +17,12 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property long long partiallySentPayloadDataIndex; // @synthesize partiallySentPayloadDataIndex=_partiallySentPayloadDataIndex;
 @property(readonly, copy) NSData *payloadData; // @synthesize payloadData=_payloadData;
 @property long long partiallySentHeadersDataBufferIndex; // @synthesize partiallySentHeadersDataBufferIndex=_partiallySentHeadersDataBufferIndex;
 @property(readonly, copy) NSData *headersData; // @synthesize headersData=_headersData;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 dataIdentifier:(id)arg2 version:(unsigned long long)arg3 timestamp:(double)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (id)init;
 

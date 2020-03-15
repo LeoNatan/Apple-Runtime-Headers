@@ -16,8 +16,8 @@
     NSObject<CPSStatusInformation> *_statusInformation;
 }
 
-@property(retain) NSObject<CPSStatusInformation> *statusInformation; // @synthesize statusInformation=_statusInformation;
 - (void).cxx_destruct;
+@property(retain) NSObject<CPSStatusInformation> *statusInformation; // @synthesize statusInformation=_statusInformation;
 - (id)legacyApplicationItemsToImport;
 - (BOOL)isLegacySharedPhotoStreamEnabled;
 - (BOOL)isLegacyMyPhotoStreamEnabled;

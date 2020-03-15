@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <WebsitesKnownToUsePlugInsControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WebsitesKnownToUsePlugInsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WebsitesKnownToUsePlugInsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldAttemptToUpdateConfiguration;
 - (void)prepareForTermination;
 - (BOOL)plugInIsWhitelistedWithPlugInIdentifier:(id)arg1;

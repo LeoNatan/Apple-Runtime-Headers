@@ -15,10 +15,10 @@
     NSObject<OS_dispatch_group> *_dispatchGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *dispatchGroup; // @synthesize dispatchGroup=_dispatchGroup;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(nonatomic) long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (void)_bumpCounterPositively:(_Bool)arg1;
 - (void)notifyWhenCountReachesZeroOnQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)decrement;

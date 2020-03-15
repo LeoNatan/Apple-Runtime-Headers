@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSData *_token;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSData *token; // @synthesize token=_token;
 @property(readonly, copy) NSArray *events; // @synthesize events=_events;
-- (void).cxx_destruct;
 - (id)initWithEvents:(id)arg1 token:(id)arg2;
 
 @end

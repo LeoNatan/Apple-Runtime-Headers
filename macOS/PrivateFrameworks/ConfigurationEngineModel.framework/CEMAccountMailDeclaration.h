@@ -53,6 +53,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadSMIMEEnableEncryptionPerMessageSwitch; // @synthesize payloadSMIMEEnableEncryptionPerMessageSwitch=_payloadSMIMEEnableEncryptionPerMessageSwitch;
 @property(copy, nonatomic) NSNumber *payloadSMIMEEncryptionCertificateUUIDOverrideable; // @synthesize payloadSMIMEEncryptionCertificateUUIDOverrideable=_payloadSMIMEEncryptionCertificateUUIDOverrideable;
 @property(copy, nonatomic) NSNumber *payloadSMIMEEncryptByDefaultOverrideable; // @synthesize payloadSMIMEEncryptByDefaultOverrideable=_payloadSMIMEEncryptByDefaultOverrideable;
@@ -85,7 +86,6 @@
 @property(copy, nonatomic) NSString *payloadEmailAccountType; // @synthesize payloadEmailAccountType=_payloadEmailAccountType;
 @property(copy, nonatomic) NSString *payloadEmailAccountName; // @synthesize payloadEmailAccountName=_payloadEmailAccountName;
 @property(copy, nonatomic) NSString *payloadEmailAccountDescription; // @synthesize payloadEmailAccountDescription=_payloadEmailAccountDescription;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -15,8 +15,8 @@
 }
 
 + (id)feedbackType;
-@property(readonly, nonatomic) NSString *feedbackType; // @synthesize feedbackType=_feedbackType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *feedbackType; // @synthesize feedbackType=_feedbackType;
 @property(readonly, nonatomic) CPLServerFeedbackMessage *serverMessage;
 - (id)init;
 

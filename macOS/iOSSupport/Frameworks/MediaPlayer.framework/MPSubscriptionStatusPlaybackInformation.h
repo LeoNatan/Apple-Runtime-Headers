@@ -18,12 +18,12 @@
     BOOL _shouldUseAccountLessStreaming;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL shouldUseAccountLessStreaming; // @synthesize shouldUseAccountLessStreaming=_shouldUseAccountLessStreaming;
 @property(readonly, nonatomic) BOOL shouldUseLease; // @synthesize shouldUseLease=_shouldUseLease;
 @property(readonly, nonatomic) BOOL requiresCarrierManualVerification; // @synthesize requiresCarrierManualVerification=_requiresCarrierManualVerification;
 @property(readonly, nonatomic) BOOL hasPlaybackCapability; // @synthesize hasPlaybackCapability=_hasPlaybackCapability;
 @property(readonly, nonatomic, getter=isDefinitiveInformation) BOOL definitiveInformation; // @synthesize definitiveInformation=_definitiveInformation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithICSubscriptionStatus:(id)arg1;
 

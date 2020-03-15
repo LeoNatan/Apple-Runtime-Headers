@@ -18,11 +18,11 @@
     NSString *_string;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, copy, nonatomic) UIPasteboard *pasteboard; // @synthesize pasteboard=_pasteboard;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)invokeWithAction:(id)arg1 invocationMethod:(unsigned long long)arg2;
 - (id)initWithLabel:(id)arg1 type:(unsigned long long)arg2 pasteboard:(id)arg3 string:(id)arg4;
 

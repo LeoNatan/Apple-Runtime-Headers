@@ -24,13 +24,13 @@
 + (id)sourceWithEventStore:(id)arg1;
 + (_Bool)isWeakRelationship;
 + (Class)frozenClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool snoozeAlarmRequiresDetach; // @synthesize snoozeAlarmRequiresDetach=_snoozeAlarmRequiresDetach;
 @property(nonatomic) _Bool isFacebook; // @synthesize isFacebook=_isFacebook;
 @property(retain, nonatomic) NSSet *cachedOwnerAddresses; // @synthesize cachedOwnerAddresses=_cachedOwnerAddresses;
 @property(nonatomic) long long cachedPort; // @synthesize cachedPort=_cachedPort;
 @property(retain, nonatomic) NSString *cachedHost; // @synthesize cachedHost=_cachedHost;
 @property(retain, nonatomic) NSDate *timeOfLastExternalIdentificationCache; // @synthesize timeOfLastExternalIdentificationCache=_timeOfLastExternalIdentificationCache;
-- (void).cxx_destruct;
 - (_Bool)_reset;
 - (_Bool)refresh;
 - (int)managedConfigurationAccountAccess;

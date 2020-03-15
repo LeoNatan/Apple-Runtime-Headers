@@ -14,6 +14,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)_focusGroupDescriptor;
+- (void)_axSetStoredDefaultFocusGroupDescriptor:(id)arg1;
+- (id)_axGetStoredDefaultFocusGroupDescriptor;
 - (_Bool)_accessibilityIsFKARunningForFocusItem;
 - (_Bool)_accessibilitySupportsHandwriting;
 - (id)_accessibilityUserTestingVisibleAncestor;

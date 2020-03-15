@@ -6,13 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSDate, NSString;
 
 @interface PKArchiveSignature : NSObject
 {
     struct __SecTrust *_verifyTrustRef;
+    NSDate *_trustedTimestampDate;
 }
 
+@property(readonly) NSDate *trustedTimestampDate; // @synthesize trustedTimestampDate=_trustedTimestampDate;
 - (BOOL)_hasSigningCertificate:(struct __SecCertificate *)arg1;
 - (id)signatureDataReturningAlgorithm:(id *)arg1;
 - (id)signedDataReturningAlgorithm:(id *)arg1;

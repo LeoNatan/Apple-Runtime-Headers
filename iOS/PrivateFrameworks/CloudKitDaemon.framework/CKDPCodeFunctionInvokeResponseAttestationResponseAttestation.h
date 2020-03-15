@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSData *_routingToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *routingToken; // @synthesize routingToken=_routingToken;
 @property(retain, nonatomic) NSString *pckCertificate; // @synthesize pckCertificate=_pckCertificate;
 @property(retain, nonatomic) NSData *aqeQuote; // @synthesize aqeQuote=_aqeQuote;
 @property(retain, nonatomic) NSData *appQuote; // @synthesize appQuote=_appQuote;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

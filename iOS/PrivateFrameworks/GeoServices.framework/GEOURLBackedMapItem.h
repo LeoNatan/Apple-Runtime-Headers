@@ -26,6 +26,7 @@
 }
 
 + (_Bool)urlContainsExtraStorage:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_muninViewState) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) GEOAddress *geoAddress; // @synthesize geoAddress=_geoAddress;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate; // @synthesize coordinate=_coordinate;
 @property(readonly, nonatomic, getter=_identifier) GEOMapItemIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic, getter=_styleAttributes) GEOFeatureStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOMapRegion *displayMapRegion;
 @property(readonly, nonatomic, getter=_businessURL) NSString *businessURL;
 @property(readonly, nonatomic, getter=_telephone) NSString *telephone;
@@ -51,6 +51,7 @@
 @property(readonly, nonatomic, getter=_additionalPlaceInfos) NSArray *additionalPlaceInfos;
 @property(readonly, nonatomic) NSDictionary *addressDictionary;
 @property(readonly, nonatomic, getter=_addressGeocodeAccuracy) int addressGeocodeAccuracy;
+@property(readonly, nonatomic, getter=_alternateSearchableNames) NSArray *alternateSearchableNames;
 @property(readonly, nonatomic, getter=_amenities) NSArray *amenities;
 @property(readonly, nonatomic, getter=_annotatedItemList) id <GEOAnnotatedItemList> annotatedItemList;
 @property(readonly, nonatomic, getter=_areaInMeters) double areaInMeters;

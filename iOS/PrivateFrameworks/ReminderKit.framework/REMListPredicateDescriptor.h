@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predicateDescriptorForAllLists;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *objectIDs; // @synthesize objectIDs=_objectIDs;
 @property(retain, nonatomic) REMObjectID *parentListID; // @synthesize parentListID=_parentListID;
 @property(retain, nonatomic) REMObjectID *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

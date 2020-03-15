@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HKClinicalAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKClinicalAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) UIButton *webLinkButton; // @synthesize webLinkButton=_webLinkButton;
-- (void).cxx_destruct;
 - (void)_handleWebLinkTapped;
 - (void)_updateForContentSizeCategory:(id)arg1;
 - (void)willDisplay;

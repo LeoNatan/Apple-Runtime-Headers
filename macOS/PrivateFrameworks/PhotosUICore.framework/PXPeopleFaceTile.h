@@ -15,10 +15,10 @@
     PHAsset *_asset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) PHFace *face; // @synthesize face=_face;
 @property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) BOOL isUserDefined;
 - (id)description;

@@ -15,6 +15,7 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (void)_accessibilityShowEditingHUD;
+- (id)_accessibilityNativeFocusableElements:(id)arg1 matchingBlock:(CDUnknownBlockType)arg2 forExistenceCheckOnly:(_Bool)arg3;
 - (id)_accessibilityNativeFocusableElements:(id)arg1 matchingBlock:(CDUnknownBlockType)arg2;
 - (id)_accessibilityNativeFocusableElements:(id)arg1 withQueryString:(id)arg2;
 - (id)_accessibilityNativeFocusableElements:(id)arg1;
@@ -45,9 +46,9 @@
 - (id)_axAuditCheckDynamicTextSupport:(_Bool)arg1 andClippingIssues:(_Bool)arg2 spinRunloop:(_Bool)arg3;
 - (id)_targetInChainForAction:(SEL)arg1 sender:(id)arg2;
 - (id)_responderForKeyEvents;
-- (_Bool)_accessibilityHandleDefaultActionForNativeFocusedElement;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned long long)arg1 withEvaluator:(CDUnknownBlockType)arg2;
 - (_Bool)_accessibilityMoveAppFocusForElementMatchingQuery:(id)arg1 heading:(unsigned long long)arg2;
+- (_Bool)_accessibilityMoveFocusToTopLevel;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned long long)arg1 toElementMatchingQuery:(id)arg2;
 - (_Bool)_accessibilityMoveFocusWithHeading:(unsigned long long)arg1;
 - (_Bool)_accessibilityApplicationDidBecomeFocused;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     WBSFaviconRequestsController *_requestsController;
 }
 
-@property(copy, nonatomic) NSArray *plugInAutoStartOrigins; // @synthesize plugInAutoStartOrigins=_plugInAutoStartOrigins;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *plugInAutoStartOrigins; // @synthesize plugInAutoStartOrigins=_plugInAutoStartOrigins;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (void)plugInAutoStartDataUpdated;

@@ -22,13 +22,13 @@
     // Error parsing type: , name: _orientationTransform
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int shaderFlags; // @synthesize shaderFlags=_shaderFlags;
 @property(readonly, nonatomic) _Bool isOpaque; // @synthesize isOpaque=_isOpaque;
 @property(nonatomic) long long renderPipelineIndex; // @synthesize renderPipelineIndex=_renderPipelineIndex;
 @property(readonly, nonatomic) PXGColorProgram *colorProgram; // @synthesize colorProgram=_colorProgram;
 @property(readonly, nonatomic) id <MTLTexture> chromaTexture; // @synthesize chromaTexture=_chromaTexture;
 @property(readonly, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
-- (void).cxx_destruct;
 - (void)cleanupAfterRender:(long long)arg1;
 - (void)prepareForRender:(long long)arg1;
 @property(readonly, nonatomic) _Bool isCaptureTexture;

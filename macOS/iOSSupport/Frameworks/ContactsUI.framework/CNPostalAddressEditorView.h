@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_textFields;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *textFields; // @synthesize textFields=_textFields;
 @property(retain, nonatomic) CNPostalAddressFormattingSpecification *formatSpecification; // @synthesize formatSpecification=_formatSpecification;
 @property(copy, nonatomic) NSArray *cellsLayout; // @synthesize cellsLayout=_cellsLayout;
 @property(retain, nonatomic) CNPostalAddressEditorTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <CNPresenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)keyboardSettingsForAddress:(id)arg1 component:(id)arg2;
 - (id)_cellsLayoutForCountryCode:(id)arg1;
 - (id)_normalizeCountryCodeToISO:(id)arg1;

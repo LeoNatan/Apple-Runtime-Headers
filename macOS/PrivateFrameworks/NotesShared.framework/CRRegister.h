@@ -18,8 +18,8 @@
 
 + (id)registerWithType:(unsigned long long)arg1 contents:(id)arg2 document:(id)arg3;
 + (id)registerWithType:(unsigned long long)arg1 contents:(id)arg2;
-@property(nonatomic) __weak CRDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CRDocument *document; // @synthesize document=_document;
 - (id)initWithCRCoder:(id)arg1;
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)tombstone;

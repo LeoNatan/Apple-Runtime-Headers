@@ -16,9 +16,9 @@
     NSArray *_deletedRecordIDs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *deletedRecordIDs; // @synthesize deletedRecordIDs=_deletedRecordIDs;
 @property(readonly, copy, nonatomic) NSArray *modifiedRecords; // @synthesize modifiedRecords=_modifiedRecords;
-- (void).cxx_destruct;
 - (_Bool)hasSameBaseAsDiff:(id)arg1;
 - (void)applyToModifyRecordsOperation:(id)arg1;
 - (id)applyToRecords:(id)arg1;

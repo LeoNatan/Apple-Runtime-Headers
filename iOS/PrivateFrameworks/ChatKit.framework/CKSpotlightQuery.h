@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     IMChatRegistry *_chatRegisteryOverride;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MDSearchQuery *currentQuery; // @synthesize currentQuery=_currentQuery;
 @property(retain, nonatomic) IMChatRegistry *chatRegisteryOverride; // @synthesize chatRegisteryOverride=_chatRegisteryOverride;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (id)chatRegistry;
 - (id)initWithSearchText:(id)arg1 chatRegistryOverride:(id)arg2 startQuery:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)initWithSearchText:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

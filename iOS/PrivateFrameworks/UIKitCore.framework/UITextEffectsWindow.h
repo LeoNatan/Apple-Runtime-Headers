@@ -44,13 +44,13 @@
 + (id)_sharedTextEffectsWindowforWindowScene:(id)arg1 allowHosted:(_Bool)arg2 matchesStatusBarOrientationOnAccess:(_Bool)arg3 shouldCreateIfNecessary:(_Bool)arg4;
 + (_Bool)_isSecure;
 + (_Bool)_shouldSoftAssertOnSetScreen;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIEditingOverlayViewController *editingOverlayViewController; // @synthesize editingOverlayViewController=_editingOverlayViewController;
 @property(nonatomic) struct UIEdgeInsets hostedSafeInsets; // @synthesize hostedSafeInsets=_hostedSafeInsets;
 @property(nonatomic) struct CGSize hostedSceneSize; // @synthesize hostedSceneSize=_hostedSceneSize;
 @property(nonatomic) struct CGPoint hostedWindowOffset; // @synthesize hostedWindowOffset=_hostedWindowOffset;
 @property(nonatomic) double defaultWindowLevel; // @synthesize defaultWindowLevel=_defaultWindowLevel;
 @property(readonly, nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
-- (void).cxx_destruct;
 - (_Bool)_shouldInstallRootPresentationController;
 - (void)_didSnapshot;
 - (void)_willSnapshot;

@@ -36,6 +36,7 @@
 + (id)defaultCalendar;
 + (id)configurationForZoomLevel:(long long)arg1;
 + (id)_generateConfigurationForZoomLevel:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double approximateAxisLabelInterval; // @synthesize approximateAxisLabelInterval=_approximateAxisLabelInterval;
 @property(readonly, nonatomic) double todayOffsetSize; // @synthesize todayOffsetSize=_todayOffsetSize;
 @property(readonly, nonatomic) double approximateSeriesPointInterval; // @synthesize approximateSeriesPointInterval=_approximateSeriesPointInterval;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) NSDateComponents *seriesPointIntervalComponents; // @synthesize seriesPointIntervalComponents=_seriesPointIntervalComponents;
 @property(readonly, nonatomic) NSDateComponents *minorAxisIntervalComponents; // @synthesize minorAxisIntervalComponents=_minorAxisIntervalComponents;
 @property(readonly, nonatomic) NSDateComponents *axisLabelIntervalComponents; // @synthesize axisLabelIntervalComponents=_axisLabelIntervalComponents;
-- (void).cxx_destruct;
 
 @end
 

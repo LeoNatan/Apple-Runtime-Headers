@@ -19,10 +19,10 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *inputRadius; // @synthesize inputRadius=_inputRadius;
 @property(copy, nonatomic) NSNumber *inputFalloff; // @synthesize inputFalloff=_inputFalloff;
 @property(copy, nonatomic) NSNumber *inputIntensity; // @synthesize inputIntensity=_inputIntensity;
-- (void).cxx_destruct;
 - (BOOL)isPostGeometryOperation;
 - (void)dealloc;
 - (id)initWithOperation:(id)arg1;

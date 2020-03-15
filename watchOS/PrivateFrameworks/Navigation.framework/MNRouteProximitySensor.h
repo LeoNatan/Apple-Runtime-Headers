@@ -17,8 +17,8 @@
     unsigned int _proximity;
 }
 
-@property(readonly, nonatomic) unsigned int proximity; // @synthesize proximity=_proximity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int proximity; // @synthesize proximity=_proximity;
 - (void)_updateRouteMatch;
 - (void)_updateProximity;
 @property(nonatomic) double proximityThreshold;

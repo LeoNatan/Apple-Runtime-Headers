@@ -31,12 +31,12 @@
 }
 
 + (id)keysToFetch;
+- (void).cxx_destruct;
 @property(copy) NSArray *displayedKeys; // @synthesize displayedKeys=_displayedKeys;
 @property(nonatomic) BOOL canExpandCell; // @synthesize canExpandCell=_canExpandCell;
 @property(nonatomic, getter=isExpanded) BOOL expanded; // @synthesize expanded=_expanded;
 @property __weak id <CNContactListCellViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property __weak CNContactListCellView *cellView; // @synthesize cellView=_cellView;
-- (void).cxx_destruct;
 - (id)scopeForItem:(id)arg1;
 - (void)itemWasClicked:(id)arg1;
 - (id)dataSource;

@@ -44,11 +44,11 @@
 + (id)_clearInstantiatedSubscribersByPersonID;
 + (id)existingSubscriberForPersonID:(id)arg1;
 + (id)subscriberForPersonID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int retrievalBatchSize; // @synthesize retrievalBatchSize=_retrievalBatchSize;
 @property(nonatomic) long long targetRetrievalByteCount; // @synthesize targetRetrievalByteCount=_targetRetrievalByteCount;
 @property(nonatomic) MSMediaStreamDaemon *daemon; // @synthesize daemon=_daemon;
 @property(nonatomic) id <MSSubscriberDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)reauthorizationProtocol:(id)arg1 reauthorizedAssets:(id)arg2 rejectedAssets:(id)arg3 error:(id)arg4;
 - (void)reauthorizationProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)subscribeStorageProtocolDidFinishRetrievingAllAssets:(id)arg1;

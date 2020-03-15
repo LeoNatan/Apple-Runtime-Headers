@@ -39,6 +39,7 @@
     double _scrollCompletionBlockOffsetThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scrollCompletionBlockOffsetThreshold; // @synthesize scrollCompletionBlockOffsetThreshold=_scrollCompletionBlockOffsetThreshold;
 @property(copy, nonatomic) CDUnknownBlockType scrollCompletionBlock; // @synthesize scrollCompletionBlock=_scrollCompletionBlock;
 @property(retain, nonatomic) NCNotificationStructuredSectionList *missedSectionList; // @synthesize missedSectionList=_missedSectionList;
@@ -57,7 +58,6 @@
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic, getter=isDeviceAuthenticated) _Bool deviceAuthenticated; // @synthesize deviceAuthenticated=_deviceAuthenticated;
 @property(copy, nonatomic) NSString *logDescription; // @synthesize logDescription=_logDescription;
-- (void).cxx_destruct;
 - (void)_migrateNotificationsFromList:(id)arg1 toList:(id)arg2 passingTest:(CDUnknownBlockType)arg3 hideToList:(_Bool)arg4 clearRequests:(_Bool)arg5 filterPersistentRequests:(_Bool)arg6;
 - (void)_insertNotificationRequest:(id)arg1;
 - (void)_sortNotificationGroupsIfNecessary;

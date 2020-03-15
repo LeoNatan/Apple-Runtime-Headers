@@ -21,12 +21,12 @@
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(copy, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(nonatomic) _Bool showsChevronForTitle; // @synthesize showsChevronForTitle=_showsChevronForTitle;
 @property(nonatomic) struct UIEdgeInsets collectionViewInsets; // @synthesize collectionViewInsets=_collectionViewInsets;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (id)_seeAllArrowImage;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setBackgroundColor:(id)arg1;

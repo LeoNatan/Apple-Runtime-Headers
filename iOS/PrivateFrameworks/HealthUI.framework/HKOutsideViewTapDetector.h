@@ -17,10 +17,10 @@
     CDUnknownBlockType _outsideTapBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType outsideTapBlock; // @synthesize outsideTapBlock=_outsideTapBlock;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) UITapGestureRecognizer *recognizer; // @synthesize recognizer=_recognizer;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)handleTap:(id)arg1;
 - (void)dealloc;

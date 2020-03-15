@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <CNContactGroupPickerDelegate> _groupPickerDelegate;
 }
 
-@property(nonatomic) __weak id <CNContactGroupPickerDelegate> groupPickerDelegate; // @synthesize groupPickerDelegate=_groupPickerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CNContactGroupPickerDelegate> groupPickerDelegate; // @synthesize groupPickerDelegate=_groupPickerDelegate;
 - (void)performActionWithSender:(id)arg1;
 
 @end

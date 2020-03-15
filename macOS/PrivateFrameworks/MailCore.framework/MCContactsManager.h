@@ -20,10 +20,10 @@
 + (id)_defaultKeyDescriptors;
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *contactsUpdateQueue; // @synthesize contactsUpdateQueue=_contactsUpdateQueue;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) CNAvatarCache *avatarCache; // @synthesize avatarCache=_avatarCache;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CNContact *meContact;
 - (void)fetchContactForAddress:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)contactForAddress:(id)arg1;

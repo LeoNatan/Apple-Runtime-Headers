@@ -22,11 +22,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *errorData; // @synthesize errorData=_errorData;
 @property(nonatomic) _Bool cloudStoreIsSetup; // @synthesize cloudStoreIsSetup=_cloudStoreIsSetup;
 @property(retain, nonatomic) NSData *accountInfoData; // @synthesize accountInfoData=_accountInfoData;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

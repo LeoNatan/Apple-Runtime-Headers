@@ -22,10 +22,10 @@
     struct CGRect _boundingRect;
 }
 
-@property(readonly, nonatomic) struct CGRect boundingRect; // @synthesize boundingRect=_boundingRect;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGRect boundingRect; // @synthesize boundingRect=_boundingRect;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSImage *image;
 @property(readonly, nonatomic) BOOL isAnimatedImage;
 @property(readonly, nonatomic) struct IntPoint _interactionLocation;

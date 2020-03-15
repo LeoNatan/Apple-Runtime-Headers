@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *attributedString; // @synthesize attributedString=_attributedString;
 @property(retain, nonatomic) NSSet *availableApps; // @synthesize availableApps=_availableApps;
 @property(readonly, nonatomic) unsigned char triggerSourceType; // @synthesize triggerSourceType=_triggerSourceType;
-- (void).cxx_destruct;
 - (BOOL)isEqualToProactiveTrigger:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

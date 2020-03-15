@@ -24,12 +24,12 @@
 + (id)createWithLearnedLocationOfInterestMO:(id)arg1;
 + (id)createWithManagedObject:(id)arg1;
 + (unsigned long long)mapItemSourceFromGeoMapItemSource:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *transitions; // @synthesize transitions=_transitions;
 @property(readonly, nonatomic) NSArray *visits; // @synthesize visits=_visits;
 @property(readonly, nonatomic) RTLearnedPlace *place; // @synthesize place=_place;
 @property(readonly, nonatomic) RTLearnedLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

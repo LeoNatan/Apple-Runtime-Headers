@@ -26,6 +26,7 @@
     TSKDiffableDataSource *_diffableDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TSKDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
 @property(nonatomic, getter=_initialFocusedSettingItem, setter=_setInitialFocusedSettingItem:) __weak TSKSettingItem *initialFocusedSettingItem; // @synthesize initialFocusedSettingItem=_initialFocusedSettingItem;
 @property(nonatomic) _Bool shouldProcessUpdates; // @synthesize shouldProcessUpdates=_shouldProcessUpdates;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSArray *visibleSettingGroups; // @synthesize visibleSettingGroups=_visibleSettingGroups;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *reloadSource; // @synthesize reloadSource=_reloadSource;
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
-- (void).cxx_destruct;
 - (void)_removeDeletedItems;
 - (void)_updateTableViewAnimated:(_Bool)arg1;
 - (void)_updateSettingGroup:(id)arg1;

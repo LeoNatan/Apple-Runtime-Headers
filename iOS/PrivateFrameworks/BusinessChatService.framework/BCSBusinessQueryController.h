@@ -17,10 +17,10 @@
     BCSConfigController *_configController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BCSConfigController *configController; // @synthesize configController=_configController;
 @property(retain, nonatomic) BCSIconController *iconController; // @synthesize iconController=_iconController;
 @property(retain, nonatomic) BCSBusinessItemController *bizItemController; // @synthesize bizItemController=_bizItemController;
-- (void).cxx_destruct;
 - (CDStruct_912cb5d2)_businessItemBucketRangeFromPhoneHash:(long long)arg1 bucketCount:(long long)arg2;
 - (long long)_shardStartIndexForPhoneHash:(long long)arg1 shardCount:(long long)arg2;
 - (id)_matchingBusinessItemInBusinessItemBucket:(id)arg1 forPhoneHash:(long long)arg2;

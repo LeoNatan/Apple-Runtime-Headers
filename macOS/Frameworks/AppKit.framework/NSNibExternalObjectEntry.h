@@ -16,9 +16,9 @@
 }
 
 + (id)entryWithKey:(id)arg1 forObject:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *objectDescription; // @synthesize objectDescription=_objectDescription;
 @property(readonly, copy) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly) __weak id object; // @synthesize object=_object;
 - (id)initWithKey:(id)arg1 object:(id)arg2;

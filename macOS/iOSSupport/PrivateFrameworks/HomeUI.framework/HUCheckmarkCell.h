@@ -12,6 +12,7 @@
 }
 
 @property(nonatomic) BOOL checked; // @synthesize checked=_checked;
+- (id)description;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

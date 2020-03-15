@@ -18,9 +18,9 @@
 
 + (id)unitTestingFaceLandmarksIs3D:(BOOL)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *results; // @synthesize results=_results;
 @property(nonatomic) BOOL is3DLandmarks; // @synthesize is3DLandmarks=_is3DLandmarks;
-- (void).cxx_destruct;
 - (id)localizedStringForLandmarkType:(unsigned long long)arg1;
 - (id)pointValuesForFaceLandmarkType:(unsigned long long)arg1;
 - (id)pointsArrayForRegion:(id)arg1;

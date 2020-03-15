@@ -14,9 +14,9 @@
     EDGmailLabelPersistence *_gmailLabelPersistence;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDGmailLabelPersistence *gmailLabelPersistence; // @synthesize gmailLabelPersistence=_gmailLabelPersistence;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)serverMessagePersistenceForMailboxURL:(id)arg1;
 - (id)init;
 - (id)initWithDatabase:(id)arg1 gmailLabelPersistence:(id)arg2;

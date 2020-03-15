@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *identifierStr; // @synthesize identifierStr=_identifierStr;
 @property(copy, nonatomic) NSDate *dateModified; // @synthesize dateModified=_dateModified;
 @property(copy, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSData *altIRK; // @synthesize altIRK=_altIRK;
 @property(copy, nonatomic) NSDictionary *acl; // @synthesize acl=_acl;
-- (void).cxx_destruct;
 - (id)detailedDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

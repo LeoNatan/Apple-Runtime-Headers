@@ -17,13 +17,14 @@
     id <CRKFeedbackDelegate> _feedbackDelegate;
 }
 
-@property(nonatomic) __weak id <CRKFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CRKFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 - (void)presentViewControllerForCard:(id)arg1 animate:(BOOL)arg2;
 - (void)willDismissViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(BOOL)arg2;
 - (void)didReportUserResponseFeedback:(id)arg1;
+- (void)cardViewDidAppear:(id)arg1;
 - (void)didEngageCardSection:(id)arg1;
 - (BOOL)shouldHandleCardSectionEngagement:(id)arg1;
 - (id)feedbackListener;

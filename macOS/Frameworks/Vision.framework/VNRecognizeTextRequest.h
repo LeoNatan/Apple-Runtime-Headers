@@ -18,9 +18,9 @@
 
 + (id)supportedRecognitionLanguagesForTextRecognitionLevel:(long long)arg1 revision:(unsigned long long)arg2 error:(id *)arg3;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(readonly) BOOL indeterminate; // @synthesize indeterminate;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler;
-- (void).cxx_destruct;
 - (BOOL)hasCancellationHook;
 - (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (void)applyConfigurationOfRequest:(id)arg1;

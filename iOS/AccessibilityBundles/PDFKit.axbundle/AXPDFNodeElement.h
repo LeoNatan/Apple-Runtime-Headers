@@ -15,9 +15,9 @@
     _Bool _isLastNodeInPage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isLastNodeInPage; // @synthesize isLastNodeInPage=_isLastNodeInPage;
 @property(nonatomic) _Bool didDetermineLastNodeStatus; // @synthesize didDetermineLastNodeStatus=_didDetermineLastNodeStatus;
-- (void).cxx_destruct;
 - (_Bool)_accessibilityIncludeDuringContentReading;
 - (_Bool)pdfViewRequiresPageTurning;
 - (id)pdfView;

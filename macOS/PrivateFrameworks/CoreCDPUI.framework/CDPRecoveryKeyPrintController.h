@@ -15,10 +15,10 @@
     CDPPrintBorderView *_cdpRecoveryKeyBorderView;
 }
 
+- (void).cxx_destruct;
 @property(retain) CDPPrintBorderView *cdpRecoveryKeyBorderView; // @synthesize cdpRecoveryKeyBorderView=_cdpRecoveryKeyBorderView;
 @property(retain) NSTextField *cdpKeyPrintTextField; // @synthesize cdpKeyPrintTextField=_cdpKeyPrintTextField;
 @property(copy, nonatomic) NSString *cdpKeyPrintText; // @synthesize cdpKeyPrintText=_cdpKeyPrintText;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)awakeFromNib;
 - (id)init;

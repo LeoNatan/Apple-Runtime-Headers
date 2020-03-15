@@ -35,6 +35,7 @@
     VMClientWrapper *_client;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VMClientWrapper *client; // @synthesize client=_client;
 @property(retain, nonatomic) VMVoicemailCapabilities *capabilities; // @synthesize capabilities=_capabilities;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) _Bool canChangeGreeting; // @synthesize canChangeGreeting=_canChangeGreeting;
 @property(readonly, nonatomic) _Bool canChangePassword; // @synthesize canChangePassword=_canChangePassword;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
-- (void).cxx_destruct;
 - (void)saveGreeting:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)changePassword:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)messagesForMailboxType:(int)arg1 read:(_Bool)arg2 limit:(int)arg3 offset:(int)arg4 error:(id *)arg5;

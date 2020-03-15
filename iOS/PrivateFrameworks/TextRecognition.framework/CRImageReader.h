@@ -39,6 +39,7 @@
 + (id)supportedLanguagesForOptions:(id)arg1 revision:(long long)arg2 error:(id *)arg3;
 + (id)_lmQueues;
 + (void)calculateTargetOutputSize:(struct CGSize *)arg1 andAdjustedInputScale:(double *)arg2 andPaddedSize:(struct CGSize *)arg3 forImageSize:(struct CGSize)arg4 withMaximumSize:(struct CGSize)arg5;
+- (void).cxx_destruct;
 @property _Bool shouldCancel; // @synthesize shouldCancel=_shouldCancel;
 @property(retain, nonatomic) CRRegex *regExpressions; // @synthesize regExpressions=_regExpressions;
 @property(retain, nonatomic) NSArray *beamSearches; // @synthesize beamSearches=_beamSearches;
@@ -53,7 +54,6 @@
 @property(retain) CRPerformanceStatistics *recognizerStats; // @synthesize recognizerStats=_recognizerStats;
 @property(retain) CRPerformanceStatistics *postProcStats; // @synthesize postProcStats=_postProcStats;
 @property(retain) CRPerformanceStatistics *detectorStats; // @synthesize detectorStats=_detectorStats;
-- (void).cxx_destruct;
 - (void)cancel;
 - (id)textResultsForImage:(id)arg1 roi:(struct CGRect)arg2 options:(id)arg3 error:(id *)arg4 withProgressHandler:(CDUnknownBlockType)arg5 title:(id *)arg6;
 - (id)textResultsForImage:(id)arg1 roi:(struct CGRect)arg2 options:(id)arg3 error:(id *)arg4 title:(id *)arg5;

@@ -18,11 +18,11 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool followedBySpace; // @synthesize followedBySpace=_followedBySpace;
 @property(readonly, nonatomic) _Bool precededBySpace; // @synthesize precededBySpace=_precededBySpace;
 @property(readonly, nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

@@ -24,6 +24,7 @@
     id _delegate;
 }
 
+- (void).cxx_destruct;
 @property _Bool hidesBarsOnTap; // @synthesize hidesBarsOnTap=_hidesBarsOnTap;
 @property _Bool hidesBarsWhenVerticallyCompact; // @synthesize hidesBarsWhenVerticallyCompact=_hidesBarsWhenVerticallyCompact;
 @property _Bool hidesBarsOnSwipe; // @synthesize hidesBarsOnSwipe=_hidesBarsOnSwipe;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(retain, nonatomic) UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(retain, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (void)syncNavigationItems;
 - (void)dealloc;

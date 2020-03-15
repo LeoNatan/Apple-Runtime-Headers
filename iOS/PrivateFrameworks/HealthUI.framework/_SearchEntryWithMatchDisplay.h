@@ -14,9 +14,9 @@
     UILabel *_matchDisplayLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly) UILabel *matchDisplayLabel; // @synthesize matchDisplayLabel=_matchDisplayLabel;
 @property(retain, nonatomic) NSString *matchDisplayString; // @synthesize matchDisplayString=_matchDisplayString;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)matchDisplayVisible:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

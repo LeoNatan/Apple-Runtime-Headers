@@ -15,10 +15,10 @@
     CSKHeaderView *_headerExtendedView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsExtendedView; // @synthesize showsExtendedView=_showsExtendedView;
 @property(nonatomic) __weak CSKHeaderView *headerExtendedView; // @synthesize headerExtendedView=_headerExtendedView;
 @property(nonatomic) __weak CSKHeaderView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (void)_swapHeaderViews;
 - (void)_swapView:(id)arg1 withView:(id)arg2;
 - (void)extendedHeaderExtendActionButtonDidClick:(id)arg1;

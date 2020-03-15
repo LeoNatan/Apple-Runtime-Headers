@@ -22,10 +22,10 @@
 + (id)_scopeStringFromScope:(id)arg1;
 + (id)expirationFromTimeInterval:(double)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *scope; // @synthesize scope=_scope;
 @property(readonly, copy, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *scopeString;
 @property(readonly, nonatomic, getter=isExpired) BOOL expired;

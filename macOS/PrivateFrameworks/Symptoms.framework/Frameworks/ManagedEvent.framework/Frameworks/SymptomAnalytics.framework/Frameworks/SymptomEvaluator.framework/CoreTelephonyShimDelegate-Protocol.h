@@ -6,13 +6,16 @@
 
 #import <SymptomEvaluator/NSObject-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSNumber, NSString;
 
 @protocol CoreTelephonyShimDelegate <NSObject>
 
 @optional
+- (void)signalStrengthChanged:(NSNumber *)arg1;
+- (void)rnfSettingChangedToFeatureEnabled:(BOOL)arg1 userEnabled:(BOOL)arg2;
 - (void)currentDataSIMIdentifier:(NSString *)arg1;
 - (void)ctServerConnectionNotification:(struct __CFString *)arg1 notificationInfo:(struct __CFDictionary *)arg2;
+- (void)cellInfoChangedForSubscription:(NSDictionary *)arg1;
 - (void)infoDataStallChangedForSubscription:(NSDictionary *)arg1;
 - (void)infoLinkPowerCostChangedForSubscription:(NSDictionary *)arg1;
 - (void)infoDataTransferTimeEnabledChangedForSubscription:(NSDictionary *)arg1;

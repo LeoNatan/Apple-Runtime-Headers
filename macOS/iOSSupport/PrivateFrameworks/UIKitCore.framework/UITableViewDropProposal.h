@@ -14,9 +14,9 @@
     NSIndexPath *_adjustedTargetIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_adjustedTargetIndexPath, setter=_setAdjustedTargetIndexPath:) NSIndexPath *adjustedTargetIndexPath; // @synthesize adjustedTargetIndexPath=_adjustedTargetIndexPath;
 @property(nonatomic) long long intent; // @synthesize intent=_intent;
-- (void).cxx_destruct;
 - (long long)_dropAction;
 - (id)_updatedDropProposalWithDropOperation:(unsigned long long)arg1 dropIntent:(long long)arg2 adjustedTargetIndexPath:(id)arg3;
 @property(readonly, nonatomic) long long _dropLocation;

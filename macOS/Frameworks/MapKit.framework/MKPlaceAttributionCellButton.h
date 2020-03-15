@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <MKPlaceAttributionCellButtonDelegate> _buttonDelegate;
 }
 
-@property(nonatomic) __weak id <MKPlaceAttributionCellButtonDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MKPlaceAttributionCellButtonDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 

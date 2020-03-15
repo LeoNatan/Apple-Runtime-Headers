@@ -19,6 +19,7 @@
     HUTriggerCustomConditionEditorSectionModule *_customConditionsModule;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUTriggerCustomConditionEditorSectionModule *customConditionsModule; // @synthesize customConditionsModule=_customConditionsModule;
 @property(retain, nonatomic) HUTriggerConditionEditorExpandingSectionModule *locationConditionModule; // @synthesize locationConditionModule=_locationConditionModule;
 @property(retain, nonatomic) HUTriggerConditionEditorExpandingSectionModule *timeConditionModule; // @synthesize timeConditionModule=_timeConditionModule;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HFConditionCollection *conditionCollection; // @synthesize conditionCollection=_conditionCollection;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (_Bool)_isConditionOptionItem:(id)arg1 ofType:(unsigned long long)arg2;
 - (id)_sectionModuleForItem:(id)arg1;
 - (id)_moduleForConditionOptionItem:(id)arg1;

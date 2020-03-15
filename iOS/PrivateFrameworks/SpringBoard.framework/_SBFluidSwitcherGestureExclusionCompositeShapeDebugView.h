@@ -13,8 +13,8 @@
     SBFluidSwitcherGestureExclusionCompositeShape *_compositeShape;
 }
 
-@property(retain, nonatomic) SBFluidSwitcherGestureExclusionCompositeShape *compositeShape; // @synthesize compositeShape=_compositeShape;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBFluidSwitcherGestureExclusionCompositeShape *compositeShape; // @synthesize compositeShape=_compositeShape;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

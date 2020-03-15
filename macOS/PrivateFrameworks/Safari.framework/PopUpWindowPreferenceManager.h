@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     WBSPerSitePreference *_popUpWindowPreference;
 }
 
-@property(readonly, nonatomic) WBSPerSitePreference *popUpWindowPreference; // @synthesize popUpWindowPreference=_popUpWindowPreference;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSPerSitePreference *popUpWindowPreference; // @synthesize popUpWindowPreference=_popUpWindowPreference;
 - (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
 - (long long)preferencesStoreKeyForPreference:(id)arg1;
 @property(readonly, nonatomic) WBSPerSitePreferencesSQLiteStore *perSitePreferencesStore;

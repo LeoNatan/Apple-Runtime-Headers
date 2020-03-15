@@ -17,10 +17,10 @@
     struct CGSize _calculatedSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize calculatedSize; // @synthesize calculatedSize=_calculatedSize;
 @property(retain, nonatomic) SXTextView *textView; // @synthesize textView=_textView;
 @property(readonly, nonatomic) __weak SXTangierController *tangierController; // @synthesize tangierController=_tangierController;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)provideInfosLayoutTo:(id)arg1;
 - (id)accessibilityContextualLabelForTextView:(id)arg1;

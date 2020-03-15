@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     VUIExtrasInfo *_extrasInfo;
 }
 
-@property(retain, nonatomic) VUIExtrasInfo *extrasInfo; // @synthesize extrasInfo=_extrasInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIExtrasInfo *extrasInfo; // @synthesize extrasInfo=_extrasInfo;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1;
 

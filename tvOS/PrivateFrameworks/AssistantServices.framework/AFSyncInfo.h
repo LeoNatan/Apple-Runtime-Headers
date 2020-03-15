@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *reasons; // @synthesize reasons=_reasons;
 @property(nonatomic) _Bool forVerification; // @synthesize forVerification=_forVerification;
 @property(nonatomic) _Bool targetIsLocal; // @synthesize targetIsLocal=_targetIsLocal;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(copy, nonatomic) NSString *validity; // @synthesize validity=_validity;
 @property(copy, nonatomic) NSString *anchor; // @synthesize anchor=_anchor;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

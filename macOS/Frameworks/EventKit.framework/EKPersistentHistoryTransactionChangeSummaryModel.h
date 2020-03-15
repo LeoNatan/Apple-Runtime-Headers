@@ -19,6 +19,7 @@
     NSMutableArray *_updatedProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *updatedProperties; // @synthesize updatedProperties=_updatedProperties;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *comments; // @synthesize comments=_comments;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *attendees; // @synthesize attendees=_attendees;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *accounts; // @synthesize accounts=_accounts;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *calendars; // @synthesize calendars=_calendars;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *calendarItems; // @synthesize calendarItems=_calendarItems;
-- (void).cxx_destruct;
 - (void)addRelevantObjectIDs:(id)arg1 withModificationType:(unsigned long long)arg2;
 - (void)addPropertyWithName:(id)arg1 onEntity:(id)arg2;
 - (BOOL)_entityIsPrincipalOrCalendar:(id)arg1;

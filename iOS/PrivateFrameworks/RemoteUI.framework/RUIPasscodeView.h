@@ -37,6 +37,7 @@
     RUIHTMLHeaderElement *_HTMLHeader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RUIElement *footer; // @synthesize footer=_footer;
 @property(retain, nonatomic) RUIHTMLHeaderElement *HTMLHeader; // @synthesize HTMLHeader=_HTMLHeader;
 @property(retain, nonatomic) RUIHeaderElement *header; // @synthesize header=_header;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(nonatomic) __weak RUIPage *page; // @synthesize page=_page;
 @property(nonatomic) __weak RUIObjectModel *objectModel; // @synthesize objectModel=_objectModel;
-- (void).cxx_destruct;
 - (_Bool)_requiresLocalPasscodeValidation;
 - (void)_jiggleView:(id)arg1;
 - (void)_doneButtonTapped:(id)arg1;

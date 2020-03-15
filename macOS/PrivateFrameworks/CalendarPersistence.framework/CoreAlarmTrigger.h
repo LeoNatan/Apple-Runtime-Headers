@@ -18,9 +18,9 @@
 + (id)triggerWithDuration:(id)arg1;
 + (id)triggerWithDate:(id)arg1;
 + (id)trigger;
+- (void).cxx_destruct;
 @property int proximity; // @synthesize proximity=_proximity;
 @property(retain) NSString *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)signature;
 - (id)setDuration:(id)arg1;
 - (id)duration;

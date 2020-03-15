@@ -33,6 +33,7 @@
 }
 
 + (float)_decay:(float)arg1 decayRate:(float)arg2 timeElapsedSeconds:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float decayRate; // @synthesize decayRate=_decayRate;
 @property(readonly, nonatomic) float decayedSum; // @synthesize decayedSum=_decayedSum;
 @property(readonly, nonatomic) float sumOfSquaredInterArrivalHours; // @synthesize sumOfSquaredInterArrivalHours=_sumOfSquaredInterArrivalHours;
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) float minScore; // @synthesize minScore=_minScore;
 @property(readonly, nonatomic) float maxScore; // @synthesize maxScore=_maxScore;
 @property(readonly, nonatomic) PPU16CountedSet *algorithmCountedSet; // @synthesize algorithmCountedSet=_algorithmCountedSet;
-- (void).cxx_destruct;
 - (unsigned int)_processTopicRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 ignoreMultiplier:(_Bool)arg4;
 - (id)initWithTopicRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4 ignoreMultiplier:(_Bool)arg5;
 - (id)initWithTopicRecords:(id)arg1 scoringDate:(id)arg2 decayRate:(float)arg3 sorted:(_Bool)arg4;

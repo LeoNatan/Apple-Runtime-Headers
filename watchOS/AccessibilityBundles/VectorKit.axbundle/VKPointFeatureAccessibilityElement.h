@@ -14,9 +14,9 @@
     CDStruct_31142d93 _location;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *featureIds; // @synthesize featureIds=_featureIds;
 @property(nonatomic) CDStruct_31142d93 location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (_Bool)_accessibilitySupportsActivateAction;
 - (_Bool)accessibilityActivate;
 - (struct CGRect)accessibilityFrame;

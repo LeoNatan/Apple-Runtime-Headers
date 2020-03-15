@@ -22,6 +22,7 @@
     PKPaymentDeviceMetadata *_deviceMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentDeviceMetadata *deviceMetadata; // @synthesize deviceMetadata=_deviceMetadata;
 @property(retain, nonatomic) PKAccountWebServiceCertificatesResponse *certificatesResponse; // @synthesize certificatesResponse=_certificatesResponse;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSData *publicKeyHash; // @synthesize publicKeyHash=_publicKeyHash;
 @property(retain, nonatomic) PKApplePayTrustHashResponse *hashResponse; // @synthesize hashResponse;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL;
-- (void).cxx_destruct;
 - (id)manifestHashWithReferenceIdentifier:(id)arg1;
 - (id)endpointComponents;
 - (Class)signatureResponseClass;

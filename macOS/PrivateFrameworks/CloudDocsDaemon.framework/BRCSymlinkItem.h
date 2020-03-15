@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_symlinkTarget;
 }
 
-@property(readonly, nonatomic) NSString *symlinkTarget; // @synthesize symlinkTarget=_symlinkTarget;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *symlinkTarget; // @synthesize symlinkTarget=_symlinkTarget;
 - (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (void)readTargetFromRelativePathAndSyncUp:(id)arg1;

@@ -13,8 +13,8 @@
 
 + (id)blackBackgroundViewHostingView:(id)arg1;
 + (id)viewHostingView:(id)arg1;
-@property(retain, nonatomic) UIView *hostedView; // @synthesize hostedView=_hostedView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *hostedView; // @synthesize hostedView=_hostedView;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)translatesAutoresizingMaskIntoConstraints;
 

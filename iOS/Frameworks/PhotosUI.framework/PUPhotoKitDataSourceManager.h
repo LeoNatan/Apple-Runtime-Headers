@@ -15,8 +15,8 @@
     PXPhotosDataSource *_photosDataSource;
 }
 
-@property(retain, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
 - (id)photosDataSourceInterestingAssetReferences:(id)arg1;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (void)updateWithPhotosDataSource:(id)arg1 andDataSourceChange:(id)arg2;

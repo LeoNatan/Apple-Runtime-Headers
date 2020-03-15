@@ -22,6 +22,7 @@
 }
 
 + (id)soundWithFeedbackEventType:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long eventType; // @synthesize eventType=_eventType;
 @property(copy, nonatomic) NSString *songPath; // @synthesize songPath=_songPath;
 @property(retain, nonatomic) TLAlert *toneAlert; // @synthesize toneAlert=_toneAlert;
@@ -30,7 +31,6 @@
 @property(nonatomic, setter=_setResolvedSoundID:) unsigned int _resolvedSystemSoundID; // @synthesize _resolvedSystemSoundID;
 @property(nonatomic) unsigned int systemSoundID; // @synthesize systemSoundID=_systemSoundID;
 @property(nonatomic) long long soundType; // @synthesize soundType=_soundType;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_setCompletionBlock:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_completionBlock;

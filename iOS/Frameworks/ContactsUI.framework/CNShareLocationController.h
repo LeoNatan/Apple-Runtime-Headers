@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (id)fmfHandleFromContactProperty:(id)arg1;
 + (id)fmfHandlesFromContact:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) CNFuture *bestPropertyFuture; // @synthesize bestPropertyFuture=_bestPropertyFuture;
 @property(retain, nonatomic) id <CNCancelable> bestPropertyCancelable; // @synthesize bestPropertyCancelable=_bestPropertyCancelable;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) FMFSession *fmfSession; // @synthesize fmfSession=_fmfSession;
 @property(nonatomic) __weak NSObject<CNShareLocationProtocol> *shareLocationDelegate; // @synthesize shareLocationDelegate=_shareLocationDelegate;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)notifySharingStatusDidChange;
 - (id)callerIDFuture;
 - (id)callerID:(id *)arg1;

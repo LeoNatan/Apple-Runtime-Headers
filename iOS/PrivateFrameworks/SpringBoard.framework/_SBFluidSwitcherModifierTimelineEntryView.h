@@ -19,9 +19,9 @@
     id <_SBFluidSwitcherModifierTimelineEntryViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SBFluidSwitcherModifierTimelineEntryViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SBSwitcherModifierTimelineEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (id)_appendRecursiveDescriptionToString:(id)arg1 level:(unsigned long long)arg2 snapshot:(id)arg3;
 - (id)_stringForStack:(id)arg1;
 - (id)_randomColor;

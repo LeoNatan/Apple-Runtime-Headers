@@ -15,10 +15,10 @@
     CDStruct_e83c9415 _timerange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VCPVideoKeyFrameResult *keyFrame; // @synthesize keyFrame=_keyFrame;
 @property(readonly, nonatomic) float score; // @synthesize score=_score;
 @property(readonly, nonatomic) CDStruct_e83c9415 timerange; // @synthesize timerange=_timerange;
-- (void).cxx_destruct;
 - (id)initWithTimeRange:(CDStruct_e83c9415)arg1 score:(float)arg2 andKeyFrame:(id)arg3;
 
 @end

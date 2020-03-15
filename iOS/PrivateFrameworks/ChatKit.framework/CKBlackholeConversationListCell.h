@@ -14,9 +14,9 @@
     UIDateLabel *_dateLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDateLabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) UILabel *fromLabel; // @synthesize fromLabel=_fromLabel;
-- (void).cxx_destruct;
 - (void)configureForConversation:(id)arg1;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

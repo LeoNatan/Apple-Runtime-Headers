@@ -31,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *localizedButtonText; // @synthesize localizedButtonText=_localizedButtonText;
 @property(retain, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(retain, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSString *buttonTextKey; // @synthesize buttonTextKey=_buttonTextKey;
 @property(readonly, nonatomic) NSString *subtitleKey; // @synthesize subtitleKey=_subtitleKey;
 @property(readonly, nonatomic) NSString *titleKey; // @synthesize titleKey=_titleKey;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSURL *_baseVideoFileURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setBaseVideoFileURL:) NSURL *baseVideoFileURL; // @synthesize baseVideoFileURL=_baseVideoFileURL;
 @property(nonatomic, setter=_setBaseImageFileURL:) NSURL *baseImageFileURL; // @synthesize baseImageFileURL=_baseImageFileURL;
 @property(nonatomic, setter=_setBaseImageVersion:) long long adjustmentBaseVersion; // @synthesize adjustmentBaseVersion=_adjustmentBaseVersion;
 @property(retain, nonatomic, setter=_setKnownAdjustmentData:) NSData *knownAdjustmentData; // @synthesize knownAdjustmentData=_knownAdjustmentData;
 @property(retain, nonatomic, setter=_setCurrentPreviewImage:) UIImage *currentPreviewImage; // @synthesize currentPreviewImage=_currentPreviewImage;
-- (void).cxx_destruct;
 
 @end
 

@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *courseIdentityInfosByGroupIdentifier; // @synthesize courseIdentityInfosByGroupIdentifier=_courseIdentityInfosByGroupIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *courseIdentityInfosByGroupIdentifier; // @synthesize courseIdentityInfosByGroupIdentifier=_courseIdentityInfosByGroupIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

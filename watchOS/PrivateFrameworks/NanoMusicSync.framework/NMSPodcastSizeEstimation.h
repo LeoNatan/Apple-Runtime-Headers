@@ -19,8 +19,8 @@
 + (double)_defaultSizeDurationRatio;
 + (unsigned long long)_defaultEstimatedSize;
 + (unsigned long long)_minimumSizeThreshold;
-@property(retain) NSMutableDictionary *sizeInfoDict; // @synthesize sizeInfoDict=_sizeInfoDict;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *sizeInfoDict; // @synthesize sizeInfoDict=_sizeInfoDict;
 - (unsigned long long)_totalAverageSize;
 - (double)_totalSizeDurationRatio;
 - (id)_cachedPodcastSizeInfoDict;

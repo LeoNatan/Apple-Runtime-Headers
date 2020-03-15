@@ -21,12 +21,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) double rtcpSendIntervalSec; // @synthesize rtcpSendIntervalSec=_rtcpSendIntervalSec;
 @property(nonatomic) unsigned int audioStreamSetting; // @synthesize audioStreamSetting=_audioStreamSetting;
 @property(nonatomic) _Bool streamStarted; // @synthesize streamStarted=_streamStarted;
 @property(readonly) __weak id <HMDAudioStreamInterfaceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVCAudioStream *audioStream; // @synthesize audioStream=_audioStream;
-- (void).cxx_destruct;
 - (void)streamDidRTCPTimeOut:(id)arg1;
 - (void)streamDidRTPTimeOut:(id)arg1;
 - (void)streamDidServerDie:(id)arg1;

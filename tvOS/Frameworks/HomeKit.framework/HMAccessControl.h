@@ -18,8 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) unsigned long long cachedHash; // @synthesize cachedHash=_cachedHash;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long cachedHash; // @synthesize cachedHash=_cachedHash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property __weak HMUser *user; // @synthesize user=_user;

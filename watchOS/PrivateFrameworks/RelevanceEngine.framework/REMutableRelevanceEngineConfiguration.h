@@ -6,7 +6,7 @@
 
 #import <RelevanceEngine/RERelevanceEngineConfiguration.h>
 
-@class NSObject, NSString, NSURL, REDataSourceLoader, REFeatureSet, RELocationManager, RERelevanceProviderManagerLoader;
+@class NSArray, NSObject, NSString, NSURL, REDataSourceLoader, REFeatureSet, RELocationManager, RERelevanceProviderManagerLoader;
 @protocol OS_dispatch_queue, RERelevanceEngineMetricsRecorder;
 
 @interface REMutableRelevanceEngineConfiguration : RERelevanceEngineConfiguration
@@ -48,6 +48,9 @@
 @property(copy, nonatomic) NSURL *modelFileURL; // @dynamic modelFileURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @dynamic observerQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *engineQueue; // @dynamic engineQueue;
+
+// Remaining properties
+@property(retain, nonatomic) NSArray *whitelistedDataSourceClassNames; // @dynamic whitelistedDataSourceClassNames;
 
 @end
 

@@ -19,12 +19,12 @@
     NSDictionary *_tableContent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *tableContent; // @synthesize tableContent=_tableContent;
 @property(retain, nonatomic) NSArray *sectionTitles; // @synthesize sectionTitles=_sectionTitles;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(readonly, nonatomic) NSDictionary *debugDictionary; // @synthesize debugDictionary=_debugDictionary;
-- (void).cxx_destruct;
 - (void)_closeAction:(id)arg1;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

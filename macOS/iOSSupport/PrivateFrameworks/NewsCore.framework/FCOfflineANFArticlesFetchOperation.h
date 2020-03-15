@@ -21,6 +21,7 @@
     id _resultHoldToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id resultHoldToken; // @synthesize resultHoldToken=_resultHoldToken;
 @property(retain, nonatomic) NSArray *articleIDs; // @synthesize articleIDs=_articleIDs;
 @property(retain, nonatomic) id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic) unsigned long long maximumMissingArticles; // @synthesize maximumMissingArticles=_maximumMissingArticles;
 @property(nonatomic) BOOL cachedOnly; // @synthesize cachedOnly=_cachedOnly;
-- (void).cxx_destruct;
 - (id)_promiseANFResourcesFromHeadlines:(id)arg1;
 - (id)_promiseThumbnailsAndANFDocumentsFromHeadlines:(id)arg1;
 - (id)_promiseHeadlines;

@@ -17,9 +17,9 @@
 }
 
 + (id)compassButtonWithMapView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long compassVisibility; // @synthesize compassVisibility=_compassVisibility;
 @property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (struct CGSize)intrinsicContentSize;

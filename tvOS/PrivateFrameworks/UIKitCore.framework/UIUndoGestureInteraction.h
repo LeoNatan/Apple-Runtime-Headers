@@ -10,7 +10,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UIInteractiveUndoHUDActionDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, UIDelayedAction, UIKBTextEditingTraits, UIKBUndoInteractionHUD, UIKBUndoStateHUD, UILayoutGuide, UITapGestureRecognizer, UIUndoGestureObserver, UIUndoGestureRecognizer, UIUndoLongPressGestureRecognizer, UIUndoPinchGestureRecognizer, UIView;
+@class NSLayoutConstraint, NSString, UIDelayedAction, UIKBProductibityDoubleTapGesture, UIKBProductibitySingleTapGesture, UIKBProductivityLongPressGestureRecognizer, UIKBProductivityPanGestureRecognizer, UIKBProductivityPinchGestureRecognizer, UIKBTextEditingTraits, UIKBUndoInteractionHUD, UIKBUndoStateHUD, UILayoutGuide, UIUndoGestureObserver, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIUndoGestureInteraction : NSObject <UIInteractiveUndoHUDActionDelegate, UIGestureRecognizerDelegate, UIEditingOverlayInteractionWithView>
@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     _Bool _multiPinchTimerOn;
     UIView *_view;
     UIUndoGestureObserver *_observerGesture;
-    UITapGestureRecognizer *_threeFingerSingleTap;
-    UITapGestureRecognizer *_threeFingerDoubleTap;
-    UIUndoGestureRecognizer *_threeFingerSlide;
-    UIUndoLongPressGestureRecognizer *_threeFingerLongPress;
-    UIUndoPinchGestureRecognizer *_threeFingerPinch;
+    UIKBProductibitySingleTapGesture *_threeFingerSingleTap;
+    UIKBProductibityDoubleTapGesture *_threeFingerDoubleTap;
+    UIKBProductivityPanGestureRecognizer *_threeFingerSlide;
+    UIKBProductivityLongPressGestureRecognizer *_threeFingerLongPress;
+    UIKBProductivityPinchGestureRecognizer *_threeFingerPinch;
     UIKBUndoInteractionHUD *_undoInteractiveHUD;
     UIKBUndoStateHUD *_undoStateHUD;
     NSLayoutConstraint *_undoStateHUDTopConstraint;
@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 + (void)presentProductivityGestureTutorialInlineWithCompletion:(CDUnknownBlockType)arg1;
 + (void)presentProductivityGestureTutorialIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 + (id)iWorkFamily;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKBTextEditingTraits *editingTraits; // @synthesize editingTraits=_editingTraits;
 @property(nonatomic) long long potentialPinchDirection; // @synthesize potentialPinchDirection=_potentialPinchDirection;
 @property(nonatomic) double previousPinchPerimeter; // @synthesize previousPinchPerimeter=_previousPinchPerimeter;
@@ -77,14 +78,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLayoutConstraint *undoStateHUDTopConstraint; // @synthesize undoStateHUDTopConstraint=_undoStateHUDTopConstraint;
 @property(retain, nonatomic) UIKBUndoStateHUD *undoStateHUD; // @synthesize undoStateHUD=_undoStateHUD;
 @property(retain, nonatomic) UIKBUndoInteractionHUD *undoInteractiveHUD; // @synthesize undoInteractiveHUD=_undoInteractiveHUD;
-@property(retain, nonatomic) UIUndoPinchGestureRecognizer *threeFingerPinch; // @synthesize threeFingerPinch=_threeFingerPinch;
-@property(retain, nonatomic) UIUndoLongPressGestureRecognizer *threeFingerLongPress; // @synthesize threeFingerLongPress=_threeFingerLongPress;
-@property(retain, nonatomic) UIUndoGestureRecognizer *threeFingerSlide; // @synthesize threeFingerSlide=_threeFingerSlide;
-@property(retain, nonatomic) UITapGestureRecognizer *threeFingerDoubleTap; // @synthesize threeFingerDoubleTap=_threeFingerDoubleTap;
-@property(retain, nonatomic) UITapGestureRecognizer *threeFingerSingleTap; // @synthesize threeFingerSingleTap=_threeFingerSingleTap;
+@property(retain, nonatomic) UIKBProductivityPinchGestureRecognizer *threeFingerPinch; // @synthesize threeFingerPinch=_threeFingerPinch;
+@property(retain, nonatomic) UIKBProductivityLongPressGestureRecognizer *threeFingerLongPress; // @synthesize threeFingerLongPress=_threeFingerLongPress;
+@property(retain, nonatomic) UIKBProductivityPanGestureRecognizer *threeFingerSlide; // @synthesize threeFingerSlide=_threeFingerSlide;
+@property(retain, nonatomic) UIKBProductibityDoubleTapGesture *threeFingerDoubleTap; // @synthesize threeFingerDoubleTap=_threeFingerDoubleTap;
+@property(retain, nonatomic) UIKBProductibitySingleTapGesture *threeFingerSingleTap; // @synthesize threeFingerSingleTap=_threeFingerSingleTap;
 @property(retain, nonatomic) UIUndoGestureObserver *observerGesture; // @synthesize observerGesture=_observerGesture;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)pasteOperation;
 - (void)copyOperation;
 - (void)cutOperation;

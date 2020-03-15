@@ -18,13 +18,13 @@
     CDStruct_d4d9707c _stockValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *bar; // @synthesize bar=_bar;
 @property(retain, nonatomic) UIImageView *dot; // @synthesize dot=_dot;
 @property(nonatomic) __weak UITouch *touch; // @synthesize touch=_touch;
 @property(nonatomic) struct CGPoint locationInHUD; // @synthesize locationInHUD=_locationInHUD;
 @property(nonatomic) struct CGPoint plottedLocation; // @synthesize plottedLocation=_plottedLocation;
 @property(nonatomic) CDStruct_d4d9707c stockValue; // @synthesize stockValue=_stockValue;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -19,11 +19,12 @@
     id <PKPaymentSetupViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PKPaymentSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long setupContext; // @synthesize setupContext=_setupContext;
 @property(readonly, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
-- (void).cxx_destruct;
 - (id)_educationViewControllerShouldShow;
+- (id)_offerOptionalExpressModeSetup;
 - (id)_offerMakeDefaultViewController;
 - (id)_nextPaymentCredentialControllerWithSetupProduct:(id)arg1 allowsManualEntry:(_Bool)arg2;
 - (id)nextQueuedCredentialViewControllerWithSetupProduct:(id)arg1 state:(long long)arg2 allowsManualEntry:(_Bool)arg3;

@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsRowModel:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL appIsInstalled; // @synthesize appIsInstalled=_appIsInstalled;
 @property(retain, nonatomic) TLKStoreButton *appStoreButton; // @synthesize appStoreButton=_appStoreButton;
-- (void).cxx_destruct;
 - (unsigned long long)type;
 - (BOOL)shouldTopAlignForAccessibilityContentSizes;
 - (void)buttonPressed;

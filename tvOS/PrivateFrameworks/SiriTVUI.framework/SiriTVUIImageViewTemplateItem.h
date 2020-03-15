@@ -18,13 +18,13 @@
     struct CGSize _pointSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *monogramNames; // @synthesize monogramNames=_monogramNames;
 @property(copy, nonatomic) NSString *monogramText; // @synthesize monogramText=_monogramText;
 @property(nonatomic) unsigned long long imageStyle; // @synthesize imageStyle=_imageStyle;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
 @property(nonatomic) struct CGSize pointSize; // @synthesize pointSize=_pointSize;
 @property(copy, nonatomic) NSDictionary *images; // @synthesize images=_images;
-- (void).cxx_destruct;
 - (id)initWithImages:(id)arg1 pointSize:(struct CGSize)arg2;
 - (id)initWithImages:(id)arg1 pointSize:(struct CGSize)arg2 alpha:(double)arg3;
 - (id)initWithImages:(id)arg1 pointSize:(struct CGSize)arg2 alpha:(double)arg3 monogramText:(id)arg4;

@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *rulesVersion; // @synthesize rulesVersion=_rulesVersion;
 @property(readonly, copy, nonatomic) NSArray *redactedResources; // @synthesize redactedResources=_redactedResources;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

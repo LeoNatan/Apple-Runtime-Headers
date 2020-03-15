@@ -27,6 +27,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)recipientWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *phoneOrEmail; // @synthesize phoneOrEmail=_phoneOrEmail;
 @property(copy, nonatomic) NSDate *cacheUntil; // @synthesize cacheUntil=_cacheUntil;
@@ -37,7 +38,6 @@
 @property(nonatomic) unsigned int receiveMethod; // @synthesize receiveMethod=_receiveMethod;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

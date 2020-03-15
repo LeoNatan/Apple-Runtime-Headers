@@ -8,7 +8,7 @@
 
 #import <NanoTimeKitCompanion/NTKVictoryAnalogBackgroundColorPalette-Protocol.h>
 
-@class NSString, UIColor;
+@class CLKDevice, NSString, UIColor;
 
 @interface NTKVictoryColorPalette : NSObject <NTKVictoryAnalogBackgroundColorPalette>
 {
@@ -27,11 +27,14 @@
     UIColor *_cornerComplicationsAccentColor;
     unsigned long long _bleed;
     UIColor *_backgroundColor;
+    CLKDevice *_device;
 }
 
-+ (id)paletteForColor:(unsigned long long)arg1 bleed:(unsigned long long)arg2;
-+ (id)paletteForColor:(unsigned long long)arg1 style:(unsigned long long)arg2;
++ (id)paletteForDevice:(id)arg1 color:(unsigned long long)arg2 bleed:(unsigned long long)arg3;
++ (id)paletteForDevice:(id)arg1 color:(unsigned long long)arg2 style:(unsigned long long)arg3;
 + (id)voltColor;
+- (void).cxx_destruct;
+@property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) unsigned long long bleed; // @synthesize bleed=_bleed;
 @property(readonly, nonatomic) _Bool hasWhiteElements; // @synthesize hasWhiteElements=_hasWhiteElements;
@@ -47,8 +50,10 @@
 @property(readonly, nonatomic) UIColor *handsColor; // @synthesize handsColor=_handsColor;
 @property(readonly, nonatomic) UIColor *numbersColor; // @synthesize numbersColor=_numbersColor;
 @property(readonly, nonatomic) unsigned long long color; // @synthesize color=_color;
-- (void).cxx_destruct;
-- (id)initWithColor:(unsigned long long)arg1 bleed:(unsigned long long)arg2;
+- (id)colorForLogoWithStyle:(unsigned long long)arg1;
+- (id)colorForNumberVictoryAnalogTimeElement:(unsigned long long)arg1;
+- (id)colorForDotVictoryAnalogTimeElement:(unsigned long long)arg1;
+- (id)initWithDevice:(id)arg1 color:(unsigned long long)arg2 bleed:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

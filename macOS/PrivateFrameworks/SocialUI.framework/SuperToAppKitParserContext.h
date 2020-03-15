@@ -17,8 +17,8 @@
     BOOL _shouldEncodeInlineAttachments;
 }
 
-@property(nonatomic) BOOL shouldEncodeInlineAttachments; // @synthesize shouldEncodeInlineAttachments=_shouldEncodeInlineAttachments;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldEncodeInlineAttachments; // @synthesize shouldEncodeInlineAttachments=_shouldEncodeInlineAttachments;
 - (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange)arg3 fileTransferGUID:(id)arg4 filename:(id)arg5 bookmark:(id)arg6 width:(id)arg7 height:(id)arg8 emoji:(id)arg9;
 - (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange)arg3 fileTransferGUID:(id)arg4 filename:(id)arg5 bookmark:(id)arg6 width:(id)arg7 height:(id)arg8;
 - (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange)arg3 characters:(id)arg4;

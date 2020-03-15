@@ -38,6 +38,7 @@
     UIFont *_descriptionFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *descriptionFont; // @synthesize descriptionFont=_descriptionFont;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(nonatomic) double textAlpha; // @synthesize textAlpha=_textAlpha;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)updateSelectionUI;
 - (void)updateTitle;
 - (void)_addDescriptionIconView;

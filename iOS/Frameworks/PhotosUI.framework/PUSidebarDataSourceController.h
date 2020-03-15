@@ -20,8 +20,8 @@
     id <PUSidebarDataSourceControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUSidebarDataSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUSidebarDataSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 @property(readonly, nonatomic) PUSidebarDataSource *dataSource;
 - (id)childDataSectionManagerForListItem:(id)arg1 hintIndexPath:(id)arg2 localIndex:(long long *)arg3;

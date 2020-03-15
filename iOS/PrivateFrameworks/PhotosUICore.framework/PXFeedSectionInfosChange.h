@@ -18,13 +18,13 @@
     NSSet *_updatedAssets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *updatedAssets; // @synthesize updatedAssets=_updatedAssets;
 @property(retain, nonatomic) NSSet *sectionInfosWithCommentChanges; // @synthesize sectionInfosWithCommentChanges=_sectionInfosWithCommentChanges;
 @property(retain, nonatomic) NSIndexSet *updatedIndexes; // @synthesize updatedIndexes=_updatedIndexes;
 @property(retain, nonatomic) NSIndexSet *insertedIndexes; // @synthesize insertedIndexes=_insertedIndexes;
 @property(retain, nonatomic) NSIndexSet *deletedIndexes; // @synthesize deletedIndexes=_deletedIndexes;
 @property(nonatomic) _Bool shouldReload; // @synthesize shouldReload=_shouldReload;
-- (void).cxx_destruct;
 
 @end
 

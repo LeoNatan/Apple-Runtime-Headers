@@ -17,12 +17,12 @@
     NSMutableSet *_cameraItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *cameraItems; // @synthesize cameraItems=_cameraItems;
 @property(nonatomic) _Bool onlyShowsFavorites; // @synthesize onlyShowsFavorites=_onlyShowsFavorites;
 @property(retain, nonatomic) HMRoom *room; // @synthesize room=_room;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_favoriteFilter;
 - (CDUnknownBlockType)_roomFilter;
 - (id)invalidationReasons;

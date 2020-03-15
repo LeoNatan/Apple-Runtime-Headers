@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_targetOperationQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *targetOperationQueue; // @synthesize targetOperationQueue=_targetOperationQueue;
 @property(readonly, nonatomic) CKDOperation *realOperation; // @synthesize realOperation=_realOperation;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
-- (void).cxx_destruct;
 - (id)statusReportWithIndent:(unsigned long long)arg1;
 - (id)_startDateString;
 - (id)_runDurationString;

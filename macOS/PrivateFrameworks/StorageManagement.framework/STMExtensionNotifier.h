@@ -15,10 +15,10 @@
     id _matchingContext;
 }
 
+- (void).cxx_destruct;
 @property(retain) id matchingContext; // @synthesize matchingContext=_matchingContext;
 @property(retain) NSObject<OS_dispatch_queue> *serialAccessQueue; // @synthesize serialAccessQueue=_serialAccessQueue;
 @property __weak id <STMExtensionNotifierDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopMatchingExtensions;
 - (void)beginMatchingExtensions;
 - (void)handleError:(id)arg1;

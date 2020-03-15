@@ -19,12 +19,12 @@
     NSString *_clientBundleID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(retain, nonatomic) CSSearchQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak id <MDSearchQueryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (void)_didFinishWithError:(id)arg1;
 - (void)_didReturnItems:(id)arg1;
 @property unsigned long long status;

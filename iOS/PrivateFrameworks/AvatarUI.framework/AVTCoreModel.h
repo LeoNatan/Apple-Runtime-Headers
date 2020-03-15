@@ -14,9 +14,9 @@
     AVTEditingModelColors *_colors;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) AVTEditingModelColors *colors; // @synthesize colors=_colors;
 @property(readonly, copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithGroups:(id)arg1 colors:(id)arg2;
 

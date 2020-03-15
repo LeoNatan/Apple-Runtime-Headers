@@ -15,11 +15,11 @@
     HMDNetworkRouterFirewallRuleWANAddressRange *_addressRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDNetworkRouterFirewallRuleWANAddressRange *addressRange; // @synthesize addressRange=_addressRange;
 @property(readonly, nonatomic) NSSet *addresses; // @synthesize addresses=_addresses;
 @property(readonly, nonatomic) NSSet *hostnames; // @synthesize hostnames=_hostnames;
-- (void).cxx_destruct;
-- (struct NSDictionary *)prettyJSONDictionary;
+- (id)prettyJSONDictionary;
 - (id)attributeDescriptions;
 - (id)initWithHostnames:(id)arg1 addresses:(id)arg2 addressRange:(id)arg3;
 

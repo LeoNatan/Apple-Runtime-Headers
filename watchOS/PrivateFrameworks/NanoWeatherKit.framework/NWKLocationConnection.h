@@ -19,10 +19,10 @@
     NWKXPCConnectionWrapper *_connectionWrapper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NWKXPCConnectionWrapper *connectionWrapper; // @synthesize connectionWrapper=_connectionWrapper;
 @property(nonatomic) __weak id <NWKLocationConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType onResumeBlock; // @synthesize onResumeBlock=_onResumeBlock;
-- (void).cxx_destruct;
 - (void)locationServerUpdatedStaticLocations:(id)arg1;
 - (void)locationServerUpdatedSelectedLocation:(id)arg1;
 - (void)locationServerUpdatedLocation:(id)arg1 updatedTimeZone:(id)arg2;

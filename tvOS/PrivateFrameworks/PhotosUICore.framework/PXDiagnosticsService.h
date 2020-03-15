@@ -18,13 +18,13 @@
     UIViewController *_settingsViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canPerformAction; // @synthesize canPerformAction=_canPerformAction;
 @property(readonly, nonatomic) UIViewController *settingsViewController; // @synthesize settingsViewController=_settingsViewController;
 @property(readonly, nonatomic) _Bool canProvideSettingsViewController; // @synthesize canProvideSettingsViewController=_canProvideSettingsViewController;
 @property(readonly, nonatomic) NSString *consoleDescription; // @synthesize consoleDescription=_consoleDescription;
 @property(readonly, nonatomic) _Bool canProvideConsoleDescription; // @synthesize canProvideConsoleDescription=_canProvideConsoleDescription;
 @property(readonly, copy, nonatomic) NSArray *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (void)performAction;
 @property(readonly, nonatomic) UIViewController *contextualViewController;
 @property(readonly, nonatomic) _Bool canProvideContextualViewController;

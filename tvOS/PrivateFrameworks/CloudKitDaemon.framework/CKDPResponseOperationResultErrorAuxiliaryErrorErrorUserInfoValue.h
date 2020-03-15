@@ -20,12 +20,12 @@
     CDStruct_f7459c01 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *bytesValue; // @synthesize bytesValue=_bytesValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(nonatomic) _Bool boolValue; // @synthesize boolValue=_boolValue;
 @property(nonatomic) long long int64Value; // @synthesize int64Value=_int64Value;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

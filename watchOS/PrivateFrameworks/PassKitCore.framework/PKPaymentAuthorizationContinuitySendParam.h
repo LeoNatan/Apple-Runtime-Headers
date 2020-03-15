@@ -14,8 +14,8 @@
 }
 
 + (id)paramWithRemotePaymentRequest:(id)arg1;
-@property(retain, nonatomic) PKRemotePaymentRequest *remotePaymentRequest; // @synthesize remotePaymentRequest=_remotePaymentRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKRemotePaymentRequest *remotePaymentRequest; // @synthesize remotePaymentRequest=_remotePaymentRequest;
 
 @end
 

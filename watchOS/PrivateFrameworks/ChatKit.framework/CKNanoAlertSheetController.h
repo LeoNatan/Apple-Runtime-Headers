@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CKAlertAction *_cancelAction;
 }
 
-@property(retain, nonatomic) CKAlertAction *cancelAction; // @synthesize cancelAction=_cancelAction;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKAlertAction *cancelAction; // @synthesize cancelAction=_cancelAction;
 - (void)actionContentControllerCancel:(id)arg1;
 
 // Remaining properties

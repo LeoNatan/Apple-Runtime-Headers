@@ -20,13 +20,13 @@
     NSMutableDictionary *_weightsByEdge;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *weightsByEdge; // @synthesize weightsByEdge=_weightsByEdge;
 @property(retain, nonatomic) NSMutableSet *parentlessNodes; // @synthesize parentlessNodes=_parentlessNodes;
 @property(retain, nonatomic) NSMutableSet *childlessNodes; // @synthesize childlessNodes=_childlessNodes;
 @property(retain, nonatomic) FCSetValueMapTable *childToParents; // @synthesize childToParents=_childToParents;
 @property(retain, nonatomic) FCSetValueMapTable *parentToChildren; // @synthesize parentToChildren=_parentToChildren;
 @property(retain, nonatomic) id rootNode; // @synthesize rootNode=_rootNode;
-- (void).cxx_destruct;
 - (void)_submitMaxPath:(id)arg1 withWeight:(double)arg2 toNode:(id)arg3 maxPathStore:(id)arg4;
 - (id)_edgeRepresentationFromNode:(id)arg1 toNode:(id)arg2;
 - (void)_setWeight:(double)arg1 forEdgeFromNode:(id)arg2 toNode:(id)arg3;

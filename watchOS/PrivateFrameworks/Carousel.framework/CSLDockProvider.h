@@ -22,11 +22,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLDockAllowLaunchAssertionServiceEndpoint *allowLaunchAssertionService; // @synthesize allowLaunchAssertionService=_allowLaunchAssertionService;
 @property(retain, nonatomic) NSMutableDictionary *allowedLaunchBundleIDs; // @synthesize allowedLaunchBundleIDs=_allowedLaunchBundleIDs;
 @property(nonatomic, getter=hasPendingUpdate) _Bool pendingUpdate; // @synthesize pendingUpdate=_pendingUpdate;
 @property(getter=isDocked) _Bool docked; // @synthesize docked=_docked;
-- (void).cxx_destruct;
 - (id)createDockStatusViewController;
 - (_Bool)isDockAlertActiveInAlertStack:(id)arg1;
 - (_Bool)launchIsAllowed:(id)arg1;

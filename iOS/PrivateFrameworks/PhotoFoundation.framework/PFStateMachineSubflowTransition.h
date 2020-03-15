@@ -13,8 +13,8 @@
     NSString *_subflowName;
 }
 
-@property(readonly) NSString *subflowName; // @synthesize subflowName=_subflowName;
 - (void).cxx_destruct;
+@property(readonly) NSString *subflowName; // @synthesize subflowName=_subflowName;
 - (id)description;
 - (id)dot:(id)arg1 prefix:(id)arg2 graph:(id)arg3;
 - (void)performAction:(id)arg1;

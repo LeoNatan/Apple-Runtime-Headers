@@ -8,20 +8,22 @@
 
 #import <HealthDaemon/NSCopying-Protocol.h>
 
-@class NSData;
+@class HDCodableMessageVersion, NSData;
 
 @interface HDCodableClinicalDeletedAccount : PBCodable <NSCopying>
 {
     double _deletionDate;
+    HDCodableMessageVersion *_messageVersion;
     NSData *_syncIdentifier;
     struct {
         unsigned int deletionDate:1;
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) HDCodableMessageVersion *messageVersion; // @synthesize messageVersion=_messageVersion;
 @property(nonatomic) double deletionDate; // @synthesize deletionDate=_deletionDate;
 @property(retain, nonatomic) NSData *syncIdentifier; // @synthesize syncIdentifier=_syncIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -31,6 +33,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasMessageVersion;
 @property(nonatomic) _Bool hasDeletionDate;
 @property(readonly, nonatomic) _Bool hasSyncIdentifier;
 

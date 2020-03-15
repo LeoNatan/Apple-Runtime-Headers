@@ -13,8 +13,8 @@
     NSPredicate *_predicate;
 }
 
-@property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (id)initWithName:(id)arg1 andParameters:(id)arg2;
 - (BOOL)_validateThrottleParams:(id)arg1;
 - (BOOL)matchesItem:(id)arg1 nsecsToRetry:(unsigned long long *)arg2 now:(unsigned long long)arg3;

@@ -22,12 +22,12 @@
 }
 
 + (id)contextWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBLockScreenPluginLifecycleObserver> observer; // @synthesize observer=_observer;
 @property(copy, nonatomic) CDUnknownBlockType auxiliaryAnimation; // @synthesize auxiliaryAnimation=_auxiliaryAnimation;
 @property(retain, nonatomic) FBProcess<FBSProcess> *process; // @synthesize process=_process;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

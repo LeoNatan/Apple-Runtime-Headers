@@ -16,11 +16,11 @@
     int _activityCategory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int activityCategory; // @synthesize activityCategory=_activityCategory;
 @property(retain, nonatomic) UIViewController *presentableActivityViewController; // @synthesize presentableActivityViewController=_presentableActivityViewController;
 @property(retain, nonatomic) _UIActivityUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(copy, nonatomic) NSArray *availableActivities; // @synthesize availableActivities=_availableActivities;
-- (void).cxx_destruct;
 - (void)_prepareActivityViewControllerIfNeeded;
 - (void)_cleanup;
 - (void)_settingsViewControllerDidDismiss:(id)arg1;

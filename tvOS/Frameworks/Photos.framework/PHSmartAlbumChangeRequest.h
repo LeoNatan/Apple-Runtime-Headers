@@ -22,8 +22,8 @@
 + (id)creationRequestForSmartAlbumWithTitle:(id)arg1 userQuery:(id)arg2;
 + (id)changeRequestForSmartAlbum:(id)arg1;
 + (id)_changeRequestForSmartAlbum:(id)arg1 userQuery:(id)arg2;
-@property(copy, nonatomic) PLQuery *userQuery; // @synthesize userQuery=_userQuery;
 - (void).cxx_destruct;
+@property(copy, nonatomic) PLQuery *userQuery; // @synthesize userQuery=_userQuery;
 - (id)description;
 - (_Bool)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
 - (_Bool)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;

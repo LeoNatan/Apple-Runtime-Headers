@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short groupID; // @synthesize groupID=_groupID;
 @property(readonly, copy, nonatomic) NSUUID *organizationUUID; // @synthesize organizationUUID=_organizationUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

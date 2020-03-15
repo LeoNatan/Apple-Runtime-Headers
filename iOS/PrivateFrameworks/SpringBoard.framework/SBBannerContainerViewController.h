@@ -22,9 +22,9 @@
     id <SBBannerContainerViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBBannerContainerView *bannerContainerView; // @synthesize bannerContainerView=_bannerContainerView;
 @property(nonatomic) __weak id <SBBannerContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_tryDismissingBannerInScrollView:(id)arg1;
 - (id)_bannerContextViewCreatingIfNecessary;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;

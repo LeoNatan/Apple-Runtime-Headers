@@ -24,12 +24,12 @@
     NSString *_footer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(nonatomic) BOOL showVerifyAccountButton; // @synthesize showVerifyAccountButton=_showVerifyAccountButton;
 @property(nonatomic) BOOL showSelectAllButton; // @synthesize showSelectAllButton=_showSelectAllButton;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) EKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) EKSource *sourceForSyncError;
 - (id)description;
 @property(readonly, nonatomic) int sortOrder;

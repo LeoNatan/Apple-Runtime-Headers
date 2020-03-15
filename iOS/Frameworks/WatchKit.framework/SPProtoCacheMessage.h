@@ -20,13 +20,13 @@
     SPProtoCacheSyncData *_syncData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoCacheSyncData *syncData; // @synthesize syncData=_syncData;
 @property(retain, nonatomic) NSData *assetData; // @synthesize assetData=_assetData;
 @property(retain, nonatomic) NSString *gizmoCacheIdentifier; // @synthesize gizmoCacheIdentifier=_gizmoCacheIdentifier;
 @property(retain, nonatomic) NSString *assetKey; // @synthesize assetKey=_assetKey;
 @property(nonatomic) int cacheType; // @synthesize cacheType=_cacheType;
 @property(nonatomic) int messageType; // @synthesize messageType=_messageType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

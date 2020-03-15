@@ -19,13 +19,13 @@
     double _lsmScore;
 }
 
+- (void).cxx_destruct;
 @property double lsmScore; // @synthesize lsmScore=_lsmScore;
 @property double imageToTextRatio; // @synthesize imageToTextRatio=_imageToTextRatio;
 @property unsigned long long characterCount; // @synthesize characterCount=_characterCount;
 @property unsigned long long imageCount; // @synthesize imageCount=_imageCount;
 @property BOOL isSigned; // @synthesize isSigned=_isSigned;
 @property BOOL isShort; // @synthesize isShort=_isShort;
-- (void).cxx_destruct;
 - (void)appendImageJunkInfo:(id)arg1;
 @property(readonly, copy) NSArray *imageInfos;
 - (id)description;

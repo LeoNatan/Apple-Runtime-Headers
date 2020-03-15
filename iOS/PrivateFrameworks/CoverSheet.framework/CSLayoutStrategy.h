@@ -13,8 +13,8 @@
     id <CSPersistentContentLayoutProviding><CSDateTimeLayoutAggregating> _persistentLayout;
 }
 
-@property(nonatomic) __weak id <CSPersistentContentLayoutProviding><CSDateTimeLayoutAggregating> persistentLayout; // @synthesize persistentLayout=_persistentLayout;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSPersistentContentLayoutProviding><CSDateTimeLayoutAggregating> persistentLayout; // @synthesize persistentLayout=_persistentLayout;
 - (double)_customListWidthForPage:(id)arg1 startingBounds:(struct CGRect)arg2;
 - (double)_listInsetXForPage:(id)arg1;
 - (unsigned long long)_listLayoutForPage:(id)arg1;

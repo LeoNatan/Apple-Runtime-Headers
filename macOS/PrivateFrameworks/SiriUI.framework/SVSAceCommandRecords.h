@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_addViewsCommandIdentifierByViewIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_addViewsCommandIdentifierByViewIdentifier) NSMutableDictionary *addViewsCommandIdentifierByViewIdentifier; // @synthesize addViewsCommandIdentifierByViewIdentifier=_addViewsCommandIdentifierByViewIdentifier;
 @property(readonly, nonatomic, getter=_recordsByCommandIdentifier) NSMutableDictionary *recordsByCommandIdentifier; // @synthesize recordsByCommandIdentifier=_recordsByCommandIdentifier;
 @property(nonatomic) __weak id <SVSAceCommandRecordsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)resultForAceCommand:(id)arg1;
 - (void)recordActionCompletedUnsuccessfullyForAceCommand:(id)arg1;
 - (void)recordActionCompletedSuccessfullyForAceCommand:(id)arg1;

@@ -56,13 +56,13 @@
 + (BOOL)automaticallyNotifiesObserversOfPercentDone;
 + (BOOL)automaticallyNotifiesObserversOfStatusMessage;
 + (double)determinateProgress;
+- (void).cxx_destruct;
 @property BOOL shouldPromptUserOnTermination; // @synthesize shouldPromptUserOnTermination=_shouldPromptUserOnTermination;
 @property(retain) ICNFMCError *error; // @synthesize error=_error;
 @property(nonatomic) double itemMinValue; // @synthesize itemMinValue=_itemMinValue;
 @property(copy) NSString *itemDescription; // @synthesize itemDescription=_itemDescription;
 @property(nonatomic) unsigned char priority; // @synthesize priority=_priority;
 @property(retain) NSInvocation *cancelInvocation; // @synthesize cancelInvocation=_cancelInvocation;
-- (void).cxx_destruct;
 - (void)resetActivityType;
 - (void)markCompleted:(BOOL)arg1;
 - (void)incrementItemsTotal:(unsigned long long)arg1;

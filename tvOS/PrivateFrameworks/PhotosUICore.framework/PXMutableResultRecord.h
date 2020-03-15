@@ -26,6 +26,7 @@
     long long _keyAssetIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool preloadAssetTypeCounts; // @synthesize preloadAssetTypeCounts=_preloadAssetTypeCounts;
 @property(nonatomic) _Bool wantsCuration; // @synthesize wantsCuration=_wantsCuration;
 @property(nonatomic) long long keyAssetIndex; // @synthesize keyAssetIndex=_keyAssetIndex;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSSet *curatedOids; // @synthesize curatedOids=_curatedOids;
 @property(readonly, nonatomic) NSSet *includedOids; // @synthesize includedOids=_includedOids;
 @property(readonly, nonatomic) NSSet *excludedOids; // @synthesize excludedOids=_excludedOids;
-- (void).cxx_destruct;
 - (void)_updateFilteredFetchResultIfNeeded;
 - (void)_invalidateFilteredFetchResult;
 @property(readonly, nonatomic) _Bool isCurated;

@@ -23,6 +23,7 @@
     double _bufferDuration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 @property(retain, nonatomic) AXMotionRunningBuffer *rotationRateZBuffer; // @synthesize rotationRateZBuffer=_rotationRateZBuffer;
 @property(retain, nonatomic) AXMotionRunningBuffer *rotationRateYBuffer; // @synthesize rotationRateYBuffer=_rotationRateYBuffer;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) double bufferDuration; // @synthesize bufferDuration=_bufferDuration;
 @property(readonly, nonatomic) double samplesPerSecond; // @synthesize samplesPerSecond=_samplesPerSecond;
 @property(nonatomic) __weak id <AXMotionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_processDeviceMotion:(id)arg1;
 - (void)_clearAssertion;
 - (void)_takeAssertionWithTimeout:(double)arg1 timeoutBlock:(CDUnknownBlockType)arg2;

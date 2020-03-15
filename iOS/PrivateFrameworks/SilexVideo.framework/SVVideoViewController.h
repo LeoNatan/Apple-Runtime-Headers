@@ -21,13 +21,13 @@
     UIView *_targetViewForDismissal;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *targetViewForDismissal; // @synthesize targetViewForDismissal=_targetViewForDismissal;
 @property(nonatomic) __weak UIView *sourceViewForPresentation; // @synthesize sourceViewForPresentation=_sourceViewForPresentation;
 @property(readonly, nonatomic) NSMutableArray *appearanceObservers; // @synthesize appearanceObservers=_appearanceObservers;
 @property(readonly, nonatomic) id <SVVideoVisibilityManager> visibilityManager; // @synthesize visibilityManager=_visibilityManager;
 @property(nonatomic) __weak id <SVVideoViewControllerControlsVisibilityDelegate> controlsVisibilityDelegate; // @synthesize controlsVisibilityDelegate=_controlsVisibilityDelegate;
 @property(nonatomic) __weak id <SVVideoViewControllerFullscreenPresentationDelegate> fullscreenPresentationDelegate; // @synthesize fullscreenPresentationDelegate=_fullscreenPresentationDelegate;
-- (void).cxx_destruct;
 - (void)playerViewController:(id)arg1 willTransitionToVisibilityOfPlaybackControls:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (id)playerViewController:(id)arg1 targetViewForDismissalAnimationWithProposedTargetView:(id)arg2;
 - (void)playerViewController:(id)arg1 willEndFullScreenPresentationWithAnimationCoordinator:(id)arg2;

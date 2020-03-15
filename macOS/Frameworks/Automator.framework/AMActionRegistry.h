@@ -25,6 +25,7 @@
 
 + (id)sharedActionRegistry;
 + (void)rebuildCache;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldFilterActions; // @synthesize shouldFilterActions=_shouldFilterActions;
 @property(retain) NSMutableArray *internalConversionActions; // @synthesize internalConversionActions=_internalConversionActions;
 @property(retain) NSMutableArray *applicationDefinitionActions; // @synthesize applicationDefinitionActions=_applicationDefinitionActions;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) AMApplicationDefinition *applicationDefinitionAsActionFilter; // @synthesize applicationDefinitionAsActionFilter=_applicationDefinitionAsActionFilter;
 @property(retain) NSMutableArray *cachesInResolutionOrder; // @synthesize cachesInResolutionOrder=_cachesInResolutionOrder;
 @property(retain) NSMutableArray *customActions; // @synthesize customActions=_customActions;
-- (void).cxx_destruct;
 - (id)actionNamesWithBundleIdentifiers:(id)arg1;
 @property(readonly, nonatomic) BOOL isFilteringActions;
 - (id)dateAddedForActionWithBundleIdentifier:(id)arg1;

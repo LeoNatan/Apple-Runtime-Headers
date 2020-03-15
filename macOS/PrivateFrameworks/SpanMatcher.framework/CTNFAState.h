@@ -15,8 +15,8 @@
     BOOL _final;
 }
 
-@property(nonatomic) BOOL final; // @synthesize final=_final;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL final; // @synthesize final=_final;
 - (id)description;
 - (id)followingStatesWithSymbol:(id)arg1;
 - (id)edges;

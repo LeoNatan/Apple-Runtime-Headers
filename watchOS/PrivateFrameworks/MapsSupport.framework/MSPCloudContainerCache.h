@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *cachedTombstoneRecords; // @synthesize cachedTombstoneRecords=_cachedTombstoneRecords;
 @property(retain, nonatomic) NSDictionary *cachedRecords; // @synthesize cachedRecords=_cachedRecords;
 @property(retain, nonatomic) NSMutableSet *stagedTombstones; // @synthesize stagedTombstones=_stagedTombstones;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *cacheName; // @synthesize cacheName=_cacheName;
 @property(retain, nonatomic) CKServerChangeToken *serverToken; // @synthesize serverToken=_serverToken;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

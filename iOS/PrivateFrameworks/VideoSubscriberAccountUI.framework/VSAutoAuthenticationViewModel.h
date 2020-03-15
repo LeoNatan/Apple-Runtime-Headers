@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSString *_manualSignInButtonText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *manualSignInButtonText; // @synthesize manualSignInButtonText=_manualSignInButtonText;
 @property(copy, nonatomic) NSString *manualSignInTitle; // @synthesize manualSignInTitle=_manualSignInTitle;
 @property(copy, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
 @property(copy, nonatomic) NSString *messageTitle; // @synthesize messageTitle=_messageTitle;
 @property(nonatomic) __weak id <VSAutoAuthenticationViewModelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)configureWithRequest:(id)arg1;
 - (void)didSelectManualSignInButton;
 - (id)init;

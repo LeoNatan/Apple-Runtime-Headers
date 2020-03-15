@@ -21,13 +21,13 @@
 }
 
 + (Class)accountClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSRemoteNotifier *remoteNotifier; // @synthesize remoteNotifier=_remoteNotifier;
 @property(nonatomic) __weak id changeObserver; // @synthesize changeObserver=_changeObserver;
 @property(retain, nonatomic) NSOperationQueue *keychainQueue; // @synthesize keychainQueue=_keychainQueue;
 @property(retain, nonatomic) VSKeychainEditingContext *keychainEditingContext; // @synthesize keychainEditingContext=_keychainEditingContext;
 @property BOOL needsUpdateCachedFirstAccount; // @synthesize needsUpdateCachedFirstAccount=_needsUpdateCachedFirstAccount;
 @property(retain) VSAccount *cachedFirstAccount; // @synthesize cachedFirstAccount=_cachedFirstAccount;
-- (void).cxx_destruct;
 - (void)removeAccounts:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)saveAccounts:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_insertAccount:(id)arg1 inContext:(id)arg2;
@@ -39,7 +39,7 @@
 - (BOOL)isFirstAccountLoaded;
 @property(retain, nonatomic) NSUndoManager *undoManager;
 - (id)_keychainItemsWithLimit:(unsigned long long)arg1;
-- (id)_accountForKeychainItem:(id)arg1;
+- (id)_accountForKeychainItem:(id)arg1 simulateExpiredToken:(BOOL)arg2;
 - (void)_sendRemoteNotification;
 - (void)_sendLocalNotification;
 - (void)remoteNotifier:(id)arg1 didReceiveRemoteNotificationWithUserInfo:(id)arg2;

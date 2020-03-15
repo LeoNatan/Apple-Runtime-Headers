@@ -19,11 +19,11 @@
     long long _dateZoom;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long dateZoom; // @synthesize dateZoom=_dateZoom;
 @property(nonatomic) __weak id <HKGraphViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <HKGraphViewDelegate> graphViewDelegateProxy; // @synthesize graphViewDelegateProxy=_graphViewDelegateProxy;
 @property(readonly, nonatomic) HKGraphView *graphView; // @synthesize graphView=_graphView;
-- (void).cxx_destruct;
 - (void)graphView:(id)arg1 startupTime:(long long)arg2;
 - (void)graphViewDidTapYAxis:(id)arg1;
 - (void)graphView:(id)arg1 didUpdateLegendViewsWithTopLegendFrame:(struct CGRect)arg2;

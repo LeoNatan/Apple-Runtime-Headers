@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDate *_dateForSorting;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *dateForSorting; // @synthesize dateForSorting=_dateForSorting;
 @property(copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)description;
 @property(nonatomic) unsigned long long userOrder;
 

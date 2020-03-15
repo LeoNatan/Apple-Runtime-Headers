@@ -21,10 +21,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned long long)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(copy) HMBShareInvitation *pendingInvitation; // @synthesize pendingInvitation=_pendingInvitation;
 @property(readonly, copy) CKShareParticipant *ckShareParticipant; // @synthesize ckShareParticipant=_ckShareParticipant;
 @property(readonly, copy) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

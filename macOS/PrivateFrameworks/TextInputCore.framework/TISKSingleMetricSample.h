@@ -17,8 +17,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)makeMetric;
-@property(retain, nonatomic) NSMutableArray *samples; // @synthesize samples=_samples;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *samples; // @synthesize samples=_samples;
 - (id)generateDataForSR:(id)arg1 dropSampleSize:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

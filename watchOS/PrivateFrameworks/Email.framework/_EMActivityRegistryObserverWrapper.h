@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     id <EMActivityObserver> _observer;
 }
 
+- (void).cxx_destruct;
 @property __weak id <EMActivityObserver> observer; // @synthesize observer=_observer;
 @property __weak EMActivityRegistry *registry; // @synthesize registry=_registry;
 @property(retain) EMRemoteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)removedActivityWithID:(id)arg1;
 - (void)activityWithID:(id)arg1 finishedWithError:(id)arg2;
 - (void)activityWithID:(id)arg1 setCompletedCount:(id)arg2 totalCount:(id)arg3;

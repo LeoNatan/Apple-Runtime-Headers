@@ -18,12 +18,12 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(nonatomic) unsigned long long bytesPerImage; // @synthesize bytesPerImage=_bytesPerImage;
 @property(nonatomic) unsigned long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
 @property(retain, nonatomic) id <TXRBuffer> buffer; // @synthesize buffer=_buffer;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
-- (void).cxx_destruct;
 
 @end
 

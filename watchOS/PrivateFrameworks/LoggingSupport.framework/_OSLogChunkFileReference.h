@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _xet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long xattrEndTime; // @synthesize xattrEndTime=_xet;
 @property(readonly, nonatomic) unsigned long long xattrOldestTime; // @synthesize xattrOldestTime=_xot;
 @property(readonly, nonatomic) char *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)copyMappedChunkFile:(id *)arg1;
 - (_Bool)readXattrForTimespan:(id *)arg1;
 - (void)dealloc;

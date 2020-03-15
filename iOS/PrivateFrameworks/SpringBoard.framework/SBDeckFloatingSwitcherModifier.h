@@ -17,8 +17,8 @@
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
 }
 
-@property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBFluidSwitcherScrollProvidingDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 - (void)_applyPrototypeSettings;
 - (unsigned long long)_numberOfItems;
 - (struct CGRect)_frameWithScaleAppliedForIndex:(unsigned long long)arg1 withCardSize:(struct CGSize)arg2 contentOffset:(struct CGPoint)arg3 contentSize:(struct CGSize)arg4 contentInsets:(struct UIEdgeInsets)arg5 switcherViewBounds:(struct CGRect)arg6;

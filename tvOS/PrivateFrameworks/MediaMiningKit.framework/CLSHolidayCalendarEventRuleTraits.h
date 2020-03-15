@@ -17,12 +17,12 @@
     NSSet *_categories;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *categories; // @synthesize categories=_categories;
 @property(nonatomic) unsigned long long locationTrait; // @synthesize locationTrait=_locationTrait;
 @property(nonatomic) unsigned long long peopleTrait; // @synthesize peopleTrait=_peopleTrait;
 @property(nonatomic) unsigned long long numberOfPeople; // @synthesize numberOfPeople=_numberOfPeople;
 @property(nonatomic) _Bool containsMePerson; // @synthesize containsMePerson=_containsMePerson;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

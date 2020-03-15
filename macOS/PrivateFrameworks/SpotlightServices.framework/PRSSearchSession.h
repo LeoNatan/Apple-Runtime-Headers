@@ -34,6 +34,7 @@
 
 + (id)currentInputMethod;
 + (id)currentKeyboardLayout;
+- (void).cxx_destruct;
 @property double retryAfter; // @synthesize retryAfter=_retryAfter;
 @property(retain) NSObject<OS_dispatch_source> *quiescenceTimer; // @synthesize quiescenceTimer=_quiescenceTimer;
 @property BOOL configuredSession; // @synthesize configuredSession=_configuredSession;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSArray *supportedServices; // @synthesize supportedServices=_supportedServices;
 @property(nonatomic) double sessionStartTime; // @synthesize sessionStartTime=_sessionStartTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL disableAsTypedSuggestion;
 @property(readonly, nonatomic) SSPlistDataReader *cannedCEPValues;
 - (void)shrinkCaches;

@@ -14,9 +14,9 @@
     PKExtensionProvider *_provider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PKExtensionProvider *provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (void)beginRemoteViewControllerExtensionServiceWithInputItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSString *extensionPointIdentifier;

@@ -21,9 +21,9 @@
 + (void)debugSetContext:(id)arg1;
 + (id)transformArray:(id)arg1 withTargetIndex:(unsigned long long)arg2 maximumDistance:(unsigned long long)arg3;
 + (id)withTarget:(id)arg1 maxDistance:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maxDistance; // @synthesize maxDistance=_maxDistance;
 @property(retain, nonatomic) NSString *targetString; // @synthesize targetString=_targetString;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToTokenDistanceMappingTransformer:(id)arg1;

@@ -12,9 +12,9 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (id)init;
 

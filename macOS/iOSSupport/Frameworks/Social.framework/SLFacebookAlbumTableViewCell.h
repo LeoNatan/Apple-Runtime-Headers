@@ -13,8 +13,8 @@
     NSString *_albumIdentifier;
 }
 
-@property(retain) NSString *albumIdentifier; // @synthesize albumIdentifier=_albumIdentifier;
 - (void).cxx_destruct;
+@property(retain) NSString *albumIdentifier; // @synthesize albumIdentifier=_albumIdentifier;
 
 @end
 

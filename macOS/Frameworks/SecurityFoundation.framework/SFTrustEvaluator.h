@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL trustSystemAnchorCertificates; // @synthesize trustSystemAnchorCertificates=_trustSystemAnchorCertificates;
 @property(nonatomic) BOOL allowCertificateFetching; // @synthesize allowCertificateFetching=_allowCertificateFetching;
 @property(copy, nonatomic) NSArray *applicationAnchorCertificates; // @synthesize applicationAnchorCertificates=_applicationAnchorCertificates;
 @property(copy, nonatomic) SFRevocationPolicy *revocationPolicy; // @synthesize revocationPolicy=_revocationPolicy;
 @property(copy, nonatomic) SFTrustPolicy *trustPolicy; // @synthesize trustPolicy=_trustPolicy;
-- (void).cxx_destruct;
 - (void)evaluateCertificateChain:(id)arg1 forDate:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

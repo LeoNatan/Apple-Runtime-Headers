@@ -21,10 +21,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NEProxySettings *proxySettings; // @synthesize proxySettings=_proxySettings;
 @property(copy) NEDNSSettings *DNSSettings; // @synthesize DNSSettings=_DNSSettings;
 @property(readonly) NSString *tunnelRemoteAddress; // @synthesize tunnelRemoteAddress=_tunnelRemoteAddress;
-- (void).cxx_destruct;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (_Bool)checkValidityAndCollectErrors:(id)arg1;

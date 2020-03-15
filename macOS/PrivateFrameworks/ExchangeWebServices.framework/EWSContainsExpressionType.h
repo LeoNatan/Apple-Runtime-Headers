@@ -19,11 +19,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSBasePathToElementType *Path; // @synthesize Path=_Path;
 @property(nonatomic) long long ContainmentMode; // @synthesize ContainmentMode=_ContainmentMode;
 @property(nonatomic) long long ContainmentComparison; // @synthesize ContainmentComparison=_ContainmentComparison;
 @property(retain, nonatomic) EWSConstantValueType *Constant; // @synthesize Constant=_Constant;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

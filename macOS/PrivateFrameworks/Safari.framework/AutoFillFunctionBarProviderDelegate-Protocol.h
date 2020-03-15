@@ -13,7 +13,7 @@
 @optional
 - (BOOL)isAwaitingBiometricAuthentication;
 - (BOOL)isTextFieldFocused;
-- (void)functionBarProvider:(AutoFillFunctionBarProvider *)arg1 didSelectCompletionListItem:(struct CompletionListItem *)arg2;
+-     // Error parsing type: v32@0:8@"AutoFillFunctionBarProvider"16^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}24, name: functionBarProvider:didSelectCompletionListItem:
 - (void)showFunctionBarForProvider:(AutoFillFunctionBarProvider *)arg1;
 - (void)hideFunctionBarForProvider:(AutoFillFunctionBarProvider *)arg1;
 @end

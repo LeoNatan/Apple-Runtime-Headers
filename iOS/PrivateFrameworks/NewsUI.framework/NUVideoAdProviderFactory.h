@@ -22,6 +22,7 @@
     id <SVModalPresentationViewControllerProviding> _modalPresentationViewControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVModalPresentationViewControllerProviding> modalPresentationViewControllerProvider; // @synthesize modalPresentationViewControllerProvider=_modalPresentationViewControllerProvider;
 @property(readonly, nonatomic) id <NUVideoPlaybackCounter> playbackCounter; // @synthesize playbackCounter=_playbackCounter;
 @property(readonly, nonatomic) id <SXVASTAnalyticsEventInfoFactory> analyticsEventInfoFactory; // @synthesize analyticsEventInfoFactory=_analyticsEventInfoFactory;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) id <NUVideoAdEventTracker> eventTracker; // @synthesize eventTracker=_eventTracker;
 @property(readonly, copy, nonatomic) NSArray *contextProviders; // @synthesize contextProviders=_contextProviders;
 @property(readonly, nonatomic) id <NUAdProvider> adProvider; // @synthesize adProvider=_adProvider;
-- (void).cxx_destruct;
 - (id)createVideoAdProviderWithContextProviderForVideoBefore:(id)arg1 contextProviderForVideoAfter:(id)arg2;
 - (id)initWithAdProvider:(id)arg1 contextProviders:(id)arg2 eventTracker:(id)arg3 videoPlayerVisibilityMonitor:(id)arg4 analyticsEventInfoFactory:(id)arg5 playbackCounter:(id)arg6 modalPresentationViewControllerProvider:(id)arg7;
 

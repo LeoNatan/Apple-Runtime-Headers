@@ -14,9 +14,9 @@
     NSPredicate *_predicate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (id)_validateAndParseConfig:(id)arg1 forKey:(id)arg2;
 - (id)initWithConfig:(id)arg1;
 

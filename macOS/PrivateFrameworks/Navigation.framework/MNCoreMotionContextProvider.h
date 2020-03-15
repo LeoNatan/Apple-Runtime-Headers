@@ -18,8 +18,8 @@
     MNTraceRecorder *_traceRecorder;
 }
 
-@property(nonatomic) __weak id <GEOMotionContextProviderDelegate> motionDelegate; // @synthesize motionDelegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GEOMotionContextProviderDelegate> motionDelegate; // @synthesize motionDelegate=_delegate;
 - (void)stopMotionUpdates;
 - (void)startMotionUpdates;
 - (void)dealloc;

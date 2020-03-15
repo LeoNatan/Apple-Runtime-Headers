@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_buttonFont:(unsigned long long)arg1;
 + (id)_font:(unsigned long long)arg1;
-@property(readonly, nonatomic) MKButtonWithTargetArgument *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MKButtonWithTargetArgument *button; // @synthesize button=_button;
 - (id)multilineTextFieldsWithinContainer;
 @property(copy, nonatomic) NSString *text;
 - (id)initWithType:(unsigned long long)arg1 extraSpacing:(BOOL)arg2 reuseIdentifier:(id)arg3;

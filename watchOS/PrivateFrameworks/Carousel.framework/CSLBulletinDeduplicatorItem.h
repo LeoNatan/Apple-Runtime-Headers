@@ -26,6 +26,7 @@
     unsigned int _unFiredFeedLocal;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int unFiredFeedLocal; // @synthesize unFiredFeedLocal=_unFiredFeedLocal;
 @property(nonatomic) _Bool OKToFire; // @synthesize OKToFire=_OKToFire;
 @property(readonly, copy, nonatomic) NSDate *createdDate; // @synthesize createdDate=_createdDate;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *universalSectionID; // @synthesize universalSectionID=_universalSectionID;
 @property(retain, nonatomic) CSLBulletin *mirroredBulletin; // @synthesize mirroredBulletin=_mirroredBulletin;
 @property(retain, nonatomic) CSLBulletin *localBulletin; // @synthesize localBulletin=_localBulletin;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSDate *expiryDate;
 - (void)resetDate;

@@ -22,6 +22,7 @@
 
 + (struct UIEdgeInsets)separatorInsetForContentSizeCategory:(id)arg1;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *foregroundViewBottomAnchorLayoutConstraint; // @synthesize foregroundViewBottomAnchorLayoutConstraint=_foregroundViewBottomAnchorLayoutConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *foregroundViewTopAnchorLayoutConstraint; // @synthesize foregroundViewTopAnchorLayoutConstraint=_foregroundViewTopAnchorLayoutConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *foregroundViewTrailingAnchorLayoutConstraint; // @synthesize foregroundViewTrailingAnchorLayoutConstraint=_foregroundViewTrailingAnchorLayoutConstraint;
@@ -30,7 +31,6 @@
 @property(nonatomic, getter=isConstraintsLoaded) _Bool constraintsLoaded; // @synthesize constraintsLoaded=_constraintsLoaded;
 @property(nonatomic, getter=isAccessiblityConstraintsEnabled) _Bool accessiblityConstraintsEnabled; // @synthesize accessiblityConstraintsEnabled=_accessiblityConstraintsEnabled;
 @property(retain, nonatomic) UIView *foregroundView; // @synthesize foregroundView=_foregroundView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) struct UIEdgeInsets intrinsicSeparatorInset;

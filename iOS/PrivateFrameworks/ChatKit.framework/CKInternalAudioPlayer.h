@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
     id <CKInternalAudioPlayerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CKInternalAudioPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long playerType; // @synthesize playerType=_playerType;
-- (void).cxx_destruct;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
 - (void)_notifyPlayerDidPrepareAudioFileSuccessfully:(_Bool)arg1;
 - (void)_notifyPlayerDidFinishSuccessfully:(_Bool)arg1;

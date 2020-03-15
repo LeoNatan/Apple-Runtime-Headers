@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_requests;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *requests; // @synthesize requests=_requests;
 @property(retain, nonatomic) TVHKStoreVideoCreditsOperation *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

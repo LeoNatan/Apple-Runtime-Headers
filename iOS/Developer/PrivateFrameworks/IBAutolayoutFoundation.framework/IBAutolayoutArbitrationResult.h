@@ -19,11 +19,11 @@
     NSString *_engineDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *engineDescription; // @synthesize engineDescription=_engineDescription;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) id <IBCollection> constraintsToRemove; // @synthesize constraintsToRemove=_constraintsToRemove;
 @property(readonly, nonatomic) id <IBCollection> constraintsToAdd; // @synthesize constraintsToAdd=_constraintsToAdd;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic, getter=isErrorResult) _Bool errorResult;
 - (void)encodeWithBinaryArchiver:(id)arg1;

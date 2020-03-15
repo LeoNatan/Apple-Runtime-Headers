@@ -19,11 +19,11 @@
 }
 
 + (id)valueWithInputName:(id)arg1 identifier:(id)arg2 isHidden:(BOOL)arg3 isSelected:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isSelected; // @synthesize isSelected=_isSelected;
 @property(readonly, nonatomic) BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

@@ -44,6 +44,7 @@
     NSDictionary *_otherInfo;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didChange; // @synthesize didChange=_didChange;
 @property(readonly, copy, nonatomic) NSDictionary *otherInfo; // @synthesize otherInfo=_otherInfo;
 @property(nonatomic) BOOL addInvitationAttachmentToCalendar; // @synthesize addInvitationAttachmentToCalendar=_addInvitationAttachmentToCalendar;
@@ -51,7 +52,6 @@
 @property(nonatomic) BOOL isDefaultRule; // @synthesize isDefaultRule=_isDefaultRule;
 @property(nonatomic) BOOL isSafeToMarkAsNotJunkRule; // @synthesize isSafeToMarkAsNotJunkRule=_isSafeToMarkAsNotJunkRule;
 @property(nonatomic) BOOL isJunkMailRule; // @synthesize isJunkMailRule=_isJunkMailRule;
-- (void).cxx_destruct;
 - (id)objectSpecifier;
 - (void)performCustomRuleActionOnMessages:(id)arg1;
 - (BOOL)isEqualToRule:(id)arg1;

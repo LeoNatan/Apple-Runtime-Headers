@@ -21,13 +21,13 @@
 }
 
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFTimer *lostConnectionTimer; // @synthesize lostConnectionTimer=_lostConnectionTimer;
 @property(readonly, nonatomic) NSOperationQueue *transactionOperationQueue; // @synthesize transactionOperationQueue=_transactionOperationQueue;
 @property(readonly, nonatomic) NSMutableArray *receiveMessageRequests; // @synthesize receiveMessageRequests=_receiveMessageRequests;
 @property(readonly, nonatomic) NSOperationQueue *requestOperationQueue; // @synthesize requestOperationQueue=_requestOperationQueue;
 @property(retain, nonatomic) HMFHTTPClientConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) HMDHTTPDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)_reallySendMessage:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)sendMessage:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)dequeueRequest;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_unenumeratedDescendantsQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *unenumeratedDescendantsQueue; // @synthesize unenumeratedDescendantsQueue=_unenumeratedDescendantsQueue;
 @property(retain) NSEnumerator *innerEnumerator; // @synthesize innerEnumerator=_innerEnumerator;
-- (void).cxx_destruct;
 - (id)nextObject;
 - (id)initWithElementSnapshot:(id)arg1;
 

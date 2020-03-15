@@ -23,6 +23,7 @@
 
 + (id)recordForInvalidationRequest:(id)arg1;
 + (id)recordForDictionary:(id)arg1 keys:(const CDStruct_0a6492a9 *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reasonOverride; // @synthesize reasonOverride=_reasonOverride;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) DNDSModeAssertionSourceRecord *source; // @synthesize source=_source;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSNumber *requestDate; // @synthesize requestDate=_requestDate;
 @property(retain, nonatomic) DNDSModeAssertionInvalidationPredicateRecord *predicate; // @synthesize predicate=_predicate;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)object;
 - (id)dictionaryWithKeys:(const CDStruct_0a6492a9 *)arg1 options:(unsigned long long)arg2;
 

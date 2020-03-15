@@ -16,11 +16,11 @@
     NSArray *_labelNames;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *labelNames; // @synthesize labelNames=_labelNames;
 @property(retain) NSString *coordinatesFeatureName; // @synthesize coordinatesFeatureName=_coordinatesFeatureName;
 @property(retain) NSString *confidenceFeatureName; // @synthesize confidenceFeatureName=_confidenceFeatureName;
 @property int format; // @synthesize format=_format;
-- (void).cxx_destruct;
 
 @end
 

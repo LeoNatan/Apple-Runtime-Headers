@@ -16,11 +16,11 @@
     double _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) NSString *lastTitle; // @synthesize lastTitle=_lastTitle;
 @property(copy, nonatomic) NSString *currentTitle; // @synthesize currentTitle=_currentTitle;
 @property(copy, nonatomic) NSString *firstTitle; // @synthesize firstTitle=_firstTitle;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

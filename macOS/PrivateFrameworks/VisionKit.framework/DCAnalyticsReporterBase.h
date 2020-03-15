@@ -17,8 +17,8 @@
 + (double)roundDoubleValue:(double)arg1;
 + (id)instrumentationDomainForKey:(id)arg1;
 + (id)instrumentationKeyForKey:(id)arg1;
-@property(nonatomic) __weak id <DCAnalyticsReporterAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <DCAnalyticsReporterAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (id)whitelistedKeysForAccessibility;
 - (void)setAXVariantValueIfNecessary:(long long)arg1 forKey:(id)arg2;
 - (void)addAXVariantValueIfNecessary:(long long)arg1 forKey:(id)arg2 withSignature:(id)arg3;

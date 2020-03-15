@@ -71,6 +71,7 @@
 + (Class)classForToolbarButton;
 + (Class)classForNavigationButton;
 + (void)_getSystemItemStyle:(long long *)arg1 title:(id *)arg2 image:(id *)arg3 selectedImage:(id *)arg4 action:(SEL *)arg5 forBarStyle:(long long)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(long long)arg9 usingItemStyle:(long long)arg10;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL groupRepresentative; // @synthesize groupRepresentative=_groupRepresentative;
 @property(readonly, nonatomic) __weak UIBarButtonItemGroup *buttonGroup; // @synthesize buttonGroup=_buttonGroup;
 @property(readonly, nonatomic) BOOL _needsViewUpdateForLetterpressImage; // @synthesize _needsViewUpdateForLetterpressImage=__needsViewUpdateForLetterpressImage;
@@ -92,7 +93,6 @@
 @property(nonatomic, setter=_setToolbarCharge:) double _toolbarCharge; // @synthesize _toolbarCharge;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) SEL action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (struct UIOffset)backButtonTitlePositionAdjustmentForBarMetrics:(long long)arg1;
 - (void)setBackButtonTitlePositionAdjustment:(struct UIOffset)arg1 forBarMetrics:(long long)arg2;
 - (double)backButtonBackgroundVerticalPositionAdjustmentForBarMetrics:(long long)arg1;

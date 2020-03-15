@@ -15,8 +15,8 @@
 
 + (id)sharedAccountStore;
 + (id)accountStoreForStoreClient:(id)arg1;
-@property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
+@property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void)getTouchIDStateForAccount:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)setTouchIDStateForAccount:(id)arg1 state:(long long)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)updatePasswordSettings:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

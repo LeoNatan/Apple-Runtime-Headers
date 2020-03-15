@@ -26,6 +26,7 @@
 }
 
 + (BOOL)shouldShowConfigurationOnInsertionOfVariable:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFVariableConfigurationView *configurationView; // @synthesize configurationView=_configurationView;
 @property(readonly, nonatomic) WFVariableConfigurationAccessoryView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL showsAccessoryActions; // @synthesize showsAccessoryActions=_showsAccessoryActions;
 @property(nonatomic) __weak id <WFVariableConfigurationResponderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIView *nextResponder; // @synthesize nextResponder=_nextResponder;
-- (void).cxx_destruct;
 - (void)updateAccessoryView;
 - (void)variableDidChange:(id)arg1;
 - (void)configurationViewController:(id)arg1 didUpdateVariable:(id)arg2;

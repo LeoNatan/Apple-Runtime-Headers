@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     SKUIDonationResultView *_resultView;
 }
 
-@property(copy, nonatomic) SKUIGiftAmount *donationAmount; // @synthesize donationAmount=_donationAmount;
 - (void).cxx_destruct;
+@property(copy, nonatomic) SKUIGiftAmount *donationAmount; // @synthesize donationAmount=_donationAmount;
 - (void)_doneButtonAction:(id)arg1;
 - (void)donationConfigurationController:(id)arg1 didLoadLogoForCharity:(id)arg2;
 - (void)loadView;

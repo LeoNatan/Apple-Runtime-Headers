@@ -15,10 +15,10 @@
     NSString *_text;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *text; // @synthesize text=_text;
 @property(readonly) NSString *headword; // @synthesize headword=_headword;
 @property(readonly) NSString *speechAct; // @synthesize speechAct=_speechAct;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long type;
 - (id)description;
 - (unsigned long long)hash;

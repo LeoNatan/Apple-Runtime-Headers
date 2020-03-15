@@ -19,12 +19,12 @@
 }
 
 + (BOOL)_isReachableWithFlags:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property BOOL active; // @synthesize active=_active;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property __weak id <SUOSUNetworkReachabilityMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property struct __SCNetworkReachability *target; // @synthesize target=_target;
 @property(retain) NSURL *targetURL; // @synthesize targetURL=_targetURL;
-- (void).cxx_destruct;
 - (void)_reachabilityChangedWithTarget:(struct __SCNetworkReachability *)arg1 flags:(unsigned int)arg2;
 - (BOOL)_sendHTTPHeadRequestToTargetURL;
 - (void)stopMonitoring;

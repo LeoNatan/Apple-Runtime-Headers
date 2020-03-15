@@ -20,13 +20,13 @@
 
 + (void)performFinishedForTask:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stopBlock; // @synthesize stopBlock=_stopBlock;
 @property(copy, nonatomic) CDUnknownBlockType performBlock; // @synthesize performBlock=_performBlock;
 @property(nonatomic) _Bool async; // @synthesize async=_async;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_handleTimerFiredWithAbsoluteTime:(unsigned long long)arg1;
 - (void)_setEnabled:(_Bool)arg1;
 - (void)_stop;

@@ -14,8 +14,8 @@
     INIntentSlotDescription *_slotDescription;
 }
 
-@property(readonly, nonatomic) INIntentSlotDescription *slotDescription; // @synthesize slotDescription=_slotDescription;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) INIntentSlotDescription *slotDescription; // @synthesize slotDescription=_slotDescription;
 - (BOOL)alwaysShowsButton;
 - (id)localizedLabelForPossibleState:(id)arg1;
 - (id)possibleStates;

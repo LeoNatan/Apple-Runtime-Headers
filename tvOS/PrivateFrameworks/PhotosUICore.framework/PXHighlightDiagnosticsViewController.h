@@ -92,12 +92,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *hostViewDiagnosticDescription; // @synthesize hostViewDiagnosticDescription=_hostViewDiagnosticDescription;
 @property(copy, nonatomic) NSString *hostLayoutDiagnosticDescription; // @synthesize hostLayoutDiagnosticDescription=_hostLayoutDiagnosticDescription;
 @property(nonatomic) _Bool shouldPresentTapToRadar; // @synthesize shouldPresentTapToRadar=_shouldPresentTapToRadar;
 @property(nonatomic) long long currentCurationType; // @synthesize currentCurationType=_currentCurationType;
 @property(nonatomic) _Bool initiallyShowCuration; // @synthesize initiallyShowCuration=_initiallyShowCuration;
-- (void).cxx_destruct;
 - (void)_requestHighlightCurationDebugInfoWithOptions:(id)arg1 setGlobally:(_Bool)arg2;
 - (id)_fullCurationDebugInformation;
 - (id)curationDebugInformationForCurationType:(long long)arg1;

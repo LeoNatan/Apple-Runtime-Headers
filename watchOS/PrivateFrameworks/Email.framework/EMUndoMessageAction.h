@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *individualActions; // @synthesize individualActions=_individualActions;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *individualActions; // @synthesize individualActions=_individualActions;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (int)signpostType;

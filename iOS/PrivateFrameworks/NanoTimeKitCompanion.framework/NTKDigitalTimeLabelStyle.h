@@ -24,8 +24,8 @@
 + (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(double)arg2 applyAdvanceFudge:(_Bool)arg3 withBaselineY:(double)arg4 forDevice:(id)arg5;
 + (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(double)arg2 applyAdvanceFudge:(_Bool)arg3 font:(id)arg4 forDevice:(id)arg5;
 + (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(double)arg2 applyAdvanceFudge:(_Bool)arg3 forDevice:(id)arg4;
-@property(retain, nonatomic) NTKLayoutRule *layoutRule; // @synthesize layoutRule=_layoutRule;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKLayoutRule *layoutRule; // @synthesize layoutRule=_layoutRule;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

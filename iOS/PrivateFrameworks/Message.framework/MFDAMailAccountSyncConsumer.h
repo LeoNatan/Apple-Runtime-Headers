@@ -29,10 +29,10 @@
     id <DAMailboxStreamingContentConsumer> _streamConsumer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool moreAvailable; // @synthesize moreAvailable=_moreAvailable;
 @property(retain, nonatomic) id <DAMailboxStreamingContentConsumer> streamConsumer; // @synthesize streamConsumer=_streamConsumer;
 @property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (_Bool)refreshFolderHierarchyAndWait:(unsigned long long)arg1;
 - (void)accountHierarchyChanged:(id)arg1;
 - (void)taskFailed:(id)arg1 statusCode:(long long)arg2 error:(id)arg3;

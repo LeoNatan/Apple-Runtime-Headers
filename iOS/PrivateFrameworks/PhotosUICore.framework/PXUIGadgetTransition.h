@@ -17,9 +17,9 @@
     id <PXGridPresentation> _gridPresentation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXGridPresentation> gridPresentation; // @synthesize gridPresentation=_gridPresentation;
 @property(readonly, nonatomic) PXOneUpPresentation *oneUpPresentation; // @synthesize oneUpPresentation=_oneUpPresentation;
-- (void).cxx_destruct;
 - (id)initWithOneUpPresentation:(id)arg1 gridPresentation:(id)arg2;
 
 // Remaining properties

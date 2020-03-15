@@ -17,9 +17,9 @@
 
 + (id)_highlightImageWithHeight:(double)arg1 alpha:(double)arg2;
 + (id)imageCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double highlightHeight; // @synthesize highlightHeight=_highlightHeight;
 @property(readonly, nonatomic) double highlightAlpha; // @synthesize highlightAlpha=_highlightAlpha;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 highlightAlpha:(double)arg2 highlightHeight:(double)arg3;
 

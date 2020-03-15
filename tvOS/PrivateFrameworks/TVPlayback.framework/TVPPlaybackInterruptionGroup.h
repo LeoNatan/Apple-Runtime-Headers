@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSHashTable *_interruptables;
 }
 
-@property(retain, nonatomic) NSHashTable *interruptables; // @synthesize interruptables=_interruptables;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *interruptables; // @synthesize interruptables=_interruptables;
 - (void)removeInterruptable:(id)arg1;
 - (void)addInterruptable:(id)arg1;
 - (void)interruptionDidEnd;

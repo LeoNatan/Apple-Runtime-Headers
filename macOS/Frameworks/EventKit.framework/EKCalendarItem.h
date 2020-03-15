@@ -59,6 +59,7 @@
 + (id)itemWithOccurrence:(id)arg1 createPartialBackingObject:(BOOL)arg2 eventStore:(id)arg3 preFrozenRelationshipObjects:(id)arg4;
 + (id)itemWithOccurrence:(id)arg1 createPartialBackingObject:(BOOL)arg2 eventStore:(id)arg3;
 + (Class)_classForOccurrence:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKRecurrenceIdentifier *recurrenceIdentifier; // @synthesize recurrenceIdentifier=_recurrenceIdentifier;
 @property(retain, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(retain, nonatomic) NSString *sharedUID; // @synthesize sharedUID=_sharedUID;
@@ -72,7 +73,6 @@
 @property(readonly, nonatomic) BOOL cachedHasAttendee; // @synthesize cachedHasAttendee;
 @property(readonly, nonatomic) BOOL cachedHasAttachment; // @synthesize cachedHasAttachment;
 @property(readonly, nonatomic) NSNumber *calendarItemPermissionNumber; // @synthesize calendarItemPermissionNumber;
-- (void).cxx_destruct;
 - (BOOL)_validateDeletable:(id *)arg1;
 - (BOOL)_validateDeletableInCalendarWithError:(id *)arg1;
 - (BOOL)_validateDeletableBySharedCalendarShareeWithError:(id *)arg1;

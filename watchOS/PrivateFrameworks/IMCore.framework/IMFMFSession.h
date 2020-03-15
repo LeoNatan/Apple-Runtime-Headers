@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int fmfProvisionedState; // @synthesize fmfProvisionedState=_fmfProvisionedState;
 @property(retain, nonatomic) NSString *establishingAccountID; // @synthesize establishingAccountID=_establishingAccountID;
-- (void).cxx_destruct;
 - (void)_postNotification:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)_stopSharingWithFMFHandles:(id)arg1 inChat:(id)arg2;
 - (void)_startSharingWithFMFHandles:(id)arg1 inChat:(id)arg2 untilDate:(id)arg3;

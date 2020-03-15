@@ -13,8 +13,8 @@
     WFGlyphView *_glyphView;
 }
 
-@property(nonatomic) __weak WFGlyphView *glyphView; // @synthesize glyphView=_glyphView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFGlyphView *glyphView; // @synthesize glyphView=_glyphView;
 - (id)accessibilityLabel;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;

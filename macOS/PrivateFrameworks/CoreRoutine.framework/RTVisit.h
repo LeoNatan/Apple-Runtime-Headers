@@ -25,6 +25,7 @@
 + (BOOL)supportsSecureCoding;
 + (long long)visitIncidentTypeFromString:(id)arg1;
 + (id)stringFromVisitIncidentType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long dataPointCount; // @synthesize dataPointCount=_dataPointCount;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, copy, nonatomic) NSDate *exit; // @synthesize exit=_exit;
@@ -32,7 +33,6 @@
 @property(readonly, copy, nonatomic) RTLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToVisit:(id)arg1;

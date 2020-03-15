@@ -16,9 +16,9 @@
     WFPDFDocument *_document;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFPDFDocument *document; // @synthesize document=_document;
 @property(readonly, nonatomic) struct CGPDFPage *pageRef; // @synthesize pageRef=_pageRef;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *text;
 @property(readonly, nonatomic) WFPDFContentStream *contentStream; // @synthesize contentStream=_contentStream;
 @property(readonly, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;

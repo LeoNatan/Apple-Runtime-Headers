@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSURL *_fileURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) __weak id <FileChangeObserverClient> client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)stopObserving;
 - (void)startObservingOnMainQueue;
 - (void)dealloc;

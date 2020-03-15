@@ -16,11 +16,11 @@
     struct CGSize _offset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize offset; // @synthesize offset=_offset;
 @property(nonatomic) double radius; // @synthesize radius=_radius;
 @property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (id)initWithColor:(id)arg1 radius:(double)arg2 offset:(struct CGSize)arg3 scale:(double)arg4;
 
 @end

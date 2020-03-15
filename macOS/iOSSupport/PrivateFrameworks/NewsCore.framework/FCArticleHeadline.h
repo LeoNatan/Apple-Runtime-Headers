@@ -96,6 +96,7 @@
 + (BOOL)_fakeArticlesTimestamp;
 + (BOOL)_simulateTopStoriesBadges;
 + (BOOL)_forceArticlesToBeShownAsSponsored;
+- (void).cxx_destruct;
 @property(nonatomic) long long behaviorFlags; // @synthesize behaviorFlags=_behaviorFlags;
 @property(retain, nonatomic) FCInterestToken *articleInterestToken; // @synthesize articleInterestToken=_articleInterestToken;
 @property(retain, nonatomic) NTPBArticleRecord *articleRecord; // @synthesize articleRecord=_articleRecord;
@@ -195,7 +196,6 @@
 - (id)articleID;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (id)versionIdentifier;
-- (void).cxx_destruct;
 - (id)publisherID;
 @property(readonly, copy, nonatomic) NSString *stocksScoresJSON;
 @property(readonly, copy, nonatomic) NSString *stocksMetadataJSON;

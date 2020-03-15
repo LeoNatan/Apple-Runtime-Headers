@@ -16,10 +16,10 @@
     vector_2f7ba0dc _quasarPreItnTokens;
 }
 
-@property(readonly, nonatomic) vector_2f7ba0dc quasarPreItnTokens; // @synthesize quasarPreItnTokens=_quasarPreItnTokens;
-@property(readonly, nonatomic) vector_2f7ba0dc quasarTokens; // @synthesize quasarTokens=_quasarTokens;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) vector_2f7ba0dc quasarPreItnTokens; // @synthesize quasarPreItnTokens=_quasarPreItnTokens;
+@property(readonly, nonatomic) vector_2f7ba0dc quasarTokens; // @synthesize quasarTokens=_quasarTokens;
 @property(readonly, copy, nonatomic) NSArray *preITNTokens;
 @property(readonly, copy, nonatomic) NSArray *tokens;
 - (id)copyWithZone:(struct _NSZone *)arg1;

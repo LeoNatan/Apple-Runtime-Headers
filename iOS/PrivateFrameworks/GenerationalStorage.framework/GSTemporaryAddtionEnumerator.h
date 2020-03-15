@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _pos;
 }
 
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 - (id)nextObject;
 - (id)_nextURL;
 - (id)initWithStorage:(id)arg1 nameSpace:(id)arg2 withOptions:(unsigned long long)arg3 withoutOptions:(unsigned long long)arg4 ordering:(int)arg5;

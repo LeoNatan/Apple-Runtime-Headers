@@ -28,10 +28,10 @@
 + (_Bool)supportsAnchorBasedAuthorization;
 + (id)requiredEntitlements;
 + (Class)queryClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool includeAutomaticTimeZones; // @synthesize includeAutomaticTimeZones=_includeAutomaticTimeZones;
 @property(readonly, nonatomic) unsigned int limit; // @synthesize limit=_limit;
 @property(readonly, copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
-- (void).cxx_destruct;
 - (void)_queue_samplesWereRemovedWithAnchor:(id)arg1;
 - (_Bool)_queue_shouldAcceptUpdates;
 - (_Bool)_queue_shouldAccumulateUpdates;

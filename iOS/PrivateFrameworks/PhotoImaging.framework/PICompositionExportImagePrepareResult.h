@@ -14,9 +14,9 @@
     CDStruct_d58201db _inputSize;
 }
 
+- (void).cxx_destruct;
 @property CDStruct_912cb5d2 inputSize; // @synthesize inputSize=_inputSize;
 @property(retain) NUImageExportRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 
 @end
 

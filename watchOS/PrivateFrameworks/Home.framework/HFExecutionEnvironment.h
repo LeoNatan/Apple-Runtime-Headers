@@ -17,10 +17,10 @@
 
 + (id)stringForHFExecutionEnvironmentRunningState:(unsigned int)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) unsigned int runningState; // @synthesize runningState=_runningState;
-- (void).cxx_destruct;
 - (void)dispatchMessageToObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)executionEnvironmentDidEnterBackground;
 - (void)executionEnvironmentWillResignActive;

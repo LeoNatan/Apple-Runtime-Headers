@@ -19,10 +19,10 @@
 + (id)_nextTriggerForAlarm:(id)arg1 afterDate:(id)arg2;
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NTKNextAlarm *nextAlarm; // @synthesize nextAlarm=_nextAlarm;
 @property(retain) NTKTimelineEntryModel *currentAlarmModel; // @synthesize currentAlarmModel=_currentAlarmModel;
 @property(retain, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
-- (void).cxx_destruct;
 - (void)_alarmStoreChangedNotification:(id)arg1;
 - (void)_stopObserving;
 - (void)_startObserving;

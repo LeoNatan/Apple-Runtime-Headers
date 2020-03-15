@@ -38,6 +38,7 @@
     CDStruct_e83c9415 _trimTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setVitalityTimeoutDate:) NSDate *_vitalityTimeoutDate; // @synthesize _vitalityTimeoutDate=__vitalityTimeoutDate;
 @property(nonatomic, setter=_setShouldPrepareForHintWhenReady:) _Bool _shouldPrepareForHintWhenReady; // @synthesize _shouldPrepareForHintWhenReady=__shouldPrepareForHintWhenReady;
 @property(nonatomic, setter=_setShouldPlayVitalityWhenReady:) _Bool _shouldPlayVitalityWhenReady; // @synthesize _shouldPlayVitalityWhenReady=__shouldPlayVitalityWhenReady;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) ISLivePhotoVitalityFilter *vitalityFilter; // @synthesize vitalityFilter=_vitalityFilter;
 @property(nonatomic, getter=isHinting, setter=_setHinting:) _Bool hinting; // @synthesize hinting=_hinting;
 @property(nonatomic, getter=isPlayingVitality, setter=_setPlayingVitality:) _Bool playingVitality; // @synthesize playingVitality=_playingVitality;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (_Bool)vitalityBehaviorShouldEndPlayingAtPhoto:(id)arg1;
 - (void)vitalityBehaviorDidEndPlaying:(id)arg1;

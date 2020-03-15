@@ -24,13 +24,13 @@
 }
 
 + (long long)buttonStyle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic) NSString *iconSymbolName; // @synthesize iconSymbolName=_iconSymbolName;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) __weak id <TVSMModuleDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)contentModuleViewControllerDidRequestSystemDismissal:(id)arg1;
 - (void)contentModuleViewControllerDidRequestDismissal:(id)arg1;
 - (void)contentModuleViewControllerDidTriggerAction:(id)arg1;

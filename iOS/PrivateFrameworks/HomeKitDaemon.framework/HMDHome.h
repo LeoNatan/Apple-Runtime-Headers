@@ -116,6 +116,7 @@
     long long _lastSyncedConfigurationVersion;
     long long _expectedConfigurationVersion;
     NSString *_ownerName;
+    NSDate *_creationDate;
     HMDNotificationRegistry *_notificationRegistry;
     NSMutableSet *_heartbeatPingMessagesQueuedWithServer;
     NSMutableSet *_pendingResponsesForRemoteAccessSetup;
@@ -154,6 +155,7 @@
 + (_Bool)isObjectContainedInHome:(id)arg1;
 + (id)getBuiltinActionSets;
 + (void)_initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDMediaActionRouter *mediaActionRouter; // @synthesize mediaActionRouter=_mediaActionRouter;
 @property(retain, nonatomic) HMDHomeKitVersion *sharedHomeSourceVersion; // @synthesize sharedHomeSourceVersion=_sharedHomeSourceVersion;
 @property(readonly, nonatomic) HMDPredicateUtilities *predicateUtility; // @synthesize predicateUtility=_predicateUtility;
@@ -184,6 +186,7 @@
 @property(retain, nonatomic) NSMutableSet *heartbeatPingMessagesQueuedWithServer; // @synthesize heartbeatPingMessagesQueuedWithServer=_heartbeatPingMessagesQueuedWithServer;
 @property(nonatomic) _Bool remoteAccessIsEnabled; // @synthesize remoteAccessIsEnabled=_remoteAccessIsEnabled;
 @property(retain, nonatomic) HMDNotificationRegistry *notificationRegistry; // @synthesize notificationRegistry=_notificationRegistry;
+@property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) int regionState; // @synthesize regionState=_regionState;
 @property(retain, nonatomic) NSString *ownerName; // @synthesize ownerName=_ownerName;
 @property(nonatomic) long long expectedConfigurationVersion; // @synthesize expectedConfigurationVersion=_expectedConfigurationVersion;
@@ -245,7 +248,6 @@
 @property(retain, nonatomic) HMDAccessoryNetworkProtectionGroupRegistry *networkProtectionGroupRegistry; // @synthesize networkProtectionGroupRegistry=_networkProtectionGroupRegistry;
 @property(retain, nonatomic) NSArray *mediaSessionStates; // @synthesize mediaSessionStates=_mediaSessionStates;
 @property(retain, nonatomic) NSArray *mediaSessions; // @synthesize mediaSessions=_mediaSessions;
-- (void).cxx_destruct;
 @property(readonly) __weak HMDHome *home;
 - (void)_handleRemoteUserClientCloudShareRequest:(id)arg1;
 - (void)handleXPCConnectionInvalidated:(id)arg1;
@@ -257,10 +259,10 @@
 - (void)userAssistantAccessControlDidUpdate:(id)arg1 accessories:(id)arg2;
 @property(readonly, nonatomic) NSArray *hapAccessories;
 - (void)_handleMediaPropertiesWrite:(id)arg1;
-- (void)_handleWriteMediaProperties:(struct NSDictionary *)arg1 source:(unsigned long long)arg2 requestMessage:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_handleWriteMediaProperties:(id)arg1 source:(unsigned long long)arg2 requestMessage:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)redispatchMediaWriteRequests:(id)arg1 viaDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleMediaPropertiesRead:(id)arg1;
-- (void)_handleReadMediaProperties:(struct NSDictionary *)arg1 source:(unsigned long long)arg2 message:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_handleReadMediaProperties:(id)arg1 source:(unsigned long long)arg2 message:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)redispatchMediaReadRequests:(id)arg1 viaDevice:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)evaluateIfMediaPlaybackStateChanged:(id)arg1;
 - (void)removeMediaSessionState:(id)arg1;
@@ -435,9 +437,9 @@
 - (void)_readCharacteristicValues:(id)arg1 requestMessage:(id)arg2 source:(unsigned long long)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)readCharacteristicValues:(id)arg1 requestMessage:(id)arg2 source:(unsigned long long)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_redispatchReadForAccessories:(id)arg1 dispatchGroup:(id)arg2 requestMap:(id)arg3 requestMessage:(id)arg4 responseTuples:(id)arg5 errorResponseTuples:(id)arg6;
-- (void)_readCharacteristicValuesForAccessories:(id)arg1 readRequestMap:(id)arg2 responseTuples:(id)arg3 requestMessage:(id)arg4 viaDevice:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_readCharacteristicValuesForAccessories:(id)arg1 readRequestMap:(id)arg2 responseTuples:(id)arg3 requestMessage:(id)arg4 viaDevice:(id)arg5 logEventSession:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (id)_getLogEventsForOperation:(_Bool)arg1 accessories:(id)arg2 requestMap:(id)arg3 identifier:(id)arg4 source:(unsigned long long)arg5;
-- (void)readCharacteristicValues:(id)arg1 identifier:(id)arg2 isSPIEntitled:(_Bool)arg3 source:(unsigned long long)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
+- (void)readCharacteristicValues:(id)arg1 identifier:(id)arg2 isSPIEntitled:(_Bool)arg3 source:(unsigned long long)arg4 logEventSession:(id)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
 - (void)_performOperation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_shouldWaitForAccessoriesToBeReachable;
 - (id)writeRequestTuplesFromMessage:(id)arg1;
@@ -448,9 +450,9 @@
 - (void)_loadBalancedRedispatchForAccessories:(id)arg1 source:(unsigned long long)arg2 dispatchGroup:(id)arg3 writeRequestMap:(id)arg4 requestMessage:(id)arg5 responseTuples:(id)arg6;
 - (void)_addAccessoryToBalancedResidentMap:(id)arg1 residentDevice:(id)arg2 balancedResidentMap:(id)arg3;
 - (id)__residentDeviceForAccesory:(id)arg1 fromMap:(id)arg2;
-- (void)_writeCharacteristicValuesForAccessories:(id)arg1 writeRequestMap:(id)arg2 responseTuples:(id)arg3 requestMessage:(id)arg4 viaDevice:(id)arg5 source:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)_writeCharacteristicValuesForAccessories:(id)arg1 writeRequestMap:(id)arg2 responseTuples:(id)arg3 requestMessage:(id)arg4 viaDevice:(id)arg5 source:(unsigned long long)arg6 logEventSession:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (id)_applyDeviceLockCheck:(id)arg1 forSource:(unsigned long long)arg2;
-- (void)writeCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 identifier:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void)writeCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 identifier:(id)arg3 logEventSession:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (void)_notifyChangedCharacteristics:(id)arg1 identifier:(id)arg2 multiPartResponse:(_Bool)arg3 moreMessagesInMultipart:(_Bool)arg4 requestMessage:(id)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
 - (void)_sendClientCharacteristicsChangedNotification:(id)arg1 identifier:(id)arg2 entitledClientsOnly:(_Bool)arg3 multiPartResponse:(_Bool)arg4 moreMessagesInMultipart:(_Bool)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
 - (void)_updateBulletinBoardOfChangedCharacteristics:(id)arg1 changedByThisDevice:(_Bool)arg2 homePresence:(id)arg3;
@@ -822,14 +824,14 @@
 - (void)dealloc;
 - (void)unconfigure;
 - (id)initWithName:(id)arg1 uuid:(id)arg2 defaultRoomUUID:(id)arg3 owner:(id)arg4 homeManager:(id)arg5 presenceAuth:(id)arg6;
-- (struct NSDictionary *)firmwareUpdateBulletinContext;
+- (id)firmwareUpdateBulletinContext;
 @property(readonly, copy, nonatomic) NSUUID *contextSPIUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *contextID;
 - (id)actionWithDictionaryRepresentation:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *mediaSystems;
 - (id)playbackArchiveWithSessionIdentifier:(id)arg1;
 - (id)assistantObject;
-- (id)url;
+- (id)urlString;
 - (id)assistantUniqueIdentifier;
 - (void)evaluateNetworkProtectionAndRouterManagement;
 - (_Bool)checkForNetworkRouterSupport:(unsigned long long)arg1 error:(id *)arg2;

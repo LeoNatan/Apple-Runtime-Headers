@@ -15,8 +15,8 @@
     id <GEOVenueIdentifier> _identifier;
 }
 
-@property(readonly, nonatomic) id <GEOVenueIdentifier> identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <GEOVenueIdentifier> identifier; // @synthesize identifier=_identifier;
 - (BOOL)applyToSearchParameters:(id)arg1 error:(id *)arg2;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;

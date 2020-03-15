@@ -13,8 +13,8 @@
     CTTelephonyNetworkInfo *_networkInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *radioAccessTechnology;
-- (void)dealloc;
 - (id)initWithCTTelephonyNetworkInfo:(id)arg1;
 - (id)init;
 

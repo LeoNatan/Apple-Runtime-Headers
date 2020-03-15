@@ -15,8 +15,8 @@
 }
 
 + (id)new;
-@property(readonly) NSURL *webpageURL; // @synthesize webpageURL=_webpageURL;
 - (void).cxx_destruct;
+@property(readonly) NSURL *webpageURL; // @synthesize webpageURL=_webpageURL;
 @property(getter=isEnabled) BOOL enabled;
 @property(readonly) NSURL *applicationURL;
 - (id)initWithWebpageURL:(id)arg1;

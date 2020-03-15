@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long warning; // @synthesize warning=_warning;
 @property(nonatomic) double secondsOffset; // @synthesize secondsOffset=_secondsOffset;
 @property(copy, nonatomic) AXPSignpostEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

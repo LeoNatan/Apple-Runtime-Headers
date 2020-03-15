@@ -18,11 +18,11 @@
     NSString *_adCreativeId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *adCreativeId; // @synthesize adCreativeId=_adCreativeId;
 @property(readonly, nonatomic) NSString *adLineId; // @synthesize adLineId=_adLineId;
 @property(readonly, nonatomic) NSString *adCampaignId; // @synthesize adCampaignId=_adCampaignId;
 @property(readonly, nonatomic) NSString *adImpressionIdentifier; // @synthesize adImpressionIdentifier=_adImpressionIdentifier;
-- (void).cxx_destruct;
 - (id)initWithAdImpressionIdentifier:(id)arg1 adCampaignId:(id)arg2 adLineId:(id)arg3 adCreativeId:(id)arg4;
 
 @end

@@ -26,6 +26,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float featuresL2norm; // @synthesize featuresL2norm=_featuresL2norm;
 @property(nonatomic) float featuresScaleFactor; // @synthesize featuresScaleFactor=_featuresScaleFactor;
 @property(retain, nonatomic) AWDProactiveModelFittingQuantizedSparseVector *sparseQuantizedFeatures; // @synthesize sparseQuantizedFeatures=_sparseQuantizedFeatures;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) AWDProactiveModelFittingSparseFloatVector *sparseFloatFeatures; // @synthesize sparseFloatFeatures=_sparseFloatFeatures;
 @property(retain, nonatomic) AWDProactiveModelFittingModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

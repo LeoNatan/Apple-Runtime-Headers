@@ -17,10 +17,10 @@
 
 + (id)restrictionsPasscodeEntryViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 + (id)restrictionsPasscodeEntryViewControllerGuarding:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) UIViewController *guardedViewController; // @synthesize guardedViewController=_guardedViewController;
 @property(retain, nonatomic) TVDigitEntryViewController *passcodeEntryViewController; // @synthesize passcodeEntryViewController=_passcodeEntryViewController;
-- (void).cxx_destruct;
 - (void)_handleFinishedWithResult:(id)arg1;
 - (void)_handleCancelled;
 - (void)setOverrideUserInterfaceStyle:(long long)arg1;

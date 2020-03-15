@@ -15,7 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)processGraphForRunNode:(id)arg1;
-- (void)_processRunGraph:(struct NSArray *)arg1;
+- (void)_processRunGraph:(id)arg1;
 @property long long qualityOfService;
 @property long long maxConcurrentRunNodeCount;
 - (id)init;

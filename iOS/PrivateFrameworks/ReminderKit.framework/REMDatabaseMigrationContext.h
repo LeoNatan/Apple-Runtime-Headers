@@ -19,6 +19,7 @@
     NSError *_lastReportedError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *lastReportedError; // @synthesize lastReportedError=_lastReportedError;
 @property(nonatomic) unsigned long long lastReportedErrorStage; // @synthesize lastReportedErrorStage=_lastReportedErrorStage;
 @property(retain, nonatomic) NSString *lastReportedErrorIdentifier; // @synthesize lastReportedErrorIdentifier=_lastReportedErrorIdentifier;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSDate *migrationStartDate; // @synthesize migrationStartDate=_migrationStartDate;
 @property(retain, nonatomic) REMStore *cachedStore; // @synthesize cachedStore=_cachedStore;
 @property(retain, nonatomic) REMStoreContainerToken *containerToken; // @synthesize containerToken=_containerToken;
-- (void).cxx_destruct;
 - (_Bool)_cleanLocalDatabases:(id *)arg1;
 - (id)_migrationAccountInfosFromDEPRECATEDInfoDictionaryList:(id)arg1;
 - (_Bool)ensureAccountsExist:(id *)arg1;

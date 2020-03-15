@@ -23,6 +23,7 @@
 @property(nonatomic) unsigned long long disabledReasons; // @dynamic disabledReasons;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @dynamic enabled;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @dynamic hidden;
+@property(nonatomic, getter=isSignatureTrusted) _Bool signatureTrusted; // @dynamic signatureTrusted;
 @property(nonatomic, getter=isRestricted) _Bool restricted; // @dynamic restricted;
 @property(nonatomic, getter=isCacheDeleting) _Bool cacheDeleting; // @dynamic cacheDeleting;
 @property(nonatomic, getter=isRecentlyUpdated) _Bool recentlyUpdated; // @dynamic recentlyUpdated;

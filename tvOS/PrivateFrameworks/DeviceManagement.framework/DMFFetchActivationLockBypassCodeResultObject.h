@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSString *bypassCode; // @synthesize bypassCode=_bypassCode;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *bypassCode; // @synthesize bypassCode=_bypassCode;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

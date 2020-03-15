@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSFolderIdType *OldParentFolderId; // @synthesize OldParentFolderId=_OldParentFolderId;
 @property(retain, nonatomic) id OldItemOrFolderId; // @synthesize OldItemOrFolderId=_OldItemOrFolderId;
-- (void).cxx_destruct;
 
 @end
 

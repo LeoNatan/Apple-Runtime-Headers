@@ -19,11 +19,11 @@
 
 + (void)shouldDisplayLikenessEditorForPrimaryiCloudAccountWithCompletion:(CDUnknownBlockType)arg1;
 + (BOOL)shouldDisplayLikenessEditorForAppleID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain) PRLikeness *finalizedLikeness; // @synthesize finalizedLikeness=_finalizedLikeness;
 @property(retain) NSView *editorAreaView; // @synthesize editorAreaView=_editorAreaView;
 @property __weak id <MBSecondPartyHost> host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (BOOL)isBuddy;
 - (BOOL)isBackwardsNavigationEnabled;
 - (void)setNextButtonTitle:(id)arg1;

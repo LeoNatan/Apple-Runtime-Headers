@@ -22,6 +22,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dynamicConstraints; // @synthesize dynamicConstraints=_dynamicConstraints;
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
 @property(readonly, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) _Bool wheelViewVisible; // @synthesize wheelViewVisible=_wheelViewVisible;
 @property(retain, nonatomic) HUWheelControlView *wheelView; // @synthesize wheelView=_wheelView;
-- (void).cxx_destruct;
 - (void)wheelControlView:(id)arg1 didUpdateValue:(id)arg2;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

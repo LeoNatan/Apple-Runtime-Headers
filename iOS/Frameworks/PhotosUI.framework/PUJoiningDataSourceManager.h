@@ -16,9 +16,9 @@
     long long __currentUpdateID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCurrentUpdateId:) long long _currentUpdateID; // @synthesize _currentUpdateID=__currentUpdateID;
 @property(readonly, nonatomic) NSArray *_dataSourceManagers; // @synthesize _dataSourceManagers=__dataSourceManagers;
-- (void).cxx_destruct;
 - (id)assetsDataSourceManagerInterestingAssetReferences:(id)arg1;
 - (void)assetsDataSourceManager:(id)arg1 didChangeAssetsDataSource:(id)arg2;
 - (void)_update;

@@ -16,11 +16,11 @@
     unsigned long long _inFlightWriteCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=areWritesInProgressOrPossible) _Bool writesInProgressOrPossible; // @synthesize writesInProgressOrPossible=_writesInProgressOrPossible;
 @property(nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
 @property(nonatomic) unsigned long long inFlightWriteCount; // @synthesize inFlightWriteCount=_inFlightWriteCount;
 @property(retain, nonatomic) NAValueThrottler *writeThrottler; // @synthesize writeThrottler=_writeThrottler;
-- (void).cxx_destruct;
 
 @end
 

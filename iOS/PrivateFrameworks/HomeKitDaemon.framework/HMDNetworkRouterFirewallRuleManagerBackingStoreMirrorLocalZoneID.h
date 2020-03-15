@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSData *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSArray *labels;
 - (id)attributeDescriptions;

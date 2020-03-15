@@ -27,13 +27,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldTintContentImage; // @synthesize shouldTintContentImage=_shouldTintContentImage;
 @property(nonatomic) _Bool allowsUpdates; // @synthesize allowsUpdates=_allowsUpdates;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(readonly, nonatomic) UIStatusBarForegroundStyleAttributes *foregroundStyle; // @synthesize foregroundStyle=_foregroundStyle;
 @property(nonatomic) __weak UIStatusBarLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
 @property(readonly, nonatomic) UIStatusBarItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)accessibilityHUDRepresentation;
 - (_Bool)_shouldReverseLayoutDirection;
 - (id)description;

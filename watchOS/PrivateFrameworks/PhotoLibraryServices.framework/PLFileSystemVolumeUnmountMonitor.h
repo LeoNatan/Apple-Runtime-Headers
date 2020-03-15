@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)removeVolumeUnmountObserver:(id)arg1;
 - (void)addVolumeUnmountObserver:(id)arg1;
+- (id)description;
 - (void)dealloc;
 - (id)initWithVolumeURL:(id)arg1;
 

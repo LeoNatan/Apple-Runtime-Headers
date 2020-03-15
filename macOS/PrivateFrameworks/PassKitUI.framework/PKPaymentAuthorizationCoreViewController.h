@@ -48,6 +48,7 @@
     id <PKPaymentAuthorizationCoreViewControllerPrivateDelegate> _privateDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentAuthorizationCoreViewControllerPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(retain, nonatomic) PKPaymentAuthorizationChildViewController *activeViewController; // @synthesize activeViewController=_activeViewController;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -72,7 +73,6 @@
 @property(retain, nonatomic) PKPaymentAuthorizationStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) PKPaymentAuthorizationLayout *paymentAuthorizationLayout; // @synthesize paymentAuthorizationLayout=_paymentAuthorizationLayout;
 @property(nonatomic) long long paymentAuthorizationStyle; // @synthesize paymentAuthorizationStyle=_paymentAuthorizationStyle;
-- (void).cxx_destruct;
 - (id)hostContextWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)hostContext;
 - (id)_hostApplicationIdentifier;

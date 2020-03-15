@@ -29,6 +29,7 @@
     NSArray *__lastTouchingTouches;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *_lastTouchingTouches; // @synthesize _lastTouchingTouches=__lastTouchingTouches;
 @property(retain, nonatomic) id <AXETimer> _singleTapTimeoutTimer; // @synthesize _singleTapTimeoutTimer=__singleTapTimeoutTimer;
 @property(nonatomic) unsigned long long _detectedTapCount; // @synthesize _detectedTapCount=__detectedTapCount;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) double maximumTapDownDeviation; // @synthesize maximumTapDownDeviation=_maximumTapDownDeviation;
 @property(readonly, nonatomic) unsigned long long tapCount; // @synthesize tapCount=_tapCount;
 @property(readonly, nonatomic) unsigned long long fingerCount; // @synthesize fingerCount=_fingerCount;
-- (void).cxx_destruct;
 - (void)_signalTapAborted:(id)arg1;
 - (void)_signalTapped:(id)arg1;
 - (void)_abort;

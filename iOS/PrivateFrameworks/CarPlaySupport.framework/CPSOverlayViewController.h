@@ -6,19 +6,21 @@
 
 #import <UIKit/UINavigationController.h>
 
+#import <CarPlaySupport/BSInvalidatable-Protocol.h>
 #import <CarPlaySupport/CPSPreferredFocusManaging-Protocol.h>
 
+@class NSString;
 @protocol UIFocusItem;
 
-@interface CPSOverlayViewController : UINavigationController <CPSPreferredFocusManaging>
+@interface CPSOverlayViewController : UINavigationController <CPSPreferredFocusManaging, BSInvalidatable>
 {
     _Bool usePreferredItemOnNextUpdate;
     id <UIFocusItem> preferredFocusItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usePreferredItemOnNextUpdate; // @synthesize usePreferredItemOnNextUpdate;
 @property(nonatomic) __weak id <UIFocusItem> preferredFocusItem; // @synthesize preferredFocusItem;
-- (void).cxx_destruct;
 - (id)_linearFocusMovementSequences;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
@@ -37,7 +39,14 @@
 - (id)popToViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)popViewControllerAnimated:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)invalidate;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

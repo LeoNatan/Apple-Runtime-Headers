@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <CNContactDataSourceDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CNContactDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CNContactDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)contactDataSourceDidChange:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 

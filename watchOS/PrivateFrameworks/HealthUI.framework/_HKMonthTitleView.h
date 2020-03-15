@@ -21,13 +21,13 @@
     float _dividerWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) float dividerWidth; // @synthesize dividerWidth=_dividerWidth;
 @property(nonatomic) float dividerOriginX; // @synthesize dividerOriginX=_dividerOriginX;
 @property(nonatomic) float bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 @property(nonatomic) float topPadding; // @synthesize topPadding=_topPadding;
 @property(retain, nonatomic) UILabel *monthTitle; // @synthesize monthTitle=_monthTitle;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setDate:(id)arg1;
 - (id)_monthStringFromDate:(id)arg1;

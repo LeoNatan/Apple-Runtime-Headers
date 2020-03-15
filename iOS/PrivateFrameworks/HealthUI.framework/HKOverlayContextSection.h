@@ -18,11 +18,11 @@
     NSArray *_overlayContextItems;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *overlayContextItems; // @synthesize overlayContextItems=_overlayContextItems;
 @property(readonly, nonatomic) NSString *localizedSectionTitle; // @synthesize localizedSectionTitle=_localizedSectionTitle;
 @property(retain, nonatomic) NSArray *items; // @synthesize items;
 @property(retain, nonatomic) NSString *title; // @synthesize title;
-- (void).cxx_destruct;
 - (id)initWithSectionTitle:(id)arg1 overlayContextItems:(id)arg2;
 
 // Remaining properties

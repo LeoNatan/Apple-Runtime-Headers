@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)personWithPerson:(id)arg1;
-@property(readonly) NSString *uniqueId; // @synthesize uniqueId;
 - (void).cxx_destruct;
+@property(readonly) NSString *uniqueId; // @synthesize uniqueId;
 @property(readonly, copy) NSURL *URLToPerson;
 - (id)personWithAddressBook:(id)arg1;
 - (id)initWithPerson:(id)arg1;

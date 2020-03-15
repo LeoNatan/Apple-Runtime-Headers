@@ -16,11 +16,11 @@
     _Bool _shouldCancelThread;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldCancelThread; // @synthesize shouldCancelThread=_shouldCancelThread;
 @property(readonly, nonatomic) NSThread *underlyingThread; // @synthesize underlyingThread=_underlyingThread;
 @property(readonly, nonatomic) NSRunLoop *underlyingRunLoop; // @synthesize underlyingRunLoop=_underlyingRunLoop;
 @property(readonly, nonatomic) struct _opaque_pthread_t *threadId; // @synthesize threadId=_threadId;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithCurrentThread;
 - (id)initWithRunLoop:(struct __CFRunLoop *)arg1;

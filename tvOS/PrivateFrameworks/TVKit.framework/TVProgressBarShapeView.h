@@ -27,6 +27,7 @@
     struct CGRect _rightClippingRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsClippingUpdate; // @synthesize needsClippingUpdate=_needsClippingUpdate;
 @property(nonatomic) struct CGRect rightClippingRect; // @synthesize rightClippingRect=_rightClippingRect;
 @property(nonatomic) struct CGRect middleClippingRect; // @synthesize middleClippingRect=_middleClippingRect;
@@ -42,7 +43,6 @@
 @property(nonatomic) double minPlayheadPercentage; // @synthesize minPlayheadPercentage=_minPlayheadPercentage;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)setContentScaleFactor:(double)arg1;

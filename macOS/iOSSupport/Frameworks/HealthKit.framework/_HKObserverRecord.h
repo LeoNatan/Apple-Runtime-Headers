@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(nonatomic) __weak id observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)initWithObserver:(id)arg1 clientQueue:(id)arg2;
 
 @end

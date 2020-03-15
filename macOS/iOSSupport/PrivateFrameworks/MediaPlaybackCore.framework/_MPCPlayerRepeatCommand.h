@@ -18,11 +18,11 @@
     NSArray *_supportedRepeatTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsAdvanceRepeat; // @synthesize supportsAdvanceRepeat=_supportsAdvanceRepeat;
 @property(nonatomic) BOOL supportsChangeRepeat; // @synthesize supportsChangeRepeat=_supportsChangeRepeat;
 @property(retain, nonatomic) NSArray *supportedRepeatTypes; // @synthesize supportedRepeatTypes=_supportedRepeatTypes;
 @property(nonatomic) long long currentRepeatType; // @synthesize currentRepeatType=_currentRepeatType;
-- (void).cxx_destruct;
 - (id)advance;
 - (id)setRepeatType:(long long)arg1;
 

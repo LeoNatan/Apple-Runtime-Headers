@@ -21,13 +21,13 @@
     Class __SBSApplicationShortcutCustomImageIconClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSBSApplicationShortcutCustomImageIconClass:) Class _SBSApplicationShortcutCustomImageIconClass; // @synthesize _SBSApplicationShortcutCustomImageIconClass=__SBSApplicationShortcutCustomImageIconClass;
 @property(retain, nonatomic, setter=_setSBSApplicationShortcutItemClass:) Class _SBSApplicationShortcutItemClass; // @synthesize _SBSApplicationShortcutItemClass=__SBSApplicationShortcutItemClass;
 @property(retain, nonatomic, setter=_setSBSApplicationShortcutServiceClass:) Class _SBSApplicationShortcutServiceClass; // @synthesize _SBSApplicationShortcutServiceClass=__SBSApplicationShortcutServiceClass;
 @property(retain, nonatomic, setter=_setAppShortcutService:) SBSApplicationShortcutService *_appShortcutService; // @synthesize _appShortcutService=__appShortcutService;
 @property(nonatomic, setter=_setMostRecentPhotoIsInvalid:) _Bool _mostRecentPhotoIsInvalid; // @synthesize _mostRecentPhotoIsInvalid=__mostRecentPhotoIsInvalid;
 @property(retain, nonatomic, setter=_setCachedMostRecentPhotoData:) NSData *_cachedMostRecentPhotoData; // @synthesize _cachedMostRecentPhotoData=__cachedMostRecentPhotoData;
-- (void).cxx_destruct;
 - (_Bool)_userHasPhotosFromLastYear;
 - (_Bool)_userHasPhotos;
 - (id)_shortcutSystemImageNamed:(id)arg1;

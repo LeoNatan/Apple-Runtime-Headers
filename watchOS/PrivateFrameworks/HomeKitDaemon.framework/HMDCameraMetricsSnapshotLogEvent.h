@@ -18,9 +18,9 @@
 
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *referenceTimestamp; // @synthesize referenceTimestamp=_referenceTimestamp;
 @property(readonly, nonatomic) _Bool snapshotForNotification; // @synthesize snapshotForNotification=_snapshotForNotification;
-- (void).cxx_destruct;
 - (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(_Bool)arg3 snapshotForNotification:(_Bool)arg4;
 - (id)metricForAWD;
 - (void)addIDSTransfer:(id)arg1;

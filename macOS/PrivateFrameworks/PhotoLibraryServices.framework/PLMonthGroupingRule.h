@@ -16,8 +16,8 @@
     NSCalendar *_calendar;
 }
 
-@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 - (id)fallbackHighlightItemFromAllHighlightItems:(id)arg1;
 - (id)highlightItemsSortedByImportance:(id)arg1;
 - (BOOL)highlightItemHasMinimumRequirementToBePromoted:(id)arg1;

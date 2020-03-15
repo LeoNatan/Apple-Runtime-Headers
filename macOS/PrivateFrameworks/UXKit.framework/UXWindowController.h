@@ -20,8 +20,8 @@
 }
 
 + (id)defaultWindow;
-@property __weak NSToolbarItem *navigationBarToolbarItem; // @synthesize navigationBarToolbarItem=_navigationBarToolbarItem;
 - (void).cxx_destruct;
+@property __weak NSToolbarItem *navigationBarToolbarItem; // @synthesize navigationBarToolbarItem=_navigationBarToolbarItem;
 - (void)windowDidBecomeFirstResponder:(id)arg1;
 - (void)windowDidRecalculateKeyViewLoop:(id)arg1;
 - (void)windowWillRecalculateKeyViewLoop:(id)arg1;

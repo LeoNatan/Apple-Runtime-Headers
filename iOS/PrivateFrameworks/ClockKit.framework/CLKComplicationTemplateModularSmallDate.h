@@ -15,10 +15,10 @@
     unsigned long long _highlightMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long highlightMode; // @synthesize highlightMode=_highlightMode;
 @property(copy, nonatomic) CLKDateTextProvider *dayTextProvider; // @synthesize dayTextProvider=_dayTextProvider;
 @property(copy, nonatomic) CLKDateTextProvider *weekdayTextProvider; // @synthesize weekdayTextProvider=_weekdayTextProvider;
-- (void).cxx_destruct;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
 - (id)_initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 - (_Bool)highlightLine2;

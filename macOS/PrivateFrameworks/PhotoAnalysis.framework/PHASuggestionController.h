@@ -20,8 +20,8 @@
 
 + (id)availableSuggestionTypeInfosWithProfile:(unsigned char)arg1;
 + (unsigned long long)_retirementDelayInDaysForSuggestionType:(unsigned short)arg1;
-@property(retain, nonatomic) NSArray *existingMemories; // @synthesize existingMemories=_existingMemories;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *existingMemories; // @synthesize existingMemories=_existingMemories;
 - (id)suggestionInfosWithOptions:(id)arg1;
 - (id)collidableSuggestionsWithOptions:(id)arg1;
 - (id)generateSuggestionsWithProfile:(unsigned char)arg1 options:(id)arg2 progress:(CDUnknownBlockType)arg3;

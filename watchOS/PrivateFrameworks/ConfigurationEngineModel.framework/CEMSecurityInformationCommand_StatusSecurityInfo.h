@@ -29,6 +29,7 @@
 + (id)buildRequiredOnly;
 + (id)buildWithHardwareEncryptionCaps:(id)arg1 withPasscodePresent:(id)arg2 withPasscodeCompliant:(id)arg3 withPasscodeCompliantWithProfiles:(id)arg4 withPasscodeLockGracePeriod:(id)arg5 withPasscodeLockGracePeriodEnforced:(id)arg6 withFDEEnabled:(id)arg7 withFDEHasPersonalRecoveryKey:(id)arg8 withFDEHasInstitutionalRecoveryKey:(id)arg9 withFDEPersonalRecoveryKeyCMS:(id)arg10 withFDEPersonalRecoveryKeyDeviceKey:(id)arg11 withSystemIntegrityProtectionEnabled:(id)arg12 withFirewallSettings:(id)arg13 withFirmwarePasswordStatus:(id)arg14;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMSecurityInformationCommand_StatusSecurityInfoFirmwarePasswordStatus *statusFirmwarePasswordStatus; // @synthesize statusFirmwarePasswordStatus=_statusFirmwarePasswordStatus;
 @property(copy, nonatomic) CEMSecurityInformationCommand_StatusSecurityInfoFirewallSettings *statusFirewallSettings; // @synthesize statusFirewallSettings=_statusFirewallSettings;
 @property(copy, nonatomic) NSNumber *statusSystemIntegrityProtectionEnabled; // @synthesize statusSystemIntegrityProtectionEnabled=_statusSystemIntegrityProtectionEnabled;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSNumber *statusPasscodeCompliant; // @synthesize statusPasscodeCompliant=_statusPasscodeCompliant;
 @property(copy, nonatomic) NSNumber *statusPasscodePresent; // @synthesize statusPasscodePresent=_statusPasscodePresent;
 @property(copy, nonatomic) NSNumber *statusHardwareEncryptionCaps; // @synthesize statusHardwareEncryptionCaps=_statusHardwareEncryptionCaps;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

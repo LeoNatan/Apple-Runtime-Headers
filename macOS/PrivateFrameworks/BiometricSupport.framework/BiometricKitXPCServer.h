@@ -54,6 +54,7 @@
 + (id)getPreferenceValueOfClass:(Class)arg1 forKey:(id)arg2 defaultValue:(id)arg3;
 + (id)getPreferenceValueOfClass:(Class)arg1 forKey:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *biometricABCDispatchQueue; // @synthesize biometricABCDispatchQueue=_biometricABCDispatchQueue;
 @property(retain, nonatomic) BiometricAutoBugCapture *biometricABC; // @synthesize biometricABC=_biometricABC;
 @property(readonly, retain, nonatomic) NSMutableDictionary *catacombStateDict; // @synthesize catacombStateDict=_catacombStateDict;
@@ -69,7 +70,6 @@
 @property(nonatomic) BOOL ariadneSignposts; // @synthesize ariadneSignposts=_ariadneSignposts;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *cmdDispatchQueue; // @synthesize cmdDispatchQueue=_cmdDispatchQueue;
 @property(readonly, nonatomic) struct IONotificationPort *notifyport; // @synthesize notifyport=_notifyport;
-- (void).cxx_destruct;
 - (void)serviceStatus:(unsigned int)arg1 withData:(id)arg2 referenceTimestamp:(unsigned long long)arg3 continuousTimeDelta:(long long)arg4;
 - (BOOL)isWakingUpFromS5;
 - (BOOL)bridgeServiceCheck;

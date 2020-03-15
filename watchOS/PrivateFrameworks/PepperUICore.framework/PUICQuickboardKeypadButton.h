@@ -21,13 +21,13 @@
     struct CGPoint _subAnchor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint subAnchor; // @synthesize subAnchor=_subAnchor;
 @property(nonatomic) _Bool isCancel; // @synthesize isCancel=_isCancel;
 @property(nonatomic) _Bool isPlusOrStar; // @synthesize isPlusOrStar=_isPlusOrStar;
 @property(nonatomic) _Bool isNumber; // @synthesize isNumber=_isNumber;
 @property(nonatomic) float backgroundInsetY; // @synthesize backgroundInsetY=_backgroundInsetY;
 @property(nonatomic) float backgroundInsetX; // @synthesize backgroundInsetX=_backgroundInsetX;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool visible;
 - (void)layoutSubviews;
 - (void)setEnabled:(_Bool)arg1;

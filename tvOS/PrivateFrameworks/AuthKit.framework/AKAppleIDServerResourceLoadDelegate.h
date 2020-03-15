@@ -29,6 +29,7 @@
     NSString *_continuationToken;
     NSString *_heartbeatToken;
     NSString *_identityToken;
+    NSString *_initialURLRequestKey;
     NSString *_proxyAppName;
     NSString *_clientAppName;
     NSString *_appProvidedContext;
@@ -46,6 +47,7 @@
 + (unsigned long long)signalFromServerResponse:(id)arg1;
 + (id)sharedController;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldSendSigningHeaders; // @synthesize shouldSendSigningHeaders=_shouldSendSigningHeaders;
 @property(retain, nonatomic) AKAttestationData *proxiedDeviceAttestationData; // @synthesize proxiedDeviceAttestationData=_proxiedDeviceAttestationData;
 @property(retain, nonatomic) AKAnisetteData *proxiedDeviceAnisetteData; // @synthesize proxiedDeviceAnisetteData=_proxiedDeviceAnisetteData;
@@ -59,6 +61,7 @@
 @property(copy, nonatomic) NSString *appProvidedContext; // @synthesize appProvidedContext=_appProvidedContext;
 @property(copy, nonatomic) NSString *clientAppName; // @synthesize clientAppName=_clientAppName;
 @property(copy, nonatomic) NSString *proxyAppName; // @synthesize proxyAppName=_proxyAppName;
+@property(copy, nonatomic) NSString *initialURLRequestKey; // @synthesize initialURLRequestKey=_initialURLRequestKey;
 @property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy, nonatomic) NSString *identityToken; // @synthesize identityToken=_identityToken;
 @property(copy, nonatomic) NSString *heartbeatToken; // @synthesize heartbeatToken=_heartbeatToken;
@@ -73,7 +76,6 @@
 @property(nonatomic) _Bool shouldSendICSCIntentHeader; // @synthesize shouldSendICSCIntentHeader=_shouldSendICSCIntentHeader;
 @property(nonatomic) _Bool shouldSendEphemeralAuthHeader; // @synthesize shouldSendEphemeralAuthHeader=_shouldSendEphemeralAuthHeader;
 @property(copy, nonatomic) NSString *serviceToken; // @synthesize serviceToken=_serviceToken;
-- (void).cxx_destruct;
 - (_Bool)isResponseFinalForHSA2ServerFlow:(id)arg1;
 - (_Bool)isResponseActionable:(id)arg1;
 - (_Bool)isAuthenticationRequired:(id)arg1;

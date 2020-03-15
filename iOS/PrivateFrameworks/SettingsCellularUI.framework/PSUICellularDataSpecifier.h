@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSArray *_cachedPlanItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedPlanItems; // @synthesize cachedPlanItems=_cachedPlanItems;
 @property(retain, nonatomic) PSUIDeviceWiFiState *wifiState; // @synthesize wifiState=_wifiState;
 @property(retain, nonatomic) PSUICoreTelephonyCallCache *callCache; // @synthesize callCache=_callCache;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PSUICellularPlanManagerCache *planManagerCache; // @synthesize planManagerCache=_planManagerCache;
 @property(retain, nonatomic) PSSimStatusCache *simStatusCache; // @synthesize simStatusCache=_simStatusCache;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
 - (void)canceledDataSwitch:(id)arg1;
 - (id)callEndConfirmationSpecifier;
 - (id)subscriptionContextForListItem:(id)arg1;

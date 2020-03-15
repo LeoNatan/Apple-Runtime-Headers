@@ -20,8 +20,8 @@
 + (id)getEmptySymbolHandle;
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
-@property(readonly) unsigned long long symbolOwnerStartAddressInTask; // @synthesize symbolOwnerStartAddressInTask=_symbolOwnerStartAddressInTask;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long symbolOwnerStartAddressInTask; // @synthesize symbolOwnerStartAddressInTask=_symbolOwnerStartAddressInTask;
 - (BOOL)addToPersistentCache;
 - (id)debugDescriptionForAddress:(unsigned long long)arg1;
 @property(readonly, copy) NSString *debugDescription;

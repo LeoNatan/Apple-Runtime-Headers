@@ -17,12 +17,12 @@
     NUTrait *_labelMaxWidthTrait;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NUTrait *labelMaxWidthTrait; // @synthesize labelMaxWidthTrait=_labelMaxWidthTrait;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) unsigned long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(retain, nonatomic) NUErrorMessage *errorMessage; // @synthesize errorMessage=_errorMessage;
-- (void).cxx_destruct;
 - (id)attributedStringForErrorMessage:(id)arg1;
 - (id)accessibilityLabel;
 - (id)accessibilityElements;

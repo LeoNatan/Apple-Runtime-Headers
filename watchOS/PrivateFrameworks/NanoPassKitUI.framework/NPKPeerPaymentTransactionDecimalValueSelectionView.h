@@ -16,11 +16,11 @@
     UIFontDescriptor *_valueLabelFontDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFontDescriptor *valueLabelFontDescriptor; // @synthesize valueLabelFontDescriptor=_valueLabelFontDescriptor;
 @property(readonly, nonatomic) PUICButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic) PUICActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(readonly, nonatomic) NSDecimalNumber *initialCardBalance; // @synthesize initialCardBalance=_initialCardBalance;
-- (void).cxx_destruct;
 - (id)_valueLabelFontWithSize:(float)arg1;
 - (void)setShouldDisplayActivityIndicator:(_Bool)arg1;
 - (id)annotationStringWithValue:(id)arg1;

@@ -15,8 +15,8 @@
 
 + (id)structFields;
 + (id)structName;
-@property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 
 @end
 

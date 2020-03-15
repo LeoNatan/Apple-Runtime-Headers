@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_candidateKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *candidateKey; // @synthesize candidateKey=_candidateKey;
 @property(nonatomic) CDStruct_227bb23d visualStyling; // @synthesize visualStyling=_visualStyling;
-- (void).cxx_destruct;
 - (void)clearCandidateKey;
 - (void)updateCandidateKey;
 - (_Bool)isTenKey;

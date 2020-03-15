@@ -21,10 +21,10 @@
     struct unfair_lock _propertiesLock;
 }
 
-@property(readonly, nonatomic, getter=_style) shared_ptr_e0acdecc style; // @synthesize style=_style;
-@property(readonly, nonatomic) NSArray *polygons; // @synthesize polygons=_polygons;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_style) shared_ptr_e0acdecc style; // @synthesize style=_style;
+@property(readonly, nonatomic) NSArray *polygons; // @synthesize polygons=_polygons;
 @property(nonatomic) double alpha;
 @property(nonatomic) struct CGColor *strokeColor;
 @property(nonatomic) struct CGColor *fillColor;

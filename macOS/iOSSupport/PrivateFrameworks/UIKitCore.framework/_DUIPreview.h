@@ -32,6 +32,7 @@
 + (double)defaultStackAlpha;
 + (id)defaultPreviewWithFrame:(struct CGRect)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize viewScaleFactor; // @synthesize viewScaleFactor=_viewScaleFactor;
 @property(nonatomic) BOOL wantsSuppressedMask; // @synthesize wantsSuppressedMask=_wantsSuppressedMask;
 @property(nonatomic) BOOL avoidAnimation; // @synthesize avoidAnimation=_avoidAnimation;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(readonly, nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset=_contentOffset;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

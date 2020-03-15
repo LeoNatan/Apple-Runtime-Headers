@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <NSCopying> _key;
 }
 
-@property __weak id <NSCopying> key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property __weak id <NSCopying> key; // @synthesize key=_key;
 - (id)initWithKey:(id)arg1 object:(id)arg2;
 
 @end

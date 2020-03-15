@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_queue> *_settingsQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *settingsQueue; // @synthesize settingsQueue=_settingsQueue;
 @property(retain, nonatomic) NSMutableDictionary *realmSettings; // @synthesize realmSettings=_realmSettings;
-- (void).cxx_destruct;
 - (void)saveRealmSettings;
 - (void)loadRealmSettings;
 - (void)removeRealm:(id)arg1;

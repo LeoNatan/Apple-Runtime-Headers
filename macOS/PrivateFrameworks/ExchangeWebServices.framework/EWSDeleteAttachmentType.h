@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(copy, nonatomic) NSArray *AttachmentIds; // @synthesize AttachmentIds=_AttachmentIds;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *AttachmentIds; // @synthesize AttachmentIds=_AttachmentIds;
 
 @end
 

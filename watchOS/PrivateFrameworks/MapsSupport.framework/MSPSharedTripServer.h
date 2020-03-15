@@ -31,6 +31,7 @@
 - (void)senderController:(id)arg1 sendMessage:(id)arg2 toParticipant:(id)arg3;
 - (void)invalidateActiveHandlesForSenderController:(id)arg1;
 - (void)senderController:(id)arg1 didInvalidateSharedTripWithError:(id)arg2;
+- (void)fetchAccountAliasesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchAccountValidWithCompletion:(CDUnknownBlockType)arg1;
 - (void)blockSharedTrip:(id)arg1;
 - (void)fetchSharedTripsWithCompletion:(CDUnknownBlockType)arg1;

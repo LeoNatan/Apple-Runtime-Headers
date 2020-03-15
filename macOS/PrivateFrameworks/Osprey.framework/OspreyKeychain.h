@@ -15,14 +15,16 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-+ (void)initialize;
 - (void).cxx_destruct;
 - (BOOL)_deleteData:(id)arg1;
 - (id)_fetchDataWithIdentifier:(id)arg1;
 - (BOOL)_saveData:(id)arg1 withIdentifier:(id)arg2;
 - (void)deleteDataWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)deleteDataWithIdentifier:(id)arg1;
 - (void)fetchDataWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)fetchDataWithIdentifier:(id)arg1;
 - (void)saveData:(id)arg1 withIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)saveData:(id)arg1 withIdentifier:(id)arg2;
 - (id)createKeychainQuery;
 - (id)init;
 

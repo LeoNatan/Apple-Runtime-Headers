@@ -24,6 +24,7 @@
     struct CGSize _framesAreValidForSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *visibleViewsByIndex; // @synthesize visibleViewsByIndex=_visibleViewsByIndex;
 @property(nonatomic) _Bool gotActiveViewIndexChange; // @synthesize gotActiveViewIndexChange=_gotActiveViewIndexChange;
 @property(nonatomic) _Bool contentTooSmall; // @synthesize contentTooSmall=_contentTooSmall;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) unsigned long long activeViewIndex; // @synthesize activeViewIndex=_activeViewIndex;
 @property(readonly, nonatomic) struct _NSRange visibleRange; // @synthesize visibleRange=_visibleRange;
 @property(nonatomic) __weak id <SXItemizedScrollViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)scrollToPrevious;
 - (void)scrollToNext;
 - (void)viewManagementForRange:(struct _NSRange)arg1;

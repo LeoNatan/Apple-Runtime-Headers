@@ -16,10 +16,10 @@
     unsigned long long _context;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long context; // @synthesize context=_context;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithHome:(id)arg1 serviceLikeItem:(id)arg2 context:(unsigned long long)arg3;
 

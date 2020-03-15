@@ -7,6 +7,7 @@
 #import <CFNetwork/NSURLResponse.h>
 
 @interface NSURLResponse (SafariSharedExtras)
+- (id)safari_decodeJSONData:(id)arg1 expectingRootClass:(Class)arg2 error:(id *)arg3;
 - (int)safari_statusCodeGroup;
 - (_Bool)safari_hasAttachment;
 @end

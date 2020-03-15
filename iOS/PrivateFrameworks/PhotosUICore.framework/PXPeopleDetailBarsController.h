@@ -14,9 +14,9 @@
     PHPerson *_person;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(retain, nonatomic) UIButton *peopleTitleView; // @synthesize peopleTitleView=_peopleTitleView;
-- (void).cxx_destruct;
 - (id)createAssetActionManager;
 - (id)createTitleView;
 

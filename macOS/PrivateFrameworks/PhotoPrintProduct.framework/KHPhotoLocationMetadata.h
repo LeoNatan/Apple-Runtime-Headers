@@ -15,8 +15,8 @@
     CLPlacemark *_placemark;
 }
 
-@property(readonly, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 @property(readonly) NSString *countryName;
 @property(readonly) NSString *provinceName;
 @property(readonly) NSString *countyName;

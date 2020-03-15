@@ -16,8 +16,8 @@
 }
 
 + (Class)applayoutsType;
-@property(retain, nonatomic) NSMutableArray *applayouts; // @synthesize applayouts=_applayouts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *applayouts; // @synthesize applayouts=_applayouts;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

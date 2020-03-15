@@ -14,8 +14,8 @@
     CDUnknownBlockType _handler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void)_invokeHandler;
 - (void)_cancel;
 - (void)_getEndDate;

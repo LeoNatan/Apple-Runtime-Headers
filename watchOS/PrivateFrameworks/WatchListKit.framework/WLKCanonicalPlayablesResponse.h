@@ -18,13 +18,13 @@
     NSArray *_playables;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *playables; // @synthesize playables=_playables;
 @property(readonly, nonatomic, getter=isWatchListed) _Bool watchListed; // @synthesize watchListed=_watchListed;
 @property(readonly, nonatomic, getter=isWatchListable) _Bool watchListable; // @synthesize watchListable=_watchListable;
 @property(readonly, nonatomic) unsigned int contentType; // @synthesize contentType=_contentType;
 @property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(readonly, copy, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 

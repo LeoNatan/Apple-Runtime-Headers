@@ -19,8 +19,8 @@
 }
 
 + (id)_allDescriptors;
-@property(nonatomic) __weak id <MXMDisplayProbePlatformDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MXMDisplayProbePlatformDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)initPrivateWithDescriptor:(id)arg1 queue:(id)arg2;
 - (void)_stop;
 - (void)_start;

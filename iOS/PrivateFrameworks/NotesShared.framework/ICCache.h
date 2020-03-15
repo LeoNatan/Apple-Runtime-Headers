@@ -18,10 +18,10 @@
 
 + (void)purgeAllCaches;
 + (id)cacheCollection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mutableKeysAccessQueue; // @synthesize mutableKeysAccessQueue=_mutableKeysAccessQueue;
 @property(retain, nonatomic) NSMutableSet *mutableKeys; // @synthesize mutableKeys=_mutableKeys;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryWarningEventSource; // @synthesize memoryWarningEventSource=_memoryWarningEventSource;
-- (void).cxx_destruct;
 - (void)removeObjectsWithKeyContainingString:(id)arg1;
 @property(readonly, nonatomic) NSSet *allKeys;
 - (void)removeAllObjects;

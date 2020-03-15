@@ -23,13 +23,13 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(copy) NSString *mailboxNameForRestoring; // @synthesize mailboxNameForRestoring=_mailboxNameForRestoring;
 @property(retain) NSURL *mailboxDirectoryToRestore; // @synthesize mailboxDirectoryToRestore=_mailboxDirectoryToRestore;
 @property(copy) NSArray *messagePathsToRestore; // @synthesize messagePathsToRestore=_messagePathsToRestore;
 @property BOOL registeredForEditableMessageNotifications; // @synthesize registeredForEditableMessageNotifications=_registeredForEditableMessageNotifications;
 @property(copy) NSDictionary *lastSavedTableOfContents; // @synthesize lastSavedTableOfContents=_lastSavedTableOfContents;
 @property(retain) MFMailbox *topLevelRecoveryMailbox; // @synthesize topLevelRecoveryMailbox=_topLevelRecoveryMailbox;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSEnumerator *backupMailboxesEnumerator;
 - (id)backupPathForMailbox:(id)arg1 pathsCache:(id)arg2;
 - (id)_backupPathForMailbox:(id)arg1 withParentPath:(id)arg2 pathsCache:(id)arg3;

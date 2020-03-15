@@ -28,6 +28,7 @@
     id <EFCancelable> _observableCancelable;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EFCancelable> observableCancelable; // @synthesize observableCancelable=_observableCancelable;
 @property(retain, nonatomic) NSLayoutConstraint *separatorTrailing; // @synthesize separatorTrailing=_separatorTrailing;
 @property(retain, nonatomic) NSLayoutConstraint *separatorLeading; // @synthesize separatorLeading=_separatorLeading;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) SeparatorLayer *separator; // @synthesize separator=_separator;
 @property(retain, nonatomic) MFMessageDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(retain, nonatomic) MessageHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
-- (void).cxx_destruct;
 - (void)displayMessageUsingViewModel:(id)arg1;
 - (void)prepareForReuse;
 - (void)traitCollectionDidChange:(id)arg1;

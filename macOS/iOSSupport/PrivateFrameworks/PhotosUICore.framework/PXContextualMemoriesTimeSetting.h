@@ -16,8 +16,8 @@
     NSDateFormatter *_dateFormatter;
 }
 
-@property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 - (id)_forceMiddayDateForDate:(id)arg1;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void)resetToDefault;

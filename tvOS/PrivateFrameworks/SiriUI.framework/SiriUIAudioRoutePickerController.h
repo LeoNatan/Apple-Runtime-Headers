@@ -21,9 +21,9 @@
 }
 
 + (id)_nameForRouteInfo:(id)arg1 isSelected:(_Bool *)arg2 isBluetooth:(_Bool *)arg3 isOverride:(_Bool *)arg4 audioRouteName:(id *)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SiriRoutePickerAlertController *pickerAlertController; // @synthesize pickerAlertController=_pickerAlertController;
 @property(nonatomic) __weak id <SiriUIAudioRoutePickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_pickableRoutesChanged:(id)arg1;
 - (void)_routeChanged:(id)arg1;
 - (void)refreshRoutes;

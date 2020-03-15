@@ -17,9 +17,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NAFuture *homeAppInstalledFuture; // @synthesize homeAppInstalledFuture=_homeAppInstalledFuture;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsWillUninstall:(id)arg1;
 @property(readonly, copy, nonatomic) NSURL *homeAppBundleURL;

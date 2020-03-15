@@ -15,10 +15,10 @@
     NSArray *_imAddresses;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *imAddresses; // @synthesize imAddresses=_imAddresses;
 @property(copy, nonatomic) NSString *email; // @synthesize email=_email;
 @property(copy, nonatomic) NSArray *phones; // @synthesize phones=_phones;
-- (void).cxx_destruct;
 
 @end
 

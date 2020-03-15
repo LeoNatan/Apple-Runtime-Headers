@@ -21,8 +21,8 @@
 
 + (void)removePassword:(id)arg1;
 + (id)sharedStore;
-@property(readonly, nonatomic) _Bool hasPasswordsEligibleForAutoFill; // @synthesize hasPasswordsEligibleForAutoFill=_hasPasswordsEligibleForAutoFill;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasPasswordsEligibleForAutoFill; // @synthesize hasPasswordsEligibleForAutoFill=_hasPasswordsEligibleForAutoFill;
 - (id)persistentIdentifierForCredential:(id)arg1 protectionSpace:(id)arg2;
 - (void)_ensureDomainsToUsersExists;
 - (void)_cleanUpRedundantCredentialsWithoutUsernames;

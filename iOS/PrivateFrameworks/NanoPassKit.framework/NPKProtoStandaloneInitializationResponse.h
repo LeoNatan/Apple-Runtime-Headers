@@ -22,10 +22,10 @@
     NPKProtoStandaloneResponseHeader *_responseHeader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKProtoStandaloneError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *clientInfoHTTPHeader; // @synthesize clientInfoHTTPHeader=_clientInfoHTTPHeader;
 @property(retain, nonatomic) NPKProtoStandaloneResponseHeader *responseHeader; // @synthesize responseHeader=_responseHeader;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

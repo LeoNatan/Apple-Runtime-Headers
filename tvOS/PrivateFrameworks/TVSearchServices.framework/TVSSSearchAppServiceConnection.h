@@ -15,9 +15,9 @@
 }
 
 + (void)connectionWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSProcessAssertion *processAssertion; // @synthesize processAssertion=_processAssertion;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)serviceProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;

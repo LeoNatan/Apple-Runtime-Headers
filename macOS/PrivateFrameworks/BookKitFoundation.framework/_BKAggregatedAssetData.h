@@ -17,12 +17,12 @@
     NSString *_opfPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *opfPath; // @synthesize opfPath=_opfPath;
 @property(retain, nonatomic) NSData *sinf; // @synthesize sinf=_sinf;
 @property(retain, nonatomic) NSData *iTunesMetadata; // @synthesize iTunesMetadata=_iTunesMetadata;
 @property(retain, nonatomic) NSData *opf; // @synthesize opf=_opf;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)_sinfOptionsWithError:(id *)arg1;
 - (id)_opfMetadataWithCover:(BOOL)arg1 error:(id *)arg2;
 - (id)metadataWithPreloadedMetadata:(id)arg1 includeCover:(BOOL)arg2 error:(id *)arg3;

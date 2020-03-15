@@ -13,8 +13,8 @@
     _HMContext *_context;
 }
 
-@property(retain) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain) _HMContext *context; // @synthesize context=_context;
 - (void)sendUpdateValueMessage:(id)arg1 value:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end

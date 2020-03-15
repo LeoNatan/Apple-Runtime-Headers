@@ -29,13 +29,13 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)_assetControllerStatusFromDownloadControllerState:(id)arg1;
 + (_Bool)_supportsStartingDownloadWithMediaItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(nonatomic, getter=isRequestingPermissionToDownload) _Bool requestingPermissionToDownload; // @synthesize requestingPermissionToDownload=_requestingPermissionToDownload;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(retain, nonatomic) VUIMPMediaItemDownloadController *downloadController; // @synthesize downloadController=_downloadController;
 @property(copy, nonatomic) NSObject<VUIMediaEntityIdentifier> *mediaEntityIdentifier; // @synthesize mediaEntityIdentifier=_mediaEntityIdentifier;
 @property(readonly, nonatomic) _Bool supportsStartingDownload; // @synthesize supportsStartingDownload=_supportsStartingDownload;
-- (void).cxx_destruct;
 - (void)_notifyDelegateStateDidChange:(id)arg1;
 - (void)_enqueueCompletionQueueBlock:(CDUnknownBlockType)arg1;
 - (void)_enqueueAsyncProcessingQueueStrongSelfBlock:(CDUnknownBlockType)arg1;
@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)_onProcessingQueue_updateStateWithStatus:(unsigned long long)arg1 notify:(_Bool)arg2;
 - (void)_onProcessingQueue_startMonitoringDownload;
 - (void)_onProcessingQueue_cancelAndRemoveDownload;
-- (void)_onProcessingQueue_startDownloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_onProcessingQueue_startDownloadAllowingCellular:(_Bool)arg1 quality:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_onProcessingQueue_invalidateAndSetState;
 - (void)_onProcessingQueue_invalidate;
 - (void)_onProcessingQueue_setDownloadController:(id)arg1;
@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)cancelAndRemoveDownload;
 - (void)resumeDownload;
 - (void)pauseDownload;
-- (void)startDownloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)startDownloadAllowingCellular:(_Bool)arg1 quality:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidate;
 @property(readonly, copy, nonatomic) VUIMediaEntityAssetControllerState *state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) VUIMediaEntityType *mediaEntityType;

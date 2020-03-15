@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dismissalCompletion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAppearing; // @synthesize isAppearing=_isAppearing;
 @property(copy, nonatomic) CDUnknownBlockType dismissalCompletion; // @synthesize dismissalCompletion=_dismissalCompletion;
 @property(retain, nonatomic) UIView *stashedSuperView; // @synthesize stashedSuperView=_stashedSuperView;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIPreviewInteractionViewControllerPresentation *presentation; // @synthesize presentation=_presentation;
 @property(retain, nonatomic) _UIPreviewInteractionHighlighter *highlighter; // @synthesize highlighter=_highlighter;
 @property(readonly, nonatomic) UIViewPropertyAnimator *presentationAnimator; // @synthesize presentationAnimator=_presentationAnimator;
-- (void).cxx_destruct;
 - (void)_createpresentationAnimatorIfNecessary:(id)arg1;
 - (void)_postInteractionCleanup;
 - (void)animateTransition:(id)arg1;

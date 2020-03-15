@@ -21,11 +21,11 @@
     int _order;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int order; // @synthesize order=_order;
 @property(readonly, nonatomic) REComparisonCondition *comparison; // @synthesize comparison=_comparison;
 @property(readonly, nonatomic) RECondition *rightCondition; // @synthesize rightCondition=_rightCondition;
 @property(readonly, nonatomic) RECondition *leftCondition; // @synthesize leftCondition=_leftCondition;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

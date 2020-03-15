@@ -18,10 +18,10 @@
     _SUIKSearchResultsUpdateOperation *_updateOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SUIKSearchResultsUpdateOperation *updateOperation; // @synthesize updateOperation=_updateOperation;
 @property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
 @property(nonatomic) __weak NSObject<SUIKSearchResultsCollectionViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_selectAndScrollToIndexPath:(id)arg1;
 - (void)showSelectedSearchResult;
 - (void)selectPreviousSearchResult;

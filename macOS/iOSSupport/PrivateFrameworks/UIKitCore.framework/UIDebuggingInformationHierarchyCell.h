@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     id <UIDebuggingInformationHierarchyCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disclosureIndicatorHidden; // @synthesize disclosureIndicatorHidden=_disclosureIndicatorHidden;
 @property(nonatomic) __weak id <UIDebuggingInformationHierarchyCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)applyLayoutAttributes:(id)arg1;
 @property(readonly, nonatomic) NSIndexPath *indexPath;

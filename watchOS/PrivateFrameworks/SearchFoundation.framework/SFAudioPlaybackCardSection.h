@@ -40,6 +40,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(retain, nonatomic) SFRichText *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) SFRichText *title; // @synthesize title=_title;
@@ -56,7 +57,6 @@
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

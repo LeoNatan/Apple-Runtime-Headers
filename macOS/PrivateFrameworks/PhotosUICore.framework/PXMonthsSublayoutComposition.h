@@ -16,8 +16,9 @@
     PXMonthsLayoutMetrics *_metrics;
 }
 
-@property(copy, nonatomic) PXMonthsLayoutMetrics *metrics; // @synthesize metrics=_metrics;
 - (void).cxx_destruct;
+@property(copy, nonatomic) PXMonthsLayoutMetrics *metrics; // @synthesize metrics=_metrics;
+- (struct NSEdgeInsets)sublayoutInsetsForStylableType:(long long)arg1;
 @property(readonly, nonatomic) BOOL presentedSingleColumn;
 - (id)configuredLayoutGenerator;
 - (void)updateSublayoutAttributes;

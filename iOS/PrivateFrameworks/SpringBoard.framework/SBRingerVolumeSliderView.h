@@ -13,10 +13,10 @@
     UIView *_fillView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *fillView; // @synthesize fillView=_fillView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

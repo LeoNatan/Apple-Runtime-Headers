@@ -16,11 +16,11 @@
     NSData *_nonceSignature;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *nonceSignature; // @synthesize nonceSignature=_nonceSignature;
 @property(copy, nonatomic) NSData *publicKeyHash; // @synthesize publicKeyHash=_publicKeyHash;
 @property(readonly, copy, nonatomic) NSData *nonce; // @synthesize nonce=_nonce;
 @property(readonly, copy, nonatomic) NSArray *certificates; // @synthesize certificates=_certificates;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

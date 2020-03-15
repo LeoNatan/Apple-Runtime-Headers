@@ -32,6 +32,7 @@
 }
 
 + (_Bool)watchConnected;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *watchPasscodeAndUnlockedQueryDate; // @synthesize watchPasscodeAndUnlockedQueryDate=_watchPasscodeAndUnlockedQueryDate;
 @property(nonatomic, getter=isPreflighting) _Bool preflighting; // @synthesize preflighting=_preflighting;
 @property(retain, nonatomic) NPKCompanionAgentConnection *companionAgentConnection; // @synthesize companionAgentConnection=_companionAgentConnection;
@@ -51,8 +52,6 @@
 @property(nonatomic) _Bool checkedWatchPasscodeAndUnlockedStatus; // @synthesize checkedWatchPasscodeAndUnlockedStatus=_checkedWatchPasscodeAndUnlockedStatus;
 @property(retain, nonatomic) NSSManager *systemSettingsManager; // @synthesize systemSettingsManager=_systemSettingsManager;
 @property(retain, nonatomic) PUConnection *passcodeConnection; // @synthesize passcodeConnection=_passcodeConnection;
-- (void).cxx_destruct;
-- (_Bool)_currentlyPairing;
 - (id)_errorForConnectionIssue;
 - (id)_errorForGenericIssue;
 - (id)_errorForCompanionAccountNeeded;

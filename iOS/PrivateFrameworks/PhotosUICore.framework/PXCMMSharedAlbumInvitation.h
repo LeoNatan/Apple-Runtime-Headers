@@ -29,6 +29,7 @@
 + (id)_invitationWithAssetCollection:(id)arg1 previewAssetsFetchResult:(id)arg2;
 + (id)_participantsForAssetCollection:(id)arg1;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHFetchResult *previewAssetsFetchResult; // @synthesize previewAssetsFetchResult=_previewAssetsFetchResult;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(readonly, nonatomic) id <PXUIImageProvider> posterMediaProvider; // @synthesize posterMediaProvider=_posterMediaProvider;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long shareType; // @synthesize shareType=_shareType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)acceptWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)contextForActivityType:(unsigned long long)arg1;

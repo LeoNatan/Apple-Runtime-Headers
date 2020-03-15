@@ -22,6 +22,7 @@
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *differentiateWithoutColor; // @synthesize differentiateWithoutColor=_differentiateWithoutColor;
 @property(retain, nonatomic) NSNumber *smartInvert; // @synthesize smartInvert=_smartInvert;
 @property(retain, nonatomic) NSNumber *grayscale; // @synthesize grayscale=_grayscale;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSNumber *reduceTransparency; // @synthesize reduceTransparency=_reduceTransparency;
 @property(retain, nonatomic) NSNumber *increaseContrast; // @synthesize increaseContrast=_increaseContrast;
 @property(retain, nonatomic) NSNumber *boldText; // @synthesize boldText=_boldText;
-- (void).cxx_destruct;
 - (void)_installGrayscaleFilter;
 - (void)_installInvertColorsFilter;
 - (void)_removeFilterWithName:(id)arg1;

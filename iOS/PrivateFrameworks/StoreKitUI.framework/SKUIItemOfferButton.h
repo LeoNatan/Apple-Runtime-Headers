@@ -66,6 +66,7 @@
 + (id)itemOfferButtonWithAppearance:(id)arg1;
 + (id)cloudTintColorForBackgroundColor:(id)arg1;
 + (id)cloudImageWithTintColor:(id)arg1 arrowTintColor:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIButtonViewElement *element; // @synthesize element=_element;
 @property(nonatomic, getter=isDisabledButSelectable) _Bool disabledButSelectable; // @synthesize disabledButSelectable=_disabledButSelectable;
 @property(copy, nonatomic) NSString *buyType; // @synthesize buyType=_buyType;
@@ -81,7 +82,6 @@
 @property(nonatomic) __weak id <SKUIItemOfferButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long confirmationTitleStyle; // @synthesize confirmationTitleStyle=_confirmationTitleStyle;
 @property(copy, nonatomic) UIColor *cloudTintColor; // @synthesize cloudTintColor=_cloudTintColor;
-- (void).cxx_destruct;
 - (void)_removeAllAnimations:(_Bool)arg1;
 - (void)_updateForChangedTitleProperty;
 - (void)_updateForChangedConfirmationTitleProperty;

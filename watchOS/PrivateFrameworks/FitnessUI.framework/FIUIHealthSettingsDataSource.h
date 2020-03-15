@@ -27,13 +27,13 @@
     FIUIHealthSettingsWheelchairUsePickerController *_wheelchairUsePickerController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FIUIHealthSettingsWheelchairUsePickerController *wheelchairUsePickerController; // @synthesize wheelchairUsePickerController=_wheelchairUsePickerController;
 @property(retain, nonatomic) FIUIHealthSettingsSexPickerController *sexPickerController; // @synthesize sexPickerController=_sexPickerController;
 @property(retain, nonatomic) FIUIHealthSettingsWeightPickerController *weightPickerController; // @synthesize weightPickerController=_weightPickerController;
 @property(retain, nonatomic) FIUIHealthSettingsHeightPickerController *heightPickerController; // @synthesize heightPickerController=_heightPickerController;
 @property(retain, nonatomic) FIUIHealthSettingsBirthDatePickerController *birthDatePickerController; // @synthesize birthDatePickerController=_birthDatePickerController;
 @property(retain, nonatomic) FIActivitySettingsController *settingsController; // @synthesize settingsController=_settingsController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) FIActivitySettingsController *editedSettingsController;
 - (void)endEditingAndDiscardChanges:(_Bool)arg1;
 - (void)startEditing;

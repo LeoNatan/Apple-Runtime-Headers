@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     ReaderWKView *_readerWKView;
 }
 
-@property(nonatomic) __weak ReaderWKView *readerWKView; // @synthesize readerWKView=_readerWKView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ReaderWKView *readerWKView; // @synthesize readerWKView=_readerWKView;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 

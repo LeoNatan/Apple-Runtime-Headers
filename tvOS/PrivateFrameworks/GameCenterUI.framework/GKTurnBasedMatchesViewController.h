@@ -26,6 +26,7 @@
     NSString *_matchIDWaitingForTurnEvent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *matchIDWaitingForTurnEvent; // @synthesize matchIDWaitingForTurnEvent=_matchIDWaitingForTurnEvent;
 @property(retain, nonatomic) GKDashboardFocusButton *createGameButton; // @synthesize createGameButton=_createGameButton;
 @property(retain, nonatomic) NSMutableArray *completeMatches; // @synthesize completeMatches=_completeMatches;
@@ -37,7 +38,6 @@
 @property(nonatomic) __weak GKCollectionViewController *masterViewController; // @synthesize masterViewController=_masterViewController;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
-- (void).cxx_destruct;
 - (void)gameButtonPressed;
 - (void)doneButtonPressed;
 - (_Bool)isInGame;

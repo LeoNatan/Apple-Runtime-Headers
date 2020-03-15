@@ -14,9 +14,9 @@
     HMDCameraStreamSessionID *_streamSessionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDCameraStreamSessionID *streamSessionID; // @synthesize streamSessionID=_streamSessionID;
 @property(readonly, nonatomic) __weak HMDCameraStreamTracker *streamTracker; // @synthesize streamTracker=_streamTracker;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithStreamTracker:(id)arg1 streamIdentifier:(id)arg2;
 

@@ -16,10 +16,10 @@
 }
 
 + (id)fake404;
+- (void).cxx_destruct;
 @property(readonly, retain) CalDAVAccountInfoProvider *accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
 @property(readonly) NSArray *groupMembers; // @synthesize groupMembers=_groupMembers;
 @property(retain) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 - (void)getGroupMembersSynchronously;
 - (void)expandCDGroup:(id)arg1;
 - (id)initWithAccountInfoProvider:(id)arg1 groupIdentifier:(id)arg2;

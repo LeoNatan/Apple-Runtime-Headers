@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     VUIAppDocumentUpdateEventDescriptor *_descriptor;
 }
 
++ (id)iamMessageReceived;
 + (id)locationRetrieved;
 + (id)locationAuthorizationChanged;
 + (id)appRefresh;
@@ -32,8 +33,8 @@ __attribute__((visibility("hidden")))
 + (id)settings;
 + (id)playActivity;
 + (id)purchases;
-@property(retain, nonatomic) VUIAppDocumentUpdateEventDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIAppDocumentUpdateEventDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -18,13 +18,13 @@
     long long _mediaState;
 }
 
+- (void).cxx_destruct;
 @property long long mediaState; // @synthesize mediaState=_mediaState;
 @property(retain) NSMutableArray *submedia; // @synthesize submedia=_submedia;
 @property long long kind; // @synthesize kind=_kind;
 @property(copy) NSURL *iconURL; // @synthesize iconURL=_iconURL;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)detachWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)attachWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;

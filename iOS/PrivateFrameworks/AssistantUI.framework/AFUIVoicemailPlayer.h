@@ -14,8 +14,8 @@
     VMVoicemail *_voicemailObject;
 }
 
-@property(retain, nonatomic, getter=_voicemailObject, setter=_setVoicemailObject:) VMVoicemail *voicemailObject; // @synthesize voicemailObject=_voicemailObject;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_voicemailObject, setter=_setVoicemailObject:) VMVoicemail *voicemailObject; // @synthesize voicemailObject=_voicemailObject;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(_Bool)arg2;
 - (unsigned long long)_audioOptions;
 - (id)_audioCategory;

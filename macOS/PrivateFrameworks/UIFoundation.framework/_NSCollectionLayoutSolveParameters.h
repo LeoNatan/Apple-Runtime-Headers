@@ -20,8 +20,8 @@
 }
 
 + (id)parametersForFullResolve;
-@property(readonly, nonatomic) id <_NSCollectionLayoutAuxiliaryOffsets> invalidatedSupplementaryOffsets; // @synthesize invalidatedSupplementaryOffsets=_invalidatedSupplementaryOffsets;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <_NSCollectionLayoutAuxiliaryOffsets> invalidatedSupplementaryOffsets; // @synthesize invalidatedSupplementaryOffsets=_invalidatedSupplementaryOffsets;
 - (id)invalidatedAuxiliaryOffsets;
 - (void)addAuxiliaryIndex:(long long)arg1 elementKind:(id)arg2;
 - (void)addItemIndex:(long long)arg1;

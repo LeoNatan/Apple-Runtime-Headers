@@ -20,13 +20,14 @@ __attribute__((visibility("hidden")))
     NSHashTable *_autocorrectionObservers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *autocorrectionObservers; // @synthesize autocorrectionObservers=_autocorrectionObservers;
 @property(nonatomic) BOOL deferredAutocorrection; // @synthesize deferredAutocorrection=_deferredAutocorrection;
 @property(nonatomic) BOOL needsAutocorrection; // @synthesize needsAutocorrection=_needsAutocorrection;
 @property(nonatomic) BOOL requestedAutocorrection; // @synthesize requestedAutocorrection=_requestedAutocorrection;
 @property(retain, nonatomic) TIAutocorrectionList *textSuggestionList; // @synthesize textSuggestionList=_textSuggestionList;
-- (void).cxx_destruct;
 - (void)requestAutocorrectionWithExecutionContext:(id)arg1;
+- (BOOL)hasProactiveCandidates;
 - (BOOL)hasContinuousPathConversions;
 - (BOOL)hasAutofillCandidates;
 - (BOOL)hasCaseableAutocorrection;

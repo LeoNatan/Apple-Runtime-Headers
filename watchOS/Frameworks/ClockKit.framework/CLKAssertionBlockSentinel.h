@@ -16,11 +16,11 @@
     CDUnknownBlockType _fallbackBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fallbackBlock; // @synthesize fallbackBlock=_fallbackBlock;
 @property(nonatomic, getter=shouldBeFatal) _Bool fatal; // @synthesize fatal=_fatal;
 @property(getter=isCalled) _Bool called; // @synthesize called=_called;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)markCalled;
 

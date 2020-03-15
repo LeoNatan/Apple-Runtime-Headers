@@ -15,8 +15,8 @@
     NSObject<OS_xpc_object> *__bundle;
 }
 
-@property(retain) NSObject<OS_xpc_object> *_bundle; // @synthesize _bundle=__bundle;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_xpc_object> *_bundle; // @synthesize _bundle=__bundle;
 @property(readonly) NSString *plugInsPath;
 @property(readonly) NSString *executablePath;
 - (id)bundleDirectory:(id)arg1;

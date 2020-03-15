@@ -23,11 +23,11 @@
 + (id)slotFilterWithIdiomFilter:(id)arg1 sizeFilter:(id)arg2 scaleFilter:(id)arg3 luminosityFilter:(id)arg4;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IBICLuminosityAppearance *luminosityAppearance; // @synthesize luminosityAppearance=_luminosityAppearance;
 @property(readonly, nonatomic) IBICScale *scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) IBICSize *size; // @synthesize size=_size;
 @property(readonly, nonatomic) IBICIdiom *idiom; // @synthesize idiom=_idiom;
-- (void).cxx_destruct;
 - (id)detailAreaPath;
 - (id)requiredPixelSize;
 - (long long)compareDisplayOrder:(id)arg1;

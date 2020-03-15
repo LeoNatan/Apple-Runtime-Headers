@@ -15,8 +15,8 @@
     PKSpendingSummary *_spendingSummary;
 }
 
-@property(retain, nonatomic) PKSpendingSummary *spendingSummary; // @synthesize spendingSummary=_spendingSummary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKSpendingSummary *spendingSummary; // @synthesize spendingSummary=_spendingSummary;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 

@@ -31,6 +31,7 @@
     UXBarButtonItem *_cancelButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UXBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(readonly, nonatomic) UXBarButtonItem *helpButtonItem; // @synthesize helpButtonItem=_helpButtonItem;
 @property __weak NSLayoutConstraint *topSpaceConstraintContinueButton; // @synthesize topSpaceConstraintContinueButton=_topSpaceConstraintContinueButton;
@@ -49,7 +50,6 @@
 @property __weak NSTextField *productDescriptionLabel; // @synthesize productDescriptionLabel=_productDescriptionLabel;
 @property(retain, nonatomic) KHCalendarOptionsModel *calendarOptionsModel; // @synthesize calendarOptionsModel=_calendarOptionsModel;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)showHelp:(id)arg1;
 - (void)createCalendarProject:(id)arg1;
 - (void)changeStoreNotificationReceived;

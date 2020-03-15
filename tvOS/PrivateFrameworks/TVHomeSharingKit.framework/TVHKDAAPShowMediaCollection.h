@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSString *_seasonsMetadataHash;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *seasonsMetadataHash; // @synthesize seasonsMetadataHash=_seasonsMetadataHash;
 @property(copy, nonatomic) NSArray *seasonsSortedByAddedToDate; // @synthesize seasonsSortedByAddedToDate=_seasonsSortedByAddedToDate;
 @property(copy, nonatomic) NSArray *seasonsSortedByAddedDate; // @synthesize seasonsSortedByAddedDate=_seasonsSortedByAddedDate;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(copy, nonatomic) NSArray *seasons; // @synthesize seasons=_seasons;
 - (id)type;
-- (void).cxx_destruct;
 - (id)_lastAddedToSeason;
 - (id)_firstAddedToSeason;
 - (id)_lastAddedSeason;

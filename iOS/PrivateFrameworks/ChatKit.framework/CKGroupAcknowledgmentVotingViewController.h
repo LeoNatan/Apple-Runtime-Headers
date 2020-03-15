@@ -25,6 +25,7 @@
     NSArray *_sortedAnimatorModelItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *sortedAnimatorModelItems; // @synthesize sortedAnimatorModelItems=_sortedAnimatorModelItems;
 @property(retain, nonatomic) _CKAcknowledgmentVoteCountView *currentlyExpandedVoteCountView; // @synthesize currentlyExpandedVoteCountView=_currentlyExpandedVoteCountView;
 @property(retain, nonatomic) UIButton *collapseButton; // @synthesize collapseButton=_collapseButton;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) CKAggregateAcknowledgmentChatItem *chatItem; // @synthesize chatItem=_chatItem;
 @property(retain, nonatomic) NSArray *tallies; // @synthesize tallies=_tallies;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withGestureRecognizer:(id)arg2;
 - (void)tapGestureRecognized:(id)arg1;
 - (void)_animateToLayout:(unsigned long long)arg1 aroundSection:(long long)arg2;

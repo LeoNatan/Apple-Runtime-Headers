@@ -7,6 +7,7 @@
 @class NSArray, NSDictionary, NSNumber, NSString, XCAccessibilityElement, XCDeviceEvent, XCSynthesizedEventRecord, XCTCapabilities, XCTSpindumpRequestSpecification;
 
 @protocol XCTDRemoteAutomationServer
+- (id)_XCTD_resetAuthorizationStatusForResourceWithBundleIdentifier:(NSString *)arg1 resourceIdentifier:(NSString *)arg2;
 - (id)_IDE_convertConnectionToRemoteAutomationSessionForApplicationWithPID:(NSNumber *)arg1;
 - (id)_IDE_initiateRemoteAutomationSessionForApplicationWithPID:(NSNumber *)arg1;
 - (id)_XCTD_requestAutomationSessionBlacklist;
@@ -21,6 +22,7 @@
 - (id)_XCTD_updateDeviceOrientation:(NSNumber *)arg1;
 - (id)_XCTD_sendString:(NSString *)arg1 keysPerSecond:(NSNumber *)arg2;
 - (id)_XCTD_performDeviceEvent:(XCDeviceEvent *)arg1;
+- (id)_XCTD_synthesizeEvent:(XCSynthesizedEventRecord *)arg1 implicitConfirmationInterval:(NSNumber *)arg2;
 - (id)_XCTD_synthesizeEvent:(XCSynthesizedEventRecord *)arg1;
 - (id)_XCTD_getDeviceOrientation;
 - (id)_XCTD_enableFauxCollectionViewCells;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_loadingItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *loadingItem; // @synthesize loadingItem=_loadingItem;
 @property(retain, nonatomic) UIBarButtonItem *loginItem; // @synthesize loginItem=_loginItem;
 @property(nonatomic) __weak UITextField *tokenField; // @synthesize tokenField=_tokenField;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) WFPinboardSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <WFPinboardLoginViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
 - (void)cancel;

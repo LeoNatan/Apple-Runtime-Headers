@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     MPCPlayerCommandRequest *_holdEndCommandRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPerformingHighlightAnimation) _Bool performingHighlightAnimation; // @synthesize performingHighlightAnimation=_performingHighlightAnimation;
 @property(nonatomic) _Bool shouldPresentActionSheet; // @synthesize shouldPresentActionSheet=_shouldPresentActionSheet;
 @property(retain, nonatomic) MPCPlayerCommandRequest *holdEndCommandRequest; // @synthesize holdEndCommandRequest=_holdEndCommandRequest;
 @property(retain, nonatomic) MPCPlayerCommandRequest *holdBeginCommandRequest; // @synthesize holdBeginCommandRequest=_holdBeginCommandRequest;
 @property(retain, nonatomic) MPCPlayerCommandRequest *touchUpInsideCommandRequest; // @synthesize touchUpInsideCommandRequest=_touchUpInsideCommandRequest;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 
 @end

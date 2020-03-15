@@ -9,21 +9,21 @@
 #import <ClockKitUI/CLKTimeFormatterObserver-Protocol.h>
 #import <ClockKitUI/_CLKUITimeLabelManager-Protocol.h>
 
-@class CLKTimeFormatter, NSString, UIColor, _CLKUIBasicTimeLabelManager;
+@class CLKTimeFormatter, NSNumber, NSString, UIColor, _CLKUIBasicTimeLabelManager;
 
 @interface _CLKUIBlinkingTimeLabelManager : UIView <_CLKUITimeLabelManager, CLKTimeFormatterObserver>
 {
     CLKTimeFormatter *_timeFormatter;
     _CLKUIBasicTimeLabelManager *_numbersLabelManager;
     _CLKUIBasicTimeLabelManager *_blinkerLabelManager;
-    struct NSNumber *_blinkTimerToken;
+    NSNumber *_blinkTimerToken;
     _Bool _animationsPaused;
     _Bool _showSeconds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(nonatomic) _Bool animationsPaused; // @synthesize animationsPaused=_animationsPaused;
-- (void).cxx_destruct;
 - (void)_updateBlinkerAlphaForSecondFraction:(float)arg1;
 - (void)_startOrStopBlinking;
 - (void)_stopBlinking;

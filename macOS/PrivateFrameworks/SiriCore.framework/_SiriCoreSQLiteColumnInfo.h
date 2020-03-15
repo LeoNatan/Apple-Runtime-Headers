@@ -21,13 +21,13 @@
     id <SiriCoreSQLiteValue> _defaultValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) id <SiriCoreSQLiteValue> defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(readonly, nonatomic) BOOL isNotNull; // @synthesize isNotNull=_isNotNull;
 @property(readonly, nonatomic) BOOL isPrimaryKey; // @synthesize isPrimaryKey=_isPrimaryKey;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(long long)arg1 name:(id)arg2 type:(id)arg3 isPrimaryKey:(BOOL)arg4 isNotNull:(BOOL)arg5 defaultValue:(id)arg6;
 
 // Remaining properties

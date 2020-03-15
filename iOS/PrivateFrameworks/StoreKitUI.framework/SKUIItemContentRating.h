@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_contentRank;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *contentRank; // @synthesize contentRank=_contentRank;
 @property(readonly, nonatomic) NSString *contentRatingSystemName; // @synthesize contentRatingSystemName=_contentRatingSystemName;
 @property(readonly, nonatomic) NSArray *contentRatingAdvisories; // @synthesize contentRatingAdvisories=_contentRatingAdvisories;
 @property(readonly, nonatomic) NSString *contentRatingName; // @synthesize contentRatingName=_contentRatingName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithContentRatingDictionary:(id)arg1 systemName:(id)arg2;
 

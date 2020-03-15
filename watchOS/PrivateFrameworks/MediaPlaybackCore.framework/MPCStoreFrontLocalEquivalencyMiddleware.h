@@ -19,10 +19,10 @@
     NSIndexPath *_playingItemIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexPath *playingItemIndexPath; // @synthesize playingItemIndexPath=_playingItemIndexPath;
 @property(retain, nonatomic) MPModelGenericObject *overridePlayingItem; // @synthesize overridePlayingItem=_overridePlayingItem;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;

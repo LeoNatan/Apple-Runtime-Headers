@@ -28,6 +28,7 @@
     NSArray *_fieldSpacing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldBecomeFirstResponderOnTap; // @synthesize shouldBecomeFirstResponderOnTap=_shouldBecomeFirstResponderOnTap;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSArray *fieldSpacing; // @synthesize fieldSpacing=_fieldSpacing;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool securePasscodeEntry; // @synthesize securePasscodeEntry=_securePasscodeEntry;
 @property(nonatomic) unsigned long long numberOfEntryFields; // @synthesize numberOfEntryFields=_numberOfEntryFields;
 @property(nonatomic) __weak id <PSPasscodeFieldDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)deleteBackward;
 @property(readonly, nonatomic) _Bool hasText;
 - (void)insertText:(id)arg1;

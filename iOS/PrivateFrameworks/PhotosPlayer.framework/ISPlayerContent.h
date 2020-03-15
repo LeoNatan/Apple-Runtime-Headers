@@ -21,6 +21,7 @@
     CDStruct_1b6d18a9 _videoDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *variationIdentifier; // @synthesize variationIdentifier=_variationIdentifier;
 @property(readonly, nonatomic) _Bool supportsVitality; // @synthesize supportsVitality=_supportsVitality;
 @property(readonly, nonatomic) _Bool photoIsOriginal; // @synthesize photoIsOriginal=_photoIsOriginal;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) CDStruct_1b6d18a9 photoTime; // @synthesize photoTime=_photoTime;
 @property(readonly, nonatomic) int photoEXIFOrientation; // @synthesize photoEXIFOrientation=_photoEXIFOrientation;
 @property(readonly, nonatomic) struct CGImage *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;

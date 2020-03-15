@@ -21,8 +21,8 @@
     } _has;
 }
 
-@property(retain, nonatomic) NSString *tagId; // @synthesize tagId=_tagId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *tagId; // @synthesize tagId=_tagId;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

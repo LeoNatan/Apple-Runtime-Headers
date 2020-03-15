@@ -23,12 +23,12 @@
 + (CDUnknownBlockType)_dateIntervalFilter:(id)arg1;
 + (CDUnknownBlockType)_scheduledObjectComparator;
 + (void)_sort:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *scheduledAlertMap; // @synthesize scheduledAlertMap=_scheduledAlertMap;
 @property(retain, nonatomic) NSMutableOrderedSet *orderedScheduledEvents; // @synthesize orderedScheduledEvents=_orderedScheduledEvents;
 @property(retain, nonatomic) NSMutableOrderedSet *orderedScheduledNotifications; // @synthesize orderedScheduledNotifications=_orderedScheduledNotifications;
 @property(retain, nonatomic) NSMutableOrderedSet *orderedScheduledAlerts; // @synthesize orderedScheduledAlerts=_orderedScheduledAlerts;
 @property(nonatomic) __weak id <MTScheduledListDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_unscheduleObject:(id)arg1;
 - (_Bool)isScheduled:(id)arg1;

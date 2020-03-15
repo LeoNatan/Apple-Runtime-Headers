@@ -15,10 +15,10 @@
     MailAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MailAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) MFMessageHeaders *headers; // @synthesize headers=_headers;
 @property(retain, nonatomic) MFMailboxUid *mailbox; // @synthesize mailbox=_mailbox;
-- (void).cxx_destruct;
 
 @end
 

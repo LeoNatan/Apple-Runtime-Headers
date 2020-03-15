@@ -31,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *delegateMachServiceName; // @synthesize delegateMachServiceName=_delegateMachServiceName;
 @property(copy) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(copy) NSString *uuid; // @synthesize uuid=_uuid;
@@ -47,7 +48,6 @@
 @property(copy) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCacheDictionaryRepresentation:(id)arg1;
 - (id)cacheDictionaryRepresentation;

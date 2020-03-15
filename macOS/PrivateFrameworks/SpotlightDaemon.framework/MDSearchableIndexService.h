@@ -28,6 +28,7 @@
     NSString *_protectionClass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(nonatomic) BOOL quotaDisabled; // @synthesize quotaDisabled=_quotaDisabled;
 @property(nonatomic) BOOL searchInternal; // @synthesize searchInternal=_searchInternal;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(retain, nonatomic) NSObject<MDIndexer> *indexer; // @synthesize indexer=_indexer;
-- (void).cxx_destruct;
 - (BOOL)handleCommand:(const char *)arg1 info:(id)arg2;
 - (BOOL)donateRelevantActions:(id)arg1;
 - (BOOL)deleteAllInteractions:(id)arg1;

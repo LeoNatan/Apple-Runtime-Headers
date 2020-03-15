@@ -19,13 +19,13 @@
 }
 
 + (id)detailsWithEventClass:(unsigned int)arg1 eventID:(unsigned int)arg2 displayName:(id)arg3;
+- (void).cxx_destruct;
 @property unsigned int resultType; // @synthesize resultType=_resultType;
 @property(retain) NSMutableDictionary *parameters; // @synthesize parameters=_parameters;
 @property(retain) AECommandParameter *directParameter; // @synthesize directParameter=_directParameter;
 @property unsigned int eventID; // @synthesize eventID=_eventID;
 @property unsigned int eventClass; // @synthesize eventClass=_eventClass;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)parameterNameForCode:(unsigned int)arg1;
 - (unsigned int)parameterCodeForName:(id)arg1;
 - (id)parameterNames;

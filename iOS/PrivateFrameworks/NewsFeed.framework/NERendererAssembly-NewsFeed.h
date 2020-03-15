@@ -6,9 +6,7 @@
 
 #import <NewsFeed/NERendererAssembly.h>
 
-#import <NewsFeed/NFAssembly-Protocol.h>
-
-@interface NERendererAssembly (NewsFeed) <NFAssembly>
+@interface NERendererAssembly (NewsFeed)
 - (void)loadInRegistry:(id)arg1;
 @end
 

@@ -25,9 +25,9 @@
     NSArray *_contentItemsChangedIndexPaths;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *contentItemsChangedIndexPaths; // @synthesize contentItemsChangedIndexPaths=_contentItemsChangedIndexPaths;
 @property(readonly, nonatomic) PXSectionedDataSourceChangeDetails *sectionedDataSourceChangeDetails; // @synthesize sectionedDataSourceChangeDetails=_sectionedDataSourceChangeDetails;
-- (void).cxx_destruct;
 - (void)enumerateMovedIndexPathsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_prepareIncrementalDetails;
 - (void)prepareIfNeeded;

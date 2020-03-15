@@ -30,8 +30,8 @@
 + (id)serverInterface;
 + (id)_exceptionForPreviouslyDiscardedBuilder;
 + (id)_clientErrorForFinishedSeries;
-@property(copy, nonatomic) CDUnknownBlockType unitTest_insertQuantityCompletion; // @synthesize unitTest_insertQuantityCompletion=_unitTest_insertQuantityCompletion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType unitTest_insertQuantityCompletion; // @synthesize unitTest_insertQuantityCompletion=_unitTest_insertQuantityCompletion;
 - (void)unitTest_setBatchSize:(long long)arg1;
 @property(readonly, nonatomic) long long unitTest_state;
 - (void)unitTest_discardWithCompletion:(CDUnknownBlockType)arg1;

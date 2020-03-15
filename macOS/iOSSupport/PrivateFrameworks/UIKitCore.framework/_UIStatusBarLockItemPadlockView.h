@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     UIStatusBarLockItemView *_owner;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIStatusBarLockItemView *owner; // @synthesize owner=_owner;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) UIImageView *shackleView; // @synthesize shackleView=_shackleView;
 @property(retain, nonatomic) UIImageView *bodyView; // @synthesize bodyView=_bodyView;
-- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)jiggleCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)animateUnlockCompletionBlock:(CDUnknownBlockType)arg1;

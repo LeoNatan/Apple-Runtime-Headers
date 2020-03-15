@@ -16,8 +16,8 @@
     id <SVModalPresentationViewControllerProviding> _modalPresentationViewControllerProvider;
 }
 
-@property(readonly, nonatomic) id <SVModalPresentationViewControllerProviding> modalPresentationViewControllerProvider; // @synthesize modalPresentationViewControllerProvider=_modalPresentationViewControllerProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVModalPresentationViewControllerProviding> modalPresentationViewControllerProvider; // @synthesize modalPresentationViewControllerProvider=_modalPresentationViewControllerProvider;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)initWithModalPresentationViewControllerProvider:(id)arg1;

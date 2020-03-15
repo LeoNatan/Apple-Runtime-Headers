@@ -15,10 +15,10 @@
     id <SVXSessionActivityListening> _activityListener;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVXSessionActivityListening> activityListener; // @synthesize activityListener=_activityListener;
 @property(readonly, nonatomic) id <SVXServiceCommandHandling> serviceCommandHandler; // @synthesize serviceCommandHandler=_serviceCommandHandler;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithSessionActivityListener:(id)arg1;
 - (id)initWithServiceCommandHandler:(id)arg1;
 

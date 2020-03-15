@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSString *_author;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *author; // @synthesize author=_author;
 @property(retain) PDComment *parent; // @synthesize parent;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setIndex:(unsigned int)arg1;
 - (unsigned int)index;

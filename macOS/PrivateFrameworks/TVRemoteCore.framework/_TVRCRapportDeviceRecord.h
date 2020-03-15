@@ -14,9 +14,9 @@
     unsigned long long _transports;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transports; // @synthesize transports=_transports;
 @property(copy, nonatomic) NSString *ids; // @synthesize ids=_ids;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)hasAvailableTransports;
 - (id)initWithIDS:(id)arg1;

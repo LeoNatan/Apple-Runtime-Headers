@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_childView;
 }
 
-@property(retain, nonatomic) UIView *childView; // @synthesize childView=_childView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *childView; // @synthesize childView=_childView;
 - (void)prepareForReuse;
 - (_Bool)canBecomeFocused;
 - (void)layoutSubviews;

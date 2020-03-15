@@ -13,8 +13,8 @@
     SXMapItem *_mapItem;
 }
 
-@property(readonly, nonatomic) SXMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (id)initWithMapItem:(id)arg1;
 
 @end

@@ -15,10 +15,10 @@
     int _attributionType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showsLearnMoreLink; // @synthesize showsLearnMoreLink=_showsLearnMoreLink;
 @property(readonly, nonatomic) int attributionType; // @synthesize attributionType=_attributionType;
 @property(readonly, copy, nonatomic) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bundleID;
 - (id)_initWithItem:(id)arg1 attributionInfo:(id)arg2 attributionType:(int)arg3 showsLearnMoreLink:(_Bool)arg4;
 

@@ -18,17 +18,17 @@
 
 + (unsigned long long)maxBigImageCount;
 + (double)bigImageSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryWarningEventSource; // @synthesize memoryWarningEventSource=_memoryWarningEventSource;
 @property(retain, nonatomic) ICLRUCache *bigImageCache; // @synthesize bigImageCache=_bigImageCache;
 @property(retain, nonatomic) ICCache *imageCache; // @synthesize imageCache=_imageCache;
-- (void).cxx_destruct;
 - (void)receivedMemoryWarning;
 - (void)unregisterForMemoryWarnings;
 - (void)registerForMemoryWarnings;
 - (void)removeAllImages;
-- (struct UIImage *)imageForKey:(id)arg1;
+- (id)imageForKey:(id)arg1;
 - (void)removeImageForKey:(id)arg1;
-- (void)setImage:(struct UIImage *)arg1 forKey:(id)arg2;
+- (void)setImage:(id)arg1 forKey:(id)arg2;
 - (id)init;
 
 @end

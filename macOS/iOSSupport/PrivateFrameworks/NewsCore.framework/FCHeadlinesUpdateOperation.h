@@ -19,13 +19,13 @@
     NSDictionary *_resultHeadlinesByArticleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *resultHeadlinesByArticleID; // @synthesize resultHeadlinesByArticleID=_resultHeadlinesByArticleID;
 @property(copy, nonatomic) CDUnknownBlockType updateCompletion; // @synthesize updateCompletion=_updateCompletion;
 @property(nonatomic) double maxArticleAge; // @synthesize maxArticleAge=_maxArticleAge;
 @property(copy, nonatomic) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     id <SKUIOverlayContainerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SKUIOverlayContainerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIOverlayContainerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_viewControllerForPoint:(struct CGPoint)arg1;
 - (void)_slideInViewController:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)_selectedViewController;

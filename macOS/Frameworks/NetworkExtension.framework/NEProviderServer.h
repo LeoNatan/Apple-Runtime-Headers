@@ -17,9 +17,9 @@
 }
 
 + (id)sharedServer;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *contexts; // @synthesize contexts=_contexts;
 @property(readonly, nonatomic) NSMutableArray *listeners; // @synthesize listeners=_listeners;
-- (void).cxx_destruct;
 - (void)removeProviderContext:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;

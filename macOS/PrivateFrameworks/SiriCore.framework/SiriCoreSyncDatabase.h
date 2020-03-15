@@ -18,9 +18,9 @@
 
 + (void)removeCurrentSyncDatabase;
 + (id)currentSyncDatabase;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL debugMode; // @synthesize debugMode=_debugMode;
 @property(nonatomic) BOOL inTransaction; // @synthesize inTransaction=_inTransaction;
-- (void).cxx_destruct;
 - (BOOL)_enumerateKey:(id)arg1 updatedAfter:(id)arg2 fromTable:(id)arg3 usingBlock:(CDUnknownBlockType)arg4 error:(id *)arg5;
 - (BOOL)enumerateSentItemsOfKey:(id)arg1 updatedAfter:(id)arg2 error:(id *)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (BOOL)enumerateRemovalsOfKey:(id)arg1 updatedAfter:(id)arg2 error:(id *)arg3 usingBlock:(CDUnknownBlockType)arg4;

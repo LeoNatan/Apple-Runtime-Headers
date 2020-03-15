@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PepperUICore/PUICViewController.h>
+#import <UIKit/UIViewController.h>
 
-@class NSString, PUICStatusBarGlobalContextViewAssertion, SFNanoTransitionController, UIImageView, UILabel, WKWebView;
+@class NSString, PUICStatusBarAppContextView, PUICStatusBarGlobalContextViewAssertion, SFNanoTransitionController, UIImageView, UILabel, WKWebView;
 
 __attribute__((visibility("hidden")))
-@interface SFNanoPageInfoViewController : PUICViewController
+@interface SFNanoPageInfoViewController : UIViewController
 {
     WKWebView *_webView;
     UILabel *_domainLabel;
@@ -18,10 +18,13 @@ __attribute__((visibility("hidden")))
     _Bool _isSecure;
     NSString *_domain;
     PUICStatusBarGlobalContextViewAssertion *_statusBarAssertion;
+    PUICStatusBarAppContextView *_statusBarAppContextView;
+    _Bool _drawsBackButton;
 }
 
 + (void)initialize;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool drawsBackButton; // @synthesize drawsBackButton=_drawsBackButton;
 - (_Bool)prefersStatusBarHidden;
 - (void)backButtonTapped;
 - (void)viewDidDisappear:(_Bool)arg1;

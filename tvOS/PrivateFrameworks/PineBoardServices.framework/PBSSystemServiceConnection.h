@@ -31,9 +31,9 @@
 }
 
 + (id)sharedConnection;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)_updateLocalServiceProxies;
 - (void)_releaseProxyObjects;
 - (void)_handleConnectionInterruption;

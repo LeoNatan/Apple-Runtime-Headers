@@ -14,9 +14,9 @@
     int _maxDynamicFontSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int maxDynamicFontSize; // @synthesize maxDynamicFontSize=_maxDynamicFontSize;
 @property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
-- (void).cxx_destruct;
 - (void)_enumerateIntegerKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isCompatibleWithFamily:(int)arg1;

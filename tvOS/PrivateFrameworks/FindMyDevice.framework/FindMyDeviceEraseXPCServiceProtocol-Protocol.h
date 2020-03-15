@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class FMDEraseOptions;
+
 @protocol FindMyDeviceEraseXPCServiceProtocol
-- (void)eraseDeviceWithCompletion:(void (^)(NSError *))arg1;
+- (void)eraseDeviceWithOptions:(FMDEraseOptions *)arg1 completion:(void (^)(NSError *))arg2;
 @end
 

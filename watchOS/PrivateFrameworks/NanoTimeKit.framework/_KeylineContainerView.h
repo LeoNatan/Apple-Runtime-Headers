@@ -20,13 +20,13 @@
     struct UIEdgeInsets _activeAreaInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int labelAlignment; // @synthesize labelAlignment=_labelAlignment;
 @property(nonatomic) struct UIEdgeInsets activeAreaInsets; // @synthesize activeAreaInsets=_activeAreaInsets;
 @property(retain, nonatomic) _KeylineLabel *label; // @synthesize label=_label;
 @property(nonatomic) struct CGRect deselectedFrame; // @synthesize deselectedFrame=_deselectedFrame;
 @property(nonatomic) struct CGRect selectedFrame; // @synthesize selectedFrame=_selectedFrame;
 @property(retain, nonatomic) UIView<NTKKeylineView> *keylineView; // @synthesize keylineView=_keylineView;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)stopBreathingWithUrgency:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)startBreathingWithApplier:(CDUnknownBlockType)arg1;

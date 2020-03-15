@@ -19,13 +19,12 @@
     UIColor *_detailTextColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *detailTextColor; // @synthesize detailTextColor=_detailTextColor;
 @property(retain, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(copy, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
-- (struct UIEdgeInsets)_effectiveLayoutMargins;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)_applyLabelStyles;

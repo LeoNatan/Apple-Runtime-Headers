@@ -17,11 +17,11 @@
     id <HUQuickControlItemUpdating> _itemUpdater;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool copyItems; // @synthesize copyItems=_copyItems;
 @property(retain, nonatomic) id <HUQuickControlItemUpdating> itemUpdater; // @synthesize itemUpdater=_itemUpdater;
 @property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)initWithHome:(id)arg1;
 
 @end

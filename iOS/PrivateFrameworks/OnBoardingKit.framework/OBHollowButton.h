@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)hollowButtonWithTarget:(id)arg1 downPressSelector:(SEL)arg2 upLiftSelector:(SEL)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) SEL upLiftSelector; // @synthesize upLiftSelector=_upLiftSelector;
 @property(nonatomic) SEL downPressSelector; // @synthesize downPressSelector=_downPressSelector;
 @property(retain, nonatomic) NSObject *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)buttonPressed:(id)arg1;
 
 @end

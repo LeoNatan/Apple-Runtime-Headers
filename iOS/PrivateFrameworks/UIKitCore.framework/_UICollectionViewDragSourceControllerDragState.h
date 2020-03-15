@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSPointerArray *_dragItemsWithRebasableIndexPaths;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *dragItemsWithRebasableIndexPaths; // @synthesize dragItemsWithRebasableIndexPaths=_dragItemsWithRebasableIndexPaths;
 @property(retain, nonatomic) NSMutableOrderedSet *dataSourceIndexPathsOfDraggingItems; // @synthesize dataSourceIndexPathsOfDraggingItems=_dataSourceIndexPathsOfDraggingItems;
-- (void).cxx_destruct;
 - (void)rebaseDataSourceIndexPathsWithUpdateMap:(id)arg1;
 @property(readonly, nonatomic) NSArray *draggingDataSourceIndexPaths;
 - (_Bool)isDraggingFromDataSourceIndexPath:(id)arg1;

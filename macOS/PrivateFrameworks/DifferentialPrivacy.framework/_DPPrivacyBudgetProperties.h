@@ -23,12 +23,12 @@
 + (id)budgetPropertiesForKey:(id)arg1;
 + (void)initializeAllBudgetProperties;
 + (id)budgetPropertiesFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *refillAmount; // @synthesize refillAmount=_refillAmount;
 @property(retain, nonatomic) NSNumber *refillInterval; // @synthesize refillInterval=_refillInterval;
 @property(retain, nonatomic) NSNumber *intervalBudgetValue; // @synthesize intervalBudgetValue=_intervalBudgetValue;
 @property(retain, nonatomic) NSNumber *interval; // @synthesize interval=_interval;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;

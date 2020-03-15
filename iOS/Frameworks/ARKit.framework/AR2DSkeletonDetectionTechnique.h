@@ -11,11 +11,10 @@
 @interface AR2DSkeletonDetectionTechnique : ARMLImageProcessingTechnique
 {
     AR2DSkeletonDetectionPostProcessGPU *_postProcessorGPU;
-    struct SkeletonJointFilter<float> _extrapolationFilter2D;
-    struct SkeletonJointFilter<float> _extrapolationFilter2DForLiftingData;
+    struct __CVPixelBufferPool *_heatmapPool;
+    struct __CVPixelBufferPool *_affinityPool;
 }
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_endMLCreateResultSignpostWithTimestamp:(double)arg1;
 - (void)_startMLCreateResultSignpostWithTimestamp:(double)arg1 orientation:(long long)arg2 outputSize:(struct CGSize)arg3;
@@ -26,10 +25,9 @@
 - (void)_endLoadingMLModelSignpost;
 - (void)_startLoadingMLModelSignpost;
 - (id)createResultDataFromTensors:(CDStruct_cf098810 *)arg1 numberOfOutputTensors:(unsigned long long)arg2 imageDataForNeuralNetwork:(id)arg3 inputImageData:(id)arg4 rotationNeeded:(long long)arg5 regionOfInterest:(struct CGSize)arg6;
-- (int)defaultEngine;
 - (CDStruct_b527887c)networkInputParams;
 - (double)requiredTimeInterval;
-- (void)changeEspressoConfig:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

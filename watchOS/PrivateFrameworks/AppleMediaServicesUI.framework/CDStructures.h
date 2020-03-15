@@ -25,15 +25,3 @@ struct CGSize {
     float _field2;
 };
 
-struct UIImage {
-    Class _field1;
-};
-
-struct UITextField {
-    Class _field1;
-};
-
-struct UIViewController {
-    Class _field1;
-};
-

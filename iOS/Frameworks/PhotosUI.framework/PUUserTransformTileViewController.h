@@ -27,6 +27,7 @@
     struct CGRect __untransformedContentFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setIdentifier:) NSString *_identifier; // @synthesize _identifier=__identifier;
 @property(nonatomic, setter=_setUntransformedContentFrame:) struct CGRect _untransformedContentFrame; // @synthesize _untransformedContentFrame=__untransformedContentFrame;
 @property(retain, nonatomic) PUDisplayTileTransform *displayTileTransform; // @synthesize displayTileTransform=_displayTileTransform;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic, setter=_setUserTransformView:) PUUserTransformView *userTransformView; // @synthesize userTransformView=_userTransformView;
 @property(retain, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
 @property(nonatomic) __weak id <PUUserTransformTileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)userTransformView:(id)arg1 didChangeIsUserInteracting:(_Bool)arg2;
 - (_Bool)userTransformView:(id)arg1 shouldReceiveTouchAtPoint:(struct CGPoint)arg2;
 - (void)userTransformView:(id)arg1 didChangeUserAffineTransform:(struct CGAffineTransform)arg2 isUserInteracting:(_Bool)arg3;

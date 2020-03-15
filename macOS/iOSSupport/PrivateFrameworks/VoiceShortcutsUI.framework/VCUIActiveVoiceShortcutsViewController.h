@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCUIVoiceShortcutCell *prototypeCell; // @synthesize prototypeCell=_prototypeCell;
 @property(retain, nonatomic) NSArray *voiceShortcuts; // @synthesize voiceShortcuts=_voiceShortcuts;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(readonly, nonatomic) VCVoiceShortcutClient *voiceShortcutClient; // @synthesize voiceShortcutClient=_voiceShortcutClient;
-- (void).cxx_destruct;
 - (void)showHandleIntentResponse:(id)arg1;
 - (void)showConfirmationWithTitle:(id)arg1 message:(id)arg2 confirmationHandler:(CDUnknownBlockType)arg3;
 - (void)launchExtensionToRunVoiceShortcut:(id)arg1;

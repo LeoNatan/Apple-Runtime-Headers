@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UILabel *_nameLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) CNMeCardSharingPickerLayoutAttributes *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) CNMeCardSharingAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
-- (void).cxx_destruct;
 - (double)desiredHeight;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;

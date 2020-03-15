@@ -17,11 +17,11 @@
     id <SiriUISiriLanguageDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isMacBuddyRunning) BOOL macBuddyRunning; // @synthesize macBuddyRunning=_macBuddyRunning;
 @property(nonatomic) BOOL macBuddyChecked; // @synthesize macBuddyChecked=_macBuddyChecked;
 @property(readonly, nonatomic, getter=_delegate) __weak id <SiriUISiriLanguageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic, setter=_setSpokenLanguageCode:) NSString *spokenLanguageCode; // @synthesize spokenLanguageCode=_spokenLanguageCode;
-- (void).cxx_destruct;
 - (id)_computeSpokenLanguageCode;
 - (void)_updateSpokenLanguageCode;
 - (void)_spokenLanguageDidChange:(id)arg1;

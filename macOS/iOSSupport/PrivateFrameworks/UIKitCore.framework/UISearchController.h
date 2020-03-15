@@ -54,6 +54,7 @@
 }
 
 + (void)_resignSearchBarAsFirstResponder:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShouldRespectPreferredContentSize:) BOOL _shouldRespectPreferredContentSize; // @synthesize _shouldRespectPreferredContentSize=__shouldRespectPreferredContentSize;
 @property(nonatomic, setter=_setRequestedInteractionModel:) unsigned long long _requestedInteractionModel; // @synthesize _requestedInteractionModel=__requestedInteractionModel;
 @property(nonatomic, setter=_setShowResultsForEmptySearch:) BOOL _showResultsForEmptySearch; // @synthesize _showResultsForEmptySearch=__showResultsForEmptySearch;
@@ -71,7 +72,6 @@
 @property(retain, nonatomic) UIView *_resultsControllerViewContainer; // @synthesize _resultsControllerViewContainer;
 @property(readonly, nonatomic) int _barPresentationStyle; // @synthesize _barPresentationStyle;
 @property(readonly, nonatomic) UISearchBar *searchBar; // @synthesize searchBar=_searchBar;
-- (void).cxx_destruct;
 - (void)_stopManagingPalette;
 - (void)_startManagingPalette:(id)arg1;
 - (void)_navigationControllerWillShowViewController:(id)arg1;

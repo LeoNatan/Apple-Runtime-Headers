@@ -19,12 +19,12 @@
 
 + (id)new;
 + (id)descriptorWithPaddingAlongC:(id)arg1 paddingAlongH:(id)arg2 paddingAlongW:(id)arg3 edgeMode:(int)arg4 fillValueArray:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *fillValues; // @synthesize fillValues=_fillValues;
 @property(readonly, nonatomic) int edgeMode; // @synthesize edgeMode=_edgeMode;
 @property(readonly, copy, nonatomic) NSArray *paddingAlongW; // @synthesize paddingAlongW=_paddingAlongW;
 @property(readonly, copy, nonatomic) NSArray *paddingAlongH; // @synthesize paddingAlongH=_paddingAlongH;
 @property(readonly, copy, nonatomic) NSArray *paddingAlongC; // @synthesize paddingAlongC=_paddingAlongC;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithPaddingAlongC:(id)arg1 paddingAlongH:(id)arg2 paddingAlongW:(id)arg3 edgeMode:(int)arg4 fillValueArray:(id)arg5;
 

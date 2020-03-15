@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     UIImageView *_shareImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *shareImageView; // @synthesize shareImageView=_shareImageView;
 @property(retain, nonatomic) UILabel *infoLabel; // @synthesize infoLabel=_infoLabel;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-- (void).cxx_destruct;
 - (void)_cycleProductImage;
 - (void)eventCancel:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

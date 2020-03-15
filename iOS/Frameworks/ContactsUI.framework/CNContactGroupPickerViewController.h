@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 + (id)propertySections;
 + (_Bool)propertiesLeftToPickWithPickedGroups:(id)arg1 policy:(id)arg2 prohibitedPropertyKeys:(id)arg3;
 + (_Bool)propertiesLeftToPickWithPickedGroups:(id)arg1 policy:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CNContactGroupPickerDelegate> groupPickerDelegate; // @synthesize groupPickerDelegate=_groupPickerDelegate;
 @property(retain, nonatomic) NSArray *prohibitedPropertyKeys; // @synthesize prohibitedPropertyKeys=_prohibitedPropertyKeys;
-- (void).cxx_destruct;
 - (id)_loadPickableGroupsWithPickedGroups:(id)arg1 policy:(id)arg2;
 - (void)cancel:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;

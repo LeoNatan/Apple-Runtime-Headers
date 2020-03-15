@@ -15,9 +15,9 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) PXCMMSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (id)createActionProgress;
 - (id)performActionWithSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)canPerformActionWithSession:(id)arg1;

@@ -14,8 +14,8 @@
     PKPhysicalCardArtworkView *_artworkView;
 }
 
-@property(readonly, nonatomic) PKPhysicalCardArtworkView *artworkView; // @synthesize artworkView=_artworkView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPhysicalCardArtworkView *artworkView; // @synthesize artworkView=_artworkView;
 - (id)_backgroundImage;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

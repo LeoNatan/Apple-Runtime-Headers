@@ -32,9 +32,9 @@
 + (id)peopleCategory;
 + (id)messageCategory;
 + (id)didYouMeanCategory;
+- (void).cxx_destruct;
 @property(copy) NSString *contentSearchDisabledExplanation; // @synthesize contentSearchDisabledExplanation;
 @property(getter=isContentSearchEnabled) BOOL contentSearchEnabled; // @synthesize contentSearchEnabled;
-- (void).cxx_destruct;
 - (id)suggestionForUnknownPersonWithName:(id)arg1 address:(id)arg2;
 - (id)suggestionForPerson:(id)arg1;
 - (id)suggestionForSubject:(id)arg1;

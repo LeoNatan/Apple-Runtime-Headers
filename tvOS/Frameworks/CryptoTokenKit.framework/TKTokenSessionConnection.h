@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_initialKeepAlives;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *initialKeepAlives; // @synthesize initialKeepAlives=_initialKeepAlives;
 @property(readonly, nonatomic) NSMutableDictionary *sessions; // @synthesize sessions=_sessions;
 @property(readonly, nonatomic) TKTokenConnection *tokenConnection; // @synthesize tokenConnection=_tokenConnection;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 deleteObjectWithObjectID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)session:(id)arg1 createObjectWithAttributes:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)session:(id)arg1 objectID:(id)arg2 operation:(long long)arg3 data:(id)arg4 algorithms:(id)arg5 parameters:(id)arg6 reply:(CDUnknownBlockType)arg7;

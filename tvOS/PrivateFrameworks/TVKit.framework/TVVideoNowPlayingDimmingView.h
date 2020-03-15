@@ -18,13 +18,13 @@
     TVGradientView *_gradientBackdrop;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVGradientView *gradientBackdrop; // @synthesize gradientBackdrop=_gradientBackdrop;
 @property(retain, nonatomic) UIView *flatBackdrop; // @synthesize flatBackdrop=_flatBackdrop;
 @property(retain, nonatomic) TVProgressBarView *progressBarView; // @synthesize progressBarView=_progressBarView;
 @property(nonatomic) double dimmingAlpha; // @synthesize dimmingAlpha=_dimmingAlpha;
 @property(nonatomic) _Bool dimsWithGradient; // @synthesize dimsWithGradient=_dimsWithGradient;
 @property(nonatomic) _Bool dimsEntireBounds; // @synthesize dimsEntireBounds=_dimsEntireBounds;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

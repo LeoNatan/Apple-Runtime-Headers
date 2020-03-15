@@ -19,11 +19,11 @@
     RTPersonalizationPortraitManager *_personalizationPortraitManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTPersonalizationPortraitManager *personalizationPortraitManager; // @synthesize personalizationPortraitManager=_personalizationPortraitManager;
 @property(readonly, copy, nonatomic) RTMapItemProviderPortraitParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)_mapItemsForLocation:(id)arg1 withNames:(id)arg2 withinDistance:(double)arg3 options:(id)arg4 error:(id *)arg5;
 - (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
 - (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 mapServiceManager:(id)arg3 parameters:(id)arg4 personalizationPortraitManager:(id)arg5;

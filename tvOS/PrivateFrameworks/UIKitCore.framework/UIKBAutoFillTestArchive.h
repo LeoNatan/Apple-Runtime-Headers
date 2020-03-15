@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)autoFillTestArchiveWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINavigationItem *viewControllerNavigationItem; // @synthesize viewControllerNavigationItem=_viewControllerNavigationItem;
 @property(copy, nonatomic) NSString *presentingViewControllerClassName; // @synthesize presentingViewControllerClassName=_presentingViewControllerClassName;
 @property(copy, nonatomic) NSString *navigationControllerClassName; // @synthesize navigationControllerClassName=_navigationControllerClassName;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *viewControllerClassName; // @synthesize viewControllerClassName=_viewControllerClassName;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic) UIKBAutoFillTestExpectedResult *expectedResult; // @synthesize expectedResult=_expectedResult;
-- (void).cxx_destruct;
 - (void)setTableViewDataSource:(id)arg1 forTableViewWithTag:(long long)arg2;
 - (id)tableViewDataSourceWithTag:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

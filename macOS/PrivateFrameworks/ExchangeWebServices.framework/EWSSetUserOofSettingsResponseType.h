@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSResponseMessageType *ResponseMessage; // @synthesize ResponseMessage=_ResponseMessage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSResponseMessageType *ResponseMessage; // @synthesize ResponseMessage=_ResponseMessage;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

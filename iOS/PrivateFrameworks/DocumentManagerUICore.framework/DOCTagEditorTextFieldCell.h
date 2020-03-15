@@ -13,8 +13,8 @@
     DOCAddTagView *_addTagView;
 }
 
-@property(readonly, nonatomic) DOCAddTagView *addTagView; // @synthesize addTagView=_addTagView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) DOCAddTagView *addTagView; // @synthesize addTagView=_addTagView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

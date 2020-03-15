@@ -15,9 +15,9 @@
     NSMutableDictionary *_observersMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *observersMap; // @synthesize observersMap=_observersMap;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (_Bool)observer:(id)arg1 observingNotificationName:(id)arg2;

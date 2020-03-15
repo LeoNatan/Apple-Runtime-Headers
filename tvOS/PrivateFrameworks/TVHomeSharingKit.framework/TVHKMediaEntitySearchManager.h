@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntitySearchLibrary *_library;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaEntitySearchLibrary *library; // @synthesize library=_library;
 @property(retain, nonatomic) NSOperationQueue *serialOperationQueue; // @synthesize serialOperationQueue=_serialOperationQueue;
 @property(copy, nonatomic) TVHSMediaServerSessionState *sessionState; // @synthesize sessionState=_sessionState;
-- (void).cxx_destruct;
 - (void)sessionStateDidChange:(id)arg1;
 - (id)enqueueSearchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)warmdown;

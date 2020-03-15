@@ -44,6 +44,7 @@
 + (id)coalescerWithLabel:(id)arg1 queue:(id)arg2 action:(CDUnknownBlockType)arg3;
 + (id)coalescerWithLabel:(id)arg1 target:(id)arg2 queue:(id)arg3 action:(CDUnknownBlockType)arg4;
 + (id)coalescerWithLabel:(id)arg1 target:(id)arg2 buffer:(id)arg3 queue:(id)arg4 bufferDrainer:(CDUnknownBlockType)arg5 action:(CDUnknownBlockType)arg6;
+- (void).cxx_destruct;
 @property unsigned long long stateCaptureHandlerHandle; // @synthesize stateCaptureHandlerHandle=_stateCaptureHandlerHandle;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property long long state; // @synthesize state=_state;
@@ -61,7 +62,6 @@
 @property __weak id target; // @synthesize target=_target;
 @property(retain) NSString *label; // @synthesize label=_label;
 @property double initialDelay; // @synthesize initialDelay=_initialDelay;
-- (void).cxx_destruct;
 - (void)setupStateCaptureHandler;
 - (id)stateInformation;
 - (void)_resetWhileLocked;

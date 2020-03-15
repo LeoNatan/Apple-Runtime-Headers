@@ -20,11 +20,11 @@
 + (id)_combinedVersionAndInfoDictionaryForBundle:(id)arg1;
 + (id)_orderedVersionKeys;
 + (id)bundleComponentVersionWithOnDiskBundle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(retain) NSString *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
 @property(retain) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(retain) NSString *shortVersionString; // @synthesize shortVersionString=_shortVersionString;
-- (void).cxx_destruct;
 @property(readonly) NSDictionary *attributeDictionary;
 - (long long)compare:(id)arg1;
 - (id)initWithAttributes:(id)arg1;

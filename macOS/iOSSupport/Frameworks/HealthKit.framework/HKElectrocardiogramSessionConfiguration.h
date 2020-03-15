@@ -21,11 +21,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)sessionConfigurationWithUUID:(id)arg1 mode:(long long)arg2 maximumDuration:(double)arg3 wornOnRightArm:(BOOL)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wornOnRightArm; // @synthesize wornOnRightArm=_wornOnRightArm;
 @property(nonatomic) double maximumDuration; // @synthesize maximumDuration=_maximumDuration;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(copy, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

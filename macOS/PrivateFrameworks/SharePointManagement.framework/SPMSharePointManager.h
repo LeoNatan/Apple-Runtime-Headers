@@ -22,12 +22,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly) SPMVolumeObserver *volumeObserver; // @synthesize volumeObserver=_volumeObserver;
 @property(retain) NSData *authorizationToken; // @synthesize authorizationToken=_authorizationToken;
 @property(readonly) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(readonly) ODNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (void)volumeObserver:(id)arg1 observedVolumeUnmounted:(id)arg2;
 - (void)volumeObserver:(id)arg1 observedVolumeMounted:(id)arg2;
 - (BOOL)_removeSharePointNamed:(id)arg1;

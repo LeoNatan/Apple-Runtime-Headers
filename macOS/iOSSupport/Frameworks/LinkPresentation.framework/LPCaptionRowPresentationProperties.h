@@ -15,8 +15,8 @@
     LPCaptionButtonPresentationProperties *_button;
 }
 
-@property(retain, nonatomic) LPCaptionButtonPresentationProperties *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(retain, nonatomic) LPCaptionButtonPresentationProperties *button; // @synthesize button=_button;
 - (void)applyToAllCaptions:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL hasAnyContent;
 - (id)right;

@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     NSDateFormatter *_dateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(retain, nonatomic) SKUILayoutCache *textLayoutCache; // @synthesize textLayoutCache=_textLayoutCache;
 @property(copy, nonatomic) NSArray *releaseNotes; // @synthesize releaseNotes=_releaseNotes;
 @property(nonatomic) long long firstStringIndex; // @synthesize firstStringIndex=_firstStringIndex;
-- (void).cxx_destruct;
 - (void)_reloadHeaderView;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)setExpanded:(_Bool)arg1;

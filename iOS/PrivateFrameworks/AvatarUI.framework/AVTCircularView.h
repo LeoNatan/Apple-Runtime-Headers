@@ -13,8 +13,8 @@
     CAShapeLayer *_clippingLayer;
 }
 
-@property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

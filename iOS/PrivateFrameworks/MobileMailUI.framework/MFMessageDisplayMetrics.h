@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ConversationFooterViewDisplayMetrics, UITraitCollection;
+@class ConversationFooterViewDisplayMetrics, UITraitCollection, UIView;
 
 @interface MFMessageDisplayMetrics : NSObject
 {
@@ -19,12 +19,16 @@
     double _statusIndicatorVerticalSpacing;
     double _footerViewButtonsAnimationOffset;
     ConversationFooterViewDisplayMetrics *_footerViewDisplayMetrics;
+    UIView *_trailingButtonView;
     struct UIEdgeInsets _layoutMargins;
     struct UIEdgeInsets _safeAreaInsets;
 }
 
 + (double)avatarDiameter;
++ (id)displayMetricsWithTraitCollection:(id)arg1 layoutMargins:(struct UIEdgeInsets)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3 interfaceOrientation:(long long)arg4 trailingButtonView:(id)arg5;
 + (id)displayMetricsWithTraitCollection:(id)arg1 layoutMargins:(struct UIEdgeInsets)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3 interfaceOrientation:(long long)arg4;
+- (void).cxx_destruct;
+@property(retain, nonatomic) UIView *trailingButtonView; // @synthesize trailingButtonView=_trailingButtonView;
 @property(retain, nonatomic) ConversationFooterViewDisplayMetrics *footerViewDisplayMetrics; // @synthesize footerViewDisplayMetrics=_footerViewDisplayMetrics;
 @property(nonatomic) double footerViewButtonsAnimationOffset; // @synthesize footerViewButtonsAnimationOffset=_footerViewButtonsAnimationOffset;
 @property(readonly, nonatomic) double statusIndicatorVerticalSpacing; // @synthesize statusIndicatorVerticalSpacing=_statusIndicatorVerticalSpacing;
@@ -36,7 +40,6 @@
 @property(nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double conversationHeaderViewExpandedTitleBottomToLastBaseline;
 @property(readonly, nonatomic) double conversationHeaderViewExpandedTitleTopToFirstBaseline;
 @property(readonly, nonatomic) double conversationHeaderViewCollapsedTitleBottomToLastBaseline;
@@ -53,6 +56,7 @@
 @property(readonly, nonatomic) double bottomSpacingInMailActionCardHorizontalGroup;
 @property(readonly, nonatomic) double baselineToBaselineSpacingInMailActionCardHorizontalGroup;
 @property(readonly, nonatomic) double topToGlyphBaselineInMailActionCardHorizontalGroup;
+@property(readonly, nonatomic) double footerViewTrailingButtonOrigin;
 - (double)_calculateFooterViewButtonsAnimationOffset;
 @property(readonly, nonatomic) _Bool usePhoneLandscapeSymbolConfiguration;
 @property(readonly, nonatomic) double footerViewTopToBaseline;

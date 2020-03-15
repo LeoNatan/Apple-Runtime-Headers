@@ -23,13 +23,13 @@
 
 + (id)itemWithActionTitle:(id)arg1 subtitle:(id)arg2 enabled:(_Bool)arg3 identifier:(id)arg4 image:(id)arg5;
 + (id)itemWithRoute:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(readonly, nonatomic) MPAVRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;

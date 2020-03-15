@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSNumber *valueType; // @synthesize valueType=_valueType;
 @property(copy) NSString *recordType; // @synthesize recordType=_recordType;
 @property(copy) NSString *propertyName; // @synthesize propertyName=_propertyName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

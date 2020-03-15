@@ -10,14 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSEnumerator {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
 struct fsid {
     int _field1[2];
 };

@@ -20,13 +20,13 @@
     HFTransformItem *_customOptionItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFTransformItem *customOptionItem; // @synthesize customOptionItem=_customOptionItem;
 @property(retain, nonatomic) HFTransformItem *currentUserNotAtHomeOptionItem; // @synthesize currentUserNotAtHomeOptionItem=_currentUserNotAtHomeOptionItem;
 @property(retain, nonatomic) HFTransformItem *noUserAtHomeOptionItem; // @synthesize noUserAtHomeOptionItem=_noUserAtHomeOptionItem;
 @property(retain, nonatomic) HFTransformItem *currentUserAtHomeOptionItem; // @synthesize currentUserAtHomeOptionItem=_currentUserAtHomeOptionItem;
 @property(retain, nonatomic) HFTransformItem *anyUserAtHomeOptionItem; // @synthesize anyUserAtHomeOptionItem=_anyUserAtHomeOptionItem;
 @property(retain, nonatomic) HFItem *anyLocationOptionItem; // @synthesize anyLocationOptionItem=_anyLocationOptionItem;
-- (void).cxx_destruct;
 - (id)_createConditionItemForPresenceEventType:(unsigned long long)arg1 userType:(unsigned long long)arg2;
 - (id)_conditionItemForPresenceEvent:(id)arg1;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;

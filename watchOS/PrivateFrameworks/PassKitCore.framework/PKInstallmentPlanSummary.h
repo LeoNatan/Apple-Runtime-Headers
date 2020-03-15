@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDecimalNumber *paymentsToDateAmount; // @synthesize paymentsToDateAmount=_paymentsToDateAmount;
 @property(retain, nonatomic) NSDecimalNumber *interestCharged; // @synthesize interestCharged=_interestCharged;
 @property(retain, nonatomic) NSDate *minimumDueDate; // @synthesize minimumDueDate=_minimumDueDate;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSDate *currentEndDate; // @synthesize currentEndDate=_currentEndDate;
 @property(retain, nonatomic) NSDate *originalEndDate; // @synthesize originalEndDate=_originalEndDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

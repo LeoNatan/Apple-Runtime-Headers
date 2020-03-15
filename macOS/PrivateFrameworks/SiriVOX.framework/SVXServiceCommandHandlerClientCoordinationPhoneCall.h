@@ -22,8 +22,8 @@
 }
 
 + (Class)supportedCommandClass;
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)emergencyCall:(id)arg1 wasHandled:(BOOL)arg2;
 - (void)handleCommand:(id)arg1 withContext:(id)arg2 taskTracker:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)isCommandUUFR:(id)arg1;

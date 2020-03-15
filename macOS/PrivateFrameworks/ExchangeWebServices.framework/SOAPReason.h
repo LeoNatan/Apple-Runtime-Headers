@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) SOAPText *Text; // @synthesize Text=_Text;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SOAPText *Text; // @synthesize Text=_Text;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     TVPDurationValueTransformer *_durationTransformer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPDurationValueTransformer *durationTransformer; // @synthesize durationTransformer=_durationTransformer;
 @property(retain, nonatomic) UILabel *audioElapsedTimeLabel; // @synthesize audioElapsedTimeLabel=_audioElapsedTimeLabel;
 @property(retain, nonatomic) UIView *audioPlayerHeadView; // @synthesize audioPlayerHeadView=_audioPlayerHeadView;
-- (void).cxx_destruct;
 - (_Bool)supportsThumbnailView;
 - (double)dimmingAlpha;
 - (id)createProgressBarView;

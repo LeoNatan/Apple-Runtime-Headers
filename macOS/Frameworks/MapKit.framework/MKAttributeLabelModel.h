@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *providerName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *providerName; // @synthesize providerName;
 @property(nonatomic) double logoVerticalOffset; // @synthesize logoVerticalOffset;
 @property(retain, nonatomic) NSString *text; // @synthesize text;
 @property(retain, nonatomic) NSImage *logo; // @synthesize logo;
-- (void).cxx_destruct;
 - (id)attributedString;
 
 @end

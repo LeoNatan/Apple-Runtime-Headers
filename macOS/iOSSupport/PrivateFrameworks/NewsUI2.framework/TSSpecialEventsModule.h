@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSSpecialEventsModuleType-Protocol.h>
-
-@interface TSSpecialEventsModule : NSObject <TSSpecialEventsModuleType>
+@interface TSSpecialEventsModule : NSObject
 {
     // Error parsing type: , name: resolver
 }

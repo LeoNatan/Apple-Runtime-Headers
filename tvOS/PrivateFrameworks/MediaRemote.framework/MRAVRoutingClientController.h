@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_cachedRoutesForCategories;
 }
 
-@property(readonly, nonatomic) MRMediaRemoteService *mediaRemoteService; // @synthesize mediaRemoteService=_mediaRemoteService;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MRMediaRemoteService *mediaRemoteService; // @synthesize mediaRemoteService=_mediaRemoteService;
 - (void)_flushPendingCompletionHandlersWithPickableRoutes:(id)arg1 forCategory:(id)arg2;
 - (void)_cacheFetchedPickableRoutes:(id)arg1 forCategory:(id)arg2;
 - (void)_pickableRoutesDidChangeNotification:(id)arg1;

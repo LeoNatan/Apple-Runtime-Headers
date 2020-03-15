@@ -19,10 +19,10 @@
     id <NMUTopLevelCollectionSyncInfoControllerDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NMUTopLevelCollectionSyncInfoControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak NMUTopLevelCollectionViewController *topLevelCollectionViewController; // @synthesize topLevelCollectionViewController=_topLevelCollectionViewController;
 @property(readonly, nonatomic) NMSMediaSyncInfo *syncInfo; // @synthesize syncInfo=_syncInfo;
-- (void).cxx_destruct;
 - (void)_updateVisibleCellsIfNeeded;
 - (void)_handleMediaSyncInfoDidUpdateNotification:(id)arg1;
 - (void)environmentMonitorDidChangePower:(id)arg1;

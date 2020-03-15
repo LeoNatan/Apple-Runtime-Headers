@@ -20,8 +20,8 @@
 + (id)clientForConsumerType:(unsigned long long)arg1 cacheBasePath:(id)arg2;
 + (id)clientForConsumerType:(unsigned long long)arg1;
 + (id)clientForConsumerType:(unsigned long long)arg1 cachePath:(const char *)arg2;
-@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (id)getAppPredictorAssetMappingDescription;
 - (_Bool)forceCacheUpdateForConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 candidateIntentTypeIdentifiers:(id)arg4;
 - (void)logUserFeedback:(id)arg1 aprResponse:(id)arg2 consumerSubType:(unsigned char)arg3 engagementType:(unsigned long long)arg4 bundleIdentifier:(id)arg5 bundleIdsShown:(id)arg6;

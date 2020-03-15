@@ -22,6 +22,7 @@
 }
 
 + (id)requestWithAuthorizedPeerPaymentQuote:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *signedEnrollmentDataSignature; // @synthesize signedEnrollmentDataSignature=_signedEnrollmentDataSignature;
 @property(copy, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
 @property(retain, nonatomic) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic) NSDictionary *certificates; // @synthesize certificates=_certificates;
 @property(copy, nonatomic) NSData *paymentData; // @synthesize paymentData=_paymentData;
 @property(copy, nonatomic) NSString *quoteIdentifier; // @synthesize quoteIdentifier=_quoteIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2 deviceIdentifier:(id)arg3 deviceScore:(id)arg4 deviceMetadata:(id)arg5;
 
 @end

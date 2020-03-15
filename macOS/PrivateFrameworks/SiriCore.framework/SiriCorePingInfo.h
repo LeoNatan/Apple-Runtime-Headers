@@ -17,9 +17,9 @@
     double _avgPingTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double avgPingTime; // @synthesize avgPingTime=_avgPingTime;
 @property(readonly, nonatomic) long long pingAcknowledgedCount; // @synthesize pingAcknowledgedCount=_pingAcknowledgedCount;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)numberOfUnacknowledgedPings;
 - (void)markPongReceivedWithIndex:(long long)arg1;

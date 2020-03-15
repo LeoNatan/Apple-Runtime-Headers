@@ -13,8 +13,8 @@
     NSArray *_correctedUtterances;
 }
 
-@property(readonly, copy, nonatomic) NSArray *correctedUtterances; // @synthesize correctedUtterances=_correctedUtterances;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *correctedUtterances; // @synthesize correctedUtterances=_correctedUtterances;
 - (id)description;
 - (id)_initWithCorrectedUtterances:(id)arg1;
 

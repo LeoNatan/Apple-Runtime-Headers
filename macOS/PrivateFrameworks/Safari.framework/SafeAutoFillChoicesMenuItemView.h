@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)doNotFillText;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *constraintBetweenLabels; // @synthesize constraintBetweenLabels=_constraintBetweenLabels;
 @property(nonatomic) __weak NSLayoutConstraint *contentValueLabelLeadingConstraint; // @synthesize contentValueLabelLeadingConstraint=_contentValueLabelLeadingConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *sectionTitleLabelLeadingConstraint; // @synthesize sectionTitleLabelLeadingConstraint=_sectionTitleLabelLeadingConstraint;
 @property(nonatomic) __weak NSTextField *contentValueLabel; // @synthesize contentValueLabel=_contentValueLabel;
 @property(nonatomic) __weak NSTextField *sectionTitleLabel; // @synthesize sectionTitleLabel=_sectionTitleLabel;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

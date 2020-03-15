@@ -36,6 +36,7 @@
 + (id)tokenWithAddress:(id)arg1 isRecent:(BOOL)arg2 contact:(id)arg3;
 + (id)tokenWithAddress:(id)arg1;
 + (BOOL)addressIsExternal:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNAutocompleteStore *autocompleteStore; // @synthesize autocompleteStore=_autocompleteStore;
 @property(retain, nonatomic) id <CNCancelable> autocompletionSearchRequest; // @synthesize autocompletionSearchRequest=_autocompletionSearchRequest;
 @property(nonatomic) BOOL shouldRefreshNameIfPossible; // @synthesize shouldRefreshNameIfPossible=_shouldRefreshNameIfPossible;
@@ -49,7 +50,6 @@
 @property(nonatomic) __weak NSTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) __weak NSTokenField *tokenField; // @synthesize tokenField=_tokenField;
 @property(retain, nonatomic) id <MUITokenAddressDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)searchForToken:(id)arg1;
 - (void)removeFromAddressHistory:(id)arg1;
 - (void)expandGroupAddress:(id)arg1;

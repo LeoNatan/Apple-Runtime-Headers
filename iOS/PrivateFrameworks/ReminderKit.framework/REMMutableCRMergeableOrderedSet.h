@@ -16,19 +16,19 @@
 {
     id <REMReplicaManagerProviding> _replicaManagerProvider;
     REMReplicaIDSource *_replicaIDSource;
-    struct CRDocument *_document;
+    CRDocument *_document;
     REMReplicaIDHelper *_replicaIDHelper;
     NSMutableArray *_undos;
     REMMutableCRUndo *_currentUndo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMMutableCRUndo *currentUndo; // @synthesize currentUndo=_currentUndo;
 @property(readonly, nonatomic) NSMutableArray *undos; // @synthesize undos=_undos;
 @property(retain, nonatomic) REMReplicaIDHelper *replicaIDHelper; // @synthesize replicaIDHelper=_replicaIDHelper;
 @property(retain, nonatomic) CRDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) REMReplicaIDSource *replicaIDSource; // @synthesize replicaIDSource=_replicaIDSource;
 @property(retain, nonatomic) id <REMReplicaManagerProviding> replicaManagerProvider; // @synthesize replicaManagerProvider=_replicaManagerProvider;
-- (void).cxx_destruct;
 - (void)replicaIDHelperDidAcquireReplicaUUID:(id)arg1;
 - (void)addUndoCommandsForObject:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (_Bool)wantsUndoCommands;
@@ -38,10 +38,10 @@
 - (id)removeObjectAtIndex:(unsigned long long)arg1;
 - (id)addObject:(id)arg1;
 - (id)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
-- (struct CRDocument *)documentToEdit;
+- (id)documentToEdit;
 @property(readonly, copy) NSString *description;
 - (id)immutableOrderedSet;
-- (id)initWithReplicaIDSource:(id)arg1 immutableDocumentToEdit:(struct CRDocument *)arg2 undos:(id)arg3;
+- (id)initWithReplicaIDSource:(id)arg1 immutableDocumentToEdit:(id)arg2 undos:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

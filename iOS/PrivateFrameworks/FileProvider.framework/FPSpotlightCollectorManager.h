@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 
 + (id)_mountPointsFromProviderDomains:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property _Bool areMountQueriesEnabled; // @synthesize areMountQueriesEnabled=_areMountQueriesEnabled;
 @property(retain) NSMutableDictionary *collectorByDescriptor; // @synthesize collectorByDescriptor=_collectorByDescriptor;
 @property(retain) NSSet *currentMountPoints; // @synthesize currentMountPoints=_currentMountPoints;
 @property(retain) id providerDomainChangesToken; // @synthesize providerDomainChangesToken=_providerDomainChangesToken;
-- (void).cxx_destruct;
 - (id)_recursiveDescription;
 - (void)_observeFileProviderDomains;
 - (void)collectorDidFinish:(id)arg1;

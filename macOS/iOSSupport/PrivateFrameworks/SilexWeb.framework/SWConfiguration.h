@@ -22,6 +22,7 @@
     struct CGRect _contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSDictionary *dataSources; // @synthesize dataSources=_dataSources;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(copy, nonatomic) NSString *storeFront; // @synthesize storeFront=_storeFront;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)isEqualToConfiguration:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

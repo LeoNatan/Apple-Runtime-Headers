@@ -14,9 +14,9 @@
     _UIBackdropViewSettings *_backdropSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBackdropViewSettings *backdropSettings; // @synthesize backdropSettings=_backdropSettings;
 @property(nonatomic) _Bool lightStyle; // @synthesize lightStyle=_lightStyle;
-- (void).cxx_destruct;
 - (id)decoratorIdentifier;
 - (id)resizeImage:(struct CGImage *)arg1 targetSize:(struct CGSize)arg2 shouldDither:(_Bool)arg3;
 - (id)blurImageWithImage:(id)arg1 targetSize:(struct CGSize)arg2 scaleSize:(struct CGSize)arg3;

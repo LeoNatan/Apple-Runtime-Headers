@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(retain) NSString *uid; // @synthesize uid=_uid;
 @property(retain) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

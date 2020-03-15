@@ -33,12 +33,12 @@
 + (id)allowedActionClasses;
 + (BOOL)supportsSecureCoding;
 + (id)shortcutsComponentActionSet;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) HMMutableArray *currentActions; // @synthesize currentActions=_currentActions;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, copy, nonatomic) NSString *actionSetType; // @synthesize actionSetType=_actionSetType;
 @property(nonatomic) BOOL executionInProgress; // @synthesize executionInProgress=_executionInProgress;
-- (void).cxx_destruct;
 - (id)encodeAsProtoBuf;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

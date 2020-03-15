@@ -10,13 +10,13 @@
 
 @interface MPSAccelerationStructureGroup : NSObject
 {
-    // Error parsing type: ^{MPSBVHGroup=^^?{atomic<unsigned int>=AI}@@^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}}, name: _bvhGroup
+    // Error parsing type: ^{MPSBVHGroup=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@@^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}}, name: _bvhGroup
 }
 
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1;
 - (id)initWithDevice:(id)arg1 storageMode:(unsigned long long)arg2;
--     // Error parsing type: ^{MPSBVHGroup=^^?{atomic<unsigned int>=AI}@@^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}}16@0:8, name: bvhGroup
+-     // Error parsing type: ^{MPSBVHGroup=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@@^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}^{MPSBufferAllocator}}16@0:8, name: bvhGroup
 @property(readonly, nonatomic) id <MTLDevice> device;
 
 @end

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)peopleForFetchRequest:(id)arg1 matchInfos:(id *)arg2 inAddressBook:(void *)arg3 environment:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 @property(readonly, nonatomic) CNiOSPersonFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
-- (void).cxx_destruct;
 - (id)sortPeople:(id)arg1;
 - (_Bool)shouldSortInMemory;
 - (id)fetchPeopleUsingNativeSortReturningMatchInfos:(id *)arg1 error:(id *)arg2;

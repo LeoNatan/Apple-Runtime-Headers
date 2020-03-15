@@ -21,15 +21,15 @@ __attribute__((visibility("hidden")))
 + (id)mountSnapshotWithoutReferencesFromPAStyleMountSnapshot:(const CDStruct_92c9c886 *)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_35b38c06 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) NSArray *blockedThreadIDs; // @synthesize blockedThreadIDs=_blockedThreadIDs;
 @property(readonly) double timestampOfLastResponse; // @synthesize timestampOfLastResponse=_timestampOfLastResponse;
 @property(readonly) SATimestamp *timeWhenMeasured; // @synthesize timeWhenMeasured=_timeWhenMeasured;
-- (void).cxx_destruct;
 - (double)secondsUntilUnresponsiveFromTimestamp:(id)arg1;
 @property(readonly) BOOL isUnresponsive;
 - (BOOL)isBlockingThread:(unsigned long long)arg1;
 - (id)initWithStatus:(struct netfs_status *)arg1 atTimestamp:(id)arg2;
-- (void)populateReferencesUsingBuffer:(const CDStruct_35b38c06 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
+- (void)populateReferencesUsingBuffer:(const CDStruct_35b38c06 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (void)addSelfToSerializationDictionary:(id)arg1;
 - (BOOL)addSelfToBuffer:(CDStruct_35b38c06 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;

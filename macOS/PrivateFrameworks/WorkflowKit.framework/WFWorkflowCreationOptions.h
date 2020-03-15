@@ -16,11 +16,11 @@
     unsigned long long _location;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL deleted; // @synthesize deleted=_deleted;
 @property(nonatomic) unsigned long long location; // @synthesize location=_location;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) WFWorkflowRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)initWithRecord:(id)arg1;
 - (id)init;
 

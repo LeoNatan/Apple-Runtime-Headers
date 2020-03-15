@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_canonicalID;
 }
 
-@property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 - (id)_purchaseEventDescriptor;
 - (id)dictionaryRepresentation;
 - (id)initWithPurchaseEventDescriptor:(id)arg1;

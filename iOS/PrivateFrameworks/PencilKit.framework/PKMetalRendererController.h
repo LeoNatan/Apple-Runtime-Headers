@@ -48,6 +48,8 @@
     struct CGAffineTransform _renderTransform;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property double inputScale; // @synthesize inputScale=_inputScale;
 @property struct CGAffineTransform renderTransform; // @synthesize renderTransform=_renderTransform;
 @property(retain, nonatomic) PKMetalRenderer *renderer; // @synthesize renderer=_renderer;
@@ -65,8 +67,6 @@
 @property(nonatomic) struct CGAffineTransform strokeTransform; // @synthesize strokeTransform=_strokeTransform;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *renderQueue; // @synthesize renderQueue=_renderQueue;
 @property(nonatomic) __weak id <PKMetalRendererControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool invertColors;
 - (void)replaceInkTexture:(id)arg1 image:(struct CGImage *)arg2;
 - (_Bool)setupCurrentDrawable;

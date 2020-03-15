@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     double _imageInsetPercentage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowVariants; // @synthesize shouldShowVariants=_shouldShowVariants;
 @property(readonly, nonatomic) double imageInsetPercentage; // @synthesize imageInsetPercentage=_imageInsetPercentage;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long imageType; // @synthesize imageType=_imageType;
 @property(readonly, copy, nonatomic) CDUnknownBlockType imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(retain, nonatomic) UIImage *cachedImage; // @synthesize cachedImage=_cachedImage;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1;
 - (id)initWithImageInsetPercentage:(double)arg1 imageProvider:(CDUnknownBlockType)arg2;
 

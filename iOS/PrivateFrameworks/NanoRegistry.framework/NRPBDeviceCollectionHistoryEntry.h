@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NRPBDeviceCollectionDiff *diff; // @synthesize diff=_diff;
 @property(nonatomic) double date; // @synthesize date=_date;
 @property(nonatomic) long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

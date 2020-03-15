@@ -15,10 +15,10 @@
     NSArray *_mailboxesToDisableSync;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mailboxesToDisableSync; // @synthesize mailboxesToDisableSync=_mailboxesToDisableSync;
 @property(retain, nonatomic) NSArray *mailboxesToReSync; // @synthesize mailboxesToReSync=_mailboxesToReSync;
 @property(retain, nonatomic) NSArray *mailboxesToUpdate; // @synthesize mailboxesToUpdate=_mailboxesToUpdate;
-- (void).cxx_destruct;
 
 @end
 

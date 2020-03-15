@@ -15,10 +15,10 @@
     unsigned long long _token;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long token; // @synthesize token=_token;
 @property(retain, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)next:(id)arg1;
 - (void)quietNext:(id)arg1;
 - (id)observe:(CDUnknownBlockType)arg1;

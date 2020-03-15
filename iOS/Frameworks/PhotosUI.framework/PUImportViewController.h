@@ -99,6 +99,7 @@
 
 + (unsigned short)defaultThumbnailImageFormat;
 + (id)totalSizeStringForItems:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *doubleTapGestureRecognizer; // @synthesize doubleTapGestureRecognizer=_doubleTapGestureRecognizer;
 @property(nonatomic) double referenceWidth; // @synthesize referenceWidth=_referenceWidth;
 @property(nonatomic) _Bool isPeeking; // @synthesize isPeeking=_isPeeking;
@@ -143,7 +144,6 @@
 @property(nonatomic, setter=_setCollectionViewSafeAreaInsets:) struct UIEdgeInsets collectionViewSafeAreaInsets; // @synthesize collectionViewSafeAreaInsets=_collectionViewSafeAreaInsets;
 @property(nonatomic, setter=_setCollectionViewLayoutReferenceWidth:) double _collectionViewLayoutReferenceWidth; // @synthesize _collectionViewLayoutReferenceWidth=__collectionViewLayoutReferenceWidth;
 @property(retain, nonatomic, setter=_setSpec:) PUPhotosGridViewControllerSpec *_spec; // @synthesize _spec=__spec;
-- (void).cxx_destruct;
 - (id)ppt_importButton;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -183,6 +183,7 @@
 - (void)presentOneUpViewController:(id)arg1 animated:(_Bool)arg2 interactive:(_Bool)arg3;
 - (id)oneUpViewControllerForItemAtIndexPath:(id)arg1;
 - (void)updateDataSourceManagerFilters;
+- (double)sectionedGridLayout:(id)arg1 aspectRatioForItemAtIndexPath:(id)arg2;
 - (double)sectionedGridLayout:(id)arg1 accessibilitySectionHeaderHeightForVisualSection:(long long)arg2;
 - (double)sectionedGridLayout:(id)arg1 sectionHeaderHeightForVisualSection:(long long)arg2;
 - (_Bool)anyAlreadyImportedItemsAreSelected;

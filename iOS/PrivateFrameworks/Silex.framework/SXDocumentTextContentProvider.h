@@ -16,8 +16,8 @@
 }
 
 + (id)sharedQueue;
-@property(readonly, nonatomic) SXDocument *document; // @synthesize document=_document;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SXDocument *document; // @synthesize document=_document;
 - (_Bool)contentRelevance:(unsigned long long)arg1 isValidForType:(unsigned long long)arg2;
 - (_Bool)classification:(id)arg1 isValidForType:(unsigned long long)arg2;
 - (id)textContentForComponent:(id)arg1 withType:(unsigned long long)arg2;

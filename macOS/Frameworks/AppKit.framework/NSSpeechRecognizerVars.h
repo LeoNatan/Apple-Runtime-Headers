@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     id <NSSpeechRecognizerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLocale *locale; // @synthesize locale=_locale;
 @property struct __RXRecognizer *recognizer; // @synthesize recognizer=_recognizer;
 @property struct __RXRecognitionSystem *recognitionSystem; // @synthesize recognitionSystem=_recognitionSystem;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSArray *displayedStringsArray; // @synthesize displayedStringsArray=_displayedStringsArray;
 @property(copy) NSArray *simpleCommandsArray; // @synthesize simpleCommandsArray=_simpleCommandsArray;
 @property __weak id <NSSpeechRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

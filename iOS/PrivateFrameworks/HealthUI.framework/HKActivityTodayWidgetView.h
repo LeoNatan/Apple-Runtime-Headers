@@ -30,8 +30,8 @@
 
 + (id)_integerFormatter;
 + (double)preferredHeight;
-@property(retain, nonatomic) NSMutableArray *sizeDepedentConstraints; // @synthesize sizeDepedentConstraints=_sizeDepedentConstraints;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *sizeDepedentConstraints; // @synthesize sizeDepedentConstraints=_sizeDepedentConstraints;
 - (void)_renderRingImage;
 - (void)_animateCurrentActivitySummary;
 - (void)_updateForCurrentSizeCategoryAndSystemLanguage;

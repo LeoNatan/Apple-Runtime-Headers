@@ -19,9 +19,9 @@
 + (float)_barCornerRadiusForIconSize:(int)arg1;
 + (float)_heightForNormalBarAtIndex:(int)arg1 iconSize:(int)arg2;
 + (float)_barWidthForIconSize:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarCycleAnimation *cycleAnimation; // @synthesize cycleAnimation=_cycleAnimation;
 @property(nonatomic) _Bool needsCycleAnimationUpdate; // @synthesize needsCycleAnimationUpdate=_needsCycleAnimationUpdate;
-- (void).cxx_destruct;
 - (id)accessibilityHUDRepresentation;
 - (struct CGSize)intrinsicContentSize;
 - (void)didMoveToWindow;

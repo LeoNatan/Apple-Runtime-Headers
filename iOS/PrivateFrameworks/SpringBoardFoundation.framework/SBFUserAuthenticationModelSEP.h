@@ -22,8 +22,8 @@
     id <SBFUserAuthenticationModelDelegate> _delegate;
 }
 
-@property(nonatomic) id <SBFUserAuthenticationModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <SBFUserAuthenticationModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_refreshStateForMkbState:(id)arg1 notify:(_Bool)arg2;
 - (_Bool)_isDeviceWipePreferenceEnabled;
 - (void)_refreshStateAndNotify:(_Bool)arg1;

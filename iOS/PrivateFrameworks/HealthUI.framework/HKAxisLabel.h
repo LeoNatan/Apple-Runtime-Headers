@@ -15,10 +15,10 @@
     long long _labelType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long labelType; // @synthesize labelType=_labelType;
 @property(retain, nonatomic) id location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

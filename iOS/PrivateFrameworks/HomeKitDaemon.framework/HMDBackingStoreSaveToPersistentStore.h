@@ -15,10 +15,10 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool incrementGeneration; // @synthesize incrementGeneration=_incrementGeneration;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithHomeManager:(id)arg1 reason:(id)arg2 incrementGeneration:(_Bool)arg3;
 

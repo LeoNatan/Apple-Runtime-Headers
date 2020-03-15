@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 + (id)dataWithRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKEncryptedData *encryptedPublicSharingKey; // @synthesize encryptedPublicSharingKey=_encryptedPublicSharingKey;
 @property(retain, nonatomic) CKDChainPCSData *chainPCSData; // @synthesize chainPCSData=_chainPCSData;
 @property(retain, nonatomic) CKRecordID *shareID; // @synthesize shareID=_shareID;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKRecordID *parentID; // @synthesize parentID=_parentID;
 @property(readonly, nonatomic) NSString *recordType; // @synthesize recordType=_recordType;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)CKPropertiesDescription;

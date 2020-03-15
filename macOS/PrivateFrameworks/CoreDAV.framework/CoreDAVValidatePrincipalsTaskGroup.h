@@ -18,11 +18,11 @@
     BOOL _authError;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL didReceiveAuthenticationError; // @synthesize didReceiveAuthenticationError=_authError;
 @property(retain, nonatomic) NSURL *urlBeingExamined; // @synthesize urlBeingExamined=_urlBeingExamined;
 @property(retain, nonatomic) NSMutableSet *principalURLs; // @synthesize principalURLs=_principalURLs;
 @property(retain, nonatomic) NSMutableSet *urlsToExamine; // @synthesize urlsToExamine=_urlsToExamine;
-- (void).cxx_destruct;
 - (void)cancelTaskGroup;
 - (void)startTaskGroup;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;

@@ -32,7 +32,7 @@ struct MPSPluginCNNConvolutionData {
 };
 
 struct MTLTargetDeviceArch {
-    unsigned int _field1;
+    unsigned long long _field1;
     unsigned int _field2;
     char *_field3;
 };
@@ -200,8 +200,10 @@ typedef struct {
     unsigned int _field47;
     unsigned int _field48;
     unsigned int _field49;
-    unsigned long long _field50;
-} CDStruct_daf93e08;
+    unsigned int _field50;
+    unsigned int _field51;
+    unsigned long long _field52;
+} CDStruct_d36c2e50;
 
 typedef struct {
     unsigned int _field1;

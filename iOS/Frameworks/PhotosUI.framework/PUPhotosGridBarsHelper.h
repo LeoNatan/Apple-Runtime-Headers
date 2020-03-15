@@ -34,6 +34,7 @@
     NSObject<OS_dispatch_queue> *__queue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setHadSelectionOnLastUpdate:) _Bool _hadSelectionOnLastUpdate; // @synthesize _hadSelectionOnLastUpdate=__hadSelectionOnLastUpdate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue=__queue;
 @property(nonatomic, setter=_setShouldUpdateItemsWithCount:) _Bool _shouldUpdateItemsWithCount; // @synthesize _shouldUpdateItemsWithCount=__shouldUpdateItemsWithCount;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic, setter=_setTitle:) NSString *title; // @synthesize title=_title;
 @property(nonatomic, getter=isSwipeSelecting) _Bool swipeSelecting; // @synthesize swipeSelecting=_swipeSelecting;
 @property(nonatomic) __weak id <PUPhotosGridBarsHelperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)photoSelectionManagerSelectionDidChange:(id)arg1;
 - (void)_handleItemsWithCountUpdateWithTitle:(id)arg1 shouldReloadAllItems:(_Bool)arg2;
 - (void)_updateItemsWithCountInBackgroundWithDelegate:(id)arg1 photoSelectionManagerSnapshot:(id)arg2;

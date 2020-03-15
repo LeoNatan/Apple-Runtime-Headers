@@ -19,13 +19,14 @@ __attribute__((visibility("hidden")))
     _Bool _isValid;
     _Bool _isCloudSharedGroup;
     _Bool _applyHyperionFilter;
-    struct NSObject *_album;
+    NSObject<PLAlbumProtocol> *_album;
     ALAssetsFilter *_assetsFilter;
     unsigned long long _groupType;
     NSMutableDictionary *_propertyValues;
     PLPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool applyHyperionFilter; // @synthesize applyHyperionFilter=_applyHyperionFilter;
 @property(nonatomic) _Bool isCloudSharedGroup; // @synthesize isCloudSharedGroup=_isCloudSharedGroup;
 @property(retain, nonatomic) PLPhotoLibrary *_photoLibrary; // @synthesize _photoLibrary;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long groupType; // @synthesize groupType=_groupType;
 @property(retain, nonatomic) ALAssetsFilter *assetsFilter; // @synthesize assetsFilter=_assetsFilter;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *album; // @synthesize album=_album;
-- (void).cxx_destruct;
 - (void)_performBlockAndWait:(CDUnknownBlockType)arg1;
 - (void)libraryDidChange;
 @property(nonatomic) ALAssetsLibrary *library;
@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)resetAssets;
 - (int)albumFilter;
 - (void)dealloc;
-- (id)initWithAlbum:(struct NSObject *)arg1 library:(id)arg2;
+- (id)initWithAlbum:(id)arg1 library:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

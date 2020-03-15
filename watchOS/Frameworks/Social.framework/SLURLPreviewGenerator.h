@@ -16,8 +16,8 @@
     UIWebView *_webView;
 }
 
-@property(retain) UIWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
+@property(retain) UIWebView *webView; // @synthesize webView=_webView;
 - (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;

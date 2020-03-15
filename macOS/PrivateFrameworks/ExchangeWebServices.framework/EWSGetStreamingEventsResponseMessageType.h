@@ -16,10 +16,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ConnectionStatus; // @synthesize ConnectionStatus=_ConnectionStatus;
 @property(copy, nonatomic) NSArray *ErrorSubscriptionIds; // @synthesize ErrorSubscriptionIds=_ErrorSubscriptionIds;
 @property(copy, nonatomic) NSArray *Notifications; // @synthesize Notifications=_Notifications;
-- (void).cxx_destruct;
 
 @end
 

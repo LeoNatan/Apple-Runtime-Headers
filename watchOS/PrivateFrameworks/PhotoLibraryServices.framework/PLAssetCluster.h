@@ -18,11 +18,11 @@
 
 + (id)sortByTimeSortDescriptors;
 + (id)mergedCluster:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAssetsSortedByDate:(id)arg1 region:(id)arg2;
 

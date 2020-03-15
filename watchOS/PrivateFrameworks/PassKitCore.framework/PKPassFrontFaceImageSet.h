@@ -21,12 +21,12 @@
 + (unsigned int)currentVersion;
 + (id)archiveName;
 + (int)imageSetType;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect stripRect; // @synthesize stripRect=_stripRect;
 @property(nonatomic) struct CGRect thumbnailRect; // @synthesize thumbnailRect=_thumbnailRect;
 @property(nonatomic) struct CGRect logoRect; // @synthesize logoRect=_logoRect;
 @property(retain, nonatomic) PKImage *faceShadowImage; // @synthesize faceShadowImage=_faceShadowImage;
 @property(retain, nonatomic) PKImage *faceImage; // @synthesize faceImage=_faceImage;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -19,9 +19,9 @@
 + (double)desiredZPosition;
 + (id)reuseIdentifier;
 + (id)supplementaryViewType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISegmentedControl *control; // @synthesize control=_control;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
-- (void).cxx_destruct;
 - (void)_controlIndexDidChange:(id)arg1;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)layoutSubviews;

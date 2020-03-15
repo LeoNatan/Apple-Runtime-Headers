@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 + (int)datePickerMode;
 + (id)newDateFromGregorianYear:(int)arg1 month:(int)arg2 day:(int)arg3 timeZone:(id)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *selectedDateComponents; // @synthesize selectedDateComponents=_selectedDateComponents;
 @property(retain, nonatomic) NSDate *originatingDate; // @synthesize originatingDate=_originatingDate;
 @property(nonatomic) int yearsSinceBaseDate; // @synthesize yearsSinceBaseDate=_yearsSinceBaseDate;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSDate *minimumDate; // @synthesize minimumDate=_minimumDate;
 @property(nonatomic) double todaySinceReferenceDate; // @synthesize todaySinceReferenceDate=_todaySinceReferenceDate;
 @property(nonatomic) int minuteInterval; // @synthesize minuteInterval=_minuteInterval;
-- (void).cxx_destruct;
 - (void)updateEnabledStateOfViewForRow:(int)arg1 inComponent:(int)arg2;
 - (_Bool)_shouldEnableValueForRow:(int)arg1 inComponent:(int)arg2 calendarUnit:(unsigned int)arg3;
 - (_Bool)_shouldEnableValueForRow:(int)arg1 column:(int)arg2;
@@ -67,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isComponentScrolling:(int)arg1;
 - (_Bool)areValidDateComponents:(id)arg1 comparingUnits:(int)arg2;
 - (id)viewForRow:(int)arg1 inComponent:(int)arg2 reusingView:(id)arg3;
-- (void)takeExtremesFromMinimumDate:(id)arg1 maximumDate:(id)arg2;
+- (void)updateDateForNewDateRange;
 - (id)dateComponentsByRestrictingSelectedComponents:(id)arg1 withLastManipulatedColumn:(int)arg2;
 - (_Bool)_monthExists:(int)arg1 inYear:(int)arg2;
 - (int)_numberOfDaysInDateComponents:(id)arg1;

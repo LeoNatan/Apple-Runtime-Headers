@@ -83,6 +83,7 @@
 + (void)_fillOutRequest:(id)arg1 withMapsDataString:(id)arg2;
 + (id)contactsAddressKeysForGeoAddressKeys;
 + (id)contactsAddressDictionaryFromGeoAddressDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *formattedAddressLines; // @synthesize formattedAddressLines=_formattedAddressLines;
 @property(copy, nonatomic) NSString *pointOfInterestCategory; // @synthesize pointOfInterestCategory=_pointOfInterestCategory;
 @property(retain, nonatomic) _MKPlaceReservationInfo *reservationInfo; // @synthesize reservationInfo=_reservationInfo;
@@ -97,7 +98,6 @@
 @property(readonly, nonatomic) GEOPlace *place; // @synthesize place=_place;
 @property(readonly, nonatomic) MKMapItemMetadata *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) BOOL isCurrentLocation; // @synthesize isCurrentLocation=_isCurrentLocation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_hasCorrectedHomeWorkAddress) BOOL hasCorrectedHomeWorkAddress;
 @property(readonly, nonatomic, getter=_hasCorrectedHomeWorkCoordinate) BOOL hasCorrectedHomeWorkCoordinate;
 @property(readonly, nonatomic, getter=_externalTransitStationCode) NSData *externalTransitStationCode;

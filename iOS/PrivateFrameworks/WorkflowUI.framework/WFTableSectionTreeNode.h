@@ -13,8 +13,8 @@
     WFTableSection *_section;
 }
 
-@property(nonatomic) __weak WFTableSection *section; // @synthesize section=_section;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFTableSection *section; // @synthesize section=_section;
 
 @end
 

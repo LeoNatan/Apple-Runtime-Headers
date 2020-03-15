@@ -16,10 +16,10 @@
     long long _options;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(nonatomic) __weak id <HKOverlayRoomViewControllerIntegratedContextDelegate> optionalDelegate; // @synthesize optionalDelegate=_optionalDelegate;
 @property(retain, nonatomic) NSString *quantityTypeIdentifier; // @synthesize quantityTypeIdentifier=_quantityTypeIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)valueContextString:(id)arg1 applicationItems:(id)arg2 representativeDisplayType:(id)arg3;
 - (id)valueString:(id)arg1 applicationItems:(id)arg2 representativeDisplayType:(id)arg3;

@@ -26,10 +26,10 @@
 + (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 withTextStyle:(id)arg5 nonStandardLeading:(float)arg6;
 + (id)constraintWithAutoupdatingBaselineOfView:(id)arg1 toView:(id)arg2 attribute:(int)arg3 withTextStyle:(id)arg4 nonStandardLeading:(float)arg5;
 + (id)contentSizeAutoupdatingConstraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 textStyle:(id)arg7 defaultSizeConstant:(float)arg8;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
 @property(nonatomic) float defaultSizeConstant; // @synthesize defaultSizeConstant=_defaultSizeConstant;
 @property(nonatomic) float fontSizeMultiplier; // @synthesize fontSizeMultiplier=_fontSizeMultiplier;
-- (void).cxx_destruct;
 - (void)_updatePreferredContentSize;
 
 @end

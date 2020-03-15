@@ -18,8 +18,8 @@
     id <KeychainSyncViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <KeychainSyncViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <KeychainSyncViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (double)heightForHeaderInTableView:(id)arg1;
 - (id)viewForHeaderInTableView:(id)arg1;
 - (void)setTitle:(id)arg1;

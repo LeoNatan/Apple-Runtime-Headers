@@ -18,11 +18,11 @@
 }
 
 + (id)builderForExistingTrigger:(id)arg1 inHome:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(copy, nonatomic) NSArray *recurrences; // @synthesize recurrences=_recurrences;
 @property(retain, nonatomic) HFEventBuilder<HFTimeEventBuilder> *eventBuilder; // @synthesize eventBuilder=_eventBuilder;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)copyCurrentStateFromTriggerBuilder:(id)arg1;
 - (void)triggerEnabledStateDidChange:(_Bool)arg1;
 - (id)commitEditTrigger;

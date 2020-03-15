@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)canOpenWithFilePath:(id)arg1 UTI:(id)arg2 sourceURL:(id)arg3;
 + (id)_activityItemsForFilePath:(id)arg1 UTI:(id)arg2 sourceURL:(id)arg3;
 + (id)_applicationsForDocumentProxy:(id)arg1;
-@property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 - (void)_prepareActivity:(id)arg1;
 - (id)initWithFilePath:(id)arg1 UTI:(id)arg2 sourceURL:(id)arg3;
 

@@ -17,9 +17,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSSound *playingSound; // @synthesize playingSound=_playingSound;
 @property(readonly) SFTrack *track; // @synthesize track=_track;
-- (void).cxx_destruct;
 - (void)sound:(id)arg1 didFinishPlaying:(BOOL)arg2;
 - (void)viewClosed;
 - (void)togglePlaying:(id)arg1;

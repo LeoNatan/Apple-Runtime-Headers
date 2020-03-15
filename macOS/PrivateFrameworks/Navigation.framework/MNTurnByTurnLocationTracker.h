@@ -31,8 +31,8 @@
     BOOL _isNavigatingInLowGuidance;
 }
 
-@property(copy, nonatomic) NSData *serverSessionState; // @synthesize serverSessionState=_serverSessionState;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *serverSessionState; // @synthesize serverSessionState=_serverSessionState;
 - (void)arrivalUpdaterDidTimeoutInArrivalRegion:(id)arg1;
 - (void)arrivalUpdaterDidEnterPreArrivalState:(id)arg1;
 - (void)arrivalUpdaterDidArrive:(id)arg1;

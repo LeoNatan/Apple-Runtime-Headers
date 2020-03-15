@@ -20,13 +20,13 @@
     // Error parsing type: {?="columns"[4]}, name: _geometryBindTransform
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property geometryBindTransform:
 // Property attributes: T{?=[4]},N,V_geometryBindTransform
 
 @property(retain, nonatomic) NSArray *jointPaths; // @synthesize jointPaths=_jointPaths;
 @property(retain, nonatomic) id <MDLJointAnimation> jointAnimation; // @synthesize jointAnimation=_jointAnimation;
 @property(retain, nonatomic) MDLSkeleton *skeleton; // @synthesize skeleton=_skeleton;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

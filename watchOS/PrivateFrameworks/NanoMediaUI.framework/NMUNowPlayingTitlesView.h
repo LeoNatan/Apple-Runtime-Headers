@@ -38,6 +38,7 @@
     UIColor *_secondLineColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *secondLineColor; // @synthesize secondLineColor=_secondLineColor;
 @property(copy, nonatomic) UIFont *secondLineFont; // @synthesize secondLineFont=_secondLineFont;
 @property(copy, nonatomic) NSArray *secondLineFields; // @synthesize secondLineFields=_secondLineFields;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSString *albumText; // @synthesize albumText=_albumText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_updateStyle;
 - (void)_setNeedsLabelUpdate;
 - (id)_nowPlayingTextForFields:(id)arg1;

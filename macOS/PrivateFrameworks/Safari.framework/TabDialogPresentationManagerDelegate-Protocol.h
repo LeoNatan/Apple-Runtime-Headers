@@ -6,10 +6,11 @@
 
 #import <Safari/NSObject-Protocol.h>
 
-@class TabContentViewController, TabDialogPresentationManager;
+@class TabDialogPresentationManager;
+@protocol TabDialogInstallationTarget;
 
 @protocol TabDialogPresentationManagerDelegate <NSObject>
-- (TabContentViewController *)tabDialogPresentationManagerTabContentViewControllerForDialogInstallation:(TabDialogPresentationManager *)arg1;
+- (id <TabDialogInstallationTarget>)tabDialogInstallationTargetForTabDialogPresentationManager:(TabDialogPresentationManager *)arg1;
 - (int)tabDialogPresentationManagerWebProcessID:(TabDialogPresentationManager *)arg1;
 - (BOOL)tabDialogPresentationManagerShouldDisplayDialogs:(TabDialogPresentationManager *)arg1;
 - (BOOL)tabDialogPresentationManagerShouldSkipAnimations:(TabDialogPresentationManager *)arg1;

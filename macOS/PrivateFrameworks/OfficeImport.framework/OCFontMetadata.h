@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fontMetadataWithSig:(id)arg1 charSet:(int)arg2 panose1:(id)arg3 pitch:(int)arg4 genericFamily:(int)arg5 altNames:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *altNames; // @synthesize altNames=_altNames;
 @property(readonly, nonatomic) int genericFamily; // @synthesize genericFamily=_genericFamily;
 @property(readonly, nonatomic) int pitch; // @synthesize pitch=_pitch;
 @property(readonly, nonatomic) OCFontPanose1 *panose1; // @synthesize panose1=_panose1;
 @property(readonly, nonatomic) int charSet; // @synthesize charSet=_charSet;
 @property(readonly, nonatomic) OCFontSig *sig; // @synthesize sig=_sig;
-- (void).cxx_destruct;
 - (id)initWithSig:(id)arg1 charSet:(int)arg2 panose1:(id)arg3 pitch:(int)arg4 genericFamily:(int)arg5 altNames:(id)arg6;
 
 @end

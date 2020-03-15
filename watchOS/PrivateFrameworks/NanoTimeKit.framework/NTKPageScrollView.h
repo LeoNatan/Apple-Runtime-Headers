@@ -69,6 +69,7 @@
     struct UIEdgeInsets _touchInsets;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didReorderPage; // @synthesize didReorderPage=_didReorderPage;
 @property(copy, nonatomic) CDUnknownBlockType didBeginReorderingPageAtIndex; // @synthesize didBeginReorderingPageAtIndex=_didBeginReorderingPageAtIndex;
 @property(copy, nonatomic) CDUnknownBlockType shouldBeginReorderingPageAtIndex; // @synthesize shouldBeginReorderingPageAtIndex=_shouldBeginReorderingPageAtIndex;
@@ -104,7 +105,6 @@
 @property(nonatomic) unsigned int prefetchBuffer; // @synthesize prefetchBuffer=_prefetchBuffer;
 @property(nonatomic) struct UIEdgeInsets touchInsets; // @synthesize touchInsets=_touchInsets;
 @property(nonatomic) struct UIEdgeInsets visualInsets; // @synthesize visualInsets=_visualInsets;
-- (void).cxx_destruct;
 - (void)_sendAppearanceEventsForScrollStop;
 - (void)_sendAppearanceEventsForScrollStart;
 - (struct CGRect)_touchInsetBounds;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)_supportsPlayingIndividualFeedback:(id)arg1;
 + (id)sharedEngine;
-@property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
 - (id)_stats_key;
 - (void)_internal_stopFeedbackData:(id)arg1 forFeedback:(id)arg2;
 - (void)_stopFeedback:(id)arg1;

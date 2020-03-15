@@ -19,8 +19,8 @@
     unsigned long long _category;
 }
 
-@property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
 - (void)saveReplies;
 - (void)loadRepliesStoreIfNeeded;
 - (id)cannedReplies;

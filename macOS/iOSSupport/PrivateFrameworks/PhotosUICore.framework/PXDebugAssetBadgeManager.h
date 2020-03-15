@@ -18,10 +18,10 @@
     NSSet *__miroCurationAssets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setMiroCurationAssets:) NSSet *_miroCurationAssets; // @synthesize _miroCurationAssets=__miroCurationAssets;
 @property(retain, nonatomic, setter=_setPhotosGraphCurationAssets:) PHFetchResult *_photosGraphCurationAssets; // @synthesize _photosGraphCurationAssets=__photosGraphCurationAssets;
 @property(retain, nonatomic) PXPhotosDataSource *photosDataSource; // @synthesize photosDataSource=_photosDataSource;
-- (void).cxx_destruct;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (BOOL)_isAssetContainedInPhotosGraphCuration:(id)arg1;
 - (BOOL)_isAssetContainedInMiroCuration:(id)arg1;

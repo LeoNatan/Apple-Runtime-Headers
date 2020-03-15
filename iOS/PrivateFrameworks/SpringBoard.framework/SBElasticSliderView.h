@@ -14,7 +14,7 @@
 @property(nonatomic) double additiveGlyphScaleFactor; // @synthesize additiveGlyphScaleFactor=_additiveGlyphScaleFactor;
 - (void)_updateGlyphScaleForAdditiveScaleOrAxisUpdate;
 - (struct CGPoint)glyphCenter;
-- (void)setAxis:(int)arg1;
+- (void)setAxis:(unsigned long long)arg1;
 - (void)stopGlyphAnimations;
 - (id)initWithFrame:(struct CGRect)arg1;
 

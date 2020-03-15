@@ -17,11 +17,11 @@
 }
 
 + (id)itemWithPrimaryText:(id)arg1 initialValue:(id)arg2 textFieldSetup:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool becomeFirstResponderOnNextConfigure; // @synthesize becomeFirstResponderOnNextConfigure=_becomeFirstResponderOnNextConfigure;
 @property(nonatomic) __weak UITextField *lastConfiguredTextField; // @synthesize lastConfiguredTextField=_lastConfiguredTextField;
 @property(readonly, nonatomic) CDUnknownBlockType textFieldSetup; // @synthesize textFieldSetup=_textFieldSetup;
 @property(readonly, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
-- (void).cxx_destruct;
 - (void)activateNextItemIfPossible;
 - (void)textFieldTextDidChange:(id)arg1;
 - (void)configureCell:(id)arg1;

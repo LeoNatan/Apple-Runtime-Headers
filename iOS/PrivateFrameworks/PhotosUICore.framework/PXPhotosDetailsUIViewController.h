@@ -59,6 +59,7 @@
 }
 
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long occludedContentEdges; // @synthesize occludedContentEdges=_occludedContentEdges;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic) __weak id <PXAssetCollectionActionPerformerDelegate> actionPerformerDelegate; // @synthesize actionPerformerDelegate=_actionPerformerDelegate;
@@ -91,7 +92,6 @@
 @property(nonatomic) __weak id <PXPhotosDetailsUIViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) PXPhotosDetailsContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_ppt_informWidgetsLoadedHandlerIfNeeded;
 - (void)ppt_navigateToMovieWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)ppt_performBlockAfterVariationsWidgetLoadingCompletes:(CDUnknownBlockType)arg1;
@@ -133,7 +133,7 @@
 - (_Bool)widgetComposition:(id)arg1 shouldUseEdgeToEdgeLayoutForWidget:(id)arg2;
 - (_Bool)widgetComposition:(id)arg1 requestViewControllerDismissalAnimated:(_Bool)arg2;
 - (_Bool)widgetCompositionHasContentAbove:(id)arg1;
-- (struct NSObject *)widgetComposition:(id)arg1 viewControllerHostingWidget:(id)arg2;
+- (id)widgetComposition:(id)arg1 viewControllerHostingWidget:(id)arg2;
 - (void)widget:(id)arg1 performAfterUnlockingDeviceIfNecessary:(CDUnknownBlockType)arg2 failurehandler:(CDUnknownBlockType)arg3;
 - (_Bool)widgetDeviceIsUnlocked:(id)arg1;
 - (void)_updateBarSpec;

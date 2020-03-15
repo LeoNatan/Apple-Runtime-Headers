@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <MTLComputePipelineState> _computePipelineState;
 }
 
-@property(retain, nonatomic) id <MTLComputePipelineState> computePipelineState; // @synthesize computePipelineState=_computePipelineState;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MTLComputePipelineState> computePipelineState; // @synthesize computePipelineState=_computePipelineState;
 - (id)computeFunctionFromLibrary:(id)arg1;
 - (id)initWithDevice:(id)arg1 library:(id)arg2;
 

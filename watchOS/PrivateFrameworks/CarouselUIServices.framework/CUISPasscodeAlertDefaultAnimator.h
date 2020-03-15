@@ -15,8 +15,8 @@
     CUISPasscodeAlertViewController *_viewController;
 }
 
-@property(readonly, nonatomic) CUISPasscodeAlertViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CUISPasscodeAlertViewController *viewController; // @synthesize viewController=_viewController;
 - (void)animateAlertTransition:(id)arg1;
 - (double)alertTransitionDuration:(id)arg1;
 - (id)initWithViewController:(id)arg1;

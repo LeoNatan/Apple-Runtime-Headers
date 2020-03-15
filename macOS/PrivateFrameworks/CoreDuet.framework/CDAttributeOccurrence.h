@@ -15,9 +15,9 @@
 }
 
 + (id)attributeOccurrenceWithValue:(id)arg1 date:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSObject *value; // @synthesize value=_value;
 @property(readonly) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithValue:(id)arg1 date:(id)arg2;
 
 @end

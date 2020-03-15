@@ -38,6 +38,7 @@
 }
 
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setTargetSize:) struct CGSize _targetSize; // @synthesize _targetSize=__targetSize;
 @property(retain, nonatomic, setter=_setCurrentRequest:) PXImageRequest *_currentRequest; // @synthesize _currentRequest=__currentRequest;
 @property(retain, nonatomic, setter=_setCurrentImageSourceAsset:) id <PXDisplayAsset> _currentImageSourceAsset; // @synthesize _currentImageSourceAsset=__currentImageSourceAsset;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) id <PXUIImageProvider> mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-- (void).cxx_destruct;
 - (void)_cancelRequests;
 @property(readonly, copy) NSString *description;
 - (void)handlePreloadedImageRequester:(id)arg1;

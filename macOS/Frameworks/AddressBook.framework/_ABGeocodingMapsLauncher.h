@@ -13,8 +13,8 @@
     CLGeocoder *_geocoder;
 }
 
-@property(readonly, nonatomic) CLGeocoder *geocoder; // @synthesize geocoder=_geocoder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CLGeocoder *geocoder; // @synthesize geocoder=_geocoder;
 - (id)launchOptionsWithDirections:(BOOL)arg1;
 - (void)launchMapsShowingPlacemarks:(id)arg1;
 - (void)showPlacemarks:(id)arg1;

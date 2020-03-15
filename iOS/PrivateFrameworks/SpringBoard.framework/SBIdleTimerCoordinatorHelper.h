@@ -16,10 +16,10 @@
     NSMapTable *_idleTimerCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *idleTimerCache; // @synthesize idleTimerCache=_idleTimerCache;
 @property(nonatomic) __weak id <SBIdleTimerCoordinating> targetCoordinator; // @synthesize targetCoordinator=_targetCoordinator;
 @property(nonatomic) __weak id <SBIdleTimerProviding> sourceProvider; // @synthesize sourceProvider=_sourceProvider;
-- (void).cxx_destruct;
 - (id)_updateProviderInfo:(id)arg1 behavior:(id)arg2 reason:(id)arg3;
 - (id)_updateProvider:(id)arg1 behavior:(id)arg2 reason:(id)arg3;
 - (id)idleTimerProxyForProvider:(id)arg1;

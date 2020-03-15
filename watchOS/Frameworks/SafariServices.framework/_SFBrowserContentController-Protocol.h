@@ -11,6 +11,7 @@
 
 @protocol _SFBrowserContentController <NSObject>
 @property(readonly, nonatomic) _SFPerSitePreferencesVendor *perSitePreferencesVendor;
+@property(nonatomic) _Bool keepBarsMinimized;
 @property(readonly, nonatomic, getter=isShowingReader) _Bool showingReader;
 @property(readonly, nonatomic) id <_SFBrowserDocument> activeDocument;
 - (void)toggleShowingReaderForUserAction;

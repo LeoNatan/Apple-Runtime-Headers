@@ -46,6 +46,7 @@
 + (id)listItemsForAvatarRecords:(id)arg1;
 + (id)newCollectionViewLayoutForEngagedCellSize:(struct CGSize)arg1 boundsSize:(struct CGSize)arg2 environment:(id)arg3;
 + (id)snapshotProviderFocusedOnRecordWithIdentifier:(id)arg1 size:(struct CGSize)arg2 avtViewAspectRatio:(struct CGSize)arg3 dataSource:(id)arg4 environment:(id)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hideImageForDisplayedRecord; // @synthesize hideImageForDisplayedRecord=_hideImageForDisplayedRecord;
 @property(nonatomic) struct CGPoint lastContentOffset; // @synthesize lastContentOffset=_lastContentOffset;
 @property(retain, nonatomic) id <AVTViewCarouselLayout> avtViewLayout; // @synthesize avtViewLayout=_avtViewLayout;
@@ -70,7 +71,6 @@
 @property(nonatomic) double decelerationRate; // @synthesize decelerationRate=_decelerationRate;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
 @property(nonatomic) __weak id <AVTAvatarDisplayingControllerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)significantRecordChangeInDataSource:(id)arg1;
 - (void)dataSource:(id)arg1 didRemoveRecord:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)dataSource:(id)arg1 didEditRecord:(id)arg2 atIndex:(unsigned long long)arg3;

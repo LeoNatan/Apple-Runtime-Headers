@@ -20,11 +20,11 @@
     LoadingIndicatorViewController *_loadingViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LoadingIndicatorViewController *loadingViewController; // @synthesize loadingViewController=_loadingViewController;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <CTCarrierSpaceUIPlanPurchaseWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_accountUpdatedWithStatus:(id)arg1;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;

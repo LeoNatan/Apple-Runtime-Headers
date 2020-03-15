@@ -17,8 +17,8 @@
     id <SBUIPowerDownViewControllerDelegate> powerDownDelegate;
 }
 
-@property(nonatomic) __weak id <SBUIPowerDownViewControllerDelegate> powerDownDelegate; // @synthesize powerDownDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBUIPowerDownViewControllerDelegate> powerDownDelegate; // @synthesize powerDownDelegate;
 - (id)_powerDownView;
 - (void)powerDownViewWillAnimateOut:(id)arg1;
 - (void)powerDownViewWillAnimateIn:(id)arg1;

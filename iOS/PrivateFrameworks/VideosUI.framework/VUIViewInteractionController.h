@@ -23,16 +23,17 @@ __attribute__((visibility("hidden")))
 + (void)setContextMenuTemplateInterface:(id)arg1;
 + (id)getHighlightedView;
 + (void)updateContextMenuWithMenuItems:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak IKViewElement *presentingElement; // @synthesize presentingElement=_presentingElement;
 @property(readonly, nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly, nonatomic) __weak UIView *presentingView; // @synthesize presentingView=_presentingView;
 @property(retain, nonatomic) UIContextMenuInteraction *interaction; // @synthesize interaction=_interaction;
-- (void).cxx_destruct;
 - (id)_getViewElementWithContextMenuAtLocation:(struct CGPoint)arg1;
 - (id)_getViewAtLocation:(struct CGPoint)arg1;
 - (id)_getPreviewViewControllerWithElement:(id)arg1;
 - (void)contextMenuInteraction:(id)arg1 willPerformPreviewActionForMenuWithConfiguration:(id)arg2 animator:(id)arg3;
 - (id)_contextMenuInteraction:(id)arg1 styleForMenuWithConfiguration:(id)arg2;
+- (void)contextMenuInteraction:(id)arg1 willEndForConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 previewForHighlightingMenuWithConfiguration:(id)arg2;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (void)dismissInteractionView;

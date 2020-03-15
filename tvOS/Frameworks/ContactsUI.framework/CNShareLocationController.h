@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 + (id)fmfHandleFromContactProperty:(id)arg1;
 + (id)fmfHandlesFromContact:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNFuture *bestPropertyFuture; // @synthesize bestPropertyFuture=_bestPropertyFuture;
 @property(retain, nonatomic) id <CNCancelable> bestPropertyCancelable; // @synthesize bestPropertyCancelable=_bestPropertyCancelable;
 @property(retain, nonatomic) CNUIIDSAvailabilityProvider *idsAvailabilityProvider; // @synthesize idsAvailabilityProvider=_idsAvailabilityProvider;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSSet *handles; // @synthesize handles=_handles;
 @property(nonatomic) __weak NSObject<CNShareLocationProtocol> *shareLocationDelegate; // @synthesize shareLocationDelegate=_shareLocationDelegate;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)notifySharingStatusDidChange;
 - (void)initiateIDSRequest;
 - (id)endOfDayDate;

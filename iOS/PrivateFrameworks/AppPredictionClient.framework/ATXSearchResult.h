@@ -12,17 +12,17 @@
 
 @interface ATXSearchResult : SFSearchResult <NSSecureCoding>
 {
-    struct ATXScoredPrediction *_scoredBundleId;
+    ATXScoredPrediction *_scoredBundleId;
     ATXResponse *_response;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ATXScoredPrediction *scoredBundleId; // @synthesize scoredBundleId=_scoredBundleId;
 @property(readonly, nonatomic) ATXResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithScoredBundleId:(struct ATXScoredPrediction *)arg1 response:(id)arg2;
+- (id)initWithScoredBundleId:(id)arg1 response:(id)arg2;
 
 @end
 

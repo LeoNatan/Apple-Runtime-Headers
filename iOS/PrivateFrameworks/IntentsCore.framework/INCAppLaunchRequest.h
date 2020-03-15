@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (void)observeForAppLaunchWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performWithService:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performWithCompletionHandler:(CDUnknownBlockType)arg1;

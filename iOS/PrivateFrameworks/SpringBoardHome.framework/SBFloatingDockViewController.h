@@ -44,6 +44,7 @@
     SBHFloatingDockStyleConfiguration *_transitionTargetUnderlyingPresentationStyleConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) SBHFloatingDockStyleConfiguration *transitionTargetUnderlyingPresentationStyleConfiguration; // @synthesize transitionTargetUnderlyingPresentationStyleConfiguration=_transitionTargetUnderlyingPresentationStyleConfiguration;
 @property(nonatomic, getter=isTransitioningUnderlyingBackgroundStyle) _Bool transitioningUnderlyingPresentationStyleConfiguration; // @synthesize transitioningUnderlyingPresentationStyleConfiguration=_transitioningUnderlyingPresentationStyleConfiguration;
 @property(copy, nonatomic) SBHFloatingDockStyleConfiguration *underlyingPresentationStyleConfiguration; // @synthesize underlyingPresentationStyleConfiguration=_underlyingPresentationStyleConfiguration;
@@ -61,7 +62,6 @@
 @property(nonatomic) double dockOffscreenProgress; // @synthesize dockOffscreenProgress=_dockOffscreenProgress;
 @property(retain, nonatomic) UIViewController<SBFloatingDockSuggestionsViewProviding> *suggestionsViewController; // @synthesize suggestionsViewController=_suggestionsViewController;
 @property(nonatomic) __weak id <SBFloatingDockViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

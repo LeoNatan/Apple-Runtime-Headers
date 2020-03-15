@@ -16,9 +16,9 @@
     CCUIContentModuleDetailAnimationController *_animationController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CCUIContentModuleDetailAnimationController *animationController; // @synthesize animationController=_animationController;
 @property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
-- (void).cxx_destruct;
 - (void)transitionDidEnd:(_Bool)arg1;
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 @property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;

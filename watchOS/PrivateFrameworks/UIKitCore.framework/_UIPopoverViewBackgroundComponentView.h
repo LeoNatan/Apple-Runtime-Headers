@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_directionSelector;
 }
 
-@property(copy, nonatomic) NSString *directionSelector; // @synthesize directionSelector=_directionSelector;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *directionSelector; // @synthesize directionSelector=_directionSelector;
 - (void)updateReplicants;
 - (id)replicate;
 - (id)_newReplicant;

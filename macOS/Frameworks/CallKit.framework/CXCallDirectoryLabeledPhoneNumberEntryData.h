@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *labelData; // @synthesize labelData=_labelData;
 @property(retain, nonatomic) NSData *phoneNumberData; // @synthesize phoneNumberData=_phoneNumberData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (const char *)utf8LabelAtIndex:(unsigned long long)arg1 length:(out unsigned short *)arg2;

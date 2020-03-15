@@ -14,8 +14,8 @@
 }
 
 + (id)sharedSettings;
-@property(retain) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (void).cxx_destruct;
+@property(retain) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (void)setFinishAfterFirstScanBoxed:(id)arg1;
 - (id)finishAfterFirstScanBoxed;
 - (void)setEnableViewServiceBoxed:(id)arg1;

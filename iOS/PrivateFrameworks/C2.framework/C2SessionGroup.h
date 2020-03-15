@@ -16,11 +16,11 @@
     C2Session *_unpinnedSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) C2Session *unpinnedSession; // @synthesize unpinnedSession=_unpinnedSession;
 @property(retain, nonatomic) C2Session *pinnedSession; // @synthesize pinnedSession=_pinnedSession;
 @property(retain, nonatomic) C2Session *pinnedSessionAllowingExpiredDNS; // @synthesize pinnedSessionAllowingExpiredDNS=_pinnedSessionAllowingExpiredDNS;
 @property(retain, nonatomic) NSString *configurationName; // @synthesize configurationName=_configurationName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (_Bool)removeSession:(id)arg1;
 @property(readonly, nonatomic) NSArray *sessions;

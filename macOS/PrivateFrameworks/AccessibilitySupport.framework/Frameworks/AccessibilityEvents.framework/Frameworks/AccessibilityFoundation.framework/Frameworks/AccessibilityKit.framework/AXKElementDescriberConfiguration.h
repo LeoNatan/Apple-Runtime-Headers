@@ -16,11 +16,11 @@
     NSMutableSet *__attributesToExclude;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *_attributesToExclude; // @synthesize _attributesToExclude=__attributesToExclude;
 @property(retain, nonatomic) NSMutableSet *_attributesToInclude; // @synthesize _attributesToInclude=__attributesToInclude;
 @property(copy, nonatomic) NSString *customPauseString; // @synthesize customPauseString=_customPauseString;
 @property(nonatomic) unsigned long long markupsToInclude; // @synthesize markupsToInclude=_markupsToInclude;
-- (void).cxx_destruct;
 - (void)excludeAttribute:(id)arg1;
 - (void)excludeMarkup:(unsigned long long)arg1;
 - (void)includeAttribute:(id)arg1;

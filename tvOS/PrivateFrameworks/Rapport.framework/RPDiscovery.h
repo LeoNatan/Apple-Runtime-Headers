@@ -9,13 +9,13 @@
 #import <Rapport/NSSecureCoding-Protocol.h>
 #import <Rapport/RPCompanionLinkXPCClientInterface-Protocol.h>
 
-@class NSArray, NSString, NSXPCConnection;
+@class NSArray, NSMutableDictionary, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPDiscovery : NSObject <NSSecureCoding, RPCompanionLinkXPCClientInterface>
 {
     _Bool _activateCalled;
-    struct NSMutableDictionary *_endpointMap;
+    NSMutableDictionary *_endpointMap;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     NSObject<OS_dispatch_source> *_retryTimer;
@@ -35,6 +35,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) CDUnknownBlockType changedHandler; // @synthesize changedHandler=_changedHandler;
 @property(copy, nonatomic) CDUnknownBlockType lostHandler; // @synthesize lostHandler=_lostHandler;
@@ -46,7 +47,6 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)xpcDiscoveryChangedEndpoint:(id)arg1;
 - (void)xpcDiscoveryLostEndpoint:(id)arg1;
 - (void)xpcDiscoveryFoundEndpoint:(id)arg1;

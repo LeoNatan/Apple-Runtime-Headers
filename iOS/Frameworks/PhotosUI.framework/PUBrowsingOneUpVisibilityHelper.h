@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (void)_performOnDemandReframingIfNeeded:(id)arg1;
 + (_Bool)_shouldPerformOnDemandReframing:(id)arg1 isOneUpVisible:(_Bool)arg2 isPresentedForSecondScreen:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 @property(readonly, nonatomic) _Bool isPresentedForSecondScreen; // @synthesize isPresentedForSecondScreen=_isPresentedForSecondScreen;
 @property(nonatomic) _Bool isOneUpVisible; // @synthesize isOneUpVisible=_isOneUpVisible;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)dealloc;
 - (id)initWithBrowsingViewModel:(id)arg1 isPresentedForSecondScreen:(_Bool)arg2;

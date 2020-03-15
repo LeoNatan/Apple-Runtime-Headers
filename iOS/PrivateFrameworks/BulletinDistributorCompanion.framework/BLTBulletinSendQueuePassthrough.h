@@ -13,8 +13,8 @@
     id <BLTBulletinSendQueueDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTBulletinSendQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTBulletinSendQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)sendNow;
 - (void)queuePending;
 - (_Bool)handleFileURL:(id)arg1;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_transitionTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCachingEnabled) _Bool cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
 @property(nonatomic) __weak NSTimer *transitionTimer; // @synthesize transitionTimer=_transitionTimer;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(nonatomic) unsigned long long animationOptions; // @synthesize animationOptions=_animationOptions;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (void)_displayIntervalTimerFired:(id)arg1;
 - (void)_fetchNext;
 - (void)_updateImageWithIndex:(unsigned long long)arg1;

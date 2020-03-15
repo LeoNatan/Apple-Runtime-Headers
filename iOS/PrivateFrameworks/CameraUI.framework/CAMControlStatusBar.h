@@ -27,6 +27,7 @@
     NSSet *__allVisibleTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isDirectionIndicatorHiddenForSpace, setter=_setDirectionIndicatorHiddenForSpace:) _Bool _directionIndicatorHiddenForSpace; // @synthesize _directionIndicatorHiddenForSpace=__directionIndicatorHiddenForSpace;
 @property(retain, nonatomic, setter=_setAllVisibleTypes:) NSSet *_allVisibleTypes; // @synthesize _allVisibleTypes=__allVisibleTypes;
 @property(readonly, nonatomic) NSMutableDictionary *_statusIndicatorsByType; // @synthesize _statusIndicatorsByType=__statusIndicatorsByType;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSArray *secondaryVisibleIndicatorTypes; // @synthesize secondaryVisibleIndicatorTypes=_secondaryVisibleIndicatorTypes;
 @property(copy, nonatomic) NSArray *primaryVisibleIndicatorTypes; // @synthesize primaryVisibleIndicatorTypes=_primaryVisibleIndicatorTypes;
 @property(nonatomic) __weak id <CAMControlStatusBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;
 - (void)_iterateViewsForHUDManager:(id)arg1 withItemFoundBlock:(CDUnknownBlockType)arg2;

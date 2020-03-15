@@ -14,8 +14,8 @@
 }
 
 + (id)formattedStringForDuration:(id)arg1 style:(unsigned long long)arg2;
-@property(readonly, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithTriggerBuilder:(id)arg1;
 

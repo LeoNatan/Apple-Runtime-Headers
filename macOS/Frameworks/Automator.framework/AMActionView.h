@@ -52,6 +52,7 @@
 + (struct CGRect)actionFrameForBounds:(struct CGRect)arg1;
 + (void)drawInContext:(id)arg1 bounds:(struct CGRect)arg2 outlinePath:(id)arg3 headerPath:(id)arg4 footerPath:(id)arg5 headerHeight:(double)arg6 footerHeight:(double)arg7 collapsed:(BOOL)arg8 selected:(BOOL)arg9 disabled:(BOOL)arg10 placeholder:(BOOL)arg11;
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSAppearance *_drawCachingLayerEffectiveAppearance; // @synthesize _drawCachingLayerEffectiveAppearance;
 @property(nonatomic) __weak NSButton *_showWhenRunButton; // @synthesize _showWhenRunButton;
 @property(nonatomic) __weak NSButton *_resultsButton; // @synthesize _resultsButton;
@@ -77,7 +78,6 @@
 @property(nonatomic, getter=isSelected, setter=setSelected:) BOOL isSelected; // @synthesize isSelected=_isSelected;
 @property __weak AMWorkflowView *workflowView; // @synthesize workflowView=_workflowView;
 @property(retain, nonatomic) AMAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)_updateAppearance;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)updateProgressIndicator;

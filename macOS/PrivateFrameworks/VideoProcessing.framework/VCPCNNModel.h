@@ -17,8 +17,8 @@
     VCPCNNData *_output;
 }
 
-@property(readonly) VCPCNNData *output; // @synthesize output=_output;
 - (void).cxx_destruct;
+@property(readonly) VCPCNNData *output; // @synthesize output=_output;
 - (int)dynamicForward:(id)arg1 paramFileUrl:(id)arg2 cancel:(CDUnknownBlockType)arg3;
 - (int)forward:(id)arg1;
 - (int)prepareNetworkFromURL:(id)arg1 withInputSize:(id)arg2;

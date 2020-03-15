@@ -15,10 +15,10 @@
     NSArray *_icons;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSArray *icons; // @synthesize icons=_icons;
 @property(readonly, nonatomic) ARUISpriteTexture *texture; // @synthesize texture=_texture;
-- (void).cxx_destruct;
 - (id)initWithTexture:(id)arg1 icons:(id)arg2 size:(float)arg3;
 
 @end

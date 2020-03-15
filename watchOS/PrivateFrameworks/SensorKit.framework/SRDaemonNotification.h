@@ -18,9 +18,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sensorIdentifier; // @synthesize sensorIdentifier=_sensorIdentifier;
 @property(nonatomic) __weak id <SRDaemonNotificationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)unregisterForDaemonNotification;
 - (void)registerForDaemonNotification;
 - (void)dealloc;

@@ -15,9 +15,9 @@
 }
 
 + (id)helperWithSearchController:(id)arg1;
+- (void).cxx_destruct;
 @property __weak ABPersonListSearchController *searchController; // @synthesize searchController=_searchController;
 @property unsigned long long lastSearchStringLength; // @synthesize lastSearchStringLength=_lastSearchStringLength;
-- (void).cxx_destruct;
 - (BOOL)shouldTraceString:(id)arg1;
 - (void)searchConfiguration:(id)arg1 willSearchForString:(id)arg2;
 

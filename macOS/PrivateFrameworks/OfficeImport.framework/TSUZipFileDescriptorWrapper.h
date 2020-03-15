@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <TSUReadChannel> _readChannel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <TSUReadChannel> readChannel; // @synthesize readChannel=_readChannel;
 @property(readonly, nonatomic) int fileDescriptor; // @synthesize fileDescriptor=_fileDescriptor;
-- (void).cxx_destruct;
 - (void)waitForAccessToEnd;
 - (void)endAccess;
 - (void)beginAccess;

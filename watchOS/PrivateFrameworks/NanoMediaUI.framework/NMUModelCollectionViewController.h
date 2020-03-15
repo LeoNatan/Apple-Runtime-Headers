@@ -20,11 +20,11 @@
     NSArray *_bottomItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *bottomItems; // @synthesize bottomItems=_bottomItems;
 @property(retain, nonatomic) NSArray *topItems; // @synthesize topItems=_topItems;
 @property(nonatomic) __weak id <NMUModelCollectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NMUModelCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_setNeedsVisibleBottomItemsUpdate;
 - (void)_setNeedsVisibleTopItemsUpdate;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

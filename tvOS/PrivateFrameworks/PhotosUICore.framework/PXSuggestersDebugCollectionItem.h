@@ -15,10 +15,10 @@
     NSDictionary *_info;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *info; // @synthesize info=_info;
 @property(readonly) NSString *description; // @synthesize description=_description;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithSuggesterInfo:(id)arg1;
 
 @end

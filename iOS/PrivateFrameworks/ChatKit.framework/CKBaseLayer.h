@@ -13,8 +13,8 @@
     id <CKLayerDelegate> _ckLayerDelegate;
 }
 
-@property(nonatomic) __weak id <CKLayerDelegate> ckLayerDelegate; // @synthesize ckLayerDelegate=_ckLayerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CKLayerDelegate> ckLayerDelegate; // @synthesize ckLayerDelegate=_ckLayerDelegate;
 - (void)layerDidBecomeVisible:(_Bool)arg1;
 
 @end

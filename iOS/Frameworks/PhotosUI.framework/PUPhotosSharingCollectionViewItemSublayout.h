@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _floatingBadgesContainerFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect floatingBadgesContainerFrame; // @synthesize floatingBadgesContainerFrame=_floatingBadgesContainerFrame;
 @property(readonly, nonatomic) struct CGRect badgesContainerFrame; // @synthesize badgesContainerFrame=_badgesContainerFrame;
 @property(readonly, nonatomic) UICollectionViewLayoutAttributes *optionBadgeLayoutAttributes; // @synthesize optionBadgeLayoutAttributes=_optionBadgeLayoutAttributes;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect visibleItemFrame; // @synthesize visibleItemFrame=_visibleItemFrame;
 @property(readonly, nonatomic) struct CGRect itemFrame; // @synthesize itemFrame=_itemFrame;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (void)setFloatingOffset:(struct UIOffset)arg1;
 - (void)prepareSublayout;
 @property(nonatomic) struct CGSize optionBadgeSize;

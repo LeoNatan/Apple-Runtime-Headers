@@ -21,9 +21,9 @@
 }
 
 + (id)createQueryWithContainer:(id)arg1 delegate:(id)arg2 filteredWithBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *queryMap; // @synthesize queryMap=_queryMap;
 @property(retain, nonatomic) RTTimer *queryTimer; // @synthesize queryTimer=_queryTimer;
-- (void).cxx_destruct;
 - (void)_handleQueryTimerExpiry;
 - (void)_queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;
 - (void)queryContentsDidLoad:(id)arg1 contentsVersion:(unsigned long long)arg2;

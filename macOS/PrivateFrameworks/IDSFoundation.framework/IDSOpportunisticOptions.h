@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL destinationsMustBeInContacts; // @synthesize destinationsMustBeInContacts=_destinationsMustBeInContacts;
 @property(retain, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
 @property(retain, nonatomic) NSArray *blacklistedDestinations; // @synthesize blacklistedDestinations=_blacklistedDestinations;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

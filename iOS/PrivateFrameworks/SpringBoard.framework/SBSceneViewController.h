@@ -23,6 +23,7 @@
     struct CGSize _contentReferenceSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_sceneView) SBSceneView *sceneView; // @synthesize sceneView=_sceneView;
 @property(retain, nonatomic) UIView *customContentView; // @synthesize customContentView=_customContentView;
 @property(retain, nonatomic) id <SBScenePlaceholderContentContext> placeholderContentContext; // @synthesize placeholderContentContext=_placeholderContentContext;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) struct CGSize contentReferenceSize; // @synthesize contentReferenceSize=_contentReferenceSize;
 @property(readonly, nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
 @property(readonly, nonatomic) SBSceneHandle *sceneHandle; // @synthesize sceneHandle=_sceneHandle;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (long long)sceneViewPresentationPriority:(id)arg1;
 - (id)sceneViewPresentationIdentifier:(id)arg1;

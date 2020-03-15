@@ -14,8 +14,8 @@
     HFMediaSystemBuilder *_mediaSystemBuilder;
 }
 
-@property(readonly, nonatomic) HFMediaSystemBuilder *mediaSystemBuilder; // @synthesize mediaSystemBuilder=_mediaSystemBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFMediaSystemBuilder *mediaSystemBuilder; // @synthesize mediaSystemBuilder=_mediaSystemBuilder;
 - (void)_resetBuilder;
 - (void)_addItemToMediaSystem:(id)arg1;
 - (id)_accessoryVendorItemForItem:(id)arg1;

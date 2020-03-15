@@ -19,8 +19,8 @@
     id <WebBookmarksXPCConnectionDelegate> _delegate;
 }
 
-@property(nonatomic) id <WebBookmarksXPCConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <WebBookmarksXPCConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;
 - (void)setMessageHandlers:(id)arg1;
 - (void)setHandler:(CDUnknownBlockType)arg1 forMessageNamed:(const char *)arg2;

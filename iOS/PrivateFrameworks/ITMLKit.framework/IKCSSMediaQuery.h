@@ -19,10 +19,10 @@
 + (id)buildMediaQuery:(id)arg1 offset:(unsigned long long)arg2 consumed:(unsigned long long *)arg3;
 + (id)buildMediaQueryList:(id)arg1 offset:(unsigned long long)arg2 consumed:(unsigned long long *)arg3;
 + (id)mediaQueryFromTokenList:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IKCSSMediaQueryList *queryList; // @synthesize queryList=_queryList;
 @property(readonly) _Bool evaluationResult; // @synthesize evaluationResult=_evaluationResult;
 @property(readonly) _Bool evaluated; // @synthesize evaluated=_evaluated;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setNeedsReEvaluation;
 - (_Bool)evaluate;

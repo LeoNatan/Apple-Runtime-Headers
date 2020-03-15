@@ -17,11 +17,11 @@
     CKActionMenuView *_actionMenuView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKActionMenuView *actionMenuView; // @synthesize actionMenuView=_actionMenuView;
 @property(copy, nonatomic) NSArray *passthroughViews; // @synthesize passthroughViews=_passthroughViews;
 @property(nonatomic) __weak id <CKActionMenuControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long defaultActionIndex; // @synthesize defaultActionIndex=_defaultActionIndex;
-- (void).cxx_destruct;
 - (struct CGRect)convertActionMenuFrameToView:(id)arg1;
 - (void)dismissActionMenuAnimated:(_Bool)arg1;
 - (void)presentActionMenuFromPoint:(struct CGPoint)arg1 inView:(id)arg2 animated:(_Bool)arg3;

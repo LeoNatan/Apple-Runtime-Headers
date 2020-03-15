@@ -27,12 +27,12 @@
 + (id)systemWideElement;
 + (id)rowBasedContainerRoles;
 + (id)allowableActionContainerRoles;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _AXFUIElementDataProvider *_dataProvider; // @synthesize _dataProvider=__dataProvider;
 @property(nonatomic) BOOL _didCheckIfWeShouldTryToUseMarkerBasedTextAPI; // @synthesize _didCheckIfWeShouldTryToUseMarkerBasedTextAPI=__didCheckIfWeShouldTryToUseMarkerBasedTextAPI;
 @property(nonatomic) BOOL _shouldTryToUseMarkerBasedTextAPI; // @synthesize _shouldTryToUseMarkerBasedTextAPI=__shouldTryToUseMarkerBasedTextAPI;
 @property(retain, nonatomic) NSMutableSet *_supportedAttributes; // @synthesize _supportedAttributes=__supportedAttributes;
 @property(nonatomic) __weak id <AXFUIElementDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_titlLabelTitleUIElementWithVisitedSet:(id)arg1;
 - (id)_titleLabelTitleUIElement;
 - (void)_setAttribute:(id)arg1 withBoolValue:(BOOL)arg2;

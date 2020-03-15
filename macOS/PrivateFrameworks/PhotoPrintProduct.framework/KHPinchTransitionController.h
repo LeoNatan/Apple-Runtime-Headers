@@ -28,6 +28,7 @@
     KHPinchGestureRecognizer *_activeTransitioningPinch;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak KHPinchGestureRecognizer *activeTransitioningPinch; // @synthesize activeTransitioningPinch=_activeTransitioningPinch;
 @property(nonatomic) long long navigationOperation; // @synthesize navigationOperation=_navigationOperation;
 @property(nonatomic) __weak id <UXViewControllerContextTransitioning> context; // @synthesize context=_context;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL rotationDisabled; // @synthesize rotationDisabled=_rotationDisabled;
 @property(nonatomic) BOOL interactionDisabled; // @synthesize interactionDisabled=_interactionDisabled;
 @property(nonatomic) __weak id <KHPinchTransitionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)endInteractionWithVelocity:(double)arg1;
 - (void)updateInteractionWithProgress:(double)arg1 offset:(struct UXOffset)arg2 rotation:(double)arg3;
 - (void)didBeginInteractionAtPoint:(struct CGPoint)arg1;

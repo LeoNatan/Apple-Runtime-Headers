@@ -19,18 +19,18 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *formatStringID; // @synthesize formatStringID=_formatStringID;
 @property(readonly, copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
 @property(readonly, nonatomic) unsigned long long timeStyle; // @synthesize timeStyle=_timeStyle;
 @property(readonly, nonatomic) unsigned long long dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(readonly, nonatomic) long long format; // @synthesize format=_format;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)localizedFormatStringForLanguage:(id)arg1;
+- (id)localizedFormatStringWithLocalizer:(id)arg1;
 - (id)localizedFormatString;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

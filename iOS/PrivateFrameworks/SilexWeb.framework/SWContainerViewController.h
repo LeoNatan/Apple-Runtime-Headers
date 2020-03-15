@@ -19,13 +19,13 @@
     SWViewController *_webContentViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SWViewController *webContentViewController; // @synthesize webContentViewController=_webContentViewController;
 @property(retain, nonatomic) SWDeveloperSettings *developerSettings; // @synthesize developerSettings=_developerSettings;
 @property(readonly, nonatomic) id <SWPresentationManager> presentationManager; // @synthesize presentationManager=_presentationManager;
 @property(readonly, nonatomic) id <SWConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(readonly, nonatomic) id <SWErrorProvider> errorProvider; // @synthesize errorProvider=_errorProvider;
 @property(readonly, nonatomic) id <SWInteractionProvider> interactionProvider; // @synthesize interactionProvider=_interactionProvider;
-- (void).cxx_destruct;
 - (_Bool)allowUserInteractionForInteractionType:(unsigned long long)arg1;
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2;
 - (void)loadURL:(id)arg1;

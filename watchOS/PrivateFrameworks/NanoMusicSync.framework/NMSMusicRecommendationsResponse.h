@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSOrderedSet *_recommendations;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *recommendations; // @synthesize recommendations=_recommendations;
 @property(readonly, nonatomic) NMSMutableMediaSyncInfo *importedStoreContainerItemMappings; // @synthesize importedStoreContainerItemMappings=_importedStoreContainerItemMappings;
 @property(readonly, nonatomic) NSData *cachedData; // @synthesize cachedData=_cachedData;
-- (void).cxx_destruct;
 - (id)initWithCachedData:(id)arg1 importedStoreContainerItemMappings:(id)arg2 recommendations:(id)arg3;
 
 @end

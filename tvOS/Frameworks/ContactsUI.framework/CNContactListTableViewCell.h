@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 
 + (void)contentSizeCategoryDidChange:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isMeCard; // @synthesize isMeCard=_isMeCard;
 @property(retain, nonatomic) CNContactMatchInfo *contactMatchInfo; // @synthesize contactMatchInfo=_contactMatchInfo;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(readonly, nonatomic) id <ABStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
-- (void).cxx_destruct;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

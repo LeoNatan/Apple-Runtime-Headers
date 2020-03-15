@@ -24,6 +24,10 @@
 + (void)notifyWhengPTPManagerIsAvailable:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long systemDomainClockIdentifier; // @synthesize systemDomainClockIdentifier=_systemDomainClockIdentifier;
 - (void)dealloc;
+- (BOOL)removeAirPlayDomainWithError:(id *)arg1;
+- (BOOL)addAirPlayDomain:(unsigned long long *)arg1 error:(id *)arg2;
+- (BOOL)removeAVBDomainWithIndex:(unsigned short)arg1 error:(id *)arg2;
+- (BOOL)addAVBDomainIndex:(unsigned short)arg1 identifier:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)removeDomainWithIdentifier:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)addDomain:(unsigned long long *)arg1 error:(id *)arg2;
 @property(readonly, retain, nonatomic) TSgPTPClock *systemDomain; // @dynamic systemDomain;

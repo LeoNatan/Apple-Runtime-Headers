@@ -17,10 +17,10 @@
     id <NSSecureCoding><NSObject> _itemLoadingToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <NSSecureCoding><NSObject> itemLoadingToken; // @synthesize itemLoadingToken=_itemLoadingToken;
 @property(copy) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property struct _NSRange targetRange; // @synthesize targetRange=_targetRange;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) __weak id <NSAccessibilityElement> targetElement;
 - (void)dealloc;

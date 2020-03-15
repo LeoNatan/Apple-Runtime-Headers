@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     SKUIClientContext *_clientContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *downloads; // @synthesize downloads=_downloads;
 @property(nonatomic) __weak id <SKUIDownloadsChildViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_reload;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;

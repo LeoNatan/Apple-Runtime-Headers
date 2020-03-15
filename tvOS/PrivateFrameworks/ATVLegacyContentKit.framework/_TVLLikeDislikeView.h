@@ -16,9 +16,9 @@
     unsigned long long _dislikeCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dislikeCount; // @synthesize dislikeCount=_dislikeCount;
 @property(nonatomic) unsigned long long likeCount; // @synthesize likeCount=_likeCount;
-- (void).cxx_destruct;
 - (void)_updateLikeDislikeDisplay;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

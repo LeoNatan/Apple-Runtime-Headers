@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)decodingSupported;
-@property(nonatomic) __weak id <GEOMapAccessRestrictions> mapAccessRestrictions; // @synthesize mapAccessRestrictions=_mapAccessRestrictions;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *decoderQueue; // @synthesize decoderQueue=_decoderQueue;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GEOMapAccessRestrictions> mapAccessRestrictions; // @synthesize mapAccessRestrictions=_mapAccessRestrictions;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *decoderQueue; // @synthesize decoderQueue=_decoderQueue;
 - (void)requestComplete:(id)arg1;
 - (void)trackRequest:(id)arg1;
 - (id)decodeZilchMessage:(shared_ptr_27244a92)arg1 pathHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;

@@ -84,6 +84,7 @@
 + (id)colorWithsRGBRed:(unsigned long long)arg1 green:(unsigned long long)arg2 blue:(unsigned long long)arg3;
 + (id)fontWithFontSize:(double)arg1 bold:(BOOL)arg2;
 + (id)formatter;
+- (void).cxx_destruct;
 @property long long minimumNumberOfRows; // @synthesize minimumNumberOfRows=_minimumNumberOfRows;
 @property struct CGSize dayCellSpacing; // @synthesize dayCellSpacing=_dayCellSpacing;
 @property struct CGSize dayBackgroundRectSize; // @synthesize dayBackgroundRectSize=_dayBackgroundRectSize;
@@ -153,7 +154,6 @@
 @property BOOL showsMonthName; // @synthesize showsMonthName=_showsMonthName;
 @property BOOL showsNavigation; // @synthesize showsNavigation=_showsNavigation;
 @property BOOL showsNeighboringDays; // @synthesize showsNeighboringDays=_showsNeighboringDays;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -19,12 +19,12 @@
     NSSet *_supportedCustomDataQueueIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *supportedCustomDataQueueIdentifiers; // @synthesize supportedCustomDataQueueIdentifiers=_supportedCustomDataQueueIdentifiers;
 @property(retain, nonatomic) NSSet *supportedQueueTypes; // @synthesize supportedQueueTypes=_supportedQueueTypes;
 @property(nonatomic) _Bool supportsSetQueueCommand; // @synthesize supportsSetQueueCommand=_supportsSetQueueCommand;
 @property(retain, nonatomic) NSDictionary *supportedSpecializedQueues; // @synthesize supportedSpecializedQueues=_supportedSpecializedQueues;
 @property(copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
-- (void).cxx_destruct;
 - (id)replaceWithPlaybackIntent:(id)arg1 replaceIntent:(long long)arg2;
 - (id)replaceWithPlaybackIntent:(id)arg1;
 - (id)clear;

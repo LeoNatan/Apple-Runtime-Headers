@@ -22,6 +22,7 @@
     CKUploadRequestConfiguration *_uploadRequestConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(retain, nonatomic) CKRecordID *repairRecordID; // @synthesize repairRecordID=_repairRecordID;
 @property(nonatomic) int listIndex; // @synthesize listIndex=_listIndex;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool simulateCorruptAsset; // @synthesize simulateCorruptAsset=_simulateCorruptAsset;
 @property(nonatomic) _Bool bypassPCSEncryptionForTouchRepairZone; // @synthesize bypassPCSEncryptionForTouchRepairZone=_bypassPCSEncryptionForTouchRepairZone;
 @property(nonatomic) _Bool touchRepairZone; // @synthesize touchRepairZone=_touchRepairZone;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;

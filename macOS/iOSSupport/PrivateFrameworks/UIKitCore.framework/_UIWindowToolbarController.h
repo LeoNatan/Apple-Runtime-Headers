@@ -20,10 +20,10 @@
 }
 
 + (id)sharedWindowToolbarController;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *templateItems; // @synthesize templateItems=_templateItems;
 @property(copy, nonatomic) NSString *centeredItemIdentifier; // @synthesize centeredItemIdentifier=_centeredItemIdentifier;
 @property(copy, nonatomic) NSArray *itemIdentifiers; // @synthesize itemIdentifiers=_itemIdentifiers;
-- (void).cxx_destruct;
 - (void)_refreshToolbar;
 @property(nonatomic) BOOL autoHidesToolbarInFullScreen;
 - (id)_toolbarCreatingIfNeeded:(BOOL)arg1;

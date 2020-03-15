@@ -18,13 +18,13 @@
     NSMutableSet *__playbackDisabledReasons;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *_playbackDisabledReasons; // @synthesize _playbackDisabledReasons=__playbackDisabledReasons;
 @property(nonatomic, getter=isPlaybackDisabled, setter=_setPlaybackDisabled:) _Bool playbackDisabled; // @synthesize playbackDisabled=_playbackDisabled;
 @property(nonatomic, setter=_setPerformingInputChanges:) _Bool isPerformingInputChanges; // @synthesize isPerformingInputChanges=_isPerformingInputChanges;
 @property(nonatomic) _Bool playIsSticky; // @synthesize playIsSticky=_playIsSticky;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic) float hintProgress; // @synthesize hintProgress=_hintProgress;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)mutableChangeObject;
 - (void)_setState:(int)arg1;

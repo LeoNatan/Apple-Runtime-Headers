@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
-@property __weak SHKSharingService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property __weak SHKSharingService *service; // @synthesize service=_service;
 - (void)invalidateRemoteWindowControllerWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)startSessionTeardownByCallingContinuationBlock:(CDUnknownBlockType)arg1;
 - (void)animateRemoteWithCompletionHandler:(CDUnknownBlockType)arg1;

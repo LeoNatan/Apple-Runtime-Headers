@@ -22,10 +22,10 @@
     CLKComplicationTemplate *_complicationTemplate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (void)_updateUI;
 - (void)_applyChanges;
 - (void)updateMonochromeColor;

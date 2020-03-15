@@ -14,9 +14,9 @@
     NSArray *_topLevelObjects;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *topLevelObjects; // @synthesize topLevelObjects=_topLevelObjects;
 @property(readonly) IAAppTableRow *rowView; // @synthesize rowView=_rowView;
-- (void).cxx_destruct;
 
 @end
 

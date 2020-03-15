@@ -22,13 +22,13 @@
     struct CGRect _lastTrackViewVisibleRect;
 }
 
+- (void).cxx_destruct;
 @property struct CGRect lastTrackViewVisibleRect; // @synthesize lastTrackViewVisibleRect=_lastTrackViewVisibleRect;
 @property BOOL inInteractiveScroll; // @synthesize inInteractiveScroll=_inInteractiveScroll;
 @property(retain) CalUIReminderTimeTrackView *timeTrackView; // @synthesize timeTrackView=_timeTrackView;
 @property(retain) CalUIReminderTimeWheelView *timeWheelView; // @synthesize timeWheelView=_timeWheelView;
 @property(retain) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property __weak id <CalUIReminderTimeWheelViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_isShiftDown;
 - (void)scrollViewBeganMomentum:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)didEndScrollInScrollView:(id)arg1;

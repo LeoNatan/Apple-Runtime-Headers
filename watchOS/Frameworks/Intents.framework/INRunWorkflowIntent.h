@@ -8,7 +8,7 @@
 
 #import <Intents/INRunWorkflowIntentExport-Protocol.h>
 
-@class INArchivedObject, INSpeakableString, NSString;
+@class INSpeakableString, NSString;
 
 @interface INRunWorkflowIntent : INIntent <INRunWorkflowIntentExport>
 {
@@ -22,7 +22,6 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
-@property(copy, nonatomic) INArchivedObject *stepIntentResponse;
 - (void)setWorkflow:(id)arg1;
 @property(readonly, copy, nonatomic) INSpeakableString *workflow;
 - (id)initWithWorkflow:(id)arg1;

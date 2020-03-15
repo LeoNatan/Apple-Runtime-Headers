@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <SPBLEStateMonitorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SPBLEStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int bleState; // @synthesize bleState=_bleState;
-- (void).cxx_destruct;
 - (void)_updateBLEStatus;
 - (void)notifyDelegate:(unsigned int)arg1;
 - (void)startMonitoring;

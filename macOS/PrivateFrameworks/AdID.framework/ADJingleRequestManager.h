@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingJingleRequests; // @synthesize pendingJingleRequests=_pendingJingleRequests;
 @property BOOL jingleRequestInProgress; // @synthesize jingleRequestInProgress=_jingleRequestInProgress;
-- (void).cxx_destruct;
 - (void)authenticateUser:(CDUnknownBlockType)arg1;
 - (void)jingleRequestCompleted:(id)arg1;
 - (BOOL)canMakeJingleRequest;

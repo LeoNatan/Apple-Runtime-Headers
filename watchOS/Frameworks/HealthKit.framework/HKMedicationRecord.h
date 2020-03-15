@@ -35,16 +35,12 @@
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)_newMedicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 medicationCodings:(id)arg11 assertionType:(int)arg12 asserter:(id)arg13 assertionDate:(id)arg14 statusCoding:(id)arg15 dosages:(id)arg16 earliestDosageDate:(id)arg17 reasonForUseCodings:(id)arg18 notTaken:(_Bool)arg19 reasonsNotTakenCodings:(id)arg20 effectiveStartDate:(id)arg21 effectiveEndDate:(id)arg22 config:(CDUnknownBlockType)arg23;
-+ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 medicationCodings:(id)arg11 assertionType:(int)arg12 asserter:(id)arg13 assertionDate:(id)arg14 statusCoding:(id)arg15 dosages:(id)arg16 earliestDosageDate:(id)arg17 reasonForUseCodings:(id)arg18 notTaken:(_Bool)arg19 reasonsNotTakenCodings:(id)arg20 effectiveStartDate:(id)arg21 effectiveEndDate:(id)arg22;
++ (id)_newMedicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned int)arg12 medicationCodings:(id)arg13 assertionType:(int)arg14 asserter:(id)arg15 assertionDate:(id)arg16 statusCoding:(id)arg17 dosages:(id)arg18 earliestDosageDate:(id)arg19 reasonForUseCodings:(id)arg20 notTaken:(_Bool)arg21 reasonsNotTakenCodings:(id)arg22 effectiveStartDate:(id)arg23 effectiveEndDate:(id)arg24 config:(CDUnknownBlockType)arg25;
++ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned int)arg12 medicationCodings:(id)arg13 assertionType:(int)arg14 asserter:(id)arg15 assertionDate:(id)arg16 statusCoding:(id)arg17 dosages:(id)arg18 earliestDosageDate:(id)arg19 reasonForUseCodings:(id)arg20 notTaken:(_Bool)arg21 reasonsNotTakenCodings:(id)arg22 effectiveStartDate:(id)arg23 effectiveEndDate:(id)arg24;
 + (id)defaultDisplayString;
-+ (id)statusCodingPreferredSystems;
-+ (id)reasonsNotTakenCodingsPreferredSystems;
-+ (id)reasonForUseCodingsPreferredSystems;
-+ (id)medicationCodingsPreferredSystems;
 + (id)cachedConceptRelationshipKeyPaths;
 + (id)indexableConceptKeyPaths;
-+ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 medicationCodings:(id)arg10 assertionType:(int)arg11 asserter:(id)arg12 assertionDate:(id)arg13 statusCoding:(id)arg14 dosages:(id)arg15 earliestDosageDate:(id)arg16 reasonForUseCodings:(id)arg17 notTaken:(_Bool)arg18 reasonsNotTakenCodings:(id)arg19 effectiveStartDate:(id)arg20 effectiveEndDate:(id)arg21;
++ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 country:(id)arg10 state:(unsigned int)arg11 medicationCodings:(id)arg12 assertionType:(int)arg13 asserter:(id)arg14 assertionDate:(id)arg15 statusCoding:(id)arg16 dosages:(id)arg17 earliestDosageDate:(id)arg18 reasonForUseCodings:(id)arg19 notTaken:(_Bool)arg20 reasonsNotTakenCodings:(id)arg21 effectiveStartDate:(id)arg22 effectiveEndDate:(id)arg23;
 - (void).cxx_destruct;
 @property(readonly, copy) HKMedicationRecordType *medicationRecordType;
 - (id)_validateConfigurationWithOptions:(unsigned int)arg1;
@@ -94,18 +90,13 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)init;
-- (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
-- (id)indexKeywords;
-- (id)statusCodingTasks;
-- (id)reasonsNotTakenCodingsTasks;
-- (id)reasonForUseCodingsTasks;
-- (id)medicationCodingsTasks;
 - (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly) NSUUID *UUID;
+@property(readonly, copy, nonatomic) NSString *country;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly, copy, nonatomic) NSLocale *locale;

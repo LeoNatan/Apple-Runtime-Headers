@@ -25,10 +25,13 @@
     _Bool _winterpegPayments;
     _Bool _cardOnFilePayments;
     _Bool _AMPCardEnrollment;
+    _Bool _externalizedContextPayments;
     _Bool _trustedDeviceEnrollmentInfo;
     _Bool _peerPaymentAllAccess;
     _Bool _featuresAllAccess;
     _Bool _supportsDisbursements;
+    _Bool _secureElementPassProvisioning;
+    _Bool _credentialStateAccess;
     _Bool _addSilently;
     NSString *_applicationID;
     NSString *_developerTeamID;
@@ -39,6 +42,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property _Bool addSilently; // @synthesize addSilently=_addSilently;
 @property(copy) NSArray *passTypeIDs; // @synthesize passTypeIDs=_passTypeIDs;
@@ -46,10 +50,13 @@
 @property(readonly, copy) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
 @property(readonly, copy) NSString *developerTeamID; // @synthesize developerTeamID=_developerTeamID;
 @property(readonly, copy) NSString *applicationID; // @synthesize applicationID=_applicationID;
+@property(readonly) _Bool credentialStateAccess; // @synthesize credentialStateAccess=_credentialStateAccess;
+@property(readonly) _Bool secureElementPassProvisioning; // @synthesize secureElementPassProvisioning=_secureElementPassProvisioning;
 @property(readonly) _Bool supportsDisbursements; // @synthesize supportsDisbursements=_supportsDisbursements;
 @property(readonly) _Bool featuresAllAccess; // @synthesize featuresAllAccess=_featuresAllAccess;
 @property(readonly) _Bool peerPaymentAllAccess; // @synthesize peerPaymentAllAccess=_peerPaymentAllAccess;
 @property(readonly) _Bool trustedDeviceEnrollmentInfo; // @synthesize trustedDeviceEnrollmentInfo=_trustedDeviceEnrollmentInfo;
+@property(readonly) _Bool externalizedContextPayments; // @synthesize externalizedContextPayments=_externalizedContextPayments;
 @property(readonly) _Bool AMPCardEnrollment; // @synthesize AMPCardEnrollment=_AMPCardEnrollment;
 @property(readonly) _Bool cardOnFilePayments; // @synthesize cardOnFilePayments=_cardOnFilePayments;
 @property(readonly) _Bool winterpegPayments; // @synthesize winterpegPayments=_winterpegPayments;
@@ -65,7 +72,7 @@
 @property(readonly) _Bool passesAddSilently; // @synthesize passesAddSilently=_passesAddSilently;
 @property(readonly) _Bool passesOverviewAccess; // @synthesize passesOverviewAccess=_passesOverviewAccess;
 @property(readonly) _Bool passesAllAccess; // @synthesize passesAllAccess=_passesAllAccess;
-- (void).cxx_destruct;
+@property(readonly) _Bool accessPassProvisioning;
 - (void)_probeEntitlementsWithConnection:(id)arg1;
 - (id)_stringValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask *)arg2;
 - (id)_arrayValueOfEntitlement:(id)arg1 fromSecTask:(struct __SecTask *)arg2;

@@ -20,6 +20,7 @@
 }
 
 + (id)zoneID;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastRegistrationFetch; // @synthesize lastRegistrationFetch=_lastRegistrationFetch;
 @property(retain, nonatomic) NSDate *lastRegistrationUpdate; // @synthesize lastRegistrationUpdate=_lastRegistrationUpdate;
 @property(nonatomic) unsigned int maxEarliestCompatibleEpoch; // @synthesize maxEarliestCompatibleEpoch=_maxEarliestCompatibleEpoch;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) MSPCloudClientRegistrationRecord *clientRecord; // @synthesize clientRecord=_clientRecord;
 @property(retain, nonatomic) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CKContainer *ckContainer;
 - (void)fetchAccountIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchClientRegistrationRecordsWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;

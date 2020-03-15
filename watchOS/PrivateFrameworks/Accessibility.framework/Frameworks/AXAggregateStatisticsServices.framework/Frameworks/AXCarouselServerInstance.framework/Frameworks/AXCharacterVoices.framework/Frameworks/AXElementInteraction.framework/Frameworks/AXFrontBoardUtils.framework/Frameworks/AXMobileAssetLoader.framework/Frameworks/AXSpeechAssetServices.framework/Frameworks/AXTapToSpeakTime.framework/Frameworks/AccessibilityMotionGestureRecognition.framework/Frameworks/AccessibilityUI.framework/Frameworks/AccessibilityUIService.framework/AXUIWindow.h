@@ -4,14 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/_UIRootWindow.h>
+#import <UIKit/UIWindow.h>
 
-@interface AXUIWindow : _UIRootWindow
+#import <AccessibilityUIService/AXUIWindowProtocol-Protocol.h>
+
+@interface AXUIWindow : UIWindow <AXUIWindowProtocol>
 {
     _Bool _isHandlingFullScreenPresentation;
+    _Bool _shouldRespondToDarkModeChanges;
 }
 
 + (_Bool)_isSecure;
+@property(nonatomic) _Bool shouldRespondToDarkModeChanges; // @synthesize shouldRespondToDarkModeChanges=_shouldRespondToDarkModeChanges;
 @property(nonatomic) _Bool isHandlingFullScreenPresentation; // @synthesize isHandlingFullScreenPresentation=_isHandlingFullScreenPresentation;
 - (struct UIEdgeInsets)_normalizedSafeAreaInsets;
 - (int)_interfaceOrientationForSceneSafeAreaInsetsIncludingStatusBar:(_Bool)arg1;

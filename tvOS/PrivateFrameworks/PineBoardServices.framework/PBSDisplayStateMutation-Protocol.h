@@ -9,6 +9,7 @@
 @class PBSDisplayManagerUpdateRequest;
 
 @protocol PBSDisplayStateMutation <NSObject>
+- (void)enableAtmos:(_Bool)arg1;
 - (void)enableModeSwitchingForFrameRate:(_Bool)arg1;
 - (void)enableModeSwitchingForDynamicRange:(_Bool)arg1;
 - (void)wakeDisplayWithReply:(void (^)(NSDictionary *, NSError *))arg1;

@@ -17,9 +17,9 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *SIMRules; // @synthesize SIMRules=_SIMRules;
 @property(copy, nonatomic) NSArray *applicationRules; // @synthesize applicationRules=_applicationRules;
-- (void).cxx_destruct;
 - (id)installationWarnings;
 - (id)payloadDescriptionKeyValueSections;
 - (id)description;

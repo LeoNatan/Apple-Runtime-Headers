@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) double age; // @synthesize age=_age;
 @property(readonly, nonatomic) long long channel; // @synthesize channel=_channel;
 @property(readonly, nonatomic) long long rssi; // @synthesize rssi=_rssi;
 @property(readonly, nonatomic) NSString *mac; // @synthesize mac=_mac;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

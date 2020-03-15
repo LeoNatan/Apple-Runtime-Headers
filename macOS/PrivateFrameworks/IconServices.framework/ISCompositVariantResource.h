@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)resourceWithURL:(id)arg1 resourceInfo:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *layers; // @synthesize layers=_layers;
 @property(retain) NSDictionary *recipes; // @synthesize recipes=_recipes;
 @property(retain) NSMutableDictionary *imageSetResources; // @synthesize imageSetResources=_imageSetResources;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSDictionary *compositionInfo; // @synthesize compositionInfo=_compositionInfo;
 @property(readonly) unsigned long long flags; // @synthesize flags=_flags;
 @property(readonly) NSString *variantName; // @synthesize variantName=_variantName;
-- (void).cxx_destruct;
 - (struct CGImage *)imageForSize:(unsigned long long)arg1 scale:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)drawInContext:(struct CGContext *)arg1 withScale:(unsigned long long)arg2 error:(id *)arg3;
 - (id)resolvedResourceNamed:(id)arg1;

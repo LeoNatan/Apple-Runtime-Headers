@@ -88,10 +88,10 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 + (BOOL)shouldPropagateAppearanceCustomizations;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL serviceViewShouldShareTouchesWithHost; // @synthesize serviceViewShouldShareTouchesWithHost=_serviceViewShouldShareTouchesWithHost;
 @property(nonatomic, setter=_setIsUpdatingSizeInHost:) BOOL _isUpdatingSizeInHost; // @synthesize _isUpdatingSizeInHost;
 @property(nonatomic, setter=_setIsUpdatingSize:) BOOL _isUpdatingSize; // @synthesize _isUpdatingSize;
-- (void).cxx_destruct;
 - (void)__handleFocusMovementAction:(id)arg1;
 - (void)__trampolineButtonPressData:(id)arg1 canceled:(BOOL)arg2;
 - (id)_cancelTouchesForCurrentEventInHostedContent;

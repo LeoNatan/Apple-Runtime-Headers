@@ -40,6 +40,7 @@
 }
 
 + (id)sharedRecorder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <RPScreenRecorderPrivateDelegate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(retain, nonatomic) NSURL *broadcastURL; // @synthesize broadcastURL=_broadcastURL;
 @property(nonatomic) _Bool systemRecording; // @synthesize systemRecording=_systemRecording;
@@ -62,7 +63,6 @@
 @property(nonatomic, getter=isRecording) _Bool recording; // @synthesize recording=_recording;
 @property(nonatomic, getter=isAvailable) _Bool available; // @synthesize available=_available;
 @property(nonatomic) __weak id <RPScreenRecorderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)screenRecordingAllowed;
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;

@@ -14,9 +14,9 @@
     NSArray *_managedArray;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *managedArray; // @synthesize managedArray=_managedArray;
 @property(retain, nonatomic) id ownerObject; // @synthesize ownerObject=_ownerObject;
-- (void).cxx_destruct;
 - (id)jsValuesWithContext:(id)arg1;
 - (void)dealloc;
 - (id)initWithArray:(id)arg1 ownerObject:(id)arg2;

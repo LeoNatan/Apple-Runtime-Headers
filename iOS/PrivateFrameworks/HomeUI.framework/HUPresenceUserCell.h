@@ -25,6 +25,7 @@
     HULayoutContainerView *_avatarContainerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HULayoutContainerView *avatarContainerView; // @synthesize avatarContainerView=_avatarContainerView;
 @property(readonly, nonatomic) id <CNAvatarViewController> avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(readonly, nonatomic) HUTitleDescriptionContentView *titleDescriptionView; // @synthesize titleDescriptionView=_titleDescriptionView;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (void)_updateCustomSeparatorInset;
 - (void)_setupConstraints;
 - (void)_updateDescriptionText;

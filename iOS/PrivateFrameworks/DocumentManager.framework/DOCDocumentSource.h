@@ -35,6 +35,7 @@
 + (id)defaultSourceForBundleIdentifier:(id)arg1 defaultSourceIdentifier:(id)arg2 sources:(id)arg3;
 + (void)defaultSourceForBundleIdentifier:(id)arg1 selectedSourceIdentifier:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 + (id)defaultSourceIdentifierForBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property FPProviderDomain *searching_fileProviderDomain; // @synthesize searching_fileProviderDomain=_searching_fileProviderDomain;
 @property(copy) NSArray *documentTypes; // @synthesize documentTypes=_documentTypes;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
@@ -45,7 +46,6 @@
 @property(copy) NSString *domainName; // @synthesize domainName=_domainName;
 @property(copy) NSString *providerName; // @synthesize providerName=_providerName;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 @property(readonly) _Bool isiCloudBased;
 @property(readonly) _Bool appearsInMoveUI;
 @property(readonly, nonatomic) NSArray *supportedSearchFilters;

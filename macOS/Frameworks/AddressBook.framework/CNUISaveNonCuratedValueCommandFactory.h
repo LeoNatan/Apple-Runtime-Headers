@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)commandWithContactStore:(id)arg1 contact:(id)arg2 isContactMeContact:(BOOL)arg3 isContactReadOnly:(BOOL)arg4 isContactCurated:(BOOL)arg5 nonCuratedValueToSave:(id)arg6 forKey:(id)arg7 containerIdentifier:(id)arg8;
++ (id)commandWithContactStore:(id)arg1 contact:(id)arg2 isContactMeContact:(BOOL)arg3 isContactReadOnly:(BOOL)arg4 isContactCurated:(BOOL)arg5 nonCuratedValueToSave:(id)arg6 forKey:(id)arg7 containerIdentifier:(id)arg8 ignoresGuardianRestrictions:(BOOL)arg9;
 
 @end
 

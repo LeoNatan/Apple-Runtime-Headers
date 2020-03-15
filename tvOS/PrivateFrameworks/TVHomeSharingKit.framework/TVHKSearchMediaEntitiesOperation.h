@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntitySearchRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) TVHKMediaEntitySearchRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) TVHKMediaEntitySearchResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)initWithMediaEntityServer:(id)arg1 request:(id)arg2;
 - (id)initWithMediaEntityServer:(id)arg1;

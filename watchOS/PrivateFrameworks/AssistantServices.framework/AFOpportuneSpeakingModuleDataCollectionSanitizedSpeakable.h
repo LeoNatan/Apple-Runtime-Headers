@@ -14,9 +14,9 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isOlderThan:(id)arg1;
 - (id)initWithDate:(id)arg1;
 

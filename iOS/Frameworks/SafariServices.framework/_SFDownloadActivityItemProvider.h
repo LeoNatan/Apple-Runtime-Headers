@@ -15,8 +15,8 @@
     _SFQuickLookDocument *_quickLookDocument;
 }
 
-@property(retain, nonatomic) _SFQuickLookDocument *quickLookDocument; // @synthesize quickLookDocument=_quickLookDocument;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _SFQuickLookDocument *quickLookDocument; // @synthesize quickLookDocument=_quickLookDocument;
 - (id)activityViewControllerApplicationExtensionItem:(id)arg1;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)item;

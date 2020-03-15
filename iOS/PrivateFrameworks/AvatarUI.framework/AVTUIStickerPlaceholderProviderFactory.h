@@ -14,9 +14,9 @@
     CDUnknownBlockType _imageProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(retain, nonatomic) NSMutableArray *queuedHandlers; // @synthesize queuedHandlers=_queuedHandlers;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)placeholderProvider;
 - (id)initWithImageProvider:(CDUnknownBlockType)arg1;
 

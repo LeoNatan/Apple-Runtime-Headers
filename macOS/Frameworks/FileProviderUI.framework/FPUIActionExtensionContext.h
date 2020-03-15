@@ -16,9 +16,9 @@
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
+- (void).cxx_destruct;
 @property(copy) NSURL *initialURL; // @synthesize initialURL=_initialURL;
 @property(copy) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
-- (void).cxx_destruct;
 - (id)_remoteContext;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didEncounterError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

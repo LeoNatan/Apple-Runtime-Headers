@@ -69,6 +69,7 @@
 }
 
 + (id)_captureImageOfOccurrenceView:(id)arg1 withFrameOfOpaqueContent:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKDayOccurrenceView *draggingViewSource; // @synthesize draggingViewSource=_draggingViewSource;
 @property(retain, nonatomic) NSString *sessionIdentifierForDebug; // @synthesize sessionIdentifierForDebug=_sessionIdentifierForDebug;
 @property(readonly, nonatomic) EKDayOccurrenceView *draggingView; // @synthesize draggingView=_draggingView;
@@ -81,7 +82,6 @@
 @property(nonatomic) BOOL usesXDragOffsetInCancelRegion; // @synthesize usesXDragOffsetInCancelRegion=_usesXDragOffsetInCancelRegion;
 @property(nonatomic) __weak id <EKEventGestureControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <EKEventGestureControllerUntimedDelegate> untimedDelegate; // @synthesize untimedDelegate=_untimedDelegate;
-- (void).cxx_destruct;
 - (double)_Debug_HoursSinceStartOfDay:(double)arg1;
 - (BOOL)_isPointInCancelRegion:(struct CGPoint)arg1;
 - (double)_cancelRegionMargin;

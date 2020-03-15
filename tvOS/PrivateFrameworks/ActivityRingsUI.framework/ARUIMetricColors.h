@@ -36,6 +36,7 @@
 + (id)energyColors;
 + (struct CGGradient *)newGradientForStartColor:(id)arg1 endColor:(id)arg2;
 + (id)systemGrayTextColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *workoutRingColorIdentifier; // @synthesize workoutRingColorIdentifier=_workoutRingColorIdentifier;
 @property(retain, nonatomic) UIColor *platterInactiveBackgroundColor; // @synthesize platterInactiveBackgroundColor=_platterInactiveBackgroundColor;
 @property(retain, nonatomic) UIColor *platterBackgroundColor; // @synthesize platterBackgroundColor=_platterBackgroundColor;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) UIColor *gradientContrastColor; // @synthesize gradientContrastColor=_gradientContrastColor;
 @property(retain, nonatomic) UIColor *gradientDarkColor; // @synthesize gradientDarkColor=_gradientDarkColor;
 @property(retain, nonatomic) UIColor *gradientLightColor; // @synthesize gradientLightColor=_gradientLightColor;
-- (void).cxx_destruct;
 
 @end
 

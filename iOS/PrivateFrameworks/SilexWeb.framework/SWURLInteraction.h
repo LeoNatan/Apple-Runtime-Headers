@@ -17,9 +17,9 @@
     id <SWNavigationManager> _navigationManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWNavigationManager> navigationManager; // @synthesize navigationManager=_navigationManager;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (void)perform;

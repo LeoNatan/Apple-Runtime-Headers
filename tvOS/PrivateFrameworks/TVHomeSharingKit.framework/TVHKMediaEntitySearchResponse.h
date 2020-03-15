@@ -27,6 +27,7 @@
     NSArray *_homeVideos;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *homeVideos; // @synthesize homeVideos=_homeVideos;
 @property(copy, nonatomic) NSArray *audiobookChapters; // @synthesize audiobookChapters=_audiobookChapters;
 @property(copy, nonatomic) NSArray *audiobooks; // @synthesize audiobooks=_audiobooks;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSArray *shows; // @synthesize shows=_shows;
 @property(copy, nonatomic) NSArray *movieRentals; // @synthesize movieRentals=_movieRentals;
 @property(copy, nonatomic) NSArray *movies; // @synthesize movies=_movies;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

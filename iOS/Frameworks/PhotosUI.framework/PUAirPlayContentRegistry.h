@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     UIViewController *__cachedCurrentContent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCachedCurrentContent:) UIViewController *_cachedCurrentContent; // @synthesize _cachedCurrentContent=__cachedCurrentContent;
 @property(retain, nonatomic, setter=_setContentProviders:) NSPointerArray *_contentProviders; // @synthesize _contentProviders=__contentProviders;
 @property(nonatomic, setter=_setCurrentContentProvider:) id <PHAirPlayControllerContentProvider> currentContentProvider; // @synthesize currentContentProvider=_currentContentProvider;
-- (void).cxx_destruct;
 - (void)clearContent;
 - (id)contentForController:(id)arg1;
 - (void)_updateCurrentContentProvider;

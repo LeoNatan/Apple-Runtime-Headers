@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
 - (long long)anchorPosition;
 - (void)_runBounceAnimationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_layoutSubviews:(_Bool)arg1;
+- (void)updateConstraints;
 - (void)didMoveToWindow;
 - (void)forceAnchorPosition:(long long)arg1;
 - (void)_frameDidChange;

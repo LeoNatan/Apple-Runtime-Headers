@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     HKDisplayCategory *_category;
 }
 
-@property(retain) HKDisplayCategory *category; // @synthesize category=_category;
 - (void).cxx_destruct;
+@property(retain) HKDisplayCategory *category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSMutableArray *displayTypes; // @synthesize displayTypes=_displayTypes;
 
 @end

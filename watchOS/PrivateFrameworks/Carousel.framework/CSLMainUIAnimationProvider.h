@@ -19,11 +19,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLUITileNavigationController *tileNavigationController; // @synthesize tileNavigationController=_tileNavigationController;
 @property(retain, nonatomic) CSLLauncherViewController *launcherViewController; // @synthesize launcherViewController=_launcherViewController;
 @property(retain, nonatomic) CSLMainUIUpdateAction *updateAction; // @synthesize updateAction=_updateAction;
 @property(retain, nonatomic) CSLWorkspaceTransitionRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)transactionAnimatorFromViewController:(id)arg1 toViewController:(id)arg2;
 - (id)navigationController:(id)arg1 animationControllerForNonAnimatedOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)animationHelperFromViewController:(id)arg1 toViewController:(id)arg2;

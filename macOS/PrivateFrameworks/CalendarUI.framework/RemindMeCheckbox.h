@@ -14,9 +14,9 @@
     NSLayoutConstraint *_bottomPadding;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 @property(retain) NSButton *checkbox; // @synthesize checkbox=_checkbox;
-- (void).cxx_destruct;
 - (id)initWithGadget:(id)arg1 andLabel:(id)arg2 andSelector:(SEL)arg3;
 
 @end

@@ -21,11 +21,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)jpegDestinationWithSize:(struct CGSize)arg1 compressionQuality:(float)arg2 url:(id)arg3;
 + (id)destinationWithFormat:(int)arg1 size:(struct CGSize)arg2 url:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float compressionQuality; // @synthesize compressionQuality=_compressionQuality;
 @property(readonly, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) int format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -19,11 +19,11 @@
     REMReplicaIDHelper *_replicaIDHelper;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMReplicaIDHelper *replicaIDHelper; // @synthesize replicaIDHelper=_replicaIDHelper;
 @property(retain, nonatomic) TTMergeableStringVersionedDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) REMReplicaIDSource *replicaIDSource; // @synthesize replicaIDSource=_replicaIDSource;
 @property(retain, nonatomic) id <REMReplicaManagerProviding> replicaManagerProvider; // @synthesize replicaManagerProvider=_replicaManagerProvider;
-- (void).cxx_destruct;
 - (void)replicaIDHelperDidAcquireReplicaUUID:(id)arg1;
 - (void)_test_insertString:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)wipeAndReplaceWithString:(id)arg1;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)dateFormatter;
 + (id)contactSuggestionTypeBySuggestionType;
-@property(retain, nonatomic) SGOrigin *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SGOrigin *origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) NSURL *url;
 @property(readonly, nonatomic) NSString *from;
 @property(readonly, nonatomic) NSString *date;

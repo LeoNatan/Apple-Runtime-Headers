@@ -14,9 +14,9 @@
     PKServiceProviderPurchase *_purchase;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKServiceProviderPurchase *purchase; // @synthesize purchase=_purchase;
 @property(copy, nonatomic) NSString *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)initWithAction:(id)arg1 purchase:(id)arg2;
 

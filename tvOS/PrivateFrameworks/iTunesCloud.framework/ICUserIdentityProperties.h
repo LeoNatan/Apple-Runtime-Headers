@@ -39,6 +39,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *privateListeningEnabledForHomeUsers; // @synthesize privateListeningEnabledForHomeUsers=_privateListeningEnabledForHomeUsers;
 @property(copy, nonatomic) NSArray *homeUserIdentifiers; // @synthesize homeUserIdentifiers=_homeUserIdentifiers;
 @property(copy, nonatomic, setter=setICloudPersonID:) NSString *iCloudPersonID; // @synthesize iCloudPersonID=_iCloudPersonID;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic, getter=isActiveLocker) _Bool activeLocker; // @synthesize activeLocker=_activeLocker;
 @property(readonly, copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_dsid;
 @property(readonly, copy, nonatomic) ICDelegateToken *delegateToken; // @synthesize delegateToken=_delegateToken;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

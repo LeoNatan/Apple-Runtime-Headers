@@ -38,6 +38,7 @@
 + (struct CGSize)cellSizeFittingWidth:(double)arg1 environment:(id)arg2;
 + (double)edgeLengthFittingWidth:(double)arg1 environment:(id)arg2;
 + (_Bool)supportsSelection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTAttributeEditorSectionHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) _Bool needsScrollToSelected; // @synthesize needsScrollToSelected=_needsScrollToSelected;
 @property(nonatomic) _Bool dontAnimateSelection; // @synthesize dontAnimateSelection=_dontAnimateSelection;
@@ -51,7 +52,6 @@
 @property(nonatomic) __weak id <AVTAvatarAttributeEditorControllerSubSelectionDelegate> delegate; // @synthesize delegate;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(readonly, nonatomic) id <AVTAvatarAttributeEditorSection> section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (void)selectIndexPath:(id)arg1;
 - (void)attributeEditorSectionControllerNeedsLayoutUpdate:(id)arg1;
 - (void)attributeEditorSectionController:(id)arg1 didUpdateSectionItem:(id)arg2;

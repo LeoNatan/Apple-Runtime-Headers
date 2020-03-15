@@ -16,9 +16,9 @@
     GKPlayer *_creator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKPlayer *creator; // @synthesize creator=_creator;
 @property(nonatomic) __weak GKTournament *tournament; // @synthesize tournament=_tournament;
-- (void).cxx_destruct;
 - (void)declineInvitationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)acceptInvitationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeCreator:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

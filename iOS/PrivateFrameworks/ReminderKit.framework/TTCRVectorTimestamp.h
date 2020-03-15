@@ -13,8 +13,8 @@
     CRVectorTimestamp *_crTimestamp;
 }
 
-@property(retain, nonatomic) CRVectorTimestamp *crTimestamp; // @synthesize crTimestamp=_crTimestamp;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CRVectorTimestamp *crTimestamp; // @synthesize crTimestamp=_crTimestamp;
 - (id)sortedUUIDs;
 - (id)allUUIDs;
 - (void)setClock:(unsigned long long)arg1 subclock:(unsigned long long)arg2 forUUID:(id)arg3;

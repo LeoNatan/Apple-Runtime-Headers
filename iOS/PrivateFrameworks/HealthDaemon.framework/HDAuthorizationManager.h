@@ -27,6 +27,7 @@
     double _requestSessionTimeout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double requestSessionTimeout; // @synthesize requestSessionTimeout=_requestSessionTimeout;
 @property(nonatomic) _Bool suppressAuthorizationPrompt; // @synthesize suppressAuthorizationPrompt=_suppressAuthorizationPrompt;
 @property(retain, nonatomic) NSMutableDictionary *activeObjectPromptSessionsBySessionIdentifier; // @synthesize activeObjectPromptSessionsBySessionIdentifier=_activeObjectPromptSessionsBySessionIdentifier;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)handleObjectAuthorizationRequestsForBundleIdentifier:(id)arg1 promptHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_queue_activePromptSessionForBundleIdentifier:(id)arg1;

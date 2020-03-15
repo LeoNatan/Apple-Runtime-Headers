@@ -16,11 +16,11 @@
     NSDictionary *_messageInfo;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldTryCreate; // @synthesize shouldTryCreate=_shouldTryCreate;
 @property(copy) NSDictionary *messageInfo; // @synthesize messageInfo=_messageInfo;
 @property(copy) NSString *destinationMailboxArgumentName; // @synthesize destinationMailboxArgumentName=_destinationMailboxArgumentName;
 @property(copy) NSString *destinationMailboxName; // @synthesize destinationMailboxName=_destinationMailboxName;
-- (void).cxx_destruct;
 - (BOOL)executeOnConnection:(id)arg1;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;
 - (id)debugCommandStringWithAccount:(id)arg1;

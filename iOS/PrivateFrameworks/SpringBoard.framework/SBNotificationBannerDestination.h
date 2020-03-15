@@ -55,6 +55,7 @@
 }
 
 + (id)notificationRequestForBannerWithIcon;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *activeDragPlatterSourceView; // @synthesize activeDragPlatterSourceView=_activeDragPlatterSourceView;
 @property(retain, nonatomic) NSMutableArray *windowLevelAssertions; // @synthesize windowLevelAssertions=_windowLevelAssertions;
 @property(retain, nonatomic) SBDashBoardLegibilityProvider *dashBoardLegibilityProvider; // @synthesize dashBoardLegibilityProvider=_dashBoardLegibilityProvider;
@@ -82,7 +83,6 @@
 @property(retain, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
 @property(retain, nonatomic) SBAssistantController *assistantController; // @synthesize assistantController=_assistantController;
 @property(nonatomic) __weak id <NCNotificationDestinationDelegate> delegate;
-- (void).cxx_destruct;
 - (void)notificationManagementViewPresenterDidDismissManagementView:(id)arg1;
 - (void)notificationManagementViewPresenterWillPresentManagementView:(id)arg1;
 - (void)notificationManagementViewPresenter:(id)arg1 setAllowsCriticalAlerts:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;

@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long comparableTimeUnits; // @synthesize comparableTimeUnits=_comparableTimeUnits;
 @property(readonly, nonatomic, getter=isCaseInsensitive) _Bool caseInsensitive; // @synthesize caseInsensitive=_caseInsensitive;
 @property(readonly, nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(readonly, nonatomic) WFContentCollection *content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContent:(id)arg1 contentType:(long long)arg2 caseInsensitive:(_Bool)arg3 comparableTimeUnits:(unsigned long long)arg4;

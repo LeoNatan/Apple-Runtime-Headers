@@ -17,9 +17,9 @@
 }
 
 + (id)_entryWithTILexiconEntry:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *documentText; // @synthesize documentText=_documentText;
 @property(readonly, nonatomic) NSString *userInput; // @synthesize userInput=_userInput;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

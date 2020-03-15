@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
     struct NSDirectionalEdgeInsets _layoutMargins;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool keepsSnapshotsInHierarchy; // @synthesize keepsSnapshotsInHierarchy=_keepsSnapshotsInHierarchy;
 @property(readonly, nonatomic) UIView *backButtonSnapshot; // @synthesize backButtonSnapshot=_backButtonSnapshot;
 @property(readonly, nonatomic) UIView *titleViewSnapshot; // @synthesize titleViewSnapshot=_titleViewSnapshot;
@@ -99,7 +100,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILayoutGuide *leadingBarGuide; // @synthesize leadingBarGuide=_leadingBarGuide;
 @property(readonly, nonatomic) UILayoutGuide *backButtonGuide; // @synthesize backButtonGuide=_backButtonGuide;
 @property(readonly, nonatomic) _UINavigationBarContentView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)removeContent;
 - (void)replaceBackButtonWithSnapshot;
 - (void)replaceTitleViewWithSnapshot;

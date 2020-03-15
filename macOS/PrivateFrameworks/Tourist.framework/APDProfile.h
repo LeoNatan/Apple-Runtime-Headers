@@ -19,6 +19,7 @@
     NSArray *_testCamps;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *testCamps; // @synthesize testCamps=_testCamps;
 @property(retain) NSString *currentSystem; // @synthesize currentSystem=_currentSystem;
 @property(retain) NSString *platform; // @synthesize platform=_platform;
@@ -26,7 +27,6 @@
 @property(retain) NSString *previousSystem; // @synthesize previousSystem=_previousSystem;
 @property double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(retain) NSString *boardID; // @synthesize boardID=_boardID;
-- (void).cxx_destruct;
 - (void)mtLogQuickTourPopulation:(id)arg1;
 - (id)_detectPreviousSystem;
 - (id)_detectCurrentSystem;

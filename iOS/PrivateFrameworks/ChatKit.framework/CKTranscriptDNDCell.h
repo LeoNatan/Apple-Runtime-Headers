@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (double)preferredHeight;
 + (id)identifier;
-@property(retain, nonatomic) UISwitch *muteSwitch; // @synthesize muteSwitch=_muteSwitch;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UISwitch *muteSwitch; // @synthesize muteSwitch=_muteSwitch;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

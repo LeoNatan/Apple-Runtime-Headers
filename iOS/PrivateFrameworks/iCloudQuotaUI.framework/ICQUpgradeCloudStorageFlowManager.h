@@ -20,10 +20,10 @@
 
 + (_Bool)_canDoTokenPurchaseWithOffer:(id)arg1;
 + (_Bool)shouldSubclassShowForOffer:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType purchaseCompletionHandler; // @synthesize purchaseCompletionHandler=_purchaseCompletionHandler;
 @property(retain, nonatomic) PSCloudStorageOffersManager *storageOffersManager; // @synthesize storageOffersManager=_storageOffersManager;
 @property(retain, nonatomic) NSString *storagePurchaseButtonId; // @synthesize storagePurchaseButtonId=_storagePurchaseButtonId;
-- (void).cxx_destruct;
 - (void)manager:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;

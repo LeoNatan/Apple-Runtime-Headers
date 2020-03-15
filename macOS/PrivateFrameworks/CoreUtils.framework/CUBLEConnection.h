@@ -10,7 +10,7 @@
 #import <CoreUtils/CBPeripheralDelegate-Protocol.h>
 #import <CoreUtils/CUReadWriteRequestable-Protocol.h>
 
-@class CBCentralManager, CBL2CAPChannel, CBPeripheral, CUReadRequest, CUWriteRequest, NSString, NSUUID;
+@class CBCentralManager, CBL2CAPChannel, CBPeripheral, CUReadRequest, CUWriteRequest, NSMutableArray, NSString, NSUUID;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUBLEConnection : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate, CUReadWriteRequestable>
@@ -24,13 +24,13 @@
     NSObject<OS_dispatch_source> *_readSource;
     unsigned char _readSuspended;
     CUReadRequest *_readRequestCurrent;
-    struct NSMutableArray *_readRequests;
+    NSMutableArray *_readRequests;
     int _socketFD;
     int _state;
     NSObject<OS_dispatch_source> *_writeSource;
     unsigned char _writeSuspended;
     CUWriteRequest *_writeRequestCurrent;
-    struct NSMutableArray *_writeRequests;
+    NSMutableArray *_writeRequests;
     struct LogCategory *_ucat;
     unsigned short _destinationPSM;
     int _connectionLatency;
@@ -43,6 +43,7 @@
     CDUnknownBlockType _serverInvalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType serverInvalidationHandler; // @synthesize serverInvalidationHandler=_serverInvalidationHandler;
 @property(retain, nonatomic) CBL2CAPChannel *l2capChannel; // @synthesize l2capChannel=_l2capChannel;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) NSUUID *destinationUUID; // @synthesize destinationUUID=_destinationUUID;
 @property(nonatomic) unsigned short destinationPSM; // @synthesize destinationPSM=_destinationPSM;
 @property(nonatomic) int connectionLatency; // @synthesize connectionLatency=_connectionLatency;
-- (void).cxx_destruct;
 - (void)peripheral:(id)arg1 didOpenL2CAPChannel:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;

@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSDate *_startDate;
 }
 
-@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (id)multilineTextFieldsWithinContainer;
 - (void)viewDidMoveToWindow;
 - (double)_hairlineViewHeight;

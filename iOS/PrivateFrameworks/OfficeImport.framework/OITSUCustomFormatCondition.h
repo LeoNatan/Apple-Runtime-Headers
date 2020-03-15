@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     OITSUCustomFormatData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) OITSUCustomFormatData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) double conditionValue; // @synthesize conditionValue=_conditionValue;
 @property(readonly, nonatomic) int conditionType; // @synthesize conditionType=_conditionType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

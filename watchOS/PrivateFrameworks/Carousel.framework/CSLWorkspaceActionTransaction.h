@@ -11,8 +11,8 @@
     IOSSHLTransaction *_animationTransaction;
 }
 
-@property(readonly, nonatomic) IOSSHLTransaction *animationTransaction; // @synthesize animationTransaction=_animationTransaction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IOSSHLTransaction *animationTransaction; // @synthesize animationTransaction=_animationTransaction;
 - (void)_begin;
 - (id)init;
 

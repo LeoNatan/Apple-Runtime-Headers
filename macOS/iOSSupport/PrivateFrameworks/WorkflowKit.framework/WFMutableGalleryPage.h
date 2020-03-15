@@ -24,6 +24,7 @@
     NSArray *donationsGroupedByApp;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *donationsGroupedByApp; // @synthesize donationsGroupedByApp;
 @property(copy, nonatomic) NSArray *donations; // @synthesize donations;
 @property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSNumber *minVersion; // @synthesize minVersion;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
 @property(copy, nonatomic) CKRecordID *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 
 @end
 

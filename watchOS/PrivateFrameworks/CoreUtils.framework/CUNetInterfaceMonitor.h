@@ -27,6 +27,7 @@
     CDUnion_fab80606 _primaryIPv6Addr;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *primaryNetworkSignature; // @synthesize primaryNetworkSignature=_primaryNetworkSignature;
 @property(copy, nonatomic) CDUnknownBlockType primaryNetworkChangedHandler; // @synthesize primaryNetworkChangedHandler=_primaryNetworkChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType primaryIPChangedHandler; // @synthesize primaryIPChangedHandler=_primaryIPChangedHandler;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_primaryIPChanged:(_Bool)arg1;
 - (void)_networkInterfacesChanged:(_Bool)arg1;
 - (void)_ensureStopped;

@@ -22,12 +22,12 @@
     _SFNanoBrowserViewController *_safariViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasUserReviewedPrivacy; // @synthesize hasUserReviewedPrivacy=_hasUserReviewedPrivacy;
 @property(retain, nonatomic) _SFNanoBrowserViewController *safariViewController; // @synthesize safariViewController=_safariViewController;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *scopeChoices; // @synthesize scopeChoices=_scopeChoices;
 @property(nonatomic) __weak id <AKAuthorizationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
-- (void).cxx_destruct;
 - (void)presentBroweserViewControllerForURL:(id)arg1;
 - (void)showPrivacyDetailController;
 - (void)userReviewedPrivacy;

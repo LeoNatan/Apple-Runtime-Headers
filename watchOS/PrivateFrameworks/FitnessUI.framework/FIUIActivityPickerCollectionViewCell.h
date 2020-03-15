@@ -22,6 +22,7 @@
 
 + (float)heightForCellWithWidth:(float)arg1 activityType:(id)arg2 activityString:(id)arg3;
 + (id)_workoutTypeLabelAttributes:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float screenScale; // @synthesize screenScale=_screenScale;
 @property(retain, nonatomic) NLActivityPickerCellLayoutCache *layoutCache; // @synthesize layoutCache=_layoutCache;
 @property(copy, nonatomic) CDUnknownBlockType configurationButtonTappedHandler; // @synthesize configurationButtonTappedHandler=_configurationButtonTappedHandler;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UILabel *paceLabel; // @synthesize paceLabel=_paceLabel;
 @property(retain, nonatomic) UILabel *activityTypeLabel; // @synthesize activityTypeLabel=_activityTypeLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
-- (void).cxx_destruct;
 - (void)animateForQuickStartWithDuration:(double)arg1 finalFrame:(struct CGRect)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)layoutSubviews;
 - (id)iconImageViewCopy;

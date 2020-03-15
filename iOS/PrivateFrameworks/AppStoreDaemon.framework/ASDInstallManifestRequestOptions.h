@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) ASDJobManifest *manifest; // @synthesize manifest=_manifest;
 - (void).cxx_destruct;
+@property(copy, nonatomic) ASDJobManifest *manifest; // @synthesize manifest=_manifest;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

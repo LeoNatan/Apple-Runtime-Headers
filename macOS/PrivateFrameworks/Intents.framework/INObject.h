@@ -26,11 +26,11 @@
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *alternativeSpeakableMatches; // @synthesize alternativeSpeakableMatches=_alternativeSpeakableMatches;
 @property(readonly) NSString *pronunciationHint; // @synthesize pronunciationHint=_pronunciationHint;
 @property(readonly, copy) NSString *displayString; // @synthesize displayString=_displayString;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *vocabularyIdentifier;
 @property(readonly) NSString *spokenPhrase;
 - (id)_dictionaryRepresentation;
@@ -49,8 +49,8 @@
 @property(readonly) unsigned long long hash;
 - (id)initWithIdentifier:(id)arg1 displayString:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 displayString:(id)arg2 pronunciationHint:(id)arg3;
-- (id)_intents_localizedCopyForLanguage:(id)arg1;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_localizedCopyWithLocalizer:(id)arg1;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

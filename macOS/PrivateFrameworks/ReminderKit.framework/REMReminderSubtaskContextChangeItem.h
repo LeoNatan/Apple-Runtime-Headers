@@ -13,8 +13,8 @@
     REMReminderChangeItem *_reminderChangeItem;
 }
 
-@property(retain, nonatomic) REMReminderChangeItem *reminderChangeItem; // @synthesize reminderChangeItem=_reminderChangeItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMReminderChangeItem *reminderChangeItem; // @synthesize reminderChangeItem=_reminderChangeItem;
 - (id)_listChangeItem;
 - (void)undeleteSubtaskWithID:(id)arg1 usingUndo:(id)arg2;
 - (void)insertReminderChangeItem:(id)arg1 afterReminderChangeItem:(id)arg2;

@@ -32,6 +32,7 @@
 + (double)heightForCellWithMinimum:(double)arg1 hasSubTitle:(_Bool)arg2;
 + (id)subTitleFont;
 + (id)titleFont;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIControl *actionButton; // @synthesize actionButton=_actionButton;
 @property(readonly, nonatomic) UILabel *subTextLabel; // @synthesize subTextLabel=_subTextLabel;
 @property(readonly, nonatomic) UILabel *mainLabel; // @synthesize mainLabel=_mainLabel;
@@ -39,7 +40,6 @@
 @property(nonatomic) _Bool showAddButton; // @synthesize showAddButton=_showAddButton;
 @property(nonatomic) _Bool showSubTitle; // @synthesize showSubTitle=_showSubTitle;
 @property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)_updateSubtitleColorWithSpecifier:(id)arg1;
 - (void)setSpecifier:(id)arg1;
 - (void)updateSubtitle;

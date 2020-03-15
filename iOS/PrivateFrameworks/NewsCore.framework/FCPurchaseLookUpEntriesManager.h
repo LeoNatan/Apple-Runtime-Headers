@@ -14,9 +14,9 @@
     NSMutableDictionary *_entriesByTagID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *entriesByTagID; // @synthesize entriesByTagID=_entriesByTagID;
 @property(retain, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
-- (void).cxx_destruct;
 - (void)removeAllEntries;
 - (void)removeEntryForTagID:(id)arg1;
 - (void)removeEntry:(id)arg1;

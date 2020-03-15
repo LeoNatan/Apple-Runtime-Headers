@@ -21,9 +21,9 @@
 }
 
 + (double)diameter;
+- (void).cxx_destruct;
 @property(nonatomic) double mapHeading; // @synthesize mapHeading=_mapHeading;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)hoverGestureRecognizerChanged:(id)arg1;
 - (BOOL)_gestureRecognizer:(id)arg1 canPreventGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

@@ -28,6 +28,7 @@
 + (id)_persistedValueKeys;
 + (id)formattedPersistedValuesForDomainName:(id)arg1 database:(id)arg2 error:(id *)arg3;
 + (id)nameForDomainName:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_willPresentTTRAlertHandler; // @synthesize unitTest_willPresentTTRAlertHandler=_unitTest_willPresentTTRAlertHandler;
 @property(copy, nonatomic) NSString *radarDescription; // @synthesize radarDescription=_radarDescription;
 @property(copy, nonatomic) NSString *radarTitle; // @synthesize radarTitle=_radarTitle;
@@ -37,7 +38,6 @@
 @property(nonatomic) long long maximumErrorCount; // @synthesize maximumErrorCount=_maximumErrorCount;
 @property(nonatomic) double minimumPromptInterval; // @synthesize minimumPromptInterval=_minimumPromptInterval;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)unitTest_setLastPromptBuild:(id)arg1 error:(id *)arg2;
 - (_Bool)unitTest_setLastPromptDate:(id)arg1 error:(id *)arg2;
 - (id)_keyValueDomain;

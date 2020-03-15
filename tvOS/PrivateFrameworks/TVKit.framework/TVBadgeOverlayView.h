@@ -15,10 +15,10 @@
     TVBadgeView *_badgeView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(nonatomic) double maximumBadgeWidth; // @synthesize maximumBadgeWidth=_maximumBadgeWidth;
 @property(copy, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

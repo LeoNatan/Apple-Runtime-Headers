@@ -27,6 +27,7 @@
 }
 
 + (id)_backgroundImage;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setHighlightedView:) UIView *_highlightedView; // @synthesize _highlightedView=__highlightedView;
 @property(nonatomic, getter=_isTouchInTrackedView, setter=_setTouchInTrackedView:) _Bool _touchInTrackedView; // @synthesize _touchInTrackedView=__touchInTrackedView;
 @property(nonatomic, getter=_isTrackingExpansionToggle, setter=_setTrackingExpansionToggle:) _Bool _trackingExpansionToggle; // @synthesize _trackingExpansionToggle=__trackingExpansionToggle;
@@ -38,7 +39,6 @@
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) __weak id <CAMControlDrawerMenuButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets expansionInsets; // @synthesize expansionInsets=_expansionInsets;
-- (void).cxx_destruct;
 - (_Bool)isMenuItemSelected:(id)arg1;
 - (void)didSelectMenuItem:(id)arg1;
 - (id)loadMenuItems;

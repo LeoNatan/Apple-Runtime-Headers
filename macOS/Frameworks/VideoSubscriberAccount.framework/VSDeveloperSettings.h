@@ -15,19 +15,25 @@
     BOOL _isInSetTopBoxMode;
     BOOL _cacheBusterEnabled;
     BOOL _requestTimeoutsDisabled;
+    BOOL _simulateExpiredToken;
+    BOOL _setTopBoxUseDeviceProfile;
+    BOOL _setTopBoxSupportsOptOut;
     NSString *_setTopBoxBundleIdentifier;
     NSString *_setTopBoxUserToken;
     NSString *_setTopBoxIdentityProviderID;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL setTopBoxSupportsOptOut; // @synthesize setTopBoxSupportsOptOut=_setTopBoxSupportsOptOut;
+@property(nonatomic) BOOL setTopBoxUseDeviceProfile; // @synthesize setTopBoxUseDeviceProfile=_setTopBoxUseDeviceProfile;
 @property(copy, nonatomic) NSString *setTopBoxIdentityProviderID; // @synthesize setTopBoxIdentityProviderID=_setTopBoxIdentityProviderID;
 @property(copy, nonatomic) NSString *setTopBoxUserToken; // @synthesize setTopBoxUserToken=_setTopBoxUserToken;
 @property(copy, nonatomic) NSString *setTopBoxBundleIdentifier; // @synthesize setTopBoxBundleIdentifier=_setTopBoxBundleIdentifier;
+@property(nonatomic) BOOL simulateExpiredToken; // @synthesize simulateExpiredToken=_simulateExpiredToken;
 @property(nonatomic) BOOL requestTimeoutsDisabled; // @synthesize requestTimeoutsDisabled=_requestTimeoutsDisabled;
 @property(nonatomic) BOOL cacheBusterEnabled; // @synthesize cacheBusterEnabled=_cacheBusterEnabled;
 @property(nonatomic) BOOL isInSetTopBoxMode; // @synthesize isInSetTopBoxMode=_isInSetTopBoxMode;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

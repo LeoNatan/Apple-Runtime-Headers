@@ -21,6 +21,7 @@
     NSDictionary *_validationParams;
 }
 
+- (void).cxx_destruct;
 @property BOOL useBatchPrediction; // @synthesize useBatchPrediction=_useBatchPrediction;
 @property BOOL tested; // @synthesize tested=_tested;
 @property(retain, nonatomic) NSDictionary *validationParams; // @synthesize validationParams=_validationParams;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *recipePath; // @synthesize recipePath=_recipePath;
 @property(retain, nonatomic) _MLTLogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) NSMutableDictionary *metricsDict; // @synthesize metricsDict=_metricsDict;
-- (void).cxx_destruct;
 - (BOOL)validateModel:(id)arg1 withParams:(id)arg2 verbose:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)checkIfResultsWithinParams:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)addFailingCountForOutput:(id)arg1 forMetric:(id)arg2;

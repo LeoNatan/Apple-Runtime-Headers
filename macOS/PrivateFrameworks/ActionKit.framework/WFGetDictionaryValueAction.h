@@ -10,7 +10,8 @@
 {
 }
 
-- (void)setOutputWithValue:(id)arg1 preferredDictionaryType:(id)arg2;
++ (BOOL)outputIsExemptFromTaintTrackingInheritance;
+- (void)setOutputWithValue:(id)arg1 preferredDictionaryType:(id)arg2 contentSource:(id)arg3;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 
 @end

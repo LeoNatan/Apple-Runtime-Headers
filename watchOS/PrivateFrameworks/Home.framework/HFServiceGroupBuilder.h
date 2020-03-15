@@ -23,13 +23,13 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasSetIcon; // @synthesize hasSetIcon=_hasSetIcon;
 @property(nonatomic) _Bool hasSetRoom; // @synthesize hasSetRoom=_hasSetRoom;
 @property(retain, nonatomic) HFRoomBuilder *roomBuilder; // @synthesize roomBuilder=_roomBuilder;
 @property(readonly, nonatomic) HFMutableSetDiff *serviceUUIDs; // @synthesize serviceUUIDs=_serviceUUIDs;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) _Bool isFavorite; // @synthesize isFavorite;
-- (void).cxx_destruct;
 - (_Bool)_supportsCustomIcons;
 @property(readonly, nonatomic) NSArray *availableIconDescriptors;
 @property(retain, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;

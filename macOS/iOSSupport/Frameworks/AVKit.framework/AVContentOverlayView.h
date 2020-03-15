@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <AVContentOverlayViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AVContentOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AVContentOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_didRemoveSubview:(id)arg1;
 - (void)didAddSubview:(id)arg1;
 

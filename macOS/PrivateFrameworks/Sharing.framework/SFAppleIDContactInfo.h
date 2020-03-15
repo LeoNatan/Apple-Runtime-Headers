@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *validatedPhoneNumbers; // @synthesize validatedPhoneNumbers=_validatedPhoneNumbers;
 @property(retain, nonatomic) NSArray *validatedEmailAddresses; // @synthesize validatedEmailAddresses=_validatedEmailAddresses;
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isEqualToContactInfo:(id)arg1;

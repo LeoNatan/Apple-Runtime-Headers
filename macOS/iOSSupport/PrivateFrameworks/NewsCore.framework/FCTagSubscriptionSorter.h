@@ -13,8 +13,8 @@
     id <FCTagRanking> _tagRanker;
 }
 
-@property(readonly, nonatomic) id <FCTagRanking> tagRanker; // @synthesize tagRanker=_tagRanker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCTagRanking> tagRanker; // @synthesize tagRanker=_tagRanker;
 - (id)sortTagSubscriptions:(id)arg1;
 - (id)initWithTagRanker:(id)arg1;
 

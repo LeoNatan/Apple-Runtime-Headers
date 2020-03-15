@@ -16,11 +16,12 @@
     unsigned long long _purgeOrder;
 }
 
-@property(nonatomic) unsigned long long purgeOrder; // @synthesize purgeOrder=_purgeOrder;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long purgeOrder; // @synthesize purgeOrder=_purgeOrder;
 - (BOOL)purgeAndGetSize:(unsigned long long *)arg1;
 @property(readonly, nonatomic) unsigned long long size;
 - (id)_purgeableWebsiteDataTypes;
+- (void)dealloc;
 - (id)initWithApplicationCacheDirectoryPath:(id)arg1 networkCacheDirectoryPath:(id)arg2 purgeOrder:(unsigned long long)arg3;
 
 // Remaining properties

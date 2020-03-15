@@ -30,6 +30,7 @@
 + (long long)_undefinedMatchIndex;
 + (unsigned long long)_undefinedNumberOfMatches;
 + (unsigned long long)_maximumNumberOfMatches;
+- (void).cxx_destruct;
 @property(nonatomic) __weak WKWebView *webView; // @synthesize webView=_webView;
 @property(nonatomic) long long highlightedMatchIndex; // @synthesize highlightedMatchIndex=_highlightedMatchIndex;
 @property(nonatomic) unsigned long long numberOfFindMatches; // @synthesize numberOfFindMatches=_numberOfFindMatches;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool shouldFocusTextField; // @synthesize shouldFocusTextField=_shouldFocusTextField;
 @property(nonatomic) _Bool usesNarrowLayout; // @synthesize usesNarrowLayout=_usesNarrowLayout;
 @property(readonly, nonatomic) __weak id <_SFFindOnPageViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldDisplayFindNextPreviousInDiscoverabilityHUD;
 - (_Bool)hasMatches;
 - (void)updateSearchText:(id)arg1;

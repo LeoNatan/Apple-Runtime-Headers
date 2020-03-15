@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceFetchToken; // @synthesize forceFetchToken=_forceFetchToken;
 @property(retain, nonatomic) NSString *apiToken; // @synthesize apiToken=_apiToken;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

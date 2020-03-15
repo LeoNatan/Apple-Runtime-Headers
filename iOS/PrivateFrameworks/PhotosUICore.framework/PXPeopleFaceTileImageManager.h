@@ -27,10 +27,10 @@
 
 + (id)sharedManager;
 + (id)imageTransformQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> backgroundEntraceObserver; // @synthesize backgroundEntraceObserver=_backgroundEntraceObserver;
 @property(retain, nonatomic) id <NSObject> memoryWarningObserver; // @synthesize memoryWarningObserver=_memoryWarningObserver;
 @property(readonly, nonatomic) PXLRUMemoryCache *memoryCache; // @synthesize memoryCache=_memoryCache;
-- (void).cxx_destruct;
 - (_Bool)_doesChange:(id)arg1 containVisibleChangesToPHAssetWithOID:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)_stopListeningForChanges;

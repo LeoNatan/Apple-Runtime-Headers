@@ -18,12 +18,12 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *socialIconMap; // @synthesize socialIconMap=_socialIconMap;
 @property(readonly) NSDictionary *ncIconMap; // @synthesize ncIconMap=_ncIconMap;
 @property(readonly) NSDictionary *appPluginMap; // @synthesize appPluginMap=_appPluginMap;
 @property(readonly) NSMutableDictionary *iconMap; // @synthesize iconMap=_iconMap;
 @property(readonly) NSMutableDictionary *groupMap; // @synthesize groupMap=_groupMap;
-- (void).cxx_destruct;
 - (BOOL)shouldAllowSnippetStashingForAceObject:(id)arg1;
 - (id)localizedIconForIdentifier:(id)arg1;
 - (id)localizedIconPathForIdentifier:(id)arg1;

@@ -21,8 +21,8 @@
     id <SiriTVUIGranularAnimatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SiriTVUIGranularAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriTVUIGranularAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_resetAnimation;
 - (void)_displayLinkFired:(id)arg1;
 - (void)beginAnimation:(CDUnknownBlockType)arg1 withStartingPercentage:(double)arg2 endingPercentage:(double)arg3 duration:(double)arg4 completion:(CDUnknownBlockType)arg5;

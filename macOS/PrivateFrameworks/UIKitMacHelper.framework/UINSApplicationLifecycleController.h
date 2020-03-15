@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_finalWarningShotTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *finalWarningShotTimer; // @synthesize finalWarningShotTimer=_finalWarningShotTimer;
 @property(retain, nonatomic) _UINSLifecycleWatchdog *finalTerminationWatchdog; // @synthesize finalTerminationWatchdog=_finalTerminationWatchdog;
 @property(retain, nonatomic) _UINSLifecycleWatchdog *backgroundTaskWatchdog; // @synthesize backgroundTaskWatchdog=_backgroundTaskWatchdog;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL terminationIsForLogoutOrShutdown; // @synthesize terminationIsForLogoutOrShutdown=_terminationIsForLogoutOrShutdown;
 @property(nonatomic) __weak UINSApplicationDelegate *appDelegate; // @synthesize appDelegate=_appDelegate;
 @property(nonatomic) BOOL isAttemptingTermination; // @synthesize isAttemptingTermination=_isAttemptingTermination;
-- (void).cxx_destruct;
 - (void)_setLSNextAppLaunchDelay;
 - (void)_setLSRestoreTypeToForeground:(BOOL)arg1;
 - (void)_endWindowOrderBatching;

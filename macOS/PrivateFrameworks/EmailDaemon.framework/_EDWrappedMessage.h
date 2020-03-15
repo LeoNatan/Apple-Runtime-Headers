@@ -14,9 +14,9 @@
     long long _databaseID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
 @property(readonly, nonatomic) EMMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)initWithMessage:(id)arg1 databaseID:(long long)arg2;
 
 @end

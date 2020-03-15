@@ -16,8 +16,8 @@
     id <SWSession> _session;
 }
 
-@property(readonly, nonatomic) id <SWSession> session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SWSession> session; // @synthesize session=_session;
 @property(readonly, nonatomic) WKUserScript *userScript;
 - (BOOL)queuable;
 - (id)initWithSession:(id)arg1;

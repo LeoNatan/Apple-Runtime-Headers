@@ -43,6 +43,7 @@
     NSString *__lastMultiContributorsSectionFooterTitle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setShowingPublicURLActivitySpinner:) _Bool _showingPublicURLActivitySpinner; // @synthesize _showingPublicURLActivitySpinner=__showingPublicURLActivitySpinner;
 @property(nonatomic) _Bool albumIsFamilyStream; // @synthesize albumIsFamilyStream=_albumIsFamilyStream;
 @property(copy, nonatomic, setter=_setLastMultiContributorsSectionFooterTitle:) NSString *_lastMultiContributorsSectionFooterTitle; // @synthesize _lastMultiContributorsSectionFooterTitle=__lastMultiContributorsSectionFooterTitle;
@@ -55,7 +56,6 @@
 @property(nonatomic) _Bool isPresentedModally; // @synthesize isPresentedModally=_isPresentedModally;
 @property(retain, nonatomic) PLCloudSharedAlbum *album; // @synthesize album=_album;
 @property(nonatomic) id <PXAlbumStreamingOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

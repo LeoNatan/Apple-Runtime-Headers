@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createElement:(id *)arg1;
-@property(readonly, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 - (_Bool)assertionMeetsConditions:(id *)arg1;
 @property(readonly, nonatomic) NSNumber *proxyRestrictionAudienceCount;
 @property(readonly, nonatomic) NSArray *proxyRestrictions;

@@ -14,9 +14,9 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) AXFBFakeProcessState *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 
 @end
 

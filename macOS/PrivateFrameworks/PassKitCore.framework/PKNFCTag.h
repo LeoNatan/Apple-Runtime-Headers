@@ -20,6 +20,7 @@
     NSData *_UID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *UID; // @synthesize UID=_UID;
 @property(copy, nonatomic) NSData *appData; // @synthesize appData=_appData;
 @property(copy, nonatomic) NSData *systemCode; // @synthesize systemCode=_systemCode;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSData *manufacturerIdentifier; // @synthesize manufacturerIdentifier=_manufacturerIdentifier;
 @property(copy, nonatomic) NSData *tagIdentifier; // @synthesize tagIdentifier=_tagIdentifier;
 @property(nonatomic) unsigned long long technology; // @synthesize technology=_technology;
-- (void).cxx_destruct;
 - (id)initWithNFTag:(id)arg1;
 
 @end

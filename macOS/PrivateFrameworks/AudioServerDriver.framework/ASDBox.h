@@ -36,6 +36,7 @@
 }
 
 + (id)keyPathsForValuesAffectingAcquireable;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSArray *clockDevices; // @synthesize clockDevices=_clockDevices;
 @property(nonatomic) BOOL canChangeBoxName; // @synthesize canChangeBoxName=_canChangeBoxName;
 @property(nonatomic, getter=isAcquirable) BOOL acquirable; // @synthesize acquirable=_acquirable;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *manufacturerName; // @synthesize manufacturerName=_manufacturerName;
 @property(copy, nonatomic) NSString *modelUID; // @synthesize modelUID=_modelUID;
 @property(readonly, copy, nonatomic) NSString *boxUID; // @synthesize boxUID=_boxUID;
-- (void).cxx_destruct;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
 @property(nonatomic, getter=isAcquireable) BOOL acquireable; // @dynamic acquireable;

@@ -23,6 +23,7 @@
 }
 
 + (id)posterFrameView;
+- (void).cxx_destruct;
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(nonatomic) __weak HMCameraClip *clip; // @synthesize clip=_clip;
 @property(retain, nonatomic) CALayer *lineSeparator; // @synthesize lineSeparator=_lineSeparator;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool shouldShowLineSeparator; // @synthesize shouldShowLineSeparator=_shouldShowLineSeparator;
 @property(nonatomic, getter=isRequestInProgress) _Bool requestInProgress; // @synthesize requestInProgress=_requestInProgress;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
-- (void).cxx_destruct;
 - (void)displayImageForClip:(id)arg1 atTimeOffset:(double)arg2;
 - (void)manager:(id)arg1 didFindImage:(id)arg2 atTimeOffset:(double)arg3 forClip:(id)arg4;
 - (void)prepareForReuse;

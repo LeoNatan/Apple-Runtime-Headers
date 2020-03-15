@@ -15,5 +15,6 @@
 - (void)download:(TVPDownload *)arg1 didChangeStateTo:(long long)arg2;
 - (void)download:(TVPDownload *)arg1 willDownloadToURL:(NSURL *)arg2;
 - (void)download:(TVPDownload *)arg1 didReceiveTaskIdentifier:(NSNumber *)arg2;
+- (void)download:(TVPDownload *)arg1 didDetermineMaximumResolution:(long long)arg2 maximumVideoRange:(long long)arg3;
 @end
 

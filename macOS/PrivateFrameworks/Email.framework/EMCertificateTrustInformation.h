@@ -23,12 +23,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _forceNetworkAccessAllowed; // @synthesize _forceNetworkAccessAllowed=__forceNetworkAccessAllowed;
 @property(nonatomic) unsigned long long certificateType; // @synthesize certificateType=_certificateType;
 @property(copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(retain, nonatomic) ECSecureMIMETrustEvaluation *trustEvaluation; // @synthesize trustEvaluation=_trustEvaluation;
 @property(nonatomic) struct __SecTrust *trust; // @synthesize trust=_trust;
-- (void).cxx_destruct;
 - (void)reevaluateTrustWithNetworkAccessAllowed;
 - (void)evaluateTrustWithOptions:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) id <ECEmailAddressConvertible> emailAddress;

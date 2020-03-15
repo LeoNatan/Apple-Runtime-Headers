@@ -25,6 +25,7 @@
 - (id)px_imageByCroppingEdgeInsets:(struct UIEdgeInsets)arg1;
 - (id)px_imageWithDebugRect:(struct CGRect)arg1;
 - (id)px_tintedCircularImageWithColor:(id)arg1 backgroundColor:(id)arg2;
+- (id)px_imageByApplyingAlpha:(double)arg1;
 - (id)px_tintedImageWithColor:(id)arg1;
 - (BOOL)px_isLargerThan:(id)arg1;
 @property(readonly, nonatomic) struct CGSize px_pixelSize;

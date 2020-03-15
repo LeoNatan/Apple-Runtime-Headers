@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)pasteboardDataFromPersistenceData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICDataPersister *dataPersister; // @synthesize dataPersister=_dataPersister;
 @property(readonly, nonatomic) NSData *attributedStringData; // @synthesize attributedStringData=_attributedStringData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)persistenceData;

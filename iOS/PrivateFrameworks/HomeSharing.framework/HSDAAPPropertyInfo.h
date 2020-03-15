@@ -16,9 +16,9 @@
 
 + (id)sharedContainerPropertyInfo;
 + (id)sharedItemPropertyInfo;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *valueTypeMap; // @synthesize valueTypeMap=_valueTypeMap;
 @property(retain, nonatomic) NSMutableDictionary *codeMap; // @synthesize codeMap=_codeMap;
-- (void).cxx_destruct;
 - (void)mapProperty:(id)arg1 toCode:(unsigned int)arg2 valueType:(long long)arg3;
 - (id)_init;
 - (long long)valueTypeForProperty:(id)arg1;

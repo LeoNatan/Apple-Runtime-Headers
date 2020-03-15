@@ -19,11 +19,11 @@
     NSURL *_calendarHomeURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *calendarHomeURL; // @synthesize calendarHomeURL=_calendarHomeURL;
 @property(nonatomic) _Bool acceptInvitation; // @synthesize acceptInvitation=_acceptInvitation;
 @property(retain, nonatomic) CalDAVCalendarServerInviteNotificationItem *invitation; // @synthesize invitation=_invitation;
 @property(retain, nonatomic) NSURL *sharedAs; // @synthesize sharedAs=_sharedAs;
-- (void).cxx_destruct;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (id)generateReply;
 - (void)startTaskGroup;

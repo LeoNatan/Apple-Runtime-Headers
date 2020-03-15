@@ -25,10 +25,7 @@
 - (void)removeAllPreferences;
 - (void)removeAllPreferencesForPassWithUniqueID:(id)arg1;
 - (double)commutePlanRenewalReminderTimeIntervalForPassWithUniqueID:(id)arg1;
-- (void)setCommutePlanRenewalReminderTimeInterval:(double)arg1 forPassWithUniqueID:(id)arg2;
-- (id)lowBalanceReminderCurrencyForPassWithUniqueID:(id)arg1;
 - (id)lowBalanceReminderAmountForPassWithUniqueID:(id)arg1;
-- (void)setLowBalanceReminderAmount:(id)arg1 currency:(id)arg2 forPassWithUniqueID:(id)arg3;
 
 @end
 

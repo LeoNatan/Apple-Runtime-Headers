@@ -17,11 +17,11 @@
     UICollectionViewLayout *__transitionLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTransitionLayout:) UICollectionViewLayout *_transitionLayout; // @synthesize _transitionLayout=__transitionLayout;
 @property(nonatomic) __weak id <PUPhotosSharingTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PUPhotosSharingTransitionContext *photosSharingTransitionContext; // @synthesize photosSharingTransitionContext=_photosSharingTransitionContext;
 @property(retain, nonatomic) UIViewController<PUPhotosSharingTransitionViewController> *sharingTransitionViewController; // @synthesize sharingTransitionViewController=_sharingTransitionViewController;
-- (void).cxx_destruct;
 - (void)animateDismissTransition;
 - (void)animatePresentTransition;
 

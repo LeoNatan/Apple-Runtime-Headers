@@ -18,10 +18,10 @@
 + (id)_dateFormatter;
 + (id)_currentAssertions;
 + (id)assertionDescriptions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UMUserSwitchBlockingTask *blockingTask; // @synthesize blockingTask=_blockingTask;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithReason:(id)arg1;

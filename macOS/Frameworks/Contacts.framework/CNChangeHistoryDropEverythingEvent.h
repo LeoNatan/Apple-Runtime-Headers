@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned long long)instanceSortOrder;
 + (BOOL)supportsSecureCoding;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;

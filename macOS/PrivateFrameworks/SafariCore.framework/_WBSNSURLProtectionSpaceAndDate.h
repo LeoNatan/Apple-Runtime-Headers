@@ -14,9 +14,9 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSURLProtectionSpace *protectionSpace; // @synthesize protectionSpace=_protectionSpace;
-- (void).cxx_destruct;
 - (id)initWithProtectionSpace:(id)arg1 date:(id)arg2;
 
 @end

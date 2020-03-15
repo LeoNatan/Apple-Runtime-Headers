@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_stackViewWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *stackViewWidthConstraint; // @synthesize stackViewWidthConstraint=_stackViewWidthConstraint;
 @property(retain, nonatomic) VUIUpNextButtonProperties *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 - (void)_selectButtonAction:(id)arg1 eventType:(id)arg2;
 - (void)upNextStateChangedToRemoved;
 - (void)upNextStateChangedToAdded;

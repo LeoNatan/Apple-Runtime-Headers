@@ -15,9 +15,9 @@
     id <TVPMediaItem> _tvpObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <TVPMediaItem> tvpObject; // @synthesize tvpObject=_tvpObject;
 - (id)secureKeyLoader;
-- (void).cxx_destruct;
 - (id)_tvpObject;
 - (void)setExternalServiceIdentifier:(id)arg1;
 - (void)setExternalProfileIdentifier:(id)arg1;

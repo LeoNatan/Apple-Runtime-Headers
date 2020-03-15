@@ -17,12 +17,12 @@
     NSString *_sourceApplicationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property BOOL canEditFlag; // @synthesize canEditFlag=_canEditFlag;
 @property(copy) NSString *sourceApplicationIdentifier; // @synthesize sourceApplicationIdentifier=_sourceApplicationIdentifier;
 @property(copy) NSSharingExtensionContext *sharingExtensionContext; // @synthesize sharingExtensionContext=_sharingExtensionContext;
 @property(copy) CKContainer *ckContainer; // @synthesize ckContainer=_ckContainer;
 @property(copy, setter=setCKShare:) CKShare *ckShare; // @synthesize ckShare=_ckShare;
-- (void).cxx_destruct;
 - (void)_setRecipientArrays:(id)arg1 emails:(id)arg2 forRecipients:(id)arg3;
 - (void)updateCKShareViaSharingExtensionContext;
 - (void)removeRecipientsFromCKShare;

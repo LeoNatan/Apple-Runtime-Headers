@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) BOOL hasMore; // @synthesize hasMore=_hasMore;
 @property(retain, nonatomic) NSData *nextAnchor; // @synthesize nextAnchor=_nextAnchor;
 @property(retain, nonatomic) NSArray *deletedItemIDs; // @synthesize deletedItemIDs=_deletedItemIDs;
 @property(retain, nonatomic) NSArray *updatedItems; // @synthesize updatedItems=_updatedItems;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_indexOneChangesBatchFromChangeToken:(id)arg1;
 - (void)_indexOnePageFromPage:(id)arg1;

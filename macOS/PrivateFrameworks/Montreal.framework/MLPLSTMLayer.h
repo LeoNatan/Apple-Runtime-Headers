@@ -30,9 +30,10 @@
     float *_initialBias_0;
     float *_initialBias_1;
     unsigned long long _weightAttributes;
-    struct NSArray *_srcMatrices;
+    NSArray *_srcMatrices;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *srcMatrices; // @synthesize srcMatrices=_srcMatrices;
 @property unsigned long long weightAttributes; // @synthesize weightAttributes=_weightAttributes;
 @property float *initialBias_1; // @synthesize initialBias_1=_initialBias_1;
@@ -52,17 +53,16 @@
 @property int inputGateActivation; // @synthesize inputGateActivation=_inputGateActivation;
 @property unsigned long long outputSize; // @synthesize outputSize=_outputSize;
 @property unsigned long long inputSize; // @synthesize inputSize=_inputSize;
-- (void).cxx_destruct;
 - (id)matrixIDToString:(unsigned long long)arg1;
 - (void)exportWeightsWithWeightMatrix:(id)arg1 weightID:(unsigned long long)arg2 destination:(float *)arg3 recurrent:(BOOL)arg4;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
-- (void)updateSourceMatrix:(struct NSArray *)arg1 inference:(BOOL)arg2;
-- (struct NSArray *)seqBackwardCombinedMatrix:(id)arg1 inputGradient:(struct NSArray *)arg2;
-- (struct NSArray *)seqBackwardDifferentMatrices:(id)arg1 inputGradient:(struct NSArray *)arg2;
-- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
-- (struct NSArray *)seqForwardCombinedMatrix:(id)arg1 input:(struct NSArray *)arg2;
-- (struct NSArray *)seqForwardDifferentMatrices:(id)arg1 input:(struct NSArray *)arg2;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
+- (void)updateSourceMatrix:(id)arg1 inference:(BOOL)arg2;
+- (id)seqBackwardCombinedMatrix:(id)arg1 inputGradient:(id)arg2;
+- (id)seqBackwardDifferentMatrices:(id)arg1 inputGradient:(id)arg2;
+- (id)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(id)arg3;
+- (id)seqForwardCombinedMatrix:(id)arg1 input:(id)arg2;
+- (id)seqForwardDifferentMatrices:(id)arg1 input:(id)arg2;
+- (id)seqForward:(id)arg1 input:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (void)createKernel;
 @property(readonly) NSArray *mlpOptimizers;
 - (void)populateActivation:(int *)arg1 montrealActivationType:(long long)arg2;

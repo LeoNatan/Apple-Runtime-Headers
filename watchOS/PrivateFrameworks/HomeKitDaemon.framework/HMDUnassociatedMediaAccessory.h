@@ -17,14 +17,15 @@
 
 + (id)logCategory;
 + (Class)modelClass;
-@property(retain) HMDAccessoryAdvertisement *advertisement; // @synthesize advertisement=_advertisement;
 - (void).cxx_destruct;
+@property(retain) HMDAccessoryAdvertisement *advertisement; // @synthesize advertisement=_advertisement;
 - (id)logIdentifier;
 - (id)addTransactionForHome:(id)arg1 configurationAppIdentifier:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 - (int)associationOptions;
 - (id)dumpDescription;
+- (_Bool)isHAPAirPlay2Accessory;
 - (void)updateAdvertisementData:(id)arg1;
 - (id)initWithAdvertisement:(id)arg1 messageDispatcher:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 category:(id)arg3 messageDispatcher:(id)arg4;

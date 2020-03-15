@@ -31,10 +31,10 @@
     id <PKPassFooterViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPassFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) PKPassView *passView; // @synthesize passView=_passView;
-- (void).cxx_destruct;
 - (id)_messageForPaymentApplicationState;
 - (id)_messageForPeerPaymentZeroBalance;
 - (id)_messageForRestrictedState;

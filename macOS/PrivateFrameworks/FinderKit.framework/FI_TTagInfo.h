@@ -38,13 +38,13 @@ __attribute__((visibility("hidden")))
 + (id)tagInfoWithName:(id)arg1 tagNode:(const struct TFENode *)arg2;
 + (id)tagInfoWithDiscoveredName:(id)arg1;
 + (id)tagInfoWithName:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfItemsLackingThisTag; // @synthesize numberOfItemsLackingThisTag=_numberOfItemsLackingThisTag;
 @property(nonatomic) long long labelColor; // @synthesize labelColor=_labelColor;
 @property(readonly, nonatomic) _Bool pinnedInSidebar; // @synthesize pinnedInSidebar=_pinnedInSidebar;
 @property(nonatomic) _Bool visibleInSidebar; // @synthesize visibleInSidebar=_visibleInSidebar;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)info;
 - (const struct TFENode *)tagNode;
 @property(readonly, nonatomic) long long sidebarIndex;

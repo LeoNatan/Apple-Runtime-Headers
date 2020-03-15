@@ -13,8 +13,8 @@
     NSMutableDictionary *_workInfosByWorkerType;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *workInfosByWorkerType; // @synthesize workInfosByWorkerType=_workInfosByWorkerType;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *workInfosByWorkerType; // @synthesize workInfosByWorkerType=_workInfosByWorkerType;
 - (id)snapshot;
 - (void)recordChangeForAssetIdentifier:(id)arg1 workerType:(int)arg2 workerFlags:(int)arg3;
 - (id)init;

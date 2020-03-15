@@ -36,6 +36,7 @@
 + (BOOL)_panelElementContainsHoverText:(id)arg1;
 + (BOOL)_panelElementContainsSuggestions:(id)arg1;
 + (BOOL)_panelShouldShowToolbarsByDefault:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _forTemplate; // @synthesize _forTemplate=__forTemplate;
 @property(nonatomic) BOOL _shouldReadAndWritePreferences; // @synthesize _shouldReadAndWritePreferences=__shouldReadAndWritePreferences;
 @property(copy, nonatomic) NSString *_frontmostApplicationIdentifier; // @synthesize _frontmostApplicationIdentifier=__frontmostApplicationIdentifier;
@@ -48,7 +49,6 @@
 @property(nonatomic) BOOL allowUserToolbars; // @synthesize allowUserToolbars=_allowUserToolbars;
 @property(nonatomic) unsigned long long productSupportType; // @synthesize productSupportType=_productSupportType;
 @property(retain, nonatomic) ACSHPanelCollection *panelCollection; // @synthesize panelCollection=_panelCollection;
-- (void).cxx_destruct;
 - (void)_updateToolbarSetting:(unsigned long long)arg1 forPanel:(id)arg2 toolbarIdentifier:(id)arg3;
 - (unsigned long long)_toolbarSettingForPanel:(id)arg1 toolbarIdentifier:(id)arg2;
 - (BOOL)_panelIdentifierRepresentsBestSystemKeyboard:(id)arg1;

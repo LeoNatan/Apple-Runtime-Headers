@@ -19,9 +19,9 @@
 }
 
 + (Class)behaviorContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVEditBehaviorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak AVEditBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
-- (void).cxx_destruct;
 - (void)didRemoveFromContext:(id)arg1;
 - (void)willRemoveFromContext:(id)arg1;
 - (void)didMoveToContext:(id)arg1;

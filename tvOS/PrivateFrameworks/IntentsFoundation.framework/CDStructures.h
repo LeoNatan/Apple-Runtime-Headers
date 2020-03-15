@@ -8,6 +8,22 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct SipHasher {
+    int _c;
+    int _d;
+    unsigned long long _v0;
+    unsigned long long _v1;
+    unsigned long long _v2;
+    unsigned long long _v3;
+    struct TailBuffer _buffer;
+};
+
+struct TailBuffer {
+    unsigned long long value;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

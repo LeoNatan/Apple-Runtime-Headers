@@ -30,13 +30,13 @@
     id <TUDynamicBarAnimatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TUDynamicBarAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double maximumBottomBarOffset; // @synthesize maximumBottomBarOffset=_maximumBottomBarOffset;
 @property(nonatomic) double minimumTopBarHeight; // @synthesize minimumTopBarHeight=_minimumTopBarHeight;
 @property(readonly, nonatomic) double bottomBarOffset; // @synthesize bottomBarOffset=_bottomBarOffset;
 @property(readonly, nonatomic) double topBarHeight; // @synthesize topBarHeight=_topBarHeight;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)setBottomBarOffset:(double)arg1 forState:(long long)arg2;
 @property(readonly, nonatomic) double minimumBottomBarOffset;
 @property(readonly, nonatomic) double maximumTopBarHeight;

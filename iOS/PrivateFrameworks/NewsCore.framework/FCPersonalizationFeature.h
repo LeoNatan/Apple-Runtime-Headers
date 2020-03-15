@@ -29,11 +29,11 @@
 + (id)featuresFromTodayPersonalizationEvent:(id)arg1;
 + (id)featuresFromHeadline:(id)arg1 personalizationTreatment:(id)arg2;
 + (id)featuresFromIssue:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 @property(readonly, nonatomic) NSString *fc_description; // @synthesize fc_description=_fc_description;
 @property(retain, nonatomic) NSString *personalizationIdentifier; // @synthesize personalizationIdentifier=_personalizationIdentifier;
 @property(nonatomic) _Bool shouldBeBoosted; // @synthesize shouldBeBoosted=_shouldBeBoosted;
-- (void).cxx_destruct;
 - (double)featureWeightWithConfigurableValues:(id)arg1 publisherID:(id)arg2;
 - (id)fr_description;
 - (id)description;

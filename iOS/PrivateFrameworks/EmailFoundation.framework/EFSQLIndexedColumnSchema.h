@@ -16,10 +16,10 @@
     unsigned long long _orderDirection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long orderDirection; // @synthesize orderDirection=_orderDirection;
 @property(readonly, nonatomic) unsigned long long collation; // @synthesize collation=_collation;
 @property(readonly, nonatomic) id <EFSQLExpressable> expression; // @synthesize expression=_expression;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *definition;
 @property(readonly, copy, nonatomic) NSString *name;
 - (id)initWithColumnName:(id)arg1;

@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     CCUICAPackageView *_packageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CCUICAPackageView *packageView; // @synthesize packageView=_packageView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic, getter=isLabelHidden) _Bool labelHidden; // @synthesize labelHidden=_labelHidden;
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(retain, nonatomic) NSString *packageName; // @synthesize packageName=_packageName;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (void)_updateLabelVisualStyling;
 - (void)providedStylesDidChangeForProvider:(id)arg1;

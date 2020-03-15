@@ -31,10 +31,10 @@
     CDUnknownBlockType _scheduledEvaluationCompleteBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType scheduledEvaluationCompleteBlock; // @synthesize scheduledEvaluationCompleteBlock=_scheduledEvaluationCompleteBlock;
 @property(nonatomic) double retryLeeway; // @synthesize retryLeeway=_retryLeeway;
 @property(nonatomic) double retryInterval; // @synthesize retryInterval=_retryInterval;
-- (void).cxx_destruct;
 - (void)performAfterFirstEvaluation:(CDUnknownBlockType)arg1;
 - (void)_queue_cancelRetryAwardingEvaluationTimer;
 - (void)_queue_scheduleRetryAwardingEvaluation;

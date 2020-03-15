@@ -19,11 +19,11 @@
     struct CGRect _captureRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) const CDStruct_869f9c67 *spriteGeometries; // @synthesize spriteGeometries=_spriteGeometries;
 @property(retain, nonatomic) id <MTLTexture> texture; // @synthesize texture=_texture;
 @property(nonatomic) struct CGRect captureRect; // @synthesize captureRect=_captureRect;
 @property(nonatomic) long long renderPipelineIndex; // @synthesize renderPipelineIndex=_renderPipelineIndex;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int shaderFlags;
 @property(readonly, nonatomic) _Bool isCaptureTexture;
 @property(readonly, nonatomic) _Bool isAtlas;

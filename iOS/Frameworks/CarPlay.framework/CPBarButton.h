@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPBarButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long buttonType; // @synthesize buttonType=_buttonType;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)handlePrimaryAction;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

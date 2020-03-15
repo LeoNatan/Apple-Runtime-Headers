@@ -21,13 +21,13 @@
     NSObject<OS_os_activity> *_activity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) _Bool didInterruptConfigChange; // @synthesize didInterruptConfigChange=_didInterruptConfigChange;
 @property(readonly, nonatomic) id <CSLSScreenWakeProvider> screenWakeProvider; // @synthesize screenWakeProvider=_screenWakeProvider;
 @property(readonly, nonatomic) id <CSLSScreenWakeProvider> oldScreenWakeProvider; // @synthesize oldScreenWakeProvider=_oldScreenWakeProvider;
 @property(readonly, nonatomic) CSLBacklightProviderConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) CSLBacklightProviderConfiguration *oldConfiguration; // @synthesize oldConfiguration=_oldConfiguration;
-- (void).cxx_destruct;
 - (void)completeAndReleaseSystemActivityAssertionWasCancelled:(_Bool)arg1;
 - (void)beginAndTakeSystemActivityAssertion:(CDUnknownBlockType)arg1;
 - (void)logAction:(const char *)arg1 ofType:(unsigned char)arg2;

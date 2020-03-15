@@ -38,8 +38,8 @@
 + (struct CGSize)_perceivedSize;
 + (Class)_mapkitLeafClass;
 + (Class)layerClass;
-@property(nonatomic, setter=_setDelegate:) __weak id <_MKPinAnnotationViewDelegate> _delegate; // @synthesize _delegate;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setDelegate:) __weak id <_MKPinAnnotationViewDelegate> _delegate; // @synthesize _delegate;
 - (void)updateLayer;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)_updateAnchorPosition:(struct CGPoint)arg1 alignToPixels:(BOOL)arg2;

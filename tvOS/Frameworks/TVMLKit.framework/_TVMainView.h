@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIImageView *_bgImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 @property(nonatomic) _Bool tabBarHidden; // @synthesize tabBarHidden=_tabBarHidden;
 @property(retain, nonatomic) TVPVideoView *videoView; // @synthesize videoView=_videoView;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
 @property(readonly, retain, nonatomic) UITabBar *tabBar; // @synthesize tabBar=_tabBar;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)preferredFocusEnvironments;
 - (id)initWithFrame:(struct CGRect)arg1;

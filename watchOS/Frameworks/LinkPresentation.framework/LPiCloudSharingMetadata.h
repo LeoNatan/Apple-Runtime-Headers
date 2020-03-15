@@ -23,11 +23,11 @@
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (_Bool)supportsSecureCoding;
 + (id)_bundleIdentifierMap;
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *application; // @synthesize application=_application;
 @property(copy, nonatomic) NSString *applicationBundleIdenfier; // @synthesize applicationBundleIdenfier=_applicationBundleIdenfier;
-- (void).cxx_destruct;
 - (void)_enumerateAsynchronousFields:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

@@ -17,16 +17,16 @@
     CNUIEditContactCommand *_editContactCommand;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIEditContactCommand *editContactCommand; // @synthesize editContactCommand=_editContactCommand;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
-- (id)initWithContactStore:(id)arg1 contact:(id)arg2 nonCuratedValueToSave:(id)arg3 forKey:(id)arg4;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 contact:(id)arg2 nonCuratedValueToSave:(id)arg3 forKey:(id)arg4 ignoresGuardianRestrictions:(BOOL)arg5;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_rerefSizeUpperBoundNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *rerefSizeUpperBoundNumber; // @synthesize rerefSizeUpperBoundNumber=_rerefSizeUpperBoundNumber;
 @property(retain, nonatomic) NSNumber *sizeUpperBoundNumber; // @synthesize sizeUpperBoundNumber=_sizeUpperBoundNumber;
 @property(retain, nonatomic) NSMutableDictionary *sectionItemsByRecordKey; // @synthesize sectionItemsByRecordKey=_sectionItemsByRecordKey;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *itemsByRecordKey; // @synthesize itemsByRecordKey=_itemsByRecordKey;
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) NSString *recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 - (_Bool)isEmptyOfRereferencesAssets;
 - (_Bool)isEmpty;
 - (_Bool)isAssetRecord;

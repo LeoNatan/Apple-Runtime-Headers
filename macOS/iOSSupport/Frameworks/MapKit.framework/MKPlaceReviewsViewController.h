@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_cells;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cells; // @synthesize cells=_cells;
 @property(retain, nonatomic) NSArray *userSnippets; // @synthesize userSnippets=_userSnippets;
 @property(retain, nonatomic) MKPlaceReviewAvatarGenerator *avatarGenerator; // @synthesize avatarGenerator=_avatarGenerator;
 @property(nonatomic) __weak id <MKPlaceCardReviewsControllerDelegate><MKPlaceCardActionControllerDelegate> reviewsControllerDelegate; // @synthesize reviewsControllerDelegate=_reviewsControllerDelegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;

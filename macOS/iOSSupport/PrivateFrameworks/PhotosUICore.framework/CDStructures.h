@@ -39,18 +39,6 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
-struct NSString {
-    Class _field1;
-};
-
 struct PHAssetResourceTableDataSpecification {
     int width;
     int height;
@@ -182,18 +170,10 @@ struct PXTileState {
     unsigned long long _field14;
 };
 
-struct PXTwoTuple {
-    Class _field1;
-};
-
 struct PXViewSpecDescriptor {
     long long _field1;
     unsigned long long _field2;
     struct CGSize _field3;
-};
-
-struct UIColor {
-    Class _field1;
 };
 
 struct UIEdgeInsets {
@@ -201,10 +181,6 @@ struct UIEdgeInsets {
     double left;
     double bottom;
     double right;
-};
-
-struct UIFont {
-    Class _field1;
 };
 
 struct _NSRange {
@@ -347,6 +323,18 @@ typedef struct {
         double _field2;
     } _field2;
 } CDStruct_26e8d939;
+
+typedef struct {
+    union {
+        struct {
+            float topLeft;
+            float topRight;
+            float bottomLeft;
+            float bottomRight;
+        } ;
+        float byIndex[4];
+    } ;
+} CDStruct_2bd92d94;
 
 typedef struct {
     struct CGRect layoutRect;

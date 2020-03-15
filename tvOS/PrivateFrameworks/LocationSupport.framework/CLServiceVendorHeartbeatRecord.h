@@ -17,12 +17,12 @@
     Class _svcClass;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int ackCount; // @synthesize ackCount=_ackCount;
 @property(readonly, nonatomic) int synCount; // @synthesize synCount=_synCount;
 @property(nonatomic) int residentCount; // @synthesize residentCount=_residentCount;
 @property(readonly, nonatomic) Class svcClass; // @synthesize svcClass=_svcClass;
 @property(readonly, nonatomic) CLSilo *silo; // @synthesize silo=_silo;
-- (void).cxx_destruct;
 - (void)ack;
 - (void)syn;
 - (id)initTrackingServiceClass:(Class)arg1;

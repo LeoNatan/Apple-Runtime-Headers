@@ -26,13 +26,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) double endTimestamp; // @synthesize endTimestamp=_endTimestamp;
 @property(nonatomic) double startTimestamp; // @synthesize startTimestamp=_startTimestamp;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     NSDictionary *_paths;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *paths; // @synthesize paths=_paths;
 @property(nonatomic) double averageSafariVisitsPerDay; // @synthesize averageSafariVisitsPerDay=_averageSafariVisitsPerDay;
-- (void).cxx_destruct;
 - (id)tagsForPath:(id)arg1;
 - (id)initWithPBURLMappingDomain:(id)arg1;
 

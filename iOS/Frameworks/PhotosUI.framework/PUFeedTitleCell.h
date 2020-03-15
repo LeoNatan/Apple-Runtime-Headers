@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXSharedAlbumHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) PXFeedSectionInfo *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 @property(nonatomic) unsigned long long tappableArea; // @synthesize tappableArea=_tappableArea;
 @property(nonatomic) long long collectionViewType; // @synthesize collectionViewType=_collectionViewType;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (void)_handleTap:(id)arg1;
 - (struct CGSize)_performLayoutInRect:(struct CGRect)arg1 updateSubviewFrames:(_Bool)arg2;
 - (void)_updateHeaderTextColorStyle;

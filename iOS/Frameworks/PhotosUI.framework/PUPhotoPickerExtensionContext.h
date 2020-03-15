@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)configureImageManagerLimit;
-@property(copy, nonatomic) NSString *temporaryDirectoryInHost; // @synthesize temporaryDirectoryInHost=_temporaryDirectoryInHost;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *temporaryDirectoryInHost; // @synthesize temporaryDirectoryInHost=_temporaryDirectoryInHost;
 - (id)_createSandboxTokenForPath:(id)arg1;
 - (id)_createSandboxTokenForURL:(id)arg1;
 - (void)_saveVideoURLForLivePhoto:(id)arg1 fileURL:(id)arg2 appendTo:(id)arg3 completion:(CDUnknownBlockType)arg4;

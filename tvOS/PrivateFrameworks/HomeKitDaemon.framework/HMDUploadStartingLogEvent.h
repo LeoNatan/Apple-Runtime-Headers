@@ -15,8 +15,8 @@
 
 + (id)uploadReason:(id)arg1;
 + (id)uuid;
-@property(readonly, nonatomic) NSString *saveReason; // @synthesize saveReason=_saveReason;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *saveReason; // @synthesize saveReason=_saveReason;
 - (id)initUploadReason:(id)arg1;
 
 @end

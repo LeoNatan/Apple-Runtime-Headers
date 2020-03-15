@@ -17,8 +17,11 @@
 
 + (id)sharedInstance;
 + (Class)endpointClass;
-@property(retain, nonatomic) CLSEndpointConnection *endpointConnection; // @synthesize endpointConnection=_endpointConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CLSEndpointConnection *endpointConnection; // @synthesize endpointConnection=_endpointConnection;
+- (void)setUserDefaultValue:(id)arg1 forDefaultNamed:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getUserDefaultForDefaultNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)userDefaultsConfigurationDictionaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)authorizationStatusForContextAtPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeAuthorizationStatus:(unsigned long long)arg1 forContextAtPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addAuthorizationStatus:(unsigned long long)arg1 forContextAtPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -29,6 +32,7 @@
 - (void)setDevMode:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getDevModeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)recreateDevelopmentDatabaseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)recreateDatabase:(_Bool)arg1 andTerminateDaemonWithCompletion:(CDUnknownBlockType)arg2;
 - (void)recreateDatabaseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)databasePathWithCompletion:(CDUnknownBlockType)arg1;
 - (id)utilityServer:(CDUnknownBlockType)arg1;

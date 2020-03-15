@@ -17,9 +17,9 @@
     id <DNDSSyncSettingsProviderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DNDSSyncSettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) DNDSSyncSettings *syncSettings; // @synthesize syncSettings=_syncSettings;
-- (void).cxx_destruct;
 - (void)_queue_updateSyncPreferences;
 - (void)_updateSyncPreferences;
 - (void)_endMonitoringForChanges;

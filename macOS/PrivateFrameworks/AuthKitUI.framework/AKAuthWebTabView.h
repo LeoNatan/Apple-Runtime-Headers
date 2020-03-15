@@ -93,6 +93,7 @@
     AKAppleIDServerUIContextController *_serverUIContext;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKAppleIDServerUIContextController *serverUIContext; // @synthesize serverUIContext=_serverUIContext;
 @property BOOL contentLoaded; // @synthesize contentLoaded=_contentLoaded;
 @property BOOL loadContentImmediately; // @synthesize loadContentImmediately=_loadContentImmediately;
@@ -136,7 +137,6 @@
 @property(copy) NSString *parentURL; // @synthesize parentURL=_parentURL;
 @property(copy) NSString *url; // @synthesize url=_url;
 @property(copy) NSString *viewName; // @synthesize viewName=_viewName;
-- (void).cxx_destruct;
 - (void)_displayAuthRightWithCallback:(id)arg1;
 - (void)getAuthKitDataWithResponse:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)wasNotifiedOfDataChange:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dismissHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)createTextView;
 - (void)dismissButtonPressed:(id)arg1;
 - (void)createDismissButton;

@@ -6,8 +6,8 @@
 
 #import <ARKit/ARImageBasedTechnique.h>
 
-@class ARTrackedRaycastPostProcessor, ARWorldTrackingErrorData, ARWorldTrackingOptions, ARWorldTrackingPoseData, NSHashTable, NSMutableSet, NSObject;
-@protocol OS_dispatch_semaphore;
+@class ARTrackedRaycastPostProcessor, ARWorldTrackingErrorData, ARWorldTrackingOptions, ARWorldTrackingPoseData, NSHashTable, NSMutableSet, NSObject, NSString;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface ARWorldTrackingTechnique : ARImageBasedTechnique
 {
@@ -16,11 +16,12 @@
     _Bool _useFixedIntrinsics;
     long long _vioHandleState;
     NSObject<OS_dispatch_semaphore> *_vioHandleStateSemaphore;
-    NSObject<OS_dispatch_semaphore> *_vioObjectDetectionSemaphore;
     ARWorldTrackingErrorData *_errorData;
     ARWorldTrackingPoseData *_cachedPoseData;
     double _lastPoseMetaDataTimestamp;
-    long long _reinitializationAttempts;
+    int _reinitializationAttempts;
+    unsigned long long _numberOfCameraSwitches;
+    unsigned long long _currentVIOMapSize;
     long long _reinitializationAttemptsAtInitialization;
     double _lastRelocalizationTimestamp;
     double _lastQualityKeyframeTimestamp;
@@ -28,9 +29,10 @@
     double _lastPoseTrackingMapTimestamp;
     double _lastMajorRelocalizationTimestamp;
     double _originTimestamp;
+    NSString *_lastCameraType;
+    unsigned int _primaryCameraID;
     _Bool _relocalizingAfterSensorDataDrop;
     _Bool _didClearMap;
-    _Bool _hasQualityKeyframe;
     NSObject<OS_dispatch_semaphore> *_resultSemaphore;
     double _minVergenceAngleCosine;
     double _resultLatency;
@@ -38,21 +40,30 @@
     NSMutableSet *_anchorsReceived;
     NSMutableSet *_participantAnchors;
     _Bool _participantAnchorsEnabled;
+    NSObject<OS_dispatch_queue> *_resultDataQueue;
+    _Bool _hasQualityKeyframe;
+    unsigned long long _techniqueIndex;
     ARWorldTrackingOptions *_mutableOptions;
     unsigned long long _vioSessionIdentifier;
     ARTrackedRaycastPostProcessor *_trackedRaycastPostProcessor;
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginTransform
+    // Error parsing type: {?="columns"[4]}, name: _extrinsicsToWideSensor
 }
 
 + (_Bool)supportsVideoResolution:(struct CGSize)arg1 forDeviceType:(id)arg2;
 + (_Bool)isSupported;
+- (void).cxx_destruct;
+// Error parsing type for property extrinsicsToWideSensor:
+// Property attributes: T{?=[4]},V_extrinsicsToWideSensor
+
 @property(retain) ARTrackedRaycastPostProcessor *trackedRaycastPostProcessor; // @synthesize trackedRaycastPostProcessor=_trackedRaycastPostProcessor;
+@property _Bool hasQualityKeyframe; // @synthesize hasQualityKeyframe=_hasQualityKeyframe;
 @property(readonly) unsigned long long vioSessionIdentifier; // @synthesize vioSessionIdentifier=_vioSessionIdentifier;
 // Error parsing type for property referenceOriginTransform:
 // Property attributes: T{?=[4]},V_referenceOriginTransform
 
 @property(retain) ARWorldTrackingOptions *mutableOptions; // @synthesize mutableOptions=_mutableOptions;
-- (void).cxx_destruct;
+@property unsigned long long techniqueIndex; // @synthesize techniqueIndex=_techniqueIndex;
 - (void)stopAllRaycasts;
 - (void)invalidateAllRaycasts;
 - (void)stopRaycast:(id)arg1;
@@ -67,8 +78,8 @@
 - (void)loadSurfaceData:(id)arg1;
 - (id)serializeSurfaceData;
 - (void)clearMap;
-- (id)serializeMapData:(_Bool)arg1;
--     // Error parsing type: {?=[4]}24@0:8d16, name: cameraTransformAtTimestamp:
+-     // Error parsing type: @80@0:8{?=[4]}16, name: serializeWorldMapWithReferenceOrigin:
+- (id)_fullDescription;
 - (_Bool)isEqual:(id)arg1;
 - (long long)vioHandleState;
 @property(readonly, copy, nonatomic) ARWorldTrackingOptions *options;

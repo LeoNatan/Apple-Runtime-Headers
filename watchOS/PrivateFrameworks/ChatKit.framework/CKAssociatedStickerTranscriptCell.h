@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (float)associatedStickerXOriginForStickerFrame:(struct CGRect)arg1 parentSize:(struct CGSize)arg2 contentAlignmentRect:(struct CGRect)arg3 orientation:(BOOL)arg4 geometryDescriptor:(struct IMAssociatedMessageGeometryDescriptor)arg5 outBalloonOffset:(float *)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(copy, nonatomic) NSArray *frames; // @synthesize frames=_frames;
 @property(retain, nonatomic) CKAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) CKBalloonImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)longPressGestureRecognized:(id)arg1;
 - (void)doubleTapGestureRecognized:(id)arg1;
 - (void)updateAnimationTimerObserving;

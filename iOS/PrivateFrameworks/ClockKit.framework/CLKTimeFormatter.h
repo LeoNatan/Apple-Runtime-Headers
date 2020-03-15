@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSHashTable, NSMutableSet, NSString, NSTimeZone, _CLKTimeFormatterSubstringRange;
+@class NSDate, NSHashTable, NSMutableSet, NSNumber, NSString, NSTimeZone, _CLKTimeFormatterSubstringRange;
 @protocol CLKTimeFormatterDelegate;
 
 @interface CLKTimeFormatter : NSObject
@@ -31,8 +31,8 @@
     _CLKTimeFormatterSubstringRange *_rangeInTimeSubstringFromSecondsSeparatorText;
     NSHashTable *_observers;
     NSMutableSet *_reasonsToPause;
-    struct NSNumber *_secondsUpdateToken;
-    struct NSNumber *_minutesUpdateToken;
+    NSNumber *_secondsUpdateToken;
+    NSNumber *_minutesUpdateToken;
     _Bool _useNarrowDesignatorTextForGerman;
     _Bool _suppressesDesignatorWhitespace;
     _Bool _includeSeparatorInTimeSubstringFromSeparatorText;
@@ -44,6 +44,7 @@
     id <CLKTimeFormatterDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CLKTimeFormatterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool forcesLatinNumbers; // @synthesize forcesLatinNumbers=_forcesLatinNumbers;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
@@ -52,7 +53,6 @@
 @property(nonatomic) _Bool suppressesDesignatorWhitespace; // @synthesize suppressesDesignatorWhitespace=_suppressesDesignatorWhitespace;
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
-- (void).cxx_destruct;
 - (void)_handleSignificantTimeChange;
 - (void)_invalidateText;
 - (void)_invalidateDate:(id)arg1;

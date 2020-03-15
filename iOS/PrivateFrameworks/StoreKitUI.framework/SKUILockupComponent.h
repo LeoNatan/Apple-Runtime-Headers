@@ -16,11 +16,11 @@
     struct SKUILockupStyle _lockupStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct SKUILockupStyle lockupStyle; // @synthesize lockupStyle=_lockupStyle;
 @property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(readonly, nonatomic) SKUIItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) SKUIEditorialComponent *editorial; // @synthesize editorial=_editorial;
-- (void).cxx_destruct;
 - (void)_setLockupStyle:(struct SKUILockupStyle)arg1;
 - (void)_setItem:(id)arg1;
 @property(readonly, nonatomic) _Bool _needsItemData;

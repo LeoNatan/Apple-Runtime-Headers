@@ -18,11 +18,11 @@
     NSDictionary *_purposeStrings;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *purposeStrings; // @synthesize purposeStrings=_purposeStrings;
 @property(retain) UIImage *icon; // @synthesize icon=_icon;
 @property _Bool installed; // @synthesize installed=_installed;
 @property(readonly, copy, nonatomic) HKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

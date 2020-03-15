@@ -6,7 +6,7 @@
 
 #import <MediaControls/NSObject-Protocol.h>
 
-@class UIViewPropertyAnimator;
+@class UITouch, UIViewPropertyAnimator;
 
 @protocol CCUIContentModuleContentViewController <NSObject>
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
@@ -25,6 +25,7 @@
 - (_Bool)canDismissPresentedContent;
 - (void)didTransitionToExpandedContentMode:(_Bool)arg1;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
+- (_Bool)shouldExpandModuleOnTouch:(UITouch *)arg1;
 - (_Bool)shouldFinishTransitionToExpandedContentModule;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
 @end

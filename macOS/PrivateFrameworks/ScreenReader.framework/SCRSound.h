@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (void)_unregisterSound:(id)arg1;
 + (void)_registerSound:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCompletionCallbackNeedsSending:) BOOL _completionCallbackNeedsSending; // @synthesize _completionCallbackNeedsSending=__completionCallbackNeedsSending;
 @property(nonatomic, setter=_setSoundFlags:) unsigned int _soundFlags; // @synthesize _soundFlags=__soundFlags;
 @property(copy, nonatomic, setter=_setSoundData:) NSData *_soundData; // @synthesize _soundData=__soundData;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(nonatomic) int busID; // @synthesize busID=_busID;
 @property(nonatomic) unsigned long long soundID; // @synthesize soundID=_soundID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_informDelegateOfCompletionIfNeeded:(BOOL)arg1;
 - (void)_audioCompletedCleanup:(struct __CFBoolean *)arg1;

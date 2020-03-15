@@ -15,8 +15,8 @@
     TUCallProvider *_callProvider;
 }
 
-@property(copy, nonatomic) TUCallProvider *callProvider; // @synthesize callProvider=_callProvider;
 - (void).cxx_destruct;
+@property(copy, nonatomic) TUCallProvider *callProvider; // @synthesize callProvider=_callProvider;
 - (id)dialRequestForHandle:(id)arg1 contact:(id)arg2 video:(_Bool)arg3;
 @property(readonly, copy, nonatomic) NSSet *supportedHandleTypes;
 @property(readonly, nonatomic) _Bool supportsVideo;

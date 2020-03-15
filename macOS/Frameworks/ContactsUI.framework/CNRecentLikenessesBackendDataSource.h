@@ -25,6 +25,7 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) id <CNContactLikenessMutatorFactory> likenessMutatorFactory; // @synthesize likenessMutatorFactory=_likenessMutatorFactory;
 @property(retain, nonatomic) id <CNContactLikenessesFetchStrategy> likenessFetchStrategy; // @synthesize likenessFetchStrategy=_likenessFetchStrategy;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) CNObservable *contactLikenessesModelFetchObservable; // @synthesize contactLikenessesModelFetchObservable=_contactLikenessesModelFetchObservable;
 @property(retain, nonatomic) CNReplaySubject *contactLikenessesModelReplaySubject; // @synthesize contactLikenessesModelReplaySubject=_contactLikenessesModelReplaySubject;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)commitEditing;
 - (void)setAsCurrentLikeness:(id)arg1;
 - (void)updateLikeness:(id)arg1;

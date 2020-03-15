@@ -18,9 +18,9 @@
     id <AKAnisetteServiceProtocol> _anisetteDataProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AKAnisetteServiceProtocol> anisetteDataProvider; // @synthesize anisetteDataProvider=_anisetteDataProvider;
 @property(retain, nonatomic) AKDevice *targetDevice; // @synthesize targetDevice=_targetDevice;
-- (void).cxx_destruct;
 - (id)_anisetteServiceConnection;
 - (void)fetchAttestationForRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

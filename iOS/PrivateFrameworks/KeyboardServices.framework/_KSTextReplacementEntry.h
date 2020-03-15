@@ -25,6 +25,7 @@
 
 + (id)localEntryFromCloudEntry:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cloudID; // @synthesize cloudID=_cloudID;
 @property _Bool wasDeleted; // @synthesize wasDeleted=_wasDeleted;
 @property _Bool needsSaveToCloud; // @synthesize needsSaveToCloud=_needsSaveToCloud;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *shortcut; // @synthesize shortcut=_shortcut;
 @property(copy, nonatomic) NSString *phrase; // @synthesize phrase=_phrase;
-- (void).cxx_destruct;
 - (_Bool)isEquivalentTo:(id)arg1;
 - (id)description;
 - (id)encryptedFields;

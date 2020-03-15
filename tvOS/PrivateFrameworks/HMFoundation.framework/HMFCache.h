@@ -15,9 +15,9 @@
 }
 
 + (id)defaultCache;
+- (void).cxx_destruct;
 @property(readonly, getter=isExists) _Bool exists; // @synthesize exists=_exists;
 @property(readonly, copy) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1;
 - (id)init;
 

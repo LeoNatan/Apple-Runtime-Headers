@@ -19,8 +19,8 @@
     NSXPCConnection *_connection;
 }
 
-@property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)deleteApplePayTrustKeyWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)createApplePayTrustKeyWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)applePayTrustKeyForIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -64,6 +64,7 @@
 - (void)noteProvisioningDidBegin;
 - (void)noteProvisioningUserInterfaceDidDisappear;
 - (void)noteProvisioningUserInterfaceDidAppear;
+- (void)registrationSupportedInCurrentRegionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentSupportedInCurrentRegion:(CDUnknownBlockType)arg1;
 - (void)didRegisterWithRegionMap:(id)arg1 primaryRegionTopic:(id)arg2;
 - (void)deleteApplicationWithAID:(id)arg1;

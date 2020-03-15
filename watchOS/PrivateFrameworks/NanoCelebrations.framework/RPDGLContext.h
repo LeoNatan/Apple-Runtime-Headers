@@ -13,8 +13,8 @@
     EAGLContext *_context;
 }
 
-@property(retain, nonatomic) EAGLContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EAGLContext *context; // @synthesize context=_context;
 - (id)createBackgroundContext;
 - (id)init;
 

@@ -28,9 +28,11 @@ __attribute__((visibility("hidden")))
     NSArray *_titleContent;
     NSMutableDictionary *_titleLookup;
     NSLayoutConstraint *_backButtonTitleMaxWidthConstraint;
+    int _systemItem;
     struct {
         unsigned int imageHasBaseline:1;
         unsigned int style:3;
+        unsigned int isSystemItem:1;
     } _flags;
 }
 

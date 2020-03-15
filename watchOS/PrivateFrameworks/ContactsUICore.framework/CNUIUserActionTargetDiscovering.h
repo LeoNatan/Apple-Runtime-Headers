@@ -24,6 +24,7 @@
 
 + (_Bool)isSkypeAvailableWithEnvironment:(id)arg1;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUIUserActionTargetDiscoveryCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <CNSchedulerProvider> highLatencySchedulerProvider; // @synthesize highLatencySchedulerProvider=_highLatencySchedulerProvider;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) id <CNMCProfileConnection> profileConnection; // @synthesize profileConnection=_profileConnection;
 @property(readonly, nonatomic) id <CNTUCallProviderManager> callProviderManager; // @synthesize callProviderManager=_callProviderManager;
 @property(readonly, nonatomic) id <CNLSApplicationWorkspace> applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
-- (void).cxx_destruct;
 - (id)thirdPartyTargetsForBundleIdentifier:(id)arg1;
 - (id)thirdPartyTargetsForActionTypes:(id)arg1;
 - (id)targetsForSendMessageIntent;

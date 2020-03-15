@@ -20,9 +20,9 @@
     CSLAppSwitcherDisplaySessionState *_currentState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLAppSwitcherDisplaySessionState *currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) CSLAppSwitcherDisplaySessionConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)relinquishAllAssertions;
 - (void)acquireAssertionForBundleID:(id)arg1;
 - (void)transitionToState:(id)arg1;

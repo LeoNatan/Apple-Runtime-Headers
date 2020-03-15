@@ -21,8 +21,8 @@
 + (id)originalAccountForIncomingMailbox:(id)arg1;
 + (id)parentalControlAccount;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-- (id)accountDirectory;
 - (void).cxx_destruct;
+- (id)accountDirectory;
 - (id)mailboxPathExtension;
 - (Class)storeClassForMailbox:(id)arg1;
 - (void)setIsActive:(BOOL)arg1;

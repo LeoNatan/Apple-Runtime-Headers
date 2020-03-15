@@ -19,11 +19,11 @@
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic, setter=_setGestureRecognizerForStudyLog:) UIGestureRecognizer *gestureRecognizerForStudyLog; // @synthesize gestureRecognizerForStudyLog=_gestureRecognizerForStudyLog;
 @property(retain, nonatomic, setter=_setSelectedAppLayout:) SBAppLayout *selectedAppLayout; // @synthesize selectedAppLayout=_selectedAppLayout;
 @property(nonatomic, setter=_setState:) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

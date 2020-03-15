@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     OADFontScheme *mFontScheme;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OADFontScheme *fontScheme; // @synthesize fontScheme=mFontScheme;
 @property(retain, nonatomic) OADStyleMatrix *styleMatrix; // @synthesize styleMatrix=mStyleMatrix;
 @property(retain, nonatomic) OADColorScheme *colorScheme; // @synthesize colorScheme=mColorScheme;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

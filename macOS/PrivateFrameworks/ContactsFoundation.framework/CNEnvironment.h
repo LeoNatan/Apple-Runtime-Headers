@@ -13,21 +13,19 @@
     NSFileManager *_fileManager;
     CNUserDefaults *_userDefaults;
     NSString *_mainBundleIdentifier;
-    struct NSNumber *_isInternalBuildStorage;
-    struct NSNumber *_isCommLimitsEnabledStorage;
-    struct NSNumber *_isCommLimitsPersistenceAccessibleStorage;
+    NSNumber *_isInternalBuildStorage;
+    NSNumber *_isCommLimitsEnabledStorage;
+    NSNumber *_isCommLimitsPersistenceAccessibleStorage;
 }
 
 + (id)currentEnvironment;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *isCommLimitsPersistenceAccessibleStorage; // @synthesize isCommLimitsPersistenceAccessibleStorage=_isCommLimitsPersistenceAccessibleStorage;
 @property(readonly, nonatomic) NSNumber *isCommLimitsEnabledStorage; // @synthesize isCommLimitsEnabledStorage=_isCommLimitsEnabledStorage;
 @property(readonly, nonatomic) NSNumber *isInternalBuildStorage; // @synthesize isInternalBuildStorage=_isInternalBuildStorage;
 @property(readonly, nonatomic) NSString *mainBundleIdentifier; // @synthesize mainBundleIdentifier=_mainBundleIdentifier;
 @property(readonly, nonatomic) CNUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(readonly, nonatomic) NSFileManager *fileManager; // @synthesize fileManager=_fileManager;
-- (void).cxx_destruct;
-- (BOOL)isCommLimitsPersistenceAccessibleImpl;
-- (BOOL)isCommLimitsPersistenceAccessible;
 - (BOOL)isCommLimitsEnabledImpl;
 - (BOOL)isCommLimitsEnabled;
 - (BOOL)isInternalBuildImpl;

@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSPredicate *_predicate;
 }
 
-@property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void)visitPredicateExpression:(id)arg1;
 - (void)visitPredicateOperator:(id)arg1;
 - (void)visitPredicate:(id)arg1;

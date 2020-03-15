@@ -17,8 +17,8 @@
 
 + (id)intentDescription;
 + (BOOL)supportsSecureCoding;
-@property(copy) INRestaurant *restaurant; // @synthesize restaurant=_restaurant;
 - (void).cxx_destruct;
+@property(copy) INRestaurant *restaurant; // @synthesize restaurant=_restaurant;
 - (id)_dictionaryRepresentation;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

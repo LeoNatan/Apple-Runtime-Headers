@@ -17,8 +17,8 @@
 }
 
 + (id)disabledIdleTimerProxy;
-@property(retain, nonatomic) id <SBIdleTimer> sourceTimer; // @synthesize sourceTimer=_sourceTimer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SBIdleTimer> sourceTimer; // @synthesize sourceTimer=_sourceTimer;
 - (void)_logExpirationTimeout:(double)arg1;
 - (void)setActivated:(_Bool)arg1;
 - (_Bool)isActivated;

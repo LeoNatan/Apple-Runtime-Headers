@@ -20,6 +20,7 @@
 }
 
 + (Class)_concreteContentViewClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(readonly, nonatomic) id target; // @synthesize target=_target;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *contentText; // @synthesize contentText=_contentText;
 @property(retain, nonatomic) UIImage *contentImage; // @synthesize contentImage=_contentImage;
 @property(nonatomic) long long motionDirection; // @synthesize motionDirection=_motionDirection;
-- (void).cxx_destruct;
 - (void)_updateAppearanceForFocusUpdateContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_createFooterView;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;

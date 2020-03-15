@@ -8,18 +8,20 @@
 
 @interface IBUISystemImageMediaResourceRequest : IBUIImageMediaResourceRequest
 {
-    struct CGSize _minimumSize;
-    struct CGSize _maximumSize;
+    double _scale;
+    struct CGSize _minimumPixelSize;
+    struct CGSize _maximumPixelSize;
     CDStruct_c519178c _renderInset;
 }
 
-+ (id)requestWithResourceName:(id)arg1 traits:(id)arg2 minimumSize:(struct CGSize)arg3 maximumSize:(struct CGSize)arg4 renderInset:(CDStruct_c519178c)arg5;
++ (id)requestWithResourceName:(id)arg1 traits:(id)arg2 minimumPixelSize:(struct CGSize)arg3 maximumPixelSize:(struct CGSize)arg4 renderInset:(CDStruct_c519178c)arg5 scale:(double)arg6;
 @property(readonly, nonatomic) CDStruct_c519178c renderInset; // @synthesize renderInset=_renderInset;
-@property(readonly, nonatomic) struct CGSize maximumSize; // @synthesize maximumSize=_maximumSize;
-@property(readonly, nonatomic) struct CGSize minimumSize; // @synthesize minimumSize=_minimumSize;
+@property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
+@property(readonly, nonatomic) struct CGSize maximumPixelSize; // @synthesize maximumPixelSize=_maximumPixelSize;
+@property(readonly, nonatomic) struct CGSize minimumPixelSize; // @synthesize minimumPixelSize=_minimumPixelSize;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
-- (id)initWithResourceName:(id)arg1 traits:(id)arg2 minimumSize:(struct CGSize)arg3 maximumSize:(struct CGSize)arg4 renderInset:(CDStruct_c519178c)arg5;
+- (id)initWithResourceName:(id)arg1 traits:(id)arg2 minimumPixelSize:(struct CGSize)arg3 maximumPixelSize:(struct CGSize)arg4 renderInset:(CDStruct_c519178c)arg5 scale:(double)arg6;
 - (id)processResult;
 - (id)fallbackTraitCollection;
 

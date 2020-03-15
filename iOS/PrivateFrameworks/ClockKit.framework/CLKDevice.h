@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NRDevice, NSUUID;
+@class NRDevice, NSCache, NSUUID;
 
 @interface CLKDevice : NSObject
 {
@@ -28,6 +28,7 @@
     unsigned long long _collectionType;
     unsigned long long _materialType;
     NRDevice *_nrDevice;
+    NSCache *_supportedCapabilitiesCache;
     struct CGRect _screenBounds;
 }
 
@@ -42,10 +43,12 @@
 + (void)initialize;
 + (void)setCurrentDevice:(id)arg1;
 + (id)currentDevice;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsUrsa; // @synthesize supportsUrsa=_supportsUrsa;
 @property(nonatomic) _Bool hasRichMediaComplications; // @synthesize hasRichMediaComplications=_hasRichMediaComplications;
 @property(nonatomic) _Bool isExplorer; // @synthesize isExplorer=_isExplorer;
 @property(nonatomic) _Bool isBridgeActive; // @synthesize isBridgeActive=_isBridgeActive;
+@property(retain, nonatomic) NSCache *supportedCapabilitiesCache; // @synthesize supportedCapabilitiesCache=_supportedCapabilitiesCache;
 @property(readonly, nonatomic) struct os_unfair_lock_s capabilitiesLock; // @synthesize capabilitiesLock=_capabilitiesLock;
 @property(readonly, nonatomic) int pairedDeviceCapabilitiesChangeNotificationToken; // @synthesize pairedDeviceCapabilitiesChangeNotificationToken=_pairedDeviceCapabilitiesChangeNotificationToken;
 @property(readonly, nonatomic) _Bool limitedToPreGlory; // @synthesize limitedToPreGlory=_limitedToPreGlory;
@@ -59,12 +62,12 @@
 @property(nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
 @property(nonatomic) unsigned long long sizeClass; // @synthesize sizeClass=_sizeClass;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int nrDeviceVersion;
 @property(readonly, nonatomic) NSUUID *nrDeviceUUID;
 @property(readonly, nonatomic) _Bool unlockedSinceBoot;
 @property(readonly, nonatomic) _Bool isLocked;
 - (_Bool)_queryAndCacheNanoRegistryDeviceCapabilities;
+- (_Bool)supportsCapability:(id)arg1;
 @property(readonly, nonatomic, getter=isRunningGraceOrLater) _Bool runningGraceOrLater; // @synthesize runningGraceOrLater=_runningGraceOrLater;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (void)_loadDeviceInfo;

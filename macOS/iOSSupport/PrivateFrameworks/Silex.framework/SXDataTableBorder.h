@@ -15,8 +15,8 @@
 }
 
 + (id)jsonPropertyNameForObjCPropertyName:(id)arg1;
-@property(retain, nonatomic) SXUnitConverter *unitConverter; // @synthesize unitConverter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXUnitConverter *unitConverter; // @synthesize unitConverter;
 @property(readonly, nonatomic) double width; // @synthesize width=_width;
 
 // Remaining properties

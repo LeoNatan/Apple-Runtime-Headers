@@ -16,12 +16,11 @@
 }
 
 + (id)sharedClient;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcConnectionSyncQueue; // @synthesize xpcConnectionSyncQueue=_xpcConnectionSyncQueue;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (void)getAssertionDescriptionsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)processUserRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)processUserRequest:(id)arg1 outError:(id *)arg2;
+- (void)processUserRequest:(id)arg1 encodeResponse:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)pushToken;
 - (void)simulatePush;
 - (void)scheduleTokenUpdate;

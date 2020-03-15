@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <TeaUI/TSMemoryCacheAccessorType-Protocol.h>
-
-@interface _TtC5TeaUI21MemoryCacheAccessMain : NSObject <TSMemoryCacheAccessorType>
+@interface _TtC5TeaUI21MemoryCacheAccessMain : NSObject
 {
 }
 

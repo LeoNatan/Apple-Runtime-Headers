@@ -38,7 +38,7 @@
 + (id)searchRequestWithEngagedSuggestion:(id)arg1 queryId:(unsigned long long)arg2;
 + (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned long long)arg2 queryId:(unsigned long long)arg3;
 + (id)searchRequestWithString:(id)arg1 triggerEvent:(unsigned long long)arg2;
-+ (id)searchRequestWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) char *nwActivityToken; // @synthesize nwActivityToken=_nwActivityToken;
 @property(retain, nonatomic) NSObject<OS_nw_activity> *nwActivity; // @synthesize nwActivity=_nwActivity;
 @property(copy, nonatomic) NSDictionary *headerItems; // @synthesize headerItems=_headerItems;
@@ -49,7 +49,6 @@
 @property(copy, nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) unsigned long long queryId; // @synthesize queryId=_queryId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int nwActivityLabel;
 - (Class)responseClass;
 - (void)setQueryId:(unsigned long long)arg1;

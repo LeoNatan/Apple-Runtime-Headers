@@ -20,11 +20,11 @@
 
 + (id)new;
 + (id)longPressButtonForIdentifier:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SiriLongPressButtonContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSMutableArray *lock_activityAssertions; // @synthesize lock_activityAssertions=_lock_activityAssertions;
 @property(nonatomic) long long buttonIdentifier; // @synthesize buttonIdentifier=_buttonIdentifier;
 @property(nonatomic) double longPressInterval; // @synthesize longPressInterval=_longPressInterval;
-- (void).cxx_destruct;
 - (void)didRecognizeLongPress;
 - (void)didRecognizeButtonSinglePressUp;
 - (id)speechInteractionActivityWithTimestamp:(double)arg1;

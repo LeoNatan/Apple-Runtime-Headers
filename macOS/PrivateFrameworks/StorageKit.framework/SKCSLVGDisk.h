@@ -14,9 +14,9 @@
     NSArray *_csPVChildrenUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *csPVChildrenUUIDs; // @synthesize csPVChildrenUUIDs=_csPVChildrenUUIDs;
 @property(retain) NSString *csLVGUUID; // @synthesize csLVGUUID=_csLVGUUID;
-- (void).cxx_destruct;
 - (void)addChildVolumeToEmptyLVGWithProgress:(CDUnknownBlockType)arg1 completetionBlock:(CDUnknownBlockType)arg2;
 - (id)physicalVolumes;
 - (id)children;

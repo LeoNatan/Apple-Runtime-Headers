@@ -13,8 +13,8 @@
     ACAccount *_account;
 }
 
-@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void)cancel;
 - (void)verifyWithHandler:(CDUnknownBlockType)arg1;
 - (void)sendVerificationEmail;

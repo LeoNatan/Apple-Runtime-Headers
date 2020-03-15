@@ -23,6 +23,7 @@
 
 + (id)dateComponentsFromDNDScheduleTime:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDateComponents *dndToComponents; // @synthesize dndToComponents=_dndToComponents;
 @property(readonly, nonatomic) NSDateComponents *dndFromComponents; // @synthesize dndFromComponents=_dndFromComponents;
 @property(readonly, nonatomic) _Bool isScheduled; // @synthesize isScheduled=_isScheduled;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
 @property(nonatomic) unsigned long long repeatedCallsEnabled; // @synthesize repeatedCallsEnabled=_repeatedCallsEnabled;
 @property(retain, nonatomic) NSArray *bbSections; // @synthesize bbSections=_bbSections;
-- (void).cxx_destruct;
 - (_Bool)repeatedCalls;
 - (void)loadDNDState;
 - (void)loadBBSections;

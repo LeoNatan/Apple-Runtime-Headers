@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)fetchApplicationIconInformationForBundleIdentifier:(id)arg1 vehicleID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)resetIconStateForVehicleID:(id)arg1;

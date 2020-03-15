@@ -18,13 +18,13 @@
     int _destinationOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int destinationOffset; // @synthesize destinationOffset=_destinationOffset;
 @property(readonly, nonatomic) NSString *insertAfterContentItemID; // @synthesize insertAfterContentItemID=_insertAfterContentItemID;
 @property(readonly, nonatomic) NSNumber *privateListeningOverride; // @synthesize privateListeningOverride=_privateListeningOverride;
 @property(readonly, nonatomic) MPRemotePlaybackQueue *playbackQueue; // @synthesize playbackQueue=_playbackQueue;
 @property(readonly, nonatomic) int insertionPosition; // @synthesize insertionPosition=_insertionPosition;
 @property(copy, nonatomic) NSArray *supportedInsertionPositions; // @synthesize supportedInsertionPositions=_supportedInsertionPositions;
-- (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 playbackQueue:(id)arg2 options:(id)arg3;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 

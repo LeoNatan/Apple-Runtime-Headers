@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)profileWithDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *headline; // @synthesize headline=_headline;
 @property(retain) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain) NSString *firstName; // @synthesize firstName=_firstName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

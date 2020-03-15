@@ -19,10 +19,10 @@
     int _appearanceStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int appearanceStyle; // @synthesize appearanceStyle=_appearanceStyle;
 @property(retain, nonatomic) UIVisualEffect *separatorEffect; // @synthesize separatorEffect=_separatorEffect;
 @property(copy, nonatomic) UIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

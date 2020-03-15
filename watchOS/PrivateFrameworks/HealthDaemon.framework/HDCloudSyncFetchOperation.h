@@ -35,8 +35,8 @@
     NSProgress *_progress;
 }
 
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (id)_queue_storeForZone:(id)arg1 error:(id *)arg2;
 - (void)_deleteRecordZones:(id)arg1 container:(id)arg2;
 - (void)_queue_leaveSharesForLostManateeIdentitiesForPartialError:(id)arg1 container:(id)arg2;

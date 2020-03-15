@@ -14,8 +14,8 @@
     WebFrame *_frameToPrint;
 }
 
-@property(retain, nonatomic) WebFrame *frameToPrint; // @synthesize frameToPrint=_frameToPrint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WebFrame *frameToPrint; // @synthesize frameToPrint=_frameToPrint;
 - (void)drawInRect:(struct CGRect)arg1 forPageAtIndex:(long long)arg2;
 - (struct CGRect)rectForPageAtIndex:(long long)arg1;
 - (long long)_recalcPageCount;

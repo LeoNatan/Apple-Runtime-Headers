@@ -18,11 +18,11 @@
     IPAImageSizePolicy *_sizePolicy;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *cgOptions; // @synthesize cgOptions=_cgOptions;
 @property(readonly) IPAImageSizePolicy *sizePolicy; // @synthesize sizePolicy=_sizePolicy;
 @property(readonly) PAImageRequestTileHint *tileHint; // @synthesize tileHint=_tileHint;
 @property(readonly) PAImageRequestCacheHint *cacheHint; // @synthesize cacheHint=_cacheHint;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -57,6 +57,7 @@
 
 + (_Bool)_shouldRespectStoreCellularDataSetting;
 + (_Bool)_shouldRespectMusicCellularDataSetting;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *hlsPlaylistURLString; // @synthesize hlsPlaylistURLString=_hlsPlaylistURLString;
 @property(readonly, nonatomic, getter=isOfflineHLS) _Bool offlineHLS; // @synthesize offlineHLS=_offlineHLS;
 @property(readonly, nonatomic) NSDictionary *hlsOfflinePlaybackKeys; // @synthesize hlsOfflinePlaybackKeys=_hlsOfflinePlaybackKeys;
@@ -97,7 +98,6 @@
 @property(readonly, nonatomic) long long albumStoreAdamID; // @synthesize albumStoreAdamID=_albumStoreAdamID;
 @property(readonly, copy, nonatomic) NSString *albumArtistName; // @synthesize albumArtistName=_albumArtistName;
 @property(readonly, nonatomic) _Bool allowsInitiatingPlayWhileDownload; // @synthesize allowsInitiatingPlayWhileDownload=_allowsInitiatingPlayWhileDownload;
-- (void).cxx_destruct;
 - (void)_storeCellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (void)_musicCellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (void)_contentTasteControllerDidChangeNotification:(id)arg1;

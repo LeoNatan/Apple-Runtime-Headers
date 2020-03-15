@@ -20,6 +20,7 @@
     id <SBVoiceControlViewControllerDelegate> _voiceControlDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBVoiceControlViewControllerDelegate> voiceControlDelegate; // @synthesize voiceControlDelegate=_voiceControlDelegate;
 @property(nonatomic, getter=isVoiceControlLoggingEnabled) _Bool voiceControlLoggingEnabled; // @synthesize voiceControlLoggingEnabled=_voiceControlLoggingEnabled;
 @property(nonatomic) _Bool shouldDisableVoiceControlForBluetoothRequests; // @synthesize shouldDisableVoiceControlForBluetoothRequests=_shouldDisableVoiceControlForBluetoothRequests;
@@ -27,7 +28,6 @@
 @property(nonatomic) _Bool shouldAllowSensitiveActions; // @synthesize shouldAllowSensitiveActions=_shouldAllowSensitiveActions;
 @property(readonly, nonatomic) _Bool prefersProximityDetectionEnabled; // @synthesize prefersProximityDetectionEnabled=_prefersProximityDetectionEnabled;
 @property(copy, nonatomic) NSArray *nextRecognitionAudioInputPaths; // @synthesize nextRecognitionAudioInputPaths=_nextRecognitionAudioInputPaths;
-- (void).cxx_destruct;
 - (void)performPresentationTransitionAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performDismissalTransitionAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetSessionWithSource:(id)arg1;

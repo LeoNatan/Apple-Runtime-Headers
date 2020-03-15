@@ -15,9 +15,9 @@
 }
 
 + (id)globalReuseQueueForContentViewClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *reuseStack; // @synthesize reuseStack=_reuseStack;
 @property(readonly, nonatomic) Class contentViewClass; // @synthesize contentViewClass=_contentViewClass;
-- (void).cxx_destruct;
 - (void)reapContentView:(id)arg1;
 - (id)dequeueContentView;
 - (id)initWithContentViewClass:(Class)arg1;

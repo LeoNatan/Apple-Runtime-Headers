@@ -25,12 +25,12 @@
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long mainThreadSelectorType; // @synthesize mainThreadSelectorType=_mainThreadSelectorType;
 @property(nonatomic) BOOL didHandlePortMessage; // @synthesize didHandlePortMessage=_didHandlePortMessage;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(retain, nonatomic) WebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) NSData *resultData; // @synthesize resultData=_resultData;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (id)webView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
 - (id)webView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;

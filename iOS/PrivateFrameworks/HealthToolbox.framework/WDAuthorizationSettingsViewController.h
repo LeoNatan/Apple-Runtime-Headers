@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WDProfile *_profile;
 }
 
-@property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)specialCellWithIdentifier:(id)arg1 textLabelText:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

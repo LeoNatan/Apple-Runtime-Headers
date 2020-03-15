@@ -15,10 +15,10 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 
 @end
 

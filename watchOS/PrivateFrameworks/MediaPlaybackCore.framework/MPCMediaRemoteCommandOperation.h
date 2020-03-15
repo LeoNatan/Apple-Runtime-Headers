@@ -14,9 +14,9 @@
     unsigned int _options;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) MPCPlayerCommandRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)execute;
 - (id)initWithCommandRequest:(id)arg1 options:(unsigned int)arg2;
 

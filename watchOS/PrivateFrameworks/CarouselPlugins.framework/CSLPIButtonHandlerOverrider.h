@@ -15,9 +15,9 @@
 }
 
 + (id)overriderWithOverride:(id)arg1 andPriority:(float)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLPIButtonHandlerOverride> override; // @synthesize override=_override;
 @property(nonatomic) float priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 
 @end
 

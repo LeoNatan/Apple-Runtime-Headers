@@ -26,6 +26,7 @@
     WFAutomationSummaryViewController *_automationSummaryViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFAutomationSummaryViewController *automationSummaryViewController; // @synthesize automationSummaryViewController=_automationSummaryViewController;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, nonatomic) WFWorkflowReference *workflowReference; // @synthesize workflowReference=_workflowReference;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(nonatomic) __weak id <WFEditAutomationCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)updateUIForShowingViewController:(id)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;

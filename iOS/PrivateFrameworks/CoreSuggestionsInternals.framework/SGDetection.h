@@ -22,6 +22,7 @@
 }
 
 + (id)detectionWithType:(unsigned int)arg1 text:(id)arg2 matchRange:(struct _NSRange)arg3 matchString:(id)arg4 label:(id)arg5 hasPhoneLabel:(_Bool)arg6 extractionInfo:(id)arg7 isUnlikelyPhone:(_Bool)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isUnlikelyPhone; // @synthesize isUnlikelyPhone=_isUnlikelyPhone;
 @property(readonly, nonatomic) SGExtractionInfo *extractionInfo; // @synthesize extractionInfo=_extractionInfo;
 @property(readonly, nonatomic) struct _NSRange match; // @synthesize match=_match;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSString *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *extraction; // @synthesize extraction=_extraction;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(unsigned int)arg1 extraction:(id)arg2 context:(id)arg3 contextRangeOfInterest:(struct _NSRange)arg4 label:(id)arg5 hasPhoneLabel:(_Bool)arg6 match:(struct _NSRange)arg7 extractionInfo:(id)arg8 isUnlikelyPhone:(_Bool)arg9;
 

@@ -25,10 +25,10 @@
     unsigned long long _events;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long events; // @synthesize events=_events;
 @property unsigned long long filter; // @synthesize filter=_filter;
 @property(retain) NSDictionary *suppliedParams; // @synthesize suppliedParams=_suppliedParams;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)shouldAddProvider:(int)arg1;
 - (id)initWithMultipleSelections:(id)arg1;

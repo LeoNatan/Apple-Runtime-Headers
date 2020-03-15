@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _lastGestureTranslation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long panHistoryIdx; // @synthesize panHistoryIdx=_panHistoryIdx;
 @property(retain, nonatomic) NSMutableArray *panHistory; // @synthesize panHistory=_panHistory;
 @property(nonatomic) struct CGPoint lastGestureTranslation; // @synthesize lastGestureTranslation=_lastGestureTranslation;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <ICDocCamImageQuadEditOverlayDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool tempOverlayQuadIsValid; // @synthesize tempOverlayQuadIsValid=_tempOverlayQuadIsValid;
 @property(nonatomic) _Bool isTempOverlay; // @synthesize isTempOverlay=_isTempOverlay;
-- (void).cxx_destruct;
 - (_Bool)accessibilityIgnoresInvertColors;
 - (id)accessibilityElements;
 - (struct CGRect)rectFromApplyingOrientation:(long long)arg1 toContentsRect:(struct CGRect)arg2;

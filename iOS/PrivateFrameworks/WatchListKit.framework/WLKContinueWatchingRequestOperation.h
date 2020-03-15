@@ -13,8 +13,8 @@
     WLKContinueWatchingResponse *_response;
 }
 
-@property(retain, nonatomic) WLKContinueWatchingResponse *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WLKContinueWatchingResponse *response; // @synthesize response=_response;
 - (void)_donateMediaItems:(id)arg1;
 - (void)processResponse;
 - (id)initWithQueryParameters:(id)arg1;

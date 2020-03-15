@@ -14,9 +14,9 @@
     id _representedObject;
 }
 
+- (void).cxx_destruct;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithTitle:(id)arg1;

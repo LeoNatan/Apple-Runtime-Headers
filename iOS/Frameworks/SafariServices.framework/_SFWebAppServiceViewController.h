@@ -7,10 +7,12 @@
 #import <SafariServices/SFBrowserServiceViewController.h>
 
 #import <SafariServices/SFWebAppServiceViewControllerProtocol-Protocol.h>
+#import <SafariServices/_SFMediaRecordingDocument-Protocol.h>
 
-@class BKSApplicationStateMonitor, NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore;
+@class BKSApplicationStateMonitor, NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore, _SFApplicationManifestFetcher, _SFInjectedJavaScriptController, _SFWebClipMetadataFetcher;
 
-@interface _SFWebAppServiceViewController : SFBrowserServiceViewController <SFWebAppServiceViewControllerProtocol>
+__attribute__((visibility("hidden")))
+@interface _SFWebAppServiceViewController : SFBrowserServiceViewController <SFWebAppServiceViewControllerProtocol, _SFMediaRecordingDocument>
 {
     UIWebClip *_webClip;
     UIView *_statusBarBackgroundView;
@@ -19,11 +21,22 @@
     NSMutableArray *_fallbackURLs;
     BKSApplicationStateMonitor *_stateMonitor;
     unsigned int _hostState;
+    unsigned long long _captureDeviceIconBeforeSuspension;
+    _SFApplicationManifestFetcher *_applicationManifestFetcher;
+    _SFInjectedJavaScriptController *_activityJSController;
+    _SFWebClipMetadataFetcher *_webClipMetadataFetcher;
 }
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 - (void).cxx_destruct;
+- (void)_fetchApplicationManifestIfNeeded;
+- (void)statusBarIndicatorTappedWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool audioOnly;
+- (void)muteMediaCapture;
+@property(readonly, nonatomic) NSString *URLString;
+- (void)setMediaCaptureDeviceIcon:(unsigned long long)arg1;
+@property(readonly, nonatomic) _Bool canOverrideStatusBar;
 - (void)_loadNextFallbackURL;
 - (void)_loadWebClipPageURL:(id)arg1;
 - (void)_handleHostStateUpdate:(id)arg1;
@@ -48,13 +61,14 @@
 - (void)webViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)webViewControllerDidChangeLoadingState:(id)arg1;
+- (void)webAppWillResignActive;
+- (void)webAppDidBecomeActive;
 - (void)_hostApplicationDidEnterBackground;
 - (void)setNeedsStatusBarAppearanceUpdate;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (_Bool)_clientIsWebApp;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

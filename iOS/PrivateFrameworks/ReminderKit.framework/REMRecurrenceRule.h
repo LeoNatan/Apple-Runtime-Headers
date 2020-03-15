@@ -38,6 +38,7 @@
 + (id)iCalendarValueFromDate:(id)arg1 isDateOnly:(_Bool)arg2 isFloating:(_Bool)arg3;
 + (id)iCalendarValueFromRecurrenceType:(long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *reminderID; // @synthesize reminderID=_reminderID;
 @property(readonly, nonatomic) REMObjectID *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) REMObjectID *objectID; // @synthesize objectID=_objectID;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) long long interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) long long frequency; // @synthesize frequency=_frequency;
 @property(readonly, copy, nonatomic) REMRecurrenceEnd *recurrenceEnd; // @synthesize recurrenceEnd=_recurrenceEnd;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 - (id)stringValueAsDateOnly:(_Bool)arg1 isFloating:(_Bool)arg2;
 - (id)iCalendarDescription;

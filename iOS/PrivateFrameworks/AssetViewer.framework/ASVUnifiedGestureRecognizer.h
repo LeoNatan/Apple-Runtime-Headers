@@ -33,6 +33,7 @@
     NSMutableSet *_currentTouches;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *currentTouches; // @synthesize currentTouches=_currentTouches;
 @property(retain, nonatomic) ASVGesture *currentGesture; // @synthesize currentGesture=_currentGesture;
 @property(nonatomic) float animateScaleEnd; // @synthesize animateScaleEnd=_animateScaleEnd;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) ASVGestureFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(nonatomic) __weak id <ASVUnifiedGestureRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <ASVGestureDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)gestureDidSnapAwayFromScale:(id)arg1;
 @property(readonly, nonatomic) float animatedScaleValue;
 - (void)gestureStopScaleAnimation;
@@ -61,7 +61,9 @@
 - (void)gestureEndedScaling:(id)arg1;
 - (void)gesture:(id)arg1 scaledAssetToScale:(float)arg2;
 - (void)gestureBeganScaling:(id)arg1;
+- (void)gestureEndedRotation:(id)arg1;
 - (void)gesture:(id)arg1 rotatedAssetByDeltaYaw:(float)arg2;
+- (void)gestureBeganRotation:(id)arg1;
 - (void)gesture:(id)arg1 singleTappedAtScreenPoint:(_Bool)arg2 onAsset: /* Error: Ran out of types for this method. */;
 @property(readonly, nonatomic) float maximumObjectScale;
 @property(readonly, nonatomic) float minimumObjectScale;

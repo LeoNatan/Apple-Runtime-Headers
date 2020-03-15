@@ -15,9 +15,9 @@
     NSMutableDictionary *_adaptersByID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *adaptersByID; // @synthesize adaptersByID=_adaptersByID;
 @property(readonly, nonatomic) __weak id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
-- (void).cxx_destruct;
 - (id)_createAdapterForIdentifier:(id)arg1;
 - (id)adapterForIdentifier:(id)arg1;
 - (id)init;

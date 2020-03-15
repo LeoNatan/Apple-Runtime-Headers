@@ -36,6 +36,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool extensionWasLaunched; // @synthesize extensionWasLaunched=_extensionWasLaunched;
 @property(nonatomic) unsigned int timeToReceiveFirstXPCRequestFromExtension; // @synthesize timeToReceiveFirstXPCRequestFromExtension=_timeToReceiveFirstXPCRequestFromExtension;
 @property(nonatomic) unsigned int timeToReceiveAppListenerConnection; // @synthesize timeToReceiveAppListenerConnection=_timeToReceiveAppListenerConnection;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
 @property(retain, nonatomic) NSString *appBundleId; // @synthesize appBundleId=_appBundleId;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

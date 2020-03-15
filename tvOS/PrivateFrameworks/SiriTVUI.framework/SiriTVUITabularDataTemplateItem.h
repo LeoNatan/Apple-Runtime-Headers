@@ -19,6 +19,7 @@
     NSArray *_rowStyles;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowContentScrolling; // @synthesize allowContentScrolling=_allowContentScrolling;
 @property(copy, nonatomic) NSArray *rowStyles; // @synthesize rowStyles=_rowStyles;
 @property(copy, nonatomic) NSNumber *minimumRowHeight; // @synthesize minimumRowHeight=_minimumRowHeight;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) SiriTVUITemplateItem *footerItem; // @synthesize footerItem=_footerItem;
 @property(retain, nonatomic) SiriTVUITemplateItem *headerItem; // @synthesize headerItem=_headerItem;
 @property(copy, nonatomic) NSArray *columns; // @synthesize columns=_columns;
-- (void).cxx_destruct;
 - (id)initWithColumns:(id)arg1;
 
 @end

@@ -13,9 +13,9 @@
 }
 
 + (float)currentLensPositionSentinel;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCompletionBlock:) CDUnknownBlockType _completionBlock; // @synthesize _completionBlock=__completionBlock;
 @property(nonatomic, setter=_setLensPosition:) float _lensPosition; // @synthesize _lensPosition=__lensPosition;
-- (void).cxx_destruct;
 - (void)executeWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

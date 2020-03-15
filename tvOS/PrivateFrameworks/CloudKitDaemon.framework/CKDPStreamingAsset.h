@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CKDPStreamingAssetSaveAssetResponse *_saveAssetResponse;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPStreamingAssetRetrieveAssetResponse *retrieveAssetResponse; // @synthesize retrieveAssetResponse=_retrieveAssetResponse;
 @property(retain, nonatomic) CKDPStreamingAssetSaveAssetResponse *saveAssetResponse; // @synthesize saveAssetResponse=_saveAssetResponse;
 @property(retain, nonatomic) CKDPStreamingAssetSaveAssetRequest *saveAssetRequest; // @synthesize saveAssetRequest=_saveAssetRequest;
 @property(retain, nonatomic) CKDPStreamingAssetIdentifier *assetId; // @synthesize assetId=_assetId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

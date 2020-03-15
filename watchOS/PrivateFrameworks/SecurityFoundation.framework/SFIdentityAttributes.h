@@ -14,13 +14,13 @@
 {
     id _identityAttributesInternal;
     NSString *persistentIdentifier;
-    struct NSString *_privateKeyDomain;
+    NSString *_privateKeyDomain;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *privateKeyDomain; // @synthesize privateKeyDomain=_privateKeyDomain;
 @property(readonly, copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasCertificate;
 @property(copy, nonatomic) NSString *identityName;
 - (void)setKeySpecifier:(id)arg1;

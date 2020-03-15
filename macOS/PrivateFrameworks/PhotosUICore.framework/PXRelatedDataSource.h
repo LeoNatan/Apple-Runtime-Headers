@@ -15,10 +15,10 @@
     NSArray *_relatedEntries;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *relatedEntries; // @synthesize relatedEntries=_relatedEntries;
 @property(readonly, nonatomic) BOOL useItemIndexPaths; // @synthesize useItemIndexPaths=_useItemIndexPaths;
 @property(readonly, nonatomic, getter=isTransient) BOOL transient; // @synthesize transient=_transient;
-- (void).cxx_destruct;
 - (struct PXSimpleIndexPath)indexPathForRelatedEntry:(id)arg1;
 - (id)_relatedEntryAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)relatedEntryAtIndexPath:(struct PXSimpleIndexPath)arg1;

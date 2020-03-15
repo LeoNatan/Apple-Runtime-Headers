@@ -19,12 +19,12 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool changingState; // @synthesize changingState=_changingState;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSMutableDictionary *suggestionsStorage; // @synthesize suggestionsStorage=_suggestionsStorage;
 @property(nonatomic) _Bool locationsAvailable; // @synthesize locationsAvailable=_locationsAvailable;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_stopListenForDebugTestNotifications;
 - (void)_startListenForDebugTestNotifications;
 - (void)_addFakeSuggestion:(id)arg1;

@@ -20,9 +20,9 @@
 + (id)addressWithMailString:(id)arg1;
 + (id)addressWithURL:(id)arg1;
 + (id)addressWithNoMail;
+- (void).cxx_destruct;
 @property(retain) NSManagedObjectID *managedObjectID; // @synthesize managedObjectID=_managedObjectID;
 @property(retain) id container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)addressForCommonName;
 - (id)addressForMail;
 - (id)justEmailAddress;

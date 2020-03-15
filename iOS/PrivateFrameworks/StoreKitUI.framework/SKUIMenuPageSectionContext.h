@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     long long _selectedIndex;
 }
 
-@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (void).cxx_destruct;
+@property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (void)setSections:(id)arg1 forIndex:(long long)arg2;
 - (id)sectionsForIndex:(long long)arg1;
 

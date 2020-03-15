@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _centerSectionFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize collectionViewSize; // @synthesize collectionViewSize=_collectionViewSize;
 @property(nonatomic) struct CGRect centerSectionFrame; // @synthesize centerSectionFrame=_centerSectionFrame;
 @property(copy, nonatomic) NSURL *centerSectionEntryURIRepresentation; // @synthesize centerSectionEntryURIRepresentation=_centerSectionEntryURIRepresentation;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *centerAssetUUIDs; // @synthesize centerAssetUUIDs=_centerAssetUUIDs;
 @property(nonatomic) _Bool scrolledToNewest; // @synthesize scrolledToNewest=_scrolledToNewest;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

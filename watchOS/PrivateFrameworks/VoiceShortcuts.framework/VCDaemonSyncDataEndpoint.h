@@ -19,11 +19,11 @@
     NSMutableSet *_mutableSyncDataHandlers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *mutableSyncDataHandlers; // @synthesize mutableSyncDataHandlers=_mutableSyncDataHandlers;
 @property(readonly, nonatomic) VCDaemonXPCEventHandler *eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(readonly, nonatomic) id <VCDatabaseProvider> databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *syncDataHandlers;
 - (id)initWithDatabaseProvider:(id)arg1 eventHandler:(id)arg2;
 

@@ -19,11 +19,11 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDefaultVoiceForRecognitionLanguage) _Bool defaultVoiceForRecognitionLanguage; // @synthesize defaultVoiceForRecognitionLanguage=_defaultVoiceForRecognitionLanguage;
 @property(readonly, nonatomic) long long outputGender; // @synthesize outputGender=_outputGender;
 @property(readonly, copy, nonatomic) NSString *outputLanguage; // @synthesize outputLanguage=_outputLanguage;
 @property(readonly, copy, nonatomic) NSString *recognitionLanguage; // @synthesize recognitionLanguage=_recognitionLanguage;
-- (void).cxx_destruct;
 - (id)outputVoice;
 @property(readonly, copy, nonatomic) NSString *localizedOutputVoiceGender;
 @property(readonly, copy, nonatomic) NSString *localizedOutputVoiceAccent;

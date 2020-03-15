@@ -28,6 +28,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property BOOL scheduledForBytesToArrive; // @synthesize scheduledForBytesToArrive=_scheduledForBytesToArrive;
 @property(copy) CDUnknownBlockType bytesAvailableHandler; // @synthesize bytesAvailableHandler=_bytesAvailableHandler;
 @property(retain) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
@@ -39,7 +40,6 @@
 @property(nonatomic) double connectTimeout; // @synthesize connectTimeout=_connectTimeout;
 @property long long activityType; // @synthesize activityType=_activityType;
 @property(readonly) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 @property(readonly, nonatomic) BOOL isExpensive;
 - (void)_cancelLookupForHost:(struct __CFHost *)arg1 infoType:(int)arg2;

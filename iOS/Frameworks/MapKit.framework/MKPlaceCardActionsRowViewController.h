@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     MKPlaceActionManager *_actionManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MKPlaceActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
 - (void)actionRowSelected:(id)arg1;
 - (void)infoCardThemeChanged;

@@ -14,9 +14,9 @@
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (void).cxx_destruct;
 - (void)queryStringDidChange;
 
 // Remaining properties

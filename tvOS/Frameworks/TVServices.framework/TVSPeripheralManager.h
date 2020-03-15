@@ -26,9 +26,9 @@
 
 + (id)_retrievePairedRemoteBDAddress;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool factoryPairingEnabled; // @synthesize factoryPairingEnabled=_factoryPairingEnabled;
 @property(nonatomic) _Bool autoConnectWithImmediateProximityPeripheralsEnabled; // @synthesize autoConnectWithImmediateProximityPeripheralsEnabled=_autoConnectWithImmediateProximityPeripheralsEnabled;
-- (void).cxx_destruct;
 - (void)_startScanning;
 - (void)_unblockConnectionQueueForPeripheral:(id)arg1;
 - (void)_connectPeripheral:(id)arg1;

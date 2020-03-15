@@ -21,9 +21,9 @@
 }
 
 + (id)detailViewForPass:(id)arg1 width:(float)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowTopLine; // @synthesize shouldShowTopLine=_shouldShowTopLine;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (float)width;
 - (id)auxiliaryFieldViews;
 - (id)secondaryFieldViews;

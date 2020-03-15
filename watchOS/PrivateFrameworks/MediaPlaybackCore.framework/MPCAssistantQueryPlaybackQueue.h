@@ -16,10 +16,10 @@
 }
 
 + (id)queryQueueWithContextID:(id)arg1 query:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
 @property(retain, nonatomic) MPMediaItem *firstItem; // @synthesize firstItem=_firstItem;
 @property(readonly, nonatomic) MPMediaQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (struct _MRSystemAppPlaybackQueue *)createRemotePlaybackQueue;
 - (id)description;
 - (id)initWithContextID:(id)arg1 query:(id)arg2;

@@ -23,9 +23,9 @@
 
 + (id)_swatchColorForColorOption:(id)arg1 forDevice:(id)arg2;
 + (double)curvedRadiusForDevice:(id)arg1 dark:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(nonatomic) unsigned long long color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)_setupDialView;
 - (void)_reorderSwitcherSnapshotView;
 - (void)bezelViewDidEndInteractive:(id)arg1;

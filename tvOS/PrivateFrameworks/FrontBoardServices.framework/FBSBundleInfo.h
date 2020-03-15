@@ -21,6 +21,7 @@
     NSUUID *_cacheGUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSUUID *cacheGUID; // @synthesize cacheGUID=_cacheGUID;
 @property(readonly, nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSString *bundleType; // @synthesize bundleType=_bundleType;
 @property(readonly, copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

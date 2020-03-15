@@ -13,8 +13,8 @@
     WLKContinueWatchingResponse *_response;
 }
 
-@property(readonly, nonatomic) WLKContinueWatchingResponse *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WLKContinueWatchingResponse *response; // @synthesize response=_response;
 - (void)processResponse;
 - (id)initWithChannelID:(id)arg1 externalID:(id)arg2 caller:(id)arg3;
 

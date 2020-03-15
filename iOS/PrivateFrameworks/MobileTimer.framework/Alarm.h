@@ -39,6 +39,7 @@
 + (_Bool)verifyMinuteSetting:(id)arg1 withMessageList:(id)arg2;
 + (_Bool)verifyHourSetting:(id)arg1 withMessageList:(id)arg2;
 + (_Bool)verifyIdSetting:(id)arg1 withMessageList:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *alarmIDURL; // @synthesize alarmIDURL=_alarmIDURL;
 @property(retain, nonatomic) NSString *alarmID; // @synthesize alarmID=_alarmID;
 @property(nonatomic) _Bool forceActiveForMigration; // @synthesize forceActiveForMigration=_forceActiveForMigration;
@@ -55,7 +56,6 @@
 @property(nonatomic) _Bool isSleepAlarm; // @synthesize isSleepAlarm=_isSleepAlarm;
 @property(readonly, nonatomic, getter=isSnoozed) _Bool snoozed; // @synthesize snoozed=_snoozed;
 @property(readonly, nonatomic) Alarm *editingProxy; // @synthesize editingProxy=_editingProxy;
-- (void).cxx_destruct;
 - (void)setAlarmSoundVolume:(id)arg1;
 - (id)alarmSoundVolume;
 - (void)setAlarmSoundIdentifier:(id)arg1 ofType:(long long)arg2;

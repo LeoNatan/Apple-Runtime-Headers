@@ -13,8 +13,8 @@
     NSObject<OS_os_transaction> *_osTransaction;
 }
 
-@property(retain, nonatomic) NSObject<OS_os_transaction> *osTransaction; // @synthesize osTransaction=_osTransaction;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_os_transaction> *osTransaction; // @synthesize osTransaction=_osTransaction;
 - (void)dealloc;
 - (void)endTransaction;
 - (id)initWithTransactionName:(const char *)arg1;

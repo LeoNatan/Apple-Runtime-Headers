@@ -23,12 +23,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *replyToken; // @synthesize replyToken=_replyToken;
 @property(nonatomic) double date; // @synthesize date=_date;
 @property(retain, nonatomic) NSString *phoneSectionID; // @synthesize phoneSectionID=_phoneSectionID;
 @property(retain, nonatomic) NSString *publisherMatchID; // @synthesize publisherMatchID=_publisherMatchID;
 @property(nonatomic) _Bool didPlayLightsAndSirens; // @synthesize didPlayLightsAndSirens=_didPlayLightsAndSirens;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

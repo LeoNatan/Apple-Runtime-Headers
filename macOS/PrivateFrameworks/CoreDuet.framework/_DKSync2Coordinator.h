@@ -66,6 +66,7 @@
 + (BOOL)shouldDeferSyncOperationWithClass:(Class)arg1 syncType:(id)arg2 transport:(id)arg3 peer:(id)arg4 policy:(id)arg5;
 + (id)keyValueStoreForDomain:(id)arg1;
 + (id)storage;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_DKSyncRemoteKnowledgeStorage> transportRapport; // @synthesize transportRapport=_transportRapport;
 @property(retain, nonatomic) id <_DKSyncRemoteKnowledgeStorage> transportCloudUp; // @synthesize transportCloudUp=_transportCloudUp;
 @property(retain, nonatomic) id <_DKSyncRemoteKnowledgeStorage> transportCloudDown; // @synthesize transportCloudDown=_transportCloudDown;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) id <_DKKeyValueStore> keyValueStore; // @synthesize keyValueStore=_keyValueStore;
 @property BOOL isBusy; // @synthesize isBusy=_isBusy;
 @property(readonly, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)_unregisterTriggeredSyncActivity;
 - (void)_registerTriggeredSyncActivityWithIsStartup:(BOOL)arg1;
 - (void)_runTriggeredSyncActivity:(id)arg1;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _finally;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long curlState; // @synthesize curlState=_curlState;
 @property(readonly, nonatomic) UIView *backView; // @synthesize backView=_backView;
 @property(readonly, nonatomic) UIView *frontView; // @synthesize frontView=_frontView;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint initialLocation; // @synthesize initialLocation=_initialLocation;
 @property(readonly, nonatomic) long long curlType; // @synthesize curlType=_curlType;
 @property(readonly, nonatomic) _UIPageCurl *pageCurl; // @synthesize pageCurl=_pageCurl;
-- (void).cxx_destruct;
 - (BOOL)isCompatibleWithCurlOfType:(long long)arg1 inDirection:(long long)arg2;
 - (long long)_effectiveTransitionDirection;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

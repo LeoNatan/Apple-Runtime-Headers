@@ -15,9 +15,9 @@
 }
 
 + (id)feedbackType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *settingName; // @synthesize settingName=_settingName;
-- (void).cxx_destruct;
 - (id)serverMessage;
 - (id)initWithSetting:(id)arg1 value:(id)arg2;
 

@@ -12,9 +12,9 @@
 }
 
 + (id)probabilityDictionaryForStringLabels:(id)arg1;
-@property(nonatomic) map_f36cdd6d mapStrLabelToIndex; // @synthesize mapStrLabelToIndex=_mapStrLabelToIndex;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) map_f36cdd6d mapStrLabelToIndex; // @synthesize mapStrLabelToIndex=_mapStrLabelToIndex;
 - (id)copy;
 - (id)keyEnumerator;
 - (void)removeObjectForKey:(id)arg1;

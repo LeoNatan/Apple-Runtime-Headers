@@ -32,6 +32,7 @@
     int _rampType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isLeeched; // @synthesize isLeeched=_isLeeched;
 @property(nonatomic) struct CLLocationCoordinate2D rawShiftedCoordinate; // @synthesize rawShiftedCoordinate=_rawShiftedCoordinate;
 @property(retain, nonatomic) NSDate *originalDate; // @synthesize originalDate=_originalDate;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) GEORoadMatch *roadMatch; // @synthesize roadMatch=_roadMatch;
 @property(retain, nonatomic) GEORouteMatch *routeMatch; // @synthesize routeMatch=_routeMatch;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)_referenceFrameAsString:(int)arg1;
 - (id)description;
 - (id)_navigation_detailedMatchInfo;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canObserveFontsForTarget:(id)arg1;
-@property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
 - (void)dealloc;
 - (void)updateDyamicFontForCurrentContentSize;
 - (id)initWithTarget:(id)arg1;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CALayer *_imageLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(retain, nonatomic) _TVStackedMediaDocumentEntry *entry; // @synthesize entry=_entry;
-- (void).cxx_destruct;
 - (void)configureWithEntry:(id)arg1;
 - (void)_displayImageRef:(struct CGImage *)arg1;
 - (void)setBounds:(struct CGRect)arg1;

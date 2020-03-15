@@ -36,6 +36,7 @@
 
 + (BOOL)isKeyboardEvent:(struct __CGEvent *)arg1;
 + (id)eventFromCGEvent:(struct __CGEvent *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _flags; // @synthesize _flags=__flags;
 @property(nonatomic) BOOL isSynthesized; // @synthesize isSynthesized=_isSynthesized;
 @property(nonatomic) BOOL isFnDown; // @synthesize isFnDown=_isFnDown;
@@ -56,7 +57,6 @@
 @property(nonatomic) BOOL isDownEvent; // @synthesize isDownEvent=_isDownEvent;
 @property(copy, nonatomic) NSString *unicodeCharacter; // @synthesize unicodeCharacter=_unicodeCharacter;
 @property(nonatomic) unsigned long long keyCode; // @synthesize keyCode=_keyCode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) long long modifierMask;

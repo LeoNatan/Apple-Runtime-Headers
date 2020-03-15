@@ -14,9 +14,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) int tlvid; // @synthesize tlvid=_tlvid;
-- (void).cxx_destruct;
 - (id)initWithTlvId:(unsigned int)arg1 name:(id)arg2;
 
 @end

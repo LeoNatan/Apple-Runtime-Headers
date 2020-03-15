@@ -11,7 +11,6 @@
 @interface NTKWhistlerAnalogColorPalette : NSObject
 {
     CLKDevice *_device;
-    _Bool _canShowMonochrome;
 }
 
 + (id)swatchColorForColor:(unsigned long long)arg1;

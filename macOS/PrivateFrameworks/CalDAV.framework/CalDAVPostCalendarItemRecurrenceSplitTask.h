@@ -22,6 +22,7 @@
     CoreDAVResponseItem *_createdResponseItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVResponseItem *createdResponseItem; // @synthesize createdResponseItem=_createdResponseItem;
 @property(retain, nonatomic) CoreDAVResponseItem *updatedResponseItem; // @synthesize updatedResponseItem=_updatedResponseItem;
 @property(retain, nonatomic) NSURL *postURLWithQuery; // @synthesize postURLWithQuery=_postURLWithQuery;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *uidForCreatedSeries; // @synthesize uidForCreatedSeries=_uidForCreatedSeries;
 @property(retain, nonatomic) NSDate *recurrenceDate; // @synthesize recurrenceDate=_recurrenceDate;
 @property(retain, nonatomic) NSURL *resourceURL; // @synthesize resourceURL=_resourceURL;
-- (void).cxx_destruct;
 - (id)requestBody;
 - (id)createdICSData;
 - (id)createdICSDocument;

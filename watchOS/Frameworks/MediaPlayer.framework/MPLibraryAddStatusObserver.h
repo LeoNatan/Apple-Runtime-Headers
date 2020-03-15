@@ -20,12 +20,12 @@
     struct MPLibraryAddStatusObserverConfiguration _configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 @property(readonly, nonatomic) MPModelObject *identifyingModelObject; // @synthesize identifyingModelObject=_identifyingModelObject;
 @property(readonly, nonatomic) struct MPLibraryAddStatusObserverConfiguration configuration; // @synthesize configuration=_configuration;
 @property(copy, nonatomic) CDUnknownBlockType statusBlock; // @synthesize statusBlock=_statusBlock;
 @property(readonly, nonatomic) unsigned int currentStatus; // @synthesize currentStatus=_currentStatus;
-- (void).cxx_destruct;
 - (void)_updateCurrentStatus;
 - (unsigned int)_calculateCurrentStatus;
 - (void)_updateInProgressDidChangeNotification:(id)arg1;

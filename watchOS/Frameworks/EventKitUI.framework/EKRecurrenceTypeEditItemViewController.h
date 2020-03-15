@@ -25,13 +25,13 @@
     EKCalendarItem *_calendarItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKCalendarItem *calendarItem; // @synthesize calendarItem=_calendarItem;
 @property(nonatomic) int repeatType; // @synthesize repeatType=_repeatType;
 @property(retain) EKUICustomRecurrenceViewController *customRecurrenceViewController; // @synthesize customRecurrenceViewController=_customRecurrenceViewController;
 @property __weak id <EKRecurrenceTypeEditItemViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *suggestedStartDate; // @synthesize suggestedStartDate=_suggestedStartDate;
 @property(retain, nonatomic) EKRecurrenceRule *recurrenceRule; // @synthesize recurrenceRule=_recurrenceRule;
-- (void).cxx_destruct;
 - (void)setRecurrenceRuleFromRepeatType:(int)arg1;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;

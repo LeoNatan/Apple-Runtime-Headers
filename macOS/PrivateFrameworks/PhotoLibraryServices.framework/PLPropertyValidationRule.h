@@ -19,13 +19,13 @@
     NSArray *_expectedValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *expectedValues; // @synthesize expectedValues=_expectedValues;
 @property(retain, nonatomic) id <NSObject> expectedValueRangeHigh; // @synthesize expectedValueRangeHigh=_expectedValueRangeHigh;
 @property(retain, nonatomic) id <NSObject> expectedValueRangeLow; // @synthesize expectedValueRangeLow=_expectedValueRangeLow;
 @property(retain, nonatomic) id <NSObject> expectedValue; // @synthesize expectedValue=_expectedValue;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)descriptionOfCurrentValuesOfObject:(id)arg1;
 - (id)currentValuesOfObject:(id)arg1;
 - (id)keyPaths;

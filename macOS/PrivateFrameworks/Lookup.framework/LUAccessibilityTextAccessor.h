@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)canAccessTextInView:(id)arg1;
 + (BOOL)canAccessTextAtLocation:(struct CGPoint)arg1;
-@property(retain, nonatomic) id accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
 - (id)termForRange:(struct _NSRange)arg1 textOrigin:(struct CGPoint *)arg2;
 - (id)_termAndTextOrigin:(struct CGPoint *)arg1;
 - (id)_termAtLocation:(struct CGPoint)arg1 textOrigin:(struct CGPoint *)arg2;

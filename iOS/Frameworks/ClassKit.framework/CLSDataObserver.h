@@ -23,12 +23,17 @@
     unsigned long long _changeTag;
 }
 
++ (id)predicateForCollaborationStatesForObjectWithID:(id)arg1 domain:(long long)arg2;
++ (id)predicateForCollaborationStatesForObjectWithID:(id)arg1 ownerPersonID:(id)arg2;
++ (id)predicateForCollaborationStatesForObjectWithID:(id)arg1;
++ (id)predicateForCollaborationStateForObjectWithID:(id)arg1 ownerPersonID:(id)arg2 domain:(long long)arg3;
 + (id)predicateForObjectsWithParentObjectID:(id)arg1 andRole:(unsigned long long)arg2;
 + (id)predicateForObjectsWithPersonID:(id)arg1 andRole:(unsigned long long)arg2;
 + (id)predicateForObjectsWithIdentifier:(id)arg1;
 + (id)predicateForObjectsWithParentObjectID:(id)arg1;
 + (id)predicateForObjectsWithObjectIDs:(id)arg1;
 + (id)predicateForObjectWithObjectID:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long changeTag; // @synthesize changeTag=_changeTag;
 @property(nonatomic) __weak CLSDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(copy, nonatomic) CDUnknownBlockType dataChanged; // @synthesize dataChanged=_dataChanged;
@@ -37,7 +42,6 @@
 @property(readonly, nonatomic) NSString *observerID; // @synthesize observerID=_observerID;
 @property(getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) Class objectType; // @synthesize objectType=_objectType;
-- (void).cxx_destruct;
 - (id)normalizedValue:(id)arg1 forKeyPath:(id)arg2;
 - (id)normalizeKeyPath:(id)arg1 forValue:(id)arg2;
 @property(readonly, copy) NSString *description;

@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long promotionTitleTintColor; // @synthesize promotionTitleTintColor=_promotionTitleTintColor;
 @property(copy, nonatomic) NSString *promotionText; // @synthesize promotionText=_promotionText;
 @property(copy, nonatomic) NSString *promotionImageName; // @synthesize promotionImageName=_promotionImageName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

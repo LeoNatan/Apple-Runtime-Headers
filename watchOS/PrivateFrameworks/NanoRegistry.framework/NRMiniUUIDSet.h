@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 - (id)description;
 - (_Bool)hasUUID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

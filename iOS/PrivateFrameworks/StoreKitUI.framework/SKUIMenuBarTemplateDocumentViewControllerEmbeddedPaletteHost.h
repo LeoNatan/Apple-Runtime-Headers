@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     UIView *_titleView;
 }
 
-@property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 - (void)layoutSubviews;
 
 @end

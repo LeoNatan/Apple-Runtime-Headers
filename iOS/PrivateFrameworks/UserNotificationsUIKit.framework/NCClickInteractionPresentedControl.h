@@ -20,13 +20,13 @@
     UITraitCollection *_overrideTraitCollection;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITraitCollection *overrideTraitCollection; // @synthesize overrideTraitCollection=_overrideTraitCollection;
 @property(readonly, nonatomic, getter=_backgroundMaterialView) MTMaterialView *backgroundMaterialView; // @synthesize backgroundMaterialView=_backgroundMaterialView;
 @property(readonly, nonatomic, getter=_materialRecipe) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
 @property(readonly, nonatomic, getter=_presentedView) NCClickInteractionPresentedView *presentedView; // @synthesize presentedView=_presentedView;
 @property(readonly, copy, nonatomic, getter=_title) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)_configureContentViewIfNecessaryWithTitle:(id)arg1;
 - (void)_configureMaterialViewsIfNecessary;
 - (id)_newMaterialViewWithRecipe:(long long)arg1 configuration:(long long)arg2;

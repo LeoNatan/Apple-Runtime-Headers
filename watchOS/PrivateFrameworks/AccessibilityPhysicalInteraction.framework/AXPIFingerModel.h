@@ -19,14 +19,15 @@
 }
 
 + (id)fingerModelForLocation:(struct CGPoint)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AXPIFingerModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
 @property(nonatomic) unsigned int shape; // @synthesize shape=_shape;
 @property(nonatomic) float force; // @synthesize force=_force;
 @property(nonatomic) struct CGPoint location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)description;
+- (void)setPressed:(_Bool)arg1 sendDelegateCallback:(_Bool)arg2;
 
 @end
 

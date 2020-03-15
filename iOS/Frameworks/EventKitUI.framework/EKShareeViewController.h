@@ -19,12 +19,12 @@
     id <EKShareeViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <EKShareeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool allowResendInvitations; // @synthesize allowResendInvitations=_allowResendInvitations;
 @property(nonatomic) _Bool allowStopSharing; // @synthesize allowStopSharing=_allowStopSharing;
 @property(nonatomic) _Bool allowEditing; // @synthesize allowEditing=_allowEditing;
 @property(retain, nonatomic) EKSharee *sharee; // @synthesize sharee=_sharee;
-- (void).cxx_destruct;
 - (void)removeClicked:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;

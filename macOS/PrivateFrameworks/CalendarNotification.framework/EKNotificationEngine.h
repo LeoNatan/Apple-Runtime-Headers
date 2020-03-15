@@ -21,12 +21,12 @@
 + (id)logHandleFor35464009;
 + (BOOL)shouldLogFor35464009;
 + (void)openURLString:(id)arg1 withApp:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *timers; // @synthesize timers=_timers;
 @property(retain) NSObject<OS_dispatch_queue> *timerQueue; // @synthesize timerQueue=_timerQueue;
 @property(retain) CalLimitingQueue *limitingQueue; // @synthesize limitingQueue=_limitingQueue;
 @property __weak id <EKNotificationInfoDelegate> notificationDelegate; // @synthesize notificationDelegate=_notificationDelegate;
 @property(retain) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_timerFiredWithLabel:(id)arg1 performsQuickAction:(BOOL)arg2;
 - (void)_scheduleTimerWithLabel:(id)arg1 interval:(double)arg2 quickAction:(BOOL)arg3;

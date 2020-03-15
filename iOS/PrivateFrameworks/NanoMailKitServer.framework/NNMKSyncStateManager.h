@@ -19,10 +19,10 @@
     PSYSyncCoordinator *_initialSyncCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSYSyncCoordinator *initialSyncCoordinator; // @synthesize initialSyncCoordinator=_initialSyncCoordinator;
 @property(retain, nonatomic) BLTPingSubscriber *notificationsPingSubscriber; // @synthesize notificationsPingSubscriber=_notificationsPingSubscriber;
 @property(nonatomic) __weak id <NNMKSyncStateManagerDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (_Bool)pairedDeviceSupportsStandaloneMode;
 - (_Bool)pairedDeviceSupportsMultipleMailboxes;
 - (id)_pairedNanoRegistryDevice;

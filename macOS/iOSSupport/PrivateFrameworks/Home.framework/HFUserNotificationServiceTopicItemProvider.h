@@ -15,10 +15,10 @@
     NSSet *_topicItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *topicItems; // @synthesize topicItems=_topicItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

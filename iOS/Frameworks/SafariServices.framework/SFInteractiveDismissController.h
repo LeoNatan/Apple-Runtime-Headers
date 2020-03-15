@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     double _averageAcceleration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double averageAcceleration; // @synthesize averageAcceleration=_averageAcceleration;
 @property(nonatomic) double averageVelocity; // @synthesize averageVelocity=_averageVelocity;
 @property(nonatomic) double previousAcceleration; // @synthesize previousAcceleration=_previousAcceleration;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *edgeSwipeView; // @synthesize edgeSwipeView=_edgeSwipeView;
 @property(nonatomic) __weak UIViewController *viewControllerToBeDismissed; // @synthesize viewControllerToBeDismissed=_viewControllerToBeDismissed;
 @property(readonly, nonatomic) UIScreenEdgePanGestureRecognizer *edgeSwipeGestureRecognizer; // @synthesize edgeSwipeGestureRecognizer=_edgeSwipeGestureRecognizer;
-- (void).cxx_destruct;
 - (id)interactionControllerForDismissal:(id)arg1;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;

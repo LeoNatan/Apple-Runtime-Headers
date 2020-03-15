@@ -20,9 +20,9 @@
 + (id)basicFontAttributesForFontName:(id)arg1;
 + (id)fontFaceWithFontName:(id)arg1;
 + (id)fontFaceWithFontName:(id)arg1 andAttributes:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXFontAttributes> fontAttributes; // @synthesize fontAttributes=_fontAttributes;
 @property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

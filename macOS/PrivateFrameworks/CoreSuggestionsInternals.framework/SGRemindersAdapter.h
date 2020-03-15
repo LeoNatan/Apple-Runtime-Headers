@@ -18,8 +18,8 @@
 
 + (unsigned long long)remindersCreatedBetweenStartDate:(id)arg1 endDate:(id)arg2;
 + (BOOL)reminderHasDuplicate:(id)arg1 usingStore:(id)arg2;
-@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SGSqlEntityStore *store; // @synthesize store=_store;
 - (id)_remRemindersAssociatedWithTitle:(id)arg1 sourceUniqueIdentifier:(id)arg2 usingStore:(id)arg3;
 - (id)_remRemindersAssociatedWithStorageReminder:(id)arg1 remStore:(id)arg2;
 - (BOOL)_deleteReminder:(id)arg1 usingReminderStore:(id)arg2;

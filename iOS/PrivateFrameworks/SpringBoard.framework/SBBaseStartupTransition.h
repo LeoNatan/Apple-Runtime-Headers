@@ -17,10 +17,10 @@
     SBMainWorkspace *_mainWorkspace;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) SBStartupTransitionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) SBMainWorkspace *mainWorkspace; // @synthesize mainWorkspace=_mainWorkspace;
-- (void).cxx_destruct;
 - (void)_begin;
 - (void)performTransitionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithDestination:(unsigned long long)arg1 context:(id)arg2;

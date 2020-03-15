@@ -27,6 +27,7 @@
     PUICNavigationInteractiveTransition *_interactionController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool interactionAborted; // @synthesize interactionAborted=_interactionAborted;
 @property(retain, nonatomic) PUICNavigationInteractiveTransition *interactionController; // @synthesize interactionController=_interactionController;
 @property(nonatomic, getter=isPrimaryAnimationInFlight) _Bool primaryAnimationInFlight; // @synthesize primaryAnimationInFlight=_primaryAnimationInFlight;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) int operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)promotePresentationToModelForLayer:(id)arg1;
 - (void)interactiveTransitionWillStop:(id)arg1;
 - (void)animateCompletionFromStopped:(id)arg1;

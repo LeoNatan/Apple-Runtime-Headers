@@ -27,6 +27,7 @@
     TFFeedbackFormViewController *_activeFormViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TFFeedbackFormViewController *activeFormViewController; // @synthesize activeFormViewController=_activeFormViewController;
 @property(readonly, nonatomic) id <TFFeedbackSubmissionService> submissionService; // @synthesize submissionService=_submissionService;
 @property(readonly, nonatomic) TFDataAggregator *aggregator; // @synthesize aggregator=_aggregator;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak id <TFFeedbackSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) unsigned long long context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)initWithBetaApplicationIdentifier:(id)arg1;
 - (id)_displayableErrorMessageFromService:(id)arg1 submissionError:(id)arg2;
 - (void)dataAggregator:(id)arg1 didCompleteTasks:(id)arg2;

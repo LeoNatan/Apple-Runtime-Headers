@@ -17,9 +17,9 @@
     NSString *_stage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stage; // @synthesize stage=_stage;
 @property(copy, nonatomic) NSString *agent; // @synthesize agent=_agent;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentationWithAppendExtraItemInfoBlock:(CDUnknownBlockType)arg1;
 - (void)endTentativeSectionWithSuccess:(_Bool)arg1;
 - (void)beginTentativeSection;

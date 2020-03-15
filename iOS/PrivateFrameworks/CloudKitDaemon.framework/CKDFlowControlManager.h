@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_operationFlowControls;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *operationFlowControls; // @synthesize operationFlowControls=_operationFlowControls;
 @property double maximumThrottleTime; // @synthesize maximumThrottleTime=_maximumThrottleTime;
-- (void).cxx_destruct;
 - (double)currentRegeneration:(id)arg1;
 - (unsigned long long)currentBudgetCap:(id)arg1;
 - (double)currentBudget:(id)arg1;

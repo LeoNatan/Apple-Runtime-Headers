@@ -16,9 +16,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) PSCloudStorageOffersManager *cloudStorageOffersManager; // @synthesize cloudStorageOffersManager=_cloudStorageOffersManager;
-- (void).cxx_destruct;
 - (void)manager:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)managerDidCancel:(id)arg1;
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;

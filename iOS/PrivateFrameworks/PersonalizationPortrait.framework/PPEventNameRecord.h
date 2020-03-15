@@ -24,6 +24,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)describeChangeType:(unsigned char)arg1;
 + (id)eventNameRecordWithScore:(double)arg1 eventIdentifier:(id)arg2 changeType:(unsigned char)arg3 title:(id)arg4 location:(id)arg5 participantNames:(id)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *participantNames; // @synthesize participantNames=_participantNames;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned char changeType; // @synthesize changeType=_changeType;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqualToEventNameRecord:(id)arg1;
 - (_Bool)hasScoreSimilarToRecord:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -83,6 +83,7 @@ __attribute__((visibility("hidden")))
     NSDate *_formattingChangeDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *formattingChangeDate; // @synthesize formattingChangeDate=_formattingChangeDate;
 @property(retain, nonatomic) NSDate *editDate; // @synthesize editDate=_editDate;
 @property(retain, nonatomic) NSDate *deletionDate; // @synthesize deletionDate=_deletionDate;
@@ -153,7 +154,6 @@ __attribute__((visibility("hidden")))
 @property _Bool shadingOverridden; // @synthesize shadingOverridden=mShadingOverridden;
 @property _Bool lookOverridden; // @synthesize lookOverridden=mLookOverridden;
 @property _Bool baseStyleOverridden; // @synthesize baseStyleOverridden=mBaseStyleOverridden;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -37,6 +37,7 @@
 }
 
 + (_Bool)isSafariPasswordSuggestionCandidate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double maximumRowHeight; // @synthesize maximumRowHeight=_maximumRowHeight;
 @property(retain, nonatomic) id <TUICandidateViewStyle> stylePending; // @synthesize stylePending=_stylePending;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
@@ -57,8 +58,9 @@
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
 @property(retain, nonatomic) NSArray *candidateGroups; // @synthesize candidateGroups=_candidateGroups;
-- (void).cxx_destruct;
 - (void)addAppCandidatesRenderSignposts;
+- (long long)numberOfNonPartialCandidatesInSection:(long long)arg1;
+- (long long)numberOfTransliterationCandidatesInSection:(long long)arg1;
 - (id)_collectionView:(id)arg1 indexPathForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
 - (id)_sectionIndexTitlesForCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
@@ -91,6 +93,11 @@
 - (id)indexPathsForSelectedRow;
 - (id)indexPathsInTheRowThatContainsFrame:(struct CGRect)arg1;
 - (id)indexPathForCandidateNumber:(unsigned long long)arg1;
+- (id)indexPathForVerticalCandidateNumber:(unsigned long long)arg1;
+- (unsigned long long)candidateNumberInVerticalLayoutForIndexPath:(id)arg1;
+- (id)visibleAttributesInVerticalLayout;
+- (unsigned long long)candidateNumberInHorizontalLayoutForIndexPath:(id)arg1;
+- (unsigned long long)candidateNumberForIndexPath:(id)arg1;
 - (void)showCandidateInForwardDirection:(_Bool)arg1 granularity:(int)arg2;
 - (_Bool)hasCandidateInForwardDirection:(_Bool)arg1 granularity:(int)arg2;
 - (_Bool)indexPathIsFullyVisible:(id)arg1;
@@ -107,6 +114,7 @@
 - (id)candidateAtIndexPath:(id)arg1;
 - (void)scrollToTop;
 @property(readonly, nonatomic) double rowHeight;
+- (void)updateBounce;
 - (void)updateContentInset;
 - (struct UIEdgeInsets)safeAreaInsets;
 - (void)setRowType:(long long)arg1 options:(unsigned long long)arg2 style:(id)arg3 animated:(_Bool)arg4 animator:(id)arg5 completion:(CDUnknownBlockType)arg6;

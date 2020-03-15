@@ -16,8 +16,8 @@
     NSArray *_gridButtons;
 }
 
-@property(retain, nonatomic) NSArray *gridButtons; // @synthesize gridButtons=_gridButtons;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *gridButtons; // @synthesize gridButtons=_gridButtons;
 - (void)didSelectButton:(id)arg1;
 - (void)setControl:(id)arg1 enabled:(_Bool)arg2;
 - (id)_buttonForIdentifier:(id)arg1;

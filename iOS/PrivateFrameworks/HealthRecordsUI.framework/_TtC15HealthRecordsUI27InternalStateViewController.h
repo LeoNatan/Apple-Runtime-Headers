@@ -6,34 +6,20 @@
 
 #import <UIKit/UITableViewController.h>
 
-#import <HealthRecordsUI/HKConceptStoreObserver-Protocol.h>
-#import <HealthRecordsUI/HKHealthRecordsStoreIngestionStateListener-Protocol.h>
-#import <HealthRecordsUI/WDMedicalRecordCountProviderObserver-Protocol.h>
-
 __attribute__((visibility("hidden")))
-@interface _TtC15HealthRecordsUI27InternalStateViewController : UITableViewController <HKHealthRecordsStoreIngestionStateListener, HKConceptStoreObserver, WDMedicalRecordCountProviderObserver>
+@interface _TtC15HealthRecordsUI27InternalStateViewController : UITableViewController
 {
-    // Error parsing type: , name: supportedCategories
-    // Error parsing type: , name: currentIngestionState
-    // Error parsing type: , name: currentIndexingState
+    // Error parsing type: , name: dataProvider
+    // Error parsing type: , name: sections
 }
 
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(long long)arg1;
-- (void)medicalRecordCountProvider:(id)arg1 didUpdateCountForCategories:(id)arg2;
-- (void)medicalRecordCountProviderDidUpdateAllRecordsCount:(id)arg1;
-- (void)medicalRecordCountProvider:(id)arg1 didUpdateCountForSampleTypes:(id)arg2;
-- (void)conceptStore:(id)arg1 indexManagerDidChangeState:(unsigned long long)arg2;
-- (void)healthRecordsStore:(id)arg1 ingestionStateDidUpdateTo:(long long)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
-- (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+- (id)initWithCoder:(id)arg1;
 - (id)init;
 
 @end

@@ -33,11 +33,11 @@
 + (id)placeholderIconResource;
 + (id)notLoadedIconResource;
 + (id)systemIconNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property BOOL dirty; // @synthesize dirty=_dirty;
 @property(readonly) NSMutableDictionary *elements; // @synthesize elements=_elements;
 @property unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)setVariant:(id)arg1 named:(id)arg2;
 @property(retain) NSDictionary *userInfo; // @dynamic userInfo;
 @property(retain) ISIcns *templateVariant; // @dynamic templateVariant;

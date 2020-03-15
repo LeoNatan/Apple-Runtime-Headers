@@ -14,6 +14,7 @@
 {
 }
 
++ (id)defaultSourceForRepresentation:(id)arg1;
 + (BOOL)canLowercaseTypeDescription;
 + (id)countDescription;
 + (id)pluralTypeDescription;

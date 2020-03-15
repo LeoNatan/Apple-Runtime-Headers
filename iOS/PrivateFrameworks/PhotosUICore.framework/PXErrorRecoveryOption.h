@@ -16,10 +16,10 @@
 }
 
 + (id)recoveryOptionWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_attemptRecoveryFromError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithTitle:(id)arg1 style:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 

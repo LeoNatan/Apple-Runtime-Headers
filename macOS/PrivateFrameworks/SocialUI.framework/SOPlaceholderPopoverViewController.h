@@ -13,8 +13,8 @@
     NSTextField *_placeholderLabel;
 }
 
-@property(nonatomic) __weak NSTextField *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 @property(copy) NSString *placeholderString;
 
 @end

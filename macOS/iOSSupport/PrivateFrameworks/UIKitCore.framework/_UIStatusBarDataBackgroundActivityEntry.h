@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *detailString; // @synthesize detailString=_detailString;
 @property(nonatomic) double displayStartDate; // @synthesize displayStartDate=_displayStartDate;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_ui_descriptionBuilder;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -16,8 +16,8 @@
     NSMutableArray *_edges;
 }
 
-@property(readonly, nonatomic) unsigned long long currentState; // @synthesize currentState=_currentState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long currentState; // @synthesize currentState=_currentState;
 - (_Bool)handleEvent:(unsigned long long)arg1 withContext:(id)arg2;
 - (void)addEdge:(id)arg1;
 - (id)init;

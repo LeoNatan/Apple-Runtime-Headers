@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CPLLibraryManager *_weakLibraryManager;
 }
 
-@property __weak CPLLibraryManager *weakLibraryManager; // @synthesize weakLibraryManager=_weakLibraryManager;
 - (void).cxx_destruct;
+@property __weak CPLLibraryManager *weakLibraryManager; // @synthesize weakLibraryManager=_weakLibraryManager;
 - (id)initWithLibraryManager:(id)arg1;
 
 @end

@@ -19,12 +19,12 @@
     NSMapTable *_progressTable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *progressTable; // @synthesize progressTable=_progressTable;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NSURL *contentBaseURL; // @synthesize contentBaseURL=_contentBaseURL;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) WFOAuth2Credential *credential; // @synthesize credential=_credential;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)sendRPCRequestWithPath:(id)arg1 parameters:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)sendContentUploadRequestWithPath:(id)arg1 parameters:(id)arg2 data:(id)arg3 inputStream:(id)arg4 progress:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;

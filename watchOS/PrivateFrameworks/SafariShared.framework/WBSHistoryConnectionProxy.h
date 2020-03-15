@@ -17,8 +17,8 @@
     NSObject<OS_dispatch_queue> *_connectionProxyQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *connectionProxyQueue; // @synthesize connectionProxyQueue=_connectionProxyQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *connectionProxyQueue; // @synthesize connectionProxyQueue=_connectionProxyQueue;
 - (id)queryMemoryFootprintWithError:(id *)arg1;
 - (void)queryMemoryFootprint:(CDUnknownBlockType)arg1;
 - (void)killService;

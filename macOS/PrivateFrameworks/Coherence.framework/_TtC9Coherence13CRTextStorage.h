@@ -17,6 +17,9 @@
 - (void).cxx_destruct;
 - (id)initWithPath:(id)arg1 documentAttributes:(id *)arg2;
 - (id)initWithURL:(id)arg1 documentAttributes:(id *)arg2;
+- (id)initWithAttributedString:(id)arg1;
+- (id)initWithString:(id)arg1 attributes:(id)arg2;
+- (id)initWithString:(id)arg1;
 - (id)initWithRTFDFileWrapper:(id)arg1 documentAttributes:(id *)arg2;
 - (id)initWithHTML:(id)arg1 options:(id)arg2 documentAttributes:(id *)arg3;
 - (id)initWithDocFormat:(id)arg1 documentAttributes:(id *)arg2;
@@ -26,9 +29,6 @@
 - (id)initWithRTF:(id)arg1 documentAttributes:(id *)arg2;
 - (id)initWithData:(id)arg1 options:(id)arg2 documentAttributes:(id *)arg3 error:(id *)arg4;
 - (id)initWithURL:(id)arg1 options:(id)arg2 documentAttributes:(id *)arg3 error:(id *)arg4;
-- (id)initWithAttributedString:(id)arg1;
-- (id)initWithString:(id)arg1 attributes:(id)arg2;
-- (id)initWithString:(id)arg1;
 - (id)init;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange)arg2;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;

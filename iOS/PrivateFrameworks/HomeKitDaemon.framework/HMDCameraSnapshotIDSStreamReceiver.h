@@ -22,11 +22,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HMDCameraSnapshotIDSStreamReceiverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(retain, nonatomic) IDSSession *idsSession; // @synthesize idsSession=_idsSession;
 @property(readonly, nonatomic) HMDSnapshotFile *snapshotFile; // @synthesize snapshotFile=_snapshotFile;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 incomingResourceAtURL:(id)arg3 metadata:(id)arg4 fromID:(id)arg5 context:(id)arg6;
 - (void)_callFileReceived:(id)arg1;
 - (void)dealloc;

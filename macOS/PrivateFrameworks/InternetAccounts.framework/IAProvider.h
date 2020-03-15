@@ -17,9 +17,9 @@
 + (id)dataProviderIDs;
 + (id)aListProviderIDs;
 + (BOOL)providerTypeIsAList:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *providerType; // @synthesize providerType=_providerType;
 @property(retain, nonatomic) NSArray *serviceTypesProvided; // @synthesize serviceTypesProvided=_servicesProvided;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithProviderType:(id)arg1;
 

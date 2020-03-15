@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *remoteRequestOperationError; // @synthesize remoteRequestOperationError=_remoteRequestOperationError;
 @property(retain, nonatomic) id <NSSecureCoding> remoteRequestOperationResponse; // @synthesize remoteRequestOperationResponse=_remoteRequestOperationResponse;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRemoteRequestOperationResponse:(id)arg1 remoteRequestOperationError:(id)arg2;

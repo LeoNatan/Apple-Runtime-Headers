@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sessionConfigurationWithIdentifier:(id)arg1 urgency:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long urgencyFlag; // @synthesize urgencyFlag=_urgencyFlag;
 @property(readonly, nonatomic) NSArray *uploadingFilesInfo; // @synthesize uploadingFilesInfo=_uploadingFilesInfo;
 @property(retain, nonatomic) NSNumber *radarID; // @synthesize radarID=_radarID;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *requestedTime; // @synthesize requestedTime=_requestedTime;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <UploadSessionDelegate> uploadManager; // @synthesize uploadManager=_uploadManager;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;

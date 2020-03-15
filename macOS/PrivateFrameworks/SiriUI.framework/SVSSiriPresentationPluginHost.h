@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedSiriPresentationPluginHost;
 + (id)_defaultURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_bundleURLsByBundleIdentifier) NSMutableDictionary *bundleURLsByBundleIdentifier; // @synthesize bundleURLsByBundleIdentifier=_bundleURLsByBundleIdentifier;
 @property(nonatomic, getter=_isLoaded, setter=_setLoaded:) BOOL loaded; // @synthesize loaded=_loaded;
 @property(readonly, nonatomic, getter=_URL) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)_save;
 - (void)_load;
 - (void)_loadFromPropertyListRepresentation:(id)arg1;

@@ -15,10 +15,10 @@
     long long _flightNumber;
 }
 
+- (void).cxx_destruct;
 @property long long flightNumber; // @synthesize flightNumber=_flightNumber;
 @property(retain) NSString *airlineCode; // @synthesize airlineCode=_airlineCode;
 @property(retain) NSDate *departureDate; // @synthesize departureDate=_departureDate;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

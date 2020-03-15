@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *localizedOutputValueAndUnit; // @synthesize localizedOutputValueAndUnit=_localizedOutputValueAndUnit;
 @property(readonly) NSString *localizedOutputUnit; // @synthesize localizedOutputUnit=_localizedOutputUnit;
 @property(readonly) NSString *localizedOutputValue; // @synthesize localizedOutputValue=_localizedOutputValue;
 @property(readonly) NSNumber *outputValue; // @synthesize outputValue=_outputValue;
 @property(readonly) NSString *outputUnit; // @synthesize outputUnit=_outputUnit;
-- (void).cxx_destruct;
 - (id)groupName;
 - (id)category;
 - (id)initWithUnit:(id)arg1 value:(id)arg2 localizedValue:(id)arg3 localizedUnit:(id)arg4 localizedOutputValueAndUnit:(id)arg5;

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_midMoveSourceBookmarkLocations;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long midMoveInitialIndex; // @synthesize midMoveInitialIndex=_midMoveInitialIndex;
 @property(readonly) NSString *parentUUID; // @synthesize parentUUID=_parentUUID;
-- (void).cxx_destruct;
 - (id)midMoveSourceBookmarkLocations;
 - (void)addMidMoveSourceBookmarkLocation:(id)arg1;
 - (id)initWithParentUUID:(id)arg1 midMoveInitialIndex:(unsigned long long)arg2;

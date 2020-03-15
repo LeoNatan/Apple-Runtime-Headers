@@ -27,6 +27,7 @@
     CDUnknownBlockType _cancelBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isSwapping) _Bool swapping; // @synthesize swapping=_swapping;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) CDUnknownBlockType submitBlock; // @synthesize submitBlock=_submitBlock;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(nonatomic) _Bool hideText; // @synthesize hideText=_hideText;
 @property(retain, nonatomic) TVLProxyViewController *proxyViewController; // @synthesize proxyViewController=_proxyViewController;
-- (void).cxx_destruct;
 - (void)dismissTextEntryViewController:(id)arg1;
 @property(readonly, nonatomic) CDUnknownBlockType onCancel; // @dynamic onCancel;
 - (void)_menuButtonAction:(id)arg1;

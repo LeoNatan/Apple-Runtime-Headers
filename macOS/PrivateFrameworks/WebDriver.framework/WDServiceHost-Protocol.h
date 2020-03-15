@@ -12,6 +12,6 @@
 @protocol WDServiceHost <NSObject>
 - (void)fetchContentsOfLocalFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
 - (void)fetchAttributesOfLocalFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
-- (void)launchApplication:(NSBundle *)arg1 forHost:(id <WDSessionHost>)arg2 completionHandler:(void (^)(int, NSError *))arg3;
+- (void)launchApplication:(NSBundle *)arg1 withArguments:(NSArray *)arg2 forHost:(id <WDSessionHost>)arg3 completionHandler:(void (^)(int, NSError *))arg4;
 @end
 

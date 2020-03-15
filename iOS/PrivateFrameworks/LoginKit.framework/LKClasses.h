@@ -15,8 +15,8 @@
     NSArray *_classes;
 }
 
-@property(readonly, copy, nonatomic) NSArray *classes; // @synthesize classes=_classes;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *classes; // @synthesize classes=_classes;
 - (_Bool)isEqualToLKClasses:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithClassArray:(id)arg1;

@@ -24,6 +24,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) id <SVVideoLoadingStateObserving> loadingStateObserver; // @synthesize loadingStateObserver=_loadingStateObserver;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic, setter=onPlaybackResumed:) CDUnknownBlockType playbackResumedBlock; // @synthesize playbackResumedBlock;
 @property(copy, nonatomic, setter=onPlaybackPaused:) CDUnknownBlockType playbackPausedBlock; // @synthesize playbackPausedBlock;
 @property(copy, nonatomic, setter=onPlaybackStart:) CDUnknownBlockType playbackStartBlock; // @synthesize playbackStartBlock;
-- (void).cxx_destruct;
 - (id)initWithPlaybackStateObserver:(id)arg1 loadingStateObserver:(id)arg2;
 
 // Remaining properties

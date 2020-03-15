@@ -13,8 +13,8 @@
     NSArray *_stackPoints;
 }
 
-@property(copy, nonatomic) NSArray *stackPoints; // @synthesize stackPoints=_stackPoints;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *stackPoints; // @synthesize stackPoints=_stackPoints;
 - (id)copyWithTransform:(struct CGAffineTransform)arg1 roundToViewScale:(_Bool)arg2;
 - (id)initWithStackPoints:(id)arg1 userInfo:(id)arg2;
 

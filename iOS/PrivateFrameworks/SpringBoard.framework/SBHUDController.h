@@ -25,11 +25,11 @@
 }
 
 + (id)_defaultCrossfadeAnimatorForHUDController:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBHUDSettings *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) _SBHUDHostViewController *hudViewController; // @synthesize hudViewController=_hudViewController;
 @property(readonly, nonatomic) SBMainScreenActiveInterfaceOrientationWindow *hudWindow; // @synthesize hudWindow=_hudWindow;
 @property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
-- (void).cxx_destruct;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (void)hudViewController:(id)arg1 willPresentHUD:(id)arg2;

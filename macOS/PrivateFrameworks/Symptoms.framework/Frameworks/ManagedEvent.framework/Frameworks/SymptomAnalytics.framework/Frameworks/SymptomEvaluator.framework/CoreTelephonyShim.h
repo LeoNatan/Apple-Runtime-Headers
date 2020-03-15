@@ -9,7 +9,6 @@
 @class NSMutableDictionary, NSMutableSet, NSNumber;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface CoreTelephonyShim : NSObject
 {
     NSMutableSet *delegates;
@@ -22,16 +21,17 @@ __attribute__((visibility("hidden")))
 
 + (id)elevatedQueue;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *currentSubscriberTag; // @synthesize currentSubscriberTag=_currentSubscriberTag;
 @property(readonly, nonatomic) NSMutableDictionary *subscribers; // @synthesize subscribers=_subscribers;
-- (void).cxx_destruct;
-- (void)handleCTServerNotification:(struct __CFString *)arg1 notificationInfo:(struct __CFDictionary *)arg2;
 @property(readonly, nonatomic) NSMutableDictionary *subscriptions; // @synthesize subscriptions=_subscriptions;
 @property(readonly, nonatomic) struct __CTServerConnection *ctServerConnection; // @synthesize ctServerConnection=_ctServerConnection;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
 - (void)dealloc;
 - (void)_completeInitialization;
+- (void)commonInit;
+- (id)initWithQueue:(id)arg1;
 - (id)init;
 - (id)elevatedQueue;
 

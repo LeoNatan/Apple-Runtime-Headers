@@ -16,11 +16,11 @@
     NSString *_joinColumnName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *joinColumnName; // @synthesize joinColumnName=_joinColumnName;
 @property(readonly, nonatomic) NSString *foreignColumnName; // @synthesize foreignColumnName=_foreignColumnName;
 @property(readonly, nonatomic) NSString *foreignTableName; // @synthesize foreignTableName=_foreignTableName;
 @property(readonly, nonatomic) NSString *columnName; // @synthesize columnName=_columnName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldImportFromForeignTable;
 - (id)initWithName:(id)arg1 foreignTable:(id)arg2 foreignColumn:(id)arg3 joinColumn:(id)arg4;
 

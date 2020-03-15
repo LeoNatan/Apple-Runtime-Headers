@@ -15,9 +15,9 @@
     CPLScopeFilter *_scopeFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPLScopeFilter *scopeFilter; // @synthesize scopeFilter=_scopeFilter;
 @property(nonatomic) _Bool highPriority; // @synthesize highPriority=_highPriority;
-- (void).cxx_destruct;
 - (id)taskIdentifier;
 - (void)taskDidFinishWithError:(id)arg1;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;

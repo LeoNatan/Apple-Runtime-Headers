@@ -18,10 +18,10 @@
     NSMutableArray *_completionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(readonly, nonatomic) NSMutableArray *animationBlocks; // @synthesize animationBlocks=_animationBlocks;
 @property(readonly, nonatomic) id <AVPlayerViewControllerAnimationCoordinator> coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 - (void)animateWithAnimationBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithAnimationCoordinator:(id)arg1;
 

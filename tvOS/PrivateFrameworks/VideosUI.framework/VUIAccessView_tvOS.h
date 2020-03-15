@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)iconSize;
-@property(retain, nonatomic) UIView *privacyView; // @synthesize privacyView=_privacyView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *privacyView; // @synthesize privacyView=_privacyView;
 - (id)_buttonWithTitleForTV:(id)arg1 textStyle:(id)arg2;
 - (id)_buildButtonStack;
 - (id)_buildSeeAllButtonStack;

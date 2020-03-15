@@ -16,11 +16,11 @@
     NSButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain) NSButton *okButton; // @synthesize okButton=_okButton;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property(nonatomic) __weak UXView *settingsView; // @synthesize settingsView=_settingsView;
-- (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

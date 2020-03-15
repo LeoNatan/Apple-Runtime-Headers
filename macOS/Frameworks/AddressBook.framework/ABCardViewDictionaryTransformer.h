@@ -15,9 +15,9 @@
 }
 
 + (BOOL)allowsReverseTransformation;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *valueKey; // @synthesize valueKey=_valueKey;
 @property(retain, nonatomic) NSDictionary *currentDictionary; // @synthesize currentDictionary=_currentDictionary;
-- (void).cxx_destruct;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 - (id)initWithValueKey:(id)arg1;

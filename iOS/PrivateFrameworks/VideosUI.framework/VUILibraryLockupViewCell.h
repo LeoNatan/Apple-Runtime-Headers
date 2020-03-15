@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)configureLockupCell:(id)arg1 withMedia:(id)arg2 width:(double)arg3 forMetrics:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hideTitleLabel; // @synthesize hideTitleLabel=_hideTitleLabel;
 @property(retain, nonatomic) VUIRentalExpirationLabel *expirationLabel; // @synthesize expirationLabel=_expirationLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) double imageAspectRatio; // @synthesize imageAspectRatio=_imageAspectRatio;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)rentalExpirationLabelNeedsRelayout:(id)arg1;
 - (double)bottomMarginWithBaselineMargin:(double)arg1;
 - (void)setHighlighted:(_Bool)arg1;

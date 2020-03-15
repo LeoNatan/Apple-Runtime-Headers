@@ -14,8 +14,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)carPlayIconStateForCertSerial:(id)arg1 andAppCategories:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)carPlayAppLinksStateForCertSerial:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)isWirelessCarPlayAllowedForCertSerial:(id)arg1 withReply:(CDUnknownBlockType)arg2;

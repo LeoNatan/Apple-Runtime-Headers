@@ -23,6 +23,7 @@
     unsigned long long _fixtureID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long fixtureID; // @synthesize fixtureID=_fixtureID;
 @property(readonly, nonatomic, getter=_hasFixtureID) _Bool hasFixtureID; // @synthesize hasFixtureID=_hasFixtureID;
 @property(readonly, nonatomic) unsigned long long unitID; // @synthesize unitID=_unitID;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) id <GEOVenueFloorInfo> floorInfo; // @synthesize floorInfo=_floorInfo;
 @property(readonly, nonatomic) unsigned long long buildingID; // @synthesize buildingID=_buildingID;
 @property(readonly, nonatomic, getter=_hasBuildingID) _Bool hasBuildingID; // @synthesize hasBuildingID=_hasBuildingID;
-- (void).cxx_destruct;
 - (id)initWithVenueIdentifier:(id)arg1;
 - (id)initWithBuildingID:(unsigned long long)arg1 floorInfo:(id)arg2 fixtureID:(unsigned long long)arg3;
 - (id)initWithBuildingID:(unsigned long long)arg1 floorInfo:(id)arg2 unitID:(unsigned long long)arg3;

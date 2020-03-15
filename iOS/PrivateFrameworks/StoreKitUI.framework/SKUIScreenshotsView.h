@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
     UIView *_separatorView;
 }
 
-@property(retain, nonatomic) UIView *primaryView; // @synthesize primaryView=_primaryView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *primaryView; // @synthesize primaryView=_primaryView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

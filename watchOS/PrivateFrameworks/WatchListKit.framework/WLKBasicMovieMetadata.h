@@ -16,11 +16,11 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) WLKRottenTomatoesRating *rottenTomatoesRating; // @synthesize rottenTomatoesRating=_rottenTomatoesRating;
 @property(readonly, copy, nonatomic) NSString *studio; // @synthesize studio=_studio;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

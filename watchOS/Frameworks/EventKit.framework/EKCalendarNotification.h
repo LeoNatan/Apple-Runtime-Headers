@@ -28,6 +28,7 @@
     NSString *_lastName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool couldBeJunk; // @synthesize couldBeJunk=_couldBeJunk;
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool needsAlert;
 - (void)dealloc;
 - (id)initWithType:(int)arg1;

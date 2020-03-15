@@ -32,6 +32,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *parseRuleUsageNumbers; // @synthesize parseRuleUsageNumbers=_parseRuleUsageNumbers;
 @property(nonatomic) int parsingState; // @synthesize parsingState=_parsingState;
 @property(nonatomic) int currentlyParsingCPTNumber; // @synthesize currentlyParsingCPTNumber=_currentlyParsingCPTNumber;
@@ -40,7 +41,6 @@
 @property(nonatomic) int codePage; // @synthesize codePage=_codePage;
 @property(nonatomic) __weak ASItem *parent; // @synthesize parent=_parent;
 @property(nonatomic) __weak ASItem *root; // @synthesize root=_root;
-- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType currentStreamBlock;
 - (id)asParseRules;
 - (void)ignoreThisContent:(id)arg1;

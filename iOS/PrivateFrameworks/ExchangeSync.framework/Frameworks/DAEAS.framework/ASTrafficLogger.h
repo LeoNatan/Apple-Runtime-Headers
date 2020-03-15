@@ -17,8 +17,8 @@
 }
 
 + (id)_logQueue;
-@property(nonatomic) _Bool isOutgoingTraffic; // @synthesize isOutgoingTraffic=_isOutgoingTraffic;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isOutgoingTraffic; // @synthesize isOutgoingTraffic=_isOutgoingTraffic;
 - (void)logPlainTextData:(id)arg1;
 - (void)logWBXMLData:(id)arg1;
 - (void)dealloc;

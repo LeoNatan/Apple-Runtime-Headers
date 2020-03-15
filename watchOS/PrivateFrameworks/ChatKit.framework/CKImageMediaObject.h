@@ -25,9 +25,9 @@
 + (id)attachmentSummary:(unsigned int)arg1;
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isSticker; // @synthesize isSticker=_isSticker;
 @property(retain, nonatomic) UIImage *thumbnail; // @synthesize thumbnail=_thumbnail;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PHLivePhoto *livePhoto; // @synthesize livePhoto=_livePhoto;
 - (struct CGSize)originalSize;
 @property(readonly, nonatomic) CKImageData *imageData;

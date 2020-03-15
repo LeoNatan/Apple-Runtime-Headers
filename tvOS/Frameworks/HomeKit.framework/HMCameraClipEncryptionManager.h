@@ -13,8 +13,8 @@
     NSData *_key;
 }
 
-@property(readonly, copy) NSData *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+@property(readonly, copy) NSData *key; // @synthesize key=_key;
 - (id)encryptedDataContextFromData:(id)arg1;
 - (id)initWithKey:(id)arg1;
 - (id)init;

@@ -29,10 +29,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL correct; // @synthesize correct=_correct;
 @property(nonatomic) BOOL result; // @synthesize result=_result;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

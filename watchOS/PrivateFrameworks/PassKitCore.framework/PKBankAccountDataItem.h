@@ -15,9 +15,9 @@
 }
 
 + (int)dataType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKBankAccountInformation *PKBankAccountInformation; // @synthesize PKBankAccountInformation=_PKBankAccountInformation;
 @property(retain, nonatomic) PKCurrencyAmount *peerPaymentBalance; // @synthesize peerPaymentBalance=_peerPaymentBalance;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PKBankAccountInformation *bankAccountInformation;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)initWithModel:(id)arg1;

@@ -39,6 +39,7 @@
 }
 
 + (Class)viewsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDAWDHealthKitNotificationResponseFlags *responseFlags; // @synthesize responseFlags=_responseFlags;
 @property(retain, nonatomic) HDAWDHealthKitWeeklySummaryDetail *weeklySummaryDetail; // @synthesize weeklySummaryDetail=_weeklySummaryDetail;
 @property(retain, nonatomic) HDAWDHealthKitAchievement *achievement; // @synthesize achievement=_achievement;
@@ -51,7 +52,6 @@
 @property(nonatomic) long long endDate; // @synthesize endDate=_endDate;
 @property(nonatomic) long long startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

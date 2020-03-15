@@ -28,13 +28,13 @@
 }
 
 + (id)pasteboardTypes;
+- (void).cxx_destruct;
 @property(retain) id <AMRunnerController> runnerController; // @synthesize runnerController=_runner;
 @property struct __AMWorkflowControllerFlags flags; // @synthesize flags=_flags;
 @property struct __AMWorkflowControllerDelegateRespondTo delegateRespondTo; // @synthesize delegateRespondTo=_delegateRespondTo;
 @property(retain, nonatomic) AMWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <AMWorkflowControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AMWorkflowView *workflowView; // @synthesize workflowView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUndoManager *_undoManager;
 - (void)updateCanRun;
 - (id)_addActionWithBundleIdentifier:(id)arg1;

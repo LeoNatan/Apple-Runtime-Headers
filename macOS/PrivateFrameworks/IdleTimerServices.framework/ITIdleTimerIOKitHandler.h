@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) unsigned int assertionID; // @synthesize assertionID=_assertionID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int assertionID; // @synthesize assertionID=_assertionID;
 - (void)removeIdleTimerConfiguration:(id)arg1 forReason:(id)arg2;
 - (void)addIdleTimerConfiguration:(id)arg1 forReason:(id)arg2;
 - (BOOL)isIdleTimerServiceAvailable;

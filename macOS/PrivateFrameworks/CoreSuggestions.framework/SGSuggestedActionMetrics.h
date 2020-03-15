@@ -34,6 +34,7 @@
 + (void)recordBannerShownWithContacts:(id)arg1 events:(id)arg2 inApp:(struct SGMBannerDisplayApp_)arg3;
 + (void)recordMaybeContactFrom:(unsigned long long)arg1 withVersion:(id)arg2;
 + (id)instance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SGMContactDetailConversationTurn *contactDetailConversationTurn; // @synthesize contactDetailConversationTurn=_contactDetailConversationTurn;
 @property(retain, nonatomic) SGMUnknownContactInformationShown *unknownContactInformationShown; // @synthesize unknownContactInformationShown=_unknownContactInformationShown;
 @property(retain, nonatomic) SGMMaybeInformationShown *maybeInformationShown; // @synthesize maybeInformationShown=_maybeInformationShown;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) SGMContactRejected *contactRejected; // @synthesize contactRejected=_contactRejected;
 @property(retain, nonatomic) SGMContactConfirmed *contactConfirmed; // @synthesize contactConfirmed=_contactConfirmed;
 @property(retain, nonatomic) SGMContactInBanner *contactInBanner; // @synthesize contactInBanner=_contactInBanner;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

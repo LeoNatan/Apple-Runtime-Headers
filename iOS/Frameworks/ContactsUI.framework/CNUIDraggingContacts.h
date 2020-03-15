@@ -28,9 +28,9 @@
 + (_Bool)canAcceptDropForDropSession:(id)arg1;
 + (id)imageForDragging;
 + (id)dragItemForContact:(id)arg1 withContactStore:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) NSArray *draggingContacts; // @synthesize draggingContacts=_draggingContacts;
-- (void).cxx_destruct;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithDraggingContacts:(id)arg1 contactStore:(id)arg2;
 

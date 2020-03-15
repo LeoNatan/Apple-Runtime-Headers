@@ -13,8 +13,8 @@
     NSCache *_cache;
 }
 
-@property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
 - (id)contentProviderForEventStream:(id)arg1 error:(id *)arg2;
 - (id)init;
 

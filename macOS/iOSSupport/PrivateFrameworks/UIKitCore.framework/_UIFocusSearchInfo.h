@@ -9,14 +9,16 @@
 __attribute__((visibility("hidden")))
 @interface _UIFocusSearchInfo : NSObject
 {
+    BOOL _treatFocusableItemAsLeaf;
     BOOL _forceFocusToLeaveContainer;
     CDUnknownBlockType _evaluator;
 }
 
 + (id)defaultInfo;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType evaluator; // @synthesize evaluator=_evaluator;
 @property(nonatomic) BOOL forceFocusToLeaveContainer; // @synthesize forceFocusToLeaveContainer=_forceFocusToLeaveContainer;
-- (void).cxx_destruct;
+@property(nonatomic) BOOL treatFocusableItemAsLeaf; // @synthesize treatFocusableItemAsLeaf=_treatFocusableItemAsLeaf;
 - (BOOL)shouldIncludeFocusItem:(id)arg1;
 - (id)initWithFocusEvaluator:(CDUnknownBlockType)arg1;
 

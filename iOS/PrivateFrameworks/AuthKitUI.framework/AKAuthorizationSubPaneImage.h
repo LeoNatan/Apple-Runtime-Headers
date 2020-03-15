@@ -14,8 +14,8 @@
 }
 
 + (id)imageViewWithImage:(id)arg1;
-@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void)addToConstraints:(id)arg1 context:(id)arg2;
 - (void)addToStackView:(id)arg1 context:(id)arg2;
 @property(copy, nonatomic) UIImage *image;

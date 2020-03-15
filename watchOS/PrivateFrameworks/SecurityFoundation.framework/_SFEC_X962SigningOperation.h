@@ -18,8 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy) id <SFDigestOperation> digestOperation; // @synthesize digestOperation=_digestOperation;
 - (void).cxx_destruct;
+@property(copy) id <SFDigestOperation> digestOperation; // @synthesize digestOperation=_digestOperation;
 @property(copy, nonatomic) _SFECKeySpecifier *signingKeySpecifier;
 - (id)verify:(id)arg1 withKey:(id)arg2 error:(id *)arg3;
 - (id)sign:(id)arg1 withKey:(id)arg2 error:(id *)arg3;

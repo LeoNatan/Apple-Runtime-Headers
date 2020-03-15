@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSNumberFormatter *_numberFormatter;
 }
 
-@property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 - (void)_reloadHeaderView;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (void)setExpanded:(_Bool)arg1;

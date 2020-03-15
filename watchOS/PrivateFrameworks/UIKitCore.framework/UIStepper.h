@@ -30,6 +30,7 @@
 + (id)visualElementForTraitCollection:(id)arg1;
 + (Class)visualElementClassForTraitCollection:(id)arg1;
 + (Class)_fallbackVisualElementClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<UIStepperVisualElement> *visualElement; // @synthesize visualElement=_visualElement;
 @property(nonatomic) _Bool wraps; // @synthesize wraps=_wraps;
 @property(nonatomic) _Bool autorepeat; // @synthesize autorepeat=_autorepeat;
@@ -38,7 +39,6 @@
 @property(nonatomic) double maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) double minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (void)setTintColor:(id)arg1;
 - (id)decrementImageForState:(unsigned int)arg1;

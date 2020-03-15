@@ -18,10 +18,10 @@
 }
 
 + (id)sharedHelper;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *waitForIntentCompleteSemaphore; // @synthesize waitForIntentCompleteSemaphore=_waitForIntentCompleteSemaphore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *siriResponseQueue; // @synthesize siriResponseQueue=_siriResponseQueue;
 @property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
-- (void).cxx_destruct;
 - (_Bool)_invokeHandlerForIntent:(id)arg1;
 - (void)forIntent:(id)arg1 registerHandler:(CDUnknownBlockType)arg2;
 - (void)forIntentParam:(id)arg1 predict:(id)arg2;

@@ -10,28 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct BRCDirectoryItem {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    unsigned int _field11;
-    id _field12;
-    unsigned long long _field13;
-    id _field14;
-    char _field15;
-    unsigned long long _field16;
-    unsigned long long _field17;
-    unsigned long long _field18;
-    id _field19;
-};
-
 struct CC_SHA1state_st {
     unsigned int h0;
     unsigned int h1;
@@ -44,36 +22,12 @@ struct CC_SHA1state_st {
     int num;
 };
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
-struct PQLResultSet {
-    Class _field1;
-};
-
 struct RootItemObject {
     unsigned char _field1;
     union {
         unsigned int _field1;
         unsigned int _field2;
     } _field2;
-};
-
-struct _BRCFrameworkOperation {
-    Class _field1;
-    id _field2;
-    unsigned char _field3[16];
-};
-
-struct _BRCOperation {
-    Class _field1;
-    id _field2;
-    unsigned char _field3[16];
 };
 
 struct _UUIDItemObject_OLD {

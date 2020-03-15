@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_callSelector:(SEL)arg1 onBagContract:(id)arg2;
-@property(retain, nonatomic) NSObject *bagContract; // @synthesize bagContract=_bagContract;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject *bagContract; // @synthesize bagContract=_bagContract;
 - (SEL)_selectorForBagKey:(id)arg1;
 - (id)_bagValueForBagKey:(id)arg1 bagValueType:(unsigned int)arg2;
 - (id)dictionaryForKey:(id)arg1;

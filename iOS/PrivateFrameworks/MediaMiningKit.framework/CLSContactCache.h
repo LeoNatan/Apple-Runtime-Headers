@@ -15,10 +15,10 @@
     NSPredicate *_entryPredicateWithUpdateTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *entryPredicateWithUpdateTimestamp; // @synthesize entryPredicateWithUpdateTimestamp=_entryPredicateWithUpdateTimestamp;
 @property(retain, nonatomic) NSPredicate *entryPredicateWithContactIdentifiers; // @synthesize entryPredicateWithContactIdentifiers=_entryPredicateWithContactIdentifiers;
 @property(retain, nonatomic) NSPredicate *entryPredicateWithContactIdentifier; // @synthesize entryPredicateWithContactIdentifier=_entryPredicateWithContactIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_updateHasPicture:(_Bool)arg1 forEntry:(id)arg2;
 - (_Bool)setLastHistoryToken:(id)arg1;
 - (id)lastHistoryToken;

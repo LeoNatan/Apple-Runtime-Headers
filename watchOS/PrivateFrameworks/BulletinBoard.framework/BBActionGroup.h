@@ -14,8 +14,8 @@
 }
 
 + (id)actionGroupWithActions:(id)arg1;
-@property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

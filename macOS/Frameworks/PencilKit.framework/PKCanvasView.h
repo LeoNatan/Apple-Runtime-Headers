@@ -21,6 +21,7 @@
     SEL _drawingUndoSelector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL drawingUndoSelector; // @synthesize drawingUndoSelector=_drawingUndoSelector;
 @property(nonatomic) __weak id drawingUndoTarget; // @synthesize drawingUndoTarget=_drawingUndoTarget;
 @property(nonatomic) BOOL rulerEnabled; // @synthesize rulerEnabled=_rulerEnabled;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
 @property(copy, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 @property(nonatomic) __weak id <PKCanvasViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)drawingTransform;
 - (struct CGAffineTransform)strokeTransform;
 - (void)_setFixedPixelSize:(struct CGSize)arg1 drawingScale:(double)arg2;

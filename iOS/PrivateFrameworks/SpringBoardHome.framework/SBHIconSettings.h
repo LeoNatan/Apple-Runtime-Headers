@@ -12,16 +12,22 @@
 {
     _Bool _suppressJitter;
     _Bool _closeBoxesEverywhere;
+    _Bool _alwaysHitTestNearestIcon;
+    double _iconHitboxPaddingX;
+    double _iconHitboxPaddingY;
     SBFParallaxSettings *_iconParallaxSettings;
     SBFParallaxSettings *_badgeParallaxSettings;
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBFParallaxSettings *badgeParallaxSettings; // @synthesize badgeParallaxSettings=_badgeParallaxSettings;
 @property(retain, nonatomic) SBFParallaxSettings *iconParallaxSettings; // @synthesize iconParallaxSettings=_iconParallaxSettings;
+@property(nonatomic) double iconHitboxPaddingY; // @synthesize iconHitboxPaddingY=_iconHitboxPaddingY;
+@property(nonatomic) double iconHitboxPaddingX; // @synthesize iconHitboxPaddingX=_iconHitboxPaddingX;
+@property(nonatomic) _Bool alwaysHitTestNearestIcon; // @synthesize alwaysHitTestNearestIcon=_alwaysHitTestNearestIcon;
 @property(nonatomic) _Bool closeBoxesEverywhere; // @synthesize closeBoxesEverywhere=_closeBoxesEverywhere;
 @property(nonatomic) _Bool suppressJitter; // @synthesize suppressJitter=_suppressJitter;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (void)destroySharedManager;
 + (void)createSharedManager;
 + (struct CAMutex *)getLock;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *avvcProfilingInfoDictionary; // @synthesize avvcProfilingInfoDictionary=_avvcProfilingInfoDictionary;
 @property(retain) NSMutableDictionary *publicMetrics; // @synthesize publicMetrics=_publicMetrics;
 @property(nonatomic) unsigned long long callToStartRecordHostTime; // @synthesize callToStartRecordHostTime=_callToStartRecordHostTime;
 @property(nonatomic) unsigned long long voiceTriggerStartHostTime; // @synthesize voiceTriggerStartHostTime=_voiceTriggerStartHostTime;
-- (void).cxx_destruct;
 - (void)logProfileMetrics:(id)arg1;
 - (void)logRecordRoute:(id)arg1 andPlaybackRoute:(id)arg2;
 - (void)logRecordAudioFormat:(struct CAStreamBasicDescription)arg1;

@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_scanQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *scanQueue; // @synthesize scanQueue=_scanQueue;
 @property BOOL scanned; // @synthesize scanned=_scanned;
 @property(retain) SMSystem_Daemon *system; // @synthesize system=_system;
 @property(retain) SMPaths *pather; // @synthesize pather=_pather;
 @property(retain) NSMutableDictionary *userAppDownloadBundles; // @synthesize userAppDownloadBundles=_userAppDownloadBundles;
 @property(retain) NSSet *systemAppDownloadBundles; // @synthesize systemAppDownloadBundles=_systemAppDownloadBundles;
-- (void).cxx_destruct;
 - (id)scanForApplicationsAt:(id)arg1 useRelativePaths:(BOOL)arg2;
 - (void)scanForApplications;
 - (id)initWithPather:(id)arg1 onSystem:(id)arg2;

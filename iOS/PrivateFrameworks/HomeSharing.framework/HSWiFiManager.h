@@ -20,9 +20,9 @@
 }
 
 + (id)sharedWiFiManager;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isWiFiAssociated) _Bool wiFiAssociated; // @synthesize wiFiAssociated=_wiFiAssociated;
 @property(nonatomic, getter=isWiFiEnabled) _Bool wiFiEnabled; // @synthesize wiFiEnabled=_wiFiEnabled;
-- (void).cxx_destruct;
 - (void)_wifiCallBack:(unsigned int)arg1;
 - (_Bool)_getWiFiAssociated;
 - (_Bool)_getWiFiEnabledFromPrefs;

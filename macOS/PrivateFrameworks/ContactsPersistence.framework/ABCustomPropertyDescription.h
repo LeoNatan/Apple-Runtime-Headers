@@ -17,11 +17,11 @@
 }
 
 + (id)descriptionOfValueType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, copy) NSString *recordType; // @synthesize recordType=_recordType;
 @property(readonly, copy) NSString *propertyName; // @synthesize propertyName=_propertyName;
 @property(readonly, copy) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithObjectID:(id)arg1 propertyName:(id)arg2 recordType:(id)arg3 valueType:(long long)arg4;
 

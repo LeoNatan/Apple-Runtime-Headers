@@ -24,9 +24,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int preferredSampleMode; // @synthesize preferredSampleMode=_preferredSampleMode;
 @property(retain, nonatomic) MXMSampleFilter *filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (_Bool)harvestData:(id *)arg1 error:(id *)arg2;
 - (void)didStopAtTime:(unsigned long long)arg1 stopDate:(id)arg2;
 - (void)willStop;

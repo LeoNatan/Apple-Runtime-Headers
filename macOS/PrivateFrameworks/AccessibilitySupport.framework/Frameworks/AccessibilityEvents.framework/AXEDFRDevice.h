@@ -27,6 +27,7 @@
     struct CGSize _nativeDisplaySize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _changingZoomScale; // @synthesize _changingZoomScale=__changingZoomScale;
 @property(nonatomic) double _splitTouchStartDistance; // @synthesize _splitTouchStartDistance=__splitTouchStartDistance;
 @property(retain, nonatomic) NSTouch *_currentTrackedTouch; // @synthesize _currentTrackedTouch=__currentTrackedTouch;
@@ -38,7 +39,6 @@
 @property(nonatomic) BOOL eventCaptureStarted; // @synthesize eventCaptureStarted=_eventCaptureStarted;
 @property(nonatomic) struct CGSize nativeDisplaySize; // @synthesize nativeDisplaySize=_nativeDisplaySize;
 @property(readonly, nonatomic) double synthesizedTapDownUpInterval; // @synthesize synthesizedTapDownUpInterval=_synthesizedTapDownUpInterval;
-- (void).cxx_destruct;
 - (id)_nonSyntheticDFRGestureNSEventFromCGEvent:(struct __CGEvent *)arg1;
 - (BOOL)_isNonSyntheticDFRGestureEvent:(struct __CGEvent *)arg1;
 - (void)_processNonSyntheticDFRGestureNSEvent:(id)arg1;

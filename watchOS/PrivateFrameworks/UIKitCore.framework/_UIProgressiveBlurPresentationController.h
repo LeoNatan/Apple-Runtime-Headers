@@ -14,9 +14,9 @@
     UIVisualEffectView *_visualEffectView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(nonatomic) int blurStyle; // @synthesize blurStyle=_blurStyle;
-- (void).cxx_destruct;
 - (id)_preferredAnimationControllerForDismissal;
 - (id)_preferredAnimationControllerForPresentation;
 - (_Bool)_forcesPreferredAnimationControllers;

@@ -14,9 +14,9 @@
     NSData *_fileData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSData *fileData; // @synthesize fileData=_fileData;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (id)keyForRequest;
 - (id)sortedKeyStringForDictionary:(id)arg1;

@@ -20,12 +20,12 @@
 + (id)actionWithTitle:(id)arg1 style:(unsigned int)arg2 titleColor:(id)arg3 backgroundColor:(id)arg4 handler:(CDUnknownBlockType)arg5;
 + (id)actionWithTitle:(id)arg1 style:(unsigned int)arg2 backgroundColor:(id)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)actionWithTitle:(id)arg1 style:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic, setter=_setHandler:) CDUnknownBlockType _handler; // @synthesize _handler;
-- (void).cxx_destruct;
 - (void)executeHandler;
 - (id)initWithTitle:(id)arg1 style:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)initWithTitle:(id)arg1 style:(unsigned int)arg2 titleColor:(id)arg3 backgroundColor:(id)arg4 handler:(CDUnknownBlockType)arg5;

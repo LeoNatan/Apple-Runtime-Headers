@@ -20,13 +20,13 @@
 
 + (id)serializablePropertyTransformers;
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(nonatomic) unsigned int actionCount; // @synthesize actionCount=_actionCount;
 @property(copy, nonatomic) NSString *automationType; // @synthesize automationType=_automationType;
 @property(copy, nonatomic) NSString *runSource; // @synthesize runSource=_runSource;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

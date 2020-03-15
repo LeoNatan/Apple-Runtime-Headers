@@ -25,11 +25,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) _Bool didSucceed; // @synthesize didSucceed=_didSucceed;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

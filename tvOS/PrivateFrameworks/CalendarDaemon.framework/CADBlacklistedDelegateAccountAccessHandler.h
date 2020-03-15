@@ -19,11 +19,11 @@
     NSSet *_cachedDelegateCalStoreInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *cachedDelegateCalStoreInfos; // @synthesize cachedDelegateCalStoreInfos=_cachedDelegateCalStoreInfos;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(readonly, nonatomic) id <CADCalCalendarInfoProvider> calCalendarInfoProvider; // @synthesize calCalendarInfoProvider=_calCalendarInfoProvider;
 @property(readonly, nonatomic) id <CADCalStoreInfoProvider> calStoreInfoProvider; // @synthesize calStoreInfoProvider=_calStoreInfoProvider;
-- (void).cxx_destruct;
 - (id)_delegateCalStoreInfos;
 - (void)reset;
 - (id)restrictedCalendarRowIDsForAction:(unsigned long long)arg1;

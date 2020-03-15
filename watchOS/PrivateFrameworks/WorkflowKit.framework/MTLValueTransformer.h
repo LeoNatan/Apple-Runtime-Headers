@@ -24,9 +24,9 @@
 + (id)reversibleTransformerWithForwardBlock:(CDUnknownBlockType)arg1 reverseBlock:(CDUnknownBlockType)arg2;
 + (id)reversibleTransformerWithBlock:(CDUnknownBlockType)arg1;
 + (id)transformerWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType reverseBlock; // @synthesize reverseBlock=_reverseBlock;
 @property(readonly, copy, nonatomic) CDUnknownBlockType forwardBlock; // @synthesize forwardBlock=_forwardBlock;
-- (void).cxx_destruct;
 - (id)transformedValue:(id)arg1 success:(_Bool *)arg2 error:(id *)arg3;
 - (id)transformedValue:(id)arg1;
 - (id)initWithForwardBlock:(CDUnknownBlockType)arg1 reverseBlock:(CDUnknownBlockType)arg2;

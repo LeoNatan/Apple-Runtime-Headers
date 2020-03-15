@@ -17,9 +17,9 @@
 
 + (void)launchAttributionURLs:(id)arg1 withAttribution:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *webURL; // @synthesize webURL;
 @property(retain, nonatomic) SSLookupRequest *storeRequest; // @synthesize storeRequest=_request;
-- (void).cxx_destruct;
 - (void)lookUpAppStoreURLForBundle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 

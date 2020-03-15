@@ -16,9 +16,9 @@
 
 + (id)descriptionForTimingMessages:(id)arg1;
 + (id)messageWithString:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *message; // @synthesize message=_message;
 @property double start; // @synthesize start=_start;
-- (void).cxx_destruct;
 
 @end
 

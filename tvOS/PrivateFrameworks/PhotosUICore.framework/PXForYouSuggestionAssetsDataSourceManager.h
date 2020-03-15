@@ -19,10 +19,10 @@
     PXSuggestionsDataSource *_suggestionsDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXSuggestionsDataSource *suggestionsDataSource; // @synthesize suggestionsDataSource=_suggestionsDataSource;
 @property(readonly, nonatomic) PXSuggestionsDataSourceManager *suggestionsDataSourceManager; // @synthesize suggestionsDataSourceManager=_suggestionsDataSourceManager;
 @property(retain, nonatomic) id <PXDisplaySuggestion> displayOriginalSuggestion; // @synthesize displayOriginalSuggestion=_displayOriginalSuggestion;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)createInitialDataSource;

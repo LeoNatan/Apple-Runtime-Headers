@@ -25,9 +25,9 @@
     id <PUICRecentsViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICRecentsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PUICCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)deactivate;
 - (void)activate;
 - (unsigned int)collectionView:(id)arg1 layout:(id)arg2 notchBehaviorForItemAtIndexPath:(id)arg3;

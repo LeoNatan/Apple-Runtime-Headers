@@ -14,7 +14,6 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
-- (void)setBounds:(struct CGRect)arg1;
 - (struct CGRect)accessibilityFrame;
 - (struct CGRect)_accessibilityBounds;
 - (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

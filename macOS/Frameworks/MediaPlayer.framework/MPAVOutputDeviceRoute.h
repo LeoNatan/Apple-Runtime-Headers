@@ -17,9 +17,9 @@
 + (long long)pickableRouteTypeForOutputDevice:(void *)arg1;
 + (id)localDeviceUID;
 + (void *)logicalLeaderFromOutputDevices:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) void *logicalLeaderOutputDevice; // @synthesize logicalLeaderOutputDevice=_logicalLeaderOutputDevice;
 @property(readonly, nonatomic) NSArray *outputDevices; // @synthesize outputDevices=_outputDevices;
-- (void).cxx_destruct;
 - (BOOL)_anyOutputDevicePassesTest:(CDUnknownBlockType)arg1;
 - (BOOL)_anyOutputDevicePassesMRFunction:(CDUnknownFunctionPointerType)arg1;
 - (BOOL)isLowLatencyRoute;

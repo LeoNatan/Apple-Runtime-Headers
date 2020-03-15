@@ -26,6 +26,7 @@
 
 + (id)labelTextStyle;
 + (double)preferredHeight;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_effectiveVerticalPadding) double effectiveVerticalPadding; // @synthesize effectiveVerticalPadding=_effectiveVerticalPadding;
 @property(nonatomic, getter=_effectiveHorizontalPadding) double effectiveHorizontalPadding; // @synthesize effectiveHorizontalPadding=_effectiveHorizontalPadding;
 @property(nonatomic, getter=_effectiveButtonHeight) double effectiveButtonHeight; // @synthesize effectiveButtonHeight=_effectiveButtonHeight;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NCToggleControlPair *toggleControlPair; // @synthesize toggleControlPair=_toggleControlPair;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
-- (void).cxx_destruct;
 - (_Bool)_isClearButtonExpanded;
 - (id)_clearButton;
 - (void)_handleClearAll:(id)arg1;

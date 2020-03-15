@@ -14,9 +14,9 @@
     CNContact *_interimContact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *interimContact; // @synthesize interimContact=_interimContact;
 @property(retain, nonatomic) CNContact *existingContact; // @synthesize existingContact=_existingContact;
-- (void).cxx_destruct;
 
 @end
 

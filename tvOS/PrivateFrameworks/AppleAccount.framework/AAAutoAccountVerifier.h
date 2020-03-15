@@ -20,8 +20,8 @@
     _Bool _canceled;
 }
 
-@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void)search:(id)arg1 didFinishWithError:(id)arg2;
 - (_Bool)search:(id)arg1 didFindResults:(id)arg2;
 - (void)_resendVerificationEmailForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;

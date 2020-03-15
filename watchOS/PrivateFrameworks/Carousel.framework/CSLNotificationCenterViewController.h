@@ -43,6 +43,7 @@
 
 + (void)initialize;
 + (id)sharedNotificationCenterViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLNotificationCenterCellFactoryManager *cellFactoryManager; // @synthesize cellFactoryManager=_cellFactoryManager;
 @property(retain, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -50,7 +51,6 @@
 @property(nonatomic) __weak id <CSLNotificationCenterViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CSLNotificationCenterViewControllerAlertDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
 @property(nonatomic) __weak id <CSLBulletinPipelineStepActorDelegate> pipelineStep; // @synthesize pipelineStep=_pipelineStep;
-- (void).cxx_destruct;
 - (void)_aggdLogPurgedNotificationCount:(unsigned int)arg1 totalBeforePurge:(unsigned int)arg2;
 - (_Bool)_isBundleIdentifierBlockedForCommunicationPolicy:(id)arg1;
 - (_Bool)_isBundleIdentifierBlockedForScreenTimeExpiration:(id)arg1;

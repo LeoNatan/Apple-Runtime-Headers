@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 + (id)averageFilter;
 + (id)blurFilter;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) long long activeBackdropEffect; // @synthesize activeBackdropEffect=_activeBackdropEffect;
 @property(readonly, nonatomic) NSHashTable *dependents; // @synthesize dependents=_dependents;
 @property(nonatomic) __weak AVCABackdropLayerView *groupLeader; // @synthesize groupLeader=_groupLeader;
 @property(copy, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) _Bool forceLowQualityEffect; // @synthesize forceLowQualityEffect=_forceLowQualityEffect;
-- (void).cxx_destruct;
 - (void)_enumerateDependents:(CDUnknownBlockType)arg1;
 - (void)_ensureDependents;
 - (void)_updateFilters;

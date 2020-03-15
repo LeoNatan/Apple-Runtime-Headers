@@ -17,9 +17,9 @@
     _SFPBText *_content;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBText *content; // @synthesize content=_content;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

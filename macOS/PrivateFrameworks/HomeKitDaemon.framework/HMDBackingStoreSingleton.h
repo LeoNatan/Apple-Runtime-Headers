@@ -28,6 +28,7 @@
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)sharedInstance;
 + (void)start;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) HMDBackingStoreLocal *local; // @synthesize local=_local;
 @property(readonly, nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSMapTable *nameToClassTransform; // @synthesize nameToClassTransform=_nameToClassTransform;
 @property(readonly, nonatomic) NSMapTable *classToNameTransform; // @synthesize classToNameTransform=_classToNameTransform;
 @property(readonly, nonatomic) NSMapTable *objectLookup; // @synthesize objectLookup=_objectLookup;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)setHomeManager:(id)arg1;
 - (id)resetBackingStore;

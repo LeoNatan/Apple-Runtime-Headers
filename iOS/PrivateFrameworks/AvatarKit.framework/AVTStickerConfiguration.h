@@ -20,6 +20,7 @@
     NSArray *_props;
     NSArray *_shaderModifiers;
     AVTStickerCamera *_camera;
+    NSString *_stickerPack;
     double _snapshotFrame;
     double _duration;
     NSArray *_morpherOverrides;
@@ -30,12 +31,16 @@
     struct CGSize _size;
 }
 
++ (id)availableStickerNamesForAnimojiNamed:(id)arg1 inStickerPack:(id)arg2;
++ (id)availableStickerNamesForMemojiInStickerPack:(id)arg1;
 + (id)unavailableAnimojiNamesForStickerPack:(id)arg1;
 + (id)stickerConfigurationsForAnimojiNamed:(id)arg1 inStickerPack:(id)arg2;
 + (id)stickerConfigurationsForMemojiInStickerPack:(id)arg1;
 + (id)stickerConfigurationsForAnimojiNamed:(id)arg1;
 + (id)stickerConfigurationsForPuppetNamed:(id)arg1;
 + (id)stickerConfigurationsForMemoji;
++ (id)allStickerPackNames;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoadedFromConfiguration; // @synthesize hasLoadedFromConfiguration=_hasLoadedFromConfiguration;
 @property(retain, nonatomic) NSString *assetsPath; // @synthesize assetsPath=_assetsPath;
 @property(retain, nonatomic) NSDictionary *configurationDictionary; // @synthesize configurationDictionary=_configurationDictionary;
@@ -47,6 +52,7 @@
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double snapshotFrame; // @synthesize snapshotFrame=_snapshotFrame;
+@property(readonly, nonatomic) NSString *stickerPack; // @synthesize stickerPack=_stickerPack;
 @property(readonly, nonatomic) _Bool preRendered; // @synthesize preRendered=_preRendered;
 @property(retain, nonatomic) AVTStickerCamera *camera; // @synthesize camera=_camera;
 @property(retain, nonatomic) NSArray *shaderModifiers; // @synthesize shaderModifiers=_shaderModifiers;
@@ -54,13 +60,13 @@
 @property(retain, nonatomic) AVTAvatarPoseAnimation *poseAnimation; // @synthesize poseAnimation=_poseAnimation;
 @property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)unload;
 - (void)loadIfNeeded;
 @property(readonly, nonatomic) NSString *emojiRepresentation;
 - (void)setupOptions:(id)arg1;
 - (id)initWithName:(id)arg1 poseAnimation:(id)arg2 props:(id)arg3 shaders:(id)arg4 camera:(id)arg5 options:(id)arg6;
-- (id)initWithConfigDictionary:(id)arg1 assetsPath:(id)arg2;
+- (id)initWithConfigDictionary:(id)arg1 assetsPath:(id)arg2 forStickerPack:(id)arg3;
+- (id)initWithConfigurationAtPath:(id)arg1 forStickerPack:(id)arg2;
 - (id)initWithConfigurationAtPath:(id)arg1;
 
 @end

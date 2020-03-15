@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     PHContentEditingOutput *_contentEditingOutput;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHContentEditingOutput *contentEditingOutput; // @synthesize contentEditingOutput=_contentEditingOutput;
 @property(readonly, nonatomic) PUReviewAsset *reviewAsset; // @synthesize reviewAsset=_reviewAsset;
 @property(readonly, nonatomic) NSURL *directory; // @synthesize directory=_directory;
 @property(readonly, nonatomic) NSURL *adjustmentURL; // @synthesize adjustmentURL=_adjustmentURL;
-- (void).cxx_destruct;
 - (void)run;
 - (id)initWithReviewAsset:(id)arg1 directory:(id)arg2 contentEditingOutput:(id)arg3;
 

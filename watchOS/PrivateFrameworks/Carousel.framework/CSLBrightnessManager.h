@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int step; // @synthesize step=_step;
 @property(retain) NSLock *calculationLock; // @synthesize calculationLock=_calculationLock;
 @property(retain, nonatomic) CSLBrightnessImageCalcuator *imageCalculator; // @synthesize imageCalculator=_imageCalculator;
 @property(retain, nonatomic) NSMutableArray *brightnessRectValues; // @synthesize brightnessRectValues=_brightnessRectValues;
 @property(retain, nonatomic) BrightnessSystemClient *brightnessSystemClient; // @synthesize brightnessSystemClient=_brightnessSystemClient;
-- (void).cxx_destruct;
 - (void)calculateBrightness:(id)arg1 renderTime:(unsigned long long)arg2;
 - (void)calculateBrightness:(id)arg1 withDelay:(id)arg2;
 - (void)calculateBrightness:(id)arg1;

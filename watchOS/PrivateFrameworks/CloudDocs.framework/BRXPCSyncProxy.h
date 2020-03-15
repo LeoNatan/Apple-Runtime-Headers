@@ -15,9 +15,9 @@
     id _result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)setObjResult:(id)arg1 error:(id)arg2;
 - (void)setBoolResult:(_Bool)arg1 error:(id)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;

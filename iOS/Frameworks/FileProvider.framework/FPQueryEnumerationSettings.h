@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *tagIdentifier; // @synthesize tagIdentifier=_tagIdentifier;
 @property(copy) NSArray *allowedFileTypes; // @synthesize allowedFileTypes=_allowedFileTypes;
 @property(copy) NSArray *excludedFileTypes; // @synthesize excludedFileTypes=_excludedFileTypes;
 @property(copy) NSNumber *desiredNumberOfItems; // @synthesize desiredNumberOfItems=_desiredNumberOfItems;
 @property(copy) NSArray *allowedProviders; // @synthesize allowedProviders=_allowedProviders;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

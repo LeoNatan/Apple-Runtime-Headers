@@ -16,8 +16,8 @@
 + (id)inMemoryConfigurationWithIdentifier:(id)arg1;
 + (id)inMemoryConfiguration;
 + (id)systemShortcutsConfiguration;
-@property(readonly, nonatomic) RLMRealmConfiguration *realmConfiguration; // @synthesize realmConfiguration=_realmConfiguration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RLMRealmConfiguration *realmConfiguration; // @synthesize realmConfiguration=_realmConfiguration;
 
 @end
 

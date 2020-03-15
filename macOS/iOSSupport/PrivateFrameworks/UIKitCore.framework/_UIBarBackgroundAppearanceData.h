@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)transparentBackgroundData;
 + (id)opaqueBackgroundData;
 + (id)standardBackgroundData;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIVibrancyEffect *shadowEffect; // @synthesize shadowEffect=_shadowEffect;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage=_shadowImage;
 @property(copy, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVibrancyEffect *defaultVibrancyEffect; // @synthesize defaultVibrancyEffect=_defaultVibrancyEffect;
 @property(readonly, nonatomic) UIColor *shadowViewTintColor;
 @property(readonly, nonatomic) UIColor *shadowViewBackgroundColor;

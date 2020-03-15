@@ -33,9 +33,9 @@
     CSLSConcurrentObserverStore *_locationObservers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLAppSwitcherViewController *appSwitcherController; // @synthesize appSwitcherController=_appSwitcherController;
 @property(readonly, nonatomic) CSLUITileNavigationController *tileNavigationController; // @synthesize tileNavigationController=_tileNavigationController;
-- (void).cxx_destruct;
 - (_Bool)isApplicationController:(id)arg1;
 - (id)targetViewControllersForUpdateAction:(id)arg1;
 - (void)handleWorkspaceRequest:(id)arg1 withTransitionCoordinator:(id)arg2 forStackUpdateAction:(id)arg3;

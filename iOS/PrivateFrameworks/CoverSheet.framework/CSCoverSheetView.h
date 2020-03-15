@@ -68,6 +68,7 @@
     struct CGPoint _foregroundViewPositionOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSRegionsDebugView *regionsDebugView; // @synthesize regionsDebugView=_regionsDebugView;
 @property(nonatomic) unsigned long long targetPageIndexForDraggingEnded; // @synthesize targetPageIndexForDraggingEnded=_targetPageIndexForDraggingEnded;
 @property(nonatomic) _Bool statusBarLegibilityEnabled; // @synthesize statusBarLegibilityEnabled=_statusBarLegibilityEnabled;
@@ -108,7 +109,6 @@
 @property(nonatomic) __weak CSLayoutStrategy *layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
 @property(nonatomic) __weak id <CSCoverSheetViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *bottomPage; // @synthesize bottomPage=_bottomPage;
-- (void).cxx_destruct;
 - (void)_setupLocketGestureOnScrollView:(_Bool)arg1;
 - (void)_setupQuickNoteGestureOnScrollView:(_Bool)arg1;
 - (void)_setupWallpaperGestureOnScrollView:(_Bool)arg1;

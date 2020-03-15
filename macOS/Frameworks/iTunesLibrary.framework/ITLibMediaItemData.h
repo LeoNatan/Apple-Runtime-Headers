@@ -16,11 +16,11 @@
     unsigned long long _playlistCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL downloadable; // @synthesize downloadable=_downloadable;
 @property(nonatomic) unsigned long long playlistCount; // @synthesize playlistCount=_playlistCount;
 @property(retain, nonatomic) NSURL *securityScopedURL; // @synthesize securityScopedURL=_securityScopedURL;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

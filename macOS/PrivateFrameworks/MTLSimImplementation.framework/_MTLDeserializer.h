@@ -90,11 +90,13 @@ __attribute__((visibility("hidden")))
 - (BOOL)newArgumentEncoderWithBufferLayout:(CDStruct_c0454aff *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)newArgumentBufferLayoutWithStructType:(CDStruct_d008d4b8 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)newRenderPipelineStateWithDescriptor:(CDStruct_c0454aff *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
+- (BOOL)uniqueIdentifier:(CDStruct_1e94be47 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)newComputePipelineStateWithDescriptor:(CDStruct_c0454aff *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)heapMaxAvailableSizeWithAlignment:(CDStruct_d008d4b8 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)computeInfo:(CDStruct_6238c8e0 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)minimumTextureBufferAlignment:(CDStruct_6238c8e0 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)minimumLinearTextureAlignment:(CDStruct_6238c8e0 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
+- (BOOL)bufferGPUAddress:(CDStruct_6238c8e0 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)sizeInfoForHeap:(CDStruct_6238c8e0 *)arg1 serializedDataSize:(unsigned long long)arg2 allocator:(id)arg3;
 - (BOOL)newBufferWithHeap:(CDStruct_e833742d *)arg1 allocator:(id)arg2;
 - (BOOL)newTextureWithHeap:(CDStruct_ab6bd9ea *)arg1 allocator:(id)arg2;

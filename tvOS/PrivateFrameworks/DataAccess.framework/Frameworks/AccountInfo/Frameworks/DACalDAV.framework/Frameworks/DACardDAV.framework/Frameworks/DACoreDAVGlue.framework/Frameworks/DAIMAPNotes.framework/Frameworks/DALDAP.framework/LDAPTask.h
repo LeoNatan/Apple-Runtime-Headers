@@ -20,12 +20,12 @@
     NSDate *_dateConnectionWentOut;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(retain, nonatomic) NSDate *dateConnectionWentOut; // @synthesize dateConnectionWentOut=_dateConnectionWentOut;
 @property(retain, nonatomic) NSObject<OS_ldap_connection> *ldConnection; // @synthesize ldConnection=_ldConnection;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak DATaskManager *taskManager; // @synthesize taskManager=_taskManager;
-- (void).cxx_destruct;
 - (id)daLevelErrorForLDAPError:(int)arg1;
 - (void)initializeConnection;
 - (long long)taskStatusForError:(id)arg1;

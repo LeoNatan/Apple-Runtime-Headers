@@ -22,8 +22,8 @@
 }
 
 + (id)inputModeWithIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSString *normalizedIdentifier; // @synthesize normalizedIdentifier=_normalizedIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *normalizedIdentifier; // @synthesize normalizedIdentifier=_normalizedIdentifier;
 @property(readonly, nonatomic) NSString *sentenceTrailingCharacters;
 @property(readonly, nonatomic) NSString *sentenceDelimitingCharacters;
 @property(readonly, nonatomic) NSString *sentencePrefixingCharacters;

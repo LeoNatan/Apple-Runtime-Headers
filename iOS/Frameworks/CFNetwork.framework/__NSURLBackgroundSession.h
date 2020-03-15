@@ -36,10 +36,10 @@
     int _notifyToken;
 }
 
-@property(copy) NSString *appWakeUUID; // @synthesize appWakeUUID=_appWakeUUID;
-@property(getter=isCompanionAvailable) _Bool companionAvailable; // @synthesize companionAvailable=_companionAvailable;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy) NSString *appWakeUUID; // @synthesize appWakeUUID=_appWakeUUID;
+@property(getter=isCompanionAvailable) _Bool companionAvailable; // @synthesize companionAvailable=_companionAvailable;
 - (void)_onqueue_getTasksWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_onqueue_completeInvalidation:(_Bool)arg1;
 - (void)credStorage_setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;

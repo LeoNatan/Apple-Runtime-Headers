@@ -19,9 +19,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) CKStoreResponse *storeResponse; // @synthesize storeResponse=_storeResponse;
 @property(retain) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

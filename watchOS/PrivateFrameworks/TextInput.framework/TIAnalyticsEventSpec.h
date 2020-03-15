@@ -17,10 +17,10 @@
 
 + (id)eventSpecWithName:(id)arg1 inputModeRequired:(_Bool)arg2 fieldSpecs:(id)arg3;
 + (id)eventSpecWithName:(id)arg1 inputModeRequired:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *fieldSpecs; // @synthesize fieldSpecs=_fieldSpecs;
 @property(readonly, nonatomic) _Bool isInputModeRequired; // @synthesize isInputModeRequired=_isInputModeRequired;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 inputModeRequired:(_Bool)arg2 fieldSpecs:(id)arg3;
 
 @end

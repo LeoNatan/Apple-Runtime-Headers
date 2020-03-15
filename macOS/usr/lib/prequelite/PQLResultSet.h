@@ -26,15 +26,15 @@
     PQLConnection *_db;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PQLConnection *db; // @synthesize db=_db;
 @property(readonly, nonatomic) unsigned long long columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) unsigned long long rowNumber; // @synthesize rowNumber=_rowNumber;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSSet *defaultUnarchivingAllowedClasses; // @synthesize defaultUnarchivingAllowedClasses=_defaultUnarchivingAllowedClasses;
-- (void).cxx_destruct;
-- (struct PQLResultSet *)enumerateObjects:(CDUnknownBlockType)arg1;
-- (struct PQLResultSet *)enumerateObjectsOfClass:(Class)arg1;
-- (struct PQLResultSet *)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
+- (id)enumerateObjects:(CDUnknownBlockType)arg1;
+- (id)enumerateObjectsOfClass:(Class)arg1;
+- (id)enumerateObjectsOfClass:(Class)arg1 initializer:(SEL)arg2;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (id)objectAtIndex:(int)arg1;
 - (id)unarchivedObjectOfClasses:(id)arg1 atIndex:(int)arg2;

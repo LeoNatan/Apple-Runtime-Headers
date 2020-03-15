@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)numberOfMenuItemsForStates:(id)arg1 withWindowItemPolicy:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long menuItemDeduplicationPolicy; // @synthesize menuItemDeduplicationPolicy=_menuItemDeduplicationPolicy;
 @property(nonatomic) long long tabRestoreDestination; // @synthesize tabRestoreDestination=_tabRestoreDestination;
 @property(nonatomic) long long menuItemForTabGroupPolicy; // @synthesize menuItemForTabGroupPolicy=_menuItemForTabGroupPolicy;
 @property(nonatomic) long long menuItemForWindowPolicy; // @synthesize menuItemForWindowPolicy=_menuItemForWindowPolicy;
 @property(nonatomic) long long menuItemForTabPolicy; // @synthesize menuItemForTabPolicy=_menuItemForTabPolicy;
 @property(nonatomic) long long limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (void)_addMenuItemToTopLevelMenu:(id)arg1;
 - (long long)_numberOfTopLevelMenuItemsToBeAddedForTabGroupState:(id)arg1;
 - (long long)_numberOfTopLevelMenuItemsToBeAddedForWindowState:(id)arg1;

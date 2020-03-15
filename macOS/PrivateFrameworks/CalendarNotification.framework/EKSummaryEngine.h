@@ -16,11 +16,11 @@
     NSArray *_tomorrowsEvents;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *tomorrowsEvents; // @synthesize tomorrowsEvents=_tomorrowsEvents;
 @property(retain) NSArray *todaysEvents; // @synthesize todaysEvents=_todaysEvents;
 @property(retain) NSArray *upcomingEvents; // @synthesize upcomingEvents=_upcomingEvents;
 @property(retain) NSArray *birthdayEvents; // @synthesize birthdayEvents=_birthdayEvents;
-- (void).cxx_destruct;
 - (void)_scheduleTimerForEventExpiration:(id)arg1;
 - (void)_scheduleTimerForStartingCountdownToEvent:(id)arg1 interval:(double)arg2;
 - (void)_scheduleTimerForUpdatingCountdownForEvent:(id)arg1;

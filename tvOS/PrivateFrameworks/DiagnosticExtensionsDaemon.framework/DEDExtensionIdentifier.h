@@ -21,9 +21,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)parseDEDIdentifierString:(id)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property long long invocationNumber; // @synthesize invocationNumber=_invocationNumber;
 @property(retain) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

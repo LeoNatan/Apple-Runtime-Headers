@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isZippedBundle) _Bool zippedBundle; // @synthesize zippedBundle=_zippedBundle;
 @property(retain, nonatomic) NSURL *hostedURL; // @synthesize hostedURL=_hostedURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryValue;

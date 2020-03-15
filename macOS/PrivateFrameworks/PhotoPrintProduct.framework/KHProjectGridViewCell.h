@@ -23,13 +23,13 @@
     NSMutableArray *_dragRectsInReverseDrawingOrder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dragRectsInReverseDrawingOrder; // @synthesize dragRectsInReverseDrawingOrder=_dragRectsInReverseDrawingOrder;
 @property(retain, nonatomic) NSMutableDictionary *photoFramesByRectValue; // @synthesize photoFramesByRectValue=_photoFramesByRectValue;
 @property(retain, nonatomic) UXView *draggingSelectionView; // @synthesize draggingSelectionView=_draggingSelectionView;
 @property(retain, nonatomic) UXLabel *pageNumberLabel; // @synthesize pageNumberLabel=_pageNumberLabel;
 @property(retain, nonatomic) KHFrame *destinationFrame; // @synthesize destinationFrame=_destinationFrame;
 @property(retain, nonatomic) KHFrame *sourceFrame; // @synthesize sourceFrame=_sourceFrame;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityChildren;
 - (struct CGRect)accessibilityFrame;

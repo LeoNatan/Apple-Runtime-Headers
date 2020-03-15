@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *trashCount; // @synthesize trashCount=_trashCount;
 @property(retain, nonatomic) NSDictionary *tagCounts; // @synthesize tagCounts=_tagCounts;
 @property(retain, nonatomic) NSDictionary *notebookCounts; // @synthesize notebookCounts=_notebookCounts;
-- (void).cxx_destruct;
 
 @end
 

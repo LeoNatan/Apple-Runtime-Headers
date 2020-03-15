@@ -36,6 +36,7 @@
     struct TVCellMetrics _cellMetrics;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *visibleLabelWidths; // @synthesize visibleLabelWidths=_visibleLabelWidths;
 @property(copy, nonatomic) NSArray *marqueeLabels; // @synthesize marqueeLabels=_marqueeLabels;
 @property(retain, nonatomic) _TVAnimatedLabel *animatedLabel; // @synthesize animatedLabel=_animatedLabel;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(copy, nonatomic) NSArray *components; // @synthesize components=_components;
 @property(nonatomic) struct CGSize maxBoundsSize; // @synthesize maxBoundsSize=_maxBoundsSize;
-- (void).cxx_destruct;
 - (void)_updateFocusSizeIncrease;
 - (void)_updateShadowForLabel:(id)arg1 inFocus:(_Bool)arg2;
 - (double)_labelWidthForWidth:(double)arg1 component:(id)arg2 expansionAmount:(double)arg3;

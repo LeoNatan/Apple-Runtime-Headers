@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *cachedData; // @synthesize cachedData=_cachedData;
 @property(retain, nonatomic) NSURL *remoteURL; // @synthesize remoteURL=_remoteURL;
-- (void).cxx_destruct;
 - (id)symbolicLinkDestinationURL;
 - (id)keyForFileWrapper:(id)arg1;
 - (id)addRegularFileWithContents:(id)arg1 preferredFilename:(id)arg2;

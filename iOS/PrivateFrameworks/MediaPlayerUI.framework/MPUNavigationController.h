@@ -12,9 +12,9 @@
     CDUnknownBlockType _overrideSupportedInterfaceOrientationsHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsStandardInterfaceOrientations; // @synthesize supportsStandardInterfaceOrientations=_supportsStandardInterfaceOrientations;
 @property(copy, nonatomic) CDUnknownBlockType overrideSupportedInterfaceOrientationsHandler; // @synthesize overrideSupportedInterfaceOrientationsHandler=_overrideSupportedInterfaceOrientationsHandler;
-- (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
 
 @end

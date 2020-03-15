@@ -23,12 +23,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBLocation *restaurantLocation; // @synthesize restaurantLocation=_restaurantLocation;
 @property(retain, nonatomic) _INPBDateTimeRange *reservationDuration; // @synthesize reservationDuration=_reservationDuration;
 @property(retain, nonatomic) _INPBReservation *reservation; // @synthesize reservation=_reservation;
 @property(retain, nonatomic) _INPBInteger *partySize; // @synthesize partySize=_partySize;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

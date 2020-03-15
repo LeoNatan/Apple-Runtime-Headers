@@ -14,9 +14,9 @@
     CLSNowPlayingStreamEventClusteringParameters *_clusteringParameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLSNowPlayingStreamEventClusteringParameters *clusteringParameters; // @synthesize clusteringParameters=_clusteringParameters;
 @property(readonly, nonatomic) NSArray *sessions; // @synthesize sessions=_sessions;
-- (void).cxx_destruct;
 - (id)_populateSessionsWithClusters:(id)arg1;
 - (id)_dbScanClusterEvents:(id)arg1;
 - (void)dbScanClusterEvents:(id)arg1;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSURL *_itemURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *itemURL; // @synthesize itemURL=_itemURL;
 @property(retain, nonatomic) id exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) NSXPCInterface *interface; // @synthesize interface=_interface;
 @property(retain, nonatomic) FIFinderSync *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)connection:(id)arg1 allowedToAccessURL:(id)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

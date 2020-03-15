@@ -30,6 +30,8 @@
 - (void)_appendDataToCache:(id)arg1;
 - (void)_setupForCache:(BOOL)arg1 expectedLength:(long long)arg2 response:(id)arg3;
 - (void)setIsDownload:(BOOL)arg1;
+- (void)setTLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (void)setTLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
 - (void)expectedProgressTargetChanged;
 - (void)setBytesPerSecondLimit:(long long)arg1;
 - (void)setPriorityHint:(float)arg1;

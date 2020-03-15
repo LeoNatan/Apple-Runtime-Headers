@@ -49,6 +49,7 @@
 
 + (id)padSpec;
 + (id)phoneSpec;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUFeedViewControllerSpec *feedViewControllerSpec; // @synthesize feedViewControllerSpec=_feedViewControllerSpec;
 @property(readonly, nonatomic) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec; // @synthesize photosPickerViewControllerSpec=_photosPickerViewControllerSpec;
 @property(readonly, nonatomic) PUPhotosPanoramaViewControllerSpec *panoramaViewControllerSpec; // @synthesize panoramaViewControllerSpec=_panoramaViewControllerSpec;
@@ -78,7 +79,6 @@
 @property(readonly, nonatomic) unsigned long long stackViewStyle; // @synthesize stackViewStyle=_stackViewStyle;
 @property(readonly) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly) _Bool shouldUseTableView; // @synthesize shouldUseTableView=_shouldUseTableView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldShowSectionHeaders;
 - (void)configureGridLayout:(id)arg1 forLayoutReferenceSize:(struct CGSize)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;
 @property(readonly, nonatomic) PUAlbumListViewControllerSpec *standInAlbumListViewControllerSpec;

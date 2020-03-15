@@ -14,9 +14,9 @@
     NSDatePicker *__calendarDatePicker;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDatePicker *_calendarDatePicker; // @synthesize _calendarDatePicker=__calendarDatePicker;
 @property(retain) IIDatePicker *_textDatePicker; // @synthesize _textDatePicker=__textDatePicker;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)sizeToFitAndArrange;
 - (void)setCalendarDatePicker:(id)arg1;

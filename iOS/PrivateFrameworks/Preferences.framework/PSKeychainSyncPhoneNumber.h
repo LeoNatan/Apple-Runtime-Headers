@@ -15,9 +15,9 @@
 }
 
 + (id)phoneNumberWithDigits:(id)arg1 countryInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) KeychainSyncCountryInfo *countryInfo; // @synthesize countryInfo=_countryInfo;
 @property(retain, nonatomic) NSString *digits; // @synthesize digits=_digits;
-- (void).cxx_destruct;
 - (id)formattedAndObfuscatedString;
 - (id)formattedStringWithDialingPrefix;
 - (id)formattedString;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIFocusUpdateContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFocusUpdateContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) __weak UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldLog;
 - (id)initWithFocusSystem:(id)arg1;
 - (id)init;

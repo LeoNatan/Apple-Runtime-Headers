@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _gestureRecognizerInitialLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=hasAppliedSystemRecognizer) _Bool appliedSystemRecognizer; // @synthesize appliedSystemRecognizer=_appliedSystemRecognizer;
 @property(nonatomic) struct CGPoint gestureRecognizerInitialLocation; // @synthesize gestureRecognizerInitialLocation=_gestureRecognizerInitialLocation;
 @property(retain, nonatomic) UIInterfaceActionGroupView *scrollableActionGroupView; // @synthesize scrollableActionGroupView=_scrollableActionGroupView;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SKUIContextActionsPresentationController *transitionPresentationController; // @synthesize transitionPresentationController=_transitionPresentationController;
 @property(retain, nonatomic) UIGestureRecognizer *systemProvidedGestureRecognzier; // @synthesize systemProvidedGestureRecognzier=_systemProvidedGestureRecognzier;
 @property(nonatomic, getter=isOrbPresentation) _Bool orbPresentation; // @synthesize orbPresentation=_orbPresentation;
-- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;

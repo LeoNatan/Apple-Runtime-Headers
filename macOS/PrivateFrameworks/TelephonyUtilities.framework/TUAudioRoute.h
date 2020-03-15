@@ -14,9 +14,9 @@
     NSDictionary *_route;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *route; // @synthesize route=_route;
 @property(readonly, copy, nonatomic) NSString *avAudioRouteName; // @synthesize avAudioRouteName=_avAudioRouteName;
-- (void).cxx_destruct;
 - (id)identifiersOfOtherConnectedDevices;
 - (BOOL)_routeTypeEqualTo:(id)arg1;
 @property(readonly, nonatomic, getter=isHeadphoneJackConnected) BOOL headphoneJackConnected;

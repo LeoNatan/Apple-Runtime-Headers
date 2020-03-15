@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSScreen *iPadScreen;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSScreen *iPadScreen; // @synthesize iPadScreen;
 @property(retain) id screenNotificationToken; // @synthesize screenNotificationToken;
 @property __weak NSWindow *window; // @synthesize window;
 @property(retain) NSArray *targetIPads; // @synthesize targetIPads;
 @property(retain) NSMutableArray *targetScreens; // @synthesize targetScreens;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_toggleIPad:(id)arg1;
 - (void)moveToIPad:(id)arg1;

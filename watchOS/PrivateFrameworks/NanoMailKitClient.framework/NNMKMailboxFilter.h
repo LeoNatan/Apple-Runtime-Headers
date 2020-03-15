@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned int mailboxType; // @synthesize mailboxType=_mailboxType;
 @property(retain, nonatomic) NSArray *mailboxIds; // @synthesize mailboxIds=_mailboxIds;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)containsSameMailboxesAs:(id)arg1;
 - (id)description;

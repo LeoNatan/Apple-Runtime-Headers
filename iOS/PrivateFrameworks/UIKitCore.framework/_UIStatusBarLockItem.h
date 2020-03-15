@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)textDisplayIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) long long unlockFailureCount; // @synthesize unlockFailureCount=_unlockFailureCount;
 @property(nonatomic) _Bool showsLock; // @synthesize showsLock=_showsLock;
 @property(retain, nonatomic) NSTimer *lockDisappearanceTimer; // @synthesize lockDisappearanceTimer=_lockDisappearanceTimer;
 @property(retain, nonatomic) _UIExpandingGlyphsView *stringView; // @synthesize stringView=_stringView;
 @property(retain, nonatomic) _UIStatusBarLockView *lockView; // @synthesize lockView=_lockView;
-- (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_stringView;
 - (void)_create_lockView;

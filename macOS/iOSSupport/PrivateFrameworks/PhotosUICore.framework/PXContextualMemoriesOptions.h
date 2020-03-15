@@ -14,9 +14,9 @@
     NSDate *_peopleProximityDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *peopleProximityDate; // @synthesize peopleProximityDate=_peopleProximityDate;
 @property(nonatomic) double accuracy; // @synthesize accuracy=_accuracy;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

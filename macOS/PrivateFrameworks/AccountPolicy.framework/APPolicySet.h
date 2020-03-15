@@ -21,10 +21,10 @@
 + (id)policySetWithAuthenticationPolicies:(id)arg1 passwordChangePolicies:(id)arg2 passwordContentPolicies:(id)arg3;
 + (id)policySet;
 + (id)categoryAndIdentifierForLegacyPolicyName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *passwordContent; // @synthesize passwordContent=_passwordContent;
 @property(retain) NSMutableSet *passwordChange; // @synthesize passwordChange=_passwordChange;
 @property(retain) NSMutableSet *authentication; // @synthesize authentication=_authentication;
-- (void).cxx_destruct;
 - (void)_removePolicies:(id)arg1 fromPolicies:(id)arg2;
 - (id)_newPoliciesByUnioningPolicies:(id)arg1 withPolicies:(id)arg2;
 - (_Bool)_attribute:(id)arg1 usedInParameters:(id)arg2 orInFormatString:(id)arg3;

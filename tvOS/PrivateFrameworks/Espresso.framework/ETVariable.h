@@ -19,6 +19,7 @@
     ETModelDef *_model;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak ETModelDef *model; // @synthesize model=_model;
 @property float initializationBeta; // @synthesize initializationBeta=_initializationBeta;
 @property float initializationAlpha; // @synthesize initializationAlpha=_initializationAlpha;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *layerName; // @synthesize layerName=_layerName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)swapWithOpaqueCopy:(id)arg1;
 - (id)getOpaqueCopy;
 - (id)copyData;

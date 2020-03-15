@@ -14,9 +14,9 @@
     FMMixParameters *_mixParameters;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMMixParameters *mixParameters; // @synthesize mixParameters=_mixParameters;
 @property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithClips:(id)arg1 mixParameters:(id)arg2;
 

@@ -32,8 +32,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)iconSize;
-@property(retain, nonatomic) UIView *privacyView; // @synthesize privacyView=_privacyView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *privacyView; // @synthesize privacyView=_privacyView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_imageViewForIndex:(unsigned long long)arg1;
 - (id)_buildLogoStack;

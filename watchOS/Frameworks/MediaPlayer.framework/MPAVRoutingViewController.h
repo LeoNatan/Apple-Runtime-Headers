@@ -56,6 +56,7 @@
     MPVolumeGroupSliderCoordinator *_groupSliderCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sortByIsVideoRoute; // @synthesize sortByIsVideoRoute=_sortByIsVideoRoute;
 @property(retain, nonatomic) MPVolumeGroupSliderCoordinator *groupSliderCoordinator; // @synthesize groupSliderCoordinator=_groupSliderCoordinator;
 @property(retain, nonatomic) NSMapTable *outputDeviceVolumeSliders; // @synthesize outputDeviceVolumeSliders=_outputDeviceVolumeSliders;
@@ -67,7 +68,6 @@
 @property(nonatomic, setter=setAVItemType:) int avItemType; // @synthesize avItemType=_avItemType;
 @property(nonatomic) __weak id <MPAVRoutingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (id)_createSectionedCollection:(id)arg1 withPickedRoutes:(id)arg2;
 - (void)_endUpdates;

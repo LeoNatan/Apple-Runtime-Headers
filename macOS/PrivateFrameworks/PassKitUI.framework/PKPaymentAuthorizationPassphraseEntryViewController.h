@@ -21,13 +21,13 @@
     NSArray *_passphraseFields;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *passphraseFields; // @synthesize passphraseFields=_passphraseFields;
 @property(retain, nonatomic) NSTextField *promptField; // @synthesize promptField=_promptField;
 @property(retain, nonatomic) NSImageView *paymentLogoImageView; // @synthesize paymentLogoImageView=_paymentLogoImageView;
 @property(nonatomic) __weak id <PKPaymentAuthorizationPassphraseEntryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
 @property(nonatomic) unsigned long long passphraseLength; // @synthesize passphraseLength=_passphraseLength;
-- (void).cxx_destruct;
 - (void)_replaceSubviews;
 - (id)_gatherPassphrase;
 - (void)_clearPassphraseFields;

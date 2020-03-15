@@ -25,9 +25,9 @@
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)performBlockOnDataProviders:(CDUnknownBlockType)arg1;
 - (void)removeDataProvider:(id)arg1;
 - (id)dataProviderForUniversalSectionID:(id)arg1;

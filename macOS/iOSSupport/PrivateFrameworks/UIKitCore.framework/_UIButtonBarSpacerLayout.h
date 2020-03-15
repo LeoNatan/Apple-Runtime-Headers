@@ -22,15 +22,15 @@ __attribute__((visibility("hidden")))
 
 + (long long)typeOfSpacerBetweenLayout:(id)arg1 andLayout:(id)arg2;
 + (id)spacerForLayoutMetrics:(id)arg1 betweenLayout:(id)arg2 andLayout:(id)arg3;
-@property(readonly, nonatomic) long long spacerType; // @synthesize spacerType=_spacerType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long spacerType; // @synthesize spacerType=_spacerType;
 - (id)description;
 - (void)_addConstraintsToActivate:(id)arg1 toDeactivate:(id)arg2;
 - (_Bool)suppressSpacing;
 - (void)_addLayoutViews:(id)arg1;
 - (void)_configure;
-- (id)_item;
-- (_Bool)_isSpace;
+- (id)barButtonItem;
+- (_Bool)isSpaceLayout;
 - (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (id)initWithLayoutMetrics:(id)arg1 barButtonItem:(id)arg2;
 - (id)initWithLayoutMetrics:(id)arg1;

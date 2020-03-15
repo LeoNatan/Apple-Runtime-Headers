@@ -13,8 +13,8 @@
     NSString *_pluginType;
 }
 
-@property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
 - (void).cxx_destruct;
+@property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
 
 @end
 

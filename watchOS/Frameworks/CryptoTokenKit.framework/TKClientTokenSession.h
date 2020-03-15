@@ -21,6 +21,7 @@
     NSNumber *_sessionID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) _Bool _testing_AuthenticateInternally; // @synthesize _testing_AuthenticateInternally=__testing_AuthenticateInternally;
 @property(readonly, nonatomic) NSString *slotName; // @synthesize slotName=_slotName;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) TKClientToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) LAContext *LAContext; // @synthesize LAContext=_LAContext;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *identities;
 @property(readonly, nonatomic) NSArray *certificates;
 @property(readonly, nonatomic) NSArray *keys;

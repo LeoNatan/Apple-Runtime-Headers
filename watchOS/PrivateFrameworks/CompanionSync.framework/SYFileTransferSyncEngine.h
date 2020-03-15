@@ -44,8 +44,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_customIDSOptions;
 }
 
-@property(copy, nonatomic) NSDictionary *customIDSOptions; // @synthesize customIDSOptions=_customIDSOptions;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *customIDSOptions; // @synthesize customIDSOptions=_customIDSOptions;
 - (unsigned long)_crcChecksum:(id)arg1;
 - (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;

@@ -22,10 +22,10 @@
 + (id)namesFromDisplayNameInfos:(id)arg1;
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactFormatter *shortNameFormatter; // @synthesize shortNameFormatter=_shortNameFormatter;
 @property(readonly, nonatomic) CNContactFormatter *fullNameFormatter; // @synthesize fullNameFormatter=_fullNameFormatter;
 @property(readonly, nonatomic) NSNotificationCenter *displayNameNotificationCenter; // @synthesize displayNameNotificationCenter=_displayNameNotificationCenter;
-- (void).cxx_destruct;
 - (void)resetCachedDisplayNamesFromContacts;
 - (void)_nameContactsChanged:(id)arg1;
 - (void)removeDisplayNameObserver:(id)arg1;

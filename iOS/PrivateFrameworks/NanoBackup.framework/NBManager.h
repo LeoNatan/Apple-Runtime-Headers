@@ -17,10 +17,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalQueue; // @synthesize externalQueue=_externalQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-- (void).cxx_destruct;
 - (id)deleteBackup:(id)arg1;
 - (void)deleteBackup:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)createBackupForPairingID:(id)arg1 synchronousCompletionHandler:(CDUnknownBlockType)arg2;

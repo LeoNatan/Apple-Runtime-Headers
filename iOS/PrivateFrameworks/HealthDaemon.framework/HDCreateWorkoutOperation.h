@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKWorkout *createdWorkout; // @synthesize createdWorkout=_createdWorkout;
 @property(readonly, copy, nonatomic) NSArray *quantityTypesIncludedWhilePaused; // @synthesize quantityTypesIncludedWhilePaused=_quantityTypesIncludedWhilePaused;
 @property(readonly, copy, nonatomic) HKQuantity *goal; // @synthesize goal=_goal;
@@ -41,7 +42,6 @@
 @property(readonly, copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)performWithProfile:(id)arg1 transaction:(id)arg2 error:(id *)arg3;

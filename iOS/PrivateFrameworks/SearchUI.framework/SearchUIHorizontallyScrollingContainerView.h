@@ -25,6 +25,7 @@
     double _defaultArrangedSubviewWidth;
 }
 
+- (void).cxx_destruct;
 @property double defaultArrangedSubviewWidth; // @synthesize defaultArrangedSubviewWidth=_defaultArrangedSubviewWidth;
 @property(retain, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(retain, nonatomic) NSMapTable *buttonControllersForViews; // @synthesize buttonControllersForViews=_buttonControllersForViews;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NUIContainerStackView *stackViewToScroll; // @synthesize stackViewToScroll=_stackViewToScroll;
 @property(copy, nonatomic) NSArray *scrollableCardSectionRowModels; // @synthesize scrollableCardSectionRowModels=_scrollableCardSectionRowModels;
 @property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
-- (void).cxx_destruct;
 - (void)modalViewControllerClosed;
 - (void)scrollingButtonPressed:(id)arg1;
 - (void)sendVisibleFeedback;

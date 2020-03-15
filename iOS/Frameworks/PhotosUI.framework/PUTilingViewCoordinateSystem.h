@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     PUTilingView *_tilingView;
 }
 
-@property(readonly, nonatomic) __weak PUTilingView *tilingView; // @synthesize tilingView=_tilingView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PUTilingView *tilingView; // @synthesize tilingView=_tilingView;
 @property(readonly, nonatomic) struct CGPoint coordinateSystemOrigin;
 @property(readonly, nonatomic) __weak id <PUTilingCoordinateSystem> parentCoordinateSystem;
 - (id)initWithTilingView:(id)arg1;

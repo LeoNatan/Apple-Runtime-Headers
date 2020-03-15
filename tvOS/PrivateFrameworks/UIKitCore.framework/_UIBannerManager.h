@@ -17,10 +17,10 @@
     _UIBannerContainerView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBannerContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) _UIBannerWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
-- (void).cxx_destruct;
 - (id)bannerWithContent:(id)arg1;
 - (void)_createWindowIfNeeded;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene;

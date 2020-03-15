@@ -31,8 +31,8 @@
 + (_Bool)isAddressContext:(id)arg1;
 + (_Bool)isTwoPersonConversation:(id)arg1;
 + (id)dissectorWithMockedMLTrainingForTests;
-@property(nonatomic) unsigned long long selfIdentificationMessageCount; // @synthesize selfIdentificationMessageCount=_selfIdentificationMessageCount;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long selfIdentificationMessageCount; // @synthesize selfIdentificationMessageCount=_selfIdentificationMessageCount;
 - (id)detailTypeFromPrefix:(id)arg1;
 - (id)detailTypeFromPrefix:(id)arg1 detectedLabelPointer:(struct _NSRange *)arg2;
 - (id)getLineContaining:(struct _NSRange)arg1 inText:(id)arg2;

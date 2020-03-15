@@ -21,8 +21,8 @@
     NSObject<OS_dispatch_queue> *_replyQueue;
 }
 
-@property(copy, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
 - (void)simulatePushForTopic:(id)arg1;
 - (void)connect;
 @property(readonly, nonatomic) NSArray *currentConsumers;

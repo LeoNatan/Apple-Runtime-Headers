@@ -13,10 +13,10 @@
     CDUnknownBlockType _discoveryHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType discoveryHandler; // @synthesize discoveryHandler=_discoveryHandler;
 @property(nonatomic) unsigned int discoveryIdentifier; // @synthesize discoveryIdentifier=_discoveryIdentifier;
 @property(readonly, nonatomic) int serviceType; // @synthesize serviceType=_serviceType;
-- (void).cxx_destruct;
 - (id)initForAllTypes;
 - (id)initWithType:(int)arg1;
 

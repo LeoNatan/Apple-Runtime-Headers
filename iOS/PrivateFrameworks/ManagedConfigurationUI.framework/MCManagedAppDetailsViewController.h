@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     LSApplicationProxy *_managedAppProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) LSApplicationProxy *managedAppProxy; // @synthesize managedAppProxy=_managedAppProxy;
 @property(retain, nonatomic) MCUIProfile *UIProfile; // @synthesize UIProfile=_UIProfile;
-- (void).cxx_destruct;
 - (void)_profileChanged:(id)arg1;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

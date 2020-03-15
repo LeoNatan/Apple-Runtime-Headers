@@ -15,14 +15,14 @@
 {
     MPSCommandBuffer *_owningMPSCommandBuffer;
     id <MTLComputeCommandEncoder> _originalCommandEncoder;
-    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}, name: _mpsDevice
+    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>={__cxx_atomic_impl<MTLLibraryNode *, std::__1::__cxx_atomic_base_impl<MTLLibraryNode *> >=A^{MTLLibraryNode}}}[2[2[2{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Ii{MPSGPUInfo=b8b8b8b16b4b20}[107{atomic<MPSLibrary *>={__cxx_atomic_impl<MPSLibrary *, std::__1::__cxx_atomic_base_impl<MPSLibrary *> >=A^{MPSLibrary}}}]}, name: _mpsDevice
     id <MTLComputePipelineState> _userBoundPipelineState;
     struct UserBufferBindingData_s _userBinding1;
     struct UserBufferBindingData_s _userBinding2;
     struct UserBufferBindingData_s _userBinding3;
 }
 
-+     // Error parsing type: @40@0:8@16@24^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}32, name: predicatedEncoderWithMPSCommandBuffer:commandEncoder:mpsDevice:
++     // Error parsing type: @40@0:8@16@24^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>={__cxx_atomic_impl<MTLLibraryNode *, std::__1::__cxx_atomic_base_impl<MTLLibraryNode *> >=A^{MTLLibraryNode}}}[2[2[2{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Ii{MPSGPUInfo=b8b8b8b16b4b20}[107{atomic<MPSLibrary *>={__cxx_atomic_impl<MPSLibrary *, std::__1::__cxx_atomic_base_impl<MPSLibrary *> >=A^{MPSLibrary}}}]}32, name: predicatedEncoderWithMPSCommandBuffer:commandEncoder:mpsDevice:
 @property(readonly, nonatomic) id <MTLComputeCommandEncoder> computeCommandEncoder; // @synthesize computeCommandEncoder=_originalCommandEncoder;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
@@ -34,7 +34,7 @@
 - (void)dispatchThreadgroups:(CDStruct_14f26992)arg1 threadsPerThreadgroup:(CDStruct_14f26992)arg2;
 - (void)dispatchThreads:(CDStruct_14f26992)arg1 threadsPerThreadgroup:(CDStruct_14f26992)arg2;
 - (void)dealloc;
--     // Error parsing type: @40@0:8@16@24^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}32, name: initWithMPSCommandBuffer:commandEncoder:mpsDevice:
+-     // Error parsing type: @40@0:8@16@24^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>={__cxx_atomic_impl<MTLLibraryNode *, std::__1::__cxx_atomic_base_impl<MTLLibraryNode *> >=A^{MTLLibraryNode}}}[2[2[2{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>={__cxx_atomic_impl<void *, std::__1::__cxx_atomic_base_impl<void *> >=A^v}}Ii{MPSGPUInfo=b8b8b8b16b4b20}[107{atomic<MPSLibrary *>={__cxx_atomic_impl<MPSLibrary *, std::__1::__cxx_atomic_base_impl<MPSLibrary *> >=A^{MPSLibrary}}}]}32, name: initWithMPSCommandBuffer:commandEncoder:mpsDevice:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

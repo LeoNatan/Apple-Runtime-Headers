@@ -28,8 +28,8 @@
 }
 
 + (void)_setFrame:(struct CGRect)arg1 onTransformedView:(id)arg2;
-@property(nonatomic) int sectionIndexMinimumDisplayCount; // @synthesize sectionIndexMinimumDisplayCount=_sectionIndexMinimumDisplayCount;
 - (void).cxx_destruct;
+@property(nonatomic) int sectionIndexMinimumDisplayCount; // @synthesize sectionIndexMinimumDisplayCount=_sectionIndexMinimumDisplayCount;
 - (id)_crownVelocityTrackingSequencer;
 - (id)_sectionIndexOverlaySequencer;
 - (int)_sectionIndexForSectionItemAtIndex:(int)arg1;

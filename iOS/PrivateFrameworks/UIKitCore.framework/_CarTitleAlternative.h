@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)alternativeWithTitle:(id)arg1 label:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double width; // @synthesize width=_width;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateWithLabel:(id)arg1;
 

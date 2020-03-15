@@ -28,13 +28,13 @@ __attribute__((visibility("hidden")))
 
 + (void)_setButtonString:(id)arg1 forActionItem:(id)arg2 isLeftItem:(BOOL)arg3;
 + (id)_font:(BOOL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKPlaceCardActionSectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSButton *leftButton; // @synthesize leftButton=_leftButton;
 @property(retain, nonatomic) NSButton *rightButton; // @synthesize rightButton=_rightButton;
 @property(nonatomic) BOOL singleItemIsFullWidth; // @synthesize singleItemIsFullWidth=_singleItemIsFullWidth;
 @property(retain, nonatomic) MKPlaceCardActionItem *rightItem; // @synthesize rightItem=_rightItem;
 @property(retain, nonatomic) MKPlaceCardActionItem *leftItem; // @synthesize leftItem=_leftItem;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (void)_rightButtonIsPressed:(id)arg1;

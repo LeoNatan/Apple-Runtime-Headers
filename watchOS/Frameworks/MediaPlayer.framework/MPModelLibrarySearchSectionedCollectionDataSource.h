@@ -16,9 +16,9 @@
     MPModelRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelRequest *request; // @synthesize request=_request;
 @property(readonly, copy, nonatomic) NSArray *resultContainers; // @synthesize resultContainers=_resultContainers;
-- (void).cxx_destruct;
 - (id)identifiersForItemAtIndexPath:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (unsigned int)numberOfItemsInSection:(unsigned int)arg1;

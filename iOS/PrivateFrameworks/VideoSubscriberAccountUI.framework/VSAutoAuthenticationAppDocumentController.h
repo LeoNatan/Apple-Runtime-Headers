@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     IKViewElement *_buttonLockupElement;
 }
 
-@property(retain, nonatomic) IKViewElement *buttonLockupElement; // @synthesize buttonLockupElement=_buttonLockupElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKViewElement *buttonLockupElement; // @synthesize buttonLockupElement=_buttonLockupElement;
 - (_Bool)_updateAutoAuthenticationViewModel:(id)arg1 withTemplate:(id)arg2;
 - (_Bool)_updateAutoAuthenticationViewModel:(id)arg1 error:(id *)arg2;
 - (id)_autoAuthenticationViewModelWithViewModel:(id)arg1;

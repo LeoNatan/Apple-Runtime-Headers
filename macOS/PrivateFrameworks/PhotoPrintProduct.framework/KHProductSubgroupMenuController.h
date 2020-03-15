@@ -16,8 +16,8 @@
     CDUnknownBlockType _selectionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 - (void)setCheckedIdentifier:(id)arg1;
 - (void)setDisabledIdentifiers:(id)arg1;
 - (id)menuItemForProductSubgroup:(id)arg1;

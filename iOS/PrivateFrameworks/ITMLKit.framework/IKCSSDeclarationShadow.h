@@ -13,8 +13,8 @@
     NSShadow *_value;
 }
 
-@property(retain, nonatomic) NSShadow *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSShadow *value; // @synthesize value=_value;
 - (id)description;
 - (id)stringValue;
 - (id)initWithParseDeclaration:(id)arg1 info:(id)arg2;

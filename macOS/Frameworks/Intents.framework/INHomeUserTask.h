@@ -21,10 +21,10 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) INHomeAttributeValue *value; // @synthesize value=_value;
 @property(readonly) long long attribute; // @synthesize attribute=_attribute;
 @property(readonly) long long taskType; // @synthesize taskType=_taskType;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

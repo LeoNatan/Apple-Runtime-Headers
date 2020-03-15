@@ -21,6 +21,7 @@
     NSDictionary *_adStatusConditionsByType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *adStatusConditionsByType; // @synthesize adStatusConditionsByType=_adStatusConditionsByType;
 @property(readonly, nonatomic) NSArray *iAdSegmentIDs; // @synthesize iAdSegmentIDs=_iAdSegmentIDs;
 @property(readonly, nonatomic) long long segmentsMinimumArticleCount; // @synthesize segmentsMinimumArticleCount=_segmentsMinimumArticleCount;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) long long segmentsSubmissionFrequency; // @synthesize segmentsSubmissionFrequency=_segmentsSubmissionFrequency;
 @property(readonly, nonatomic) double segmentsThreshold; // @synthesize segmentsThreshold=_segmentsThreshold;
 @property(readonly, nonatomic, getter=areSegmentsEnabled) _Bool segmentsEnabled; // @synthesize segmentsEnabled=_segmentsEnabled;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithConfigDictionary:(id)arg1;

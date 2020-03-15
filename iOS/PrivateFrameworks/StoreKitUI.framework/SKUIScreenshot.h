@@ -20,9 +20,9 @@
     NSString *_urlTemplate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) NSString *orientationString; // @synthesize orientationString=_orientation;
-- (void).cxx_destruct;
 - (id)_firstVariant;
 - (void)_addURLsFromDictionary:(id)arg1 withRemoteLocalKeysMap:(id)arg2;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;

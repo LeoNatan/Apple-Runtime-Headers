@@ -15,10 +15,10 @@
     CKAcknowledgmentGlyphView *_glyphView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAcknowledgmentGlyphView *glyphView; // @synthesize glyphView=_glyphView;
 @property(nonatomic) long long coloredPart; // @synthesize coloredPart=_coloredPart;
 @property(nonatomic) unsigned long long stackCount; // @synthesize stackCount=_stackCount;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)configureForAggregateAcknowledgmentChatItem:(id)arg1;
 

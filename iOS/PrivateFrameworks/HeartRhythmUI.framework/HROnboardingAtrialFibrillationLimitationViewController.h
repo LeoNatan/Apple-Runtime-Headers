@@ -30,6 +30,7 @@
 
 + (id)_createNumberedViewWithInteger:(unsigned long long)arg1;
 + (id)_createBackgroundView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) HRStackedButtonView *stackedButtonView; // @synthesize stackedButtonView=_stackedButtonView;
 @property(retain, nonatomic) HRListItemLabel *listItemLabel4; // @synthesize listItemLabel4=_listItemLabel4;
@@ -44,7 +45,6 @@
 @property(nonatomic) double initialContentOffset; // @synthesize initialContentOffset=_initialContentOffset;
 @property(nonatomic) _Bool stateAnimating; // @synthesize stateAnimating=_stateAnimating;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_scrollBackgroundViewToVisible:(id)arg1;
 - (void)_updateContentViewBottomConstraintWithAnchor:(id)arg1 constant:(double)arg2;
 - (id)_bottomViewForState:(long long)arg1;

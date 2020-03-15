@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     PSListController *_hostController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
 @property(retain, nonatomic) CoreTelephonyClient *ctClient; // @synthesize ctClient=_ctClient;
 @property(retain, nonatomic) CTServiceDescriptor *serviceDescriptor; // @synthesize serviceDescriptor=_serviceDescriptor;
-- (void).cxx_destruct;
 - (void)setLowDataMode:(id)arg1 specifier:(id)arg2;
 - (id)isLowDataModeEnabled:(id)arg1;
 - (id)initWithFactory:(id)arg1 hostController:(id)arg2 parentSpecifier:(id)arg3;

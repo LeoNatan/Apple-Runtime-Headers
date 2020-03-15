@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *plans; // @synthesize plans=_plans;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *plans; // @synthesize plans=_plans;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

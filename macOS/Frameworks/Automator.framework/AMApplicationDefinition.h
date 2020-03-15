@@ -25,6 +25,7 @@
     BOOL _didLoadDefinedActions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *definedActions; // @synthesize definedActions=_definedActions;
 @property(retain, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 @property(retain) NSDictionary *registryTypes; // @synthesize registryTypes=_registryTypes;
@@ -35,7 +36,6 @@
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain) NSMutableArray *elements; // @synthesize elements=_elements;
 @property(retain) NSArray *variables; // @synthesize variables=_variables;
-- (void).cxx_destruct;
 - (id)filterLibraryActions:(id)arg1;
 @property(readonly, nonatomic) BOOL isDeprecated;
 - (id)dictionaryForElementName:(id)arg1 key:(id)arg2;

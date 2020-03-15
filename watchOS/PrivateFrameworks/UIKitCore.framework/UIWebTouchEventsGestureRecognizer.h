@@ -27,10 +27,10 @@
 
 + (_Bool)_shouldDefaultToTouches;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *activeTouchesByIdentifier; // @synthesize activeTouchesByIdentifier=_activeTouchesByIdentifier;
 @property(readonly, nonatomic, getter=isDispatchingTouchEvents) _Bool dispatchingTouchEvents; // @synthesize dispatchingTouchEvents=_dispatchingTouchEvents;
 @property(nonatomic, getter=isDefaultPrevented) _Bool defaultPrevented; // @synthesize defaultPrevented=_defaultPrevented;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float rotation;
 @property(readonly, nonatomic) float scale;
 @property(readonly, nonatomic) _Bool inJavaScriptGesture;

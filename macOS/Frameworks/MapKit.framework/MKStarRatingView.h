@@ -28,6 +28,7 @@
 + (id)ratingAsAttributedString:(double)arg1 baseFont:(id)arg2 style:(long long)arg3 theme:(id)arg4;
 + (id)ratingShortAsAttributedString:(double)arg1 baseFont:(id)arg2 theme:(id)arg3;
 + (id)colorForRating:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *emptyStarHighlightedImage; // @synthesize emptyStarHighlightedImage=_emptyStarHighlightedImage;
 @property(retain, nonatomic) NSImage *halfStarHighlightedImage; // @synthesize halfStarHighlightedImage=_halfStarHighlightedImage;
 @property(retain, nonatomic) NSImage *fullStarHighlightedImage; // @synthesize fullStarHighlightedImage=_fullStarHighlightedImage;
@@ -38,7 +39,6 @@
 @property(nonatomic) double rating; // @synthesize rating=_rating;
 @property(nonatomic) unsigned long long numberOfRatingLevels; // @synthesize numberOfRatingLevels=_numLevels;
 @property(nonatomic) long long starStyle; // @synthesize starStyle=_starStyle;
-- (void).cxx_destruct;
 - (void)setPadding:(double)arg1;
 - (void)viewDidChangeBackingProperties;
 - (void)layout;

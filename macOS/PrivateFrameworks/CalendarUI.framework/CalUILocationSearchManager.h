@@ -16,10 +16,10 @@
     NSMutableSet *_pendingRequests;
 }
 
+- (void).cxx_destruct;
 @property BOOL resultsDisplayed; // @synthesize resultsDisplayed=_resultsDisplayed;
 @property(retain) NSMutableSet *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
 @property __weak id <CalUILocationSearchManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)shouldRequestKeyDisplayResultsWhenCompleted:(id)arg1;
 - (void)stopProgressIndicator;
 - (void)startProgressIndicatorWithFailSafe;

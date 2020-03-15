@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) NSTextField *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSImageView *insecureIcon; // @synthesize insecureIcon=_insecureIcon;
 @property(retain, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (void)setupConstraints;
 - (void)setupSubviews;

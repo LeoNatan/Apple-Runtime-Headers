@@ -16,11 +16,11 @@
     struct CGPoint _endPoint;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *locations; // @synthesize locations=_locations;
 @property(readonly, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(readonly, nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(readonly, nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
-- (void).cxx_destruct;
 - (id)initWithStartPoint:(struct CGPoint)arg1 endPoint:(struct CGPoint)arg2 colors:(id)arg3 locations:(id)arg4;
 
 @end

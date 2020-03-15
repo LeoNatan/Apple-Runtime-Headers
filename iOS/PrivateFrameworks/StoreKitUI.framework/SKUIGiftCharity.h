@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) SKUIArtwork *logoArtwork; // @synthesize logoArtwork=_logoArtwork;
 @property(readonly, nonatomic) NSString *legalText2; // @synthesize legalText2=_legalText2;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *donationAmounts; // @synthesize donationAmounts=_amounts;
 @property(readonly, nonatomic) NSString *charityDescription; // @synthesize charityDescription=_description;
 @property(readonly, nonatomic) NSString *amountDisclaimer; // @synthesize amountDisclaimer=_amountDisclaimer;
-- (void).cxx_destruct;
 - (id)initWithCharityDictionary:(id)arg1;
 
 @end

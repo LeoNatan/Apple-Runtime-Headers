@@ -14,9 +14,9 @@
     NSDictionary *_payload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(readonly, nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithSBEventWithEventType:(unsigned long long)arg1 payload:(id)arg2;
 - (long long)type;

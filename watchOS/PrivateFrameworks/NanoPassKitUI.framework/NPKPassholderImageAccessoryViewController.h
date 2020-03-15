@@ -13,8 +13,8 @@
     UIImage *_userImage;
 }
 
-@property(retain, nonatomic) UIImage *userImage; // @synthesize userImage=_userImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *userImage; // @synthesize userImage=_userImage;
 - (id)accessoryImageViewForSize:(struct CGSize)arg1;
 - (id)initWithPassholderImage:(id)arg1;
 

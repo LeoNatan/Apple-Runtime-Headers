@@ -21,6 +21,7 @@
     UIView *_animationContainerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *animationContainerView; // @synthesize animationContainerView=_animationContainerView;
 @property(nonatomic) float maximumZoomLevel; // @synthesize maximumZoomLevel=_maximumZoomLevel;
 @property(nonatomic) float minimumZoomLevel; // @synthesize minimumZoomLevel=_minimumZoomLevel;
@@ -30,7 +31,6 @@
 @property(nonatomic) float initialZoomLevel; // @synthesize initialZoomLevel=_initialZoomLevel;
 @property(retain, nonatomic) CSLUIIconView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) CSLLauncherZoomOptions *launcherOptions; // @synthesize launcherOptions=_launcherOptions;
-- (void).cxx_destruct;
 
 @end
 

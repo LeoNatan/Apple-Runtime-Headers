@@ -6,7 +6,7 @@
 
 #import <MapKit/MKPlaceSectionRowView.h>
 
-@class NSLayoutConstraint, _MKUILabel;
+@class MKVibrantLabel, NSLayoutConstraint, _MKUILabel;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceEncyclopedicFactoidView : MKPlaceSectionRowView
@@ -15,13 +15,13 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_baselineToBottomConstraint;
     NSLayoutConstraint *_baselineToBaselineConstraint;
     _Bool _isStandAlone;
-    _MKUILabel *_keyLabel;
+    MKVibrantLabel *_keyLabel;
     _MKUILabel *_valueLabel;
 }
 
-@property(retain, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
-@property(retain, nonatomic) _MKUILabel *keyLabel; // @synthesize keyLabel=_keyLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
+@property(retain, nonatomic) MKVibrantLabel *keyLabel; // @synthesize keyLabel=_keyLabel;
 - (void)_contentSizeDidChange;
 - (id)_keyLabelFont;
 - (void)setUpConstraints;

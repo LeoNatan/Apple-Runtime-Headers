@@ -40,6 +40,7 @@
     id <_UICloudSharingControllerDelegate_Internal> _internalDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UICloudSharingControllerDelegate_Internal> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 @property(retain, nonatomic, getter=_headerSecondaryImage, setter=_setHeaderSecondaryImage:) UIImage *headerSecondaryImage; // @synthesize headerSecondaryImage=_headerSecondaryImage;
 @property(retain, nonatomic, getter=_headerPrimaryImage, setter=_setHeaderPrimaryImage:) UIImage *headerPrimaryImage; // @synthesize headerPrimaryImage=_headerPrimaryImage;
@@ -60,7 +61,6 @@
 @property(nonatomic) unsigned long long availablePermissions; // @synthesize availablePermissions=_availablePermissions;
 @property(retain, nonatomic) CKShare *share; // @synthesize share=_share;
 @property(nonatomic) __weak id <UICloudSharingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)_requestSavedShareWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performHeaderActionWithCompletion:(CDUnknownBlockType)arg1;
@@ -76,6 +76,7 @@
 - (id)_sharingViewPresentationController;
 - (id)_customPresentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (_Bool)_requiresCustomPresentationController;
+- (long long)modalPresentationStyle;
 - (id)activityItemSource;
 - (void)_dismissViewControllerWithError:(id)arg1;
 - (void)_deleteShareAfterDismissalWithoutSave:(CDUnknownBlockType)arg1;

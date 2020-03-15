@@ -19,8 +19,8 @@
 + (void)submitMetricForOnCompletionSnapshot:(id)arg1 error:(id)arg2;
 + (void)submitMetricsForSnapshotRequest:(id)arg1 bundleID:(id)arg2;
 + (id)sharedMetricCollector;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *privateQueue; // @synthesize privateQueue=_privateQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *privateQueue; // @synthesize privateQueue=_privateQueue;
 - (void)_queue_submitMetricForSnapshotTaken:(id)arg1 startTime:(unsigned long long)arg2 captureFinished:(unsigned long long)arg3 generateFinished:(unsigned long long)arg4 saveFinished:(unsigned long long)arg5;
 - (void)_queue_submitMetricForSnapshotFailure:(id)arg1 error:(id)arg2;
 - (void)_queue_submitMetricForSnapshotInitiated:(id)arg1 scheduleItem:(id)arg2 leeway:(double)arg3 priority:(unsigned int)arg4;

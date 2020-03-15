@@ -30,11 +30,11 @@
     struct CGColorSpace *_colorSpace;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PAOpenGLDevice *device; // @synthesize device=_device;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(readonly, nonatomic) BOOL opaque; // @synthesize opaque=_opaque;
 @property(retain) NSString *textureName; // @synthesize textureName=_textureName;
-- (void).cxx_destruct;
 - (struct CGImage *)newCGImage;
 - (id)ciImage;
 - (struct CGColorSpace *)colorSpace;

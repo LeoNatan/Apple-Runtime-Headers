@@ -19,9 +19,9 @@
 }
 
 + (id)sharedProxy;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *readonlyObservers;
 @property(readonly, nonatomic) NSHashTable *weakObservers; // @synthesize weakObservers=_weakObservers;
 - (id)_init;

@@ -47,6 +47,7 @@
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)readableTypeIdentifiersForItemProvider;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long kind; // @synthesize kind=_kind;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) MFComposeRecipientOriginContext *originContext; // @synthesize originContext=_originContext;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

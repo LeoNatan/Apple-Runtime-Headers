@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completion;
 }
 
-@property(readonly, nonatomic) int fetchIdentifier; // @synthesize fetchIdentifier=_fetchIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int fetchIdentifier; // @synthesize fetchIdentifier=_fetchIdentifier;
 - (void)cancel;
 - (void)main;
 - (void)dealloc;

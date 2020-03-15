@@ -15,9 +15,9 @@
 }
 
 + (id)characterWithCharacter:(id)arg1 node:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCNNode *node; // @synthesize node=_node;
 @property(retain, nonatomic) NSString *character; // @synthesize character=_character;
-- (void).cxx_destruct;
 
 @end
 

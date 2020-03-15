@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)queueOnMainThreadWithLowerPriority:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAgentDelegate:) SCRVisualsRemoteDelegate *_agentDelegate; // @synthesize _agentDelegate=__agentDelegate;
 @property(retain, nonatomic, setter=_setVisualsAgentConnection:) NSXPCConnection *_visualsAgentConnection; // @synthesize _visualsAgentConnection=__visualsAgentConnection;
 @property(retain, nonatomic, setter=_setVisualsAgent:) id <AXVisualsAgentInterface> _visualsAgent; // @synthesize _visualsAgent=__visualsAgent;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) SCRVisualsMenuWindow *menuWindow; // @synthesize menuWindow=_menuWindow;
 @property(readonly, nonatomic) SCRVisualsCaptionWindow *captionWindow; // @synthesize captionWindow=_captionWindow;
 @property(nonatomic) BOOL visualsEnabled; // @synthesize visualsEnabled=_visualsEnabled;
-- (void).cxx_destruct;
 - (void)_visualsFontSizeChanged:(id)arg1;
 - (void)displayDidReconfigure;
 - (void)showEnabledVisuals;

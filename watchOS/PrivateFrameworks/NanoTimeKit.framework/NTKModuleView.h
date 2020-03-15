@@ -32,6 +32,7 @@
 
 + (float)cornerRadiusForComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (float)_defaultCornerRadiusForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) float highlightCornerRadius; // @synthesize highlightCornerRadius=_highlightCornerRadius;
 @property(retain, nonatomic) NTKFaceColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)updateMonochromeColor;
 - (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)layoutContainerView:(id)arg1;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_indexTitles;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *indexTitles; // @synthesize indexTitles=_indexTitles;
 @property(readonly, copy, nonatomic) NSDictionary *usedPrototypesByIdentifier; // @synthesize usedPrototypesByIdentifier=_usedPrototypesByIdentifier;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *itemIDs; // @synthesize itemIDs=_itemIDs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithItems:(id)arg1 usedPrototypesByIdentifier:(id)arg2 indexTitles:(id)arg3;

@@ -16,11 +16,11 @@
     NSString *_timeZone;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee latLong; // @synthesize latLong=_latLong;
 @property(readonly, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(readonly, nonatomic) NSString *ipAddress; // @synthesize ipAddress=_ipAddress;
-- (void).cxx_destruct;
 - (id)initWithGEOPDPlaceResponse:(id)arg1;
 
 @end

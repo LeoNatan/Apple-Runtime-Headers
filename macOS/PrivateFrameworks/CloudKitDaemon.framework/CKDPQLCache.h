@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _openHandles;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long openHandles; // @synthesize openHandles=_openHandles;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dbQueue; // @synthesize dbQueue=_dbQueue;
 @property(readonly, nonatomic) NSHashTable *contexts; // @synthesize contexts=_contexts;
 @property(readonly, nonatomic) PQLConnection *database; // @synthesize database=_pdb;
-- (void).cxx_destruct;
 - (id)infoToUpgradeFromVersion:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *createInitialTablesSQL;
 @property(readonly, nonatomic) NSString *path;

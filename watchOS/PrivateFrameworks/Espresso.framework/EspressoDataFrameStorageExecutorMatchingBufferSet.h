@@ -18,13 +18,13 @@
     CDStruct_f9cfda8c _groundtruth_buffer;
 }
 
+- (void).cxx_destruct;
 @property CDStruct_f9cfda8c groundtruth_buffer; // @synthesize groundtruth_buffer=_groundtruth_buffer;
 @property struct __CVBuffer *computed_pb; // @synthesize computed_pb=_computed_pb;
 @property CDStruct_f9cfda8c computed_buffer; // @synthesize computed_buffer=_computed_buffer;
 @property CDStruct_f9cfda8c reference_buffer; // @synthesize reference_buffer=_reference_buffer;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property unsigned long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 
 @end
 

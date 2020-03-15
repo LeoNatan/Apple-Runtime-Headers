@@ -28,9 +28,9 @@
 + (id)predicateForAccountsWithIdentifiers:(id)arg1;
 + (id)predicateForAccountForContainerWithIdentifier:(id)arg1;
 + (id)predicateForAccountWithExternalIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *externalIdentifierString; // @synthesize externalIdentifierString=_externalIdentifierString;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

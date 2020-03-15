@@ -19,9 +19,9 @@
 
 + (void)removeBuildObjectsFromDict:(id)arg1;
 + (id)logHandle;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMDCKSyncStateDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) IMKeyValueCollection *keyValueCollection; // @synthesize keyValueCollection=_storage;
-- (void).cxx_destruct;
 - (void)setErrorToKeyRollingError;
 - (void)setErrorToAccountNeedsRepair;
 - (void)broadcastSyncState;

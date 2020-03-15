@@ -17,12 +17,12 @@
     NSArray *_segments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *segments; // @synthesize segments=_segments;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) double zoomFraction; // @synthesize zoomFraction=_zoomFraction;
 @property(nonatomic) _Bool shouldRasterize; // @synthesize shouldRasterize=_shouldRasterize;
 @property(retain, nonatomic) NTKFaceColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (double)_segmentAlphaForEditMode:(long long)arg1;
 - (double)_handAlphaForEditMode:(long long)arg1;
 - (void)applyTransitionFromScheme:(id)arg1 toScheme:(id)arg2 fraction:(double)arg3;

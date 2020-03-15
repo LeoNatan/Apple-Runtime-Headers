@@ -17,9 +17,9 @@
     id <SXContactsPresenter> _contactsPresenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXContactsPresenter> contactsPresenter; // @synthesize contactsPresenter=_contactsPresenter;
 @property(readonly, nonatomic) id <SXMailPresenter> mailPresenter; // @synthesize mailPresenter=_mailPresenter;
-- (void).cxx_destruct;
 - (void)addToContacts:(id)arg1;
 - (void)composeMailTo:(id)arg1 subject:(id)arg2;
 - (id)activityGroupForAction:(id)arg1;

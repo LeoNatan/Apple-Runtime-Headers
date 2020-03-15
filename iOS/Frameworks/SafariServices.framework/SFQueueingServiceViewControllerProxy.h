@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     id <SFQueueingServiceViewControllerProxyDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SFQueueingServiceViewControllerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

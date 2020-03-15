@@ -16,11 +16,11 @@
     CLLocation *_anyLocation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLLocation *anyLocation; // @synthesize anyLocation=_anyLocation;
 @property(readonly, nonatomic) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(readonly, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(readonly, nonatomic) unsigned long long vista; // @synthesize vista=_vista;
-- (void).cxx_destruct;
 - (id)templateForComplicationFamily:(long long)arg1;
 - (id)initWithVista:(unsigned long long)arg1 entryDate:(id)arg2 currentDate:(id)arg3 currentLocation:(id)arg4 anyLocation:(id)arg5;
 

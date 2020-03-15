@@ -14,9 +14,9 @@
     NSDate *_overrideQuadDisplayTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *overrideQuadDisplayTime; // @synthesize overrideQuadDisplayTime=_overrideQuadDisplayTime;
 @property(readonly, nonatomic) float dimming; // @synthesize dimming=_dimming;
-- (void).cxx_destruct;
 - (id)description;
 - (void)finalizeWithDimmingValue:(float)arg1 overrideQuadDisplayTime:(id)arg2;
 - (id)initWithPresentationTime:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 fraction:(float)arg4;

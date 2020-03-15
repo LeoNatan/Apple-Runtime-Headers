@@ -26,11 +26,11 @@
 }
 
 + (Class)engagementsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long percentOfMessagesIndexed; // @synthesize percentOfMessagesIndexed=_percentOfMessagesIndexed;
 @property(nonatomic) unsigned long long messagesLeftToIndex; // @synthesize messagesLeftToIndex=_messagesLeftToIndex;
 @property(retain, nonatomic) NSMutableArray *engagements; // @synthesize engagements=_engagements;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

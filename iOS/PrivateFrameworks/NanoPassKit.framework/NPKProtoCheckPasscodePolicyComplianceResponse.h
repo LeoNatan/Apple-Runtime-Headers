@@ -19,9 +19,9 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *errorData; // @synthesize errorData=_errorData;
 @property(nonatomic) _Bool passcodeMeetsPolicy; // @synthesize passcodeMeetsPolicy=_passcodeMeetsPolicy;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

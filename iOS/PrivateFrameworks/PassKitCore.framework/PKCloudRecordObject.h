@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *records; // @synthesize records=_records;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *records; // @synthesize records=_records;
 - (id)_descriptionWithDetailedOutput:(_Bool)arg1;
 - (id)description;
 - (id)descriptionWithItem:(_Bool)arg1;

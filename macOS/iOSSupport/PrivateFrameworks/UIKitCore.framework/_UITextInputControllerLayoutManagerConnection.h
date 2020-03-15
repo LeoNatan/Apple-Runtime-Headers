@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UITextInputController *_textInputController;
 }
 
-@property(retain, nonatomic) UITextInputController *textInputController; // @synthesize textInputController=_textInputController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextInputController *textInputController; // @synthesize textInputController=_textInputController;
 - (void)dealloc;
 - (id)initWithTextInputController:(id)arg1;
 

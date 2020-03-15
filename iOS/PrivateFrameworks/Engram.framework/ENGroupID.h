@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) ENStableGroupID *stableGroupID; // @synthesize stableGroupID=_stableGroupID;
-- (void).cxx_destruct;
 - (_Bool)compare:(id)arg1 withResult:(long long *)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSData *dataRepresentation;
 - (id)description;

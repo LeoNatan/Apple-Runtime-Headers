@@ -20,13 +20,13 @@
     NSString *_userAgent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int timeout; // @synthesize timeout=_timeout;
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(nonatomic) int responseDataOffset; // @synthesize responseDataOffset=_responseDataOffset;
 @property(retain, nonatomic) NSData *responseData; // @synthesize responseData=_responseData;
 @property(retain, nonatomic) NSMutableData *requestData; // @synthesize requestData=_requestData;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)flush;
 - (id)newRequest;

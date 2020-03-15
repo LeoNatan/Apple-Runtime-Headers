@@ -16,10 +16,10 @@
     UIView *_viewToBlur;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *viewToBlur; // @synthesize viewToBlur=_viewToBlur;
 @property(nonatomic) __weak id <REBlurredContainerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidLoad;

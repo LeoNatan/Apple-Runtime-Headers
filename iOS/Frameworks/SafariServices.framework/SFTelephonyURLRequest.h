@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSString *failureNotificationName; // @synthesize failureNotificationName=_failureNotificationName;
 @property(retain, nonatomic) NSString *successNotificationName; // @synthesize successNotificationName=_successNotificationName;
-- (void).cxx_destruct;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end

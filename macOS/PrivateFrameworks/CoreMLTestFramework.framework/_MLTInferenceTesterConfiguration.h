@@ -25,6 +25,7 @@
     _MLTLogger *_logger;
 }
 
+- (void).cxx_destruct;
 @property BOOL measurePredictionANEMemory; // @synthesize measurePredictionANEMemory=_measurePredictionANEMemory;
 @property BOOL measurePredictionGPUMemory; // @synthesize measurePredictionGPUMemory=_measurePredictionGPUMemory;
 @property BOOL measurePredictionCPUMemory; // @synthesize measurePredictionCPUMemory=_measurePredictionCPUMemory;
@@ -37,7 +38,6 @@
 @property BOOL allowHardwareFallback; // @synthesize allowHardwareFallback=_allowHardwareFallback;
 @property(retain) NSString *modelPath; // @synthesize modelPath=_modelPath;
 @property(retain) MLModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

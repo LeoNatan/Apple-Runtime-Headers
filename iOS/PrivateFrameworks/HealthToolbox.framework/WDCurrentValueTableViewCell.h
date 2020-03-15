@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)preferredHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <WDDashboardCellPrimaryValueSource> primaryValueSource; // @synthesize primaryValueSource=_primaryValueSource;
 @property(nonatomic) unsigned long long marginMode; // @synthesize marginMode=_marginMode;
-- (void).cxx_destruct;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;
 - (struct CGRect)forceTouchFrame;
 - (void)primaryValueSourceDidUpdate:(id)arg1;

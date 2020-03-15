@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     WFContentItem *_contentItem;
 }
 
-@property(readonly, nonatomic) WFContentItem *contentItem; // @synthesize contentItem=_contentItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFContentItem *contentItem; // @synthesize contentItem=_contentItem;
 - (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

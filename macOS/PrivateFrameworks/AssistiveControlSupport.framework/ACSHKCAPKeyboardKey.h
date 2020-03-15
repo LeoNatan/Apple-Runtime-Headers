@@ -16,11 +16,11 @@
     struct CGRect _extraFrame;
 }
 
+- (void).cxx_destruct;
 @property struct CGRect extraFrame; // @synthesize extraFrame=_extraFrame;
 @property struct CGRect frame; // @synthesize frame=_frame;
 @property unsigned long long keyCode; // @synthesize keyCode=_keyCode;
 @property(retain) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFrame:(struct CGRect)arg1;
 

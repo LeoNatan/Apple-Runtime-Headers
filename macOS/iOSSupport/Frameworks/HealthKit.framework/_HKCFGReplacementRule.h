@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleWithLHS:(id)arg1 RHS:(id)arg2 nodeEvaluator:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long lengthIncrease; // @synthesize lengthIncrease=_lengthIncrease;
 @property(readonly, copy, nonatomic) CDUnknownBlockType nodeEvaluator; // @synthesize nodeEvaluator=_nodeEvaluator;
 @property(copy, nonatomic) NSArray *rightHandSide; // @synthesize rightHandSide=_rightHandSide;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class PKAccount, PKBusinessChatController, PKPaymentPass;
+@class PKAccount, PKBusinessChatController, PKPaymentPass, UIViewController;
 @protocol PKAccountBillPaymentObserver, PKAccountServiceAccountResolutionControllerDelegate;
 
 @interface PKAccountServiceAccountResolutionController : NSObject
@@ -16,13 +16,15 @@
     PKPaymentPass *_pass;
     id <PKAccountServiceAccountResolutionControllerDelegate> _delegate;
     id <PKAccountBillPaymentObserver> _billPaymentObserver;
+    UIViewController *_presentingViewController;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) __weak id <PKAccountBillPaymentObserver> billPaymentObserver; // @synthesize billPaymentObserver=_billPaymentObserver;
 @property(nonatomic) __weak id <PKAccountServiceAccountResolutionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_openBusinessChatWithContext:(id)arg1;
 - (void)_callIssuer;
 - (id)_alertControllerForBusinessChatContext:(id)arg1;

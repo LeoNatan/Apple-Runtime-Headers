@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)removedUserWithUser:(id)arg1;
+- (void).cxx_destruct;
 @property(getter=isRemovalInProgress) BOOL removalInProgress; // @synthesize removalInProgress=_removalInProgress;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) HMDUser *user; // @synthesize user=_user;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToUser:(id)arg1;

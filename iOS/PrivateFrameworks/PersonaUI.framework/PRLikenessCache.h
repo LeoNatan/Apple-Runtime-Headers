@@ -28,11 +28,11 @@
 + (id)_staticRepresentationCacheURL;
 + (id)_applicationCacheDirectory;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool renderIfNeeded; // @synthesize renderIfNeeded=_renderIfNeeded;
 @property(nonatomic) _Bool useFilesystem; // @synthesize useFilesystem=_useFilesystem;
 @property(nonatomic) _Bool useMemory; // @synthesize useMemory=_useMemory;
 @property(retain, nonatomic) NSURL *cacheDirectory; // @synthesize cacheDirectory=_cacheDirectory;
-- (void).cxx_destruct;
 - (void)_fetchWithReadBlock:(CDUnknownBlockType)arg1 writeBlock:(CDUnknownBlockType)arg2 renderBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_renderImageForLikeness:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fetchFromFilesystem:(id)arg1 context:(id)arg2 renderBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;

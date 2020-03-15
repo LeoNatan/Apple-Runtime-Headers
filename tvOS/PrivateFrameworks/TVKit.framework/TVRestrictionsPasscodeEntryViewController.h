@@ -21,12 +21,12 @@
 
 + (id)restrictionsPasscodeEntryViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 + (id)restrictionsPasscodeEntryViewControllerGuarding:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) UIViewController *guardedViewController; // @synthesize guardedViewController=_guardedViewController;
 @property(retain, nonatomic) _TVDigitEntryViewController *passcodeEntryViewController; // @synthesize passcodeEntryViewController=_passcodeEntryViewController;
 @property(retain, nonatomic) UIView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
 @property(nonatomic, getter=isWallpaperEnabled) _Bool wallpaperEnabled; // @synthesize wallpaperEnabled=_wallpaperEnabled;
-- (void).cxx_destruct;
 - (void)digitEntryViewControllerDidFinish:(id)arg1;
 - (void)digitEntryViewControllerDidCancel:(id)arg1;
 - (void)shake;

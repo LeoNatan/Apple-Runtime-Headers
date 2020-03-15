@@ -34,6 +34,7 @@
     RTDarwinNotificationHelper *_notificationHelper;
 }
 
+- (void).cxx_destruct;
 @property(retain) RTDarwinNotificationHelper *notificationHelper; // @synthesize notificationHelper=_notificationHelper;
 @property(retain) RTPersistenceResetSyncContext *resetSyncContext; // @synthesize resetSyncContext=_resetSyncContext;
 @property __weak id <RTPersistenceMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
@@ -51,11 +52,9 @@
 @property(readonly) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(readonly) RTDataProtectionManager *dataProtectionManager; // @synthesize dataProtectionManager=_dataProtectionManager;
 @property(readonly) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
-- (void).cxx_destruct;
 - (BOOL)importSourceStore:(id)arg1 sourceCoordinator:(id)arg2 destinationStore:(id)arg3 destinationCoordinator:(id)arg4 managedObjectModel:(id)arg5 configuration:(id)arg6 error:(id *)arg7;
 - (id)prepareForDatabaseRekey:(id *)arg1;
 - (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)persistenceStore:(id)arg1 willBeginMirroringWithOptions:(id)arg2;
 - (void)persistenceMigrator:(id)arg1 didFinishMigratingStore:(id)arg2 withModelProvider:(id)arg3;
 - (void)persistenceMigrator:(id)arg1 didStartMigratingStore:(id)arg2 withModelProvider:(id)arg3;
 - (unsigned long long)persistenceDeviceClassForPlatform;
@@ -96,7 +95,7 @@
 - (void)start;
 - (id)initWithPersistenceManager:(id)arg1 dataProtectionManager:(id)arg2 accountManager:(id)arg3 platform:(id)arg4 keychainManager:(id)arg5 defaultsManager:(id)arg6 lifecycleManager:(id)arg7;
 - (id)init;
-- (void)persistenceDriver:(id)arg1 persistenceStore:(id)arg2 willBeginMirroringWithOptions:(id)arg3;
+- (void)onDailyMetricsNotification:(id)arg1;
 - (void)persistenceDriver:(id)arg1 persistenceMigrator:(id)arg2 didFinishMigratingStore:(id)arg3 withModelProvider:(id)arg4;
 - (void)persistenceDriver:(id)arg1 persistenceMigrator:(id)arg2 didStartMigratingStore:(id)arg3 withModelProvider:(id)arg4;
 - (void)persistenceStoreResetSyncWithUserInfo:(id)arg1;

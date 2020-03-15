@@ -35,6 +35,7 @@
     UIView *_view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) _Bool interactionInProgress; // @synthesize interactionInProgress=_interactionInProgress;
 @property(readonly, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) NSDictionary *previewData; // @synthesize previewData=_previewData;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) __weak id <UIPreviewItemDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stopInteraction;
 - (void)startInteraction;
 - (void)setupPreviewIndicatorInSourceView:(id)arg1;

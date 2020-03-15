@@ -17,12 +17,12 @@
     UIVisualEffectView *_bottomBlurView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *bottomBlurView; // @synthesize bottomBlurView=_bottomBlurView;
 @property(retain, nonatomic) UIVisualEffectView *topBlurView; // @synthesize topBlurView=_topBlurView;
 @property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(retain, nonatomic) UITableView *featureTableView; // @synthesize featureTableView=_featureTableView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)updateTableViewInsetsForHeaderAndFooterBlurView;
 - (void)layoutSubviews;
 - (void)updateForFontOrTextChange;

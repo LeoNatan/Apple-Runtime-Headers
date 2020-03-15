@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _windowSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize windowSize; // @synthesize windowSize=_windowSize;
 @property(copy, nonatomic) NSString *zoomingImageTransitionIdentifier; // @synthesize zoomingImageTransitionIdentifier=_zoomingImageTransitionIdentifier;
 @property(nonatomic) _Bool allowsPinchingThumbnailImageForInteractiveZoomingImageTransition; // @synthesize allowsPinchingThumbnailImageForInteractiveZoomingImageTransition=_allowsPinchingThumbnailImageForInteractiveZoomingImageTransition;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *thumbnailImageContainerViewConstraints; // @synthesize thumbnailImageContainerViewConstraints=_thumbnailImageContainerViewConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *thumbnailImageContainerViewHeightConstraint; // @synthesize thumbnailImageContainerViewHeightConstraint=_thumbnailImageContainerViewHeightConstraint;
 @property(retain, nonatomic) VideosExtrasConstrainedArtworkContainerView *thumbnailImageContainerView; // @synthesize thumbnailImageContainerView=_thumbnailImageContainerView;
-- (void).cxx_destruct;
 - (void)_updateThumbnailArtworkViewBorder;
 - (void)_setupDescriptionLabelWithConstraintsAccumulator:(id)arg1;
 - (void)_setupSubtitleLabelWithConstraintsAccumulator:(id)arg1;

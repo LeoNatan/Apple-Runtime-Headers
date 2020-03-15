@@ -17,12 +17,12 @@
     WFCloudKitItemTask *_task;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFCloudKitItemTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) CKFetchRecordsOperation *currentOperation; // @synthesize currentOperation=_currentOperation;
 @property(readonly, nonatomic) CKOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
 @property(readonly, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(readonly, nonatomic) __weak WFCloudKitItemRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (id)initWithRequest:(id)arg1 records:(id)arg2 operationGroup:(id)arg3 task:(id)arg4;

@@ -49,8 +49,8 @@
 }
 
 + (id)serviceBundle;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)_presentFacebookDisabledAlert;
 - (void)_presentNoAccountsAlert;
 - (void)presentationAnimationDidFinish;

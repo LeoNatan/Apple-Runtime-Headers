@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)iconWithBundleID:(id)arg1 data:(id)arg2 digest:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSData *digest; // @synthesize digest=_digest;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

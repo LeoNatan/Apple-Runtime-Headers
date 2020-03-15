@@ -32,10 +32,10 @@
     id <HDActivityCacheStatisticsBuilderSourceOrderDelegate> _sourceOrderDelegate;
 }
 
-@property(nonatomic) __weak id <HDActivityCacheStatisticsBuilderSourceOrderDelegate> sourceOrderDelegate; // @synthesize sourceOrderDelegate=_sourceOrderDelegate;
-@property(nonatomic) double intervalDuration; // @synthesize intervalDuration=_intervalDuration;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HDActivityCacheStatisticsBuilderSourceOrderDelegate> sourceOrderDelegate; // @synthesize sourceOrderDelegate=_sourceOrderDelegate;
+@property(nonatomic) double intervalDuration; // @synthesize intervalDuration=_intervalDuration;
 - (double)_sumSourceTotals:(map_c63dce6d *)arg1 orderedSources:(vector_d87a6415)arg2 strictStartTime:(double)arg3 strictEndTime:(double)arg4;
 - (double)_sumSourceTotals:(map_c63dce6d *)arg1 orderedSources:(vector_d87a6415)arg2;
 - (void)_addSample:(struct HDActivityCacheStatisticsBuilderSample)arg1 toSourceTotals:(map_c63dce6d *)arg2 fromWorkout:(_Bool)arg3;

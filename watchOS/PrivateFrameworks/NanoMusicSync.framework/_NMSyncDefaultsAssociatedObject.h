@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     MPMediaPlaylist *_assetSyncPlaylist;
 }
 
-@property(retain, nonatomic) MPMediaPlaylist *assetSyncPlaylist; // @synthesize assetSyncPlaylist=_assetSyncPlaylist;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPMediaPlaylist *assetSyncPlaylist; // @synthesize assetSyncPlaylist=_assetSyncPlaylist;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)init;

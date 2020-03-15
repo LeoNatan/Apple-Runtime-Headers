@@ -20,8 +20,8 @@
 + (id)operationWithLocation:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (id)operationWithLocation:(id)arg1 withAccuracy:(double)arg2;
 + (id)operationWithLocation:(id)arg1;
-@property BOOL forceQuery; // @synthesize forceQuery=_forceQuery;
 - (void).cxx_destruct;
+@property BOOL forceQuery; // @synthesize forceQuery=_forceQuery;
 - (void)cancel;
 - (void)execute;
 - (id)initWithLocation:(id)arg1 withAccuracy:(double)arg2;

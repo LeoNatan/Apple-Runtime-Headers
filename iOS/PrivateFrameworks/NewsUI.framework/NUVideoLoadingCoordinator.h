@@ -19,10 +19,10 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=hasLoadStarted) _Bool loadStarted; // @synthesize loadStarted=_loadStarted;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) id <SVVideoPlaybackController> playbackController; // @synthesize playbackController=_playbackController;
-- (void).cxx_destruct;
 - (void)_invokeAndClearCompletionBlockWithError:(id)arg1;
 - (id)loadContentWithTimeoutTime:(unsigned long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)playbackStartedForVideoAdWithMetadata:(id)arg1;

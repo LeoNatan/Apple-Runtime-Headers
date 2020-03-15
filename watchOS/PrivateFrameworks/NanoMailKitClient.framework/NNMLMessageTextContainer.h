@@ -19,10 +19,10 @@
     int _notLoadedImageAttachments;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int notLoadedImageAttachments; // @synthesize notLoadedImageAttachments=_notLoadedImageAttachments;
 @property(retain, nonatomic) NNMKMessageContentView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <NNMLMessageViewContainerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyIfDidFinishRendering;
 - (void)messageContentViewDidRenderContent:(id)arg1;
 - (void)messageContentViewWillRenderContent:(id)arg1;

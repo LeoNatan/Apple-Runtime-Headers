@@ -16,11 +16,11 @@
     struct __CFUserNotification *_notification;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFUserNotification *notification; // @synthesize notification=_notification;
 @property(retain, nonatomic) MTOSTransaction *transaction; // @synthesize transaction=_transaction;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

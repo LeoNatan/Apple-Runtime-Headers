@@ -17,9 +17,9 @@
     id <SVVideoTimeProviderFactory> _timeProviderFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoTimeProviderFactory> timeProviderFactory; // @synthesize timeProviderFactory=_timeProviderFactory;
 @property(readonly, nonatomic) id <SVPlayerItemObserverFactory> playerItemObserverFactory; // @synthesize playerItemObserverFactory=_playerItemObserverFactory;
-- (void).cxx_destruct;
 - (id)createTimeJumpObserverForVideo:(id)arg1;
 - (id)initWithPlayerItemObserverFactory:(id)arg1 timeProviderFactory:(id)arg2;
 

@@ -18,10 +18,10 @@
 }
 
 + (id)labelLimitRowIdWithLabel:(id)arg1 limit:(long long)arg2 rowId:(long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long rowId; // @synthesize rowId=_rowId;
 @property(readonly, nonatomic) long long limit; // @synthesize limit=_limit;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

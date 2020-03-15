@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long activityProxyID; // @synthesize activityProxyID=_activityProxyID;
 @property(readonly, nonatomic) UIImage *activityImage; // @synthesize activityImage=_activityImage;
 @property(readonly, nonatomic) NSString *activityTitle; // @synthesize activityTitle=_activityTitle;
 @property(readonly, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

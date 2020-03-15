@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
     id <ARUIRingsRendering> _ringsRenderer;
 }
 
-@property(nonatomic) __weak id <ARUIRingsRendering> ringsRenderer; // @synthesize ringsRenderer=_ringsRenderer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ARUIRingsRendering> ringsRenderer; // @synthesize ringsRenderer=_ringsRenderer;
 - (id)gaussianBlurredTexture:(id)arg1 withCommandBuffer:(id)arg2 andSize:(unsigned int)arg3 blurRadius:(float)arg4 initialDownsampleFraction:(float)arg5 brightnessMultiplier: /* Error: Ran out of types for this method. */;
 - (id)_downsampledTexture:(id)arg1 withCommandBuffer:(id)arg2 andSize: /* Error: Ran out of types for this method. */;
 - (id)compositeTexturesWithCommandBuffer:(id)arg1 textures:(id)arg2 andSize: /* Error: Ran out of types for this method. */;

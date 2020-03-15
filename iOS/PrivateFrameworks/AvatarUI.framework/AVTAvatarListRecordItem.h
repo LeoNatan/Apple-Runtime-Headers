@@ -16,8 +16,8 @@
     id <AVTAvatarRecord> _avatar;
 }
 
-@property(readonly, nonatomic) id <AVTAvatarRecord> avatar; // @synthesize avatar=_avatar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <AVTAvatarRecord> avatar; // @synthesize avatar=_avatar;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)downcastWithRecordHandler:(CDUnknownBlockType)arg1 imageHandler:(CDUnknownBlockType)arg2 viewHandler:(CDUnknownBlockType)arg3;

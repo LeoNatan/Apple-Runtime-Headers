@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)diffMultiValue:(id)arg1 toMultiValue:(id)arg2;
 + (id)emptyDiff;
-@property(readonly, copy, nonatomic) NSArray *updates; // @synthesize updates=_updates;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *updates; // @synthesize updates=_updates;
 - (id)description;
 - (_Bool)isEmpty;
 - (id)multiValueByApplyToMultiValue:(id)arg1 withIdentifierMap:(id)arg2;

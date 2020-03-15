@@ -21,13 +21,13 @@
     double _lastRetryDelayInSeconds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isNetworkReachable; // @synthesize isNetworkReachable=_isNetworkReachable;
 @property(retain, nonatomic) GEONetworkObserver *networkObserver; // @synthesize networkObserver=_networkObserver;
 @property(nonatomic) double lastRetryDelayInSeconds; // @synthesize lastRetryDelayInSeconds=_lastRetryDelayInSeconds;
 @property(retain, nonatomic) NSDate *lastErrorDate; // @synthesize lastErrorDate=_lastErrorDate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <MSPCloudSynchronizerRunConditionsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)accountChanged:(id)arg1;
 - (void)refreshAccountStatus;
 - (void)subscribeToAccountChangeNotifications;

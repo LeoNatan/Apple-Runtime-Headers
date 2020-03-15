@@ -13,8 +13,8 @@
     PXSelectionSnapshot *_selectionSnapshot;
 }
 
-@property(retain, nonatomic) PXSelectionSnapshot *selectionSnapshot; // @synthesize selectionSnapshot=_selectionSnapshot;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXSelectionSnapshot *selectionSnapshot; // @synthesize selectionSnapshot=_selectionSnapshot;
 
 @end
 

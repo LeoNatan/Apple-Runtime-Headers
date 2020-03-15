@@ -23,6 +23,7 @@
     double _dropShadowWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double dropShadowWidth; // @synthesize dropShadowWidth=_dropShadowWidth;
 @property(nonatomic) unsigned long long dropShadowEdges; // @synthesize dropShadowEdges=_dropShadowEdges;
 @property(retain, nonatomic) UIColor *dropShadowColor; // @synthesize dropShadowColor=_dropShadowColor;
@@ -32,7 +33,6 @@
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double borderAlpha; // @synthesize borderAlpha=_borderAlpha;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFullyTransparent) _Bool fullyTransparent;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

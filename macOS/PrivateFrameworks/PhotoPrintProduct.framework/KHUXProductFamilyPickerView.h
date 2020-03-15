@@ -26,6 +26,7 @@
 
 + (id)defaultGradientColors;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) double autoLastRowHeight; // @synthesize autoLastRowHeight=_autoLastRowHeight;
 @property(nonatomic) double autoRowHeight; // @synthesize autoRowHeight=_autoRowHeight;
 @property(nonatomic) double columnWidth; // @synthesize columnWidth=_columnWidth;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSView *leftPanel; // @synthesize leftPanel=_leftPanel;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)viewDidMoveToWindow;
 - (void)addProductFamilyView:(id)arg1;

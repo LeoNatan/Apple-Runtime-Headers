@@ -15,9 +15,9 @@
     PKEnterCurrencyAmountView *_enterCurrencyAmountView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showAmount; // @synthesize showAmount=_showAmount;
 @property(retain, nonatomic) PKEnterCurrencyAmountView *enterCurrencyAmountView; // @synthesize enterCurrencyAmountView=_enterCurrencyAmountView;
-- (void).cxx_destruct;
 - (float)_amountLabelFontSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

@@ -16,17 +16,17 @@ __attribute__((visibility("hidden")))
     NSOrderedSet *_arrangedBarItems;
     UIToolbar *_bar;
     _SFBarManager *_barManager;
+    NSMutableSet *_hiddenBarItems;
+    NSOrderedSet *_lastCommittedArrangedBarItems;
+    long long _layout;
     UIBarButtonItem *_backItem;
     UIBarButtonItem *_bookmarksItem;
+    SFDownloadsBarButtonItem *_downloadsItem;
     UIBarButtonItem *_forwardItem;
     UIBarButtonItem *_newTabItem;
     UIBarButtonItem *_shareItem;
     UIBarButtonItem *_tabExposeItem;
     UIBarButtonItem *_openInSafariItem;
-    SFDownloadsBarButtonItem *_downloadsItem;
-    NSMutableSet *_hiddenBarItems;
-    NSOrderedSet *_lastCommittedArrangedBarItems;
-    long long _layout;
 }
 
 - (void).cxx_destruct;

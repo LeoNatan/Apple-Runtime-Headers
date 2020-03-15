@@ -16,10 +16,10 @@
 }
 
 + (id)categoryNamed:(id)arg1 withIdentifier:(id)arg2 forUsageBundleApp:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak PSUsageBundleApp *usageBundleApp; // @synthesize usageBundleApp=_usageBundleApp;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

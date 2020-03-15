@@ -14,8 +14,8 @@
     UISwitch *_pinSwitch;
 }
 
-@property(readonly, nonatomic) UISwitch *pinSwitch; // @synthesize pinSwitch=_pinSwitch;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UISwitch *pinSwitch; // @synthesize pinSwitch=_pinSwitch;
 - (void)stopAnimating;
 - (void)startAnimating;
 - (void)prepareForReuse;

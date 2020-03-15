@@ -36,6 +36,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL modified; // @synthesize modified=_modified;
 @property BOOL rebootRequired; // @synthesize rebootRequired=_rebootRequired;
 @property(retain) NSDictionary *additionalLaunchdPlistEntries; // @synthesize additionalLaunchdPlistEntries=_additionalLaunchdPlistEntries;
@@ -53,7 +54,6 @@
 @property(retain) NSArray *categoryIdentifiers; // @synthesize categoryIdentifiers=_categoryIdentifiers;
 @property(retain) NSString *developerName; // @synthesize developerName=_developerName;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) NSString *usageDescription;
 @property(readonly) NSString *extensionDisplayName;
 - (id)getLocalizedStringForKey:(id)arg1;

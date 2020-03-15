@@ -25,12 +25,12 @@
 
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *uploadItems; // @synthesize uploadItems=_uploadItems;
 @property(retain) NSArray *attachments; // @synthesize attachments=_attachments;
 @property float percentComplete; // @synthesize percentComplete=_percentComplete;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property __weak DEDBugSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (_Bool)isWatch;

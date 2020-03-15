@@ -28,9 +28,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _updateBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
 @property(nonatomic) double forceFactor; // @synthesize forceFactor=_forceFactor;
-- (void).cxx_destruct;
 - (void)_stopAnimations;
 - (void)_updateFromTransformer:(id)arg1;
 - (void)_updateAnimatorIfNeeded;

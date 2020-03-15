@@ -18,9 +18,9 @@
 
 + (id)settingsURLForForceDisableReasons:(unsigned long long)arg1;
 + (id)_detailedErrorDescriptionForForceDisableReasons:(unsigned long long)arg1 inHome:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long nameType; // @synthesize nameType=_nameType;
 @property(readonly, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
-- (void).cxx_destruct;
 - (unsigned long long)_triggerType;
 - (id)_forceDisableReasons;
 - (id)_resultsForTriggerConditions;

@@ -14,9 +14,9 @@
     NSButton *_editButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) NSArray *frames; // @synthesize frames=_frames;
-- (void).cxx_destruct;
 - (void)editPhoto:(id)arg1;
 - (void)viewWillAppear;
 - (void)viewDidLoad;

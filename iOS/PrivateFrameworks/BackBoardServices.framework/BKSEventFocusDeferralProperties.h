@@ -21,11 +21,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)propertiesWithClientID:(id)arg1 pid:(int)arg2 displayUUID:(id)arg3 contextID:(unsigned int)arg4;
 + (id)propertiesWithMainDisplayAndClientID:(id)arg1 pid:(int)arg2 contextID:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(readonly, copy, nonatomic) NSString *displayUUID; // @synthesize displayUUID=_displayUUID;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, copy, nonatomic) NSString *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

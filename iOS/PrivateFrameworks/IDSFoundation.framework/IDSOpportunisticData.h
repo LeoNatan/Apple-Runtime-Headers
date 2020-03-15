@@ -21,13 +21,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSMutableDictionary *sendCount; // @synthesize sendCount=_sendCount;
 @property(retain, nonatomic) IDSOpportunisticOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) NSString *accountUniqueID; // @synthesize accountUniqueID=_accountUniqueID;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

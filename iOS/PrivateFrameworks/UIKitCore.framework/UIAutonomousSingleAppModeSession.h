@@ -18,9 +18,9 @@
 + (void)requestSessionWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)__gaxTrampoline_currentlyActiveSession;
 + (id)currentlyActiveSession;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIAutonomousSingleAppModeConfiguration *effectiveConfiguration; // @synthesize effectiveConfiguration=_effectiveConfiguration;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (void)__gaxTrampoline_endSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)endWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_guidedAccessStateDidChange:(id)arg1;

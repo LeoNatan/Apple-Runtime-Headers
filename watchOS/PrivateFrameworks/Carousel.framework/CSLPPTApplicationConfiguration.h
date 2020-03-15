@@ -15,10 +15,10 @@
     NSString *_testName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *testName; // @synthesize testName=_testName;
 @property(readonly, nonatomic) IOSSHLStateSettings *stateSettings; // @synthesize stateSettings=_stateSettings;
 @property(readonly, nonatomic) IOSSHLActivationSettings *activationSettings; // @synthesize activationSettings=_activationSettings;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

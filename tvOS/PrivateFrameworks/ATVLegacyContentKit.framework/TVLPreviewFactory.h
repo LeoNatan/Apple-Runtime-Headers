@@ -18,12 +18,12 @@
     NSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) __weak id <TVLPreviewFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) TVLElement *defaultPreviewElement; // @synthesize defaultPreviewElement=_defaultPreviewElement;
 @property(retain, nonatomic) TVLMenuElement *menuElement; // @synthesize menuElement=_menuElement;
-- (void).cxx_destruct;
 - (void)loadPreviewFromURLString:(id)arg1 javascriptContext:(id)arg2 forIndexPath:(id)arg3;
 - (id)previewElementAtIndexPath:(id)arg1;
 - (id)menuItemElementAtIndexPath:(id)arg1;

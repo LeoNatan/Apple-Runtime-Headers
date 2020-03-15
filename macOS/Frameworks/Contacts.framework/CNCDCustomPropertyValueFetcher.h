@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)customPropertyValuesForRecordWithIdentifier:(id)arg1 persistenceStack:(id)arg2 error:(id *)arg3;
 + (id)customPropertyValuesForRecordWithIdentifier:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
 + (id)allCustomPropertiesWithPersistenceStack:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNCDPersistenceContext *persistenceContext; // @synthesize persistenceContext=_persistenceContext;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)fetchCustomPropertyValues:(id *)arg1;
 - (id)initWithRecordIdentifier:(id)arg1 persistenceContext:(id)arg2;
 

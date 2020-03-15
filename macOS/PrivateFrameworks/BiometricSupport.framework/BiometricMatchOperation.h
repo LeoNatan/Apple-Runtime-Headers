@@ -23,6 +23,7 @@
     NSData *_acmContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int processedFlags; // @synthesize processedFlags=_processedFlags;
 @property(nonatomic) unsigned int noBioLockoutUserID; // @synthesize noBioLockoutUserID=_noBioLockoutUserID;
 @property(nonatomic) int useCase; // @synthesize useCase=_useCase;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL forCredentialSet; // @synthesize forCredentialSet=_forCredentialSet;
 @property(nonatomic) BOOL forUnlock; // @synthesize forUnlock=_forUnlock;
 @property(nonatomic) unsigned int userID; // @synthesize userID=_userID;
-- (void).cxx_destruct;
 - (unsigned int)cancelledMessage;
 @property(readonly, nonatomic) CDStruct_143f644f *noBioLockoutAuthData;
 - (int)type;

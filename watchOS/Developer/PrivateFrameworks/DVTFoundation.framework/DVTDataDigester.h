@@ -10,6 +10,7 @@
 {
 }
 
++ (id)digestForData:(id)arg1;
 - (id)digest;
 - (void)updateWithArrayOfStrings:(id)arg1;
 - (void)updateWithString:(id)arg1;

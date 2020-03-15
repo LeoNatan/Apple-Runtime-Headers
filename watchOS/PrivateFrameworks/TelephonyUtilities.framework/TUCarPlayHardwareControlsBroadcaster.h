@@ -14,8 +14,8 @@
     NSString *_eventTypeToIgnore;
 }
 
-@property(retain) NSString *eventTypeToIgnore; // @synthesize eventTypeToIgnore=_eventTypeToIgnore;
 - (void).cxx_destruct;
+@property(retain) NSString *eventTypeToIgnore; // @synthesize eventTypeToIgnore=_eventTypeToIgnore;
 - (void)longPressTimerFired:(id)arg1;
 - (void)dealloc;
 - (id)init;

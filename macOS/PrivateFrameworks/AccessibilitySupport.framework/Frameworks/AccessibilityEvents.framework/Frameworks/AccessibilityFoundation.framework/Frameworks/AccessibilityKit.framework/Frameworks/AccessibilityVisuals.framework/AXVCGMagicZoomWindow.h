@@ -44,6 +44,7 @@
 + (id)keyPathsForValuesAffectingSize;
 + (id)keyPathsForValuesAffectingCenter;
 + (id)keyPathsForValuesAffectingframe;
+- (void).cxx_destruct;
 @property(nonatomic) double _previousScreenBackingScaleFactor; // @synthesize _previousScreenBackingScaleFactor=__previousScreenBackingScaleFactor;
 @property(nonatomic) BOOL _frameChangedWhileDrawingDisabled; // @synthesize _frameChangedWhileDrawingDisabled=__frameChangedWhileDrawingDisabled;
 @property(nonatomic) BOOL _drawingDisabled; // @synthesize _drawingDisabled=__drawingDisabled;
@@ -67,7 +68,6 @@
 @property(nonatomic) struct CGRect zoomedRegionFrame; // @synthesize zoomedRegionFrame=_zoomedRegionFrame;
 @property(nonatomic) BOOL fullscreen; // @synthesize fullscreen=_fullscreen;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (void)_updateMagicZoomWindow;
 - (BOOL)_setJustZoomFactor:(double)arg1;
 - (BOOL)_setJustZoomedRegionFrame:(struct CGRect)arg1;

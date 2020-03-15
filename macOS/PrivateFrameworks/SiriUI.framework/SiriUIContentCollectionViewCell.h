@@ -34,6 +34,7 @@
 
 + (id)reuseIdentifier;
 + (struct NSEdgeInsets)defaultInsets;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL accessibilityIsOverridden; // @synthesize accessibilityIsOverridden=_accessibilityIsOverridden;
 @property(nonatomic) BOOL accessibilityIsIgnored; // @synthesize accessibilityIsIgnored=_accessibilityIsIgnored;
 @property(nonatomic) __weak id <SiriUIAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(nonatomic) struct NSEdgeInsets textAndAccessoryInsets; // @synthesize textAndAccessoryInsets=_textAndAccessoryInsets;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
-- (void).cxx_destruct;
 - (id)accessibilitySynthesizeMouseEventWithType:(unsigned long long)arg1 clickCount:(long long)arg2;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionNames;

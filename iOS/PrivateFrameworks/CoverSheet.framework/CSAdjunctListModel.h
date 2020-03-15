@@ -20,9 +20,9 @@
     id <CSAdjunctListModelDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSAdjunctListModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SBFActionProviding> contentActionProvider; // @synthesize contentActionProvider=_contentActionProvider;
-- (void).cxx_destruct;
 - (void)_replayPendingChanges;
 - (void)_removeItemForAction:(id)arg1;
 - (id)_createItemForAction:(id)arg1;

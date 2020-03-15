@@ -13,8 +13,8 @@
     NSSlider *_slider;
 }
 
-@property __weak NSSlider *slider; // @synthesize slider=_slider;
 - (void).cxx_destruct;
+@property __weak NSSlider *slider; // @synthesize slider=_slider;
 - (void)beginGestureWithEvent:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 

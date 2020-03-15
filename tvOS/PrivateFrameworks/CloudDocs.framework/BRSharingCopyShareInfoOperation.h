@@ -14,8 +14,8 @@
     CDUnknownBlockType _copyShareInfoCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType copyShareInfoCompletionBlock; // @synthesize copyShareInfoCompletionBlock=_copyShareInfoCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType copyShareInfoCompletionBlock; // @synthesize copyShareInfoCompletionBlock=_copyShareInfoCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithURL:(id)arg1;

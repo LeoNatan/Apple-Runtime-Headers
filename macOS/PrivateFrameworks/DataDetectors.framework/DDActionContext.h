@@ -48,6 +48,7 @@
 
 + (id)contextFromDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hostProcessIdentifier; // @synthesize hostProcessIdentifier=_hostProcessIdentifier;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property __weak NSView *view; // @synthesize view=_view;
@@ -76,7 +77,6 @@
 @property(copy) NSString *eventTitle; // @synthesize eventTitle=_eventTitle;
 @property struct CGRect aimFrame; // @synthesize aimFrame=_aimFrame;
 @property struct CGRect highlightFrame; // @synthesize highlightFrame=_highlightFrame;
-- (void).cxx_destruct;
 - (struct CGSize)targetScreenSize;
 - (struct CGSize)targetViewSize;
 // Error parsing type for property mainResult:

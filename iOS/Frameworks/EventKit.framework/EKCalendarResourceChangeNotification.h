@@ -27,6 +27,7 @@
     NSNumber *_deleteCount;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *deleteCount; // @synthesize deleteCount=_deleteCount;
 @property(retain, nonatomic) NSNumber *updateCount; // @synthesize updateCount=_updateCount;
 @property(retain, nonatomic) NSNumber *createCount; // @synthesize createCount=_createCount;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) NSString *calendarName; // @synthesize calendarName=_calendarName;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (_Bool)needsAlert;
 - (id)resourceChangeFromEventStore:(id)arg1;
 - (id)initWithType:(long long)arg1;

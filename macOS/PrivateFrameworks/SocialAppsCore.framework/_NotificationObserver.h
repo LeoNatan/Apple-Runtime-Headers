@@ -14,9 +14,9 @@
     CDUnknownBlockType _notificationReceivedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType notificationReceivedBlock; // @synthesize notificationReceivedBlock=_notificationReceivedBlock;
 @property(copy, nonatomic) NSSet *notificationNames; // @synthesize notificationNames=_notificationNames;
-- (void).cxx_destruct;
 - (void)_didReceiveNotification:(id)arg1;
 - (void)_unregisterObject:(id)arg1;
 - (void)_registerObject:(id)arg1;

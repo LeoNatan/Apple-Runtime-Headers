@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     NSArray *_destination;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *destination; // @synthesize destination=_destination;
 @property(copy, nonatomic) NSArray *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (id)describeMergeTable;
 - (id)mergeSource:(id)arg1 andDestination:(id)arg2;

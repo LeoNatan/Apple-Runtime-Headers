@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *text; // @synthesize text=_text;
 - (id)_dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

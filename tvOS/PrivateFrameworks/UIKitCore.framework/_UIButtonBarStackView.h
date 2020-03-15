@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)description;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)layoutSubviews;
 - (void)updateConstraints;
 - (id)initWithButtonBar:(id)arg1;
-- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

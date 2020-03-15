@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *recordMap; // @synthesize recordMap=_recordMap;
 @property(copy) NSString *lastTestIdentifier; // @synthesize lastTestIdentifier=_lastTestIdentifier;
-- (void).cxx_destruct;
 - (id)recordForSuiteNamed:(id)arg1;
 - (void)addSuiteRecord:(id)arg1;
 @property(readonly) NSArray *suiteRecords;

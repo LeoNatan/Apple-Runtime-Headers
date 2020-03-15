@@ -31,6 +31,7 @@
     NSMutableArray *_mutableHomeVideos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableHomeVideos; // @synthesize mutableHomeVideos=_mutableHomeVideos;
 @property(retain, nonatomic) NSMutableArray *mutableAudiobookChapters; // @synthesize mutableAudiobookChapters=_mutableAudiobookChapters;
 @property(retain, nonatomic) NSMutableArray *mutableAudiobooks; // @synthesize mutableAudiobooks=_mutableAudiobooks;
@@ -49,7 +50,6 @@
 @property(nonatomic) _Bool processedFirstResult; // @synthesize processedFirstResult=_processedFirstResult;
 @property(copy, nonatomic) TVHKMediaEntitySearchRequest *searchRequest; // @synthesize searchRequest=_searchRequest;
 @property(nonatomic) __weak id <TVHKMediaEntitySearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifySearchRequest:(id)arg1 didFailWithError:(id)arg2;
 - (void)_notifySearchRequest:(id)arg1 didCompleteWithResult:(id)arg2;
 - (void)_handleContentsChangeSearchControllerOperationDidComplete:(id)arg1;

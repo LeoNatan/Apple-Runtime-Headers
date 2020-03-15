@@ -18,9 +18,9 @@
     PKPass *_pass;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) NSDictionary *merchantPayload; // @synthesize merchantPayload=_merchantPayload;
-- (void).cxx_destruct;
 - (void)downloadPassWithCompletion:(CDUnknownBlockType)arg1;
 - (void)downloadMerchantPayloadWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithValueAddedServiceTransaction:(id)arg1;

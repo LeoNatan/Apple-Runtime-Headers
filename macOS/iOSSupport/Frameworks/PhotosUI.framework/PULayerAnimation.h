@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     CAAnimation *__animation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAnimation:) CAAnimation *_animation; // @synthesize _animation=__animation;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)animationDidStart:(id)arg1;

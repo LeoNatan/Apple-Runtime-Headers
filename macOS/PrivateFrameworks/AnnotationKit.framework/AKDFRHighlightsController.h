@@ -22,13 +22,13 @@
     NSTouchBarItem *_colorSwatchesItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTouchBarItem *colorSwatchesItem; // @synthesize colorSwatchesItem=_colorSwatchesItem;
 @property(retain) NSTouchBarItem *strikethroughItem; // @synthesize strikethroughItem=_strikethroughItem;
 @property(retain) NSTouchBarItem *underlineItem; // @synthesize underlineItem=_underlineItem;
 @property(retain) NSScrubber *scrubber; // @synthesize scrubber=_scrubber;
 @property(retain) NSGroupTouchBarItem *touchBarItem; // @synthesize touchBarItem=_touchBarItem;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_invalidateUI;
 - (id)_itemIdentifiers;
 - (void)forwardToActionControllerFrom:(id)arg1;

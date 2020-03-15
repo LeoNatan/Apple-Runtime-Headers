@@ -30,6 +30,7 @@
 + (id)databaseFolderURLForConfiguration:(id)arg1;
 + (void)deleteCloudDataWithCompletion:(CDUnknownBlockType)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BUCoalescingCallBlock *coalescedAttachment; // @synthesize coalescedAttachment=_coalescedAttachment;
 @property(nonatomic) _Bool serviceMode; // @synthesize serviceMode=_serviceMode;
 @property(nonatomic) _Bool enableCloudSync; // @synthesize enableCloudSync=_enableCloudSync;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool didChangeContainer; // @synthesize didChangeContainer=_didChangeContainer;
 @property(retain) BCCloudKitDatabaseController *privateCloudDatabaseController; // @synthesize privateCloudDatabaseController=_privateCloudDatabaseController;
 @property(retain, nonatomic) BCCloudKitTransactionManager *transactionManager; // @synthesize transactionManager=_transactionManager;
-- (void).cxx_destruct;
 - (void)p_identityChanged:(id)arg1;
 - (void)p_accountChanged:(id)arg1;
 - (void)handleRemoteNotification:(id)arg1;

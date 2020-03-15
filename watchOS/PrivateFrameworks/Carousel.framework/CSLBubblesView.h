@@ -19,9 +19,9 @@
     unsigned int _animationCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int animationCount; // @synthesize animationCount=_animationCount;
 @property(nonatomic) unsigned int animationLength; // @synthesize animationLength=_animationLength;
-- (void).cxx_destruct;
 - (id)_createBubbleWithDiameter:(float)arg1;
 - (id)_createBubbles:(unsigned int)arg1 centeredAtPoint:(struct CGPoint)arg2 maxDiameter:(float)arg3 guaranteeMax:(_Bool)arg4;
 - (id)_createBubbles:(unsigned int)arg1 centeredAtPoint:(struct CGPoint)arg2 maxDiameter:(float)arg3;

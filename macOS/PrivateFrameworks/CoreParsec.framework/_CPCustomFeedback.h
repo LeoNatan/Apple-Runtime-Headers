@@ -19,10 +19,10 @@
     NSData *_jsonFeedback;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int feedbackType; // @synthesize feedbackType=_feedbackType;
 @property(copy, nonatomic) NSData *jsonFeedback; // @synthesize jsonFeedback=_jsonFeedback;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

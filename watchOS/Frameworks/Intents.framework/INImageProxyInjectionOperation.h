@@ -17,10 +17,10 @@
     CDUnknownBlockType _copyReturnBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType copyReturnBlock; // @synthesize copyReturnBlock=_copyReturnBlock;
 @property(copy, nonatomic) CDUnknownBlockType imageProxyRequestBlock; // @synthesize imageProxyRequestBlock=_imageProxyRequestBlock;
 @property(retain, nonatomic) id <INImageProxyInjecting> injector; // @synthesize injector=_injector;
-- (void).cxx_destruct;
 - (_Bool)isExecuting;
 - (_Bool)isFinished;
 - (_Bool)isAsynchronous;

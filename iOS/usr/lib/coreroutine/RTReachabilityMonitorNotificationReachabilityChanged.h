@@ -8,11 +8,11 @@
 
 @interface RTReachabilityMonitorNotificationReachabilityChanged : RTNotification
 {
-    long long _reachability;
+    unsigned long long _reachability;
 }
 
-@property(readonly, nonatomic) long long reachability; // @synthesize reachability=_reachability;
-- (id)initWithReachability:(long long)arg1;
+@property(readonly, nonatomic) unsigned long long reachability; // @synthesize reachability=_reachability;
+- (id)initWithReachability:(unsigned long long)arg1;
 
 @end
 

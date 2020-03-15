@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSSharingServicePicker *picker;
 }
 
-@property __weak NSSharingServicePicker *picker; // @synthesize picker;
 - (void).cxx_destruct;
+@property __weak NSSharingServicePicker *picker; // @synthesize picker;
 - (void)sharingServicePicker:(id)arg1 didChooseSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 recentSharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;

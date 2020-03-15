@@ -17,8 +17,8 @@
     MTMediaActivityEventHandler *_seekStop;
 }
 
-- (void)setBase:(id)arg1;
 - (void).cxx_destruct;
+- (void)setBase:(id)arg1;
 @property(readonly, nonatomic) MTMediaActivityEventHandler *seekStop; // @synthesize seekStop=_seekStop;
 @property(readonly, nonatomic) MTMediaActivityEventHandler *seekStart; // @synthesize seekStart=_seekStart;
 @property(readonly, nonatomic) MTMediaActivityEventHandler *playStop; // @synthesize playStop=_playStop;

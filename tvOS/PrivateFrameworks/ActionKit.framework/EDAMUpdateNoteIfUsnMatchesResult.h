@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *updated; // @synthesize updated=_updated;
 @property(retain, nonatomic) EDAMNote *note; // @synthesize note=_note;
-- (void).cxx_destruct;
 
 @end
 

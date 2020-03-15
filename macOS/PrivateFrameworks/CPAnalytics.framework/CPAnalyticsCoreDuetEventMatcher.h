@@ -14,15 +14,15 @@
     NSString *_datasetName;
     NSString *_identifierPropertyName;
     NSString *_subsetPropertyName;
-    struct NSObject *_subsetPropertyValue;
+    NSObject *_subsetPropertyValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL matchNextEvent; // @synthesize matchNextEvent=_matchNextEvent;
 @property(readonly, nonatomic) NSObject *subsetPropertyValue; // @synthesize subsetPropertyValue=_subsetPropertyValue;
 @property(readonly, nonatomic) NSString *subsetPropertyName; // @synthesize subsetPropertyName=_subsetPropertyName;
 @property(readonly, nonatomic) NSString *identifierPropertyName; // @synthesize identifierPropertyName=_identifierPropertyName;
 @property(readonly, nonatomic) NSString *datasetName; // @synthesize datasetName=_datasetName;
-- (void).cxx_destruct;
 - (id)initWithConfig:(id)arg1;
 
 @end

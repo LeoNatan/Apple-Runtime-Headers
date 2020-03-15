@@ -18,11 +18,11 @@
     NSMutableSet *_mutableTiles;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *mutableTiles; // @synthesize mutableTiles=_mutableTiles;
 @property(readonly, nonatomic) NSDictionary *resultsByBSSID; // @synthesize resultsByBSSID;
 @property(readonly, nonatomic) NSArray *results; // @synthesize results;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *tiles;
 - (void)addResponse:(id)arg1;
 - (id)init;

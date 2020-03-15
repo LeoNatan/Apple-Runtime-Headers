@@ -24,11 +24,11 @@
     EKGroupInfo *_group;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKGroupInfo *group; // @synthesize group=_group;
 @property(nonatomic) __weak EKCalendarChooser *chooser; // @synthesize chooser=_chooser;
 @property(retain, nonatomic) EKGroupInfoButton *showAllButton; // @synthesize showAllButton=_showAllButton;
 @property(retain, nonatomic) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
-- (void).cxx_destruct;
 - (void)_groupShowAllButtonTapped:(id)arg1;
 @property(nonatomic) _Bool showAllButtonHidden;
 - (void)_contentSizeCategoryChanged:(id)arg1;

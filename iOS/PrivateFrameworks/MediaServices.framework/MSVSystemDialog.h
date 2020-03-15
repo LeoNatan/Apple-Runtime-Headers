@@ -18,9 +18,9 @@
 }
 
 + (id)systemDialogWithOptions:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *textFields; // @synthesize textFields=_textFields;
 @property(readonly, nonatomic) MSVSystemDialogOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)dismiss;
 - (void)presentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)clearTextFields;

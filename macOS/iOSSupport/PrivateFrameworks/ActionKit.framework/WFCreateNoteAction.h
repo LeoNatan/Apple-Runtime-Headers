@@ -11,6 +11,7 @@
 }
 
 + (void)getNoteContentFromInput:(id)arg1 includingImages:(BOOL)arg2 actionName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)targetDataInfo;
 - (id)localizedKeyParameterDisplayName;
 - (void)selectedAppDidChange;
 - (void)initializeParameters;

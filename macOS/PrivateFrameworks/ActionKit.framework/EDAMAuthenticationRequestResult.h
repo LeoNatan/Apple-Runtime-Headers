@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *result; // @synthesize result=_result;
 @property(retain, nonatomic) NSString *userEmail; // @synthesize userEmail=_userEmail;
 @property(retain, nonatomic) NSNumber *userId; // @synthesize userId=_userId;
-- (void).cxx_destruct;
 
 @end
 

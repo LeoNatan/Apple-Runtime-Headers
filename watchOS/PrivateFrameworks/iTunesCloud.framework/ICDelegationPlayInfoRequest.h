@@ -18,11 +18,11 @@
     NSString *_playerUserAgent;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *tokenRequests; // @synthesize tokenRequests=_tokenRequests;
 @property(copy, nonatomic) NSString *playerUserAgent; // @synthesize playerUserAgent=_playerUserAgent;
 @property(copy, nonatomic) NSString *playerDeviceGUID; // @synthesize playerDeviceGUID=_playerDeviceGUID;
 @property(copy, nonatomic) NSData *playerAnisetteMID; // @synthesize playerAnisetteMID=_playerAnisetteMID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSMutableDictionary *propertyListRepresentation;
 

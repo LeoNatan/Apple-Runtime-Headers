@@ -19,11 +19,11 @@
     double _rotationsPerSecond;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WKInterfaceController *controller; // @synthesize controller=_controller;
 @property(readonly, nonatomic, getter=isIdle) _Bool idle; // @synthesize idle=_idle;
 @property(readonly, nonatomic) double rotationsPerSecond; // @synthesize rotationsPerSecond=_rotationsPerSecond;
 @property(nonatomic) __weak id <WKCrownDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)latencyOfLastResponse;
 - (id)_initWithController:(id)arg1;
 - (void)handleCrownTask:(id)arg1;

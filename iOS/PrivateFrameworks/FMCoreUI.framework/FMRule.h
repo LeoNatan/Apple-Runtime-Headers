@@ -16,10 +16,10 @@
 }
 
 + (id)imageWithColor:(id)arg1 leading:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) _Bool leading; // @synthesize leading=_leading;
-- (void).cxx_destruct;
 - (void)commonSetup;
 - (void)prepareForInterfaceBuilder;
 - (void)awakeFromNib;

@@ -18,9 +18,9 @@
     TVApplicationController *_applicationController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInspectionModeEnabled) _Bool inspectionModeEnabled; // @synthesize inspectionModeEnabled=_inspectionModeEnabled;
 @property(readonly, nonatomic) __weak TVApplicationController *applicationController; // @synthesize applicationController=_applicationController;
-- (void).cxx_destruct;
 - (id)_highlightViewForElement:(id)arg1 contentColor:(id)arg2 borderColor:(id)arg3;
 - (void)cancelHighlight;
 - (void)highlightViewElements:(id)arg1 contentColor:(id)arg2 borderColor:(id)arg3;

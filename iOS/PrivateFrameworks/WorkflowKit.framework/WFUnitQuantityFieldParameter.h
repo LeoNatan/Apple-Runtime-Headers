@@ -17,13 +17,13 @@
     NSDictionary *_unitSymbolMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *unitSymbolMap; // @synthesize unitSymbolMap=_unitSymbolMap;
 @property(nonatomic) _Bool fallbackToAllSupportedUnits; // @synthesize fallbackToAllSupportedUnits=_fallbackToAllSupportedUnits;
 @property(retain, nonatomic) NSUnit *defaultUnit; // @synthesize defaultUnit=_defaultUnit;
 @property(copy, nonatomic) NSString *unitType; // @synthesize unitType=_unitType;
 - (void)setPossibleUnits:(id)arg1;
 - (id)possibleUnits;
-- (void).cxx_destruct;
 - (id)defaultSerializedRepresentation;
 - (_Bool)parameterStateIsValid:(id)arg1;
 - (id)localizedLabelForPossibleUnit:(id)arg1 magnitude:(id)arg2 style:(unsigned long long)arg3;

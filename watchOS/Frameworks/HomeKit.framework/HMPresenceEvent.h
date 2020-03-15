@@ -25,8 +25,8 @@
 + (id)users:(id)arg1 home:(id)arg2 presenceType:(id)arg3;
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
 + (_Bool)isSupportedForHome:(id)arg1;
-@property(readonly, nonatomic) HMMutableArray *observedUsers; // @synthesize observedUsers=_observedUsers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMMutableArray *observedUsers; // @synthesize observedUsers=_observedUsers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

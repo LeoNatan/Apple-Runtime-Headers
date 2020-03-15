@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 + (id)defaultSmallDescriptor;
 + (id)defaultMediumDescriptor;
 + (id)defaultLargeDescriptor;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

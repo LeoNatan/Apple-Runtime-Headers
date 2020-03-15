@@ -16,9 +16,9 @@
 
 + (BOOL)needToPerformFromMinorVersion:(unsigned long long)arg1 initialLastWriteMinorVersion:(unsigned long long)arg2;
 + (BOOL)recalculateAllConversations;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (id)adjustSmartMailboxCriterion:(id)arg1 adjustmentBlock:(CDUnknownBlockType)arg2;
 - (id)_urlStringForMailboxDirectory:(id)arg1 account:(id)arg2 levelFromAccountDirectory:(unsigned long long)arg3;
 - (id)mailboxFileSystemPathsByDatabaseURLForAccounts:(id)arg1;

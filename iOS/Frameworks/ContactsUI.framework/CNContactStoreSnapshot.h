@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_batchContactIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *batchContactIdentifiers; // @synthesize batchContactIdentifiers=_batchContactIdentifiers;
 @property(readonly, nonatomic) NSMapTable *identifiersToIndexPath; // @synthesize identifiersToIndexPath=_identifiersToIndexPath;
 @property(readonly, nonatomic) NSPointerArray *summarizationFutures; // @synthesize summarizationFutures=_summarizationFutures;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
 @property(retain, nonatomic) CNContactStoreFilter *filter; // @synthesize filter=_filter;
 @property(nonatomic) __weak CNContactStoreDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, nonatomic) NSArray *indexSections;
 @property(readonly, nonatomic) NSArray *sections;

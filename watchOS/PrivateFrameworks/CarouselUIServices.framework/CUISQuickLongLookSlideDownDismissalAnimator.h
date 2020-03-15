@@ -17,9 +17,9 @@
 + (float)slideDownOffset;
 + (double)animationDuration;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *fadingRootView; // @synthesize fadingRootView=_fadingRootView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)animateWithCompletion:(CDUnknownBlockType)arg1;
 
 @end

@@ -25,6 +25,7 @@
     struct CAColorMatrix _colorMatrix;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isBlurAtEnd) _Bool blurAtEnd; // @synthesize blurAtEnd=_blurAtEnd;
 @property(readonly, copy, nonatomic) NSString *blurInputQuality; // @synthesize blurInputQuality=_blurInputQuality;
 @property(readonly, nonatomic) double backdropScale; // @synthesize backdropScale=_backdropScale;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) double blurRadius; // @synthesize blurRadius=_blurRadius;
 @property(readonly, copy, nonatomic) NSArray *luminanceValues; // @synthesize luminanceValues=_luminanceValues;
 @property(readonly, nonatomic) double luminanceAmount; // @synthesize luminanceAmount=_luminanceAmount;
-- (void).cxx_destruct;
 - (void)_processMaterialFilteringDescription:(id)arg1 defaultingToIdentity:(_Bool)arg2;
 - (id)initWithMaterialDescription:(id)arg1 andDescendantDescriptions:(id)arg2;
 

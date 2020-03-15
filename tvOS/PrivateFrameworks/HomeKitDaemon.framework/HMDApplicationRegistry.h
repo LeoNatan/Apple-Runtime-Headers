@@ -21,11 +21,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *applications; // @synthesize applications=_applications;
 @property(retain, nonatomic) LSApplicationWorkspace *appWorkspace; // @synthesize appWorkspace=_appWorkspace;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(retain, nonatomic) HMDApplicationMonitor *monitor; // @synthesize monitor=_monitor;
-- (void).cxx_destruct;
 - (void)_stopObservingAppUninstalls;
 - (void)_startObservingAppUninstalls;
 - (void)applicationsDidUninstall:(id)arg1;

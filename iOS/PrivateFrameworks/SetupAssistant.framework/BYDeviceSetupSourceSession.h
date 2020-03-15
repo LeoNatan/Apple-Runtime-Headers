@@ -27,6 +27,7 @@
     unsigned long long _currentPhase;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long currentPhase; // @synthesize currentPhase=_currentPhase;
 @property double timeRemaining; // @synthesize timeRemaining=_timeRemaining;
 @property _Bool hasSyncCompleted; // @synthesize hasSyncCompleted=_hasSyncCompleted;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) CUMessageSession *messageSession; // @synthesize messageSession=_messageSession;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) CDUnknownBlockType sendObjectHandler; // @synthesize sendObjectHandler=_sendObjectHandler;
-- (void).cxx_destruct;
 - (void)syncCompletedWithErrors:(id)arg1;
 - (void)syncProgress:(double)arg1;
 - (void)backupCompletedWithError:(id)arg1;

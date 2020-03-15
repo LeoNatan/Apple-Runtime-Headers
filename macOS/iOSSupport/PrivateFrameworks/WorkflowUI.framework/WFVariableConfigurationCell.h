@@ -24,6 +24,7 @@
 }
 
 + (long long)cellStyle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(readonly, nonatomic) CAShapeLayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(readonly, nonatomic) UIImageView *disclosureImageView; // @synthesize disclosureImageView=_disclosureImageView;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL showsSeparator; // @synthesize showsSeparator=_showsSeparator;
 @property(copy, nonatomic) NSString *valueText; // @synthesize valueText=_valueText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)updateMask;
 - (void)layoutSubviews;
 - (void)setFrame:(struct CGRect)arg1;

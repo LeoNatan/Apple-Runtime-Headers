@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     ISAnimatedImageTimer *__forwardingTarget;
 }
 
-@property(nonatomic, setter=_setForwardingTarget:) __weak ISAnimatedImageTimer *_forwardingTarget; // @synthesize _forwardingTarget=__forwardingTarget;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setForwardingTarget:) __weak ISAnimatedImageTimer *_forwardingTarget; // @synthesize _forwardingTarget=__forwardingTarget;
 - (void)_displayLinkFire:(id)arg1;
 
 @end

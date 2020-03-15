@@ -25,6 +25,7 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *fullScreenNum; // @synthesize fullScreenNum=_fullScreenNum;
 @property(readonly, nonatomic) NSNumber *precomposedNum; // @synthesize precomposedNum=_precomposedNum;
 @property(readonly, nonatomic) NSNumber *isRemovableNum; // @synthesize isRemovableNum=_isRemovableNum;
@@ -35,7 +36,6 @@
 @property(readonly, retain, nonatomic) NSData *iconData; // @synthesize iconData=_iconData;
 @property(readonly, retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)payloadDescriptionKeyValueSections;
 - (id)subtitle2Description;
 - (id)subtitle2Label;

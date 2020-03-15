@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIView *_preferredItemViewToFocus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isShowingCallTimer) BOOL showingCallTimer; // @synthesize showingCallTimer=_showingCallTimer;
 @property(nonatomic) __weak UIView *preferredItemViewToFocus; // @synthesize preferredItemViewToFocus=_preferredItemViewToFocus;
 @property(copy, nonatomic) NSString *currentActiveBundleIdentifier; // @synthesize currentActiveBundleIdentifier=_currentActiveBundleIdentifier;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIStatusBarCarPlayDockAppItemButton *itemTwoButton; // @synthesize itemTwoButton=_itemTwoButton;
 @property(retain, nonatomic) UIStatusBarCarPlayDockAppItemButton *itemOneButton; // @synthesize itemOneButton=_itemOneButton;
 @property(retain, nonatomic) UILabel *inCallDurationLabel; // @synthesize inCallDurationLabel=_inCallDurationLabel;
-- (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (unsigned long long)_numberOfEnabledItems;
 - (double)extraRightPadding;

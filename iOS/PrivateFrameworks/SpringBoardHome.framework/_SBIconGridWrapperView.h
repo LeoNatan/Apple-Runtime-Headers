@@ -14,9 +14,9 @@
     SBFolderIconImageView *_folderIconImageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBFolderIconImageView *folderIconImageView; // @synthesize folderIconImageView=_folderIconImageView;
 @property(retain, nonatomic) _SBFolderPageElement *element; // @synthesize element=_element;
-- (void).cxx_destruct;
 - (void)positionAtRow:(unsigned long long)arg1;
 - (void)reposition;
 

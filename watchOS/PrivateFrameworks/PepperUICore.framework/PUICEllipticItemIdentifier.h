@@ -17,9 +17,9 @@
 }
 
 + (id)identifierWithIndexPath:(id)arg1 representedKind:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *representedKind; // @synthesize representedKind=_representedKind;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

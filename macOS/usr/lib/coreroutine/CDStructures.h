@@ -22,14 +22,6 @@ struct CLLocationCoordinate2D {
     double _field2;
 };
 
-struct NSMapTable {
-    Class _field1;
-};
-
-struct RTPair {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

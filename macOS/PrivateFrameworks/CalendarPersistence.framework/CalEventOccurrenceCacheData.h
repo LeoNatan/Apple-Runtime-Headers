@@ -21,11 +21,11 @@
     NSMutableSet *_calendarObjectIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOrderedSet *binnedDates; // @synthesize binnedDates=_binnedDates;
 @property(retain, nonatomic) NSSet *calendarObjectIDs; // @synthesize calendarObjectIDs=_calendarObjectIDs;
 @property(retain, nonatomic) CalDateRange *range; // @synthesize range=_range;
 @property(retain, nonatomic) NSString *timeZoneString; // @synthesize timeZoneString=_timeZoneString;
-- (void).cxx_destruct;
 - (BOOL)_validateIsCompletelyEmpty;
 - (id)occurrenceByOcurrenceID;
 - (id)occurrencesForManagedObjectID:(id)arg1;

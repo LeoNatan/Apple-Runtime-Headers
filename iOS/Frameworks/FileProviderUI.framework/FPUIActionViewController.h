@@ -31,10 +31,12 @@
 }
 
 + (id)actionControllerForInlineError:(id)arg1 providerIdentifier:(id)arg2;
++ (id)actionControllerForError:(id)arg1 extensionIdentifier:(id)arg2 providerDomainIdentifier:(id)arg3;
 + (id)actionControllerForError:(id)arg1 providerIdentifier:(id)arg2;
 + (id)actionControllerForConnectingToServerURL:(id)arg1 actionTitle:(id)arg2 providerIdentifier:(id)arg3;
 + (id)actionControllerForAuthenticationUsingURL:(id)arg1 providerIdentifier:(id)arg2;
 + (id)actionControllerForActionIdentifier:(id)arg1 actionTitle:(id)arg2 items:(id)arg3 providerIdentifier:(id)arg4 domainIdentifier:(id)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSURL *serverConnectionURL; // @synthesize serverConnectionURL=_serverConnectionURL;
@@ -46,7 +48,6 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(nonatomic) __weak id <FPUIActionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)remoteActionContext:(id)arg1 didEncounterError:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)remoteActionContextDidFinishAction:(id)arg1 userInfo:(id)arg2 error:(id)arg3;
 - (void)remoteActionControllerDidFinishAction:(id)arg1 error:(id)arg2;

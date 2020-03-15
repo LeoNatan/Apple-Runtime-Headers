@@ -19,11 +19,11 @@
     PKPaymentTransaction *_transaction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) PKPeerPaymentMessage *message; // @synthesize message=_message;
 @property(readonly, nonatomic) int transactionStatus; // @synthesize transactionStatus=_transactionStatus;
 @property(readonly, nonatomic) unsigned int transactionDirection; // @synthesize transactionDirection=_transactionDirection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool fraudRisk;
 @property(readonly, nonatomic) unsigned int peerPaymentTransactionType;
 @property(readonly, nonatomic) NSArray *fees;

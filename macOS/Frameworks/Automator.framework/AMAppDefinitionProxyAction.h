@@ -16,11 +16,11 @@
     NSImage *_smallIcon;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *genericActionBundleIdentifier; // @synthesize genericActionBundleIdentifier=_genericActionBundleIdentifier;
 @property(retain, nonatomic) AMApplicationDefinition *applicationDefinition; // @synthesize applicationDefinition=_applicationDefinition;
 @property(retain, nonatomic) NSImage *largeIcon; // @synthesize largeIcon=_largeIcon;
 @property(retain, nonatomic) NSImage *smallIcon; // @synthesize smallIcon=_smallIcon;
-- (void).cxx_destruct;
 - (void)fault;
 - (void)_setIsDeprecated:(BOOL)arg1;
 @property(retain, nonatomic) NSString *bundleVersion; // @dynamic bundleVersion;

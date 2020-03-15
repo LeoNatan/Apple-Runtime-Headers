@@ -22,9 +22,9 @@
 + (void)configureServerInterface:(id)arg1;
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)client_deliverUpdatedSources:(id)arg1 added:(id)arg2 forQuery:(id)arg3;
 - (void)client_deliverSources:(id)arg1 forQuery:(id)arg2;
 - (BOOL)queue_shouldDeactivateAfterInitialResults;

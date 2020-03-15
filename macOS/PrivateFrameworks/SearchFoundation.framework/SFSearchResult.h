@@ -71,10 +71,7 @@
     unsigned long long _minimumRankOfTopHitToSuppressResult;
     NSString *_mediaType;
     double _serverScore;
-    NSDictionary *_topicDistribution;
-    NSDictionary *_featureScaling;
     double _personalizationScore;
-    unsigned long long _origRank;
     SFCustom *_customProperties;
     NSString *_resultType;
     NSString *_resultTemplate;
@@ -106,6 +103,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *entityData; // @synthesize entityData=_entityData;
 @property(nonatomic) unsigned long long blockId; // @synthesize blockId=_blockId;
 @property(nonatomic) BOOL doNotFold; // @synthesize doNotFold=_doNotFold;
@@ -140,10 +138,7 @@
 @property(copy, nonatomic) NSString *resultTemplate; // @synthesize resultTemplate=_resultTemplate;
 @property(copy, nonatomic) NSString *resultType; // @synthesize resultType=_resultType;
 @property(retain, nonatomic) SFCustom *customProperties; // @synthesize customProperties=_customProperties;
-@property(nonatomic) unsigned long long origRank; // @synthesize origRank=_origRank;
 @property(nonatomic) double personalizationScore; // @synthesize personalizationScore=_personalizationScore;
-@property(copy, nonatomic) NSDictionary *featureScaling; // @synthesize featureScaling=_featureScaling;
-@property(copy, nonatomic) NSDictionary *topicDistribution; // @synthesize topicDistribution=_topicDistribution;
 @property(nonatomic) double serverScore; // @synthesize serverScore=_serverScore;
 @property(copy, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) unsigned long long minimumRankOfTopHitToSuppressResult; // @synthesize minimumRankOfTopHitToSuppressResult=_minimumRankOfTopHitToSuppressResult;
@@ -194,7 +189,6 @@
 @property(nonatomic) BOOL preventThumbnailImageScaling; // @synthesize preventThumbnailImageScaling=_preventThumbnailImageScaling;
 @property(retain, nonatomic) SFImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

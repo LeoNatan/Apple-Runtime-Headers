@@ -15,9 +15,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSString *uri; // @synthesize uri=_uri;
 @property(retain) CoreDAVItem *propPatchElement; // @synthesize propPatchElement=_propPatchElement;
-- (void).cxx_destruct;
 - (void)resolveError:(id)arg1 forAccountInfoProvider:(id)arg2;
 - (void)performOperation;
 - (id)readableDescription;

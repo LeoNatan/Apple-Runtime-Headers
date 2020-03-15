@@ -15,8 +15,8 @@
     NSURL *_location;
 }
 
-@property(readonly, nonatomic) NSURL *location; // @synthesize location=_location;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *location; // @synthesize location=_location;
 - (id)initWithLocation:(id)arg1;
 
 // Remaining properties

@@ -26,10 +26,11 @@
 }
 
 + (BOOL)isRunningStatus:(int)arg1;
-+ (void)unregisterPFActionNotificationsReceiver:(struct NSObject *)arg1;
-+ (void)registerPFActionNotificationsReceiver:(struct NSObject *)arg1;
++ (void)unregisterPFActionNotificationsReceiver:(id)arg1;
++ (void)registerPFActionNotificationsReceiver:(id)arg1;
 + (id)statusDescription:(int)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned int workQOSClass; // @synthesize workQOSClass=_workQOSClass;
 @property(copy) NSString *actionName; // @synthesize actionName=_actionName;
 @property BOOL isUndoable; // @synthesize isUndoable=_isUndoable;
@@ -37,7 +38,6 @@
 @property(retain) NSError *failureAlertError; // @synthesize failureAlertError=_failureAlertError;
 @property(readonly) int status; // @synthesize status=_status;
 @property(readonly) BOOL wasInterrupted; // @synthesize wasInterrupted=_interrupted;
-- (void).cxx_destruct;
 - (int)executeRedo:(CDUnknownBlockType)arg1;
 - (int)executeRedo;
 - (void)_prePerformRedo;

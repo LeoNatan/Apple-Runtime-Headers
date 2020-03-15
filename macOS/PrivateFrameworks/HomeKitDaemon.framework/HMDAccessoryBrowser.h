@@ -68,6 +68,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *discoveredAccessoryServerIdentifiers; // @synthesize discoveredAccessoryServerIdentifiers=_discoveredAccessoryServerIdentifiers;
 @property(readonly, nonatomic) NSHashTable *discoveringBLEAccessoryServerIdentifiers; // @synthesize discoveringBLEAccessoryServerIdentifiers=_discoveringBLEAccessoryServerIdentifiers;
 @property(readonly, nonatomic) NSHashTable *tombstonedHAPAccessoryServers; // @synthesize tombstonedHAPAccessoryServers=_tombstonedHAPAccessoryServers;
@@ -102,7 +103,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) BOOL btlePowerState; // @synthesize btlePowerState=_btlePowerState;
 @property(readonly, nonatomic) HAPAccessoryServerBrowserRelay *relayAccessoryServerBrowser; // @synthesize relayAccessoryServerBrowser=_relayAccessoryServerBrowser;
-- (void).cxx_destruct;
 - (id)dumpRegisteredPairedAccessories;
 - (id)dumpUnassociatedAccessories;
 - (void)handlePPIDInfoResponse:(id)arg1 context:(id)arg2 error:(id)arg3;
@@ -185,6 +185,7 @@
 - (id)findAccessoryServerForAccessoryDescription:(id)arg1;
 - (void)_cancelPairingWithAccessory:(id)arg1 error:(id)arg2;
 - (void)_handleSetupCodeAvailable:(id)arg1;
+- (BOOL)isMediaAccessory:(id)arg1;
 - (BOOL)isDemoAccessoryIdentifier:(id)arg1;
 - (void)_notifyDelegatesOfNewAccessory:(id)arg1;
 - (id)unpairedAccessoryForServer:(id)arg1;
@@ -244,6 +245,8 @@
 - (void)removeUnassociatedWACAccessory:(id)arg1;
 - (void)addUnassociatedWACAccessory:(id)arg1;
 - (void)removeUnassociatedMediaAccessory:(id)arg1;
+- (void)_associateMediaAccessoryForServer:(id)arg1;
+- (void)_associate:(BOOL)arg1 hapAccessoryWithAdvertisement:(id)arg2;
 - (void)addUnassociatedMediaAccessory:(id)arg1 forDeviceSetup:(BOOL)arg2;
 - (id)_progressHandlerForUnpairedAccessory:(id)arg1;
 - (id)_pairingInformationForUnpairedAccessory:(id)arg1;

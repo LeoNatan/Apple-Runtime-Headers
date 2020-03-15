@@ -16,8 +16,8 @@
     SBIconListViewDraggingDestinationDelegate *_draggingDestinationDelegate;
 }
 
-@property(nonatomic) __weak SBIconListViewDraggingDestinationDelegate *draggingDestinationDelegate; // @synthesize draggingDestinationDelegate=_draggingDestinationDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SBIconListViewDraggingDestinationDelegate *draggingDestinationDelegate; // @synthesize draggingDestinationDelegate=_draggingDestinationDelegate;
 - (void)dropInteraction:(id)arg1 item:(id)arg2 willAnimateDropWithAnimator:(id)arg3;
 - (id)dropInteraction:(id)arg1 previewForDroppingItem:(id)arg2 withDefault:(id)arg3;
 - (id)_destinationFolderIconViewForDragItem:(id)arg1 iconIndexPath:(id *)arg2 folderRelativeIconIndexPath:(id *)arg3;

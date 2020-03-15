@@ -18,9 +18,9 @@
 }
 
 + (id)objectWithWFSerializedRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)wfSerializedRepresentation;
 @property(readonly, copy, nonatomic) NSString *wfName;
 - (id)initWithMachineReadableCodeObject:(id)arg1;

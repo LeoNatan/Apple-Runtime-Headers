@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     id <NCSizeObservingViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NCSizeObservingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NCSizeObservingViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 

@@ -18,13 +18,13 @@
     long long _transitionType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long transitionType; // @synthesize transitionType=_transitionType;
 @property(retain, nonatomic) SBWorkspaceTransientOverlay *transientOverlay; // @synthesize transientOverlay=_transientOverlay;
 @property(retain, nonatomic) SBTransientOverlayPresentationManager *presentationManager; // @synthesize presentationManager=_presentationManager;
 @property(nonatomic) _Bool shouldDismissSwitcherUponPresentation; // @synthesize shouldDismissSwitcherUponPresentation=_shouldDismissSwitcherUponPresentation;
 @property(nonatomic) _Bool shouldDismissSiriUponPresentation; // @synthesize shouldDismissSiriUponPresentation=_shouldDismissSiriUponPresentation;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)compactDescriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)init;

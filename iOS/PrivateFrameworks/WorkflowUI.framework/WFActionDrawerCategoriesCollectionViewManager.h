@@ -23,13 +23,13 @@
     WFActionDrawerCategoriesMetrics *_metrics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFActionDrawerCategoriesMetrics *metrics; // @synthesize metrics=_metrics;
 @property(nonatomic) double itemWidth; // @synthesize itemWidth=_itemWidth;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <WFActionDrawerCategoriesCollectionViewManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool shouldUseVerticalStacking; // @synthesize shouldUseVerticalStacking=_shouldUseVerticalStacking;
 @property(readonly, copy, nonatomic) NSArray *contentTypeCategories; // @synthesize contentTypeCategories=_contentTypeCategories;
-- (void).cxx_destruct;
 - (id)localizedTitleForCategory:(id)arg1;
 - (id)scriptingSectionTitle;
 - (id)favoritesSectionTitle;

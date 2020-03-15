@@ -16,9 +16,9 @@
     NSMapTable *_impressionableViewElementsTimerMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *impressionsString; // @synthesize impressionsString=_impressionsString;
 @property(readonly, copy, nonatomic) NSArray *impressionIdentifiers; // @synthesize impressionIdentifiers=_impressionIdentifiers;
-- (void).cxx_destruct;
 - (void)_clearTimerForViewElement:(id)arg1;
 - (void)_setTimer:(id)arg1 forViewElement:(id)arg2;
 - (id)_getTimerForViewElement:(id)arg1;

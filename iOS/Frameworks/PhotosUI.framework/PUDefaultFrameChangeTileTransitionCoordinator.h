@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSSet *__invisibleTileControllers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setInvisibleTileControllers:) NSSet *_invisibleTileControllers; // @synthesize _invisibleTileControllers=__invisibleTileControllers;
 @property(nonatomic) __weak PUTilingView *tilingView; // @synthesize tilingView=_tilingView;
 @property(nonatomic) _Bool shouldCrossFadeTiles; // @synthesize shouldCrossFadeTiles=_shouldCrossFadeTiles;
-- (void).cxx_destruct;
 - (_Bool)_isLayoutInfoVisible:(id)arg1;
 - (void)prepare;
 - (id)_layoutInfoForDisappearedInvisibleTile:(id)arg1;

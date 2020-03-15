@@ -20,13 +20,13 @@
 }
 
 + (id)keysToFetch;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *postalAddresses; // @synthesize postalAddresses=_postalAddresses;
 @property(readonly, nonatomic) NSSet *phoneNumbers; // @synthesize phoneNumbers=_phoneNumbers;
 @property(readonly, nonatomic) NSSet *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly, nonatomic) NSString *formattedName; // @synthesize formattedName=_formattedName;
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(readonly, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
-- (void).cxx_destruct;
 - (_Bool)isSameAsOrUnifiedWithContact:(id)arg1;
 - (id)initWithContact:(id)arg1;
 

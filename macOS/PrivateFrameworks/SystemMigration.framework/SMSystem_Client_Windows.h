@@ -16,10 +16,10 @@
 }
 
 + (id)guiInterestedKeys;
+- (void).cxx_destruct;
 @property(retain) NSImage *volumeIcon; // @synthesize volumeIcon;
 @property(retain) NSArray *components; // @synthesize components;
 @property(retain) NSString *driveLetter; // @synthesize driveLetter;
-- (void).cxx_destruct;
 - (id)userFromXpcDictionary:(id)arg1;
 - (long long)defaultUIRank;
 

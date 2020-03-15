@@ -25,6 +25,7 @@
 + (id)propertiesForProtocol:(id)arg1;
 + (id)propertiesForClass:(Class)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, getter=isWeakReference) BOOL weakReference; // @synthesize weakReference=_weakReference;
 @property(readonly) SEL customSetterSelector; // @synthesize customSetterSelector=_customSetterSelector;
 @property(readonly) SEL customGetterSelector; // @synthesize customGetterSelector=_customGetterSelector;
@@ -35,7 +36,6 @@
 @property(readonly) long long type; // @synthesize type=_type;
 @property(readonly, copy) NSString *instanceVariableName; // @synthesize instanceVariableName=_instanceVariableName;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithName:(const char *)arg1 attributes:(const char *)arg2;
 

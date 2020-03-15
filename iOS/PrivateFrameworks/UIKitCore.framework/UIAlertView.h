@@ -33,10 +33,10 @@
 + (id)_alertViewForWindow:(id)arg1;
 + (id)_alertViewForSessionWithRemoteViewController:(id)arg1;
 + (id)_remoteAlertViewWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_externalViewControllerForPresentation, setter=_setExternalViewControllerForPresentation:) UIViewController *externalViewControllerForPresentation; // @synthesize externalViewControllerForPresentation=_externalViewControllerForPresentation;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_alertController;
 - (void)setTableShouldShowMinimumContent:(_Bool)arg1;
 - (id)_addButtonWithTitle:(id)arg1;

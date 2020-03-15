@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *serverResponse; // @synthesize serverResponse;
 @property(retain) NSNumber *suppressionCheckboxState; // @synthesize suppressionCheckboxState;
 @property(retain) NSString *password; // @synthesize password;
 @property(retain) NSString *username; // @synthesize username;
 @property long long returnCode; // @synthesize returnCode;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

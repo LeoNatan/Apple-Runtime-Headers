@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 
 + (id)animojiGroupWithProviders:(id)arg1 environment:(id)arg2 allowAddItem:(_Bool)arg3;
 + (id)suggestionsGroupWithProviders:(id)arg1 environment:(id)arg2 allowAddItem:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNScheduler> callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(readonly, nonatomic) id <CNScheduler> workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) CNPhotoPickerProviderItem *addItem; // @synthesize addItem=_addItem;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool showCircleMask; // @synthesize showCircleMask=_showCircleMask;
 @property(readonly, nonatomic) _Bool allowAddItem; // @synthesize allowAddItem=_allowAddItem;
 @property(readonly, nonatomic) long long groupType; // @synthesize groupType=_groupType;
-- (void).cxx_destruct;
 - (void)providerItemDidUpdate:(id)arg1;
 - (long long)removeProviderItem:(id)arg1;
 - (long long)addProviderItem:(id)arg1;

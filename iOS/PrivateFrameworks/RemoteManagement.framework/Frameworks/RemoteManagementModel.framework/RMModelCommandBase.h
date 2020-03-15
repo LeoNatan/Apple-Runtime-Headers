@@ -17,14 +17,16 @@
 }
 
 + (id)load:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) RMModelAnyPayload *commandPayload; // @synthesize commandPayload=_commandPayload;
 @property(copy, nonatomic) NSString *commandDescription; // @synthesize commandDescription=_commandDescription;
 @property(copy, nonatomic) NSString *commandIdentifier; // @synthesize commandIdentifier=_commandIdentifier;
 @property(copy, nonatomic) NSString *commandType; // @synthesize commandType=_commandType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializePayloadWithType:(short)arg1;
 - (id)serializeWithType:(short)arg1;
-- (_Bool)loadCommandFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (_Bool)loadPayloadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 - (int)executionLevel;
 - (_Bool)mustBeSupervised;
 

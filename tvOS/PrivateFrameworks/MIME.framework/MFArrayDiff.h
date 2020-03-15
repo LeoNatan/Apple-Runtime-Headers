@@ -15,10 +15,10 @@
     NSIndexSet *_removedIndexes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexSet *removedIndexes; // @synthesize removedIndexes=_removedIndexes;
 @property(retain, nonatomic) NSIndexSet *addedIndexes; // @synthesize addedIndexes=_addedIndexes;
 @property(retain, nonatomic) NSIndexSet *commonIndexes; // @synthesize commonIndexes=_commonIndexes;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

@@ -20,8 +20,8 @@
     id <CSVTUIAudioSessionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSVTUIAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSVTUIAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)voiceControllerPlaybackBufferAvailable:(id)arg1 buffer:(id)arg2;
 - (void)updateMeters;
 - (void)stopRecording;

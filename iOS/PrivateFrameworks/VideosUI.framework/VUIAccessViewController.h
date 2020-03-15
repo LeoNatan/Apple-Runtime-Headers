@@ -21,8 +21,8 @@
 + (_Bool)_grantAccessToChannelIDs:(id)arg1 isReconsent:(_Bool)arg2;
 + (_Bool)_grantAccessToBundleIDs:(id)arg1;
 + (_Bool)grantAccessToBundleIDs:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (unsigned long long)supportedInterfaceOrientations;
 - (id)initWithChannels:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithBundleIDs:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

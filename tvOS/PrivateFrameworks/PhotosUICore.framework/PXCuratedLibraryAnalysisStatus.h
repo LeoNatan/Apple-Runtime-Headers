@@ -28,6 +28,7 @@
     long long _alternateTitleIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasBattery; // @synthesize hasBattery=_hasBattery;
 @property(readonly, nonatomic) long long alternateTitleIndex; // @synthesize alternateTitleIndex=_alternateTitleIndex;
 @property(readonly, nonatomic) _Bool isDevicePlugged; // @synthesize isDevicePlugged=_isDevicePlugged;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) id <PXCuratedLibraryEventLogger> eventLogger; // @synthesize eventLogger=_eventLogger;
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)setIsDevicePlugged:(_Bool)arg1;
 - (void)setIsDaysMonthsYearsStructureEnabled:(_Bool)arg1;
 - (void)setDisplayProgress:(float)arg1;

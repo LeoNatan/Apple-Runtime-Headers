@@ -16,9 +16,9 @@
     unsigned long long _capacity;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) CNQueue *keys; // @synthesize keys=_keys;
-- (void).cxx_destruct;
 - (void)willAccessKey:(id)arg1;
 - (_Bool)shouldEvictKey:(id)arg1;
 - (void)willUpdateCacheBy:(unsigned long long)arg1 forKey:(id)arg2 keysToEvict:(id *)arg3;

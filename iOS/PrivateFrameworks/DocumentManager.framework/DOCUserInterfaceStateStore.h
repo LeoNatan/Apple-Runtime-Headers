@@ -14,8 +14,8 @@
 }
 
 + (id)sharedStore;
-@property(retain) NSMutableDictionary *uiStateMap; // @synthesize uiStateMap=_uiStateMap;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *uiStateMap; // @synthesize uiStateMap=_uiStateMap;
 - (id)docUserDefaults;
 - (id)_sortedInterfaceStateKeys;
 - (void)_pruneOldState;

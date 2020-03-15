@@ -14,9 +14,9 @@
     long long _theme;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long theme; // @synthesize theme=_theme;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sortingLastName;
 @property(readonly, nonatomic) NSString *sortingFirstName;
 @property(readonly, nonatomic) NSString *displayName;

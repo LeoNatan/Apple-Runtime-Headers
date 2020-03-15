@@ -14,9 +14,9 @@
     AVAudioSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) NSMutableArray *notificationObserverTokens; // @synthesize notificationObserverTokens=_notificationObserverTokens;
-- (void).cxx_destruct;
 - (void)_handleSilenceSecondaryAudio:(unsigned long long)arg1;
 - (void)_handleMediaServicesReset;
 - (void)_handleMediaServicesLost;

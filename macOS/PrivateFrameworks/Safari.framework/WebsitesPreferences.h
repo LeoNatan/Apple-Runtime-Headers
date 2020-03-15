@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     double _widestNonPlugInTableCellViewWidth;
     NSArray *_perSitePreferences;
     NSDictionary *_preferencesToManagers;
+    NSTextField *_managedPlugInPoliciesDescriptionTextField;
     NSTableView *_preferencesTableView;
     NSTextField *_preferenceDescriptionTextField;
     NSButton *_removeButton;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
     NSView *_policyContainerView;
     NSView *_preferencesPolicyView;
     NSView *_notificationsPolicyView;
-    NSTextField *_managedPlugInPoliciesDescriptionTextField;
     ManagedWebGLPoliciesViewController *_managedWebGLPoliciesViewController;
     NSTextField *_managedWebGLPoliciesDescriptionTextField;
     NotificationPreferencesController *_notificationPreferencesController;
@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
     NSBox *_notificationsPolicyBorderBox;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSBox *notificationsPolicyBorderBox; // @synthesize notificationsPolicyBorderBox=_notificationsPolicyBorderBox;
 @property(nonatomic) __weak NSBox *preferencesBorderBox; // @synthesize preferencesBorderBox=_preferencesBorderBox;
 @property(nonatomic) __weak NSTextField *whenVisitingOtherWebsitesPreferenceLabel; // @synthesize whenVisitingOtherWebsitesPreferenceLabel=_whenVisitingOtherWebsitesPreferenceLabel;
@@ -63,8 +64,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NotificationPreferencesController *notificationPreferencesController; // @synthesize notificationPreferencesController=_notificationPreferencesController;
 @property(retain, nonatomic) NSTextField *managedWebGLPoliciesDescriptionTextField; // @synthesize managedWebGLPoliciesDescriptionTextField=_managedWebGLPoliciesDescriptionTextField;
 @property(retain, nonatomic) ManagedWebGLPoliciesViewController *managedWebGLPoliciesViewController; // @synthesize managedWebGLPoliciesViewController=_managedWebGLPoliciesViewController;
-@property(retain, nonatomic) NSTextField *managedPlugInPoliciesDescriptionTextField; // @synthesize managedPlugInPoliciesDescriptionTextField=_managedPlugInPoliciesDescriptionTextField;
-@property(retain, nonatomic) ManagedPlugInPoliciesViewController *managedPlugInPoliciesViewController; // @synthesize managedPlugInPoliciesViewController=_managedPlugInPoliciesViewController;
 @property(retain, nonatomic) NSView *notificationsPolicyView; // @synthesize notificationsPolicyView=_notificationsPolicyView;
 @property(retain, nonatomic) NSView *preferencesPolicyView; // @synthesize preferencesPolicyView=_preferencesPolicyView;
 @property(nonatomic) __weak NSView *policyContainerView; // @synthesize policyContainerView=_policyContainerView;
@@ -76,7 +75,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
 @property(nonatomic) __weak NSTextField *preferenceDescriptionTextField; // @synthesize preferenceDescriptionTextField=_preferenceDescriptionTextField;
 @property(nonatomic) __weak NSTableView *preferencesTableView; // @synthesize preferencesTableView=_preferencesTableView;
-- (void).cxx_destruct;
+@property(retain, nonatomic) NSTextField *managedPlugInPoliciesDescriptionTextField; // @synthesize managedPlugInPoliciesDescriptionTextField=_managedPlugInPoliciesDescriptionTextField;
+@property(retain, nonatomic) ManagedPlugInPoliciesViewController *managedPlugInPoliciesViewController; // @synthesize managedPlugInPoliciesViewController=_managedPlugInPoliciesViewController;
 - (void)test_setUpPolicyPopUpButtonIfNecessary:(id)arg1 forPerSitePreference:(id)arg2;
 - (void)test_getCurrentlyOpenAndConfiguredDomainsForPreference:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_browserContentDidChange:(id)arg1;

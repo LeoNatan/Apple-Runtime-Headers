@@ -17,11 +17,11 @@
 }
 
 + (id)indexedObjects:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastMarkerIndex; // @synthesize lastMarkerIndex=_lastMarkerIndex;
 @property(retain, nonatomic) NSMutableArray *markers; // @synthesize markers=_markers;
 @property(retain, nonatomic) NSArray *cachedObjects; // @synthesize cachedObjects=_cachedObjects;
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;
-- (void).cxx_destruct;
 - (long long)_searchMarkerIndexForLocation:(unsigned long long)arg1;
 - (void)_indexObjects:(id)arg1;
 - (id)markerAtIndex:(long long)arg1;

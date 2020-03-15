@@ -23,9 +23,9 @@
 }
 
 + (float)autoLiveMotionScore:(id)arg1;
-@property(readonly) float actionScore; // @synthesize actionScore=_actionScore;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly) float actionScore; // @synthesize actionScore=_actionScore;
 - (void)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 completion:(CDUnknownBlockType)arg4;
 - (int)cameraMotionDetection:(struct MotionResult *)arg1;
 - (int)generateThresholds:(float [6])arg1 withConfidences:(float [6])arg2;

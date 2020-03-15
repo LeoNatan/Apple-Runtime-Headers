@@ -22,11 +22,11 @@
 + (id)_indicatorImageSmall;
 + (id)_indicatorImage;
 + (id)_generateIndicatorImageWithSize:(float)arg1 andColor:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *currentIndicator; // @synthesize currentIndicator=_currentIndicator;
 @property(retain, nonatomic) UIColor *indicatorColor; // @synthesize indicatorColor=_indicatorColor;
 @property(nonatomic) int currentPage; // @synthesize currentPage=_currentPage;
 @property(nonatomic) int numberOfPages; // @synthesize numberOfPages=_numberOfPages;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (float)_dotSpacing;

@@ -17,10 +17,10 @@
 }
 
 + (id)sharedTimer;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStopWhenBackgrounded; // @synthesize shouldStopWhenBackgrounded=_shouldStopWhenBackgrounded;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(retain, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)updateDisplayLink;
 - (void)animationTimerFired;
 - (void)removeAnimationTimerObserver:(id)arg1;

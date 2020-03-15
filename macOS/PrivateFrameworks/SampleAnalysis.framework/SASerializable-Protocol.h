@@ -6,14 +6,14 @@
 
 #import <SampleAnalysis/NSObject-Protocol.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 
 @protocol SASerializable <NSObject>
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const void *)arg1 bufferLength:(unsigned long long)arg2;
 + (NSString *)classDictionaryKey;
-- (void)populateReferencesUsingBuffer:(const void *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
+- (void)populateReferencesUsingBuffer:(const void *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(NSMutableDictionary *)arg3 andDataBufferDictionary:(NSMutableDictionary *)arg4;
+- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(NSMutableDictionary *)arg3;
+- (void)addSelfToSerializationDictionary:(NSMutableDictionary *)arg1;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 @end
 

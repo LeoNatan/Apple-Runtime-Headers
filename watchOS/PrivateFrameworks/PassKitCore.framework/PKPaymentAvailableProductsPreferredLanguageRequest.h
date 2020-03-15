@@ -13,8 +13,8 @@
     NSString *_preferredLanguage;
 }
 
-@property(copy, nonatomic) NSString *preferredLanguage; // @synthesize preferredLanguage=_preferredLanguage;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *preferredLanguage; // @synthesize preferredLanguage=_preferredLanguage;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 - (id)initWithType:(id)arg1 preferredLanguage:(id)arg2;
 

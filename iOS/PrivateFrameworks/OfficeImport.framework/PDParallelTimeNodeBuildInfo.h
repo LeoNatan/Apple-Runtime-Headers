@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     id mValue;
 }
 
+- (void).cxx_destruct;
 @property(retain) id value; // @synthesize value=mValue;
 @property int iterateType; // @synthesize iterateType=mIterateType;
 @property double duration; // @synthesize duration=mDuration;
 @property double delay; // @synthesize delay=mDelay;
 @property(retain) PDAnimationTarget *target; // @synthesize target=mTarget;
-- (void).cxx_destruct;
 
 @end
 

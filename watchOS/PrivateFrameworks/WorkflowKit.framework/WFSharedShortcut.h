@@ -26,6 +26,7 @@
 
 + (id)properties;
 + (id)recordType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFFileRepresentation *iconFile; // @synthesize iconFile=_iconFile;
 @property(retain, nonatomic) WFFileRepresentation *shortcutFile; // @synthesize shortcutFile=_shortcutFile;
 @property(retain, nonatomic) NSNumber *iconGlyph; // @synthesize iconGlyph=_iconGlyph;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) WFWorkflowRecord *workflowRecord; // @synthesize workflowRecord=_workflowRecord;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) CKRecordID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *propertiesForEventLogging;
 - (id)sharingURL;
 - (void)setCreatedAt:(id)arg1 modifiedAt:(id)arg2 createdBy:(id)arg3;

@@ -16,10 +16,10 @@
 }
 
 + (id)mergeDueLocations:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) unsigned char trigger; // @synthesize trigger=_trigger;
 @property(readonly, nonatomic) unsigned char locationType; // @synthesize locationType=_locationType;
-- (void).cxx_destruct;
 - (BOOL)isEqualToReminderDueLocation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

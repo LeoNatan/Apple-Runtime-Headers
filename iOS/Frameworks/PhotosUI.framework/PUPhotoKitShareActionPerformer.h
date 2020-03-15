@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUActivitySharingController *activitySharingController; // @synthesize activitySharingController=_activitySharingController;
 @property(retain, nonatomic) UIViewController *preheatedSharingViewController; // @synthesize preheatedSharingViewController=_preheatedSharingViewController;
-- (void).cxx_destruct;
 - (id)_assetsFetchResultByAssetCollectionFromCollectionListFetchResult:(id)arg1 inDataSource:(id)arg2;
 - (void)performUserInteractionTask;
 - (void)preheatUserInteractionTask;

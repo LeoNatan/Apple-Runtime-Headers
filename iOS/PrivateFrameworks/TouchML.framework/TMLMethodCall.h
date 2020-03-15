@@ -18,8 +18,8 @@
     NSArray *_argTypes;
 }
 
-@property(readonly, nonatomic) _Bool classMethod; // @synthesize classMethod=_classSelector;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool classMethod; // @synthesize classMethod=_classSelector;
 - (id)_callWithArguments:(id)arg1;
 - (id)callWithArguments:(id)arg1;
 @property(readonly, nonatomic) NSString *methodName;

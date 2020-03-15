@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <UINSTextInput> textInput; // @synthesize textInput=_textInput;
 @property(readonly, nonatomic) id <UINSHidManager> hidManager; // @synthesize hidManager=_hidManager;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <UINSApplication> application;
 - (id)init;
 

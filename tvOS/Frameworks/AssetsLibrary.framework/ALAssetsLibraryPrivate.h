@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(nonatomic) ALAssetsLibrary *assetsLibrary; // @synthesize assetsLibrary=_assetsLibrary;
 - (void)dealloc;
-- (void)registerAlbum:(struct NSObject *)arg1 assetGroupPrivate:(id)arg2;
+- (void)registerAlbum:(id)arg1 assetGroupPrivate:(id)arg2;
 - (void)photoLibraryDidChange:(id)arg1;
 @property(readonly, retain, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (id)initWithAssetsLibrary:(id)arg1;

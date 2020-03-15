@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_fieldName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool encrypted; // @synthesize encrypted=_encrypted;
 @property(readonly, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
-- (void).cxx_destruct;
 - (void)applyTo:(id)arg1;
 - (id)initWithExternalRecordField:(id)arg1 encrypted:(_Bool)arg2;
 

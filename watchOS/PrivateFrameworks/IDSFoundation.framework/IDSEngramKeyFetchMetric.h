@@ -15,8 +15,8 @@
     NSError *_keyFetchError;
 }
 
-@property(readonly, nonatomic) NSError *keyFetchError; // @synthesize keyFetchError=_keyFetchError;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSError *keyFetchError; // @synthesize keyFetchError=_keyFetchError;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) NSString *name;
 - (id)initWithKeyFetchError:(id)arg1;

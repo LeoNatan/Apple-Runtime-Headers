@@ -37,9 +37,9 @@
 + (id)sharedContext;
 + (id)enumString:(unsigned int)arg1;
 + (id)errorString:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUGLObjectPool *privateObjectPool; // @synthesize privateObjectPool=_privateObjectPool;
 @property(readonly, nonatomic) NUGLObjectPool *sharedObjectPool; // @synthesize sharedObjectPool=_sharedObjectPool;
-- (void).cxx_destruct;
 - (void)_purgeObjectsOfType:(unsigned int)arg1 fromPool:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)_purgeObjectPool:(id)arg1;
 - (void)purgeObjectPool:(id)arg1;

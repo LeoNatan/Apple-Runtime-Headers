@@ -15,10 +15,10 @@
     NSMutableSet *_momentNodes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *moments; // @synthesize moments=_momentNodes;
 @property(retain, nonatomic) NSSet *persons; // @synthesize persons=_persons;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

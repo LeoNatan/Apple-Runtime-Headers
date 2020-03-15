@@ -19,9 +19,9 @@
 + (id)keyPathToPrimaryObject;
 + (id)keyPathFromPrimaryObject;
 + (id)propertySetName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *groupingIdentifier; // @synthesize groupingIdentifier=_groupingIdentifier;
 @property(readonly, nonatomic) PHFaceprint *faceprint; // @synthesize faceprint=_faceprint;
-- (void).cxx_destruct;
 - (id)initWithFetchDictionary:(id)arg1 face:(id)arg2 prefetched:(_Bool)arg3;
 
 @end

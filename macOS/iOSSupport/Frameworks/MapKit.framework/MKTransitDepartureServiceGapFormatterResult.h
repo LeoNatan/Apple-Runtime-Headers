@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _dateFormat;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long dateFormat; // @synthesize dateFormat=_dateFormat;
 @property(readonly, copy, nonatomic) NSString *dateDescription; // @synthesize dateDescription=_dateDescription;
 @property(readonly, copy, nonatomic) NSString *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *formattedString;
 - (id)initWithFormat:(id)arg1 dateDescription:(id)arg2 dateFormat:(unsigned long long)arg3;
 

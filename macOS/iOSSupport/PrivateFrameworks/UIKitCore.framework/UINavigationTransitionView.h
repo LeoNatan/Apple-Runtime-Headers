@@ -25,9 +25,9 @@
 }
 
 + (double)defaultDurationForTransition:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) UIView *fromView; // @synthesize fromView=_fromView;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL usesRoundedCorners;
 - (void)_navigationTransitionDidStop;
 - (void)_cleanupTransition;

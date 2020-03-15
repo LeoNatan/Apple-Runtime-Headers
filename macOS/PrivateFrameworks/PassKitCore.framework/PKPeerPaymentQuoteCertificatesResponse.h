@@ -15,10 +15,10 @@
     NSString *_encryptionVersion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL devSigned; // @synthesize devSigned=_devSigned;
 @property(readonly, copy, nonatomic) NSString *encryptionVersion; // @synthesize encryptionVersion=_encryptionVersion;
 @property(readonly, copy, nonatomic) NSArray *encryptionCertificates; // @synthesize encryptionCertificates=_encryptionCertificates;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

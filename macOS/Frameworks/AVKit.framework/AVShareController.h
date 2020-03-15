@@ -15,9 +15,9 @@
     AVExportProgressWindowController *__exportProgressWindowController;
 }
 
+- (void).cxx_destruct;
 @property(retain, setter=_setExportProgressWindowController:) AVExportProgressWindowController *_exportProgressWindowController; // @synthesize _exportProgressWindowController=__exportProgressWindowController;
 @property __weak id <AVSharingServicesDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)fileURLForShareItem:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)fileURLForExportingShareItem:(id)arg1;
 - (id)fileURLForRenderedShareItem:(id)arg1;

@@ -22,11 +22,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSArray *alternativeSpeakableMatches; // @synthesize alternativeSpeakableMatches=_alternativeSpeakableMatches;
 @property(retain) NSString *vocabularyIdentifier; // @synthesize vocabularyIdentifier=_vocabularyIdentifier;
 @property(retain) NSString *pronunciationHint; // @synthesize pronunciationHint=_pronunciationHint;
 @property(retain) NSString *spokenPhrase; // @synthesize spokenPhrase=_spokenPhrase;
-- (void).cxx_destruct;
 - (id)string;
 - (id)initWithIdentifier:(id)arg1 string:(id)arg2;
 - (id)spokenPhrases;
@@ -45,8 +45,8 @@
 - (id)initWithSpokenPhrase:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 spokenPhrase:(id)arg2 pronunciationHint:(id)arg3;
 - (id)initWithVocabularyIdentifier:(id)arg1 spokenPhrase:(id)arg2 pronunciationHint:(id)arg3;
-- (id)_intents_localizedCopyForLanguage:(id)arg1;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_localizedCopyWithLocalizer:(id)arg1;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -19,10 +19,10 @@
 }
 
 + (id)noteRefFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ENLinkedNotebookRef *linkedNotebook; // @synthesize linkedNotebook=_linkedNotebook;
 @property(copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

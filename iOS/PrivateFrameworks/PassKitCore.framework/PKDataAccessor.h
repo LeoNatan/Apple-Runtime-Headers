@@ -17,7 +17,9 @@
 - (void).cxx_destruct;
 - (id)displayProfileOfType:(long long)arg1;
 @property(readonly, nonatomic) PKRemoteAssetManager *remoteAssetManager;
+- (id)remoteAssetManagerForSEIDs:(id)arg1;
 - (_Bool)remoteAssetsDownloadedForScreenScale:(double)arg1 suffix:(id)arg2;
+- (_Bool)remoteAssetsDownloadedForSEIDs:(id)arg1;
 @property(readonly, nonatomic) _Bool remoteAssetsDownloaded;
 - (void)downloadRemoteAssetsWithCloudStoreCoordinatorDelegate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)downloadRemoteAssetsWithScreenScale:(double)arg1 suffix:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3 completion:(CDUnknownBlockType)arg4;

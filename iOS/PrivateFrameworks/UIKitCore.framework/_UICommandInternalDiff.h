@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_inserts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *inserts; // @synthesize inserts=_inserts;
 @property(readonly, nonatomic) NSDictionary *itemDeletes; // @synthesize itemDeletes=_itemDeletes;
 @property(readonly, nonatomic) NSSet *menuDeletes; // @synthesize menuDeletes=_menuDeletes;
-- (void).cxx_destruct;
 - (void)insertFallbackBeforeElements:(id)arg1 fallbackAfterElements:(id)arg2 inMenu:(id)arg3;
 - (void)insertBeforeElements:(id)arg1 afterElements:(id)arg2 aroundElement:(id)arg3 inMenu:(id)arg4;
 - (void)insertAtStartElements:(id)arg1 atEndElements:(id)arg2 inMenu:(id)arg3;

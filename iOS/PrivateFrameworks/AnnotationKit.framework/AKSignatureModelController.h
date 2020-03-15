@@ -17,9 +17,9 @@
     AKController *_controller;
 }
 
+- (void).cxx_destruct;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) AKSignature *selectedSignature; // @synthesize selectedSignature=_selectedSignature;
-- (void).cxx_destruct;
 - (void)_migrateLegacySignaturesFromPreviewContainer;
 - (id)_createAKSignatureFromItemRef:(id)arg1;
 - (_Bool)_createNewKeychainItemWithSignature:(id)arg1;

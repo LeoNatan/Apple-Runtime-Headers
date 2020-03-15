@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property unsigned long long scanTypes; // @synthesize scanTypes=_scanTypes;
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain) NSMutableSet *foundDevices; // @synthesize foundDevices=_foundDevices;
-- (void).cxx_destruct;
 - (_Bool)shouldEscapeXpcTryCatch;
 - (id)remoteObjectInterface;
 - (id)exportedInterface;

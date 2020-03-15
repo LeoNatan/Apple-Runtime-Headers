@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSThread *__migMessageHandlingThread;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRunningPort:) unsigned int _runningPort; // @synthesize _runningPort=__runningPort;
 @property(nonatomic, setter=_setStartupPort:) unsigned int _startupPort; // @synthesize _startupPort=__startupPort;
 @property(retain, nonatomic, setter=_setMIGMessageHandlingThread:) NSThread *_migMessageHandlingThread; // @synthesize _migMessageHandlingThread=__migMessageHandlingThread;
-- (void).cxx_destruct;
 - (void)_mht_stop;
 - (void)_mht_main;
 - (void)stop;

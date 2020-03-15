@@ -16,9 +16,9 @@
 }
 
 + (unsigned long long)currentVersion;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DKEventStream *stream; // @synthesize stream=_stream;
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
-- (void).cxx_destruct;
 - (id)bundleIDToSearchableItemsDictionaryFromEvents:(id)arg1;
 - (id)bundleIDToSearchableItemsDictionaryWithCreationDateInInterval:(id)arg1 limit:(long long)arg2 nextBatch:(_Bool *)arg3 latestCreationDate:(id *)arg4 error:(id *)arg5;
 - (id)searchableItemIdentifiersForTombstonedEventsInInterval:(id)arg1 latestTombstoneDate:(id *)arg2 error:(id *)arg3;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     int _consecutiveSwipeCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int consecutiveSwipeCount; // @synthesize consecutiveSwipeCount=_consecutiveSwipeCount;
 @property(nonatomic) unsigned int headingLock; // @synthesize headingLock=_headingLock;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 
 @end
 

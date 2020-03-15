@@ -16,8 +16,8 @@
     NSString *_name;
 }
 
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)measurementListByDraining;
 - (BOOL)markAndReset;
 - (void)markComplete;

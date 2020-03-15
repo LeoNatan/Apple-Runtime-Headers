@@ -21,19 +21,7 @@ struct CGRect {
 };
 
 struct CGSize {
-    double _field1;
-    double _field2;
-};
-
-struct UIImage {
-    Class _field1;
-};
-
-struct UITextField {
-    Class _field1;
-};
-
-struct UIViewController {
-    Class _field1;
+    double width;
+    double height;
 };
 

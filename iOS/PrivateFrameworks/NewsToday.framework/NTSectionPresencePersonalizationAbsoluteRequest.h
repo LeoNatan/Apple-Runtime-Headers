@@ -19,11 +19,11 @@
     NSObject<NTAbsolutePersonalizedSectionPresenceConfig> *_absolutePresenceConfig;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSObject<NTAbsolutePersonalizedSectionPresenceConfig> *absolutePresenceConfig; // @synthesize absolutePresenceConfig=_absolutePresenceConfig;
 @property(nonatomic) double featureImpressionPrior; // @synthesize featureImpressionPrior=_featureImpressionPrior;
 @property(nonatomic) double featureClickPrior; // @synthesize featureClickPrior=_featureClickPrior;
 @property(copy, nonatomic) FCPersonalizationFeature *feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

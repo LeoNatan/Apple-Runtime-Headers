@@ -15,10 +15,10 @@
     EWSSearchExpressionType *_searchExpression;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EWSSearchExpressionType *searchExpression; // @synthesize searchExpression=_searchExpression;
 @property(readonly, copy, nonatomic) NSArray *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property(readonly, copy, nonatomic) NSArray *EWSFolderIdStrings; // @synthesize EWSFolderIdStrings=_EWSFolderIdStrings;
-- (void).cxx_destruct;
 - (id)prepareRequest;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSFindItemsResponseOperation *responseOperation;

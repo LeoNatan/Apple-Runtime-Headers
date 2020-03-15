@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     _TVImageView *_backgroundImagesViewHighlightedState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVImageView *backgroundImagesViewHighlightedState; // @synthesize backgroundImagesViewHighlightedState=_backgroundImagesViewHighlightedState;
 @property(retain, nonatomic) _TVImageView *backgroundImagesViewDefaultState; // @synthesize backgroundImagesViewDefaultState=_backgroundImagesViewDefaultState;
 @property(retain, nonatomic) _TVImageView *imagesViewHighlightedState; // @synthesize imagesViewHighlightedState=_imagesViewHighlightedState;
 @property(retain, nonatomic) _TVImageView *imagesViewDefaultState; // @synthesize imagesViewDefaultState=_imagesViewDefaultState;
 @property(retain, nonatomic) _TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(retain, nonatomic) VUIButtonLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_updateBackgroundColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_configureWithLayout:(id)arg1;

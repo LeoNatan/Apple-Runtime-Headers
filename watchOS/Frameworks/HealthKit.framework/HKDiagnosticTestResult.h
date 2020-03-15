@@ -37,15 +37,10 @@
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)_newDiagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 diagnosticTestCodings:(id)arg11 value:(id)arg12 referenceRanges:(id)arg13 effectiveStartDate:(id)arg14 category:(id)arg15 issueDate:(id)arg16 effectiveEndDate:(id)arg17 statusCoding:(id)arg18 interpretationCodings:(id)arg19 comments:(id)arg20 bodySiteCodings:(id)arg21 methodCodings:(id)arg22 performers:(id)arg23 config:(CDUnknownBlockType)arg24;
-+ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 diagnosticTestCodings:(id)arg11 value:(id)arg12 referenceRanges:(id)arg13 effectiveStartDate:(id)arg14 category:(id)arg15 issueDate:(id)arg16 effectiveEndDate:(id)arg17 statusCoding:(id)arg18 interpretationCodings:(id)arg19 comments:(id)arg20 bodySiteCodings:(id)arg21 methodCodings:(id)arg22 performers:(id)arg23;
++ (id)_newDiagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned int)arg12 diagnosticTestCodings:(id)arg13 value:(id)arg14 referenceRanges:(id)arg15 effectiveStartDate:(id)arg16 category:(id)arg17 issueDate:(id)arg18 effectiveEndDate:(id)arg19 statusCoding:(id)arg20 interpretationCodings:(id)arg21 comments:(id)arg22 bodySiteCodings:(id)arg23 methodCodings:(id)arg24 performers:(id)arg25 config:(CDUnknownBlockType)arg26;
++ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 country:(id)arg11 state:(unsigned int)arg12 diagnosticTestCodings:(id)arg13 value:(id)arg14 referenceRanges:(id)arg15 effectiveStartDate:(id)arg16 category:(id)arg17 issueDate:(id)arg18 effectiveEndDate:(id)arg19 statusCoding:(id)arg20 interpretationCodings:(id)arg21 comments:(id)arg22 bodySiteCodings:(id)arg23 methodCodings:(id)arg24 performers:(id)arg25;
 + (id)defaultDisplayString;
-+ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 diagnosticTestCodings:(id)arg10 value:(id)arg11 referenceRanges:(id)arg12 effectiveStartDate:(id)arg13 category:(id)arg14 issueDate:(id)arg15 effectiveEndDate:(id)arg16 statusCoding:(id)arg17 interpretationCodings:(id)arg18 comments:(id)arg19 bodySiteCodings:(id)arg20 methodCodings:(id)arg21 performers:(id)arg22;
-+ (id)statusCodingPreferredSystems;
-+ (id)methodCodingsPreferredSystems;
-+ (id)interpretationCodingsPreferredSystems;
-+ (id)diagnosticTestCodingsPreferredSystems;
-+ (id)bodySiteCodingsPreferredSystems;
++ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 country:(id)arg10 state:(unsigned int)arg11 diagnosticTestCodings:(id)arg12 value:(id)arg13 referenceRanges:(id)arg14 effectiveStartDate:(id)arg15 category:(id)arg16 issueDate:(id)arg17 effectiveEndDate:(id)arg18 statusCoding:(id)arg19 interpretationCodings:(id)arg20 comments:(id)arg21 bodySiteCodings:(id)arg22 methodCodings:(id)arg23 performers:(id)arg24;
 + (id)cachedConceptRelationshipKeyPaths;
 + (id)indexableConceptKeyPaths;
 - (void).cxx_destruct;
@@ -103,19 +98,13 @@
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)init;
-- (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
-- (id)indexKeywords;
-- (id)statusCodingTasks;
-- (id)methodCodingsTasks;
-- (id)interpretationCodingsTasks;
-- (id)diagnosticTestCodingsTasks;
-- (id)bodySiteCodingsTasks;
 - (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
 - (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly) NSUUID *UUID;
+@property(readonly, copy, nonatomic) NSString *country;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly, copy, nonatomic) NSLocale *locale;

@@ -15,10 +15,10 @@
     PXNewMagazineRectArray *_fallbackRectArray;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXNewMagazineRectArray *fallbackRectArray; // @synthesize fallbackRectArray=_fallbackRectArray;
 @property(retain, nonatomic) PXNewMagazineRectArray *outRectArray; // @synthesize outRectArray=_outRectArray;
 @property(retain, nonatomic) NSMutableArray *generatedChunks; // @synthesize generatedChunks=_generatedChunks;
-- (void).cxx_destruct;
 
 @end
 

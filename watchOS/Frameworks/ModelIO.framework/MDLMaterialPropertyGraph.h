@@ -15,9 +15,9 @@
     NSMutableArray *_finalNodes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *connections; // @synthesize connections=_connections;
 @property(readonly, nonatomic) NSArray *nodes; // @synthesize nodes=_nodes;
-- (void).cxx_destruct;
 - (void)evaluate;
 - (id)initWithNodes:(id)arg1 connections:(id)arg2;
 

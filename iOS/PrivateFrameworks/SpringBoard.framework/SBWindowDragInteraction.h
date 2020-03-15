@@ -17,11 +17,11 @@
     NSString *_bundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(nonatomic) __weak id <SBAppPlatterDragSourceViewProviding> sourceViewProvider; // @synthesize sourceViewProvider=_sourceViewProvider;
 @property(readonly, nonatomic) __weak UIGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
-- (void).cxx_destruct;
 - (struct CGPoint)_locationInView:(id)arg1;
 - (id)initWithDelegate:(id)arg1 gestureRecognizer:(id)arg2;
 

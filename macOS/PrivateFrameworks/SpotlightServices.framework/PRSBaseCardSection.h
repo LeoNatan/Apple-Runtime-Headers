@@ -17,11 +17,11 @@
 }
 
 + (id)sectionWithData:(id)arg1 responseDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFCardSection *sfCardSection; // @synthesize sfCardSection=_sfCardSection;
 @property(nonatomic) BOOL hideDivider; // @synthesize hideDivider=_hideDivider;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 
 @end

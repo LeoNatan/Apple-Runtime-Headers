@@ -16,10 +16,10 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) PKStroke *stroke; // @synthesize stroke=_stroke;
-- (void).cxx_destruct;
 - (_Bool)isDoneAtTime:(double)arg1;
 - (id)newStrokeAtTime:(double)arg1;
 - (id)initWithStroke:(id)arg1 startTime:(double)arg2 duration:(double)arg3;

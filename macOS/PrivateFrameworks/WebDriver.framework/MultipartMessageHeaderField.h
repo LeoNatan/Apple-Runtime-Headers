@@ -15,10 +15,10 @@
     NSMutableDictionary *params;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *params; // @synthesize params;
 @property(readonly) NSString *value; // @synthesize value;
 @property(readonly) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)parseHeaderValueBytes:(char *)arg1 length:(unsigned long long)arg2 encoding:(unsigned long long)arg3;
 - (id)initWithData:(id)arg1 contentEncoding:(unsigned long long)arg2;

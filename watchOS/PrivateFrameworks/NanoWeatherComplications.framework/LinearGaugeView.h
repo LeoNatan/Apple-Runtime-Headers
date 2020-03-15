@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     CDStruct_ca3f765c _layoutConstants;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *indicatorFillColor; // @synthesize indicatorFillColor=_indicatorFillColor;
 @property(retain, nonatomic) CAShapeLayer *valueIndicatorLayer; // @synthesize valueIndicatorLayer=_valueIndicatorLayer;
 @property(nonatomic) float lastLayoutSubviewsHeight; // @synthesize lastLayoutSubviewsHeight=_lastLayoutSubviewsHeight;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=shouldRenderValueAsPercentage) _Bool renderValueAsPercentage; // @synthesize renderValueAsPercentage=_renderValueAsPercentage;
 @property(nonatomic) float value; // @synthesize value=_value;
 @property(retain, nonatomic) NSArray *colorIndices; // @synthesize colorIndices=_colorIndices;
-- (void).cxx_destruct;
 - (void)_setNeedsUpdateGauge;
 - (void)updateMonochromeColor:(id)arg1 fraction:(float)arg2;
 - (void)applyIndicatorFillColor:(id)arg1;

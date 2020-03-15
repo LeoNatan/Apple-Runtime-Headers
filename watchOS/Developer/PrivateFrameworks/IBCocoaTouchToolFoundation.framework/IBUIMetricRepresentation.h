@@ -15,8 +15,8 @@
     NSDictionary *_keyValues;
 }
 
-@property(readonly, copy) NSDictionary *keyValues; // @synthesize keyValues=_keyValues;
 - (void).cxx_destruct;
+@property(readonly, copy) NSDictionary *keyValues; // @synthesize keyValues=_keyValues;
 - (_Bool)isEqualToMetricRepresentation:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

@@ -19,9 +19,9 @@
     double _fireInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double fireInterval; // @synthesize fireInterval=_fireInterval;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
-- (void).cxx_destruct;
 - (void)shouldFire;
 - (void)invalidate;
 - (double)nextFireDelayRaw;

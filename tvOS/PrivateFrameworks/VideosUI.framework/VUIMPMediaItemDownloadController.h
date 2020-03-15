@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(copy, nonatomic) VUIMPMediaItemDownloadControllerState *state; // @synthesize state=_state;
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerDispatchQueue; // @synthesize observerDispatchQueue=_observerDispatchQueue;
-- (void).cxx_destruct;
 - (void)_notifyObservers:(id)arg1 stateDidChange:(id)arg2;
 - (void)_onProcessingQueue_setState:(id)arg1;
 - (void)_enqueueObserverQueueBlock:(CDUnknownBlockType)arg1;

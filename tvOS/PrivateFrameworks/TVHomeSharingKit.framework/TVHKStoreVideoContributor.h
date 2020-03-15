@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_templateImageURLString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *templateImageURLString; // @synthesize templateImageURLString=_templateImageURLString;
 @property(nonatomic) unsigned long long storeID; // @synthesize storeID=_storeID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

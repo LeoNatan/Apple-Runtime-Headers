@@ -18,9 +18,9 @@
     double _lineWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (_Bool)wantsInkUpdate;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

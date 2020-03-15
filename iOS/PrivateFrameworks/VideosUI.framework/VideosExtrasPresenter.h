@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _extrasMenuBarFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect extrasMenuBarFrame; // @synthesize extrasMenuBarFrame=_extrasMenuBarFrame;
 @property(retain, nonatomic) VideosExtrasContext *extrasContext; // @synthesize extrasContext=_extrasContext;
-- (void).cxx_destruct;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;

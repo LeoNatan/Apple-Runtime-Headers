@@ -19,6 +19,7 @@
     SXImageView *_stillImageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasRequestedPlayback; // @synthesize hasRequestedPlayback=_hasRequestedPlayback;
 @property(retain, nonatomic) SXImageView *stillImageView; // @synthesize stillImageView=_stillImageView;
 @property(retain, nonatomic) SXAVPlayer *player; // @synthesize player=_player;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) SXVideoResource *videoResource; // @synthesize videoResource=_videoResource;
 @property(nonatomic) BOOL shouldLoop; // @synthesize shouldLoop=_shouldLoop;
 @property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)playIfPossible;

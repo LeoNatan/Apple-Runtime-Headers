@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_displayedContentUpdateGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *displayedContentUpdateGroup; // @synthesize displayedContentUpdateGroup=_displayedContentUpdateGroup;
 @property(nonatomic) _Bool isUpdatingDisplayedContent; // @synthesize isUpdatingDisplayedContent=_isUpdatingDisplayedContent;
 @property(nonatomic, setter=setCancelingTransition:) _Bool isCancelingTransition; // @synthesize isCancelingTransition=_isCancelingTransition;
-- (void).cxx_destruct;
 
 @end
 

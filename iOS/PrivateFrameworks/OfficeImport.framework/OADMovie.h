@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     _Bool loop;
 }
 
+- (void).cxx_destruct;
 @property _Bool loop; // @synthesize loop;
 @property float movieEndPoint; // @synthesize movieEndPoint=mEnd;
 @property float movieStartPoint; // @synthesize movieStartPoint=mStart;
 @property _Bool isAudioOnly; // @synthesize isAudioOnly=mIsAudioOnly;
 @property(retain) NSString *name; // @synthesize name=mName;
 @property(retain) NSData *data; // @synthesize data=mData;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

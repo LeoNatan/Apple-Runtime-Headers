@@ -24,13 +24,13 @@
     UIView *_headerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) double itemHeight; // @synthesize itemHeight=_itemHeight;
 @property(nonatomic) double maxItemWidth; // @synthesize maxItemWidth=_maxItemWidth;
 @property(nonatomic) long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(retain, nonatomic) NSDictionary *preferredAssetElementsForIndexPath; // @synthesize preferredAssetElementsForIndexPath=_preferredAssetElementsForIndexPath;
 @property(retain, nonatomic) TVCollectionView *gridView; // @synthesize gridView=_gridView;
-- (void).cxx_destruct;
 - (id)_assetElementForElement:(id)arg1 closestToHeight:(double)arg2;
 - (void)_evaluateJavascriptEvent:(id)arg1 forItemAtIndex:(long long)arg2;
 - (void)headerView:(id)arg1 didSelectButtonAtIndex:(long long)arg2;

@@ -21,9 +21,9 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableSet *internalChildNodes; // @synthesize internalChildNodes=_internalChildNodes;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (id)childAtIndexPath:(id)arg1 withChildrenSortedByComparator:(CDUnknownBlockType)arg2;
 - (id)childrenSortedByComparator:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSEnumerator *shallowRepresentedObjectEnumerator;

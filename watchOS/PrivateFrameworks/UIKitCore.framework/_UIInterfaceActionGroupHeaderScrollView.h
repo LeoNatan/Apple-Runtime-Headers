@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIView *_contentView;
 }
 
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void)updateConstraints;
 - (void)accessoryInsetsDidChange:(struct UIEdgeInsets)arg1;
 - (float)_contentFitCanScrollThreshold;

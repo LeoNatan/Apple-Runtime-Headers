@@ -17,8 +17,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)requestForNotificationResponse:(id)arg1;
-@property(retain, nonatomic) UNNotificationResponse *notificationResponse; // @synthesize notificationResponse=_notificationResponse;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UNNotificationResponse *notificationResponse; // @synthesize notificationResponse=_notificationResponse;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNotificationResponse:(id)arg1;

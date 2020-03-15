@@ -26,10 +26,10 @@
 + (void)endScanningForLibraries;
 + (void)beginScanningForLibraries;
 + (_Bool)isScanningForLibraries;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int databaseID; // @synthesize databaseID=_databaseID;
 @property(readonly, nonatomic) HSHomeSharingLibrary *homeSharingLibrary; // @synthesize homeSharingLibrary=_homeSharingLibrary;
 - (id)artworkDataSource;
-- (void).cxx_destruct;
 - (void)_fillContainerForQueryCriteria:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)_tokenDataForAccountID:(unsigned long long)arg1;
 - (void)_fetchTokensForAuthorizedDSIDs;

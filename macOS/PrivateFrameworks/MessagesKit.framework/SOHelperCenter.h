@@ -17,10 +17,10 @@
 
 + (void)lastPlugInUnloaded;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *nameToWeakControllerMap; // @synthesize nameToWeakControllerMap=_nameToWeakControllerMap;
 @property(retain) NSTimer *reconnectionTimer; // @synthesize reconnectionTimer=_reconnectionTimer;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)unloadPlugIn:(id)arg1;
 - (void)loadPlugIn:(id)arg1 forController:(id)arg2;

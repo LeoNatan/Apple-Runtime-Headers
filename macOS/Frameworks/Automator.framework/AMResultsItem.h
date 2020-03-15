@@ -18,9 +18,9 @@
 }
 
 + (id)resultsItemWithObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)imageSubtitle;
 - (id)imageTitle;
 @property(readonly, nonatomic) NSString *imageUID;

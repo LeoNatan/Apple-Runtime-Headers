@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_validators;
 }
 
-@property(retain, nonatomic) NSArray *validators; // @synthesize validators=_validators;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *validators; // @synthesize validators=_validators;
 - (id)CKPropertiesDescription;
 - (BOOL)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithValidators:(id)arg1;

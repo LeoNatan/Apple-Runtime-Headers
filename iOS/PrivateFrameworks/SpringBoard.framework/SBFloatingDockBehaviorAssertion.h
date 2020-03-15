@@ -21,6 +21,7 @@
     SBFloatingDockController *_floatingDockController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak SBFloatingDockController *floatingDockController; // @synthesize floatingDockController=_floatingDockController;
 @property(readonly, copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) _Bool gesturePossible; // @synthesize gesturePossible=_gesturePossible;
 @property(readonly, nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(readonly, nonatomic) unsigned long long level; // @synthesize level=_level;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

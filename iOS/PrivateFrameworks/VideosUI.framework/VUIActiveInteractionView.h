@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <VUIContextMenuTemplateControllerInterface> templateInterface; // @synthesize templateInterface=_templateInterface;
 @property(nonatomic) __weak UIContextMenuInteraction *activeInteraction; // @synthesize activeInteraction=_activeInteraction;
 @property(nonatomic) __weak UIView *highlightedView; // @synthesize highlightedView=_highlightedView;
-- (void).cxx_destruct;
 
 @end
 

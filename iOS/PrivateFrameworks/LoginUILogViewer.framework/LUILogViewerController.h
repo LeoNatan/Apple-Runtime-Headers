@@ -40,6 +40,7 @@
     UIPanGestureRecognizer *_panGesture;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool outsideKeyboardIsShowing; // @synthesize outsideKeyboardIsShowing=_outsideKeyboardIsShowing;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGesture; // @synthesize panGesture=_panGesture;
 @property(nonatomic) _Bool isFetchingLogs; // @synthesize isFetchingLogs=_isFetchingLogs;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) LUILogViewerAssistiveTouch *assistiveTouch; // @synthesize assistiveTouch=_assistiveTouch;
 @property(retain, nonatomic) LUILogViewerView *logViewerView; // @synthesize logViewerView=_logViewerView;
 @property(nonatomic) __weak id <LUILogViewerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)searchBarShouldBeginEditing:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)searchBarSearchButtonClicked:(id)arg1;

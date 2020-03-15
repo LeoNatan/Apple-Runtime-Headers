@@ -22,10 +22,10 @@
 + (id)sharedAccountStore;
 + (id)os_log;
 - (void).cxx_destruct;
+- (id)prepareStore:(id)arg1;
 - (id)_cachedAccountWithIdentifier:(id)arg1;
 - (id)_accountWithIdentifier:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1 returnCachedVersion:(BOOL)arg2;
-- (id)_proxy;
 - (void)removeAccount:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)saveVerifiedAccount:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)mergeLocalDataIntoParentAccountWithID:(id)arg1;

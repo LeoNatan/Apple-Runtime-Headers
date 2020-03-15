@@ -13,25 +13,16 @@
     _Bool _isSelected;
     _Bool _pressed;
     unsigned long long _shape;
-    CAShapeLayer *_outerStrokeTrackLayer;
-    CAShapeLayer *_outerStrokeLayer;
-    CAShapeLayer *_innerStrokeLayer;
     id <AXPIFingerAppearanceDelegate> _appearanceDelegate;
     struct CGRect _outerFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect outerFrame; // @synthesize outerFrame=_outerFrame;
 @property(nonatomic) __weak id <AXPIFingerAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
-@property(retain, nonatomic) CAShapeLayer *innerStrokeLayer; // @synthesize innerStrokeLayer=_innerStrokeLayer;
-@property(retain, nonatomic) CAShapeLayer *outerStrokeLayer; // @synthesize outerStrokeLayer=_outerStrokeLayer;
-@property(retain, nonatomic) CAShapeLayer *outerStrokeTrackLayer; // @synthesize outerStrokeTrackLayer=_outerStrokeTrackLayer;
 @property(nonatomic) unsigned long long shape; // @synthesize shape=_shape;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_isSelected;
-- (void).cxx_destruct;
-- (void)animateToTapWithDuration:(double)arg1;
-- (void)_setPathForCurrentShape;
-- (void)dealloc;
 - (id)initWithAppearanceDelegate:(id)arg1;
 
 @end

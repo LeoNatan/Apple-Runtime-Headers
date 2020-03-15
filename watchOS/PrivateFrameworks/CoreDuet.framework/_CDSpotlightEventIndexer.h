@@ -16,10 +16,10 @@
 }
 
 + (id)keyPathsForValuesAffectingIndexing;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _CDSpotlightEventIndexerDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 @property(retain, nonatomic) _CDEventIndexerContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)resetIndex;
 - (void)indexAdditionsAsBatch;
 - (void)indexDeletionsAsBatch;

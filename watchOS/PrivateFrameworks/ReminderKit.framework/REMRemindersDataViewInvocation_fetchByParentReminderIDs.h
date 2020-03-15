@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *parentReminderIDs; // @synthesize parentReminderIDs=_parentReminderIDs;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *parentReminderIDs; // @synthesize parentReminderIDs=_parentReminderIDs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

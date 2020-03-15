@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
     id <SVSTranscriptItemGroupDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_presentationDelayElapsed, setter=_setPresentationDelayElapsed:) BOOL presentationDelayElapsed; // @synthesize presentationDelayElapsed=_presentationDelayElapsed;
 @property(nonatomic) __weak id <SVSTranscriptItemGroupDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BOOL waitsForConfirmation; // @synthesize waitsForConfirmation=_waitsForConfirmation;
 @property(nonatomic, getter=isEligibleForPresentation) BOOL eligibleForPresentation; // @synthesize eligibleForPresentation=_eligibleForPresentation;
 @property(readonly, nonatomic, getter=isProvisional) BOOL provisional; // @synthesize provisional=_provisional;
-- (void).cxx_destruct;
 - (void)removeElementAtIndex:(long long)arg1;
 - (void)shiftInsertionIndexesStartingAtIndex:(unsigned long long)arg1 by:(long long)arg2;
 - (void)replaceTranscriptItem:(id)arg1 withTranscriptItem:(id)arg2 cancelPresentationDelay:(BOOL)arg3;

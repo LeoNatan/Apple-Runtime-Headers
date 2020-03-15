@@ -16,8 +16,8 @@
 }
 
 + (id)controllerWithObserver:(id)arg1;
-@property(readonly, nonatomic) __weak id observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id observer; // @synthesize observer=_observer;
 - (void)unobserveAll;
 - (void)unobserve:(id)arg1;
 - (void)unobserve:(id)arg1 keyPath:(id)arg2;

@@ -13,6 +13,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_axLeftArrowPressed;
+- (void)_axRightArrowPressed;
+- (id)_accessibilityKeyCommands;
 - (_Bool)_accessibilityWindowVisible;
 - (_Bool)accessibilityElementsHidden;
 

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _radiosityImageScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool flatImageContainsCornerRadius; // @synthesize flatImageContainsCornerRadius=_flatImageContainsCornerRadius;
 @property(nonatomic) struct CGSize radiosityImageScale; // @synthesize radiosityImageScale=_radiosityImageScale;
 @property(retain, nonatomic) id radiosityImage; // @synthesize radiosityImage=_radiosityImage;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSArray *layers; // @synthesize layers=_layers;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGImage *flattenedImage;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;

@@ -20,12 +20,12 @@
     NSMutableArray *_cache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) id <SXUnitConverterFactory> unitConverterFactory; // @synthesize unitConverterFactory=_unitConverterFactory;
 @property(readonly, nonatomic) id <SXBlueprintAnalyzer> blueprintAnalyzer; // @synthesize blueprintAnalyzer=_blueprintAnalyzer;
 @property(readonly, nonatomic) id <SXComponentInserterManager> inserterManager; // @synthesize inserterManager=_inserterManager;
 @property(readonly, nonatomic) id <SXComponentInsertionConditionEngine> conditionEngine; // @synthesize conditionEngine=_conditionEngine;
-- (void).cxx_destruct;
 - (void)updateDOM:(id)arg1 layoutBlueprint:(id)arg2 insert:(id)arg3 marker:(id)arg4;
 - (id)insertForMarker:(id)arg1 inserter:(id)arg2 DOMObjectProvider:(id)arg3 layoutProvider:(id)arg4;
 - (id)insertComponentsForBlueprint:(id)arg1 DOMObjectProvider:(id)arg2;

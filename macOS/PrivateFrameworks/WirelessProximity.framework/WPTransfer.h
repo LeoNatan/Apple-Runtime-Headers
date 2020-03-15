@@ -26,6 +26,7 @@
     long long _lockScanTimer;
 }
 
+- (void).cxx_destruct;
 @property BOOL sendingTransferComplete; // @synthesize sendingTransferComplete=_sendingTransferComplete;
 @property long long lockScanTimer; // @synthesize lockScanTimer=_lockScanTimer;
 @property(retain) NSUUID *currentlySubscribedCentral; // @synthesize currentlySubscribedCentral=_currentlySubscribedCentral;
@@ -39,7 +40,6 @@
 @property BOOL scanning; // @synthesize scanning=_scanning;
 @property BOOL advertising; // @synthesize advertising=_advertising;
 @property __weak id <WPTransferDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stateDidChange:(long long)arg1;
 - (void)central:(id)arg1 subscribed:(BOOL)arg2 toCharacteristic:(id)arg3 inService:(id)arg4;
 - (void)transferFailed:(id)arg1;

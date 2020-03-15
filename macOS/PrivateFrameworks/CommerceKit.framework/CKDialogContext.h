@@ -19,9 +19,9 @@
     NSImage *_icon;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
-- (void).cxx_destruct;
 - (id)_viewController;
 - (void)handleDialogRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleAuthenticateRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

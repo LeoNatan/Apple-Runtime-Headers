@@ -18,13 +18,13 @@
     id _result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id result; // @synthesize result=_result;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(nonatomic) int key; // @synthesize key=_key;
 @property(retain, nonatomic) DASettingsRequestParams *requestParams; // @synthesize requestParams=_requestParams;
 @property(retain, nonatomic) NSDictionary *setters; // @synthesize setters=_setters;
 @property(retain, nonatomic) NSArray *getters; // @synthesize getters=_getters;
-- (void).cxx_destruct;
 - (long long)taskStatusForExchangeStatus:(int)arg1;
 - (void)finishWithError:(id)arg1;
 - (_Bool)processContext:(id)arg1;

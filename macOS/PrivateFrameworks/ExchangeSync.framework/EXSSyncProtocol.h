@@ -21,13 +21,13 @@
     id <EXSSyncProtocolDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(nonatomic) BOOL pendingResync; // @synthesize pendingResync=_pendingResync;
 @property __weak id <EXSSyncProtocolDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) EXSDataManager *dataManager; // @synthesize dataManager=_dataManager;
 @property(retain, nonatomic) EXSAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)firePushChannelStopped;
 - (void)firePushChannelStarted;
 - (void)fireHasItemChangesForFolder:(id)arg1;

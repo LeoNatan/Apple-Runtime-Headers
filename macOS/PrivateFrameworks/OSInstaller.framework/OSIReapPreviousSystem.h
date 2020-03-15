@@ -17,8 +17,8 @@
     SMPaths *_pather;
 }
 
-@property(retain) SMPaths *pather; // @synthesize pather=_pather;
 - (void).cxx_destruct;
+@property(retain) SMPaths *pather; // @synthesize pather=_pather;
 - (void)_recreateFSFPath;
 - (void)_saveReaperPaths;
 - (BOOL)createRecoveredItems;

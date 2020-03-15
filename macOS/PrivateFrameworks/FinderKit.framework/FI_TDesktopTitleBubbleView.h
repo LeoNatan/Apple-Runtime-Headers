@@ -34,11 +34,11 @@ __attribute__((visibility("hidden")))
 
 + (id)iconViewAppearanceSelectionColor:(_Bool)arg1;
 + (id)desktopAppearanceSelectionColor:(_Bool)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property _Bool useDesktopSelectionColor; // @synthesize useDesktopSelectionColor=_useDesktopSelectionColor;
 @property(nonatomic) _Bool useAutoLayoutInPreviewPane; // @synthesize useAutoLayoutInPreviewPane=_useAutoLayoutInPreviewPane;
 @property _Bool drawAntiAliased; // @synthesize drawAntiAliased=_drawAntiAliased;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setICloudBadge:(int)arg1 keepPlaceHolder:(_Bool)arg2 placeHolder:(TNSRef_aed84f5d *)arg3 clickHandler:(const function_b1fce659 *)arg4 context:(int)arg5;
 - (void)invalidateIntrinsicContentSize;
 - (struct CGSize)intrinsicContentSize;

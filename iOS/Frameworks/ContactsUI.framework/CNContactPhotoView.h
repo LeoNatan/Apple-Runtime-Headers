@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 + (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(_Bool)arg1;
 + (id)descriptorForRequiredKeys;
 + (struct CGSize)defaultSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNPhotoPickerViewController *photoPicker; // @synthesize photoPicker=_photoPicker;
 @property(nonatomic) _Bool acceptsImageDrop; // @synthesize acceptsImageDrop=_acceptsImageDrop;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double labelAlpha; // @synthesize labelAlpha=_labelAlpha;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
 - (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
 - (_Bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;

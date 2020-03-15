@@ -12,8 +12,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2 isFinalUpdate:(BOOL)arg3;
 - (long long)_runPingTestForChat:(id)arg1;
 - (long long)_checkNetworkForChat:(id)arg1 requiresWifi:(BOOL)arg2;

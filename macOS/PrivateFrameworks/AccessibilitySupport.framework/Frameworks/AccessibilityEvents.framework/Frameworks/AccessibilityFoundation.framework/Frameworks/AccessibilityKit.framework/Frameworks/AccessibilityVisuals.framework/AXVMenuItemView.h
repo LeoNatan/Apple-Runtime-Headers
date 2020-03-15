@@ -18,13 +18,13 @@
     AXVTriangleIndicatorView *__submenuIndicatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSubmenuIndicatorView:) AXVTriangleIndicatorView *_submenuIndicatorView; // @synthesize _submenuIndicatorView=__submenuIndicatorView;
 @property(retain, nonatomic, setter=_setKeyboardShortcutTextField:) AXVTextField *_keyboardShortcutTextField; // @synthesize _keyboardShortcutTextField=__keyboardShortcutTextField;
 @property(retain, nonatomic, setter=_setDescriptionTextField:) AXVTextField *_descriptionTextField; // @synthesize _descriptionTextField=__descriptionTextField;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) AXVMenuItem *menuItem; // @synthesize menuItem=_menuItem;
-- (void).cxx_destruct;
 - (void)_setupSubmenuIndicatorConstraints:(id)arg1 parentView:(id)arg2;
 - (void)_setupKeyboardShortcutTextFieldConstraints:(id)arg1 parentView:(id)arg2;
 - (void)_setupDescriptionTextFieldConstraints:(id)arg1 parentView:(id)arg2;

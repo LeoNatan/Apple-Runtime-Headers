@@ -17,12 +17,12 @@
     ISTouchIDDialog *_touchIDDialog;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ISTouchIDDialog *touchIDDialog; // @synthesize touchIDDialog=_touchIDDialog;
 @property(retain, nonatomic) ISDialog *fallbackDialog; // @synthesize fallbackDialog=_fallbackDialog;
 @property(retain) SSBiometricAuthenticationContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) ISBiometricStore *biometricStore; // @synthesize biometricStore=_biometricStore;
 @property(copy) CDUnknownBlockType outputBlock; // @synthesize outputBlock=_outputBlock;
-- (void).cxx_destruct;
 - (_Bool)_promptUserToAuthenticateForIdentityMapChangeWithAccountIdentifier:(id)arg1 accountName:(id)arg2;
 - (void)run;
 - (id)initWithBiometricAuthenticationContext:(id)arg1 touchIDDialog:(id)arg2 fallbackDialog:(id)arg3;

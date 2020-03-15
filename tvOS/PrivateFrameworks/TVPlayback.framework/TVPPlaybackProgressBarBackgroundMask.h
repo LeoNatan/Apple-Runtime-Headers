@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_rectangleMask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAShapeLayer *rectangleMask; // @synthesize rectangleMask=_rectangleMask;
 @property(readonly, nonatomic) CAShapeLayer *pillMask; // @synthesize pillMask=_pillMask;
 @property(readonly, nonatomic) TVPProgressBarShapeView *rectangleView; // @synthesize rectangleView=_rectangleView;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double minBufferingProgress; // @synthesize minBufferingProgress=_minBufferingProgress;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 - (void)_updateMasks;
 - (void)layoutSubviews;
 - (void)setMinPlayheadProgress:(double)arg1 maxPlayheadProgress:(double)arg2;

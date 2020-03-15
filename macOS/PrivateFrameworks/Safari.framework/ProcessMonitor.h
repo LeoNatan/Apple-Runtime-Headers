@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSString *_processName;
 }
 
-@property(readonly, copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 - (BOOL)_processWithIdentifierIsRunning:(int)arg1;
 - (void)waitForProcessToTerminateWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)waitForProcessToLaunchWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;

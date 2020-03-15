@@ -17,12 +17,12 @@
     NSView *_containedView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *containedView; // @synthesize containedView=_containedView;
 @property(retain, nonatomic) CNScrollViewOccluderController *occluderController; // @synthesize occluderController=_occluderController;
 @property(retain, nonatomic) CNOccluderView *bottomOccluder; // @synthesize bottomOccluder=_bottomOccluder;
 @property(retain, nonatomic) CNOccluderView *topOccluder; // @synthesize topOccluder=_topOccluder;
 @property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)setupConstraints;
 - (void)setupViewHierarchy;
 - (id)initWithContainedView:(id)arg1 shouldFlipClipView:(BOOL)arg2;

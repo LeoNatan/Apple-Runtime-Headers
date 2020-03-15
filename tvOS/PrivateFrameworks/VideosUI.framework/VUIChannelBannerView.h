@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class IKViewElement, NSArray, UIFocusContainerGuide, VUIAppleTVChannelLogoView, VUIButton, VUIChannelBannerLayout, VUIFocusableTextView, VUILabel, VUISeparatorView;
+@class IKViewElement, NSArray, UIFocusContainerGuide, UIImage, VUIAppleTVChannelLogoView, VUIBackdropMaskingView, VUIBackdropView, VUIButton, VUIChannelBannerLayout, VUIFocusableTextView, VUILabel, VUISeparatorView, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUIChannelBannerView : UIView
@@ -18,14 +18,29 @@ __attribute__((visibility("hidden")))
     VUILabel *_disclaimerTextLabel;
     VUIFocusableTextView *_descriptionTextView;
     NSArray *_textLabels;
+    long long _backdropBlurEffectStyle;
+    double _backdropInitialPeek;
+    double _backdropPeekGradient;
+    double _backdropMaskFactor;
+    _TVImageView *_bgImageView;
     UIView *_lastFocusedView;
     VUISeparatorView *_separatorView;
+    VUIBackdropView *_backdropView;
+    VUIBackdropMaskingView *_maskedBackdropView;
     UIFocusContainerGuide *_containerGuide;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFocusContainerGuide *containerGuide; // @synthesize containerGuide=_containerGuide;
+@property(retain, nonatomic) VUIBackdropMaskingView *maskedBackdropView; // @synthesize maskedBackdropView=_maskedBackdropView;
+@property(retain, nonatomic) VUIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIView *lastFocusedView; // @synthesize lastFocusedView=_lastFocusedView;
+@property(retain, nonatomic) _TVImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
+@property(nonatomic) double backdropMaskFactor; // @synthesize backdropMaskFactor=_backdropMaskFactor;
+@property(nonatomic) double backdropPeekGradient; // @synthesize backdropPeekGradient=_backdropPeekGradient;
+@property(nonatomic) double backdropInitialPeek; // @synthesize backdropInitialPeek=_backdropInitialPeek;
+@property(nonatomic) long long backdropBlurEffectStyle; // @synthesize backdropBlurEffectStyle=_backdropBlurEffectStyle;
 @property(retain, nonatomic) NSArray *textLabels; // @synthesize textLabels=_textLabels;
 @property(retain, nonatomic) VUIFocusableTextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(retain, nonatomic) VUILabel *disclaimerTextLabel; // @synthesize disclaimerTextLabel=_disclaimerTextLabel;
@@ -33,13 +48,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIAppleTVChannelLogoView *appleTVChannelLogoView; // @synthesize appleTVChannelLogoView=_appleTVChannelLogoView;
 @property(retain, nonatomic) VUIChannelBannerLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
+- (void)_bgImageLoaded;
+- (void)_setBackdropViewsWithBgImageViewFrame:(struct CGRect)arg1;
 - (void)_layoutLabels:(id)arg1 withOrigin:(struct CGPoint)arg2 maxWidth:(double)arg3;
 - (struct CGSize)_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 - (id)preferredFocusEnvironments;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) UIImage *backdropImage;
+- (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

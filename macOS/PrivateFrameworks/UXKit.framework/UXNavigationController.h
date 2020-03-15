@@ -81,6 +81,7 @@
 
 + (id)topViewControllerObservationKeyPathsByContext;
 + (id)keyPathsForValuesAffectingPreferredContentSize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(readonly, nonatomic) BOOL isTransitioning; // @synthesize isTransitioning=_isTransitioning;
 @property(nonatomic, setter=_setHidesBackTitles:) BOOL _hidesBackTitles; // @synthesize _hidesBackTitles=__hidesBackTitles;
@@ -123,7 +124,6 @@
 @property(nonatomic, getter=isToolbarHidden) BOOL toolbarHidden; // @synthesize toolbarHidden=_toolbarHidden;
 @property(nonatomic, getter=isNavigationBarDetached) BOOL navigationBarDetached; // @synthesize navigationBarDetached=_navigationBarDetached;
 @property(nonatomic, getter=isNavigationBarHidden) BOOL navigationBarHidden; // @synthesize navigationBarHidden=_navigationBarHidden;
-- (void).cxx_destruct;
 - (void)goBackWithMenuItem:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
 - (long long)positionForBar:(id)arg1;

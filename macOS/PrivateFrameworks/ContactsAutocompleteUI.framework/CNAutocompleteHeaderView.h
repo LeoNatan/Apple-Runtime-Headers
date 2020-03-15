@@ -18,12 +18,12 @@
 }
 
 + (id)label;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNAutocompleteSeparatorView *dividerLine; // @synthesize dividerLine=_dividerLine;
 @property(retain, nonatomic) NSArray *headerConstraints; // @synthesize headerConstraints=_headerConstraints;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(nonatomic) NSString *labelString; // @synthesize labelString=_labelString;
 @property(nonatomic) BOOL showDividerLine; // @synthesize showDividerLine=_showDividerLine;
-- (void).cxx_destruct;
 - (void)showDividerLine:(BOOL)arg1;
 - (id)viewsByName;
 - (id)constraintsForInvisibleLabelAndInvisibleDividerLine;

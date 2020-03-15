@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 + (_Bool)_supportsPlayingIndividualFeedback:(id)arg1;
 + (id)sharedEngine;
 + (id)_internalQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCountedSet *suspendedSSIDs; // @synthesize suspendedSSIDs=_suspendedSSIDs;
 @property(readonly, nonatomic) NSCountedSet *warmSSIDs; // @synthesize warmSSIDs=_warmSSIDs;
 @property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
-- (void).cxx_destruct;
 - (id)_stats_key;
 - (void)_internal_stopFeedbackData:(id)arg1 forFeedback:(id)arg2;
 - (void)_stopFeedback:(id)arg1;

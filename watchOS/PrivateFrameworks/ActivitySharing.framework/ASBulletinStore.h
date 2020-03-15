@@ -13,8 +13,8 @@
     NSArray *_bulletins;
 }
 
-@property(readonly, nonatomic) NSArray *bulletins; // @synthesize bulletins=_bulletins;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *bulletins; // @synthesize bulletins=_bulletins;
 - (void)_persistBulletins;
 - (void)removeBulletinsMatchingCriteria:(CDUnknownBlockType)arg1;
 - (void)removeAllBulletins;

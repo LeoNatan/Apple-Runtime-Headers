@@ -16,10 +16,10 @@
     id <SMDDebugProtocol> _daemonProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <SMDDebugProtocol> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 @property(retain) NSXPCConnection *daemonConnection; // @synthesize daemonConnection=_daemonConnection;
 @property(retain) NSXPCInterface *daemonInterface; // @synthesize daemonInterface=_daemonInterface;
-- (void).cxx_destruct;
 - (void)allowLocalNetworkServer;
 - (void)forceSlowEnumeration;
 - (void)preferBackgroundMigrations;

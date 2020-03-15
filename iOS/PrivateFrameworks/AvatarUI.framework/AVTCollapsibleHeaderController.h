@@ -33,6 +33,7 @@
     unsigned long long _currentScrollDirection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentScrollDirection; // @synthesize currentScrollDirection=_currentScrollDirection;
 @property(nonatomic) double singleTouchOffset; // @synthesize singleTouchOffset=_singleTouchOffset;
 @property(nonatomic) double previousOffset; // @synthesize previousOffset=_previousOffset;
@@ -51,7 +52,6 @@
 @property(nonatomic) id <AVTCollapsibleHeaderControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

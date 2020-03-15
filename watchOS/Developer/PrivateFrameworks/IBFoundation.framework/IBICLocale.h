@@ -6,13 +6,16 @@
 
 #import <IBFoundation/IBICSlotComponent.h>
 
-@interface IBICLocale : IBICSlotComponent
+#import <IBFoundation/IBICCoreUISlotComponent-Protocol.h>
+
+@class NSString;
+
+@interface IBICLocale : IBICSlotComponent <IBICCoreUISlotComponent>
 {
+    long long _coreUIValue;
 }
 
 + (id)localeWithLocaleStringIdentifier:(id)arg1;
-+ (long long)localeIdentifierForName:(id)arg1;
-+ (id)localeNameToIdentifierMapping;
 + (id)availableLocales;
 + (id)appPreferredLocale;
 + (id)displayNameForLocaleIdentifier:(id)arg1;
@@ -23,7 +26,14 @@
 + (id)unspecifiedValuePlaceholder;
 + (void)setComponentID:(long long)arg1;
 + (long long)componentID;
+@property(readonly, nonatomic) long long coreUIValue; // @synthesize coreUIValue=_coreUIValue;
 - (long long)componentID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

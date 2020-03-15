@@ -16,10 +16,10 @@
 }
 
 + (id)playbackStreamEventDateSortDescriptors;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CLSNowPlayingStreamEventMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSDate *localEndDate; // @synthesize localEndDate=_localEndDate;
 @property(readonly, nonatomic) NSDate *localStartDate; // @synthesize localStartDate=_localStartDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDuetKnowledgeEvent:(id)arg1;
 

@@ -43,6 +43,7 @@
 }
 
 + (id)platformImplementationProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool libraryIsCorrupted; // @synthesize libraryIsCorrupted=_libraryIsCorrupted;
 @property(readonly, nonatomic) CPLConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) CPLEngineFeedbackManager *feedback; // @synthesize feedback=_feedback;
@@ -58,7 +59,6 @@
 @property(readonly, copy, nonatomic) NSURL *cloudLibraryStateStorageURL; // @synthesize cloudLibraryStateStorageURL=_cloudLibraryStateStorageURL;
 @property(readonly, copy, nonatomic) NSURL *clientLibraryBaseURL; // @synthesize clientLibraryBaseURL=_clientLibraryBaseURL;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
-- (void).cxx_destruct;
 - (void)provideCloudResource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)provideRecordWithCloudScopeIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)provideLibraryInfoForScopeWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

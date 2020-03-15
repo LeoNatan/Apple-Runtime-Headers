@@ -15,9 +15,9 @@
 }
 
 + (id)sharedShroud;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
-- (void).cxx_destruct;
 - (void)setHidden:(_Bool)arg1 animated:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)fadeOut;
 - (void)_hideWithFadeAnimation:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

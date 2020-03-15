@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)connectionWithURLString:(id)arg1 ldapServices:(id)arg2;
 + (id)connectionWithURLString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_ldap_connection> *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) id <CNLDAPServices> ldapServices; // @synthesize ldapServices=_ldapServices;
-- (void).cxx_destruct;
 - (void)executeFetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)executeFetchRequest:(id)arg1;
 - (id)connect;

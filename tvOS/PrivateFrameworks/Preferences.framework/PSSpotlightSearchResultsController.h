@@ -22,10 +22,10 @@
     NSMutableArray *_tableData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *tableData; // @synthesize tableData=_tableData;
 @property(nonatomic) __weak id <PSSpotlightSearchResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (void)showSelectedSearchResult;
 - (void)_selectIndexPath:(id)arg1;
 - (void)selectNextSearchResult;

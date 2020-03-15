@@ -19,8 +19,8 @@
 + (void)requestSiriAuthorization:(CDUnknownBlockType)arg1;
 + (long long)siriAuthorizationStatus;
 + (id)sharedPreferences;
-@property(copy, setter=_setCachedSiriLanguageCode:) NSString *_cachedSiriLanguageCode; // @synthesize _cachedSiriLanguageCode;
 - (void).cxx_destruct;
+@property(copy, setter=_setCachedSiriLanguageCode:) NSString *_cachedSiriLanguageCode; // @synthesize _cachedSiriLanguageCode;
 - (void)_verifyProcessCanDonateIntentWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_siriLanguageCode;
 - (void)requestSiriAuthorization:(CDUnknownBlockType)arg1;

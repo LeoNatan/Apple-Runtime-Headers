@@ -23,6 +23,7 @@
     HKDateCache *_dateCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) HKCalendarScrollViewController *calendarScrollViewController; // @synthesize calendarScrollViewController=_calendarScrollViewController;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool wantsShortTitleDate; // @synthesize wantsShortTitleDate=_wantsShortTitleDate;
 @property(readonly, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(nonatomic) __weak id <HKMonthViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_didTapBackButton;
 - (id)_titleStringForDate:(id)arg1;
 - (void)_updateCurrentMonthBarButtonItemWithDate:(id)arg1;

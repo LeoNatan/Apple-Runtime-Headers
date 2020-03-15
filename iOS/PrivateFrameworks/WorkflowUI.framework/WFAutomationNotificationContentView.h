@@ -16,11 +16,11 @@
     UILabel *_descriptionLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) WFRowOfIconsView *actionIconsView; // @synthesize actionIconsView=_actionIconsView;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)updateUIFromNotification:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

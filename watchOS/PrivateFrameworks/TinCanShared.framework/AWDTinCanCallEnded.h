@@ -25,12 +25,12 @@
 }
 
 + (Class)eventsType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int disconnectedReason; // @synthesize disconnectedReason=_disconnectedReason;
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(nonatomic) unsigned long long contactHash; // @synthesize contactHash=_contactHash;
 @property(retain, nonatomic) NSString *csdCallUUID; // @synthesize csdCallUUID=_csdCallUUID;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

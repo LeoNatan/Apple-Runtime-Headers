@@ -13,8 +13,8 @@
     NPKPassView *_passView;
 }
 
-@property(retain, nonatomic) NPKPassView *passView; // @synthesize passView=_passView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NPKPassView *passView; // @synthesize passView=_passView;
 - (void)layoutSubviews;
 
 @end

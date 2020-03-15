@@ -16,11 +16,11 @@
     NSMutableDictionary *_datesByBatchIndexes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool containsDuetResults; // @synthesize containsDuetResults=_containsDuetResults;
 @property(nonatomic) _Bool ignored; // @synthesize ignored=_ignored;
 @property(retain, nonatomic) NSMutableDictionary *datesByBatchIndexes; // @synthesize datesByBatchIndexes=_datesByBatchIndexes;
 @property(readonly, nonatomic) CNAutocompleteFetchRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (_Bool)relevantForRequest:(id)arg1;
 - (void)didReceiveBatch:(unsigned long long)arg1;
 - (id)initWithRequest:(id)arg1;

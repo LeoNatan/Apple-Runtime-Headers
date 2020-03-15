@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)actionsLeftMargin;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(retain, nonatomic) CNQuickActionsView *actionsView; // @synthesize actionsView=_actionsView;
 @property(retain, nonatomic) UIView *actionsContainerView; // @synthesize actionsContainerView=_actionsContainerView;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize avatarSize; // @synthesize avatarSize=_avatarSize;
 @property(nonatomic) __weak id <CNAvatarViewDelegate><CNQuickActionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double maximumActionsWidth;
 - (void)_updateActionsMask;
 - (CDUnknownBlockType)completionBlockForHidingActions;

@@ -17,11 +17,11 @@
     AMSDoubleLinkedList *_backingList;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMSDoubleLinkedList *backingList; // @synthesize backingList=_backingList;
 @property(retain, nonatomic) NSMutableDictionary *backingDictionary; // @synthesize backingDictionary=_backingDictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) unsigned long long maxSize; // @synthesize maxSize=_maxSize;
-- (void).cxx_destruct;
 - (void)_removeObjectForKey:(id)arg1;
 - (unsigned long long)_count;
 - (void)_addObject:(id)arg1 forKey:(id)arg2;

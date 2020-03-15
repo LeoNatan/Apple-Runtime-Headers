@@ -16,8 +16,8 @@
     id <NTSectionFetchDescriptor> _privateFetchDescriptor;
 }
 
-@property(copy, nonatomic) id <NTSectionFetchDescriptor> privateFetchDescriptor; // @synthesize privateFetchDescriptor=_privateFetchDescriptor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) id <NTSectionFetchDescriptor> privateFetchDescriptor; // @synthesize privateFetchDescriptor=_privateFetchDescriptor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)incrementalLimitTransformationWithFeedPersonalizer:(id)arg1 limit:(unsigned long long)arg2 priorFeedItems:(id)arg3;
 - (id)incrementalSortTransformationWithFeedPersonalizer:(id)arg1;

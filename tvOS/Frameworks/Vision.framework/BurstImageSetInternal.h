@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultVersionString;
+- (void).cxx_destruct;
 @property int version; // @synthesize version=_version;
 @property(retain) NSString *versionString; // @synthesize versionString=_versionString;
 @property(retain) NSArray *bestImageIdentifiersArray; // @synthesize bestImageIdentifiersArray=_bestImageIdentifiersArray;
@@ -87,7 +88,6 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableArray *clusterArray; // @synthesize clusterArray=_clusterArray;
 @property(retain) BurstImageFaceAnalysisContext *faceAnalysisContext; // @synthesize faceAnalysisContext=_faceAnalysisContext;
 @property(retain) NSCountedSet *faceIDCounts; // @synthesize faceIDCounts=_faceIDCounts;
-- (void).cxx_destruct;
 - (double)secondsSinceStart;
 - (_Bool)isAction;
 - (_Bool)isPortrait;

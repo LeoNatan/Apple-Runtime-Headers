@@ -19,10 +19,10 @@
     UITabBarController *_rootViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITabBarController *rootViewController; // @synthesize rootViewController=_rootViewController;
 @property(readonly, nonatomic) SUOverlayBackgroundViewController *overlayBackgroundViewController; // @synthesize overlayBackgroundViewController=_overlayBackgroundViewController;
 @property(readonly, nonatomic) SUClientInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
-- (void).cxx_destruct;
 - (void)_showPreviewOverlayAnimated:(_Bool)arg1;
 - (void)_removePreviewOverlayViewController;
 - (id)_previewOverlayViewController;

@@ -24,6 +24,7 @@
 - (void)downloadAdded:(id)arg1;
 - (void)removedTransactions:(id)arg1;
 - (void)updatedTransactions:(id)arg1;
+- (void)askToShowMessageWithReplyBlock:(CDUnknownBlockType)arg1;
 - (void)unregisterClientWithIdentifier:(id)arg1;
 - (void)registerClient:(id)arg1 withIdentifier:(id)arg2;
 - (id)init;

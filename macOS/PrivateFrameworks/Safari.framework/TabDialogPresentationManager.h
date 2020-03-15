@@ -21,9 +21,10 @@ __attribute__((visibility("hidden")))
     id <TabDialogPresentationManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TabDialogPresentationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) TabDialogViewController *tabDialogViewController; // @synthesize tabDialogViewController=_tabDialogViewController;
-- (void).cxx_destruct;
+- (void)transplantDialogToNewInstallationTarget;
 - (void)_transplantDialogAndDimmingViewToTabContentViewIfNeeded;
 - (BOOL)_shouldSkipAnimationsDuringDismissal;
 - (long long)_tabDialogVerticalPlacementPolicyForViewController:(id)arg1;

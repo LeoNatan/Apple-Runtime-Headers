@@ -13,8 +13,8 @@
     NSDictionary *_tables;
 }
 
-@property(retain, nonatomic) NSDictionary *tables; // @synthesize tables=_tables;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *tables; // @synthesize tables=_tables;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

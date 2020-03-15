@@ -14,9 +14,9 @@
     id <CNScheduler> _scheduler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) id <CNObservable> observable; // @synthesize observable=_observable;
-- (void).cxx_destruct;
 - (id)subscribe:(id)arg1;
 - (id)initWithObservable:(id)arg1 scheduler:(id)arg2;
 

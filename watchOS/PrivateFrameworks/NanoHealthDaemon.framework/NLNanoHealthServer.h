@@ -20,8 +20,8 @@
 }
 
 + (id)serverWithClient:(id)arg1 plugin:(id)arg2 error:(id *)arg3;
-@property(nonatomic) __weak NLNanoHealthPlugin *nanoHealthPlugin; // @synthesize nanoHealthPlugin=_nanoHealthPlugin;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NLNanoHealthPlugin *nanoHealthPlugin; // @synthesize nanoHealthPlugin=_nanoHealthPlugin;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;

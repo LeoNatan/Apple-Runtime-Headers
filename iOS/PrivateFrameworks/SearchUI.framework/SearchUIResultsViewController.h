@@ -28,6 +28,7 @@
     id <SearchUIResultsViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldMonitorScrollingPastBottomOfContent; // @synthesize shouldMonitorScrollingPastBottomOfContent=_shouldMonitorScrollingPastBottomOfContent;
 @property(nonatomic) __weak id <SearchUIResultsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *previousSearchString; // @synthesize previousSearchString=_previousSearchString;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) CDUnknownBlockType cellWillDisplayHandler; // @synthesize cellWillDisplayHandler;
 @property(copy, nonatomic) CDUnknownBlockType tableViewDidUpdateHandler; // @synthesize tableViewDidUpdateHandler;
 @property(copy, nonatomic) CDUnknownBlockType tableViewWillUpdateHandler; // @synthesize tableViewWillUpdateHandler;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)performReturnKeyPressAction;
 - (void)purgeMemory;

@@ -18,8 +18,8 @@
     NSString *_clientProcessName;
 }
 
-@property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendRTCLogsWithWithCompletion:(CDUnknownBlockType)arg1;
 - (void)interactionSummaryMetricsWithQueryId:(unsigned long long)arg1;

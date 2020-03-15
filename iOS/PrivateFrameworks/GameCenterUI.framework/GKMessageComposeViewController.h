@@ -27,6 +27,7 @@
 }
 
 + (_Bool)canSendText;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *contactsToInvite; // @synthesize contactsToInvite=_contactsToInvite;
 @property(retain, nonatomic) NSMutableArray *friendsToInvite; // @synthesize friendsToInvite=_friendsToInvite;
 @property(retain, nonatomic) NSString *messageToSend; // @synthesize messageToSend=_messageToSend;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak id <GKDashboardNearbyBrowserDelegate> nearbyDelegate; // @synthesize nearbyDelegate=_nearbyDelegate;
 @property(nonatomic) __weak id <GKMessageComposeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *shareURL; // @synthesize shareURL=_shareURL;
-- (void).cxx_destruct;
 - (void)messageComposeViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (id)contactForAddress:(id)arg1 fromContactStore:(id)arg2;
 - (void)messageComposeViewController:(id)arg1 shouldSendMessage:(id)arg2 toRecipients:(id)arg3 completion:(CDUnknownBlockType)arg4;

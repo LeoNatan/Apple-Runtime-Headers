@@ -25,12 +25,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) double timeEnded; // @synthesize timeEnded=_timeEnded;
 @property(nonatomic) double timeStarted; // @synthesize timeStarted=_timeStarted;
 @property(nonatomic) double timeDelta; // @synthesize timeDelta=_timeDelta;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

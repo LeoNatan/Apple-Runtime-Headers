@@ -17,10 +17,10 @@
 
 + (id)entityName;
 + (id)recordWithKey:(id)arg1 sequence:(id)arg2 bitPosition:(long long)arg3 bitValue:(BOOL)arg4 creationDate:(double)arg5 submitted:(BOOL)arg6 objectId:(id)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *plainSequence; // @synthesize plainSequence=_plainSequence;
 @property(nonatomic) BOOL sequenceBitValue; // @synthesize sequenceBitValue=_sequenceBitValue;
 @property(nonatomic) long long sequenceBitPosition; // @synthesize sequenceBitPosition=_sequenceBitPosition;
-- (void).cxx_destruct;
 - (id)jsonString;
 - (BOOL)copyFromManagedObject:(id)arg1;
 - (BOOL)copyToManagedObject:(id)arg1;

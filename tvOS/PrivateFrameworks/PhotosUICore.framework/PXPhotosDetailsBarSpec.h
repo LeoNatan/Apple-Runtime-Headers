@@ -16,8 +16,8 @@
     unsigned long long _detailsOptions;
 }
 
-@property(nonatomic) unsigned long long detailsOptions; // @synthesize detailsOptions=_detailsOptions;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long detailsOptions; // @synthesize detailsOptions=_detailsOptions;
 - (id)sortedBarItemsByPlacement:(id)arg1;
 - (_Bool)_shouldIncludeItem:(id)arg1;
 - (id)_placementForBarItem:(id)arg1;

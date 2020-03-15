@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 - (id)initWithFMDCoder:(id)arg1 error:(id *)arg2;
 - (BOOL)encodeWithFMDCoder:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSString *description;

@@ -18,12 +18,12 @@
 }
 
 + (struct CGSize)physicalSizeForTouchpadWithDigitizerProperties:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CARInputDeviceTouchpadDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long supportedFeedbackTypes; // @synthesize supportedFeedbackTypes=_supportedFeedbackTypes;
 @property(readonly, nonatomic) _Bool characterRecognitionSupported; // @synthesize characterRecognitionSupported=_characterRecognitionSupported;
 @property(readonly, nonatomic) struct CGSize physicalSize; // @synthesize physicalSize=_physicalSize;
 @property(nonatomic) double sensitivity; // @synthesize sensitivity=_sensitivity;
-- (void).cxx_destruct;
 - (void)_setDelegate:(id)arg1;
 - (id)_initWithSupportedHapticTypes:(unsigned long long)arg1 physicalSize:(struct CGSize)arg2 characterRecognitionSupported:(_Bool)arg3 senderID:(unsigned long long)arg4 UUID:(id)arg5;
 - (_Bool)_characterRecognitionSupportedForServiceClient:(struct __IOHIDServiceClient *)arg1;

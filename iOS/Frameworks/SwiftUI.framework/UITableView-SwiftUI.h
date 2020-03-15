@@ -8,5 +8,8 @@
 
 @interface UITableView (SwiftUI)
 - (double)horizontalMargin;
+
+// Remaining properties
+@property(nonatomic, getter=_sectionContentInset, setter=_setSectionContentInset:) struct UIEdgeInsets sectionContentInset;
 @end
 

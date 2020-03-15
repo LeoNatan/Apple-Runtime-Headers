@@ -14,9 +14,9 @@
     unsigned long long _filterOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long filterOptions; // @synthesize filterOptions=_filterOptions;
 @property(readonly) NSSet *blacklist; // @synthesize blacklist=_blacklist;
-- (void).cxx_destruct;
 - (_Bool)isEmpty;
 - (id)initWithBlacklist:(id)arg1 options:(unsigned long long)arg2;
 

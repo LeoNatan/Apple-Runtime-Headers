@@ -15,8 +15,8 @@
     CalUISuggestionsField *_suggestionsField;
 }
 
-@property __weak CalUISuggestionsField *suggestionsField; // @synthesize suggestionsField=_suggestionsField;
 - (void).cxx_destruct;
+@property __weak CalUISuggestionsField *suggestionsField; // @synthesize suggestionsField=_suggestionsField;
 - (void)controlTextDidChange:(id)arg1;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)controlTextDidEndEditing:(id)arg1;

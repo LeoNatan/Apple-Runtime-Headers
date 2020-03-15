@@ -22,6 +22,7 @@
 }
 
 + (id)taskWithEngineLibrary:(id)arg1 session:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *phaseDescription; // @synthesize phaseDescription=_phaseDescription;
 @property(getter=isCancelled, setter=_setCancelled:) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) BOOL forceSync; // @synthesize forceSync=_forceSync;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) CPLSyncSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 @property(retain) id <CPLEngineSyncTaskDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)taskDidProgress:(float)arg1 userInfo:(id)arg2;
 - (void)taskDidFinishWithError:(id)arg1;

@@ -46,6 +46,7 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (unsigned long long)rawGPState;
 @property(readonly, nonatomic) unsigned char lifecycleState;
+@property(readonly, nonatomic) BOOL containsSubKeys;
 @property(readonly, nonatomic) BOOL isGPLocked;
 - (BOOL)isPPSEControllable;
 - (id)multiSSDMembers;

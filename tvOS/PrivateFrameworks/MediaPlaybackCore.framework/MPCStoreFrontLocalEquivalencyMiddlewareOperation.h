@@ -13,19 +13,19 @@
 
 @interface MPCStoreFrontLocalEquivalencyMiddlewareOperation : MPAsyncOperation <MPCStoreFrontLocalEquivalencyMiddlewarePlayingItemProviding, MPMiddlewareAutomaticDependencyOperation>
 {
-    struct NSMapTable *_inputOperations;
+    NSMapTable *_inputOperations;
     CDUnknownBlockType _invalidationHandler;
     NSArray *_invalidationObservers;
     MPCStoreFrontLocalEquivalencyMiddleware *_middleware;
     MPCPlayerRequest *_playerRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCPlayerRequest *playerRequest; // @synthesize playerRequest=_playerRequest;
 @property(retain, nonatomic) MPCStoreFrontLocalEquivalencyMiddleware *middleware; // @synthesize middleware=_middleware;
 @property(readonly, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSMapTable *inputOperations; // @synthesize inputOperations=_inputOperations;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputProtocols;
 @property(readonly, nonatomic) NSArray *inputProtocols;
 - (void)execute;

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 
 + (id)closeActionButtonImage;
 + (double)actionButtonTrailingMarginBasedOnPreferredScrollerStyle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property(nonatomic) double actionButtonAnimationDuration; // @synthesize actionButtonAnimationDuration=_actionButtonAnimationDuration;
 @property(nonatomic) double actionButtonYOffsetWhenVerticallyCentered; // @synthesize actionButtonYOffsetWhenVerticallyCentered=_actionButtonYOffsetWhenVerticallyCentered;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak RolloverImageButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) int actionButtonState; // @synthesize actionButtonState=_actionButtonState;
 @property(nonatomic) __weak id <RolloverActionButtonTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateTitleTextFieldFrameAccountingForActionButtonBeingVisible:(BOOL)arg1;
 - (void)updateTextFieldToAccountForButtonBeingVisible:(BOOL)arg1;
 - (void)_didHideActionButton;

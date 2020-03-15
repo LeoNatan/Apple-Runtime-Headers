@@ -16,10 +16,10 @@
     id <XCUIRemoteSiriInterface> _remoteSiriInterface;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <XCUIRemoteSiriInterface> remoteSiriInterface; // @synthesize remoteSiriInterface=_remoteSiriInterface;
 @property(readonly) id <XCUIDevice> device; // @synthesize device=_device;
 @property(readonly) XCUIApplication *siriApplication; // @synthesize siriApplication=_siriApplication;
-- (void).cxx_destruct;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)_waitForActivation;
 - (void)_assertSiriEnabled;

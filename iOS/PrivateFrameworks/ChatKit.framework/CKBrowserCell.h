@@ -24,6 +24,7 @@
 
 + (Class)classForItemType:(long long)arg1;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect selectionFrame; // @synthesize selectionFrame=_selectionFrame;
 @property(retain, nonatomic) UIImageView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) UILabel *browserLabel; // @synthesize browserLabel=_browserLabel;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool jitter; // @synthesize jitter=_jitter;
 @property(retain, nonatomic) CKBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 @property(nonatomic) __weak id <CKBrowserCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setBorderStyle:(long long)arg1;
 - (void)applyLayoutAttributes:(id)arg1;

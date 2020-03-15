@@ -15,10 +15,10 @@
     NSString *_modalNavigationTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *modalNavigationTitle; // @synthesize modalNavigationTitle=_modalNavigationTitle;
 @property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
-- (void).cxx_destruct;
 - (void)activate;
 - (void)deactivate;
 - (void)viewDidLoad;

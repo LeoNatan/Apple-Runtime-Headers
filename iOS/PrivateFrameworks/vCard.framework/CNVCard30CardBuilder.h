@@ -23,6 +23,7 @@
 
 + (unsigned long long)estimatedBytesAvailableForPhotoWithOptions:(id)arg1 serializer:(id)arg2;
 + (id)builderWithPerson:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNVCardLineFactory> lineFactory; // @synthesize lineFactory=_lineFactory;
 @property(readonly, nonatomic) NSMutableArray *unknownProperties; // @synthesize unknownProperties=_unknownProperties;
 @property(nonatomic) _Bool photoHandled; // @synthesize photoHandled=_photoHandled;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long groupCount; // @synthesize groupCount=_groupCount;
 @property(readonly, nonatomic) NSMutableArray *lines; // @synthesize lines=_lines;
 @property(readonly, nonatomic) id <CNVCardPerson> person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (void)addPropertyLinesForValues:(id)arg1 generator:(id)arg2;
 - (void)_addAttributesForCropRects:(id)arg1 imageHash:(id)arg2 toLine:(id)arg3;
 - (void)preparePhotoLineWithOptions:(id)arg1;

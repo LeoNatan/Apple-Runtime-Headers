@@ -17,10 +17,10 @@
 }
 
 + (_Bool)_bagValue:(id)arg1 equalsBagValue:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SSDoubleLinkedList *bagValuesList; // @synthesize bagValuesList=_bagValuesList;
 @property(retain, nonatomic) NSMutableDictionary *bagValuesDictionary; // @synthesize bagValuesDictionary=_bagValuesDictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (id)_valueForKey:(id)arg1 forBagValuesNode:(id)arg2;
 - (id)_bagValuesMapTableWithInitialValues:(id)arg1;
 - (id)description;

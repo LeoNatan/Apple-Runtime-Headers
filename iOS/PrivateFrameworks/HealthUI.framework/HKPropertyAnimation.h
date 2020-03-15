@@ -23,6 +23,7 @@
     NSDate *_appliedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *appliedDate; // @synthesize appliedDate=_appliedDate;
 @property(copy, nonatomic) CDUnknownBlockType propertyApplicationFunction; // @synthesize propertyApplicationFunction=_propertyApplicationFunction;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) id toValue; // @synthesize toValue=_toValue;
 @property(retain, nonatomic) id fromValue; // @synthesize fromValue=_fromValue;
 @property(retain, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_finish;
 - (void)_validate;

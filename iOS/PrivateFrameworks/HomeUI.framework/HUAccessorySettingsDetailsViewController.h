@@ -18,10 +18,10 @@
     HFAccessorySettingItem *_fileUploadItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFAccessorySettingItem *fileUploadItem; // @synthesize fileUploadItem=_fileUploadItem;
 @property(retain, nonatomic) HUAccessorySettingsItemModuleController *accessorySettingsItemModuleController; // @synthesize accessorySettingsItemModuleController=_accessorySettingsItemModuleController;
 @property(retain, nonatomic) HFAccessorySettingGroupItem *groupItem; // @synthesize groupItem=_groupItem;
-- (void).cxx_destruct;
 - (id)moduleController:(id)arg1 requestPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)moduleController:(id)arg1 presentGroup:(id)arg2;
 - (id)itemModuleControllers;

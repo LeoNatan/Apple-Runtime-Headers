@@ -77,30 +77,30 @@
     SBUIViewFloatSpringProperty *_minMaxScaleYSpring;
     _Bool _volumeUpButtonIsDown;
     _Bool _volumeDownButtonIsDown;
-    int _axis;
+    unsigned long long _axis;
     id <SBElasticAudioDataSource> _dataSource;
     id <SBElasticAudioVolumeViewControllerDelegate> _delegate;
     SBVolumeHUDSettings *_settings;
     SBElasticSliderView *_sliderView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBElasticSliderView *sliderView; // @synthesize sliderView=_sliderView;
 @property(readonly, nonatomic) _Bool volumeDownButtonIsDown; // @synthesize volumeDownButtonIsDown=_volumeDownButtonIsDown;
 @property(readonly, nonatomic) _Bool volumeUpButtonIsDown; // @synthesize volumeUpButtonIsDown=_volumeUpButtonIsDown;
 @property(readonly, nonatomic) SBVolumeHUDSettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) __weak id <SBElasticAudioVolumeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SBElasticAudioDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (unsigned long long)_updateVolumeLevelSlider:(float)arg1 animated:(_Bool)arg2;
 - (void)_modifySpringsFromState:(long long)arg1 toState:(long long)arg2;
-- (void)_updateForAxisChange:(int)arg1;
+- (void)_updateForAxisChange:(unsigned long long)arg1;
 - (void)_updateDebugUIPositions;
 - (void)_updateTouchTrackingView;
 - (void)_updateSliderViewToCenter:(struct CGPoint)arg1 size:(struct CGSize)arg2 integralized:(_Bool)arg3 continuousCornerRadius:(double *)arg4;
 - (void)_updateSliderViewMetricsForState:(long long)arg1 bounds:(struct CGRect)arg2 integralized:(_Bool)arg3 useSizeSpringData:(_Bool)arg4 useCenterSpringData:(_Bool)arg5;
 - (void)_updateSliderViewMetricsForState:(long long)arg1 bounds:(struct CGRect)arg2 integralized:(_Bool)arg3 useSpringData:(_Bool)arg4;
 - (void)_updateDimmingVisible:(_Bool)arg1;
-- (void)_updateLabelsForAxis:(int)arg1 containerViewSize:(struct CGSize)arg2 state:(long long)arg3 animated:(_Bool)arg4;
+- (void)_updateLabelsForAxis:(unsigned long long)arg1 containerViewSize:(struct CGSize)arg2 state:(long long)arg3 animated:(_Bool)arg4;
 - (void)_updateGlyphStateIfNecessaryForVolumeLevel:(float *)arg1;
 - (_Bool)_computeCachedAudioRouteDisplayInformation;
 - (double)cornerRadiusForState:(long long)arg1 useSpringData:(_Bool)arg2;
@@ -152,7 +152,7 @@
 - (void)transitionToState:(long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)transitionStateContextuallyForVolumeChangeEvent;
 - (long long)hudPresentationOrientation;
-@property(readonly, nonatomic) int axis; // @synthesize axis=_axis;
+@property(readonly, nonatomic) unsigned long long axis; // @synthesize axis=_axis;
 - (void)_playTickHapticForSteppedVolume:(double)arg1;
 - (void)_playMinimumVolumeHaptic;
 - (void)_playMaximumVolumeHaptic;

@@ -20,10 +20,10 @@
 + (id)expectedPrincipalObjectProtocol;
 + (Class)expectedExtensionContextClass;
 + (Class)windowClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PHExtensionHostViewPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
 @property(nonatomic) __weak NSViewController *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 @property(retain, nonatomic) NSWindow *serviceWindow; // @synthesize serviceWindow=_serviceWindow;
-- (void).cxx_destruct;
 - (void)didConnectToExtensionContext:(id)arg1;
 - (struct CGSize)preferredMaximumSize;
 - (struct CGSize)preferredMinimumSize;

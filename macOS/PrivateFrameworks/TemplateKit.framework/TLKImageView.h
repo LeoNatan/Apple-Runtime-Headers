@@ -30,6 +30,7 @@
 + (BOOL)sizeIsShadowWorthy:(struct CGSize)arg1;
 + (BOOL)imageIsEligibleForShadow:(id)arg1 isTemplate:(BOOL)arg2;
 + (struct CGSize)roundedSizeForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect rectOfShadow; // @synthesize rectOfShadow=_rectOfShadow;
 @property(retain, nonatomic) NUIBoxArrangement *boxArrangement; // @synthesize boxArrangement=_boxArrangement;
 @property(retain, nonatomic) TLKArrangementItem *sizingHelper; // @synthesize sizingHelper=_sizingHelper;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL useButtonColoring; // @synthesize useButtonColoring=_useButtonColoring;
 @property(nonatomic) unsigned long long prominence; // @synthesize prominence=_prominence;
 @property(retain, nonatomic) TLKImage *tlkImage; // @synthesize tlkImage=_tlkImage;
-- (void).cxx_destruct;
 - (id)actualImageView;
 - (id)hitTest:(struct CGPoint)arg1;
 - (struct CGRect)layoutFrameForArrangedSubview:(id)arg1 withProposedContentFrame:(struct CGRect)arg2;

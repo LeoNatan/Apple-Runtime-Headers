@@ -28,6 +28,7 @@
 
 + (float)minimumHeightForLanguage:(id)arg1 shouldShowSurf:(_Bool)arg2;
 + (float)minimumHeightForLanguage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PUICQuickboardListTrayView *trayView; // @synthesize trayView=_trayView;
 @property(retain, nonatomic) PUICQuickboardListTrayButton *surfReplyButton; // @synthesize surfReplyButton=_surfReplyButton;
 @property(retain, nonatomic) PUICQuickboardListTrayButton *arouetReplyButton; // @synthesize arouetReplyButton=_arouetReplyButton;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool shouldShowSurf; // @synthesize shouldShowSurf=_shouldShowSurf;
 @property(copy, nonatomic) NSString *primaryLanguage; // @synthesize primaryLanguage=_primaryLanguage;
 @property(nonatomic) __weak id <CKNanoReplyButtonsViewDelegate> replyDelegate; // @synthesize replyDelegate=_replyDelegate;
-- (void).cxx_destruct;
 - (void)tappedDictationButton;
 - (void)tappedDigitalTouchButton;
 - (void)tappedSurfButton;

@@ -25,13 +25,13 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfPeopleSuggested; // @synthesize numberOfPeopleSuggested=_numberOfPeopleSuggested;
 @property(retain, nonatomic) PXCMMComposeRecipientDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXCMMComposeRecipientDataSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) PXCMMPeopleSuggestionsDataSourceManager *peopleSuggestionsDataSourceManager; // @synthesize peopleSuggestionsDataSourceManager=_peopleSuggestionsDataSourceManager;
 @property(retain, nonatomic) PXCMMPeopleSuggestionsDataSource *peopleSuggestionsDataSource; // @synthesize peopleSuggestionsDataSource=_peopleSuggestionsDataSource;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_replaceComposeRecipientAtIndex:(long long)arg1 withComposeRecipient:(id)arg2;
 - (void)_addComposeRecipients:(id)arg1;

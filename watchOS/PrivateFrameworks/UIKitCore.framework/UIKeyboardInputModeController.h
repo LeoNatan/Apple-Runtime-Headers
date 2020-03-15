@@ -74,12 +74,15 @@
 @property(retain) NSArray *keyboardInputModeIdentifiers; // @synthesize keyboardInputModeIdentifiers;
 @property(retain) NSArray *keyboardInputModes; // @synthesize keyboardInputModes;
 @property(retain, nonatomic) UITextInputMode *documentInputMode; // @synthesize documentInputMode=_documentInputMode;
+- (id)supportedFullModesForHardwareKeyboard:(id)arg1 countryCode:(id)arg2 activeModes:(id)arg3 matchedMode:(id *)arg4;
 - (void)handleSpecificHardwareKeyboard;
 - (void)getHardwareKeyboardLanguage:(id *)arg1 countryCode:(id *)arg2;
 - (void)releaseAddKeyboardNotification;
 - (void)didAcceptAddKeyboardInputMode;
 - (void)showAddKeyboardAlertForInputModeIdentifier:(id)arg1;
+- (id)fullInputModeFromIdentifier:(id)arg1 hardwareKeyboardLanguage:(id)arg2;
 - (id)inputModeToAddForKeyboardLanguage:(id)arg1 countryCode:(id)arg2 activeModes:(id)arg3;
+- (id)hardwareLayoutToUseForInputMode:(id)arg1 hardwareKeyboardLanguage:(id)arg2 countryCode:(id)arg3;
 - (id)hardwareLayoutToUseForInputMode:(id)arg1;
 - (void)handleLastUsedInputMode:(id)arg1 withNewInputMode:(id)arg2;
 - (id)supportedInputModesFromArray:(id)arg1;

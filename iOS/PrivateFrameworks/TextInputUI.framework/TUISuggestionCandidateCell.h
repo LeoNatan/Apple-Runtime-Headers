@@ -15,9 +15,9 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) TIKeyboardCandidateSuggestion *candidate; // @synthesize candidate=_candidate;
-- (void).cxx_destruct;
 - (void)updateLabel;
 - (void)layoutSubviews;
 - (void)setStyle:(id)arg1;

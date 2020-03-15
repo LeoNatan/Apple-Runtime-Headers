@@ -16,10 +16,10 @@
     NSDate *_lastMaturedLocationDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastMaturedLocationDate; // @synthesize lastMaturedLocationDate=_lastMaturedLocationDate;
 @property(retain, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
 @property(readonly, nonatomic) double minWaitInterval; // @synthesize minWaitInterval=_minWaitInterval;
-- (void).cxx_destruct;
 - (id)maturedLocations;
 - (void)addLocations:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numLocations;

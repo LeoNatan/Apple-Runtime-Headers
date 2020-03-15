@@ -15,9 +15,9 @@
 }
 
 + (id)contextWithDate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

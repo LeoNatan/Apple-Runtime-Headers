@@ -14,8 +14,8 @@
 }
 
 + (Class)valueClass;
-@property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 - (_Bool)supportsItemRepresentingServices:(id)arg1;
 - (id)normalizedValueForValue:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;

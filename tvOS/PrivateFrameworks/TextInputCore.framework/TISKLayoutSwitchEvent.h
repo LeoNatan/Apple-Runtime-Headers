@@ -13,8 +13,8 @@
     TIKeyboardLayout *_layout;
 }
 
-@property(retain, nonatomic) TIKeyboardLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIKeyboardLayout *layout; // @synthesize layout=_layout;
 - (id)description;
 - (double)touchUpTimestamp;
 - (double)touchDownTimestamp;

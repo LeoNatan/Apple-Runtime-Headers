@@ -22,6 +22,7 @@
     NSString *_hostName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *hostName; // @synthesize hostName=_hostName;
 @property(retain, nonatomic) HLPReachability *hostReachability; // @synthesize hostReachability=_hostReachability;
 @property(retain, nonatomic) HLPReachability *internetReachability; // @synthesize internetReachability=_internetReachability;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool internetActive; // @synthesize internetActive=_internetActive;
 @property(nonatomic) _Bool connected; // @synthesize connected=_connected;
 @property(nonatomic) _Bool reachabilityInitialized; // @synthesize reachabilityInitialized=_reachabilityInitialized;
-- (void).cxx_destruct;
 - (void)reachabilityChanged:(id)arg1;
 - (void)stopNotifier;
 - (void)startNotifier;

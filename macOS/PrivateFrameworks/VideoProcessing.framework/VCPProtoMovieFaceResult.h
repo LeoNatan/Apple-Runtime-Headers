@@ -22,13 +22,13 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int faceID; // @synthesize faceID=_faceID;
 @property(nonatomic) BOOL isCloseup; // @synthesize isCloseup=_isCloseup;
 @property(retain, nonatomic) VCPProtoBounds *bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) int position; // @synthesize position=_position;
 @property(nonatomic) int mouthExpression; // @synthesize mouthExpression=_mouthExpression;
 @property(retain, nonatomic) VCPProtoTimeRange *timeRange; // @synthesize timeRange=_timeRange;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

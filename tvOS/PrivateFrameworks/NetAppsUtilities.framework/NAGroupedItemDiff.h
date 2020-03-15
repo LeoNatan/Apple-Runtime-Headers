@@ -20,12 +20,12 @@
 + (id)_groupedItemDiffWithGroupOperations:(id)arg1 itemOperations:(id)arg2;
 + (id)diffFromGroups:(id)arg1 toGroups:(id)arg2 changeTest:(CDUnknownBlockType)arg3;
 + (id)diffFromGroups:(id)arg1 toGroups:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType changeTest; // @synthesize changeTest=_changeTest;
 @property(copy, nonatomic) NSArray *toGroups; // @synthesize toGroups=_toGroups;
 @property(copy, nonatomic) NSArray *fromGroups; // @synthesize fromGroups=_fromGroups;
 @property(copy, nonatomic) NSArray *itemOperations; // @synthesize itemOperations=_itemOperations;
 @property(copy, nonatomic) NSArray *groupOperations; // @synthesize groupOperations=_groupOperations;
-- (void).cxx_destruct;
 - (id)_operationDescriptionWithPrefix:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *operationDescription;
 - (id)debugDescription;

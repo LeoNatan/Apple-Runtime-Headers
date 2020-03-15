@@ -24,6 +24,9 @@
     struct {
         unsigned int canDrawContentIsValid:1;
         unsigned int canDrawContent:1;
+        unsigned int suppressPixelAlignment:1;
+        unsigned int previousPixelAlignment:1;
+        unsigned int previousEdgeAntialiasing:1;
     } _imageViewFlags;
     struct {
         unsigned int adjustsImageWhenAncestorFocused:1;
@@ -35,11 +38,11 @@
     _Bool __animatesContents;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAnimatesContents:) _Bool _animatesContents; // @synthesize _animatesContents=__animatesContents;
 @property(nonatomic, setter=_setSymbolImagesIgnoreAccessibilitySizes:) _Bool _symbolImagesIgnoreAccessibilitySizes; // @synthesize _symbolImagesIgnoreAccessibilitySizes=__symbolImagesIgnoreAccessibilitySizes;
 @property(nonatomic, setter=_setEdgeInsetsForEffectsAreValid:) _Bool _edgeInsetsForEffectsAreValid; // @synthesize _edgeInsetsForEffectsAreValid;
 @property(readonly, nonatomic) _Bool _templateSettingsAreInvalid; // @synthesize _templateSettingsAreInvalid;
-- (void).cxx_destruct;
 - (void)_updateLayeredImageIsFocusedWithFocusedView:(id)arg1 focusAnimationCoordinator:(id)arg2;
 @property(nonatomic, setter=_setLayeredImageCornerRadius:) double _layeredImageCornerRadius;
 @property(readonly, nonatomic) UIView *overlayContentView;
@@ -109,6 +112,7 @@
 @property(retain, nonatomic, setter=_setOverridingSymbolConfiguration:) UIImageSymbolConfiguration *_overridingSymbolConfiguration;
 @property(retain, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration;
 - (id)_symbolConfigurationForImage:(id)arg1;
+@property(nonatomic, setter=_setSuppressPixelAlignment:) _Bool _suppressPixelAlignment;
 - (id)midlineGuide;
 - (id)_imageContentGuideAllowingCreation:(_Bool)arg1;
 @property(readonly) UILayoutGuide *imageContentGuide;

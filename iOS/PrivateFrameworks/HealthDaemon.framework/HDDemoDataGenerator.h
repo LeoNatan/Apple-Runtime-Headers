@@ -38,6 +38,7 @@
     HDDemoDataMindfulnessSampleGenerator *_mindfulnessSampleGenerator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HDDemoDataGeneratorState *generatorState; // @synthesize generatorState=_generatorState;
 @property(retain, nonatomic) HDDemoDataMindfulnessSampleGenerator *mindfulnessSampleGenerator; // @synthesize mindfulnessSampleGenerator=_mindfulnessSampleGenerator;
 @property(retain, nonatomic) HDDemoDataVitalsSampleGenerator *vitalsSampleGenerator; // @synthesize vitalsSampleGenerator=_vitalsSampleGenerator;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) HDDemoDataGeneratorConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) HDDemoDataPerson *demoPerson; // @synthesize demoPerson=_demoPerson;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)currentDateFromCurrentTime:(double)arg1;
 - (long long)firstSampleDayOfYear;
 - (id)firstSampleDate;

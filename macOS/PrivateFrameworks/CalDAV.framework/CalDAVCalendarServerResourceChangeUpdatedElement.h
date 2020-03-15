@@ -15,10 +15,10 @@
     NSMutableSet *_calendarChanges;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *calendarChanges; // @synthesize calendarChanges=_calendarChanges;
 @property(retain, nonatomic) CoreDAVItem *prop; // @synthesize prop=_prop;
 @property(nonatomic) BOOL content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (void)addCalendarChange:(id)arg1;
 - (void)addContentItem:(id)arg1;

@@ -19,8 +19,8 @@
     IOSurface *_processedSurface;
 }
 
-@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (void)_invalidateSnapshotData;
 - (id)fetchImage;
 - (id)IOSurface;

@@ -18,10 +18,10 @@
     BSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) SBProximitySensorManager *sensorManager; // @synthesize sensorManager=_sensorManager;
 @property(nonatomic) long long phase; // @synthesize phase=_phase;
-- (void).cxx_destruct;
 - (void)_timerDidFire;
 - (void)_transitionToPhase:(long long)arg1 timeout:(double)arg2;
 - (void)_transitionToPhase:(long long)arg1;

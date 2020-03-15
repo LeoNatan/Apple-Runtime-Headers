@@ -31,8 +31,8 @@
 + (long long)isDataStoreAtURLInitialized:(id)arg1 withModelAtURL:(id)arg2;
 + (id)getPersistentCoordinator:(id)arg1;
 + (id)persistentStoreOptions:(BOOL)arg1;
-@property(retain, nonatomic) NSPersistentStoreCoordinator *fPersistentStoreCoordinator; // @synthesize fPersistentStoreCoordinator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPersistentStoreCoordinator *fPersistentStoreCoordinator; // @synthesize fPersistentStoreCoordinator;
 - (id)createManagedObjectContext;
 - (void)removeDataStoreAtLocation:(id)arg1;
 - (BOOL)addDataStoreAtLocation:(id)arg1 isEncrypted:(BOOL)arg2;

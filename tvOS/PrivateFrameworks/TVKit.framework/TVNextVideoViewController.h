@@ -25,6 +25,7 @@
     NSLayoutConstraint *_buttonHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *buttonHeightConstraint; // @synthesize buttonHeightConstraint=_buttonHeightConstraint;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UIView *dividerView; // @synthesize dividerView=_dividerView;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSURL *nextItemImageURL; // @synthesize nextItemImageURL=_nextItemImageURL;
 @property(nonatomic) __weak id <TVNextVideoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSNumber *durationUntilPlaybackWillAdvance; // @synthesize durationUntilPlaybackWillAdvance=_durationUntilPlaybackWillAdvance;
-- (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

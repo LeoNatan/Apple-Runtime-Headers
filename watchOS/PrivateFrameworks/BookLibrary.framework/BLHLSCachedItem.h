@@ -18,13 +18,13 @@
     NSMutableDictionary *_mutableURLErrorCounts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *mutableURLErrorCounts; // @synthesize mutableURLErrorCounts=_mutableURLErrorCounts;
 @property(readonly, nonatomic) NSMutableArray *mutableInProgressURLs; // @synthesize mutableInProgressURLs=_mutableInProgressURLs;
 @property(readonly, nonatomic) NSMutableArray *mutableUnstartedURLs; // @synthesize mutableUnstartedURLs=_mutableUnstartedURLs;
 @property(readonly, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 @property(readonly, nonatomic) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property(readonly, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (void)markURLAsFinished:(id)arg1;
 - (void)markURLAsFailed:(id)arg1;
 - (int)markURLAsErrored:(id)arg1;

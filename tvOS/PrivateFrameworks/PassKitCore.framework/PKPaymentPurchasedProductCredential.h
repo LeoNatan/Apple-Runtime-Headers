@@ -15,10 +15,10 @@
     PKServiceProviderPurchase *_purchase;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKServiceProviderPurchase *purchase; // @synthesize purchase=_purchase;
 @property(copy, nonatomic) NSString *productIdentifier; // @synthesize productIdentifier=_productIdentifier;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *statusDescription;
 @property(readonly, copy, nonatomic) NSString *summaryMetadataDescription;
 @property(readonly, copy, nonatomic) NSArray *metadata;

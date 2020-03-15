@@ -14,8 +14,8 @@
     NSString *_secondaryIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
 - (id)createViewControllerForMode:(long long)arg1 displayDate:(id)arg2 applicationItems:(id)arg3;
 - (id)initialSelectedContextForMode:(long long)arg1;
 - (long long)_initialPillForIdentifier:(id)arg1;

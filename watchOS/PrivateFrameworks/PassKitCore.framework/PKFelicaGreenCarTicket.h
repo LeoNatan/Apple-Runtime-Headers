@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRefunded) _Bool refunded; // @synthesize refunded=_refunded;
 @property(readonly, copy, nonatomic) NSNumber *validityStartDate; // @synthesize validityStartDate=_validityStartDate;
 @property(readonly, copy, nonatomic) NSData *destinationStation; // @synthesize destinationStation=_destinationStation;
 @property(readonly, copy, nonatomic) NSData *originStation; // @synthesize originStation=_originStation;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

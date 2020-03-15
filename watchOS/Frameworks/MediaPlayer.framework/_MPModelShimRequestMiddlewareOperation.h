@@ -18,11 +18,11 @@
     MPModelRequest *_modelRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelRequest *modelRequest; // @synthesize modelRequest=_modelRequest;
 @property(retain, nonatomic) _MPModelShimRequestMiddleware *middleware; // @synthesize middleware=_middleware;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(readonly, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
-- (void).cxx_destruct;
 - (void)execute;
 - (id)initWithMiddleware:(id)arg1 modelRequest:(id)arg2;
 

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) UIColor *boxBorderColor; // @synthesize boxBorderColor=_boxBorderColor;
 @property(copy, nonatomic) UIColor *boxBackgroundColor; // @synthesize boxBackgroundColor=_boxBackgroundColor;
-- (void).cxx_destruct;
 - (void)_setNeedsReloadLayout;
 - (void)_sendValueChangeEvents;
 - (void)_reloadLabelSubviews;

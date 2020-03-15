@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     _Bool _needsLayoutOnBoundsChange;
 }
 
-@property(nonatomic) _Bool needsLayoutOnBoundsChange; // @synthesize needsLayoutOnBoundsChange=_needsLayoutOnBoundsChange;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool needsLayoutOnBoundsChange; // @synthesize needsLayoutOnBoundsChange=_needsLayoutOnBoundsChange;
 - (void)setContentsScale:(double)arg1;
 - (void)setMask:(id)arg1;
 - (void)setBounds:(struct CGRect)arg1;

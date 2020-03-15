@@ -48,6 +48,7 @@
 + (id)_newXpcConnection;
 + (id)_xpcConnection;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *resourceString; // @synthesize resourceString=_resourceString;
 @property(copy, nonatomic) NSString *secondaryIdentifier; // @synthesize secondaryIdentifier=_secondaryIdentifier;
 @property(copy, nonatomic) NSString *primaryWebDomain; // @synthesize primaryWebDomain=_primaryWebDomain;
@@ -56,7 +57,6 @@
 @property(copy, nonatomic) NSString *canonicalBundleIdentifier; // @synthesize canonicalBundleIdentifier=_canonicalBundleIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCategory:(id)arg1;

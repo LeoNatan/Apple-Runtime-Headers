@@ -19,7 +19,7 @@
 @property(readonly, nonatomic) unsigned int count;
 - (id)weakObjectAtIndex:(unsigned int)arg1;
 - (void)addWeakObject:(id)arg1;
-- (id)initWithEntries:(struct NSArray *)arg1;
+- (id)initWithEntries:(id)arg1;
 - (id)init;
 
 @end

@@ -27,6 +27,7 @@
     CDStruct_9fb36b4c _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *requestDeviceScoreIdentifier; // @synthesize requestDeviceScoreIdentifier=_requestDeviceScoreIdentifier;
 @property(retain, nonatomic) NSString *memo; // @synthesize memo=_memo;
 @property(retain, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

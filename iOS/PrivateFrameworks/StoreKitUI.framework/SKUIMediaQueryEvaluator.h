@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 + (void)registerFeatureClass:(Class)arg1;
-@property(nonatomic) __weak id <SKUIMediaQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIMediaQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_delegateValuesForKeys:(id)arg1;
 - (void)_featureDidChangeNotification:(id)arg1;
 - (void)reloadData;

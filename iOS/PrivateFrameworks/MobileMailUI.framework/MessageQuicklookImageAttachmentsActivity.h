@@ -15,9 +15,9 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) __weak id <ContentRepresentationHandlingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_cleanup;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;

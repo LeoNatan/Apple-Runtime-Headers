@@ -11,8 +11,8 @@
     id _entityController;
 }
 
-@property(nonatomic) __weak id entityController; // @synthesize entityController=_entityController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id entityController; // @synthesize entityController=_entityController;
 
 @end
 

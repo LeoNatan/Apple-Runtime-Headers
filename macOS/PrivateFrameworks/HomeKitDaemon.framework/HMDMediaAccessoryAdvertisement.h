@@ -19,8 +19,8 @@
 }
 
 + (BOOL)canAirPortExpressSupportMediaAccessory:(id)arg1;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (long long)associationOptions;
 @property(getter=isAssociated) BOOL associated; // @synthesize associated=_associated;
 @property(retain) HMDMediaOutputDevice *outputDevice; // @synthesize outputDevice=_outputDevice;

@@ -16,11 +16,11 @@
     NSMutableDictionary *_cacheMisses;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *cacheMisses; // @synthesize cacheMisses=_cacheMisses;
 @property(retain) NSMutableDictionary *cacheHits; // @synthesize cacheHits=_cacheHits;
 @property(retain) NSMutableDictionary *cacheEntries; // @synthesize cacheEntries=_cacheEntries;
 @property(retain) NSMutableDictionary *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)deduplicateString:(id)arg1;
 - (id)objectForKey:(id)arg1 type:(id)arg2 setIfMissingWithBlock:(CDUnknownBlockType)arg3;
 - (void)setObject:(id)arg1 forKey:(id)arg2 type:(id)arg3;

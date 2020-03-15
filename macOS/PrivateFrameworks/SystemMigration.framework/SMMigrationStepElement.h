@@ -15,10 +15,10 @@
     unsigned long long _stepFinishedBytes;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long stepFinishedBytes; // @synthesize stepFinishedBytes=_stepFinishedBytes;
 @property unsigned long long phase; // @synthesize phase=_phase;
 @property __weak NSArray *steps; // @synthesize steps=_steps;
-- (void).cxx_destruct;
 - (id)phaseNameForPhase:(unsigned long long)arg1;
 - (id)stepErrorWithException:(id)arg1;
 - (id)errorWithMessage:(id)arg1;

@@ -12,17 +12,18 @@
 
 @interface SBNubView : UIView <SBDeviceApplicationSceneHandleObserver>
 {
-    UIView *_nubView;
     UIApplicationSceneClientSettingsDiffInspector *_applicationSceneClientSettingsDiffInspector;
     _Bool _highlighted;
     SBDeviceApplicationSceneHandle *_deviceApplicationSceneHandle;
+    UIView *_nubView;
 }
 
 + (double)height;
 + (double)hitTestWidth;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *nubView; // @synthesize nubView=_nubView;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(readonly, nonatomic) SBDeviceApplicationSceneHandle *deviceApplicationSceneHandle; // @synthesize deviceApplicationSceneHandle=_deviceApplicationSceneHandle;
-- (void).cxx_destruct;
 - (void)_updateNubViewOverrideUserInterfaceStyleAndBackgroundColor;
 - (void)_updateNubViewBackgroundColor;
 - (void)sceneHandle:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;

@@ -18,8 +18,8 @@
     UIColor *_imageMaskColor;
 }
 
-@property(retain, nonatomic) UIColor *imageMaskColor; // @synthesize imageMaskColor=_imageMaskColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *imageMaskColor; // @synthesize imageMaskColor=_imageMaskColor;
 - (void)setChangeImage:(id)arg1;
 - (void)setPercentChange:(id)arg1;
 - (void)setPriceString:(id)arg1;

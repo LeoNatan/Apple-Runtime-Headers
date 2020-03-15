@@ -21,9 +21,9 @@
 + (id)availableArtworkWithRequest:(id)arg1;
 + (BOOL)needsToFetchArtworkForRequest:(id)arg1;
 + (BOOL)artworkExistsForRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s stateLock; // @synthesize stateLock=_stateLock;
 @property(nonatomic) __weak MPMediaLibraryArtworkRequest *artworkRequest; // @synthesize artworkRequest=_artworkRequest;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *effectsMetadata;
 @property(readonly, nonatomic) NSArray *validSizes; // @synthesize validSizes=_validSizes;
 - (id)imageFileURLForEffect:(id)arg1;

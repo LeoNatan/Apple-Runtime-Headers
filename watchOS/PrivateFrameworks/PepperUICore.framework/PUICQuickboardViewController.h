@@ -40,6 +40,7 @@
 
 + (float)recommendedBottomContentInset;
 + (float)recommendedTopContentInset;
+- (void).cxx_destruct;
 @property(nonatomic) double dismissalAnimationDuration; // @synthesize dismissalAnimationDuration=_dismissalAnimationDuration;
 @property(retain, nonatomic) UIView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) UIView *punchoutBackgroundView; // @synthesize punchoutBackgroundView=_punchoutBackgroundView;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <PUICQuickboardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int inputType;
 - (_Bool)handleButton:(unsigned int)arg1 eventType:(unsigned int)arg2;
 - (void)handleCrownButtonTap;

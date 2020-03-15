@@ -15,10 +15,10 @@
     NSString *_columns;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) NSString *tableAlias; // @synthesize tableAlias=_tableAlias;
 @property(readonly, nonatomic) NSString *table; // @synthesize table=_table;
-- (void).cxx_destruct;
 - (id)joinOnExpression;
 - (unsigned long long)hash;
 - (_Bool)isEqualToJoinOnExpressonGenerator:(id)arg1;

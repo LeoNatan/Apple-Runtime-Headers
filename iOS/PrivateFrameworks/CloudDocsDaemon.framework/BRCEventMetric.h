@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     CKEventMetric *_associatedCKEventMetricIfAvailable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKEventMetric *associatedCKEventMetricIfAvailable; // @synthesize associatedCKEventMetricIfAvailable=_associatedCKEventMetricIfAvailable;
 @property(nonatomic) _Bool isCKMetric; // @synthesize isCKMetric=_isCKMetric;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
-- (void).cxx_destruct;
 - (void)associateWithCompletedOperation:(id)arg1;
 - (id)additionalPayload;
 - (id)subDescription;

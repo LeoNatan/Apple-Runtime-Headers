@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_locationManagerQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *locationManagerQueue; // @synthesize locationManagerQueue=_locationManagerQueue;
 @property(retain, nonatomic) CLInUseAssertion *inUseAssertion; // @synthesize inUseAssertion=_inUseAssertion;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *locationFixTimeout; // @synthesize locationFixTimeout=_locationFixTimeout;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)_finishLocationFixWithLocation:(id)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;

@@ -15,8 +15,8 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
-@property(nonatomic) UINavigationItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(nonatomic) UINavigationItem *item; // @synthesize item=_item;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)_updateTitleLabel;

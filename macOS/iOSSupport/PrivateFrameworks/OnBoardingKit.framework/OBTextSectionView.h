@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_contentLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *contentLabel; // @synthesize contentLabel=_contentLabel;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
-- (void).cxx_destruct;
 - (id)_contentFont;
 - (id)_headerFont;
 - (void)traitCollectionDidChange:(id)arg1;

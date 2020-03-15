@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_mediaEntityTypePredicateForRequest:(id)arg1;
-@property(retain, nonatomic) TVHKDMAPPlaylistIdentifier *sourcePlaylistIdentifier; // @synthesize sourcePlaylistIdentifier=_sourcePlaylistIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVHKDMAPPlaylistIdentifier *sourcePlaylistIdentifier; // @synthesize sourcePlaylistIdentifier=_sourcePlaylistIdentifier;
 - (id)_mediaEntitiesFromDMAPEntities:(id)arg1 mediaEntityServer:(id)arg2;
 - (id)_mediaServerRequest;
 - (id)_mediaEntityKind;

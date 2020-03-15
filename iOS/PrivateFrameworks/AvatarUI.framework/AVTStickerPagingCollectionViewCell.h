@@ -15,9 +15,9 @@
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets additionnalContentInsets; // @synthesize additionnalContentInsets=_additionnalContentInsets;
 @property(retain, nonatomic) UIView *pageContentView; // @synthesize pageContentView=_pageContentView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 

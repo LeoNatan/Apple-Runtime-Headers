@@ -25,11 +25,11 @@
 + (id)jsExportedProperties;
 + (id)toDataObservable:(id)arg1 proxy:(id *)arg2;
 + (id)toDataObservable:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *parentAccessorSequence; // @synthesize parentAccessorSequence=_parentAccessorSequence;
 @property(nonatomic) _Bool observersEnabled; // @synthesize observersEnabled=_observersEnabled;
 @property(readonly, nonatomic) _Bool isBoxed; // @synthesize isBoxed=_isBoxed;
 @property(readonly, nonatomic) __weak IKJSDataObservable *parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (void)_updateValueAtPropertyPath:(id)arg1 touch:(_Bool)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)_initWithTargetValue:(id)arg1 boxed:(_Bool)arg2;
 - (id)extraInfoForChangeInPathWithAccessorSequence:(id)arg1 extraInfo:(id)arg2;

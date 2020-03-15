@@ -24,13 +24,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)setCellClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) unsigned int fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *mimePartNumber; // @synthesize mimePartNumber=_mimePartNumber;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSString *contentId; // @synthesize contentId=_contentId;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
-- (void).cxx_destruct;
 - (id)attachmentCell;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

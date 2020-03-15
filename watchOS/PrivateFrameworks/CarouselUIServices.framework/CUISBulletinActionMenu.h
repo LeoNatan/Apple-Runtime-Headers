@@ -31,6 +31,7 @@
 
 + (void)performActionForItem:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *builtinItemOptionToCustomItem; // @synthesize builtinItemOptionToCustomItem=_builtinItemOptionToCustomItem;
 @property(nonatomic) unsigned int itemsToCreate; // @synthesize itemsToCreate=_itemsToCreate;
 @property(retain, nonatomic) NSMapTable *cellToBackgroundMap; // @synthesize cellToBackgroundMap=_cellToBackgroundMap;
@@ -40,7 +41,6 @@
 @property(nonatomic) __weak id <CUISBulletinActionMenuDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PUICTableViewCell *selectedActionCell; // @synthesize selectedActionCell=_selectedActionCell;
 @property(retain, nonatomic) PUICTableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

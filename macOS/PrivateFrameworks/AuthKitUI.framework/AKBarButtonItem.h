@@ -17,11 +17,11 @@
     id _target;
 }
 
+- (void).cxx_destruct;
 @property __weak id target; // @synthesize target=_target;
 @property SEL action; // @synthesize action=_action;
 @property long long style; // @synthesize style=_style;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)_createButton;
 @property(getter=isEnabled) BOOL enabled;
 - (id)initWithTitle:(id)arg1 style:(long long)arg2 target:(id)arg3 action:(SEL)arg4;

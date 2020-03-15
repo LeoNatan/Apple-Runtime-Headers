@@ -26,6 +26,7 @@
 }
 
 + (id)localizedMessageForSignificantEvent:(unsigned long long)arg1 cameraName:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSUUID *clipUUID; // @synthesize clipUUID=_clipUUID;
 @property(readonly) HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly) HMDService *service; // @synthesize service=_service;
@@ -39,7 +40,6 @@
 @property(readonly, copy) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property(readonly, copy) NSString *body; // @synthesize body=_body;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, copy) NSDictionary *userInfo;
 - (id)initWithNotificationUUIDs:(id)arg1 previewImageFilePathURL:(id)arg2 significantEvent:(unsigned long long)arg3 dateOfOccurrence:(id)arg4 camera:(id)arg5 home:(id)arg6 accessory:(id)arg7 recordingService:(id)arg8 clipUUID:(id)arg9 shouldShowProvideFeedbackButton:(_Bool)arg10;
 

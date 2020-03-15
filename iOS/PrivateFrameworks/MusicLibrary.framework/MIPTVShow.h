@@ -25,6 +25,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *networkName; // @synthesize networkName=_networkName;
 @property(nonatomic) int videoQuality; // @synthesize videoQuality=_videoQuality;
 @property(retain, nonatomic) NSString *episodeSortId; // @synthesize episodeSortId=_episodeSortId;
@@ -32,7 +33,6 @@
 @property(nonatomic) int seasonNumber; // @synthesize seasonNumber=_seasonNumber;
 @property(retain, nonatomic) MIPSeries *series; // @synthesize series=_series;
 @property(retain, nonatomic) MIPArtist *artist; // @synthesize artist=_artist;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -24,6 +24,7 @@
     struct CGRect _specSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect specSize; // @synthesize specSize=_specSize;
 @property(retain, nonatomic) PXExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 @property(retain, nonatomic) NSView *dark; // @synthesize dark=_dark;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;
 @property(nonatomic) double titleScale; // @synthesize titleScale=_titleScale;
-- (void).cxx_destruct;
 - (void)updateTitleAnimationFromVideoComposition:(id)arg1;
 - (void)updateSubtitleTitleLabelForSize:(struct CGSize)arg1;
 @property(retain, nonatomic) NSString *subtitleText;

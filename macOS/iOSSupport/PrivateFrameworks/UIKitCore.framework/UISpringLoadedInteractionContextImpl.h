@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     UISpringLoadedGestureRecognizer *_currentRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UISpringLoadedGestureRecognizer *currentRecognizer; // @synthesize currentRecognizer=_currentRecognizer;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) id overrideTargetItem; // @synthesize overrideTargetItem;
 @property(retain, nonatomic) UIView *overrideTargetView; // @synthesize overrideTargetView;
 @property(retain, nonatomic) UIView *targetView; // @synthesize targetView;
 @property(retain, nonatomic) id targetItem; // @synthesize targetItem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <UIDropSession> dropSession;
 - (struct CGPoint)locationInView:(id)arg1;
 

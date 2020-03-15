@@ -25,6 +25,7 @@
 + (id)layerWithDescriptor:(id)arg1 inputWeights:(id)arg2 hiddenWeights:(id)arg3 peepholeWeights:(id)arg4 biasTerms:(id)arg5;
 + (id)layerWithDescriptor:(id)arg1 inputWeights:(id)arg2 hiddenWeights:(id)arg3 biasTerms:(id)arg4;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *biasTerms; // @synthesize biasTerms=_biasTerms;
 @property(readonly, copy, nonatomic) NSArray *peepholeWeights; // @synthesize peepholeWeights=_peepholeWeights;
 @property(readonly, copy, nonatomic) NSArray *hiddenWeights; // @synthesize hiddenWeights=_hiddenWeights;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) MLFoundationNeuronDescriptor *outputResultActivation; // @synthesize outputResultActivation=_outputResultActivation;
 @property(readonly, nonatomic) NSArray *gateActivations; // @synthesize gateActivations=_gateActivations;
 @property(readonly, nonatomic) MLFoundationLSTMDescriptor *descriptor; // @synthesize descriptor=_descriptor;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;

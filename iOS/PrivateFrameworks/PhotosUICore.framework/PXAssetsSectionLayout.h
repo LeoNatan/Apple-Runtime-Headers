@@ -71,6 +71,7 @@
 }
 
 + (struct CGSize)estimatedSizeWithReferenceSize:(struct CGSize)arg1 assetCollection:(id)arg2 numberOfAssets:(long long)arg3 isCurated:(_Bool)arg4 zoomLevel:(long long)arg5 spec:(id)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) double intersectionSpacing; // @synthesize intersectionSpacing=_intersectionSpacing;
 @property(readonly, nonatomic) _Bool presentedSkimming; // @synthesize presentedSkimming=_presentedSkimming;
 @property(readonly, nonatomic) struct PXSimpleIndexPath presentedSectionIndexPath; // @synthesize presentedSectionIndexPath=_presentedSectionIndexPath;
@@ -101,13 +102,12 @@
 @property(retain, nonatomic) PXAssetsSectionLayoutSpec *spec; // @synthesize spec=_spec;
 @property(nonatomic) long long targetZoomLevel; // @synthesize targetZoomLevel=_targetZoomLevel;
 @property(nonatomic) long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (_Bool)canSelectAccessibilityGroupElementsChildren;
 - (_Bool)canSelectAccessibilityGroupElements;
 - (_Bool)hasBodyContent;
 - (_Bool)canCreateAccessibilityGroupElement;
-- (id)diagnosticDescription;
+- (void)axGroup:(id)arg1 didChange:(unsigned long long)arg2 userInfo:(id)arg3;
 - (struct CGRect)generatedLayout:(id)arg1 bestCropRectForInputItemAtIndex:(unsigned int)arg2 withAspectRatio:(double)arg3;
 - (id)generatedLayout:(id)arg1 inputItemAtIndex:(unsigned int)arg2;
 - (id)generatedLayout:(id)arg1 objectReferenceAtIndex:(unsigned int)arg2;

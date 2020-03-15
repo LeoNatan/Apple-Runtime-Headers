@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSUUID *callUUIDToGroupWith; // @synthesize callUUIDToGroupWith=_callUUIDToGroupWith;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSUUID *callUUIDToGroupWith; // @synthesize callUUIDToGroupWith=_callUUIDToGroupWith;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateSanitizedCopy:(id)arg1 withZone:(struct _NSZone *)arg2;

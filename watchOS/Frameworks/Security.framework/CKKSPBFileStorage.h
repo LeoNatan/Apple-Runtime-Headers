@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     id <CKKSPBCodable> _protobufStorage;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <CKKSPBCodable> protobufStorage; // @synthesize protobufStorage=_protobufStorage;
 @property(retain) Class storageClass; // @synthesize storageClass=_storageClass;
 @property(retain) NSURL *storageFile; // @synthesize storageFile=_storageFile;
-- (void).cxx_destruct;
 - (void)setStorage:(id)arg1;
 - (id)storage;
 - (id)initWithStoragePath:(id)arg1 storageClass:(Class)arg2;

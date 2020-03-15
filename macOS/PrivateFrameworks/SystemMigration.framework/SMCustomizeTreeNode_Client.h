@@ -41,6 +41,7 @@
 + (id)keyPathsForValuesAffectingChildNodesCopy;
 + (id)keyPathsForValuesAffectingSizeTextColor;
 + (id)keyPathsForValuesAffectingPreliminarySizeIsAvailable;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(retain) SMCustomizeTreeNode_Client *parent; // @synthesize parent=_parent;
@@ -66,7 +67,6 @@
 @property(retain) NSMutableArray *childNodes; // @synthesize childNodes=_childNodes;
 @property BOOL selectedItemsStillSizing; // @synthesize selectedItemsStillSizing=_selectedItemsStillSizing;
 @property BOOL sizeIsAvailable; // @synthesize sizeIsAvailable=_sizeIsAvailable;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)sortChildernUsingComparator:(CDUnknownBlockType)arg1;
 - (id)childWithRepresentedObject:(id)arg1;

@@ -46,6 +46,7 @@
 
 + (void)flushCache;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioMix *outputAudioMix; // @synthesize outputAudioMix=_outputAudioMix;
 @property(retain, nonatomic) AVVideoComposition *outputVideoComposition; // @synthesize outputVideoComposition=_outputVideoComposition;
 @property(retain, nonatomic) AVComposition *outputVideo; // @synthesize outputVideo=_outputVideo;
@@ -67,7 +68,6 @@
 @property(readonly) NURenderRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic) id <NURenderStatistics> statistics; // @synthesize statistics=_stats;
 @property(readonly) BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
-- (void).cxx_destruct;
 - (void)_notifyCanceled:(long long)arg1;
 - (void)_notifyStageTransition:(long long)arg1;
 - (void)removeObserver:(id)arg1;

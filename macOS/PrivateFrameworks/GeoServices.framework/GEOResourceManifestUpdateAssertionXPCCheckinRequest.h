@@ -18,9 +18,9 @@
 
 + (Class)replyClass;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (BOOL)expectsReply;
 - (BOOL)isValid;
 - (void)encodeWithCoder:(id)arg1;

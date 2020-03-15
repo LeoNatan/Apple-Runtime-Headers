@@ -13,8 +13,8 @@
     NSString *_path;
 }
 
-@property(readonly, copy) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *path; // @synthesize path=_path;
 - (id)dictionaryRepresentation;
 - (_Bool)isEqualToPhotoLibraryReference:(id)arg1;
 - (id)initWithLibraryURL:(id)arg1;

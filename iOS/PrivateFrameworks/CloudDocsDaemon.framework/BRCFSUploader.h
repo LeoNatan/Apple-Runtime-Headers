@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     BRCDeadlineScheduler *_uploadsDeadlineScheduler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *thumbnailsOperationsByID; // @synthesize thumbnailsOperationsByID=_thumbnailsOperations;
 @property(readonly, nonatomic) BRCDeadlineScheduler *uploadsDeadlineScheduler; // @synthesize uploadsDeadlineScheduler=_uploadsDeadlineScheduler;
 @property(nonatomic) _Bool isDefaultOwnerOutOfQuota; // @synthesize isDefaultOwnerOutOfQuota=_isDefaultOwnerOutOfQuota;
-- (void).cxx_destruct;
 - (void)_reportUploadErrorForDocument:(id)arg1 error:(id)arg2;
 - (void)forceScheduleQuotaFetchForOwner:(id)arg1;
 - (void)scheduleQuotaFetchIfNeededForOwner:(id)arg1;

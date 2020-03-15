@@ -15,9 +15,9 @@
 }
 
 + (id)defaultSystemApplication;
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)initWithBundleIdentifier:(id)arg1 name:(id)arg2;
 
 @end

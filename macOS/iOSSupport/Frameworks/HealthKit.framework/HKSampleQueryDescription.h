@@ -36,9 +36,9 @@
 + (id)allergiesDescriptions;
 + (id)medicalRecordDescriptionsWithPredicate:(id)arg1;
 + (id)medicalRecordDescriptions;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -24,13 +24,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long type; // @synthesize type=_type;
 @property(copy) NSString *password; // @synthesize password=_password;
 @property(copy) NSString *username; // @synthesize username=_username;
 @property BOOL authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;
 @property(readonly) long long port; // @synthesize port=_port;
 @property(readonly) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)copyPassword;
 - (void)removeFromKeychain;
 - (BOOL)needToUpdateKeychain;

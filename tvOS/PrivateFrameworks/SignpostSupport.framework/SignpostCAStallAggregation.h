@@ -16,9 +16,9 @@
     NSDictionary *_executablePathToStallAggregation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *executablePathToStallAggregation; // @synthesize executablePathToStallAggregation=_executablePathToStallAggregation;
 @property(readonly, nonatomic) SignpostCAProcessStallAggregation *systemAggregation; // @synthesize systemAggregation=_systemAggregation;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)_addDuration:(unsigned long long)arg1 ofType:(unsigned char)arg2 procExecutablePath:(id)arg3 responsiblePID:(int)arg4 aggregateForSystem:(_Bool)arg5;

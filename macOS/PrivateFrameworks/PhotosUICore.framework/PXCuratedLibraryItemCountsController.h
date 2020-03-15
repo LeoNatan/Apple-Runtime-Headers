@@ -23,13 +23,13 @@
     CDStruct_aa0b146f _counts;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL waitingToPrepare; // @synthesize waitingToPrepare=_waitingToPrepare;
 @property(nonatomic) BOOL hasUsableCounts; // @synthesize hasUsableCounts=_hasUsableCounts;
 @property(nonatomic) BOOL isCountingAssetTypes; // @synthesize isCountingAssetTypes=_isCountingAssetTypes;
 @property(readonly, nonatomic) CDStruct_aa0b146f counts; // @synthesize counts=_counts;
 @property(retain, nonatomic) id <PXCuratedLibraryEventLogger> eventLogger; // @synthesize eventLogger=_eventLogger;
 @property(readonly, nonatomic) PXCuratedLibraryAssetsDataSourceManager *assetsDataSourceManager; // @synthesize assetsDataSourceManager=_assetsDataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateEventLogging;
 - (void)_updateCounts;

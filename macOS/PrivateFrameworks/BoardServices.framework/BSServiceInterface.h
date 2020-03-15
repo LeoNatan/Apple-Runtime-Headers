@@ -21,10 +21,10 @@
 }
 
 + (id)interfaceWithServer:(id)arg1 client:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BSObjCProtocol *client; // @synthesize client=_client;
 @property(readonly, copy, nonatomic) BSObjCProtocol *server; // @synthesize server=_server;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;

@@ -20,10 +20,10 @@
     _Bool _valid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long rowBytes; // @synthesize rowBytes=_rowBytes;
 @property(readonly, nonatomic) NUPixelFormat *format; // @synthesize format=_format;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)provideBuffer:(CDUnknownBlockType)arg1;
 - (void)invalidate;

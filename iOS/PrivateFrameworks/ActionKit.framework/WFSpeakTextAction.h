@@ -15,8 +15,8 @@
     AVSpeechSynthesizer *_synthesizer;
 }
 
-@property(retain, nonatomic) AVSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
 - (id)languagePickerParameter;
 - (id)voicePickerParameter;
 - (void)cleanupSpeechSynthesizer;

@@ -15,9 +15,9 @@
     UITextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UITextField *textField; // @synthesize textField=_textField;
 @property(readonly, nonatomic) __weak UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (_Bool)_isLargeTextTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)prepareForReuse;

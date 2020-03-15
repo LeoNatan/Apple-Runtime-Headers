@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)weakAnimationDelegate:(id)arg1;
-@property(readonly, nonatomic) __weak id <CAAnimationDelegate> animationDelegate; // @synthesize animationDelegate=_animationDelegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <CAAnimationDelegate> animationDelegate; // @synthesize animationDelegate=_animationDelegate;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animationDidStart:(id)arg1;
 - (id)initWithAnimationDelegate:(id)arg1;

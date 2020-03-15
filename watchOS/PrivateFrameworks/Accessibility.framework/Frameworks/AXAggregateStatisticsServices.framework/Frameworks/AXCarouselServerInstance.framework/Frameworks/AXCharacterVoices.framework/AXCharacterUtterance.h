@@ -15,10 +15,10 @@
     NSString *_language;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) AXCharacterVoice *voice; // @synthesize voice=_voice;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)vibrantLabelWithLabel:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUILabel *label; // @synthesize label=_label;
 @property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateContentWithNewLabel:(id)arg1 oldLabel:(id)arg2;
 - (void)layoutSubviews;

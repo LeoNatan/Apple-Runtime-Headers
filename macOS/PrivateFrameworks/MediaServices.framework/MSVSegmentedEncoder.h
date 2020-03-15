@@ -18,12 +18,12 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSMutableDictionary *subcoders; // @synthesize subcoders=_subcoders;
 @property(retain, nonatomic) id <MSVSegmentedCoding> rootObject; // @synthesize rootObject=_rootObject;
 @property(retain, nonatomic) MSVSegmentedCodingPackage *package; // @synthesize package=_package;
 @property(nonatomic) BOOL hasFinished; // @synthesize hasFinished=_hasFinished;
-- (void).cxx_destruct;
 - (id)_coderForKey:(id)arg1;
 - (void)msv_setUserInfo:(id)arg1;
 - (id)msv_userInfo;

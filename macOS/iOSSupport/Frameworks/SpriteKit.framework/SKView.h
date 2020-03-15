@@ -71,6 +71,8 @@
 + (void)_setCurrentTime:(double)arg1;
 + (Class)layerClass;
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double physicsDebugStrokeWidth; // @synthesize physicsDebugStrokeWidth=_physicsDebugStrokeWidth;
 @property(retain, nonatomic) NSMutableDictionary *_info; // @synthesize _info=__info;
 // Error parsing type for property _layerBackedRenderer:
@@ -78,8 +80,6 @@
 
 @property(readonly, nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
 @property(nonatomic) __weak NSObject<SKViewDelegate> *delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (long long)_preferredFocusMovementStyle;
 - (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
 - (id)_focusedItemRegionContainer;

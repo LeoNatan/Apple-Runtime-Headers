@@ -17,14 +17,14 @@
     unsigned long long _clientsMutationCounter;
     int _status;
     BOOL _clientsAddedDuringShutdown;
-    struct NSObject *_resource;
+    NSObject *_resource;
     CDUnknownBlockType _shutdownComplete;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType shutdownComplete; // @synthesize shutdownComplete=_shutdownComplete;
 @property(readonly) __weak NSObject *resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (void)tattleOnUnresponsiveClients;
 - (void)_reportUnresponsiveClients:(long long)arg1;
 - (BOOL)_showUserNotificationForUnresponsiveClients;
@@ -42,7 +42,7 @@
 @property(readonly, copy) NSString *description;
 - (id)clientListForLog;
 - (void)dealloc;
-- (id)initWithResource:(struct NSObject *)arg1;
+- (id)initWithResource:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

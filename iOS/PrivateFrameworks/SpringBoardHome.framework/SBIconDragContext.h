@@ -40,6 +40,7 @@
     NSTimer *_watchdogTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool notifiedDelegateForDropSession; // @synthesize notifiedDelegateForDropSession=_notifiedDelegateForDropSession;
 @property(retain, nonatomic) NSTimer *watchdogTimer; // @synthesize watchdogTimer=_watchdogTimer;
 @property(copy, nonatomic) NSDate *lastUserInteractionDate; // @synthesize lastUserInteractionDate=_lastUserInteractionDate;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) NSArray *grabbedIconViews; // @synthesize grabbedIconViews=_grabbedIconViews;
 @property(retain, nonatomic) SBPlaceholderIcon *iconPlaceholder; // @synthesize iconPlaceholder=_iconPlaceholder;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

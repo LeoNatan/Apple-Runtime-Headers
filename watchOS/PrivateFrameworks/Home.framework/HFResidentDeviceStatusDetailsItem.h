@@ -17,9 +17,9 @@
     HMResidentDevice *_residentDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMResidentDevice *residentDevice; // @synthesize residentDevice=_residentDevice;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)initWithHome:(id)arg1 residentDevice:(id)arg2;

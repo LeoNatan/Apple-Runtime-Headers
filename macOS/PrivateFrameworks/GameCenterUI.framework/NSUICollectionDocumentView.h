@@ -13,8 +13,8 @@
     NSUICollectionView *_collectionView;
 }
 
-@property(nonatomic) __weak NSUICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSUICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (BOOL)isFlipped;
 - (BOOL)wantsUpdateLayer;
 - (BOOL)isOpaque;

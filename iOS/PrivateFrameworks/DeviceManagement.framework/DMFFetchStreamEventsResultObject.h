@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *eventStatuses; // @synthesize eventStatuses=_eventStatuses;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *eventStatuses; // @synthesize eventStatuses=_eventStatuses;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

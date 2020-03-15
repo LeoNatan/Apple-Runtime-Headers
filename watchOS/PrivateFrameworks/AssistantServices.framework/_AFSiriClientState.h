@@ -16,10 +16,10 @@
     _Bool _isSpeaking;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSpeaking; // @synthesize isSpeaking=_isSpeaking;
 @property(nonatomic) _Bool isListening; // @synthesize isListening=_isListening;
 @property(nonatomic) _Bool hasActiveSession; // @synthesize hasActiveSession=_hasActiveSession;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long notifyState;
 - (void)removeRequestUUID:(id)arg1;
 - (void)addRequestUUID:(id)arg1;

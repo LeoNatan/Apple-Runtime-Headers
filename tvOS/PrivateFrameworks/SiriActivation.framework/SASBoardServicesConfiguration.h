@@ -19,12 +19,12 @@
 
 + (id)configuration;
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *signalIdentifier; // @synthesize signalIdentifier=_signalIdentifier;
 @property(retain, nonatomic) NSString *signalDomain; // @synthesize signalDomain=_signalDomain;
 @property(retain, nonatomic) NSString *presentationIdentifier; // @synthesize presentationIdentifier=_presentationIdentifier;
 @property(retain, nonatomic) NSString *presentationDomain; // @synthesize presentationDomain=_presentationDomain;
 @property(retain, nonatomic) NSString *machServiceIdentifier; // @synthesize machServiceIdentifier=_machServiceIdentifier;
-- (void).cxx_destruct;
 - (id)identifierForService:(long long)arg1;
 - (id)domainForService:(long long)arg1;
 - (id)init;

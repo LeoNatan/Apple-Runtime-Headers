@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     NSData *_token;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long types; // @synthesize types=_types;
 @property(nonatomic) __weak id <NCPushRegistrationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSData *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)_messageServerRemotePush:(id)arg1;
 - (void)_messageServerTokenUpdated:(id)arg1;
 - (void)_messageRegistrationFailed:(id)arg1;

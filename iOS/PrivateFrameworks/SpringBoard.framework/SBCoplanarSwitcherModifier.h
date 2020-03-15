@@ -15,10 +15,10 @@
     SBAppLayout *_activeAppLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBAppLayout *activeAppLayout; // @synthesize activeAppLayout=_activeAppLayout;
 @property(nonatomic) long long spacingType; // @synthesize spacingType=_spacingType;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 - (double)_offscreenSpacing;
 - (long long)_indexOfActiveAppLayout;
 - (double)scaleForIndex:(unsigned long long)arg1;

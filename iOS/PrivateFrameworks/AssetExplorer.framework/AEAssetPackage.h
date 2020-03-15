@@ -24,12 +24,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *_contentQueue_suppressedTypes; // @synthesize _contentQueue_suppressedTypes=__contentQueue_suppressedTypes;
 @property(readonly, nonatomic) NSMutableDictionary *_contentQueueSidecar; // @synthesize _contentQueueSidecar=__contentQueueSidecar;
 @property(readonly, nonatomic) NSMutableDictionary *_contentQueue_finalURLs; // @synthesize _contentQueue_finalURLs=__contentQueue_finalURLs;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_packageContentQueue; // @synthesize _packageContentQueue=__packageContentQueue;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)sidecarImageForKey:(id)arg1;
 - (CDStruct_198678f7)sidecarTimeForKey:(id)arg1;
 - (id)sidecarDateForKey:(id)arg1;
@@ -84,6 +84,7 @@
 @property(readonly, nonatomic) _Bool canPlayLoopingVideo;
 @property(readonly, nonatomic) _Bool isPhotoIrisPlaceholder;
 @property(readonly, nonatomic) _Bool canPlayPhotoIris;
+@property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic) _Bool isTemporaryPlaceholder;
 @property(readonly, nonatomic) unsigned long long deferredLogInfo;
 - (unsigned long long)isContentEqualTo:(id)arg1;

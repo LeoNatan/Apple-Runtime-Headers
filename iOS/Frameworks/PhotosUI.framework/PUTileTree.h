@@ -16,9 +16,9 @@
     NSMutableDictionary *__objectsByTileIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_objectsByTileIdentifier; // @synthesize _objectsByTileIdentifier=__objectsByTileIdentifier;
 @property(readonly, nonatomic) _Bool useUniqueLeafs; // @synthesize useUniqueLeafs=_useUniqueLeafs;
-- (void).cxx_destruct;
 - (id)description;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateObjectsWithTileIdentifier:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

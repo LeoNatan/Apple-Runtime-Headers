@@ -20,9 +20,9 @@
     EKEvent *_originalEvent;
 }
 
+- (void).cxx_destruct;
 @property(retain) EKEvent *originalEvent; // @synthesize originalEvent=_originalEvent;
 @property(nonatomic) __weak id <EKEditItemViewControllerDelegate> editDelegate; // @synthesize editDelegate=_editDelegate;
-- (void).cxx_destruct;
 - (id)title;
 - (void)editButtonPressed;
 - (_Bool)shouldShowEditButtonInline;

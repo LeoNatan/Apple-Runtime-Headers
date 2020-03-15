@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL preserveLayout; // @synthesize preserveLayout=_preserveLayout;
 @property(nonatomic) BOOL requestBackground; // @synthesize requestBackground=_requestBackground;
 @property(nonatomic) BOOL requestFullscreen; // @synthesize requestFullscreen=_requestFullscreen;
 @property(copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 

@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)atomWithEditOperation:(long long)arg1 indexToEdit:(unsigned long long)arg2 newText:(id)arg3 indexInArrayB:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *replacementText; // @synthesize replacementText=_replacementText;
 @property(nonatomic) unsigned long long indexInArrayB; // @synthesize indexInArrayB=_indexInArrayB;
 @property(nonatomic) unsigned long long indexToEdit; // @synthesize indexToEdit=_indexToEdit;
 @property(nonatomic) long long editOperation; // @synthesize editOperation=_editOperation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithEditOperation:(long long)arg1 indexToEdit:(unsigned long long)arg2 newText:(id)arg3 indexInArrayB:(unsigned long long)arg4;
 

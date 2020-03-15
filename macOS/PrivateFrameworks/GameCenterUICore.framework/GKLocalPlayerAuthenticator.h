@@ -29,6 +29,7 @@
 + (id)authenticatorForExistingPlayer:(id)arg1 withHostWindow:(id)arg2;
 + (id)authenticatorForPlayerWithUsername:(id)arg1 password:(id)arg2;
 + (id)authenticatorForExistingPlayer:(id)arg1;
+- (void).cxx_destruct;
 @property NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
 @property(retain) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;
@@ -41,7 +42,6 @@
 @property(copy) NSString *username; // @synthesize username=_username;
 @property(retain) GKLocalPlayer *inputLocalPlayer; // @synthesize inputLocalPlayer=_inputLocalPlayer;
 @property(retain) GKLocalPlayer *resultantLocalPlayer; // @synthesize resultantLocalPlayer=_resultantLocalPlayer;
-- (void).cxx_destruct;
 - (void)_handleAuthResponse:(id)arg1 error:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)description;
 - (void)applicationDidEnterBackground:(id)arg1;

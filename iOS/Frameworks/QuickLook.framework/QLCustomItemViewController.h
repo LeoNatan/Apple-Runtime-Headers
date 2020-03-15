@@ -20,11 +20,11 @@
     id <QLCustomItemViewControllerHost> _hostViewControllerProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <QLCustomItemViewControllerHost> hostViewControllerProxy; // @synthesize hostViewControllerProxy=_hostViewControllerProxy;
 @property(nonatomic) __weak UIView *shareSheetPresentationView; // @synthesize shareSheetPresentationView=_shareSheetPresentationView;
 @property(nonatomic) _Bool isShareEnabled; // @synthesize isShareEnabled=_isShareEnabled;
 @property(copy, nonatomic) NSDictionary *previewOptions; // @synthesize previewOptions=_previewOptions;
-- (void).cxx_destruct;
 - (void)getFrameWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)presentationModeDidChange:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)setAppearance:(id)arg1 animated:(_Bool)arg2;

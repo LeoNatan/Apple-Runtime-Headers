@@ -16,9 +16,9 @@
     AXKElementController *__elementController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXKElementController *_elementController; // @synthesize _elementController=__elementController;
 @property(retain, nonatomic) AXFUIElement *_element; // @synthesize _element=__element;
-- (void).cxx_destruct;
 - (id)substringWithRange:(id)arg1;
 @property(readonly, nonatomic) AXFTextRange *contentRange;
 - (id)textPositionUnderScreenPoint:(struct CGPoint)arg1;

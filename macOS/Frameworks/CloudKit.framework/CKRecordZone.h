@@ -38,6 +38,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)defaultRecordZone;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *invitedKeysToRemove; // @synthesize invitedKeysToRemove=_invitedKeysToRemove;
 @property(nonatomic) BOOL serializeProtectionData; // @synthesize serializeProtectionData=_serializeProtectionData;
 @property(nonatomic) long long metadataQuotaUsage; // @synthesize metadataQuotaUsage=_metadataQuotaUsage;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 @property(nonatomic) unsigned long long capabilities; // @synthesize capabilities=_capabilities;
 @property(retain, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)CKPropertiesDescription;

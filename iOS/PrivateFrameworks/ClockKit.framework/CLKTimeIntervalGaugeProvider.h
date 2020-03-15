@@ -6,13 +6,13 @@
 
 #import <ClockKit/CLKGaugeProvider.h>
 
-@class NSDate, NSMutableDictionary;
+@class NSDate, NSMutableDictionary, NSNumber;
 
 @interface CLKTimeIntervalGaugeProvider : CLKGaugeProvider
 {
     unsigned long long _nextUpdateToken;
     NSMutableDictionary *_updateHandlersByToken;
-    struct NSNumber *_timerToken;
+    NSNumber *_timerToken;
     _Bool _paused;
     float _startFillFraction;
     float _endFillFraction;
@@ -23,11 +23,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)gaugeProviderWithStyle:(long long)arg1 gaugeColors:(id)arg2 gaugeColorLocations:(id)arg3 startDate:(id)arg4 endDate:(id)arg5;
 + (id)gaugeProviderWithStyle:(long long)arg1 gaugeColors:(id)arg2 gaugeColorLocations:(id)arg3 startDate:(id)arg4 startFillFraction:(float)arg5 endDate:(id)arg6 endFillFraction:(float)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) float endFillFraction; // @synthesize endFillFraction=_endFillFraction;
 @property(nonatomic) float startFillFraction; // @synthesize startFillFraction=_startFillFraction;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)validate;
 - (id)JSONObjectRepresentation;
 - (id)initWithJSONObjectRepresentation:(id)arg1;
@@ -36,8 +36,8 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)_update;
 - (void)_maybeStartOrStopUpdates;
-- (void)stopUpdatesForToken:(struct NSNumber *)arg1;
-- (struct NSNumber *)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
+- (void)stopUpdatesForToken:(id)arg1;
+- (id)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (double)progressFractionForNow:(id)arg1;
 - (_Bool)needsTimerUpdates;
 - (_Bool)paused;

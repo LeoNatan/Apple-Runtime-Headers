@@ -19,12 +19,12 @@
 
 + (id)displayStringForResult:(id)arg1 withPrefix:(id)arg2 withAddress:(id)arg3 includeAddress:(BOOL)arg4 onlyEmailFormat:(BOOL)arg5;
 + (id)displayStringForResult:(id)arg1 accountName:(id)arg2 prefix:(id)arg3 includeAddress:(BOOL)arg4 onlyEmailFormat:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(retain) NSDataDetector *phoneNumberDetector; // @synthesize phoneNumberDetector=_phoneNumberDetector;
 @property BOOL onlyEmailFormat; // @synthesize onlyEmailFormat=_onlyEmailFormat;
 @property BOOL includeAddress; // @synthesize includeAddress=_includeAddress;
 @property(copy) NSString *addressString; // @synthesize addressString=_addressString;
 @property(copy) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (id)stringByCleaningString:(id)arg1;
 - (BOOL)shouldDecorateString:(id)arg1 withAddress:(id)arg2;
 - (id)stringByDecoratingString:(id)arg1 withAddress:(id)arg2 isPhoneNumber:(BOOL)arg3;

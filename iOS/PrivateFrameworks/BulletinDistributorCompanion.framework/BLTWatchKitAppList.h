@@ -21,9 +21,9 @@
     id <BLTWatchKitAppListDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <BLTWatchKitAppListDelegate> delegate; // @synthesize delegate=_delegate;
 @property(getter=isLoaded) _Bool loaded; // @synthesize loaded=_loaded;
-- (void).cxx_destruct;
 - (void)_fetchWatchKitInfo;
 - (void)fetchWatchKitInfoWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fetchWatchKitInfoWithForce:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

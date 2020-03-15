@@ -13,8 +13,8 @@
     NSString *_region;
 }
 
-@property(copy, nonatomic) NSString *region; // @synthesize region=_region;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *region; // @synthesize region=_region;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 - (id)initWithRegion:(id)arg1;
 

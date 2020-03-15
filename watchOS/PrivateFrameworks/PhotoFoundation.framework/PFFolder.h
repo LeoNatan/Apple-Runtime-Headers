@@ -15,10 +15,10 @@
     NSMutableArray *_folders;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isLeaf; // @synthesize isLeaf=_isLeaf;
 @property(retain, nonatomic) NSMutableArray *folders; // @synthesize folders=_folders;
 @property(retain, nonatomic) NSMutableArray *files; // @synthesize files=_files;
-- (void).cxx_destruct;
 - (void)addFolder:(id)arg1;
 - (void)addFolders:(id)arg1;
 - (void)addFile:(id)arg1;

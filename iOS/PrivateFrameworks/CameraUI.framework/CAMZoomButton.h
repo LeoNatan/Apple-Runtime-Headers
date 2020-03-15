@@ -35,6 +35,7 @@
 + (id)textForZoomFactor:(double)arg1 showZoomFactorSymbol:(_Bool)arg2 useLeadingZero:(_Bool)arg3;
 + (id)textForZoomFactor:(double)arg1 showZoomFactorSymbol:(_Bool)arg2;
 + (_Bool)_useOutline;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *_backgroundImageView; // @synthesize _backgroundImageView=__backgroundImageView;
 @property(readonly, nonatomic) UIImageView *_circleImageView; // @synthesize _circleImageView=__circleImageView;
 @property(readonly, nonatomic) UIImageView *_zoomSymbolView; // @synthesize _zoomSymbolView=__zoomSymbolView;
@@ -51,7 +52,6 @@
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(nonatomic) long long contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) __weak id <CAMZoomButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_backgroundImageDiameterForContentSize:(id)arg1;
 - (double)_circleLineWidthForContentSize:(id)arg1;
 - (id)_createCircleImageForContentSize:(id)arg1;

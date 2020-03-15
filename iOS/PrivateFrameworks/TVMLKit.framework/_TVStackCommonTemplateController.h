@@ -39,6 +39,7 @@
     UIViewController *_focusedSupplementaryViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *focusedSupplementaryViewController; // @synthesize focusedSupplementaryViewController=_focusedSupplementaryViewController;
 @property(copy, nonatomic) NSArray *supplementaryViewControllers; // @synthesize supplementaryViewControllers=_supplementaryViewControllers;
 @property(retain, nonatomic) TVMediaInfo *selectedMediaInfo; // @synthesize selectedMediaInfo=_selectedMediaInfo;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) IKViewElement *collectionListElement; // @synthesize collectionListElement=_collectionListElement;
 @property(retain, nonatomic) _TVStackCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_mediaPlayerCoverImageDidChange;
 - (void)_mediaPlayerStateDidChange;
 - (long long)_supplementaryViewSectionIndex;

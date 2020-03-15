@@ -21,8 +21,8 @@
     SVXDeviceSetupContext *_deviceSetupContext;
 }
 
-@property(readonly, copy, nonatomic) SVXDeviceSetupContext *deviceSetupContext; // @synthesize deviceSetupContext=_deviceSetupContext;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) SVXDeviceSetupContext *deviceSetupContext; // @synthesize deviceSetupContext=_deviceSetupContext;
 - (void)_cleanUpConnection;
 - (void)_connectionInvalidated;
 - (void)_connectionInterrupted;

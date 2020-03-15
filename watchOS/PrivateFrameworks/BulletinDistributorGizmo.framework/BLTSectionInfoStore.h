@@ -18,8 +18,8 @@
 
 + (id)sharedSectionInfoStore;
 + (void)_withClassLock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) _Bool neededMigration; // @synthesize neededMigration=_neededMigration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool neededMigration; // @synthesize neededMigration=_neededMigration;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_peformMigrationWithMapper:(id)arg1;

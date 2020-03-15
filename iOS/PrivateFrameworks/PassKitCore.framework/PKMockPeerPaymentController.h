@@ -15,9 +15,9 @@
     PKCurrencyAmount *_mockBalance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldGenerateMockTransactions; // @synthesize shouldGenerateMockTransactions=_shouldGenerateMockTransactions;
 @property(retain, nonatomic) PKCurrencyAmount *mockBalance; // @synthesize mockBalance=_mockBalance;
-- (void).cxx_destruct;
 - (void)performAction:(id)arg1 withPaymentIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinator:(id *)arg1 didSelectPaymentMethod:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_insertPaymentTransactionForSecondaryFundingSourceIfNecessary:(id)arg1;

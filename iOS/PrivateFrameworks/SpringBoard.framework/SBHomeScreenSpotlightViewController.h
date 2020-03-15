@@ -15,9 +15,9 @@
     FBDisplayLayoutElement *_displayLayoutElement;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FBDisplayLayoutElement *displayLayoutElement; // @synthesize displayLayoutElement=_displayLayoutElement;
 @property(readonly, nonatomic) __weak id <SBHomeScreenSpotlightDismissalDelegate> homescreenSpotlightDelegate; // @synthesize homescreenSpotlightDelegate=_homescreenSpotlightDelegate;
-- (void).cxx_destruct;
 - (unsigned long long)remoteSearchViewPresentationSource;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

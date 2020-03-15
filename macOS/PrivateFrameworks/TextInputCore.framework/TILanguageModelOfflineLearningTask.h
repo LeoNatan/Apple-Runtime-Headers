@@ -20,11 +20,11 @@
 
 + (id)taskWithClientIdentifier:(id)arg1 oneTimeTask:(BOOL)arg2;
 + (id)dataSourceForTask;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *handles; // @synthesize handles=_handles;
 @property(readonly, nonatomic) BOOL oneTimeTask; // @synthesize oneTimeTask=_oneTimeTask;
 @property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (void)didFinishLearning;
 - (BOOL)incrementUsageCountsForMessages:(id)arg1 forLanguage:(id)arg2 adaptationContext:(id)arg3;
 - (void)enumerateHandlesForLanguage:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

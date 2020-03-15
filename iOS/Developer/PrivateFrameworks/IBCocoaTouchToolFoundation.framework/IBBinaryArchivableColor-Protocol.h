@@ -11,6 +11,7 @@
 
 @protocol IBBinaryArchivableColor <NSObject, IBBinaryArchiving>
 + (id)blackColor;
++ (id)ibSimpleColorPairWithAnyOrLightColor:(id)arg1 darkColor:(id)arg2;
 + (id)ibColorWithName:(NSString *)arg1 bundleID:(NSString *)arg2 fallbackColor:(id)arg3 unarchiveAsColorWrapper:(_Bool)arg4;
 + (id)ibColorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)ibColorWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     BOOL _inverted;
 }
 
-@property(retain) NSArray *subEffects; // @synthesize subEffects=_subEffects;
 - (void).cxx_destruct;
+@property(retain) NSArray *subEffects; // @synthesize subEffects=_subEffects;
 - (void)animationDidEnd:(id)arg1;
 - (id)subEffectWithID:(unsigned int)arg1;
 - (void)setValue:(float)arg1;

@@ -14,18 +14,18 @@ __attribute__((visibility("hidden")))
 {
     NSDate *_expirationDate;
     id <VUIRentalExpirationLabelDelegate> _delegate;
-    NSString *_formatString;
+    NSString *_locStringPrefix;
     NSTimer *_expiryUpdateTimer;
 }
 
-+ (id)_calculateExpirationStringForDate:(id)arg1 displayWarningColor:(_Bool *)arg2 updateInterval:(long long *)arg3 formatString:(id)arg4;
-+ (id)calculateExpirationStringForDate:(id)arg1 updateInterval:(long long *)arg2 formatString:(id)arg3;
-+ (id)labelWithExpirationDate:(id)arg1 textLayout:(id)arg2 existingLabel:(id)arg3 formatString:(id)arg4;
++ (id)_calculateExpirationStringForDate:(id)arg1 displayWarningColor:(_Bool *)arg2 updateInterval:(long long *)arg3 locStringPrefix:(id)arg4;
++ (id)calculateExpirationStringForDate:(id)arg1 updateInterval:(long long *)arg2 locStringPrefix:(id)arg3;
++ (id)labelWithExpirationDate:(id)arg1 textLayout:(id)arg2 existingLabel:(id)arg3 locStringPrefix:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *expiryUpdateTimer; // @synthesize expiryUpdateTimer=_expiryUpdateTimer;
-@property(copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
+@property(copy, nonatomic) NSString *locStringPrefix; // @synthesize locStringPrefix=_locStringPrefix;
 @property(nonatomic) __weak id <VUIRentalExpirationLabelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
-- (void).cxx_destruct;
 - (void)_computeExpirationLabel:(id)arg1;
 - (void)invalidateTimer;
 - (void)dealloc;

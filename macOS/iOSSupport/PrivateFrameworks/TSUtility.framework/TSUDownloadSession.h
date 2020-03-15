@@ -29,12 +29,12 @@
     long long _totalBytesExpectedToBeDownloaded;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) long long totalBytesExpectedToBeDownloaded; // @synthesize totalBytesExpectedToBeDownloaded=_totalBytesExpectedToBeDownloaded;
 @property(readonly, nonatomic) long long totalBytesDownloaded; // @synthesize totalBytesDownloaded=_totalBytesDownloaded;
 @property(readonly, nonatomic) TSUProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSString *sessionDescription; // @synthesize sessionDescription=_sessionDescription;
-- (void).cxx_destruct;
 - (void)cancelRemainingTasksNotifyingDelegate:(BOOL)arg1;
 - (void)updateProgressAndNotifyDelegate;
 - (void)updateTaskProgress:(id)arg1 withTotalBytesWritten:(long long)arg2 totalBytesExpectedToWrite:(long long)arg3;

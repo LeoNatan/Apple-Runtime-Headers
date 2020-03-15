@@ -15,9 +15,9 @@
     NSMutableArray *_actionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actionBlocks; // @synthesize actionBlocks=_actionBlocks;
 @property(nonatomic, getter=isButtonDown) _Bool buttonDown; // @synthesize buttonDown=_buttonDown;
-- (void).cxx_destruct;
 - (void)performQueuedButtonUpActions;
 - (void)scheduleButtonUpActionBlock:(CDUnknownBlockType)arg1;
 

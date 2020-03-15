@@ -19,10 +19,10 @@
     NTKDigitalTimeLabel *_timeMinuteView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKDigitalTimeLabel *timeMinuteView; // @synthesize timeMinuteView=_timeMinuteView;
 @property(retain, nonatomic) NTKDigitalTimeLabel *timeHourView; // @synthesize timeHourView=_timeHourView;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
-- (void).cxx_destruct;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setStatusBarVisible:(_Bool)arg1 animated:(_Bool)arg2;

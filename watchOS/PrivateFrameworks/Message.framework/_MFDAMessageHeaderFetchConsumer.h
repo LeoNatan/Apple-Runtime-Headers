@@ -18,10 +18,10 @@
     MFDAMessageStore *_store;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFDAMessageStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) MFError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
 - (_Bool)wantsData;

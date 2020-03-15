@@ -42,6 +42,7 @@
 + (long long)authorizationStatusForEntityType:(unsigned long long)arg1;
 + (void)setReminderStoreContainerTokenProvider:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)reminderStoreContainerTokenProvider;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldSanitizeVehicleAlarms; // @synthesize shouldSanitizeVehicleAlarms=_shouldSanitizeVehicleAlarms;
 @property BOOL onlyNotifyForAccountedChanges; // @synthesize onlyNotifyForAccountedChanges=_onlyNotifyForAccountedChanges;
 @property(retain, nonatomic) NSDictionary *eventSourceIDToReminderSourceIDMapping; // @synthesize eventSourceIDToReminderSourceIDMapping=_eventSourceIDToReminderSourceIDMapping;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) int backingStoreType; // @synthesize backingStoreType;
 @property(retain, nonatomic) EKBackingStore *backingStore; // @synthesize backingStore;
 @property(readonly, nonatomic) NSString *eventStoreIdentifier; // @synthesize eventStoreIdentifier;
-- (void).cxx_destruct;
 - (BOOL)shouldWhitelistOrganizerPhoneNumberFromJunkChecks:(id)arg1;
 - (BOOL)shouldWhitelistOrganizerEmailFromJunkChecks:(id)arg1;
 - (id)_draftPathForEventWithOccurrenceID:(id)arg1 draftDirectory:(id)arg2;

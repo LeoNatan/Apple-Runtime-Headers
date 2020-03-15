@@ -18,13 +18,13 @@
     NSURL *_autodiscoverURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *autodiscoverURL; // @synthesize autodiscoverURL=_autodiscoverURL;
 @property(readonly, nonatomic) NSURL *externalURL; // @synthesize externalURL=_externalURL;
 @property(readonly, nonatomic) NSURL *internalURL; // @synthesize internalURL=_internalURL;
 @property(copy, nonatomic) NSString *user; // @synthesize user=_user;
 @property(copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDisplayName:(id)arg1 internalURL:(id)arg2 externalURL:(id)arg3 autodiscoverURL:(id)arg4;
 

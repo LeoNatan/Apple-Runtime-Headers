@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithImage:(id)arg1;

@@ -32,6 +32,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)propertiesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;
 @property(retain, nonatomic) _INPBString *sourceName; // @synthesize sourceName=_sourceName;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) _INPBString *entityName; // @synthesize entityName=_entityName;
 @property(nonatomic) int destinationType; // @synthesize destinationType=_destinationType;
 @property(retain, nonatomic) _INPBString *destinationName; // @synthesize destinationName=_destinationName;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

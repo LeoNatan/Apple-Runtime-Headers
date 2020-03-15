@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     SKUIReportAConcernMetadata *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIReportAConcernMetadata *metadata; // @synthesize metadata=_metadata;
 @property(copy) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
-- (void).cxx_destruct;
 - (id)_httpBody;
 - (void)run;
 - (id)initWithMetadata:(id)arg1;

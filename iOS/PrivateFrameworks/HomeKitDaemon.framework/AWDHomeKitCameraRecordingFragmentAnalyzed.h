@@ -29,6 +29,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *clipModelID; // @synthesize clipModelID=_clipModelID;
 @property(nonatomic) unsigned long long analysisResultCode; // @synthesize analysisResultCode=_analysisResultCode;
 @property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *cameraUUID; // @synthesize cameraUUID=_cameraUUID;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

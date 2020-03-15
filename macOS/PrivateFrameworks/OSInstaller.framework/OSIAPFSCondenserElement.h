@@ -13,8 +13,8 @@
     NSError *_error;
 }
 
-@property(retain) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(retain) NSError *error; // @synthesize error=_error;
 - (double)estimatedTimeToComplete;
 - (id)_skManager;
 - (id)localizedStatusString;

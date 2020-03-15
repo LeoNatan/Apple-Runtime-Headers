@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bloomFilterString; // @synthesize bloomFilterString=_bloomFilterString;
 @property(readonly, nonatomic) _PASBloomFilter *bloomFilter; // @synthesize bloomFilter=_bloomFilter;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) long long shardCount; // @synthesize shardCount=_shardCount;
 @property(readonly, nonatomic) long long startIndex; // @synthesize startIndex=_startIndex;
-- (void).cxx_destruct;
 - (_Bool)containsValue:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

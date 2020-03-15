@@ -14,8 +14,8 @@
 }
 
 + (float)rowHeight;
-@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 title:(id)arg3;
 

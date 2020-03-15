@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *card_sections; // @synthesize card_sections;
 @property int card_alignment; // @synthesize card_alignment;
 @property(retain) NSURL *card_url; // @synthesize card_url;
-- (void).cxx_destruct;
 - (BOOL)isMovie;
 - (BOOL)isTV;
 - (BOOL)isWikipedia;

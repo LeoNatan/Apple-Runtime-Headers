@@ -16,11 +16,11 @@
     CDUnion_fab80606 _peerIP;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) CDUnion_fab80606 peerIP; // @synthesize peerIP=_peerIP;
-- (void).cxx_destruct;
 - (id)peerMACAddressData;
 
 @end

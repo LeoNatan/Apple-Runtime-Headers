@@ -78,6 +78,7 @@
     struct UIEdgeInsets _contentInset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(nonatomic) __weak id <LPLinkViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -95,7 +96,6 @@
 @property(nonatomic, setter=_setDisableTapGesture:) _Bool _disableTapGesture; // @synthesize _disableTapGesture;
 @property(nonatomic, setter=_setNeedsMessagesTranscriptPushCounterAnimation:) _Bool _needsMessagesTranscriptPushCounterAnimation; // @synthesize _needsMessagesTranscriptPushCounterAnimation;
 @property(nonatomic, setter=_setDisableAnimations:) _Bool _disableAnimations; // @synthesize _disableAnimations;
-- (void).cxx_destruct;
 - (void)contextMenuInteraction:(id)arg1 willDisplayMenuForConfiguration:(id)arg2 animator:(id)arg3;
 - (id)contextMenuInteraction:(id)arg1 configurationForMenuAtLocation:(struct CGPoint)arg2;
 - (void)_uninstallPreviewGestureRecognizer;
@@ -158,7 +158,8 @@
 - (void)themeParametersDidChange;
 - (void)_setupView;
 - (void)_fetchMetadata;
-- (id)_fetchMetadataForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_fetchMetadataForURL:(id)arg1 withSubresources:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_configureWithoutLoadingMetadataFromURLs:(id)arg1;
 - (_Bool)_shouldClipAnimationView;
 - (_Bool)_shouldApplyCornerRadius;
 - (void)_commonInitWithURL:(id)arg1;

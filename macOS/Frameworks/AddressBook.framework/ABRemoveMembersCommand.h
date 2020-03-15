@@ -13,8 +13,11 @@
     NSString *_groupIdentifier;
     NSArray *_memberIdentifiers;
     ABAddressBook *_addressBook;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (id)_fetchGroup;
 - (id)_fetchMembers;
 - (void)_addSubgroups:(id)arg1 toGroup:(id)arg2;

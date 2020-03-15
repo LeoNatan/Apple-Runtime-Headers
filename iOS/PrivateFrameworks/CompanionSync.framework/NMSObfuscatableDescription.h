@@ -14,9 +14,9 @@
     NSMutableArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) NSString *prefixString; // @synthesize prefixString=_prefixString;
-- (void).cxx_destruct;
 - (id)CPSafeDescription;
 - (id)description;
 - (id)_descriptionObfuscated:(_Bool)arg1;

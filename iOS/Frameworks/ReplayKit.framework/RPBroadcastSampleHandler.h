@@ -16,8 +16,8 @@
     id <RPBroadcastDaemonProtocol> _daemonProxy;
 }
 
-@property(retain, nonatomic) id <RPBroadcastDaemonProtocol> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <RPBroadcastDaemonProtocol> daemonProxy; // @synthesize daemonProxy=_daemonProxy;
 - (void)_setupListenerWithEndpoint:(id)arg1;
 - (void)processPayload:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processPayloadWithAudioSample:(id)arg1 type:(long long)arg2;

@@ -14,9 +14,9 @@
     HMAccessory *_primaryAccessory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsQuickControls; // @synthesize supportsQuickControls=_supportsQuickControls;
 @property(retain, nonatomic) HMAccessory *primaryAccessory; // @synthesize primaryAccessory=_primaryAccessory;
-- (void).cxx_destruct;
 - (_Bool)_isAPreferredServiceType:(id)arg1;
 - (_Bool)shouldHideItem:(id)arg1;
 - (id)_itemsToHideInSet:(id)arg1;

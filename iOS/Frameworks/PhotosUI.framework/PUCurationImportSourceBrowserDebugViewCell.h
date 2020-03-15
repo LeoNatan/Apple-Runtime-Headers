@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_importSourceName;
 }
 
-@property(retain) NSString *importSourceName; // @synthesize importSourceName=_importSourceName;
 - (void).cxx_destruct;
+@property(retain) NSString *importSourceName; // @synthesize importSourceName=_importSourceName;
 
 @end
 

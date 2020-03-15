@@ -18,13 +18,13 @@
     CADisplayLink *__displayLink;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CADisplayLink *_displayLink; // @synthesize _displayLink=__displayLink;
 @property(readonly, nonatomic) double _startTime; // @synthesize _startTime=__startTime;
 @property(readonly, nonatomic) CAMTorchPattern *_currentPattern; // @synthesize _currentPattern=__currentPattern;
 @property(nonatomic, getter=_isPerforming, setter=_setPerforming:) _Bool _performing; // @synthesize _performing=__performing;
 @property(readonly, nonatomic) CUCaptureController *_captureController; // @synthesize _captureController=__captureController;
 @property(nonatomic) double stepInterval; // @synthesize stepInterval=_stepInterval;
-- (void).cxx_destruct;
 - (void)displayLinkFired:(id)arg1;
 - (void)doubleBlink;
 - (void)blink;

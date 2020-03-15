@@ -30,11 +30,11 @@
     UIImageView *_heroView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *heroView; // @synthesize heroView=_heroView;
 @property(retain, nonatomic) NPTOVideoPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(nonatomic) __weak id <NPTOIrisViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
-- (void).cxx_destruct;
 - (void)_cancelPlayback;
 - (void)resumeInterruptedPlayback;
 - (void)interruptPlayback;

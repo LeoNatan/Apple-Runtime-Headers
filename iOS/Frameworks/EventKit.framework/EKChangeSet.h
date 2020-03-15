@@ -23,6 +23,7 @@
     NSMutableDictionary *_multiValueRemovals;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *multiValueRemovals; // @synthesize multiValueRemovals=_multiValueRemovals;
 @property(retain, nonatomic) NSMutableDictionary *multiValueAdditions; // @synthesize multiValueAdditions=_multiValueAdditions;
 @property(retain, nonatomic) NSMutableDictionary *singleValueChanges; // @synthesize singleValueChanges=_singleValueChanges;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool isSaved; // @synthesize isSaved=_isSaved;
 @property(nonatomic) _Bool isModified; // @synthesize isModified=_isModified;
 @property(nonatomic) _Bool isNew; // @synthesize isNew=_isNew;
-- (void).cxx_destruct;
 - (_Bool)isEffectivelyEqual:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)summary;

@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *entitlements; // @synthesize entitlements=_entitlements;
-- (void).cxx_destruct;
 - (id)initWithEntitlements:(id)arg1 error:(id)arg2;
 
 @end

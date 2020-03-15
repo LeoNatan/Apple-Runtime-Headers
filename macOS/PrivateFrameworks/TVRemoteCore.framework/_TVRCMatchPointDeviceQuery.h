@@ -18,10 +18,10 @@
     NSMutableDictionary *_wrapperToIdentifierMapping;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *wrapperToIdentifierMapping; // @synthesize wrapperToIdentifierMapping=_wrapperToIdentifierMapping;
 @property(retain, nonatomic) HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(nonatomic) __weak id <_TVRCMatchPointDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyRemovedService:(id)arg1;
 - (void)_notifyAddedService:(id)arg1;
 - (void)_matchPointServiceNameChanged:(id)arg1;

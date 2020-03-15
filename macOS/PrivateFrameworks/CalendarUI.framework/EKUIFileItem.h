@@ -15,9 +15,9 @@
 }
 
 + (id)itemFromPlistRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy) NSData *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

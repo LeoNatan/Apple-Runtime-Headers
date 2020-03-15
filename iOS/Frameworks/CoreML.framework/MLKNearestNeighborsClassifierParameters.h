@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *_nearestDistancesFeatureName;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *nearestDistancesFeatureName; // @synthesize nearestDistancesFeatureName=_nearestDistancesFeatureName;
 @property(retain) NSString *nearestLabelsFeatureName; // @synthesize nearestLabelsFeatureName=_nearestLabelsFeatureName;
 @property(retain) NSObject *defaultLabel; // @synthesize defaultLabel=_defaultLabel;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property long long indexType; // @synthesize indexType=_indexType;
 @property long long weightingScheme; // @synthesize weightingScheme=_weightingScheme;
 @property unsigned long long numberOfDimensions; // @synthesize numberOfDimensions=_numberOfDimensions;
-- (void).cxx_destruct;
 
 @end
 

@@ -18,11 +18,11 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *subviewsConstraints; // @synthesize subviewsConstraints=_subviewsConstraints;
 @property(copy, nonatomic) NSArray *likenessViews; // @synthesize likenessViews=_likenessViews;
 @property(retain, nonatomic) NSArray *likenessProviders; // @synthesize likenessProviders=_likenessProviders;
 @property(nonatomic) __weak id <_CNAvatarViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)setupSubviews;
 

@@ -24,6 +24,7 @@
     MTMutableAlarm *_alarm;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) MTMutableAlarm *alarm; // @synthesize alarm=_alarm;
 @property(nonatomic) unsigned long long repeatSchedule; // @synthesize repeatSchedule=_repeatSchedule;
 @property(nonatomic) unsigned long long firstWeekday; // @synthesize firstWeekday=_firstWeekday;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, copy, nonatomic) NSString *loggedInAppleMusicAccountDSID; // @synthesize loggedInAppleMusicAccountDSID=_loggedInAppleMusicAccountDSID;
 @property(nonatomic) __weak id <HUAlarmEditSettingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)textValueChanged:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -18,11 +18,11 @@
     NSDictionary *_droppedEntriesByReason;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *droppedEntriesByReason; // @synthesize droppedEntriesByReason=_droppedEntriesByReason;
 @property(copy, nonatomic) NSArray *entriesToUpload; // @synthesize entriesToUpload=_entriesToUpload;
 @property(copy, nonatomic) NSDictionary *valuesByHTTPHeaderField; // @synthesize valuesByHTTPHeaderField=_valuesByHTTPHeaderField;
 @property(copy, nonatomic) NSURL *endpointURL; // @synthesize endpointURL=_endpointURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

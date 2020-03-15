@@ -17,12 +17,12 @@
     IKJSManagedArray *_managedArgs;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isRepeating; // @synthesize isRepeating=_isRepeating;
 @property(readonly, retain, nonatomic) IKJSManagedArray *managedArgs; // @synthesize managedArgs=_managedArgs;
 @property(readonly, retain, nonatomic) JSManagedValue *managedCallback; // @synthesize managedCallback=_managedCallback;
 @property(readonly, retain, nonatomic) id ownerObject; // @synthesize ownerObject=_ownerObject;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)removeManagedReferences;
 - (id)description;

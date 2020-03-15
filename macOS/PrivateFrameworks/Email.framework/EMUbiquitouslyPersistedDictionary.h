@@ -23,12 +23,12 @@
 
 + (id)sharedDictionaryWithIdentifier:(id)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *mutationQueue; // @synthesize mutationQueue=_mutationQueue;
 @property(readonly, nonatomic) NSUbiquitousKeyValueStore *kvStore; // @synthesize kvStore=_kvStore;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSMutableDictionary *storedObjects; // @synthesize storedObjects=_storedObjects;
 @property(readonly, nonatomic) NSString *plistPath; // @synthesize plistPath=_plistPath;
-- (void).cxx_destruct;
 - (void)_storeChangedExternally:(id)arg1;
 - (void)_mergeKVStoreChangedKeys:(id)arg1;
 - (void)_resetKVStore;

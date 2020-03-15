@@ -21,12 +21,12 @@
     NSDictionary *_substitutions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;
 @property(retain, nonatomic) AVCVirtualTTYDevice *ttyDevice; // @synthesize ttyDevice=_ttyDevice;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) TTYConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) id <TTYCallDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)device:(id)arg1 didReceiveCharacter:(unsigned short)arg2;
 - (void)deviceDidStop:(id)arg1;
 - (void)device:(id)arg1 didStart:(BOOL)arg2 error:(id)arg3;

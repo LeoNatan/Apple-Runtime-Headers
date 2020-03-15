@@ -24,11 +24,11 @@
 }
 
 + (Class)expressPassInformationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *expressPassInformations; // @synthesize expressPassInformations=_expressPassInformations;
 @property(retain, nonatomic) NSData *errorData; // @synthesize errorData=_errorData;
 @property(retain, nonatomic) NPKProtoPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

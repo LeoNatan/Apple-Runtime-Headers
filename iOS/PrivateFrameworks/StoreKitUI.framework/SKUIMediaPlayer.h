@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     id _periodicTimeObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool playing; // @synthesize playing=_playing;
 @property(retain, nonatomic) id periodicTimeObserver; // @synthesize periodicTimeObserver=_periodicTimeObserver;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(nonatomic) __weak MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
 @property(nonatomic) __weak MPAVController *player; // @synthesize player=_player;
 @property(retain, nonatomic) SKUIMediaPlayerItemStatus *playerItem; // @synthesize playerItem=_playerItem;
-- (void).cxx_destruct;
 
 @end
 

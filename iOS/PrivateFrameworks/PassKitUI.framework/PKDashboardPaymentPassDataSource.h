@@ -80,22 +80,26 @@
     NSError *_accountUpdateError;
     _Bool _performingAccountUpdate;
     PKAccountServiceAccountResolutionController *_accountResolutionController;
-    struct os_unfair_lock_s _lockDownloads;
+    struct os_unfair_lock_s _lockIcons;
     NSMutableSet *_iconDownloads;
+    NSMutableSet *_iconFailedDownloads;
+    NSMutableDictionary *_icons;
+    _Bool _hasSuccessfulIconDownloads;
     NSString *_scaleKey;
     _Bool _showAMPEnrollmentMessage;
     PKAMPEnrollmentManager *_AMPEnrollmentManager;
     NSMutableDictionary *_messageImagesCache;
+    struct os_unfair_lock_s _lockImages;
     NSArray *_weeks;
     NSArray *_months;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *months; // @synthesize months=_months;
 @property(retain, nonatomic) NSArray *weeks; // @synthesize weeks=_weeks;
 @property(readonly, nonatomic) PKSpendingSummaryFetcher *summaryFetcher; // @synthesize summaryFetcher=_summaryFetcher;
 @property(readonly, nonatomic) PKDashboardTransactionFetcher *transactionFetcher; // @synthesize transactionFetcher=_transactionFetcher;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)viewControllerDidCancelSetupFlow:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
@@ -120,7 +124,7 @@
 - (void)_addToAMPButtonTappedForPass:(id)arg1;
 - (void)_fetchAMPEnrollmentEligibility;
 - (_Bool)_passAvailableForAMPEnrollment;
-- (void)_updateTransitBalance;
+- (void)_updateTransitBalanceProperties:(id)arg1 dynamicBalances:(id)arg2;
 - (void)reloadTransitBalance;
 - (_Bool)_canDisplayBalance;
 - (void)_presentPassWithPassUniqueIdentifier:(id)arg1;
@@ -169,6 +173,10 @@
 - (id)titleForSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfSections;
 - (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
+- (_Bool)transitItemIsEnabled:(unsigned long long)arg1;
+- (long long)numberOfTransitItemsEnabled;
+- (unsigned long long)transitItemForItemIndex:(long long)arg1;
+- (_Bool)_showTiledBalances;
 - (id)itemAtIndexPath:(id)arg1;
 @property(readonly, nonatomic) NSArray *upcomingScheduledPayments;
 @property(readonly, nonatomic) NSArray *currentMonthTransactions;

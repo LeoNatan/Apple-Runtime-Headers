@@ -15,8 +15,8 @@
 
 + (Class)_verticalScrollerClass;
 + (Class)_horizontalScrollerClass;
-@property(retain, nonatomic, setter=_setCaptionTextView:) AXVCaptionTextView *_captionTextView; // @synthesize _captionTextView=__captionTextView;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setCaptionTextView:) AXVCaptionTextView *_captionTextView; // @synthesize _captionTextView=__captionTextView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

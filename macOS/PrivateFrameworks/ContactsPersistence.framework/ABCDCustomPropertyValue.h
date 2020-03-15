@@ -6,7 +6,7 @@
 
 #import <ContactsPersistence/ABCDOwnedObject.h>
 
-@class ABCDCustomProperty;
+@class ABCDCustomProperty, NSString;
 
 __attribute__((visibility("hidden")))
 @interface ABCDCustomPropertyValue : ABCDOwnedObject
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(retain, nonatomic) ABCDCustomProperty *customProperty; // @dynamic customProperty;
+@property(retain, nonatomic) NSString *stringValue; // @dynamic stringValue;
 
 @end
 

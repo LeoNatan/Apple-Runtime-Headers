@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSBundle *_bundle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alwaysTemplate; // @synthesize alwaysTemplate=_alwaysTemplate;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 
 @end
 

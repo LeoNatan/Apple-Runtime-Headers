@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldEnableOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUReviewScreenBarsModel *reviewBarsModel; // @synthesize reviewBarsModel=_reviewBarsModel;
 @property(nonatomic) __weak id <PUFunEffectsViewControllerObserver> funEffectsObserver; // @synthesize funEffectsObserver=_funEffectsObserver;
 @property(retain, nonatomic) id <PUReviewAssetProvider> reviewAssetProvider; // @synthesize reviewAssetProvider=_reviewAssetProvider;
-- (void).cxx_destruct;
 - (void)_presentFunEffectsViewControllerForAsset:(id)arg1;
 - (void)performUserInteractionTask;
 

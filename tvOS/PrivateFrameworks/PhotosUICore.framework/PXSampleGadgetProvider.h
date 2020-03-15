@@ -16,11 +16,11 @@
     double _minimumHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoadedData; // @synthesize hasLoadedData=_hasLoadedData;
 @property(nonatomic) double minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(retain, nonatomic) NSArray *sampleGadgets; // @synthesize sampleGadgets=_sampleGadgets;
 @property(readonly, nonatomic) _Bool includeHorizontal; // @synthesize includeHorizontal=_includeHorizontal;
-- (void).cxx_destruct;
 - (void)generateGadgets;
 - (unsigned long long)estimatedNumberOfGadgets;
 - (void)loadDataForGadgets;

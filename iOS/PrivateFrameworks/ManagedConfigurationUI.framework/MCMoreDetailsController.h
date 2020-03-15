@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIImage *_iconImage;
 }
 
-@property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)loadSpecifiersFromPlistName:(id)arg1 target:(id)arg2;

@@ -22,6 +22,7 @@
     struct __FSEventStream *_eventStream;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isEventStreamStarted; // @synthesize isEventStreamStarted=_isEventStreamStarted;
 @property(nonatomic) struct __FSEventStream *eventStream; // @synthesize eventStream=_eventStream;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(readonly, nonatomic) NSArray *URLs; // @synthesize URLs=_URLs;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (void)dealloc;

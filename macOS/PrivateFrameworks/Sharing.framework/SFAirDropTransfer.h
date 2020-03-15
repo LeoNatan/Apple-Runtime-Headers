@@ -35,6 +35,7 @@
 + (BOOL)automaticallyNotifiesObserversOfTransferState;
 + (BOOL)automaticallyNotifiesObserversOfUserResponse;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id progressToken; // @synthesize progressToken=_progressToken;
 @property(copy, nonatomic) NSURL *customDestinationURL; // @synthesize customDestinationURL=_customDestinationURL;
 @property(nonatomic) unsigned long long failureReason; // @synthesize failureReason=_failureReason;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) SFAirDropTransferMetaData *metaData; // @synthesize metaData=_metaData;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL needsAction;
 - (void)updateWithInformation:(id)arg1;
 - (BOOL)updateUsingCoder:(id)arg1;

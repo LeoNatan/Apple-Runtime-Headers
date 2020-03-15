@@ -17,9 +17,9 @@
 }
 
 + (id)actionWithBundleIdentifier:(id)arg1 actionIdentifier:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

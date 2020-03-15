@@ -22,8 +22,8 @@
     long long _itemsInFlight;
 }
 
-@property(nonatomic) id <MSPublishStorageProtocolDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <MSPublishStorageProtocolDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_putItemsFailure;
 - (void)_requestCompleted;
 - (void)_putItemDone:(unsigned long long)arg1 putReceipt:(id)arg2 error:(id)arg3;

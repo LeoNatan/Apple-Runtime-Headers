@@ -15,8 +15,8 @@
 }
 
 + (id)scannerWithString:(id)arg1;
-@property(readonly) unsigned int position; // @synthesize position=_position;
 - (void).cxx_destruct;
+@property(readonly) unsigned int position; // @synthesize position=_position;
 - (unsigned short)nextCharacter;
 - (_Bool)isAtEnd;
 - (_Bool)scanLeapMarker;

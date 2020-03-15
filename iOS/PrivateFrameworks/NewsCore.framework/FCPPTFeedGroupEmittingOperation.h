@@ -13,8 +13,8 @@
     NSString *_channelID;
 }
 
-@property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void)performOperation;
 - (id)initWithChannelID:(id)arg1 context:(id)arg2 fromCursor:(id)arg3 toCursor:(id)arg4 groupEmitterIdentifier:(id)arg5;
 

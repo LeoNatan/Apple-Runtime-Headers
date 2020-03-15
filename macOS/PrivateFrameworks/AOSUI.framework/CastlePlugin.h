@@ -54,6 +54,7 @@
 }
 
 + (id)sharedCastlePlugin;
+- (void).cxx_destruct;
 @property(retain) iCloudPurchaseStorageController *purchaseStorageController; // @synthesize purchaseStorageController=_purchaseStorageController;
 @property(retain) MMOutOfNetworkSheetController *outofNetworkheetController; // @synthesize outofNetworkheetController=_outofNetworkheetController;
 @property(retain) MMSignoutSheetController *signoutSheetController; // @synthesize signoutSheetController=_signoutSheetController;
@@ -79,7 +80,6 @@
 @property(retain) NSString *visibleAccountID; // @synthesize visibleAccountID=_visibleAccountID;
 @property(retain) NSString *pw; // @synthesize pw=_pw;
 @property(retain) NSString *appleID; // @synthesize appleID=_appleID;
-- (void).cxx_destruct;
 - (void)sizeChangedFrom:(struct CGSize)arg1 toSize:(struct CGSize)arg2 webViewName:(id)arg3 callback:(id)arg4;
 - (void)loadFailed:(id)arg1;
 - (void)endWebView:(id)arg1;

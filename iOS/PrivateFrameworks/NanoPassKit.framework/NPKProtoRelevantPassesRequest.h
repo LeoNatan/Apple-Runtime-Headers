@@ -16,8 +16,8 @@
 }
 
 + (Class)passRelevancyTuplesType;
-@property(retain, nonatomic) NSMutableArray *passRelevancyTuples; // @synthesize passRelevancyTuples=_passRelevancyTuples;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *passRelevancyTuples; // @synthesize passRelevancyTuples=_passRelevancyTuples;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

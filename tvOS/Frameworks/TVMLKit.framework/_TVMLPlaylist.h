@@ -15,8 +15,8 @@
 
 + (long long)_tvpPlaylistRepeatModeForTVPlaylistRepeatMode:(long long)arg1;
 + (long long)_tvpPlaylistEndActionForTVPlaylistEndAction:(long long)arg1;
-@property(readonly, nonatomic) TVPPlaylist *tvpObject; // @synthesize tvpObject=_tvpObject;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TVPPlaylist *tvpObject; // @synthesize tvpObject=_tvpObject;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;
 - (void)removeObjectsAtIndexes:(id)arg1;
 - (void)setRepeatMode:(long long)arg1;

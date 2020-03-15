@@ -18,8 +18,8 @@
     CDUnknownBlockType _nowPlayingCellConfigurationBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType nowPlayingCellConfigurationBlock; // @synthesize nowPlayingCellConfigurationBlock=_nowPlayingCellConfigurationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType nowPlayingCellConfigurationBlock; // @synthesize nowPlayingCellConfigurationBlock=_nowPlayingCellConfigurationBlock;
 - (void)_updateNowPlayingState;
 - (void)originObserver:(id)arg1 didUpdatePlaybackStateForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingApplicationBundleIdentifierForOrigin:(id)arg2;

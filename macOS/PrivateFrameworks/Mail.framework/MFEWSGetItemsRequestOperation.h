@@ -14,9 +14,9 @@
     NSArray *_additionalProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property(readonly, copy, nonatomic) NSArray *EWSItemIds; // @synthesize EWSItemIds=_EWSItemIds;
-- (void).cxx_destruct;
 - (id)prepareRequest;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSGetItemsResponseOperation *responseOperation;

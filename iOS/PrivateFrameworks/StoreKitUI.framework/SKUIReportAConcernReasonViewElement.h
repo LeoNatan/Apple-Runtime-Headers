@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_uppercaseName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uppercaseName; // @synthesize uppercaseName=_uppercaseName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSNumber *reasonID; // @synthesize reasonID=_reasonID;
-- (void).cxx_destruct;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

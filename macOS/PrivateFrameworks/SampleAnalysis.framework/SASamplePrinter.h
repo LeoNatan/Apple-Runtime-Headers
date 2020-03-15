@@ -27,9 +27,9 @@
     NSUUID *_incidentUUID;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSUUID *incidentUUID; // @synthesize incidentUUID=_incidentUUID;
 @property(copy) NSString *headerNote; // @synthesize headerNote=_headerNote;
-- (void).cxx_destruct;
 - (id)displayNameForPid:(int)arg1 threadId:(unsigned long long)arg2 timestamp:(id)arg3;
 - (id)displayNameForTask:(id)arg1;
 - (id)displayNameForTask:(id)arg1 includePid:(BOOL)arg2;

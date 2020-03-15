@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property _Bool largeIcon; // @synthesize largeIcon=_largeIcon;
 @property(readonly) NSString *buttonText; // @synthesize buttonText=_buttonText;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) UIView *containerView; // @synthesize containerView=_containerView;
 @property(readonly) UITextView *textView; // @synthesize textView=_textView;
 @property(readonly) OBTintInheritingImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)labelText;
 - (id)_textViewFont;

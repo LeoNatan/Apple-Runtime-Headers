@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     SKUIColorScheme *_colorScheme;
 }
 
-@property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
 - (long long)numberOfRowsInSection;

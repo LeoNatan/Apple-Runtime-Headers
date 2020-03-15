@@ -17,12 +17,12 @@
     INIntentResponse *_handleResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly) INIntentResponse *handleResponse; // @synthesize handleResponse=_handleResponse;
 @property(readonly) INIntentResponse *confirmResponse; // @synthesize confirmResponse=_confirmResponse;
 @property(readonly) BOOL resolvedAllParametersSuccesfully; // @synthesize resolvedAllParametersSuccesfully=_resolvedAllParametersSuccesfully;
 @property(readonly, copy) NSDictionary *resolvedParameters; // @synthesize resolvedParameters=_resolvedParameters;
 @property(readonly) INIntent *resolvedIntent; // @synthesize resolvedIntent=_resolvedIntent;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)description;

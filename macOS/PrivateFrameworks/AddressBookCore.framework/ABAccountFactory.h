@@ -24,10 +24,10 @@
 + (id)factoryWithBaseDirectory:(id)arg1;
 + (id)sharedFactory;
 + (id)os_log;
+- (void).cxx_destruct;
 @property __weak id <ABAccountFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSString *basePath; // @synthesize basePath=_basePath;
 @property(copy) NSString *tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (id)pathForAccountWithIdentifier:(id)arg1;
 - (id)pointOfInterestAccount;
 - (id)directoryServicesAccount;

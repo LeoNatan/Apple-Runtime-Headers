@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSVisualTabPickerRootViewController *_visualTabPickerViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSVisualTabPickerRootViewController *visualTabPickerViewController; // @synthesize visualTabPickerViewController=_visualTabPickerViewController;
 @property(readonly, nonatomic) NSVisualTabPickerSearchField *searchField; // @synthesize searchField=_searchField;
 @property(readonly, nonatomic) NSVisualTabPickerGridView *gridView; // @synthesize gridView=_gridView;
-- (void).cxx_destruct;
 - (id)_tabPickerThumbnailViews;
 - (void)setUpSubviewsShowingNewTabButton:(BOOL)arg1 highlightingTiles:(BOOL)arg2 showingCloseButtons:(BOOL)arg3;
 - (void)_startTopBarAndCloudViewAnimation:(long long)arg1;

@@ -16,9 +16,9 @@
     SPProtoAudioFilePlayerAssetUpdateMetaData *_upsertWithMetaData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SPProtoObjectMessage *destroy; // @synthesize destroy=_destroy;
 @property(retain, nonatomic) SPProtoAudioFilePlayerAssetUpdateMetaData *upsertWithMetaData; // @synthesize upsertWithMetaData=_upsertWithMetaData;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

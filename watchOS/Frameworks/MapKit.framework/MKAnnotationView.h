@@ -89,6 +89,7 @@
 + (id)currentLocationTitle;
 + (Class)_mapkitLeafClass;
 + (Class)calloutViewClass;
+- (void).cxx_destruct;
 @property(nonatomic) int collisionMode; // @synthesize collisionMode=_collisionMode;
 @property(nonatomic) float displayPriority; // @synthesize displayPriority=_displayPriority;
 @property(readonly, nonatomic) __weak MKAnnotationView *clusterAnnotationView; // @synthesize clusterAnnotationView=_clusterAnnotationView;
@@ -114,7 +115,6 @@
 @property(nonatomic, setter=_setPresentationCourse:) double _presentationCourse; // @synthesize _presentationCourse;
 @property(copy, nonatomic, setter=_setPresentationCoordinateChangedCallback:) CDUnknownBlockType _presentationCoordinateChangedCallback; // @synthesize _presentationCoordinateChangedCallback;
 @property(nonatomic, setter=_setDirection:) double _direction; // @synthesize _direction;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_defaultCollisionAlignmentRectInsets) struct UIEdgeInsets defaultCollisionAlignmentRectInsets;
 @property(readonly, nonatomic, getter=_collisionAlignmentRectInsets) struct UIEdgeInsets collisionAlignmentRectInsets;
 - (struct UIEdgeInsets)alignmentRectInsets;

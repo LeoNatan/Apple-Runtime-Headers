@@ -13,8 +13,8 @@
     id <HAPRelayActivationClientDelegate> _delegate;
 }
 
-@property __weak id <HAPRelayActivationClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <HAPRelayActivationClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)requestCertificateWithPublicKey:(id)arg1 challengeCertificate:(id)arg2 challengeResponse:(id)arg3;
 - (void)requestChallenge;
 - (void)close;

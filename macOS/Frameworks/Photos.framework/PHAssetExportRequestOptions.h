@@ -25,6 +25,7 @@
     long long _locationComparisonStrategy;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL forceLocationMetadataBaking; // @synthesize forceLocationMetadataBaking=_forceLocationMetadataBaking;
 @property(nonatomic) BOOL forceDateTimeMetadataBaking; // @synthesize forceDateTimeMetadataBaking=_forceDateTimeMetadataBaking;
 @property(nonatomic) long long locationComparisonStrategy; // @synthesize locationComparisonStrategy=_locationComparisonStrategy;
@@ -38,7 +39,6 @@
 @property(nonatomic) BOOL treatLivePhotoAsStill; // @synthesize treatLivePhotoAsStill=_treatLivePhotoAsStill;
 @property(nonatomic) long long variant; // @synthesize variant=_variant;
 @property(nonatomic) BOOL includeAllAssetResources; // @synthesize includeAllAssetResources=_includeAllAssetResources;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

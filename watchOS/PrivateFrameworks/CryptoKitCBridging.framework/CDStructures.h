@@ -13,5 +13,23 @@ struct ccec_cp {
     unsigned int _field4[0];
 };
 
+struct ccss_shamir_parameters {
+    struct cczp *_field1;
+    unsigned int _field2;
+};
+
+struct ccss_shamir_share {
+    struct cczp *_field1;
+    unsigned int _field2;
+    unsigned int _field3[0];
+};
+
+struct cczp {
+    unsigned int _field1;
+    unsigned int _field2;
+    struct cczp_funcs *_field3;
+    unsigned int _field4[0];
+};
+
 struct cczp_funcs;
 

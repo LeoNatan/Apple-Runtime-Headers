@@ -7,20 +7,22 @@
 #import <objc/NSObject.h>
 
 @class NSMapTable, NSString;
+@protocol OS_dispatch_queue;
 
 @interface PPNotificationHandler : NSObject
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _isFiring
     // Error parsing type: {atomic_flag="_Value"AB}, name: _hasWaiter
+    NSObject<OS_dispatch_queue> *_waiterQueue;
     NSMapTable *_blockMap;
     NSString *_name;
     double _waitSeconds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSMapTable *blockMap; // @synthesize blockMap=_blockMap;
 @property(nonatomic) double waitSeconds; // @synthesize waitSeconds=_waitSeconds;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addObserverBlock:(CDUnknownBlockType)arg1 forLifetimeOfObject:(id)arg2;
 - (void)fire;

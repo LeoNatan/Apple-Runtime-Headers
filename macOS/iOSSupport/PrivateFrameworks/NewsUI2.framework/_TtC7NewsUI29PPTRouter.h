@@ -6,9 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-#import <NewsUI2/TSPPTRouterType-Protocol.h>
-
-@interface _TtC7NewsUI29PPTRouter : _TtCs12_SwiftObject <TSPPTRouterType>
+@interface _TtC7NewsUI29PPTRouter : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: navigator
 }

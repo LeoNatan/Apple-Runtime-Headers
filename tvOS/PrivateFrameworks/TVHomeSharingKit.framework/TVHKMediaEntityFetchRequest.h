@@ -42,6 +42,7 @@
 + (id)mediaCollectionsFetchRequestWithMediaCollectionType:(unsigned long long)arg1 mediaCategoryType:(unsigned long long)arg2;
 + (id)_mediaItemsFetchRequestWithProtocol:(unsigned long long)arg1;
 + (id)mediaItemsFetchRequestWithMediaCategoryType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forceMediaServerFetch; // @synthesize forceMediaServerFetch=_forceMediaServerFetch;
 @property(copy, nonatomic) NSPredicate *additionalPredicate; // @synthesize additionalPredicate=_additionalPredicate;
 @property(copy, nonatomic) NSArray *queryTerms; // @synthesize queryTerms=_queryTerms;
@@ -61,7 +62,6 @@
 @property(nonatomic) unsigned long long mediaCollectionType; // @synthesize mediaCollectionType=_mediaCollectionType;
 @property(nonatomic) unsigned long long mediaCategoryType; // @synthesize mediaCategoryType=_mediaCategoryType;
 @property(nonatomic) unsigned long long mediaEntitySubtype; // @synthesize mediaEntitySubtype=_mediaEntitySubtype;
-- (void).cxx_destruct;
 - (void)_processComparisonPredicate:(id)arg1;
 - (void)_processCompoundPredicate:(id)arg1;
 - (void)_processPredicate:(id)arg1;

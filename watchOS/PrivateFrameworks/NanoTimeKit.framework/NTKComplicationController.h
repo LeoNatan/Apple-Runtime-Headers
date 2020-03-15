@@ -36,6 +36,7 @@
 + (_Bool)_acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 + (Class)controllerClassForComplicationType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 + (id)controllerForComplication:(id)arg1 withRequestedFamily:(int)arg2 face:(id)arg3 slot:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int effectiveFaceDataMode; // @synthesize effectiveFaceDataMode=_effectiveFaceDataMode;
 @property(readonly, nonatomic) int animationMode; // @synthesize animationMode=_animationMode;
 @property(readonly, nonatomic) int updatingMode; // @synthesize updatingMode=_updatingMode;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int complicationFamily; // @synthesize complicationFamily=_complicationFamily;
 @property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
-- (void).cxx_destruct;
 - (void)notifyDelegateOnTimelineChangeWithTritiumUpdatePriority:(int)arg1;
 - (id)complicationApplicationIdentifier;
 - (void)performBackgroundDataRefresh;

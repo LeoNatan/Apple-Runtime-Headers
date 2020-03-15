@@ -79,10 +79,10 @@
 + (id)alertControllerForDisplayableError:(id)arg1;
 + (id)displayableErrorForAccount:(id)arg1 reason:(unsigned long long)arg2;
 + (_Bool)canPayBillForAccount:(id)arg1 displayableError:(id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKAccountBillPaymentObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 @property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_reportEventForPassIfNecessary:(id)arg1;
 - (void)_presentAlertControllerForError:(id)arg1;
 - (void)_showOrHideKeypad;

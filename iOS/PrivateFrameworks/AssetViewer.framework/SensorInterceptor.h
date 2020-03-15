@@ -18,12 +18,12 @@
     // Error parsing type: , name: _acceleration
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property acceleration:
 // Property attributes: T,N,V_acceleration
 
 @property(nonatomic) __weak id <ARSensor> targetSensor; // @synthesize targetSensor=_targetSensor;
 @property(nonatomic) __weak id <ARSensorDelegate> originalDelegate; // @synthesize originalDelegate=_originalDelegate;
-- (void).cxx_destruct;
 - (void)sensorDidRestart:(id)arg1;
 - (void)sensorDidPause:(id)arg1;
 - (void)sensorDidStart:(id)arg1;

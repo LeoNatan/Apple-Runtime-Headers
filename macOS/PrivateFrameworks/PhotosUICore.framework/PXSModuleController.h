@@ -23,10 +23,10 @@
     PXSItem *_rootItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXSItem *rootItem; // @synthesize rootItem=_rootItem;
 @property(readonly, nonatomic) NSOutlineView *outlineView; // @synthesize outlineView=_outlineView;
 @property(readonly, nonatomic) PXSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)scrollItemToVisible:(id)arg1;
 @property(readonly, nonatomic) PXSItem *firstSelectedItem;
 - (BOOL)validateUserInterfaceItem:(id)arg1;

@@ -57,6 +57,7 @@
 + (id)_defaultInkForIdentifier:(id)arg1 attributeSet:(unsigned long long)arg2;
 + (BOOL)inkIdentifierHasMutableAttributes:(id)arg1;
 + (double)spacingForToolIndex:(unsigned long long)arg1 sizeState:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long attributeSet; // @synthesize attributeSet=_attributeSet;
 @property(nonatomic) BOOL pencilGestureSupportEnabled; // @synthesize pencilGestureSupportEnabled=_pencilGestureSupportEnabled;
 @property(retain, nonatomic) NSArray *allowedTools; // @synthesize allowedTools=_allowedTools;
@@ -84,7 +85,6 @@
 @property(readonly, nonatomic) unsigned long long previousDrawingToolIndex; // @synthesize previousDrawingToolIndex=_previousDrawingToolIndex;
 @property(readonly, nonatomic) unsigned long long selectedInkIndex; // @synthesize selectedInkIndex=_selectedInkIndex;
 @property(retain, nonatomic) NSArray *inkIdentifiers; // @synthesize inkIdentifiers=_inkIdentifiers;
-- (void).cxx_destruct;
 - (id)_axLabelForToolButton:(id)arg1;
 - (void)_axHandleLongPressForLargeTextHUD:(id)arg1;
 - (void)_allowDrawingWhilePresentingPopoverViewDidBeginDrawing:(id)arg1;

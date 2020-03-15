@@ -14,9 +14,9 @@
     unsigned long long _changeMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long changeMode; // @synthesize changeMode=_changeMode;
 @property(copy, nonatomic) NSString *toolbarIdentifier; // @synthesize toolbarIdentifier=_toolbarIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)paramDictionaryForSaving;

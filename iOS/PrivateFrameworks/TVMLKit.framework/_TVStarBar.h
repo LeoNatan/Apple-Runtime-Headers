@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _barMargin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets barMargin; // @synthesize barMargin=_barMargin;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double barWidth; // @synthesize barWidth=_barWidth;
 @property(retain, nonatomic) NSAttributedString *countStr; // @synthesize countStr=_countStr;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(nonatomic) unsigned long long numStars; // @synthesize numStars=_numStars;
-- (void).cxx_destruct;
 
 @end
 

@@ -26,19 +26,19 @@ __attribute__((visibility("hidden")))
     PQLNameInjection *_tableName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) PQLNameInjection *tableName; // @synthesize tableName=_tableName;
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(nonatomic) _Bool hasWork; // @synthesize hasWork=_hasWork;
 @property(nonatomic) _Bool hasActiveWork; // @synthesize hasActiveWork=_hasActiveWork;
 @property(retain) NSObject<OS_dispatch_group> *hasWorkGroup; // @synthesize hasWorkGroup=_hasWorkGroup;
-- (void).cxx_destruct;
 - (void)close;
 - (void)_close;
 - (void)cancel;
 - (void)suspend;
 - (void)resume;
-- (void)scheduleWithBatchSize:(int)arg1 whereSQLClause:(struct NSObject *)arg2 columns:(id)arg3 actionHandler:(CDUnknownBlockType)arg4;
+- (void)scheduleWithBatchSize:(int)arg1 whereSQLClause:(id)arg2 columns:(id)arg3 actionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)canScheduleMoreJobs;
 - (void)performFirstSchedulingAfterStartupInDB:(id)arg1;
 - (void)schedule;

@@ -18,11 +18,11 @@
     MCInvocationQueue *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MCInvocationQueue *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) __weak MFLibraryStore *libraryStore; // @synthesize libraryStore=_libraryStore;
 @property BOOL shouldCancel; // @synthesize shouldCancel=_shouldCancel;
 @property long long collectorID; // @synthesize collectorID=_collectorID;
-- (void).cxx_destruct;
 - (void)finishedSendingMessages;
 - (void)searchPhaseComplete;
 - (void)newMessagesAvailable:(id)arg1 secondaryMessages:(id)arg2 fromUpdate:(BOOL)arg3;

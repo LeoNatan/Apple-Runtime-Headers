@@ -44,6 +44,7 @@
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
 + (id)moduleAppearanceForStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak WFContentClassesToolbar *acceptsToolbar; // @synthesize acceptsToolbar=_acceptsToolbar;
 @property(nonatomic) _Bool allowsAcceptsToolbar; // @synthesize allowsAcceptsToolbar=_allowsAcceptsToolbar;
 @property(nonatomic) double maximumContentWidth; // @synthesize maximumContentWidth=_maximumContentWidth;
@@ -66,7 +67,6 @@
 @property(readonly, nonatomic) unsigned long long workflowViewStyle; // @synthesize workflowViewStyle=_workflowViewStyle;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFWorkflowViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)invalidateActionConnections;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

@@ -18,13 +18,13 @@
     unsigned long long _nowPlayingItemID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *playStatusInformation; // @synthesize playStatusInformation=_playStatusInformation;
 @property(nonatomic) unsigned long long nowPlayingItemID; // @synthesize nowPlayingItemID=_nowPlayingItemID;
 @property(nonatomic) unsigned long long nowPlayingDatabaseID; // @synthesize nowPlayingDatabaseID=_nowPlayingDatabaseID;
 @property(nonatomic) unsigned long long nowPlayingContainerItemID; // @synthesize nowPlayingContainerItemID=_nowPlayingContainerItemID;
 @property(nonatomic) unsigned long long nowPlayingContainerID; // @synthesize nowPlayingContainerID=_nowPlayingContainerID;
 @property(nonatomic) unsigned int nextRevisionID; // @synthesize nextRevisionID=_nextRevisionID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

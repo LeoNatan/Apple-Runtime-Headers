@@ -13,8 +13,8 @@
     NSMutableArray *_mutableRows;
 }
 
-@property(retain, nonatomic) NSMutableArray *mutableRows; // @synthesize mutableRows=_mutableRows;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *mutableRows; // @synthesize mutableRows=_mutableRows;
 - (void)sortRowsInAscendingOrder;
 - (id)initWithRows:(id)arg1;
 @property(readonly) unsigned long long rowCount;

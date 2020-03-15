@@ -19,18 +19,18 @@
     TTZoomController *_zoomController;
 }
 
-+ (struct NSFont *)preferredFontForTTTextStyle:(unsigned int)arg1;
++ (id)preferredFontForTTTextStyle:(unsigned int)arg1;
 + (double)bodyParagraphSpacingBefore;
 + (double)bodyParagraphSpacing;
 + (double)attachmentParagraphSpacingBefore;
 + (double)attachmentParagraphSpacing;
 + (double)superscriptScaleFactor;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableSingleLineA; // @synthesize disableSingleLineA=_disableSingleLineA;
 @property(nonatomic) BOOL keepNSTextTableAttributes; // @synthesize keepNSTextTableAttributes=_keepNSTextTableAttributes;
 @property(retain, nonatomic) TTZoomController *zoomController; // @synthesize zoomController=_zoomController;
 @property(nonatomic) double headingStyleFontSizeThreshold; // @synthesize headingStyleFontSizeThreshold=_headingStyleFontSizeThreshold;
 @property(nonatomic) double bodyStyleFontSizeThreshold; // @synthesize bodyStyleFontSizeThreshold=_bodyStyleFontSizeThreshold;
-- (void).cxx_destruct;
 - (id)preferredAttributesForTTTextStyle:(unsigned int)arg1;
 - (id)filterStyleAttributes:(id)arg1 range:(struct _NSRange)arg2;
 - (void)styleText:(id)arg1 inExactRange:(struct _NSRange)arg2 fixModelAttributes:(BOOL)arg3 enableLetterpress:(BOOL)arg4;

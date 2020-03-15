@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *viewportVertices; // @synthesize viewportVertices=_viewportVertices;
 @property(nonatomic) double timeSinceViewportEnteredForeground; // @synthesize timeSinceViewportEnteredForeground=_timeSinceViewportEnteredForeground;
 @property(nonatomic) double timeSinceViewportChanged; // @synthesize timeSinceViewportChanged=_timeSinceViewportChanged;
@@ -27,7 +28,6 @@
 @property(nonatomic) double eastLongitude; // @synthesize eastLongitude=_eastLongitude;
 @property(nonatomic) double southLatitude; // @synthesize southLatitude=_southLatitude;
 @property(nonatomic) double northLatitude; // @synthesize northLatitude=_northLatitude;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_aceContextObjectValue;

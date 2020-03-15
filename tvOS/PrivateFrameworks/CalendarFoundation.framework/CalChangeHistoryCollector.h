@@ -19,12 +19,12 @@
     NSMutableArray *_deletedContactIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *deletedContactIdentifiers; // @synthesize deletedContactIdentifiers=_deletedContactIdentifiers;
 @property(retain) NSMutableArray *updatedContacts; // @synthesize updatedContacts=_updatedContacts;
 @property(retain) NSMutableArray *insertedContacts; // @synthesize insertedContacts=_insertedContacts;
 @property _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
 @property _Bool didReset; // @synthesize didReset=_didReset;
-- (void).cxx_destruct;
 - (void)visitDeleteContactEvent:(id)arg1;
 - (void)visitUpdateContactEvent:(id)arg1;
 - (void)visitAddContactEvent:(id)arg1;

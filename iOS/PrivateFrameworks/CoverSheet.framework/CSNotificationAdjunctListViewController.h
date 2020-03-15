@@ -24,6 +24,7 @@
 }
 
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool respondingToSubviewLayoutChange; // @synthesize respondingToSubviewLayoutChange=_respondingToSubviewLayoutChange;
 @property(retain, nonatomic) CSContentActionInterpreter *actionInterpreter; // @synthesize actionInterpreter=_actionInterpreter;
 @property(retain, nonatomic) CSNowPlayingController *nowPlayingController; // @synthesize nowPlayingController=_nowPlayingController;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSMutableDictionary *identifiersToItems; // @synthesize identifiersToItems=_identifiersToItems;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) __weak id <CSNotificationAdjunctListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)_disappearedTransformForContentWithHeight:(double)arg1;
 - (void)_didUpdateDisplay;
 - (id)_groupNameBase;

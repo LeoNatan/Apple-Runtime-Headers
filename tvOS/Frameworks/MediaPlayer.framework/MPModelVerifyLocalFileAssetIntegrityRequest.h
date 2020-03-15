@@ -15,9 +15,9 @@
 }
 
 + (id)_operationQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPModelFileAsset *fileAsset; // @synthesize fileAsset=_fileAsset;
 @property(retain, nonatomic) MPIdentifierSet *sourceItemIdentifiers; // @synthesize sourceItemIdentifiers=_sourceItemIdentifiers;
-- (void).cxx_destruct;
 - (id)mediaLibraryForItemIdentifiers:(id)arg1;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)initWithFileAsset:(id)arg1 sourceItemIdentifiers:(id)arg2;

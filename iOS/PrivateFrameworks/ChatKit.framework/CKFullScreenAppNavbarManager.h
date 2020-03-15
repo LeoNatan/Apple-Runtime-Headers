@@ -26,6 +26,7 @@
     UILabel *_defaultTitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *defaultTitleLabel; // @synthesize defaultTitleLabel=_defaultTitleLabel;
 @property(retain, nonatomic) NSTimer *notificationTimer; // @synthesize notificationTimer=_notificationTimer;
 @property(retain, nonatomic) NSMutableArray *notificationViews; // @synthesize notificationViews=_notificationViews;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) IMBalloonPlugin *plugin; // @synthesize plugin=_plugin;
 @property(nonatomic) __weak id <CKFullScreenAppNavbarManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_updateDismissButton;
 - (void)_updateTitleLabelText;
 - (void)_updateTitleView;

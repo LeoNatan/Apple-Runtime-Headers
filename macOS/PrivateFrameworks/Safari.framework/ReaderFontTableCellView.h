@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <ReaderFontTableCellViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ReaderFontTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long fontAvailabilityState; // @synthesize fontAvailabilityState=_fontAvailabilityState;
 @property(nonatomic) __weak NSImageView *checkboxImage; // @synthesize checkboxImage=_checkboxImage;
-- (void).cxx_destruct;
 - (void)_startDownloadIfAppropriate;
 - (void)_installProgressIndicator;
 - (void)_installDownloadButton;

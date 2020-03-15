@@ -60,6 +60,7 @@
 + (struct CGPoint)normalizeVectorPoint:(struct CGPoint)arg1;
 + (double)windowBackingScaleFactor:(id)arg1;
 + (BOOL)gpuAvailable;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long renderPreviewMode; // @synthesize renderPreviewMode=_renderPreviewMode;
 @property(nonatomic) __weak id <DKInkViewRenderDelegate> renderPreviewDelegate; // @synthesize renderPreviewDelegate=_renderPreviewDelegate;
 @property(readonly, nonatomic) BOOL isRenderingPaused; // @synthesize isRenderingPaused=_isRenderingPaused;
@@ -96,7 +97,6 @@
 @property(nonatomic) double minPressure; // @synthesize minPressure=_minPressure;
 @property(retain, nonatomic) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(readonly, nonatomic) BOOL trackingTouches; // @synthesize trackingTouches=_trackingTouches;
-- (void).cxx_destruct;
 - (BOOL)mouseDownCanMoveWindow;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)acceptsFirstResponder;

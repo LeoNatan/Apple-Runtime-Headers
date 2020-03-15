@@ -20,12 +20,12 @@
     NSSet *_entitledDomains;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *entitledDomains; // @synthesize entitledDomains=_entitledDomains;
 @property(readonly, nonatomic) BSMutableIntegerMap *dataByDomain; // @synthesize dataByDomain=_dataByDomain;
 @property(readonly, nonatomic) NSXPCConnection *clientXPCConnection; // @synthesize clientXPCConnection=_clientXPCConnection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(readonly, nonatomic) __weak id <STStatusDomainPublisherServerHandle> serverHandle; // @synthesize serverHandle=_serverHandle;
-- (void).cxx_destruct;
 - (id)_newEmptyDataForDomain:(unsigned long long)arg1;
 - (id)_internalQueue_dataForDomainCreatingIfNecessary:(unsigned long long)arg1;
 - (void)_publishDataDiff:(id)arg1 forDomain:(unsigned long long)arg2;

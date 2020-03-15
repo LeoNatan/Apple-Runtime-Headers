@@ -16,10 +16,11 @@ __attribute__((visibility("hidden")))
     UIKBBackdropView *_backdropView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKBBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView<UIKBKeyViewContentView> *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
+- (void)retestForTouchUpSelectedVariantIndexForKey:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)retestSelectedVariantIndexForKey:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
 - (void)setDrawFrame:(struct CGRect)arg1;

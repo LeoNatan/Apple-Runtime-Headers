@@ -22,6 +22,7 @@
     NSNumber *_maximumY;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *maximumY; // @synthesize maximumY=_maximumY;
 @property(readonly, nonatomic) NSNumber *minimumY; // @synthesize minimumY=_minimumY;
 @property(readonly, nonatomic) NSDate *bucketDate; // @synthesize bucketDate=_bucketDate;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSArray *bucketCounts; // @synthesize bucketCounts=_bucketCounts;
 @property(readonly, nonatomic) float bucketIncrement; // @synthesize bucketIncrement=_bucketIncrement;
 @property(readonly, nonatomic) float minimumBucketValue; // @synthesize minimumBucketValue=_minimumBucketValue;
-- (void).cxx_destruct;
 - (id)maxYValue;
 - (id)minYValue;
 - (id)allYValues;

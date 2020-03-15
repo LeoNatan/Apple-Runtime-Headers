@@ -33,13 +33,13 @@
 + (id)eventVocabularyRegexForType:(id)arg1 languageID:(id)arg2;
 + (id)buildRegexForType:(id)arg1 languageID:(id)arg2;
 + (id)regexSetForType:(id)arg1 languageID:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *storedEventVocabularyIgnoreDateKeyword; // @synthesize storedEventVocabularyIgnoreDateKeyword=_storedEventVocabularyIgnoreDateKeyword;
 @property(copy) NSString *storedEventVocabularyRejectionKeyword; // @synthesize storedEventVocabularyRejectionKeyword=_storedEventVocabularyRejectionKeyword;
 @property unsigned long long storedPolarity; // @synthesize storedPolarity=_storedPolarity;
 @property(copy) NSString *languageID; // @synthesize languageID=_languageID;
 @property(copy) NSArray *fragments; // @synthesize fragments=_fragments;
 @property(retain) RKText *responseKitSentence; // @synthesize responseKitSentence=_responseKitSentence;
-- (void).cxx_destruct;
 - (id)descriptionForFragmentAtIndex:(unsigned long long)arg1;
 - (id)descriptionForFragment:(id)arg1;
 @property(readonly, getter=isQuoteAttributionLine) _Bool quoteAttributionLine;

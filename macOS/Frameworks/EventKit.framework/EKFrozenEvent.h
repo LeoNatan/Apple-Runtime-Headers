@@ -50,6 +50,7 @@
 }
 
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly) long long cachedStatus; // @synthesize cachedStatus=_cachedStatus;
 @property(readonly) NSDateComponents *cachedDurationComponents; // @synthesize cachedDurationComponents=_cachedDurationComponents;
 @property(readonly) long long cachedAvailability; // @synthesize cachedAvailability=_cachedAvailability;
@@ -84,7 +85,6 @@
 @property(readonly, copy, nonatomic) id <EKProtocolStructuredLocation> ekStructuredStartLocation; // @synthesize ekStructuredStartLocation;
 @property(readonly, nonatomic) BOOL dontSendNotificationForChanges; // @synthesize dontSendNotificationForChanges;
 @property(readonly, nonatomic) int availabilityEnum; // @synthesize availabilityEnum;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long status;
 @property(readonly, copy, nonatomic) NSDate *proposedEndDateUnadjustedFromUTCForMe;
 @property(readonly, nonatomic) NSDate *proposedEndDate;

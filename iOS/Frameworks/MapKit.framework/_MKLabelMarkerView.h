@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_followsTerrain;
-@property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
 - (_Bool)updateCalloutViewIfNeededAnimated:(_Bool)arg1;
 - (void)_updateAnchorOffset;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

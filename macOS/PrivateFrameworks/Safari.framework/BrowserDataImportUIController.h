@@ -6,35 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class NSMenu, NSMenuItem;
+@class NSMenuItem;
 
 __attribute__((visibility("hidden")))
 @interface BrowserDataImportUIController : NSObject
 {
+    NSMenuItem *_importFromSeparatorMenuItem;
+    NSMenuItem *_bookmarksHTMLFileMenuItem;
+    BOOL _didGenerateBrowserMenuItems;
     NSMenuItem *_importBookmarksFromFileMenuItem;
-    NSMenuItem *_importBrowserDataMenuItem;
-    NSMenu *_submenu;
-    NSMenuItem *_importFromChromeMenuItem;
-    NSMenuItem *_importFromFirefoxMenuItem;
-    NSMenuItem *_importFromFileMenuItem;
+    NSMenuItem *_importFromMenuItem;
 }
 
-+ (id)sharedController;
-@property(nonatomic) __weak NSMenuItem *importFromFileMenuItem; // @synthesize importFromFileMenuItem=_importFromFileMenuItem;
-@property(nonatomic) __weak NSMenuItem *importFromFirefoxMenuItem; // @synthesize importFromFirefoxMenuItem=_importFromFirefoxMenuItem;
-@property(nonatomic) __weak NSMenuItem *importFromChromeMenuItem; // @synthesize importFromChromeMenuItem=_importFromChromeMenuItem;
-@property(retain, nonatomic) NSMenu *submenu; // @synthesize submenu=_submenu;
-@property(retain, nonatomic) NSMenuItem *importBrowserDataMenuItem; // @synthesize importBrowserDataMenuItem=_importBrowserDataMenuItem;
-@property(retain, nonatomic) NSMenuItem *importBookmarksFromFileMenuItem; // @synthesize importBookmarksFromFileMenuItem=_importBookmarksFromFileMenuItem;
 - (void).cxx_destruct;
-- (BOOL)validate_importFromFile:(id)arg1;
-- (void)importFromFile:(id)arg1;
+@property(readonly, nonatomic) NSMenuItem *importFromMenuItem; // @synthesize importFromMenuItem=_importFromMenuItem;
+@property(readonly, nonatomic) NSMenuItem *importBookmarksFromFileMenuItem; // @synthesize importBookmarksFromFileMenuItem=_importBookmarksFromFileMenuItem;
 - (BOOL)validate_importFromBrowser:(id)arg1;
 - (void)importFromBrowser:(id)arg1;
-- (void)_updateBrowserMenuItems;
+- (void)_refreshBrowserMenuItems;
 - (BOOL)_canCurrentlyImport;
 - (BOOL)_canImportFromAnyBrowser;
+- (void)_dataImportingDidUpdateNotification:(id)arg1;
 - (void)updateItemsInMenu:(id)arg1;
+- (id)initWithWithImportBookmarksFromFileMenuItem:(id)arg1 importFromMenuItem:(id)arg2;
 
 @end
 

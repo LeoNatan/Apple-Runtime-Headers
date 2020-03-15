@@ -21,6 +21,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL notifyEnabled; // @synthesize notifyEnabled=_notifyEnabled;
 @property(readonly, nonatomic) int notifyToken; // @synthesize notifyToken=_notifyToken;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notifyQueue; // @synthesize notifyQueue=_notifyQueue;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 @property(readonly, nonatomic) BOOL deviceFormatedForContentProtection; // @synthesize deviceFormatedForContentProtection=_deviceFormatedForContentProtection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
-- (void).cxx_destruct;
 - (void)deregisterStateChangeHandler:(id)arg1;
 - (id)registerStateChangeHandler:(CDUnknownBlockType)arg1;
 - (BOOL)isDataAvailableFor:(id)arg1;

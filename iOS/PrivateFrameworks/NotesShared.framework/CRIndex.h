@@ -19,8 +19,8 @@
 
 + (id)indexForReplica:(id)arg1 betweenIndex:(id)arg2 andIndex:(id)arg3;
 + (id)indexWithPath:(id)arg1;
-@property(retain, nonatomic) NSArray *indexPath; // @synthesize indexPath=_indexPath;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, copy) NSString *description;
 - (id)tombstone;
 - (void)realizeLocalChangesIn:(id)arg1;

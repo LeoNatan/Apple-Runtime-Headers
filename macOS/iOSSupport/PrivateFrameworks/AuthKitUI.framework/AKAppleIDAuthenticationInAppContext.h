@@ -8,26 +8,33 @@
 
 #import <AuthKitUI/AKAppleIDAuthenticationUIProvider-Protocol.h>
 
-@class NSString, UIViewController;
-@protocol AKAppleIDAuthenticationInAppContextAlertDelegate, AKAppleIDAuthenticationInAppContextDelegate, AKAppleIDAuthenticationInAppContextPasswordDelegate, CDPStateUIProvider;
+@class AKNativeAccountRecoveryController, NSString, UIViewController;
+@protocol AKAppleIDAuthenticationInAppContextAlertDelegate, AKAppleIDAuthenticationInAppContextDelegate, AKAppleIDAuthenticationInAppContextPasswordDelegate, AKInAppAuthenticationUIProvider, CDPStateUIProvider;
 
 @interface AKAppleIDAuthenticationInAppContext : AKAppleIDAuthenticationContext <AKAppleIDAuthenticationUIProvider>
 {
+    AKNativeAccountRecoveryController *_nativeRecoveryController;
     BOOL _forceInlinePresentation;
+    NSString *_cancelButtonString;
+    NSString *_privacyBundleIdentifier;
     UIViewController *_presentingViewController;
     id <AKAppleIDAuthenticationInAppContextDelegate> _delegate;
+    id <AKInAppAuthenticationUIProvider> _inAppAuthUIProvider;
     id <AKAppleIDAuthenticationInAppContextAlertDelegate> _alertDelegate;
     id <CDPStateUIProvider> _cdpUiProvider;
     id <AKAppleIDAuthenticationInAppContextPasswordDelegate> __passwordDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setPasswordDelegate:) __weak id <AKAppleIDAuthenticationInAppContextPasswordDelegate> _passwordDelegate; // @synthesize _passwordDelegate=__passwordDelegate;
 @property(retain, nonatomic, setter=_setCdpUiProvider:) id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextAlertDelegate> alertDelegate; // @synthesize alertDelegate=_alertDelegate;
+@property(retain, nonatomic) id <AKInAppAuthenticationUIProvider> inAppAuthUIProvider; // @synthesize inAppAuthUIProvider=_inAppAuthUIProvider;
 @property(nonatomic) __weak id <AKAppleIDAuthenticationInAppContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) BOOL forceInlinePresentation; // @synthesize forceInlinePresentation=_forceInlinePresentation;
-- (void).cxx_destruct;
+@property(copy) NSString *privacyBundleIdentifier; // @synthesize privacyBundleIdentifier=_privacyBundleIdentifier;
+@property(retain) NSString *cancelButtonString; // @synthesize cancelButtonString=_cancelButtonString;
 - (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)eraseAnisetteWithCompletion:(CDUnknownBlockType)arg1;

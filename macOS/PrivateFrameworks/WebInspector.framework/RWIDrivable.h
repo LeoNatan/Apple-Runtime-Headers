@@ -21,6 +21,7 @@
     id <RWIDriverSession> _pairedSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <RWIDriverSession> pairedSession; // @synthesize pairedSession=_pairedSession;
 @property(nonatomic) __weak id <RWIDrivableDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSString *version; // @synthesize version=_version;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) RWIApplication *owningApplication; // @synthesize owningApplication=_owningApplication;
 @property(readonly, copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, copy, nonatomic) NSNumber *targetIdentifier; // @synthesize targetIdentifier=_targetIdentifier;
-- (void).cxx_destruct;
 - (void)sendMessageToFrontend:(id)arg1;
 - (void)sendMessageToBackend:(id)arg1;
 @property(readonly, nonatomic, getter=isPaired) BOOL paired;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     NSString *_activityIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *activityQueue; // @synthesize activityQueue=_activityQueue;
 @property(copy, nonatomic) CDUnknownBlockType activityBlock; // @synthesize activityBlock=_activityBlock;
-- (void).cxx_destruct;
 
 @end
 

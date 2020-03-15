@@ -32,6 +32,7 @@
 }
 
 + (id)assetLoadResultWithStoreAssetPlaybackResponse:(id)arg1 assetLoadProperties:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType willBecomeActivePlayerItemHandler; // @synthesize willBecomeActivePlayerItemHandler=_willBecomeActivePlayerItemHandler;
 @property(nonatomic, getter=isiTunesStoreStream) BOOL iTunesStoreStream; // @synthesize iTunesStoreStream=_iTunesStoreStream;
 @property(retain, nonatomic) id suzeLeaseID; // @synthesize suzeLeaseID=_suzeLeaseID;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *assetPathExtension; // @synthesize assetPathExtension=_assetPathExtension;
 @property(nonatomic) BOOL allowsAssetInfoCaching; // @synthesize allowsAssetInfoCaching=_allowsAssetInfoCaching;
 @property(nonatomic) BOOL allowsAssetCaching; // @synthesize allowsAssetCaching=_allowsAssetCaching;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasValidAsset;
 
 @end

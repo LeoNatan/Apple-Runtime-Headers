@@ -29,6 +29,7 @@
     long long _lastIndexMatchedInReply;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL matchedEntireOriginalContiguously; // @synthesize matchedEntireOriginalContiguously=_matchedEntireOriginalContiguously;
 @property(nonatomic) BOOL searchInForwardDirection; // @synthesize searchInForwardDirection=_searchInForwardDirection;
 @property(nonatomic) long long lastIndexMatchedInReply; // @synthesize lastIndexMatchedInReply=_lastIndexMatchedInReply;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) long long replyLength; // @synthesize replyLength=_replyLength;
 @property(nonatomic) long long replyStartIndex; // @synthesize replyStartIndex=_replyStartIndex;
 @property(readonly, nonatomic) CDStruct_f9502b4c *replyBuffer; // @synthesize replyBuffer=_replyBuffer;
-- (void).cxx_destruct;
 - (BOOL)location:(long long)arg1 isInRangeArray:(id)arg2 startingIndex:(unsigned long long *)arg3;
 - (long long)contentTypeForIndex:(long long)arg1;
 - (void)addRangeWithStart:(long long)arg1 end:(long long)arg2 toArray:(id)arg3;

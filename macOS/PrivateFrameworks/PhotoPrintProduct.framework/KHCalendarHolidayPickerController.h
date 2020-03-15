@@ -25,6 +25,7 @@
     KHHolidayStore *_holidayStore;
 }
 
+- (void).cxx_destruct;
 @property(retain) KHHolidayStore *holidayStore; // @synthesize holidayStore=_holidayStore;
 @property __weak KHCalendarProjectLayoutsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) NSMutableArray *enabledCalendarUUIDs; // @synthesize enabledCalendarUUIDs=_enabledCalendarUUIDs;
@@ -35,7 +36,6 @@
 @property(retain) NSPopUpButton *holidaysMenuButton; // @synthesize holidaysMenuButton=_holidaysMenuButton;
 @property(retain) NSTextField *holidaysLabel; // @synthesize holidaysLabel=_holidaysLabel;
 @property(retain) NSButton *birthdaysOptionButton; // @synthesize birthdaysOptionButton=_birthdaysOptionButton;
-- (void).cxx_destruct;
 - (void)_warmupCalendarEvents;
 - (void)refreshCalendarLayouts;
 - (void)calendarTableItemAction:(id)arg1;

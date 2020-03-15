@@ -13,8 +13,8 @@
     PUICQuickboardListTrayView *_listTrayView;
 }
 
-@property(nonatomic) __weak PUICQuickboardListTrayView *listTrayView; // @synthesize listTrayView=_listTrayView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PUICQuickboardListTrayView *listTrayView; // @synthesize listTrayView=_listTrayView;
 - (void)layoutButtons;
 - (void)configureWithButtons:(id)arg1;
 - (void)configureSubviews;

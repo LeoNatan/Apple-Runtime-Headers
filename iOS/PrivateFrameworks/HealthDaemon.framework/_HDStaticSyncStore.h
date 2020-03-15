@@ -17,9 +17,9 @@
     NSUUID *_storeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 @property(readonly) long long syncStoreType;
 - (id)databaseIdentifier;
 - (id)syncStoreIdentifier;

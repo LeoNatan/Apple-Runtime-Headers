@@ -13,8 +13,8 @@
     WFContact *_value;
 }
 
-@property(retain, nonatomic) WFContact *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFContact *value; // @synthesize value=_value;
 - (id)accessibilityLabel;
 - (id)valueName;
 

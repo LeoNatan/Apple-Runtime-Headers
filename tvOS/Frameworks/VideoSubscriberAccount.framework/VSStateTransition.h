@@ -15,10 +15,10 @@
     VSOptional *_nextState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOptional *nextState; // @synthesize nextState=_nextState;
 @property(retain, nonatomic) VSOptional *triggeringEvent; // @synthesize triggeringEvent=_triggeringEvent;
 @property(retain, nonatomic) VSOptional *previousState; // @synthesize previousState=_previousState;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

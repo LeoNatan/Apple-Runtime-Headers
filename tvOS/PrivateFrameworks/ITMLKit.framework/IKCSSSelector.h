@@ -15,10 +15,10 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSString *stringValue;
 

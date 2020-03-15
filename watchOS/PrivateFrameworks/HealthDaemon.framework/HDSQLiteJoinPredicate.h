@@ -16,8 +16,8 @@
 }
 
 + (id)predicateWithJoinClauses:(id)arg1;
-@property(readonly, copy, nonatomic) NSSet *joinClauses; // @synthesize joinClauses=_joinClauses;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *joinClauses; // @synthesize joinClauses=_joinClauses;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 
 @end

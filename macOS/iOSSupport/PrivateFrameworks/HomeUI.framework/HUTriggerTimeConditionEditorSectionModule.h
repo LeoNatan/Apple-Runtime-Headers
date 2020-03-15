@@ -17,12 +17,12 @@
     HFTransformItem *_customOptionItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFTransformItem *customOptionItem; // @synthesize customOptionItem=_customOptionItem;
 @property(retain, nonatomic) HFTransformItem *specificTimesOptionItem; // @synthesize specificTimesOptionItem=_specificTimesOptionItem;
 @property(retain, nonatomic) HFTransformItem *onlyNightOptionItem; // @synthesize onlyNightOptionItem=_onlyNightOptionItem;
 @property(retain, nonatomic) HFTransformItem *onlyDayOptionItem; // @synthesize onlyDayOptionItem=_onlyDayOptionItem;
 @property(retain, nonatomic) HFItem *anyTimeOptionItem; // @synthesize anyTimeOptionItem=_anyTimeOptionItem;
-- (void).cxx_destruct;
 - (id)_createConditionItemForType:(unsigned long long)arg1;
 - (id)_conditionItemForType:(unsigned long long)arg1;
 - (BOOL)doesOptionItemRequireInitialUserConfiguration:(id)arg1;

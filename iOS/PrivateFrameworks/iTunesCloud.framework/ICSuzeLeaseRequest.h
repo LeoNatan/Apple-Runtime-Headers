@@ -20,13 +20,13 @@
     long long _requestType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long requestType; // @synthesize requestType=_requestType;
 @property(readonly, copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly, copy, nonatomic) NSString *leaseID; // @synthesize leaseID=_leaseID;
 @property(readonly, copy, nonatomic) NSData *clientData; // @synthesize clientData=_clientData;
-- (void).cxx_destruct;
 - (void)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestContext:(id)arg1 requestType:(long long)arg2 leaseID:(id)arg3 mediaType:(long long)arg4 clientData:(id)arg5;

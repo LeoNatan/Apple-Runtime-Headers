@@ -30,6 +30,7 @@
     HDDaemon *_daemon;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 @property(readonly, copy, nonatomic) NSMutableDictionary *completionsByActivityName; // @synthesize completionsByActivityName=_completionsByActivityName;
 @property(retain, nonatomic) HDPeriodicActivity *catalogUpdatePeriodicActivity; // @synthesize catalogUpdatePeriodicActivity=_catalogUpdatePeriodicActivity;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) MAAsset *latestOntologyAsset; // @synthesize latestOntologyAsset=_latestOntologyAsset;
 @property(retain, nonatomic) MAAsset *currentOntologyAsset; // @synthesize currentOntologyAsset=_currentOntologyAsset;
 @property(copy, nonatomic) NSURL *assetFileURL; // @synthesize assetFileURL=_assetFileURL;
-- (void).cxx_destruct;
 - (_Bool)clearUserDefaultOverrideAssetFileURLWithError:(id *)arg1;
 - (id)setUserDefaultOverrideAssetFileURL:(id)arg1 error:(id *)arg2;
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;

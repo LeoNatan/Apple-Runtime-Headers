@@ -26,10 +26,10 @@
     SBMainWorkspaceTransaction *_currentTransaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBMainWorkspaceTransaction *currentTransaction; // @synthesize currentTransaction=_currentTransaction;
 @property(readonly, nonatomic) long long dismissalType; // @synthesize dismissalType=_dismissalType;
 @property(retain, nonatomic) SBAssistantController *assistantController; // @synthesize assistantController=_assistantController;
-- (void).cxx_destruct;
 - (void)_cleanupHierarchyForDismissal:(_Bool)arg1;
 - (id)_viewForGesture;
 - (void)_setFluidDismissalState:(id)arg1;

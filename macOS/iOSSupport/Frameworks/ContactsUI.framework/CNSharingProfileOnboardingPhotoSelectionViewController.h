@@ -26,6 +26,7 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNMutableContact *photoProviderContact; // @synthesize photoProviderContact=_photoProviderContact;
 @property(retain, nonatomic) CNPhotoPickerViewController *photoPickerViewController; // @synthesize photoPickerViewController=_photoPickerViewController;
 @property(retain, nonatomic) CNSharingProfilePhotoPickerViewController *sharingPhotoPickerViewController; // @synthesize sharingPhotoPickerViewController=_sharingPhotoPickerViewController;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) id <CNSharingProfileOnboardingPhotoSelectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)photoPicker:(id)arg1 didUpdatePhotoForContact:(id)arg2 withContactImage:(id)arg3;
 - (void)photoPickerDidCancel:(id)arg1;
 - (void)sharingPhotoPickerDidSelectAddItem:(id)arg1;

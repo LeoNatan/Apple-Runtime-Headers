@@ -40,6 +40,7 @@
 
 + (Class)inputClassesType;
 + (Class)workflowTypesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *accessResourcePerWorkflowStateData; // @synthesize accessResourcePerWorkflowStateData=_accessResourcePerWorkflowStateData;
 @property(retain, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property(retain, nonatomic) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
@@ -54,7 +55,6 @@
 @property(nonatomic) unsigned int iconGlyph; // @synthesize iconGlyph=_iconGlyph;
 @property(nonatomic) unsigned int iconColor; // @synthesize iconColor=_iconColor;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

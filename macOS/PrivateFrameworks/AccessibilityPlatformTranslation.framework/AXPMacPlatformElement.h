@@ -26,11 +26,11 @@
 + (id)applicationElement;
 + (void)initialize;
 + (id)platformElementWithTranslationObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedCustomRotors; // @synthesize cachedCustomRotors=_cachedCustomRotors;
 @property(retain, nonatomic) NSArray *cachedCustomActions; // @synthesize cachedCustomActions=_cachedCustomActions;
 @property(copy, nonatomic) CDUnknownBlockType nsPostEventTestingCallback; // @synthesize nsPostEventTestingCallback=_nsPostEventTestingCallback;
 @property(retain, nonatomic) AXPTranslationObject *translation; // @synthesize translation;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (BOOL)accessibilityShouldUseUniqueId;

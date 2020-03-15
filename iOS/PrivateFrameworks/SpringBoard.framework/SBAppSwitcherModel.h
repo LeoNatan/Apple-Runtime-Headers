@@ -20,8 +20,8 @@
 }
 
 + (id)appSwitcherHeaderIconImageDescriptorName;
-@property(nonatomic) __weak id <SBAppSwitcherModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBAppSwitcherModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_recentAppLayoutsController;
 - (void)recentAppLayouts:(id)arg1 didRemoveAppLayoutForFallingOffList:(id)arg2;
 - (id)recentDisplayItemsForBundleIdentifier:(id)arg1 includingHiddenAppLayouts:(_Bool)arg2;

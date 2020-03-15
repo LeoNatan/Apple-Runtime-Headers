@@ -22,12 +22,12 @@
 
 + (id)encodedDataWithRootObject:(id)arg1 userInfo:(id)arg2 error:(id *)arg3;
 + (id)encodedDataWithRootObject:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSMutableArray *wrapperStack; // @synthesize wrapperStack=_wrapperStack;
 @property(readonly, nonatomic) NSMapTable *objectLookupTable; // @synthesize objectLookupTable=_objectLookupTable;
 @property(readonly, nonatomic) NSMutableArray *objects; // @synthesize objects=_objects;
 @property(nonatomic) _Bool hasFinished; // @synthesize hasFinished=_hasFinished;
-- (void).cxx_destruct;
 - (id)_convertObject:(id)arg1;
 - (id)_convertNumber:(id)arg1;
 - (void)_encodeNumber:(id)arg1 forKey:(id)arg2;

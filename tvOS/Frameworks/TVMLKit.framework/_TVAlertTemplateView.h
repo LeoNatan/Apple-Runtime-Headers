@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *viewsBelow; // @synthesize viewsBelow=_viewsBelow;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSArray *viewsAbove; // @synthesize viewsAbove=_viewsAbove;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setBgImage:(id)arg1;
 

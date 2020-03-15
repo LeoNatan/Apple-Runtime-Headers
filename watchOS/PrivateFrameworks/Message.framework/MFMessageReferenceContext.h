@@ -30,6 +30,7 @@
     double _dateSentInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double dateSentInterval; // @synthesize dateSentInterval=_dateSentInterval;
 @property(nonatomic) unsigned long long *conversationFlagsRef; // @synthesize conversationFlagsRef=_conversationFlagsRef;
 @property(nonatomic) long long conversationIDHash; // @synthesize conversationIDHash=_conversationIDHash;
@@ -40,7 +41,6 @@
 @property(nonatomic) long long messageIDHash; // @synthesize messageIDHash=_messageIDHash;
 @property(nonatomic) long long libraryID; // @synthesize libraryID=_libraryID;
 @property(retain, nonatomic) MFMailMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEmailSet *participants;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(copy, nonatomic) NSString *bcc; // @synthesize bcc=_bcc;

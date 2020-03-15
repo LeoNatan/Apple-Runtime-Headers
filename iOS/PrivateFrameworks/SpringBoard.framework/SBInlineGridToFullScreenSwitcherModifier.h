@@ -16,9 +16,9 @@
     _Bool _dimInactiveCards;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBSwitcherModifier *multitaskingModifier; // @synthesize multitaskingModifier=_multitaskingModifier;
 @property(readonly, nonatomic) SBAppLayout *fullScreenAppLayout; // @synthesize fullScreenAppLayout=_fullScreenAppLayout;
-- (void).cxx_destruct;
 - (double)_unselectedCardScale;
 - (_Bool)_isIndexFullScreenAppLayout:(unsigned long long)arg1;
 - (id)appLayoutToScrollToBeforeTransitioning;

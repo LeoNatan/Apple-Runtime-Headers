@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_externalViewController;
 }
 
-@property(readonly, nonatomic) UIViewController *externalViewController; // @synthesize externalViewController=_externalViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIViewController *externalViewController; // @synthesize externalViewController=_externalViewController;
 - (double)_preferredContentHeight;
 - (id)preferredFocusEnvironments;
 - (id)title;

@@ -34,14 +34,14 @@ __attribute__((visibility("hidden")))
     function_2cc04e6b _clickHandler;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
 @property(retain) NSString *personNameStr; // @synthesize personNameStr=_personNameStr;
 @property(readonly, retain) NSString *statusStr; // @synthesize statusStr=_statusStr;
 @property(nonatomic) function_2cc04e6b clickHandler; // @synthesize clickHandler=_clickHandler;
 @property(nonatomic) function_0b4d038e ignoreClickHandler; // @synthesize ignoreClickHandler=_ignoreClickHandler;
 @property(readonly, retain) FI_TTextField *statusTextField; // @synthesize statusTextField=_statusTextField;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;

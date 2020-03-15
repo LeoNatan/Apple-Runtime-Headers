@@ -22,13 +22,13 @@
 
 + (id)pathWithKeyState:(unsigned long long)arg1 next:(id)arg2 inputs:(id)arg3 output:(id)arg4;
 + (id)emptyPath;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *producedString; // @synthesize producedString=_producedString;
 @property(readonly) unsigned long long length; // @synthesize length=_length;
 @property(readonly, copy) NSString *output; // @synthesize output=_output;
 @property(readonly, copy) NSSet *inputs; // @synthesize inputs=_inputs;
 @property(readonly, copy) XCKeyMappingPath *next; // @synthesize next=_next;
 @property(readonly) unsigned long long keyState; // @synthesize keyState=_keyState;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

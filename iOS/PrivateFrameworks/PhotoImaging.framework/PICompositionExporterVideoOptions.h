@@ -13,10 +13,10 @@
     CDUnknownBlockType _metadataProcessor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool bypassOutputSettingsIfNoComposition; // @synthesize bypassOutputSettingsIfNoComposition=_bypassOutputSettingsIfNoComposition;
 @property(nonatomic) _Bool increaseBitRateIfNecessary; // @synthesize increaseBitRateIfNecessary=_increaseBitRateIfNecessary;
 @property(copy) CDUnknownBlockType metadataProcessor; // @synthesize metadataProcessor=_metadataProcessor;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,10 +20,10 @@
 
 + (void)deletePreviewItemHardLinkURLs;
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMergeableDataDirty) BOOL mergeableDataDirty; // @synthesize mergeableDataDirty=_mergeableDataDirty;
 @property(readonly, nonatomic) __weak ICAttachment *attachment; // @synthesize attachment=_attachment;
 @property BOOL previewGenerationOperationCancelled; // @synthesize previewGenerationOperationCancelled=_previewGenerationOperationCancelled;
-- (void).cxx_destruct;
 - (id)mergeableDataForCopying;
 - (id)dataForTypeIdentifier:(id)arg1;
 - (id)fileURLForTypeIdentifier:(id)arg1;

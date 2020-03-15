@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSURL *_installURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *installURL; // @synthesize installURL=_installURL;
 @property(retain, nonatomic) NSURL *iconURL; // @synthesize iconURL=_iconURL;
 @property(retain, nonatomic) PSUIAppDescription *partialAppDescription; // @synthesize partialAppDescription=_partialAppDescription;
-- (void).cxx_destruct;
 
 @end
 

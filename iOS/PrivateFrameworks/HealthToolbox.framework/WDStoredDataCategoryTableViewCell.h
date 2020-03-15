@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HKDisplayType *_displayType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain) HKDisplayCategory *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 
 @end
 

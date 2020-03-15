@@ -22,11 +22,11 @@
 + (id)competitionListWithCodableCompetitionList:(id)arg1;
 + (id)competitionListWithRecord:(id)arg1;
 + (id)competitionListFromCodableDatabaseCompetitionList:(id)arg1 codableCompetitions:(id)arg2 withType:(long long)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKRecord *systemFieldsOnlyRecord; // @synthesize systemFieldsOnlyRecord=_systemFieldsOnlyRecord;
 @property(retain, nonatomic) NSUUID *friendUUID; // @synthesize friendUUID=_friendUUID;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSArray *competitions; // @synthesize competitions=_competitions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) ASCompetition *currentCompetition;
 @property(readonly, copy) NSString *description;

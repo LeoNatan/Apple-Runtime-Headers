@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
 
 + (id)decodeFromCoder:(id)arg1 prefix:(id)arg2;
 + (id)standardLayoutData;
+- (void).cxx_destruct;
 @property(nonatomic) double itemSpacing; // @synthesize itemSpacing=_itemSpacing;
 @property(nonatomic) double itemWidth; // @synthesize itemWidth=_itemWidth;
 @property(nonatomic) long long itemPositioning; // @synthesize itemPositioning=_itemPositioning;
 @property(retain, nonatomic) UIImage *selectionIndicatorImage; // @synthesize selectionIndicatorImage=_selectionIndicatorImage;
 @property(copy, nonatomic) UIColor *selectionIndicatorTintColor; // @synthesize selectionIndicatorTintColor=_selectionIndicatorTintColor;
-- (void).cxx_destruct;
 - (long long)positioningForTraitCollection:(id)arg1;
 - (id)replicate;
 - (BOOL)checkEqualTo:(id)arg1;

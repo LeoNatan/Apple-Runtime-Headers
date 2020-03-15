@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)sizeWithLayout:(id)arg1 treatment:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool textColorFollowsTintColor; // @synthesize textColorFollowsTintColor=_textColorFollowsTintColor;
 @property(nonatomic) long long badgePlacement; // @synthesize badgePlacement=_badgePlacement;
 @property(nonatomic) long long firstLineTopInset; // @synthesize firstLineTopInset=_firstLineTopInset;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <SKUILinkHandler> linkDelegate; // @synthesize linkDelegate=_linkDelegate;
 @property(retain, nonatomic) SKUIAttributedStringLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) _Bool containsLinks; // @synthesize containsLinks=_containsLinks;
-- (void).cxx_destruct;
 - (void)_setTouchInside:(_Bool)arg1;
 - (void)_setTrackingTouch:(_Bool)arg1;
 - (void)_reloadTopInset;

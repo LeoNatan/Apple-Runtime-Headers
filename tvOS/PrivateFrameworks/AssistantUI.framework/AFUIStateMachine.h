@@ -16,10 +16,10 @@
     NSMutableDictionary *_endStatesByEventByStartState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_endStatesByEventByStartState) NSMutableDictionary *endStatesByEventByStartState; // @synthesize endStatesByEventByStartState=_endStatesByEventByStartState;
 @property(nonatomic, setter=_setState:) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <AFUIStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)performTransitionForEvent:(long long)arg1;
 - (id)_endStateNumberFromDictionary:(id)arg1 forEvent:(long long)arg2;
 - (void)addTransitionFromState:(long long)arg1 toState:(long long)arg2 forEvent:(long long)arg3;

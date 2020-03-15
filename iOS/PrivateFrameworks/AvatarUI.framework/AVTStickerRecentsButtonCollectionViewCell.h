@@ -14,8 +14,8 @@
 }
 
 + (id)identifier;
-@property(retain, nonatomic) CAShapeLayer *circularBackgroundLayer; // @synthesize circularBackgroundLayer=_circularBackgroundLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAShapeLayer *circularBackgroundLayer; // @synthesize circularBackgroundLayer=_circularBackgroundLayer;
 - (void)updateWithDefaultImage;
 - (void)updateWithImage:(id)arg1;
 - (struct CGRect)circleLayerRect;

@@ -13,8 +13,8 @@
     NSArray *_allowingServices;
 }
 
-@property(retain, nonatomic) NSArray *allowingServices; // @synthesize allowingServices=_allowingServices;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *allowingServices; // @synthesize allowingServices=_allowingServices;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

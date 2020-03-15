@@ -21,12 +21,12 @@
     BOOL _throttleBestEffortNetworking;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *tags; // @synthesize tags=_tags;
 @property(readonly, nonatomic) NSSet *preventIdleSleepIdentifiers; // @synthesize preventIdleSleepIdentifiers=_preventIdleSleepIdentifiers;
 @property(readonly, nonatomic) BOOL throttleBestEffortNetworking; // @synthesize throttleBestEffortNetworking=_throttleBestEffortNetworking;
 @property(readonly, nonatomic) BOOL preventIdleSleep; // @synthesize preventIdleSleep=_preventIdleSleep;
 @property(readonly, nonatomic) BOOL preventLaunch; // @synthesize preventLaunch=_preventLaunch;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

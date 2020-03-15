@@ -23,12 +23,12 @@
 
 + (id)sharedContext;
 + (id)imageNamed:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL canLoadShortcutsDatabaseEntitlementChecked; // @synthesize canLoadShortcutsDatabaseEntitlementChecked=_canLoadShortcutsDatabaseEntitlementChecked;
 @property(nonatomic) BOOL inBackground; // @synthesize inBackground=_inBackground;
 @property(nonatomic) BOOL inactive; // @synthesize inactive=_inactive;
 @property(readonly, nonatomic) NSLock *observersLock; // @synthesize observersLock=_observersLock;
 @property(retain, nonatomic) NSMutableDictionary *applicationStateObserversByEvent; // @synthesize applicationStateObserversByEvent=_applicationStateObserversByEvent;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL canLoadShortcutsDatabase; // @synthesize canLoadShortcutsDatabase=_canLoadShortcutsDatabase;
 @property(nonatomic, getter=isIdleTimerDisabled) BOOL idleTimerDisabled;
 @property(readonly, nonatomic) BOOL shouldReverseLayoutDirection;

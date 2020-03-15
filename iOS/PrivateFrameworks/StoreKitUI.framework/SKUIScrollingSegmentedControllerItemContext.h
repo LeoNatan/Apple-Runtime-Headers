@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <SKUIScrollingSegmentedControllerItemContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_applyNewContentInset:(struct UIEdgeInsets)arg1 withOldContentInset:(struct UIEdgeInsets)arg2 toContentScrollView:(id)arg3;
 - (void)updateAppliedContentInsetsAdjustment;
 - (void)applyNewContentInset:(struct UIEdgeInsets)arg1;

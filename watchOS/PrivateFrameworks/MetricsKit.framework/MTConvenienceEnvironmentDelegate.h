@@ -13,10 +13,10 @@
     CDUnknownBlockType __hostAppBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType _hostAppBlock; // @synthesize _hostAppBlock=__hostAppBlock;
 @property(copy, nonatomic) CDUnknownBlockType _resourceRevNumBlock; // @synthesize _resourceRevNumBlock=__resourceRevNumBlock;
 @property(copy, nonatomic) CDUnknownBlockType _pageURLBlock; // @synthesize _pageURLBlock=__pageURLBlock;
-- (void).cxx_destruct;
 - (id)resourceRevNum;
 - (id)pageUrl;
 - (id)hostApp;

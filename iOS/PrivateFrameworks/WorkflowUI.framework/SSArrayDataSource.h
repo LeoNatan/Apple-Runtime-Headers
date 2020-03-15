@@ -15,10 +15,10 @@
     NSMutableArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)unregisterKVO;
 - (void)registerKVO;

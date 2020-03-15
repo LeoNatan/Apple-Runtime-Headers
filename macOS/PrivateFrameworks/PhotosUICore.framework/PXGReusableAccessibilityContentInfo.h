@@ -37,6 +37,7 @@
 + (id)_imageNameInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
 + (id)_titleSubtitleInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
 + (id)_textInLayout:(id)arg1 atSpriteIndex:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property(nonatomic) BOOL alternateUIVisible; // @synthesize alternateUIVisible=_alternateUIVisible;
 @property(nonatomic) BOOL isPerformingChanges; // @synthesize isPerformingChanges=_isPerformingChanges;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) long long contentKind; // @synthesize contentKind=_contentKind;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)_siblingInDirection:(unsigned long long)arg1;
 - (id)siblingBelow;
 - (id)siblingAbove;

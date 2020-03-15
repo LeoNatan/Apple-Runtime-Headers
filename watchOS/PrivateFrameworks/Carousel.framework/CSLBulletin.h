@@ -30,10 +30,10 @@
 
 + (id)bulletinWithBulletin:(id)arg1;
 + (_Bool)overrideClearable;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool soundEnabled; // @synthesize soundEnabled=_soundEnabled;
 @property(retain, nonatomic) CSLBulletinAttachment *attachment; // @synthesize attachment=_attachment;
 @property(readonly, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *batchSentinelID;
 @property(readonly, nonatomic) NSString *sentinelID;
 @property(readonly, nonatomic) NSString *overriddenBundleID;

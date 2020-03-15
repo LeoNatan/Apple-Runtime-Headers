@@ -55,9 +55,9 @@
 + (BOOL)_integrityCheckDatabase:(struct sqlite3 *)arg1;
 + (void)_dropDatabase:(struct sqlite3 *)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (void)dropDatabaseAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)_inqPerformBatch:(CDUnknownBlockType)arg1;
 - (void)_inqPrepareAndExecuteStatement:(const char *)arg1;
 - (void)_inqExecutePreparedStatement:(struct sqlite3_stmt *)arg1 withStatementBlock:(CDUnknownBlockType)arg2;
@@ -149,6 +149,7 @@
 - (void)_inqSync:(CDUnknownBlockType)arg1;
 - (void)_inqAsync:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (void)_finalizeEverything;
 - (id)initWithPath:(id)arg1 options:(long long)arg2 searchMetadata:(id)arg3;
 - (long long)lastInsertedRowID;
 - (void)unbindMatchingIds;

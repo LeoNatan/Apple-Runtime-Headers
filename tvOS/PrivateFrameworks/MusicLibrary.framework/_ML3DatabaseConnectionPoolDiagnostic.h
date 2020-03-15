@@ -18,11 +18,11 @@
     NSArray *_writerBusyConnections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *writerBusyConnections; // @synthesize writerBusyConnections=_writerBusyConnections;
 @property(readonly, nonatomic) NSArray *writerAvailableConnections; // @synthesize writerAvailableConnections=_writerAvailableConnections;
 @property(readonly, nonatomic) NSArray *readerBusyConnections; // @synthesize readerBusyConnections=_readerBusyConnections;
 @property(readonly, nonatomic) NSArray *readerAvailableConnections; // @synthesize readerAvailableConnections=_readerAvailableConnections;
-- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone *)arg1 usingConcreteClass:(Class)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

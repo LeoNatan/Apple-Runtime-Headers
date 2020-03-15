@@ -17,12 +17,12 @@
     NSString *_badge;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *badge; // @synthesize badge=_badge;
 @property(retain, nonatomic) TVLImageElement *focusedImage; // @synthesize focusedImage=_focusedImage;
 @property(retain, nonatomic) TVLImageElement *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

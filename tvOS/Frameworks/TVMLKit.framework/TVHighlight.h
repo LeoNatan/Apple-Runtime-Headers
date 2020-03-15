@@ -17,12 +17,12 @@
     TVTimeRange *_dateRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVTimeRange *dateRange; // @synthesize dateRange=_dateRange;
 @property(retain, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(retain, nonatomic) TVTimeRange *timeRange; // @synthesize timeRange=_timeRange;
 @property(retain, nonatomic) NSString *highlightDescription; // @synthesize highlightDescription=_highlightDescription;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 
 @end
 

@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
     UIButton *_writeAReviewButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIControl *writeAReviewButton; // @synthesize writeAReviewButton=_writeAReviewButton;
 @property(readonly, nonatomic) UIControl *appSupportButton; // @synthesize appSupportButton=_appSupportButton;
 @property(copy, nonatomic) NSArray *sortTitles; // @synthesize sortTitles=_sortTitles;
 @property(nonatomic) long long selectedSortIndex; // @synthesize selectedSortIndex=_selectedSortIndex;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (void)_reloadSortButton;
 - (void)_destroySortPopoverController;
 - (void)_sortButtonAction:(id)arg1;

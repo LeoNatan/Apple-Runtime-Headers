@@ -21,6 +21,7 @@
     TVLXMLElement *_xml;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVLXMLElement *xml; // @synthesize xml=_xml;
 @property(nonatomic) _Bool optimizeDownloadForHighLatency; // @synthesize optimizeDownloadForHighLatency=_optimizeDownloadForHighLatency;
 @property(copy, nonatomic) NSString *rating; // @synthesize rating=_rating;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *artist; // @synthesize artist=_artist;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

@@ -12,25 +12,29 @@
 {
     NSArray *_modules;
     NSMutableDictionary *_moduleStats;
-    RTVisit *_lastVisit;
     unsigned long long _iteration;
     RTVisitHyperParameter *_hyperParameter;
     _Bool _bootStrappingDone;
     NSString *_name;
+    unsigned long long _type;
+    RTVisit *_lastVisit;
     NSDate *_lastProcessedLocationDate;
 }
 
++ (id)typeToString:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastProcessedLocationDate; // @synthesize lastProcessedLocationDate=_lastProcessedLocationDate;
 @property(nonatomic) _Bool bootStrappingDone; // @synthesize bootStrappingDone=_bootStrappingDone;
+@property(readonly, nonatomic) RTVisit *lastVisit; // @synthesize lastVisit=_lastVisit;
+@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)filterVisit:(id)arg1;
 - (id)processVisitCluster:(id)arg1;
 - (id)processLocations:(id)arg1;
 - (id)filterLocations:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)initWithModules:(id)arg1 name:(id)arg2 lastVisit:(id)arg3 hyperParameter:(id)arg4;
+- (id)initWithModules:(id)arg1 name:(id)arg2 type:(unsigned long long)arg3 lastVisit:(id)arg4 hyperParameter:(id)arg5;
 - (id)init;
 
 @end

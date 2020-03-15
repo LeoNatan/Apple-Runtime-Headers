@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _edge;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long edge; // @synthesize edge=_edge;
 @property(nonatomic) _Bool shouldNotifyOfPaneSizeChanges; // @synthesize shouldNotifyOfPaneSizeChanges=_shouldNotifyOfPaneSizeChanges;
 @property(retain, nonatomic) NSLayoutConstraint *paneHorizontalPositionConstraint; // @synthesize paneHorizontalPositionConstraint=_paneHorizontalPositionConstraint;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) ISPaneFrameView *paneView; // @synthesize paneView=_paneView;
 @property(retain, nonatomic) UIViewController *paneViewController; // @synthesize paneViewController=_paneViewController;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithViewController:(id)arg1 edge:(unsigned long long)arg2;
 

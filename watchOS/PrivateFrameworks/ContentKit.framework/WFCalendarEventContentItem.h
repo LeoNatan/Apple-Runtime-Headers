@@ -12,6 +12,7 @@
 {
 }
 
++ (id)defaultSourceForRepresentation:(id)arg1;
 + (id)pluralFilterDescription;
 + (id)filterDescription;
 + (id)countDescription;

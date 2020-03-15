@@ -16,11 +16,11 @@
     double _neighborScore;
 }
 
+- (void).cxx_destruct;
 @property _Bool isBirthday; // @synthesize isBirthday=_isBirthday;
 @property double neighborScore; // @synthesize neighborScore=_neighborScore;
 @property double meanContentScore; // @synthesize meanContentScore=_meanContentScore;
 @property(retain) NSSet *peopleNodes; // @synthesize peopleNodes=_peopleNodes;
-- (void).cxx_destruct;
 - (id)description;
 - (void)computeRemainingScoresWithManager:(id)arg1 controller:(id)arg2 previousPotentialMemory:(id)arg3;
 - (id)initWithCategory:(unsigned long long)arg1 subcategory:(unsigned long long)arg2 momentNodes:(id)arg3 sourceType:(long long)arg4;

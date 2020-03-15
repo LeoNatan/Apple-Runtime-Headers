@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     NSNumberFormatter *_formatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *formatter; // @synthesize formatter=_formatter;
 @property(nonatomic) _Bool valueChanged; // @synthesize valueChanged=_valueChanged;
 @property(retain, nonatomic) NSMapTable *stateToContentMap; // @synthesize stateToContentMap=_stateToContentMap;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double identityValue; // @synthesize identityValue=_identityValue;
 @property(nonatomic) double defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)_updateSubviewValues;
 - (void)_updateFormatter;
 - (void)_updateSubviewColors;

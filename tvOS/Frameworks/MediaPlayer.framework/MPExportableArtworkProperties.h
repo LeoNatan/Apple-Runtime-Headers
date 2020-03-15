@@ -16,11 +16,11 @@
     long long _mediaLibraryArtworkType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long mediaLibraryArtworkType; // @synthesize mediaLibraryArtworkType=_mediaLibraryArtworkType;
 @property(nonatomic) unsigned long long mediaType; // @synthesize mediaType=_mediaType;
 @property(copy, nonatomic) NSArray *artworkTemplateItems; // @synthesize artworkTemplateItems=_artworkTemplateItems;
 @property(copy, nonatomic) NSString *resolvedURLString; // @synthesize resolvedURLString=_resolvedURLString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) ICStoreArtworkInfo *artworkInfo;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (id)description;

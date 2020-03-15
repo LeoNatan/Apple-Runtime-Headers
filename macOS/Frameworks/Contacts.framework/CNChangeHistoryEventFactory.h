@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface CNChangeHistoryEventFactory : NSObject
 {
 }
@@ -20,9 +19,11 @@ __attribute__((visibility("hidden")))
 - (id)addSubgroupToGroupEventWithSubgroup:(id)arg1 group:(id)arg2;
 - (id)removeMemberFromGroupEventWithMember:(id)arg1 group:(id)arg2;
 - (id)addMemberToGroupEventWithMember:(id)arg1 group:(id)arg2;
+- (id)deleteGroupEventWithGroupIdentifier:(id)arg1 externalURI:(id)arg2 externalModificationTag:(id)arg3;
 - (id)deleteGroupEventWithGroupIdentifier:(id)arg1;
 - (id)updateGroupEventWithGroup:(id)arg1;
 - (id)addGroupEventWithGroup:(id)arg1 containerIdentifier:(id)arg2;
+- (id)deleteContactEventWithContactIdentifier:(id)arg1 externalURI:(id)arg2 externalModificationTag:(id)arg3;
 - (id)deleteContactEventWithContactIdentifier:(id)arg1;
 - (id)updateContactEventWithContact:(id)arg1;
 - (id)addContactEventWithContact:(id)arg1 containerIdentifier:(id)arg2;

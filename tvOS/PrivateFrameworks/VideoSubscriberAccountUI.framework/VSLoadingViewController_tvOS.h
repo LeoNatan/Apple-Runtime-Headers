@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_menuRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
 @property(nonatomic) __weak id <VSLoadingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_menuButtonPressed:(id)arg1;
 - (void)viewDidLoad;
 

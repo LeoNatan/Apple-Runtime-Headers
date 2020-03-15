@@ -16,10 +16,10 @@
 }
 
 + (id)bluetoothDeviceForIdentifier:(long long)arg1 bluetoothDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SiriBluetoothContext *context; // @synthesize context=_context;
 @property(nonatomic) double longPressInterval; // @synthesize longPressInterval=_longPressInterval;
 @property(nonatomic) long long buttonIdentifier; // @synthesize buttonIdentifier=_buttonIdentifier;
-- (void).cxx_destruct;
 - (void)deactivate;
 - (void)activate;
 

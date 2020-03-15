@@ -18,9 +18,9 @@
     HUTriggerConditionDetailEditingContext *_detailEditingContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUTriggerConditionDetailEditingContext *detailEditingContext; // @synthesize detailEditingContext=_detailEditingContext;
 @property(readonly, nonatomic) __weak id <HUTriggerConditionEditorItemModuleControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_presentDetailEditorForConditionOptionItem:(id)arg1;
 - (void)_dismissDetailEditor:(id)arg1;
 - (_Bool)_canEditConditionOptionItem:(id)arg1;

@@ -32,6 +32,7 @@
     UIVisualEffectView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSDiffableDataSourceSnapshot *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSArray *favoritesProxies; // @synthesize favoritesProxies=_favoritesProxies;
 @property(copy, nonatomic) NSArray *activities; // @synthesize activities=_activities;
 @property(nonatomic) __weak id <_UIActivityUserDefaultsViewControllerDelegate> userDefaultsDelegate; // @synthesize userDefaultsDelegate=_userDefaultsDelegate;
-- (void).cxx_destruct;
 - (long long)preferredActivityCategory;
 - (void)toggleActivityHiddenForRowAtIndexPath:(id)arg1;
 - (void)toggleActivityHiddenForControl:(id)arg1;

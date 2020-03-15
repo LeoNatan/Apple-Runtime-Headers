@@ -17,11 +17,11 @@
 }
 
 + (id)operationWithOwner:(id)arg1 text:(id)arg2 taskID:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sendingAddress; // @synthesize sendingAddress=_sendingAddress;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) NSNumber *taskID; // @synthesize taskID=_taskID;
 @property(readonly, nonatomic) CNAutocompleteSearchManager *owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long type;
 
 @end

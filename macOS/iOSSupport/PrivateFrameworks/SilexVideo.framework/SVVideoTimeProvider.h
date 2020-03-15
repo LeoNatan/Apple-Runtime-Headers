@@ -17,9 +17,9 @@
     id <SVTimeConverting> _timeConverter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVTimeConverting> timeConverter; // @synthesize timeConverter=_timeConverter;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double time;
 - (id)initWithPlayer:(id)arg1 timeConverter:(id)arg2;
 

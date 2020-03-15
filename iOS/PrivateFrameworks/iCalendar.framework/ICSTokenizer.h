@@ -21,9 +21,9 @@
     int _logCount;
 }
 
+- (void).cxx_destruct;
 @property int logCount; // @synthesize logCount=_logCount;
 @property _Bool printedICS; // @synthesize printedICS=_printedICS;
-- (void).cxx_destruct;
 - (int)tokenType;
 - (char *)currentToken;
 - (char *)nextToken;

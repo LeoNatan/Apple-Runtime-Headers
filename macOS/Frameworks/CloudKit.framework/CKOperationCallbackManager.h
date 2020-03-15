@@ -19,6 +19,7 @@
     NSMapTable *_operationsByID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMapTable *operationsByID; // @synthesize operationsByID=_operationsByID;
 @property(retain) NSMutableDictionary *discretionarySuspensionCallbacks; // @synthesize discretionarySuspensionCallbacks=_discretionarySuspensionCallbacks;
 @property(retain) NSMutableDictionary *checkpointCallbacks; // @synthesize checkpointCallbacks=_checkpointCallbacks;
@@ -26,7 +27,6 @@
 @property(retain) NSMutableDictionary *commandCallbacks; // @synthesize commandCallbacks=_commandCallbacks;
 @property(retain) NSMutableDictionary *statisticsCallbacks; // @synthesize statisticsCallbacks=_statisticsCallbacks;
 @property(retain) NSMutableDictionary *progressCallbacks; // @synthesize progressCallbacks=_progressCallbacks;
-- (void).cxx_destruct;
 - (void)removeAllCallbacks;
 - (void)handleOperationCheckpoint:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;

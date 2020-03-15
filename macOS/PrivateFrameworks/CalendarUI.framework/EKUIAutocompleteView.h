@@ -14,9 +14,9 @@
     CalUILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(retain) CalUILabel *label; // @synthesize label=_label;
 @property(retain) NSColor *originalTextColor; // @synthesize originalTextColor=_originalTextColor;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 - (id)initWithViewController:(id)arg1;
 

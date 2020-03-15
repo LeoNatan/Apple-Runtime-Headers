@@ -14,8 +14,8 @@
 }
 
 + (unsigned long long)quickControlSizeForItemSize:(unsigned long long)arg1;
-@property(retain, nonatomic) HUQuickControlCollectionViewLayoutAttributes *activeLayoutAttributes; // @synthesize activeLayoutAttributes=_activeLayoutAttributes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUQuickControlCollectionViewLayoutAttributes *activeLayoutAttributes; // @synthesize activeLayoutAttributes=_activeLayoutAttributes;
 - (void)applyLayoutAttributes:(id)arg1;
 @property(retain, nonatomic) HUQuickControlCollectionViewCellContainerViewController *viewController; // @dynamic viewController;
 - (void)_updateContentViewControllerForActiveLayoutAttributes;

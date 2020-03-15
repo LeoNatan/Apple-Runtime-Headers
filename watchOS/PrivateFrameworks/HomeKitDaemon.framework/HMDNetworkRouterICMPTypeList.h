@@ -18,8 +18,8 @@
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
 + (id)typeListFromICMPTypes:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *types; // @synthesize types=_types;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *types; // @synthesize types=_types;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

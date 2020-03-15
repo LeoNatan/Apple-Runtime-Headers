@@ -17,11 +17,11 @@
     long long _cachedBytes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long cachedBytes; // @synthesize cachedBytes=_cachedBytes;
 @property(readonly, nonatomic) long long preheatOrigin; // @synthesize preheatOrigin=_preheatOrigin;
 @property(readonly, nonatomic) id <PXDisplayAssetFetchResult> fetchResult; // @synthesize fetchResult=_fetchResult;
 @property(readonly, nonatomic) NSMutableIndexSet *preheatedIndexes; // @synthesize preheatedIndexes=_preheatedIndexes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool finished;
 - (void)markAsFinished;
 - (id)initWithFetchResult:(id)arg1 origin:(long long)arg2;

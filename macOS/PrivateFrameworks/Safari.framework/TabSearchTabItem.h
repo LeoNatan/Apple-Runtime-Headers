@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     TabSearchTabInfoForFiltering *_filteringInfoForTab;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TabSearchTabInfoForFiltering *filteringInfoForTab; // @synthesize filteringInfoForTab=_filteringInfoForTab;
 @property(retain, nonatomic) NSURL *tabURL; // @synthesize tabURL=_tabURL;
-- (void).cxx_destruct;
 
 @end
 

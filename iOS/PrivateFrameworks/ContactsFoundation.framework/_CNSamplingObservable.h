@@ -16,11 +16,11 @@
     id <CNCancelable> _timer;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <CNCancelable> timer; // @synthesize timer=_timer;
 @property(retain) id sample; // @synthesize sample=_sample;
 @property(readonly, nonatomic) id <CNObservable> sampler; // @synthesize sampler=_sampler;
 @property(readonly, nonatomic) id <CNObservable> observable; // @synthesize observable=_observable;
-- (void).cxx_destruct;
 - (void)sendSampleToObserver:(id)arg1;
 - (void)receiveResult:(id)arg1;
 - (id)subscribe:(id)arg1;

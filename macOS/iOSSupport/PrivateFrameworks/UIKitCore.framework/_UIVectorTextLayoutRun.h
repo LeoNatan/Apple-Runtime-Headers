@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     struct CGRect _usedRunRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect usedRunRect; // @synthesize usedRunRect=_usedRunRect;
 @property(nonatomic) struct CGRect usedLineRect; // @synthesize usedLineRect=_usedLineRect;
 @property(nonatomic) struct CGRect lineRect; // @synthesize lineRect=_lineRect;
 @property(nonatomic) double baseline; // @synthesize baseline=_baseline;
 @property(readonly, nonatomic) struct __CTRun *_CTRun; // @synthesize _CTRun=_runRef;
 @property(readonly, nonatomic) unsigned long long lineIndex; // @synthesize lineIndex=_lineIndex;
-- (void).cxx_destruct;
 - (void)_enumerateGlyphsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateGlyphsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)renderInContext:(struct CGContext *)arg1;

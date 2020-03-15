@@ -13,8 +13,8 @@
     id <PXGadget> _gadget;
 }
 
-@property(retain, nonatomic) id <PXGadget> gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <PXGadget> gadget; // @synthesize gadget=_gadget;
 
 @end
 

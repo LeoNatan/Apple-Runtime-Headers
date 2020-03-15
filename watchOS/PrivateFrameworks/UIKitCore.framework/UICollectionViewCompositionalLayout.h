@@ -32,6 +32,7 @@
     struct CGRect _contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dynamicsConfigurationHandler; // @synthesize dynamicsConfigurationHandler=_dynamicsConfigurationHandler;
 @property(nonatomic) _Bool roundsToScreenScale; // @synthesize roundsToScreenScale=_roundsToScreenScale;
 @property(nonatomic) _Bool layoutRTL; // @synthesize layoutRTL=_layoutRTL;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) _UICollectionCompositionalLayoutSolver *solver; // @synthesize solver=_solver;
 @property(copy, nonatomic) CDUnknownBlockType layoutSectionProvider; // @synthesize layoutSectionProvider=_layoutSectionProvider;
 @property(retain, nonatomic) NSCollectionLayoutSection *layoutSectionTemplate; // @synthesize layoutSectionTemplate=_layoutSectionTemplate;
-- (void).cxx_destruct;
 - (id)_invokeVisibleItemsInvalidationHandlerIfNeededForVisibleBounds:(struct CGRect)arg1;
 - (id)_containerFromCollectionView;
 - (_Bool)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
@@ -63,7 +63,7 @@
 - (struct CGRect)_orthogonalScrollingLayoutRectForSection:(int)arg1;
 - (struct CGVector)_scrollingUnitVectorForOrthogonalScrollingSection:(int)arg1;
 - (float)_orthogonalScrollingDecelerationRateForSection:(int)arg1;
-- (int)_orthogonalScrollingAxis;
+- (unsigned int)_orthogonalScrollingAxis;
 - (_Bool)_orthogonalScrollingUsesTargetContentOffsetForSection:(int)arg1;
 - (struct CGPoint)_orthogonalScrollingTargetContentOffsetForOffset:(struct CGPoint)arg1 section:(int)arg2;
 - (_Bool)_orthogonalScrollingShouldCenterCustomPagingSizeForSection:(int)arg1;
@@ -76,7 +76,7 @@
 - (id)_updatePinnedSectionSupplementaryItemsForCurrentVisibleBounds;
 - (void)_computeAndUpdateAdjustedContentFrame;
 - (id)_dataSourceSnapshotter;
-- (_Bool)_adjustCollectionViewContentInsetBehaviorForLayoutAxisIfNeeded:(int)arg1 container:(id)arg2;
+- (_Bool)_adjustCollectionViewContentInsetBehaviorForLayoutAxisIfNeeded:(unsigned int)arg1 container:(id)arg2;
 - (_Bool)_invokeVisibleBoundsUpdateForDynamicAnimatorForNewVisibleBounds:(struct CGRect)arg1 preparingLayout:(_Bool)arg2;
 - (_Bool)_shouldInvalidateLayoutForBoundsSizeChange:(struct CGRect)arg1;
 - (void)_traitCollectionDidChangeFromPreviousCollection:(id)arg1 newTraitCollection:(id)arg2;
@@ -89,7 +89,7 @@
 - (_Bool)_overridesSafeAreaPropagationToDescendants;
 - (_Bool)_preparedForBoundsChanges;
 - (_Bool)_wantsUntrackedAnimationCleanupForAuxillaryItems;
-- (int)_layoutAxis;
+- (unsigned int)_layoutAxis;
 - (void)_prepareForCollectionViewUpdates:(id)arg1 withDataSourceTranslator:(id)arg2;
 - (id)_invalidationContextForUpdatedLayoutMargins:(struct UIEdgeInsets)arg1;
 - (_Bool)_cellsShouldConferWithAutolayoutEngineForSizingInfo;

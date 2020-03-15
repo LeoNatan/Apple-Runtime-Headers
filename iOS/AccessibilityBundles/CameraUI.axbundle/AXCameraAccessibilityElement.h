@@ -23,6 +23,7 @@
     struct CGRect _normalizedFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didReuse; // @synthesize didReuse=_didReuse;
 @property(nonatomic) _Bool didCrossEdge; // @synthesize didCrossEdge=_didCrossEdge;
 @property(copy, nonatomic) NSString *classificationLocalizedValue; // @synthesize classificationLocalizedValue=_classificationLocalizedValue;
@@ -34,7 +35,6 @@
 @property(nonatomic) struct CGRect normalizedFrame; // @synthesize normalizedFrame=_normalizedFrame;
 @property(nonatomic) long long location; // @synthesize location=_location;
 @property(nonatomic) unsigned long long featureType; // @synthesize featureType=_featureType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPerson;
 @property(readonly, nonatomic) _Bool isObjectClassification;
 @property(readonly, nonatomic) _Bool isProminentObject;

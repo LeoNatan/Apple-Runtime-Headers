@@ -23,6 +23,7 @@
     unsigned long long _motionActivityType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long motionActivityType; // @synthesize motionActivityType=_motionActivityType;
 @property(nonatomic) double density; // @synthesize density=_density;
 @property(nonatomic) double earliestTransTimeStart_s; // @synthesize earliestTransTimeStart_s=_earliestTransTimeStart_s;
@@ -34,7 +35,6 @@
 @property(nonatomic) double predResidualStart_s; // @synthesize predResidualStart_s=_predResidualStart_s;
 @property(nonatomic) double yield; // @synthesize yield=_yield;
 @property(nonatomic) int numOfTrans; // @synthesize numOfTrans=_numOfTrans;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

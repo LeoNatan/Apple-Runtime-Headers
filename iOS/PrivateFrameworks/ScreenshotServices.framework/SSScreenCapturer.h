@@ -29,8 +29,8 @@
 + (_Bool)shouldUseScreenCapturerForScreenshots;
 + (id)_currentDisplayLayout;
 + (_Bool)_filesAppExistsOnSystem;
-@property(nonatomic) __weak id <SSScreenCapturerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SSScreenCapturerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)testingCoordinator:(id)arg1 requestsTakingScreenshotForRunPPTRequest:(id)arg2;
 - (id)_testingCoordinator;
 @property(readonly, nonatomic) UIWindow *screenshotsWindow;

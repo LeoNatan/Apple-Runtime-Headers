@@ -13,8 +13,8 @@
     NSMutableArray *_deferredNotificationBlocks;
 }
 
-@property(retain, nonatomic) NSMutableArray *deferredNotificationBlocks; // @synthesize deferredNotificationBlocks=_deferredNotificationBlocks;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *deferredNotificationBlocks; // @synthesize deferredNotificationBlocks=_deferredNotificationBlocks;
 - (void)conferenceParticipantCallsChangedForCallContainer:(id)arg1 conferenceParticipantCalls:(id)arg2;
 - (void)modelChangedForCall:(id)arg1;
 - (void)prefersExclusiveAccessToCellularNetworkChangedForCall:(id)arg1;

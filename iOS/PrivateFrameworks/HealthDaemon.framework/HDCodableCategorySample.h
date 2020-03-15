@@ -18,9 +18,9 @@
     CDStruct_01ef6375 _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long value; // @synthesize value=_value;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

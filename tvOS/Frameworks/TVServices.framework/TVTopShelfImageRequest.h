@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)_comparisonObjectKey;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

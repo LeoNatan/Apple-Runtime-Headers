@@ -13,8 +13,9 @@
     id <WFFileStorageServiceOperation> _saveOperation;
 }
 
-@property(retain, nonatomic) id <WFFileStorageServiceOperation> saveOperation; // @synthesize saveOperation=_saveOperation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <WFFileStorageServiceOperation> saveOperation; // @synthesize saveOperation=_saveOperation;
+- (id)targetDataInfo;
 - (BOOL)outputsMultipleItems;
 - (BOOL)inputsMultipleItems;
 - (id)showPickerKey;

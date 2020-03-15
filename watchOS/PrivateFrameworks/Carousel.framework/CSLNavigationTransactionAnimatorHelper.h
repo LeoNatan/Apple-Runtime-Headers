@@ -32,6 +32,7 @@
     NSString *_toIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *toIdentifier; // @synthesize toIdentifier=_toIdentifier;
 @property(readonly, nonatomic) NSString *fromIdentifier; // @synthesize fromIdentifier=_fromIdentifier;
 @property(readonly, nonatomic) _Bool fromStatusBar; // @synthesize fromStatusBar=_fromStatusBar;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) UIViewController *toViewController; // @synthesize toViewController=_toViewController;
 @property(readonly, nonatomic) UIViewController *fromViewController; // @synthesize fromViewController=_fromViewController;
 @property(nonatomic) __weak IOSSHLTransaction<CSLNavigationTransactionAnimator> *animatorTransaction; // @synthesize animatorTransaction=_animatorTransaction;
-- (void).cxx_destruct;
 - (id)createAggregateTransitionCoordinator;
 - (void)completeTransition:(_Bool)arg1;
 - (void)beginApplicationTransition:(_Bool)arg1 interactive:(_Bool)arg2;

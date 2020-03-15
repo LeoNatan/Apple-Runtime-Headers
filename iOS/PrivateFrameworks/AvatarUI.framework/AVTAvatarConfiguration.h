@@ -21,9 +21,9 @@
 + (id)configurationFromAvatar:(id)arg1 coreModel:(id)arg2;
 + (id)configurationColorPresetWithColorPreset:(id)arg1 settingKind:(CDStruct_597dd055)arg2 coreModel:(id)arg3;
 + (id)configurationPresetWithPreset:(id)arg1 settingKind:(CDStruct_597dd055)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *colorPresetsStorage; // @synthesize colorPresetsStorage=_colorPresetsStorage;
 @property(readonly, nonatomic) NSMutableDictionary *presetsStorage; // @synthesize presetsStorage=_presetsStorage;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

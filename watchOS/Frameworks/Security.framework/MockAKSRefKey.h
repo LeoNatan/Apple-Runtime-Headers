@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_optionalParams;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *optionalParams; // @synthesize optionalParams=_optionalParams;
 @property(retain, nonatomic) NSData *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

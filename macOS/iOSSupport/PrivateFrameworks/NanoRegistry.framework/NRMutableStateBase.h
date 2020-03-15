@@ -22,8 +22,8 @@
 + (id)enclosedClassTypes;
 + (id)diffFrom:(id)arg1 to:(id)arg2;
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) __weak id <NRMutableStateParentDelegate> parentDelegate; // @synthesize parentDelegate=_parentDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NRMutableStateParentDelegate> parentDelegate; // @synthesize parentDelegate=_parentDelegate;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 + (unsigned long long)currentVersion;
+- (void).cxx_destruct;
 @property(readonly) NSString *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
 @property float previousLeafTotalDistance; // @synthesize previousLeafTotalDistance=_previousLeafTotalDistance;
 @property float nextLeafTotalDistance; // @synthesize nextLeafTotalDistance=_nextLeafTotalDistance;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) long long exifTimestamp; // @synthesize exifTimestamp=_exifTimestamp;
 @property(readonly) NSString *externalImageId; // @synthesize externalImageId=_externalImageId;
 @property(readonly) long long descriptorId; // @synthesize descriptorId=_internalNonSerializedDescriptorId;
-- (void).cxx_destruct;
 - (id)initWithRawColorGaborDescriptor:(id)arg1;
 @property(readonly) NSData *rawColorGaborDescriptor;
 - (float)computeFinalDescriptorBasedDistanceForColorDistance:(float)arg1 andSceneClassifierDistance:(float)arg2;

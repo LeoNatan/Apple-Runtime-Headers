@@ -22,9 +22,9 @@
 }
 
 + (id)sharedNetworkController;
+- (void).cxx_destruct;
 @property _Bool isUpdating; // @synthesize isUpdating=_isUpdating;
 @property _Bool canReachTheNetwork; // @synthesize canReachTheNetwork=_canReachTheNetwork;
-- (void).cxx_destruct;
 - (void)_checkForNetworkAndNotify;
 - (void)_checkForNetwork;
 - (id)getDataContext:(id)arg1;

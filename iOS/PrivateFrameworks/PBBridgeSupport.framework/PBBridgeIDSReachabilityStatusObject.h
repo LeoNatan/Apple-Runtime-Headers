@@ -17,9 +17,9 @@
 }
 
 + (id)connectivityString:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long reachability; // @synthesize reachability=_reachability;
 @property(retain, nonatomic) NSUUID *idsDeviceID; // @synthesize idsDeviceID=_idsDeviceID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

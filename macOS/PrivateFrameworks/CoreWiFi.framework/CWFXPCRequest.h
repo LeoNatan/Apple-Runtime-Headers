@@ -19,12 +19,12 @@
     CDUnknownBlockType _response;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType response; // @synthesize response=_response;
 @property(copy, nonatomic) NSDictionary *info; // @synthesize info=_info;
 @property(copy, nonatomic) NSDate *receivedAt; // @synthesize receivedAt=_receivedAt;
 @property(copy, nonatomic) CWFXPCParameters *XPCParameters; // @synthesize XPCParameters=_XPCParameters;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 

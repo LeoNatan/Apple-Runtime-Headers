@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _numUnwrapAttempts;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long numUnwrapAttempts; // @synthesize numUnwrapAttempts=_numUnwrapAttempts;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *decryptGroup; // @synthesize decryptGroup=_decryptGroup;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) CKRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (void)_setupDecryptCallbackForQueue:(id)arg1;
 - (id)initWithRecord:(id)arg1 callbackQueue:(id)arg2;
 - (id)init;

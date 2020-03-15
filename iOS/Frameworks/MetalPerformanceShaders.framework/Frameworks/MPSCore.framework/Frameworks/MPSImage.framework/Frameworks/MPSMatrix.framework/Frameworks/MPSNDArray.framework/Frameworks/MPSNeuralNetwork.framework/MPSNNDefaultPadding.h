@@ -17,6 +17,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)zeroPaddingWithTopAmount:(unsigned long long)arg1 bottomAmount:(unsigned long long)arg2 leftAmount:(unsigned long long)arg3 rightAmount:(unsigned long long)arg4;
 + (id)paddingForTensorflowAveragePoolingValidOnly;
 + (id)paddingForTensorflowAveragePooling;
 + (id)paddingWithMethod:(unsigned long long)arg1;

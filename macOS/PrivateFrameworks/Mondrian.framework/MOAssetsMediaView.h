@@ -20,8 +20,8 @@
     id <MOAssetsMediaViewDelegate> _assetsMediaViewDelegate;
 }
 
-@property(nonatomic) __weak id <MOAssetsMediaViewDelegate> assetsMediaViewDelegate; // @synthesize assetsMediaViewDelegate=_assetsMediaViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MOAssetsMediaViewDelegate> assetsMediaViewDelegate; // @synthesize assetsMediaViewDelegate=_assetsMediaViewDelegate;
 - (void)mediaView:(id)arg1 didUpdateSupplementaryView:(id)arg2 ofKind:(id)arg3 withMediaSection:(id)arg4 atIndexPath:(id)arg5;
 - (double)mainHeaderHeightForCollectionView:(id)arg1 layout:(id)arg2 width:(double)arg3 scale:(double)arg4;
 - (BOOL)shouldShowMainHeaderForCollectionView:(id)arg1 layout:(id)arg2;

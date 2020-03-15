@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(retain, nonatomic) id <CNAvatarImageProvider> fallbackImageProvider; // @synthesize fallbackImageProvider=_fallbackImageProvider;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *avatarContainerView; // @synthesize avatarContainerView=_avatarContainerView;
 @property(nonatomic) _Bool hasImage; // @synthesize hasImage=_hasImage;
 @property(nonatomic) __weak id <CNMeCardSharingAvatarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didTapAvatarView:(id)arg1;
 - (void)updateForChangedImageAnimated:(_Bool)arg1;
 - (void)reload;

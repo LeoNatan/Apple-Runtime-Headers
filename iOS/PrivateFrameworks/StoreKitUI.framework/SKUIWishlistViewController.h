@@ -27,8 +27,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)wishlistBarButtonItemWithClientContext:(id)arg1;
-@property(nonatomic) __weak id <SKUIWishlistDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIWishlistDelegate> delegate; // @synthesize delegate=_delegate;
 - (long long)_wishlistState;
 - (id)_wishlist;
 - (void)_updateDeleteButton;

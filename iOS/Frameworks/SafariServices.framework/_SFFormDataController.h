@@ -17,8 +17,8 @@
 }
 
 + (id)sharedController;
-@property(readonly, nonatomic) _SFAuthenticationContext *autoFillAuthenticationContext; // @synthesize autoFillAuthenticationContext=_autoFillAuthenticationContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _SFAuthenticationContext *autoFillAuthenticationContext; // @synthesize autoFillAuthenticationContext=_autoFillAuthenticationContext;
 - (id)oneTimeCodeMonitor;
 - (double)invalidationTimeoutIfApplicationEntersBackgroundDuringAuthenticationForContext:(id)arg1;
 - (_Bool)contextShouldAllowMultipleBiometricFailures:(id)arg1;

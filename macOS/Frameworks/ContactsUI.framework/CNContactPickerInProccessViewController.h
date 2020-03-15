@@ -38,6 +38,7 @@
     CNContactPickerFamilyMemberScope *_familyMemberScope;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=shouldAllowMultipleSelection) BOOL allowMultipleSelection; // @synthesize allowMultipleSelection=_allowMultipleSelection;
 @property(readonly, nonatomic, getter=shouldHighlightSelectedContact) BOOL highlightSelectedContact; // @synthesize highlightSelectedContact=_highlightSelectedContact;
 @property(readonly, nonatomic, getter=shouldShowSelectedContact) BOOL showSelectedContact; // @synthesize showSelectedContact=_showSelectedContact;
@@ -51,7 +52,6 @@
 @property(retain) CNGroupListController *groupListController; // @synthesize groupListController=_groupListController;
 @property(readonly) ABPersonListSearchController *searchController; // @synthesize searchController=_searchController;
 @property(retain) CNContactListController *contactListController; // @synthesize contactListController=_contactListController;
-- (void).cxx_destruct;
 - (void)resetUsageStatistics;
 - (unsigned long long)countOfServerSearchesPerformed;
 - (unsigned long long)countOfLocalSearchesPerformed;
@@ -83,6 +83,7 @@
 - (void)setupGroupListController;
 - (void)setupContactListController;
 - (void)setupContactCardViewController;
+- (void)ensureSearchControllerHasSearchConfigurationIfGroupsPaneNotVisible;
 - (void)performInitialSelection;
 - (void)commonInitWithAddressBook:(id)arg1 contactStore:(id)arg2 prohibitedPropertykeys:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

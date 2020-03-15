@@ -15,9 +15,9 @@
     NSString *_appleID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(nonatomic) id <CNFRegChangeAccountPasswordDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)completeHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (void)cancelTapped;
 - (id)overrideURLForURL:(id)arg1;

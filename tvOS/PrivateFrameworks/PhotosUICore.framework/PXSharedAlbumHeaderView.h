@@ -26,6 +26,7 @@
 }
 
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isObservingLastExitedForYou; // @synthesize isObservingLastExitedForYou=_isObservingLastExitedForYou;
 @property(nonatomic) _Bool isNew; // @synthesize isNew=_isNew;
 @property(retain, nonatomic) UIImageView *chevronView; // @synthesize chevronView=_chevronView;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned long long tappableArea; // @synthesize tappableArea=_tappableArea;
 @property(nonatomic) unsigned long long textColorStyle; // @synthesize textColorStyle=_textColorStyle;
 @property(nonatomic) _Bool useInPopover; // @synthesize useInPopover=_useInPopover;
-- (void).cxx_destruct;
 - (struct CGSize)_performLayoutInRect:(struct CGRect)arg1 updateSubviewFrames:(_Bool)arg2;
 - (void)_updateUI;
 - (_Bool)_showChevron;

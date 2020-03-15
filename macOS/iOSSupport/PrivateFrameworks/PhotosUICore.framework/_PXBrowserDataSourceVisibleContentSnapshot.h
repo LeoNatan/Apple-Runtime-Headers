@@ -16,10 +16,10 @@
     unsigned long long _dateType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long dateType; // @synthesize dateType=_dateType;
 @property(readonly, nonatomic) id <PXDisplayAssetDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, copy, nonatomic) NSArray *indexPaths; // @synthesize indexPaths=_indexPaths;
-- (void).cxx_destruct;
 - (id)dateInterval;
 - (id)initWithDateIntervalGranularity:(unsigned long long)arg1;
 - (id)initWithIndexPaths:(id)arg1 dataSource:(id)arg2 dateIntervalGranularity:(unsigned long long)arg3 dateType:(unsigned long long)arg4;

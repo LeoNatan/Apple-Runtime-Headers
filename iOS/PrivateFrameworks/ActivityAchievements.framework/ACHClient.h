@@ -20,12 +20,12 @@
     CDUnknownBlockType _injectedErrorHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType injectedErrorHandler; // @synthesize injectedErrorHandler=_injectedErrorHandler;
 @property(retain, nonatomic) HKPluginProxyProvider *pluginProxyProvider; // @synthesize pluginProxyProvider=_pluginProxyProvider;
 @property(retain, nonatomic) id <ACHServerInterface> serverProxy; // @synthesize serverProxy=_serverProxy;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serverQueue; // @synthesize serverQueue=_serverQueue;
-- (void).cxx_destruct;
 - (void)_addPluginProxyErrorHandler:(CDUnknownBlockType)arg1;
 - (void)_injectProxyProvider:(id)arg1;
 - (CDUnknownBlockType)_clientQueueCompletion:(CDUnknownBlockType)arg1;

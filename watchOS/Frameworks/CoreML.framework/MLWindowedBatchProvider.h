@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     int _windowLength;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int windowLength; // @synthesize windowLength=_windowLength;
 @property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;
 @property(retain, nonatomic) id <MLBatchProvider> fullBatch; // @synthesize fullBatch=_fullBatch;
-- (void).cxx_destruct;
 - (id)featuresAtIndex:(int)arg1;
 @property(readonly, nonatomic) int count;
 - (id)initWithBatch:(id)arg1 startIndex:(int)arg2 windowLength:(int)arg3 error:(id *)arg4;

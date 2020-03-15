@@ -15,9 +15,9 @@
     id <PXRelatedEntry> _relatedEntry;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PXRelatedEntry> relatedEntry; // @synthesize relatedEntry=_relatedEntry;
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
-- (void).cxx_destruct;
 
 @end
 

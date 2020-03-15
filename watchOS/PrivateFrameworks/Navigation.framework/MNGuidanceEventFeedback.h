@@ -49,6 +49,7 @@
 }
 
 + (Class)junctionViewImageIDType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *eventDescription; // @synthesize eventDescription=_eventDescription;
 @property(retain, nonatomic) NSMutableArray *junctionViewImageIDs; // @synthesize junctionViewImageIDs=_junctionViewImageIDs;
 @property(nonatomic) double maneuverTime; // @synthesize maneuverTime=_maneuverTime;
@@ -66,7 +67,6 @@
 @property(nonatomic) unsigned int stepID; // @synthesize stepID=_stepID;
 @property(retain, nonatomic) NSData *routeID; // @synthesize routeID=_routeID;
 @property(retain, nonatomic) NSString *uniqueIDstring; // @synthesize uniqueIDstring=_uniqueIDstring;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

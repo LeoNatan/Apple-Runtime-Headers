@@ -15,9 +15,9 @@
     NSArray *_controlPoints;
 }
 
+- (void).cxx_destruct;
 @property double relativeTime; // @synthesize relativeTime=_time;
 @property(readonly) NSString *parameterID; // @synthesize parameterID=_param;
-- (void).cxx_destruct;
 @property(readonly) NSArray *controlPoints;
 - (id)initWithParameterID:(id)arg1 controlPoints:(id)arg2 relativeTime:(double)arg3;
 - (id)init;

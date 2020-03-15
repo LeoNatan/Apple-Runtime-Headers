@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSURL *_URL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) unsigned long long scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 - (id)initWithScale:(unsigned long long)arg1 URL:(id)arg2;
 
 @end

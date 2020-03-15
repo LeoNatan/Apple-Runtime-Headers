@@ -9,46 +9,68 @@
 #import <SymptomEvaluator/ConfigurableObjectProtocol-Protocol.h>
 #import <SymptomEvaluator/ManagedEventInfoProtocol-Protocol.h>
 #import <SymptomEvaluator/SymptomAdditionalProtocol-Protocol.h>
+#import <SymptomEvaluator/SymptomsAWDObserverDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, NSUUID, NWUUIDMapper;
+@class AnalyticsWorkspace, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSUUID, NWUUIDMapper;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
-@interface NWActivityHandler : NSObject <ConfigurableObjectProtocol, SymptomAdditionalProtocol, ManagedEventInfoProtocol>
+@interface NWActivityHandler : NSObject <SymptomsAWDObserverDelegate, ConfigurableObjectProtocol, SymptomAdditionalProtocol, ManagedEventInfoProtocol>
 {
     NSObject<OS_dispatch_queue> *_metricsQueue;
     NSObject<OS_dispatch_source> *_metricCollectionTimer;
+    double _lastCellularTriggerTime;
     unsigned short _L2MetricCount;
+    AnalyticsWorkspace *_workspace;
+    BOOL _cellFragmentRequestOutstanding;
+    BOOL _awdObserverConfigured;
     NSMutableDictionary *_mappedMetrics;
     NWUUIDMapper *_nullUUIDMapper;
     NSUUID *_nullUUID;
     NSMutableArray *_currentActivities;
+    NSMutableArray *_completeActivities;
+    NSUUID *_lastWiFiActivity;
+    NSDictionary *_lastCellularFragment;
 }
 
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *lastCellularFragment; // @synthesize lastCellularFragment=_lastCellularFragment;
+@property(retain, nonatomic) NSUUID *lastWiFiActivity; // @synthesize lastWiFiActivity=_lastWiFiActivity;
+@property(readonly, nonatomic) NSMutableArray *completeActivities; // @synthesize completeActivities=_completeActivities;
 @property(readonly, nonatomic) NSMutableArray *currentActivities; // @synthesize currentActivities=_currentActivities;
 @property(readonly, nonatomic) NSUUID *nullUUID; // @synthesize nullUUID=_nullUUID;
 @property(readonly, nonatomic) NWUUIDMapper *nullUUIDMapper; // @synthesize nullUUIDMapper=_nullUUIDMapper;
 @property(readonly, nonatomic) NSMutableDictionary *mappedMetrics; // @synthesize mappedMetrics=_mappedMetrics;
-- (void).cxx_destruct;
 - (int)configureInstance:(id)arg1;
 - (BOOL)configuredForMetricStreaming;
 - (void)streamAWDMetric:(id)arg1 withIdentifier:(unsigned int)arg2 additionalDictionaryItems:(id)arg3;
+- (id)analyticsWorkspace;
 - (id)init;
 - (_Bool)noteSymptom:(id)arg1;
+- (void)_handleCellularItem:(id)arg1;
+- (void)_convertHPLMNToDecimal:(id)arg1 mcc:(int *)arg2 mnc:(int *)arg3;
+- (void)traverseObject:(id)arg1 atPath:(id)arg2;
 - (void)_handleNWConnectionStatistics:(id)arg1 effectivePid:(int)arg2;
 - (void)_handleCFNetworkItem:(id)arg1;
 - (void)_handleEpilogue:(id)arg1;
 - (void)_handleStartActivity:(id)arg1;
+- (void)_sendMetric:(id)arg1 ofType:(int)arg2 forActivities:(id)arg3 additionalItems:(id)arg4;
+- (void)_deliverCellularFragment:(id)arg1;
+- (void)handleEvent:(id)arg1;
+- (void)_triggerCellMetric;
 - (void)_triggerWiFiMetric;
 - (void)_stopL2Streaming;
 - (void)_startL2Streaming;
+- (void)_collectCellularFragment;
 - (void)_updateL2MetricLoggingRequests;
-- (void)_pruneCurrentActivityList;
+- (void)_pruneActivityLists;
 - (void)_handleL2Stop:(id)arg1;
 - (void)_handleL2Start:(id)arg1;
 - (id)_createNWL2Report;
+- (id)_createDeviceReport;
+- (BOOL)_saveMetricWithUUIDS:(id)arg1 withData:(id)arg2 ofType:(int)arg3;
 - (void)_pruneOldMappings;
 - (id)mapperForUUID:(id)arg1 reason:(int)arg2;
 - (void)generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

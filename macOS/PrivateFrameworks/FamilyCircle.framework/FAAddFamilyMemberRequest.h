@@ -15,10 +15,10 @@
     NSString *_memberPassword;
 }
 
+- (void).cxx_destruct;
 @property(readonly) BOOL memberIsUnder13; // @synthesize memberIsUnder13=_memberIsUnder13;
 @property(readonly, copy) NSString *memberPassword; // @synthesize memberPassword=_memberPassword;
 @property(readonly, copy) NSString *memberAppleID; // @synthesize memberAppleID=_memberAppleID;
-- (void).cxx_destruct;
 - (void)startRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithFamilyMemberAppleID:(id)arg1 password:(id)arg2 isUnder13:(BOOL)arg3;
 

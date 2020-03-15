@@ -15,10 +15,10 @@
     NSArray *_mailboxes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isSelectAll; // @synthesize isSelectAll=_isSelectAll;
 @property(readonly, nonatomic) NSArray *mailboxes; // @synthesize mailboxes=_mailboxes;
 @property(readonly, nonatomic) NSArray *messageListItems; // @synthesize messageListItems=_messageListItems;
-- (void).cxx_destruct;
 - (id)initWithMailboxes:(id)arg1 excludedMessageListItems:(id)arg2;
 - (id)initWithMessageListItems:(id)arg1;
 

@@ -16,8 +16,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)shouldCache;
 + (int)imageSetType;
-@property(retain, nonatomic) PKImage *logoImage; // @synthesize logoImage=_logoImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKImage *logoImage; // @synthesize logoImage=_logoImage;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

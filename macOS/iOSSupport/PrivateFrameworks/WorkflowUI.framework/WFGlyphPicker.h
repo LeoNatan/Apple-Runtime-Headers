@@ -24,13 +24,13 @@
 }
 
 + (unsigned long long)numberOfSections;
+- (void).cxx_destruct;
 @property(nonatomic) __weak WFGlyphPickerTabBar *tabBar; // @synthesize tabBar=_tabBar;
 @property(copy, nonatomic) NSArray *glyphSections; // @synthesize glyphSections=_glyphSections;
 @property(nonatomic) __weak UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) unsigned short selectedGlyphCharacter; // @synthesize selectedGlyphCharacter=_selectedGlyphCharacter;
 @property(nonatomic) __weak id <WFGlyphPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)glyphPickerTabBar:(id)arg1 didSelectTabAtIndex:(unsigned long long)arg2;
 - (id)indexPathForGlyphCharacter:(unsigned short)arg1;
 - (unsigned short)glyphCharacterAtIndexPath:(id)arg1;

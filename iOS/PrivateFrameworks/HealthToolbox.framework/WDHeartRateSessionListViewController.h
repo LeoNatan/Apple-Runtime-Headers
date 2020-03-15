@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     WDProfile *_profile;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(retain, nonatomic) NSMutableArray *activeDataQueries; // @synthesize activeDataQueries=_activeDataQueries;
 @property(retain, nonatomic) NSArray *sessions; // @synthesize sessions=_sessions;
 @property(nonatomic) long long sessionType; // @synthesize sessionType=_sessionType;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

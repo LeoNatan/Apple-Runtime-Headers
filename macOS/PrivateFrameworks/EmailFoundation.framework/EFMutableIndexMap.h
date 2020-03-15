@@ -14,9 +14,9 @@
     NSMutableDictionary *_keyToTuple;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *keyToTuple; // @synthesize keyToTuple=_keyToTuple;
 @property(retain, nonatomic) NSMutableArray *tuples; // @synthesize tuples=_tuples;
-- (void).cxx_destruct;
 - (void)shiftKeysStartingAtIndex:(unsigned long long)arg1 by:(long long)arg2;
 - (void)setObject:(id)arg1 forKey:(long long)arg2;
 - (id)objectForInt64Key:(long long)arg1;

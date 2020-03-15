@@ -43,6 +43,7 @@
 }
 
 + (double)cornerRadius;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsTextSizeComputation; // @synthesize needsTextSizeComputation=_needsTextSizeComputation;
 @property(readonly, nonatomic) UITapGestureRecognizer *moreLabelTapGestureRecognizer; // @synthesize moreLabelTapGestureRecognizer=_moreLabelTapGestureRecognizer;
 @property(retain, nonatomic) UILabel *moreLabel; // @synthesize moreLabel=_moreLabel;
@@ -67,7 +68,6 @@
 @property(nonatomic) long long descriptionTextAlignment; // @synthesize descriptionTextAlignment=_descriptionTextAlignment;
 @property(retain, nonatomic) UIColor *descriptionTextHighlightColor; // @synthesize descriptionTextHighlightColor=_descriptionTextHighlightColor;
 @property(retain, nonatomic) UIColor *descriptionTextColor; // @synthesize descriptionTextColor=_descriptionTextColor;
-- (void).cxx_destruct;
 - (void)_playButtonAction:(id)arg1;
 - (void)_selectButtonAction:(id)arg1;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;

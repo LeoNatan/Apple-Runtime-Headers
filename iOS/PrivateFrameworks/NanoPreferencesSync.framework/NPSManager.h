@@ -16,9 +16,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-- (void).cxx_destruct;
 - (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2 cloudEnabled:(_Bool)arg3;
 - (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2;
 - (void)synchronizeUserDefaultsDomain:(id)arg1 keys:(id)arg2 container:(id)arg3 appGroupContainer:(id)arg4 cloudEnabled:(_Bool)arg5;

@@ -7,19 +7,25 @@
 #import <objc/NSObject.h>
 
 #import <iCloudQuotaUI/NSCopying-Protocol.h>
+#import <iCloudQuotaUI/NSSecureCoding-Protocol.h>
 
 @class UIColor;
 
-@interface ICQUpgradeFlowOptions : NSObject <NSCopying>
+@interface ICQUpgradeFlowOptions : NSObject <NSCopying, NSSecureCoding>
 {
     UIColor *_navigationBarTintColor;
     UIColor *_buttonTintColor;
 }
 
++ (_Bool)supportsSecureCoding;
++ (id)flowOptionsFromData:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *buttonTintColor; // @synthesize buttonTintColor=_buttonTintColor;
 @property(copy, nonatomic) UIColor *navigationBarTintColor; // @synthesize navigationBarTintColor=_navigationBarTintColor;
-- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializedData;
 
 @end
 

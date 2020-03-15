@@ -22,6 +22,7 @@
     NSMutableDictionary *_mutableGroupings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mutableGroupings; // @synthesize mutableGroupings=_mutableGroupings;
 @property(retain, nonatomic) NSMutableArray *mutableRecentlyAddedMediaEntities; // @synthesize mutableRecentlyAddedMediaEntities=_mutableRecentlyAddedMediaEntities;
 @property(retain, nonatomic) NSMutableArray *mutableMediaEntities; // @synthesize mutableMediaEntities=_mutableMediaEntities;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool calculatesRecentlyAdded; // @synthesize calculatesRecentlyAdded=_calculatesRecentlyAdded;
 @property(retain, nonatomic) TVHKMediaEntityFetchRequest *request; // @synthesize request=_request;
 @property(nonatomic) __weak id <TVHKMediaEntityFetchControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyFetchRequest:(id)arg1 didFailWithError:(id)arg2;
 - (void)_notifyFetchRequest:(id)arg1 didCompleteWithResult:(id)arg2;
 - (_Bool)_updateMutableGroupingsWithResult:(id)arg1 updateOnNoChanges:(_Bool)arg2;

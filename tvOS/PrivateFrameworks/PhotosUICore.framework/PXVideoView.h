@@ -22,9 +22,9 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool videoIsReadyForDisplay; // @synthesize videoIsReadyForDisplay=_videoIsReadyForDisplay;
 @property(nonatomic) __weak id <PXVideoViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateReadyForDisplay;
 - (void)_stopReadinessTimer;
 - (void)_startReadinessTimerIfNeeded;

@@ -23,6 +23,7 @@
     AKiCSCEntryView *_icscEntryView;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKiCSCEntryView *icscEntryView; // @synthesize icscEntryView=_icscEntryView;
 @property AKiCDPDeviceValidationFlowViewController *flowController; // @synthesize flowController=_flowController;
 @property BOOL forgotAllPasswordsEnabled; // @synthesize forgotAllPasswordsEnabled=_forgotAllPasswordsEnabled;
@@ -31,7 +32,6 @@
 @property(retain) AKiCDPValidationDevice *selectedDevice; // @synthesize selectedDevice=_selectedDevice;
 @property BOOL usesClientSpecifiedDevice; // @synthesize usesClientSpecifiedDevice=_usesClientSpecifiedDevice;
 @property NSView *passcodePlaceholderView; // @synthesize passcodePlaceholderView=_passcodePlaceholderView;
-- (void).cxx_destruct;
 - (void)didEnterCode:(id)arg1;
 - (void)codeDidChange;
 - (void)validateDevice;

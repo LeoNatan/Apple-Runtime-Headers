@@ -35,11 +35,11 @@
 }
 
 + (BOOL)_hasDiskWriterSupportForDomain:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType errorBlock; // @synthesize errorBlock=_errorBlock;
 @property(copy, nonatomic) CDUnknownBlockType startDownloadBlock; // @synthesize startDownloadBlock=_startDownloadBlock;
 @property(copy, nonatomic) CDUnknownBlockType preflightCompletionBlock; // @synthesize preflightCompletionBlock=_preflightCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType rootPreflightCompletionBlock; // @synthesize rootPreflightCompletionBlock=_rootPreflightCompletionBlock;
-- (void).cxx_destruct;
 - (void)dumpStateTo:(id)arg1;
 - (void)cancel;
 - (void)cancelRoot:(id)arg1;

@@ -17,10 +17,10 @@
     struct CGSize _maxSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool usesLegibility; // @dynamic usesLegibility;
 - (void)sizeToFit;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

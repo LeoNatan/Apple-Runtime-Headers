@@ -15,9 +15,9 @@
 }
 
 + (id)assertionForGestureWindow:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property(nonatomic) double additionalEdgeMargin; // @synthesize additionalEdgeMargin=_additionalEdgeMargin;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithGestureWindow:(id)arg1;

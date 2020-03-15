@@ -32,6 +32,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *includeScanResults; // @synthesize includeScanResults=_includeScanResults;
 @property(copy, nonatomic) NSSet *includeProperties; // @synthesize includeProperties=_includeProperties;
 @property(nonatomic) int scanFlags; // @synthesize scanFlags=_scanFlags;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSArray *SSIDList; // @synthesize SSIDList=_SSIDList;
 @property(copy, nonatomic) NSString *SSID; // @synthesize SSID=_SSID;
 @property(copy, nonatomic) NSArray *channels; // @synthesize channels=_channels;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -11,5 +11,7 @@
 - (id)ibShadowedLargeTitleTextAttributes;
 - (_Bool)ibPrefersLargeTitles;
 - (void)setIbPrefersLargeTitles:(_Bool)arg1;
+- (id)initWithMarshalledValues:(id)arg1 orderedKeys:(id)arg2 ignoredKeys:(id)arg3 globalMarshallingContext:(id)arg4;
+- (void)ibApplyWorkaroundForRadar55365068;
 @end
 

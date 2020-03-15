@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 + (Class)conflictLosersToResolveType;
 + (Class)fieldsToDeleteIfExistOnMergeType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRequestedFields *requestedFields; // @synthesize requestedFields=_requestedFields;
 @property(retain, nonatomic) NSString *parentChainProtectionInfoTag; // @synthesize parentChainProtectionInfoTag=_parentChainProtectionInfoTag;
 @property(retain, nonatomic) CKDPRecordSaveRequestShareIdUpdate *shareIDUpdate; // @synthesize shareIDUpdate=_shareIDUpdate;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *fieldsToDeleteIfExistOnMerges; // @synthesize fieldsToDeleteIfExistOnMerges=_fieldsToDeleteIfExistOnMerges;
 @property(nonatomic) _Bool merge; // @synthesize merge=_merge;
 @property(retain, nonatomic) CKDPRecord *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

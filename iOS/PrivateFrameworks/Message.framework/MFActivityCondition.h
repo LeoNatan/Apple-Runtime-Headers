@@ -26,6 +26,7 @@
 }
 
 + (id)alwaysSatisfiedCondition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) EFCancelationToken *cancellationToken; // @synthesize cancellationToken=_cancellationToken;
 @property(nonatomic, getter=isSatisfied) _Bool satisfied; // @synthesize satisfied=_satisfied;
@@ -35,7 +36,6 @@
 @property(nonatomic) _Bool requireScreenLocked; // @synthesize requireScreenLocked=_requireScreenLocked;
 @property(nonatomic) _Bool requireWiFi; // @synthesize requireWiFi=_requireWiFi;
 @property(nonatomic) _Bool requireExternalPower; // @synthesize requireExternalPower=_requireExternalPower;
-- (void).cxx_destruct;
 - (_Bool)_isValidConfiguration;
 @property(readonly, nonatomic) EFObservable *conditionsObservable;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;

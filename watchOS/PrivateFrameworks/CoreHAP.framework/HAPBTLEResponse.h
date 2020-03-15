@@ -19,6 +19,7 @@
     NSMutableData *__internalBody;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setInternalBody:) NSMutableData *_internalBody; // @synthesize _internalBody=__internalBody;
 @property(readonly, nonatomic) unsigned char statusCode; // @synthesize statusCode=_statusCode;
 @property(readonly, nonatomic) unsigned int bodyLength; // @synthesize bodyLength=_bodyLength;
@@ -26,7 +27,6 @@
 @property(nonatomic, getter=isHeaderComplete) _Bool headerComplete; // @synthesize headerComplete=_headerComplete;
 @property(readonly, nonatomic) HAPBTLETransactionIdentifier *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) HAPBTLERequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (unsigned int)_deserializeHeaderBodyLengthWithData:(id)arg1 error:(id *)arg2;
 - (unsigned int)_deserializeHeaderWithData:(id)arg1 error:(id *)arg2;
 - (unsigned int)appendData:(id)arg1 error:(id *)arg2;

@@ -14,8 +14,8 @@
     CDUnknownBlockType _lookupParticipantsCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType lookupParticipantsCompletionBlock; // @synthesize lookupParticipantsCompletionBlock=_lookupParticipantsCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType lookupParticipantsCompletionBlock; // @synthesize lookupParticipantsCompletionBlock=_lookupParticipantsCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (id)initWithUserIdentities:(id)arg1;

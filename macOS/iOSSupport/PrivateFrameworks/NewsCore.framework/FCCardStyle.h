@@ -23,6 +23,7 @@
 
 + (id)styleWithConfigDict:(id)arg1;
 + (id)styleWithPBCardStyle:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) FCColor *ctaForegroundColor; // @synthesize ctaForegroundColor=_ctaForegroundColor;
 @property(copy, nonatomic) FCColor *ctaBackgroundColor; // @synthesize ctaBackgroundColor=_ctaBackgroundColor;
 @property(copy, nonatomic) FCColorGradient *sauceGradient; // @synthesize sauceGradient=_sauceGradient;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) FCColor *cardBackgroundColor; // @synthesize cardBackgroundColor=_cardBackgroundColor;
 @property(copy, nonatomic) FCColor *eyebrowForegroundColor; // @synthesize eyebrowForegroundColor=_eyebrowForegroundColor;
 @property(copy, nonatomic) FCColor *titleForegroundColor; // @synthesize titleForegroundColor=_titleForegroundColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

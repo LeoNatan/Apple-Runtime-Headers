@@ -16,8 +16,8 @@
     PKPaymentTransaction *_transaction;
 }
 
-@property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (id)_disclosureView;
 - (_Bool)_shouldShowDisclosureIndicator;
 @property(nonatomic) _Bool usesDarkMapAppearance;

@@ -25,7 +25,7 @@
 - (id)largestPhoto;
 @property(readonly, nonatomic) NSString *uid;
 @property(readonly, nonatomic) BOOL useGallery;
-@property(readonly, nonatomic) BOOL displayFullPhotoInline;
+@property(readonly, nonatomic) BOOL displayFullScreenPhotoGallery;
 @property(readonly, nonatomic) NSURL *licenseURL;
 @property(readonly, nonatomic) NSString *licenseDescription;
 @property(readonly, nonatomic) NSString *caption;

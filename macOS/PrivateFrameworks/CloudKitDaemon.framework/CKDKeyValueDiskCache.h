@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CKDClientContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CKDClientContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) PQLConnection *db; // @synthesize db=_db;
 @property(nonatomic) double expirationTimeout; // @synthesize expirationTimeout=_expirationTimeout;
-- (void).cxx_destruct;
 - (void)removeCachedValueForKey:(id)arg1;
 - (id)cachedValueForKey:(id)arg1;
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;

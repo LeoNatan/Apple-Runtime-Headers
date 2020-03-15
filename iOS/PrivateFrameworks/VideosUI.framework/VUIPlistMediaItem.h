@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     VUIPlistMediaDatabaseItem *_databaseItem;
 }
 
-@property(retain, nonatomic) VUIPlistMediaDatabaseItem *databaseItem; // @synthesize databaseItem=_databaseItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIPlistMediaDatabaseItem *databaseItem; // @synthesize databaseItem=_databaseItem;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)assetType;
 - (id)seasonTitle;

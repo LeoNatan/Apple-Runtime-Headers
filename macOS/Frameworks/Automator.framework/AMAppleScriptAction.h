@@ -13,8 +13,8 @@
     OSAScript *_script;
 }
 
-@property(copy, nonatomic) OSAScript *script; // @synthesize script=_script;
 - (void).cxx_destruct;
+@property(copy, nonatomic) OSAScript *script; // @synthesize script=_script;
 - (id)richTextOutput;
 - (void)_richTextOutputFromScriptOnMainThreadWithDict:(id)arg1;
 - (id)runWithInput:(id)arg1 error:(id *)arg2;

@@ -14,8 +14,8 @@
     NSMutableArray *_contextLists;
 }
 
-@property(retain, nonatomic) NSMutableArray *contextLists; // @synthesize contextLists=_contextLists;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *contextLists; // @synthesize contextLists=_contextLists;
 - (id)removeMediaSystemBuilderForIdentifier:(id)arg1;
 - (void)addMediaSystemBuilder:(id)arg1 andCompletionBlock:(id)arg2 forIdentifier:(id)arg3;
 - (void)addProgressHandler:(id)arg1 forAccessoryIdentifier:(id)arg2;

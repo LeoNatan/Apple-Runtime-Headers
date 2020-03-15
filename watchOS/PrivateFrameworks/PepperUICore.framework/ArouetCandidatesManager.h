@@ -22,11 +22,11 @@
     int __currentRequestID;
 }
 
+- (void).cxx_destruct;
 @property int _currentRequestID; // @synthesize _currentRequestID=__currentRequestID;
 @property(nonatomic) __weak id <ArouetCandidateManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) ArouetTextServices *textServices; // @synthesize textServices=_textServices;
 @property(readonly) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
-- (void).cxx_destruct;
 - (void)cancelLastCandidatesRequest;
 - (void)requestCandidatesForSelectedRange:(struct _NSRange)arg1 inString:(id)arg2 recognitionResult:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dealloc;

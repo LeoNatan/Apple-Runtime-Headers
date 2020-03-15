@@ -41,11 +41,11 @@
 + (void)_fetchKeyAssetsForAssetCollectionViewModels:(id)arg1;
 + (id)_fetchFinalMergeTargetPersonForPersonLocalIdentifier:(id)arg1;
 + (id)_fetchOptionsForPersonFetching;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
 @property(nonatomic) _Bool fetchInProgress; // @synthesize fetchInProgress=_fetchInProgress;
 @property(nonatomic) __weak id <PUSearchZeroKeywordChangeDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDictionary;
 - (id)tapToRadarAttachments;

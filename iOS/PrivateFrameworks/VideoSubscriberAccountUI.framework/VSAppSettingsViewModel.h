@@ -30,6 +30,7 @@
 }
 
 + (id)keyPathsForValuesAffectingAccessGranted;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOptional *voucher; // @synthesize voucher=_voucher;
 @property(copy, nonatomic) NSString *buyParams; // @synthesize buyParams=_buyParams;
 @property(retain, nonatomic) VSAppDescription *appDescription; // @synthesize appDescription=_appDescription;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, copy, nonatomic) NSString *adamID; // @synthesize adamID=_adamID;
-- (void).cxx_destruct;
 - (id)appIconURLForSize:(struct CGSize)arg1;
 - (id)appAdamIDs;
 - (id)appBundleIDs;

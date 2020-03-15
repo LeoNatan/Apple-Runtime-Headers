@@ -4,24 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CarPlaySupport/CPSInheritedBackgroundColorView.h>
+#import <UIKit/UIView.h>
 
-@class UIActivityIndicatorView, UILabel;
+#import <CarPlaySupport/CPSCardPlatterProviding-Protocol.h>
 
-@interface CPSPausedCardView : CPSInheritedBackgroundColorView
+@class CPSCardPlatterView, NSString, UIActivityIndicatorView, UILabel;
+
+@interface CPSPausedCardView : UIView <CPSCardPlatterProviding>
 {
+    CPSCardPlatterView *_cardPlatterView;
     UILabel *_title;
     UIActivityIndicatorView *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(readonly, nonatomic) UILabel *title; // @synthesize title=_title;
-- (void).cxx_destruct;
+@property(retain, nonatomic) CPSCardPlatterView *cardPlatterView; // @synthesize cardPlatterView=_cardPlatterView;
 - (struct CGSize)intrinsicContentSize;
-- (id)initWithTitle:(id)arg1 showsSpinner:(_Bool)arg2 backgroundColor:(id)arg3;
-- (void)backgroundColorDidChange;
-- (void)traitCollectionDidChange:(id)arg1;
-- (id)backgroundColor;
+- (id)initWithReason:(unsigned long long)arg1 title:(id)arg2 backgroundColor:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

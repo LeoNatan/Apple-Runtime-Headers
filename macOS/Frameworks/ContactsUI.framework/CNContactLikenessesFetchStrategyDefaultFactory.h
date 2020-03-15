@@ -18,11 +18,11 @@
     CNUIPRLikenessResolver *_likenessResolver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIPRLikenessResolver *likenessResolver; // @synthesize likenessResolver=_likenessResolver;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(retain, nonatomic) CNUIMeContactMonitor *meContactMonitor; // @synthesize meContactMonitor=_meContactMonitor;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)strategyForContact:(id)arg1;
 - (id)initWithMeContactMonitor:(id)arg1 personaStore:(id)arg2 likenessResolver:(id)arg3 contactStore:(id)arg4;
 

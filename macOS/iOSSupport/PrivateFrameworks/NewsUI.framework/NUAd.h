@@ -21,6 +21,7 @@
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSDate *unloadDate; // @synthesize unloadDate=_unloadDate;
 @property(retain, nonatomic) NSDate *loadDate; // @synthesize loadDate=_loadDate;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSString *opportunityIdentifier; // @synthesize opportunityIdentifier=_opportunityIdentifier;
 @property(nonatomic) __weak NUAdBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)adContextValueForKeyPath:(id)arg1;
 - (id)initWithBanner:(id)arg1 identifier:(id)arg2;
 

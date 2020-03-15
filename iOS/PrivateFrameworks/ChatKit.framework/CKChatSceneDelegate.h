@@ -16,9 +16,9 @@
     CKCoreChatController *_chatController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKCoreChatController *chatController; // @synthesize chatController=_chatController;
 @property(retain, nonatomic) CKNavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (id)canActivatePredicate;
 - (id)prefersToActivatePredicate;
 - (void)doneButtonPressedForChatController:(id)arg1;

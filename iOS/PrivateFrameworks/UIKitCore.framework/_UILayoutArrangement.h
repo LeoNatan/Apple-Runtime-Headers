@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_configurationHistoryClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool layoutUsesCanvasMarginsWhenFilling; // @synthesize layoutUsesCanvasMarginsWhenFilling=_layoutUsesCanvasMarginsWhenFilling;
 @property(nonatomic) _Bool layoutFillsCanvas; // @synthesize layoutFillsCanvas=_layoutFillsCanvas;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setMutableItems:) NSMutableArray *_mutableItems; // @synthesize _mutableItems;
 @property(readonly, nonatomic) _Bool _awaitingAnimationLayoutPass; // @synthesize _awaitingAnimationLayoutPass;
 @property(retain, nonatomic, setter=_setUnanimatedConfigurationTarget:) _UILAConfigurationHistory *_unanimatedConfigurationTarget; // @synthesize _unanimatedConfigurationTarget;
-- (void).cxx_destruct;
 - (void)_updateCanvasConnectionConstraintsIfNecessary;
 - (_Bool)_configurationRequiresCanvasConnectionFittingConstraint;
 - (_Bool)_usesCenteringConnectionConstraint;

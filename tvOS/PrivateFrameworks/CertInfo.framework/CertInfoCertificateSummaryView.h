@@ -23,6 +23,7 @@
     CertInfoCertificateSummaryDescriptionCell *_descriptionCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CertInfoCertificateSummaryDescriptionCell *descriptionCell; // @synthesize descriptionCell=_descriptionCell;
 @property(retain, nonatomic) CertInfoCertificateHeaderCell *headerCell; // @synthesize headerCell=_headerCell;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *trustSubtitle; // @synthesize trustSubtitle=_trustSubtitle;
 @property(retain, nonatomic) NSString *trustTitle; // @synthesize trustTitle=_trustTitle;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

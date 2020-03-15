@@ -15,10 +15,10 @@
     long long _sourceType;
 }
 
+- (void).cxx_destruct;
 @property long long sourceType; // @synthesize sourceType=_sourceType;
 @property _Bool allowsImageEditing; // @synthesize allowsImageEditing=_allowsImageEditing;
 @property(copy) NSArray *mediaTypes; // @synthesize mediaTypes=_mediaTypes;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 
 @end

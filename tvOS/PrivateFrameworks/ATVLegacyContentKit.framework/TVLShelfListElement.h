@@ -16,10 +16,10 @@
 }
 
 + (_Bool)isShelfListElement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLMenuElement *menu; // @synthesize menu=_menu;
 @property(retain, nonatomic) TVLShelfElement *centerShelf; // @synthesize centerShelf=_centerShelf;
 @property(retain, nonatomic) TVLHeaderElement *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;

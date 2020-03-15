@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     IKViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) NSDictionary *contextDictionary; // @synthesize contextDictionary=_contextDictionary;
 @property(retain, nonatomic) IKUpdateServiceRequest *currentUpdateRequest; // @synthesize currentUpdateRequest=_currentUpdateRequest;
-- (void).cxx_destruct;
 - (void)updateCurrentUpdateRequestWithAppContext:(id)arg1 documentRef:(id)arg2;
 - (void)updateRequestCompletedWithViewElements:(id)arg1 documentRef:(id)arg2;
 - (id)initWithContextDictionary:(id)arg1 viewElement:(id)arg2;

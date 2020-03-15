@@ -21,6 +21,7 @@
 }
 
 + (id)alertItemWithShowInLockScreen:(_Bool)arg1 forcesModal:(_Bool)arg2 superModal:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reappearsAfterLock; // @synthesize reappearsAfterLock=_reappearsAfterLock;
 @property(nonatomic) _Bool reappearsAfterUnlock; // @synthesize reappearsAfterUnlock=_reappearsAfterUnlock;
 @property(nonatomic) _Bool allowLockScreenDismissal; // @synthesize allowLockScreenDismissal=_allowLockScreenDismissal;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool forcesModalAlertAppearance; // @synthesize forcesModalAlertAppearance=_forcesModalAlertAppearance;
 @property(nonatomic) _Bool shouldShowInLockScreen; // @synthesize shouldShowInLockScreen=_shouldShowInLockScreen;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 

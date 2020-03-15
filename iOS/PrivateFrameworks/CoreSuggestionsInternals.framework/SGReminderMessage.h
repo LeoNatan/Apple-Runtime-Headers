@@ -27,11 +27,11 @@
 + (_Bool)validObjectCoreIndexRange:(struct _NSRange)arg1 enrichedTaggedCharacterRanges:(id)arg2;
 + (_Bool)validActionVerbIndexRange:(struct _NSRange)arg1 enrichedTaggedCharacterRanges:(id)arg2;
 + (id)detectedTitleInModelOutput:(id)arg1 enrichedTaggedCharacterRanges:(id)arg2 textContent:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *enrichedTaggedCharacterRanges; // @synthesize enrichedTaggedCharacterRanges=_enrichedTaggedCharacterRanges;
 @property(retain, nonatomic) SGPipelineEntity *entity; // @synthesize entity=_entity;
 @property(retain, nonatomic) SGTextMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSDictionary *modelOutput; // @synthesize modelOutput=_modelOutput;
-- (void).cxx_destruct;
 - (id)_labelTokenIndexesForOutputName:(id)arg1 label:(id)arg2;
 - (_Bool)hasTrigger;
 - (id)dueLocation;

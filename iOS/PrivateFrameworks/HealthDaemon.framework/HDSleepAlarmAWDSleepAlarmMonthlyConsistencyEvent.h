@@ -29,6 +29,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *thirdPartyDeviceManufacturer; // @synthesize thirdPartyDeviceManufacturer=_thirdPartyDeviceManufacturer;
 @property(retain, nonatomic) NSString *thirdPartyDeviceModel; // @synthesize thirdPartyDeviceModel=_thirdPartyDeviceModel;
 @property(retain, nonatomic) HDSleepAlarmAWDSleepAlarmStatistics *bedtimeChangesMinutesStatistics; // @synthesize bedtimeChangesMinutesStatistics=_bedtimeChangesMinutesStatistics;
@@ -38,7 +39,6 @@
 @property(nonatomic) long long bedtimeChangesCount; // @synthesize bedtimeChangesCount=_bedtimeChangesCount;
 @property(nonatomic) long long bedtimeAlarmNightCount; // @synthesize bedtimeAlarmNightCount=_bedtimeAlarmNightCount;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

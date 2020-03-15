@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id <_SFAppleConnectExtensionPageDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissExtensionUI;
 - (void)presentExtensionUI;
 - (void)dispatchMessageToContentScriptWithName:(id)arg1 userInfo:(id)arg2;

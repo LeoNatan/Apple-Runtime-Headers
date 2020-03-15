@@ -17,6 +17,8 @@
 @property(copy, nonatomic) CDUnknownBlockType backgroundTasksWillExpireCallback;
 @property(copy, nonatomic) CDUnknownBlockType backgroundTaskCountCallback;
 @property(copy, nonatomic) CDUnknownBlockType appIsInBackgroundStateCallback;
+@property(copy, nonatomic) CDUnknownBlockType performDefaultBehaviorForEvent;
+@property(copy, nonatomic) CDUnknownBlockType handleEventByInputMethod;
 @property(copy, nonatomic) CDUnknownBlockType appSupportsMultiwindowCallback;
 @property(copy, nonatomic) CDUnknownBlockType copyRegionBlockingWindowDragCallback;
 - (void)iterateWindowsForDropSessionWithID:(unsigned int)arg1 reply:(void (^)(id <UINSDropSession>))arg2;

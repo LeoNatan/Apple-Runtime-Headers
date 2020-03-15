@@ -25,6 +25,7 @@
 + (id)existentObjectIDsUsingQuery:(id)arg1;
 + (id)objectIDsOrUUIDsFromPHObjects:(id)arg1;
 + (id)_offsetsFromSourceOIDs:(id)arg1 toManagedObjects:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHChangeRequestHelper *changeRequestHelper; // @synthesize changeRequestHelper=_changeRequestHelper;
 @property(copy, nonatomic) CDUnknownBlockType isDestinationObjectValid; // @synthesize isDestinationObjectValid=_isDestinationObjectValid;
 @property(retain, nonatomic) NSMutableArray *mutableObjectIDsAndUUIDs; // @synthesize mutableObjectIDsAndUUIDs=_mutableObjectIDsAndUUIDs;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSString *destinationUUIDKeyPath; // @synthesize destinationUUIDKeyPath=_destinationUUIDKeyPath;
 @property(retain, nonatomic) NSString *destinationEntityName; // @synthesize destinationEntityName=_destinationEntityName;
 @property(readonly, nonatomic) NSString *relationshipName; // @synthesize relationshipName=_relationshipName;
-- (void).cxx_destruct;
 - (_Bool)applyMutationsToManagedObjectToOneRelationship:(id)arg1 error:(id *)arg2;
 - (_Bool)applyMutationsToManagedObject:(id)arg1 unorderedMutableChildren:(id)arg2 inserts:(id *)arg3 deletes:(id *)arg4 error:(id *)arg5;
 - (_Bool)applyMutationsToManagedObject:(id)arg1 unorderedMutableChildren:(id)arg2 error:(id *)arg3;

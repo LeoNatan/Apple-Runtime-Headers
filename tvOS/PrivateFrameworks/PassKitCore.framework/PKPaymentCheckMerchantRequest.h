@@ -14,9 +14,9 @@
     NSString *_domainName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
 @property(copy, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithServiceURL:(id)arg1;
 - (id)initWithMerchantIdentifier:(id)arg1 domainName:(id)arg2;
 

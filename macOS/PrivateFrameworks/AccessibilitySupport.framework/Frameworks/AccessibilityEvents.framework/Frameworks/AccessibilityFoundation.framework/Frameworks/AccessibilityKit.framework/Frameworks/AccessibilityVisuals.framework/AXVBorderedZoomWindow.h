@@ -44,6 +44,7 @@
 + (id)_resizeModeWindowBackgroundColor;
 + (id)reservedSystemZoomWindow1;
 + (id)reservedSystemZoomWindow0;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _mouseDownRegion; // @synthesize _mouseDownRegion=__mouseDownRegion;
 @property(nonatomic) unsigned long long _mouseOverRegion; // @synthesize _mouseOverRegion=__mouseOverRegion;
 @property(nonatomic) struct CGRect _zoomWindowFrameAtDragStart; // @synthesize _zoomWindowFrameAtDragStart=__zoomWindowFrameAtDragStart;
@@ -63,7 +64,6 @@
 @property(nonatomic) unsigned long long borderStyle; // @synthesize borderStyle=_borderStyle;
 @property(nonatomic) BOOL showBorder; // @synthesize showBorder=_showBorder;
 @property(nonatomic) __weak id <AXVBorderedZoomWindowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_exitResizeMode;
 - (void)_setResizeModeOKButtonBackgroundColor:(id)arg1;
 - (void)hide;

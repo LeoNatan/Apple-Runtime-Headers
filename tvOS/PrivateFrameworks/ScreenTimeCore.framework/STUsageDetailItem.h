@@ -17,10 +17,10 @@
 
 + (id)keyPathsForValuesAffectingSortQuantity;
 + (id)keyPathsForValuesAffectingIsAllAppsOrCategories;
+- (void).cxx_destruct;
 @property(nonatomic) float quantity; // @synthesize quantity=_quantity;
 @property long long type; // @synthesize type=_type;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) float sortQuantity;
 @property(readonly) _Bool isAllAppsOrCategories;
 - (_Bool)isEqual:(id)arg1;

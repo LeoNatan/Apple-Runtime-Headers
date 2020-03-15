@@ -37,10 +37,10 @@
 + (id)rendererWithContext:(id)arg1 options:(id)arg2;
 + (void)setPrefersOpenGL:(BOOL)arg1;
 + (id)rendererWithDevice:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double backingScaleFactor; // @synthesize backingScaleFactor=_backingScaleFactor;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(retain, nonatomic) SKScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (int)_spriteSubmitCount;
 - (int)_spriteRenderCount;
 - (double)_fps;

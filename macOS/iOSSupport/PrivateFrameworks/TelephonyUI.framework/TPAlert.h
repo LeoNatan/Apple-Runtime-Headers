@@ -12,9 +12,9 @@
     struct __CFUserNotification *_userNotification;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct __CFUserNotification *userNotification; // @synthesize userNotification=_userNotification;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)otherResponse;
 - (void)alternateResponse;
 - (void)defaultResponse;

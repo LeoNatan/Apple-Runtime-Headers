@@ -37,13 +37,13 @@
 + (id)queryProtocol;
 + (id)contextProtocol;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) long long modifierLevel; // @synthesize modifierLevel=_modifierLevel;
 @property(retain, nonatomic) SBChainableModifier *nextQueryModifier; // @synthesize nextQueryModifier=_nextQueryModifier;
 @property(nonatomic) SBChainableModifier *previousContextModifier; // @synthesize previousContextModifier=_previousContextModifier;
 @property(nonatomic) __weak id <SBChainableModifierDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) SBChainableModifier *parentModifier; // @synthesize parentModifier=_parentModifier;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

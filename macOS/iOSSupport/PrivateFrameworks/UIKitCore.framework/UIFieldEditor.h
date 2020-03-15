@@ -60,12 +60,12 @@
 + (id)excludedElementsForHTML;
 + (id)activeFieldEditor;
 + (id)sharedFieldEditor;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _shouldObscureNextInput; // @synthesize _shouldObscureNextInput=__shouldObscureNextInput;
 @property(nonatomic) struct CGPoint autoscrollContentOffset; // @synthesize autoscrollContentOffset=_autoscrollContentOffset;
 @property(copy, nonatomic, setter=_setScrollAnimationEndedAction:) CDUnknownBlockType _scrollAnimationEndedAction; // @synthesize _scrollAnimationEndedAction;
 @property(nonatomic) BOOL allowsAttachments; // @synthesize allowsAttachments=_allowsAttachments;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
-- (void).cxx_destruct;
 - (void)setDrawingFindIndicator:(BOOL)arg1;
 - (BOOL)isDrawingFindIndicator;
 - (BOOL)_shouldIgnoreAutofillSave;
@@ -77,8 +77,8 @@
 - (BOOL)_shouldObscureInput;
 @property(nonatomic) BOOL displaySecureEditsUsingPlainText;
 @property(nonatomic, getter=isSecureTextEntry) BOOL secureTextEntry; // @dynamic secureTextEntry;
-- (id)attributedSubstringForMarkedRange;
 - (id)markedTextAttributes;
+- (id)attributedSubstringForMarkedRange;
 @property(nonatomic) struct _NSRange markedRange;
 - (id)linkTextAttributes;
 - (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;

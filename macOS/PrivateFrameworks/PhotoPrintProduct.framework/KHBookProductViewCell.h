@@ -24,6 +24,7 @@
     NSDictionary *_bookDetailsViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *bookDetailsViews; // @synthesize bookDetailsViews=_bookDetailsViews;
 @property(retain, nonatomic) NSArray *products; // @synthesize products=_products;
 @property(nonatomic) __weak id <KHProductViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,7 +34,6 @@
 @property __weak NSImageView *productImageView; // @synthesize productImageView=_productImageView;
 @property __weak NSTextField *productDescriptionLabel; // @synthesize productDescriptionLabel=_productDescriptionLabel;
 @property __weak NSTextField *productTitleLabel; // @synthesize productTitleLabel=_productTitleLabel;
-- (void).cxx_destruct;
 - (void)productButtonHit:(id)arg1;
 - (void)hidePrices;
 - (void)showPricesWithProducts:(id)arg1;

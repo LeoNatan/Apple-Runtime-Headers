@@ -19,6 +19,7 @@
     int _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSURL *defaultURL; // @synthesize defaultURL=_defaultURL;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int un_ActionOptions;
 - (id)generateUserInfoAction;
 - (id)initWithUserInfoAction:(id)arg1;

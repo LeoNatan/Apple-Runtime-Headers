@@ -17,8 +17,8 @@
 + (void)unregisterFonts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)registerFonts:(id)arg1 enabled:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)sharedManager;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (id)registeredFontsInfo:(_Bool)arg1;
 - (void)_unregisterFonts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_registerFonts:(id)arg1 enabled:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;

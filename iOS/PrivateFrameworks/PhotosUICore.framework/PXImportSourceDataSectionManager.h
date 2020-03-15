@@ -17,10 +17,10 @@
     NSArray *_importSources;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *importSources; // @synthesize importSources=_importSources;
 @property(readonly, nonatomic) PXImportSourcesManager *importSourcesManager; // @synthesize importSourcesManager=_importSourcesManager;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-- (void).cxx_destruct;
 - (void)importSourcesManager:(id)arg1 didUpdateImportSource:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)auxiliaryObjectForKey:(id)arg1 dataSectionObject:(id)arg2 hintIndex:(long long)arg3;

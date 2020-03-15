@@ -27,6 +27,7 @@
 + (id)HTMLDocumentWithString:(id)arg1 encoding:(unsigned long long)arg2 error:(id *)arg3;
 + (id)XMLDocumentWithData:(id)arg1 error:(id *)arg2;
 + (id)XMLDocumentWithString:(id)arg1 encoding:(unsigned long long)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *defaultNamespaces; // @synthesize defaultNamespaces=_defaultNamespaces;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
@@ -34,7 +35,6 @@
 @property(copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(nonatomic) struct _xmlDoc *xmlDocument; // @synthesize xmlDocument=_xmlDocument;
 @property(retain, nonatomic) ONOXMLElement *rootElement; // @synthesize rootElement=_rootElement;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

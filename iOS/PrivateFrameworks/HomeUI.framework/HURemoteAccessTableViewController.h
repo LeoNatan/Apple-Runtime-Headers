@@ -16,9 +16,9 @@
     HURemoteAccessItemManager *_remoteAccessItemManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HURemoteAccessItemManager *remoteAccessItemManager; // @synthesize remoteAccessItemManager=_remoteAccessItemManager;
 @property(readonly, copy, nonatomic) HFUserItem *userItem; // @synthesize userItem=_userItem;
-- (void).cxx_destruct;
 - (void)switchCell:(id)arg1 didTurnOn:(_Bool)arg2;
 - (_Bool)shouldHideFooterBelowSection:(long long)arg1;
 - (_Bool)shouldHideHeaderAboveSection:(long long)arg1;

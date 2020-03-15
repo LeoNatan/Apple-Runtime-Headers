@@ -25,6 +25,7 @@
 
 + (id)sandboxExtensionForPath:(id)arg1;
 + (id)sandboxExtensionsForFileURLs:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATTaskClient *taskClient; // @synthesize taskClient=_taskClient;
 @property(nonatomic) _Bool supportsFileURLs; // @synthesize supportsFileURLs=_supportsFileURLs;
 @property(nonatomic, getter=isInstructor) _Bool instructor; // @synthesize instructor=_instructor;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToShareTarget:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

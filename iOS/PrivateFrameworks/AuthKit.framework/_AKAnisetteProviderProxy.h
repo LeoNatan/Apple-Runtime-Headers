@@ -16,8 +16,8 @@
     id <AKAnisetteServiceProtocol> _anisetteDataProvider;
 }
 
-@property(retain, nonatomic) id <AKAnisetteServiceProtocol> anisetteDataProvider; // @synthesize anisetteDataProvider=_anisetteDataProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <AKAnisetteServiceProtocol> anisetteDataProvider; // @synthesize anisetteDataProvider=_anisetteDataProvider;
 - (void)legacyAnisetteDataForContext:(id)arg1 DSID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)fetchAnisetteDataForContext:(id)arg1 provisionIfNecessary:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)eraseAnisetteForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

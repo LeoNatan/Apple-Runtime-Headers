@@ -13,8 +13,8 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(retain) NSURL *url; // @synthesize url=_url;
 
 @end
 

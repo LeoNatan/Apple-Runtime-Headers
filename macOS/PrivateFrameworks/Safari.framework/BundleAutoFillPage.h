@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)autoFillPageWithBundlePage:(const struct BundlePage *)arg1;
-@property(nonatomic) struct BundlePage wkBundlePage; // @synthesize wkBundlePage=_wkBundlePage;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct BundlePage wkBundlePage; // @synthesize wkBundlePage=_wkBundlePage;
 - (id)initWithWKBundlePage:(const struct BundlePage *)arg1;
 
 // Remaining properties

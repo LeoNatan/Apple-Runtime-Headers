@@ -5,10 +5,11 @@
 //
 
 #import <LoginKit/LKLoginControllerProtocol-Protocol.h>
+#import <LoginKit/LKLoginPerformanceTestProtocol-Protocol.h>
 
 @class NSString;
 
-@protocol LKLoginDaemonProtocol <LKLoginControllerProtocol>
+@protocol LKLoginDaemonProtocol <LKLoginControllerProtocol, LKLoginPerformanceTestProtocol>
 - (void)updateGlobalDefaultsValue:(id)arg1 forKey:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)checkInWithCurrentEnvironment:(unsigned long long)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)isReadyToLogoutWithCompletionHandler:(void (^)(NSError *))arg1;

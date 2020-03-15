@@ -17,10 +17,10 @@
 
 + (double)minTimeInterval;
 + (id)timeCriterionWithInterval:(double)arg1;
+- (void).cxx_destruct;
 @property(retain) PLMonotonicTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double rescheduleDelay; // @synthesize rescheduleDelay=_rescheduleDelay;
 @property double interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 - (id)description;
 - (void)didDisableActivity:(id)arg1;
 - (void)didInterruptActivity:(id)arg1;

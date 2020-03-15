@@ -16,14 +16,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) __weak INCodableDescription *codableDescription; // @synthesize codableDescription=_codableDescription;
 @property(copy, nonatomic) NSString *objectTypeNamespace; // @synthesize objectTypeNamespace=_objectTypeNamespace;
 @property(copy, nonatomic) NSString *objectTypeName; // @synthesize objectTypeName=_objectTypeName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain) NSHashTable *iconRegistry; // @synthesize iconRegistry=_iconRegistry;
 @property(readonly) id <ISIconCache> iconCache; // @synthesize iconCache=_iconCache;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)findOrRegisterIcon:(id)arg1;

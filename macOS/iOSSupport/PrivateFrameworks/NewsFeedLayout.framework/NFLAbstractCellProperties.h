@@ -17,12 +17,12 @@
     NSDictionary *_columnIrrespectiveProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *columnIrrespectiveProperties; // @synthesize columnIrrespectiveProperties=_columnIrrespectiveProperties;
 @property(retain, nonatomic) NSDictionary *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) long long rowSpan; // @synthesize rowSpan=_rowSpan;
 @property(nonatomic) double scaleValue; // @synthesize scaleValue=_scaleValue;
 @property(retain, nonatomic) NFLFontCache *fontCache; // @synthesize fontCache=_fontCache;
-- (void).cxx_destruct;
 - (double)lineHeightForFont:(id)arg1 locale:(id)arg2;
 - (double)scaledFontSizeForFontID:(id)arg1;
 - (double)scaledValueForValue:(double)arg1 fontID:(id)arg2;

@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int callDirection; // @synthesize callDirection=_callDirection;
 @property(nonatomic) unsigned int accessibilityPreference; // @synthesize accessibilityPreference=_accessibilityPreference;
 @property(retain, nonatomic) NSString *deviceUID; // @synthesize deviceUID=_deviceUID;
 @property(nonatomic) unsigned int trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

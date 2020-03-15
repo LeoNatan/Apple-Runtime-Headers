@@ -77,6 +77,7 @@
     id <SXDOMObjectProviding> _DOMObjectProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
 @property(nonatomic) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic) double contentOverlayTopOffset; // @synthesize contentOverlayTopOffset=_contentOverlayTopOffset;
@@ -124,7 +125,6 @@
 @property(readonly, nonatomic) id <SXAdDocumentStateManager> adDocumentStateManager; // @synthesize adDocumentStateManager=_adDocumentStateManager;
 @property(readonly, nonatomic) SXFullscreenVideoPlaybackManager *fullscreenVideoPlaybackManager; // @synthesize fullscreenVideoPlaybackManager=_fullscreenVideoPlaybackManager;
 @property(readonly, nonatomic) SXMediaPlaybackController *mediaPlaybackController; // @synthesize mediaPlaybackController=_mediaPlaybackController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsets;
 @property(readonly, nonatomic) struct CGSize viewportSize;
 - (id)canvasViewController;

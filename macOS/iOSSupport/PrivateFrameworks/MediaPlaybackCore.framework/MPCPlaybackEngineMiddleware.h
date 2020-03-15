@@ -18,9 +18,9 @@
     MPCPlaybackEngine *_playbackEngine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;

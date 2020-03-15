@@ -25,13 +25,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldNotifyUser; // @synthesize shouldNotifyUser=_shouldNotifyUser;
 @property(nonatomic) _Bool requestAuthorization; // @synthesize requestAuthorization=_requestAuthorization;
 @property(retain, nonatomic) NPKProtoPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) _Bool cancelUpdate; // @synthesize cancelUpdate=_cancelUpdate;
 @property(retain, nonatomic) NSData *updateRequestData; // @synthesize updateRequestData=_updateRequestData;
 @property(retain, nonatomic) NSString *passID; // @synthesize passID=_passID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)new;
-@property(retain) _LSLazyPropertyList *lazyPropertyList; // @synthesize lazyPropertyList=_lazyPropertyList;
 - (void).cxx_destruct;
+@property(retain) _LSLazyPropertyList *lazyPropertyList; // @synthesize lazyPropertyList=_lazyPropertyList;
 - (id)_initWithLazyPropertyList:(id)arg1;
 - (id)objectForKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
 - (id)objectForKey:(id)arg1 ofClass:(Class)arg2;

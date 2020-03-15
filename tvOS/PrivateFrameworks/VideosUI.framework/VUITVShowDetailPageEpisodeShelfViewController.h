@@ -6,16 +6,15 @@
 
 #import <VideosUI/VUIShelfViewController.h>
 
-#import <VideosUI/UICollectionViewDataSource-Protocol.h>
 #import <VideosUI/UICollectionViewDelegate-Protocol.h>
 #import <VideosUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <VideosUI/UIScrollViewDelegate-Protocol.h>
 #import <VideosUI/VUITVLibraryEpisodeListCellDelegate-Protocol.h>
 
-@class NSArray, NSIndexPath, NSString, UIView, VUIMediaCollection, VUITVLibraryEpisodeListCell, VUIVisualEffectLabel;
+@class NSArray, NSIndexPath, NSString, UICollectionViewDiffableDataSource, UIView, VUIMediaCollection, VUITVLibraryEpisodeListCell, VUIVisualEffectLabel;
 
 __attribute__((visibility("hidden")))
-@interface VUITVShowDetailPageEpisodeShelfViewController : VUIShelfViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, VUITVLibraryEpisodeListCellDelegate>
+@interface VUITVShowDetailPageEpisodeShelfViewController : VUIShelfViewController <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate, VUITVLibraryEpisodeListCellDelegate>
 {
     double _cellWidth;
     NSArray *_episodes;
@@ -24,9 +23,12 @@ __attribute__((visibility("hidden")))
     VUIVisualEffectLabel *_seasonVisualEffectLabel;
     VUIMediaCollection *_season;
     VUITVLibraryEpisodeListCell *_sizingCell;
+    UICollectionViewDiffableDataSource *_diffableDataSource;
     struct CGSize _cellSize;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
 @property(retain, nonatomic) VUITVLibraryEpisodeListCell *sizingCell; // @synthesize sizingCell=_sizingCell;
 @property(retain, nonatomic) VUIMediaCollection *season; // @synthesize season=_season;
 @property(retain, nonatomic) VUIVisualEffectLabel *seasonVisualEffectLabel; // @synthesize seasonVisualEffectLabel=_seasonVisualEffectLabel;
@@ -35,24 +37,23 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(nonatomic) struct CGSize cellSize; // @synthesize cellSize=_cellSize;
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;
-- (void).cxx_destruct;
+- (id)_entityIdentifiersFromEpisodes;
 - (void)_startPlaybackWithMediaItem:(id)arg1;
 - (void)_updateShelfViewFrameAnimated:(_Bool)arg1;
 - (void)_configureSizingCellForEpisodes:(id)arg1;
 - (void)_setupViews;
+- (id)_createDiffableDataSourceSnapshot;
+- (id)_createDiffableDataSourceForCollectionView:(id)arg1;
 - (void)didTapOnInformationViewWithTitle:(id)arg1 description:(id)arg2;
 - (void)didTapOnImageViewWithMediaItem:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct CGSize)_layoutWithSize:(struct CGSize)arg1 metricsOnly:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
-- (void)_updateWithEpisodes:(id)arg1 changeSet:(id)arg2;
-- (void)updateWithEpisodes:(id)arg1 changeSet:(id)arg2;
+- (void)updateWithEpisodes:(id)arg1;
 - (void)configureWithCollectionView:(id)arg1;
 - (id)initWithEpisodes:(id)arg1 season:(id)arg2;
 

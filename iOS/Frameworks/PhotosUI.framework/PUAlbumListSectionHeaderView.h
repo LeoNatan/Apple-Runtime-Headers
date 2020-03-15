@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _sectionHeaderInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setConstraints:) NSArray *_constraints; // @synthesize _constraints=__constraints;
 @property(readonly, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel=__titleLabel;
 @property(nonatomic) struct UIEdgeInsets sectionHeaderInsets; // @synthesize sectionHeaderInsets=_sectionHeaderInsets;
 @property(retain, nonatomic) UIFont *sectionHeaderTitleFont; // @synthesize sectionHeaderTitleFont=_sectionHeaderTitleFont;
 @property(copy, nonatomic) NSString *sectionHeaderTitle; // @synthesize sectionHeaderTitle=_sectionHeaderTitle;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

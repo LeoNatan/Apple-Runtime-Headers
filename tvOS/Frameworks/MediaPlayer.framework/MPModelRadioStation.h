@@ -6,24 +6,34 @@
 
 #import <MediaPlayer/MPModelObject.h>
 
-@class NSString;
+@class MPRadioStationEvent, NSArray, NSString, NSURL;
 
 @interface MPModelRadioStation : MPModelObject
 {
 }
 
++ (id)__providerID_KEY;
++ (id)__providerBundleIdentifier_KEY;
++ (id)__providerUniversalLink_KEY;
 + (id)__subscriptionRequired_KEY;
 + (id)__providerName_KEY;
 + (id)__attributionLabel_KEY;
 + (id)__subtype_KEY;
 + (id)__type_KEY;
 + (id)__allowsItemLiking_KEY;
++ (id)__stationGlyphBlock_KEY;
 + (id)__artworkCatalogBlock_KEY;
++ (id)__stationEvents_KEY;
 + (id)__hasExplicitContent_KEY;
 + (id)__shortEditorNotes_KEY;
 + (id)__editorNotes_KEY;
 + (id)__name_KEY;
++ (id)__live_KEY;
 + (id)__beats1_KEY;
++ (id)classesForSecureCoding;
+@property(readonly, nonatomic) MPRadioStationEvent *upcomingStationEvent;
+@property(readonly, nonatomic) MPRadioStationEvent *currentStationEvent;
+- (id)stationGlyph;
 - (id)artworkCatalog;
 - (id)humanDescription;
 - (id)contentItemCollectionInfo;
@@ -35,9 +45,15 @@
 @property(nonatomic, getter=isBeats1) _Bool beats1; // @dynamic beats1;
 @property(copy, nonatomic) NSString *editorNotes; // @dynamic editorNotes;
 @property(nonatomic) _Bool hasExplicitContent; // @dynamic hasExplicitContent;
+@property(nonatomic, getter=isLive) _Bool live; // @dynamic live;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) NSString *providerBundleIdentifier; // @dynamic providerBundleIdentifier;
+@property(readonly, nonatomic) long long providerID; // @dynamic providerID;
 @property(copy, nonatomic) NSString *providerName; // @dynamic providerName;
+@property(copy, nonatomic) NSURL *providerUniversalLink; // @dynamic providerUniversalLink;
 @property(copy, nonatomic) NSString *shortEditorNotes; // @dynamic shortEditorNotes;
+@property(copy, nonatomic) NSArray *stationEvents; // @dynamic stationEvents;
+@property(copy, nonatomic) CDUnknownBlockType stationGlyphBlock; // @dynamic stationGlyphBlock;
 @property(nonatomic, getter=isSubscriptionRequired) _Bool subscriptionRequired; // @dynamic subscriptionRequired;
 @property(nonatomic) long long subtype; // @dynamic subtype;
 @property(nonatomic) long long type; // @dynamic type;

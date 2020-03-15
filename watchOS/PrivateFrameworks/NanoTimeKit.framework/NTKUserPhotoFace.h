@@ -19,10 +19,10 @@
 
 + (id)_localizedNameOverrideForCustomEditMode:(int)arg1 forDevice:(id)arg2;
 + (id)_photoIdentifierFromResourceDirectory:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKSafeLocketReader *reader; // @synthesize reader=_reader;
 @property(copy, nonatomic) NSString *photoIdentifier; // @synthesize photoIdentifier=_photoIdentifier;
 @property(nonatomic) _Bool canEdit; // @synthesize canEdit=_canEdit;
-- (void).cxx_destruct;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
 - (_Bool)_option:(id)arg1 migratesToValidOption:(id *)arg2 forCustomEditMode:(int)arg3;
 - (unsigned int)_indexOfOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;

@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) double dynamicTopLeading; // @synthesize dynamicTopLeading=_dynamicTopLeading;
 @property(nonatomic) double dynamicSubtitleleading; // @synthesize dynamicSubtitleleading=_dynamicSubtitleleading;
 @property(nonatomic) double dynamicTitleLeading; // @synthesize dynamicTitleLeading=_dynamicTitleLeading;
@@ -68,7 +69,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasRoundedCorners; // @synthesize hasRoundedCorners=_hasRoundedCorners;
 @property(nonatomic) _Bool showsDeleteButtonOnCellContentView; // @synthesize showsDeleteButtonOnCellContentView=_showsDeleteButtonOnCellContentView;
 @property(nonatomic) _Bool allowsEmailInSubtitle; // @synthesize allowsEmailInSubtitle=_allowsEmailInSubtitle;
-- (void).cxx_destruct;
 - (void)configureWithSpec:(id)arg1;
 
 @end

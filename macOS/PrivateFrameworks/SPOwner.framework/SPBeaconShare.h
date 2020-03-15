@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *correlationIdentifier; // @synthesize correlationIdentifier=_correlationIdentifier;
 @property(copy, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
 @property(nonatomic) BOOL accepted; // @synthesize accepted=_accepted;
 @property(copy, nonatomic) SPHandle *handle; // @synthesize handle=_handle;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -22,6 +22,7 @@
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *barButtonID; // @synthesize barButtonID=_barButtonID;
 @property(nonatomic) _Bool allowsMenuDismissal; // @synthesize allowsMenuDismissal=_allowsMenuDismissal;
 @property(nonatomic) _Bool allowsModalOverModal; // @synthesize allowsModalOverModal=_allowsModalOverModal;
-- (void).cxx_destruct;
 - (void)_configureWithDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;

@@ -22,12 +22,12 @@
 }
 
 + (id)calculateRoundedLinePositionsForTotalWidth:(double)arg1 lineWidth:(double)arg2 numberOfLines:(unsigned long long)arg3 roundedInView:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool backgroundIsTransparent; // @synthesize backgroundIsTransparent=_backgroundIsTransparent;
 @property(nonatomic) unsigned long long sublineInterval; // @synthesize sublineInterval=_sublineInterval;
 @property(nonatomic) unsigned long long numLines; // @synthesize numLines=_numLines;
 @property(nonatomic) double sublineInset; // @synthesize sublineInset=_sublineInset;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
-- (void).cxx_destruct;
 - (id)_stretchableLinesPatternImage;
 - (void)_setNeedsRegenerateBackgroundImage;
 - (void)layoutSubviews;

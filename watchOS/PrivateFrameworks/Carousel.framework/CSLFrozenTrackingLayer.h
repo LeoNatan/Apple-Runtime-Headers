@@ -13,8 +13,8 @@
     NSArray *_frozenCallStackSymbols;
 }
 
-@property(retain, nonatomic) NSArray *frozenCallStackSymbols; // @synthesize frozenCallStackSymbols=_frozenCallStackSymbols;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *frozenCallStackSymbols; // @synthesize frozenCallStackSymbols=_frozenCallStackSymbols;
 - (void)setFrozen:(_Bool)arg1;
 
 @end

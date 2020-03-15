@@ -14,9 +14,9 @@
     IBLayoutCoordinateApplicationState *_y;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBLayoutCoordinateApplicationState *y; // @synthesize y=_y;
 @property(readonly) IBLayoutCoordinateApplicationState *x; // @synthesize x=_x;
-- (void).cxx_destruct;
 @property(readonly) NSSet *allLayoutGuideMatches;
 @property(readonly) NSArray *allGuides;
 - (id)initWithXCoordinateState:(id)arg1 andYCoordinateState:(id)arg2;

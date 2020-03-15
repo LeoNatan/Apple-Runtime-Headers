@@ -19,6 +19,7 @@
     struct UIEdgeInsets _sectionInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cachedTallestHeaderHeight; // @synthesize cachedTallestHeaderHeight=_cachedTallestHeaderHeight;
 @property(nonatomic) double cachedTallestItemHeight; // @synthesize cachedTallestItemHeight=_cachedTallestItemHeight;
 @property(retain, nonatomic) NSArray *shelfLayoutSections; // @synthesize shelfLayoutSections=_shelfLayoutSections;
@@ -26,7 +27,6 @@
 @property(nonatomic) struct CGSize headerReferenceSize; // @synthesize headerReferenceSize=_headerReferenceSize;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;
-- (void).cxx_destruct;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (double)computedContentHeight;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;

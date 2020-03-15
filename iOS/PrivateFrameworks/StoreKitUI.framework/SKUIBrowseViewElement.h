@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
-@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

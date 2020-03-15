@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     PDFScannerResult *pdfResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PDFScannerResult *pdfResult; // @synthesize pdfResult;
 @property(nonatomic) __weak PDFAnnotation *annotation; // @synthesize annotation;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak PDFPage *startPage; // @synthesize startPage;
 @property(nonatomic) int selectionMode; // @synthesize selectionMode;
 @property(retain, nonatomic) PDFSelection *extendingSelection; // @synthesize extendingSelection;
-- (void).cxx_destruct;
 
 @end
 

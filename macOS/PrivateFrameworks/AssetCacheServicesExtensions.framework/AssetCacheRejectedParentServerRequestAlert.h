@@ -13,8 +13,8 @@
     NSString *_parentAddress;
 }
 
-@property(retain) NSString *parentAddress; // @synthesize parentAddress=_parentAddress;
 - (void).cxx_destruct;
+@property(retain) NSString *parentAddress; // @synthesize parentAddress=_parentAddress;
 - (id)sharingPrefsAnchor;
 - (id)verboseText;
 - (id)externalRepresentation;

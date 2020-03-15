@@ -31,12 +31,12 @@
 + (unsigned int)_hashForProtocol:(id)arg1;
 + (unsigned int)daemonInterfaceHash;
 + (unsigned int)clientInterfaceHash;
+- (void).cxx_destruct;
 @property(retain) MNNavigationDetails *details; // @synthesize details=_details;
 @property(readonly, nonatomic) MNAudioOutputSetting *currentSettingForVoicePrompt; // @synthesize currentSettingForVoicePrompt=_currentSettingForVoicePrompt;
 @property(readonly, nonatomic) NSArray *audioSettings; // @synthesize audioSettings=_audioSettings;
 @property(readonly, nonatomic) unsigned int routeSelection; // @synthesize routeSelection=_routeSelection;
 @property(readonly, nonatomic) MNAudioOutputSetting *currentAudioOutputSetting; // @synthesize currentAudioOutputSetting=_currentAudioOutputSetting;
-- (void).cxx_destruct;
 - (void)navigationServiceProxy:(id)arg1 didReceiveRealtimeUpdates:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 willRequestRealtimeUpdatesForRouteIDs:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 triggerHaptics:(int)arg2;

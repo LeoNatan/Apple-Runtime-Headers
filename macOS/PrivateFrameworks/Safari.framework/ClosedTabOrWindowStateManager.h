@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_closedTabOrWindowPersistentStates;
     WBSCoalescedAsynchronousWriter *_recentlyClosedTabsOrWindowsWriter;
     NSObject<OS_dispatch_queue> *_loadClosedTabsDataFromDiskSynchronizationQueue;
-    // Error parsing type: {atomic<LoadingStatus>="__a_"Aq}, name: _savedStateLoadingStatus
+    // Error parsing type: {atomic<LoadingStatus>="__a_"{__cxx_atomic_impl<LoadingStatus, std::__1::__cxx_atomic_base_impl<LoadingStatus> >="__a_value"Aq}}, name: _savedStateLoadingStatus
     NSMutableDictionary *_closingWindowUUIDsToClosedTabStateArrays;
     id <TabSnapshotSensitiveDataPurging> _purger;
     id <EncryptionProvider> _encryptionProvider;
@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
-@property unsigned long long numberOfSavedTabStates; // @synthesize numberOfSavedTabStates=_numberOfSavedTabStates;
 - (void).cxx_destruct;
+@property unsigned long long numberOfSavedTabStates; // @synthesize numberOfSavedTabStates=_numberOfSavedTabStates;
 - (void)_didUndoTabOrTabGroupClose;
 - (void)_didReopenTabOrWindowFromPersistedState;
 - (void)_didReopenTabOrWindow;

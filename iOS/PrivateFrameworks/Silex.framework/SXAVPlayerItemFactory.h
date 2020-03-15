@@ -17,9 +17,9 @@
     id <SXAVURLAssetFactory> _assetFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXAVURLAssetFactory> assetFactory; // @synthesize assetFactory=_assetFactory;
 @property(readonly, copy, nonatomic) NSArray *automaticallyLoadedAssetKeys; // @synthesize automaticallyLoadedAssetKeys=_automaticallyLoadedAssetKeys;
-- (void).cxx_destruct;
 - (id)createPlayerItemWithURL:(id)arg1;
 - (id)initWithAutomaticallyLoadedAssetKeys:(id)arg1 assetFactory:(id)arg2;
 

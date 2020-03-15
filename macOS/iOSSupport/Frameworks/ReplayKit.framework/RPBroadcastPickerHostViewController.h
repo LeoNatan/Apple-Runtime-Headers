@@ -16,9 +16,9 @@
     RPBroadcastPickerExtensionHostContext *_hostContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RPBroadcastPickerExtensionHostContext *hostContext; // @synthesize hostContext=_hostContext;
 @property(nonatomic) __weak RPSystemBroadcastPickerViewController *broadcastPickerViewController; // @synthesize broadcastPickerViewController=_broadcastPickerViewController;
-- (void).cxx_destruct;
 - (void)sendMessageToExtension;
 - (oneway void)viewControllerDidFinish;
 

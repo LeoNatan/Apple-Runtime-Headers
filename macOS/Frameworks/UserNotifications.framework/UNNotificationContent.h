@@ -53,6 +53,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(readonly) unsigned long long summaryArgumentCount; // @synthesize summaryArgumentCount=_summaryArgumentCount;
 @property(readonly, copy) NSString *summaryArgument; // @synthesize summaryArgument=_summaryArgument;
@@ -65,7 +66,6 @@
 @property(readonly, copy) NSString *body; // @synthesize body=_body;
 @property(readonly, copy) NSNumber *badge; // @synthesize badge=_badge;
 @property(readonly, copy) NSArray *attachments; // @synthesize attachments=_attachments;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

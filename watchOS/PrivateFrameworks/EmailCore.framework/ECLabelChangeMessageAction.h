@@ -18,11 +18,11 @@
     NSSet *_labelsToRemove;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *labelsToRemove; // @synthesize labelsToRemove=_labelsToRemove;
 @property(copy, nonatomic) NSSet *labelsToAdd; // @synthesize labelsToAdd=_labelsToAdd;
 @property(copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 @property(copy, nonatomic) NSSet *remoteIDs; // @synthesize remoteIDs=_remoteIDs;
-- (void).cxx_destruct;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;
 
 // Remaining properties

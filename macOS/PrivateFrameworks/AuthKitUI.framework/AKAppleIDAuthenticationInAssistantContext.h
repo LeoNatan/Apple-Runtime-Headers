@@ -62,6 +62,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType passwordHandler; // @synthesize passwordHandler=_passwordHandler;
 @property BOOL offerToUseRecoveryKey; // @synthesize offerToUseRecoveryKey=_offerToUseRecoveryKey;
 @property BOOL offerRemoteApproval; // @synthesize offerRemoteApproval=_offerRemoteApproval;
@@ -98,7 +99,6 @@
 @property BOOL hasButtonControl; // @synthesize hasButtonControl=_hasButtonControl;
 @property unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak NSObject<AKAppleIDAuthenticationAssistant> *assistant; // @synthesize assistant=_assistant;
-- (void).cxx_destruct;
 - (void)context:(id)arg1 needsPasswordWithCompletion:(CDUnknownBlockType)arg2;
 - (void)userCancelledRecoveryKeyEntry;
 - (void)validateRecoveryKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -120,7 +120,7 @@
 - (void)cdpContext:(id)arg1 promptForAdoptionOfMultipleICSC:(CDUnknownBlockType)arg2;
 - (void)cdpContext:(id)arg1 promptForICSCWithIsNumeric:(BOOL)arg2 numericLength:(id)arg3 isRandom:(BOOL)arg4 validator:(id)arg5;
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(BOOL)arg3 validator:(id)arg4;
-- (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
+- (void)cdpContext:(id)arg1 promptForLocalSecretWithCompletion:(CDUnknownBlockType)arg2;
 - (void)pinEntryComplete:(BOOL)arg1;
 - (void)mbConfirmLocalPasswordWithCompletion:(id)arg1;
 - (void)mbRunAppleIDOptOut:(id)arg1;

@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *relatedContentQueries; // @synthesize relatedContentQueries=_relatedContentQueries;
 @property(retain, nonatomic) TVSSSearchResultBatch *initialBatch; // @synthesize initialBatch=_initialBatch;
 @property(copy, nonatomic) NSURL *queryURL; // @synthesize queryURL=_queryURL;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool showBrowseResults; // @synthesize showBrowseResults=_showBrowseResults;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(copy, nonatomic) NSArray *contentItems;

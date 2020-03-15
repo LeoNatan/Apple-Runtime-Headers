@@ -18,10 +18,10 @@
     FCCKRecordZoneManager *_recordZoneManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCCKRecordZoneManager *recordZoneManager; // @synthesize recordZoneManager=_recordZoneManager;
 @property(retain, nonatomic) id <FCAppActivityMonitor> appActivityMonitor; // @synthesize appActivityMonitor=_appActivityMonitor;
 @property(retain, nonatomic) FCCKPrivateDatabase *privateDatabase; // @synthesize privateDatabase=_privateDatabase;
-- (void).cxx_destruct;
 - (void)prepareRecordZonesForUseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)recordZoneWithName:(id)arg1;
 @property(readonly, nonatomic) FCCKRecordZone *userInfoRecordZone;

@@ -20,9 +20,9 @@
 }
 
 + (id)multiValueControllerWithSettingItem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TSKSettingItemEditingControllerDelegate> editingDelegate; // @synthesize editingDelegate=_editingDelegate;
 @property(retain, nonatomic) TSKSettingItem *editingItem; // @synthesize editingItem=_editingItem;
-- (void).cxx_destruct;
 - (void)_sortItemsIfNeeded;
 - (id)_sortedAvailableValues;
 - (id)_sortedLocalizedAvailableValues;

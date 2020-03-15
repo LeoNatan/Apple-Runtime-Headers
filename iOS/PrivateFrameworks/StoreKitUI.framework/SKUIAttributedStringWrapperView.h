@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     SKUIAttributedStringView *_delegateView;
 }
 
-@property(readonly, nonatomic) SKUIAttributedStringView *delegateView; // @synthesize delegateView=_delegateView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIAttributedStringView *delegateView; // @synthesize delegateView=_delegateView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (_Bool)usesTallCharacterSet;

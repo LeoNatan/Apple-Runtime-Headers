@@ -15,9 +15,9 @@
     NSData *_credentialSet;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *credentialSet; // @synthesize credentialSet=_credentialSet;
 @property(nonatomic) unsigned int userID; // @synthesize userID=_userID;
-- (void).cxx_destruct;
 - (void)statusMessage:(unsigned int)arg1 client:(unsigned long long)arg2;
 - (void)enrollFeedback:(id)arg1 client:(unsigned long long)arg2;
 - (void)enrollUpdate:(id)arg1 client:(unsigned long long)arg2;

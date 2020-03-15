@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
-- (void).cxx_destruct;
 - (void)buttonPressed:(id)arg1;
 - (id)init;
 

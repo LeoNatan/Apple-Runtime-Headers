@@ -15,9 +15,9 @@
     id <NSObject> _currentValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NSObject> currentValue; // @synthesize currentValue=_currentValue;
 @property(readonly, copy, nonatomic) NSString *triggerID; // @synthesize triggerID=_triggerID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTriggerID:(id)arg1 currentValue:(id)arg2;
 

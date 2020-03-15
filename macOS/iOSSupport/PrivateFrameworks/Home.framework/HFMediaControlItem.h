@@ -20,11 +20,11 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFMediaActionSetting *mediaActionSetting; // @synthesize mediaActionSetting=_mediaActionSetting;
 @property(readonly, nonatomic) long long mediaAccessoryItemType; // @synthesize mediaAccessoryItemType=_mediaAccessoryItemType;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFMediaValueSource> mediaValueSource; // @synthesize mediaValueSource=_mediaValueSource;
-- (void).cxx_destruct;
 - (long long)sortPriority;
 - (id)toggleValue;
 - (id)togglePrimaryState;

@@ -17,10 +17,10 @@
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (void)readyForUnblank:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)enableUnblankingSynchronization:(_Bool)arg1;
 - (void)dealloc;

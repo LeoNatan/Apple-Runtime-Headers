@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) _Bool isInitiator; // @synthesize isInitiator=_isInitiator;
 @property(nonatomic) unsigned long long epoch; // @synthesize epoch=_epoch;
@@ -33,11 +34,9 @@
 @property(retain, nonatomic) NSString *uniqueClientID; // @synthesize uniqueClientID=_uniqueClientID;
 @property(retain, nonatomic) NSString *uniqueDeviceID; // @synthesize uniqueDeviceID=_uniqueDeviceID;
 @property(retain, nonatomic) NSString *protocolType; // @synthesize protocolType=_protocolType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithProtocolType:(id)arg1 uniqueDeviceID:(id)arg2 uniqueClientID:(id)arg3 pairingUUID:(id)arg4 containerName:(id)arg5 contextID:(id)arg6 epoch:(unsigned long long)arg7 isInitiator:(_Bool)arg8;
-- (id)initWithProtocolType:(id)arg1 uniqueDeviceID:(id)arg2 uniqueClientID:(id)arg3 containerName:(id)arg4 contextID:(id)arg5 epoch:(unsigned long long)arg6 isInitiator:(_Bool)arg7;
 
 @end
 

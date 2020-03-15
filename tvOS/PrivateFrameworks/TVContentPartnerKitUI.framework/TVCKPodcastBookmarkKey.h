@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)podcastIdentifierWithURL:(id)arg1 guid:(id)arg2 defaultIdentifer:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *podcastFeedURL; // @synthesize podcastFeedURL=_podcastFeedURL;
 @property(readonly, nonatomic) TVCKPodcastGUID *podcastEpisodeGUID; // @synthesize podcastEpisodeGUID=_podcastEpisodeGUID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

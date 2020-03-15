@@ -21,10 +21,10 @@
 }
 
 + (id)colorBurnContentImageForImage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets backgroundInsets; // @synthesize backgroundInsets=_backgroundInsets;
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (void)_addHighlightViewIfNecessary;
 - (void)layoutSubviews;
 @property(nonatomic) double brightness;

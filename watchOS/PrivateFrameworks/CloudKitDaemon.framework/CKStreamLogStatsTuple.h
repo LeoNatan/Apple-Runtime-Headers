@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned int _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int size; // @synthesize size=_size;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(retain, nonatomic) NSString *fileAndLine; // @synthesize fileAndLine=_fileAndLine;
-- (void).cxx_destruct;
 
 @end
 

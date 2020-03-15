@@ -18,9 +18,9 @@
     OS_remote_device *_device;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OS_remote_device *device; // @synthesize device=_device;
 @property(nonatomic) __weak id <CSRemoteControlClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_getMyriadInfoFromServerMessage:(id)arg1;
 - (id)_dictionaryWithContentsOfXPCObject:(id)arg1;
 - (BOOL)_saveTransferredData:(id)arg1 to:(id)arg2 numberOfSamplesToWrite:(unsigned long long)arg3;

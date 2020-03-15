@@ -27,6 +27,7 @@
 }
 
 + (id)sharedRulerView;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL lastTouchWasMaskedByRuler; // @synthesize lastTouchWasMaskedByRuler=_lastTouchWasMaskedByRuler;
 @property(nonatomic) BOOL canRulerSnapToAngle; // @synthesize canRulerSnapToAngle=_canRulerSnapToAngle;
 @property(nonatomic) BOOL rulerWasShownViaGesture; // @synthesize rulerWasShownViaGesture=_rulerWasShownViaGesture;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) BOOL rulerSelected; // @synthesize rulerSelected=_rulerSelected;
 @property(nonatomic) BOOL isInteractingWithRuler; // @synthesize isInteractingWithRuler=_isInteractingWithRuler;
 @property(nonatomic) __weak id <PKRulerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)angleSnapRulerTransform:(struct CGAffineTransform)arg1 aroundOrigin:(struct CGPoint)arg2;
 - (struct CGAffineTransform)canvasTransform;
 - (double)getRulerCenterTValueOnScreenForTransform:(struct CGAffineTransform)arg1;

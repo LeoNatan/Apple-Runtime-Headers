@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_xmlBlob;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *xmlBlob; // @synthesize xmlBlob=_xmlBlob;
 @property(retain, nonatomic) WDCharacterProperties *properties; // @synthesize properties=_properties;
 @property(nonatomic) int justification; // @synthesize justification=_justification;
-- (void).cxx_destruct;
 - (id)description;
 - (void)clearProperties;
 - (int)runType;

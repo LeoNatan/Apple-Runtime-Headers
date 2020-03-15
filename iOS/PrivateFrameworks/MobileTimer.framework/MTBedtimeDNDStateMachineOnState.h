@@ -13,8 +13,8 @@
     NSDate *_bedtimeDNDEndDate;
 }
 
-@property(readonly, nonatomic) NSDate *bedtimeDNDEndDate; // @synthesize bedtimeDNDEndDate=_bedtimeDNDEndDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *bedtimeDNDEndDate; // @synthesize bedtimeDNDEndDate=_bedtimeDNDEndDate;
 - (void)didEnterWithPreviousState:(id)arg1;
 - (_Bool)isEqualToState:(id)arg1;
 - (id)initWithBedtimeDNDEndDate:(id)arg1 stateMachine:(id)arg2;

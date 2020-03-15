@@ -15,10 +15,10 @@
     NSString *_leagueShortName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *leagueShortName; // @synthesize leagueShortName=_leagueShortName;
 @property(readonly, copy, nonatomic) NSString *leagueName; // @synthesize leagueName=_leagueName;
 @property(readonly, copy, nonatomic) NSDate *startGameTime; // @synthesize startGameTime=_startGameTime;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

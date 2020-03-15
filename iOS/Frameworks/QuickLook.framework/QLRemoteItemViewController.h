@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
     QLRemotePreviewHostViewController *_remoteViewController;
 }
 
-@property(retain, nonatomic) QLRemotePreviewHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) QLRemotePreviewHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void)getFrameWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)forwardMessageToHostOfCustomViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dismissQuickLook;
@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canShowNavBar;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;
+- (_Bool)canClickToToggleFullscreen;
 - (_Bool)canEnterFullScreen;
 - (void)previewDidDisappear:(_Bool)arg1;
 - (void)previewWillDisappear:(_Bool)arg1;

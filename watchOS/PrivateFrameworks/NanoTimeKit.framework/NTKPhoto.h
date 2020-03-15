@@ -25,6 +25,7 @@
 }
 
 + (id)decodeFromDictionary:(id)arg1 forResourceDirectory:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) float irisStillDisplayTime; // @synthesize irisStillDisplayTime=_irisStillDisplayTime;
 @property(nonatomic) float irisDuration; // @synthesize irisDuration=_irisDuration;
 @property(copy, nonatomic) NSURL *irisVideoURL; // @synthesize irisVideoURL=_irisVideoURL;
@@ -34,7 +35,6 @@
 @property(nonatomic) struct CGRect originalCrop; // @synthesize originalCrop=_originalCrop;
 @property(copy, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
-- (void).cxx_destruct;
 - (void)setAnalysis:(id)arg1 alignment:(unsigned int)arg2 deviceSizeClass:(unsigned int)arg3;
 - (id)analysisForAlignment:(unsigned int)arg1 deviceSizeClass:(unsigned int)arg2;
 @property(readonly, nonatomic) _Bool isMissingAnalysis;

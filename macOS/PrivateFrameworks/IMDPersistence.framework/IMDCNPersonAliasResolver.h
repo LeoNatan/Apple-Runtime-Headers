@@ -16,11 +16,11 @@
     IMDContactStoreChangeHistoryEventsHandler *_contactsEventhandler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMDContactStoreChangeHistoryEventsHandler *contactsEventhandler; // @synthesize contactsEventhandler=_contactsEventhandler;
 @property(retain, nonatomic) NSMutableDictionary *aliasToCNIDMap; // @synthesize aliasToCNIDMap=_aliasToCNIDMap;
 @property(retain, nonatomic) NSData *currentHistoryToken; // @synthesize currentHistoryToken=_currentHistoryToken;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (BOOL)isCNContactFavorited:(id)arg1;
 - (BOOL)isFavoritedContact:(id)arg1;
 - (void)CNRecordIDForAliases:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -15,8 +15,8 @@
     SBUIAnimationController *_animationController;
 }
 
-@property(readonly, nonatomic) __weak SBUIAnimationController *animationController; // @synthesize animationController=_animationController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak SBUIAnimationController *animationController; // @synthesize animationController=_animationController;
 - (void)animateTransition:(id)arg1;
 - (id)transitionAnimationFactory:(id)arg1;
 - (double)transitionDuration:(id)arg1;

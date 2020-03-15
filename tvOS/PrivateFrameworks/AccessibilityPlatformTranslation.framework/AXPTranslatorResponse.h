@@ -24,12 +24,12 @@
 + (id)allowedDecodableClasses;
 + (id)emptyResponse;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long error; // @synthesize error=_error;
 @property(retain, nonatomic) AXPTranslationObject *associatedNotificationObject; // @synthesize associatedNotificationObject=_associatedNotificationObject;
 @property(nonatomic) unsigned long long notification; // @synthesize notification=_notification;
 @property(nonatomic) unsigned long long attribute; // @synthesize attribute=_attribute;
 @property(retain, nonatomic) id <NSObject><NSCopying><NSSecureCoding> resultData; // @synthesize resultData=_resultData;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool boolResponse;
 @property(readonly, nonatomic) NSArray *translationsResponse;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) __weak id <HDContentProtectionObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)initWithObserver:(id)arg1 queue:(id)arg2;
 - (id)init;
 

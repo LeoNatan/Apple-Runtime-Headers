@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     id <_SKUIStatusBarAlertViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_SKUIStatusBarAlertViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long supportedInterfaceOrientations; // @synthesize supportedInterfaceOrientations=_supportedInterfaceOrientations;
 @property(nonatomic, getter=isOnScreen) _Bool onScreen; // @synthesize onScreen=_onScreen;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long defaultInterfaceOrientations;
 @property(copy, nonatomic) NSString *message;
 @property(readonly, nonatomic) UIView *statusBarView;

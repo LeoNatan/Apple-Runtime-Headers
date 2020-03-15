@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CKAcknowledgmentGlyphImageView *_dot;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *dot; // @synthesize dot=_dot;
 @property(retain, nonatomic) CKAcknowledgmentGlyphImageView *glyph; // @synthesize glyph=_glyph;
-- (void).cxx_destruct;
 - (double)animationDuration;
 - (void)animateWithBeginTime:(double)arg1 completionDelay:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (struct CGPoint)glyphOffset;

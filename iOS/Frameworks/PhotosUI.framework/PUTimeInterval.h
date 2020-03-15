@@ -15,12 +15,12 @@
     double _endTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(copy, nonatomic) CDUnknownBlockType intervalEndedHandler; // @synthesize intervalEndedHandler=_intervalEndedHandler;
 @property(copy, nonatomic) CDUnknownBlockType intervalStartedHandler; // @synthesize intervalStartedHandler=_intervalStartedHandler;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_handleTransitionToComplete;
 - (void)_handleTransitionToRunning;
 - (void)endInterval;

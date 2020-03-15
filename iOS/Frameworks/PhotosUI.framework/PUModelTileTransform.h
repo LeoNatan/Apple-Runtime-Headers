@@ -19,12 +19,12 @@
     struct CGPoint _overscroll;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *userInputOriginIdentifier; // @synthesize userInputOriginIdentifier=_userInputOriginIdentifier;
 @property(readonly, nonatomic) struct CGPoint overscroll; // @synthesize overscroll=_overscroll;
 @property(readonly, nonatomic) struct CGPoint normalizedTranslation; // @synthesize normalizedTranslation=_normalizedTranslation;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) _Bool hasUserInput; // @synthesize hasUserInput=_hasUserInput;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool hasUserZoomedOut;
 @property(readonly, nonatomic) _Bool hasUserZoomedIn;

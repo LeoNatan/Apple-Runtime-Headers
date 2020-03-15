@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _UINavigationControllerPalette *_outgoingTopPalette;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UINavigationControllerPalette *outgoingTopPalette; // @synthesize outgoingTopPalette=_outgoingTopPalette;
 @property(retain, nonatomic) _UINavigationControllerPalette *incomingTopPalette; // @synthesize incomingTopPalette=_incomingTopPalette;
-- (void).cxx_destruct;
 
 @end
 

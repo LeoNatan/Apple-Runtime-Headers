@@ -10,7 +10,7 @@
 #import <HomeKitDaemon/HMFMessageReceiver-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMAccessoryCategory, HMFMessageDispatcher, NSObject, NSString, NSUUID;
+@class HMAccessoryCategory, HMDAccessoryAdvertisement, HMFMessageDispatcher, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDUnassociatedAccessory : HMFObject <HMFLogging, HMFMessageReceiver, NSSecureCoding>
@@ -20,6 +20,7 @@
     HMAccessoryCategory *_category;
     NSString *_identifier;
     long long _associationOptions;
+    HMDAccessoryAdvertisement *_accessoryAdvertisement;
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFMessageDispatcher *_messageDispatcher;
@@ -29,19 +30,21 @@
 + (id)logCategory;
 + (id)shortDescription;
 + (id)otherAccessoryCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
+@property(retain, nonatomic) HMDAccessoryAdvertisement *accessoryAdvertisement; // @synthesize accessoryAdvertisement=_accessoryAdvertisement;
 @property(readonly) long long associationOptions; // @synthesize associationOptions=_associationOptions;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, setter=setUUID:) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (id)messageDestination;
 - (id)logIdentifier;
+- (void)associateWithAccessoryAdvertisement:(id)arg1;
 - (void)identifyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_handleIdentify:(id)arg1;
 @property(readonly, getter=isReachable) BOOL reachable;

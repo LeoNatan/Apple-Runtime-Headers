@@ -16,9 +16,9 @@
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak HUServiceDetailsItemManager *itemManager; // @synthesize itemManager=_itemManager;
-- (void).cxx_destruct;
 - (id)unifiedIdentifiersForSectionIdentifier:(id)arg1;
 - (id)privacyIdentifierForSectionIdentifier:(id)arg1;
 - (void)displayPrivacyInformationWithIdentifier:(id)arg1;

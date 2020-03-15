@@ -18,9 +18,9 @@
 
 + (id)requiredPropertiesForStaticMediaClips;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) MPIdentifierSet *startItemIdentifiers; // @synthesize startItemIdentifiers=_startItemIdentifiers;
 @property(copy, nonatomic) MPModelRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

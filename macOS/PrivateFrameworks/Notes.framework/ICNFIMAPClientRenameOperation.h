@@ -14,9 +14,9 @@
     NSString *_nameForNewMailboxArgument;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *nameForNewMailboxArgument; // @synthesize nameForNewMailboxArgument=_nameForNewMailboxArgument;
 @property(copy) NSString *nameForNewMailbox; // @synthesize nameForNewMailbox=_nameForNewMailbox;
-- (void).cxx_destruct;
 - (id)newCommandDataForLiteralPlus:(BOOL)arg1;
 - (id)debugCommandString;
 - (id)detailsString;

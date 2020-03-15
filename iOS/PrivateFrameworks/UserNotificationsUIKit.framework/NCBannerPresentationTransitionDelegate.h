@@ -20,10 +20,10 @@
     UIGestureRecognizer *_activeGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIGestureRecognizer *activeGesture; // @synthesize activeGesture=_activeGesture;
 @property(readonly, nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic) __weak id <NCBannerPresentationTransitioningDelegateObserver> transitioningDelegateObserver; // @synthesize transitioningDelegateObserver=_transitioningDelegateObserver;
-- (void).cxx_destruct;
 - (void)transitionAnimator:(id)arg1 didCommitToTransitionWithCoordinator:(id)arg2;
 - (void)bannerPresentationAnimator:(id)arg1 didFinishTransition:(_Bool)arg2;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;

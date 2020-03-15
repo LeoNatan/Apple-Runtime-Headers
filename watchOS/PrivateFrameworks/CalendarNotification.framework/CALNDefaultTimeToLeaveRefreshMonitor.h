@@ -21,11 +21,11 @@
 }
 
 + (id)_refreshTimerBTAJobNameForEventExternalURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRegisteredForBackgroundTaskAgentJobs) _Bool registeredForBackgroundTaskAgentJobs; // @synthesize registeredForBackgroundTaskAgentJobs=_registeredForBackgroundTaskAgentJobs;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) id <CALNTimeToLeaveRefreshStorage> storage; // @synthesize storage=_storage;
 @property(nonatomic) __weak id <CALNTimeToLeaveRefreshMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_refreshTimerFiredForEventExternalURL:(id)arg1;
 - (void)removeRefreshTimerForEventExternalURL:(id)arg1;
 - (void)setUpRefreshTimerWithTriggerDate:(id)arg1 eventExternalURL:(id)arg2;

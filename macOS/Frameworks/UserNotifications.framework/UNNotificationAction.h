@@ -25,13 +25,13 @@
 + (id)actionWithIdentifier:(id)arg1 title:(id)arg2 options:(unsigned long long)arg3;
 + (id)actionWithIdentifier:(id)arg1 title:(id)arg2 url:(id)arg3 options:(unsigned long long)arg4;
 + (id)actionWithIdentifier:(id)arg1 title:(id)arg2 url:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSURL *url; // @synthesize url=_url;
 @property(readonly, copy) NSString *textInputPlaceholder; // @synthesize textInputPlaceholder=_textInputPlaceholder;
 @property(readonly, copy) NSString *textInputButtonTitle; // @synthesize textInputButtonTitle=_textInputButtonTitle;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy) NSString *title; // @synthesize title=_title;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

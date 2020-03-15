@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSString *charString; // @synthesize charString=_charString;
 @property(nonatomic) unsigned long long keyCode; // @synthesize keyCode=_keyCode;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

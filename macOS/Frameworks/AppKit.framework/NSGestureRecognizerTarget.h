@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -21,8 +21,8 @@
 }
 
 + (id)sharedManager;
-@property(nonatomic) BOOL registerDisplayed; // @synthesize registerDisplayed=_registerDisplayed;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL registerDisplayed; // @synthesize registerDisplayed=_registerDisplayed;
 - (BOOL)isStringEmpty:(id)arg1;
 - (int)preInputMethodFrom:(id)arg1;
 - (id)inputMethodStringFrom:(int)arg1;

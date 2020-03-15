@@ -18,11 +18,11 @@
     double _similarityThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double similarityThreshold; // @synthesize similarityThreshold=_similarityThreshold;
 @property(readonly, nonatomic) NSMapTable *goldAssetSceneprintsAndDates; // @synthesize goldAssetSceneprintsAndDates=_goldAssetSceneprintsAndDates;
 @property(readonly, nonatomic) NSSet *goldAssetUUIDs; // @synthesize goldAssetUUIDs=_goldAssetUUIDs;
 @property(readonly, nonatomic) NSSet *goldAssets; // @synthesize goldAssets=_goldAssets;
-- (void).cxx_destruct;
 - (id)semanticScoreByAssetUUIDForAssets:(id)arg1;
 - (id)dataToPersist;
 - (float)semanticScoreForAsset:(id)arg1;

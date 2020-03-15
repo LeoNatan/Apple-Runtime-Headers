@@ -24,8 +24,8 @@
 + (float)leftImageWidth;
 + (_Bool)requiresConstraintBasedLayout;
 + (_Bool)usesConstraintBasedLayout;
-@property(retain, nonatomic) UIImage *leftImage; // @synthesize leftImage=_leftImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *leftImage; // @synthesize leftImage=_leftImage;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (void)updateConstraints;
 @property(retain, nonatomic) UIColor *leftImageTintColor;

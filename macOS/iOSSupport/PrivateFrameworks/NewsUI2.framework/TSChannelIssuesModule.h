@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSChannelIssuesModuleType-Protocol.h>
-
-@interface TSChannelIssuesModule : NSObject <TSChannelIssuesModuleType>
+@interface TSChannelIssuesModule : NSObject
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker

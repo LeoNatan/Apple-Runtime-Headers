@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSDictionary *jsonFeedback; // @synthesize jsonFeedback=_jsonFeedback;
 @property(nonatomic) unsigned long long feedbackType; // @synthesize feedbackType=_feedbackType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithType:(unsigned long long)arg1 data:(id)arg2;

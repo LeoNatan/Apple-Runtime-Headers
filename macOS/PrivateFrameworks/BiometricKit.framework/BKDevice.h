@@ -24,10 +24,10 @@
 + (BOOL)lockoutState:(long long *)arg1 fromDeviceLockoutState:(long long)arg2 error:(id *)arg3;
 + (id)deviceWithDescriptor:(id)arg1 error:(id *)arg2;
 + (BOOL)deviceAvailableWithError:(id *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKDeviceDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <BKDeviceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)isDelegate;
 - (void)taskResumeStatus:(int)arg1 client:(unsigned long long)arg2;
 - (void)templateUpdate:(id)arg1 details:(id)arg2 client:(unsigned long long)arg3;

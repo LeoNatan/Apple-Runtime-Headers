@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *extensionUUID; // @synthesize extensionUUID=_extensionUUID;
 @property(retain) id <SFSafariExtensionHostDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)getBaseURIWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)showPopoverFromToolbarItem:(id)arg1;
 - (void)setToolbarItem:(id)arg1 label:(id)arg2;

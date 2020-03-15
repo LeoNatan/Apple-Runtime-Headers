@@ -18,10 +18,10 @@
     NSArray *_appRules;
 }
 
+- (void).cxx_destruct;
 @property _Bool onDemandEnabled; // @synthesize onDemandEnabled=_onDemandEnabled;
 @property(retain) NSArray *appRules; // @synthesize appRules=_appRules;
 @property(retain) NEVPNProtocol *protocolConfiguration; // @synthesize protocolConfiguration=_protocolConfiguration;
-- (void).cxx_destruct;
 @property(readonly) int routingMethod;
 - (void)handleAppMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property _Bool reasserting;

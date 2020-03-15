@@ -16,8 +16,8 @@
     NUImageGeometry *_geometry;
 }
 
-@property(retain) NUImageGeometry *geometry; // @synthesize geometry=_geometry;
 - (void).cxx_destruct;
+@property(retain) NUImageGeometry *geometry; // @synthesize geometry=_geometry;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -15,8 +15,8 @@
 
 + (id)checkedImage;
 + (id)uncheckedImage;
-@property(nonatomic) __weak UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 - (void)updateImages;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

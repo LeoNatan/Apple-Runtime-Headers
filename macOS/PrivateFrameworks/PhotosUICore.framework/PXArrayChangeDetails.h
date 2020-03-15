@@ -33,16 +33,17 @@
 + (id)changeDetailsWithNoChanges;
 + (id)changeDetailsFromFetchResultChangeDetails:(id)arg1;
 + (id)changeDetailsFromArray:(id)arg1 toArray:(id)arg2 changedObjects:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexSet *changedIndexes; // @synthesize changedIndexes=_changedIndexes;
 @property(readonly, nonatomic) const struct __CFArray *movesFromIndexes; // @synthesize movesFromIndexes=_movesFromIndexes;
 @property(readonly, nonatomic) NSIndexSet *movesToIndexes; // @synthesize movesToIndexes=_movesToIndexes;
 @property(readonly, nonatomic) NSIndexSet *insertedIndexes; // @synthesize insertedIndexes=_insertedIndexes;
 @property(readonly, nonatomic) NSIndexSet *removedIndexes; // @synthesize removedIndexes=_removedIndexes;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)changeDetailsByAddingChangeDetails:(id)arg1;
 - (BOOL)canPreserveIncrementalChangesWhenAddingChangeDetails:(id)arg1;
+- (void)applyToDictionary:(id)arg1 removalHandler:(CDUnknownBlockType)arg2 moveHandler:(CDUnknownBlockType)arg3;
 - (void)applyToIndexSet:(id)arg1;
 - (id)indexSetAfterRevertingChangesToIndexSet:(id)arg1;
 - (id)indexSetAfterApplyingChangesToIndexSet:(id)arg1;

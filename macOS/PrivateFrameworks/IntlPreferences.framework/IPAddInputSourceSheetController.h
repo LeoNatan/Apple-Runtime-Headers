@@ -31,6 +31,7 @@
 + (void)runSheetForAllInputSourcesForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)runSheetForWindow:(id)arg1 topLanguages:(id)arg2 otherLanguages:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)sharedController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *languageFilteredInputSources; // @synthesize languageFilteredInputSources=_languageFilteredInputSources;
 @property(retain, nonatomic) NSArray *keywordFilteredInputSources; // @synthesize keywordFilteredInputSources=_keywordFilteredInputSources;
 @property(retain, nonatomic) NSArray *inputSources; // @synthesize inputSources=_inputSources;
@@ -44,7 +45,6 @@
 @property NSLayoutConstraint *languagesTableWidthConstraint; // @synthesize languagesTableWidthConstraint=_languagesTableWidthConstraint;
 @property NSTableView *languagesTableView; // @synthesize languagesTableView=_languagesTableView;
 @property NSButton *inputSourcesSheetCancelButton; // @synthesize inputSourcesSheetCancelButton=_inputSourcesSheetCancelButton;
-- (void).cxx_destruct;
 - (void)updateKeyboardLayoutWebView;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (void)tableViewSelectionDidChange:(id)arg1;

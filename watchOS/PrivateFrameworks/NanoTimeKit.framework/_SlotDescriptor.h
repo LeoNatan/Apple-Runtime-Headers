@@ -16,10 +16,10 @@
 }
 
 + (id)descriptorWithComplicationFamily:(int)arg1 complicationTypesRankedList:(id)arg2 allowedComplicationTypes:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexSet *possibleTypes; // @synthesize possibleTypes=_possibleTypes;
 @property(readonly, nonatomic) NSArray *typesRankedList; // @synthesize typesRankedList=_typesRankedList;
 @property(readonly, nonatomic) int family; // @synthesize family=_family;
-- (void).cxx_destruct;
 - (_Bool)supportsType:(unsigned int)arg1;
 - (_Bool)allowsType:(unsigned int)arg1 inFace:(id)arg2;
 

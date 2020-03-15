@@ -18,9 +18,9 @@
     AXDispatchTimer *_communicationTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXDispatchTimer *communicationTimer; // @synthesize communicationTimer=_communicationTimer;
 @property(nonatomic) BOOL didValidateHIID; // @synthesize didValidateHIID;
-- (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)sendDataChunk;
 - (BOOL)sendObject:(id)arg1 withSendCompletion:(CDUnknownBlockType)arg2;

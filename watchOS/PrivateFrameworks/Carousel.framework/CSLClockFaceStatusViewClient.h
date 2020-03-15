@@ -18,9 +18,9 @@
     id <CSLClockFaceStatusViewClientDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLClockFaceStatusViewClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)launchSessionAppForSessionType:(int)arg1;
 - (void)showFinalStateAnimated:(_Bool)arg1;
 - (void)prepareToAnimate;

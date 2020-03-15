@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     WDClinicalSampleAccountProviderGateway *_gateway;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDClinicalSampleAccountProviderGateway *gateway; // @synthesize gateway=_gateway;
 @property(copy, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

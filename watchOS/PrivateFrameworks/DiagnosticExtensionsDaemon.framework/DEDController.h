@@ -45,6 +45,7 @@
 }
 
 + (id)archivedClasses;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *sessions; // @synthesize sessions=_sessions;
 @property(retain) NSMutableDictionary *devices; // @synthesize devices=_devices;
 @property(copy) CDUnknownBlockType didCancelCompletion; // @synthesize didCancelCompletion=_didCancelCompletion;
@@ -71,7 +72,6 @@
 @property(retain) DEDXPCInbound *xpcInbound; // @synthesize xpcInbound=_xpcInbound;
 @property(retain) DEDXPCConnector *xpcConnector; // @synthesize xpcConnector=_xpcConnector;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *bugSessionCallbackQueue; // @synthesize bugSessionCallbackQueue=_bugSessionCallbackQueue;
-- (void).cxx_destruct;
 - (void)connector:(id)arg1 didLooseConnectionToProcessWithPid:(int)arg2;
 - (id)sharingConnection;
 - (id)idsConnection;

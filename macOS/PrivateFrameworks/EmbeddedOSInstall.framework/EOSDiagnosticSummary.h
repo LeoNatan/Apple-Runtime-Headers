@@ -26,6 +26,7 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property BOOL submittedFailureLogsToCrashReporter; // @synthesize submittedFailureLogsToCrashReporter=_submittedFailureLogsToCrashReporter;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property long long failingPhase; // @synthesize failingPhase=_failingPhase;
@@ -40,7 +41,6 @@
 @property(retain) NSString *clientName; // @synthesize clientName=_clientName;
 @property(retain) NSString *productionMode; // @synthesize productionMode=_productionMode;
 @property(retain) NSString *fromBuild; // @synthesize fromBuild=_fromBuild;
-- (void).cxx_destruct;
 - (void)_addRestoreUUIDToNVRAM;
 - (BOOL)_submitFailureLogsToCrashReporter;
 - (void)_submitToInstallerDiagnostics;

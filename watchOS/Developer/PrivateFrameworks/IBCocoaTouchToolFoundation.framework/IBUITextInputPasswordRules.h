@@ -18,8 +18,8 @@
 }
 
 + (id)passwordRulesWithDescriptor:(id)arg1;
-@property(copy, nonatomic) NSString *passwordRulesDescriptor; // @synthesize passwordRulesDescriptor=_passwordRulesDescriptor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *passwordRulesDescriptor; // @synthesize passwordRulesDescriptor=_passwordRulesDescriptor;
 - (id)transformAfterMarshalling;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

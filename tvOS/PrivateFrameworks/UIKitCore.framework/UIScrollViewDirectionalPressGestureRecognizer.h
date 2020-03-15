@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     long long _activePressType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long activePressType; // @synthesize activePressType=_activePressType;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)setAllowedTouchTypes:(id)arg1;
 - (void)setAllowedPressTypes:(id)arg1;
 - (void)_resetToOriginalViewIfAllowed;

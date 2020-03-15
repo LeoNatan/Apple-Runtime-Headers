@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     WDAddDataManualEntrySpinner *_deliveryReasonEntryItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDAddDataManualEntrySpinner *deliveryReasonEntryItem; // @synthesize deliveryReasonEntryItem=_deliveryReasonEntryItem;
 @property(retain, nonatomic) WDAddDataManualEntryItem *dateTimeEntryItem; // @synthesize dateTimeEntryItem=_dateTimeEntryItem;
-- (void).cxx_destruct;
 - (void)validateDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)manualEntryItemDidUpdate:(id)arg1;
 - (id)manualEntrySpinner:(id)arg1 titleForRow:(long long)arg2;

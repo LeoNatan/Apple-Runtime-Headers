@@ -16,9 +16,9 @@
     NSDictionary *_body;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 // Remaining properties

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_outOfQuotaDocIDs;
 }
 
-@property(readonly, nonatomic) NSMutableSet *outOfQuotaDocIDs; // @synthesize outOfQuotaDocIDs=_outOfQuotaDocIDs;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableSet *outOfQuotaDocIDs; // @synthesize outOfQuotaDocIDs=_outOfQuotaDocIDs;
 - (void)copyProgressInfoToProgress:(id)arg1 options:(BOOL)arg2;
 - (void)updateLocalizedDescriptionWithOptions:(BOOL)arg1;
 - (id)description;

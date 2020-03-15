@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)_webView:(id)arg1 didAttachInspector:(id)arg2;
 - (void)panel:(id)arg1 dismissWebAuthenticationPanelWithResult:(long long)arg2;
 - (void)panel:(id)arg1 updateWebAuthenticationPanel:(long long)arg2;
 - (void)_webView:(id)arg1 runWebAuthenticationPanel:(id)arg2 initiatedByFrame:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -48,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)_webView:(id)arg1 mediaCaptureStateDidChange:(unsigned long long)arg2;
 - (void)_webView:(id)arg1 requestStorageAccessPanelForDomain:(id)arg2 underCurrentDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_webView:(id)arg1 checkUserMediaPermissionForURL:(id)arg2 mainFrameURL:(id)arg3 frameIdentifier:(unsigned long long)arg4 decisionHandler:(CDUnknownBlockType)arg5;
+- (void)_didRetrieveUserMediaPermission:(unsigned long long)arg1 forDevices:(unsigned long long)arg2 url:(id)arg3 mainFrameURL:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_webView:(id)arg1 requestUserMediaAuthorizationForDevices:(unsigned long long)arg2 url:(id)arg3 mainFrameURL:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_webView:(id)arg1 requestNotificationPermissionForSecurityOrigin:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_webView:(id)arg1 requestGeolocationPermissionForFrame:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
@@ -86,9 +88,8 @@ __attribute__((visibility("hidden")))
 - (id)_userInfoFromMenuItem:(id)arg1;
 - (id)_contextMenuItemWithTitle:(id)arg1 action:(SEL)arg2 isEnabled:(BOOL)arg3 userInfo:(id)arg4;
 - (id)_contextMenuItemWithTitle:(id)arg1 action:(SEL)arg2 isEnabled:(BOOL)arg3 identifier:(id)arg4 userInfo:(id)arg5;
-- (void)_legacyExtensionMenuItemSelected:(id)arg1;
 - (void)_appExtensionMenuItemSelected:(id)arg1;
-- (void)_appendContextMenuItemsFromExtensionsToMenu:(id)arg1 contextMenuItemsFromExtensions:(const Vector_b61c989e *)arg2 appExtensionContextMenuItems:(id)arg3;
+- (void)_appendContextMenuItemsFromExtensionsToMenu:(id)arg1 appExtensionContextMenuItems:(id)arg2;
 - (void)_printWindow:(id)arg1;
 - (void)_printFrame:(id)arg1;
 - (void)_printPage:(id)arg1;
@@ -155,7 +156,7 @@ __attribute__((visibility("hidden")))
 - (void)_appendSaveAndDownloadMenuItemsToMenu:(id)arg1 downloadLinkToDiskExistingMenuItem:(id)arg2 userInfo:(id)arg3;
 - (void)_appendOpenInAppMenuItemsToMenu:(id)arg1 userInfo:(id)arg2;
 - (void)_appendOpenLinkInNewWindowAndTabMenuItemsToMenu:(id)arg1 openLinkInNewWindowExistingMenuItem:(id)arg2 userInfo:(id)arg3;
-- (id)_contextMenuForEditableAreaFromProposedMenu:(id)arg1 contextMenuItemsFromExtensions:(const Vector_b61c989e *)arg2 contextMenuItemsFromAppExtensions:(id)arg3 userInfo:(id)arg4;
+- (id)_contextMenuForEditableAreaFromProposedMenu:(id)arg1 contextMenuItemsFromAppExtensions:(id)arg2 userInfo:(id)arg3;
 - (BOOL)_proposedMenuIsForEditableElement:(id)arg1;
 - (id)_contextMenuFromProposedMenu:(id)arg1 contextMenuItemsFromAppExtensions:(id)arg2 userInfo:(id)arg3;
 - (void)_getContextMenuFromProposedMenu:(id)arg1 userInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

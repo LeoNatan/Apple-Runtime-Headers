@@ -18,11 +18,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAuthorizationPrivacyLinkButton *privacyLinkButton; // @synthesize privacyLinkButton=_privacyLinkButton;
 @property(retain, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak id <AKAuthorizationPrivacyWelcomeHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleLearnMoreTapped:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

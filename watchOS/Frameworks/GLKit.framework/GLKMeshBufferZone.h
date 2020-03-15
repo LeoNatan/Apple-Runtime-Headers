@@ -20,10 +20,10 @@
     unsigned int _glBufferName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int glBufferName; // @synthesize glBufferName=_glBufferName;
 @property(readonly, nonatomic) unsigned int capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) id <MDLMeshBufferAllocator> allocator; // @synthesize allocator=_allocator;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)destroyBuffer:(id)arg1;
 - (id)newBufferWithLength:(unsigned int)arg1 type:(unsigned int)arg2;

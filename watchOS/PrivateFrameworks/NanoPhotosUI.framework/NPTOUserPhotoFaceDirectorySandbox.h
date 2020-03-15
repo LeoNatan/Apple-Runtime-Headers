@@ -14,9 +14,9 @@
     long long _sandboxHandle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long sandboxHandle; // @synthesize sandboxHandle=_sandboxHandle;
 @property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1 extensionToken:(const char *)arg2;

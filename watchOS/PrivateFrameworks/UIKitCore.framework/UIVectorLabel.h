@@ -28,11 +28,11 @@
 + (id)_defaultAttributes;
 + (id)_defaultFont;
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) float preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
 @property(nonatomic) unsigned int numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 - (void)_setMultilineContextWidth:(float)arg1;
 - (float)_multilineContextWidth;
-- (void).cxx_destruct;
 - (id)_attributedTextCompatibleForSizing;
 - (void)_generateDeferredAnimations:(id)arg1;
 - (void)layoutSubviews;

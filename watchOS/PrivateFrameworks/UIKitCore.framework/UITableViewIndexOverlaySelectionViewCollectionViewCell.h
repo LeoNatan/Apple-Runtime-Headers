@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     SEL _tapAction;
 }
 
-@property(readonly) UIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly) UIButton *button; // @synthesize button=_button;
 @property(readonly) UILabel *label;
 @property(nonatomic) float rightMargin;
 @property(nonatomic) int textAlignment;

@@ -15,8 +15,8 @@
     _Bool _accountHasUnsafeDomain;
 }
 
-@property(nonatomic) _Bool accountHasUnsafeDomain; // @synthesize accountHasUnsafeDomain=_accountHasUnsafeDomain;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool accountHasUnsafeDomain; // @synthesize accountHasUnsafeDomain=_accountHasUnsafeDomain;
 - (void)setLabelHighlighted:(_Bool)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

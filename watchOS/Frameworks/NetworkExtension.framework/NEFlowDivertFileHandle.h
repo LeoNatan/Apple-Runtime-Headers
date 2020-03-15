@@ -14,9 +14,9 @@
     NSData *_keyMaterial;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSData *keyMaterial; // @synthesize keyMaterial=_keyMaterial;
 @property(readonly) NSNumber *controlUnit; // @synthesize controlUnit=_controlUnit;
-- (void).cxx_destruct;
 - (unsigned int)type;
 - (id)description;
 - (id)dictionary;

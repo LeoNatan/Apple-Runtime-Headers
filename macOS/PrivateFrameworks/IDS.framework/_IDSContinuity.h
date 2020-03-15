@@ -19,8 +19,8 @@
     long long _state;
 }
 
-@property(readonly) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(readonly) long long state; // @synthesize state=_state;
 - (void)continuityDidStopTrackingPeer:(id)arg1 forType:(long long)arg2;
 - (void)continuityDidStopTrackingPeer:(id)arg1;
 - (void)continuityDidStartTrackingPeer:(id)arg1 forType:(long long)arg2 error:(id)arg3;

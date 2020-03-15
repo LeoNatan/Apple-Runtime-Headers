@@ -11,8 +11,8 @@
     CDUnknownBlockType messageHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType messageHandler; // @synthesize messageHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType messageHandler; // @synthesize messageHandler;
 - (void)activate;
 - (void)setEventHandler:(CDUnknownBlockType)arg1;
 

@@ -19,12 +19,12 @@
     SBSRemoteAlertPresentationTarget *_presentationTarget;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDismissSiri; // @synthesize shouldDismissSiri=_shouldDismissSiri;
 @property(nonatomic) _Bool isScreenshotMarkup; // @synthesize isScreenshotMarkup=_isScreenshotMarkup;
 @property(retain, nonatomic) SBSRemoteAlertPresentationTarget *presentationTarget; // @synthesize presentationTarget=_presentationTarget;
 @property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated=_animated;
 @property(readonly, nonatomic) SBTransientOverlayViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithViewController:(id)arg1;
 

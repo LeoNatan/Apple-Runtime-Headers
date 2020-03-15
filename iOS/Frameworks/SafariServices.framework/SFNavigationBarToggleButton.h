@@ -6,15 +6,16 @@
 
 #import <UIKit/UIButton.h>
 
-@class UIColor, UIImage, UIImageView, UIView;
+@class SFToggleBackgroundView, UIColor, UIImage, UIImageView, UIView;
 
 __attribute__((visibility("hidden")))
 @interface SFNavigationBarToggleButton : UIButton
 {
     UIImageView *_defaultStateImageView;
     UIImageView *_selectedStateImageView;
-    UIView *_selectedStateView;
-    _Bool _useStandaloneAppearance;
+    SFToggleBackgroundView *_selectedStateMaskView;
+    UIView *_selectedStateFillView;
+    unsigned long long _inputMode;
     _Bool _drawsLightGlyph;
     _Bool _usesInsetFromBackground;
     _Bool _highlightsBackground;
@@ -26,13 +27,13 @@ __attribute__((visibility("hidden")))
 + (id)readerImage;
 + (id)formatMenuImage;
 + (struct CGSize)glyphSize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool highlightsBackground; // @synthesize highlightsBackground=_highlightsBackground;
 @property(retain, nonatomic) UIColor *glyphTintColor; // @synthesize glyphTintColor=_glyphTintColor;
 @property(nonatomic) _Bool usesInsetFromBackground; // @synthesize usesInsetFromBackground=_usesInsetFromBackground;
 @property(nonatomic) double resizableBackgroundCornerRadius; // @synthesize resizableBackgroundCornerRadius=_resizableBackgroundCornerRadius;
 @property(nonatomic) _Bool drawsLightGlyph; // @synthesize drawsLightGlyph=_drawsLightGlyph;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_updateSelectedStateView;

@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *doubleTapGestureRecognizer;
     UILongPressGestureRecognizer *longPressGestureRecognizer;
     PDFPanGestureRecognizer *panGestureRecognizer;
+    _Bool recentGestureIsIndirectTouch;
     struct CGRect insetBoundsInDocument;
     struct CGRect scrollViewFrame;
     struct UIEdgeInsets contentInset;

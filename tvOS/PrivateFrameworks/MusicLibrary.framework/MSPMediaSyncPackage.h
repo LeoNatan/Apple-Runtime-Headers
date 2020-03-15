@@ -23,10 +23,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPMediaSyncError *error; // @synthesize error=_error;
 @property(retain, nonatomic) MSPMediaSyncOperation *syncOperation; // @synthesize syncOperation=_syncOperation;
 @property(retain, nonatomic) MSPMediaSyncHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -21,13 +21,13 @@
     NSMutableDictionary *_localizationsByLanguageID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *localizationsByLanguageID; // @synthesize localizationsByLanguageID=_localizationsByLanguageID;
 @property(readonly) NSMutableDictionary *polarityMapsByLanguageID; // @synthesize polarityMapsByLanguageID=_polarityMapsByLanguageID;
 @property(readonly) NSMutableDictionary *displayStringsByPlatformByLanguage; // @synthesize displayStringsByPlatformByLanguage=_displayStringsByPlatformByLanguage;
 @property(readonly) NSURL *assetPlistURL; // @synthesize assetPlistURL=_assetPlistURL;
 @property(readonly) RKAssets *assets; // @synthesize assets=_assets;
 @property(readonly) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)displayStringsForPlatform:(id)arg1 languageID:(id)arg2;
 - (id)stringsFromTable:(id)arg1 forLanguageIdentifier:(id)arg2;
 - (id)initWithAssetPlist:(id)arg1;

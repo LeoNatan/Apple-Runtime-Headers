@@ -24,6 +24,7 @@
     NSLayoutConstraint *_expandedTrailerTrailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property __weak NSLayoutConstraint *expandedTrailerTrailingConstraint; // @synthesize expandedTrailerTrailingConstraint=_expandedTrailerTrailingConstraint;
 @property __weak IMGroupAcknowledgementPollSectionView *expandedLeaderSectionHeader; // @synthesize expandedLeaderSectionHeader=_expandedLeaderSectionHeader;
 @property __weak NSLayoutConstraint *expandedLeaderLeadingConstraint; // @synthesize expandedLeaderLeadingConstraint=_expandedLeaderLeadingConstraint;
@@ -33,17 +34,16 @@
 @property(retain) NSArray *sortedAcknowledgementTypes; // @synthesize sortedAcknowledgementTypes=_sortedAcknowledgementTypes;
 @property(retain) NSDictionary *talliedResults; // @synthesize talliedResults=_talliedResults;
 @property(readonly) IMAggregateAcknowledgmentChatItem *groupAcknowledgements; // @synthesize groupAcknowledgements=_groupAcknowledgements;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)setRepresentedObject:(id)arg1;
 - (void)viewDidAppear;
 - (void)viewWillAppear;
 - (void)viewDidLoad;
 - (void)collectionView:(id)arg1 didSelectItemsAtIndexPaths:(id)arg2;
-- (struct NSView *)collectionView:(struct NSCollectionView *)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (long long)numberOfSectionsInCollectionView:(struct NSCollectionView *)arg1;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
-- (long long)collectionView:(struct NSCollectionView *)arg1 numberOfItemsInSection:(long long)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)_imHandleForIndexPath:(id)arg1;
 - (long long)_associatedMessageTypeForSection:(unsigned long long)arg1;
 - (void)updateWithGroupAcknowledgements:(id)arg1;

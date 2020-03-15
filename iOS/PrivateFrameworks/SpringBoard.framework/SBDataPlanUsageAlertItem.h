@@ -13,8 +13,8 @@
     NSNumber *_remainingPortion;
 }
 
-@property(retain, nonatomic) NSNumber *remainingPortion; // @synthesize remainingPortion=_remainingPortion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *remainingPortion; // @synthesize remainingPortion=_remainingPortion;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 - (id)initWithAccountURL:(id)arg1 usage:(id)arg2;
 

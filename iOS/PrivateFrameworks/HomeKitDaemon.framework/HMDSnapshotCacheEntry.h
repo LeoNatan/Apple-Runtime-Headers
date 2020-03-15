@@ -16,11 +16,11 @@
     CDUnknownBlockType _snapshotRequestCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType snapshotRequestCompletion; // @synthesize snapshotRequestCompletion=_snapshotRequestCompletion;
 @property(readonly, nonatomic) HMFTimer *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) NSString *proactiveSessionID; // @synthesize proactiveSessionID=_proactiveSessionID;
 @property(readonly, nonatomic) HMDSnapshotFile *snapshotFile; // @synthesize snapshotFile=_snapshotFile;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithProactiveSessionID:(id)arg1 snapshotFile:(id)arg2 timer:(id)arg3;
 

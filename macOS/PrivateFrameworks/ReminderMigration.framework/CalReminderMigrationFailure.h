@@ -17,11 +17,11 @@
 }
 
 + (id)_labelForStage:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *relatedPath; // @synthesize relatedPath=_relatedPath;
 @property(readonly, copy, nonatomic) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
 @property(readonly, nonatomic) unsigned long long stage; // @synthesize stage=_stage;
 @property(readonly, copy, nonatomic) NSString *failureDescription; // @synthesize failureDescription=_failureDescription;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDescription:(id)arg1 stage:(unsigned long long)arg2 underlyingError:(id)arg3 relatedPath:(id)arg4;
 

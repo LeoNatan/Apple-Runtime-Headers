@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)wantsStandardConstraints;
 + (_Bool)wantsChevron;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNRepeatingGradientSeparatorView *vseparator; // @synthesize vseparator=_vseparator;
 @property(readonly, nonatomic) UIButton *labelButton; // @synthesize labelButton=_labelButton;
-- (void).cxx_destruct;
 - (void)regainFocus;
 - (void)picker:(id)arg1 didDeleteItem:(id)arg2;
 - (void)picker:(id)arg1 didPickItem:(id)arg2;

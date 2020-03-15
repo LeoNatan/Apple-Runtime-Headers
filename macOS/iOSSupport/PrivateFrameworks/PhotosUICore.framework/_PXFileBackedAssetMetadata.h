@@ -15,10 +15,10 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,8 +19,8 @@
 + (id)remoteAdapter;
 + (id)inProcessLaunchServices;
 + (id)launchServices;
-@property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 - (void)openSensitiveURLInBackground:(id)arg1 withOptions:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)openSensitiveURLInBackground:(id)arg1 withOptions:(id)arg2;
 - (void)openUserActivity:(id)arg1 inApplication:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

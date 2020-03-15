@@ -22,10 +22,10 @@
 
 + (id)buttonWithFontNamed:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKAction *upAction; // @synthesize upAction=_upAction;
 @property(retain, nonatomic) SKAction *downAction; // @synthesize downAction=_downAction;
 @property(nonatomic) __weak NSObject<SKButtonNodeDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)onTouchDownInside:(CDUnknownBlockType)arg1;
 - (void)onTouchUp:(CDUnknownBlockType)arg1;

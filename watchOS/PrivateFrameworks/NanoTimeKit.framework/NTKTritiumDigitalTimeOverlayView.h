@@ -22,8 +22,8 @@
     NSDate *_overrideDate;
 }
 
-@property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 - (void)_handleTimeOffsetChange;
 - (void)_handleDeviceLockChange;
 - (void)_significantTimeChangeNotification;

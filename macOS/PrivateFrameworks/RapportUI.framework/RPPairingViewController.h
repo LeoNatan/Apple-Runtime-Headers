@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
     RPPairingUIController *_mainController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL prompted; // @synthesize prompted=_prompted;
 @property(retain, nonatomic) RPPairingUIController *mainController; // @synthesize mainController=_mainController;
-- (void).cxx_destruct;
 - (void)_retryTimer;
 - (void)promptWithFlags:(unsigned int)arg1 throttleSeconds:(int)arg2;
 - (void)pairingError:(id)arg1;

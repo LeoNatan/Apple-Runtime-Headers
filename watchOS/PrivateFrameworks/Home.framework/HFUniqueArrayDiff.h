@@ -20,13 +20,13 @@
 
 + (id)_createContainerSetFromArray:(id)arg1 options:(id)arg2;
 + (id)diffFromArray:(id)arg1 toArray:(id)arg2 options:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *movedIndexes; // @synthesize movedIndexes=_movedIndexes;
 @property(retain, nonatomic) NSIndexSet *changedIndexes; // @synthesize changedIndexes=_changedIndexes;
 @property(retain, nonatomic) NSIndexSet *insertedIndexes; // @synthesize insertedIndexes=_insertedIndexes;
 @property(retain, nonatomic) NSIndexSet *deletedIndexes; // @synthesize deletedIndexes=_deletedIndexes;
 @property(retain, nonatomic) NSArray *toArray; // @synthesize toArray=_toArray;
 @property(retain, nonatomic) NSArray *fromArray; // @synthesize fromArray=_fromArray;
-- (void).cxx_destruct;
 - (void)enumerateMovesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateChangesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateDeletesUsingBlock:(CDUnknownBlockType)arg1;

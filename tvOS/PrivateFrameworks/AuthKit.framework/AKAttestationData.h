@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *attestationHeaders; // @synthesize attestationHeaders=_attestationHeaders;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *attestationHeaders; // @synthesize attestationHeaders=_attestationHeaders;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

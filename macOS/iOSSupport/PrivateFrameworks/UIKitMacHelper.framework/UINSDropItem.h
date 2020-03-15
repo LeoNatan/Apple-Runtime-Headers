@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSPasteboardItem *_pasteboardItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSPasteboardItem *pasteboardItem; // @synthesize pasteboardItem=_pasteboardItem;
 @property(readonly, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *typeIdentifiers;
 - (id)initWithPasteboardItem:(id)arg1 itemProvider:(id)arg2;
 

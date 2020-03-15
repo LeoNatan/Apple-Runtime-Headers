@@ -6,11 +6,12 @@
 
 #import <ClassKit/CLSObject.h>
 
+#import <ClassKit/CLSCollaborationStateRepresentable-Protocol.h>
 #import <ClassKit/CLSRelationable-Protocol.h>
 
 @class CLSHandout, NSArray, NSDate, NSString, NSURL;
 
-@interface CLSHandoutAttachment : CLSObject <CLSRelationable>
+@interface CLSHandoutAttachment : CLSObject <CLSRelationable, CLSCollaborationStateRepresentable>
 {
     int _shareType;
     int _permissionType;
@@ -19,6 +20,8 @@
     NSString *_title;
     NSString *_bundleIdentifier;
     NSString *_contentStoreIdentifier;
+    NSString *_contextSummary;
+    NSString *_contextCustomTypeName;
     int _completionStatus;
     long long _displayOrder;
     long long _contextType;
@@ -30,22 +33,26 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)relations;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(nonatomic, getter=isLocked) BOOL locked; // @synthesize locked=_locked;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
+- (void)getNumberOfAttemptsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)dictionaryRepresentation;
 @property(copy, nonatomic) NSString *bundleIdentifier;
 @property(nonatomic) long long displayOrder;
 @property(nonatomic) int permissionType;
 @property(nonatomic) int shareType;
 @property(nonatomic) long long contextType;
+@property(copy, nonatomic) NSString *contextCustomTypeName;
+@property(copy, nonatomic) NSString *contextSummary;
 @property(copy, nonatomic) NSString *contentStoreIdentifier;
 @property(nonatomic) int completionStatus;
 @property(retain, nonatomic) NSDate *dateLastCompleted;
 @property(copy, nonatomic) NSArray *contextPath;
 @property(copy, nonatomic) NSURL *URL;
 @property(copy, nonatomic) NSString *title;
+@property(readonly, nonatomic) NSArray *collaborationStates;
 - (void)removeAsset:(id)arg1;
 - (void)addAsset:(id)arg1;
 @property(readonly, nonatomic) NSArray *assets;

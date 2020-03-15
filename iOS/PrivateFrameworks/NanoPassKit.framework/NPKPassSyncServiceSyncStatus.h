@@ -16,11 +16,11 @@
     NSDate *_incomingChangeDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *incomingChangeDate; // @synthesize incomingChangeDate=_incomingChangeDate;
 @property(retain, nonatomic) NPKPassSyncChange *lastKnownIncomingChange; // @synthesize lastKnownIncomingChange=_lastKnownIncomingChange;
 @property(retain, nonatomic) NSDate *outgoingChangeDate; // @synthesize outgoingChangeDate=_outgoingChangeDate;
 @property(retain, nonatomic) NPKPassSyncChange *lastKnownOutgoingChange; // @synthesize lastKnownOutgoingChange=_lastKnownOutgoingChange;
-- (void).cxx_destruct;
 - (void)reset;
 - (_Bool)shouldSyncWithCurrentIncomingChange:(id)arg1 currentOutgoingChange:(id)arg2 currentDate:(id)arg3;
 

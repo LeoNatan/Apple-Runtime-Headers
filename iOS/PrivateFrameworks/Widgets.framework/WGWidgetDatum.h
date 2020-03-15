@@ -15,8 +15,8 @@
     NSExtension *_representedExtension;
 }
 
-@property(readonly, nonatomic) NSExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSExtension *representedExtension; // @synthesize representedExtension=_representedExtension;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

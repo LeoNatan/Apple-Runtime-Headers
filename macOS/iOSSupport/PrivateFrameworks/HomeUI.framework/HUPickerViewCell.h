@@ -21,12 +21,12 @@
     long long _numberOfValues;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfValues; // @synthesize numberOfValues=_numberOfValues;
 @property(retain, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
 @property(nonatomic) __weak id <HUPickerCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
-- (void).cxx_destruct;
 - (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;

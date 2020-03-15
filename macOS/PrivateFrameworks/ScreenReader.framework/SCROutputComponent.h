@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)isRunningUnitTests;
 + (void)setIsRunningUnitTests:(BOOL)arg1;
 + (void)initialize;
-@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 - (void)processEmbeddedVOCommandsInAction:(id)arg1;
 - (void)replaceVOEmbeddedCommand:(id)arg1 inAction:(id)arg2;
 - (void)replaceVOEmbeddedCommand:(id)arg1 withRange:(struct _NSRange)arg2 inAction:(id)arg3;

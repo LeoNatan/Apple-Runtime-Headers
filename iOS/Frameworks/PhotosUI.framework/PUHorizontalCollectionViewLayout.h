@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)invalidationContextClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUHorizontalCollectionViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct UIEdgeInsets itemsContentInset; // @synthesize itemsContentInset=_itemsContentInset;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect collectionViewBounds;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;

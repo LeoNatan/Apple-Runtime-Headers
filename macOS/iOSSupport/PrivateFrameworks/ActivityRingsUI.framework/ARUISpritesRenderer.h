@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)clearCaches;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ARUISpriteTexture *texture; // @synthesize texture=_texture;
 @property(nonatomic) struct *uniforms; // @synthesize uniforms=_uniforms;
 // Error parsing type for property vertexAttributes:
 // Property attributes: T^{?=[2{?=[4]}]},N,V_vertexAttributes
 
-- (void).cxx_destruct;
 - (void)renderRings:(id)arg1 withCommandEncoder:(id)arg2 forState:(id)arg3;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 maximumRingCount:(unsigned long long)arg2;

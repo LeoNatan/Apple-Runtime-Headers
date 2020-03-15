@@ -18,10 +18,10 @@
 }
 
 + (id)searchableItemIdTripleWithBundleId:(id)arg1 domainId:(id)arg2 uniqueId:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
 @property(readonly, nonatomic) NSString *domainId; // @synthesize domainId=_domainId;
 @property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

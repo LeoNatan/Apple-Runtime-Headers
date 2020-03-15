@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIPreviewInteraction *_previewInteraction;
 }
 
-@property(nonatomic) __weak UIPreviewInteraction *previewInteraction; // @synthesize previewInteraction=_previewInteraction;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIPreviewInteraction *previewInteraction; // @synthesize previewInteraction=_previewInteraction;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setStateToRecognized;

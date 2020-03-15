@@ -45,12 +45,12 @@
     NSTimeZone *_timeZone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) BOOL shouldOmitYear; // @synthesize shouldOmitYear=_shouldOmitYear;
 @property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) BOOL useLocalDates; // @synthesize useLocalDates=_useLocalDates;
 @property(nonatomic) BOOL autoUpdateOnChanges; // @synthesize autoUpdateOnChanges=_autoUpdateOnChanges;
-- (void).cxx_destruct;
 - (void)configureForFormatPreset:(unsigned long long)arg1;
 - (void)_handleNotification:(id)arg1;
 - (void)performChanges:(CDUnknownBlockType)arg1;

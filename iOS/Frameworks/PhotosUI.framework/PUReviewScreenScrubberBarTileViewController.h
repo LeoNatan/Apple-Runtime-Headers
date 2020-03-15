@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     PUReviewScreenScrubberBar *__scrubberBar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setScrubberBar:) PUReviewScreenScrubberBar *_scrubberBar; // @synthesize _scrubberBar=__scrubberBar;
 @property(retain, nonatomic) PUReviewScreenBarsModel *barsModel; // @synthesize barsModel=_barsModel;
 @property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)becomeReusable;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;

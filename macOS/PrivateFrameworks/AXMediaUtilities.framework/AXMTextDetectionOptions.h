@@ -28,6 +28,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)defaultRecognizeTextOptions;
 + (id)defaultDetectTextRectanglesOptions;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesLanguageCorrection; // @synthesize usesLanguageCorrection=_usesLanguageCorrection;
 @property(nonatomic) double normalizedMinimumTextHeightRatio; // @synthesize normalizedMinimumTextHeightRatio=_normalizedMinimumTextHeightRatio;
 @property(nonatomic) unsigned long long recognitionLevel; // @synthesize recognitionLevel=_recognitionLevel;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) AXMLanguage *textDetectionLanguage; // @synthesize textDetectionLanguage=_textDetectionLanguage;
 @property(nonatomic) BOOL correctSpelling; // @synthesize correctSpelling=_correctSpelling;
 @property(nonatomic) unsigned long long detectionFlavor; // @synthesize detectionFlavor=_detectionFlavor;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

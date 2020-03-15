@@ -25,6 +25,7 @@
     CSLSystemLockSOSState *_sosState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool userIdleTimerEnabled; // @synthesize userIdleTimerEnabled=_userIdleTimerEnabled;
 @property(retain, nonatomic) CSLSystemLockSOSState *sosState; // @synthesize sosState=_sosState;
 @property(retain, nonatomic) CSLSystemLockPoppedState *poppedState; // @synthesize poppedState=_poppedState;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) CSLSystemLockLockedState *lockedState; // @synthesize lockedState=_lockedState;
 @property(retain, nonatomic) CSLSystemLockUnlockedState *unlockedState; // @synthesize unlockedState=_unlockedState;
 @property(nonatomic) __weak id <CSLSystemLockStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissedInformationalDisplayOverSystemLock;
 - (void)presentedInformationalDisplayOverSystemLock;
 - (void)triggeredSOS;

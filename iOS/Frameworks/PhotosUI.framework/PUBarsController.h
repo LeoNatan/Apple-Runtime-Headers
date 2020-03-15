@@ -26,6 +26,7 @@
     struct UIEdgeInsets _contentGuideInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic, setter=_setUpdateBarsDisabledCount:) long long _updateBarsDisabledCount; // @synthesize _updateBarsDisabledCount=__updateBarsDisabledCount;
 @property(nonatomic, setter=_setUpdateScheduled:) _Bool _isUpdateScheduled; // @synthesize _isUpdateScheduled=__isUpdateScheduled;
@@ -34,7 +35,6 @@
 @property(nonatomic, setter=_setNeedsUpdateBars:) _Bool _needsUpdateBars; // @synthesize _needsUpdateBars=__needsUpdateBars;
 @property(nonatomic) struct UIEdgeInsets contentGuideInsets; // @synthesize contentGuideInsets=_contentGuideInsets;
 @property(nonatomic) __weak id <PUBarsControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reenableUpdateBars;
 - (void)disableUpdateBarsForDuration:(double)arg1;
 - (_Bool)_isUpdateBarsDisabled;

@@ -37,6 +37,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *object; // @synthesize object=_object;
 @property(nonatomic) _Bool nbool; // @synthesize nbool=_nbool;
 @property(nonatomic) unsigned int nuint32; // @synthesize nuint32=_nuint32;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) SPProtoCacheMessage *cacheMessage; // @synthesize cacheMessage=_cacheMessage;
 @property(nonatomic) int subtype; // @synthesize subtype=_subtype;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -26,9 +26,9 @@
 + (id)animatedImageWithContentsOfASTCURL:(id)arg1;
 + (_Bool)writeImagesWithDurations:(id)arg1 toASTCURL:(id)arg2 imageProvider:(CDUnknownBlockType)arg3 frameProcessor:(CDUnknownBlockType)arg4;
 + (_Bool)writeImagesWithDurations:(id)arg1 toCPBitmapURL:(id)arg2 imageProvider:(CDUnknownBlockType)arg3 frameProcessor:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *durations; // @synthesize durations=_durations;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)_initWithImage:(id)arg1 durations:(id)arg2;
 - (_Bool)writeToCPBitmapURL:(id)arg1;
 @property(readonly, nonatomic) double scale;

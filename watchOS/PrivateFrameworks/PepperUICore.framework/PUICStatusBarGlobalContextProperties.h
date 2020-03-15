@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsPhoneConnectivity; // @synthesize needsPhoneConnectivity=_needsPhoneConnectivity;
 @property(nonatomic) _Bool suppressDisconnectedIndicator; // @synthesize suppressDisconnectedIndicator=_suppressDisconnectedIndicator;
 @property(nonatomic) _Bool suppressAirplaneModeIndicator; // @synthesize suppressAirplaneModeIndicator=_suppressAirplaneModeIndicator;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool indicatorsHidden; // @synthesize indicatorsHidden=_indicatorsHidden;
 @property(nonatomic) _Bool timeHidden; // @synthesize timeHidden=_timeHidden;
 @property(nonatomic) unsigned int layoutBehavior; // @synthesize layoutBehavior=_layoutBehavior;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

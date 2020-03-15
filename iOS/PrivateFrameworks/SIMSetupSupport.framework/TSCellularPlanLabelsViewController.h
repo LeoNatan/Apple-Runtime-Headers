@@ -27,6 +27,7 @@
     NSString *_iccid;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *iccid; // @synthesize iccid=_iccid;
 @property _Bool allowDismiss; // @synthesize allowDismiss=_allowDismiss;
 @property(retain) NSArray *planItemBadges; // @synthesize planItemBadges=_planItemBadges;
@@ -35,7 +36,6 @@
 @property(retain) UITableViewCell *sectionFooter; // @synthesize sectionFooter=_sectionFooter;
 @property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)_doneButtonTapped;
 - (void)_cancelButtonTapped;

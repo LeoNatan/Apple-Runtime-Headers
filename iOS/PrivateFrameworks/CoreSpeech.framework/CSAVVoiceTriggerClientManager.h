@@ -21,10 +21,10 @@
 
 + (id)sharedInstance;
 + (id)sharedVoiceTriggerClient;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bargeInClients; // @synthesize bargeInClients=_bargeInClients;
 @property(retain, nonatomic) NSMutableArray *pendingDisableBargeInClients; // @synthesize pendingDisableBargeInClients=_pendingDisableBargeInClients;
 @property(retain, nonatomic) NSMutableArray *pendingBargeInClients; // @synthesize pendingBargeInClients=_pendingBargeInClients;
-- (void).cxx_destruct;
 - (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;
 - (void)_disableBargeInModeWithClientName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_enableBargeInModeWithClientName:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     float _constrainedToFullsizeContentRatio;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float constrainedToFullsizeContentRatio; // @synthesize constrainedToFullsizeContentRatio=_constrainedToFullsizeContentRatio;
 @property(nonatomic, getter=isZoomed) _Bool zoomed; // @synthesize zoomed=_zoomed;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UITapGestureRecognizer *doubleTapRecognizer; // @synthesize doubleTapRecognizer=_doubleTapRecognizer;
 @property(nonatomic) _Bool shouldAnimateContentFrameChanges; // @synthesize shouldAnimateContentFrameChanges=_shouldAnimateContentFrameChanges;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize originalContentSize;
 - (void)_toggleZoom:(id)arg1;
 - (void)_calculateContentFrames;

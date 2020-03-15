@@ -21,12 +21,12 @@
     CDUnknownBlockType _changeBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
 @property(readonly, nonatomic) id <SXWebContentLocationProvider> locationProvider; // @synthesize locationProvider=_locationProvider;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) id <SXStoreFrontProvider> storeFrontProvider; // @synthesize storeFrontProvider=_storeFrontProvider;
 @property(readonly, nonatomic) id <SXPresentationAttributesProvider> presentationAttributesProvider; // @synthesize presentationAttributesProvider=_presentationAttributesProvider;
-- (void).cxx_destruct;
 - (void)presentationAttributesDidChangeFrom:(id)arg1 toAttributes:(id)arg2;
 - (void)onChange:(CDUnknownBlockType)arg1;
 - (id)configurationForSize:(struct CGSize)arg1 dataSources:(id)arg2;

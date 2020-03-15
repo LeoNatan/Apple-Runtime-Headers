@@ -19,12 +19,12 @@
     NSString *_pairingDataStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *pairingDataStore; // @synthesize pairingDataStore=_pairingDataStore;
 @property(readonly, copy, nonatomic) NSUUID *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(readonly, nonatomic) unsigned int syncProtocolVersion; // @synthesize syncProtocolVersion=_syncProtocolVersion;
 @property(readonly, nonatomic) unsigned int deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(readonly, copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

@@ -29,6 +29,7 @@
     NSMutableArray *_reversalAnimationKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *reversalAnimationKeys; // @synthesize reversalAnimationKeys=_reversalAnimationKeys;
 @property(copy, nonatomic) NSString *forwardOffsetAnimationKey; // @synthesize forwardOffsetAnimationKey=_forwardOffsetAnimationKey;
 @property(copy, nonatomic) NSString *forwardAnimationKey; // @synthesize forwardAnimationKey=_forwardAnimationKey;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) double initialValue; // @synthesize initialValue=_initialValue;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (void)_fireCompletionIfNecessary;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (double)_outputPercentCompleteForAnimation:(id)arg1 inputPercentComplete:(double)arg2;

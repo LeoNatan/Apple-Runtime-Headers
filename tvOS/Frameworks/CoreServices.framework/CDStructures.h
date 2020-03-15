@@ -177,6 +177,7 @@ struct LSBundleData {
     unsigned int entitlements;
     unsigned int groupContainers;
     unsigned int sandboxEnvironmentVariables;
+    unsigned int siriActionDefinitionURLs;
     unsigned int localizedDisplayName;
     unsigned int localizedShortDisplayName;
     unsigned int localizedNameWithContext[0];
@@ -248,14 +249,6 @@ struct LSSchema {
 
 struct LSVersionNumber {
     unsigned char _opaque[32];
-};
-
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
 };
 
 struct Point {

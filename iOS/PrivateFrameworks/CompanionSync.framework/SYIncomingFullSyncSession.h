@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     _Bool canRollback;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *sessionActivity; // @synthesize sessionActivity=_sessionActivity;
 - (void)setCanRollback:(_Bool)arg1;
 - (_Bool)canRollback;
 - (void)setCanRestart:(_Bool)arg1;
 - (_Bool)canRestart;
-- (void).cxx_destruct;
 - (void)_handleEndSync:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleBatchChunk:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelWithError:(id)arg1;

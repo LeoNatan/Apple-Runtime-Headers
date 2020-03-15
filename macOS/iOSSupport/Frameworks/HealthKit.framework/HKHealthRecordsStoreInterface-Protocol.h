@@ -9,6 +9,7 @@
 @class HKClinicalAccount;
 
 @protocol HKHealthRecordsStoreInterface <NSObject>
+- (void)clientRemote_healthRecordsSupportedDidChangeTo:(BOOL)arg1;
 - (void)clientRemote_accountDidChange:(HKClinicalAccount *)arg1 changeType:(long long)arg2;
 - (void)clientRemote_updateIngestionState:(long long)arg1;
 @end

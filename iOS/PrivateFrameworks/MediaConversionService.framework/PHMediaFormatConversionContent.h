@@ -16,9 +16,9 @@
     long long _mediaType;
 }
 
+- (void).cxx_destruct;
 @property long long mediaType; // @synthesize mediaType=_mediaType;
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *fileSignature;
 @property(readonly) NSString *fileType;

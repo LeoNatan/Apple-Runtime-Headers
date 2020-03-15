@@ -18,9 +18,9 @@
     UIView<PKSpendingSummaryFooter> *_nextFooter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView<PKSpendingSummaryFooter> *nextFooter; // @synthesize nextFooter=_nextFooter;
 @property(retain, nonatomic) UIView<PKSpendingSummaryFooter> *currentFooter; // @synthesize currentFooter=_currentFooter;
-- (void).cxx_destruct;
 - (void)setTransitionProgress:(float)arg1;
 - (int)preferredBackdropStyle;
 - (void)layoutSubviews;

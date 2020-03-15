@@ -44,6 +44,7 @@
 + (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 remotely:(BOOL)arg3 variablesDictionary:(id)arg4 error:(id *)arg5;
 + (id)workflowWithPropertyList:(id)arg1 url:(id)arg2 forRunning:(BOOL)arg3 remotely:(BOOL)arg4 error:(id *)arg5;
 + (id)workflowAtURL:(id)arg1 forRunning:(BOOL)arg2 remotely:(BOOL)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *_loadingErrorsByAction; // @synthesize _loadingErrorsByAction=_future2;
 @property unsigned long long updateCount; // @synthesize updateCount=_updateCount;
 @property(retain, nonatomic, getter=_workflowMetaData, setter=_setWorkflowMetaData:) AMWorkflowMetaData *_workflowMetaData; // @synthesize _workflowMetaData=_future;
@@ -60,7 +61,6 @@
 @property(copy) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain) NSDictionary *savedPropertyList; // @synthesize savedPropertyList=_savedPropertyList;
 @property(copy) NSString *UUID; // @synthesize UUID=_uuid;
-- (void).cxx_destruct;
 - (void)_thirdPartyActionsAllowedChanged:(id)arg1;
 - (void)_reloadThirdPartyActions;
 - (void)reloadActionsForIdentifiers:(id)arg1;

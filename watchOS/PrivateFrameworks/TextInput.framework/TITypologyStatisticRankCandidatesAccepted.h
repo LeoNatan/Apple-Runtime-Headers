@@ -15,10 +15,10 @@
     int _lengthOfSelectedPredictions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int lengthOfSelectedPredictions; // @synthesize lengthOfSelectedPredictions=_lengthOfSelectedPredictions;
 @property(readonly, nonatomic) int lengthOfSelectedCandidates; // @synthesize lengthOfSelectedCandidates=_lengthOfSelectedCandidates;
 @property(readonly, nonatomic) NSDictionary *histogram; // @synthesize histogram=_histogram;
-- (void).cxx_destruct;
 - (void)visitRecordKeyboardInput:(id)arg1;
 - (void)rankAndCountSelectedCandidate:(id)arg1;
 - (void)countSelectedCandidate:(id)arg1 withRank:(unsigned int)arg2;

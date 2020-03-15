@@ -15,9 +15,9 @@
     id <CRCard> _card;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CRCard> card; // @synthesize card=_card;
 @property(retain, nonatomic) CRSCardRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 
 @end
 

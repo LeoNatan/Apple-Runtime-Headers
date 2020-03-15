@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     PBCodable *_metric;
 }
 
+- (void).cxx_destruct;
 @property(retain) PBCodable *metric; // @synthesize metric=_metric;
 @property unsigned int metricId; // @synthesize metricId=_metricId;
-- (void).cxx_destruct;
 - (void)commit;
 - (id)initWithMetricID:(unsigned int)arg1 metric:(id)arg2;
 

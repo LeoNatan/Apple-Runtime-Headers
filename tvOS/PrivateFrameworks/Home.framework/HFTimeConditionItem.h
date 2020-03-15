@@ -24,9 +24,9 @@
 + (id)_nameForConditionType:(unsigned long long)arg1 formattingStyle:(long long)arg2;
 + (id)defaultConditionForType:(unsigned long long)arg1;
 + (unsigned long long)conditionTypeForCondition:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) HFTimeCondition *condition; // @synthesize condition=_condition;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithConditionType:(unsigned long long)arg1 condition:(id)arg2;
 - (id)initWithConditionType:(unsigned long long)arg1;

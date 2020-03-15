@@ -13,16 +13,16 @@ __attribute__((visibility("hidden")))
 @interface RPFileTransferSmallFilesTask : NSObject
 {
     _Bool _needsRetry;
-    struct NSMutableArray *_fileItems;
+    NSMutableArray *_fileItems;
     NSObject<OS_dispatch_queue> *_queue;
     unsigned long long _taskID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool needsRetry; // @synthesize needsRetry=_needsRetry;
 @property(retain, nonatomic) NSMutableArray *fileItems; // @synthesize fileItems=_fileItems;
-- (void).cxx_destruct;
 
 @end
 

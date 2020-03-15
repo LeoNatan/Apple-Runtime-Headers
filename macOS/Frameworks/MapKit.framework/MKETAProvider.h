@@ -37,6 +37,7 @@
     NSLock *_observersLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *observersLock; // @synthesize observersLock=_observersLock;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property(nonatomic) __weak id <MKETAProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
-- (void).cxx_destruct;
 - (void)findDirectionsTypeForOriginCoordinate:(struct CLLocationCoordinate2D)arg1 destinationCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)quickRouteShouldOnlyUseAutomobile;
 - (BOOL)quickRouteShouldIncludeTransitWhenNotPreferredTransportType;

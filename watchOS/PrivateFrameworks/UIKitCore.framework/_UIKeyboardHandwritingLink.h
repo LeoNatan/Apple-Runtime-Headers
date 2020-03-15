@@ -21,8 +21,8 @@
     TIKeyboardCandidateResultSet *_candidateSet;
 }
 
-@property(retain, nonatomic) TIKeyboardCandidateResultSet *candidateSet; // @synthesize candidateSet=_candidateSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIKeyboardCandidateResultSet *candidateSet; // @synthesize candidateSet=_candidateSet;
 - (unsigned int)selectedSortIndex;
 - (id)statisticsIdentifier;
 - (id)keyboardBehaviors;

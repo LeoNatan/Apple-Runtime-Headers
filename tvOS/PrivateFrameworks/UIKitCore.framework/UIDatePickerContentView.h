@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     _UIDatePickerMode *_mode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDatePickerMode *mode; // @synthesize mode=_mode;
 @property(nonatomic) long long titleAlignment; // @synthesize titleAlignment=_titleAlignment;
 @property(nonatomic) double titleLabelMaxX; // @synthesize titleLabelMaxX=_titleLabelMaxX;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(nonatomic) _Bool isAmPm;
 - (_Bool)_canBeReusedInPickerView;

@@ -17,9 +17,9 @@
     id <SXHintsConfigurationOptionProvider> _hintsConfigurationOptionProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXHintsConfigurationOptionProvider> hintsConfigurationOptionProvider; // @synthesize hintsConfigurationOptionProvider=_hintsConfigurationOptionProvider;
 @property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
-- (void).cxx_destruct;
 - (id)createCacheKeyForLayoutOptions:(id)arg1;
 - (id)initWithDocumentProvider:(id)arg1 hintsConfigurationOptionProvider:(id)arg2;
 

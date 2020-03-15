@@ -14,9 +14,9 @@
     PHPerson *_targetPerson;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHPerson *targetPerson; // @synthesize targetPerson=_targetPerson;
 @property(readonly, nonatomic) long long questionType; // @synthesize questionType=_questionType;
-- (void).cxx_destruct;
 - (id)initWithQuestionType:(long long)arg1 targetPerson:(id)arg2;
 
 @end

@@ -23,6 +23,7 @@
 }
 
 + (id)sharedUbiquitousPlaybackPositionController;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool applicationBecomingActive; // @synthesize applicationBecomingActive=_applicationBecomingActive;
 @property(nonatomic) _Bool databaseHasBookmarkableContents; // @synthesize databaseHasBookmarkableContents=_databaseHasBookmarkableContents;
 @property(nonatomic, getter=isServiceActive) _Bool beganUsingPlaybackPositionMetadata; // @synthesize beganUsingPlaybackPositionMetadata=_beganUsingPlaybackPositionMetadata;
@@ -31,7 +32,6 @@
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *serviceQueue; // @synthesize serviceQueue=_serviceQueue;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic, getter=isServiceActive) _Bool serviceActive; // @synthesize serviceActive=_isServiceActive;
-- (void).cxx_destruct;
 - (void)_onServiceQueue_updateActiveServiceIfNeeded;
 - (void)_onServiceQueue_becomeActiveService;
 - (void)_onServiceQueue_resignActiveService;

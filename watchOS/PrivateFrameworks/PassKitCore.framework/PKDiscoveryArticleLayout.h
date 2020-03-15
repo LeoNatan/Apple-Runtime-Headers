@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=hasRequestedBadge) _Bool requestedBadge; // @synthesize requestedBadge=_requestedBadge;
 @property(copy, nonatomic) CDUnknownBlockType actionOnDismiss; // @synthesize actionOnDismiss=_actionOnDismiss;
 @property(nonatomic) int priority; // @synthesize priority=_priority;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) int variant; // @synthesize variant=_variant;
 @property(readonly, nonatomic) int version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

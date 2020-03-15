@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *index; // @synthesize index=_index;
 @property(retain, nonatomic) NSMutableArray *identifierSets; // @synthesize identifierSets=_identifierSets;
 @property(retain, nonatomic) NSMutableArray *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (id)itemForIdentifierSet:(id)arg1;
 - (id)identifierSetForItem:(id)arg1;
 - (id)identifierSetAtIndex:(long long)arg1;

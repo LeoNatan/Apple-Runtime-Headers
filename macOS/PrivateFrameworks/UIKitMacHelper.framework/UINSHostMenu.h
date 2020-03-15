@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <UINSMenu> _proxyMenu;
 }
 
-@property(nonatomic) __weak id <UINSMenu> proxyMenu; // @synthesize proxyMenu=_proxyMenu;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <UINSMenu> proxyMenu; // @synthesize proxyMenu=_proxyMenu;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProxy:(id)arg1;
 

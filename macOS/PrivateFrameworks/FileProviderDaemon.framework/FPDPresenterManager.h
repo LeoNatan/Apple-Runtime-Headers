@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     FPDFilePresenter *_frontmostPresenter;
 }
 
-@property(readonly, nonatomic) NSDictionary *presenters; // @synthesize presenters=_presenters;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *presenters; // @synthesize presenters=_presenters;
 - (void)noteItemBecameFrontmost:(id)arg1 inWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)signalPresentersForItemID:(id)arg1;
 - (id)presentersForDomain:(id)arg1;

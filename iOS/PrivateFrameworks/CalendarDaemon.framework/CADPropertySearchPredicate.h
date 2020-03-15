@@ -6,12 +6,13 @@
 
 #import <CalendarDaemon/CADPredicate.h>
 
-#import <CalendarDaemon/EKDefaultPropertiesLoading-Protocol.h>
+#import <CalendarDaemon/EKCustomPropertiesLoading-Protocol.h>
 
 @class CADObjectID, NSArray, NSString;
 
-@interface CADPropertySearchPredicate : CADPredicate <EKDefaultPropertiesLoading>
+@interface CADPropertySearchPredicate : CADPredicate <EKCustomPropertiesLoading>
 {
+    NSArray *_propertiesToLoad;
     int _entityType;
     NSArray *_filters;
     NSArray *_calendarRowIDs;
@@ -19,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CADObjectID *sourceID; // @synthesize sourceID=_sourceID;
 @property(readonly, nonatomic) NSArray *calendarRowIDs; // @synthesize calendarRowIDs=_calendarRowIDs;
 @property(readonly, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(readonly, nonatomic) int entityType; // @synthesize entityType=_entityType;
-- (void).cxx_destruct;
-- (id)defaultPropertiesToLoad;
+@property(retain, nonatomic) NSArray *defaultPropertiesToLoad;
 - (_Bool)shouldLoadDefaultProperties;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

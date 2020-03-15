@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)cellHeightWithCellWidth:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *representedAssetIdentifier; // @synthesize representedAssetIdentifier=_representedAssetIdentifier;
 @property(retain, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

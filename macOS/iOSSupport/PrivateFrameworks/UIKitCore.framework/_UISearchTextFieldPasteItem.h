@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UISearchToken *_searchTokenResult;
 }
 
-@property(retain, nonatomic, setter=setSearchTokenResult:) UISearchToken *_searchTokenResult; // @synthesize _searchTokenResult;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=setSearchTokenResult:) UISearchToken *_searchTokenResult; // @synthesize _searchTokenResult;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

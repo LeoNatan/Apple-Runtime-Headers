@@ -19,9 +19,9 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)deviceWithType:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <MLFoundationComputeEngineControl><MLFoundationLayerOperations><MLFoundationComputeEngineDispatch> engine; // @synthesize engine=_engine;
 @property(readonly, nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDevice:(id)arg1;

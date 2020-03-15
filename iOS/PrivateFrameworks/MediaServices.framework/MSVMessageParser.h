@@ -18,11 +18,11 @@
 }
 
 + (id)createHeader:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableData *unhandledPartialData; // @synthesize unhandledPartialData=_unhandledPartialData;
 @property(nonatomic) long long unhandledObjectDataExpectedLength; // @synthesize unhandledObjectDataExpectedLength=_unhandledObjectDataExpectedLength;
 @property(retain, nonatomic) NSMutableData *unhandledPartialObjectData; // @synthesize unhandledPartialObjectData=_unhandledPartialObjectData;
 @property(nonatomic) __weak id <MSVMessageParserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegate:(id)arg1;
 - (void)processData:(id)arg1;
 

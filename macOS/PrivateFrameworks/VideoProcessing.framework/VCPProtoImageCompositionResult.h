@@ -19,10 +19,10 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCPProtoLine *dominantLine; // @synthesize dominantLine=_dominantLine;
 @property(retain, nonatomic) VCPProtoPoint *vanishingPoint; // @synthesize vanishingPoint=_vanishingPoint;
 @property(nonatomic) float confidence; // @synthesize confidence=_confidence;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

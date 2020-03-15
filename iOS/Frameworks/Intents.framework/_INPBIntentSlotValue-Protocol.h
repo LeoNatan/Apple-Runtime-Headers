@@ -6,7 +6,7 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, NSString, _INPBActivity, _INPBActivityList, _INPBAppIdentifier, _INPBArchivedObject, _INPBBillDetailsValue, _INPBBillPayeeValue, _INPBContactEventTrigger, _INPBContactList, _INPBContactValue, _INPBCurrencyAmount, _INPBCustomObject, _INPBDataString, _INPBDataStringList, _INPBDateTime, _INPBDateTimeRangeList, _INPBDateTimeRangeValue, _INPBDialingContact, _INPBDistanceList, _INPBDistanceValue, _INPBDoubleList, _INPBDoubleValue, _INPBEnergyValue, _INPBEvent, _INPBEventList, _INPBFile, _INPBFileProperty, _INPBFilePropertyValue, _INPBFinancialAccountValue, _INPBGeographicalFeature, _INPBGeographicalFeatureList, _INPBHomeAttribute, _INPBHomeAttributeValue, _INPBHomeEntity, _INPBHomeFilter, _INPBHomeUserTask, _INPBIntegerList, _INPBIntegerValue, _INPBIntent, _INPBIntentExecutionResult, _INPBLocationList, _INPBLocationValue, _INPBLongList, _INPBLongValue, _INPBMassValue, _INPBMediaDestination, _INPBMediaItemGroup, _INPBMediaItemValue, _INPBMediaSearch, _INPBNote, _INPBNoteContent, _INPBPaymentAmountValue, _INPBPaymentMethodList, _INPBPaymentMethodValue, _INPBPlace, _INPBPlaceList, _INPBSendMessageAttachment, _INPBShareDestination, _INPBSpatialEventTrigger, _INPBSpeedValue, _INPBStringList, _INPBStringValue, _INPBTask, _INPBTaskList, _INPBTemperatureList, _INPBTemperatureValue, _INPBTemporalEventTrigger, _INPBTimer, _INPBURLValue, _INPBVoiceCommandDeviceInformation, _INPBVolumeValue, _INPBWellnessMetadataPair, _INPBWellnessObjectResultValue, _INPBWellnessUnitType, _INPBWellnessValue;
+@class NSArray, NSString, _INPBActivity, _INPBActivityList, _INPBAppIdentifier, _INPBArchivedObject, _INPBBillDetailsValue, _INPBBillPayeeValue, _INPBContactEventTrigger, _INPBContactList, _INPBContactValue, _INPBCurrencyAmount, _INPBCustomObject, _INPBDataString, _INPBDataStringList, _INPBDateTime, _INPBDateTimeRangeList, _INPBDateTimeRangeValue, _INPBDeviceDetail, _INPBDialingContact, _INPBDistanceList, _INPBDistanceValue, _INPBDoubleList, _INPBDoubleValue, _INPBEnergyValue, _INPBEvent, _INPBEventList, _INPBFile, _INPBFileProperty, _INPBFilePropertyValue, _INPBFinancialAccountValue, _INPBGeographicalFeature, _INPBGeographicalFeatureList, _INPBHomeAttribute, _INPBHomeAttributeValue, _INPBHomeEntity, _INPBHomeFilter, _INPBHomeUserTask, _INPBIntegerList, _INPBIntegerValue, _INPBIntent, _INPBIntentExecutionResult, _INPBLocationList, _INPBLocationValue, _INPBLongList, _INPBLongValue, _INPBMassValue, _INPBMediaDestination, _INPBMediaItemGroup, _INPBMediaItemValue, _INPBMediaSearch, _INPBNote, _INPBNoteContent, _INPBPaymentAmountValue, _INPBPaymentMethodList, _INPBPaymentMethodValue, _INPBPlace, _INPBPlaceList, _INPBSendMessageAttachment, _INPBShareDestination, _INPBSpatialEventTrigger, _INPBSpeedValue, _INPBStringList, _INPBStringValue, _INPBTask, _INPBTaskList, _INPBTemperatureList, _INPBTemperatureValue, _INPBTemporalEventTrigger, _INPBTimer, _INPBURLValue, _INPBVoiceCommandDeviceInformation, _INPBVolumeValue, _INPBWellnessMetadataPair, _INPBWellnessObjectResultValue, _INPBWellnessUnitType, _INPBWellnessValue;
 
 @protocol _INPBIntentSlotValue <NSObject>
 + (Class)payloadWellnessValueType;
@@ -67,6 +67,7 @@
 + (Class)payloadDistanceValueType;
 + (Class)payloadDistanceListType;
 + (Class)payloadDialingContactType;
++ (Class)payloadDeviceDetailType;
 + (Class)payloadDateTimeValueType;
 + (Class)payloadDateTimeRangeValueType;
 + (Class)payloadDateTimeRangeListType;
@@ -185,6 +186,8 @@
 @property(copy, nonatomic) NSArray *payloadPaymentMethodLists;
 @property(readonly, nonatomic) unsigned long long payloadPaymentAmountValuesCount;
 @property(copy, nonatomic) NSArray *payloadPaymentAmountValues;
+@property(readonly, nonatomic) unsigned long long payloadParsecCategoriesCount;
+@property(readonly, nonatomic) int *payloadParsecCategories;
 @property(readonly, nonatomic) unsigned long long payloadNotebookItemTypesCount;
 @property(readonly, nonatomic) int *payloadNotebookItemTypes;
 @property(readonly, nonatomic) unsigned long long payloadNoteContentsCount;
@@ -289,6 +292,8 @@
 @property(copy, nonatomic) NSArray *payloadDialingContacts;
 @property(readonly, nonatomic) unsigned long long payloadDeviceTypesCount;
 @property(readonly, nonatomic) int *payloadDeviceTypes;
+@property(readonly, nonatomic) unsigned long long payloadDeviceDetailsCount;
+@property(copy, nonatomic) NSArray *payloadDeviceDetails;
 @property(readonly, nonatomic) unsigned long long payloadDateTimeValuesCount;
 @property(copy, nonatomic) NSArray *payloadDateTimeValues;
 @property(readonly, nonatomic) unsigned long long payloadDateTimeRangeValuesCount;
@@ -562,6 +567,12 @@
 - (_INPBPaymentAmountValue *)payloadPaymentAmountValueAtIndex:(unsigned long long)arg1;
 - (void)addPayloadPaymentAmountValue:(_INPBPaymentAmountValue *)arg1;
 - (void)clearPayloadPaymentAmountValues;
+- (int)StringAsPayloadParsecCategories:(NSString *)arg1;
+- (NSString *)payloadParsecCategoriesAsString:(int)arg1;
+- (void)setPayloadParsecCategories:(int *)arg1 count:(unsigned long long)arg2;
+- (int)payloadParsecCategoryAtIndex:(unsigned long long)arg1;
+- (void)addPayloadParsecCategory:(int)arg1;
+- (void)clearPayloadParsecCategories;
 - (int)StringAsPayloadNotebookItemTypes:(NSString *)arg1;
 - (NSString *)payloadNotebookItemTypesAsString:(int)arg1;
 - (void)setPayloadNotebookItemTypes:(int *)arg1 count:(unsigned long long)arg2;
@@ -769,6 +780,9 @@
 - (int)payloadDeviceTypeAtIndex:(unsigned long long)arg1;
 - (void)addPayloadDeviceType:(int)arg1;
 - (void)clearPayloadDeviceTypes;
+- (_INPBDeviceDetail *)payloadDeviceDetailAtIndex:(unsigned long long)arg1;
+- (void)addPayloadDeviceDetail:(_INPBDeviceDetail *)arg1;
+- (void)clearPayloadDeviceDetails;
 - (_INPBDateTime *)payloadDateTimeValueAtIndex:(unsigned long long)arg1;
 - (void)addPayloadDateTimeValue:(_INPBDateTime *)arg1;
 - (void)clearPayloadDateTimeValues;

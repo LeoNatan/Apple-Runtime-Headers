@@ -16,9 +16,9 @@
 
 + (id)actionWithActionType:(id)arg1 parameters:(id)arg2;
 + (id)actionWithData:(id)arg1 error:(id *)arg2 supportsLegacy:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, copy, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long protocolVersion;
 - (id)description;
 - (id)propertyListRepresentation;

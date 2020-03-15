@@ -23,13 +23,13 @@
 }
 
 + (id)requestForProcess:(id)arg1 withLabel:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FBSProcess> process; // @synthesize process=_process;
 @property(copy, nonatomic) NSString *explanation; // @synthesize explanation=_explanation;
 @property(nonatomic) long long exceptionCode; // @synthesize exceptionCode=_exceptionCode;
 @property(nonatomic) long long reportType; // @synthesize reportType=_reportType;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

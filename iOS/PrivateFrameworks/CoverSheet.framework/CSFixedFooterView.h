@@ -21,6 +21,7 @@
     SBFPagedScrollView *_trackingScrollViewForPageControl;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBFPagedScrollView *trackingScrollViewForPageControl; // @synthesize trackingScrollViewForPageControl=_trackingScrollViewForPageControl;
 @property(readonly, nonatomic) CSPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(retain, nonatomic) UIView<SBUILegibility> *statusTextView; // @synthesize statusTextView=_statusTextView;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) SBUILegibilityLabel *alternateCallToActionLabel; // @synthesize alternateCallToActionLabel=_alternateCallToActionLabel;
 @property(retain, nonatomic) SBUICallToActionLabel *callToActionLabel; // @synthesize callToActionLabel=_callToActionLabel;
 @property(readonly, nonatomic) CSShakableView *callToActionShakeView; // @synthesize callToActionShakeView=_callToActionShakeView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateViewsForLegibilitySettings;
 - (void)updatePageControl;

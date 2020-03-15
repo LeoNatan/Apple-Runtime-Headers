@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     long long _visibleCellsRefCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *indexPaths; // @synthesize indexPaths=_indexPaths;
 @property(readonly, nonatomic) NSArray *sizes; // @synthesize sizes=_sizes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *attributes;
 @property(readonly, nonatomic) _Bool hasLeftVisibleCellsPass;
 - (void)didLeaveVisibleCellsPass;

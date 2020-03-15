@@ -31,6 +31,7 @@
     unsigned long long _excludedProperties;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL connected; // @synthesize connected=_connected;
 @property(nonatomic) unsigned long long excludedProperties; // @synthesize excludedProperties=_excludedProperties;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSArray *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 - (BOOL)isFakeDevice;
 - (void)setNewName:(id)arg1;
 - (void)registerWriteBlock:(CDUnknownBlockType)arg1;

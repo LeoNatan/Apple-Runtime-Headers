@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

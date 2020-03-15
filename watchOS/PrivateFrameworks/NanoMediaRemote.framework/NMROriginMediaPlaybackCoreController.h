@@ -31,13 +31,13 @@
     NMRPlaybackQueue *playbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldObservePlaybackQueue; // @synthesize shouldObservePlaybackQueue;
 @property(readonly, nonatomic) NMRPlaybackQueue *playbackQueue; // @synthesize playbackQueue;
 @property(nonatomic) _Bool shouldObserveArtwork; // @synthesize shouldObserveArtwork;
 @property(nonatomic) _Bool shouldObserveLibraryAddStatus; // @synthesize shouldObserveLibraryAddStatus=_shouldObserveLibraryAddStatus;
 @property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 @property(nonatomic) __weak id <NMROriginObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_asyncToSerialQueueCheckingProcessWithBlock:(CDUnknownBlockType)arg1;
 - (void)_updateIsEnforcingApplicationFilterWithNowPlayingState:(id)arg1;
 - (id)_requestResponseController;

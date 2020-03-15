@@ -17,9 +17,9 @@
     unsigned int _whiteCurve;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int whiteCurve; // @synthesize whiteCurve=_whiteCurve;
 @property(nonatomic) unsigned int edge; // @synthesize edge=_edge;
-- (void).cxx_destruct;
 - (void)updateViewStackForRevealPercent:(float)arg1;
 - (float)_overflowForViewStackAtRevealPercent:(float)arg1;
 - (float)_yForBottomEdgeViewStackAtRevealPercent:(float)arg1;

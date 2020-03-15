@@ -17,10 +17,10 @@
     NSTimeZone *_timeZone;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, nonatomic) BOOL containedTime; // @synthesize containedTime=_containedTime;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)initWithDate:(id)arg1 containedTime:(BOOL)arg2 timeZone:(id)arg3;
 
 // Remaining properties

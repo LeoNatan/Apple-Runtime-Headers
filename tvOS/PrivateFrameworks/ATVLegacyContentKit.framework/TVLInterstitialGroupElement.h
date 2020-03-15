@@ -14,9 +14,9 @@
     TVLXMLElement *_xml;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) TVLXMLElement *xml; // @synthesize xml=_xml;
 @property(retain, nonatomic) NSArray *interstitials; // @synthesize interstitials=_interstitials;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

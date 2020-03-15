@@ -18,11 +18,11 @@
     SVKeyValueObserver *_observer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVKeyValueObserver *observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) __weak AVPlayerItem *item; // @synthesize item=_item;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
-- (void).cxx_destruct;
 - (id)initWithPlayer:(id)arg1;
 
 // Remaining properties

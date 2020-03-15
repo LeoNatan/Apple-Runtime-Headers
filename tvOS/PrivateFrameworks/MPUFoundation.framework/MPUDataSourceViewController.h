@@ -21,10 +21,10 @@
 }
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPUDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) _Bool shouldReloadWhenVisible; // @synthesize shouldReloadWhenVisible=_shouldReloadWhenVisible;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
-- (void).cxx_destruct;
 - (void)_setDataSource:(id)arg1 shouldReloadData:(_Bool)arg2;
 - (void)_MPUStandardViewController_dataSourceDidInvalidateNotification:(id)arg1;
 - (void)_MPUStandardViewController_dataSourceWillInvalidateNotification:(id)arg1;

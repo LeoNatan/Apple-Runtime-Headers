@@ -14,9 +14,9 @@
     SVXSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SVXSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTimestamp:(unsigned long long)arg1 session:(id)arg2;
 

@@ -39,6 +39,7 @@
 + (id)_newAVPlayerItemForMediaItemLoader:(id)arg1 startTime:(double)arg2;
 + (id)_newAVQueuePlayer;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *dsidOfAccountDoingCaching; // @synthesize dsidOfAccountDoingCaching=_dsidOfAccountDoingCaching;
 @property(nonatomic) _Bool cacheRegistrationDisabled; // @synthesize cacheRegistrationDisabled=_cacheRegistrationDisabled;
 @property(retain, nonatomic) NSNumber *defaultMaxCacheSizeNumber; // @synthesize defaultMaxCacheSizeNumber=_defaultMaxCacheSizeNumber;
@@ -62,7 +63,6 @@
 @property(nonatomic) double currentMediaItemDuration; // @synthesize currentMediaItemDuration=_currentMediaItemDuration;
 @property(nonatomic) _Bool currentMediaItemPreparedForLoading; // @synthesize currentMediaItemPreparedForLoading=_currentMediaItemPreparedForLoading;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *currentMediaItem; // @synthesize currentMediaItem=_currentMediaItem;
-- (void).cxx_destruct;
 - (void)_loadedTimeRangesDidChange:(id)arg1;
 - (void)_playerItemStatusDidChange:(long long)arg1;
 - (void)_bufferDidBecomeFull:(_Bool)arg1;

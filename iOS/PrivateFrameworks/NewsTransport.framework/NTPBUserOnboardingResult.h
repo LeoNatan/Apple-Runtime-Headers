@@ -33,6 +33,7 @@
 
 + (Class)topicIdType;
 + (Class)channelIdType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sawEmailOptIn; // @synthesize sawEmailOptIn=_sawEmailOptIn;
 @property(nonatomic) int totalResets; // @synthesize totalResets=_totalResets;
 @property(retain, nonatomic) NSMutableArray *topicIds; // @synthesize topicIds=_topicIds;
@@ -41,7 +42,6 @@
 @property(nonatomic) int totalChannelSelections; // @synthesize totalChannelSelections=_totalChannelSelections;
 @property(retain, nonatomic) NSString *onboardAbandonStage; // @synthesize onboardAbandonStage=_onboardAbandonStage;
 @property(nonatomic) _Bool icloudAccountMatch; // @synthesize icloudAccountMatch=_icloudAccountMatch;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

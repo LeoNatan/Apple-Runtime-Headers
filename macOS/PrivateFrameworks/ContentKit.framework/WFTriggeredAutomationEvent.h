@@ -16,10 +16,10 @@
 }
 
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL requiredRuntimeConfirmation; // @synthesize requiredRuntimeConfirmation=_requiredRuntimeConfirmation;
 @property(copy, nonatomic) NSString *triggerType; // @synthesize triggerType=_triggerType;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

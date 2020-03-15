@@ -15,9 +15,9 @@
     id <TBCacheProvider> _cacheProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <TBCacheProvider> cacheProvider; // @synthesize cacheProvider=_cacheProvider;
 @property(retain, nonatomic) TBDataSource *fetchDataSource; // @synthesize fetchDataSource=_fetchDataSource;
-- (void).cxx_destruct;
 - (id)initWithFetchDataSource:(id)arg1 cacheProvider:(id)arg2;
 
 @end

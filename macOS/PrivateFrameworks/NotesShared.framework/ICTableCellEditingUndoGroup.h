@@ -16,11 +16,11 @@
     ICTableUndoTarget *_undoTarget;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICTableUndoTarget *undoTarget; // @synthesize undoTarget=_undoTarget;
 @property(readonly, nonatomic) ICTableAttachmentSelection *tableSelection; // @synthesize tableSelection=_tableSelection;
 @property(readonly, nonatomic) NSUUID *rowID; // @synthesize rowID=_rowID;
 @property(readonly, nonatomic) NSUUID *columnID; // @synthesize columnID=_columnID;
-- (void).cxx_destruct;
 - (id)initWithColumn:(id)arg1 row:(id)arg2 selection:(id)arg3 undoTarget:(id)arg4;
 - (id)init;
 

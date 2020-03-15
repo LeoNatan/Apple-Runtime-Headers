@@ -21,8 +21,8 @@
 + (BOOL)stringContainsOnlyPhoneCharacters:(id)arg1;
 + (id)formatRawPhoneNumber:(id)arg1;
 + (id)sharedPhoneFormatter;
-@property(readonly, nonatomic) CNCache *formattedPhoneNumbersCache; // @synthesize formattedPhoneNumbersCache=_formattedPhoneNumbersCache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNCache *formattedPhoneNumbersCache; // @synthesize formattedPhoneNumbersCache=_formattedPhoneNumbersCache;
 - (BOOL)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (void)setFormatAutosaveName:(id)arg1;

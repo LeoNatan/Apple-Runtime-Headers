@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     PUEditableMediaProvider *_mediaProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUEditableMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *imageDataUTI; // @synthesize imageDataUTI=_imageDataUTI;
 @property(readonly, nonatomic) NSURL *imageDataURL; // @synthesize imageDataURL=_imageDataURL;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (void)_handleLoadedImageData:(id)arg1 imageUTI:(id)arg2 imageOrientation:(long long)arg3 info:(id)arg4;
 - (void)run;
 - (void)didCancel;

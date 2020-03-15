@@ -37,6 +37,7 @@
 
 + (unsigned long long)updateMode;
 + (_Bool)adoptsDefaultGridLayoutMargins;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseAlternateCellColor; // @synthesize shouldUseAlternateCellColor=_shouldUseAlternateCellColor;
 @property(retain, nonatomic) HUGridLayoutOptions *gridLayoutOptions; // @synthesize gridLayoutOptions=_gridLayoutOptions;
 @property(readonly, nonatomic) NSMapTable *textFieldToCellMap; // @synthesize textFieldToCellMap=_textFieldToCellMap;
@@ -53,7 +54,6 @@
 @property(nonatomic) _Bool viewHasAppeared; // @synthesize viewHasAppeared=_viewHasAppeared;
 @property(nonatomic) unsigned long long appearState; // @synthesize appearState=_appearState;
 @property(nonatomic) _Bool wantsPreferredContentSize; // @synthesize wantsPreferredContentSize=_wantsPreferredContentSize;
-- (void).cxx_destruct;
 - (void)reloadCellForItems:(id)arg1;
 - (id)presentingViewControllerForModuleController:(id)arg1;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;

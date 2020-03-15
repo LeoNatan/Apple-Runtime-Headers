@@ -19,10 +19,10 @@
     id <HUSwitchCellDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HUSwitchCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_toggleOn:(id)arg1;
 - (id)_switch;
 @property(readonly, copy) NSString *description;

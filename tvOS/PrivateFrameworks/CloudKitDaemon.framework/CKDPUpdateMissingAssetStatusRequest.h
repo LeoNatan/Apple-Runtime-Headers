@@ -31,12 +31,12 @@ __attribute__((visibility("hidden")))
 
 + (Class)packagePutReceiptsType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *packagePutReceipts; // @synthesize packagePutReceipts=_packagePutReceipts;
 @property(retain, nonatomic) NSString *assetPutReceipt; // @synthesize assetPutReceipt=_assetPutReceipt;
 @property(nonatomic) long long assetSize; // @synthesize assetSize=_assetSize;
 @property(nonatomic) _Bool recovered; // @synthesize recovered=_recovered;
 @property(retain, nonatomic) CKDPRecordIdentifier *missingAssetStatusRecordID; // @synthesize missingAssetStatusRecordID=_missingAssetStatusRecordID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

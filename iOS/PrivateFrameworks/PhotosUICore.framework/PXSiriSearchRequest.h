@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *queryTokens; // @synthesize queryTokens=_queryTokens;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *queryTokens; // @synthesize queryTokens=_queryTokens;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

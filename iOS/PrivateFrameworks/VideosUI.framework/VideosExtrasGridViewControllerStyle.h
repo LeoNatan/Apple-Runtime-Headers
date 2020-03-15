@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _productCellSectionInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool adjustsContentInsetByBottomNavBar; // @synthesize adjustsContentInsetByBottomNavBar=_adjustsContentInsetByBottomNavBar;
 @property(nonatomic) _Bool showsScrollFade; // @synthesize showsScrollFade=_showsScrollFade;
 @property(nonatomic) double cellLineSpacing; // @synthesize cellLineSpacing=_cellLineSpacing;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *detailTextStyle; // @synthesize detailTextStyle=_detailTextStyle;
 @property(nonatomic) struct UIEdgeInsets collectionViewInsets; // @synthesize collectionViewInsets=_collectionViewInsets;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 
 @end
 

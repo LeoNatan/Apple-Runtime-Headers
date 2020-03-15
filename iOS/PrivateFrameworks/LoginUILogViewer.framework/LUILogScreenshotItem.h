@@ -15,10 +15,10 @@
     struct _NSRange _visibleRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *screenshotDate; // @synthesize screenshotDate=_screenshotDate;
 @property(nonatomic) struct _NSRange visibleRange; // @synthesize visibleRange=_visibleRange;
 @property(retain, nonatomic) UIImage *screenshotImage; // @synthesize screenshotImage=_screenshotImage;
-- (void).cxx_destruct;
 
 @end
 

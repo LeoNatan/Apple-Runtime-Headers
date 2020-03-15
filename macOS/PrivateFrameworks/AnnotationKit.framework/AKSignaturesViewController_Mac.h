@@ -26,6 +26,7 @@
     AKController *_controller;
 }
 
+- (void).cxx_destruct;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain) NSTextField *warningTextField; // @synthesize warningTextField=_warningTextField;
 @property(retain) NSLayoutConstraint *tableTrailingSpaceConstraint; // @synthesize tableTrailingSpaceConstraint=_tableTrailingSpaceConstraint;
@@ -34,7 +35,6 @@
 @property(retain) NSTableView *tableView; // @synthesize tableView=_tableView;
 @property __weak id presentingContainer; // @synthesize presentingContainer=_presentingContainer;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 rowViewForRow:(long long)arg2;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;

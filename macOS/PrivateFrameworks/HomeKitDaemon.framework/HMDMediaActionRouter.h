@@ -9,18 +9,20 @@
 #import <HomeKitDaemon/HMDMPCSessionDataMediaProfileSource-Protocol.h>
 #import <HomeKitDaemon/HMFMessageReceiver-Protocol.h>
 
-@class HMDHome, NSObject, NSString, NSUUID;
+@class HMDHome, HMDResidentDevice, NSObject, NSString, NSUUID;
 @protocol HMDMediaActionRouterDataSource, OS_dispatch_queue;
 
 @interface HMDMediaActionRouter : HMFObject <HMDMPCSessionDataMediaProfileSource, HMFMessageReceiver>
 {
     BOOL _shouldExecuteOnCurrentDevice;
     id <HMDMediaActionRouterDataSource> _dataSource;
+    HMDResidentDevice *_targetResidentDeviceOverride;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) __weak HMDResidentDevice *targetResidentDeviceOverride; // @synthesize targetResidentDeviceOverride=_targetResidentDeviceOverride;
 @property(readonly, nonatomic) BOOL shouldExecuteOnCurrentDevice; // @synthesize shouldExecuteOnCurrentDevice=_shouldExecuteOnCurrentDevice;
 @property(readonly, nonatomic) __weak id <HMDMediaActionRouterDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)mediaProfileWithUUID:(id)arg1;
 @property(readonly) __weak HMDHome *home;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;

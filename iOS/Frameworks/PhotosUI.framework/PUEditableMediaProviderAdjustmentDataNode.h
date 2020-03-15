@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     PUEditableMediaProvider *_mediaProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUEditableMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PHAdjustmentData *adjustmentData; // @synthesize adjustmentData=_adjustmentData;
 @property(readonly, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_handleDidLoadAdjustmentData:(id)arg1 error:(id)arg2;
 - (void)run;
 - (void)didCancel;

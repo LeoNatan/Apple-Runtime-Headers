@@ -16,9 +16,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSArray *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (id)description;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
 - (id)fetchUpdatedObjects;

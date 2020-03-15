@@ -38,12 +38,12 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)viewSizeWithLength:(unsigned long long)arg1;
 + (struct CGSize)digitViewSizeWithLength:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain) STLockoutAlertAction *action; // @synthesize action=_action;
 @property(retain) NSButton *nextButtonResponder; // @synthesize nextButtonResponder=_nextButtonResponder;
 @property BOOL supportsRTL; // @synthesize supportsRTL=_supportsRTL;
 @property(nonatomic) BOOL echosBullets; // @synthesize echosBullets=_echosBullets;
 @property(retain, nonatomic) id <STLockoutPinViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)activeInputIndex;
 - (struct CGRect)rectForIndex:(unsigned long long)arg1;
 - (void)keyDown:(id)arg1;

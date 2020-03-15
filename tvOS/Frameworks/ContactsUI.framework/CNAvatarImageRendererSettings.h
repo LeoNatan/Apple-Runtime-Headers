@@ -20,11 +20,11 @@
 + (id)settingsWithContactStore:(id)arg1 personaStore:(id)arg2;
 + (id)settingsWithContactStore:(id)arg1;
 + (id)defaultSettings;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) CNUIMeMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (id)initWithContactStore:(id)arg1 personaStore:(id)arg2;
 
 @end

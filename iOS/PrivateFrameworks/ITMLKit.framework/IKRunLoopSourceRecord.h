@@ -12,9 +12,9 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType evaluateBlock; // @synthesize evaluateBlock=_evaluateBlock;
-- (void).cxx_destruct;
 - (id)initWithEvaluateBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
 
 @end

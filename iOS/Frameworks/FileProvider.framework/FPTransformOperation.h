@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _transformCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType transformCompletionBlock; // @synthesize transformCompletionBlock=_transformCompletionBlock;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)fp_prettyDescription;
 - (unsigned long long)transformItem:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

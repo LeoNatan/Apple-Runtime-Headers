@@ -13,8 +13,8 @@
     NSArray *_tracks;
 }
 
-@property(readonly, nonatomic) NSArray *tracks; // @synthesize tracks=_tracks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *tracks; // @synthesize tracks=_tracks;
 - (long long)type;
 - (id)initWithTracks:(id)arg1;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;

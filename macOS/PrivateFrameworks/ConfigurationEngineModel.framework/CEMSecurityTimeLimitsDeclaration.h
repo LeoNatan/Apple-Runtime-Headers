@@ -23,9 +23,9 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMSecurityTimeLimitsDeclaration_TimeLimits *payloadTimeLimits; // @synthesize payloadTimeLimits=_payloadTimeLimits;
 @property(copy, nonatomic) NSNumber *payloadFamilyControlsEnabled; // @synthesize payloadFamilyControlsEnabled=_payloadFamilyControlsEnabled;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

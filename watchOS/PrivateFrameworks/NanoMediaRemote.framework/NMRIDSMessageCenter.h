@@ -19,8 +19,8 @@
     id <NMRIDSMessageCenterDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NMRIDSMessageCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NMRIDSMessageCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (_Bool)_sendMessageWithProtobufData:(id)arg1 messageType:(unsigned short)arg2 priority:(unsigned int)arg3 timeout:(double)arg4 bypassDuet:(_Bool)arg5 skipStorage:(_Bool)arg6 isResponse:(_Bool)arg7 additionalOptions:(id)arg8 resultingMessageIdentifier:(id *)arg9 error:(id *)arg10;

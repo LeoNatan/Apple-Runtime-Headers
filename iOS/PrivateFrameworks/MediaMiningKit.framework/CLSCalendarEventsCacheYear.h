@@ -14,9 +14,9 @@
     NSMutableSet *_months;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *months; // @synthesize months=_months;
 @property(nonatomic) long long year; // @synthesize year=_year;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)debugDescription;

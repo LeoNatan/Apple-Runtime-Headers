@@ -15,8 +15,8 @@
     CDUnknownBlockType _conditionBlock;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 - (void)_enqueueSerialConditionalRequest:(CDUnknownBlockType)arg1;
 - (void)enqueueAsyncRequest:(CDUnknownBlockType)arg1;
 - (void)enqueueRequest:(CDUnknownBlockType)arg1;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SKUIViewElementText *_ratingText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIViewElementText *ratingText; // @synthesize ratingText=_ratingText;
 @property(readonly, nonatomic) float tomatoRating; // @synthesize tomatoRating=_tomatoRating;
 @property(readonly, nonatomic) long long freshness; // @synthesize freshness=_freshness;
-- (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

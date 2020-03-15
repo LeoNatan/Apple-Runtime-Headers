@@ -15,11 +15,13 @@
     unsigned long long _indexToScrollToAfterInsertion;
     struct CGPoint _contentOffsetBeforeInsertion;
     NSArray *_appLayoutsVisibleBeforeInsertion;
+    _Bool _updatesContentOffsetAfterInsertion;
     unsigned long long _phase;
 }
 
-@property(readonly, nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool updatesContentOffsetAfterInsertion; // @synthesize updatesContentOffsetAfterInsertion=_updatesContentOffsetAfterInsertion;
+@property(readonly, nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 - (id)appLayoutsForInsertionOrRemoval;
 - (double)opacityForIndex:(unsigned long long)arg1;
 - (_Bool)clipsToUnobscuredMarginAtIndex:(unsigned long long)arg1;

@@ -15,10 +15,10 @@
     CSLSSession *_cslsSession;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsAOT; // @synthesize supportsAOT=_supportsAOT;
 @property(retain, nonatomic) CSLSSession *cslsSession; // @synthesize cslsSession=_cslsSession;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
-- (void).cxx_destruct;
 - (id)initWithOwnerIdentifier:(id)arg1;
 
 @end

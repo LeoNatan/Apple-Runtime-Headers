@@ -27,6 +27,7 @@
     AXHAStepSlider *_slider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXHAStepSlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) UILabel *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
@@ -36,7 +37,6 @@
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(nonatomic) __weak id <HACCContentModuleDelegate> delegate; // @synthesize delegate;
 @property(nonatomic) unsigned long long module; // @synthesize module;
-- (void).cxx_destruct;
 - (void)accessibilityIncrement;
 - (void)accessibilityDecrement;
 - (unsigned long long)accessibilityTraits;

@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL copiesCustomFiles; // @synthesize copiesCustomFiles=_copiesCustomFiles;
 @property(retain) NSMutableArray *otherDiskComponentDicts; // @synthesize otherDiskComponentDicts=_otherDiskComponentDicts;
 @property(retain) NSMutableArray *systemComponentDicts; // @synthesize systemComponentDicts=_systemComponentDicts;
 @property(copy) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
-- (void).cxx_destruct;
 - (void)updateAutoLoginUser;
 - (id)description;
 - (id)exportXPCDict;

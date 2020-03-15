@@ -20,16 +20,14 @@
 }
 
 + (BOOL)_isValidSessionEndEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *counters; // @synthesize counters=_counters;
 @property(readonly, nonatomic) NSSet *appEventNames; // @synthesize appEventNames=_appEventNames;
 @property(readonly, nonatomic) CPAnalyticsScreenManager *screenManager; // @synthesize screenManager=_screenManager;
 @property(readonly, nonatomic) NSDictionary *config; // @synthesize config=_config;
 @property(readonly, nonatomic) __weak CPAnalytics *cpAnalyticsInstance; // @synthesize cpAnalyticsInstance=_cpAnalyticsInstance;
-- (void).cxx_destruct;
 - (void)_sendCoreAnalyticsEventWithStandardPropertiesForEvent:(id)arg1 withPayload:(id)arg2;
 - (id)_buildCoreAnalyticsEventPayloadWithProperties:(id)arg1 forEvent:(id)arg2 withRawPayload:(id)arg3 intoTargetEventPayload:(id)arg4;
-- (id)_buildMediaPropertiesPayloadForEvent:(id)arg1 fromRawPayload:(id)arg2 intoTargetEventPayload:(id)arg3;
-- (id)_buildStandardUserPropertiesPayloadForEvent:(id)arg1 fromRawPayload:(id)arg2 intoTargetEventPayload:(id)arg3;
 - (id)_allStandardProperties;
 - (id)_allMediaProperties;
 - (void)_sendDashboardMediaEventForEvent:(id)arg1;

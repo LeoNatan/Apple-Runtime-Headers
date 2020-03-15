@@ -25,9 +25,9 @@
     NMUArtworkLoader *_artworkLoader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NMUArtworkLoader *artworkLoader; // @synthesize artworkLoader=_artworkLoader;
 @property(retain, nonatomic) NMUMPModelRequestContentLoader *contentLoader; // @synthesize contentLoader=_contentLoader;
-- (void).cxx_destruct;
 - (void)_updateContentUnavailableViewVisibility;
 - (void)_hideContentUnavailableView;
 - (void)_showContentUnavailableView;

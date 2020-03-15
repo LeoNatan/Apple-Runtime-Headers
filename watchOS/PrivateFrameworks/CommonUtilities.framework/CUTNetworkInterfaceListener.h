@@ -21,11 +21,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *IPv4Addresses; // @synthesize IPv4Addresses=_IPv4Addresses;
 @property(readonly, nonatomic) NSSet *IPv6Addresses; // @synthesize IPv6Addresses=_IPv6Addresses;
 @property(readonly, nonatomic) int cellState; // @synthesize cellState=_cellState;
 @property(readonly, nonatomic) int wifiState; // @synthesize wifiState=_wifiState;
-- (void).cxx_destruct;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;
 - (void)_notifyDelegatesOfAddressChange:(id)arg1 isIPv6:(_Bool)arg2;

@@ -26,13 +26,13 @@
     NSObject<OS_dispatch_queue> *_isolationQueue;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType willSendRequestHandler; // @synthesize willSendRequestHandler=_willSendRequestHandler;
 @property(copy, nonatomic) CDUnknownBlockType finishedHandler; // @synthesize finishedHandler=_finishedHandler;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain) GEOETATrafficUpdateRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
 @property(retain, nonatomic) GEOProtobufSessionTask *task; // @synthesize task=_task;
 @property(readonly, nonatomic) GEOProtobufSession *protobufSession; // @synthesize protobufSession=_protobufSession;
-- (void).cxx_destruct;
 - (void)cancelRequest;
 - (void)_startRequest:(id)arg1 connectionProperties:(id)arg2 willSendRequest:(CDUnknownBlockType)arg3 finished:(CDUnknownBlockType)arg4 error:(CDUnknownBlockType)arg5;
 - (void)startRequest:(id)arg1 connectionProperties:(id)arg2 willSendRequest:(CDUnknownBlockType)arg3 finished:(CDUnknownBlockType)arg4 error:(CDUnknownBlockType)arg5;

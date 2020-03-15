@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIInteractionProgress *interactionProgressForPresentation;
 }
 
-@property(retain, nonatomic) UIInteractionProgress *interactionProgressForPresentation; // @synthesize interactionProgressForPresentation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIInteractionProgress *interactionProgressForPresentation; // @synthesize interactionProgressForPresentation;
 - (id)interactionControllerForPresentation:(id)arg1;
 - (id)_interactionControllerForTransitionOfType:(long long)arg1 forAlertController:(id)arg2;
 - (id)animationControllerForDismissedController:(id)arg1;

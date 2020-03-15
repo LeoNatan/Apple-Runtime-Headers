@@ -13,8 +13,8 @@
     id <RTTUIReplyActionCellDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <RTTUIReplyActionCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <RTTUIReplyActionCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 andDelegate:(id)arg3;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _touchInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_UIAutoScrollBehavior> behavior; // @synthesize behavior=_behavior;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(nonatomic) double lastTimestamp; // @synthesize lastTimestamp=_lastTimestamp;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct UIEdgeInsets touchInsets; // @synthesize touchInsets=_touchInsets;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint point; // @synthesize point=_point;
 - (void)setPoint:(struct CGPoint)arg1 forContentOffset:(struct CGPoint)arg2;
 - (void)_adjustPointToCurrentContentOffset;

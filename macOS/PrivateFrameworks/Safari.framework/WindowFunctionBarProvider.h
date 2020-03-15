@@ -60,12 +60,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _selectedTabIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReaderActive) BOOL readerActive; // @synthesize readerActive=_readerActive;
 @property(nonatomic) unsigned long long selectedTabIndex; // @synthesize selectedTabIndex=_selectedTabIndex;
 @property(nonatomic) __weak id <WindowFunctionBarProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <WindowFunctionBarProviderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak NSWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (id)popoverItemPlusCustomCustomizationView:(id)arg1;
 - (id)popoverItemPlusCollapsedRepresentation:(id)arg1;
 - (void)_toggleWebInspector:(id)arg1;

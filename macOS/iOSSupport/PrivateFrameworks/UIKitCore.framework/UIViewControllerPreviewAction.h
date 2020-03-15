@@ -17,9 +17,9 @@
 }
 
 + (id)actionWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
 

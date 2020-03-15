@@ -22,12 +22,12 @@
     struct CGRect _deferredContentBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL layoutOnBoundsChanges; // @synthesize layoutOnBoundsChanges=_layoutOnBoundsChanges;
 @property(nonatomic) struct CGRect deferredContentBounds; // @synthesize deferredContentBounds=_deferredContentBounds;
 @property(nonatomic) BOOL deferContentOffsetUpdates; // @synthesize deferContentOffsetUpdates=_deferContentOffsetUpdates;
 @property(readonly, nonatomic) NSView *contentRootView; // @synthesize contentRootView=_contentRootView;
 @property(nonatomic, setter=px_setDelegate:) __weak id <PXNSScrollViewDelegate> px_delegate; // @synthesize px_delegate=_px_delegate;
-- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityChildren;
 - (void)_contentViewBoundsDidChange:(id)arg1;

@@ -17,10 +17,10 @@
     NSDictionary *_highlightEstimatesDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *highlightEstimatesDictionary; // @synthesize highlightEstimatesDictionary=_highlightEstimatesDictionary;
 @property(retain) UITextView *textView; // @synthesize textView=_textView;
 @property _Bool exportHighlightEstimatesOnViewDidAppear; // @synthesize exportHighlightEstimatesOnViewDidAppear=_exportHighlightEstimatesOnViewDidAppear;
-- (void).cxx_destruct;
 - (void)_sendEmail:(id)arg1;
 - (void)_fetchHighlightEstimatesDictionary;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;

@@ -16,8 +16,8 @@
 + (id)buildRequiredOnlyWithTVDeviceID:(id)arg1;
 + (id)buildWithTVDeviceID:(id)arg1;
 + (id)allowedPayloadKeys;
-@property(copy, nonatomic) NSString *payloadTVDeviceID; // @synthesize payloadTVDeviceID=_payloadTVDeviceID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadTVDeviceID; // @synthesize payloadTVDeviceID=_payloadTVDeviceID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

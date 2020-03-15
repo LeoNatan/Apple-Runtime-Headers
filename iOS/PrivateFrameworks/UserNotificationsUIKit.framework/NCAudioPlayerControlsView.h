@@ -22,6 +22,7 @@
     UIView *_contentView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool contentViewLayoutConstraintsLoaded; // @synthesize contentViewLayoutConstraintsLoaded=_contentViewLayoutConstraintsLoaded;
 @property(nonatomic) _Bool contentViewLoaded; // @synthesize contentViewLoaded=_contentViewLoaded;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIButton *pauseButton; // @synthesize pauseButton=_pauseButton;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <NCAudioPlayerControlsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)transitionToState:(long long)arg1 animated:(_Bool)arg2;
 - (void)stopButtonTapped:(id)arg1 withEvent:(id)arg2;
 - (void)playButtonTapped:(id)arg1 withEvent:(id)arg2;

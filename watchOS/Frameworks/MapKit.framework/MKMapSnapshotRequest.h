@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     VKMapSnapshotCreator *_snapshotCreator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *attributionString; // @synthesize attributionString=_attributionString;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) __weak MKMapSnapshotCreator *delegate; // @synthesize delegate=_delegate;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
 @property(retain, nonatomic) id requester; // @synthesize requester=_requester;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (id)description;

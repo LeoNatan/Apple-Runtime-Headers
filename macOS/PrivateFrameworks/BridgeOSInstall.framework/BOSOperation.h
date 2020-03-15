@@ -20,13 +20,13 @@
     NSDate *_finishedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *finishedDate; // @synthesize finishedDate=_finishedDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property double totalEstimatedTime; // @synthesize totalEstimatedTime=_totalEstimatedTime;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) BOSRequest *request; // @synthesize request=_request;
 @property(retain) BridgeOSSoftwareUpdateController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (BOOL)isFinished;
 - (void)cancel;
 - (void)start;

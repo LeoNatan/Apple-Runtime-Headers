@@ -29,11 +29,11 @@
 + (id)changeSetWithChanges:(id)arg1 sessionUUID:(id)arg2 startDate:(id)arg3 sessionError:(id)arg4 statusCode:(int)arg5;
 + (id)persistentUserInfoKey;
 + (id)retreiveFromPersistentUserInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableError *sessionError; // @synthesize sessionError=_sessionError;
 @property(nonatomic) double sessionStartDate; // @synthesize sessionStartDate=_sessionStartDate;
 @property(retain, nonatomic) NSData *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(retain, nonatomic) NSMutableArray *changes; // @synthesize changes=_changes;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (Class)layerClass;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 
 @end
 

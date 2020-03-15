@@ -40,6 +40,7 @@
 + (id)recordingCarouselForRecordDataSource:(id)arg1;
 + (id)displayingCarouselForRecordDataSource:(id)arg1;
 + (id)sessionProviderForMode:(long long)arg1 environment:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) AVTViewCarouselLayout *avtViewLayout; // @synthesize avtViewLayout=_avtViewLayout;
 @property(retain, nonatomic) id <AVTAvatarDisplayingController> avatarDisplayingController; // @synthesize avatarDisplayingController=_avatarDisplayingController;
@@ -56,7 +57,6 @@
 @property(nonatomic) __weak id <AVTRecordingCarouselControllerDelegate> recordingDelegate; // @synthesize recordingDelegate;
 @property(nonatomic) __weak id <AVTDisplayingCarouselControllerDelegate> displayingDelegate; // @synthesize displayingDelegate;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
-- (void).cxx_destruct;
 - (id)snapshotProviderFocusedOnRecordWithIdentifier:(id)arg1 size:(struct CGSize)arg2;
 - (void)avatarEditorViewControllerDidCancel:(id)arg1;
 - (void)avatarEditorViewController:(id)arg1 didFinishWithAvatarRecord:(id)arg2;

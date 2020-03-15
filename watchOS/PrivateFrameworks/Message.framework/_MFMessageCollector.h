@@ -18,8 +18,8 @@
     CDUnknownBlockType _transmogrifier;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType transmogrifier; // @synthesize transmogrifier=_transmogrifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType transmogrifier; // @synthesize transmogrifier=_transmogrifier;
 - (_Bool)shouldCancel;
 - (void)newMessagesAvailable:(id)arg1;
 - (id)copyMessages;

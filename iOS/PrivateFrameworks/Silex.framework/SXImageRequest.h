@@ -18,13 +18,13 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool preserveColorspace; // @synthesize preserveColorspace=_preserveColorspace;
 @property(copy, nonatomic) CDUnknownBlockType loadingBlock; // @synthesize loadingBlock=_loadingBlock;
 @property(readonly, nonatomic) unsigned long long qualities; // @synthesize qualities=_qualities;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
-- (void).cxx_destruct;
 - (id)initWithImageIdentifier:(id)arg1 imageQualities:(unsigned long long)arg2 url:(id)arg3 size:(struct CGSize)arg4 preserveColorspace:(_Bool)arg5 loadingBlock:(CDUnknownBlockType)arg6;
 
 @end

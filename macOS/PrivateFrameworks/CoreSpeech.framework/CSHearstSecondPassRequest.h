@@ -18,13 +18,13 @@
     CSAudioProvider *_audioProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSAudioProvider *audioProvider; // @synthesize audioProvider=_audioProvider;
 @property(retain, nonatomic) CSAudioStreamHolding *audioStreamHolding; // @synthesize audioStreamHolding=_audioStreamHolding;
 @property(nonatomic) float remoteMicVADScore; // @synthesize remoteMicVADScore=_remoteMicVADScore;
 @property(nonatomic) BOOL isSecondPassRunning; // @synthesize isSecondPassRunning=_isSecondPassRunning;
 @property(retain, nonatomic) CSVoiceTriggerSecondPass *voiceTriggerSecondPass; // @synthesize voiceTriggerSecondPass=_voiceTriggerSecondPass;
 @property(retain, nonatomic) NSString *firstPassDeviceID; // @synthesize firstPassDeviceID=_firstPassDeviceID;
-- (void).cxx_destruct;
 - (void)cancelAudioStreamHold;
 - (void)holdAudioStreamWithTimeout:(double)arg1;
 - (void)setAsset:(id)arg1;

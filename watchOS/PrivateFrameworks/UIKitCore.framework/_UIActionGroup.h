@@ -21,13 +21,13 @@
 }
 
 + (id)groupWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 children:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inlineGroup; // @synthesize inlineGroup=_inlineGroup;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 children:(id)arg4;
 - (id)_apiRepresentation;

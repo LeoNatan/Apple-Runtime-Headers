@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 + (void)setupKeybagForTesting:(BOOL)arg1;
 + (void)runsInSystemSession;
 + (BOOL)hasSEP;
+- (void).cxx_destruct;
 // Error parsing type for property key:
 // Property attributes: T^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v},R,V_key
 
 @property(readonly) id keyType; // @synthesize keyType=_keyType;
 @property(readonly) struct __SecAccessControl *accessControl; // @synthesize accessControl=_accessControl;
-- (void).cxx_destruct;
 - (id)initWithAttributes:(id)arg1 ACMContext:(id)arg2 error:(id *)arg3;
 @property(readonly) NSDictionary *attributes;
 - (void)dealloc;

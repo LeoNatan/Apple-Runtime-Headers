@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 @interface _UIStatusBarCellularItem : _UIStatusBarItem
 {
     _Bool _showsDisabledSignalBars;
-    _Bool _marqueesServiceName;
+    _Bool _marqueeServiceName;
     id <_UIStatusBarCellularItemTypeStringProvider> _typeStringProvider;
     _UIStatusBarStringView *_serviceNameView;
     _UIStatusBarCellularSignalView *_signalView;
@@ -31,7 +31,8 @@ __attribute__((visibility("hidden")))
 + (id)nameDisplayIdentifier;
 + (id)warningDisplayIdentifier;
 + (id)signalStrengthDisplayIdentifier;
-+ (id)groupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2 typeClass:(Class)arg3;
++ (id)groupWithHighPriority:(long long)arg1 lowPriority:(long long)arg2 typeClass:(Class)arg3 allowDualNetwork:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarStringView *rawStringView; // @synthesize rawStringView=_rawStringView;
 @property(retain, nonatomic) _UIStatusBarImageView *callForwardingView; // @synthesize callForwardingView=_callForwardingView;
 @property(retain, nonatomic) _UIStatusBarImageView *warningView; // @synthesize warningView=_warningView;
@@ -40,10 +41,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIStatusBarCellularSignalView *signalView; // @synthesize signalView=_signalView;
 @property(retain, nonatomic) _UIStatusBarStringView *serviceNameView; // @synthesize serviceNameView=_serviceNameView;
 @property(nonatomic) __weak id <_UIStatusBarCellularItemTypeStringProvider> typeStringProvider; // @synthesize typeStringProvider=_typeStringProvider;
-@property(nonatomic) _Bool marqueesServiceName; // @synthesize marqueesServiceName=_marqueesServiceName;
+@property(nonatomic) _Bool marqueeServiceName; // @synthesize marqueeServiceName=_marqueeServiceName;
 @property(nonatomic) _Bool showsDisabledSignalBars; // @synthesize showsDisabledSignalBars=_showsDisabledSignalBars;
-- (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
+- (void)setmarqueeServiceName:(_Bool)arg1;
 - (void)_create_rawStringView;
 - (void)_create_callForwardingView;
 - (void)_create_warningView;
@@ -52,10 +53,11 @@ __attribute__((visibility("hidden")))
 - (void)_create_serviceNameView;
 - (void)_create_signalView;
 - (void)prepareAnimation:(id)arg1 forDisplayItem:(id)arg2;
+- (_Bool)_showCallFowardingForEntry:(id)arg1;
 - (id)_stringForCellularType:(long long)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)entryForDisplayItemWithIdentifier:(id)arg1;
-- (_Bool)_updateSignalView:(id)arg1 withUpdate:(id)arg2 entry:(id)arg3;
+- (_Bool)_updateSignalView:(id)arg1 withUpdate:(id)arg2 entry:(id)arg3 forceShowingDisabledSignalBars:(_Bool)arg4;
 - (id)_backgroundColorForUpdate:(id)arg1 entry:(id)arg2;
 - (id)_fillColorForUpdate:(id)arg1 entry:(id)arg2;
 - (id)dependentEntryKeys;

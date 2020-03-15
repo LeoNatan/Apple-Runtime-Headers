@@ -98,6 +98,7 @@
     _Bool _allowRestrictedAccounts;
     _Bool _encryptionOverrideSetting;
     _Bool _initializedRecipients;
+    _Bool _originalMessageWasEncrypted;
     unsigned long long _selectedContentVariationIndex;
     UIKeyCommand *_sendKeyCommand;
     UIKeyCommand *_escapeKeyCommand;
@@ -156,6 +157,7 @@
 + (_Bool)isSetupForDeliveryAllowingRestrictedAccounts:(_Bool)arg1;
 + (void)initialize;
 + (id)signpostLog;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *fontAttributes; // @synthesize fontAttributes=_fontAttributes;
 @property(retain, nonatomic) MFComposeStyleSelectorViewController *styleSelector; // @synthesize styleSelector=_styleSelector;
 @property(retain, nonatomic) MFPhotoPickerProgressManager *photoPickerProgressManager; // @synthesize photoPickerProgressManager=_photoPickerProgressManager;
@@ -191,7 +193,6 @@
 @property(retain, nonatomic) CNContactPickerViewController *peoplePicker; // @synthesize peoplePicker=_peoplePicker;
 @property(retain, nonatomic) id remoteViewControllerProxy; // @synthesize remoteViewControllerProxy=_remoteViewControllerProxy;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)presentationControllerDidDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (id)composeStyleSelectorPresentationContext:(id)arg1;
@@ -232,6 +233,7 @@
 - (void)_updateIdentityStatus:(int *)arg1 withPolicy:(int)arg2 identity:(struct __SecIdentity *)arg3 error:(id)arg4;
 - (void)_updatePersonCard;
 - (unsigned long long)_defaultAtomPresentationOptions;
+- (void)setOriginalMessageWasEncrypted:(_Bool)arg1;
 - (void)_updateTitleBarForEncryptionStatus:(int)arg1;
 - (void)_updateSMIMEButtonForEncryptionStatus:(int)arg1;
 - (void)_updateRecipientAtomStyles;
@@ -359,7 +361,6 @@
 - (_Bool)canShowContentVariationPicker;
 - (id)contentVariationName;
 - (void)composeViewBodyTextChanged:(id)arg1;
-- (void)composeShortcutInvoked:(id)arg1;
 - (void)setRecipientsKeyboardType:(long long)arg1;
 - (void)setDraftMessage:(id)arg1;
 - (void)_finishedComposing;
@@ -370,7 +371,7 @@
 - (void)_setUpForSaveAsDraft;
 - (_Bool)needsDelivery;
 - (int)resolution;
-- (void)sendMessage;
+- (void)sendMessage:(unsigned long long)arg1;
 - (void)securityScopeForURL:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)serializedPlaceholderForFileName:(id)arg1 fileSize:(long long)arg2 mimeType:(id)arg3 contentID:(id)arg4 withHandler:(CDUnknownBlockType)arg5;
 - (void)_prepareImagesForSendWithContinuation:(CDUnknownBlockType)arg1;
@@ -385,7 +386,7 @@
 - (void)send:(id)arg1;
 - (id)_estimateMessageSize;
 - (unsigned long long)_composeWebViewTextContentLength;
-- (void)_setUpDeliveryObject:(CDUnknownBlockType)arg1;
+- (void)_setUpDeliveryObject:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (Class)_deliveryClass;
 - (id)_messageForAutosave;
 - (id)_messageForRemoteDelivery;

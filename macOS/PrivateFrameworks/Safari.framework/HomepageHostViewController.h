@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <HomepageHostViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HomepageHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HomepageHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)scheduleBlock:(CDUnknownBlockType)arg1;
 - (void)tryApplyingHomepageURL:(id)arg1 sandboxExtensionToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

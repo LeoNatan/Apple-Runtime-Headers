@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_skipTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *skipTimer; // @synthesize skipTimer=_skipTimer;
 @property(nonatomic) double skipAdjustPeriod; // @synthesize skipAdjustPeriod=_skipAdjustPeriod;
 @property(nonatomic) double nextSkipAdjustTime; // @synthesize nextSkipAdjustTime=_nextSkipAdjustTime;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long skipCount; // @synthesize skipCount=_skipCount;
 @property(nonatomic) double rate; // @synthesize rate=_rate;
 @property(nonatomic) __weak TVPPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_skipTimerFired:(id)arg1;
 - (double)_nextTimeToAdvanceFromTime:(double)arg1;
 - (void)cancelScrub;

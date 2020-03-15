@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) id progressToken; // @synthesize progressToken=_progressToken;
 @property(retain) NSProgress *internalProgress; // @synthesize internalProgress=_internalProgress;
 @property(retain) NSError *transferError; // @synthesize transferError=_transferError;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=isTransferring) _Bool transferring; // @synthesize transferring=_transferring;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) WCSessionFile *file; // @synthesize file=_file;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

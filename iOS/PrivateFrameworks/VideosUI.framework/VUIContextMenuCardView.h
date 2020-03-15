@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVImageView *coverImageView; // @synthesize coverImageView=_coverImageView;
 @property(retain, nonatomic) _TVImageView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) VUILabel *subtitleTextView; // @synthesize subtitleTextView=_subtitleTextView;
 @property(retain, nonatomic) VUILabel *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) VUIContextMenuCardViewLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (struct CGSize)_iOS_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

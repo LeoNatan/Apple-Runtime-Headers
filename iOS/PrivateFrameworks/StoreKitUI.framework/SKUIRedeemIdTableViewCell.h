@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UITextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(nonatomic) __weak id <SKUIRedeemIdTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_initializeTextField;
 - (void)textFieldDidChange:(id)arg1;
 - (_Bool)textFieldShouldClear:(id)arg1;

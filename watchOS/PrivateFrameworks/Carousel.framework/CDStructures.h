@@ -87,10 +87,6 @@ struct ContinuousBezier {
     struct vector<float, std::__1::allocator<float>> _normalizedArcLengths;
 };
 
-struct FBProcessExitContext {
-    Class _field1;
-};
-
 struct Hex {
     int q;
     int r;

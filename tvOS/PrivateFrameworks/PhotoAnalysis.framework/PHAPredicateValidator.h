@@ -13,8 +13,8 @@
     NSSet *_allowedKeyPaths;
 }
 
-@property(retain) NSSet *allowedKeyPaths; // @synthesize allowedKeyPaths=_allowedKeyPaths;
 - (void).cxx_destruct;
+@property(retain) NSSet *allowedKeyPaths; // @synthesize allowedKeyPaths=_allowedKeyPaths;
 - (_Bool)validateValue:(id)arg1 error:(id *)arg2;
 - (_Bool)validateExpression:(id)arg1 error:(id *)arg2;
 - (_Bool)validatePredicate:(id)arg1 error:(id *)arg2;

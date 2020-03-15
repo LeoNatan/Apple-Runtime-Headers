@@ -16,8 +16,8 @@
     id <CALNTravelAdvisoryDescriptionGenerator> _travelAdvisoryDescriptionGenerator;
 }
 
-@property(readonly, nonatomic) id <CALNTravelAdvisoryDescriptionGenerator> travelAdvisoryDescriptionGenerator; // @synthesize travelAdvisoryDescriptionGenerator=_travelAdvisoryDescriptionGenerator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CALNTravelAdvisoryDescriptionGenerator> travelAdvisoryDescriptionGenerator; // @synthesize travelAdvisoryDescriptionGenerator=_travelAdvisoryDescriptionGenerator;
 - (id)_ttlDescriptionTypeNumberForTravelAdvisoryTimelinessPeriod:(unsigned int)arg1;
 - (id)_bodyWithoutTravelAdvisoryForSourceClientIdentifier:(id)arg1 sourceNotificationInfo:(id)arg2;
 - (id)_bodyWithTravelAdvisoryForSourceClientIdentifier:(id)arg1 sourceNotificationInfo:(id)arg2;

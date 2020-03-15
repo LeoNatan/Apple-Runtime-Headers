@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_token;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *containerScopedUserId; // @synthesize containerScopedUserId=_containerScopedUserId;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -28,8 +28,8 @@
 + (id)defaultVoiceLanguageWithSource:(long long *)arg1;
 + (id)localizedStringForKey:(id)arg1;
 + (id)sharedInstance;
-@property(readonly, nonatomic) _Bool deviceMuted; // @synthesize deviceMuted=_deviceMuted;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool deviceMuted; // @synthesize deviceMuted=_deviceMuted;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_setMaintainInactivePersistentConnection:(_Bool)arg1;

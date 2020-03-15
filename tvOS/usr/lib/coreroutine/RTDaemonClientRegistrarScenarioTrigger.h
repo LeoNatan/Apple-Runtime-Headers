@@ -23,13 +23,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(retain, nonatomic) RTScenarioTriggerManager *scenarioTriggerManager; // @synthesize scenarioTriggerManager=_scenarioTriggerManager;
 @property(retain, nonatomic) NSMutableDictionary *pendingScenarioInvocations; // @synthesize pendingScenarioInvocations=_pendingScenarioInvocations;
 @property(nonatomic) __weak id <RTDaemonClientRegistrarScenarioTriggerProtocol> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long monitoredScenarioTriggerTypes; // @synthesize monitoredScenarioTriggerTypes=_monitoredScenarioTriggerTypes;
-- (void).cxx_destruct;
 - (_Bool)registered;
 - (_Bool)invocationsPending;
 - (long long)countOfPendingInvocations;

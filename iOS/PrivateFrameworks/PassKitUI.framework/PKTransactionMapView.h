@@ -8,25 +8,33 @@
 
 #import <PassKitUI/MKMapViewDelegate-Protocol.h>
 
-@class MKMapView, NSString, PKPaymentTransaction;
+@class CLLocation, MKMapView, NSString, PKPaymentTransaction, _MKLocationShifter;
 
 @interface PKTransactionMapView : UIView <MKMapViewDelegate>
 {
     MKMapView *_internalMapView;
     struct CGRect _lastLaidBounds;
+    _MKLocationShifter *_locationShifter;
+    CLLocation *_preferredLocation;
+    CLLocation *_startStationLocation;
+    CLLocation *_endStationLocation;
     _Bool _showsMerchantName;
     _Bool _usesDarkAppearance;
     PKPaymentTransaction *_transaction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesDarkAppearance; // @synthesize usesDarkAppearance=_usesDarkAppearance;
 @property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 @property(nonatomic) _Bool showsMerchantName; // @synthesize showsMerchantName=_showsMerchantName;
-- (void).cxx_destruct;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
+- (id)_locationShifter;
+- (void)_shiftLocationIfNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateLocations;
 - (CDStruct_90e2a262)_mapRectForTransaction:(id)arg1;
 - (id)_annotationsForTransaction:(id)arg1;
 - (void)_centerOnTransactionAnimated:(_Bool)arg1;
+- (void)_createAnnotationsForTransaction:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

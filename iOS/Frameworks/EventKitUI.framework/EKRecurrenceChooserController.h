@@ -17,10 +17,10 @@
 }
 
 + (int)dayFromNumber:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property __weak id <EKRecurrenceChooserControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)drawBackgroundForRow:(long long)arg1;
 - (void)rowTapped:(long long)arg1;
 - (id)cellForRow:(long long)arg1;

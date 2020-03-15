@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 + (_Bool)requiresReminderAccess;
 + (_Bool)requiresEventAccess;
 - (int)_tryPerformBlockWithCalendarID:(id)arg1 forAction:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (void)CADCalendar:(id)arg1 removeAllCalendarItems:(CDUnknownBlockType)arg2;
 - (void)CADCalendar:(id)arg1 hasReminders:(CDUnknownBlockType)arg2;
 - (void)CADCalendar:(id)arg1 hasEvents:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseGetCalendarsWithFaultedProperties:(id)arg1 reply:(CDUnknownBlockType)arg2;

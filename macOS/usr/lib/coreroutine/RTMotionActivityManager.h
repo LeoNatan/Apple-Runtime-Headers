@@ -19,8 +19,8 @@
 + (id)motionSettledStateToString:(unsigned long long)arg1;
 + (id)motionActivityVehicleConnectedStateToString:(unsigned long long)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 - (void)_fetchPredominantMotionActivityTypeFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)fetchPredominantMotionActivityTypeFromStartDate:(id)arg1 toEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)_fetchMotionActivitiesFromStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;

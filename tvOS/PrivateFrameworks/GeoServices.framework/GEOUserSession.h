@@ -43,9 +43,9 @@
 + (id)sharedInstance;
 + (void)setIsGeod;
 + (_Bool)isGeod;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool zeroSessionIDMode; // @synthesize zeroSessionIDMode=_zeroSessionIDMode;
 @property(nonatomic) _Bool shareSessionWithMaps; // @synthesize shareSessionWithMaps=_shareSessionWithMaps;
-- (void).cxx_destruct;
 - (void)prepareForNewShortSession;
 - (void)endNavigationSession;
 - (void)startNavigationSessionWithDirectionsID:(id)arg1 originalDirectionsID:(id)arg2;

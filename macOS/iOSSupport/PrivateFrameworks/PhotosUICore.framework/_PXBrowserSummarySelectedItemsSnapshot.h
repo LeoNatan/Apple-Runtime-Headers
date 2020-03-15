@@ -15,8 +15,8 @@
     id <PXBrowserSelectionSnapshot> _browserSelectionSnapshot;
 }
 
-@property(readonly, nonatomic) id <PXBrowserSelectionSnapshot> browserSelectionSnapshot; // @synthesize browserSelectionSnapshot=_browserSelectionSnapshot;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PXBrowserSelectionSnapshot> browserSelectionSnapshot; // @synthesize browserSelectionSnapshot=_browserSelectionSnapshot;
 - (id)itemForItemReference:(id)arg1;
 - (id)containsItemReference:(id)arg1;
 - (id)itemReferenceAtIndex:(long long)arg1;

@@ -40,6 +40,7 @@
 }
 
 + (id)imageInRect:(struct CGRect)arg1 forVariant:(long long)arg2 withStyle:(long long)arg3 zoomFactor:(double)arg4 mask:(id)arg5 masksBlur:(_Bool)arg6 masksTint:(_Bool)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *tintMaskingContainer; // @synthesize tintMaskingContainer=_tintMaskingContainer;
 @property(retain, nonatomic) UIView *blurMaskingContainer; // @synthesize blurMaskingContainer=_blurMaskingContainer;
 @property(retain, nonatomic) UIImageView *maskImageView; // @synthesize maskImageView=_maskImageView;
@@ -53,7 +54,6 @@
 @property(nonatomic) unsigned long long transformOptions; // @synthesize transformOptions=_transformOptions;
 @property(nonatomic, getter=isFullscreen) _Bool fullscreen; // @synthesize fullscreen=_fullscreen;
 @property(nonatomic) _Bool forcesOpaque; // @synthesize forcesOpaque=_forcesOpaque;
-- (void).cxx_destruct;
 - (void)_setFrame:(struct CGRect)arg1 forceUpdateBackgroundImage:(_Bool)arg2;
 - (void)_setIsContainedInPopover:(_Bool)arg1;
 - (void)updateBackgroundImage;

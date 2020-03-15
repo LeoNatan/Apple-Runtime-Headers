@@ -18,8 +18,8 @@
     PKDrawing *_drawing;
 }
 
-@property(readonly, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 - (id)sliceForIdentifier:(id)arg1;
 - (id)strokeForIdentifier:(id)arg1;
 - (_Bool)isStroke:(id)arg1 versionOfStrokeWithIdentifier:(id)arg2;

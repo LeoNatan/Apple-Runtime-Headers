@@ -13,8 +13,8 @@
     NSMutableData *_data;
 }
 
-@property(readonly, nonatomic) NSMutableData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableData *data; // @synthesize data=_data;
 - (void)encodeDataWithPreceedingLength:(id)arg1;
 - (void)encodeData:(id)arg1;
 - (void)encodeStringWithPreceedingLength:(id)arg1;

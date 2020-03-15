@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     SCRCMathExpression *_base;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRCMathExpression *base; // @synthesize base=_base;
 @property(retain, nonatomic) SCRCMathExpression *over; // @synthesize over=_over;
 @property(retain, nonatomic) SCRCMathExpression *under; // @synthesize under=_under;
-- (void).cxx_destruct;
 - (id)latexMathModeDescription;
 - (id)mathMLString;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;

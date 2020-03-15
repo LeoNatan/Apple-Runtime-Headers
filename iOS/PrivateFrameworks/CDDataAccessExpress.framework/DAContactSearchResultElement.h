@@ -51,6 +51,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifierOnServer; // @synthesize identifierOnServer=_identifierOnServer;
 @property(copy, nonatomic) NSString *workFaxPhone; // @synthesize workFaxPhone=_workFaxPhone;
 @property(copy, nonatomic) NSString *mainPhone; // @synthesize mainPhone=_mainPhone;
@@ -87,7 +88,6 @@
 @property(copy, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

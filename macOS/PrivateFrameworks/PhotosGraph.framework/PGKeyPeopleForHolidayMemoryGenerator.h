@@ -13,8 +13,8 @@
     NSArray *_holidayRules;
 }
 
-@property(retain, nonatomic) NSArray *holidayRules; // @synthesize holidayRules=_holidayRules;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *holidayRules; // @synthesize holidayRules=_holidayRules;
 - (id)_potentialMemoriesForDryTesting;
 - (id)generateMemories:(unsigned long long)arg1;
 

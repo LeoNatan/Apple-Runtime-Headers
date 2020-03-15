@@ -13,8 +13,8 @@
     CFServiceHelper *_serviceHelper;
 }
 
-@property(retain) CFServiceHelper *serviceHelper; // @synthesize serviceHelper=_serviceHelper;
 - (void).cxx_destruct;
+@property(retain) CFServiceHelper *serviceHelper; // @synthesize serviceHelper=_serviceHelper;
 - (id)initClientLiteHelper;
 - (id)initWithServiceHelper:(id)arg1;
 - (_Bool)isTimeoutDisabled;

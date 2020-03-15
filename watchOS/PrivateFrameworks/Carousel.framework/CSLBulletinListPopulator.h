@@ -30,13 +30,13 @@
     CSLBulletinAlertItem *_editingItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBulletinAlertItem *editingItem; // @synthesize editingItem=_editingItem;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(retain, nonatomic) CUISAlertSwipeToDismissViewBehavior *swipeToDismissBehavior; // @synthesize swipeToDismissBehavior=_swipeToDismissBehavior;
 @property(retain, nonatomic) PUICTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) CSLNotificationCenterCellFactoryManager *cellFactoryManager; // @synthesize cellFactoryManager=_cellFactoryManager;
 @property(nonatomic) __weak id <CSLBulletinListPopulatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cellsFromFactory:(id)arg1 shouldReloadWithFilterBlock:(CDUnknownBlockType)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

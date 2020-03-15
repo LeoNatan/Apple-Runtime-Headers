@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface FBSDisplayLayoutElement (SBSDisplayLayoutElement) <SBSDisplayLayoutElement>
+@property(readonly, nonatomic, getter=sb_isTransitioning) _Bool sb_transitioning;
 @property(readonly, nonatomic) long long layoutRole;
 @property(readonly, nonatomic, getter=isSpringBoardElement) _Bool springBoardElement;
 

@@ -21,10 +21,10 @@
 + (BOOL)accessClassificationSupportsPassword:(unsigned long long)arg1;
 + (id)descriptorWithAccess:(unsigned long long)arg1 requiresPassword:(BOOL)arg2 password:(id)arg3;
 + (id)defaultAccessControl;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *accessPassword; // @synthesize accessPassword=_accessPassword;
 @property(readonly, nonatomic) BOOL accessRequiresPassword; // @synthesize accessRequiresPassword=_accessRequiresPassword;
 @property(readonly, nonatomic) unsigned long long access; // @synthesize access=_access;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;

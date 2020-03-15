@@ -26,6 +26,7 @@
 + (id)actionGroupWithActionsBySection:(id)arg1;
 + (id)actionGroupWithActions:(id)arg1;
 + (_Bool)changedProperties:(id)arg1 containsAny:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_visualStyle, setter=_setVisualStyle:) UIInterfaceActionVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(readonly, nonatomic) struct CGSize trailingImageLayoutSize; // @synthesize trailingImageLayoutSize=_trailingImageLayoutSize;
 @property(readonly, nonatomic) struct CGSize leadingImageLayoutSize; // @synthesize leadingImageLayoutSize=_leadingImageLayoutSize;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSPointerArray *weakDisplayPropertyObservers; // @synthesize weakDisplayPropertyObservers=_weakDisplayPropertyObservers;
 @property(retain, nonatomic) UIInterfaceAction *preferredAction; // @synthesize preferredAction=_preferredAction;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)_deepCopyOfActionsBySection;
 - (void)_endObservingActions;
 - (void)_beginObservingActions;

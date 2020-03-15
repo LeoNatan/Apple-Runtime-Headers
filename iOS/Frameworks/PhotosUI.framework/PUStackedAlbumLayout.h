@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentSizeAdjust;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=setInteractive:) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(retain, nonatomic) PUAlbumListTransitionContext *albumListTransitionContext; // @synthesize albumListTransitionContext=_albumListTransitionContext;
 @property(nonatomic) struct CGSize contentSizeAdjust; // @synthesize contentSizeAdjust=_contentSizeAdjust;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) UICollectionViewLayoutAttributes *referenceItemLayoutAttributes; // @synthesize referenceItemLayoutAttributes=_referenceItemLayoutAttributes;
 @property(copy, nonatomic) NSArray *visibleStackedItemLayoutAttributes; // @synthesize visibleStackedItemLayoutAttributes=_visibleStackedItemLayoutAttributes;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *globalHeaderAttributes; // @synthesize globalHeaderAttributes=_globalHeaderAttributes;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

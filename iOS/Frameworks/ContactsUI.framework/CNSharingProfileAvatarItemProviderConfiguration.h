@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CNPhotoPickerColorVariant *_animojiColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNPhotoPickerColorVariant *animojiColor; // @synthesize animojiColor=_animojiColor;
 @property(retain, nonatomic) PRMonogramColor *monogramColor; // @synthesize monogramColor=_monogramColor;
-- (void).cxx_destruct;
 
 @end
 

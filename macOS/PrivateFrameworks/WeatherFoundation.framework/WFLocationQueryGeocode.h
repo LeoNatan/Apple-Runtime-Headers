@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)queryWithDictionaryRepresentation:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (id)clReverseGeocoderCache;
 + (id)mkLocalSearchGeoCodeCache;
+- (void).cxx_destruct;
 @property(nonatomic) struct CLLocationCoordinate2D unshiftedCoordinate; // @synthesize unshiftedCoordinate=_unshiftedCoordinate;
 @property(nonatomic) struct CLLocationCoordinate2D searchCoordinate; // @synthesize searchCoordinate=_searchCoordinate;
 @property(retain, nonatomic) MKLocalSearch *search; // @synthesize search=_search;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly) MKLocalSearchCompletion *searchCompletion; // @synthesize searchCompletion=_searchCompletion;
 @property(retain) WFTaskIdentifier *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 - (void)_handleErrorResponse:(id)arg1;
 - (void)handleSearchResponseWithLocation:(id)arg1;
 - (id)_reverseGeocoderLocation;

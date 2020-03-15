@@ -20,12 +20,12 @@
 
 + (void)_setCurrentTest:(id)arg1;
 + (id)currentTest;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isApplicationTest) BOOL isApplicationTest; // @synthesize isApplicationTest=_isApplicationTest;
 @property(copy, nonatomic) CDUnknownBlockType runCompletionHandler; // @synthesize runCompletionHandler=_runCompletionHandler;
 @property(nonatomic) __weak id <_UIFocusTestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_finish:(BOOL)arg1;
 - (void)reset;
 - (void)cancel;

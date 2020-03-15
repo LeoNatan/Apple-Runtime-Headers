@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 
 + (void)cacheBackgroundImage:(id)arg1 forKey:(id)arg2;
 + (id)cachedBackgroundImageForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double gridHeightScale; // @synthesize gridHeightScale=_gridHeightScale;
 @property(retain, nonatomic) UIView *occurrenceContainerView; // @synthesize occurrenceContainerView=_occurrenceContainerView;
 @property(retain, nonatomic) UIVisualEffect *gridVisualEffect; // @synthesize gridVisualEffect=_gridVisualEffect;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL showsTimeMarker; // @synthesize showsTimeMarker=_showsTimeMarker;
 @property(nonatomic) BOOL showsTimeLine; // @synthesize showsTimeLine=_showsTimeLine;
 @property(nonatomic) BOOL rightBorderInsetsOccurrences; // @synthesize rightBorderInsetsOccurrences=_rightBorderInsetsOccurrences;
-- (void).cxx_destruct;
 - (id)_generateGridImage;
 - (void)layoutSubviews;
 - (void)_layoutHighlight;

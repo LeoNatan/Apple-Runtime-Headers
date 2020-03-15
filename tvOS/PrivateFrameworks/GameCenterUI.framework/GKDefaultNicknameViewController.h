@@ -38,6 +38,7 @@
     GKNicknameController *_nicknameController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKNicknameController *nicknameController; // @synthesize nicknameController=_nicknameController;
 @property(retain, nonatomic) GKReachability *reachability; // @synthesize reachability=_reachability;
 @property(retain, nonatomic) NSLayoutConstraint *avatarContainerLandscapeHeight; // @synthesize avatarContainerLandscapeHeight=_avatarContainerLandscapeHeight;
@@ -60,7 +61,6 @@
 @property(retain, nonatomic) NSMutableDictionary *analyticsPayload; // @synthesize analyticsPayload=_analyticsPayload;
 @property(retain, nonatomic) UIView *bubblePlaceholder; // @synthesize bubblePlaceholder=_bubblePlaceholder;
 @property(nonatomic) __weak id <GKOnboardingFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)settingsPressed:(id)arg1;
 - (void)dismiss:(id)arg1;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;

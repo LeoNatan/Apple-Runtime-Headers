@@ -21,8 +21,8 @@
 }
 
 + (Class)viewClass;
-@property(retain, nonatomic) id <SBFAuthenticationStatusProvider> authenticationStatusProvider; // @synthesize authenticationStatusProvider=_authenticationStatusProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SBFAuthenticationStatusProvider> authenticationStatusProvider; // @synthesize authenticationStatusProvider=_authenticationStatusProvider;
 - (void)coverSheetStatusTextViewControllerContentDidChange:(id)arg1;
 - (_Bool)handleEvent:(id)arg1;
 - (void)updateCallToActionForMesaMatchFailure;

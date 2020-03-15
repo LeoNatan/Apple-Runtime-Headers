@@ -19,11 +19,11 @@
 + (id)_readMediaServersFromPreferences:(id)arg1;
 + (id)_mediaServersSortedByModifiedDate:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mediaServerByIdentifier; // @synthesize mediaServerByIdentifier=_mediaServerByIdentifier;
 @property(retain, nonatomic) NSArray *sortedMediaServers; // @synthesize sortedMediaServers=_sortedMediaServers;
 @property(nonatomic) long long mediaRepeatMode; // @synthesize mediaRepeatMode=_mediaRepeatMode;
 @property(nonatomic) _Bool allowDAAPServerDiscovery; // @synthesize allowDAAPServerDiscovery=_allowDAAPServerDiscovery;
-- (void).cxx_destruct;
 - (void)_writeMediaServersToPreferences;
 - (void)_updateMediaServersWithBlock:(CDUnknownBlockType)arg1 shouldNotify:(_Bool)arg2;
 - (void)_migrateSettingsIfNecessary;

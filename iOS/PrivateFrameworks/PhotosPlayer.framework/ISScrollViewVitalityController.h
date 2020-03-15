@@ -22,6 +22,7 @@
     struct CGPoint _targetContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ISVisibilityOffsetHelper *visibilityOffsetHelper; // @synthesize visibilityOffsetHelper=_visibilityOffsetHelper;
 @property(retain, nonatomic) NSDate *estimatedScrollEndDate; // @synthesize estimatedScrollEndDate=_estimatedScrollEndDate;
 @property(nonatomic) struct CGPoint targetContentOffset; // @synthesize targetContentOffset=_targetContentOffset;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSHashTable *_playerViews; // @synthesize _playerViews=__playerViews;
 @property(nonatomic, setter=_setScrollView:) __weak UIScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_updateVitalityFilters;
 - (id)_newVitalityFilter;
 - (void)canPerformVitalityDidChange;

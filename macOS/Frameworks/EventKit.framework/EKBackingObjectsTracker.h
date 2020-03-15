@@ -34,6 +34,7 @@
 
 + (void)_addPrefetchRelationshipsForCalDAVCalendarFetch:(id)arg1;
 + (void)_addPrefetchRelationshipsForCalendarFetch:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL errorsDemanded; // @synthesize errorsDemanded=_errorsDemanded;
 @property BOOL notificationsDemanded; // @synthesize notificationsDemanded=_notificationsDemanded;
 @property(retain, nonatomic) NSMutableDictionary *preFrozenCalendarDictionaries; // @synthesize preFrozenCalendarDictionaries=_preFrozenCalendarDictionaries;
@@ -54,7 +55,6 @@
 @property(nonatomic) __weak EKBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(retain, nonatomic) NSArray *sourceFilters; // @synthesize sourceFilters=_sourceFilters;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)summary;
 - (id)errorForSourceWithIdentifier:(id)arg1;
 - (id)errorForCalendarWithIdentifier:(id)arg1;

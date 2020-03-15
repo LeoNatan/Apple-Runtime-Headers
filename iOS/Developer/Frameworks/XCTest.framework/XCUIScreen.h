@@ -21,11 +21,11 @@
 
 + (id)screens;
 + (id)mainScreen;
+- (void).cxx_destruct;
 @property(readonly) id <XCUIScreenDataSource> screenDataSource; // @synthesize screenDataSource=_screenDataSource;
 @property(readonly) __weak id <XCUIDevice> device; // @synthesize device=_device;
 @property(readonly) _Bool isMainScreen; // @synthesize isMainScreen=_isMainScreen;
 @property(readonly) long long displayID; // @synthesize displayID=_displayID;
-- (void).cxx_destruct;
 - (id)_screenshotDataForQuality:(long long)arg1 rect:(struct CGRect)arg2 error:(id *)arg3;
 - (id)screenshotDataForQuality:(long long)arg1 rect:(struct CGRect)arg2 error:(id *)arg3;
 - (id)screenshot;

@@ -47,9 +47,9 @@
 + (_Bool)isWakeGestureAvailable;
 + (id)sharedManager;
 + (id)stringForGestureState:(long long)arg1;
-@property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)onBacklightServiceUpdated:(unsigned int)arg1;
 - (void)onPowerStateUpdated:(const struct Sample *)arg1;
 - (void)onWakeUpdated:(const struct Sample *)arg1;

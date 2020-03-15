@@ -15,10 +15,10 @@
     struct CGRect _glyphFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFCircularGlyphView *unselectedCheckmarkView; // @synthesize unselectedCheckmarkView=_unselectedCheckmarkView;
 @property(retain, nonatomic) WFCircularGlyphView *selectedCheckmarkView; // @synthesize selectedCheckmarkView=_selectedCheckmarkView;
 @property(nonatomic) struct CGRect glyphFrame; // @synthesize glyphFrame=_glyphFrame;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool selected;
 - (id)init;
 

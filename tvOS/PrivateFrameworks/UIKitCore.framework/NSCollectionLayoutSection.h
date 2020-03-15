@@ -36,6 +36,7 @@
 
 + (id)_emptySection;
 + (id)sectionWithGroup:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prefersListSolver; // @synthesize prefersListSolver=_prefersListSolver;
 @property(readonly, nonatomic, getter=_callback) id <_UICollectionLayoutSectionCallback> callback; // @synthesize callback=_callback;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
@@ -50,9 +51,8 @@
 @property(nonatomic) long long orthogonalScrollingBehavior; // @synthesize orthogonalScrollingBehavior=_orthogonalScrollingBehavior;
 @property(nonatomic) double interGroupSpacing; // @synthesize interGroupSpacing=_interGroupSpacing;
 @property(nonatomic) struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (_Bool)_isListSolverCompatibleForLayoutAxis:(int)arg1;
+- (_Bool)_isListSolverCompatibleForLayoutAxis:(unsigned long long)arg1;
 - (id)decorationItemsDict;
 @property(readonly, nonatomic) NSDictionary *supplementaryItemsDict;
 - (id)_auxillaryItemForElementKind:(id)arg1 category:(unsigned long long)arg2;

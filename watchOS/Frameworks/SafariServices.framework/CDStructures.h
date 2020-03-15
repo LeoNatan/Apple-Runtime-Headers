@@ -27,6 +27,13 @@ struct CGSize {
     float height;
 };
 
+struct NSDirectionalEdgeInsets {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+};
+
 struct ReaderAvailabilityController;
 
 struct UIEdgeInsets {
@@ -63,6 +70,10 @@ typedef struct {
     _Bool needsDeferredContentUpdate;
     _Bool sceneIsForeground;
 } CDStruct_4e0a34f2;
+
+typedef struct {
+    unsigned int _field1[8];
+} CDStruct_6ad76789;
 
 typedef struct {
     float _field1;

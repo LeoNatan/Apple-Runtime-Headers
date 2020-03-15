@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *shortLivedTokenUpgradeCompletionQueue; // @synthesize shortLivedTokenUpgradeCompletionQueue=_shortLivedTokenUpgradeCompletionQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *silentLoginUpgradeCompletionQueue; // @synthesize silentLoginUpgradeCompletionQueue=_silentLoginUpgradeCompletionQueue;
 @property(nonatomic) _Bool didEnsureQueuesAndStartSilentLoginUpgrade; // @synthesize didEnsureQueuesAndStartSilentLoginUpgrade=_didEnsureQueuesAndStartSilentLoginUpgrade;
-- (void).cxx_destruct;
 - (void)didShortCircuitShortLivedTokenUpgrade;
 - (void)blockUntilShortLivedTokenUpgradeCompletes;
 - (void)didShortCircuitSilentLoginUpgrade;

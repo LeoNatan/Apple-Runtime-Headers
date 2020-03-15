@@ -19,13 +19,13 @@
     NSString *_className;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool respondsToSelectorAOTEnabled; // @synthesize respondsToSelectorAOTEnabled=_respondsToSelectorAOTEnabled;
 @property(readonly, nonatomic) _Bool respondsToSelectorDidTurnOn; // @synthesize respondsToSelectorDidTurnOn=_respondsToSelectorDidTurnOn;
 @property(readonly, nonatomic) _Bool respondsToSelectorWillBeOn; // @synthesize respondsToSelectorWillBeOn=_respondsToSelectorWillBeOn;
 @property(copy, nonatomic) NSString *className; // @synthesize className=_className;
 @property(nonatomic) id unsafeObserver; // @synthesize unsafeObserver=_unsafeObserver;
 @property(nonatomic) __weak id <IOSSHLBacklightObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

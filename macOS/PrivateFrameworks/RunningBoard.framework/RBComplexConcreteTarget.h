@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_environment;
 }
 
+- (void).cxx_destruct;
 - (id)environment;
 - (id)identity;
 - (id)process;
 - (id)description;
-- (void).cxx_destruct;
 - (id)_initWithProcess:(id)arg1 identity:(id)arg2 environment:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

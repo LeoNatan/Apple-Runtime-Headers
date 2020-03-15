@@ -22,9 +22,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *audioSettings; // @synthesize audioSettings=_audioSettings;
 @property(readonly, nonatomic) unsigned long long routeSelection; // @synthesize routeSelection=_routeSelection;
-- (void).cxx_destruct;
 - (void)_pickableRoutesChanged;
 - (void)updateRouteSelectionObservers;
 - (void)updatedCurrentSettingForVoicePromptObservers;

@@ -23,11 +23,11 @@
 
 + (void)primaryAccountSignedOut;
 + (void)primaryAccountSignedIn;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)primaryAccountSignedOutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)primaryAccountSignedInWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getIdentitiesWithFlags:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;

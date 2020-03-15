@@ -22,6 +22,7 @@
 + (BOOL)canFilterByProperty:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)itemFromSong:(id)arg1;
++ (id)itemFromModelObject:(id)arg1;
 - (id)_libraryLinkURL;
 - (id)_libraryLinkPlaylistName;
 - (id)_libraryLinkKind;

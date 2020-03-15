@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *warningText; // @synthesize warningText=_warningText;
 @property(readonly, nonatomic) NSString *planPurchaseEndpointType; // @synthesize planPurchaseEndpointType=_planPurchaseEndpointType;
 @property(nonatomic) _Bool applePaySupported; // @synthesize applePaySupported=_applePaySupported;
 @property(readonly, nonatomic) NSString *websheetURL; // @synthesize websheetURL=_websheetURL;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

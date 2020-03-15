@@ -14,9 +14,9 @@
     TVHKMediaQueryResult *_mediaCategoryTypesResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaQueryResult *mediaCategoryTypesResult; // @synthesize mediaCategoryTypesResult=_mediaCategoryTypesResult;
 @property(nonatomic) long long queryReason; // @synthesize queryReason=_queryReason;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithQueryReason:(long long)arg1 mediaCategoryTypes:(id)arg2;
 - (id)init;

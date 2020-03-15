@@ -13,9 +13,9 @@
 }
 
 + (BOOL)isSingleton;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType availabilityCompletion; // @synthesize availabilityCompletion=_availabilityCompletion;
 @property(nonatomic) unsigned long long managerState; // @synthesize managerState=_managerState;
-- (void).cxx_destruct;
 - (id)localizedImportErrorReasonForGlobalLevelStatus:(unsigned long long)arg1;
 - (id)localizedErrorReasonForGlobalLevelStatus:(unsigned long long)arg1;
 - (id)localizedAccessResourceErrorString;

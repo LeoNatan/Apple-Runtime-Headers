@@ -8,7 +8,7 @@
 
 #import <CoreUtils/AVAudioPlayerDelegate-Protocol.h>
 
-@class CUAudioRequest, NSString;
+@class CUAudioRequest, NSMutableArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUAudioPlayer : NSObject <AVAudioPlayerDelegate>
@@ -17,8 +17,8 @@
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
     unsigned int _invalidateFlags;
-    struct NSMutableArray *_playRequests;
-    struct NSMutableDictionary *_preparedRequests;
+    NSMutableArray *_playRequests;
+    NSMutableDictionary *_preparedRequests;
     CUAudioPlayer *_selfRef;
     struct LogCategory *_ucat;
     unsigned int _flags;
@@ -27,11 +27,11 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
 - (void)audioPlayerDecodeErrorDidOccur:(id)arg1 error:(id)arg2;
 - (void)_abortRequestsWithError:(id)arg1;

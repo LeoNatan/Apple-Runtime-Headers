@@ -19,11 +19,11 @@
     id <TUAudioDeviceControllerActions> _actionsDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TUAudioDeviceControllerActions> actionsDelegate; // @synthesize actionsDelegate=_actionsDelegate;
 @property(retain, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) AVAudioClient *audioClient; // @synthesize audioClient=_audioClient;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputDevices;
 @property(readonly, nonatomic) NSArray *inputDevices;
 @property(readonly, nonatomic) NSArray *devices;

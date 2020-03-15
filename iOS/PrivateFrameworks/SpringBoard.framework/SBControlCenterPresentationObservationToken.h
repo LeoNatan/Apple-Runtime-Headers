@@ -13,8 +13,8 @@
     SBControlCenterController *_controlCenterController;
 }
 
-@property(readonly, nonatomic) SBControlCenterController *controlCenterController; // @synthesize controlCenterController=_controlCenterController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBControlCenterController *controlCenterController; // @synthesize controlCenterController=_controlCenterController;
 - (long long)state;
 - (void)dealloc;
 - (id)initWithControlCenterController:(id)arg1;

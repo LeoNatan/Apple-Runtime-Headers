@@ -19,6 +19,7 @@
     NSString *_speechID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *speechID; // @synthesize speechID=_speechID;
 @property(copy, nonatomic) NSString *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
 @property(copy, nonatomic) NSString *systemLocale; // @synthesize systemLocale=_systemLocale;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *siriInputLanguage; // @synthesize siriInputLanguage=_siriInputLanguage;
 @property(copy, nonatomic) NSString *systemBuild; // @synthesize systemBuild=_systemBuild;
 @property(copy, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

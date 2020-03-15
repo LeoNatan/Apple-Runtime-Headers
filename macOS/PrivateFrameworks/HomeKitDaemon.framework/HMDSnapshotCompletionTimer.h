@@ -13,8 +13,8 @@
     HMDSnapshotSession *_snapshotSession;
 }
 
-@property(readonly, nonatomic) __weak HMDSnapshotSession *snapshotSession; // @synthesize snapshotSession=_snapshotSession;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak HMDSnapshotSession *snapshotSession; // @synthesize snapshotSession=_snapshotSession;
 - (id)initWithSnapshotSession:(id)arg1 timer:(double)arg2;
 
 @end

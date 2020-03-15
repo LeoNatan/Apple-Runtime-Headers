@@ -17,12 +17,12 @@
     long long _level;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long level; // @synthesize level=_level;
 @property(readonly, nonatomic) double modificationTimestamp; // @synthesize modificationTimestamp=_modificationTimestamp;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2 databaseID:(long long)arg3 modificationTimestamp:(double)arg4 level:(long long)arg5;

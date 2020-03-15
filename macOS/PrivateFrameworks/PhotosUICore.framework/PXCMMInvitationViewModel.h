@@ -23,6 +23,7 @@
     NSColor *_opaqueAncestorBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(readonly, nonatomic) NSColor *opaqueAncestorBackgroundColor; // @synthesize opaqueAncestorBackgroundColor=_opaqueAncestorBackgroundColor;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) id <PXDisplayAsset> posterAsset; // @synthesize posterAsset=_posterAsset;
 @property(readonly, copy, nonatomic) NSString *posterSubtitle; // @synthesize posterSubtitle=_posterSubtitle;
 @property(readonly, copy, nonatomic) NSString *posterTitle; // @synthesize posterTitle=_posterTitle;
-- (void).cxx_destruct;
 - (void)setSelected:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setOpaqueAncestorBackgroundColor:(id)arg1;

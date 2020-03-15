@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     PSListController *_listController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
 @property(nonatomic) __weak PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
-- (void).cxx_destruct;
 - (void)selectPlanWithSpecifier:(id)arg1;
 - (void)addNewPlanPressed:(id)arg1;
 - (void)listController:(id)arg1 didSelectSpecifier:(id)arg2;

@@ -21,6 +21,7 @@
 }
 
 + (id)logHandle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *syncStats; // @synthesize syncStats=_syncStats;
 @property(nonatomic) long long syncType; // @synthesize syncType=_syncType;
 @property(nonatomic) unsigned long long syncControllerSyncState; // @synthesize syncControllerSyncState=_syncControllerSyncState;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long isChangingEnabledState; // @synthesize isChangingEnabledState=_isChangingEnabledState;
 @property(nonatomic) BOOL rampedIntoTruthZone; // @synthesize rampedIntoTruthZone=_rampedIntoTruthZone;
 @property(retain, nonatomic) IMCloudKitMockSyncState *testState; // @synthesize testState=_testState;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *IMCloudKitSyncErrors;
 - (void)setControllerSyncType:(long long)arg1;
 - (void)setControllerSyncState:(unsigned long long)arg1;

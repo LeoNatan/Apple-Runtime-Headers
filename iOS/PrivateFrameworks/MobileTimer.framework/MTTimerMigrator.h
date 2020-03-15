@@ -13,8 +13,8 @@
     MTTimer *_timer;
 }
 
-@property(retain, nonatomic) MTTimer *timer; // @synthesize timer=_timer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MTTimer *timer; // @synthesize timer=_timer;
 - (void)removeFromOldStorage;
 - (void)migrateFromOldStorage;
 

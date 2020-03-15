@@ -31,6 +31,7 @@
 
 + (void)setDefaultManager:(id)arg1;
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool syncPending; // @synthesize syncPending=_syncPending;
 @property(readonly, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(readonly, nonatomic) NSLock *completionHandlerLock; // @synthesize completionHandlerLock=_completionHandlerLock;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) id <WFUserInterface> userInterface; // @synthesize userInterface=_userInterface;
 @property(readonly, nonatomic) long long accountStatus; // @synthesize accountStatus=_accountStatus;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopObservingUserDefaults;
 - (void)startObservingUserDefaults;

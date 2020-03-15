@@ -18,8 +18,8 @@
 + (_Bool)allowsMultipleAccounts;
 + (id)localizedServiceName;
 + (id)serviceID;
-@property(copy, nonatomic) NSURL *endpointURL; // @synthesize endpointURL=_endpointURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *endpointURL; // @synthesize endpointURL=_endpointURL;
 - (void)refreshWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)localizedName;
 - (_Bool)isValid;

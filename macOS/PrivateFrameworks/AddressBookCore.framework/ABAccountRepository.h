@@ -25,8 +25,8 @@
 + (void)prepareLocalCacheForAccountWithIdentifier:(id)arg1 factory:(id)arg2;
 + (id)sharedRepository;
 + (id)os_log;
-@property(readonly, retain) ABDefaultAccountPreference *defaultAccountPreference; // @synthesize defaultAccountPreference=_defaultAccountPreference;
 - (void).cxx_destruct;
+@property(readonly, retain) ABDefaultAccountPreference *defaultAccountPreference; // @synthesize defaultAccountPreference=_defaultAccountPreference;
 @property(copy) NSString *tag;
 - (BOOL)mergeDataFromAccount:(id)arg1 toAccount:(id)arg2 withOptions:(int)arg3 error:(id *)arg4;
 - (BOOL)mergeDataFromAccount:(id)arg1 toAccount:(id)arg2 error:(id *)arg3;

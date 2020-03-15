@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <CLSClientDelegate> _delagate;
 }
 
-@property(nonatomic) __weak id <CLSClientDelegate> delagate; // @synthesize delagate=_delagate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CLSClientDelegate> delagate; // @synthesize delagate=_delagate;
 - (oneway void)clientRemote_databaseRecreated;
 
 // Remaining properties

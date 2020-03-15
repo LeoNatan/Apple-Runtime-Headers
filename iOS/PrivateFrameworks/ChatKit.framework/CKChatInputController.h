@@ -9,7 +9,6 @@
 #import <ChatKit/CKBrowserAppManagerViewControllerDelegate-Protocol.h>
 #import <ChatKit/CKBrowserSwitcherViewControllerDelegate-Protocol.h>
 #import <ChatKit/CKBrowserTransitionCoordinatorDelegate-Protocol.h>
-#import <ChatKit/CKBrowserViewControllerSendDelegate-Protocol.h>
 #import <ChatKit/CKBrowserViewControllerStoreSendDelegate-Protocol.h>
 #import <ChatKit/CKDeviceOrientationManagerDelegate-Protocol.h>
 #import <ChatKit/CKFullScreenAppViewControllerDelegate-Protocol.h>
@@ -23,7 +22,7 @@
 @class CKBrowserSwitcherViewController, CKChatEagerUploadController, CKDeviceOrientationManager, CKHandwritingPresentationController, CKKeyboardContentViewController, CKMessageEntryView, CKScheduledUpdater, IMBalloonPlugin, IMBalloonPluginDataSource, IMScheduledUpdater, NSDate, NSString, UINavigationController, UITextInputPayloadController, UIViewController;
 @protocol CKBrowserViewControllerProtocol, CKChatInputControllerDelegate;
 
-@interface CKChatInputController : NSObject <UITextInputPayloadDelegate, CKMessageEntryViewInputDelegate, CKBrowserViewControllerSendDelegate, CKPhotoBrowserViewControllerSendDelegate, CKHandwritingViewControllerSendDelegate, CKBrowserViewControllerStoreSendDelegate, CKPluginEntryViewControllerDelegate, CKFullScreenAppViewControllerDelegate, CKDeviceOrientationManagerDelegate, CKBrowserSwitcherViewControllerDelegate, CKBrowserTransitionCoordinatorDelegate, CKHandwritingPresentationControllerDelegate, CKBrowserAppManagerViewControllerDelegate>
+@interface CKChatInputController : NSObject <UITextInputPayloadDelegate, CKMessageEntryViewInputDelegate, CKPhotoBrowserViewControllerSendDelegate, CKHandwritingViewControllerSendDelegate, CKBrowserViewControllerStoreSendDelegate, CKPluginEntryViewControllerDelegate, CKFullScreenAppViewControllerDelegate, CKDeviceOrientationManagerDelegate, CKBrowserSwitcherViewControllerDelegate, CKBrowserTransitionCoordinatorDelegate, CKHandwritingPresentationControllerDelegate, CKBrowserAppManagerViewControllerDelegate>
 {
     _Bool _isDismissingAppModal;
     _Bool _shouldSuppressStatusBarForHandwriting;
@@ -55,6 +54,7 @@
     CKChatEagerUploadController *_eagerUploadController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKChatEagerUploadController *eagerUploadController; // @synthesize eagerUploadController=_eagerUploadController;
 @property(retain, nonatomic) IMBalloonPluginDataSource *deferredPluginDataSource; // @synthesize deferredPluginDataSource=_deferredPluginDataSource;
 @property(copy, nonatomic) CDUnknownBlockType insertPayloadCompletionHandler; // @synthesize insertPayloadCompletionHandler=_insertPayloadCompletionHandler;
@@ -83,7 +83,6 @@
 @property(retain, nonatomic) IMBalloonPluginDataSource *browserPluginDataSource; // @synthesize browserPluginDataSource=_browserPluginDataSource;
 @property(retain, nonatomic) IMBalloonPlugin *browserPlugin; // @synthesize browserPlugin=_browserPlugin;
 @property(nonatomic) __weak id <CKChatInputControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)eagerUploadPayload:(id)arg1 identifier:(id)arg2 replace:(_Bool)arg3;
 - (void)eagerUploadCancelIdentifier:(id)arg1;
 - (void)willSendComposition;

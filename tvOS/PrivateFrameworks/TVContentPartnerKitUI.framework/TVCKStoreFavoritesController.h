@@ -24,6 +24,7 @@
     long long _numberOfMonitoringClients;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfMonitoringClients; // @synthesize numberOfMonitoringClients=_numberOfMonitoringClients;
 @property(retain, nonatomic) NSOperation *fetchAllItemsOperation; // @synthesize fetchAllItemsOperation=_fetchAllItemsOperation;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
@@ -32,7 +33,6 @@
 @property(nonatomic, getter=isFetchingItems) _Bool fetchingItems; // @synthesize fetchingItems=_fetchingItems;
 @property(nonatomic) __weak id <TVCKStoreFavoritesControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)didRemoveItems:(id)arg1;
 - (void)didAddItems:(id)arg1;
 - (void)itemsDidChange;

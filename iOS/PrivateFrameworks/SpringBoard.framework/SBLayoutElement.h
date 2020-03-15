@@ -24,8 +24,8 @@
 
 + (id)elementWithDescriptor:(id)arg1 layoutRole:(long long)arg2;
 + (id)elementWithDescriptor:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType entityGenerator; // @synthesize entityGenerator=_entityGenerator;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType entityGenerator; // @synthesize entityGenerator=_entityGenerator;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

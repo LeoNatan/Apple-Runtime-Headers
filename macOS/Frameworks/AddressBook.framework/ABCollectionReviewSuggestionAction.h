@@ -24,11 +24,11 @@
 + (id)snippetWithDonatedValue:(id)arg1;
 + (id)snippetWithSuggestedLabeledValue:(id)arg1;
 + (id)snippetWithLabeledValue:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPopover *popover; // @synthesize popover=_popover;
 @property(retain, nonatomic) ABSuggestedValueViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <ABCardCollectionViewDelegate> collectionViewDelegate; // @synthesize collectionViewDelegate=_collectionViewDelegate;
 @property(nonatomic) __weak ABCollectionViewItem *targetItem; // @synthesize targetItem=_targetItem;
-- (void).cxx_destruct;
 - (void)confirmationViewController:(id)arg1 didRejectLabeledValue:(id)arg2;
 - (void)confirmationViewController:(id)arg1 didConfirmLabeledValue:(id)arg2;
 - (void)configureViewWithSnippet:(id)arg1 labeledValue:(id)arg2;

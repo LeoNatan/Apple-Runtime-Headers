@@ -61,6 +61,7 @@
 
 + (void)registerDevices;
 + (void)registerAcceleratorService:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long maxTransferRate; // @synthesize maxTransferRate=_maxTransferRate;
 @property(readonly) unsigned long long locationNumber; // @synthesize locationNumber=_locationNumber;
 @property(readonly) unsigned long long location; // @synthesize location=_location;
@@ -69,7 +70,6 @@
 @property(readonly) unsigned long long peerGroupID; // @synthesize peerGroupID=_peerGroupID;
 @property(readonly) unsigned int acceleratorPort; // @synthesize acceleratorPort=_acceleratorPort;
 @property(readonly) int numCommandBuffers; // @synthesize numCommandBuffers=_numCommandBuffers;
-- (void).cxx_destruct;
 @property(readonly) MTLIOMemoryInfo *memoryInfo; // @dynamic memoryInfo;
 - (BOOL)setResourcesPurgeableState:(id *)arg1 newState:(unsigned long long)arg2 oldState:(unsigned long long *)arg3 count:(int)arg4;
 - (id)_deviceWrapper;
@@ -99,6 +99,8 @@
 - (void)deallocBufferSubData:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(unsigned long long)arg4 length:(unsigned long long)arg5;
 - (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(unsigned long long)arg3 heapIndex:(short *)arg4 bufferIndex:(short *)arg5 bufferOffset:(unsigned long long *)arg6;
 - (short)heapIndexWithOptions:(unsigned long long)arg1;
+- (BOOL)supportsVertexAmplificationCount:(unsigned long long)arg1;
+@property(readonly) BOOL supportsVertexAmplification;
 - (void)updateGPUSelectionProperties;
 - (void)getBuiltInGPUProperties:(unsigned long long *)arg1 transferRate:(unsigned long long *)arg2;
 - (void)getExternalGPUProperties:(unsigned long long *)arg1 transferRate:(unsigned long long *)arg2;

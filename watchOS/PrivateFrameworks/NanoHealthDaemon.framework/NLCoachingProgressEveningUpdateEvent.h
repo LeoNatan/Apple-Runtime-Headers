@@ -18,8 +18,8 @@
 
 + (id)reason;
 + (id)eventIdentifier;
-@property(nonatomic) int goalType; // @synthesize goalType;
 - (void).cxx_destruct;
+@property(nonatomic) int goalType; // @synthesize goalType;
 - (id)userInfoForCoachingAlertRequestWithModel:(id)arg1;
 - (_Bool)shouldFireWithTypicalDayModel:(id)arg1 evaluationDelegate:(id)arg2;
 

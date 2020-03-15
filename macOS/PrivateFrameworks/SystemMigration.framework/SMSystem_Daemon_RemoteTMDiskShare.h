@@ -27,6 +27,7 @@
 + (id)keyPathsForValuesAffectingAvailableAction;
 + (id)keyPathsForValuesAffectingDisplayName;
 + (unsigned long long)requiredScannerState;
+- (void).cxx_destruct;
 @property(retain) NSString *mountPoint; // @synthesize mountPoint=_mountPoint;
 @property(retain) NSObject<OS_dispatch_queue> *timeMachineSystemsQueue; // @synthesize timeMachineSystemsQueue;
 @property(retain) NSMutableSet *timeMachineSystems; // @synthesize timeMachineSystems;
@@ -35,7 +36,6 @@
 @property long long sharedSystems; // @synthesize sharedSystems;
 @property(retain) NSString *humanName; // @synthesize humanName;
 @property(retain) NSString *shareName; // @synthesize shareName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)accessibilityDescription;
 @property(readonly) BOOL mountWithSMB;

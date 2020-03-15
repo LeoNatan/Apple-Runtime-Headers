@@ -19,12 +19,12 @@
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFDispatchSourceTimer *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, nonatomic) WFMediaRouteDescriptor *routeDescriptor; // @synthesize routeDescriptor=_routeDescriptor;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) __weak WFMediaRoutePicker *picker; // @synthesize picker=_picker;
-- (void).cxx_destruct;
 - (void)routePickerDidUpdateAvailableRoutes:(id)arg1;
 - (void)start;
 - (id)initWithPicker:(id)arg1 routeDescriptor:(id)arg2 timeout:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;

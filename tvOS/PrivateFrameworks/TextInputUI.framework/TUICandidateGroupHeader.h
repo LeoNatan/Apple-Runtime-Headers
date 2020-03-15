@@ -21,6 +21,7 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect virtualLabelContainerFrame; // @synthesize virtualLabelContainerFrame=_virtualLabelContainerFrame;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) id <TUICandidateViewStyle> style; // @synthesize style=_style;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)updateGroupHeaderLabelPosition;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;

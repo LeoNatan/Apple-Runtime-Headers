@@ -21,10 +21,10 @@
     CLLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int representation; // @synthesize representation=_representation;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(nonatomic) struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (_Bool)_shouldDeselectWhenDragged;
 - (_Bool)_isPendingSelectionAnimated;
 - (void)_invalidateCachedCoordinate;

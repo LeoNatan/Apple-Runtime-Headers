@@ -18,10 +18,10 @@
     NSArray *_tokens;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(nonatomic) __weak id <PXSItemFinderClient> client; // @synthesize client=_client;
 @property(readonly, nonatomic) PXSItem *rootItem; // @synthesize rootItem=_rootItem;
-- (void).cxx_destruct;
 - (void)scrollRangeToVisible:(struct _NSRange)arg1;
 @property(readonly) struct _NSRange firstSelectedRange;
 - (unsigned long long)stringLength;

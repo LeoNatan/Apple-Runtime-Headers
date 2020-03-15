@@ -17,8 +17,8 @@
 + (id)buildWithSecurityInfo:(id)arg1;
 + (id)allowedReasons;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) CEMSecurityInformationCommand_StatusSecurityInfo *statusSecurityInfo; // @synthesize statusSecurityInfo=_statusSecurityInfo;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CEMSecurityInformationCommand_StatusSecurityInfo *statusSecurityInfo; // @synthesize statusSecurityInfo=_statusSecurityInfo;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;
 

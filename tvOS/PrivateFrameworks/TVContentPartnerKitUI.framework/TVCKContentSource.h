@@ -17,12 +17,12 @@
     struct UIEdgeInsets _borderWidths;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets borderWidths; // @synthesize borderWidths=_borderWidths;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
-- (void).cxx_destruct;
 
 @end
 

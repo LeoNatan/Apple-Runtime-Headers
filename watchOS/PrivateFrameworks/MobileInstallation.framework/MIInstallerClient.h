@@ -32,13 +32,13 @@ __attribute__((visibility("hidden")))
 
 + (id)installerWithAppDictionaryEnumerator:(CDUnknownBlockType)arg1;
 + (id)installerWithProgressBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *delegatesCompleteError; // @synthesize delegatesCompleteError=_delegatesCompleteError;
 @property(nonatomic) _Bool delegatesComplete; // @synthesize delegatesComplete=_delegatesComplete;
 @property(copy, nonatomic) CDUnknownBlockType appDictionaryEnumBlock; // @synthesize appDictionaryEnumBlock=_appDictionaryEnumBlock;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)dieForTesting;
 - (void)waitForSystemAppMigratorWithCompletion:(CDUnknownBlockType)arg1;
 - (void)waitForSystemAppMigratorToComplete:(CDUnknownBlockType)arg1;

@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize originalSize; // @synthesize originalSize=_originalSize;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) CAShapeLayer *selectionStrokeLayer; // @synthesize selectionStrokeLayer=_selectionStrokeLayer;
 @property(retain, nonatomic) CNSharingProfilePhotoPickerItem *pickerItem; // @synthesize pickerItem=_pickerItem;
 @property(nonatomic) _Bool isSmallScreen; // @synthesize isSmallScreen=_isSmallScreen;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

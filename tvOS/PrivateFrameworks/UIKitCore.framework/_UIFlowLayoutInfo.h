@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool estimatesSizes; // @synthesize estimatesSizes=_estimatesSizes;
 @property(nonatomic) __weak UICollectionViewFlowLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) CDStruct_2f5e8405 rowAlignmentOptions; // @synthesize rowAlignmentOptions=_rowAlignmentOptions;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double dimension; // @synthesize dimension=_dimension;
 @property(nonatomic) _Bool usesFloatingHeaderFooter; // @synthesize usesFloatingHeaderFooter=_usesFloatingHeaderFooter;
 @property(readonly, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (id)invalidatedIndexPaths;
 @property(readonly, nonatomic) struct CGSize computedEstimatedSize;
 - (id)specifiedItemSizes;

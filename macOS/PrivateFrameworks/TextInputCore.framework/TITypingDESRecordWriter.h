@@ -13,8 +13,8 @@
     DESRecordStore *_typingDataStore;
 }
 
-@property(retain, nonatomic) DESRecordStore *typingDataStore; // @synthesize typingDataStore=_typingDataStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DESRecordStore *typingDataStore; // @synthesize typingDataStore=_typingDataStore;
 - (void)clearStoredRecordsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchRecords:(CDUnknownBlockType)arg1;
 - (void)storeAlignedSession:(id)arg1 completion:(CDUnknownBlockType)arg2;

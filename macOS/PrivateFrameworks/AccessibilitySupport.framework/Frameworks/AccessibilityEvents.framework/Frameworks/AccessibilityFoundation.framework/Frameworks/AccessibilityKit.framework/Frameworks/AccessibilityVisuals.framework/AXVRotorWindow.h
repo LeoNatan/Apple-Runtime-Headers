@@ -22,6 +22,7 @@
     long long __rotorKnobCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setRotorKnobCount:) long long _rotorKnobCount; // @synthesize _rotorKnobCount=__rotorKnobCount;
 @property(copy, nonatomic, setter=_setRotorTitle:) NSString *_rotorTitle; // @synthesize _rotorTitle=__rotorTitle;
 @property(retain, nonatomic, setter=_setRotorPointerLayer:) CAShapeLayer *_rotorPointerLayer; // @synthesize _rotorPointerLayer=__rotorPointerLayer;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic, setter=_setRotorRadialView:) AXVView *_rotorRadialView; // @synthesize _rotorRadialView=__rotorRadialView;
 @property(retain, nonatomic, setter=_setRotorTitleTextField:) AXVTextField *_rotorTitleTextField; // @synthesize _rotorTitleTextField=__rotorTitleTextField;
 @property(nonatomic) double baseFontSize; // @synthesize baseFontSize=_baseFontSize;
-- (void).cxx_destruct;
 - (void)_drawCenteredCircle;
 - (void)_drawCenteredPointer;
 - (void)_drawSelectedKnob;

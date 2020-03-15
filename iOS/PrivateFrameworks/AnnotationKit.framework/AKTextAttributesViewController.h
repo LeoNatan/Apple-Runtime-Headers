@@ -29,6 +29,7 @@
 }
 
 + (id)fontSizeNumberFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKTextAttributesUIItemDelegate *textAttributesUIItemDelegate; // @synthesize textAttributesUIItemDelegate=_textAttributesUIItemDelegate;
 @property(retain, nonatomic) AKFontChooserUIItemDelegate *fontUIItemDelegate; // @synthesize fontUIItemDelegate=_fontUIItemDelegate;
 @property(retain) id lastActionValue; // @synthesize lastActionValue=_lastActionValue;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) UIColor *currentFontColor; // @synthesize currentFontColor=_currentFontColor;
 @property(retain, nonatomic) UITableViewCell *alignmentTableCell; // @synthesize alignmentTableCell=_alignmentTableCell;
 @property(retain, nonatomic) UITableViewCell *sizeTableCell; // @synthesize sizeTableCell=_sizeTableCell;
-- (void).cxx_destruct;
 - (void)syncTextAttributesToUI:(id)arg1;
 - (id)convertTextAttributes:(id)arg1;
 - (void)syncFontsToUI:(id)arg1;

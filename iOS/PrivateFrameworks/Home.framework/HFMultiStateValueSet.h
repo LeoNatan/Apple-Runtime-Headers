@@ -19,10 +19,10 @@
 }
 
 + (id)binaryValueSetWithCharacteristicMetadata:(id)arg1 firstValue:(id)arg2 firstTitle:(id)arg3 secondValue:(id)arg4 secondTitle:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *displayResultsByValue; // @synthesize displayResultsByValue=_displayResultsByValue;
 @property(copy, nonatomic) CDUnknownBlockType valueComparator; // @synthesize valueComparator=_valueComparator;
 @property(readonly, nonatomic) HMCharacteristicMetadata *characteristicMetadata; // @synthesize characteristicMetadata=_characteristicMetadata;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (void)minusSet:(id)arg1;

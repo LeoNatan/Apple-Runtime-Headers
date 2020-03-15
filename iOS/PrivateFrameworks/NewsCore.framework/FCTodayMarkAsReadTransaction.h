@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *readDate; // @synthesize readDate=_readDate;
 @property(nonatomic) long long articleVersion; // @synthesize articleVersion=_articleVersion;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

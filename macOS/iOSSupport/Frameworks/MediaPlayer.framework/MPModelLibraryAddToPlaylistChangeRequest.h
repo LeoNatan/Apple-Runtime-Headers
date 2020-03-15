@@ -19,12 +19,12 @@
     CDUnknownBlockType _storeImportAllowedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType storeImportAllowedHandler; // @synthesize storeImportAllowedHandler=_storeImportAllowedHandler;
 @property(retain, nonatomic) MPSectionedCollection *songResults; // @synthesize songResults=_songResults;
 @property(retain, nonatomic) MPModelObject *referralObject; // @synthesize referralObject=_referralObject;
 @property(retain, nonatomic) MPModelObject *representativeModelObject; // @synthesize representativeModelObject=_representativeModelObject;
 @property(retain, nonatomic) MPModelPlaylist *playlist; // @synthesize playlist=_playlist;
-- (void).cxx_destruct;
 - (id)newOperationWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

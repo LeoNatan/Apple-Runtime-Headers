@@ -18,12 +18,12 @@
     NSMutableArray *_containerStack;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
 @property(readonly, nonatomic) NSMutableArray *containerStack; // @synthesize containerStack=_containerStack;
 @property(readonly, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <DKDAAPParserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_verifyExpectedEOF;
 - (void)_callDelegateDidEndContainerCode:(unsigned int)arg1;
 - (void)_callDelegateDidParseDataCode:(unsigned int)arg1 bytes:(char *)arg2 contentLength:(unsigned int)arg3;

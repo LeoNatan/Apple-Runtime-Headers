@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)contextWithUUID:(id)arg1 andAccountID:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

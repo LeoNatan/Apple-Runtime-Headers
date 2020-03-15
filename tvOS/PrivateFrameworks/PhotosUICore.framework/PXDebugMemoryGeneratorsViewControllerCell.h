@@ -13,8 +13,8 @@
     PHMemory *_memory;
 }
 
-@property(retain) PHMemory *memory; // @synthesize memory=_memory;
 - (void).cxx_destruct;
+@property(retain) PHMemory *memory; // @synthesize memory=_memory;
 - (void)persist:(id)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 

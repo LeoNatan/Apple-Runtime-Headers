@@ -13,8 +13,8 @@
     NSString *_continueButtonTitle;
 }
 
-@property(readonly, copy, nonatomic) NSString *continueButtonTitle; // @synthesize continueButtonTitle=_continueButtonTitle;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *continueButtonTitle; // @synthesize continueButtonTitle=_continueButtonTitle;
 - (id)initWithDailyRoutineTitle:(id)arg1;
 
 @end

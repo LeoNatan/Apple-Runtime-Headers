@@ -27,6 +27,7 @@
 
 + (id)contactHeaderViewWithContact:(id)arg1;
 + (id)descriptorForRequiredKeysForContactFormatter:(id)arg1 includingAvatarViewDescriptors:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *avatarNameSpacingConstraint; // @synthesize avatarNameSpacingConstraint=_avatarNameSpacingConstraint;
 @property(retain) NSLayoutConstraint *photoHeightConstraint; // @synthesize photoHeightConstraint=_photoHeightConstraint;
 @property(retain) NSLayoutConstraint *photoTopConstraint; // @synthesize photoTopConstraint=_photoTopConstraint;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *alternateName; // @synthesize alternateName=_alternateName;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
-- (void).cxx_destruct;
 - (void)menuWillHide:(id)arg1;
 - (void)handleNameLabelLongPress:(id)arg1;
 - (id)_taglineStringForContacts:(id)arg1;

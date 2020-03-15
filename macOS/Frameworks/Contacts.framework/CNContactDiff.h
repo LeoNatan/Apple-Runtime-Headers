@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)diffContact:(id)arg1 to:(id)arg2 error:(id *)arg3;
-@property(readonly, copy) NSArray *updates; // @synthesize updates=_updates;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *updates; // @synthesize updates=_updates;
 - (id)description;
 - (void)applyToMutableContacts:(id)arg1 withIdentifierMap:(id)arg2;
 - (void)applyToMutableContact:(id)arg1 withIdentifierMap:(id)arg2;

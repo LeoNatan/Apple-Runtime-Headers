@@ -17,8 +17,8 @@
 
 + (BOOL)hasThirdPartyThumbnailGeneratorForContentType:(id)arg1;
 + (BOOL)hasThirdPartyThumbnailGeneratorForItem:(id)arg1;
-@property(retain, nonatomic) QLExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) QLExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 - (void)ioSurfaceWithSize:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)generatePlatformImageThumbnailForExtensionThumbnailItem:(id)arg1 ofSize:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 badgeType:(unsigned long long)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (id)_generateImageFromURL:(id)arg1 withSize:(struct CGSize)arg2 scale:(double)arg3;

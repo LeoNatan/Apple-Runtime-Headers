@@ -17,12 +17,12 @@
     NSNumber *_adamID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSkippable) _Bool skippable; // @synthesize skippable=_skippable;
 @property(retain, nonatomic) NSNumber *adamID; // @synthesize adamID=_adamID;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) double start; // @synthesize start=_start;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)_typeDescription;
 - (id)description;
 - (id)initWithType:(unsigned long long)arg1 start:(double)arg2 duration:(double)arg3;

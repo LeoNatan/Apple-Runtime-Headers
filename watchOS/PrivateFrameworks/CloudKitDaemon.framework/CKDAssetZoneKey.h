@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CKRecordZoneID *_sourceZoneID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecordZoneID *sourceZoneID; // @synthesize sourceZoneID=_sourceZoneID;
 @property(retain, nonatomic) CKRecordZoneID *destinationZoneID; // @synthesize destinationZoneID=_destinationZoneID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

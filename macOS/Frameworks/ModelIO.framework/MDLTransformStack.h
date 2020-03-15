@@ -20,10 +20,10 @@
 
 +     // Error parsing type: {?=[4]}32@0:8@16d24, name: globalTransformWithObject:atTime:
 +     // Error parsing type: {?=[4]}32@0:8@16d24, name: localTransformWithObject:atTime:
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *animatedValues; // @synthesize animatedValues=_animatedValues;
 @property(copy, nonatomic) NSMutableArray *transformOps; // @synthesize transformOps=_transformOps;
 @property(nonatomic) BOOL resetsTransform; // @synthesize resetsTransform=_resetsTransform;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CAAnimation *transformAnimation;
 - (id)decomposedTransformAnimation;
 - (_Bool)isScaleRotateTransformOrder;

@@ -17,10 +17,10 @@
     NSArray *_frames;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *frames; // @synthesize frames=_frames;
 @property(nonatomic) _Bool automaticallyObserveWindowForAnimationTimer; // @synthesize automaticallyObserveWindowForAnimationTimer=_automaticallyObserveWindowForAnimationTimer;
 @property(retain, nonatomic) CKAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
-- (void).cxx_destruct;
 - (void)animationTimerFired:(unsigned long long)arg1;
 - (void)updateAnimationTimerObserving;
 - (void)didMoveToWindow;

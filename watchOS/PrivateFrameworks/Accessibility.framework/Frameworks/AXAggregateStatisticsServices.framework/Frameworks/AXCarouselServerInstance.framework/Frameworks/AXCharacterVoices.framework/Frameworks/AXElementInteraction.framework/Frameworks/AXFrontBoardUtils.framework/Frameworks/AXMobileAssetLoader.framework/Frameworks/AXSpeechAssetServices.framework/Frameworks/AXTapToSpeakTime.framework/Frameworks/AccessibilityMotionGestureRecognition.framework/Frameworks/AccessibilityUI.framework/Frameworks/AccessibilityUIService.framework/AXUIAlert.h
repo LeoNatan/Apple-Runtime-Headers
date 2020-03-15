@@ -15,9 +15,9 @@
 }
 
 + (id)alertWithType:(unsigned int)arg1 text:(id)arg2 subtitleText:(id)arg3 iconImage:(id)arg4 styleProvider:(id)arg5 userInfo:(id)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) __weak AXUIAlertContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)addToContainerView:(id)arg1;
 
 @end

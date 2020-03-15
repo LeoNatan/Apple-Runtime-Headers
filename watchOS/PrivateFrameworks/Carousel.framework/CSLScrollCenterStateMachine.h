@@ -24,6 +24,7 @@
     CSLScrollCenterStateMachinePresentedState *_presentedState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLScrollCenterStateMachinePresentedState *presentedState; // @synthesize presentedState=_presentedState;
 @property(retain, nonatomic) CSLScrollCenterStateMachinePresentingState *presentingState; // @synthesize presentingState=_presentingState;
 @property(retain, nonatomic) CSLScrollCenterStateMachineUnpeekingState *unpeekingState; // @synthesize unpeekingState=_unpeekingState;
@@ -34,7 +35,6 @@
 @property(nonatomic) __weak id <CSLScrollCenterStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressRecognizer; // @synthesize longPressRecognizer=_longPressRecognizer;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (_Bool)_gestureIsActive:(id)arg1;
 @property(readonly, nonatomic, getter=isTracking) _Bool tracking;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2 usingDistanceToCalculateAnimationDuration:(_Bool)arg3;

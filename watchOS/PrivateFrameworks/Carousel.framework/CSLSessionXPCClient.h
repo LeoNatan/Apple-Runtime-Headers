@@ -16,10 +16,10 @@
     NSString *_connectionBundleID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *connectionBundleID; // @synthesize connectionBundleID=_connectionBundleID;
 @property(readonly, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (id)checkIfConnectionIsAllowed:(id)arg1;
 - (id)bundleProxy;
 - (id)initWithXPCConnection:(id)arg1;

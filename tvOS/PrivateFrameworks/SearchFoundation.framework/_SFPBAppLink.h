@@ -19,11 +19,11 @@
     _SFPBImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int imageAlign; // @synthesize imageAlign=_imageAlign;
 @property(retain, nonatomic) _SFPBImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) _SFPBPunchout *appPunchout; // @synthesize appPunchout=_appPunchout;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

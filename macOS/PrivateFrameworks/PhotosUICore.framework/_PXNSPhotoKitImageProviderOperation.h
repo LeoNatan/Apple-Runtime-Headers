@@ -17,10 +17,10 @@
 
 + (struct CGSize)imageSizeForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3;
 + (struct CGRect)fillRectForAspectRatio:(double)arg1 inRect:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int resourceRequestID; // @synthesize resourceRequestID=_resourceRequestID;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(nonatomic) __weak PXNSPhotoKitImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
-- (void).cxx_destruct;
 - (void)_handleImageRequestFinishedWithResult:(id)arg1 info:(id)arg2;
 - (void)main;
 - (void)cancel;

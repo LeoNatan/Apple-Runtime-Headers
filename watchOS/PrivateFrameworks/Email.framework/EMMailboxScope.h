@@ -27,11 +27,11 @@
 + (id)mailboxScopeForMailboxObjectIDs:(id)arg1 forExclusion:(_Bool)arg2;
 + (id)noMailboxesScope;
 + (id)allMailboxesScope;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool excludeMailboxes; // @synthesize excludeMailboxes=_excludeMailboxes;
 @property(readonly, copy, nonatomic) NSSet *mailboxObjectIDs; // @synthesize mailboxObjectIDs=_mailboxObjectIDs;
 @property(readonly, nonatomic) _Bool excludeTypes; // @synthesize excludeTypes=_excludeTypes;
 @property(readonly, copy, nonatomic) NSSet *mailboxTypes; // @synthesize mailboxTypes=_mailboxTypes;
-- (void).cxx_destruct;
 - (_Bool)_scopeContainsMailboxWithObjectID:(id)arg1 mailboxTypeBlock:(CDUnknownBlockType)arg2;
 - (_Bool)scopeContainsMailboxObjectID:(id)arg1 mailboxTypeResolver:(id)arg2;
 - (_Bool)scopeContainsMailbox:(id)arg1;

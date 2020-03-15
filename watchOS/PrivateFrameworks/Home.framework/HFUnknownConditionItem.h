@@ -15,8 +15,8 @@
     HFCondition *_condition;
 }
 
-@property(readonly, nonatomic) HFCondition *condition; // @synthesize condition=_condition;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFCondition *condition; // @synthesize condition=_condition;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)initWithCondition:(id)arg1;
 - (id)init;

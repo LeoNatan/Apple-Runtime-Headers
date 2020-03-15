@@ -14,9 +14,9 @@
     AVAudioUnitTimePitch *_timePitch;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAudioUnitTimePitch *timePitch; // @synthesize timePitch=_timePitch;
 @property(retain, nonatomic) AVAudioPlayerNode *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (_Bool)beginPlayback:(id)arg1 withError:(id *)arg2;
 - (void)disconnectFromEngine:(id)arg1;
 - (void)connectToEngine:(id)arg1;

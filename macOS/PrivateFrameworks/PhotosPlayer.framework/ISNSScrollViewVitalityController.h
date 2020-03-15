@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSScrollView *__scrollView;
 }
 
-@property(nonatomic, setter=_setScrollView:) __weak NSScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
 - (void).cxx_destruct;
+@property(nonatomic, setter=_setScrollView:) __weak NSScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
 - (void)_handleDidEndLiveScrollNotification:(id)arg1;
 - (void)_handleDidLiveScrollNotification:(id)arg1;
 - (void)_handleWillStartLiveScrollNotification:(id)arg1;

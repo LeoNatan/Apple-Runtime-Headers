@@ -19,13 +19,13 @@
     SearchUICardTableViewController *_tableViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUICardTableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
 @property(nonatomic) unsigned long long level; // @synthesize level=_level;
 @property(retain, nonatomic) NSTimer *loadingScreenTimer; // @synthesize loadingScreenTimer=_loadingScreenTimer;
 @property(retain, nonatomic) TLKLabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property(retain, nonatomic) UIActivityIndicatorView *loadingSpinner; // @synthesize loadingSpinner=_loadingSpinner;
 @property(retain, nonatomic) NUIContainerBoxView *loadingView; // @synthesize loadingView=_loadingView;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (id)testingTableViewController;
 @property(nonatomic) _Bool threeDTouchEnabled;

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 
 + (id)actionWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 + (id)_invocationForTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<UIRepeatedActionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) id invocationArgument; // @synthesize invocationArgument=_invocationArgument;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float repeatedDelay; // @synthesize repeatedDelay=_repeatedDelay;
 @property(nonatomic) float invocationDelay; // @synthesize invocationDelay=_invocationDelay;
 @property(nonatomic) float preInvocationDelay; // @synthesize preInvocationDelay=_preInvocationDelay;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)reset;
 - (void)invalidate;

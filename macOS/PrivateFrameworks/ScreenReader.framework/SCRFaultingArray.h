@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     id <SCRFaultingArrayDataSource> __source;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SCRFaultingArrayDataSource> _source; // @synthesize _source=__source;
 @property(retain, nonatomic) NSMutableIndexSet *_faultedBlocks; // @synthesize _faultedBlocks=__faultedBlocks;
 @property(nonatomic) unsigned long long _count; // @synthesize _count=__count;
 @property(nonatomic) unsigned long long blockSize; // @synthesize blockSize=_blockSize;
-- (void).cxx_destruct;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (unsigned long long)elementsCount;
 - (id)copyElementsForRange:(struct _NSRange)arg1;

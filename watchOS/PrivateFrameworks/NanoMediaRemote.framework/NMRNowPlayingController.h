@@ -28,8 +28,8 @@
     unsigned int _filteringOptions;
 }
 
-@property(readonly, nonatomic) unsigned int filteringOptions; // @synthesize filteringOptions=_filteringOptions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int filteringOptions; // @synthesize filteringOptions=_filteringOptions;
 - (void)sendMediaRemoteCommand:(unsigned int)arg1 toOrigin:(id)arg2 options:(id)arg3 launchApp:(_Bool)arg4;
 - (id)_evaluateNowPlayingOriginsFromOrigins:(id)arg1;
 - (id)_evaluateActiveNowPlayingOriginForOrderedOrigins:(id)arg1;

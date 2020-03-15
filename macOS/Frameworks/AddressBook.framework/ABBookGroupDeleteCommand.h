@@ -16,8 +16,11 @@
     NSDictionary *_undoState;
     ABGroupEntriesList *_groupEntriesList;
     int _containmentPersonality;
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 @property(copy) NSDictionary *undoState; // @synthesize undoState=_undoState;
 - (void)executeUndo;
 - (id)group;

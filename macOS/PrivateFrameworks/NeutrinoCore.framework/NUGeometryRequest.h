@@ -13,8 +13,8 @@
     id <NUScalePolicy> _scalePolicy;
 }
 
-@property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
 - (void).cxx_destruct;
+@property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
 - (long long)mediaComponentType;
 - (id)newRenderJob;
 - (id)submitSynchronous:(out id *)arg1;

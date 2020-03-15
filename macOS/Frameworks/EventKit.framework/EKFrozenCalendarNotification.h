@@ -46,6 +46,7 @@
 + (Class)meltedClass;
 + (id)frozenObjectForObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3 forceUpdate:(BOOL)arg4;
 + (Class)_realClassForNotification:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long junkStatus; // @synthesize junkStatus;
 @property(readonly, nonatomic) NSDate *proposedEndDateUnadjustedFromUTC; // @synthesize proposedEndDateUnadjustedFromUTC;
 @property(readonly, nonatomic) NSDate *proposedStartDateUnadjustedFromUTC; // @synthesize proposedStartDateUnadjustedFromUTC;
@@ -74,7 +75,6 @@
 @property(readonly, nonatomic) NSString *title; // @synthesize title;
 @property(readonly) NSString *uuid; // @synthesize uuid;
 @property(readonly, nonatomic) NSNumber *notificationType; // @synthesize notificationType;
-- (void).cxx_destruct;
 - (BOOL)isProposedNewTime;
 - (BOOL)isSuggestion;
 - (BOOL)isResourceChange;

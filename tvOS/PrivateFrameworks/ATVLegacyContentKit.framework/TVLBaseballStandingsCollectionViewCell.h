@@ -21,6 +21,7 @@
     TVLColumnRowViewDataSource *_tableViewDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLColumnRowViewDataSource *tableViewDataSource; // @synthesize tableViewDataSource=_tableViewDataSource;
 @property(retain, nonatomic) TVLColumnRowView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) TVLTableElement *tableElement; // @synthesize tableElement=_tableElement;
 @property(retain, nonatomic) TVImageProxy *backgroundImageProxy; // @synthesize backgroundImageProxy=_backgroundImageProxy;
-- (void).cxx_destruct;
 - (void)setBackgroundImage:(id)arg1;
 - (double)headerHeightForColumnRowView:(id)arg1;
 - (double)columnRowView:(id)arg1 heightForRow:(long long)arg2;

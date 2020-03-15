@@ -18,10 +18,10 @@
     UIImageView *__glyphView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *_glyphView; // @synthesize _glyphView=__glyphView;
 @property(nonatomic) _Bool hideOffWhenCollapsed; // @synthesize hideOffWhenCollapsed=_hideOffWhenCollapsed;
 @property(nonatomic) __weak id <CAMTimerButtonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)imageForAccessibilityHUD;
 - (id)shownIndexesWhileCollapsed;
 - (double)padHeaderViewContentInsetLeft;

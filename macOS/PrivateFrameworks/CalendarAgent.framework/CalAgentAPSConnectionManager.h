@@ -28,6 +28,7 @@
 
 + (void)unregisterPrincipalWithObjectID:(id)arg1;
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain) NSString *tokenStringDev; // @synthesize tokenStringDev=_tokenStringDev;
 @property(retain) NSString *tokenString; // @synthesize tokenString=_tokenString;
 @property(retain) CalCalDAVTaskManager *taskManager; // @synthesize taskManager=_taskManager;
@@ -38,7 +39,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *apsConnectionManagerWorkSerialQueue; // @synthesize apsConnectionManagerWorkSerialQueue=_apsConnectionManagerWorkSerialQueue;
 @property(retain) APSConnection *apsConnectionDev; // @synthesize apsConnectionDev=_apsConnectionDev;
 @property(retain) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
-- (void).cxx_destruct;
 - (id)_stringFromTokenData:(id)arg1;
 - (BOOL)_setTokenStringFromToken:(id)arg1 production:(BOOL)arg2;
 - (void)_sendSubscriptionRequestForPrincipal:(id)arg1 toURL:(id)arg2 withKey:(id)arg3 withToken:(id)arg4;

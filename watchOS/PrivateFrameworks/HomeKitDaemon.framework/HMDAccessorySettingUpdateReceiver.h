@@ -14,8 +14,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) NSNumber *configurationVersion; // @synthesize configurationVersion=_configurationVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *configurationVersion; // @synthesize configurationVersion=_configurationVersion;
 - (void)updateWithAdditionalModel:(id)arg1;
 - (void)update;
 - (id)description;

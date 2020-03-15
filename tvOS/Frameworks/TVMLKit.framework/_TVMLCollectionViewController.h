@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_shadowViewElementForCollectionElement:(id)arg1;
 + (id)headerElementFromCollectionElement:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *sortedIndexTitles; // @synthesize sortedIndexTitles=_sortedIndexTitles;
 @property(copy, nonatomic) NSDictionary *indexPathsByIndexTitle; // @synthesize indexPathsByIndexTitle=_indexPathsByIndexTitle;
 @property(nonatomic) struct TVShowcaseConfig showcaseConfig; // @synthesize showcaseConfig=_showcaseConfig;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain, nonatomic) IKCollectionElement *collectionElement; // @synthesize collectionElement=_collectionElement;
 @property(retain, nonatomic) UIViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (id)_closestIndexPathToIndexPath:(id)arg1;
 - (void)_registerCellClassesInCollectionView:(id)arg1;
 - (void)_updateIndexDisplay;

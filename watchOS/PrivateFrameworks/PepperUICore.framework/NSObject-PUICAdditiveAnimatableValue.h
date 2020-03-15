@@ -7,18 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <PepperUICore/CAAnimatableValue-Protocol.h>
-#import <PepperUICore/PUICCollectionViewUpdateWrapper-Protocol.h>
 
 @class NSString;
 
-@interface NSObject (PUICAdditiveAnimatableValue) <CAAnimatableValue, PUICCollectionViewUpdateWrapper>
+@interface NSObject (PUICAdditiveAnimatableValue) <CAAnimatableValue>
 - (id)puic_deltaFromValue:(id)arg1;
 - (id)puic_interpolateValue:(id)arg1 byFraction:(float)arg2;
 - (id)puic_addValue:(id)arg1 multipliedBy:(int)arg2;
-- (int *)_ipi_oldGlobalItemMap;
-- (int *)_ipi_newGlobalItemMap;
-- (id)_ipi_newModel;
-- (id)_ipi_oldModel;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

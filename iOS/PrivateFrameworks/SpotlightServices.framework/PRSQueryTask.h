@@ -36,6 +36,7 @@
 + (void)resumeDecoding;
 + (void)suspendDecoding;
 + (void)initialize;
+- (void).cxx_destruct;
 @property _Bool webSearch; // @synthesize webSearch=_webSearch;
 @property(retain, nonatomic) NSString *fbq; // @synthesize fbq=_fbq;
 @property(nonatomic) __weak PRSSearchSession *session; // @synthesize session=_session;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) NSDictionary *server_features; // @synthesize server_features=_server_features;
 @property(retain, nonatomic) NSDictionary *category_stats; // @synthesize category_stats=_category_stats;
 @property long long queryId; // @synthesize queryId=_queryId;
-- (void).cxx_destruct;
 - (id)feedbackQueryIdentifier;
 - (void)invalidateHandler;
 - (void)cancel;

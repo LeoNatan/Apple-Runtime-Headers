@@ -16,8 +16,8 @@
 + (_Bool)supportsSecureCoding;
 + (id)_allComplicationConfigurationsWithType:(unsigned int)arg1;
 + (id)_allCities;
-@property(readonly, nonatomic) WorldClockCity *city; // @synthesize city=_city;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WorldClockCity *city; // @synthesize city=_city;
 - (id)_initWithComplicationType:(unsigned int)arg1 JSONDictionary:(id)arg2;
 - (void)_addKeysToJSONDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

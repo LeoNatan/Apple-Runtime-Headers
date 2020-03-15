@@ -27,6 +27,7 @@
     id <SBIconAnimationContaining> _animationContainer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SBIconAnimationContaining> animationContainer; // @synthesize animationContainer=_animationContainer;
 @property(retain, nonatomic) UIView *backgroundDarkeningView; // @synthesize backgroundDarkeningView=_backgroundDarkeningView;
 @property(retain, nonatomic) SBValueConvergenceAnimator *hintAnimator; // @synthesize hintAnimator=_hintAnimator;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) SBHIconAnimationSettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) __weak id <SBIconAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_windowFinishedRotating;
 - (void)_invalidateCompletions;
 - (void)_animateToFraction:(double)arg1 afterDelay:(double)arg2 withSharedCompletion:(CDUnknownBlockType)arg3;

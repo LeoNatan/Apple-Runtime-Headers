@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic, setter=setURL:) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=setURL:) NSURL *url; // @synthesize url=_url;
 - (BOOL)isEquivalent:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

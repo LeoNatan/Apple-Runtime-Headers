@@ -18,10 +18,10 @@
     CNContactListHelperScope *_scope;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactListHelperScope *scope; // @synthesize scope=_scope;
 @property(readonly, nonatomic) id <CNContactPickerInternalResponseDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CNContactListController *contactListController; // @synthesize contactListController=_contactListController;
-- (void).cxx_destruct;
 - (BOOL)hasValue;
 - (void)selectContact;
 - (void)performSelect;

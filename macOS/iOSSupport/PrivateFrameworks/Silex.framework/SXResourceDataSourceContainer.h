@@ -16,8 +16,8 @@
     id <SXResourceDataSource> _resourceDataSource;
 }
 
-@property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 - (void)registerResourceDataSource:(id)arg1;
 
 // Remaining properties

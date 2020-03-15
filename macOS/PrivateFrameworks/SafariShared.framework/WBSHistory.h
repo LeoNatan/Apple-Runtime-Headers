@@ -15,8 +15,6 @@
 {
     NSObject<OS_dispatch_queue> *_entriesByURLStringAccessQueue;
     NSMutableDictionary *_entriesByURLString;
-    NSObject<OS_dispatch_queue> *_hostnameToHistoryItemCountAccessQueue;
-    NSCountedSet *_hostnameToHistoryItemCount;
     NSCountedSet *_stringsForUserTypedDomainExpansion;
     double _historyAgeLimit;
     BOOL _hasStartedLoadingHistory;
@@ -31,9 +29,9 @@
 + (id)historyDatabaseURL;
 + (id)historyPropertyListURL;
 + (id)existingSharedHistory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryTagMap *historyTagMap; // @synthesize historyTagMap=_historyTagMap;
 @property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
-- (void).cxx_destruct;
 - (Class)_historyItemClass;
 - (void)_addVisitedLinksForItemsIfNeeded:(id)arg1;
 - (void)_removeAllVisitedLinks;
@@ -43,13 +41,13 @@
 - (void)initializeCloudHistoryWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)computeFrequentlyVisitedSites:(unsigned long long)arg1 minimalVisitCountScore:(unsigned long long)arg2 blacklist:(id)arg3 whitelist:(id)arg4 options:(unsigned long long)arg5 currentTime:(double)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)searchForUserTypedString:(id)arg1 options:(unsigned long long)arg2 currentTime:(double)arg3 enumerationBlock:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)historyStore:(id)arg1 didRemoveHostnames:(id)arg2;
 - (void)historyStore:(id)arg1 didRemoveItems:(id)arg2;
 - (void)historyStore:(id)arg1 didRemoveVisits:(id)arg2;
 - (void)historyStore:(id)arg1 didAddVisits:(id)arg2;
 - (void)historyStoreWasCleared:(id)arg1;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(id)arg1;
 - (BOOL)historyStoreShouldCheckDatabaseIntegrity:(id)arg1;
-- (void)_dispatchDidRemoveHostnames:(id)arg1;
 - (void)_dispatchHistoryVisitAdded:(id)arg1;
 - (void)_dispatchHistoryCleared:(id)arg1;
 - (void)_dispatchHistoryItemsRemovedDuringLoading:(id)arg1;
@@ -70,15 +68,10 @@
 - (void)_startLoading;
 - (void)_loadHistory;
 - (void)_loadHistoryAsynchronouslyIfNeeded;
-- (void)removeAllTestDriveHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)makePermanentAllTestDriveHistory;
 - (void)closeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)close;
 - (void)performMaintenance:(CDUnknownBlockType)arg1;
 - (void)performMaintenance;
-- (void)_clearHostnameCount;
-- (id)_updateHostnameCountWithDeletedHistoryItems:(id)arg1;
-- (void)_updateHostnameCountWithAddedHistoryItems:(id)arg1;
 - (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistory;
@@ -94,6 +87,7 @@
 - (void)updateTitle:(id)arg1 forVisit:(id)arg2;
 - (BOOL)canRecordRedirectFromVisit:(id)arg1 to:(id)arg2;
 - (void)checkIfLocalVisitExistsInAnyOfItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)getHighLevelHTTPFamilyDomainsVisitedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getVisitsCreatedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)itemRedirectedFrom:(id)arg1 to:(id)arg2 origin:(long long)arg3 date:(id)arg4;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(BOOL)arg4 wasFailure:(BOOL)arg5 increaseVisitCount:(BOOL)arg6 origin:(long long)arg7 attributes:(unsigned long long)arg8;

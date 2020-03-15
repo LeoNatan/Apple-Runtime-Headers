@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsBSXPCSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *assertionErrorsByOldIdentifier; // @synthesize assertionErrorsByOldIdentifier=_assertionErrorsByOldIdentifier;
 @property(retain, nonatomic) NSDictionary *assertionIdentifiersByOldIdentifier; // @synthesize assertionIdentifiersByOldIdentifier=_assertionIdentifiersByOldIdentifier;
 @property(retain, nonatomic) RBSProcessHandle *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (id)initWithBSXPCCoder:(id)arg1;
 - (void)encodeWithBSXPCCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

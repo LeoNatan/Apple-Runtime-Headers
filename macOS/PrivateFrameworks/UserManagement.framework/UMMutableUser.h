@@ -31,6 +31,7 @@
 @property(nonatomic) BOOL isAuditor; // @dynamic isAuditor;
 @property(nonatomic) BOOL isDisabled; // @dynamic isDisabled;
 @property(nonatomic) BOOL isLoginUser; // @dynamic isLoginUser;
+@property(nonatomic) BOOL isTransientUser; // @dynamic isTransientUser;
 @property(copy, nonatomic) NSArray *languages; // @dynamic languages;
 @property(copy, nonatomic) NSDate *lastLoginDate; // @dynamic lastLoginDate;
 @property(copy, nonatomic) NSDate *lastRemoteAuthDate; // @dynamic lastRemoteAuthDate;

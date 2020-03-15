@@ -23,8 +23,8 @@
 + (unsigned int)getReasonFromAction:(id)arg1;
 + (id)_getSnapshotScheduleItemFromAction:(id)arg1;
 + (id)sharedInstance;
-@property(retain, nonatomic) CSLSPrivilegedBackgroundServiceConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CSLSPrivilegedBackgroundServiceConnection *connection; // @synthesize connection=_connection;
 - (void)registerPrivilegedSnapshotClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 returnToPrimaryUIInterval:(double)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)registerPrivilegedBackgroundClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)snapshotAppWithBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;

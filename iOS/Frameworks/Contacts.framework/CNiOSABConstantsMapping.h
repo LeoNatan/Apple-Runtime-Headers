@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 + (id)ABtoCNContactDisplayNameOrderConstantsMapping;
 + (id)CNToABPersonKindConstantsMapping;
 + (id)ABToCNPersonKindConstantsMapping;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id defaultConstant; // @synthesize defaultConstant=_defaultConstant;
 @property(retain, nonatomic) NSDictionary *mapping; // @synthesize mapping=_mapping;
-- (void).cxx_destruct;
 - (id)mappedConstant:(id)arg1;
 - (id)invertedMapping;
 - (id)initWithMapping:(id)arg1;

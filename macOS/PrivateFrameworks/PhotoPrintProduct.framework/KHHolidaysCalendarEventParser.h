@@ -27,6 +27,7 @@
     KHCalendarUtility *_calendarUtility;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHCalendarUtility *calendarUtility; // @synthesize calendarUtility=_calendarUtility;
 @property(copy, nonatomic) NSDate *latestCalendarDate; // @synthesize latestCalendarDate=_latestCalendarDate;
 @property(copy, nonatomic) NSDate *maxCalendarDate; // @synthesize maxCalendarDate=_maxCalendarDate;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSDictionary *typeListForCountry; // @synthesize typeListForCountry=_typeListForCountry;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *eventString; // @synthesize eventString=_eventString;
-- (void).cxx_destruct;
 - (id)_calendar;
 - (id)_createMaxCalendarDateWithNumberOfYears:(unsigned long long)arg1;
 - (BOOL)_holidayWithNameIsValid:(id)arg1;

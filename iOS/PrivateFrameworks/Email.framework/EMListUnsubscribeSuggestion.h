@@ -23,10 +23,10 @@
 + (id)unsubscribeTitleAlertString;
 + (id)suggestionDismissActionTitle;
 + (id)suggestionPrimaryActionString;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SGSuggestionPresenter *suggestionPresenter; // @synthesize suggestionPresenter=_suggestionPresenter;
 @property(retain, nonatomic) EMListUnsubscribeCommand *listUnsubscribeCommand; // @synthesize listUnsubscribeCommand=_listUnsubscribeCommand;
 @property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate;
-- (void).cxx_destruct;
 - (void)ignore;
 - (void)unsubscribe;
 - (CDUnknownBlockType)suggestionComparator;

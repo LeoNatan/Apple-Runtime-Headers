@@ -17,9 +17,9 @@
     CDStruct_f2ecb737 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *errorData; // @synthesize errorData=_errorData;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

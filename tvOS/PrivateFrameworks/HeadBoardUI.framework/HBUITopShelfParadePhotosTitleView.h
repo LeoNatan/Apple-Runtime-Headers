@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_contextTitleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *contextTitleLabel; // @synthesize contextTitleLabel=_contextTitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

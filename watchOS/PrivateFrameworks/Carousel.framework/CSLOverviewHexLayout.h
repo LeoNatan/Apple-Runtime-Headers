@@ -22,11 +22,11 @@
     float _diameterScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fitsToQuadrantSize; // @synthesize fitsToQuadrantSize=_fitsToQuadrantSize;
 @property(nonatomic) float diameterScale; // @synthesize diameterScale=_diameterScale;
 @property(nonatomic) float falloffPercentage; // @synthesize falloffPercentage=_falloffPercentage;
 @property(nonatomic) float maxScale; // @synthesize maxScale=_maxScale;
-- (void).cxx_destruct;
 - (struct Hex)hexAtPoint:(struct CGPoint)arg1;
 - (CDStruct_727cf631)layoutAttributesForItemAtHex:(struct Hex)arg1;
 - (void)updateConstants;

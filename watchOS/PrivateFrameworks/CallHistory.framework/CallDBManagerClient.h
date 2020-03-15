@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id _syncHelperReadyNotificationRef;
 }
 
+- (void).cxx_destruct;
 @property(retain) id syncHelperReadyNotificationRef; // @synthesize syncHelperReadyNotificationRef=_syncHelperReadyNotificationRef;
 @property(retain) NSXPCConnection *helperConnection; // @synthesize helperConnection=_helperConnection;
-- (void).cxx_destruct;
 - (id)permDBLocation:(unsigned char *)arg1;
 - (id)tempDBLocation:(unsigned char *)arg1;
 - (void)pokeSyncHelperToInitDB;

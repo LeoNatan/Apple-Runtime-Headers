@@ -17,10 +17,10 @@
 }
 
 + (id)keyPathsForPanelSettings;
+- (void).cxx_destruct;
 @property(copy) NSString *movePopupFieldLabel; // @synthesize movePopupFieldLabel=_movePopupFieldLabel;
 @property(readonly) NSURL *finalURL; // @synthesize finalURL=_finalURL;
 @property(copy, nonatomic) NSURL *initialURL; // @synthesize initialURL=_initialURL;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)panelCompletedWithNewDocumentRequest;
 - (void)panelCompletedWithRequest:(id)arg1;

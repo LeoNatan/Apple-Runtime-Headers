@@ -24,9 +24,9 @@
 + (id)emojiTokensForCEMEmojiTokens:(struct __CFArray *)arg1;
 + (id)emojiTokenWithCEMEmojiToken:(struct __EmojiTokenWrapper *)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
-- (void).cxx_destruct;
 - (id)nameForType:(int)arg1;
 - (id)relatedEmojiTokens:(unsigned long long)arg1;
 @property(readonly, nonatomic) _Bool isCommon;

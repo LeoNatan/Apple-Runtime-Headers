@@ -23,14 +23,14 @@ __attribute__((visibility("hidden")))
     Mercator2_57ec32b6 _mercatorPoint;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) Mercator2_57ec32b6 mercatorPoint; // @synthesize mercatorPoint=_mercatorPoint;
 @property(nonatomic) float desiredOffsetDistance; // @synthesize desiredOffsetDistance=_desiredOffsetDistance;
 @property(nonatomic) unsigned char alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned int displayID; // @synthesize displayID=_displayID;
 @property(readonly, nonatomic) const shared_ptr_93ff9d4a *label; // @synthesize label=_label;
 @property(nonatomic) id <VKLabelNavFeature> navFeature; // @synthesize navFeature=_navFeature;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 - (id)displayGroup;
 - (void)layoutWithNavContext:(struct NavContext *)arg1;

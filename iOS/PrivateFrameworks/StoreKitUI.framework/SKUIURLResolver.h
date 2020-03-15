@@ -21,10 +21,10 @@
 }
 
 + (id)tabIdentifierForURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) __weak id <UINavigationControllerDelegate> navigationControllerDelegate; // @synthesize navigationControllerDelegate=_navigationControllerDelegate;
 @property(nonatomic) __weak id <SKUIURLResolverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_showViewControllerWithResponse:(id)arg1 fromOperation:(id)arg2;
 - (void)_showSearchWithURL:(id)arg1;
 - (void)_showRedeemViewControllerWithURL:(id)arg1;

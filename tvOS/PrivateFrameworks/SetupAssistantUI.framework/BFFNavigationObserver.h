@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)observerWithObserver:(id)arg1;
-@property(nonatomic) __weak id <BFFNavigationControllerDelegate> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BFFNavigationControllerDelegate> observer; // @synthesize observer=_observer;
 
 @end
 

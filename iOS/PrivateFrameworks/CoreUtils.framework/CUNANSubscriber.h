@@ -8,7 +8,7 @@
 
 #import <CoreUtils/WiFiAwareSubscriberDelegate-Protocol.h>
 
-@class NSArray, NSString, WiFiAwareSubscriber;
+@class NSArray, NSMutableDictionary, NSString, WiFiAwareSubscriber;
 @protocol OS_dispatch_queue;
 
 @interface CUNANSubscriber : NSObject <WiFiAwareSubscriberDelegate>
@@ -18,7 +18,7 @@
     _Bool _invalidateDone;
     struct _opaque_pthread_mutex_t _mutex;
     struct LogCategory *_ucat;
-    struct NSMutableDictionary *_wfaEndpoints;
+    NSMutableDictionary *_wfaEndpoints;
     WiFiAwareSubscriber *_wfaSubscriber;
     unsigned int _changeFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -31,6 +31,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType endpointChangedHandler; // @synthesize endpointChangedHandler=_endpointChangedHandler;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
-- (void).cxx_destruct;
 - (void)subscriber:(id)arg1 receivedMessage:(id)arg2 fromPublishID:(unsigned char)arg3 address:(id)arg4;
 - (void)_subscriber:(id)arg1 lostDiscoveryResultForPublishID:(unsigned char)arg2 address:(id)arg3;
 - (void)subscriber:(id)arg1 lostDiscoveryResultForPublishID:(unsigned char)arg2 address:(id)arg3;

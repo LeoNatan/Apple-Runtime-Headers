@@ -13,8 +13,8 @@
     NSString *_event;
 }
 
-@property(readonly, nonatomic) NSString *event; // @synthesize event=_event;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *event; // @synthesize event=_event;
 - (void)_setValue:(id)arg1 forEvent:(id)arg2 stringifiedProperties:(id)arg3 metaData:(id)arg4;
 - (void)_logValue:(id)arg1 forEvent:(id)arg2 stringifiedProperties:(id)arg3 metaData:(id)arg4;
 - (void)trackEventWithPropertyValues:(id)arg1 setValue:(unsigned long long)arg2;

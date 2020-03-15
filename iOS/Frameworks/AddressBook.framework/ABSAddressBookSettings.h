@@ -17,11 +17,11 @@
     id <CNSchedulerProvider> _schedulerProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) int policy; // @synthesize policy=_policy;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) CNFuture *contactStoreFuture; // @synthesize contactStoreFuture=_contactStoreFuture;
-- (void).cxx_destruct;
 - (id)newFaultHandlerWithStorage:(id)arg1;
 - (id)initWithOptions:(id)arg1 policy:(int)arg2 contactStoreFuture:(id)arg3 schedulerProvider:(id)arg4;
 - (id)initWithOptions:(id)arg1 policy:(int)arg2;

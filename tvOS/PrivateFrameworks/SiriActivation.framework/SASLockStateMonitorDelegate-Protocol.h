@@ -4,7 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@protocol SASLockStateMonitorDelegate
+#import <SiriActivation/NSObject-Protocol.h>
+
+@protocol SASLockStateMonitorDelegate <NSObject>
+
+@optional
+- (void)didChangeLockState:(unsigned long long)arg1 toState:(unsigned long long)arg2;
 - (void)didChangeLockState:(unsigned long long)arg1;
 @end
 

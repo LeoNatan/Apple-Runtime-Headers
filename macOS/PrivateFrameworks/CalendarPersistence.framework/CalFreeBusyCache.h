@@ -22,8 +22,8 @@
 
 + (int)leastAvailabileFreeBusyTypeForArray:(id)arg1;
 + (id)numberForFreeBusyType:(int)arg1;
-@property(readonly) NSManagedObjectID *principalID; // @synthesize principalID=_principalID;
 - (void).cxx_destruct;
+@property(readonly) NSManagedObjectID *principalID; // @synthesize principalID=_principalID;
 - (void)freeBusyServerRequestForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 withDelegate:(id)arg4;
 - (void)freeBusyOperationWithInfo:(id)arg1 spans:(id)arg2 details:(id)arg3 otherInfos:(id)arg4 error:(id)arg5;
 - (void)clearCacheExceptForSharedUIDs:(id)arg1;

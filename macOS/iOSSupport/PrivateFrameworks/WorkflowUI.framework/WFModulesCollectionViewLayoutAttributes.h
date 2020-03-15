@@ -13,8 +13,8 @@
     UIColor *_connectorColor;
 }
 
-@property(retain, nonatomic) UIColor *connectorColor; // @synthesize connectorColor=_connectorColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *connectorColor; // @synthesize connectorColor=_connectorColor;
 - (BOOL)_isTransitionVisibleTo:(id)arg1;
 
 @end

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_reply;
 }
 
-@property(copy, nonatomic) NSString *reply; // @synthesize reply=_reply;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *reply; // @synthesize reply=_reply;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

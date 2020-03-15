@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     int _readPosition;
 }
 
-@property(nonatomic) int readPosition; // @synthesize readPosition=_readPosition;
 - (void).cxx_destruct;
+@property(nonatomic) int readPosition; // @synthesize readPosition=_readPosition;
 @property(readonly, nonatomic) _Bool canPurge;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished;
 @property(readonly, nonatomic) MRProtocolMessage *message;

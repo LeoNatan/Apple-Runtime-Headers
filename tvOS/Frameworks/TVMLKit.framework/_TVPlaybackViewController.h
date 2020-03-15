@@ -34,13 +34,13 @@ __attribute__((visibility("hidden")))
     UIViewController *_playerViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(nonatomic) __weak id <_TVPlaybackViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _TVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) _Bool stopPlaybackWhenDismissed; // @synthesize stopPlaybackWhenDismissed=_stopPlaybackWhenDismissed;
 @property(retain, nonatomic) UIViewController *interactiveOverlayViewController; // @synthesize interactiveOverlayViewController=_interactiveOverlayViewController;
 @property(nonatomic, getter=isInteractiveOverlayDismissable) _Bool interactiveOverlayDismissable; // @synthesize interactiveOverlayDismissable=_interactiveOverlayDismissable;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UITapGestureRecognizer *interactiveOverlayDismissGestureRecognizer; // @synthesize interactiveOverlayDismissGestureRecognizer=_interactiveOverlayDismissGestureRecognizer;
 - (void)_presentInteractiveOverlay:(_Bool)arg1;
 - (void)setInteractiveOverlayViewController:(id)arg1 animated:(_Bool)arg2;

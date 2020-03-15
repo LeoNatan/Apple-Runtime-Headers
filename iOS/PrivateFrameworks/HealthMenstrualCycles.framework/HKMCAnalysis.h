@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
 @property(readonly, copy, nonatomic) NSNumber *lastMenstrualFlowDayIndex; // @synthesize lastMenstrualFlowDayIndex=_lastMenstrualFlowDayIndex;
 @property(readonly, copy, nonatomic) NSNumber *lastLoggedDayIndex; // @synthesize lastLoggedDayIndex=_lastLoggedDayIndex;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSArray *fertileWindowProjections; // @synthesize fertileWindowProjections=_fertileWindowProjections;
 @property(readonly, nonatomic) NSArray *menstruationProjections; // @synthesize menstruationProjections=_menstruationProjections;
 @property(readonly, nonatomic) HKMCStatistics *statistics; // @synthesize statistics=_statistics;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)redactedDescription;

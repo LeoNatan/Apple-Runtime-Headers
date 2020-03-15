@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UISearchToken *_token;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISearchToken *token; // @synthesize token=_token;
 @property(readonly, nonatomic) _UISearchTokenAttachmentViewProvider *_viewProvider; // @synthesize _viewProvider;
-- (void).cxx_destruct;
 - (void)detachView:(id)arg1 fromParentView:(id)arg2;
 - (void)placeView:(id)arg1 withFrame:(struct CGRect)arg2 inParentView:(id)arg3 characterIndex:(unsigned long long)arg4 layoutManager:(id)arg5;
 - (id)viewProviderForParentView:(id)arg1 characterIndex:(unsigned long long)arg2 layoutManager:(id)arg3;

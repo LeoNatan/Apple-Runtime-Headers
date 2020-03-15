@@ -22,9 +22,9 @@
     NSMutableArray *_subflowStack;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id uuid; // @synthesize uuid=_uuid;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)traceObject:(id)arg1 state:(id)arg2;
 - (void)trace:(id)arg1;

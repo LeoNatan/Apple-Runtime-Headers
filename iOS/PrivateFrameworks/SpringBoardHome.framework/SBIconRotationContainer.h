@@ -20,6 +20,7 @@
     struct SBIconCoordinate _coordinate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBIconViewProviding> iconViewProvider; // @synthesize iconViewProvider=_iconViewProvider;
 @property(readonly, nonatomic) SBIconView *endView; // @synthesize endView=_endView;
 @property(readonly, nonatomic) SBIconView *startView; // @synthesize startView=_startView;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) long long transitionAnimation; // @synthesize transitionAnimation=_transitionAnimation;
 @property(readonly, copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, nonatomic) struct SBIconCoordinate coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (void)concludeTransition;
 - (void)performTransition;
 - (void)prepareToTransition;

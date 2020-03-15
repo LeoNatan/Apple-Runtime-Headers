@@ -87,6 +87,7 @@
 + (id)unitTestingFaceFeature;
 + (id)unitTestingFeature;
 + (id)unitTestingFeatureWithType:(unsigned long long)arg1 canvasSize:(struct CGSize)arg2 frame:(struct CGRect)arg3 value:(id)arg4 barcodeType:(id)arg5 ocrFeatureType:(long long)arg6 subFeatures:(id)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *debugRectangles; // @synthesize debugRectangles=_debugRectangles;
 @property(retain, nonatomic) NSObject<NSSecureCoding> *userContext; // @synthesize userContext=_userContext;
 @property(readonly, nonatomic) long long cameraType; // @synthesize cameraType=_cameraType;
@@ -94,7 +95,6 @@
 @property(readonly, nonatomic) CMDeviceMotion *deviceMotion; // @synthesize deviceMotion=_deviceMotion;
 @property(readonly, nonatomic) AXMVisionFeatureAestheticsResult *aestheticsResult; // @synthesize aestheticsResult=_aestheticsResult;
 @property(readonly, nonatomic) struct CGRect unpaddedDetectedFaceRect; // @synthesize unpaddedDetectedFaceRect=_unpaddedDetectedFaceRect;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqualToAXMVisionFeature:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -28,11 +28,11 @@
 
 + (id)unarchiveFromPropertyList:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *changedNodes; // @synthesize changedNodes=_changedNodes;
 @property(retain, nonatomic) NSMutableDictionary *nodesByBundle; // @synthesize nodesByBundle=_nodesByBundle;
 @property(nonatomic) __weak id <CSLHexAppGraphDelegate> delegate; // @synthesize delegate=_delegate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)initFromPropertyList:(id)arg1;
 - (id)archiveToPropertyList;
 @property(readonly, nonatomic) NSString *abbreviatedDescription;

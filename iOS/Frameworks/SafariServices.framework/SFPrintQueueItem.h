@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     _WKFrameHandle *_frameHandle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool initiatedByWebContent; // @synthesize initiatedByWebContent=_initiatedByWebContent;
 @property(readonly, nonatomic) _WKFrameHandle *frameHandle; // @synthesize frameHandle=_frameHandle;
-- (void).cxx_destruct;
 - (void)completeWithResult:(long long)arg1;
 - (void)dealloc;
 - (id)initWithFrameHandle:(id)arg1 initiatedByWebContent:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;

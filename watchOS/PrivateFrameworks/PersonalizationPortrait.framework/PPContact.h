@@ -38,6 +38,7 @@
 + (unsigned char)sourceFromSourceIdentifier:(id)arg1;
 + (id)sourceIdentifierWithSource:(unsigned char)arg1 identifier:(id)arg2;
 + (id)contactsContactIdentifierWithIdentifier:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *postalAddresses; // @synthesize postalAddresses=_postalAddresses;
 @property(readonly, nonatomic) NSArray *socialProfiles; // @synthesize socialProfiles=_socialProfiles;
 @property(readonly, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) NSString *namePrefix; // @synthesize namePrefix=_namePrefix;
 @property(readonly, nonatomic) unsigned char source; // @synthesize source=_source;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqualToContact:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

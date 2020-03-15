@@ -17,12 +17,12 @@
     NSMutableDictionary *_pluginToBundleIDMap;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *pluginToBundleIDMap; // @synthesize pluginToBundleIDMap=_pluginToBundleIDMap;
 @property(retain) NSMutableSet *optedOutPluginIDs; // @synthesize optedOutPluginIDs=_optedOutPluginIDs;
 @property(retain) NSMutableArray *plugins; // @synthesize plugins=_plugins;
 @property(retain) NSMutableArray *asyncSafePlugins; // @synthesize asyncSafePlugins=_asyncSafePlugins;
 @property(retain) UpdaterSessionParameters *sessionParams; // @synthesize sessionParams=_sessionParams;
-- (void).cxx_destruct;
 - (id)formatNumberForPrivacy:(id)arg1;
 - (void)processPluginsWithPrivilege:(BOOL)arg1;
 - (void)runOnePlugin:(id)arg1 withPrivilege:(BOOL)arg2 withCompletedSet:(id)arg3 andQueue:(id)arg4;

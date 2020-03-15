@@ -26,6 +26,7 @@
 + (id)sideDatabaseFolderForStoreLocation:(id)arg1;
 + (id)databaseFolderForStoreLocation:(id)arg1;
 + (id)createStoreDescriptionWithDatabaseLocation:(id)arg1 logger:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTCoreEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSURL *databaseLocation; // @synthesize databaseLocation=_databaseLocation;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) NSURL *storeLocation; // @synthesize storeLocation=_storeLocation;
 @property(readonly, nonatomic) NSPersistentStoreDescription *storeDescription; // @synthesize storeDescription=_storeDescription;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
-- (void).cxx_destruct;
 - (void)updateBackupInclusionStatusOnQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)contentExists;
 - (_Bool)copyStorageAside:(id *)arg1;

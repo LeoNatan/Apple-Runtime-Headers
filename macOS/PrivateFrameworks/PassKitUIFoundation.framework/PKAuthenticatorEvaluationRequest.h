@@ -11,7 +11,7 @@
 @interface PKAuthenticatorEvaluationRequest : NSObject
 {
     _Bool _useStockAuthInterface;
-    long long _authenticatorPolicy;
+    long long _policy;
     NSString *_reason;
     NSString *_processName;
     NSNumber *_processIdentifier;
@@ -22,10 +22,9 @@
     struct __SecAccessControl *_accessControlRef;
     NSString *_physicalButtonTitle;
     NSString *_passcodeTitle;
-    long long _policy;
 }
 
-@property(readonly, nonatomic) long long policy; // @synthesize policy=_policy;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *passcodeTitle; // @synthesize passcodeTitle=_passcodeTitle;
 @property(copy, nonatomic) NSString *physicalButtonTitle; // @synthesize physicalButtonTitle=_physicalButtonTitle;
 @property(nonatomic) _Bool useStockAuthInterface; // @synthesize useStockAuthInterface=_useStockAuthInterface;
@@ -37,8 +36,7 @@
 @property(copy, nonatomic) NSNumber *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-@property(readonly, nonatomic) long long authenticatorPolicy; // @synthesize authenticatorPolicy=_authenticatorPolicy;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) long long policy; // @synthesize policy=_policy;
 - (void)dealloc;
 - (id)initWithPolicy:(long long)arg1;
 - (id)init;

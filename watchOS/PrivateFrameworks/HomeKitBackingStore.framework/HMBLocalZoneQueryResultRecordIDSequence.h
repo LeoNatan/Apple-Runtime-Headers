@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_returnedIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *returnedIDs; // @synthesize returnedIDs=_returnedIDs;
 @property(retain, nonatomic) NSData *lastReturnedSequence; // @synthesize lastReturnedSequence=_lastReturnedSequence;
 @property(retain, nonatomic) NSData *currentSequenceAsData; // @synthesize currentSequenceAsData=_currentSequenceAsData;
-- (void).cxx_destruct;
 - (id)fetchRow:(id)arg1 error:(id *)arg2;
 - (id)initWithLocalZone:(id)arg1 statement:(id)arg2 initialSequence:(id)arg3 sequenceBindOffset:(unsigned int)arg4 arguments:(id)arg5 maximumRowsPerSelect:(unsigned int)arg6;
 - (_Bool)bindPropertiesToStatement:(struct sqlite3_stmt *)arg1 currentSequence:(id)arg2 error:(id *)arg3;

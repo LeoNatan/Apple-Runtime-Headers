@@ -14,9 +14,9 @@
     NSString *_detail;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

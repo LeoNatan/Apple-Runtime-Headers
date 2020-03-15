@@ -19,8 +19,8 @@
     id <CRKFileBackedConfigurationSourceDelegate> _delegate;
 }
 
-@property __weak id <CRKFileBackedConfigurationSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <CRKFileBackedConfigurationSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)isReadErrorBenign:(id)arg1;
 - (void)fetchConfiguration:(CDUnknownBlockType)arg1;
 - (_Bool)deleteConfigurationAtURL:(id)arg1 inDirectory:(id)arg2 error:(id *)arg3;

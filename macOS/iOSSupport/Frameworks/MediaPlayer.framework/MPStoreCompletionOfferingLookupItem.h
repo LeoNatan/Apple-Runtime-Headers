@@ -18,12 +18,12 @@
 }
 
 + (id)storeLookupIDForAlbumItemsQuery:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *storeLookupID; // @synthesize storeLookupID=_storeLookupID;
 @property(readonly, nonatomic) BOOL wantsArtwork; // @synthesize wantsArtwork=_wantsArtwork;
 @property(readonly, copy, nonatomic) CDUnknownBlockType responseBlock; // @synthesize responseBlock=_responseBlock;
 @property(readonly, nonatomic) unsigned long long tokenID; // @synthesize tokenID=_tokenID;
 @property(readonly, nonatomic) MPMediaQuery *albumItemsQuery; // @synthesize albumItemsQuery=_albumItemsQuery;
-- (void).cxx_destruct;
 - (id)_specificationForArtworkSizesToRequest;
 @property(readonly, nonatomic) NSString *storeLookupIDString;
 - (id)initWithAlbumItemsQuery:(id)arg1 tokenID:(long long)arg2 wantsArtwork:(BOOL)arg3 responseBlock:(CDUnknownBlockType)arg4;

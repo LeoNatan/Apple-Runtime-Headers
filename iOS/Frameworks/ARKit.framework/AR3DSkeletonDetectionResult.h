@@ -14,6 +14,7 @@
 @interface AR3DSkeletonDetectionResult : NSObject <NSSecureCoding, NSCopying>
 {
     vector_1cb3ea33 _jointsVector;
+    vector_1cb3ea33 _jointsVectorLocalSpace;
     AR2DSkeletonDetectionResult *_skeletonDetectionResult2D;
 }
 
@@ -21,9 +22,9 @@
 + (id)jointNames;
 + (id)childrenIndices;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) AR2DSkeletonDetectionResult *skeletonDetectionResult2D; // @synthesize skeletonDetectionResult2D=_skeletonDetectionResult2D;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AR2DSkeletonDetectionResult *skeletonDetectionResult2D; // @synthesize skeletonDetectionResult2D=_skeletonDetectionResult2D;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -31,6 +32,9 @@
 - (id)createResultScaledByFactor:(float)arg1;
 - (_Bool)isJointTracked:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long jointCount;
+// Error parsing type for property jointsLocalSpace:
+// Property attributes: Tr^,R,N
+
 // Error parsing type for property joints:
 // Property attributes: Tr^,R,N
 

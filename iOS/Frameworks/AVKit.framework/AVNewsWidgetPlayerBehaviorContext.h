@@ -24,6 +24,7 @@
     AVPlaybackContentTransitioningView *_contentTransitionView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVPlaybackContentTransitioningView *contentTransitionView; // @synthesize contentTransitionView=_contentTransitionView;
 @property(retain, nonatomic) UIView *customContentTransitioningInfoPanel; // @synthesize customContentTransitioningInfoPanel=_customContentTransitioningInfoPanel;
 @property(nonatomic, getter=isStartPreviousContentTransitionButtonEnabled) _Bool startPreviousContentTransitionButtonEnabled; // @synthesize startPreviousContentTransitionButtonEnabled=_startPreviousContentTransitionButtonEnabled;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) AVPlayer *contentTransitioningPlayer; // @synthesize contentTransitioningPlayer=_contentTransitioningPlayer;
 @property(nonatomic) __weak AVNewsWidgetPlayerBehavior *behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (long long)contentTransitionTypeForTransitionDirection:(long long)arg1;
 - (void)contentTransitioningViewDidChangeTransitionStatus:(id)arg1 oldState:(long long)arg2 oldTransitionDirection:(long long)arg3 oldProgress:(double)arg4;
 - (id)contentTransitioningPlayerContentViewForTransition:(id)arg1;

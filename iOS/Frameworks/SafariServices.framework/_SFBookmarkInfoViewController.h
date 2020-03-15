@@ -36,9 +36,9 @@
     WebBookmark *_bookmark;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 @property(nonatomic) __weak id <_SFBookmarkInfoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)bookmarkInfoViewControllerShouldUseTranslucentAppearance:(id)arg1;
 - (_Bool)bookmarkInfoViewControllerCanSaveBookmarkChanges:(id)arg1;
 - (void)bookmarkInfoViewController:(id)arg1 didFinishWithResult:(_Bool)arg2;

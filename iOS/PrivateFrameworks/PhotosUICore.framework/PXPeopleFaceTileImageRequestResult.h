@@ -20,6 +20,7 @@
     struct PXFaceTileImageParams _params;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize originalImageSize; // @synthesize originalImageSize=_originalImageSize;
 @property(nonatomic) _Bool isVeryLowQuality; // @synthesize isVeryLowQuality=_isVeryLowQuality;
 @property(nonatomic) struct PXFaceTileImageParams params; // @synthesize params=_params;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) _Bool isDegraded; // @synthesize isDegraded=_isDegraded;
 @property(readonly, nonatomic) struct CGRect faceRect; // @synthesize faceRect=_faceRect;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithImage:(id)arg1 faceRect:(struct CGRect)arg2 isDegraded:(_Bool)arg3;
 

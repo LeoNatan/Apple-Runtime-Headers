@@ -17,9 +17,9 @@
     double _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSArray *detectedSkeletons; // @synthesize detectedSkeletons=_detectedSkeletons;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

@@ -26,8 +26,8 @@
 + (id)_defaultFileMenu;
 + (id)_defaultAppMenu;
 + (id)mainSystem;
-@property(readonly, nonatomic) BOOL shouldAutomaticallyRebuild; // @synthesize shouldAutomaticallyRebuild=_shouldAutomaticallyRebuild;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldAutomaticallyRebuild; // @synthesize shouldAutomaticallyRebuild=_shouldAutomaticallyRebuild;
 - (void)setNeedsRevalidate;
 - (void)setNeedsRebuild;
 - (void)_automaticallyRebuildIfNeeded;

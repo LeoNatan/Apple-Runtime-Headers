@@ -16,8 +16,8 @@
     QLItem *_item;
 }
 
-@property(readonly, nonatomic) QLItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) QLItem *item; // @synthesize item=_item;
 - (id)provideDataForItem:(id)arg1;
 - (id)initWithData:(id)arg1 contentType:(id)arg2 previewTitle:(id)arg3;
 

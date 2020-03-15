@@ -17,14 +17,13 @@
 
 + (void)provideCapabilitiesToBuilder:(id)arg1;
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 - (id)iteratorForInput:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)requiredKeyPathsOrError:(id *)arg1;
 - (BOOL)supportsAttributeKeyPathAnalysis;
-- (BOOL)supportsRemoteEvaluation;
 - (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
 - (BOOL)isEqual:(id)arg1;

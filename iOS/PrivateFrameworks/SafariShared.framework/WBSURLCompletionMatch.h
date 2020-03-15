@@ -20,13 +20,14 @@
 
 + (long long)matchLocationForString:(id)arg1 inTitle:(id)arg2;
 + (long long)matchLocationForString:(id)arg1 inURLString:(id)arg2;
-@property(readonly, nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
-@property(readonly, nonatomic) long long matchLocation; // @synthesize matchLocation=_matchLocation;
 - (void).cxx_destruct;
+@property(nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
+@property(readonly, nonatomic) long long matchLocation; // @synthesize matchLocation=_matchLocation;
 - (id)matchingStringWithUserTypedPrefix:(id)arg1;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;
+@property(readonly, nonatomic) _Bool shouldPreload;
 @property(readonly, nonatomic, getter=isTopHit) _Bool topHit;
 - (id)userVisibleURLString;
 - (id)title;

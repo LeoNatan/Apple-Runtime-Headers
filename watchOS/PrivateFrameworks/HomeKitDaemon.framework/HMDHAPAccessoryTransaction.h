@@ -15,9 +15,9 @@
 }
 
 + (id)properties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HAPAccessory *hapAccessoryLocal; // @synthesize hapAccessoryLocal=_hapAccessoryLocal;
 @property(retain, nonatomic) NSDictionary *cameraClipCloudZoneUUIDByRecordingServiceUUID; // @synthesize cameraClipCloudZoneUUIDByRecordingServiceUUID=_cameraClipCloudZoneUUIDByRecordingServiceUUID;
-- (void).cxx_destruct;
 - (id)dependentUUIDs;
 
 // Remaining properties

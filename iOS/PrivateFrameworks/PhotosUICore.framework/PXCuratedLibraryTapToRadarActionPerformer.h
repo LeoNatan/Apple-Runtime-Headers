@@ -13,8 +13,8 @@
     PXGLayout *_layoutForDiagnosticDescription;
 }
 
-@property(readonly, nonatomic) __weak PXGLayout *layoutForDiagnosticDescription; // @synthesize layoutForDiagnosticDescription=_layoutForDiagnosticDescription;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PXGLayout *layoutForDiagnosticDescription; // @synthesize layoutForDiagnosticDescription=_layoutForDiagnosticDescription;
 - (void)performUserInteractionTask;
 - (_Bool)canPerformWithActivityItems:(id)arg1 forActivity:(id)arg2;
 - (id)activitySystemImageName;

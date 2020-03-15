@@ -17,11 +17,11 @@
 }
 
 + (id)draggableObjectWithItemProvider:(id)arg1 fromRange:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) CDUnknownBlockType targetedPreviewProvider; // @synthesize targetedPreviewProvider=_targetedPreviewProvider;
 @property(retain, nonatomic) UITextRange *range; // @synthesize range=_range;
 @property(retain, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 
 @end
 

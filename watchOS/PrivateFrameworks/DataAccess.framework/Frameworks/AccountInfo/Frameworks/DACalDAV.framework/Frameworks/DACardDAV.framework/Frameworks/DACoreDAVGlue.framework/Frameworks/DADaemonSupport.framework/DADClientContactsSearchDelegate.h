@@ -16,9 +16,9 @@
     NSData *_queryResultData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *queryResultData; // @synthesize queryResultData=_queryResultData;
 @property(retain, nonatomic) DASearchQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)disable;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;

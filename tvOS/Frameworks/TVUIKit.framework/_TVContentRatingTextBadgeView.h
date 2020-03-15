@@ -19,9 +19,9 @@
 + (struct CGSize)_badgeSizeForAttributedRatingText:(id)arg1;
 + (id)_attributedRatingTextForText:(id)arg1 color:(id)arg2;
 + (id)_badgeImageWithAttributedRatingText:(id)arg1 andColor:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILayoutGuide *contentGuide; // @synthesize contentGuide=_contentGuide;
 @property(copy, nonatomic) NSAttributedString *contentRatingAttributedText; // @synthesize contentRatingAttributedText=_contentRatingAttributedText;
-- (void).cxx_destruct;
 - (struct CGSize)_intrinsicContentSize;
 - (void)_updateContentRatingAttributedText:(id)arg1;
 - (void)tintColorDidChange;

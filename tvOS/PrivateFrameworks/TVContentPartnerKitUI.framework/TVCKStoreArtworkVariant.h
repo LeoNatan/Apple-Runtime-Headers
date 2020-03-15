@@ -14,9 +14,9 @@
     struct CGSize _artworkSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize artworkSize; // @synthesize artworkSize=_artworkSize;
 @property(readonly, copy, nonatomic) NSURL *artworkURL; // @synthesize artworkURL=_artworkURL;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 

@@ -17,10 +17,10 @@
     NSMutableArray *_bannersWaitingOnLoad;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *bannersWaitingOnLoad; // @synthesize bannersWaitingOnLoad=_bannersWaitingOnLoad;
 @property(retain, nonatomic) NSMutableArray *banners; // @synthesize banners=_banners;
 @property(copy, nonatomic) CDUnknownBlockType bannersLoadedHandler; // @synthesize bannersLoadedHandler=_bannersLoadedHandler;
-- (void).cxx_destruct;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
 - (void)bannerViewDidLoadAd:(id)arg1;
 - (void)_considerCallingLoadedHandler;

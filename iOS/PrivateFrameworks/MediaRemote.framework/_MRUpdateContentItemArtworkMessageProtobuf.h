@@ -17,9 +17,9 @@
 }
 
 + (Class)contentItemsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) NSMutableArray *contentItems; // @synthesize contentItems=_contentItems;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -15,8 +15,8 @@
     NSString *_meContactIdentifierFound;
 }
 
-@property(retain, nonatomic) NSString *meContactIdentifierFound; // @synthesize meContactIdentifierFound=_meContactIdentifierFound;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *meContactIdentifierFound; // @synthesize meContactIdentifierFound=_meContactIdentifierFound;
 - (id)meContactIdentifiers;
 - (_Bool)isMeContact:(id)arg1;
 - (void)meContactChangedInStore:(id)arg1;

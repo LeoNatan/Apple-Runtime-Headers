@@ -17,12 +17,12 @@
     struct CGPoint _endPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AXPIFingerAppearanceDelegate> appearanceDelegate; // @synthesize appearanceDelegate=_appearanceDelegate;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isPressed) _Bool pressed; // @synthesize pressed=_pressed;
 @property(nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)isUserInteractionEnabled;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -17,8 +17,8 @@
 
 + (void)configureStatefulView:(id)arg1 forComponent:(id)arg2;
 + (id)newStatefulView:(id)arg1;
-@property(retain, nonatomic) WFListEditingContext *editingContext; // @synthesize editingContext=_editingContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFListEditingContext *editingContext; // @synthesize editingContext=_editingContext;
 - (void)listEditorView:(id)arg1 needsConfirmationForDeletion:(id)arg2;
 - (void)listEditorView:(id)arg1 didUpdateWithItem:(id)arg2;
 - (void)componentTreeDidDisappear;

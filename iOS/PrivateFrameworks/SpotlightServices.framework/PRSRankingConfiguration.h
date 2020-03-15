@@ -12,6 +12,7 @@
 {
     _Bool _allow_coreduet_influence;
     _Bool _disableResultTruncation;
+    float _numAppsDeduped;
     NSMutableDictionary *_categoryEngagements;
     NSArray *_rankingQueries;
     NSMutableDictionary *_queryDependentCategoryProbabilities;
@@ -24,6 +25,8 @@
     PRSRankingServerKnobs *_serverKnobs;
 }
 
+- (void).cxx_destruct;
+@property float numAppsDeduped; // @synthesize numAppsDeduped=_numAppsDeduped;
 @property _Bool disableResultTruncation; // @synthesize disableResultTruncation=_disableResultTruncation;
 @property(retain) PRSRankingServerKnobs *serverKnobs; // @synthesize serverKnobs=_serverKnobs;
 @property(retain) NSDictionary *serverFeatures; // @synthesize serverFeatures=_serverFeatures;
@@ -36,7 +39,6 @@
 @property(retain) NSMutableDictionary *queryDependentCategoryProbabilities; // @synthesize queryDependentCategoryProbabilities=_queryDependentCategoryProbabilities;
 @property(retain) NSArray *rankingQueries; // @synthesize rankingQueries=_rankingQueries;
 @property(retain) NSMutableDictionary *categoryEngagements; // @synthesize categoryEngagements=_categoryEngagements;
-- (void).cxx_destruct;
 - (double)queryIndependentProbabilityForCategory:(id)arg1;
 - (double)queryDependentProbabilityForCategory:(id)arg1;
 - (float)engagementProbabilityForCategory:(id)arg1;

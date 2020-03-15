@@ -31,6 +31,7 @@
     id <PKPassPaymentPayStateViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPassPaymentPayStateViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool accessPass; // @synthesize accessPass=_accessPass;
 @property(nonatomic) _Bool persistentEmulationHint; // @synthesize persistentEmulationHint=_persistentEmulationHint;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) PKGlyphView *glyph; // @synthesize glyph=_glyph;
 @property(readonly, nonatomic) int layoutState; // @synthesize layoutState=_layoutState;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)glyphView:(id)arg1 revealingCheckmark:(_Bool)arg2;
 - (void)_configureLayoutMetrics;
 - (id)_attributedTextWithTitle:(id)arg1 subtitle:(id)arg2;

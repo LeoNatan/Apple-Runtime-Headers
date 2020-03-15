@@ -23,8 +23,8 @@
 + (id)plainMultiLineDescriptionBuilder;
 + (id)plainDescriptionBuilder;
 + (id)descriptionBuilderWithObject:(id)arg1;
-@property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *separator; // @synthesize separator=_separator;
 - (id)build;
 - (void)appendName:(id)arg1 typeCode:(const char *)arg2 value:(const void *)arg3;
 - (void)appendName:(id)arg1 cgSize:(struct CGSize)arg2;

@@ -32,6 +32,7 @@
     CNSharingProfileAvatarItemProviderConfiguration *_avatarItemProviderConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNSharingProfileAvatarItemProviderConfiguration *avatarItemProviderConfiguration; // @synthesize avatarItemProviderConfiguration=_avatarItemProviderConfiguration;
 @property(retain, nonatomic) CKCNSharingProfileOnboardingFlowManager *nicknameFlowManager; // @synthesize nicknameFlowManager=_nicknameFlowManager;
 @property(retain, nonatomic) IMCNMeCardSharingResult *pendingMeCardSharingResult; // @synthesize pendingMeCardSharingResult=_pendingMeCardSharingResult;
@@ -44,7 +45,6 @@
 @property(nonatomic) int micLayout; // @synthesize micLayout=_micLayout;
 @property(retain, nonatomic) IMCloudKitSyncState *syncState; // @synthesize syncState=_syncState;
 @property(nonatomic) __weak id <CKOnboardingControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;

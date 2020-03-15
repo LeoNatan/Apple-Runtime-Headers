@@ -57,9 +57,9 @@
 + (void)_updatePictureInPictureActive:(_Bool)arg1;
 + (_Bool)isPictureInPictureActive;
 + (_Bool)isPictureInPictureSupported;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController<PGPictureInPictureViewController> *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
-- (void).cxx_destruct;
 - (oneway void)actionButtonTapped;
 - (oneway void)hostedWindowSizeChangeEnded;
 - (oneway void)hostedWindowSizeChangeBegan;

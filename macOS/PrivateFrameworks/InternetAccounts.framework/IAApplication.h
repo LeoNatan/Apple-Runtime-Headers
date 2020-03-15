@@ -20,13 +20,13 @@
 }
 
 + (id)appWithBundleID:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL alreadyEnabled; // @synthesize alreadyEnabled=_alreadyEnabled;
 @property BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain) NSString *imagePath; // @synthesize imagePath=_imagePath;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (long long)sortValue;

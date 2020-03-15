@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSString *aidToFetch; // @synthesize aidToFetch=_aidToFetch;
 @property(nonatomic) __weak id <NPKTransitAppletHistoryFetcherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_performFakeTransitHistoryFetch;
 - (void)requestTransitHistoryFetch;
 - (void)setAIDToFetch:(id)arg1;

@@ -20,9 +20,9 @@
 
 + (id)contextWithArchive:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *backgroundTaskRecordsByRecordName; // @synthesize backgroundTaskRecordsByRecordName=_backgroundTaskRecordsByRecordName;
 @property(retain) NSMutableDictionary *backgroundTaskRecordsByTaskIdentifier; // @synthesize backgroundTaskRecordsByTaskIdentifier=_backgroundTaskRecordsByTaskIdentifier;
-- (void).cxx_destruct;
 - (id)remainingTasks;
 - (void)removeBackgroundDownloadRecordForRecordName:(id)arg1;
 - (void)removeBackgroundDownloadRecordForTaskIdentifier:(unsigned long long)arg1;

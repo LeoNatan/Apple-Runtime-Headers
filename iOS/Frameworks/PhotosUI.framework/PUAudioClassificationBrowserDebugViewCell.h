@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_audioClassificationName;
 }
 
-@property(retain) NSString *audioClassificationName; // @synthesize audioClassificationName=_audioClassificationName;
 - (void).cxx_destruct;
+@property(retain) NSString *audioClassificationName; // @synthesize audioClassificationName=_audioClassificationName;
 
 @end
 

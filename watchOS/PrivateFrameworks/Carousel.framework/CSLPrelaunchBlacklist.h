@@ -19,12 +19,12 @@
 }
 
 + (id)sharedBlacklist;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLPrelaunchBlacklistMonitor *monitor; // @synthesize monitor=_monitor;
 @property(nonatomic) struct _opaque_pthread_mutex_t blacklistLock; // @synthesize blacklistLock=_blacklistLock;
 @property double backoffTime; // @synthesize backoffTime=_backoffTime;
 @property double maximumBackoffTime; // @synthesize maximumBackoffTime=_maximumBackoffTime;
 @property(retain, nonatomic) NSMutableDictionary *launchlist; // @synthesize launchlist=_launchlist;
-- (void).cxx_destruct;
 - (id)_nextPermittedLaunchDateForLaunchEntry:(id)arg1;
 - (_Bool)_isCurrentlyBlacklisted:(id)arg1;
 - (id)_recordExit:(id)arg1 occurredDuringLaunch:(_Bool)arg2;

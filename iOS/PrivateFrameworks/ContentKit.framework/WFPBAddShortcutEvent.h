@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     CDStruct_fce072d8 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *galleryIdentifier; // @synthesize galleryIdentifier=_galleryIdentifier;
 @property(retain, nonatomic) NSString *addToSiriBundleIdentifier; // @synthesize addToSiriBundleIdentifier=_addToSiriBundleIdentifier;
 @property(nonatomic) unsigned int actionCount; // @synthesize actionCount=_actionCount;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

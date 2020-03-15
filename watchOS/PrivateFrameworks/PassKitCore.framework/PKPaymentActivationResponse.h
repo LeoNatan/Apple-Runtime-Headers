@@ -19,13 +19,13 @@
 }
 
 + (id)responseWithData:(id)arg1 forPass:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *passURL; // @synthesize passURL=_passURL;
 @property(copy, nonatomic) NSArray *verificationChannels; // @synthesize verificationChannels=_verificationChannels;
 @property(readonly, copy, nonatomic) NSDictionary *requiredVerificationFieldData; // @synthesize requiredVerificationFieldData=_requiredVerificationFieldData;
 @property(nonatomic) int verificationStatus; // @synthesize verificationStatus=_verificationStatus;
 @property(readonly, copy, nonatomic) NSString *previousStepIdentifier; // @synthesize previousStepIdentifier=_previousStepIdentifier;
 @property(readonly, copy, nonatomic) NSString *stepIdentifier; // @synthesize stepIdentifier=_stepIdentifier;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1 forPass:(id)arg2;
 
 @end

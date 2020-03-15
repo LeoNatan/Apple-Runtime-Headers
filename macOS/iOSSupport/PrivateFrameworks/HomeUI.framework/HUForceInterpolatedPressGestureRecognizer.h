@@ -17,12 +17,12 @@
     double _touchStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double touchStartTime; // @synthesize touchStartTime=_touchStartTime;
 @property(nonatomic) double overallForceMultiplierExcludingCurrentSample; // @synthesize overallForceMultiplierExcludingCurrentSample=_overallForceMultiplierExcludingCurrentSample;
 @property(nonatomic) double currentSampleTimestamp; // @synthesize currentSampleTimestamp=_currentSampleTimestamp;
 @property(nonatomic) double currentSampleForceMultiplier; // @synthesize currentSampleForceMultiplier=_currentSampleForceMultiplier;
 @property(readonly, nonatomic) NSMutableSet *hu_activeTouches; // @synthesize hu_activeTouches=_hu_activeTouches;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double overallForceMultiplier;
 @property(readonly, nonatomic) double currentForceMultiplier;
 - (void)_logForceMultiplierSample;

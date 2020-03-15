@@ -13,8 +13,8 @@
     NSString *_detailText;
 }
 
-@property(copy, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *detailText; // @synthesize detailText=_detailText;
 - (id)description;
 - (void)createTextView;
 - (void)viewWillAppear:(_Bool)arg1;

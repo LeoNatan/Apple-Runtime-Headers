@@ -19,9 +19,9 @@
 }
 
 + (id)sharedAccelerometer;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIAccelerometerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
-- (void).cxx_destruct;
 - (void)_didSuspend:(id)arg1;
 - (void)_willResume:(id)arg1;
 - (void)_stopAccelerometer;

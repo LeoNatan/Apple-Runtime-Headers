@@ -18,13 +18,13 @@
     NSMutableArray *_pendingBulkSendListeners;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pendingBulkSendListeners; // @synthesize pendingBulkSendListeners=_pendingBulkSendListeners;
 @property(retain, nonatomic) HAPSecuritySessionEncryption *sessionEncryption; // @synthesize sessionEncryption=_sessionEncryption;
 @property(nonatomic) long long remoteTcpPort; // @synthesize remoteTcpPort=_remoteTcpPort;
 @property(retain, nonatomic) NSData *accessoryKeySalt; // @synthesize accessoryKeySalt=_accessoryKeySalt;
 @property(retain, nonatomic) NSData *controllerKeySalt; // @synthesize controllerKeySalt=_controllerKeySalt;
 @property(retain, nonatomic) HMFNetAddress *remoteNetAddress; // @synthesize remoteNetAddress=_remoteNetAddress;
-- (void).cxx_destruct;
 - (id)fullKeySalt;
 - (BOOL)isComplete;
 - (id)init;

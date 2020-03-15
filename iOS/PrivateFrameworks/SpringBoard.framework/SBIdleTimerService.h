@@ -30,9 +30,9 @@
 + (void)registerServices;
 + (id)_sharedIdleTimerStateServiceIfExists;
 + (id)_sharedIdleTimerStateServiceCreatingIfNeeded:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBIdleTimerAggregateClientConfiguration *aggregateClientConfiguration; // @synthesize aggregateClientConfiguration=_aggregateClientConfiguration;
 @property(nonatomic) __weak id <SBIdleTimerServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeConfigurationInfoForReason:(id)arg1 fromArray:(id)arg2;
 - (void)_addConfigurationInfo:(id)arg1 toSortedArray:(id)arg2;
 - (id)_stateCaptureDescription;

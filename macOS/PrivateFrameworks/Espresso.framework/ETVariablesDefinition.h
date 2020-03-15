@@ -13,8 +13,8 @@
     NSArray *_layerNames;
 }
 
-@property(retain) NSArray *layerNames; // @synthesize layerNames=_layerNames;
 - (void).cxx_destruct;
+@property(retain) NSArray *layerNames; // @synthesize layerNames=_layerNames;
 - (id)initForLayers:(id)arg1 error:(id *)arg2;
 
 @end

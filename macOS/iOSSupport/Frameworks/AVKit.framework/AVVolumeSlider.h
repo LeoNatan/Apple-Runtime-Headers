@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _extrinsicContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL scrubsWhenTappedAnywhere; // @synthesize scrubsWhenTappedAnywhere=_scrubsWhenTappedAnywhere;
 @property(nonatomic) BOOL hasChangedLocationAtLeastOnce; // @synthesize hasChangedLocationAtLeastOnce=_hasChangedLocationAtLeastOnce;
 @property(nonatomic) __weak AVVolumeWarningView *volumeWarningView; // @synthesize volumeWarningView=_volumeWarningView;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic, getter=isIncluded) BOOL included; // @synthesize included=_included;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
-- (void).cxx_destruct;
 - (BOOL)_shouldTrackTouchAtPoint:(struct CGPoint)arg1;
 - (void)_endTracking;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;

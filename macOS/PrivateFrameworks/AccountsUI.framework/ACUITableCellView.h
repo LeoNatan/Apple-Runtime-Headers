@@ -13,8 +13,8 @@
     NSImageView *_icon;
 }
 
-@property(retain) NSImageView *icon; // @synthesize icon=_icon;
 - (void).cxx_destruct;
+@property(retain) NSImageView *icon; // @synthesize icon=_icon;
 - (void)setObjectValue:(id)arg1;
 
 @end

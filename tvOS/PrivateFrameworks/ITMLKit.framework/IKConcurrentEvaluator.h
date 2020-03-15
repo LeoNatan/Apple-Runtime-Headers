@@ -22,9 +22,9 @@
 }
 
 + (id)idleEvaluator;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long concurrencyCount; // @synthesize concurrencyCount=_concurrencyCount;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_scheduleFetchRelayed:(_Bool)arg1;
 - (CDUnknownBlockType)_getterForKey:(id)arg1;
 - (CDUnknownBlockType)_removeFetcherForKey:(id)arg1;

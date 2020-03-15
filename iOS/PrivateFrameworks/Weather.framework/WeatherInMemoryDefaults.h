@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_inMemoryStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool synchronizeWasCalled; // @synthesize synchronizeWasCalled=_synchronizeWasCalled;
 @property(retain) NSMutableDictionary *inMemoryStore; // @synthesize inMemoryStore=_inMemoryStore;
-- (void).cxx_destruct;
+- (void)synchronizeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)synchronize;
 - (void)setBool:(_Bool)arg1 forKey:(id)arg2;
 - (_Bool)boolForKey:(id)arg1;

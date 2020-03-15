@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)supplementaryViewKind;
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UIImageView *glyphImageView; // @synthesize glyphImageView=_glyphImageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *glyphImageView; // @synthesize glyphImageView=_glyphImageView;
 - (void)configureWithAcknowledgmentTally:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

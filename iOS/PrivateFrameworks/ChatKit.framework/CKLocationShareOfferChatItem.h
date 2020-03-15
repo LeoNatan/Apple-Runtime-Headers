@@ -15,8 +15,8 @@
 
 + (id)placeholderPreviewCache;
 + (id)titleBarMaskImageForWidth:(double)arg1;
-@property(retain, nonatomic) FMFLocation *lastKnownLocation; // @synthesize lastKnownLocation=_lastKnownLocation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FMFLocation *lastKnownLocation; // @synthesize lastKnownLocation=_lastKnownLocation;
 - (id)_desaturatedImageForImage:(id)arg1;
 - (_Bool)shouldUpdatePreviewWithLocation:(id)arg1 lastKnownLocation:(id)arg2 previewURL:(id)arg3;
 - (void)_handleLocationDidChangeNotification:(id)arg1;

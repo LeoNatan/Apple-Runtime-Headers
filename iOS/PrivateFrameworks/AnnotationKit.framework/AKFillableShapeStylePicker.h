@@ -14,8 +14,8 @@
     _Bool _showFill;
 }
 
-@property(nonatomic) _Bool showFill; // @synthesize showFill=_showFill;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showFill; // @synthesize showFill=_showFill;
 - (void)_updateImagesForAnnotationType:(id)arg1;
 - (void)revalidateItems:(id)arg1;
 - (void)_styleButtonPressed:(id)arg1;

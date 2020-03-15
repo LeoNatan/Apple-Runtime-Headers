@@ -17,10 +17,10 @@
     NSArray *_episodes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *episodes; // @synthesize episodes=_episodes;
 @property(copy, nonatomic) NSNumber *seasonNumber; // @synthesize seasonNumber=_seasonNumber;
 @property(nonatomic) __weak VUIPlistMediaDatabaseShow *show; // @synthesize show=_show;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

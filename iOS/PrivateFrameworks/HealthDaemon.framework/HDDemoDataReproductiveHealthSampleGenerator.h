@@ -18,12 +18,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double nextCycleDaySampleTime; // @synthesize nextCycleDaySampleTime=_nextCycleDaySampleTime;
 @property(nonatomic) double nextSexualActivitySampleTime; // @synthesize nextSexualActivitySampleTime=_nextSexualActivitySampleTime;
 @property(copy, nonatomic) NSArray *cervicalMucusTable; // @synthesize cervicalMucusTable=_cervicalMucusTable;
 @property(copy, nonatomic) NSArray *basalBodyTempMultiplierTable; // @synthesize basalBodyTempMultiplierTable=_basalBodyTempMultiplierTable;
 @property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (long long)_computeNextLuteinizingHormoneSurgeForDemoPerson:(id)arg1 atTime:(double)arg2;
 - (_Bool)_isDemoPersonOvulating:(id)arg1 atTime:(double)arg2;
 - (id)_basalBodyTempMultiplier;

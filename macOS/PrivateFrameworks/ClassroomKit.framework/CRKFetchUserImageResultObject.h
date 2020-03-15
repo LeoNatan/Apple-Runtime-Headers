@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSData *userImageData; // @synthesize userImageData=_userImageData;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *userImageData; // @synthesize userImageData=_userImageData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

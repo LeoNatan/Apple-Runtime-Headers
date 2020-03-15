@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isExternalRoute; // @synthesize isExternalRoute=_isExternalRoute;
 @property(readonly, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDeviceName:(id)arg1 deviceID:(id)arg2 isExternalRoute:(_Bool)arg3;

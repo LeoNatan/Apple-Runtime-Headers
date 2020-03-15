@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIUndoGestureInteraction *_undoInteraction;
 }
 
-@property(retain, nonatomic) UIUndoGestureInteraction *undoInteraction; // @synthesize undoInteraction=_undoInteraction;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIUndoGestureInteraction *undoInteraction; // @synthesize undoInteraction=_undoInteraction;
 - (void)updateEditingOverlayContainer;
 - (void)_removeInteractions;
 - (void)_addInteractions;

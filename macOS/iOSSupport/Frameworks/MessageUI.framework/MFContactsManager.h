@@ -15,8 +15,8 @@
 
 + (BOOL)isAuthorizedToUseContacts;
 + (id)sharedManager;
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)initWithContactStore:(id)arg1;
 - (id)init;
 

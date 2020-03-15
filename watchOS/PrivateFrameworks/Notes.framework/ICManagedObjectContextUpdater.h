@@ -23,6 +23,7 @@
 }
 
 + (id)contextSaveNotificationFromPersistentHistoryResult:(id)arg1 ignoringContextName:(id)arg2 fromTransactionAuthor:(id)arg3 latestToken:(id *)arg4 latestTimestamp:(id *)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICSelectorDelayer *delayer; // @synthesize delayer=_delayer;
 @property(nonatomic) unsigned int numberOfCoalescedNotifications; // @synthesize numberOfCoalescedNotifications=_numberOfCoalescedNotifications;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak id <ICManagedObjectContextUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak NSManagedObjectContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
-- (void).cxx_destruct;
 - (void)processObejctsInChangeDictionary:(id)arg1;
 - (void)fetchChangeHistory;
 - (void)handlePersistentStoreRemoteChangeNotification:(id)arg1;

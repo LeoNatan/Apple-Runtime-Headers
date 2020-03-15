@@ -13,8 +13,8 @@
     VEKProduction *_production;
 }
 
-@property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VEKProduction *production; // @synthesize production=_production;
 - (void)save:(BOOL)arg1;
 - (id)initWithProduction:(id)arg1;
 

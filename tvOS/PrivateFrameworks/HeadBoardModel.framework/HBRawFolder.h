@@ -15,10 +15,10 @@
     NSString *_folderIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *folderIdentifier; // @synthesize folderIdentifier=_folderIdentifier;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_removeDuplicateApplicationsWithVisitedBundleIdentifiers:(id)arg1;
 - (void)enumerateRecursiveApplicationsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeDuplicateApplications;

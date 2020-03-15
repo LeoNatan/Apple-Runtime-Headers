@@ -18,8 +18,8 @@
 }
 
 + (id)fetchResultWithToken:(id)arg1 maximumChangeThreshold:(unsigned int)arg2 managedObjectObjectContext:(id)arg3 error:(id *)arg4;
-@property(readonly, nonatomic) unsigned int changeCount; // @synthesize changeCount=_changeCount;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int changeCount; // @synthesize changeCount=_changeCount;
 - (void)enumerateChangesWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithInitialToken:(id)arg1 transactions:(id)arg2 maximumChangeThreshold:(unsigned int)arg3 managedObjectObjectContext:(id)arg4;
 

@@ -14,8 +14,8 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)_writeSearchTileToFile:(id)arg1;
 - (void)_fetchTilesForTileItems:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_fetchTilesWithRequest:(id)arg1;

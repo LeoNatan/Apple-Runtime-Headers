@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDestructive) _Bool destructive; // @synthesize destructive=_destructive;
 @property(nonatomic, getter=isAuthenticationRequired) _Bool authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;
 @property(nonatomic) unsigned long long activationMode; // @synthesize activationMode=_activationMode;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned long long behavior; // @synthesize behavior=_behavior;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)validatedAction;
 - (id)description;
 @property(readonly, nonatomic) NSString *behaviorString; // @synthesize behaviorString=_behaviorString;

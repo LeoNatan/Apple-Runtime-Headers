@@ -15,8 +15,8 @@
 
 + (id)searchProcessorLog;
 + (id)_scoreByCategoryMask;
-@property(readonly, nonatomic) PSIDatabase *searchIndex; // @synthesize searchIndex=_searchIndex;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PSIDatabase *searchIndex; // @synthesize searchIndex=_searchIndex;
 - (BOOL)_shouldOmitSectionForCategoryMask:(unsigned long long)arg1;
 - (BOOL)_categoryMaskIsCombinable:(unsigned long long)arg1;
 - (void)_extractSearchResultsFromGroupResults:(id)arg1 withQuery:(id)arg2 resultsHandler:(CDUnknownBlockType)arg3;

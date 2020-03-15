@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_documentLoaderCreationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *documentLoaderCreationQueue; // @synthesize documentLoaderCreationQueue=_documentLoaderCreationQueue;
 @property(retain, nonatomic) NSMutableArray *eventGroupLoaders; // @synthesize eventGroupLoaders=_eventGroupLoaders;
 @property(retain, nonatomic) TVLVideoAssetElement *feedElement; // @synthesize feedElement=_feedElement;
 @property(retain, nonatomic) TVLDocument *feedDocument; // @synthesize feedDocument=_feedDocument;
-- (void).cxx_destruct;
 - (id)_eventGroupURLStrings;
 - (id)_requiredEventGroupURLStrings;
 - (void)_fetchDocumentLoaderWithURLString:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -26,6 +26,7 @@
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(nonatomic) TVSUIBulletinView *tvBulletinView; // @synthesize tvBulletinView=_tvBulletinView;
 @property(readonly, nonatomic) double preferredBannerWidth; // @synthesize preferredBannerWidth=_preferredBannerWidth;
 @property(retain, nonatomic) UIView *centeringView; // @synthesize centeringView=_centeringView;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)fadeOutQuickly:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fadeInWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)callCompletionHandler;

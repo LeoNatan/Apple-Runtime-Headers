@@ -14,9 +14,9 @@
     unsigned long long _resultType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long resultType; // @synthesize resultType=_resultType;
 @property(retain, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
-- (void).cxx_destruct;
 
 @end
 

@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isLowInternetDL; // @synthesize isLowInternetDL=_isLowInternetDL;
 @property(nonatomic) BOOL isLowInternetUL; // @synthesize isLowInternetUL=_isLowInternetUL;
 @property(nonatomic) int lastReportedRSSI; // @synthesize lastReportedRSSI=_lastReportedRSSI;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int loadedLQM; // @synthesize loadedLQM=_loadedLQM;
 @property(retain, nonatomic) NSString *networkAttachmentLabel; // @synthesize networkAttachmentLabel=_networkAttachmentLabel;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

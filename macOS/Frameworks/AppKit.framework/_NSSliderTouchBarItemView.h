@@ -40,6 +40,7 @@
 + (id)keyPathsForValuesAffecting_labelIsHidden;
 + (id)keyPathsForValuesAffecting_layoutEdgeInsets;
 + (id)keyPathsForValuesAffecting_hasStepBehaviorContext;
+- (void).cxx_destruct;
 @property double maximumSliderWidth; // @synthesize maximumSliderWidth=_maximumSliderWidth;
 @property double minimumSliderWidth; // @synthesize minimumSliderWidth=_minimumSliderWidth;
 @property BOOL _showsValueAccessories; // @synthesize _showsValueAccessories;
@@ -51,7 +52,6 @@
 @property double valueAccessoryWidth; // @synthesize valueAccessoryWidth=_valueAccessoryWidth;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 @property(readonly, copy) NSUserInterfaceCompressionOptions *activeCompressionOptions;
 - (struct CGSize)minimumSizeWithPrioritizedCompressionOptions:(id)arg1;
 - (void)compressWithPrioritizedCompressionOptions:(id)arg1;

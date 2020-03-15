@@ -19,6 +19,7 @@
     UIView *_artworkDescriptionContainer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *artworkDescriptionContainer; // @synthesize artworkDescriptionContainer=_artworkDescriptionContainer;
 @property(retain, nonatomic) UILabel *artworkSubtitleLabel; // @synthesize artworkSubtitleLabel=_artworkSubtitleLabel;
 @property(retain, nonatomic) UILabel *artworkTitleLabel; // @synthesize artworkTitleLabel=_artworkTitleLabel;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *artworkDescriptions; // @synthesize artworkDescriptions=_artworkDescriptions;
 @property(retain, nonatomic) NSString *artworkSubtitle; // @synthesize artworkSubtitle=_artworkSubtitle;
 @property(retain, nonatomic) NSString *artworkTitle; // @synthesize artworkTitle=_artworkTitle;
-- (void).cxx_destruct;
 - (void)_setTextColors;
 - (id)_infoTextColor;
 - (id)_mainTextColor;

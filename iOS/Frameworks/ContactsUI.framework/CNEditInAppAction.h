@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CNUIUserActivityManager *_activityManager;
 }
 
-@property(readonly, nonatomic) CNUIUserActivityManager *activityManager; // @synthesize activityManager=_activityManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNUIUserActivityManager *activityManager; // @synthesize activityManager=_activityManager;
 - (id)title;
 - (void)performActionWithSender:(id)arg1;
 - (id)initWithContact:(id)arg1 activityManager:(id)arg2;

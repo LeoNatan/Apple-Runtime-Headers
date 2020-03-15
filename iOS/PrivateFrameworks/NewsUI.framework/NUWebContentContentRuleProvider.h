@@ -17,9 +17,9 @@
     id <FCHeadlineProviding> _headline;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 @property(readonly, nonatomic) id <FCNewsAppConfigurationManager> appConfigurationManager; // @synthesize appConfigurationManager=_appConfigurationManager;
-- (void).cxx_destruct;
 - (id)contentRules;
 - (id)initWithAppConfigurationManager:(id)arg1 headline:(id)arg2;
 

@@ -41,6 +41,7 @@
 + (id)actionWithCustomContentViewController:(id)arg1;
 + (id)actionWithTitle:(id)arg1 type:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 + (_Bool)changedProperties:(id)arg1 containsAny:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_imageTintColor, setter=_setImageTintColor:) UIColor *imageTintColor; // @synthesize imageTintColor=_imageTintColor;
 @property(retain, nonatomic, getter=_titleTextColor, setter=_setTitleTextColor:) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(retain, nonatomic, getter=_visualStyle, setter=_setVisualStyle:) UIInterfaceActionVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIViewController *customContentViewController; // @synthesize customContentViewController=_customContentViewController;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_notifyObserversDidChangeActionProperty:(id)arg1;
 - (void)_notifyObserversVisualStyleDidChange;
 @property(readonly, nonatomic) long long _typeForDeterminingViewRepresentation;

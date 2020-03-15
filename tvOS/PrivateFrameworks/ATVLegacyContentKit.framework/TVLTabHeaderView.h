@@ -13,8 +13,8 @@
     _TVLSegmentedControl *_segmentedControl;
 }
 
-@property(retain, nonatomic) _TVLSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TVLSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(nonatomic) long long selectedIndex;
 @property(copy, nonatomic) NSArray *tabTitles;
 - (void)layoutSubviews;

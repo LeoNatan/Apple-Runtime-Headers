@@ -47,6 +47,7 @@
 }
 
 + (BOOL)isDragInProgress;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isProvisional, setter=_setProvisional:) BOOL provisional; // @synthesize provisional=_provisional;
 @property(nonatomic) BOOL showHeaderChevron; // @synthesize showHeaderChevron=_showHeaderChevron;
 @property(retain, nonatomic, getter=_previousConfirmationOptions, setter=_setPreviousConfirmationOptions:) SAUIConfirmationOptions *previousConfirmationOptions; // @synthesize previousConfirmationOptions=_previousConfirmationOptions;
@@ -73,7 +74,6 @@
 @property(copy, nonatomic) NSString *summaryImagePath; // @synthesize summaryImagePath=_summaryImagePath;
 @property(copy, nonatomic) NSString *summaryTitle; // @synthesize summaryTitle=_summaryTitle;
 @property(copy, nonatomic) NSViewController *supplementaryHeaderViewController; // @synthesize supplementaryHeaderViewController=_supplementaryHeaderViewController;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 dragOperation:(unsigned long long)arg4;
 - (void)collectionView:(id)arg1 draggingSession:(id)arg2 willBeginAtPoint:(struct CGPoint)arg3 forItemsAtIndexPaths:(id)arg4;
 - (void)prepareForReuse;

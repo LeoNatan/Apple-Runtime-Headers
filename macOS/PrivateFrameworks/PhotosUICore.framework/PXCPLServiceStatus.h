@@ -28,6 +28,7 @@
     unsigned long long _numberOfReferencedItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfReferencedItems; // @synthesize numberOfReferencedItems=_numberOfReferencedItems;
 @property(nonatomic) unsigned long long numberOfOtherAssets; // @synthesize numberOfOtherAssets=_numberOfOtherAssets;
 @property(nonatomic) unsigned long long numberOfVideoAssets; // @synthesize numberOfVideoAssets=_numberOfVideoAssets;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned long long activity; // @synthesize activity=_activity;
 @property(nonatomic) long long pauseReason; // @synthesize pauseReason=_pauseReason;
 @property(nonatomic) long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToCPLServiceStatus:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

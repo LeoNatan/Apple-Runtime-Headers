@@ -19,12 +19,12 @@
     EKUICompositeGadget *_parentGadget;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak EKUICompositeGadget *parentGadget; // @synthesize parentGadget=_parentGadget;
 @property(readonly) NSDate *proposedTime; // @synthesize proposedTime=_proposedTime;
 @property(readonly) EKUIProposedTimeResponseView *responseView; // @synthesize responseView=_responseView;
 @property(readonly) EKUIResizingTextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) EKParticipant *proposingAttendee; // @synthesize proposingAttendee=_proposingAttendee;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned long long orderIndex;
 @property(nonatomic) __weak id <EKUIProposedTimeActionHandler> actionHandler;
 - (id)proposedTimeForAttendee:(id)arg1;

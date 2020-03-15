@@ -16,10 +16,10 @@
     UITextRange *_targetRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextRange *targetRange; // @synthesize targetRange=_targetRange;
 @property(nonatomic) __weak id <NSObject> targetElement; // @synthesize targetElement=_targetElement;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid;
-- (void).cxx_destruct;
 - (id)initWithTargetElement:(id)arg1 targetRange:(id)arg2;
 
 @end

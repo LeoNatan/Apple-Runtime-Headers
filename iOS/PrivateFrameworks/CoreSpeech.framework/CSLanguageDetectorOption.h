@@ -23,6 +23,7 @@
     NSArray *_conversationalMessages;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *conversationalMessages; // @synthesize conversationalMessages=_conversationalMessages;
 @property(retain, nonatomic) NSDictionary *dictationLanguagePriors; // @synthesize dictationLanguagePriors=_dictationLanguagePriors;
 @property(retain, nonatomic) NSString *globalLastKeyboardUsed; // @synthesize globalLastKeyboardUsed=_globalLastKeyboardUsed;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSString *currentKeyboard; // @synthesize currentKeyboard=_currentKeyboard;
 @property(retain, nonatomic) NSSet *dictationLanguages; // @synthesize dictationLanguages=_dictationLanguages;
 @property(nonatomic) float samplingRate; // @synthesize samplingRate=_samplingRate;
-- (void).cxx_destruct;
 - (id)languageDetectorRequestContext;
 
 @end

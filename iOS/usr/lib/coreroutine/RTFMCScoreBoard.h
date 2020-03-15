@@ -22,6 +22,7 @@
     NSDate *_creationDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int suppressedEvents; // @synthesize suppressedEvents=_suppressedEvents;
 @property(nonatomic) int assistances; // @synthesize assistances=_assistances;
 @property(nonatomic) int engagements; // @synthesize engagements=_engagements;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool engaged; // @synthesize engaged=_engaged;
 @property(nonatomic) int locationType; // @synthesize locationType=_locationType;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (void)suppressedEvent;
 - (void)engagementEvent;
 - (void)assistanceEvent;

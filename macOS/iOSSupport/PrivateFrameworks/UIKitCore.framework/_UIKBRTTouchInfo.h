@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)touchInfoForTouch:(id)arg1 withIdentifier:(id)arg2;
 + (void)setTouchInfo:(id)arg1 forIdentifier:(id)arg2;
 + (id)touchDict;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *timerQueue; // @synthesize timerQueue=_timerQueue;
 @property(readonly, nonatomic) _UIKBRTTimerBlock *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) id touchIdentifier; // @synthesize touchIdentifier=_touchIdentifier;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint currentTouchPoint; // @synthesize currentTouchPoint=_currentTouchPoint;
 @property(readonly, nonatomic) struct CGPoint originalTouchPoint; // @synthesize originalTouchPoint=_originalTouchPoint;
 @property(readonly, nonatomic) double originalTimestamp; // @synthesize originalTimestamp=_originalTimestamp;
-- (void).cxx_destruct;
 - (BOOL)willChangeTouchInfo:(id)arg1 toState:(BOOL)arg2;
 - (id)setOfTouchesToIgnoreWhenSettingTouchInfo:(id)arg1 toState:(BOOL)arg2;
 - (void)cleanup;

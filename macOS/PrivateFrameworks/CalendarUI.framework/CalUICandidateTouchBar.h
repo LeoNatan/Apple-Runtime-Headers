@@ -21,6 +21,7 @@
     NSMutableParagraphStyle *_subtitleParagraphStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableParagraphStyle *subtitleParagraphStyle; // @synthesize subtitleParagraphStyle=_subtitleParagraphStyle;
 @property(retain) NSCandidateListTouchBarItem *candidateListTouchBarItem; // @synthesize candidateListTouchBarItem=_candidateListTouchBarItem;
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) CDUnknownBlockType imageBlock; // @synthesize imageBlock=_imageBlock;
 @property(copy, nonatomic) CDUnknownBlockType subtitleBlock; // @synthesize subtitleBlock=_subtitleBlock;
 @property(copy, nonatomic) CDUnknownBlockType titleBlock; // @synthesize titleBlock=_titleBlock;
-- (void).cxx_destruct;
 - (void)setCandidates:(id)arg1 forSelectedRange:(struct _NSRange)arg2 inString:(id)arg3;
 - (id)createCandidateListTouchBarItem;
 - (id)initWithDelegate:(id)arg1 titleBlock:(CDUnknownBlockType)arg2;

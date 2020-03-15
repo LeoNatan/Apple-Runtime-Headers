@@ -14,9 +14,9 @@
     UITextView *_consentTextView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextView *consentTextView; // @synthesize consentTextView=_consentTextView;
 @property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
-- (void).cxx_destruct;
 - (void)_addConstraints;
 - (void)viewDidLoad;
 

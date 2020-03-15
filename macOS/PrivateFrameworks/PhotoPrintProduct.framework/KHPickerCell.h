@@ -22,6 +22,7 @@
     NSTextField *_titleView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *titleView; // @synthesize titleView=_titleView;
 @property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -29,7 +30,6 @@
 @property(retain) KHSelectableImageView *imageView; // @synthesize imageView=_imageView;
 @property __weak id <KHPickerCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSNumber *isAccessibilityChecked; // @synthesize isAccessibilityChecked;
-- (void).cxx_destruct;
 - (void)setAccessibilitySelected:(BOOL)arg1;
 - (id)accessibilityValue;
 - (id)accessibilityLabel;

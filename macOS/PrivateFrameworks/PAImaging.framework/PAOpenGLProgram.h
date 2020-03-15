@@ -21,12 +21,12 @@
     NSMutableDictionary *_executables;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned int geometryVertexOutCount; // @synthesize geometryVertexOutCount=_geometryVertexOutCount;
 @property(copy, nonatomic) NSString *fragmentShaderSource; // @synthesize fragmentShaderSource=_fragmentShaderSource;
 @property(copy, nonatomic) NSString *geometryShaderSource; // @synthesize geometryShaderSource=_geometryShaderSource;
 @property(copy, nonatomic) NSString *vertexShaderSource; // @synthesize vertexShaderSource=_vertexShaderSource;
-- (void).cxx_destruct;
 - (id)_newExecutableForDevice:(id)arg1;
 - (void)_setExecutable:(id)arg1 forDevice:(id)arg2;
 - (id)_lookupExecutableForDevice:(id)arg1;

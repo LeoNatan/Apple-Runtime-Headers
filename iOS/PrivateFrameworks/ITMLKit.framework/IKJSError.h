@@ -16,8 +16,8 @@
     NSError *_wrappedError;
 }
 
-@property(readonly, nonatomic) NSError *wrappedError; // @synthesize wrappedError=_wrappedError;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSError *wrappedError; // @synthesize wrappedError=_wrappedError;
 @property(readonly, nonatomic) IKJSError *underlyingError;
 @property(readonly, nonatomic) NSDictionary *userInfo;
 @property(readonly, nonatomic) NSString *recoverySuggestion;

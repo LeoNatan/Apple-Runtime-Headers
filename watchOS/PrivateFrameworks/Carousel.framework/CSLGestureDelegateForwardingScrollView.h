@@ -24,8 +24,8 @@
     id <CSLGestureDelegateForwardingScrollViewDelegate> _gestureDelegate;
 }
 
-@property(nonatomic) __weak id <CSLGestureDelegateForwardingScrollViewDelegate> gestureDelegate; // @synthesize gestureDelegate=_gestureDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLGestureDelegateForwardingScrollViewDelegate> gestureDelegate; // @synthesize gestureDelegate=_gestureDelegate;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceivePress:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;

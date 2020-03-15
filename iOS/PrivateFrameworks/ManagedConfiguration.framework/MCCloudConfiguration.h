@@ -17,10 +17,10 @@
 }
 
 + (id)sharedConfiguration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *memberQueueSetAsideDetails; // @synthesize memberQueueSetAsideDetails=_memberQueueSetAsideDetails;
 @property(retain, nonatomic) NSDictionary *memberQueueDetails; // @synthesize memberQueueDetails=_memberQueueDetails;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
-- (void).cxx_destruct;
 - (id)tvProviderUserToken;
 - (id)provisionalEnrollmentExpirationDate;
 - (_Bool)isProvisionallyEnrolled;
@@ -29,6 +29,7 @@
 - (id)language;
 - (id)diagnosticsUploadURL;
 - (int)userMode;
+- (id)mdmVersionProtocol;
 - (_Bool)isAwaitingConfiguration;
 - (_Bool)isTeslaEnrolled;
 - (_Bool)isSupervised;

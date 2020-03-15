@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     OADTextListStyle *_parentTextListStyle;
 }
 
-@property(readonly, nonatomic) OADTextListStyle *parentTextListStyle; // @synthesize parentTextListStyle=_parentTextListStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) OADTextListStyle *parentTextListStyle; // @synthesize parentTextListStyle=_parentTextListStyle;
 - (void)applyTextStyle:(id)arg1 toParagraph:(id)arg2;
 - (void)applyResolvedPartStyle:(id)arg1 leftStroke:(id)arg2 rightStroke:(id)arg3 topStroke:(id)arg4 bottomStroke:(id)arg5 toCell:(id)arg6;
 - (void)removeUnnecessaryOverridesInCellProperties:(id)arg1 strokeType:(int)arg2 resolvedStroke:(id)arg3;

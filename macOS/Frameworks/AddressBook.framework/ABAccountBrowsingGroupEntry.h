@@ -15,9 +15,9 @@
 }
 
 + (id)identifierForAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(readonly, retain) ABAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)description;
 - (id)iconWithStyleProvider:(id)arg1;
 - (BOOL)containsPeople:(id)arg1;

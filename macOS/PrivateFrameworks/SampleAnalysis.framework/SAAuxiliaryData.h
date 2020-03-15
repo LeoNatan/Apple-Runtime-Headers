@@ -16,10 +16,10 @@
 }
 
 + (id)auxiliaryDataForTimestamp:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) SATimestamp *timestamp; // @synthesize timestamp=_timestamp;
 @property struct **mountStatus; // @synthesize mountStatus=_mountStatus;
 @property(retain) SAFanSpeed *fanSpeed; // @synthesize fanSpeed=_fanSpeed;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

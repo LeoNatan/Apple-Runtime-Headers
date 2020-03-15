@@ -17,8 +17,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)policyKeyForConfiguration:(id)arg1;
-@property(retain, nonatomic) RMConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RMConfiguration *configuration; // @synthesize configuration=_configuration;
 - (unsigned long long)hash;
 - (_Bool)isEqualToPolicy:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

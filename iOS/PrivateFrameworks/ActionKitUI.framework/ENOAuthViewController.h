@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UIActivityIndicatorView *_activityIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSwitchingAllowed; // @synthesize isSwitchingAllowed=_isSwitchingAllowed;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(copy, nonatomic) NSString *currentProfileName; // @synthesize currentProfileName=_currentProfileName;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *oauthCallbackPrefix; // @synthesize oauthCallbackPrefix=_oauthCallbackPrefix;
 @property(retain, nonatomic) NSURL *authorizationURL; // @synthesize authorizationURL=_authorizationURL;
 @property(nonatomic) __weak id <ENOAuthViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webViewDidFinishLoad:(id)arg1;
 - (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;

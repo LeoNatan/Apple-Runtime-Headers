@@ -21,8 +21,8 @@
 + (id)_log;
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) MCInvocationQueue *indexQueue; // @synthesize indexQueue=_indexQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MCInvocationQueue *indexQueue; // @synthesize indexQueue=_indexQueue;
 - (id)acquireQueryObserver:(long long)arg1;
 - (void)unregisterQueryObserver:(long long)arg1;
 - (long long)registerQueryObserver:(id)arg1;

@@ -30,7 +30,8 @@
 - (void)serializeFilename:(id)arg1 forCreation:(BOOL)arg2;
 - (void)serializeFinderTags:(id)arg1 forCreation:(BOOL)arg2;
 - (void)serializeSystemFields:(id)arg1;
-- (BOOL)locateSideCarServerZone:(id *)arg1 shareAliasRecordName:(id *)arg2 withSession:(id)arg3;
+- (BOOL)locateSideCarServerZone:(id *)arg1 shareRecordName:(id *)arg2 withSession:(id)arg3;
+- (BOOL)_locateSideCarServerZone:(id *)arg1 withShareAliasReference:(id)arg2 withSession:(id)arg3;
 - (BOOL)deserializeSideCarInfo:(id *)arg1 error:(id *)arg2;
 - (BOOL)deserializeVersion:(id *)arg1 fakeStatInfo:(id *)arg2 clientZone:(id)arg3 error:(id *)arg4;
 - (BOOL)deserializeSymlinkTarget:(id *)arg1 error:(id *)arg2;
@@ -56,9 +57,9 @@
 @property(readonly, nonatomic) NSData *brc_containerMetadataPropertiesData;
 - (BOOL)brc_isfakeRecordWithErrorMarkerFor20716676;
 - (void)brc_updateWithLogicalName:(id)arg1 isFolder:(BOOL)arg2;
-- (id)brc_documentName;
-- (id)brc_sharedDocumentDisplayName;
-- (id)brc_sharedDocumentExtension;
+- (id)brc_sharedLinkDisplayName;
+- (id)brc_sharedRootDisplayName;
+- (id)brc_sharedRootExtension;
 - (BOOL)isFolderShare;
 
 // Remaining properties

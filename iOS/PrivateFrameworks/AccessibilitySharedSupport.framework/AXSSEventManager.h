@@ -11,6 +11,8 @@
 
 @interface AXSSEventManager : NSObject
 {
+    _Bool _shouldSuppressCommands;
+    _Bool _passthroughModeEnabled;
     _Bool __tabKeyPressed;
     _Bool __performedActionWhileTabComboPressed;
     AXSSActionManager *_actionManager;
@@ -22,26 +24,27 @@
     AXSSKeyboardCommandInfo *__lastDownAndUpCommandInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXSSKeyboardCommandInfo *_lastDownAndUpCommandInfo; // @synthesize _lastDownAndUpCommandInfo=__lastDownAndUpCommandInfo;
 @property(nonatomic) double _lastTabPressTime; // @synthesize _lastTabPressTime=__lastTabPressTime;
 @property(nonatomic) _Bool _performedActionWhileTabComboPressed; // @synthesize _performedActionWhileTabComboPressed=__performedActionWhileTabComboPressed;
 @property(nonatomic) _Bool _tabKeyPressed; // @synthesize _tabKeyPressed=__tabKeyPressed;
 @property(readonly, nonatomic) NSDictionary *_commandInfos; // @synthesize _commandInfos=__commandInfos;
+@property(nonatomic, getter=isPassthroughModeEnabled) _Bool passthroughModeEnabled; // @synthesize passthroughModeEnabled=_passthroughModeEnabled;
+@property(nonatomic) _Bool shouldSuppressCommands; // @synthesize shouldSuppressCommands=_shouldSuppressCommands;
 @property(nonatomic) __weak id <AXSSKeyFilterDelegate> filterDelegate; // @synthesize filterDelegate=_filterDelegate;
 @property(retain, nonatomic) AXSSKeyboardCommandMap *commandMap; // @synthesize commandMap=_commandMap;
 @property(nonatomic) unsigned long long searchType; // @synthesize searchType=_searchType;
 @property(retain, nonatomic) AXSSActionManager *actionManager; // @synthesize actionManager=_actionManager;
-- (void).cxx_destruct;
 - (_Bool)_handleCommand:(id)arg1 event:(id)arg2;
-- (_Bool)_shouldCaptureCommand:(id)arg1;
 - (void)_handleTabComboEvent:(id)arg1;
+- (id)_tabbedKeyChordForKeyChord:(id)arg1;
 - (void)_handleTabEvent:(id)arg1;
 - (void)_handleTabRepeatOrUpWithCommand:(id)arg1;
 - (_Bool)shouldCaptureEvent:(id)arg1;
 - (void)handleFKAEvent:(id)arg1;
 - (_Bool)_handleEvent:(id)arg1 forCaptureOnly:(_Bool)arg2;
-- (void)_performDownActionForInfo:(id)arg1;
-- (_Bool)processKeyboardEvent:(id)arg1 forCaptureOnly:(_Bool)arg2;
+- (void)_performDownActionForCommand:(id)arg1 info:(id)arg2;
 - (_Bool)processKeyboardEvent:(id)arg1;
 - (id)initWithActionManager:(id)arg1 commandMap:(id)arg2;
 - (id)initWithActionManager:(id)arg1;

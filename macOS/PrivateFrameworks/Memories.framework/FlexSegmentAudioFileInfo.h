@@ -18,13 +18,13 @@
     NSArray *_customBarMarkers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customBarMarkers; // @synthesize customBarMarkers=_customBarMarkers;
 @property(nonatomic) long long samplesPerBar; // @synthesize samplesPerBar=_samplesPerBar;
 @property(nonatomic) long long bars; // @synthesize bars=_bars;
 @property(nonatomic) long long bpm; // @synthesize bpm=_bpm;
 @property(nonatomic) long long sampleCount; // @synthesize sampleCount=_sampleCount;
 @property(nonatomic) long long sampleRate; // @synthesize sampleRate=_sampleRate;
-- (void).cxx_destruct;
 
 @end
 

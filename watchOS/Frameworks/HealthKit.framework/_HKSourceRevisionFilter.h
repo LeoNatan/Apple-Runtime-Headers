@@ -20,9 +20,9 @@
 + (id)_filterForComparisonWithKeyPath:(id)arg1 value:(id)arg2 operatorType:(unsigned int)arg3 dataTypes:(id)arg4;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithSourceRevisions:(id)arg1 operatorType:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int operatorType; // @synthesize operatorType=_operatorType;
 @property(readonly, nonatomic) NSSet *sourceRevisions; // @synthesize sourceRevisions=_sourceRevisions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

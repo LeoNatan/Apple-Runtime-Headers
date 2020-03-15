@@ -46,6 +46,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long deletedSamples; // @synthesize deletedSamples=_deletedSamples;
 @property(nonatomic) long long createdSeries; // @synthesize createdSeries=_createdSeries;
 @property(nonatomic) long long processedWorkouts; // @synthesize processedWorkouts=_processedWorkouts;
@@ -61,7 +62,6 @@
 @property(nonatomic) _Bool hasWatchSource; // @synthesize hasWatchSource=_hasWatchSource;
 @property(nonatomic) long long batchSize; // @synthesize batchSize=_batchSize;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -13,8 +13,8 @@
     UIView *_view;
 }
 
-@property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 - (void)drawInRect:(struct CGRect)arg1 forPageAtIndex:(int)arg2;
 - (struct CGRect)rectForPageAtIndex:(int)arg1;
 - (int)_recalcPageCount;

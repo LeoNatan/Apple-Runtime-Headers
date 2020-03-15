@@ -26,13 +26,13 @@
     CDStruct_0a65202a _outputBlob;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *resConfig; // @synthesize resConfig=_resConfig;
 @property(nonatomic) CDStruct_0a65202a outputBlob; // @synthesize outputBlob=_outputBlob;
 @property(nonatomic) CDStruct_0a65202a inputBlob; // @synthesize inputBlob=_inputBlob;
 @property(nonatomic) vector_7cb31c67 outputBlobs; // @synthesize outputBlobs=_outputBlobs;
 @property(nonatomic) vector_7cb31c67 inputBlobs; // @synthesize inputBlobs=_inputBlobs;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (int)getPlanPhase;
 - (void *)getEspressoContext;

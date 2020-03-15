@@ -31,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *demoAccountPassword; // @synthesize demoAccountPassword=_demoAccountPassword;
 @property(retain) NSString *demoAccountName; // @synthesize demoAccountName=_demoAccountName;
 @property BOOL demoAutologinMode; // @synthesize demoAutologinMode=_demoAutologinMode;
@@ -47,7 +48,6 @@
 @property long long authenticationStyle; // @synthesize authenticationStyle=_style;
 @property(retain) NSDictionary *additionalQueryParameters; // @synthesize additionalQueryParameters=_additionalQueryParameters;
 @property(readonly) NSNumber *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithAccountID:(id)arg1;

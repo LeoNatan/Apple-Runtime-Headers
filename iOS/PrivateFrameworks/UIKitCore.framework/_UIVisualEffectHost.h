@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     _UIVisualEffectDescriptor *_transitionEffectDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIVisualEffectDescriptor *transitionEffectDescriptor; // @synthesize transitionEffectDescriptor=_transitionEffectDescriptor;
 @property(retain, nonatomic) _UIVisualEffectDescriptor *currentEffectDescriptor; // @synthesize currentEffectDescriptor=_currentEffectDescriptor;
 @property(nonatomic) __weak _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *views; // @synthesize views=_views;
 @property(nonatomic) _Bool contentViewRequired; // @synthesize contentViewRequired=_contentViewRequired;
 @property(readonly, nonatomic) _UIVisualEffectSubview *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_view:(id)arg1 willLoseDescendent:(id)arg2;
 - (void)_view:(id)arg1 willGainDescendent:(id)arg2;

@@ -14,9 +14,9 @@
     NSArray *_facedAssets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *facedAssets; // @synthesize facedAssets=_facedAssets;
 @property(readonly, nonatomic) NSSet *personNodes; // @synthesize personNodes=_personNodes;
-- (void).cxx_destruct;
 - (id)initWithMomentNodes:(id)arg1 personNodes:(id)arg2;
 
 @end

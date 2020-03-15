@@ -15,9 +15,9 @@
     HMSetting *_setting;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMSetting *setting; // @synthesize setting=_setting;
 @property(readonly, nonatomic) MCProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;

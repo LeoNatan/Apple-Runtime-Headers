@@ -24,6 +24,7 @@
 + (id)obfuscatedEmail:(id)arg1;
 + (id)localizedFamilyNameLabel;
 + (id)localizedGivenNameLabel;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long emailCount; // @synthesize emailCount=_emailCount;
 @property BOOL wantsPrivateEmail; // @synthesize wantsPrivateEmail=_wantsPrivateEmail;
 @property unsigned long long indexOfChosenLogin; // @synthesize indexOfChosenLogin=_indexOfChosenLogin;
@@ -31,7 +32,6 @@
 @property(retain) id <AKCredentialRequestProtocol> selectedRequest; // @synthesize selectedRequest=_selectedRequest;
 @property(copy) AKUserInformation *userInformation; // @synthesize userInformation=_userInformation;
 @property(copy) NSArray *scopes; // @synthesize scopes=_scopes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_personNameComponents;
 @property(readonly) NSString *localizedChosenEmail;

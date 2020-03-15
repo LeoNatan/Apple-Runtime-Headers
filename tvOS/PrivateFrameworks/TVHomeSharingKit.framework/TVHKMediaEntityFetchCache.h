@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     TVHKMediaEntitySeasonsCache *_seasonsCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaEntitySeasonsCache *seasonsCache; // @synthesize seasonsCache=_seasonsCache;
 @property(retain, nonatomic) TVHKMediaEntityShowsCache *showsCache; // @synthesize showsCache=_showsCache;
 @property(copy, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)clear;

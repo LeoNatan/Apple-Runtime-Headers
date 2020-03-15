@@ -18,11 +18,11 @@
     int _maxNumberOfLogFiles;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int maxNumberOfLogFiles; // @synthesize maxNumberOfLogFiles=_maxNumberOfLogFiles;
 @property(nonatomic) unsigned long maxLogFileSize; // @synthesize maxLogFileSize=_maxSizeInBytes;
 @property(copy, nonatomic) NSString *logFileBaseName; // @synthesize logFileBaseName=_fileName;
 @property(copy, nonatomic) NSString *logDirectoryPath; // @synthesize logDirectoryPath=_directoryPath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;

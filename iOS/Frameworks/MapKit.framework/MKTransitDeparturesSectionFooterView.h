@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (double)defaultHeight;
 + (id)_font;
-@property(readonly, nonatomic) MKButtonWithTargetArgument *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MKButtonWithTargetArgument *button; // @synthesize button=_button;
 - (void)_updateConstraintValues;
 - (void)_contentSizeCategoryDidChange;
 - (void)tintColorDidChange;

@@ -17,9 +17,9 @@
     NSString *_supersededSearchIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *supersededSearchIdentifier; // @synthesize supersededSearchIdentifier=_supersededSearchIdentifier;
 @property(retain, nonatomic) GEOMapItemStorage *placeMapItemStorage; // @synthesize placeMapItemStorage=_placeMapItemStorage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

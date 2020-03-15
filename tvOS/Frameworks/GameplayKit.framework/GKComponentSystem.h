@@ -16,8 +16,8 @@
     Class _componentClass;
 }
 
-@property(readonly, nonatomic) Class componentClass; // @synthesize componentClass=_componentClass;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Class componentClass; // @synthesize componentClass=_componentClass;
 - (Class)classForGenericArgumentAtIndex:(unsigned long long)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -15,14 +15,14 @@
     _Bool _pathContainsDCIM;
     NSMutableSet *_urls;
     int _assetKind;
-    struct NSObject *_destinationAlbum;
+    NSObject<PLAlbumProtocol> *_destinationAlbum;
     PLAssetJournalEntryPayload *_assetPayload;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLAssetJournalEntryPayload *assetPayload; // @synthesize assetPayload=_assetPayload;
 @property(nonatomic) int assetKind; // @synthesize assetKind=_assetKind;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *destinationAlbum; // @synthesize destinationAlbum=_destinationAlbum;
-- (void).cxx_destruct;
 - (void)addURLs:(id)arg1;
 - (void)addURL:(id)arg1;
 @property(readonly, nonatomic) NSSet *urls;
@@ -30,7 +30,7 @@
 - (long long)compare:(id)arg1;
 - (_Bool)isCameraKit;
 - (id)initWithAssetPayload:(id)arg1;
-- (id)initWithDestinationAlbum:(struct NSObject *)arg1 assetKind:(int)arg2;
+- (id)initWithDestinationAlbum:(id)arg1 assetKind:(int)arg2;
 
 @end
 

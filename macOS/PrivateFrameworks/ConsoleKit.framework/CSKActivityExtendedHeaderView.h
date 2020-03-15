@@ -14,9 +14,9 @@
     NSTextField *_PIDTextField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *PIDTextField; // @synthesize PIDTextField=_PIDTextField;
 @property(nonatomic) __weak NSTextField *threadIDTextField; // @synthesize threadIDTextField=_threadIDTextField;
-- (void).cxx_destruct;
 - (void)updateViewWithActivity:(id)arg1;
 
 @end

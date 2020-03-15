@@ -6,17 +6,19 @@
 
 #import <coreroutine/RTStore.h>
 
-@class RTDistanceCalculator;
+@class RTDistanceCalculator, RTPersistenceExpirationEnforcer;
 
 @interface RTLearnedLocationStore : RTStore
 {
+    RTPersistenceExpirationEnforcer *_expirationEnforcer;
     RTDistanceCalculator *_distanceCalculator;
 }
 
 + (id)filterLocationsOfInterests:(id)arg1;
 + (id)filterPlaces:(id)arg1;
-@property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
+@property(retain, nonatomic) RTPersistenceExpirationEnforcer *expirationEnforcer; // @synthesize expirationEnforcer=_expirationEnforcer;
 - (id)predicateForObjectsNotFromCurrentDevice;
 - (id)predicateForObjectsFromCurrentDevice;
 - (void)_associatePlacesToVisits:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -143,8 +145,17 @@
 - (void)_fetchPlacesWithPredicate:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)updateTransitionWithIdentifier:(id)arg1 motionActivityType:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_updateTransitionWithIdentifier:(id)arg1 motionActivityType:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)updateExpirationDateOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)_unionSetOfVisitIdentifiersOverlappingVisitIdentifiers:(id)arg1 allowThresholdBypass:(_Bool)arg2 context:(id)arg3 error:(id *)arg4;
+- (_Bool)_updateExpirationDateOfVisitsAndTransitionsWithVisitIdentifiers:(id)arg1 expirationDate:(id)arg2 context:(id)arg3 visitsUpdated:(unsigned long long *)arg4 error:(id *)arg5;
+- (_Bool)_updateExpirationDateOfPlaceSubgraphWithVisitIdentifiers:(id)arg1 expirationDate:(id)arg2 context:(id)arg3 error:(id *)arg4;
+- (void)_updateExpirationDateOfVisitSubgraphWithVisitIdentifiers:(id)arg1 expirationDate:(id)arg2 allowThresholdBypass:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)updateExpirationDateOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 allowThresholdBypass:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)_updateExpirationDateOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)updateExpirationDateOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_extendExpirationDateOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)extendExpirationDateOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_expireLifetimeOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)expireLifetimeOfVisitsWithIdentifiers:(id)arg1 expirationDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)updateLocationOfInterestWithIdentifier:(id)arg1 place:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_updateLocationOfInterestWithIdentifier:(id)arg1 place:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)updateLocationsOfInterest:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -160,7 +171,7 @@
 - (void)_storeVisits:(id)arg1 place:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)storeLocationsOfInterest:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)storePlaces:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (id)initWithDistanceCalculator:(id)arg1 persistenceManager:(id)arg2;
+- (id)initWithDistanceCalculator:(id)arg1 expirationEnforcer:(id)arg2 persistenceManager:(id)arg3;
 - (id)init;
 - (void)submitMetricsOnExtendingLifetimeOfObjectsWithIdentifiers:(id)arg1 context:(id)arg2;
 

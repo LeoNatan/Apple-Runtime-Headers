@@ -32,9 +32,9 @@
 
 + (void)createSharedAudioSession;
 + (unsigned int)_convertDeactivateOption:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)_getRecordSettingsWithRequest:(id)arg1;
 - (void)audioFileReaderDidStopRecording:(id)arg1 forReason:(int)arg2;
 - (void)audioFileReaderDidStartRecording:(id)arg1 successfully:(_Bool)arg2 error:(id)arg3;

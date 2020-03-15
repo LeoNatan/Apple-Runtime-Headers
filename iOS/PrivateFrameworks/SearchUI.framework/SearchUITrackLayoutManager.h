@@ -15,9 +15,9 @@
 }
 
 + (id)singleLineTextWithString:(id)arg1 highlighted:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *tableMapping; // @synthesize tableMapping=_tableMapping;
 @property(retain, nonatomic) TLKGridLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
-- (void).cxx_destruct;
 - (id)tableRowForTrack:(id)arg1;
 - (id)initWithTrackCardSection:(id)arg1;
 

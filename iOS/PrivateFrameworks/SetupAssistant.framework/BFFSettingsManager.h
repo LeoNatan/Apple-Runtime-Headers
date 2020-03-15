@@ -16,6 +16,7 @@
     NSMutableArray *_stashedButtonHaptics;
     NSNumber *_stashedAssistantEnabled;
     NSNumber *_stashedAssistantVoiceTriggerEnabled;
+    NSNumber *_stashedSiriDataSharingOptInStatus;
     NSNumber *_stashedLocationServicesEnabled;
     NSData *_stashedLocationServicesSettings;
     NSData *_stashedWatchData;

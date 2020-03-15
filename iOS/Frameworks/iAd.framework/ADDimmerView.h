@@ -16,10 +16,10 @@
     ADTapGestureRecognizer *_gestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(retain, nonatomic) ADTapGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(nonatomic) __weak id <ADDimmerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)removeADTapGestureRecognizer;
 - (void)addADTapGestureRecognizer;
 @property(readonly, nonatomic) _Bool enabled;

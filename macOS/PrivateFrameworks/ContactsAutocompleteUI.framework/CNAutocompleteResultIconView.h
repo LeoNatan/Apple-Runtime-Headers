@@ -16,10 +16,10 @@
 }
 
 + (id)iconViewWithImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain, nonatomic) NSImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (struct CGSize)fittingSize;
 - (void)updateIconViewForDisplayOverBackgroundWithStyle:(long long)arg1;
 - (void)setBackgroundStyle:(long long)arg1;

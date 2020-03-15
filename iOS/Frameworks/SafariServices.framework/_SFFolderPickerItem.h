@@ -14,9 +14,9 @@
     unsigned long long _depth;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long depth; // @synthesize depth=_depth;
 @property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title;
 - (id)_initWithBookmark:(id)arg1 depth:(unsigned long long)arg2;
 

@@ -15,9 +15,9 @@
 }
 
 + (id)genresWithDictionaries:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;

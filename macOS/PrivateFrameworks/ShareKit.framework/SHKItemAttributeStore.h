@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 
 + (void)notifySpotlightShareItems:(id)arg1 wereSharedWithSharingService:(id)arg2;
 + (struct __MDItem *)MDItemForShareItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain) NSObject<OS_dispatch_semaphore> *sem; // @synthesize sem=_sem;
 @property(retain, nonatomic) id <SHKShareItem> shareItem; // @synthesize shareItem=_shareItem;
-- (void).cxx_destruct;
 - (void)attributesForShareItem:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchAttributesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startFectchingAttributes;

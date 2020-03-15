@@ -18,13 +18,13 @@
     INIntentSlotDescription *_slotDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) INIntentSlotDescription *slotDescription; // @synthesize slotDescription=_slotDescription;
 @property(readonly, copy, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 @property(readonly, nonatomic) INExtensionContextSlotResolutionResult *extensionContextResolutionResult; // @synthesize extensionContextResolutionResult=_extensionContextResolutionResult;
 @property(readonly, nonatomic) _Bool resolveImplemented; // @synthesize resolveImplemented=_resolveImplemented;
 @property(readonly, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, copy, nonatomic) NSString *parameter; // @synthesize parameter=_parameter;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)description;

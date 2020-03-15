@@ -16,9 +16,9 @@
     long long _contentMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageLayout *badgeImageViewLayout; // @synthesize badgeImageViewLayout=_badgeImageViewLayout;
 @property(retain, nonatomic) TVImageLayout *coverImageViewLayout; // @synthesize coverImageViewLayout=_coverImageViewLayout;
 @property(retain, nonatomic) VUITextLayout *subTitleTextViewLayout; // @synthesize subTitleTextViewLayout=_subTitleTextViewLayout;
 @property(retain, nonatomic) VUITextLayout *titleTextViewLayout; // @synthesize titleTextViewLayout=_titleTextViewLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

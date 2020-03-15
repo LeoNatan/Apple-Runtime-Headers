@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (long long)_actionTypeFromButtonDictionary:(id)arg1;
 + (id)_URLForCommerceUIFromURL:(id)arg1 account:(id)arg2;
 + (long long)dialogKindFromPayload:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *proxyBundleId; // @synthesize proxyBundleId=_proxyBundleId;
 @property(readonly, nonatomic) _Bool containsCommerceUIURL; // @synthesize containsCommerceUIURL=_containsCommerceUIURL;
 @property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) AMSDialogRequest *dialogRequest; // @synthesize dialogRequest=_dialogRequest;
 @property(readonly, copy, nonatomic) NSDictionary *dialogDictionary; // @synthesize dialogDictionary=_dialogDictionary;
-- (void).cxx_destruct;
 - (id)_sendDialogOverIDSIfNeeded:(id)arg1 taskInfo:(id)arg2 didSend:(_Bool *)arg3;
 - (id)performWithTaskInfo:(id)arg1;
 - (id)initWithDialogRequest:(id)arg1 account:(id)arg2 clientInfo:(id)arg3 bag:(id)arg4;

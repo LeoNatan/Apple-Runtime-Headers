@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     TLKTextView *_descriptionViewBaselineView;
 }
 
-@property(retain, nonatomic) TLKTextView *descriptionViewBaselineView; // @synthesize descriptionViewBaselineView=_descriptionViewBaselineView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TLKTextView *descriptionViewBaselineView; // @synthesize descriptionViewBaselineView=_descriptionViewBaselineView;
 - (id)calculateViewForLastBaselineLayout;
 - (id)calculateViewForFirstBaselineLayout;
 

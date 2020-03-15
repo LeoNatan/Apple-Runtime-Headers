@@ -14,9 +14,9 @@
     UIDatePicker *_datePicker;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 @property(readonly, nonatomic) UIButton *neverButton; // @synthesize neverButton=_neverButton;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(retain, nonatomic) NSDate *date;
 - (id)init;

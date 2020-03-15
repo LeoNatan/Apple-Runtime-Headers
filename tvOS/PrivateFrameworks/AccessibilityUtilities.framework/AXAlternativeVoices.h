@@ -19,15 +19,16 @@
 + (id)sharedInstance;
 + (_Bool)inUnitTestMode;
 + (void)setInUnitTestMode:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *voiceNameMap; // @synthesize voiceNameMap=_voiceNameMap;
 @property(retain, nonatomic) NSMutableDictionary *voiceClassesMap; // @synthesize voiceClassesMap=_voiceClassesMap;
-- (void).cxx_destruct;
 - (id)_siriBaseIdentifierFromIdentifier:(id)arg1;
 - (id)_siriIdentifierFromBaseIdentifier:(id)arg1 language:(id)arg2 quality:(long long)arg3;
 - (id)voiceForVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
 - (id)nameForVoiceIdentifier:(id)arg1;
 - (_Bool)isAlexAvailableForLanguage:(id)arg1;
 - (_Bool)isNashvilleSystemVoice:(id)arg1;
+- (_Bool)isNeuralSiriVoiceIdentifier:(id)arg1;
 - (_Bool)isSiriVoiceIdentifier:(id)arg1;
 - (_Bool)isOldSiriVoiceIdentifier:(id)arg1;
 - (_Bool)isAlternativeVoice:(id)arg1;

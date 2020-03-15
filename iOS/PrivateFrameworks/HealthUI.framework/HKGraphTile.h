@@ -19,11 +19,11 @@
     long long _column;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long column; // @synthesize column=_column;
 @property(retain, nonatomic) CALayer *caLayer; // @synthesize caLayer=_caLayer;
 @property(readonly, nonatomic) _Bool tileDisplayedSinceSetNeedsDisplay; // @synthesize tileDisplayedSinceSetNeedsDisplay=_tileDisplayedSinceSetNeedsDisplay;
 @property(nonatomic) __weak id <HKGraphTileDrawingDelegate> drawingDelegate; // @synthesize drawingDelegate=_drawingDelegate;
-- (void).cxx_destruct;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)setNeedsDisplay;
 @property(nonatomic) _Bool hidden;

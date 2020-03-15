@@ -14,8 +14,8 @@
 }
 
 + (id)sharedTracker;
-@property(readonly, nonatomic) PETEventTracker2 *proactiveTracker; // @synthesize proactiveTracker=_proactiveTracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PETEventTracker2 *proactiveTracker; // @synthesize proactiveTracker=_proactiveTracker;
 - (void)trackEvent:(id)arg1 count:(int)arg2;
 - (void)trackEvent:(id)arg1;
 - (id)initWithTracker:(id)arg1;

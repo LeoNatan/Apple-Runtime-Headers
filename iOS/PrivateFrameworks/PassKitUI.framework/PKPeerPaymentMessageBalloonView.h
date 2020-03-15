@@ -15,10 +15,10 @@
     CKTranscriptPluginBalloonView *_balloonView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKTranscriptPluginBalloonView *balloonView; // @synthesize balloonView=_balloonView;
 @property(readonly, nonatomic) long long peerPaymentType; // @synthesize peerPaymentType=_peerPaymentType;
 @property(readonly, nonatomic) PKPeerPaymentBubbleView *bubbleView; // @synthesize bubbleView=_bubbleView;
-- (void).cxx_destruct;
 - (void)_updateTailOrientation;
 - (void)layoutSubviews;
 - (id)initWithBubbleView:(id)arg1 peerPaymentType:(long long)arg2;

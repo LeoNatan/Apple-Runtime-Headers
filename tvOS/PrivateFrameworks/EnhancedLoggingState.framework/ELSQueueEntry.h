@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool retry; // @synthesize retry=_retry;
 @property(nonatomic) double executeAfterDuration; // @synthesize executeAfterDuration=_executeAfterDuration;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (_Bool)isEqual:(id)arg1;

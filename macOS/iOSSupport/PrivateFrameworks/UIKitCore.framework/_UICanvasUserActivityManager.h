@@ -36,8 +36,8 @@ __attribute__((visibility("hidden")))
 + (void)_showProgressForScene:(id)arg1 whenFetchingUserActivityForTypes:(id)arg2;
 + (id)_userActivityManagerForScene:(id)arg1;
 + (void)_initializeUserActivityManager;
-@property(nonatomic, getter=_isDisplayingActivityContinuationUI, setter=_setIsDisplayingActivityContinuationUI:) BOOL isDisplayingActivityContinuationUI; // @synthesize isDisplayingActivityContinuationUI=_isDisplayingActivityContinuationUI;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_isDisplayingActivityContinuationUI, setter=_setIsDisplayingActivityContinuationUI:) BOOL isDisplayingActivityContinuationUI; // @synthesize isDisplayingActivityContinuationUI=_isDisplayingActivityContinuationUI;
 - (id)_updateCanvasConnectionOptionsDictionary:(id)arg1;
 - (void)_performCanvasRestorationIfNecessary;
 - (void)_performCanvasRestoration;

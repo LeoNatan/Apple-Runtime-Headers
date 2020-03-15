@@ -16,8 +16,8 @@
     id <ARSensorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setInterval:(double)arg1;
 - (void)stop;
 - (void)start;

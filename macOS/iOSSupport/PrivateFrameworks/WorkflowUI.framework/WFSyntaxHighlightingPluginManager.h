@@ -21,9 +21,9 @@
     unsigned long long _syntaxHighlightingAppearance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long syntaxHighlightingAppearance; // @synthesize syntaxHighlightingAppearance=_syntaxHighlightingAppearance;
 @property(nonatomic) unsigned long long syntaxHighlightingType; // @synthesize syntaxHighlightingType=_syntaxHighlightingType;
-- (void).cxx_destruct;
 - (id)defaultForegroundColor;
 - (id)defaultBackgroundColor;
 - (void)loadSyntaxPlugin;

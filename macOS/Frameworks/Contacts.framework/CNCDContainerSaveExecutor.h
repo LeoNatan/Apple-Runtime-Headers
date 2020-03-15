@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CNCDSaveContext *_saveContext;
 }
 
-@property(readonly, nonatomic) CNCDSaveContext *saveContext; // @synthesize saveContext=_saveContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNCDSaveContext *saveContext; // @synthesize saveContext=_saveContext;
 - (void)saveContainers;
 - (id)initWithSaveContext:(id)arg1;
 

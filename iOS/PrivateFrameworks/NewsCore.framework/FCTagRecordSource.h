@@ -15,9 +15,9 @@
 }
 
 + (id)defaultCachePolicy;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long desiredFieldOptions; // @synthesize desiredFieldOptions=_desiredFieldOptions;
 - (id)nonLocalizableKeys;
-- (void).cxx_destruct;
 - (id)saveTagRecords:(id)arg1;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
 - (id)recordIDPrefix;
@@ -26,6 +26,7 @@
 - (unsigned long long)storeVersion;
 - (id)storeFilename;
 - (id)localizableLanguageSpecificKeys;
+- (id)alwaysLocalizedKeys;
 - (id)localizableKeys;
 - (id)experimentalizableKeys;
 - (int)pbRecordType;

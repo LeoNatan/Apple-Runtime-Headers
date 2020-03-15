@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _itemSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
-- (void).cxx_destruct;
 - (long long)_expectedNumberOfCells;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

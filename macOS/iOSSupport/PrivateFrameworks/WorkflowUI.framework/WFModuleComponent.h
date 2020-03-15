@@ -17,8 +17,8 @@
 }
 
 + (id)newWithModel:(id)arg1 navigationContext:(id)arg2;
-@property(readonly, nonatomic) WFModuleModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFModuleModel *model; // @synthesize model=_model;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
 - (void)actionNameDidChange:(id)arg1;
 - (void)parameterAttributesDidChange:(id)arg1;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)backgroundDisplayIdentifier;
-@property(retain, nonatomic) _UIStatusBarPillView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarPillView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_backgroundView;
 - (_Bool)_shouldPulseForActivityType:(long long)arg1 traitCollection:(id)arg2;

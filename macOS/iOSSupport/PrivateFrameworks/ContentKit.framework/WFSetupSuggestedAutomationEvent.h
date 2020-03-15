@@ -17,11 +17,11 @@
 }
 
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL completed; // @synthesize completed=_completed;
 @property(nonatomic) unsigned int currentStep; // @synthesize currentStep=_currentStep;
 @property(copy, nonatomic) NSString *suggestedAutomationIdentifier; // @synthesize suggestedAutomationIdentifier=_suggestedAutomationIdentifier;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

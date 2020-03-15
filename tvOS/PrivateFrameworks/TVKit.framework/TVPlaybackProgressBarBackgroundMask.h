@@ -21,6 +21,7 @@
     TVSliderContentView *_bufferingSliderContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSliderContentView *bufferingSliderContentView; // @synthesize bufferingSliderContentView=_bufferingSliderContentView;
 @property(copy, nonatomic) NSSet *progressBarShapeViews; // @synthesize progressBarShapeViews=_progressBarShapeViews;
 @property(copy, nonatomic) NSArray *adMarkers; // @synthesize adMarkers=_adMarkers;
@@ -30,7 +31,6 @@
 @property(nonatomic) double minBufferingProgress; // @synthesize minBufferingProgress=_minBufferingProgress;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setMinPlayheadProgress:(double)arg1 maxPlayheadProgress:(double)arg2;
 - (void)setMinBufferingProgress:(double)arg1 maxBufferingProgress:(double)arg2;

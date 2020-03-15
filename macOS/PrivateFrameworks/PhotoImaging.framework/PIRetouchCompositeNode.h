@@ -18,12 +18,12 @@
 }
 
 - (id)_evaluateImage:(out id *)arg1;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
 @property(readonly, nonatomic) PIRetouchCacheNode *retouchNode;
 @property(readonly, nonatomic) NURenderNode *inputNode;
 - (id)initWithScale:(CDStruct_912cb5d2)arg1 sampleMode:(long long)arg2 input:(id)arg3 retouch:(id)arg4;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

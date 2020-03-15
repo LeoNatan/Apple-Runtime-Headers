@@ -13,8 +13,8 @@
     EKReminder *_previouslyCompletedRecurringReminder;
 }
 
-@property(retain) EKReminder *previouslyCompletedRecurringReminder; // @synthesize previouslyCompletedRecurringReminder=_previouslyCompletedRecurringReminder;
 - (void).cxx_destruct;
+@property(retain) EKReminder *previouslyCompletedRecurringReminder; // @synthesize previouslyCompletedRecurringReminder=_previouslyCompletedRecurringReminder;
 - (Class)_inverseOperationClass;
 - (id)_previouslyCompletedReminderForReminder:(id)arg1;
 - (id)_objectsForInverse;

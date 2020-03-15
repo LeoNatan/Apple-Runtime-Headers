@@ -16,8 +16,8 @@
     id <NFResolver> _resolver;
 }
 
-@property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NFResolver> resolver; // @synthesize resolver=_resolver;
 - (void)presentFile:(id)arg1 transitionContext:(id)arg2;
 - (id)initWithResolver:(id)arg1;
 

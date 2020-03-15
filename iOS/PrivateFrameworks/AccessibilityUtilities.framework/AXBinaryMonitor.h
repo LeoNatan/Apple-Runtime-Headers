@@ -21,13 +21,13 @@
 
 + (id)sharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *binaryMonitorQueue; // @synthesize binaryMonitorQueue=_binaryMonitorQueue;
 @property(retain, nonatomic) NSMutableDictionary *appExtensionHandlerMap; // @synthesize appExtensionHandlerMap=_appExtensionHandlerMap;
 @property(retain, nonatomic) NSMutableDictionary *appHandlerMap; // @synthesize appHandlerMap=_appHandlerMap;
 @property(retain, nonatomic) NSMutableDictionary *dylibHandlerMap; // @synthesize dylibHandlerMap=_dylibHandlerMap;
 @property(retain, nonatomic) NSMutableDictionary *frameworkHandlerMap; // @synthesize frameworkHandlerMap=_frameworkHandlerMap;
 @property(retain, nonatomic) NSMutableDictionary *bundleHandlerMap; // @synthesize bundleHandlerMap=_bundleHandlerMap;
-- (void).cxx_destruct;
 - (void)_handleLoadedImagePath:(id)arg1;
 - (void)_applyHandlerBlocks:(id)arg1 handlerMap:(id)arg2;
 - (id)_dylibNameForImage:(id)arg1;

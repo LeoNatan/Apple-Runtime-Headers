@@ -24,10 +24,10 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCConnection *vendorConnection; // @synthesize vendorConnection=_vendorConnection;
 @property(nonatomic) BOOL stopped; // @synthesize stopped=_stopped;
 @property __weak id <NEExtensionProviderHostDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)copyValueForEntitlement:(id)arg1;
 - (void)stopWithReason:(int)arg1;
 - (void)startWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

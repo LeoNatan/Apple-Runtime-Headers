@@ -16,8 +16,8 @@
     UIViewController *_presentedViewController;
 }
 
-@property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (_Bool)isFinished;
 - (_Bool)isExecuting;
 - (void)_finish;

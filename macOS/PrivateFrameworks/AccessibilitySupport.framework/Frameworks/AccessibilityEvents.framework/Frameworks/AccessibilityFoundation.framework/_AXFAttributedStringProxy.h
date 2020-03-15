@@ -13,8 +13,8 @@
     NSMutableAttributedString *__attributedString;
 }
 
-@property(readonly, nonatomic) NSMutableAttributedString *_attributedString; // @synthesize _attributedString=__attributedString;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableAttributedString *_attributedString; // @synthesize _attributedString=__attributedString;
 - (id)_copyAttributedStringFromAXFProxy;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopy;

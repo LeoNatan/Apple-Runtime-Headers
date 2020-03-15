@@ -17,10 +17,10 @@
 
 + (id)sectionWithTitle:(id)arg1 footer:(id)arg2;
 + (id)sectionWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

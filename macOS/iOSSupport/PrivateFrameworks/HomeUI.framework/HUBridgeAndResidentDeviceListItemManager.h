@@ -16,10 +16,10 @@
 }
 
 + (CDUnknownBlockType)residentDeviceItemComparator;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFResidentDeviceItemProvider *residentDeviceItemProvider; // @synthesize residentDeviceItemProvider=_residentDeviceItemProvider;
 @property(retain, nonatomic) HFBridgeItemProvider *bridgeItemProvider; // @synthesize bridgeItemProvider=_bridgeItemProvider;
 @property(readonly, nonatomic) HMHome *overrideHome; // @synthesize overrideHome=_overrideHome;
-- (void).cxx_destruct;
 - (id)_homeFuture;
 - (id)_itemsToHideInSet:(id)arg1;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;

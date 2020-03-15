@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *legacyInfo; // @synthesize legacyInfo=_legacyInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *legacyInfo; // @synthesize legacyInfo=_legacyInfo;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

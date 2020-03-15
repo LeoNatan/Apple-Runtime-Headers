@@ -25,6 +25,7 @@
 }
 
 + (id)searchableItemForMessageData:(id)arg1 propertyList:(id)arg2 path:(id)arg3 persistentID:(long long)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *gmailLabelIDs; // @synthesize gmailLabelIDs=_gmailLabelIDs;
 @property(copy, nonatomic) NSString *remoteMailboxURL; // @synthesize remoteMailboxURL=_remoteMailboxURL;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) MFMessageFileLocations *fileLocations; // @synthesize fileLocations=_fileLocations;
 @property(nonatomic) long long conversationID; // @synthesize conversationID=_conversationID;
 @property(copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 - (id)_plainTextPartForMultipart:(id)arg1;
 - (id)_messageBodyWithAttachmentData:(BOOL)arg1 plainTextAlternative:(id *)arg2;
 - (id)bodyAndPlainTextAlternative:(id *)arg1;

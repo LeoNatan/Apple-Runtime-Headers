@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_borderView;
-@property(nonatomic, getter=isWide) _Bool wide; // @synthesize wide=_wide;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isWide) _Bool wide; // @synthesize wide=_wide;
 - (void)_didActivateButtonWithItem:(id)arg1;
 - (void)_prepareLayout;
 - (id)_installBackdrop:(id)arg1;

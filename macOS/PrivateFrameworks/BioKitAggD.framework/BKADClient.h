@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) NSXPCConnection *bkadConnection; // @synthesize bkadConnection=_bkadConnection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *bkadConnection; // @synthesize bkadConnection=_bkadConnection;
 - (void)dealloc;
 - (id)bkadGetAggDReport;
 - (void)bkadClientPushValueForDistributionKey:(struct __CFString *)arg1 withValue:(double)arg2;

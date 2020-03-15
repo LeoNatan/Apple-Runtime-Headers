@@ -21,11 +21,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)identityWithServiceIdentifier:(id)arg1 user:(id)arg2 recordIdentifier:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) long long rank; // @synthesize rank=_rank;
 @property(readonly, copy, nonatomic) NSString *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
 @property(readonly, copy, nonatomic) NSString *user; // @synthesize user=_user;
 @property(readonly, nonatomic) ASCredentialServiceIdentifier *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

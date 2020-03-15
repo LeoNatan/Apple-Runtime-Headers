@@ -33,6 +33,7 @@
 
 + (id)_shadowImage;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(readonly, nonatomic) _Bool shouldOverrideContentHeaderColor; // @synthesize shouldOverrideContentHeaderColor=_shouldOverrideContentHeaderColor;
 @property(readonly, nonatomic) UIColor *defaultTextColor; // @synthesize defaultTextColor=_defaultTextColor;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) UIImage *overrideContentImage; // @synthesize overrideContentImage=_overrideContentImage;
 @property(nonatomic) __weak id <REUpNextCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIImage *contentImage; // @synthesize contentImage=_contentImage;
-- (void).cxx_destruct;
 - (id)transitionContext;
 - (void)_updateColorOverlay;
 - (void)applyLayoutAttributes:(id)arg1;

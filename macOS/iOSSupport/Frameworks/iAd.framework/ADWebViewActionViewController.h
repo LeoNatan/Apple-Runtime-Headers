@@ -13,8 +13,8 @@
     id _notificationObserver;
 }
 
-@property(retain, nonatomic) id notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)dismissViewForHomeButton;

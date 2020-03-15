@@ -22,11 +22,11 @@
 + (id)resultWithStringClassProbability:(id)arg1 additionalFeatures:(id)arg2;
 + (id)resultWithIntClassProbability:(id)arg1;
 + (id)resultWithStringClassProbability:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) id <MLFeatureProvider> additionalFeatures; // @synthesize additionalFeatures=_additionalFeatures;
 @property(readonly) long long predictedClassFeatureType; // @synthesize predictedClassFeatureType=_predictedClassFeatureType;
 @property(readonly) NSDictionary *classProbability; // @synthesize classProbability=_classProbability;
 @property(readonly) MLFeatureValue *predictedClass; // @synthesize predictedClass=_predictedClass;
-- (void).cxx_destruct;
 - (id)initWithClassProbability:(id)arg1 additionalFeatures:(id)arg2 classLabelOfMaxProbability:(id)arg3;
 - (id)initWithIntClassProbability:(id)arg1 classFeatureType:(long long)arg2 additionalFeatures:(id)arg3;
 - (id)initWithStringClassProbability:(id)arg1 classFeatureType:(long long)arg2 additionalFeatures:(id)arg3;

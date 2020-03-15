@@ -22,6 +22,7 @@
     UIButton *_reviewButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *reviewButton; // @synthesize reviewButton=_reviewButton;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) PXPeopleScalableAvatarView *keyFaceView; // @synthesize keyFaceView=_keyFaceView;
@@ -29,10 +30,10 @@
 @property(readonly, nonatomic) unsigned long long gadgetType; // @synthesize gadgetType=_gadgetType;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 - (void)reviewButtonTapped:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithPerson:(id)arg1;
@@ -48,9 +49,6 @@
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(nonatomic) long long priority;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

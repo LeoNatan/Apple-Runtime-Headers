@@ -15,8 +15,8 @@
     NSMutableDictionary *_subsystemsDict;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *subsystemsDict; // @synthesize subsystemsDict=_subsystemsDict;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *subsystemsDict; // @synthesize subsystemsDict=_subsystemsDict;
 - (id)debugDescription;
 - (void)addEntry:(id)arg1;
 - (void)addSubsystem:(id)arg1 category:(id)arg2;

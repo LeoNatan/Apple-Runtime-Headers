@@ -26,6 +26,7 @@
     NSLayoutConstraint *_leadingLayoutConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *leadingLayoutConstraint; // @synthesize leadingLayoutConstraint=_leadingLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *widthLayoutConstraint; // @synthesize widthLayoutConstraint=_widthLayoutConstraint;
 @property(retain, nonatomic) NSByteCountFormatter *byteCountFormatter; // @synthesize byteCountFormatter=_byteCountFormatter;
@@ -40,7 +41,6 @@
 @property(copy) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property unsigned long long sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
-- (void).cxx_destruct;
 @property(nonatomic) long long textAlignment;
 - (id)allDisplayNames;
 - (id)init;

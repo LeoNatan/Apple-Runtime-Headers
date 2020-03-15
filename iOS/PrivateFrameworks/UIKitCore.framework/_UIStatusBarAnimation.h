@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 + (void)prepareAnimations:(id)arg1 forStatusBar:(id)arg2;
 + (id)animationWithBlock:(CDUnknownBlockType)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSMutableArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(copy, nonatomic) CDUnknownBlockType animationBlock; // @synthesize animationBlock=_animationBlock;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) _UIStatusBarIdentifier *displayItemIdentifier; // @synthesize displayItemIdentifier=_displayItemIdentifier;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_dependentItemIdentifiersEnabledOnly:(_Bool)arg1;
 @property(readonly, nonatomic) NSSet *effectiveDelayedItemIdentifiers;

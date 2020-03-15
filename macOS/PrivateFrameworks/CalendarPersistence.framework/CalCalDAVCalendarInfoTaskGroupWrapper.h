@@ -15,8 +15,8 @@
     NSSet *_containers;
 }
 
-@property(retain) NSSet *containers; // @synthesize containers=_containers;
 - (void).cxx_destruct;
+@property(retain) NSSet *containers; // @synthesize containers=_containers;
 - (void)containerInfoTask:(id)arg1 completedWithContainers:(id)arg2 error:(id)arg3;
 
 // Remaining properties

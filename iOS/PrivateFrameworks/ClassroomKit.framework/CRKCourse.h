@@ -33,6 +33,7 @@
 + (id)keyPathsForValuesAffectingExpired;
 + (id)stringForType:(unsigned long long)arg1;
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool mustRequestUnenroll; // @synthesize mustRequestUnenroll=_mustRequestUnenroll;
 @property(retain, nonatomic) NSSet *validTrustedCertificatePersistentIds; // @synthesize validTrustedCertificatePersistentIds=_validTrustedCertificatePersistentIds;
 @property(retain, nonatomic) NSSet *trustedCertificatePersistentIds; // @synthesize trustedCertificatePersistentIds=_trustedCertificatePersistentIds;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *courseDescription; // @synthesize courseDescription=_courseDescription;
 @property(copy, nonatomic) NSString *courseName; // @synthesize courseName=_courseName;
 @property(retain, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -58,6 +58,7 @@
 - (id)description;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (void)setManaged:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool allowsUnenroll;
 @property(readonly, nonatomic, getter=isManaged) _Bool managed;
 - (id)initWithIdentifier:(id)arg1 managed:(_Bool)arg2;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;

@@ -39,6 +39,7 @@
     struct NSEdgeInsets _initialInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GKComposeController *composeController; // @synthesize composeController=_composeController;
 @property(nonatomic) NSSegmentedControl *sectionControl; // @synthesize sectionControl=_sectionControl;
 @property(nonatomic) double segmentControlHeight; // @synthesize segmentControlHeight=_segmentControlHeight;
@@ -61,7 +62,6 @@
 @property(nonatomic) BOOL supportsNearby; // @synthesize supportsNearby=_supportsNearby;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)_updateCollectionView;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

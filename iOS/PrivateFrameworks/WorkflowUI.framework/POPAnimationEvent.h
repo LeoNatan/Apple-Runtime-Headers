@@ -15,10 +15,10 @@
     NSString *_animationDescription;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *animationDescription; // @synthesize animationDescription=_animationDescription;
 @property(readonly, nonatomic) double time; // @synthesize time=_time;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_appendDescription:(id)arg1;
 - (id)description;
 - (id)initWithType:(unsigned long long)arg1 time:(double)arg2;

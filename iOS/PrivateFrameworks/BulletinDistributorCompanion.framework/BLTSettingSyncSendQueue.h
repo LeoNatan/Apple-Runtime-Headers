@@ -24,12 +24,12 @@
     CDUnknownBlockType _sectionRemoveSender;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sectionRemoveSender; // @synthesize sectionRemoveSender=_sectionRemoveSender;
 @property(copy, nonatomic) CDUnknownBlockType sectionIconSender; // @synthesize sectionIconSender=_sectionIconSender;
 @property(copy, nonatomic) CDUnknownBlockType sectionInfoSender; // @synthesize sectionInfoSender=_sectionInfoSender;
 @property(copy, nonatomic) CDUnknownBlockType sectionParametersProvider; // @synthesize sectionParametersProvider=_sectionParametersProvider;
 @property(retain, nonatomic) NSDictionary *iconWhitelist; // @synthesize iconWhitelist=_iconWhitelist;
-- (void).cxx_destruct;
 - (void)_sendSectionIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(long long)arg3 waitForAcknowledgement:(_Bool)arg4 withQueue:(id)arg5 spoolToFile:(_Bool)arg6 andCompletion:(CDUnknownBlockType)arg7;
 - (void)_sendEffectiveSectionInfo:(id)arg1 waitForAcknowledgement:(_Bool)arg2 withQueue:(id)arg3 spoolToFile:(_Bool)arg4 andCompletion:(CDUnknownBlockType)arg5;
 - (void)sendSectionSubtypeParameterIcons:(id)arg1 sectionID:(id)arg2 waitForAcknowledgement:(_Bool)arg3 spoolToFile:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;

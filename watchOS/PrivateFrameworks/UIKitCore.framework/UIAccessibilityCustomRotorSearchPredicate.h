@@ -14,9 +14,9 @@
     int _searchDirection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int searchDirection; // @synthesize searchDirection=_searchDirection;
 @property(retain, nonatomic) UIAccessibilityCustomRotorItemResult *currentItem; // @synthesize currentItem=_currentItem;
-- (void).cxx_destruct;
 
 @end
 

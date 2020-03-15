@@ -16,8 +16,8 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(retain, nonatomic) NSArray *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *layout; // @synthesize layout=_layout;
 - (id)payloadDescriptionKeyValueSections;
 - (id)stubDictionary;
 - (id)parseIconsArray:(id)arg1 allowFolders:(_Bool)arg2 outError:(id *)arg3;

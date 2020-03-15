@@ -15,9 +15,9 @@
     TVSUIRemoteContainingViewController *_remoteContainingViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak TVSUIRemoteContainingViewController *remoteContainingViewController; // @synthesize remoteContainingViewController=_remoteContainingViewController;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *extensionQueue; // @synthesize extensionQueue=_extensionQueue;
-- (void).cxx_destruct;
 - (void)terminateRequestReturningItems:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)sendItemsToHost:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)openURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

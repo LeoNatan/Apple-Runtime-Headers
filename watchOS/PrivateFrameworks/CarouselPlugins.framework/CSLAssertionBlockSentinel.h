@@ -13,8 +13,8 @@
     NSString *_message;
 }
 
-@property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 - (void)dealloc;
 - (id)initWithMessage:(id)arg1;
 

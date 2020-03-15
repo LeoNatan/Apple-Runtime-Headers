@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     VSIdentityProvider *_selectedIdentityProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSIdentityProvider *selectedIdentityProvider; // @synthesize selectedIdentityProvider=_selectedIdentityProvider;
 @property(nonatomic, getter=isDismissingSearchDueToSelection) _Bool dismissingSearchDueToSelection; // @synthesize dismissingSearchDueToSelection=_dismissingSearchDueToSelection;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
@@ -48,7 +49,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *identityProviders; // @synthesize identityProviders=_identityProviders;
 @property(nonatomic, getter=isCancellationAllowed) _Bool cancellationAllowed; // @synthesize cancellationAllowed=_cancellationAllowed;
 @property(nonatomic) __weak id <VSIdentityProviderPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidLoad;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -15,10 +15,10 @@
     NSVisualEffectView *_effectView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(retain, nonatomic) NSView *clipView; // @synthesize clipView=_clipView;
 @property(nonatomic) __weak NSView *accessibilityHitTestView; // @synthesize accessibilityHitTestView=_accessibilityHitTestView;
-- (void).cxx_destruct;
 - (void)logViewHierarchy;
 - (void)logViewsWithNumberOfTabs:(unsigned long long)arg1 view:(id)arg2;
 - (id)accessibilityTitle;

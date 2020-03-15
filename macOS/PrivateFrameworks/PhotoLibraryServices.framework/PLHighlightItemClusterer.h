@@ -13,8 +13,8 @@
     id <PLHighlightItemClustererRule> _rule;
 }
 
-@property(readonly, nonatomic) id <PLHighlightItemClustererRule> rule; // @synthesize rule=_rule;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PLHighlightItemClustererRule> rule; // @synthesize rule=_rule;
 - (id)processHighlightItems:(id)arg1 withRestoredHighlightItemLists:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
 - (void)restoreExistingHighlightItemListsFromUpdatedHighlightItems:(id)arg1 deletedHighlightItems:(id)arg2 usingModelReader:(id)arg3 progressBlock:(CDUnknownBlockType)arg4 restoreBlock:(CDUnknownBlockType)arg5;
 - (id)initWithRule:(id)arg1;

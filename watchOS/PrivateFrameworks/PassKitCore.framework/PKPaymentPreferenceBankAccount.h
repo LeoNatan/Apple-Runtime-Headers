@@ -13,8 +13,8 @@
     NSArray *_bankAccounts;
 }
 
-@property(retain, nonatomic) NSArray *bankAccounts; // @synthesize bankAccounts=_bankAccounts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *bankAccounts; // @synthesize bankAccounts=_bankAccounts;
 
 @end
 

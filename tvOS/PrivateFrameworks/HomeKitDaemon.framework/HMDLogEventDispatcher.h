@@ -17,9 +17,9 @@
 
 + (id)sharedInstance;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *logEventObserversByEventType; // @synthesize logEventObserversByEventType=_logEventObserversByEventType;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-- (void).cxx_destruct;
 - (void)submitLogEvent:(id)arg1 error:(id)arg2;
 - (void)submitLogEvent:(id)arg1;
 - (void)removeObserver:(id)arg1 forEventType:(id)arg2;

@@ -25,6 +25,7 @@
 
 + (id)emptyChangeSetWithAnchor:(id)arg1;
 + (id)changeSetWithAnchor:(id)arg1 changes:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *showArtworksBySyncID; // @synthesize showArtworksBySyncID=_showArtworksBySyncID;
 @property(retain, nonatomic) NSMutableDictionary *showsBySyncID; // @synthesize showsBySyncID=_showsBySyncID;
 @property(retain, nonatomic) NSMutableDictionary *playlistsBySyncID; // @synthesize playlistsBySyncID=_playlistsBySyncID;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) CDUnknownBlockType showSource; // @synthesize showSource=_showSource;
 @property(copy, nonatomic) CDUnknownBlockType playlistSource; // @synthesize playlistSource=_playlistSource;
 @property(copy, nonatomic) CDUnknownBlockType episodeSource; // @synthesize episodeSource=_episodeSource;
-- (void).cxx_destruct;
 - (id)_artworkForSyncID:(long long)arg1 cache:(id)arg2 artworkLoader:(CDUnknownBlockType)arg3;
 - (id)_entityForSyncID:(long long)arg1 cache:(id)arg2 entityLoader:(CDUnknownBlockType)arg3 assumeExists:(BOOL)arg4;
 - (id)_showArtworkForSyncID:(long long)arg1;

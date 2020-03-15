@@ -23,6 +23,7 @@
 }
 
 + (id)classesForKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *setPositions; // @synthesize setPositions=_setPositions;
 @property(readonly, nonatomic) NSArray *monthsOfTheYear; // @synthesize monthsOfTheYear=_monthsOfTheYear;
 @property(readonly, nonatomic) NSArray *weeksOfTheYear; // @synthesize weeksOfTheYear=_weeksOfTheYear;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) EKRecurrenceEnd *recurrenceEnd; // @synthesize recurrenceEnd=_recurrenceEnd;
 @property(readonly, nonatomic) long long interval; // @synthesize interval=_interval;
 @property(readonly, nonatomic) long long frequency; // @synthesize frequency=_frequency;
-- (void).cxx_destruct;
 - (id)createRecurrenceRule:(id *)arg1;
 - (id)initWithRecurrenceRule:(id)arg1;
 

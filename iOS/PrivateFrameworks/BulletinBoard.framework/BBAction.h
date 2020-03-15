@@ -43,6 +43,7 @@
 + (id)actionWithCallblock:(CDUnknownBlockType)arg1;
 + (id)actionWithAppearance:(id)arg1;
 + (id)action;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *behaviorParameters; // @synthesize behaviorParameters=_behaviorParameters;
 @property(nonatomic) long long behavior; // @synthesize behavior=_behavior;
 @property(copy, nonatomic) NSString *remoteServiceBundleIdentifier; // @synthesize remoteServiceBundleIdentifier=_remoteServiceBundleIdentifier;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) NSString *launchBundleID; // @synthesize launchBundleID=_launchBundleID;
 @property(copy, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
 @property(copy, nonatomic) CDUnknownBlockType internalBlock; // @synthesize internalBlock=_internalBlock;
-- (void).cxx_destruct;
 - (id)description;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;

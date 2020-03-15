@@ -15,8 +15,8 @@
     NSProgress *_outputProgress;
 }
 
-@property(retain) NSProgress *outputProgress; // @synthesize outputProgress=_outputProgress;
 - (void).cxx_destruct;
+@property(retain) NSProgress *outputProgress; // @synthesize outputProgress=_outputProgress;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithSourceProgress:(id)arg1 progressHandler:(CDUnknownBlockType)arg2;

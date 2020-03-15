@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *limit; // @synthesize limit=_limit;
 @property(copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, nonatomic) NSNumber *confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) _Bool ascending; // @synthesize ascending=_ascending;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqualToFetchOptions:(id)arg1;

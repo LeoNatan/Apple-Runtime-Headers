@@ -11,17 +11,24 @@
 @interface CNChangeHistoryDeleteContactEvent : CNChangeHistoryEvent
 {
     NSString *_contactIdentifier;
+    NSString *_externalURI;
+    NSString *_externalModificationTag;
 }
 
++ (unsigned long long)instanceSortOrder;
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *externalModificationTag; // @synthesize externalModificationTag=_externalModificationTag;
+@property(readonly, copy, nonatomic) NSString *externalURI; // @synthesize externalURI=_externalURI;
+@property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
+- (long long)comparisonResultWithinSameClass:(id)arg1;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithContactIdentifier:(id)arg1 externalURI:(id)arg2 externalModificationTag:(id)arg3;
 - (id)initWithContactIdentifier:(id)arg1;
 - (id)init;
 

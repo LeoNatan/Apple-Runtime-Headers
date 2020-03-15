@@ -19,8 +19,8 @@
     long long _activeInterfaceOrientation;
 }
 
-@property(nonatomic) long long activeInterfaceOrientation; // @synthesize activeInterfaceOrientation=_activeInterfaceOrientation;
 - (void).cxx_destruct;
+@property(nonatomic) long long activeInterfaceOrientation; // @synthesize activeInterfaceOrientation=_activeInterfaceOrientation;
 - (long long)_overrideWindowActiveInterfaceOrientation;
 - (long long)_overrideInterfaceOrientationMechanics;
 - (void)_layoutContainerViewControllers:(id)arg1;

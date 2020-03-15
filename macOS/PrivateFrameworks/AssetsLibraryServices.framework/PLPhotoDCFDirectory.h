@@ -20,8 +20,8 @@
 + (id)fileGroupRequiredEmptyExtensions;
 + (id)fileGroupRequiredEmptyPrefixes;
 + (void)initializeFileGroupPrefixAndExtensions;
-@property BOOL considerInvalidFileGroups; // @synthesize considerInvalidFileGroups=_considerInvalidFileGroups;
 - (void).cxx_destruct;
+@property BOOL considerInvalidFileGroups; // @synthesize considerInvalidFileGroups=_considerInvalidFileGroups;
 - (void)setWriteIsPending:(BOOL)arg1;
 - (void)removeFileGroup:(id)arg1;
 - (id)nextAvailableVideoFileGroupWithExtension:(id)arg1;

@@ -24,10 +24,10 @@
 
 + (id)defaultBackgroundColor;
 + (double)defaultHorizontalInset;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsBottomSeparator; // @synthesize showsBottomSeparator=_showsBottomSeparator;
 @property(nonatomic) _Bool wantsDefaultHighlightBehavior; // @synthesize wantsDefaultHighlightBehavior=_wantsDefaultHighlightBehavior;
 @property(nonatomic) _Bool wantsCustomAppearance; // @synthesize wantsCustomAppearance=_wantsCustomAppearance;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (double)_bottomSeparatorAlpha;
 - (void)setBottomSeparatorVisible:(_Bool)arg1 animated:(_Bool)arg2;

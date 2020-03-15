@@ -25,6 +25,7 @@
     NSString *_textValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *textValue; // @synthesize textValue=_textValue;
 @property(nonatomic) unsigned int numberOfPasscodeFields; // @synthesize numberOfPasscodeFields=_numberOfPasscodeFields;
 @property(nonatomic) _Bool convertsNumeralsToASCII; // @synthesize convertsNumeralsToASCII=_convertsNumeralsToASCII;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
 @property(nonatomic) _Bool hidesNextButton; // @synthesize hidesNextButton=_hidesNextButton;
 @property(nonatomic) int textEntryType; // @synthesize textEntryType=_textEntryType;
-- (void).cxx_destruct;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)passcodeField:(id)arg1 didUpdateEnteredPasscode:(id)arg2;

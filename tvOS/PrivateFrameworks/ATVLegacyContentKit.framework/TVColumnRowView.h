@@ -19,13 +19,13 @@
     NSMutableArray *_columnViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *columnViews; // @synthesize columnViews=_columnViews;
 @property(retain, nonatomic) NSMutableArray *headerViews; // @synthesize headerViews=_headerViews;
 @property(nonatomic) _Bool needsReload; // @synthesize needsReload=_needsReload;
 @property(nonatomic) _Bool drawsBorders; // @synthesize drawsBorders=_drawsBorders;
 @property(nonatomic) __weak id <TVColumnRowViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <TVColumnRowViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_setHeader:(id)arg1 atIndex:(long long)arg2;
 - (id)_headerAtIndex:(long long)arg1;
 - (void)reloadData;

@@ -23,12 +23,12 @@
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showExistingMatches; // @synthesize showExistingMatches=_showExistingMatches;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
 @property(retain, nonatomic) GKTurnBasedMatchmakerHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate; // @synthesize turnBasedMatchmakerDelegate;
-- (void).cxx_destruct;
 - (void)authenticationChanged:(id)arg1;
 - (void)playerQuitMatch:(id)arg1;
 - (void)finishWithMatch:(id)arg1;

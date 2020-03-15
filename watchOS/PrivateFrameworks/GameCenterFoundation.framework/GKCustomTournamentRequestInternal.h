@@ -26,6 +26,7 @@
 
 + (id)customTournamentRequestWithTournamentDefinition:(id)arg1 player:(id)arg2;
 + (id)secureCodedPropertyKeys;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isCreatorInTournament; // @synthesize isCreatorInTournament=_isCreatorInTournament;
 @property(nonatomic) int maxReplays; // @synthesize maxReplays=_maxReplays;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSString *tournamentName; // @synthesize tournamentName=_tournamentName;
 @property(retain, nonatomic) GKPlayerInternal *tournamentCreator; // @synthesize tournamentCreator=_tournamentCreator;
 @property(retain, nonatomic) GKTournamentDefinitionInternal *tournamentDefinition; // @synthesize tournamentDefinition=_tournamentDefinition;
-- (void).cxx_destruct;
 
 @end
 

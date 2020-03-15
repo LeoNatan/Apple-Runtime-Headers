@@ -14,12 +14,14 @@
 {
 }
 
++ (BOOL)supportedTypeMustBeDeterminedByInstance:(id)arg1;
 + (id)propertyBuilders;
 + (id)pluralTypeDescription;
 + (id)typeDescription;
 + (id)outputTypes;
 + (id)ownedTypes;
 + (id)codableDescription;
+- (id)copyWithName:(id)arg1 zone:(struct _NSZone *)arg2;
 - (id)generateObjectRepresentationsForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) INCustomObject *customObject;
 

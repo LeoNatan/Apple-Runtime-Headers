@@ -16,9 +16,9 @@
     HKValueRange *_diastolicRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKValueRange *diastolicRange; // @synthesize diastolicRange=_diastolicRange;
 @property(retain, nonatomic) HKValueRange *systolicRange; // @synthesize systolicRange=_systolicRange;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

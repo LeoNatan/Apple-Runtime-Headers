@@ -18,9 +18,9 @@
 
 + (id)errorEventWithErrorType:(unsigned long long)arg1 accessory:(id)arg2;
 + (id)uuid;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) unsigned long long errorType; // @synthesize errorType=_errorType;
-- (void).cxx_destruct;
 - (id)initWithErrorType:(unsigned long long)arg1 accessory:(id)arg2;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

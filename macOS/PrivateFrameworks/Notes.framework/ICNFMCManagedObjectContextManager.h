@@ -14,8 +14,8 @@
 }
 
 + (void)attachContextManagerWithOptions:(unsigned long long)arg1 toContext:(id)arg2;
-@property(readonly, nonatomic) __weak NSManagedObjectContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSManagedObjectContext *context; // @synthesize context=_context;
 - (void)_contextDidSave:(id)arg1;
 - (void)dealloc;
 - (id)init;

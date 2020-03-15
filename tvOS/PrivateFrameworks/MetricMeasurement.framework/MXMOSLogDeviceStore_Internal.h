@@ -19,9 +19,9 @@
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *devices; // @synthesize devices=_devices;
 @property(readonly, nonatomic) id <MXMProbeableDevice> hostDevice; // @synthesize hostDevice=_hostDevice;
-- (void).cxx_destruct;
 - (_Bool)activityStream:(id)arg1 deviceUDID:(id)arg2 deviceID:(id)arg3 status:(long long)arg4 error:(id)arg5;
 - (id)init;
 

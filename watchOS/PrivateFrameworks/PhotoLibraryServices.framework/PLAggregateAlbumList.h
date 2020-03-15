@@ -18,9 +18,9 @@
     int _filter;
 }
 
-+ (struct NSObject *)albumListWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
-@property(nonatomic) int filter; // @synthesize filter=_filter;
++ (id)albumListWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 - (void).cxx_destruct;
+@property(nonatomic) int filter; // @synthesize filter=_filter;
 - (id)containersRelationshipName;
 - (_Bool)canEditContainers;
 - (_Bool)isEmpty;
@@ -35,7 +35,7 @@
 - (_Bool)needsReordering;
 - (void)setNeedsReordering;
 @property(readonly, copy, nonatomic) CDUnknownBlockType albumsSortingComparator;
-- (_Bool)albumHasFixedOrder:(struct NSObject *)arg1;
+- (_Bool)albumHasFixedOrder:(id)arg1;
 @property(readonly, nonatomic) _Bool isFolder;
 - (_Bool)canEditAlbums;
 - (short)albumListType;

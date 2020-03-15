@@ -16,10 +16,10 @@
     NSSet *_attachmentsPaths;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *attachmentsPaths; // @synthesize attachmentsPaths=_attachmentsPaths;
 @property(readonly, nonatomic) NSString *body; // @synthesize body=_body;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_attachmentURLs;
 @property(readonly, nonatomic) NSURL *tapToRadarURL;

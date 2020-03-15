@@ -19,8 +19,8 @@
 }
 
 + (id)sharedHelper;
-@property(retain, nonatomic) NSArray *certificateDescription; // @synthesize certificateDescription=_certificateDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *certificateDescription; // @synthesize certificateDescription=_certificateDescription;
 - (BOOL)shouldTrustStream:(id)arg1;
 - (id)certificateChainFromTrust:(struct __SecTrust *)arg1;
 - (id)certificateChainForIdentity:(struct __SecIdentity *)arg1;

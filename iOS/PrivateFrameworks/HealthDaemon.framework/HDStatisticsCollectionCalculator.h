@@ -25,12 +25,12 @@
 + (_Bool)supportsSecureCoding;
 + (id)calculatorForQuantityType:(id)arg1 intervalCollection:(id)arg2 options:(unsigned long long)arg3 mergeStrategy:(unsigned long long)arg4 computationMethod:(long long)arg5;
 + (id)calculatorForQuantityType:(id)arg1 intervalCollection:(id)arg2 options:(unsigned long long)arg3 mergeStrategy:(unsigned long long)arg4;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HDStatisticsCollectionCalculatorSourceOrderProvider> sourceOrderProvider; // @synthesize sourceOrderProvider=_sourceOrderProvider;
 @property(copy, nonatomic) CDUnknownBlockType statisticsHandler; // @synthesize statisticsHandler=_statisticsHandler;
 @property(readonly, copy, nonatomic) NSArray *maskedIntervals; // @synthesize maskedIntervals=_maskedIntervals;
 @property(readonly, nonatomic) long long computationMethod; // @synthesize computationMethod=_computationMethod;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)orderSourceIDs:(vector_d87a6415 *)arg1;
 - (id)sourceForSourceID:(long long)arg1;
 - (id)bundleIdentifierForSourceID:(long long)arg1;

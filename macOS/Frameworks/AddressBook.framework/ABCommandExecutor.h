@@ -25,6 +25,7 @@
 - (void)redoCommand:(id)arg1;
 - (void)undoCommand:(id)arg1;
 - (void)doCommand:(id)arg1;
+- (void)visitUndoableSaveCNRequestCommand:(id)arg1;
 - (void)visitSaveCNRequestCommand:(id)arg1;
 - (void)visitSaveRequestCommand:(id)arg1;
 - (void)visitUndoableCommand:(id)arg1;

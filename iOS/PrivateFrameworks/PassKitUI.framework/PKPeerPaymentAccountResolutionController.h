@@ -29,10 +29,10 @@
 + (_Bool)_hasPeerPaymentPassProvisionedForAccount:(id)arg1 passLibraryDataProvider:(id)arg2;
 + (_Bool)peerPaymentPassIsProvisionedOnDeviceForAccount:(id)arg1 passLibraryDataProvider:(id)arg2;
 + (_Bool)peerPaymentPassIsProvisionedOnDeviceForAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKPaymentSetupDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
 @property(nonatomic) __weak id <PKPeerPaymentAccountResolutionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PKPeerPaymentAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_openSupportWebsiteWithWebsiteURL:(id)arg1;
 - (void)_callSupportWithPhoneNumber:(id)arg1;
 - (void)_emailSupportWithEmailAddress:(id)arg1;

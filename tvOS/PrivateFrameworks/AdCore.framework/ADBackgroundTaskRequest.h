@@ -18,12 +18,12 @@
     NSDate *_startDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) _Bool performDeferralCheck; // @synthesize performDeferralCheck=_performDeferralCheck;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *criteria; // @synthesize criteria=_criteria;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
 @property(readonly, copy, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
-- (void).cxx_destruct;
 - (id)getPropertyAsDate:(id)arg1;
 - (void)setPropertyAsDate:(id)arg1 value:(id)arg2;
 - (double)getPropertyAsDouble:(id)arg1;

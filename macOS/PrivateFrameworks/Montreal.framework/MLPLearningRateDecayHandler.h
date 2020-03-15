@@ -19,6 +19,7 @@
     id <MLPLearningRateDecayHandlerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <MLPLearningRateDecayHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property unsigned long long globalSteps; // @synthesize globalSteps=_globalSteps;
 @property float decayedLearningRate; // @synthesize decayedLearningRate=_decayedLearningRate;
@@ -26,7 +27,6 @@
 @property(readonly) float decayRate; // @synthesize decayRate=_decayRate;
 @property(readonly) unsigned long long decaySteps; // @synthesize decaySteps=_decaySteps;
 @property(readonly) float learningRate; // @synthesize learningRate=_learningRate;
-- (void).cxx_destruct;
 - (void)updateGlobalStep;
 - (id)initWithLearningRate:(float)arg1 decaySteps:(unsigned long long)arg2 decayRate:(float)arg3 stairCase:(BOOL)arg4;
 

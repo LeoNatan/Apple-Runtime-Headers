@@ -11,10 +11,12 @@
 @interface BMBehaviorRetriever : NSObject
 {
     BMBehaviorStorage *_storage;
+    unsigned long long _fetchLimit;
 }
 
-@property(retain, nonatomic) BMBehaviorStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
+@property(retain, nonatomic) BMBehaviorStorage *storage; // @synthesize storage=_storage;
 - (id)retrieveRulesWithSupport:(double)arg1 confidence:(double)arg2 filters:(id)arg3 error:(id *)arg4;
 - (id)retrieveRulesWithSupport:(double)arg1 confidence:(double)arg2 filters:(id)arg3;
 - (id)retrieveRulesWithFilters:(id)arg1;

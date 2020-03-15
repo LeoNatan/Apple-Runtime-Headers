@@ -23,13 +23,13 @@
 
 + (id)_cacheKeyForContact:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNUIPlaceholderProviderFactory> placeholderProviderFactory; // @synthesize placeholderProviderFactory=_placeholderProviderFactory;
 @property(retain, nonatomic) id <CNSchedulerProvider> mainThreadSchedulerProvider; // @synthesize mainThreadSchedulerProvider=_mainThreadSchedulerProvider;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryMonitoringSource; // @synthesize memoryMonitoringSource=_memoryMonitoringSource;
 @property(retain, nonatomic) CNQueue *evictionQueue; // @synthesize evictionQueue=_evictionQueue;
 @property(retain, nonatomic) CNCache *likenessCache; // @synthesize likenessCache=_likenessCache;
 @property(retain, nonatomic) id <CNUIPRLikenessResolver> likenessResolver; // @synthesize likenessResolver=_likenessResolver;
-- (void).cxx_destruct;
 - (id)initWithContactStore:(id)arg1 scheduler:(id)arg2 meMonitor:(id)arg3;
 - (id)initWithContactStore:(id)arg1 scheduler:(id)arg2;
 @property(readonly, nonatomic) CNSchedulerProvider *schedulerProvider;

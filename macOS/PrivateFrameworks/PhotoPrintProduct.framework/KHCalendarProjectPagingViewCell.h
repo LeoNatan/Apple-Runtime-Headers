@@ -18,12 +18,12 @@
 }
 
 + (struct CGSize)contentViewSizeForLayouts:(id)arg1 layoutScale:(double)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *wireHeightConstraints; // @synthesize wireHeightConstraints=_wireHeightConstraints;
 @property(readonly, nonatomic) UXImageView *bottomHoleImageView; // @synthesize bottomHoleImageView=_bottomHoleImageView;
 @property(readonly, nonatomic) UXImageView *topHoleImageView; // @synthesize topHoleImageView=_topHoleImageView;
 @property(readonly, nonatomic) UXImageView *closedWireImageView; // @synthesize closedWireImageView=_closedWireImageView;
 @property(readonly, nonatomic) UXImageView *openWireImageView; // @synthesize openWireImageView=_openWireImageView;
-- (void).cxx_destruct;
 - (void)selectionManager:(id)arg1 didAddSelections:(id)arg2;
 - (void)configureAccessoryButton:(id)arg1 forLayout:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)updateDecorationsForProjectLayouts:(id)arg1;

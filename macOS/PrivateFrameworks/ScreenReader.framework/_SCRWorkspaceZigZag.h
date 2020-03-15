@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(nonatomic) long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 
 @end
 

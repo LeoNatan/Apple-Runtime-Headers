@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 
 + (Class)dirtyPropertiesType;
 + (Class)credentialItemsType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresTouchID; // @synthesize requiresTouchID=_requiresTouchID;
 @property(retain, nonatomic) NSMutableArray *dirtyProperties; // @synthesize dirtyProperties=_dirtyProperties;
 @property(retain, nonatomic) NSString *credentialType; // @synthesize credentialType=_credentialType;
 @property(retain, nonatomic) NSMutableArray *credentialItems; // @synthesize credentialItems=_credentialItems;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

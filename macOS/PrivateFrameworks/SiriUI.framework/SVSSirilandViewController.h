@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     NSViewController *_presentedViewControllerForDebugController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSViewController *presentedViewControllerForDebugController; // @synthesize presentedViewControllerForDebugController=_presentedViewControllerForDebugController;
 @property(nonatomic) double lastPresentationTime; // @synthesize lastPresentationTime=_lastPresentationTime;
 @property(retain, nonatomic) id <AFUIDebugControlling> debugController; // @synthesize debugController=_debugController;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_siriUnavailableViewController) SVSErrorMessageViewController *siriUnavailableViewController; // @synthesize siriUnavailableViewController=_siriUnavailableViewController;
 @property(nonatomic) __weak id <SiriUIPresentationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SiriUIPresentationDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_topTranscriptViewController;
 - (id)_checkGuideSupportedFeatures;
 - (void)_checkGuideSupportedFeaturesAsynchronously:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;

@@ -19,10 +19,10 @@
 
 + (id)commandwithCommand:(id)arg1 variantParam:(id)arg2 invariantParam:(id)arg3;
 + (id)command;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *invariantParam; // @synthesize invariantParam=_invariantParam;
 @property(retain, nonatomic) NSDictionary *variantParam; // @synthesize variantParam=_variantParam;
 @property(copy, nonatomic) NSString *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)canBeGroupedWithCommand:(id)arg1;

@@ -22,6 +22,7 @@
     id <NURouter> _router;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NURouter> router; // @synthesize router=_router;
 @property(readonly, nonatomic) NUViewNode *readMoreButtonNode; // @synthesize readMoreButtonNode=_readMoreButtonNode;
 @property(readonly, nonatomic) NUViewNode *descriptionLabelNode; // @synthesize descriptionLabelNode=_descriptionLabelNode;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NUViewNode *appIconImageViewNode; // @synthesize appIconImageViewNode=_appIconImageViewNode;
 @property(retain, nonatomic) NUCanvas *canvas; // @synthesize canvas=_canvas;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
-- (void).cxx_destruct;
 - (id)buildCanvas;
 - (void)doReadMoreNews:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *pageIdentifier;

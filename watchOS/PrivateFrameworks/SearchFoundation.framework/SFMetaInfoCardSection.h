@@ -37,6 +37,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFImage *badge; // @synthesize badge=_badge;
 @property(copy, nonatomic) NSURL *hostPageURL; // @synthesize hostPageURL=_hostPageURL;
 @property(copy, nonatomic) NSURL *contentURL; // @synthesize contentURL=_contentURL;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) NSString *punchoutPickerDismissText;
 @property(copy, nonatomic) NSString *punchoutPickerTitle;
 @property(copy, nonatomic) NSArray *punchoutOptions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

@@ -21,13 +21,13 @@
     NSDate *_lastTimeScannerStarted;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastTimeScannerStarted; // @synthesize lastTimeScannerStarted=_lastTimeScannerStarted;
 @property(retain, nonatomic) NSNumber *zoneExitTimeout; // @synthesize zoneExitTimeout=_zoneExitTimeout;
 @property(retain) NSObject<OS_dispatch_source> *exitTimer; // @synthesize exitTimer=_exitTimer;
 @property(retain) CBCentralManager *centralManager; // @synthesize centralManager=_centralManager;
 @property(retain, nonatomic) NSMutableDictionary *trackedZones; // @synthesize trackedZones=_trackedZones;
 @property(retain, nonatomic) NSMutableDictionary *trackRequests; // @synthesize trackRequests=_trackRequests;
-- (void).cxx_destruct;
 - (void)unregisterAllZones;
 - (id)getAllZones;
 - (void)unregisterZonesForClient:(id)arg1 updateScanner:(BOOL)arg2;

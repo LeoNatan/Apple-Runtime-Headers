@@ -6,7 +6,8 @@
 
 #import <Foundation/NSEnumerator.h>
 
-@class BRCClientZone, BRCLocalItem, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableSet;
+@class BRCClientZone, BRCLocalItem, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, PQLResultSet;
+@protocol PQLEnumeration;
 
 __attribute__((visibility("hidden")))
 @interface BRCSyncUpEnumerator : NSEnumerator
@@ -20,7 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_itemIDsNeedingOSUpgrade;
     NSMutableDictionary *_tombstonesEmbargo;
     NSMutableIndexSet *_returned;
-    struct PQLResultSet *_enumerator;
+    PQLResultSet<PQLEnumeration> *_enumerator;
     NSMutableArray *_stack;
     int _stage;
     unsigned long long _retryAfter;
@@ -29,12 +30,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_itemsNeedingUnshare;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *itemsNeedingUnshare; // @synthesize itemsNeedingUnshare=_itemsNeedingUnshare;
 @property(readonly, nonatomic) NSMutableSet *chainedParentIDWhitelist; // @synthesize chainedParentIDWhitelist=_chainedParentIDWhitelist;
 @property(readonly, nonatomic) BRCLocalItem *itemNeedingPCSChaining; // @synthesize itemNeedingPCSChaining=_itemNeedingPCSChaining;
 @property(readonly, nonatomic) unsigned long long retryAfter; // @synthesize retryAfter=_retryAfter;
 @property(readonly, nonatomic) unsigned int batchSize; // @synthesize batchSize=_batchSize;
-- (void).cxx_destruct;
 - (id)nextObject;
 - (id)_nextTombstone;
 - (id)_nextLiveItem;
@@ -44,9 +45,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)_blackListDescendantStackAndItemIfThrottledOrNeedsOSUpgrade:(id)arg1 now:(unsigned long long)arg2;
 - (void)_blackListDescendantStack:(id)arg1 parentItem:(id)arg2 andAddToSet:(id)arg3;
 - (void)_blackListDescendantStack:(id)arg1 parentItem:(id)arg2 andAddToSet:(id)arg3 descendantBlock:(CDUnknownBlockType)arg4;
-- (struct PQLResultSet *)_tombstoneLeavesNeedingSyncUpEnumerator;
-- (struct PQLResultSet *)_liveOrNewDirectoriesNeedingSyncUpEnumerator;
-- (struct PQLResultSet *)_documentsOrAliasesNeedingSyncUpEnumerator;
+- (id)_tombstoneLeavesNeedingSyncUpEnumerator;
+- (id)_liveDirectoriesNeedingSyncUpEnumerator;
+- (id)_documentsOrAliasesNeedingSyncUpEnumerator;
 - (void)invalidate;
 - (id)initWithClientZone:(id)arg1;
 

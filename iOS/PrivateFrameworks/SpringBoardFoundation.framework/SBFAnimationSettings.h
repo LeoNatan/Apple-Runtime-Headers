@@ -31,6 +31,7 @@
 + (id)_moduleWithSectionTitle:(id)arg1;
 + (id)settingsControllerModule;
 + (_Bool)ignoresKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) double epsilon; // @synthesize epsilon=_epsilon;
 @property(nonatomic) double damping; // @synthesize damping=_damping;
@@ -43,7 +44,6 @@
 @property(nonatomic) unsigned long long frameRate; // @synthesize frameRate=_frameRate;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
 @property(nonatomic) long long animationType; // @synthesize animationType=_animationType;
-- (void).cxx_destruct;
 - (id)BSAnimationSettings;
 @property(readonly, nonatomic) double calculatedDuration;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;

@@ -19,6 +19,7 @@
     NSView *_centeredView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSView *centeredView; // @synthesize centeredView=_centeredView;
 @property(retain, nonatomic) NSImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(nonatomic) BOOL isInverted; // @synthesize isInverted=_isInverted;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (double)lastBaselineOffsetFromBottom;
 - (double)firstBaselineOffsetFromTop;
 - (id)hitTest:(struct CGPoint)arg1;

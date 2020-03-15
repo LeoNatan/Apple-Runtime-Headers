@@ -6,18 +6,24 @@
 
 #import <ContactsUI/CNUIEnvironment.h>
 
-@class CNContactStore, CNUIEditingPolicy;
+@class CNContactStore, CNUIEditingPolicy, CNUIMeContactMonitor;
+@protocol CNSchedulerProvider;
 
 @interface CNUIMutableEnvironment : CNUIEnvironment
 {
 }
 
+- (void)setSchedulerProvier:(id)arg1;
+@property(retain, nonatomic) CNUIMeContactMonitor *meContactMonitor; // @dynamic meContactMonitor;
 @property(retain, nonatomic) CNUIEditingPolicy *editingPolicy; // @dynamic editingPolicy;
 @property(retain, nonatomic) CNContactStore *contactStoreWithLocalAndDonatedContacts; // @dynamic contactStoreWithLocalAndDonatedContacts;
 @property(retain, nonatomic) CNContactStore *contactStoreWithAllContacts; // @dynamic contactStoreWithAllContacts;
 @property(retain, nonatomic) CNContactStore *defaultContactStore; // @dynamic defaultContactStore;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+
+// Remaining properties
+@property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @dynamic schedulerProvider;
 
 @end
 

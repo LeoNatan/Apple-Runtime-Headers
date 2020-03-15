@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *psk; // @synthesize psk=_psk;
 @property(retain, nonatomic) NSString *networkName; // @synthesize networkName=_networkName;
 @property(retain, nonatomic) NSNumber *channel; // @synthesize channel=_channel;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

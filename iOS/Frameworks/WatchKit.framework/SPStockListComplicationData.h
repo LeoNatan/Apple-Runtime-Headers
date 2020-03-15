@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *stockList; // @synthesize stockList=_stockList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *stockList; // @synthesize stockList=_stockList;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

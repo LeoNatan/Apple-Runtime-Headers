@@ -15,9 +15,9 @@
     long long _placeholderAssetType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long placeholderAssetType; // @synthesize placeholderAssetType=_placeholderAssetType;
 @property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
-- (void).cxx_destruct;
 - (void)_updatePlaceholderImageIfNeeded;
 - (void)_setAccessoryViewColor;
 - (void)_setAccessoryViewWithTextLabelColor:(id)arg1 detailTextLabelColor:(id)arg2;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id weakRef;
 }
 
-@property(nonatomic) __weak id weakRef; // @synthesize weakRef;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id weakRef; // @synthesize weakRef;
 - (id)copyWeakRef;
 
 @end

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <UINSActivityItemsConfigurationReading> _activityItemsConfiguration;
 }
 
-@property(retain, nonatomic) id <UINSActivityItemsConfigurationReading> activityItemsConfiguration; // @synthesize activityItemsConfiguration=_activityItemsConfiguration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <UINSActivityItemsConfigurationReading> activityItemsConfiguration; // @synthesize activityItemsConfiguration=_activityItemsConfiguration;
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (id)itemsForSharingServicePickerTouchBarItem:(id)arg1;
 

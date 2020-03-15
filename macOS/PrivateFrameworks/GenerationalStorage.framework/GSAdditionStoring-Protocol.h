@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class GSAddition, NSArray, NSDictionary, NSString, NSURL;
-@protocol NSCopying><NSSecureCoding;
+@class GSAddition, NSArray, NSDictionary, NSEnumerator, NSString, NSURL;
+@protocol GSAdditionEnumerating, NSCopying><NSSecureCoding;
 
 @protocol GSAdditionStoring
 @property(readonly, nonatomic) id <NSCopying><NSSecureCoding> persistentIdentifier;
 @property(retain) NSURL *documentURL;
 - (void)removeAllAdditionsForNamespaces:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)removeAdditions:(NSArray *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
-- (struct NSEnumerator *)enumeratorForAdditionsInNameSpace:(NSString *)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
+- (NSEnumerator<GSAdditionEnumerating> *)enumeratorForAdditionsInNameSpace:(NSString *)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
 - (NSArray *)additionsWithNames:(NSArray *)arg1 inNameSpace:(NSString *)arg2 error:(id *)arg3;
 - (GSAddition *)additionWithName:(NSString *)arg1 inNameSpace:(NSString *)arg2 error:(id *)arg3;
 - (BOOL)replaceDocumentWithContentsOfItemAtURL:(NSURL *)arg1 preservingCurrentVersionWithCreationInfo:(NSDictionary *)arg2 createdAddition:(id *)arg3 error:(id *)arg4;

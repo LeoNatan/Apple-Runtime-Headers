@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)_playlistTypeFromDMAPEntity:(id)arg1;
 + (CDUnknownBlockType)sortComparator;
+- (void).cxx_destruct;
 @property(copy, nonatomic) TVHKDMAPPlaylistIdentifier *playlistIdentifier; // @synthesize playlistIdentifier=_playlistIdentifier;
 - (id)type;
-- (void).cxx_destruct;
 - (id)parentPlaylistIdentifier;
 - (unsigned long long)playlistType;
 - (id)mediaItemCount;

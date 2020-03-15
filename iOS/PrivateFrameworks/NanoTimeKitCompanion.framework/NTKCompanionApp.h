@@ -19,13 +19,13 @@
     UIImage *_icon;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(nonatomic) _Bool fetchingIcon; // @synthesize fetchingIcon=_fetchingIcon;
 @property(nonatomic) __weak id <NTKCompanionAppDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *containerApplicationIdentifier; // @synthesize containerApplicationIdentifier=_containerApplicationIdentifier;
 @property(retain, nonatomic) NSString *watchApplicationIdentifier; // @synthesize watchApplicationIdentifier=_watchApplicationIdentifier;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)complication;
 
 @end

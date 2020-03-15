@@ -18,10 +18,10 @@
     AKAuthorizationPrivacyWelcomeHeaderView *_headerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsHeaderUpdate; // @synthesize needsHeaderUpdate=_needsHeaderUpdate;
 @property(retain, nonatomic) AKAuthorizationPrivacyWelcomeHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(nonatomic) __weak id <AKAuthorizationPrivacyWelcomeControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tappedLearnMore;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

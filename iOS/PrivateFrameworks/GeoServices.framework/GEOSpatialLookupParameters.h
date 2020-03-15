@@ -15,10 +15,10 @@
     NSArray *_categories;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(readonly, nonatomic) double radius; // @synthesize radius=_radius;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 - (id)initWithCoordinate:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 categories:(id)arg3;
 
 @end

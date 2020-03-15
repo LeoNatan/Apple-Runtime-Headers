@@ -24,12 +24,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSURL *temporaryDirectory; // @synthesize temporaryDirectory=_temporaryDirectory;
 @property(readonly) NSURL *latestLinkDestinationAtStartup; // @synthesize latestLinkDestinationAtStartup=_latestLinkDestinationAtStartup;
 @property(retain) NSURL *dataExpansionVersionDirectory; // @synthesize dataExpansionVersionDirectory=_dataExpansionVersionDirectory;
 @property(retain) NSURL *latestTZDataLink; // @synthesize latestTZDataLink=_latestTZDataLink;
 @property(retain) NSURL *cachedTZDataLocation; // @synthesize cachedTZDataLocation=_cachedTZDataLocation;
-- (void).cxx_destruct;
 - (id)obtainDestinationOfLinkAtURL:(id)arg1;
 @property(readonly) NSString *systemICUTZSchemaVersion; // @synthesize systemICUTZSchemaVersion=_systemICUTZSchemaVersion;
 @property(readonly) TZVersionInfo *lastInstalledVersionInfo; // @synthesize lastInstalledVersionInfo=_lastInstalledVersionInfo;

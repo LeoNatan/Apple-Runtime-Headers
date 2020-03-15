@@ -15,8 +15,8 @@
     CDUnknownBlockType _progressBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 - (id)initWithProgressBlock:(CDUnknownBlockType)arg1;
 

@@ -21,13 +21,13 @@
 
 + (BOOL)modelTypeCanBeOrphaned:(id)arg1;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *validRootUUIDs; // @synthesize validRootUUIDs=_validRootUUIDs;
 @property(retain, nonatomic) NSMapTable *branchMap; // @synthesize branchMap=_branchMap;
 @property(retain, nonatomic) NSMapTable *recordMap; // @synthesize recordMap=_recordMap;
 @property(retain, nonatomic) NSMapTable *objectMap; // @synthesize objectMap=_objectMap;
 @property(retain, nonatomic) NSMutableArray *objects; // @synthesize objects=_objects;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasValidChanges;
 - (id)recordMapWithFilter:(id)arg1;
 @property(readonly, nonatomic) NSMutableArray *invalidCloudChanges;

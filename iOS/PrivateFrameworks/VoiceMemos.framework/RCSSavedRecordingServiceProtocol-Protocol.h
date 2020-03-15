@@ -6,7 +6,7 @@
 
 #import <VoiceMemos/NSObject-Protocol.h>
 
-@class AVAudioPCMBuffer, NSArray, NSDate, NSDictionary, NSString, NSURL, RCSSavedRecordingAccessToken;
+@class AVAudioPCMBuffer, NSArray, NSDate, NSDictionary, NSSecurityScopedURLWrapper, NSString, NSURL, RCSSavedRecordingAccessToken;
 
 @protocol RCSSavedRecordingServiceProtocol <NSObject>
 - (oneway void)updateSearchMetadataWithRecordingURIsToInsert:(NSArray *)arg1 recordingURIsToUpdate:(NSArray *)arg2 recordingURIsToDelete:(NSArray *)arg3 completionBlock:(void (^)(NSError *))arg4;
@@ -33,7 +33,7 @@
 - (oneway void)importRecordingsFromCloud:(void (^)(NSNumber *, NSError *))arg1;
 - (oneway void)disableCloudRecordingsSaveLocalCopies:(_Bool)arg1 withCompletionBlock:(void (^)(NSError *))arg2;
 - (oneway void)enableCloudRecordingsWithCompletionBlock:(void (^)(NSError *))arg1;
-- (oneway void)importRecordingWithSourceAudioURL:(NSURL *)arg1 name:(NSString *)arg2 date:(NSDate *)arg3 importCompletionBlock:(void (^)(NSURL *, NSError *))arg4;
+- (oneway void)importRecordingWithSourceAudioURL:(NSSecurityScopedURLWrapper *)arg1 name:(NSString *)arg2 date:(NSDate *)arg3 importCompletionBlock:(void (^)(NSURL *, NSError *))arg4;
 - (oneway void)performDatabaseMigrationWithCompletionBlock:(void (^)(NSError *))arg1;
 @end
 

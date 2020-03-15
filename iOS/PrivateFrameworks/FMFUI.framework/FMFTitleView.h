@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     FMFLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FMFLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSLayoutConstraint *titleBottomConstraint; // @synthesize titleBottomConstraint=_titleBottomConstraint;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)_updateLabels:(id)arg1;
 - (void)updateLocation:(id)arg1;
 - (id)initFromNib;

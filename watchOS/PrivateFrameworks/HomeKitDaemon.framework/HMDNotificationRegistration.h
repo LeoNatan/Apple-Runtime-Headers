@@ -18,9 +18,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <HMFLogging> registerer; // @synthesize registerer=_registerer;
 @property(readonly, nonatomic) NSMutableSet *registeredNotifications; // @synthesize registeredNotifications=_registeredNotifications;
-- (void).cxx_destruct;
 - (void)addObserver:(SEL)arg1 name:(id)arg2 object:(id)arg3;
 - (id)logIdentifier;
 - (id)initWithRegisterer:(id)arg1;

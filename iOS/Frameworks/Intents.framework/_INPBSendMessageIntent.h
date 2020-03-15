@@ -35,6 +35,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)recipientType;
 + (Class)attachmentsType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName; // @synthesize speakableGroupName=_speakableGroupName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 @property(retain, nonatomic) _INPBString *content; // @synthesize content=_content;
 @property(copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

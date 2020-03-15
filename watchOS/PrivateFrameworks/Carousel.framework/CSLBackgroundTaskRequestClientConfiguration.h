@@ -19,13 +19,13 @@
 }
 
 + (id)readClientConfigurations;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *dasOptions; // @synthesize dasOptions=_dasOptions;
 @property(readonly, nonatomic) _Bool bootstrapOnStartup; // @synthesize bootstrapOnStartup=_bootstrapOnStartup;
 @property(readonly, nonatomic, getter=isBudgeted) _Bool budgeted; // @synthesize budgeted=_budgeted;
 @property(readonly, nonatomic) double leeway; // @synthesize leeway=_leeway;
 @property(readonly, nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithBundleID:(id)arg1 dictionary:(id)arg2;
 

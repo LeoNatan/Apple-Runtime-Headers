@@ -16,11 +16,11 @@
     NSNumber *_cachedIntrinsicHeight;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *cachedIntrinsicHeight; // @synthesize cachedIntrinsicHeight=_cachedIntrinsicHeight;
 @property(readonly, nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
 @property(retain, nonatomic) NSStackView *addressFieldsContainer; // @synthesize addressFieldsContainer=_addressFieldsContainer;
 @property(retain, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
-- (void).cxx_destruct;
 - (void)processControlTextDidChange:(id)arg1;
 - (id)calcuatedHeightGivenIntrinsicHeight:(double)arg1;
 - (struct CGSize)intrinsicContentSize;

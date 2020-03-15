@@ -13,8 +13,8 @@
     PKPassGroupView *_groupView;
 }
 
-@property(retain, nonatomic) PKPassGroupView *groupView; // @synthesize groupView=_groupView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPassGroupView *groupView; // @synthesize groupView=_groupView;
 
 @end
 

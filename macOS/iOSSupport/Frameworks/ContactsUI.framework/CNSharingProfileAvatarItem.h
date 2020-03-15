@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_variantIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wasSetFromFullPhotoPicker; // @synthesize wasSetFromFullPhotoPicker=_wasSetFromFullPhotoPicker;
 @property(copy, nonatomic) NSString *variantIdentifier; // @synthesize variantIdentifier=_variantIdentifier;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) CDUnknownBlockType originalImageProvider; // @synthesize originalImageProvider=_originalImageProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType imageProvider; // @synthesize imageProvider=_imageProvider;
-- (void).cxx_destruct;
 - (id)initWithImageProvider:(CDUnknownBlockType)arg1 originalImageProvider:(CDUnknownBlockType)arg2 type:(long long)arg3;
 - (id)initWithImageProvider:(CDUnknownBlockType)arg1 type:(long long)arg2;
 

@@ -14,8 +14,8 @@
 }
 
 + (id)sharedTracker;
-@property(retain, nonatomic) NSDictionary *trackedBagKeys; // @synthesize trackedBagKeys=_trackedBagKeys;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *trackedBagKeys; // @synthesize trackedBagKeys=_trackedBagKeys;
 - (void)_setIsSportsEnabled:(_Bool)arg1;
 - (void)_setIsNowPlayingEnabled:(_Bool)arg1;
 - (void)_updateKeys:(id)arg1;

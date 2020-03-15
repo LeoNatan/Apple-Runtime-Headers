@@ -14,8 +14,8 @@
 }
 
 + (id)sharedSettingsManager;
-@property(nonatomic) __weak id <NCSSettingsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NCSSettingsManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleLocaleChange:(id)arg1;
 - (id)_fetchSockPuppetComplications;
 - (void)_updateSockPuppetComplications;

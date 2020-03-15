@@ -32,6 +32,7 @@
 + (_Bool)_isSecureForViewService;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
+- (void).cxx_destruct;
 @property(nonatomic) double watchdogTimeout; // @synthesize watchdogTimeout=_watchdogTimeout;
 @property(nonatomic) _Bool didRequestTerminate; // @synthesize didRequestTerminate=_didRequestTerminate;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *animationWatchdogTimer; // @synthesize animationWatchdogTimer=_animationWatchdogTimer;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool didPresent; // @synthesize didPresent=_didPresent;
 @property(retain, nonatomic) _UIViewControllerTransitionContext *currentTransitionContext; // @synthesize currentTransitionContext=_currentTransitionContext;
 @property(retain, nonatomic) id <TVSUIViewServiceHostInterface> hostService; // @synthesize hostService=_hostService;
-- (void).cxx_destruct;
 - (void)_resetWatchdogTimer;
 - (void)_cancelWatchdogTimer;
 - (id)_transitionContextWithClientViewController:(id)arg1 animation:(long long)arg2 animator:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

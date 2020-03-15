@@ -13,8 +13,8 @@
     NSArray *_pickerItems;
 }
 
-@property(copy, nonatomic) NSArray *pickerItems; // @synthesize pickerItems=_pickerItems;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *pickerItems; // @synthesize pickerItems=_pickerItems;
 - (_Bool)submissionStringMeetsAllRequirements;
 - (id)_submissionStringForValue:(id)arg1;
 - (id)displayString;

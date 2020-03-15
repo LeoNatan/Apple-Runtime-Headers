@@ -20,12 +20,12 @@
 
 + (BOOL)_isReachableWithFlags:(unsigned int)arg1;
 + (BOOL)networkReachable;
+- (void).cxx_destruct;
 @property BOOL reachable; // @synthesize reachable=_reachable;
 @property(retain) NSObject<OS_dispatch_semaphore> *hostBecameReachable; // @synthesize hostBecameReachable=_hostBecameReachable;
 @property(retain) NSObject<OS_dispatch_queue> *reachabilityCallbacksQueue; // @synthesize reachabilityCallbacksQueue=_reachabilityCallbacksQueue;
 @property struct __SCNetworkReachability *target; // @synthesize target=_target;
 @property(retain) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (void)_reachabilityChangedWithTarget:(struct __SCNetworkReachability *)arg1 flags:(unsigned int)arg2;
 - (BOOL)waitForNetworkReachabilityWithTimeout:(double)arg1;
 - (void)dealloc;

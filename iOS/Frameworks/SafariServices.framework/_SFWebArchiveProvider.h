@@ -19,8 +19,8 @@
     WKWebView *_webView;
 }
 
-@property(readonly, nonatomic) __weak WKWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak WKWebView *webView; // @synthesize webView=_webView;
 - (id)_webViewUTI;
 - (id)_suggestedFilenameWithoutExtension;
 - (id)_quickLookDocument;

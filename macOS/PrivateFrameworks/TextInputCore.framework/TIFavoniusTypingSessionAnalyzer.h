@@ -18,10 +18,10 @@
     id <TIUserModeling> _userModel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <TIUserModeling> userModel; // @synthesize userModel=_userModel;
 @property(retain, nonatomic) TITypingSessionAligned *lastAlignmentAnalyzed; // @synthesize lastAlignmentAnalyzed=_lastAlignmentAnalyzed;
 @property(retain, nonatomic) TITypingSession *lastSessionAnalyzed; // @synthesize lastSessionAnalyzed=_lastSessionAnalyzed;
-- (void).cxx_destruct;
 - (BOOL)analyze:(id)arg1 alignedSession:(id)arg2;
 - (BOOL)handlePath:(id)arg1;
 - (BOOL)handleDeleteWord:(id)arg1 nextAction:(id)arg2 withConfidence:(unsigned long long)arg3;

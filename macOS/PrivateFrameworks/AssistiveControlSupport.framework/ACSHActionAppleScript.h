@@ -15,9 +15,9 @@
 }
 
 + (id)actionWithAppleScriptUUID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACSHResourceCollection *resourceCollection; // @synthesize resourceCollection=_resourceCollection;
 @property(retain, nonatomic) NSString *scriptUUID; // @synthesize scriptUUID=_scriptUUID;
-- (void).cxx_destruct;
 - (void)performWithEventSourceData:(id)arg1;
 - (id)paramDictionaryForSaving;
 - (void)_configureWithPlistDictionary:(id)arg1;

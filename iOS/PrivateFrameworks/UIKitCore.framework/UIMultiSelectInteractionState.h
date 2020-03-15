@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     struct CGPoint _startPoint;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *allSelectedIndexPaths; // @synthesize allSelectedIndexPaths=_allSelectedIndexPaths;
 @property(copy, nonatomic) NSArray *originallySelectedIndexPaths; // @synthesize originallySelectedIndexPaths=_originallySelectedIndexPaths;
 @property(nonatomic, getter=isSelecting) _Bool selecting; // @synthesize selecting=_selecting;
 @property(retain, nonatomic) NSIndexPath *endIndexPath; // @synthesize endIndexPath=_endIndexPath;
 @property(retain, nonatomic) NSIndexPath *startIndexPath; // @synthesize startIndexPath=_startIndexPath;
 @property(nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
-- (void).cxx_destruct;
 - (id)pathsToDeselectForInterpolatedIndexPaths:(id)arg1 currentlySelectedIndexPaths:(id)arg2;
 - (id)pathsToSelectForInterpolatedIndexPaths:(id)arg1;
 - (void)updateStateWithStartingIndexPath:(id)arg1 otherSelectedIndexPaths:(id)arg2;

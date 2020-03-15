@@ -22,6 +22,7 @@
 }
 
 + (id)requestWithRequestDate:(id)arg1 renderFrameSpecifier:(id)arg2 state:(unsigned int)arg3 includesStatusBar:(_Bool)arg4 randomizedComplicationStartDate:(id)arg5 generateMicaFile:(_Bool)arg6 randomizedDigitalTimeLabelScale:(_Bool)arg7 outputType:(unsigned int)arg8 activeDigitalTimeLabelFontOverride:(id)arg9;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLKFont *activeDigitalTimeLabelFontOverride; // @synthesize activeDigitalTimeLabelFontOverride=_activeDigitalTimeLabelFontOverride;
 @property(readonly, nonatomic) unsigned int outputType; // @synthesize outputType=_outputType;
 @property(readonly, nonatomic) _Bool randomizedDigitalTimeLabelScale; // @synthesize randomizedDigitalTimeLabelScale=_randomizedDigitalTimeLabelScale;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic) NTKTritiumFrameSpecifier *renderFrameSpecifier; // @synthesize renderFrameSpecifier=_renderFrameSpecifier;
 @property(readonly, nonatomic) NSDate *requestDate; // @synthesize requestDate=_requestDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *renderDate;
 
 @end

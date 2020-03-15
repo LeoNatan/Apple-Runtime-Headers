@@ -24,10 +24,10 @@
     NSString *_optionsButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *optionsButtonTitle; // @synthesize optionsButtonTitle=_optionsButtonTitle;
 @property(copy, nonatomic) CDUnknownBlockType passcodeOptionsHandler; // @synthesize passcodeOptionsHandler=_passcodeOptionsHandler;
 @property(nonatomic) __weak id <PSPINEntryViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_layoutBottomSubview:(id)arg1 withMinY:(float)arg2 withSize:(struct CGSize)arg3;
 - (void)layoutBottomSubview:(id)arg1 withLabel:(id)arg2 withMinY:(float)arg3;
 - (void)layoutTopLabel:(id)arg1 withMaxY:(float)arg2;

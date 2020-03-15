@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct _NSRange _affectedRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITextInputController *inputController; // @synthesize inputController=_inputController;
 @property(nonatomic) struct _NSRange affectedRange; // @synthesize affectedRange=_affectedRange;
-- (void).cxx_destruct;
 - (_Bool)supportsCoalescing;
 - (void)undoRedo;
 - (id)initWithAffectedRange:(struct _NSRange)arg1 inputController:(id)arg2;

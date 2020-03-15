@@ -26,6 +26,7 @@
     CLKTextProvider *_signatureCornerTextProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLKTextProvider *signatureCornerTextProvider; // @synthesize signatureCornerTextProvider=_signatureCornerTextProvider;
 @property(retain, nonatomic) CLKTextProvider *signatureBezel; // @synthesize signatureBezel=_signatureBezel;
 @property(retain, nonatomic) CLKTextProvider *extraLargeBottom; // @synthesize extraLargeBottom=_extraLargeBottom;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) CLKTextProvider *utilityLarge; // @synthesize utilityLarge=_utilityLarge;
 @property(retain, nonatomic) CLKTextProvider *modularSmallBottom; // @synthesize modularSmallBottom=_modularSmallBottom;
 @property(retain, nonatomic) CLKImageProvider *modularSmallTop; // @synthesize modularSmallTop=_modularSmallTop;
-- (void).cxx_destruct;
 
 @end
 

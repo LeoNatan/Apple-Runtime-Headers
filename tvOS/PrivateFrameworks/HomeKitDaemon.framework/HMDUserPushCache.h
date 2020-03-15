@@ -14,9 +14,9 @@
     NSDate *_expirationDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (id)initWithDevice:(id)arg1;
 - (id)init;

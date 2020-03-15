@@ -17,11 +17,11 @@
     unsigned int _segmentCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int segmentCount; // @synthesize segmentCount=_segmentCount;
 @property(nonatomic) _Bool snapsToSegment; // @synthesize snapsToSegment=_snapsToSegment;
 @property(nonatomic) _Bool locksToSegment; // @synthesize locksToSegment=_locksToSegment;
 @property(nonatomic, getter=isSegmented) _Bool segmented; // @synthesize segmented=_segmented;
-- (void).cxx_destruct;
 - (struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setValue:(float)arg1 animated:(_Bool)arg2;

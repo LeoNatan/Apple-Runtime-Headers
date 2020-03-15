@@ -16,9 +16,9 @@
 }
 
 + (_Bool)isRootFolderClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBHIconModel *model; // @synthesize model=_model;
 @property(nonatomic) __weak id <SBRootFolderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)folderContainingIndexPath:(id)arg1 relativeIndexPath:(id *)arg2;
 - (_Bool)canAddIconCount:(unsigned long long)arg1 startingAtList:(id)arg2;
 - (id)indexPathForFirstFreeSlotStartingAtList:(id)arg1 avoidingFirstList:(_Bool)arg2;

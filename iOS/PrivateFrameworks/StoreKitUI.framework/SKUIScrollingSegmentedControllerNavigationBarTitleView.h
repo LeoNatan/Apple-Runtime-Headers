@@ -16,10 +16,10 @@
 }
 
 + (struct UIEdgeInsets)defaultLayoutMargins;
+- (void).cxx_destruct;
 @property(nonatomic) double segmentedControlMinimumHeight; // @synthesize segmentedControlMinimumHeight=_segmentedControlMinimumHeight;
 @property(retain, nonatomic) SKUIInteractiveSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

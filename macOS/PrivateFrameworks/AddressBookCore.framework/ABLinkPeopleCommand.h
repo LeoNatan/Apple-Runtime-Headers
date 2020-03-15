@@ -8,8 +8,11 @@
 
 @interface ABLinkPeopleCommand : ABLinkingCommand
 {
+    BOOL ignoresGuardianRestrictions;
 }
 
+- (void)setIgnoresGuardianRestrictions:(BOOL)arg1;
+- (BOOL)ignoresGuardianRestrictions;
 - (id)actionName;
 - (id)pickPreferredPersonFromPeople:(id)arg1;
 - (void)preferSomeoneForProperties:(id)arg1;

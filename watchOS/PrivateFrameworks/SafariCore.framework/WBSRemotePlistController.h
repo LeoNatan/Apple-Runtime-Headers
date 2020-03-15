@@ -30,10 +30,10 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAttemptToDownloadConfiguration; // @synthesize shouldAttemptToDownloadConfiguration=_shouldAttemptToDownloadConfiguration;
 @property(nonatomic) _Bool shouldAttemptToUpdateConfiguration; // @synthesize shouldAttemptToUpdateConfiguration=_shouldAttemptToUpdateConfiguration;
 @property(nonatomic) __weak id <WBSRemotePlistControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_setCurrentDateAsLastConfigurationUpdateAttemptDate;
 - (id)_lastConfigurationUpdateAttemptDate;
 - (_Bool)_shouldUpdateConfigurationGivenLastConfigurationUpdateAttemptDate:(id)arg1;

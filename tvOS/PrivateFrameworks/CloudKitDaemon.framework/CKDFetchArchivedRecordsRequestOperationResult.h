@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _status;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) NSData *resultServerChangeTokenData; // @synthesize resultServerChangeTokenData=_resultServerChangeTokenData;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

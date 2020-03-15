@@ -13,8 +13,8 @@
     NSBundle *_backingBundle;
 }
 
-@property(readonly, nonatomic) NSBundle *backingBundle; // @synthesize backingBundle=_backingBundle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSBundle *backingBundle; // @synthesize backingBundle=_backingBundle;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (Class)classNamed:(id)arg1;

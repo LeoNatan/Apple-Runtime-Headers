@@ -36,6 +36,7 @@
     CSKStringsIndexer *_stringsIndexer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSKStringsIndexer *stringsIndexer; // @synthesize stringsIndexer=_stringsIndexer;
 @property(retain, nonatomic) CSKStringsIndexerMarker *lastFocusedMarker; // @synthesize lastFocusedMarker=_lastFocusedMarker;
 @property(nonatomic) __weak NSTableColumn *lastVisibleColumn; // @synthesize lastVisibleColumn=_lastVisibleColumn;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <CSKTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <CSKTableViewControllerFindDataSource> findDataSource; // @synthesize findDataSource=_findDataSource;
-- (void).cxx_destruct;
 - (unsigned long long)_midVisibleRow;
 - (void)_updateLocksFocusStateAndNotifyDelegateIfNeeded:(BOOL)arg1;
 - (double)_contentViewTopOffset;

@@ -17,12 +17,12 @@
     struct UIOffset _providerViewOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIOffset providerViewOffset; // @synthesize providerViewOffset=_providerViewOffset;
 @property(retain, nonatomic) NSView *providerView; // @synthesize providerView=_providerView;
 @property(nonatomic) double verticalSpaceNeededForRatingsView; // @synthesize verticalSpaceNeededForRatingsView=_verticalSpaceNeededForRatingsView;
 @property(nonatomic) struct UIOffset ratingViewOffset; // @synthesize ratingViewOffset=_ratingViewOffset;
 @property(retain, nonatomic) NSView *ratingView; // @synthesize ratingView=_ratingView;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)prepareForReuse;
 - (double)desiredHeightForWidth:(double)arg1;

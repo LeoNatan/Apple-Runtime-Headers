@@ -16,9 +16,9 @@
     NSArray *_processFeedData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *processFeedData; // @synthesize processFeedData=_processFeedData;
 @property(nonatomic) id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)identifierForUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)resetUsageDataFor:(id)arg1 nameKind:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (_Bool)getUsageOption:(id)arg1 reply:(CDUnknownBlockType)arg2;

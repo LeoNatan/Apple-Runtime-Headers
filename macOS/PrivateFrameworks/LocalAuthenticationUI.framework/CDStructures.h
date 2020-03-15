@@ -25,10 +25,6 @@ struct CGSize {
     double _field2;
 };
 
-struct NSColor {
-    Class _field1;
-};
-
 struct animation_completion_handler_container;
 
 struct vector<CAShapeLayer *, std::__1::allocator<CAShapeLayer *>> {

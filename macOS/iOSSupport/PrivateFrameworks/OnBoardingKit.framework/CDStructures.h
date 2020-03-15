@@ -39,10 +39,6 @@ struct UIEdgeInsets {
     double right;
 };
 
-struct UIViewController {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;

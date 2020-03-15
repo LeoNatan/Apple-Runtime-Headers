@@ -21,11 +21,11 @@
     NSObject<OS_dispatch_queue> *_idleQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *idleQueue; // @synthesize idleQueue=_idleQueue;
 @property(nonatomic) double idleTimeout; // @synthesize idleTimeout=_idleTimeout;
 @property(copy, nonatomic) CDUnknownBlockType objectDestroyedBlock; // @synthesize objectDestroyedBlock=_objectDestroyedBlock;
 @property(copy, nonatomic) CDUnknownBlockType createObjectBlock; // @synthesize createObjectBlock=_createObjectBlock;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)resourceWithError:(id *)arg1;
 - (void)releaseResource;

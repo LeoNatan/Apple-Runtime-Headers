@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *remoteAssetsForPartialUpdate; // @synthesize remoteAssetsForPartialUpdate=_remoteAssetsForPartialUpdate;
 @property(retain, nonatomic) NSData *baseManifestHashForPartialUpdate; // @synthesize baseManifestHashForPartialUpdate=_baseManifestHashForPartialUpdate;
 @property(retain, nonatomic) NSData *passData; // @synthesize passData=_passData;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
 @property(retain, nonatomic) NSData *reconciledStateHash; // @synthesize reconciledStateHash=_reconciledStateHash;
 @property(retain, nonatomic) NSUUID *changeUUID; // @synthesize changeUUID=_changeUUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -30,10 +30,10 @@ __attribute__((visibility("hidden")))
 + (id)appLabelFont;
 + (id)labelFont;
 + (double)widthBrandItem;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL touched; // @synthesize touched=_touched;
 @property(retain, nonatomic) GEOQuickLink *quickLink; // @synthesize quickLink=_quickLink;
 @property(nonatomic) __weak id <MKQuickLinkItemViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_loadAppArtwork:(id)arg1 adamID:(id)arg2;
 - (void)_loadOfficialApp;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

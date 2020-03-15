@@ -15,9 +15,9 @@
 }
 
 + (double)_colorWheelRenderingScale;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HUColorWheelSpace> colorWheelSpace; // @synthesize colorWheelSpace=_colorWheelSpace;
 @property(nonatomic) double wheelHoleRadius; // @synthesize wheelHoleRadius=_wheelHoleRadius;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (CDStruct_c3b9c2ee)colorWheelCoordinateForPoint:(struct CGPoint)arg1 boundedToWheel:(_Bool)arg2;
 - (struct CGPoint)pointForColorWheelCoordinate:(CDStruct_c3b9c2ee)arg1;

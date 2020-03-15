@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     MPArtworkCatalog *_artworkCatalog;
 }
 
-@property(retain, nonatomic) MPArtworkCatalog *artworkCatalog; // @synthesize artworkCatalog=_artworkCatalog;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPArtworkCatalog *artworkCatalog; // @synthesize artworkCatalog=_artworkCatalog;
 
 @end
 

@@ -17,8 +17,8 @@
     struct CGRect _rect;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(readonly, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 - (_Bool)snapshot;

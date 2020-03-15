@@ -16,10 +16,10 @@
 }
 
 + (id)_eventWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isUserVisible; // @synthesize isUserVisible=_isUserVisible;
 @property(readonly, copy, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

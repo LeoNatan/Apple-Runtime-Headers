@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_privateQueue;
 }
 
-@property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
 - (id)timeZone;
 - (id)storeFrontCountryCode;
 - (id)systemLanguage;

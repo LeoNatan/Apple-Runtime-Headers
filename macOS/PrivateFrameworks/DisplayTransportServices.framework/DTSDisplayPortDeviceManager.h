@@ -14,8 +14,8 @@
 }
 
 + (id)devices;
-@property(readonly, nonatomic) id <DTSIOConnect> muxConnect; // @synthesize muxConnect=_muxConnect;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <DTSIOConnect> muxConnect; // @synthesize muxConnect=_muxConnect;
 
 @end
 

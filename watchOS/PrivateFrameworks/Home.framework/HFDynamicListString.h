@@ -17,10 +17,10 @@
     NSString *_summaryFormat;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *summaryFormat; // @synthesize summaryFormat=_summaryFormat;
 @property(copy, nonatomic) NSString *truncationFormat; // @synthesize truncationFormat=_truncationFormat;
 @property(copy, nonatomic) NSArray *stringList; // @synthesize stringList=_stringList;
-- (void).cxx_destruct;
 - (id)attributeStringsSortedBySize:(id)arg1;
 - (_Bool)prefersDynamicString;
 - (id)stringWithAttributes:(id)arg1;

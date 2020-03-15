@@ -38,6 +38,7 @@
 + (Class)medicationRecordType;
 + (Class)medicationDispenseRecordType;
 + (Class)medicationOrderType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *clinicalRecords; // @synthesize clinicalRecords=_clinicalRecords;
 @property(retain, nonatomic) NSMutableArray *unknownRecords; // @synthesize unknownRecords=_unknownRecords;
 @property(retain, nonatomic) NSMutableArray *accountOwners; // @synthesize accountOwners=_accountOwners;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSMutableArray *medicationRecords; // @synthesize medicationRecords=_medicationRecords;
 @property(retain, nonatomic) NSMutableArray *medicationDispenseRecords; // @synthesize medicationDispenseRecords=_medicationDispenseRecords;
 @property(retain, nonatomic) NSMutableArray *medicationOrders; // @synthesize medicationOrders=_medicationOrders;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

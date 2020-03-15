@@ -23,8 +23,8 @@
     CDStruct_e99c65f7 _has;
 }
 
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_m_kernelCache;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *m_kernelCache; // @synthesize m_kernelCache=_m_kernelCache;
 @property(retain, nonatomic) NSString *kernelPrefix; // @synthesize kernelPrefix=_kernelPrefix;
-- (void).cxx_destruct;
 - (BOOL)shouldUseTexArray;
 - (id)kernelForFunction:(const char *)arg1 cacheString:(const char *)arg2 withConstants:(id)arg3;
 - (id)kernelForFunction:(const char *)arg1;

@@ -21,10 +21,10 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *characteristicsByType; // @synthesize characteristicsByType=_characteristicsByType;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) HFServiceDescriptor *primaryServiceDescriptor; // @synthesize primaryServiceDescriptor=_primaryServiceDescriptor;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)commitTransactionWithReason:(id)arg1;

@@ -25,9 +25,9 @@
 + (id)dictionaryForKeys:(id)arg1 keySet:(id)arg2 query:(struct __MDQuery *)arg3 group:(unsigned long long)arg4 index:(unsigned long long)arg5;
 + (id)dictionaryForKeys:(id)arg1 keySet:(id)arg2 query:(struct __MDQuery *)arg3 index:(unsigned long long)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSSearchableItem *csItem; // @synthesize csItem=_csItem;
 @property(readonly, nonatomic) NSOrderedSet *alreadyFetchedAttributes; // @synthesize alreadyFetchedAttributes=_alreadyFetchedAttributes;
-- (void).cxx_destruct;
 - (id)bundleID;
 - (BOOL)isFile;
 - (BOOL)allowShowPath;

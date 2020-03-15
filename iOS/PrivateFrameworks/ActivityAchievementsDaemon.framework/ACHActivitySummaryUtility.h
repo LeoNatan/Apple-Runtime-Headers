@@ -14,9 +14,9 @@
     HDActivitySummaryBuilder *_summaryBuilder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDActivitySummaryBuilder *summaryBuilder; // @synthesize summaryBuilder=_summaryBuilder;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (id)newEmptyActivitySummaryFromSummary:(id)arg1;
 - (_Bool)_enumerateActivitySummariesForDateComponentInterval:(id)arg1 handler:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (void)enumerateActivitySummariesForDateComponentInterval:(id)arg1 handler:(CDUnknownBlockType)arg2;

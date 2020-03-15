@@ -21,13 +21,13 @@
     struct CGPoint _previousOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) NSIndexPath *lastHapticOnScrollIndexPath; // @synthesize lastHapticOnScrollIndexPath=_lastHapticOnScrollIndexPath;
 @property(nonatomic) struct CGPoint previousOffset; // @synthesize previousOffset=_previousOffset;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(readonly, nonatomic) __weak id <UICollectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;

@@ -20,12 +20,12 @@
     double _coalesingDelay;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double coalesingDelay; // @synthesize coalesingDelay=_coalesingDelay;
 @property(readonly, nonatomic) id <AVTTaskScheduler> backingScheduler; // @synthesize backingScheduler=_backingScheduler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateLock; // @synthesize stateLock=_stateLock;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *coalescingQueue; // @synthesize coalescingQueue=_coalescingQueue;
 @property(readonly, nonatomic) NSMutableArray *tasks; // @synthesize tasks=_tasks;
-- (void).cxx_destruct;
 - (void)lowerTaskPriority:(CDUnknownBlockType)arg1;
 - (void)cancelTask:(CDUnknownBlockType)arg1;
 - (void)cancelAllTasks;

@@ -20,13 +20,13 @@
     NSData *_actionData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *actionData; // @synthesize actionData=_actionData;
 @property(readonly, nonatomic) id uniqueProperty; // @synthesize uniqueProperty=_uniqueProperty;
 @property(readonly, copy, nonatomic) NSString *sourceAppIdentifierForLaunching; // @synthesize sourceAppIdentifierForLaunching=_sourceAppIdentifierForLaunching;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) INShortcut *shortcut;
 @property(readonly, copy, nonatomic) NSString *suggestedPhrase;
 @property(readonly, copy, nonatomic) NSString *fullDescription;

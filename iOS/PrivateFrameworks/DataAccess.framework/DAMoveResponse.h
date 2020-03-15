@@ -16,11 +16,11 @@
     DAMessageMoveRequest *_origRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DAMessageMoveRequest *origRequest; // @synthesize origRequest=_origRequest;
 @property(copy, nonatomic) NSString *destID; // @synthesize destID=_destID;
 @property(copy, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;
 @property(nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithStatus:(int)arg1 sourceID:(id)arg2 destID:(id)arg3;
 

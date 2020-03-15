@@ -27,6 +27,7 @@
 + (id)styleWithFont:(id)arg1 smallCapsBaseFont:(id)arg2 uppercase:(_Bool)arg3 otherAttributes:(id)arg4 minimumScaleFactor:(float)arg5;
 + (id)styleWithFont:(id)arg1 smallCapsBaseFont:(id)arg2 uppercase:(_Bool)arg3 otherAttributes:(id)arg4 minimumScaleFactor:(float)arg5 shouldEmbedTintColor:(_Bool)arg6;
 + (id)styleWithFont:(id)arg1 smallCapsBaseFont:(id)arg2 uppercase:(_Bool)arg3 otherAttributes:(id)arg4 minimumScaleFactor:(float)arg5 shouldEmbedTintColor:(_Bool)arg6 shouldStyleForTritium:(_Bool)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldStyleForTritium; // @synthesize shouldStyleForTritium=_shouldStyleForTritium;
 @property(nonatomic) _Bool shouldEmbedTintColors; // @synthesize shouldEmbedTintColors=_shouldEmbedTintColors;
 @property(nonatomic) float minimumScaleFactor; // @synthesize minimumScaleFactor=_minimumScaleFactor;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool uppercase; // @synthesize uppercase=_uppercase;
 @property(copy, nonatomic) CLKFont *smallCapsBaseFont; // @synthesize smallCapsBaseFont=_smallCapsBaseFont;
 @property(copy, nonatomic) CLKFont *font; // @synthesize font=_font;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

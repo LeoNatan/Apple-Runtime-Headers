@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     _Bool _usesSaturationFilter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesSaturationFilter; // @synthesize usesSaturationFilter=_usesSaturationFilter;
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) struct CGSize outputSize; // @synthesize outputSize=_outputSize;
-- (void).cxx_destruct;
 - (id)_saturationBackgroundImageWithSize:(struct CGSize)arg1;
 - (id)imageForImage:(id)arg1;
 

@@ -17,9 +17,9 @@
     NSCountedSet *_referenceCounts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCountedSet *referenceCounts; // @synthesize referenceCounts=_referenceCounts;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *registrationQueue; // @synthesize registrationQueue=_registrationQueue;
-- (void).cxx_destruct;
 - (_Bool)shouldUnregisterFontWithURL:(id)arg1;
 - (unsigned long long)referenceCountForFontWithURL:(id)arg1;
 - (void)decreaseReferenceCountForFontWithURL:(id)arg1;

@@ -18,13 +18,13 @@
     UIView *_separatorHighlightedView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(retain, nonatomic) UIView *separatorHighlightedView; // @synthesize separatorHighlightedView=_separatorHighlightedView;
 @property(retain, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) UIImageView *knobView; // @synthesize knobView=_knobView;
 @property(nonatomic) BOOL top; // @synthesize top=_top;
-- (void).cxx_destruct;
 - (void)show:(BOOL)arg1 enabled:(BOOL)arg2 animated:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL shown;
 - (double)resizeContentInset;

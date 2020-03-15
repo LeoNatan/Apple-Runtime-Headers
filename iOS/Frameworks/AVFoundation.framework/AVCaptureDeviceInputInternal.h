@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _Bool unifiedAutoExposureDefaultsEnabled;
     _Bool builtInMicrophoneStereoAudioCaptureEnabled;
     _Bool visionDataDeliveryEnabled;
+    _Bool cameraCalibrationDataDeliveryEnabled;
     float simulatedAperture;
     CDStruct_1b6d18a9 videoMinFrameDurationOverride;
     float maxGainOverride;

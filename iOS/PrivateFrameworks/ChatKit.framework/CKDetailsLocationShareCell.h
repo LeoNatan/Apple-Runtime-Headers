@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 + (double)preferredHeight;
 + (_Bool)shouldHighlight;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *timeRemainingLabel; // @synthesize timeRemainingLabel=_timeRemainingLabel;
 @property(nonatomic) double offerTimeRemaining; // @synthesize offerTimeRemaining=_offerTimeRemaining;
 @property(nonatomic) _Bool showOfferTimeRemaining; // @synthesize showOfferTimeRemaining=_showOfferTimeRemaining;
-- (void).cxx_destruct;
 - (id)timeStringForTimeInterval:(double)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

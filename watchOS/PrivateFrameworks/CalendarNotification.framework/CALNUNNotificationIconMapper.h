@@ -13,8 +13,8 @@
     CALNNotificationIconCache *_notificationIconCache;
 }
 
-@property(readonly, nonatomic) CALNNotificationIconCache *notificationIconCache; // @synthesize notificationIconCache=_notificationIconCache;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CALNNotificationIconCache *notificationIconCache; // @synthesize notificationIconCache=_notificationIconCache;
 - (id)unNotificationIconFromIconIdentifier:(id)arg1;
 - (id)iconIdentifierFromUNNotificationIcon:(id)arg1;
 - (id)initWithNotificationIconCache:(id)arg1;

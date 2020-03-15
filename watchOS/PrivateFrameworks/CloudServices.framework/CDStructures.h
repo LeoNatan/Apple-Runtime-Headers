@@ -48,3 +48,11 @@ struct ccsrp_ctx {
     unsigned int _field6[1];
 };
 
+struct ckvr_srp_context {
+    struct ccrng_state *_field1;
+    struct ccdigest_info *_field2;
+    struct ccmode_cbc *_field3;
+    struct ccmode_cbc *_field4;
+    struct ccsrp_ctx *_field5;
+};
+

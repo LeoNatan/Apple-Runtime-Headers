@@ -20,10 +20,10 @@
 + (id)customWallpaperWithAssetIdentifier:(id)arg1;
 + (struct CGSize)contentSizeForWallpaper;
 + (struct CGSize)size;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 @property(copy, nonatomic) HFCroppedWallpaperInfo *cropInfo; // @synthesize cropInfo=_cropInfo;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)sliceIdentifierForVariant:(long long)arg1;
 - (id)wallpaperIdentifier;
 - (id)dictionaryRepresentation;

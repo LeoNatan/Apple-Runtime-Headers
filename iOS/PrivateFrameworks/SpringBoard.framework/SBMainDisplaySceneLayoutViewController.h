@@ -12,7 +12,7 @@
 #import <SpringBoard/SBSceneHandleObserver-Protocol.h>
 #import <SpringBoard/TFBetaLaunchHandleActivationDelegate-Protocol.h>
 
-@class FBScene, NSArray, NSLayoutConstraint, NSMutableSet, NSObject, NSString, SBFHomeGrabberSettings, SBHomeGrabberRotationView, SBHomeGrabberView, SBKeyboardHomeAffordanceAssertion, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutGestureManager, SBMainDisplaySceneLayoutStatusBarView, SBOrientationTransformWrapperView, SBSceneHandleBlockObserver, SBSeparatorView, UIApplicationSceneClientSettingsDiffInspector, UIView;
+@class FBScene, NSArray, NSLayoutConstraint, NSMutableSet, NSObject, NSString, SBFHomeGrabberSettings, SBHomeGrabberRotationView, SBHomeGrabberView, SBKeyboardHomeAffordanceAssertion, SBMainDisplayLayoutState, SBMainDisplaySceneLayoutGestureManager, SBMainDisplaySceneLayoutStatusBarView, SBMedusaSettings, SBOrientationTransformWrapperView, SBSceneHandleBlockObserver, SBSeparatorView, UIApplicationSceneClientSettingsDiffInspector, UIView;
 @protocol BSInvalidatable, OS_dispatch_queue;
 
 @interface SBMainDisplaySceneLayoutViewController : SBSceneLayoutViewController <SBMainDisplaySceneLayoutStatusBarViewDataSource, PTSettingsKeyObserver, SBSceneHandleObserver, TFBetaLaunchHandleActivationDelegate, SBDeviceApplicationSceneStatusBarBreadcrumbProviderObserver>
@@ -39,6 +39,7 @@
     NSLayoutConstraint *_homeGrabberBottomConstraint;
     NSLayoutConstraint *_homeGrabberLeftConstraint;
     NSLayoutConstraint *_homeGrabberRightConstraint;
+    SBMedusaSettings *_medusaSettings;
     _Bool __preventsCornerRadiusUpdate;
     double _separatorViewAlpha;
     unsigned long long _nubStyle;
@@ -47,13 +48,13 @@
     NSString *_keyboardFocusSceneID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_keyboardFocusSceneID, setter=_setKeyboardFocusSceneID:) NSString *keyboardFocusSceneID; // @synthesize keyboardFocusSceneID=_keyboardFocusSceneID;
 @property(nonatomic, setter=_setPreventsCornerRadiusUpdate:) _Bool _preventsCornerRadiusUpdate; // @synthesize _preventsCornerRadiusUpdate=__preventsCornerRadiusUpdate;
 @property(readonly, nonatomic) SBHomeGrabberRotationView *homeGrabberRotationView; // @synthesize homeGrabberRotationView=_homeGrabberRotationView;
 @property(retain, nonatomic) id <BSInvalidatable> pushPopWallpaperRequireAssertion; // @synthesize pushPopWallpaperRequireAssertion=_pushPopWallpaperRequireAssertion;
 @property(nonatomic, setter=_setNubStyle:) unsigned long long _nubStyle; // @synthesize _nubStyle;
 @property(nonatomic, setter=_setSeparatorViewAlpha:) double _separatorViewAlpha; // @synthesize _separatorViewAlpha;
-- (void).cxx_destruct;
 - (struct CGSize)_layoutSizeForLayoutRole:(long long)arg1 spaceConfiguration:(long long)arg2 interfaceOrientation:(long long)arg3 frameOptions:(unsigned long long)arg4;
 - (struct CGRect)_layoutFrameForLayoutRole:(long long)arg1 inLayoutState:(id)arg2;
 - (unsigned int)_convertAnchorEdge:(unsigned int)arg1 toLayoutOrientation:(long long)arg2;

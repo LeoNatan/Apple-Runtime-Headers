@@ -19,8 +19,8 @@
 + (id)_sectionTitleForCharacteristic:(id)arg1 latestResults:(id)arg2;
 + (id)_longformTitleForCharacteristic:(id)arg1 latestResults:(id)arg2;
 + (id)_shortformTitleForLatestResults:(id)arg1;
-@property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) HMCharacteristic *characteristic;
 - (id)initWithCharacteristics:(id)arg1 thresholdValueRange:(id)arg2;

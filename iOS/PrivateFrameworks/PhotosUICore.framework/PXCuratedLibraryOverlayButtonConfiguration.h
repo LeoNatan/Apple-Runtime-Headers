@@ -35,6 +35,7 @@
 + (id)configurationWithIconImageName:(id)arg1 title:(id)arg2 spec:(id)arg3;
 + (id)configurationWithTitle:(id)arg1 spec:(id)arg2;
 + (id)configurationWithIconImageName:(id)arg1 spec:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(copy, nonatomic) NSSet *possibleTitles; // @synthesize possibleTitles=_possibleTitles;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(retain, nonatomic) PXCuratedLibraryActionPerformer *actionPerformer; // @synthesize actionPerformer=_actionPerformer;
 @property(readonly, nonatomic) PXCuratedLibrarySectionHeaderLayoutSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *highlightedIconImage; // @synthesize highlightedIconImage=_highlightedIconImage;
 @property(readonly, nonatomic) UIImage *tintedIconImage; // @synthesize tintedIconImage=_tintedIconImage;
 - (id)_tintedImage:(id)arg1 name:(id)arg2 withColor:(id)arg3;

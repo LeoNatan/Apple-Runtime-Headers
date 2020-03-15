@@ -22,13 +22,14 @@
 }
 
 + (id)bestDepthFormatForDeviceFormat:(id)arg1;
++ (id)supportedVideoFormatsForDevicePosition:(long long)arg1 deviceType:(id)arg2 videoBinned:(_Bool)arg3;
 + (id)supportedVideoFormatsForDevicePosition:(long long)arg1 deviceType:(id)arg2;
 + (id)bestVideoFormatForDevicePosition:(long long)arg1 deviceType:(id)arg2 resolution:(CDStruct_1ef3fb1f)arg3 frameRate:(double)arg4 videoBinned:(_Bool)arg5;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *captureDeviceType; // @synthesize captureDeviceType=_captureDeviceType;
 @property(retain, nonatomic) AVCaptureDeviceFormat *depthDataFormat; // @synthesize depthDataFormat=_depthDataFormat;
 @property(retain, nonatomic) NSArray *frameRatesByPowerUsage; // @synthesize frameRatesByPowerUsage=_frameRatesByPowerUsage;
 @property(readonly, nonatomic) long long captureDevicePosition; // @synthesize captureDevicePosition=_captureDevicePosition;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize imageResolution;
 @property(readonly, nonatomic) AVCaptureDeviceFormat *deviceFormat;
 @property(readonly, nonatomic) AVCaptureDevice *device;

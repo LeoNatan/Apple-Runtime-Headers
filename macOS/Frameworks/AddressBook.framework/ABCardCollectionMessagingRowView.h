@@ -14,9 +14,9 @@
     NSTextField *_messagingServiceLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *messagingServiceChooserPopup; // @synthesize messagingServiceChooserPopup=_messagingServiceChooserPopup;
 @property(retain) NSTextField *messagingServiceLabel; // @synthesize messagingServiceLabel=_messagingServiceLabel;
-- (void).cxx_destruct;
 - (void)updateValueFontWithFont:(id)arg1;
 - (void)updateTextColors;
 - (void)setServicePopUpEnabled:(BOOL)arg1;

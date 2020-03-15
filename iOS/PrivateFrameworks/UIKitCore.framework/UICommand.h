@@ -26,6 +26,7 @@
 + (id)commandWithTitle:(id)arg1 image:(id)arg2 action:(SEL)arg3 propertyList:(id)arg4;
 + (id)_defaultCommandForAction:(SEL)arg1;
 + (id)_defaultCommands;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id _target; // @synthesize _target=__target;
 @property(readonly, nonatomic) NSArray *alternates; // @synthesize alternates=_alternates;
 @property(nonatomic) long long state; // @synthesize state=_state;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) id propertyList; // @synthesize propertyList=_propertyList;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *discoverabilityTitle; // @synthesize discoverabilityTitle=_discoverabilityTitle;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

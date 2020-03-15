@@ -9,6 +9,8 @@
 @class NSMenuItem;
 
 @protocol ABUserInterfaceAction <NSObject>
+@property(nonatomic) BOOL executionWasAuthorized;
+@property(readonly, nonatomic) BOOL requiresAuthorizationBeforeExecution;
 - (void)performWithSender:(id)arg1;
 - (BOOL)validateWithMenuItem:(NSMenuItem *)arg1;
 @end

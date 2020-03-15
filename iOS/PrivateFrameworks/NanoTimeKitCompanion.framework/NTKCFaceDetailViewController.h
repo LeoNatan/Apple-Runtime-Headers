@@ -52,6 +52,7 @@
     struct CGSize _headerFaceSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCFaceContainerView *faceContainer; // @synthesize faceContainer=_faceContainer;
 @property(readonly, nonatomic) _Bool faceHasBeenEdited; // @synthesize faceHasBeenEdited=_faceHasBeenEdited;
 @property(retain, nonatomic) UITableViewCell *editOptionToMakeFullyVisible; // @synthesize editOptionToMakeFullyVisible=_editOptionToMakeFullyVisible;
@@ -78,7 +79,6 @@
 @property(nonatomic) _Bool shared; // @synthesize shared=_shared;
 @property(nonatomic) __weak id <NTKCFaceDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NTKFace *face; // @synthesize face=_face;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UITableView *ntk_tableView;
 - (void)actionSectionDidDelete:(id)arg1;
 - (void)actionSectionDidSelect:(id)arg1;
@@ -118,7 +118,7 @@
 - (void)_addTapped;
 - (_Bool)_hasRemovedSystemApp;
 - (void)_updateAddButton;
-- (id)_facesUnsupportedByWatchOSVersion:(unsigned int)arg1;
+- (id)_facesUnsupportedByDevice:(id)arg1;
 - (void)_setFaceHasBeenEdited;
 - (_Bool)_isEditOptionFullyVisible:(id)arg1;
 - (void)_setEditOption:(id)arg1 forMode:(long long)arg2;

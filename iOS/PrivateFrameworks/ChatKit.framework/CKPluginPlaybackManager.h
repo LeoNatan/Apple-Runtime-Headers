@@ -17,10 +17,10 @@
     NSMutableArray *__pluginItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPluginItems:) NSMutableArray *_pluginItems; // @synthesize _pluginItems=__pluginItems;
 @property(nonatomic, setter=_setPlayingBack:) _Bool isPlayingBack; // @synthesize isPlayingBack=_isPlayingBack;
 @property(nonatomic) __weak id <CKPluginPlaybackManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)stopPlayback;
 - (void)addPluginItem:(id)arg1;

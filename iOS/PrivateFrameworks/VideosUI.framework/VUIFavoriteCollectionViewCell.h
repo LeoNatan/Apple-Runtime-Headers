@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUIFavoriteView *favoriteView; // @synthesize favoriteView=_favoriteView;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;

@@ -23,6 +23,7 @@
 }
 
 + (void)registerForTableView:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCFaceDetailSectionHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) NSMutableArray *rows; // @synthesize rows=_rows;
 @property(retain, nonatomic) NTKCDetailTableViewCell *cell; // @synthesize cell=_cell;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak NTKFace *face; // @synthesize face=_face;
 @property(readonly, nonatomic) NSString *titleForHeader; // @synthesize titleForHeader=_titleForHeader;
 @property(nonatomic) long long section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (id)_groupName;
 @property(readonly, nonatomic) __weak UITableView *tableView;
 - (id)_newSectionHeader;

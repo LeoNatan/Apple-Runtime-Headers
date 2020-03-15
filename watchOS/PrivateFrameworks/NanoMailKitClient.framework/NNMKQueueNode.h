@@ -12,9 +12,9 @@
     NNMKQueueNode *_nextNode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKQueueNode *nextNode; // @synthesize nextNode=_nextNode;
 @property(retain, nonatomic) NSObject *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1;
 
 @end

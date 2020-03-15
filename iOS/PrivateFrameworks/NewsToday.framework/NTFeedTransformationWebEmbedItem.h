@@ -16,8 +16,8 @@
     NTPBTodaySectionConfigWebEmbed *_webEmbed;
 }
 
-@property(readonly, copy, nonatomic) NTPBTodaySectionConfigWebEmbed *webEmbed; // @synthesize webEmbed=_webEmbed;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NTPBTodaySectionConfigWebEmbed *webEmbed; // @synthesize webEmbed=_webEmbed;
 - (id)protoitemWithFetchedFeedItemHeadline:(id)arg1;
 @property(readonly, copy, nonatomic) NTPBFeedItem *feedItemForHeadlineFetch;
 @property(readonly, nonatomic) _Bool needsFeedItemHeadlinesFetch;

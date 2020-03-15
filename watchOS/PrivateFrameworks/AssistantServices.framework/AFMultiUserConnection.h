@@ -7,10 +7,12 @@
 #import <objc/NSObject.h>
 
 @class NSXPCConnection;
+@protocol OS_dispatch_queue;
 
 @interface AFMultiUserConnection : NSObject
 {
     NSXPCConnection *_connection;
+    NSObject<OS_dispatch_queue> *_targetQueue;
 }
 
 - (void).cxx_destruct;
@@ -20,6 +22,7 @@
 - (void)getSharedUserIdForHomeUserId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHomeUserIdForSharedUserId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_multiUserServiceWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)_connection;
 - (void)_clearConnection;
 - (void)dealloc;
 - (id)init;

@@ -20,8 +20,8 @@
 }
 
 + (id)sharedPredictor;
-@property(retain, nonatomic) id <MKMapsSuggestionsSignalPackCacheInterface> signalPackCacheInterface; // @synthesize signalPackCacheInterface=_signalPackCacheInterface;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MKMapsSuggestionsSignalPackCacheInterface> signalPackCacheInterface; // @synthesize signalPackCacheInterface=_signalPackCacheInterface;
 - (void)_unscheduleCloseConnection;
 - (void)_scheduleCloseConnection;
 - (void)_initCloseTimerIfNecessary;

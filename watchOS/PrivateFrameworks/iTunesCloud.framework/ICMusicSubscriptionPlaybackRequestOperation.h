@@ -25,6 +25,7 @@
     long long _storePurchasedAdamID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cloudUniversalLibraryID; // @synthesize cloudUniversalLibraryID=_cloudUniversalLibraryID;
 @property(nonatomic) long long storePurchasedAdamID; // @synthesize storePurchasedAdamID=_storePurchasedAdamID;
 @property(nonatomic) long long storeSubscriptionAdamID; // @synthesize storeSubscriptionAdamID=_storeSubscriptionAdamID;
@@ -35,7 +36,6 @@
 @property(nonatomic) int requestType; // @synthesize requestType=_requestType;
 @property(nonatomic, getter=isDelegatedPlayback) _Bool delegatedPlayback; // @synthesize delegatedPlayback=_delegatedPlayback;
 @property(copy, nonatomic) NSString *assetSourceStorefrontID; // @synthesize assetSourceStorefrontID=_assetSourceStorefrontID;
-- (void).cxx_destruct;
 - (void)start;
 - (void)cancel;
 - (id)init;

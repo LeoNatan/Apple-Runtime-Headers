@@ -16,9 +16,9 @@
     int _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(copy, nonatomic) NTKComplicationLayoutRule *layoutRule; // @synthesize layoutRule=_layoutRule;
-- (void).cxx_destruct;
 - (void)setCurvedAngle:(float)arg1;
 - (void)layoutSubviews;
 

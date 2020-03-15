@@ -30,6 +30,7 @@
     unsigned long long _logMessageCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool verbose; // @synthesize verbose=_verbose;
 @property(readonly, nonatomic) unsigned long long logMessageCount; // @synthesize logMessageCount=_logMessageCount;
 @property(readonly, nonatomic) unsigned long long messagesFiltered; // @synthesize messagesFiltered=_messagesFiltered;
@@ -44,7 +45,6 @@
 @property(nonatomic) __weak id <OSLogPersistenceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSURL *logArchive; // @synthesize logArchive=_logArchive;
 @property(copy, nonatomic) NSURL *logFile; // @synthesize logFile=_logFile;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSDictionary *statistics;
 @property(readonly, nonatomic) struct _os_timesync_db_s *timesync;
 - (void)fetchFromStartDate:(id)arg1 toEndDate:(id)arg2;

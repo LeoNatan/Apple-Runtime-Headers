@@ -30,6 +30,7 @@
     UIButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIImageView *contactsIconView; // @synthesize contactsIconView=_contactsIconView;
 @property(retain, nonatomic) UIView *avatarCutoutView; // @synthesize avatarCutoutView=_avatarCutoutView;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSArray *nicknameUpdates; // @synthesize nicknameUpdates=_nicknameUpdates;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) id <CKNicknameBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)contactStore;
 - (id)nicknameController;
 - (void)cancelButtonTapped:(id)arg1;

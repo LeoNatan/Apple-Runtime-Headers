@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _serviceToken;
 }
 
-@property(retain, nonatomic) id serviceToken; // @synthesize serviceToken=_serviceToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id serviceToken; // @synthesize serviceToken=_serviceToken;
 
 @end
 

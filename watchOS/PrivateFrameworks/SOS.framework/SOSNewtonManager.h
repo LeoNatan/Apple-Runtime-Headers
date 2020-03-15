@@ -29,10 +29,10 @@
 + (void)checkEligibilityForAutoEnableWithCompletion:(CDUnknownBlockType)arg1;
 + (void)newtonEligibilityWithHealthStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)newtonEligibilityWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property _Bool shouldAcceptNewEvents; // @synthesize shouldAcceptNewEvents=_shouldAcceptNewEvents;
 @property(retain, nonatomic) CMAnomalyManager *coreMotionAnomalyManager; // @synthesize coreMotionAnomalyManager=_coreMotionAnomalyManager;
 @property(nonatomic) __weak id <SOSNewtonManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_previouslySeenEvent;
 - (void)_persistAnomalyEventWithResponse:(int)arg1 resolution:(int)arg2;
 - (void)_invalidateTimer;

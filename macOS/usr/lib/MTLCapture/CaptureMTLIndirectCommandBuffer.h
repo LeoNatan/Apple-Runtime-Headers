@@ -47,6 +47,7 @@
 @property(readonly) id <MTLDevice> device;
 @property(readonly) unsigned long long cpuCacheMode;
 @property(readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
+@property(readonly) unsigned long long allocationID;
 @property(readonly) unsigned long long allocatedSize;
 - (BOOL)conformsToProtocol:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;

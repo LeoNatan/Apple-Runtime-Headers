@@ -18,9 +18,9 @@
 + (id)budgetNameForKey:(id)arg1;
 + (id)rateLimitsFromBudgetProperties;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *limitDictionary; // @synthesize limitDictionary=_limitDictionary;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *limiterQueue; // @synthesize limiterQueue=_limiterQueue;
-- (void).cxx_destruct;
 - (void)credit:(id)arg1 amount:(unsigned long long)arg2;
 - (unsigned long long)debit:(unsigned long long)arg1 forKey:(id)arg2;
 - (id)initWithLimits:(id)arg1;

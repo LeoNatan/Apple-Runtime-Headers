@@ -13,8 +13,8 @@
     id <CSKTextFinderDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSKTextFinderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSKTextFinderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)performAction:(long long)arg1;
 - (void)dealloc;

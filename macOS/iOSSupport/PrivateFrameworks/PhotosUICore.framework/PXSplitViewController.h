@@ -20,10 +20,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsSidebarHidden; // @synthesize wantsSidebarHidden=_wantsSidebarHidden;
 @property(readonly, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(readonly, nonatomic) UIViewController *sidebarViewController; // @synthesize sidebarViewController=_sidebarViewController;
-- (void).cxx_destruct;
 - (void)_splitViewController:(id)arg1 didEndAnimatedTransitionToStateRequest:(id)arg2;
 - (void)_splitViewController:(id)arg1 willBeginAnimatedTransitionToStateRequest:(id)arg2;
 - (void)_splitViewController:(id)arg1 willUpdateDisplayModeButtonItemForTargetMode:(long long)arg2 withHidden:(char *)arg3 image:(id *)arg4 title:(id *)arg5 showsBackButtonIndicator:(char *)arg6;

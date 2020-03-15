@@ -25,6 +25,7 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) UIImageView *explicitItemView; // @synthesize explicitItemView=_explicitItemView;
 @property(retain, nonatomic) UIImageView *artworkImageView; // @synthesize artworkImageView=_artworkImageView;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool showActivityIndicator; // @synthesize showActivityIndicator=_showActivityIndicator;
 @property(nonatomic, getter=isShowCloud) _Bool showCloud; // @synthesize showCloud=_showCloud;
 @property(nonatomic, getter=isShowExplicit) _Bool showExplicit; // @synthesize showExplicit=_showExplicit;
-- (void).cxx_destruct;
 - (void)_updatePlayingArtworkIfNeeded;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

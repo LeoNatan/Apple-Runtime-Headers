@@ -15,10 +15,10 @@
     MFEWSGetFolderResponseOperation *_changeKeysResponse;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFEWSGetFolderResponseOperation *changeKeysResponse; // @synthesize changeKeysResponse=_changeKeysResponse;
 @property(readonly, copy, nonatomic) NSString *folderName; // @synthesize folderName=_folderName;
 @property(readonly, copy, nonatomic) NSString *folderIdString; // @synthesize folderIdString=_folderIdString;
-- (void).cxx_destruct;
 - (id)prepareRequest;
 - (BOOL)isFolderRequest;
 - (id)activityString;

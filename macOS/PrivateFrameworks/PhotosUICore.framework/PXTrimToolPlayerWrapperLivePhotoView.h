@@ -25,6 +25,7 @@
     CDStruct_1b6d18a9 _periodicTimeObservationInterval;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id periodicTimeObserver; // @synthesize periodicTimeObserver=_periodicTimeObserver;
 @property(nonatomic) CDStruct_1b6d18a9 periodicTimeObservationInterval; // @synthesize periodicTimeObservationInterval=_periodicTimeObservationInterval;
 @property(nonatomic) BOOL needsPlayerUpdate; // @synthesize needsPlayerUpdate=_needsPlayerUpdate;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) ISWrappedAVPlayer *wrappedAVPlayer; // @synthesize wrappedAVPlayer=_wrappedAVPlayer;
 @property(retain, nonatomic) ISVideoPlayerNSView *_videoPlayerView; // @synthesize _videoPlayerView;
 @property(nonatomic) __weak id <PXTrimToolPlayerObserver> playerObserver; // @synthesize playerObserver=_playerObserver;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)stopPeriodicTimeObserver;
 - (void)startPeriodicTimeObserver;

@@ -21,11 +21,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HMFCFHTTPServerConnection *internal; // @synthesize internal=_internal;
 @property(readonly, nonatomic) NSMutableArray *pendingRespones; // @synthesize pendingRespones=_pendingRespones;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property __weak id <HMFHTTPClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)sendResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

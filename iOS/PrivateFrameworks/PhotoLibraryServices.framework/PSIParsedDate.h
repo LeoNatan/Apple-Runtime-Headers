@@ -15,10 +15,10 @@
     struct _NSRange _extensionRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange extensionRange; // @synthesize extensionRange=_extensionRange;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)initWithAttributes:(id)arg1 range:(struct _NSRange)arg2 extensionRange:(struct _NSRange)arg3;
 
 @end

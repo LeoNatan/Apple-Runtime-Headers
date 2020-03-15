@@ -24,6 +24,7 @@
 
 + (id)offersWithMAPIDictionaries:(id)arg1;
 + (id)offersWithSubscriptionDictionaries:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKStoreOfferPeriod *introOfferPeriod; // @synthesize introOfferPeriod=_introOfferPeriod;
 @property(readonly, nonatomic) WLKStoreOfferPeriod *freeTrialPeriod; // @synthesize freeTrialPeriod=_freeTrialPeriod;
 @property(readonly, nonatomic) WLKStoreOfferPeriod *renewalPeriod; // @synthesize renewalPeriod=_renewalPeriod;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSNumber *price; // @synthesize price=_price;
 @property(readonly, nonatomic) NSString *formattedPrice; // @synthesize formattedPrice=_formattedPrice;
 @property(readonly, nonatomic) NSString *buyParameters; // @synthesize buyParameters=_buyParameters;
-- (void).cxx_destruct;
 - (_Bool)specialOfferEligible;
 - (id)initWithMAPIDictionary:(id)arg1;
 - (id)initWithSubscriptionDictionary:(id)arg1;

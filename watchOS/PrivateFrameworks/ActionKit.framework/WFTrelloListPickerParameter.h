@@ -17,9 +17,9 @@
     id _observer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id observer; // @synthesize observer=_observer;
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;

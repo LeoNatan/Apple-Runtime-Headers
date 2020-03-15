@@ -29,6 +29,7 @@
 + (id)userInteractiveWithoutUI;
 + (id)userInteractive;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *strategyName; // @synthesize strategyName=_strategyName;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_bksFlags;
 @property(nonatomic) unsigned int reason; // @synthesize reason=_bksReason;
@@ -36,7 +37,6 @@
 @property(nonatomic) long long jetsamPolicy; // @synthesize jetsamPolicy=_jetsamPolicy;
 @property(nonatomic) long long graphicsPolicy; // @synthesize graphicsPolicy=_graphicsPolicy;
 @property(nonatomic) long long schedulingPolicy; // @synthesize schedulingPolicy=_schedulingPolicy;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

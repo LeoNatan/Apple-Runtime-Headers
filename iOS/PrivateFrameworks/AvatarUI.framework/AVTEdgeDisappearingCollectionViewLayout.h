@@ -15,10 +15,10 @@
     UICollectionViewLayoutAttributes *_fixedHeaderLayoutAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *fixedHeaderLayoutAttributes; // @synthesize fixedHeaderLayoutAttributes=_fixedHeaderLayoutAttributes;
 @property(nonatomic) _Bool pinHeaderToVisible; // @synthesize pinHeaderToVisible=_pinHeaderToVisible;
 @property(nonatomic) _Bool enableEdgeDisappearing; // @synthesize enableEdgeDisappearing=_enableEdgeDisappearing;
-- (void).cxx_destruct;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (void)modifyLayoutAttributes:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

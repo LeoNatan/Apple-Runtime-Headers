@@ -17,12 +17,12 @@
     NSCondition *_conditionLock;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSCondition *conditionLock; // @synthesize conditionLock=_conditionLock;
 @property(retain) NSArray *errors; // @synthesize errors=_errors;
 @property(readonly, copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly) int remainingTaskCount; // @synthesize remainingTaskCount=_remainingTaskCount;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)description;
 - (void)executeCriticalBlock:(CDUnknownBlockType)arg1;
 - (void)setRemainingTaskCount:(int)arg1;

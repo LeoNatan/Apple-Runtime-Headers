@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)dbValue:(id)arg1 type:(id)arg2 value:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, nonatomic) __weak GEODefaultsDBCollection *parent; // @synthesize parent=_parent;
 @property(nonatomic) long long dbId; // @synthesize dbId=_dbId;
-- (void).cxx_destruct;
 - (id)initWithParent:(id)arg1 type:(id)arg2 value:(id)arg3;
 
 @end

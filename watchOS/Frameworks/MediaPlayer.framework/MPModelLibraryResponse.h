@@ -16,9 +16,9 @@
     MPMediaLibraryConnectionAssertion *_libraryAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPMediaLibraryConnectionAssertion *libraryAssertion; // @synthesize libraryAssertion=_libraryAssertion;
 @property(copy, nonatomic) NSArray *sectionKeepLocalStatusConfigurations; // @synthesize sectionKeepLocalStatusConfigurations=_sectionKeepLocalStatusConfigurations;
-- (void).cxx_destruct;
 - (id)newOperationForDetailedKeepLocalStatusConfigurationForSectionAtIndex:(int)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)dealloc;

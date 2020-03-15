@@ -29,6 +29,7 @@
     NSNumber *_rank;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *rank; // @synthesize rank=_rank;
 @property(readonly, copy, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 @property(readonly, copy, nonatomic) NSArray *defaultValueSelectorStrings; // @synthesize defaultValueSelectorStrings=_defaultValueSelectorStrings;
@@ -42,7 +43,6 @@
 @property(readonly, copy, nonatomic) NSString *facadePropertyName; // @synthesize facadePropertyName=_facadePropertyName;
 @property(readonly, nonatomic) unsigned long long tag; // @synthesize tag=_tag;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -53,6 +53,7 @@
 - (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 valueType:(long long)arg5 valueStyle:(long long)arg6 isExtended:(_Bool)arg7 isPrivate:(_Bool)arg8 resolveSelectors:(SEL)arg9;
 - (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 isExtended:(_Bool)arg5 isPrivate:(_Bool)arg6 valueType:(long long)arg7 valueStyle:(long long)arg8 codableAttribute:(id)arg9 defaultValueSelectorStrings:(id)arg10 provideOptionsSelectorStrings:(id)arg11 resolutionResultClass:(Class)arg12 resolveSelectors:(SEL)arg13;
 @property(readonly, nonatomic) _Bool isEnum;
+- (id)localizeValue:(id)arg1 withLocalizer:(id)arg2;
 - (id)localizeValue:(id)arg1 forLanguage:(id)arg2;
 - (void)setValue:(id)arg1 forSlotComposer:(id)arg2;
 - (id)valueForSlotComposer:(id)arg1;

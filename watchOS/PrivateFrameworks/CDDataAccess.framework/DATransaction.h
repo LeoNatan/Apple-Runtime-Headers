@@ -14,9 +14,9 @@
     NSString *_transactionId;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *transactionId; // @synthesize transactionId=_transactionId;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initWithLabel:(id)arg1;
 - (id)init;
 - (void)dealloc;

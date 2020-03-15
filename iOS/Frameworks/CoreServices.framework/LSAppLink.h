@@ -34,10 +34,10 @@
 + (id)_dispatchQueue;
 + (id)_appLinksWithState:(id)arg1 context:(struct LSContext *)arg2 limit:(unsigned long long)arg3 URLComponents:(id)arg4 error:(id *)arg5;
 + (_Bool)URLComponentsAreValidForAppLinks:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) _LSValidationToken *_validationToken; // @synthesize _validationToken=__validationToken;
 @property(retain) LSApplicationProxy *targetApplicationProxy; // @synthesize targetApplicationProxy=_targetApplicationProxy;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)_validationTokenPayload;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

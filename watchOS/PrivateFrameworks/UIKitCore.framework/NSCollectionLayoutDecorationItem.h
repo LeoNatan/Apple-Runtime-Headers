@@ -23,13 +23,13 @@
 
 + (id)decorationItemWithSize:(id)arg1 elementKind:(id)arg2 containerAnchor:(id)arg3;
 + (id)backgroundDecorationItemWithElementKind:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setRegistrationViewClass:) Class _registrationViewClass; // @synthesize _registrationViewClass=__registrationViewClass;
 @property(readonly, nonatomic) _Bool isBackgroundDecoration; // @synthesize isBackgroundDecoration=_isBackgroundDecoration;
 @property(retain, nonatomic) NSCollectionLayoutAnchor *itemAnchor; // @synthesize itemAnchor=_itemAnchor;
 @property(retain, nonatomic) NSCollectionLayoutAnchor *containerAnchor; // @synthesize containerAnchor=_containerAnchor;
 @property(retain, nonatomic) NSString *elementKind; // @synthesize elementKind=_elementKind;
 @property(nonatomic) int zIndex; // @synthesize zIndex=_zIndex;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCollectionLayoutDecorationItem *decorationItem;
 @property(readonly, nonatomic) NSCollectionLayoutBoundarySupplementaryItem *boundarySupplementaryItem;
 @property(readonly, nonatomic) NSCollectionLayoutSupplementaryItem *supplementaryItem;

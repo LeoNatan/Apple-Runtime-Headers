@@ -22,6 +22,7 @@
     unsigned long long _client;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long client; // @synthesize client=_client;
 @property(nonatomic) _Bool filterUtilityAssets; // @synthesize filterUtilityAssets=_filterUtilityAssets;
 @property(retain, nonatomic) PGCurationContentOrAestheticScoreTrait *contentOrAestheticScoreTrait; // @synthesize contentOrAestheticScoreTrait=_contentOrAestheticScoreTrait;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) PGCurationIndexSetTrait *scenesTrait; // @synthesize scenesTrait=_scenesTrait;
 @property(retain, nonatomic) PGCurationIndexSetTrait *compulsoryScenesTrait; // @synthesize compulsoryScenesTrait=_compulsoryScenesTrait;
 @property(nonatomic) double minimumAssetsRatio; // @synthesize minimumAssetsRatio=_minimumAssetsRatio;
-- (void).cxx_destruct;
 - (id)peopleTraitString;
 @property(readonly) NSString *niceDescription;
 - (double)_scoreForSceneClassifications:(id)arg1 withScenesTrait:(id)arg2 traitFailed:(_Bool *)arg3;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSArray *_allExistingViews;
 }
 
-@property(readonly, nonatomic) NSArray *allExistingViews; // @synthesize allExistingViews=_allExistingViews;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *allExistingViews; // @synthesize allExistingViews=_allExistingViews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)registerClass:(Class)arg1 forViewWithReuseIdentifier:(id)arg2;
 - (void)modifyUsingBlock:(CDUnknownBlockType)arg1;

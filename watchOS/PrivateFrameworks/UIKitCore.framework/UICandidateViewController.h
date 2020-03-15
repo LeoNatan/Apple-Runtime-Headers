@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UIView *_candidateView;
 }
 
-@property(retain, nonatomic) UIView *candidateView; // @synthesize candidateView=_candidateView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *candidateView; // @synthesize candidateView=_candidateView;
 - (void)viewDidLayoutSubviews;
 - (int)overrideUserInterfaceStyle;
 - (void)viewWillAppear:(_Bool)arg1;

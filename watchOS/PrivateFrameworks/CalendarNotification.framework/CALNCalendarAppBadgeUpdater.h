@@ -14,9 +14,9 @@
     UISApplicationState *_applicationState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISApplicationState *applicationState; // @synthesize applicationState=_applicationState;
 @property(readonly, nonatomic) CALNInboxNotificationMonitor *inboxNotificationMonitor; // @synthesize inboxNotificationMonitor=_inboxNotificationMonitor;
-- (void).cxx_destruct;
 - (void)handleNotificationCountChangedNotification:(id)arg1;
 - (id)initWithInboxNotificationMonitor:(id)arg1;
 

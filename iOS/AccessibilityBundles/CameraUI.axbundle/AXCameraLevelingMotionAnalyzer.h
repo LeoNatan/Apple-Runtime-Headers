@@ -18,10 +18,10 @@
 + (double)_offsetFromLevelForOrientation:(long long)arg1 rotation:(double)arg2 shift:(double)arg3;
 + (long long)_deviceOrientationForRotation:(double)arg1 shift:(double)arg2;
 + (long long)_levelZoneForDeviceMotion:(id)arg1 previousZone:(long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double _lastUnstableMotionTimestamp; // @synthesize _lastUnstableMotionTimestamp=__lastUnstableMotionTimestamp;
 @property(nonatomic) _Bool _cameraStableForLeveling; // @synthesize _cameraStableForLeveling=__cameraStableForLeveling;
 @property(retain, nonatomic) CMDeviceMotion *_lastDeviceMotion; // @synthesize _lastDeviceMotion=__lastDeviceMotion;
-- (void).cxx_destruct;
 - (void)_updateCameraStableForMotion:(id)arg1 previousMotion:(id)arg2;
 - (long long)updateWithDeviceMotion:(id)arg1 previousZone:(long long)arg2;
 - (void)reset;

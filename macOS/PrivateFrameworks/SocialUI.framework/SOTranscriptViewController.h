@@ -32,13 +32,13 @@
 + (void)setDefaultTranscriptViewControllerName:(id)arg1;
 + (id)defaultTranscriptViewControllerName;
 + (void)registerTranscriptClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSOrderedSet *selectedChatItemGUIDs; // @synthesize selectedChatItemGUIDs=_selectedChatItemGUIDs;
 @property(copy, nonatomic) NSOrderedSet *selectedMessages; // @synthesize selectedMessages=_selectedMessages;
 @property(nonatomic) SOStickerViewerController *stickerViewerController; // @synthesize stickerViewerController=_stickerViewerController;
 @property(readonly) IMAggregateAcknowledgmentChatItem *groupAcknowledgmentsPoll; // @synthesize groupAcknowledgmentsPoll=_groupAcknowledgmentsPoll;
 @property(copy, nonatomic) NSString *displayedAckPickerChatItemGUID; // @synthesize displayedAckPickerChatItemGUID=_displayedAckPickerChatItemGUID;
 @property __weak SOInputLineViewController *inputLineViewController; // @synthesize inputLineViewController=_inputLineViewController;
-- (void).cxx_destruct;
 - (void)stickerViewerController:(id)arg1 willDeleteStickers:(id)arg2;
 - (void)showStickerViewer:(id)arg1;
 - (id)makeTouchBar;

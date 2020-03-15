@@ -35,10 +35,10 @@
 + (Class)frozenClass;
 + (id)itemWithIdentifier:(id)arg1 inStore:(id)arg2;
 + (id)reminderWithEventStore:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
 @property(copy, nonatomic) NSDateComponents *startDateComponents; // @synthesize startDateComponents=_startDateComponents;
 @property(readonly, nonatomic) BOOL cachedHasLocationAlarm; // @synthesize cachedHasLocationAlarm;
-- (void).cxx_destruct;
 - (BOOL)_validateEntityTypeIsSupported:(id *)arg1;
 - (id)humanReadableRecurrenceDescription;
 - (id)prepareReminderKitObjectForSaveWithUpdatedBackingObjectProvider:(id)arg1;

@@ -19,8 +19,8 @@
 }
 
 + (id)sharedClient;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *_scriptDispatchQueue; // @synthesize _scriptDispatchQueue=__scriptDispatchQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *_scriptDispatchQueue; // @synthesize _scriptDispatchQueue=__scriptDispatchQueue;
 - (_Bool)runScriptFile:(id)arg1;
 - (void)handleCallback:(id)arg1;
 - (_Bool)_isReady;

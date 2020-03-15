@@ -14,8 +14,8 @@
     id <HFItemUpdating> _itemUpdater;
 }
 
-@property(readonly, nonatomic) __weak id <HFItemUpdating> itemUpdater; // @synthesize itemUpdater=_itemUpdater;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <HFItemUpdating> itemUpdater; // @synthesize itemUpdater=_itemUpdater;
 - (void)unregisterForExternalUpdates;
 - (void)registerForExternalUpdates;
 - (_Bool)containsItem:(id)arg1;

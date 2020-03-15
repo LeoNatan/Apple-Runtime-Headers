@@ -15,8 +15,8 @@
     WFDrawerController *_drawerController;
 }
 
-@property(nonatomic) __weak WFDrawerController *drawerController; // @synthesize drawerController=_drawerController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFDrawerController *drawerController; // @synthesize drawerController=_drawerController;
 - (id)accessibilityCustomActions;
 - (BOOL)accessibilityExpandDrawer;
 - (BOOL)accessibilityCollapseDrawer;

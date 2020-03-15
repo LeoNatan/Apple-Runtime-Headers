@@ -16,11 +16,11 @@
     NSArray *_suggestions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL dryRun; // @synthesize dryRun=_dryRun;
 @property(readonly, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(readonly, nonatomic) _PSMapsPredictionContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) _PSMapsFeedbackAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)knowledgeEvent;
 - (id)feedbackPayload;
 - (id)getTrialID;

@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *networkFingerprint; // @synthesize networkFingerprint=_networkFingerprint;
 @property(readonly, nonatomic) NSDate *timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(readonly, nonatomic) NSString *code; // @synthesize code=_code;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (double)age;

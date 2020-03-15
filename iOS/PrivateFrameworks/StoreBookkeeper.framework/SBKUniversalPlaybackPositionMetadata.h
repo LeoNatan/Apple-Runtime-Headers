@@ -29,11 +29,11 @@
 + (id)_testableMetadataItem_1;
 + (_Bool)supportsSecureCoding;
 + (id)pairWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
+- (void).cxx_destruct;
 @property unsigned long long playCount; // @synthesize playCount=_playCount;
 @property _Bool hasBeenPlayed; // @synthesize hasBeenPlayed=_hasBeenPlayed;
 @property double bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
 @property(copy) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (id)kvsValueDescription;
 - (id)kvsPayload;
 - (id)kvsKey;

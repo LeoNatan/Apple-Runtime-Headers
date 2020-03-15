@@ -25,6 +25,7 @@
     struct NSEdgeInsets _squareEdgeMargins;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXCuratedLibraryInlineHeadersLayoutSpec *inlineHeadersSpec; // @synthesize inlineHeadersSpec=_inlineHeadersSpec;
 @property(readonly, nonatomic) NSArray *supportedColumns; // @synthesize supportedColumns=_supportedColumns;
 @property(readonly, nonatomic) BOOL allowsAspectFit; // @synthesize allowsAspectFit=_allowsAspectFit;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) long long maxColumnsForIndividualItems; // @synthesize maxColumnsForIndividualItems=_maxColumnsForIndividualItems;
 @property(readonly, nonatomic) long long initialNumberOfColumns; // @synthesize initialNumberOfColumns=_initialNumberOfColumns;
 @property(readonly, nonatomic) long long defaultNumberOfColumns; // @synthesize defaultNumberOfColumns=_defaultNumberOfColumns;
-- (void).cxx_destruct;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2 availableThumbnailSizes:(id)arg3;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 

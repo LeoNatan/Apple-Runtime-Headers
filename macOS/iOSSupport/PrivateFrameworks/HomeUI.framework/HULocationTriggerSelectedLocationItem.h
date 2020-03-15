@@ -13,8 +13,8 @@
     HFLocationTriggerBuilder *_triggerBuilder;
 }
 
-@property(readonly, nonatomic) HFLocationTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HFLocationTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (BOOL)_locationIsHome;
 - (id)_locationTitle;
 @property(readonly, nonatomic) BOOL locationCanBeEdited;

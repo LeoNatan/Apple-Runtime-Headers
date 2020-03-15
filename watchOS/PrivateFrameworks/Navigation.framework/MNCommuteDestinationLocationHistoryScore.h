@@ -20,10 +20,10 @@
 }
 
 + (double)weight;
+- (void).cxx_destruct;
 @property(nonatomic) double scoredTimeInterval; // @synthesize scoredTimeInterval=_scoredTimeInterval;
 @property(nonatomic) double scoredDistance; // @synthesize scoredDistance=_scoredDistance;
 @property(copy, nonatomic) NSArray *locationHistory; // @synthesize locationHistory=_locationHistory;
-- (void).cxx_destruct;
 - (void)updateLocationHistory:(id)arg1;
 - (int)_scoreForDistance:(double)arg1 timeInterval:(double)arg2;
 - (id)descriptionExtras;

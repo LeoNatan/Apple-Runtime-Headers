@@ -19,12 +19,12 @@
 
 + (id)convertChannels:(id)arg1;
 + (id)channelWithChannel:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *owningPortUID; // @synthesize owningPortUID=_owningPortUID;
 @property(nonatomic) unsigned int channelLabel; // @synthesize channelLabel=_channelLabel;
 @property(nonatomic) unsigned long long channelNumber; // @synthesize channelNumber=_channelNumber;
 @property(retain, nonatomic) NSString *channelName; // @synthesize channelName=_channelName;
 @property(retain, nonatomic) AVAudioSessionChannelDescription *channel; // @synthesize channel=_channel;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (_Bool)isEqual:(id)arg1;

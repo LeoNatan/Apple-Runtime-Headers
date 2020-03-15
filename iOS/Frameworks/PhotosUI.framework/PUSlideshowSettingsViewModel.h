@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     PUSlideshowMediaItem *_mediaItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMusicOn) _Bool musicOn; // @synthesize musicOn=_musicOn;
 @property(nonatomic) _Bool shouldRepeat; // @synthesize shouldRepeat=_shouldRepeat;
 @property(retain, nonatomic) PUSlideshowMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) OKProducerPreset *preset; // @synthesize preset=_preset;
 @property(nonatomic) double stepDuration; // @synthesize stepDuration=_stepDuration;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

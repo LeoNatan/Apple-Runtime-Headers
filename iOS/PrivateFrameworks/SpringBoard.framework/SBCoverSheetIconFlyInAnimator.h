@@ -19,9 +19,9 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *labelAlphaDrivingProgressAnimatableProperty; // @synthesize labelAlphaDrivingProgressAnimatableProperty=_labelAlphaDrivingProgressAnimatableProperty;
-- (void).cxx_destruct;
 - (double)_functionWithProgress:(double)arg1 distance:(double)arg2;
 - (void)_updateWithSettings:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;

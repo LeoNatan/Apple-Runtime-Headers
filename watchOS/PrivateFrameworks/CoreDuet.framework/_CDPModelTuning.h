@@ -26,13 +26,13 @@
 + (CDUnknownBlockType)fScoreWithBeta:(float)arg1;
 + (CDUnknownBlockType)f2Score;
 + (CDUnknownBlockType)f1Score;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int numberOfGridTests; // @synthesize numberOfGridTests=_numberOfGridTests;
 @property(retain, nonatomic) NSIndexSet *testIndices; // @synthesize testIndices=_testIndices;
 @property(retain, nonatomic) _CDPSimpleModel *model; // @synthesize model=_model;
 @property(copy, nonatomic) CDUnknownBlockType heartBeat; // @synthesize heartBeat=_heartBeat;
 @property(copy, nonatomic) CDUnknownBlockType scorer; // @synthesize scorer=_scorer;
 @property(readonly, nonatomic) _CDPModelTuningState *currentState; // @synthesize currentState=_currentState;
-- (void).cxx_destruct;
 - (float)_testModelWithThreshold:(float *)arg1;
 - (void)resumeTuningWithState:(id)arg1;
 

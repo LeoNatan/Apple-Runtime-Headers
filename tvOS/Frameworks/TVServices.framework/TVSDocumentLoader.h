@@ -28,6 +28,7 @@
 
 + (id)documentLoaderWithRequestProperties:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id content; // @synthesize content=_content;
 @property _Bool isLoaded; // @synthesize isLoaded=_isLoaded;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool shouldLoadInDaemon; // @synthesize shouldLoadInDaemon=_shouldLoadInDaemon;
 @property(nonatomic) unsigned long long authenticationType; // @synthesize authenticationType=_authenticationType;
 @property(retain, nonatomic) NSObject<TVSDocumentPostprocessor> *postprocessor; // @synthesize postprocessor=_postprocessor;
-- (void).cxx_destruct;
 - (void)operation:(id)arg1 willSendRequest:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (void)operation:(id)arg1 didReceiveResponse:(id)arg2;

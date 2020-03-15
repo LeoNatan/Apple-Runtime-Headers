@@ -19,10 +19,10 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFMutableSetDiff *actionBuilders; // @synthesize actionBuilders=_actionBuilders;
 @property(nonatomic) unsigned int actionSetType; // @synthesize actionSetType=_actionSetType;
 @property(retain, nonatomic) HMTrigger *containingTrigger; // @synthesize containingTrigger=_containingTrigger;
-- (void).cxx_destruct;
 - (id)_lazilyUpdateActions;
 - (id)commitItem;
 @property(readonly, nonatomic) HFMediaPlaybackActionBuilder *mediaAction;

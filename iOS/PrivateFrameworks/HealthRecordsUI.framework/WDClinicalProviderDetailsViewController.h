@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)providerCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HRWDSpinnerView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSArray *unconnectedGateways; // @synthesize unconnectedGateways=_unconnectedGateways;
@@ -32,8 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long fetchesInFlight; // @synthesize fetchesInFlight=_fetchesInFlight;
 @property(retain, nonatomic) HKClinicalProviderSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
-- (void)_postAWDMetricForStartingSafariSession;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;

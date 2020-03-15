@@ -10,11 +10,11 @@
 
 @interface NUListPattern : NUPattern
 {
-    struct NSArray *_list;
+    NSArray *_list;
 }
 
-@property(readonly) NSArray *list; // @synthesize list=_list;
 - (void).cxx_destruct;
+@property(readonly) NSArray *list; // @synthesize list=_list;
 - (BOOL)match:(id)arg1 location:(unsigned long long *)arg2 count:(unsigned long long *)arg3;
 - (BOOL)isEqualToListPattern:(id)arg1;
 - (BOOL)isEqualToPattern:(id)arg1;

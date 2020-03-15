@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKQuantity *heartRateThreshold; // @synthesize heartRateThreshold=_heartRateThreshold;
 @property(readonly, nonatomic) NSArray *associatedSampleUUIDs; // @synthesize associatedSampleUUIDs=_associatedSampleUUIDs;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)metadata;

@@ -15,10 +15,10 @@
     struct PFIntSize_st _inputSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IPAPhotoAdjustmentPipeline *pipeline; // @synthesize pipeline=_pipeline;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) struct PFIntSize_st inputSize; // @synthesize inputSize=_inputSize;
-- (void).cxx_destruct;
 - (id)_debugDescriptionSuffix;
 - (id)maskUUIDs;
 - (id)minimumVersionForFormat:(id)arg1;

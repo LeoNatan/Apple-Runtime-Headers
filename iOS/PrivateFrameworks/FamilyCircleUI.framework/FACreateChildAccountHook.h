@@ -21,12 +21,12 @@
     id <AAUIServerHookDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AAUIServerHookDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)navigationItemToShowInitialLoadingForChildAccountCreationController:(id)arg1;
 - (void)childAccountCreationController:(id)arg1 didCompleteWithSuccess:(_Bool)arg2 error:(id)arg3;
 - (void)childAccountCreationController:(id)arg1 didLoadRemoteUIWithSuccess:(_Bool)arg2;
-- (struct NSDictionary *)accountsForAccountManager:(id)arg1;
+- (id)accountsForAccountManager:(id)arg1;
 - (id)_presentationContext;
 - (void)_callCompletion:(_Bool)arg1 error:(id)arg2;
 - (void)_tearDownChildAccountCreateController:(id)arg1 success:(_Bool)arg2 error:(id)arg3;

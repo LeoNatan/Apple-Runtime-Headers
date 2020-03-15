@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSHashTable *_animations;
 }
 
-@property(retain, nonatomic) NSHashTable *animations; // @synthesize animations=_animations;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *animations; // @synthesize animations=_animations;
 @property(copy, nonatomic) NSArray *persistentAnimations;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

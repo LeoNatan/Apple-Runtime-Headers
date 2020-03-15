@@ -26,10 +26,10 @@
 + (id)csIdentifierFromFPIdentifier:(id)arg1 domainIdentifier:(id)arg2;
 + (void)getDomainIdentifier:(id *)arg1 andIdentifier:(id *)arg2 fromCoreSpotlightIdentifier:(id)arg3;
 + (id)coreSpotlightEncodedDomainIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property(readonly, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

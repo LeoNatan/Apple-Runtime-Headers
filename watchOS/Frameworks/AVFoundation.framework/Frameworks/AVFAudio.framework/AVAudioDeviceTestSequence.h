@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool calculateCrossCorrelationPeak; // @synthesize calculateCrossCorrelationPeak=_calculateCrossCorrelationPeak;
 @property(retain) NSString *mode; // @synthesize mode=_mode;
 @property(nonatomic) int outputMode; // @synthesize outputMode=_outputMode;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSURL *stimulusURL; // @synthesize stimulusURL=_stimulusURL;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(nonatomic) int outputID; // @synthesize outputID=_outputID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

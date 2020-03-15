@@ -18,13 +18,13 @@
     NSDate *_notSeenSinceDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *notSeenSinceDate; // @synthesize notSeenSinceDate=_notSeenSinceDate;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(readonly, nonatomic) float weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) NSArray *momentLocalIdentifiers; // @synthesize momentLocalIdentifiers=_momentLocalIdentifiers;
 @property(readonly, nonatomic) NSArray *personWeights; // @synthesize personWeights=_personWeights;
 @property(readonly, nonatomic) NSArray *personLocalIdentifiers; // @synthesize personLocalIdentifiers=_personLocalIdentifiers;
-- (void).cxx_destruct;
 - (id)initWithPersonLocalIdentifiers:(id)arg1 personWeights:(id)arg2 momentLocalIdentifiers:(id)arg3 weight:(float)arg4 notSeenSinceDate:(id)arg5;
 
 @end

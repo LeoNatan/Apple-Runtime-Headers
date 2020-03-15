@@ -14,8 +14,8 @@
 }
 
 + (id)defaultStore;
-@property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CSSearchableIndex *index; // @synthesize index=_index;
 - (void)setRelevantShortcuts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithSearchableIndex:(id)arg1;
 

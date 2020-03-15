@@ -6,26 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString, PKTransitPassProperties;
+@class NSArray, NSDictionary, NSMutableArray, NSString, PKPaymentPass, PKTransitPassProperties;
 
 @interface PKTransitBalanceModel : NSObject
 {
     NSDictionary *_balancesByID;
-    NSArray *_balanceFields;
+    NSMutableArray *_commutePlanBalanceFields;
     PKTransitPassProperties *_transitProperties;
+    PKPaymentPass *_pass;
     NSArray *_displayableBalances;
+    NSArray *_displayableCommutePlanBalances;
+    NSArray *_transitCommutePlans;
+    NSArray *_displayableCommutePlans;
+    NSMutableArray *_balanceFields;
 }
 
-@property(readonly, nonatomic) NSArray *displayableBalances; // @synthesize displayableBalances=_displayableBalances;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *balanceFields; // @synthesize balanceFields=_balanceFields;
+@property(readonly, nonatomic) NSArray *displayableCommutePlans; // @synthesize displayableCommutePlans=_displayableCommutePlans;
+@property(readonly, nonatomic) NSArray *transitCommutePlans; // @synthesize transitCommutePlans=_transitCommutePlans;
+@property(readonly, nonatomic) NSArray *displayableCommutePlanBalances; // @synthesize displayableCommutePlanBalances=_displayableCommutePlanBalances;
+@property(readonly, nonatomic) NSArray *displayableBalances; // @synthesize displayableBalances=_displayableBalances;
 @property(readonly, nonatomic) NSString *primaryDisplayableBalance; // @dynamic primaryDisplayableBalance;
-- (void)_updatePrimaryDisplayableBalance;
-@property(readonly, nonatomic) BOOL hasContent;
+- (void)_updateBalancesAndPlans;
+@property(readonly, nonatomic) BOOL hasCommutePlanContent;
+@property(readonly, nonatomic) BOOL hasBalanceContent;
 - (void)setTransitProperties:(id)arg1;
-- (void)setServerBalancesByID:(id)arg1;
-- (void)setServerBalances:(id)arg1;
+- (id)balanceForIdentifier:(id)arg1;
+- (void)setDynamicBalancesByID:(id)arg1;
+- (void)setDynamicBalances:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (void)_addCommutePlanBalanceFieldsToCommutePlanBalanceFields;
 - (id)initWithPass:(id)arg1;
 
 @end

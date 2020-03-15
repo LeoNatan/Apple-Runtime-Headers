@@ -14,8 +14,8 @@
     NSMutableArray *_maskObjectSets;
 }
 
-@property(retain, nonatomic) NSMutableArray *maskObjectSets; // @synthesize maskObjectSets=_maskObjectSets;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *maskObjectSets; // @synthesize maskObjectSets=_maskObjectSets;
 - (void)_executeUsingMask:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id)objectsForMask:(unsigned long long)arg1;

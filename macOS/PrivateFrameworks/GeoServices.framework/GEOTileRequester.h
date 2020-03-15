@@ -20,17 +20,16 @@
     NSString *_deviceRegion;
 }
 
-+ (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 + (CDStruct_e4886f83 *)newExpiringTilesets;
 + (unsigned long long)expiringTilesetsCount;
 + (unsigned char)tileProviderIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceRegion; // @synthesize deviceRegion=_deviceRegion;
 @property(retain, nonatomic) NSString *deviceCountry; // @synthesize deviceCountry=_deviceCountry;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) GEOTileRequest *tileRequest; // @synthesize tileRequest=_tileRequest;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) __weak id <GEOTileRequesterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)activeTileSetForKey:(const struct _GEOTileKey *)arg1;
 - (unsigned int)tileSetForKey:(const struct _GEOTileKey *)arg1;
 - (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2;

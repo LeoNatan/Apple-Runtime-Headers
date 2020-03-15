@@ -18,9 +18,9 @@
     long long _limitValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long limitValue; // @synthesize limitValue=_limitValue;
 @property(copy, nonatomic) NSString *limitProperty; // @synthesize limitProperty=_limitProperty;
-- (void).cxx_destruct;
 - (id)_statement;
 - (id)objectsInColumn:(unsigned long long)arg1;
 - (id)stringValueForFirstRowAndColumn;

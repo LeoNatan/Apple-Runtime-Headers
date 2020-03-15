@@ -16,10 +16,10 @@
     BKSProcessAssertion *_assertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
 @property(nonatomic) __weak id <VSBackgroundTaskDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)end;
 - (_Bool)begin;
 - (id)init;

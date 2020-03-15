@@ -13,8 +13,8 @@
     TVLLegacyJSContext *_context;
 }
 
-@property(retain, nonatomic) TVLLegacyJSContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLLegacyJSContext *context; // @synthesize context=_context;
 - (void)runSlideShowWithImageProxies:(id)arg1 startingIndex:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)showSlideShowSettingsWithImageProxies:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithContext:(id)arg1;

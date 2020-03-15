@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     OCDReader *mReader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OADGraphicStyleCache *graphicStyleCache; // @synthesize graphicStyleCache=mGraphicStyleCache;
 @property(readonly, nonatomic) OADTextListStyle *defaultTextStyle; // @synthesize defaultTextStyle=mDefaultTextStyle;
 @property(readonly, nonatomic) OITSUPointerKeyDictionary *dualDrawableMap; // @synthesize dualDrawableMap=mDualDrawableMap;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) OCDSummary *summary; // @synthesize summary=mSummary;
 @property(retain, nonatomic) OCDWriter *writer; // @synthesize writer=mWriter;
 @property(retain, nonatomic) OCDReader *reader; // @synthesize reader=mReader;
-- (void).cxx_destruct;
 - (id)bulletBlips;
 - (void)setTheme:(id)arg1;
 - (id)theme;

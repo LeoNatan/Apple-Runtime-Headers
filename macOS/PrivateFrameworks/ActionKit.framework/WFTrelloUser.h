@@ -17,10 +17,10 @@
 
 + (id)JSONKeyPathsByPropertyKey;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
 @property(readonly, nonatomic) NSString *email; // @synthesize email=_email;
-- (void).cxx_destruct;
 
 @end
 

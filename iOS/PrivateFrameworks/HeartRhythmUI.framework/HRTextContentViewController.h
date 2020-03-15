@@ -13,8 +13,8 @@
     NSString *_string;
 }
 
-@property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *string; // @synthesize string=_string;
 - (id)_attributedStringFromString:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)loadView;

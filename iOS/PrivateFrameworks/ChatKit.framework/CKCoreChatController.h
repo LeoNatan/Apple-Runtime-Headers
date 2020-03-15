@@ -36,6 +36,7 @@
     STLockoutViewController *_lockoutViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isShowingLockoutView; // @synthesize isShowingLockoutView=_isShowingLockoutView;
 @property(retain, nonatomic) STLockoutViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(copy, nonatomic) CDUnknownBlockType overrideScrollBlock; // @synthesize overrideScrollBlock=_overrideScrollBlock;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) CKTranscriptCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKCoreChatControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)systemApplicationDidResume;
 - (void)fullScreenBalloonViewControllerHandleDismissTap:(id)arg1;
 - (struct CGRect)fullScreenBalloonViewController:(id)arg1 balloonFrameForChatItem:(id)arg2;
@@ -136,6 +136,10 @@
 - (void)_setConversationDeferredSetup;
 - (void)_removeExistingCollectionViewController;
 - (_Bool)conversationAllowedByScreenTime;
+- (_Bool)_deviceIsPasscodeLocked;
+- (_Bool)_shouldAllowReplyFromLockScreen;
+- (_Bool)_shouldAllowReply;
+- (_Bool)_conversationHasReplyEnabled;
 - (id)_handleIDsForCurrentConversation;
 @property(readonly, nonatomic) double gradientBottomPlaceholderHeight;
 @property(readonly, nonatomic) double balloonMaxWidth;

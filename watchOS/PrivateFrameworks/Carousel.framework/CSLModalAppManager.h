@@ -19,12 +19,12 @@
     CDUnknownBlockType _exitedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType exitedBlock; // @synthesize exitedBlock=_exitedBlock;
 @property(copy, nonatomic) CDUnknownBlockType deactivatedBlock; // @synthesize deactivatedBlock=_deactivatedBlock;
 @property(copy, nonatomic) CDUnknownBlockType activatedBlock; // @synthesize activatedBlock=_activatedBlock;
 @property(copy, nonatomic) CDUnknownBlockType failedBlock; // @synthesize failedBlock=_failedBlock;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)_modalAppActivationStateDidChange:(id)arg1;
 - (void)_modalAppDidExit:(id)arg1;
 - (void)_unregisterModalAppLifecycleNotifications;

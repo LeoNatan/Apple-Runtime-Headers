@@ -20,10 +20,10 @@
     id <SBHIDButtonStateDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBHIDButtonStateDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long pressSequence; // @synthesize pressSequence=_pressSequence;
 @property(nonatomic) double longPressTimeout; // @synthesize longPressTimeout=_longPressTimeout;
-- (void).cxx_destruct;
 - (void)processEvent:(struct __IOHIDEvent *)arg1;
 - (void)_longPressTimeoutDidOccur;
 - (void)_startLongPressTimerWithTimeout:(double)arg1;

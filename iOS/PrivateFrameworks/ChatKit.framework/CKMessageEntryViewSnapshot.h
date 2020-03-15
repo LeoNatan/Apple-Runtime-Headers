@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIButton *_browserButton;
 }
 
-@property(retain, nonatomic) UIButton *browserButton; // @synthesize browserButton=_browserButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *browserButton; // @synthesize browserButton=_browserButton;
 - (id)initWithFrame:(struct CGRect)arg1 entryView:(id)arg2;
 
 @end

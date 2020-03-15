@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 + (id)placement;
 + (id)encodablePlacementsForXPC;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subPlacements; // @synthesize subPlacements=_subPlacements;
 @property(nonatomic) double extendedHeight; // @synthesize extendedHeight=_extendedHeight;
 @property(nonatomic) id <UIInputViewSetPlacementDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (struct CGRect)adjustBoundsForNotificationsWithOwner:(id)arg1;
 - (id)expiringPlacement;
 - (unsigned long long)indexForPurpose:(unsigned long long)arg1;

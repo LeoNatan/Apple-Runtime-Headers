@@ -34,6 +34,7 @@
 + (unsigned long long)exchangeType;
 + (_Bool)encryptPayloads;
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NSArray *rawPayloads; // @synthesize rawPayloads=_rawPayloads;
 @property(retain) NSArray *packetDatagrams; // @synthesize packetDatagrams=_packetDatagrams;
 @property _Bool isInbound; // @synthesize isInbound=_isInbound;
@@ -49,7 +50,6 @@
 @property unsigned int totalFragments; // @synthesize totalFragments=_totalFragments;
 @property unsigned int fragmentNumber; // @synthesize fragmentNumber=_fragmentNumber;
 @property _Bool isFragmented; // @synthesize isFragmented=_isFragmented;
-- (void).cxx_destruct;
 - (void)addNotification:(unsigned long long)arg1 fromArray:(id)arg2 toPayloads:(id)arg3;
 - (_Bool)addNotification:(unsigned long long)arg1;
 - (_Bool)addNotification:(unsigned long long)arg1 data:(id)arg2;

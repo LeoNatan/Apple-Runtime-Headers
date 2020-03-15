@@ -19,13 +19,13 @@
     struct CGPoint _currentPosition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *targetIndexPathForMerge; // @synthesize targetIndexPathForMerge=_targetIndexPathForMerge;
 @property(retain, nonatomic) NSIndexPath *dragIndexPathForMerge; // @synthesize dragIndexPathForMerge=_dragIndexPathForMerge;
 @property(nonatomic) _Bool performActualRearrange; // @synthesize performActualRearrange=_performActualRearrange;
 @property(nonatomic) struct CGPoint currentPosition; // @synthesize currentPosition=_currentPosition;
 @property(nonatomic) struct CGPoint lastDragPoint; // @synthesize lastDragPoint=_lastDragPoint;
 @property(retain, nonatomic) NSTimer *dragPauseTimer; // @synthesize dragPauseTimer=_dragPauseTimer;
-- (void).cxx_destruct;
 - (void)_cancelDragPauseTimer;
 - (void)_updateDragPause;
 - (void)_potentialMergeWithDragIndexPath:(id)arg1 ontoIndexPath:(id)arg2 withPosition:(struct CGPoint)arg3;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *__customSubviewContainerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *_customSubviewContainerView; // @synthesize _customSubviewContainerView=__customSubviewContainerView;
 @property(retain, nonatomic) _TVUICardFloatingContentView *floatingContentView; // @synthesize floatingContentView=_floatingContentView;
 @property(retain, nonatomic) UIColor *floatingContentViewBackgroundColor; // @synthesize floatingContentViewBackgroundColor=_floatingContentViewBackgroundColor;
-- (void).cxx_destruct;
 - (void)_addContainerView:(id)arg1;
 - (void)_createContainerView;
 - (void)_createFloatingContentView;

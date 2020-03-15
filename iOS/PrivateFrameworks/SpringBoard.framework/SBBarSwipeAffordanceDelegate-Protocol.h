@@ -9,6 +9,9 @@
 @class BSAnimationSettings, SBBarSwipeAffordanceView;
 
 @protocol SBBarSwipeAffordanceDelegate <NSObject>
+- (unsigned long long)barSwipeAffordanceView:(SBBarSwipeAffordanceView *)arg1 systemGestureTypeForType:(long long)arg2;
+
+@optional
 - (BSAnimationSettings *)unhideAnimationSettingsForBarSwipeAffordanceView:(SBBarSwipeAffordanceView *)arg1;
 - (BSAnimationSettings *)hideAnimationSettingsForBarSwipeAffordanceView:(SBBarSwipeAffordanceView *)arg1;
 @end

@@ -14,9 +14,9 @@
     unsigned int _destination;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

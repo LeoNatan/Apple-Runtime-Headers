@@ -15,8 +15,8 @@
     CRRecentContactsLibrary *_library;
 }
 
-@property(retain, nonatomic) CRRecentContactsLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CRRecentContactsLibrary *library; // @synthesize library=_library;
 - (id)autocompleteResultsForRecentContacts:(id)arg1 request:(id)arg2;
 - (id)executeRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithCoreRecentContactsLibrary:(id)arg1;

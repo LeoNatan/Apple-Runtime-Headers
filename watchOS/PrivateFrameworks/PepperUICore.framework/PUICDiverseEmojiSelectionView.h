@@ -25,8 +25,8 @@
     id <PUICDiverseEmojiSelectionViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PUICDiverseEmojiSelectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICDiverseEmojiSelectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

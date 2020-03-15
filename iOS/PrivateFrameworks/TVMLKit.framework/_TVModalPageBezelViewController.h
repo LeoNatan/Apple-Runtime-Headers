@@ -16,11 +16,11 @@
     struct CGSize _contentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(retain, nonatomic) UIColor *bezelBackgroundColor; // @synthesize bezelBackgroundColor=_bezelBackgroundColor;
 @property(nonatomic) double bezelCornerRadius; // @synthesize bezelCornerRadius=_bezelCornerRadius;
-- (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

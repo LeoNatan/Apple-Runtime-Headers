@@ -26,11 +26,11 @@
 
 + (void)_fillArtworkMutableArray:(id)arg1 toCount:(unsigned int)arg2;
 + (id)_missingArtImage;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSOrderedSet *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *storeRecommendationModelObjects;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_stringForDayOfWeek:(int)arg1;

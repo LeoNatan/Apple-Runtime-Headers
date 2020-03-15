@@ -38,11 +38,11 @@
 }
 
 + (id)backgroundColor;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseClearNavigationBar; // @synthesize shouldUseClearNavigationBar=_shouldUseClearNavigationBar;
 @property(readonly, nonatomic) _Bool isPresentingContent; // @synthesize isPresentingContent=_isPresentingContent;
 @property(nonatomic) __weak id <PKDashboardDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <PKDashboardDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateNavigationBarVisibility;
 - (void)_updateNavigationBarAppearance;

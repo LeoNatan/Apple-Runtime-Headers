@@ -22,12 +22,12 @@
     NSObject<OS_dispatch_queue> *_completionQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
 @property(nonatomic) _Bool noObjC; // @synthesize noObjC=_noObjC;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) long long resultsOptions; // @synthesize resultsOptions=_resultsOptions;
 @property(nonatomic) long long scannerOptions; // @synthesize scannerOptions=_scannerOptions;
-- (void).cxx_destruct;
 - (int)scannerType;
 @property(nonatomic) _Bool spotlightSuggestionsEnabled;
 - (id)recyclingIdentifier;

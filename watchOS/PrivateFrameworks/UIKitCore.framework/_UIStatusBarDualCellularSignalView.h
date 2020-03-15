@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (float)_interspaceForIconSize:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets alignmentRectInsets; // @synthesize alignmentRectInsets=_alignmentRectInsets;
 @property(retain, nonatomic) NSLayoutConstraint *verticalInterspaceConstraint; // @synthesize verticalInterspaceConstraint=_verticalInterspaceConstraint;
 @property(nonatomic) int iconSize; // @synthesize iconSize=_iconSize;
 @property(readonly) _UIStatusBarCellularSignalView *bottomSignalView; // @synthesize bottomSignalView=_bottomSignalView;
 @property(readonly) _UIStatusBarCellularSignalView *topSignalView; // @synthesize topSignalView=_topSignalView;
-- (void).cxx_destruct;
 - (void)applyStyleAttributes:(id)arg1;
 - (id)viewForLastBaselineLayout;
 - (void)_iconSizeDidChange;

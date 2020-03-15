@@ -27,6 +27,7 @@
     NSError *_resultError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *resultError; // @synthesize resultError=_resultError;
 @property(retain, nonatomic) NSArray *resultFeedResponses; // @synthesize resultFeedResponses=_resultFeedResponses;
 @property(retain, nonatomic) NSArray *resultIssueRecords; // @synthesize resultIssueRecords=_resultIssueRecords;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(copy, nonatomic) NSArray *feedRequests; // @synthesize feedRequests=_feedRequests;
 @property(retain, nonatomic) FCCKContentDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_feedRelativeDictionaryFromResultsArray:(id)arg1;
 - (void)_processResultsRecord:(id)arg1 feedItemAndArticleRecords:(id)arg2 tagRecords:(id)arg3 issueRecords:(id)arg4;
 - (id)_requiredKeys;

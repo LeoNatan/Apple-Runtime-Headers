@@ -16,10 +16,10 @@
     struct CGRect _originalFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXDraggable> dragable; // @synthesize dragable=_dragable;
 @property(nonatomic) struct CGRect originalFrame; // @synthesize originalFrame=_originalFrame;
 @property(readonly, nonatomic) SXFill *fill; // @synthesize fill=_fill;
-- (void).cxx_destruct;
 - (void)load;
 @property(nonatomic) struct CGRect contentFrame;
 - (struct CGRect)fillFrameWithBoundingSize:(struct CGSize)arg1;

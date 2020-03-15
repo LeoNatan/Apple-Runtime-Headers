@@ -16,10 +16,10 @@
 }
 
 + (id)recordWithGroup:(id)arg1 active:(_Bool)arg2 persisted:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly) HMDAccessoryNetworkProtectionGroup *group; // @synthesize group=_group;
 @property(nonatomic, getter=isPersisted) _Bool persisted; // @synthesize persisted=_persisted;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
-- (void).cxx_destruct;
 - (id)initWithGroup:(id)arg1 active:(_Bool)arg2 persisted:(_Bool)arg3;
 
 @end

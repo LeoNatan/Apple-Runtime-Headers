@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
-- (void).cxx_destruct;
 - (unsigned int)updateWithEndpoint:(id)arg1;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;

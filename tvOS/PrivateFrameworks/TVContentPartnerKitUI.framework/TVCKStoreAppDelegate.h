@@ -18,8 +18,8 @@
     TVPSecureKeyStandardLoader *_fpsCertLoader;
 }
 
-@property(retain, nonatomic) TVPSecureKeyStandardLoader *fpsCertLoader; // @synthesize fpsCertLoader=_fpsCertLoader;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVPSecureKeyStandardLoader *fpsCertLoader; // @synthesize fpsCertLoader=_fpsCertLoader;
 - (void)_loadFPSCertWithURL:(id)arg1 keyDataURL:(id)arg2;
 - (void)_storeURLBagDidLoad:(id)arg1;
 - (void)_loadFPSCert;

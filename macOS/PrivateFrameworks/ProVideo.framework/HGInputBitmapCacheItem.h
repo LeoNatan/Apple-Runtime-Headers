@@ -15,11 +15,11 @@
     vector_bfafc335 _bitmaps;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize fullSize; // @synthesize fullSize=_fullSize;
 @property(readonly, nonatomic) NSDate *lastUsedTime; // @synthesize lastUsedTime=_lastUsedTime;
 @property(readonly, nonatomic) vector_bfafc335 bitmaps; // @synthesize bitmaps=_bitmaps;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateLastUsedTime;
 - (id)initWithHGBitmap:(vector_bfafc335 *)arg1 fullSize:(struct CGSize)arg2;
 

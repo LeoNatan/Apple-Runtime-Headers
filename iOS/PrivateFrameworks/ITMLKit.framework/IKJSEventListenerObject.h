@@ -15,8 +15,8 @@
     NSMutableDictionary *_eventListenersMap;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *eventListenersMap; // @synthesize eventListenersMap=_eventListenersMap;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *eventListenersMap; // @synthesize eventListenersMap=_eventListenersMap;
 - (id)_eventInformationForType:(id)arg1 extraInfo:(id)arg2;
 - (_Bool)invokeMethod:(id)arg1 withArguments:(id)arg2 thenDispatchEvent:(id)arg3 extraInfo:(id)arg4;
 - (_Bool)invokeSingleListener:(id)arg1 extraInfo:(id)arg2 return:(id *)arg3;

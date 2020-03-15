@@ -18,8 +18,8 @@
     id <CSLSTheaterModeDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLSTheaterModeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLSTheaterModeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didChangeState:(_Bool)arg1;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
 - (void)dealloc;

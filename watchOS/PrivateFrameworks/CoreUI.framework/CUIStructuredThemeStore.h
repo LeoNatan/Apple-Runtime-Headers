@@ -68,6 +68,7 @@
 - (id)copyLookupKeySignatureForKey:(const struct _renditionkeytoken *)arg1;
 - (id)copyKeySignatureForKey:(const struct _renditionkeytoken *)arg1 withBytesNoCopy:(char *)arg2 length:(unsigned int)arg3;
 - (id)baseGradationKeySignatureForKey:(const struct _renditionkeytoken *)arg1;
+- (const struct _renditionkeyattributeindex *)keyAttributeIndex;
 - (const struct _renditionkeyfmt *)keyFormat;
 - (_Bool)usesCUISystemThemeRenditionKey;
 - (int)maximumRenditionKeyTokenCount;

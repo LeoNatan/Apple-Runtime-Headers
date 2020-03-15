@@ -29,8 +29,8 @@
 + (id)primaryLabelFont;
 + (id)secondaryLabelColor;
 + (id)primaryLabelColor;
-@property(nonatomic) __weak id <INKTipContentHintViewDelegate> _tipContentDelegate; // @synthesize _tipContentDelegate=__tipContentDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <INKTipContentHintViewDelegate> _tipContentDelegate; // @synthesize _tipContentDelegate=__tipContentDelegate;
 - (_Bool)view:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_setPreferredTraitCollection:(id)arg1;

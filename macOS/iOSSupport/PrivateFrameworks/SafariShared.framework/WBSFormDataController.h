@@ -27,7 +27,6 @@
     WBSAutoFillQuirksManager *_autoFillQuirksManager;
 }
 
-+ (BOOL)isFieldUnidentified:(id)arg1;
 + (BOOL)_password:(id)arg1 appearsToBeMoreThanOneSymbolAppendedToPassword:(id)arg2;
 + (BOOL)_password:(id)arg1 appearsToBeASixDigitCodeAppendedToPassword:(id)arg2;
 + (BOOL)password:(id)arg1 shouldBeConsideredEqualToExistingPassword:(id)arg2;
@@ -48,7 +47,6 @@
 + (id)continuingFieldsInFormControls:(id)arg1 startingAtIndex:(unsigned long long)arg2 textFieldsOnly:(BOOL)arg3 ignorePositioning:(BOOL)arg4;
 + (id)stringWithAddressBookValue:(id)arg1 key:(id)arg2;
 + (id)specifierForControl:(id)arg1;
-+ (BOOL)shouldDisplayOneTimeCodeForControl:(id)arg1 inForm:(id)arg2;
 + (BOOL)formContainsDateFields:(id)arg1 matchingAddressBookMatch:(id)arg2;
 + (id)allSynonymsForMatch:(id)arg1;
 + (id)specifierForAddressBookLabel:(id)arg1;
@@ -64,8 +62,8 @@
 + (id)_metadataForControlWithUniqueID:(id)arg1 inForm:(id)arg2;
 + (BOOL)convertNumber:(id)arg1 toAutoFillFormType:(unsigned long long *)arg2;
 + (id)dontSaveMarker;
-@property(readonly, nonatomic) WBSAutoFillQuirksManager *autoFillQuirksManager; // @synthesize autoFillQuirksManager=_autoFillQuirksManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WBSAutoFillQuirksManager *autoFillQuirksManager; // @synthesize autoFillQuirksManager=_autoFillQuirksManager;
 - (BOOL)textFieldIsEligibleForAutomaticStrongPassword:(id)arg1 form:(id)arg2 ignorePreviousDecision:(BOOL)arg3 textFieldCurrentlyContainsStrongPassword:(char *)arg4;
 - (BOOL)textFieldMetadataMeetsRequirementsForAutomaticStrongPasswordTreatment:(id)arg1 form:(id)arg2;
 - (void)notifyKeychainWasDirectlyAffectedBySafari;
@@ -77,7 +75,6 @@
 - (void)updateLastUsedUsernameAndExtractUsernameAndPasswordFromForm:(id)arg1 atURL:(id)arg2 username:(id *)arg3 password:(id *)arg4;
 - (void)willSubmitFormWithCredentials:(id)arg1 atURL:(id)arg2 username:(id *)arg3 password:(id *)arg4;
 - (BOOL)isPasswordFieldForUserCredentialsWithMetadata:(id)arg1 formMetadata:(id)arg2;
-- (id)metadataOfBestFormForStreamlinedLogin:(id)arg1 frame:(struct OpaqueFormAutoFillFrame **)arg2;
 - (id)metadataOfActiveFormOrBestFormForPageLevelAutoFill:(id)arg1 frame:(struct OpaqueFormAutoFillFrame **)arg2;
 - (id)_credentialMatchesWithCriteria:(id)arg1 protectionSpaceMatches:(id)arg2;
 - (id)_protectionSpaceMatchesWithCriteria:(id)arg1 credentialsByProtectionSpace:(id)arg2 associatedDomainsManager:(id)arg3;
@@ -111,11 +108,7 @@
 - (id)contactAutoFillSetForRecentlyUsedAutoFillSet:(id)arg1 contact:(id)arg2 form:(id)arg3;
 - (id)orderedHomeAndWorkSetsForContact:(id)arg1 form:(id)arg2;
 - (id)_autoFillSetFromMatches:(id)arg1 label:(id)arg2 contact:(id)arg3 form:(id)arg4;
-- (BOOL)isControlASelectElement:(id)arg1;
-- (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 withSingleCreditCardData:(id)arg3 inField:(id)arg4 inForm:(id)arg5;
-- (id)_nextFieldToFocusAfterFillingFieldAtIndex:(unsigned long long)arg1 inForm:(id)arg2;
-- (unsigned long long)_indexForControlWithUniqueID:(id)arg1 inForm:(id)arg2;
-- (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 andCreditCardDataTypesThatWillBeFilled:(id *)arg3 forCreditCardForm:(id)arg4 fromCreditCardData:(id)arg5;
+- (void)getFormFieldValues:(id *)arg1 andFieldToFocus:(id *)arg2 forCreditCardForm:(id)arg3 fromCreditCardData:(id)arg4;
 - (unsigned long long)addValuesForStandardFormControls:(id)arg1 startingAtIndex:(unsigned long long)arg2 fromAutoFillItem:(id)arg3 toDictionary:(id)arg4 formTextSample:(id)arg5 multiRoundAutoFillManager:(id)arg6;
 - (unsigned long long)addValuesForStandardFormControlsInForm:(id)arg1 startingAtIndex:(unsigned long long)arg2 fromAutoFillItem:(id)arg3 toDictionary:(id)arg4 multiRoundAutoFillManager:(id)arg5;
 - (void)_fillPhoneNumber:(id)arg1 intoValues:(id)arg2 controls:(id)arg3 formTextSample:(id)arg4 multiRoundAutoFillManager:(id)arg5;
@@ -163,7 +156,8 @@
 - (id)init;
 - (BOOL)_dateIsWithinGracePeriodForNotAutomaticallySubmittingLoginForms:(id)arg1;
 - (void)_removeStaleEntriesFromMapOfHighLevelDomainToLastAutomaticFormSubmission;
-- (void)didAutomaticallySubmitFormWhenFillingOnURL:(id)arg1;
+- (id)_formKeyForMapOfHighLevelDomainToLastAutomaticFormSubmission:(id)arg1 formMetadata:(id)arg2;
+- (void)didAutomaticallySubmitFormWhenFillingOnURL:(id)arg1 formMetadata:(id)arg2;
 - (BOOL)shouldSubmitForm:(id)arg1 withCredential:(id)arg2 onURL:(id)arg3;
 - (long long)autoFillActionForFormType:(unsigned long long)arg1 onURL:(id)arg2 shouldSubmitAfterFilling:(BOOL)arg3;
 

@@ -16,9 +16,9 @@
     NSString *_remotePaymentRequestIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *remotePaymentRequestIdentifier; // @synthesize remotePaymentRequestIdentifier=_remotePaymentRequestIdentifier;
 @property(retain, nonatomic) PKProtobufPayment *payment; // @synthesize payment=_payment;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

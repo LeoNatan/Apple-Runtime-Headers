@@ -18,8 +18,8 @@
     id <PRProximityEstimatorDelegate> _delegate;
 }
 
-@property(readonly) __weak id <PRProximityEstimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <PRProximityEstimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)invokeDelegateBlock:(CDUnknownBlockType)arg1;
 - (_Bool)addRssiSample:(double)arg1 channel:(unsigned int)arg2 forPeer:(id)arg3 withError:(id *)arg4;
 - (_Bool)stopEstimatingProximityFor:(id)arg1 withError:(id *)arg2;

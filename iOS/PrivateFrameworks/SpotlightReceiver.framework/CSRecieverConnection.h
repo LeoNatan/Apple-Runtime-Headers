@@ -18,12 +18,12 @@
     NSArray *_INIntentClassNames;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *INIntentClassNames; // @synthesize INIntentClassNames=_INIntentClassNames;
 @property(copy, nonatomic) NSArray *contentTypes; // @synthesize contentTypes=_contentTypes;
 @property(copy, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property(readonly, nonatomic) NSObject<SpotlightReceiver> *receiver; // @synthesize receiver=_receiver;
 @property(readonly, nonatomic) int supportedJobs; // @synthesize supportedJobs=_supportedJobs;
-- (void).cxx_destruct;
 - (int)donateRelevantActions:(id)arg1 bundleID:(id)arg2;
 - (int)donateRelevantShortcuts:(id)arg1 bundleID:(id)arg2;
 - (int)deleteAllInteractionsWithBundleID:(id)arg1 protectionClass:(id)arg2;

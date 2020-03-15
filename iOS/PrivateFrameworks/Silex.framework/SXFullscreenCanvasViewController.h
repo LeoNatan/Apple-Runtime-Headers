@@ -15,10 +15,10 @@
     id <SXFullscreenCanvasViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SXFullscreenCanvasViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isTransitioning; // @synthesize isTransitioning=_isTransitioning;
 @property(nonatomic) long long statusBarStyle; // @synthesize statusBarStyle=_statusBarStyle;
-- (void).cxx_destruct;
 - (void)dismiss;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (long long)preferredStatusBarUpdateAnimation;

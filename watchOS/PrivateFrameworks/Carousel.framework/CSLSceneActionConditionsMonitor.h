@@ -20,9 +20,9 @@
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, nonatomic) __weak NSObject<CSLSceneActionConditionsMonitoring> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)foregroundMonitorService:(id)arg1 application:(id)arg2 changedForegroundStatus:(_Bool)arg3;
 - (void)backlight:(id)arg1 didTurnOn:(_Bool)arg2 atContinuousTime:(unsigned long long)arg3 forReason:(unsigned int)arg4;
 - (void)_queue_updateStatus;

@@ -21,8 +21,8 @@
 + (void)_allowAccessToNotificationCenterForServiceExtensionWithIdentifier:(id)arg1;
 + (_Bool)isAccessToNotificationCenterAllowedForServiceExtensionWithIdentifier:(id)arg1;
 + (id)_extensionIdentifiersCurrentlyAllowedAccessToNotificationCenter;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (id)mutateContentForNotificationRequest:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) LSPlugInKitProxy *proxy; // @dynamic proxy;
 - (id)_initWithExtension:(id)arg1 serviceTime:(double)arg2 graceTime:(double)arg3;

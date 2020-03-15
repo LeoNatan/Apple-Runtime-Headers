@@ -21,12 +21,12 @@
 }
 
 + (BOOL)areProperties:(id)arg1 similarToOtherProperties:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) MAGraphReference *graphReference; // @synthesize graphReference=_graphReference;
 @property(nonatomic) float weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) unsigned short domain; // @synthesize domain=_domain;
 @property(nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)_memoryFootprint:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;

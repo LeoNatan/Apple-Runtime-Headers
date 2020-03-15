@@ -17,9 +17,9 @@
 }
 
 + (id)popularityScoreWithValue:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *typeDescription; // @synthesize typeDescription=_typeDescription;
 @property(nonatomic) unsigned long long score; // @synthesize score=_score;
-- (void).cxx_destruct;
 - (id)initWithValue:(unsigned long long)arg1;
 
 // Remaining properties

@@ -15,10 +15,10 @@
     id <NUArticleActivityFactory> _articleActivityFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUArticleActivityFactory> articleActivityFactory; // @synthesize articleActivityFactory=_articleActivityFactory;
 @property(readonly, nonatomic) id <NUArticleHostViewControllerFactory> articleHostViewControllerFactory; // @synthesize articleHostViewControllerFactory=_articleHostViewControllerFactory;
 @property(readonly, nonatomic) id <NUArticleFactory> articleFactory; // @synthesize articleFactory=_articleFactory;
-- (void).cxx_destruct;
 - (id)createPagesForArticleIDs:(id)arg1;
 - (id)initWithArticleFactory:(id)arg1 articleActivityFactory:(id)arg2 articleHostViewControllerFactory:(id)arg3;
 

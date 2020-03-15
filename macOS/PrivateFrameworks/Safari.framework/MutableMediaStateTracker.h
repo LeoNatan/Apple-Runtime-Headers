@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <MutableMediaStateTrackerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL allPagesPlayingMutableMediaAreMuted; // @synthesize allPagesPlayingMutableMediaAreMuted=_allPagesPlayingMutableMediaAreMuted;
 @property(nonatomic) __weak id <MutableMediaStateTrackerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MutableMediaStateTrackerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_didRequestToFocusMediaSourceFromMenuItem:(id)arg1;
 - (id)_menuItemsForRequestingToFocusMediaSources:(id)arg1;
 @property(readonly, nonatomic, getter=isAnyPageUsingScreenCapture) BOOL anyPageUsingScreenCapture;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL doesAnyPageHaveMediaCaptureDevice;
 @property(readonly, nonatomic, getter=isAnyPagePlayingAudio) BOOL anyPagePlayingAudio;
 @property(readonly, nonatomic) long long muteButtonStateForOverallMediaState;
-- (id)makeStatusItemForStatusBar:(id)arg1;
+- (void)updateStatusItem;
 - (void)updateOverallAudioState;
 
 @end

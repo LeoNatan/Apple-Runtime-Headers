@@ -16,10 +16,10 @@
 }
 
 + (id)_momentNodesFromMeaningfulEvents:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *meaningfulEvents; // @synthesize meaningfulEvents=_meaningfulEvents;
 @property(readonly, nonatomic) NSSet *features; // @synthesize features=_features;
 @property(readonly, nonatomic) unsigned long long meaning; // @synthesize meaning=_meaning;
-- (void).cxx_destruct;
 - (id)_meaningLabelForNotReliableTitle;
 - (id)_meaningLabelForTitle;
 - (id)_subtitle;

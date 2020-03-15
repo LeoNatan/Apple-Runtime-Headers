@@ -13,8 +13,8 @@
     NSArray *_preferredIntervals;
 }
 
-@property(copy, nonatomic) NSArray *preferredIntervals; // @synthesize preferredIntervals=_preferredIntervals;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *preferredIntervals; // @synthesize preferredIntervals=_preferredIntervals;
 - (id)newCommandEventWithInterval:(double)arg1;
 - (id)_mediaRemoteCommandInfoOptions;
 - (id)initWithMediaRemoteCommandType:(unsigned int)arg1;

@@ -13,8 +13,8 @@
     id <PGEventEnrichment> _collection;
 }
 
-@property(readonly, nonatomic) id <PGEventEnrichment> collection; // @synthesize collection=_collection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PGEventEnrichment> collection; // @synthesize collection=_collection;
 - (_Bool)_useSplitTimeTitlesIfNeeded;
 - (id)_locationTitle;
 - (void)_generateTitleAndSubtitleWithResult:(CDUnknownBlockType)arg1;

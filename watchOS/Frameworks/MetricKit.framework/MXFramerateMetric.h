@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) MXAverage *averageFramerate; // @synthesize averageFramerate=_averageFramerate;
 - (void).cxx_destruct;
+@property(readonly) MXAverage *averageFramerate; // @synthesize averageFramerate=_averageFramerate;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

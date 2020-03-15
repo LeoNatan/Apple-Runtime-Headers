@@ -11,12 +11,13 @@
     unsigned int _entitlements;
 }
 
++ (id)defaultPolicy;
 + (id)policyWithEntitlements:(unsigned int)arg1;
 @property(readonly) unsigned int entitlements; // @synthesize entitlements=_entitlements;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithEntitlements:(unsigned int)arg1;
+- (id)__initWithEntitlements:(unsigned int)arg1;
 - (id)init;
 
 @end

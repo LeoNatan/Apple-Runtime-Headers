@@ -13,8 +13,8 @@
     NSArray *__desiredTypes;
 }
 
-@property(readonly, copy, nonatomic) NSArray *_desiredTypes; // @synthesize _desiredTypes=__desiredTypes;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *_desiredTypes; // @synthesize _desiredTypes=__desiredTypes;
 - (id)_metadataObjectTypeForRealtimeMetadataType:(long long)arg1;
 - (id)_metadataObjectTypesForRealtimeMetadataTypes:(id)arg1 withAvailableMetadataTypes:(id)arg2;
 - (void)executeWithContext:(id)arg1;

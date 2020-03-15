@@ -18,9 +18,9 @@
 
 + (Class)diffsType;
 + (Class)pairingIDsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *diffs; // @synthesize diffs=_diffs;
 @property(retain, nonatomic) NSMutableArray *pairingIDs; // @synthesize pairingIDs=_pairingIDs;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

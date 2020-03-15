@@ -23,6 +23,7 @@
     long long _notificationCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long notificationCount; // @synthesize notificationCount=_notificationCount;
 @property _Bool extensionsCacheNeedsLoad; // @synthesize extensionsCacheNeedsLoad=_extensionsCacheNeedsLoad;
 @property(retain, nonatomic) NSMutableArray *extensionIdentifiers; // @synthesize extensionIdentifiers=_extensionIdentifiers;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSDictionary *extensionsByBundleId; // @synthesize extensionsByBundleId=_extensionsByBundleId;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id matchingContext; // @synthesize matchingContext=_matchingContext;
-- (void).cxx_destruct;
 - (void)stopLookingForExtensions;
 - (void)startLookingForExtensionsWithMatchUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)findExtensionsWithCompletionBlock:(CDUnknownBlockType)arg1;

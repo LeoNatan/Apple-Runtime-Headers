@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptionForScore:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long score; // @synthesize score=_score;
 @property(readonly, copy) CNReputationHandle *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

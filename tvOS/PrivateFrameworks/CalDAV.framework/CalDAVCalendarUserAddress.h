@@ -20,9 +20,9 @@
 + (id)unpackCalDAVUserAdress:(id)arg1;
 + (id)packCalDAVUserAdress:(id)arg1;
 + (long long)defaultPreferredAttribute;
+- (void).cxx_destruct;
 @property long long preferred; // @synthesize preferred=_preferred;
 @property(retain, nonatomic) NSURL *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (long long)compare:(id)arg1;
 - (id)initWithAddress:(id)arg1 preferred:(long long)arg2;
 

@@ -32,6 +32,7 @@
     long long _lockCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long lockCount; // @synthesize lockCount=_lockCount;
 @property(readonly, nonatomic) NSMutableArray *didDisappearBlocks; // @synthesize didDisappearBlocks=_didDisappearBlocks;
 @property(readonly, nonatomic) NSMutableArray *willDisappearBlocks; // @synthesize willDisappearBlocks=_willDisappearBlocks;
@@ -47,7 +48,6 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
 @property(nonatomic) double visiblePercentage; // @synthesize visiblePercentage=_visiblePercentage;
-- (void).cxx_destruct;
 - (void)determineVisiblePercentage;
 - (void)didDisappear;
 - (void)willDisappear;

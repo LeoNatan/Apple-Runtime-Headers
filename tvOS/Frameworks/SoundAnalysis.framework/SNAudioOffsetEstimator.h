@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _maximumObservableOffset;
 }
 
-@property(nonatomic) double maximumObservableOffset; // @synthesize maximumObservableOffset=_maximumObservableOffset;
-@property(nonatomic) double minimumObservableOffset; // @synthesize minimumObservableOffset=_minimumObservableOffset;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) double maximumObservableOffset; // @synthesize maximumObservableOffset=_maximumObservableOffset;
+@property(nonatomic) double minimumObservableOffset; // @synthesize minimumObservableOffset=_minimumObservableOffset;
 @property(readonly, nonatomic) double offset;
 @property(readonly, nonatomic) struct Box *resultsBox;
 - (_Bool)adaptToSystemConfiguration:(id)arg1 error:(id *)arg2;

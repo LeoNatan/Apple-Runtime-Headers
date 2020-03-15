@@ -25,11 +25,11 @@
 + (id)_updatedFetchResultsForMemoriesForDatasource:(id)arg1 changeDetails:(id)arg2 changeInstance:(id)arg3;
 + (id)baseFetchOptions;
 + (id)mostRecentCreationDate;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long firstUngroupedMemoryIndex; // @synthesize firstUngroupedMemoryIndex=_firstUngroupedMemoryIndex;
 @property(retain, nonatomic) PHFetchResult *memoriesFetchResult; // @synthesize memoriesFetchResult=_memoriesFetchResult;
 @property(nonatomic, getter=_isGeneratingAdditionalEntries, setter=_setGeneratingAdditionalEntries:) BOOL _generatingAdditionalEntries; // @synthesize _generatingAdditionalEntries=__generatingAdditionalEntries;
 @property(readonly, nonatomic) PHFetchOptions *baseFetchOptions; // @synthesize baseFetchOptions=_baseFetchOptions;
-- (void).cxx_destruct;
 - (void)updateCurrentMemoriesNonPendingAndNotificationStatus;
 - (void)_clearPendingNotificationForMemory:(id)arg1;
 - (void)handleChangedKeyAssetsForMemories:(id)arg1;

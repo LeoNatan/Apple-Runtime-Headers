@@ -50,6 +50,7 @@
 + (void)_doCachedBinariesWork:(CDUnknownBlockType)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_5c58afa3 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *symbols; // @synthesize symbols=_symbols;
 @property(readonly) NSMutableDictionary *instructions; // @synthesize instructions=_instructions;
 @property(retain) NSString *binaryVersion; // @synthesize binaryVersion=_binaryVersion;
@@ -59,7 +60,6 @@
 @property(retain) NSString *path; // @synthesize path=_path;
 @property BOOL hasTextExecSegment; // @synthesize hasTextExecSegment=_hasTextExecSegment;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)clearSymbolCache;
 - (void)clearCoreSymbolicationCache;
@@ -82,9 +82,9 @@
 @property(retain) NSString *name;
 - (id)initWithUUID:(id)arg1;
 - (void)writeJSONDictionaryEntriesToStream:(id)arg1;
-- (void)populateReferencesUsingBuffer:(const CDStruct_5c58afa3 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_5c58afa3 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_5c58afa3 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_5c58afa3 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

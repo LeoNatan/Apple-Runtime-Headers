@@ -16,8 +16,8 @@
 }
 
 + (_Bool)validatePath:(id)arg1 error:(out id *)arg2;
-@property __weak NURenderTagGroup *parent; // @synthesize parent=_parent;
 - (void).cxx_destruct;
+@property __weak NURenderTagGroup *parent; // @synthesize parent=_parent;
 - (id)finalizeMap:(id)arg1;
 - (void)visitEveryTagWithBlock:(CDUnknownBlockType)arg1;
 - (id)description;

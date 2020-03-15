@@ -22,13 +22,13 @@
     struct CLLocationCoordinate2D _centerCoordinates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *timeLocationIdentifier; // @synthesize timeLocationIdentifier=_timeLocationIdentifier;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D centerCoordinates; // @synthesize centerCoordinates=_centerCoordinates;
 @property(readonly, nonatomic) NSArray *addressEdgesSortedByTime; // @synthesize addressEdgesSortedByTime=_addressEdgesSortedByTime;
 @property(readonly, nonatomic) PGGraphAddressNode *addressNode; // @synthesize addressNode=_addressNode;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;

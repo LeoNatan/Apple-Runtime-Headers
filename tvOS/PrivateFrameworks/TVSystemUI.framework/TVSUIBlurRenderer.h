@@ -18,13 +18,13 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *layerTreesByEffect; // @synthesize layerTreesByEffect=_layerTreesByEffect;
 @property(readonly, nonatomic) NSMutableDictionary *viewHierarchiesByEffect; // @synthesize viewHierarchiesByEffect=_viewHierarchiesByEffect;
 @property(readonly, nonatomic) _TVSUIOffscreenRenderer *renderer; // @synthesize renderer=_renderer;
 @property(nonatomic) _Bool useSoftwareRenderer; // @synthesize useSoftwareRenderer=_useSoftwareRenderer;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)_findBlurFilterLayerInLayerTree:(id)arg1;
 - (id)_blurredImageWithImage:(id)arg1 blurStyle:(long long)arg2 tintColor:(id)arg3 filter:(id)arg4 customBlurRadius:(double)arg5;
 - (id)blurredImageWithImage:(id)arg1 blurStyle:(long long)arg2 tintColor:(id)arg3 filter:(id)arg4;

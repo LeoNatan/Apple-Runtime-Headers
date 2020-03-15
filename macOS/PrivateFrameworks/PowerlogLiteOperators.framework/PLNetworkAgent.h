@@ -21,8 +21,8 @@
 + (id)railDefinitions;
 + (id)defaults;
 + (void)load;
-@property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
 - (void).cxx_destruct;
+@property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
 - (void)logEventBackwardCumulativeNetworkUsage;
 - (void)log;
 - (void)initOperatorDependancies;

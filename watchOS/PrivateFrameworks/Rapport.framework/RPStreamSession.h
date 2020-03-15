@@ -49,6 +49,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType streamAcceptHandler; // @synthesize streamAcceptHandler=_streamAcceptHandler;
 @property(nonatomic) _Bool serverMode; // @synthesize serverMode=_serverMode;
 @property(copy, nonatomic) NSData *pskData; // @synthesize pskData=_pskData;
@@ -70,7 +71,6 @@
 @property(readonly, nonatomic) int flowControlState; // @synthesize flowControlState=_flowControlState;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned long long delegatedProcessUPID; // @synthesize delegatedProcessUPID=_delegatedProcessUPID;
-- (void).cxx_destruct;
 - (void)_updateTrafficRegistrationForIP:(const CDUnion_fab80606 *)arg1;
 - (void)_updateTrafficRegistration;
 - (void)sendRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;

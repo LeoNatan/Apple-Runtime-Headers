@@ -30,6 +30,7 @@
 
 + (id)textInteractionsForSet:(long long)arg1;
 + (id)textInteractionForMode:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UITextInteraction_AssistantDelegate> assistantDelegate; // @synthesize assistantDelegate=_assistantDelegate;
 @property(retain, nonatomic) UITextInteractionInputDelegate *interactionInputDelegate; // @synthesize interactionInputDelegate=_interactionInputDelegate;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
@@ -39,10 +40,10 @@
 @property(readonly, nonatomic) NSDictionary *gestureMap; // @synthesize gestureMap=_gestureMap;
 @property(readonly, nonatomic) NSArray *gestures; // @synthesize gestures=_gestures;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)interaction_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)_shouldAllowEnforcedTouchTypeForTouch:(id)arg1 forGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)interaction_gestureRecognizerShouldBegin:(id)arg1;
 - (id)defaultTapRecognizerWithAction:(SEL)arg1;
@@ -66,6 +67,7 @@
 - (void)_cleanUpFeedbackForGesture;
 - (void)_prepareFeedbackForGesture;
 - (void)_createFeedbackIfNecessary;
+- (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4 forTouchType:(long long)arg5;
 - (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
 @property(readonly, nonatomic) long long textInteractionSet;

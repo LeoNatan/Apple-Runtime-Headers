@@ -17,9 +17,9 @@
     NSMutableArray *_children;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isHeader; // @synthesize isHeader=_isHeader;
 @property(nonatomic) long long section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (id)description;
 - (id)accessibilityIdentifier;
 - (id)_accessibilityHitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

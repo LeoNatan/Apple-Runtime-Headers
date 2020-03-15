@@ -18,9 +18,9 @@
 + (id)newWithParameter:(id)arg1 state:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 options:(struct WFParameterComponentOptions)arg4 variableProvider:(id)arg5 variableUIDelegate:(id)arg6 navigationContext:(id)arg7 labelsToAlignTo:(id)arg8;
 + (_Bool)standaloneVariablesAsContentItems;
 + (Class)stateClass;
+- (void).cxx_destruct;
 - (CDUnknownBlockType)updateBlock;
 @property(readonly, nonatomic) __weak WFArrayParameter *parameter; // @synthesize parameter=_parameter;
-- (void).cxx_destruct;
 - (void)arrayEditor:(id)arg1 confirmDeletion:(id)arg2;
 - (void)notifyParameterObserverWithValues:(id)arg1 updateItem:(id)arg2;
 

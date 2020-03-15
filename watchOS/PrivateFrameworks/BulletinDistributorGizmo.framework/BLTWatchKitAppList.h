@@ -19,8 +19,8 @@
     id <BLTWatchKitAppListDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <BLTWatchKitAppListDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <BLTWatchKitAppListDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)watchKitAppDefinitionWithBundleID:(id)arg1;
 - (id)watchKitAppDefinitionWithContainerBundleID:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;

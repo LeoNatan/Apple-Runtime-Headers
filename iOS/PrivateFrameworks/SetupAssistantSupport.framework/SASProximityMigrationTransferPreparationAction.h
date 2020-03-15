@@ -15,8 +15,8 @@
 
 + (id)actionFromDictionary:(id)arg1;
 + (unsigned long long)actionID;
-@property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 - (_Bool)hasResponse;
 - (id)requestPayload;
 

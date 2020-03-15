@@ -26,8 +26,8 @@
 + (id)waveformWithContentsOfURL:(id)arg1 minimumRequiredVersion:(unsigned long long)arg2;
 + (id)waveformURLForAVURL:(id)arg1;
 + (void)initialize;
-@property(retain) NSArray *segments; // @synthesize segments=_segments;
 - (void).cxx_destruct;
+@property(retain) NSArray *segments; // @synthesize segments=_segments;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

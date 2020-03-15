@@ -21,11 +21,11 @@
     NSURL *_URLTarget;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *URLTarget; // @synthesize URLTarget=_URLTarget;
 @property(copy, nonatomic) NSString *URLText; // @synthesize URLText=_URLText;
 @property(nonatomic) _Bool isTopmostHeader; // @synthesize isTopmostHeader=_isTopmostHeader;
 @property(nonatomic) UITableView *cnfreg_tableView; // @synthesize cnfreg_tableView=_cnfreg_tableView;
-- (void).cxx_destruct;
 - (double)preferredHeightForWidth:(double)arg1;
 - (void)updateLabelText;
 - (void)_urlTapped:(id)arg1;

@@ -41,6 +41,7 @@
 }
 
 + (id)agent;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTBedtimeSessionTracker *bedtimeSessionTracker; // @synthesize bedtimeSessionTracker=_bedtimeSessionTracker;
 @property(retain, nonatomic) MTBedtimeSessionManager *bedtimeSessionManager; // @synthesize bedtimeSessionManager=_bedtimeSessionManager;
 @property(retain, nonatomic) MTBedtimeDNDMonitor *bedtimeDNDMonitor; // @synthesize bedtimeDNDMonitor=_bedtimeDNDMonitor;
@@ -65,7 +66,6 @@
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(nonatomic) _Bool systemReady; // @synthesize systemReady=_systemReady;
 @property(retain, nonatomic) NSDate *launchDate; // @synthesize launchDate=_launchDate;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)_diagnosticProviders;

@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long syncSessionType; // @synthesize syncSessionType=_syncSessionType;
 @property(copy, nonatomic) NSArray *jobs; // @synthesize jobs=_jobs;
 @property(copy, nonatomic) NSArray *testInputs; // @synthesize testInputs=_testInputs;
@@ -31,7 +32,6 @@
 @property(nonatomic, getter=shouldResetDeviceSyncState) _Bool resetDeviceSyncState; // @synthesize resetDeviceSyncState=_resetDeviceSyncState;
 @property(copy, nonatomic) NSURL *activityInfoDirectory; // @synthesize activityInfoDirectory=_activityInfoDirectory;
 @property(nonatomic, getter=shouldResumePendingJobs) _Bool resumePendingJobs; // @synthesize resumePendingJobs=_resumePendingJobs;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -18,10 +18,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *workflowControllerAssertionTable; // @synthesize workflowControllerAssertionTable=_workflowControllerAssertionTable;
 @property(readonly, nonatomic) NSMutableOrderedSet *runningWorkflowControllerSet; // @synthesize runningWorkflowControllerSet=_runningWorkflowControllerSet;
 @property(copy, nonatomic) CDUnknownBlockType demoResetBlock; // @synthesize demoResetBlock=_demoResetBlock;
-- (void).cxx_destruct;
 - (void)applicationContext:(id)arg1 applicationStateDidChange:(long long)arg2;
 @property(readonly, nonatomic) NSArray *runningWorkflows;
 @property(readonly, nonatomic) NSArray *runningWorkflowControllers;

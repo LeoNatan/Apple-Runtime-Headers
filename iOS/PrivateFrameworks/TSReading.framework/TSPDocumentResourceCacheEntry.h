@@ -18,13 +18,13 @@
     NSDate *_contentAccessDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wasDownloaded; // @synthesize wasDownloaded=_wasDownloaded;
 @property(retain, nonatomic) NSDate *contentAccessDate; // @synthesize contentAccessDate=_contentAccessDate;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) long long accessCount; // @synthesize accessCount=_accessCount;
 @property(readonly, nonatomic) NSString *digestString; // @synthesize digestString=_digestString;
-- (void).cxx_destruct;
 - (id)initWithDigestString:(id)arg1;
 - (id)init;
 

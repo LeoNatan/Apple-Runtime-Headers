@@ -16,8 +16,8 @@
 }
 
 + (id)interestedChangeKeys;
-@property(retain) EKUIResizingTextField *titleField; // @synthesize titleField=_titleField;
 - (void).cxx_destruct;
+@property(retain) EKUIResizingTextField *titleField; // @synthesize titleField=_titleField;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (BOOL)isObjectEditable;

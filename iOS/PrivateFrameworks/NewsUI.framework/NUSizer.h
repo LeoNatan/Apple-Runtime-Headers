@@ -18,11 +18,11 @@
     CDUnknownBlockType _sizerBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool alwaysIntegral; // @synthesize alwaysIntegral=_alwaysIntegral;
 @property(readonly, nonatomic) _Bool flexible; // @synthesize flexible=_flexible;
 @property(readonly, copy, nonatomic) CDUnknownBlockType sizerBlock; // @synthesize sizerBlock=_sizerBlock;
 @property(readonly, copy, nonatomic) NSString *desc; // @synthesize desc=_desc;
-- (void).cxx_destruct;
 - (struct CGRect)frameInBounds:(struct CGRect)arg1 cursor:(double)arg2 options:(struct NULayoutOptions)arg3 layoutContext:(id)arg4;
 @property(readonly, copy) NSString *description;
 - (id)initWithDescription:(id)arg1 flexible:(_Bool)arg2 sizerBlock:(CDUnknownBlockType)arg3;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     ADNotificationBus *_eventBus;
 }
 
-@property(retain, nonatomic) ADNotificationBus *eventBus; // @synthesize eventBus=_eventBus;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ADNotificationBus *eventBus; // @synthesize eventBus=_eventBus;
 - (void)sendEventWithPayload:(id)arg1;
 - (void)busWillSleep:(id)arg1;
 - (void)busWillWakeUp:(id)arg1;

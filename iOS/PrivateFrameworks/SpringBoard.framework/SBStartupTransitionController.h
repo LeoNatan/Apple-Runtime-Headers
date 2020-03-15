@@ -23,10 +23,10 @@
     NSSet *_renderOverlayDismissActions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_transitionFactory, setter=_setTransitionFactory:) SBStartupTransitionFactory *transitionFactory; // @synthesize transitionFactory=_transitionFactory;
 @property(retain, nonatomic, getter=_transitionContextPersistence, setter=_setTransitionContextPersistence:) SBStartupTransitionContextPersistence *transitionContextPersistence; // @synthesize transitionContextPersistence=_transitionContextPersistence;
 @property(readonly, nonatomic) BSTransaction<SBStartupTransition> *startupTransition; // @synthesize startupTransition=_transition;
-- (void).cxx_destruct;
 - (void)transactionDidComplete:(id)arg1;
 - (void)transactionDidBegin:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

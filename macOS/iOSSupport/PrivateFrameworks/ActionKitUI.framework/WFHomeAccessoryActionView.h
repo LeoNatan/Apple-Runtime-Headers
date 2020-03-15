@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)preferredHeightForAction:(id)arg1;
-@property(retain, nonatomic) UIStackView *iconsStackView; // @synthesize iconsStackView=_iconsStackView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIStackView *iconsStackView; // @synthesize iconsStackView=_iconsStackView;
 - (void)updateIcons;
 - (void)action:(id)arg1 parameterStateDidChangeForKey:(id)arg2;
 - (void)setAction:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)createFromData:(id)arg1;
 + (id)fromPBCodable:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int uncompressedLength; // @synthesize uncompressedLength=_uncompressedLength;
 @property(readonly, nonatomic) NSData *event; // @synthesize event=_event;
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (id)asData;
 - (id)initWithCompressedData:(id)arg1 uncompressedLength:(unsigned int)arg2 version:(unsigned int)arg3;
 - (id)initWithData:(id)arg1 version:(unsigned int)arg2;

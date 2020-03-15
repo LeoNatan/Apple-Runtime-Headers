@@ -18,11 +18,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *searchQueue; // @synthesize searchQueue=_searchQueue;
 @property(retain, nonatomic) NSMutableArray *searchModules; // @synthesize searchModules=_searchModules;
 @property(retain, nonatomic) NSMutableArray *recentsModules; // @synthesize recentsModules=_recentsModules;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_searchModuleCompletionWithModules:(id)arg1 searchTerm:(id)arg2 resultsClass:(Class)arg3 completion:(CDUnknownBlockType)arg4;
 - (CDUnknownBlockType)searchModuleCompletionWithSearchTerm:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)recentsModuleCompletionWithCompletion:(CDUnknownBlockType)arg1;

@@ -19,10 +19,10 @@
     PKPaymentAuthorizationRemoteAlertViewController *_controller;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak PKPaymentAuthorizationRemoteAlertViewController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <PKPaymentAuthorizationServiceProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSMutableSet *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
-- (void).cxx_destruct;
 - (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(id)arg1;
 - (void)authorizationDidSelectPaymentMethodCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
@@ -33,6 +33,7 @@
 - (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(long long)arg1;
 - (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;
+- (void)authorizationDidAuthorizeContextCompleteWithResult:(id)arg1;
 - (void)authorizationDidRequestMerchantSessionCompleteWithSession:(id)arg1 error:(id)arg2;
 - (void)dismissed;
 - (void)handleDismissWithCompletion:(CDUnknownBlockType)arg1;

@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     id <_UIAlertControllerTextFieldViewControllerContaining> _container;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) __weak id <_UIAlertControllerTextFieldViewControllerContaining> container; // @synthesize container=_container;
 @property(readonly) NSArray *textFields; // @synthesize textFields;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (BOOL)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
 - (BOOL)resignFirstResponder;

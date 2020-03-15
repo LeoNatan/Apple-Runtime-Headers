@@ -32,6 +32,16 @@ struct CGSize {
     double _field2;
 };
 
+struct RSDAAPChunk {
+    struct RSDAAPChunkHeader _field1;
+    char *_field2;
+};
+
+struct RSDAAPChunkHeader {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
 struct _MRHIDButtonEvent {
     unsigned int _field1;
     unsigned int _field2;
@@ -67,6 +77,21 @@ typedef struct {
     unsigned int _field1;
     unsigned long long _field2;
 } CDStruct_d008d4b8;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int responseCode:1;
+    unsigned int sessionIdentifier:1;
+} CDStruct_377099b8;
+
+typedef struct {
+    unsigned int sessionIdentifier:1;
+    unsigned int volume:1;
+} CDStruct_77dc7163;
+
+typedef struct {
+    unsigned int sessionIdentifier:1;
+} CDStruct_07a29e00;
 
 #pragma mark Named Unions
 

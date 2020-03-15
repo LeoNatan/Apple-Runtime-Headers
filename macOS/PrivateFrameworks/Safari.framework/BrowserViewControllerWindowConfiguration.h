@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     WKWindowFeatures *_windowFeatures;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WKWindowFeatures *windowFeatures; // @synthesize windowFeatures=_windowFeatures;
 @property(readonly, nonatomic) WKNavigationAction *navigationAction; // @synthesize navigationAction=_navigationAction;
 @property(readonly, nonatomic) WKWebViewConfiguration *webViewConfiguration; // @synthesize webViewConfiguration=_webViewConfiguration;
-- (void).cxx_destruct;
 - (id)initWithWebViewConfiguration:(id)arg1 navigationAction:(id)arg2 windowFeatures:(id)arg3;
 
 @end

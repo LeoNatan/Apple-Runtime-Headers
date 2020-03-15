@@ -22,12 +22,12 @@
     CDStruct_02837cd9 _originalBounds;
 }
 
+- (id).cxx_construct;
 @property(readonly, nonatomic) Color_124dee43 lineColor; // @synthesize lineColor=_lineColor;
 @property(readonly, nonatomic) int toNodeSignificance; // @synthesize toNodeSignificance=_toNodeSignificance;
 @property(readonly, nonatomic) unsigned long long lineID; // @synthesize lineID=_lineID;
 @property(readonly, nonatomic) CDStruct_79c5c966 toNodeID; // @synthesize toNodeID=_toNodeID;
 @property(readonly, nonatomic) CDStruct_79c5c966 fromNodeID; // @synthesize fromNodeID=_fromNodeID;
-- (id).cxx_construct;
 @property(readonly, copy) NSString *description;
 - (_Bool)_MapsCarPlay_isEqual:(id)arg1;
 - (void)initSupportWithRoute:(id)arg1 step:(id)arg2 toNodeSignificance:(int)arg3 currentTransitLineColor:(id)arg4;

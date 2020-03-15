@@ -19,6 +19,7 @@
     NSData *_contentKeyContextData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *contentKeyContextData; // @synthesize contentKeyContextData=_contentKeyContextData;
 @property(copy, nonatomic) NSData *serverPlaybackContextData; // @synthesize serverPlaybackContextData=_serverPlaybackContextData;
 @property(copy, nonatomic) NSDate *renewalDate; // @synthesize renewalDate=_renewalDate;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSDate *rentalExpirationDate; // @synthesize rentalExpirationDate=_rentalExpirationDate;
 @property(copy, nonatomic) NSError *serverError; // @synthesize serverError=_serverError;
 @property(copy, nonatomic) ICStoreDialogResponse *dialog; // @synthesize dialog=_dialog;
-- (void).cxx_destruct;
 - (void)finishAssetResourceLoadingRequest:(id)arg1 withError:(id)arg2;
 
 @end

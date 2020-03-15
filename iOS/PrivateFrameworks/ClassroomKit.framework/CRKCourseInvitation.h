@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *anchorCertificateDatas; // @synthesize anchorCertificateDatas=_anchorCertificateDatas;
 @property(readonly, copy, nonatomic) NSData *instructorImageData; // @synthesize instructorImageData=_instructorImageData;
 @property(readonly, copy, nonatomic) NSString *instructorName; // @synthesize instructorName=_instructorName;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSString *courseDescription; // @synthesize courseDescription=_courseDescription;
 @property(readonly, copy, nonatomic) NSString *courseName; // @synthesize courseName=_courseName;
 @property(readonly, copy, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

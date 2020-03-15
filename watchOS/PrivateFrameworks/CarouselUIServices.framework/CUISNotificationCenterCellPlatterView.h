@@ -17,9 +17,9 @@
     unsigned int _roundedCorners;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int roundedCorners; // @synthesize roundedCorners=_roundedCorners;
 @property(retain, nonatomic) UIColor *platterBackgroundColor; // @synthesize platterBackgroundColor=_platterBackgroundColor;
-- (void).cxx_destruct;
 - (struct CGImage *)_getBackgroundForCellBounds:(struct CGRect)arg1 color:(id)arg2 roundedCorners:(unsigned int)arg3;
 - (void)_clearBackground;
 - (void)_setBackgroundImage;

@@ -21,8 +21,8 @@
     unsigned int _colorPixelFormat;
 }
 
-@property(readonly, nonatomic) unsigned int colorPixelFormat; // @synthesize colorPixelFormat=_colorPixelFormat;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int colorPixelFormat; // @synthesize colorPixelFormat=_colorPixelFormat;
 - (void)_updateDrawableSizeIfNecessary;
 - (id)_newRenderPassDescriptor;
 - (id)metalLayer;

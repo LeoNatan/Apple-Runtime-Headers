@@ -15,8 +15,8 @@
     id <_TVRCMROriginDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_TVRCMROriginDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_TVRCMROriginDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_supportedCommandsChanged:(id)arg1;
 - (void)_fetchAndReportSupportedCommands;
 - (BOOL)isEqualToOriginRef:(void *)arg1;

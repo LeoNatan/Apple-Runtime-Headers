@@ -12,11 +12,14 @@
 @interface CallSegment : NSObject
 {
     VCHistogram *_RTT;
+    VCHistogram *_abnormalRTT;
     VCHistogram *_JBQSize;
     VCHistogram *_JBTarget;
     VCHistogram *_JBUnclippedTarget;
     VCHistogram *_PLR;
     VCHistogram *_VPLR;
+    VCHistogram *_abnormalPLR;
+    VCHistogram *_abnormalBPL;
     VCHistogram *_latency;
     VCHistogram *_TBR;
     VCHistogram *_RBR;
@@ -93,6 +96,10 @@
     unsigned int _videoFrameExpectedCounter;
     unsigned int _encodedVideoFrameCounter;
     unsigned int _captureVideoFrameCounter;
+    unsigned int _overshootSendBitrate;
+    unsigned int _undershootSendBitrate;
+    unsigned int _overUtilizedBandwidth;
+    unsigned int _underUtilizedBandwidth;
     NSString *_relayServer;
     int _relayType;
     NSString *_accessToken;
@@ -146,6 +153,10 @@
 @property(copy) NSString *activeConnectionRegistry; // @synthesize activeConnectionRegistry=_activeConnectionRegistry;
 @property(readonly) NSString *previousSegmentName; // @synthesize previousSegmentName=_previousSegmentName;
 @property(readonly) NSString *segmentName; // @synthesize segmentName=_segmentName;
+@property unsigned int underUtilizedBandwidth; // @synthesize underUtilizedBandwidth=_underUtilizedBandwidth;
+@property unsigned int overUtilizedBandwidth; // @synthesize overUtilizedBandwidth=_overUtilizedBandwidth;
+@property unsigned int undershootSendBitrate; // @synthesize undershootSendBitrate=_undershootSendBitrate;
+@property unsigned int overshootSendBitrate; // @synthesize overshootSendBitrate=_overshootSendBitrate;
 @property unsigned int captureVideoFrameCounter; // @synthesize captureVideoFrameCounter=_captureVideoFrameCounter;
 @property unsigned int encodedVideoFrameCounter; // @synthesize encodedVideoFrameCounter=_encodedVideoFrameCounter;
 @property unsigned int videoFrameNonFECCompleteCounter; // @synthesize videoFrameNonFECCompleteCounter=_videoFrameNonFECCompleteCounter;
@@ -218,11 +229,14 @@
 @property(readonly) VCHistogram *RBR; // @synthesize RBR=_RBR;
 @property(readonly) VCHistogram *TBR; // @synthesize TBR=_TBR;
 @property(readonly) VCHistogram *latency; // @synthesize latency=_latency;
+@property(readonly) VCHistogram *abnormalBPL; // @synthesize abnormalBPL=_abnormalBPL;
+@property(readonly) VCHistogram *abnormalPLR; // @synthesize abnormalPLR=_abnormalPLR;
 @property(readonly) VCHistogram *VPLR; // @synthesize VPLR=_VPLR;
 @property(readonly) VCHistogram *PLR; // @synthesize PLR=_PLR;
 @property(readonly) VCHistogram *JBUnclippedTarget; // @synthesize JBUnclippedTarget=_JBUnclippedTarget;
 @property(readonly) VCHistogram *JBTarget; // @synthesize JBTarget=_JBTarget;
 @property(readonly) VCHistogram *JBQSize; // @synthesize JBQSize=_JBQSize;
+@property(readonly) VCHistogram *abnormalRTT; // @synthesize abnormalRTT=_abnormalRTT;
 @property(readonly) VCHistogram *RTT; // @synthesize RTT=_RTT;
 - (void)changeDuplicationWithType:(unsigned short)arg1 payload:(id)arg2;
 - (id)segmentQRReport;

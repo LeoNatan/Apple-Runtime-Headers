@@ -21,10 +21,10 @@
 }
 
 + (id)componentForModel:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(copy, nonatomic) CDUnknownBlockType actionGenerator; // @synthesize actionGenerator=_actionGenerator;
 @property(retain, nonatomic) WFAction *sourceAction; // @synthesize sourceAction=_sourceAction;
-- (void).cxx_destruct;
 - (void)componentHostingViewDidInvalidateSize:(id)arg1;
 - (void)reset;
 - (void)updateCurrentViewControllers;

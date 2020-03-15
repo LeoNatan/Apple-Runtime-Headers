@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSExtension *_extension;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(readonly, nonatomic) UIApplicationExtensionActivity *_applicationExtensionActivity; // @synthesize _applicationExtensionActivity=__applicationExtensionActivity;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *smallIcon;
 @property(readonly, nonatomic) UIImage *icon;
 @property(readonly, nonatomic) NSString *title;

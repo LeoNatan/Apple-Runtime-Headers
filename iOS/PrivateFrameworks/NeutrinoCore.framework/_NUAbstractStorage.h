@@ -18,10 +18,10 @@
     CDStruct_d58201db _size;
 }
 
+- (void).cxx_destruct;
 @property(retain) NUPixelFormat *format; // @synthesize format=_format;
 @property long long sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 @property CDStruct_912cb5d2 size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (void)provideMutableBuffer:(CDUnknownBlockType)arg1;
 - (void)provideBuffer:(CDUnknownBlockType)arg1;
 - (long long)useAsCIRenderDestinationWithRenderer:(id)arg1 block:(CDUnknownBlockType)arg2;

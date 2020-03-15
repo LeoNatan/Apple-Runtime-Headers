@@ -13,8 +13,8 @@
     IBUIMetricRepresentation *_tabBar;
 }
 
-@property(readonly, nonatomic) IBUIMetricRepresentation *tabBar; // @synthesize tabBar=_tabBar;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IBUIMetricRepresentation *tabBar; // @synthesize tabBar=_tabBar;
 - (id)singleLinkPrettyDescription;
 - (id)copyWithPrecedingMetric:(id)arg1;
 - (_Bool)isEqualToMetricChain:(id)arg1;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSArray *_outputLabels;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputLabels; // @synthesize outputLabels=_outputLabels;
 @property(readonly, nonatomic) Class observationClass; // @synthesize observationClass=_observationClass;
 @property(readonly, nonatomic) MLModel *model; // @synthesize model=_model;
 @property(readonly, nonatomic) SNVGGFeatureExtractorConfiguration *featureExtractorConfiguration; // @synthesize featureExtractorConfiguration=_featureExtractorConfiguration;
-- (void).cxx_destruct;
 - (id)initWithMLModel:(id)arg1 observationClass:(Class)arg2 outputLabels:(id)arg3;
 
 @end

@@ -16,8 +16,8 @@
 }
 
 + (id)interestedChangeKeys;
-@property(retain) EKUIResizingTextField *notesField; // @synthesize notesField=_notesField;
 - (void).cxx_destruct;
+@property(retain) EKUIResizingTextField *notesField; // @synthesize notesField=_notesField;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (BOOL)isObjectEditable;

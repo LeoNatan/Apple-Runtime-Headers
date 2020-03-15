@@ -84,6 +84,7 @@
     MPVideoView *_videoView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MPVideoView *videoView; // @synthesize videoView=_videoView;
 @property(nonatomic, setter=_setOverrideType:) long long overrideType; // @synthesize overrideType=_overrideType;
 @property(readonly, nonatomic) _UIBackdropView *bottomBarBackdropView; // @synthesize bottomBarBackdropView=_bottomBarBackdropView;
@@ -103,7 +104,6 @@
 @property(retain, nonatomic) MPAVItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
 @property(nonatomic) __weak id <MPVideoOverlayDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)hideAlternateTracks;
 - (void)showAlternateTracks;
 - (void)setDesiredParts:(unsigned long long)arg1 animate:(_Bool)arg2;

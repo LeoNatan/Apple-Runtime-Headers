@@ -15,8 +15,8 @@
     WFWorkflow *_workflow;
 }
 
-@property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void)cancel;
 - (void)gallerySubmissionDidCancel:(id)arg1;
 - (void)gallerySubmissionDidFinish:(id)arg1;

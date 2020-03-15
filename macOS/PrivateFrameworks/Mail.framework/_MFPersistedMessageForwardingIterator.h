@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void)finishedSendingMessages;
 - (void)newMessagesAvailable:(id)arg1 secondaryMessages:(id)arg2 fromUpdate:(BOOL)arg3;
 @property(readonly) BOOL shouldCancel;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_securityLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *securityLabel; // @synthesize securityLabel=_securityLabel;
 @property(nonatomic) __weak NSTextField *title; // @synthesize title=_title;
 @property(nonatomic) __weak ButtonPlus *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *passwordTextField; // @synthesize passwordTextField=_passwordTextField;
 @property(nonatomic) __weak NSTextField *userNameTextField; // @synthesize userNameTextField=_userNameTextField;
 @property(retain, nonatomic) id <HTTPAuthenticationDialogViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)isAccessibilityElement;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityRole;

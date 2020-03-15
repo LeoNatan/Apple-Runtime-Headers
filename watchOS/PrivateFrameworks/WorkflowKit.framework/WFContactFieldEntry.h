@@ -20,14 +20,14 @@
 }
 
 + (int)predictedEntryTypeForHandleValue:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFEmailAddress *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly, nonatomic) WFPhoneNumber *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, nonatomic) WFContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)containedVariables;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 userInputRequiredHandler:(CDUnknownBlockType)arg3 valueHandler:(CDUnknownBlockType)arg4;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 - (id)serializedRepresentation;
 - (id)underlyingObject;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;

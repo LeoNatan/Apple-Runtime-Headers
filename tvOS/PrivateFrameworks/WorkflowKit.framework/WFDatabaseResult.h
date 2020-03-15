@@ -18,11 +18,11 @@
     NSHashTable *_observersTable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observersTable; // @synthesize observersTable=_observersTable;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSPredicate *searchPredicate; // @synthesize searchPredicate=_searchPredicate;
 @property(readonly, nonatomic) id <WFDatabaseBackingStore> backingStore; // @synthesize backingStore=_backingStore;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 @property(readonly, nonatomic) NSArray *observers;

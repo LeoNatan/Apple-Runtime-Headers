@@ -13,8 +13,8 @@
     NSURL *_wallpaperFolderURL;
 }
 
-@property(retain, nonatomic) NSURL *wallpaperFolderURL; // @synthesize wallpaperFolderURL=_wallpaperFolderURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *wallpaperFolderURL; // @synthesize wallpaperFolderURL=_wallpaperFolderURL;
 - (id)filenameForWallpaper:(id)arg1;
 - (void)pruneUnusedOriginalWallpaperImages:(id)arg1;
 - (void)saveOriginalImage:(id)arg1 forWallpaper:(id)arg2;

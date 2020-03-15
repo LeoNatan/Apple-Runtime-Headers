@@ -13,8 +13,8 @@
     NSArray *_connectedProviders;
 }
 
-@property(readonly, nonatomic) NSArray *connectedProviders; // @synthesize connectedProviders=_connectedProviders;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *connectedProviders; // @synthesize connectedProviders=_connectedProviders;
 - (void)px_start;
 
 @end

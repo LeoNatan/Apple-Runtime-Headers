@@ -18,12 +18,12 @@
     PICompositionController *_compositionController;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) PICompositionController *compositionController; // @synthesize compositionController=_compositionController;
 @property(nonatomic) double exitEditDuration; // @synthesize exitEditDuration=_exitEditDuration;
 @property(nonatomic) long long sessionEndReason; // @synthesize sessionEndReason=_sessionEndReason;
 @property(nonatomic, getter=isEditingWithRaw) _Bool editingWithRaw; // @synthesize editingWithRaw=_editingWithRaw;
 @property(retain, nonatomic) id <PUEditableAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (id)buildEvent;
 
 @end

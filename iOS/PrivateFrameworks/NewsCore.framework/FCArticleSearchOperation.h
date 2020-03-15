@@ -22,6 +22,7 @@
     FCArticleSearchOperationFeedbackResult *_feedbackResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCArticleSearchOperationFeedbackResult *feedbackResult; // @synthesize feedbackResult=_feedbackResult;
 @property(retain, nonatomic) NSError *searchError; // @synthesize searchError=_searchError;
 @property(retain, nonatomic) FCArticleStreamingResults *results; // @synthesize results=_results;
@@ -32,7 +33,6 @@
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) NSString *keyboardInputMode; // @synthesize keyboardInputMode=_keyboardInputMode;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)_performSearchQuery:(CDUnknownBlockType)arg1;
 - (void)performOperation;

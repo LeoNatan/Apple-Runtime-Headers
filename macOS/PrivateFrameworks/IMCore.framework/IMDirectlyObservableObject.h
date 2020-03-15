@@ -13,8 +13,8 @@
     NSArray *_observers;
 }
 
-@property(retain) NSArray *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+@property(retain) NSArray *observers; // @synthesize observers=_observers;
 - (void)informObserversOfNotification:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

@@ -21,10 +21,10 @@
 }
 
 + (Class)classFactory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *summaryTextColor; // @synthesize summaryTextColor=_summaryTextColor;
 @property(nonatomic) unsigned int notificationCount; // @synthesize notificationCount=_notificationCount;
 @property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;
-- (void).cxx_destruct;
 - (void)_handleFontSizeChange:(id)arg1;
 - (void)_layoutInFrame:(struct CGRect)arg1;
 - (struct CGRect)actionBarFrame;

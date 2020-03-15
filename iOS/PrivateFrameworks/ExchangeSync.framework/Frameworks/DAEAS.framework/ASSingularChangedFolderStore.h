@@ -19,8 +19,8 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
-@property(retain, nonatomic) NSString *serverId; // @synthesize serverId=_serverId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *serverId; // @synthesize serverId=_serverId;
 
 @end
 

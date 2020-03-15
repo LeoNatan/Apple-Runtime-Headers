@@ -17,11 +17,11 @@
     id <MDSearchQueryDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <MDSearchQueryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) unsigned long long status; // @synthesize status=_status;
 @property(readonly, copy) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, copy) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (id)initWithPredicate:(id)arg1 options:(id)arg2;

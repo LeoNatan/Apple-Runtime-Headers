@@ -18,11 +18,11 @@
 }
 
 + (id)sharedDeferredActionHandler;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *deferredAddedPaymentPasses; // @synthesize deferredAddedPaymentPasses=_deferredAddedPaymentPasses;
 @property(retain, nonatomic) NSMutableDictionary *deferredSharedPaymentWebServiceContexts; // @synthesize deferredSharedPaymentWebServiceContexts=_deferredSharedPaymentWebServiceContexts;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSMutableDictionary *deferredActions; // @synthesize deferredActions=_deferredActions;
-- (void).cxx_destruct;
 - (void)_handleDevicePairingFailure:(id)arg1;
 - (void)_handleDeviceUnpaired:(id)arg1;
 - (void)_handleDevicePaired:(id)arg1;

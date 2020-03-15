@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_assetRecordsByRecordID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *assetRecordsByRecordID; // @synthesize assetRecordsByRecordID=_assetRecordsByRecordID;
 @property(retain, nonatomic) NSMutableOrderedSet *assetRecords; // @synthesize assetRecords=_assetRecords;
 @property(retain, nonatomic) CKDAssetZoneKey *assetZoneKey; // @synthesize assetZoneKey=_assetZoneKey;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (void)addMMCSSectionItem:(id)arg1;

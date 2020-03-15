@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (id)_documentForOperation:(id)arg1 mediaItem:(id)arg2 clientData:(id)arg3 leaseID:(id)arg4 storeMediaKind:(id)arg5;
 + (void)stopAllLeases;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *sagaID; // @synthesize sagaID=_sagaID;
 @property(nonatomic) unsigned long long numRenewalRetries; // @synthesize numRenewalRetries=_numRenewalRetries;
 @property(nonatomic) double numLeaseStartRetries; // @synthesize numLeaseStartRetries=_numLeaseStartRetries;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSTimer *renewalTimer; // @synthesize renewalTimer=_renewalTimer;
 @property(retain, nonatomic) NSString *leaseID; // @synthesize leaseID=_leaseID;
 @property(nonatomic) __weak id <TVCKLeaseAgentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_decodeResponseDictionary:(id)arg1;
 - (id)_errorFromDictionary:(id)arg1;
 - (void)_renewLease:(id)arg1;

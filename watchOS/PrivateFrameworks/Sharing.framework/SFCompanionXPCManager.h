@@ -27,13 +27,13 @@
 + (id)serviceManagerClientInterface;
 + (id)xpcManagerInterface;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *observers; // @synthesize observers=_observers;
 @property _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property int listenerResumedToken; // @synthesize listenerResumedToken=_listenerResumedToken;
 @property(retain) NSObject<OS_dispatch_queue> *xpcSetupQueue; // @synthesize xpcSetupQueue=_xpcSetupQueue;
 @property(getter=isInvalid) _Bool invalid; // @synthesize invalid=_invalid;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)appleAccountSignedOut;
 - (void)appleAccountSignedIn;
 - (void)unlockManagerWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -25,11 +25,11 @@
 
 + (Class)countOfArticlesExposedEachSectionType;
 + (Class)widgetSectionIdsExposedType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *countOfArticlesExposedEachSections; // @synthesize countOfArticlesExposedEachSections=_countOfArticlesExposedEachSections;
 @property(retain, nonatomic) NSMutableArray *widgetSectionIdsExposeds; // @synthesize widgetSectionIdsExposeds=_widgetSectionIdsExposeds;
 @property(nonatomic) int widgetSectionsExposed; // @synthesize widgetSectionsExposed=_widgetSectionsExposed;
 @property(nonatomic) int widgetArticleCount; // @synthesize widgetArticleCount=_widgetArticleCount;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

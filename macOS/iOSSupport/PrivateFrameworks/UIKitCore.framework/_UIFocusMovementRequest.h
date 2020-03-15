@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     _UIFocusSearchInfo *_searchInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIFocusSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
 @property(retain, nonatomic) _UIFocusMovementInfo *movementInfo; // @synthesize movementInfo=_movementInfo;
 @property(retain, nonatomic) _UIFocusItemInfo *focusedItemInfo; // @synthesize focusedItemInfo=_focusedItemInfo;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIFocusInputDeviceInfo *inputDeviceInfo; // @synthesize inputDeviceInfo=_inputDeviceInfo;
 @property(nonatomic) BOOL shouldPerformHapticFeedback; // @synthesize shouldPerformHapticFeedback=_shouldPerformHapticFeedback;
 @property(readonly, nonatomic) __weak UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL allowsFocusRestoration;
 @property(readonly, nonatomic) BOOL allowsDeferral;
 @property(readonly, nonatomic) BOOL allowsFocusingCurrentItem;

@@ -25,6 +25,7 @@
 }
 
 + (_Bool)shouldFadeOutZoomSliderForLayoutStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *_maxTrackMaskView; // @synthesize _maxTrackMaskView=__maxTrackMaskView;
 @property(readonly, nonatomic) UIView *_minTrackMaskView; // @synthesize _minTrackMaskView=__minTrackMaskView;
 @property(nonatomic, getter=_isAutozooming, setter=_setAutozooming:) _Bool _autozooming; // @synthesize _autozooming=__autozooming;
@@ -36,7 +37,6 @@
 @property(nonatomic) struct UIEdgeInsets alignmentRectInsets; // @synthesize alignmentRectInsets=_alignmentRectInsets;
 @property(nonatomic) __weak id <CAMZoomSliderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)_updateForLayoutStyle;
 - (void)_handleTouchUpInside:(id)arg1;

@@ -18,10 +18,10 @@
     CUTCheckpointRange *_sendToClient;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long command; // @synthesize command=_command;
 @property(readonly, nonatomic) NSString *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CUTCheckpointRange *sendToClient; // @synthesize sendToClient=_sendToClient;
 @property(readonly, nonatomic) CUTCheckpointRange *decryption; // @synthesize decryption=_decryption;
 @property(readonly, nonatomic) CUTCheckpointRange *storeInMessageStore; // @synthesize storeInMessageStore=_storeInMessageStore;

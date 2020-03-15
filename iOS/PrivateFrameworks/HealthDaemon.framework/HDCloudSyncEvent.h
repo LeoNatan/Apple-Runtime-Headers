@@ -25,6 +25,7 @@
     NSDate *_eventTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *eventTime; // @synthesize eventTime=_eventTime;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) unsigned int pcsReportManateeStatus; // @synthesize pcsReportManateeStatus=_pcsReportManateeStatus;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) long long reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) long long operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)description;
 - (id)codableEventForAWDSubmission;
 - (id)initWithProfile:(id)arg1 operation:(long long)arg2 reason:(long long)arg3 options:(unsigned long long)arg4 syncCirclePrefix:(id)arg5 containerID:(id)arg6 cloudKitIdentifier:(id)arg7 syncID:(id)arg8 operationID:(id)arg9 cloudKitManateeEnabled:(_Bool)arg10 internalSettingManateeEnabled:(_Bool)arg11;

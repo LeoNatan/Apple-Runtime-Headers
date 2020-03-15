@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _UIStatusBarFocusableImageView *_radarItemView;
 }
 
-@property(retain, nonatomic) _UIStatusBarFocusableImageView *radarItemView; // @synthesize radarItemView=_radarItemView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarFocusableImageView *radarItemView; // @synthesize radarItemView=_radarItemView;
 - (id)viewForIdentifier:(id)arg1;
 - (id)imageView;
 - (void)_create_radarItemView;

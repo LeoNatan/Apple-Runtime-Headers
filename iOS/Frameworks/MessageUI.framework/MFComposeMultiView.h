@@ -20,9 +20,9 @@
     _Bool _accountAutoselected;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAccountAutoselected) _Bool accountAutoselected; // @synthesize accountAutoselected=_accountAutoselected;
 @property(nonatomic) _Bool accountHasUnsafeDomain; // @synthesize accountHasUnsafeDomain=_accountHasUnsafeDomain;
-- (void).cxx_destruct;
 - (id)labelColor;
 - (void)refreshPreferredContentSize;
 - (void)layoutSubviews;

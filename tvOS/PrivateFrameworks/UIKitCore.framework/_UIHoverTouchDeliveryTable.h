@@ -14,14 +14,14 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_beginningGestureRecognizers;
     NSMutableSet *_updatingGestureRecognizers;
     NSMutableSet *_exitingGestureRecognizers;
-    NSMutableSet *_ignoredGestureRecognizers;
     UITouch *_touch;
 }
 
-@property(readonly, nonatomic) UITouch *touch; // @synthesize touch=_touch;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITouch *touch; // @synthesize touch=_touch;
 @property(readonly, nonatomic) NSSet *gestureRecognizers;
 - (void)updateForEvent:(id)arg1 forcingHitTest:(_Bool)arg2;
+- (void)_cancelAllGestureRecognizers;
 - (void)removeGestureRecognizer:(id)arg1;
 - (long long)updateGestureRecognizerForDelivery:(id)arg1;
 - (id)initWithTouch:(id)arg1;

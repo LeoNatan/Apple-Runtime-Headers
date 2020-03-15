@@ -21,6 +21,7 @@
     NSNumber *_transactionNumber;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *transactionNumber; // @synthesize transactionNumber=_transactionNumber;
 @property(readonly, nonatomic) HMSetting *setting; // @synthesize setting=_setting;
 @property(readonly, nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
@@ -30,7 +31,6 @@
 @property(nonatomic, getter=hasStarted) _Bool started; // @synthesize started=_started;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NAFuture *settingWriteFuture; // @synthesize settingWriteFuture=_settingWriteFuture;
-- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionBuilder;
 - (id)init;

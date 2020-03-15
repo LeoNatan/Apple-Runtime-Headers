@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)buddyFlowUserInfoWithDemographicsInformation:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *originalWeightInKg; // @synthesize originalWeightInKg=_originalWeightInKg;
 @property(retain, nonatomic) NSNumber *originalHeightInCm; // @synthesize originalHeightInCm=_originalHeightInCm;
 @property(retain, nonatomic) NSNumber *weightInKg; // @synthesize weightInKg=_weightInKg;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(nonatomic) __weak id <WDBuddyFlowUserInfoDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dataEntryItemDidUpdateValue:(id)arg1;
 - (id)_todayBirthdayDateComponents;
 - (id)_createSexEntryItem;

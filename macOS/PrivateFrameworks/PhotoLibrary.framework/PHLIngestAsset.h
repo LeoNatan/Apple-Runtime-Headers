@@ -14,9 +14,9 @@
     NSDictionary *_metadataProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *metadataProperties; // @synthesize metadataProperties=_metadataProperties;
 @property(readonly) NSURL *assetURL; // @synthesize assetURL=_assetURL;
-- (void).cxx_destruct;
 - (id)initWithAssetURL:(id)arg1 metadataProperties:(id)arg2 bookmarkData:(id)arg3;
 - (id)initWithAssetURL:(id)arg1 metadataProperties:(id)arg2;
 - (id)initWithAssetURL:(id)arg1;

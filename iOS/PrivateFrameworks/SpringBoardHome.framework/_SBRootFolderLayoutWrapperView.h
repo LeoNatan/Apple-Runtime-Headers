@@ -14,11 +14,11 @@
     struct CGSize _extendedSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *wrappedView; // @synthesize wrappedView=_wrappedView;
 @property(nonatomic) struct CGSize extendedSize; // @synthesize extendedSize=_extendedSize;
 @property(nonatomic) double headerOffset; // @synthesize headerOffset=_headerOffset;
 @property(nonatomic) double statusBarHeightAdjustment; // @synthesize statusBarHeightAdjustment=_statusBarHeightAdjustment;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

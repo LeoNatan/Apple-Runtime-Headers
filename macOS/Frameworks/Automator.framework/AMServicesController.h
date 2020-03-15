@@ -18,10 +18,10 @@
 }
 
 + (id)sharedServicesController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_timersByURL; // @synthesize _timersByURL=__timersByURL;
 @property(retain, nonatomic) NSMutableDictionary *_completionHandlersByURL; // @synthesize _completionHandlersByURL=__completionHandlersByURL;
 @property(retain, nonatomic) NSMutableDictionary *_servicesMonitorsByURL; // @synthesize _servicesMonitorsByURL=__servicesMonitorsByURL;
-- (void).cxx_destruct;
 - (void)servicesDidChange;
 - (void)_serviceFoundForServicesMonitor:(id)arg1 url:(id)arg2;
 - (BOOL)_activateServiceAction:(id)arg1 error:(id *)arg2;

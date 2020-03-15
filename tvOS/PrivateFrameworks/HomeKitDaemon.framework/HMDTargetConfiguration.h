@@ -17,12 +17,12 @@
     NSArray *_buttonConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *buttonConfiguration; // @synthesize buttonConfiguration=_buttonConfiguration;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSNumber *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithAccessory:(id)arg1 buttonConfiguration:(id)arg2;

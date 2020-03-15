@@ -17,9 +17,9 @@
 }
 
 + (id)_scaledImageIdentifierWithImageIdentifier:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *imageLoadOperationQueue; // @synthesize imageLoadOperationQueue=_imageLoadOperationQueue;
 @property(retain, nonatomic) NSMutableDictionary *imageLoadContextsByImageIdentifier; // @synthesize imageLoadContextsByImageIdentifier=_imageLoadContextsByImageIdentifier;
-- (void).cxx_destruct;
 - (id)_imageIdentifierWithImageLoadParams:(id)arg1;
 - (id)_imageLoadOperationWithParams:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3;
 - (id)_imageLoadParamsForImageLoaderObject:(id)arg1;

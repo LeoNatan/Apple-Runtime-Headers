@@ -20,12 +20,12 @@
     CDUnknownBlockType _errorHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(nonatomic) __weak id <HPDAuthClientProtocol> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 @property BOOL suppressUI; // @dynamic suppressUI;
 - (void)processEventNotification:(id)arg1;
 - (void)unregisterForAuthenticationNotifications;

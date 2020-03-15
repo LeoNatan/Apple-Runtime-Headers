@@ -15,10 +15,10 @@
     HKStrokeStyle *_touchPointLineStrokeStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKStrokeStyle *touchPointLineStrokeStyle; // @synthesize touchPointLineStrokeStyle=_touchPointLineStrokeStyle;
 @property(retain, nonatomic) HKStrokeStyle *selectedPointLineStrokeStyle; // @synthesize selectedPointLineStrokeStyle=_selectedPointLineStrokeStyle;
 @property(nonatomic) double unselectedSeriesAlpha; // @synthesize unselectedSeriesAlpha=_unselectedSeriesAlpha;
-- (void).cxx_destruct;
 
 @end
 

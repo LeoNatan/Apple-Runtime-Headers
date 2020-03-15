@@ -37,10 +37,10 @@
 
 + (long long)maxCachedSizeInMB;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType photoCacheCompletionBlock; // @synthesize photoCacheCompletionBlock=_photoCacheCompletionBlock;
 @property(retain, nonatomic) TVPhotoSourceService *photoSourceService; // @synthesize photoSourceService=_photoSourceService;
 @property _Bool cachingEnabled; // @synthesize cachingEnabled=_cachingEnabled;
-- (void).cxx_destruct;
 - (_Bool)_shouldUseIdleScreen;
 - (_Bool)_isInternalPhotoProviderForCollection:(id)arg1;
 - (id)_loadCachedAssets;

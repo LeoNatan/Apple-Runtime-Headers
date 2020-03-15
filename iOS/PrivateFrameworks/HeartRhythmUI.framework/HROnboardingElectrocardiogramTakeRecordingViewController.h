@@ -25,6 +25,7 @@
     UILabel *_wristSettingsLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *wristSettingsLabel; // @synthesize wristSettingsLabel=_wristSettingsLabel;
 @property(retain, nonatomic) HRImageLabel *recordingStep2ImageLabel; // @synthesize recordingStep2ImageLabel=_recordingStep2ImageLabel;
 @property(retain, nonatomic) HRImageLabel *recordingStep1ImageLabel; // @synthesize recordingStep1ImageLabel=_recordingStep1ImageLabel;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) HKElectrocardiogram *electrocardiogram; // @synthesize electrocardiogram=_electrocardiogram;
 @property(retain, nonatomic) HKAnchoredObjectQuery *electrocardiogramQuery; // @synthesize electrocardiogramQuery=_electrocardiogramQuery;
 @property(retain, nonatomic) HKHeartRhythmAvailability *availability; // @synthesize availability=_availability;
-- (void).cxx_destruct;
 - (id)_recordingStepFont;
 - (id)_bodyFont;
 - (id)_bodyFontTextStyle;

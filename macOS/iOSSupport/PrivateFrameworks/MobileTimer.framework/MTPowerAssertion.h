@@ -15,10 +15,10 @@
     double _assertionTimeout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int assertionID; // @synthesize assertionID=_assertionID;
 @property(readonly, nonatomic) double assertionTimeout; // @synthesize assertionTimeout=_assertionTimeout;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)releaseAssertion;
 - (void)takeAssertion;
 - (void)dealloc;

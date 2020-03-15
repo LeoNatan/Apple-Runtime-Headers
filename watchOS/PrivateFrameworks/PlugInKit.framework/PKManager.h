@@ -15,8 +15,8 @@
 
 + (id)managerForUser:(unsigned int)arg1;
 + (id)defaultManager;
-@property(retain) PKDaemonClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain) PKDaemonClient *client; // @synthesize client=_client;
 - (void)updateExtensionStatesForPlugIns:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (_Bool)releaseHold:(id)arg1 withError:(id *)arg2;
 - (void)releaseHold:(id)arg1 reply:(CDUnknownBlockType)arg2;

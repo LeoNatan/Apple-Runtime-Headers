@@ -43,6 +43,7 @@
     struct CGRect _flamesFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain) SiriUIAudioLevelSmoother *levelSmoother; // @synthesize levelSmoother=_levelSmoother;
 @property double dictationUnitSize; // @synthesize dictationUnitSize=_dictationUnitSize;
 @property BOOL reduceMotionEnabled; // @synthesize reduceMotionEnabled=_reduceMotionEnabled;
@@ -69,7 +70,6 @@
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <SiriUIFlamesAndAuraViewDelegate> flamesDelegate; // @synthesize flamesDelegate=_flamesDelegate;
-- (void).cxx_destruct;
 - (BOOL)_setupVertexBuffer;
 - (int)_generateIndicesForNumCircleShapes:(int)arg1 withMaxSubdivisionLevel:(float)arg2 startingWithNumSubdivisionLevel:(float)arg3 forIndices:(unsigned int **)arg4 atStartIndex:(int)arg5 withFill:(BOOL)arg6 withCullingForAura:(BOOL)arg7 forVertices:(struct *)arg8;
 -     // Error parsing type: 24@0:816, name: _predeterminedVertexPositionForAuraWithPolarVertex:

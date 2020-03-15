@@ -18,10 +18,10 @@
     double _bottomPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 @property(nonatomic) double secondaryActionTopPadding; // @synthesize secondaryActionTopPadding=_secondaryActionTopPadding;
 @property(nonatomic) double topPadding; // @synthesize topPadding=_topPadding;
-- (void).cxx_destruct;
 - (void)sizeToFitForTableView:(id)arg1;
 - (double)_recommendedSecondaryActionTopPaddingForTableView:(id)arg1;
 - (void)layoutSubviews;

@@ -16,9 +16,9 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *reminderNotifyInApp; // @synthesize reminderNotifyInApp=_reminderNotifyInApp;
 @property(retain, nonatomic) NSNumber *reminderNotifyEmail; // @synthesize reminderNotifyEmail=_reminderNotifyEmail;
-- (void).cxx_destruct;
 
 @end
 

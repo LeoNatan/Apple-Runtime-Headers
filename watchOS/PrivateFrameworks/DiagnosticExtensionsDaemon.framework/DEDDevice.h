@@ -44,6 +44,7 @@
 + (id)currentDevice;
 + (_Bool)supportsSecureCoding;
 + (id)archivedClasses;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *_hashingKey; // @synthesize _hashingKey=__hashingKey;
 @property(retain) SFDevice *sfDevice; // @synthesize sfDevice=_sfDevice;
 @property int remoteTransport; // @synthesize remoteTransport=_remoteTransport;
@@ -60,7 +61,6 @@
 @property(retain) NSString *color; // @synthesize color=_color;
 @property(retain) NSString *build; // @synthesize build=_build;
 @property(retain) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 - (id)hashingKeyForTempDevice;
 - (_Bool)isTemporaryDevice;
 - (_Bool)hasCapabilities:(id)arg1;

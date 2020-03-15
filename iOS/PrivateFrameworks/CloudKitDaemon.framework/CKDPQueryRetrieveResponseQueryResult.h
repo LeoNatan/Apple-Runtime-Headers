@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     CDStruct_f953fb60 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(retain, nonatomic) CKDPRecordIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

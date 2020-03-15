@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CKRecord *_emptyRecord;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKRecord *emptyRecord; // @synthesize emptyRecord=_emptyRecord;
 @property(readonly, nonatomic) CKRecordID *shareID; // @synthesize shareID=_shareID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithShareID:(id)arg1 emptyRecord:(id)arg2;

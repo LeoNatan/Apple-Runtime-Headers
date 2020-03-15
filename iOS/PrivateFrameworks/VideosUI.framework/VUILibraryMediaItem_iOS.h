@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *mediaItemURLInternal; // @synthesize mediaItemURLInternal=_mediaItemURLInternal;
 @property(retain, nonatomic) VUIPlaybackPositionInfo *playbackPositionInfo; // @synthesize playbackPositionInfo=_playbackPositionInfo;
 @property(retain, nonatomic) ML3Track *ml3Track; // @synthesize ml3Track=_ml3Track;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) MPMediaLibrary *mpMediaLibrary; // @synthesize mpMediaLibrary=_mpMediaLibrary;
 @property(retain, nonatomic) MPMediaItem *mpMediaItem; // @synthesize mpMediaItem=_mpMediaItem;
 @property(nonatomic) long long persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 - (_Bool)_supportsBookmarks;
 - (void)_schedulePlaybackPositionInfoPersistence;
 - (id)_localPlaybackFilePathURL;

@@ -13,8 +13,8 @@
     NSDictionary *_tabBarItem;
 }
 
-@property(retain, nonatomic) NSDictionary *tabBarItem; // @synthesize tabBarItem=_tabBarItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *tabBarItem; // @synthesize tabBarItem=_tabBarItem;
 - (void)_updateImageEdgeInsets;
 - (void)_updateSelectionViewForState:(unsigned long long)arg1;
 - (void)_setSelectedOrHighlighted:(_Bool)arg1;

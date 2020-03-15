@@ -26,12 +26,12 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) float sceneprintDistanceToPreviousScene; // @synthesize sceneprintDistanceToPreviousScene=_sceneprintDistanceToPreviousScene;
 @property(nonatomic) float flickerScore; // @synthesize flickerScore=_flickerScore;
 @property(nonatomic) float distanceToPreviousScene; // @synthesize distanceToPreviousScene=_distanceToPreviousScene;
 @property(nonatomic) float qualityScore; // @synthesize qualityScore=_qualityScore;
 @property(retain, nonatomic) VCPProtoTimeRange *timeRange; // @synthesize timeRange=_timeRange;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

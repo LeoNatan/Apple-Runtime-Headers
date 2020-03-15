@@ -34,9 +34,9 @@
 + (id)textureWithURL:(id)arg1 offset:(unsigned int)arg2 size:(unsigned int)arg3;
 + (id)textureWithURL:(id)arg1;
 + (id)_textureCubeWithSingleImageNamed:(id)arg1 bundle:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int channelEncoding; // @synthesize channelEncoding=_channelEncoding;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (struct CGImage *)imageFromTextureAtLevel:(unsigned int)arg1;
 - (struct CGImage *)imageFromTexture;
 - (_Bool)writeToURL:(id)arg1 type:(struct __CFString *)arg2 level:(unsigned int)arg3;

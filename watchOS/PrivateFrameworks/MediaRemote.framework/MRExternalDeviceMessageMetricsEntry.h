@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_values;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(nonatomic) unsigned int total; // @synthesize total=_total;
 @property(nonatomic) unsigned int max; // @synthesize max=_max;
 @property(nonatomic) unsigned int min; // @synthesize min=_min;
 @property(nonatomic) unsigned int avg; // @synthesize avg=_avg;
-- (void).cxx_destruct;
 - (id)description;
 - (void)updateWithValue:(unsigned int)arg1;
 - (id)init;

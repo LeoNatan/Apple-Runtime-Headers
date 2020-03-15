@@ -35,6 +35,7 @@
     id <SVModalPresentationViewControllerProviding> _modalPresentationViewControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appeared; // @synthesize appeared=_appeared;
 @property(readonly, nonatomic) id <SVModalPresentationViewControllerProviding> modalPresentationViewControllerProvider; // @synthesize modalPresentationViewControllerProvider=_modalPresentationViewControllerProvider;
 @property(readonly, nonatomic) id <NUVideoPlaybackCounter> playbackCounter; // @synthesize playbackCounter=_playbackCounter;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) id <NUAdContextProvider> contextProviderForVideoBefore; // @synthesize contextProviderForVideoBefore=_contextProviderForVideoBefore;
 @property(copy, nonatomic) NSArray *contextProviders; // @synthesize contextProviders=_contextProviders;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)viewControllerForStoryboardPresentationFromBannerView:(id)arg1;
 - (id)metadataForCurrentState;
 @property(readonly, nonatomic) double threshold;

@@ -22,13 +22,13 @@
 }
 
 + (id)contactWithCodableContact:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) ASRelationship *remoteRelationship; // @synthesize remoteRelationship=_remoteRelationship;
 @property(copy, nonatomic) ASRelationship *relationship; // @synthesize relationship=_relationship;
 @property(copy, nonatomic) NSSet *destinations; // @synthesize destinations=_destinations;
 @property(copy, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(copy, nonatomic) NSString *linkedContactStoreIdentifier; // @synthesize linkedContactStoreIdentifier=_linkedContactStoreIdentifier;
-- (void).cxx_destruct;
 - (id)_bestDestinationForContact:(id)arg1;
 - (id)_bestDestinationFromKnownDestinations;
 @property(readonly, copy, nonatomic) NSString *primaryDestinationForMessaging;

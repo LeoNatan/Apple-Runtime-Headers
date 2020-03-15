@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)soundWithAlertType:(int)arg1 alertTopic:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *alertTopic; // @synthesize alertTopic=_alertTopic;
 @property(readonly, nonatomic) int alertType; // @synthesize alertType=_alertType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

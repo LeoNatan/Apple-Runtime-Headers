@@ -16,8 +16,8 @@
     NSMapTable *_observers;
 }
 
-@property(retain, nonatomic) NSMapTable *observers; // @synthesize observers=_observers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMapTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) SBHardwareButtonGestureParameters *hardwareButtonGestureParameters;
 - (void)publishUpdatedParameters:(id)arg1;
 - (void)removeHardwareButtonGestureParametersObserver:(id)arg1;

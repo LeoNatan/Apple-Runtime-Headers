@@ -50,6 +50,7 @@
 + (void)messageTraceFatalBOMError:(int)arg1;
 + (void)messageTraceCustomizeMode:(BOOL)arg1 eligibleForFDE:(BOOL)arg2 fdeReason:(id)arg3;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property unsigned long long numberOfDisconnects; // @synthesize numberOfDisconnects=_numberOfDisconnects;
 @property unsigned long long numberOfNetworkChanges; // @synthesize numberOfNetworkChanges=_numberOfNetworkChanges;
 @property unsigned long long numberOfNetworkConfigurationChanges; // @synthesize numberOfNetworkConfigurationChanges=_numberOfNetworkConfigurationChanges;
@@ -73,7 +74,6 @@
 @property BOOL migratedMultipleUsers; // @synthesize migratedMultipleUsers=_migratedMultipleUsers;
 @property BOOL success; // @synthesize success=_success;
 @property(retain) SMMigrationRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)messageTraceMigrationCancelled;
 - (void)messageTraceMigrationFinished;
 - (BOOL)usedSWAP;

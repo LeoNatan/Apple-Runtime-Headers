@@ -18,9 +18,9 @@
     NSDictionary *_intKeyFields;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *intKeyFields; // @synthesize intKeyFields=_intKeyFields;
 @property(copy, nonatomic) NSDictionary *stringKeyFields; // @synthesize stringKeyFields=_stringKeyFields;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

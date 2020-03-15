@@ -18,10 +18,10 @@
     int _location;
 }
 
+- (void).cxx_destruct;
 @property(readonly) int location; // @synthesize location=_location;
 @property(readonly, copy, getter=isEnabled) HMFBoolean *enabled; // @synthesize enabled=_enabled;
 @property(readonly) HMDResidentDevice *resident; // @synthesize resident=_resident;
-- (void).cxx_destruct;
 - (id)serializedPayload;
 - (int)compare:(id)arg1;
 @property(readonly, copy) NSArray *accessories;

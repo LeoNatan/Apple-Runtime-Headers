@@ -14,9 +14,9 @@
     NSMutableSet *_listeners;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *listeners; // @synthesize listeners=_listeners;
 @property(retain, nonatomic) IDSServiceMonitor *monitor; // @synthesize monitor=_monitor;
-- (void).cxx_destruct;
 - (BOOL)removeListenerID:(id)arg1;
 - (BOOL)addListenerID:(id)arg1;
 - (BOOL)hasListenerID:(id)arg1;

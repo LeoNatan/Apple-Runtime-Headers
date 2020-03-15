@@ -16,11 +16,11 @@
     NSString *_pageClassIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pageClassIdentifier; // @synthesize pageClassIdentifier=_pageClassIdentifier;
 @property(nonatomic) _Bool hasCancelButtonForBack; // @synthesize hasCancelButtonForBack=_hasCancelButtonForBack;
 @property(retain, nonatomic) NSString *pageTitle; // @synthesize pageTitle=_pageTitle;
 @property(retain, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithBindings:(id)arg1;
 - (id)debugDescription;
 

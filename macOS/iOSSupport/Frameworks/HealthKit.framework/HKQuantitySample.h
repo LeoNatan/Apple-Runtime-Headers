@@ -23,9 +23,9 @@
 + (id)quantitySampleWithType:(id)arg1 quantity:(id)arg2 startDate:(id)arg3 endDate:(id)arg4;
 + (id)quantitySampleWithType:(id)arg1 quantity:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 metadata:(id)arg5;
 + (id)quantitySampleWithType:(id)arg1 quantity:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 device:(id)arg5 metadata:(id)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCodableQuantitySample:) HDCodableQuantitySample *codableQuantitySample; // @synthesize codableQuantitySample=_codableQuantitySample;
 @property(readonly) long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (long long)_compareFreezeStateWithSample:(id)arg1;
 - (void)_setCount:(long long)arg1;
 - (void)_setFreezing;

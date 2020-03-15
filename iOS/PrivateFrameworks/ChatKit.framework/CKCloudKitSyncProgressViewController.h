@@ -21,6 +21,7 @@
     UIProgressView *_progressBar;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIProgressView *progressBar; // @synthesize progressBar=_progressBar;
 @property(readonly, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(readonly, nonatomic) UILabel *userMessageLabel; // @synthesize userMessageLabel=_userMessageLabel;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) IMCloudKitSyncProgress *lastProgress; // @synthesize lastProgress=_lastProgress;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) __weak id <CKCloudKitSyncProgressViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool actionButtonEnabled; // @dynamic actionButtonEnabled;
 - (void)addToToolbar:(id)arg1;
 - (void)updateWithCloudKitProgress:(id)arg1;

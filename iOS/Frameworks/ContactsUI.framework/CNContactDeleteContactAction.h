@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CNUICoreRecentsManager *_recentsManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNUICoreRecentsManager *recentsManager; // @synthesize recentsManager=_recentsManager;
 @property(readonly, nonatomic) CNUIExternalComponentsFactory *componentsFactory; // @synthesize componentsFactory=_componentsFactory;
-- (void).cxx_destruct;
 - (void)showDeleteFailureAlert;
 - (_Bool)deleteContact;
 - (void)performActionWithSender:(id)arg1;

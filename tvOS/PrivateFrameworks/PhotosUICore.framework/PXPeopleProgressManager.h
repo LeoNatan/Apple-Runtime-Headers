@@ -19,6 +19,7 @@
     NSTimer *_statusTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *statusTimer; // @synthesize statusTimer=_statusTimer;
 @property(nonatomic) unsigned long long processingStatus; // @synthesize processingStatus=_processingStatus;
 @property(readonly) _Bool processingComplete; // @synthesize processingComplete=_processingComplete;
@@ -26,7 +27,6 @@
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(nonatomic, getter=isMonitoringProgress) _Bool monitoringProgress; // @synthesize monitoringProgress=_monitoringProgress;
 @property(retain, nonatomic) PXPeopleProgressDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (_Bool)_progressComplete:(double)arg1;
 - (void)_updateStatusForProgress:(double)arg1 processCount:(unsigned long long)arg2;
 - (void)_scheduleNextUpdate;

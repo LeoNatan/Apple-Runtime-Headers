@@ -39,10 +39,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVTouchBarScrubberDelegateInternal> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL keepsExpandedKnobWithinBounds; // @synthesize keepsExpandedKnobWithinBounds=_keepsExpandedKnobWithinBounds;
 @property(nonatomic) BOOL shouldSkipForwardOrBackwardWhenTapped; // @synthesize shouldSkipForwardOrBackwardWhenTapped=_shouldSkipForwardOrBackwardWhenTapped;
-- (void).cxx_destruct;
 - (double)_normalizedCurrentValue;
 - (double)_normalizedValueForTouch:(id)arg1;
 - (void)_updateCurrentValueForTouch:(id)arg1;

@@ -18,11 +18,11 @@
     MTConvenienceEnvironmentDelegate *_environmentDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTConvenienceEnvironmentDelegate *environmentDelegate; // @synthesize environmentDelegate=_environmentDelegate;
 @property(retain, nonatomic) MTEventRecorderAMSMetricsDelegate *eventRecorderDelegate; // @synthesize eventRecorderDelegate=_eventRecorderDelegate;
 @property(retain, nonatomic) MTConfigAMSMetricsDelegate *configDelegate; // @synthesize configDelegate=_configDelegate;
 @property(copy, nonatomic) CDUnknownBlockType hostAppBlock; // @synthesize hostAppBlock=_hostAppBlock;
-- (void).cxx_destruct;
 - (id)initWithAMSBag:(id)arg1 containerId:(id)arg2 pageURLBlock:(CDUnknownBlockType)arg3 resourceRevNumBlock:(CDUnknownBlockType)arg4 hostAppBlock:(CDUnknownBlockType)arg5;
 - (id)initWithAMSBag:(id)arg1;
 - (id)init;

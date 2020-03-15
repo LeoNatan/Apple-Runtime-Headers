@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool askToBuyEnabled; // @synthesize askToBuyEnabled=_askToBuyEnabled;
 @property(copy) NSNumber *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

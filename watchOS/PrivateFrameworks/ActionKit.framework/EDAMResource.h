@@ -26,6 +26,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMData *alternateData; // @synthesize alternateData=_alternateData;
 @property(retain, nonatomic) NSNumber *updateSequenceNum; // @synthesize updateSequenceNum=_updateSequenceNum;
 @property(retain, nonatomic) EDAMResourceAttributes *attributes; // @synthesize attributes=_attributes;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) EDAMData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSString *noteGuid; // @synthesize noteGuid=_noteGuid;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 
 @end
 

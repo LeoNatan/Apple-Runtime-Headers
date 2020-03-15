@@ -33,10 +33,10 @@
     id <TSEntitlementJSHandlerDelegate> _callbackDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loadFailure; // @synthesize loadFailure=_loadFailure;
 @property __weak id <TSEntitlementJSHandlerDelegate> callbackDelegate; // @synthesize callbackDelegate=_callbackDelegate;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_isHexadecimalString:(id)arg1;
 - (_Bool)_currentLanguageIsRTL;
 - (void)_handleTransferWithMessageBody:(id)arg1;

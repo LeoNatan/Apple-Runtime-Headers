@@ -31,10 +31,10 @@
 + (id)nightLife;
 + (id)musicConcerts;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *localizedSubcategories; // @synthesize localizedSubcategories=_localizedSubcategories;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

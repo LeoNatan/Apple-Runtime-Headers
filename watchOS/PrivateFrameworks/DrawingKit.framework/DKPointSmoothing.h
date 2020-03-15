@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (void)_interpolateFromPoint:(float)arg1 toPoint:(CDUnknownBlockType)arg2 withControlPoint:atUnitScale:emissionHandler: /* Error: Ran out of types for this method. */;
 +     // Error parsing type: 60@0:482440f56, name: interpolateFromPoint:toPoint:controlPoint:time:
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIQuadCurvePointFIFO *interpolatingFIFO; // @synthesize interpolatingFIFO=_interpolatingFIFO;
 @property(retain, nonatomic) UIBoxcarFilterPointFIFO *boxcarFIFO; // @synthesize boxcarFIFO=_boxcarFIFO;
 @property(retain, nonatomic) UIPointFIFO *strokeFIFO; // @synthesize strokeFIFO=_strokeFIFO;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float unitScale; // @synthesize unitScale=_unitScale;
 @property(nonatomic) float spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) unsigned int width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)flush;
 - (void)emitPoint: /* Error: Ran out of types for this method. */;

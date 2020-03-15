@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 + (id)darkKeyboardProvider;
 + (id)lightKeyboardProvider;
-@property(nonatomic) BOOL lightKeyboard; // @synthesize lightKeyboard=_lightKeyboard;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL lightKeyboard; // @synthesize lightKeyboard=_lightKeyboard;
 - (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
 - (void)updateButton:(id)arg1 toUseButtonShapes:(BOOL)arg2;
 - (void)updateButton:(id)arg1 forSelectedState:(BOOL)arg2;

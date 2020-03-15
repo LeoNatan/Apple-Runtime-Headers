@@ -15,10 +15,10 @@
     NSUUID *_stateUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *stateUUID; // @synthesize stateUUID=_stateUUID;
 @property(retain, nonatomic) RTStateTransitionOnePredEl *daily; // @synthesize daily=_daily;
 @property(retain, nonatomic) RTStateTransitionOnePredEl *weekly; // @synthesize weekly=_weekly;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

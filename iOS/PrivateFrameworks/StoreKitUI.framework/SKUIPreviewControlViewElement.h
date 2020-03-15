@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_mediaURLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *mediaURLString; // @synthesize mediaURLString=_mediaURLString;
 @property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEnabled;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

@@ -48,6 +48,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLStatusBarGlobalContextIndicatorsView *indicatorsView; // @synthesize indicatorsView=_indicatorsView;
 @property(retain, nonatomic) NSDictionary *statesMap; // @synthesize statesMap=_statesMap;
 @property(retain, nonatomic) NSArray *states; // @synthesize states=_states;
@@ -63,7 +64,6 @@
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) _Bool foregrounded; // @synthesize foregrounded=_foregrounded;
 @property(readonly, nonatomic) UIView *timeView; // @synthesize timeView=_time;
-- (void).cxx_destruct;
 - (id)stateByIndex:(unsigned int)arg1 forStatusView:(id)arg2;
 - (unsigned int)numberOfStatesForStatusView:(id)arg1;
 - (id)currentProperties;

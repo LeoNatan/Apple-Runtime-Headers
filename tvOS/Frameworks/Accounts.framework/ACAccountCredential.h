@@ -32,10 +32,10 @@
 + (id)credentialWithPassword:(id)arg1;
 + (id)credentialWithOAuthToken:(id)arg1 tokenSecret:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic, getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
 @property(nonatomic) _Bool requiresTouchID; // @synthesize requiresTouchID=_requiresTouchID;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *credentialType;
 @property(copy, nonatomic) NSDate *tokenExpiryDate;
 @property(copy, nonatomic) NSString *mdmServerToken;

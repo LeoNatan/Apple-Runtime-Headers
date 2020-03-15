@@ -48,10 +48,10 @@
 + (id)interactionControllerForPresentation:(id)arg1;
 + (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 + (id)_currentActionController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *actionWindow; // @synthesize actionWindow=_actionWindow;
 @property(nonatomic) __weak id <PUICActionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PUICActionGroup *actionGroup; // @synthesize actionGroup=_actionGroup;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *actionItems;
 - (void)dismiss;
 - (void)present;

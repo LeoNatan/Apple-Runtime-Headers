@@ -13,8 +13,8 @@
     NSURL *_mappingDirectoryFileURL;
 }
 
-@property(readonly, copy, nonatomic) NSURL *mappingDirectoryFileURL; // @synthesize mappingDirectoryFileURL=_mappingDirectoryFileURL;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *mappingDirectoryFileURL; // @synthesize mappingDirectoryFileURL=_mappingDirectoryFileURL;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)inputManagers;
 - (_Bool)isValue:(id)arg1 equalToValue:(id)arg2;

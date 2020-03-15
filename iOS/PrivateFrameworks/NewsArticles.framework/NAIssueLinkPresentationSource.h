@@ -18,11 +18,11 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) LPImage *linkPresentationImage; // @synthesize linkPresentationImage=_linkPresentationImage;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)urlFromIssue:(id)arg1;
 - (id)linkPresentationImageFromIssue:(id)arg1;
 - (id)subtitleFromIssue:(id)arg1;

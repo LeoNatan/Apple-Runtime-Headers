@@ -18,13 +18,13 @@
     NSString *_externalMessage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *externalMessage; // @synthesize externalMessage=_externalMessage;
 @property(nonatomic) int externalState; // @synthesize externalState=_externalState;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) int oofState; // @synthesize oofState=_oofState;
-- (void).cxx_destruct;
 - (void)enableOof:(_Bool)arg1 From:(id)arg2 to:(id)arg3 withMessage:(id)arg4;
 - (_Bool)isEnabled;
 - (id)dictionaryRepresentationForASSettingTask;

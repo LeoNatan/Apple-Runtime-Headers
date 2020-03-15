@@ -21,10 +21,10 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASSettingsTaskOofResponse *oof; // @synthesize oof=_oof;
 @property(retain, nonatomic) ASSettingsTaskUserInformationResponse *userInformation; // @synthesize userInformation=_userInformation;
 @property(retain, nonatomic) NSNumber *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)description;
 

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_protectionInfoTag;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *protectionInfoTag; // @synthesize protectionInfoTag=_protectionInfoTag;
 @property(retain, nonatomic) NSData *protectionInfo; // @synthesize protectionInfo=_protectionInfo;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

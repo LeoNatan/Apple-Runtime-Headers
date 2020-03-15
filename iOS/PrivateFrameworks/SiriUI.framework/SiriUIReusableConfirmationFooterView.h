@@ -18,11 +18,11 @@
 }
 
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SAUIConfirmationOptions *confirmationOptions; // @synthesize confirmationOptions=_confirmationOptions;
 - (id)snippetViewController;
 @property(readonly, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(readonly, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)edgeInsets;
 - (void)layoutSubviews;
 - (void)setSnippetViewController:(id)arg1;

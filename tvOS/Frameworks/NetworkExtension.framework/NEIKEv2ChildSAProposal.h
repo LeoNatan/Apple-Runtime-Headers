@@ -26,6 +26,7 @@
     NEIKEv2DHProtocol *_chosenDHProtocol;
 }
 
+- (void).cxx_destruct;
 @property(retain) NEIKEv2DHProtocol *chosenDHProtocol; // @synthesize chosenDHProtocol=_chosenDHProtocol;
 @property(retain) NEIKEv2IntegrityProtocol *chosenIntegrityProtocol; // @synthesize chosenIntegrityProtocol=_chosenIntegrityProtocol;
 @property(retain) NEIKEv2EncryptionProtocol *chosenEncryptionProtocol; // @synthesize chosenEncryptionProtocol=_chosenEncryptionProtocol;
@@ -38,7 +39,6 @@
 @property(retain) NSArray *integrityProtocols; // @synthesize integrityProtocols=_integrityProtocols;
 @property(retain) NSArray *encryptionProtocols; // @synthesize encryptionProtocols=_encryptionProtocols;
 @property unsigned long long protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (_Bool)isAValidResponse;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)matchesProposal:(id)arg1 checkDHGroup:(_Bool)arg2;

@@ -39,6 +39,7 @@
     NSObject<OS_dispatch_source> *_dispatchSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *dispatchSource; // @synthesize dispatchSource=_dispatchSource;
 @property long long upstreamOutputPipe; // @synthesize upstreamOutputPipe=_upstreamOutputPipe;
 @property long long upstreamInputPipe; // @synthesize upstreamInputPipe=_upstreamInputPipe;
@@ -65,7 +66,6 @@
 @property(retain) NSSet *supportedActionCommands; // @synthesize supportedActionCommands=_supportedActionCommands;
 @property __weak SMNNetworkStream *pairedStream; // @synthesize pairedStream=_pairedStream;
 @property __weak SMNNetworkStreamMuxer *owningMuxer; // @synthesize owningMuxer=_owningMuxer;
-- (void).cxx_destruct;
 - (int)fileDescriptorForWriting;
 - (int)fileDescriptorForReading;
 - (BOOL)changeMode:(unsigned long long)arg1;

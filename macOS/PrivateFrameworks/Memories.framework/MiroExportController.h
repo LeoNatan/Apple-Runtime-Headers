@@ -17,12 +17,12 @@
     PMTitleSubtitleView *_titleView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PMTitleSubtitleView *titleView; // @synthesize titleView=_titleView;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) NSImage *posterImage; // @synthesize posterImage=_posterImage;
 @property(copy, nonatomic) NSDictionary *titleInformation; // @synthesize titleInformation=_titleInformation;
-- (void).cxx_destruct;
 - (id)thumbnailImage;
 - (id)_compositionForExport;
 - (id)titleLayerForVideoComposition:(id)arg1;

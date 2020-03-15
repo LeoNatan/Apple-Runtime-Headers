@@ -47,6 +47,8 @@
 + (id)textAlertDescription;
 + (id)phonemeDataDescription;
 + (id)externalImageURIDescription;
++ (id)externalModificationTagDescription;
++ (id)externalIdentifierDescription;
 + (id)calendarURIsDescription;
 + (id)postalAddressesDescription;
 + (id)socialProfilesDescription;

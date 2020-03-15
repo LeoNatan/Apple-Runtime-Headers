@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSView *_view;
 }
 
-@property(readonly, nonatomic) __weak NSView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSView *view; // @synthesize view=_view;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (id)initWithView:(id)arg1;
 - (id)init;

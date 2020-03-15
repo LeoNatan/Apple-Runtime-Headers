@@ -17,10 +17,10 @@
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long originalResourceChoice; // @synthesize originalResourceChoice=_originalResourceChoice;
 @property(readonly, nonatomic) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(readonly, nonatomic) NSString *formatIdentifier; // @synthesize formatIdentifier=_formatIdentifier;
-- (void).cxx_destruct;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end

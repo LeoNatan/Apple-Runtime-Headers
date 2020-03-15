@@ -15,8 +15,8 @@
     PSIDate *_creationDate;
 }
 
-@property(readonly) PSIDate *creationDate; // @synthesize creationDate=_creationDate;
 - (void).cxx_destruct;
+@property(readonly) PSIDate *creationDate; // @synthesize creationDate=_creationDate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUUID:(id)arg1 creationDate:(id)arg2;
 

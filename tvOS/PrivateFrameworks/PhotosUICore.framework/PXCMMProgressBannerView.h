@@ -22,9 +22,9 @@
     id <PXCMMProgressBannerViewLayoutDelegate> _layoutDelegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double layoutHeight; // @synthesize layoutHeight=_layoutHeight;
 @property(nonatomic) __weak id <PXCMMProgressBannerViewLayoutDelegate> layoutDelegate; // @synthesize layoutDelegate=_layoutDelegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_updateFonts;

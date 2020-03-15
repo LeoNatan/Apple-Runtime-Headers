@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIColor *_lineColor;
 }
 
-@property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     WDTable *mTable;
 }
 
-@property(readonly) __weak WDTable *table; // @synthesize table=mTable;
 - (void).cxx_destruct;
+@property(readonly) __weak WDTable *table; // @synthesize table=mTable;
 - (id)description;
 - (id)newCellIterator;
 - (id)cellIterator;

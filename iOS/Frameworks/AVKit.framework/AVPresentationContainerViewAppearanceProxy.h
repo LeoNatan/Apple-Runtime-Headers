@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clipsToBounds; // @synthesize clipsToBounds=_clipsToBounds;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) unsigned long long maskedCorners; // @synthesize maskedCorners=_maskedCorners;
 @property(retain, nonatomic) NSString *cornerCurve; // @synthesize cornerCurve=_cornerCurve;
 @property(nonatomic) __weak UIView *actualView; // @synthesize actualView=_actualView;
-- (void).cxx_destruct;
 
 @end
 

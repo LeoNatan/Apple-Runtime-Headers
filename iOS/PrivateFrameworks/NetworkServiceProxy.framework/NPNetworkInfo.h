@@ -25,6 +25,7 @@
 
 + (long long)failureReasonToFallbackReason:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool isProbeInProgress; // @synthesize isProbeInProgress=_isProbeInProgress;
 @property(retain) NPEdgeSelection *edgeSelection; // @synthesize edgeSelection=_edgeSelection;
 @property(retain) NSDate *probeRateLimit; // @synthesize probeRateLimit=_probeRateLimit;
@@ -34,7 +35,6 @@
 @property long long lastFallbackReason; // @synthesize lastFallbackReason=_lastFallbackReason;
 @property(retain) NSDate *lastUsed; // @synthesize lastUsed=_lastUsed;
 @property(retain) NSDate *lastVisited; // @synthesize lastVisited=_lastVisited;
-- (void).cxx_destruct;
 - (void)handleTFOFailedForAddressFamily:(unsigned char)arg1;
 - (void)mergeNewLatencies:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
 - (void)rebuildLatencyMapWithViewSize:(id)arg1 edgeCount:(unsigned long long)arg2 parameters:(struct networkParameters *)arg3;

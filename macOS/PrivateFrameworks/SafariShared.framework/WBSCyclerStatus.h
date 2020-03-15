@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(readonly, nonatomic, getter=isConnectedToTestTarget) BOOL connectedToTestTarget; // @synthesize connectedToTestTarget=_connectedToTestTarget;
 @property(readonly, nonatomic) unsigned long long seed; // @synthesize seed=_seed;
 @property(readonly, copy, nonatomic) NSString *activeTestSuiteName; // @synthesize activeTestSuiteName=_activeTestSuiteName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithActiveTestSuiteName:(id)arg1 seed:(unsigned long long)arg2 isConnectedToTestTarget:(BOOL)arg3 isRunning:(BOOL)arg4;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSArray *_buttonElements;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *buttonElements; // @synthesize buttonElements=_buttonElements;
 @property(retain, nonatomic) VSIKItemGroupElement *pickerElement; // @synthesize pickerElement=_pickerElement;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 pickerDidSelectRow:(unsigned long long)arg2;
 - (void)viewModel:(id)arg1 buttonTappedAtIndex:(unsigned long long)arg2;
 - (void)itemGroup:(id)arg1 selectedItemIndexDidChange:(long long)arg2;

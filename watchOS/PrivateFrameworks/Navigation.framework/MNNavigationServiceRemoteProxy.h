@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
     id <MNNavigationServiceClientInterface> _delegate;
 }
 
-@property(nonatomic) __weak id <MNNavigationServiceClientInterface> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MNNavigationServiceClientInterface> delegate; // @synthesize delegate=_delegate;
 - (void)navigationServiceProxy:(id)arg1 didUpdateNavigationDetails:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;

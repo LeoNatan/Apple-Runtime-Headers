@@ -21,11 +21,11 @@
     NSString *_uuidStorage;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *uuidStorage; // @synthesize uuidStorage=_uuidStorage;
 @property(retain, nonatomic) NSUUID *uuidPart; // @synthesize uuidPart=_uuidPart;
 @property(nonatomic) __weak id <SPComplicationConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool extensionDelegateHandlesBackgroundTasks; // @synthesize extensionDelegateHandlesBackgroundTasks=_extensionDelegateHandlesBackgroundTasks;
-- (void).cxx_destruct;
 - (void)extensionConnectionDirectExtensionConnectionWasInvalidated:(id)arg1;
 - (void)extensionConnection:(id)arg1 directXPCSetupDidFailWithError:(id)arg2;
 - (void)complicationIconForFamily:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;

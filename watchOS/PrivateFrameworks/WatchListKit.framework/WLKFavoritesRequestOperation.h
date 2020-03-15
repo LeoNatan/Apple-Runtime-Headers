@@ -13,8 +13,8 @@
     NSArray *_favorites;
 }
 
-@property(readonly, nonatomic) NSArray *favorites; // @synthesize favorites=_favorites;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *favorites; // @synthesize favorites=_favorites;
 - (void)processResponse;
 - (void)prepareURLRequest:(CDUnknownBlockType)arg1;
 - (id)initWithCaller:(id)arg1;

@@ -38,11 +38,11 @@
 + (id)_unifiedMeContactFromContactStore:(id)arg1 keysToFetch:(id)arg2;
 + (id)_destinationsFromWhitelistDictionary:(id)arg1 onlyAccepted:(_Bool)arg2;
 + (id)validatedWhitelistFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *whitelist; // @synthesize whitelist=_whitelist;
 @property(nonatomic) _Bool shouldObserveWhitelistDefaultChanges; // @synthesize shouldObserveWhitelistDefaultChanges=_shouldObserveWhitelistDefaultChanges;
 @property(retain, nonatomic) NSUserDefaults *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) NSArray *destinations; // @synthesize destinations=_destinations;
-- (void).cxx_destruct;
 - (void)_deleteWhitelist;
 - (void)_resetStoreDemoContent;
 - (_Bool)_shouldHandleResetStoreDemoContent;

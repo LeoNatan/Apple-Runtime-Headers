@@ -20,6 +20,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSSingleRecipientType *Sender; // @synthesize Sender=_Sender;
 @property(copy, nonatomic) NSString *References; // @synthesize References=_References;
 @property(retain, nonatomic) NSDateComponents *PostedTime; // @synthesize PostedTime=_PostedTime;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *InternetMessageId; // @synthesize InternetMessageId=_InternetMessageId;
 @property(retain, nonatomic) EWSSingleRecipientType *From; // @synthesize From=_From;
 @property(copy, nonatomic) NSString *ConversationTopic; // @synthesize ConversationTopic=_ConversationTopic;
-- (void).cxx_destruct;
 
 @end
 

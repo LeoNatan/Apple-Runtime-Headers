@@ -20,12 +20,12 @@
     PUImportHistorySectionHeaderView *_referenceHeaderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUImportHistorySectionHeaderView *referenceHeaderView; // @synthesize referenceHeaderView=_referenceHeaderView;
 @property(retain, nonatomic) NSNumber *cachedHeaderHeight; // @synthesize cachedHeaderHeight=_cachedHeaderHeight;
 @property(nonatomic) double referenceWidth; // @synthesize referenceWidth=_referenceWidth;
 @property(readonly, nonatomic) PLDateRangeFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) PHFetchResult *importSessions; // @synthesize importSessions=_importSessions;
-- (void).cxx_destruct;
 - (long long)oneUpPresentationOrigin;
 - (void)_configureSectionHeaderView:(id)arg1 section:(long long)arg2;
 - (void)headerViewDidPressActionButton:(id)arg1;

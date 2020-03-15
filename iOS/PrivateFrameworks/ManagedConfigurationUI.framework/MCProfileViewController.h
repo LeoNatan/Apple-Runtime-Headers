@@ -22,6 +22,7 @@
     MCUIProfile *_UIProfile;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool profileRemovable; // @synthesize profileRemovable=_profileRemovable;
 @property(nonatomic) _Bool profileOffersReenroll; // @synthesize profileOffersReenroll=_profileOffersReenroll;
 @property(retain, nonatomic) MCUIProfile *UIProfile; // @synthesize UIProfile=_UIProfile;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool installingFromPurgatory; // @synthesize installingFromPurgatory=_installingFromPurgatory;
 @property(nonatomic) long long profileViewMode; // @synthesize profileViewMode=_profileViewMode;
 @property(nonatomic) __weak id <MCProfileViewControllerDelegate> profileViewControllerDelegate; // @synthesize profileViewControllerDelegate=_profileViewControllerDelegate;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_profileChanged:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

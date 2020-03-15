@@ -20,9 +20,9 @@
 + (double)iptHueAngleFromRed:(double)arg1 green:(double)arg2 blue:(double)arg3;
 + (float)hueAngleFrom:(const float *)arg1;
 + (void)iptFromLinearInto:(float *)arg1 fromRed:(float)arg2 green:(float)arg3 blue:(float)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *inputCorrections; // @synthesize inputCorrections=_inputCorrections;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)hueSatLumTable;
 

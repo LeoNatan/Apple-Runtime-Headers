@@ -20,10 +20,10 @@
 
 + (_Bool)validateJSONRepresentationForArchivist:(id)arg1 forKey:(id)arg2 results:(id)arg3 inDictionary:(id)arg4;
 + (id)catalogContentReferenceFromValidatedJSONRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) long long matchingStyle; // @synthesize matchingStyle=_matchingStyle;
 @property(readonly) NSString *type; // @synthesize type=_type;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCatalogContentReference:(id)arg1;

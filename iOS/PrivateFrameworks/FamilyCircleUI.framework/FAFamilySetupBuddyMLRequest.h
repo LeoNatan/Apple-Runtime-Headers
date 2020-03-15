@@ -14,9 +14,9 @@
     NSString *_inviteCode;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *inviteCode; // @synthesize inviteCode=_inviteCode;
 @property(retain, nonatomic, setter=setiTunesAccount:) SSAccount *iTunesAccount; // @synthesize iTunesAccount=_iTunesAccount;
-- (void).cxx_destruct;
 - (id)urlRequest;
 - (id)urlString;
 - (_Bool)isUserInitiated;

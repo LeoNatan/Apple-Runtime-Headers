@@ -20,10 +20,11 @@
     NSString *_identifier;
     NSString *_name;
     CURangingMeasurement *_relativeLocation;
-    struct NSMutableDictionary *_deviceDict;
+    NSMutableDictionary *_deviceDict;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *deviceDict; // @synthesize deviceDict=_deviceDict;
 @property(readonly) CURangingMeasurement *relativeLocation; // @synthesize relativeLocation=_relativeLocation;
 @property(readonly, nonatomic) int proximity; // @synthesize proximity=_proximity;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(readonly, copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
 @property(readonly, nonatomic) int activityLevel; // @synthesize activityLevel=_activityLevel;
-- (void).cxx_destruct;
 - (unsigned int)_updateDeviceDerivedInfo;
 - (unsigned int)updateWithRPDevice:(id)arg1;
 - (unsigned int)removeRPDevice:(id)arg1;

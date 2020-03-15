@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NSString *customAttributeName; // @synthesize customAttributeName=_customAttributeName;
 - (void).cxx_destruct;
+@property(retain) NSString *customAttributeName; // @synthesize customAttributeName=_customAttributeName;
 - (id)attributeName;
 - (id)initEmptyRequest;
 @property(readonly) unsigned long long valueType;

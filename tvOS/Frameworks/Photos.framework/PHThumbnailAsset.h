@@ -21,8 +21,8 @@
 
 + (id)propertiesToFetch;
 + (id)entityName;
-@property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 - (id)pl_photoLibrary;
 - (unsigned long long)effectiveThumbnailIndex;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary;

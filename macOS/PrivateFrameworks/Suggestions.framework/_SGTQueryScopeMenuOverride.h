@@ -21,8 +21,8 @@
     BOOL _spin;
 }
 
-@property BOOL spin; // @synthesize spin=_spin;
 - (void).cxx_destruct;
+@property BOOL spin; // @synthesize spin=_spin;
 - (BOOL)searchFieldCell:(id)arg1 shouldChangeCancelButtonVisibility:(BOOL)arg2;
 - (void)completionTableView:(id)arg1 mouseUpInRow:(long long)arg2 event:(id)arg3;
 - (void)tableViewSelectionIsChanging:(id)arg1;

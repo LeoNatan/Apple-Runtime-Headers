@@ -14,8 +14,8 @@
     id <MNLocationHistoryProvider> _locationHistoryProvider;
 }
 
-@property(retain, nonatomic) id <MNLocationHistoryProvider> locationHistoryProvider; // @synthesize locationHistoryProvider=_locationHistoryProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MNLocationHistoryProvider> locationHistoryProvider; // @synthesize locationHistoryProvider=_locationHistoryProvider;
 @property(readonly) NSArray *locationHistory;
 - (id)init;
 

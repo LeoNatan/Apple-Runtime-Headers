@@ -63,8 +63,8 @@
 + (id)_migrationDelegateQueue;
 + (long long)maxDatabaseVersion;
 + (id)sharedDatabase;
-@property(nonatomic) _Bool passDBIsAvailable; // @synthesize passDBIsAvailable=_passDBIsAvailable;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool passDBIsAvailable; // @synthesize passDBIsAvailable=_passDBIsAvailable;
 - (_Bool)_table:(id)arg1 containsColumn:(id)arg2;
 - (void)_attemptDatabaseOpen;
 - (void)_handleHasMigrationDataSource;

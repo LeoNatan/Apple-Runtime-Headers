@@ -14,9 +14,9 @@
     TIInputMode *_inputMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasHandledInput; // @synthesize hasHandledInput=_hasHandledInput;
 @property(readonly, nonatomic) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
-- (void).cxx_destruct;
 - (void)logDiscoverabilityEvent:(int)arg1 userInfo:(id)arg2;
 - (long long)deletionCountForString:(id)arg1;
 - (void)lastAcceptedCandidateCorrected;
@@ -36,6 +36,7 @@
 - (void)generateAutocorrectionsWithKeyboardState:(id)arg1 candidateRange:(struct _NSRange)arg2 candidateHandler:(id)arg3;
 - (id)handleKeyboardInput:(id)arg1;
 - (id)keyboardConfiguration;
+- (_Bool)syncToKeyboardState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)syncToKeyboardState:(id)arg1;
 - (void)runMaintenanceTask;
 - (void)resume;

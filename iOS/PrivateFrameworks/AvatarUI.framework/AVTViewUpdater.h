@@ -22,13 +22,13 @@
     AVTAvatar *_currentAvatar;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTAvatar *currentAvatar; // @synthesize currentAvatar=_currentAvatar;
 @property(copy, nonatomic) CDUnknownBlockType avatarUpdatedHandler; // @synthesize avatarUpdatedHandler=_avatarUpdatedHandler;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(readonly, nonatomic) AVTView *avtView; // @synthesize avtView=_avtView;
-- (void).cxx_destruct;
 - (void)avatarView:(id)arg1 didRenderAvatar:(id)arg2;
 - (void)setAvatarRecord:(id)arg1 avatar:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setAvatarRecord:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

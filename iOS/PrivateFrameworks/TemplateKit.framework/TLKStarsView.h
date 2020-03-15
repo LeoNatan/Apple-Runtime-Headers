@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     double _currentStarRating;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double currentStarRating; // @synthesize currentStarRating=_currentStarRating;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) double starRating; // @synthesize starRating=_starRating;
-- (void).cxx_destruct;
 - (void)updateStarImages;
 - (id)init;
 

@@ -23,6 +23,7 @@
 
 + (long long)_weekdayForWeekdayCriteria:(unsigned long long)arg1;
 + (id)specWithFormat:(id)arg1 titleCategory:(long long)arg2;
+- (void).cxx_destruct;
 @property _Bool hasSpecArgumentHandlingLineBreakBehavior; // @synthesize hasSpecArgumentHandlingLineBreakBehavior=_hasSpecArgumentHandlingLineBreakBehavior;
 @property _Bool insertNonBreakableSpace; // @synthesize insertNonBreakableSpace=_insertNonBreakableSpace;
 @property __weak id <PGTitleSpecDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,7 +32,6 @@
 @property _Bool hasLineBreak; // @synthesize hasLineBreak=_hasLineBreak;
 @property(retain) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly) NSString *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_canFulfillWeekdayCriteriaWithMomentNodes:(id)arg1;
 - (id)_appendArguments:(id)arg1 toFormatString:(id)arg2;

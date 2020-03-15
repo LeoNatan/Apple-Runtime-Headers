@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     DDActionViewController *target;
 }
 
-@property __weak DDActionViewController *target; // @synthesize target;
 - (void).cxx_destruct;
+@property __weak DDActionViewController *target; // @synthesize target;
 - (void)buttonClicked:(id)arg1;
 - (void)setControls:(id)arg1;
 

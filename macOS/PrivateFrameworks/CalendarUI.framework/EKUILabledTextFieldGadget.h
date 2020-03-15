@@ -18,11 +18,11 @@
     NSMutableArray *_textConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *textConstraints; // @synthesize textConstraints=_textConstraints;
 @property(retain) NSView *container; // @synthesize container=_container;
 @property(retain) EKUIResizingTextField *baselineField; // @synthesize baselineField=_baselineField;
 @property(retain) EKUIResizingTextField *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (id)placeholderString;
 - (id)control;

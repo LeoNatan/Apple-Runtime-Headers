@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char flags; // @synthesize flags=_flags;
 @property(readonly, nonatomic) NSDate *receivedAt; // @synthesize receivedAt=_receivedAt;
 @property(readonly, nonatomic) double documentTimeInterval; // @synthesize documentTimeInterval=_documentTimeInterval;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) NSString *receivedFromHandle; // @synthesize receivedFromHandle=_receivedFromHandle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)isEqualToURL:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

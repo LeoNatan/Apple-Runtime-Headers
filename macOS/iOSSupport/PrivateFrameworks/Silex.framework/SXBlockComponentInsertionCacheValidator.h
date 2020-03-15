@@ -16,8 +16,8 @@
 }
 
 + (id)validatorWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (BOOL)validateCache:(id)arg1 DOMObjectProvider:(id)arg2;
 
 // Remaining properties

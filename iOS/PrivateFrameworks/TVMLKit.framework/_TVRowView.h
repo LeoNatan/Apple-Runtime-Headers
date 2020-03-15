@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (struct CGRect)_boundingRectForComponents:(id)arg1 interitemSpacing:(double)arg2 boundingSize:(struct CGSize)arg3 horizontalAlignment:(long long)arg4 allowsOverflow:(_Bool)arg5;
 + (struct CGRect)_leftAlignedFrameForComponent:(id)arg1 previousComponent:(id)arg2 interitemSpacing:(double)arg3;
 + (void)_alignComponents:(id)arg1 withLineSize:(struct CGSize)arg2 boundingRect:(struct CGRect)arg3 originYBump:(double)arg4 verticalAlignment:(long long)arg5 horizontalAlignment:(long long)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *lastFocusedView; // @synthesize lastFocusedView=_lastFocusedView;
 @property(readonly, copy, nonatomic) NSArray *allComponents; // @synthesize allComponents=_allComponents;
 @property(readonly, copy, nonatomic) NSArray *rightComponents; // @synthesize rightComponents=_rightComponents;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long contentVerticalAlignment; // @synthesize contentVerticalAlignment=_contentVerticalAlignment;
 @property(nonatomic) __weak UIView *preferredFocusedComponent; // @synthesize preferredFocusedComponent=_preferredFocusedComponent;
 @property(copy, nonatomic) NSArray *components; // @synthesize components=_components;
-- (void).cxx_destruct;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_resetSubviews;
 - (long long)_alignmentFromView:(id)arg1;

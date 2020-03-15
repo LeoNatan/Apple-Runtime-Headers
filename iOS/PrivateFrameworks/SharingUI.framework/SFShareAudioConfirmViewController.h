@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     UIImageView *_shareImageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int productID; // @synthesize productID=_productID;
 @property(nonatomic) unsigned int colorCode; // @synthesize colorCode=_colorCode;
 @property(retain, nonatomic) UIImageView *shareImageView; // @synthesize shareImageView=_shareImageView;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(retain, nonatomic) SFMediaPlayerView *productMovieView; // @synthesize productMovieView=_productMovieView;
 @property(retain, nonatomic) UIImageView *productImageView; // @synthesize productImageView=_productImageView;
-- (void).cxx_destruct;
 - (void)_updateDeviceVisual:(id)arg1;
 - (void)eventCancel:(id)arg1;
 - (void)eventConfirm:(id)arg1;

@@ -19,6 +19,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool cubemap; // @synthesize cubemap=_cubemap;
 @property(nonatomic) unsigned int arrayLength; // @synthesize arrayLength=_arrayLength;
@@ -28,7 +29,6 @@
 
 @property(nonatomic) unsigned int alphaInfo; // @synthesize alphaInfo=_alphaInfo;
 @property(nonatomic) unsigned int pixelFormat; // @synthesize pixelFormat=_pixelFormat;
-- (void).cxx_destruct;
 
 @end
 

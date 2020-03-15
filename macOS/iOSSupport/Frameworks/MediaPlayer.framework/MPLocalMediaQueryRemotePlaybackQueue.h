@@ -17,11 +17,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long repeatType; // @synthesize repeatType=_repeatType;
 @property(readonly, nonatomic) long long shuffleType; // @synthesize shuffleType=_shuffleType;
 @property(readonly, nonatomic) MPMediaItem *firstItem; // @synthesize firstItem=_firstItem;
 @property(readonly, nonatomic) MPMediaQuery *mediaQuery; // @synthesize mediaQuery=_mediaQuery;
-- (void).cxx_destruct;
 - (id)playbackItemMetadataForMediaItem:(id)arg1;
 - (BOOL)verifyWithError:(id *)arg1;
 - (id)description;

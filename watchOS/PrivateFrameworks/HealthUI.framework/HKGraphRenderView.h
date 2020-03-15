@@ -17,9 +17,9 @@
     struct CGRect _axisRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect axisRect; // @synthesize axisRect=_axisRect;
 @property(nonatomic) __weak id <HKGraphRenderDelegate> renderDelegate; // @synthesize renderDelegate;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setNeedsRender;
 - (struct CGSize)drawText:(id)arg1 atPoint:(struct CGPoint)arg2 spaceAvailable:(id)arg3 horizontalAlignment:(int)arg4 verticalAlignment:(int)arg5 textColor:(id)arg6 font:(id)arg7 clipToAxis:(_Bool)arg8 exclusion:(id)arg9;

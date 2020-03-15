@@ -18,11 +18,11 @@
     NSPredicate *_accessorySearchPredicate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPredicate *accessorySearchPredicate; // @synthesize accessorySearchPredicate=_accessorySearchPredicate;
 @property(retain) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, copy) NSSet *unconfiguredAccessories; // @synthesize unconfiguredAccessories=_unconfiguredAccessories;
 @property(nonatomic) __weak id <EAWiFiUnconfiguredAccessoryBrowserDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleBrowserFinishedConfiguring:(id)arg1;
 - (void)_handlePurgeAccessoriesSetNotification:(id)arg1;
 - (void)_handleRemovedAccessoriesNotification:(id)arg1;

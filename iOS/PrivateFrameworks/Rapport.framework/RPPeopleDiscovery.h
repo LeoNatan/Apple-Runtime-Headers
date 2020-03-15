@@ -9,13 +9,13 @@
 #import <Rapport/NSSecureCoding-Protocol.h>
 #import <Rapport/RPPeopleXPCClientInterface-Protocol.h>
 
-@class NSArray, NSMutableSet, NSSet, NSXPCConnection;
+@class NSArray, NSMutableDictionary, NSMutableSet, NSSet, NSXPCConnection;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPPeopleDiscovery : NSObject <NSSecureCoding, RPPeopleXPCClientInterface>
 {
     _Bool _activateCalled;
-    struct NSMutableDictionary *_discoveredPeople;
+    NSMutableDictionary *_discoveredPeople;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     NSMutableSet *_rangingPersonIDs;
@@ -39,6 +39,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedHandler; // @synthesize statusChangedHandler=_statusChangedHandler;
 @property(copy, nonatomic) NSSet *rangingPeople; // @synthesize rangingPeople=_rangingPeople;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)removeAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)xpcPersonID:(id)arg1 deviceID:(id)arg2 updatedMeasurement:(id)arg3;

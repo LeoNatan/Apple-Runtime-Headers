@@ -14,9 +14,9 @@
     CALNUNNotificationIconMapper *_notificationIconMapper;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALNUNNotificationIconMapper *notificationIconMapper; // @synthesize notificationIconMapper=_notificationIconMapper;
 @property(readonly, nonatomic) CALNUNNotificationContentMapper *notificationContentMapper; // @synthesize notificationContentMapper=_notificationContentMapper;
-- (void).cxx_destruct;
 - (id)calnNotificationRequestFromUNNotificationRequest:(id)arg1;
 - (id)unNotificationRequestFromCALNNotificationRequest:(id)arg1;
 - (id)initWithNotificationContentMapper:(id)arg1 notificationIconMapper:(id)arg2;

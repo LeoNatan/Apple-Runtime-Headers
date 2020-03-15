@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool tryDeltaCopy; // @synthesize tryDeltaCopy=_tryDeltaCopy;
 @property(nonatomic) _Bool shouldCopy; // @synthesize shouldCopy=_shouldCopy;
 @property(retain, nonatomic) NSURL *transferPath; // @synthesize transferPath=_transferPath;
-- (void).cxx_destruct;
 - (Class)clientPromiseClass;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -19,9 +19,9 @@
     NSArray *_writingDirectionSortedStrokeIdentifiers;
 }
 
-@property(readonly, retain, nonatomic) NSArray *writingDirectionSortedStrokeIdentifiers; // @synthesize writingDirectionSortedStrokeIdentifiers=_writingDirectionSortedStrokeIdentifiers;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSArray *writingDirectionSortedStrokeIdentifiers; // @synthesize writingDirectionSortedStrokeIdentifiers=_writingDirectionSortedStrokeIdentifiers;
 - (id)coalescedLastSubstrokes;
 - (long long)lastSubstrokeIndexBeforeMerge;
 - (struct CGVector)averageStrokeDeviation;

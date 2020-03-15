@@ -24,6 +24,7 @@
 
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
+- (void).cxx_destruct;
 @property _Bool noAdvisoryTimer; // @synthesize noAdvisoryTimer=_noAdvisoryTimer;
 @property _Bool weakAdvisory; // @synthesize weakAdvisory=_weakAdvisory;
 @property(retain) NSString *advisoryAgentType; // @synthesize advisoryAgentType=_advisoryAgentType;
@@ -35,7 +36,6 @@
 @property(nonatomic) _Bool isForcedAdvisory; // @synthesize isForcedAdvisory=_isForcedAdvisory;
 - (void)setUpdateClientsImmediately:(_Bool)arg1;
 - (_Bool)updateClientsImmediately;
-- (void).cxx_destruct;
 - (id)initWithAdvisoryAgentDomain:(id)arg1 agentType:(id)arg2 advisoryMode:(unsigned int)arg3;
 - (id)initWithAdvisoryInterface:(id)arg1 advisoryMode:(unsigned int)arg2;
 - (void)setUnassertHandler:(CDUnknownBlockType)arg1;

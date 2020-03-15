@@ -26,8 +26,8 @@ __attribute__((visibility("hidden")))
     CDStruct_2d26af33 _config;
 }
 
-@property CDStruct_2d26af33 config; // @synthesize config=_config;
 - (void).cxx_destruct;
+@property CDStruct_2d26af33 config; // @synthesize config=_config;
 - (int)enqueueSolveOn:(id)arg1 constraints:(id)arg2 colorGuide:(id)arg3 extraGuide:(id)arg4 inputTexture:(id)arg5 outputTexture:(id)arg6;
 - (int)encodeApplySolverConstraintsOn:(id)arg1 constraints:(id)arg2 filteredSegmentation:(id)arg3 segmentation:(id)arg4;
 - (int)encodeConstraintsOn:(id)arg1 segmentation:(id)arg2 constraints:(id)arg3;

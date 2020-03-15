@@ -29,6 +29,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSDictionary *pointTimestamps; // @synthesize pointTimestamps=_pointTimestamps;
 @property(retain, nonatomic) NSArray *locations; // @synthesize locations=_locations;
@@ -46,7 +47,6 @@
 @property(nonatomic) double verticalAccuracy; // @synthesize verticalAccuracy=_verticalAccuracy;
 @property(nonatomic) double horizontalAccuracy; // @synthesize horizontalAccuracy=_horizontalAccuracy;
 @property(nonatomic) double deltaT; // @synthesize deltaT=_deltaT;
-- (void).cxx_destruct;
 - (void)generateLocationsWithSpeedOverride:(double)arg1;
 - (void)generateLocations;
 - (void)simulateWalkingFrom:(CDStruct_c3b9c2ee)arg1 to:(CDStruct_c3b9c2ee)arg2;

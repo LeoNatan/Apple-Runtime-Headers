@@ -16,9 +16,9 @@
     double _downlinkThroughput;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double downlinkThroughput; // @synthesize downlinkThroughput=_downlinkThroughput;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)initWithResult:(double)arg1 andError:(id)arg2;
 
 // Remaining properties

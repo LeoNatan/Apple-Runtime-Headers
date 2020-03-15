@@ -25,6 +25,7 @@
     NSString *_expressiveText;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *expressiveText; // @synthesize expressiveText=_expressiveText;
 @property(retain, nonatomic) DOMHTMLElement *containerElement; // @synthesize containerElement=_containerElement;
 @property BOOL displayBigEmoji; // @synthesize displayBigEmoji=_displayBigEmoji;
@@ -38,7 +39,6 @@
 @property(nonatomic) DOMHTMLElement *messageElement; // @synthesize messageElement=_messageElement;
 @property(nonatomic) TranscriptDOMController *controller; // @synthesize controller=_controller;
 @property(nonatomic) IMExpressiveSendAsTextChatItem *chatItem; // @synthesize chatItem=_chatItem;
-- (void).cxx_destruct;
 - (BOOL)shouldPreprocess;
 - (void)parserDidEnd:(id)arg1;
 - (void)parser:(id)arg1 foundAttributes:(id)arg2 inRange:(struct _NSRange)arg3 fileTransferGUID:(id)arg4 filename:(id)arg5 bookmark:(id)arg6 width:(id)arg7 height:(id)arg8 emoji:(id)arg9;

@@ -20,13 +20,13 @@
 
 + (id)actionFromDictionary:(id)arg1;
 + (unsigned long long)actionID;
+- (void).cxx_destruct;
 @property(retain) NSDate *completionDate; // @synthesize completionDate=_completionDate;
 @property unsigned long long timeRemaining; // @synthesize timeRemaining=_timeRemaining;
 @property double percentComplete; // @synthesize percentComplete=_percentComplete;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property _Bool finishedBackup; // @synthesize finishedBackup=_finishedBackup;
 @property _Bool shouldStartBackup; // @synthesize shouldStartBackup=_shouldStartBackup;
-- (void).cxx_destruct;
 - (id)requestPayload;
 
 @end

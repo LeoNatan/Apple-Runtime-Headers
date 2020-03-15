@@ -14,8 +14,8 @@
     BOOL _invalid;
 }
 
-@property(readonly, nonatomic, getter=isInvalid) BOOL invalid; // @synthesize invalid=_invalid;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isInvalid) BOOL invalid; // @synthesize invalid=_invalid;
 - (void)invalidate;
 - (id)onInvalid:(CDUnknownBlockType)arg1 queue:(id)arg2;
 - (id)onInvalid:(CDUnknownBlockType)arg1;

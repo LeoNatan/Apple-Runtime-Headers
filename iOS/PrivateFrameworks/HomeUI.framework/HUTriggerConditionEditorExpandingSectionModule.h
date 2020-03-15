@@ -23,6 +23,7 @@
 }
 
 + (id)sectionModuleForConditionType:(unsigned long long)arg1 itemUpdater:(id)arg2 home:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFStaticItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) _Bool showOptions; // @synthesize showOptions=_showOptions;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSArray *optionItems; // @synthesize optionItems=_optionItems;
 @property(retain, nonatomic) HFItem *showOptionsItem; // @synthesize showOptionsItem=_showOptionsItem;
 @property(readonly, nonatomic) unsigned long long conditionType; // @synthesize conditionType=_conditionType;
-- (void).cxx_destruct;
 - (id)preferredConditionFromConditions:(id)arg1;
 - (_Bool)conditionIsDisabled;
 - (id)conditionTitle;

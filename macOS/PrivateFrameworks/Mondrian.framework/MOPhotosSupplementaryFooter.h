@@ -32,6 +32,7 @@
 }
 
 + (double)footerHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *informationTextViewHeightConstraint; // @synthesize informationTextViewHeightConstraint=_informationTextViewHeightConstraint;
 @property(retain, nonatomic) NSTextView *informationTextView; // @synthesize informationTextView=_informationTextView;
 @property(retain, nonatomic) NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSAttributedString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSAttributedString *referencedMediaInformation; // @synthesize referencedMediaInformation=_referencedMediaInformation;
 @property(retain, nonatomic) NSAttributedString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)setFooterInfo:(id)arg1;
 - (BOOL)_isAttributedStringA:(id)arg1 equalToAttributedStringB:(id)arg2;

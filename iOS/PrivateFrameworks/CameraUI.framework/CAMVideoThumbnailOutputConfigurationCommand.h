@@ -13,8 +13,8 @@
     CAMVideoThumbnailOutputConfiguration *_configuration;
 }
 
-@property(readonly, nonatomic) CAMVideoThumbnailOutputConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CAMVideoThumbnailOutputConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void)executeWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

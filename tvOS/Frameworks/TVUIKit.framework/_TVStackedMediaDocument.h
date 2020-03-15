@@ -20,6 +20,7 @@
     struct CGSize _canvasSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
 @property(retain, nonatomic) NSURL *localPreviewAssetURL; // @synthesize localPreviewAssetURL=_localPreviewAssetURL;
 @property(retain, nonatomic) NSArray *videoEntries; // @synthesize videoEntries=_videoEntries;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) _TVStackedMediaDocumentVersion *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *localPreviewAssetFileName; // @synthesize localPreviewAssetFileName=_localPreviewAssetFileName;
 @property(retain, nonatomic) NSString *fileNamePrefix; // @synthesize fileNamePrefix=_fileNamePrefix;
-- (void).cxx_destruct;
 - (_Bool)validateResources;
 - (id)remoteAssetFileNames;
 - (id)initWithVersionOne:(id)arg1 contents:(id)arg2 directory:(id)arg3 fileNamePrefix:(id)arg4;

@@ -15,8 +15,8 @@
 
 + (Class)transformedValueClass;
 + (BOOL)allowsReverseTransformation;
-@property(retain, nonatomic) CNInstantMessageAddress *lastInstantMessageAddress; // @synthesize lastInstantMessageAddress=_lastInstantMessageAddress;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNInstantMessageAddress *lastInstantMessageAddress; // @synthesize lastInstantMessageAddress=_lastInstantMessageAddress;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 - (id)init;

@@ -16,8 +16,8 @@
 + (Class)nanoNewsDataSourceClass;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1;
 + (_Bool)acceptsComplicationFamily:(int)arg1;
-@property(retain, nonatomic) id newsDataSourceProxy; // @synthesize newsDataSourceProxy=_newsDataSourceProxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id newsDataSourceProxy; // @synthesize newsDataSourceProxy=_newsDataSourceProxy;
 - (void)resume;
 - (void)pause;
 - (id)complicationApplicationIdentifier;

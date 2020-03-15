@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
     _UIDataSourceUpdateMap *_updateMap;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDataSourceUpdateMap *updateMap; // @synthesize updateMap=_updateMap;
 @property(retain, nonatomic) _UIDataSourceSnapshotter *initialSnapshot; // @synthesize initialSnapshot=_initialSnapshot;
 @property(retain, nonatomic) NSMutableArray *shadowUpdates; // @synthesize shadowUpdates=_shadowUpdates;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (id)indexPathAfterShadowUpdates:(id)arg1 startingAtUpdate:(id)arg2;
 - (id)indexPathBeforeShadowUpdates:(id)arg1 startingBeforeUpdate:(id)arg2;
 - (id)indexPathsAfterShadowUpdates:(id)arg1 allowAppendingInsert:(_Bool)arg2;

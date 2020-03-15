@@ -21,6 +21,7 @@
     double _syncWindow;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool shouldUseLongLivedOperationsToSaveRecords; // @synthesize shouldUseLongLivedOperationsToSaveRecords=_shouldUseLongLivedOperationsToSaveRecords;
 @property(readonly) _Bool shouldBatchSaveRecords; // @synthesize shouldBatchSaveRecords=_shouldBatchSaveRecords;
 @property double syncWindow; // @synthesize syncWindow=_syncWindow;
@@ -30,7 +31,6 @@
 @property(retain) NSString *singleDeviceFetchChangesThrottlingPolicyString; // @synthesize singleDeviceFetchChangesThrottlingPolicyString=_singleDeviceFetchChangesThrottlingPolicyString;
 @property(retain) NSString *multipleDeviceSaveChangesThrottlingPolicyString; // @synthesize multipleDeviceSaveChangesThrottlingPolicyString=_multipleDeviceSaveChangesThrottlingPolicyString;
 @property(retain) NSString *singleDeviceSaveChangesThrottlingPolicyString; // @synthesize singleDeviceSaveChangesThrottlingPolicyString=_singleDeviceSaveChangesThrottlingPolicyString;
-- (void).cxx_destruct;
 - (void)applyRemoteConfiguration:(id)arg1;
 - (void)applyPlatformConfiguration:(id)arg1 withTolerance:(long long)arg2;
 - (id)remoteConfiguration;

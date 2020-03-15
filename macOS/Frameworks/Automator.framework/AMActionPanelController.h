@@ -17,12 +17,12 @@
     AMBundleAction *_panelAction;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *_continueButton; // @synthesize _continueButton;
 @property __weak NSButton *_cancelButton; // @synthesize _cancelButton;
 @property __weak AMActionPanelActionView *_actionBox; // @synthesize _actionBox;
 @property(retain) AMBundleAction *panelAction; // @synthesize panelAction=_panelAction;
 @property(retain) AMBundleAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)cancelAction:(id)arg1;
 - (void)continueAction:(id)arg1;
 @property(readonly) NSButton *cancelButton;

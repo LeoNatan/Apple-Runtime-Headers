@@ -26,6 +26,7 @@
     unsigned long long _searchIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long searchIndex; // @synthesize searchIndex=_searchIndex;
 @property(nonatomic) _Bool foundCalName; // @synthesize foundCalName=_foundCalName;
 @property(nonatomic) _Bool foundBeginVCal; // @synthesize foundBeginVCal=_foundBeginVCal;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSString *username; // @synthesize username=_username;
 @property(retain, nonatomic) NSURL *subscriptionURL; // @synthesize subscriptionURL=_subscriptionURL;
 @property(nonatomic) __weak id <SubCalValidationTaskDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_tryQuickValidationCurrentData:(id)arg1;
 - (id)_searchForCalNameInConnectionData:(id)arg1;
 - (id)_stringBeforeNewline:(const char *)arg1 length:(unsigned long long)arg2;

@@ -26,6 +26,7 @@
 
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDDevice *currentDevice; // @synthesize currentDevice=_currentDevice;
 @property(readonly, nonatomic) NSUUID *eventTriggerUUID; // @synthesize eventTriggerUUID=_eventTriggerUUID;
 @property(nonatomic) __weak HMDEventTrigger *eventTrigger; // @synthesize eventTrigger=_eventTrigger;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(readonly, nonatomic) NSString *logString; // @synthesize logString=_logString;
 @property(readonly, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (_Bool)sendMessage:(id)arg1 payload:(id)arg2 device:(id)arg3 target:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
 - (_Bool)sendMessage:(id)arg1 payload:(id)arg2 device:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (_Bool)sendResidentMessage:(id)arg1 payload:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;

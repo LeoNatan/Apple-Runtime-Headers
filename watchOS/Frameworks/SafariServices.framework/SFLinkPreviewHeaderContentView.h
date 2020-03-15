@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     NSString *_domain;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPreviewEnabled) _Bool previewEnabled; // @synthesize previewEnabled=_previewEnabled;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(nonatomic) __weak id <SFLinkPreviewHeaderContentViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_updateSafariIconWithShowPreviewActionConstraints;
 - (void)_updateDomainWithHidePreviewActionConstraints;

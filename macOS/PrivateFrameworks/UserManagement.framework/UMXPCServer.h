@@ -32,6 +32,8 @@ __attribute__((visibility("hidden")))
     NSData *_contextData;
     NSDictionary *_preferencesDict;
     NSDictionary *_personaProfileDict;
+    NSDictionary *_provisionDict;
+    CDUnknownBlockType _provisionCompletionHandler;
     CDUnknownBlockType _registrationCompletionHandler;
     CDUnknownBlockType _switchCompletionHandler;
     CDUnknownBlockType _suspendQuotasCompletionHandler;
@@ -52,6 +54,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedServer;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL didRegisterPersonaCalbackStakeholder; // @synthesize didRegisterPersonaCalbackStakeholder=_didRegisterPersonaCalbackStakeholder;
 @property(nonatomic) __weak id personaUpdateCallbackStakeholder; // @synthesize personaUpdateCallbackStakeholder=_personaUpdateCallbackStakeholder;
 @property(copy, nonatomic) CDUnknownBlockType personaRegistrationCompletionHandler; // @synthesize personaRegistrationCompletionHandler=_personaRegistrationCompletionHandler;
@@ -76,6 +79,8 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType suspendQuotasCompletionHandler; // @synthesize suspendQuotasCompletionHandler=_suspendQuotasCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType switchCompletionHandler; // @synthesize switchCompletionHandler=_switchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType registrationCompletionHandler; // @synthesize registrationCompletionHandler=_registrationCompletionHandler;
+@property(copy, nonatomic) CDUnknownBlockType provisionCompletionHandler; // @synthesize provisionCompletionHandler=_provisionCompletionHandler;
+@property(retain, nonatomic) NSDictionary *provisionDict; // @synthesize provisionDict=_provisionDict;
 @property(retain, nonatomic) NSDictionary *personaProfileDict; // @synthesize personaProfileDict=_personaProfileDict;
 @property(retain, nonatomic) NSDictionary *preferencesDict; // @synthesize preferencesDict=_preferencesDict;
 @property(retain, nonatomic) NSData *contextData; // @synthesize contextData=_contextData;
@@ -86,7 +91,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(nonatomic) unsigned long long stakeholderType; // @synthesize stakeholderType=_stakeholderType;
 @property(nonatomic) __weak id stakeholder; // @synthesize stakeholder=_stakeholder;
-- (void).cxx_destruct;
+- (void)setupUMUserSessionProvisioning:(id)arg1 WithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)registerPersonaListUpdateObserver:(id)arg1 withMachService:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)registerPersonaListUpdateObserver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_registerPersonaListObserver:(id)arg1 withMachService:(id)arg2;

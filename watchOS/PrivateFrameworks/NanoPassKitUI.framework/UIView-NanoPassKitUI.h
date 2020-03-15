@@ -10,6 +10,7 @@
 - (_Bool)npkBecomeFirstResponder;
 - (void)npk_setLayerTreePaused:(_Bool)arg1;
 - (_Bool)npk_isLayerTreePaused;
+- (void)npkAddViewIfNecessary:(id)arg1;
 - (void)npkActivateConstraintsToContainerWithContentInset:(struct UIEdgeInsets)arg1;
 @end
 

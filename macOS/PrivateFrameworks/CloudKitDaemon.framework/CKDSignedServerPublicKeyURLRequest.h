@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 + (id)nearestExpirationInCertificateList:(id)arg1;
 + (id)certificateListServerPlist:(id)arg1;
 + (BOOL)serverResponseIsComplete:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __SecPolicy *certificateTrustPolicy; // @synthesize certificateTrustPolicy=_certificateTrustPolicy;
 @property(readonly, nonatomic) NSURL *plistURL; // @synthesize plistURL=_plistURL;
 @property(retain) CKPublicKey *verifiedPublicKey; // @synthesize verifiedPublicKey=_verifiedPublicKey;
-- (void).cxx_destruct;
 - (BOOL)canVerifySignedPlistValues:(id)arg1 withKey:(struct __SecKey *)arg2;
 - (void)requestDidParsePlistObject:(id)arg1;
 - (id)url;

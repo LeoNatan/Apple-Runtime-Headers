@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *dataTypesByItem; // @synthesize dataTypesByItem=_dataTypesByItem;
 @property(readonly, nonatomic) NSMutableDictionary *previewImageDataByItem; // @synthesize previewImageDataByItem=_previewImageDataByItem;
 @property(readonly, nonatomic) NSMutableDictionary *previewImagesByItem; // @synthesize previewImagesByItem=_previewImagesByItem;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSMutableDictionary *attachmentNamesByItem; // @synthesize attachmentNamesByItem=_attachmentNamesByItem;
 @property(retain, nonatomic) NSDictionary *openURLAnnotationsByURL; // @synthesize openURLAnnotationsByURL=_openURLAnnotationsByURL;
 @property(retain, nonatomic) NSArray *securityContexts; // @synthesize securityContexts=_securityContexts;
-- (void).cxx_destruct;
 - (id)dataTypeForItem:(id)arg1;
 - (void)addDataType:(id)arg1 forItem:(id)arg2;
 - (id)previewImageDataForItem:(id)arg1;

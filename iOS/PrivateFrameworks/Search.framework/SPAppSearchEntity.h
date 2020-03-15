@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) NSString *appName; // @synthesize appName=_appName;
 - (void).cxx_destruct;
+@property(retain) NSString *appName; // @synthesize appName=_appName;
 - (id)queryString;
 - (void)appendToQuery:(id)arg1 key:(id)arg2 value:(id)arg3 additions:(id)arg4;
 - (id)tokenText;

@@ -30,9 +30,12 @@
     NSURL *_termsURL;
     NSString *_associatedPassSerialNumber;
     NSString *_associatedPassTypeIdentifier;
+    NSArray *_cloudStoreZoneNames;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *cloudStoreZoneNames; // @synthesize cloudStoreZoneNames=_cloudStoreZoneNames;
 @property(copy, nonatomic) NSString *associatedPassTypeIdentifier; // @synthesize associatedPassTypeIdentifier=_associatedPassTypeIdentifier;
 @property(copy, nonatomic) NSString *associatedPassSerialNumber; // @synthesize associatedPassSerialNumber=_associatedPassSerialNumber;
 @property(copy, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
@@ -51,7 +54,6 @@
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(nonatomic) unsigned long long stage; // @synthesize stage=_stage;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
@@ -62,6 +64,8 @@
 @property(readonly, copy, nonatomic) NSArray *defaultSuggestions;
 - (id)initWithDictionary:(id)arg1 lastUpdated:(id)arg2;
 - (id)_featureWithIdentifier:(id)arg1;
+- (id)preserveCurrentBalanceFeatureDescriptor;
+- (_Bool)supportsPreserveCurrentBalance;
 - (id)instantWithdrawalPromotionFeatureDescriptor;
 - (_Bool)supportsInstantWithdrawal;
 - (id)cardBalancePromotionFeatureDescriptor;

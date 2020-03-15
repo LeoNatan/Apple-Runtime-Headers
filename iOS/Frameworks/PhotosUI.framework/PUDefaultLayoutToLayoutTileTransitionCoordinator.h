@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     id <PUTilingCoordinateSystem> _fixedCoordinateSystem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNeedsUpdateZoomingIn:) _Bool _needsUpdateZoomingIn; // @synthesize _needsUpdateZoomingIn=__needsUpdateZoomingIn;
 @property(nonatomic, setter=_setZoomingIn:) _Bool _isZoomingIn; // @synthesize _isZoomingIn=__isZoomingIn;
 @property(retain, nonatomic) id <PUTilingCoordinateSystem> fixedCoordinateSystem; // @synthesize fixedCoordinateSystem=_fixedCoordinateSystem;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUAssetReference *anchorAssetReference; // @synthesize anchorAssetReference=_anchorAssetReference;
 @property(retain, nonatomic) PUTilingLayout *toLayout; // @synthesize toLayout=_toLayout;
 @property(retain, nonatomic) PUTilingLayout *fromLayout; // @synthesize fromLayout=_fromLayout;
-- (void).cxx_destruct;
 - (long long)_zoomLevelForLayout:(id)arg1;
 - (void)_updateIsZoomingInIfNeeded;
 - (void)_invalidateIsZoomingIn;

@@ -31,6 +31,7 @@
     double _expirationTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int yAxisFractionDigits; // @synthesize yAxisFractionDigits=_yAxisFractionDigits;
 @property(nonatomic) BOOL hasVolume; // @synthesize hasVolume=_hasVolume;
 @property(nonatomic) BOOL isUnavailable; // @synthesize isUnavailable=_isUnavailable;
@@ -46,7 +47,6 @@
 @property(readonly) CDStruct_8cc9ba3e *stockValues; // @synthesize stockValues=_stockValues;
 @property(nonatomic) long long chartInterval; // @synthesize chartInterval=_chartInterval;
 @property(nonatomic) __weak SearchUIStock *stock; // @synthesize stock=_stock;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (void)setLabelPlacement:(long long)arg1 forDisplayMode:(id)arg2;

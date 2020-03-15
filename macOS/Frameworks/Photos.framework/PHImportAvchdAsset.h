@@ -18,9 +18,9 @@
 
 + (void)checkForAVCHDContentAtURL:(id)arg1 subURLs:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)avchdAssetsFromSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSString *fingerprint; // @synthesize fingerprint=_fingerprint;
 - (id)avchdAssetId;
-- (void).cxx_destruct;
 - (void)downloadToPathAsync:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)sidecars;
 - (BOOL)isTimelapse;

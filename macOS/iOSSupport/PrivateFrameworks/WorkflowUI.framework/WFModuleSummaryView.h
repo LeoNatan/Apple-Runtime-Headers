@@ -37,6 +37,7 @@
 + (id)parameterStatesByApplyingStaging:(id)arg1 toOriginal:(id)arg2;
 + (void)enumerateVariableAttachmentsInContents:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (id)paragraphStyleWithAlignment:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *variablesBeingObserved; // @synthesize variablesBeingObserved=_variablesBeingObserved;
 @property(retain, nonatomic) WFVariable *variableBeingEdited; // @synthesize variableBeingEdited=_variableBeingEdited;
 @property(retain, nonatomic) WFModuleSummaryTemplateBuilder *templateBuilder; // @synthesize templateBuilder=_templateBuilder;
@@ -53,7 +54,6 @@
 @property(readonly, copy, nonatomic) NSSet *editableParameters; // @synthesize editableParameters=_editableParameters;
 @property(readonly, copy, nonatomic) NSSet *parameters; // @synthesize parameters=_parameters;
 @property(readonly, copy, nonatomic) NSString *summaryFormatString; // @synthesize summaryFormatString=_summaryFormatString;
-- (void).cxx_destruct;
 - (void)variableDidChange:(id)arg1;
 - (void)updateVariableAttachmentAppearanceInContents:(id)arg1;
 - (void)updateVariableObservationsWithContents:(id)arg1;

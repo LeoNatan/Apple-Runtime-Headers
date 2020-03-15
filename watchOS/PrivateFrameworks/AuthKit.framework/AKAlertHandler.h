@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak id <AKAlertHandlerUIProvider> uiProvider; // @synthesize uiProvider=_uiProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AKAlertHandlerUIProvider> uiProvider; // @synthesize uiProvider=_uiProvider;
 - (id)_URLWithString:(id)arg1 byAppendingParameters:(id)arg2;
 - (void)_openUpgradeAccountSecurityLevelWithBundleID:(id)arg1;
 - (void)_openPasscodeSetup;

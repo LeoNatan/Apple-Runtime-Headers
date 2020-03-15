@@ -15,10 +15,10 @@
     NSArray *_gridItems;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *gridItems; // @synthesize gridItems=_gridItems;
 @property(nonatomic) int defaultSelection; // @synthesize defaultSelection=_defaultSelection;
 @property(nonatomic) int columnCount; // @synthesize columnCount=_columnCount;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

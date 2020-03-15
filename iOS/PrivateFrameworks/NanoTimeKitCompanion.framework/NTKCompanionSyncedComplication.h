@@ -18,11 +18,11 @@
     NSArray *_supportedFamilies;
 }
 
-+ (id)_stocksComplication;
++ (id)_stocksComplication:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *supportedFamilies; // @synthesize supportedFamilies=_supportedFamilies;
 @property(readonly, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedName;
 - (id)initWithRemoteApplication:(id)arg1 supportedFamilies:(id)arg2;
 

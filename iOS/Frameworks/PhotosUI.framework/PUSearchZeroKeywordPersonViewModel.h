@@ -13,8 +13,8 @@
     PHPerson *_person;
 }
 
-@property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHPerson *person; // @synthesize person=_person;
 - (id)title;
 - (id)debugDictionary;
 - (id)initWithRepresentedObject:(id)arg1 representedPerson:(id)arg2;

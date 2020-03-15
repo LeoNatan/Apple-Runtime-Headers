@@ -19,14 +19,16 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableDictionary *_resourceCache;
     _Bool _shouldDownloadResources;
+    _Bool _didCacheRequiredResources;
     ICIAMApplicationMessage *_applicationMessage;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool didCacheRequiredResources; // @synthesize didCacheRequiredResources=_didCacheRequiredResources;
 @property(nonatomic) _Bool shouldDownloadResources; // @synthesize shouldDownloadResources=_shouldDownloadResources;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) ICIAMApplicationMessage *applicationMessage; // @synthesize applicationMessage=_applicationMessage;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

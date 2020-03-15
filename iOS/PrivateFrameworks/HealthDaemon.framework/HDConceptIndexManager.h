@@ -25,8 +25,8 @@
 }
 
 + (void)_updateConceptIndexWithBlockDispatcher:(id)arg1 conceptIndexer:(id)arg2 batchSize:(long long)arg3 initialCount:(long long)arg4 completion:(CDUnknownBlockType)arg5;
-@property(readonly, nonatomic) HDConceptIndexer *conceptIndexer; // @synthesize conceptIndexer=_conceptIndexer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HDConceptIndexer *conceptIndexer; // @synthesize conceptIndexer=_conceptIndexer;
 - (void)stopWithDescription:(id)arg1;
 - (void)startWithDescription:(id)arg1;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;

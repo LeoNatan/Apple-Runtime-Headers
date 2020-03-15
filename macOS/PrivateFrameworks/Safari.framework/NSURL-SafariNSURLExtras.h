@@ -23,8 +23,6 @@
 - (BOOL)safari_URLmatchesPattern:(id)arg1;
 - (BOOL)safari_isSpawnedTabParentURL;
 - (BOOL)safari_isURLPinnable;
-- (BOOL)safari_isOfficialExtensionGalleryURL;
-- (BOOL)safari_isInternalExtensionGalleryURL;
 - (BOOL)safari_isInstalledPlugInsURL;
 - (BOOL)safari_isAcknowledgmentsURL;
 - (BOOL)safari_isReadingListURL;
@@ -39,7 +37,8 @@
 - (BOOL)safari_isFavoritesURL;
 - (BOOL)safari_isTopSitesURL;
 - (BOOL)safari_isSafariResourceURL;
-- (BOOL)safari_isSafariExtensionURL;
+@property(readonly, nonatomic) BOOL safari_isSafariExtensionURL;
+@property(readonly, nonatomic) BOOL safari_isSafariAppExtensionURL;
 - (BOOL)safari_isReaderURL;
 - (BOOL)safari_isHistoryURL;
 - (BOOL)safari_isBookmarksURL;

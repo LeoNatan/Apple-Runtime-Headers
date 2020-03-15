@@ -132,6 +132,7 @@
 + (id)startRemoteInterfaceWithBundle:(id)arg1;
 + (id)startRemoteInterface;
 + (id)sharedRemoteInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType addPassesCompletion; // @synthesize addPassesCompletion=_addPassesCompletion;
 @property(nonatomic) _Bool afterWillResignActive; // @synthesize afterWillResignActive=_afterWillResignActive;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *appActiveTransaction; // @synthesize appActiveTransaction=_appActiveTransaction;
@@ -174,7 +175,6 @@
 @property(retain, nonatomic) id runLoopObserver; // @synthesize runLoopObserver=_runLoopObserver;
 @property(retain, nonatomic) NSMutableArray *activeComplicationsConnections; // @synthesize activeComplicationsConnections=_activeComplicationsConnections;
 @property(retain, nonatomic) id <SPRemoteInterfaceDataDelegateProtocol> dataDelegate; // @synthesize dataDelegate=_dataDelegate;
-- (void).cxx_destruct;
 - (id)_currentFrameCountForTestDisplay;
 - (void)invokeRecapTest:(id)arg1 withFile:(id)arg2;
 - (id)extendLaunchTest;

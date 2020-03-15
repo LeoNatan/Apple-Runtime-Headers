@@ -17,10 +17,10 @@
     NSData *_contentResponseBody;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *contentResponseBody; // @synthesize contentResponseBody=_contentResponseBody;
 @property(retain, nonatomic) NSDictionary *contentResponseHeaders; // @synthesize contentResponseHeaders=_contentResponseHeaders;
 @property(retain, nonatomic) NSString *responseUUID; // @synthesize responseUUID=_responseUUID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

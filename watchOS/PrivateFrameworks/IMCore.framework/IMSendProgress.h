@@ -22,12 +22,12 @@
 }
 
 + (Class)_timeDataSourceClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IMSendProgressTimeDataSource> timeDataSource; // @synthesize timeDataSource=_timeDataSource;
 @property(nonatomic) _Bool startSendProgressImmediately; // @synthesize startSendProgressImmediately=_startSendProgressImmediately;
 @property(copy, nonatomic) NSDictionary *sendingItems; // @synthesize sendingItems=_sendingItems;
 @property(nonatomic) __weak id context; // @synthesize context=_context;
 @property(nonatomic) __weak id <IMSendProgressDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendProgressTimerFired:(id)arg1;
 - (void)_scheduleSendProgressTimerIfNeeded;
 - (void)_updateSendProgress;

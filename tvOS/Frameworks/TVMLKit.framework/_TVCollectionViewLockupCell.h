@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     id <TVCollectionViewLockupCellDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <TVCollectionViewLockupCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVCollectionViewLockupCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_showPressState;
 - (void)_handleSelect;
 - (id)_selectingView;

@@ -21,6 +21,7 @@
     MPCLyricsReportingController *_lyricsReportingController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCLyricsReportingController *lyricsReportingController; // @synthesize lyricsReportingController=_lyricsReportingController;
 @property(retain, nonatomic) MPCPlaybackHistoryController *playbackHistoryController; // @synthesize playbackHistoryController=_playbackHistoryController;
 @property(retain, nonatomic) MPRTCReportingController *rtcReportingController; // @synthesize rtcReportingController=_rtcReportingController;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) MPCJinglePlayActivityReportingController *jinglePlayActivityReportingController; // @synthesize jinglePlayActivityReportingController=_jinglePlayActivityReportingController;
 @property(retain, nonatomic) MPAssistantAnalyticsReportingController *assistantAnalyticsController; // @synthesize assistantAnalyticsController=_assistantAnalyticsController;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
-- (void).cxx_destruct;
 - (void)environmentMonitorDidChangeNetworkType:(id)arg1;
 - (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
 - (void)recordLyricsViewEvent:(id)arg1;

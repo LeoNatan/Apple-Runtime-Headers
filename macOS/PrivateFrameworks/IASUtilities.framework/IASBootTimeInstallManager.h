@@ -19,11 +19,11 @@
 
 + (id)managerForVolume:(id)arg1 error:(id *)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *progressObserversQueue; // @synthesize progressObserversQueue=_progressObserversQueue;
 @property(retain) NSMutableArray *progressObservers; // @synthesize progressObservers=_progressObservers;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) NSURL *volumeURL; // @synthesize volumeURL=_volumeURL;
-- (void).cxx_destruct;
 - (BOOL)performRestartReturningError:(id *)arg1;
 - (BOOL)isRestartRequiredByPackages:(id)arg1 error:(id *)arg2;
 - (void)installQueuedPackages:(id)arg1 withProgress:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;

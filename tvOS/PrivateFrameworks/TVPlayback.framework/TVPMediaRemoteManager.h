@@ -23,6 +23,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageProxy *artworkProxy; // @synthesize artworkProxy=_artworkProxy;
 @property(nonatomic) _Bool artworkNeedsUpdate; // @synthesize artworkNeedsUpdate=_artworkNeedsUpdate;
 @property(copy, nonatomic) NSDictionary *lastNowPlayingInfo; // @synthesize lastNowPlayingInfo=_lastNowPlayingInfo;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool usingPlayerForCommandHandlerOnly; // @synthesize usingPlayerForCommandHandlerOnly=_usingPlayerForCommandHandlerOnly;
 @property(retain, nonatomic) TVPMediaRemoteCommandHandler *remoteCommandHandler; // @synthesize remoteCommandHandler=_remoteCommandHandler;
 @property(nonatomic) __weak id <TVPPlayback> player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_pushNowPlayingInfo:(_Bool)arg1 invalidateArtwork:(_Bool)arg2 pushImmediately:(_Bool)arg3;
 - (void)_updateBoundRepeatMode;
 - (void)_updateBoundShuffleMode;

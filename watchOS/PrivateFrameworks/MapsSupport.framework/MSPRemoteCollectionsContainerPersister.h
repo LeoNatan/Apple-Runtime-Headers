@@ -16,9 +16,9 @@
     NSUUID *_lastOperationIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *lastOperationIdentifier; // @synthesize lastOperationIdentifier=_lastOperationIdentifier;
 @property(nonatomic) _Bool hasRemoteProxy; // @synthesize hasRemoteProxy=_hasRemoteProxy;
-- (void).cxx_destruct;
 - (void)pushDaemonProxyReceivedNotificationData:(id)arg1 forType:(id)arg2 recordIdentifier:(id)arg3;
 - (void)historyDidChange;
 - (void)favoritesDidChange;

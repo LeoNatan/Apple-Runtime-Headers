@@ -42,6 +42,7 @@
     struct CGPoint __frozeMagnifierAtPosition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setDynamicLayoutTransitionAnchorIndexPath:) NSIndexPath *_dynamicLayoutTransitionAnchorIndexPath; // @synthesize _dynamicLayoutTransitionAnchorIndexPath=__dynamicLayoutTransitionAnchorIndexPath;
 @property(nonatomic, setter=_setFrozeMagnifierAtPosition:) struct CGPoint _frozeMagnifierAtPosition; // @synthesize _frozeMagnifierAtPosition=__frozeMagnifierAtPosition;
 @property(nonatomic, setter=_setMagnifierState:) unsigned long long _magnifierState; // @synthesize _magnifierState=__magnifierState;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) PUZoomableGridViewControllerSpec *zoomableGridSpec; // @synthesize zoomableGridSpec=_zoomableGridSpec;
 @property(readonly, nonatomic) unsigned long long zoomLevel; // @synthesize zoomLevel=_zoomLevel;
 @property(readonly, nonatomic) PUMomentsZoomLevelManager *zoomLevelManager; // @synthesize zoomLevelManager=_zoomLevelManager;
-- (void).cxx_destruct;
 - (_Bool)canDragIn;
 - (id)imageWithSize:(struct CGSize)arg1 forIndexPath:(id)arg2;
 - (_Bool)zoomTransition:(id)arg1 getFrame:(struct CGRect *)arg2 contentMode:(long long *)arg3 cropInsets:(struct UIEdgeInsets *)arg4 forPhotoToken:(id)arg5 operation:(long long)arg6;

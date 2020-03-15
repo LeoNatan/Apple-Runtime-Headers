@@ -16,11 +16,11 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(readonly, nonatomic) UXView *selectionView; // @synthesize selectionView=_selectionView;
 @property(readonly, nonatomic) UXImageView *dragHandleImageView; // @synthesize dragHandleImageView=_dragHandleImageView;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
 - (void)layout;

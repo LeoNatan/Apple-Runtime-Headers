@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *messagesDateReceivedByMessagesIds; // @synthesize messagesDateReceivedByMessagesIds=_messagesDateReceivedByMessagesIds;
 @property(retain, nonatomic) NSMutableOrderedSet *messagesIds; // @synthesize messagesIds=_messagesIds;
 @property(retain, nonatomic) NSArray *from; // @synthesize from=_from;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
 @property(retain, nonatomic) NSString *preview; // @synthesize preview=_preview;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)messageIdsAtIndexes:(id)arg1;
 - (unsigned int)_indexForNewMessageWithDateReceived:(id)arg1 messageId:(id)arg2;

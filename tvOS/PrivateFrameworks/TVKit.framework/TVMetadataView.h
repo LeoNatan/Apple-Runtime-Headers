@@ -19,6 +19,7 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIView *upperMetadataView; // @synthesize upperMetadataView=_upperMetadataView;
 @property(nonatomic) double maxImageWidth; // @synthesize maxImageWidth=_maxImageWidth;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) TVItemSummaryView *summaryView; // @synthesize summaryView=_summaryView;
 @property(readonly, nonatomic) TVItemTitleView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
-- (void).cxx_destruct;
 - (struct CGSize)_maximumArtworkSize;
 - (_Bool)_shouldLeftAlignArtwork;
 - (void)_updateColors;

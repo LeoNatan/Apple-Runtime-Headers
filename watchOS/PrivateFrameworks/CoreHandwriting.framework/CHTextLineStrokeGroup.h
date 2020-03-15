@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSArray *_writingDirectionSortedStrokeIdentifiers;
 }
 
-@property(readonly, retain, nonatomic) NSArray *writingDirectionSortedStrokeIdentifiers; // @synthesize writingDirectionSortedStrokeIdentifiers=_writingDirectionSortedStrokeIdentifiers;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSArray *writingDirectionSortedStrokeIdentifiers; // @synthesize writingDirectionSortedStrokeIdentifiers=_writingDirectionSortedStrokeIdentifiers;
 - (id)coalescedLastSubstrokes;
 - (int)lastSubstrokeIndexBeforeMerge;
 - (struct CGVector)averageStrokeDeviation;

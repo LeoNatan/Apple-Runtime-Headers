@@ -19,8 +19,8 @@
 }
 
 + (id)new;
-@property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 - (id)createConnection;
 - (void)databaseConnection:(id)arg1 encounteredUnrecoverableError:(id)arg2;
 @property(readonly, copy) NSString *description;

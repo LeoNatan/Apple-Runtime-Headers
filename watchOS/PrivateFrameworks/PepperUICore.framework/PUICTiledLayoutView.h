@@ -25,6 +25,7 @@
     CDStruct_ec62c677 __visibleRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool notchesAreOutOfDate; // @synthesize notchesAreOutOfDate=_notchesAreOutOfDate;
 @property(retain, nonatomic) NSMutableSet *calculatedFramesForNotches; // @synthesize calculatedFramesForNotches=_calculatedFramesForNotches;
 @property(retain, nonatomic) NSHashTable *ownedTileViews; // @synthesize ownedTileViews=_ownedTileViews;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) NSMutableArray *_mutableVisibleIndexPaths; // @synthesize _mutableVisibleIndexPaths=__mutableVisibleIndexPaths;
 @property(retain, nonatomic) PUICTiledLayoutViewNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(nonatomic) __weak id <PUICTiledLayoutViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *visibleIndexPaths;
 - (id)titleAfterTransitionIndex:(float)arg1 includeEmptySections:(_Bool)arg2;
 - (id)titleBeforeTransitionIndex:(float)arg1 includeEmptySections:(_Bool)arg2;

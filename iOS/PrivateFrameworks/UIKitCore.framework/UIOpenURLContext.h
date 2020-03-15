@@ -14,9 +14,9 @@
     UISceneOpenURLOptions *_options;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UISceneOpenURLOptions *options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *URLOptionsDictionary; // @dynamic URLOptionsDictionary;
 - (id)description;
 - (unsigned long long)hash;

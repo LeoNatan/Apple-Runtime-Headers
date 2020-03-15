@@ -18,9 +18,9 @@
     EDMessagePersistence *_messagePersistence;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(retain, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 - (void)performBlockWithActivity:(CDUnknownBlockType)arg1 requestID:(unsigned long long)arg2;
 - (id)performWithObject:(id)arg1;
 - (void)performVoucherPreservingBlock:(CDUnknownBlockType)arg1;

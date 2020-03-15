@@ -15,8 +15,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) Class recordClass; // @synthesize recordClass=_recordClass;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) Class recordClass; // @synthesize recordClass=_recordClass;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

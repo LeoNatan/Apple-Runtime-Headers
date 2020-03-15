@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _previewBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAGradientLayer *gradientMaskLayer; // @synthesize gradientMaskLayer=_gradientMaskLayer;
 @property(retain, nonatomic) CAAnimation *gridAnimation; // @synthesize gridAnimation=_gridAnimation;
 @property(retain, nonatomic) NSDate *dateToStartGridAnimation; // @synthesize dateToStartGridAnimation=_dateToStartGridAnimation;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain) UIColor *rectColor; // @synthesize rectColor=_rectColor;
 @property BOOL showGridAnimation; // @synthesize showGridAnimation=_showGridAnimation;
 @property struct CGRect previewBounds; // @synthesize previewBounds=_previewBounds;
-- (void).cxx_destruct;
 - (struct CATransform3D)calculateRotationTransformForPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2;
 - (void)setupGridLayers;
 - (void)setupRectangleLayer;

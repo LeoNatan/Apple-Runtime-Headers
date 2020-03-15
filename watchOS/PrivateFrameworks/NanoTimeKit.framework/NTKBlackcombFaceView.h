@@ -21,7 +21,6 @@
     _Bool _tritium_shouldUseLongSideTicks;
 }
 
-+ (int)uiSensitivity;
 - (void).cxx_destruct;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
 - (_Bool)_wantsConstantSpeedZoom;

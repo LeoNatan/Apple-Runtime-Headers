@@ -24,6 +24,9 @@
     duration_6174cf92 _parsecLatency;
 }
 
++ (long long)currentQueryID;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int indexInFeedbackArray; // @synthesize indexInFeedbackArray=_indexInFeedbackArray;
 @property(nonatomic) duration_6174cf92 parsecLatency; // @synthesize parsecLatency=_parsecLatency;
 @property(nonatomic) duration_6174cf92 searchSuggestionProviderLatency; // @synthesize searchSuggestionProviderLatency=_searchSuggestionProviderLatency;
@@ -33,8 +36,6 @@
 @property(copy, nonatomic) NSString *parsecFeedbackQueryIdentifier; // @synthesize parsecFeedbackQueryIdentifier=_parsecFeedbackQueryIdentifier;
 @property(nonatomic, getter=isForLastSearch) _Bool forLastSearch; // @synthesize forLastSearch=_forLastSearch;
 @property(readonly, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *normalizedQueryStringForParsec;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

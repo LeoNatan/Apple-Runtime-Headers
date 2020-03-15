@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedHidManager;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pingHandler; // @synthesize pingHandler=_pingHandler;
 @property(retain, nonatomic) NSMutableArray *queuedEvents; // @synthesize queuedEvents=_queuedEvents;
 @property(readonly, nonatomic) id <UINSHidSettings> settings; // @synthesize settings;
-- (void).cxx_destruct;
 - (void)enqueueHidEvent:(struct __IOHIDEvent *)arg1;
 - (void)registerEventPingHandler:(CDUnknownBlockType)arg1;
 - (struct __IOHIDEvent *)pullNextEventFromQueue;

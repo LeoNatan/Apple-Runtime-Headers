@@ -17,11 +17,11 @@
 }
 
 + (id)baseExtensionMatchingAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXCallDirectoryNSExtensionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_extensionForIdentifier:(id)arg1 containingAppBundleURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)extensionWithIdentifier:(id)arg1 inContainingAppWithProcessIdentifier:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)extensionsWithCompletionHandler:(CDUnknownBlockType)arg1;

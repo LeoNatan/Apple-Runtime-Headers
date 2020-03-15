@@ -38,9 +38,9 @@
 + (id)shaderWithSource:(id)arg1;
 + (id)shader;
 + (_Bool)supportsSecureCoding;
-@property _Bool performFullCapture; // @synthesize performFullCapture=_performFullCapture;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property _Bool performFullCapture; // @synthesize performFullCapture=_performFullCapture;
 - (id)_getLegacyUniformData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToShader:(id)arg1;

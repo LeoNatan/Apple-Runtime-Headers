@@ -19,6 +19,7 @@
     struct CGRect contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *location; // @synthesize location;
 @property(copy, nonatomic) NSDictionary *dataSources; // @synthesize dataSources;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory;
 @property(copy, nonatomic) NSLocale *locale; // @synthesize locale;
 @property(copy, nonatomic) NSString *storeFront; // @synthesize storeFront;
-- (void).cxx_destruct;
 
 @end
 

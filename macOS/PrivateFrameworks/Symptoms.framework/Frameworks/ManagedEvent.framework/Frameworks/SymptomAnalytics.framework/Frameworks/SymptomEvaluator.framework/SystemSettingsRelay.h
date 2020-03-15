@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultRelay;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL registeredForAutoBugCaptureChangeNotifications; // @synthesize registeredForAutoBugCaptureChangeNotifications=_registeredForAutoBugCaptureChangeNotifications;
 @property(retain, nonatomic) SDRDiagnosticReporter *collectorClient; // @synthesize collectorClient=_collectorClient;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL autoFeedbackAssistantEnable; // @synthesize autoFeedbackAssistantEnable=_autoFeedbackAssistantEnable;
 @property(readonly) BOOL autoBugCaptureEnabled; // @synthesize autoBugCaptureEnabled=_autoBugCaptureEnabled;
 @property(readonly) NSArray *wifiKnownNetworkSSIDs; // @synthesize wifiKnownNetworkSSIDs=_wifiKnownNetworkSSIDs;
-- (void).cxx_destruct;
 - (void)grabKnownWiFiNetworks;
 - (void)_setAutoFeedbackAssistantEnable:(BOOL)arg1;
 - (void)_setAutoBugCaptureAvailable:(BOOL)arg1;

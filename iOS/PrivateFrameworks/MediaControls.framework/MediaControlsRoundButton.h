@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CCUICAPackageView *packageView; // @synthesize packageView=_packageView;
 @property(nonatomic, getter=isLabelHidden) _Bool labelHidden; // @synthesize labelHidden=_labelHidden;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *glyphState; // @synthesize glyphState=_glyphState;
 @property(copy, nonatomic) NSString *packageName; // @synthesize packageName=_packageName;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
 - (void)_updatePackageColors;
 - (void)_updateLabelVisualStyling;

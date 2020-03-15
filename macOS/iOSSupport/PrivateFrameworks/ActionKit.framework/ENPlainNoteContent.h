@@ -13,8 +13,8 @@
     NSArray *_contents;
 }
 
-@property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 - (id)enmlWithNote:(id)arg1;
 - (id)initWithContents:(id)arg1;
 - (id)initWithString:(id)arg1;

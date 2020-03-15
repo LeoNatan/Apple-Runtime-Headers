@@ -17,11 +17,11 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setPresentedWelcomeViewControllerClass:) Class _presentedWelcomeViewControllerClass; // @synthesize _presentedWelcomeViewControllerClass=__presentedWelcomeViewControllerClass;
 @property(retain, nonatomic, setter=_setPresentingViewController:) UIViewController *_presentingViewController; // @synthesize _presentingViewController=__presentingViewController;
 @property(readonly, copy, nonatomic) NSMutableSet *_remainingWelcomeViewControllerClassesToPresent; // @synthesize _remainingWelcomeViewControllerClassesToPresent=__remainingWelcomeViewControllerClassesToPresent;
 @property(readonly, copy, nonatomic) NSArray *_welcomeViewControllerClasses; // @synthesize _welcomeViewControllerClasses=__welcomeViewControllerClasses;
-- (void).cxx_destruct;
 - (void)_handleWelcomeViewControllerCompletion;
 - (void)_update;
 - (void)_reset;

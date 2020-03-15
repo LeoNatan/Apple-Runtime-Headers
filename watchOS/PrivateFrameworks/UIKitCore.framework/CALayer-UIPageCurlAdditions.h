@@ -6,6 +6,7 @@
 
 #import <QuartzCore/CALayer.h>
 
+@class NSNumber;
 @protocol _UIVectorTextLayoutRun;
 
 @interface CALayer (UIPageCurlAdditions)
@@ -17,5 +18,8 @@
 @property(retain, nonatomic, setter=_ui_setLayoutRun:) id <_UIVectorTextLayoutRun> _ui_layoutRun;
 @property(readonly, nonatomic) CALayer *_labelLayerToClipDuringBoundsSizeAnimation;
 - (void)_setLabelMasksToBoundsForAnimation:(_Bool)arg1;
+
+// Remaining properties
+@property(copy) NSNumber *UICALayerRenderID; // @dynamic UICALayerRenderID;
 @end
 

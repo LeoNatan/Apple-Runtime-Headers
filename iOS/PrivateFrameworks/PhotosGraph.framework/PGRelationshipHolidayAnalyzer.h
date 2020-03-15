@@ -15,8 +15,8 @@
     PGGraphRelationshipProcessor *_processor;
 }
 
-@property(readonly, nonatomic) __weak PGGraphRelationshipProcessor *processor; // @synthesize processor=_processor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PGGraphRelationshipProcessor *processor; // @synthesize processor=_processor;
 - (id)_familyHolidayMomentsFromMomentNodes:(id)arg1;
 - (void)runAnalysisWithProgressBlock:(CDUnknownBlockType)arg1;
 - (id)initWithRelationshipProcessor:(id)arg1;

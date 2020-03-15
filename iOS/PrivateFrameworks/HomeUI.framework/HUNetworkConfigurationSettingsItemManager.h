@@ -13,8 +13,8 @@
     HUNetworkConfigurationSettingsModule *_networkConfigurationSettingsModule;
 }
 
-@property(retain, nonatomic) HUNetworkConfigurationSettingsModule *networkConfigurationSettingsModule; // @synthesize networkConfigurationSettingsModule=_networkConfigurationSettingsModule;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUNetworkConfigurationSettingsModule *networkConfigurationSettingsModule; // @synthesize networkConfigurationSettingsModule=_networkConfigurationSettingsModule;
 @property(readonly, nonatomic) HFNetworkConfigurationGroupItem *sourceNetworkConfigurationGroupItem;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemModulesForHome:(id)arg1;

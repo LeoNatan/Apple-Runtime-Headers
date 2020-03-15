@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *filterCategories; // @synthesize filterCategories=_filterCategories;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *filterCategories; // @synthesize filterCategories=_filterCategories;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

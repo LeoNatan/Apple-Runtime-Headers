@@ -24,6 +24,7 @@
     unsigned long long _lastInitialHideToken;
     _Bool _autoHides;
     _Bool _edgeProtectEnabled;
+    _Bool _shouldEnableGestures;
     NSMutableSet *_hiddenOverrides;
     long long _luma;
     long long _presence;
@@ -35,16 +36,17 @@
     long long _colorBias;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool suppressesBounce; // @synthesize suppressesBounce=_suppressesBounce;
 @property(nonatomic) long long colorBias; // @synthesize colorBias=_colorBias;
 @property(nonatomic, getter=isEdgeProtectEnabled) _Bool edgeProtectEnabled; // @synthesize edgeProtectEnabled=_edgeProtectEnabled;
 @property(nonatomic) _Bool autoHides; // @synthesize autoHides=_autoHides;
 @property(nonatomic) __weak id <SBHomeGrabberDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)lumaDodgePillDidDetectBackgroundLuminanceChange:(id)arg1;
 - (void)clientDidResetForUserAttention:(id)arg1;
 - (void)client:(id)arg1 attentionLostTimeoutDidExpire:(double)arg2 forConfigurationGeneration:(unsigned long long)arg3 withAssociatedObject:(id)arg4;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)_bounce;
 - (void)_noteActiveForTouchThatShouldUnhideImmediately:(_Bool)arg1;

@@ -17,10 +17,10 @@
     id <LPLinkMetadataStatusTransformerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool wantsStatusItem; // @synthesize wantsStatusItem=_wantsStatusItem;
 @property(nonatomic) __weak id <LPLinkMetadataStatusTransformerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *canonicalURL;
 - (id)originalURL;
 @property(readonly, copy, nonatomic) NSURL *actionURL;

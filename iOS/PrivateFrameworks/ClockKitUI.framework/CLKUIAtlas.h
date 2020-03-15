@@ -19,13 +19,13 @@
     unsigned long long _memoryCost;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long memoryCost; // @synthesize memoryCost=_memoryCost;
 @property(nonatomic) double boundTime; // @synthesize boundTime=_boundTime;
 @property(readonly, nonatomic) unsigned long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 @property(readonly) _Bool isPurgable;
 - (void)decrementInstanceCount;
 - (void)incrementInstanceCount;

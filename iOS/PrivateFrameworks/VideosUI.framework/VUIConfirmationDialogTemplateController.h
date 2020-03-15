@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSTimer *_dismissTimer;
 }
 
-@property(readonly, nonatomic) NSTimer *dismissTimer; // @synthesize dismissTimer=_dismissTimer;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSTimer *dismissTimer; // @synthesize dismissTimer=_dismissTimer;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_dismissConfirmation:(id)arg1;
 - (void)updateWithViewElement:(id)arg1;

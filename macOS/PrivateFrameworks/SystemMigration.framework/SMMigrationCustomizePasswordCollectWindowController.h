@@ -21,6 +21,7 @@
     NSString *_userShortName;
 }
 
+- (void).cxx_destruct;
 @property __weak NSString *userShortName; // @synthesize userShortName=_userShortName;
 @property NSWindow *overWindow; // @synthesize overWindow=_overWindow;
 @property NSButton *setPasswordButton; // @synthesize setPasswordButton=_setPasswordButton;
@@ -30,7 +31,6 @@
 @property(retain) NSString *verifyPassword; // @synthesize verifyPassword=_verifyPassword;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property NSTextField *passwordField; // @synthesize passwordField=_passwordField;
-- (void).cxx_destruct;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)pressedSetpassword:(id)arg1;
 - (void)collectPasswordForUser:(id)arg1 overWindow:(id)arg2 callbackBlock:(CDUnknownBlockType)arg3;

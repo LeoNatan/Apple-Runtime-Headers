@@ -8,7 +8,7 @@
 
 #import <CoreUtils/NSXPCListenerDelegate-Protocol.h>
 
-@class NSString, NSXPCConnection, NSXPCInterface, NSXPCListener, NSXPCListenerEndpoint;
+@class NSMutableSet, NSString, NSXPCConnection, NSXPCInterface, NSXPCListener, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue;
 
 @interface CUXPCAgent : NSObject <NSXPCListenerDelegate>
@@ -17,7 +17,7 @@
     _Bool _invalidateDone;
     struct LogCategory *_ucat;
     NSXPCConnection *_xpcCnx;
-    struct NSMutableSet *_xpcCnxSet;
+    NSMutableSet *_xpcCnxSet;
     NSXPCListener *_xpcListener;
     CDUnknownBlockType _connectionStartedHandler;
     CDUnknownBlockType _connectionEndedHandler;
@@ -31,6 +31,7 @@
     NSXPCInterface *_remoteObjectInterface;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCInterface *remoteObjectInterface; // @synthesize remoteObjectInterface=_remoteObjectInterface;
 @property(retain, nonatomic) id exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType connectionEndedHandler; // @synthesize connectionEndedHandler=_connectionEndedHandler;
 @property(copy, nonatomic) CDUnknownBlockType connectionStartedHandler; // @synthesize connectionStartedHandler=_connectionStartedHandler;
-- (void).cxx_destruct;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxy;
 - (void)_connectionInvalidated:(id)arg1;

@@ -14,9 +14,9 @@
 - (unsigned long long)ic_numRowsForTextTable:(id)arg1 outNumColumns:(out unsigned long long *)arg2;
 - (CDStruct_4bcfbbae)ic_tableSizeForTextTable:(id)arg1 inRange:(struct _NSRange)arg2;
 - (id)ic_itemProviderDataForUTI:(id)arg1;
-- (id)ic_attributedStringByHighlightingRegex:(id)arg1 withHighlightColor:(struct UIColor *)arg2;
+- (id)ic_attributedStringByHighlightingRegex:(id)arg1 withHighlightColor:(id)arg2;
 - (long long)ic_writingDirectionAtIndex:(unsigned long long)arg1;
-- (id)ic_attributesByHighlightingAttributes:(id)arg1 withHighlightColor:(struct UIColor *)arg2;
+- (id)ic_attributesByHighlightingAttributes:(id)arg1 withHighlightColor:(id)arg2;
 - (id)ic_stringWithoutAttachments;
 - (id)ic_stringByTrimmingLeadingTrailingWhitespace;
 - (struct _NSRange)ic_rangeForAttachment:(id)arg1 withTextAttachment:(id *)arg2;

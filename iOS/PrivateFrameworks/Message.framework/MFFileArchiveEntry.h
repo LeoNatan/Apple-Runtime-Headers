@@ -20,13 +20,13 @@
 
 + (id)archiveEntryWithCentralHeader:(struct CentralHeader *)arg1 archiveData:(id)arg2;
 + (id)archiveEntry;
+- (void).cxx_destruct;
 @property(retain) NSData *contents; // @synthesize contents=_contents;
 @property _Bool isDirectory; // @synthesize isDirectory=_isDirectory;
 @property _Bool isDeflated; // @synthesize isDeflated=_isDeflated;
 @property struct _NSRange compressedRange; // @synthesize compressedRange=_compressedRange;
 @property long long uncompressedSize; // @synthesize uncompressedSize=_uncompressedSize;
 @property(retain) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)merge:(id)arg1;
 - (long long)compressedSize;
 - (id)fileName;

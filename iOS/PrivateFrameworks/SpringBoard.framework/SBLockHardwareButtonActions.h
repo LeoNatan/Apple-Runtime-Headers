@@ -30,12 +30,12 @@
     id <SBHardwareButtonInteraction><SBHardwareButtonGestureParametersProvider> _proximitySensorButtonInteraction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBHardwareButtonInteraction><SBHardwareButtonGestureParametersProvider> proximitySensorButtonInteraction; // @synthesize proximitySensorButtonInteraction=_proximitySensorButtonInteraction;
 @property(retain, nonatomic) SBSleepWakeHardwareButtonInteraction *sleepWakeButtonInteraction; // @synthesize sleepWakeButtonInteraction=_sleepWakeButtonInteraction;
 @property(retain, nonatomic) SBAccessibilityHardwareButtonInteraction *accessibilityButtonInteraction; // @synthesize accessibilityButtonInteraction=_accessibilityButtonInteraction;
 @property(retain, nonatomic) SBSiriHardwareButtonInteraction *siriButtonInteraction; // @synthesize siriButtonInteraction=_siriButtonInteraction;
 @property(readonly, nonatomic) _Bool isButtonDown; // @synthesize isButtonDown=_isButtonDown;
-- (void).cxx_destruct;
 - (void)_sendButtonEventToApp:(id)arg1 down:(_Bool)arg2;
 - (_Bool)_sendButtonDownToRegisteredApp;
 - (_Bool)_sendButtonUpToRegisteredApp;

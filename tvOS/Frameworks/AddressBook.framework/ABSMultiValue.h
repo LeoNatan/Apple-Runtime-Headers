@@ -16,10 +16,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) _Bool mutable; // @synthesize mutable=_mutable;
 @property(readonly, nonatomic) unsigned int propertyType; // @synthesize propertyType=_propertyType;
-- (void).cxx_destruct;
 - (_Bool)replaceLabel:(id)arg1 atIndex:(long long)arg2;
 - (_Bool)replaceValue:(id)arg1 atIndex:(long long)arg2;
 - (_Bool)removeValueAtIndex:(long long)arg1;

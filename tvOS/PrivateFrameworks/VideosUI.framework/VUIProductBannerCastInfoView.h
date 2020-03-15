@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureViewWithItems:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUICastInfoLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_updateTextColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)_layoutSubviewsWithSize:(struct CGSize)arg1 computationOnly:(_Bool)arg2;

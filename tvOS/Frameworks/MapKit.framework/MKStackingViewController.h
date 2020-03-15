@@ -38,10 +38,10 @@
     id <MKStackingViewControllerDelegate> _stackingDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKStackingViewControllerDelegate> stackingDelegate; // @synthesize stackingDelegate=_stackingDelegate;
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (_Bool)isViewVisbile:(id)arg1 percentageTreshold:(double)arg2;
 - (void)_updateViewControllerVisibilityAfterPositionChange;
 - (void)_didScroll;

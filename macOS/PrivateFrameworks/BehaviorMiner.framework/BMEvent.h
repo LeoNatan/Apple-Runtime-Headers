@@ -15,10 +15,10 @@
     BMItem *_item;
 }
 
+- (void).cxx_destruct;
 @property(retain) BMItem *item; // @synthesize item=_item;
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 item:(id)arg3;
 

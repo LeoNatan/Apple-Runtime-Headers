@@ -18,11 +18,11 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(nonatomic) long long originAnchorPosition; // @synthesize originAnchorPosition=_originAnchorPosition;
 @property(nonatomic) long long targetAnchorPosition; // @synthesize targetAnchorPosition=_targetAnchorPosition;
 @property(readonly, nonatomic) NSString *targetComponentIdentifier; // @synthesize targetComponentIdentifier=_targetComponentIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithTargetComponentIdentifier:(id)arg1;
 

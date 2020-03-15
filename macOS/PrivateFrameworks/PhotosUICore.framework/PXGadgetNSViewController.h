@@ -32,6 +32,7 @@
 }
 
 + (Class)gadgetSpecClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXGadgetAnchorHelper *anchorHelper; // @synthesize anchorHelper=_anchorHelper;
 @property(retain, nonatomic) PXGadgetNavigationHelper *navigationHelper; // @synthesize navigationHelper=_navigationHelper;
 @property(retain, nonatomic) PXGadgetSpecManager *specManager; // @synthesize specManager=_specManager;
@@ -39,7 +40,6 @@
 @property(nonatomic) BOOL isCurrentlyVisible; // @synthesize isCurrentlyVisible=_isCurrentlyVisible;
 @property(retain, nonatomic) PXGadgetDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) PXGadgetDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)_gadgetSpecDidChange;
 - (void)_dataSourceDidChange;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
@@ -54,10 +54,10 @@
 @property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
 - (void)dismissAlert:(id)arg1;
 - (void)presentAlert:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)dismissGadgetViewController:(struct NSObject *)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)presentGadgetViewController:(struct NSObject *)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)gadget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
-- (struct NSObject *)gadgetViewControllerHostingGadget:(id)arg1;
+- (void)dismissGadgetViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentGadgetViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)gadget:(id)arg1 transitionToViewController:(id)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)gadgetViewControllerHostingGadget:(id)arg1;
 - (void)gadget:(id)arg1 animateChanges:(CDUnknownBlockType)arg2;
 - (void)_gadgetSectionDidChange:(id)arg1;
 - (void)_gadgetHeightDidChange;

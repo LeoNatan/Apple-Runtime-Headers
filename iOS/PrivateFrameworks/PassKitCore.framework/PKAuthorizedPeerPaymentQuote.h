@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *certificates; // @synthesize certificates=_certificates;
 @property(readonly, nonatomic) NSData *transactionData; // @synthesize transactionData=_transactionData;
 @property(retain, nonatomic) PKContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) PKPeerPaymentQuote *peerPaymentQuote; // @synthesize peerPaymentQuote=_peerPaymentQuote;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

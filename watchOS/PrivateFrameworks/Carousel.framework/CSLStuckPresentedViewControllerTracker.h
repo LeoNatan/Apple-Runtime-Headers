@@ -17,8 +17,8 @@
 }
 
 + (id)defaultTracker;
-@property(retain, nonatomic) NSMutableArray *stuckItems; // @synthesize stuckItems=_stuckItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *stuckItems; // @synthesize stuckItems=_stuckItems;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

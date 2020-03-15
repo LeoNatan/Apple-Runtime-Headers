@@ -23,11 +23,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isInDock; // @synthesize isInDock=_isInDock;
 @property(nonatomic) _Bool isComplication; // @synthesize isComplication=_isComplication;
 @property(retain, nonatomic) AWDCarouselAppInfo *app; // @synthesize app=_app;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

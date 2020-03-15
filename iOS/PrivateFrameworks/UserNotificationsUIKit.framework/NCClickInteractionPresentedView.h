@@ -20,9 +20,9 @@
     NSString *_preferredContentSizeCategory;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)_reduceTransparencyStatusDidChange:(id)arg1;
 - (void)_darkerSystemColorsStatusDidChange:(id)arg1;
 - (void)_configureTitleLabelIfNecessaryWithTitle:(id)arg1;

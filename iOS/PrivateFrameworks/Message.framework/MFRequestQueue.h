@@ -18,12 +18,12 @@
 
 + (id)signpostLog;
 + (id)log;
-@property(retain, nonatomic) NSMutableArray *requestPairs; // @synthesize requestPairs=_requestPairs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *requestPairs; // @synthesize requestPairs=_requestPairs;
 - (_Bool)processRequests:(id)arg1;
 - (_Bool)_processRequests:(id)arg1;
-- (_Bool)processRequest:(struct EFPair *)arg1;
-- (_Bool)addRequest:(struct EFPair *)arg1;
+- (_Bool)processRequest:(id)arg1;
+- (_Bool)addRequest:(id)arg1;
 - (_Bool)addRequests:(id)arg1;
 - (id)init;
 - (unsigned long long)signpostID;

@@ -31,6 +31,7 @@
 + (BOOL)isActionDestructive:(long long)arg1;
 + (id)imageForAction:(long long)arg1 selected:(BOOL)arg2;
 + (id)buttonTitleForAction:(long long)arg1 orb:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldUseVerticalLayout; // @synthesize shouldUseVerticalLayout=_shouldUseVerticalLayout;
 @property(nonatomic) BOOL disableButtonHighlights; // @synthesize disableButtonHighlights=_disableButtonHighlights;
 @property(nonatomic) long long textSizeMode; // @synthesize textSizeMode=_textSizeMode;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) long long selectedAction; // @synthesize selectedAction=_selectedAction;
 @property(nonatomic) __weak id <EKUIEventStatusButtonsViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateFonts;
 - (void)updateForMiniBarState:(BOOL)arg1;
 @property(readonly, nonatomic) UIFont *font;

@@ -16,8 +16,8 @@
 
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 timeView:(id)arg3 scale:(float)arg4 scaleType:(int)arg5;
 + (id)stepsWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 timeViews:(id)arg3 scale:(float)arg4 scaleType:(int)arg5;
-@property(retain, nonatomic) UIView<NTKTritiumAnimator> *timeView; // @synthesize timeView=_timeView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView<NTKTritiumAnimator> *timeView; // @synthesize timeView=_timeView;
 - (void)setIsTritiumOn:(_Bool)arg1 progress:(float)arg2 faceView:(id)arg3;
 
 @end

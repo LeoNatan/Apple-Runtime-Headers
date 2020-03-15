@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cycleAnimationWithLayer:(id)arg1 animation:(id)arg2 key:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) CAAnimation *originalAnimation; // @synthesize originalAnimation=_originalAnimation;
 @property(retain, nonatomic) CAAnimation *animation; // @synthesize animation=_animation;
 @property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

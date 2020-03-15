@@ -20,10 +20,10 @@
     id <IKEntityValueProviding> _explicitEntityValueProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <IKEntityValueProviding> explicitEntityValueProvider; // @synthesize explicitEntityValueProvider=_explicitEntityValueProvider;
 @property(readonly, nonatomic) long long pinGroup; // @synthesize pinGroup=_pinGroup;
 @property(readonly, nonatomic) long long pinStyle; // @synthesize pinStyle=_pinStyle;
-- (void).cxx_destruct;
 - (void)_unregisterForNotificationsForEntityProvider:(id)arg1;
 - (void)_registerForNotificationsForEntityProvider:(id)arg1;
 - (void)_entityValueProviderDidChange;

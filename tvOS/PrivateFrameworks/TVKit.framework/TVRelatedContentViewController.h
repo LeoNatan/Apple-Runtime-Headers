@@ -22,6 +22,7 @@
     unsigned long long _numberOfAppearanceTransitions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfAppearanceTransitions; // @synthesize numberOfAppearanceTransitions=_numberOfAppearanceTransitions;
 @property(retain, nonatomic) UIGestureRecognizer *interactionGestureRecognizer; // @synthesize interactionGestureRecognizer=_interactionGestureRecognizer;
 @property(readonly, nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) TVRelatedContent *relatedContent; // @synthesize relatedContent=_relatedContent;
 @property(retain, nonatomic) UIViewController *primaryViewController; // @synthesize primaryViewController=_primaryViewController;
 @property(nonatomic) __weak id <TVRelatedContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

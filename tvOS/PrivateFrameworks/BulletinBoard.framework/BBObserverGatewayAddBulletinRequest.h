@@ -16,11 +16,11 @@
     CDUnknownBlockType _timeoutHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType timeoutHandler; // @synthesize timeoutHandler=_timeoutHandler;
 @property(retain, nonatomic) NSDate *timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(copy, nonatomic) NSString *bulletinID; // @synthesize bulletinID=_bulletinID;
-- (void).cxx_destruct;
 
 @end
 

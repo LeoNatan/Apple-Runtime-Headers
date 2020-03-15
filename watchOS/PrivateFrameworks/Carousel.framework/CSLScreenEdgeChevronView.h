@@ -20,8 +20,8 @@
 + (struct CGPath *)pathForDirection:(unsigned int)arg1;
 + (struct CGRect)chevronRect;
 + (float)containerHeight;
-@property(readonly, nonatomic) unsigned int direction; // @synthesize direction=_direction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int direction; // @synthesize direction=_direction;
 - (void)_updateChevron;
 - (void)_handleFlatTimer:(id)arg1;
 - (void)setDirection:(unsigned int)arg1 flattenAfterInterval:(_Bool)arg2;

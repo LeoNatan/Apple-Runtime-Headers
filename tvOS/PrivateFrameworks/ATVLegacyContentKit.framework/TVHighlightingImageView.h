@@ -21,6 +21,7 @@
     UIImage *_originalImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(retain, nonatomic) UIImageView *highlightedImageView; // @synthesize highlightedImageView=_highlightedImageView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) UIColor *highlightedImageColor; // @synthesize highlightedImageColor=_highlightedImageColor;
 @property(retain, nonatomic) UIColor *imageColor; // @synthesize imageColor=_imageColor;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;
 - (void)_setupImagesFromImage:(id)arg1;

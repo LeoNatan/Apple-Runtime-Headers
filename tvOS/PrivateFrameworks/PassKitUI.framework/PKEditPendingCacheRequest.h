@@ -19,6 +19,7 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *completionHandlers; // @synthesize completionHandlers=_completionHandlers;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool fullPass; // @synthesize fullPass=_fullPass;
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

@@ -24,6 +24,7 @@
 
 + (id)millisecondsSince1970;
 + (id)applicationIdentiferForMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *deviceMilestones; // @synthesize deviceMilestones=_deviceMilestones;
 @property(readonly) NSString *deviceSectionName; // @synthesize deviceSectionName=_deviceSectionName;
 @property(readonly) NSMutableDictionary *milestones; // @synthesize milestones=_milestones;
@@ -32,7 +33,6 @@
 @property(readonly) NSString *cameraSessionAppID; // @synthesize cameraSessionAppID=_cameraSessionAppID;
 @property(readonly) NSString *descriptionString; // @synthesize descriptionString=_descriptionString;
 @property(readonly) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (void)_prepareDeviceMilestones;
 - (void)addParameterFor:(id)arg1 value:(id)arg2;
 - (void)setParameterForPath:(id)arg1 value:(id)arg2;

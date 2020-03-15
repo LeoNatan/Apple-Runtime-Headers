@@ -14,7 +14,7 @@
 {
     NTKTimelineEntryModelCache *_entryModelCache;
     _Bool _isWaitingForGeocodeRequest;
-    struct NSString *_token;
+    NSString *_token;
     CLLocation *_displayedLocation;
     NSString *_locationName;
     CLLocation *_delayedLocation;
@@ -23,13 +23,13 @@
 
 + (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isWaitingForGeocodeRequest; // @synthesize isWaitingForGeocodeRequest=_isWaitingForGeocodeRequest;
 @property(retain, nonatomic) NSTimer *geocodeRequestDelayTimer; // @synthesize geocodeRequestDelayTimer=_geocodeRequestDelayTimer;
 @property(retain, nonatomic) CLLocation *delayedLocation; // @synthesize delayedLocation=_delayedLocation;
 @property(retain, nonatomic) NSString *locationName; // @synthesize locationName=_locationName;
 @property(retain, nonatomic) CLLocation *displayedLocation; // @synthesize displayedLocation=_displayedLocation;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)_geocodeRequestDelayTimerTriggerred;
 - (void)_handleLocation:(id)arg1 error:(id)arg2;
 - (_Bool)_needsToSendGeocodingRequest;

@@ -18,12 +18,12 @@
 }
 
 + (id)_decimalNumberFormatter;
+- (void).cxx_destruct;
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(retain, nonatomic) HKQuantity *distance; // @synthesize distance=_distance;
 @property(retain, nonatomic) HKQuantity *activeEnergy; // @synthesize activeEnergy=_activeEnergy;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)formattedPaceUsingFormatType:(long long)arg1 formattingManager:(id)arg2;
 - (id)formattedDistanceValueForUnit:(id)arg1;

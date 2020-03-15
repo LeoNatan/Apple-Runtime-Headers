@@ -38,13 +38,13 @@ __attribute__((visibility("hidden")))
     SidebarScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SidebarScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak NSButton *editButton; // @synthesize editButton=_editButton;
 @property(nonatomic) __weak NSView *editButtonContainer; // @synthesize editButtonContainer=_editButtonContainer;
 @property(retain, nonatomic) NSArray *draggedBookmarks; // @synthesize draggedBookmarks=_draggedBookmarks;
 @property(nonatomic) __weak id <BookmarksSidebarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak BookmarksOutlineView *outlineView; // @synthesize outlineView=_outlineView;
-- (void).cxx_destruct;
 - (void)_didRecognizeImmediateAction:(id)arg1;
 - (void)_instrumentUserDidActivateBookmark:(id)arg1 viaContextMenu:(BOOL)arg2;
 - (void)addBookmarkFolder:(id)arg1;

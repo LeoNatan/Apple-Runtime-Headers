@@ -19,8 +19,8 @@
     BOOL _hasMapItemLaunchOptionFromTimeToLeaveNotification;
 }
 
-@property(nonatomic) BOOL hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 - (void)_animateMapIfNeededWithPresentingController:(id)arg1 presentingView:(id)arg2;
 - (double)_mapHeight;
 - (void)_loadMapItem:(id)arg1 withCoordinateSpan:(CDStruct_c3b9c2ee)arg2;

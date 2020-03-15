@@ -15,10 +15,10 @@
     int _pointMarkerStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int pointMarkerStyle; // @synthesize pointMarkerStyle=_pointMarkerStyle;
 @property(nonatomic) float radius; // @synthesize radius=_radius;
 @property(retain, nonatomic) UIColor *pointColor; // @synthesize pointColor=_pointColor;
-- (void).cxx_destruct;
 - (id)initWithColor:(id)arg1 radius:(float)arg2 style:(int)arg3;
 
 @end

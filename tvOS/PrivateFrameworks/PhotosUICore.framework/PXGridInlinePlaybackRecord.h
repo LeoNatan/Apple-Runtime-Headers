@@ -25,6 +25,7 @@
     CDStruct_e83c9415 _bestVideoTimeRange;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *diagnosticLog; // @synthesize diagnosticLog=_diagnosticLog;
 @property(nonatomic) _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
 @property(nonatomic) double cellSizeScore; // @synthesize cellSizeScore=_cellSizeScore;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) id geometryReference; // @synthesize geometryReference=_geometryReference;
 @property(readonly, nonatomic) PXMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) id <PXDisplayAsset> displayAsset; // @synthesize displayAsset=_displayAsset;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy) NSString *diagnosticScoresDescription;
 - (void)prepareForInvisible;

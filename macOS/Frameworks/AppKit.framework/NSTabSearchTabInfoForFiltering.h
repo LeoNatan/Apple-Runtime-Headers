@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)infoWithTitle:(id)arg1;
-@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)initWithTitle:(id)arg1;
 - (id)init;
 

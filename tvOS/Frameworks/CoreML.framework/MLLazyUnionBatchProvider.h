@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     id <MLBatchProvider> _second;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MLBatchProvider> second; // @synthesize second=_second;
 @property(retain, nonatomic) id <MLBatchProvider> first; // @synthesize first=_first;
-- (void).cxx_destruct;
 - (id)featuresAtIndex:(long long)arg1;
 @property(readonly, nonatomic) long long count;
 - (id)initWithFeaturesFrom:(id)arg1 addedToFeaturesFrom:(id)arg2 error:(id *)arg3;

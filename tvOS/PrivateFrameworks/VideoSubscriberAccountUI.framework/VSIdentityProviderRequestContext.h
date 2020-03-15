@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     VSIdentityProviderRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool attemptedVerificationStateReset; // @synthesize attemptedVerificationStateReset=_attemptedVerificationStateReset;
 @property(retain, nonatomic) VSIdentityProviderRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 
 @end
 

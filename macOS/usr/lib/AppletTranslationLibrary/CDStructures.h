@@ -16,6 +16,8 @@ struct CC_SHA256state_st {
     unsigned int wbuf[16];
 };
 
+struct ObjCClassChecker;
+
 struct Script;
 
 struct _CircularBuffer {
@@ -25,6 +27,8 @@ struct _CircularBuffer {
     unsigned long long _field4;
     unsigned char _field5[0];
 };
+
+struct __shared_weak_count;
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *_field1;
@@ -82,6 +86,11 @@ struct os_state_data_s {
     unsigned char _field5[0];
 };
 
+struct shared_ptr<const OVM::ObjCClassChecker> {
+    struct ObjCClassChecker *_field1;
+    struct __shared_weak_count *_field2;
+};
+
 struct shared_ptr<const OVM::Script> {
     struct Script *__ptr_;
     struct __shared_weak_count *__cntrl_;
@@ -136,6 +145,11 @@ typedef struct {
 } CDStruct_b9c9288f;
 
 typedef struct {
+    unsigned short _field1;
+    CDStruct_b9c9288f _field2;
+} CDStruct_f8c8329f;
+
+typedef struct {
     CDStruct_d6b2615c _field1;
     CDStruct_d6b2615c _field2;
 } CDStruct_1fdc8922;
@@ -176,4 +190,9 @@ typedef struct map<std::__1::basic_string<char>, OVM::Var, std::__1::less<std::_
         } _field3;
     } _field1;
 } map_99c78d5b;
+
+typedef struct shared_ptr<const OVM::ObjCClassChecker> {
+    struct ObjCClassChecker *_field1;
+    struct __shared_weak_count *_field2;
+} shared_ptr_af209044;
 

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)lockSlideAnimationDuration;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType animationCompletionBlock; // @synthesize animationCompletionBlock=_animationCompletionBlock;
 @property(nonatomic) int animationCount; // @synthesize animationCount=_animationCount;
 @property(nonatomic) double widthNeededForFinalState; // @synthesize widthNeededForFinalState=_widthNeededForFinalState;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIStatusBarLockItemPadlockView *padlockView; // @synthesize padlockView=_padlockView;
 @property(nonatomic) BOOL alongsideViewIsBecomingVisible; // @synthesize alongsideViewIsBecomingVisible=_alongsideViewIsBecomingVisible;
 @property(nonatomic) __weak UIView *viewToAnimateAlongside; // @synthesize viewToAnimateAlongside=_viewToAnimateAlongside;
-- (void).cxx_destruct;
 - (id)accessibilityHUDRepresentation;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)jiggleCompletionBlock:(CDUnknownBlockType)arg1;

@@ -24,13 +24,14 @@
 
 + (id)webui_sharedFeatureManager;
 + (int)accessLevel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInMemoryBookmarkChangeTrackingAvailable) _Bool inMemoryBookmarkChangeTrackingAvailable; // @synthesize inMemoryBookmarkChangeTrackingAvailable=_inMemoryBookmarkChangeTrackingAvailable;
 @property(readonly, nonatomic, getter=isCloudSyncAvailable) _Bool cloudSyncAvailable; // @synthesize cloudSyncAvailable=_cloudSyncAvailable;
 @property(readonly, nonatomic, getter=isOfflineReadingListAvailable) _Bool offlineReadingListAvailable; // @synthesize offlineReadingListAvailable=_offlineReadingListAvailable;
 @property(readonly, nonatomic, getter=isReadingListAvailable) _Bool readingListAvailable; // @synthesize readingListAvailable=_readingListAvailable;
 @property(readonly, nonatomic, getter=isBookmarksAvailable) _Bool bookmarksAvailable; // @synthesize bookmarksAvailable=_bookmarksAvailable;
 @property(readonly, nonatomic, getter=isAutoFillAvailable) _Bool autoFillAvailable; // @synthesize autoFillAvailable=_autoFillAvailable;
-- (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isAirDropPasswordsAvailable) _Bool airDropPasswordsAvailable;
 @property(readonly, nonatomic, getter=isPrivateBrowsingAvailable) _Bool privateBrowsingAvailable;
 @property(readonly, nonatomic, getter=isCloudTabsAvailable) _Bool cloudTabsAvailable;
 @property(readonly, nonatomic, getter=isCloudHistorySyncAvailable) _Bool cloudHistorySyncAvailable;

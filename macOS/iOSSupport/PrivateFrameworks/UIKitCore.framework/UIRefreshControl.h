@@ -26,8 +26,8 @@
 
 + (Class)_contentViewClassForStyle:(long long)arg1;
 + (id)_defaultColor;
-@property(readonly, nonatomic) long long refreshControlState; // @synthesize refreshControlState=_refreshControlState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long refreshControlState; // @synthesize refreshControlState=_refreshControlState;
 @property(nonatomic, getter=_host, setter=_setHost:) __weak id <_UIRefreshControlHosting> _host;
 @property(readonly, nonatomic) BOOL _hostAdjustsContentOffset;
 - (unsigned long long)_controlEventsForActionTriggered;

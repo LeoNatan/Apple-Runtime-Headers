@@ -15,13 +15,13 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(nonatomic) _Bool allowsFuseHeaderEnrichment; // @synthesize allowsFuseHeaderEnrichment=_allowsFuseHeaderEnrichment;
 @property(readonly, copy, nonatomic) ICMusicSubscriptionStatusRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (_Bool)_carrierBundleStatusIsValidForCachedSubscriptionStatus:(id)arg1;
 - (void)_cacheAccountEligibilityWithStatus:(id)arg1 requestContext:(id)arg2;
-- (void)_performSubscriptionStatusURLRequestWithRequestContext:(id)arg1 subscriptionStatusURL:(id)arg2 allowsAuthentication:(_Bool)arg3 maximumRetryCount:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_performSubscriptionStatusURLRequestWithRequestContext:(id)arg1 subscriptionStatusURL:(id)arg2 allowsAuthentication:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)execute;
 - (id)initWithRequest:(id)arg1;
 

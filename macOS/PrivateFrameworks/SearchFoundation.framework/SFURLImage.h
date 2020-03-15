@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSURL *urlValue; // @synthesize urlValue=_urlValue;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *urlValue; // @synthesize urlValue=_urlValue;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

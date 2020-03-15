@@ -29,6 +29,7 @@
     UIBarButtonItem *_savedButtonBarItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *savedButtonBarItem; // @synthesize savedButtonBarItem=_savedButtonBarItem;
 @property(nonatomic) __weak HUEditableTextCell *nameCell; // @synthesize nameCell=_nameCell;
 @property(nonatomic) __weak HUEditRoomItemManager *roomItemManager; // @synthesize roomItemManager=_roomItemManager;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) __weak id <HUEditRoomViewControllerAddRoomDelegate> addRoomDelegate; // @synthesize addRoomDelegate=_addRoomDelegate;
 @property(readonly, nonatomic) __weak id <HUEditRoomViewControllerPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(readonly, nonatomic) HFRoomBuilder *roomBuilder; // @synthesize roomBuilder=_roomBuilder;
-- (void).cxx_destruct;
 - (id)_allTextFields;
 - (void)_resignTextFieldFirstResponder;
 - (void)updateWallpaper:(id)arg1 image:(id)arg2;

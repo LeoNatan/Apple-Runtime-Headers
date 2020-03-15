@@ -27,6 +27,7 @@
 }
 
 + (struct CGSize)preferredContentSize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <KHPhotoBinPhotoCellAccessibilitySelectionDelegate> accessibilitySelectionDelegate; // @synthesize accessibilitySelectionDelegate=_accessibilitySelectionDelegate;
 @property(retain, nonatomic) KHProjectPhoto *draggingPhoto; // @synthesize draggingPhoto=_draggingPhoto;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
@@ -38,7 +39,6 @@
 @property(nonatomic) double imageAlpha; // @synthesize imageAlpha=_imageAlpha;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain, nonatomic) KHProjectPhoto *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (BOOL)isAccessibilitySelected;
 - (id)accessibilityRoleDescription;
 - (long long)accessibilityIndex;

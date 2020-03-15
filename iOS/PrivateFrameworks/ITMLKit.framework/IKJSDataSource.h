@@ -24,12 +24,12 @@
 
 + (id)_titlesByIndexFromValue:(id)arg1;
 + (id)jsExportedProperties;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableIndexSet *loadedSegmentIndexes; // @synthesize loadedSegmentIndexes=_loadedSegmentIndexes;
 @property(readonly, nonatomic) NSMutableDictionary *loadIndexesRequestsBySegmentIndex; // @synthesize loadIndexesRequestsBySegmentIndex=_loadIndexesRequestsBySegmentIndex;
 @property(readonly, nonatomic) NSMutableArray *dataSourceViewPointers; // @synthesize dataSourceViewPointers=_dataSourceViewPointers;
 @property(readonly, copy, nonatomic) NSDictionary *indexTitles; // @synthesize indexTitles=_indexTitles;
 @property(readonly, nonatomic) long long segmentSize; // @synthesize segmentSize=_segmentSize;
-- (void).cxx_destruct;
 - (void)_resetUsedIndexesAndMigrateItems:(id)arg1;
 - (void)_resetLoadedSegments;
 - (long long)_segmentIndexForItemIndex:(long long)arg1;

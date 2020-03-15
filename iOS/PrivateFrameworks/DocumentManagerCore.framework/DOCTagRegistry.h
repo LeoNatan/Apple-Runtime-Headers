@@ -22,13 +22,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DOCTagRegistryICloudDataSource *iCloudDataSource; // @synthesize iCloudDataSource=_iCloudDataSource;
 @property(nonatomic) _Bool shouldSynchronizeAfterBatchUpdate; // @synthesize shouldSynchronizeAfterBatchUpdate=_shouldSynchronizeAfterBatchUpdate;
 @property(retain, nonatomic) NSMutableOrderedSet *discoveredTags; // @synthesize discoveredTags=_discoveredTags;
 @property(retain, nonatomic) NSMutableOrderedSet *userTags; // @synthesize userTags=_userTags;
 @property(nonatomic) long long tagSerialNumber; // @synthesize tagSerialNumber=_tagSerialNumber;
 @property(nonatomic) _Bool inBatchUpdate; // @synthesize inBatchUpdate=_inBatchUpdate;
-- (void).cxx_destruct;
 - (void)synchronize;
 - (_Bool)moveTag:(id)arg1 toIndex:(unsigned long long)arg2;
 - (_Bool)replaceTag:(id)arg1 withTag:(id)arg2;

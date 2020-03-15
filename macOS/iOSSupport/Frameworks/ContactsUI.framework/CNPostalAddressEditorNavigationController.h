@@ -13,8 +13,8 @@
     id <CNPostalAddressEditorDelegate> _addressEditorDelegate;
 }
 
-@property(nonatomic) __weak id <CNPostalAddressEditorDelegate> addressEditorDelegate; // @synthesize addressEditorDelegate=_addressEditorDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CNPostalAddressEditorDelegate> addressEditorDelegate; // @synthesize addressEditorDelegate=_addressEditorDelegate;
 - (void)doneWithContact:(id)arg1 propertyKey:(id)arg2;
 - (void)setTitle:(id)arg1;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 addressDictionary:(id)arg3 label:(id)arg4;

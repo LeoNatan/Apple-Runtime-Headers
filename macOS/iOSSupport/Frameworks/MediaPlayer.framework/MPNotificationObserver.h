@@ -15,10 +15,10 @@
     CDUnknownBlockType _handler;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) __weak id object; // @synthesize object=_object;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_handleNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 object:(id)arg2 handler:(CDUnknownBlockType)arg3;

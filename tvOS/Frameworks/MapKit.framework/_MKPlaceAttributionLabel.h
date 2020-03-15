@@ -16,11 +16,11 @@
     NSString *imagePlaceholder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imagePlaceholder; // @synthesize imagePlaceholder;
 @property(nonatomic) double imageBaselineOffset; // @synthesize imageBaselineOffset;
 @property(nonatomic) double textBaselineOffset; // @synthesize textBaselineOffset;
 @property(retain, nonatomic) UIImage *image; // @synthesize image;
-- (void).cxx_destruct;
 - (id)attributionWithString:(id)arg1;
 
 @end

@@ -22,12 +22,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType pendingStartSessionCallback; // @synthesize pendingStartSessionCallback=_pendingStartSessionCallback;
 @property BOOL canSendBulkSendSessionOpenRequest; // @synthesize canSendBulkSendSessionOpenRequest=_canSendBulkSendSessionOpenRequest;
 @property BOOL hasRegisteredBulkSendListener; // @synthesize hasRegisteredBulkSendListener=_hasRegisteredBulkSendListener;
 @property(readonly) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 @property(readonly, getter=isSessionOpenInProgress) BOOL sessionOpenInProgress;
 - (void)_callPendingStartSessionCallbackWithSession:(id)arg1 error:(id)arg2;

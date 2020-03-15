@@ -26,6 +26,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *dataValue; // @synthesize dataValue=_dataValue;
 @property(retain, nonatomic) HDCodableQuantity *quantityValue; // @synthesize quantityValue=_quantityValue;
 @property(nonatomic) double numberDoubleValue; // @synthesize numberDoubleValue=_numberDoubleValue;
@@ -33,7 +34,6 @@
 @property(nonatomic) double dateValue; // @synthesize dateValue=_dateValue;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

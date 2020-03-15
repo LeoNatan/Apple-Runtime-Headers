@@ -7,10 +7,11 @@
 #import <PhotosUICore/PXCuratedLibraryAssetsSectionGeneratedLayout.h>
 
 #import <PhotosUICore/PXCuratedLibraryRowBasedLayout-Protocol.h>
+#import <PhotosUICore/PXGItemsGeometry-Protocol.h>
 
 @class PXDayAssetsSectionBodyLayoutSpec;
 
-@interface PXDayAssetsSectionBodyLayout : PXCuratedLibraryAssetsSectionGeneratedLayout <PXCuratedLibraryRowBasedLayout>
+@interface PXDayAssetsSectionBodyLayout : PXCuratedLibraryAssetsSectionGeneratedLayout <PXGItemsGeometry, PXCuratedLibraryRowBasedLayout>
 {
     PXDayAssetsSectionBodyLayoutSpec *_spec;
     long long _style;
@@ -18,10 +19,14 @@
 }
 
 + (struct CGSize)estimatedSizeWithReferenceSize:(struct CGSize)arg1 spec:(id)arg2 style:(long long)arg3 numberOfAssets:(long long)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfPrecedingAssets; // @synthesize numberOfPrecedingAssets=_numberOfPrecedingAssets;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) PXDayAssetsSectionBodyLayoutSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
+- (id)itemsInRect:(struct CGRect)arg1 inLayout:(id)arg2;
+- (id)itemsBetweenItem:(long long)arg1 andItem:(long long)arg2;
+- (long long)itemClosestToItem:(long long)arg1 inDirection:(unsigned long long)arg2;
+- (id)itemsGeometry;
 - (void)enumerateRowsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) double buildingRowSpacing;
 @property(readonly, nonatomic) double buildingRowContentHeight;
@@ -34,8 +39,10 @@
 - (struct _PXGSpriteIndexRange)spriteIndexRangeCoveringRect:(struct CGRect)arg1;
 - (void)contentSizeDidChange;
 - (id)_inputItemAtIndex:(unsigned int)arg1;
+- (id)exploreGenerator;
 - (id)newGenerator;
 - (void)referenceSizeDidChange;
+- (id)init;
 
 @end
 

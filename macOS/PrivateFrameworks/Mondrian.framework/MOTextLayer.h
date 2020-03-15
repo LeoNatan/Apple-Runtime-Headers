@@ -19,9 +19,9 @@
     NSColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) BOOL enableImplicitAnimations; // @synthesize enableImplicitAnimations=_enableImplicitAnimations;
-- (void).cxx_destruct;
 - (void)setFont:(void *)arg1;
 @property(copy, nonatomic) NSAttributedString *placeholderAttributedString;
 @property(copy, nonatomic) NSString *placeholderString;

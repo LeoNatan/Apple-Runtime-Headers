@@ -17,11 +17,11 @@
     CPMapTemplate *_mapTemplate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CPMapTemplate *mapTemplate; // @synthesize mapTemplate=_mapTemplate;
 @property(retain, nonatomic) id <CPNavigationSessionManaging> manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) CPTrip *trip; // @synthesize trip=_trip;
 @property(copy, nonatomic) NSArray *upcomingManeuvers; // @synthesize upcomingManeuvers=_upcomingManeuvers;
-- (void).cxx_destruct;
 - (void)updateTravelEstimates:(id)arg1 forManeuver:(id)arg2;
 - (void)cancelTrip;
 - (void)finishTrip;

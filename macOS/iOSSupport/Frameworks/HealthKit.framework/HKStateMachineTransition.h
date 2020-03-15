@@ -16,11 +16,11 @@
     HKStateMachineState *_toState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak HKStateMachineState *toState; // @synthesize toState=_toState;
 @property(readonly, nonatomic) __weak HKStateMachineState *fromState; // @synthesize fromState=_fromState;
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithEvent:(long long)arg1 label:(id)arg2 from:(id)arg3 to:(id)arg4;

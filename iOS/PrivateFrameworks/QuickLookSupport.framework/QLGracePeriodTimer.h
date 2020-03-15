@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_timer;
 }
 
-@property(copy) CDUnknownBlockType action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType action; // @synthesize action=_action;
 - (void)suppress;
 - (void)arm;
 - (void)_suppress;

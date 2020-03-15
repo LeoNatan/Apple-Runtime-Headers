@@ -77,7 +77,8 @@
     CDStruct_41c1ae05 _settings;
 }
 
-+ (struct CAMShutterButtonSpec)shutterButtonSpec;
++ (struct CAMShutterButtonSpec)shutterButtonSpecForLayoutStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CAMDynamicShutterControlAGGDDelegate> aggdDelegate; // @synthesize aggdDelegate=_aggdDelegate;
 @property(readonly, nonatomic) CAMSpring *_expandLockRingSpring; // @synthesize _expandLockRingSpring=__expandLockRingSpring;
 @property(readonly, nonatomic) CAMSpring *_drawLockUISpring; // @synthesize _drawLockUISpring=__drawLockUISpring;
@@ -126,7 +127,6 @@
 @property(nonatomic, getter=isSpinning) _Bool spinning; // @synthesize spinning=_spinning;
 @property(nonatomic) CDStruct_41c1ae05 settings; // @synthesize settings=_settings;
 @property(nonatomic) __weak id <CAMDynamicShutterControlDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)metalViewDidChangeDrawableSize:(id)arg1;
 - (void)_updateCounterAlpha;
 - (void)_updateLockUI;
@@ -206,6 +206,7 @@
 - (_Bool)_canDragStartStop;
 - (_Bool)_canDragCounter;
 - (void)dealloc;
+- (id)initWithMetalDevice:(id)arg1 commandQueue:(id)arg2 layoutStyle:(long long)arg3;
 - (id)initWithMetalDevice:(id)arg1 commandQueue:(id)arg2;
 
 // Remaining properties

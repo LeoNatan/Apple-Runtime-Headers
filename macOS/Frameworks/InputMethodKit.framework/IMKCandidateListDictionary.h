@@ -17,9 +17,9 @@
 
 + (id)listDictionaryWithList:(id)arg1;
 + (id)listDictionaryWithKeys:(id)arg1 array:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *orderedKeys; // @synthesize orderedKeys=_orderedKeys;
 @property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) BOOL isEmpty;
 @property(readonly, nonatomic) IMKCandidate *lastCandidate;

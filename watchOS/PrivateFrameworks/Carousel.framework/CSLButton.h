@@ -24,6 +24,7 @@
 }
 
 + (id)buttonWithUsagePage:(long)arg1 usage:(long)arg2 buttonMask:(unsigned int)arg3 backlightReason:(unsigned int)arg4 aggdLogName:(id)arg5 delegate:(id)arg6 gesturesDisabled:(_Bool)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLButton *chordedButton; // @synthesize chordedButton=_chordedButton;
 @property(nonatomic) id <CSLButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *aggdLogName; // @synthesize aggdLogName=_aggdLogName;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) _Bool turnsOnBacklight; // @synthesize turnsOnBacklight=_turnsOnBacklight;
 @property(readonly, nonatomic) unsigned int buttonMask; // @synthesize buttonMask=_buttonMask;
 @property(readonly, nonatomic) IOSSHLButtonKeyState *buttonKeyState; // @synthesize buttonKeyState=_buttonKeyState;
-- (void).cxx_destruct;
 - (void)buttonTapped:(id)arg1;
 - (void)buttonHeldAndReleased:(id)arg1;
 - (void)buttonHeld:(id)arg1 state:(int)arg2;

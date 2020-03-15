@@ -35,6 +35,7 @@
 
 + (void)enumerateFramesInData:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EFMutableInt64Set *currentLogMessageIDs; // @synthesize currentLogMessageIDs=_currentLogMessageIDs;
 // Error parsing type for property shouldLog:
 // Property attributes: TAB,N,V_shouldLog
@@ -53,7 +54,6 @@
 @property(readonly, nonatomic) EDInteractionEventLogSaltProvider *saltProvider; // @synthesize saltProvider=_saltProvider;
 @property(readonly, nonatomic) id <EMUserProfileProvider> profileProvider; // @synthesize profileProvider=_profileProvider;
 @property(retain, nonatomic) NSURL *currentLogFile; // @synthesize currentLogFile=_currentLogFile;
-- (void).cxx_destruct;
 - (void)persistEvent:(id)arg1 date:(id)arg2 message:(id)arg3 mailboxType:(int)arg4;
 - (void)persistEvent:(id)arg1 date:(id)arg2 message:(id)arg3 mailbox:(id)arg4;
 - (void)persistEvent:(id)arg1 dataFromMessage:(id)arg2 account:(id)arg3;

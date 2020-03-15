@@ -13,8 +13,8 @@
     NSData *_previousTurnID;
 }
 
-@property(copy, nonatomic) NSData *previousTurnID; // @synthesize previousTurnID=_previousTurnID;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSData *previousTurnID; // @synthesize previousTurnID=_previousTurnID;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

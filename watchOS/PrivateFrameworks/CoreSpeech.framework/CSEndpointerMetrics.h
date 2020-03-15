@@ -17,12 +17,12 @@
     double _totalAudioRecorded;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
 @property(retain, nonatomic) NSDictionary *serverFeatureLatencyDistribution; // @synthesize serverFeatureLatencyDistribution=_serverFeatureLatencyDistribution;
 @property(nonatomic) int endpointerType; // @synthesize endpointerType=_endpointerType;
 @property(retain, nonatomic) NSArray *featuresAtEndpoint; // @synthesize featuresAtEndpoint=_featuresAtEndpoint;
 @property(nonatomic) double totalAudioRecorded; // @synthesize totalAudioRecorded=_totalAudioRecorded;
-- (void).cxx_destruct;
 - (id)initWithTotalAudioRecorded:(double)arg1 featuresAtEndpoint:(id)arg2 endpointerType:(int)arg3 serverFeatureLatencyDistribution:(id)arg4 additionalMetrics:(id)arg5;
 
 @end

@@ -8,12 +8,12 @@
 
 #import <RemoteManagementModel/RMModelRegisteredTypeProtocol-Protocol.h>
 
-@class NSArray, NSString, RMModelPredicateBase;
+@class NSArray, NSString;
 
 @interface RMModelActivationSimpleDeclaration : RMModelActivationBase <RMModelRegisteredTypeProtocol>
 {
     NSArray *_payloadStandardConfigurations;
-    RMModelPredicateBase *_payloadPredicate;
+    NSString *_payloadPredicate;
 }
 
 + (id)buildRequiredOnlyWithIdentifier:(id)arg1 standardConfigurations:(id)arg2;
@@ -21,12 +21,12 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
-@property(copy, nonatomic) RMModelPredicateBase *payloadPredicate; // @synthesize payloadPredicate=_payloadPredicate;
-@property(copy, nonatomic) NSArray *payloadStandardConfigurations; // @synthesize payloadStandardConfigurations=_payloadStandardConfigurations;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *payloadPredicate; // @synthesize payloadPredicate=_payloadPredicate;
+@property(copy, nonatomic) NSArray *payloadStandardConfigurations; // @synthesize payloadStandardConfigurations=_payloadStandardConfigurations;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (_Bool)loadPayloadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

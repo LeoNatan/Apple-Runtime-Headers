@@ -29,6 +29,7 @@
     unsigned long long _operationBatchSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long operationBatchSize; // @synthesize operationBatchSize=_operationBatchSize;
 @property(nonatomic) _Bool useSecureContainer; // @synthesize useSecureContainer=_useSecureContainer;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) MSPCloudKitAccountAccess *access; // @synthesize access=_access;
 @property(retain, nonatomic) MSPContainer *container; // @synthesize container=_container;
 @property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
-- (void).cxx_destruct;
 - (id)zoneSubscriptionName;
 - (_Bool)useZoneWidePCS;
 - (id)zoneID;

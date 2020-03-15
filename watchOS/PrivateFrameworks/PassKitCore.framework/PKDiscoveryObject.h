@@ -9,7 +9,7 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, PKDiscoveryRelevantDateRange, PKOSVersionRequirementRange;
+@class NSArray, NSString, PKDiscoveryRelevantDateRange, PKHardwareVersionRange, PKOSVersionRequirementRange;
 
 @interface PKDiscoveryObject : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,6 +18,7 @@
     NSString *_ruleIdentifier;
     NSArray *_triggers;
     PKOSVersionRequirementRange *_osVersionRange;
+    PKHardwareVersionRange *_hardwareVersionRange;
     PKDiscoveryRelevantDateRange *_relevantDateRange;
     int _maxViewCount;
     int _status;
@@ -25,16 +26,17 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int viewCount; // @synthesize viewCount=_viewCount;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) int maxViewCount; // @synthesize maxViewCount=_maxViewCount;
 @property(retain, nonatomic) PKDiscoveryRelevantDateRange *relevantDateRange; // @synthesize relevantDateRange=_relevantDateRange;
+@property(retain, nonatomic) PKHardwareVersionRange *hardwareVersionRange; // @synthesize hardwareVersionRange=_hardwareVersionRange;
 @property(retain, nonatomic) PKOSVersionRequirementRange *osVersionRange; // @synthesize osVersionRange=_osVersionRange;
 @property(retain, nonatomic) NSArray *triggers; // @synthesize triggers=_triggers;
 @property(copy, nonatomic) NSString *ruleIdentifier; // @synthesize ruleIdentifier=_ruleIdentifier;
 @property(nonatomic) int version; // @synthesize version=_version;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

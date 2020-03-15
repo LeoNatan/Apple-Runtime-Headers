@@ -30,11 +30,11 @@ __attribute__((visibility("hidden")))
     CEKBadgeTextView *_badgeView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CEKBadgeTextView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) PUAdjustmentsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic, setter=_setSnappingController:) PXUISnappingController *_snappingController; // @synthesize _snappingController=__snappingController;
 @property(retain, nonatomic) PUAutoAdjustmentController *autoAdjustmentController; // @synthesize autoAdjustmentController=_autoAdjustmentController;
-- (void).cxx_destruct;
 - (void)ppt_selectBWSlider:(CDUnknownBlockType)arg1;
 - (void)ppt_selectColorSlider:(CDUnknownBlockType)arg1;
 - (void)ppt_selectLightSlider:(CDUnknownBlockType)arg1;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _normalizedSourceRectInWindow;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSWindow *appNSWindow; // @synthesize appNSWindow=_appNSWindow;
 @property(retain, nonatomic) AVKitMacHelperPIPViewController *pipViewController; // @synthesize pipViewController=_pipViewController;
 @property(nonatomic) BOOL showsMuteUnmuteControls; // @synthesize showsMuteUnmuteControls=_showsMuteUnmuteControls;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(nonatomic, getter=isPlaying) BOOL playing; // @synthesize playing=_playing;
 @property(nonatomic) __weak id <AVPictureInPictureControllerMacHelperDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updatePIPControls;
 - (void)_stopImmediatelyIfActive;
 - (void)_unsetReplacementRect;

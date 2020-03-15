@@ -28,6 +28,7 @@
     struct _NSRange _interactedDateRange;
 }
 
+- (void).cxx_destruct;
 @property struct _NSRange interactedDateRange; // @synthesize interactedDateRange=_interactedDateRange;
 @property(readonly) long long indexInOriginalMessage; // @synthesize indexInOriginalMessage=_indexInOriginalMessage;
 @property(readonly) __weak IPMessage *originalMessage; // @synthesize originalMessage=_originalMessage;
@@ -36,7 +37,6 @@
 @property(readonly) NSArray *sentenceFeatures; // @synthesize sentenceFeatures=_sentenceFeatures;
 @property(readonly) __weak IPMessageUnit *previous; // @synthesize previous=_previous;
 @property(readonly, copy) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)description;
 - (id)bestLanguageID;
 - (id)proposalAndAcceptationRanges;

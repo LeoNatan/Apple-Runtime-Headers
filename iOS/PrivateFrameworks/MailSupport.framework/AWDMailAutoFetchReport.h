@@ -47,6 +47,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long bucketedLocalNonDeletedCount; // @synthesize bucketedLocalNonDeletedCount=_bucketedLocalNonDeletedCount;
 @property(nonatomic) unsigned long long numMessagesFetched; // @synthesize numMessagesFetched=_numMessagesFetched;
@@ -56,7 +57,6 @@
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;
 @property(retain, nonatomic) AWDMailError *mailError; // @synthesize mailError=_mailError;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

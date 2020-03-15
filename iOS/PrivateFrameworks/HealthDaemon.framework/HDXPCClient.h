@@ -24,6 +24,7 @@
 }
 
 + (id)clientWithConnection:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *droppedEntitlements; // @synthesize droppedEntitlements=_droppedEntitlements;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(readonly, copy) NSString *containerAppBundleIdentifier; // @synthesize containerAppBundleIdentifier=_containerAppBundleIdentifier;
@@ -32,7 +33,6 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) _HKEntitlements *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

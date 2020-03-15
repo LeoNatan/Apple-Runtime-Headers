@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     LAUIAuthenticationViewController *_viewController;
 }
 
-@property(nonatomic) __weak LAUIAuthenticationViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak LAUIAuthenticationViewController *viewController; // @synthesize viewController=_viewController;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)initWithViewController:(id)arg1;
 

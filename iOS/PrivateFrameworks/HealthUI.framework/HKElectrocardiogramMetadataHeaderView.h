@@ -13,8 +13,8 @@
     UIButton *_detailButton;
 }
 
-@property(readonly, nonatomic) UIButton *detailButton; // @synthesize detailButton=_detailButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIButton *detailButton; // @synthesize detailButton=_detailButton;
 - (void)_setupUIWithText:(id)arg1 date:(id)arg2;
 - (id)initWithText:(id)arg1 date:(id)arg2;
 

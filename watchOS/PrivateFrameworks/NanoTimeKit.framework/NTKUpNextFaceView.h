@@ -7,9 +7,9 @@
 #import <NanoTimeKit/NTKDigitalFaceView.h>
 
 #import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
+#import <NanoTimeKit/CLKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/CSLSBacklightObserver-Protocol.h>
 #import <NanoTimeKit/NTKFrameNotchProviding-Protocol.h>
-#import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/REElementActionDelegate-Protocol.h>
 #import <NanoTimeKit/REUIElementIntentActionDelegate-Protocol.h>
 #import <NanoTimeKit/REUIRelevanceEngineControllerDelegate-Protocol.h>
@@ -18,7 +18,7 @@
 
 @class NSArray, NSDate, NSMutableArray, NSMutableSet, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUpNextRenderer, NTKUtilityComplicationFactory, PUICClientSideAnimation, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UICollectionViewDiffableDataSource, UIImage, UITapGestureRecognizer, UIView;
 
-@interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, CSLSBacklightObserver, NTKFrameNotchProviding>
+@interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, CLKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, CSLSBacklightObserver, NTKFrameNotchProviding>
 {
     PUICFrameNotchProvider *_notchProvider;
     NTKDigitalTimeLabelStyle *_timeLabelDefaultStyle;
@@ -43,15 +43,16 @@
     UIView *_timeLabelPlatter;
     UIView *_scalableView;
     _Bool _needsReloadedContent;
+    _Bool _hasDeferredUpdate;
+    _Bool _isApplyingSnapshot;
+    _Bool _isApplyingBatchUpdate;
     _Bool _isInflightScroll;
     _Bool _cancelInflightScroll;
     _Bool _isProgramaticScrollEvent;
     _Bool _crownInverted;
     _Bool _suppressCrownEvents;
-    _Bool _inUpdate;
-    _Bool _inReload;
     _Bool _isBacklightOn;
-    NSMutableSet *_batchReloadIdentifiers;
+    NSMutableSet *_reloadedElements;
     NSOrderedSet *_currentApplicationIdentifiers;
     REUpNextScheduler *_applicationIdentifierUpdateScheduler;
     NSSet *_dwellIndexPathes;
@@ -137,13 +138,16 @@
 - (void)_setViewMode:(int)arg1 scroll:(_Bool)arg2 scrollToPoint:(struct CGPoint)arg3 secondaryPoint:(struct CGPoint)arg4 force:(_Bool)arg5 velocity:(float)arg6 animated:(_Bool)arg7;
 - (struct CGPoint)_defaultPointForDefaultMode;
 - (void)engineControllerDidFinishUpdatingRelevance:(id)arg1;
-- (_Bool)engineController:(id)arg1 isElementAtIndexPathVisible:(id)arg2;
+- (void)engineControllerDidBeginUpdatingRelevance:(id)arg1;
+- (void)engineController:(id)arg1 didReloadContent:(id)arg2 withIdentifier:(id)arg3;
+- (void)engineController:(id)arg1 didReloadContent:(id)arg2 atIndexPath:(id)arg3;
 - (void)engineController:(id)arg1 didMoveContent:(id)arg2 fromIndexPath:(id)arg3 toIndexPath:(id)arg4;
 - (void)engineController:(id)arg1 didInsertContent:(id)arg2 atIndexPath:(id)arg3;
 - (void)engineController:(id)arg1 didRemoveContent:(id)arg2 atIndexPath:(id)arg3;
-- (void)engineController:(id)arg1 didReloadContent:(id)arg2 atIndexPath:(id)arg3;
-- (void)engineController:(id)arg1 didReloadContent:(id)arg2 withIdentifier:(id)arg3;
+- (_Bool)engineController:(id)arg1 isElementAtIndexPathVisible:(id)arg2;
+- (void)engineController:(id)arg1 didReloadElement:(id)arg2;
 - (void)engineController:(id)arg1 performBatchUpdateBlock:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)_shouldDeferUpdate;
 - (void)_buttonPressTimerFired;
 - (void)_wheelDelayTimerFired;
 - (_Bool)_handlePhysicalButton:(unsigned int)arg1 event:(unsigned int)arg2;
@@ -196,12 +200,11 @@
 - (int)_numberOfSectionsInCollectionView;
 - (void)_configureVisibleCell:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
-- (id)_configureSupplementaryViewForSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2 inCollectionView:(id)arg3;
-- (id)_configureCellForItemWithIdentifier:(id)arg1 atIndexPath:(id)arg2 inCollectionView:(id)arg3;
+- (id)_configureSupplementaryViewForSupplementaryElementOfKind:(id)arg1 withElement:(id)arg2 inCollectionView:(id)arg3;
+- (id)_configureCellForItemWithElement:(id)arg1 atIndexPath:(id)arg2 inCollectionView:(id)arg3;
 - (void)_logContent:(id)arg1 withIdentifier:(id)arg2;
 - (void)_logDataSourceSnapshot:(id)arg1 withName:(id)arg2;
 - (void)_removeUnmanagedCollectionViewCells;
-- (void)_loadCollectionViewDataAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_reloadCollectionViewData;
 - (void)_configureCollectionViewDataSource;
 - (_Bool)_dismissPresentedViewControllerIfNecessary:(_Bool)arg1;
@@ -211,6 +214,9 @@
 - (void)_updateApplicationIdentifiersAndLocationAuthorization;
 - (id)_sectionEnumerationOrder;
 - (void)_availableDataSourcesDidChange;
+- (void)updateCollectionViewSnapshotAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_applyCollectionViewSnapshot:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)collectionViewDeferralStateChanged;
 - (void)_ensureContentLoadedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_switchViewModeToDefault;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_fieldLabelMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *fieldLabelMap; // @synthesize fieldLabelMap=_fieldLabelMap;
 @property(readonly, nonatomic) NSArray *editingFieldArrangement; // @synthesize editingFieldArrangement=_editingFieldArrangement;
 @property(readonly, nonatomic) NSArray *displayFieldArrangement; // @synthesize displayFieldArrangement=_displayFieldArrangement;
-- (void).cxx_destruct;
 - (id)localizedPlaceholderForKey:(id)arg1;
 - (id)initWithDisplayFieldArrangement:(id)arg1 editingFieldArrangement:(id)arg2 fieldLabelMap:(id)arg3;
 

@@ -37,11 +37,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned char)_reason;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long bytesDownloaded; // @synthesize bytesDownloaded=_bytesDownloaded;
 @property(readonly, nonatomic) unsigned long long failedTiles; // @synthesize failedTiles=_failedTiles;
 @property(readonly, nonatomic) unsigned long long successfulTiles; // @synthesize successfulTiles=_successfulTiles;
 @property(readonly, nonatomic) unsigned long long numberOfTilesAttempted; // @synthesize numberOfTilesAttempted=_numberOfTilesAttempted;
-- (void).cxx_destruct;
 - (void)tileRequesterFinished:(id)arg1;
 - (void)tileRequester:(id)arg1 receivedError:(id)arg2 forKey:(struct _GEOTileKey)arg3;
 - (void)tileRequester:(id)arg1 receivedData:(id)arg2 tileEdition:(unsigned int)arg3 tileSetDB:(unsigned int)arg4 tileSet:(id)arg5 etag:(id)arg6 forKey:(struct _GEOTileKey)arg7 userInfo:(id)arg8;

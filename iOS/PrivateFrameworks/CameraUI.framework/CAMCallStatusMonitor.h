@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *__avscAccessQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_avscAccessQueue; // @synthesize _avscAccessQueue=__avscAccessQueue;
 @property(readonly, nonatomic) NSMutableSet *_disabledReasons; // @synthesize _disabledReasons=__disabledReasons;
 @property(nonatomic, getter=isCallActive) _Bool callActive; // @synthesize callActive=_callActive;
-- (void).cxx_destruct;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_setCallActive:(_Bool)arg1;

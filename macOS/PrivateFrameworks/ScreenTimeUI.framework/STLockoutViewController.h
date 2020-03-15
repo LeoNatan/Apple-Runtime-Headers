@@ -9,7 +9,7 @@
 #import <ScreenTimeUI/NSAnimationDelegate-Protocol.h>
 #import <ScreenTimeUI/STLockoutPolicyControllerDelegate-Protocol.h>
 
-@class NSAnimation, NSButton, NSObject, NSString, NSTextField, STBlockingBackdropView, STHourglassView, STLockoutAlertController, STLockoutPolicyController;
+@class NSAnimation, NSButton, NSDictionary, NSImageView, NSObject, NSString, NSTextField, STBlockingBackdropView, STHourglassView, STLockoutAlertController, STLockoutPolicyController;
 @protocol OS_dispatch_group, STLockoutViewControllerDelegate;
 
 @interface STLockoutViewController : NSViewController <NSAnimationDelegate, STLockoutPolicyControllerDelegate>
@@ -36,7 +36,9 @@
     BOOL _didFinishDismissing;
     STLockoutPolicyController *_policyController;
     NSString *_applicationName;
+    NSDictionary *_contactNameByHandle;
     STHourglassView *_hourglassView;
+    NSImageView *_communicationLimitView;
     CDUnknownBlockType _backdropAnimationCompletion;
     NSTextField *_titleLabel;
     NSTextField *_messageLabel;
@@ -53,12 +55,16 @@
 + (id)_applicationNameForWebsiteURL:(id)arg1;
 + (id)_bundleIdentifierForWebsiteURL:(id)arg1;
 + (id)_applicationNameForBundleIdentifier:(id)arg1;
++ (id)lockoutViewControllerForContactEditing;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 conversationContext:(id)arg2 contactStore:(id)arg3;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2;
++ (id)lockoutViewControllerWithBundleIdentifier:(id)arg1 contactsHandles:(id)arg2 contactNameByHandle:(id)arg3;
 + (id)lockoutViewControllerWithConversationContext:(id)arg1 bundleIdentifier:(id)arg2 contactStore:(id)arg3 applicationName:(id)arg4;
++ (id)lockoutViewControllerWithConversationContext:(id)arg1 bundleIdentifier:(id)arg2 contactStore:(id)arg3 applicationName:(id)arg4 contactNameByHandle:(id)arg5;
 + (id)lockoutViewControllerWithWebsiteURL:(id)arg1;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
 + (id)lockoutViewControllerWithCategoryIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <STLockoutViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
 @property long long okButtonAction; // @synthesize okButtonAction=_okButtonAction;
 @property(readonly, nonatomic) BOOL didFinishDismissing; // @synthesize didFinishDismissing=_didFinishDismissing;
@@ -68,12 +74,14 @@
 @property __weak NSTextField *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy) CDUnknownBlockType backdropAnimationCompletion; // @synthesize backdropAnimationCompletion=_backdropAnimationCompletion;
+@property __weak NSImageView *communicationLimitView; // @synthesize communicationLimitView=_communicationLimitView;
 @property __weak STHourglassView *hourglassView; // @synthesize hourglassView=_hourglassView;
+@property(readonly, copy) NSDictionary *contactNameByHandle; // @synthesize contactNameByHandle=_contactNameByHandle;
 @property(readonly) NSString *applicationName; // @synthesize applicationName=_applicationName;
 @property(retain, nonatomic) STLockoutPolicyController *policyController; // @synthesize policyController=_policyController;
 @property(nonatomic) BOOL mainButtonAlwaysHidden; // @synthesize mainButtonAlwaysHidden=_mainButtonAlwaysHidden;
 @property(nonatomic) BOOL okButtonAlwaysHidden; // @synthesize okButtonAlwaysHidden=_okButtonAlwaysHidden;
-- (void).cxx_destruct;
+- (void)_contactStoreDidChange:(id)arg1;
 - (void)preferredContentSizeDidChangeForViewController:(id)arg1;
 - (void)stateDidChange:(unsigned long long)arg1;
 - (void)_setTextAndButtonsAlpha:(double)arg1;
@@ -98,13 +106,15 @@
 - (void)_showInitialAnimationIfNeeded;
 - (BOOL)_isShowingInitialAnimation;
 - (void)_changeStateToDismissing;
+- (id)_updateMessageLabelAndReturnHandleWithPhoneNumberFormat:(id)arg1 emailAddressFormat:(id)arg2 contactNameFormat:(id)arg3;
+- (void)_changeStateToContactBlockedDuringDowntime;
 - (void)_changeStateToContactBlocked;
 - (void)_changeStateToDisapproved;
 - (void)_changeStateToApproved;
 - (void)_changeStateToPending;
 - (void)_changeStateToAsk;
 - (void)_changeStateToWarn;
-- (void)_changeMainButtonToAddContact;
+- (void)_changeMainButtonToAddContact:(id)arg1;
 - (void)_changeMainButtonToEnterScreenTimePasscode;
 - (void)_changeMainButtonToIgnoreLimit;
 - (void)_changeMainButtonToAskForMore;
@@ -116,7 +126,6 @@
 - (BOOL)_authenticatedApproveActionSheet;
 - (void)_unlockWithSuccessMainCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)_actionAddContact:(id)arg1;
-- (BOOL)_actionAddContactWithPINIfNeeded:(id)arg1;
 - (BOOL)_actionUnlockedEnterScreenTimePasscodeActionSheet;
 - (void)_actionEnterScreenTimePasscodeActionSheet:(id)arg1;
 - (BOOL)_actionUnlockedAskOrApproveActionSheet;

@@ -19,12 +19,12 @@
     NSString *_status;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *status; // @synthesize status=_status;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(retain, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(retain, nonatomic) NSString *phoneBookNumber; // @synthesize phoneBookNumber=_phoneBookNumber;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-- (void).cxx_destruct;
 - (id)initWithCTResponse:(id)arg1 phoneBookNumber:(id)arg2;
 
 // Remaining properties

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSLock *__lock;
 }
 
-@property(readonly, nonatomic) NSLock *_lock; // @synthesize _lock=__lock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSLock *_lock; // @synthesize _lock=__lock;
 - (void)removeAllObserverGroupsForApplication:(id)arg1;
 - (void)removeObserverGroups:(id)arg1 forTarget:(id)arg2;
 - (void)removeObserverGroup:(id)arg1 forTarget:(id)arg2;

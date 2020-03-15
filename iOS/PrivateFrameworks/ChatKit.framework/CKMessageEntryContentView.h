@@ -45,6 +45,7 @@
 + (id)_createSubjectView;
 + (id)_createTextView;
 + (void)prewarmTextView;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pendingShelfPayloadWillAnimateIn; // @synthesize pendingShelfPayloadWillAnimateIn=_pendingShelfPayloadWillAnimateIn;
 @property(retain, nonatomic) NSString *overridePlaceholderText; // @synthesize overridePlaceholderText=_overridePlaceholderText;
 @property(retain, nonatomic) NSString *requestedPlaceholderText; // @synthesize requestedPlaceholderText=_requestedPlaceholderText;
@@ -69,7 +70,6 @@
 @property(retain, nonatomic) CKMessageEntryTextView *subjectView; // @synthesize subjectView=_subjectView;
 @property(nonatomic) _Bool shouldShowSubject; // @synthesize shouldShowSubject=_shouldShowSubject;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)clearPluginButtonTapped:(id)arg1;
 - (_Bool)shouldLayoutPluginEdgeToEdge;
 - (_Bool)shouldShowClearButton;

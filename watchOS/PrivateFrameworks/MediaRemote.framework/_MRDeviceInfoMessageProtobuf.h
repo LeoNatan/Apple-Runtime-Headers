@@ -66,6 +66,7 @@
 
 + (Class)airplayReceiversType;
 + (Class)groupedDevicesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *linkAgent; // @synthesize linkAgent=_linkAgent;
 @property(retain, nonatomic) NSMutableArray *airplayReceivers; // @synthesize airplayReceivers=_airplayReceivers;
 @property(retain, nonatomic) NSString *senderDefaultGroupUID; // @synthesize senderDefaultGroupUID=_senderDefaultGroupUID;
@@ -98,7 +99,6 @@
 @property(retain, nonatomic) NSString *localizedModelName; // @synthesize localizedModelName=_localizedModelName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

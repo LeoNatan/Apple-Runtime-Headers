@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     NSString *_destinationPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
 @property double duration; // @synthesize duration=_duration;
 @property(nonatomic) CDUnknownBlockType tcpDumpCompletedBlock; // @synthesize tcpDumpCompletedBlock=_tcpDumpCompletedBlock;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *tcpDumpTimer; // @synthesize tcpDumpTimer=_tcpDumpTimer;
-- (void).cxx_destruct;
 - (id)probeOutputFilePaths;
 - (BOOL)stopNetDiagnosticsTask:(CDUnknownBlockType)arg1;
 - (void)stopTest;

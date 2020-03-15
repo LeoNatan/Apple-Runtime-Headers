@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     UIWebTouchEventsGestureRecognizer *_supportingWebTouchEventsGestureRecognizer;
 }
 
-@property(nonatomic) __weak UIWebTouchEventsGestureRecognizer *supportingWebTouchEventsGestureRecognizer; // @synthesize supportingWebTouchEventsGestureRecognizer=_supportingWebTouchEventsGestureRecognizer;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIWebTouchEventsGestureRecognizer *supportingWebTouchEventsGestureRecognizer; // @synthesize supportingWebTouchEventsGestureRecognizer=_supportingWebTouchEventsGestureRecognizer;
 @property(readonly, nonatomic) NSNumber *lastActiveTouchIdentifier;
 @property(readonly, nonatomic) __weak UIScrollView *lastTouchedScrollView;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

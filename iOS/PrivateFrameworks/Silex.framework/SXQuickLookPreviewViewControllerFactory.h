@@ -16,8 +16,8 @@
     id <SXMediaSharingPolicyProvider> _mediaSharingPolicyProvider;
 }
 
-@property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 - (id)viewControllerForFile:(id)arg1 transitionContext:(id)arg2;
 - (id)initWithMediaSharingPolicyProvider:(id)arg1;
 

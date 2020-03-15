@@ -27,6 +27,7 @@
 
 + (id)consentToString:(unsigned int)arg1;
 + (id)statusToString:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUserDefaults *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) NSDictionary *followUpOptions; // @synthesize followUpOptions=_followUpOptions;
 @property(retain, nonatomic) NSNumber *uploadCompletedPercentage; // @synthesize uploadCompletedPercentage=_uploadCompletedPercentage;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned int consent; // @synthesize consent=_consent;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 - (id)JSONObject;
 - (id)dictionaryRepresentationPretty:(_Bool)arg1;

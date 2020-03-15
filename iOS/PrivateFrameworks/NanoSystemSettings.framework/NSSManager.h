@@ -20,10 +20,10 @@
 + (void)displayAlertFailedRemoteAirplaneMode;
 + (void)displayAlertWithTitle:(id)arg1 body:(id)arg2 icon:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalQueue; // @synthesize externalQueue=_externalQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-- (void).cxx_destruct;
 - (void)getLocalesInfo:(CDUnknownBlockType)arg1;
 - (void)getLegalDocuments:(CDUnknownBlockType)arg1;
 - (void)rebootDevice;

@@ -21,9 +21,9 @@
 }
 
 + (_Bool)isSupported;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool numberOfMatchesExceededLimit; // @synthesize numberOfMatchesExceededLimit=_numberOfMatchesExceededLimit;
-- (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1;
 - (id)_processLocationsInResults:(id)arg1;
 - (id)_processResourcesInResults:(id)arg1;

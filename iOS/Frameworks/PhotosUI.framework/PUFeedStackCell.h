@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct UIOffset _stackOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIOffset stackOffset; // @synthesize stackOffset=_stackOffset;
 @property(retain, nonatomic) PUStackView *stackView; // @synthesize stackView=_stackView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;

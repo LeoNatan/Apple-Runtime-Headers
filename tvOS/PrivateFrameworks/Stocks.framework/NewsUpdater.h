@@ -21,8 +21,8 @@
 
 + (id)_newsItemCollectionCache;
 + (id)sharedNewsUpdater;
-@property(nonatomic) __weak id <NewsUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NewsUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)aggregateDictionaryDomain;
 - (void)resetLocale;
 - (void)didParseData;

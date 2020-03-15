@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) int volumeWarningState; // @synthesize volumeWarningState=_volumeWarningState;
 @property(nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled; // @synthesize volumeWarningEnabled=_volumeWarningEnabled;
 @property(nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) float volumeValue; // @synthesize volumeValue=_volumeValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *observers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

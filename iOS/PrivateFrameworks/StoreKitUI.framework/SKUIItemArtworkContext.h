@@ -24,6 +24,7 @@
 + (id)wishlistContext;
 + (id)roomContext;
 + (id)lockupContextWithSize:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIStyledImageDataConsumer *messagesIconConsumer; // @synthesize messagesIconConsumer=_messagesIconConsumer;
 @property(retain, nonatomic) SKUIProductImageDataConsumer *posterConsumer; // @synthesize posterConsumer=_posterConsumer;
 @property(retain, nonatomic) SKUIStyledImageDataConsumer *newsstandConsumer; // @synthesize newsstandConsumer=_newsstandConsumer;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) SKUIProductImageDataConsumer *generalConsumer; // @synthesize generalConsumer=_generalImageConsumer;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)artworkForItem:(id)arg1;
 - (id)URLForItem:(id)arg1;
 - (id)placeholderImageForItem:(id)arg1;

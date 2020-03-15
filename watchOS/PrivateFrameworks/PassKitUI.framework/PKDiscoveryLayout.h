@@ -17,9 +17,9 @@
     float _lineSpacing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float lineSpacing; // @synthesize lineSpacing=_lineSpacing;
 @property(nonatomic) float interimSpacing; // @synthesize interimSpacing=_interimSpacing;
-- (void).cxx_destruct;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (void)_adjustItems:(id)arg1 withLateralMove:(float)arg2;
 - (void)prepareLayout;

@@ -17,8 +17,8 @@
 + (id)packetWithHeader:(CDStruct_6d9e24e6)arg1;
 + (CDStruct_6d9e24e6)headerFromData:(id)arg1;
 + (id)packetDataWithPayload:(id)arg1;
-@property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 - (id)objectPayload;
 - (id)dataPayload;
 - (unsigned long long)missingLength;

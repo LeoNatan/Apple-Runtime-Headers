@@ -10,6 +10,7 @@
 {
 }
 
++ (BOOL)outputIsExemptFromTaintTrackingInheritance;
 - (void)configureHTTPBodyForRequest:(id)arg1 withMethod:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getContentsOfURLItem:(id)arg1 expectedByteCountHandler:(CDUnknownBlockType)arg2 writtenByteCountHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)configureRuntimeResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;

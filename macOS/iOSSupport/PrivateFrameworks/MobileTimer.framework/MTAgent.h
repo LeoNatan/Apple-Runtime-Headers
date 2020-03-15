@@ -34,6 +34,7 @@
 }
 
 + (id)agent;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTNotificationCenter> notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) MTTimerStorage *timerStorage; // @synthesize timerStorage=_timerStorage;
 @property(retain, nonatomic) MTTimerSnapshot *timerSnapshot; // @synthesize timerSnapshot=_timerSnapshot;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(nonatomic) BOOL systemReady; // @synthesize systemReady=_systemReady;
 @property(retain, nonatomic) NSDate *launchDate; // @synthesize launchDate=_launchDate;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)_diagnosticProviders;

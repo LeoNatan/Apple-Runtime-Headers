@@ -18,13 +18,13 @@
     MKMapSnapshotter *_runningSnapshotter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapSnapshotter *runningSnapshotter; // @synthesize runningSnapshotter=_runningSnapshotter;
 @property(retain, nonatomic) UIColor *endPointColor; // @synthesize endPointColor=_endPointColor;
 @property(retain, nonatomic) UIColor *startPointColor; // @synthesize startPointColor=_startPointColor;
 @property(nonatomic) _Bool useMarkerAnnotations; // @synthesize useMarkerAnnotations=_useMarkerAnnotations;
 @property(nonatomic) _Bool useRelativeColorForSpeed; // @synthesize useRelativeColorForSpeed=_useRelativeColorForSpeed;
 @property(retain, nonatomic) HKLocationReadings *locationReadings; // @synthesize locationReadings=_locationReadings;
-- (void).cxx_destruct;
 - (void)_overlayAnnotationView:(id)arg1 point:(CDStruct_c3b9c2ee)arg2 onSnapshot:(id)arg3 context:(struct CGContext *)arg4;
 - (id)_imageWithPolyline:(id)arg1 lineWidth:(double)arg2 mapRect:(CDStruct_90e2a262)arg3 onSnapshot:(id)arg4;
 - (void)snapshotWithSize:(struct CGSize)arg1 lineWidth:(double)arg2 traitCollection:(id)arg3 completion:(CDUnknownBlockType)arg4;

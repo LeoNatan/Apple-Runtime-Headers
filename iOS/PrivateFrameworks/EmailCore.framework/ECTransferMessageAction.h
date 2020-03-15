@@ -20,10 +20,10 @@
     NSURL *_destinationMailboxURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *destinationMailboxURL; // @synthesize destinationMailboxURL=_destinationMailboxURL;
 @property(retain, nonatomic) NSURL *sourceMailboxURL; // @synthesize sourceMailboxURL=_sourceMailboxURL;
 @property(nonatomic) long long transferType; // @synthesize transferType=_transferType;
-- (void).cxx_destruct;
 - (void)updateWithFailedItems:(id)arg1 forPhase:(long long)arg2;
 - (void)updateWithCompletedItems:(id)arg1 forPhase:(long long)arg2;
 @property(retain, nonatomic) NSArray *itemsToDelete;

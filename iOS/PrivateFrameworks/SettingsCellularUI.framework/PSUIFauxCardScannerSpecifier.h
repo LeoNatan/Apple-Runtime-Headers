@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     TSSIMSetupFlow *_flow;
 }
 
+- (void).cxx_destruct;
 @property(retain) TSSIMSetupFlow *flow; // @synthesize flow=_flow;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
-- (void).cxx_destruct;
 - (long long)userConsentResponse;
 - (void)simSetupFlowCompleted;
 - (void)fauxCardScannerCellPressed:(id)arg1;

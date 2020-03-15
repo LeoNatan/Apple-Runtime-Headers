@@ -65,8 +65,8 @@
 + (id)currentMapsApplicationContainerURL;
 + (id)mapsApplicationContainerPaths;
 + (id)mapsApplicationContainerPathsWithInvalidationHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) NSString *nanoHistorySettingsPath; // @synthesize nanoHistorySettingsPath=_nanoHistorySettingsPath;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *nanoHistorySettingsPath; // @synthesize nanoHistorySettingsPath=_nanoHistorySettingsPath;
 - (BOOL)deleteHistorySyncedMarkerFile;
 @property(readonly, nonatomic) BOOL shouldSyncMergeHistoryAfterCheckingOrCreatingMarkerFile;
 - (BOOL)deleteFavoritesSyncedMarkerFile;

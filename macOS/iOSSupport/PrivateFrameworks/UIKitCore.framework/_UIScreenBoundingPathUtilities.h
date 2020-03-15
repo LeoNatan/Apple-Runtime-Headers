@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)boundingPathUtilitiesForScreen:(id)arg1;
-@property(nonatomic, getter=_screen) __weak UIScreen *screen; // @synthesize screen=_screen;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_screen) __weak UIScreen *screen; // @synthesize screen=_screen;
 - (id)boundingPathForWindow:(id)arg1;
 - (id)initWithScreen:(id)arg1;
 

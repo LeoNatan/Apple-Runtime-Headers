@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id target; // @synthesize target=_target;
 @property(retain, nonatomic) NSMutableArray *pendingInvocations; // @synthesize pendingInvocations=_pendingInvocations;
 @property(retain, nonatomic) NSXPCInterface *interface; // @synthesize interface=_interface;
-- (void).cxx_destruct;
 - (void)_assertVoidReturnValueInInvocation:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long endpoint; // @synthesize endpoint=_endpoint;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInput:(id)arg1 endpoint:(unsigned long long)arg2;

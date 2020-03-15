@@ -14,8 +14,8 @@
     NSPrefCrossFadeView *_crossFadeImageView;
 }
 
-@property(retain) NSWindow *hostSheet; // @synthesize hostSheet=_hostSheet;
 - (void).cxx_destruct;
+@property(retain) NSWindow *hostSheet; // @synthesize hostSheet=_hostSheet;
 - (void)setContentView:(id)arg1 displayAndAnimate:(BOOL)arg2;
 - (id)initWithHostSheet:(id)arg1;
 

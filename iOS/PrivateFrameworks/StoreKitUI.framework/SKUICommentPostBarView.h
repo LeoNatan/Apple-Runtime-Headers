@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     id <SKUICommentDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUICommentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *commenter; // @synthesize commenter=_commenter;
-- (void).cxx_destruct;
 - (void)_postComment;
 - (id)_asLabel;
 - (id)_asNameButton;

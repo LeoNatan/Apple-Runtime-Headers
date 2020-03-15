@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSURL *_davHomeURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *davHomeURL; // @synthesize davHomeURL=_davHomeURL;
 @property(nonatomic) __weak id <BookmarkMergeDriverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_mergeBookmark:(id)arg1 withExistingBookmark:(id)arg2;
 - (void)mergeBookmarkFolder:(id)arg1 withExistingFolder:(id)arg2;
 - (id)initWithUndoController:(id)arg1;

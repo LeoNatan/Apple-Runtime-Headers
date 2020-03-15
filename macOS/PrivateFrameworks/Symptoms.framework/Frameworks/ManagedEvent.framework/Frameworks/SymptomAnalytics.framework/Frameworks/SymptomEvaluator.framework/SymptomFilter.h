@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     Filter *_finalFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) Filter *finalFilter; // @synthesize finalFilter=_finalFilter;
 @property(retain, nonatomic) Filter *currentFilter; // @synthesize currentFilter=_currentFilter;
 @property(readonly, nonatomic) NSMutableDictionary *potentialFilters; // @synthesize potentialFilters=_potentialFilters;
 @property(nonatomic) unsigned int targetSymptomId; // @synthesize targetSymptomId=_targetSymptomId;
-- (void).cxx_destruct;
 - (int)configureItem:(id)arg1;
 - (id)init;
 - (id)description;

@@ -12,9 +12,9 @@
     struct CGAffineTransform _transform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(nonatomic) __weak PXTilingCoordinateSpace *parentSpace; // @synthesize parentSpace=_parentSpace;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) void *identifier;
 - (id)init;
 

@@ -17,11 +17,11 @@
 }
 
 + (id)stringForAliasValidationFailure:(long long)arg1 aliasName:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *aliasLookup; // @synthesize aliasLookup=_aliasLookup;
 @property(retain) NSMutableArray *aliasTimers; // @synthesize aliasTimers=_aliasTimers;
 @property(retain) NSMutableOrderedSet *aliasSet; // @synthesize aliasSet=_aliasSet;
 @property(readonly) __weak IMAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_validationTimerEnded:(id)arg1;
 - (void)_removeTimerForAliasName:(id)arg1;
 - (void)_addAliasTimer:(id)arg1 length:(double)arg2;

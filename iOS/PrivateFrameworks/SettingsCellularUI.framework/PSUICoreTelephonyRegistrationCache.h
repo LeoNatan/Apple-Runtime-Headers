@@ -24,6 +24,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *operatorNameDict; // @synthesize operatorNameDict=_operatorNameDict;
 @property(retain) NSMutableDictionary *maxDataRateDict; // @synthesize maxDataRateDict=_maxDataRateDict;
 @property(retain) NSMutableDictionary *supportedDataRatesDict; // @synthesize supportedDataRatesDict=_supportedDataRatesDict;
@@ -31,7 +32,6 @@
 @property(retain) NSMutableDictionary *imsStatusSMSDict; // @synthesize imsStatusSMSDict=_imsStatusSMSDict;
 @property(retain) NSMutableDictionary *imsStatusVoiceDict; // @synthesize imsStatusVoiceDict=_imsStatusVoiceDict;
 @property(retain, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)operatorNameChanged:(id)arg1 name:(id)arg2;
 - (id)localizedOperatorName:(id)arg1;
 - (void)fetchLocalizedOperatorName;

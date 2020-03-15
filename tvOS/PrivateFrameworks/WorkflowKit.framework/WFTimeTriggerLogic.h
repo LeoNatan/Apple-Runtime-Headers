@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *currentSunsetTime; // @synthesize currentSunsetTime=_currentSunsetTime;
 @property(retain, nonatomic) NSDate *currentSunriseTime; // @synthesize currentSunriseTime=_currentSunriseTime;
-- (void).cxx_destruct;
 - (id)adjustedTime:(id)arg1 byOffset:(unsigned long long)arg2;
 - (id)triggersFromTriggers:(id)arg1 thatShouldFireAtDate:(id)arg2;
 - (id)nextFireDateForTrigger:(id)arg1;

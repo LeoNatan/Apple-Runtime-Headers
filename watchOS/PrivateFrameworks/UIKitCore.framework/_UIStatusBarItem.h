@@ -24,11 +24,11 @@
 + (id)displayItemIdentifierFromIdentifier:(id)arg1 string:(id)arg2;
 + (id)displayItemIdentifierFromString:(id)arg1;
 + (id)itemIdentifierFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) __weak _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 @property(retain, nonatomic) NSMutableDictionary *displayItems; // @synthesize displayItems=_displayItems;
 @property(readonly, nonatomic) _Bool needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(readonly, nonatomic) _UIStatusBarIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
 - (id)displayItemForIdentifier:(id)arg1;
 - (id)createDisplayItemForIdentifier:(id)arg1;

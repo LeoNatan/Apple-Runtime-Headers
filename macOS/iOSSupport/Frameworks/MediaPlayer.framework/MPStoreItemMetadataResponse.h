@@ -19,11 +19,11 @@
     NSArray *_requestItemIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *cacheMissItemIdentifiers; // @synthesize cacheMissItemIdentifiers=_cacheMissItemIdentifiers;
 @property(copy, nonatomic) NSArray *requestItemIdentifiers; // @synthesize requestItemIdentifiers=_requestItemIdentifiers;
 @property(copy, nonatomic) NSArray *lastBatchItemIdentifiers; // @synthesize lastBatchItemIdentifiers=_lastBatchItemIdentifiers;
 @property(nonatomic, getter=isFinalResponse) BOOL finalResponse; // @synthesize finalResponse=_finalResponse;
-- (void).cxx_destruct;
 - (void)setStoreItemMetadata:(id)arg1 forItemIdentifier:(id)arg2;
 - (id)storeItemMetadataForItemIdentifier:(id)arg1 returningIsFinalMetadata:(char *)arg2;
 - (id)storeItemMetadataForItemIdentifier:(id)arg1;

@@ -21,10 +21,10 @@
     unsigned int _materialFace;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int materialFace; // @synthesize materialFace=_materialFace;
 @property(retain, nonatomic) MDLMaterial *baseMaterial; // @synthesize baseMaterial=_baseMaterial;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int count;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;

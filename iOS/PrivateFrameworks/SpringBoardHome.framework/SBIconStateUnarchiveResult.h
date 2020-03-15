@@ -22,9 +22,9 @@
     NSDictionary *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setMetadata:) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic, setter=_setRootFolder:) SBRootFolder *rootFolder; // @synthesize rootFolder=_rootFolder;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

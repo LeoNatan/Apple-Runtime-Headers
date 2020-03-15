@@ -13,8 +13,8 @@
     id <AVTNotifyingContainerViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <AVTNotifyingContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AVTNotifyingContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 

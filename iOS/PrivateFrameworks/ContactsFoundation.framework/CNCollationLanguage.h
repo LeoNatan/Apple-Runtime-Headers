@@ -15,10 +15,10 @@
     NSString *_firstCharacterAfterLanguage;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *firstCharacterAfterLanguage; // @synthesize firstCharacterAfterLanguage=_firstCharacterAfterLanguage;
 @property(readonly) NSString *lastCharacter; // @synthesize lastCharacter=_lastCharacter;
 @property(readonly) NSArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (id)initWithSections:(id)arg1 lastCharacter:(id)arg2 firstCharacterAfterLanguage:(id)arg3;
 
 @end

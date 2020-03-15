@@ -22,6 +22,7 @@
 - (void)stopSharingTripWithContacts:(NSArray *)arg1;
 - (void)startSharingTripWithContacts:(NSArray *)arg1;
 - (void)fetchSendingIdentityWithCompletion:(void (^)(NSString *, NSString *))arg1;
+- (void)fetchAccountAliasesWithCompletion:(void (^)(NSArray *))arg1;
 - (void)fetchAccountValidWithCompletion:(void (^)(_Bool))arg1;
 - (void)checkin;
 @end

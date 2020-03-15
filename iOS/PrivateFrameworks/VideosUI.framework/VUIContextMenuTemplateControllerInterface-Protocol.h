@@ -7,6 +7,7 @@
 #import <VideosUI/NSObject-Protocol.h>
 
 @protocol VUIContextMenuTemplateControllerInterface <NSObject>
+- (void)didDismissTemplateController;
 - (void)didSelectPreviewTemplateController;
 @end
 

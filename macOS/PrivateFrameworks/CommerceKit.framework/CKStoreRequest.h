@@ -32,6 +32,7 @@
 + (id)_macOSVersionString;
 + (id)userAgentForStoreClient:(id)arg1;
 + (void)_processURLResponse:(id)arg1 forRequest:(id)arg2 storeClient:(id)arg3;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *bodyPlist; // @synthesize bodyPlist=_bodyPlist;
 @property(copy) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(copy) NSDictionary *additionalHTTPHeaders; // @synthesize additionalHTTPHeaders=_additionalHTTPHeaders;
@@ -41,7 +42,6 @@
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly) NSString *bagURLKey; // @synthesize bagURLKey=_bagURLKey;
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

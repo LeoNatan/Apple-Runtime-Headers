@@ -14,11 +14,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSURL *defaultValue; // @synthesize defaultValue=_defaultValue;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *defaultValue; // @synthesize defaultValue=_defaultValue;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (void)updateWithDictionary:(id)arg1;
 
 @end

@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedReason; // @synthesize localizedReason=_localizedReason;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned long long activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;

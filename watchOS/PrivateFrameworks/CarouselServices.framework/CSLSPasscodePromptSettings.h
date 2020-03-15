@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *justPinEntryCodeTitle; // @synthesize justPinEntryCodeTitle=_justPinEntryCodeTitle;
 @property(nonatomic) unsigned int justPinEntryMaxCodeLength; // @synthesize justPinEntryMaxCodeLength=_justPinEntryMaxCodeLength;
 @property(nonatomic) unsigned int justPinEntryMinCodeLength; // @synthesize justPinEntryMinCodeLength=_justPinEntryMinCodeLength;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned int transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 @property(nonatomic) _Bool displaysWhileLocked; // @synthesize displaysWhileLocked=_displaysWhileLocked;
 @property(nonatomic, getter=isDismissable) _Bool dismissable; // @synthesize dismissable=_dismissable;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

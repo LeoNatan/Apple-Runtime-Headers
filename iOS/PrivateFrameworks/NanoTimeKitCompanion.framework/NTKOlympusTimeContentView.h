@@ -48,6 +48,7 @@
 }
 
 + (double)scaleForViewDuringColorChangeTransitionWithFraction:(double)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize logoImageSizeForCircularDial; // @synthesize logoImageSizeForCircularDial=_logoImageSizeForCircularDial;
 @property(nonatomic) double analogStyleSwooshPositionFraction; // @synthesize analogStyleSwooshPositionFraction=_analogStyleSwooshPositionFraction;
 @property(nonatomic) double olympusDigitalLabelsPositionFraction; // @synthesize olympusDigitalLabelsPositionFraction=_olympusDigitalLabelsPositionFraction;
@@ -79,7 +80,6 @@
 @property(nonatomic) _Bool invertedColors; // @synthesize invertedColors=_invertedColors;
 @property(nonatomic) __weak id <NTKOlympusContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen;
-- (void).cxx_destruct;
 - (void)timeFormatterTextDidChange:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)containsSubview:(id)arg1;

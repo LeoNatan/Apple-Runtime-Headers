@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *supportedMessages; // @synthesize supportedMessages=_supportedMessages;
 @property(copy, nonatomic) NSArray *supportedPredicates; // @synthesize supportedPredicates=_supportedPredicates;
 @property(copy, nonatomic) NSArray *supportedActivations; // @synthesize supportedActivations=_supportedActivations;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSArray *supportedConfigurations; // @synthesize supportedConfigurations=_supportedConfigurations;
 @property(copy, nonatomic) NSArray *supportedAssets; // @synthesize supportedAssets=_supportedAssets;
 @property(copy, nonatomic) NSArray *supportedCommands; // @synthesize supportedCommands=_supportedCommands;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

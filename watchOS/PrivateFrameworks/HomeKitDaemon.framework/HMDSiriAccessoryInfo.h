@@ -13,9 +13,9 @@
 }
 
 + (id)infoWithTargetableAccessory:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsDragonSiri; // @synthesize supportsDragonSiri=_supportsDragonSiri;
 @property(nonatomic) __weak id targetsAccessory; // @synthesize targetsAccessory=_targetsAccessory;
-- (void).cxx_destruct;
 - (_Bool)isActiveAndSupportsDragonSiri;
 
 @end

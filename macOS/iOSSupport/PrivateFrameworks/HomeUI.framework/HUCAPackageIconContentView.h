@@ -19,12 +19,12 @@
     struct CGSize _assetSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *stateName; // @synthesize stateName=_stateName;
 @property(nonatomic) struct CGSize assetSize; // @synthesize assetSize=_assetSize;
 @property(retain, nonatomic) NSMutableArray *packageLayers; // @synthesize packageLayers=_packageLayers;
 @property(retain, nonatomic) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 @property(retain, nonatomic) CAStateController *stateController; // @synthesize stateController=_stateController;
-- (void).cxx_destruct;
 - (void)stateController:(id)arg1 transitionDidStop:(id)arg2 completed:(BOOL)arg3;
 - (void)stateController:(id)arg1 transitionDidStart:(id)arg2 speed:(float)arg3;
 - (void)stateController:(id)arg1 didSetStateOfLayer:(id)arg2;

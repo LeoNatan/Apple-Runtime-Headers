@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomToTitleLastBaselineConstraint; // @synthesize bottomToTitleLastBaselineConstraint=_bottomToTitleLastBaselineConstraint;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *titleText;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraintConstants;

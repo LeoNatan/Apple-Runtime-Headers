@@ -25,6 +25,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2 derivedAssets:(id)arg3;
 + (id)collectionWithMasterAsset:(id)arg1 fileName:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) long long initialFailureDate; // @synthesize initialFailureDate=_initialFailureDate;
 @property(retain, nonatomic) NSDate *serverUploadedDate; // @synthesize serverUploadedDate=_serverUploadedDate;
 @property(nonatomic) _Bool wasDeleted; // @synthesize wasDeleted=_wasDeleted;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) MSAsset *masterAsset; // @synthesize masterAsset=_masterAsset;
 @property(retain, nonatomic) NSString *ctag; // @synthesize ctag=_ctag;
 @property(retain, nonatomic) NSString *assetCollectionID; // @synthesize assetCollectionID=_assetCollectionID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

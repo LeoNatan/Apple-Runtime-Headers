@@ -23,14 +23,15 @@
 + (id)nullKeyChord;
 + (id)keyChordWithString:(id)arg1;
 + (id)keyChordWithKeys:(id)arg1;
-@property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
 - (id)_displayValueWithSortedModifiers:(id)arg1 isUSKeyboard:(_Bool)arg2;
 - (id)displayValueWithStyle:(long long)arg1 isUSKeyboard:(_Bool)arg2;
 - (id)displayValueWithStyle:(long long)arg1;
 @property(readonly, nonatomic) NSString *displayValue;
 @property(readonly, nonatomic) _Bool isNull;
 @property(readonly, nonatomic) _Bool isTextInputTabChord;
+@property(readonly, nonatomic) _Bool isArrowKeyChord;
 @property(readonly, nonatomic) _Bool isTextInputChord;
 @property(readonly, nonatomic) _Bool containsModifier;
 @property(readonly, nonatomic) _Bool isFunctionKeyChord;
@@ -41,6 +42,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_normalizeKeys:(id)arg1;
 - (id)_initWithKeys:(id)arg1;
 
 @end

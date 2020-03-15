@@ -25,6 +25,7 @@
     NSArray *_throwBalloonViewAttributesCollection;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *throwBalloonViewAttributesCollection; // @synthesize throwBalloonViewAttributesCollection=_throwBalloonViewAttributesCollection;
 @property(retain, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 @property(retain, nonatomic) CABackdropLayer *backdropLayer; // @synthesize backdropLayer=_backdropLayer;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *impactIdentifier; // @synthesize impactIdentifier=_impactIdentifier;
 @property(copy, nonatomic) NSArray *animatableTextViews; // @synthesize animatableTextViews=_animatableTextViews;
 @property(copy, nonatomic) NSArray *animatableViews; // @synthesize animatableViews=_animatableViews;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

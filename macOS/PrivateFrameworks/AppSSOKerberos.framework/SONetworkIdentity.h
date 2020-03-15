@@ -17,11 +17,11 @@
     NSObject<OS_nw_path> *_lastpath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_nw_path> *lastpath; // @synthesize lastpath=_lastpath;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;
 @property(retain, nonatomic) NSString *networkFingerprint; // @synthesize networkFingerprint=_networkFingerprint;
-- (void).cxx_destruct;
 - (id)getInterfaceSignature:(id)arg1;
 - (id)getVPNServerSignature:(id)arg1;
 - (void)determineNetworkFingerprint;

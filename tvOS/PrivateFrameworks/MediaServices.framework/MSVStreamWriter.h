@@ -29,6 +29,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
 @property(retain, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
@@ -39,10 +40,9 @@
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic, getter=isCompressed) _Bool compressed; // @synthesize compressed=_compressed;
 @property(nonatomic) unsigned long long maximumBufferSize; // @synthesize maximumBufferSize=_maximumBufferSize;
-- (void).cxx_destruct;
 - (void)_onQueue_stop;
 - (void)_writeAvailablePendingData;
-- (id)_decompressData:(id)arg1;
+- (_Bool)_processInput:(id)arg1 generatingDecompressedData:(id *)arg2;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)writeStreamError:(CDStruct_87dc826d)arg1;
 - (_Bool)writeAllData:(id)arg1 error:(id *)arg2;

@@ -15,8 +15,8 @@
     id _handler;
 }
 
-@property(readonly, nonatomic) id handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id handler; // @synthesize handler=_handler;
 - (id)handlerForIntent:(id)arg1;
 - (id)initWithHandler:(id)arg1;
 

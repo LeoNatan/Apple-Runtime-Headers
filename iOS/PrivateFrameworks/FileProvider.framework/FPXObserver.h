@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     _Bool _invalidated;
 }
 
-@property(readonly, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 - (void).cxx_destruct;
+@property(readonly, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 - (void)verifyVendorToken:(id)arg1;
 - (void)invalidate;
 - (id)updateForProviderItem:(id)arg1;

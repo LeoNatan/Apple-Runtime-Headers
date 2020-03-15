@@ -29,6 +29,7 @@
     NSArray *_captureInitialDecomposedFragments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *captureInitialDecomposedFragments; // @synthesize captureInitialDecomposedFragments=_captureInitialDecomposedFragments;
 @property(readonly, nonatomic) double captureInsertionDurationInComposition; // @synthesize captureInsertionDurationInComposition=_captureInsertionDurationInComposition;
 @property(readonly, nonatomic) double captureInsertionTimeInComposition; // @synthesize captureInsertionTimeInComposition=_captureInsertionTimeInComposition;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic, getter=isOverdub) BOOL overdub; // @synthesize overdub=_overdub;
 @property(readonly, nonatomic) RCCompositionFragment *destinationFragment; // @synthesize destinationFragment=_destinationFragment;
 @property(readonly, nonatomic) RCComposition *destinationComposition; // @synthesize destinationComposition=_destinationComposition;
-- (void).cxx_destruct;
 - (BOOL)shouldMergeLiveWaveform;
 - (void)_truncateAccumulatedWaveformSegmentsToEndTime:(double)arg1;
 - (void)_extendAccumulatedWaveformSegmentsToMatchFinalDuration:(double)arg1;

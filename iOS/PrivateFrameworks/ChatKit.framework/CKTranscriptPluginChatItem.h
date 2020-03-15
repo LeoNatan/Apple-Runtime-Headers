@@ -20,6 +20,7 @@
     NSArray *_recipients;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isBusiness; // @synthesize isBusiness=_isBusiness;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(retain, nonatomic) NSString *conversationID; // @synthesize conversationID=_conversationID;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) IMTranscriptPluginChatItem *imTranscriptPluginChatItem; // @synthesize imTranscriptPluginChatItem=_imTranscriptPluginChatItem;
 @property(nonatomic) __weak id <CKTranscriptBalloonPluginController> balloonController; // @synthesize balloonController=_balloonController;
 @property(nonatomic) _Bool isAppearing; // @synthesize isAppearing=_isAppearing;
-- (void).cxx_destruct;
 - (void)performHostAppResume;
 - (void)releaseBalloonControllerIfNeeded;
 - (void)relinquishBalloonController;

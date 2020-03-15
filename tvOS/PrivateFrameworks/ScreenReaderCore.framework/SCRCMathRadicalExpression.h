@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     SCRCMathExpression *_rootIndex;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRCMathExpression *rootIndex; // @synthesize rootIndex=_rootIndex;
 @property(retain, nonatomic) SCRCMathExpression *radicand; // @synthesize radicand=_radicand;
-- (void).cxx_destruct;
 - (id)latexMathModeDescription;
 - (id)mathMLString;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;

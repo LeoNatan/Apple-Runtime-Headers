@@ -19,11 +19,11 @@
     UIImageView *_keyboardImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *keyboardImageView; // @synthesize keyboardImageView=_keyboardImageView;
 @property(retain, nonatomic) WFVariablesViewController *specialVariablesViewController; // @synthesize specialVariablesViewController=_specialVariablesViewController;
 @property(retain, nonatomic) WFVariablesViewController *variablesViewController; // @synthesize variablesViewController=_variablesViewController;
 @property(nonatomic) __weak id <WFVariableShortcutsTrayDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)variablesViewControllerDidSelectMagicVariable:(id)arg1;
 - (void)variablesViewController:(id)arg1 didSelectVariable:(id)arg2;
 @property(copy, nonatomic) NSArray *suggestedVariables;

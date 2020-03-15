@@ -17,11 +17,11 @@
     CDPDevice *_device;
 }
 
+- (void).cxx_destruct;
 @property _Bool remoteAccountRecovery; // @synthesize remoteAccountRecovery=_remoteAccountRecovery;
 @property(retain, nonatomic) CDPDevice *device; // @synthesize device=_device;
 @property(nonatomic) unsigned long long remoteSecretType; // @synthesize remoteSecretType=_remoteSecretType;
 @property(retain, nonatomic) CDPRemoteValidationEscapeOffer *escapeOffer; // @synthesize escapeOffer=_escapeOffer;
-- (void).cxx_destruct;
 - (id)_headerStringForDevice:(id)arg1 localDeviceClass:(id)arg2;
 - (void)didFinishResizingPinView;
 - (void)didFinishResizingHeaderView;

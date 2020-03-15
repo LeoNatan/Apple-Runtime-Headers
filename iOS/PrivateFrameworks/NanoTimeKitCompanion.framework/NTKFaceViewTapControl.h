@@ -15,8 +15,8 @@
     UIImageView *_highlightImageView;
 }
 
-@property(retain, nonatomic) UIImageView *highlightImageView; // @synthesize highlightImageView=_highlightImageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *highlightImageView; // @synthesize highlightImageView=_highlightImageView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)layoutSubviews;

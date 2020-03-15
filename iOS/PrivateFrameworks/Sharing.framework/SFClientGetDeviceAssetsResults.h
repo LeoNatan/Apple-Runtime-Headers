@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *assetBundlePath; // @synthesize assetBundlePath=_assetBundlePath;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *assetBundlePath; // @synthesize assetBundlePath=_assetBundlePath;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -29,6 +29,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DiagnosticLiaison *diagnosticLiaison; // @synthesize diagnosticLiaison=_diagnosticLiaison;
 @property(retain, nonatomic) ABCConfigurationManager *configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) ABCPersistentStoreController *storeController; // @synthesize storeController=_storeController;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) BOOL autoBugCaptureAdministrativelyEnabled; // @synthesize autoBugCaptureAdministrativelyEnabled=_autoBugCaptureAdministrativelyEnabled;
 @property(nonatomic) int autoBugCaptureState; // @synthesize autoBugCaptureState=_autoBugCaptureState;
 @property(retain, nonatomic) CloudKitUploadController *ckUploadController; // @synthesize ckUploadController=_uploadController;
-- (void).cxx_destruct;
 - (void)shutdownAgent;
 - (void)startupAgent;
 - (id)internalStateDictionary;

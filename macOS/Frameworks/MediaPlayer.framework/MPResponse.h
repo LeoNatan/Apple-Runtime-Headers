@@ -20,11 +20,11 @@
 }
 
 + (id)builderProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id builder; // @synthesize builder=_builder;
 @property(copy, nonatomic) NSArray *middleware; // @synthesize middleware=_middleware;
 @property(readonly, nonatomic, getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(readonly, copy, nonatomic) id request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)_stateDumpObject;
 - (id)chain;
 - (void)invalidate;

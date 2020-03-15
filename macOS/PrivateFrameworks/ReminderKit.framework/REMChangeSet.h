@@ -26,6 +26,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)errorChangeSetWithError:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unfilteredTransactions; // @synthesize unfilteredTransactions=_unfilteredTransactions;
 @property(nonatomic) BOOL filterByTransactionAuthorsIsExclusion; // @synthesize filterByTransactionAuthorsIsExclusion=_filterByTransactionAuthorsIsExclusion;
 @property(retain, nonatomic) NSArray *filterByTransactionAuthorStrings; // @synthesize filterByTransactionAuthorStrings=_filterByTransactionAuthorStrings;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSArray *updates; // @synthesize updates=_updates;
 @property(retain, nonatomic) NSArray *inserts; // @synthesize inserts=_inserts;
 @property(readonly, nonatomic) NSArray *transactions; // @synthesize transactions=_transactions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,8 +16,8 @@
 }
 
 + (Class)identifiersType;
-@property(retain, nonatomic) NSMutableArray *identifiers; // @synthesize identifiers=_identifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *identifiers; // @synthesize identifiers=_identifiers;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

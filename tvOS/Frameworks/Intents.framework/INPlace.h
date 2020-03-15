@@ -22,11 +22,11 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long personalPlaceType; // @synthesize personalPlaceType=_personalPlaceType;
 @property(readonly, copy, nonatomic) NSArray *placeDescriptors; // @synthesize placeDescriptors=_placeDescriptors;
 @property(readonly, copy, nonatomic) NSString *placeSubType; // @synthesize placeSubType=_placeSubType;
 @property(readonly, copy, nonatomic) NSString *placeType; // @synthesize placeType=_placeType;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

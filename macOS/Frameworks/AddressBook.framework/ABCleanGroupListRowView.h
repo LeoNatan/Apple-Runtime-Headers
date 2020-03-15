@@ -8,16 +8,14 @@
 
 #import <AddressBook/ABGroupListRowView-Protocol.h>
 
-@class NSString, NSTrackingArea;
+@class NSString;
 
 @interface ABCleanGroupListRowView : NSTableRowView <ABGroupListRowView>
 {
     BOOL _highlighted;
-    NSTrackingArea *_contentTrackingArea;
 }
 
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)addTrackingAreaToVisibleRect;

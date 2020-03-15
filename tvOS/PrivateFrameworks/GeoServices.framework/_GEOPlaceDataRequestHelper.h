@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)helperExpiredIdentifiers:(id)arg1;
 + (id)helperForHandler:(CDUnknownBlockType)arg1 identifiers:(id)arg2;
 - (void).cxx_destruct;
+- (void)failAllRemainingRequests;
 - (_Bool)finishedIdentifier:(id)arg1 withResult:(id)arg2 error:(id)arg3;
 - (id)description;
 

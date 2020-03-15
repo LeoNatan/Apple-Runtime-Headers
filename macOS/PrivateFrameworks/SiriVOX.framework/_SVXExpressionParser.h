@@ -13,8 +13,8 @@
     id <SVXExpressionParsingServing> _parsingService;
 }
 
-@property(retain, nonatomic) id <SVXExpressionParsingServing> parsingService; // @synthesize parsingService=_parsingService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SVXExpressionParsingServing> parsingService; // @synthesize parsingService=_parsingService;
 - (id)initWithParsingService:(id)arg1;
 - (id)init;
 

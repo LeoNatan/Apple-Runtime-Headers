@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSOperation *_searchFetchOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *searchFetchOperation; // @synthesize searchFetchOperation=_searchFetchOperation;
 @property(retain, nonatomic) TVHKMediaEntitySearchLibrary *searchLibrary; // @synthesize searchLibrary=_searchLibrary;
 @property(copy, nonatomic) TVHSMediaServerSessionState *sessionState; // @synthesize sessionState=_sessionState;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TVHKMediaEntitySearchRequest *request; // @synthesize request=_request;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) TVHKMediaEntitySearchResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (id)_searchResponse;
 - (void)_startSearchFetchOperation;
 - (void)cancel;

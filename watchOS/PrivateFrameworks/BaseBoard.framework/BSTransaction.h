@@ -39,11 +39,11 @@
 }
 
 + (id)_defaultTransactionLog;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAborted) _Bool aborted; // @synthesize aborted=_aborted;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic, getter=isFailed) _Bool failed; // @synthesize failed=_failed;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)_loggingProem;
 - (id)_descriptionProem;
 - (void)_removeDebugLogCategory:(id)arg1;

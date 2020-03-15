@@ -19,24 +19,27 @@
     NSArray *_linkActions;
     _WKActivatedElementInfo *_activatedElementInfo;
     NSURL *_URL;
+    struct CGSize _preferredDocumentContentSize;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) struct CGSize preferredDocumentContentSize; // @synthesize preferredDocumentContentSize=_preferredDocumentContentSize;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(retain, nonatomic) _WKActivatedElementInfo *activatedElementInfo; // @synthesize activatedElementInfo=_activatedElementInfo;
 @property(retain, nonatomic) NSArray *linkActions; // @synthesize linkActions=_linkActions;
 @property(nonatomic) __weak id <_SFAdaptivePreviewViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+- (void)linkPreviewHeaderBoundsDidChange:(id)arg1;
 - (void)linkPreviewHeader:(id)arg1 didEnableLinkPreview:(_Bool)arg2;
+- (void)_updatePreferredContentSize;
 - (_Bool)_allowsUserInteractionWhenPreviewedInContextMenu;
-- (id)previewActionItems;
+@property(readonly, nonatomic) _Bool showingLinkPreview;
 @property(readonly, nonatomic) UIViewController *contentViewController;
-- (void)viewDidLayoutSubviews;
 - (void)setLinkPreviewEnabled:(_Bool)arg1;
 - (void)_removeViewController:(id)arg1;
 - (void)_setUpTextPreviewViewControllerIfNeeded;
 - (void)_addViewFromViewController:(id)arg1;
 - (void)_setUpLinkPreviewViewControllerIfNeeded;
-- (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithURL:(id)arg1;
 

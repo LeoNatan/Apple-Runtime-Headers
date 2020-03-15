@@ -51,7 +51,7 @@
     // Error parsing type: , name: cachedIdealSize
     // Error parsing type: , name: cachedSizeThatFits
     // Error parsing type: , name: sizeThatFitsObserver
-    // Error parsing type: , name: outputs
+    // Error parsing type: , name: requestedOutputs
     // Error parsing type: , name: disabledOutputs
     // Error parsing type: , name: needsFocusUpdate
     // Error parsing type: , name: pendingTransactions

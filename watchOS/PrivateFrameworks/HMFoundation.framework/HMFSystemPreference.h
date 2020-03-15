@@ -15,8 +15,8 @@
     NSString *_domain;
 }
 
-@property(readonly, copy) NSString *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *domain; // @synthesize domain=_domain;
 @property(readonly, copy) NSString *propertyDescription;
 - (id)initWithKey:(id)arg1 options:(unsigned int)arg2 domain:(id)arg3 defaultValue:(id)arg4 parent:(id)arg5;
 - (id)initWithKey:(id)arg1 options:(unsigned int)arg2 domain:(id)arg3 defaultValue:(id)arg4;

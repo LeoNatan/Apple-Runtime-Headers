@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (id)fileID;
 - (_Bool)saveToDB;
 - (_Bool)isZoneRoot;
-- (struct BRCDirectoryItem *)asFSRoot;
+- (id)asFSRoot;
 - (_Bool)isFSRoot;
 - (id)initWithZoneRootItemID:(id)arg1 session:(id)arg2;
 

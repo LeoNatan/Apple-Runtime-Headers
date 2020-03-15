@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_contentMIMEType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contentMIMEType; // @synthesize contentMIMEType=_contentMIMEType;
 @property(retain, nonatomic) NSURL *originatingURL; // @synthesize originatingURL=_originatingURL;
-- (void).cxx_destruct;
 - (BOOL)writeToUniqueFileInDirectory:(id)arg1 attemptedURL:(id *)arg2 shouldSetPrivacySensitiveQuarantineProperties:(BOOL)arg3;
 
 @end

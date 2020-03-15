@@ -25,6 +25,7 @@
     NSArray *_suggestedNicknames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *suggestedNicknames; // @synthesize suggestedNicknames=_suggestedNicknames;
 @property(retain, nonatomic) GKReachability *reachability; // @synthesize reachability=_reachability;
 @property(nonatomic) _Bool nicknameWasEdited; // @synthesize nicknameWasEdited=_nicknameWasEdited;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool nicknameChangeWasCommitted; // @synthesize nicknameChangeWasCommitted=_nicknameChangeWasCommitted;
 @property(retain, nonatomic) GKNicknameInputAccessoryView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) UITextField *nickname; // @synthesize nickname=_nickname;
-- (void).cxx_destruct;
 - (void)textFieldDidResignFirstResponder:(id)arg1;
 - (void)textFieldDidBecomeFirstResponder:(id)arg1;
 - (void)keyboardWillHide:(id)arg1;

@@ -17,12 +17,12 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) double guessesRequired; // @synthesize guessesRequired=_guessesRequired;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(readonly, copy, nonatomic) NSString *matchedSubstring; // @synthesize matchedSubstring=_matchedSubstring;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)compactDescriptionWithMatchedStringColumnWidth:(unsigned long long)arg1;
 - (id)description;
 - (unsigned long long)hash;

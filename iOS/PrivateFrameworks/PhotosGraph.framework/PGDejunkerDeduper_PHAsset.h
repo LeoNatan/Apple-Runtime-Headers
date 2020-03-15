@@ -17,10 +17,10 @@
     NSSet *_verifiedPersonLocalIdentifiers;
 }
 
+- (void).cxx_destruct;
 - (void)setVerifiedPersonLocalIdentifiers:(id)arg1;
 - (id)verifiedPersonLocalIdentifiers;
 @property(readonly) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-- (void).cxx_destruct;
 - (id)itemsSortedByScoreWithItems:(id)arg1 options:(id)arg2;
 - (id)featureWithItem:(id)arg1;
 - (id)faceprintByPersonLocalIdentifierByItemIdentifierWithItems:(id)arg1;

@@ -37,6 +37,7 @@
 + (_Bool)isAvailableForConfiguration;
 + (unsigned long long)requiredCapabilities;
 + (Class)viewClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSWallpaperViewProviding> wallpaperViewProvider; // @synthesize wallpaperViewProvider=_wallpaperViewProvider;
 @property(nonatomic) __weak id <CSUserSessionControlling> userSessionController; // @synthesize userSessionController=_userSessionController;
 @property(nonatomic) __weak id <CSTouchEnvironmentStatusProviding> touchEnvironmentStatusProvider; // @synthesize touchEnvironmentStatusProvider=_touchEnvironmentStatusProvider;
@@ -45,7 +46,6 @@
 @property(nonatomic) __weak id <CSWallpaperColorProvider> wallpaperColorProvider; // @synthesize wallpaperColorProvider=_wallpaperColorProvider;
 @property(retain, nonatomic) CSLayoutStrategy *layoutStrategy; // @synthesize layoutStrategy=_layoutStrategy;
 @property(readonly, nonatomic) CSCombinedListViewController *combinedListViewController; // @synthesize combinedListViewController=_combinedListViewController;
-- (void).cxx_destruct;
 - (void)_addOrRemoveViewsAsAppropriate;
 - (void)_addOrRemoveNotificationsListIfNecessaryAnimated:(_Bool)arg1;
 - (void)_addOrRemoveLogoutButtonViewController;

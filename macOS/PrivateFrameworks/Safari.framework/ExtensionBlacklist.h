@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateBlacklists:(id)arg1;
 - (void)_updateLegacyExtensionBlacklist:(id)arg1;
 - (BOOL)containsAppExtensionWithDeveloperIdentifier:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3;
-- (BOOL)containsExtensionWithDeveloperIdentifier:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3;
+- (BOOL)containsLegacyExtensionWithDeveloperIdentifier:(id)arg1 bundleIdentifier:(id)arg2 version:(id)arg3;
 - (void)_updateFromXProtectIfNecessary:(id)arg1;
 - (void)_readBlacklist:(int)arg1 finishedLoadingHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

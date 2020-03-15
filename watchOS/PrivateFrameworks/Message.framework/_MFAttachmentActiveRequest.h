@@ -18,13 +18,13 @@
     double _lastProgressTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastProgressTime; // @synthesize lastProgressTime=_lastProgressTime;
 @property(nonatomic) long long lastProgressBytes; // @synthesize lastProgressBytes=_lastProgressBytes;
 @property(readonly, nonatomic) _Bool wantsCompletionBlockOffMainThread; // @synthesize wantsCompletionBlockOffMainThread=_wantsCompletionBlockOffMainThread;
 @property(readonly, copy, nonatomic) CDUnknownBlockType fetchCompletionBlock; // @synthesize fetchCompletionBlock=_fetchCompletionBlock;
 @property(readonly, nonatomic) NSProgress *downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(readonly, nonatomic) MFAttachment *attachment; // @synthesize attachment=_attachment;
-- (void).cxx_destruct;
 - (void)completeWithData:(id)arg1 error:(id)arg2;
 - (id)initWithAttachment:(id)arg1;
 

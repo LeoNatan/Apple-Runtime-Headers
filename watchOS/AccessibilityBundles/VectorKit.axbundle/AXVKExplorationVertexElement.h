@@ -20,6 +20,7 @@
     CDStruct_2c43369c _coordinates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *roads; // @synthesize roads=_roads;
 @property(retain, nonatomic) NSMutableArray *neighbors; // @synthesize neighbors=_neighbors;
 @property(retain, nonatomic) NSMutableArray *edges; // @synthesize edges=_edges;
@@ -28,7 +29,6 @@
 @property(nonatomic) _Bool isComputed; // @synthesize isComputed=_isComputed;
 @property(nonatomic) __weak VKMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) CDStruct_2c43369c coordinates; // @synthesize coordinates=_coordinates;
-- (void).cxx_destruct;
 - (id)description;
 - (id)accessibilityLabel;
 - (struct CGPoint)getScreenPoint;

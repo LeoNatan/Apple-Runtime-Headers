@@ -13,8 +13,8 @@
     NSString *_mailboxName;
 }
 
-@property(retain, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 @property(retain) IMAPNetworkTaskHandler *handler;
 - (id)init;
 - (id)initWithMailboxName:(id)arg1;

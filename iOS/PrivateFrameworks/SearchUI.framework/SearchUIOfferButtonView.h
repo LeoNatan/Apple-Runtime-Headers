@@ -16,11 +16,11 @@
     UIButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) TLKEmbossedLabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *symbolImageName; // @synthesize symbolImageName=_symbolImageName;
 @property(retain, nonatomic) NSString *offerTitle; // @synthesize offerTitle=_offerTitle;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)didMoveToWindow;

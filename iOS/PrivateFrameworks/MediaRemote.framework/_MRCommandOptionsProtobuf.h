@@ -73,6 +73,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *userIdentityData; // @synthesize userIdentityData=_userIdentityData;
 @property(retain, nonatomic) NSData *playbackSession; // @synthesize playbackSession=_playbackSession;
 @property(nonatomic) _Bool endSeek; // @synthesize endSeek=_endSeek;
@@ -106,7 +107,6 @@
 @property(nonatomic) _Bool externalPlayerCommand; // @synthesize externalPlayerCommand=_externalPlayerCommand;
 @property(retain, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

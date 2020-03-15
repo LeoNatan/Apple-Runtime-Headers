@@ -16,8 +16,8 @@
     NSString *_personalizationSectionIdentifier;
 }
 
-@property(retain, nonatomic) NSString *personalizationSectionIdentifier; // @synthesize personalizationSectionIdentifier=_personalizationSectionIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *personalizationSectionIdentifier; // @synthesize personalizationSectionIdentifier=_personalizationSectionIdentifier;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

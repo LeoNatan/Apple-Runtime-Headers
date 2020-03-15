@@ -13,7 +13,7 @@
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDelayedBlock, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
+@class NSArray, NSDate, NSDateFormatter, NSNumber, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDelayedBlock, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 
 @interface NTKAstronomyFaceView : NTKDigitalFaceView <NTKTimeView, NTKAstronomyRotationModelObserver, NTKAstronomyVistaViewObserver, UIGestureRecognizerDelegate, PUICCrownInputSequencerDelegate, NTKTritiumMetalContentView>
 {
@@ -30,7 +30,7 @@
     UIPanGestureRecognizer *_spheroidPanGesture;
     UITapGestureRecognizer *_supplementalModeDoubleTapGesture;
     UITapGestureRecognizer *_interactiveModeTapGesture;
-    struct NSString *_locationManagerToken;
+    NSString *_locationManagerToken;
     NTKAstronomyVistaView *_astronomyVistaView;
     NTKColoringLabel *_scrubLabel;
     NTKColoringLabel *_phaseLabel;
@@ -39,7 +39,7 @@
     NTKAstronomyLocationDot *_locationDot;
     NSDate *_overrideDate;
     NSDate *_crownDate;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
     NSDateFormatter *_scrubDateFormatter[3];
     struct CGRect _phaseLabelDefaultFrame;
     float _supplementalFontLineHeightPlusDescender;

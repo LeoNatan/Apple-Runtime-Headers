@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     UIScene *_scene;
 }
 
-@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (long long)_alertControllerStackCount;
 - (_Bool)_alertControllerShouldBeTrackedInStack:(id)arg1;
 - (void)_didHideAlertController:(id)arg1;

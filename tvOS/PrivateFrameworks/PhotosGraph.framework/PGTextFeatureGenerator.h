@@ -36,6 +36,7 @@
 
 + (id)_knowledgeOptionsByDomain;
 + (id)_naturalLanguageOptionsByDomain;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *optionsByDomain; // @synthesize optionsByDomain=_optionsByDomain;
 @property(retain, nonatomic) NSCountedSet *publicEventCategoryNodes; // @synthesize publicEventCategoryNodes=_publicEventCategoryNodes;
 @property(retain, nonatomic) NSCountedSet *publicEventPerformerNodes; // @synthesize publicEventPerformerNodes=_publicEventPerformerNodes;
@@ -58,7 +59,6 @@
 @property(nonatomic) unsigned long long numberOfMoments; // @synthesize numberOfMoments=_numberOfMoments;
 @property(retain, nonatomic) NSMutableSet *momentIdentifiers; // @synthesize momentIdentifiers=_momentIdentifiers;
 @property(retain, nonatomic) NSSet *momentNodes; // @synthesize momentNodes=_momentNodes;
-- (void).cxx_destruct;
 - (id)_sortedTextFeaturesUsingWeightAndTypeFromTextFeatures:(id)arg1;
 - (id)_textFeaturesForPersonNodes:(id)arg1;
 - (id)_textFeaturesForNode:(id)arg1 type:(unsigned long long)arg2 weight:(float)arg3;

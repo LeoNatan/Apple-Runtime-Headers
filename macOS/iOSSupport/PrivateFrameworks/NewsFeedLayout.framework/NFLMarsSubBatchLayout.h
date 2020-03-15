@@ -18,13 +18,13 @@
     NFLSingleComponentLayout *_bottomComponent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFLSingleComponentLayout *bottomComponent; // @synthesize bottomComponent=_bottomComponent;
 @property(retain, nonatomic) NFLSingleComponentLayout *bottomRightComponent; // @synthesize bottomRightComponent=_bottomRightComponent;
 @property(retain, nonatomic) NFLSingleComponentLayout *bottomLeftComponent; // @synthesize bottomLeftComponent=_bottomLeftComponent;
 @property(retain, nonatomic) NFLSingleComponentLayout *topRightComponent; // @synthesize topRightComponent=_topRightComponent;
 @property(retain, nonatomic) NFLSingleComponentLayout *topLeftComponent; // @synthesize topLeftComponent=_topLeftComponent;
 @property(retain, nonatomic) NFLSingleComponentLayout *largeComponent; // @synthesize largeComponent=_largeComponent;
-- (void).cxx_destruct;
 - (id)layoutInfosAtRowOrigin:(long long)arg1 columnOrigin:(long long)arg2 subBatchRowOffset:(long long)arg3 feedSettings:(id)arg4;
 - (unsigned long long)rowSpan;
 - (id)singleComponentLayouts;

@@ -23,6 +23,7 @@
 {
     NSMutableSet *_registeredCellReuseIdentifiers;
     NSMapTable *_cellsToGadgets;
+    _Bool _isScrolling;
     _Bool _currentlyVisible;
     _Bool _loadingGadgets;
     _Bool _gadgetAnimating;
@@ -47,6 +48,7 @@
 }
 
 + (Class)gadgetSpecClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldPreventPlaceholder; // @synthesize shouldPreventPlaceholder=_shouldPreventPlaceholder;
 @property(retain, nonatomic) PXContentUnavailablePlaceholderManager *placeholderManager; // @synthesize placeholderManager=_placeholderManager;
 @property(retain, nonatomic) PXContentUnavailableView *placeholderView; // @synthesize placeholderView=_placeholderView;
@@ -63,12 +65,12 @@
 @property(nonatomic, getter=isCurrentlyVisible) _Bool currentlyVisible; // @synthesize currentlyVisible=_currentlyVisible;
 @property(retain, nonatomic) PXGadgetDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) PXUpdater *updater; // @synthesize updater=_updater;
+@property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned long long numberOfInitialGadgetsToLoad; // @synthesize numberOfInitialGadgetsToLoad=_numberOfInitialGadgetsToLoad;
 @property(readonly, nonatomic) PXGadgetAnchorHelper *anchorHelper; // @synthesize anchorHelper=_anchorHelper;
 @property(readonly, nonatomic) PXGadgetNavigationHelper *navigationHelper; // @synthesize navigationHelper=_navigationHelper;
 @property(readonly, nonatomic) PXGadgetDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (long long)scrollAnimationIdentifier;
 @property(readonly, nonatomic) NSObject<OS_os_log> *gadgetViewControllerLog;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
@@ -91,11 +93,11 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> nextGadgetResponder;
 @property(readonly, nonatomic) PXGadgetNavigationHelper *rootNavigationHelper;
 @property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
-- (void)dismissGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)presentGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)gadget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)dismissGadgetViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentGadgetViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)gadget:(id)arg1 transitionToViewController:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)gadget:(id)arg1 animateChanges:(CDUnknownBlockType)arg2;
-- (struct NSObject *)gadgetViewControllerHostingGadget:(id)arg1;
+- (id)gadgetViewControllerHostingGadget:(id)arg1;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -107,9 +109,8 @@
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (_Bool)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
-- (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
@@ -139,7 +140,6 @@
 - (id)_gadgetAtIndexPath:(id)arg1;
 - (void)updateIfNeeded;
 - (void)_updaterNeedsUpdate;
-@property(readonly, nonatomic) _Bool isScrolling;
 - (void)setLayout:(id)arg1;
 @property(readonly, nonatomic) PXGadgetCollectionViewLayout *layout;
 - (id)debugURLsForDiagnostics;

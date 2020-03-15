@@ -13,9 +13,11 @@
     CNGroup *_group;
 }
 
++ (unsigned long long)instanceSortOrder;
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) CNGroup *group; // @synthesize group=_group;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNGroup *group; // @synthesize group=_group;
+- (long long)comparisonResultWithinSameClass:(id)arg1;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

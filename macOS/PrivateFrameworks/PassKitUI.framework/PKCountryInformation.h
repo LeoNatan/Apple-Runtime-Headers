@@ -14,9 +14,9 @@
     NSString *_localizedCountryName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *localizedCountryName; // @synthesize localizedCountryName=_localizedCountryName;
 @property(retain, nonatomic) CNCountryInformation *countryInformation; // @synthesize countryInformation=_countryInformation;
-- (void).cxx_destruct;
 
 @end
 

@@ -13,8 +13,8 @@
     id <_UIFocusGuideRegionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_UIFocusGuideRegionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_UIFocusGuideRegionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext *)arg2;
 - (BOOL)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 - (long long)_visualRepresentationPatternType;

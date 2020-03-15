@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     UIView *_labelContainer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIView *labelContainer; // @synthesize labelContainer=_labelContainer;
 @property(readonly, nonatomic) __weak UIView *spinnerContainer; // @synthesize spinnerContainer=_spinnerContainer;
 @property(nonatomic) _Bool shouldShowSpinner; // @synthesize shouldShowSpinner=_shouldShowSpinner;
 @property(readonly, nonatomic) __weak UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;
 @property(nonatomic) __weak UIView *loadingTitleLabel; // @synthesize loadingTitleLabel=_loadingTitleLabel;
 @property(readonly, nonatomic) __weak _TVImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
-- (void).cxx_destruct;
 - (void)_showSpinner;
 - (_Bool)canBecomeFocused;
 - (void)layoutSubviews;

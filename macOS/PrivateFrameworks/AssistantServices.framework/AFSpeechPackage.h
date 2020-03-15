@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isFinal; // @synthesize isFinal=_isFinal;
 @property(readonly, nonatomic) AFSpeechAudioAnalytics *audioAnalytics; // @synthesize audioAnalytics=_audioAnalytics;
 @property(readonly, nonatomic) AFSpeechRecognition *rawRecognition; // @synthesize rawRecognition=_rawRecognition;
 @property(readonly, nonatomic) AFSpeechRecognition *recognition; // @synthesize recognition=_recognition;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRecognition:(id)arg1 rawRecognition:(id)arg2 audioAnalytics:(id)arg3 isFinal:(BOOL)arg4;
 - (id)initWithCoder:(id)arg1;

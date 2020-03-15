@@ -15,8 +15,8 @@
     NSSet *_operations;
 }
 
-@property(copy, nonatomic) NSSet *operations; // @synthesize operations=_operations;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *operations; // @synthesize operations=_operations;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

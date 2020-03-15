@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     NSArray *_allowedDomains;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *allowedDomains; // @synthesize allowedDomains=_allowedDomains;
 @property(nonatomic) unsigned long long requestID; // @synthesize requestID=_requestID;
 @property(copy, nonatomic) NSDictionary *queryParameters; // @synthesize queryParameters=_queryParameters;
-- (void).cxx_destruct;
 - (void)_handshakeDidPassWithWebsiteName:(id)arg1 lowResIcon:(id)arg2 highResIcon:(id)arg3;
 - (void)_handshakeDidFailWithErrorMessage:(id)arg1;
 - (void)_moveFilesIntoPlaceFromPath:(id)arg1 websiteData:(id)arg2 allowedDomains:(id)arg3;

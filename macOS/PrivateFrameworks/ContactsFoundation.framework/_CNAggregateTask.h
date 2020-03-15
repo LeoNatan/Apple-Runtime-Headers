@@ -13,8 +13,8 @@
     NSArray *_tasks;
 }
 
-@property(readonly, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *tasks; // @synthesize tasks=_tasks;
 - (void)cancelSubtasks;
 - (BOOL)cancel;
 - (id)runSubtask:(id)arg1 error:(id *)arg2;

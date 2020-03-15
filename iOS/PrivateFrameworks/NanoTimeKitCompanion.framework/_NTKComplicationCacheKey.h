@@ -18,10 +18,10 @@
 }
 
 + (id)keyWithFamily:(long long)arg1 complication:(id)arg2 forDevice:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSUUID *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
 @property(readonly) long long family; // @synthesize family=_family;
 @property(readonly) NTKComplication *complication; // @synthesize complication=_complication;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

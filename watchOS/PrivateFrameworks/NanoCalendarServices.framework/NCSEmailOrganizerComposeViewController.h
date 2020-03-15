@@ -22,10 +22,10 @@
 + (id)emailMessageSender;
 + (id)composerWithEvent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)composerWithRecipients:(id)arg1 title:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WRCannedRepliesStore *repliesStore; // @synthesize repliesStore=_repliesStore;
 @property(retain, nonatomic) NSAttributedString *messageTitle; // @synthesize messageTitle=_messageTitle;
 @property(copy, nonatomic) CDUnknownBlockType completionHander; // @synthesize completionHander=_completionHander;
-- (void).cxx_destruct;
 - (void)loadTextOptions;
 @property(readonly, nonatomic) _Bool canSendMail;
 - (void)composeControllerPrimaryLanguageChanged:(id)arg1;

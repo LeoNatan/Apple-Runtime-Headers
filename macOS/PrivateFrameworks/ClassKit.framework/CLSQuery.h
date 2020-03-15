@@ -28,6 +28,7 @@
 + (id)queryWithSearchSpecification:(id)arg1;
 + (id)queryWithObjectType:(Class)arg1 predicate:(id)arg2 error:(id *)arg3;
 + (id)queryWithObjectType:(Class)arg1 predicate:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) BOOL shouldFaultResults; // @synthesize shouldFaultResults=_shouldFaultResults;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) CLSSearchSpecification *searchSpec; // @synthesize searchSpec=_searchSpec;
 @property(nonatomic) long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(getter=isExecuting) BOOL executing; // @synthesize executing=_executing;
-- (void).cxx_destruct;
 - (void)_notifyOfCompletionWithResults:(id)arg1 error:(id)arg2;
 - (void)_notifyOfCompletionWithError:(id)arg1;
 - (void)_faultResultsAndComplete;

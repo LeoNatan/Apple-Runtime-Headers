@@ -35,6 +35,7 @@
     struct _NSRange _contentRangeOfInterest;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) long long groupId; // @synthesize groupId=_groupId;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) SGExtractionInfo *extractionInfo; // @synthesize extractionInfo=_extractionInfo;
 @property(retain, nonatomic) SGDuplicateKey *duplicateKey; // @synthesize duplicateKey=_duplicateKey;
 @property(retain, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
-- (void).cxx_destruct;
 - (id)description;
 - (id)fieldsToSaveOnConfirmation;
 - (BOOL)isPartiallyDownloaded;

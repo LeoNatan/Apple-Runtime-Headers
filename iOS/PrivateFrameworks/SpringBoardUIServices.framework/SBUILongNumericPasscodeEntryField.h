@@ -21,11 +21,11 @@
 
 + (_Bool)_usesTextFieldForFirstResponder;
 + (_Bool)_shouldResetAutoAcceptWhenMaxNumbersMetInResignFirstResponder;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsPromptLabel; // @synthesize showsPromptLabel=_showsPromptLabel;
 @property(readonly, nonatomic) UILabel *promptLabel; // @synthesize promptLabel=_promptLabel;
 @property(nonatomic) _Bool showsOkButton; // @synthesize showsOkButton=_showsOkButton;
 @property(readonly, nonatomic) UIButton *okButton; // @synthesize okButton=_okButton;
-- (void).cxx_destruct;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
 - (void)_resetForFailedPasscode:(_Bool)arg1;
 - (void)_autofillForBiometricAuthenticationWithCompletion:(CDUnknownBlockType)arg1;

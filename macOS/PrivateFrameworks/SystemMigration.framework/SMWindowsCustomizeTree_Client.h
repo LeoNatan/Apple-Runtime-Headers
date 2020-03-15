@@ -31,6 +31,7 @@
     NSArray *_transferredUsers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *transferredUsers; // @synthesize transferredUsers=_transferredUsers;
 @property(retain) NSMutableArray *userCustomPaths; // @synthesize userCustomPaths=_userCustomPaths;
 @property BOOL customPathsSystemToUserSizeFinal; // @synthesize customPathsSystemToUserSizeFinal=_customPathsSystemToUserSizeFinal;
@@ -50,7 +51,6 @@
 @property(retain) SMCustomizeTreeNode_Client *machine; // @synthesize machine;
 @property(retain) SMCustomizeTreeNode_Client *network; // @synthesize network;
 @property(retain) SMCustomizeTreeNode_Client *settings; // @synthesize settings;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)updateSize:(id)arg1 forComponentWithIdentifier:(id)arg2 sizeIsFinal:(BOOL)arg3;
 - (void)recursivelyFindAndUpdateSize:(id)arg1 forComponentWithIdentifier:(id)arg2 fromNode:(id)arg3 sizeIsFinal:(BOOL)arg4;

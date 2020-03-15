@@ -12,27 +12,27 @@
 
 @interface UIScrollTestParameters : NSObject <NSCopying>
 {
-    int _axis;
     NSString *_testName;
     long long _iterations;
     double _delta;
     double _length;
+    unsigned long long _axis;
     CDUnknownBlockType _extraResultsBlock;
     double _startOffset;
     CADisplayLink *_displayLink;
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) double startOffset; // @synthesize startOffset=_startOffset;
 @property(copy, nonatomic) CDUnknownBlockType extraResultsBlock; // @synthesize extraResultsBlock=_extraResultsBlock;
-@property(nonatomic) int axis; // @synthesize axis=_axis;
+@property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
 @property(nonatomic) double length; // @synthesize length=_length;
 @property(nonatomic) double delta; // @synthesize delta=_delta;
 @property(nonatomic) long long iterations; // @synthesize iterations=_iterations;
 @property(copy, nonatomic) NSString *testName; // @synthesize testName=_testName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) double endOffset;
 - (void)dealloc;

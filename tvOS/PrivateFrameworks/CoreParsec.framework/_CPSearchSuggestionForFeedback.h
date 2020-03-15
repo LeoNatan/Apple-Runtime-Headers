@@ -21,13 +21,13 @@
     NSString *_fbr;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *query; // @synthesize query=_query;
 @property(copy, nonatomic) NSString *suggestion; // @synthesize suggestion=_suggestion;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

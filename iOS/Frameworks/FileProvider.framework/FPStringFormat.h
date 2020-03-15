@@ -16,9 +16,9 @@
 
 + (id)formatForStringFormatDict:(id)arg1 localizationLookup:(id)arg2;
 + (id)formatForPlistObject:(id)arg1 localizationLookup:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *keyPaths; // @synthesize keyPaths=_keyPaths;
 @property(retain, nonatomic) NSString *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (id)evaluateWithValuesByName:(id)arg1;
 @property(readonly) unsigned long long length;
 

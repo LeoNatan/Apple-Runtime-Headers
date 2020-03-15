@@ -11,6 +11,8 @@
 @protocol _PARResult_Template <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(copy, nonatomic) NSData *cardData;
+@property(copy, nonatomic) NSData *thumbnail;
+@property(copy, nonatomic) NSData *completionIcon;
 @property(copy, nonatomic) NSString *title;
 @property(copy, nonatomic) NSString *completion;
 - (id)initWithDictionary:(NSDictionary *)arg1;

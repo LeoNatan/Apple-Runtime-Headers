@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)mediaRecentlyPlayedTimeout;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDeferred; // @synthesize isDeferred=_isDeferred;
 @property(retain, nonatomic) NSString *activeEndpointUID; // @synthesize activeEndpointUID=_activeEndpointUID;
 @property(retain, nonatomic) MSVPersistentTimer *deferredPlayerPathTimer; // @synthesize deferredPlayerPathTimer=_deferredPlayerPathTimer;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MPCFuture *deferredPlayerPathFuture; // @synthesize deferredPlayerPathFuture=_deferredPlayerPathFuture;
 @property(readonly, nonatomic) NSString *activeRouteUID; // @synthesize activeRouteUID=_activeRouteUID;
 @property(nonatomic) long long routeType; // @synthesize routeType=_routeType;
-- (void).cxx_destruct;
 - (void)_activeSystemRouteDidChangeWithChangeType:(long long)arg1;
 - (void)_fetchActiveSystemRoute:(CDUnknownBlockType)arg1;
 - (void)_maybeUpdateActiveSystemRoute;

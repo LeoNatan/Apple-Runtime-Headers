@@ -24,12 +24,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timeZoneName; // @synthesize timeZoneName=_timeZoneName;
 @property(retain, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 @property(nonatomic) int year; // @synthesize year=_year;
 @property(nonatomic) int month; // @synthesize month=_month;
 @property(nonatomic) int day; // @synthesize day=_day;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

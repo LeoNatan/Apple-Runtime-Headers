@@ -19,6 +19,7 @@
     NSMutableDictionary *__actions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *_actions; // @synthesize _actions=__actions;
 @property(retain, nonatomic) NSMutableDictionary *_parameterizedAttributes; // @synthesize _parameterizedAttributes=__parameterizedAttributes;
 @property(retain, nonatomic) NSMutableDictionary *_attributes; // @synthesize _attributes=__attributes;
@@ -26,7 +27,6 @@
 @property(nonatomic) int realApplicationProcessIdentifier; // @synthesize realApplicationProcessIdentifier=_realApplicationProcessIdentifier;
 @property(nonatomic) struct ProcessSerialNumber applicationProcessSerialNumber; // @synthesize applicationProcessSerialNumber=_applicationProcessSerialNumber;
 @property(nonatomic) int applicationProcessIdentifier; // @synthesize applicationProcessIdentifier=_applicationProcessIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)_testIndexInParent:(unsigned long long *)arg1;

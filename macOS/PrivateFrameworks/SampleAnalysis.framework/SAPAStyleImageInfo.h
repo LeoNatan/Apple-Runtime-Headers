@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
 
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_14f26992 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
-@property(retain) SABinaryLoadInfo *binaryLoadInfo; // @synthesize binaryLoadInfo=_binaryLoadInfo;
 - (void).cxx_destruct;
+@property(retain) SABinaryLoadInfo *binaryLoadInfo; // @synthesize binaryLoadInfo=_binaryLoadInfo;
 - (void)populateReferencesUsingBuffer:(const CDStruct_14f26992 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 
 @end
 

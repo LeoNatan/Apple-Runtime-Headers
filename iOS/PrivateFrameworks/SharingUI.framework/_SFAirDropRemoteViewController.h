@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(nonatomic) __weak id <SFAirDropViewServiceHostProtocol> airDropHost; // @synthesize airDropHost=_airDropHost;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SFAirDropViewServiceHostProtocol> airDropHost; // @synthesize airDropHost=_airDropHost;
 - (void)airDropViewServiceDidRequestDismissal;
 - (void)airDropViewServiceRequestingSharedItemsWithDataRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)airDropViewServiceDidSuccessfullyCompleteTransfer;

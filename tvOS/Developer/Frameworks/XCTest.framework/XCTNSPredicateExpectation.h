@@ -6,23 +6,42 @@
 
 #import <XCTest/XCTestExpectation.h>
 
-@class NSPredicate, _XCTNSPredicateExpectationImplementation;
+@class NSObject, NSPredicate, NSRunLoop, NSString, NSTimer;
+@protocol OS_dispatch_queue;
 
 @interface XCTNSPredicateExpectation : XCTestExpectation
 {
-    _XCTNSPredicateExpectationImplementation *_internal;
+    _Bool _hasCleanedUp;
+    _Bool _isEvaluating;
+    _Bool _shouldEvaluate;
+    CDUnknownBlockType _handler;
+    NSString *_debugDescription;
+    NSPredicate *_predicate;
+    id _object;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSRunLoop *_timerRunLoop;
+    NSTimer *_timer;
+    double _pollingInterval;
 }
 
-@property(retain) _XCTNSPredicateExpectationImplementation *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
-- (void)considerFulfilling;
+@property double pollingInterval; // @synthesize pollingInterval=_pollingInterval;
+@property _Bool shouldEvaluate; // @synthesize shouldEvaluate=_shouldEvaluate;
+@property _Bool isEvaluating; // @synthesize isEvaluating=_isEvaluating;
+@property _Bool hasCleanedUp; // @synthesize hasCleanedUp=_hasCleanedUp;
+@property(retain) NSTimer *timer; // @synthesize timer=_timer;
+@property(retain) NSRunLoop *timerRunLoop; // @synthesize timerRunLoop=_timerRunLoop;
+@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly) id object; // @synthesize object=_object;
+@property(readonly, copy) NSPredicate *predicate; // @synthesize predicate=_predicate;
+@property(copy) NSString *debugDescription; // @synthesize debugDescription=_debugDescription;
 - (void)cleanup;
 - (void)fulfill;
-@property double pollingInterval;
-@property(copy) CDUnknownBlockType handler;
-@property(readonly, copy) NSPredicate *predicate;
-@property(readonly) id object;
-- (id)debugDescription;
+- (_Bool)_shouldFulfillForObject:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_considerFulfilling;
+@property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
+- (void)_scheduleTimer;
+- (void)startPolling;
 - (void)on_queue_setHasBeenWaitedOn:(_Bool)arg1;
 - (id)initWithPredicate:(id)arg1 object:(id)arg2;
 - (void)dealloc;

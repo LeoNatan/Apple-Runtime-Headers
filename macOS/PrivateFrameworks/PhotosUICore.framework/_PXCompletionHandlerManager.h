@@ -15,8 +15,8 @@
     id <_PXCompletionHandlerManagerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_PXCompletionHandlerManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_PXCompletionHandlerManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)callCompletionHandlers;
 - (void)addCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_handleTimeoutOfCompletionHandler:(CDUnknownBlockType)arg1;

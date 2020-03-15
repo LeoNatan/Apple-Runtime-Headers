@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSFolderType *Folder; // @synthesize Folder=_Folder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSFolderType *Folder; // @synthesize Folder=_Folder;
 
 @end
 

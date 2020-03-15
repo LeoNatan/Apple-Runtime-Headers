@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)solverWithLayoutSection:(id)arg1 layoutAxis:(int)arg2;
++ (id)solverWithLayoutSection:(id)arg1 layoutAxis:(unsigned long long)arg2;
 
 @end
 

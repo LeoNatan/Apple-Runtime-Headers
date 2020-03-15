@@ -16,8 +16,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)_acceptsOperatorType:(unsigned int)arg1;
 + (id)filterWithKey:(id)arg1 operatorType:(unsigned int)arg2 values:(id)arg3;
-@property(readonly, nonatomic) NSSet *allowedValues; // @synthesize allowedValues=_allowedValues;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *allowedValues; // @synthesize allowedValues=_allowedValues;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

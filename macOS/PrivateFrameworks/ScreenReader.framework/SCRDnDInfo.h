@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *destinationItemInfo; // @synthesize destinationItemInfo=_destinationItemInfo;
 @property(retain) NSMutableDictionary *dragItemInfo; // @synthesize dragItemInfo=_dragItemInfo;
 @property(retain) NSData *voCursorSnapShotData; // @synthesize voCursorSnapShotData=_voCursorSnapShotData;
-- (void).cxx_destruct;
 @property(retain) SCRWindowState *windowState;
 @property long long dragState;
 - (id)dropDestinationDescription;

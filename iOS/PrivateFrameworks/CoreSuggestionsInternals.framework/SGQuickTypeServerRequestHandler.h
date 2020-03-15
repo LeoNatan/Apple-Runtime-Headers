@@ -19,9 +19,9 @@
     _PASBundleIdResolver *_bundleIdResolver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _PASBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
 @property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
-- (void).cxx_destruct;
 - (void)proactiveTriggersForContext:(id)arg1 maximumTriggers:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)setRemoteObjectProxy:(id)arg1;
 - (id)init;

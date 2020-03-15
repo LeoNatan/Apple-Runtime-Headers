@@ -38,6 +38,7 @@
 + (id)snapshotWithActivitySummary:(id)arg1;
 + (id)_fitnessFriendActivitySnapshotWithSnapshotIndex:(long long)arg1 startDate:(id)arg2 endDate:(id)arg3 sourceUUID:(id)arg4;
 + (id)_fitnessFriendActivitySnapshotWithFriendUUID:(id)arg1 sourceUUID:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 snapshotIndex:(long long)arg5 snapshotUploadedDate:(id)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasCarriedForwardGoals; // @synthesize hasCarriedForwardGoals=_hasCarriedForwardGoals;
 @property(nonatomic) int amm; // @synthesize amm=_amm;
 @property(nonatomic) double walkingAndRunningDistance; // @synthesize walkingAndRunningDistance=_walkingAndRunningDistance;
@@ -57,7 +58,6 @@
 @property(nonatomic) long long snapshotIndex; // @synthesize snapshotIndex=_snapshotIndex;
 @property(retain, nonatomic) NSUUID *sourceUUID; // @synthesize sourceUUID=_sourceUUID;
 @property(retain, nonatomic) NSUUID *friendUUID; // @synthesize friendUUID=_friendUUID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSTimeZone *timeZone;

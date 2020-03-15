@@ -15,10 +15,10 @@
     NSNumber *_offset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isTextExecOffset; // @synthesize isTextExecOffset=_isTextExecOffset;
 @property(readonly, nonatomic) NSNumber *offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSUUID *symbolOwnerUUID; // @synthesize symbolOwnerUUID=_symbolOwnerUUID;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithUUID:(id)arg1 offset:(unsigned long long)arg2 isTextExecSegment:(BOOL)arg3;

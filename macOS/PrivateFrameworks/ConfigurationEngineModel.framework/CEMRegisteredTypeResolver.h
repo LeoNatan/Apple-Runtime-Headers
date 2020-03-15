@@ -10,7 +10,7 @@
 {
 }
 
-+ (Class)registeredClassWithName:(id)arg1 withIdentifier:(id)arg2;
++ (Class)registeredClassWithIdentifier:(id)arg1;
 
 @end
 

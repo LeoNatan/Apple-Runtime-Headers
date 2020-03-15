@@ -16,9 +16,9 @@
     NSSet *_conditions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *conditions; // @synthesize conditions=_conditions;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

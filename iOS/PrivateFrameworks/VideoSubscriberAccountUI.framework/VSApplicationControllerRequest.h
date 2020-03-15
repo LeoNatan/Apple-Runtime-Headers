@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_requestorVerificationToken;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestorVerificationToken; // @synthesize requestorVerificationToken=_requestorVerificationToken;
 @property(copy, nonatomic) NSArray *attributeNames; // @synthesize attributeNames=_attributeNames;
 @property(copy, nonatomic) NSString *SAMLRequest; // @synthesize SAMLRequest=_SAMLRequest;
 @property(copy, nonatomic) NSString *authenticationToken; // @synthesize authenticationToken=_authenticationToken;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

@@ -13,8 +13,8 @@
     PHAsset *_asset;
 }
 
-@property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 - (id)debugDictionary;
 
 @end

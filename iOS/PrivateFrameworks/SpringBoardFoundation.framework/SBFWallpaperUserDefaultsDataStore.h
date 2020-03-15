@@ -17,9 +17,9 @@
     SBFWallpaperDefaults *_wallpaperOptionsDefaults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBFWallpaperDefaults *wallpaperOptionsDefaults; // @synthesize wallpaperOptionsDefaults=_wallpaperOptionsDefaults;
 @property(readonly, nonatomic) SBWallpaperDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

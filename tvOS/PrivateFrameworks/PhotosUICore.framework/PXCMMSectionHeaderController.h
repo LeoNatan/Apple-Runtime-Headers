@@ -31,9 +31,9 @@
 + (id)_photosLabelFont;
 + (id)_buttonLabelFont;
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setSecondaryActionButtonType:) long long secondaryActionButtonType; // @synthesize secondaryActionButtonType=_secondaryActionButtonType;
 @property(nonatomic, setter=_setActionButtonType:) long long actionButtonType; // @synthesize actionButtonType=_actionButtonType;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)prepareForReuse;

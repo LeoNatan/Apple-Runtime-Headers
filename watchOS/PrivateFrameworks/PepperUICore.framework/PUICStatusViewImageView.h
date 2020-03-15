@@ -17,8 +17,8 @@
     _Bool _shadowed;
 }
 
-@property(nonatomic, getter=isShadowed) _Bool shadowed; // @synthesize shadowed=_shadowed;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isShadowed) _Bool shadowed; // @synthesize shadowed=_shadowed;
 - (id)_shadowedImageNameForImageName:(id)arg1;
 - (id)initWithImageNamed:(id)arg1 inBundle:(id)arg2 color:(id)arg3 templated:(_Bool)arg4;
 - (id)initWithImageNamed:(id)arg1 inBundle:(id)arg2 color:(id)arg3;

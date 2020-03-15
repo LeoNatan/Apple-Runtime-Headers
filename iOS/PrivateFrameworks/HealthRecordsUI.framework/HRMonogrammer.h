@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CNMonogrammer *_monogrammer;
 }
 
-@property(retain, nonatomic) CNMonogrammer *monogrammer; // @synthesize monogrammer=_monogrammer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNMonogrammer *monogrammer; // @synthesize monogrammer=_monogrammer;
 - (id)makeImageForTitle:(id)arg1;
 - (id)initWithDiameter:(double)arg1;
 

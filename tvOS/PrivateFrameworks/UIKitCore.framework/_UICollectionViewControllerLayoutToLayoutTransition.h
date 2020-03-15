@@ -21,13 +21,13 @@
 }
 
 + (id)transitionForOperation:(long long)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) long long operation; // @synthesize operation=_operation;
 @property(nonatomic) _Bool interactionAborted; // @synthesize interactionAborted=_interactionAborted;
 @property(nonatomic) UIPercentDrivenInteractiveTransition *interactionController; // @synthesize interactionController=_interactionController;
 @property(nonatomic) _Bool crossFadeBottomBars; // @synthesize crossFadeBottomBars=_crossFadeBottomBars;
 @property(nonatomic) _Bool crossFadeNavigationBar; // @synthesize crossFadeNavigationBar=_crossFadeNavigationBar;
 @property(retain, nonatomic) UICollectionViewLayout *toLayout; // @synthesize toLayout=_toLayout;
-- (void).cxx_destruct;
 - (_Bool)_shouldCrossFadeBottomBars;
 - (_Bool)_shouldCrossFadeNavigationBar;
 - (double)transitionDuration:(id)arg1;

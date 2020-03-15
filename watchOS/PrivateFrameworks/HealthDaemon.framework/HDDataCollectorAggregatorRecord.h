@@ -18,12 +18,12 @@
     id <HDCollectedSensorDatum> _lastSensorDatum;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasSetLastSensorDatum; // @synthesize hasSetLastSensorDatum=_hasSetLastSensorDatum;
 @property(copy, nonatomic) id <HDCollectedSensorDatum> lastSensorDatum; // @synthesize lastSensorDatum=_lastSensorDatum;
 @property(retain, nonatomic) HDDataCollectorConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) HDDataAggregator *aggregator; // @synthesize aggregator=_aggregator;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAggregator:(id)arg1 identifier:(id)arg2;
 

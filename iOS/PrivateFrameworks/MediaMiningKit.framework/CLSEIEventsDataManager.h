@@ -21,12 +21,12 @@
     NSObject<OS_dispatch_queue> *_cacheQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(readonly, nonatomic) NSMutableDictionary *categoryCache; // @synthesize categoryCache=_categoryCache;
 @property(readonly, nonatomic) NSMutableDictionary *artistCache; // @synthesize artistCache=_artistCache;
 @property(readonly, nonatomic) NSMutableDictionary *venueCache; // @synthesize venueCache=_venueCache;
 @property(readonly, nonatomic) NSURL *diskCacheURL; // @synthesize diskCacheURL=_diskCacheURL;
-- (void).cxx_destruct;
 - (id)_fetchManagedObjectWithEntityName:(id)arg1 name:(id)arg2;
 - (id)_fetchManagedObjectWithEntityName:(id)arg1 uuid:(long long)arg2;
 - (id)fetchCategoryForName:(id)arg1;

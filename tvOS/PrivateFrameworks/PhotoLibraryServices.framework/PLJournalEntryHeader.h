@@ -28,13 +28,13 @@
 }
 
 + (Class)nilPropertiesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nilProperties; // @synthesize nilProperties=_nilProperties;
 @property(nonatomic) unsigned int payloadCRC; // @synthesize payloadCRC=_payloadCRC;
 @property(nonatomic) unsigned long long payloadLength; // @synthesize payloadLength=_payloadLength;
 @property(nonatomic) unsigned int payloadVersion; // @synthesize payloadVersion=_payloadVersion;
 @property(retain, nonatomic) NSString *payloadID; // @synthesize payloadID=_payloadID;
 @property(retain, nonatomic) NSData *payloadUUID; // @synthesize payloadUUID=_payloadUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

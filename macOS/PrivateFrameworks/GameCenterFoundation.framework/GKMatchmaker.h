@@ -15,6 +15,7 @@
     BOOL _wasNearbyBrowsing;
     BOOL _nearbyBrowsing;
     BOOL _generatingCompatiblityHashes;
+    BOOL _serverHosted;
     int _matching;
     CDUnknownBlockType _inviteHandler;
     GKMatch *_match;
@@ -40,6 +41,7 @@
 + (id)sharedMatchmaker;
 + (id)descriptionForNearbyDictionary:(id)arg1;
 + (id)syncQueue;
+@property(nonatomic) BOOL serverHosted; // @synthesize serverHosted=_serverHosted;
 @property(retain, nonatomic) NSMutableArray *acceptedInviteesTokens; // @synthesize acceptedInviteesTokens=_acceptedInviteesTokens;
 @property(retain, nonatomic) NSMutableArray *shareInvitees; // @synthesize shareInvitees=_shareInvitees;
 @property(retain, nonatomic) NSMutableDictionary *nearbyInvites; // @synthesize nearbyInvites=_nearbyInvites;

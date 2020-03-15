@@ -8,7 +8,7 @@
 
 #import <SpringBoard/PTUIClient-Protocol.h>
 
-@class NSString, NSXPCConnection, SBPrototypeDumpingGround, SBRestartManager, SBRootSettings;
+@class NSString, NSXPCConnection, SBPrototypeDumpingGround, SBRestartManager, SBRootSettings, SBSStatusBarStyleOverridesAssertion;
 
 @interface SBPrototypeController : NSObject <PTUIClient>
 {
@@ -16,12 +16,14 @@
     _Bool _hasActiveKeyHIDEventRouters;
     SBPrototypeDumpingGround *_dumpingGround;
     SBRootSettings *_rootSettings;
+    SBSStatusBarStyleOverridesAssertion *_remotePrototypingAssertion;
     SBRestartManager *_restartManager;
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak SBRestartManager *restartManager; // @synthesize restartManager=_restartManager;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SBRestartManager *restartManager; // @synthesize restartManager=_restartManager;
+- (void)_updateRemoteEditingState;
 - (void)_updateKeyHIDEventRouters;
 - (_Bool)_handleKeyHIDEvent:(struct __IOHIDEvent *)arg1;
 - (void)_createConnection;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)itemDetailWithDetailTitle:(id)arg1 detail:(id)arg2 detailHighlightColor:(id)arg3 showCheckmarkView:(_Bool)arg4 checkmarkText:(id)arg5 checkmarkHighlightColor:(id)arg6 showCheckmark:(_Bool)arg7;
 + (id)itemDetailWithDetailTitle:(id)arg1 detail:(id)arg2 detailHighlightColor:(id)arg3;
 + (id)itemDetailWithDetailTitle:(id)arg1 detail:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showCheckmark; // @synthesize showCheckmark=_showCheckmark;
 @property(retain, nonatomic) UIColor *checkmarkHighlightColor; // @synthesize checkmarkHighlightColor=_checkmarkHighlightColor;
 @property(retain, nonatomic) NSString *checkmarkText; // @synthesize checkmarkText=_checkmarkText;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *detailHighlightColor; // @synthesize detailHighlightColor=_detailHighlightColor;
 @property(retain, nonatomic) NSString *detail; // @synthesize detail=_detail;
 @property(retain, nonatomic) NSString *detailTitle; // @synthesize detailTitle=_detailTitle;
-- (void).cxx_destruct;
 - (id)initWithDetailTitle:(id)arg1 detail:(id)arg2 detailHighlightColor:(id)arg3 showCheckmarkView:(_Bool)arg4 checkmarkText:(id)arg5 checkmarkHighlightColor:(id)arg6 showCheckmark:(_Bool)arg7;
 
 @end

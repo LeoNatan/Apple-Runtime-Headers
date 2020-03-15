@@ -13,8 +13,8 @@
     NSString *_language;
 }
 
-@property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 - (id)description;
 
 @end

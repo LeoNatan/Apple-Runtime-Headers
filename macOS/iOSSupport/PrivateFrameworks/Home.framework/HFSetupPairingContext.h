@@ -16,10 +16,10 @@
     id <HMSetupRemoteService> _setupRemoteService;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isTrustedOrigin; // @synthesize isTrustedOrigin=_isTrustedOrigin;
 @property(nonatomic) __weak id <HMSetupRemoteService> setupRemoteService; // @synthesize setupRemoteService=_setupRemoteService;
 @property(retain, nonatomic) HMSetupAccessoryDescription *setupAccessoryDescription; // @synthesize setupAccessoryDescription=_setupAccessoryDescription;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithSetupAccessoryDescription:(id)arg1 setupRemoteService:(id)arg2 isTrustedOrigin:(BOOL)arg3;
 

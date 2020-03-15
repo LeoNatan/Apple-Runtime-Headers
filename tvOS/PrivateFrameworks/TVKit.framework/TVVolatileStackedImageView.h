@@ -13,8 +13,8 @@
     TVVolatileNamedLayerStack *_volatileNamedLayerStack;
 }
 
-@property(retain, nonatomic) TVVolatileNamedLayerStack *volatileNamedLayerStack; // @synthesize volatileNamedLayerStack=_volatileNamedLayerStack;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVVolatileNamedLayerStack *volatileNamedLayerStack; // @synthesize volatileNamedLayerStack=_volatileNamedLayerStack;
 
 @end
 

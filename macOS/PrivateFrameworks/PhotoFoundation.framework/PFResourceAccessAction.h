@@ -20,7 +20,7 @@
 - (int)executeRedo:(CDUnknownBlockType)arg1;
 - (int)executeUndo:(CDUnknownBlockType)arg1;
 - (int)executeAction:(CDUnknownBlockType)arg1;
-- (void)resourceWillShutdown:(struct NSObject *)arg1;
+- (void)resourceWillShutdown:(id)arg1;
 - (void)endResourceAccess;
 - (BOOL)beginResourceAccess;
 - (id)resourceObject;

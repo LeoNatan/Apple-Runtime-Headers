@@ -14,8 +14,8 @@
     NSString *_previousETag;
 }
 
-@property(retain, nonatomic) NSString *previousETag; // @synthesize previousETag=_previousETag;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *previousETag; // @synthesize previousETag=_previousETag;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)requestBody;
 - (id)additionalHeaderValues;

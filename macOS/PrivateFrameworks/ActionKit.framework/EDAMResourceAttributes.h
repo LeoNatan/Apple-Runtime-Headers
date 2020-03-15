@@ -26,6 +26,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMLazyMap *applicationData; // @synthesize applicationData=_applicationData;
 @property(retain, nonatomic) NSNumber *attachment; // @synthesize attachment=_attachment;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSNumber *latitude; // @synthesize latitude=_latitude;
 @property(retain, nonatomic) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSString *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 
 @end
 

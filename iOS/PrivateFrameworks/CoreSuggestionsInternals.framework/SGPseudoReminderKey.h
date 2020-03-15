@@ -16,8 +16,8 @@
 }
 
 + (_Bool)isSupportedEntityType:(long long)arg1;
-@property(readonly, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 - (id)initWithSerialized:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)serialize;

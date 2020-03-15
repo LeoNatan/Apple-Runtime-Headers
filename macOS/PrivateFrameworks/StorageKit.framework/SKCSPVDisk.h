@@ -14,9 +14,9 @@
     NSString *_csDiskUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *csDiskUUID; // @synthesize csDiskUUID=_csDiskUUID;
 @property(retain) NSString *csLVGUUID; // @synthesize csLVGUUID=_csLVGUUID;
-- (void).cxx_destruct;
 - (id)logicalVolumeGroup;
 - (id)description;
 - (BOOL)canResize;

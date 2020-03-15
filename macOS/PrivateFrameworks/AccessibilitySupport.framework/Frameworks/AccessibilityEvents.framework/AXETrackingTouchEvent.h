@@ -21,12 +21,12 @@
 }
 
 + (id)touchFromNSTouch:(id)arg1 timestamp:(id)arg2 touchStartTimestamp:(id)arg3 contextOrigin:(struct CGPoint)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long phase; // @synthesize phase=_phase;
 @property(readonly, nonatomic) struct CGPoint location; // @synthesize location=_location;
 @property(readonly, nonatomic) id <NSObject><NSCopying> identity; // @synthesize identity=_identity;
 @property(retain, nonatomic) NSDate *touchStartTimestamp; // @synthesize touchStartTimestamp=_touchStartTimestamp;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)_nameOfPhase:(unsigned long long)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

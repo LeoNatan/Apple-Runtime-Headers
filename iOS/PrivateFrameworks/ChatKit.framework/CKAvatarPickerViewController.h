@@ -25,6 +25,7 @@
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSMapTable *visibleTitleViews; // @synthesize visibleTitleViews=_visibleTitleViews;
 @property(retain, nonatomic) CNContactStore *suggestionsEnabledContactStore; // @synthesize suggestionsEnabledContactStore=_suggestionsEnabledContactStore;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) long long indicatorType; // @synthesize indicatorType=_indicatorType;
 @property(retain, nonatomic) CKAvatarTitleCollectionReusableView *titleView; // @synthesize titleView=_titleView;
-- (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (id)_cutoutSupplementaryViewAtIndexPath:(id)arg1;
 - (id)avatarDisplayName;

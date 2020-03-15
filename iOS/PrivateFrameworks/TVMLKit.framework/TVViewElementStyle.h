@@ -16,8 +16,8 @@
     IKViewElementStyle *_style;
 }
 
-@property(readonly, nonatomic) __weak IKViewElementStyle *style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKViewElementStyle *style; // @synthesize style=_style;
 - (id)darkTintColor;
 @property(readonly, nonatomic) TVColor *tintColor;
 @property(readonly, nonatomic) NSString *textStyle;

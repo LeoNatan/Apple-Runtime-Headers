@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     AVPlayer *_player;
     AVPlayerLayer *_playerLayer;
     _Bool _showHud;
+    _Bool _spatialDiagnostics;
     int _colorId;
     double _opacity;
     int _fontSizeInt;
@@ -32,9 +33,9 @@ __attribute__((visibility("hidden")))
 
 + (id)convertBitrate:(double)arg1;
 + (BOOL)runningAnInternalBuild;
+- (void).cxx_destruct;
 @property __weak AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property __weak AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_hudUpdate;
 - (BOOL)valueLoadedForKey:(id)arg1 onObject:(id)arg2;
 - (id)getTrackFormatDesc:(id)arg1;

@@ -26,11 +26,11 @@
 + (id)policyWithIdentifier:(id)arg1 content:(id)arg2;
 + (id)policyWithIdentifier:(id)arg1 content:(id)arg2 contentDescriptions:(id)arg3 parameters:(id)arg4;
 + (id)policy;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(copy) NSDictionary *contentDescriptions; // @synthesize contentDescriptions=_contentDescriptions;
 @property(copy) NSString *content; // @synthesize content=_content;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;

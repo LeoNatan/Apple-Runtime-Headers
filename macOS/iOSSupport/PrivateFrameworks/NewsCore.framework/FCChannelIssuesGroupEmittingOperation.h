@@ -13,8 +13,8 @@
     NSString *_channelIdentifier;
 }
 
-@property(retain, nonatomic) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
 - (void)performOperation;
 - (id)initWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3 groupEmitterIdentifier:(id)arg4 channelIdentifier:(id)arg5;
 - (id)init;

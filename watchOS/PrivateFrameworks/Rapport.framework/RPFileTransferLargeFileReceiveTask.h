@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _taskID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long taskID; // @synthesize taskID=_taskID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RPFileTransferItem *fileItem; // @synthesize fileItem=_fileItem;
 @property(nonatomic) int fileFD; // @synthesize fileFD=_fileFD;
-- (void).cxx_destruct;
 
 @end
 

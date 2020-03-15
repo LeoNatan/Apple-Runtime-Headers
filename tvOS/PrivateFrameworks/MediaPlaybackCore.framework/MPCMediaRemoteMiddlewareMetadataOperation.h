@@ -16,7 +16,7 @@
 {
     CDUnknownBlockType _invalidationHandler;
     NSArray *_invalidationObservers;
-    struct NSMapTable *_inputOperations;
+    NSMapTable *_inputOperations;
     MPCMediaRemoteMiddleware *_middleware;
     MPRequest<MPCMediaRemoteMiddlewareMetadataOperationConfiguration> *_request;
     MPCFuture *_playQueueIdentifiersFuture;
@@ -24,6 +24,7 @@
     MPCFuture *_queueIdentifierFuture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPCFuture *queueIdentifierFuture; // @synthesize queueIdentifierFuture=_queueIdentifierFuture;
 @property(retain, nonatomic) MPCFuture *playingIdentifierFuture; // @synthesize playingIdentifierFuture=_playingIdentifierFuture;
 @property(retain, nonatomic) MPCFuture *playQueueIdentifiersFuture; // @synthesize playQueueIdentifiersFuture=_playQueueIdentifiersFuture;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMapTable *inputOperations; // @synthesize inputOperations=_inputOperations;
 @property(readonly, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
-- (void).cxx_destruct;
 - (id)_itemGenericObjectPropertySetForContentItem:(id)arg1 propertySet:(id)arg2;
 - (id)_genericObjectPropertySetForContentItem:(id)arg1 preferredRelationships:(id)arg2 propertySet:(id)arg3;
 - (struct _MSVSignedRange)rangeFromTracklistRange:(CDStruct_339ad95e)arg1;

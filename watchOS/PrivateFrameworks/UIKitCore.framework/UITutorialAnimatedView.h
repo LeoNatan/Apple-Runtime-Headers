@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     CAPackage *_package;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAPackage *package; // @synthesize package=_package;
 @property(nonatomic) int appearance; // @synthesize appearance=_appearance;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_setPackage:(id)arg1;
 - (id)initWithKeyboardAppearance:(int)arg1;

@@ -19,6 +19,7 @@
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) long long manualOrder; // @synthesize manualOrder=_manualOrder;
 @property(nonatomic) BOOL verified; // @synthesize verified=_verified;
@@ -26,7 +27,6 @@
 @property(nonatomic) long long faceCount; // @synthesize faceCount=_faceCount;
 @property(copy, nonatomic) NSString *uri; // @synthesize uri=_uri;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_setPropertiesFrom:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

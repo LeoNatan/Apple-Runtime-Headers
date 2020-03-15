@@ -14,9 +14,9 @@
     unsigned long long _category;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(retain, nonatomic) NSString *season; // @synthesize season=_season;
-- (void).cxx_destruct;
 - (void)_generateTitleAndSubtitleWithResult:(CDUnknownBlockType)arg1;
 - (id)initWithMomentNodes:(id)arg1 seasonName:(id)arg2 category:(unsigned long long)arg3;
 

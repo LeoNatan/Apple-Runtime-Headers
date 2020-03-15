@@ -15,11 +15,11 @@
     struct TopoID _index;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct TopoID index; // @synthesize index=_index;
 @property(readonly, nonatomic) unsigned long long affinity; // @synthesize affinity=_affinity;
 @property(readonly, nonatomic) _TtC9Coherence9CRContext *context; // @synthesize context=_context;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)_objCRenameSequence;
 - (void)dealloc;

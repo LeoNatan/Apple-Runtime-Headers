@@ -15,10 +15,10 @@
     HKHealthStore *_healthStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(readonly, nonatomic) NSString *detailedReportName; // @synthesize detailedReportName=_detailedReportName;
 @property(readonly, nonatomic) HKSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)selectCellForIndex:(unsigned int)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (id)cellForIndex:(unsigned int)arg1 tableView:(id)arg2;
 - (id)documentImageForXMLFiles;

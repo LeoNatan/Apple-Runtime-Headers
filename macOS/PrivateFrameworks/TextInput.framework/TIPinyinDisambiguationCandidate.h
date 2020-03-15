@@ -16,9 +16,9 @@
 + (int)type;
 + (id)candidateWithPinyinSyllable:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 - (void)setLabel:(id)arg1;
 - (id)label;
-- (void).cxx_destruct;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (unsigned long long)hash;

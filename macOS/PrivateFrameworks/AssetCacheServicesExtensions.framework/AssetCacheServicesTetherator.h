@@ -20,17 +20,18 @@
     NSObject<OS_os_log> *_logHandle;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *logHandle; // @synthesize logHandle=_logHandle;
 @property(retain) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property __weak NSObject<OS_dispatch_queue> *weakDelegateQueue; // @synthesize weakDelegateQueue=_weakDelegateQueue;
 @property __weak id <AssetCacheServicesTetheratorEventsProtocol> weakDelegate; // @synthesize weakDelegate=_weakDelegate;
 @property(retain) id <AssetCacheServicesTetheratorProtocol> proxy; // @synthesize proxy=_proxy;
-- (void).cxx_destruct;
 - (id)_connectToTetheratorServiceWithCallback:(CDUnknownBlockType)arg1;
 - (void)reportError:(id)arg1;
 - (void)status;
 - (void)isEnabled;
 - (void)disable;
+- (void)enable;
 - (void)enableWithStartAddress:(id)arg1 endAddress:(id)arg2 cachingServerInfo:(id)arg3;
 - (id)initWithDelegate:(id)arg1 delegateQueue:(id)arg2;
 

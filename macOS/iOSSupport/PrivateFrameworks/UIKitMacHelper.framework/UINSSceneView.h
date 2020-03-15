@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 + (void)updateDisplayTiming;
 + (BOOL)requiresConstraintBasedLayout;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldHostContent; // @synthesize shouldHostContent=_shouldHostContent;
 @property(copy, nonatomic) CDUnknownBlockType resizeBlock; // @synthesize resizeBlock=_resizeBlock;
 @property(retain, nonatomic) NSMutableArray *dropSessions; // @synthesize dropSessions=_dropSessions;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(readonly, nonatomic) UINSInputView *inputView; // @synthesize inputView=_inputView;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIWindow *keyUIWindow;
 @property(readonly, nonatomic) NSArray *uiWindows;
 - (BOOL)mouseDownCanMoveWindow;

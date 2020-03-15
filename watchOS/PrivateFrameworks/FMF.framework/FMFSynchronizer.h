@@ -17,11 +17,11 @@
     NSString *_info;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *info; // @synthesize info=_info;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *sem; // @synthesize sem=_sem;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) _Bool timeoutOccurred; // @synthesize timeoutOccurred=_timeoutOccurred;
-- (void).cxx_destruct;
 - (id)loggingID;
 - (void)wait;
 - (void)signal;

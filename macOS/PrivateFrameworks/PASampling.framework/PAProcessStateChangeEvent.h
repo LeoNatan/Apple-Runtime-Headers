@@ -15,10 +15,10 @@
     unsigned long long _stateChangeType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stateChangeType; // @synthesize stateChangeType=_stateChangeType;
 @property(readonly, nonatomic) double machTimestamp; // @synthesize machTimestamp=_machTimestamp;
 @property(readonly, nonatomic) PASampleTaskData *taskData; // @synthesize taskData=_taskData;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithTaskData:(id)arg1 machTime:(double)arg2 stateChangeType:(unsigned long long)arg3;
 - (id)initUnknownProcessStateChangeEventWithPid:(int)arg1 machTime:(double)arg2 stateChangeType:(unsigned long long)arg3;

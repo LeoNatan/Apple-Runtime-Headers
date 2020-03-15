@@ -44,6 +44,7 @@
 + (id)extractContactIdentifiers:(id)arg1;
 + (id)interactionAdvisorSettingsDefault;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *callerBundleId; // @synthesize callerBundleId=_callerBundleId;
 @property(retain, nonatomic) NSString *consumerIdentifier; // @synthesize consumerIdentifier=_consumerIdentifier;
 @property(retain) NSSet *ignoreInteractionUUIDs; // @synthesize ignoreInteractionUUIDs=_ignoreInteractionUUIDs;
@@ -70,7 +71,6 @@
 @property(retain) NSSet *seedIdentifiers; // @synthesize seedIdentifiers=_seedIdentifiers;
 @property(retain) NSString *interactionTitle; // @synthesize interactionTitle=_interactionTitle;
 @property(retain) NSDate *interactionDate; // @synthesize interactionDate=_interactionDate;
-- (void).cxx_destruct;
 - (id)contactPredicate;
 - (id)interactionPredicate;
 - (id)description;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_semaphore> *_imageLoadingSemaphore;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *imageLoadingSemaphore; // @synthesize imageLoadingSemaphore=_imageLoadingSemaphore;
 @property(readonly, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 - (void)_loadImageWithResourceName:(id)arg1 fallbackImage:(id)arg2 styleColor:(id)arg3;
 - (void)_ensureImageIsLoaded;
 @property(readonly, nonatomic) struct CGSize badgeSize;

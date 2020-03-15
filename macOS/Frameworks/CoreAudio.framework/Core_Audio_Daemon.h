@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
     shared_ptr_05bb91fa _default_device_all_control_value_observer;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct queue scratch_queue; // @synthesize scratch_queue=_scratch_queue;
 @property(nonatomic) struct queue high_priority_root_queue; // @synthesize high_priority_root_queue=_high_priority_root_queue;
 @property(nonatomic) shared_ptr_05bb91fa default_device_all_control_value_observer; // @synthesize default_device_all_control_value_observer=_default_device_all_control_value_observer;
@@ -45,8 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) shared_ptr_49302bbc guts; // @synthesize guts=_guts;
 @property(nonatomic) _Bool is_alive; // @synthesize is_alive=_is_alive;
 @property(nonatomic) shared_ptr_667dfb54 creation_mutex; // @synthesize creation_mutex=_creation_mutex;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)call_all_remote_listeners_async:(id)arg1;
 - (void)call_all_remote_listeners:(id)arg1;
 - (void)sendPropertiesChanged:(unsigned int)arg1 count:(unsigned long long)arg2 addresses:(const struct AudioObjectPropertyAddress *)arg3;

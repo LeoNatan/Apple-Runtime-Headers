@@ -13,8 +13,8 @@
     NSArray *_envelope;
 }
 
-@property(copy, nonatomic) NSArray *envelope; // @synthesize envelope=_envelope;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *envelope; // @synthesize envelope=_envelope;
 - (id)description;
 
 @end

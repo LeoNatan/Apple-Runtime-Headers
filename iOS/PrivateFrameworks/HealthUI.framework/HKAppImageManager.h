@@ -26,9 +26,9 @@
 + (id)defaultAppIconTableUI;
 + (id)defaultAppIcon;
 + (id)sharedImageManager;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *outstandingRequests; // @synthesize outstandingRequests=_outstandingRequests;
 @property(retain) NSCache *iconCache; // @synthesize iconCache=_iconCache;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)_enqueueRequestForAppIconForIdentifier:(id)arg1;

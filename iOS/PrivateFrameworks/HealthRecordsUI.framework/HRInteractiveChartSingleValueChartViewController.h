@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     _TtC15HealthRecordsUI35SingleValueAnnotationViewDataSource *_annotationViewDataSource;
 }
 
-@property(retain, nonatomic) _TtC15HealthRecordsUI35SingleValueAnnotationViewDataSource *annotationViewDataSource; // @synthesize annotationViewDataSource=_annotationViewDataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TtC15HealthRecordsUI35SingleValueAnnotationViewDataSource *annotationViewDataSource; // @synthesize annotationViewDataSource=_annotationViewDataSource;
 - (id)_colorForDisplayType:(id)arg1;
 - (void)updateSelectionAnnotationDataSourceForContext:(id)arg1 displayType:(id)arg2 timeScope:(long long)arg3;
 - (id)makeAnnotationDataSourceWithMetrics:(id)arg1;

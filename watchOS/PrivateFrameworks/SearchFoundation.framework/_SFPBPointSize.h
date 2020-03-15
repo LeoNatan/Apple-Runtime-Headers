@@ -17,9 +17,9 @@
     _SFPBGraphicalFloat *_height;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SFPBGraphicalFloat *height; // @synthesize height=_height;
 @property(retain, nonatomic) _SFPBGraphicalFloat *width; // @synthesize width=_width;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

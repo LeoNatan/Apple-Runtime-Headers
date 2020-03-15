@@ -16,9 +16,9 @@
     AVMetadataMachineReadableCodeObject *_underlyingMachineReadableCodeObject;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVMetadataMachineReadableCodeObject *underlyingMachineReadableCodeObject; // @synthesize underlyingMachineReadableCodeObject=_underlyingMachineReadableCodeObject;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) AVMetadataObject *underlyingMetadataObject;
 @property(readonly, copy, nonatomic) NSString *metadataType;
 @property(readonly, nonatomic) NSString *symbolString;

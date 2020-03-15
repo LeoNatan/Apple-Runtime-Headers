@@ -28,6 +28,7 @@
 + (BOOL)isSupportedDictionaryKeyType:(id)arg1;
 + (BOOL)isSupportedDictionaryValueType:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *dictionariesValue; // @synthesize dictionariesValue=_dictionariesValue;
 @property(retain, nonatomic) NSArray *stringsValue; // @synthesize stringsValue=_stringsValue;
 @property(retain, nonatomic) NSPersonNameComponents *personNameComponentsValue; // @synthesize personNameComponentsValue=_personNameComponentsValue;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(copy, nonatomic) NSString *fieldKey; // @synthesize fieldKey=_fieldKey;
 @property(copy, nonatomic) NSString *semanticKey; // @synthesize semanticKey=_semanticKey;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

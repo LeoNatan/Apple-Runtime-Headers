@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) IDSService *idsService; // @synthesize idsService=_idsService;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IDSService *idsService; // @synthesize idsService=_idsService;
 - (void)idsRequestUITrigger:(id)arg1;
 - (void)idsUIProviders:(id)arg1;
 - (id)sendProtobufResponse:(id)arg1 type:(unsigned short)arg2 priority:(int)arg3 idsRequest:(id)arg4 errorHandler:(CDUnknownBlockType)arg5 withTimeout:(double)arg6;

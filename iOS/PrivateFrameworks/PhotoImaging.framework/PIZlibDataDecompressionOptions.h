@@ -15,11 +15,11 @@
 }
 
 + (id)defaultOptions;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool decompressAllAtOnce; // @synthesize decompressAllAtOnce=_decompressAllAtOnce;
 @property(copy, nonatomic) CDUnknownBlockType growData; // @synthesize growData=_growData;
 @property(copy, nonatomic) CDUnknownBlockType createBuffer; // @synthesize createBuffer=_createBuffer;
 @property(nonatomic) int windowBits; // @synthesize windowBits=_windowBits;
-- (void).cxx_destruct;
 
 @end
 

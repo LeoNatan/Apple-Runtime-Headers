@@ -33,6 +33,7 @@
 + (id)requestWithURL:(id)arg1 scheme:(id)arg2 userInterface:(id)arg3 bundleIdentifier:(id)arg4 successHandler:(CDUnknownBlockType)arg5 failureHandler:(CDUnknownBlockType)arg6;
 + (id)requestWithURL:(id)arg1 fromSourceApplication:(id)arg2;
 + (id)requestWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInternalCallbackRequest) BOOL internalCallbackRequest; // @synthesize internalCallbackRequest=_internalCallbackRequest;
 @property(nonatomic) long long retries; // @synthesize retries=_retries;
 @property(copy, nonatomic) NSURL *generatedCallbackURL; // @synthesize generatedCallbackURL=_generatedCallbackURL;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) ICScheme *scheme; // @synthesize scheme=_scheme;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSUUID *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)parseActions;
 @property(readonly, nonatomic) NSString *subAction; // @synthesize subAction=_subAction;

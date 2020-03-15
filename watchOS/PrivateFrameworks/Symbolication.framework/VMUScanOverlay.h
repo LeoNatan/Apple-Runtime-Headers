@@ -15,8 +15,8 @@
 
 + (id)defaultOverlayWithScanner:(id)arg1;
 + (id)defaultOverlay;
-@property(readonly, nonatomic) NSArray *refinementRules; // @synthesize refinementRules=_rules;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *refinementRules; // @synthesize refinementRules=_rules;
 - (void)addMetadataRefinementRule:(CDUnknownBlockType)arg1;
 - (id)initWithScanner:(id)arg1;
 

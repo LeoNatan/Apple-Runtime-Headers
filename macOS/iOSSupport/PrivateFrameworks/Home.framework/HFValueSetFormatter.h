@@ -13,9 +13,9 @@
 }
 
 + (id)formatterWithStringProvider:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stringProvider; // @synthesize stringProvider=_stringProvider;
 @property(nonatomic) long long unitStyle; // @synthesize unitStyle=_unitStyle;
-- (void).cxx_destruct;
 - (id)stringForObjectValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStringProvider:(CDUnknownBlockType)arg1;

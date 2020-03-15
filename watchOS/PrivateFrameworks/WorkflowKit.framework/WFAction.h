@@ -11,7 +11,7 @@
 #import <WorkflowKit/WFUUIDProvider-Protocol.h>
 #import <WorkflowKit/WFVariableProvider-Protocol.h>
 
-@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, WFActionParameterSummary, WFContentCollection, WFImage, WFParameter, WFResourceManager, WFWorkflow;
+@class ICApp, NSArray, NSAttributedString, NSDate, NSDictionary, NSHashTable, NSMutableDictionary, NSProgress, NSSet, NSString, WFActionParameterSummary, WFContentCollection, WFContentSourceTracker, WFDataInfo, WFImage, WFParameter, WFResourceManager, WFWorkflow;
 @protocol WFActionParameterInputProvider, WFUserInterface, WFVariableDataSource;
 
 @interface WFAction : NSObject <WFUUIDProvider, WFParameterEventObserver, NSCopying, WFVariableProvider>
@@ -24,6 +24,7 @@
     NSArray *_inputContentClasses;
     NSArray *_outputContentClasses;
     NSProgress *_progress;
+    WFContentSourceTracker *_contentSourceTracker;
     NSString *_identifier;
     NSDictionary *_definition;
     WFContentCollection *_input;
@@ -42,8 +43,10 @@
 }
 
 + (void)showImplicitChooseFromListWithInput:(id)arg1 userInterface:(id)arg2 cancelHandler:(CDUnknownBlockType)arg3 selectionHandler:(CDUnknownBlockType)arg4;
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 + (id)indentationLevelsForActions:(id)arg1;
 + (id)iconCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WFActionParameterInputProvider> parameterInputProvider; // @synthesize parameterInputProvider=_parameterInputProvider;
 @property(readonly, nonatomic) _Bool skipsProcessingHiddenParameters; // @synthesize skipsProcessingHiddenParameters=_skipsProcessingHiddenParameters;
 @property(copy, nonatomic) NSDictionary *processedParameters; // @synthesize processedParameters=_processedParameters;
@@ -62,8 +65,8 @@
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, copy, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) WFContentSourceTracker *contentSourceTracker; // @synthesize contentSourceTracker=_contentSourceTracker;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)setDefaultCoercionOptionsOnInputs;
 - (void)setDefaultCoercionOptionsOnContentCollection:(id)arg1;
 - (void)configureRuntimeResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -72,6 +75,7 @@
 - (_Bool)requiresUserInteractionWhenRunWithInput:(id)arg1;
 - (_Bool)showsImplicitChooseFromListWhenRunWithInput:(id)arg1;
 @property(readonly, nonatomic) NSArray *supportedAppIdentifiers;
+@property(readonly, nonatomic) WFDataInfo *targetDataInfo;
 - (id)actionForAppIdentifier:(id)arg1;
 - (void)snapInputParameterIfNecessary;
 - (void)lockInputParameter;
@@ -151,7 +155,7 @@
 - (id)copyParameterStates;
 - (id)populatedInputWithProcessedParameterValues:(id)arg1;
 @property(readonly, nonatomic) _Bool populatesInputFromInputParameter;
-- (_Bool)getInputContentFromVariablesInParameterState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)getInputContentFromVariablesInParameterState:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)previousAction;
 - (void)runWithInput:(id)arg1 userInterface:(id)arg2 parameterInputProvider:(id)arg3 variableSource:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)createResourceManager;
@@ -191,6 +195,7 @@
 @property(readonly, nonatomic) int rateLimitThreshold;
 @property(readonly, nonatomic) int initialSuggestionBehavior;
 @property(readonly, nonatomic) _Bool neverSuggested;
+@property(readonly, nonatomic) unsigned int outputDisclosureLevel;
 @property(readonly, nonatomic) _Bool outputsMultipleItems;
 @property(readonly, nonatomic) _Bool inputsMultipleItems;
 @property(readonly, nonatomic) NSString *outputMeasurementUnitType;

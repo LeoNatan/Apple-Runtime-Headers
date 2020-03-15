@@ -13,8 +13,8 @@
     NSArray *_columns;
 }
 
-@property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 - (id)description;
 - (id)initWithColumns:(id)arg1;
 

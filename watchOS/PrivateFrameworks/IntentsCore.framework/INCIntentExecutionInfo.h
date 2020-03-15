@@ -18,10 +18,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uiExtensionBundleId; // @synthesize uiExtensionBundleId=_uiExtensionBundleId;
 @property(readonly, copy, nonatomic) NSString *extensionBundleId; // @synthesize extensionBundleId=_extensionBundleId;
 @property(readonly, copy, nonatomic) NSString *intentClassName; // @synthesize intentClassName=_intentClassName;
-- (void).cxx_destruct;
 - (id)_uiExtensionsWithError:(id *)arg1;
 - (id)_extensionsWithError:(id *)arg1;
 - (id)_matchingAttributesForExtensionPoint:(id)arg1 error:(id *)arg2;

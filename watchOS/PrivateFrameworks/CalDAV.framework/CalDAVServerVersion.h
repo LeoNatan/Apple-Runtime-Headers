@@ -45,6 +45,7 @@
 + (id)versionWithPropertyValue:(id)arg1;
 + (id)versionWithHTTPHeaders:(id)arg1;
 + (id)_prototypeMatchingServerHeaders:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *serverHeader; // @synthesize serverHeader=_serverHeader;
 @property(retain, nonatomic) NSSet *complianceClasses; // @synthesize complianceClasses=_complianceClasses;
 @property(nonatomic) _Bool supportsTelephone; // @synthesize supportsTelephone=_supportsTelephone;
@@ -73,7 +74,6 @@
 @property(nonatomic) _Bool supportsTimeRangeFilterWithoutEndDate; // @synthesize supportsTimeRangeFilterWithoutEndDate=_supportsTimeRangeFilterWithoutEndDate;
 @property(nonatomic) _Bool supportsTimeRangeFilter; // @synthesize supportsTimeRangeFilter=_supportsTimeRangeFilter;
 @property(nonatomic) double version; // @synthesize version=_version;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shouldUseDeleteAndAddInsteadOfMoveBetweenCalendars;
 @property(readonly, nonatomic) _Bool requiresOpeningAttachmentAsLink;
 - (id)propertyValue;

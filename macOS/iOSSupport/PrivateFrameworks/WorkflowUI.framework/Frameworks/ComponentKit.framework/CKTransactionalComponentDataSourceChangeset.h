@@ -19,6 +19,7 @@
     NSDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, copy, nonatomic) NSDictionary *insertedItems; // @synthesize insertedItems=_insertedItems;
 @property(readonly, copy, nonatomic) NSIndexSet *insertedSections; // @synthesize insertedSections=_insertedSections;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSIndexSet *removedSections; // @synthesize removedSections=_removedSections;
 @property(readonly, copy, nonatomic) NSSet *removedItems; // @synthesize removedItems=_removedItems;
 @property(readonly, copy, nonatomic) NSDictionary *updatedItems; // @synthesize updatedItems=_updatedItems;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -21,6 +21,7 @@
 
 + (id)_manifestWithBundle:(id)arg1 error:(id *)arg2;
 + (id)_assetPackBundleForBundle:(id)arg1 withAssetPackID:(id)arg2;
++ (void)_flushCacheForBundle:(id)arg1;
 + (void)_setConnection:(id)arg1;
 + (id)_connection;
 + (void)_addExtensionEndpoint:(id)arg1;

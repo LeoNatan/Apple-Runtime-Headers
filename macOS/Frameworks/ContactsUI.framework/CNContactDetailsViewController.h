@@ -25,6 +25,7 @@
     ABCardCollectionViewController *_cardCollectionViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ABCardCollectionViewController *cardCollectionViewController; // @synthesize cardCollectionViewController=_cardCollectionViewController;
 @property(retain, nonatomic) ABCardCollectionView *cardCollectionView; // @synthesize cardCollectionView=_cardCollectionView;
 @property(retain, nonatomic) CNUIEditingRules *editingRules; // @synthesize editingRules=_editingRules;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) __weak id <CNContactDetailsViewControllerDelegate> controllerDelegate; // @synthesize controllerDelegate=_controllerDelegate;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)userActionListDataSource;
 - (void)showLastItem;
 - (void)showFirstItem;
@@ -57,7 +57,7 @@
 - (void)cardCollectionViewControllerKeyViewLoopNeedsUpdate:(id)arg1;
 - (BOOL)shouldBeIncludedInKeyViewLoop;
 - (id)updateKeyViewLoopAndReturnTailView;
-- (void)commitEditing;
+- (BOOL)commitEditing;
 - (void)applyDisplayAttributes;
 - (void)editCollectionItemWithKey:(id)arg1 label:(id)arg2;
 - (void)highlightSearchTerms:(id)arg1;

@@ -16,9 +16,9 @@
     id <_TVInspectorCapturingViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_TVInspectorCapturingViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isTestingHits) _Bool testingHits; // @synthesize testingHits=_testingHits;
-- (void).cxx_destruct;
 - (void)didTapView:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;

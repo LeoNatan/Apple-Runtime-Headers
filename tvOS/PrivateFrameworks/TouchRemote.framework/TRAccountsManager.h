@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) ACAccountStore *iCloudAccountStore; // @synthesize iCloudAccountStore=_iCloudAccountStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccountStore *iCloudAccountStore; // @synthesize iCloudAccountStore=_iCloudAccountStore;
 - (id)accountTypesWithDefaultAccountID:(id)arg1;
 - (id)defaultAccountIDForAuthenticationAccountType:(unsigned long long)arg1;
 @property(readonly, nonatomic) GKLocalPlayer *localGameCenterPlayer;

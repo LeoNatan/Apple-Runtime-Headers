@@ -18,10 +18,10 @@
     _SFPBImage *_selectedImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) _SFPBImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain, nonatomic) _SFPBImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

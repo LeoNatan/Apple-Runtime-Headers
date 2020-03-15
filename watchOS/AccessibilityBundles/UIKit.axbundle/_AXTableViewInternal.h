@@ -20,6 +20,7 @@
     long long _accessibleElementCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *sectionFooters; // @synthesize sectionFooters=_sectionFooters;
 @property(readonly, nonatomic) NSMutableDictionary *sectionHeaders; // @synthesize sectionHeaders=_sectionHeaders;
 @property(nonatomic) _Bool reusableCellsEnabled; // @synthesize reusableCellsEnabled=_reusableCellsEnabled;
@@ -28,7 +29,6 @@
 @property(nonatomic) long long accessibleElementCount; // @synthesize accessibleElementCount=_accessibleElementCount;
 @property(nonatomic) _Bool searchTableViewVisible; // @synthesize searchTableViewVisible=_searchTableViewVisible;
 @property(nonatomic) _Bool searchControllerDimmingViewVisible; // @synthesize searchControllerDimmingViewVisible=_searchControllerDimmingViewVisible;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

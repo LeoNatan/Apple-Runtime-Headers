@@ -14,8 +14,8 @@
     FTRegConnectionHandler *_connectionHandler;
 }
 
-@property(retain, nonatomic) IMServiceImpl *service; // @synthesize service=_service;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IMServiceImpl *service; // @synthesize service=_service;
 - (void)_handleAccountNotification:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;
 - (void)_handleDaemonDisconnected:(id)arg1;

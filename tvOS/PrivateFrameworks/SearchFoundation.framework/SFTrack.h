@@ -26,13 +26,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFActionItem *playAction; // @synthesize playAction=_playAction;
 @property(copy, nonatomic) NSURL *preview; // @synthesize preview=_preview;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(copy, nonatomic) NSString *duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *number; // @synthesize number=_number;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

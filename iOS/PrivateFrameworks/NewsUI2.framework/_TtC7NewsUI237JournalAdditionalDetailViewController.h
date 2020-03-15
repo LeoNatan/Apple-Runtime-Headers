@@ -12,9 +12,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: tableView
     // Error parsing type: , name: dataSource
     // Error parsing type: , name: headline
-    // Error parsing type: , name: scoreProfile
-    // Error parsing type: , name: topics
-    // Error parsing type: , name: personalizationFeatures
 }
 
 - (void).cxx_destruct;

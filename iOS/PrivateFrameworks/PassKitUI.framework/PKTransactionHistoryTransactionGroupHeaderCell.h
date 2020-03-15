@@ -16,8 +16,8 @@
     UIImageView *_imageView;
 }
 
-@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;
 - (void)_dynamicUserInterfaceTraitDidChange;

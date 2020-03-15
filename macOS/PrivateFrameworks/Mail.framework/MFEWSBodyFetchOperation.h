@@ -16,9 +16,9 @@
     NSArray *_messages;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 @property(nonatomic) __weak id <MFEWSBodyFetchOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_bodyRequestShape;
 - (id)_fetchBodyDataForItemIdTypes:(id)arg1;
 - (id)_fetchMeetingCancellationsForItemIdStrings:(id)arg1;

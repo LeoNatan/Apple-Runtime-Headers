@@ -15,8 +15,8 @@
     _CNAutocompleteObservableBuilderBatchingHelper *_helper;
 }
 
-@property(retain, nonatomic) _CNAutocompleteObservableBuilderBatchingHelper *helper; // @synthesize helper=_helper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _CNAutocompleteObservableBuilderBatchingHelper *helper; // @synthesize helper=_helper;
 - (_Bool)batchAtIndexIncludesServer:(unsigned long long)arg1;
 - (void)addCalendarServerObservable:(id)arg1;
 - (void)addCachedCalendarServerObservable:(id)arg1;

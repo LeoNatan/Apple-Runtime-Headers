@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long writeType; // @synthesize writeType=_writeType;
 @property(retain) NSData *data; // @synthesize data=_data;
 @property unsigned long long permissions; // @synthesize permissions=_permissions;
 @property unsigned long long properties; // @synthesize properties=_properties;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

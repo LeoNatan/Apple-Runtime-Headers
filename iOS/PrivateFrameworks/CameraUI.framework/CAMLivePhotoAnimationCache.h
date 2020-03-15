@@ -14,9 +14,9 @@
     NSDictionary *__animationFramesByColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setAnimationFramesByColor:) NSDictionary *_animationFramesByColor; // @synthesize _animationFramesByColor=__animationFramesByColor;
 @property(readonly, nonatomic) _Bool automaticModeAllowed; // @synthesize automaticModeAllowed=_automaticModeAllowed;
-- (void).cxx_destruct;
 - (id)_actuallyLoadEnablingAnimationImagesForColors:(id)arg1 scale:(double)arg2;
 - (id)_colors;
 - (id)_tintColorForMode:(long long)arg1;

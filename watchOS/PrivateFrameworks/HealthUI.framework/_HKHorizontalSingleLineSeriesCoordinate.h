@@ -20,12 +20,12 @@
     id <HKGraphSeriesBlockCoordinateInfo> _userInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) int markStyle; // @synthesize markStyle=_markStyle;
 @property(readonly, nonatomic) _Bool groupToPrevious; // @synthesize groupToPrevious=_groupToPrevious;
 @property(readonly, nonatomic) int yValue; // @synthesize yValue=_yValue;
 @property(readonly, nonatomic) float xValue; // @synthesize xValue=_xValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) float endXValue;
 @property(readonly, nonatomic) float startXValue;
 - (id)copyWithTransform:(struct CGAffineTransform)arg1 roundToViewScale:(_Bool)arg2;

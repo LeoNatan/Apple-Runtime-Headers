@@ -30,10 +30,10 @@
     _Bool _invalidated;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double enabledStatusBarHeight; // @synthesize enabledStatusBarHeight=_statusBarHeight;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_isEnabled;
 @property(nonatomic) __weak id <SBNotchedStatusBarProximityBacklightPolicyEnablementConditionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_evaluateEnablement;
 - (void)_setEnabled:(_Bool)arg1 statusBarHeight:(double)arg2;
 - (void)sceneHandle:(id)arg1 didUpdateSettingsWithDiff:(id)arg2 previousSettings:(id)arg3;

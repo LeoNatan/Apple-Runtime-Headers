@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 + (id)placeholderEntryWithEntryBefore:(id)arg1 after:(id)arg2;
 + (id)entryWithTitle:(id)arg1 generator:(CDUnknownBlockType)arg2;
 + (id)entryWithTitle:(id)arg1 contentOffset:(struct CGPoint)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexPath *targetFocusedIndexPath; // @synthesize targetFocusedIndexPath=_targetFocusedIndexPath;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic, getter=isPlaceholder) _Bool placeholder;
 @property(readonly, nonatomic) struct CGPoint contentOffset;

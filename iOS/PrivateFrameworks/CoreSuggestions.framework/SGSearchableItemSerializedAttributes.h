@@ -18,10 +18,10 @@
 }
 
 + (id)serializedAttributesWithAttributeSetData:(id)arg1 attributeSetCoder:(id)arg2 htmlContentData:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *htmlContentData; // @synthesize htmlContentData=_htmlContentData;
 @property(readonly, nonatomic) CSCoder *attributeSetCoder; // @synthesize attributeSetCoder=_attributeSetCoder;
 @property(readonly, nonatomic) NSData *attributeSetData; // @synthesize attributeSetData=_attributeSetData;
-- (void).cxx_destruct;
 - (id)init;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

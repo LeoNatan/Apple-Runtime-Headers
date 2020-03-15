@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_darkStyleGlyphColor;
 + (id)_standardGlyphColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(nonatomic) struct CGPoint touchDownPoint; // @synthesize touchDownPoint=_touchDownPoint;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIKeyboardDockItemButton *view;
 @property(nonatomic) BOOL enabled;
 - (id)imageWithRenderConfig:(id)arg1;

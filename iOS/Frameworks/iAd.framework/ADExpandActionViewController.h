@@ -30,6 +30,7 @@
     struct CGSize _maximumExpandedSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 @property(retain, nonatomic) ADHomeButtonHandler *homeButtonHandler; // @synthesize homeButtonHandler=_homeButtonHandler;
 @property(nonatomic) _Bool tapWasRecognized; // @synthesize tapWasRecognized=_tapWasRecognized;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool adIsDismissing; // @synthesize adIsDismissing=_adIsDismissing;
 @property(retain, nonatomic) ADCountdownButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(retain, nonatomic) ADWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webViewWebContentProcessDidTerminate:(id)arg1;
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;

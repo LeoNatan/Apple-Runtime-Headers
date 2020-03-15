@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, NSString;
+@class NSData, NSDictionary, NSString, TPPolicyVersion;
 
 @interface TPPeerStableInfo : NSObject
 {
     unsigned long long _clock;
-    unsigned long long _policyVersion;
-    NSString *_policyHash;
+    TPPolicyVersion *_frozenPolicyVersion;
+    TPPolicyVersion *_flexiblePolicyVersion;
     NSDictionary *_policySecrets;
     NSString *_deviceName;
     NSString *_serialNumber;
@@ -24,7 +24,8 @@
 }
 
 + (id)stableInfoWithData:(id)arg1 sig:(id)arg2;
-+ (id)stableInfoWithClock:(unsigned long long)arg1 policyVersion:(unsigned long long)arg2 policyHash:(id)arg3 policySecrets:(id)arg4 deviceName:(id)arg5 serialNumber:(id)arg6 osVersion:(id)arg7 signingKeyPair:(id)arg8 recoverySigningPubKey:(id)arg9 recoveryEncryptionPubKey:(id)arg10 error:(id *)arg11;
++ (id)stableInfoWithClock:(unsigned long long)arg1 frozenPolicyVersion:(id)arg2 flexiblePolicyVersion:(id)arg3 policySecrets:(id)arg4 deviceName:(id)arg5 serialNumber:(id)arg6 osVersion:(id)arg7 signingKeyPair:(id)arg8 recoverySigningPubKey:(id)arg9 recoveryEncryptionPubKey:(id)arg10 error:(id *)arg11;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sig; // @synthesize sig=_sig;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSData *recoveryEncryptionPublicKey; // @synthesize recoveryEncryptionPublicKey=_recoveryEncryptionPublicKey;
@@ -33,17 +34,17 @@
 @property(readonly, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSDictionary *policySecrets; // @synthesize policySecrets=_policySecrets;
-@property(retain, nonatomic) NSString *policyHash; // @synthesize policyHash=_policyHash;
-@property(nonatomic) unsigned long long policyVersion; // @synthesize policyVersion=_policyVersion;
+@property(readonly) TPPolicyVersion *flexiblePolicyVersion; // @synthesize flexiblePolicyVersion=_flexiblePolicyVersion;
+@property(readonly) TPPolicyVersion *frozenPolicyVersion; // @synthesize frozenPolicyVersion=_frozenPolicyVersion;
 @property(nonatomic) unsigned long long clock; // @synthesize clock=_clock;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
+- (id)bestPolicyVersion;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)isEqualToPeerStableInfo:(id)arg1;
 - (BOOL)checkSignatureWithKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithClock:(unsigned long long)arg1 policyVersion:(unsigned long long)arg2 policyHash:(id)arg3 policySecrets:(id)arg4 deviceName:(id)arg5 serialNumber:(id)arg6 osVersion:(id)arg7 recoverySigningPubKey:(id)arg8 recoveryEncryptionPubKey:(id)arg9 data:(id)arg10 sig:(id)arg11;
+- (id)initWithClock:(unsigned long long)arg1 frozenPolicyVersion:(id)arg2 flexiblePolicyVersion:(id)arg3 policySecrets:(id)arg4 deviceName:(id)arg5 serialNumber:(id)arg6 osVersion:(id)arg7 recoverySigningPubKey:(id)arg8 recoveryEncryptionPubKey:(id)arg9 data:(id)arg10 sig:(id)arg11;
 
 @end
 

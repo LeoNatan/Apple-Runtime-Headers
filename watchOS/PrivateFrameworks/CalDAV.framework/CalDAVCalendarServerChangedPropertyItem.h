@@ -15,10 +15,10 @@
     NSString *_typeAttribute;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *typeAttribute; // @synthesize typeAttribute=_typeAttribute;
 @property(retain, nonatomic) NSString *nameAttribute; // @synthesize nameAttribute=_nameAttribute;
 @property(retain, nonatomic) NSMutableSet *changedParameters; // @synthesize changedParameters=_changedParameters;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (void)addChangedParameter:(id)arg1;
 - (void)parserFoundAttributes:(id)arg1;

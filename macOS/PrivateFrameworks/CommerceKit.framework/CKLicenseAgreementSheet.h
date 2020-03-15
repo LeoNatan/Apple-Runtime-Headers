@@ -19,9 +19,9 @@
     NSWindow *_hostWindow;
 }
 
+- (void).cxx_destruct;
 @property __weak NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(copy) NSArray *productKeys; // @synthesize productKeys=_productKeys;
-- (void).cxx_destruct;
 - (void)agree:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)_dismissPanelWithCode:(long long)arg1;

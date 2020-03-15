@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     id _resourcePinningHandle;
 }
 
-@property(retain, nonatomic) id resourcePinningHandle; // @synthesize resourcePinningHandle=_resourcePinningHandle;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id resourcePinningHandle; // @synthesize resourcePinningHandle=_resourcePinningHandle;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

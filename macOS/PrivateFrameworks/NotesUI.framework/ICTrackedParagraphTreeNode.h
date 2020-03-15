@@ -19,14 +19,14 @@
 }
 
 + (id)placeholderNodeWithIndentation:(unsigned long long)arg1;
-+ (id)nodeFromTrackedParagraph:(id)arg1 textView:(struct ICMacBaseTextView *)arg2;
++ (id)nodeFromTrackedParagraph:(id)arg1 textView:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
 @property(nonatomic) long long indent; // @synthesize indent=_indent;
 @property(nonatomic) BOOL checked; // @synthesize checked=_checked;
 @property(nonatomic) __weak ICTrackedParagraphTreeNode *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 @property(retain, nonatomic) ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
-- (void).cxx_destruct;
 - (id)description;
 - (void)recursivlyAddDescriptionToString:(id)arg1;
 @property(readonly, nonatomic) NSString *recurisiveDescription;

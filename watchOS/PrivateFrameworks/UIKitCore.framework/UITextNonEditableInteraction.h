@@ -11,11 +11,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
+- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4 forTouchType:(int)arg5;
 - (void)toggleSelectionCommands;
 - (void)doubleTapInUneditable:(id)arg1;
-- (void)_oneFingerTapInUneditableActionAtLocation:(struct CGPoint)arg1 textInput:(id)arg2;
+- (void)_oneFingerTapInUneditableActionAtLocation:(struct CGPoint)arg1 textInput:(id)arg2 canReplaceText:(_Bool)arg3;
 - (void)oneFingerTapInUneditable:(id)arg1;
+- (_Bool)_shouldAllowEnforcedTouchTypeForTouch:(id)arg1 forGestureRecognizer:(id)arg2;
 - (id)initWithMode:(int)arg1;
 
 @end

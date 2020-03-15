@@ -31,11 +31,11 @@
 }
 
 + (id)fitnessMachineServerId;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDFitnessMachineAnalyticsCollector *analyticsCollector; // @synthesize analyticsCollector=_analyticsCollector;
 @property(retain, nonatomic) HDFitnessMachineStateTimers *fitnessMachineStateTimers; // @synthesize fitnessMachineStateTimers=_fitnessMachineStateTimers;
 @property(nonatomic) __weak HDHealthServiceManager *serviceManager; // @synthesize serviceManager=_serviceManager;
 @property(readonly, nonatomic) HDFitnessMachineDataProducer *fitnessMachineDataProducer; // @synthesize fitnessMachineDataProducer=_fitnessMachineDataProducer;
-- (void).cxx_destruct;
 - (void)unitTest_receiveFakeCharacteristicUpdate:(id)arg1;
 - (id)unitTest_currentFitnessMachineSession;
 - (void)unitTest_fakeSession:(id)arg1;

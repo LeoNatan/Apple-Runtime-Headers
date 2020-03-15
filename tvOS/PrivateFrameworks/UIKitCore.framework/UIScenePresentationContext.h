@@ -19,8 +19,8 @@
     UIMutableTransformer *_transformer;
 }
 
-@property(readonly, nonatomic) UIScenePresentationContext *_defaultPresentationContext; // @synthesize _defaultPresentationContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIScenePresentationContext *_defaultPresentationContext; // @synthesize _defaultPresentationContext;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

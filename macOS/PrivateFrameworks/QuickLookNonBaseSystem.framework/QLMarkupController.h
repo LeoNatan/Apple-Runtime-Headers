@@ -21,12 +21,12 @@
     NSOperationQueue *_presentedItemOperationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 @property BOOL saveInPlace; // @synthesize saveInPlace=_saveInPlace;
 @property(retain) NSURL *shareItemURL; // @synthesize shareItemURL=_shareItemURL;
 @property __weak id <QLMarkupControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) QLMarkupViewController *markupViewController; // @synthesize markupViewController=_markupViewController;
-- (void).cxx_destruct;
 - (void)savePresentedItemChangesWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSURL *presentedItemURL;
 - (void)promptSaveForCloseWithCloseHandler:(CDUnknownBlockType)arg1;

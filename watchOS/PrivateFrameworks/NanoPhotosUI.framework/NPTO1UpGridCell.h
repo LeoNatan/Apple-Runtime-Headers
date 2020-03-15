@@ -34,6 +34,7 @@
     NPTOIrisBadgeView *_irisBadgeView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPTOIrisBadgeView *irisBadgeView; // @synthesize irisBadgeView=_irisBadgeView;
 @property(nonatomic) _Bool showingIrisBadge; // @synthesize showingIrisBadge=_showingIrisBadge;
 @property(nonatomic) _Bool canShowIris; // @synthesize canShowIris=_canShowIris;
@@ -46,7 +47,6 @@
 @property(nonatomic) _Bool loadLowRes; // @synthesize loadLowRes=_loadLowRes;
 @property(readonly, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (void)pauseWithMode:(int)arg1;
 - (void)playWithMode:(int)arg1;
 - (void)prepareToPlayWithMode:(int)arg1;

@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedWorkQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType idQueryResultHandler; // @synthesize idQueryResultHandler=_idQueryResultHandler;
 @property(copy) CDUnknownBlockType requestResultBlock; // @synthesize requestResultBlock=_requestResultBlock;
 @property(retain, nonatomic) NSString *service; // @synthesize service=_service;
 @property(retain, nonatomic) NSString *listenerID; // @synthesize listenerID=_listenerID;
 @property(retain, nonatomic) NSArray *propertyItems; // @synthesize propertyItems=_propertyItems;
-- (void).cxx_destruct;
 - (void)_requestStatusOnMainQueue:(BOOL)arg1;
 - (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
 @property(readonly, nonatomic) BOOL cancelled;

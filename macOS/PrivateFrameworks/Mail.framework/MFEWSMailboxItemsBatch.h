@@ -20,6 +20,7 @@
     NSArray *_addedMessages;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *addedMessages; // @synthesize addedMessages=_addedMessages;
 @property(copy, nonatomic) NSDictionary *fetchedItemsByID; // @synthesize fetchedItemsByID=_fetchedItemsByID;
 @property(copy, nonatomic) NSDictionary *readFlagChangesByItemID; // @synthesize readFlagChangesByItemID=_readFlagChangesByItemID;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL isFinalBatch; // @synthesize isFinalBatch=_isFinalBatch;
 @property(copy, nonatomic) NSString *finalSyncState; // @synthesize finalSyncState=_finalSyncState;
 @property(copy, nonatomic) NSString *initialSyncState; // @synthesize initialSyncState=_initialSyncState;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

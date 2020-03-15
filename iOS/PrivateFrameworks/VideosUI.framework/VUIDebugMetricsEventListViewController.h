@@ -11,14 +11,23 @@
 __attribute__((visibility("hidden")))
 @interface VUIDebugMetricsEventListViewController : UITableViewController
 {
-    NSArray *_events;
+    NSArray *_visibleEvents;
+    NSArray *_allEvents;
+    NSArray *_buttonsInHeader;
+    NSArray *_buttonsInHeaderSelected;
 }
 
-@property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *buttonsInHeaderSelected; // @synthesize buttonsInHeaderSelected=_buttonsInHeaderSelected;
+@property(retain, nonatomic) NSArray *buttonsInHeader; // @synthesize buttonsInHeader=_buttonsInHeader;
+@property(retain, nonatomic) NSArray *allEvents; // @synthesize allEvents=_allEvents;
+@property(retain, nonatomic) NSArray *visibleEvents; // @synthesize visibleEvents=_visibleEvents;
 - (id)_imageFromPageContext:(id)arg1;
+- (void)_buttonClicked:(id)arg1;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)_formatKeyAndValue:(id)arg1 fromEvent:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

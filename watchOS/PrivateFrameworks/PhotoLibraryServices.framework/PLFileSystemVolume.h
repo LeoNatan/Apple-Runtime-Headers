@@ -23,6 +23,7 @@
 - (id)predictedURL;
 - (void)_unregisterWithVolumeManager;
 - (void)_registerWithVolumeManager;
+- (void)unregisterWithVolumeManager;
 - (void)didTurnIntoFault;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;

@@ -21,11 +21,11 @@
 + (void)_slowGetCacheKeyWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)_fastGetCacheKeyWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)getCacheKeyWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storefrontIdentifier; // @synthesize storefrontIdentifier=_storefrontIdentifier;
 @property(nonatomic, getter=isPersonalized) _Bool personalized; // @synthesize personalized=_personalized;
 @property(copy, nonatomic) NSNumber *enqueuerAccountIdentifier; // @synthesize enqueuerAccountIdentifier=_enqueuerAccountIdentifier;
 @property(copy, nonatomic) NSNumber *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (_Bool)_isGoodCacheKey;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

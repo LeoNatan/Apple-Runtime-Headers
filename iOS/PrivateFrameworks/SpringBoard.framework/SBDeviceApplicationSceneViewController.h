@@ -33,13 +33,13 @@
     MTLumaDodgePillSettings *_homeGrabberPillSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTLumaDodgePillSettings *homeGrabberPillSettings; // @synthesize homeGrabberPillSettings=_homeGrabberPillSettings;
 @property(nonatomic) long long homeGrabberDisplayMode; // @synthesize homeGrabberDisplayMode=_homeGrabberDisplayMode;
 @property(copy, nonatomic) NSString *sceneHostViewMinificationFilter; // @synthesize sceneHostViewMinificationFilter=_sceneHostViewMinificationFilter;
 @property(nonatomic) _Bool shouldRasterizeSceneHostView; // @synthesize shouldRasterizeSceneHostView=_shouldRasterizeSceneHostView;
 @property(nonatomic) _Bool rendersWhileLocked; // @synthesize rendersWhileLocked=_rendersWhileLocked;
 @property(retain, nonatomic, getter=_statusBarAssertions, setter=_setStatusBarAssertions:) NSHashTable *statusBarAssertions; // @synthesize statusBarAssertions=_statusBarAssertions;
-- (void).cxx_destruct;
 - (void)_didDisableSecureDisplay;
 - (void)_willEnableSecureDisplay;
 - (void)_configureForSecureDisplay:(_Bool)arg1;

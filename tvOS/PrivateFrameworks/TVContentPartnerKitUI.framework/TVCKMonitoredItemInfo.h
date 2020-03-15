@@ -17,10 +17,10 @@
     unsigned long long _countOfMonitoringClients;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long countOfMonitoringClients; // @synthesize countOfMonitoringClients=_countOfMonitoringClients;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property(readonly, copy, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

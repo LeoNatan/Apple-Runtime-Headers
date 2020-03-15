@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
     long long _currentCheckpointCovered;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentCheckpointCovered; // @synthesize currentCheckpointCovered=_currentCheckpointCovered;
 @property(nonatomic) double grabberStartXLocation; // @synthesize grabberStartXLocation=_grabberStartXLocation;
 @property(retain, nonatomic) UIKBUndoStyling *style; // @synthesize style=_style;
@@ -54,7 +55,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIKBUndoControl *aCutButtonView; // @synthesize aCutButtonView=_aCutButtonView;
 @property(retain, nonatomic) UIKBUndoControl *rightButtonView; // @synthesize rightButtonView=_rightButtonView;
 @property(retain, nonatomic) UIKBUndoControl *leftButtonView; // @synthesize leftButtonView=_leftButtonView;
-- (void).cxx_destruct;
 - (void)updateControlWithDirection:(long long)arg1 travelProgress:(double)arg2 isRTL:(BOOL)arg3;
 - (void)controlActionUpOutside:(id)arg1;
 - (void)controlActionUpInside:(id)arg1;

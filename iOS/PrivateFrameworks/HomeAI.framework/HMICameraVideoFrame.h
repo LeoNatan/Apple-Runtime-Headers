@@ -24,6 +24,7 @@
 
 + (id)logCategory;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSArray *motionDetections; // @synthesize motionDetections=_motionDetections;
 @property(readonly) NSData *jpegData; // @synthesize jpegData=_jpegData;
 @property(readonly) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
@@ -31,7 +32,6 @@
 @property(readonly) unsigned long long frameId; // @synthesize frameId=_frameId;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
 @property(readonly) CDStruct_1b6d18a9 presentationTime; // @synthesize presentationTime=_presentationTime;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (_Bool)convertToJPEGWithError:(id *)arg1;

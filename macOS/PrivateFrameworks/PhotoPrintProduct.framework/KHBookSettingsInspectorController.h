@@ -20,13 +20,13 @@
     KHPageCountPickerController *_pageCountPicker;
 }
 
+- (void).cxx_destruct;
 @property(retain) KHPageCountPickerController *pageCountPicker; // @synthesize pageCountPicker=_pageCountPicker;
 @property __weak KHBookProjectLayoutsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) KHInspectorTileViewController *settingsTileController; // @synthesize settingsTileController=_settingsTileController;
 @property(retain) KHInspectorTileViewController *densityTileController; // @synthesize densityTileController=_densityTileController;
 @property(retain) KHInspectorTileViewController *pageCountTileController; // @synthesize pageCountTileController=_pageCountTileController;
 @property(retain, nonatomic) KHProjectSettingsPickerController *projectSettingsController; // @synthesize projectSettingsController=_projectSettingsController;
-- (void).cxx_destruct;
 - (void)pageCountSliderUpdatedToValue:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long pageCount;
 - (void)loadView;

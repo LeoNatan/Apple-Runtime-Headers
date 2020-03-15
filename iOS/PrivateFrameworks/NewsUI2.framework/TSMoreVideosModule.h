@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSMoreVideosModuleType-Protocol.h>
-
-@interface TSMoreVideosModule : NSObject <TSMoreVideosModuleType>
+@interface TSMoreVideosModule : NSObject
 {
     // Error parsing type: , name: resolver
 }

@@ -14,9 +14,9 @@
     CalDAVCalendarServerActionItem *_action;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CalDAVCalendarServerActionItem *action; // @synthesize action=_action;
 @property(retain, nonatomic) CoreDAVLeafItem *dtstamp; // @synthesize dtstamp=_dtstamp;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (id)init;
 

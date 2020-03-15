@@ -20,8 +20,8 @@
 
 + (id)supportedTypeIdentifiers;
 + (id)defaultManager;
-@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)fetchAssetsFromDrop:(id)arg1 importIfNeeded:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_sourcesForItemProviders:(id)arg1;
 - (id)_assetsForImportedItemProviders:(id)arg1;

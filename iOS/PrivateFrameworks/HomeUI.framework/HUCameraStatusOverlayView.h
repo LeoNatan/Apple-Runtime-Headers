@@ -19,6 +19,7 @@
     UIImageView *_alertBadge;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *alertBadge; // @synthesize alertBadge=_alertBadge;
 @property(nonatomic) _Bool didUpdateConstraints; // @synthesize didUpdateConstraints=_didUpdateConstraints;
 @property(retain, nonatomic) HUCircleView *statusIndicator; // @synthesize statusIndicator=_statusIndicator;
@@ -26,7 +27,6 @@
 @property(nonatomic) _Bool isDisplayingForSingleCamera; // @synthesize isDisplayingForSingleCamera=_isDisplayingForSingleCamera;
 @property(retain, nonatomic) UIColor *statusColor; // @synthesize statusColor=_statusColor;
 @property(copy, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
-- (void).cxx_destruct;
 - (id)_chevronImage;
 - (id)_exclamationImage;
 - (void)updateStatusLabelBounds;

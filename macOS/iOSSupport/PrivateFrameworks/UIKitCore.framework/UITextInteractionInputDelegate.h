@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     UITextInteraction *_rootInteraction;
 }
 
-@property(nonatomic) __weak UITextInteraction *rootInteraction; // @synthesize rootInteraction=_rootInteraction;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UITextInteraction *rootInteraction; // @synthesize rootInteraction=_rootInteraction;
 - (void)textDidChange:(id)arg1;
 - (void)textWillChange:(id)arg1;
 - (void)selectionDidChange:(id)arg1;

@@ -25,6 +25,7 @@
     HMDSettingsMessageHandler<HMDSettingsMessageHandlerProtocol> *_internalMessageHandler;
 }
 
+- (void).cxx_destruct;
 @property(retain) HMDSettingsMessageHandler<HMDSettingsMessageHandlerProtocol> *internalMessageHandler; // @synthesize internalMessageHandler=_internalMessageHandler;
 @property(retain) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -35,7 +36,6 @@
 @property __weak id <HMDSettingTransactionReceiverProtocol> transactionReceiver; // @synthesize transactionReceiver=_transactionReceiver;
 @property(readonly) NSString *logIdentifier; // @synthesize logIdentifier=_logIdentifier;
 @property(readonly) NSUUID *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
-- (void).cxx_destruct;
 - (id)createSettingModelWithName:(id)arg1 parent:(id)arg2 type:(id)arg3 properties:(id)arg4;
 - (id)createSettingGroupModelWithName:(id)arg1 parent:(id)arg2;
 - (id)createSettingRootGroupModelWithParentModelID:(id)arg1;

@@ -14,8 +14,8 @@
     NSNumber *_persistentID;
 }
 
-@property(retain, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 - (id)valueForProperty:(id)arg1;
 - (void)enumerateValuesExceptForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

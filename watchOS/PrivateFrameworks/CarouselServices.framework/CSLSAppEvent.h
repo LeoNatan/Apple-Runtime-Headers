@@ -17,10 +17,10 @@
 
 + (id)reasonName:(unsigned int)arg1;
 + (id)eventTypeName:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int reason; // @synthesize reason=_reason;
 @property(nonatomic) unsigned int eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (_Bool)isEqualToAppEvent:(id)arg1;
 - (id)description;
 

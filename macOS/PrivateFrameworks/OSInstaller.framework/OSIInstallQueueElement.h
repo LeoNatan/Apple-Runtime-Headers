@@ -17,12 +17,12 @@
     NSNumber *_timeTakenToComplete;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *timeTakenToComplete; // @synthesize timeTakenToComplete=_timeTakenToComplete;
 @property double totalProgressPercentage; // @synthesize totalProgressPercentage=_totalProgressPercentage;
 @property double initialEstimate; // @synthesize initialEstimate=_initialEstimate;
 @property(retain) OSInstallOptions *options; // @synthesize options=_options;
 @property NSObject *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)okayToSkip;
 - (id)nextProgressPhaseAfterCompletion;
 - (id)packagesDirectory;

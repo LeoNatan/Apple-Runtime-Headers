@@ -25,11 +25,11 @@
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) unsigned long long typeface; // @synthesize typeface=_typeface;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)_fontForStyle:(unsigned long long)arg1;
 - (void)_updateLabelText;
 - (id)_attributedStringForTypeface:(unsigned long long)arg1;

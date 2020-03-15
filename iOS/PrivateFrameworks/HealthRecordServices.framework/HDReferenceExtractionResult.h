@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *rulesVersion; // @synthesize rulesVersion=_rulesVersion;
 @property(readonly, copy, nonatomic) NSURL *nextSearchResultURL; // @synthesize nextSearchResultURL=_nextSearchResultURL;
 @property(readonly, copy, nonatomic) NSArray *unresolvableReferences; // @synthesize unresolvableReferences=_unresolvableReferences;
 @property(readonly, copy, nonatomic) NSArray *incompleteResources; // @synthesize incompleteResources=_incompleteResources;
 @property(readonly, copy, nonatomic) NSArray *completeResources; // @synthesize completeResources=_completeResources;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

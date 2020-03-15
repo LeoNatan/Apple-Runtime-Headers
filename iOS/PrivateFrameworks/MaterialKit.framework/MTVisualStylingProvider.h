@@ -24,12 +24,12 @@
 + (id)_visualStylingProviderForRecipe:(long long)arg1 andCategory:(long long)arg2;
 + (id)_visualStylingProviderForRecipe:(long long)arg1 category:(long long)arg2 andUserInterfaceStyle:(long long)arg3;
 + (Class)_visualStylingClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_privateObservers) NSPointerArray *privateObservers; // @synthesize privateObservers=_privateObservers;
 @property(retain, nonatomic, getter=_viewsAndLayersToObserverBlocks) NSMapTable *viewsAndLayersToObserverBlocks; // @synthesize viewsAndLayersToObserverBlocks=_viewsAndLayersToObserverBlocks;
 @property(retain, nonatomic, getter=_viewsAndLayersToCoreMaterialVisualStyles) NSMapTable *viewsAndLayersToCoreMaterialVisualStyles; // @synthesize viewsAndLayersToCoreMaterialVisualStyles=_viewsAndLayersToCoreMaterialVisualStyles;
 @property(retain, nonatomic, getter=_styleNamesToVisualStylings) NSMutableDictionary *styleNamesToVisualStylings; // @synthesize styleNamesToVisualStylings=_styleNamesToVisualStylings;
 @property(retain, nonatomic, getter=_coreMaterialVisualStylingProvider) MTCoreMaterialVisualStylingProvider *coreMaterialVisualStylingProvider; // @synthesize coreMaterialVisualStylingProvider=_coreMaterialVisualStylingProvider;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)_updateVisualStyleOfViewOrLayer:(id)arg1;
 - (void)_stopAutomaticallyUpdatingViewOrLayer:(id)arg1;

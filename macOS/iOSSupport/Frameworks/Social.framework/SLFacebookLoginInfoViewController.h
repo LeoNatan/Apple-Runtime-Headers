@@ -15,8 +15,8 @@
     id <SLFacebookLoginInfoViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SLFacebookLoginInfoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SLFacebookLoginInfoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_cancelTapped:(id)arg1;
 - (void)_signInTapped:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

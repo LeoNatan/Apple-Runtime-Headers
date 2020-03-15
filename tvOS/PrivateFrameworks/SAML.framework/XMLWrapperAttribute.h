@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     XMLWrapperNamespace *_ns;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) XMLWrapperNamespace *ns; // @synthesize ns=_ns;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)xmlAttrNodeForNode:(struct _xmlNode *)arg1 error:(id *)arg2;
 - (id)initWithNode:(struct _xmlAttr *)arg1 error:(id *)arg2;
 

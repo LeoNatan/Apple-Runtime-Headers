@@ -16,9 +16,9 @@
 }
 
 + (double)preferredHeightForAction:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)willLeaveReusePool;
 - (void)didEnterReusePool;
 

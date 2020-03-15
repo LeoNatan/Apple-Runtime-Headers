@@ -17,11 +17,11 @@
 }
 
 + (BOOL)canShareAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) SBLShareKitSession *session; // @synthesize session=_session;
 @property(readonly) PFDispatchQueue *dispatchQueueProviderWorker; // @synthesize dispatchQueueProviderWorker=_dispatchQueueProviderWorker;
 @property(readonly) PFDispatchQueue *dispatchQueueProviderReply; // @synthesize dispatchQueueProviderReply=_dispatchQueueProviderReply;
 @property(readonly) PFDispatchQueue *dispatchQueueSerial; // @synthesize dispatchQueueSerial=_dispatchQueueSerial;
-- (void).cxx_destruct;
 - (void)_presentSharingAlertWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_beginSessionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)sharingService:(id)arg1 shouldPrepareItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

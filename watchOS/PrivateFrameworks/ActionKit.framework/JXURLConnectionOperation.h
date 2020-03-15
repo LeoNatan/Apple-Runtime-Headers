@@ -24,6 +24,7 @@
 
 + (void)runLoopForever;
 + (id)networkThread;
+- (void).cxx_destruct;
 @property(retain) NSURLConnection *connection; // @synthesize connection=_connection;
 @property long long bytesUploaded; // @synthesize bytesUploaded=_bytesUploaded;
 @property long long bytesDownloaded; // @synthesize bytesDownloaded=_bytesDownloaded;
@@ -31,7 +32,6 @@
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSURLResponse *response; // @synthesize response=_response;
 @property(retain) NSMutableURLRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didSendBodyData:(int)arg2 totalBytesWritten:(int)arg3 totalBytesExpectedToWrite:(int)arg4;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;

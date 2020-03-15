@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     SEL _settingsButtonSelector;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL settingsButtonSelector; // @synthesize settingsButtonSelector=_settingsButtonSelector;
 @property(retain, nonatomic) id settingsButtonTarget; // @synthesize settingsButtonTarget=_settingsButtonTarget;
 @property(nonatomic) SEL backButtonSelector; // @synthesize backButtonSelector=_backButtonSelector;
 @property(retain, nonatomic) id backButtonTarget; // @synthesize backButtonTarget=_backButtonTarget;
 @property(retain, nonatomic) UIViewController *associatedViewController; // @synthesize associatedViewController=_associatedViewController;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithViewController:(id)arg1;
 

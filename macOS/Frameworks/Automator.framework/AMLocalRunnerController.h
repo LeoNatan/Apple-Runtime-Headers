@@ -27,6 +27,7 @@
 
 + (id)scriptMonitorURL;
 + (id)localRunnerControllerWithWorkflow:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSError *errorToCompleteWith; // @synthesize errorToCompleteWith=_errorToCompleteWith;
 @property(retain) id outputToCompleteWith; // @synthesize outputToCompleteWith=_outputToCompleteWith;
 @property BOOL stopped; // @synthesize stopped=_stopped;
@@ -36,7 +37,6 @@
 @property(retain) AMWorkflowRunner *runner; // @synthesize runner=_runner;
 @property(retain) AMWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) BOOL shouldDisplayProgressInMenuBar; // @synthesize shouldDisplayProgressInMenuBar=_shouldDisplayProgressInMenuBar;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)workflowRunner:(id)arg1 didResumeWithAction:(id)arg2;
 - (void)workflowRunner:(id)arg1 didRunConversion:(id)arg2;

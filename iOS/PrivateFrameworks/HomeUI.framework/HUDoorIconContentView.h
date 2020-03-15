@@ -17,12 +17,12 @@
     UIViewPropertyAnimator *_doorAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewPropertyAnimator *doorAnimator; // @synthesize doorAnimator=_doorAnimator;
 @property(retain, nonatomic) UIVisualEffectView *doorContainerView; // @synthesize doorContainerView=_doorContainerView;
 @property(retain, nonatomic) HUShapeLayerView *doorView; // @synthesize doorView=_doorView;
 @property(retain, nonatomic) HUVisualEffectContainerView *frameContainerView; // @synthesize frameContainerView=_frameContainerView;
 @property(retain, nonatomic) HUShapeLayerView *frameView; // @synthesize frameView=_frameView;
-- (void).cxx_destruct;
 - (struct CATransform3D)doorTransformForAngle:(double)arg1;
 - (void)updateColorsForDisplayStyle:(unsigned long long)arg1;
 - (void)updateIconFromState:(long long)arg1 toState:(long long)arg2 animated:(_Bool)arg3;

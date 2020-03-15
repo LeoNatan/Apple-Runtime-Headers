@@ -23,6 +23,7 @@
 }
 
 + (int)preferredCountOfInstancesToCache;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool minuteHandUsesManualTime; // @synthesize minuteHandUsesManualTime=_minuteHandUsesManualTime;
 @property(readonly, nonatomic) NTKHandView *chronoFlybackMinuteHandView; // @synthesize chronoFlybackMinuteHandView=_chronoFlybackMinuteHandView;
 @property(readonly, nonatomic) NTKHandView *chronoMinuteHandView; // @synthesize chronoMinuteHandView=_chronoMinuteHandView;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) NTKHandView *chronoSecondHandView; // @synthesize chronoSecondHandView=_chronoSecondHandView;
 @property(retain, nonatomic) NTKChronoPalette *palette; // @synthesize palette=_palette;
 @property(nonatomic) unsigned int timeScale; // @synthesize timeScale=_timeScale;
-- (void).cxx_destruct;
 - (void)tritium_transitionToTritiumOffWithProgress:(float)arg1;
 - (void)tritium_didTransitionToTritiumOff;
 - (void)tritium_didTransitionToTritiumOn;

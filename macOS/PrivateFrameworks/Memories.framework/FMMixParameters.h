@@ -13,8 +13,8 @@
     NSMutableArray *_volumeKeyFrames;
 }
 
-@property(retain, nonatomic) NSArray *volumeKeyFrames; // @synthesize volumeKeyFrames=_volumeKeyFrames;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *volumeKeyFrames; // @synthesize volumeKeyFrames=_volumeKeyFrames;
 - (BOOL)removeRedundantVolumeKeyFrames;
 - (BOOL)volumeKeyframesAreValid;
 - (void)insertVolumeKeyframe:(id)arg1;

@@ -16,9 +16,9 @@
     ADEventEditViewController *_eventKitEditViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADEventEditViewController *eventKitEditViewController; // @synthesize eventKitEditViewController=_eventKitEditViewController;
 @property(retain, nonatomic) EKEvent *calendarEvent; // @synthesize calendarEvent=_calendarEvent;
-- (void).cxx_destruct;
 - (void)eventEditViewController:(id)arg1 didCompleteWithAction:(long long)arg2;
 - (void)clientApplicationDidEnterBackground;
 - (void)dismiss;

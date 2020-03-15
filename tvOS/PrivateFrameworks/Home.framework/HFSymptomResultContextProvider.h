@@ -16,9 +16,9 @@
     HMMediaSystem *_mediaSystem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 - (long long)fixStateForSymptom:(id)arg1;
 - (_Bool)shouldDisplayManualFixOptionForSymptom:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *currentAppleMusicAccountName;

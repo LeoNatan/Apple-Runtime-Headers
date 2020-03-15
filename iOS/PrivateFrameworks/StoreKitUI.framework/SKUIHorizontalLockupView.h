@@ -52,10 +52,10 @@ __attribute__((visibility("hidden")))
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
 + (double)maximumPerspectiveHeightForSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool updateLayoutOnButtonConfirmation; // @synthesize updateLayoutOnButtonConfirmation=_updateLayoutOnButtonConfirmation;
 @property(retain, nonatomic) UIColor *gradientColor; // @synthesize gradientColor=_gradientColor;
 @property(retain, nonatomic) UIView *metadataBackgroundView; // @synthesize metadataBackgroundView=_metadataBackgroundView;
-- (void).cxx_destruct;
 - (id)_viewElementForView:(id)arg1;
 - (_Bool)_usesBackgroundWithAlpha;
 - (struct CGSize)_sizeViewsForColumn:(id)arg1 toFitWidth:(double)arg2;

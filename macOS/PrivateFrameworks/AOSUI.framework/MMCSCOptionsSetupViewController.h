@@ -29,6 +29,7 @@
     iCloudTouchBarController *_touchBarController;
 }
 
+- (void).cxx_destruct;
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property __weak NSButton *optionsViewConfirmButton; // @synthesize optionsViewConfirmButton=_optionsViewConfirmButton;
 @property __weak NSButton *optionsViewAlternateButton; // @synthesize optionsViewAlternateButton=_optionsViewAlternateButton;
@@ -43,7 +44,6 @@
 @property __weak NSTextField *optionsViewTitle; // @synthesize optionsViewTitle=_optionsViewTitle;
 @property __weak NSImageView *optionsViewImageView; // @synthesize optionsViewImageView=_optionsViewImageView;
 @property id <MMCSCOptionsSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)otherButtonClicked:(id)arg1;
 - (void)alternateButtonClicked:(id)arg1;
 - (void)defaultButtonClicked:(id)arg1;

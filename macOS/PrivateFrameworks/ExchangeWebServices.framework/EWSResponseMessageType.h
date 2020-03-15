@@ -20,12 +20,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id MessageXml; // @synthesize MessageXml=_MessageXml;
 @property(nonatomic) long long DescriptiveLinkKey; // @synthesize DescriptiveLinkKey=_DescriptiveLinkKey;
 @property(nonatomic) long long ResponseCode; // @synthesize ResponseCode=_ResponseCode;
 @property(copy, nonatomic) NSString *MessageText; // @synthesize MessageText=_MessageText;
 @property(nonatomic) long long ResponseClass; // @synthesize ResponseClass=_ResponseClass;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

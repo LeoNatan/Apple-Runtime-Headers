@@ -24,7 +24,7 @@
 - (id)lazyGroupsForGroups:(id)arg1;
 - (id)lazyGroupForGroupUniqueId:(id)arg1;
 - (id)lazyGroupForGroup:(id)arg1;
-- (BOOL)save;
+- (BOOL)saveWithOptions:(unsigned long long)arg1;
 - (BOOL)removeRecords:(id)arg1 error:(id *)arg2;
 - (BOOL)removeRecord:(id)arg1 error:(id *)arg2;
 - (id)personForUniqueId:(id)arg1;

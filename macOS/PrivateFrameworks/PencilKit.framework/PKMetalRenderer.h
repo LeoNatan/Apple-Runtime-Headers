@@ -68,6 +68,8 @@
 
 + (BOOL)disableClearOriginalBackbufferWorkaround;
 + (BOOL)useBlitEncoder;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL invertColors; // @synthesize invertColors=_invertColors;
 @property(nonatomic) double liveStrokeDuration; // @synthesize liveStrokeDuration=_liveStrokeDuration;
 @property(nonatomic) double liveStrokeElapsedTime; // @synthesize liveStrokeElapsedTime=_liveStrokeElapsedTime;
@@ -87,8 +89,6 @@
 @property(retain, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)renderImage:(struct CGImage *)arg1 andMask:(struct CGImage *)arg2 clippedToStrokeSpaceRect:(struct CGRect)arg3;
 - (void)renderImage:(struct CGImage *)arg1 andMask:(struct CGImage *)arg2;
 - (void)renderImage:(struct CGImage *)arg1 intoFramebuffer:(id)arg2 clipRect:(struct CGRect)arg3;

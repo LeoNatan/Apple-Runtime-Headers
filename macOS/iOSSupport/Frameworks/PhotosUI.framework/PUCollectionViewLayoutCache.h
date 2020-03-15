@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     BOOL _cachesResults;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL cachesResults; // @synthesize cachesResults=_cachesResults;
 @property(readonly, nonatomic) __weak id <PUCollectionViewLayoutProvider> layoutProvider; // @synthesize layoutProvider=_layoutProvider;
-- (void).cxx_destruct;
 - (BOOL)flipsHorizontallyInOppositeLayoutDirection;
 - (void)invalidateLayoutCache;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;

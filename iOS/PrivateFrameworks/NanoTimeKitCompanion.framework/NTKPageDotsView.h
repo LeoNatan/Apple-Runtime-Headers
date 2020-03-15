@@ -20,6 +20,7 @@
     NSMutableArray *_pageDots;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *pageDots; // @synthesize pageDots=_pageDots;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) double dotPadding; // @synthesize dotPadding=_dotPadding;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) UIColor *currentPageColor; // @synthesize currentPageColor=_currentPageColor;
 @property(nonatomic) unsigned long long currentPage; // @synthesize currentPage=_currentPage;
 @property(nonatomic) unsigned long long numberOfPages; // @synthesize numberOfPages=_numberOfPages;
-- (void).cxx_destruct;
 - (void)_regenerateDots;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

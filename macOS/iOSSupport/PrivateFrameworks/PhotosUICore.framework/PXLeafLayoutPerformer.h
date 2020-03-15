@@ -15,12 +15,12 @@
     CDStruct_8c65c4f4 layoutInput;
 }
 
+- (void).cxx_destruct;
 - (void)setLayoutInput:(CDStruct_8c65c4f4)arg1;
 - (CDStruct_8c65c4f4)layoutInput;
 - (void)setLayoutOutput:(id)arg1;
 - (id)layoutOutput;
 - (id)children;
-- (void).cxx_destruct;
 - (struct CGSize)performLayout;
 
 @end

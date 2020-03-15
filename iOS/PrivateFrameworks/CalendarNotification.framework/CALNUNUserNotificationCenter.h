@@ -26,6 +26,7 @@
 
 + (id)_statsPayloadKeyForSettingName:(id)arg1 topicIdentifier:(id)arg2;
 + (void)_addSettingName:(id)arg1 value:(id)arg2 toStatsPayload:(id)arg3 forTopicIdentifier:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) CALNUNNotificationResponseMapper *notificationResponseMapper; // @synthesize notificationResponseMapper=_notificationResponseMapper;
 @property(readonly, nonatomic) CALNUNNotificationContentMapper *notificationContentMapper; // @synthesize notificationContentMapper=_notificationContentMapper;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) id <CALNNotificationStorage> storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) id <CALNUNUserNotificationCenterProtocol> userNotificationCenter; // @synthesize userNotificationCenter=_userNotificationCenter;
 @property(nonatomic) __weak id <CALNUserNotificationCenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)collectSettingsStats:(id)arg1;
 - (id)_updatedRecord:(id)arg1;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

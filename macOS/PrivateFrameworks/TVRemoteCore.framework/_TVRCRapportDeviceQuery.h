@@ -18,8 +18,8 @@
     id <_TVRCRapportDeviceQueryDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_TVRCRapportDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_TVRCRapportDeviceQueryDelegate> delegate; // @synthesize delegate=_delegate;
 - (BOOL)_recordExistsForIDS:(id)arg1;
 - (unsigned long long)_transportForStatusFlag:(unsigned long long)arg1;
 - (void)_updateRecordForIDS:(id)arg1 removeTransportForFlag:(unsigned long long)arg2;

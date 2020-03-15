@@ -23,11 +23,11 @@
 }
 
 + (Class)theConfigurationType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *configVersion; // @synthesize configVersion=_configVersion;
 @property(retain, nonatomic) NSString *resourceConnectProxyURL; // @synthesize resourceConnectProxyURL=_resourceConnectProxyURL;
 @property(retain, nonatomic) NSString *resourceProxyURL; // @synthesize resourceProxyURL=_resourceProxyURL;
 @property(retain, nonatomic) NSMutableArray *theConfigurations; // @synthesize theConfigurations=_theConfigurations;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

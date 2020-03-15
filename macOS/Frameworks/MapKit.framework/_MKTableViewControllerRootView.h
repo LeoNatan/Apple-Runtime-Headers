@@ -15,9 +15,9 @@
     NSTableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(readonly, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
-- (void).cxx_destruct;
 - (void)layout;
 - (double)tableViewTotalHeight;
 - (void)updateTableHeightConstraintAnimated:(BOOL)arg1;

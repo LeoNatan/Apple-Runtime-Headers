@@ -17,9 +17,9 @@
 
 + (unsigned int)minimumSupportedVersion;
 + (unsigned int)serializationVersion;
+- (void).cxx_destruct;
 @property(readonly) CRDocument *document; // @synthesize document=_document;
 @property(retain, nonatomic) CROrderedSet *orderedSet; // @synthesize orderedSet=_orderedSet;
-- (void).cxx_destruct;
 - (id)serializeCurrentVersion:(unsigned int *)arg1;
 - (void)mergeVersion:(unsigned int)arg1 fromData:(id)arg2;
 @property(readonly, nonatomic) NSUUID *replica; // @synthesize replica=_replica;

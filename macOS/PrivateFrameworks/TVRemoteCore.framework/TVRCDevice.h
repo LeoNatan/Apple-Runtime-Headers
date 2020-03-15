@@ -20,6 +20,7 @@
     _TVRCDeviceState *_deviceState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVRCDeviceState *deviceState; // @synthesize deviceState=_deviceState;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) TVRCDeviceInfo *info; // @synthesize info=_info;
@@ -27,10 +28,9 @@
 @property(retain, nonatomic) TVRCVoiceRecorder *voiceRecorder; // @synthesize voiceRecorder=_voiceRecorder;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <TVRCDeviceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_sendRTIDataPayload:(id)arg1;
 - (void)_disconnectDeviceDueToConnectionInterruption;
-- (void)_deviceEncounteredAuthChallengeType:(long long)arg1 attributes:(long long)arg2 codeToEnterOnDevice:(id)arg3;
+- (void)_deviceEncounteredAuthChallengeType:(long long)arg1 attributes:(long long)arg2 codeToEnterOnDevice:(id)arg3 throttleSeconds:(long long)arg4;
 - (void)_deviceUpdatedState:(id)arg1;
 @property(readonly, nonatomic) long long connectionType;
 @property(readonly, nonatomic) long long connectionState;

@@ -57,6 +57,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *beginEndIrisMovieCaptureHostTimeQueue;
     NSObject<OS_dispatch_group> *beginEndIrisMovieCaptureHostTimeDispatchGroup;
     NSString *sourceDeviceType;
+    _Bool deferredProcessingSupported;
+    _Bool deferredProcessingEnabled;
 }
 
 @end

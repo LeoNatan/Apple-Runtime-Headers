@@ -31,6 +31,7 @@
 + (id)synchronousServer;
 + (void)setAsynchronousServer:(id)arg1;
 + (id)asynchronousServer;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *conversationsByGroupUUID; // @synthesize conversationsByGroupUUID=_conversationsByGroupUUID;
 @property(nonatomic) BOOL shouldConnectToHost; // @synthesize shouldConnectToHost=_shouldConnectToHost;
 @property(nonatomic) int shouldConnectToken; // @synthesize shouldConnectToken=_shouldConnectToken;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <TUConversationMediaControllerDataSourceDelegate> mediaDelegate; // @synthesize mediaDelegate=_mediaDelegate;
 @property(nonatomic) __weak id <TUConversationManagerDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)mediaPrioritiesChangedForConversation:(id)arg1;
 - (oneway void)updateConversationsByGroupUUID:(id)arg1;
 - (id)synchronousServerWithErrorHandler:(CDUnknownBlockType)arg1;

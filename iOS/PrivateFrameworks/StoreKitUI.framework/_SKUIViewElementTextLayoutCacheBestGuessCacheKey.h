@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _width;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long width; // @synthesize width=_width;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

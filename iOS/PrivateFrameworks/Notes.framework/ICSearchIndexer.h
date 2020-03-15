@@ -26,6 +26,7 @@
 }
 
 + (id)sharedIndexer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *retryTimers; // @synthesize retryTimers=_retryTimers;
 @property(nonatomic, getter=isObservingChanges) _Bool observingChanges; // @synthesize observingChanges=_observingChanges;
 @property(retain, nonatomic) ICSelectorDelayer *changeProcessingDelayer; // @synthesize changeProcessingDelayer=_changeProcessingDelayer;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long maxBytesPerIndexingBatch; // @synthesize maxBytesPerIndexingBatch=_maxBytesPerIndexingBatch;
 @property(nonatomic) _Bool retryOnErrors; // @synthesize retryOnErrors=_retryOnErrors;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (void)clearObjectIDsToProcess;
 - (void)clearRetryForSelector:(SEL)arg1;
 - (void)retrySelector:(SEL)arg1;

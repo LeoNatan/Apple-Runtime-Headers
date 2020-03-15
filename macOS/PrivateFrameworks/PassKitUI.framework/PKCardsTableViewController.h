@@ -27,6 +27,7 @@
     NSString *_defaultCardIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *defaultCardIdentifier; // @synthesize defaultCardIdentifier=_defaultCardIdentifier;
 @property(retain) NSArray *tableContent; // @synthesize tableContent=_tableContent;
 @property(retain) NSTableView *paymentPassesTable; // @synthesize paymentPassesTable=_paymentPassesTable;
@@ -37,7 +38,6 @@
 @property(retain) NSString *autoSelectCardIdentifier; // @synthesize autoSelectCardIdentifier=_autoSelectCardIdentifier;
 @property(readonly) PKPaymentPass *selectedCard; // @synthesize selectedCard=_selectedCard;
 @property __weak id <PKCardsTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;

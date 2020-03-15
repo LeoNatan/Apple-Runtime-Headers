@@ -15,8 +15,8 @@
 
 + (id)_mergerWithConflictsForStore:(id)arg1 conflictingScopeIdentifiers:(id)arg2;
 + (id)_mergerWithNoConflictsForStore:(id)arg1;
-@property(readonly, nonatomic) CPLEngineStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CPLEngineStore *store; // @synthesize store=_store;
 - (id)mergerForBatch:(id)arg1 error:(id *)arg2;
 - (_Bool)_changeCanConflict:(id)arg1;
 - (id)initWithEngineStore:(id)arg1;

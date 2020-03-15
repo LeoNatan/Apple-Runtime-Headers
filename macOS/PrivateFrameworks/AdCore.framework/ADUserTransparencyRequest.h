@@ -26,6 +26,7 @@
 }
 
 + (id)options;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isSignedInToiTunes; // @synthesize isSignedInToiTunes=_isSignedInToiTunes;
 @property(nonatomic) BOOL limitAdTracking; // @synthesize limitAdTracking=_limitAdTracking;
 @property(retain, nonatomic) NSString *iTunesStore; // @synthesize iTunesStore=_iTunesStore;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSData *iAdID; // @synthesize iAdID=_iAdID;
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(retain, nonatomic) NSData *dPID; // @synthesize dPID=_dPID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

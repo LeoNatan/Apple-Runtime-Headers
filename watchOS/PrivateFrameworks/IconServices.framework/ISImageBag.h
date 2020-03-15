@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 + (id)imageBagWithResourcesNamed:(id)arg1 directory:(id)arg2;
 + (id)imageBagWithResourcesNamed:(id)arg1 fromBundle:(id)arg2 subdirectory:(id)arg3;
 + (id)imageBagWithResourcesNamed:(id)arg1 fromBundle:(id)arg2;
+- (void).cxx_destruct;
 @property struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain) NSMutableDictionary *imagesByScale; // @synthesize imagesByScale=_imagesByScale;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSArray *images; // @dynamic images;
 - (void)insertImage:(id)arg1;

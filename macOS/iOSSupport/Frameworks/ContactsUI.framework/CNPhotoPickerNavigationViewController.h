@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct CGSize _previousSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disablingRotation; // @synthesize disablingRotation=_disablingRotation;
 @property(nonatomic) struct CGSize previousSize; // @synthesize previousSize=_previousSize;
 @property(retain, nonatomic) NSArray *trapOverlayConstraints; // @synthesize trapOverlayConstraints=_trapOverlayConstraints;
 @property(retain, nonatomic) CNPhotoPickerTrapView *trapOverlayView; // @synthesize trapOverlayView=_trapOverlayView;
 @property(nonatomic) BOOL allowRotation; // @synthesize allowRotation=_allowRotation;
-- (void).cxx_destruct;
 - (void)updateTrapOverlayViewIfNecessaryWithCoordinator:(id)arg1;
 - (void)setupTrapOverlayView;
 - (BOOL)shouldDisplayTrapOverlayView;

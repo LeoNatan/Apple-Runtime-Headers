@@ -15,9 +15,9 @@
 }
 
 + (id)namedImageWrapperWithImage:(id)arg1 name:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

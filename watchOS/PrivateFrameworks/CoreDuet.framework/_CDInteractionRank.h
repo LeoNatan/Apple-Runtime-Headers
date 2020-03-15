@@ -14,9 +14,9 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *reasons; // @synthesize reasons=_reasons;
 @property double score; // @synthesize score=_score;
-- (void).cxx_destruct;
 
 @end
 

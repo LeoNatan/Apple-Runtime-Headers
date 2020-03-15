@@ -13,9 +13,11 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_accessibilityIsBannerNotificationElement;
 - (void)_axPerformBlockOnNotificationController:(CDUnknownBlockType)arg1;
 - (_Bool)_axIsGrouped;
 - (id)_axNCNotificationViewController;
+- (_Bool)_accessibilityResetBannerTimer;
 - (void)accessibilityElementDidLoseFocus;
 - (void)accessibilityElementDidBecomeFocused;
 - (_Bool)accessibilityPerformEscape;

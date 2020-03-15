@@ -18,9 +18,9 @@
     id <PUICRecentEmojiViewDelegate> _emojiViewDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PUICRecentEmojiViewDelegate> emojiViewDelegate; // @synthesize emojiViewDelegate=_emojiViewDelegate;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-- (void).cxx_destruct;
 - (void)handleModalCancel:(id)arg1;
 - (id)modalNavigationLeadingBarButton;
 - (id)categoryIdentifiers;

@@ -31,6 +31,7 @@
     struct CGRect _recentDrawingBoundsInInputView;
 }
 
+- (void).cxx_destruct;
 @property BOOL isWaitingToCoalesceStrokes; // @synthesize isWaitingToCoalesceStrokes=_isWaitingToCoalesceStrokes;
 @property BOOL isShowingOverlay; // @synthesize isShowingOverlay=_isShowingOverlay;
 @property BOOL ignoreAnnotationAndSelectionKVO; // @synthesize ignoreAnnotationAndSelectionKVO=_ignoreAnnotationAndSelectionKVO;
@@ -47,7 +48,6 @@
 @property(nonatomic, getter=shapeDetectionEnabled) BOOL shapeDetectionEnabled; // @synthesize shapeDetectionEnabled=_shapeDetectionEnabled;
 @property(nonatomic) BOOL coalescesDoodles; // @synthesize coalescesDoodles=_coalescesDoodles;
 @property(nonatomic) BOOL preferDoodle; // @synthesize preferDoodle=_preferDoodle;
-- (void).cxx_destruct;
 - (void)_removeAnnotations:(id)arg1 mostLikelyFromPageController:(id)arg2;
 - (void)_beginOrExtendCoalescingTimer;
 - (void)_coalesceDrawingsCancelled;

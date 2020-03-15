@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (id)errorFromString:(id)arg1;
 + (id)stringFromError:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *customDomain; // @synthesize customDomain=_customDomain;
 @property(nonatomic) long long code; // @synthesize code=_code;
 @property(nonatomic) int domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -6,15 +6,17 @@
 
 #import <NanoPassKit/NPKPaymentProvisioningFlowStepContext.h>
 
-@class NSString;
+@class NSString, PKPaymentSetupProduct;
 
 @interface NPKPaymentProvisioningFlowControllerProvisioningProgressStepContext : NPKPaymentProvisioningFlowStepContext
 {
+    PKPaymentSetupProduct *_product;
     NSString *_localizedProgressDescription;
 }
 
-@property(retain, nonatomic) NSString *localizedProgressDescription; // @synthesize localizedProgressDescription=_localizedProgressDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *localizedProgressDescription; // @synthesize localizedProgressDescription=_localizedProgressDescription;
+@property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 - (id)initWithRequestContext:(id)arg1;
 
 @end

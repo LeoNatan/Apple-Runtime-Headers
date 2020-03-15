@@ -30,6 +30,7 @@
     NSDictionary *_locationOfInterestHistograms;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *locationOfInterestHistograms; // @synthesize locationOfInterestHistograms=_locationOfInterestHistograms;
 @property(nonatomic) int highProbabilityItemMinNumOfEvents; // @synthesize highProbabilityItemMinNumOfEvents=_highProbabilityItemMinNumOfEvents;
 @property(nonatomic) double relativeHighProbabilityItemMinDifference; // @synthesize relativeHighProbabilityItemMinDifference=_relativeHighProbabilityItemMinDifference;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL locationsOfInterestsAvailable; // @synthesize locationsOfInterestsAvailable=_locationsOfInterestsAvailable;
-- (void).cxx_destruct;
 - (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_deleteUserInteractionsBeforeDate:(id)arg1;
 - (BOOL)_persistUserInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2 feedback:(id)arg3;

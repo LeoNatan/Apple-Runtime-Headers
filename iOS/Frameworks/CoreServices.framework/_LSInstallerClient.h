@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 + (id)installerWithBundleID:(id)arg1 bundleURL:(id)arg2 options:(id)arg3 callbackBlock:(CDUnknownBlockType)arg4;
 + (id)unInstallerWithBundleID:(id)arg1 options:(id)arg2 callbackBlock:(CDUnknownBlockType)arg3;
 + (id)installerWithBundleID:(id)arg1 options:(id)arg2 callbackBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long operationType; // @synthesize operationType=_operationType;
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic, getter=isUninstaller) _Bool uninstaller; // @synthesize uninstaller=_uninstaller;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *operationTypeString; // @dynamic operationTypeString;
 - (void)_invalidate;
 - (void)_waitForAllCallbackMessagesToExecute;

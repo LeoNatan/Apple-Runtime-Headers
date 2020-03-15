@@ -22,10 +22,10 @@
     _Bool _grabberVisible;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isGrabberVisible, setter=_setGrabberVisible:) _Bool grabberVisible; // @synthesize grabberVisible=_grabberVisible;
 @property(nonatomic, getter=_isBanner, setter=_setBanner:) _Bool banner; // @synthesize banner=_banner;
 @property(nonatomic, getter=isNotificationContentViewHidden) _Bool notificationContentViewHidden; // @synthesize notificationContentViewHidden=_notificationContentViewHidden;
-- (void).cxx_destruct;
 - (void)_layoutGrabber;
 - (void)_layoutAuxiliaryOptionsView;
 - (void)_layoutNotificationContentView;

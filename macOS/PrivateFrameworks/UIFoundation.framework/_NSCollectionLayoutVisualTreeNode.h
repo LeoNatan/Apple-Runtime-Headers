@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_children;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int axis; // @synthesize axis=_axis;
 @property(retain, nonatomic) NSArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (BOOL)isVerticalGroup;
 - (BOOL)isHorizontalGroup;
 - (id)description;

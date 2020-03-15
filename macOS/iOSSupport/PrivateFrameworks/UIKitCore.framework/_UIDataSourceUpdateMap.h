@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
 
 + (id)mapForInitialSnapshot:(id)arg1 finalSnapshot:(id)arg2 batchUpdateItems:(id)arg3;
 + (id)mapForInitialSnapshot:(id)arg1 orderedUpdateItems:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDataSourceBatchUpdateMapHelper *batchUpdateMapHelper; // @synthesize batchUpdateMapHelper=_batchUpdateMapHelper;
 @property(retain, nonatomic) NSArray *reverseUpdateItems; // @synthesize reverseUpdateItems=_reverseUpdateItems;
 @property(retain, nonatomic) NSArray *updateItems; // @synthesize updateItems=_updateItems;
 @property(copy, nonatomic) NSArray *originalUpdateItems; // @synthesize originalUpdateItems=_originalUpdateItems;
 @property(retain, nonatomic) _UIDataSourceSnapshotter *finalSnapshot; // @synthesize finalSnapshot=_finalSnapshot;
 @property(retain, nonatomic) _UIDataSourceSnapshotter *initialSnapshot; // @synthesize initialSnapshot=_initialSnapshot;
-- (void).cxx_destruct;
 - (id)updates;
 - (void)_updateSnapshot:(id)arg1 forUpdateItem:(id)arg2;
 - (long long)_transformSectionIndex:(long long)arg1 applyingUpdateItem:(id)arg2 withSnapshot:(id)arg3;

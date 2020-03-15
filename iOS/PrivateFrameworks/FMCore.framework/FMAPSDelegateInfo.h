@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <FMAPSDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FMAPSDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
-- (void).cxx_destruct;
 
 @end
 

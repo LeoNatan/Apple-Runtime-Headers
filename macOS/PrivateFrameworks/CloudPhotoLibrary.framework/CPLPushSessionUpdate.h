@@ -19,13 +19,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *unquarantinedRecordScopedIdentifiers; // @synthesize unquarantinedRecordScopedIdentifiers=_unquarantinedRecordScopedIdentifiers;
 @property(readonly, nonatomic) NSArray *deletedRecordScopedIdentifiers; // @synthesize deletedRecordScopedIdentifiers=_deletedRecordScopedIdentifiers;
 @property(readonly, nonatomic) NSArray *updatedRecords; // @synthesize updatedRecords=_updatedRecords;
 @property(readonly, nonatomic) NSArray *addedRecords; // @synthesize addedRecords=_addedRecords;
 @property(readonly, nonatomic) NSDictionary *uploadIdentifiers; // @synthesize uploadIdentifiers=_uploadIdentifiers;
 @property(readonly, nonatomic) CPLChangeBatch *diffBatch; // @synthesize diffBatch=_diffBatch;
-- (void).cxx_destruct;
 - (id)pendingRecordChangeForClientCacheWithLocalScopedIdentifier:(id)arg1;
 - (id)statusDescription;
 - (id)storageForStatusInStore:(id)arg1;

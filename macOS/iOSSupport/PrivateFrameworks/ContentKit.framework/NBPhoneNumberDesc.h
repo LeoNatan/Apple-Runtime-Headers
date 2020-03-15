@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_exampleNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *exampleNumber; // @synthesize exampleNumber=_exampleNumber;
 @property(retain, nonatomic) NSString *possibleNumberPattern; // @synthesize possibleNumberPattern=_possibleNumberPattern;
 @property(retain, nonatomic) NSString *nationalNumberPattern; // @synthesize nationalNumberPattern=_nationalNumberPattern;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

@@ -14,8 +14,8 @@
     double _height;
 }
 
-@property(nonatomic) double height; // @synthesize height=_height;
 - (void).cxx_destruct;
+@property(nonatomic) double height; // @synthesize height=_height;
 - (void)_updateCornerMask;
 - (void)_updateVisualStylingIfNecessary;
 - (void)_invalidateVisualStyling;

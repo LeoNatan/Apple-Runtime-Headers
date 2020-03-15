@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSSafariSandboxBrokerConnection.h>
+#import <SafariSharedUI/WBSUISafariSandboxBrokerConnection.h>
 
 #import <Safari/SafariSandboxBrokerProtocol-Protocol.h>
 
@@ -12,7 +12,7 @@
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface SafariSandboxBrokerConnection : WBSSafariSandboxBrokerConnection <SafariSandboxBrokerProtocol>
+@interface SafariSandboxBrokerConnection : WBSUISafariSandboxBrokerConnection <SafariSandboxBrokerProtocol>
 {
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_queue;

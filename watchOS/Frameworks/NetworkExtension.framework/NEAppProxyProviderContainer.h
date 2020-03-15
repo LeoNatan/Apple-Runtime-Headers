@@ -19,17 +19,16 @@
     CDUnknownBlockType _stopCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType stopCompletionHandler; // @synthesize stopCompletionHandler=_stopCompletionHandler;
 @property unsigned int delegateInterfaceIndex; // @synthesize delegateInterfaceIndex=_delegateInterfaceIndex;
 @property struct _NEFlowDirector *director; // @synthesize director=_director;
 @property(retain) NSObject<OS_dispatch_queue> *flowQueue; // @synthesize flowQueue=_flowQueue;
 @property(retain) id <NEAppProxyProviderContainerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NEAppProxyProvider *provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (void)handleAppMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setInitialFlowDivertControlSocket:(id)arg1;
 - (void)flowDivertNewFlow:(struct _NEFlow *)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)flowDivertMatchAppRulesWithFlow:(unsigned int)arg1 auditToken:(struct __CFData *)arg2 signingIdentifier:(struct __CFString *)arg3;
 - (void)flowDivertOpenControlSocket;
 - (void)setDelegateInterface:(unsigned int)arg1;
 - (void)stop;

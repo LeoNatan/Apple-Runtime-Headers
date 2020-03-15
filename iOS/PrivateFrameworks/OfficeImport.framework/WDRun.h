@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     WDParagraph *mParagraph;
 }
 
-@property(readonly) __weak WDParagraph *paragraph; // @synthesize paragraph=mParagraph;
 - (void).cxx_destruct;
+@property(readonly) __weak WDParagraph *paragraph; // @synthesize paragraph=mParagraph;
 - (id)description;
 - (void)clearProperties;
 - (_Bool)isEmpty;

@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *autofillContext; // @synthesize autofillContext=_autofillContext;
 @property(nonatomic) unsigned long long autofillMode; // @synthesize autofillMode=_autofillMode;
 @property(nonatomic) struct _NSRange validTextRange; // @synthesize validTextRange=_validTextRange;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(copy, nonatomic) NSString *appId; // @synthesize appId=_appId;
-- (void).cxx_destruct;
 - (void)copyContextualPropertiesFromDocumentTraits:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

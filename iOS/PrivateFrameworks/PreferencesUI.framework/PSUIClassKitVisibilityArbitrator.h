@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _visibilityStateChangeHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType visibilityStateChangeHandler; // @synthesize visibilityStateChangeHandler=_visibilityStateChangeHandler;
 @property(nonatomic) unsigned long long visibilityState; // @synthesize visibilityState=_visibilityState;
-- (void).cxx_destruct;
 - (void)settingsVisibilityDidChange:(id)arg1;
 - (void)reloadVisibilityState;
 - (void)dealloc;

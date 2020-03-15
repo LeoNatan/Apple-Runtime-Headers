@@ -28,6 +28,7 @@
     double _glyphScale;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double glyphScale; // @synthesize glyphScale=_glyphScale;
 @property(nonatomic, getter=isInteractiveWhenUnexpanded) _Bool interactiveWhenUnexpanded; // @synthesize interactiveWhenUnexpanded=_interactiveWhenUnexpanded;
 @property(nonatomic, getter=isGlyphVisible) _Bool glyphVisible; // @synthesize glyphVisible=_glyphVisible;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
 @property(retain, nonatomic) UIImage *glyphImage; // @synthesize glyphImage=_glyphImage;
 @property(nonatomic) float value; // @synthesize value=_value;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint glyphCenter;
 - (void)_setGlyphState:(id)arg1;
 - (void)_configureCompensatingGlyphPackageView:(id)arg1;

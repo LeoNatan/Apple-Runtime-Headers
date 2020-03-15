@@ -20,9 +20,9 @@
 + (id)initialState;
 + (id)new;
 + (id)newWithView:(const struct CKComponentViewConfiguration *)arg1 size:(const struct CKComponentSize *)arg2;
-@property(readonly, nonatomic) struct CKComponentSize size; // @synthesize size=_size;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CKComponentSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) id <NSObject> scopeFrameToken;
 - (id)controller;
 - (void)updateState:(CDUnknownBlockType)arg1 mode:(unsigned long long)arg2;

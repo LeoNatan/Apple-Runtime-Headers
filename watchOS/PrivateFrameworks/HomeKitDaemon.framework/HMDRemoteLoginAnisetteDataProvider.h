@@ -18,9 +18,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDRemoteLoginMessageSender *remoteMessageSender; // @synthesize remoteMessageSender=_remoteMessageSender;
 @property(readonly, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)eraseAnisetteWithCompletion:(CDUnknownBlockType)arg1;

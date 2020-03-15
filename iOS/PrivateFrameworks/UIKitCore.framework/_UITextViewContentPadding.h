@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     id <_UITextViewContentPaddingDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_UITextViewContentPaddingDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) double targetValue; // @synthesize targetValue=_targetValue;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)_checkNewCurrentValue;
 - (void)resetCurrentValue;
 - (void)increaseToValue:(double)arg1;

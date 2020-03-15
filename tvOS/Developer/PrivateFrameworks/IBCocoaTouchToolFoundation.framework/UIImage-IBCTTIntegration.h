@@ -15,9 +15,6 @@
 + (id)ibSymbolImageNamed:(id)arg1;
 + (double)ibUpScaleForSize:(struct CGSize)arg1;
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
-+ (id)imagePlaceholderData1x1;
-+ (id)imagePlaceholderData16X16;
-+ (id)createImagePlaceholderDataWithSize:(struct CGSize)arg1;
 - (void)ibSwizzled_encodeWithCoder:(id)arg1;
 - (void)setIbSymbolName:(id)arg1;
 - (id)ibSymbolName;

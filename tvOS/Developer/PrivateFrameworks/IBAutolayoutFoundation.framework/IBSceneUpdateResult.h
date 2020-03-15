@@ -13,8 +13,8 @@
     NSArray *_processingResults;
 }
 
-@property(readonly, nonatomic) NSArray *processingResults; // @synthesize processingResults=_processingResults;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *processingResults; // @synthesize processingResults=_processingResults;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 archivingTranslationContext:(id)arg2 processingResults:(id)arg3;

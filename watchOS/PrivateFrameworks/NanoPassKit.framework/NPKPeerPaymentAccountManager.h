@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) PKPeerPaymentAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) PKPeerPaymentService *peerPaymentService; // @synthesize peerPaymentService=_peerPaymentService;
-- (void).cxx_destruct;
 - (void)_updateAccount;
 - (void)_handleAccountChanged:(id)arg1;
 - (id)init;

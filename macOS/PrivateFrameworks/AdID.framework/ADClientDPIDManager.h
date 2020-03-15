@@ -29,6 +29,7 @@
 
 + (id)DPIDOperationTypeToString:(unsigned long long)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsDeviceToDeviceEncryption; // @synthesize supportsDeviceToDeviceEncryption=_supportsDeviceToDeviceEncryption;
 @property(nonatomic) BOOL sandboxEnvironment; // @synthesize sandboxEnvironment=_sandboxEnvironment;
 @property(retain, nonatomic) NSMutableArray *operationsInProgress; // @synthesize operationsInProgress=_operationsInProgress;
@@ -42,7 +43,6 @@
 @property(retain) NSDate *dpidReconcileStartDate; // @synthesize dpidReconcileStartDate=_dpidReconcileStartDate;
 @property unsigned long long dpidReconcileState; // @synthesize dpidReconcileState=_dpidReconcileState;
 @property(readonly, nonatomic) BOOL isTest; // @synthesize isTest=_isTest;
-- (void).cxx_destruct;
 - (void)syncDPIDWithiCloud:(CDUnknownBlockType)arg1;
 - (void)saveDPIDtoiCloud:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handleCloudKitError:(id)arg1;

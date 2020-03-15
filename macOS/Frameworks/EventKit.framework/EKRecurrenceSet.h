@@ -15,9 +15,9 @@
 }
 
 + (id)recurrenceSetForItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *series; // @synthesize series=_series;
 @property(retain) NSString *recurrenceSetID; // @synthesize recurrenceSetID=_recurrenceSetID;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -15,9 +15,9 @@
 }
 
 + (_Bool)isDebugModeEnabled;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowAlternateHeadlines; // @synthesize shouldShowAlternateHeadlines=_shouldShowAlternateHeadlines;
 @property(readonly, copy, nonatomic) NSString *feldsparID; // @synthesize feldsparID=_feldsparID;
-- (void).cxx_destruct;
 - (id)metadataForDefaultHeadlineWithTitle:(id)arg1;
 - (id)_debugHeadlineMetadataFromTitle:(id)arg1 fromExperimentalTitles:(id)arg2 forArticleID:(id)arg3;
 - (id)_headlineMetadataFromTitle:(id)arg1 fromExperimentalTitles:(id)arg2 forArticleID:(id)arg3;

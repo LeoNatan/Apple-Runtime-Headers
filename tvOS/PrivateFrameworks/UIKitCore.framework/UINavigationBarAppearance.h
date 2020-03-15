@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIBarButtonItemAppearance *backButtonAppearance; // @synthesize backButtonAppearance=_backButtonAppearance;
 @property(copy, nonatomic) UIBarButtonItemAppearance *doneButtonAppearance; // @synthesize doneButtonAppearance=_doneButtonAppearance;
 @property(copy, nonatomic) UIBarButtonItemAppearance *buttonAppearance; // @synthesize buttonAppearance=_buttonAppearance;
-- (void).cxx_destruct;
 - (void)_barButtonItemDataChanged:(id)arg1;
 - (void)_barButtonItemAppearanceChangedItemData:(id)arg1 toItemData:(id)arg2 fromItemData:(id)arg3;
 - (void)setBackIndicatorImage:(id)arg1 transitionMaskImage:(id)arg2;

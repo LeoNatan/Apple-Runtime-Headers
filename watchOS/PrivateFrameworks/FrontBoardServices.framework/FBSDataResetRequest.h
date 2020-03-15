@@ -15,10 +15,10 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) int options; // @synthesize options=_options;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)initWithMode:(int)arg1 options:(int)arg2 reason:(id)arg3;
 
 @end

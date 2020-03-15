@@ -17,10 +17,10 @@
     id _content;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id content; // @synthesize content=_content;
 @property(readonly, nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) id <NSObject><NSCopying> outlineObject; // @synthesize outlineObject=_outlineObject;
-- (void).cxx_destruct;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)description;
 @property(readonly, nonatomic) _Bool containsAnyObjects;

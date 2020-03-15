@@ -15,9 +15,9 @@
     CKTransactionalComponentDataSourceState *_state;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKTransactionalComponentDataSourceState *state; // @synthesize state=_state;
 @property(readonly, nonatomic) id <CKTransactionalComponentDataSourceStateModifying> modification; // @synthesize modification=_modification;
-- (void).cxx_destruct;
 - (id)initWithModification:(id)arg1 state:(id)arg2;
 
 @end

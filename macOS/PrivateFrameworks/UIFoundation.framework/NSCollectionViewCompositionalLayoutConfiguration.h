@@ -19,10 +19,10 @@
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(copy) NSArray *boundarySupplementaryItems; // @synthesize boundarySupplementaryItems=_boundarySupplementaryItems;
 @property double interSectionSpacing; // @synthesize interSectionSpacing=_interSectionSpacing;
 @property long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)differencesFromConfiguration:(id)arg1;
 - (id)initWithScrollDirection:(long long)arg1 interSectionSpacing:(double)arg2 boundarySupplememtaryItems:(id)arg3;

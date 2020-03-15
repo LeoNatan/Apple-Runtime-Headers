@@ -18,8 +18,8 @@
 + (id)packPropertyValue:(id)arg1;
 + (id)enclosedClassTypes;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) id <NSObject><NSCopying> value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NSObject><NSCopying> value; // @synthesize value=_value;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

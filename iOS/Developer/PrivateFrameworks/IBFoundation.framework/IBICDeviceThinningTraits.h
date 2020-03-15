@@ -26,6 +26,7 @@
     NSString *_deploymentTargetVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *deploymentTargetVersion; // @synthesize deploymentTargetVersion=_deploymentTargetVersion;
 @property(readonly) NSString *artworkDynamicDisplayMode; // @synthesize artworkDynamicDisplayMode=_artworkDynamicDisplayMode;
 @property(readonly) NSString *displayGamut; // @synthesize displayGamut=_displayGamut;
@@ -37,7 +38,6 @@
 @property(readonly) long long artworkDeviceScaleFactor; // @synthesize artworkDeviceScaleFactor=_artworkDeviceScaleFactor;
 @property(readonly) NSString *artworkDeviceIdiom; // @synthesize artworkDeviceIdiom=_artworkDeviceIdiom;
 @property(readonly) NSString *productType; // @synthesize productType=_productType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;

@@ -20,12 +20,12 @@
     NSMutableDictionary *_effectiveBundleIDRegionInfos;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *effectiveBundleIDRegionInfos; // @synthesize effectiveBundleIDRegionInfos=_effectiveBundleIDRegionInfos;
 @property(readonly, nonatomic) NSMapTable *effectiveBundleIDs; // @synthesize effectiveBundleIDs=_effectiveBundleIDs;
 @property(readonly, nonatomic) NSMutableDictionary *managers; // @synthesize managers=_managers;
 @property(readonly, nonatomic) NSMutableSet *registrations; // @synthesize registrations=_registrations;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)regionInfosForRegistration:(id)arg1;
 - (void)locationManager:(id)arg1 didDetermineState:(long long)arg2 forRegion:(id)arg3;
 - (void)locationManager:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;

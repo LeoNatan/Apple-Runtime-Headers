@@ -20,6 +20,7 @@
 }
 
 + (id)sharedWindowController;
+- (void).cxx_destruct;
 @property BOOL _thirdPartyActionsState; // @synthesize _thirdPartyActionsState=__thirdPartyActionsState;
 @property(copy) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 @property(retain, nonatomic) AutomatorSecurityHelperHostViewController *_automatorSecurityHelperHostViewController; // @synthesize _automatorSecurityHelperHostViewController=__automatorSecurityHelperHostViewController;
@@ -27,7 +28,6 @@
 @property BOOL _showSecurityWindowCalled; // @synthesize _showSecurityWindowCalled=__showSecurityWindowCalled;
 @property BOOL _isShowing; // @synthesize _isShowing=__isShowing;
 @property __weak NSView *_placeholder; // @synthesize _placeholder=__placeholder;
-- (void).cxx_destruct;
 - (void)_connectViewBridge;
 - (void)_updateClientUI;
 - (void)windowDidLoad;

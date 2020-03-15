@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long animationOrigin; // @synthesize animationOrigin=_animationOrigin;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(readonly, retain, nonatomic) UIView *imageView;
 - (id)init;

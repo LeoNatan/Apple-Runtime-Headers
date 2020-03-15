@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSDate *_initialStartDate;
 }
 
-@property(retain, nonatomic) NSDate *initialStartDate; // @synthesize initialStartDate=_initialStartDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *initialStartDate; // @synthesize initialStartDate=_initialStartDate;
 - (id)applyTransitionActivity:(id)arg1;
 - (void)applyChangeActivity:(id)arg1;
 - (void)_updateActivityForViewDidAppear;

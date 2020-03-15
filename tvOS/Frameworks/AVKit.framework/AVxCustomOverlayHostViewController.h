@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     UIVisualEffectView *_backgroundView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic, getter=isEnforcingMargins) _Bool enforcingMargins; // @synthesize enforcingMargins=_enforcingMargins;
-- (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

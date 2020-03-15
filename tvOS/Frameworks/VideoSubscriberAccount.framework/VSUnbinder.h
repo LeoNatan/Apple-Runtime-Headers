@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMapTable *_bindingsByBinder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *bindingsByBinder; // @synthesize bindingsByBinder=_bindingsByBinder;
 @property(nonatomic, getter=isInvalid) _Bool invalid; // @synthesize invalid=_invalid;
-- (void).cxx_destruct;
 - (void)binder:(id)arg1 didTearDownBinding:(id)arg2;
 - (void)binder:(id)arg1 didEstablishBinding:(id)arg2;
 - (void)dealloc;

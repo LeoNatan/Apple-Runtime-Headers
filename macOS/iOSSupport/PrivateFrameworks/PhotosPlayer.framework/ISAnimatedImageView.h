@@ -16,9 +16,9 @@
     ISAnimatedImagePlayer *_player;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ISAnimatedImagePlayer *player; // @synthesize player=_player;
 @property(nonatomic) UIImageView *placeholderImageView; // @synthesize placeholderImageView=_placeholderImageView;
-- (void).cxx_destruct;
 - (void)displayLayer:(id)arg1;
 @property(nonatomic) unsigned long long displayedFrameIndex;
 @property(nonatomic, getter=isPlaying) BOOL playing;

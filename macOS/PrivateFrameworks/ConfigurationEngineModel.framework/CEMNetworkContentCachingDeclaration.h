@@ -40,6 +40,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadPublicRanges; // @synthesize payloadPublicRanges=_payloadPublicRanges;
 @property(copy, nonatomic) NSNumber *payloadPort; // @synthesize payloadPort=_payloadPort;
 @property(copy, nonatomic) NSNumber *payloadPeerLocalSubnetsOnly; // @synthesize payloadPeerLocalSubnetsOnly=_payloadPeerLocalSubnetsOnly;
@@ -59,7 +60,6 @@
 @property(copy, nonatomic) NSNumber *payloadAutoActivation; // @synthesize payloadAutoActivation=_payloadAutoActivation;
 @property(copy, nonatomic) NSNumber *payloadAllowSharedCaching; // @synthesize payloadAllowSharedCaching=_payloadAllowSharedCaching;
 @property(copy, nonatomic) NSNumber *payloadAllowPersonalCaching; // @synthesize payloadAllowPersonalCaching=_payloadAllowPersonalCaching;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

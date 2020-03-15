@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 + (void)registerPCSSQLCacheEvictionActivity;
 + (id)globalPCSSQLCacheEvictionQueue;
 + (id)pathForContext:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long cacheHitCount; // @synthesize cacheHitCount=_cacheHitCount;
 @property unsigned long long cacheRequestCount; // @synthesize cacheRequestCount=_cacheRequestCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recordQueue; // @synthesize recordQueue=_recordQueue;
-- (void).cxx_destruct;
 - (id)CKStatusReportArray;
 - (void)clearInvalidatedCacheEntriesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearCache;

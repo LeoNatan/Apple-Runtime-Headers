@@ -33,6 +33,7 @@
     NSViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double surfaceWidth; // @synthesize surfaceWidth=_surfaceWidth;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) BOOL showsChevron; // @synthesize showsChevron=_showsChevron;
@@ -46,7 +47,6 @@
 @property(nonatomic) double fixedWidth; // @synthesize fixedWidth=_fixedWidth;
 @property(nonatomic) __weak id <IMKUICandidateControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMKCandidateListDictionary *candidateGroups; // @synthesize candidateGroups=_candidateGroups;
-- (void).cxx_destruct;
 - (void)addCandidatesToPasteboard;
 - (void)clearPasteboard;
 @property(readonly, nonatomic) NSArray *visibleCandidates;

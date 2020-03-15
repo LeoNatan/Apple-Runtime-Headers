@@ -17,9 +17,9 @@
     id <ABCardViewProperty> _property;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ABCardViewProperty> property; // @synthesize property=_property;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)contacts;
 - (id)identifiersOfPeopleWithValue:(id)arg1;
 - (void)setPropertiesOnMultiValue:(id)arg1;

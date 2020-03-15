@@ -26,6 +26,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
@@ -39,7 +40,6 @@
 @property(nonatomic) double fadeAnimationDuration; // @synthesize fadeAnimationDuration=_fadeAnimationDuration;
 @property(nonatomic) double creationTimeInterval; // @synthesize creationTimeInterval=_creationTimeInterval;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

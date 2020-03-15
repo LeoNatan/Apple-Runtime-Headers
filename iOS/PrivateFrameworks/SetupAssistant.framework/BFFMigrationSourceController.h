@@ -14,9 +14,9 @@
     BYMigrationSourceController *_sourceController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BYMigrationSourceController *sourceController; // @synthesize sourceController=_sourceController;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (void)setFileTransferSession:(id)arg1;
 - (id)initialViewController;
 - (id)initWithFileTransferSession:(id)arg1;

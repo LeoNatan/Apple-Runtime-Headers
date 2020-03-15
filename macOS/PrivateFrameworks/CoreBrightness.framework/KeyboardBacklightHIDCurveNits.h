@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (float)brightness;
 - (float)maxLevelPercentage;
 - (float)convertNitsToLevelPercentage:(float)arg1;
+- (void)setBrightness:(float)arg1 withFadeSpeed:(int)arg2 commit:(BOOL)arg3;
 - (void)setBrightness:(float)arg1;
 @property(readonly) float level;
 - (void)dealloc;

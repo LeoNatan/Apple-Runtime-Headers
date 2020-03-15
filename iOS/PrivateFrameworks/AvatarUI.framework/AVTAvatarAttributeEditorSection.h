@@ -19,11 +19,11 @@
     id <AVTAvatarAttributeEditorHeaderPicker> _headerAccessory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVTAvatarAttributeEditorHeaderPicker> headerAccessory; // @synthesize headerAccessory=_headerAccessory;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, copy, nonatomic) NSArray *sectionItems; // @synthesize sectionItems=_sectionItems;
-- (void).cxx_destruct;
 - (_Bool)shouldDisplaySeparatorBeforeSection:(id)arg1;
 - (_Bool)shouldDisplayTitle;
 @property(readonly, copy) NSString *description;

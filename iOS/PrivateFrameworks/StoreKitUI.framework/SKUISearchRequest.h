@@ -18,11 +18,11 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(copy, nonatomic) NSString *term; // @synthesize term=_term;
 @property(copy, nonatomic) NSString *searchHintOriginalTerm; // @synthesize searchHintOriginalTerm=_searchHintOriginalTerm;
 @property(copy, nonatomic) NSNumber *searchHintIndex; // @synthesize searchHintIndex=_searchHintIndex;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

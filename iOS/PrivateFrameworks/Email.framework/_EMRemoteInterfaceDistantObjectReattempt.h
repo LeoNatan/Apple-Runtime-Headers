@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)recordedAttemptWithOriginalInvocation:(id)arg1 target:(id)arg2 error:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) NSInvocation *invocation; // @synthesize invocation=_invocation;
-- (void).cxx_destruct;
 - (void)perform;
 - (id)debugDescription;
 - (id)initWithOriginalInvocation:(id)arg1 target:(id)arg2 error:(id)arg3;

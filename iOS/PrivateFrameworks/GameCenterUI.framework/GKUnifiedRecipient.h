@@ -20,12 +20,12 @@
 + (id)handleForContact:(id)arg1;
 + (id)recipientForContact:(id)arg1;
 + (id)recipientForHandle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *nickName; // @synthesize nickName=_nickName;
 @property(retain, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 - (id)displayName;
 
 @end

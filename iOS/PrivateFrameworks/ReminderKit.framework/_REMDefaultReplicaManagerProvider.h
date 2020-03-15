@@ -15,8 +15,8 @@
     REMStore *_store;
 }
 
-@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (_Bool)isEqual:(id)arg1;
 - (id)unsavedReplicaManagersForAccountIDs:(id)arg1;
 - (id)replicaManagerForAccountID:(id)arg1;

@@ -22,11 +22,11 @@
 }
 
 + (id)_sharedMenuIndicatorImage;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL showsPulldown; // @synthesize showsPulldown=_showsPulldown;
 @property(readonly, nonatomic) NSButton<AKUserInterfaceItem> *button; // @synthesize button=_button;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 @property(nonatomic) unsigned long long buttonType;
 @property(copy, nonatomic) NSImage *alternateImage;

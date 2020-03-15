@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOrderedSet *shapeSet; // @synthesize shapeSet=_shapeSet;
 @property(readonly, nonatomic) NSArray *sizeRangeForDimension; // @synthesize sizeRangeForDimension=_sizeRangeForDimension;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)findAvailableShape:(id)arg1;

@@ -29,6 +29,7 @@
 + (_Bool)_shouldApplyVisualEffectsToPresentingView;
 + (_Bool)_shouldInterdictServiceViewTouches;
 + (id)_backgroundEffectForTraitCollection:(id)arg1 interactive:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissalTransitionDidEndBlock; // @synthesize dismissalTransitionDidEndBlock=_dismissalTransitionDidEndBlock;
 @property(copy, nonatomic) CDUnknownBlockType containerViewConfigurationBlock; // @synthesize containerViewConfigurationBlock=_containerViewConfigurationBlock;
 @property(nonatomic) __weak UIWindow *presentationWindow; // @synthesize presentationWindow=_presentationWindow;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool appliesVisualEffectsToPresentingView; // @synthesize appliesVisualEffectsToPresentingView=_appliesVisualEffectsToPresentingView;
 @property(retain, nonatomic) UITapGestureRecognizer *dismissGestureRecognizer; // @synthesize dismissGestureRecognizer=_dismissGestureRecognizer;
 @property(nonatomic) __weak id <UIPreviewPresentationControllerDelegate> previewPresentationDelegate; // @synthesize previewPresentationDelegate=_previewPresentationDelegate;
-- (void).cxx_destruct;
 - (void)_animatePreviewTransitionIfNeeded:(id)arg1;
 - (void)_applyVisualEffectsForPresentationPhase:(unsigned long long)arg1;
 - (void)_cancelTransitionDidEnd:(_Bool)arg1;

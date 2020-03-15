@@ -26,9 +26,9 @@
     id <HKCalendarScrollViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKCalendarScrollViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double topInset; // @synthesize topInset=_topInset;
-- (void).cxx_destruct;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;
 - (void)_findCenteredWeekAndUpdateTitleIfNecessary;
 - (void)updateVisibleAccessoryViews;

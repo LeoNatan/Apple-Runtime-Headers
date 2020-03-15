@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIColor *_lineColor;
 }
 
-@property(copy, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -21,10 +21,10 @@
     unsigned long long _numberOfPresses;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numberOfPresses; // @synthesize numberOfPresses=_numberOfPresses;
 @property(readonly, nonatomic) SBPressSequenceValidator *validator; // @synthesize validator=_validator;
 @property(nonatomic) __weak id <SBPressSequenceRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_watchdogTimeIntervalFromDelay:(double)arg1;
 - (void)_resetAfterDelay:(double)arg1;
 - (void)_resetWatchdogIfNecessary;

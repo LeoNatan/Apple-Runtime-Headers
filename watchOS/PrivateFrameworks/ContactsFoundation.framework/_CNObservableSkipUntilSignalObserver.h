@@ -16,8 +16,8 @@
     id <_CNObservableSkipUntilSignalObserverDelegate> _delegate;
 }
 
-@property(readonly) __weak id <_CNObservableSkipUntilSignalObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <_CNObservableSkipUntilSignalObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidReceiveResult:(id)arg1;

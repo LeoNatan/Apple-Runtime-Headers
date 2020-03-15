@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (Class)layoutAttributesClass;
 + (float)snapToBoundariesDecelerationRate;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool snapsToItemCenters; // @synthesize snapsToItemCenters=_snapsToItemCenters;
 @property(nonatomic) _Bool snapsToItemBoundaries; // @synthesize snapsToItemBoundaries=_snapsToItemBoundaries;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)init;

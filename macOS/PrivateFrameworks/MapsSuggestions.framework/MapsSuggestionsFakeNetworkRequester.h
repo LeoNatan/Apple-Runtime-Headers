@@ -13,7 +13,7 @@
 @interface MapsSuggestionsFakeNetworkRequester : NSObject <MapsSuggestionsNetworkRequester>
 {
     struct Queue _queue;
-    struct NSArray *_fakeMapItems;
+    NSArray *_fakeMapItems;
     NSMutableDictionary *_fakeMapItemsPerPOICategory;
     NSMutableDictionary *_fakeMapItemsPerHandleData;
     GEOComposedWaypoint *_fakeWaypoint;
@@ -34,13 +34,13 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (BOOL)ETAsFromHereWaypoint:(id)arg1 destinationWaypoints:(struct NSArray *)arg2 transportType:(int)arg3 automobileOptions:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (BOOL)ETAsFromHereWaypoint:(id)arg1 destinationWaypoints:(id)arg2 transportType:(int)arg3 automobileOptions:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)composedWaypointForAddressString:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)composedWaypointForLocation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)composedWaypointForMapItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)searchPOIWithName:(id)arg1 ofPOICategory:(id)arg2 withinVenue:(id)arg3 maxResults:(unsigned int)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)searchString:(id)arg1 maxResults:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)resolveMapItemHandleData:(struct NSData *)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)resolveMapItemHandleData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)reverseGeocodeCoordinate:(CDStruct_c3b9c2ee)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)forwardGeocodeAddressString:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)forwardGeocodePostalAddress:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -59,9 +59,9 @@
 - (void)configureError:(id)arg1;
 - (void)configureTraffic:(id)arg1;
 - (void)configureWaypoint:(id)arg1;
-- (void)configureMapItem:(struct GEOMapItemStorage *)arg1 forHandleData:(struct NSData *)arg2;
-- (void)configureMapItems:(struct NSArray *)arg1 forPOICategory:(id)arg2;
-- (void)configureMapItems:(struct NSArray *)arg1;
+- (void)configureMapItem:(id)arg1 forHandleData:(id)arg2;
+- (void)configureMapItems:(id)arg1 forPOICategory:(id)arg2;
+- (void)configureMapItems:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 - (id)init;
 

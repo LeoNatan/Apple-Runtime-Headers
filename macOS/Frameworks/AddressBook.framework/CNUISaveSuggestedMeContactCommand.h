@@ -11,13 +11,13 @@
     CNUIUndoableCommand *_aggreageCommand;
 }
 
-@property(retain, nonatomic) CNUIUndoableCommand *aggreageCommand; // @synthesize aggreageCommand=_aggreageCommand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNUIUndoableCommand *aggreageCommand; // @synthesize aggreageCommand=_aggreageCommand;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
 - (id)copyOfContactWithNameValuesAndUserCreatedMultiValues:(id)arg1;
-- (id)initWithContactStore:(id)arg1 contact:(id)arg2 containerIdentifier:(id)arg3;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 contact:(id)arg2 containerIdentifier:(id)arg3 ignoresGuardianRestrictions:(BOOL)arg4;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

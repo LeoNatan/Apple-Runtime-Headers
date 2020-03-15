@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PETGoalConversionEventTracker *predictionEngagementTracker; // @synthesize predictionEngagementTracker=_predictionEngagementTracker;
 @property(retain, nonatomic) PETScalarEventTracker *textFieldEntryTracker; // @synthesize textFieldEntryTracker=_textFieldEntryTracker;
 @property _Bool inputContextDidChange; // @synthesize inputContextDidChange=_inputContextDidChange;
-- (void).cxx_destruct;
 - (void)trackPredictionEngagmentWithConversion:(_Bool)arg1 age:(unsigned long long)arg2 fieldType:(id)arg3 resultType:(id)arg4 fromBundleId:(id)arg5 targetApp:(id)arg6 linguistic:(_Bool)arg7 semantic:(_Bool)arg8;
 - (void)trackTextFieldEntryWithEmpty:(_Bool)arg1 fieldType:(id)arg2 trigger:(id)arg3;
 - (void)trackTextFieldEntryWithEmpty:(_Bool)arg1 fieldType:(id)arg2 linguistic:(_Bool)arg3 semantic:(_Bool)arg4 requestType:(id)arg5;

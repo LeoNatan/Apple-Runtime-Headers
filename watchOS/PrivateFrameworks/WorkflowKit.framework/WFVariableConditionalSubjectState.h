@@ -15,8 +15,8 @@
 }
 
 + (id)subjectType;
-@property(readonly, nonatomic) WFVariableParameterState *variableState; // @synthesize variableState=_variableState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFVariableParameterState *variableState; // @synthesize variableState=_variableState;
 - (id)localizedLabelForEnumerationPossibleState:(id)arg1;
 - (void)getEnumerationPossibleStatesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)isEnumeration;
@@ -30,7 +30,7 @@
 @property(readonly, nonatomic) WFContentProperty *effectiveContentProperty; // @synthesize effectiveContentProperty=_effectiveContentProperty;
 - (Class)contentClassProvidingContentProperty;
 - (int)contentType;
-- (void)getContentWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getContentWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)containedVariables;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

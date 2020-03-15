@@ -16,8 +16,8 @@
 
 + (id)textFont;
 + (id)labelFont;
-@property(nonatomic) int layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 - (void).cxx_destruct;
+@property(nonatomic) int layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(readonly, nonatomic) UILabel *itemLabel;
 - (_Bool)isSingleLine;
 - (void)visuallySelect;

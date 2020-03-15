@@ -29,13 +29,13 @@
 + (id)_getItemsResponseShape;
 + (id)sendMessage:(id)arg1 error:(id *)arg2 sessionID:(id)arg3;
 + (void)updatePrincipal:(id)arg1 fromExchangeServerInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *urlAddressToCalendarUserAddressMapping; // @synthesize urlAddressToCalendarUserAddressMapping=_urlAddressToCalendarUserAddressMapping;
 @property(retain, nonatomic) NSString *sessionUserName; // @synthesize sessionUserName=_sessionUserName;
 @property(retain) NSObject<OS_dispatch_queue> *subscriptionQueue; // @synthesize subscriptionQueue=_subscriptionQueue;
 @property(retain) EWSStreamingSubscription *streamingSubscription; // @synthesize streamingSubscription=_streamingSubscription;
 @property(retain) EWSExchangeServiceBinding *ewsBinding; // @synthesize ewsBinding=_ewsBinding;
 @property BOOL connectionHasBeenTested; // @synthesize connectionHasBeenTested=_connectionHasBeenTested;
-- (void).cxx_destruct;
 - (id)debugInfo;
 - (void)_systemNetworkOnlineUpdates;
 - (void)systemNetworkDidChange;

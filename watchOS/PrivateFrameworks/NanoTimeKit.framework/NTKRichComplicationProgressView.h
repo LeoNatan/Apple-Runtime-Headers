@@ -9,13 +9,13 @@
 #import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 #import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
 
-@class CLKDevice, CLKGaugeProvider, NSArray, NSString, NTKRichComplicationShapeView, PUICClientSideAnimation;
+@class CLKDevice, CLKGaugeProvider, NSArray, NSNumber, NSString, NTKRichComplicationShapeView, PUICClientSideAnimation;
 @protocol CLKMonochromeFilterProvider;
 
 @interface NTKRichComplicationProgressView : UIView <CLKMonochromeFilterProvider, CLKMonochromeComplicationView>
 {
     CLKDevice *_device;
-    struct NSNumber *_updateToken;
+    NSNumber *_updateToken;
     PUICClientSideAnimation *_progressAnimation;
     float _currentBackgroundViewAlphaPercentage;
     _Bool _enabled;
@@ -29,6 +29,7 @@
     UIView *_ringView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *ringView; // @synthesize ringView=_ringView;
 @property(readonly, nonatomic) NTKRichComplicationShapeView *foregroundView; // @synthesize foregroundView=_foregroundView;
 @property(readonly, nonatomic) NTKRichComplicationShapeView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -38,7 +39,6 @@
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
 @property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
-- (void).cxx_destruct;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
 - (id)filterForView:(id)arg1 style:(int)arg2;

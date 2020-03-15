@@ -19,11 +19,11 @@
     CDUnknownBlockType _logoCancellationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType logoCancellationBlock; // @synthesize logoCancellationBlock=_logoCancellationBlock;
 @property(readonly, nonatomic) id <SVMoreFromPublisherLogoProviding> logoProvider; // @synthesize logoProvider=_logoProvider;
 @property(readonly, nonatomic) id <SVMoreFromPublisherActionTitleProviding> titleProvider; // @synthesize titleProvider=_titleProvider;
 @property(readonly, nonatomic) SVMoreFromButton *accessoryItemButton; // @synthesize accessoryItemButton=_accessoryItemButton;
-- (void).cxx_destruct;
 - (void)updateAccessoryItemForVideo:(id)arg1 animated:(_Bool)arg2;
 - (id)initWithMoreFromButton:(id)arg1 titleProvider:(id)arg2 logoProvider:(id)arg3;
 

@@ -21,6 +21,7 @@
     NSButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) NSButton *okButton; // @synthesize okButton=_okButton;
 @property(retain, nonatomic) NSTextField *messageTextField; // @synthesize messageTextField=_messageTextField;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <PKPaymentAuthorizationErrorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (void)_applyProperties;
 - (void)cancelButtonClicked:(id)arg1;
 - (void)okButtonClicked:(id)arg1;

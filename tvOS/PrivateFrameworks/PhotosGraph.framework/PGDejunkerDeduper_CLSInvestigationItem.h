@@ -16,8 +16,8 @@
     NSSet *_verifiedPersonLocalIdentifiers;
 }
 
-@property(retain, nonatomic) NSSet *verifiedPersonLocalIdentifiers; // @synthesize verifiedPersonLocalIdentifiers=_verifiedPersonLocalIdentifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *verifiedPersonLocalIdentifiers; // @synthesize verifiedPersonLocalIdentifiers=_verifiedPersonLocalIdentifiers;
 - (id)requiredItemsInItems:(id)arg1 options:(id)arg2 containStronglyRequiredItems:(_Bool *)arg3;
 - (_Bool)item:(id)arg1 isWeaklyRequiredWithOptions:(id)arg2;
 - (_Bool)item:(id)arg1 isStrongRequiredWithOptions:(id)arg2;

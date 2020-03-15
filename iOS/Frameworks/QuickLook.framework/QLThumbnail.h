@@ -15,8 +15,8 @@
 
 + (id)defaultDescriptors;
 + (id)sharedQueue;
-@property(retain) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+@property(retain) NSURL *url; // @synthesize url=_url;
 - (_Bool)provideImages:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)imageForUseMode:(unsigned long long)arg1 descriptor:(id)arg2 generateIfNeeded:(_Bool)arg3 contentRect:(struct CGRect *)arg4 error:(id *)arg5;
 - (id)thumbnailCreationOperationForUseMode:(unsigned long long)arg1 descriptor:(id)arg2;

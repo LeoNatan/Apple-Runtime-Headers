@@ -14,9 +14,9 @@
     SXADBannerView *_bannerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXADBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) SXAdRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 
 @end
 

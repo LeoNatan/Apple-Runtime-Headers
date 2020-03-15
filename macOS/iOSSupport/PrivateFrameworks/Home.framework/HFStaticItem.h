@@ -17,9 +17,9 @@
 }
 
 + (id)emptyItem;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resultsBlock; // @synthesize resultsBlock=_resultsBlock;
 @property(retain, nonatomic) NSDictionary *staticResults; // @synthesize staticResults=_staticResults;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

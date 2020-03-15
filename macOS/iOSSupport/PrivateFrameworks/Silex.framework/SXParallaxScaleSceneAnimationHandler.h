@@ -14,9 +14,9 @@
     unsigned long long _attachmentType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long attachmentType; // @synthesize attachmentType=_attachmentType;
 @property(nonatomic) __weak SXContainerComponentView *headerComponent; // @synthesize headerComponent=_headerComponent;
-- (void).cxx_destruct;
 - (BOOL)shouldFinishAtEndOfScrollView;
 - (double)factorForVisibileBounds:(struct CGRect)arg1 andAbsoluteComponentRect:(struct CGRect)arg2;
 - (struct CGRect)fillContentFrameForScale:(double)arg1 andTranslation:(double)arg2;

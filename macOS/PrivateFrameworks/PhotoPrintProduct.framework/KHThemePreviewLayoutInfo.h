@@ -18,10 +18,10 @@
 }
 
 + (id)infoKey;
+- (void).cxx_destruct;
 @property(nonatomic) double drawScale; // @synthesize drawScale=_drawScale;
 @property(nonatomic) struct CGRect drawRect; // @synthesize drawRect=_drawRect;
 @property(retain, nonatomic) NSMutableArray *textFrames; // @synthesize textFrames=_textFrames;
-- (void).cxx_destruct;
 - (id)initFromDictionary:(id)arg1;
 
 // Remaining properties

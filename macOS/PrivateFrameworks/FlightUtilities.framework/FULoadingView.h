@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     FULabel *_loadingLabel;
 }
 
+- (void).cxx_destruct;
 @property __weak FULabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
-- (void).cxx_destruct;
 - (void)setStyleProvider:(id)arg1;
 - (void)awakeFromNib;
 

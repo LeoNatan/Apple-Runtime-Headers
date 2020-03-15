@@ -79,6 +79,7 @@
 + (id)localizedNameForCustomEditMode:(int)arg1 forDevice:(id)arg2;
 + (id)_linkedResourceRootDirectory;
 + (id)richComplicationSlotsForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool beingEdited; // @synthesize beingEdited=_beingEdited;
 @property(nonatomic) int mostRecentEditMode; // @synthesize mostRecentEditMode=_mostRecentEditMode;
 @property(readonly, nonatomic) _Bool complicationExistenceInvalidatesSnapshot; // @synthesize complicationExistenceInvalidatesSnapshot=_complicationExistenceInvalidatesSnapshot;
@@ -88,7 +89,6 @@
 @property(readonly, nonatomic) NTKFaceConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int faceStyle; // @synthesize faceStyle=_faceStyle;
-- (void).cxx_destruct;
 - (void)_selectDefaultSlots;
 - (id)_sortedComplicationSlots;
 - (_Bool)_verifyCompatibilityOfConfiguration:(id)arg1;

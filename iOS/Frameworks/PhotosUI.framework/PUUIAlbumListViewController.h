@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     unsigned long long __imagePickerAssetTypes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setImagePickerAssetTypes:) unsigned long long _imagePickerAssetTypes; // @synthesize _imagePickerAssetTypes=__imagePickerAssetTypes;
 @property(copy, nonatomic, setter=_setImagePickerMediaTypes:) NSArray *_imagePickerMediaTypes; // @synthesize _imagePickerMediaTypes=__imagePickerMediaTypes;
 @property(nonatomic) __weak id <PUPhotoPicker> photoPicker; // @synthesize photoPicker=_photoPicker;
-- (void).cxx_destruct;
 - (_Bool)pu_wantsNavigationBarVisible;
 - (void)setPhotoPickerMediaTypes:(id)arg1;
 - (unsigned long long)filteringAssetTypes;

@@ -18,10 +18,10 @@
     id <CALNEKCalendarNotificationReferenceProvider> _notificationReferenceProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CALNEKCalendarNotificationReferenceProvider> notificationReferenceProvider; // @synthesize notificationReferenceProvider=_notificationReferenceProvider;
 @property(readonly, nonatomic) id <CALNInboxNotificationProvider> inboxNotificationProvider; // @synthesize inboxNotificationProvider=_inboxNotificationProvider;
 @property(readonly, nonatomic) id <EKEventStoreProvider> eventStoreProvider; // @synthesize eventStoreProvider=_eventStoreProvider;
-- (void).cxx_destruct;
 - (id)_notificationInfoFromNotification:(id)arg1;
 - (id)_notificationInfoFromNotificationReference:(id)arg1;
 - (void)clearCalendarResourceChangedNotificationWithSourceClientIdentifier:(id)arg1;

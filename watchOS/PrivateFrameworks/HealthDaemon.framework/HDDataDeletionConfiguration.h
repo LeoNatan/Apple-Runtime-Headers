@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
 @property(copy, nonatomic) NSString *restrictedSourceBundleIdentifier; // @synthesize restrictedSourceBundleIdentifier=_restrictedSourceBundleIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType recursiveDeleteAuthorizationBlock; // @synthesize recursiveDeleteAuthorizationBlock=_recursiveDeleteAuthorizationBlock;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool notifyObservers; // @synthesize notifyObservers=_notifyObservers;
 @property(nonatomic) _Bool failIfNotFound; // @synthesize failIfNotFound=_failIfNotFound;
 @property(nonatomic) _Bool generateDeletedObjects; // @synthesize generateDeletedObjects=_generateDeletedObjects;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

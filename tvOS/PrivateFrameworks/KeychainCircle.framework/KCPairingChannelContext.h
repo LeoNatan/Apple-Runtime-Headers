@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSString *intent; // @synthesize intent=_intent;
 @property(retain) NSString *uniqueClientID; // @synthesize uniqueClientID=_uniqueClientID;
 @property(retain) NSString *uniqueDeviceID; // @synthesize uniqueDeviceID=_uniqueDeviceID;
@@ -29,7 +30,6 @@
 @property(retain) NSString *modelClass; // @synthesize modelClass=_modelClass;
 @property(retain) NSString *modelVersion; // @synthesize modelVersion=_modelVersion;
 @property(retain) NSString *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

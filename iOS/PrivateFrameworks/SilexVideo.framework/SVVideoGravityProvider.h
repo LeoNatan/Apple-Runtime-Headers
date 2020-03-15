@@ -21,13 +21,13 @@
     id <SVVideoViewControllerSizeObserving> _videoViewControllerSizeObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoViewControllerSizeObserving> videoViewControllerSizeObserver; // @synthesize videoViewControllerSizeObserver=_videoViewControllerSizeObserver;
 @property(readonly, nonatomic) id <SVVideoPresentationSizeObserving> presentationSizeObserver; // @synthesize presentationSizeObserver=_presentationSizeObserver;
 @property(copy, nonatomic) NSString *portraitVideoGravity; // @synthesize portraitVideoGravity=_portraitVideoGravity;
 @property(copy, nonatomic) NSString *landscapeVideoGravity; // @synthesize landscapeVideoGravity=_landscapeVideoGravity;
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(copy, nonatomic, setter=onChange:) CDUnknownBlockType changeBlock; // @synthesize changeBlock=_changeBlock;
-- (void).cxx_destruct;
 - (void)updateVideoGravityWithPresentationSize:(struct CGSize)arg1 videoViewControllerSize:(struct CGSize)arg2;
 - (id)initWithPresentationSizeObserver:(id)arg1 videoViewControllerSizeObserver:(id)arg2;
 

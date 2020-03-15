@@ -22,10 +22,10 @@
 + (void)clearColorCaches;
 + (id)rowEmptyImage;
 + (struct CGColor *)rowEmptyColor;
+- (void).cxx_destruct;
 @property long long accessibilitySelectedChildIndex; // @synthesize accessibilitySelectedChildIndex=_accessibilitySelectedChildIndex;
 @property(nonatomic) __weak id <MOAccessibilityChildrenDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (BOOL)isEmpty;
 - (id)rowImage;
 - (void)setRowImage:(id)arg1 contentsRect:(struct CGRect)arg2;

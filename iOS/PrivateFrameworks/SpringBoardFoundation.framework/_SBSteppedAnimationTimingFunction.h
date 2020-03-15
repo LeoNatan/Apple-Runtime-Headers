@@ -15,9 +15,9 @@
 }
 
 + (id)timingFunctionWithTimingFunction:(id)arg1 constrainedToIntervalBetween:(double)arg2 and:(double)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct SBNormalizedTransitionInterval constrainedRange; // @synthesize constrainedRange=_constrainedRange;
 @property(readonly, nonatomic) CAMediaTimingFunction *timingFunction; // @synthesize timingFunction=_timingFunction;
-- (void).cxx_destruct;
 - (double)valueAtPercentage:(double)arg1;
 - (id)initWithTimingFunction:(id)arg1 constrainedToIntervalBetween:(double)arg2 and:(double)arg3;
 

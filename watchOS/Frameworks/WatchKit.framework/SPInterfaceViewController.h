@@ -60,6 +60,7 @@
 
 + (void)updateStaticValues;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICDeepScrollViewNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(retain, nonatomic) SPAutoPlayManager *autoplayManager; // @synthesize autoplayManager=_autoplayManager;
 @property(retain, nonatomic) NSMutableArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
@@ -100,7 +101,6 @@
 @property(nonatomic) _Bool isGlanceInIB; // @synthesize isGlanceInIB=_isGlanceInIB;
 @property(nonatomic) _Bool isNotificationLinkedOnOrAfterGlory; // @synthesize isNotificationLinkedOnOrAfterGlory=_isNotificationLinkedOnOrAfterGlory;
 @property(nonatomic) __weak id <SPInterfaceViewControllerPreloadDelegate> vcPreloadDelegate; // @synthesize vcPreloadDelegate=_vcPreloadDelegate;
-- (void).cxx_destruct;
 - (void)_sendGestureData:(id)arg1 task:(id)arg2 specificData:(id)arg3;
 - (void)_updateSwipeGestureRecognizer:(id)arg1 gestureReplyData:(id)arg2;
 - (void)_updateLongPressGestureRecognizer:(id)arg1 gestureReplyData:(id)arg2;

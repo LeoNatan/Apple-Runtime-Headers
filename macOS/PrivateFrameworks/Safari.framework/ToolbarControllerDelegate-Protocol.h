@@ -9,7 +9,7 @@
 @class BrowserWindowController, NSMenu, ToolbarController;
 
 @protocol ToolbarControllerDelegate <NSObject>
-- (BrowserWindowController *)toolbarItemExtensionTargetForToolbarController:(ToolbarController *)arg1;
+- (BrowserWindowController *)toolbarItemTargetForToolbarController:(ToolbarController *)arg1;
 - (void)mouseDownInVisualTabPickerButtonInToolbarController:(ToolbarController *)arg1;
 - (void)mouseDidExitVisualTabPickerButtonInToolbarController:(ToolbarController *)arg1;
 - (NSMenu *)forwardMenuForBackForwardSegmentedControlInToolbarController:(ToolbarController *)arg1;

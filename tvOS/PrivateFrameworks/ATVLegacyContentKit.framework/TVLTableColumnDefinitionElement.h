@@ -16,11 +16,11 @@
     NSDictionary *_styleKeyValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *styleKeyValues; // @synthesize styleKeyValues=_styleKeyValues;
 @property(nonatomic) int width; // @synthesize width=_width;
 @property(copy, nonatomic) NSString *alignment; // @synthesize alignment=_alignment;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) UIColor *titleColor;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

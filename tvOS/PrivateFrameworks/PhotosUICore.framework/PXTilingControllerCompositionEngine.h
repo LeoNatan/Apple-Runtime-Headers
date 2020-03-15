@@ -35,6 +35,7 @@
 }
 
 + (id)compositionEngineForScrollController:(id)arg1 createIfNeeded:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *_tilingControllersRequestingFocus; // @synthesize _tilingControllersRequestingFocus=__tilingControllersRequestingFocus;
 @property(readonly, nonatomic) NSMutableArray *_invalidationContexts; // @synthesize _invalidationContexts=__invalidationContexts;
 @property(nonatomic, setter=_setContentInset:) struct UIEdgeInsets _contentInset; // @synthesize _contentInset=__contentInset;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSHashTable *_compositions; // @synthesize _compositions=__compositions;
 @property(readonly, nonatomic) NSHashTable *_tilingControllers; // @synthesize _tilingControllers=__tilingControllers;
 @property(readonly, nonatomic) __weak id <PXTilingScrollController> _scrollController; // @synthesize _scrollController=__scrollController;
-- (void).cxx_destruct;
 - (void)setOrigin:(struct CGPoint)arg1 forTilingController:(id)arg2;
 - (void)setContentBounds:(struct CGRect)arg1 scrollBounds:(struct CGRect)arg2 scrollInfo:(id)arg3;
 - (void)setReferenceSize:(struct CGSize)arg1 contentInset:(struct UIEdgeInsets)arg2 forTilingController:(id)arg3;

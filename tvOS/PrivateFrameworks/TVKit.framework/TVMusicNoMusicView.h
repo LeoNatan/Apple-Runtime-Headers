@@ -16,11 +16,11 @@
     UILabel *_messageLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)_configureUIControls;
 - (void)_updateColorsForUserInterfaceStyle:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

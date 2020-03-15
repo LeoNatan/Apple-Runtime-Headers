@@ -20,12 +20,12 @@
     id <RSPeerToPeerConnectionControllerDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <RSPeerToPeerConnectionControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSMutableArray *alreadyConnectedPeerIDs; // @synthesize alreadyConnectedPeerIDs=_alreadyConnectedPeerIDs;
 @property(retain, nonatomic) MCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) MCPeerID *localPeerID; // @synthesize localPeerID=_localPeerID;
 @property(nonatomic) __weak id <RSPeerToPeerConnectionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)session:(id)arg1 didFinishReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 atURL:(id)arg4 withError:(id)arg5;
 - (void)session:(id)arg1 didStartReceivingResourceWithName:(id)arg2 fromPeer:(id)arg3 withProgress:(id)arg4;
 - (void)session:(id)arg1 didReceiveStream:(id)arg2 withName:(id)arg3 fromPeer:(id)arg4;

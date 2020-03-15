@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSData, NSString;
 @protocol OS_nw_advertise_descriptor;
 
 @interface NWAdvertiseDescriptor : NSObject
@@ -14,8 +14,9 @@
     NSObject<OS_nw_advertise_descriptor> *_internalDescriptor;
 }
 
-@property(retain, nonatomic) NSObject<OS_nw_advertise_descriptor> *internalDescriptor; // @synthesize internalDescriptor=_internalDescriptor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_nw_advertise_descriptor> *internalDescriptor; // @synthesize internalDescriptor=_internalDescriptor;
+@property(retain, nonatomic) NSData *txtRecord;
 - (id)privateDescription;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;

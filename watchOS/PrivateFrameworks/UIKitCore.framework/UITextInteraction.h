@@ -30,6 +30,7 @@
 
 + (id)textInteractionsForSet:(int)arg1;
 + (id)textInteractionForMode:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UITextInteraction_AssistantDelegate> assistantDelegate; // @synthesize assistantDelegate=_assistantDelegate;
 @property(retain, nonatomic) UITextInteractionInputDelegate *interactionInputDelegate; // @synthesize interactionInputDelegate=_interactionInputDelegate;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSDictionary *gestureMap; // @synthesize gestureMap=_gestureMap;
 @property(readonly, nonatomic) NSArray *gestures; // @synthesize gestures=_gestures;
 @property(readonly, nonatomic) NSArray *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)interaction_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -66,6 +66,7 @@
 - (void)_cleanUpFeedbackForGesture;
 - (void)_prepareFeedbackForGesture;
 - (void)_createFeedbackIfNecessary;
+- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4 forTouchType:(int)arg5;
 - (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
 - (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3;
 @property(readonly, nonatomic) int textInteractionSet;

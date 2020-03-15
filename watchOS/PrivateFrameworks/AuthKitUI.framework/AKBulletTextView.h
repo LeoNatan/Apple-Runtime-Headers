@@ -15,10 +15,10 @@
     float _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float padding; // @synthesize padding=_padding;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (id)initWithText:(id)arg1;

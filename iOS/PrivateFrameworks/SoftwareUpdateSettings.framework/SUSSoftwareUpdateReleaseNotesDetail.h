@@ -15,8 +15,8 @@
     NSString *_releaseNotes;
 }
 
-@property(retain, nonatomic) NSString *releaseNotes; // @synthesize releaseNotes=_releaseNotes;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *releaseNotes; // @synthesize releaseNotes=_releaseNotes;
 - (_Bool)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(long long)arg3;
 - (void)loadView;
 - (id)specifiers;

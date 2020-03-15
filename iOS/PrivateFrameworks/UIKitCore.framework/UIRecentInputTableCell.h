@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 + (id)backgroundColorForBlurEffectStyle:(long long)arg1;
 + (id)focusedTextColorForBlurEffectStyle:(long long)arg1;
 + (id)unfocusedTextColorForBlurEffectStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextInputTraits *textInputTraits; // @synthesize textInputTraits=_textInputTraits;
 @property(nonatomic) long long blurEffectStyle; // @synthesize blurEffectStyle=_blurEffectStyle;
 @property(retain, nonatomic) UILabel *floatingLabel; // @synthesize floatingLabel=_floatingLabel;
-- (void).cxx_destruct;
 - (_Bool)_tvIsDarkMode;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;

@@ -17,10 +17,10 @@
 
 + (void)initialize;
 + (id)scannedDocumentsFolderURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *scannedDocumentImageDirectoryURL; // @synthesize scannedDocumentImageDirectoryURL=_scannedDocumentImageDirectoryURL;
 @property(retain, nonatomic) NSMutableArray *docInfos; // @synthesize docInfos=_docInfos;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)applicationWillTerminate:(id)arg1;
 - (void)deleteAllImages;
 - (_Bool)deleteImage:(id)arg1;

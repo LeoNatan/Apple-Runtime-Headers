@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) CPLMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CPLMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 - (id)description;
 - (id)updatedLibraryInfoFromLibraryInfo:(id)arg1 didUpdate:(char *)arg2;
 - (void)_setupWithLibraryInfo:(id)arg1;

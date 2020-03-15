@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSData *messageDigest; // @synthesize messageDigest=_messageDigest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *messageDigest; // @synthesize messageDigest=_messageDigest;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToMessageDigest:(id)arg1;

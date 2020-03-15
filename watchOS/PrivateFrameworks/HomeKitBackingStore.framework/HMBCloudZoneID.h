@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)hmbDecodeData:(id)arg1 fromStorageLocation:(unsigned int)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 @property(readonly, nonatomic) NSData *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

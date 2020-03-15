@@ -14,9 +14,9 @@
 
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 tritiumOnTickBlock:(CDUnknownBlockType)arg3 tritiumOffTickBlock:(CDUnknownBlockType)arg4;
 + (id)stepWithTritiumOnFrameRange:(struct _NSRange)arg1 tritiumOffFrameRange:(struct _NSRange)arg2 tickBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType tritiumOffTickBlock; // @synthesize tritiumOffTickBlock=_tritiumOffTickBlock;
 @property(copy, nonatomic) CDUnknownBlockType tritiumOnTickBlock; // @synthesize tritiumOnTickBlock=_tritiumOnTickBlock;
-- (void).cxx_destruct;
 - (void)setIsTritiumOn:(_Bool)arg1 progress:(float)arg2 faceView:(id)arg3;
 
 @end

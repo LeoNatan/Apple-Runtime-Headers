@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UIPencilEvent *_pencilEvent;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIPencilEvent *pencilEvent; // @synthesize pencilEvent=_pencilEvent;
 @property(readonly, nonatomic) UIPhysicalKeyboardEvent *physicalKeyboardEvent; // @synthesize physicalKeyboardEvent=_physicalKeyboardEvent;
 @property(readonly, nonatomic) _UIGameControllerEvent *gameControllerEvent; // @synthesize gameControllerEvent=_gameControllerEvent;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIPressesEvent *pressesEvent; // @synthesize pressesEvent=_pressesEvent;
 @property(readonly, nonatomic) UITouchesEvent *touchesEvent; // @synthesize touchesEvent=_touchesEvent;
 @property(readonly, nonatomic) UIMoveEvent *moveEvent; // @synthesize moveEvent=_moveEvent;
-- (void).cxx_destruct;
 - (void)addPencilEvent:(id)arg1;
 - (void)addPhysicalKeyboardEvent:(id)arg1;
 - (void)addGameControllerEvent:(id)arg1;

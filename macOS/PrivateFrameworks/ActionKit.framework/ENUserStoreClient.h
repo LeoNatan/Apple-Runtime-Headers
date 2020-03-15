@@ -15,9 +15,9 @@
 }
 
 + (id)userStoreClientWithUrl:(id)arg1 authenticationToken:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *authenticationToken; // @synthesize authenticationToken=_authenticationToken;
 @property(retain, nonatomic) EDAMUserStoreClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)revokeLongSessionWithAuthenticationToken:(id)arg1 success:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 - (void)authenticateToBusinessWithSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;
 - (void)getNoteStoreUrlWithSuccess:(CDUnknownBlockType)arg1 failure:(CDUnknownBlockType)arg2;

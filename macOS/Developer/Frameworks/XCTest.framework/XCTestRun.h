@@ -6,33 +6,52 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, XCTest, _XCInternalTestRun;
+@class NSDate, XCTest;
 
 @interface XCTestRun : NSObject
 {
-    id _internalTestRun;
+    BOOL _hasBeenSkipped;
+    BOOL _hasStarted;
+    BOOL _hasStopped;
+    XCTest *_test;
+    unsigned long long _executionCount;
+    unsigned long long _failureCount;
+    unsigned long long _unexpectedExceptionCount;
+    double _startTimeInterval;
+    double _stopTimeInterval;
+    unsigned long long _executionCountBeforeCrash;
+    unsigned long long _skipCountBeforeCrash;
+    unsigned long long _failureCountBeforeCrash;
+    unsigned long long _unexpectedExceptionCountBeforeCrash;
 }
 
 + (id)testRunWithTest:(id)arg1;
-@property(readonly) _XCInternalTestRun *implementation; // @synthesize implementation=_internalTestRun;
 - (void).cxx_destruct;
-@property unsigned long long unexpectedExceptionCountBeforeCrash;
-@property unsigned long long failureCountBeforeCrash;
-@property unsigned long long executionCountBeforeCrash;
+@property unsigned long long unexpectedExceptionCountBeforeCrash; // @synthesize unexpectedExceptionCountBeforeCrash=_unexpectedExceptionCountBeforeCrash;
+@property unsigned long long failureCountBeforeCrash; // @synthesize failureCountBeforeCrash=_failureCountBeforeCrash;
+@property unsigned long long skipCountBeforeCrash; // @synthesize skipCountBeforeCrash=_skipCountBeforeCrash;
+@property unsigned long long executionCountBeforeCrash; // @synthesize executionCountBeforeCrash=_executionCountBeforeCrash;
+@property BOOL hasStopped; // @synthesize hasStopped=_hasStopped;
+@property BOOL hasStarted; // @synthesize hasStarted=_hasStarted;
+@property double stopTimeInterval; // @synthesize stopTimeInterval=_stopTimeInterval;
+@property double startTimeInterval; // @synthesize startTimeInterval=_startTimeInterval;
+@property BOOL hasBeenSkipped; // @synthesize hasBeenSkipped=_hasBeenSkipped;
+@property unsigned long long unexpectedExceptionCount; // @synthesize unexpectedExceptionCount=_unexpectedExceptionCount;
+@property unsigned long long failureCount; // @synthesize failureCount=_failureCount;
+@property unsigned long long executionCount; // @synthesize executionCount=_executionCount;
+@property(readonly) XCTest *test; // @synthesize test=_test;
+- (void)recordSkipWithDescription:(id)arg1 inFile:(id)arg2 atLine:(unsigned long long)arg3;
 - (void)recordFailureWithDescription:(id)arg1 inFile:(id)arg2 atLine:(unsigned long long)arg3 expected:(BOOL)arg4;
+@property(readonly) unsigned long long skipCount;
 @property(readonly) BOOL hasSucceeded;
 @property(readonly) unsigned long long testCaseCount;
-@property(readonly) unsigned long long unexpectedExceptionCount;
-@property(readonly) unsigned long long failureCount;
 @property(readonly) unsigned long long totalFailureCount;
-@property(readonly) unsigned long long executionCount;
 - (void)stop;
 - (void)start;
 @property(readonly, copy) NSDate *stopDate;
 @property(readonly, copy) NSDate *startDate;
 @property(readonly) double testDuration;
 @property(readonly) double totalDuration;
-@property(readonly) XCTest *test;
 - (id)description;
 - (id)init;
 - (id)initWithTest:(id)arg1;

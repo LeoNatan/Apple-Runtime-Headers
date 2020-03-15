@@ -19,11 +19,11 @@
     CDUnknownBlockType _updatePhoneNumberInfoCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updatePhoneNumberInfoCompletion; // @synthesize updatePhoneNumberInfoCompletion=_updatePhoneNumberInfoCompletion;
 @property(copy, nonatomic) NSString *updatePhoneNumber; // @synthesize updatePhoneNumber=_updatePhoneNumber;
 @property(nonatomic) long long phoneBookEntryCount; // @synthesize phoneBookEntryCount=_phoneBookEntryCount;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
-- (void).cxx_destruct;
 - (void)phoneBookSelected:(id)arg1;
 - (void)phoneNumberChanged:(id)arg1;
 - (void)updatePhoneNumberInfo:(id)arg1 label:(id)arg2 number:(id)arg3 completion:(CDUnknownBlockType)arg4;

@@ -16,9 +16,9 @@
     int _type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

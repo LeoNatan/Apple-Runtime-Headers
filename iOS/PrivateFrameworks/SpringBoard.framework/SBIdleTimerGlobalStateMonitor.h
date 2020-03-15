@@ -33,9 +33,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBIdleTimerAggregateClientConfiguration *aggregateClientConfiguration; // @synthesize aggregateClientConfiguration=_aggregateClientConfiguration;
 @property(readonly, nonatomic) long long pocketState; // @synthesize pocketState=_pocketState;
-- (void).cxx_destruct;
 - (id)_stateCaptureDescription;
 - (void)_addStateCaptureHandlers;
 - (CDUnknownBlockType)_timeIntervalMonitorForProperty:(id)arg1 inDefaults:(id)arg2 fetchingWith:(CDUnknownBlockType)arg3;

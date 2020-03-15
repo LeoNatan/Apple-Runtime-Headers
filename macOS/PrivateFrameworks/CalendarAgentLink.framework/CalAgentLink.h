@@ -34,8 +34,8 @@
 + (id)sharedInstanceWithMachServiceName:(id)arg1;
 + (id)sharedInstances;
 + (void)initialize;
-@property(retain) CalXPCConnectionProvider *connectionProvider; // @synthesize connectionProvider=_connectionProvider;
 - (void).cxx_destruct;
+@property(retain) CalXPCConnectionProvider *connectionProvider; // @synthesize connectionProvider=_connectionProvider;
 - (id)_synchronousRemoteObjectWithErrorBlock:(CDUnknownBlockType)arg1;
 - (id)_remoteObjectWithErrorBlock:(CDUnknownBlockType)arg1;
 - (id)_remoteObject;

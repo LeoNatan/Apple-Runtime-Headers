@@ -16,11 +16,11 @@
     unsigned long long _timeStamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeStamp; // @synthesize timeStamp=_timeStamp;
 @property(nonatomic) float peakPower; // @synthesize peakPower=_peakPower;
 @property(nonatomic) float avgPower; // @synthesize avgPower=_avgPower;
 @property(retain, nonatomic) NSArray *packets; // @synthesize packets=_packets;
-- (void).cxx_destruct;
 - (id)xpcObject;
 - (id)initWithXPCObject:(id)arg1;
 

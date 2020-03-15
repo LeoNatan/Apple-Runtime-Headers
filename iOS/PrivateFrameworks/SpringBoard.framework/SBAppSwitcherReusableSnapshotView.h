@@ -37,11 +37,11 @@
     SBAppLayout *_appLayout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseBrightMaterial; // @synthesize shouldUseBrightMaterial=_shouldUseBrightMaterial;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) SBAppLayout *appLayout; // @synthesize appLayout=_appLayout;
-- (void).cxx_destruct;
 - (void)_removeAppLockoutOverlayForRole:(long long)arg1;
 - (void)_addAppLockoutOverlayIfNecessaryForRole:(long long)arg1;
 - (void)_updateContentOrientationForRole:(long long)arg1;

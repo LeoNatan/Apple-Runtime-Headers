@@ -14,8 +14,8 @@
 }
 
 + (id)takeAssertionForClientBundleIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void)_releaseAssertion;
 - (void)_takeAssertion;
 - (id)initWithIdentifier:(id)arg1;

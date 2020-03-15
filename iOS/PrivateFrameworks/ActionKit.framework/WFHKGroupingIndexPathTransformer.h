@@ -16,9 +16,9 @@
 
 + (_Bool)allowsReverseTransformation;
 + (Class)transformedValueClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSCalendar *conversionCalendar; // @synthesize conversionCalendar=_conversionCalendar;
 @property(nonatomic) long long groupingOption; // @synthesize groupingOption=_groupingOption;
-- (void).cxx_destruct;
 - (id)reverseTransformedValue:(id)arg1;
 - (id)transformedValue:(id)arg1;
 - (id)init;

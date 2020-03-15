@@ -17,9 +17,9 @@
     id <SWScriptsManager> _scriptsManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWScriptsManager> scriptsManager; // @synthesize scriptsManager=_scriptsManager;
 @property(readonly, nonatomic) id <SWDatastoreManager> datastoreManager; // @synthesize datastoreManager=_datastoreManager;
-- (void).cxx_destruct;
 - (void)performSetup;
 @property(readonly, nonatomic) NSString *identifier;
 - (id)initWithDatastoreManager:(id)arg1 scriptsManager:(id)arg2;

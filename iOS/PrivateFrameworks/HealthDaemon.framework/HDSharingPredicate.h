@@ -14,9 +14,9 @@
     NSNumber *_maxSampleAge;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *maxSampleAge; // @synthesize maxSampleAge=_maxSampleAge;
 @property(copy, nonatomic) NSArray *sharedSampleTypes; // @synthesize sharedSampleTypes=_sharedSampleTypes;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,10 +19,10 @@
 }
 
 + (id)fetchedTileWithKey:(unsigned long long)arg1 etag:(id)arg2 created:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *created; // @synthesize created=_created;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)_isEqualToFetchedTile:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

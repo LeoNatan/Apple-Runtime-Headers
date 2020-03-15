@@ -19,9 +19,9 @@
     id <EDMailboxProvider> _mailboxProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EDMailboxProvider> mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
 @property(retain, nonatomic) NSMutableDictionary *changeObserversByIdentifier; // @synthesize changeObserversByIdentifier=_changeObserversByIdentifier;
-- (void).cxx_destruct;
 - (_Bool)renameMailbox:(id)arg1 newName:(id)arg2;
 - (_Bool)moveMailbox:(id)arg1 newParentMailboxID:(id)arg2;
 - (_Bool)deleteMailbox:(id)arg1;

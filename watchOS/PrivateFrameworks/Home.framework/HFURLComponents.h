@@ -27,9 +27,9 @@
 + (id)siriPrivacyURL;
 + (id)networkRoutersSettingsURL;
 + (id)aboutResidentDeviceURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFHomeKitDispatcher *homeKitDispatcher; // @synthesize homeKitDispatcher=_homeKitDispatcher;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)_homeKitIdentifier;
 - (id)valueForParameter:(id)arg1;
 - (id)description;

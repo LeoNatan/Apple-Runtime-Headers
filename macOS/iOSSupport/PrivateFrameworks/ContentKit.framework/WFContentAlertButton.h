@@ -20,11 +20,11 @@
 
 + (void)processContentAlertButtonSubtitles:(id)arg1;
 + (id)buttonWithContentItem:(id)arg1 selected:(BOOL)arg2 stickySelection:(BOOL)arg3 handler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property(nonatomic) BOOL hideSubtitle; // @synthesize hideSubtitle=_hideSubtitle;
 @property(readonly, nonatomic) WFContentItem *contentItem; // @synthesize contentItem=_contentItem;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-- (void).cxx_destruct;
 - (BOOL)addSubtitleCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)start;
 - (void)getSubtitle:(CDUnknownBlockType)arg1;

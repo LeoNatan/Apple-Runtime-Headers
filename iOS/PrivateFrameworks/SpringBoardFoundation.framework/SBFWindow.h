@@ -14,8 +14,8 @@
     NSNumber *_isHiddenOverride;
 }
 
-@property(retain, nonatomic, setter=_setKeyWindowStack:) _SBFKeyWindowStack *_keyWindowStack; // @synthesize _keyWindowStack;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setKeyWindowStack:) _SBFKeyWindowStack *_keyWindowStack; // @synthesize _keyWindowStack;
 - (void)_resignKeyFromKeyWindowStack;
 - (void)_makeKeyFromKeyWindowStack;
 - (_Bool)_isEffectivelyHiddenForKeyWindowStack;

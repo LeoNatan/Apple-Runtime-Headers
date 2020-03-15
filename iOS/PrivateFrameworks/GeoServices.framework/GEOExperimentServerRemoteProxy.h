@@ -19,8 +19,8 @@
     int _experimentsChangedToken;
 }
 
-@property(nonatomic) __weak id <GEOExperimentServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GEOExperimentServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_debug_setBucketIdDictionaryRepresentation:(id)arg1;
 - (void)_debug_setActiveExperimentBranchDictionaryRepresentation:(id)arg1;
 - (void)_debug_fetchAllAvailableExperiments:(CDUnknownBlockType)arg1;

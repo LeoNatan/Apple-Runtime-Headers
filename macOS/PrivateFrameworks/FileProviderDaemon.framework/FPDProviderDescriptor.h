@@ -8,7 +8,7 @@
 
 #import <FileProviderDaemon/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, NSURL;
+@class NSArray, NSString, NSURL, NSUUID;
 
 @interface FPDProviderDescriptor : NSObject <NSSecureCoding>
 {
@@ -30,6 +30,7 @@
     NSString *_extensionPointVersion;
     NSString *_purposeIdentifier;
     NSURL *_extensionBundleURL;
+    NSUUID *_pluginUUID;
     NSArray *_supportedFileTypes;
     NSArray *_supportedSearchFilters;
     NSArray *_extensionStorageURLs;
@@ -37,10 +38,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *requestedExtendedAttributes; // @synthesize requestedExtendedAttributes=_requestedExtendedAttributes;
 @property(retain, nonatomic) NSArray *extensionStorageURLs; // @synthesize extensionStorageURLs=_extensionStorageURLs;
 @property(retain, nonatomic) NSArray *supportedSearchFilters; // @synthesize supportedSearchFilters=_supportedSearchFilters;
 @property(retain, nonatomic) NSArray *supportedFileTypes; // @synthesize supportedFileTypes=_supportedFileTypes;
+@property(retain, nonatomic) NSUUID *pluginUUID; // @synthesize pluginUUID=_pluginUUID;
 @property(retain, nonatomic) NSURL *extensionBundleURL; // @synthesize extensionBundleURL=_extensionBundleURL;
 @property(retain, nonatomic) NSString *purposeIdentifier; // @synthesize purposeIdentifier=_purposeIdentifier;
 @property(nonatomic) BOOL supportsPickingFolders; // @synthesize supportsPickingFolders=_supportsPickingFolders;
@@ -59,7 +62,6 @@
 @property(retain, nonatomic) NSString *topLevelBundleIdentifier; // @synthesize topLevelBundleIdentifier=_topLevelBundleIdentifier;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithExtension:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

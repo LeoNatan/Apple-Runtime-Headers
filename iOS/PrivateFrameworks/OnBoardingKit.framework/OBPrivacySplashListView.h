@@ -16,11 +16,11 @@
     NSMutableArray *_stackedIconTextLists;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *stackedIconTextLists; // @synthesize stackedIconTextLists=_stackedIconTextLists;
 @property(retain, nonatomic) NSMutableArray *textViews; // @synthesize textViews=_textViews;
 @property _Bool displayingPrivacyPane; // @synthesize displayingPrivacyPane=_displayingPrivacyPane;
 @property(readonly, nonatomic) UITextView *footerTextView; // @synthesize footerTextView=_footerTextView;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateTextAlignment;
 - (void)updateFonts;

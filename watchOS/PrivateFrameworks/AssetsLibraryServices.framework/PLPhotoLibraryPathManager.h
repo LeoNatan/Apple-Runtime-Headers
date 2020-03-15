@@ -28,6 +28,8 @@
 + (void)throwMultiLibraryAPIMisuse;
 + (void)throwMultiLibraryAPIMisuseForLibraryPath:(id)arg1;
 - (void).cxx_destruct;
+- (id)rebuidHistoryFilePath;
+- (id)sqliteErrorIndicatorFilePath;
 - (_Bool)createTimeMachineExclusionPathsWithError:(id *)arg1;
 - (id)timeMachineExclusionPathForPathType:(unsigned char)arg1;
 - (void)enumerateBundleScopesWithBlock:(CDUnknownBlockType)arg1;

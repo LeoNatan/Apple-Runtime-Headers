@@ -24,11 +24,11 @@
     IOSSHLApplication *_application;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(retain, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(nonatomic) _Bool activateSuspended; // @synthesize activateSuspended=_activateSuspended;
-- (void).cxx_destruct;
 - (void)transactionWatchdogImminent;
 - (void)extensionTransaction:(id)arg1 didCommitSceneUpdate:(id)arg2;
 - (void)extensionTransaction:(id)arg1 willCommitSceneUpdate:(id)arg2;

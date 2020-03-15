@@ -16,8 +16,8 @@
     NSArray *_offers;
 }
 
-@property(retain, nonatomic) NSArray *offers; // @synthesize offers=_offers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *offers; // @synthesize offers=_offers;
 
 @end
 

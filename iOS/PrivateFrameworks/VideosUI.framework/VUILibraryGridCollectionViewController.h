@@ -4,48 +4,53 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <VideosUI/VUILibraryFetchControllerViewController.h>
+#import <UIKit/UICollectionViewController.h>
 
-#import <VideosUI/UICollectionViewDataSource-Protocol.h>
-#import <VideosUI/UICollectionViewDelegate-Protocol.h>
-#import <VideosUI/VUILocalContentProtocol-Protocol.h>
-#import <VideosUI/VUIMediaEntitiesFetchControllerDelegate-Protocol.h>
+#import <VideosUI/VUIFamilySharingContentProtocol-Protocol.h>
+#import <VideosUI/VUILibraryDataSourceDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, UIBarButtonItem, UICollectionView, VUICollectionHeaderView, VUILibraryLockupViewCell, VUIMediaEntityFetchRequest;
+@class NSArray, NSMutableDictionary, NSString, UIBarButtonItem, UICollectionViewCell, UICollectionViewDiffableDataSource, VUICollectionHeaderView, VUIFamilyMember, VUIMediaEntitiesDataSource, VUIMediaEntityFetchRequest, VUIViewControllerContentPresenter;
 @protocol VUILibraryGridCollectionViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface VUILibraryGridCollectionViewController : VUILibraryFetchControllerViewController <VUIMediaEntitiesFetchControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, VUILocalContentProtocol>
+@interface VUILibraryGridCollectionViewController : UICollectionViewController <VUILibraryDataSourceDelegate, VUIFamilySharingContentProtocol>
 {
     _Bool _requiresRelayout;
-    _Bool _displaySortFilter;
     struct CGSize _cellSize;
     NSMutableDictionary *_cellMetrics;
     VUICollectionHeaderView *_sizingHeaderView;
     _Bool _hideLockupTitles;
     _Bool _forceBackButton;
+    _Bool _waitingForFetch;
+    _Bool _shouldApplySnapshot;
+    VUIFamilyMember *_familyMember;
     id <VUILibraryGridCollectionViewControllerDelegate> _delegate;
     long long _gridFilter;
     long long _gridStyle;
     long long _gridType;
     UIBarButtonItem *_libraryBarButton;
     NSString *_pageType;
+    VUIMediaEntitiesDataSource *_entitiesDataSource;
     VUIMediaEntityFetchRequest *_fetchRequest;
-    UICollectionView *_collectionView;
-    NSArray *_totalResults;
-    NSArray *_genreGroupedResults;
-    VUILibraryLockupViewCell *_sizingCell;
+    UICollectionViewCell *_sizingCell;
     double _cellWidth;
     UIBarButtonItem *_currentNavBarButtonItem;
+    VUIViewControllerContentPresenter *_contentPresenter;
+    UICollectionViewDiffableDataSource *_diffableDataSource;
+    NSArray *_mediaEntities;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) _Bool shouldApplySnapshot; // @synthesize shouldApplySnapshot=_shouldApplySnapshot;
+@property(retain, nonatomic) NSArray *mediaEntities; // @synthesize mediaEntities=_mediaEntities;
+@property(nonatomic) _Bool waitingForFetch; // @synthesize waitingForFetch=_waitingForFetch;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *diffableDataSource; // @synthesize diffableDataSource=_diffableDataSource;
+@property(retain, nonatomic) VUIViewControllerContentPresenter *contentPresenter; // @synthesize contentPresenter=_contentPresenter;
 @property(retain, nonatomic) UIBarButtonItem *currentNavBarButtonItem; // @synthesize currentNavBarButtonItem=_currentNavBarButtonItem;
 @property(nonatomic) double cellWidth; // @synthesize cellWidth=_cellWidth;
-@property(retain, nonatomic) VUILibraryLockupViewCell *sizingCell; // @synthesize sizingCell=_sizingCell;
-@property(retain, nonatomic) NSArray *genreGroupedResults; // @synthesize genreGroupedResults=_genreGroupedResults;
-@property(retain, nonatomic) NSArray *totalResults; // @synthesize totalResults=_totalResults;
-@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
+@property(retain, nonatomic) UICollectionViewCell *sizingCell; // @synthesize sizingCell=_sizingCell;
 @property(retain, nonatomic) VUIMediaEntityFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
+@property(retain, nonatomic) VUIMediaEntitiesDataSource *entitiesDataSource; // @synthesize entitiesDataSource=_entitiesDataSource;
 @property(retain, nonatomic) NSString *pageType; // @synthesize pageType=_pageType;
 @property(nonatomic) _Bool forceBackButton; // @synthesize forceBackButton=_forceBackButton;
 @property(retain, nonatomic) UIBarButtonItem *libraryBarButton; // @synthesize libraryBarButton=_libraryBarButton;
@@ -54,44 +59,43 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long gridStyle; // @synthesize gridStyle=_gridStyle;
 @property(nonatomic) long long gridFilter; // @synthesize gridFilter=_gridFilter;
 @property(nonatomic) __weak id <VUILibraryGridCollectionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
+@property(retain, nonatomic) VUIFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
+- (void)_applySnapshotFromEntitiesAndAnimateDifferences:(_Bool)arg1;
+- (void)_updateCurrentViewIfNeeded;
 - (void)_updateLayout;
 - (void)_updateNavigationBarPadding;
 - (double)_computeBottomMargin;
-- (id)_getFilterTitleForEnum:(long long)arg1;
-- (void)_toggleSortFilter;
 - (void)_configureSizingCellForItemAtIndexPath:(id)arg1;
-- (void)_updateCurrentViewIfNeeded;
-- (void)_updateWithMediaEntities:(id)arg1 mediaEntitiesChangeSet:(id)arg2 grouping:(id)arg3 groupingChangeSet:(id)arg4;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didFailWithError:(id)arg3;
-- (void)controller:(id)arg1 fetchRequests:(id)arg2 didCompleteWithResult:(id)arg3;
+- (id)_getEntityIdentifiersFromEntities;
+- (id)_createDiffableDataSourceSnapshot;
+- (id)_createDiffableDataSource;
+- (id)_createCollectionViewFlowLayout;
+- (id)_createCollectionView;
+- (void)setTitle:(id)arg1 withLargeTitleDisplayEnabled:(_Bool)arg2;
+- (void)_iOSHandleCellSelectionAtIndexPath:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
-- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
-- (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (void)setTitle:(id)arg1 withLargeTitleDisplayEnabled:(_Bool)arg2;
+- (void)dataSourceDidFinishFetchingArtwork:(id)arg1;
+- (void)dataSourceDidFinishFetching:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)updateWithLatestMediaEntities:(id)arg1 andChangeSet:(id)arg2;
+- (void)loadView;
 - (void)updateWithLatestMediaEntities:(id)arg1;
-- (id)initWithMediaLibrary:(id)arg1 fetchRequest:(id)arg2 displaySortFilter:(_Bool)arg3;
-- (id)initWithMediaLibrary:(id)arg1 mediaEntities:(id)arg2 displaySortFilter:(_Bool)arg3;
+- (id)initWithDataSource:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(nonatomic) _Bool onlyShowLocalContent;
 @property(readonly) Class superclass;
 
 @end

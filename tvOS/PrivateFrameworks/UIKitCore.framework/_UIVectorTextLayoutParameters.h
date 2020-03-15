@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)parametersSuitableForView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic) struct CGSize withinSize; // @synthesize withinSize=_withinSize;
 @property(nonatomic) unsigned long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
-- (void).cxx_destruct;
 - (_Bool)isEqualToParameters:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_copyFromParameters:(id)arg1;

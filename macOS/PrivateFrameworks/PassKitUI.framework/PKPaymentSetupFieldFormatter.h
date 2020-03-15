@@ -13,8 +13,8 @@
     PKPaymentSetupField *_paymentSetupField;
 }
 
-@property(nonatomic) __weak PKPaymentSetupField *paymentSetupField; // @synthesize paymentSetupField=_paymentSetupField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PKPaymentSetupField *paymentSetupField; // @synthesize paymentSetupField=_paymentSetupField;
 - (BOOL)isPartialStringValid:(id *)arg1 proposedSelectedRange:(struct _NSRange *)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange)arg4 errorDescription:(id *)arg5;
 - (BOOL)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
 - (id)stringForObjectValue:(id)arg1;

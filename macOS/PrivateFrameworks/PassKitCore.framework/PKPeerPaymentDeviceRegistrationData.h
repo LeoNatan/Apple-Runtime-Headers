@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *companionSerialNumber; // @synthesize companionSerialNumber=_companionSerialNumber;
 @property(nonatomic) BOOL devSigned; // @synthesize devSigned=_devSigned;
 @property(copy, nonatomic) NSData *signedEnrollmentDataSignature; // @synthesize signedEnrollmentDataSignature=_signedEnrollmentDataSignature;
 @property(copy, nonatomic) NSDictionary *enrollmentData; // @synthesize enrollmentData=_enrollmentData;
 @property(copy, nonatomic) NSString *signedAuthToken; // @synthesize signedAuthToken=_signedAuthToken;
-- (void).cxx_destruct;
 - (BOOL)isEqualToPeerPaymentDeviceRegistrationData:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

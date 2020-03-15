@@ -20,8 +20,8 @@
     id <RBAssertionManagerQueueDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <RBAssertionManagerQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <RBAssertionManagerQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_queue_enqueueProcessExpirationEventsForProcesses:(id)arg1;
 - (void)_queue_enqueueInvalidationEventForAssertion:(id)arg1 startTime:(double)arg2;
 - (void)_queue_enqueueWarningEventForAssertion:(id)arg1 startTime:(double)arg2;

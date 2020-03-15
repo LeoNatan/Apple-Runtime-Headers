@@ -17,10 +17,10 @@
     UIKeyboard *_disabledKeyboard;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIKeyboard *disabledKeyboard; // @synthesize disabledKeyboard=_disabledKeyboard;
 @property(retain, nonatomic) NSString *enterPasscodeReason; // @synthesize enterPasscodeReason=_enterPasscodeReason;
 @property(retain, nonatomic) NSString *enterPasscodeTitle; // @synthesize enterPasscodeTitle=_enterPasscodeTitle;
-- (void).cxx_destruct;
 - (void)didFinishEnteringText:(id)arg1;
 - (long long)tableView:(id)arg1 titleAlignmentForFooterInSection:(long long)arg2;
 - (id)specifiers;

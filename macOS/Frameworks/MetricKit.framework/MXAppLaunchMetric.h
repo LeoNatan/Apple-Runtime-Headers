@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) MXHistogram *histogrammedApplicationResumeTime; // @synthesize histogrammedApplicationResumeTime=_histogrammedApplicationResumeTime;
 @property(readonly) MXHistogram *histogrammedTimeToFirstDraw; // @synthesize histogrammedTimeToFirstDraw=_histogrammedTimeToFirstDraw;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

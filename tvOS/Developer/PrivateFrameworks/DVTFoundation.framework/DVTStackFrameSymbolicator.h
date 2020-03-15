@@ -16,11 +16,11 @@
     unsigned long long _loadAddress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long loadAddress; // @synthesize loadAddress=_loadAddress;
 @property(retain, nonatomic) NSString *architectureName; // @synthesize architectureName=_architectureName;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSURL *debugSymbolsFileURL; // @synthesize debugSymbolsFileURL=_debugSymbolsFileURL;
-- (void).cxx_destruct;
 - (id)stackFrameUsingXPCForAddress:(unsigned long long)arg1 uuid:(id *)arg2 error:(id *)arg3;
 - (id)stackFrameForAddress:(unsigned long long)arg1 uuid:(id *)arg2 error:(id *)arg3;
 - (id)stackFrameForAddress:(unsigned long long)arg1 error:(id *)arg2;

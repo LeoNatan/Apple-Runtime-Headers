@@ -15,10 +15,10 @@
     CDUnknownBlockType _submissionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType submissionHandler; // @synthesize submissionHandler=_submissionHandler;
 @property(retain, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(retain, nonatomic) HMCameraClip *cameraClip; // @synthesize cameraClip=_cameraClip;
-- (void).cxx_destruct;
 - (id)activityViewController;
 - (void)prepareWithActivityItems:(id)arg1;
 - (BOOL)canPerformWithActivityItems:(id)arg1;

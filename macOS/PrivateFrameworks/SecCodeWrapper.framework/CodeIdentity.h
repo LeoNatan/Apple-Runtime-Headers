@@ -16,8 +16,8 @@
 }
 
 + (unsigned int)minimalValidationFlags;
-@property(readonly) struct __SecCode *codeRef; // @synthesize codeRef=_secCodeRef;
 - (void).cxx_destruct;
+@property(readonly) struct __SecCode *codeRef; // @synthesize codeRef=_secCodeRef;
 - (id)description;
 - (BOOL)inheritsSandbox;
 - (BOOL)isAppSandboxed;

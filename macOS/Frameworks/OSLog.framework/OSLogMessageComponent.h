@@ -21,6 +21,7 @@
     unsigned long long _argumentUInt64Value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long argumentUInt64Value; // @synthesize argumentUInt64Value=_argumentUInt64Value;
 @property(copy, nonatomic) NSString *argumentStringValue; // @synthesize argumentStringValue=_argumentStringValue;
 @property(copy, nonatomic) NSNumber *argumentNumberValue; // @synthesize argumentNumberValue=_argumentNumberValue;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) long long argumentCategory; // @synthesize argumentCategory=_argumentCategory;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(copy, nonatomic) NSString *formatSubstring; // @synthesize formatSubstring=_formatSubstring;
-- (void).cxx_destruct;
 - (void)fillWithData:(id)arg1;
 - (void)fillWithString:(id)arg1;
 - (void)fillWithScalar:(id)arg1;

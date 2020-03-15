@@ -17,9 +17,9 @@
     NSArray *_mapItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mapItems; // @synthesize mapItems=_mapItems;
 @property(nonatomic) __weak id <WFMapSearchTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

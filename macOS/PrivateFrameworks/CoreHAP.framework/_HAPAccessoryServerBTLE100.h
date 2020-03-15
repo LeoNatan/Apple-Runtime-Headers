@@ -56,6 +56,7 @@
 + (id)_convertFromBTLEToHAPUUID:(id)arg1;
 + (id)deserializeCharacteristicReadData:(id)arg1 characteristicFormat:(unsigned long long)arg2 supportsAdditonalAuthentication:(BOOL)arg3 error:(id *)arg4;
 + (id)serializeCharacteristicWriteValue:(id)arg1 characteristicFormat:(unsigned long long)arg2 supportsAdditonalAuthentication:(BOOL)arg3 authenticationData:(id)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL removeOnDisconnect; // @synthesize removeOnDisconnect=_removeOnDisconnect;
 @property(copy, nonatomic) CDUnknownBlockType unpairedIdentifyCompletionBlock; // @synthesize unpairedIdentifyCompletionBlock=_unpairedIdentifyCompletionBlock;
 @property(nonatomic) BOOL unpairedIdentifyRequested; // @synthesize unpairedIdentifyRequested=_unpairedIdentifyRequested;
@@ -92,7 +93,6 @@
 @property(retain, nonatomic) NSMapTable *btleServiceToHAPServiceMap; // @synthesize btleServiceToHAPServiceMap=_btleServiceToHAPServiceMap;
 @property(nonatomic) unsigned long long connectionRetryCount; // @synthesize connectionRetryCount=_connectionRetryCount;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_dequeueAndContinueOperation;
 - (void)_enqueueOperation:(long long)arg1 identifier:(id)arg2 publicKey:(id)arg3 admin:(BOOL)arg4 queue:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -153,14 +153,14 @@
 - (void)_reallyEstablishSecureSession;
 - (void)_establishSecureSession;
 - (void)_handleUpdatedValueForBTLECharacteristic:(id)arg1 error:(id)arg2;
-- (void)_readValueForCharacteristic:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_readCharacteristicValues:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_readValueForCharacteristic:(id)arg1 completionQueue:(id)arg2 logEventSession:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_readCharacteristicValues:(id)arg1 completionQueue:(id)arg2 logEventSession:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)readCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_handleHAPWriteConfirmationForCharacteristic:(id)arg1 error:(id)arg2;
-- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4 queue:(id)arg5;
-- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 logEventSession:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5 queue:(id)arg6;
+- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 logEventSession:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 logEventSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_dequeueEnableEventCompletionTupleForCharacteristic:(id)arg1;
 - (void)_enqueueEnableEventCompletionHandler:(CDUnknownBlockType)arg1 queue:(id)arg2 forCharacteristic:(id)arg3;
 - (id)_dequeueReadCompletionTupleForCharacteristic:(id)arg1;

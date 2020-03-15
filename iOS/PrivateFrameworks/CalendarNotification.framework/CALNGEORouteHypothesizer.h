@@ -16,9 +16,9 @@
     GEORouteHypothesizer *_routeHypothesizer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEORouteHypothesizer *routeHypothesizer; // @synthesize routeHypothesizer=_routeHypothesizer;
 @property(retain, nonatomic) CADRouteHypothesis *currentCADRouteHypothesis; // @synthesize currentCADRouteHypothesis;
-- (void).cxx_destruct;
 - (void)didPostUINotification:(unsigned long long)arg1;
 - (void)stopHypothesizing;
 - (void)requestRefresh;

@@ -41,6 +41,8 @@
 + (struct CGAffineTransform)_orientationTransform:(long long)arg1 size:(struct CGSize)arg2;
 + (long long)_currentSerializationVersion;
 + (id)drawingWithData:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKVisualizationManager *visualizationManager; // @synthesize visualizationManager=_visualizationManager;
 @property(retain, nonatomic) NSMapTable *ongoingQueries; // @synthesize ongoingQueries=_ongoingQueries;
 @property(retain, nonatomic) CHRecognitionSession *recognitionSession; // @synthesize recognitionSession=_recognitionSession;
@@ -48,8 +50,6 @@
 @property(retain, nonatomic) PKVectorTimestamp *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSMutableArray *_allStrokes; // @synthesize _allStrokes;
 @property(retain, nonatomic, setter=_setUUID:) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)didMergeWithDrawing:(id)arg1;
 - (void)willMergeWithDrawing:(id)arg1;
 - (id)strokeIdentifierFromData:(id)arg1;

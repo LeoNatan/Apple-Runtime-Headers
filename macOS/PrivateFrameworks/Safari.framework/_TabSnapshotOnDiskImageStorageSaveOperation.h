@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_uniqueIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property long long metadataOperationStatus; // @synthesize metadataOperationStatus=_metadataOperationStatus;
 @property long long fileOperationStatus; // @synthesize fileOperationStatus=_fileOperationStatus;
-- (void).cxx_destruct;
 - (id)initWithUniqueIdentifier:(id)arg1;
 
 @end

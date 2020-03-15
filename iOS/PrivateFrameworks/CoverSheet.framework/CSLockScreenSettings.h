@@ -21,6 +21,10 @@
     _Bool _showRegionsDebugView;
     _Bool _alwaysPutPluginsBelowScrollView;
     _Bool _killsInsecureDrawingApps;
+    _Bool _prewarmsCameraHardwareOnSwipe;
+    _Bool _prewarmsCameraHardwareOnTap;
+    _Bool _prelaunchesCameraAppOnSwipe;
+    _Bool _prelaunchesCameraAppOnTap;
     PTOutlet *_addNotificationOutlet;
     CSBounceSettings *_verticalBounceSettings;
     CSBounceSettings *_horizontalBounceSettings;
@@ -53,9 +57,18 @@
     double _lockJiggleHapticDelay;
     double _lockJiggleAnimationDelay;
     double _unlockSwipeWallpaperAlpha;
+    double _cameraPrewarmThresholdOnSwipe;
+    double _cameraPrelaunchThresholdOnSwipe;
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
+@property double cameraPrelaunchThresholdOnSwipe; // @synthesize cameraPrelaunchThresholdOnSwipe=_cameraPrelaunchThresholdOnSwipe;
+@property double cameraPrewarmThresholdOnSwipe; // @synthesize cameraPrewarmThresholdOnSwipe=_cameraPrewarmThresholdOnSwipe;
+@property _Bool prelaunchesCameraAppOnTap; // @synthesize prelaunchesCameraAppOnTap=_prelaunchesCameraAppOnTap;
+@property _Bool prelaunchesCameraAppOnSwipe; // @synthesize prelaunchesCameraAppOnSwipe=_prelaunchesCameraAppOnSwipe;
+@property _Bool prewarmsCameraHardwareOnTap; // @synthesize prewarmsCameraHardwareOnTap=_prewarmsCameraHardwareOnTap;
+@property _Bool prewarmsCameraHardwareOnSwipe; // @synthesize prewarmsCameraHardwareOnSwipe=_prewarmsCameraHardwareOnSwipe;
 @property _Bool killsInsecureDrawingApps; // @synthesize killsInsecureDrawingApps=_killsInsecureDrawingApps;
 @property _Bool alwaysPutPluginsBelowScrollView; // @synthesize alwaysPutPluginsBelowScrollView=_alwaysPutPluginsBelowScrollView;
 @property double unlockSwipeWallpaperAlpha; // @synthesize unlockSwipeWallpaperAlpha=_unlockSwipeWallpaperAlpha;
@@ -99,7 +112,6 @@
 @property _Bool showUserPicture; // @synthesize showUserPicture=_showUserPicture;
 @property _Bool showNowPlaying; // @synthesize showNowPlaying=_showNowPlaying;
 @property _Bool autoDismissUnlockedLockScreen; // @synthesize autoDismissUnlockedLockScreen=_autoDismissUnlockedLockScreen;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

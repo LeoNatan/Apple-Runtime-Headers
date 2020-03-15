@@ -33,6 +33,7 @@
 
 + (id)shared;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setMenuExtrasGen:) unsigned long long _menuExtrasGen; // @synthesize _menuExtrasGen=__menuExtrasGen;
 @property(nonatomic, setter=_setMenuBounds:) struct CGRect _menuBounds; // @synthesize _menuBounds=__menuBounds;
 @property(retain, nonatomic, setter=_setMainScreenObserver:) NSObservation<NSObservable><NSObserver> *_mainScreenObserver; // @synthesize _mainScreenObserver=__mainScreenObserver;
@@ -49,7 +50,6 @@
 @property __weak id <AXKWorkspaceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setMenuExtrasBounds:) struct CGRect _menuExtrasBounds; // @synthesize _menuExtrasBounds=__menuExtrasBounds;
 @property(retain, nonatomic, setter=_setMenuExtras:) NSArray *_menuExtras; // @synthesize _menuExtras=__menuExtras;
-- (void).cxx_destruct;
 - (void)_assertNotApplicationCacheQueue;
 - (void)_assertApplicationCacheQueue;
 - (void)_updateMenuExtraInformationWithApplications:(id)arg1 systemUIServer:(id)arg2 menuBarApplicationController:(id)arg3 counter:(unsigned long long)arg4;

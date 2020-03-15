@@ -18,11 +18,11 @@
 }
 
 + (Class)operationHandled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSDictionary *responsePayload; // @synthesize responsePayload=_responsePayload;
 @property(retain, nonatomic) NSDictionary *inputPayload; // @synthesize inputPayload=_inputPayload;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-- (void).cxx_destruct;
 - (void)finishOperation;
 - (void)start;
 - (id)initWithInputPayload:(id)arg1;

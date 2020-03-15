@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *randomizedDigitalTimeLabelScaleOption; // @synthesize randomizedDigitalTimeLabelScaleOption=_randomizedDigitalTimeLabelScaleOption;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *outputMicaOption; // @synthesize outputMicaOption=_outputMicaOption;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *outputOption; // @synthesize outputOption=_outputOption;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *includeStatusBarOption; // @synthesize includeStatusBarOption=_includeStatusBarOption;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *stateOption; // @synthesize stateOption=_stateOption;
 @property(readonly, nonatomic) NTKTritiumToolCommandOption *randomizedComplicationData; // @synthesize randomizedComplicationData=_randomizedComplicationData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)options;

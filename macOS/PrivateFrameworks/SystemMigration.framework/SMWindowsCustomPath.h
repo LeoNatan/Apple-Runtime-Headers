@@ -17,12 +17,12 @@
     unsigned long long _size;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long size; // @synthesize size=_size;
 @property BOOL macPathRelativeToUserHome; // @synthesize macPathRelativeToUserHome=_macPathRelativeToUserHome;
 @property(retain) NSURL *macPath; // @synthesize macPath=_macPath;
 @property BOOL windowsPathRelativeToUserHome; // @synthesize windowsPathRelativeToUserHome=_windowsPathRelativeToUserHome;
 @property(retain) NSString *windowsPath; // @synthesize windowsPath=_windowsPath;
-- (void).cxx_destruct;
 - (id)windowsPathForUser:(id)arg1;
 - (id)description;
 - (BOOL)isPerUser;

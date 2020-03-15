@@ -14,8 +14,8 @@
     long long _reenableFeatureSection;
 }
 
-@property(nonatomic) long long reenableFeatureSection; // @synthesize reenableFeatureSection=_reenableFeatureSection;
 - (void).cxx_destruct;
+@property(nonatomic) long long reenableFeatureSection; // @synthesize reenableFeatureSection=_reenableFeatureSection;
 - (void)receivedHeartRhythmAvailabilityNotification;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

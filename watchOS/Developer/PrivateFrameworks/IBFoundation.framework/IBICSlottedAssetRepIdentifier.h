@@ -26,10 +26,10 @@
 + (id)explicitlyUnassignedIdentifierForFileName:(id)arg1;
 + (id)identifierWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(_Bool)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long conflictState; // @synthesize conflictState=_conflictState;
 @property(readonly) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly) IBICSlot *slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *stringRepresentation;
 - (long long)compareInTieBreakingOrder:(id)arg1;

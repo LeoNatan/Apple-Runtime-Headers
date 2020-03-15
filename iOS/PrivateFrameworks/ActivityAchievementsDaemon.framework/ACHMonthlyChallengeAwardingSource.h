@@ -25,6 +25,7 @@
     ACHMonthlyChallengeDataSource *_monthlyDataSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char creatorDevice; // @synthesize creatorDevice=_creatorDevice;
 @property(nonatomic) __weak ACHMonthlyChallengeDataSource *monthlyDataSource; // @synthesize monthlyDataSource=_monthlyDataSource;
 @property(nonatomic) __weak ACHEarnedInstanceStore *earnedInstanceStore; // @synthesize earnedInstanceStore=_earnedInstanceStore;
@@ -32,7 +33,6 @@
 @property(nonatomic) __weak ACHAchievementProgressEngine *progressProvider; // @synthesize progressProvider=_progressProvider;
 @property(nonatomic) __weak ACHEarnedInstanceAwardingEngine *engine; // @synthesize engine=_engine;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)_requestIncrementalEvaluation;
 - (id)_monthlyChallengeTemplatesForHistoricalInterval:(id)arg1;
 - (id)_earnedInstancesForInterval:(id)arg1;

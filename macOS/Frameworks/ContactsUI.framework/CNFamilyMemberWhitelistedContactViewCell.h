@@ -17,8 +17,9 @@
     id <CNFamilyMemberWhitelistedContactViewCellDelegate> _delegate;
     NSTextField *_label;
     NSTextField *_detailLabel;
-    NSButton *_discosureButton;
+    NSTextField *_warningLabel;
     NSImageView *_warningImageView;
+    NSButton *_discosureButton;
     NSLayoutConstraint *_detailLabelCenterXConstraint;
     NSPopover *_discosurePopover;
     CNContactCardViewController *_contactViewController;
@@ -26,16 +27,17 @@
 
 + (id)labelForContactType:(long long)arg1;
 + (id)localizedStringForString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactCardViewController *contactViewController; // @synthesize contactViewController=_contactViewController;
 @property(retain, nonatomic) NSPopover *discosurePopover; // @synthesize discosurePopover=_discosurePopover;
 @property(readonly, nonatomic) NSLayoutConstraint *detailLabelCenterXConstraint; // @synthesize detailLabelCenterXConstraint=_detailLabelCenterXConstraint;
-@property(readonly, nonatomic) NSImageView *warningImageView; // @synthesize warningImageView=_warningImageView;
 @property(readonly, nonatomic) NSButton *discosureButton; // @synthesize discosureButton=_discosureButton;
+@property(readonly, nonatomic) NSImageView *warningImageView; // @synthesize warningImageView=_warningImageView;
+@property(readonly, nonatomic) NSTextField *warningLabel; // @synthesize warningLabel=_warningLabel;
 @property(readonly, nonatomic) NSTextField *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(retain, nonatomic) id <CNFamilyMemberWhitelistedContactViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNUICoreFamilyMemberContactItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)closePopover;
 - (void)didPressEditFamilyMemberEditControlsViewController:(id)arg1;
 - (void)didPressCancelFamilyMemberEditControlsViewController:(id)arg1;
@@ -47,6 +49,7 @@
 - (void)setupViewHierarchy;
 - (void)setupWarningImageView;
 - (void)setupDiscosureButton;
+- (void)setupWarningLabel;
 - (void)setupDetailLabel;
 - (void)setupLabel;
 - (id)initWithFrame:(struct CGRect)arg1;

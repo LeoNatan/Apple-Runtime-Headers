@@ -14,9 +14,9 @@
     NSNumber *_itemPersistentID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *itemPersistentID; // @synthesize itemPersistentID=_itemPersistentID;
 @property(retain, nonatomic) MPArtworkCatalog *artworkCatalog; // @synthesize artworkCatalog=_artworkCatalog;
-- (void).cxx_destruct;
 
 @end
 

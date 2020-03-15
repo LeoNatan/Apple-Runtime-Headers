@@ -14,9 +14,9 @@
     NSArray *_identifiersOfAffectedContacts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *identifiersOfAffectedContacts; // @synthesize identifiersOfAffectedContacts=_identifiersOfAffectedContacts;
 @property(readonly, copy, nonatomic) NSData *currentChangeHistoryToken; // @synthesize currentChangeHistoryToken=_currentChangeHistoryToken;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCurrentChangeHistoryToken:(id)arg1 identifiersOfAffectedContacts:(id)arg2;
 

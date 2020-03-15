@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long similarBidirectionalInteractionsCount; // @synthesize similarBidirectionalInteractionsCount=_similarBidirectionalInteractionsCount;
 @property long long similarIncomingInteractionsCount; // @synthesize similarIncomingInteractionsCount=_similarIncomingInteractionsCount;
 @property long long similarOutgoingInteractionsCount; // @synthesize similarOutgoingInteractionsCount=_similarOutgoingInteractionsCount;
@@ -33,7 +34,6 @@
 @property(retain) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain) NSString *account; // @synthesize account=_account;
 @property(retain) _CDContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)addReasons:(id)arg1;
 - (void)addReason:(long long)arg1;
 @property(retain) NSSet *reasons;

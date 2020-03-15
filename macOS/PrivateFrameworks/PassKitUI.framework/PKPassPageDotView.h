@@ -18,8 +18,8 @@
     id <PKPassPageDotViewDelegate><NSStackViewDelegate> delegate;
 }
 
-@property __weak id <PKPassPageDotViewDelegate><NSStackViewDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
+@property __weak id <PKPassPageDotViewDelegate><NSStackViewDelegate> delegate; // @synthesize delegate;
 - (void)setHidden:(BOOL)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (BOOL)accessibilityIsIgnored;

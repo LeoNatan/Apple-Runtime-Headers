@@ -21,10 +21,10 @@
 
 + (void)_setupSideBySideButtonsAlertSheetControllerSpec;
 + (id)sideBySideButtonsAlertWithTitle:(id)arg1 message:(id)arg2 buttons:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
 @property(copy, nonatomic) NSString *alertTitle; // @synthesize alertTitle=_alertTitle;
 @property(retain, nonatomic) PUICSideBySideButtonsView *buttons; // @synthesize buttons=_buttons;
-- (void).cxx_destruct;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -32,6 +32,7 @@
 }
 
 + (id)categoryNameForTag:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FPRangeList *subrangeList; // @synthesize subrangeList=_subrangeList;
 @property(nonatomic) unsigned char share_mode; // @synthesize share_mode=_share_mode;
 @property(nonatomic) unsigned long long object_id; // @synthesize object_id=_object_id;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *detailedName; // @synthesize detailedName=_detailedName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) FPMemoryObject *memoryObject; // @synthesize memoryObject=_memoryObject;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFake) BOOL fake;
 - (BOOL)eligibleForSubrangesUsingPageSize:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL eligibleForProcessView;

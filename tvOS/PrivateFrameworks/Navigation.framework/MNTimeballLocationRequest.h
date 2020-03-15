@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)requestWithAccuracy:(double)arg1 maxAttempts:(unsigned long long)arg2 timeoutInterval:(double)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(retain, nonatomic) NSDate *requestDate; // @synthesize requestDate=_requestDate;
 @property(nonatomic) unsigned long long maxAttempts; // @synthesize maxAttempts=_maxAttempts;
 @property(nonatomic) unsigned long long attemptCount; // @synthesize attemptCount=_attemptCount;
 @property(nonatomic) double desiredAccuracy; // @synthesize desiredAccuracy=_desiredAccuracy;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

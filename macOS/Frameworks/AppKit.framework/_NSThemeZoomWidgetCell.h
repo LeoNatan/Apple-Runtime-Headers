@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     NSTrackingArea *_exitTrackingArea;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTrackingArea *exitTrackingArea; // @synthesize exitTrackingArea=_exitTrackingArea;
 @property(retain) NSMenu *contextMenu; // @synthesize contextMenu=_contextMenu;
 @property __weak NSWindow *trackedWindow; // @synthesize trackedWindow=_trackedWindow;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)accessibilityActionNames;
 - (BOOL)accessibilityPerformShowMenu;

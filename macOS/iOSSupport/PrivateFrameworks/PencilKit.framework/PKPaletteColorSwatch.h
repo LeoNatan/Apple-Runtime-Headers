@@ -21,6 +21,7 @@
     UIView *_colorBulletView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *colorBulletView; // @synthesize colorBulletView=_colorBulletView;
 @property(retain, nonatomic) CAShapeLayer *selectionRingMaskLayer; // @synthesize selectionRingMaskLayer=_selectionRingMaskLayer;
 @property(retain, nonatomic) UIView *colorBackgroundView; // @synthesize colorBackgroundView=_colorBackgroundView;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL showsSelectionHighlight; // @synthesize showsSelectionHighlight=_showsSelectionHighlight;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) PKSwatchColor *swatchColor; // @synthesize swatchColor=_swatchColor;
-- (void).cxx_destruct;
 - (BOOL)wantsColorBulletVisible;
 - (BOOL)wantsBackgroundViewColor;
 - (id)newColorBackgroundView;

@@ -9,6 +9,7 @@
 @protocol VUIProductUberBackgroundInterface <NSObject>
 @property(readonly, nonatomic) double topThreshold;
 @property(readonly, nonatomic) struct CGSize size;
+@property(readonly, nonatomic) _Bool disableGradientBelowNavBar;
 @property(readonly, nonatomic) _Bool isUberLayoutActive;
 - (void)setBannerOpacity:(double)arg1;
 - (void)setUberImageOffset:(double)arg1;

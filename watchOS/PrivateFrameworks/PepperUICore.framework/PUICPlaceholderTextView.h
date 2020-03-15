@@ -17,9 +17,9 @@
     NSAttributedString *_attributedPlaceholder;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *attributedPlaceholder; // @synthesize attributedPlaceholder=_attributedPlaceholder;
 @property(nonatomic) _Bool showPlaceholder; // @synthesize showPlaceholder=_showPlaceholder;
-- (void).cxx_destruct;
 - (id)_placeholderTextColor;
 - (_Bool)_isEmptyText:(id)arg1;
 - (void)_updatePlaceholderTextIfNeeded;

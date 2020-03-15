@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _groupRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id nextGroup; // @synthesize nextGroup=_nextGroup;
 @property(nonatomic) struct CGRect groupRect; // @synthesize groupRect=_groupRect;
 @property(retain, nonatomic) SCRElementHashMarker *startMarker; // @synthesize startMarker=_startMarker;
-- (void).cxx_destruct;
 
 @end
 

@@ -22,12 +22,12 @@
 }
 
 + (id)_persistenceCoder;
+- (void).cxx_destruct;
 @property _Bool needsSave; // @synthesize needsSave=_needsSave;
 @property _Bool flushingEnabled; // @synthesize flushingEnabled=_flushingEnabled;
 @property(readonly, nonatomic) NFUnfairLock *cacheEntriesLock; // @synthesize cacheEntriesLock=_cacheEntriesLock;
 @property(readonly, nonatomic) NSMutableDictionary *cacheEntries; // @synthesize cacheEntries=_cacheEntries;
 @property(readonly, copy, nonatomic) NSString *cachePath; // @synthesize cachePath=_cachePath;
-- (void).cxx_destruct;
 - (void)_saveToDisk;
 - (void)_loadFromDisk;
 - (void)_prepareForUse;

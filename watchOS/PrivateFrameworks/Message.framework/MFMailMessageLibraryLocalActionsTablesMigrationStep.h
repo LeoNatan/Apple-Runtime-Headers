@@ -14,8 +14,8 @@
 }
 
 + (id)log;
-@property(retain, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (id)_actionFlagsActionIndexDefinition;
 - (id)_actionFlagsTableDefinition;
 - (id)_actionLabelsLabelIndexDefinition;

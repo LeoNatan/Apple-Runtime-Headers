@@ -16,10 +16,10 @@
     NTKAltitudeColorCurveView *_backgroundDialView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKAltitudeColorCurveView *backgroundDialView; // @synthesize backgroundDialView=_backgroundDialView;
 @property(readonly, nonatomic) NTKSiderealBackgroundQuad *quad; // @synthesize quad=_quad;
 @property(retain, nonatomic) CLKUIQuadView *quadView; // @synthesize quadView=_quadView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setSectors:(id)arg1;
 - (void)setSolarDayProgress:(double)arg1;

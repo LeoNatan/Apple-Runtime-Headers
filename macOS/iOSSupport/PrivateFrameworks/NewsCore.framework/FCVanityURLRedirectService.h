@@ -15,8 +15,8 @@
     id <FCContentContext> _contentContext;
 }
 
-@property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 - (id)_destinationURLForURL:(id)arg1;
 - (void)updateUnderlyingMappingWithQualityOfService:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)acquireHoldTokenOnUnderlyingAssets;

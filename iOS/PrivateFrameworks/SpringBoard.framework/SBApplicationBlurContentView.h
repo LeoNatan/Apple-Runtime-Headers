@@ -24,8 +24,8 @@
     UIView *_blurView;
 }
 
-@property(readonly, nonatomic) SBSceneViewAppIconView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBSceneViewAppIconView *iconView; // @synthesize iconView=_iconView;
 - (void)_doAnimationToBlurredSnapshotWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_doBlurGenerationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fireCompletionBlocksForState:(unsigned long long)arg1;

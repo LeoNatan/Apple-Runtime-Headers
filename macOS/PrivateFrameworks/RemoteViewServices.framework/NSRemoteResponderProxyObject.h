@@ -18,13 +18,13 @@
     BOOL _validateUserInterfaceItemAnswer;
 }
 
+- (void).cxx_destruct;
 @property BOOL validateUserInterfaceItemAnswer; // @synthesize validateUserInterfaceItemAnswer=_validateUserInterfaceItemAnswer;
 @property BOOL validateMenuItemAnswer; // @synthesize validateMenuItemAnswer=_validateMenuItemAnswer;
 @property BOOL respondsToValidateUserInterfaceItem; // @synthesize respondsToValidateUserInterfaceItem=_respondsToValidateUserInterfaceItem;
 @property BOOL respondsToValidateMenuItem; // @synthesize respondsToValidateMenuItem=_respondsToValidateMenuItem;
 @property(retain) NSLocalWindowWrappingRemoteWindow *remoteWindow; // @synthesize remoteWindow=_remoteWindow;
 @property SEL action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)_validateUserInterfaceItem:(id)arg1 type:(unsigned long long)arg2;

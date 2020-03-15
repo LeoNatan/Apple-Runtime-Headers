@@ -21,10 +21,10 @@
 
 + (float)defaultHorizontalInset;
 + (id)defaultBackgroundColor;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
 @property(nonatomic) _Bool useCompactTopInset; // @synthesize useCompactTopInset=_useCompactTopInset;
-- (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;

@@ -14,19 +14,19 @@
     id <AIDAServiceOwnerProtocol> _serviceOwnersManager;
     struct os_unfair_lock_s _accountManagerLock;
     NSMutableDictionary *_handlerByObserver;
-    struct NSDictionary *_accounts;
+    NSDictionary *_accounts;
     ACAccountStore *_accountStore;
     id <AIDAAccountManagerDelegate> _delegate;
 }
 
 + (id)_accountStoreChangeQueue;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AIDAAccountManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)removeAccountChangeObserver:(id)arg1;
 - (void)addAccountChangeObserver:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_accountStoreDidChange:(id)arg1;
-- (struct NSDictionary *)_delegate_accountsForAccountManager;
+- (id)_delegate_accountsForAccountManager;
 - (id)grandSlamAccountForService:(id)arg1;
 - (id)aidaAccountForService:(id)arg1;
 @property(copy, nonatomic) NSDictionary *accounts; // @synthesize accounts=_accounts;

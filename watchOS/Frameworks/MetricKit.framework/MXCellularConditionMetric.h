@@ -14,8 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) MXHistogram *histogrammedCellularConditionTime; // @synthesize histogrammedCellularConditionTime=_histogrammedCellularConditionTime;
 - (void).cxx_destruct;
+@property(readonly) MXHistogram *histogrammedCellularConditionTime; // @synthesize histogrammedCellularConditionTime=_histogrammedCellularConditionTime;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

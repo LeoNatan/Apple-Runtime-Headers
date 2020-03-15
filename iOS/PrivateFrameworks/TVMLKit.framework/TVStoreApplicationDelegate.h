@@ -26,11 +26,11 @@
     IKURLBagCache *_bagCache;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool overrideOrientation; // @synthesize overrideOrientation=_overrideOrientation;
 @property(readonly, nonatomic) IKURLBagCache *bagCache; // @synthesize bagCache=_bagCache;
 @property(readonly, nonatomic) TVApplicationController *appController; // @synthesize appController=_appController;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)_presetDialogWithError:(long long)arg1 appController:(id)arg2;
 - (void)_controllerDidDisplay:(id)arg1;
 - (void)_loadWithBootURL:(id)arg1;

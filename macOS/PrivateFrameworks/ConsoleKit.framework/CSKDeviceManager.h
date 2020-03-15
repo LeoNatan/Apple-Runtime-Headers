@@ -20,10 +20,10 @@
 
 + (long long)_deviceStateFromLogDeviceEvent:(long long)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *devices; // @synthesize devices=_devices;
 @property(readonly, nonatomic) OSActivityStream *activityStream; // @synthesize activityStream=_activityStream;
 @property(nonatomic) __weak id <CSKDeviceManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_signalDelegateForDevice:(id)arg1 didTrust:(BOOL)arg2;
 - (BOOL)activityStream:(id)arg1 deviceUDID:(id)arg2 deviceID:(id)arg3 status:(long long)arg4 error:(id)arg5;
 - (id)allDevices;

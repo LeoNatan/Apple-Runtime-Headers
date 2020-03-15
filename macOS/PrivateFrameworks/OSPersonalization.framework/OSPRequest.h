@@ -42,6 +42,7 @@
     NSUUID *_uuid;
 }
 
+- (void).cxx_destruct;
 @property BOOL showUsageForPersonalization; // @synthesize showUsageForPersonalization=_showUsageForPersonalization;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSString *kernelCacheOverrideTag; // @synthesize kernelCacheOverrideTag=_kernelCacheOverrideTag;
@@ -72,7 +73,6 @@
 @property(retain) NSArray *packageSpecifiers; // @synthesize packageSpecifiers=_packageSpecifiers;
 @property(retain) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(retain) NSURL *volumeURL; // @synthesize volumeURL=_volumeURL;
-- (void).cxx_destruct;
 - (void)_printUsageForExecutableNamed:(id)arg1;
 - (BOOL)_setPropertiesFromOptions:(id)arg1;
 - (BOOL)_parsePRDocument:(id)arg1 enforceSignature:(BOOL)arg2;

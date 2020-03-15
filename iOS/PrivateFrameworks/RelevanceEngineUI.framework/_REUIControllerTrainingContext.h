@@ -16,11 +16,11 @@
     id <_REUIControllerTrainingContextDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_REUIControllerTrainingContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long onScreenElementCount; // @synthesize onScreenElementCount=_onScreenElementCount;
 @property(nonatomic) double minimumPositiveDwellTime; // @synthesize minimumPositiveDwellTime=_minimumPositiveDwellTime;
 @property(nonatomic) double maximumNegativeDwellTime; // @synthesize maximumNegativeDwellTime=_maximumNegativeDwellTime;
-- (void).cxx_destruct;
 - (id)interactionTypeForElement:(id)arg1;
 - (_Bool)elementIsAvailable:(id)arg1;
 - (id)elementsOrdered:(unsigned long long)arg1 relativeToElement:(id)arg2;

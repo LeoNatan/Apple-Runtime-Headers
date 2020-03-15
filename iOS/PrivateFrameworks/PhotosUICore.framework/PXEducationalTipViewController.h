@@ -20,11 +20,11 @@
     CDUnknownBlockType _dismissHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 @property(copy, nonatomic) NSString *dismissButtonTitle; // @synthesize dismissButtonTitle=_dismissButtonTitle;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)_handleDismissButton:(id)arg1;
 - (void)_invalidateContent;

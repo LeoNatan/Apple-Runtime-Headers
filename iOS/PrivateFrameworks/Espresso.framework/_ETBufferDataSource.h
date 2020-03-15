@@ -18,13 +18,13 @@ __attribute__((visibility("hidden")))
     unordered_map_1de83e55 _blobShapes;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property vector_ebb6ef3e nonBatchBlobNames; // @synthesize nonBatchBlobNames=_nonBatchBlobNames;
 @property unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property unsigned long long number_of_data_points; // @synthesize number_of_data_points=_number_of_data_points;
 @property unordered_map_1de83e55 blobShapes; // @synthesize blobShapes=_blobShapes;
 @property unordered_map_4e50001a dataStorage; // @synthesize dataStorage=_dataStorage;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (float *)dataAtIndex:(unsigned long long)arg1 key:(const basic_string_23d93216 *)arg2;
 - (id)initWithBlobShapes:(const unordered_map_1de83e55 *)arg1 numberOfDataPoints:(unsigned long long)arg2 batchSize:(unsigned long long)arg3 error:(id *)arg4;
 - (id)dataPointAtIndex:(unsigned long long)arg1 error:(id *)arg2;

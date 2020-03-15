@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSArray *_CepLongs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *CepLongs; // @synthesize CepLongs=_CepLongs;
 @property(copy, nonatomic) NSArray *Ceps; // @synthesize Ceps=_Ceps;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

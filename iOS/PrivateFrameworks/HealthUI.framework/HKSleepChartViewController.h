@@ -25,9 +25,9 @@
 + (id)_buildSleepAnalysisDataSourceWithHealthStore:(id)arg1 displayTypeController:(id)arg2;
 + (id)_buildSleepChartCacheWithHealthStore:(id)arg1 representativeDisplayType:(id)arg2 displayTypeController:(id)arg3 chartCacheController:(id)arg4;
 + (id)consistencyDisplayTypesWithHealthStore:(id)arg1 unitController:(id)arg2 displayTypeController:(id)arg3 chartCacheController:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKSleepAnnotationViewDataSource *annotationViewDataSource; // @synthesize annotationViewDataSource=_annotationViewDataSource;
 @property(nonatomic) _Bool disableXAxisAndInteraction; // @synthesize disableXAxisAndInteraction=_disableXAxisAndInteraction;
-- (void).cxx_destruct;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;
 - (id)lollipopAnnotationColor;
 - (void)updateSelectionAnnotationDataSourceForContext:(id)arg1 displayType:(id)arg2 timeScope:(long long)arg3;

@@ -24,6 +24,7 @@
 + (id)archivedClasses;
 + (id)groupWithDEGroup:(id)arg1 identifier:(id)arg2;
 + (id)groupWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) DEDExtensionIdentifier *dedExtensionIdentifier; // @synthesize dedExtensionIdentifier=_dedExtensionIdentifier;
 @property(retain) NSArray *attachmentItems; // @synthesize attachmentItems=_attachmentItems;
 @property(retain) NSString *extensionID; // @synthesize extensionID=_extensionID;
@@ -31,7 +32,6 @@
 @property(retain) NSURL *rootURL; // @synthesize rootURL=_rootURL;
 @property(retain) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain) DEDBugSession *fromBugSession; // @synthesize fromBugSession=_fromBugSession;
-- (void).cxx_destruct;
 - (_Bool)isLocal;
 @property(readonly, copy) NSString *description;
 - (id)serialize;

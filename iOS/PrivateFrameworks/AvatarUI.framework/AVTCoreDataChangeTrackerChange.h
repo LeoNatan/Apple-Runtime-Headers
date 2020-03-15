@@ -17,9 +17,9 @@
 }
 
 + (long long)trackerChangeTypeFromPersistentChangeType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

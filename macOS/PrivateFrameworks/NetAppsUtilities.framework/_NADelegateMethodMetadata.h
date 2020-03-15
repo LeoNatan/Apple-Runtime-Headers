@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_customLogSettingsByArgumentIndex;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *customLogSettingsByArgumentIndex; // @synthesize customLogSettingsByArgumentIndex=_customLogSettingsByArgumentIndex;
 @property(copy, nonatomic) CDUnknownBlockType customHandler; // @synthesize customHandler=_customHandler;
 @property(retain, nonatomic) NSMethodSignature *methodSignature; // @synthesize methodSignature=_methodSignature;
-- (void).cxx_destruct;
 
 @end
 

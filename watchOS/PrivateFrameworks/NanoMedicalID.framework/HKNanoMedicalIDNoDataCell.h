@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifier;
-@property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_addDoneButtonConstraints;
 - (void)_addSeparatorConstraints;

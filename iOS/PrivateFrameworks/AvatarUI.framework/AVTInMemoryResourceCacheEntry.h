@@ -17,11 +17,11 @@
     unsigned long long _cost;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long cost; // @synthesize cost=_cost;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) id <AVTCacheableResourceChangeToken> changeToken; // @synthesize changeToken=_changeToken;
 @property(readonly, nonatomic) id <AVTCachedResource> resource; // @synthesize resource=_resource;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithResource:(id)arg1 changeToken:(id)arg2 key:(id)arg3 cost:(unsigned long long)arg4;

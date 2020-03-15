@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL operationGroupTriggered; // @synthesize operationGroupTriggered=_operationGroupTriggered;
 @property(retain, nonatomic) NSString *operationGroupName; // @synthesize operationGroupName=_operationGroupName;
 @property(retain, nonatomic) NSString *operationGroupId; // @synthesize operationGroupId=_operationGroupId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

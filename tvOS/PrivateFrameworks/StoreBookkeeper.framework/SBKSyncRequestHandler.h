@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)conflictDetectionType;
+- (void).cxx_destruct;
 @property(readonly) SBKTransactionController *transactionController; // @synthesize transactionController=_transactionController;
 @property(readonly) SBKSyncResponseData *responseData; // @synthesize responseData=_responseData;
-- (void).cxx_destruct;
 - (id)transaction:(id)arg1 keyValuePairForUpdatedKey:(id)arg2;
 - (void)transaction:(id)arg1 processDeletedKey:(id)arg2 isDirty:(_Bool *)arg3;
 - (void)transaction:(id)arg1 processUpdatedKey:(id)arg2 data:(id)arg3 conflict:(_Bool)arg4 isDirty:(_Bool *)arg5;

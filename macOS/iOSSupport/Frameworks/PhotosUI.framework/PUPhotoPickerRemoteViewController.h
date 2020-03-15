@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     PUPhotoPickerRemoteViewControllerRequestOptions *_options;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUPhotoPickerRemoteViewControllerRequestOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) PUPhotoPickerRemoteNavigationController *contentNavigationController; // @synthesize contentNavigationController=_contentNavigationController;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) __weak PUPhotoPickerExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
-- (void).cxx_destruct;
 - (BOOL)_useLibraryPresentation;
 - (void)_allowSharingSelectionOfInfoDictionaries:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_logAssetSelectionIfNeeded:(id)arg1;

@@ -18,12 +18,12 @@
     BOOL _needsRefresh;
 }
 
+- (void).cxx_destruct;
 @property BOOL needsRefresh; // @synthesize needsRefresh=_needsRefresh;
 @property BOOL isAutoRefreshed; // @synthesize isAutoRefreshed=_isAutoRefreshed;
 @property BOOL tryCredentialsOnNextSync; // @synthesize tryCredentialsOnNextSync=_tryCredentialsOnNextSync;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(retain) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (void)systemWillSleep;
 - (void)systemDidWake;
 - (void)systemNetworkDidChange;

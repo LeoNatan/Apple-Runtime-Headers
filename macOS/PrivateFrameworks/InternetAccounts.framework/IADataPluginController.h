@@ -20,8 +20,8 @@
 + (void)plugin:(id)arg1 performBlock:(CDUnknownBlockType)arg2 withTimeOut:(long long)arg3;
 + (void)plugin:(id)arg1 performBlock:(CDUnknownBlockType)arg2;
 + (id)sharedInstance;
-@property(retain) NSMutableArray *dataPluginNotificationHistory; // @synthesize dataPluginNotificationHistory=_dataPluginNotificationHistory;
 - (void).cxx_destruct;
+@property(retain) NSMutableArray *dataPluginNotificationHistory; // @synthesize dataPluginNotificationHistory=_dataPluginNotificationHistory;
 - (void)plugin:(id)arg1 aosAccountMigrationFinished:(id)arg2;
 - (void)plugin:(id)arg1 accountSetupDidFinish:(id)arg2 withResult:(id)arg3;
 - (void)plugin:(id)arg1 accountSetupDidFail:(id)arg2 withError:(id)arg3;

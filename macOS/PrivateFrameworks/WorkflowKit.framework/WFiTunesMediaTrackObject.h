@@ -23,12 +23,12 @@
 + (id)explicitJSONTransformer;
 + (id)durationJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL explicit; // @synthesize explicit=_explicit;
 @property(readonly, nonatomic) BOOL streamable; // @synthesize streamable=_streamable;
 @property(readonly, nonatomic) WFTimeInterval *duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSString *genre; // @synthesize genre=_genre;
 @property(readonly, nonatomic) NSURL *previewURL; // @synthesize previewURL=_previewURL;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

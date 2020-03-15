@@ -25,11 +25,11 @@
 }
 
 + (id)_sharedOperationQueue;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *leaseExpirationDate; // @synthesize leaseExpirationDate=_leaseExpirationDate;
 @property(readonly, nonatomic) __weak id <ICMusicSubscriptionLeaseSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(readonly, nonatomic, getter=isDelegatedLeaseSession) _Bool delegatedLeaseSession; // @synthesize delegatedLeaseSession=_delegatedLeaseSession;
-- (void).cxx_destruct;
 - (void)_updateAutomaticRefreshProperties;
 - (void)_onQueue_setLeaseStatus:(id)arg1 updatedLeaseExpirationDate:(id)arg2;
 - (void)_performAutomaticRefresh;

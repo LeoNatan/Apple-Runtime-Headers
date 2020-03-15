@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (void)_setNotificationHasEverBeenShown:(BOOL)arg1;
 + (BOOL)_notificationHasEverBeenShown;
 + (BOOL)notificationNeedsToBeShownWithBag:(id)arg1;
-@property(readonly, nonatomic) id <WBSParsecBag> bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <WBSParsecBag> bag; // @synthesize bag=_bag;
 - (id)_featureNotificationView;
 - (id)_iconFilenames;
 @property(readonly, nonatomic) double preferredHeightAtCurrentWidth;

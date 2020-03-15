@@ -16,9 +16,9 @@
 
 + (id)bundleIdentifiersFromDictionaryRepresentations:(id)arg1;
 + (id)bundleIdentifierFromDictionaryRepresentation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *shortVersionString; // @synthesize shortVersionString=_shortVersionString;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation;

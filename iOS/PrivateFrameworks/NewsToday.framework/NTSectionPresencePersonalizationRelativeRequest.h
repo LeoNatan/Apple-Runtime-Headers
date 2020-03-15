@@ -21,6 +21,7 @@
     double _scalar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scalar; // @synthesize scalar=_scalar;
 @property(nonatomic) double competingSectionFeatureImpressionPrior; // @synthesize competingSectionFeatureImpressionPrior=_competingSectionFeatureImpressionPrior;
 @property(nonatomic) double competingSectionFeatureClickPrior; // @synthesize competingSectionFeatureClickPrior=_competingSectionFeatureClickPrior;
@@ -28,7 +29,6 @@
 @property(nonatomic) double targetSectionFeatureImpressionPrior; // @synthesize targetSectionFeatureImpressionPrior=_targetSectionFeatureImpressionPrior;
 @property(nonatomic) double targetSectionFeatureClickPrior; // @synthesize targetSectionFeatureClickPrior=_targetSectionFeatureClickPrior;
 @property(copy, nonatomic) FCPersonalizationFeature *targetSectionFeature; // @synthesize targetSectionFeature=_targetSectionFeature;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

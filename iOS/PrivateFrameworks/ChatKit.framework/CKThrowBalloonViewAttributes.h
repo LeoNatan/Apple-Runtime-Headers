@@ -15,10 +15,10 @@
     struct CGRect _startFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect startFrame; // @synthesize startFrame=_startFrame;
 @property(retain, nonatomic) NSDictionary *supplementaryViews; // @synthesize supplementaryViews=_supplementaryViews;
 @property(retain, nonatomic) CKBalloonView *throwBalloonView; // @synthesize throwBalloonView=_throwBalloonView;
-- (void).cxx_destruct;
 
 @end
 

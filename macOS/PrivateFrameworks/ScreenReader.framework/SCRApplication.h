@@ -91,6 +91,7 @@ __attribute__((visibility("hidden")))
 + (id)applicationWithPSN:(struct ProcessSerialNumber)arg1;
 + (void)initialize;
 + (id)contentChooserSerialQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRMenu *focusedMenu; // @synthesize focusedMenu=_focusedMenu;
 @property(retain, nonatomic) SCRUIElement *_uiElementTriggeringAlternateUI; // @synthesize _uiElementTriggeringAlternateUI=__uiElementTriggeringAlternateUI;
 @property(retain, nonatomic) SCRElement<SCRApplicationDirectChildProtocol> *_previousFocusedChild; // @synthesize _previousFocusedChild=__previousFocusedChild;
@@ -116,7 +117,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRUIElement *previousUIElementBeforeJump; // @synthesize previousUIElementBeforeJump=_previousUIElementBeforeJump;
 @property(nonatomic) double gestureMinEmptyDistance; // @synthesize gestureMinEmptyDistance=_gestureMinEmptyDistance;
 @property(nonatomic) struct CGSize gestureMinElementSize; // @synthesize gestureMinElementSize=_gestureMinElementSize;
-- (void).cxx_destruct;
 - (id)_navigationPreviewSpotGuideItemsForGuide:(id)arg1;
 - (BOOL)handleRotorWindowSpotMoveInDirection:(long long)arg1 request:(id)arg2;
 - (id)_spotUIElementForElementHash:(id)arg1 frame:(struct CGRect)arg2 role:(id)arg3 title:(id)arg4 rebuild:(BOOL)arg5;

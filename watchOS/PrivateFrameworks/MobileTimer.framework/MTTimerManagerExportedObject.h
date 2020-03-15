@@ -15,8 +15,8 @@
     MTTimerManager *_timerManager;
 }
 
-@property(readonly, nonatomic) __weak MTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak MTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 - (void)nextTimerChanged:(id)arg1;
 - (void)timerDismissed:(id)arg1;
 - (void)timerFired:(id)arg1;

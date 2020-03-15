@@ -15,8 +15,8 @@
     BOOL _postedSetupComplete;
 }
 
-@property(readonly, nonatomic) BOOL isSetupComplete; // @synthesize isSetupComplete=_setupComplete;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isSetupComplete; // @synthesize isSetupComplete=_setupComplete;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;

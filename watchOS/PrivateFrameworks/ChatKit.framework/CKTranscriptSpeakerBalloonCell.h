@@ -16,11 +16,11 @@
     CKSpeakerButton *_speakerButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowText; // @synthesize shouldShowText=_shouldShowText;
 @property(retain, nonatomic) CKSpeakerButton *speakerButton; // @synthesize speakerButton=_speakerButton;
 @property(nonatomic) _Bool adjustSpeakerForAcknowledgment; // @synthesize adjustSpeakerForAcknowledgment=_adjustSpeakerForAcknowledgment;
 @property(nonatomic, getter=isSpeakerEnabled) _Bool speakerEnabled; // @synthesize speakerEnabled=_speakerEnabled;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isSpeakerHidden) _Bool speakerHidden;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)setOrientation:(BOOL)arg1;

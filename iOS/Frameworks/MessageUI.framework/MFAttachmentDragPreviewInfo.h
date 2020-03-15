@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize displaySize; // @synthesize displaySize=_displaySize;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(nonatomic) _Bool isInlineImage; // @synthesize isInlineImage=_isInlineImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)targetedDragPreviewInContainer:(id)arg1 centerOffset:(struct CGPoint)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

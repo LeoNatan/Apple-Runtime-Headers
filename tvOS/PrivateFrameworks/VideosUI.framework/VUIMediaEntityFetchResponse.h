@@ -19,12 +19,12 @@
     unsigned long long _mediaEntitySubtype;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mediaEntitySubtype; // @synthesize mediaEntitySubtype=_mediaEntitySubtype;
 @property(copy, nonatomic) NSArray *groupingSortIndexes; // @synthesize groupingSortIndexes=_groupingSortIndexes;
 @property(copy, nonatomic) NSArray *grouping; // @synthesize grouping=_grouping;
 @property(copy, nonatomic) NSArray *sortIndexes; // @synthesize sortIndexes=_sortIndexes;
 @property(copy, nonatomic) NSArray *mediaEntities; // @synthesize mediaEntities=_mediaEntities;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

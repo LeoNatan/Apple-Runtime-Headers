@@ -12,8 +12,8 @@
 }
 
 + (id)observerWithName:(id)arg1 object:(id)arg2 queue:(id)arg3 observationHandler:(CDUnknownBlockType)arg4;
-@property(retain, nonatomic) id notificationObservationToken; // @synthesize notificationObservationToken=_notificationObservationToken;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id notificationObservationToken; // @synthesize notificationObservationToken=_notificationObservationToken;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 object:(id)arg2 queue:(id)arg3 observationHandler:(CDUnknownBlockType)arg4;
 

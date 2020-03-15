@@ -22,6 +22,7 @@
 + (long long)addPropertiesAndTypes:(id)arg1 withAddressBook:(id)arg2;
 + (long long)addPropertiesAndTypes:(id)arg1 withAddressBook:(id)arg2 acquireLock:(BOOL)arg3;
 + (long long)addPropertiesAndTypes:(id)arg1 withAddressBook:(id)arg2 acquireLock:(BOOL)arg3 save:(BOOL)arg4;
++ (id)makeBuiltInProperties;
 + (id)builtInProperties;
 + (CDUnknownBlockType)userInterfaceComparator;
 - (id)fetchUpdatedBackingObject;
@@ -31,6 +32,7 @@
 - (long long)sortOrder;
 - (id)uniqueIdForDrag;
 - (BOOL)canDeletePeople;
+- (BOOL)belongsToGuardianRestrictedContainer;
 - (BOOL)canRemoveMembers;
 - (BOOL)canAddMembers;
 - (BOOL)isRenamable;

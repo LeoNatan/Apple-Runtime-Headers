@@ -32,8 +32,8 @@
 + (id)spotlightItemRecorderWithKnowledgeStore:(id)arg1;
 + (id)spotlightItemRecorderWithInteractionRecorder:(id)arg1;
 + (id)spotlightItemRecorder;
-@property(retain, nonatomic) id <_CDInteractionRecording><_CDInteractionDeleting> recorder; // @synthesize recorder=_recorder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_CDInteractionRecording><_CDInteractionDeleting> recorder; // @synthesize recorder=_recorder;
 - (void)deleteKnowledgeEventsMatchingPredicate:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_deleteKnowledgeEventsMatchingPredicate:(id)arg1;
 - (void)deleteAllItemsWithBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;

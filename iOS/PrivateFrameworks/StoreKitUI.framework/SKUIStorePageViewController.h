@@ -35,12 +35,12 @@
 
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) SKUIStorePage *storePage; // @synthesize storePage=_storePage;
 @property(retain, nonatomic) UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(nonatomic) __weak id <SKUIStorePageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_showProductPage:(id)arg1 withPageEvent:(id)arg2;
 - (void)_setStorePage:(id)arg1 error:(id)arg2;
 - (void)_setMetricsController:(id)arg1;

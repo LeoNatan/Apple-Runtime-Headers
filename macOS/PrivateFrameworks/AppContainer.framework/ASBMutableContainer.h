@@ -25,9 +25,9 @@
 + (id)containerForCodeIdentity:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
 + (void)synchronizedContainerForSigningId:(id)arg1 andHomeDirectory:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (void)synchronizedContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(readonly) BOOL isNewlyCreatedContainer; // @synthesize isNewlyCreatedContainer=_created;
 @property(readonly) CodeIdentity *ownerCode; // @synthesize ownerCode=_owner;
-- (void).cxx_destruct;
 - (id)evaluatePathSpecification:(id)arg1 usingFileManager:(id)arg2 error:(id *)arg3;
 - (void)setSandboxProfileDataValidationInfo:(id)arg1;
 - (void)setSandboxProfileData:(id)arg1;

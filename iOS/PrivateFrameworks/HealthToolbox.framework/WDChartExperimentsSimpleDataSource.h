@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_chartPoints;
 }
 
-@property(retain, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *chartPoints; // @synthesize chartPoints=_chartPoints;
 - (id)_computeSineData:(double)arg1;
 - (id)_dosagesToChartPoints:(id)arg1 unit:(id)arg2;
 - (id)cachedBlockForPath:(CDStruct_912cb5d2)arg1 context:(id)arg2;

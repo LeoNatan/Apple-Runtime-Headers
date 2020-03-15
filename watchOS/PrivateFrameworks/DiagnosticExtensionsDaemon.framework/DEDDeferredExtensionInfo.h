@@ -29,13 +29,13 @@
 + (double)recommendedGracePeriodForDate:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)log;
+- (void).cxx_destruct;
 @property _Bool scheduled; // @synthesize scheduled=_scheduled;
 @property(retain) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) double gracePeriod; // @synthesize gracePeriod=_gracePeriod;
 @property(retain, nonatomic) NSDate *triggerDate; // @synthesize triggerDate=_triggerDate;
 @property(readonly) DEDExtensionIdentifier *dedIdentifier; // @synthesize dedIdentifier=_dedIdentifier;
 @property(readonly) NSString *bugSessionIdentifier; // @synthesize bugSessionIdentifier=_bugSessionIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *activityString; // @synthesize activityString=_activityString;
 - (_Bool)isOverdue;

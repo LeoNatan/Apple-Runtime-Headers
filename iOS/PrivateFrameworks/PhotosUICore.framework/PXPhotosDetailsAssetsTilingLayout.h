@@ -14,9 +14,9 @@
     long long _placeholderMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long placeholderMode; // @synthesize placeholderMode=_placeholderMode;
 @property(retain, nonatomic) PXPhotosDetailsAssetsSpec *spec; // @synthesize spec=_spec;
-- (void).cxx_destruct;
 - (struct CGRect)_placeholderFrame;
 - (_Bool)getGeometry:(out struct PXTileGeometry *)arg1 group:(out unsigned long long *)arg2 userData:(out id *)arg3 forTileWithIdentifier:(struct PXTileIdentifier)arg4;
 - (void)enumerateTilesInRect:(struct CGRect)arg1 withOptions:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

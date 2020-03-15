@@ -15,10 +15,10 @@
     NSGradient *_gradient;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSGradient *gradient; // @synthesize gradient=_gradient;
 @property(retain, nonatomic) NSColor *bottomColor; // @synthesize bottomColor=_bottomColor;
 @property(retain, nonatomic) NSColor *topColor; // @synthesize topColor=_topColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;

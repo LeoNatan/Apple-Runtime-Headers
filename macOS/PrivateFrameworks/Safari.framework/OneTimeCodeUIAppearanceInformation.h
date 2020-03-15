@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 + (id)messagesIcon;
 + (id)_fetchInformationForOneTimeCode:(id)arg1;
 + (id)appearanceInformationForCode:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSImage *senderImage; // @synthesize senderImage=_senderImage;
 @property(readonly, copy, nonatomic) NSString *codeStringForFunctionBar; // @synthesize codeStringForFunctionBar=_codeStringForFunctionBar;
 @property(readonly, copy, nonatomic) NSString *codeStringForCompletionList; // @synthesize codeStringForCompletionList=_codeStringForCompletionList;
 @property(readonly, copy, nonatomic) NSString *senderString; // @synthesize senderString=_senderString;
-- (void).cxx_destruct;
 
 @end
 

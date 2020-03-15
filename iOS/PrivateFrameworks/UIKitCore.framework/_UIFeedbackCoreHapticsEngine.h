@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)_supportsPlayingIndividualFeedback:(id)arg1 allowsIgnoreCapture:(_Bool)arg2;
 + (id)sharedEngine;
 + (id)_internalQueue;
-@property(readonly, nonatomic) CHHapticEngine *coreHapticsEngine; // @synthesize coreHapticsEngine=_coreHapticsEngine;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CHHapticEngine *coreHapticsEngine; // @synthesize coreHapticsEngine=_coreHapticsEngine;
 - (id)_stats_key;
 - (void)_internal_dequeueReusableFeedbackPlayerWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_internal_startRunningFeedbackPlayerWithCompletion:(CDUnknownBlockType)arg1;

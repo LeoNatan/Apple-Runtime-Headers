@@ -16,11 +16,11 @@
     double _setTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double setTime; // @synthesize setTime=_setTime;
 @property(nonatomic) long long downloadType; // @synthesize downloadType=_downloadType;
 @property(retain, nonatomic) NSString *adMetadata; // @synthesize adMetadata=_adMetadata;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)splitCapData:(id)arg1;

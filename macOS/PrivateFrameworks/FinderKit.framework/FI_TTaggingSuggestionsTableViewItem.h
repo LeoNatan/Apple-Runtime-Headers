@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 + (id)itemForCreateNewTag:(const struct TString *)arg1 labelColorView:(id)arg2;
 + (id)showAllItem;
 + (id)itemForTag:(id)arg1 needsCustomSelect:(_Bool)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak FI_TLabelView *labelColorView; // @synthesize labelColorView;
 @property(copy, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 @property(readonly, nonatomic) _Bool needsCustomSelect; // @synthesize needsCustomSelect=_needsCustomSelect;
@@ -38,8 +40,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool pinned; // @synthesize pinned=_pinned;
 @property(readonly, nonatomic) _Bool userVisible; // @synthesize userVisible=_userVisible;
 @property(readonly, nonatomic) long long labelColor; // @synthesize labelColor=_labelColor;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isTag; // @dynamic isTag;
 - (void)setColorNumber:(id)arg1;
 - (id)colorNumber;

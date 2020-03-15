@@ -22,6 +22,7 @@
     UIColor *_levelGuttersColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *levelGuttersColor; // @synthesize levelGuttersColor=_levelGuttersColor;
 @property(nonatomic) _Bool showsLevelGutters; // @synthesize showsLevelGutters=_showsLevelGutters;
 @property(nonatomic) long long playbackState; // @synthesize playbackState=_playbackState;
@@ -31,7 +32,6 @@
 @property(nonatomic) double levelWidth; // @synthesize levelWidth=_levelWidth;
 @property(nonatomic) double levelCornerRadius; // @synthesize levelCornerRadius=_levelCornerRadius;
 @property(nonatomic) double interLevelSpacing; // @synthesize interLevelSpacing=_interLevelSpacing;
-- (void).cxx_destruct;
 - (void)_updateLevelAnimations;
 - (void)_reloadLevelViews;
 - (void)_removeAllAnimations:(_Bool)arg1;

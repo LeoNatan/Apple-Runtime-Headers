@@ -14,9 +14,9 @@
     struct UIEdgeInsets _margins;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithImage:(id)arg1;

@@ -17,10 +17,10 @@
 }
 
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) double fastTypingVolumeMultiplier; // @synthesize fastTypingVolumeMultiplier=_fastTypingVolumeMultiplier;
 @property(nonatomic) double fastTypingTime; // @synthesize fastTypingTime=_fastTypingTime;
 @property(nonatomic) double slowTypingTime; // @synthesize slowTypingTime=_slowTypingTime;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *feedbacks; // @synthesize feedbacks=_feedbacks;
 - (_Bool)defaultEnabled;
 - (id)feedbackKeyPaths;

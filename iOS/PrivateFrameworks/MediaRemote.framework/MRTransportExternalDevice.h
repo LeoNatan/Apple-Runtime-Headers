@@ -63,6 +63,7 @@
     NSRunLoop *_runLoop;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRunLoop *runLoop; // @synthesize runLoop=_runLoop;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *outputContextCallbackQueue; // @synthesize outputContextCallbackQueue=_outputContextCallbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *volumeControlCapabilitiesCallbackQueue; // @synthesize volumeControlCapabilitiesCallbackQueue=_volumeControlCapabilitiesCallbackQueue;
@@ -86,7 +87,6 @@
 @property(nonatomic) _Bool isCallingClientCallback; // @synthesize isCallingClientCallback=_isCallingClientCallback;
 @property(nonatomic) long long connectionRecoveryBehavior; // @synthesize connectionRecoveryBehavior=_connectionRecoveryBehavior;
 @property(readonly, nonatomic) MRExternalDeviceTransport *transport; // @synthesize transport=_transport;
-- (void).cxx_destruct;
 - (void)_handleSetDefaultSupportedCommandsMessage:(id)arg1;
 - (void)_contentItemUpdatedNotification:(id)arg1;
 - (id)_createPlaybackQueue:(_Bool)arg1;

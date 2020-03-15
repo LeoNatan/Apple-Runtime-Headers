@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     BOOL _translucent;
 }
 
-@property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;
 - (id)image;
 - (void)setImage:(id)arg1;
 - (void)removeTopStripView;

@@ -18,9 +18,9 @@
     ISServiceDelegate *_delegate;
 }
 
+- (void).cxx_destruct;
 @property __weak ISServiceDelegate *delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSXPCConnection *conn; // @synthesize conn=_conn;
-- (void).cxx_destruct;
 - (void)startService;
 - (void)displayDialog:(id)arg1;
 - (void)signURLRequest:(id)arg1 service:(id)arg2;

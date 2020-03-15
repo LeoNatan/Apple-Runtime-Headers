@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSURL *mainImageURL; // @synthesize mainImageURL=_mainImageURL;
 @property(readonly, nonatomic) NSData *body; // @synthesize body=_body;
 @property(readonly, copy, nonatomic) NSString *publishedDate; // @synthesize publishedDate=_publishedDate;
 @property(readonly, copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

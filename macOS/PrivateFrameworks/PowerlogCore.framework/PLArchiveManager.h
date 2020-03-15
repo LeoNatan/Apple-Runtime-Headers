@@ -31,6 +31,7 @@
 + (id)storageQueue;
 + (id)workQueue;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *notificationBlocks; // @synthesize notificationBlocks=_notificationBlocks;
 @property(nonatomic) BOOL interrupted; // @synthesize interrupted=_interrupted;
 @property(retain) NSMutableArray *archiveJobs; // @synthesize archiveJobs=_archiveJobs;
@@ -39,7 +40,6 @@
 @property double mustRunInterval; // @synthesize mustRunInterval=_mustRunInterval;
 @property double interval; // @synthesize interval=_interval;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)registerForArchivingNotificationUsingBlock:(CDUnknownBlockType)arg1;
 - (void)migrate;
 - (void)migrateArchive:(id)arg1;

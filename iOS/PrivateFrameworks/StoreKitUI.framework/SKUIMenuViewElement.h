@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     SKUILabelViewElement *_menuLabel;
 }
 
-@property(readonly, nonatomic) SKUILabelViewElement *menuLabel; // @synthesize menuLabel=_menuLabel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUILabelViewElement *menuLabel; // @synthesize menuLabel=_menuLabel;
 - (void)_enumerateItemElementsUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isEnabled;
 - (id)applyUpdatesWithElement:(id)arg1;

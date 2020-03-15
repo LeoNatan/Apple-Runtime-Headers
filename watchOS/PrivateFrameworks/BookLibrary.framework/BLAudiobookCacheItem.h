@@ -18,13 +18,13 @@
     double _length;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURLSessionConfiguration *URLSessionConfiguration; // @synthesize URLSessionConfiguration=_URLSessionConfiguration;
 @property(readonly, nonatomic) double length; // @synthesize length=_length;
 @property(readonly, nonatomic) double startingOffset; // @synthesize startingOffset=_startingOffset;
 @property(readonly, nonatomic) BLHLSPlaylist *mediaPlaylist; // @synthesize mediaPlaylist=_mediaPlaylist;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (id)initWithMediaItem:(id)arg1 baseURL:(id)arg2 mediaPlaylist:(id)arg3 startingOffset:(double)arg4 length:(double)arg5 URLSessionConfiguration:(id)arg6;
 - (id)initWithMediaItem:(id)arg1 baseURL:(id)arg2 mediaPlaylist:(id)arg3 startingOffset:(double)arg4 length:(double)arg5;
 

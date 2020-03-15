@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)resourceWithURL:(id)arg1 resourceInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *resourceImages; // @synthesize resourceImages=_resourceImages;
 @property(readonly) unsigned long long flags; // @synthesize flags=_flags;
 @property(readonly) NSString *variantName; // @synthesize variantName=_variantName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)addImage:(struct CGImage *)arg1 size:(unsigned long long)arg2 scale:(unsigned long long)arg3;
 - (struct CGImage *)imageForSize:(unsigned long long)arg1 scale:(unsigned long long)arg2 error:(id *)arg3;

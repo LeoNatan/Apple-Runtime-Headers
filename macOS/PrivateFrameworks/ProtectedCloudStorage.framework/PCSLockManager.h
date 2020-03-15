@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 + (void)dropAssertion;
 + (_Bool)holdAssertion;
 + (id)manager;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain) NSHashTable *holders; // @synthesize holders=_holders;
 @property(retain) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)dropAssertion:(id)arg1;
 - (void)_onlockDropAssertion:(id)arg1;
 - (_Bool)holdAssertion:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_nowPlayingAppBundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *nowPlayingAppBundleIdentifier; // @synthesize nowPlayingAppBundleIdentifier=_nowPlayingAppBundleIdentifier;
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

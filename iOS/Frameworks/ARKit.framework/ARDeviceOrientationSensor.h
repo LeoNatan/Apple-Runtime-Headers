@@ -21,9 +21,9 @@
     long long _worldAlignment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long worldAlignment; // @synthesize worldAlignment=_worldAlignment;
 @property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)stop;
 - (id)currentData;
 - (void)start;

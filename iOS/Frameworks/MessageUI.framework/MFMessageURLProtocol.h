@@ -27,10 +27,10 @@
 + (id)registry;
 + (void)initialize;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EMContentRepresentation *contentRepresentation; // @synthesize contentRepresentation=_contentRepresentation;
 @property(retain, nonatomic) EFPromise *promise; // @synthesize promise=_promise;
 @property(retain, nonatomic) id <EFCancelable> cancelable; // @synthesize cancelable=_cancelable;
-- (void).cxx_destruct;
 - (void)stopLoading;
 - (void)startLoading;
 - (id)_cachedResponseWithData:(id)arg1 mimeType:(id)arg2 error:(id *)arg3;

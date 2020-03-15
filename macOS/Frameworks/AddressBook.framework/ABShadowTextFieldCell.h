@@ -17,11 +17,11 @@
     BOOL _ignoredByAccessibility;
 }
 
+- (void).cxx_destruct;
 @property(getter=accessibilityIsIgnored) BOOL ignoredByAccessibility; // @synthesize ignoredByAccessibility=_ignoredByAccessibility;
 @property(nonatomic) BOOL displaysAlternatePlaceholder; // @synthesize displaysAlternatePlaceholder=_displaysAlternatePlaceholder;
 @property(copy) NSAttributedString *alternatePlaceholder; // @synthesize alternatePlaceholder=_alternatePlaceholder;
 @property(copy) NSAttributedString *originalPlaceholder; // @synthesize originalPlaceholder=_originalPlaceholder;
-- (void).cxx_destruct;
 - (id)fieldEditorForView:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

@@ -76,6 +76,8 @@
 @property(copy, nonatomic) NSString *_APSRelayTopic; // @dynamic _APSRelayTopic;
 @property(copy) NSDictionary *_DuetActivityProperties; // @dynamic _DuetActivityProperties;
 @property(copy) NSData *_TCPConnectionMetadata; // @dynamic _TCPConnectionMetadata;
+@property unsigned short _TLSMaximumSupportedProtocolVersion; // @dynamic _TLSMaximumSupportedProtocolVersion;
+@property unsigned short _TLSMinimumSupportedProtocolVersion; // @dynamic _TLSMinimumSupportedProtocolVersion;
 @property(readonly) unsigned short _TLSNegotiatedCipherSuite; // @dynamic _TLSNegotiatedCipherSuite;
 @property unsigned long _allowedProtocolTypes; // @dynamic _allowedProtocolTypes;
 @property _Bool _allowsCellular; // @dynamic _allowsCellular;
@@ -85,6 +87,7 @@
 @property(nonatomic) _Bool _allowsQUIC; // @dynamic _allowsQUIC;
 @property _Bool _appSSOFallback; // @dynamic _appSSOFallback;
 @property(copy, setter=_setAppleIDContext:) id <NSURLSessionAppleIDContext> _appleIDContext; // @dynamic _appleIDContext;
+@property _Bool _appleIDContextRedirect; // @dynamic _appleIDContextRedirect;
 @property _Bool _authenticatorConfiguredViaTaskProperty; // @dynamic _authenticatorConfiguredViaTaskProperty;
 @property(retain, nonatomic) NSURL *_backgroundPublishingURL; // @dynamic _backgroundPublishingURL;
 @property(retain) __CFN_TransactionMetrics *_backgroundTransactionMetrics; // @dynamic _backgroundTransactionMetrics;

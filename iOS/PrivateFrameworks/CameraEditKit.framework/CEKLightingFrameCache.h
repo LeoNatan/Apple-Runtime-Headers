@@ -15,10 +15,10 @@
     NSDictionary *__backgroundFrameMapsByLightingType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *_backgroundFrameMapsByLightingType; // @synthesize _backgroundFrameMapsByLightingType=__backgroundFrameMapsByLightingType;
 @property(retain, nonatomic) NSMutableDictionary *_foregroundFramesByAvailableAngle; // @synthesize _foregroundFramesByAvailableAngle=__foregroundFramesByAvailableAngle;
 @property(readonly, nonatomic) NSIndexSet *_availableAbsoluteAngles; // @synthesize _availableAbsoluteAngles=__availableAbsoluteAngles;
-- (void).cxx_destruct;
 - (id)_renderFrameForAngle:(long long)arg1 scale:(double)arg2 components:(long long)arg3 appearance:(id)arg4;
 - (id)_renderBackgroundFramesForAbsoluteAngles:(id)arg1 lightingType:(long long)arg2 scale:(double)arg3;
 - (id)_renderForegroundFramesForAbsoluteAngles:(id)arg1 scale:(double)arg2;

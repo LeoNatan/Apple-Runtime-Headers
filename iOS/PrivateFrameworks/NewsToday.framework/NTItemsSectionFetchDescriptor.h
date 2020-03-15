@@ -16,9 +16,9 @@
     NTCatchUpOperationArticleIDsRequest *_itemsArticlesRequest;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NTCatchUpOperationArticleIDsRequest *itemsArticlesRequest; // @synthesize itemsArticlesRequest=_itemsArticlesRequest;
 @property(copy, nonatomic) NTPBItemsTodaySectionSpecificConfig *itemsConfiguration; // @synthesize itemsConfiguration=_itemsConfiguration;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)incrementalLimitTransformationWithFeedPersonalizer:(id)arg1 limit:(unsigned long long)arg2 priorFeedItems:(id)arg3;
 - (id)incrementalSortTransformationWithFeedPersonalizer:(id)arg1;

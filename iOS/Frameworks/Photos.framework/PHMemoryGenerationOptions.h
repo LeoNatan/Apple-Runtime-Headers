@@ -22,6 +22,7 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(retain, nonatomic) NSDictionary *extraParameters; // @synthesize extraParameters=_extraParameters;
 @property(retain, nonatomic) NSArray *blacklistedMemories; // @synthesize blacklistedMemories=_blacklistedMemories;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

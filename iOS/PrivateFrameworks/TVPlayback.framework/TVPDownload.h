@@ -8,16 +8,24 @@
 
 #import <TVPlayback/AVAssetDownloadDelegate-Protocol.h>
 
-@class AVAggregateAssetDownloadTask, NSError, NSMapTable, NSPointerArray, NSProgress, NSString, TVPDownloadSession, TVPMediaItemLoader, TVPReportingSession, TVPStateMachine;
+@class AVAggregateAssetDownloadTask, NSArray, NSDictionary, NSError, NSMapTable, NSNumber, NSPointerArray, NSProgress, NSString, TVPDownloadSession, TVPMediaItemLoader, TVPReportingSession, TVPStateMachine;
 @protocol TVPMediaItem;
 
 @interface TVPDownload : NSObject <AVAssetDownloadDelegate>
 {
     _Bool _performKeyFetchOnly;
+    _Bool _allowCellularUsage;
+    _Bool _allowHDR;
+    _Bool _allowMultichannelAudio;
+    _Bool _includeDefaultAudioOption;
+    _Bool _useLegacyAudioSettings;
     _Bool _downloadIsComplete;
     NSObject<TVPMediaItem> *_mediaItem;
     long long _state;
     NSError *_error;
+    NSNumber *_minimumRequiredMediaBitrate;
+    NSArray *_preferredAudioLanguageCodes;
+    NSDictionary *_userInfo;
     TVPStateMachine *_stateMachine;
     TVPMediaItemLoader *_mediaItemLoader;
     TVPDownloadSession *_downloadSession;
@@ -30,9 +38,11 @@
     TVPReportingSession *_reportingSession;
     unsigned long long _numMediaSelectionsThatWillReceiveDownloadProgress;
     unsigned long long _numMediaSelectionsCompleted;
+    struct CGSize _minimumRequiredPresentationSize;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numMediaSelectionsCompleted; // @synthesize numMediaSelectionsCompleted=_numMediaSelectionsCompleted;
 @property(nonatomic) unsigned long long numMediaSelectionsThatWillReceiveDownloadProgress; // @synthesize numMediaSelectionsThatWillReceiveDownloadProgress=_numMediaSelectionsThatWillReceiveDownloadProgress;
 @property(retain, nonatomic) TVPReportingSession *reportingSession; // @synthesize reportingSession=_reportingSession;
@@ -46,11 +56,19 @@
 @property(nonatomic) __weak TVPDownloadSession *downloadSession; // @synthesize downloadSession=_downloadSession;
 @property(retain, nonatomic) TVPMediaItemLoader *mediaItemLoader; // @synthesize mediaItemLoader=_mediaItemLoader;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(nonatomic) _Bool useLegacyAudioSettings; // @synthesize useLegacyAudioSettings=_useLegacyAudioSettings;
+@property(retain, nonatomic) NSArray *preferredAudioLanguageCodes; // @synthesize preferredAudioLanguageCodes=_preferredAudioLanguageCodes;
+@property(nonatomic) _Bool includeDefaultAudioOption; // @synthesize includeDefaultAudioOption=_includeDefaultAudioOption;
+@property(nonatomic) _Bool allowMultichannelAudio; // @synthesize allowMultichannelAudio=_allowMultichannelAudio;
+@property(nonatomic) _Bool allowHDR; // @synthesize allowHDR=_allowHDR;
+@property(retain, nonatomic) NSNumber *minimumRequiredMediaBitrate; // @synthesize minimumRequiredMediaBitrate=_minimumRequiredMediaBitrate;
+@property(nonatomic) struct CGSize minimumRequiredPresentationSize; // @synthesize minimumRequiredPresentationSize=_minimumRequiredPresentationSize;
+@property(nonatomic) _Bool allowCellularUsage; // @synthesize allowCellularUsage=_allowCellularUsage;
 @property(nonatomic) _Bool performKeyFetchOnly; // @synthesize performKeyFetchOnly=_performKeyFetchOnly;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_mediaItemLoaderStateDidChangeTo:(id)arg1;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

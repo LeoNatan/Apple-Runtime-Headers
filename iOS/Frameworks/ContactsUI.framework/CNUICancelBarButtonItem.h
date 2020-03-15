@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _didTapHandler;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType didTapHandler; // @synthesize didTapHandler=_didTapHandler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType didTapHandler; // @synthesize didTapHandler=_didTapHandler;
 - (void)didTap:(id)arg1;
 - (id)initWithDidTapHandler:(CDUnknownBlockType)arg1;
 

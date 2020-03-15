@@ -21,11 +21,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)recordWithStatus:(int)arg1 request:(int)arg2 mode:(int)arg3 anchorLimitModifiedDate:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *anchorLimitModifiedDate; // @synthesize anchorLimitModifiedDate=_anchorLimitModifiedDate;
 @property(readonly, nonatomic) int mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) int request; // @synthesize request=_request;
 @property(nonatomic) int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -18,9 +18,9 @@
 
 + (id)gapFromPBGap:(id)arg1;
 + (id)pbGapFromGap:(id)arg1 refreshSession:(id)arg2 sharedStringIndex:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCFeedRefreshSession *refreshSession; // @synthesize refreshSession=_refreshSession;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithRefreshSession:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

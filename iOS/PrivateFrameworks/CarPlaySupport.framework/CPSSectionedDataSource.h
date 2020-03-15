@@ -19,9 +19,9 @@
     CPSessionConfiguration *_sessionConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPSessionConfiguration *sessionConfiguration; // @synthesize sessionConfiguration=_sessionConfiguration;
 @property(retain, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
-- (void).cxx_destruct;
 - (void)sessionConfiguration:(id)arg1 limitedUserInterfacesChanged:(unsigned long long)arg2;
 - (_Bool)isLimitingLists;
 - (void)updateSections:(id)arg1;

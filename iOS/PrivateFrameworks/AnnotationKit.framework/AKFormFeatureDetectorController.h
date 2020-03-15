@@ -15,8 +15,8 @@
     AKController *_controller;
 }
 
-@property __weak AKController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak AKController *controller; // @synthesize controller=_controller;
 - (double)maximumFeatureWidthForPage:(id)arg1;
 - (struct CGSize)defaultFeatureSizeForPage:(id)arg1;
 - (_Bool)wantsDefaultFeatures;

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) _Bool showsVolumeSlider; // @synthesize showsVolumeSlider=_showsVolumeSlider;
 @property(nonatomic, getter=isPictureInPictureButtonEnabled) _Bool pictureInPictureButtonEnabled; // @synthesize pictureInPictureButtonEnabled=_pictureInPictureButtonEnabled;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(nonatomic) _Bool showsDoneButton; // @synthesize showsDoneButton=_showsDoneButton;
 @property(nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (void)pictureInPictureButtonTapped:(id)arg1;
 - (void)fullScreenButtonTapped:(id)arg1;
 - (void)mediaSelectionButtonTapped:(id)arg1;

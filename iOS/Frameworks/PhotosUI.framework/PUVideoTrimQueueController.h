@@ -38,6 +38,7 @@
 + (double)durationFromVideoAtURL:(id)arg1;
 + (id)photoLibraryFromSources:(id)arg1 album:(id)arg2;
 + (_Bool)areVideoSourcesStreamShareSources:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *commentText; // @synthesize commentText=_commentText;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(retain, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
@@ -47,7 +48,6 @@
 @property(readonly, nonatomic) NSDictionary *videosSourcesSharingInfo; // @synthesize videosSourcesSharingInfo=_videosSourcesSharingInfo;
 @property(readonly, nonatomic) NSArray *videosSources; // @synthesize videosSources=_videosSources;
 @property(nonatomic) __weak id <PUVideoTrimQueueControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cleanupResources;
 - (void)editVideoViewControllerDidCancel:(id)arg1;
 - (void)editVideoViewController:(id)arg1 didTrimVideoWithOptions:(id)arg2;

@@ -52,9 +52,9 @@
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
 + (_Bool)allowsChildViewControllerNavigationBarManagement;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIMetricsDOMChangeQueue *domChangeTimingQueue; // @synthesize domChangeTimingQueue=_domChangeTimingQueue;
 @property(retain, nonatomic) SKUIMetricsPageRenderEvent *pageRenderEvent; // @synthesize pageRenderEvent=_pageRenderEvent;
-- (void).cxx_destruct;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)childViewController;

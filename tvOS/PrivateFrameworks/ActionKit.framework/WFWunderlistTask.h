@@ -28,6 +28,7 @@
 + (id)dueDateJSONTransformer;
 + (id)createdAtJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long revision; // @synthesize revision=_revision;
 @property(readonly, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(readonly, nonatomic) long long createdById; // @synthesize createdById=_createdById;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) _Bool starred; // @synthesize starred=_starred;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long taskId; // @synthesize taskId=_taskId;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *webURL;
 
 // Remaining properties

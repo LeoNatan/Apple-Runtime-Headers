@@ -19,6 +19,7 @@
     struct UIEdgeInsets _backgroundInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isFilled) _Bool filled; // @synthesize filled=_filled;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) double backgroundCornerRadius; // @synthesize backgroundCornerRadius=_backgroundCornerRadius;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_updateColorsAndBorder;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)drawRect:(struct CGRect)arg1;

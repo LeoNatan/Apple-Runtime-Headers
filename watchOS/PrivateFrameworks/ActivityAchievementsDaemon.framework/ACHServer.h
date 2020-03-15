@@ -26,6 +26,7 @@
 
 + (id)serverWithTemplateStore:(id)arg1 earnedInstanceStore:(id)arg2 awardingScheduler:(id)arg3 achievementStore:(id)arg4 mobileAssetProvider:(id)arg5 templateSourceScheduler:(id)arg6;
 + (id)serverWithClient:(id)arg1 templateStore:(id)arg2 earnedInstanceStore:(id)arg3 awardingScheduler:(id)arg4 achievementStore:(id)arg5 mobileAssetProvider:(id)arg6 templateSourceScheduler:(id)arg7 error:(id *)arg8;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACHTemplateSourceScheduler *templateSourceScheduler; // @synthesize templateSourceScheduler=_templateSourceScheduler;
 @property(retain, nonatomic) ACHMobileAssetProvider *mobileAssetProvider; // @synthesize mobileAssetProvider=_mobileAssetProvider;
 @property(retain, nonatomic) ACHAchievementStore *achievementStore; // @synthesize achievementStore=_achievementStore;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) ACHTemplateStore *templateStore; // @synthesize templateStore=_templateStore;
 @property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) HDXPCClient *client; // @synthesize client=_client;
-- (void).cxx_destruct;
 - (void)remote_runMonthlyChallengesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_availableMobileAssetsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_setActivityChallengeAssetsServerURL:(id)arg1 completion:(CDUnknownBlockType)arg2;

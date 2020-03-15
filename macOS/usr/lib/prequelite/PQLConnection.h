@@ -53,6 +53,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldUseWALJournalMode; // @synthesize shouldUseWALJournalMode=_shouldUseWALJournalMode;
 @property(nonatomic) int batchTransactionType; // @synthesize batchTransactionType=_batchTransactionType;
 @property(nonatomic) BOOL crashIfUsedAfterClose; // @synthesize crashIfUsedAfterClose=_crashIfUsedAfterClose;
@@ -71,7 +72,6 @@
 @property(copy, nonatomic) CDUnknownBlockType lockedHandler; // @synthesize lockedHandler=_lockedHandler;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (BOOL)incrementalVacuum:(long long)arg1;
 - (long long)autovacuumableSpaceInBytes;
 - (BOOL)setUserVersion:(long long)arg1;

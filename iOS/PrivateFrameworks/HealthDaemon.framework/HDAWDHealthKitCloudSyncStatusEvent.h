@@ -33,6 +33,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long emptyZoneCount; // @synthesize emptyZoneCount=_emptyZoneCount;
 @property(nonatomic) _Bool hasEncounteredGapInCurrentEpoch; // @synthesize hasEncounteredGapInCurrentEpoch=_hasEncounteredGapInCurrentEpoch;
 @property(nonatomic) unsigned long long baselineEpoch; // @synthesize baselineEpoch=_baselineEpoch;
@@ -42,7 +43,6 @@
 @property(nonatomic) unsigned long long timeSinceUploadSuccess; // @synthesize timeSinceUploadSuccess=_timeSinceUploadSuccess;
 @property(retain, nonatomic) HDAWDHealthKitCloudSyncEvent *event; // @synthesize event=_event;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

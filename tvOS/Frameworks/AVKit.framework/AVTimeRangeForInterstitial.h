@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AVInterstitialTimeRange *_interstice;
 }
 
-@property(readonly) AVInterstitialTimeRange *interstice; // @synthesize interstice=_interstice;
 - (void).cxx_destruct;
+@property(readonly) AVInterstitialTimeRange *interstice; // @synthesize interstice=_interstice;
 - (id)initWithInterstice:(id)arg1;
 
 @end

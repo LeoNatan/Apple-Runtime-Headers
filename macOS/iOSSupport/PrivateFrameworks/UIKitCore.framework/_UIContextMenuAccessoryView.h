@@ -8,19 +8,19 @@
 
 @interface _UIContextMenuAccessoryView : UIView
 {
-    int _trackingAxis;
     unsigned long long _location;
+    unsigned long long _trackingAxis;
     CDStruct_6f807b77 _anchor;
     struct CGPoint _offset;
 }
 
-@property(nonatomic) int trackingAxis; // @synthesize trackingAxis=_trackingAxis;
+@property(nonatomic) unsigned long long trackingAxis; // @synthesize trackingAxis=_trackingAxis;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(nonatomic) CDStruct_6f807b77 anchor; // @synthesize anchor=_anchor;
 @property(nonatomic) unsigned long long location; // @synthesize location=_location;
 - (struct CGPoint)attachmentOffsetWithReferenceFrame:(struct CGRect)arg1;
 - (void)setVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect)arg1 configuration:(CDStruct_c50e6da7)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 configuration:(CDStruct_debd374d)arg2;
 
 @end
 

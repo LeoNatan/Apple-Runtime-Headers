@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GEOSearchAttributionSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) unsigned int requirementsMask; // @synthesize requirementsMask=_attributionRequirementsMask;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)addLogoPath:(id)arg1;
 - (id)snippetLogoPathForScale:(double)arg1;
 - (id)logoPathForScale:(double)arg1;
@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+@property(readonly, nonatomic) NSString *appAdamID;
 @property(readonly, nonatomic) _Bool shouldOpenInAppStore;
 @property(readonly, nonatomic) NSString *webBaseActionURL;
 @property(readonly, nonatomic) NSArray *attributionApps;

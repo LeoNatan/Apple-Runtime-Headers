@@ -16,11 +16,11 @@
     NSLayoutConstraint *_viewWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *viewWidthConstraint; // @synthesize viewWidthConstraint=_viewWidthConstraint;
 @property(retain, nonatomic) ASVBlurredBackgroundView *blurredBackgroundView; // @synthesize blurredBackgroundView=_blurredBackgroundView;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) long long controlStyle; // @synthesize controlStyle=_controlStyle;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *text;
 - (id)initWithFrame:(struct CGRect)arg1 controlStyle:(long long)arg2;
 

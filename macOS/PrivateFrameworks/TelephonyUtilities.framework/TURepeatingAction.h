@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     double _pauseDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double pauseDuration; // @synthesize pauseDuration=_pauseDuration;
 @property(nonatomic) unsigned long long remainingIterations; // @synthesize remainingIterations=_remainingIterations;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)initWithAction:(CDUnknownBlockType)arg1;
 
 @end

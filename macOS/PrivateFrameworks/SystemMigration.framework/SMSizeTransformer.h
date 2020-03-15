@@ -15,9 +15,9 @@
 }
 
 + (Class)transformedValueClass;
+- (void).cxx_destruct;
 @property long long textAlignment; // @synthesize textAlignment;
 @property(retain) SMSizeFormatter *sizeFormatter; // @synthesize sizeFormatter;
-- (void).cxx_destruct;
 - (id)transformedValue:(id)arg1;
 - (id)initWithPrefixStringID:(long long)arg1;
 - (id)initWithPrefixStringID:(long long)arg1 localeIdentifier:(id)arg2;

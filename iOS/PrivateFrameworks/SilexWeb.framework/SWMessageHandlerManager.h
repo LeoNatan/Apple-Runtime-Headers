@@ -18,9 +18,9 @@
     NSMutableDictionary *_messageHandlers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *messageHandlers; // @synthesize messageHandlers=_messageHandlers;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
 - (void)addMessageHandler:(id)arg1 name:(id)arg2;
 - (id)initWithUserContentController:(id)arg1 logger:(id)arg2;

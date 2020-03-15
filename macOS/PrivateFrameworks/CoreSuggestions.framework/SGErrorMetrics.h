@@ -15,8 +15,8 @@
 
 + (void)recordInteractionIgnoredWithReason:(struct SGMInteractionIgnoredReason_)arg1;
 + (id)instance;
-@property(retain, nonatomic) SGMBadInteractionIgnored *badInteractionIgnored; // @synthesize badInteractionIgnored=_badInteractionIgnored;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SGMBadInteractionIgnored *badInteractionIgnored; // @synthesize badInteractionIgnored=_badInteractionIgnored;
 - (id)init;
 
 @end

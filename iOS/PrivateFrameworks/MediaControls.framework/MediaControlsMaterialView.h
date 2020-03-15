@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     _Bool _highlighted;
 }
 
-@property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 - (id)visualStylingProviderForCategory:(long long)arg1;
 - (void)layoutSubviews;
 - (void)_setContinuousCornerRadius:(double)arg1;

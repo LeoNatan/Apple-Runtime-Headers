@@ -14,9 +14,9 @@
     WLKSiriBestPlayablesResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKSiriBestPlayablesResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSArray *statsIDs; // @synthesize statsIDs=_statsIDs;
-- (void).cxx_destruct;
 - (void)processResponse;
 - (id)initWithStatsIDs:(id)arg1 caller:(id)arg2;
 

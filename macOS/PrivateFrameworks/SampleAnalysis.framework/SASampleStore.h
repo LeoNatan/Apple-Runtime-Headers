@@ -107,6 +107,7 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)canOpenFileAsKTraceFile:(const char *)arg1 errorOut:(id *)arg2;
 + (id)sampleStoreForSpindumpFile:(const char *)arg1;
+- (void).cxx_destruct;
 @property(retain) SABinaryLoadInfo *prelinkedKernelLoadInfo; // @synthesize prelinkedKernelLoadInfo=_prelinkedKernelLoadInfo;
 @property(readonly) NSString *targetProcessVendorID; // @synthesize targetProcessVendorID=_targetProcessVendorID;
 @property(readonly) NSString *targetProcessCommerceExternalID; // @synthesize targetProcessCommerceExternalID=_targetProcessCommerceExternalID;
@@ -170,7 +171,6 @@
 @property(readonly) NSArray *sampleTimestamps; // @synthesize sampleTimestamps=_sampleTimestamps;
 @property(readonly) NSDictionary *tasksByPid; // @synthesize tasksByPid=_tasksByPid;
 @property(readonly) NSDictionary *tasksByUniquePid; // @synthesize tasksByUniquePid=_tasksByUniquePid;
-- (void).cxx_destruct;
 - (void)gatherBootArgs;
 - (void)gatherNumActiveCPUs;
 - (void)gatherHardwareModel;

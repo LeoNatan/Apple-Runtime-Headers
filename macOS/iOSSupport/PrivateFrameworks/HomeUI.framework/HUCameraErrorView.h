@@ -16,11 +16,11 @@
     UIStackView *_labelStackView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIStackView *labelStackView; // @synthesize labelStackView=_labelStackView;
 @property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *descriptionText;
 @property(copy, nonatomic) NSString *titleText;
 - (id)init;

@@ -32,6 +32,7 @@
     double _scrollWheelLabelPageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scrollWheelLabelPageSize; // @synthesize scrollWheelLabelPageSize=_scrollWheelLabelPageSize;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
@@ -39,7 +40,6 @@
 @property(nonatomic) long long itemTitleAligmnent; // @synthesize itemTitleAligmnent=_itemTitleAligmnent;
 @property(nonatomic) __weak id <FUScrollWheelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <FUScrollWheelDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_alertDidChangeToCurrentIndex:(unsigned long long)arg1;
 - (unsigned long long)_numberOfRows;
 - (id)_titleForItemAtIndex:(unsigned long long)arg1;

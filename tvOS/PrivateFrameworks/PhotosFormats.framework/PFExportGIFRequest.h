@@ -26,13 +26,13 @@
 + (void)runExport:(id)arg1 toURL:(id)arg2 progress:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)runExport:(id)arg1 toURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)_exportQueue;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(nonatomic, getter=isSynchronous) _Bool synchronous; // @synthesize synchronous=_synchronous;
 @property(nonatomic) unsigned long long maximumFrameSize; // @synthesize maximumFrameSize=_maximumFrameSize;
 @property(nonatomic) double maximumFrameRate; // @synthesize maximumFrameRate=_maximumFrameRate;
 @property(nonatomic) double ditherDepth; // @synthesize ditherDepth=_ditherDepth;
 @property(nonatomic) _Bool shouldDither; // @synthesize shouldDither=_shouldDither;
-- (void).cxx_destruct;
 - (void)_ensureValidInputs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithVideoURL:(id)arg1;

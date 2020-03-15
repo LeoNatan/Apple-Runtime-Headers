@@ -14,9 +14,9 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long renewResult; // @synthesize renewResult=_renewResult;
-- (void).cxx_destruct;
 - (id)initWithResult:(long long)arg1 error:(id)arg2;
 
 @end

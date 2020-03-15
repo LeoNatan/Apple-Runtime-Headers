@@ -45,6 +45,9 @@
 @property(readonly) int startOffset;
 @property(readonly) DOMNode *startContainer;
 - (void)dealloc;
+- (id)firstNode;
+- (void)extend:(unsigned int)arg1 inDirection:(int)arg2;
+- (void)move:(unsigned int)arg1 inDirection:(int)arg2;
 - (id)lineBoxRects;
 - (id)textRects;
 - (struct CGImage *)renderedImageForcingBlackText:(BOOL)arg1;

@@ -13,8 +13,8 @@
     NSString *_code;
 }
 
-@property(readonly) NSString *code; // @synthesize code=_code;
 - (void).cxx_destruct;
+@property(readonly) NSString *code; // @synthesize code=_code;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 
 @end

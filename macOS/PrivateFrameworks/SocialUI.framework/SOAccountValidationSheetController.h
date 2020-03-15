@@ -17,12 +17,12 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) __weak IMAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) NSPopUpButton *locationsPopup; // @synthesize locationsPopup=_locationsPopup;
 @property(retain, nonatomic) NSMenu *regionsMenu; // @synthesize regionsMenu=_regionsMenu;
 @property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)_regionListFinishedLoading:(id)arg1;
 - (void)ensureValidFaceTimeAccountProfileWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)ensureValidiMessageAccountProfileWithCompletionBlock:(CDUnknownBlockType)arg1;

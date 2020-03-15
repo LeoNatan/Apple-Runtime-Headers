@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCountedSet, NSDictionary, NSMutableDictionary, PLClientServerTransaction, PLPhotoLibrary, PLPhotoLibraryPathManager, PLSearchIndexDateFormatter, PLSearchMetadataStore, PLThrottleTimer, PLZeroKeywordStore, PSIDatabase;
+@class NSCountedSet, NSDictionary, NSHashTable, NSMutableDictionary, PLClientServerTransaction, PLPhotoLibrary, PLPhotoLibraryPathManager, PLSearchIndexDateFormatter, PLSearchMetadataStore, PLThrottleTimer, PLZeroKeywordStore, PSIDatabase;
 @protocol OS_dispatch_queue, PLSearchIndexManagerSceneTaxonomyProxy;
 
 @interface PLSearchIndexManager : NSObject
@@ -37,6 +37,9 @@
     long long _updateState;
     double _lastIndexingStartTime;
     _Bool _startedIndexing;
+    struct os_unfair_lock_s _stateLock;
+    _Bool _searchIndexInvalidated;
+    NSHashTable *_blocksOnQueueAfterDelay;
     _Bool __indexing;
     CDUnknownBlockType __inqAfterIndexingDidIterate;
     NSCountedSet *__pauseReasons;
@@ -57,10 +60,10 @@
 + (id)fetchMemoriesWithUUIDs:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
 + (id)fetchAlbumsWithUUIDs:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
 + (id)fetchAssetsWithUUIDs:(id)arg1 managedObjectContext:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSCountedSet *_pauseReasons; // @synthesize _pauseReasons=__pauseReasons;
 @property(copy, nonatomic, setter=_setInqAfterIndexingDidIterate:) CDUnknownBlockType _inqAfterIndexingDidIterate; // @synthesize _inqAfterIndexingDidIterate=__inqAfterIndexingDidIterate;
 @property(getter=_isIndexing, setter=_setIndexing:) _Bool _indexing; // @synthesize _indexing=__indexing;
-- (void).cxx_destruct;
 - (id)searchIndexManagerLog;
 - (id)_featuredPeopleIdentifiersFromPhotosGraphData:(id)arg1 photosGraphVersion:(long long)arg2;
 - (void)_fetchMemoriesToIndexWithUUIDs:(id)arg1 managedObjectContext:(id)arg2 result:(CDUnknownBlockType)arg3;
@@ -100,7 +103,7 @@
 - (void)resetSearchIndexWithReason:(long long)arg1 dropCompletion:(CDUnknownBlockType)arg2;
 - (void)_inqResetSearchIndexWithReason:(long long)arg1 dropCompletion:(CDUnknownBlockType)arg2;
 - (void)dropSearchIndexWithCompletion:(CDUnknownBlockType)arg1;
-- (void)closeSearchIndexWithCompletion:(CDUnknownBlockType)arg1;
+- (void)invalidate;
 - (void)ensureSearchIndexExistsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_inqCloseSearchIndexAndDelete:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_throttleTimerFire:(id)arg1;
@@ -123,9 +126,9 @@
 - (_Bool)_inqUpdateLocale;
 - (_Bool)_inqUpdateVersion;
 - (_Bool)_inqUpdateSearchSystemInfo:(id)arg1 forKey:(id)arg2 logMessage:(id)arg3;
-- (void)_onQueueAsyncWithDelay:(double)arg1 perform:(CDUnknownBlockType)arg2;
-- (void)_onQueueAsync:(CDUnknownBlockType)arg1;
-- (void)_onQueueSync:(CDUnknownBlockType)arg1;
+- (_Bool)_onQueueAsyncWithDelay:(double)arg1 perform:(CDUnknownBlockType)arg2;
+- (_Bool)_onQueueAsync:(CDUnknownBlockType)arg1;
+- (_Bool)_onQueueSync:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithPathManager:(id)arg1;
 @property(retain, nonatomic) Class sceneTaxonomyProxyClass;

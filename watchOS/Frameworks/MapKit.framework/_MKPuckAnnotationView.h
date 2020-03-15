@@ -42,6 +42,7 @@
     double _presentationCourse;
     double _locationAccuracy;
     CLLocation *_lastLocation;
+    _Bool _hasExplicitCollisionMode;
     _Bool _forcesConeIndicator;
     int _headingIndicatorStyle;
     double _headingOffset;
@@ -52,6 +53,7 @@
 + (float)baseDiameter;
 + (unsigned int)_selectedZIndex;
 + (unsigned int)_zIndex;
+- (void).cxx_destruct;
 @property(nonatomic) double headingOffset; // @synthesize headingOffset=_headingOffset;
 @property(nonatomic) _Bool rotateInnerImageToMatchCourse; // @synthesize rotateInnerImageToMatchCourse=_rotateInnerImageToMatchCourse;
 @property(retain, nonatomic) UIImage *innerImageMask; // @synthesize innerImageMask=_innerImageMask;
@@ -73,7 +75,6 @@
 @property(nonatomic) _Bool canShowHeadingIndicator; // @synthesize canShowHeadingIndicator=_canShowHeadingIndicator;
 @property(nonatomic) _Bool allowsPulse; // @synthesize allowsPulse=_allowsPulse;
 @property(nonatomic) int zoomDirection; // @synthesize zoomDirection=_zoomDirection;
-- (void).cxx_destruct;
 - (void)_setPresentationCourse:(double)arg1;
 - (void)_setAnimatingToCoordinate:(_Bool)arg1;
 - (void)setAnimatingToCoordinate:(_Bool)arg1;

@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *descriptors; // @synthesize descriptors=_descriptors;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *descriptors; // @synthesize descriptors=_descriptors;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

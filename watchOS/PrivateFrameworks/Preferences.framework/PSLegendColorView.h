@@ -13,8 +13,8 @@
     UIColor *_color;
 }
 
-@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithColor:(id)arg1;

@@ -18,11 +18,11 @@
 }
 
 + (id)createUpdatedHeaderContextForGroupStackView:(id)arg1 passType:(unsigned long long)arg2 currentContext:(id)arg3 allowHeader:(_Bool)arg4 allowSubheader:(_Bool)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets subheaderMargins; // @synthesize subheaderMargins=_subheaderMargins;
 @property(readonly, nonatomic) UIView<PKPGSVSectionSubheaderView> *subheaderView; // @synthesize subheaderView=_subheaderView;
 @property(nonatomic) struct UIEdgeInsets headerMargins; // @synthesize headerMargins=_headerMargins;
 @property(readonly, nonatomic) UIView<PKPGSVSectionHeaderView> *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double headerHeight;
 @property(readonly, nonatomic) double totalHeight;
 - (double)_subheaderHeight;

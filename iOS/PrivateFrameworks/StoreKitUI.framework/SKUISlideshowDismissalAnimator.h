@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct CGRect _imageRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect imageRect; // @synthesize imageRect=_imageRect;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-- (void).cxx_destruct;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

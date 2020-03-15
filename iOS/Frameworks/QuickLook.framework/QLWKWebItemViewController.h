@@ -38,10 +38,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_shouldDisableJavaScriptForContentType:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) NSCache *indexToThumbnailsCache; // @synthesize indexToThumbnailsCache=_indexToThumbnailsCache;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (void)_updateConstraintConstants:(_Bool)arg1;
 - (void)transitionWillFinish:(_Bool)arg1 didComplete:(_Bool)arg2;
 - (void)transitionDidStart:(_Bool)arg1;
@@ -74,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)_renderer;
 - (long long)preferredWhitePointAdaptivityStyle;
 - (id)printer;
+- (_Bool)canClickToToggleFullscreen;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;
 - (_Bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;

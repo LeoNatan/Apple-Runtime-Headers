@@ -24,11 +24,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double endDate; // @synthesize endDate=_endDate;
 @property(nonatomic) double startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) long long dataType; // @synthesize dataType=_dataType;
 @property(retain, nonatomic) HDCodableHealthObject *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

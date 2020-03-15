@@ -15,8 +15,8 @@
     NSMutableDictionary *_values;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *values; // @synthesize values=_values;
 - (id)constructLogWithMessage:(id)arg1;
 - (void)logSensitive:(id)arg1;
 - (void)log:(id)arg1;

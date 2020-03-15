@@ -19,13 +19,13 @@
 }
 
 + (id)clusterDescriptor:(struct _NSRange)arg1 rootLevel:(long long)arg2 minCoreDistanceIndex:(long long)arg3 minCoreDistance:(double)arg4;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSNumber *minCoreDistance; // @synthesize minCoreDistance=_minCoreDistance;
 @property(readonly, retain, nonatomic) NSNumber *minCoreDistanceIndex; // @synthesize minCoreDistanceIndex=_minCoreDistanceIndex;
 @property(readonly, retain, nonatomic) NSNumber *rootLevel; // @synthesize rootLevel=_rootLevel;
 @property(readonly, retain, nonatomic) NSNumber *clusterSize; // @synthesize clusterSize=_clusterSize;
 @property(readonly, retain, nonatomic) NSNumber *endIndex; // @synthesize endIndex=_endIndex;
 @property(readonly, retain, nonatomic) NSNumber *startIndex; // @synthesize startIndex=_startIndex;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct _NSRange indexRange;
 - (id)initWithParameters:(struct _NSRange)arg1 rootLevel:(long long)arg2 minCoreDistanceIndex:(long long)arg3 minCoreDistance:(double)arg4;
 

@@ -16,11 +16,11 @@
     UIView *_sunDownView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *sunDownView; // @synthesize sunDownView=_sunDownView;
 @property(retain, nonatomic) UIView *sunUpView; // @synthesize sunUpView=_sunUpView;
 @property(retain, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) double horizonLine; // @synthesize horizonLine=_horizonLine;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setCenter:(struct CGPoint)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;

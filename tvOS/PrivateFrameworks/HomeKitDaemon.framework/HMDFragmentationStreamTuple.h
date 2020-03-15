@@ -17,11 +17,11 @@
 }
 
 + (id)tupleWithFragmentationStreamForObject:(id)arg1 delegate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) HMFMessage *lastMessage; // @synthesize lastMessage=_lastMessage;
 @property(readonly, nonatomic) NSString *objectUUID; // @synthesize objectUUID=_objectUUID;
 @property(readonly, nonatomic) HAPFragmentationStream *fragmentationStream; // @synthesize fragmentationStream=_fragmentationStream;
-- (void).cxx_destruct;
 - (void)close;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (id)initWithFragmentationStreamForObject:(id)arg1 delegate:(id)arg2;

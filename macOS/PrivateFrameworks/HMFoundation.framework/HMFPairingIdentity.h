@@ -20,10 +20,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)pairingIdentity;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HMFPairingKey *privateKey; // @synthesize privateKey=_privateKey;
 @property(readonly, copy, nonatomic) HMFPairingKey *publicKey; // @synthesize publicKey=_publicKey;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

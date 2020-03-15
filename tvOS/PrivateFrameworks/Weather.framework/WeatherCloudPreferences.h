@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     WeatherPreferences *_localPreferences;
 }
 
+- (void).cxx_destruct;
 @property(retain) WeatherPreferences *localPreferences; // @synthesize localPreferences=_localPreferences;
 @property(retain) id <WeatherPreferencesPersistence> cloudStore; // @synthesize cloudStore=_cloudStore;
 @property(nonatomic) __weak id <SynchronizedDefaultsDelegate> syncDelegate; // @synthesize syncDelegate=_syncDelegate;
-- (void).cxx_destruct;
 - (_Bool)shouldWriteCitiesToCloud:(id)arg1;
 - (void)saveCitiesToCloud:(id)arg1;
 - (void)setCloudStoreCities:(id)arg1;

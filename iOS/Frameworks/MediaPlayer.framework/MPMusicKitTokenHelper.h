@@ -14,9 +14,9 @@
     NSString *_clientVersion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-- (void).cxx_destruct;
 - (id)clientInfo;
 - (void)fetchDeveloperAndMusicUserTokensWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchMusicUserTokenWithDeveloperToken:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -12,6 +12,7 @@
 {
 }
 
++ (id)inferredRepIdentifierForPath:(id)arg1;
 + (id)inferredRepIdentifiersGroupedByItemNameForPaths:(id)arg1;
 + (Class)slotClass;
 + (id)identifierWithSlot:(id)arg1 fileName:(id)arg2 explicitlyUnassigned:(_Bool)arg3;

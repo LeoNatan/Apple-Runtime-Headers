@@ -17,12 +17,12 @@
     TPSURLSessionItem *_URLSessionItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TPSURLSessionItem *URLSessionItem; // @synthesize URLSessionItem=_URLSessionItem;
 @property(retain, nonatomic) NSDictionary *headerFields; // @synthesize headerFields=_headerFields;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(nonatomic) _Bool loading; // @synthesize loading=_loading;
-- (void).cxx_destruct;
 - (void)processData:(id)arg1 formattedData:(id)arg2;
 - (void)clearData;
 - (void)cancel;

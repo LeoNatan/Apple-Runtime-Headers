@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldCache; // @synthesize shouldCache=_shouldCache;
 @property(retain, nonatomic) NSDate *expiresAt; // @synthesize expiresAt=_expiresAt;
 @property(retain, nonatomic) NSData *refreshToken; // @synthesize refreshToken=_refreshToken;
 @property(retain, nonatomic) NSData *accessToken; // @synthesize accessToken=_accessToken;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

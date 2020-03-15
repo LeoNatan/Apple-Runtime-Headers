@@ -13,8 +13,8 @@
     NSMutableArray *_children;
 }
 
-@property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *children; // @synthesize children=_children;
 - (_Bool)isAccessibilityElement;
 - (id)accessibilityElements;
 - (struct CGRect)accessibilityFrame;

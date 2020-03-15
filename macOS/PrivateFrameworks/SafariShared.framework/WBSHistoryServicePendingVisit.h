@@ -20,6 +20,7 @@
     unsigned long long _attributes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) long long origin; // @synthesize origin=_origin;
 @property(nonatomic) BOOL loadSuccessful; // @synthesize loadSuccessful=_loadSuccessful;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) WBSHistoryVisitIdentifier *sourceVisitIdentifier; // @synthesize sourceVisitIdentifier=_sourceVisitIdentifier;
 @property(nonatomic) unsigned long long operation; // @synthesize operation=_operation;
 @property(readonly, nonatomic) WBSHistoryVisitIdentifier *visitIdentifier; // @synthesize visitIdentifier=_visitIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long score;
 @property(readonly, nonatomic) double visitTime;
 @property(readonly, nonatomic) NSString *urlString;

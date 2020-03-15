@@ -27,11 +27,11 @@
 + (_Bool)_isConcreteObjectClass;
 + (id)_objectWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4;
 + (id)_newDataObjectWithMetadata:(id)arg1 device:(id)arg2 config:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_creationTimestamp, setter=_setCreationTimestamp:) double creationTimestamp; // @synthesize creationTimestamp=_creationTimestamp;
 @property(copy, nonatomic, getter=_sourceBundleIdentifier, setter=_setSourceBundleIdentifier:) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(readonly) HKDevice *device; // @synthesize device=_device;
 @property(readonly) HKSourceRevision *sourceRevision; // @synthesize sourceRevision=_sourceRevision;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic, getter=_timeZoneName) NSString *timeZoneName;
 @property(copy, nonatomic, getter=_creationDate, setter=_setCreationDate:) NSDate *creationDate;
 - (void)_setDevice:(id)arg1;

@@ -13,8 +13,8 @@
     NSArray *_acceptableDocuments;
 }
 
-@property(retain, nonatomic) NSArray *acceptableDocuments; // @synthesize acceptableDocuments=_acceptableDocuments;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *acceptableDocuments; // @synthesize acceptableDocuments=_acceptableDocuments;
 - (id)initWithJSONObject:(id)arg1;
 
 @end

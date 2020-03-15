@@ -18,11 +18,11 @@
     CDStruct_e83c9415 timeRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MLMultiArray *featureVector; // @synthesize featureVector=_featureVector;
 @property(readonly, nonatomic) long long featurePrintType; // @synthesize featurePrintType=_featurePrintType;
 - (void)setTimeRange:(CDStruct_e83c9415)arg1;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRange;
-- (void).cxx_destruct;
 - (id)initWithFeaturePrintType:(long long)arg1 featureVector:(id)arg2;
 
 // Remaining properties

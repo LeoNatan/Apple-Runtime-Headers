@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) int iconFormat; // @synthesize iconFormat=_iconFormat;
 @property(nonatomic) _Bool useSpotlightVibrancy; // @synthesize useSpotlightVibrancy=_useSpotlightVibrancy;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _MKUILabel *tertiaryLabel; // @synthesize tertiaryLabel=_tertiaryLabel;
 @property(retain, nonatomic) _MKUILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) _MKUILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
-- (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;

@@ -32,6 +32,7 @@
     id <CoreDAVAccountInfoProvider> _backingAccountInfoProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *userAgentHeader; // @synthesize userAgentHeader=_userAgentHeader;
 @property(retain, nonatomic) NSSet *serverComplianceClasses; // @synthesize serverComplianceClasses=_serverComplianceClasses;
 @property(retain, nonatomic) NSDictionary *serverHeaders; // @synthesize serverHeaders=_serverHeaders;
@@ -49,7 +50,6 @@
 @property(nonatomic) long long port; // @synthesize port=_port;
 @property(retain, nonatomic) NSString *host; // @synthesize host=_host;
 @property(retain, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 - (id)getAppleIDSession;
 - (_Bool)shouldUseOpportunisticSockets;
 - (struct __CFURLStorageSession *)copyStorageSession;

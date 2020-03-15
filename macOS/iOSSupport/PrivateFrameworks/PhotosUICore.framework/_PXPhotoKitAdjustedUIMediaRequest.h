@@ -23,6 +23,7 @@
     double _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useCachedRenders; // @synthesize useCachedRenders=_useCachedRenders;
 @property(nonatomic) BOOL delayRenders; // @synthesize delayRenders=_delayRenders;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) PHImageManager *imageManager; // @synthesize imageManager=_imageManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *renderQueue; // @synthesize renderQueue=_renderQueue;
 @property(readonly, nonatomic) id <PXPhotoKitAdjustedDisplayAsset> asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_handleEditSourceLoadingFinished;
 - (void)editSourceDidChange;
 - (void)progressDidChange;

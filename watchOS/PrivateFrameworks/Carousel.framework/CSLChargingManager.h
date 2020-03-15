@@ -37,6 +37,7 @@
 
 + (void)playChargingSound;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property _Bool setupCompleted; // @synthesize setupCompleted=_setupCompleted;
 @property _Bool launchCompleted; // @synthesize launchCompleted=_launchCompleted;
 @property(retain, nonatomic) CSLNightstandManager *nightstandManager; // @synthesize nightstandManager=_nightstandManager;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool alwaysDetectOrientation; // @synthesize alwaysDetectOrientation=_alwaysDetectOrientation;
 @property(nonatomic, getter=areOrientationChangesEnabled) _Bool orientationChangesEnabled; // @synthesize orientationChangesEnabled=_orientationChangesEnabled;
 @property(retain, nonatomic) _CSLChargingChangeObservers *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)chargingPresentation:(id)arg1 didAdvanceToStage:(unsigned int)arg2;
 - (void)requestUITriggerWithRegistration:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (id)addAssertionForAlertPolicy:(id)arg1;

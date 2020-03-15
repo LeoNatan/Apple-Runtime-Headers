@@ -6,13 +6,9 @@
 
 #import <UIKitCore/UIInteraction-Protocol.h>
 
-@class UITraitCollection;
 @protocol UIInteractionEffect;
 
 @protocol UIInteraction_Private <UIInteraction>
 @property(retain, nonatomic) id <UIInteractionEffect> interactionEffect;
-
-@optional
-- (void)_viewTraitCollectionDidChange:(UITraitCollection *)arg1;
 @end
 

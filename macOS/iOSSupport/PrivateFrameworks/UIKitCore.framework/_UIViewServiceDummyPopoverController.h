@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)_popoverViewClass;
-@property(nonatomic) __weak id <_UIViewServiceDummyPopoverControllerDelegate> dummyPopoverControllerDelegate; // @synthesize dummyPopoverControllerDelegate=_dummyPopoverControllerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_UIViewServiceDummyPopoverControllerDelegate> dummyPopoverControllerDelegate; // @synthesize dummyPopoverControllerDelegate=_dummyPopoverControllerDelegate;
 - (void)_super_setPopoverContentSize:(struct CGSize)arg1;
 - (BOOL)_attemptsToAvoidKeyboard;
 - (void)setPopoverContentSize:(struct CGSize)arg1 animated:(BOOL)arg2;

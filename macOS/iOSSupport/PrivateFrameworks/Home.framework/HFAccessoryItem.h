@@ -22,10 +22,10 @@
     NSSet *_serviceItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *serviceItems; // @synthesize serviceItems=_serviceItems;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
-- (void).cxx_destruct;
 - (id)_sortDescriptorsForServiceItems;
 - (id)_mostCommonValueInServiceItems:(id)arg1 valueProvider:(CDUnknownBlockType)arg2;
 - (id)_mostCommonValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;

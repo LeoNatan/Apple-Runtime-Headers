@@ -15,8 +15,8 @@
     SXLayoutBlueprint *blueprint;
 }
 
-@property(retain, nonatomic) SXLayoutBlueprint *blueprint; // @synthesize blueprint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXLayoutBlueprint *blueprint; // @synthesize blueprint;
 - (void)updateBlueprint:(id)arg1;
 
 // Remaining properties

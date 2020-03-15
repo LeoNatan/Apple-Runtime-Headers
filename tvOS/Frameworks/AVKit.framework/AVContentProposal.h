@@ -20,13 +20,13 @@
     CDStruct_1b6d18a9 _contentTimeForTransition;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) UIImage *previewImage; // @synthesize previewImage=_previewImage;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) double automaticAcceptanceInterval; // @synthesize automaticAcceptanceInterval=_automaticAcceptanceInterval;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 contentTimeForTransition; // @synthesize contentTimeForTransition=_contentTimeForTransition;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToContentProposal:(id)arg1;

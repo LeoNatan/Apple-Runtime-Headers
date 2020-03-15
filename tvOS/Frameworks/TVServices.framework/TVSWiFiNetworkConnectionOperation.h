@@ -21,6 +21,7 @@
     NSString *_networkName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isDirectedScan) _Bool directedScan; // @synthesize directedScan=_directedScan;
 @property(copy, nonatomic) NSString *networkName; // @synthesize networkName=_networkName;
 @property(retain, nonatomic) TVSWiFiNetwork *network; // @synthesize network=_network;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) TVSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <TVSWiFiNetworkConnectionOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateStateWithNewState:(id)arg1;
 - (void)_scanForNetworkWithInfo:(id)arg1;
 - (id)_connectToNetwork:(id)arg1 withPassword:(id)arg2;

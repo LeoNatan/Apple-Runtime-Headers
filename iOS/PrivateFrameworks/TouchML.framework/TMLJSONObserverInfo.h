@@ -17,11 +17,11 @@
     CDUnknownBlockType _callback;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
 @property(readonly, nonatomic) id targetUnsafe; // @synthesize targetUnsafe=_targetUnsafe;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)notify:(id)arg1;

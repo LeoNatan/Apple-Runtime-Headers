@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *minimumHeightConstraint; // @synthesize minimumHeightConstraint=_minimumHeightConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *minimumWidthConstraint; // @synthesize minimumWidthConstraint=_minimumWidthConstraint;
 @property(readonly, nonatomic) BOOL wantsMinimumSizeConstraintsActive; // @synthesize wantsMinimumSizeConstraintsActive=_wantsMinimumSizeConstraintsActive;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize minimumSize; // @synthesize minimumSize=_minimumSize;
 @property(nonatomic) struct CGSize maximumSize; // @synthesize maximumSize=_maximumSize;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
-- (void).cxx_destruct;
 - (void)_clearConstraints;
 - (void)_updateAllSizeConstraints;
 - (void)_updateAllMarginConstraintConstants;

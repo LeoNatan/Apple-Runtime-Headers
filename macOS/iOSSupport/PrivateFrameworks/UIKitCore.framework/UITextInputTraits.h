@@ -95,6 +95,7 @@
 + (long long)translateToUISpellCheckingType:(unsigned long long)arg1;
 + (long long)translateToUIAutocorrectionType:(unsigned long long)arg1;
 + (long long)translateToUIAutocapitalizationType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL loadKeyboardsForSiriLanguage; // @synthesize loadKeyboardsForSiriLanguage;
 @property(nonatomic) long long textScriptType; // @synthesize textScriptType;
 @property(nonatomic) BOOL isCarPlayIdiom; // @synthesize isCarPlayIdiom;
@@ -157,7 +158,6 @@
 @property(nonatomic) long long spellCheckingType; // @synthesize spellCheckingType;
 @property(nonatomic) long long autocorrectionType; // @synthesize autocorrectionType;
 @property(nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType;
-- (void).cxx_destruct;
 - (void)_selectionHighlightColorDidChange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (long long)updateResultComparedToTraits:(id)arg1;

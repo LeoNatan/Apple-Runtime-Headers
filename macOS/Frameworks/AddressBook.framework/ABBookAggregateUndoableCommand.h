@@ -16,9 +16,11 @@
     NSArray *_undoableCommands;
     ABAddressBook *_addressBook;
     BOOL _shouldSave;
+    BOOL ignoresGuardianRestrictions;
 }
 
 + (id)builder;
+@property(nonatomic) BOOL ignoresGuardianRestrictions; // @synthesize ignoresGuardianRestrictions;
 - (void)configureVisitor:(id)arg1;
 - (void)visitCommandsWithVisitor:(id)arg1 enumerationOptions:(unsigned long long)arg2;
 - (void)visitCommandsWithUnconfiguredVisitor:(id)arg1 enumerationOptions:(unsigned long long)arg2;

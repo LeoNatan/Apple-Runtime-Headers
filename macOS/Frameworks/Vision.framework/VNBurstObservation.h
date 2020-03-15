@@ -20,6 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isPortrait; // @synthesize isPortrait=_isPortrait;
 @property(nonatomic) BOOL isAction; // @synthesize isAction=_isAction;
 @property(retain, nonatomic) NSArray *clusters; // @synthesize clusters=_clusters;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSDictionary *allImageStats; // @synthesize allImageStats=_allImageStats;
 @property(retain, nonatomic) NSArray *bestImageIdentifiers; // @synthesize bestImageIdentifiers=_bestImageIdentifiers;
 @property(retain, nonatomic) NSArray *allImageIdentifiers; // @synthesize allImageIdentifiers=_allImageIdentifiers;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

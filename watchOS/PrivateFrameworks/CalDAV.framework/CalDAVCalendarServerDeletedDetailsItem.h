@@ -17,12 +17,12 @@
     ICSDateValue *_nextInstance;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hadMoreInstances; // @synthesize hadMoreInstances=_hadMoreInstances;
 @property(retain, nonatomic) ICSDateValue *nextInstance; // @synthesize nextInstance=_nextInstance;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) NSString *componentType; // @synthesize componentType=_componentType;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (void)setHadMoreInstancesItem:(id)arg1;
 - (void)setNextInstanceItem:(id)arg1;

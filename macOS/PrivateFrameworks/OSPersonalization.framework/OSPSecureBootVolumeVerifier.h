@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_semaphore> *_initialPopulateCompleteSemaphore;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_semaphore> *initialPopulateCompleteSemaphore; // @synthesize initialPopulateCompleteSemaphore=_initialPopulateCompleteSemaphore;
 @property(retain) OSPDevice *device; // @synthesize device=_device;
 @property(retain) SKDisk *prebootDisk; // @synthesize prebootDisk=_prebootDisk;
 @property(retain) SKDisk *targetDisk; // @synthesize targetDisk=_targetDisk;
 @property(retain) NSURL *volumeURL; // @synthesize volumeURL=_volumeURL;
 @property unsigned long long policy; // @synthesize policy=_policy;
-- (void).cxx_destruct;
 - (void)initialPopulateComplete;
 - (BOOL)_unmountDisk:(id)arg1;
 - (BOOL)_mountDisk:(id)arg1;

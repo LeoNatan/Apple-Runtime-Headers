@@ -21,8 +21,8 @@
     Class _currentTriggerClass;
 }
 
-@property(nonatomic) __weak id <SBBiometricUnlockBehaviorConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBBiometricUnlockBehaviorConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
 - (Class)_expectedTriggerClassIncludingAccessibility:(_Bool)arg1;
 - (id)_unlockTriggerWithClass:(Class)arg1;
 - (void)_accessibilityOptionsChanged:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_symbol;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *symbol; // @synthesize symbol=_symbol;
 @property(retain, nonatomic) NSURL *third_party_content; // @synthesize third_party_content=_third_party_content;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 

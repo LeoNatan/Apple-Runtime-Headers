@@ -18,13 +18,13 @@
     NSString *_textEncoding;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *textEncoding; // @synthesize textEncoding=_textEncoding;
 @property(readonly) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(readonly) BOOL startAttachment; // @synthesize startAttachment=_startAttachment;
 @property(readonly) BOOL lastChunk; // @synthesize lastChunk=_lastChunk;
 @property(readonly) NSURL *attachmentURL; // @synthesize attachmentURL=_attachmentURL;
 @property(readonly) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)initWithStartAttachment:(BOOL)arg1 attachmentURL:(id)arg2 mimeType:(id)arg3 textEncoding:(id)arg4;
 - (id)initWithData:(id)arg1 attachmentURL:(id)arg2 isLastChunk:(BOOL)arg3;
 

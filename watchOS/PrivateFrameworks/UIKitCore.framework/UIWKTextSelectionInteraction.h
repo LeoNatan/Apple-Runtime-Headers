@@ -9,15 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface UIWKTextSelectionInteraction : UITextSelectionInteraction
 {
-    unsigned int _repeatedTapCount;
 }
 
-- (void)selectWithTapGestureAt:(struct CGPoint)arg1 withGesture:(int)arg2 withState:(int)arg3;
 - (void)twoFingerRangedSelectGesture:(id)arg1;
-- (void)oneFingerTripleTap:(id)arg1;
-- (void)oneFingerDoubleTap:(id)arg1;
-- (void)tapAndAHalf:(id)arg1;
-- (void)oneFingerTap:(id)arg1;
+- (void)didUpdateSelectionWithGesture:(id)arg1;
+- (void)willUpdateSelectionWithGesture:(id)arg1;
 
 @end
 

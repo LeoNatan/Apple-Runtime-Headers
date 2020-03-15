@@ -16,9 +16,9 @@
 }
 
 + (id)sharedConnection;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-- (void).cxx_destruct;
 - (void)dismissAlert:(id)arg1;
 - (void)presentAlertWithDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)connection;

@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSString *_placeholder;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *placeholder; // @synthesize placeholder=_placeholder;
 @property(copy, nonatomic) NSString *property; // @synthesize property=_property;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) SEL setter; // @synthesize setter=_setter;
 @property(retain, nonatomic) CNMutableContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 
 @end
 

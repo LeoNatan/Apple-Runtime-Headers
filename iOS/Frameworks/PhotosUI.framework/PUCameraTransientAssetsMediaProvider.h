@@ -18,11 +18,11 @@
     NSObject<OS_dispatch_queue> *__livePhotoRequestQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_livePhotoRequestQueue; // @synthesize _livePhotoRequestQueue=__livePhotoRequestQueue;
 @property(readonly, nonatomic) NSMutableDictionary *_livePhotoRequestsByRequestID; // @synthesize _livePhotoRequestsByRequestID=__livePhotoRequestsByRequestID;
 @property(readonly, nonatomic) id <PUTransientImageManager> _transientImageManager; // @synthesize _transientImageManager=__transientImageManager;
 @property(copy, nonatomic) CDUnknownBlockType supplementaryLivePhotoImageSource; // @synthesize supplementaryLivePhotoImageSource=_supplementaryLivePhotoImageSource;
-- (void).cxx_destruct;
 - (id)_videoCompositionForAVAsset:(id)arg1 filterName:(id)arg2;
 - (void)cancelImageRequest:(int)arg1;
 - (id)_playerItemForVideoURL:(id)arg1;

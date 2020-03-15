@@ -16,8 +16,8 @@
     id <BSXPCServerClient> _owningClient;
 }
 
-@property(retain, nonatomic) id <BSXPCServerClient> owningClient; // @synthesize owningClient=_owningClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <BSXPCServerClient> owningClient; // @synthesize owningClient=_owningClient;
 - (void)dealloc;
 @property(readonly, nonatomic) NSString *uuidString;
 - (struct __CFUUID *)uuid;

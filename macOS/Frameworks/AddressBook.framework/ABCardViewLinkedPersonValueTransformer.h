@@ -15,8 +15,8 @@
 
 + (Class)transformedValueClass;
 + (BOOL)allowsReverseTransformation;
-@property(retain, nonatomic) ABCardViewLinkedPerson *lastLinkedPerson; // @synthesize lastLinkedPerson=_lastLinkedPerson;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ABCardViewLinkedPerson *lastLinkedPerson; // @synthesize lastLinkedPerson=_lastLinkedPerson;
 - (id)transformedValue:(id)arg1;
 - (id)init;
 

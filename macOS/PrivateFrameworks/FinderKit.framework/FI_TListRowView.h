@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     _Bool _textDimmed;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isTextDimmed) _Bool textDimmed; // @synthesize textDimmed=_textDimmed;
 @property(nonatomic, getter=isIconDimmed) _Bool iconDimmed; // @synthesize iconDimmed=_iconDimmed;
 @property(nonatomic) struct TFENode node; // @synthesize node=_node;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)openNode;
 - (void)didAddSubview:(id)arg1;
 @property(nonatomic) __weak NSObject<TListRowViewDelegate> *delegate; // @dynamic delegate;

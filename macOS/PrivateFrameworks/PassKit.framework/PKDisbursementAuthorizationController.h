@@ -21,8 +21,8 @@
 }
 
 + (BOOL)supportsDisbursements;
-@property(readonly, nonatomic) id <PKDisbursementAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <PKDisbursementAuthorizationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizeDisbursementVoucher:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationCoordinatorDidFinish:(id)arg1;
 - (void)paymentAuthorizationCoordinator:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;

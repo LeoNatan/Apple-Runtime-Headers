@@ -19,11 +19,11 @@
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(nonatomic) __weak id <SKUIArtworkRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SSVURLDataConsumer *dataConsumer; // @synthesize dataConsumer=_dataConsumer;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)newLoadOperation;
 - (void)finishWithResource:(id)arg1;

@@ -21,6 +21,7 @@
     UIButton *_doneButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIView *pickerCircle; // @synthesize pickerCircle=_pickerCircle;
 @property(nonatomic) double pickerRotation; // @synthesize pickerRotation=_pickerRotation;
@@ -29,7 +30,6 @@
 @property(nonatomic) double gradientWidth; // @synthesize gradientWidth=_gradientWidth;
 @property(nonatomic) double colorWheelRadius; // @synthesize colorWheelRadius=_colorWheelRadius;
 @property(nonatomic) __weak id <DTSColorWheelDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)pickerViewHighlightedColor;
 - (void)doneButtonTapped:(id)arg1;
 - (void)updatePickerPositionForPoint:(struct CGPoint)arg1;

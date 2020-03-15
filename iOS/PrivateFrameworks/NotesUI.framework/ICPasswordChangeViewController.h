@@ -51,6 +51,7 @@
     NSArray *_alternateConstraintsForAXLargerTextSizes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *alternateConstraintsForAXLargerTextSizes; // @synthesize alternateConstraintsForAXLargerTextSizes=_alternateConstraintsForAXLargerTextSizes;
 @property(retain, nonatomic) NSArray *defaultConstraints; // @synthesize defaultConstraints=_defaultConstraints;
 @property(nonatomic) _Bool usingLargerAXSizes; // @synthesize usingLargerAXSizes=_usingLargerAXSizes;
@@ -87,7 +88,6 @@
 @property(nonatomic) _Bool isSettingInitialPassword; // @synthesize isSettingInitialPassword=_isSettingInitialPassword;
 @property(nonatomic) _Bool isInSettings; // @synthesize isInSettings=_isInSettings;
 @property(nonatomic) _Bool isSetupForChangePassword; // @synthesize isSetupForChangePassword=_isSetupForChangePassword;
-- (void).cxx_destruct;
 - (void)setupAccessibility;
 - (void)updateFonts;
 - (void)contentSizeCategoryDidChange;

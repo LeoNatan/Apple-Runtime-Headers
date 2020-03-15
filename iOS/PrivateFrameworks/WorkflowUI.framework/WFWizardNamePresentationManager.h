@@ -15,10 +15,10 @@
     WFWorkflowWizardNameViewController *_wizardNameViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool presentsModally; // @synthesize presentsModally=_presentsModally;
 @property(readonly, nonatomic) WFWorkflowWizardNameViewController *wizardNameViewController; // @synthesize wizardNameViewController=_wizardNameViewController;
 @property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (void)dismiss;
 - (void)presentModal;
 - (void)present;

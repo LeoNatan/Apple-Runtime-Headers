@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class PLEntryNotificationOperatorComposition, PLIOKitOperatorComposition;
+@class NSDate, PLEntry, PLEntryNotificationOperatorComposition, PLIOKitOperatorComposition, PLStateTrackingComposition;
 
 @interface PLMacCPUGPUAgent : PLAgent
 {
@@ -15,6 +15,9 @@
     PLEntryNotificationOperatorComposition *_batteryLevelChangedNotifications;
     PLIOKitOperatorComposition *_graphicsControlComposition;
     PLIOKitOperatorComposition *_discreteGpuComposition;
+    PLStateTrackingComposition *_stateTracker;
+    NSDate *_lastPkgEnergySampleTime;
+    PLEntry *_lastPkgEnergyEntry;
 }
 
 + (id)entryAggregateDefinitions;
@@ -31,12 +34,15 @@
 + (id)railDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
 @property int nPstates; // @synthesize nPstates=_nPstates;
+@property(retain) PLEntry *lastPkgEnergyEntry; // @synthesize lastPkgEnergyEntry=_lastPkgEnergyEntry;
+@property(retain) NSDate *lastPkgEnergySampleTime; // @synthesize lastPkgEnergySampleTime=_lastPkgEnergySampleTime;
+@property(retain) PLStateTrackingComposition *stateTracker; // @synthesize stateTracker=_stateTracker;
 @property BOOL isDiscreteGPUConnected; // @synthesize isDiscreteGPUConnected=_isDiscreteGPUConnected;
 @property(retain) PLIOKitOperatorComposition *discreteGpuComposition; // @synthesize discreteGpuComposition=_discreteGpuComposition;
 @property(retain) PLIOKitOperatorComposition *graphicsControlComposition; // @synthesize graphicsControlComposition=_graphicsControlComposition;
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChangedNotifications; // @synthesize batteryLevelChangedNotifications=_batteryLevelChangedNotifications;
-- (void).cxx_destruct;
 - (id)readPStateResidencyDelta;
 - (void)logEventNoneGPUPState;
 - (unsigned int)GPUPMTClientConnection;
@@ -48,6 +54,9 @@
 - (void)logEventBackwardPerCoreStats:(id)arg1;
 - (void)logEventBackwardPkgStats:(id)arg1;
 - (void)logEventForwardDiscreteGPUState:(_Bool)arg1 withService:(unsigned int)arg2 withReason:(int)arg3;
+- (id)diffPkgEnergyEntry:(id)arg1;
+- (void)logPECIMetricsToCA:(id)arg1 forDate:(id)arg2;
+- (void)handleStateChangeForPECIStats;
 - (void)log;
 - (void)initOperatorDependancies;
 - (id)init;

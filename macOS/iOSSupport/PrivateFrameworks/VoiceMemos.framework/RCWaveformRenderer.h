@@ -53,6 +53,8 @@ __attribute__((visibility("hidden")))
     CDStruct_73a5d3ca _highlightTimeRange;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain) NSMutableIndexSet *waveformSliceIndexes; // @synthesize waveformSliceIndexes=_waveformSliceIndexes;
 @property(retain) NSMutableDictionary *waveformSlices; // @synthesize waveformSlices=_waveformSlices;
 @property(retain) NSArray *waveformAmpSlicesForRendering; // @synthesize waveformAmpSlicesForRendering=_waveformAmpSlicesForRendering;
@@ -77,8 +79,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL frequentUpdatesSegmentUpdatesExpectedHint; // @synthesize frequentUpdatesSegmentUpdatesExpectedHint=_frequentUpdatesSegmentUpdatesExpectedHint;
 @property(nonatomic) __weak id <RCWaveformRendererDelegate> rendererDelegate; // @synthesize rendererDelegate=_rendererDelegate;
 @property(retain, nonatomic) RCWaveformDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)_performOrDispatchToMainThread:(CDUnknownBlockType)arg1;
 - (double)_timeForPixelOffset:(double)arg1;
 - (double)_timeForPixelOffset:(double)arg1 withVisibleTimeRange:(CDStruct_73a5d3ca)arg2;

@@ -27,6 +27,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool throttled; // @synthesize throttled=_throttled;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) _Bool shouldThrottle; // @synthesize shouldThrottle=_shouldThrottle;
 @property(nonatomic) unsigned long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)start;
 - (void)_finishWithError:(id)arg1;

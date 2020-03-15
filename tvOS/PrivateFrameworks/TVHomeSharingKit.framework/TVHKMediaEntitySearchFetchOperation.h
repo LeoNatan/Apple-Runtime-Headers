@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 + (id)_mediaCollectionProperties;
 + (id)_mediaItemProperties;
 + (void)_updateMediaCategoryDictionary:(id)arg1 withMediaItem:(id)arg2 forMediaCollectionType:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaEntityFetchResponse *albumArtistsResponse; // @synthesize albumArtistsResponse=_albumArtistsResponse;
 @property(retain, nonatomic) TVHKMediaEntityFetchResponse *albumsResponse; // @synthesize albumsResponse=_albumsResponse;
 @property(retain, nonatomic) TVHKMediaEntityFetchResponse *mediaItemsResponse; // @synthesize mediaItemsResponse=_mediaItemsResponse;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) TVHKMediaEntitySearchFetchResponse *response; // @synthesize response=_response;
-- (void).cxx_destruct;
 - (void)_finishExecution;
 - (void)_startSubOperation:(id)arg1;
 - (void)_populateMediaCategoryDictionaries;

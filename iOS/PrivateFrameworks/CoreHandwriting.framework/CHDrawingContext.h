@@ -18,14 +18,14 @@
     vector_afed86a5 _delayedSegmentIDs;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) vector_afed86a5 delayedSegmentIDs; // @synthesize delayedSegmentIDs=_delayedSegmentIDs;
 @property(readonly, nonatomic) set_54c7c768 strokeGroup; // @synthesize strokeGroup=_strokeGroup;
 @property(readonly, retain, nonatomic) CHClassifiableDrawing *classifiableDrawing; // @synthesize classifiableDrawing=_classifiableDrawing;
 @property(readonly, nonatomic) long long numberOfSegments; // @synthesize numberOfSegments=_numberOfSegments;
 @property(readonly, nonatomic) long long numberOfSubstrokes; // @synthesize numberOfSubstrokes=_numberOfSubstrokes;
 @property(readonly, nonatomic) unsigned long long edgeIndex; // @synthesize edgeIndex=_edgeIndex;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithEdgeIndex:(unsigned long long)arg1 numberOfSubstrokes:(long long)arg2 numberOfSegments:(long long)arg3 classifiableDrawing:(id)arg4 strokeGroup:(set_54c7c768)arg5 delayedSegmentIDs:(vector_afed86a5)arg6;
 

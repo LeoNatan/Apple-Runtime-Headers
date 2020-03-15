@@ -24,9 +24,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)encodeAsProtoBuf;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

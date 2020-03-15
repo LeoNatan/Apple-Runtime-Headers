@@ -39,6 +39,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMBackupPaymentInfo *backupPaymentInfo; // @synthesize backupPaymentInfo=_backupPaymentInfo;
 @property(retain, nonatomic) NSNumber *availablePoints; // @synthesize availablePoints=_availablePoints;
 @property(retain, nonatomic) NSNumber *nextChargeDate; // @synthesize nextChargeDate=_nextChargeDate;
@@ -64,7 +65,6 @@
 @property(retain, nonatomic) NSNumber *uploadLimitNextMonth; // @synthesize uploadLimitNextMonth=_uploadLimitNextMonth;
 @property(retain, nonatomic) NSNumber *uploadLimitEnd; // @synthesize uploadLimitEnd=_uploadLimitEnd;
 @property(retain, nonatomic) NSNumber *uploadLimit; // @synthesize uploadLimit=_uploadLimit;
-- (void).cxx_destruct;
 
 @end
 

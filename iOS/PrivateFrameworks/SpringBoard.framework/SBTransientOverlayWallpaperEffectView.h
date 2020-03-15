@@ -15,8 +15,8 @@
     long long _containerOrientation;
 }
 
-@property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 - (void).cxx_destruct;
+@property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
 - (void)_updateWallpaperGeometry;
 - (struct CATransform3D)_currentWallpaperTransform;
 @property(nonatomic) long long wallpaperStyle;

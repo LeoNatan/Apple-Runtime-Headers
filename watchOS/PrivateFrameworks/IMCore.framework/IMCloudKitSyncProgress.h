@@ -25,6 +25,7 @@
     double _broadcastDeferralOverride;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double broadcastDeferralOverride; // @synthesize broadcastDeferralOverride=_broadcastDeferralOverride;
 @property(readonly, nonatomic) IMCloudKitSyncStatistics *syncStatistics; // @synthesize syncStatistics=_syncStatistics;
 @property(readonly, nonatomic) IMCloudKitSyncState *syncState; // @synthesize syncState=_syncState;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool shouldShowIndeterminateProgress; // @synthesize shouldShowIndeterminateProgress=_shouldShowIndeterminateProgress;
 @property(nonatomic) _Bool shouldShowProgressBar; // @synthesize shouldShowProgressBar=_shouldShowProgressBar;
 @property(retain, nonatomic) NSString *progressLabel; // @synthesize progressLabel=_progressLabel;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden; // @dynamic hidden;
 @property(readonly, nonatomic) NSArray *errors; // @dynamic errors;
 @property(readonly, nonatomic) double remainingItems; // @dynamic remainingItems;

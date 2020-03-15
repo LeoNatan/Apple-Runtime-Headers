@@ -46,6 +46,7 @@
 + (Class)_contentViewClass;
 + (_Bool)_shouldForwardViewWillTransitionToSize;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIViewController *portraitHeaderViewController; // @synthesize portraitHeaderViewController=_portraitHeaderViewController;
 @property(retain, nonatomic) id <SBRootFolderPageTransition> implicitScrollTransition; // @synthesize implicitScrollTransition=_implicitScrollTransition;
 @property(retain, nonatomic) id <SBRootFolderPageTransition> searchGestureTransition; // @synthesize searchGestureTransition=_searchGestureTransition;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) UIViewController *pullDownSearchViewController; // @synthesize pullDownSearchViewController=_pullDownSearchViewController;
 @property(readonly, nonatomic) _Bool showsDoneButtonWhileEditing; // @synthesize showsDoneButtonWhileEditing=_showsDoneButtonWhileEditing;
 @property(nonatomic) long long pageState; // @synthesize pageState=_pageState;
-- (void).cxx_destruct;
 - (void)_setupDebugTapGestureRecognizerForDockIconListView:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)extraViews;

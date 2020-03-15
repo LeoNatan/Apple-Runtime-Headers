@@ -22,8 +22,8 @@
 }
 
 + (id)_blankSurrogateProfileImage;
-@property(nonatomic) __weak NSObject<SLMicroBlogMentionsDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<SLMicroBlogMentionsDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)chooseRow:(long long)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;

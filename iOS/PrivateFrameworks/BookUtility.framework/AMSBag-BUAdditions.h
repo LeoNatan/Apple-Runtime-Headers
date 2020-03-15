@@ -35,6 +35,7 @@
 @property(readonly, nonatomic) AMSBagValue *bu_p2LaunchAudioBookStorePathPatterns;
 @property(readonly, nonatomic) AMSBagValue *bu_p2LaunchEbookstorePathPatterns;
 @property(readonly, nonatomic) AMSBagValue *bu_p2LaunchEbookstoreHostPatterns;
+@property(readonly, nonatomic) AMSBagValue *bu_mobileNetworkConstraints;
 @property(readonly, nonatomic) AMSBagValue *bu_metrics;
 @property(readonly, nonatomic) AMSBagValue *bu_mediaAPITokenProviderURL;
 @property(readonly, nonatomic) AMSBagValue *bu_libraryLink;

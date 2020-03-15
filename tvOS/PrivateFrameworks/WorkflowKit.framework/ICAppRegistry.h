@@ -21,6 +21,7 @@
 }
 
 + (id)sharedRegistry;
+- (void).cxx_destruct;
 @property(nonatomic) int urlTypesToken; // @synthesize urlTypesToken=_urlTypesToken;
 @property(retain, nonatomic) NSMutableDictionary *observersByIdentifier; // @synthesize observersByIdentifier=_observersByIdentifier;
 @property(retain, nonatomic) NSLock *observersLock; // @synthesize observersLock=_observersLock;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSDictionary *appsDictionary; // @synthesize appsDictionary=_appsDictionary;
 @property(retain, nonatomic) NSLock *registryLock; // @synthesize registryLock=_registryLock;
 @property(readonly, nonatomic) _Bool isFilled; // @synthesize isFilled=_isFilled;
-- (void).cxx_destruct;
 - (id)description;
 - (void)refreshInstalledApps;
 - (void)removeInstallStatusObserver:(id)arg1 forAppIdentifiers:(id)arg2;

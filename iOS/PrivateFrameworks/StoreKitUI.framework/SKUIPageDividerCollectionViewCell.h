@@ -29,12 +29,12 @@ __attribute__((visibility("hidden")))
 + (void)requestLayoutForViewElement:(id)arg1 width:(double)arg2 context:(id)arg3;
 + (struct CGSize)preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (_Bool)prefetchResourcesForViewElement:(id)arg1 reason:(long long)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) double rightEdgeInset; // @synthesize rightEdgeInset=_rightEdgeInset;
 @property(nonatomic) double leftEdgeInset; // @synthesize leftEdgeInset=_leftEdgeInset;
 @property(nonatomic) long long dividerType; // @synthesize dividerType=_dividerType;
 @property(nonatomic) double dividerHeight; // @synthesize dividerHeight=_dividerHeight;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)setInsetColor:(id)arg1;

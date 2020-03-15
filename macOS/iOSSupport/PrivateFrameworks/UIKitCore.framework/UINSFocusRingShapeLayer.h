@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 + (id)selectedLayerForUserInterfaceStyle:(long long)arg1;
 + (id)parentLayerForUserInterfaceStyle:(long long)arg1;
 + (id)focusLayerForUserInterfaceStyle:(long long)arg1;
-@property(retain, nonatomic) CAShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CAShapeLayer *bottomBorderLayer; // @synthesize bottomBorderLayer=_bottomBorderLayer;
 - (void)_updateBottomLayerPath;
 - (void)setPath:(struct CGPath *)arg1;
 - (id)init;

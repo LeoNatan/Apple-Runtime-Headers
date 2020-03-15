@@ -32,6 +32,7 @@
     WFTextTokenChooser *_textTokenChooser;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFTextTokenChooser *textTokenChooser; // @synthesize textTokenChooser=_textTokenChooser;
 @property(copy, nonatomic) CDUnknownBlockType updateStateBlock; // @synthesize updateStateBlock=_updateStateBlock;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
@@ -47,7 +48,6 @@
 @property(nonatomic) __weak id <WFVariableProvider> variableProvider; // @synthesize variableProvider=_variableProvider;
 @property(nonatomic) __weak id <WFComponentNavigationContext> navigationContext; // @synthesize navigationContext=_navigationContext;
 @property(nonatomic) __weak id <WFListEditorViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)variableValueCleared:(id)arg1;
 - (void)variableValueChanged:(id)arg1;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;

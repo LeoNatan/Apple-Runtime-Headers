@@ -18,13 +18,13 @@
     NSLayoutConstraint *_subtitleLabelBottomConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *subtitleLabelBottomConstraint; // @synthesize subtitleLabelBottomConstraint=_subtitleLabelBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelTopConstraint; // @synthesize titleLabelTopConstraint=_titleLabelTopConstraint;
 @property(readonly, nonatomic) SVAutoLayoutLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) SVAutoLayoutLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)determineNumberOfLines;
 - (void)updateFonts;
 - (void)preferredContentSizeCategoryDidChange;

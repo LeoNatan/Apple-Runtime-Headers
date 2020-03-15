@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _count;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 count:(unsigned long long)arg2;
 
 @end

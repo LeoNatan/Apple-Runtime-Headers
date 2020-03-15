@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)batteryDisplayIdentifier;
-@property(retain, nonatomic) _UIStatusBarImageView *batteryImageView; // @synthesize batteryImageView=_batteryImageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _UIStatusBarImageView *batteryImageView; // @synthesize batteryImageView=_batteryImageView;
 - (id)viewForIdentifier:(id)arg1;
 - (void)_create_batteryImageView;
 - (id)_batteryFillColorForEntry:(id)arg1 usingTintColor:(id)arg2;

@@ -22,6 +22,7 @@
     CDUnknownBlockType _impl_implementorDisplayNameWithLengthCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType impl_implementorDisplayNameWithLengthCallback; // @synthesize impl_implementorDisplayNameWithLengthCallback=_impl_implementorDisplayNameWithLengthCallback;
 @property(copy, nonatomic) CDUnknownBlockType impl_implementorValueFromStringCallback; // @synthesize impl_implementorValueFromStringCallback=_impl_implementorValueFromStringCallback;
 @property(copy, nonatomic) CDUnknownBlockType impl_implementorStringFromValueCallback; // @synthesize impl_implementorStringFromValueCallback=_impl_implementorStringFromValueCallback;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long indexInGroup; // @synthesize indexInGroup=_indexInGroup;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_deserialize:(struct CADeserializer *)arg1;
 - (void)_serialize:(struct CASerializer *)arg1;
 - (id)displayNameWithLength:(long long)arg1;

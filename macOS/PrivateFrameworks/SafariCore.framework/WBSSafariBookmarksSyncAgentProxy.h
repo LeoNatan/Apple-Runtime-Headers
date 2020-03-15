@@ -16,12 +16,13 @@
 }
 
 + (id)sharedProxy;
-@property(retain) NSXPCConnection *_connection; // @synthesize _connection=__connection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *_connection; // @synthesize _connection=__connection;
 - (void)migrateToCloudKitWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)generateDAVServerIDsForExistingBookmarksWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearLocalDataIncludingMigrationState:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetToDAVDatabaseWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getCloudTabContainerManateeStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getCloudTabDevicesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchSyncedCloudTabDevicesAndCloseRequestsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deleteCloudTabCloseRequestsWithUUIDStrings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -19,8 +19,8 @@
 + (id)URLForRecordID:(id)arg1 fieldName:(id)arg2;
 + (void)unregister;
 + (void)setupWithArticleDatabase:(id)arg1;
-@property(retain, nonatomic) FCCKContentFetchOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCCKContentFetchOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
 - (void)stopLoading;
 - (void)startLoading;
 

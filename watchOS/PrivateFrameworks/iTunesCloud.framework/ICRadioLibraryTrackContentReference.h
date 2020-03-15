@@ -34,6 +34,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *year; // @synthesize year=_year;
 @property(copy, nonatomic) NSNumber *trackNumber; // @synthesize trackNumber=_trackNumber;
 @property(copy, nonatomic) NSNumber *trackCount; // @synthesize trackCount=_trackCount;
@@ -52,7 +53,6 @@
 @property(copy, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(copy, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 @property(copy, nonatomic) NSString *albumArtistName; // @synthesize albumArtistName=_albumArtistName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     double _strokeWidth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(retain, nonatomic) UIColor *selectionRingColor; // @synthesize selectionRingColor=_selectionRingColor;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

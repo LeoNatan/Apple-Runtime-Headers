@@ -23,13 +23,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) PKFirmwareBundleComponent *packageFirmwareBundleComponent; // @synthesize packageFirmwareBundleComponent=_packageFirmwareBundleComponent;
 @property(retain) PKPackageSpecifier *packageSpecifier; // @synthesize packageSpecifier=_packageSpecifier;
 @property(retain) NSArray *buildVariants; // @synthesize buildVariants=_buildVariants;
 @property(retain) NSArray *supportedDevices; // @synthesize supportedDevices=_supportedDevices;
 @property(retain) PKBundleComponentVersion *bundleComponentVersion; // @synthesize bundleComponentVersion=_bundleComponentVersion;
 @property(retain) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -58,6 +58,7 @@
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
 + (_Bool)areScrollingTabsAllowed;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(nonatomic) _Bool chargeEnabledOnTabBarButtonsContainer; // @synthesize chargeEnabledOnTabBarButtonsContainer=_chargeEnabledOnTabBarButtonsContainer;
 @property(nonatomic) struct UIOffset additionalTabBarPalettePositionOffset; // @synthesize additionalTabBarPalettePositionOffset=_additionalTabBarPalettePositionOffset;
@@ -65,7 +66,6 @@
 @property(copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
 @property(retain, nonatomic) UIViewController *transientViewController; // @synthesize transientViewController=_transientViewController;
 @property(nonatomic) id <SKUITabBarControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_viewControllerNeedsNestedPagingScrollViewUpdate:(id)arg1;
 - (CDStruct_17994511)_viewControllerContentScrollViewContentInsetDescriptor;
 - (void)_updateViewControllerContentScrollViewInset;

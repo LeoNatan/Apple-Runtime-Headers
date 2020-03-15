@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifier;
-@property(copy, nonatomic) CDUnknownBlockType stateChangeHandler; // @synthesize stateChangeHandler=_stateChangeHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType stateChangeHandler; // @synthesize stateChangeHandler=_stateChangeHandler;
 - (void)switchValueChanged:(id)arg1;
 - (void)setData:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

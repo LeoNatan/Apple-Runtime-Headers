@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (id)syncStartDisplayIdentifier;
 + (id)pillDisplayIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarActivityIndicator *syncStartView; // @synthesize syncStartView=_syncStartView;
 @property(retain, nonatomic) _UIStatusBarActivityView *activityView; // @synthesize activityView=_activityView;
-- (void).cxx_destruct;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;

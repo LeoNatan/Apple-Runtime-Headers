@@ -17,10 +17,10 @@
 
 + (id)predicateWithTitle:(id)arg1 location:(id)arg2 notes:(id)arg3 participantNames:(id)arg4 calendars:(id)arg5;
 + (id)predicateWithCalendars:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *participantNames; // @synthesize participantNames=_participantNames;
 @property(retain, nonatomic) NSString *notes; // @synthesize notes=_notes;
 @property(retain, nonatomic) NSString *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (BOOL)evaluateWithObject:(id)arg1;
 - (unsigned long long)entityType;
 - (BOOL)_includeCalendarTitleInSearchTerm;

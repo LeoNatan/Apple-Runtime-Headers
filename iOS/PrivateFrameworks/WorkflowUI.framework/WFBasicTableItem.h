@@ -16,11 +16,11 @@
     unsigned long long _primaryTextStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long primaryTextStyle; // @synthesize primaryTextStyle=_primaryTextStyle;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(copy, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (void)configureCell:(id)arg1;
 - (id)initWithStyle:(long long)arg1 primaryText:(id)arg2 secondaryText:(id)arg3 image:(id)arg4;

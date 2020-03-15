@@ -26,6 +26,7 @@
 + (id)sentenceTokenizerWithString:(id)arg1 locale:(id)arg2;
 + (id)wordTokenizerWithString:(id)arg1 locale:(id)arg2;
 + (id)bestLanguageForString:(id)arg1 inRange:(struct _NSRange)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long tokenizerUnit; // @synthesize tokenizerUnit=_tokenizerUnit;
 @property(readonly, copy, nonatomic) NSString *inputString; // @synthesize inputString=_inputString;
 @property(copy, nonatomic) NSString *currentTokenLanguageID; // @synthesize currentTokenLanguageID=_currentTokenLanguageID;
@@ -33,7 +34,6 @@
 @property(nonatomic) struct _NSRange currentTokenRange; // @synthesize currentTokenRange=_currentTokenRange;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(nonatomic) BOOL shouldTrimWhitespaceAndNewLine; // @synthesize shouldTrimWhitespaceAndNewLine=_shouldTrimWhitespaceAndNewLine;
-- (void).cxx_destruct;
 - (struct __CFStringTokenizer *)_tokenizer;
 - (BOOL)moveToTokenAtIndex:(long long)arg1;
 - (BOOL)moveToPreviousToken;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) NSLayoutConstraint *nonSymbolImageHeight; // @synthesize nonSymbolImageHeight=_nonSymbolImageHeight;
 @property(retain, nonatomic) NSLayoutConstraint *nonSymbolImageWidth; // @synthesize nonSymbolImageWidth=_nonSymbolImageWidth;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIStackView *labelStackView; // @synthesize labelStackView=_labelStackView;
 @property(nonatomic) BOOL destructive; // @synthesize destructive=_destructive;
 @property(nonatomic) BOOL disabled; // @synthesize disabled=_disabled;
-- (void).cxx_destruct;
 - (struct CGSize)_maxImageSize;
 - (id)_imageTintColor;
 - (id)_subtitleTextColor;

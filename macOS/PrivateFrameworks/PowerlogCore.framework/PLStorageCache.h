@@ -22,6 +22,7 @@
 
 + (void)syncAndDispatchForEntryCache:(id)arg1 forEntryKey:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 + (id)sharedStorageCache;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *countSafetyDrop; // @synthesize countSafetyDrop=_countSafetyDrop;
 @property(retain) NSMutableDictionary *countWarnings; // @synthesize countWarnings=_countWarnings;
 @property(retain, nonatomic) NSDate *lastCacheFlushDate; // @synthesize lastCacheFlushDate=_lastCacheFlushDate;
@@ -30,7 +31,6 @@
 @property(retain) NSMutableDictionary *lastEntryCache; // @synthesize lastEntryCache=_lastEntryCache;
 @property long long stagingEntryCacheSize; // @synthesize stagingEntryCacheSize=_stagingEntryCacheSize;
 @property long long lastEntryCacheSize; // @synthesize lastEntryCacheSize=_lastEntryCacheSize;
-- (void).cxx_destruct;
 - (id)matchingPairs:(id)arg1;
 - (id)getEntryFromDBForEntryKey:(id)arg1 withMatchingKeyToValue:(id)arg2;
 - (id)getQueryForAggregateEntryKey:(id)arg1 withMatchingKeyToValue:(id)arg2;

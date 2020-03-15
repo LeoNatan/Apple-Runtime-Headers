@@ -14,8 +14,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) HMDRemoteLoginProxyAuthenticationRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMDRemoteLoginProxyAuthenticationRequest *request; // @synthesize request=_request;
 - (void)_authenticate;
 - (void)authenticate;
 - (id)description;

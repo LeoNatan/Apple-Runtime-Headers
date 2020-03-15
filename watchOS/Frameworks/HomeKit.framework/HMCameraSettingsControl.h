@@ -13,8 +13,8 @@
     _HMCameraSettingsControl *_settingsControl;
 }
 
-@property(retain, nonatomic) _HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
 @property(readonly, nonatomic) HMCharacteristic *imageMirroring;
 @property(readonly, nonatomic) HMCharacteristic *imageRotation;
 @property(readonly, nonatomic) HMCharacteristic *digitalZoom;

@@ -36,6 +36,7 @@
 }
 
 + (Class)networkEventGroupsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *networkEventGroups; // @synthesize networkEventGroups=_networkEventGroups;
 @property(retain, nonatomic) NSString *userStorefrontId; // @synthesize userStorefrontId=_userStorefrontId;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(retain, nonatomic) NSString *devicePlatform; // @synthesize devicePlatform=_devicePlatform;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

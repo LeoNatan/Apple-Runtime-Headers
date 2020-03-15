@@ -29,8 +29,8 @@
     int _prevLeft;
     int _prevRight;
     int _stableFrames;
-    int _lastFrameWidth;
-    int _lastFrameHeight;
+    unsigned long long _lastFrameWidth;
+    unsigned long long _lastFrameHeight;
 }
 
 + (void)initialize;
@@ -40,8 +40,8 @@
 - (id)detectSignatureInImage:(id)arg1;
 - (id)detectSignatureInPixelBuffer:(struct __CVBuffer *)arg1;
 - (id)_detectWithStabilization:(BOOL)arg1;
-- (id)_signatureForRect:(CDStruct_a734b2e2)arg1 baselineHeight:(double)arg2;
-- (void)_generateImagesForFrameWidth:(int)arg1 height:(int)arg2;
+- (id)_signatureForRect:(CDStruct_33dcf794)arg1 baselineHeight:(double)arg2;
+- (void)_generateImagesForFrameWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)init;
 

@@ -23,6 +23,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long DeleteItems; // @synthesize DeleteItems=_DeleteItems;
 @property(nonatomic) long long EditItems; // @synthesize EditItems=_EditItems;
 @property(nonatomic) BOOL IsFolderContact; // @synthesize IsFolderContact=_IsFolderContact;
@@ -31,7 +32,6 @@
 @property(nonatomic) BOOL CanCreateSubFolders; // @synthesize CanCreateSubFolders=_CanCreateSubFolders;
 @property(nonatomic) BOOL CanCreateItems; // @synthesize CanCreateItems=_CanCreateItems;
 @property(retain, nonatomic) EWSUserIdType *UserId; // @synthesize UserId=_UserId;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

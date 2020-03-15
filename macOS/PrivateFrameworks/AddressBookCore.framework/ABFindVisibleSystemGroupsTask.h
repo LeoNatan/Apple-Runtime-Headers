@@ -13,8 +13,8 @@
     ABAddressBook *_addressBook;
 }
 
-@property(readonly) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 - (void).cxx_destruct;
+@property(readonly) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 - (id)findDupesOfHomeGroups:(id)arg1;
 - (id)findHomeGroups;
 - (id)run:(id *)arg1;

@@ -14,9 +14,9 @@
     CDUnknownBlockType _progressHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) NSUUID *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
-- (void).cxx_destruct;
 - (id)initWithAccessoryUUID:(id)arg1 progressHandler:(CDUnknownBlockType)arg2;
 
 @end

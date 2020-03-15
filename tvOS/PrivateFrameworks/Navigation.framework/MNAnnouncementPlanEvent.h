@@ -20,6 +20,7 @@
     NSMutableArray *_announcementDurations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *announcementDurations; // @synthesize announcementDurations=_announcementDurations;
 @property(nonatomic) double speed; // @synthesize speed=_speed;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
@@ -28,7 +29,6 @@
 @property(nonatomic) unsigned long long variantIndex; // @synthesize variantIndex=_variantIndex;
 @property(nonatomic) _Bool includeInPlan; // @synthesize includeInPlan=_includeInPlan;
 @property(retain, nonatomic) GEOComposedGuidanceEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double completionDistance;
 - (id)description;
 - (id)initWithEvent:(id)arg1 distance:(double)arg2 speed:(double)arg3 manager:(id)arg4;

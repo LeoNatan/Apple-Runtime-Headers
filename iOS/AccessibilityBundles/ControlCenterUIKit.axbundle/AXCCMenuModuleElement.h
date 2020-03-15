@@ -12,9 +12,9 @@
     CDUnknownBlockType _provider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType provider; // @synthesize provider=_provider;
 @property(nonatomic) long long index; // @synthesize index=_index;
-- (void).cxx_destruct;
 - (_Bool)isAccessibilityElement;
 - (id)accessibilityHint;
 - (unsigned long long)accessibilityTraits;

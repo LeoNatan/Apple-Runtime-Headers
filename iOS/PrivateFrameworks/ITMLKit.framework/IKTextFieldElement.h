@@ -14,8 +14,8 @@
 }
 
 + (id)supportedFeatures;
-@property(readonly, nonatomic) IKAppKeyboard *keyboard; // @synthesize keyboard=_keyboard;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKAppKeyboard *keyboard; // @synthesize keyboard=_keyboard;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

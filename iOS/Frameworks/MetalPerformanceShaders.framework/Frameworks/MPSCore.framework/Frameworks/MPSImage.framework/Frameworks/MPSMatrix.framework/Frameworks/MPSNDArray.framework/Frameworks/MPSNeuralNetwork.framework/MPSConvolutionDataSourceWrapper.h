@@ -17,7 +17,7 @@
     MPSCNNConvolutionDescriptor *_convolution;
     NSObject *_batchNorm;
     MPSNNNeuronDescriptor *_neuron;
-    // Error parsing type: {atomic<long>="__a_"Aq}, name: _loadCount
+    // Error parsing type: {atomic<long>="__a_"{__cxx_atomic_impl<long, std::__1::__cxx_atomic_base_impl<long> >="__a_value"Aq}}, name: _loadCount
 }
 
 + (id)wrapperForDataSource:(id)arg1;

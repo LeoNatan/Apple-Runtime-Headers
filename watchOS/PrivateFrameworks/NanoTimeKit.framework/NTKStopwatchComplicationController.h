@@ -17,8 +17,8 @@
 }
 
 + (_Bool)_acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-@property(retain, nonatomic) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateDisplay;
 - (void)_handleStopwatchChange;

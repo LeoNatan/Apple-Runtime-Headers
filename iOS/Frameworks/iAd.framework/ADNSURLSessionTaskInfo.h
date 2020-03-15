@@ -17,11 +17,11 @@
     NSArray *_modes;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSArray *modes; // @synthesize modes=_modes;
 @property(retain) NSThread *thread; // @synthesize thread=_thread;
 @property __weak id <NSURLSessionDataDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSURLSessionDataTask *task; // @synthesize task=_task;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)performBlockOnClientThread:(CDUnknownBlockType)arg1;
 - (void)perform:(CDUnknownBlockType)arg1 waitUntilDone:(_Bool)arg2;

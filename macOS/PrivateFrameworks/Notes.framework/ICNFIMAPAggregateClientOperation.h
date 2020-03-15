@@ -13,8 +13,8 @@
     NSArray *_operations;
 }
 
-@property(readonly, copy, nonatomic) NSArray *operations; // @synthesize operations=_operations;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *operations; // @synthesize operations=_operations;
 - (void)cleanupAfterCompletion;
 - (void)setGateway:(id)arg1;
 - (long long)composition;

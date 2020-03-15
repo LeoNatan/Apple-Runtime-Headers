@@ -15,9 +15,9 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(copy, nonatomic) UIBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)shapeLayer;
 
 @end

@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
     NSString *_contactIdentifier;
 }
 
++ (unsigned long long)instanceSortOrder;
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
+- (long long)comparisonResultWithinSameClass:(id)arg1;
 - (void)acceptEventVisitor:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

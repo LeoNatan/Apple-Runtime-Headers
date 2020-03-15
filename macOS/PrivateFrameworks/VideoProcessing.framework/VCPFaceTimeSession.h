@@ -19,10 +19,10 @@
 + (id)createWithSessionID:(id)arg1 callerID:(id)arg2 andDate:(id)arg3;
 + (id)session;
 + (id)sessionFromManagedObject:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) NSString *callerID; // @synthesize callerID=_callerID;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (void)addFace:(id)arg1;
 @property(readonly, nonatomic) NSArray *faces;
 - (id)description;

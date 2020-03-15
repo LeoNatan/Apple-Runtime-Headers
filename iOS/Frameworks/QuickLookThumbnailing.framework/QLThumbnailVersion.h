@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSData *versionIdentifier; // @synthesize versionIdentifier=_versionIdentifier;
 @property unsigned long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(copy) NSString *generatorVersion; // @synthesize generatorVersion=_generatorVersion;
 @property(copy) NSString *generatorID; // @synthesize generatorID=_generatorID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

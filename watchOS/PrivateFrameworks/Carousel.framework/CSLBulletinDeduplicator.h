@@ -25,11 +25,11 @@
     CDUnknownBlockType _sectionIdentifierMappingWithLocalSectionIDProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sectionIdentifierMappingWithLocalSectionIDProvider; // @synthesize sectionIdentifierMappingWithLocalSectionIDProvider=_sectionIdentifierMappingWithLocalSectionIDProvider;
 @property(copy, nonatomic) CDUnknownBlockType sectionIdentifierMappingWithMirroredSectionIDProvider; // @synthesize sectionIdentifierMappingWithMirroredSectionIDProvider=_sectionIdentifierMappingWithMirroredSectionIDProvider;
 @property(copy, nonatomic) CDUnknownBlockType sectionIdentifierMappingWithSectionIDProvider; // @synthesize sectionIdentifierMappingWithSectionIDProvider=_sectionIdentifierMappingWithSectionIDProvider;
 @property(copy, nonatomic) CDUnknownBlockType fireBulletin; // @synthesize fireBulletin=_fireBulletin;
-- (void).cxx_destruct;
 - (void)_purgeExpiredBulletins;
 - (id)_itemForAddedBulletin:(id)arg1 feed:(unsigned int)arg2 isLocal:(_Bool *)arg3;
 - (void)_invalidateAutoFireTimer;

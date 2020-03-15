@@ -18,10 +18,10 @@
     id <FCContentContext> _contentContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(retain, nonatomic) FCTranslationMap *translationMap; // @synthesize translationMap=_translationMap;
 @property(retain, nonatomic) FCAsyncSerialQueue *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)fetchTranslationProvider:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id <FCTranslationProvider> possiblyUnfetchedTranslationProvider;
 - (id)initWithContentContext:(id)arg1;

@@ -18,10 +18,10 @@
 + (id)buildRequiredOnlyWithAddress:(id)arg1;
 + (id)buildWithAddress:(id)arg1 withPageTitle:(id)arg2;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadPageTitle; // @synthesize payloadPageTitle=_payloadPageTitle;
 @property(copy, nonatomic) NSString *payloadBookmarkPath; // @synthesize payloadBookmarkPath=_payloadBookmarkPath;
 @property(copy, nonatomic) NSString *payloadAddress; // @synthesize payloadAddress=_payloadAddress;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -22,6 +22,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *eventId; // @synthesize eventId=_eventId;
 @property(retain, nonatomic) NSNumber *userConnected; // @synthesize userConnected=_userConnected;
 @property(retain, nonatomic) NSNumber *blocked; // @synthesize blocked=_blocked;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSNumber *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) EDAMContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSNumber *id; // @synthesize id=_id;
-- (void).cxx_destruct;
 
 @end
 

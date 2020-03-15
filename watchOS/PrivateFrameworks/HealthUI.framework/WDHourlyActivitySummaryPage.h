@@ -13,8 +13,8 @@
     NSArray *_activitySummaryItems;
 }
 
-@property(retain, nonatomic) NSArray *activitySummaryItems; // @synthesize activitySummaryItems=_activitySummaryItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *activitySummaryItems; // @synthesize activitySummaryItems=_activitySummaryItems;
 
 @end
 

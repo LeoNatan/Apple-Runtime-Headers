@@ -30,10 +30,10 @@
 + (void)_setupCompositePromise:(id)arg1 composition:(id)arg2;
 + (id)_findUnfinishedPromise:(id)arg1;
 + (id)_resultOfComposition:(id)arg1 errors:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSConditionLock *stateLock; // @synthesize stateLock=_stateLock;
 @property(retain, nonatomic) MTPromiseResult *promiseResult; // @synthesize promiseResult=_promiseResult;
 @property(retain, nonatomic) MTPromiseCompletionBlocks *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
-- (void).cxx_destruct;
 - (_Bool)_isFinished;
 - (void)_addBlock:(CDUnknownBlockType)arg1 orCallWithResult:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)nilValueCompletionHandlerAdapter;

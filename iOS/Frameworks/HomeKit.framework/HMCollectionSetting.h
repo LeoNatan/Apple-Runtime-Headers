@@ -19,8 +19,8 @@
 + (void)setItemValueClass:(Class)arg1 forKeyPath:(id)arg2;
 + (id)itemValueClassesForKeyPath:(id)arg1;
 + (id)defaultItemValueClasses;
-@property(readonly, copy) NSSet *itemValueClasses; // @synthesize itemValueClasses=_itemValueClasses;
 - (void).cxx_destruct;
+@property(readonly, copy) NSSet *itemValueClasses; // @synthesize itemValueClasses=_itemValueClasses;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)setItemValueClasses:(id)arg1;
 - (void)setItemValueClass:(Class)arg1;

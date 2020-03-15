@@ -17,8 +17,8 @@
     NTKKeylineTouchable *touchable;
 }
 
-@property(retain, nonatomic) NTKKeylineTouchable *touchable; // @synthesize touchable;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKKeylineTouchable *touchable; // @synthesize touchable;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithPath:(id)arg1 secondPath:(id)arg2;

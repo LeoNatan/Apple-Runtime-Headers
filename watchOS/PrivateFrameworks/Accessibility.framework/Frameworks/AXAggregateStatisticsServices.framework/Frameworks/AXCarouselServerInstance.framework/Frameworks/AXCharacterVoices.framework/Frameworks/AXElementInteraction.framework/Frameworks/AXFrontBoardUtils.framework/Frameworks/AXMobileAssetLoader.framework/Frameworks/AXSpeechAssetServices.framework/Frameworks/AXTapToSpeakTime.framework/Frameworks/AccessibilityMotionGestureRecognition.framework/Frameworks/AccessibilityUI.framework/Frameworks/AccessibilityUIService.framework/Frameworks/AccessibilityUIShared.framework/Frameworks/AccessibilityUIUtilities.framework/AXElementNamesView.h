@@ -19,13 +19,13 @@
     struct CGRect _boundsForLastReload;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didUpdateItems; // @synthesize didUpdateItems=_didUpdateItems;
 @property(nonatomic) struct CGRect boundsForLastReload; // @synthesize boundsForLastReload=_boundsForLastReload;
 @property(readonly, nonatomic) NSMutableArray *containers; // @synthesize containers=_containers;
 @property(retain, nonatomic) AXElementNamesStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(retain, nonatomic) NSObject<OS_os_log> *loggingFacility; // @synthesize loggingFacility=_loggingFacility;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)viewsInCycle;
 - (void)_arrangeNameViews:(id)arg1 withinContainer:(id)arg2;
 - (void)_adjustLabelPositionForView:(id)arg1 toAvoidCollidingWithView:(id)arg2;

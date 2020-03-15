@@ -31,6 +31,7 @@
     MSPCloudKitAccountAccess *_cloudAccess;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSPCloudKitAccountAccess *cloudAccess; // @synthesize cloudAccess=_cloudAccess;
 @property(nonatomic) __weak id <MSPCloudSynchronizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) MSPCloudSynchronizerRunConditions *runConditions; // @synthesize runConditions=_runConditions;
 @property(nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;
 @property(retain, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)runConditionsChanged:(id)arg1;
 - (unsigned long long)retryIntervalForError:(id)arg1;
 - (void)_merge;

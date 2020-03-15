@@ -35,6 +35,7 @@
     NSMutableArray *_localSearches;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *localSearches; // @synthesize localSearches=_localSearches;
 @property(retain, nonatomic) NSTimer *assetCountChangedTimer; // @synthesize assetCountChangedTimer=_assetCountChangedTimer;
 @property(retain, nonatomic) PHFetchResult *assetCountFetchResult; // @synthesize assetCountFetchResult=_assetCountFetchResult;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool isRegisteredForPhotoLibraryChanges; // @synthesize isRegisteredForPhotoLibraryChanges=_isRegisteredForPhotoLibraryChanges;
 @property(retain, nonatomic) PHAssetCollection *placesCollection; // @synthesize placesCollection=_placesCollection;
 @property(nonatomic) __weak id <PXPlacesSnapshotFactoryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tickAssetCountChangedTimer:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 - (_Bool)_imageExistsWithLocalIdentifier:(id)arg1;

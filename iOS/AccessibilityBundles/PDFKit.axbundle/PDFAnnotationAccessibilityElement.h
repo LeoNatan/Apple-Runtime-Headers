@@ -15,10 +15,10 @@
     NSMutableArray *_cachedAXElements;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *cachedAXElements; // @synthesize cachedAXElements=_cachedAXElements;
 @property(nonatomic) __weak PDFAnnotation *annotation; // @synthesize annotation=_annotation;
 @property(nonatomic) __weak PDFPage *page; // @synthesize page=_page;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_accessibilityIsButtonWidget;
 - (id)_accessibilityAnnotationFieldType;

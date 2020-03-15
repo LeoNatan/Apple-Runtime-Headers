@@ -13,8 +13,8 @@
     _PFDQDECallSite *_callSite;
 }
 
-@property(readonly) _PFDQDECallSite *callSite; // @synthesize callSite=_callSite;
 - (void).cxx_destruct;
+@property(readonly) _PFDQDECallSite *callSite; // @synthesize callSite=_callSite;
 - (id)backtraceWithPrefix:(id)arg1;
 - (id)init;
 

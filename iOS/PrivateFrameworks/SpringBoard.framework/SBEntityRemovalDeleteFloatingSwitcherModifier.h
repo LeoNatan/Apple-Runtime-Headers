@@ -16,8 +16,8 @@
     _Bool _blursFromAppLayout;
 }
 
-@property(nonatomic) _Bool blursFromAppLayout; // @synthesize blursFromAppLayout=_blursFromAppLayout;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool blursFromAppLayout; // @synthesize blursFromAppLayout=_blursFromAppLayout;
 - (_Bool)_isIndexToAppLayout:(unsigned long long)arg1;
 - (_Bool)_isIndexFromAppLayout:(unsigned long long)arg1;
 - (id)opacitySettings;

@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastUpdatedAt; // @synthesize lastUpdatedAt=_lastUpdatedAt;
 @property(nonatomic) _Bool throttled; // @synthesize throttled=_throttled;
 @property(retain, nonatomic) NSString *remainingBalance; // @synthesize remainingBalance=_remainingBalance;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool currentUsedPlan; // @synthesize currentUsedPlan=_currentUsedPlan;
 @property(nonatomic) long long planCategory; // @synthesize planCategory=_planCategory;
 @property(retain, nonatomic) NSString *planLabel; // @synthesize planLabel=_planLabel;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

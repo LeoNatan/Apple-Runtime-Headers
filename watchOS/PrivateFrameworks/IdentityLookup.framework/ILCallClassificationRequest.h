@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *callCommunications; // @synthesize callCommunications=_callCommunications;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *callCommunications; // @synthesize callCommunications=_callCommunications;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)hash;

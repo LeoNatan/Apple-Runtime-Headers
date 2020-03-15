@@ -23,8 +23,8 @@
 }
 
 + (id)presenter;
-@property(readonly, nonatomic) UINavigationController *modalRootViewController; // @synthesize modalRootViewController=_modalRootViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UINavigationController *modalRootViewController; // @synthesize modalRootViewController=_modalRootViewController;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)_forceOrientationBackToSupportedOrientation;
 - (void)_willRotateNotification:(id)arg1;

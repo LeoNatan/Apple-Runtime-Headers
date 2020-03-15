@@ -30,6 +30,7 @@
 + (id)parseRfc822Headers:(id)arg1 htmlContent:(id)arg2;
 + (id)simpleMailMessageFromHeadersOfMessage:(id)arg1;
 + (id)subjectByCleaningPrefixesInSubject:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) SGSimpleNamedEmailAddress *mailingList; // @synthesize mailingList=_mailingList;
 @property(readonly, nonatomic) NSArray *headers; // @synthesize headers=_headers;
 @property(nonatomic) _Bool isPartiallyDownloaded; // @synthesize isPartiallyDownloaded=_isPartiallyDownloaded;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSArray *to; // @synthesize to=_to;
 @property(copy, nonatomic) SGSimpleNamedEmailAddress *replyTo; // @synthesize replyTo=_replyTo;
 @property(copy, nonatomic) SGSimpleNamedEmailAddress *from; // @synthesize from=_from;
-- (void).cxx_destruct;
 - (id)spotlightUniqueIdentifier;
 - (id)spotlightBundleIdentifier;
 - (id)allRecipients;

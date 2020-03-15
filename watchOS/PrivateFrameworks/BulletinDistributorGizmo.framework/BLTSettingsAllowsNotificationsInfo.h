@@ -14,9 +14,9 @@
     unsigned int _refCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int refCount; // @synthesize refCount=_refCount;
 @property(retain, nonatomic) NSNumber *allowsNotifications; // @synthesize allowsNotifications=_allowsNotifications;
-- (void).cxx_destruct;
 
 @end
 

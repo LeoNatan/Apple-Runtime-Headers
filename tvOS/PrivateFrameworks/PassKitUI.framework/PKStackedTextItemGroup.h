@@ -13,8 +13,8 @@
     NSArray *_items;
 }
 
-@property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithItems:(id)arg1;

@@ -18,13 +18,13 @@
     struct CGSize _cornerRadii;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize cornerRadii; // @synthesize cornerRadii=_cornerRadii;
 @property(retain, nonatomic) HKStrokeStyle *tiledStrokeStyle; // @synthesize tiledStrokeStyle=_tiledStrokeStyle;
 @property(retain, nonatomic) HKFillStyle *selectedFillStyle; // @synthesize selectedFillStyle=_selectedFillStyle;
 @property(retain, nonatomic) HKFillStyle *unselectedFillStyle; // @synthesize unselectedFillStyle=_unselectedFillStyle;
 @property(retain, nonatomic) HKStrokeStyle *selectedStrokeStyle; // @synthesize selectedStrokeStyle=_selectedStrokeStyle;
 @property(retain, nonatomic) HKStrokeStyle *unselectedStrokeStyle; // @synthesize unselectedStrokeStyle=_unselectedStrokeStyle;
-- (void).cxx_destruct;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (_Bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (_Bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect)arg1 blockCoordinate:(id)arg2;

@@ -14,9 +14,9 @@
     NSArray *_overlappingVisits;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *overlappingVisits; // @synthesize overlappingVisits=_overlappingVisits;
 @property(retain, nonatomic) NSArray *devices; // @synthesize devices=_devices;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,9 +16,9 @@
     SARemoteDevice *_remoteDevice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) SARemoteDevice *remoteDevice; // @synthesize remoteDevice=_remoteDevice;
 @property(readonly, nonatomic) INCExtensionConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)resolveIntentSlotKeyPaths:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveIntentSlotKeyPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handleIntentWithCompletionHandler:(CDUnknownBlockType)arg1;

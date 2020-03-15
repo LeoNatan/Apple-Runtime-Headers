@@ -43,6 +43,7 @@
 }
 
 + (long long)_modeForZoomLevel:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UXView *footerMaskView; // @synthesize footerMaskView=_footerMaskView;
 @property(retain, nonatomic) PXPhotosGlobalFooterView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) PXCuratedLibraryFooterViewModel *footerViewModelIfLoaded; // @synthesize footerViewModelIfLoaded=_footerViewModelIfLoaded;
@@ -59,8 +60,7 @@
 @property(readonly, nonatomic) double footerMaskVerticalOffset; // @synthesize footerMaskVerticalOffset=_footerMaskVerticalOffset;
 @property(readonly, nonatomic) BOOL wantsFooterMask; // @synthesize wantsFooterMask=_wantsFooterMask;
 @property(nonatomic) __weak id <PXCuratedLibraryFooterControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
-- (struct NSObject *)presentingViewControllerForFooterViewModel:(id)arg1;
+- (id)presentingViewControllerForFooterViewModel:(id)arg1;
 - (void)photosGlobalFooterViewDidChangeHeight:(id)arg1;
 - (void)photosGlobalFooterView:(id)arg1 presentViewController:(id)arg2;
 - (void)scrollViewControllerContentBoundsDidChange:(id)arg1;

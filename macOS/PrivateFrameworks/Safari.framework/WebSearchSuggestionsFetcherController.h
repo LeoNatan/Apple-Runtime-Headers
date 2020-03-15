@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     WBSCompletionQuery *_completionQuery;
 }
 
-@property(retain, nonatomic) WBSCompletionQuery *completionQuery; // @synthesize completionQuery=_completionQuery;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WBSCompletionQuery *completionQuery; // @synthesize completionQuery=_completionQuery;
 - (void)fetcher:(id)arg1 didReceiveResponse:(id)arg2 originalQuery:(id)arg3;
 - (id)_fetcherForSuggestionsURLTemplate:(id)arg1;
 - (void)clearFetchers;

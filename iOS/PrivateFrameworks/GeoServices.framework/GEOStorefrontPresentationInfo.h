@@ -15,10 +15,10 @@
     NSURL *_overlayImageURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *overlayImageURL; // @synthesize overlayImageURL=_overlayImageURL;
 @property(readonly, nonatomic) GEOStorefrontView *standOffView; // @synthesize standOffView=_standOffView;
 @property(readonly, nonatomic) GEOStorefrontView *closeUpView; // @synthesize closeUpView=_closeUpView;
-- (void).cxx_destruct;
 - (id)initWithStorefrontPresentation:(id)arg1;
 - (id)init;
 

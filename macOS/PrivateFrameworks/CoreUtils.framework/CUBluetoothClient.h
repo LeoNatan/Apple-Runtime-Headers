@@ -9,7 +9,7 @@
 #import <CoreUtils/CBCentralManagerDelegate-Protocol.h>
 #import <CoreUtils/CBPeripheralManagerDelegate-Protocol.h>
 
-@class CBCentralManager, CBPeripheralManager, NSData, NSString;
+@class CBCentralManager, CBPeripheralManager, NSData, NSMutableArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUBluetoothClient : NSObject <CBCentralManagerDelegate, CBPeripheralManagerDelegate>
@@ -19,10 +19,10 @@
     BOOL _btCentralManagerNeeded;
     CBPeripheralManager *_btPeripheralManager;
     BOOL _btPeripheralManagerNeeded;
-    struct NSMutableDictionary *_btConnectedDevices;
-    struct NSMutableDictionary *_btPairedDevices;
+    NSMutableDictionary *_btConnectedDevices;
+    NSMutableDictionary *_btPairedDevices;
     BOOL _btPairedDevicesInitialized;
-    struct NSMutableArray *_findDeviceRequests;
+    NSMutableArray *_findDeviceRequests;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
     struct LogCategory *_ucat;
@@ -41,6 +41,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceUnpairedHandler; // @synthesize deviceUnpairedHandler=_deviceUnpairedHandler;
@@ -54,7 +55,6 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) int bluetoothState; // @synthesize bluetoothState=_bluetoothState;
-- (void).cxx_destruct;
 - (void)peripheralManagerDidUpdateState:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_handleBluetoothAddressChanged;

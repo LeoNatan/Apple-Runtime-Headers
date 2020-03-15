@@ -17,12 +17,12 @@
     NSArray *_messageToAddToWatch;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool trimed; // @synthesize trimed=_trimed;
 @property(retain, nonatomic) NSArray *messageToAddToWatch; // @synthesize messageToAddToWatch=_messageToAddToWatch;
 @property(retain, nonatomic) NSMutableSet *messageIdsToDeleteFromWatch; // @synthesize messageIdsToDeleteFromWatch=_messageIdsToDeleteFromWatch;
 @property(retain, nonatomic) NSMutableSet *messageIdsToUpdateOnWatch; // @synthesize messageIdsToUpdateOnWatch=_messageIdsToUpdateOnWatch;
 @property(retain, nonatomic) NSMutableSet *messageIdsToAddToWatch; // @synthesize messageIdsToAddToWatch=_messageIdsToAddToWatch;
-- (void).cxx_destruct;
 
 @end
 

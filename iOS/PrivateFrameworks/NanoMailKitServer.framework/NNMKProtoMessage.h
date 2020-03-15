@@ -43,6 +43,7 @@
 + (Class)ccType;
 + (Class)toType;
 + (id)protoMessageFromMessage:(id)arg1 organizedByThread:(_Bool)arg2 sanitizeMessageId:(_Bool)arg3 supportsStandaloneMode:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int statusVersion; // @synthesize statusVersion=_statusVersion;
 @property(retain, nonatomic) NSString *publisherBulletinId; // @synthesize publisherBulletinId=_publisherBulletinId;
 @property(nonatomic) unsigned int isSpecialMailboxSpecific; // @synthesize isSpecialMailboxSpecific=_isSpecialMailboxSpecific;
@@ -62,7 +63,6 @@
 @property(retain, nonatomic) NSString *conversationId; // @synthesize conversationId=_conversationId;
 @property(retain, nonatomic) NSString *accountId; // @synthesize accountId=_accountId;
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

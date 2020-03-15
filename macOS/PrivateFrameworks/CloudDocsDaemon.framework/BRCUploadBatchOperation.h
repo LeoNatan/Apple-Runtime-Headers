@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _perUploadCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType perUploadCompletionBlock; // @synthesize perUploadCompletionBlock=_perUploadCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType perUploadCompletionBlock; // @synthesize perUploadCompletionBlock=_perUploadCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)actionPrettyName;
 - (void)_uploadRecordsByID:(id)arg1;

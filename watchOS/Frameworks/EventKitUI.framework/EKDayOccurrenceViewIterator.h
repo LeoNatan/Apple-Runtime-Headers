@@ -17,10 +17,10 @@
     NSArray *_occurrenceViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *occurrenceViews; // @synthesize occurrenceViews=_occurrenceViews;
 @property int firstTimedOccurrenceIndex; // @synthesize firstTimedOccurrenceIndex=_firstTimedOccurrenceIndex;
 @property int currentIndex; // @synthesize currentIndex=_currentIndex;
-- (void).cxx_destruct;
 - (int)_firstTimedOccurrenceViewIndexInOccurrenceViews:(id)arg1;
 - (int)_selectedCopyOccurrenceViewIndexInOccurrenceViews:(id)arg1 selectedIndex:(int)arg2;
 - (int)_selectedOccurrenceViewIndexInOccurrenceViews:(id)arg1 selectedEvent:(id)arg2;

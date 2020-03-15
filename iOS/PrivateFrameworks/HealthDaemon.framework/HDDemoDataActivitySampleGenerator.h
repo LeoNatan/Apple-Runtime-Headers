@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HDDemoDataActivityWorkoutState *workoutState; // @synthesize workoutState=_workoutState;
 @property(retain, nonatomic) HDDemoDataGeneratorWorkoutConfiguration *currentWorkoutConfiguration; // @synthesize currentWorkoutConfiguration=_currentWorkoutConfiguration;
 @property(retain, nonatomic) HKActivityCache *lastActivityCache; // @synthesize lastActivityCache=_lastActivityCache;
@@ -49,7 +50,6 @@
 @property(nonatomic) double nextActiveCaloriesSampleTime; // @synthesize nextActiveCaloriesSampleTime=_nextActiveCaloriesSampleTime;
 @property(retain, nonatomic) HDDataOriginProvenance *provenance; // @synthesize provenance=_provenance;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (_Bool)_isDemoPersonInWorkoutRecovery:(id)arg1 atTime:(double)arg2;
 - (_Bool)_isDemoPersonWalking:(id)arg1 atTime:(double)arg2 samplePeriod:(double)arg3;
 - (_Bool)_isDemoPersonSedentary:(id)arg1 atTime:(double)arg2;

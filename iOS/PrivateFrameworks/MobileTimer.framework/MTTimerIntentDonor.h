@@ -18,10 +18,10 @@
     id <NAScheduler> _serializer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(readonly, nonatomic) NSMutableSet *donatedTimerIDs; // @synthesize donatedTimerIDs=_donatedTimerIDs;
 @property(readonly, nonatomic) MTTimerStorage *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)_queue_donateCreateTimerIntent:(id)arg1 source:(id)arg2;
 - (void)nextTimerDidChange:(id)arg1;
 - (void)source:(id)arg1 didDismissTimer:(id)arg2;

@@ -17,9 +17,9 @@
     CLKTextProvider *_textProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

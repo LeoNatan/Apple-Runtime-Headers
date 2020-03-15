@@ -37,6 +37,7 @@
     PHAdjustmentData *_originalAdjustmentData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHAdjustmentData *originalAdjustmentData; // @synthesize originalAdjustmentData=_originalAdjustmentData;
 @property(copy, nonatomic) NSURL *backSwappingVideoRenderURL; // @synthesize backSwappingVideoRenderURL=_backSwappingVideoRenderURL;
 @property(copy, nonatomic) NSURL *frontSwappingVideoRenderURL; // @synthesize frontSwappingVideoRenderURL=_frontSwappingVideoRenderURL;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) unsigned long long mediaSubtypes; // @synthesize mediaSubtypes=_mediaSubtypes;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_invalidateAVAsset;
 @property(readonly) AVAsset *audiovisualAsset; // @synthesize audiovisualAsset=_avAsset;

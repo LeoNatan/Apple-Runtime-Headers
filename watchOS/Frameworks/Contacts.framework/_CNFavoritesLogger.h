@@ -17,9 +17,9 @@
     NSObject<OS_os_log> *_summaryLog;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *summaryLog; // @synthesize summaryLog=_summaryLog;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (void)reportFavoritesAccessedBeforeFirstUnlock;
 - (void)_simulateCrashReportWithMessage:(id)arg1;
 - (void)failedToWriteFavoritesToPath:(id)arg1 error:(id)arg2 simulateCrashReport:(_Bool)arg3;

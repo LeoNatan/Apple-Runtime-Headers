@@ -23,6 +23,7 @@
     NSMutableArray *_countdownActions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *countdownActions; // @synthesize countdownActions=_countdownActions;
 @property(retain, nonatomic) SVTimeBasedAction *unlockAction; // @synthesize unlockAction=_unlockAction;
 @property(readonly, nonatomic) id <SVVideoSkipThresholdObserving> thresholdObserver; // @synthesize thresholdObserver=_thresholdObserver;
@@ -31,7 +32,6 @@
 @property(copy, nonatomic, setter=onUnlock:) CDUnknownBlockType unlockBlock; // @synthesize unlockBlock=_unlockBlock;
 @property(nonatomic) double countdown; // @synthesize countdown=_countdown;
 @property(nonatomic) _Bool locked; // @synthesize locked=_locked;
-- (void).cxx_destruct;
 - (void)scheduleUnlockActionWithThreshold:(double)arg1;
 - (void)scheduleCountdownActionsWithThreshold:(double)arg1;
 - (_Bool)lockStateForThresholdObserver:(id)arg1 onTimeline:(id)arg2;

@@ -13,8 +13,8 @@
     MPPlaybackArchive *_mediaPlayerPlaybackArchive;
 }
 
-@property(retain, nonatomic) MPPlaybackArchive *mediaPlayerPlaybackArchive; // @synthesize mediaPlayerPlaybackArchive=_mediaPlayerPlaybackArchive;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPPlaybackArchive *mediaPlayerPlaybackArchive; // @synthesize mediaPlayerPlaybackArchive=_mediaPlayerPlaybackArchive;
 @property(nonatomic, getter=isRepeatEnabled) BOOL repeatEnabled;
 @property(readonly, nonatomic) BOOL isRepeatSupported;
 @property(nonatomic, getter=isShuffleEnabled) BOOL shuffleEnabled;

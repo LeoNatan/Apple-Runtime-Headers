@@ -14,9 +14,9 @@
     NSString *_brandID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *brandID; // @synthesize brandID=_brandID;
 @property(readonly, copy, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
-- (void).cxx_destruct;
 - (id)initWithItemID:(id)arg1 itemType:(id)arg2 brandID:(id)arg3 caller:(id)arg4;
 
 @end

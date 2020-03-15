@@ -32,12 +32,12 @@
     double _showcaseFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool goesToForegroundOnFirstAppear; // @synthesize goesToForegroundOnFirstAppear=_goesToForegroundOnFirstAppear;
 @property(nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
 @property(readonly, nonatomic) UITapGestureRecognizer *menuGestureRecognizer; // @synthesize menuGestureRecognizer=_menuGestureRecognizer;
 @property(nonatomic) __weak id <TVMediaPlaybackManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIViewController<TVMediaController> *mediaController; // @synthesize mediaController=_mediaController;
-- (void).cxx_destruct;
 - (_Bool)_canMenu;
 - (_Bool)_canSwipeUp;
 - (_Bool)_shouldPause;

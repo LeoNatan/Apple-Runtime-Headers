@@ -182,7 +182,7 @@ struct nw_connection_report_s {
     unsigned char first_address_family;
     unsigned char connected_address_family;
     unsigned char connection_uuid[16];
-    unsigned char activities[10][16];
+    unsigned char activities[50][16];
     unsigned int triggered_path:1;
     unsigned int system_proxy_configured:1;
     unsigned int custom_proxy_configured:1;

@@ -28,6 +28,7 @@
 + (id)declarationForBundleIdentifier:(id)arg1 info:(id)arg2 entitlements:(id)arg3;
 + (id)requiredEntitlementKeys;
 + (id)requiredInfoKeys;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long _applicationCategory; // @synthesize _applicationCategory=__applicationCategory;
 @property(retain, nonatomic) NSSet *autoMakerProtocols; // @synthesize autoMakerProtocols=_autoMakerProtocols;
 @property(nonatomic) _Bool supportsMaps; // @synthesize supportsMaps=_supportsMaps;
@@ -39,7 +40,6 @@
 @property(nonatomic) _Bool requiresGeoSupport; // @synthesize requiresGeoSupport=_requiresGeoSupport;
 @property(nonatomic, getter=isSystemApp) _Bool systemApp; // @synthesize systemApp=_systemApp;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 
 @end
 

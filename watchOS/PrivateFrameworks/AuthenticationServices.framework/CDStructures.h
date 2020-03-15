@@ -25,7 +25,3 @@ struct CGSize {
     float _field2;
 };
 
-struct UIView {
-    Class _field1;
-};
-

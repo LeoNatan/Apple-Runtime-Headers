@@ -29,12 +29,12 @@
 }
 
 + (_Bool)_shouldDisallowAvailabilityNotifications;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) SUDescriptor *scanDescriptor; // @synthesize scanDescriptor=_scanDescriptor;
 @property(retain, nonatomic) SUDescriptor *installDescriptor; // @synthesize installDescriptor=_installDescriptor;
 @property(nonatomic) int clientType; // @synthesize clientType=_clientType;
 @property(nonatomic) __weak id <SUManagerClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)autoInstallOperationPasscodePolicyChanged:(id)arg1 passcodePolicyType:(unsigned long long)arg2;
 - (void)autoInstallOperationIsReadyToInstall:(id)arg1 withResult:(CDUnknownBlockType)arg2;
 - (void)autoInstallOperationDidConsent:(id)arg1;

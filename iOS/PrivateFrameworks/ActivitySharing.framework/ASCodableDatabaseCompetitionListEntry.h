@@ -22,11 +22,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSData *systemFieldsOnlyRecord; // @synthesize systemFieldsOnlyRecord=_systemFieldsOnlyRecord;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) NSData *friendUUID; // @synthesize friendUUID=_friendUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -39,8 +39,8 @@
 + (id)newMediaWithAttachment:(id)arg1 context:(id)arg2;
 + (id)newMediaWithIdentifier:(id)arg1 attachment:(id)arg2;
 + (id)newMediaWithIdentifier:(id)arg1 account:(id)arg2;
-@property(nonatomic) __weak ICAccount *placeholderAccount; // @synthesize placeholderAccount;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ICAccount *placeholderAccount; // @synthesize placeholderAccount;
 - (id)parentCloudObjectForMinimumSupportedVersionPropagation;
 - (id)parentCloudObject;
 - (_Bool)shouldFallBackToCheckAllCryptoKeys;

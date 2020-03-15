@@ -18,10 +18,10 @@
 
 + (id)consumerWithConstraintSize2:(struct CGSize)arg1;
 + (id)consumerWithConstraintSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double gradientHeight; // @synthesize gradientHeight=_gradientHeight;
 @property(retain, nonatomic) UIColor *gradientEndColor; // @synthesize gradientEndColor=_gradientEndColor;
 @property(nonatomic) struct CGSize constraintSize; // @synthesize constraintSize=_constraintSize;
-- (void).cxx_destruct;
 - (void)_drawGradientWithContext:(struct CGContext *)arg1 imageRect:(struct CGRect)arg2;
 - (id)imageForImage:(id)arg1;
 

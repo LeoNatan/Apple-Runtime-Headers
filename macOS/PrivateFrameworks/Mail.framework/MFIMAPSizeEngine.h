@@ -18,8 +18,8 @@
     long long _quotaStatus;
 }
 
-@property(nonatomic) long long quotaStatus; // @synthesize quotaStatus=_quotaStatus;
 - (void).cxx_destruct;
+@property(nonatomic) long long quotaStatus; // @synthesize quotaStatus=_quotaStatus;
 - (BOOL)mailbox:(id)arg1 usesQuotaName:(id)arg2;
 - (id)copyMailboxesForQuotaName:(id)arg1;
 - (id)usageForQuotaName:(id)arg1;

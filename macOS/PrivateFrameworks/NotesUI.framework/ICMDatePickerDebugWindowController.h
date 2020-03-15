@@ -17,11 +17,11 @@
 }
 
 + (id)datePickerWindowWithType:(unsigned char)arg1 representedObject:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char windowType; // @synthesize windowType=_windowType;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property __weak NSTextField *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property __weak NSDatePicker *datePicker; // @synthesize datePicker=_datePicker;
-- (void).cxx_destruct;
 - (void)cancel:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)datePickerAction:(id)arg1;

@@ -13,8 +13,8 @@
     APUIActionCardViewConfig *_cardViewConfig;
 }
 
-@property(readonly, nonatomic) APUIActionCardViewConfig *cardViewConfig; // @synthesize cardViewConfig=_cardViewConfig;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) APUIActionCardViewConfig *cardViewConfig; // @synthesize cardViewConfig=_cardViewConfig;
 - (id)initWithCardViewConfig:(id)arg1;
 
 @end

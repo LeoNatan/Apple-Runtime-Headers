@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)extensionPointQueryForIdentifier:(id)arg1 platform:(unsigned int)arg2 version:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

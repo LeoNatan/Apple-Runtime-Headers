@@ -14,8 +14,8 @@
     NSObject<OS_os_transaction> *_internal;
 }
 
-@property(retain, nonatomic) NSObject<OS_os_transaction> *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_os_transaction> *internal; // @synthesize internal=_internal;
 - (void)mark;
 - (void)invalidate;
 - (id)initWithName:(id)arg1;

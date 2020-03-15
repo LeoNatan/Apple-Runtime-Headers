@@ -18,13 +18,13 @@
     TVLStylesElement *_styles;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVLStylesElement *styles; // @synthesize styles=_styles;
 @property(copy, nonatomic) NSDictionary *eventHandlerScripts; // @synthesize eventHandlerScripts=_eventHandlerScripts;
 @property(readonly, copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) __weak TVLElement *parentFeedElement; // @synthesize parentFeedElement=_parentFeedElement;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) TVLDocument *feedDocument;
 - (_Bool)isEqual:(id)arg1;
 - (id)_stylesForKeyPath:(id)arg1;

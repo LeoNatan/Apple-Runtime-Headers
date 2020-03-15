@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)applyDefaultStyleToContact:(id)arg1 usingFormatter:(id)arg2 ofCell:(id)arg3;
-@property(readonly, nonatomic) id <CNContactListStyle> contactListStyle; // @synthesize contactListStyle=_contactListStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CNContactListStyle> contactListStyle; // @synthesize contactListStyle=_contactListStyle;
 - (void)applyContactListStyleToBannerFootnote:(id)arg1 primaryAppearance:(_Bool)arg2;
 - (void)applyContactListStyleToBannerTitle:(id)arg1 primaryAppearance:(_Bool)arg2;
 - (void)applyContactListStyleToEmergencyIcon:(id)arg1 ofCell:(id)arg2;

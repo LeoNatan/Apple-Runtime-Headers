@@ -20,13 +20,13 @@
     UIView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (double)_maxTextWidth;
 - (void)_updateColorsForUserInterfaceStyle:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

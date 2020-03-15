@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     MPArtworkCatalog *_artworkCatalog;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPArtworkCatalog *artworkCatalog; // @synthesize artworkCatalog=_artworkCatalog;
 @property(nonatomic) _Bool calculatedIdentifier; // @synthesize calculatedIdentifier=_calculatedIdentifier;
 @property(retain, nonatomic) MPMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(readonly, nonatomic) unsigned long long imageType; // @synthesize imageType=_imageType;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

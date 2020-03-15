@@ -35,13 +35,13 @@ __attribute__((visibility("hidden")))
 
 + (Class)recordTypesType;
 + (Class)filtersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRecordZoneIdentifier *zoneIdentifier; // @synthesize zoneIdentifier=_zoneIdentifier;
 @property(nonatomic) _Bool fireOnce; // @synthesize fireOnce=_fireOnce;
 @property(retain, nonatomic) NSMutableArray *recordTypes; // @synthesize recordTypes=_recordTypes;
 @property(retain, nonatomic) NSMutableArray *filters; // @synthesize filters=_filters;
 @property(retain, nonatomic) CKDPSubscriptionNotification *notification; // @synthesize notification=_notification;
 @property(retain, nonatomic) CKDPIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

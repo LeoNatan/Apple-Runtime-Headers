@@ -30,6 +30,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (double)timeout;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
 @property(retain, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
 @property(nonatomic, setter=setTTYType:) long long ttyType; // @synthesize ttyType=_ttyType;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) CXHandle *handle; // @synthesize handle=_handle;
 @property(nonatomic) struct CGSize localLandscapeAspectRatio; // @synthesize localLandscapeAspectRatio=_localLandscapeAspectRatio;
 @property(nonatomic) struct CGSize localPortraitAspectRatio; // @synthesize localPortraitAspectRatio=_localPortraitAspectRatio;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)updateCopy:(id)arg1 withZone:(struct _NSZone *)arg2;

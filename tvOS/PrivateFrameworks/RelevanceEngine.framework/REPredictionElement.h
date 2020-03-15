@@ -23,13 +23,13 @@
 + (_Bool)supportsSecureCoding;
 + (id)predictionElementFromElement:(id)arg1;
 + (id)predictionElementWithIdentifier:(id)arg1 relevanceProviders:(id)arg2 bundleIdentifier:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *section; // @synthesize section=_section;
 @property(readonly, nonatomic) NSString *interaction; // @synthesize interaction=_interaction;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) NSArray *relevanceProviders; // @synthesize relevanceProviders=_relevanceProviders;
 @property(readonly, nonatomic) unsigned long long privacyBehavior; // @synthesize privacyBehavior=_privacyBehavior;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

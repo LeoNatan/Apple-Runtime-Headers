@@ -15,10 +15,10 @@
     UIColor *_unhighlightedBackgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *unhighlightedBackgroundColor; // @synthesize unhighlightedBackgroundColor=_unhighlightedBackgroundColor;
 @property(retain, nonatomic) UIColor *highlightedBackgroundColor; // @synthesize highlightedBackgroundColor=_highlightedBackgroundColor;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
-- (void).cxx_destruct;
 - (void)updateBackgroundColor;
 - (id)initWithFrame:(struct CGRect)arg1;
 

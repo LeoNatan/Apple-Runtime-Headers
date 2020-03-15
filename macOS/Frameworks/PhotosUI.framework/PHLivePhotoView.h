@@ -42,6 +42,7 @@
     struct CGPoint _scaleAnchorOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint scaleAnchorOffset; // @synthesize scaleAnchorOffset=_scaleAnchorOffset;
 @property(retain, nonatomic) NSView *photoView; // @synthesize photoView=_photoView;
 @property(nonatomic) BOOL showsStatusBorder; // @synthesize showsStatusBorder=_showsStatusBorder;
@@ -59,7 +60,6 @@
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(retain, nonatomic) PHLivePhoto *livePhoto; // @synthesize livePhoto=_livePhoto;
 @property(nonatomic) __weak id <PHLivePhotoViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handleEvent:(id)arg1 onBadgeView:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_handleVideoPlayerChange;

@@ -35,6 +35,7 @@
     NSArray *_selectedEntries;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *selectedEntries; // @synthesize selectedEntries=_selectedEntries;
 @property(nonatomic) unsigned long long countOfContactsSelected; // @synthesize countOfContactsSelected=_countOfContactsSelected;
 @property(nonatomic) unsigned long long selectionLimit; // @synthesize selectionLimit=_selectionLimit;
@@ -52,7 +53,6 @@
 @property(retain, nonatomic) ABAddressBook *suggestionAddressBook; // @synthesize suggestionAddressBook=_suggestionAddressBook;
 @property(retain, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain) ABAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)accessibilityPressRowWithView:(id)arg1;
 - (void)cellViewController:(id)arg1 selectValueWithScope:(id)arg2;
 - (BOOL)shouldIncludeSuggestions;
@@ -73,6 +73,10 @@
 - (void)reflectChangesInUIForNotificationUserInfo:(id)arg1;
 - (void)resetCountOfContactsExpanded;
 @property(readonly, nonatomic) unsigned long long countOfContactsExpanded;
+- (void)reflectEmptyListWithNilSelection;
+- (void)resetSelectedEntriesIfNoEntriesAreAvailable;
+- (void)restoreSelection:(id)arg1;
+- (void)reload;
 - (void)reloadAndRestoreSelection;
 - (void)personEntriesDidChange:(id)arg1;
 - (id)fetchPredicate;
@@ -88,9 +92,11 @@
 - (id)selectionScopeForSelectedRow:(unsigned long long)arg1;
 - (void)performActionForRowAtIndex:(long long)arg1;
 - (void)performAppropriateUserInteraction;
+- (void)notifyDelegateThatSelectionChanged;
 - (void)updateOverallCountOfSelectedContacts;
 - (void)saveSnapshotOfSelectedEntries;
 - (void)outlineViewSelectionDidChange:(id)arg1;
+- (void)selectRows:(id)arg1;
 - (void)selectRow:(long long)arg1;
 - (BOOL)isValidRow:(long long)arg1;
 - (BOOL)isHeaderRow:(unsigned long long)arg1;
@@ -109,13 +115,14 @@
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
 - (void)performInitialSelection;
 @property(readonly, nonatomic) NSArray *identifiersOfSelectedContacts;
+- (void)resetStateOfContactList;
 - (void)setupCellView;
 - (void)registerNibWithName:(id)arg1 forIdentifier:(id)arg2;
 - (void)setupListView;
 - (void)performDoubleAction:(id)arg1;
 - (void)setHeadliner:(id)arg1;
 - (void)dealloc;
-- (id)initWithPersonEntriesList:(id)arg1 selectionStyle:(unsigned long long)arg2 selectionLimit:(unsigned long long)arg3;
+- (id)initWithPersonEntriesList:(id)arg1 addressBook:(id)arg2 suggestionAddressBook:(id)arg3 selectionStyle:(unsigned long long)arg4 selectionLimit:(unsigned long long)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

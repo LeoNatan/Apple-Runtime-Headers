@@ -20,9 +20,9 @@
     CDUnknownBlockType _updateHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(nonatomic) _Bool sortStartDateAscending; // @synthesize sortStartDateAscending=_sortStartDateAscending;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)execute;
 - (void)handleAddedObjects:(id)arg1 deletedObjects:(id)arg2 queryAnchor:(id)arg3 error:(id)arg4 resultsHandler:(CDUnknownBlockType)arg5;

@@ -15,9 +15,9 @@
 }
 
 + (id)makeUniqueKey;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(copy, nonatomic) id <NSObject><NSCopying> requestKey; // @synthesize requestKey=_requestKey;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

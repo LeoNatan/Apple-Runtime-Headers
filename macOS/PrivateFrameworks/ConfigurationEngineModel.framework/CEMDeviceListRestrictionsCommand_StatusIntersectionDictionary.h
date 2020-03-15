@@ -16,8 +16,8 @@
 + (id)buildRequiredOnly;
 + (id)build;
 + (id)allowedStatusKeys;
-@property(copy, nonatomic) NSDictionary *statusANY; // @synthesize statusANY=_statusANY;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *statusANY; // @synthesize statusANY=_statusANY;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

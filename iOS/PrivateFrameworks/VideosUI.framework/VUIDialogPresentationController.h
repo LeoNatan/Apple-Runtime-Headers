@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     struct CGSize _modalSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completedAnimationBlock; // @synthesize completedAnimationBlock=_completedAnimationBlock;
 @property(nonatomic) struct CGSize modalSize; // @synthesize modalSize=_modalSize;
-- (void).cxx_destruct;
 - (void)_tapGesture:(id)arg1;
 - (void)_layoutPresentedView;
 @property(readonly, nonatomic) UIVisualEffectView *backdropView;

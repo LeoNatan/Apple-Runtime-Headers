@@ -27,6 +27,7 @@
 
 + (_Bool)hasMessageReceiverChildren;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *pendingReprovisionRequests; // @synthesize pendingReprovisionRequests=_pendingReprovisionRequests;
 @property(retain, nonatomic) HMFTimer *disableReprovisionBrowsingTimer; // @synthesize disableReprovisionBrowsingTimer=_disableReprovisionBrowsingTimer;
 @property(nonatomic, getter=isReprovisionBrowsingPending) _Bool reprovisionBrowsingPending; // @synthesize reprovisionBrowsingPending=_reprovisionBrowsingPending;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 - (id)messageDestination;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;

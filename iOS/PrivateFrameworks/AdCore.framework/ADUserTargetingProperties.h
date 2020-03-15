@@ -66,6 +66,7 @@
 
 + (Class)targetingType;
 + (Class)userKeyboardType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *storeFrontLanguageLocaleIdentifier; // @synthesize storeFrontLanguageLocaleIdentifier=_storeFrontLanguageLocaleIdentifier;
 @property(nonatomic) _Bool isOnInternationalDataRoaming; // @synthesize isOnInternationalDataRoaming=_isOnInternationalDataRoaming;
 @property(retain, nonatomic) NSString *currentCarrierMCC; // @synthesize currentCarrierMCC=_currentCarrierMCC;
@@ -98,7 +99,6 @@
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(nonatomic) double clientClockTime; // @synthesize clientClockTime=_clientClockTime;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

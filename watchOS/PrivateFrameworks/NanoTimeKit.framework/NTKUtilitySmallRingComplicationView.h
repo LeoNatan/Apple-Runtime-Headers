@@ -15,9 +15,9 @@
     float _fillFraction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float fillFraction; // @synthesize fillFraction=_fillFraction;
 @property(retain, nonatomic) NTKColoringImageView *fillFractionRing; // @synthesize fillFractionRing=_fillFractionRing;
-- (void).cxx_destruct;
 - (id)ringColor;
 - (void)_enumerateColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)updateRingWithRingDescription:(id)arg1 backgroundRingAlpha:(float)arg2;

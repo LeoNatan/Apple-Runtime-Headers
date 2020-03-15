@@ -15,9 +15,9 @@
     TIMecabraWrapper *_mecabraWrapper;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPartialCandidate) BOOL partialCandidate; // @synthesize partialCandidate=_partialCandidate;
 @property(retain, nonatomic) TIMecabraWrapper *mecabraWrapper; // @synthesize mecabraWrapper=_mecabraWrapper;
-- (void).cxx_destruct;
 - (void)perform;
 - (void)cancel;
 - (void)dealloc;

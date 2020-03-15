@@ -26,6 +26,7 @@
 + (id)fieldTemplateWithViewSubclass:(Class)arg1;
 + (id)fieldTemplateWithVerticalPadding:(double)arg1;
 + (id)fieldTemplateWithTextAlignment:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *boxedSuppressesEmptyLabel; // @synthesize boxedSuppressesEmptyLabel=_boxedSuppressesEmptyLabel;
 @property(retain, nonatomic) NSNumber *boxedValueCanWrap; // @synthesize boxedValueCanWrap=_boxedValueCanWrap;
 @property(retain, nonatomic) NSNumber *boxedValueSignificant; // @synthesize boxedValueSignificant=_boxedValueSignificant;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) Class viewSubclass; // @synthesize viewSubclass=_viewSubclass;
 @property(retain, nonatomic) UIFont *valueFont; // @synthesize valueFont=_valueFont;
 @property(retain, nonatomic) UIFont *labelFont; // @synthesize labelFont=_labelFont;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool valueCanWrap;
 @property(nonatomic) _Bool valueSignificant;
 @property(nonatomic) long long labelCaseStyle;

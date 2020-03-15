@@ -20,12 +20,12 @@
     unsigned long long _accumulatorBufferSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CalLogWriter> writer; // @synthesize writer=_writer;
 @property(nonatomic) unsigned long long accumulatorBufferSize; // @synthesize accumulatorBufferSize=_accumulatorBufferSize;
 @property(retain, nonatomic) NSMutableArray *accumulator; // @synthesize accumulator=_accumulator;
 @property(retain, nonatomic) CalLogFilter *filter; // @synthesize filter=_filter;
 @property(retain, nonatomic) NSMutableArray *subnodes; // @synthesize subnodes=_subnodes;
-- (void).cxx_destruct;
 - (void)processEnvelope:(id)arg1;
 - (int)minimumLevelOfNodeTree;
 - (id)allSubnodes;

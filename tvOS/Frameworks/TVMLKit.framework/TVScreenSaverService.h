@@ -23,10 +23,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType defaultRequestHandler; // @synthesize defaultRequestHandler=_defaultRequestHandler;
 @property(copy) CDUnknownBlockType requestCompletionBlock; // @synthesize requestCompletionBlock=_requestCompletionBlock;
 @property(copy) CDUnknownBlockType requestStartBlock; // @synthesize requestStartBlock=_requestStartBlock;
-- (void).cxx_destruct;
 - (id)_photoAssetsFromUrls:(id)arg1 commonHeaders:(id)arg2;
 - (id)_photoAssetsFromImageRequests:(id)arg1;
 - (void)_respondToRequests;

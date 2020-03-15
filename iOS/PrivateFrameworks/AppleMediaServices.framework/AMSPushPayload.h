@@ -9,7 +9,6 @@
 @class ACAccount, NSDictionary, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface AMSPushPayload : NSObject
 {
     ACAccount *_account;
@@ -19,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionTypeFromPayload:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;
 @property(readonly, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *URLString;
 @property(readonly, nonatomic) long long priority;
 @property(readonly, nonatomic) NSString *clientIdentifier;

@@ -38,6 +38,7 @@
     CDStruct_1b6d18a9 _highISOThresholdDuration;
 }
 
+- (void).cxx_destruct;
 @property CDStruct_7012203e *exposure_table; // @synthesize exposure_table=_exposure_table;
 @property BOOL runningManualExposure; // @synthesize runningManualExposure=_runningManualExposure;
 @property int exposureAdjustmentInProgressTimeoutCount; // @synthesize exposureAdjustmentInProgressTimeoutCount=_exposureAdjustmentInProgressTimeoutCount;
@@ -61,7 +62,6 @@
 @property(nonatomic) long long whiteBalanceMode; // @synthesize whiteBalanceMode=_whiteBalanceMode;
 @property(copy, nonatomic) NSString *cameraMode; // @synthesize cameraMode=_cameraMode;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
-- (void).cxx_destruct;
 - (struct CGRect)previewVisibleRect;
 - (BOOL)isPreviewVideoMirrored;
 - (struct CGPoint)focusPointOfInterest;

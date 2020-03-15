@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     _MKPlaceActionButtonController *_buttonController;
 }
 
-@property(nonatomic) __weak _MKPlaceActionButtonController *buttonController; // @synthesize buttonController=_buttonController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _MKPlaceActionButtonController *buttonController; // @synthesize buttonController=_buttonController;
 - (void)placeActionbuttonControllerTextDidChanged:(id)arg1;
 - (void)setAttributesWithTitle:(id)arg1 subTitle:(id)arg2;
 - (void)_updateStyleNonPrimaryButton;

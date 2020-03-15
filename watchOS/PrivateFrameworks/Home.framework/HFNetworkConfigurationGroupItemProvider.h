@@ -14,9 +14,9 @@
     NSMutableSet *_groupItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *groupItems; // @synthesize groupItems=_groupItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

@@ -9,7 +9,7 @@
 @interface NSMutableAttributedString (ICTableAdditions)
 - (void)ic_convertParagraphStyleToBodyInRange:(struct _NSRange)arg1;
 - (void)ic_addTextBlocks:(id)arg1 range:(struct _NSRange)arg2;
-- (void)ic_addForgroundColorInRangesWhereNoColorAlreadyExists:(struct NSColor *)arg1;
+- (void)ic_addForgroundColorInRangesWhereNoColorAlreadyExists:(id)arg1;
 - (void)ic_setParagraphStyleForWritingDirection:(long long)arg1 andAlignment:(BOOL)arg2;
 @end
 

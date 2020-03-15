@@ -16,10 +16,10 @@
 }
 
 + (id)displayListForCGContext:(struct CGContext *)arg1 alpha:(float *)arg2 blendMode:(int *)arg3;
-@property(nonatomic) struct CGRect contentRect; // @synthesize contentRect=_contentRect;
-@property(nonatomic) BOOL linearColors; // @synthesize linearColors=_linearColors;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct CGRect contentRect; // @synthesize contentRect=_contentRect;
+@property(nonatomic) BOOL linearColors; // @synthesize linearColors=_linearColors;
 - (void)addColorMonochromeFilterWithAmount:(float)arg1 color:(CDStruct_0b1c536a)arg2 bias:(float)arg3;
 - (void)addGrayscaleFilterWithAmount:(float)arg1;
 - (void)addColorMatrixFilterWithArray:(float [20])arg1;

@@ -18,9 +18,9 @@
 
 + (id)bulletinKeyWithSectionID:(id)arg1 publisherMatchID:(id)arg2;
 + (id)bulletinKeyWithBulletin:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *publisherMatchID; // @synthesize publisherMatchID=_publisherMatchID;
 @property(readonly, copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -14,8 +14,8 @@
 }
 
 + (Class)responseClass;
-@property(retain, nonatomic) MPModelRequest *modelRequest; // @synthesize modelRequest=_modelRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPModelRequest *modelRequest; // @synthesize modelRequest=_modelRequest;
 - (id)middlewareClasses;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predicateWithSearchString:(id)arg1 forProperties:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *properties; // @synthesize properties=_properties;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (id)protobufferEncodableObjectFromLibrary:(id)arg1;
 - (id)initWithProtobufferDecodableObject:(id)arg1 library:(id)arg2;
 @property(readonly) unsigned int hash;

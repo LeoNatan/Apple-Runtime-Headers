@@ -18,12 +18,12 @@
 }
 
 + (id)channelsWithDictionaries:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *subscriptionOffers; // @synthesize subscriptionOffers=_subscriptionOffers;
 @property(readonly, copy, nonatomic) NSArray *seasonNumbers; // @synthesize seasonNumbers=_seasonNumbers;
 @property(readonly, copy, nonatomic) NSDictionary *punchoutUrls; // @synthesize punchoutUrls=_punchoutUrls;
 @property(readonly, copy, nonatomic) WLKChannelDetails *details; // @synthesize details=_details;
 @property(readonly, copy, nonatomic) NSString *ID; // @synthesize ID=_ID;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 

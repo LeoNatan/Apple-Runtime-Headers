@@ -16,9 +16,9 @@
     CDUnknownBlockType _connectionFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType connectionFactory; // @synthesize connectionFactory=_connectionFactory;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)checkIn;
 - (void)performWorkWithSynchronousProxy:(CDUnknownBlockType)arg1;
 - (void)performWorkWithConnection:(CDUnknownBlockType)arg1;

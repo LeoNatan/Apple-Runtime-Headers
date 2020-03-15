@@ -29,6 +29,7 @@
     TLKRoundedCornerLabel *_roundedCornerLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKRoundedCornerLabel *roundedCornerLabel; // @synthesize roundedCornerLabel=_roundedCornerLabel;
 @property(retain, nonatomic) TLKStackView *innerStackView; // @synthesize innerStackView=_innerStackView;
 @property(retain, nonatomic) TLKStackView *subtitleStackView; // @synthesize subtitleStackView=_subtitleStackView;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) TLKRichText *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
 @property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)roundedCornerLabelText;
 - (id)hasImage;
 - (id)footnoteLabelText;

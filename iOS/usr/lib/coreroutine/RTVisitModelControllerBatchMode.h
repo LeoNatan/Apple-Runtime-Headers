@@ -20,8 +20,8 @@
     RTVisitTrajectorySequenceClassifierBatchMode *_model;
 }
 
-@property(readonly, nonatomic) RTVisitTrajectorySequenceClassifierBatchMode *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RTVisitTrajectorySequenceClassifierBatchMode *model; // @synthesize model=_model;
 - (const float *)predictFromInput:(const float *)arg1 featureVectorStride:(unsigned long long)arg2 firstSequenceIndex:(unsigned long long)arg3 firstSequenceLength:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
 - (const float *)batchProcess:(const float *)arg1 featureVectorStride:(unsigned long long)arg2 firstSequenceIndex:(unsigned long long)arg3 firstSequenceLength:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
 - (void)dealloc;

@@ -67,6 +67,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long parsecTrendingCutoffTime; // @synthesize parsecTrendingCutoffTime=_parsecTrendingCutoffTime;
 @property(nonatomic) double alternativeButlerWidgetConfigPopulationCeiling; // @synthesize alternativeButlerWidgetConfigPopulationCeiling=_alternativeButlerWidgetConfigPopulationCeiling;
@@ -81,7 +82,6 @@
 @property(nonatomic) long long trendingCutoffTime; // @synthesize trendingCutoffTime=_trendingCutoffTime;
 @property(nonatomic) long long forYouCutoffTime; // @synthesize forYouCutoffTime=_forYouCutoffTime;
 @property(nonatomic) long long topStoriesCutoffTime; // @synthesize topStoriesCutoffTime=_topStoriesCutoffTime;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

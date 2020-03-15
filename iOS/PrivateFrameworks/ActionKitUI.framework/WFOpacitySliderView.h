@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_opacityLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UILabel *opacityLabel; // @synthesize opacityLabel=_opacityLabel;
 @property(readonly, nonatomic) __weak WFOpacitySlider *slider; // @synthesize slider=_slider;
-- (void).cxx_destruct;
 - (void)reset;
 @property(readonly, nonatomic) double opacity;
 - (void)didChangeOpacityValue:(id)arg1;

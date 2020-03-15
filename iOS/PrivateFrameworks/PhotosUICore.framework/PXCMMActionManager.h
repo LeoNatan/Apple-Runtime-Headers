@@ -15,9 +15,9 @@
     NSMutableDictionary *_performerClassByType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *performerClassByType; // @synthesize performerClassByType=_performerClassByType;
 @property(nonatomic) __weak id <PXCMMActionPerformerDelegate> performerDelegate; // @synthesize performerDelegate=_performerDelegate;
-- (void).cxx_destruct;
 - (id)sendBackActionPerformer;
 - (id)photosPickerActionPerformer;
 - (id)messageComposeActionPerformer;

@@ -30,6 +30,7 @@
 }
 
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PLCloudSharedAlbumProtocol> sharedAlbum; // @synthesize sharedAlbum=_sharedAlbum;
 @property(retain, nonatomic) UILabel *reportJunkLabel; // @synthesize reportJunkLabel=_reportJunkLabel;
 @property(retain, nonatomic) PXCapsuleButton *declineButton; // @synthesize declineButton=_declineButton;
@@ -44,7 +45,6 @@
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(retain, nonatomic) PXFeedInvitationSectionInfo *invitationSectionInfo; // @synthesize invitationSectionInfo=_invitationSectionInfo;
 @property(nonatomic) __weak id <PXSharedAlbumInvitationViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reportJunkLabelTapped:(id)arg1;
 - (void)_reportJunk;
 - (void)_declineButtonTapped:(id)arg1;

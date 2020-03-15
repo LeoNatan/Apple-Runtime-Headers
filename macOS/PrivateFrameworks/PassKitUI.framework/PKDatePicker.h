@@ -22,16 +22,16 @@
     NSPopUpButton *_yearPopUpButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSPopUpButton *yearPopUpButton; // @synthesize yearPopUpButton=_yearPopUpButton;
 @property(retain) NSPopUpButton *monthPopUpButton; // @synthesize monthPopUpButton=_monthPopUpButton;
 @property(retain) NSPopUpButton *dayPopUpButton; // @synthesize dayPopUpButton=_dayPopUpButton;
-@property(nonatomic) id <PKDatePickerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PKDatePickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) BOOL isExpirationDate; // @synthesize isExpirationDate=_isExpirationDate;
 @property(readonly, nonatomic) BOOL showsYear; // @synthesize showsYear=_showsYear;
 @property(readonly, nonatomic) BOOL showsMonth; // @synthesize showsMonth=_showsMonth;
 @property(readonly, nonatomic) BOOL showsDay; // @synthesize showsDay=_showsDay;
-- (void).cxx_destruct;
 - (void)setEnabled:(BOOL)arg1;
 - (void)popUpDidUpdate:(id)arg1;
 - (void)reconfigureToShowDay:(BOOL)arg1 month:(BOOL)arg2 year:(BOOL)arg3;

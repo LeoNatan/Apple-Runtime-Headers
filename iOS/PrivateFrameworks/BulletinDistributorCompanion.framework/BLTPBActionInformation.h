@@ -16,9 +16,9 @@
     NSData *_contextNulls;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *contextNulls; // @synthesize contextNulls=_contextNulls;
 @property(retain, nonatomic) NSData *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

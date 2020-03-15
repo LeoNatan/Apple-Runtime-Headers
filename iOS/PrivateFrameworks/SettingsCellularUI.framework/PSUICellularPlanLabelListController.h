@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     PSUICellularPlanUniversalReference *_planReference;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSUICellularPlanUniversalReference *planReference; // @synthesize planReference=_planReference;
 @property(nonatomic) __weak UITextField *textField; // @synthesize textField=_textField;
 @property(retain, nonatomic) NSString *validatedCustomLabelText; // @synthesize validatedCustomLabelText=_validatedCustomLabelText;
 @property(retain, nonatomic) NSArray *predefinedLabels; // @synthesize predefinedLabels=_predefinedLabels;
-- (void).cxx_destruct;
 - (void)textFieldDidEndEditing:(id)arg1;
 - (void)dismissKeyboard;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

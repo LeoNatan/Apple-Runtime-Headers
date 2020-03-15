@@ -14,8 +14,8 @@
     NTKCharacterRenderer *_renderer;
 }
 
-@property(retain, nonatomic) NTKCharacterRenderer *renderer; // @synthesize renderer=_renderer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKCharacterRenderer *renderer; // @synthesize renderer=_renderer;
 - (_Bool)prepareForTime:(double)arg1;
 - (void)renderForDisplayWithEncoder:(id)arg1;
 - (void)purge;

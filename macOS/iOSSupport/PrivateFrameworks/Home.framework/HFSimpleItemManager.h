@@ -14,11 +14,11 @@
     CDUnknownBlockType _itemComparator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemComparator; // @synthesize itemComparator=_itemComparator;
 @property(copy, nonatomic) CDUnknownBlockType itemProviderCreator; // @synthesize itemProviderCreator=_itemProviderCreator;
 @property(copy, nonatomic) CDUnknownBlockType itemModuleCreator; // @synthesize itemModuleCreator=_itemModuleCreator;
 @property(copy, nonatomic) CDUnknownBlockType homeCreator; // @synthesize homeCreator=_homeCreator;
-- (void).cxx_destruct;
 - (id)_homeFuture;
 - (CDUnknownBlockType)_comparatorForSectionIdentifier:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;

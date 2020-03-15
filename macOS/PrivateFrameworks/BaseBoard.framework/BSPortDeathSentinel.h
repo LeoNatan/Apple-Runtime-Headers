@@ -23,8 +23,8 @@
 
 + (id)_callOutQueue;
 + (void)monitorSendRight:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_callOutQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_callOutQueue;
 - (void)invalidate;
 @property(readonly, nonatomic, getter=isValid) BOOL valid; // @dynamic valid;
 - (void)dealloc;

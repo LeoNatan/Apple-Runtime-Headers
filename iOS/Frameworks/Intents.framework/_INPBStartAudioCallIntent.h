@@ -35,6 +35,7 @@
 + (_Bool)supportsSecureCoding;
 + (Class)targetContactsType;
 + (Class)contactType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(nonatomic) int ttyType; // @synthesize ttyType=_ttyType;
 @property(copy, nonatomic) NSArray *targetContacts; // @synthesize targetContacts=_targetContacts;
@@ -44,7 +45,6 @@
 @property(nonatomic) int destinationType; // @synthesize destinationType=_destinationType;
 @property(copy, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(nonatomic) int audioRoute; // @synthesize audioRoute=_audioRoute;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

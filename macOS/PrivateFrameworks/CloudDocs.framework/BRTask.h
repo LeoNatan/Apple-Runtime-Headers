@@ -21,13 +21,13 @@
 + (id)sanitizeStringForFilename:(id)arg1;
 + (id)taskWithCommandWithArguments:(id)arg1;
 + (id)taskWithCommand:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int waitStatus; // @synthesize waitStatus=_waitStatus;
 @property(nonatomic) int redirectStderrToFileDescriptor; // @synthesize redirectStderrToFileDescriptor=_redirectStderrToFileDescriptor;
 @property(retain, nonatomic) NSString *redirectStderrToFileAtPath; // @synthesize redirectStderrToFileAtPath=_redirectStderrToFileAtPath;
 @property(nonatomic) int redirectStdoutToFileDescriptor; // @synthesize redirectStdoutToFileDescriptor=_redirectStdoutToFileDescriptor;
 @property(retain, nonatomic) NSString *redirectStdoutToFileAtPath; // @synthesize redirectStdoutToFileAtPath=_redirectStdoutToFileAtPath;
 @property(retain, nonatomic) NSArray *argv; // @synthesize argv=_argv;
-- (void).cxx_destruct;
 - (void)resetRedirect;
 - (int)exec;
 - (void)setCommandWithArguments:(id)arg1;

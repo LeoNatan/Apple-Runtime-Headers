@@ -18,13 +18,13 @@
     AMPLSharingClient *_client;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMPLSharingClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) AMPSPhotoSharingPrefs *photoSharingPrefs; // @synthesize photoSharingPrefs=_photoSharingPrefs;
 @property(readonly, nonatomic) AMPSHomeSharingPrefs *homeSharingPrefs; // @synthesize homeSharingPrefs=_homeSharingPrefs;
 @property(readonly, nonatomic) AMPSPublicSharingPrefs *publicPrefs; // @synthesize publicPrefs=_publicPrefs;
 @property(readonly, nonatomic) NSString *libraryName; // @synthesize libraryName=_libraryName;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)setSharedLibraryName:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)loadPrefs:(CDUnknownBlockType)arg1;
 - (void)loadPhotoSharingPrefs:(CDUnknownBlockType)arg1;

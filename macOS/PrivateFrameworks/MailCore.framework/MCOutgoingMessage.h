@@ -17,11 +17,11 @@
     NSData *_rawData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *rawData; // @synthesize rawData=_rawData;
 @property(retain, nonatomic) NSString *existingRemoteID; // @synthesize existingRemoteID=_existingRemoteID;
 @property(retain, nonatomic) MCMutableMessageHeaders *mutableHeaders; // @synthesize mutableHeaders=_mutableHeaders;
 @property(copy) NSString *remoteID; // @synthesize remoteID=_remoteID;
-- (void).cxx_destruct;
 - (void)setLocalAttachmentsSize:(unsigned long long)arg1;
 - (unsigned long long)messageSize;
 - (id)headersFetchIfNotAvailable:(BOOL)arg1;

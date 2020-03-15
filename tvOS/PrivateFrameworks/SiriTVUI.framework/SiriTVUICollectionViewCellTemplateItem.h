@@ -18,13 +18,13 @@
     NSString *_subtitleText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool sizeToFitImage; // @synthesize sizeToFitImage=_sizeToFitImage;
 @property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(copy, nonatomic) NSDictionary *images; // @synthesize images=_images;
 @property(copy, nonatomic) NSArray *monogramNames; // @synthesize monogramNames=_monogramNames;
 @property(copy, nonatomic) NSString *monogramText; // @synthesize monogramText=_monogramText;
-- (void).cxx_destruct;
 - (id)initWithImages:(id)arg1 sizeToFitImage:(_Bool)arg2 titleText:(id)arg3 subtitleText:(id)arg4 monogramText:(id)arg5;
 - (id)initWithImages:(id)arg1 sizeToFitImage:(_Bool)arg2 titleText:(id)arg3 subtitleText:(id)arg4 monogramNames:(id)arg5;
 - (id)initWithImages:(id)arg1 sizeToFitImage:(_Bool)arg2 titleText:(id)arg3 monogramNames:(id)arg4;

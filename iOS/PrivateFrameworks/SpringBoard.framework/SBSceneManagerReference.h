@@ -23,8 +23,8 @@
     _Bool _invalidated;
 }
 
-@property(retain, nonatomic) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_displayIdentity;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_displayIdentity;
 - (void)invalidate;
 - (void)releaseForScene:(id)arg1;
 - (void)retainForScene:(id)arg1;

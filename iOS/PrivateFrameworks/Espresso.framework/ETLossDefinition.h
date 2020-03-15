@@ -19,12 +19,12 @@
 
 + (id)L2LossWithInputName:(id)arg1 targetInputName:(id)arg2 lossOutputName:(id)arg3;
 + (id)crossEntropyLossWithInputName:(id)arg1 targetInputName:(id)arg2 lossOutputName:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSString *outputName; // @synthesize outputName=_outputName;
 @property(readonly) unsigned long long mode; // @synthesize mode=_mode;
 @property(readonly) NSString *lossOutputName; // @synthesize lossOutputName=_lossOutputName;
 @property(readonly) NSString *targetInputName; // @synthesize targetInputName=_targetInputName;
 @property(readonly) NSString *inputName; // @synthesize inputName=_inputName;
-- (void).cxx_destruct;
 - (id)initWithMode:(unsigned long long)arg1 inputName:(id)arg2 targetName:(id)arg3 lossOutputName:(id)arg4;
 
 @end

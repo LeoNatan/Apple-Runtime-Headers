@@ -34,6 +34,7 @@
     CDUnknownBlockType _equilibriumAchievedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType equilibriumAchievedHandler; // @synthesize equilibriumAchievedHandler=_equilibriumAchievedHandler;
 @property(readonly, nonatomic) __weak id <MPAVQueueCoordinatingDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) MPQueuePlayer *player; // @synthesize player=_player;
@@ -41,7 +42,6 @@
 @property(nonatomic) _Bool shouldExpectEmptyQueue; // @synthesize shouldExpectEmptyQueue=_shouldExpectEmptyQueue;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
-- (void).cxx_destruct;
 - (void)_updateQueueDepthIfNeeded;
 - (void)_updateCurrentItem;
 - (void)_sendItemsDidChange;

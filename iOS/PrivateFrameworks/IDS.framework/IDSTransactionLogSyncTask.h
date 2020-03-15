@@ -13,10 +13,10 @@
     _Bool _shouldContinueFromLastSyncPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldContinueFromLastSyncPoint; // @synthesize shouldContinueFromLastSyncPoint=_shouldContinueFromLastSyncPoint;
 @property(copy, nonatomic) CDUnknownBlockType knownRecordIDsFromList; // @synthesize knownRecordIDsFromList=_knownRecordIDsFromList;
 @property(copy, nonatomic) CDUnknownBlockType batchProcessingBlock; // @synthesize batchProcessingBlock=_batchProcessingBlock;
-- (void).cxx_destruct;
 
 @end
 

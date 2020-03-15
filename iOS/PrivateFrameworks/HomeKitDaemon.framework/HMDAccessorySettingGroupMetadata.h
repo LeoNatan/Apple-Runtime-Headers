@@ -19,10 +19,10 @@
 
 + (id)groupWithDictonaryRepresentation:(id)arg1;
 + (id)groupsWithArrayRepresenation:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *settings; // @synthesize settings=_settings;
 @property(readonly, copy) NSArray *groups; // @synthesize groups=_groups;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)modelsWithParentIdentifier:(id)arg1;
 @property(readonly, copy) NSString *propertyDescription;
 - (id)initWithName:(id)arg1 settings:(id)arg2 groups:(id)arg3;

@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 
 + (id)_suggestedTitleForBookmark:(id)arg1;
 + (id)beginBookmarkEditSheetWithBookmark:(id)arg1 bookmarksController:(id)arg2 restrictedToBookmarksBar:(BOOL)arg3 titleOnly:(BOOL)arg4 modalForWindow:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *suggestedTitle; // @synthesize suggestedTitle=_suggestedTitle;
 @property(readonly, nonatomic, getter=isRestrictedToBookmarksBar) BOOL restrictedToBookmarksBar; // @synthesize restrictedToBookmarksBar=_restrictedToBookmarksBar;
 @property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (id)_uuidOfSelectedBookmarkLocationInPopup;
 - (void)_stopObservingBookmarkChanges;
 - (void)_startObservingBookmarkChanges;

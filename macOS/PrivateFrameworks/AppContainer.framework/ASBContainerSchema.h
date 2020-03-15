@@ -18,8 +18,8 @@
     NSObject<OS_dispatch_source> *_monitorSource;
 }
 
-@property(readonly) unsigned long long currentVersion; // @synthesize currentVersion=_currentVersion;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long currentVersion; // @synthesize currentVersion=_currentVersion;
 - (id)upgradeScriptFromSchemaVersion:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)reloadAndReturnError:(id *)arg1;
 - (id)initWithSchema:(id)arg1;

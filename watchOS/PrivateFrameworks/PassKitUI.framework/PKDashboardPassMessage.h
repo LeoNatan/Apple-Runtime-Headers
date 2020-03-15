@@ -26,6 +26,7 @@
     NSString *_analyticsReporterSubject;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=canReportToAnalytics) _Bool reportToAnalytics; // @synthesize reportToAnalytics=_reportToAnalytics;
 @property(nonatomic) NSString *analyticsReporterSubject; // @synthesize analyticsReporterSubject=_analyticsReporterSubject;
 @property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

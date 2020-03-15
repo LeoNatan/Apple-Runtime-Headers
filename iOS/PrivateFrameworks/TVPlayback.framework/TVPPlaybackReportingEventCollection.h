@@ -20,13 +20,13 @@
 
 + (double)_totalTimeSpentDoingFPSFetchesFromEndEvents:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *openEvents; // @synthesize openEvents=_openEvents;
 @property(retain, nonatomic) NSMutableArray *eventArray; // @synthesize eventArray=_eventArray;
 @property(nonatomic) _Bool initialFPSRequestsComplete; // @synthesize initialFPSRequestsComplete=_initialFPSRequestsComplete;
 @property(nonatomic) _Bool complete; // @synthesize complete=_complete;
 @property(nonatomic) _Bool isDownloaded; // @synthesize isDownloaded=_isDownloaded;
 @property(nonatomic) long long videoType; // @synthesize videoType=_videoType;
-- (void).cxx_destruct;
 - (void)_setError:(id)arg1 inEventDict:(id)arg2 errorCodeKey:(id)arg3 errorDomainKey:(id)arg4;
 - (void)_closeOpenEvents;
 - (void)_addEventWithName:(id)arg1 type:(long long)arg2 identifier:(id)arg3 value:(id)arg4 timestamp:(id)arg5 forceAdd:(_Bool)arg6;

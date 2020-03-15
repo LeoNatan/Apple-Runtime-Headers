@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
 + (id)_connectionForDeviceInput:(id)arg1 output:(id)arg2 mediaType:(id)arg3;
 + (BOOL)automaticallyNotifiesObserversOfAudioDevice;
 + (BOOL)automaticallyNotifiesObserversOfVideoDevice;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureDeviceInput *audioInput; // @synthesize audioInput=_audioInput;
 @property(retain, nonatomic) AVCaptureDeviceInput *videoInput; // @synthesize videoInput=_videoInput;
 @property(retain, nonatomic) NSSet *availableAudioDevices; // @synthesize availableAudioDevices=_availableAudioDevices;
 @property(retain, nonatomic) NSSet *availableVideoDevices; // @synthesize availableVideoDevices=_availableVideoDevices;
 @property(readonly, nonatomic) AVCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
-- (void).cxx_destruct;
 - (BOOL)_attemptToReAddDevice:(id)arg1 error:(id *)arg2;
 - (void)_clearErrorForDevice:(id)arg1 mediaType:(id)arg2;
 - (void)_handleError:(id)arg1 forDevice:(id)arg2 mediaType:(id)arg3;

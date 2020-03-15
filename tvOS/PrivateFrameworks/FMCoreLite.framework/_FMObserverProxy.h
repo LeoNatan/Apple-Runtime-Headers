@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     id _weakObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
 @property(readonly, nonatomic) __weak id weakObserver; // @synthesize weakObserver=_weakObserver;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 - (id)initWithWeakObserver:(id)arg1;

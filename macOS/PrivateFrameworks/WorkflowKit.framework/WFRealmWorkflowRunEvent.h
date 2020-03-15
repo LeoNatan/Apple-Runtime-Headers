@@ -24,13 +24,13 @@
 + (id)defaultPropertyValues;
 + (id)primaryKey;
 + (id)className;
+- (void).cxx_destruct;
 @property long long outcome; // @synthesize outcome=_outcome;
 @property(copy) NSString *triggerID; // @synthesize triggerID=_triggerID;
 @property NSString *source; // @synthesize source=_source;
 @property(retain) NSDate *date; // @synthesize date=_date;
 @property(retain) WFRealmWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)descriptor;
 
 // Remaining properties

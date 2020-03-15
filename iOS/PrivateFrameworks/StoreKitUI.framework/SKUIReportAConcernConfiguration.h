@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configurationWithTemplateElement:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *reasons; // @synthesize reasons=_reasons;
 @property(copy, nonatomic) NSString *privacyNote; // @synthesize privacyNote=_privacyNote;
 @property(copy, nonatomic) NSString *selectReasonSubtitle; // @synthesize selectReasonSubtitle=_selectReasonSubtitle;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *reportConcernExplanation; // @synthesize reportConcernExplanation=_reportConcernExplanation;
 @property(nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(copy, nonatomic) NSURL *reportConcernURL; // @synthesize reportConcernURL=_reportConcernURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

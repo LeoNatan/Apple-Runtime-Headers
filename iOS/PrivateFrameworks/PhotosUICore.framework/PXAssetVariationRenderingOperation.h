@@ -30,6 +30,7 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;
@@ -48,7 +49,6 @@
 @property(readonly, nonatomic) PLLivePhotoEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLLivePhotoEditSource *editSource; // @synthesize editSource=_editSource;
 @property(readonly, nonatomic) long long variationType; // @synthesize variationType=_variationType;
-- (void).cxx_destruct;
 - (void)_incrementProgressWithStartDate:(id)arg1;
 - (void)main;
 - (void)cancel;

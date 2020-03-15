@@ -9,38 +9,38 @@
 #import <FileProviderDaemon/FPDDaemon-Protocol.h>
 
 @class FPDServer, NSHashTable, NSXPCConnection;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_os_log;
 
 __attribute__((visibility("hidden")))
 @interface FPDXPCServicer : NSObject <FPDDaemon>
 {
     NSHashTable *_providerServicers;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_os_log> *_log;
     FPDServer *_server;
     NSXPCConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) __weak FPDServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (void)_test_simulateUninstallOfBundleID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_test_simulateInstallOfBundleID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_test_callRemoveTrashedItemsOlderThanDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
 - (void)_test_retrieveItemWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)ingestFromCacheItemWithID:(id)arg1 requestedFields:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)startAccessingServiceForItemURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startAccessingServiceForItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startAccessingOperationServiceForProviderDomainID:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)startAccessingExtensionForProviderDomainID:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)currentMaterializedSetSyncAnchorForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)enumerateMaterializedSetForDomain:(id)arg1 inProvider:(id)arg2 syncAnchor:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetchDaemonOperationWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchDaemonOperationIDsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)scheduleActionOperationWithInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reindexAllSearchableItemsForBundleIDs:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(CDUnknownBlockType)arg1;
+- (void)waitForStabilizationOfDomainWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSyncedRootsURLs:(CDUnknownBlockType)arg1;
+- (void)copyDatabaseForFPCKStartingAtPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)didUpdateAlternateContentsDocumentForDocumentAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchAlternateContentsURLForDocumentURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -81,7 +81,6 @@ __attribute__((visibility("hidden")))
 - (void)providerDomainsCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)unpinItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)pinItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)evictItemWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)evictItemAtURL:(id)arg1 evenIfEnumeratingFP:(BOOL)arg2 andClearACLForConsumer:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)startProvidingItemAtURL:(id)arg1 fromProviderID:(id)arg2 forConsumerID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -92,7 +91,8 @@ __attribute__((visibility("hidden")))
 - (void)startAccessingServiceForItemID:(id)arg1 connection:(id)arg2 enumerateEntitlementRequired:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)createDomainServicerForProviderDomainID:(id)arg1 enumerateEntitlementRequired:(BOOL)arg2 error:(id *)arg3;
 - (id)providerForIdentifier:(id)arg1 enumerateEntitlementRequired:(BOOL)arg2 error:(id *)arg3;
-- (id)providerForCurrentConnection;
+- (id)providersForCurrentConnection;
+- (id)defaultProviderForCurrentConnection;
 - (BOOL)clientHasSandboxAccessToFile:(id)arg1;
 - (BOOL)_isNonSandboxedConnection;
 - (void)invalidate;

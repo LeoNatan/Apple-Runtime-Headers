@@ -14,10 +14,10 @@
     unsigned long long _visualEffectStyle;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long visualEffectStyle; // @synthesize visualEffectStyle=_visualEffectStyle;
 @property(readonly) long long direction; // @synthesize direction=_direction;
 @property(readonly) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (double)defaultKeylineInsetForCurrentDevice;
 - (struct CGSize)intrinsicContentSize;

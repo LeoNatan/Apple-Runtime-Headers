@@ -16,9 +16,9 @@
     NSString *_relevantText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relevantText; // @synthesize relevantText=_relevantText;
 @property(retain, nonatomic) NSString *passID; // @synthesize passID=_passID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

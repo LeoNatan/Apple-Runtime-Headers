@@ -15,10 +15,10 @@
     NSString *_debugStr;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *debugStr; // @synthesize debugStr=_debugStr;
 @property(readonly, copy, nonatomic) NSData *body; // @synthesize body=_body;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithURL:(id)arg1 body:(id)arg2 debugStr:(id)arg3;
 

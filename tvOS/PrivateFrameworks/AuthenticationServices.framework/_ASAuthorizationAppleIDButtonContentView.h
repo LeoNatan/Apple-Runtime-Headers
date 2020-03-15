@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
-@property(nonatomic) __weak ASAuthorizationAppleIDButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ASAuthorizationAppleIDButton *button; // @synthesize button=_button;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

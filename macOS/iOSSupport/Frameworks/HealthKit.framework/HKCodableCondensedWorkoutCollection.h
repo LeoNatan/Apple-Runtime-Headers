@@ -16,8 +16,8 @@
 }
 
 + (Class)workoutsType;
-@property(retain, nonatomic) NSMutableArray *workouts; // @synthesize workouts=_workouts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *workouts; // @synthesize workouts=_workouts;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

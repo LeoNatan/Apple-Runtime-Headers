@@ -18,10 +18,10 @@
     MNTraceRecordingData *_traceRecordingData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MNTraceRecordingData *traceRecordingData; // @synthesize traceRecordingData=_traceRecordingData;
 @property(readonly, nonatomic) GEODirectionsResponse *directionsResponse; // @synthesize directionsResponse=_directionsResponse;
 @property(readonly, nonatomic) GEODirectionsRequest *directionsRequest; // @synthesize directionsRequest=_directionsRequest;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1;
 - (id)initWithProxy:(id)arg1 request:(id)arg2;

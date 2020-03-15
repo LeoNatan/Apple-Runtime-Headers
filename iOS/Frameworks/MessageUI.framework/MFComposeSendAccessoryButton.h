@@ -14,8 +14,8 @@
 }
 
 + (id)buttonWithType:(long long)arg1;
-@property(retain, nonatomic) UIImage *sendImage; // @synthesize sendImage=_sendImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *sendImage; // @synthesize sendImage=_sendImage;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_setupSendImage:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;

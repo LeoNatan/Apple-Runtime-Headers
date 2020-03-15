@@ -29,12 +29,12 @@
 + (id)documentProxyForURL:(id)arg1;
 + (id)documentProxyForName:(id)arg1 type:(id)arg2 MIMEType:(id)arg3 isContentManaged:(BOOL)arg4 sourceAuditToken:(const CDStruct_4c969caf *)arg5;
 + (id)documentProxyForURL:(id)arg1 isContentManaged:(BOOL)arg2 sourceAuditToken:(const CDStruct_4c969caf *)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
 @property(readonly, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic, getter=isContentManaged) BOOL contentManaged; // @synthesize contentManaged=_isContentManaged;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) const CDStruct_4c969caf *managedSourceAuditToken;
 @property(readonly, nonatomic) BOOL sourceIsManaged;
 - (id)debugDescription;
@@ -52,7 +52,7 @@
 - (id)initWithURL:(id)arg1 name:(id)arg2 type:(id)arg3 MIMEType:(id)arg4 isContentManaged:(BOOL)arg5 sourceAuditToken:(const CDStruct_4c969caf *)arg6;
 - (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (id)applicationsAvailableForOpeningWithStyle:(unsigned char)arg1 limit:(unsigned long long)arg2 XPCConnection:(id)arg3 error:(id *)arg4;
-- (optional_a0013cf8)_bindingEvaluatorWithAuditToken:(const CDStruct_4c969caf *)arg1;
+- (optional_2a5bf5f3)_bindingEvaluatorWithAuditToken:(const CDStruct_4c969caf *)arg1;
 
 @end
 

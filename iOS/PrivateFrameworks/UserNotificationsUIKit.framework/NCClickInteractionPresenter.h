@@ -30,6 +30,7 @@
     struct CGRect _sourceViewVisibleRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isHinting, setter=_setHinting:) _Bool hinting; // @synthesize hinting=_hinting;
 @property(readonly, nonatomic, getter=_backgroundMaterialView) MTMaterialView *backgroundMaterialView; // @synthesize backgroundMaterialView=_backgroundMaterialView;
 @property(readonly, nonatomic, getter=_presentedControl) NCClickInteractionPresentedControl *presentedControl; // @synthesize presentedControl=_presentedControl;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(nonatomic) struct CGRect sourceViewVisibleRect; // @synthesize sourceViewVisibleRect=_sourceViewVisibleRect;
 @property(readonly, nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
-- (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_handleEatenTouch:(id)arg1;
 - (void)_tearDown;

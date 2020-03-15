@@ -20,9 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) long long action; // @synthesize action=_action;
 @property(readonly, copy) NENetworkRule *networkRule; // @synthesize networkRule=_networkRule;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -13,8 +13,8 @@
     CNContactStore *_contactStore;
 }
 
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)accountForContainerWithIdentifier:(id)arg1;
 - (id)allAccounts;
 - (id)accountWithExternalIdentifier:(id)arg1 createIfNecessary:(_Bool)arg2;

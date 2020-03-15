@@ -20,6 +20,7 @@
 }
 
 + (unsigned long long)displayModeFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(readonly, nonatomic) AVTCoreModelRowDisplayCondition *displayCondition; // @synthesize displayCondition=_displayCondition;
 @property(readonly, copy, nonatomic) AVTAvatarPose *poseOverride; // @synthesize poseOverride=_poseOverride;
@@ -27,7 +28,6 @@
 @property(readonly, copy, nonatomic) NSArray *presetOverrides; // @synthesize presetOverrides=_presetOverrides;
 @property(readonly, nonatomic) _Bool separator; // @synthesize separator=_separator;
 @property(readonly, copy, nonatomic) NSString *framingMode; // @synthesize framingMode=_framingMode;
-- (void).cxx_destruct;
 - (id)initWithFramingMode:(id)arg1 separatorFlag:(_Bool)arg2 presetOverrides:(id)arg3 poseOverride:(id)arg4 framingModeOverrides:(id)arg5 displayMode:(unsigned long long)arg6 displayCondition:(id)arg7;
 
 @end

@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
 @property(nonatomic) CAMediaTimingFunction *mediaTimingFunction; // @synthesize mediaTimingFunction=_mediaTimingFunction;
 @property(nonatomic) double toPlaybackTime; // @synthesize toPlaybackTime=_toPlaybackTime;
 @property(nonatomic) double fromPlaybackTime; // @synthesize fromPlaybackTime=_fromPlaybackTime;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(copy, nonatomic) NSDate *animationStartDate; // @synthesize animationStartDate=_animationStartDate;
-- (void).cxx_destruct;
 - (_Bool)isFinished;
 - (double)currentPlaybackTime;
 

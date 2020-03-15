@@ -17,10 +17,10 @@
     RTMapItemProviderProactiveExpertsParameters *_parameters;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) RTMapItemProviderProactiveExpertsParameters *parameters; // @synthesize parameters=_parameters;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTPersonalizationPortraitManager *personalizationPortraitManager; // @synthesize personalizationPortraitManager=_personalizationPortraitManager;
-- (void).cxx_destruct;
 - (id)_mapItemsWithConnectionsLocations:(id)arg1 options:(id)arg2;
 - (id)_filterConnectionLocations:(id)arg1 location:(id)arg2 distance:(double)arg3 error:(id *)arg4;
 - (id)_recentLocationsFrom:(id)arg1 error:(id *)arg2;

@@ -34,12 +34,12 @@
 + (id)targetForDirections;
 + (id)targetForPayWithWallet;
 + (id)targetForEmailWithMail;
+- (void).cxx_destruct;
 @property(retain) id <CNTUCallProvider> callProvider; // @synthesize callProvider=_callProvider;
 @property(readonly, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 @property(copy, nonatomic) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)actionsForPostalAddresses:(id)arg1 contact:(id)arg2 discoveringEnvironment:(id)arg3;
 - (id)actionsForSocialProfiles:(id)arg1 contact:(id)arg2 discoveringEnvironment:(id)arg3;
 - (id)actionsForInstantMessageAddresses:(id)arg1 contact:(id)arg2 discoveringEnvironment:(id)arg3;

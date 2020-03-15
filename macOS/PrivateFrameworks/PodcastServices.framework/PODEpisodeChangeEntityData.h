@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PODShow *show; // @synthesize show=_show;
 @property(readonly, nonatomic) PODEpisode *episode; // @synthesize episode=_episode;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithEpisode:(id)arg1 show:(id)arg2;

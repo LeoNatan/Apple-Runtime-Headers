@@ -18,8 +18,8 @@
 }
 
 + (id)_sessionActionFromBSAction:(id)arg1;
-@property(readonly, nonatomic) BSAction *_BSAction; // @synthesize _BSAction=_action;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BSAction *_BSAction; // @synthesize _BSAction=_action;
 - (void)invalidate;
 - (void)sendResponse:(long long)arg1 withContext:(id)arg2;
 - (void)sendResponse:(long long)arg1;

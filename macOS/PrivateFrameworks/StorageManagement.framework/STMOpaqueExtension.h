@@ -18,9 +18,9 @@
 }
 
 + (id)exportedInterface;
+- (void).cxx_destruct;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain) NSExtension *underlyingExtension; // @synthesize underlyingExtension=_underlyingExtension;
-- (void).cxx_destruct;
 - (void)___nsx_pingHost:(CDUnknownBlockType)arg1;
 - (void)extension:(id)arg1 notifyTotalSpaceUsedDidChange:(id)arg2;
 - (void)extension:(id)arg1 notifyTipsDidChange:(id)arg2;

@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_serializedResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPCodeFunctionInvokeResponseAttestationResponse *attestationResponse; // @synthesize attestationResponse=_attestationResponse;
 @property(retain, nonatomic) NSData *serializedResult; // @synthesize serializedResult=_serializedResult;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     NSDate *_referenceDate;
 }
 
-@property(retain, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
 - (id)blockedIncidentEntities;
 - (id)incidentsForDepartureSequence:(id)arg1;
 - (id)incidentsForMapItem:(id)arg1;

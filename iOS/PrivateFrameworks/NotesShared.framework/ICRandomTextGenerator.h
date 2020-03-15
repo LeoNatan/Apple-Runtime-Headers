@@ -18,9 +18,9 @@
 + (_Bool)hasSpacesBetweenWordsForLanguage:(unsigned long long)arg1;
 + (id)wordsForLanguage:(unsigned long long)arg1;
 + (id)loadWordsForLanguage:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICRandomNumberGenerator *randomNumberGenerator; // @synthesize randomNumberGenerator=_randomNumberGenerator;
 @property(nonatomic) unsigned long long language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (id)generateMinSentences:(unsigned long long)arg1 maxSentences:(unsigned long long)arg2 minWords:(unsigned long long)arg3 maxWords:(unsigned long long)arg4;
 - (id)generateWordsWithMinLength:(unsigned long long)arg1;
 - (id)generateMinWords:(unsigned long long)arg1 maxWords:(unsigned long long)arg2;

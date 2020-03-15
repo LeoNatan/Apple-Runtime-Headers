@@ -24,12 +24,12 @@
 }
 
 + (Class)rawLocationsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDHomeKitMessageLocation *nearestLOI; // @synthesize nearestLOI=_nearestLOI;
 @property(nonatomic) unsigned int numIterationToConverge; // @synthesize numIterationToConverge=_numIterationToConverge;
 @property(retain, nonatomic) AWDHomeKitMessageLocation *selectedHomeLocation; // @synthesize selectedHomeLocation=_selectedHomeLocation;
 @property(retain, nonatomic) NSMutableArray *rawLocations; // @synthesize rawLocations=_rawLocations;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

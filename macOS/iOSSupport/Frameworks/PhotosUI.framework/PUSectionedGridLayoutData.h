@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_headerLayoutAttributesByVisualSection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *headerLayoutAttributesByVisualSection; // @synthesize headerLayoutAttributesByVisualSection=_headerLayoutAttributesByVisualSection;
 @property(readonly, nonatomic) NSMutableArray *headerLayoutAttributes; // @synthesize headerLayoutAttributes=_headerLayoutAttributes;
 @property(nonatomic) struct CGRect currentContentBounds; // @synthesize currentContentBounds=_currentContentBounds;
 @property(readonly, nonatomic) long long numberOfPagesToCache; // @synthesize numberOfPagesToCache=_numberOfPagesToCache;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)init;
 

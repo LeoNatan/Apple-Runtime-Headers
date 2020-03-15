@@ -29,6 +29,7 @@
     PHAsset *_asset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(readonly, copy, nonatomic) NSString *livePhotoPairingIdentifier; // @synthesize livePhotoPairingIdentifier=_livePhotoPairingIdentifier;
 @property(readonly, nonatomic) NSNumber *loadDuration; // @synthesize loadDuration=_loadDuration;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PLEditSource *activeEditSource;
 - (void)_handleContentEditingInputRequestCompletion:(id)arg1 info:(id)arg2 asset:(id)arg3;
 - (void)_handleCancellation;

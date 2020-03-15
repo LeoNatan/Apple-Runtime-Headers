@@ -18,8 +18,8 @@
 
 + (id)_reduceSpaces:(id)arg1 withSpaces:(id)arg2;
 + (_Bool)_canReduceSpaces:(id)arg1 withSpaces:(id)arg2;
-@property(retain) NSMutableDictionary *spaces; // @synthesize spaces=_spaces;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *spaces; // @synthesize spaces=_spaces;
 - (id)description;
 - (id)transformWithSourceSpace:(id)arg1 destinationSpace:(id)arg2 error:(out id *)arg3;
 - (void)mergeWithSpaceMap:(id)arg1;

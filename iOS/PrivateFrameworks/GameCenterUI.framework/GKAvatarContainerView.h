@@ -23,6 +23,7 @@
     UITapGestureRecognizer *_tapGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) GKDashboardPlayerPhotoView *playerAvatarView; // @synthesize playerAvatarView=_playerAvatarView;
 @property(retain, nonatomic) NSLayoutConstraint *imageContainerTopConstraint; // @synthesize imageContainerTopConstraint=_imageContainerTopConstraint;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UILabel *emailLabel; // @synthesize emailLabel=_emailLabel;
 @property(retain, nonatomic) UILabel *nicknameLabel; // @synthesize nicknameLabel=_nicknameLabel;
 @property(nonatomic) __weak id <GKAvatarContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)prepareForDefaultNicknameViewController;
 - (void)updateAvatarEditingAvailability;

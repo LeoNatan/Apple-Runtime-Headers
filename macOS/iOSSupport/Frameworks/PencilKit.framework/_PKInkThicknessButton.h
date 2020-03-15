@@ -20,12 +20,12 @@
 + (id)imageTintColorForIsSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 + (id)backgroundColorForIsSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 + (struct CGSize)buttonSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *assetImage; // @synthesize assetImage=_assetImage;
 @property(nonatomic) struct CGRect lastRenderedBounds; // @synthesize lastRenderedBounds=_lastRenderedBounds;
 @property(retain, nonatomic) UIImageView *inkImageView; // @synthesize inkImageView=_inkImageView;
 @property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) NSString *inkIdentifier; // @synthesize inkIdentifier=_inkIdentifier;
-- (void).cxx_destruct;
 - (void)didTouchUpInside;
 - (void)_animateToHighlightedState:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;

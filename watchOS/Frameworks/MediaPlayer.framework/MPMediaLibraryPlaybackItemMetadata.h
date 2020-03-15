@@ -24,8 +24,8 @@
 + (id)_lowQualityCachedAssetDestinationDirectory;
 + (id)_highQualityCachedAssetDestinationDirectory;
 + (id)streamingPlaybackAssetDestinationFilePathForMediaLibraryPersistentID:(long long)arg1 storeAdamID:(long long)arg2 storeSagaID:(unsigned long long)arg3 assetQuality:(unsigned int)arg4 assetFlavor:(id)arg5 protectionType:(unsigned int)arg6 pathExtension:(id)arg7;
-@property(retain, nonatomic, getter=_writeQueue) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_writeQueue) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
 - (id)_mediaItemValuesForProperties;
 - (id)_onqueue_mediaItemValuesForProperties;
 - (void)_invalidateMediaItemProperties;

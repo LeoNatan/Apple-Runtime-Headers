@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_useCount;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *useCount; // @synthesize useCount=_useCount;
 @property(retain) NSNumber *sharingExtensionsCount; // @synthesize sharingExtensionsCount=_sharingExtensionsCount;
 @property(retain) NSNumber *sharedItemsCount; // @synthesize sharedItemsCount=_sharedItemsCount;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property BOOL isAsync; // @synthesize isAsync=_isAsync;
 @property BOOL hasShownFetching; // @synthesize hasShownFetching=_hasShownFetching;
 @property(retain) NSNumber *actionExtensionsCount; // @synthesize actionExtensionsCount=_actionExtensionsCount;
-- (void).cxx_destruct;
 - (void)report;
 - (BOOL)shouldReport;
 - (id)init;

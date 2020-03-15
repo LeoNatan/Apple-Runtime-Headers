@@ -14,9 +14,9 @@
     NSData *_encryptionKeyReference;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *encryptionKeyReference; // @synthesize encryptionKeyReference=_encryptionKeyReference;
 @property(readonly, copy, nonatomic) NSData *encryptedPasswordData; // @synthesize encryptedPasswordData=_encryptedPasswordData;
-- (void).cxx_destruct;
 - (id)initWithEncryptedPasswordData:(id)arg1 encryptionKeyReference:(id)arg2;
 
 @end

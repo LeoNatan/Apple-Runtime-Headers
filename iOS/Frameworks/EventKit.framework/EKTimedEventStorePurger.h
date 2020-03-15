@@ -22,6 +22,7 @@
     EKEventStore *_internalStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKEventStore *internalStore; // @synthesize internalStore=_internalStore;
 @property(nonatomic) _Bool internalPurgingAllowed; // @synthesize internalPurgingAllowed=_internalPurgingAllowed;
 @property(nonatomic) _Bool ignoreLowLevelDatabaseChangedNotifications; // @synthesize ignoreLowLevelDatabaseChangedNotifications=_ignoreLowLevelDatabaseChangedNotifications;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)_fireChangedBlock;
 - (void)_eventStoreChangedNotification:(id)arg1;
 - (void)_removeTransientEventStoreChangeObserver;

@@ -17,8 +17,8 @@
     _Bool _prefetchingStarted;
 }
 
-@property(nonatomic) _Bool prefetchingStarted; // @synthesize prefetchingStarted=_prefetchingStarted;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool prefetchingStarted; // @synthesize prefetchingStarted=_prefetchingStarted;
 - (void)setMembers:(id)arg1;
 - (void)prefetchThumbnailsForTargetSize:(struct CGSize)arg1 maxFetchCount:(unsigned long long)arg2;
 - (id)titleAtIndex:(unsigned long long)arg1;

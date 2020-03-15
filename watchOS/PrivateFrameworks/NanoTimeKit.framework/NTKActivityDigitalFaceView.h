@@ -41,9 +41,9 @@
 
 + (id)_newRingsView;
 + (void)_prewarmForDevice:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
 @property(nonatomic) float rightTimeViewInset; // @synthesize rightTimeViewInset=_rightTimeViewInset;
-- (void).cxx_destruct;
 - (void)wellnessTimeLineModelCurrentEntryModelUpdated:(id)arg1;
 - (void)tritium_didTransitionToTritiumOff;
 - (void)tritium_willTransitionToTritiumOn;

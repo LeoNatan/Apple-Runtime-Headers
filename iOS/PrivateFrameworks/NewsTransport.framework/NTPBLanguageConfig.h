@@ -43,6 +43,7 @@
 + (Class)preSubscribedNotificationsChannelIdsType;
 + (Class)onboardingTagIdsType;
 + (Class)preSubscribedFeedIdsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTPBVideoPlayerConfig *shareVideoPlayerConfig; // @synthesize shareVideoPlayerConfig=_shareVideoPlayerConfig;
 @property(retain, nonatomic) NSString *moreVideosChannelId; // @synthesize moreVideosChannelId=_moreVideosChannelId;
 @property(retain, nonatomic) NSString *topVideosChannelId; // @synthesize topVideosChannelId=_topVideosChannelId;
@@ -67,7 +68,6 @@
 @property(retain, nonatomic) NTPBCategory *rootCategory; // @synthesize rootCategory=_rootCategory;
 @property(retain, nonatomic) NSString *hiddenFeedId; // @synthesize hiddenFeedId=_hiddenFeedId;
 @property(retain, nonatomic) NSString *languageTag; // @synthesize languageTag=_languageTag;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

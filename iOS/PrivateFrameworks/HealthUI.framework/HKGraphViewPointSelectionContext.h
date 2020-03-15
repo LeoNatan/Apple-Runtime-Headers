@@ -18,13 +18,13 @@
     NSArray *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSDateComponents *pointIntervalComponents; // @synthesize pointIntervalComponents=_pointIntervalComponents;
 @property(retain, nonatomic) HKValueRange *selectedPointValueRange; // @synthesize selectedPointValueRange=_selectedPointValueRange;
 @property(retain, nonatomic) HKValueRange *selectedPathIndexRange; // @synthesize selectedPathIndexRange=_selectedPathIndexRange;
 @property(retain, nonatomic) HKValueRange *selectedRangeXValues; // @synthesize selectedRangeXValues=_selectedRangeXValues;
 @property(retain, nonatomic) HKGraphSeries *selectedSeries; // @synthesize selectedSeries=_selectedSeries;
-- (void).cxx_destruct;
 - (id)debugDescription;
 
 @end

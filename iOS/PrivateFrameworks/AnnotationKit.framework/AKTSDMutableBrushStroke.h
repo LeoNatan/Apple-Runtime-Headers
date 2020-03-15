@@ -17,12 +17,12 @@
     NSString *strokeName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *strokeName; // @synthesize strokeName;
 @property(nonatomic) double miterLimit; // @synthesize miterLimit;
 @property(nonatomic) int join; // @synthesize join;
 @property(nonatomic) double width; // @synthesize width;
 @property(retain, nonatomic) UIColor *color; // @synthesize color;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

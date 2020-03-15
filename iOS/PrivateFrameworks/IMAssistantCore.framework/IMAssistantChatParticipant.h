@@ -14,9 +14,9 @@
     IMAssistantHandleFromContact *_handleFromContact;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IMAssistantHandleFromContact *handleFromContact; // @synthesize handleFromContact=_handleFromContact;
 @property(readonly, nonatomic) IMHandle *imHandle; // @synthesize imHandle=_imHandle;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIMHandle:(id)arg1 handleFromContact:(id)arg2;
 

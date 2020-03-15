@@ -16,8 +16,8 @@
     UIColor *_overrideColor;
 }
 
-@property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(nonatomic) _Bool usesLegibility; // @dynamic usesLegibility;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;

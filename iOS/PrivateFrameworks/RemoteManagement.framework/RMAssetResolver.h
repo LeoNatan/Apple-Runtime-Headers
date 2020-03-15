@@ -8,24 +8,27 @@
 
 #import <RemoteManagement/RMAssetResolver-Protocol.h>
 
-@class NSURLSession;
+@class NSURLSession, RMConfigurationStatusUpdater;
 @protocol OS_dispatch_queue;
 
 @interface RMAssetResolver : NSObject <RMAssetResolver>
 {
     NSURLSession *_URLSession;
+    RMConfigurationStatusUpdater *_statusUpdater;
     NSObject<OS_dispatch_queue> *_completionQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
-@property(retain, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
+@property(readonly, nonatomic) RMConfigurationStatusUpdater *statusUpdater; // @synthesize statusUpdater=_statusUpdater;
+@property(retain, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 - (id)userAgent;
 - (id)_createRequestWithURL:(id)arg1 acceptType:(id)arg2;
 - (_Bool)_validateAsset:(id)arg1 reference:(id)arg2 didFinishWithResponse:(id)arg3 data:(id)arg4 error:(id *)arg5;
-- (id)downloadTaskWithAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)dataTaskWithAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)resolveAssets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_dataURLForAsset:(id)arg1 reference:(id)arg2 queryParameters:(id)arg3;
+- (id)downloadTaskWithAsset:(id)arg1 queryParameters:(id)arg2 statusUpdater:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)dataTaskWithAsset:(id)arg1 queryParameters:(id)arg2 statusUpdater:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)resolveAssets:(id)arg1 statusUpdater:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithURLSession:(id)arg1;
 - (id)initWithURLSessionConfiguration:(id)arg1;
 - (id)init;

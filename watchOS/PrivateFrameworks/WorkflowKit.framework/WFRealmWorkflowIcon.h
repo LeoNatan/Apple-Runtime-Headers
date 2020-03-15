@@ -22,11 +22,11 @@
 + (id)requiredProperties;
 + (id)defaultPropertyValues;
 + (id)className;
+- (void).cxx_destruct;
 @property(readonly) RLMLinkingObjects *workflows; // @synthesize workflows=_workflows;
 @property(copy, nonatomic) NSData *customImageData; // @synthesize customImageData=_customImageData;
 @property(nonatomic) int glyphNumber; // @synthesize glyphNumber=_glyphNumber;
 @property(nonatomic) int backgroundColorValue; // @synthesize backgroundColorValue=_backgroundColorValue;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -23,6 +23,7 @@
 }
 
 + (unsigned long long)compareIdeal:(id)arg1 withActual:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BSWatchdog *watchdog; // @synthesize watchdog=_watchdog;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) TVSWiFiNetwork *connectedWiFiNetwork; // @synthesize connectedWiFiNetwork=_connectedWiFiNetwork;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSMutableArray *networkData; // @synthesize networkData=_networkData;
 @property(nonatomic) double downloadDuration; // @synthesize downloadDuration=_downloadDuration;
 @property(nonatomic) unsigned long long downloadedBytes; // @synthesize downloadedBytes=_downloadedBytes;
-- (void).cxx_destruct;
 - (void)_recordDownloadSize:(unsigned long long)arg1 in:(double)arg2;
 - (void)_recordCurrentNetworkData;
 - (void)_startWithCompletion:(CDUnknownBlockType)arg1;

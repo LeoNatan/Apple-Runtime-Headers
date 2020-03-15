@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSArray *_trailingAccessories;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *trailingAccessories; // @synthesize trailingAccessories=_trailingAccessories;
 @property(copy, nonatomic) NSArray *leadingAccessories; // @synthesize leadingAccessories=_leadingAccessories;
-- (void).cxx_destruct;
 - (BOOL)alwaysNeedsLayout;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

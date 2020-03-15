@@ -26,6 +26,7 @@
     UIColor *_starSuggestionFillColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *starSuggestionFillColor; // @synthesize starSuggestionFillColor=_starSuggestionFillColor;
 @property(retain, nonatomic) UIColor *starOutlineColor; // @synthesize starOutlineColor=_starOutlineColor;
 @property(retain, nonatomic) UIColor *starFillColor; // @synthesize starFillColor=_starFillColor;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned long long initialRating; // @synthesize initialRating=_initialRating;
 @property(retain, nonatomic) TVCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <_TVRatingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_needsInitialSuggestionState;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

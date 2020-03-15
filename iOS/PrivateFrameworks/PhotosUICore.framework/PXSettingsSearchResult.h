@@ -13,8 +13,8 @@
     _PXSettingsIndexEntry *_entry;
 }
 
-@property(readonly, nonatomic) _PXSettingsIndexEntry *entry; // @synthesize entry=_entry;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _PXSettingsIndexEntry *entry; // @synthesize entry=_entry;
 - (void)revealInSettingsController:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSString *subtitle;
 @property(readonly, nonatomic) NSString *title;

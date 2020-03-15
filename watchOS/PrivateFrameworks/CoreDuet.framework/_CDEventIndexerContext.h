@@ -19,13 +19,13 @@
     NSObject<OS_os_transaction> *_transaction;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(readonly, nonatomic) NSDate *indexDate; // @synthesize indexDate=_indexDate;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) unsigned int batchSize; // @synthesize batchSize=_batchSize;
 @property(nonatomic) int currentVersion; // @synthesize currentVersion=_currentVersion;
 @property(retain, nonatomic) _CDEventIndexerBookmark *bookmark; // @synthesize bookmark=_bookmark;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isBookmarkValidInRecoverableThreshold;
 - (_Bool)isBookmarkValid;

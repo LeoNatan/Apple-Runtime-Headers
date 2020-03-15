@@ -23,6 +23,7 @@
     NSHashTable *_transitionObservers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *transitionObservers; // @synthesize transitionObservers=_transitionObservers;
 @property(copy, nonatomic) CDUnknownBlockType clientOperationCompletion; // @synthesize clientOperationCompletion=_clientOperationCompletion;
 @property(retain, nonatomic) SBViewControllerTransitionContext *currentTransition; // @synthesize currentTransition=_currentTransition;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) SBNestingViewController *nestedViewController; // @synthesize nestedViewController=_nestedViewController;
 @property(nonatomic) __weak SBNestingViewController *parentNestingViewController; // @synthesize parentNestingViewController=_parentNestingViewController;
 @property(nonatomic) __weak id <SBNestingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_descriptionForOperation:(long long)arg1;
 - (void)_setFinalStateForTransitioningViewController:(id)arg1;
 - (void)_updateStateForTransitioningViewController:(id)arg1;

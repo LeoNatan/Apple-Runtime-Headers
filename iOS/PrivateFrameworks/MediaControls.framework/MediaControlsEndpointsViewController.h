@@ -37,6 +37,7 @@
 }
 
 + (_Bool)_shouldTransitionEarlyOnSystemRoute;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVExternalPlaybackMonitor *externalPlaybackMonitor; // @synthesize externalPlaybackMonitor=_externalPlaybackMonitor;
 @property(copy, nonatomic) NSString *routingContextUID; // @synthesize routingContextUID=_routingContextUID;
 @property(retain, nonatomic) MPAVEndpointRoute *selectedRoute; // @synthesize selectedRoute=_selectedRoute;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) CDUnknownBlockType homeGestureDismissalAllowedBlock; // @synthesize homeGestureDismissalAllowedBlock=_homeGestureDismissalAllowedBlock;
 @property(copy, nonatomic) CDUnknownBlockType routingCornerViewTappedBlock; // @synthesize routingCornerViewTappedBlock=_routingCornerViewTappedBlock;
 @property(retain, nonatomic) MPMediaControlsConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)homeObserverDidUpdateKnownUIDs:(id)arg1;
 - (void)_transitionToVisibleIfNeeded;
 - (_Bool)_isReadyForAppearanceTransition;

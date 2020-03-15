@@ -20,8 +20,8 @@
     id <PLBackgroundJobLibraryCoordinatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PLBackgroundJobLibraryCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PLBackgroundJobLibraryCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)workerCoordinatorDidFinishAllSubmittedJobsOnBundle:(id)arg1;
 - (void)stopBackgroundJobsOnAllBundles;
 - (void)_handleAllBundlesCompleted;

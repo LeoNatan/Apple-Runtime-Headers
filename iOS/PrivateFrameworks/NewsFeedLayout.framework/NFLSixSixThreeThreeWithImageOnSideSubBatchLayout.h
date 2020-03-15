@@ -16,11 +16,11 @@
     NFLSingleComponentLayout *_bottomImageOnSideComponent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NFLSingleComponentLayout *bottomImageOnSideComponent; // @synthesize bottomImageOnSideComponent=_bottomImageOnSideComponent;
 @property(retain, nonatomic) NFLPairSubBatchLayout *topPairComponent; // @synthesize topPairComponent=_topPairComponent;
 @property(retain, nonatomic) NFLSingleComponentLayout *rightSixImageOnTopComponent; // @synthesize rightSixImageOnTopComponent=_rightSixImageOnTopComponent;
 @property(retain, nonatomic) NFLSingleComponentLayout *leftSixImageOnTopComponent; // @synthesize leftSixImageOnTopComponent=_leftSixImageOnTopComponent;
-- (void).cxx_destruct;
 - (id)layoutInfosAtRowOrigin:(long long)arg1 columnOrigin:(long long)arg2 subBatchRowOffset:(long long)arg3 feedSettings:(id)arg4;
 - (unsigned long long)columnSpan;
 - (unsigned long long)rowSpan;

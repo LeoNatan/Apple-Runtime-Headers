@@ -16,10 +16,10 @@
     id <PXVideoScrubberControllerTarget> _target;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXVideoScrubberControllerTarget> target; // @synthesize target=_target;
 @property(nonatomic) double seekTime; // @synthesize seekTime=_seekTime;
 @property(copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
-- (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1 seekTime:(double)arg2;
 - (id)init;
 

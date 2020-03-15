@@ -30,13 +30,13 @@
     id <UIMultiSelectInteractionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIMultiSelectInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) _UISingleFingerTapExtensionGesture *_singleFingerExtensionTap; // @synthesize _singleFingerExtensionTap;
 @property(retain, nonatomic) UITapGestureRecognizer *_multiFingerTap; // @synthesize _multiFingerTap;
 @property(retain, nonatomic) UIPanGestureRecognizer *_multiFingerPan; // @synthesize _multiFingerPan;
 @property(retain, nonatomic) _UIMultiSelectOneFingerPanGesture *_multiSelectModePan; // @synthesize _multiSelectModePan;
-- (void).cxx_destruct;
 - (void)_handleSelectionExtensionTapGesture:(id)arg1;
 - (void)_multiFingerTapGesture:(id)arg1;
 - (void)_didInvokeMultiSelectExtendGestureAtLocation:(struct CGPoint)arg1;

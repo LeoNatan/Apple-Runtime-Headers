@@ -22,10 +22,10 @@
     id <SiriUIAutoDismissalControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isKeyWindow) BOOL isKeyWindow; // @synthesize isKeyWindow=_isKeyWindow;
 @property(nonatomic) __weak id <SiriUIAutoDismissalControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) __weak NSViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)keyWindowChanged:(id)arg1;
 - (void)watchKeyWindow:(BOOL)arg1;
 - (void)setKeyWindow:(BOOL)arg1;

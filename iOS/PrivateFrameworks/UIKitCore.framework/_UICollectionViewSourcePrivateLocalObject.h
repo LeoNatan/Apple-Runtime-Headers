@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UICollectionView *_collectionView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-- (void).cxx_destruct;
 - (id)initWithIndexPath:(id)arg1 collectionView:(id)arg2;
 
 @end

@@ -218,30 +218,6 @@ struct Location;
 
 struct Media;
 
-struct NoteAccountObject {
-    Class _field1;
-    id _field2;
-    id _field3;
-};
-
-struct NoteContext {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    unsigned long long _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    id _field15;
-};
-
 struct ObjectID {
     CDUnknownFunctionPointerType *_field1;
     basic_string_a1f69cfb _field2;
@@ -496,14 +472,6 @@ struct TopoSubstring {
     _Bool _field4;
     vector_c5c053b6 _field5;
     unsigned int _field6;
-};
-
-struct UIImage {
-    Class _field1;
-};
-
-struct UIWindow {
-    Class _field1;
 };
 
 struct Version {

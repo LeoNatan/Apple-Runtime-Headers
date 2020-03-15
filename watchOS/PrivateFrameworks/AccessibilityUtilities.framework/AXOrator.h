@@ -24,7 +24,6 @@
     int _speakingContext;
     AXLanguageTaggedContent *_selectedContent;
     float _audioSessionInactiveTimeout;
-    NSString *_voiceIdentifier;
     AXLanguageTaggedContent *_speakingContent;
     NSArray *_speakingContentTokenRanges;
     unsigned int _numberOfTokensToSkip;
@@ -39,6 +38,7 @@
     struct _NSRange _lastUtteranceSubstringRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *additionalContentToProcess; // @synthesize additionalContentToProcess=_additionalContentToProcess;
 @property(nonatomic) _Bool isProcessingContentForSpeech; // @synthesize isProcessingContentForSpeech=_isProcessingContentForSpeech;
 @property(nonatomic) _Bool preferredLanguageWasSpecified; // @synthesize preferredLanguageWasSpecified=_preferredLanguageWasSpecified;
@@ -53,14 +53,12 @@
 @property(nonatomic) unsigned int numberOfTokensToSkip; // @synthesize numberOfTokensToSkip=_numberOfTokensToSkip;
 @property(retain, nonatomic) NSArray *speakingContentTokenRanges; // @synthesize speakingContentTokenRanges=_speakingContentTokenRanges;
 @property(retain, nonatomic) AXLanguageTaggedContent *speakingContent; // @synthesize speakingContent=_speakingContent;
-@property(retain, nonatomic) NSString *voiceIdentifier; // @synthesize voiceIdentifier=_voiceIdentifier;
 @property(nonatomic) float audioSessionInactiveTimeout; // @synthesize audioSessionInactiveTimeout=_audioSessionInactiveTimeout;
 @property(nonatomic) _Bool spellOutContent; // @synthesize spellOutContent=_spellOutContent;
 @property(retain, nonatomic) AXLanguageTaggedContent *selectedContent; // @synthesize selectedContent=_selectedContent;
 @property(nonatomic) int speakingContext; // @synthesize speakingContext=_speakingContext;
 @property(nonatomic) struct _NSRange lastSpokenSubstringRange; // @synthesize lastSpokenSubstringRange=_lastSpokenSubstringRange;
 @property(nonatomic) __weak id <AXOratorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange)arg2 utterance:(id)arg3;
 - (void)speechSynthesizer:(id)arg1 didCancelSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didStartSpeechUtterance:(id)arg2;
@@ -103,6 +101,7 @@
 - (_Bool)pauseSpeaking:(id *)arg1;
 - (_Bool)startSpeakingWithPreferredLanguage:(id)arg1 delayBeforeStart:(double)arg2 error:(id *)arg3;
 - (_Bool)startSpeakingWithPreferredLanguage:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) NSString *currentVoiceIdentifier;
 - (void)addAdditionalContentToSpeechQueue:(id)arg1;
 @property(copy, nonatomic) NSString *content;
 - (id)init;

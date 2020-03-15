@@ -15,10 +15,10 @@
     NSString *_originator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originator; // @synthesize originator=_originator;
 @property(retain, nonatomic) CalDAVScheduleResponseItem *scheduleResponse; // @synthesize scheduleResponse=_scheduleResponse;
 @property(retain, nonatomic) NSArray *attendees; // @synthesize attendees=_attendees;
-- (void).cxx_destruct;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (id)additionalHeaderValues;

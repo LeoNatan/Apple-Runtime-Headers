@@ -20,8 +20,8 @@
 + (Class)classForProtocolProperty:(id)arg1 withValue:(id)arg2;
 + (CDUnknownBlockType)purgeClassBlockForPropertyWithName:(id)arg1;
 + (CDUnknownBlockType)valueClassBlockForPropertyWithName:(id)arg1;
-@property(retain, nonatomic) SXComponentAnimation *backingAnimation; // @synthesize backingAnimation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXComponentAnimation *backingAnimation; // @synthesize backingAnimation;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) unsigned long long traits;

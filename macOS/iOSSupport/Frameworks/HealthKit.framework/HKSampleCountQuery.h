@@ -19,8 +19,8 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
-@property(readonly, copy, nonatomic) NSSet *sampleQueryDescriptions; // @synthesize sampleQueryDescriptions=_sampleQueryDescriptions;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *sampleQueryDescriptions; // @synthesize sampleQueryDescriptions=_sampleQueryDescriptions;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_validate;
 - (void)queue_populateConfiguration:(id)arg1;

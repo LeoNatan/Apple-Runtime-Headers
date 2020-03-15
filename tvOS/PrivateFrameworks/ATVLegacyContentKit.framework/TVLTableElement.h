@@ -14,9 +14,9 @@
     NSArray *_rows;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rows; // @synthesize rows=_rows;
 @property(retain, nonatomic) NSArray *columnDefinitions; // @synthesize columnDefinitions=_columnDefinitions;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;

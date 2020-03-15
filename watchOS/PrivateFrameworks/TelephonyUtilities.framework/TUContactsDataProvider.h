@@ -22,11 +22,11 @@
 + (id)defaultContactKeyDescriptors;
 + (id)numberFormatter;
 + (id)keysByCombiningDefaultKeysWithKeysToFetch:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) TUContactsDataProviderIgnoredHandles *ignoredHandles; // @synthesize ignoredHandles=_ignoredHandles;
 @property(readonly, nonatomic) id <TUContactsDataSource> contactsDataSource; // @synthesize contactsDataSource=_contactsDataSource;
 @property(copy, nonatomic) CDUnknownBlockType localeSupportsPrefixHintForFetchRequest; // @synthesize localeSupportsPrefixHintForFetchRequest=_localeSupportsPrefixHintForFetchRequest;
 @property(nonatomic) _Bool useAsianNameFormat; // @synthesize useAsianNameFormat=_useAsianNameFormat;
-- (void).cxx_destruct;
 - (id)prefixHintForFetchRequest:(id)arg1;
 - (int)personIDForContact:(id)arg1;
 - (id)formattedNameForHandle:(id)arg1 countryCode:(id)arg2;

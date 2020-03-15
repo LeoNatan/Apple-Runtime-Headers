@@ -13,8 +13,8 @@
     TIWordSearch *_wordSearch;
 }
 
-@property(retain, nonatomic) TIWordSearch *wordSearch; // @synthesize wordSearch=_wordSearch;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TIWordSearch *wordSearch; // @synthesize wordSearch=_wordSearch;
 - (void)didFinishLearning;
 - (void)adaptToParagraph:(id)arg1 timeStamp:(double)arg2 adaptationType:(int)arg3;
 - (void)load;

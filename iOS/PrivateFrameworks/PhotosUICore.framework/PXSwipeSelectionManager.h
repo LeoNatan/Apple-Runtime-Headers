@@ -40,6 +40,7 @@
     struct PXSimpleIndexPath __currentIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXUIAutoScroller *_autoScroller; // @synthesize _autoScroller=__autoScroller;
 @property(retain, nonatomic, setter=_setPausingChangesToken:) id _pausingChangesToken; // @synthesize _pausingChangesToken=__pausingChangesToken;
 @property(retain, nonatomic, setter=_setSelectedIndexPathsBeforeSwipe:) PXIndexPathSet *_selectedIndexPathsBeforeSwipe; // @synthesize _selectedIndexPathsBeforeSwipe=__selectedIndexPathsBeforeSwipe;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic, setter=_setState:) unsigned long long state; // @synthesize state=_state;
 @property(nonatomic) __weak id <PXSwipeSelectionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didEndMultiSelectInteraction:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)multiSelectInteraction:(id)arg1 appendSelectionAtPoint:(struct CGPoint)arg2;
 - (_Bool)shouldAllowSelectionExtensionAtPoint:(struct CGPoint)arg1;

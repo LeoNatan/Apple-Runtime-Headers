@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

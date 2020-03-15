@@ -33,6 +33,7 @@
     double _stackedProgress;
     struct CGPoint _initialCentroid;
     struct CGPoint _centroid;
+    struct CGPoint _centroidAdjustment;
     double _absoluteScale;
     struct CGPoint _translationWithoutScale;
     CADisplayLink *_displayLink;

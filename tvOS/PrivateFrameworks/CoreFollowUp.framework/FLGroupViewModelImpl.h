@@ -18,10 +18,10 @@
     NSString *_groupTitle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *groupTitle; // @synthesize groupTitle=_groupTitle;
 @property(copy, nonatomic) NSString *rowTitle; // @synthesize rowTitle=_rowTitle;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)shouldCoalesceItems;
 - (_Bool)restrictionEnabled;
 @property(readonly, copy) NSString *description;

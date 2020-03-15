@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UICollectionReusableView *_view;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UICollectionReusableView *view; // @synthesize view=_view;
 @property(nonatomic) _Bool hasPrefetchedData; // @synthesize hasPrefetchedData=_hasPrefetchedData;
 @property(retain, nonatomic) UICollectionViewLayoutAttributes *attributes; // @synthesize attributes=_attributes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAttributes:(id)arg1;
 

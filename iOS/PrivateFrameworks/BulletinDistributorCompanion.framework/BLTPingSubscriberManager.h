@@ -18,10 +18,10 @@
     id <BLTBulletinDistributorSubscriberDeviceDelegate> _deviceDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BLTBulletinDistributorSubscriberDeviceDelegate> deviceDelegate; // @synthesize deviceDelegate=_deviceDelegate;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) BLTBulletinDistributorSubscriberList *subscribers; // @synthesize subscribers=_subscribers;
-- (void).cxx_destruct;
 - (void)_loadPingSubscriberBundles:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)initWithDeviceDelegate:(id)arg1;

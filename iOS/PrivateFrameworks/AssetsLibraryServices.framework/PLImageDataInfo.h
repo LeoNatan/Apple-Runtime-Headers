@@ -19,6 +19,7 @@
     long long _EXIFOrientation;
 }
 
+- (void).cxx_destruct;
 @property long long EXIFOrientation; // @synthesize EXIFOrientation=_EXIFOrientation;
 @property(retain) NSString *UTI; // @synthesize UTI=_UTI;
 @property(retain) NSString *sandboxExtensionToken; // @synthesize sandboxExtensionToken=_sandboxExtensionToken;
@@ -26,7 +27,6 @@
 @property _Bool canDownloadFromCloud; // @synthesize canDownloadFromCloud=_canDownloadFromCloud;
 @property _Bool deliveredPlaceholder; // @synthesize deliveredPlaceholder=_deliveredPlaceholder;
 @property long long deliveredFormat; // @synthesize deliveredFormat=_deliveredFormat;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

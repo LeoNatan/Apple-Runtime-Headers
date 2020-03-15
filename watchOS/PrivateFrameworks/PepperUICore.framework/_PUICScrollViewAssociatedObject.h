@@ -30,6 +30,7 @@
     PUICScrollViewInertialAnimator *_pageAnimator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICScrollViewInertialAnimator *pageAnimator; // @synthesize pageAnimator=_pageAnimator;
 @property(nonatomic) CDStruct_a12fb154 delegateRespondsTo; // @synthesize delegateRespondsTo=_delegateRespondsTo;
 @property(nonatomic) _Bool minorDetentsRegionDisabled; // @synthesize minorDetentsRegionDisabled=_minorDetentsRegionDisabled;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSTimer *suspendSystemGestureReleaseTimer; // @synthesize suspendSystemGestureReleaseTimer=_suspendSystemGestureReleaseTimer;
 @property(retain, nonatomic) PUICCrownInputSequencer *crownInputSequencer; // @synthesize crownInputSequencer=_crownInputSequencer;
 @property(nonatomic) int crownInputScrollDirection; // @synthesize crownInputScrollDirection=_crownInputScrollDirection;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

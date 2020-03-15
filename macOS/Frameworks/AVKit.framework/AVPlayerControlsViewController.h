@@ -46,11 +46,11 @@
 + (id)keyPathsForValuesAffectingScrubberHidden;
 + (id)keyPathsForValuesAffectingExternalPlaybackButtonHidden;
 + (id)keyPathsForValuesAffectingPlayerController;
+- (void).cxx_destruct;
 @property(retain) NSButton *pictureInPictureButton; // @synthesize pictureInPictureButton=_pictureInPictureButton;
 @property(retain) NSButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
 @property(nonatomic) long long activeTimeDisplayStyle; // @synthesize activeTimeDisplayStyle=_activeTimeDisplayStyle;
 @property(readonly) AVTouchBarPlaybackControlsProvider *touchBarPlaybackControlsProvider; // @synthesize touchBarPlaybackControlsProvider=_touchBarPlaybackControlsProvider;
-- (void).cxx_destruct;
 - (void)slowMotionSliderMouseDownEventTrackingEnded:(id)arg1;
 - (void)slowMotionSlider:(id)arg1 tracksMouseDownEventWithCurrentValue:(double)arg2;
 - (void)slowMotionSliderMouseDownEventTrackingBegan:(id)arg1;

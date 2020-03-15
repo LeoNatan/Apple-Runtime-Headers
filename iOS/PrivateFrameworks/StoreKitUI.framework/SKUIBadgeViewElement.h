@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSURL *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_url;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(readonly, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *fallbackImage; // @synthesize fallbackImage=_fallbackImage;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)accessibilityText;

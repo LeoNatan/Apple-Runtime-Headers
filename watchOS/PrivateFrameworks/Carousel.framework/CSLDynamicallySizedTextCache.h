@@ -20,12 +20,12 @@
     unsigned int _cacheCountLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int cacheCountLimit; // @synthesize cacheCountLimit=_cacheCountLimit;
 @property(nonatomic) float minimumType; // @synthesize minimumType=_minimumType;
 @property(nonatomic) unsigned int fallbackAttemptCount; // @synthesize fallbackAttemptCount=_fallbackAttemptCount;
 @property(nonatomic) unsigned int fallbackType; // @synthesize fallbackType=_fallbackType;
 @property(nonatomic) __weak id <CSLDynamicallySizedTextCacheDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)dynamicallySizedStringForTitle:(id)arg1 width:(float)arg2;
 - (void)_rebuildTitleTextSizingParams;
 - (id)_delegate_idealFont;

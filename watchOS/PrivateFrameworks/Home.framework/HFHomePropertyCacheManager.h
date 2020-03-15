@@ -18,8 +18,8 @@
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSMutableDictionary *objectCaches; // @synthesize objectCaches=_objectCaches;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *objectCaches; // @synthesize objectCaches=_objectCaches;
 - (void)homeKitDispatcher:(id)arg1 manager:(id)arg2 didChangeHome:(id)arg3;
 - (void)home:(id)arg1 didRemoveAccessory:(id)arg2;
 - (void)home:(id)arg1 didAddAccessory:(id)arg2;

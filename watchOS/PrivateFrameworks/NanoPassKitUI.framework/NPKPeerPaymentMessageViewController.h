@@ -35,6 +35,7 @@
 + (float)_labelAlphaForState:(unsigned int)arg1;
 + (id)_valueColorForState:(unsigned int)arg1;
 + (id)_bubbleColorForState:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int visibleState; // @synthesize visibleState=_visibleState;
 @property(retain, nonatomic) NSLayoutConstraint *bubbleHeightConstraint; // @synthesize bubbleHeightConstraint=_bubbleHeightConstraint;
 @property(retain, nonatomic) UIView *requestContainerView; // @synthesize requestContainerView=_requestContainerView;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) PKPeerPaymentMessage *message; // @synthesize message=_message;
 @property(readonly, nonatomic) unsigned int direction; // @synthesize direction=_direction;
 @property(nonatomic) __weak id <NPKPeerPaymentMessageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)generatedSnapshot;
 - (void)_updateVisibleStateWithLocalResponseStatus:(unsigned int)arg1;
 - (void)_acceptButtonTapped:(id)arg1;

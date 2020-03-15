@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *volumeButtonConsumerInvalidators; // @synthesize volumeButtonConsumerInvalidators=_volumeButtonConsumerInvalidators;
 @property(retain, nonatomic) NSMapTable *assertions; // @synthesize assertions=_assertions;
-- (void).cxx_destruct;
 - (void)_relinquishHardwareVolumeButtons;
 - (void)_requestHardwareVolumeButtons;
 - (void)_updateVolumeControlsForRoute:(id)arg1;

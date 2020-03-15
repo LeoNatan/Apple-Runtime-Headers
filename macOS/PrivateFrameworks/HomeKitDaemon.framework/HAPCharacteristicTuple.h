@@ -15,10 +15,10 @@
     long long _linkType;
 }
 
+- (void).cxx_destruct;
 @property long long linkType; // @synthesize linkType=_linkType;
 @property(retain, nonatomic) NSString *serverIdentifier; // @synthesize serverIdentifier=_serverIdentifier;
 @property(retain, nonatomic) HAPCharacteristic *hapCharacteristic; // @synthesize hapCharacteristic=_hapCharacteristic;
-- (void).cxx_destruct;
 - (id)initWithHAPCharacteristic:(id)arg1 serverIdentifier:(id)arg2 linkType:(long long)arg3;
 
 @end

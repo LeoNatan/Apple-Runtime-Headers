@@ -16,8 +16,8 @@
     NSString *_path;
 }
 
-@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 - (_Bool)canResolveAssetNamed:(id)arg1;
 - (id)resolveAssetNamed:(id)arg1;
 - (id)initWithBundle:(id)arg1;

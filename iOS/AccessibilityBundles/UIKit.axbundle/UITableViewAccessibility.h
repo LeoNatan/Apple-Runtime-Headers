@@ -15,8 +15,10 @@
 + (id)safeCategoryTargetClassName;
 - (id)_axNextSelectableIndexPathForIndexPath:(id)arg1;
 - (id)_axPreviousSelectableIndexPathForIndexPath:(id)arg1;
+- (void)_axSetupIndexGuide;
+- (void)_axSetIndexGuide:(id)arg1;
+- (id)_axGetIndexGuide;
 - (id)_childFocusRegionsInRect:(struct CGRect)arg1 inCoordinateSpace:(id)arg2;
-- (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 - (_Bool)_accessibilityDrawsFocusRingWhenChildrenFocused;
 - (id)preferredFocusedView;
 - (id)preferredFocusEnvironments;
@@ -24,9 +26,7 @@
 - (_Bool)canBecomeFocused;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)_accessibilityKeyCommandsShouldOverrideKeyCommands;
-- (void)_fkaScrollToNextRow;
-- (void)_fkaScrollToPreviousRow;
-- (id)_accessibilityKeyCommands;
+- (_Bool)_accessibilityShouldIncludeArrowKeyCommandsForDirectionalFocusMovement;
 - (_Bool)_accessibilityIsInMasterSplitViewController;
 - (_Bool)_accessibilityNativeFocusPreferredElementIsValid;
 - (id)_accessibilityReusableViewForOpaqueElement:(id)arg1;

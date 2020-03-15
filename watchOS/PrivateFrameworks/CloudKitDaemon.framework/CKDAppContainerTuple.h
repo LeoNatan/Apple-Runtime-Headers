@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     unsigned int _mmcsEncryptionSupport;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int mmcsEncryptionSupport; // @synthesize mmcsEncryptionSupport=_mmcsEncryptionSupport;
 @property(nonatomic) _Bool wantsSiloedContext; // @synthesize wantsSiloedContext=_wantsSiloedContext;
 @property(retain, nonatomic) NSString *containerEncryptionServiceName; // @synthesize containerEncryptionServiceName=_containerEncryptionServiceName;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 @property(readonly, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(readonly, nonatomic) NSString *applicationBundleID; // @synthesize applicationBundleID=_applicationBundleID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKPropertiesDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;

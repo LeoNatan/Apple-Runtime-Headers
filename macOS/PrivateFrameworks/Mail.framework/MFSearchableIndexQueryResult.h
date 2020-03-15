@@ -14,9 +14,9 @@
     NSString *_messageIDHeader;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *messageIDHeader; // @synthesize messageIDHeader=_messageIDHeader;
 @property(readonly, copy, nonatomic) NSString *persistentID; // @synthesize persistentID=_persistentID;
-- (void).cxx_destruct;
 - (id)initWithPersistentID:(id)arg1 messageIDHeader:(id)arg2;
 
 @end

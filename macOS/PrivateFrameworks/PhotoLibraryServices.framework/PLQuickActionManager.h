@@ -20,12 +20,12 @@
     Class __SBSApplicationShortcutCustomImageIconClass;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setSBSApplicationShortcutCustomImageIconClass:) Class _SBSApplicationShortcutCustomImageIconClass; // @synthesize _SBSApplicationShortcutCustomImageIconClass=__SBSApplicationShortcutCustomImageIconClass;
 @property(retain, nonatomic, setter=_setSBSApplicationShortcutItemClass:) Class _SBSApplicationShortcutItemClass; // @synthesize _SBSApplicationShortcutItemClass=__SBSApplicationShortcutItemClass;
 @property(retain, nonatomic, setter=_setSBSApplicationShortcutServiceClass:) Class _SBSApplicationShortcutServiceClass; // @synthesize _SBSApplicationShortcutServiceClass=__SBSApplicationShortcutServiceClass;
 @property(nonatomic, setter=_setMostRecentPhotoIsInvalid:) BOOL _mostRecentPhotoIsInvalid; // @synthesize _mostRecentPhotoIsInvalid=__mostRecentPhotoIsInvalid;
 @property(retain, nonatomic, setter=_setCachedMostRecentPhotoData:) NSData *_cachedMostRecentPhotoData; // @synthesize _cachedMostRecentPhotoData=__cachedMostRecentPhotoData;
-- (void).cxx_destruct;
 - (BOOL)_userHasPhotosFromLastYear;
 - (BOOL)_userHasPhotos;
 - (void)buildQuickActionItems;

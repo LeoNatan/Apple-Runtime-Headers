@@ -11,7 +11,7 @@
 #import <HealthDaemon/HDTaskServer-Protocol.h>
 #import <HealthDaemon/HKQueryServerInterface-Protocol.h>
 
-@class HDDaemonTransaction, HDDataCollectionAssertion, HDHealthStoreClient, HDProfile, HDQueryServerClientState, HKObjectType, HKQuantityType, HKQueryServerConfiguration, HKSampleType, NSArray, NSDictionary, NSSet, NSString, NSUUID, _HKFilter;
+@class HDDaemonTransaction, HDDataCollectionAssertion, HDDatabaseTransactionContextStatistics, HDHealthStoreClient, HDProfile, HDQueryServerClientState, HKObjectType, HKQuantityType, HKQueryServerConfiguration, HKSampleType, NSArray, NSDictionary, NSSet, NSString, NSUUID, _HKFilter;
 @protocol HDQueryServerDelegate, HKQueryClientInterface><NSXPCProxyCreating, OS_dispatch_queue;
 
 @interface HDQueryServer : NSObject <HDDatabaseProtectedDataObserver, HKQueryServerInterface, HDDataObserver, HDTaskServer>
@@ -30,6 +30,7 @@
     // Error parsing type: AB, name: _shouldFinish
     // Error parsing type: AB, name: _shouldPause
     NSObject<OS_dispatch_queue> *_unitTestQueryQueue;
+    HDDatabaseTransactionContextStatistics *_transactionStatistics;
     id <HDQueryServerDelegate> _delegate;
     NSUUID *_queryUUID;
     HDHealthStoreClient *_client;
@@ -50,6 +51,7 @@
 + (_Bool)supportsAnchorBasedAuthorization;
 + (Class)queryClass;
 + (id)builtInQueryServerClasses;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerWillChangeStateHandler; // @synthesize unitTest_queryServerWillChangeStateHandler=_unitTest_queryServerWillChangeStateHandler;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerSetShouldPauseHandler; // @synthesize unitTest_queryServerSetShouldPauseHandler=_unitTest_queryServerSetShouldPauseHandler;
 @property(nonatomic) int dataCount; // @synthesize dataCount=_dataCount;
@@ -63,10 +65,9 @@
 @property(readonly, copy, nonatomic) HKQueryServerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, copy, nonatomic) NSUUID *queryUUID; // @synthesize queryUUID=_queryUUID;
 @property(nonatomic) __weak id <HDQueryServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_queue_logThresholdHardwareFactor;
 - (double)_queue_queryLogThreshold;
-- (void)_queue_logQueryWithDuration:(double)arg1;
+- (void)_queue_logQueryWithDuration:(double)arg1 statistics:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (id)_queryStateString;
 - (id)diagnosticDescription;

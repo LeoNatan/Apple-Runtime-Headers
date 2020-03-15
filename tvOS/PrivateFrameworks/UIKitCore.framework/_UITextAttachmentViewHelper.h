@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)helperForAttachment:(id)arg1;
-@property(retain, nonatomic) NSTextAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSTextAttachment *attachment; // @synthesize attachment=_attachment;
 - (void)removeView;
 
 @end

@@ -16,9 +16,9 @@
     NSISO8601DateFormatter *_dateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSISO8601DateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(copy, nonatomic) FCJSONRecordSourceSchema *schema; // @synthesize schema=_schema;
-- (void).cxx_destruct;
 - (id)recordFromCKRecord:(id)arg1 base:(id)arg2;
 - (id)keyValueRepresentationOfRecord:(id)arg1;
 - (id)recordIDPrefix;
@@ -26,6 +26,7 @@
 - (unsigned long long)lowThresholdDataSizeLimit;
 - (unsigned long long)storeVersion;
 - (id)storeFilename;
+- (id)alwaysLocalizedKeys;
 - (id)localizableKeys;
 - (id)nonLocalizableKeys;
 - (int)pbRecordType;

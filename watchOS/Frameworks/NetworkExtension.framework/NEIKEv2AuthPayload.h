@@ -15,9 +15,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *authenticationData; // @synthesize authenticationData=_authenticationData;
 @property(retain, nonatomic) NEIKEv2AuthenticationProtocol *authProtocol; // @synthesize authProtocol=_authProtocol;
-- (void).cxx_destruct;
 - (_Bool)parsePayloadData;
 - (_Bool)generatePayloadData;
 - (_Bool)hasRequiredFields;

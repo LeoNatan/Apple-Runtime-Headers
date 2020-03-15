@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIUndoTutorialView *_tutorialView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIUndoTutorialView *tutorialView; // @synthesize tutorialView=_tutorialView;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)doneButtonPressed;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLoad;

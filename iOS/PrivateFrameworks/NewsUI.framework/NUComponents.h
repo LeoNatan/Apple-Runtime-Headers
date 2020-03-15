@@ -13,8 +13,8 @@
     NSMutableArray *_mutableComponents;
 }
 
-@property(readonly, nonatomic) NSMutableArray *mutableComponents; // @synthesize mutableComponents=_mutableComponents;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *mutableComponents; // @synthesize mutableComponents=_mutableComponents;
 @property(readonly, nonatomic) NSArray *reversedComponents;
 @property(readonly, nonatomic) NSArray *components;
 - (void)addComponent:(id)arg1;

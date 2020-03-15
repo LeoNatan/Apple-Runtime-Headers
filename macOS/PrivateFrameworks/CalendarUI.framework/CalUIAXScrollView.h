@@ -15,10 +15,10 @@
     NSString *_axRoleDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *axRoleDescription; // @synthesize axRoleDescription=_axRoleDescription;
 @property BOOL accessibiltyIgnoredForNode; // @synthesize accessibiltyIgnoredForNode=_accessibiltyIgnoredForNode;
 @property BOOL accessibiltyIgnoredForNodeAndChildren; // @synthesize accessibiltyIgnoredForNodeAndChildren=_accessibiltyIgnoredForNodeAndChildren;
-- (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;

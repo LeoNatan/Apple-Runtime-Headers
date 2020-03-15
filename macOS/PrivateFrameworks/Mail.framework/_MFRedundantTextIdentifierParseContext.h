@@ -33,6 +33,7 @@
 
 + (void)normalizeEntitiesInString:(id)arg1;
 + (id)normalizedStringForEntity:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *attachmentContextsByURL; // @synthesize attachmentContextsByURL=_attachmentContextsByURL;
 @property(nonatomic) BOOL attachmentIsTag; // @synthesize attachmentIsTag=_attachmentIsTag;
 @property(nonatomic) long long attachmentEndIndex; // @synthesize attachmentEndIndex=_attachmentEndIndex;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) long long bufferLength; // @synthesize bufferLength=_bufferLength;
 @property(readonly, nonatomic) long long bufferStartIndex; // @synthesize bufferStartIndex=_bufferStartIndex;
 @property(readonly, nonatomic) CDStruct_f9502b4c *buffer; // @synthesize buffer=_buffer;
-- (void).cxx_destruct;
 - (id)parseAndSanitizeAttributionLineInRange:(CDStruct_912cb5d2 *)arg1;
 - (void)resetCurrentIndex;
 - (long long)advanceToEndOfLine:(char *)arg1;

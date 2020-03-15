@@ -19,10 +19,10 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly, nonatomic) __weak id <IXAppInstallObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)_client_coordinatorWithSeed:(id)arg1 didCancelWithReason:(id)arg2 client:(unsigned long long)arg3;
 - (oneway void)_client_coordinatorDidCompleteSuccessfullyWithSeed:(id)arg1;
 - (oneway void)_client_coordinatorDidInstallPlaceholderWithSeed:(id)arg1;

@@ -20,6 +20,7 @@
     struct CGPoint __initialPointInView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setInitialPointInView:) struct CGPoint _initialPointInView; // @synthesize _initialPointInView=__initialPointInView;
 @property(nonatomic, setter=_setDidBegin:) _Bool _didBegin; // @synthesize _didBegin=__didBegin;
 @property(nonatomic, setter=_setWillBegin:) _Bool _willBegin; // @synthesize _willBegin=__willBegin;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak id <PXTouchingUIGestureRecognizerDelegate> touchDelegate; // @synthesize touchDelegate=_touchDelegate;
 @property(nonatomic) double maximumTouchMovement; // @synthesize maximumTouchMovement=_maximumTouchMovement;
 @property(nonatomic) double minimumTouchDuration; // @synthesize minimumTouchDuration=_minimumTouchDuration;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)setState:(long long)arg1;
 - (void)setEnabled:(_Bool)arg1;

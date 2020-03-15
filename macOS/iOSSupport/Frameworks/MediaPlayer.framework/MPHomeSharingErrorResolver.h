@@ -25,8 +25,8 @@
     MPHomeSharingML3DataProvider *_dataProvider;
 }
 
-@property(retain, nonatomic) MPHomeSharingML3DataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPHomeSharingML3DataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
 - (void)_processNextAuthorizationRequest;
 - (void)_performMachineAuthorization;
 - (BOOL)_errorIsFairPlayError:(id)arg1;

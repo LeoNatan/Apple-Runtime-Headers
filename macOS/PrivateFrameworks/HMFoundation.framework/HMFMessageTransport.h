@@ -13,8 +13,8 @@
     id <HMFMessageTransportDelegate> _delegate;
 }
 
-@property __weak id <HMFMessageTransportDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <HMFMessageTransportDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

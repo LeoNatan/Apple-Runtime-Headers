@@ -32,10 +32,10 @@ __attribute__((visibility("hidden")))
 
 + (id)resolvedURLForRelativeURL:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) __weak id <MKWebContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_removeModuleWithCallbackHandler:(CDUnknownBlockType)arg1;
 - (void)_getAnalyticsShortSessionSnapshotWithCallbackHandler:(CDUnknownBlockType)arg1;
 - (void)_setHeight:(id)arg1 callbackHandler:(CDUnknownBlockType)arg2;

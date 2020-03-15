@@ -24,6 +24,7 @@
     NSHashTable *_weakObservers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasStartedLoading; // @synthesize hasStartedLoading=_hasStartedLoading;
 @property(readonly, nonatomic) NSHashTable *weakObservers; // @synthesize weakObservers=_weakObservers;
 @property(readonly, nonatomic) NSURL *generatedWaveformOutputURL; // @synthesize generatedWaveformOutputURL=_generatedWaveformOutputURL;
@@ -32,7 +33,6 @@
 @property(nonatomic) double durationPerWaveformSlice; // @synthesize durationPerWaveformSlice=_durationPerWaveformSlice;
 @property(readonly, nonatomic) RCWaveform *accumulatorWaveform; // @synthesize accumulatorWaveform=_accumulatorWaveform;
 @property(readonly, nonatomic) RCWaveformGenerator *waveformGenerator; // @synthesize waveformGenerator=_waveformGenerator;
-- (void).cxx_destruct;
 - (void)_performObserversBlock:(CDUnknownBlockType)arg1;
 - (void)_performOnObserversBlock:(CDUnknownBlockType)arg1;
 - (void)waveformGenerator:(id)arg1 didLoadWaveformSegment:(id)arg2;

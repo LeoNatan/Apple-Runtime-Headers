@@ -28,6 +28,7 @@
 
 + (id)sharedDaemon;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *shutdownTimer; // @synthesize shutdownTimer=_shutdownTimer;
 @property(retain) NSObject<OS_dispatch_queue> *serviceQueue; // @synthesize serviceQueue=_serviceQueue;
 @property(retain) NSMutableArray *clientConnections; // @synthesize clientConnections=_clientConnections;
@@ -38,7 +39,6 @@
 @property(retain) NSXPCListener *selectSourceListener; // @synthesize selectSourceListener=_selectSourceListener;
 @property(retain) NSXPCListener *migrateFromListener; // @synthesize migrateFromListener=_migrateFromListener;
 @property unsigned long long requestedDaemonScannerState; // @synthesize requestedDaemonScannerState=_requestedDaemonScannerState;
-- (void).cxx_destruct;
 - (void)doIdleCheck;
 - (void)attemptIdleExit;
 - (BOOL)daemonIsIdle;

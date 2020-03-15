@@ -66,7 +66,6 @@
     _Bool _isCurrentlyDownloadingPurgedAssets;
     _Bool _allowedByScreenTime;
     _Bool _hasSurfRequest;
-    NSString *_participantIDsHash;
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
     NSString *_groupChatIdentifierUppercase;
@@ -87,6 +86,7 @@
 + (void)removeGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (_Bool)isGUIDInAttemptingListInScrutinyMode:(id)arg1;
 + (void)storeGUIDInAttemptingListInScrutinyMode:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
 @property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
 @property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;
@@ -111,7 +111,6 @@
 @property(retain, nonatomic) NSString *groupID; // @synthesize groupID=_groupID;
 @property(retain, nonatomic) NSString *lastAddressedHandleID; // @synthesize lastAddressedHandleID=_lastAddressedHandleID;
 @property(retain, nonatomic) NSArray *frequentReplies; // @synthesize frequentReplies=_frequentReplies;
-- (void).cxx_destruct;
 - (void)downloadPurgedAttachments;
 - (void)sendProgress:(id)arg1 progressDidChange:(float)arg2 sendingMessages:(id)arg3 sendCount:(unsigned int)arg4 totalCount:(unsigned int)arg5 finished:(_Bool)arg6;
 - (id)sendProgressDelegate;
@@ -235,7 +234,6 @@
 - (void)_watchHandleStatusChangedForHandle:(id)arg1;
 - (void)_handleHandleStatusChanged:(id)arg1;
 @property(nonatomic) _Bool allowedByScreenTime; // @synthesize allowedByScreenTime=_allowedByScreenTime;
-@property(readonly, copy, nonatomic) NSString *participantIDsHash; // @synthesize participantIDsHash=_participantIDsHash;
 - (void)_recomputeOverallChatStatusQuietly:(_Bool)arg1;
 - (void)didUnregisterFromRegistry:(id)arg1;
 - (void)clear;
@@ -413,6 +411,7 @@
 - (void)_launchAppForJoinRequest:(id)arg1;
 - (id)conversation;
 - (_Bool)mapsToTUConversation:(id)arg1;
+- (id)participantHandleIDs;
 - (id)conversationContext;
 - (_Bool)allowedToShowConversationSync;
 - (_Bool)allowedToShowConversation;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *handleValue; // @synthesize handleValue=_handleValue;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *handleValue; // @synthesize handleValue=_handleValue;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

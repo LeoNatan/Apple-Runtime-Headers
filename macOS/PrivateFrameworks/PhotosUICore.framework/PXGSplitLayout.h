@@ -22,6 +22,7 @@
     struct NSEdgeInsets _presentedPadding;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct NSEdgeInsets presentedPadding; // @synthesize presentedPadding=_presentedPadding;
 @property(nonatomic) BOOL shouldExcludeTopAndBottomPaddingFromReferenceSize; // @synthesize shouldExcludeTopAndBottomPaddingFromReferenceSize=_shouldExcludeTopAndBottomPaddingFromReferenceSize;
 @property(nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
@@ -29,9 +30,8 @@
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) PXGLayout *secondSublayout; // @synthesize secondSublayout=_secondSublayout;
 @property(retain, nonatomic) PXGLayout *firstSublayout; // @synthesize firstSublayout=_firstSublayout;
-- (void).cxx_destruct;
-- (void)willRemoveSublayout:(id)arg1;
-- (void)didAddSublayout:(id)arg1;
+- (void)willRemoveSublayout:(id)arg1 atIndex:(long long)arg2 flags:(unsigned long long)arg3;
+- (void)didAddSublayout:(id)arg1 atIndex:(long long)arg2 flags:(unsigned long long)arg3;
 - (void)didChangeSublayoutOrigins;
 - (void)sublayoutDidChangeLastBaseline:(id)arg1;
 - (void)sublayoutDidChangeContentSize:(id)arg1;

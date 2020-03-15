@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *zones; // @synthesize zones=_zones;
 @property BOOL scanWhenScreenOff; // @synthesize scanWhenScreenOff=_scanWhenScreenOff;
 @property CDStruct_9e3626a3 scanningRates; // @synthesize scanningRates=_scanningRates;
 @property unsigned char clientType; // @synthesize clientType=_clientType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

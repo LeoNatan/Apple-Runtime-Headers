@@ -20,11 +20,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isStarted) _Bool started; // @synthesize started=_started;
 @property(retain, nonatomic) NSXPCListener *serviceListener; // @synthesize serviceListener=_serviceListener;
 @property(retain, nonatomic) NSMutableSet *activeConnections; // @synthesize activeConnections=_activeConnections;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *acceptSerialQueue; // @synthesize acceptSerialQueue=_acceptSerialQueue;
-- (void).cxx_destruct;
 - (void)_handleInvalidationForConnection:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;

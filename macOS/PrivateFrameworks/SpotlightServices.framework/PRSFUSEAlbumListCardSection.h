@@ -15,9 +15,9 @@
 }
 
 + (BOOL)isAlbum:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *albums; // @synthesize albums=_albums;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 albums:(id)arg2;

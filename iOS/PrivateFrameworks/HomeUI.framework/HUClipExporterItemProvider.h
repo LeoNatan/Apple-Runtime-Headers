@@ -13,8 +13,8 @@
     NSURL *_clipURL;
 }
 
-@property(retain, nonatomic) NSURL *clipURL; // @synthesize clipURL=_clipURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *clipURL; // @synthesize clipURL=_clipURL;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)item;

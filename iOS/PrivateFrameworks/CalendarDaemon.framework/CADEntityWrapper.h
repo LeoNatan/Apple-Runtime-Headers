@@ -20,8 +20,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) _Bool deleted; // @synthesize deleted=_deleted;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool deleted; // @synthesize deleted=_deleted;
 - (id)objectID;
 - (id)loadedValues;
 - (void)encodeWithCoder:(id)arg1;

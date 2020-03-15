@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFUnfairLock *accessoryPairingRetryMapLock; // @synthesize accessoryPairingRetryMapLock=_accessoryPairingRetryMapLock;
 @property(readonly, nonatomic) NSMutableDictionary *retryCountMap; // @synthesize retryCountMap=_retryCountMap;
-- (void).cxx_destruct;
 - (void)incrementRetryCount:(id)arg1;
 - (void)clearRetryCountMap;
 - (unsigned long long)retryCountForIdentifier:(id)arg1;

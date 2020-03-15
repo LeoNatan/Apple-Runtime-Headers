@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *__reusableObjectsByReuseIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReuseEnabled) _Bool reuseEnabled; // @synthesize reuseEnabled=_reuseEnabled;
 @property(readonly, nonatomic) NSMutableDictionary *_reusableObjectsByReuseIdentifier; // @synthesize _reusableObjectsByReuseIdentifier=__reusableObjectsByReuseIdentifier;
 @property(readonly, nonatomic) NSMutableDictionary *_objectCreationBlocksByReuseIdentifier; // @synthesize _objectCreationBlocksByReuseIdentifier=__objectCreationBlocksByReuseIdentifier;
-- (void).cxx_destruct;
 - (void)enqueueObjectForReuse:(id)arg1 withReuseIdentifier:(id)arg2;
 - (id)dequeueObjectWithReuseIdentifier:(id)arg1 isReused:(_Bool *)arg2;
 - (void)registerObjectCreationBlock:(CDUnknownBlockType)arg1 withReuseIdentifier:(id)arg2;

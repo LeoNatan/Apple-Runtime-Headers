@@ -14,8 +14,8 @@
 }
 
 + (id)sharedCache;
-@property(retain, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
 - (id)cacheKeyForVariant:(unsigned long long)arg1;
 - (void)updateImage:(id)arg1 forBundleIdentifier:(id)arg2 variant:(unsigned long long)arg3;
 - (id)cachedImageForBundleIdentifier:(id)arg1 variant:(unsigned long long)arg2;

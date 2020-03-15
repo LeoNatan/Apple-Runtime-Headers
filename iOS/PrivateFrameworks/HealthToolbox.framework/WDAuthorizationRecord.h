@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     long long _status;
 }
 
-@property long long status; // @synthesize status=_status;
 - (void).cxx_destruct;
+@property long long status; // @synthesize status=_status;
 - (_Bool)requestedReading;
 - (_Bool)requestedSharing;
 - (id)init;

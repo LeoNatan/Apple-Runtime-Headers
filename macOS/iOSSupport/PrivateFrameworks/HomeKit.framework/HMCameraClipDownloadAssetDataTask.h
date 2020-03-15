@@ -15,9 +15,9 @@
     id <HMCameraClipDownloadAssetDataTaskHandling> _handler;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <HMCameraClipDownloadAssetDataTaskHandling> handler; // @synthesize handler=_handler;
 @property(readonly) NSMutableURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
-- (void).cxx_destruct;
 - (id)downloadDataForByteRange:(struct _NSRange)arg1;
 - (id)initWithURL:(id)arg1 httpHeaderFields:(id)arg2 handler:(id)arg3;
 - (id)initWithURL:(id)arg1 httpHeaderFields:(id)arg2;

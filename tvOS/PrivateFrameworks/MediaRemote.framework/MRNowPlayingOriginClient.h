@@ -40,9 +40,9 @@
     _MROriginProtobuf *_origin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int hardwareRemoteBehavior; // @synthesize hardwareRemoteBehavior=_hardwareRemoteBehavior;
 @property(readonly, nonatomic) _MROriginProtobuf *origin; // @synthesize origin=_origin;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (void)restoreNowPlayingClientState;

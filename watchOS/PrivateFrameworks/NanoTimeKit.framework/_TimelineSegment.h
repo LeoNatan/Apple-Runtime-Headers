@@ -15,10 +15,10 @@
     unsigned int _count;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int count; // @synthesize count=_count;
 @property(readonly, nonatomic) _TimelineEntryNode *rightmostNode; // @synthesize rightmostNode=_rightmostNode;
 @property(readonly, nonatomic) _TimelineEntryNode *leftmostNode; // @synthesize leftmostNode=_leftmostNode;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double duration;
 - (_Bool)shiftLeft;
 - (_Bool)shiftRight;

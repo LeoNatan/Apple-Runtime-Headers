@@ -14,9 +14,9 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (struct CGRect)accessibilityFrame;
 - (id)textRangeForTextView:(id)arg1;
 - (unsigned long long)_accessibilityAutomationType;

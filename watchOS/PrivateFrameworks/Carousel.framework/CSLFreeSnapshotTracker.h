@@ -21,11 +21,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *trackerQueue; // @synthesize trackerQueue=_trackerQueue;
 @property(readonly, nonatomic) NSMutableDictionary *freeSnapshotState; // @synthesize freeSnapshotState=_freeSnapshotState;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)foregroundMonitorService:(id)arg1 application:(id)arg2 changedForegroundStatus:(_Bool)arg3;
 - (void)_queue_setFreebeeState:(_Bool)arg1 application:(id)arg2;
 - (void)removeObserver:(id)arg1;

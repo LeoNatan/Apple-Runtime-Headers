@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newTransitionDescriptorForStops:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long alphaTransition; // @synthesize alphaTransition=_alphaTransition;
 @property(nonatomic) _Bool requestAlphaTransition; // @synthesize requestAlphaTransition=_requestAlphaTransition;
 @property(nonatomic) _Bool disableInPlaceFiltering; // @synthesize disableInPlaceFiltering=_disableInPlaceFiltering;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *filterEntries; // @synthesize filterEntries=_filterEntries;
 @property(retain, nonatomic) UIView<_UIVisualEffectViewParticipating> *_requestedContainerView; // @synthesize _requestedContainerView;
 @property(retain, nonatomic) UIView<_UIVisualEffectViewParticipating> *_identityContainerView; // @synthesize _identityContainerView;
-- (void).cxx_destruct;
 - (id)description;
 - (void)uniqueFilterNames;
 - (id)copyForTransitionToDescriptor:(id)arg1;

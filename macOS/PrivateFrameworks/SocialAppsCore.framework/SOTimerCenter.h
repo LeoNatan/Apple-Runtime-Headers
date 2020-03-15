@@ -26,6 +26,7 @@
 }
 
 + (id)weakSharedInstance;
+- (void).cxx_destruct;
 @property unsigned long long batchCount; // @synthesize batchCount=_batchCount;
 @property BOOL changesOccuredDuringBatch; // @synthesize changesOccuredDuringBatch=_changesOccuredDuringBatch;
 @property double customInterval; // @synthesize customInterval=_customInterval;
@@ -39,7 +40,6 @@
 @property(retain) NSMutableDictionary *groupToTimerDict; // @synthesize groupToTimerDict=_groupToTimerDict;
 @property(retain) NSMapTable *listenerToTimerMap; // @synthesize listenerToTimerMap=_listenerToTimerMap;
 @property(retain) NSMutableOrderedSet *allTimers; // @synthesize allTimers=_allTimers;
-- (void).cxx_destruct;
 - (void)endChanges;
 - (void)beginChanges;
 - (void)_resumeActiveTimersAndFireTimerImmediately:(BOOL)arg1;

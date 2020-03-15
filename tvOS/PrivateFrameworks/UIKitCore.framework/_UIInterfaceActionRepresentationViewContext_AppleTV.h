@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     UIView *_highlightTransformTargetView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pressed; // @synthesize pressed=_pressed;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) __weak UIView *highlightTransformTargetView; // @synthesize highlightTransformTargetView=_highlightTransformTargetView;
-- (void).cxx_destruct;
 - (id)_newMotionEffectsGroupForHighlightedAction;
 - (void)_removeMotionEffects;
 - (void)_insertMotionEffects;

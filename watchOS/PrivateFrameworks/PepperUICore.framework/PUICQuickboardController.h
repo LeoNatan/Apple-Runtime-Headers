@@ -20,11 +20,11 @@
     PUICQuickboardRemoteViewController *_quickboardRemoteViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUICQuickboardRemoteViewController *quickboardRemoteViewController; // @synthesize quickboardRemoteViewController=_quickboardRemoteViewController;
 @property(nonatomic) __weak UIViewController *quickboardPresentingViewController; // @synthesize quickboardPresentingViewController=_quickboardPresentingViewController;
 @property(retain, nonatomic) PUICTextInputContext *textInputContext; // @synthesize textInputContext=_textInputContext;
 @property(nonatomic) __weak id <PUICQuickboardControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)quickboardViewControllerTextInputValueCancelled:(id)arg1;
 - (void)quickboardViewController:(id)arg1 textInputDictionaryDidChange:(id)arg2;
 - (void)quickboardViewController:(id)arg1 textInputValueDidChange:(id)arg2;

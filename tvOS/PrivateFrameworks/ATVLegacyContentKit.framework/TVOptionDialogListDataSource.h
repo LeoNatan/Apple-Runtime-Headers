@@ -15,8 +15,8 @@
     NSArray *_menuItems;
 }
 
-@property(readonly, copy, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)menuItemAtIndexPath:(id)arg1;

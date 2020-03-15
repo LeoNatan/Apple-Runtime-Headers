@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <CNPropertyCellDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)performDefaultAction;
 
 @end

@@ -21,6 +21,7 @@
     NSArray *_itemViewTrackingAreas;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *itemViewTrackingAreas; // @synthesize itemViewTrackingAreas=_itemViewTrackingAreas;
 @property(retain, nonatomic) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) PKFlippedClipView *paymentItemsClipView; // @synthesize paymentItemsClipView=_paymentItemsClipView;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <PKPaymentAuthorizationItemsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <PKPaymentAuthorizationItemsViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) PKPaymentAuthorizationLayout *paymentAuthorizationLayout; // @synthesize paymentAuthorizationLayout=_paymentAuthorizationLayout;
-- (void).cxx_destruct;
 - (void)_prepareConstraints;
 - (void)_createSubviews;
 - (void)_addTrackingAreas;

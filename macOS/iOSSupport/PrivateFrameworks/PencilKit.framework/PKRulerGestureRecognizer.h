@@ -16,9 +16,9 @@
     double _startSnapThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double startSnapThreshold; // @synthesize startSnapThreshold=_startSnapThreshold;
 @property(nonatomic) double startDelay; // @synthesize startDelay=_startDelay;
-- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

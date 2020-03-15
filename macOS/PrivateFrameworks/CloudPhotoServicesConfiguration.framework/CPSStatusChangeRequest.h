@@ -20,6 +20,7 @@
     NSError *_preferenceChangeError;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *preferenceChangeError; // @synthesize preferenceChangeError=_preferenceChangeError;
 @property long long preferenceChangeRequestStatus; // @synthesize preferenceChangeRequestStatus=_preferenceChangeRequestStatus;
 @property(retain) NSMutableDictionary *preferenceChangeMap; // @synthesize preferenceChangeMap=_preferenceChangeMap;
@@ -28,7 +29,6 @@
 @property(retain) NSMutableDictionary *stateChangeMap; // @synthesize stateChangeMap=_stateChangeMap;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) NSDictionary *requestOptions; // @synthesize requestOptions=_requestOptions;
-- (void).cxx_destruct;
 - (id)allErrors;
 - (BOOL)hasServicePreferenceChanges;
 - (BOOL)hasServiceStateChanges;

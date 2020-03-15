@@ -13,8 +13,8 @@
     NSArray *_incidents;
 }
 
-@property(copy, nonatomic) NSArray *incidents; // @synthesize incidents=_incidents;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *incidents; // @synthesize incidents=_incidents;
 - (BOOL)selectionShouldChangeInTableView:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;

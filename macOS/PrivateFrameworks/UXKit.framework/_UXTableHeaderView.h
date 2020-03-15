@@ -16,11 +16,11 @@
     NSBox *_separator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSBox *separator; // @synthesize separator=_separator;
 @property(readonly, nonatomic) UXLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UXView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic, getter=isFloating) BOOL floating; // @synthesize floating=_floating;
-- (void).cxx_destruct;
 - (void)mouseDown:(id)arg1;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;

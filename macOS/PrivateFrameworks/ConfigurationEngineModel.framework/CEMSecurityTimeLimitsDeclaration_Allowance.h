@@ -20,12 +20,12 @@
 + (id)buildRequiredOnlyWithEnabled:(id)arg1 withRangeType:(id)arg2;
 + (id)buildWithEnabled:(id)arg1 withRangeType:(id)arg2 withStart:(id)arg3 withEnd:(id)arg4 withSecondsPerDay:(id)arg5;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadSecondsPerDay; // @synthesize payloadSecondsPerDay=_payloadSecondsPerDay;
 @property(copy, nonatomic) NSString *payloadEnd; // @synthesize payloadEnd=_payloadEnd;
 @property(copy, nonatomic) NSString *payloadStart; // @synthesize payloadStart=_payloadStart;
 @property(copy, nonatomic) NSNumber *payloadRangeType; // @synthesize payloadRangeType=_payloadRangeType;
 @property(copy, nonatomic) NSNumber *payloadEnabled; // @synthesize payloadEnabled=_payloadEnabled;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

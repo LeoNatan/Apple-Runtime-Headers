@@ -31,11 +31,11 @@
 + (void)unregisterSleepDataObserver:(id)arg1;
 + (void)registerSleepDataObserver:(id)arg1;
 + (id)_sharedPublicMetrics;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTObserverStore *sleepDataObservers; // @synthesize sleepDataObservers=_sleepDataObservers;
 @property(retain, nonatomic) HKObserverQuery *healthObserver; // @synthesize healthObserver=_healthObserver;
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
-- (void).cxx_destruct;
 - (void)_executeSleepQuery:(id)arg1 requestAuthorization:(_Bool)arg2 future:(id)arg3;
 - (id)sleepDaysForRange:(id)arg1 requestAuthorization:(_Bool)arg2 dataSource:(unsigned long long)arg3;
 - (id)sleepDataForRange:(id)arg1 intervalComponents:(id)arg2 requestAuthorization:(_Bool)arg3 dataSource:(unsigned long long)arg4;

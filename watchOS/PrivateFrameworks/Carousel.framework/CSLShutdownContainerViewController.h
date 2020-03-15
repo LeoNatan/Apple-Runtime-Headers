@@ -21,9 +21,9 @@
     CDUnknownBlockType _nextViewDidDisappearBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType nextViewDidDisappearBlock; // @synthesize nextViewDidDisappearBlock=_nextViewDidDisappearBlock;
 @property(copy, nonatomic) CDUnknownBlockType nextViewDidAppearBlock; // @synthesize nextViewDidAppearBlock=_nextViewDidAppearBlock;
-- (void).cxx_destruct;
 - (_Bool)optsOutOfOverlayOverride;
 - (_Bool)currentConditionsDoAllowObliteration;
 - (void)showObliterationConfirmationDialog;

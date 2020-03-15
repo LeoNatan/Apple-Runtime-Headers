@@ -13,8 +13,8 @@
     id <_SBSUICFUserNotificationContentExtensionHostInterface> _hostService;
 }
 
-@property(nonatomic) __weak id <_SBSUICFUserNotificationContentExtensionHostInterface> hostService; // @synthesize hostService=_hostService;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SBSUICFUserNotificationContentExtensionHostInterface> hostService; // @synthesize hostService=_hostService;
 
 @end
 

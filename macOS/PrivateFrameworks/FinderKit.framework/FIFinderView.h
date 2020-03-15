@@ -24,14 +24,14 @@
 }
 
 + (void)checkForLeaksAfterCloseAll;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *collapseAnimationConstraints; // @synthesize collapseAnimationConstraints=_collapseAnimationConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *gutsWidthConstraint; // @synthesize gutsWidthConstraint=_gutsWidthConstraint;
 @property _Bool animatingCollapse; // @synthesize animatingCollapse=_animatingCollapse;
 @property(retain, nonatomic) NSLayoutConstraint *gutsBottomConstraint; // @synthesize gutsBottomConstraint=_gutsBottomConstraint;
 @property(nonatomic) _Bool downloadsUbiquitousContents; // @synthesize downloadsUbiquitousContents=_downloadsUbiquitousContents;
 @property(retain, nonatomic) FIFinderViewGutsController *controller; // @synthesize controller=_controller;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)startDownloadingSelectedItemsIfNecessary;
 - (double)fauxToolbarHeightForAppCentric:(BOOL)arg1 runningAsAService:(BOOL)arg2;
 - (BOOL)hasCollapseButton;

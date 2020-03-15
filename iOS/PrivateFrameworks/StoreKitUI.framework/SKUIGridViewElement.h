@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)supportedFeatures;
-@property(readonly, nonatomic) _Bool showsEditMode; // @synthesize showsEditMode=_showsEditMode;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool showsEditMode; // @synthesize showsEditMode=_showsEditMode;
 - (long long)_countOfInputCheckboxesWithBaseElement:(id)arg1 limit:(long long)arg2;
 @property(readonly, nonatomic) SKUICollectionDOMFeature *collectionFeature;
 @property(readonly, nonatomic) _Bool allowsMultipleSelectionDuringEditing;

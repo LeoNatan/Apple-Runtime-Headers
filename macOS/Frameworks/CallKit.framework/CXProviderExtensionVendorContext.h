@@ -17,8 +17,8 @@
     id <CXProviderExtensionVendorContextDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CXProviderExtensionVendorContextDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CXProviderExtensionVendorContextDelegate> delegate; // @synthesize delegate=_delegate;
 - (oneway void)handleAudioSessionActivationStateChangedTo:(BOOL)arg1;
 - (oneway void)handleActionTimeout:(id)arg1;
 - (oneway void)commitTransaction:(id)arg1;

@@ -14,8 +14,8 @@
 }
 
 + (id)copyTypeDescription;
-@property(retain) NSData *encryptedData; // @synthesize encryptedData=_encryptedData;
 - (void).cxx_destruct;
+@property(retain) NSData *encryptedData; // @synthesize encryptedData=_encryptedData;
 - (BOOL)encryptPayloads:(id)arg1 encryption:(id)arg2 integrity:(id)arg3 encryptionKey:(id)arg4 integrityKey:(id)arg5 aad:(id)arg6 encryptionContext:(id)arg7;
 - (id)copyDecryptedPayloadsForEncryption:(id)arg1 integrity:(id)arg2 encryptionKey:(id)arg3 integrityKey:(id)arg4 packetData:(id)arg5;
 - (BOOL)parsePayloadData;

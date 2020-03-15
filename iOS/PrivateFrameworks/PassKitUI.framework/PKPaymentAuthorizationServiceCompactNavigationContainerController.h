@@ -19,15 +19,16 @@
     _Bool _showCameraIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showCameraIndicator; // @synthesize showCameraIndicator=_showCameraIndicator;
 @property(nonatomic) _Bool showPhysicalButtonIndicator; // @synthesize showPhysicalButtonIndicator=_showPhysicalButtonIndicator;
-- (void).cxx_destruct;
 - (_Bool)_effectiveShowCameraIndicator;
 - (_Bool)_effectiveShowPhysicalButtonIndicator;
 @property(readonly, nonatomic) LAUIPhysicalButtonView *physicalButtonView;
 - (void)_createFaceIDViewsIfNecessary;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

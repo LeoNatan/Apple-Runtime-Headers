@@ -16,8 +16,8 @@
     NSOrderedSet *_sectionInfos;
 }
 
-@property(copy, nonatomic) NSOrderedSet *sectionInfos; // @synthesize sectionInfos=_sectionInfos;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSOrderedSet *sectionInfos; // @synthesize sectionInfos=_sectionInfos;
 @property(readonly, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 - (id)containersRelationshipName;
 - (id)photoLibrary;

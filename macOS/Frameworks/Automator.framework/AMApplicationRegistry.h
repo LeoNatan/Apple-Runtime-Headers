@@ -17,10 +17,10 @@
 
 + (id)imagePathKeyForApplicationWithName:(id)arg1;
 + (id)sharedApplicationRegistry;
+- (void).cxx_destruct;
 @property BOOL didLoadDeprecatedDefinitions; // @synthesize didLoadDeprecatedDefinitions=_didLoadDeprecatedDefinitions;
 @property(retain) NSMutableDictionary *typeRegistry; // @synthesize typeRegistry=_typeRegistry;
 @property(retain) NSMutableDictionary *definitionRegistry; // @synthesize definitionRegistry=_definitionRegistry;
-- (void).cxx_destruct;
 - (void)setName:(id)arg1 forDefinedType:(id)arg2;
 - (id)nameForDefinedType:(id)arg1;
 - (id)definitionForApplicationName:(id)arg1;

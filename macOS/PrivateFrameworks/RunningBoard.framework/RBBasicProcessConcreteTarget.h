@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     RBProcess *_process;
 }
 
-- (id)process;
 - (void).cxx_destruct;
+- (id)process;
 - (id)description;
 - (id)_initWithProcess:(id)arg1;
 - (id)createRBSTarget;

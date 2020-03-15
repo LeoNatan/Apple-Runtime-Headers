@@ -19,6 +19,7 @@
     unsigned long long _invocationStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long invocationStyle; // @synthesize invocationStyle=_invocationStyle;
 @property(retain, nonatomic) NSDictionary *vtEventInfo; // @synthesize vtEventInfo=_vtEventInfo;
 @property(readonly, nonatomic) NSString *locale; // @synthesize locale=_locale;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) CSAsset *asset; // @synthesize asset=_asset;
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
 @property(retain, nonatomic) NSString *uniqueUttTag; // @synthesize uniqueUttTag=_uniqueUttTag;
-- (void).cxx_destruct;
 - (id)utteranceMetadataFilePathForSpIdType:(unsigned long long)arg1;
 - (id)utteranceAudioFilepathForSpIdType:(unsigned long long)arg1;
 - (id)description;

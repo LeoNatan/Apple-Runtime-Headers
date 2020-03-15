@@ -15,10 +15,10 @@
     BOOL _fileDescriptorIsValid;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL fileDescriptorIsValid; // @synthesize fileDescriptorIsValid=_fileDescriptorIsValid;
 @property(nonatomic) int fileDescriptor; // @synthesize fileDescriptor=_fileDescriptor;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)write:(id)arg1;
 - (id)description;
 - (void)dealloc;

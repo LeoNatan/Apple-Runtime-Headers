@@ -14,8 +14,8 @@
     EDMessagePersistence *_messagePersistence;
 }
 
-@property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 - (long long)databaseID;
 - (id)initWithMessage:(id)arg1 messagePersistence:(id)arg2;
 

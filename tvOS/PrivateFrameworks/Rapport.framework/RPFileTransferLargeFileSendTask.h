@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _taskID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long taskID; // @synthesize taskID=_taskID;
 @property(nonatomic) unsigned long long remainingSize; // @synthesize remainingSize=_remainingSize;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool needsRetry; // @synthesize needsRetry=_needsRetry;
 @property(retain, nonatomic) RPFileTransferItem *fileItem; // @synthesize fileItem=_fileItem;
 @property(nonatomic) int fileFD; // @synthesize fileFD=_fileFD;
-- (void).cxx_destruct;
 
 @end
 

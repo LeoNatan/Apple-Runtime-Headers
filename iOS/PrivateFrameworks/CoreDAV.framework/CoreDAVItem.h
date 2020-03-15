@@ -22,13 +22,13 @@
 
 + (id)parseRuleCache;
 + (id)copyParseRules;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useCDATA; // @synthesize useCDATA=_useCDATA;
 @property(retain, nonatomic) NSData *payload; // @synthesize payload=_payload;
 @property(retain, nonatomic) NSMutableArray *extraChildItems; // @synthesize extraChildItems=_extraChildItems;
 @property(retain, nonatomic) NSMutableSet *attributes; // @synthesize attributes=_attributes;
 @property(retain, nonatomic) NSString *nameSpace; // @synthesize nameSpace=_nameSpace;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)generateXMLString;
 - (void)parserSuggestsBaseURL:(id)arg1;
 - (void)setPayloadAsString:(id)arg1;

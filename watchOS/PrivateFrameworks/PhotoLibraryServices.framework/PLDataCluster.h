@@ -18,11 +18,11 @@
 
 + (id)clusterWithObjects:(id)arg1;
 + (id)clusterWithObjects:(id)arg1 clustroid:(id)arg2 diameter:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double score; // @synthesize score=_score;
 @property(retain, nonatomic) id clustroid; // @synthesize clustroid=_clustroid;
 @property(nonatomic) double diameter; // @synthesize diameter=_diameter;
 @property(retain, nonatomic) NSArray *objects; // @synthesize objects=_objects;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 - (id)meanUniversalDate;

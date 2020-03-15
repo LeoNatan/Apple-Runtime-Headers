@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)bannerSortOrder;
-@property(nonatomic) __weak NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
 - (id)bannerNibName;
 - (id)init;
 

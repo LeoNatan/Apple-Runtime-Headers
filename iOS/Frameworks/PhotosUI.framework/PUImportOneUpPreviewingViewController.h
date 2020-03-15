@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     PUImportOneUpTransitionView *_previewView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PUImportOneUpTransitionView *previewView; // @synthesize previewView=_previewView;
 @property(retain, nonatomic) PXImportMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) PXImportItemViewModel *importItemViewModel; // @synthesize importItemViewModel=_importItemViewModel;
-- (void).cxx_destruct;
 - (struct CGSize)sizeForImportItemViewModel:(id)arg1;
 - (void)updatePreferredContentSize;
 - (void)viewDidLoad;

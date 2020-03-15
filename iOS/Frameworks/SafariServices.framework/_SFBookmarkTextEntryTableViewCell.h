@@ -14,8 +14,8 @@
     UITextField *_textField;
 }
 
-@property(readonly, nonatomic) UITextField *editableTextField; // @synthesize editableTextField=_textField;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITextField *editableTextField; // @synthesize editableTextField=_textField;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutMarginsDidChange;
 - (void)setSeparatorInset:(struct UIEdgeInsets)arg1;

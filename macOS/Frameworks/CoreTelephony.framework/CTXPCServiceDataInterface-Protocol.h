@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CTXPCServiceSubscriptionContext, NSString;
+@class CTServiceDescriptor, CTXPCServiceSubscriptionContext, NSString;
 
 @protocol CTXPCServiceDataInterface
 - (void)getPreferredDataServiceDescriptor:(void (^)(CTServiceDescriptor *, NSError *))arg1;
@@ -21,8 +21,8 @@
 - (void)getSupportDynamicDataSimSwitch:(void (^)(BOOL, NSError *))arg1;
 - (void)setSupportDynamicDataSimSwitch:(BOOL)arg1 forIccid:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)setSupportDynamicDataSimSwitch:(BOOL)arg1 completion:(void (^)(NSError *))arg2;
-- (void)getInternationalDataAccessStatus:(void (^)(BOOL, NSError *))arg1;
-- (void)setInternationalDataAccessStatus:(BOOL)arg1 completion:(void (^)(NSError *))arg2;
+- (void)getInternationalDataAccess:(CTServiceDescriptor *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (void)setInternationalDataAccess:(CTServiceDescriptor *)arg1 status:(BOOL)arg2 completion:(void (^)(NSError *))arg3;
 - (void)resetAPNSettings:(void (^)(NSError *))arg1;
 - (void)setPacketContextActiveByServiceType:(CTXPCServiceSubscriptionContext *)arg1 connectionType:(int)arg2 active:(BOOL)arg3 completion:(void (^)(NSError *))arg4;
 @end

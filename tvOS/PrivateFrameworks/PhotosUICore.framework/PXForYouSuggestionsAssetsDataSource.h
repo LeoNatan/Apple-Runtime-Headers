@@ -16,9 +16,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *collectionTitle; // @synthesize collectionTitle=_collectionTitle;
 @property(copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (struct PXSimpleIndexPath)indexPathForAssetReference:(id)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (long long)numberOfSubitemsInItem:(long long)arg1 section:(long long)arg2;

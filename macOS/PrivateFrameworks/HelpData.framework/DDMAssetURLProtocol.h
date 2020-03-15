@@ -29,6 +29,7 @@
 + (id)sharedManager;
 + (void)setAuthHandler:(id)arg1;
 + (id)authHandler;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property BOOL isAuthenticating; // @synthesize isAuthenticating=_isAuthenticating;
 @property long long retryCount; // @synthesize retryCount=_retryCount;
@@ -39,7 +40,6 @@
 @property(copy) CDUnknownBlockType pendingChallengeCompletionHandler; // @synthesize pendingChallengeCompletionHandler=_pendingChallengeCompletionHandler;
 @property(copy) NSArray *modes; // @synthesize modes=_modes;
 @property __weak NSThread *clientThread; // @synthesize clientThread=_clientThread;
-- (void).cxx_destruct;
 - (void)onThreadPerformBlock:(CDUnknownBlockType)arg1;
 - (void)performOnThread:(id)arg1 modes:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_completeAuthChallengeWithDisposition:(long long)arg1 credentials:(id)arg2;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)bannerSortOrder;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *promptLabel; // @synthesize promptLabel=_promptLabel;
 @property(nonatomic) __weak RolloverImageButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(nonatomic) __weak ButtonWithFontSmoothing *useSafariAsDefaultButton; // @synthesize useSafariAsDefaultButton=_useSafariAsDefaultButton;
-- (void).cxx_destruct;
 - (id)bannerNibName;
 - (void)awakeFromNib;
 - (id)init;

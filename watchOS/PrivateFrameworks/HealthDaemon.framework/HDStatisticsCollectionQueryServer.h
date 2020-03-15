@@ -33,12 +33,12 @@
 + (_Bool)supportsAnchorBasedAuthorization;
 + (id)requiredEntitlements;
 + (Class)queryClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerUnableToUpdateStatisticsHandler; // @synthesize unitTest_queryServerUnableToUpdateStatisticsHandler=_unitTest_queryServerUnableToUpdateStatisticsHandler;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerUpdateStatisticsHandler; // @synthesize unitTest_queryServerUpdateStatisticsHandler=_unitTest_queryServerUpdateStatisticsHandler;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_queryServerStatisticsEnumerationHandler; // @synthesize unitTest_queryServerStatisticsEnumerationHandler=_unitTest_queryServerStatisticsEnumerationHandler;
 @property(readonly, nonatomic) unsigned int statisticsOptions; // @synthesize statisticsOptions=_statisticsOptions;
 @property(readonly, nonatomic) NSDate *anchorDate; // @synthesize anchorDate=_anchorDate;
-- (void).cxx_destruct;
 - (_Bool)_queue_objectIsRelevant:(id)arg1;
 - (void)_queue_deliverUpdatedStatistics:(id)arg1 error:(id)arg2;
 - (void)_queue_fetchAndDeliverAllStatistics;

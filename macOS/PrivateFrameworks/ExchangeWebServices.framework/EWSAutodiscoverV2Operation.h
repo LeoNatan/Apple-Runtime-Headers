@@ -26,6 +26,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL retrieveAuthURI; // @synthesize retrieveAuthURI=_retrieveAuthURI;
 @property(retain, nonatomic) NSString *protocol; // @synthesize protocol=_protocol;
 @property(retain, nonatomic) EWSAutodiscoverKillSwitch *killSwitch; // @synthesize killSwitch=_killSwitch;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(retain, nonatomic) EWSAutodiscoverV2Operation *me; // @synthesize me=_me;
 @property BOOL logsActivity; // @synthesize logsActivity=_logsActivity;
-- (void).cxx_destruct;
 - (id)_authorizationURIFromHttpHeader:(id)arg1;
 - (void)_sendAutodiscoverRequest;
 - (void)startWithProtocol:(id)arg1 retrieveAuthURI:(BOOL)arg2;

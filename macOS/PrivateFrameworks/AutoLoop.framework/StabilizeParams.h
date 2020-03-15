@@ -22,6 +22,8 @@
 + (id)stabilizeParamsFromNSDictionary:(id)arg1;
 + (id)stabilizeParamsFromURL:(id)arg1;
 + (id)stabilizeParams;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) unsigned int version; // @synthesize version;
 @property BOOL sparseFrames; // @synthesize sparseFrames;
 @property BOOL passThrough; // @synthesize passThrough;
@@ -29,8 +31,6 @@
 @property CDStruct_1b6d18a9 roiStart; // @synthesize roiStart;
 @property struct CGRect cropRect; // @synthesize cropRect;
 @property(readonly) unsigned int numFrames; // @synthesize numFrames;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (vector_0821a7d5 *)frameTimes;
 - (id)initFromDict:(id)arg1;
 - (id)infoAsDict;

@@ -14,9 +14,9 @@
     unsigned long long _transportType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transportType; // @synthesize transportType=_transportType;
 @property(retain, nonatomic) MKMapItem *sourceMapItem; // @synthesize sourceMapItem=_sourceMapItem;
-- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapItem *destinationMapItem;
 - (id)activitySourceTitle;
 - (id)activityURL;

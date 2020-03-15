@@ -6,7 +6,7 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-@class NSData, SISchemaConversationTrace, SISchemaDeviceFixedContext, SISchemaServerEventMetadata, SISchemaSpeechResultSelected, SISchemaTurnInteraction, SISchemaUserSpeechDuration;
+@class NSData, SISchemaConversationTrace, SISchemaDeviceFixedContext, SISchemaServerEventMetadata, SISchemaServerGeneratedDismissal, SISchemaSpeechResultSelected, SISchemaTurnInteraction, SISchemaUserSpeechDuration;
 
 @interface SISchemaServerEvent : PBCodable
 {
@@ -16,12 +16,13 @@
     SISchemaTurnInteraction *_turnInteraction;
     SISchemaSpeechResultSelected *_speechResultSelected;
     SISchemaDeviceFixedContext *_serverDeviceFixedContext;
+    SISchemaServerGeneratedDismissal *_serverGeneratedDismissal;
     SISchemaServerEventMetadata *_eventMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SISchemaServerEventMetadata *eventMetadata; // @synthesize eventMetadata=_eventMetadata;
 @property(readonly, nonatomic) unsigned long long whichEvent_Type; // @synthesize whichEvent_Type=_whichEvent_Type;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
@@ -30,6 +31,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+@property(retain, nonatomic) SISchemaServerGeneratedDismissal *serverGeneratedDismissal; // @synthesize serverGeneratedDismissal=_serverGeneratedDismissal;
 @property(retain, nonatomic) SISchemaDeviceFixedContext *serverDeviceFixedContext; // @synthesize serverDeviceFixedContext=_serverDeviceFixedContext;
 @property(retain, nonatomic) SISchemaSpeechResultSelected *speechResultSelected; // @synthesize speechResultSelected=_speechResultSelected;
 @property(retain, nonatomic) SISchemaTurnInteraction *turnInteraction; // @synthesize turnInteraction=_turnInteraction;

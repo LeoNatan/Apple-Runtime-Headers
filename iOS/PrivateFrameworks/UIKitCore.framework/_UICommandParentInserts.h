@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_atEndElements;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *fallbackAfterElements; // @synthesize fallbackAfterElements=_fallbackAfterElements;
 @property(readonly, nonatomic) NSArray *fallbackBeforeElements; // @synthesize fallbackBeforeElements=_fallbackBeforeElements;
 @property(readonly, nonatomic) NSDictionary *childInserts; // @synthesize childInserts=_childInserts;
 @property(readonly, nonatomic) NSArray *atEndElements; // @synthesize atEndElements=_atEndElements;
 @property(readonly, nonatomic) NSArray *atStartElements; // @synthesize atStartElements=_atStartElements;
-- (void).cxx_destruct;
 - (void)_addFallbackBeforeElements:(id)arg1 fallbackAfterElements:(id)arg2;
 - (void)_setBeforeElements:(id)arg1 afterElements:(id)arg2 aroundElement:(id)arg3;
 - (void)_setAtStartElements:(id)arg1 atEndElements:(id)arg2;

@@ -19,12 +19,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *uncalledDoNotPurgeReplyBlocks; // @synthesize uncalledDoNotPurgeReplyBlocks=_uncalledDoNotPurgeReplyBlocks;
 @property(retain, nonatomic) NSMutableSet *purgesInProgress; // @synthesize purgesInProgress=_purgesInProgress;
 @property(nonatomic) unsigned long long doNotPurgeCount; // @synthesize doNotPurgeCount=_doNotPurgeCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheDeleteQueue; // @synthesize cacheDeleteQueue=_cacheDeleteQueue;
 @property(retain, nonatomic) NSXPCConnection *remoteConnection; // @synthesize remoteConnection=_remoteConnection;
-- (void).cxx_destruct;
 - (id)_logPrefix;
 - (long long)synchronouslyFetchApplicationsState;
 - (void)_synchronouslyFetchApplicationsStateWithRetry:(id)arg1 keepTrying:(CDUnknownBlockType)arg2;

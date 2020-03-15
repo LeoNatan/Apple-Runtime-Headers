@@ -21,6 +21,7 @@
     NSString *_eventKey;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *eventKey; // @synthesize eventKey=_eventKey;
 @property(readonly, nonatomic) NSMutableDictionary *eventQualifiers; // @synthesize eventQualifiers=_eventQualifiers;
 @property(readonly, nonatomic) void *eventData; // @synthesize eventData=_eventData;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) unsigned long long processId; // @synthesize processId=_processId;
 @property(readonly, nonatomic) NSDate *creationTimeStamp; // @synthesize creationTimeStamp=_creationTimeStamp;
 @property(readonly, nonatomic) int eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)eventQualifierStringForKey:(id)arg1;
 - (char *)originatorForLogging;

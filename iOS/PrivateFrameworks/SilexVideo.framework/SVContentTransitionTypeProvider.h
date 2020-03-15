@@ -16,8 +16,8 @@
     id <SVVideoViewControllerProviding> _videoViewControllerProvider;
 }
 
-@property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(readonly, nonatomic) long long contentTransitionType;
 - (id)initWithVideoViewControllerProvider:(id)arg1;
 

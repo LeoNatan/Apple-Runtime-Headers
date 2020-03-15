@@ -73,6 +73,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFSearchResult *sfSearchResult; // @synthesize sfSearchResult=_sfSearchResult;
 @property(nonatomic) double cep; // @synthesize cep=_cep;
 @property(nonatomic) double sqf; // @synthesize sqf=_sqf;
@@ -127,7 +128,6 @@
 @property(retain, nonatomic) NSString *type;
 @property(retain, nonatomic) NSString *resultBundleID; // @synthesize resultBundleID;
 @property(nonatomic) unsigned long long topHit; // @synthesize topHit;
-- (void).cxx_destruct;
 @property(readonly) NSString *uniqueIdentifier;
 @property(readonly) NSString *relatedIdentifier;
 - (void)prepareIcons;

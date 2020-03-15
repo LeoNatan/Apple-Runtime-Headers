@@ -25,9 +25,9 @@
     MediaControlsVolumeController *_volumeController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MediaControlsVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 @property(nonatomic) __weak id <MediaControlsVolumeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_dismissMediaControlsVolumeViewController;
 - (void)_performWithoutAnimationWhileHidden:(CDUnknownBlockType)arg1;
 - (void)_updateVisibility;

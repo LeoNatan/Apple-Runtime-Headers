@@ -34,6 +34,7 @@
     struct CGPoint _contentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <SiriUISuggestionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset=_contentOffset;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) SiriUISuggestionsHeaderText *subheaderText; // @synthesize subheaderText=_subheaderText;
 @property(copy, nonatomic) SiriUISuggestionsHeaderText *headerText; // @synthesize headerText=_headerText;
 @property(retain, nonatomic) UIView *guideView; // @synthesize guideView=_guideView;
-- (void).cxx_destruct;
 - (void)acousticIDSpinnerDidHide:(id)arg1;
 - (id)_createSpringAnimation:(double)arg1;
 - (double)_suggestionFontSize;

@@ -24,8 +24,8 @@
 + (id)defaultSystemAppEventRouter;
 + (id)defaultEventRouters;
 + (id)routerWithDestination:(long long)arg1;
-@property(readonly) long long destination; // @synthesize destination=_destination;
 - (void).cxx_destruct;
+@property(readonly) long long destination; // @synthesize destination=_destination;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

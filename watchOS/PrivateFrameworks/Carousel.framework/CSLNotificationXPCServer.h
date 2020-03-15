@@ -19,10 +19,10 @@
     NSXPCListener *_listener;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) CSLSafeMutableSet *clientConnections; // @synthesize clientConnections=_clientConnections;
 @property(nonatomic) __weak id <CSLNotificationXPCServerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)setNotificationsLevel:(int)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)getNotificationSettings:(CDUnknownBlockType)arg1;
 - (void)removeSectionWithSectionID:(id)arg1 completion:(CDUnknownBlockType)arg2;

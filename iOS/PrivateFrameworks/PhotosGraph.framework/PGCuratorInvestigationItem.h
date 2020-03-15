@@ -62,6 +62,7 @@
 
 + (id)contextForItems:(id)arg1;
 + (id)itemWithUUID:(id)arg1 itemInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSArray *faceInfos; // @synthesize faceInfos=_faceInfos;
 @property(readonly, nonatomic) NSArray *clsUnprefetchedPeopleNames; // @synthesize clsUnprefetchedPeopleNames=_clsUnprefetchedPeopleNames;
 @property(readonly) VNSceneprint *clsSceneprint;
@@ -72,7 +73,6 @@
 @property(readonly, nonatomic) NSDate *cls_localDate; // @synthesize cls_localDate=_cls_localDate;
 @property(readonly) NSDate *cls_universalDate;
 @property(readonly) NSString *clsIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 @property(readonly, nonatomic) NSDate *pl_date;
 @property(readonly, nonatomic) _Bool clsIsLongExposure;

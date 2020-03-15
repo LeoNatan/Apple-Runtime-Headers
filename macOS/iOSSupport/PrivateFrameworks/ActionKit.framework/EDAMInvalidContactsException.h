@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *reasons; // @synthesize reasons=_reasons;
 @property(retain, nonatomic) NSString *parameter; // @synthesize parameter=_parameter;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
-- (void).cxx_destruct;
 
 @end
 

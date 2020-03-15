@@ -37,10 +37,10 @@ __attribute__((visibility("hidden")))
 + (_Bool)panelIsShowing;
 + (_Bool)panelExists;
 + (id)controller;
-@property(nonatomic) struct TFENode overrideNode; // @synthesize overrideNode=_overrideNode;
-@property(nonatomic) _Bool positionNearPreviewItem; // @synthesize positionNearPreviewItem=_positionNearPreviewItem;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) struct TFENode overrideNode; // @synthesize overrideNode=_overrideNode;
+@property(nonatomic) _Bool positionNearPreviewItem; // @synthesize positionNearPreviewItem=_positionNearPreviewItem;
 - (void)previewPanelWillClose:(id)arg1;
 - (BOOL)previewPanel:(id)arg1 handleEvent:(id)arg2;
 - (id)previewPanel:(id)arg1 sharedPreviewViewForPreviewItem:(id)arg2;

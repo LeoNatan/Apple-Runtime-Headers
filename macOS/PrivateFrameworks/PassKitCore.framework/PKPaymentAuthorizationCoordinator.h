@@ -29,6 +29,7 @@
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned long long)arg2 webDomain:(id)arg3;
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1 webDomain:(id)arg2;
 + (BOOL)canMakePayments;
+- (void).cxx_destruct;
 @property(nonatomic) double connectionTimeout; // @synthesize connectionTimeout=_connectionTimeout;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) PKInAppPaymentService *inAppPaymentService; // @synthesize inAppPaymentService=_inAppPaymentService;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL didPresent; // @synthesize didPresent=_didPresent;
-- (void).cxx_destruct;
 - (void)_viewServiceTimerFired:(id)arg1;
 - (void)_invokeCallbackWithSuccess:(BOOL)arg1;
 - (id)_remoteObjectProxyWithFailureHandler:(CDUnknownBlockType)arg1;

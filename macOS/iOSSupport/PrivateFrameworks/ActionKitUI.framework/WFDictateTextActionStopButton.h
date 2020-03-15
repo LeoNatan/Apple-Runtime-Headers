@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_redSquareWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *redSquareWidthConstraint; // @synthesize redSquareWidthConstraint=_redSquareWidthConstraint;
 @property(nonatomic) __weak UIView *redSquare; // @synthesize redSquare=_redSquare;
 @property(nonatomic) BOOL recording; // @synthesize recording=_recording;
-- (void).cxx_destruct;
 - (id)accessibilityLabel;
 - (struct CGSize)intrinsicContentSize;
 - (void)setRecording:(BOOL)arg1 animated:(BOOL)arg2;

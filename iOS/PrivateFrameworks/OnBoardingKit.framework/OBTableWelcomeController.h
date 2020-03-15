@@ -13,8 +13,8 @@
     UITableView *_tableView;
 }
 
-@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void)_updateDirectionalLayoutMarginsForTableView;
 - (void)updateDirectionalLayoutMargins;
 - (id)initWithTitle:(id)arg1 detailText:(id)arg2 symbolName:(id)arg3;

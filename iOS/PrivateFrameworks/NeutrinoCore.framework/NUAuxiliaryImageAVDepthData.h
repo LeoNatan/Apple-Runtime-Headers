@@ -16,9 +16,9 @@
     AVDepthData *_avDepthData;
 }
 
+- (void).cxx_destruct;
 @property(readonly) AVDepthData *avDepthData; // @synthesize avDepthData=_avDepthData;
 @property(readonly) long long auxiliaryImageType; // @synthesize auxiliaryImageType=_auxiliaryImageType;
-- (void).cxx_destruct;
 - (struct __CVBuffer *)cvPixelBufferRef;
 - (unsigned int)pixelFormatType;
 - (id)dictionaryRepresentationForAuxiliaryDataType:(id *)arg1;

@@ -16,11 +16,11 @@
     struct NSEdgeInsets _edgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *customEdgeInsets; // @synthesize customEdgeInsets=_customEdgeInsets;
 @property(nonatomic) struct NSEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property long long alignment; // @synthesize alignment=_alignment;
 @property long long orientation; // @synthesize orientation=_orientation;
-- (void).cxx_destruct;
 - (void)_verticallyStackViews:(id)arg1 insets:(struct NSEdgeInsets)arg2;
 - (void)_horizontallyStackViews:(id)arg1 insets:(struct NSEdgeInsets)arg2;
 - (void)_stack;

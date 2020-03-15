@@ -16,10 +16,10 @@
     HFItem *_suggestedScenesContentItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFItem *suggestedScenesContentItem; // @synthesize suggestedScenesContentItem=_suggestedScenesContentItem;
 @property(readonly, nonatomic) HFItem *existingScenesContentItem; // @synthesize existingScenesContentItem=_existingScenesContentItem;
 @property(readonly, copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)initWithDelegate:(id)arg1 serviceLikeItem:(id)arg2;

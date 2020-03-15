@@ -18,11 +18,11 @@
     NSMapTable *_purchaseQueueDelegates;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMapTable *purchaseQueueDelegates; // @synthesize purchaseQueueDelegates=_purchaseQueueDelegates;
 @property(retain) NSMutableDictionary *downloadObservers; // @synthesize downloadObservers=_downloadObservers;
 @property(retain) NSMutableDictionary *purchaseObservers; // @synthesize purchaseObservers=_purchaseObservers;
 @property(retain) NSMutableDictionary *accountObservers; // @synthesize accountObservers=_accountObservers;
-- (void).cxx_destruct;
 - (void)shouldContinueTransaction:(id)arg1 withNewStorefront:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)promptTouchIDEnableForTransaction:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)signChallenge:(id)arg1 forTransaction:(id)arg2 reply:(CDUnknownBlockType)arg3;

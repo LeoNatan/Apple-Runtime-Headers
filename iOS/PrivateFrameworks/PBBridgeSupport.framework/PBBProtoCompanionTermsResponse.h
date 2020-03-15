@@ -22,11 +22,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *responseData; // @synthesize responseData=_responseData;
 @property(nonatomic) _Bool isExistingAccountTerms; // @synthesize isExistingAccountTerms=_isExistingAccountTerms;
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(nonatomic) _Bool termsAccepted; // @synthesize termsAccepted=_termsAccepted;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

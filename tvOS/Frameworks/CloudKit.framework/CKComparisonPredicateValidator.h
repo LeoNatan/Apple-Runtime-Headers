@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     id <CKObjectValidating> _rightExpressionValidator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CKObjectValidating> rightExpressionValidator; // @synthesize rightExpressionValidator=_rightExpressionValidator;
 @property(retain, nonatomic) id <CKObjectValidating> optionsValidator; // @synthesize optionsValidator=_optionsValidator;
 @property(retain, nonatomic) id <CKObjectValidating> operatorValidator; // @synthesize operatorValidator=_operatorValidator;
 @property(retain, nonatomic) id <CKObjectValidating> leftExpressionValidator; // @synthesize leftExpressionValidator=_leftExpressionValidator;
 @property(retain, nonatomic) id <CKObjectValidating> modifierValidator; // @synthesize modifierValidator=_modifierValidator;
-- (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (_Bool)validate:(id)arg1 error:(id *)arg2;
 

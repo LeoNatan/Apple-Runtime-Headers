@@ -17,10 +17,10 @@
     NSString *_address;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool showsFromAddress; // @synthesize showsFromAddress=_showsFromAddress;
 @property(readonly, copy, nonatomic) NSString *address; // @synthesize address=_address;
 @property(readonly, copy, nonatomic) NSString *body; // @synthesize body=_body;
-- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)initWithBody:(id)arg1 address:(id)arg2 showsFromAddress:(_Bool)arg3;

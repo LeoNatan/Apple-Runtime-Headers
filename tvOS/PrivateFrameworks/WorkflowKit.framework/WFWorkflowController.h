@@ -34,6 +34,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *pendingProcessedParameters; // @synthesize pendingProcessedParameters=_pendingProcessedParameters;
 @property(retain, nonatomic) WFWorkflowControllerState *pendingState; // @synthesize pendingState=_pendingState;
 @property(retain, nonatomic) NSMapTable *variableTable; // @synthesize variableTable=_variableTable;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) WFContentCollection *output; // @synthesize output=_output;
 @property(retain, nonatomic) WFContentCollection *input; // @synthesize input=_input;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-- (void).cxx_destruct;
 - (id)userInterfaceForAction:(id)arg1;
 - (id)parameterInputProviderForAction:(id)arg1;
 - (void)workflowController:(id)arg1 didRunAction:(id)arg2;

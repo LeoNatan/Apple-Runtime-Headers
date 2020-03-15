@@ -15,9 +15,9 @@
 }
 
 + (id)defaultSettings;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool vibrancyDisabled; // @synthesize vibrancyDisabled=_vibrancyDisabled;
 @property(retain, nonatomic) UIColor *backgroundColorHint; // @synthesize backgroundColorHint=_backgroundColorHint;
-- (void).cxx_destruct;
 
 @end
 

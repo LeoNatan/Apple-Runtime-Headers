@@ -13,8 +13,8 @@
     PLLibraryServicesManager *_libraryServicesManager;
 }
 
-@property(readonly, nonatomic) PLLibraryServicesManager *libraryServicesManager; // @synthesize libraryServicesManager=_libraryServicesManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PLLibraryServicesManager *libraryServicesManager; // @synthesize libraryServicesManager=_libraryServicesManager;
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (id)initWithLibraryServicesManager:(id)arg1;
 

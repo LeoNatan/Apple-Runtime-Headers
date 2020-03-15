@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *operationGroupName; // @synthesize operationGroupName=_operationGroupName;
 @property(copy, nonatomic) NSString *operationGroupId; // @synthesize operationGroupId=_operationGroupId;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

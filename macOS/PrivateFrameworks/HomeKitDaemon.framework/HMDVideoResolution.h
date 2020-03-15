@@ -20,10 +20,10 @@
 
 + (id)arrayWithResolutions:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long resolutionType; // @synthesize resolutionType=_resolutionType;
 @property(readonly, copy, nonatomic) NSNumber *imageHeight; // @synthesize imageHeight=_imageHeight;
 @property(readonly, copy, nonatomic) NSNumber *imageWidth; // @synthesize imageWidth=_imageWidth;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_extractWidthAndHeight;
 - (id)initWithResolution:(unsigned long long)arg1;

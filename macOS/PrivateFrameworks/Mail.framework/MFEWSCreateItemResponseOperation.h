@@ -13,8 +13,8 @@
     NSString *_itemId;
 }
 
-@property(copy) NSString *itemId; // @synthesize itemId=_itemId;
 - (void).cxx_destruct;
+@property(copy) NSString *itemId; // @synthesize itemId=_itemId;
 - (void)executeOperation;
 - (void)prepareToExecuteWithResponse:(id)arg1 forRequestOperation:(id)arg2;
 @property(retain) EWSCreateItemResponseType *response;

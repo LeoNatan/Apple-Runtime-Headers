@@ -22,13 +22,13 @@
 }
 
 + (_Bool)showsLabelAndValue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *verticalSeparatorView; // @synthesize verticalSeparatorView=_verticalSeparatorView;
 @property(retain, nonatomic) HKCaretOptionalTextField *inputTextField; // @synthesize inputTextField=_inputTextField;
 @property(retain, nonatomic) UILabel *labelLabel; // @synthesize labelLabel=_labelLabel;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) __weak id <HKMedicalIDEditorCellEditDelegate> editDelegate; // @synthesize editDelegate=_editDelegate;
 @property(nonatomic) double minimumLabelWidth; // @synthesize minimumLabelWidth=_minimumLabelWidth;
-- (void).cxx_destruct;
 - (void)_localeDidChange:(id)arg1;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
 - (void)dismissInputView;

@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *noSetFullAccess; // @synthesize noSetFullAccess=_noSetFullAccess;
 @property(retain, nonatomic) NSNumber *noSetModify; // @synthesize noSetModify=_noSetModify;
 @property(retain, nonatomic) NSNumber *noSetReadPlusActivity; // @synthesize noSetReadPlusActivity=_noSetReadPlusActivity;
 @property(retain, nonatomic) NSNumber *noSetReadOnly; // @synthesize noSetReadOnly=_noSetReadOnly;
-- (void).cxx_destruct;
 
 @end
 

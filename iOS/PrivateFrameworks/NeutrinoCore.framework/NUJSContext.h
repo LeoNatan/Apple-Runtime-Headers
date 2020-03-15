@@ -19,8 +19,8 @@
 + (void)execute:(CDUnknownBlockType)arg1;
 + (_Bool)validateValuesAreNumbers:(id)arg1 error:(out id *)arg2;
 + (id)contextForContext:(id)arg1;
-@property(retain) JSContext *jsContext; // @synthesize jsContext=_jsContext;
 - (void).cxx_destruct;
+@property(retain) JSContext *jsContext; // @synthesize jsContext=_jsContext;
 @property(retain, nonatomic) NSError *error;
 - (void)setFunction:(id)arg1 forKey:(id)arg2;
 - (id)functionForKey:(id)arg1;

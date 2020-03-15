@@ -25,7 +25,6 @@
     ABAccountPersistence *_persistence;
     BOOL _canCreateGroups;
     BOOL _canCreatePeople;
-    BOOL _guardianRestricted;
     NSDate *_lastRefreshDate;
     BOOL _unloaded;
     NSArray *_personConstraints;
@@ -102,7 +101,6 @@
 + (id)exchangeSourcesWithUsername:(id)arg1 host:(id)arg2;
 + (id)sourcesOfType:(id)arg1;
 + (Class)sourceClassForClassName:(id)arg1;
-@property(getter=isGuardianRestricted) BOOL guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(retain) ABAccountStatus *currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(retain) ABSimilarRecordMerger *similarRecordMerger; // @synthesize similarRecordMerger=_similarRecordMerger;
 @property(retain) NSArray *personConstraints; // @synthesize personConstraints=_personConstraints;

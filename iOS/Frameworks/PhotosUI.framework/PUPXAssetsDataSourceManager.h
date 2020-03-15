@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     long long __currentUpdateID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCurrentUpdateId:) long long _currentUpdateID; // @synthesize _currentUpdateID=__currentUpdateID;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *underlyingDataSourceManager; // @synthesize underlyingDataSourceManager=_underlyingDataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_update;
 - (void)_handleScheduledUpdateWithID:(long long)arg1;

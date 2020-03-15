@@ -26,10 +26,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *sourceUUIDs; // @synthesize sourceUUIDs=_sourceUUIDs;
 @property(nonatomic) _Bool userOrdered; // @synthesize userOrdered=_userOrdered;
 @property(nonatomic) long long objectType; // @synthesize objectType=_objectType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

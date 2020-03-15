@@ -19,8 +19,8 @@
 + (id)defaultActionItemForActionItem:(id)arg1 recentContacts:(id)arg2;
 + (id)queryForUserActionItem:(id)arg1;
 + (id)recentContactsForUserActionItem:(id)arg1 recentsLibrary:(id)arg2 scheduler:(id)arg3;
-@property(readonly, nonatomic) CRRecentContactsLibrary *library; // @synthesize library=_library;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CRRecentContactsLibrary *library; // @synthesize library=_library;
 - (id)defaultActionItemForActionItems:(id)arg1 schedulerProvider:(id)arg2;
 - (id)observableForDefaultActionsChanged;
 - (id)initWithRecentsLibrary:(id)arg1;

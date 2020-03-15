@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _insets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets insets; // @synthesize insets=_insets;
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) unsigned long long numColumns; // @synthesize numColumns=_numColumns;
 @property(copy, nonatomic) NSArray *cellSizes; // @synthesize cellSizes=_cellSizes;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 
 @end
 

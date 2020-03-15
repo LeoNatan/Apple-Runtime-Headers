@@ -24,6 +24,7 @@
     UIButton *_applyButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *applyButton; // @synthesize applyButton=_applyButton;
 @property(retain, nonatomic) UITextField *predicateTextField; // @synthesize predicateTextField=_predicateTextField;
 @property(retain, nonatomic) UIButton *addButton; // @synthesize addButton=_addButton;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UICollectionView *predicatesComparisonCandidateCollectionView; // @synthesize predicatesComparisonCandidateCollectionView=_predicatesComparisonCandidateCollectionView;
 @property(retain, nonatomic) UICollectionView *predicatesKeyCandidateCollectionView; // @synthesize predicatesKeyCandidateCollectionView=_predicatesKeyCandidateCollectionView;
 @property(retain, nonatomic) UITableView *existingPredicatesTableView; // @synthesize existingPredicatesTableView=_existingPredicatesTableView;
-- (void).cxx_destruct;
 - (id)_createSeparatorLine;
 - (id)_createTableView;
 - (id)_createCollectionView;

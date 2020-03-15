@@ -20,8 +20,8 @@
 }
 
 + (void)_evaluator:(id)arg1 updateMediaStylesWithActiveStyles:(id)arg2 inActiveStyles:(id)arg3 defaultStyles:(id)arg4 forRule:(id)arg5 withMatch:(id)arg6;
-@property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak IKJSInspectorController *controller; // @synthesize controller=_controller;
 - (id)_getMatchedStyleRulesForNode:(id)arg1;
 - (id)_getMatchedTemplateStylesForNode:(id)arg1;
 - (id)_updatedInlineStyleForNode:(int)arg1 withStyleString:(id)arg2;

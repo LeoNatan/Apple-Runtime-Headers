@@ -20,10 +20,10 @@
 }
 
 + (id)headerText;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNMeCardSharingOnboardingHeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(retain, nonatomic) CNMeCardSharingAudienceDataSource *sharingAudienceDataSource; // @synthesize sharingAudienceDataSource=_sharingAudienceDataSource;
 @property(nonatomic) __weak id <CNMeCardSharingOnboardingAudienceViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;

@@ -18,12 +18,12 @@
     TUSenderIdentityCapabilities *_subscriptionCapabilities;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUSenderIdentityCapabilities *subscriptionCapabilities; // @synthesize subscriptionCapabilities=_subscriptionCapabilities;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 @property(copy, nonatomic) NSDictionary *encryptedIdentityInfo; // @synthesize encryptedIdentityInfo=_encryptedIdentityInfo;
 @property(retain, nonatomic) TPSCarrierBundleController *carrierBundleController; // @synthesize carrierBundleController=_carrierBundleController;
 @property(nonatomic) __weak id <TPSCloudCallingThumperControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedCarrierName;
 @property(readonly, nonatomic) _Bool supportsThumperCalling;
 @property(nonatomic, getter=isThumperCallingEnabled) _Bool thumperCallingEnabled;

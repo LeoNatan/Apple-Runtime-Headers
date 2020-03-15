@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     TVImageProxy *_imageProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(nonatomic, getter=isImageLoaded) _Bool imageLoaded; // @synthesize imageLoaded=_imageLoaded;
 @property(retain, nonatomic) VUIButton *tvPopoverButton; // @synthesize tvPopoverButton=_tvPopoverButton;
 @property(retain, nonatomic) VUIPopoverDescriptor *popoverDescriptor; // @synthesize popoverDescriptor=_popoverDescriptor;
-- (void).cxx_destruct;
 - (void)_popoverButtonPressed:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

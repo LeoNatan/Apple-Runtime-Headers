@@ -16,9 +16,9 @@
     NUWelcomeToNewsPageFactory *_welcomeToNewsPageFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUWelcomeToNewsPageFactory *welcomeToNewsPageFactory; // @synthesize welcomeToNewsPageFactory=_welcomeToNewsPageFactory;
 @property(readonly, nonatomic) NUArticlePageFactory *articlePageFactory; // @synthesize articlePageFactory=_articlePageFactory;
-- (void).cxx_destruct;
 - (id)paging:(id)arg1 byRemovingPage:(id)arg2;
 - (id)paging:(id)arg1 byAddingPage:(id)arg2 afterPage:(id)arg3;
 - (id)createPagingForArticleIDs:(id)arg1;

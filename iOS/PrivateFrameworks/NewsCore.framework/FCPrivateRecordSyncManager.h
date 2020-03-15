@@ -19,11 +19,11 @@
     NTPBPrivateRecordSyncState *_currentState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NTPBPrivateRecordSyncState *currentState; // @synthesize currentState=_currentState;
 @property(readonly, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(nonatomic) __weak id <FCPrivateRecordSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (void)_stateDidChange;
 - (void)fetchChangesWithContext:(id)arg1 qualityOfService:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)isAwaitingFirstSync;

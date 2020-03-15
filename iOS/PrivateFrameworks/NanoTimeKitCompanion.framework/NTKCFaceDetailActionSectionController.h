@@ -16,10 +16,10 @@
     NTKCFaceDetailActionCell *_deleteCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCFaceDetailActionCell *deleteCell; // @synthesize deleteCell=_deleteCell;
 @property(retain, nonatomic) NTKCFaceDetailActionCell *selectCell; // @synthesize selectCell=_selectCell;
 @property(nonatomic) __weak id <NTKCFaceDetailActionSectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_actionForRow:(long long)arg1;
 - (id)_spacerCell;
 - (void)didSelectRow:(long long)arg1;

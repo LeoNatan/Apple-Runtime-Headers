@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)taskErrorDomainType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *taskErrorDomains; // @synthesize taskErrorDomains=_taskErrorDomains;
 @property(nonatomic) int expectedFileCount; // @synthesize expectedFileCount=_expectedFileCount;
 @property(nonatomic) unsigned int urgency; // @synthesize urgency=_urgency;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long scheduledTimestamp; // @synthesize scheduledTimestamp=_scheduledTimestamp;
 @property(nonatomic) unsigned long long requestedTimestamp; // @synthesize requestedTimestamp=_requestedTimestamp;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

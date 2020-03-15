@@ -16,8 +16,8 @@
 + (float)preferredHeightWithSwimDistanceByStrokeStyle:(id)arg1 isPoolSwim:(_Bool)arg2 width:(float)arg3 formattingManager:(id)arg4;
 + (id)_sizingLabel;
 + (id)_overrideLabelAttributes;
-@property(retain, nonatomic) FIUIDividerView *dividerView; // @synthesize dividerView=_dividerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FIUIDividerView *dividerView; // @synthesize dividerView=_dividerView;
 - (void)layoutSubviews;
 - (void)configureWithSwimDistanceByStrokeStyle:(id)arg1 isPoolSwim:(_Bool)arg2 formattingManager:(id)arg3;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

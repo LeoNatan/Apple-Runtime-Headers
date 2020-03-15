@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic, setter=_setEnumNamespace:) NSString *enumNamespace; // @synthesize enumNamespace=_enumNamespace;
@@ -35,10 +36,9 @@
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSMutableDictionary *_dictionaryKeysForCacheGroup; // @synthesize _dictionaryKeysForCacheGroup;
 @property(copy, nonatomic, setter=_setLocalizationTable:) INCodableLocalizationTable *_localizationTable; // @synthesize _localizationTable;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentationWithLocalizer:(id)arg1;
 - (id)dictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;
 - (id)_dictionaryKeyForKeyPath:(id)arg1 object:(id)arg2;
@@ -47,7 +47,7 @@
 @property(readonly, copy, nonatomic) NSString *_enumValueKeyPrefix; // @synthesize _enumValueKeyPrefix;
 @property(readonly, copy, nonatomic) NSString *keyPrefix;
 @property(readonly, copy, nonatomic) NSString *cacheGroup;
-- (id)localizedDisplayNameForLanguage:(id)arg1;
+- (id)localizedDisplayNameWithLocalizer:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *localizedDisplayName;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;

@@ -23,8 +23,8 @@
 
 + (id)sharedModel:(id)arg1;
 + (BOOL)saveKeypoints;
-@property BOOL trackingMode; // @synthesize trackingMode=_trackingMode;
 - (void).cxx_destruct;
+@property BOOL trackingMode; // @synthesize trackingMode=_trackingMode;
 - (int)analyzePixelBuffer:(struct __CVBuffer *)arg1 flags:(unsigned long long *)arg2 results:(id *)arg3 cancel:(CDUnknownBlockType)arg4;
 - (int)createInput:(float *)arg1 withBuffer:(struct __CVBuffer *)arg2 modelInputHeight:(int)arg3 modelInputWidth:(int)arg4;
 - (int)createModelWithHeight:(int)arg1 srcWidth:(int)arg2;

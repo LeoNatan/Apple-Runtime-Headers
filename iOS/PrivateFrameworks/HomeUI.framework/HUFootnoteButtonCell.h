@@ -19,10 +19,10 @@
     UIButton *_titleButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *titleButton; // @synthesize titleButton=_titleButton;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)_updateTextColor;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;

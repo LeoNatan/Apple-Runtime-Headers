@@ -27,11 +27,11 @@
 + (unsigned long long)cachedSalt;
 + (unsigned char)indexForDevice;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *abGroupsInAsset; // @synthesize abGroupsInAsset=_abGroupsInAsset;
 @property(readonly, nonatomic) NSString *naturalABGroupIdentifier; // @synthesize naturalABGroupIdentifier=_naturalABGroupIdentifier;
 @property(readonly, nonatomic) NSDictionary *abGroupContents; // @synthesize abGroupContents=_abGroupContents;
 @property(readonly, nonatomic) NSString *abGroupIdentifier; // @synthesize abGroupIdentifier=_abGroupIdentifier;
-- (void).cxx_destruct;
 - (_Bool)setABGroupIdentifier:(id)arg1 assetContents:(id)arg2;
 - (id)initWithAssetContents:(id)arg1 specifiedABGroup:(id)arg2 indexForDevice:(unsigned char)arg3;
 - (id)init;

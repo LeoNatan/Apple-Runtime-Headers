@@ -22,9 +22,9 @@
 }
 
 + (void)cleanupState;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSLegacyAssertionSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_queue_updateGizmoAssertionSyncWithModeAssertionUpdateContext:(id)arg1;
 - (void)_queue_updateCompanionAssertionMirroringForState:(id)arg1;
 - (_Bool)_queue_updateCompanionToggleSyncForGizmoUpdateDate:(id)arg1 modeAssertionUpdateContext:(id)arg2;

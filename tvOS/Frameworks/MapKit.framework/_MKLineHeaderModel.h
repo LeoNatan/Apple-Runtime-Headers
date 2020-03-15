@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _colorProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseEmptyPlaceholder; // @synthesize shouldUseEmptyPlaceholder=_shouldUseEmptyPlaceholder;
 @property(copy, nonatomic) CDUnknownBlockType colorProvider; // @synthesize colorProvider=_colorProvider;
 @property(copy, nonatomic) NSDictionary *fontAttribute; // @synthesize fontAttribute=_fontAttribute;
 @property(nonatomic) __weak UIView *ownerView; // @synthesize ownerView=_ownerView;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_placeCardHeaderSeparatorString;
 - (id)contentAttributedString;

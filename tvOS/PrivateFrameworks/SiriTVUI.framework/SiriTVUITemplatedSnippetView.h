@@ -20,10 +20,10 @@
     UIView *_defaultFocusedView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *defaultFocusedView; // @synthesize defaultFocusedView=_defaultFocusedView;
 @property(retain, nonatomic) UIView *annotationView; // @synthesize annotationView=_annotationView;
 @property(nonatomic) __weak id <SiriTVUITemplatedViewDelegate> templatedViewDelegate; // @synthesize templatedViewDelegate=_templatedViewDelegate;
-- (void).cxx_destruct;
 - (void)transitionToTemplateItemViews:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)shouldFitWithinContentMargins;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 forPartialLayout:(_Bool)arg2;

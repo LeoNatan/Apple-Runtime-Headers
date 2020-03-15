@@ -15,10 +15,10 @@
     ADPrerollSlider *_slider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADPrerollSlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) UILabel *remainingTimeLabel; // @synthesize remainingTimeLabel=_remainingTimeLabel;
 @property(retain, nonatomic) UILabel *elapsedTimeLabel; // @synthesize elapsedTimeLabel=_elapsedTimeLabel;
-- (void).cxx_destruct;
 - (void)setElapsedTime:(double)arg1 totalTime:(double)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

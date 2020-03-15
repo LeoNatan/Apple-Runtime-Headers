@@ -13,8 +13,8 @@
     NSMutableArray *_destinations;
 }
 
-@property(retain, nonatomic) NSMutableArray *destinations; // @synthesize destinations=_destinations;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *destinations; // @synthesize destinations=_destinations;
 - (void)parseDestinationsFromConfig:(id)arg1 cpAnalyticsInstance:(id)arg2;
 - (id)readConfiguration:(id)arg1;
 - (void)sendToAllDestinations:(id)arg1;

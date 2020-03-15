@@ -20,6 +20,7 @@
     NSString *_whitePointAdaptationInteractiveUpdateTimingFunctionName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *whitePointAdaptationInteractiveUpdateTimingFunctionName; // @synthesize whitePointAdaptationInteractiveUpdateTimingFunctionName=_whitePointAdaptationInteractiveUpdateTimingFunctionName;
 @property(nonatomic) _Bool whitePointAdaptationInteractiveUpdateEnabled; // @synthesize whitePointAdaptationInteractiveUpdateEnabled=_whitePointAdaptationInteractiveUpdateEnabled;
 @property(nonatomic) float whitePointAdaptationUpdateDefaultDuration; // @synthesize whitePointAdaptationUpdateDefaultDuration=_whitePointAdaptationUpdateDefaultDuration;
@@ -28,7 +29,6 @@
 @property(nonatomic) float whitePointAdaptationStrengthPhoto; // @synthesize whitePointAdaptationStrengthPhoto=_whitePointAdaptationStrengthPhoto;
 @property(nonatomic) float whitePointAdaptationStrengthReading; // @synthesize whitePointAdaptationStrengthReading=_whitePointAdaptationStrengthReading;
 @property(nonatomic) float whitePointAdaptationStrengthStandard; // @synthesize whitePointAdaptationStrengthStandard=_whitePointAdaptationStrengthStandard;
-- (void).cxx_destruct;
 - (void)setDefaultValues;
 
 @end

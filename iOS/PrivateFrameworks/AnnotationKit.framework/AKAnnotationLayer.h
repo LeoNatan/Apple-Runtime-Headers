@@ -20,6 +20,7 @@
 }
 
 + (id)newAnnotationLayerForAnnotation:(id)arg1 withPageController:(id)arg2;
+- (void).cxx_destruct;
 @property _Bool shouldRecalculateLoupeImage; // @synthesize shouldRecalculateLoupeImage=_shouldRecalculateLoupeImage;
 @property _Bool lastRedrawWasForDrawingBounds; // @synthesize lastRedrawWasForDrawingBounds=_lastRedrawWasForDrawingBounds;
 @property _Bool wasLastDrawingClipped; // @synthesize wasLastDrawingClipped=_wasLastDrawingClipped;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) CALayer *fastPathLayer; // @synthesize fastPathLayer=_fastPathLayer;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 @property(retain) AKAnnotation *annotation; // @synthesize annotation=_annotation;
-- (void).cxx_destruct;
 - (void)_removeDebugVisuals;
 - (void)_addDebugVisuals;
 - (void)_stopObservingAnnotation;

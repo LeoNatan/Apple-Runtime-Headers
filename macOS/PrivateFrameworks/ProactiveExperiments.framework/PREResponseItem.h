@@ -24,6 +24,7 @@
 
 + (id)responseItemArrayFromResponseKitArray:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *isCustomResponse; // @synthesize isCustomResponse=_isCustomResponse;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, nonatomic) NSString *replyText; // @synthesize replyText=_replyText;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSNumber *responseClassId; // @synthesize responseClassId=_responseClassId;
 @property(readonly, nonatomic) NSNumber *modelId; // @synthesize modelId=_modelId;
 @property(readonly, nonatomic) NSNumber *categoryId; // @synthesize categoryId=_categoryId;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToResponseItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

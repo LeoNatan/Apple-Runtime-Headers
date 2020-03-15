@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long minLastUsedTime; // @synthesize minLastUsedTime=_minLastUsedTime;
 @property(retain) BRCServerChangeState *sharedDatabaseChangeState; // @synthesize sharedDatabaseChangeState=_sharedDatabaseChangeState;
 @property(retain, nonatomic) NSDate *lastSyncDownDate; // @synthesize lastSyncDownDate=_lastSyncDownDate;
 @property(nonatomic) long long nextRank; // @synthesize nextRank=_nextRank;
-- (void).cxx_destruct;
 - (id)dumpMigrationQueriesForMangledID:(id)arg1;
 - (void)migrationQueryForMangledID:(id)arg1 key:(id)arg2 didUpdateWithCursor:(id)arg3;
 - (id)migrationQueryKeyForMangledID:(id)arg1 continuationCursor:(id *)arg2;

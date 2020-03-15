@@ -25,12 +25,12 @@
 
 + (Class)orType;
 + (Class)andType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TPPBDictionaryMatchingRuleFieldExists *exists; // @synthesize exists=_exists;
 @property(retain, nonatomic) TPPBDictionaryMatchingRuleFieldRegexMatch *match; // @synthesize match=_match;
 @property(retain, nonatomic) TPPBDictionaryMatchingRule *not; // @synthesize not=_not;
 @property(retain, nonatomic) NSMutableArray *ors; // @synthesize ors=_ors;
 @property(retain, nonatomic) NSMutableArray *ands; // @synthesize ands=_ands;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

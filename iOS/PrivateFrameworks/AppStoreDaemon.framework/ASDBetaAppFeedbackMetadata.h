@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) ASDBetaAppVersion *version; // @synthesize version=_version;
 @property(copy) NSString *email; // @synthesize email=_email;
 @property(copy) NSString *incidentID; // @synthesize incidentID=_incidentID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

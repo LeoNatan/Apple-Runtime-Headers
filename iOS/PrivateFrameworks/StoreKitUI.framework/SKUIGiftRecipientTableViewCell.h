@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
     _Bool _leftToRight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(nonatomic) _Bool didLayoutSubviews; // @synthesize didLayoutSubviews=_didLayoutSubviews;
-- (void).cxx_destruct;
 - (void)_sendDismissContactPicker;
 - (void)_sendDidUpdateSearchController;
 - (void)_sendDidChangeRecipients;

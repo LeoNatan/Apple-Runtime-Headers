@@ -13,8 +13,8 @@
     NSDate *_invalidationDate;
 }
 
-@property(readonly, nonatomic) NSDate *invalidationDate; // @synthesize invalidationDate=_invalidationDate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *invalidationDate; // @synthesize invalidationDate=_invalidationDate;
 - (void)invalidateAtDate:(id)arg1;
 
 @end

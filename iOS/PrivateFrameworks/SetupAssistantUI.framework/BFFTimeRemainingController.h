@@ -13,8 +13,8 @@
     NSDateComponentsFormatter *_durationFormatter;
 }
 
-@property(retain) NSDateComponentsFormatter *durationFormatter; // @synthesize durationFormatter=_durationFormatter;
 - (void).cxx_destruct;
+@property(retain) NSDateComponentsFormatter *durationFormatter; // @synthesize durationFormatter=_durationFormatter;
 - (id)timeRemainingString:(double)arg1;
 - (void)setTimeRemainingEstimate:(double)arg1;
 - (id)initWithTitle:(id)arg1;

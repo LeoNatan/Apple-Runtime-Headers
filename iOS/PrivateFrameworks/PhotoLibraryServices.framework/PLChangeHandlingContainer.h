@@ -18,8 +18,8 @@
     NSURL *_libraryURL;
 }
 
-@property(readonly, copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 - (void).cxx_destruct;
+@property(readonly, copy) NSURL *libraryURL; // @synthesize libraryURL=_libraryURL;
 @property(readonly, copy, nonatomic) NSDictionary *allDidSaveObjectIDsUserInfo;
 @property(readonly, nonatomic) _Bool isMergingCoalescedSaveNotification;
 - (void)handleUnknownMergeEvent;
@@ -29,6 +29,7 @@
 - (void)connectManagedObjectContext:(id)arg1;
 - (void)unpauseLaunchEventNotifications;
 - (void)pauseLaunchEventNotifications;
+- (void)dealloc;
 - (void)stop;
 - (void)start;
 - (id)initWithLibraryURL:(id)arg1 changePublisher:(id)arg2 libraryServicesManager:(id)arg3 persistentStoreCoordinator:(id)arg4;

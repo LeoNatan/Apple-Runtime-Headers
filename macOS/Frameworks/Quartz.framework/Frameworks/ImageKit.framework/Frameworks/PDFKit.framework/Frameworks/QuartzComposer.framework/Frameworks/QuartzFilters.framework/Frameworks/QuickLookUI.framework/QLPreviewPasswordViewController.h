@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     BOOL _hasEnteredWrongPassword;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *containerView; // @synthesize containerView=_containerView;
 @property(retain) NSImageView *smallAlternateImageView; // @synthesize smallAlternateImageView=_smallAlternateImageView;
 @property(retain) NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
 @property(retain) NSTextField *passwordField; // @synthesize passwordField=_passwordField;
 @property BOOL isHidden; // @synthesize isHidden=_isHidden;
 @property __weak QLPreviewDocument *document; // @synthesize document=_document;
-- (void).cxx_destruct;
 - (void)validatePassword:(id)arg1;
 @property BOOL hasEnteredWrongPassword;
 - (void)didShow;

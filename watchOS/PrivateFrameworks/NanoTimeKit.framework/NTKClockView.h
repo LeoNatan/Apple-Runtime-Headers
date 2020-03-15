@@ -16,8 +16,8 @@
     id <NTKClockViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NTKClockViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NTKClockViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didMoveToWindow;
 - (_Bool)postsDidMoveToWindowNotification;
 - (id)snapshotImage;

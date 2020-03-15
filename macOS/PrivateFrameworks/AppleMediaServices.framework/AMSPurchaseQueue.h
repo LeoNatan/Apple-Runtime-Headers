@@ -13,6 +13,7 @@
 
 @interface AMSPurchaseQueue : NSObject <AMSBagConsumer>
 {
+    AMSURLSession *_session;
     BOOL _isSuspeneded;
     NSOperationQueue *_backgroundQueue;
     AMSPurchaseQueueConfiguration *_config;
@@ -21,12 +22,12 @@
     NSObject<OS_dispatch_queue> *_enqueue;
     NSLock *_lock;
     AMSPurchaseProtocolHandler *_protocolHandler;
-    AMSURLSession *_session;
 }
 
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+- (void).cxx_destruct;
 @property(retain) AMSURLSession *session; // @synthesize session=_session;
 @property(retain) AMSPurchaseProtocolHandler *protocolHandler; // @synthesize protocolHandler=_protocolHandler;
 @property(retain) NSLock *lock; // @synthesize lock=_lock;
@@ -36,7 +37,6 @@
 @property(retain) NSMutableArray *batches; // @synthesize batches=_batches;
 @property(retain) AMSPurchaseQueueConfiguration *config; // @synthesize config=_config;
 @property(retain) NSOperationQueue *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
-- (void).cxx_destruct;
 - (id)_processURLRequest:(id)arg1 error:(id *)arg2;
 - (void)_processPurchase:(id)arg1;
 - (id)_purchaseContextForPurchase:(id)arg1;

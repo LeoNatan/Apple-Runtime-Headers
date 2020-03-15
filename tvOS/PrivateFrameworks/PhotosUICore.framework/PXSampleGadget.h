@@ -26,6 +26,7 @@
     UIColor *_backgroundColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned long long preferredExpandedHeight; // @synthesize preferredExpandedHeight=_preferredExpandedHeight;
@@ -35,13 +36,13 @@
 @property(nonatomic) unsigned long long accessoryButtonType; // @synthesize accessoryButtonType=_accessoryButtonType;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
-- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
+- (void)userDidSelectAccessoryButton:(id)arg1;
 - (void)_prepareView:(id)arg1;
-- (void)prepareCollectionViewItem:(struct UICollectionViewCell *)arg1;
+- (void)prepareCollectionViewItem:(id)arg1;
 @property(readonly, nonatomic) Class collectionViewItemClass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) _Bool hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 @property(readonly, nonatomic) NSString *localizedTitle;
 - (struct CGRect)view:(id)arg1 colorFrameForBounds:(struct CGRect)arg2;
@@ -55,9 +56,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

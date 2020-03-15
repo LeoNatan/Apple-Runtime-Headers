@@ -35,6 +35,7 @@
 + (id)filevaultAlternateHomeDirPath:(id)arg1;
 + (id)pathsToPreflight;
 + (id)pathsToNeverCopy;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *excludablePathQueue; // @synthesize excludablePathQueue=_excludablePathQueue;
 @property(retain) NSObject<OS_dispatch_queue> *sizingQueue; // @synthesize sizingQueue=_sizingQueue;
 @property(retain) NSMutableArray *allOtherFilesInDirectory; // @synthesize allOtherFilesInDirectory=_allOtherFilesInDirectory;
@@ -45,7 +46,6 @@
 @property(retain) SMDBEntry *backing; // @synthesize backing=_backing;
 @property(retain) SMSystem_Daemon *sourceSystem; // @synthesize sourceSystem;
 @property BOOL isAdminUser; // @synthesize isAdminUser;
-- (void).cxx_destruct;
 - (id)_getEntry:(id)arg1 atIndex:(int)arg2;
 - (id)_fileVaultImagePath;
 - (void)setHomeDirSize:(id)arg1;

@@ -17,11 +17,11 @@
     id <CSLSchedulerContext> _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CSLSchedulerContext> context; // @synthesize context=_context;
 @property(retain, nonatomic) NSArray *policies; // @synthesize policies=_policies;
 @property(retain, nonatomic) id <CSLActivityTimerSource> timerSource; // @synthesize timerSource=_timerSource;
 @property(retain, nonatomic) id <CSLActivityDateSource> dateSource; // @synthesize dateSource=_dateSource;
-- (void).cxx_destruct;
 
 @end
 

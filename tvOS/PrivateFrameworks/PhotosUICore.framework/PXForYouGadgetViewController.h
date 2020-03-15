@@ -23,11 +23,11 @@
 
 + (id)lastExitedForYouDate;
 + (void)setLastExitedForYouDate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsRefresh; // @synthesize needsRefresh=_needsRefresh;
 @property(retain, nonatomic) PXForYouGadgetPriorityManager *priorityManager; // @synthesize priorityManager=_priorityManager;
 @property(retain, nonatomic) PXForYouBadgeManager *badgeManager; // @synthesize badgeManager=_badgeManager;
 @property(retain, nonatomic) UIBarButtonItem *navigationDisplayModeButtonItem; // @synthesize navigationDisplayModeButtonItem=_navigationDisplayModeButtonItem;
-- (void).cxx_destruct;
 - (void)ppt_navigateToFirstInvitationCMM:(_Bool)arg1 withCompleteHandler:(CDUnknownBlockType)arg2;
 - (void)ppt_navigateToFirstSuggestedCMMComposeRecipientViewAfterOneSecondWithCompleteHandler:(CDUnknownBlockType)arg1;
 - (void)ppt_navigateToFirstSuggestedCMMAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;

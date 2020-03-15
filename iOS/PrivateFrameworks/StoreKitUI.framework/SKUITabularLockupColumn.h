@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) long long identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSArray *childViewElements; // @synthesize childViewElements=_childViewElements;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_addChildViewElement:(id)arg1;
 - (id)initWithColumnIdentifier:(long long)arg1;

@@ -16,9 +16,9 @@
     PANUTiledImageBacking *_backing;
 }
 
+- (void).cxx_destruct;
 @property(retain) PANUTiledImageBacking *backing; // @synthesize backing=_backing;
 @property(readonly) NUTileInfo *tileInfo; // @synthesize tileInfo=_tileInfo;
-- (void).cxx_destruct;
 - (BOOL)readTextureRegion:(id)arg1 withContext:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (BOOL)readBufferRegion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (unsigned long long)index;

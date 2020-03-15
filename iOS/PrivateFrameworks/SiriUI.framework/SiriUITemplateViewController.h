@@ -18,11 +18,11 @@
 }
 
 + (id)templateViewControllerForTemplateModel:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isCompressed) _Bool compressed; // @synthesize compressed=_compressed;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak id <SiriUITemplateViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <SiriUITemplateModel> templateModel; // @synthesize templateModel=_templateModel;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)prepareForDismissal;
 @property(readonly, nonatomic) id <SiriUITemplateModelPrivate> templateModelPrivate;

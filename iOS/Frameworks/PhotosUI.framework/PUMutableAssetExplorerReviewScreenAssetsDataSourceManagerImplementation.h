@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_replacementAssetsByUUID;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *replacementAssetsByUUID; // @synthesize replacementAssetsByUUID=_replacementAssetsByUUID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *replacementAssetsByUUID; // @synthesize replacementAssetsByUUID=_replacementAssetsByUUID;
 - (void)removeReplacementAssetInDataSourceForUUID:(id)arg1;
 - (void)replaceAssetInDataSourceWithAsset:(id)arg1;
 - (id)initWithReplacementAssetsByUUID:(id)arg1;

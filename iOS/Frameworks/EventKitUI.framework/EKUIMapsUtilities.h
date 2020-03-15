@@ -10,6 +10,7 @@
 {
 }
 
++ (void)geocodeEventIfNeeded:(id)arg1;
 + (id)_locationStringForStructuredLocation:(id)arg1 withTitle:(id)arg2;
 + (id)mapsURLForLocation:(id)arg1 onEvent:(id)arg2 hasMapItemLaunchOptionFromTimeToLeaveNotification:(_Bool)arg3;
 

@@ -21,10 +21,10 @@
     PSIGroup *_filenameGroupInAggregate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PSIGroup *filenameGroupInAggregate; // @synthesize filenameGroupInAggregate=_filenameGroupInAggregate;
 @property(copy, nonatomic) NSString *transientToken; // @synthesize transientToken=_transientToken;
 @property(readonly, nonatomic) NSArray *searchTokens; // @synthesize searchTokens=_searchTokens;
-- (void).cxx_destruct;
 - (id)newGroupResult;
 - (id)newGroupResultWithDateFilter:(id)arg1 datedTokens:(id)arg2;
 - (struct __CFArray *)_newSortedGroupIds;

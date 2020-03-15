@@ -15,10 +15,10 @@
     NSMutableData *_pdfData;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableData *pdfData; // @synthesize pdfData=_pdfData;
 @property(retain) NSURL *outputURL; // @synthesize outputURL=_outputURL;
 @property(copy, nonatomic) NSDictionary *documentInfo; // @synthesize documentInfo=_documentInfo;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

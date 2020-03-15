@@ -28,6 +28,7 @@
 }
 
 + (id)requestWithMessageID:(unsigned short)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id pbRequest; // @synthesize pbRequest=_pbRequest;
 @property(nonatomic) __weak NMSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(retain, nonatomic) NSDictionary *extraIDSOptions; // @synthesize extraIDSOptions=_extraIDSOptions;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned short messageID; // @synthesize messageID=_messageID;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(copy, nonatomic) NSSet *targetDeviceIDs; // @synthesize targetDeviceIDs;
-- (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
 @property(readonly, copy) NSString *description;
 - (id)init;

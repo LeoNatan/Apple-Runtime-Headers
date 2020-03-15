@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (id)timeRangeZero;
 + (id)timeRangeWithInterstice:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(readonly) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (id)description;
 - (long long)compare:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

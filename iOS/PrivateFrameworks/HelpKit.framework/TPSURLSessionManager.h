@@ -28,6 +28,7 @@
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 @property(retain, nonatomic) NSMutableDictionary *uncoalesceTaskMap; // @synthesize uncoalesceTaskMap=_uncoalesceTaskMap;
 @property(retain, nonatomic) NSMutableDictionary *coalesceTaskURLMap; // @synthesize coalesceTaskURLMap=_coalesceTaskURLMap;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool respondsToRequestResumed; // @synthesize respondsToRequestResumed=_respondsToRequestResumed;
 @property(nonatomic) __weak id <TPSURLSessionDelegate> defaultSessionDelegate; // @synthesize defaultSessionDelegate=_defaultSessionDelegate;
 @property(nonatomic) __weak id <TPSURLSessionManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;

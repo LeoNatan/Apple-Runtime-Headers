@@ -17,8 +17,8 @@
 }
 
 + (id)sliceDescriptionForSlicingEvent:(id)arg1;
-@property(retain) EKSeriesDetails *originalMainSeriesDetails; // @synthesize originalMainSeriesDetails=_originalMainSeriesDetails;
 - (void).cxx_destruct;
+@property(retain) EKSeriesDetails *originalMainSeriesDetails; // @synthesize originalMainSeriesDetails=_originalMainSeriesDetails;
 - (id)sliceDate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain) EKEvent *originalEventToSliceOn;

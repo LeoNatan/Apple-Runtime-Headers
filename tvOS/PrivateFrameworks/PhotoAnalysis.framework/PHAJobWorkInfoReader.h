@@ -14,8 +14,8 @@
     unsigned long long _fetchLimit;
 }
 
-@property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 - (id)workInfoWithCount:(unsigned long long)arg1 fetchBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long queueCount;
 - (id)init;

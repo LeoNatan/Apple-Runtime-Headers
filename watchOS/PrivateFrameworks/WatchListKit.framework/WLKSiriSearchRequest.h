@@ -13,8 +13,8 @@
     NSDictionary *_query;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *query; // @synthesize query=_query;
 - (void)makeRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithQuery:(id)arg1;
 

@@ -14,8 +14,8 @@
     NSArray *_topLevelObjects;
 }
 
-@property(readonly) MMMobileDocumentsTableRow *rowView; // @synthesize rowView=_rowView;
 - (void).cxx_destruct;
+@property(readonly) MMMobileDocumentsTableRow *rowView; // @synthesize rowView=_rowView;
 
 @end
 

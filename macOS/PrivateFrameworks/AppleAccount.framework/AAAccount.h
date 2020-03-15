@@ -17,10 +17,10 @@
 }
 
 + (id)accountTypeString;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(readonly, nonatomic) NSArray *appleIDAliases; // @synthesize appleIDAliases=_appleIDAliases;
 @property(copy, nonatomic) NSString *fmipToken; // @synthesize fmipToken=_fmipToken;
-- (void).cxx_destruct;
 @property(nonatomic) BOOL needsToVerifyTerms;
 - (void)renewCredentialsForAppleIDWithHandler:(CDUnknownBlockType)arg1;
 - (void)signInWithHandler:(CDUnknownBlockType)arg1;

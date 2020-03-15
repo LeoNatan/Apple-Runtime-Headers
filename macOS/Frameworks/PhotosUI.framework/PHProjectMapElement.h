@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *annotations; // @synthesize annotations=_annotations;
 @property(readonly, nonatomic) double altitude; // @synthesize altitude=_altitude;
 @property(readonly, nonatomic) double pitch; // @synthesize pitch=_pitch;
 @property(readonly, nonatomic) double heading; // @synthesize heading=_heading;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
 @property(readonly, nonatomic) unsigned long long mapType; // @synthesize mapType=_mapType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description:(BOOL)arg1;

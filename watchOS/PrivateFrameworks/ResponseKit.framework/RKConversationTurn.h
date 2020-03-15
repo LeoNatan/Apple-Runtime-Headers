@@ -15,10 +15,10 @@
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSString *senderId; // @synthesize senderId=_senderId;
 @property(readonly) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)initWithString:(id)arg1 senderID:(id)arg2 timestamp:(id)arg3;
 
 @end

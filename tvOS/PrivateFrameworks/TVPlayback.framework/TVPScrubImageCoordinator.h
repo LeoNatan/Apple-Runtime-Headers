@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_limitReadAheadTimer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool currentMediaItemHasPlayed; // @synthesize currentMediaItemHasPlayed=_currentMediaItemHasPlayed;
 @property(nonatomic) _Bool scrubbingConfiguredForCurrentMediaItem; // @synthesize scrubbingConfiguredForCurrentMediaItem=_scrubbingConfiguredForCurrentMediaItem;
 @property(retain, nonatomic) NSTimer *limitReadAheadTimer; // @synthesize limitReadAheadTimer=_limitReadAheadTimer;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<TVPPlayback> *mainContentPlayer; // @synthesize mainContentPlayer=_mainContentPlayer;
 @property(nonatomic) _Bool hasScrubbed; // @synthesize hasScrubbed=_hasScrubbed;
 @property(nonatomic) _Bool inScrubMode; // @synthesize inScrubMode=_inScrubMode;
-- (void).cxx_destruct;
 - (_Bool)_okToPreloadImages;
 - (void)_limitReadAheadTimerFired:(id)arg1;
 - (void)_cleanUpScrubber;

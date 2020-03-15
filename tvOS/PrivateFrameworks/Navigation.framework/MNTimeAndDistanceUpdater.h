@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     double _distanceToManeuverEnd;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double distanceToManeuverEnd; // @synthesize distanceToManeuverEnd=_distanceToManeuverEnd;
 @property(readonly, nonatomic) double distanceToManeuverStart; // @synthesize distanceToManeuverStart=_distanceToManeuverStart;
 @property(readonly, nonatomic) double remainingDistance; // @synthesize remainingDistance=_remainingDistance;
 @property(readonly, nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
 @property(nonatomic) __weak id <MNTimeAndDistanceUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_startTimerToNextMinute;
 - (void)updateDisplayETAForRoute:(id)arg1 notificationType:(unsigned long long)arg2;
 - (void)setRoutes:(id)arg1 mainRoute:(id)arg2 location:(id)arg3 notificationType:(unsigned long long)arg4;

@@ -23,8 +23,8 @@
     id <CSLUIInertialUpdaterDelegate> _delegate;
 }
 
-@property(nonatomic) id <CSLUIInertialUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <CSLUIInertialUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_computeDecelerationTarget;
 - (void)_handleDragDelta:(struct CGPoint)arg1;
 - (void)_beginDraggingIfNecessary;

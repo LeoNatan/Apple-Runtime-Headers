@@ -4,25 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <PassKitUI/PKHeroCardExplainationHeaderView.h>
 
-@class UIImageView;
-
-@interface PKApplyHeroCardView : UIView
+@interface PKApplyHeroCardView : PKHeroCardExplainationHeaderView
 {
-    UIImageView *_cardImageView;
-    UIView *_cardImageShadowView;
-    _Bool _usesCompactLayout;
     unsigned int _featureIdentifier;
-    float _cardHeight;
-    float _cardTopPadding;
-    float _cardBottomPadding;
-    float _cardBackingHeight;
 }
 
-- (void).cxx_destruct;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)layoutSubviews;
 - (id)initWithFeatureIdentifier:(unsigned int)arg1;
 
 @end

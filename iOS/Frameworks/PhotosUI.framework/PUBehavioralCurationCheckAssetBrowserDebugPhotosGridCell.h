@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *_score;
 }
 
-@property(copy, nonatomic) NSString *score; // @synthesize score=_score;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *score; // @synthesize score=_score;
 - (void)layoutSubviews;
 
 @end

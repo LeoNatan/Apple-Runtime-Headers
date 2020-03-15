@@ -15,8 +15,8 @@
     MDLAsset *_asset;
 }
 
-@property(nonatomic) __weak MDLAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+@property(nonatomic) __weak MDLAsset *asset; // @synthesize asset=_asset;
 - (id)resolveAssetNamed:(id)arg1;
 - (_Bool)canResolveAssetNamed:(id)arg1;
 - (id)initWithAsset:(id)arg1;

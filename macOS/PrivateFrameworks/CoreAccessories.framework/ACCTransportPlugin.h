@@ -18,12 +18,12 @@
     NSMutableDictionary *_endpointPropertyChangeHandlers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *endpointPropertyChangeHandlers; // @synthesize endpointPropertyChangeHandlers=_endpointPropertyChangeHandlers;
 @property(retain, nonatomic) NSMutableDictionary *connectionPropertyChangeHandlers; // @synthesize connectionPropertyChangeHandlers=_connectionPropertyChangeHandlers;
 @property(readonly, nonatomic) NSString *pluginName; // @synthesize pluginName=_pluginName;
 @property(retain, nonatomic) NSMutableSet *activeConnectionUUIDs; // @synthesize activeConnectionUUIDs=_activeConnectionUUIDs;
 @property(nonatomic) __weak id <ACCTransportPluginManagerProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)sendOutgoingData:(id)arg1 forEndpointWithUUID:(id)arg2 connectionUUID:(id)arg3;
 - (BOOL)routeOutgoingData:(id)arg1 forEndpointWithUUID:(id)arg2 connectionUUID:(id)arg3;
 - (BOOL)processIncomingData:(id)arg1 forEndpointWithUUID:(id)arg2;

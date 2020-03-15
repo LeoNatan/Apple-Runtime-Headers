@@ -27,9 +27,9 @@
 + (id)predicateWithProperty:(id)arg1 greaterThanOrEqualToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 notEqualToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long comparisonType; // @synthesize comparisonType=_comparisonType;
-- (void).cxx_destruct;
 - (id)_comparisonTypeString;
 - (id)description;
 - (_Bool)isCompatibleWithPredicate:(id)arg1;

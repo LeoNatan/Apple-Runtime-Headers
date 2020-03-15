@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *timingData; // @synthesize timingData=_timingData;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
 @property(readonly, nonatomic) long long sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 @property(readonly, copy, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSuggestions:(id)arg1 sizeInBytes:(long long)arg2 statusCode:(long long)arg3 timingData:(id)arg4;

@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *assetLocalIdentifier; // @synthesize assetLocalIdentifier=_assetLocalIdentifier;
 @property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) NSString *momentLocalIdentifier; // @synthesize momentLocalIdentifier=_momentLocalIdentifier;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSArray *persons; // @synthesize persons=_persons;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

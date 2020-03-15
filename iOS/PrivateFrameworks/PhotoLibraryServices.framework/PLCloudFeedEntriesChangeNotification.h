@@ -18,11 +18,11 @@
 
 + (id)notificationWithInsertedEntries:(id)arg1 updatedEntries:(id)arg2 deletedEntries:(id)arg3;
 + (id)notificationWithFullReload;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *deletedEntries; // @synthesize deletedEntries=_deletedEntries;
 @property(copy, nonatomic) NSSet *updatedEntries; // @synthesize updatedEntries=_updatedEntries;
 @property(copy, nonatomic) NSSet *insertedEntries; // @synthesize insertedEntries=_insertedEntries;
 @property(nonatomic) _Bool shouldReload; // @synthesize shouldReload=_shouldReload;
-- (void).cxx_destruct;
 - (id)userInfo;
 - (id)object;
 - (id)name;

@@ -41,6 +41,7 @@
     struct timespec _last_echo;
 }
 
+- (void).cxx_destruct;
 @property struct timespec last_echo; // @synthesize last_echo=_last_echo;
 @property struct timespec last_recv; // @synthesize last_recv=_last_recv;
 @property unsigned int connectTimeOut; // @synthesize connectTimeOut=_connectTimeOut;
@@ -50,7 +51,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *signing_queue; // @synthesize signing_queue=_signing_queue;
 @property(retain) NSObject<OS_dispatch_queue> *recv_queue; // @synthesize recv_queue=_recv_queue;
 @property(retain) NSObject<OS_nw_connection> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (int)writeEnabled;
 - (void)timeOutCheck;
 - (void)setNetBIOSHeader:(unsigned int *)arg1 nbType:(unsigned char)arg2 length:(unsigned int)arg3;

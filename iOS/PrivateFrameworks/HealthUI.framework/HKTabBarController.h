@@ -15,8 +15,8 @@
     UIViewController *_previousViewController;
 }
 
-@property(nonatomic) __weak UIViewController *previousViewController; // @synthesize previousViewController=_previousViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *previousViewController; // @synthesize previousViewController=_previousViewController;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (unsigned long long)tabBarControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)setTabBarControlsHidden:(_Bool)arg1 animated:(_Bool)arg2;

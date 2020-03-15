@@ -53,11 +53,11 @@
 + (void)registerTransport:(Class)arg1 forScheme:(id)arg2;
 + (void)initialize;
 + (void)observeDecompressionExceptionLogging:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int atomicConnectionNumber; // @synthesize atomicConnectionNumber=_connectionIndex;
 @property(nonatomic) BOOL remoteTracer; // @synthesize remoteTracer=_remoteTracer;
 @property(nonatomic) BOOL tracer; // @synthesize tracer=_tracer;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)_notifyCompressionHint:(unsigned int)arg1 forChannelCode:(unsigned int)arg2;
 - (void)_receiveQueueSetCompressionHint:(unsigned int)arg1 onChannel:(id)arg2;
 - (void)_setTracerState:(unsigned int)arg1;

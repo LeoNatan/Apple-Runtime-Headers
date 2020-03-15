@@ -27,6 +27,7 @@
 
 + (id)createNonPartialFrozenObjectForPartialObject:(id)arg1 withFrozenClass:(Class)arg2;
 + (id)ekBackingStoreHandle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *identifiersToCommit; // @synthesize identifiersToCommit=_identifiersToCommit;
 @property(retain, nonatomic) NSString *backingStoreIdentifier; // @synthesize backingStoreIdentifier=_backingStoreIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *noboCacheQueue; // @synthesize noboCacheQueue=_noboCacheQueue;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak EKEventStore *mainStore; // @synthesize mainStore=_mainStore;
 @property(readonly, nonatomic) EKBackingObjectsTracker *backingObjectsTracker; // @synthesize backingObjectsTracker=_backingObjectsTracker;
 @property(readonly, nonatomic) EKChangeTracker *changeTracker; // @synthesize changeTracker=_changeTracker;
-- (void).cxx_destruct;
 - (void)replaceChangeTracker:(id)arg1;
 - (id)changeTrackerCopy;
 - (void)readdDetachedEvents:(id)arg1 andExceptions:(id)arg2 toSeries:(id)arg3;

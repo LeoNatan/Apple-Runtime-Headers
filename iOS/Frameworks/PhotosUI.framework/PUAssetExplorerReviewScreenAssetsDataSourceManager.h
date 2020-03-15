@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     PUAssetsDataSourceManager *__originalDataSourceManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setOriginalDataSourceManager:) PUAssetsDataSourceManager *_originalDataSourceManager; // @synthesize _originalDataSourceManager=__originalDataSourceManager;
 @property(copy, nonatomic, setter=_setReplacementAssetsByUUID:) NSDictionary *_replacementAssetsByUUID; // @synthesize _replacementAssetsByUUID=__replacementAssetsByUUID;
-- (void).cxx_destruct;
 - (id)assetsDataSourceManagerInterestingAssetReferences:(id)arg1;
 - (void)assetsDataSourceManager:(id)arg1 didChangeAssetsDataSource:(id)arg2;
 - (void)_updateDataSource;

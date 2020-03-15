@@ -4,7 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSString;
+
 @protocol STRemoteUIPinServiceProtocol
+- (void)authenticateRestrictionsPasscode:(NSString *)arg1 replyHandler:(void (^)(NSError *))arg2;
+- (void)restrictionsPasscodeEntryAttemptCountWithReplyHandler:(void (^)(NSNumber *, NSError *))arg1;
 - (void)presentRemotePINControllerWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)isRestrictionsPasscodeSetWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 @end

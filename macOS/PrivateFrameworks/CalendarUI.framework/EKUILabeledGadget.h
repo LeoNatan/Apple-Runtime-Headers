@@ -15,9 +15,9 @@
     NSTextField *_label;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasAddedControlViewConstraints; // @synthesize hasAddedControlViewConstraints=_hasAddedControlViewConstraints;
 @property(retain) NSTextField *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)addSubviewsIfNeeded;
 - (id)getAlignmentLabelAndAddToSubviewsIfNeeded;
 - (id)controlView;

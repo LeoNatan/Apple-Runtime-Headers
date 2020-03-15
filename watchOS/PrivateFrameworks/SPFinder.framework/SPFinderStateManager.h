@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <SPFinderStateXPCProtocol> proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedBlock; // @synthesize stateChangedBlock=_stateChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType stateInfoChangedBlock; // @synthesize stateInfoChangedBlock;
-- (void).cxx_destruct;
 - (void)stateInfoWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchFinderState:(CDUnknownBlockType)arg1;
 - (void)dealloc;

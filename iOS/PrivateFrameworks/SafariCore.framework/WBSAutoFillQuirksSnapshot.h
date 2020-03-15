@@ -21,13 +21,13 @@
     NSSet *_domainsIneligibleForStreamlinedLogin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *domainsIneligibleForStreamlinedLogin; // @synthesize domainsIneligibleForStreamlinedLogin=_domainsIneligibleForStreamlinedLogin;
 @property(readonly, copy, nonatomic) NSSet *domainsIneligibleForAutomaticLogin; // @synthesize domainsIneligibleForAutomaticLogin=_domainsIneligibleForAutomaticLogin;
 @property(readonly, copy, nonatomic) NSArray *domainsToConsiderIdentical; // @synthesize domainsToConsiderIdentical=_domainsToConsiderIdentical;
 @property(readonly, copy, nonatomic) NSArray *domainsIneligibleForPasswordAuditing; // @synthesize domainsIneligibleForPasswordAuditing=_domainsIneligibleForPasswordAuditing;
 @property(readonly, copy, nonatomic) NSArray *domainsWithAssociatedCredentials; // @synthesize domainsWithAssociatedCredentials=_domainsWithAssociatedCredentials;
 @property(readonly, copy, nonatomic) NSDictionary *passwordRequirementsByDomain; // @synthesize passwordRequirementsByDomain=_passwordRequirementsByDomain;
-- (void).cxx_destruct;
 - (id)_domainsIneligibleForStreamlinedLoginFromAutoFillQuirks:(id)arg1 error:(id *)arg2;
 - (id)_domainsIneligibleForAutomaticLoginFromAutoFillQuirks:(id)arg1 error:(id *)arg2;
 - (id)_domainsToConsiderIdenticalFromAutoFillQuirls:(id)arg1 error:(id *)arg2;

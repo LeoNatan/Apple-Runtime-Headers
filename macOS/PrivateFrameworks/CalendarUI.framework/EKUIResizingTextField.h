@@ -14,9 +14,9 @@
     EKViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property __weak EKViewController *viewController; // @synthesize viewController=_viewController;
 @property BOOL consumeEnterPress; // @synthesize consumeEnterPress=_consumeEnterPress;
-- (void).cxx_destruct;
 - (BOOL)allowsVibrancy;
 - (void)configureText;
 - (void)setPlaceholderText:(id)arg1;

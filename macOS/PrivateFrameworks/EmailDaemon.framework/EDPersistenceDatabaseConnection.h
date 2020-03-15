@@ -23,13 +23,13 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
 @property(readonly, nonatomic) EFSQLConnection *sqlConnection; // @synthesize sqlConnection=_sqlConnection;
 @property(retain, nonatomic) EDPersistenceDatabaseJournal *journal; // @synthesize journal=_journal;
 @property(copy, nonatomic) NSString *journalDatabaseName; // @synthesize journalDatabaseName=_journalDatabaseName;
 @property(copy, nonatomic) NSString *protectedDatabaseName; // @synthesize protectedDatabaseName=_protectedDatabaseName;
 @property(readonly, nonatomic) __weak id <EDPersistenceDatabaseConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)_detachDatabaseWithName:(id)arg1;
 - (BOOL)_attachDatabaseWithName:(id)arg1 url:(id)arg2 error:(id *)arg3;
 - (BOOL)detachJournalDatabase;

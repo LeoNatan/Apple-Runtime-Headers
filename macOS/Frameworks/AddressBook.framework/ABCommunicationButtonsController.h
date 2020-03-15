@@ -29,6 +29,7 @@
 + (id)communicationEndpointsFromPhoneNumbers:(id)arg1 emailAddresses:(id)arg2;
 + (id)faceTimeImageWrapper;
 + (id)faceTimeAudioImageWrapper;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSButton *faceTimeAudioButton; // @synthesize faceTimeAudioButton=_faceTimeAudioButton;
 @property(readonly, nonatomic) NSButton *faceTimeVideoButton; // @synthesize faceTimeVideoButton=_faceTimeButton;
 @property(retain, nonatomic) CNFuture *availabilityFuture; // @synthesize availabilityFuture=_availabilityFuture;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) ABFaceTimeCommunicationsBridge *bridge; // @synthesize bridge=_bridge;
 @property(nonatomic) __weak id <ABFaceTimeDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSStackView *communicationButtonsRow; // @synthesize communicationButtonsRow=_communicationButtonsRow;
-- (void).cxx_destruct;
 - (id)callRelayPhoneNumberItems;
 - (id)faceTimeAudioMenuItem;
 - (void)showTelephonyMenu;

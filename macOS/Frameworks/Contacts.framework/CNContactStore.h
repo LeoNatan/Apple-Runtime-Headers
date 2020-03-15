@@ -31,8 +31,8 @@
 + (id)storeForFamilyMember:(id)arg1;
 + (BOOL)eraseAllDataAtURL:(id)arg1 error:(id *)arg2;
 + (BOOL)eraseAllDataAtLocationWithName:(id)arg1 error:(id *)arg2;
-@property(retain, nonatomic) CNContainerCache *containerCache; // @synthesize containerCache=_containerCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNContainerCache *containerCache; // @synthesize containerCache=_containerCache;
 - (BOOL)hasAccountFirstSyncCompleted;
 - (id)authorizedKeysForContactKeys:(id)arg1;
 - (void)requestAuthorization:(long long)arg1 entityType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

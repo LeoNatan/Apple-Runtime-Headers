@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)signingIdentifierFromSelf;
 + (_Bool)launchdManaged;
-@property(retain, nonatomic) NSString *restorationIdentifier; // @synthesize restorationIdentifier=_restorationIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *restorationIdentifier; // @synthesize restorationIdentifier=_restorationIdentifier;
 - (id)initWithRestorationIdentifier:(id)arg1;
 
 @end

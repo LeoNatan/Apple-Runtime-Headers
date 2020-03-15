@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain) NSObject<OS_os_log> *connObj; // @synthesize connObj=_connObj;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_os_log> *connObj; // @synthesize connObj=_connObj;
 - (void)disableServerServices:(struct AuthorizationOpaqueRef *)arg1;
 - (void)enableServerServices:(struct AuthorizationOpaqueRef *)arg1;
 

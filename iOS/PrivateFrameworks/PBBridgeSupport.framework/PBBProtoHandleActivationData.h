@@ -16,9 +16,9 @@
     NSData *_responseHeaders;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *responseHeaders; // @synthesize responseHeaders=_responseHeaders;
 @property(retain, nonatomic) NSData *activationData; // @synthesize activationData=_activationData;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

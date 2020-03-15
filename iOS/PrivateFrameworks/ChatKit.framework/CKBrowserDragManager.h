@@ -25,6 +25,7 @@
     struct CGPoint _locationInView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) UIWindow *dragWindow; // @synthesize dragWindow=_dragWindow;
 @property(retain, nonatomic) CKBrowserDragViewController *dragViewController; // @synthesize dragViewController=_dragViewController;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) id currentItem; // @synthesize currentItem=_currentItem;
 @property(nonatomic) __weak id <CKBrowserDragControllerTranscriptDelegate> transcriptDelegate; // @synthesize transcriptDelegate=_transcriptDelegate;
 @property(nonatomic) __weak id <CKBrowserDragControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)browserDragViewController:(id)arg1 dragEndedWithTarget:(id)arg2;
 - (void)browserDragViewController:(id)arg1 draggedWithTarget:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

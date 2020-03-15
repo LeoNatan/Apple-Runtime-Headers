@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     _UIDebugLogReport *_debugReport;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDebugLogReport *debugReport; // @synthesize debugReport=_debugReport;
 @property(nonatomic) __weak id <_UIFocusEnvironmentPreferenceEnumerationContextDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <UIFocusEnvironment> environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (void)_reportInferredPreferredFocusEnvironment:(id)arg1;
 - (void)popEnvironment;
 - (void)pushEnvironment:(id)arg1;

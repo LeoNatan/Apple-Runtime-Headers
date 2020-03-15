@@ -13,8 +13,8 @@
     IKCSSToken *_token;
 }
 
-@property(retain, nonatomic) IKCSSToken *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKCSSToken *token; // @synthesize token=_token;
 - (id)description;
 - (id)init;
 

@@ -18,8 +18,8 @@
 + (id)emptyMutationResult;
 + (id)mutationResultWithTimeStampForParentDirectoryOfItemRemovedFromPath:(id)arg1 error:(id *)arg2;
 + (id)mutationResultWithTimeStampsForContentAtPath:(id)arg1 includeParentDirectory:(_Bool)arg2 error:(id *)arg3;
-@property(readonly) NSDictionary *updatedFileTimestamps; // @synthesize updatedFileTimestamps=_updatedFileTimestamps;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *updatedFileTimestamps; // @synthesize updatedFileTimestamps=_updatedFileTimestamps;
 - (id)description;
 - (id)initWithUpdatedFileTimestamps:(id)arg1;
 

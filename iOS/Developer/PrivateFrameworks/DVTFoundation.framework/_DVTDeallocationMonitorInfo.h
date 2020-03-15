@@ -20,10 +20,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property unsigned long long survivedCount; // @synthesize survivedCount=_survivedCount;
 @property(readonly) unsigned long long invalidationDepth; // @synthesize invalidationDepth=_invalidationDepth;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *hierarchyIdentifier;
 - (id)initWithUncollectedObject:(id)arg1;
 - (void)setUncollectedObject:(id)arg1;

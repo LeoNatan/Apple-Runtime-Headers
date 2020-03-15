@@ -14,11 +14,11 @@
     // Error parsing type: , name: _centroid
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableSet *probes; // @synthesize probes=_probes;
 // Error parsing type for property centroid:
 // Property attributes: T,V_centroid
 
-- (void).cxx_destruct;
 - (void)calculateCentroidNotIncludingSamplesinArray:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

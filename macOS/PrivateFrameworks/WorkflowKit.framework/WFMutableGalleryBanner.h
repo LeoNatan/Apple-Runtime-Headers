@@ -18,13 +18,13 @@
     NSString *persistentIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 @property(retain, nonatomic) CKRecordID *base; // @synthesize base;
 @property(copy, nonatomic) NSString *language; // @synthesize language;
 @property(retain, nonatomic) CKRecordID *detailPage; // @synthesize detailPage;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
 @property(copy, nonatomic) CKRecordID *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 
 @end
 

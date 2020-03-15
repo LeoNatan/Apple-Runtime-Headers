@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)assetDisplayDescriptorForSimpleNavigationToAssetReference:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *modifiedAfterDate; // @synthesize modifiedAfterDate=_modifiedAfterDate;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 videoSeekTime; // @synthesize videoSeekTime=_videoSeekTime;
 @property(readonly, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;
-- (void).cxx_destruct;
 - (id)initWithAssetReference:(id)arg1 modifiedAfterDate:(id)arg2 videoSeekTime:(CDStruct_1b6d18a9)arg3;
 - (id)init;
 

@@ -17,7 +17,10 @@
     ASDGatherLogsRequestOptions *_options;
 }
 
++ (id)_harLogsDirectory;
++ (void)_clearHARFiles;
 + (long long)requestType;
++ (void)clearHARFiles;
 - (void).cxx_destruct;
 - (id)_zippedDataForURL:(id)arg1;
 - (void)_sendHarFileRequestWithOptions:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -29,7 +32,7 @@
 - (id)_combineAllLogs;
 - (id)_appstoredContainerPath;
 - (void)gatherLogsWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)createHarFileArchiveWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)createHARFileArchiveWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)createLogFileArchiveWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithOptions:(id)arg1;
 

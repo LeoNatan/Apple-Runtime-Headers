@@ -40,6 +40,7 @@
 + (void)executeSpecificPlugin:(id)arg1;
 + (id)loadPlugin:(id)arg1 forRequest:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL attemptedPluginLoad; // @synthesize attemptedPluginLoad=_attemptedPluginLoad;
 @property(retain) SMConfMigratorPlugin *plugin; // @synthesize plugin=_plugin;
 @property(readonly, getter=isDefaultedCopyRule) BOOL defaultedCopyRule; // @synthesize defaultedCopyRule=_defaultedCopyRule;
@@ -63,7 +64,6 @@
 @property unsigned long long actionType; // @synthesize actionType=_actionType;
 @property(retain) NSArray *children; // @synthesize children=_children;
 @property(retain) NSObject *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)executePlugin;
 - (double)estimateTime;
 - (BOOL)defaultedCopyRule;

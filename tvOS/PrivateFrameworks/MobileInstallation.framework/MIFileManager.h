@@ -16,6 +16,8 @@
 - (_Bool)setUniqueInstallID:(id)arg1 onBundle:(id)arg2 error:(id *)arg3;
 - (id)installTypeForBundle:(id)arg1 error:(id *)arg2;
 - (_Bool)setInstallType:(id)arg1 onBundle:(id)arg2 error:(id *)arg3;
+- (id)insecureCachedAppIdentifierIfValidatedByFreeProfileForBundle:(id)arg1 error:(id *)arg2;
+- (_Bool)setValidatedByFreeProfileAppIdentifier:(id)arg1 insecurelyCachedOnBundle:(id)arg2 error:(id *)arg3;
 - (_Bool)bundleAtURLIsPlaceholder:(id)arg1;
 - (_Bool)markBundleAsPlaceholder:(id)arg1 withError:(id *)arg2;
 - (id)realPathForURL:(id)arg1 ifChildOfURL:(id)arg2;

@@ -17,12 +17,12 @@
     BOOL _hasCreatedViews;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTextField *labelField; // @synthesize labelField=_labelField;
 @property BOOL hasCreatedViews; // @synthesize hasCreatedViews=_hasCreatedViews;
 @property long long multiplier; // @synthesize multiplier=_multiplier;
 @property(copy, nonatomic) NSFormatter *formatter; // @synthesize formatter=_formatter;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)templateViews;
 - (id)convertToEvaluationPredicateFromUIPredicate:(id)arg1;
 - (void)createViewsIfNecessary;

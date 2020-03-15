@@ -19,8 +19,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, copy) NSData *data; // @synthesize data=_data;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

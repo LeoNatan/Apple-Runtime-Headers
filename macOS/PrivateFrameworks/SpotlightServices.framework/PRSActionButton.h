@@ -25,6 +25,7 @@
     NSImage *_base_icon;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *base_icon; // @synthesize base_icon=_base_icon;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property BOOL streaming; // @synthesize streaming=_streaming;
 @property(retain, nonatomic) NSArray *adam_ids; // @synthesize adam_ids=_adam_ids;
-- (void).cxx_destruct;
 - (id)initWithActionItem:(id)arg1;
 
 @end

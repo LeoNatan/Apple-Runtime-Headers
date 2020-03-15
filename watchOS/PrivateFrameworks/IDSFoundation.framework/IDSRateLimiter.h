@@ -16,11 +16,11 @@
     int _limit;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMultiReadUniWriteLock *readWriteLock; // @synthesize readWriteLock=_readWriteLock;
 @property(retain, nonatomic) NSMutableDictionary *cacheMap; // @synthesize cacheMap=_cacheMap;
 @property(nonatomic) double timeLimit; // @synthesize timeLimit=_timeLimit;
 @property(nonatomic) int limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (id)_unlockedDescription;
 - (id)description;
 - (void)cleanupExpiredItems;

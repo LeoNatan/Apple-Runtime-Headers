@@ -15,16 +15,23 @@
 {
     NSDateInterval *_dateInterval;
     NSData *_key;
+    NSData *_secondaryKey;
+    unsigned long long _primaryIndex;
+    unsigned long long _secondaryIndex;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(nonatomic) unsigned long long secondaryIndex; // @synthesize secondaryIndex=_secondaryIndex;
+@property(nonatomic) unsigned long long primaryIndex; // @synthesize primaryIndex=_primaryIndex;
+@property(copy, nonatomic) NSData *secondaryKey; // @synthesize secondaryKey=_secondaryKey;
 @property(copy, nonatomic) NSData *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithDateInterval:(id)arg1 key:(id)arg2 secondaryKey:(id)arg3 primaryIndex:(unsigned long long)arg4 secondaryIndex:(unsigned long long)arg5;
 - (id)initWithDateInterval:(id)arg1 key:(id)arg2;
 
 @end

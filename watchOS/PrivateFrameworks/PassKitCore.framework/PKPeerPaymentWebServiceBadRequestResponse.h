@@ -14,9 +14,9 @@
     NSString *_serverDebugDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *serverDebugDescription; // @synthesize serverDebugDescription=_serverDebugDescription;
 @property(readonly, copy, nonatomic) NSNumber *errorCode; // @synthesize errorCode=_errorCode;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

@@ -24,6 +24,7 @@
     unsigned long long _metadataSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long metadataSize; // @synthesize metadataSize=_metadataSize;
 @property(nonatomic) unsigned long long fileID; // @synthesize fileID=_fileID;
 @property(retain, nonatomic) NSData *fileData; // @synthesize fileData=_fileData;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) long long fileSize; // @synthesize fileSize=_fileSize;
-- (void).cxx_destruct;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;
 - (id)init;

@@ -24,11 +24,11 @@
 + (id)dateFormatter;
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *daysOfWeek; // @synthesize daysOfWeek=_daysOfWeek;
 @property(retain, nonatomic) NSDateComponents *time; // @synthesize time=_time;
 @property(nonatomic) unsigned long long timeOffset; // @synthesize timeOffset=_timeOffset;
 @property(nonatomic) unsigned long long event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

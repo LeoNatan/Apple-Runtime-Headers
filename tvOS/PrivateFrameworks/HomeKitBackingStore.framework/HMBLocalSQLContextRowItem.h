@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSData *_externalData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *externalData; // @synthesize externalData=_externalData;
 @property(readonly, nonatomic) NSData *externalID; // @synthesize externalID=_externalID;
 @property(readonly, nonatomic) unsigned long long modelEncoding; // @synthesize modelEncoding=_modelEncoding;
 @property(readonly, nonatomic) NSData *modelData; // @synthesize modelData=_modelData;
 @property(readonly, nonatomic) unsigned long long itemRow; // @synthesize itemRow=_itemRow;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithStatement:(struct sqlite3_stmt *)arg1 returning:(unsigned long long)arg2;
 - (id)initWithItemRow:(unsigned long long)arg1 externalID:(id)arg2 externalData:(id)arg3 modelEncoding:(unsigned long long)arg4 modelData:(id)arg5;

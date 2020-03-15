@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIFont *_albumListSectionTitleLabelFont;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIFont *albumListSectionTitleLabelFont; // @synthesize albumListSectionTitleLabelFont=_albumListSectionTitleLabelFont;
 @property(retain, nonatomic) UIFont *albumListSubtitleLabelFont; // @synthesize albumListSubtitleLabelFont=_albumListSubtitleLabelFont;
 @property(retain, nonatomic) UIFont *albumListTitleLabelFont; // @synthesize albumListTitleLabelFont=_albumListTitleLabelFont;
-- (void).cxx_destruct;
 - (void)_setNeedsUpdate;
 - (void)invalidateFonts;
 - (void)_preferredContentSizeChanged:(id)arg1;

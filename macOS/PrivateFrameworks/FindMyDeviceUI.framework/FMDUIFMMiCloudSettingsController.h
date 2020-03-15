@@ -40,6 +40,7 @@
 }
 
 + (id)controllerWithGetStateBlock:(CDUnknownBlockType)arg1 setStateBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL offlineFindingDisabledDueToNotHSA2; // @synthesize offlineFindingDisabledDueToNotHSA2=_offlineFindingDisabledDueToNotHSA2;
 @property(nonatomic) BOOL offlineFindingEnabled; // @synthesize offlineFindingEnabled=_offlineFindingEnabled;
 @property(nonatomic) BOOL offlineFindingQueried; // @synthesize offlineFindingQueried=_offlineFindingQueried;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) NSWindow *optionsWindow; // @synthesize optionsWindow=_optionsWindow;
 @property(retain, nonatomic) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(retain, nonatomic) NSImage *icon; // @synthesize icon=_icon;
-- (void).cxx_destruct;
 - (void)doneButtonAction:(id)arg1;
 - (void)toggleOfflineFindingButtonAction:(id)arg1;
 - (void)toggleFindMyMacButtonAction:(id)arg1;

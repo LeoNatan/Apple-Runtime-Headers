@@ -23,10 +23,10 @@
 
 + (void)dismissAlertsWithNotificationID:(id)arg1;
 + (_Bool)shouldShowForDaemonOffer:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool handleActionsBeforeCallingCompletionHandler; // @synthesize handleActionsBeforeCallingCompletionHandler=_handleActionsBeforeCallingCompletionHandler;
 @property(nonatomic) _Bool showOnlyInSpringboard; // @synthesize showOnlyInSpringboard=_showOnlyInSpringboard;
 @property(readonly, nonatomic) ICQDaemonOffer *daemonOffer; // @synthesize daemonOffer=_daemonOffer;
-- (void).cxx_destruct;
 - (void)dismissAlert;
 - (_Bool)showAlertWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleLink:(id)arg1;

@@ -14,9 +14,9 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(readonly, nonatomic) NSString *transcribedTitle; // @synthesize transcribedTitle=_transcribedTitle;
-- (void).cxx_destruct;
 - (id)initWithTranscribedTitle:(id)arg1 bounds:(struct CGRect)arg2;
 
 @end

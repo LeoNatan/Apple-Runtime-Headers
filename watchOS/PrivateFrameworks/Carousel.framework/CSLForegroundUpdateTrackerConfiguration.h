@@ -17,12 +17,12 @@
     CarouselStartup *_startup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CarouselStartup *startup; // @synthesize startup=_startup;
 @property(retain, nonatomic) IOSSHLWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(retain, nonatomic) IOSSHLBacklight *backlight; // @synthesize backlight=_backlight;
 @property(retain, nonatomic) FBSceneManager *sceneManager; // @synthesize sceneManager=_sceneManager;
 @property(retain, nonatomic) FBProcessManager *processManager; // @synthesize processManager=_processManager;
-- (void).cxx_destruct;
 
 @end
 

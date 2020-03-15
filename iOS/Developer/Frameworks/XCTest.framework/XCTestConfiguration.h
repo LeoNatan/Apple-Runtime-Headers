@@ -22,6 +22,7 @@
     _Bool _initializeForUITesting;
     _Bool _gatherLocalizableStringsData;
     _Bool _emitOSLogs;
+    _Bool _testTimeoutsEnabled;
     NSString *_absolutePath;
     NSString *_testBundleRelativePath;
     NSURL *_testBundleURL;
@@ -43,12 +44,18 @@
     long long _userAttachmentLifetime;
     long long _testExecutionOrdering;
     NSNumber *_randomExecutionOrderingSeed;
+    NSNumber *_defaultTestExecutionTimeAllowance;
+    NSNumber *_maximumTestExecutionTimeAllowance;
 }
 
 + (id)configurationWithContentsOfFile:(id)arg1;
 + (id)activeTestConfiguration;
 + (void)setActiveTestConfiguration:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *maximumTestExecutionTimeAllowance; // @synthesize maximumTestExecutionTimeAllowance=_maximumTestExecutionTimeAllowance;
+@property(copy, nonatomic) NSNumber *defaultTestExecutionTimeAllowance; // @synthesize defaultTestExecutionTimeAllowance=_defaultTestExecutionTimeAllowance;
+@property _Bool testTimeoutsEnabled; // @synthesize testTimeoutsEnabled=_testTimeoutsEnabled;
 @property(retain) NSNumber *randomExecutionOrderingSeed; // @synthesize randomExecutionOrderingSeed=_randomExecutionOrderingSeed;
 @property long long testExecutionOrdering; // @synthesize testExecutionOrdering=_testExecutionOrdering;
 @property long long userAttachmentLifetime; // @synthesize userAttachmentLifetime=_userAttachmentLifetime;
@@ -79,7 +86,6 @@
 @property(copy, nonatomic) NSURL *testBundleURL; // @synthesize testBundleURL=_testBundleURL;
 @property(copy) NSString *testBundleRelativePath; // @synthesize testBundleRelativePath=_testBundleRelativePath;
 @property(copy) NSString *absolutePath; // @synthesize absolutePath=_absolutePath;
-- (void).cxx_destruct;
 @property(readonly) long long testMode;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

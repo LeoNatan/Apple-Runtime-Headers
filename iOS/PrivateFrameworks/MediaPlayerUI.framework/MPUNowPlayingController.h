@@ -33,13 +33,13 @@
     double _timeInformationUpdateInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUpdateNowPlayingArtwork; // @synthesize shouldUpdateNowPlayingArtwork=_shouldUpdateNowPlayingArtwork;
 @property(nonatomic) double timeInformationUpdateInterval; // @synthesize timeInformationUpdateInterval=_timeInformationUpdateInterval;
 @property(readonly, nonatomic) double currentElapsed; // @synthesize currentElapsed=_currentElapsed;
 @property(readonly, nonatomic) _Bool currentNowPlayingAppIsRunning; // @synthesize currentNowPlayingAppIsRunning=_currentNowPlayingAppIsRunning;
 @property(readonly, nonatomic) NSString *currentNowPlayingArtworkDigest; // @synthesize currentNowPlayingArtworkDigest=_currentNowPlayingArtworkDigest;
 @property(nonatomic) __weak id <MPUNowPlayingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_isUpdatingTimeInformation;
 - (void)_updateTimeInformationAndCallDelegate:(_Bool)arg1;
 - (void)_updateNowPlayingAppDisplayID;

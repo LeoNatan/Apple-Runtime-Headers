@@ -23,11 +23,11 @@
 + (id)postPrivacySettingsForPrivacyOptions:(id)arg1;
 + (id)postPrivacySettingForPrivacyOptionDictionary:(id)arg1;
 + (id)postPrivacySettingWithIdentifier:(id)arg1 name:(id)arg2 type:(int)arg3 parameters:(id)arg4;
+- (void).cxx_destruct;
 @property int type; // @synthesize type=_type;
 @property(retain) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_parametersJSONStringRepresentation;
 - (id)parametersFormValueString;
 - (id)description;

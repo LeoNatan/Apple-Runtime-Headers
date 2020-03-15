@@ -20,10 +20,10 @@
 + (Class)perWorkflowStateClass;
 + (_Bool)isSystemResource;
 + (_Bool)alwaysMakeAvailable;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(nonatomic) __weak WFAction *action; // @synthesize action=_action;
 - (unsigned long long)globalLevelStatus;
-- (void).cxx_destruct;
 - (id)localizedWorkflowLevelDeniedStatusMessage;
 - (id)localizedWorkflowLevelNotDeterminedStatusMessage;
 - (id)localizedWorkflowLevelMessageTemplate;

@@ -42,6 +42,7 @@
     UITableView *_pendingPlansListTableView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITableView *pendingPlansListTableView; // @synthesize pendingPlansListTableView=_pendingPlansListTableView;
 @property(nonatomic) __weak UILabel *positionQRCodeLabel; // @synthesize positionQRCodeLabel=_positionQRCodeLabel;
 @property(nonatomic) __weak UILabel *scanQRCodeLabel; // @synthesize scanQRCodeLabel=_scanQRCodeLabel;
@@ -55,7 +56,6 @@
 @property(readonly) _Bool confirmationCodeRequired; // @synthesize confirmationCodeRequired=_confirmationCodeRequired;
 @property(readonly) NSString *fauxCardData; // @synthesize fauxCardData=_fauxCardData;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)navigationBarScrollToEdgeBehavior;
 - (void)_startPendingInstall:(id)arg1;
 - (void)_maybeUpdateTableView;

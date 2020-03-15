@@ -18,12 +18,12 @@
     NSObject<OS_dispatch_queue> *_responseQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(retain, nonatomic) NSDictionary *_requestBodyDict; // @synthesize _requestBodyDict=__requestBodyDict;
 @property(retain, nonatomic) NSDictionary *_responseBodyDict; // @synthesize _responseBodyDict=__responseBodyDict;
 @property(nonatomic) _Bool _hasParsedResponseBody; // @synthesize _hasParsedResponseBody=__hasParsedResponseBody;
 @property(retain, nonatomic) NSError *jsonResponseParseError; // @synthesize jsonResponseParseError=_jsonResponseParseError;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *serverAlertInfo;
 @property(readonly, nonatomic) NSDictionary *jsonResponseDictionary;
 - (id)jsonBodyDictionary;

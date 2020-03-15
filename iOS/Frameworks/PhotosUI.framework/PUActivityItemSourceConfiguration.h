@@ -43,6 +43,7 @@
 + (_Bool)supportsAssetLocalIdentifierForActivityType:(id)arg1;
 + (_Bool)isAssetBundleSupportedByActivityType:(id)arg1;
 + (_Bool)isLivePhotoBundleSupportedByActivityType:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_2a4d9400 sharingPreferences; // @synthesize sharingPreferences=_sharingPreferences;
 @property(copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(copy, nonatomic) NSDictionary *sharingVariants; // @synthesize sharingVariants=_sharingVariants;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) _Bool requiresAssetExport; // @synthesize requiresAssetExport=_requiresAssetExport;
 @property(readonly, nonatomic) long long outputType; // @synthesize outputType=_outputType;
 @property(readonly, nonatomic) unsigned long long maxFileSizeLimit; // @synthesize maxFileSizeLimit=_maxFileSizeLimit;
-- (void).cxx_destruct;
 - (_Bool)_wantsAssetBundleForActivityType:(id)arg1;
 - (_Bool)_wantsLivePhotoBundleForActivityType:(id)arg1;
 - (_Bool)_wantsLivePhotoColorSpaceConversionForActivityType:(id)arg1;

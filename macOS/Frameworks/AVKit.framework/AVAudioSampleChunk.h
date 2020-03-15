@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _samplesPerChannel;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long samplesPerChannel; // @synthesize samplesPerChannel=_samplesPerChannel;
 @property(readonly) unsigned long long channels; // @synthesize channels=_channels;
-- (void).cxx_destruct;
 - (void)appendBytes:(const void *)arg1 ofLength:(unsigned long long)arg2 toChannel:(unsigned long long)arg3;
 @property(readonly) float **samples;
 - (unsigned long long)remainingBytes;

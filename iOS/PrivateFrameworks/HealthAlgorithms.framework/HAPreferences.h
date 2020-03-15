@@ -15,8 +15,8 @@
 }
 
 + (id)sharedPreferences;
-@property(readonly) _Bool sensitiveLoggingEnabled; // @synthesize sensitiveLoggingEnabled=_sensitiveLoggingEnabled;
 - (void).cxx_destruct;
+@property(readonly) _Bool sensitiveLoggingEnabled; // @synthesize sensitiveLoggingEnabled=_sensitiveLoggingEnabled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)init;
 

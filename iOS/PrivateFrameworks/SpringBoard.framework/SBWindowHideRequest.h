@@ -15,9 +15,9 @@
 }
 
 + (id)hideRequestWithWindowLevelRange:(struct SBWindowLevelRange_struct)arg1 reason:(id)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *reason; // @synthesize reason=_reason;
 @property struct SBWindowLevelRange_struct windowLevelRange; // @synthesize windowLevelRange=_windowLevelRange;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

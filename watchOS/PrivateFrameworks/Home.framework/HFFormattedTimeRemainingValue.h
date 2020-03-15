@@ -22,10 +22,10 @@
 
 + (id)valueWithRemainingDuration:(double)arg1 relativeToDate:(id)arg2;
 + (id)defaultFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HFStringGenerator> currentFormattedValue; // @synthesize currentFormattedValue=_currentFormattedValue;
 @property(readonly, nonatomic) NSDateComponentsFormatter *formatter; // @synthesize formatter=_formatter;
 @property(readonly, nonatomic) NSDate *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)countdownTimerDidFire:(id)arg1;
 - (void)_stopTimer;
 - (void)_updateTimerState;

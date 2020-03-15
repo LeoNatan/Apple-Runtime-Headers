@@ -26,13 +26,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) _Bool _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(retain, nonatomic) _INPBString *value; // @synthesize value=_value;
 @property(retain, nonatomic) _INPBLong *quantity; // @synthesize quantity=_quantity;
 @property(retain, nonatomic) _INPBContact *person; // @synthesize person=_person;
 @property(nonatomic) int fileType; // @synthesize fileType=_fileType;
 @property(retain, nonatomic) _INPBDateTimeRange *dateTime; // @synthesize dateTime=_dateTime;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

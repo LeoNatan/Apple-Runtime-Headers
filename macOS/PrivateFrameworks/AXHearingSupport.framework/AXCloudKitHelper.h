@@ -27,6 +27,7 @@
     NSURL *_largeBlobDirectoryURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *largeBlobDirectoryURL; // @synthesize largeBlobDirectoryURL=_largeBlobDirectoryURL;
 @property(readonly, nonatomic) NSError *lastInitializationError; // @synthesize lastInitializationError=_lastInitializationError;
 @property(readonly, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *observedCoordinator; // @synthesize observedCoordinator=_observedCoordinator;
 @property(readonly, nonatomic) __weak NSPersistentStore *observedStore; // @synthesize observedStore=_observedStore;
-- (void).cxx_destruct;
 - (void)_setApsConnection:(id)arg1;
 - (void)_setContainer:(id)arg1;
 - (void)_setDatabase:(id)arg1;

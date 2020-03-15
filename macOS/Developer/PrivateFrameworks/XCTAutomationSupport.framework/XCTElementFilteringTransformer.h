@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly) long long scope; // @synthesize scope=_scope;
-- (void).cxx_destruct;
 - (id)iteratorForInput:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
 - (id)_scopedExpansionOfInput:(id)arg1;
@@ -25,7 +25,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)requiredKeyPathsOrError:(id *)arg1;
 - (BOOL)supportsAttributeKeyPathAnalysis;
-- (BOOL)supportsRemoteEvaluation;
 - (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -17,12 +17,12 @@
     NSArray *_scriptURLs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *scriptURLs; // @synthesize scriptURLs=_scriptURLs;
 @property(retain, nonatomic) TVLRootElement *feedElement; // @synthesize feedElement=_feedElement;
 @property(retain, nonatomic) TVLLegacyJSContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) UIProgressView *progressBar; // @synthesize progressBar=_progressBar;
 @property(retain, nonatomic) UILabel *statusText; // @synthesize statusText=_statusText;
-- (void).cxx_destruct;
 - (void)_setStatus:(id)arg1 withPercentComplete:(float)arg2;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;

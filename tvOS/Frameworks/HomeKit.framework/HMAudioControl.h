@@ -19,10 +19,10 @@
     _HMAudioControl *_audioControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _HMAudioControl *audioControl; // @synthesize audioControl=_audioControl;
 @property __weak HMMediaSession *mediaSession; // @synthesize mediaSession=_mediaSession;
 @property __weak id <HMAudioControlDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)audioControl:(id)arg1 didUpdateMuted:(_Bool)arg2;
 - (void)audioControl:(id)arg1 didUpdateVolume:(float)arg2;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;

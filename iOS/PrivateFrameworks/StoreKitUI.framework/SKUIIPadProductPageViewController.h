@@ -44,13 +44,13 @@ __attribute__((visibility("hidden")))
     NSURLRequest *_urlRequest;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIProductPage *productPage; // @synthesize productPage=_productPage;
 @property(readonly, nonatomic) SKUIItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <SKUIIPadProductPageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(copy, nonatomic) NSString *bannerText; // @synthesize bannerText=_bannerText;
 @property(nonatomic) _Bool askPermission; // @synthesize askPermission=_askPermission;
-- (void).cxx_destruct;
 - (id)_viewControllerForSectionIndex:(long long)arg1;
 - (void)_showViewController:(id)arg1;
 - (void)_showBanner;

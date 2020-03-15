@@ -45,13 +45,13 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingEnablePathComboBox;
 + (id)keyPathsForValuesAffectingEnableGoBtn;
 + (id)showGoToWindowRelativeToNode:(const struct TFENode *)arg1 parentWindow:(id)arg2 initialPath:(const struct TString *)arg3 allowLeftoverLastPathComponent:(_Bool)arg4 completionHandler:(const function_8027184b *)arg5;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowLeftoverLastPathComponent; // @synthesize allowLeftoverLastPathComponent=_allowLeftoverLastPathComponent;
 @property(nonatomic) _Bool isAutoCompleteUIVisible; // @synthesize isAutoCompleteUIVisible=_isAutoCompleteUIVisible;
 @property(nonatomic) _Bool isAutoCompleting; // @synthesize isAutoCompleting=_isAutoCompleting;
 @property(nonatomic) _Bool isGoingToFolder; // @synthesize isGoingToFolder=_isGoingToFolder;
 @property(retain, nonatomic) NSString *errorMsgText; // @synthesize errorMsgText=_errorMsgText;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)makeTouchBar;
 - (id)comboBox:(id)arg1 objectValueForItemAtIndex:(long long)arg2;

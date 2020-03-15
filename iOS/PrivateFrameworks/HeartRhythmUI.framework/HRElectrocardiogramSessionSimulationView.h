@@ -14,9 +14,9 @@
     HRElectrocardiogramSessionScreenView *_screenView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HRElectrocardiogramSessionScreenView *screenView; // @synthesize screenView=_screenView;
 @property(readonly, nonatomic) _Bool isLargeDevice; // @synthesize isLargeDevice=_isLargeDevice;
-- (void).cxx_destruct;
 - (void)setTimeRemaining:(double)arg1;
 @property(nonatomic) double cornerRadius;
 - (void)layoutSubviews;

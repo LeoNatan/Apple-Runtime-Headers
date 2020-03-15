@@ -18,10 +18,10 @@
     id <SXContentScaleManagerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SXContentScaleManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;
 @property(nonatomic) long long contentScale; // @synthesize contentScale=_contentScale;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)decrease;
 - (void)increase;

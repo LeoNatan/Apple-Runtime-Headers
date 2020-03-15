@@ -20,6 +20,7 @@
     NSLayoutConstraint *_minYConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *minYConstraint; // @synthesize minYConstraint=_minYConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *midXConstraint; // @synthesize midXConstraint=_midXConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL focused; // @synthesize focused=_focused;
 @property(nonatomic) BOOL emphasized; // @synthesize emphasized=_emphasized;
 @property(nonatomic) unsigned long long cellIndex; // @synthesize cellIndex=_cellIndex;
-- (void).cxx_destruct;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (id)_enclosingConversationView;
 - (void)prepareContentInRect:(struct CGRect)arg1;

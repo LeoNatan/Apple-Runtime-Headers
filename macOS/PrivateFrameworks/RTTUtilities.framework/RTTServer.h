@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
 - (void)primeRTTServer;
 - (void)setTTYDictionaryAvailability:(BOOL)arg1;
 - (void)_takeStackshot;
@@ -41,6 +41,7 @@
 - (void)_managerAXPIDState:(BOOL)arg1;
 - (void)resetConnection;
 - (void)_registerForServerSettingsUpdates;
+- (void)terminateConnectionAndNotify:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
 

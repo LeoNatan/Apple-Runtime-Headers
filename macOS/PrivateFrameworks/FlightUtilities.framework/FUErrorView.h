@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     FULabel *_errorLabel;
 }
 
-@property __weak FULabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 - (void).cxx_destruct;
+@property __weak FULabel *errorLabel; // @synthesize errorLabel=_errorLabel;
 - (void)setStyleProvider:(id)arg1;
 - (void)awakeFromNib;
 

@@ -18,12 +18,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SOSiteCode *siteCode; // @synthesize siteCode=_siteCode;
 @property(retain, nonatomic) NSDictionary *domainRealmMapping; // @synthesize domainRealmMapping=_domainRealmMapping;
 @property(nonatomic) BOOL isDefaultRealm; // @synthesize isDefaultRealm=_isDefaultRealm;
 @property(retain, nonatomic) NSString *currentRealm; // @synthesize currentRealm=_currentRealm;
 @property(retain, nonatomic) SOKerberosRealmSettings *currentSettings; // @synthesize currentSettings=_currentSettings;
-- (void).cxx_destruct;
 
 @end
 

@@ -19,8 +19,8 @@
 
 + (id)relationWithEntityName:(id)arg1 toMany:(_Bool)arg2 inversePropertyNames:(id)arg3 ownsRelated:(_Bool)arg4;
 + (id)relationWithEntityName:(id)arg1 toMany:(_Bool)arg2 inversePropertyNames:(id)arg3;
-@property(copy, nonatomic) CDUnknownBlockType inversePropertyIsApplicable; // @synthesize inversePropertyIsApplicable=_inversePropertyIsApplicable;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType inversePropertyIsApplicable; // @synthesize inversePropertyIsApplicable=_inversePropertyIsApplicable;
 - (_Bool)shouldSetInverseProperty:(id)arg1 onObject:(id)arg2 forObject:(id)arg3;
 @property(readonly, nonatomic) NSSet *inversePropertyNames;
 @property(readonly, nonatomic) _Bool ownsRelatedObject;

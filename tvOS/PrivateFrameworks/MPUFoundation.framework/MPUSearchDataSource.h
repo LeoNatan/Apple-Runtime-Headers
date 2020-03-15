@@ -17,9 +17,9 @@
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) MPUQueryDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_searchPropertiesForGroupingType:(long long)arg1;
 - (void)_searchOperation:(id)arg1 didFinishWithResults:(id)arg2;
 - (void)filterResultsUsingSearchString:(id)arg1 completion:(CDUnknownBlockType)arg2;

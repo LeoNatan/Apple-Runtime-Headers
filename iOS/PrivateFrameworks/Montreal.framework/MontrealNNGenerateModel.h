@@ -17,11 +17,11 @@
     NSMutableDictionary *_outputs;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *outputs; // @synthesize outputs=_outputs;
 @property(readonly) NSMutableDictionary *inputs; // @synthesize inputs=_inputs;
 @property(readonly) MontrealNNModelNetwork *network; // @synthesize network=_network;
 @property(readonly) unsigned long long weightFormat; // @synthesize weightFormat=_weightFormat;
-- (void).cxx_destruct;
 - (id)networkOutputs;
 - (id)networkInputs;
 - (void)removeOutput:(id)arg1;

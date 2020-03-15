@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     id <SKUINavigationBarControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUINavigationBarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(retain, nonatomic) SKUINavigationBarViewElement *navigationBarViewElement; // @synthesize navigationBarViewElement=_viewElement;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_titleButtonAction:(id)arg1;
 - (id)_resourceImageForImageElement:(id)arg1;
 - (id)_navigationBarContext;

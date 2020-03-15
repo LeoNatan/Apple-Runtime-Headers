@@ -14,9 +14,9 @@
     EWSExchangeServiceBindingTask *_streamTask;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldStream; // @synthesize shouldStream=_shouldStream;
 @property(retain) EWSExchangeServiceBindingTask *streamTask; // @synthesize streamTask=_streamTask;
-- (void).cxx_destruct;
 - (id)nextTask;
 - (void)exchangeServiceBindingTaskCompleted:(id)arg1;
 - (void)exchangeServiceBindingTask:(id)arg1 didFailWithError:(id)arg2;

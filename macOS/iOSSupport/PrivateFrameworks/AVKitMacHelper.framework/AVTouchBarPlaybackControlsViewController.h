@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     AVPlayerView *_playerView;
 }
 
+- (void).cxx_destruct;
 @property BOOL showsPlayButton; // @synthesize showsPlayButton=_showsPlayButton;
 @property(retain, nonatomic) AVPlayerControllerTimeResolver *intervalTimeResolver; // @synthesize intervalTimeResolver=_intervalTimeResolver;
 @property(retain) AVPlayerView *playerView; // @synthesize playerView=_playerView;
 @property(retain) id <AVTouchBarPlaybackControlsControllingInternal><AVTouchBarTrackControlling><AVTimeControlling> playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (void)unbindAllObjects;
 - (void)bindObject:(id)arg1 withBinding:(id)arg2 toObject:(id)arg3 withKeyPath:(id)arg4 options:(id)arg5;
 - (void)updateShowsPlayButton;

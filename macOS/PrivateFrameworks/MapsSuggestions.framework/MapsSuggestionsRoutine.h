@@ -42,8 +42,8 @@
 - (BOOL)readMeCardWithMinVisits:(unsigned long long)arg1 maxAge:(double)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)fetchSuggestedShortcutsForType:(long long)arg1 minVisits:(unsigned long long)arg2 maxAge:(double)arg3 handler:(CDUnknownBlockType)arg4;
 - (BOOL)_addMapItemToShortcut:(id)arg1 fromLOI:(id)arg2 group:(id)arg3;
-- (BOOL)fetchEntriesForLocation:(id)arg1 period:(struct NSDateInterval *)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_resolveMapItemsAndAddEntries:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
+- (BOOL)fetchEntriesForLocation:(id)arg1 period:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_resolveMapItemsAndAddEntries:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_treatPLOIs:(id)arg1 stepName:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)_suggestionEntryForPLOI:(id)arg1;
 - (BOOL)_addResumeRouteFieldsToSuggestionEntry:(id)arg1 fromSource:(id)arg2;

@@ -22,10 +22,10 @@
 
 + (_Bool)supportsASTC;
 + (id)UTITypeForData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)_thumbnailFillToSize:(struct CGSize)arg1 atIndex:(unsigned long long)arg2;
 - (id)_thumbnailFitToSize:(struct CGSize)arg1 atIndex:(unsigned long long)arg2;
 - (void)_initializeProperties;

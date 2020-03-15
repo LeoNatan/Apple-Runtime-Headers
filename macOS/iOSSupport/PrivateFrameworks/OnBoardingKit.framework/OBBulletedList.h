@@ -14,9 +14,9 @@
     NSMutableArray *_verticalConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *verticalConstraints; // @synthesize verticalConstraints=_verticalConstraints;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (void)_updateConstraints;
 - (double)bulletedListItemSpacing;
 - (void)addBulletedListItem:(id)arg1;

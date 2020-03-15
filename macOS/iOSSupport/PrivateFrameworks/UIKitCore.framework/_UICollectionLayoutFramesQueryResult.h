@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)kindIndexKeyForKind:(id)arg1 index:(long long)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long auxillaryKind; // @synthesize auxillaryKind=_auxillaryKind;
 @property(readonly, nonatomic) NSUUID *supplementaryEnrollmentIdentifier; // @synthesize supplementaryEnrollmentIdentifier=_supplementaryEnrollmentIdentifier;
 @property(readonly, nonatomic) NSCollectionLayoutItem *item; // @synthesize item=_item;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long zIndex; // @synthesize zIndex=_zIndex;
 @property(readonly, nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (id)copyWithIndex:(long long)arg1;
 - (id)copyWithFrame:(struct CGRect)arg1 index:(long long)arg2;
 - (id)copyWithOffset:(struct CGPoint)arg1;

@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     IKViewElement *_bannerElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *bannerElement; // @synthesize bannerElement=_bannerElement;
 @property(copy, nonatomic) NSArray *lockupElements; // @synthesize lockupElements=_lockupElements;
 @property(copy, nonatomic) CDUnknownBlockType transitionHandler; // @synthesize transitionHandler=_transitionHandler;
 @property(copy, nonatomic) NSIndexPath *indexPathForFocusedItem; // @synthesize indexPathForFocusedItem=_indexPathForFocusedItem;
-- (void).cxx_destruct;
 - (void)_dispatchEvent:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)_updateLockupInforViewForIndexPath:(id)arg1;
 - (void)_delayedUpdatePreview;

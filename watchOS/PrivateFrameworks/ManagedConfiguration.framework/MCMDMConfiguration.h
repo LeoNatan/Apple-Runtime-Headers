@@ -29,6 +29,7 @@
 }
 
 + (id)sharedConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool memberQueueSignMessage; // @synthesize memberQueueSignMessage=_memberQueueSignMessage;
 @property(retain, nonatomic) NSString *memberQueuePushMagic; // @synthesize memberQueuePushMagic=_memberQueuePushMagic;
 @property(nonatomic) _Bool memberQueueUseDevelopmentAPNS; // @synthesize memberQueueUseDevelopmentAPNS=_memberQueueUseDevelopmentAPNS;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSURL *memberQueueServerURL; // @synthesize memberQueueServerURL=_memberQueueServerURL;
 @property(retain, nonatomic) NSDictionary *memberQueueOrganizationInfo; // @synthesize memberQueueOrganizationInfo=_memberQueueOrganizationInfo;
 @property(retain, nonatomic) NSString *memberQueueManagingProfileIdentifier; // @synthesize memberQueueManagingProfileIdentifier=_memberQueueManagingProfileIdentifier;
-- (void).cxx_destruct;
 - (void)memberQueueForgetCurrentConfiguration;
 - (_Bool)readConfigurationOutError:(id *)arg1;
 - (void)refreshDetailsFromDisk;

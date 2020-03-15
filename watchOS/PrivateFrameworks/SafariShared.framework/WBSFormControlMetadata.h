@@ -39,9 +39,12 @@
     int _minLength;
     int _selectionStart;
     int _selectionLength;
+    int _autoFillButtonType;
+    int _lastAutoFillButtonType;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double rectHeight; // @synthesize rectHeight=_rectHeight;
 @property(readonly, nonatomic) double rectWidth; // @synthesize rectWidth=_rectWidth;
 @property(readonly, nonatomic) double rectTop; // @synthesize rectTop=_rectTop;
@@ -61,7 +64,8 @@
 @property(readonly, copy, nonatomic) NSArray *autocompleteTokens; // @synthesize autocompleteTokens=_autocompleteTokens;
 @property(readonly, copy, nonatomic) NSDictionary *annotations; // @synthesize annotations=_annotations;
 @property(readonly, copy, nonatomic) NSString *addressBookLabel; // @synthesize addressBookLabel=_addressBookLabel;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) int lastAutoFillButtonType;
+@property(readonly, nonatomic) int autoFillButtonType;
 @property(readonly, nonatomic) unsigned int selectionLength;
 @property(readonly, nonatomic) unsigned int selectionStart;
 @property(readonly, nonatomic) unsigned int minLength;

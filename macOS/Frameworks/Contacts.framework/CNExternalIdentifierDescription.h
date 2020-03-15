@@ -14,6 +14,8 @@
 {
 }
 
++ (BOOL)URIContainsFilename:(id)arg1;
++ (id)decomposeCollectionPathAndFilenameInURI:(id)arg1;
 - (void)resetGuardianManagedValueOnContact:(id)arg1;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
 - (id)CNValueForContact:(id)arg1;
@@ -21,6 +23,8 @@
 - (void)encodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (BOOL)isEqualForContact:(id)arg1 other:(id)arg2;
 - (id)init;
+- (void)setValue:(id)arg1 onCoreDataContact:(id)arg2;
+- (void)copyFromCoreDataContact:(id)arg1 toContact:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

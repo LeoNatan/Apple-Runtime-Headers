@@ -49,6 +49,7 @@
 }
 
 + (_Bool)isFloatingDockSupported;
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBLayoutStateTransitionCoordinator *transitionCoordinator; // @synthesize transitionCoordinator=_transitionCoordinator;
 @property(nonatomic) __weak SBFloatingDockBehaviorAssertion *activeAssertion; // @synthesize activeAssertion=_activeAssertion;
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) __weak id <SBFloatingDockControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) SBMainScreenActiveInterfaceOrientationWindow *floatingDockWindow; // @synthesize floatingDockWindow=_floatingDockWindow;
-- (void).cxx_destruct;
 - (void)_setupStateDumper;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -73,6 +73,7 @@
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidEndWithTransitionContext:(id)arg2;
 - (void)layoutStateTransitionCoordinator:(id)arg1 transitionDidBeginWithTransitionContext:(id)arg2;
 - (void)_gestureRecognizerFailed:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)viewForSystemGestureRecognizer:(id)arg1;
 - (void)_configureFloatingDockBehaviorAssertionForOpenFolder:(id)arg1 atLevel:(unsigned long long)arg2;

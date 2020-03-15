@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 + (id)expandedExpandControlTitle;
 + (id)regularBackgroundColor;
 + (id)expandedBackgroundColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *dividerHeightConstraint; // @synthesize dividerHeightConstraint=_dividerHeightConstraint;
 @property(retain, nonatomic) UIView *divider; // @synthesize divider=_divider;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *actionTypeImageView; // @synthesize actionTypeImageView=_actionTypeImageView;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)prepareForReuse;
 - (void)updateVisualStateAnimated:(_Bool)arg1;

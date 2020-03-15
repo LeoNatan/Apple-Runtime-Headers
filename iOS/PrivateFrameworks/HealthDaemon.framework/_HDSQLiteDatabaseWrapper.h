@@ -16,11 +16,11 @@
     unsigned long long _options;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) unsigned long long threadID; // @synthesize threadID=_threadID;
 @property(readonly, nonatomic) unsigned long long generation; // @synthesize generation=_generation;
 @property(readonly, nonatomic) HDSQLiteDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *typeString;
 - (void)captureThreadInfo;
 - (id)initWithDatabase:(id)arg1 generation:(unsigned long long)arg2;

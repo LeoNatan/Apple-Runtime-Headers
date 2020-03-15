@@ -21,8 +21,8 @@
 }
 
 + (id)multiValueWithLabel:(id)arg1 value:(id)arg2 property:(id)arg3;
-@property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (id)constraintForPersonIdentifier:(id)arg1;

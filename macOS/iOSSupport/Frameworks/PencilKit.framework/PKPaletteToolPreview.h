@@ -33,6 +33,7 @@
     NSLayoutConstraint *_layoutGuideCenterXConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isToolViewVisible) BOOL toolViewVisible; // @synthesize toolViewVisible=_toolViewVisible;
 @property(retain, nonatomic) NSLayoutConstraint *layoutGuideCenterXConstraint; // @synthesize layoutGuideCenterXConstraint=_layoutGuideCenterXConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *layoutGuideHeightConstraint; // @synthesize layoutGuideHeightConstraint=_layoutGuideHeightConstraint;
@@ -47,7 +48,6 @@
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteToolPreviewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;

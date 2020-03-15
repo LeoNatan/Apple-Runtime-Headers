@@ -13,8 +13,8 @@
     PHSuggestion *_suggestion;
 }
 
-@property(retain) PHSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 - (void).cxx_destruct;
+@property(retain) PHSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 
 @end
 

@@ -17,11 +17,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) double autoscrollSpeed; // @synthesize autoscrollSpeed=_autoscrollSpeed;
 @property(nonatomic) unsigned long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(nonatomic, getter=isAutoscrolling) _Bool autoscrolling; // @synthesize autoscrolling=_autoscrolling;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)_autoscroll;
 - (void)scrollToBottom;
 - (void)scrollToTop;

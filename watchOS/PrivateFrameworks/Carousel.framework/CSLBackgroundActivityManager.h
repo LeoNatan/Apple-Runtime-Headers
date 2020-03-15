@@ -20,10 +20,10 @@
 }
 
 + (id)_whiteListedPrivilegedClients;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *controllerMap; // @synthesize controllerMap=_controllerMap;
 @property(retain, nonatomic) CSLBackgroundActivityManagerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak CSLBackgroundService *backgroundService; // @synthesize backgroundService=_backgroundService;
-- (void).cxx_destruct;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)_queue_getRequestsWithCompletion:(CDUnknownBlockType)arg1;

@@ -15,10 +15,10 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsBackgroundUpdate; // @synthesize needsBackgroundUpdate=_needsBackgroundUpdate;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (void)backgroundDidChange;
 - (void)updateBackgroundBlurIfNeeded;
 - (void)transitionInFromCanvas;

@@ -36,6 +36,7 @@
     HDMaintenanceOperation *_maintenanceOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDMaintenanceOperation *maintenanceOperation; // @synthesize maintenanceOperation=_maintenanceOperation;
 @property(retain, nonatomic) HDKeyValueDomain *localKeyValueDomain; // @synthesize localKeyValueDomain=_localKeyValueDomain;
 @property(retain, nonatomic) NSNumber *coalescingDelayOverride; // @synthesize coalescingDelayOverride=_coalescingDelayOverride;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) ACHDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(retain, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) NSDate *lastSuccessfulRunDate; // @synthesize lastSuccessfulRunDate=_lastSuccessfulRunDate;
-- (void).cxx_destruct;
 - (void)_queue_callAwardingCompletionsWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_queue_addAwardingCompletion:(CDUnknownBlockType)arg1;
 - (void)addAwardingCompletion:(CDUnknownBlockType)arg1;

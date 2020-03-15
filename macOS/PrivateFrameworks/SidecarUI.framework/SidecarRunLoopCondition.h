@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _handler;
 }
 
-@property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (long long)runModalForWindow:(id)arg1;
 - (void)waitInMode:(id)arg1 withTimeout:(double)arg2;
 - (void)waitInMode:(id)arg1;

@@ -85,6 +85,7 @@
     _Bool _expanded;
     _Bool _backdropGroupDisabled;
     _Bool _suppressesBlur;
+    _Bool _sendingBarMetricsChangeNotification;
     _SFNavigationBarItem *_item;
     _SFBarTheme *_theme;
     _SFNavigationBarTheme *_effectiveTheme;
@@ -103,7 +104,9 @@
 + (double)estimatedDefaultHeightForStatusBarHeight:(double)arg1;
 + (long long)_metricsCategory;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIBlurEffect *backdropEffect; // @synthesize backdropEffect=_backdropEffect;
+@property(readonly, nonatomic, getter=isSendingBarMetricsChangeNotification) _Bool sendingBarMetricsChangeNotification; // @synthesize sendingBarMetricsChangeNotification=_sendingBarMetricsChangeNotification;
 @property(retain, nonatomic) UIView *inputAccessoryView; // @synthesize inputAccessoryView=_inputAccessoryView;
 @property(nonatomic) double minimumBackdropHeight; // @synthesize minimumBackdropHeight=_minimumBackdropHeight;
 @property(nonatomic) double maximumHeight; // @synthesize maximumHeight=_maximumHeight;
@@ -120,7 +123,6 @@
 @property(nonatomic) _Bool unifiedFieldShowsProgressView; // @synthesize unifiedFieldShowsProgressView=_unifiedFieldShowsProgressView;
 @property(nonatomic) _Bool usesNarrowLayout; // @synthesize usesNarrowLayout=_usesNarrowLayout;
 @property(retain, nonatomic) _SFNavigationBarItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (_Bool)containsBarItem:(long long)arg1;
 - (id)_toolbarForBarItem:(long long)arg1;
 - (id)popoverSourceInfoForBarItem:(long long)arg1;

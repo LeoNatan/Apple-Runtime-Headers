@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (long long)_currentItemState;
 - (struct _NSRange)accessibilityRowRange;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)_axIsSelected:(id)arg1;

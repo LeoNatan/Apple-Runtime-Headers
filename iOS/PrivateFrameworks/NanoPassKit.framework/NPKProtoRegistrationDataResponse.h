@@ -18,10 +18,10 @@
     CDStruct_eab6c78c _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
 @property(retain, nonatomic) NSData *registrationDataBytes; // @synthesize registrationDataBytes=_registrationDataBytes;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

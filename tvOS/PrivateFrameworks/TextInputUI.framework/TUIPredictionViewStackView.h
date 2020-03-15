@@ -12,9 +12,9 @@
     struct UIEdgeInsets _contentMargin;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) struct UIEdgeInsets contentMargin; // @synthesize contentMargin=_contentMargin;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)arrangedSubviews;
 - (void)addArrangedSubview:(id)arg1;

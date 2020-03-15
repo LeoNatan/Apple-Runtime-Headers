@@ -26,12 +26,12 @@
 + (void)setHTTPShouldHandleCookies:(_Bool)arg1;
 + (void)setTimeStampOffset:(long long)arg1;
 + (void)setUserAgent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *OAuthParameters; // @synthesize OAuthParameters=_OAuthParameters;
 @property(copy, nonatomic) NSString *signatureSecret; // @synthesize signatureSecret=_signatureSecret;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=__url;
 @property(copy, nonatomic) NSString *HTTPMethod; // @synthesize HTTPMethod=__method;
 @property(copy, nonatomic) NSDictionary *requestParameters; // @synthesize requestParameters=__parameters;
-- (void).cxx_destruct;
 - (id)signatureBase;
 - (id)signature;
 - (id)authorizationHeader;

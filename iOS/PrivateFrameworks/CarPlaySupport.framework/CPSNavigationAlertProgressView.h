@@ -13,10 +13,10 @@
     UIView *_progressView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasStartedAnimating; // @synthesize hasStartedAnimating=_hasStartedAnimating;
 @property(retain, nonatomic) UIView *progressView; // @synthesize progressView=_progressView;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)startAnimating;
 - (id)initWithFrame:(struct CGRect)arg1 duration:(double)arg2;
 

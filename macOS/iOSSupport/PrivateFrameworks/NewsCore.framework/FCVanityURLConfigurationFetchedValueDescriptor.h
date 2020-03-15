@@ -13,8 +13,8 @@
     FCFetchedValueManager *_configurationManager;
 }
 
-@property(readonly, nonatomic) FCFetchedValueManager *configurationManager; // @synthesize configurationManager=_configurationManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCFetchedValueManager *configurationManager; // @synthesize configurationManager=_configurationManager;
 - (id)_vanityURLConfiguration;
 - (id)inputManagers;
 - (BOOL)isValue:(id)arg1 equalToValue:(id)arg2;

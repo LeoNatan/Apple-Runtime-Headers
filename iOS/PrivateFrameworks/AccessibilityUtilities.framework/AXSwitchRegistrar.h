@@ -20,6 +20,7 @@
     AXMIDIManager *_midiManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMIDIManager *midiManager; // @synthesize midiManager=_midiManager;
 @property(retain, nonatomic) struct __IOHIDManager *manager; // @synthesize manager=_manager;
 @property(retain, nonatomic) struct __IOHIDEventSystemClient *eventSystemClient; // @synthesize eventSystemClient=_eventSystemClient;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) AXSwitch *aSwitch; // @synthesize aSwitch=_aSwitch;
 @property(nonatomic) _Bool addLongPressSwitch; // @synthesize addLongPressSwitch=_addLongPressSwitch;
 @property(nonatomic) __weak id <AXSwitchRegistrarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_filterEvents:(_Bool)arg1;
 - (id)_mfiMatching;
 - (id)_atvRemoteMatching;
@@ -38,7 +38,7 @@
 - (void)_handleKeyboardKeyDownEvent:(struct __IOHIDEvent *)arg1;
 - (void)_handleApplicationWillResignActive:(id)arg1;
 - (void)_handleApplicationDidBecomeActive:(id)arg1;
-- (_Bool)_isSwitchWithSource:(struct NSString *)arg1 keyCode:(unsigned short)arg2 buttonNumber:(unsigned int)arg3 ATVRemoteButtonUsage:(long long)arg4 midiEvent:(id)arg5;
+- (_Bool)_isSwitchWithSource:(id)arg1 keyCode:(unsigned short)arg2 buttonNumber:(unsigned int)arg3 ATVRemoteButtonUsage:(long long)arg4 midiEvent:(id)arg5;
 - (_Bool)_isMIDISwitchWithMidiEvent:(id)arg1;
 - (_Bool)_isATVRemoteButtonSwitchWithUsage:(long long)arg1 longPress:(_Bool)arg2;
 - (_Bool)_isMFISwitchWithButtonNumber:(unsigned int)arg1 longPress:(_Bool)arg2;

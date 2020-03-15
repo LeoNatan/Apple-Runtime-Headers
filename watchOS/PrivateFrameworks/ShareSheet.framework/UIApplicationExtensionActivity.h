@@ -29,6 +29,7 @@
 + (id)_activityExtensionItemsForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (int)activityCategory;
 + (id)_applicationExtensionActivitiesForItems:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISUIActivityExtensionItemDataRequest *extensionItemDataRequest; // @synthesize extensionItemDataRequest=_extensionItemDataRequest;
 @property(readonly, nonatomic) NSDate *installationDate; // @synthesize installationDate=_installationDate;
 @property(copy, nonatomic) CDUnknownBlockType extensionRequestCleanupCompletion; // @synthesize extensionRequestCleanupCompletion=_extensionRequestCleanupCompletion;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) UIViewController *extensionViewController; // @synthesize extensionViewController=_extensionViewController;
 @property(retain, nonatomic) NSExtensionItem *_injectedExtensionItem; // @synthesize _injectedExtensionItem=__injectedExtensionItem;
 @property(retain, nonatomic) NSExtension *applicationExtension; // @synthesize applicationExtension=_applicationExtension;
-- (void).cxx_destruct;
 - (void)_presentExtensionViewControllerIfPossible;
 - (void)_instantiateExtensionViewControllerWithInputItems:(id)arg1;
 - (void)_cleanup;

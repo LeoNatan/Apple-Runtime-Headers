@@ -31,6 +31,7 @@
     NSString *_mySecretKeyType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mySecretKeyType; // @synthesize mySecretKeyType=_mySecretKeyType;
 @property(copy, nonatomic) NSData *mySecretKeyData; // @synthesize mySecretKeyData=_mySecretKeyData;
 @property(copy, nonatomic) NSData *myCertificateData; // @synthesize myCertificateData=_myCertificateData;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *peerAppleID; // @synthesize peerAppleID=_peerAppleID;
 @property(retain, nonatomic) CUAppleIDClient *myInfoClient; // @synthesize myInfoClient=_myInfoClient;
 @property(copy, nonatomic) NSString *myAppleID; // @synthesize myAppleID=_myAppleID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) int securityLevel;
 -     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24@0:8^@16, name: _getPeerPublicKeyAndReturnError:
 - (struct __SecCertificate *)_getPeerCertificateAndReturnError:(id *)arg1;

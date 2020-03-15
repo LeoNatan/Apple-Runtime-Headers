@@ -17,8 +17,8 @@
     id <CRKCardSectionViewControllingDelegate> _cardSectionViewControllingDelegate;
 }
 
-@property(nonatomic) __weak id <CRKCardSectionViewControllingDelegate> cardSectionViewControllingDelegate; // @synthesize cardSectionViewControllingDelegate=_cardSectionViewControllingDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CRKCardSectionViewControllingDelegate> cardSectionViewControllingDelegate; // @synthesize cardSectionViewControllingDelegate=_cardSectionViewControllingDelegate;
 - (void)cardEventDidOccur:(unsigned long long)arg1 withIdentifier:(id)arg2 userInfo:(id)arg3;
 - (void)remoteViewControllerWillBeginEditing:(id)arg1;
 - (void)remoteViewController:(id)arg1 requestsHandlingOfIntent:(id)arg2;

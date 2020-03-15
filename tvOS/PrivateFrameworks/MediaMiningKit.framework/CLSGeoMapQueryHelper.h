@@ -27,6 +27,7 @@
     double _nextRetryTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didFinishQuery; // @synthesize didFinishQuery=_didFinishQuery;
 @property(nonatomic) _Bool alreadyLaunched; // @synthesize alreadyLaunched=_alreadyLaunched;
 @property(nonatomic) double nextRetryTime; // @synthesize nextRetryTime=_nextRetryTime;
@@ -41,7 +42,6 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, copy, nonatomic) CDUnknownBlockType cancellerBlock; // @synthesize cancellerBlock=_cancellerBlock;
 @property(readonly, nonatomic) id <CLSQueryProtocol> query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancel;
 - (void)_cancel;

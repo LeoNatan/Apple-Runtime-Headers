@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *mScreenTip;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *screenTip; // @synthesize screenTip=mScreenTip;
 @property(retain, nonatomic) NSString *hyperlink2; // @synthesize hyperlink2=mHyperlink2;
 @property(retain, nonatomic) NSString *hyperlink1; // @synthesize hyperlink1=mHyperlink1;
-- (void).cxx_destruct;
 
 @end
 

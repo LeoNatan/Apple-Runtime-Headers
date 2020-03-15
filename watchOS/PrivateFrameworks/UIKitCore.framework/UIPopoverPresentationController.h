@@ -88,6 +88,7 @@
 + (struct UIEdgeInsets)_defaultPopoverLayoutMarginsForPopoverControllerStyle:(int)arg1 andContentViewController:(id)arg2;
 + (Class)_popoverViewClass;
 + (_Bool)_showTargetRectPref;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAllowsSourceViewInDifferentWindowThanInitialPresentationViewController:) _Bool _allowsSourceViewInDifferentWindowThanInitialPresentationViewController; // @synthesize _allowsSourceViewInDifferentWindowThanInitialPresentationViewController=__allowsSourceViewInDifferentWindowThanInitialPresentationViewController;
 @property(nonatomic, setter=_setSoftAssertWhenNoSourceViewOrBarButtonItemSpecified:) _Bool _softAssertWhenNoSourceViewOrBarButtonItemSpecified; // @synthesize _softAssertWhenNoSourceViewOrBarButtonItemSpecified=__softAssertWhenNoSourceViewOrBarButtonItemSpecified;
 @property(nonatomic, setter=_setIgnoreBarButtonItemSiblings:) _Bool _ignoreBarButtonItemSiblings; // @synthesize _ignoreBarButtonItemSiblings=__ignoreBarButtonItemSiblings;
@@ -112,7 +113,6 @@
 @property(nonatomic) struct UIEdgeInsets popoverLayoutMargins; // @synthesize popoverLayoutMargins=_popoverLayoutMargins;
 @property(nonatomic) _Bool dismissesOnRotation; // @synthesize dismissesOnRotation=_dismissesOnRotation;
 @property(retain, nonatomic) UIDimmingView *dimmingView; // @synthesize dimmingView=_dimmingView;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_additionalSafeAreaInsets;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)_setContentViewController:(id)arg1 animated:(_Bool)arg2;

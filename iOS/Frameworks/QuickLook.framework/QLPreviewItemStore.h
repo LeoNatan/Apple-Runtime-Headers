@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     struct _NSRange _possibleRange;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool isArchive; // @synthesize isArchive=_isArchive;
 @property __weak id <QLPreviewItemStoreDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) struct _NSRange possibleRange; // @synthesize possibleRange=_possibleRange;
 @property(nonatomic) __weak id <QLPreviewItemProvider> itemProvider; // @synthesize itemProvider=_itemProvider;
-- (void).cxx_destruct;
 - (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (long long)indexOfPreviewItem:(id)arg1;

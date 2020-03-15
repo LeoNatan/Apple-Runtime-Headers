@@ -19,10 +19,10 @@
 
 + (id)contextWithUserInfo:(id)arg1;
 + (id)context;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool updateModelOnly; // @synthesize updateModelOnly=_updateModelOnly;
 @property(nonatomic) _Bool animated; // @synthesize animated=_animated;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

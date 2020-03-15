@@ -16,8 +16,8 @@
     NSArray *_observations;
 }
 
-@property(readonly, copy, nonatomic) NSArray *observations; // @synthesize observations=_observations;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *observations; // @synthesize observations=_observations;
 - (id)initWithObservations:(id)arg1;
 
 // Remaining properties

@@ -8,7 +8,6 @@
 
 @interface NSURL (HUAdditions)
 + (id)hu_learnAboutNetworkProtectionURL;
-+ (id)hu_learnAboutNetworkRoutersURL;
 + (id)hu_cameraRecordingURL;
 + (id)hu_openiCloudKeychainPreferences;
 + (id)hu_openiCloudPreferencesURL;

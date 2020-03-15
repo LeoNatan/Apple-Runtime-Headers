@@ -19,9 +19,9 @@
 
 + (id)localizedNameForRecognitionStatusKey:(id)arg1;
 + (id)availableRecognitionStatusKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CHVisualizationManager *chVisualizationManager; // @synthesize chVisualizationManager=_chVisualizationManager;
 @property(nonatomic) __weak id <PKVisualizationManager> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)visualizationManagerDidUpdateSessionStatus:(id)arg1;
 - (void)visualizationManagerNeedsDisplay:(id)arg1;
 - (void)visualizationManager:(id)arg1 needsDisplayInRect:(struct CGRect)arg2;

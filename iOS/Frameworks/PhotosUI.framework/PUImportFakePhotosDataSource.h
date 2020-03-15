@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     PXImportAssetsDataSource *_importDataSource;
 }
 
-@property(retain, nonatomic) PXImportAssetsDataSource *importDataSource; // @synthesize importDataSource=_importDataSource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXImportAssetsDataSource *importDataSource; // @synthesize importDataSource=_importDataSource;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)prefetchApproximateAssetsAtIndexPaths:(id)arg1 reverseOrder:(_Bool)arg2;

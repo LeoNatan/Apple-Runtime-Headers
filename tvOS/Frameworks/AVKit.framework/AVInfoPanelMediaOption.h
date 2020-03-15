@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)optionLateNight;
 + (id)optionAuto;
 + (id)optionOff;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPAVRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) AVMediaSelectionOption *mediaSelectionOption; // @synthesize mediaSelectionOption=_mediaSelectionOption;
 @property(readonly, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToMediaOption:(id)arg1;

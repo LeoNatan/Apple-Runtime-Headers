@@ -14,8 +14,8 @@
 }
 
 + (id)separator;
-@property(readonly) NSBox *separator; // @synthesize separator=_separator;
 - (void).cxx_destruct;
+@property(readonly) NSBox *separator; // @synthesize separator=_separator;
 - (void)addToConstraints:(id)arg1 context:(id)arg2;
 - (void)addToStackView:(id)arg1 context:(id)arg2;
 - (id)init;

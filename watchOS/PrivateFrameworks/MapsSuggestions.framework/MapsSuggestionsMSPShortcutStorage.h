@@ -23,12 +23,12 @@
     NSArray *_cachedPlaces;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedPlaces; // @synthesize cachedPlaces=_cachedPlaces;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *containerLoadWait; // @synthesize containerLoadWait=_containerLoadWait;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) _Bool hasAttemptedLoadingContents; // @synthesize hasAttemptedLoadingContents=_hasAttemptedLoadingContents;
 @property(retain, nonatomic) MSPPinnedPlacesQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)containerDidLoadFromPersister:(id)arg1;
 - (void)container:(id)arg1 didEditWithNewContents:(id)arg2 orderedEdits:(id)arg3 cause:(int)arg4 context:(id)arg5;
 - (void)queryContentsDidChange:(id)arg1 contentsVersion:(unsigned long long)arg2;
@@ -38,8 +38,8 @@
 - (_Bool)moveShortcut:(id)arg1 beforeShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)moveShortcut:(id)arg1 afterShortcut:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)moveShortcut:(id)arg1 toIndex:(int)arg2 handler:(CDUnknownBlockType)arg3;
-- (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
-- (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)removeShortcuts:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)addOrUpdateShortcuts:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)loadAllShortcutsWithHandler:(CDUnknownBlockType)arg1;
 - (void)setChangeHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;

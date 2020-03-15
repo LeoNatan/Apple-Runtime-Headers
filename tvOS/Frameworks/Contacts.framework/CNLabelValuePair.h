@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

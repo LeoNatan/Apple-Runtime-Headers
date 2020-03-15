@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _creator;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType creator; // @synthesize creator=_creator;
 @property(nonatomic) long long childViewControllerIndex; // @synthesize childViewControllerIndex=_childViewControllerIndex;
 @property(retain, nonatomic) UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(retain, nonatomic) UIClassSwapper *classSwapperTemplate; // @synthesize classSwapperTemplate=_classSwapperTemplate;
 @property(retain, nonatomic) id sender; // @synthesize sender=_sender;
 @property(retain, nonatomic) UIStoryboardSegueTemplate *sourceSegueTemplate; // @synthesize sourceSegueTemplate=_sourceSegueTemplate;
-- (void).cxx_destruct;
 
 @end
 

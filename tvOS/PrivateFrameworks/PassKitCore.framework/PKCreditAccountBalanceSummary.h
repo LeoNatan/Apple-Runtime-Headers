@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDecimalNumber *rewardsRedeemed; // @synthesize rewardsRedeemed=_rewardsRedeemed;
 @property(copy, nonatomic) NSDecimalNumber *rewardsEarned; // @synthesize rewardsEarned=_rewardsEarned;
 @property(copy, nonatomic) NSDecimalNumber *credits; // @synthesize credits=_credits;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSDecimalNumber *purchases; // @synthesize purchases=_purchases;
 @property(copy, nonatomic) NSDate *closingDate; // @synthesize closingDate=_closingDate;
 @property(copy, nonatomic) NSDate *openingDate; // @synthesize openingDate=_openingDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;

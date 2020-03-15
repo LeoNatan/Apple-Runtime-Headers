@@ -18,10 +18,10 @@
 + (id)buildRequiredOnlyWithDeviceName:(id)arg1 withPassword:(id)arg2 withDeviceID:(id)arg3;
 + (id)buildWithDeviceName:(id)arg1 withPassword:(id)arg2 withDeviceID:(id)arg3;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadDeviceID; // @synthesize payloadDeviceID=_payloadDeviceID;
 @property(copy, nonatomic) NSString *payloadPassword; // @synthesize payloadPassword=_payloadPassword;
 @property(copy, nonatomic) NSString *payloadDeviceName; // @synthesize payloadDeviceName=_payloadDeviceName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -15,8 +15,8 @@
 
 + (id)layerWithLossDescriptor:(id)arg1;
 + (id)new;
-@property(readonly, nonatomic) MLFoundationYOLOLossDescriptor *yoloLossDescriptor; // @synthesize yoloLossDescriptor=_yoloLossDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MLFoundationYOLOLossDescriptor *yoloLossDescriptor; // @synthesize yoloLossDescriptor=_yoloLossDescriptor;
 - (id)description;
 - (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
 - (BOOL)compileForDevice:(id)arg1 sourceTensors:(id)arg2 resultTensor:(id)arg3;

@@ -14,9 +14,9 @@
     UIButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
-- (void).cxx_destruct;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)layoutSubviews;

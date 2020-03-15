@@ -13,8 +13,8 @@
     NSArray *_subrequests;
 }
 
-@property(retain) NSArray *subrequests; // @synthesize subrequests=_subrequests;
 - (void).cxx_destruct;
+@property(retain) NSArray *subrequests; // @synthesize subrequests=_subrequests;
 - (id)outputFileType;
 - (id)outputPathExtension;
 - (void)postProcessSuccessfulCompositeRequest;

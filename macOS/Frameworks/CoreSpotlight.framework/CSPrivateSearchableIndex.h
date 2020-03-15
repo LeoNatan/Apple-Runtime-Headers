@@ -17,11 +17,11 @@
 }
 
 + (id)defaultSearchableIndex;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSIndexConnection *savedConnection; // @synthesize savedConnection=_savedConnection;
 @property(retain, nonatomic) NSString *indexPath; // @synthesize indexPath=_indexPath;
 @property(retain, nonatomic) NSString *resolvedIndexPath; // @synthesize resolvedIndexPath=_resolvedIndexPath;
 @property BOOL attemptedIndexPathResolution; // @synthesize attemptedIndexPathResolution=_attemptedIndexPathResolution;
-- (void).cxx_destruct;
 - (id)xpc_dictionary_for_command:(const char *)arg1 requiresInitialization:(BOOL)arg2;
 - (id)connection;
 - (void)dealloc;

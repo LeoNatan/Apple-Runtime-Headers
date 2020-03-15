@@ -14,9 +14,9 @@
     NSSet *_syncDataHandlers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
 @property(readonly, nonatomic) VCCoreDuetListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)resetWatchSync;
 - (_Bool)terminateProcessWithIdentifier:(id)arg1 assertion:(out id *)arg2 error:(out id *)arg3;
 - (_Bool)deleteDataVaultWithError:(id *)arg1;

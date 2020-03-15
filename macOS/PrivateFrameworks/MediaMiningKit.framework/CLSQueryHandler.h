@@ -28,13 +28,13 @@
     double _numberOfRetries;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double numberOfRetries; // @synthesize numberOfRetries=_numberOfRetries;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;
 @property(nonatomic, getter=isSimulatingTimeout) BOOL simulatesTimeout; // @synthesize simulatesTimeout=_simulatesTimeout;
 @property(retain, nonatomic) CLSGeoServiceThread *geoServiceThread; // @synthesize geoServiceThread=_geoServiceThread;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
-- (void).cxx_destruct;
 - (unsigned long long)_cacheMapItems:(id)arg1;
 - (void)cancel;
 - (void)_cancel;

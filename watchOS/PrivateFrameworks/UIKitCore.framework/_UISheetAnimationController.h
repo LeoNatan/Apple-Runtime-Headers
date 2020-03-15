@@ -28,6 +28,7 @@
     struct CGRect _forwardViewFullFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint attachmentPoint; // @synthesize attachmentPoint=_attachmentPoint;
 @property(nonatomic) struct CGPoint offset; // @synthesize offset=_offset;
 @property(nonatomic) _Bool scalesDownForwardView; // @synthesize scalesDownForwardView=_scalesDownForwardView;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) CDUnknownBlockType noninteractiveAnimations; // @synthesize noninteractiveAnimations=_noninteractiveAnimations;
 @property(nonatomic) struct CGRect sourceFrame; // @synthesize sourceFrame=_sourceFrame;
 @property(nonatomic) _Bool isReversed; // @synthesize isReversed=_isReversed;
-- (void).cxx_destruct;
 - (_Bool)_allowKeyboardToAnimateAlongside:(id)arg1;
 - (void)runNoninteractiveAnimationsIfPossible;
 - (void)layoutTransitionViews;

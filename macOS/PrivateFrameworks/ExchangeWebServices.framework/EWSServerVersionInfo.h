@@ -20,12 +20,12 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *Version; // @synthesize Version=_Version;
 @property(nonatomic) long long MinorVersion; // @synthesize MinorVersion=_MinorVersion;
 @property(nonatomic) long long MinorBuildNumber; // @synthesize MinorBuildNumber=_MinorBuildNumber;
 @property(nonatomic) long long MajorVersion; // @synthesize MajorVersion=_MajorVersion;
 @property(nonatomic) long long MajorBuildNumber; // @synthesize MajorBuildNumber=_MajorBuildNumber;
-- (void).cxx_destruct;
 - (BOOL)_meetsRequiredMajorVersion:(unsigned long long)arg1 requiredMinorVersion:(unsigned long long)arg2 requiredMajorBuildNumber:(unsigned long long)arg3;
 - (BOOL)isExchangeOnlineOrGreater;
 - (BOOL)supportsSchema:(id)arg1;

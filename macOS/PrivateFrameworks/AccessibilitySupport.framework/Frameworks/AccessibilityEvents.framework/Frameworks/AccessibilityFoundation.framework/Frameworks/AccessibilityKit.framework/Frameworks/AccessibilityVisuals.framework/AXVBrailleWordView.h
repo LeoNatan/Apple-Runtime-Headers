@@ -19,6 +19,7 @@
     NSString *__maskedBrailleString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setMaskedBrailleString:) NSString *_maskedBrailleString; // @synthesize _maskedBrailleString=__maskedBrailleString;
 @property(nonatomic, setter=_setCurrentlyBlinking:) BOOL _currentlyBlinking; // @synthesize _currentlyBlinking=__currentlyBlinking;
 @property(retain, nonatomic, setter=_setBrailleCursorBlinkTimer:) NSTimer *_brailleCursorBlinkTimer; // @synthesize _brailleCursorBlinkTimer=__brailleCursorBlinkTimer;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic, setter=_setUnraisedBrailleTextView:) AXVBrailleTextView *_unraisedBrailleTextView; // @synthesize _unraisedBrailleTextView=__unraisedBrailleTextView;
 @property(retain, nonatomic, setter=_setBrailleTextView:) AXVBrailleTextView *_brailleTextView; // @synthesize _brailleTextView=__brailleTextView;
 @property(copy, nonatomic) AXVBrailleWord *brailleWord; // @synthesize brailleWord=_brailleWord;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_createUnraisedBrailleStringWithLength:(unsigned long long)arg1;
 - (void)_updateLayoutOfViews;

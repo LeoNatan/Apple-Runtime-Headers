@@ -18,11 +18,11 @@
     CLTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRunLoop *runloop; // @synthesize runloop=_runloop;
 @property(copy, nonatomic) CDUnknownBlockType fireBlock; // @synthesize fireBlock=_fireBlock;
 @property(retain, nonatomic) NSTimer *underlyingTimer; // @synthesize underlyingTimer=_underlyingTimer;
 @property(nonatomic) __weak CLTimer *timer; // @synthesize timer=_timer;
-- (void).cxx_destruct;
 - (void)reflectNextFireDelay:(double)arg1 fireInterval:(double)arg2;
 - (void)dealloc;
 - (id)initWithRunLoopSilo:(id)arg1;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSNumber *_doseInMilligrams;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *doseInMilligrams; // @synthesize doseInMilligrams=_doseInMilligrams;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 
 @end
 

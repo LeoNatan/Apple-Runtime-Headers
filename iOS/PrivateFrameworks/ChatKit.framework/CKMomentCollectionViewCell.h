@@ -15,9 +15,9 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *effectViews; // @synthesize effectViews=_effectViews;
 @property(retain, nonatomic) CKFullScreenEffect *effect; // @synthesize effect=_effect;
-- (void).cxx_destruct;
 - (void)stopAnimation;
 - (void)animate;
 - (void)setupEffectIfNeeded;

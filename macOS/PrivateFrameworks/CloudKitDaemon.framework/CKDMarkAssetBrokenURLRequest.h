@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CKUploadRequestMetadata *_metadata;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL writeRepairRecord; // @synthesize writeRepairRecord=_writeRepairRecord;
 @property(copy, nonatomic) CKUploadRequestMetadata *metadata; // @synthesize metadata=_metadata;
 @property(copy, nonatomic) CDUnknownBlockType assetBrokenBlock; // @synthesize assetBrokenBlock=_assetBrokenBlock;
-- (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)generateRequestOperations;

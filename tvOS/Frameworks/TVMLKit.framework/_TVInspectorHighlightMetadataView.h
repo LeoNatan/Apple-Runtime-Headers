@@ -14,9 +14,9 @@
     UILabel *_frameLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *frameLabel; // @synthesize frameLabel=_frameLabel;
 @property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

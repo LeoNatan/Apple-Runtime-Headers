@@ -15,9 +15,9 @@
 }
 
 + (id)stringFromHomeKitObjectType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(unsigned long long)arg1 uniqueIdentifier:(id)arg2;
 - (id)initWithHomeKitObject:(id)arg1;

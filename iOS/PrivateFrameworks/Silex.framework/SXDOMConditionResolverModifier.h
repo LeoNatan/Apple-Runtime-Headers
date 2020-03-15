@@ -33,6 +33,7 @@
     id <SXConditionalResolverModifierInstructions> _instructions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool resolveDocumentStyle; // @synthesize resolveDocumentStyle=_resolveDocumentStyle;
 @property(readonly, nonatomic) _Bool resolveAutoplacement; // @synthesize resolveAutoplacement=_resolveAutoplacement;
 @property(readonly, nonatomic) _Bool resolveTextStyles; // @synthesize resolveTextStyles=_resolveTextStyles;
@@ -51,7 +52,6 @@
 @property(readonly, nonatomic) SXConditionalObjectResolver *textStyleResolver; // @synthesize textStyleResolver=_textStyleResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *componentResolver; // @synthesize componentResolver=_componentResolver;
 @property(readonly, nonatomic) id <SXConditionValidationContextFactory> validationContextFactory; // @synthesize validationContextFactory=_validationContextFactory;
-- (void).cxx_destruct;
 - (id)resolveDocumentStyle:(id)arg1 validationContext:(id)arg2;
 - (id)resolveAutoPlacement:(id)arg1 validationContext:(id)arg2;
 - (_Bool)resolveComponentTextStyle:(id)arg1 validationContext:(id)arg2;

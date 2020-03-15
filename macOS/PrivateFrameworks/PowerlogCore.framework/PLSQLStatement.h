@@ -19,13 +19,13 @@
     struct sqlite3 *_dbConnection;
 }
 
+- (void).cxx_destruct;
 @property struct sqlite3 *dbConnection; // @synthesize dbConnection=_dbConnection;
 @property(retain) NSObject<OS_dispatch_semaphore> *dbSem; // @synthesize dbSem=_dbSem;
 @property(readonly) BOOL isDelete; // @synthesize isDelete=_isDelete;
 @property(readonly) BOOL isInsert; // @synthesize isInsert=_isInsert;
 @property(retain) NSString *sqlQuery; // @synthesize sqlQuery=_sqlQuery;
 @property struct sqlite3_stmt *statement; // @synthesize statement=_statement;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (void)finalize;

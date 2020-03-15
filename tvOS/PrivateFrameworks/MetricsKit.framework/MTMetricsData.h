@@ -18,13 +18,13 @@
     NSMutableArray *_postProcessingBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *postProcessingBlocks; // @synthesize postProcessingBlocks=_postProcessingBlocks;
 @property(retain, nonatomic) NSMutableDictionary *performanceData; // @synthesize performanceData=_performanceData;
 @property(retain, nonatomic) MTPromise *configBaseFields; // @synthesize configBaseFields=_configBaseFields;
 @property(retain, nonatomic) NSDictionary *eventSpecificFields; // @synthesize eventSpecificFields=_eventSpecificFields;
 @property(retain, nonatomic) NSDictionary *baseFields; // @synthesize baseFields=_baseFields;
 @property(retain, nonatomic) MTCallerSuppliedFields *callerSuppliedFields; // @synthesize callerSuppliedFields=_callerSuppliedFields;
-- (void).cxx_destruct;
 - (id)description;
 - (id)recordEvent;
 - (void)cancelUnfinishedPromisedEventData;

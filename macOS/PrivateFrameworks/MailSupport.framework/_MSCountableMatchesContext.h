@@ -15,9 +15,9 @@
     NSMutableSet *_highestMatches;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *highestMatches; // @synthesize highestMatches=_highestMatches;
 @property(nonatomic) long long maxCount; // @synthesize maxCount=_maxCount;
-- (void).cxx_destruct;
 - (void)countInstances:(id)arg1 usingPredicate:(CDUnknownBlockType)arg2;
 - (id)init;
 

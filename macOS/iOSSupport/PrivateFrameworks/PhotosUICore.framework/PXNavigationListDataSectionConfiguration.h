@@ -21,6 +21,7 @@
 
 + (id)configurationWithCollectionsFetchResult:(id)arg1;
 + (id)configurationWithCollectionList:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL skipAssetFetches; // @synthesize skipAssetFetches=_skipAssetFetches;
 @property(nonatomic) BOOL skipKeyAssetFetchesForSmartAlbums; // @synthesize skipKeyAssetFetchesForSmartAlbums=_skipKeyAssetFetchesForSmartAlbums;
 @property(nonatomic) BOOL includeUserSmartAlbums; // @synthesize includeUserSmartAlbums=_includeUserSmartAlbums;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL emptyCollectionsHidden; // @synthesize emptyCollectionsHidden=_emptyCollectionsHidden;
 @property(readonly, nonatomic) PHFetchResult *collectionsFetchResult; // @synthesize collectionsFetchResult=_collectionsFetchResult;
 @property(readonly, nonatomic) PHCollectionList *collectionList; // @synthesize collectionList=_collectionList;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCollectionsFetchResult:(id)arg1;
 - (id)initWithCollectionList:(id)arg1;

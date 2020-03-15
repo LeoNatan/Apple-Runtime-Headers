@@ -24,10 +24,10 @@
     double _minimumHeight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic, getter=isBlurDisabled) _Bool blurDisabled; // @synthesize blurDisabled=_blurDisabled;
 @property(nonatomic) _Bool showPlaceholder; // @synthesize showPlaceholder=_showPlaceholder;
-- (void).cxx_destruct;
 - (void)_updatePlaceholderImage;
 - (void)_updatePlaceholder;
 - (void)_generateImageForSummary:(id)arg1 barHeight:(double)arg2 maximumHeight:(double)arg3 synchronous:(_Bool)arg4;

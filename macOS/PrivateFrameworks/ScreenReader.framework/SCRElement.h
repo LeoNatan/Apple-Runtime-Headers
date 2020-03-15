@@ -86,11 +86,11 @@
 + (void)fillNavigationCommands;
 + (BOOL)_webGroupAppropriateToIncludeInStitchedElements:(id)arg1;
 + (BOOL)subroleIsLandmarkType:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long bookendFocus; // @synthesize bookendFocus=_bookendFocus;
 @property(retain, nonatomic, setter=_setBrailleLineChildren:) NSMutableArray *_brailleLineChildren; // @synthesize _brailleLineChildren=__brailleLineChildren;
 @property(retain, nonatomic, setter=_setBrailleLineManager:) SCRBrailleLineManager *_brailleLineManager; // @synthesize _brailleLineManager=__brailleLineManager;
 @property(retain, nonatomic) SCRUIElement *topLevelUIElement; // @synthesize topLevelUIElement=_topLevelUIElement;
-- (void).cxx_destruct;
 - (BOOL)isXcodeTextElement;
 - (BOOL)isWebText;
 - (BOOL)isFunctionRowElement;

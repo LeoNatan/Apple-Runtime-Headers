@@ -28,6 +28,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *countdownText; // @synthesize countdownText=_countdownText;
 @property(nonatomic) unsigned int viewState; // @synthesize viewState=_viewState;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) CSLSystemLockIcon *icon; // @synthesize icon=_icon;
 @property(nonatomic) float backdropAlpha; // @synthesize backdropAlpha=_backdropAlpha;
 @property(readonly, nonatomic) UIView *backdropView; // @synthesize backdropView=_backdropView;
-- (void).cxx_destruct;
 - (id)sosPulseViews;
 - (void)pulse;
 - (void)_updateForViewState:(unsigned int)arg1 animated:(_Bool)arg2;

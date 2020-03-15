@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     struct PUGridCoordinates _anchorShiftOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct PUGridCoordinates anchorShiftOffset; // @synthesize anchorShiftOffset=_anchorShiftOffset;
 @property(retain, nonatomic) NSIndexPath *anchorRealPath; // @synthesize anchorRealPath=_anchorRealPath;
 @property(nonatomic) long long contiguousRows; // @synthesize contiguousRows=_contiguousRows;
 @property(retain, nonatomic) NSArray *visualRowStartMarkers; // @synthesize visualRowStartMarkers=_visualRowStartMarkers;
 @property(retain, nonatomic) NSIndexSet *visualSections; // @synthesize visualSections=_visualSections;
 @property(nonatomic) long long transitionSection; // @synthesize transitionSection=_transitionSection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

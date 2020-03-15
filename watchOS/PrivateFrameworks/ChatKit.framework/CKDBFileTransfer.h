@@ -24,6 +24,7 @@
     NSDictionary *_attributionInfo;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
 @property(nonatomic) int transferState; // @synthesize transferState=_transferState;
 @property(readonly, nonatomic) _Bool isDirectory; // @synthesize isDirectory=_isDirectory;
@@ -34,7 +35,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *transcoderUserInfo; // @synthesize transcoderUserInfo=_transcoderUserInfo;
 @property(readonly, copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, copy, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 - (void)fetchHighQualityFile:(CDUnknownBlockType)arg1;
 - (void)mediaObjectRemoved;
 - (void)mediaObjectAdded;

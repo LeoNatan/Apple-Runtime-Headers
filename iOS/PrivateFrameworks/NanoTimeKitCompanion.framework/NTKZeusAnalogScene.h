@@ -34,9 +34,9 @@
     NSCalendar *_calendar;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 @property(nonatomic) double backgroundAlpha;
 - (double)_splitAngle;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
@@ -50,6 +50,8 @@
 - (void)applyDensity:(unsigned long long)arg1;
 - (id)_nodeForBleed:(unsigned long long)arg1;
 - (void)applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
+- (void)_applyComplicationColor:(id)arg1;
+- (void)_applyDialColor:(id)arg1 withBleed:(unsigned long long)arg2;
 - (void)applyPalette:(id)arg1;
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;
 - (void)_applyTransitionFraction:(double)arg1 fromHourLabelCollectionNode:(id)arg2 toHourLabelCollectionNode:(id)arg3;

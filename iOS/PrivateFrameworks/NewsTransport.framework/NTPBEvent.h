@@ -67,6 +67,7 @@
 }
 
 + (Class)userPaidSubscriptionStatusType;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isAmplifyUser; // @synthesize isAmplifyUser=_isAmplifyUser;
 @property(retain, nonatomic) NSString *appAnalyticsEventPath; // @synthesize appAnalyticsEventPath=_appAnalyticsEventPath;
 @property(retain, nonatomic) NSString *appAnalyticsEventIdentifier; // @synthesize appAnalyticsEventIdentifier=_appAnalyticsEventIdentifier;
@@ -94,7 +95,6 @@
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSData *sessionId; // @synthesize sessionId=_sessionId;
 @property(retain, nonatomic) NTPBEventObject *eventObject; // @synthesize eventObject=_eventObject;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

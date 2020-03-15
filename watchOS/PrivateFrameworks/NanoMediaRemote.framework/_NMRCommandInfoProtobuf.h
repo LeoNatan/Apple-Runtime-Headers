@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
 @property(nonatomic) int presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(nonatomic) float maximumRating; // @synthesize maximumRating=_maximumRating;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

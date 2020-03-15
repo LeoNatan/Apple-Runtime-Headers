@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct _NSRange _lastVisibleIndexRange;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool prefetchScheduled; // @synthesize prefetchScheduled=_prefetchScheduled;
 @property(nonatomic) int cancelThresholdCount; // @synthesize cancelThresholdCount=_cancelThresholdCount;
 @property(nonatomic) int refreshPrefetchThresholdCount; // @synthesize refreshPrefetchThresholdCount=_refreshPrefetchThresholdCount;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableIndexSet *outstandingRequests; // @synthesize outstandingRequests=_outstandingRequests;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
 @property(copy, nonatomic) CDUnknownBlockType requestHandler; // @synthesize requestHandler=_requestHandler;
-- (void).cxx_destruct;
 - (id)computedPrefetchIndexSet;
 - (struct _NSRange)_validatedRangeWithLocation:(int)arg1 length:(int)arg2;
 - (struct _NSRange)_offsetAndValidateRange:(struct _NSRange)arg1 firstIndexOffset:(int)arg2 lastIndexOffset:(int)arg3;

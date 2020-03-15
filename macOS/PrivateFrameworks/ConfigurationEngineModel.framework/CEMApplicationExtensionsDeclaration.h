@@ -24,10 +24,10 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadDeniedExtensionPoints; // @synthesize payloadDeniedExtensionPoints=_payloadDeniedExtensionPoints;
 @property(copy, nonatomic) NSArray *payloadDeniedExtensions; // @synthesize payloadDeniedExtensions=_payloadDeniedExtensions;
 @property(copy, nonatomic) NSArray *payloadAllowedExtensions; // @synthesize payloadAllowedExtensions=_payloadAllowedExtensions;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     struct TIconLayoutBitmap _bitmap;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double rightMargin; // @synthesize rightMargin=_rightMargin;
 @property(nonatomic) double leftMargin; // @synthesize leftMargin=_leftMargin;
 @property(nonatomic) double bottomMargin; // @synthesize bottomMargin=_bottomMargin;
@@ -28,8 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) _Bool justifiedLayout; // @synthesize justifiedLayout=_justifiedLayout;
 @property(nonatomic) int layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)nextOpenLocation:(struct CGPoint *)arg1;
 - (void)clearAllItemLocations;
 - (void)occupyGridSpotsForRect:(const struct CGRect *)arg1;

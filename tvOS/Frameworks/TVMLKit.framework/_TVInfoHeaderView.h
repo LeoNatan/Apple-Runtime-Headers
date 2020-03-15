@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)infoHeaderViewWithElement:(id)arg1 existingView:(id)arg2;
-@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

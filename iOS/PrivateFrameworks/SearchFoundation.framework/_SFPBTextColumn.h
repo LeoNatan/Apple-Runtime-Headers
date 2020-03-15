@@ -16,8 +16,8 @@
     NSArray *_sections;
 }
 
-@property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

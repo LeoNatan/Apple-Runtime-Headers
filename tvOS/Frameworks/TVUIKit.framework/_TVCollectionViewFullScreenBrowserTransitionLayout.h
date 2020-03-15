@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_fullscreenBrowserLayoutAttributes;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *fullscreenBrowserLayoutAttributes; // @synthesize fullscreenBrowserLayoutAttributes=_fullscreenBrowserLayoutAttributes;
 @property(readonly, nonatomic) NSMutableDictionary *layoutAttributesByIndexPath; // @synthesize layoutAttributesByIndexPath=_layoutAttributesByIndexPath;
 @property(readonly, copy, nonatomic) NSArray *transitionLayoutAttributes; // @synthesize transitionLayoutAttributes=_transitionLayoutAttributes;
-- (void).cxx_destruct;
 - (_Bool)flipsHorizontallyInOppositeLayoutDirection;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;

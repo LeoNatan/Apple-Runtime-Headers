@@ -17,11 +17,11 @@
 }
 
 + (id)defaultStorageDirectoryURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VSPrivacyFacade *privacyFacade; // @synthesize privacyFacade=_privacyFacade;
 @property(readonly, nonatomic) VSPrivacyVoucherLockbox *voucherLockbox; // @synthesize voucherLockbox=_voucherLockbox;
 @property(readonly, nonatomic) VSAccountChannelsCenter *channelsCenter; // @synthesize channelsCenter=_channelsCenter;
 @property(readonly, nonatomic) VSAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithAccountStoreClass:(Class)arg1;
 - (id)initWithAccountStoreClass:(Class)arg1 channelsCenterClass:(Class)arg2;

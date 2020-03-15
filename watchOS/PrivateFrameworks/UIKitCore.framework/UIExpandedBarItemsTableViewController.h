@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIBarButtonItemGroup *_barButtonGroup;
 }
 
-@property(readonly, nonatomic) UIBarButtonItemGroup *barButtonGroup; // @synthesize barButtonGroup=_barButtonGroup;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIBarButtonItemGroup *barButtonGroup; // @synthesize barButtonGroup=_barButtonGroup;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

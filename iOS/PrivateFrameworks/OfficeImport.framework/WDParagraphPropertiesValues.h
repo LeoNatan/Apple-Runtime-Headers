@@ -123,6 +123,7 @@ __attribute__((visibility("hidden")))
     long long _verticalPosition;
 }
 
+- (void).cxx_destruct;
 @property unsigned char formattingChanged; // @synthesize formattingChanged=_formattingChanged;
 @property unsigned char physicalJustification; // @synthesize physicalJustification=_physicalJustification;
 @property unsigned char justification; // @synthesize justification=_justification;
@@ -233,7 +234,6 @@ __attribute__((visibility("hidden")))
 @property _Bool pageBreakBeforeOverridden; // @synthesize pageBreakBeforeOverridden=mPageBreakBeforeOverridden;
 @property _Bool pageBreakBefore; // @synthesize pageBreakBefore=mPageBreakBefore;
 @property _Bool baseStyleOverridden; // @synthesize baseStyleOverridden=mBaseStyleOverridden;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

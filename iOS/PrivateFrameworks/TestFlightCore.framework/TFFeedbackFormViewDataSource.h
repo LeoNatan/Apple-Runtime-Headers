@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     TFFeedbackFormCellUpdater *_cellUpdater;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TFFeedbackFormCellUpdater *cellUpdater; // @synthesize cellUpdater=_cellUpdater;
 @property(readonly, nonatomic) TFFeedbackFormPresenter *presenter; // @synthesize presenter=_presenter;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

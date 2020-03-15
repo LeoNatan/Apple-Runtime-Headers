@@ -24,6 +24,7 @@
     CDUnknownBlockType _mobileAssetDownloadCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType mobileAssetDownloadCompletionHandler; // @synthesize mobileAssetDownloadCompletionHandler=_mobileAssetDownloadCompletionHandler;
 @property(copy, nonatomic) MADownloadOptions *mobileAssetDownloadOptions; // @synthesize mobileAssetDownloadOptions=_mobileAssetDownloadOptions;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
@@ -31,7 +32,6 @@
 @property(nonatomic) int maxNumberOfRetriesAllowed; // @synthesize maxNumberOfRetriesAllowed=_maxNumberOfRetriesAllowed;
 @property(nonatomic) _Bool shouldAutoDownloadRemoteAssets; // @synthesize shouldAutoDownloadRemoteAssets=_shouldAutoDownloadRemoteAssets;
 @property(nonatomic) _Bool shouldQueryLocalAssetsFirst; // @synthesize shouldQueryLocalAssetsFirst=_shouldQueryLocalAssetsFirst;
-- (void).cxx_destruct;
 - (id)_errorWithDomain:(id)arg1 code:(int)arg2;
 - (void)_callErrorHandlerWithError:(id)arg1;
 - (void)_callDownloadCompletionHandlerWithAssets:(id)arg1 queryParams:(id)arg2;

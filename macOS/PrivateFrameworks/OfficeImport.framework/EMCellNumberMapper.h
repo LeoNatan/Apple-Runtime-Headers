@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     double _columnWidth;
 }
 
-@property double columnWidth; // @synthesize columnWidth=_columnWidth;
 - (void).cxx_destruct;
+@property double columnWidth; // @synthesize columnWidth=_columnWidth;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (id)insertRedSpanIfNegativeAt:(id)arg1;
 - (id)formatValueAsNumber;

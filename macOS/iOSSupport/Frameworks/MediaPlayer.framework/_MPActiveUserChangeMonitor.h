@@ -18,12 +18,12 @@
     id <_MPActiveUserChangeMonitorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_MPActiveUserChangeMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) struct os_unfair_lock_s stateLock; // @synthesize stateLock=_stateLock;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *notificationTimer; // @synthesize notificationTimer=_notificationTimer;
 @property(copy, nonatomic) NSMutableSet *receivedNotifications; // @synthesize receivedNotifications=_receivedNotifications;
 @property(readonly, nonatomic) NSSet *expectedNotifications; // @synthesize expectedNotifications=_expectedNotifications;
-- (void).cxx_destruct;
 - (void)_cancelNotificationTimerWithReason:(id)arg1;
 - (void)_startNotificationTimerWithEventHandler:(CDUnknownBlockType)arg1;
 - (void)ingestNotificationName:(id)arg1;

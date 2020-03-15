@@ -12,28 +12,26 @@
 
 @interface AXCustomizableMouse : NSObject <NSSecureCoding>
 {
-    NSMutableDictionary *_buttonMap;
     NSString *_name;
     NSString *_identifier;
     long long _vendorId;
     long long _productId;
-    unsigned long long _connectionType;
+    NSMutableDictionary *_buttonMap;
 }
 
-+ (id)_newOrExistingMouseForIdentifier:(id)arg1 name:(id)arg2 vendorId:(id)arg3 productId:(id)arg4 connectionType:(unsigned long long)arg5;
++ (id)_newOrExistingMouseForIdentifier:(id)arg1 name:(id)arg2 vendorId:(id)arg3 productId:(id)arg4;
 + (id)_existingMouseForIdentifier:(id)arg1 vendorId:(long long)arg2 productId:(long long)arg3;
 + (id)mouseForHIDServiceClient:(struct __IOHIDServiceClient *)arg1;
 + (id)mouseForHIDDevice:(struct __IOHIDDevice *)arg1;
 + (id)serialize:(id)arg1;
 + (id)deserialize:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) unsigned long long connectionType; // @synthesize connectionType=_connectionType;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *buttonMap; // @synthesize buttonMap=_buttonMap;
 @property(readonly, nonatomic) long long productId; // @synthesize productId=_productId;
 @property(readonly, nonatomic) long long vendorId; // @synthesize vendorId=_vendorId;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) NSMutableDictionary *buttonMap; // @synthesize buttonMap=_buttonMap;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (_Bool)isEqualToIdentifier:(id)arg1 vendorId:(long long)arg2 productId:(long long)arg3;
 - (_Bool)isEqualToMouse:(id)arg1;
@@ -44,8 +42,8 @@
 @property(readonly, nonatomic) _Bool hasCustomActions;
 - (void)setCustomAction:(id)arg1 forButtonNumber:(long long)arg2;
 - (void)setDefaultActionForButtonNumber:(long long)arg1;
-- (void)updateConnectionType:(unsigned long long)arg1;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 vendorId:(long long)arg3 productId:(long long)arg4;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

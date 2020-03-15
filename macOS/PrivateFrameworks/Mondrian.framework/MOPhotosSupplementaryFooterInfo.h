@@ -21,6 +21,7 @@
     double _progress;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL progressDisabled; // @synthesize progressDisabled=_progressDisabled;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSAttributedString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSAttributedString *referencedMediaInformation; // @synthesize referencedMediaInformation=_referencedMediaInformation;
 @property(retain, nonatomic) NSAttributedString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

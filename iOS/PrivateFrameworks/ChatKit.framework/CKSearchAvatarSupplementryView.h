@@ -22,12 +22,12 @@
 + (double)desiredZPosition;
 + (id)reuseIdentifier;
 + (id)supplementaryViewType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CKSpotlightQueryResult *associatedResult; // @synthesize associatedResult=_associatedResult;
 @property(nonatomic) unsigned long long parentContentType; // @synthesize parentContentType=_parentContentType;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (void)_updateVisibilityIfNeeded;

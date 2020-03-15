@@ -35,10 +35,10 @@
 + (id)lockupConsumerWithSize:(long long)arg1 itemKind:(long long)arg2;
 + (id)gridConsumer;
 + (id)consumerWithSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize iconSize; // @synthesize iconSize=_iconSize;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)imageForImage:(id)arg1;
 - (id)imageForColor:(id)arg1 size:(struct CGSize)arg2;

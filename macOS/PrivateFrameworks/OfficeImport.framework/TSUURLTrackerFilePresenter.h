@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_presentedItemOperationQueue;
 }
 
-@property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 - (void).cxx_destruct;
+@property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 @property(readonly, copy) NSString *description;
 - (id)_description;
 - (void)presentedItemDidChangeUbiquityAttributes:(id)arg1;

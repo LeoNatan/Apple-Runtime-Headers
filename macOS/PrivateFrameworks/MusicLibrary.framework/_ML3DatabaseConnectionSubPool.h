@@ -27,12 +27,12 @@
     unsigned long long _connectionsJournalingMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long connectionsJournalingMode; // @synthesize connectionsJournalingMode=_connectionsJournalingMode;
 @property(nonatomic) BOOL useDistantConnections; // @synthesize useDistantConnections=_useDistantConnections;
 @property(nonatomic) BOOL useReadOnlyConnections; // @synthesize useReadOnlyConnections=_useReadOnlyConnections;
 @property(readonly, nonatomic) unsigned long long maxConcurrentConnections; // @synthesize maxConcurrentConnections=_maxConcurrentConnections;
 @property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
-- (void).cxx_destruct;
 - (void)_handleDatabaseDeletion;
 - (void)handleDiagnostic:(id)arg1;
 - (void)closeConnectionsAndWaitForBusyConnections:(BOOL)arg1;

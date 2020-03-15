@@ -15,8 +15,8 @@
     NSSet *_itemProviders;
 }
 
-@property(copy, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 @property(readonly, nonatomic) HUCharacteristicEventOptionProvider *programmableSwitchOptionsProvider; // @synthesize programmableSwitchOptionsProvider=_programmableSwitchOptionsProvider;
 

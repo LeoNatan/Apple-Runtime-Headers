@@ -14,9 +14,9 @@
     WLKSiriSearchResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKSiriSearchResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSDictionary *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)processResponse;
 - (id)initWithQuery:(id)arg1 caller:(id)arg2;
 

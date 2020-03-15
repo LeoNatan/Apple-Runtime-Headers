@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)semanticDateWithKeyPath:(id)arg1 date:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

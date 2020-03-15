@@ -16,10 +16,10 @@
 }
 
 + (id)numberFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *numberLabelBackground; // @synthesize numberLabelBackground=_numberLabelBackground;
 @property(nonatomic) unsigned long long number; // @synthesize number=_number;
 @property(retain, nonatomic) UILabel *numberLabel; // @synthesize numberLabel=_numberLabel;
-- (void).cxx_destruct;
 - (void)_setUpConstraints;
 - (void)_setUpUI;
 - (void)setTintColor:(id)arg1;

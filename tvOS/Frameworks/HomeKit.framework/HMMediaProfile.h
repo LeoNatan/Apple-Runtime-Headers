@@ -16,14 +16,17 @@
 @interface HMMediaProfile : HMAccessoryProfile <_HMMediaProfileDelegate, HMMediaObject, HMAccessorySettingsContainer>
 {
     NSString *_routeUID;
+    unsigned long long _capability;
     id <HMMediaProfileDelegate> _delegate;
 }
 
-@property __weak id <HMMediaProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <HMMediaProfileDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)mediaProfile:(id)arg1 didUpdateMediaSession:(id)arg2;
 @property(readonly) __weak HMHome *containerHome;
+- (void)setCapability:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long capability; // @synthesize capability=_capability;
 @property(readonly, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
 @property(readonly, copy) HMMediaSession *mediaSession;
 @property(readonly) HMAccessorySettings *settings;

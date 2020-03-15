@@ -16,11 +16,11 @@
     UIColor *_barOtherDataColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *barOtherDataColor; // @synthesize barOtherDataColor=_barOtherDataColor;
 @property(retain, nonatomic) UIColor *barSeparatorColor; // @synthesize barSeparatorColor=_barSeparatorColor;
 @property(retain, nonatomic) UIColor *barBackgroundColor; // @synthesize barBackgroundColor=_barBackgroundColor;
 @property(retain, nonatomic) PSCapacityBarData *barData; // @synthesize barData=_barData;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)bezierPathWithLineFrom:(struct CGPoint)arg1 to:(struct CGPoint)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

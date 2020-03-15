@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _port;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long port; // @synthesize port=_port;
 @property(copy, nonatomic) NSString *host; // @synthesize host=_host;
 @property(copy, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

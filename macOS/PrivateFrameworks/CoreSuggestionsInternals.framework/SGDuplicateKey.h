@@ -34,10 +34,10 @@
 + (id)duplicateKeyForTextMessageWithSource:(id)arg1 uniqueIdentifier:(id)arg2;
 + (id)duplicateKeyForEmailWithSource:(id)arg1 messageId:(id)arg2;
 + (id)duplicateKeyForMessage:(id)arg1 fromSource:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGDuplicateKey *parentKey; // @synthesize parentKey=_parentKey;
 @property(readonly, nonatomic) NSObject<SGEntityKey> *entityKey; // @synthesize entityKey=_entityKey;
 @property(readonly, nonatomic) long long entityType; // @synthesize entityType=_entityType;
-- (void).cxx_destruct;
 - (id)bundleId;
 @property(readonly, nonatomic) NSData *compositeHash;
 - (id)pseudoReminderKey;

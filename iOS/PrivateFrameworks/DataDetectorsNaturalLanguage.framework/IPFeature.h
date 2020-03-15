@@ -16,11 +16,11 @@
     struct _NSRange _matchRange;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *textUnit; // @synthesize textUnit=_textUnit;
 @property struct _NSRange matchRange; // @synthesize matchRange=_matchRange;
 @property double weight; // @synthesize weight=_weight;
 @property double confidence; // @synthesize confidence=_confidence;
-- (void).cxx_destruct;
 - (_Bool)isMatchStringInsideQuotationMarks;
 - (id)description;
 - (id)matchString;

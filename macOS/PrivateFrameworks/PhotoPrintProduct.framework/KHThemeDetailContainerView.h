@@ -16,10 +16,10 @@
     NSButton *_similarThemesButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSButton *similarThemesButton; // @synthesize similarThemesButton=_similarThemesButton;
 @property(readonly, nonatomic) NSButton *closeButton; // @synthesize closeButton=_closeButton;
 @property(readonly, nonatomic) UXView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (struct CGSize)intrinsicContentSize;
 - (void)commonInit;

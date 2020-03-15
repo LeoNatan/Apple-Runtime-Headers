@@ -25,11 +25,11 @@
 + (void)_setupEvaluationObjectsByName:(id)arg1 hierarchyServicer:(id)arg2;
 + (id)_retrieveFPItemHierarchyLookupForItem:(id)arg1 itemsHierarchyCache:(id)arg2 hierarchyServicer:(id)arg3;
 + (id)interactionFromDictionary:(id)arg1 localizationLookup:(id)arg2 providerIdentifier:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(retain, nonatomic) NSArray *subInteractions; // @synthesize subInteractions=_subInteractions;
 @property(retain, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
 @property(retain, nonatomic) FPPreflightUserInteractionAlert *alert; // @synthesize alert=_alert;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_evaluateWithObjectsByName:(id)arg1 sourceItems:(id)arg2 sourceItemsLookups:(id)arg3 errorIndex:(unsigned long long *)arg4;
 - (id)evaluateWithObjectsByName:(id)arg1;

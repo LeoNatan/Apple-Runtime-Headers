@@ -28,10 +28,10 @@
 + (id)sharedInstance;
 + (unsigned int)defaultLoadOptions;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *searchPhrase; // @synthesize searchPhrase=_searchPhrase;
 @property(retain) MFMessageCriterion *criterion; // @synthesize criterion=_criterion;
 @property(copy) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (BOOL)hasCacheFileForMessage:(id)arg1;
 - (BOOL)messageHasBeenDeleted:(id)arg1;
 - (id)attachmentsDirectoryForMessage:(id)arg1 partNumber:(id)arg2;

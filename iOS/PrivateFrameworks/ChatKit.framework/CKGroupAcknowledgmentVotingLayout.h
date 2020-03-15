@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _fromContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint fromContentOffset; // @synthesize fromContentOffset=_fromContentOffset;
 @property(nonatomic) struct CGSize fromContentSize; // @synthesize fromContentSize=_fromContentSize;
 @property(retain, nonatomic) NSArray *fromBallotItems; // @synthesize fromBallotItems=_fromBallotItems;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint previousCollapsedContentOffset; // @synthesize previousCollapsedContentOffset=_previousCollapsedContentOffset;
 @property(nonatomic) long long expandedSection; // @synthesize expandedSection=_expandedSection;
 @property(nonatomic) unsigned long long layoutMode; // @synthesize layoutMode=_layoutMode;
-- (void).cxx_destruct;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)finalLayoutAttributesForDisappearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initialLayoutAttributesForAppearingSupplementaryElementOfKind:(id)arg1 atIndexPath:(id)arg2;

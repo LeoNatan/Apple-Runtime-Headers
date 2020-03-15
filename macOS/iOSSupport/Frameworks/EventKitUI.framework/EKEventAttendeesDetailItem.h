@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSArray *_attendees;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attendees; // @synthesize attendees=_attendees;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)eventDetailAttendeeCellWantsRefreshForHeightChange;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (BOOL)hasDetailViewControllerAtIndex:(unsigned long long)arg1;

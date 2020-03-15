@@ -11,7 +11,7 @@
 @interface MTAlarmManager : NSObject
 {
     MTAlarmManagerExportedObject *_exportedObject;
-    struct MTXPCConnectionProvider *_connectionProvider;
+    MTXPCConnectionProvider *_connectionProvider;
     MTMetrics *_metrics;
     MTAlarmCache *_cache;
     NSNotificationCenter *_notificationCenter;
@@ -20,12 +20,12 @@
 + (id)_filteredAlarms:(id)arg1 afterDate:(id)arg2 maxCount:(unsigned int)arg3 filter:(CDUnknownBlockType)arg4;
 + (id)assistantSyncNotificationName;
 + (void)warmUp;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) MTAlarmCache *cache; // @synthesize cache=_cache;
 @property(retain, nonatomic) MTMetrics *metrics; // @synthesize metrics=_metrics;
 @property(readonly, nonatomic) MTXPCConnectionProvider *connectionProvider; // @synthesize connectionProvider=_connectionProvider;
 @property(retain, nonatomic) MTAlarmManagerExportedObject *exportedObject; // @synthesize exportedObject=_exportedObject;
-- (void).cxx_destruct;
 - (id)dismissAlarmWithIdentifier:(id)arg1 dismissAction:(unsigned int)arg2;
 - (id)dismissAlarmWithIdentifier:(id)arg1;
 - (id)snoozeAlarmWithIdentifier:(id)arg1 snoozeAction:(unsigned int)arg2;

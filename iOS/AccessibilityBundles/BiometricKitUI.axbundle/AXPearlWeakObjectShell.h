@@ -11,8 +11,8 @@
     id _weakObjectReference;
 }
 
-@property(nonatomic) __weak id weakObjectReference; // @synthesize weakObjectReference=_weakObjectReference;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id weakObjectReference; // @synthesize weakObjectReference=_weakObjectReference;
 
 @end
 

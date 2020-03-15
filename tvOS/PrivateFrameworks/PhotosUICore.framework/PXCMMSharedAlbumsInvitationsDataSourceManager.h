@@ -21,9 +21,9 @@
 }
 
 + (id)mockDataSourceManagerFromCMMDebugSharedAlbums;
+- (void).cxx_destruct;
 @property(retain) NSMutableOrderedSet *_remainingSharedAlbumObjectIDsToFetch; // @synthesize _remainingSharedAlbumObjectIDsToFetch=__remainingSharedAlbumObjectIDsToFetch;
 @property(retain, nonatomic) PXCMMSharedAlbumsInvitationsDataSourceState *_state; // @synthesize _state=__state;
-- (void).cxx_destruct;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (void)_handleFinishedFetchingBatch:(id)arg1 preparedChangeDetails:(id)arg2 forFetchResult:(id)arg3;

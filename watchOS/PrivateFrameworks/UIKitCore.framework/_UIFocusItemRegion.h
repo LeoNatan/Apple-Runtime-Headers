@@ -15,8 +15,8 @@
     id <UIFocusItem> _item;
 }
 
-@property(readonly, nonatomic) __weak id <UIFocusItem> item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <UIFocusItem> item; // @synthesize item=_item;
 - (void)_drawDebugQuickLookImageWithInfo:(id)arg1 inContext:(struct CGContext *)arg2;
 - (_Bool)_shouldDrawDebugQuickLookImageWithInfo:(id)arg1;
 - (int)_visualRepresentationPatternType;

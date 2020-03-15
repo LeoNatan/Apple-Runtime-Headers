@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithResources:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -17,10 +17,10 @@
 }
 
 + (void)finishFutures:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(readonly, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(readonly, nonatomic) id <CardDAVDelegateInfoProvider> delegateProvider; // @synthesize delegateProvider=_delegateProvider;
-- (void).cxx_destruct;
 - (id)removeAccount:(id)arg1;
 - (id)saveAccount:(id)arg1;
 - (id)addChildWithDelegateInfo:(id)arg1;

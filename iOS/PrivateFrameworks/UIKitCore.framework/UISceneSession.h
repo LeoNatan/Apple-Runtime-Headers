@@ -33,10 +33,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)canvasRepresentationForSystemType:(long long)arg1;
 + (id)defaultCanvasRepresentation;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(readonly, nonatomic) NSString *role; // @synthesize role=_role;
 @property(readonly, nonatomic) __weak UIScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_copyWithoutUserInfo;

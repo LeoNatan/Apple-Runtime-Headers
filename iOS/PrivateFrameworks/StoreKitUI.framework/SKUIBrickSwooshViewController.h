@@ -23,8 +23,8 @@
     SKUISwooshView *_swooshView;
 }
 
-@property(copy, nonatomic) NSArray *bricks; // @synthesize bricks=_bricks;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *bricks; // @synthesize bricks=_bricks;
 - (CDStruct_0a66a153)_brickSwooshMetrics;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;

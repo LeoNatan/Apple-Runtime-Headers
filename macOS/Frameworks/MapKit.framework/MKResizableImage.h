@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSImage *bottomRightCorner;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *bottomRightCorner; // @synthesize bottomRightCorner;
 @property(retain, nonatomic) NSImage *bottomEdgeFill; // @synthesize bottomEdgeFill;
 @property(retain, nonatomic) NSImage *bottomLeftCorner; // @synthesize bottomLeftCorner;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSImage *topRightCorner; // @synthesize topRightCorner;
 @property(retain, nonatomic) NSImage *topEdgeFill; // @synthesize topEdgeFill;
 @property(retain, nonatomic) NSImage *topLeftCorner; // @synthesize topLeftCorner;
-- (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4 respectFlipped:(BOOL)arg5 hints:(id)arg6;
 - (void)drawInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;
 - (void)drawInRect:(struct CGRect)arg1;

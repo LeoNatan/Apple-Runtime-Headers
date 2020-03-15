@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _filter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) HMBLocalSQLQueryTableQueryAll *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)fetchRowFromStatement:(struct sqlite3_stmt *)arg1 skip:(char *)arg2 updatedSequence:(unsigned long long *)arg3 error:(id *)arg4;
 - (id)initWithLocalZone:(id)arg1 statement:(id)arg2 columns:(id)arg3 filter:(CDUnknownBlockType)arg4;
 

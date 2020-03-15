@@ -17,10 +17,10 @@
     ECMessageFlagChange *_flagChange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ECMessageFlagChange *flagChange; // @synthesize flagChange=_flagChange;
 @property(copy, nonatomic) NSArray *messages; // @synthesize messages=_messages;
 @property(copy, nonatomic) NSSet *remoteIDs; // @synthesize remoteIDs=_remoteIDs;
-- (void).cxx_destruct;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;
 
 // Remaining properties

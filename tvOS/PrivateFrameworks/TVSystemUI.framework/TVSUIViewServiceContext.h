@@ -18,11 +18,11 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSDictionary *extensionAttributes; // @synthesize extensionAttributes=_extensionAttributes;
 @property(readonly, nonatomic) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
 @property(readonly, nonatomic) NSString *extensionBundleIdentifer; // @synthesize extensionBundleIdentifer=_extensionBundleIdentifer;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

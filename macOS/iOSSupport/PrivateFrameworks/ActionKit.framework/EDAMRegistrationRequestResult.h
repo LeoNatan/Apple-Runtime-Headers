@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSNumber *result; // @synthesize result=_result;
 @property(retain, nonatomic) NSString *userEmail; // @synthesize userEmail=_userEmail;
 @property(retain, nonatomic) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
-- (void).cxx_destruct;
 
 @end
 

@@ -24,10 +24,10 @@
 + (id)uniqueStringsForHostname:(id)arg1;
 + (BOOL)accountIsDuplicate:(id)arg1 inStore:(id)arg2;
 + (id)defaultProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(nonatomic) BOOL runningUnitTests; // @synthesize runningUnitTests=_runningUnitTests;
 @property(retain, nonatomic) NSMutableArray *accountsWhenRunningUnitTests; // @synthesize accountsWhenRunningUnitTests=_accountsWhenRunningUnitTests;
-- (void).cxx_destruct;
 - (id)_supportedDataclassesForMainBundleID;
 - (id)_mainBundleID;
 - (BOOL)_bundleIDSupportsDataclassReminders:(id)arg1;

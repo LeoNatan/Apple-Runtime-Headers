@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     NSArray *_wifiCallingSpecifiers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *wifiCallingSpecifiers; // @synthesize wifiCallingSpecifiers=_wifiCallingSpecifiers;
 @property(nonatomic) __weak PSSpecifier *parentSpecifier; // @synthesize parentSpecifier=_parentSpecifier;
 @property(nonatomic) __weak PSListController *listController; // @synthesize listController=_listController;
-- (void).cxx_destruct;
 - (id)specifiers;
 - (void)viewWillAppear;
 - (id)initWithListController:(id)arg1 groupSpecifier:(id)arg2;

@@ -17,11 +17,11 @@
     NSMutableDictionary *_transitions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *transitions; // @synthesize transitions=_transitions;
 @property(nonatomic) int initialState; // @synthesize initialState=_initialState;
 @property(readonly, nonatomic) int currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) __weak id <CSStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)performTransitionForEvent:(int)arg1;
 - (void)addTransitionFrom:(int)arg1 to:(int)arg2 for:(int)arg3;
 - (void)reset;

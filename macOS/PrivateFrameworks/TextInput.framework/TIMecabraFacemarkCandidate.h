@@ -16,8 +16,8 @@
 + (int)type;
 + (id)candidateWithCandidate:(id)arg1 category:(id)arg2 input:(id)arg3 mecabraCandidatePointerValue:(id)arg4;
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (id)description;

@@ -19,15 +19,15 @@
 + (id)supportedVideoFormats;
 + (id)new;
 + (_Bool)isSupported;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVIOFusionEnabled) _Bool vioFusionEnabled; // @synthesize vioFusionEnabled=_vioFusionEnabled;
 @property(nonatomic, getter=isRelocalizationEnabled) _Bool relocalizationEnabled; // @synthesize relocalizationEnabled=_relocalizationEnabled;
 @property(retain, nonatomic) ARWorldMap *initialWorldMap; // @synthesize initialWorldMap=_initialWorldMap;
 @property(nonatomic) unsigned long long planeDetection; // @synthesize planeDetection=_planeDetection;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (void)createTechniques:(id)arg1;
 - (id)worldTrackingOptions;
 - (id)imageSensorSettings;
 - (id)init;

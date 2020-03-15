@@ -17,8 +17,8 @@
     id <PXZoomAnimationObserverCoordinatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PXZoomAnimationObserverCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXZoomAnimationObserverCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)animateContentForEndPointType:(long long)arg1 withZoomAnimationContext:(id)arg2;
 
 @end

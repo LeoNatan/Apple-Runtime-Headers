@@ -22,8 +22,8 @@
 
 + (id)serviceForClientIdentifier:(id)arg1;
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void)_handleLostXPCConnectionWithRetry:(_Bool)arg1;
 - (_Bool)_queue_registerForSettingsUpdatesIfRequired;
 - (void)remoteService:(id)arg1 didReceiveUpdatedScheduleSettings:(id)arg2;

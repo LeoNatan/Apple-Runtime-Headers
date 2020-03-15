@@ -22,6 +22,7 @@
 + (void)initialize;
 + (id)getCoreDuetValues;
 + (void)fetchDuetValues;
+- (void).cxx_destruct;
 @property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property BOOL isInternalDevice; // @synthesize isInternalDevice=_isInternalDevice;
 @property(retain) NSSet *allowedTopHitSections; // @synthesize allowedTopHitSections=_allowedTopHitSections;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSDictionary *groupedResults; // @synthesize groupedResults=_groupedResults;
 @property(retain) NSMutableString *logValues; // @synthesize logValues=_logValues;
 @property(retain, nonatomic) PRSRankingConfiguration *rankingConfiguration; // @synthesize rankingConfiguration=_rankingConfiguration;
-- (void).cxx_destruct;
 - (void)updateServerScoresUsingBlockOrder:(id)arg1 bundleFeatures:(id)arg2;
 - (id)applyTopSectionPolicy:(id)arg1 withTopHitSection:(id)arg2 isPeopleSearch:(BOOL)arg3 triggerEvent:(unsigned long long)arg4 correction:(id)arg5;
 - (void)refineSectionShowingVisibleResultsWithBetterTextMatches:(id)arg1;

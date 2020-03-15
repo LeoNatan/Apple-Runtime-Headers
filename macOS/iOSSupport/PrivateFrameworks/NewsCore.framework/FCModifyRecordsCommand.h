@@ -17,10 +17,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)desiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL merge; // @synthesize merge=_merge;
 @property(copy, nonatomic) NSArray *localRecords; // @synthesize localRecords=_localRecords;
 @property(copy, nonatomic) CDUnknownBlockType localRecordsGenerator; // @synthesize localRecordsGenerator=_localRecordsGenerator;
-- (void).cxx_destruct;
 - (void)handleBatchOfLocalRecords:(id)arg1 internalPrivateDataContext:(id)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)handleLocalRecordsFromStream:(id)arg1 internalPrivateDataContext:(id)arg2 delegate:(id)arg3 qualityOfService:(long long)arg4;
 - (void)coalesceWithCommand:(id)arg1;

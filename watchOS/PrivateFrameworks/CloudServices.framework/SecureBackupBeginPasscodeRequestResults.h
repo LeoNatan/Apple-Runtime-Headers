@@ -20,16 +20,16 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly) NSString *dsid; // @synthesize dsid=_dsid;
 @property(readonly) NSData *cert; // @synthesize cert=_cert;
 @property(readonly) NSString *escrowFederation; // @synthesize escrowFederation=_escrowFederation;
 @property(readonly) NSString *iCloudEnvironment; // @synthesize iCloudEnvironment=_iCloudEnvironment;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithiCloudEnvironment:(id)arg1 escrowFederation:(id)arg2 escrowResponse:(id)arg3 uuid:(id)arg4;
+- (id)initWithStoredCertificate:(id)arg1 uuid:(id)arg2;
 
 @end
 

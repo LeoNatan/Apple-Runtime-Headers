@@ -20,6 +20,7 @@
     NSString *_encryptionVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *encryptionVersion; // @synthesize encryptionVersion=_encryptionVersion;
 @property(readonly, copy, nonatomic) NSArray *encryptionCertificates; // @synthesize encryptionCertificates=_encryptionCertificates;
 @property(readonly, copy, nonatomic) NSString *coreIDVTier; // @synthesize coreIDVTier=_coreIDVTier;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 @property(readonly, nonatomic) unsigned long long contextType; // @synthesize contextType=_contextType;
 @property(copy, nonatomic) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
-- (void).cxx_destruct;
 - (void)_handleCertificates:(id)arg1;
 - (id)initWithJSONObject:(id)arg1 featureApplication:(id)arg2;
 

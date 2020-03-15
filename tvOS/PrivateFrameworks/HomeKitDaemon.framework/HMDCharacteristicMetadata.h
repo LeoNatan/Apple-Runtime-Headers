@@ -7,11 +7,12 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMFDumpState-Protocol.h>
+#import <HomeKitDaemon/NSCopying-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSNumber, NSString;
 
-@interface HMDCharacteristicMetadata : HMFObject <NSSecureCoding, HMFDumpState>
+@interface HMDCharacteristicMetadata : HMFObject <NSSecureCoding, NSCopying, HMFDumpState>
 {
     NSNumber *_minimumValue;
     NSNumber *_maximumValue;
@@ -24,8 +25,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (_Bool)isValidMetadata:(id)arg1;
-@property(copy, nonatomic) NSArray *validValues; // @synthesize validValues=_validValues;
++ (id)characteristicMetadataWithDictionary:(id)arg1;
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *validValues; // @synthesize validValues=_validValues;
 @property(readonly, copy, nonatomic) NSString *manufacturerDescription; // @synthesize manufacturerDescription=_manufacturerDescription;
 @property(readonly, copy, nonatomic) NSString *units; // @synthesize units=_units;
 @property(readonly, copy, nonatomic) NSString *format; // @synthesize format=_format;
@@ -33,19 +35,20 @@
 @property(readonly, nonatomic) NSNumber *stepValue; // @synthesize stepValue=_stepValue;
 @property(readonly, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(readonly, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)getMetadataDictionary;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (id)dictionaryRepresentation;
 - (id)_descriptionDetails;
 - (id)dumpState;
 @property(readonly, copy) NSString *description;
-- (id)initWithCharacteristicMetadata:(id)arg1;
-- (_Bool)configureWithCharacteristicMetadata:(id)arg1;
+- (id)initWithMinimumValue:(id)arg1 maximumValue:(id)arg2 stepValue:(id)arg3 maxLength:(id)arg4 validValues:(id)arg5 format:(id)arg6 units:(id)arg7 manufacturerDescription:(id)arg8;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

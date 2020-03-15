@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (id)stopPictureInPictureButtonImageName;
 + (id)startPictureInPictureButtonImageName;
 + (_Bool)isPictureInPictureSupported;
+- (void).cxx_destruct;
 @property(nonatomic) long long statusStorage; // @synthesize statusStorage=_statusStorage;
 @property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(readonly, nonatomic) __weak id <AVPictureInPictureContentSource> source; // @synthesize source=_source;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
 @property(nonatomic) __weak id <AVPictureInPicturePlatformAdapterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateLayoutDependentBehaviors;
 - (void)stopPictureInPictureAndRestoreUserInterface:(_Bool)arg1;
 - (void)startPictureInPicture;

@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     BOOL _usesPrivateBrowsing;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesPrivateBrowsing; // @synthesize usesPrivateBrowsing=_usesPrivateBrowsing;
 @property(nonatomic) BOOL hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
-- (void).cxx_destruct;
 - (void)willReuseItem:(id)arg1;
 - (void)didPerformContextMenuShowingEventForItem:(id)arg1 withEvent:(id)arg2;
 - (void)didSelectItem:(id)arg1 withEvent:(id)arg2;

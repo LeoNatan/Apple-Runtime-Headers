@@ -18,13 +18,13 @@
     FCCKPrivateDatabaseServerChangeToken *_resultServerChangeToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL resultMoreComing; // @synthesize resultMoreComing=_resultMoreComing;
 @property(retain, nonatomic) FCCKPrivateDatabaseServerChangeToken *resultServerChangeToken; // @synthesize resultServerChangeToken=_resultServerChangeToken;
 @property(retain, nonatomic) NSArray *resultDeletedZoneIDs; // @synthesize resultDeletedZoneIDs=_resultDeletedZoneIDs;
 @property(retain, nonatomic) NSArray *resultChangedZoneIDs; // @synthesize resultChangedZoneIDs=_resultChangedZoneIDs;
 @property(copy, nonatomic) CDUnknownBlockType fetchDatabaseChangesCompletionBlock; // @synthesize fetchDatabaseChangesCompletionBlock=_fetchDatabaseChangesCompletionBlock;
 @property(copy, nonatomic) FCCKPrivateDatabaseServerChangeToken *previousServerChangeToken; // @synthesize previousServerChangeToken=_previousServerChangeToken;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

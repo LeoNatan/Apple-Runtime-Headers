@@ -19,6 +19,7 @@
     NSDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly, nonatomic) NSArray *initializationParameters; // @synthesize initializationParameters=_initializationParameters;
 @property(readonly, nonatomic) __weak IKJSRWIDependencyDomain *domain; // @synthesize domain=_domain;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) NSString *domainType; // @synthesize domainType=_domainType;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)typeImplementationStringWithSoftLinking:(_Bool)arg1;
 - (id)typeInterfaceString;
 - (_Bool)isValidWithError:(id *)arg1;

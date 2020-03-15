@@ -18,11 +18,12 @@
     id <CNSchedulerProvider> _schedulerProvider;
 }
 
++ (id)proposedContactsFromFamilyInfo:(id)arg1;
 + (id)modelWithProposedContactsFromFamilyInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUICoreFamilyInfoFetching> familyInfoFetcher; // @synthesize familyInfoFetcher=_familyInfoFetcher;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsModelFetching> modelFetcher; // @synthesize modelFetcher=_modelFetcher;
-- (void).cxx_destruct;
 - (id)whitelistedContactsModel;
 - (id)allContactsModel;
 - (id)initWithModelFetcher:(id)arg1 familyInfoFetcher:(id)arg2 schedulerProvider:(id)arg3;

@@ -19,10 +19,11 @@
     CDUnknownBlockType _completionHandler;
     NSDictionary *_headerFields;
     SFSession *_session;
-    struct NSSet *_deviceIDs;
+    NSSet *_deviceIDs;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *deviceIDs; // @synthesize deviceIDs=_deviceIDs;
 @property(retain, nonatomic) SFSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool expectsResponse; // @synthesize expectsResponse=_expectsResponse;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

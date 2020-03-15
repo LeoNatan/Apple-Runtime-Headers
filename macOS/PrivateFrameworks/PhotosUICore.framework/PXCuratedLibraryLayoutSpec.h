@@ -28,6 +28,7 @@
     double _spacingBetweenHeaderLastBaselineAndAllPhotosTop;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL allowsSlideshowInYears; // @synthesize allowsSlideshowInYears=_allowsSlideshowInYears;
 @property(readonly, nonatomic) BOOL allowsPaginatedScrollingInYearsAndMonths; // @synthesize allowsPaginatedScrollingInYearsAndMonths=_allowsPaginatedScrollingInYearsAndMonths;
 @property(readonly, nonatomic) double spacingBetweenHeaderLastBaselineAndAllPhotosTop; // @synthesize spacingBetweenHeaderLastBaselineAndAllPhotosTop=_spacingBetweenHeaderLastBaselineAndAllPhotosTop;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) PXCuratedLibrarySectionHeaderLayoutSpec *allPhotosFloatingHeaderSpec; // @synthesize allPhotosFloatingHeaderSpec=_allPhotosFloatingHeaderSpec;
 @property(readonly, nonatomic) PXCuratedLibrarySectionHeaderLayoutSpec *daysTopHeaderSpec; // @synthesize daysTopHeaderSpec=_daysTopHeaderSpec;
 @property(readonly, nonatomic) long long axis; // @synthesize axis=_axis;
-- (void).cxx_destruct;
 - (double)defaultInterlayoutSpacingForZoomLevel:(long long)arg1;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2 availableThumbnailSizes:(id)arg3;

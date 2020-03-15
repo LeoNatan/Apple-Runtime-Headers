@@ -19,12 +19,12 @@
     MFModernAtomView *_hostAtomView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(readonly, nonatomic) UIView *selectedView; // @synthesize selectedView=_selectedView;
 @property(nonatomic) __weak MFModernAtomView *hostAtomView; // @synthesize hostAtomView=_hostAtomView;
 @property(readonly, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
-- (void).cxx_destruct;
 - (void)invalidateIntrinsicContentSize;
 - (id)_chevronImage;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 style:(unsigned long long)arg3;

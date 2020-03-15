@@ -17,12 +17,12 @@
     unsigned long long _threadID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(readonly, nonatomic) unsigned long long threadID; // @synthesize threadID=_threadID;
 @property(readonly, nonatomic) unsigned int transactionSeed; // @synthesize transactionSeed=_transactionSeed;
-- (void).cxx_destruct;
 - (id)initWithCommitInterval:(id)arg1;
 
 @end

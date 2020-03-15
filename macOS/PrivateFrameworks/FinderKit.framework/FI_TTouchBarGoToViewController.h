@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _Bool tornDown;
 }
 
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (void)reload;
 @property(nonatomic) __weak NSObject<TTouchBarGoToViewDelegate> *delegate; // @dynamic delegate;
 - (void)aboutToTearDown;

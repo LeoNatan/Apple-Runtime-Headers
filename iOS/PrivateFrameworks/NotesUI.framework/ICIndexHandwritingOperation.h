@@ -15,9 +15,9 @@
 }
 
 + (id)sharedOperationQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) NSManagedObjectID *attachmentObjectID; // @synthesize attachmentObjectID=_attachmentObjectID;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithAttachmentObjectID:(id)arg1 context:(id)arg2;
 

@@ -30,6 +30,7 @@
     UIBarButtonItem *_deleteButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) UIBarButtonItem *saveButton; // @synthesize saveButton=_saveButton;
 @property(retain, nonatomic) UIBarButtonItem *flexibleItem; // @synthesize flexibleItem=_flexibleItem;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSArray *chatGUIDs; // @synthesize chatGUIDs=_chatGUIDs;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKDetailsSearchControllerDelegate> detailsDelegate; // @synthesize detailsDelegate=_detailsDelegate;
-- (void).cxx_destruct;
 - (id)_searchControllerForIndexPath:(id)arg1;
 - (void)_deleteAttachmentsAtIndexPaths:(id)arg1;
 - (void)_deleteSelectedAttachments:(id)arg1;

@@ -18,8 +18,8 @@
     AVAudioPlayer *_player;
 }
 
-@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
 - (void)cleanupAudioSession;
 - (BOOL)setupAudioSession;

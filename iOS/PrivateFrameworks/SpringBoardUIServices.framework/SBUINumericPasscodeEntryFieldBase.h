@@ -17,10 +17,10 @@
 }
 
 + (_Bool)_shouldResetAutoAcceptWhenMaxNumbersMetInResignFirstResponder;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool autoAcceptWhenMaxNumbersMet; // @synthesize autoAcceptWhenMaxNumbersMet=_autoAcceptWhenMaxNumbersMet;
 @property(nonatomic) unsigned long long maxNumbersAllowed; // @synthesize maxNumbersAllowed=_maxNumbersAllowed;
 @property(nonatomic) _Bool allowsNewlineAcceptance; // @synthesize allowsNewlineAcceptance=_allowsNewlineAcceptance;
-- (void).cxx_destruct;
 - (_Bool)_hasMaxDigitsSpecified;
 - (void)_reallyAppendString:(id)arg1;
 - (void)_appendString:(id)arg1;

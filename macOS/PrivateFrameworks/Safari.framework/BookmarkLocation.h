@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _childIndex;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long childIndex; // @synthesize childIndex=_childIndex;
 @property(copy) NSString *parentUUID; // @synthesize parentUUID=_parentUUID;
-- (void).cxx_destruct;
 
 @end
 

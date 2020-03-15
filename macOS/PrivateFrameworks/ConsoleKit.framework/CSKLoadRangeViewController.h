@@ -35,6 +35,7 @@
     unsigned long long _toOptionsEnum;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long toOptionsEnum; // @synthesize toOptionsEnum=_toOptionsEnum;
 @property(nonatomic) unsigned long long fromOptionsEnum; // @synthesize fromOptionsEnum=_fromOptionsEnum;
 @property(nonatomic) __weak CSKStreamSource *source; // @synthesize source=_source;
@@ -56,7 +57,6 @@
 @property(nonatomic) __weak NSDatePicker *fromTimeDatePicker; // @synthesize fromTimeDatePicker=_fromTimeDatePicker;
 @property(nonatomic) __weak NSPopUpButton *fromDayPopupButton; // @synthesize fromDayPopupButton=_fromDayPopupButton;
 @property(nonatomic) __weak NSPopUpButton *fromOptionsPopupButton; // @synthesize fromOptionsPopupButton=_fromOptionsPopupButton;
-- (void).cxx_destruct;
 - (id)_loadRangeValueItems;
 - (id)_dateUsingDay:(id)arg1 andTime:(id)arg2;
 - (void)populateTimePicker;

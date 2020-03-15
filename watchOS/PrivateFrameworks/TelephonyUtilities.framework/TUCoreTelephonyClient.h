@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 + (id)sharedRTTTelephonyUtilities;
 + (Class)RTTTelephonyUtilitiesClass;
 + (Class)RTTSettingsClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CoreTelephonyClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)subscriptionForUUID:(id)arg1;
 - (id)initWithQueue:(id)arg1;
 - (id)init;

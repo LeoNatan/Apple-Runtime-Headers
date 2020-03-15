@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     CKDFetchZoneChangesRequestOperationResult *_savedResult;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clientIsUsingLegacyCKFetchRecordChangesOperationAPI; // @synthesize clientIsUsingLegacyCKFetchRecordChangesOperationAPI=_clientIsUsingLegacyCKFetchRecordChangesOperationAPI;
 @property(retain, nonatomic) CKDFetchZoneChangesRequestOperationResult *savedResult; // @synthesize savedResult=_savedResult;
 @property(nonatomic) long long changeTypes; // @synthesize changeTypes=_changeTypes;
 @property(copy, nonatomic) CDUnknownBlockType serverChangeTokenUpdatedBlock; // @synthesize serverChangeTokenUpdatedBlock=_serverChangeTokenUpdatedBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordChangedBlock; // @synthesize recordChangedBlock=_recordChangedBlock;
-- (void).cxx_destruct;
 - (id)analyticsPayload;
 - (void)fillOutOperationResult:(id)arg1;
 - (Class)operationResultClass;

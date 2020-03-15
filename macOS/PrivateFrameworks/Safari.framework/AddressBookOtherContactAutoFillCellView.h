@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)sizeWithContactName:(id)arg1;
-@property(copy, nonatomic) NSString *contactName; // @synthesize contactName=_contactName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *contactName; // @synthesize contactName=_contactName;
 - (void)awakeFromNib;
 
 @end

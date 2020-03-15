@@ -16,10 +16,10 @@
     NSString *_sender;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) MFCertificateTrustInfo *encryptionCertificateTrustInfo; // @synthesize encryptionCertificateTrustInfo=_encryptionCertificateTrustInfo;
 @property(readonly, nonatomic) MFCertificateTrustInfo *signingCertificateTrustInfo; // @synthesize signingCertificateTrustInfo=_signingCertificateTrustInfo;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MFError *error;
 - (id)initWithSender:(id)arg1 signingTrust:(struct __SecTrust *)arg2 encryptionTrust:(struct __SecTrust *)arg3 verification:(int)arg4;
 

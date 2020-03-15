@@ -15,10 +15,10 @@
     NSUUID *_syncIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inProgress; // @synthesize inProgress=_inProgress;
 @property(readonly, copy, nonatomic) NSUUID *syncIdentifier; // @synthesize syncIdentifier=_syncIdentifier;
 @property(nonatomic) unsigned int syncOption; // @synthesize syncOption=_syncOption;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSyncOption:(unsigned int)arg1;
 

@@ -30,10 +30,10 @@ __attribute__((visibility("hidden")))
     BOOL _useModalCollapsedLayout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSView *nonVibrantContentView; // @synthesize nonVibrantContentView=_nonVibrantContentView;
 @property(readonly, nonatomic) NSView *vibrantContentView; // @synthesize vibrantContentView=_vibrantContentView;
 @property(readonly, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_removeVisualEffectViewForFullScreenToolbarWindow;
 - (void)_addVisualEffectViewForFullScreenToolbarWindow;
 - (void)_unregisterBackgroundHighlightLayer:(id)arg1;

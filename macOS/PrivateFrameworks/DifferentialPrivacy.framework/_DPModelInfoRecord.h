@@ -23,12 +23,12 @@
 + (id)entityName;
 + (id)createRecordFromManagedObject:(id)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSManagedObjectID *objectId; // @synthesize objectId=_objectId;
 @property(nonatomic) BOOL submitted; // @synthesize submitted=_submitted;
 @property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) short minorVersion; // @synthesize minorVersion=_minorVersion;
 @property(nonatomic) short majorVersion; // @synthesize majorVersion=_majorVersion;
-- (void).cxx_destruct;
 - (BOOL)copyFromManagedObject:(id)arg1;
 - (BOOL)copyToManagedObject:(id)arg1;
 - (id)entityName;

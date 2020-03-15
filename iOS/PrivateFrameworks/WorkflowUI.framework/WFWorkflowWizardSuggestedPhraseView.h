@@ -16,10 +16,10 @@
     UILabel *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *label; // @synthesize label=_label;
 @property(readonly, copy, nonatomic) NSString *suggestedPhrase; // @synthesize suggestedPhrase=_suggestedPhrase;
 @property(nonatomic) __weak id <WFWorkflowWizardSuggestedPhraseViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)fadeOutHighlight;
 - (void)unhighlight;
 - (void)highlight;

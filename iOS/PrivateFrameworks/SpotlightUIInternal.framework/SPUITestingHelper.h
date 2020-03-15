@@ -17,11 +17,11 @@
 }
 
 + (id)indexPathsOfRowsForSectionTitle:(id)arg1 needsCard:(_Bool)arg2 forTableModel:(id)arg3;
+- (void).cxx_destruct;
 @property _Bool finishedTableUpdate; // @synthesize finishedTableUpdate=_finishedTableUpdate;
 @property _Bool finishedKeyboardLaunch; // @synthesize finishedKeyboardLaunch=_finishedKeyboardLaunch;
 @property(retain) SPUIPPTTypingHelper *typingHelper; // @synthesize typingHelper=_typingHelper;
 @property(retain) SPUISearchViewController *searchViewController; // @synthesize searchViewController=_searchViewController;
-- (void).cxx_destruct;
 - (void)setDefaultsForSearchVC;
 - (void)searchForString:(id)arg1 testName:(id)arg2 event:(unsigned long long)arg3 sourcePreference:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)searchManyStringsForTestName:(id)arg1 options:(id)arg2 event:(unsigned long long)arg3 sourcePreference:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;

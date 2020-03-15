@@ -18,13 +18,13 @@
     PKPass *_pass;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(retain, nonatomic) NSImage *baseImage; // @synthesize baseImage=_baseImage;
 @property(retain, nonatomic) NSAttributedString *baseString; // @synthesize baseString=_baseString;
 @property(nonatomic) BOOL isAudioMessage; // @synthesize isAudioMessage=_isAudioMessage;
 @property(nonatomic) BOOL isMovie; // @synthesize isMovie=_isMovie;
 @property(getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
-- (void).cxx_destruct;
 - (struct CGSize)cellSize;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)setAudioMessageImage:(id)arg1;

@@ -30,7 +30,6 @@
     unsigned short _type;
     NSError *_unavailabilityReason;
     NSObject<OS_dispatch_queue> *_queue;
-    NSString *_libraryID;
     PLPhotoLibrary *_transactionPhotoLibrary;
     NSObject<OS_dispatch_queue> *_transactionQueue;
     PHPerformChangesRequest *_request;
@@ -84,6 +83,7 @@
 + (_Bool)hasSharedPhotoLibrary;
 + (void)assertRunningInExtension;
 + (_Bool)shouldDisplayMergeCandidates:(id)arg1 forPerson:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PAVideoConversionServiceClient *videoConversionServiceClient; // @synthesize videoConversionServiceClient=_videoConversionServiceClient;
 @property(retain, nonatomic) PAImageConversionServiceClient *imageConversionServiceClient; // @synthesize imageConversionServiceClient=_imageConversionServiceClient;
 @property(nonatomic) _Bool clearsOIDCacheAfterFetchResultDealloc; // @synthesize clearsOIDCacheAfterFetchResultDealloc=_clearsOIDCacheAfterFetchResultDealloc;
@@ -103,11 +103,9 @@
 @property(retain, nonatomic) PHPerformChangesRequest *request; // @synthesize request=_request;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *transactionQueue; // @synthesize transactionQueue=_transactionQueue;
 @property(readonly) PLPhotoLibrary *transactionPhotoLibrary; // @synthesize transactionPhotoLibrary=_transactionPhotoLibrary;
-@property(retain, nonatomic) NSString *libraryID; // @synthesize libraryID=_libraryID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NSError *unavailabilityReason; // @synthesize unavailabilityReason=_unavailabilityReason;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)countOfReferencedMediaWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool canUpdatePersonState;
 - (void)_notifiyPersistentChangeObservers;
@@ -151,6 +149,7 @@
 - (void)_addObserver:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;
+- (void)appPrivateDataWriteFailedWithError:(id)arg1;
 - (void)_onQueueNotifyAvailabilityObserversWithReason:(id)arg1;
 - (void)_notifyAvailabilityObserversWithReason:(id)arg1;
 - (_Bool)_setUnavailabilityReason:(id)arg1;
@@ -184,6 +183,7 @@
 @property(readonly) PLPhotoLibrary *photoLibrary;
 - (id)pl_photoLibraryForCMM;
 @property(readonly) PLPhotoKitVariationCache *variationCache;
+- (id)libraryID;
 - (void)dealloc;
 - (void)_invalidateEverythingWithReason:(id)arg1;
 - (id)initWithPhotoLibraryBundle:(id)arg1 type:(unsigned short)arg2;
@@ -191,6 +191,7 @@
 - (id)initWithPLPhotoLibrary:(id)arg1 type:(unsigned short)arg2;
 - (id)initWithPLPhotoLibrary:(id)arg1;
 - (_Bool)isPHPhotoLibraryForCMM;
+- (void)closeWithReason:(id)arg1;
 - (void)close;
 - (id)upgradePhotoLibraryWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)openAndWaitWithUpgrade:(_Bool)arg1 error:(id *)arg2;
@@ -247,6 +248,8 @@
 - (void)requestSearchIndexUpdates:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)unloadGraph;
 - (void)loadGraph;
+- (void)requestGenerateQuestionsWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)runPFLWithAttachments:(id)arg1 recipeUserInfo:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (id)requestTextFeaturesForMomentLocalIdentifiers:(id)arg1 error:(id *)arg2;
 - (void)simulateMemoriesNotificationWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)generateMemoriesRelatedDiagnosticsLogsWithReply:(CDUnknownBlockType)arg1;

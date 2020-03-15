@@ -47,6 +47,7 @@
 + (id)_initializeProtectedContentPlaybackSupportSessionAsynchronouslyForProvider:(id)arg1 withOptions:(id)arg2;
 - (void)setAudioSpatializationAllowed:(BOOL)arg1;
 - (void)_updateAudioSpatializationAllowed;
+- (BOOL)audioSpatializationAllowedWasSet;
 - (BOOL)isAudioSpatializationAllowed;
 - (void)setAdvanceTimeForOverlappedPlayback:(CDStruct_1b6d18a9)arg1;
 - (void)_updateAdvanceTimeForOverlappedPlaybackOnFigPlaybackItem;

@@ -49,6 +49,7 @@
 + (_Bool)_canSendText;
 + (void)_setupAccountMonitor;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 - (void)setShareSheetSessionID:(id)arg1;
 - (id)shareSheetSessionID;
@@ -71,7 +72,7 @@
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) id <MFMessageComposeViewControllerDelegate> messageComposeDelegate; // @synthesize messageComposeDelegate=_messageComposeDelegate;
-- (void).cxx_destruct;
+- (void)_setShouldDisableEntryField:(_Bool)arg1;
 - (void)_setCanEditRecipients:(_Bool)arg1;
 - (void)smsComposeControllerShouldSendMessageWithText:(id)arg1 toRecipients:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)smsComposeControllerEntryViewContentInserted:(id)arg1;

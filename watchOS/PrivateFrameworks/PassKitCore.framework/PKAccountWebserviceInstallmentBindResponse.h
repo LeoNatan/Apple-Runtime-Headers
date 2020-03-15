@@ -13,8 +13,8 @@
     NSString *_bindToken;
 }
 
-@property(readonly, copy, nonatomic) NSString *bindToken; // @synthesize bindToken=_bindToken;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *bindToken; // @synthesize bindToken=_bindToken;
 - (id)initWithData:(id)arg1;
 
 @end

@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     struct Array _currentPageBackList;
     struct BackForwardListItem _currentPageCurrentBackForwardListItem;
     struct Array _backgroundLoadPageBackList;
-    BOOL _shouldSendExtensionNavigateWhenPageIsShown;
     BOOL _reissuedBecauseResultedInDownload;
     BOOL _triggeringAppSSO;
     int _tryCloseOfDestinationPageCompletionAction;
@@ -29,20 +28,19 @@ __attribute__((visibility("hidden")))
     BrowserTabViewItem *_destinationTabViewItem;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak BrowserTabViewItem *destinationTabViewItem; // @synthesize destinationTabViewItem=_destinationTabViewItem;
 @property(nonatomic) __weak BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
 @property(nonatomic, getter=isTriggeringAppSSO) BOOL triggeringAppSSO; // @synthesize triggeringAppSSO=_triggeringAppSSO;
 @property(nonatomic) BOOL reissuedBecauseResultedInDownload; // @synthesize reissuedBecauseResultedInDownload=_reissuedBecauseResultedInDownload;
 @property(readonly, nonatomic) struct BackForwardListItem backgroundLoadPageCurrentBackForwardListItem; // @synthesize backgroundLoadPageCurrentBackForwardListItem=_backgroundLoadPageCurrentBackForwardListItem;
 @property(nonatomic) int tryCloseOfDestinationPageCompletionAction; // @synthesize tryCloseOfDestinationPageCompletionAction=_tryCloseOfDestinationPageCompletionAction;
-@property(nonatomic) BOOL shouldSendExtensionNavigateWhenPageIsShown; // @synthesize shouldSendExtensionNavigateWhenPageIsShown=_shouldSendExtensionNavigateWhenPageIsShown;
 @property(copy, nonatomic) NSString *collectionIdentifier; // @synthesize collectionIdentifier=_collectionIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *httpReferrer; // @synthesize httpReferrer=_httpReferrer;
 @property(copy, nonatomic) NSString *tabLabel; // @synthesize tabLabel=_tabLabel;
 @property(copy, nonatomic) NSArray *urls; // @synthesize urls=_urls;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)updateBackForwardList;
 - (void)setUpSessionStateWithoutNavigationUsingBrowserViewController:(id)arg1;
 - (void)commitAllHistoryOperations;

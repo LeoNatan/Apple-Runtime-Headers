@@ -18,8 +18,8 @@
 }
 
 + (id)sharedPresenter;
-@property(nonatomic) __weak id <RVPresenterViewControllerProvider> viewControllerProvider; // @synthesize viewControllerProvider=_viewControllerProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <RVPresenterViewControllerProvider> viewControllerProvider; // @synthesize viewControllerProvider=_viewControllerProvider;
 - (void)contentMoved;
 - (void)contentChanged;
 - (BOOL)tryCloseAllPopoverForDDContext:(id)arg1;

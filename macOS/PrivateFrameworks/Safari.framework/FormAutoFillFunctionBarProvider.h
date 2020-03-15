@@ -11,18 +11,18 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)didShowAutoFillQuickTypeForItem:(const struct CompletionListItem *)arg1;
-- (id)textForCompletionListItem:(const struct CompletionListItem *)arg1;
-- (id)imageForCompletionListItem:(const struct CompletionListItem *)arg1;
-- (id)_textForFormAutoFillItem:(const struct CompletionListItem *)arg1;
-- (id)_textForSingleCreditCardDataItem:(const struct CompletionListItem *)arg1;
-- (id)_textForCreditCardItem:(const struct CompletionListItem *)arg1;
-- (id)_textForPasswordItem:(const struct CompletionListItem *)arg1;
-- (id)_imageForCreditCardItem:(const struct CompletionListItem *)arg1;
-- (id)_imageForFormAutoFillItem:(const struct CompletionListItem *)arg1;
-- (id)_imageForPasswordItem:(const struct CompletionListItem *)arg1;
+-     // Error parsing type: c24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: didShowAutoFillQuickTypeForItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: textForCompletionListItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: imageForCompletionListItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _textForFormAutoFillItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _textForSingleCreditCardDataItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _textForCreditCardItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _textForPasswordItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _imageForCreditCardItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _imageForFormAutoFillItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: _imageForPasswordItem:
 - (id)_keychainImage;
-- (BOOL)_isCredentialAutoFillItem:(const struct FormAutoFillCompletionListItem *)arg1;
+-     // Error parsing type: c24@0:8r^{FormAutoFillCompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@@ii}16, name: _isCredentialAutoFillItem:
 
 @end
 

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     EKReminderStore *_reminderStore;
 }
 
-@property(readonly, nonatomic) __weak EKReminderStore *reminderStore; // @synthesize reminderStore=_reminderStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak EKReminderStore *reminderStore; // @synthesize reminderStore=_reminderStore;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)cancel;
 - (id)initWithReminderStore:(id)arg1;

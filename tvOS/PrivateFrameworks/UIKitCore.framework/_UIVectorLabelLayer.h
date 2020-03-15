@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(nonatomic) unsigned long long maxRenderedMoveDistance; // @synthesize maxRenderedMoveDistance=_maxRenderedMoveDistance;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long maxRenderedMoveDistance; // @synthesize maxRenderedMoveDistance=_maxRenderedMoveDistance;
 - (id)_layersForTextLayout:(id)arg1;
 - (id)_findSimilarLayer:(id)arg1 inLayers:(id)arg2;
 - (_Bool)_isPathCompatible:(struct CGPath *)arg1 with:(struct CGPath *)arg2;

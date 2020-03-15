@@ -24,13 +24,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldResetRequestAfterHandle; // @synthesize shouldResetRequestAfterHandle=_shouldResetRequestAfterHandle;
 @property(retain, nonatomic) INCExtensionTransactionState *state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly, nonatomic) _Bool donateInteraction; // @synthesize donateInteraction=_donateInteraction;
 @property(retain, nonatomic, setter=_setCurrentIntentResponse:) INIntentResponse *currentIntentResponse; // @synthesize currentIntentResponse=_currentIntentResponse;
 @property(retain, nonatomic, setter=_setCurrentIntent:) INIntent *currentIntent; // @synthesize currentIntent=_currentIntent;
-- (void).cxx_destruct;
 - (void)_addUserActivities:(id)arg1;
 @property(readonly, copy, nonatomic) NSUserActivity *currentUserActivity; // @synthesize currentUserActivity=_currentUserActivity;
 - (void)_updateCurrentUserActivityForType:(long long)arg1 intent:(id)arg2 intentResponse:(id)arg3;

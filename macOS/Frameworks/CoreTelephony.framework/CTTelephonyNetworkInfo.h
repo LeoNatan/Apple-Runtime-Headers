@@ -21,6 +21,7 @@
     NSString *_currentRadioAccessTechnology;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSString *currentRadioAccessTechnology; // @synthesize currentRadioAccessTechnology=_currentRadioAccessTechnology;
 @property(readonly, retain, nonatomic) NSDictionary *serviceCurrentRadioAccessTechnology; // @synthesize serviceCurrentRadioAccessTechnology=_serviceCurrentRadioAccessTechnology;
 @property(copy, nonatomic) CDUnknownBlockType subscriberCellularProviderDidUpdateNotifier; // @synthesize subscriberCellularProviderDidUpdateNotifier=_subscriberCellularProviderDidUpdateNotifier;
@@ -29,7 +30,6 @@
 @property(readonly, retain) NSDictionary *serviceSubscriberCellularProviders; // @synthesize serviceSubscriberCellularProviders=_serviceSubscriberCellularProviders;
 @property(readonly, copy) NSString *dataServiceIdentifier; // @synthesize dataServiceIdentifier=_dataServiceIdentifier;
 @property __weak id <CTTelephonyNetworkInfoDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)radioAccessTechnology;
 
 @end

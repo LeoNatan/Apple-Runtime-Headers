@@ -23,8 +23,8 @@
 + (void)initialize;
 + (id)searchableItemIdentifierForSavedRecordingURI:(id)arg1;
 + (id)savedRecordingURIForSearchableItemIdentifier:(id)arg1;
-@property(retain, nonatomic) AVAsset *avAsset; // @synthesize avAsset=_avAsset;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVAsset *avAsset; // @synthesize avAsset=_avAsset;
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

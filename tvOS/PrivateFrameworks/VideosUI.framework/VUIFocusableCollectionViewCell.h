@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     UIView<TVAuxiliaryViewSelecting> *_selectingView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
 @property(nonatomic) __weak UIView<TVAuxiliaryViewSelecting> *selectingView; // @synthesize selectingView=_selectingView;
 @property(retain, nonatomic) VUICardFloatingContentView *floatingView; // @synthesize floatingView=_floatingView;
-- (void).cxx_destruct;
 - (void)_showPressState;
 - (void)_clearPressState;
 - (id)_selectingView;

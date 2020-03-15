@@ -27,6 +27,7 @@
     OBTrayButton *_learnMoreButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasFinishedLoadingView; // @synthesize hasFinishedLoadingView=_hasFinishedLoadingView;
 @property(nonatomic) _Bool showLearnMoreButton; // @synthesize showLearnMoreButton=_showLearnMoreButton;
 @property(nonatomic) _Bool showOkayButton; // @synthesize showOkayButton=_showOkayButton;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak id <BPSBuddyControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) BPSWatchView *watchView; // @synthesize watchView=_watchView;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (_Bool)wantsOkayPillButton;
 - (_Bool)wantsToShowWatchHW;
 - (_Bool)wantsLearnMoreButton;

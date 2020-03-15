@@ -77,6 +77,7 @@
 }
 
 + (id)librarySizeRangeDescriptionForLibrarySizeRange:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double ratioOfProcessedFaces; // @synthesize ratioOfProcessedFaces=_ratioOfProcessedFaces;
 @property(nonatomic) double ratioOfProcessedScenes; // @synthesize ratioOfProcessedScenes=_ratioOfProcessedScenes;
 @property(nonatomic) double ratioOfAutoplayedVideoKeyAssets; // @synthesize ratioOfAutoplayedVideoKeyAssets=_ratioOfAutoplayedVideoKeyAssets;
@@ -137,7 +138,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSDate *debugDate; // @synthesize debugDate=_debugDate;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
-- (void).cxx_destruct;
 - (id)_longTripDayGroups;
 - (id)_shortTripDayGroups;
 - (id)_daysWithinTrips;

@@ -22,12 +22,12 @@
     MFEWSAccount *_account;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MFEWSAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) MFEWSBackgroundBodyFetchTask *backgroundBodyFetchTask; // @synthesize backgroundBodyFetchTask=_backgroundBodyFetchTask;
 @property(retain, nonatomic) MFEWSRetrievePersistedFolderDataTask *retrievePersistedFolderDataTask; // @synthesize retrievePersistedFolderDataTask=_retrievePersistedFolderDataTask;
 @property(retain, nonatomic) MFEWSFolderHierarchyReconcileTask *folderHierarchyReconcileTask; // @synthesize folderHierarchyReconcileTask=_folderHierarchyReconcileTask;
 @property(nonatomic) __weak id <MFEWSMailboxDataCache> mailboxDataCache; // @synthesize mailboxDataCache=_mailboxDataCache;
-- (void).cxx_destruct;
 - (void)dataNotFoundForURL:(id)arg1;
 - (void)updateCachedFolderID:(id)arg1 andSyncState:(id)arg2 forMailboxURL:(id)arg3;
 - (id)cachedSyncStateForMailboxURL:(id)arg1;

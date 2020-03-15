@@ -35,6 +35,7 @@
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNSharingProfileLogger *logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) CNAvatarEditingManager *avatarEditingManager; // @synthesize avatarEditingManager=_avatarEditingManager;
 @property(retain, nonatomic) CNPhotoPickerProviderItem *selectedVariantItem; // @synthesize selectedVariantItem=_selectedVariantItem;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(nonatomic) __weak id <CNSharingProfileOnboardingFlowManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)audienceViewController:(id)arg1 didFinishWithContact:(id)arg2 sharingAudience:(unsigned long long)arg3;
 - (void)onboardingVariantControllerDidTapPose:(id)arg1;
 - (void)onboardingVariantControllerDidTapContinue:(id)arg1;

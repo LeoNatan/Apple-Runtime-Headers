@@ -21,6 +21,7 @@
     _Bool _autoSpatialOverCaptureEnabled;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool autoSpatialOverCaptureEnabled; // @synthesize autoSpatialOverCaptureEnabled=_autoSpatialOverCaptureEnabled;
 @property(readonly, nonatomic) _Bool shouldDisableCameraSwitchingDuringVideoRecording; // @synthesize shouldDisableCameraSwitchingDuringVideoRecording=_shouldDisableCameraSwitchingDuringVideoRecording;
 @property(readonly, nonatomic) long long photoQualityPrioritization; // @synthesize photoQualityPrioritization=_photoQualityPrioritization;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) long long hdrMode; // @synthesize hdrMode=_hdrMode;
 @property(readonly, nonatomic) long long flashMode; // @synthesize flashMode=_flashMode;
 @property(readonly, copy, nonatomic) NSString *persistenceUUID; // @synthesize persistenceUUID=_persistenceUUID;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSettings:(id)arg1;

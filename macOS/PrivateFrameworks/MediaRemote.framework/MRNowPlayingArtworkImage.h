@@ -14,9 +14,9 @@
     NSString *_mimeType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(readonly, copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyImageData;
 - (BOOL)hasArtworkData;

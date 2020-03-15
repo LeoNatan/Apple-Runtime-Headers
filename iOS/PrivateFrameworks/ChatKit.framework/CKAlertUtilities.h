@@ -16,8 +16,8 @@
 + (struct __CFString *)_grabCTSIMStatus;
 + (struct __CFDictionary *)_copyCTPhoneNumberSetting;
 + (long long)missingAlertTypeToNotify;
-@property(nonatomic) __weak id <CKAlertUtilitiesProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CKAlertUtilitiesProtocol> delegate; // @synthesize delegate=_delegate;
 - (void)_showNetworkPrefs:(long long)arg1;
 - (void)_didFinishCheckingMissingCarrierSetting;
 - (void)_displayMissingInformationAlert:(long long)arg1;

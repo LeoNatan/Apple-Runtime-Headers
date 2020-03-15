@@ -16,10 +16,10 @@
 }
 
 + (id)displayMetricsWithTraitCollection:(id)arg1 layoutMargins:(struct NSDirectionalEdgeInsets)arg2 safeAreaInsets:(struct UIEdgeInsets)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
 @property(nonatomic) struct NSDirectionalEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(retain, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isCompactHeight;
 @property(readonly, nonatomic) struct NSDirectionalEdgeInsets headerViewSeparatorInset;
 @property(readonly, nonatomic) struct UIEdgeInsets sendBarButtonItemImageInsets;

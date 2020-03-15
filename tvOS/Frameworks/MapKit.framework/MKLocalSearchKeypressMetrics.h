@@ -15,10 +15,10 @@
     NSArray *_suggestionEntries;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *suggestionEntries; // @synthesize suggestionEntries=_suggestionEntries;
 @property(readonly, copy, nonatomic) NSArray *queryTokens; // @synthesize queryTokens=_queryTokens;
 @property(readonly, copy, nonatomic) NSString *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (void)submitWithStatus:(unsigned long long)arg1;
 - (id)initWithQuery:(id)arg1 queryTokens:(id)arg2 suggestionEntries:(id)arg3;
 

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *date; // @synthesize date=_date;
 @property(retain) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 
 @end
 

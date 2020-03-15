@@ -23,8 +23,8 @@
 + (id)emailAddressWithString:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)emailAddressesFromStrings:(id)arg1 invalidAddresses:(id *)arg2;
-@property(readonly, copy, nonatomic) ECEmailAddressComponents *components; // @synthesize components=_components;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) ECEmailAddressComponents *components; // @synthesize components=_components;
 @property(readonly) NSString *stringValue;
 @property(readonly, nonatomic) ECEmailAddress *emailAddressValue;
 - (id)valueForUndefinedKey:(id)arg1;

@@ -18,10 +18,10 @@
     NSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) NFStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(readonly, nonatomic) NSMutableArray *timeoutBlocks; // @synthesize timeoutBlocks=_timeoutBlocks;
-- (void).cxx_destruct;
 - (void)didReceiveMessage:(id)arg1 securityOrigin:(id)arg2;
 - (void)onTimeout:(CDUnknownBlockType)arg1;
 - (id)initWithTimeout:(double)arg1 messageHandlerManager:(id)arg2 documentStateProvider:(id)arg3;

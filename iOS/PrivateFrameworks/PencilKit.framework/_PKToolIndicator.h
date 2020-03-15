@@ -23,6 +23,7 @@
 
 + (id)_defaultAnimator;
 + (void)_animationWithSetup:(CDUnknownBlockType)arg1 animationBlock:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3 animated:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long animationState; // @synthesize animationState=_animationState;
 @property(retain, nonatomic) UIButton<PKInkToolButton> *toolButton; // @synthesize toolButton=_toolButton;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
@@ -31,7 +32,6 @@
 @property(nonatomic) _Bool isUsedOnDarkBackground; // @synthesize isUsedOnDarkBackground=_isUsedOnDarkBackground;
 @property(nonatomic) _Bool isEmbossed; // @synthesize isEmbossed=_isEmbossed;
 @property(nonatomic) __weak id <_PKToolIndicatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_dismissInkAnimation:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentInkAnimation:(id)arg1 animated:(_Bool)arg2;
 - (void)_switchToInkAnimation:(id)arg1 animated:(_Bool)arg2;

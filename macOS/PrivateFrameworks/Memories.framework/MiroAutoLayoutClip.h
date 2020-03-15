@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)clipIsPortrait:(id)arg1;
 + (BOOL)clipIsPano:(id)arg1;
 + (double)clipAspectRatio:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MiroAutoEditKenBurnsController *kbController; // @synthesize kbController=_kbController;
 @property(nonatomic) BOOL supportsTwoThirds; // @synthesize supportsTwoThirds=_supportsTwoThirds;
 @property(nonatomic) BOOL supportsOneThird; // @synthesize supportsOneThird=_supportsOneThird;
@@ -66,7 +67,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AltClipCollection *treatmentInfo; // @synthesize treatmentInfo=_treatmentInfo;
 @property(nonatomic) int clipType; // @synthesize clipType=_clipType;
 @property(retain, nonatomic) KonaClip *projectClip; // @synthesize projectClip=_projectClip;
-- (void).cxx_destruct;
 - (double)distanceToLayoutClip:(id)arg1;
 - (id)locationForClip;
 - (BOOL)isEdited;

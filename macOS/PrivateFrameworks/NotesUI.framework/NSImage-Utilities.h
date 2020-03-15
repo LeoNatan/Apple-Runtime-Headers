@@ -8,18 +8,18 @@
 
 @interface NSImage (Utilities)
 + (struct CGRect)ic_aspectFitImageFrameForViewWithFrame:(struct CGRect)arg1 imageSize:(struct CGSize)arg2;
-+ (struct NSImage *)ic_imageWithColor:(struct NSColor *)arg1 size:(struct CGSize)arg2;
-+ (struct NSImage *)ic_fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
++ (id)ic_imageWithColor:(id)arg1 size:(struct CGSize)arg2;
++ (id)ic_fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
 + (id)ic_orientationMetadataFromImageOrientation:(long long)arg1;
-+ (struct NSImage *)ic_imageWithData:(id)arg1;
-+ (struct NSImage *)ic_imageWithCGImage:(struct CGImage *)arg1;
-+ (struct NSImage *)ic_imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3;
-+ (struct NSImage *)ic_orientedImageFromImage:(struct NSImage *)arg1 toOrientation:(long long)arg2;
-+ (struct NSImage *)ic_orientedImageFromImage:(struct NSImage *)arg1 fromOrientation:(long long)arg2;
-+ (struct NSImage *)ic_orientedImageFromCGImage:(struct CGImage *)arg1 scale:(double)arg2 transform:(struct CGAffineTransform)arg3;
-+ (struct NSImage *)ic_imageNamed:(id)arg1 withTint:(struct NSColor *)arg2 size:(struct CGSize)arg3;
-+ (struct NSImage *)ic_imageNamed:(id)arg1 withTint:(struct NSColor *)arg2;
-+ (struct NSImage *)ic_imageWithContentsOfURL:(id)arg1;
++ (id)ic_imageWithData:(id)arg1;
++ (id)ic_imageWithCGImage:(struct CGImage *)arg1;
++ (id)ic_imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3;
++ (id)ic_orientedImageFromImage:(id)arg1 toOrientation:(long long)arg2;
++ (id)ic_orientedImageFromImage:(id)arg1 fromOrientation:(long long)arg2;
++ (id)ic_orientedImageFromCGImage:(struct CGImage *)arg1 scale:(double)arg2 transform:(struct CGAffineTransform)arg3;
++ (id)ic_imageNamed:(id)arg1 withTint:(id)arg2 size:(struct CGSize)arg3;
++ (id)ic_imageNamed:(id)arg1 withTint:(id)arg2;
++ (id)ic_imageWithContentsOfURL:(id)arg1;
 - (struct CGContext *)ic_newARGB8BitmapContextFromImage:(struct CGImage *)arg1;
 - (struct CGRect)ic_cropRectZeroAlpha;
 - (id)ic_imageDataWithUTType:(id)arg1 metadata:(id)arg2;
@@ -30,11 +30,11 @@
 - (id)ic_JPEGData;
 - (long long)ic_imageOrientation;
 - (struct CGImage *)ic_CGImage;
-- (struct NSImage *)ic_imageWithBackgroundColor:(struct NSColor *)arg1;
-- (struct NSImage *)ic_imageFromRect:(struct CGRect)arg1;
-- (struct NSImage *)ic_scaledImageWithSize:(struct CGSize)arg1 scale:(double)arg2;
-- (struct NSImage *)ic_scaledImageMaxDimension:(double)arg1 scale:(double)arg2;
-- (struct NSImage *)ic_scaledImageMinDimension:(double)arg1 scale:(double)arg2;
-- (struct NSImage *)ic_imageWithTint:(struct NSColor *)arg1 size:(struct CGSize)arg2;
+- (id)ic_imageWithBackgroundColor:(id)arg1;
+- (id)ic_imageFromRect:(struct CGRect)arg1;
+- (id)ic_scaledImageWithSize:(struct CGSize)arg1 scale:(double)arg2;
+- (id)ic_scaledImageMaxDimension:(double)arg1 scale:(double)arg2;
+- (id)ic_scaledImageMinDimension:(double)arg1 scale:(double)arg2;
+- (id)ic_imageWithTint:(id)arg1 size:(struct CGSize)arg2;
 @end
 

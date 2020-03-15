@@ -24,6 +24,7 @@
 + (id)combineICloudDevices:(id)arg1 withCloudKitDevices:(id)arg2;
 + (id)setOfDeviceNamesFromDevices:(id)arg1;
 + (id)filteredDevices:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
 @property(copy, nonatomic) NSString *modelDisplayName; // @synthesize modelDisplayName=_modelDisplayName;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property _Bool didGetICloudDeviceList; // @synthesize didGetICloudDeviceList=_didGetICloudDeviceList;
 @property(retain) NSArray *devices; // @synthesize devices=_devices;
-- (void).cxx_destruct;
 - (void)fetchWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)fetchICloudDevicesWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)fetchCloudKitDevicesWithCompletionBlock:(CDUnknownBlockType)arg1;

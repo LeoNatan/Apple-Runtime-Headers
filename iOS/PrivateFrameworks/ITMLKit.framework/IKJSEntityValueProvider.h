@@ -15,8 +15,8 @@
     id <IKEntityValueProviding> _entityValueProvider;
 }
 
-@property(retain, nonatomic) id <IKEntityValueProviding> entityValueProvider; // @synthesize entityValueProvider=_entityValueProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <IKEntityValueProviding> entityValueProvider; // @synthesize entityValueProvider=_entityValueProvider;
 - (id)_valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;
 - (id)valueForEntityProperty:(id)arg1;

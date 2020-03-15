@@ -33,6 +33,7 @@
 + (id)thumbnailRequestForFileAtURL:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 iconMode:(_Bool)arg4 error:(id *)arg5;
 + (id)thumbnailRequestForFileAtURL:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 iconMode:(_Bool)arg4;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long requestedTypes; // @synthesize requestedTypes=_requestedTypes;
 @property long long generationBehavior; // @synthesize generationBehavior=_generationBehavior;
 @property _Bool wantsBaseline; // @synthesize wantsBaseline=_wantsBaseline;
@@ -46,7 +47,6 @@
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly) QLCacheVersionedFileIdentifier *fileIdentifier; // @synthesize fileIdentifier=_fileIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long requestedMostRepresentativeType;
 @property(readonly, nonatomic) _Bool forceGeneration;
 @property(readonly, nonatomic) _Bool provideCachedResultsOnly;

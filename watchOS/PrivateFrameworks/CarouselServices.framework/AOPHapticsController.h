@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool activated; // @synthesize activated=_activated;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType readyHandler; // @synthesize readyHandler=_readyHandler;
 @property(copy, nonatomic) CDUnknownBlockType cancelHandler; // @synthesize cancelHandler=_cancelHandler;
-- (void).cxx_destruct;
 - (_Bool)playSlotIndices:(id)arg1 error:(id *)arg2;
 - (void)setSetMappingsCalled:(_Bool)arg1;
 - (_Bool)setMappingsCalled;

@@ -20,12 +20,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly) CKContainer *container; // @synthesize container=_container;
 @property(retain) CKShare *share; // @synthesize share=_share;
 @property(readonly) HMUser *ownerUser; // @synthesize ownerUser=_ownerUser;
 @property(readonly) HMUser *currentUser; // @synthesize currentUser=_currentUser;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)main;
 - (void)sendShareToOwner:(id)arg1 from:(id)arg2 savedOwnerAsParticipant:(id)arg3 share:(id)arg4 completion:(CDUnknownBlockType)arg5;

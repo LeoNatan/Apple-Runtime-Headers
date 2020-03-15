@@ -23,8 +23,8 @@
     unsigned long long _compatibilityVersion;
 }
 
-@property(readonly, nonatomic) unsigned long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long compatibilityVersion; // @synthesize compatibilityVersion=_compatibilityVersion;
 - (void)callAssetUpdateHandlers;
 - (void)clearOverrides;
 - (void)addOverridePath:(id)arg1 forResource:(id)arg2 ofType:(id)arg3;
@@ -36,8 +36,8 @@
 - (void)_updateAssetMetadata;
 - (id)pathsForResourcesWithNames:(id)arg1;
 - (id)pathsForResourcesWithNames:(id)arg1 assetVersion:(unsigned long long *)arg2;
-- (id)pathForResourceWithNameAndExtension:(struct _PASTuple2 *)arg1;
-- (id)pathForResourceWithNameAndExtension:(struct _PASTuple2 *)arg1 assetVersion:(unsigned long long *)arg2;
+- (id)pathForResourceWithNameAndExtension:(id)arg1;
+- (id)pathForResourceWithNameAndExtension:(id)arg1 assetVersion:(unsigned long long *)arg2;
 - (id)pathForResourceWithName:(id)arg1 extension:(id)arg2;
 - (id)pathForResourceWithName:(id)arg1 extension:(id)arg2 assetVersion:(unsigned long long *)arg3;
 - (_Bool)deregisterUpdateHandlerAsyncWithToken:(id)arg1;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     long long _productItemIdentifier;
 }
 
-@property(readonly, nonatomic) long long giftType; // @synthesize giftType=_giftType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long giftType; // @synthesize giftType=_giftType;
 - (id)applyUpdatesWithElement:(id)arg1;
 @property(readonly, nonatomic) SKUIItem *productItem;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

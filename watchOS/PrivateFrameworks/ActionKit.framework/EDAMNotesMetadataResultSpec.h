@@ -25,6 +25,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *includeLargestResourceSize; // @synthesize includeLargestResourceSize=_includeLargestResourceSize;
 @property(retain, nonatomic) NSNumber *includeLargestResourceMime; // @synthesize includeLargestResourceMime=_includeLargestResourceMime;
 @property(retain, nonatomic) NSNumber *includeAttributes; // @synthesize includeAttributes=_includeAttributes;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSNumber *includeCreated; // @synthesize includeCreated=_includeCreated;
 @property(retain, nonatomic) NSNumber *includeContentLength; // @synthesize includeContentLength=_includeContentLength;
 @property(retain, nonatomic) NSNumber *includeTitle; // @synthesize includeTitle=_includeTitle;
-- (void).cxx_destruct;
 
 @end
 

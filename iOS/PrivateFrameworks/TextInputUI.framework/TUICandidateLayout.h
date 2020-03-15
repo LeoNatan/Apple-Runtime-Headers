@@ -21,8 +21,10 @@
     _Bool _dirty;
     _Bool _candidateNumberEnabled;
     _Bool _fillGridWithLines;
+    _Bool _showsIndex;
     long long _rowType;
     long long _transitionState;
+    long long _layoutOrientation;
     NSIndexPath *_oldFirstVisibleIndexPath;
     double _oldFirstVisibleOffset;
     double _customHeaderHeight;
@@ -33,6 +35,8 @@
     struct UIEdgeInsets _gridLinePadding;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) _Bool showsIndex; // @synthesize showsIndex=_showsIndex;
 @property(nonatomic) _Bool fillGridWithLines; // @synthesize fillGridWithLines=_fillGridWithLines;
 @property(nonatomic) struct CGPoint gridLineOffset; // @synthesize gridLineOffset=_gridLineOffset;
 @property(nonatomic) struct UIEdgeInsets gridLinePadding; // @synthesize gridLinePadding=_gridLinePadding;
@@ -43,15 +47,16 @@
 @property(nonatomic) double customHeaderHeight; // @synthesize customHeaderHeight=_customHeaderHeight;
 @property(nonatomic) double oldFirstVisibleOffset; // @synthesize oldFirstVisibleOffset=_oldFirstVisibleOffset;
 @property(retain, nonatomic) NSIndexPath *oldFirstVisibleIndexPath; // @synthesize oldFirstVisibleIndexPath=_oldFirstVisibleIndexPath;
+@property(nonatomic) long long layoutOrientation; // @synthesize layoutOrientation=_layoutOrientation;
 @property(nonatomic) long long transitionState; // @synthesize transitionState=_transitionState;
 @property(nonatomic) long long rowType; // @synthesize rowType=_rowType;
-- (void).cxx_destruct;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)keyForDummyCandidateIndexPath:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (struct CGSize)collectionViewContentSize;
 - (void)justify:(id)arg1 rowStartX:(double)arg2 maxWidth:(double)arg3 remainingWidth:(double)arg4 endOfSection:(_Bool)arg5;
+- (void)rotateAttributesBy90Degrees;
 - (void)prepareLayoutForMultiRow;
 - (void)layoutSlottedCandidates;
 - (void)prepareLayoutForSingleRow;

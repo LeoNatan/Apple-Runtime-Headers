@@ -13,8 +13,8 @@
     EKUICustomAlarmView *_alarmView;
 }
 
-@property __weak EKUICustomAlarmView *alarmView; // @synthesize alarmView=_alarmView;
 - (void).cxx_destruct;
+@property __weak EKUICustomAlarmView *alarmView; // @synthesize alarmView=_alarmView;
 - (void)textDidChange:(id)arg1;
 
 @end

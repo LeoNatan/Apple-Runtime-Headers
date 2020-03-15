@@ -17,12 +17,12 @@
     long _connectionType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool channelIsOpen; // @synthesize channelIsOpen=_channelIsOpen;
 @property(readonly, nonatomic) long connectionType; // @synthesize connectionType=_connectionType;
 @property(readonly, nonatomic, getter=isChannelOpen) _Bool channelOpen; // @synthesize channelOpen=_channelOpen;
 @property(readonly, nonatomic) AVOutputContextCommunicationChannel *communicationChannel; // @synthesize communicationChannel=_communicationChannel;
 @property(readonly, nonatomic) AVOutputContext *outputContext; // @synthesize outputContext=_outputContext;
-- (void).cxx_destruct;
 - (void)_outputContextDidCloseCommunicationChannelNotification:(id)arg1;
 - (_Bool)hasSpaceAvailable;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
@@ -32,7 +32,7 @@
 - (id)initToBuffer:(char *)arg1 capacity:(unsigned int)arg2;
 - (id)initToMemory;
 - (id)initWithCommunicationChannel:(id)arg1;
-- (id)initWithOutputContext:(id)arg1 connectionType:(long)arg2;
+- (id)initWithOutputContext:(id)arg1 connectionType:(long)arg2 error:(id *)arg3;
 
 @end
 

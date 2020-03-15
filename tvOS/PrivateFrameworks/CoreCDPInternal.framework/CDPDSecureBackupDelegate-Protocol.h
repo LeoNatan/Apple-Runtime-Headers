@@ -7,7 +7,7 @@
 @class CDPDSecureBackupContext, CDPDSecureBackupController, NSString;
 
 @protocol CDPDSecureBackupDelegate
-- (void)promptForLocalSecretWithCompletion:(void (^)(NSString *, unsigned long long, NSError *))arg1;
+- (void)promptForLocalSecretWithCompletion:(void (^)(CDPLocalSecret *, NSError *))arg1;
 - (void)promptForAdoptionOfMultipleICSCWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (_Bool)synchronizeCircleViewsForSecureBackupContext:(CDPDSecureBackupContext *)arg1;
 - (NSString *)circlePeerIDForSecureBackupController:(CDPDSecureBackupController *)arg1;

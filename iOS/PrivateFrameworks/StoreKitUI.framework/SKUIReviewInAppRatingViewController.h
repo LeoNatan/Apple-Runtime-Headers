@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     SKUIStarRatingControl *_ratingControl;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIStarRatingControl *ratingControl; // @synthesize ratingControl=_ratingControl;
 @property(retain, nonatomic) UIInterfaceAction *ratingControlAction; // @synthesize ratingControlAction=_ratingControlAction;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool disableSubmit; // @synthesize disableSubmit=_disableSubmit;
 @property(copy, nonatomic) CDUnknownBlockType ratingHandler; // @synthesize ratingHandler=_ratingHandler;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)interfaceAction:(id)arg1 invokeActionHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;

@@ -16,11 +16,11 @@
     NSMutableArray *_completionBlocks;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(retain, nonatomic) BKSProcessAssertion *processAssertion; // @synthesize processAssertion=_processAssertion;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) unsigned int counter; // @synthesize counter=_counter;
-- (void).cxx_destruct;
 - (void)performBlockWhileLockedUntilNoCount:(CDUnknownBlockType)arg1;
 - (_Bool)isUnusedCounter;
 - (_Bool)isUniqueCounter;

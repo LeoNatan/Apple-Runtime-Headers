@@ -18,12 +18,12 @@
     unsigned long long __currentAnimationID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setCurrentAnimationID:) unsigned long long _currentAnimationID; // @synthesize _currentAnimationID=__currentAnimationID;
 @property(retain, nonatomic, setter=_setTargetSnapshotView:) CAMSnapshotView *_targetSnapshotView; // @synthesize _targetSnapshotView=__targetSnapshotView;
 @property(retain, nonatomic, setter=_setBackSnapshotView:) CAMSnapshotView *_backSnapshotView; // @synthesize _backSnapshotView=__backSnapshotView;
 @property(retain, nonatomic, setter=_setFrontSnapshotView:) CAMSnapshotView *_frontSnapshotView; // @synthesize _frontSnapshotView=__frontSnapshotView;
 @property(readonly, nonatomic) __weak id <CAMViewfinderTransitionable> _transitionableViewfinder; // @synthesize _transitionableViewfinder=__transitionableViewfinder;
-- (void).cxx_destruct;
 - (void)completeTransitionToLivePreviewWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_snapshotFlipAnimationFromValue:(double)arg1 toValue:(double)arg2;
 - (double)_backSnapshotTargetRadiansForDirection:(unsigned long long)arg1 frontSnapshotRadians:(double)arg2;

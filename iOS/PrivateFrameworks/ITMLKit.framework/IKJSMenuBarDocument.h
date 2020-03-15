@@ -15,8 +15,8 @@
     id <IKJSMenuBarDocumentAppBridge> _appBridge;
 }
 
-@property(nonatomic) __weak id <IKJSMenuBarDocumentAppBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <IKJSMenuBarDocumentAppBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (id)_entityUniqueIdentifierForObject:(id)arg1;
 - (void)setSelectedItem:(id)arg1:(id)arg2;
 - (id)getSelectedItem;

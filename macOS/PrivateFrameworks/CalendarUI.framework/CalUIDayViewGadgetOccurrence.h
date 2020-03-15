@@ -11,8 +11,8 @@
     CDUnknownBlockType _mouseDownBlock;
 }
 
-@property(nonatomic) __weak CDUnknownBlockType mouseDownBlock; // @synthesize mouseDownBlock=_mouseDownBlock;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CDUnknownBlockType mouseDownBlock; // @synthesize mouseDownBlock=_mouseDownBlock;
 - (BOOL)allowsVibrancy;
 - (BOOL)accessibilityPerformPress;
 - (void)mouseDown:(id)arg1;

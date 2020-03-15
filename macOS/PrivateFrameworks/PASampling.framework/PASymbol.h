@@ -20,10 +20,10 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long offsetIntoOwner; // @synthesize offsetIntoOwner=_offsetInOwner;
 @property unsigned long long length; // @synthesize length=_length;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)debugDescriptionForOffsetIntoOwner:(unsigned long long)arg1;
 @property(readonly, copy) NSString *debugDescription;
 - (void)copySourceInfoFromSymbol:(id)arg1;

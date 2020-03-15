@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
     UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long position; // @synthesize position=_position;
 @property(readonly, nonatomic) UIColor *flapBottomColor; // @synthesize flapBottomColor=_flapBottomColor;
 @property(readonly, nonatomic) UIColor *flapTopColor; // @synthesize flapTopColor=_flapTopColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (struct CATransform3D)_transformForAngle:(double)arg1 isTop:(_Bool)arg2;
 - (id)_newBackgroundImageForTop:(int)arg1;
 - (id)_newLabel;

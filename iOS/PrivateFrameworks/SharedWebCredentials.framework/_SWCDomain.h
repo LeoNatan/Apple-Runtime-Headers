@@ -22,10 +22,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)new;
 + (id)_log;
+- (void).cxx_destruct;
 @property(readonly, getter=isWildcard) _Bool wildcard; // @synthesize wildcard=_wildcard;
 @property(readonly) NSNumber *port; // @synthesize port=_port;
 @property(readonly) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

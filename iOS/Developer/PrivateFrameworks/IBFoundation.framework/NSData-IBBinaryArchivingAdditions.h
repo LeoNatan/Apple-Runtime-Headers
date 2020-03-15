@@ -13,6 +13,9 @@
 @interface NSData (IBBinaryArchivingAdditions) <IBBinaryArchiving>
 + (id)decodeWithBinaryUnarchiver:(id)arg1;
 - (void)encodeWithBinaryArchiver:(id)arg1;
+- (unsigned char)ib_lastByte;
+- (unsigned char)ib_byteAtIndex:(unsigned long long)arg1;
+- (id)ib_dataByAppendingData:(id)arg1;
 - (id)ib_initWithPrettyBase64String:(id)arg1;
 - (id)ib_prettyBase64String;
 - (id)ib_prettyBase64StringWithLineLength:(long long)arg1 wrappedWithNewlines:(_Bool)arg2;

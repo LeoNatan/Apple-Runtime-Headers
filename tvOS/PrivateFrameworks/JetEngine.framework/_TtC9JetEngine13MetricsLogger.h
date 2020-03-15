@@ -9,7 +9,7 @@
 @interface _TtC9JetEngine13MetricsLogger : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: loggerName
-    // Error parsing type: , name: metrics
+    // Error parsing type: , name: recorder
     // Error parsing type: , name: eventTopic
     // Error parsing type: , name: sampling
 }

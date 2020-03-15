@@ -15,8 +15,8 @@
 
 + (void)beginSimulatingDaemon;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSArray *listeners; // @synthesize listeners=_listeners;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *listeners; // @synthesize listeners=_listeners;
 - (_Bool)connectToDaemonWithLaunch:(_Bool)arg1;
 - (_Bool)connectToDaemonWithLaunch:(_Bool)arg1 capabilities:(unsigned int)arg2 blockUntilConnected:(_Bool)arg3;
 - (void)sendBalloonPayload:(id)arg1 attachments:(id)arg2 withMessageGUID:(id)arg3 bundleID:(id)arg4;

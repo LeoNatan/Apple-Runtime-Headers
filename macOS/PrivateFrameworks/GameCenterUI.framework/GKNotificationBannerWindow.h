@@ -20,11 +20,11 @@
 + (id)notificationBannerWithTitle:(id)arg1 message:(id)arg2;
 + (id)semaphore;
 + (id)queue;
+- (void).cxx_destruct;
 @property BOOL canTransitionToPlayerAvatar; // @synthesize canTransitionToPlayerAvatar=_canTransitionToPlayerAvatar;
 @property(retain) NSImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
 @property NSView *iconContainerView; // @synthesize iconContainerView=_iconContainerView;
 @property(retain) NSImageView *iconView; // @synthesize iconView;
-- (void).cxx_destruct;
 - (void)showWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)showPlayerAvatarAnimationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)transitionToPlayerAvatar;

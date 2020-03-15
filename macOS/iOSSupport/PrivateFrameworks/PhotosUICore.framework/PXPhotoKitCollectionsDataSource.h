@@ -21,6 +21,7 @@
 }
 
 + (long long)estimatedCountForAssetCollection:(id)arg1 withConfiguration:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXPhotoKitCollectionsDataSourceManagerConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) PHFetchResult *collectionsFetchResult; // @synthesize collectionsFetchResult=_collectionsFetchResult;
 @property(readonly, nonatomic) NSArray *_virtualCollections; // @synthesize _virtualCollections=__virtualCollections;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSDictionary *_keyAssetsFetchResultsByCollection; // @synthesize _keyAssetsFetchResultsByCollection=__keyAssetsFetchResultsByCollection;
 @property(readonly, nonatomic) NSArray *_collectionsFetchResultBySection; // @synthesize _collectionsFetchResultBySection=__collectionsFetchResultBySection;
 @property(readonly, nonatomic) NSArray *_collectionListBySection; // @synthesize _collectionListBySection=__collectionListBySection;
-- (void).cxx_destruct;
 - (void)enumerateCollectionsUsingBlock:(CDUnknownBlockType)arg1;
 - (long long)collectionsListCountForFetchResult:(id)arg1;
 - (long long)assetCollectionsCountForFetchResult:(id)arg1;

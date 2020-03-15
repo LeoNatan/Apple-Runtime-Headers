@@ -11,30 +11,30 @@
 
 @interface RWITarget : NSObject
 {
-    id <RWITargetDelegate> _delegate;
+    NSMutableDictionary *_applications;
+    NSMutableDictionary *_drivers;
+    BOOL _wantsAutomaticInspectionEnabled;
     BOOL _supportsRemoteWebInspector;
+    id <RWITargetDelegate> _delegate;
     NSString *_name;
     NSString *_udid;
     NSString *_buildVersion;
     NSString *_productVersion;
-    NSMutableDictionary *_applications;
-    NSMutableDictionary *_drivers;
+    long long _readyState;
     RWIBaseManager *_manager;
     RWIServiceConnection *_connection;
-    long long _readyState;
-    BOOL _wantsAutomaticInspectionEnabled;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RWIServiceConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) RWIBaseManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) long long readyState; // @synthesize readyState=_readyState;
 @property(readonly, copy, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(readonly, copy, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(readonly, copy, nonatomic) NSString *udid; // @synthesize udid=_udid;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) BOOL supportsRemoteWebInspector; // @synthesize supportsRemoteWebInspector=_supportsRemoteWebInspector;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) BOOL supportsRemoteWebInspector; // @synthesize supportsRemoteWebInspector=_supportsRemoteWebInspector;
 @property(nonatomic) __weak id <RWITargetDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)launchOrActivateApplicationWithBundleIdentifier:(id)arg1;
 - (void)inspectAutomaticInspectionCandidate:(id)arg1 pauseImmediately:(BOOL)arg2;
 - (void)shouldAcceptAutomaticInspectionCandidate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -48,10 +48,10 @@
 - (void)markAsHavingBasicInformation;
 @property(nonatomic) BOOL automaticInspectionEnabled;
 @property(readonly, nonatomic) NSString *loggingIdentifier;
-@property(readonly, nonatomic) NSArray *drivers; // @dynamic drivers;
+@property(readonly, nonatomic) NSArray *drivers;
 @property(readonly, nonatomic) NSArray *allApplications; // @dynamic allApplications;
 @property(readonly, nonatomic) NSArray *activeApplications; // @dynamic activeApplications;
-@property(readonly, nonatomic) NSArray *applications; // @dynamic applications;
+@property(readonly, nonatomic) NSArray *applications;
 @property(readonly, copy, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) BOOL isMachine; // @dynamic isMachine;
 @property(readonly, nonatomic) BOOL isSimulator; // @dynamic isSimulator;

@@ -18,13 +18,13 @@
     _MLTModelUpdateValidator *_validator;
 }
 
+- (void).cxx_destruct;
 @property BOOL calculateValidationAccuracyEveryEpochEnd; // @synthesize calculateValidationAccuracyEveryEpochEnd=_calculateValidationAccuracyEveryEpochEnd;
 @property(retain) _MLTModelUpdateValidator *validator; // @synthesize validator=_validator;
 @property(retain) _MLTLogger *logger; // @synthesize logger=_logger;
 @property long long computeUnit; // @synthesize computeUnit=_computeUnit;
 @property(retain) NSString *recipePath; // @synthesize recipePath=_recipePath;
 @property(retain) NSString *updateableModelPath; // @synthesize updateableModelPath=_updateableModelPath;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

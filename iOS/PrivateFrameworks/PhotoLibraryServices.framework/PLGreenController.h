@@ -13,8 +13,8 @@
     NSDictionary *_currentGreenValues;
 }
 
-@property(readonly, nonatomic) NSDictionary *currentGreenValues; // @synthesize currentGreenValues=_currentGreenValues;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *currentGreenValues; // @synthesize currentGreenValues=_currentGreenValues;
 - (_Bool)greenValuesSimilarToGreenValues:(id)arg1;
 - (_Bool)isGreenStateValid;
 - (void)readValuesFromDisk;

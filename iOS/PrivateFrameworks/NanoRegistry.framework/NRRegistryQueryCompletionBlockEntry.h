@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _updateCounter;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long updateCounter; // @synthesize updateCounter=_updateCounter;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
-- (void).cxx_destruct;
 - (id)initWithUpdateCounter:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 
 @end

@@ -19,12 +19,12 @@
 
 + (id)sourceInfoWithCSSourceInfo:(struct _CSTypeRef)arg1 textSegmentLoadAddress:(unsigned long long)arg2;
 + (id)sourceInfoWithOffsetIntoTextSegment:(unsigned long long)arg1 length:(unsigned long long)arg2 lineNum:(unsigned int)arg3 columnNum:(unsigned int)arg4 filePath:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly) unsigned int columnNum; // @synthesize columnNum=_columnNum;
 @property(readonly) unsigned int lineNum; // @synthesize lineNum=_lineNum;
 @property(readonly) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly) unsigned long long length; // @synthesize length=_length;
 @property(readonly) unsigned long long offsetIntoTextSegment; // @synthesize offsetIntoTextSegment=_offsetIntoTextSegment;
-- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly) NSString *fileName;
 

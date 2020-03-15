@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     id <UIDropSession> _session;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIDropSession> session; // @synthesize session=_session;
 @property(retain, nonatomic) UITableViewDropProposal *proposal; // @synthesize proposal=_proposal;
 @property(retain, nonatomic, getter=_translatedDestinationIndexPath, setter=_setTranslatedDestinationIndexPath:) NSIndexPath *translatedDestinationIndexPath; // @synthesize translatedDestinationIndexPath=_translatedDestinationIndexPath;
 @property(retain, nonatomic) NSIndexPath *destinationIndexPath; // @synthesize destinationIndexPath=_destinationIndexPath;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak id <_UITableViewDropCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_dropItem:(id)arg1 toCell:(id)arg2 withPreviewParameters:(id)arg3;
 - (void)_dropItem:(id)arg1 toTarget:(id)arg2;
 - (id)dropItem:(id)arg1 toTarget:(id)arg2;

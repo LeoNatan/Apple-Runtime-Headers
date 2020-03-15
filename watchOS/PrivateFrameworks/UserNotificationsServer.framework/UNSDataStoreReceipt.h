@@ -17,11 +17,11 @@
 }
 
 + (id)receiptWithAddedObjects:(id)arg1 replacedObjects:(id)arg2 replacementObjects:(id)arg3 removedObjects:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *removedObjects; // @synthesize removedObjects=_removedObjects;
 @property(readonly, nonatomic) NSArray *replacementObjects; // @synthesize replacementObjects=_replacementObjects;
 @property(readonly, nonatomic) NSArray *replacedObjects; // @synthesize replacedObjects=_replacedObjects;
 @property(readonly, nonatomic) NSArray *addedObjects; // @synthesize addedObjects=_addedObjects;
-- (void).cxx_destruct;
 - (_Bool)hasChanges;
 - (id)initWithAddedObjects:(id)arg1 replacedObjects:(id)arg2 replacementObjects:(id)arg3 removedObjects:(id)arg4;
 

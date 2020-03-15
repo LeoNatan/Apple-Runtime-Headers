@@ -19,11 +19,11 @@
 + (id)buildRequiredOnlyWithLabel:(id)arg1 withFileType:(id)arg2;
 + (id)buildWithLabel:(id)arg1 withUrl:(id)arg2 withFileType:(id)arg3 withFileData:(id)arg4;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMAnyPayload *payloadFileData; // @synthesize payloadFileData=_payloadFileData;
 @property(copy, nonatomic) NSNumber *payloadFileType; // @synthesize payloadFileType=_payloadFileType;
 @property(copy, nonatomic) NSString *payloadUrl; // @synthesize payloadUrl=_payloadUrl;
 @property(copy, nonatomic) NSString *payloadLabel; // @synthesize payloadLabel=_payloadLabel;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

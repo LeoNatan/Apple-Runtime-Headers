@@ -31,13 +31,13 @@ __attribute__((visibility("hidden")))
 + (void)fullyPopulateConfigurationOptions:(id)arg1;
 + (void)recordDefaultConfigurationOptionsInDictionary:(id)arg1;
 + (id)detectorName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *synchronizationQueue; // @synthesize synchronizationQueue=_synchronizationQueue;
 @property(readonly, nonatomic) unsigned long long backingStore; // @synthesize backingStore=_backingStore;
 @property(readonly, nonatomic) VNMetalContext *metalContext; // @synthesize metalContext=_metalContext;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(readonly, copy) NSDictionary *configurationOptions; // @synthesize configurationOptions=_configurationOptions;
-- (void).cxx_destruct;
 - (void)updateConfigurationOptionsWithObject:(id)arg1 forKey:(id)arg2;
 - (id)validatedProcessingDeviceInOptions:(id)arg1 error:(id *)arg2;
 - (BOOL)supportsProcessingDevice:(id)arg1;

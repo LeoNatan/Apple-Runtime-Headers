@@ -16,8 +16,8 @@
     UIImageView *_imageView;
 }
 
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 - (long long)layoutStyle;
 - (void)reloadData;
 - (void)layoutImage;

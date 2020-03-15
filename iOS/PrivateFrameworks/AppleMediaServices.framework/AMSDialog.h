@@ -24,6 +24,7 @@
 
 + (id)dialogWithTitle:(id)arg1 message:(id)arg2 style:(long long)arg3;
 + (id)dialogWithTitle:(id)arg1 message:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSArray *textFields; // @synthesize textFields=_textFields;
 @property(nonatomic) long long style; // @synthesize style=_style;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSImage *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
-- (void).cxx_destruct;
 - (void)presentSystemDialog;
 - (void)presentSheetFromWindow:(id)arg1;
 - (void)presentFromViewController:(id)arg1;

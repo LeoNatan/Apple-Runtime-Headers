@@ -13,8 +13,8 @@
     NSArray *_stringDrawingInfoValues;
 }
 
-@property(retain, nonatomic) NSArray *stringDrawingInfoValues; // @synthesize stringDrawingInfoValues=_stringDrawingInfoValues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *stringDrawingInfoValues; // @synthesize stringDrawingInfoValues=_stringDrawingInfoValues;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)requiredSize;
 - (id)init;

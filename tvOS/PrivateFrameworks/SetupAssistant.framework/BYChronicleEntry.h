@@ -13,8 +13,8 @@
     NSString *_productVersion;
 }
 
-@property(retain, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 - (_Bool)isEqualToEntry:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

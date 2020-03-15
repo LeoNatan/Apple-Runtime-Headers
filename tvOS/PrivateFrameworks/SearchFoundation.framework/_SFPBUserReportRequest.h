@@ -19,11 +19,11 @@
     NSArray *_userReportOptions;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *userReportOptions; // @synthesize userReportOptions=_userReportOptions;
 @property(copy, nonatomic) NSString *dismissText; // @synthesize dismissText=_dismissText;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *affordanceText; // @synthesize affordanceText=_affordanceText;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

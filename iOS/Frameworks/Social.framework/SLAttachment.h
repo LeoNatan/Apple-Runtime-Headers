@@ -30,6 +30,7 @@
 
 + (_Bool)attachmentTypeRepresentsAnImage:(long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsAnotherPreviewGeneration; // @synthesize needsAnotherPreviewGeneration=_needsAnotherPreviewGeneration;
 @property(nonatomic) _Bool startedPayloadLoad; // @synthesize startedPayloadLoad=_startedPayloadLoad;
 @property(nonatomic) long long downsampleStatus; // @synthesize downsampleStatus=_downsampleStatus;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) UIImage *previewImage; // @synthesize previewImage=_previewImage;
 @property long long previewType; // @synthesize previewType=_previewType;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setPayloadUpdateObserverWithBlock:(CDUnknownBlockType)arg1;
 - (void)setPreviewUpdateObserverWithBlock:(CDUnknownBlockType)arg1;

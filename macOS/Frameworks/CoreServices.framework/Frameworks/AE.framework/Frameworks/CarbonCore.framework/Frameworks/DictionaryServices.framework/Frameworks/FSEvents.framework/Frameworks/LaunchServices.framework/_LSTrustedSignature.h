@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (id)cdHashesForURL:(id)arg1 architecture:(id)arg2 error:(id *)arg3;
 + (id)secret;
 + (unsigned long long)currentFormatVersion;
-@property(readonly, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 - (id)initWithBundleURL:(id)arg1 secret:(id)arg2 error:(id *)arg3;
 - (id)initWithBundleURL:(id)arg1 error:(id *)arg2;
 - (id)init;

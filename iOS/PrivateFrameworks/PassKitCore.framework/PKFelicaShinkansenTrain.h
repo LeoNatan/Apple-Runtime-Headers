@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *seatNumber; // @synthesize seatNumber=_seatNumber;
 @property(readonly, copy, nonatomic) NSNumber *seatRow; // @synthesize seatRow=_seatRow;
 @property(readonly, copy, nonatomic) NSNumber *carNumber; // @synthesize carNumber=_carNumber;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSNumber *departureTime; // @synthesize departureTime=_departureTime;
 @property(readonly, copy, nonatomic) NSData *destinationStation; // @synthesize destinationStation=_destinationStation;
 @property(readonly, copy, nonatomic) NSData *originStation; // @synthesize originStation=_originStation;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

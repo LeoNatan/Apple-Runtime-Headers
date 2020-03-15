@@ -19,10 +19,10 @@
 + (id)entitlements;
 + (id)eventStream;
 + (id)_eventWithBundleIdentifier:(id)arg1 metadata:(id)arg2;
-+ (void)setPlaybackState:(unsigned int)arg1 bundleId:(id)arg2 track:(id)arg3 outputDeviceIDs:(id)arg4;
++ (void)setPlaybackState:(unsigned int)arg1 bundleId:(id)arg2 track:(id)arg3 outputDeviceIDs:(id)arg4 mediaType:(id)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVOutputContext *outputContext; // @synthesize outputContext=_outputContext;
 @property(nonatomic) unsigned int lastPlaybackState; // @synthesize lastPlaybackState=_lastPlaybackState;
-- (void).cxx_destruct;
 - (void)_nowPlayingInfoDidChange:(void *)arg1 outputDevices:(id)arg2;
 - (void)outputDevicesDidChange:(id)arg1;
 - (void)_registerForNowPlayingNotifications;

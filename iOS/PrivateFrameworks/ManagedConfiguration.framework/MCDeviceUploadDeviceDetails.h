@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly, nonatomic) NSString *deviceUploadStatus; // @synthesize deviceUploadStatus=_deviceUploadStatus;
 @property(readonly, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
-- (void).cxx_destruct;
 - (id)initWithDict:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -31,6 +31,7 @@
 
 + (id)homeScreenWrapperForLegacyDefaults:(id)arg1;
 + (id)lockScreenWrapperForLegacyDefaults:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *gradientData; // @synthesize gradientData=_gradientData;
 @property(retain, nonatomic) NSString *colorName; // @synthesize colorName=_colorName;
 @property(retain, nonatomic) NSData *colorData; // @synthesize colorData=_colorData;
@@ -48,7 +49,6 @@
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(nonatomic) double zoomScale; // @synthesize zoomScale=_zoomScale;
 @property(nonatomic) double parallaxFactor; // @synthesize parallaxFactor=_parallaxFactor;
-- (void).cxx_destruct;
 - (id)wallpaperDefaultsDict;
 - (id)initWithWallpaperDefaultsDict:(id)arg1;
 

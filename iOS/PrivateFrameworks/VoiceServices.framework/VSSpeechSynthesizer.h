@@ -70,6 +70,7 @@
 + (id)validatePresynthesizedAudioRequest:(id)arg1;
 + (id)validateRequest:(id)arg1;
 + (id)errorWithReason:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *durationRequests; // @synthesize durationRequests=_durationRequests;
 @property(nonatomic) long long gender; // @synthesize gender=_gender;
 @property(nonatomic) long long voiceType; // @synthesize voiceType=_voiceType;
@@ -81,7 +82,6 @@
 @property(nonatomic) float pitch; // @synthesize pitch=_pitch;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(nonatomic) __weak id <VSSpeechSynthesizerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)availableFootprintsForVoice:(id)arg1 languageCode:(id)arg2;
 - (id)availableLanguageCodes;
 - (id)availableVoicesForLanguageCode:(id)arg1;
@@ -120,6 +120,7 @@
 - (_Bool)prewarmIfNeeded;
 - (void)getLogToFile:(CDUnknownBlockType)arg1;
 - (void)setLogToFile:(_Bool)arg1;
+- (void)connection:(id)arg1 invalidatedWithError:(id)arg2;
 - (void)connection:(id)arg1 presynthesizedAudioRequest:(id)arg2 successWithInstrumentMetrics:(id)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 presynthesizedAudioRequest:(id)arg2 didStopAtEnd:(_Bool)arg3 error:(id)arg4;
 - (void)connection:(id)arg1 presynthesizedAudioRequestDidStart:(id)arg2;

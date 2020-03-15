@@ -13,8 +13,8 @@
     NSArray *_formattedTextItems;
 }
 
-@property(retain, nonatomic) NSArray *formattedTextItems; // @synthesize formattedTextItems=_formattedTextItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *formattedTextItems; // @synthesize formattedTextItems=_formattedTextItems;
 - (id)filterItemsByType:(unsigned long long)arg1;
 - (id)icons;
 - (id)inlineRoundedText;

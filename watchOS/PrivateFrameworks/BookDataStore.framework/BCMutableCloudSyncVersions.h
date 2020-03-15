@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long historyTokenOffset; // @synthesize historyTokenOffset=_historyTokenOffset;
 @property(copy, nonatomic) NSPersistentHistoryToken *historyToken; // @synthesize historyToken=_historyToken;
 @property(nonatomic) long long syncVersion; // @synthesize syncVersion=_syncVersion;
 @property(nonatomic) long long localVersion; // @synthesize localVersion=_localVersion;
 @property(nonatomic) long long cloudVersion; // @synthesize cloudVersion=_cloudVersion;
 @property(copy, nonatomic) NSString *dataType; // @synthesize dataType=_dataType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

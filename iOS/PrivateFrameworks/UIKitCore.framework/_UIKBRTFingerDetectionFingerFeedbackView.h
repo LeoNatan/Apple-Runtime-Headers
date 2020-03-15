@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     _UIKBRTFingerDetectionFingerCircleView *_fingerDot;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool unknownSeen; // @synthesize unknownSeen=_unknownSeen;
 @property(retain, nonatomic) _UIKBRTFingerDetectionFingerCircleView *fingerDot; // @synthesize fingerDot=_fingerDot;
 @property(retain, nonatomic) UILabel *fingerLabel; // @synthesize fingerLabel=_fingerLabel;
-- (void).cxx_destruct;
 - (void)setNeedsDisplay;
 - (void)centerOn:(struct CGPoint)arg1 withRadius:(double)arg2 andIdentifier:(unsigned long long)arg3;
 - (void)layoutSubviews;

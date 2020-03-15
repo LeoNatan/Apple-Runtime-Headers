@@ -16,11 +16,11 @@
     BOOL _immutable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL immutable; // @synthesize immutable=_immutable;
 @property(nonatomic) double position; // @synthesize position=_position;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)retainStringAndSizeFromLabelInfo:(id)arg1;
 - (void)setStringToYearWithDate:(id)arg1 timeZone:(id)arg2;

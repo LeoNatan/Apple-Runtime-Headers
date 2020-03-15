@@ -18,11 +18,11 @@
 }
 
 + (id)_loadingQueue;
+- (void).cxx_destruct;
 @property(getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly, copy, nonatomic) NSString *assetKey; // @synthesize assetKey=_assetKey;
 @property(readonly, nonatomic) long long groupType; // @synthesize groupType=_groupType;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)_assetPathWithAssetKey:(id)arg1;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isImageAvailable;

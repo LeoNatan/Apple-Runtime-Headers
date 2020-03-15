@@ -20,10 +20,10 @@
 
 + (id)_logStringForType:(unsigned long long)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *remoteAppName; // @synthesize remoteAppName=_remoteAppName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_cloneFromEndpoint:(id)arg1;
 - (_Bool)_isEqualToEndpoint:(id)arg1;
 - (id)initWithCoder:(id)arg1;

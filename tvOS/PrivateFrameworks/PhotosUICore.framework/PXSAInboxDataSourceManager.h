@@ -20,10 +20,10 @@
     PXSAInboxDetailViewControllerProvider *_sharedAlbumDetailViewControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXSAInboxDetailViewControllerProvider *sharedAlbumDetailViewControllerProvider; // @synthesize sharedAlbumDetailViewControllerProvider=_sharedAlbumDetailViewControllerProvider;
 @property(retain, nonatomic) PXSAInboxTitleProvider *sharedAlbumTitleProvider; // @synthesize sharedAlbumTitleProvider=_sharedAlbumTitleProvider;
 @property(retain, nonatomic) PXFeedSectionInfosManager *feedSectionInfosManager; // @synthesize feedSectionInfosManager=_feedSectionInfosManager;
-- (void).cxx_destruct;
 - (int)requestImageForPreviewItem:(id)arg1 targetSize:(struct CGSize)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (void)feedSectionInfosManager:(id)arg1 sectionInfosDidChange:(id)arg2;
 - (id)_sectionInfosForDataSource;

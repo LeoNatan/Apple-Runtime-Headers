@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 
 + (struct SKUIStackedImageConfiguration)_configurationForSize:(struct CGSize)arg1;
 + (double)maximumPerspectiveHeightForSize:(struct CGSize)arg1;
-@property(retain, nonatomic) MPUBorderDrawingCache *borderDrawingCache; // @synthesize borderDrawingCache=_borderDrawingCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPUBorderDrawingCache *borderDrawingCache; // @synthesize borderDrawingCache=_borderDrawingCache;
 - (void)stackView:(id)arg1 didCreateItem:(id)arg2;
 - (void)stackView:(id)arg1 applyAttributesToItem:(id)arg2 atIndex:(long long)arg3;
 - (long long)numberOfItemsInStackView:(id)arg1;

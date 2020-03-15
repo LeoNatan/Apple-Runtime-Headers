@@ -21,9 +21,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)createWithDictionary:(id)arg1 home:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
 @property(readonly) HMFLocationAuthorization *authorization; // @synthesize authorization=_authorization;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;

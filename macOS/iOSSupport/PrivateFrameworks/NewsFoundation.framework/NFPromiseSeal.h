@@ -17,12 +17,12 @@
     NFUnfairLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NFUnfairLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSMutableArray *handlers; // @synthesize handlers=_handlers;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (void)seal:(id)arg1 error:(id)arg2 resolution:(unsigned long long)arg3;
 - (void)registerHandler:(CDUnknownBlockType)arg1;
 - (void)alwaysOn:(id)arg1 always:(CDUnknownBlockType)arg2;

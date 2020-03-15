@@ -18,10 +18,10 @@
     NSString *_path;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType eventBlock; // @synthesize eventBlock=_eventBlock;
 @property(readonly, nonatomic) _Bool started; // @synthesize started=_started;
 @property(readonly, retain, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (id)description;

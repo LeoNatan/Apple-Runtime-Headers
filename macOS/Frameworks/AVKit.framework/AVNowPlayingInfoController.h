@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     NSString *_overrideParentApplicationDisplayIdentifier;
 }
 
-@property(copy, nonatomic) NSString *overrideParentApplicationDisplayIdentifier; // @synthesize overrideParentApplicationDisplayIdentifier=_overrideParentApplicationDisplayIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *overrideParentApplicationDisplayIdentifier; // @synthesize overrideParentApplicationDisplayIdentifier=_overrideParentApplicationDisplayIdentifier;
 - (unsigned int)_handleRemoteCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)_updateRegisteredRemoteCommandEnabledStatesWithPlayerController:(id)arg1;
 - (void)_updateNowPlayingInfoTestingOwnership:(BOOL)arg1;

@@ -23,9 +23,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILayoutGuide *backgroundViewLayoutGuide; // @synthesize backgroundViewLayoutGuide=_backgroundViewLayoutGuide;
 @property(nonatomic) __weak id <REUISiriShortcutViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)populateWithContentViewModel:(id)arg1;
 - (void)_handleConfirmation:(id)arg1;
 - (void)_handleDismiss:(id)arg1;

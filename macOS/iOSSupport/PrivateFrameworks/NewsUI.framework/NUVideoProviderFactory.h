@@ -16,8 +16,8 @@
     id <NUVideoEventTracker> _eventTracker;
 }
 
-@property(readonly, nonatomic) id <NUVideoEventTracker> eventTracker; // @synthesize eventTracker=_eventTracker;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NUVideoEventTracker> eventTracker; // @synthesize eventTracker=_eventTracker;
 - (id)createVideoProviderWithVideoItem:(id)arg1;
 - (id)initWithEventTracker:(id)arg1;
 - (id)init;

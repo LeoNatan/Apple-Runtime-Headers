@@ -26,6 +26,7 @@
     long long _retryCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool serverBatchCanceled; // @synthesize serverBatchCanceled=_serverBatchCanceled;
 @property(nonatomic) long long retryCount; // @synthesize retryCount=_retryCount;
 @property(readonly, nonatomic) AMSPurchase *purchase; // @synthesize purchase=_purchase;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSString *logUUID; // @synthesize logUUID=_logUUID;
 @property(retain, nonatomic) AMSBuyParams *buyParams; // @synthesize buyParams=_buyParams;
-- (void).cxx_destruct;
 - (id)_purchaseStringForType:(long long)arg1;
 - (id)description;
 - (id)initWithPurchase:(id)arg1;

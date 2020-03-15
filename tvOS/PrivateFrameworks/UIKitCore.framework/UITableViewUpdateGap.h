@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)gapWithUpdateItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIUpdateItem *lastUpdateItem; // @synthesize lastUpdateItem=_lastUpdateItem;
 @property(retain, nonatomic) UIUpdateItem *firstUpdateItem; // @synthesize firstUpdateItem=_firstUpdateItem;
 @property(readonly, nonatomic) NSArray *insertItems; // @synthesize insertItems=_insertItems;
 @property(readonly, nonatomic) NSArray *deleteItems; // @synthesize deleteItems=_deleteItems;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasAutomaticAnimationItems;
 @property(readonly, nonatomic) _Bool isSectionBasedGap;
 @property(readonly, nonatomic) NSArray *updateItems;

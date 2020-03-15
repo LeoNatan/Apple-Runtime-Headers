@@ -24,12 +24,12 @@
     int _symptomsAlternateAdviceToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int nextSessionIdentifier; // @synthesize nextSessionIdentifier=_nextSessionIdentifier;
 @property(readonly, nonatomic) NSMutableDictionary *sessionTasks; // @synthesize sessionTasks=_sessionTasks;
 @property(readonly, nonatomic) NSOperationQueue *sessionIsolationOperationQueue; // @synthesize sessionIsolationOperationQueue=_sessionIsolationOperationQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sessionIsolation; // @synthesize sessionIsolation=_sessionIsolation;
 @property(readonly, nonatomic) GEODataURLSessionList *urlSessions; // @synthesize urlSessions=_urlSessions;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)tearDown;
 - (id)downloadTaskWithRequest:(id)arg1 priority:(float)arg2 delegate:(id)arg3 delegateQueue:(id)arg4;

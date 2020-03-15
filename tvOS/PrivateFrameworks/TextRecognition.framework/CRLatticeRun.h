@@ -15,10 +15,10 @@
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutablePaths; // @synthesize mutablePaths=_mutablePaths;
 @property(readonly, nonatomic) NSArray *graphEdges; // @synthesize graphEdges=_graphEdges;
 @property(readonly) struct CGRect rect; // @synthesize rect=_rect;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *paths;
 - (void)setGraph:(id)arg1;
 - (void)appendPath:(id)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned int _width;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int width; // @synthesize width=_width;
 @property(retain, nonatomic) NSMutableArray *prevPoints; // @synthesize prevPoints=_prevPoints;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)flush;
 - (void)addPoint:(CDStruct_86c70518)arg1;

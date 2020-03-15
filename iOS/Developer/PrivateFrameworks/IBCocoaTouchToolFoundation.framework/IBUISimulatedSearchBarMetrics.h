@@ -18,11 +18,11 @@
 
 + (id)simulatedSearchBarStyleWithStyle:(long long)arg1 translucent:(_Bool)arg2 prompt:(_Bool)arg3 tintColor:(id)arg4 barTintColor:(id)arg5;
 + (id)defaultMetrics;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 @property(readonly, copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic, getter=isPrompted) _Bool prompted; // @synthesize prompted=_prompted;
 @property(readonly, nonatomic, getter=isTranslucent) _Bool translucent; // @synthesize translucent=_translucent;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

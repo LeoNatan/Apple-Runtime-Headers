@@ -16,9 +16,9 @@
     AVCaptureSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureSession *session; // @synthesize session=_session;
 @property(nonatomic) unsigned long long remainingPhotos; // @synthesize remainingPhotos=_remainingPhotos;
-- (void).cxx_destruct;
 - (void)captureOutput:(id)arg1 didFinishProcessingPhoto:(id)arg2 error:(id)arg3;
 - (void)takePhoto;
 

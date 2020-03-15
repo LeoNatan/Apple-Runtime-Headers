@@ -18,10 +18,10 @@
 }
 
 + (id)responseWithResults:(id)arg1 tiles:(id)arg2 error:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(readonly, nonatomic) NSSet *tiles; // @synthesize tiles=_tiles;
-- (void).cxx_destruct;
 - (id)initWithResults:(id)arg1 tiles:(id)arg2 error:(id)arg3;
 
 // Remaining properties

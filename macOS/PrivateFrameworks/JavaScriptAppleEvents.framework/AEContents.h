@@ -16,10 +16,10 @@
 }
 
 + (id)contentsWithName:(id)arg1 code:(unsigned int)arg2 classCode:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property unsigned int classCode; // @synthesize classCode=_classCode;
 @property unsigned int code; // @synthesize code=_code;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 code:(unsigned int)arg2 classCode:(unsigned int)arg3;
 
 @end

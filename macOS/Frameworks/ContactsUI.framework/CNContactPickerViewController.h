@@ -18,8 +18,8 @@
     id <CNContactPickerViewControllerDelegate> _delegate;
 }
 
-@property __weak id <CNContactPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <CNContactPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)registerSectionsForDraggedTypes:(id)arg1;
 - (void)selectSectionWithIdentifier:(id)arg1;
 - (void)addSection:(id)arg1;

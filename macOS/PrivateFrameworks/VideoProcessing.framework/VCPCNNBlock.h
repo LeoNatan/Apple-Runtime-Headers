@@ -19,13 +19,13 @@
     BOOL _executedOnGPU;
 }
 
+- (void).cxx_destruct;
 @property BOOL generateOutput; // @synthesize generateOutput=_generateOutput;
 @property(readonly) VCPCNNMetalContext *context; // @synthesize context=_context;
 @property(retain) VCPCNNData *output; // @synthesize output=_output;
 @property __weak VCPCNNData *input; // @synthesize input=_input;
 @property(retain) NSMutableArray *outputSize; // @synthesize outputSize=_outputSize;
 @property __weak NSMutableArray *inputSize; // @synthesize inputSize=_inputSize;
-- (void).cxx_destruct;
 - (BOOL)useGPU;
 - (BOOL)supportGPU;
 - (int)readFromDisk:(struct __sFILE *)arg1 quantFactor:(short)arg2;

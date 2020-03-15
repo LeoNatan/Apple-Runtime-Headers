@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)rangeWithDOMRange:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long endOffset; // @synthesize endOffset=_endOffset;
 @property(nonatomic) long long startOffset; // @synthesize startOffset=_startOffset;
 @property(retain, nonatomic) DOMNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithDOMRange:(id)arg1;

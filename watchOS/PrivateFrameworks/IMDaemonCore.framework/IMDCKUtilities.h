@@ -21,20 +21,21 @@
     IMDefaults *_imDefaults;
 }
 
++ (void)calculateAndSaveAliasesToDefaults;
++ (id)calculateAliasesForDefaults;
++ (id)readAliasesFromDefaults;
++ (id)_idsAccountController;
 + (id)im_AKSecurityLevelKey;
 + (id)restoreFailuresDirectory;
 + (id)sharedInstance;
 + (id)logHandle;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useDeprecatedApi; // @synthesize useDeprecatedApi=_useDeprecatedApi;
 @property(retain, nonatomic) IMDefaults *imDefaults; // @synthesize imDefaults=_imDefaults;
 @property(retain, nonatomic) FTDeviceSupport *deviceSupport; // @synthesize deviceSupport=_deviceSupport;
 @property(retain, nonatomic) IDSServerBag *serverBag; // @synthesize serverBag=_serverBag;
 @property(retain, nonatomic) IMLockdownManager *lockdownManager; // @synthesize lockdownManager=_lockdownManager;
 @property(nonatomic) _Bool didKeyRollPendingCheck; // @synthesize didKeyRollPendingCheck=_didKeyRollPendingCheck;
-- (void).cxx_destruct;
-- (void)fetchSecurityLevelForAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (id)accountWithDSID:(id)arg1;
-- (id)accountDSID:(id)arg1;
 - (void)disableAllDevicesWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool isInCloudKitDemoMode;
 - (void)eligibleForTruthZoneWithCompletion:(CDUnknownBlockType)arg1;
@@ -43,8 +44,6 @@
 - (_Bool)signedIntoiCloudAndiMessageAndiCloudAccountMatchesiMessageAccount;
 - (_Bool)iCloudAccountMatchesiMessageAccount;
 - (unsigned int)_primaryiCloudAccountSecurityLevel;
-- (void)fetchSecurityLevelAndUpdateMiCSwitchEligibilityIfNeededOnImagentLaunch;
-- (void)fetchSecurityLevelAndUpdateMiCSwitchEligibility;
 - (_Bool)_allowDestructiveMOCFeaturesBasedOnDSID;
 - (id)dsid;
 - (id)_primaryiCloudAccountAltDSID;
@@ -113,8 +112,6 @@
 - (id)extractServerRecordFromCKServerErrorRecordChanged:(id)arg1;
 - (id)_errorsFromPartialError:(id)arg1;
 - (_Bool)_isCKErrorPartialFailure:(id)arg1;
-- (unsigned int)_mocEnabledStateFromAccountStatus:(int)arg1;
-- (void)fetchMOCEnabledStateWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)syncFailureMetricString:(id)arg1 isRecoverable:(_Bool)arg2 error:(id)arg3;
 - (id)recordNameForMessageWithGUID:(id)arg1 usingSalt:(id)arg2;
 - (void)_askToTapToRadarWithString:(id)arg1 internalOnly:(_Bool)arg2;
@@ -128,15 +125,14 @@
 - (_Bool)shouldLogDumpOnCloudKitError;
 - (_Bool)shouldPresentTTROnCloudKitError;
 - (_Bool)_checkIfEnabledByServerBagOrDefault:(id)arg1;
-- (void)fetchCloudKitAccountStatusAndCheckForAccountNeedsRepairWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)shouldRepairAccountWithDeviceAccountSecurityLevel:(unsigned int)arg1 serverAccountStatus:(int)arg2;
+- (void)fetchAccountStatusAndUpdateMiCSwitchEligibilityIfNeededOnImagentLaunch;
+- (void)fetchAccountStatusAndUpdateMiCSwitchEligibility;
+- (void)fetchCloudKitAccountStatusAndUpdateEligibilityAndNeedsRepairStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_setEligibleToToggleMiCSwitch:(_Bool)arg1;
-- (void)fetchLocalAccountSecurityLevel:(CDUnknownBlockType)arg1;
+- (_Bool)shouldRepairAccountWithAccountStatus:(int)arg1 securityLevel:(unsigned int)arg2;
 - (_Bool)_accountNeedsRepairOverride;
 - (void)fetchCloudKitAccountStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_createAccountError:(id)arg1;
-- (void)_checkEligibilityWithLoggedInAccountWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)_accountInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)_checkEligibilityWithAccountInfo:(id)arg1;
 - (id)_authenticationController;
 - (_Bool)accountIsVerifiedForMOCAndSafeForCacheDelete;

@@ -31,6 +31,7 @@
 
 + (Class)_classForContentType:(unsigned int)arg1;
 + (unsigned int)contentTypeForString:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WLKContentRating *contentRating; // @synthesize contentRating=_contentRating;
 @property(readonly, copy, nonatomic) NSDictionary *rolesSummary; // @synthesize rolesSummary=_rolesSummary;
 @property(readonly, nonatomic) NSArray *trailers; // @synthesize trailers=_trailers;
@@ -47,7 +48,6 @@
 @property(readonly, copy, nonatomic) NSURL *tvAppDeeplinkURL; // @synthesize tvAppDeeplinkURL=_tvAppDeeplinkURL;
 @property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(readonly, nonatomic) unsigned int contentType; // @synthesize contentType=_contentType;
-- (void).cxx_destruct;
 - (id)init;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;

@@ -16,8 +16,8 @@
     id <NUImageProperties> _properties;
 }
 
-@property(retain) id <NUImageProperties> properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(retain) id <NUImageProperties> properties; // @synthesize properties=_properties;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

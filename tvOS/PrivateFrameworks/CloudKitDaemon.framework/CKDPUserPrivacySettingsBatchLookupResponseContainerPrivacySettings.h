@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)applicationBundleType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPUserPrivacySettings *userPrivacySettings; // @synthesize userPrivacySettings=_userPrivacySettings;
 @property(retain, nonatomic) NSMutableArray *applicationBundles; // @synthesize applicationBundles=_applicationBundles;
 @property(retain, nonatomic) NSString *applicationContainer; // @synthesize applicationContainer=_applicationContainer;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

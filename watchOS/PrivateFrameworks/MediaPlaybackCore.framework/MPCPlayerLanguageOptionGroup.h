@@ -16,9 +16,9 @@
     MPCPlayerResponse *_response;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak MPCPlayerResponse *response; // @synthesize response=_response;
 @property(readonly, nonatomic) NSArray *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)changeRequestForOptionAtIndex:(unsigned int)arg1;
 - (id)localizedTitleForOptionAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int indexOfSelectedOption;

@@ -24,6 +24,9 @@
     struct {
         unsigned int canDrawContentIsValid:1;
         unsigned int canDrawContent:1;
+        unsigned int suppressPixelAlignment:1;
+        unsigned int previousPixelAlignment:1;
+        unsigned int previousEdgeAntialiasing:1;
     } _imageViewFlags;
     BOOL _templateSettingsAreInvalid;
     BOOL _edgeInsetsForEffectsAreValid;
@@ -36,6 +39,7 @@
 
 + (BOOL)_canReuseIOSurface:(struct __IOSurface *)arg1 forRenderingCIImageWithIOSurfaceProperties:(id)arg2;
 + (id)_surfacePropertiesForRenderingCIImageWithSize:(struct CGSize)arg1 pixelFormat:(unsigned int)arg2 bytesPerElement:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setAnimatesContents:) BOOL _animatesContents; // @synthesize _animatesContents=__animatesContents;
 @property(nonatomic, setter=_setSymbolImagesIgnoreAccessibilitySizes:) BOOL _symbolImagesIgnoreAccessibilitySizes; // @synthesize _symbolImagesIgnoreAccessibilitySizes=__symbolImagesIgnoreAccessibilitySizes;
 @property(nonatomic) BOOL masksFocusEffectToContents; // @synthesize masksFocusEffectToContents=_masksFocusEffectToContents;
@@ -43,7 +47,6 @@
 @property(nonatomic) BOOL adjustsImageWhenAncestorFocused; // @synthesize adjustsImageWhenAncestorFocused=_adjustsImageWhenAncestorFocused;
 @property(nonatomic, setter=_setEdgeInsetsForEffectsAreValid:) BOOL _edgeInsetsForEffectsAreValid; // @synthesize _edgeInsetsForEffectsAreValid;
 @property(readonly, nonatomic) BOOL _templateSettingsAreInvalid; // @synthesize _templateSettingsAreInvalid;
-- (void).cxx_destruct;
 - (BOOL)_setImageViewContentsForCIImageBackedImage:(id)arg1;
 - (id)_applyImageEffectsToCIImage:(id)arg1 effectiveTintColor:(id)arg2;
 - (void)_updateLayeredImageIsFocusedWithFocusedView:(id)arg1 focusAnimationCoordinator:(id)arg2;
@@ -115,6 +118,7 @@
 @property(retain, nonatomic, setter=_setOverridingSymbolConfiguration:) UIImageSymbolConfiguration *_overridingSymbolConfiguration;
 @property(retain, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration;
 - (id)_symbolConfigurationForImage:(id)arg1;
+@property(nonatomic, setter=_setSuppressPixelAlignment:) BOOL _suppressPixelAlignment;
 - (id)midlineGuide;
 - (id)_imageContentGuideAllowingCreation:(BOOL)arg1;
 @property(readonly) UILayoutGuide *imageContentGuide;

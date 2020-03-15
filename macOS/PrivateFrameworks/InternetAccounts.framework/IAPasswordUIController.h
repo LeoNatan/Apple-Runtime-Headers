@@ -37,6 +37,7 @@
     NSString *_uid;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *uid; // @synthesize uid=_uid;
 @property BOOL doCoalesce; // @synthesize doCoalesce=_doCoalesce;
 @property long long result; // @synthesize result=_result;
@@ -45,7 +46,6 @@
 @property(retain) NSString *prepopulatedPassword; // @synthesize prepopulatedPassword=_prepopulatedPassword;
 @property(readonly) NSString *password; // @synthesize password=_password;
 @property(retain) NSDictionary *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)_configureUI;
 - (void)_passwordDidChange:(id)arg1;
 - (void)_notifyPlugins;

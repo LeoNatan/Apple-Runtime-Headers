@@ -17,10 +17,10 @@
     NSData *_points;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *angles; // @synthesize angles=_angles;
 @property(retain, nonatomic) NSData *points; // @synthesize points=_points;
 @property(retain, nonatomic) NSData *delays; // @synthesize delays=_delays;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

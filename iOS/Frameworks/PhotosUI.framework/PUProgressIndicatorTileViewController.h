@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_loadErrorIconForSizeClass:(long long)arg1;
 + (struct CGSize)progressIndicatorTileSizeForSizeClass:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_didStartProgressLogging, setter=_setDidStartProgressLogging:) _Bool _didStartProgressLogging; // @synthesize _didStartProgressLogging=__didStartProgressLogging;
 @property(retain, nonatomic, setter=_setDebugProgressLabel:) UILabel *_debugProgressLabel; // @synthesize _debugProgressLabel=__debugProgressLabel;
 @property(retain, nonatomic, setter=_setErrorButton:) UIButton *_errorButton; // @synthesize _errorButton=__errorButton;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setNeedsUpdateProgressViewStyle:) _Bool _needsUpdateProgressViewStyle; // @synthesize _needsUpdateProgressViewStyle=__needsUpdateProgressViewStyle;
 @property(retain, nonatomic) PUBrowsingVideoPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(retain, nonatomic) PUAssetSharedViewModel *assetSharedViewModel; // @synthesize assetSharedViewModel=_assetSharedViewModel;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *_progressLog;
 - (void)_handleVideoPlayer:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;

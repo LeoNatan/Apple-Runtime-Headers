@@ -23,6 +23,7 @@
     NSString *_certificateIconName;
 }
 
+- (void).cxx_destruct;
 @property int certificateStatus; // @synthesize certificateStatus=_certificateStatus;
 @property(copy) NSString *certificateIconName; // @synthesize certificateIconName=_certificateIconName;
 @property(readonly, getter=isExpired) BOOL expired; // @synthesize expired=_expired;
@@ -34,7 +35,6 @@
 @property(readonly, copy) NSString *issuer; // @synthesize issuer=_issuer;
 @property(readonly, copy) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSImage *icon;
 - (id)initWithSecCertificateRef:(struct __SecCertificate *)arg1;
 

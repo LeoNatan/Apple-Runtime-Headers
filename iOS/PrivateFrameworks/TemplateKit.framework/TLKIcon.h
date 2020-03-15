@@ -13,8 +13,8 @@
     TLKImage *_image;
 }
 
-@property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
 - (unsigned long long)_itemType;
 
 @end

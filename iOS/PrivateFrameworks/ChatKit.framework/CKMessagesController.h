@@ -44,6 +44,7 @@
     CKInboxViewController *_inboxViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKInboxViewController *inboxViewController; // @synthesize inboxViewController=_inboxViewController;
 @property(retain, nonatomic) CKAlertUtilities *alertUtilities; // @synthesize alertUtilities=_alertUtilities;
 @property(retain, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *prewarmedCameraBrowser; // @synthesize prewarmedCameraBrowser=_prewarmedCameraBrowser;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) CKCoreChatController *composeChatController; // @synthesize composeChatController=_composeChatController;
 @property(retain, nonatomic) CKCoreChatController *chatController; // @synthesize chatController=_chatController;
 @property(nonatomic) __weak id <CKMessagesControllerDelegate> messagesControllerDelegate; // @synthesize messagesControllerDelegate=_messagesControllerDelegate;
-- (void).cxx_destruct;
 - (void)teardownCamera;
 - (void)prewarmCameraIfNecessary;
 - (id)_newCameraBrowser;

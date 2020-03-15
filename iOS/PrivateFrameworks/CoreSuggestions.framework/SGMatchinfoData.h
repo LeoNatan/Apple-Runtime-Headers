@@ -16,10 +16,10 @@
 }
 
 + (id)matchinfoDataWithEntityId:(id)arg1 detailEntityId:(id)arg2 matchinfoData:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *matchinfoData; // @synthesize matchinfoData=_matchinfoData;
 @property(readonly, nonatomic) NSNumber *detailEntityId; // @synthesize detailEntityId=_detailEntityId;
 @property(readonly, nonatomic) NSNumber *entityId; // @synthesize entityId=_entityId;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqualToMatchinfoData:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

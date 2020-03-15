@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIImageView *_newlyAddedView;
 }
 
-@property(retain, nonatomic) UIImageView *newlyAddedView; // @synthesize newlyAddedView=_newlyAddedView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImageView *newlyAddedView; // @synthesize newlyAddedView=_newlyAddedView;
 - (void)layoutSubviews;
 @property(nonatomic) _Bool showNewlyAdded;
 - (id)_dotImage;

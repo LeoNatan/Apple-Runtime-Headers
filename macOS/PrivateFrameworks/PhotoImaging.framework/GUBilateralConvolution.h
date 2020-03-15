@@ -31,12 +31,12 @@
 + (id)bilateralAdd1Kernel;
 + (id)RGBToLabKernels;
 + (id)bilateralKernels;
+- (void).cxx_destruct;
 @property(retain) NSNumber *inputVersion; // @synthesize inputVersion=_inputVersion;
 @property(retain) NSNumber *inputEdgeDetail; // @synthesize inputEdgeDetail=_inputEdgeDetail;
 @property(retain) NSArray *inputWeights; // @synthesize inputWeights=_inputWeights;
 @property(retain) NSArray *inputPoints; // @synthesize inputPoints=_inputPoints;
 @property(retain) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (id)doBilateralPass:(id)arg1 points:(id)arg2 weights:(id)arg3 sums:(id)arg4 slope:(id)arg5;
 - (struct CGRect)bilateralAddROI:(long long)arg1 destRect:(struct CGRect)arg2 userInfo:(id)arg3;

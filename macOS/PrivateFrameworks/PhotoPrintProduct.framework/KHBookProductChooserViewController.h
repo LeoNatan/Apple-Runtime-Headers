@@ -15,8 +15,8 @@
     UXBarButtonItem *_helpButtonItem;
 }
 
-@property(readonly, nonatomic) UXBarButtonItem *helpButtonItem; // @synthesize helpButtonItem=_helpButtonItem;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UXBarButtonItem *helpButtonItem; // @synthesize helpButtonItem=_helpButtonItem;
 - (void)showHelp:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

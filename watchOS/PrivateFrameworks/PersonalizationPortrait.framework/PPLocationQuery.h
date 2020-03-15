@@ -35,6 +35,7 @@
 + (id)_algorithmsDescription:(id)arg1;
 + (id)_matchingCategoriesDescription:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int consumer; // @synthesize consumer=_consumer;
 @property(nonatomic) _Bool excludingWithoutSentiment; // @synthesize excludingWithoutSentiment=_excludingWithoutSentiment;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) NSDate *toDate; // @synthesize toDate=_toDate;
 @property(retain, nonatomic) NSDate *fromDate; // @synthesize fromDate=_fromDate;
 @property(nonatomic) unsigned int limit; // @synthesize limit=_limit;
-- (void).cxx_destruct;
 - (id)customizedDescription;
 - (id)description;
 - (unsigned int)hash;

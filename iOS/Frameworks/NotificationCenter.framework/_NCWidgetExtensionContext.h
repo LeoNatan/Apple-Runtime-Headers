@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     long long _largestAvailableDisplayMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_largestAvailableDisplayMode, setter=_setLargestAvailableDisplayMode:) long long largestAvailableDisplayMode; // @synthesize largestAvailableDisplayMode=_largestAvailableDisplayMode;
 @property(nonatomic, getter=_activeDisplayMode, setter=_setActiveDisplayMode:) long long activeDisplayMode; // @synthesize activeDisplayMode=_activeDisplayMode;
 @property(nonatomic, getter=_hostViewController, setter=_setHostViewController:) __weak _NCWidgetViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
-- (void).cxx_destruct;
 - (_Bool)widgetIsForeground;
 - (struct CGSize)widgetMaximumSizeForDisplayMode:(long long)arg1;
 - (long long)widgetActiveDisplayMode;

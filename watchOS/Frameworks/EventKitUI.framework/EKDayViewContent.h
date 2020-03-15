@@ -61,6 +61,7 @@
     struct UIEdgeInsets _occurrencePadding;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKEvent *dimmedOccurrence; // @synthesize dimmedOccurrence=_dimmedOccurrence;
 @property(nonatomic) struct UIEdgeInsets occurrencePadding; // @synthesize occurrencePadding=_occurrencePadding;
 @property(nonatomic) int occurrenceBackgroundStyle; // @synthesize occurrenceBackgroundStyle=_occurrenceBackgroundStyle;
@@ -80,7 +81,6 @@
 @property(copy, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
 @property(readonly, nonatomic) EKCalendarDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) EKCalendarDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (float)RoundToScreenScale:(float)arg1;
 - (float)RoundToScreenScaleForFloat:(float)arg1;
 - (struct CGRect)RoundRectToScreenScaleForRect:(struct CGRect)arg1;
@@ -120,6 +120,7 @@
 - (struct CGPoint)pointForDate:(double)arg1;
 - (void)setViewsDimmed:(_Bool)arg1 forEvent:(id)arg2;
 - (id)grid;
+- (id)selectedCopyViewForDayOccurrenceView:(id)arg1;
 - (void)dayOccurrenceViewSelected:(id)arg1 atPoint:(struct CGPoint)arg2 wasTapped:(_Bool)arg3;
 - (id)occurrenceViews;
 - (void)rectBecameVisible:(struct CGRect)arg1;

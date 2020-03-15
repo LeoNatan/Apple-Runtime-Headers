@@ -16,6 +16,7 @@
 - (id)brc_SHA256;
 - (_Bool)brc_isBlacklistedPackageExtension;
 - (_Bool)brc_isForcedPackageExtension;
+- (id)brc_fixDocumentExtensionIfNeededForShareURL:(id)arg1;
 - (id)brc_mangledNameFromURLFragment:(_Bool)arg1;
 @end
 

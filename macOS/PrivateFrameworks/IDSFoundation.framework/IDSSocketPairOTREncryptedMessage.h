@@ -22,13 +22,13 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL fileXfer; // @synthesize fileXfer=_fileXfer;
 @property(nonatomic) unsigned short streamID; // @synthesize streamID=_streamID;
 @property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) unsigned short priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) unsigned char versionNumber; // @synthesize versionNumber=_versionNumber;
 @property(readonly, nonatomic) BOOL encrypted; // @synthesize encrypted=_encrypted;
-- (void).cxx_destruct;
 - (id)_nonHeaderData;
 @property(readonly, nonatomic) NSData *data;
 - (unsigned char)command;

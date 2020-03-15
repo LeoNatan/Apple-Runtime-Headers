@@ -16,10 +16,10 @@
     id <HFCharacteristicValueSource> _valueSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HMRoom *room; // @synthesize room=_room;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithHome:(id)arg1 room:(id)arg2;
 - (id)initWithHome:(id)arg1 room:(id)arg2 valueSource:(id)arg3;

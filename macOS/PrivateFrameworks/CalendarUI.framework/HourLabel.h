@@ -13,8 +13,8 @@
     NSDate *_time;
 }
 
-@property(retain) NSDate *time; // @synthesize time=_time;
 - (void).cxx_destruct;
+@property(retain) NSDate *time; // @synthesize time=_time;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

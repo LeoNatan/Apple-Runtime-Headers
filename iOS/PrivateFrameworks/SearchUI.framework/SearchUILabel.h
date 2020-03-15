@@ -13,8 +13,8 @@
     SFText *_sfText;
 }
 
-@property(retain, nonatomic) SFText *sfText; // @synthesize sfText=_sfText;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFText *sfText; // @synthesize sfText=_sfText;
 
 @end
 

@@ -20,13 +20,13 @@
 
 + (id)displayLinkWithTarget:(id)arg1 selector:(SEL)arg2;
 + (Class)_displayLinkClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIScreen *screen; // @synthesize screen=_screen;
 @property(retain, nonatomic) NSString *runLoopMode; // @synthesize runLoopMode=_runLoopMode;
 @property(nonatomic) __weak NSRunLoop *runLoop; // @synthesize runLoop=_runLoop;
 @property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
 @property(readonly, nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(readonly, nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)_displayLinkCallback;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (void)invalidate;

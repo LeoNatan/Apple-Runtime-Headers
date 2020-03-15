@@ -20,9 +20,9 @@
 }
 
 + (id)sharedImageAssetDownloader;
+- (void).cxx_destruct;
 @property long long concurrentRequests; // @synthesize concurrentRequests=_concurrentRequests;
 @property(retain) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)downloadWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)downloadFromUrl:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -16,10 +16,10 @@
     NSMutableDictionary *_browsers;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *browsers; // @synthesize browsers=_browsers;
 @property(retain) NSMutableDictionary *connections; // @synthesize connections=_connections;
 @property __weak NSObject<NWRemoteConnectionActorDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)receiveRemoteCommand:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)scheduleReadsOnConnection:(id)arg1;

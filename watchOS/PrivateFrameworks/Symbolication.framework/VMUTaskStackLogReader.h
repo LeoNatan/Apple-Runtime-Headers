@@ -17,8 +17,8 @@
     unsigned long long _msl_payload_version;
 }
 
-@property(nonatomic) __weak VMUTaskMemoryScanner *scanner; // @synthesize scanner=_scanner;
 - (void).cxx_destruct;
+@property(nonatomic) __weak VMUTaskMemoryScanner *scanner; // @synthesize scanner=_scanner;
 - (unsigned long long)liteModeStackIDforVMregionAddress:(unsigned long long)arg1;
 - (unsigned long long)liteModeStackIDforAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
 - (int)enumerateRecords:(CDUnknownBlockType)arg1;

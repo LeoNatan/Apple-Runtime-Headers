@@ -15,8 +15,8 @@
     UIView *_remoteContentView;
 }
 
-@property(retain, nonatomic) UIView *remoteContentView; // @synthesize remoteContentView=_remoteContentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *remoteContentView; // @synthesize remoteContentView=_remoteContentView;
 - (void)layoutSubviews;
 
 // Remaining properties

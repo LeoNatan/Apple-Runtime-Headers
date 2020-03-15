@@ -20,6 +20,7 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isIntercative; // @synthesize isIntercative=_isIntercative;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(readonly, nonatomic) _Bool animatingTowardsFinalState; // @synthesize animatingTowardsFinalState=_animatingTowardsFinalState;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) PXGLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) float fractionCompleted; // @synthesize fractionCompleted=_fractionCompleted;
 @property(readonly, nonatomic) NSSet *animations; // @synthesize animations=_animations;
-- (void).cxx_destruct;
 - (void)animateToFinalStateWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)animateToInitialStateWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)invalidate;

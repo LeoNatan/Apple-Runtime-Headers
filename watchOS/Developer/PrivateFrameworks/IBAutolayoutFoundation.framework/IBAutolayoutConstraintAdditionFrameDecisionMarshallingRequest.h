@@ -16,10 +16,10 @@
 }
 
 + (id)requestWithMarshallableObjectPackage:(id)arg1 arbitrationUnit:(id)arg2 constraintsToAdd:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <IBCollection> itemsToEnforceCurrentSize; // @synthesize itemsToEnforceCurrentSize=_itemsToEnforceCurrentSize;
 @property(copy, nonatomic) id <IBCollection> constraintsToRemove; // @synthesize constraintsToRemove=_constraintsToRemove;
 @property(readonly, nonatomic) id <IBCollection> constraintsToAdd; // @synthesize constraintsToAdd=_constraintsToAdd;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

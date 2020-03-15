@@ -13,8 +13,8 @@
     NSDictionary *_deviceDatabases;
 }
 
-@property(readonly, nonatomic) NSDictionary *deviceDatabases; // @synthesize deviceDatabases=_deviceDatabases;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *deviceDatabases; // @synthesize deviceDatabases=_deviceDatabases;
 - (id)initWithDictionary:(id)arg1 resourcePath:(id)arg2;
 
 @end

@@ -13,8 +13,8 @@
     UIFont *_font;
 }
 
-@property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 - (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
 
 @end

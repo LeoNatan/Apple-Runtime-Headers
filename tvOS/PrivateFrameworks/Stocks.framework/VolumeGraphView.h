@@ -17,8 +17,8 @@
     StockGraphImageSet *_graphImageSet;
 }
 
-@property(retain, nonatomic) StockGraphImageSet *graphImageSet; // @synthesize graphImageSet=_graphImageSet;
 - (void).cxx_destruct;
+@property(retain, nonatomic) StockGraphImageSet *graphImageSet; // @synthesize graphImageSet=_graphImageSet;
 - (void)resizeSelectedVolumeClipViewWithLeftX:(double)arg1 rightX:(double)arg2;
 - (void)setShowingSelectedRegion:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

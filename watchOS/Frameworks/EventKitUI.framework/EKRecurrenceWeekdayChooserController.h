@@ -15,9 +15,9 @@
     NSArray *_daysOfTheWeek;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *daysOfTheWeek; // @synthesize daysOfTheWeek=_daysOfTheWeek;
 @property(retain, nonatomic) NSMutableArray *cells; // @synthesize cells=_cells;
-- (void).cxx_destruct;
 - (int)_dayMask;
 - (void)_setCell:(id)arg1 selected:(_Bool)arg2;
 - (void)updateFromRecurrenceRule:(id)arg1;

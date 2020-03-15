@@ -20,12 +20,12 @@
     NSHashTable *_changeObservers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *changeObservers; // @synthesize changeObservers=_changeObservers;
 @property(retain, nonatomic) id pauseToken; // @synthesize pauseToken=_pauseToken;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *reloadQueue; // @synthesize reloadQueue=_reloadQueue;
 @property(readonly, copy, nonatomic) NSArray *dataSources; // @synthesize dataSources=_dataSources;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-- (void).cxx_destruct;
 - (unsigned long long)_fetchTypeForPersonType:(long long)arg1;
 - (long long)_sectionForFetchType:(unsigned long long)arg1;
 - (id)_dataSourceForIndexPath:(id)arg1;

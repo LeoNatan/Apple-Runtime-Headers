@@ -18,9 +18,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_os_log> *sourceManagerLogHandle; // @synthesize sourceManagerLogHandle=_sourceManagerLogHandle;
-- (void).cxx_destruct;
 - (void)simulatePayloadDeliveryForClient:(id)arg1;
 - (void)sendMetrics:(id)arg1 forDate:(id)arg2 andSourceID:(long long)arg3;
 - (id)_createXPCConnection;

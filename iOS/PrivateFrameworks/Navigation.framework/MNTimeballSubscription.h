@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)subscriptionForDestination:(id)arg1 options:(long long)arg2 refreshPolicy:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long refreshPolicy; // @synthesize refreshPolicy=_refreshPolicy;
 @property(readonly, nonatomic) long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) MNPlannedDestination *destination; // @synthesize destination=_destination;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

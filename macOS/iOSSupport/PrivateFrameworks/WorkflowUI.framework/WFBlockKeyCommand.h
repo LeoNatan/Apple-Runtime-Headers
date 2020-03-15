@@ -12,8 +12,8 @@
 }
 
 + (id)commandWithTitle:(id)arg1 input:(id)arg2 modifierFlags:(long long)arg3 block:(CDUnknownBlockType)arg4;
-@property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 
 @end
 

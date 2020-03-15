@@ -24,6 +24,7 @@
 }
 
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *labelConstraints; // @synthesize labelConstraints=_labelConstraints;
 @property(nonatomic) _Bool viewDisabled; // @synthesize viewDisabled=_viewDisabled;
 @property(nonatomic) long long currentUnit; // @synthesize currentUnit=_currentUnit;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool canBeHighlighted; // @synthesize canBeHighlighted=_canBeHighlighted;
 @property(nonatomic) __weak id <HUControlViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)_unitStringForCurrentUnit;
 @property(nonatomic, getter=isDisabled) _Bool disabled;
 @property(retain, nonatomic) id value;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     id <FavoritesPickerCellViewAccessibilityDelegate> _accessibilityDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FavoritesPickerCellViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)_updateViewVisibility;
 - (void)_createButton;

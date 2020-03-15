@@ -18,8 +18,8 @@
 + (id)sharedInstance;
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
-@property(retain, nonatomic) NSString *bundleDirectory; // @synthesize bundleDirectory=_bundleDirectory;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *bundleDirectory; // @synthesize bundleDirectory=_bundleDirectory;
 - (id)localizedDisplayNameForEffectWithIdentifier:(id)arg1;
 - (_Bool)hasFullScreenMomentForIdentifier:(id)arg1;
 - (void)didReceiveMemoryWarning:(id)arg1;

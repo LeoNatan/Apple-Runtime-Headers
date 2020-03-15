@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)selectableGridButton;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TLKStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) TLKLabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
 @property(retain, nonatomic) TLKLabel *topLabel; // @synthesize topLabel=_topLabel;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;

@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (id)_homeRelativePathForURL:(id)arg1 inCalendarDirectory:(id)arg2;
 + (void)_removeItemsToDeleteContainedByDirectory:(id)arg1 fromSet:(id)arg2;
 + (id)reminderMigrationContextWithReminderKitProvider:(id)arg1 calendarDirectory:(id)arg2;
-@property(readonly, nonatomic) NSURL *calendarDirectory; // @synthesize calendarDirectory=_calendarDirectory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *calendarDirectory; // @synthesize calendarDirectory=_calendarDirectory;
 - (id)_homeRelativePathForURL:(id)arg1;
 - (void)_removeItemsToDeleteContainedByDirectory:(id)arg1;
 - (BOOL)_isURLSubpathOfExistingDirectoryToDelete:(id)arg1;

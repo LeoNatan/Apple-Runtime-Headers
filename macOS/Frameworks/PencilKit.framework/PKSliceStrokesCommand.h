@@ -13,8 +13,8 @@
     NSDictionary *_substrokes;
 }
 
-@property(readonly, nonatomic) NSDictionary *substrokes; // @synthesize substrokes=_substrokes;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *substrokes; // @synthesize substrokes=_substrokes;
 - (id)description;
 - (void)applyToDrawing:(id)arg1;
 - (id)invertedInDrawing:(id)arg1;

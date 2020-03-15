@@ -26,11 +26,11 @@
     NSDate *_wristDetectTriggerDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *wristDetectTriggerDate; // @synthesize wristDetectTriggerDate=_wristDetectTriggerDate;
 @property(readonly, nonatomic) int confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) int onWristState; // @synthesize onWristState=_onWristState;
 @property(nonatomic) __weak id <CSLWristDetectionSensorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (double)_uptime;
 - (void)_handleDelayedProximityEventWithTimeoutDate:(id)arg1;
 - (void)_logTimeoutEventIfNeededWithBlock:(CDUnknownBlockType)arg1;

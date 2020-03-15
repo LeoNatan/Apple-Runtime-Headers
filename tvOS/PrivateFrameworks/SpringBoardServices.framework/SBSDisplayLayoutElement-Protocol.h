@@ -7,6 +7,7 @@
 #import <SpringBoardServices/NSObject-Protocol.h>
 
 @protocol SBSDisplayLayoutElement <NSObject>
+@property(readonly, nonatomic, getter=sb_isTransitioning) _Bool sb_transitioning;
 @property(readonly, nonatomic) long long layoutRole;
 @property(readonly, nonatomic, getter=isSpringBoardElement) _Bool springBoardElement;
 @end

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 stillImageTime; // @synthesize stillImageTime=_stillImageTime;
 @property(nonatomic) long long action; // @synthesize action=_action;
 @property(retain, nonatomic) PUDuplicateActionController *duplicateActionController; // @synthesize duplicateActionController=_duplicateActionController;
-- (void).cxx_destruct;
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
 

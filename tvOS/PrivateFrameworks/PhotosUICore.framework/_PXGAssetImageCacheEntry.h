@@ -17,11 +17,11 @@
     struct CGImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int imageOrientation; // @synthesize imageOrientation=_imageOrientation;
 @property(nonatomic) struct CGImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) NSMutableIndexSet *requestIDs; // @synthesize requestIDs=_requestIDs;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)dealloc;
 - (id)init;

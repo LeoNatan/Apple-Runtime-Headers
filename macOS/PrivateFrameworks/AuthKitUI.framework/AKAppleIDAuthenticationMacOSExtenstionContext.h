@@ -16,9 +16,9 @@
     NSView *_webView;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSView *webView; // @synthesize webView=_webView;
 @property(retain) AKAuthWebTabView *webviewController; // @synthesize webviewController=_webviewController;
-- (void).cxx_destruct;
 - (void)sizeChangedFrom:(struct CGSize)arg1 toSize:(struct CGSize)arg2 webViewName:(id)arg3 callback:(id)arg4;
 - (void)loadFailed:(id)arg1 withError:(id)arg2;
 - (void)endWebView:(id)arg1;

@@ -38,9 +38,10 @@
     NSMutableSet *__tilesInUse;
     double __viewHeight;
     PXWidgetBarLayout *__layout;
-    struct NSObject *_view;
+    NSObject<PXAnonymousView> *_view;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<PXAnonymousView> *view; // @synthesize view=_view;
 @property(readonly, nonatomic) PXWidgetBarLayout *_layout; // @synthesize _layout=__layout;
 @property(nonatomic, setter=_setViewHeight:) double _viewHeight; // @synthesize _viewHeight=__viewHeight;
@@ -55,7 +56,6 @@
 @property(readonly, nonatomic) PXTilingController *tilingController; // @synthesize tilingController=_tilingController;
 @property(nonatomic) __weak id <PXWidgetBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
-- (void).cxx_destruct;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
 - (void)checkInTile:(void *)arg1 withIdentifier:(struct PXTileIdentifier)arg2;
 - (void *)checkOutTileForIdentifier:(struct PXTileIdentifier)arg1 layout:(id)arg2;
@@ -71,7 +71,7 @@
 - (void)performChanges:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) double viewHeight;
 - (void)updateView;
-- (struct NSObject *)createView;
+- (id)createView;
 - (void)checkInTile:(id)arg1;
 - (id)checkOutTileWithKind:(long long)arg1;
 - (id)createTileAnimator;

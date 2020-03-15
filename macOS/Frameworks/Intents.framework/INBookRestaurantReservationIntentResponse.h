@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy) INRestaurantReservationUserBooking *userBooking; // @synthesize userBooking=_userBooking;
 - (void).cxx_destruct;
+@property(copy) INRestaurantReservationUserBooking *userBooking; // @synthesize userBooking=_userBooking;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_dictionaryRepresentation;
 @property(readonly) long long code;

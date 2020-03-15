@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <WFReferenceLibraryViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <WFReferenceLibraryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <WFReferenceLibraryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewWillDisappear:(_Bool)arg1;
 
 @end

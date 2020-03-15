@@ -16,11 +16,11 @@
     unsigned int _version;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
 @property(readonly, nonatomic) unsigned int syncProgressState; // @synthesize syncProgressState=_syncProgressState;
 @property(readonly, nonatomic) int globalProgress; // @synthesize globalProgress=_globalProgress;
 @property(readonly, nonatomic) NSString *activityLabel; // @synthesize activityLabel=_activityLabel;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

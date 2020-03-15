@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 + (id)overlayViewFromMediaItem:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
 + (id)overlayViewFromElement:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) _TVProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) NSArray *badgeViewWrappers; // @synthesize badgeViewWrappers=_badgeViewWrappers;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUIOverlayLayout *overlayLayout; // @synthesize overlayLayout=_overlayLayout;
 @property(retain, nonatomic) CALayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)layoutSubviews;
 

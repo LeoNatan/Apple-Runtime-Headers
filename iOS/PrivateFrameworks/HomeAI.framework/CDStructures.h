@@ -30,10 +30,6 @@ struct CGVector {
     double dy;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

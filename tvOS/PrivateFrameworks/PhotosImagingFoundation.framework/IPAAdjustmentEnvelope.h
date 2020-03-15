@@ -18,11 +18,11 @@
     NSString *_formatVersion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
 @property(retain, nonatomic) NSString *format; // @synthesize format=_format;
 @property(retain, nonatomic) NSString *originator; // @synthesize originator=_originator;
 @property(retain, nonatomic) IPAAdjustmentStack *adjustmentStack; // @synthesize adjustmentStack=_adjustmentStack;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (_Bool)containsVideoAdjustments;
 - (_Bool)containsPhotoAdjustments;

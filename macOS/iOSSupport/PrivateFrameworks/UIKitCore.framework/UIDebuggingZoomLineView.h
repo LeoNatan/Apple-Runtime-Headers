@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *lineLabel; // @synthesize lineLabel=_lineLabel;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
 @property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 @property(nonatomic) struct CGPoint end; // @synthesize end=_end;
 @property(nonatomic) struct CGPoint start; // @synthesize start=_start;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)updateLabelFrame;

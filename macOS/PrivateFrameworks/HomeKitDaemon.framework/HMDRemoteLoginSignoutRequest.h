@@ -20,8 +20,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)objWithMessage:(id)arg1;
 + (id)objWithDict:(id)arg1;
-@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;

@@ -20,8 +20,8 @@
 + (id)scheduledUpdateForProvider:(id)arg1 atDate:(id)arg2;
 + (id)immediateUpdateForAllProviders;
 + (id)immediateUpdateForProvider:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) _Bool allProviders;
 @property(readonly, nonatomic) RERelevanceProvider *provider;
 - (unsigned long long)hash;

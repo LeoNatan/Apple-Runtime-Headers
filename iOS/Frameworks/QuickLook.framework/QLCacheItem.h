@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     QLItem *_item;
 }
 
-@property(retain, nonatomic) QLItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(retain, nonatomic) QLItem *item; // @synthesize item=_item;
 - (void)_performHandlers;
 - (void)invalidate;
 - (void)addCompletionHandler:(CDUnknownBlockType)arg1;

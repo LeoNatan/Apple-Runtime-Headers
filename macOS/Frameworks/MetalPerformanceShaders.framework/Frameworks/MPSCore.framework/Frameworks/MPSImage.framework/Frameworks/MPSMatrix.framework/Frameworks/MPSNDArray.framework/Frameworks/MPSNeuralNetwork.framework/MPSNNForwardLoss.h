@@ -32,8 +32,8 @@
 - (id)resultStateForSourceImage:(id)arg1 sourceStates:(id)arg2 destinationImage:(id)arg3;
 - (BOOL)isResultStateReusedAcrossBatch;
 - (unsigned long long)maxBatchSize;
-- (struct NSArray *)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 labels:(struct NSArray *)arg3 weights:(struct NSArray *)arg4 destinationStates:(struct NSArray **)arg5 destinationStateIsTemporary:(BOOL)arg6;
-- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 labels:(struct NSArray *)arg3 weights:(struct NSArray *)arg4 destinationStates:(struct NSArray *)arg5 destinationImages:(struct NSArray *)arg6;
+- (id)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 labels:(id)arg3 weights:(id)arg4 destinationStates:(id *)arg5 destinationStateIsTemporary:(BOOL)arg6;
+- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 labels:(id)arg3 weights:(id)arg4 destinationStates:(id)arg5 destinationImages:(id)arg6;
 - (id)destinationImageDescriptorForSourceImages:(id)arg1 sourceStates:(id)arg2;
 - (id)debugDescription;
 - (void)dealloc;

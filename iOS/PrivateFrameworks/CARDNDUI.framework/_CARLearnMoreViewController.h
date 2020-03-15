@@ -15,10 +15,10 @@
     NSLayoutConstraint *_bottomMarginConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomMarginConstraint; // @synthesize bottomMarginConstraint=_bottomMarginConstraint;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(copy, nonatomic) NSString *resourcePath; // @synthesize resourcePath=_resourcePath;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidLoad;

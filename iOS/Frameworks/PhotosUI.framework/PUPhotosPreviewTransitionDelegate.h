@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <PUPhotosPreviewPresentationControllerDelegate> _photosPreviewingDelegate;
 }
 
-@property(nonatomic) __weak id <PUPhotosPreviewPresentationControllerDelegate> photosPreviewingDelegate; // @synthesize photosPreviewingDelegate=_photosPreviewingDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUPhotosPreviewPresentationControllerDelegate> photosPreviewingDelegate; // @synthesize photosPreviewingDelegate=_photosPreviewingDelegate;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 
 @end

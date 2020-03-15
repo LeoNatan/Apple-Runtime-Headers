@@ -14,9 +14,9 @@
     GCControllerAxisInput *_axis;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPositive) BOOL positive; // @synthesize positive=_positive;
 @property(nonatomic) __weak GCControllerAxisInput *axis; // @synthesize axis=_axis;
-- (void).cxx_destruct;
 - (float)value;
 - (BOOL)_setValue:(float)arg1 queue:(id)arg2;
 - (BOOL)_setValue:(float)arg1;

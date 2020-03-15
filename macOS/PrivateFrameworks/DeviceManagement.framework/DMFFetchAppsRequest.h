@@ -25,6 +25,7 @@
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *propertyKeys; // @synthesize propertyKeys=_propertyKeys;
 @property(nonatomic) BOOL advanceTransientStates; // @synthesize advanceTransientStates=_advanceTransientStates;
 @property(nonatomic) BOOL managedAppsOnly; // @synthesize managedAppsOnly=_managedAppsOnly;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL deleteFeedback; // @synthesize deleteFeedback=_deleteFeedback;
 @property(copy, nonatomic) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

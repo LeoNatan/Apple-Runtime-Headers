@@ -52,6 +52,7 @@
 + (id)_defaultCaptureConfiguration;
 + (id)preferences;
 + (_Bool)_fallBackToCameraDefaultsForBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _shouldDisableCameraSwitchingDuringVideoRecording; // @synthesize _shouldDisableCameraSwitchingDuringVideoRecording=__shouldDisableCameraSwitchingDuringVideoRecording;
 @property(readonly, nonatomic) double _resetTimeoutOverride; // @synthesize _resetTimeoutOverride=__resetTimeoutOverride;
 @property(readonly, nonatomic) _Bool _preferHEVCWhenAvailable; // @synthesize _preferHEVCWhenAvailable=__preferHEVCWhenAvailable;
@@ -87,7 +88,6 @@
 @property(retain, nonatomic) CAMConflictingControlConfiguration *conflictingControlConfiguration; // @synthesize conflictingControlConfiguration=_conflictingControlConfiguration;
 @property(retain, nonatomic) CAMCaptureConfiguration *captureConfiguration; // @synthesize captureConfiguration=_captureConfiguration;
 @property(nonatomic, setter=_setDidResetTorchMode:) _Bool didResetTorchMode; // @synthesize didResetTorchMode=_didResetTorchMode;
-- (void).cxx_destruct;
 - (_Bool)isOverCaptureEnabledForCTMCaptureType:(long long)arg1;
 @property(readonly, nonatomic) _Bool didConfirmSlomo1080p240MostCompatible;
 @property(readonly, nonatomic) _Bool didConfirmVideo4k60MostCompatible;

@@ -19,10 +19,10 @@
 }
 
 + (id)createContainerForRemoteConfiguration;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTAvatarsDaemon> daemonClient; // @synthesize daemonClient=_daemonClient;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSPersistentContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)storeDescription;
 - (id)persistentStoreCoordinator;
 - (id)createManagedObjectContext;

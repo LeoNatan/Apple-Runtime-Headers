@@ -18,9 +18,9 @@
     NSObject *_modelContextObject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *modelContextObject; // @synthesize modelContextObject=_modelContextObject;
 @property(copy, nonatomic) CDUnknownBlockType burstAnalysisLoggingCallback; // @synthesize burstAnalysisLoggingCallback=_burstAnalysisLoggingCallback;
-- (void).cxx_destruct;
 - (void)cancelAllRequests;
 - (_Bool)performRequests:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareForPerformingRequests:(id)arg1 error:(id *)arg2;

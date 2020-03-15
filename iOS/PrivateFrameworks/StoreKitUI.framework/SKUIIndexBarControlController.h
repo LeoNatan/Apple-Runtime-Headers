@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
     SKUIResourceLoader *_resourceLoader;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIResourceLoader *resourceLoader; // @synthesize resourceLoader=_resourceLoader;
 @property(readonly, nonatomic) SKUIIndexBarControl *indexBarControl; // @synthesize indexBarControl=_indexBarControl;
 @property(nonatomic) __weak id <SKUIIndexBarControlControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SKUIIndexBarControlControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)_URLForEntryDescriptor:(id)arg1;
 - (void)_updateCachedEntry:(id)arg1 forEntryDescriptor:(id)arg2;
 - (id)_placeholderEntryForEntryDescriptor:(id)arg1;

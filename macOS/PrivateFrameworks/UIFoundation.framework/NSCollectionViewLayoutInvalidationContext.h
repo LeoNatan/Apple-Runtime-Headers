@@ -25,8 +25,8 @@
     long long _intent;
 }
 
-@property(nonatomic, getter=_intent, setter=_setIntent:) long long intent; // @synthesize intent=_intent;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_intent, setter=_setIntent:) long long intent; // @synthesize intent=_intent;
 @property struct CGSize contentSizeAdjustment;
 @property struct CGPoint contentOffsetAdjustment;
 @property(nonatomic, getter=_updateItems, setter=_setUpdateItems:) NSArray *updateItems;

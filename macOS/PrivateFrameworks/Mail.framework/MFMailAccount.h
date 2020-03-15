@@ -129,12 +129,12 @@
 + (BOOL)accountsHaveBeenInitialized;
 + (void)initialize;
 + (id)accountFetchLog;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *backgroundWorkQueue; // @synthesize backgroundWorkQueue=_backgroundWorkQueue;
 @property(nonatomic) BOOL usesMailboxCache; // @synthesize usesMailboxCache=_usesMailboxCache;
 @property(readonly, nonatomic) MCTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(readonly) BOOL isInitializingmailboxList; // @synthesize isInitializingmailboxList=_isInitializingmailboxList;
 @property(readonly, nonatomic) NSURL *accountDirectory; // @synthesize accountDirectory=_accountDirectory;
-- (void).cxx_destruct;
 @property(readonly) BOOL sourceIsManaged;
 @property(readonly, nonatomic, getter=isManaged) BOOL managed;
 @property(readonly) NSArray *emailAddresses;

@@ -31,6 +31,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) CKPurchaseResponse *response; // @synthesize response=_response;
 @property(readonly) unsigned char state; // @synthesize state=_state;
@@ -41,7 +42,6 @@
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(readonly) id groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly) id transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

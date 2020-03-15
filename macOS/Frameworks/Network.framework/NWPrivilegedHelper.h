@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_allKnownEntitlementGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *allKnownEntitlementGroup; // @synthesize allKnownEntitlementGroup=_allKnownEntitlementGroup;
 @property(retain) NSMutableSet *allKnownEntitlementSet; // @synthesize allKnownEntitlementSet=_allKnownEntitlementSet;
 @property(retain) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 @property(retain) NSObject<OS_xpc_object> *listener; // @synthesize listener=_listener;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)handleRequest:(id)arg1 onConnection:(id)arg2;
 - (id)initWithQueue:(id)arg1;
 - (void)startThrottlePolicyEventListener;

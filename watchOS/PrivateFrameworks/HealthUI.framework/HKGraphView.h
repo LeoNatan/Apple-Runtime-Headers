@@ -102,6 +102,7 @@
 
 + (id)_rangeFromModelCoordinateMin:(float)arg1 max:(float)arg2 axis:(id)arg3;
 + (float)_modelCoordinateSpanForRange:(id)arg1 axis:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *startupTimer; // @synthesize startupTimer=_startupTimer;
 @property(nonatomic) double lastEndTime; // @synthesize lastEndTime=_lastEndTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
@@ -164,7 +165,6 @@
 @property(nonatomic) float xAxisSpace; // @synthesize xAxisSpace=_xAxisSpace;
 @property(copy, nonatomic) HKAxis *xAxis; // @synthesize xAxis=_xAxis;
 @property(nonatomic) __weak id <HKGraphViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_overlayViewsForOverlayData:(id)arg1 overlayView:(id)arg2;
 - (void)_drawOverlaysIfNeeded:(id)arg1;
 - (int)_overlayEnvironmentType;

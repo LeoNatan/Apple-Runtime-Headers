@@ -29,8 +29,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSHashTable *contentAssertions; // @synthesize contentAssertions=_contentAssertions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSHashTable *contentAssertions; // @synthesize contentAssertions=_contentAssertions;
 - (void)statusBarStateProvider:(id)arg1 didPostStatusBarData:(const CDStruct_0942cde0 *)arg2 withActions:(int)arg3;
 - (id)_identifierForStateAggregator:(id)arg1;
 - (void)statusBarStateAggregatorDidStopRequestingImmediateUpdates:(id)arg1;

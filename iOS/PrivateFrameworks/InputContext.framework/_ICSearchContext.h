@@ -15,10 +15,10 @@
     NSString *_applicationBundleIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
 @property(readonly, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(readonly, nonatomic) NSString *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (id)initWithLocale:(id)arg1 recipients:(id)arg2 applicationBundleIdentifier:(id)arg3;
 
 @end

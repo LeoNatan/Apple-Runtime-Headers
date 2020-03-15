@@ -18,9 +18,9 @@
 + (id)auxiliarySession;
 + (void)sharedAmbientInstanceWithLoadHandler:(CDUnknownBlockType)arg1;
 + (id)sharedAmbientInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
 @property(copy, nonatomic) CDUnknownBlockType outputVolumeChangeHandler; // @synthesize outputVolumeChangeHandler=_outputVolumeChangeHandler;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_endObservingOutputVolumeIfNeeded;
 - (void)_beginObservingOutputVolumeIfNeeded;

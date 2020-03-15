@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(retain) NSNumber *numberValue; // @synthesize numberValue=_numberValue;
 @property(retain) NSDate *dateValue; // @synthesize dateValue=_dateValue;
 @property(retain) NSData *dataValue; // @synthesize dataValue=_dataValue;
 @property(retain) ABRemoteCustomProperty *customProperty; // @synthesize customProperty=_customProperty;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

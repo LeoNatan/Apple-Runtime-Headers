@@ -13,8 +13,8 @@
     id <PUICQuickboardModalNavigationControllerDelegate> _navigationDelegate;
 }
 
-@property(nonatomic) __weak id <PUICQuickboardModalNavigationControllerDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PUICQuickboardModalNavigationControllerDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)popViewControllerAnimated:(_Bool)arg1;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;

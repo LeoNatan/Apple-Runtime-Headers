@@ -23,6 +23,7 @@
     NSString *_instanceVariableName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *instanceVariableName; // @synthesize instanceVariableName=_instanceVariableName;
 @property(readonly, nonatomic) NSMethodSignature *setterMethodSignature; // @synthesize setterMethodSignature=_setterMethodSignature;
 @property(readonly, nonatomic) NSString *setterSelectorName; // @synthesize setterSelectorName=_setterSelectorName;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) CKObjCType *type; // @synthesize type=_type;
 @property(readonly, nonatomic) Class classHandle; // @synthesize classHandle=_classHandle;
-- (void).cxx_destruct;
 - (void)setValue:(id)arg1 onObject:(id)arg2;
 - (id)getFromObject:(id)arg1;
 - (long long)compareToProperty:(id)arg1;

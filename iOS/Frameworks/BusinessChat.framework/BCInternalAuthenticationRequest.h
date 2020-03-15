@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) NSArray *retrieve; // @synthesize retrieve=_retrieve;
 @property(retain, nonatomic) NSString *responseEncryptionKey; // @synthesize responseEncryptionKey=_responseEncryptionKey;
 @property(retain, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(retain, nonatomic) NSString *businessIdentifier; // @synthesize businessIdentifier=_businessIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *dictionaryValue;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

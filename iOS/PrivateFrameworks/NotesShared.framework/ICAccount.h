@@ -54,12 +54,12 @@
 + (void)initializeLocalAccountNamesInBackground;
 + (id)allCloudObjectsInContext:(id)arg1;
 + (id)existingCloudObjectForRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICAccountProxy *accountProxy; // @synthesize accountProxy=_accountProxy;
 @property(retain, nonatomic) ICFolder *trashFolder; // @synthesize trashFolder=_trashFolder;
 @property(retain, nonatomic) ICFolder *defaultFolder; // @synthesize defaultFolder=_defaultFolder;
 @property(nonatomic) _Bool didAddTrashObservers; // @synthesize didAddTrashObservers=_didAddTrashObservers;
 @property(nonatomic) _Bool didAddObservers; // @synthesize didAddObservers=_didAddObservers;
-- (void).cxx_destruct;
 - (void)updateSubFolderMergeableDataChangeCount;
 - (id)subFolderOrderMergeableData;
 - (void)setSubFolderOrderMergeableData:(id)arg1;
@@ -72,6 +72,7 @@
 - (_Bool)supportsEditingNotes;
 - (id)predicateForSearchableAttachments;
 - (id)predicateForSearchableNotes;
+- (id)predicateForVisibleAttachmentsIncludingTrash;
 - (id)predicateForVisibleAttachments;
 - (id)predicateForVisibleNotesIncludingTrash;
 - (id)predicateForVisibleNotes;
@@ -84,6 +85,7 @@
 @property(nonatomic) int accountType; // @dynamic accountType;
 - (_Bool)isAllNotesContainer;
 - (id)titleForNavigationBar;
+- (unsigned long long)visibleAttachmentsIncludingTrashCount;
 - (unsigned long long)visibleNotesIncludingTrashCount;
 - (unsigned long long)visibleNotesCount;
 - (id)visibleNotes;
@@ -109,11 +111,13 @@
 - (_Bool)visibleRootFoldersContainFolderWithTitle:(id)arg1;
 - (id)visibleFoldersWithParent:(id)arg1;
 - (id)predicateForPinnedNotes;
+- (id)predicateForCustomFolders;
 - (id)predicateForVisibleFolders;
 - (id)predicateForFolders;
 - (unsigned long long)indexOfCustomRootLevelFolder:(id)arg1;
 - (id)customRootLevelFolders;
 - (_Bool)containsSharedFolders;
+- (unsigned long long)visibleCustomFoldersCount;
 - (id)visibleFolders;
 - (_Bool)hasSameCryptoKeyAsAccount:(id)arg1;
 - (long long)compare:(id)arg1;

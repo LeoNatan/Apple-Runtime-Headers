@@ -32,9 +32,9 @@
 + (id)phoneNumberWithStringValue:(id)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *initialCountryCode; // @synthesize initialCountryCode=_initialCountryCode;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 - (id)_determineCorrectCountryCodeForNorthAmericanDialingPlan;
 - (id)formattedStringValueRemovingDialingCode;
 - (id)digitsRemovingDialingCode;

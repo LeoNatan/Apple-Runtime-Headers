@@ -32,13 +32,13 @@ __attribute__((visibility("hidden")))
     struct TNSWeakPtr<NSObject<TShrinkToFitDelegateProtocol>, void> _weakDelegate;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableDeepClickLookUp; // @synthesize disableDeepClickLookUp=_disableDeepClickLookUp;
 @property(nonatomic) long long baseWritingDirection; // @synthesize baseWritingDirection=_baseWritingDirection;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned long long maxUniChars; // @synthesize maxUniChars=_maxUniChars;
 @property(nonatomic) struct CGRect maxGlobalFrame; // @synthesize maxGlobalFrame=_maxGlobalFrame;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (struct TFENode)nodeForEditing;
 - (void)shrinkToFitTextViewAboutToClose;
 - (void)shrinkToFitTextViewEditingComplete:(id)arg1;

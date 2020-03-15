@@ -23,9 +23,9 @@
 + (id)intervalForIdentifier:(unsigned long long)arg1 archiveSource:(id)arg2;
 + (id)defaultLoadRangeForSource:(id)arg1;
 + (id)loadRangeWithIdentifier:(unsigned long long)arg1 forSource:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLoadRange:(id)arg1;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     struct CGColor *_patternColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *gradient; // @synthesize gradient=_gradient;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGColor *)_patternColor;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

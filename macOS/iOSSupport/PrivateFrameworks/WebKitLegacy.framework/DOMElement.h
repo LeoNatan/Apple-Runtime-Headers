@@ -70,6 +70,7 @@
 @property(readonly) int offsetLeft;
 @property(readonly) DOMCSSStyleDeclaration *style;
 @property(readonly, copy) NSString *tagName;
+- (int)structuralComplexityContribution;
 - (BOOL)isFocused;
 - (id)_getURLAttribute:(id)arg1;
 - (struct __CTFont *)_font;

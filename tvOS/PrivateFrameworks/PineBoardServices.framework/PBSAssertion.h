@@ -17,9 +17,9 @@
 + (id)_assertionManager;
 + (void)performRelinquishAssertionWithCompletion:(CDUnknownBlockType)arg1;
 + (void)performAcquireAssertionWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)relinquish;
 - (void)acquire;
 - (void)dealloc;

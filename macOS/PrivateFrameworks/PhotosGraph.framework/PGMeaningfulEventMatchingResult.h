@@ -16,11 +16,11 @@
     PGMeaningfulEventRequiredCriteria *_requiredCriteria;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PGMeaningfulEventRequiredCriteria *requiredCriteria; // @synthesize requiredCriteria=_requiredCriteria;
 @property(readonly, nonatomic) BOOL isReliable; // @synthesize isReliable=_isReliable;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) BOOL isMatching; // @synthesize isMatching=_isMatching;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithIsMatching:(BOOL)arg1 score:(double)arg2 isReliable:(BOOL)arg3 requiredCriteria:(id)arg4;
 

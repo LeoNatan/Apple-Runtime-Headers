@@ -18,10 +18,10 @@
     id <SVVideoPlaybackProgressObserving> _playbackProgressObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoPlaybackProgressObserving> playbackProgressObserver; // @synthesize playbackProgressObserver=_playbackProgressObserver;
 @property(readonly, nonatomic) id <SVVideoPlaybackProgressObserverFactory> playbackProgressObserverFactory; // @synthesize playbackProgressObserverFactory=_playbackProgressObserverFactory;
 @property(readonly, nonatomic) SVTimeline *timeline; // @synthesize timeline=_timeline;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithTimeline:(id)arg1 playbackProgressObserverFactory:(id)arg2;
 

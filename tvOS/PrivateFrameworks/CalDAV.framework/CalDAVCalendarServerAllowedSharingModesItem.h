@@ -16,11 +16,11 @@
     CoreDAVItemWithNoChildren *_isMarkedImmutableSharees;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *isMarkedImmutableSharees; // @synthesize isMarkedImmutableSharees=_isMarkedImmutableSharees;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *isMarkedUndeletable; // @synthesize isMarkedUndeletable=_isMarkedUndeletable;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *canBeShared; // @synthesize canBeShared=_canBeShared;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *canBePublished; // @synthesize canBePublished=_canBePublished;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (id)init;
 

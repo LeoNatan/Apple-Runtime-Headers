@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 
 + (id)searchTermsFromString:(id)arg1;
 + (BOOL)string:(id)arg1 matchesSearchTerms:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL resultsReady; // @synthesize resultsReady=_resultsReady;
 @property(retain, nonatomic) NSMutableArray *matches; // @synthesize matches=_matches;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(nonatomic) __weak id <SidebarContentFilterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)filterItems:(id)arg1 withSearchString:(id)arg2 itemsDidChange:(BOOL)arg3;
 - (void)removeObjectsFromResults:(id)arg1;
 - (void)reset;

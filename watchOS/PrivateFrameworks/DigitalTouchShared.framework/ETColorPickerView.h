@@ -25,9 +25,9 @@
     id <ETColorPickerViewDelegate> _presentationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(nonatomic) __weak id <ETColorPickerViewDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)colorWheel:(id)arg1 didPickColor:(id)arg2;
 - (void)colorWheel:(id)arg1 willPickColor:(id)arg2;
 - (id)paletteCircleAnimationPairs;

@@ -15,8 +15,8 @@
     TVLStarRatingElement *_starRatingElement;
 }
 
-@property(retain, nonatomic) TVLStarRatingElement *starRatingElement; // @synthesize starRatingElement=_starRatingElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLStarRatingElement *starRatingElement; // @synthesize starRatingElement=_starRatingElement;
 - (void)updateWithFeedElement:(id)arg1;
 - (id)currentFeedElement;
 - (id)initWithStarRatingElement:(id)arg1;

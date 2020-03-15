@@ -16,11 +16,11 @@
     FCInterestToken *_interestToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) FCInterestToken *interestToken; // @synthesize interestToken=_interestToken;
 @property(retain, nonatomic) NTPBResourceRecord *resourceRecord; // @synthesize resourceRecord=_resourceRecord;
 @property(readonly, nonatomic) FCAssetHandle *assetHandle; // @synthesize assetHandle=_assetHandle;
 @property(readonly, nonatomic) NSString *resourceID; // @synthesize resourceID=_resourceID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isOnDisk) _Bool onDisk;
 @property(readonly, nonatomic) NSURL *fileURL;
 - (id)copyWithZone:(struct _NSZone *)arg1;

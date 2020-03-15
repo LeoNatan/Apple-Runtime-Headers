@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     UITableView *_tableView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) _UIDataSourceSnapshotter *dataSourceSnapshotter; // @synthesize dataSourceSnapshotter=_dataSourceSnapshotter;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <_UICollectionViewUpdateItemApplying> updatesSink; // @synthesize updatesSink=_updatesSink;
 @property(nonatomic) int sinkKind; // @synthesize sinkKind=_sinkKind;
 @property(nonatomic) int tableViewRowAnimation; // @synthesize tableViewRowAnimation=_tableViewRowAnimation;
-- (void).cxx_destruct;
 - (void)_performMoveUpdate:(id)arg1 onTableView:(id)arg2;
 - (void)_performDeleteUpdate:(id)arg1 onTableView:(id)arg2;
 - (void)_performReloadUpdate:(id)arg1 onTableView:(id)arg2;

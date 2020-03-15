@@ -19,11 +19,11 @@
 }
 
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uniqueKey; // @synthesize uniqueKey;
 @property(retain, nonatomic) NSDate *timestampAsDate; // @synthesize timestampAsDate;
 @property(readonly, copy, nonatomic) NSString *opaqueKey; // @synthesize opaqueKey;
 @property(nonatomic) unsigned long long changedFields; // @synthesize changedFields;
-- (void).cxx_destruct;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 
 // Remaining properties

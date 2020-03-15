@@ -10,13 +10,13 @@
 
 @interface NUCompoundSetting : NUSetting
 {
-    struct NSDictionary *_properties;
+    NSDictionary *_properties;
 }
 
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
 + (id)supportedAttributes;
-@property(readonly) NSDictionary *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *properties; // @synthesize properties=_properties;
 - (_Bool)serializeIntoDictionary:(id)arg1 error:(out id *)arg2;
 - (id)deserialize:(id)arg1 error:(out id *)arg2;
 - (id)serialize:(id)arg1 error:(out id *)arg2;
@@ -28,7 +28,7 @@
 - (_Bool)isValid:(out id *)arg1;
 - (_Bool)validate:(id)arg1 error:(out id *)arg2;
 - (id)description;
-- (id)initWithProperties:(struct NSDictionary *)arg1 attributes:(id)arg2;
+- (id)initWithProperties:(id)arg1 attributes:(id)arg2;
 - (id)initWithAttributes:(id)arg1;
 - (id)init;
 

@@ -18,13 +18,13 @@
     unsigned long long _minimumNumberOfCredentialsToShowLikelyMatchesSection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowIcons; // @synthesize shouldShowIcons=_shouldShowIcons;
 @property(nonatomic) _Bool forUserNamesOnly; // @synthesize forUserNamesOnly=_forUserNamesOnly;
 @property(nonatomic) unsigned long long minimumNumberOfCredentialsToShowLikelyMatchesSection; // @synthesize minimumNumberOfCredentialsToShowLikelyMatchesSection=_minimumNumberOfCredentialsToShowLikelyMatchesSection;
 @property(copy, nonatomic) NSArray *domainHintStrings; // @synthesize domainHintStrings=_domainHintStrings;
 @property(copy, nonatomic) NSArray *serviceNameHintStrings; // @synthesize serviceNameHintStrings=_serviceNameHintStrings;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
-- (void).cxx_destruct;
 
 @end
 

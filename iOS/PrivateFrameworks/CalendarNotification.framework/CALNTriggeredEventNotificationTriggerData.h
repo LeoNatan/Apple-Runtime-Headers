@@ -16,11 +16,11 @@
     EKTravelEngineHypothesis *_hypothesis;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKTravelEngineHypothesis *hypothesis; // @synthesize hypothesis=_hypothesis;
 @property(readonly, nonatomic) _Bool isOffsetFromTravelTimeStart; // @synthesize isOffsetFromTravelTimeStart=_isOffsetFromTravelTimeStart;
 @property(readonly, copy, nonatomic) NSString *alarmID; // @synthesize alarmID=_alarmID;
 @property(readonly, nonatomic) unsigned long long trigger; // @synthesize trigger=_trigger;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTrigger:(unsigned long long)arg1 alarmID:(id)arg2 isOffsetFromTravelTimeStart:(_Bool)arg3 hypothesis:(id)arg4;
 

@@ -13,10 +13,10 @@
     long long _key;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(nonatomic) long long key; // @synthesize key=_key;
 @property(nonatomic) unsigned int index; // @synthesize index=_index;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,8 +16,8 @@
 + (id)longLengthFeature;
 + (id)mediumLengthFeature;
 + (id)shortLengthFeature;
-@property(retain, nonatomic) NSString *lengthID; // @synthesize lengthID=_lengthID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *lengthID; // @synthesize lengthID=_lengthID;
 - (double)featureWeightWithConfigurableValues:(id)arg1 publisherID:(id)arg2;
 - (id)fr_description;
 - (id)initWithPersonalizationIdentifier:(id)arg1;

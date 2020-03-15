@@ -101,6 +101,7 @@
 + (void)deleteAllSavedUserActivitiesWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)deleteSavedUserActivitiesWithPersistentIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)mainBundleIdentifier;
+- (void).cxx_destruct;
 @property(readonly, retain) NSObject<OS_dispatch_queue> *willCallSaveSerializationQueue; // @synthesize willCallSaveSerializationQueue=_willCallSaveSerializationQueue;
 @property(retain) NSMutableSet *dirtyPayloadIdentifiers; // @synthesize dirtyPayloadIdentifiers=_dirtyPayloadIdentifiers;
 @property(retain) NSMutableDictionary *payloadDataCache; // @synthesize payloadDataCache=_payloadDataCache;
@@ -128,7 +129,6 @@
 @property _Bool forceImmediateSendToServer; // @synthesize forceImmediateSendToServer=_forceImmediateSendToServer;
 @property _Bool sendToServerPending; // @synthesize sendToServerPending=_sendToServerPending;
 @property(copy) NSString *teamIdentifier; // @synthesize teamIdentifier=_teamIdentifier;
-- (void).cxx_destruct;
 - (id)stateString;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

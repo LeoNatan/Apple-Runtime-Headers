@@ -10,18 +10,20 @@
 
 @interface AFConversationInsertion : NSObject
 {
+    _Bool _transient;
     int _conversationItemType;
     AceObject *_aceObject;
     NSString *_aceCommandIdentifier;
     NSIndexPath *_indexPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
+@property(readonly, nonatomic, getter=isTransient) _Bool transient; // @synthesize transient=_transient;
 @property(readonly, copy, nonatomic) NSString *aceCommandIdentifier; // @synthesize aceCommandIdentifier=_aceCommandIdentifier;
 @property(readonly, nonatomic) AceObject *aceObject; // @synthesize aceObject=_aceObject;
 @property(readonly, nonatomic) int conversationItemType; // @synthesize conversationItemType=_conversationItemType;
-- (void).cxx_destruct;
-- (id)initWithConversationItemType:(int)arg1 aceObject:(id)arg2 aceCommandIdentifier:(id)arg3 indexPath:(id)arg4;
+- (id)initWithConversationItemType:(int)arg1 aceObject:(id)arg2 aceCommandIdentifier:(id)arg3 transient:(_Bool)arg4 indexPath:(id)arg5;
 
 @end
 

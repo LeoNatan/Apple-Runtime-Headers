@@ -15,9 +15,9 @@
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) MPCPlaybackHistoryRecordChangeRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)_finishChangeRequestOperationWithError:(id)arg1;
 - (void)execute;
 

@@ -9,6 +9,7 @@
 @class XCTCapabilities, XCTElementQuery, XCTElementQueryResults;
 
 @protocol XCTRunnerAutomationSession <XCTElementSnapshotAttributeDataSource>
+@property(readonly) BOOL isMacCatalyst;
 @property(readonly) BOOL supportsAnimationsIdleNotifications;
 @property(readonly) BOOL supportsMainRunLoopIdleNotifications;
 @property(readonly) BOOL supportsFetchingAttributesForElement;

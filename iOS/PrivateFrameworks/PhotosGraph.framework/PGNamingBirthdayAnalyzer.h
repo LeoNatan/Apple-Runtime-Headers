@@ -15,8 +15,8 @@
     PGGraphNamingProcessor *_processor;
 }
 
-@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak PGGraphNamingProcessor *processor; // @synthesize processor=_processor;
 - (id)weakBirthdayMomentsFromMomentNodes:(id)arg1 usingSceneNodes:(id)arg2;
 - (id)birthdaySceneNodesFromGraph:(id)arg1;
 - (void)findBirthdayMatchesFromBirthdayByContactIdentifier:(id)arg1 contactIdentifiersWithExplicitBirthday:(id)arg2 graph:(id)arg3 birthdaySceneNodes:(id)arg4 withProgressBlock:(CDUnknownBlockType)arg5;

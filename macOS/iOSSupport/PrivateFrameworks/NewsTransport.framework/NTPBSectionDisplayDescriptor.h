@@ -28,6 +28,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *discoverMoreVideosInfoData; // @synthesize discoverMoreVideosInfoData=_discoverMoreVideosInfoData;
 @property(nonatomic) BOOL useNameColorInWidget; // @synthesize useNameColorInWidget=_useNameColorInWidget;
 @property(retain, nonatomic) NSString *actionURLString; // @synthesize actionURLString=_actionURLString;
@@ -37,7 +38,6 @@
 @property(nonatomic) BOOL displaysAsVideoPlaylist; // @synthesize displaysAsVideoPlaylist=_displaysAsVideoPlaylist;
 @property(retain, nonatomic) NSString *nameColor; // @synthesize nameColor=_nameColor;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

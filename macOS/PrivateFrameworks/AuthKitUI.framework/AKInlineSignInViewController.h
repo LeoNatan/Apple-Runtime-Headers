@@ -33,6 +33,7 @@
     CDUnknownBlockType _passwordHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType passwordHandler; // @synthesize passwordHandler=_passwordHandler;
 @property(retain) NSProgressIndicator *indeterminateSpinner; // @synthesize indeterminateSpinner=_indeterminateSpinner;
 @property(retain) NSLayoutConstraint *roundLoginContainerHeight; // @synthesize roundLoginContainerHeight=_roundLoginContainerHeight;
@@ -47,7 +48,6 @@
 @property(retain) NSTextField *usernameLabel; // @synthesize usernameLabel=_usernameLabel;
 @property(retain) NSView *signInView; // @synthesize signInView=_signInView;
 @property BOOL wantsAuthenticationProgress; // @synthesize wantsAuthenticationProgress=_wantsAuthenticationProgress;
-- (void).cxx_destruct;
 - (void)displayAlertForContext:(id)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)context:(id)arg1 needsPasswordWithCompletion:(CDUnknownBlockType)arg2;
 - (void)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4 completion:(CDUnknownBlockType)arg5;

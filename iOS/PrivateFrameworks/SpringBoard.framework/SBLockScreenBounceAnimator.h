@@ -35,6 +35,7 @@
     id <SBPresentingDelegate> _presentingDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBPresentingDelegate> presentingDelegate; // @synthesize presentingDelegate=_presentingDelegate;
 @property(retain, nonatomic) CSBounceSettings *settings; // @synthesize settings=_settings;
 @property(copy) CDUnknownBlockType completedBlock; // @synthesize completedBlock=_completedBlock;
@@ -42,7 +43,6 @@
 @property(copy) CDUnknownBlockType translateBlock; // @synthesize translateBlock=_translateBlock;
 @property(copy) CDUnknownBlockType prepareBlock; // @synthesize prepareBlock=_prepareBlock;
 @property(copy) CDUnknownBlockType shouldBeginBlock; // @synthesize shouldBeginBlock=_shouldBeginBlock;
-- (void).cxx_destruct;
 - (void)dynamicAnimatorDidPause:(id)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)_updateSettings;

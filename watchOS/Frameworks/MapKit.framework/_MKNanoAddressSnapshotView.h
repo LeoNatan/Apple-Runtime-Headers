@@ -29,12 +29,12 @@
     unsigned int _mapType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
 @property(nonatomic) _Bool showsName; // @synthesize showsName=_showsName;
 @property(nonatomic) UIColor *pinTintColor; // @synthesize pinTintColor=_pinTintColor;
 @property(retain, nonatomic) MKMapSnapshot *snapshot; // @synthesize snapshot=_snapshot;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
-- (void).cxx_destruct;
 - (void)_updateSnapshotIfNecessaryForSize:(struct CGSize)arg1 blurViewHeight:(float)arg2;
 - (float)_estimatedBlurViewHeight;
 - (void)_updateSnapshotIfNecessary;

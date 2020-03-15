@@ -15,10 +15,10 @@
     BOOL _disableRecentsSync;
 }
 
+- (void).cxx_destruct;
 @property BOOL disableRecentsSync; // @synthesize disableRecentsSync=_disableRecentsSync;
 @property(retain) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
-- (void).cxx_destruct;
 
 @end
 

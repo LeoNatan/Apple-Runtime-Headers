@@ -19,10 +19,10 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property BOOL deleteOriginalData; // @synthesize deleteOriginalData=_deleteOriginalData;
 @property BOOL mergeData; // @synthesize mergeData=_mergeData;
 @property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
-- (void).cxx_destruct;
 - (id)makePersistentStoreCoordinatorCacheWithAccounts:(id)arg1;
 - (id)makeAddressBookWithAccounts:(id)arg1;
 - (void)main;

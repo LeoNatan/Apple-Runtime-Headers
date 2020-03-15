@@ -20,11 +20,11 @@
     _PXWidgetCompositionUIViewElementTileTransitionContext *__currentTransitionContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCurrentTransitionContext:) _PXWidgetCompositionUIViewElementTileTransitionContext *_currentTransitionContext; // @synthesize _currentTransitionContext=__currentTransitionContext;
 @property(nonatomic, setter=_setDidEmbedContentView:) _Bool _didEmbedContentView; // @synthesize _didEmbedContentView=__didEmbedContentView;
 @property(readonly, nonatomic) UIView *_containerView; // @synthesize _containerView=__containerView;
 @property(readonly, nonatomic) id <PXWidget> widget; // @synthesize widget=_widget;
-- (void).cxx_destruct;
 - (void)animateAlongsideTransition:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) PXBasicTileAnimationOptions *animationOptions;
 @property(readonly, nonatomic) UIView *view;

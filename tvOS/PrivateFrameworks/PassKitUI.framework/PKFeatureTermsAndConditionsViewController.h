@@ -23,10 +23,10 @@
     long long _context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useModalPresentation; // @synthesize useModalPresentation=_useModalPresentation;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(nonatomic) __weak id <PKPaymentSetupViewControllerDelegate> setupDelegate; // @synthesize setupDelegate=_setupDelegate;
-- (void).cxx_destruct;
 - (id)displayTitle;
 - (void)presentErrorAlert;
 - (void)termsAccepted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

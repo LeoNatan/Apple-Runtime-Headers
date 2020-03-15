@@ -59,19 +59,11 @@ struct IncrementalSearchResultsDefn {
     struct _NSRange _field2[64];
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct NSDirectionalEdgeInsets {
     double _field1;
     double _field2;
     double _field3;
     double _field4;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
 };
 
 struct UIEdgeInsets {

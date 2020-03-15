@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)initForPlugInKit;
 + (id)sharedInstance;
-@property(copy, nonatomic) NSDictionary *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
 - (void)endUsing:(id)arg1;
 - (void)beginUsing:(id)arg1 withBundle:(id)arg2;
 

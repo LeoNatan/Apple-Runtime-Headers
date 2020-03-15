@@ -13,8 +13,8 @@
     NSArray *_schedulers;
 }
 
-@property(readonly, nonatomic) NSArray *schedulers; // @synthesize schedulers=_schedulers;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *schedulers; // @synthesize schedulers=_schedulers;
 - (void)willRunBlockForDelayedInvocation:(id)arg1;
 - (void)unscheduleDelayedInvocation:(id)arg1;
 - (void)scheduleDelayedInvocation:(id)arg1;

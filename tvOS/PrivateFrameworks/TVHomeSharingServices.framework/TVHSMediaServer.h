@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) TVHSMediaServerSessionState *sessionState; // @synthesize sessionState=_sessionState;
 @property(nonatomic) unsigned long long connectionState; // @synthesize connectionState=_connectionState;
 @property(copy, nonatomic) NSString *keybagPath; // @synthesize keybagPath=_keybagPath;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) TVHSMediaServerIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

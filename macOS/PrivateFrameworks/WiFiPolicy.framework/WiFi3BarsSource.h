@@ -23,6 +23,7 @@
     WiFi3BarsTileFetcher *_tileFetcher;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WiFi3BarsTileFetcher *tileFetcher; // @synthesize tileFetcher=_tileFetcher;
 @property(retain, nonatomic) TBDataSourceMediator *sourceMediator; // @synthesize sourceMediator=_sourceMediator;
 @property(copy, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
@@ -31,7 +32,6 @@
 @property(nonatomic) unsigned long long cacheExpirationInDays; // @synthesize cacheExpirationInDays=_cacheExpirationInDays;
 @property(copy, nonatomic) CDUnknownBlockType relevancyHandler; // @synthesize relevancyHandler;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler;
-- (void).cxx_destruct;
 - (id)_descriptorForType:(unsigned long long)arg1;
 - (void)submitCacheAnalyticsEvent;
 - (id)relevantNetworks;

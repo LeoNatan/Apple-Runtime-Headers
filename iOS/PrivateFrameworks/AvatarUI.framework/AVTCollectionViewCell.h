@@ -14,8 +14,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) UIView *subview; // @synthesize subview=_subview;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *subview; // @synthesize subview=_subview;
 
 @end
 

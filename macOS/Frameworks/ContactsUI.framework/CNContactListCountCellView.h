@@ -13,8 +13,8 @@
     NSTextField *_countTextField;
 }
 
-@property(retain) NSTextField *countTextField; // @synthesize countTextField=_countTextField;
 - (void).cxx_destruct;
+@property(retain) NSTextField *countTextField; // @synthesize countTextField=_countTextField;
 - (void)setCount:(unsigned long long)arg1;
 - (void)awakeFromNib;
 

@@ -20,13 +20,13 @@
     unsigned int _serviceProperties;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int serviceProperties; // @synthesize serviceProperties=_serviceProperties;
 @property(retain, nonatomic) NSArray *linkedServices; // @synthesize linkedServices=_linkedServices;
 @property(retain, nonatomic) NSArray *characteristics; // @synthesize characteristics=_characteristics;
 @property(nonatomic) __weak HAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(copy, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
 @property(copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)mergeObject:(id)arg1;
 - (_Bool)shouldMergeObject:(id)arg1;
 - (id)characteristicsOfType:(id)arg1;

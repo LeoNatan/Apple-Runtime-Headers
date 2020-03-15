@@ -16,10 +16,10 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property(readonly) double score; // @synthesize score=_score;
 @property(readonly) id <CLSInvestigationItem> keyItem; // @synthesize keyItem=_keyItem;
 @property(readonly) NSArray *subclusters; // @synthesize subclusters=_subclusters;
-- (void).cxx_destruct;
 - (id)initWithSubclusters:(id)arg1 keyItem:(id)arg2 score:(double)arg3;
 
 @end

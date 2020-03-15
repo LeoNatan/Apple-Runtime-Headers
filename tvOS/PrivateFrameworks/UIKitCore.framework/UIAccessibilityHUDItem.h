@@ -24,6 +24,7 @@
 
 + (id)HUDItemForBarButtonItem:(id)arg1 atPoint:(struct CGPoint)arg2 inView:(id)arg3;
 + (id)HUDItemForTabBarItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 @property(nonatomic) struct UIEdgeInsets imageInsets; // @synthesize imageInsets=_imageInsets;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
@@ -32,7 +33,6 @@
 @property(nonatomic) _Bool scaleImage; // @synthesize scaleImage=_scaleImage;
 @property(nonatomic) _Bool flattenImage; // @synthesize flattenImage=_flattenImage;
 @property(nonatomic) _Bool disabledAppearance; // @synthesize disabledAppearance=_disabledAppearance;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

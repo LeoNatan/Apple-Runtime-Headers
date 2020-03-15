@@ -20,6 +20,8 @@
 + (void)setPrototypePrefCache:(id)arg1;
 + (id)prototypePrefCache;
 + (id)prefWithDomain:(id)arg1 key:(id)arg2 title:(id)arg3 defaultValue:(id)arg4 valueChangedBlock:(CDUnknownBlockType)arg5;
++ (id)flipDashboardLayout;
++ (id)fakeNeatlineDashboardSupport;
 + (id)smartWidgetRelaxHomeInRangeCheck;
 + (id)smartWidgetDebugGestures;
 + (id)smartWidgetDebugShowScore;
@@ -37,12 +39,12 @@
 + (id)_qaModeLockout;
 + (_Bool)showTrustedLockout;
 + (id)prototypePrefs;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType valueChangedBlock; // @synthesize valueChangedBlock=_valueChangedBlock;
 @property(copy, nonatomic) id defaultValue; // @synthesize defaultValue=_defaultValue;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)description;
 @property(nonatomic) _Bool internalSettingsState;
 @property(copy, nonatomic) id internalSettingsValue;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (id)previousResponderForView:(id)arg1;
 + (id)nextResponderForView:(id)arg1;
 + (id)directResponderForView:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) unsigned long long direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
 - (id)_previousKeyResponder;
 - (id)_nextKeyResponder;
 - (BOOL)becomeFirstResponder;

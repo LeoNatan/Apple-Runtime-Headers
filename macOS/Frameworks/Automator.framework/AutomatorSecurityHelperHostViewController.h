@@ -15,8 +15,8 @@
     AMSecurityHelperWindowController *_sheetController;
 }
 
-@property(nonatomic) __weak AMSecurityHelperWindowController *sheetController; // @synthesize sheetController=_sheetController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AMSecurityHelperWindowController *sheetController; // @synthesize sheetController=_sheetController;
 - (void)hostCloseWindowWithReply:(CDUnknownBlockType)arg1;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;

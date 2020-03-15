@@ -15,9 +15,9 @@
 }
 
 + (void)resolveGreenTeaDataUsageIfNecessary;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool currentlyResolving; // @synthesize currentlyResolving=_currentlyResolving;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-- (void).cxx_destruct;
 - (void)_resolveGreenTeaDataUsageIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resolveGreenTeaDataUsageIfNecessary;
 - (id)init;

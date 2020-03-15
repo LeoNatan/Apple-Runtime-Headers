@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSCache *_cache; // @synthesize _cache=__cache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSCache *_cache; // @synthesize _cache=__cache;
 - (id)_imageForMap:(id)arg1;
 - (id)_keyForHandles:(id)arg1;
 - (id)_orientationKey;

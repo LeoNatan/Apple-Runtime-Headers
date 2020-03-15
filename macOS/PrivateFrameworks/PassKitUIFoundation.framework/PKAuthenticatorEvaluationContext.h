@@ -26,6 +26,8 @@
     unsigned long long _activeMechanisms;
     unsigned long long _completedMechanisms;
     _Bool _invalidated;
+    _Bool _supported;
+    _Bool _policySupported;
     _Bool _fingerPresent;
     _Bool _passcodeActive;
     _Bool _passphraseActive;
@@ -33,10 +35,12 @@
     _Bool _fingerPresentTimeoutRequired;
     _Bool _fingerPresentTimeoutExpired;
     PKAuthenticatorEvaluationRequest *_request;
+    long long _policy;
     unsigned long long _presentationFlags;
     id <PKAuthenticatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PKAuthenticatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long presentationFlags; // @synthesize presentationFlags=_presentationFlags;
 @property(readonly, nonatomic) _Bool fingerPresentTimeoutExpired; // @synthesize fingerPresentTimeoutExpired=_fingerPresentTimeoutExpired;
@@ -45,9 +49,11 @@
 @property(readonly, nonatomic) _Bool passphraseActive; // @synthesize passphraseActive=_passphraseActive;
 @property(readonly, nonatomic) _Bool passcodeActive; // @synthesize passcodeActive=_passcodeActive;
 @property(readonly, nonatomic) _Bool fingerPresent; // @synthesize fingerPresent=_fingerPresent;
+@property(readonly, nonatomic) long long policy; // @synthesize policy=_policy;
+@property(readonly, nonatomic, getter=isPolicySupported) _Bool policySupported; // @synthesize policySupported=_policySupported;
+@property(readonly, nonatomic, getter=isSupported) _Bool supported; // @synthesize supported=_supported;
 @property(readonly, nonatomic) PKAuthenticatorEvaluationRequest *request; // @synthesize request=_request;
 @property(readonly, nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool biometricMatch;
 - (BOOL)_delegateSupportsPassphraseDismissal;
 - (BOOL)_delegateSupportsPassphrasePresentation;

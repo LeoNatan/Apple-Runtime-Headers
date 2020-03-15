@@ -31,9 +31,9 @@
 + (_Bool)isWheelchairUser;
 + (id)_dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(_Bool)arg5 handler:(CDUnknownBlockType)arg6;
 + (id)dailyTotalQueryForDate:(id)arg1 dataType:(id)arg2 predicate:(id)arg3 sendUpdates:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *currentActivitySummaryQueryCollectionIntervalOverrides; // @synthesize currentActivitySummaryQueryCollectionIntervalOverrides=_currentActivitySummaryQueryCollectionIntervalOverrides;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (id)_createCurrentActivitySummaryQuery;
 - (void)_queue_restartCurrentActivitySummaryQueryAfterError;
 - (void)stopCurrentActivitySummaryQueryForClientToken:(id)arg1;

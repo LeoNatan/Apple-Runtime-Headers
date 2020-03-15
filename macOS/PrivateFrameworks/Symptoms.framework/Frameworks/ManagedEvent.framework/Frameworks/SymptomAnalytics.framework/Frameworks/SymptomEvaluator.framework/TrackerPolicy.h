@@ -27,11 +27,11 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 + (id)preferredInstance:(id)arg1;
+- (void).cxx_destruct;
 @property unsigned long long maximumConnectionsPerHour; // @synthesize maximumConnectionsPerHour=_maximumConnectionsPerHour;
 @property(retain) FlowClassification *defaultClassification; // @synthesize defaultClassification=_defaultClassification;
 @property unsigned int numMgmtFlagsMaps; // @synthesize numMgmtFlagsMaps=_numMgmtFlagsMaps;
 @property unsigned int numClassMaps; // @synthesize numClassMaps=_numClassMaps;
-- (void).cxx_destruct;
 - (int)configureInstance:(id)arg1;
 - (void)addClassification:(id)arg1 forTrafficMgmtFlags:(unsigned int)arg2;
 - (void)addClassification:(id)arg1 forTrafficClass:(unsigned int)arg2;

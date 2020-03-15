@@ -23,9 +23,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
 @property(readonly, nonatomic, getter=isEmpty) BOOL empty; // @synthesize empty=_empty;
 @property(readonly, retain, nonatomic) GEOMapRegion *mapRegion; // @synthesize mapRegion=_mapRegion;
-- (id).cxx_construct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

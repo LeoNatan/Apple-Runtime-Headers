@@ -10,8 +10,8 @@ __attribute__((visibility("hidden")))
 @interface WebAVSampleBufferErrorListener : NSObject
 {
     WeakPtr_1d7f609b _parent;
-    struct Vector<WTF::RetainPtr<AVSampleBufferDisplayLayer>, 0, WTF::CrashOnOverflow, 16> _layers;
-    struct Vector<WTF::RetainPtr<AVSampleBufferAudioRenderer>, 0, WTF::CrashOnOverflow, 16> _renderers;
+    struct Vector<WTF::RetainPtr<AVSampleBufferDisplayLayer>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _layers;
+    struct Vector<WTF::RetainPtr<AVSampleBufferAudioRenderer>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _renderers;
 }
 
 - (id).cxx_construct;

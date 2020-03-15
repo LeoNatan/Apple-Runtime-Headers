@@ -13,8 +13,8 @@
     NSButton *_sendButton;
 }
 
-@property(nonatomic) __weak NSButton *sendButton; // @synthesize sendButton=_sendButton;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSButton *sendButton; // @synthesize sendButton=_sendButton;
 - (void)recipientsDidChange;
 
 @end

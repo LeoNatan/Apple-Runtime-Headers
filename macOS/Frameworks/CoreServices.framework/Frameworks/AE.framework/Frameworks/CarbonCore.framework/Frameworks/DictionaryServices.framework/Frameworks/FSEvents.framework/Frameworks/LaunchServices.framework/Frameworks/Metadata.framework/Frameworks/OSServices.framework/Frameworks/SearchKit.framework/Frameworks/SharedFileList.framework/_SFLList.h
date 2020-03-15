@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *properties; // @synthesize properties=_properties;
 @property(readonly) NSArray *items; // @synthesize items=_items;
 @property unsigned long long seed; // @synthesize seed=_seed;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 items:(id)arg2 properties:(id)arg3;

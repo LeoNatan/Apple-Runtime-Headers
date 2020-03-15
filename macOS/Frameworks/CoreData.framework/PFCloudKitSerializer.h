@@ -44,11 +44,11 @@ __attribute__((visibility("hidden")))
 + (id)ckAssetAttributeNameForAttributeName:(id)arg1;
 + (id)generateCKAssetFileURLForObjectInStore:(id)arg1;
 + (id)assetStorageDirectoryURLForStore:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSObject<PFCloudKitSerializerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *recordNamePrefix; // @synthesize recordNamePrefix=_recordNamePrefix;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
 @property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
-- (void).cxx_destruct;
 - (BOOL)shouldEncryptValueForAttribute:(id)arg1;
 - (id)getRecordMetadataForObject:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
 - (id)getValueStoreForRecord:(id)arg1;

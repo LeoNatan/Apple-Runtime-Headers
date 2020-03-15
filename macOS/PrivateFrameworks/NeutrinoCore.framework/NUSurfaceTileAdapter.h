@@ -17,10 +17,10 @@
     CDStruct_996ac03c _contentRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUIOSurface *surface; // @synthesize surface=_surface;
 @property(readonly, nonatomic) CDStruct_996ac03c contentRect; // @synthesize contentRect=_contentRect;
 @property(readonly, nonatomic) CDStruct_996ac03c frameRect; // @synthesize frameRect=_frameRect;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFrameRect:(CDStruct_996ac03c)arg1 contentRect:(CDStruct_996ac03c)arg2 surface:(id)arg3;
 

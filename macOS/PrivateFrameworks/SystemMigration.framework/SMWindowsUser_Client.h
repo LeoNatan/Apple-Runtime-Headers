@@ -21,13 +21,13 @@
 + (id)keyPathsForValuesAffectingDisplayExtraInfo;
 + (id)interestedDaemonKeysLimitedToMigratableUsers;
 + (id)interestedDaemonKeys;
+- (void).cxx_destruct;
 @property(retain) NSData *accountPictureData; // @synthesize accountPictureData=_accountPictureData;
 @property(readonly) NSString *windowsSID; // @synthesize windowsSID=_windowsSID;
 @property(readonly) BOOL canTransfer; // @synthesize canTransfer=_canTransfer;
 @property(readonly) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain) NSArray *components; // @synthesize components=_components;
 @property(retain) SMSystem_Client *sourceSystem; // @synthesize sourceSystem;
-- (void).cxx_destruct;
 - (id)displayExtraInfo;
 - (BOOL)allowOverwriteOfConflictedShortName;
 - (id)initWithXpcDictionaryRepresentation:(id)arg1 belongingToSystem:(id)arg2;

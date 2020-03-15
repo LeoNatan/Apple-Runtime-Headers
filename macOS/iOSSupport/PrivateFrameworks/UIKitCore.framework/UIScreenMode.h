@@ -15,8 +15,8 @@
 }
 
 + (id)_screenModeForDisplayMode:(id)arg1 mainScreen:(BOOL)arg2;
-@property(getter=_isMainScreen, setter=_setMainScreen:) BOOL _mainScreen; // @synthesize _mainScreen;
 - (void).cxx_destruct;
+@property(getter=_isMainScreen, setter=_setMainScreen:) BOOL _mainScreen; // @synthesize _mainScreen;
 - (id)description;
 - (id)_displayMode;
 @property(readonly, nonatomic) double pixelAspectRatio;

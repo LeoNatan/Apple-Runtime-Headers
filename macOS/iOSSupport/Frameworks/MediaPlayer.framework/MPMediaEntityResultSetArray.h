@@ -23,9 +23,9 @@
     long long _revision;
 }
 
+- (void).cxx_destruct;
 - (id)sectionInfo;
 @property(readonly, nonatomic) id <MPMediaLibraryResultSet> resultSet; // @synthesize resultSet=_resultSet;
-- (void).cxx_destruct;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (BOOL)isQueryResultSetInvalidated;
 - (unsigned long long)count;

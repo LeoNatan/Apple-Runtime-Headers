@@ -41,6 +41,7 @@
     struct UIEdgeInsets _hitRectInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float optimisticValue; // @synthesize optimisticValue=_optimisticValue;
 @property(nonatomic, getter=isInOptimisticState) _Bool optimisticState; // @synthesize optimisticState=_optimisticState;
 @property(retain, nonatomic) MPAVOutputDeviceRoute *outputDeviceRoute; // @synthesize outputDeviceRoute=_outputDeviceRoute;
@@ -51,7 +52,6 @@
 @property(nonatomic) struct UIEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(retain, nonatomic) UIImage *volumeWarningTrackImage; // @synthesize volumeWarningTrackImage=_volumeWarningTrackImage;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)_logVolumeValueDidChange:(float)arg1;
 - (id)_routeName;
 - (id)_newVolumeWarningView;

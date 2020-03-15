@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_dictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 @property(readonly, nonatomic) long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (void)deleted;
 - (void)changedWithDictionary:(id)arg1;
 - (id)initWithUniqueIdentifier:(id)arg1;

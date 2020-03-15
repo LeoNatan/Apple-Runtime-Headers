@@ -19,10 +19,10 @@
 
 + (unsigned long long)_timerNotificationActionForUserNotificationAction:(id)arg1;
 + (unsigned long long)_alarmNotificationActionForUserNotificationAction:(id)arg1 category:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) MTTimerStorage *timerStorage; // @synthesize timerStorage=_timerStorage;
 @property(retain, nonatomic) MTAlarmStorage *alarmStorage; // @synthesize alarmStorage=_alarmStorage;
-- (void).cxx_destruct;
 - (void)_handleTimerNotificationResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)handleAlarmNotificationIdentifier:(id)arg1 action:(unsigned long long)arg2 category:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_handleAlarmNotificationResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

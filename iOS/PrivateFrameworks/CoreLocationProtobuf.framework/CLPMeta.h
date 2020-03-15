@@ -21,11 +21,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *probeId; // @synthesize probeId=_probeId;
 @property(nonatomic) long long submissionId; // @synthesize submissionId=_submissionId;
 @property(retain, nonatomic) NSString *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
 @property(retain, nonatomic) NSString *productId; // @synthesize productId=_productId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

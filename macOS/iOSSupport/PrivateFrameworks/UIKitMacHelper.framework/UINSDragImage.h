@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_imageData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int slotID; // @synthesize slotID=_slotID;
 @property(readonly, copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (id)initWithSlotID:(unsigned int)arg1;
 - (id)initWithImageData:(id)arg1;
 

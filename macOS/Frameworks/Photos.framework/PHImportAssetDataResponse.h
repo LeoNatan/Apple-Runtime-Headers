@@ -16,10 +16,10 @@
 }
 
 + (id)responseWithDataRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) PHImportAssetDataRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)initWithRequest:(id)arg1;
 
 @end

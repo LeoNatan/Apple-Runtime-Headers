@@ -19,6 +19,7 @@
 @property(copy) NSString *externalUUID; // @dynamic externalUUID;
 @property(copy) NSString *externalModificationTag; // @dynamic externalModificationTag;
 @property(copy) NSData *externalRepresentation; // @dynamic externalRepresentation;
+@property(copy) NSString *externalURI;
 @property(copy) NSString *externalIdentifier; // @dynamic externalIdentifier;
 @property(copy) NSDate *modificationDate; // @dynamic modificationDate;
 @property(copy) NSDate *creationDate; // @dynamic creationDate;

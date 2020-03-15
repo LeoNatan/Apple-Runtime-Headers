@@ -12,21 +12,30 @@
 {
     PKPaymentPass *_pass;
     NSArray *_transitBalanceFields;
+    NSArray *_commutePlanFields;
     PKTransitPassProperties *_transitPassProperties;
-    NSSet *_serverBalances;
+    NSSet *_balances;
 }
 
-@property(copy, nonatomic) NSSet *serverBalances; // @synthesize serverBalances=_serverBalances;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *balances; // @synthesize balances=_balances;
 @property(retain, nonatomic) PKTransitPassProperties *transitPassProperties; // @synthesize transitPassProperties=_transitPassProperties;
+@property(readonly, nonatomic) NSArray *commutePlanFields; // @synthesize commutePlanFields=_commutePlanFields;
 @property(readonly, nonatomic) NSArray *transitBalanceFields; // @synthesize transitBalanceFields=_transitBalanceFields;
 @property(readonly, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
-- (id)_fieldWithBalance:(id)arg1;
+- (id)description;
+- (id)_identifierFromAction:(id)arg1 type:(unsigned long long)arg2;
+- (id)_actionWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
+- (id)_commutePlanWithFelicaPassProperties:(id)arg1;
+- (id)_formattedValueWithCommutePlan:(id)arg1 balancesByID:(id)arg2;
+- (id)_commutePlanFieldsWithBalancesByID:(id)arg1;
+- (id)_balanceFieldWithBalance:(id)arg1 isPrimaryBalance:(_Bool)arg2;
 - (id)_balanceByIDWithBalances:(id)arg1;
 - (id)_balanceFieldsWithBalancesByID:(id)arg1 passFields:(id)arg2 maximumCount:(unsigned long long)arg3;
-- (id)_backOfThePassBalanceFieldsWithBalancesByID:(id)arg1;
+- (id)_allPassBalanceFieldsWithBalancesByID:(id)arg1;
+- (id)_paymentBalanceFromTransitPassProperty:(id)arg1;
 - (id)_primaryDisplayableBalanceFieldWithBalancesByID:(id)arg1;
-- (void)_updateTransitBalanceFields;
+- (void)updateItemFields;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithPass:(id)arg1;
 

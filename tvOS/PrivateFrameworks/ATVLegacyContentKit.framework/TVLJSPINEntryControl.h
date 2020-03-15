@@ -16,9 +16,9 @@
     CDUnknownBlockType _cancelBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) CDUnknownBlockType submitBlock; // @synthesize submitBlock=_submitBlock;
-- (void).cxx_destruct;
 - (void)digitEntryViewControllerDidCancel:(id)arg1;
 - (void)digitEntryViewControllerDidFinish:(id)arg1;
 - (void)viewDidLoad;

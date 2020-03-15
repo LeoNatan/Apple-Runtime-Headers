@@ -21,6 +21,7 @@
     struct CGSize _preferredSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIImageView *publisherLogoImageView; // @synthesize publisherLogoImageView=_publisherLogoImageView;
 @property(nonatomic) __weak UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(nonatomic) __weak UILabel *publisherLabel; // @synthesize publisherLabel=_publisherLabel;
@@ -30,7 +31,6 @@
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
 @property(retain, nonatomic) NSSArticleInternal *article; // @synthesize article=_article;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateFonts;
 - (void)_commonInit;

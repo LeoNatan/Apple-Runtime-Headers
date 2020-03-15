@@ -48,6 +48,7 @@
 + (unsigned long long)inlinePreviewTrackingAreaOptions;
 + (int)specialInlinePreviewModeForPreviewItem:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL lazyLoading; // @synthesize lazyLoading=_lazyLoading;
 @property BOOL hostingLayerIsInWindowServer; // @synthesize hostingLayerIsInWindowServer=_hostingLayerIsInWindowServer;
 @property(readonly) QLPreviewView *previewView; // @synthesize previewView=_previewView;
@@ -56,7 +57,6 @@
 @property BOOL autoplay; // @synthesize autoplay=_autoplay;
 @property(nonatomic) __weak QLPreviewPanel *sharingPreviewPanel; // @synthesize sharingPreviewPanel=_sharingPreviewPanel;
 @property __weak id <QLInlinePreviewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (unsigned long long)_integerValueFromObject:(id)arg1;
 - (BOOL)_boolValueFromObject:(id)arg1;

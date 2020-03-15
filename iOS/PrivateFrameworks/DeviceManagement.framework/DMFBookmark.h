@@ -25,11 +25,11 @@
 + (id)folderWithName:(id)arg1 children:(id)arg2;
 + (id)readingListFolderWithChildren:(id)arg1;
 + (id)favoritesFolderWithChildren:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSArray *children; // @synthesize children=_children;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

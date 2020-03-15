@@ -15,10 +15,10 @@
     NSURL *_fallbackStreamingKeyCertificateURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *fallbackStreamingKeyCertificateURL; // @synthesize fallbackStreamingKeyCertificateURL=_fallbackStreamingKeyCertificateURL;
 @property(copy, nonatomic) NSURL *fallbackStreamingKeyServerURL; // @synthesize fallbackStreamingKeyServerURL=_fallbackStreamingKeyServerURL;
 @property(readonly, copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MPStoreRedownloadProductItem *item;
 - (id)initWithResponseDictionary:(id)arg1;
 

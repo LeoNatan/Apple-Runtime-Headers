@@ -24,13 +24,13 @@
     NSMutableSet *_notchRestingPositions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *notchRestingPositions; // @synthesize notchRestingPositions=_notchRestingPositions;
 @property(nonatomic) _Bool includesTallCells; // @synthesize includesTallCells=_includesTallCells;
 @property(nonatomic) _Bool createdEdgeNotches; // @synthesize createdEdgeNotches=_createdEdgeNotches;
 @property(retain, nonatomic) PUICCollectionViewNotch *startEdgeNotch; // @synthesize startEdgeNotch=_startEdgeNotch;
 @property(nonatomic) _Bool checkedCollectionViewDelegateMethods; // @synthesize checkedCollectionViewDelegateMethods=_checkedCollectionViewDelegateMethods;
 @property(nonatomic) __weak PUICCollectionView *sourceCollectionView; // @synthesize sourceCollectionView=_sourceCollectionView;
-- (void).cxx_destruct;
 - (id)_sortedNotchCentersForLogsHighlightingValue:(float)arg1;
 - (id)_previousIndexPathThatParticipatesInNotchesFromIndexPath:(id)arg1;
 - (id)_nextIndexPathThatParticipatesInNotchesAfterIndexPath:(id)arg1;

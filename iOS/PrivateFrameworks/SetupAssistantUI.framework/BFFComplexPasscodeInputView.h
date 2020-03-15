@@ -15,8 +15,8 @@
     UITextField *_passcodeField;
 }
 
-@property(retain, nonatomic) UITextField *passcodeField; // @synthesize passcodeField=_passcodeField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextField *passcodeField; // @synthesize passcodeField=_passcodeField;
 - (void)_layout;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;

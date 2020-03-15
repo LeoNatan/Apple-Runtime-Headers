@@ -25,8 +25,8 @@
 }
 
 + (BOOL)sanitizeErrors;
-@property(nonatomic) int requestEffectivePid; // @synthesize requestEffectivePid=_pid;
 - (void).cxx_destruct;
+@property(nonatomic) int requestEffectivePid; // @synthesize requestEffectivePid=_pid;
 - (id)description;
 - (BOOL)conformsToProtocol:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

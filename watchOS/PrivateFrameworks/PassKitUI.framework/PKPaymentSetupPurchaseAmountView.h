@@ -36,6 +36,7 @@
     PKNumericSuggestionsEnterValueAlgorithm *_suggestionGenerator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showTransferButton; // @synthesize showTransferButton=_showTransferButton;
 @property(retain, nonatomic) PKNumericSuggestionsEnterValueAlgorithm *suggestionGenerator; // @synthesize suggestionGenerator=_suggestionGenerator;
 @property(retain, nonatomic) PKNumberPadSuggestionsView *suggestionView; // @synthesize suggestionView=_suggestionView;
@@ -55,7 +56,6 @@
 @property(copy, nonatomic) PKPaymentProvisioningMethodMetadata *provisioningMethodMetadata; // @synthesize provisioningMethodMetadata=_provisioningMethodMetadata;
 @property(copy, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 @property(nonatomic) __weak id <PKPaymentSetupPurchaseAmountViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_transferBalanceButtonTapped:(id)arg1;
 - (void)_updateMessageLabelForAmount:(id)arg1;
 - (void)_updateCurrentAmount:(id)arg1;

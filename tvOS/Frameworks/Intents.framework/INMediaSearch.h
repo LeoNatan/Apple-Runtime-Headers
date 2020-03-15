@@ -28,6 +28,7 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *mediaIdentifier; // @synthesize mediaIdentifier=_mediaIdentifier;
 @property(readonly, nonatomic) long long reference; // @synthesize reference=_reference;
 @property(readonly, copy, nonatomic) INDateComponentsRange *releaseDate; // @synthesize releaseDate=_releaseDate;
@@ -38,7 +39,6 @@
 @property(readonly, copy, nonatomic) NSString *mediaName; // @synthesize mediaName=_mediaName;
 @property(readonly, nonatomic) long long sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(readonly, nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

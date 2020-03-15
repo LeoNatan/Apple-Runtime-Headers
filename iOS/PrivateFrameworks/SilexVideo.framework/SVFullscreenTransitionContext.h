@@ -19,12 +19,12 @@
     double _transitionDuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isInteractive) _Bool interactive; // @synthesize interactive=_interactive;
 @property(readonly, nonatomic) double transitionDuration; // @synthesize transitionDuration=_transitionDuration;
 @property(readonly, nonatomic) UIView *toView; // @synthesize toView=_toView;
 @property(readonly, nonatomic) UIView *fromView; // @synthesize fromView=_fromView;
 @property(readonly, nonatomic) UIView *contentOverlayView; // @synthesize contentOverlayView=_contentOverlayView;
-- (void).cxx_destruct;
 - (id)initWithContentOverlayView:(id)arg1 fromView:(id)arg2 toView:(id)arg3 transitionDuration:(double)arg4 interactive:(_Bool)arg5;
 
 // Remaining properties

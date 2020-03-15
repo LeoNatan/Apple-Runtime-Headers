@@ -11,6 +11,7 @@
 @protocol AVOutputDeviceImpl <NSObject>
 @property(readonly, nonatomic) NSString *currentBluetoothListeningMode;
 @property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
+@property(readonly, nonatomic) long long HAPConformance;
 @property(readonly, nonatomic) BOOL supportsBluetoothSharing;
 @property(readonly, nonatomic) BOOL presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property(readonly, nonatomic) BOOL canFetchMediaDataFromSender;

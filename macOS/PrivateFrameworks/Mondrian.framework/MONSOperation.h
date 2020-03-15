@@ -37,6 +37,7 @@
 + (id)blockOperationWithExecutionBlock:(CDUnknownBlockType)arg1;
 + (id)blockOperationWithExecutionBlock:(CDUnknownBlockType)arg1 finishBlock:(CDUnknownBlockType)arg2 andFinishDelegate:(id)arg3;
 + (id)operationWithFinishBlock:(CDUnknownBlockType)arg1 andFinishDelegate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property BOOL needsToRetry; // @synthesize needsToRetry=_needsToRetry;
 @property __weak MONSOperation *mainOperation; // @synthesize mainOperation=_mainOperation;
@@ -50,7 +51,6 @@
 @property(copy) CDUnknownBlockType executionBlock; // @synthesize executionBlock=_executionBlock;
 @property BOOL isFinishing; // @synthesize isFinishing=_isFinishing;
 @property BOOL canBeCancelled; // @synthesize canBeCancelled=_canBeCancelled;
-- (void).cxx_destruct;
 - (void)performAsynchronously:(id)arg1;
 - (void)performAsynchronously:(id)arg1 timeout:(unsigned long long)arg2;
 - (BOOL)performSynchronously;

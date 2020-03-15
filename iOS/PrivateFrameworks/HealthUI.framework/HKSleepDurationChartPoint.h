@@ -20,13 +20,13 @@
     HKSleepChartPointUserInfo *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKSleepChartPointUserInfo *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(copy, nonatomic) NSNumber *goalValue; // @synthesize goalValue=_goalValue;
 @property(copy, nonatomic) NSDate *xValue; // @synthesize xValue=_xValue;
 @property(nonatomic) double asleepValue; // @synthesize asleepValue=_asleepValue;
 @property(nonatomic) double inBedValue; // @synthesize inBedValue=_inBedValue;
-- (void).cxx_destruct;
 - (id)allYValues;
 - (id)yValueForKey:(id)arg1;
 - (id)yValue;

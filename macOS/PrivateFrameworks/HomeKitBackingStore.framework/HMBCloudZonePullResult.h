@@ -13,8 +13,8 @@
     NAFuture *_processResult;
 }
 
-@property(readonly, nonatomic) NAFuture *processResult; // @synthesize processResult=_processResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NAFuture *processResult; // @synthesize processResult=_processResult;
 - (id)initWithProcessResult:(id)arg1;
 
 @end

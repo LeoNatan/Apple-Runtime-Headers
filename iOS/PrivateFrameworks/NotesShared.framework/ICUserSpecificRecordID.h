@@ -21,13 +21,13 @@
 + (_Bool)isUserSpecificRecordID:(id)arg1;
 + (_Bool)isUserSpecificRecordType:(id)arg1;
 + (id)userSpecificRecordTypeFromSharedRecordType:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *sharedRecordName; // @synthesize sharedRecordName=_sharedRecordName;
 @property(retain, nonatomic) NSString *userSpecificOwnerName; // @synthesize userSpecificOwnerName=_userSpecificOwnerName;
 @property(retain, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 @property(nonatomic) long long databaseScope; // @synthesize databaseScope=_databaseScope;
 @property(retain, nonatomic) NSString *shareOwnerName; // @synthesize shareOwnerName=_shareOwnerName;
 @property(retain, nonatomic) NSString *recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CKRecordID *sharedRecordID;
 @property(readonly, nonatomic) NSString *sharedRecordType;
 @property(readonly, nonatomic) CKRecordID *recordID;

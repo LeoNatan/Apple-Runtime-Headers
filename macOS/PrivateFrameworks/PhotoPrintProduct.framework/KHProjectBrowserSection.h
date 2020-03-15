@@ -17,10 +17,10 @@
     unsigned long long _offset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) long long projectType; // @synthesize projectType=_projectType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) unsigned long long numberOfItems;
 - (id)initWithProjectType:(long long)arg1;

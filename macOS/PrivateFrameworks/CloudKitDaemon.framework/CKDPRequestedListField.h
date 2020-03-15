@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)rangeType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *ranges; // @synthesize ranges=_ranges;
 @property(retain, nonatomic) CKDPRecordFieldIdentifier *fieldId; // @synthesize fieldId=_fieldId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

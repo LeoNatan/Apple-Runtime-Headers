@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *soundQueue; // @synthesize soundQueue=_soundQueue;
 @property(retain, nonatomic) NSMutableDictionary *focusSoundPools; // @synthesize focusSoundPools=_focusSoundPools;
 @property(retain, nonatomic) NSMutableDictionary *urlPools; // @synthesize urlPools=_urlPools;
-- (void).cxx_destruct;
 - (void)_playSystemSound:(unsigned long)arg1 withVolume:(float)arg2 pan:(float)arg3;
 - (void)playSoundWithFocusSound:(int)arg1 volume:(float)arg2 pan:(float)arg3;
 - (void)playSoundWithURL:(id)arg1 volume:(float)arg2 pan:(float)arg3;

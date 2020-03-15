@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     AMSSQLiteConnectionOptions *_options;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) AMSSQLiteConnectionOptions *options; // @synthesize options=_options;
 @property(nonatomic) __weak id <AMSSQLiteConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_verifiedStatementForSQL:(id)arg1 error:(id *)arg2;
 - (id)_verifiedStatementForPreparedStatement:(id)arg1 error:(id *)arg2;
 - (id)_statementForPreparedStatement:(id)arg1 error:(id *)arg2;

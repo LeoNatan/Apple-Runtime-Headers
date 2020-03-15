@@ -45,11 +45,11 @@
 + (void)preFrontBoardInitializationHook;
 + (void)preFBSystemAppMain;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLModalAppManager *setupManager; // @synthesize setupManager=_setupManager;
 @property(readonly, nonatomic, getter=isFirstLaunchAfterBoot) _Bool firstLaunchAfterBoot; // @synthesize firstLaunchAfterBoot=_firstLaunchAfterBoot;
 @property(readonly, nonatomic) _Bool prelaunchCompleted; // @synthesize prelaunchCompleted=_prelaunchCompleted;
 @property(readonly, nonatomic) _Bool launchCompleted; // @synthesize launchCompleted=_launchCompleted;
-- (void).cxx_destruct;
 - (void)significantTimeChange;
 - (void)_significantTimeChange;
 - (void)prelaunchActivityManager:(id)arg1 transitionedToState:(int)arg2 fromState:(int)arg3;

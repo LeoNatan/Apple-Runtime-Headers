@@ -28,6 +28,7 @@
     CDUnknownBlockType _finishedBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType finishedBlock; // @synthesize finishedBlock=_finishedBlock;
 @property(copy, nonatomic) NSDate *cleanupBeforeDate; // @synthesize cleanupBeforeDate=_cleanupBeforeDate;
 @property(nonatomic) _Bool cleanupSyncState; // @synthesize cleanupSyncState=_cleanupSyncState;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSURL *videoComplementURL; // @synthesize videoComplementURL;
 @property(retain, nonatomic) NSURL *originalAssetURL; // @synthesize originalAssetURL;
 @property(retain, nonatomic) NSArray *facesInfo; // @synthesize facesInfo;
-- (void).cxx_destruct;
 - (id)description;
 - (void)processFacesWithBlock:(CDUnknownBlockType)arg1;
 - (id)serializedData;

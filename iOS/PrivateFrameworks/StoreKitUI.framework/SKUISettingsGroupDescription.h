@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     SKUIGroupViewElement *_viewElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SKUIGroupViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(nonatomic) __weak SKUISettingsGroupsDescription *parent; // @synthesize parent=_parent;
 @property(nonatomic) __weak SKUISettingsGroupController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_updatedEditsValid;
 - (void)_presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_dismissViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

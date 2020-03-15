@@ -14,9 +14,9 @@
     NSMutableSet *_failingAPIVersionsSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *failingAPIVersionsSet; // @synthesize failingAPIVersionsSet=_failingAPIVersionsSet;
 @property(readonly, nonatomic) NSMutableDictionary *failTrackerDict; // @synthesize failTrackerDict=_failTrackerDict;
-- (void).cxx_destruct;
 - (double)lastFailTimeInSecondsForAPIVersion:(id)arg1;
 - (int)consecutiveFailsForAPIVersion:(id)arg1;
 @property(readonly, nonatomic) NSArray *failingAPIVersions;

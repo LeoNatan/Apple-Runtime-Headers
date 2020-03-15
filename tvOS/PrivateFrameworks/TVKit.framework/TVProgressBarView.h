@@ -19,10 +19,10 @@
     double _maxPlayheadLocation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *barView; // @synthesize barView=_barView;
 @property(nonatomic) double maxPlayheadLocation; // @synthesize maxPlayheadLocation=_maxPlayheadLocation;
 @property(nonatomic) double minPlayheadLocation; // @synthesize minPlayheadLocation=_minPlayheadLocation;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (_Bool)canBecomeFocused;
 @property(copy, nonatomic) NSArray *adMarkers;

@@ -17,10 +17,10 @@
 }
 
 + (id)sharedSession;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *players; // @synthesize players=_players;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(nonatomic, getter=isAudioSessionActive) BOOL audioSessionActive; // @synthesize audioSessionActive=_audioSessionActive;
-- (void).cxx_destruct;
 - (id)desiredAudioSessionCategory;
 - (void)deactivateAudioSessionCategory;
 - (void)activateAudioSessionCategory;

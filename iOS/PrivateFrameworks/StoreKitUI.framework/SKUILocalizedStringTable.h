@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_tableName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)_legacyLanguageNameForLanguageCode:(id)arg1;
 - (id)localizedStringForKey:(id)arg1;
 - (id)initWithBundle:(id)arg1 localeName:(id)arg2 tableName:(id)arg3;

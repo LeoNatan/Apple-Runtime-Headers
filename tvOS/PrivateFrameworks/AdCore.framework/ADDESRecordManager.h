@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *desRecords; // @synthesize desRecords=_desRecords;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *desRecords; // @synthesize desRecords=_desRecords;
 - (id)recordForRequestID:(id)arg1;
 - (void)addImpressionForRequestID:(id)arg1;
 - (void)addTapForRequestID:(id)arg1;

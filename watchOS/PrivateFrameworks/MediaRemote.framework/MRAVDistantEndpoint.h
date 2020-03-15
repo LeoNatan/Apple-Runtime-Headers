@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListenerEndpoint *externalDeviceListenerEndpoint; // @synthesize externalDeviceListenerEndpoint=_externalDeviceListenerEndpoint;
 @property(retain, nonatomic) MRDistantExternalDevice *distantExternalDevice; // @synthesize distantExternalDevice=_distantExternalDevice;
 @property(retain, nonatomic) MRAVDistantOutputDevice *distantGroupLeader; // @synthesize distantGroupLeader=_distantGroupLeader;
@@ -37,7 +38,6 @@
 - (void)setLocalizedName:(id)arg1;
 - (id)localizedName;
 - (long)connectionType;
-- (void).cxx_destruct;
 - (_Bool)canModifyGroupMembership;
 - (_Bool)isProxyGroupPlayer;
 - (id)designatedGroupLeader;

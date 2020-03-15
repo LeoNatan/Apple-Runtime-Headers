@@ -16,11 +16,11 @@
     NSMutableSet *_records;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *records; // @synthesize records=_records;
 @property(readonly, nonatomic) NSArray *desiredKeys; // @synthesize desiredKeys=_desiredKeys;
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
-- (void).cxx_destruct;
 - (id)initWithActivity:(id)arg1 options:(id)arg2 promise:(id)arg3 database:(id)arg4 useAnonymousRequests:(BOOL)arg5 zoneID:(id)arg6 recordID:(id)arg7 desiredKeys:(id)arg8;
 
 @end

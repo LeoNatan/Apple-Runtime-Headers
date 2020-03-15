@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *storeIDs; // @synthesize storeIDs=_storeIDs;
 @property(copy) NSArray *sortOptions; // @synthesize sortOptions=_sortOptions;
 @property(copy) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
@@ -31,7 +32,6 @@
 @property long long isFirstParty; // @synthesize isFirstParty=_isFirstParty;
 @property(copy) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property long long accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

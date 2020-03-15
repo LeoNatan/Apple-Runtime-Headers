@@ -53,6 +53,7 @@
 }
 
 + (BOOL)_forceUpdateForNewVideoComposition:(id)arg1 previousComposition:(id)arg2 newAsset:(id)arg3 previousAsset:(id)arg4 isPlaying:(BOOL)arg5;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *previousPipelineFilters; // @synthesize previousPipelineFilters=_previousPipelineFilters;
 @property(retain, nonatomic) AVComposition *previousVideo; // @synthesize previousVideo=_previousVideo;
 @property(nonatomic, getter=_isVideoEnabled, setter=_setVideoEnabled:) BOOL _videoEnabled; // @synthesize _videoEnabled=__videoEnabled;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) NUPixelFormat *pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(copy, nonatomic) NUComposition *composition; // @synthesize composition=_composition;
-- (void).cxx_destruct;
 - (void)livePhotoViewDidEndScrubbing:(id)arg1;
 - (void)livePhotoViewDidBeginScrubbing:(id)arg1;
 - (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(long long)arg2;

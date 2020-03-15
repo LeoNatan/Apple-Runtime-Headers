@@ -29,6 +29,7 @@
     PipeDataTransfer *_pipeDataTransfer;
 }
 
+- (void).cxx_destruct;
 @property BOOL connectionInitiator; // @synthesize connectionInitiator=_connectionInitiator;
 @property BOOL useConnectStatusPDU; // @synthesize useConnectStatusPDU=_useConnectStatusPDU;
 @property unsigned int localSupportedFeatures; // @synthesize localSupportedFeatures=_localSupportedFeatures;
@@ -43,7 +44,6 @@
 @property(retain) NSObject<OS_voucher> *voucher; // @synthesize voucher=_voucher;
 @property(retain) CBScalablePipe *pipe; // @synthesize pipe=_pipe;
 @property(retain) NSObject<OS_dispatch_source> *pipeReadSource; // @synthesize pipeReadSource=_pipeReadSource;
-- (void).cxx_destruct;
 - (void)releaseQOSOverride;
 - (void)applyQOSOverride;
 - (id)description;

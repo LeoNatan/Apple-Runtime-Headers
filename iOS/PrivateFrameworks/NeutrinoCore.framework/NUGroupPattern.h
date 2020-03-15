@@ -10,11 +10,11 @@
 
 @interface NUGroupPattern : NUPattern
 {
-    struct NSArray *_group;
+    NSArray *_group;
 }
 
-@property(readonly) NSArray *group; // @synthesize group=_group;
 - (void).cxx_destruct;
+@property(readonly) NSArray *group; // @synthesize group=_group;
 - (_Bool)match:(id)arg1 location:(unsigned long long *)arg2 count:(unsigned long long *)arg3;
 - (_Bool)isEqualToGroupPattern:(id)arg1;
 - (_Bool)isEqualToPattern:(id)arg1;

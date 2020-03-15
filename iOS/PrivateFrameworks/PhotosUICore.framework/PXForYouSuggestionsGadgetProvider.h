@@ -22,13 +22,13 @@
     PXSuggestionsDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXSuggestionsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) PXAssetsDataSourceManager *oneUpDataSourceManager; // @synthesize oneUpDataSourceManager=_oneUpDataSourceManager;
 @property(retain, nonatomic) PXAssetReference *oneUpInitialAssetReference; // @synthesize oneUpInitialAssetReference=_oneUpInitialAssetReference;
 @property(retain, nonatomic) NSArray *oneUpAssets; // @synthesize oneUpAssets=_oneUpAssets;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, nonatomic) PXSuggestionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)keyAssetForSuggestion:(id)arg1;
 - (void)suggestionGadgetsWantsOneUpPresentation:(id)arg1;

@@ -20,10 +20,10 @@
 
 + (id)supportedFeatures;
 + (double)updateInterval;
+- (void).cxx_destruct;
 @property float standHourPercentComplete; // @synthesize standHourPercentComplete=_standHourPercentComplete;
 @property float exerciseTimePercentComplete; // @synthesize exerciseTimePercentComplete=_exerciseTimePercentComplete;
 @property float activeEnergyPercentComplete; // @synthesize activeEnergyPercentComplete=_activeEnergyPercentComplete;
-- (void).cxx_destruct;
 - (void)_updateWithActivitySummary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_stopQueries;
 - (void)_stopQuery:(id)arg1;

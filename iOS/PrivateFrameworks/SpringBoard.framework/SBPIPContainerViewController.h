@@ -45,10 +45,10 @@
     long long _requiredInterfaceOrientation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool animateSafeAreaInsetsChanges; // @synthesize animateSafeAreaInsetsChanges=_animateSafeAreaInsetsChanges;
 @property(readonly, nonatomic) long long requiredInterfaceOrientation; // @synthesize requiredInterfaceOrientation=_requiredInterfaceOrientation;
 @property(readonly, nonatomic) PGPictureInPictureViewController *pictureInPictureViewController; // @synthesize pictureInPictureViewController=_pictureInPictureViewController;
-- (void).cxx_destruct;
 - (void)_actuallyHandlePanRotationPinchGestureEndedState;
 - (void)_handlePanRotationPinchGestureEndedState;
 - (void)_adjustContentViewAnchorPointForGestureRecognizer:(id)arg1;

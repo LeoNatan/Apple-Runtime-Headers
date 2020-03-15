@@ -15,10 +15,10 @@
     NSButton *_cardSelected;
 }
 
+- (void).cxx_destruct;
 @property __weak NSButton *cardSelected; // @synthesize cardSelected=_cardSelected;
 @property __weak NSTextField *cardLastDigits; // @synthesize cardLastDigits=_cardLastDigits;
 @property __weak NSImageView *cardIcon; // @synthesize cardIcon=_cardIcon;
-- (void).cxx_destruct;
 - (void)setBackgroundStyle:(long long)arg1;
 
 @end

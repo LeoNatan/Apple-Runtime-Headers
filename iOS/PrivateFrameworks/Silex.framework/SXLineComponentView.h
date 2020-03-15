@@ -14,9 +14,9 @@
     SXSolidBorderView *_borderView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SXSolidBorderView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) CALayer *strokeLayer; // @synthesize strokeLayer=_strokeLayer;
-- (void).cxx_destruct;
 - (_Bool)userInteractable;
 - (void)discardContents;
 - (void)renderContents;

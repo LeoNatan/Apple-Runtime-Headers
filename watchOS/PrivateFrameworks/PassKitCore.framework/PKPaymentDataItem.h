@@ -19,10 +19,10 @@
 
 + (_Bool)supportsMultipleItems;
 + (int)dataType;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PKPaymentAuthorizationDataModel *model; // @synthesize model=_model;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)isValidWithError:(id *)arg1;
 @property(readonly, nonatomic, getter=isRejected) _Bool rejected;
 @property(readonly, nonatomic) NSArray *errors;

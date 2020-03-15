@@ -27,6 +27,7 @@
 }
 
 + (id)createNewDevice:(struct __IOHIDDevice *)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _canceled; // @synthesize _canceled=__canceled;
 @property(nonatomic) char *_hidReportBuffer; // @synthesize _hidReportBuffer=__hidReportBuffer;
 @property(nonatomic) struct __IOHIDDevice *_hidDevice; // @synthesize _hidDevice=__hidDevice;
@@ -40,7 +41,6 @@
 @property(nonatomic) unsigned long long vendorID; // @synthesize vendorID=_vendorID;
 @property(nonatomic) __weak id <AXEHIDDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL isLoaded; // @synthesize isLoaded=_isLoaded;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *deviceInfo;
 - (void)_closeDevice;
 - (void)closeAndUnloadAsynchronously;

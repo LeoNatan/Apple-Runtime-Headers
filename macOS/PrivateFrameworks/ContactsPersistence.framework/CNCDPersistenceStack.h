@@ -21,8 +21,8 @@
 + (id)defaultAccountCollection;
 + (id)persistenceStackWithAccountCollection:(id)arg1;
 + (id)os_log_t;
-@property id notificationSource; // @synthesize notificationSource=_notificationSource;
 - (void).cxx_destruct;
+@property id notificationSource; // @synthesize notificationSource=_notificationSource;
 - (id)makePersistenceContext;
 - (id)initWithBackendProvider:(CDUnknownBlockType)arg1;
 

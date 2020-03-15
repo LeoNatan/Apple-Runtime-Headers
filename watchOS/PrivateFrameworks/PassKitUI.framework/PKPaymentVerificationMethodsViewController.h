@@ -17,10 +17,10 @@
     NSString *_stepIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stepIdentifier; // @synthesize stepIdentifier=_stepIdentifier;
 @property(retain, nonatomic) PKPaymentProvisioningController *provisioningController; // @synthesize provisioningController=_provisioningController;
 @property(readonly, nonatomic) PKPaymentVerificationController *verificationController; // @synthesize verificationController=_verificationController;
-- (void).cxx_destruct;
 - (id)_requestErrorAlertController:(id)arg1;
 - (id)_setupAssistantVerificationAlert;
 - (id)_newVerificationRequest;

@@ -13,8 +13,8 @@
     PIReframeResult *_reframeResult;
 }
 
-@property(retain, nonatomic) PIReframeResult *reframeResult; // @synthesize reframeResult=_reframeResult;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PIReframeResult *reframeResult; // @synthesize reframeResult=_reframeResult;
 - (void)cleanUp;
 - (id)result;
 - (_Bool)render:(out id *)arg1;

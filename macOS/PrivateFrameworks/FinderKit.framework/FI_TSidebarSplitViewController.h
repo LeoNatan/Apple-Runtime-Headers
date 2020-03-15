@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)keyPathsForValuesAffectingIsSidebarColumnCollapsed;
-@property(nonatomic, getter=isSpringLoaded) _Bool springLoaded; // @synthesize springLoaded=_springLoaded;
-@property(nonatomic) _Bool shouldPersistContainerSidebarWidth; // @synthesize shouldPersistContainerSidebarWidth=_shouldPersistContainerSidebarWidth;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isSpringLoaded) _Bool springLoaded; // @synthesize springLoaded=_springLoaded;
+@property(nonatomic) _Bool shouldPersistContainerSidebarWidth; // @synthesize shouldPersistContainerSidebarWidth=_shouldPersistContainerSidebarWidth;
 - (double)splitView:(id)arg1 constrainSplitPosition:(double)arg2 ofSubviewAt:(long long)arg3;
 - (void)splitViewDidResizeSubviews:(id)arg1;
 - (struct CGImage *)newSidebarImageForFullScreenAnimationInitialCoverWindow:(struct CGRect *)arg1;

@@ -6,9 +6,7 @@
 
 #import <TeaFoundation/TFManagerAssembly.h>
 
-#import <TeaFoundation/NFAssembly-Protocol.h>
-
-@interface TFManagerAssembly (TeaFoundation) <NFAssembly>
+@interface TFManagerAssembly (TeaFoundation)
 - (void)loadInRegistry:(id)arg1;
 @end
 

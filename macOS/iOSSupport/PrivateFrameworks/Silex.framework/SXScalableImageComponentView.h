@@ -28,6 +28,7 @@
     struct CGRect _previousContentFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *gestureView; // @synthesize gestureView=_gestureView;
 @property(nonatomic) struct CGRect previousContentFrame; // @synthesize previousContentFrame=_previousContentFrame;
 @property(retain, nonatomic) SXMediaViewEvent *activeViewEvent; // @synthesize activeViewEvent=_activeViewEvent;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) id <SXMediaSharingPolicyProvider> mediaSharingPolicyProvider; // @synthesize mediaSharingPolicyProvider=_mediaSharingPolicyProvider;
 @property(readonly, nonatomic) id <SXFullscreenCanvasControllerFactory> canvasControllerFactory; // @synthesize canvasControllerFactory=_canvasControllerFactory;
 @property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
-- (void).cxx_destruct;
 - (BOOL)allowHierarchyRemoval;
 @property(readonly, copy) NSString *description;
 - (void)finishMediaViewEvent;

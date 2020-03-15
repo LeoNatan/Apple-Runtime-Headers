@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int peerSupportedChannelFlags; // @synthesize peerSupportedChannelFlags=_peerSupportedChannelFlags;
 @property(nonatomic) unsigned long long peerAssistedDiscoveryMetric; // @synthesize peerAssistedDiscoveryMetric=_peerAssistedDiscoveryMetric;
 @property(nonatomic) unsigned long long peerSecondaryPreferredChannel; // @synthesize peerSecondaryPreferredChannel=_peerSecondaryPreferredChannel;
@@ -36,7 +37,6 @@
 @property(nonatomic) unsigned long long localSecondaryPreferredChannel; // @synthesize localSecondaryPreferredChannel=_localSecondaryPreferredChannel;
 @property(nonatomic) unsigned long long localPreferredChannel; // @synthesize localPreferredChannel=_localPreferredChannel;
 @property(nonatomic) unsigned long long localMasterChannel; // @synthesize localMasterChannel=_localMasterChannel;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

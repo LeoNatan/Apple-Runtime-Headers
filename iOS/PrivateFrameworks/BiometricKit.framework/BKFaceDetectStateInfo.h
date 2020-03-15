@@ -23,6 +23,7 @@
     unsigned long long _orientation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool partiallyOutOfView; // @synthesize partiallyOutOfView=_partiallyOutOfView;
 @property(readonly, nonatomic) _Bool occlusion; // @synthesize occlusion=_occlusion;
 @property(readonly, nonatomic) _Bool flare; // @synthesize flare=_flare;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSNumber *yaw; // @synthesize yaw=_yaw;
 @property(readonly, nonatomic) NSNumber *pitch; // @synthesize pitch=_pitch;
 @property(readonly, nonatomic) _Bool faceDetected; // @synthesize faceDetected=_faceDetected;
-- (void).cxx_destruct;
 
 @end
 

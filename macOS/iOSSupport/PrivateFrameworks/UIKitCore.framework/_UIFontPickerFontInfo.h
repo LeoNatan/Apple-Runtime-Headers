@@ -27,10 +27,10 @@
 
 + (id)infoWithFontDescriptor:(struct __CTFontDescriptor *)arg1;
 + (id)infoWithFamilyName:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSString *postscriptName; // @synthesize postscriptName=_postscriptName;
 @property(readonly) NSString *styleName; // @synthesize styleName=_styleName;
 @property(readonly) NSString *familyName; // @synthesize familyName=_familyName;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)faceMatchingDescriptor:(id)arg1;
 - (BOOL)matchesFontDescriptor:(id)arg1;

@@ -17,9 +17,9 @@
     NSMutableOrderedSet *_tasks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableOrderedSet *tasks; // @synthesize tasks=_tasks;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (void)performTasks;
 - (void)addTask:(id)arg1;
 - (id)initWithLogger:(id)arg1;

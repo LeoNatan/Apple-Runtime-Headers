@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) int keyBagStatusChangedNotificationToken; // @synthesize keyBagStatusChangedNotificationToken=_keyBagStatusChangedNotificationToken;
 - (void).cxx_destruct;
+@property(nonatomic) int keyBagStatusChangedNotificationToken; // @synthesize keyBagStatusChangedNotificationToken=_keyBagStatusChangedNotificationToken;
 - (void)invalidate;
 - (void)_notifyDiffIndexObserversWithHistoryEntry:(id)arg1 deviceCollection:(id)arg2 secureProperties:(id)arg3;
 - (void)removeDiffIndexObserver:(id)arg1;

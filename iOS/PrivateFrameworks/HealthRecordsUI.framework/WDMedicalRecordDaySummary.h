@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableSet *inProgressCatogorySummaries; // @synthesize inProgressCatogorySummaries=_inProgressCatogorySummaries;
 @property(retain, nonatomic) NSMutableDictionary *categoriesBySourceByType; // @synthesize categoriesBySourceByType=_categoriesBySourceByType;
 @property(retain, nonatomic) NSMutableDictionary *categoriesBySourceAlphaOrdered; // @synthesize categoriesBySourceAlphaOrdered=_categoriesBySourceAlphaOrdered;
-- (void).cxx_destruct;
 - (id)_alphaSortedCategories:(id)arg1;
 - (id)_alphaSortedKeysForCategories:(id)arg1;
 - (void)summaryDidFinishRecompute:(id)arg1;

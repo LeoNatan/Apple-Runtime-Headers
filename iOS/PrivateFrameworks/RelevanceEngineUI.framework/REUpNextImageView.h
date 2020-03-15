@@ -17,9 +17,9 @@
     UIImage *_overrideImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
 @property(retain, nonatomic) UIColor *fallbackTintColor; // @synthesize fallbackTintColor=_fallbackTintColor;
-- (void).cxx_destruct;
 - (void)setContentMode:(long long)arg1;
 - (void)_updateColors;
 - (_Bool)_hasMultipartImages;

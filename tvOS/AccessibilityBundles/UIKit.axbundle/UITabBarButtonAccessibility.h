@@ -19,6 +19,7 @@
 - (_Bool)_accessibilityShouldSpeakExplorerElementsAfterFocus;
 - (id)_accessibilityFrameDelegate;
 - (_Bool)_accessibilityShouldIncludeRowRangeInElementDescription;
+- (long long)_currentItemState;
 - (struct _NSRange)accessibilityRowRange;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)_axIsSelected:(id)arg1;

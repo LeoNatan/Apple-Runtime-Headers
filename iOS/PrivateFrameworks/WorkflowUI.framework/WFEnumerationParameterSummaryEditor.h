@@ -14,8 +14,8 @@
 }
 
 + (unsigned long long)variableResultTypeForParameter:(id)arg1;
-@property(retain, nonatomic) WFEnumerationTextTokenChooser *chooser; // @synthesize chooser=_chooser;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFEnumerationTextTokenChooser *chooser; // @synthesize chooser=_chooser;
 - (void)completeEditing;
 - (void)cancelEditingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadDynamicEnumerationValuesWithCompletionHandler:(CDUnknownBlockType)arg1;

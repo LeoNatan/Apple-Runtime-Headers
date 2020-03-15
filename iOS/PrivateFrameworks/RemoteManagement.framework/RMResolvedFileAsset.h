@@ -13,8 +13,8 @@
     NSURL *_downloadedURL;
 }
 
-@property(readonly, nonatomic) NSURL *downloadedURL; // @synthesize downloadedURL=_downloadedURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *downloadedURL; // @synthesize downloadedURL=_downloadedURL;
 - (id)initWithAsset:(id)arg1 downloadedURL:(id)arg2 error:(id)arg3;
 
 @end

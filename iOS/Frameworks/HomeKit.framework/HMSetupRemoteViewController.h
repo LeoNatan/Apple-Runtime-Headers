@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 + (id)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <HMSetupRemoteHost> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HMSetupRemoteHost> delegate; // @synthesize delegate=_delegate;
 - (void)accessorySetupDidFinishPairing;
 - (void)accessorySetupDidBeginPairing;
 - (void)accessorySetupDidFinishWithInfo:(id)arg1 error:(id)arg2;

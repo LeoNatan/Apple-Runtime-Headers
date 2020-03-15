@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)backgroundAssertionWithName:(id)arg1 expirationHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) BKSProcessAssertion *assertion; // @synthesize assertion=_assertion;
 @property(copy, nonatomic) CDUnknownBlockType expirationHandler; // @synthesize expirationHandler=_expirationHandler;
 @property(readonly, copy, nonatomic) NSString *taskName; // @synthesize taskName=_taskName;
-- (void).cxx_destruct;
 - (void)end;
 - (id)initWithName:(id)arg1 expirationHandler:(CDUnknownBlockType)arg2;
 

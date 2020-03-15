@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _continuation;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long continuation; // @synthesize continuation=_continuation;
 @property unsigned int numKernelFrames; // @synthesize numKernelFrames=_numKernelFrames;
 @property const unsigned long long *kernelFrames; // @synthesize kernelFrames=_kernelFrames;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain) SASharedCache *sharedCache; // @synthesize sharedCache=_sharedCache;
 @property(retain) NSArray *kernelBinaryLoadInfos; // @synthesize kernelBinaryLoadInfos=_kernelBinaryLoadInfos;
 @property(retain) NSArray *userBinaryLoadInfos; // @synthesize userBinaryLoadInfos=_userBinaryLoadInfos;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (BOOL)hasKernelStack;
 - (BOOL)hasUserStack;

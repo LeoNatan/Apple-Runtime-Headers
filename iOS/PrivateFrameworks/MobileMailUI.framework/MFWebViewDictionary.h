@@ -18,8 +18,8 @@
     NSString *_javascriptName;
 }
 
-@property(readonly, nonatomic) NSString *javascriptName; // @synthesize javascriptName=_javascriptName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *javascriptName; // @synthesize javascriptName=_javascriptName;
 - (void)synchronize;
 - (void)setValuesForKeysWithDictionary:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;

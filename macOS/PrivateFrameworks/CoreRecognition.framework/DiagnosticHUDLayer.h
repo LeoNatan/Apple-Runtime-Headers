@@ -23,6 +23,7 @@
 }
 
 + (id)layer;
+- (void).cxx_destruct;
 @property(retain) CAShapeLayer *frameIndicator; // @synthesize frameIndicator=_frameIndicator;
 @property(retain) CAShapeLayer *focusPointLayer; // @synthesize focusPointLayer=_focusPointLayer;
 @property(retain) CAShapeLayer *focusIndicatorLayer; // @synthesize focusIndicatorLayer=_focusIndicatorLayer;
@@ -33,7 +34,6 @@
 @property struct CGSize cameraResolution; // @synthesize cameraResolution=_cameraResolution;
 @property struct CGRect previewLayerVisibleRect; // @synthesize previewLayerVisibleRect=_previewLayerVisibleRect;
 @property(retain) CALayer *previewLayer; // @synthesize previewLayer=_previewLayer;
-- (void).cxx_destruct;
 - (void)refreshFrameIndicator;
 - (void)setAdjustingFocus:(BOOL)arg1 pointOfInterestSupported:(BOOL)arg2 focusPoint:(struct CGPoint)arg3;
 - (void)setPreviewLayer:(id)arg1 visibleRect:(struct CGRect)arg2 cameraResolution:(struct CGSize)arg3;

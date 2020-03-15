@@ -16,11 +16,11 @@
     struct CGRect _lastRenderedBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect lastRenderedBounds; // @synthesize lastRenderedBounds=_lastRenderedBounds;
 @property(retain, nonatomic) CAShapeLayer *strokeShapeLayer; // @synthesize strokeShapeLayer=_strokeShapeLayer;
 @property(retain, nonatomic) CAShapeLayer *selectedColorLayer; // @synthesize selectedColorLayer=_selectedColorLayer;
 @property(retain, nonatomic) _PKHueSpectrumView *hueSpectrumView; // @synthesize hueSpectrumView=_hueSpectrumView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithColor:(id)arg1 isCompact:(_Bool)arg2;
 

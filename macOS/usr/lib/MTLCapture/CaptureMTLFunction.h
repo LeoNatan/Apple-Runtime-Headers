@@ -23,8 +23,10 @@
 
 + (BOOL)newCaptureFunction:(out id *)arg1 associatedWithBaseFunction:(id)arg2 captureLibrary:(id)arg3;
 - (void).cxx_destruct;
+- (id)reflectionWithOptions:(unsigned long long)arg1 pipelineLibrary:(id)arg2;
 - (id)reflectionWithOptions:(unsigned long long)arg1;
 - (id)newFunctionWithPluginData:(id)arg1 bitcodeType:(unsigned char)arg2;
+- (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1 pipelineLibrary:(id)arg2;
 - (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1;
 - (id)bitcodeData;
 - (const CDStruct_5af0f983 *)bitCodeHash;
@@ -55,6 +57,7 @@
 // Property attributes: T^{GTTraceContext={_opaque_pthread_mutex_t=q[56c]}^{GTTraceStore}AQAQ^{apr_hash_t}^(FreeNode)Ai^{GTTraceStream}{GTTraceStoreList=^(GTTraceStoreNode)^(GTTraceStoreNode)AiAi}},R
 
 - (void)touch;
+- (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2 pipelineLibrary:(id)arg3;
 - (id)newArgumentEncoderWithBufferIndex:(unsigned long long)arg1 reflection:(id *)arg2;
 @property(readonly) id <MTLFunction> baseObject;
 - (void)dealloc;

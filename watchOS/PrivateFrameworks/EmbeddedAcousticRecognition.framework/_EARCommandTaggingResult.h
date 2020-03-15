@@ -15,8 +15,8 @@
     NSArray *_commandTaggings;
 }
 
-@property(readonly, copy, nonatomic) NSArray *commandTaggings; // @synthesize commandTaggings=_commandTaggings;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *commandTaggings; // @synthesize commandTaggings=_commandTaggings;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithCommandTaggings:(id)arg1;
 

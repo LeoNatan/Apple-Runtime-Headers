@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long borders; // @synthesize borders=_borders;
 @property(nonatomic) struct CGPoint arrowButtonOffset; // @synthesize arrowButtonOffset=_arrowButtonOffset;
 @property(nonatomic) double additionalHeight; // @synthesize additionalHeight=_additionalHeight;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long primaryGridRowType; // @synthesize primaryGridRowType=_primaryGridRowType;
 @property(retain, nonatomic) UIKeyboardCandidateViewStyle *disambiguationStyle; // @synthesize disambiguationStyle=_disambiguationStyle;
 @property(retain, nonatomic) UIKeyboardCandidateViewStyle *style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

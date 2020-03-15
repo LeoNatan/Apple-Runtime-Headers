@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSMapTable *_cellsReadyForReuse;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *cellsReadyForReuse; // @synthesize cellsReadyForReuse=_cellsReadyForReuse;
 @property(retain, nonatomic) NSCountedSet *reusePreventedCells; // @synthesize reusePreventedCells=_reusePreventedCells;
 @property(nonatomic) __weak UITableView<_UITableViewSubviewManagerDelegate> *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UITableViewCell *reorderingCell; // @synthesize reorderingCell=_reorderingCell;
-- (void).cxx_destruct;
 - (void)resumeReuseOfCell:(id)arg1;
 - (void)preventReuseOfCell:(id)arg1;
 - (void)cellReadyForReuse:(id)arg1 withIndexPath:(id)arg2 didEndDisplaying:(_Bool)arg3;

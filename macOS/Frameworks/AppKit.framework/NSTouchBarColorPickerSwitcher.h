@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
     NSView *_container;
 }
 
+- (void).cxx_destruct;
 @property __weak NSView *container; // @synthesize container=_container;
 @property __weak id <NSTouchBarColorPickerSwitcherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)transposerDidCancel:(id)arg1;
 - (void)transposerDidEnd:(id)arg1;
 - (void)selectItem:(id)arg1;

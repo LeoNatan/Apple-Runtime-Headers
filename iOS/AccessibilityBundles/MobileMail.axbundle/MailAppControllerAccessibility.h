@@ -14,6 +14,8 @@
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 - (id)_accessibilityFirstElementForFocus;
+- (id)_accessibilityFirstElementForReadFromTop;
+- (id)_axVisibleViewController;
 
 @end
 

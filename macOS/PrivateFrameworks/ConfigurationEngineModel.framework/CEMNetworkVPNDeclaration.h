@@ -35,6 +35,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMNetworkVPNDeclaration_DNS *payloadDNS; // @synthesize payloadDNS=_payloadDNS;
 @property(copy, nonatomic) NSNumber *payloadDisconnectOnIdleTimer; // @synthesize payloadDisconnectOnIdleTimer=_payloadDisconnectOnIdleTimer;
 @property(copy, nonatomic) NSNumber *payloadDisconnectOnIdle; // @synthesize payloadDisconnectOnIdle=_payloadDisconnectOnIdle;
@@ -49,7 +50,6 @@
 @property(copy, nonatomic) NSString *payloadUserDefinedName; // @synthesize payloadUserDefinedName=_payloadUserDefinedName;
 @property(copy, nonatomic) NSString *payloadVPNSubType; // @synthesize payloadVPNSubType=_payloadVPNSubType;
 @property(copy, nonatomic) NSString *payloadVPNType; // @synthesize payloadVPNType=_payloadVPNType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

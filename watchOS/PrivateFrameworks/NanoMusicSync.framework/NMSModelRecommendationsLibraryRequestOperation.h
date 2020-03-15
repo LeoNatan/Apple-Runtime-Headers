@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _responseHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) NMSModelRecommendationsLibraryRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)_mpIdentifierSetsFromStringIdentifiers:(id)arg1;
 - (id)_modelObjectWithCachedArtworkFromModelObject:(id)arg1;
 - (void)_requestContainerWithClass:(Class)arg1;

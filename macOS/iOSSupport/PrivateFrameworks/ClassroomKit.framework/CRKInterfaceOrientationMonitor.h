@@ -16,8 +16,8 @@
     unsigned long long _interfaceOrientation;
 }
 
-@property(nonatomic) unsigned long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 - (void)updateInterfaceOrientationWithDMFOrientation:(unsigned long long)arg1;
 - (unsigned long long)DMFInterfaceOrientationFromBSInterfaceOrientation:(long long)arg1;
 - (void)updateInterfaceOrientationWithBSOrientation:(long long)arg1;

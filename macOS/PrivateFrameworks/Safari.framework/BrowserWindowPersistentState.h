@@ -30,19 +30,19 @@ __attribute__((visibility("hidden")))
     NSUUID *_windowUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isTabBarHidden) BOOL tabBarHidden; // @synthesize tabBarHidden=_tabBarHidden;
 @property(nonatomic) BOOL isMinimized; // @synthesize isMinimized=_isMinimized;
 @property(readonly, nonatomic) NSUUID *windowUUID; // @synthesize windowUUID=_windowUUID;
 @property(readonly, nonatomic) NSDate *dateClosed; // @synthesize dateClosed=_dateClosed;
 @property(readonly, nonatomic, getter=isPrivateWindow) BOOL privateWindow; // @synthesize privateWindow=_privateWindow;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <WBSClosedTab> selectedClosedTab;
 @property(readonly, copy, nonatomic) NSArray *closedTabs;
 @property(readonly, nonatomic) long long closedItemType;
 @property(readonly, copy, nonatomic) NSArray *tabUUIDs;
 - (id)dictionaryRepresentationIncludingSessionState:(BOOL)arg1 forCleanExit:(BOOL)arg2;
 - (void)restoreWindowContents:(id)arg1;
-- (void)restoreBrowserWindowWithLaunchTimePerformanceMonitor:(id)arg1;
+- (void)restoreBrowserWindow;
 - (id)_tabStatesToRestore;
 - (BOOL)_shouldRestoreTabStateInWindow:(id)arg1;
 @property(readonly, nonatomic) BOOL hasTabsToRestore;

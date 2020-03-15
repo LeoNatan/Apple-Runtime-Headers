@@ -36,6 +36,7 @@
     struct UIEdgeInsets _boundaryInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets boundaryInsets; // @synthesize boundaryInsets=_boundaryInsets;
 @property(retain, nonatomic) _UIEdgeFeedbackGenerator *hapticGenerator; // @synthesize hapticGenerator=_hapticGenerator;
 @property(nonatomic) double maxVelocityAssistance; // @synthesize maxVelocityAssistance=_maxVelocityAssistance;
@@ -46,7 +47,6 @@
 @property(nonatomic) double elasticity; // @synthesize elasticity=_elasticity;
 @property(nonatomic) double velocity; // @synthesize velocity=_velocity;
 @property(nonatomic) double gravity; // @synthesize gravity=_gravity;
-- (void).cxx_destruct;
 - (_Bool)allowsAnimatorToStop;
 - (double)_maxVelocityToAssist;
 - (double)_minVelocityToAssist;

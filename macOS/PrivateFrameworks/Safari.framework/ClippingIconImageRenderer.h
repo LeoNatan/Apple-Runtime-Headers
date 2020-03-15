@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL drawsDropShadowAndMask; // @synthesize drawsDropShadowAndMask=_drawsDropShadowAndMask;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)drawImage:(id)arg1 inRect:(struct CGRect)arg2 withTintColor:(id)arg3;
 - (void)drawImage:(id)arg1 inRect:(struct CGRect)arg2;
 - (id)init;

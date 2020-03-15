@@ -17,8 +17,8 @@
     HMOutgoingHomeInvitation *_outgoingInvitation;
 }
 
-@property(readonly, nonatomic) HMOutgoingHomeInvitation *outgoingInvitation; // @synthesize outgoingInvitation=_outgoingInvitation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HMOutgoingHomeInvitation *outgoingInvitation; // @synthesize outgoingInvitation=_outgoingInvitation;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;

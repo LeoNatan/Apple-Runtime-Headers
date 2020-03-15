@@ -18,9 +18,9 @@
     struct _NSRange _range;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (void)close:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isClosed;
 - (void)cancel;

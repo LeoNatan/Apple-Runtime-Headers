@@ -30,6 +30,7 @@
     id <SBRemoteTransientOverlaySessionHostDelegate> _hostDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SBRemoteTransientOverlaySessionHostDelegate> hostDelegate; // @synthesize hostDelegate=_hostDelegate;
 @property(readonly, nonatomic, getter=isPendingInvalidation) _Bool pendingInvalidation; // @synthesize pendingInvalidation=_pendingInvalidation;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
@@ -38,7 +39,6 @@
 @property(readonly, copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) SBSRemoteAlertDefinition *definition; // @synthesize definition=_definition;
-- (void).cxx_destruct;
 - (void)_registerObserversForTransaction:(id)arg1;
 - (void)_processPendingTransactions;
 - (void)_requestInvalidationWithReason:(long long)arg1 error:(id)arg2;

@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _presentationSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(nonatomic) struct CGSize presentationSize; // @synthesize presentationSize=_presentationSize;
 @property(nonatomic) __weak id <AVHomeIPCameraActionButtonHandling> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)isPlaying;
 - (void)setVolume:(double)arg1;
 - (double)volume;

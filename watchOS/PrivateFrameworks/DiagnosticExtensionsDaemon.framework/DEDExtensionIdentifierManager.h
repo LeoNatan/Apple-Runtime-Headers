@@ -19,8 +19,8 @@
 + (id)log;
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableDictionary *identifierTable; // @synthesize identifierTable=_identifierTable;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *identifierTable; // @synthesize identifierTable=_identifierTable;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isKnownIdentifier:(id)arg1;

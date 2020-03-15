@@ -17,8 +17,8 @@
     NSArray *_values;
 }
 
-@property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *values; // @synthesize values=_values;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

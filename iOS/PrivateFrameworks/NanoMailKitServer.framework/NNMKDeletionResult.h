@@ -18,13 +18,13 @@
     NSArray *_unprotectedDefaultMessageIds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unprotectedDefaultMessageIds; // @synthesize unprotectedDefaultMessageIds=_unprotectedDefaultMessageIds;
 @property(retain, nonatomic) NSArray *unprotectedNotificationMessageIds; // @synthesize unprotectedNotificationMessageIds=_unprotectedNotificationMessageIds;
 @property(retain, nonatomic) NSArray *protectedMessageIds; // @synthesize protectedMessageIds=_protectedMessageIds;
 @property(retain, nonatomic) NNMKProtoMessageDeletions *unprotectedDefaultProtobuf; // @synthesize unprotectedDefaultProtobuf=_unprotectedDefaultProtobuf;
 @property(retain, nonatomic) NNMKProtoMessageDeletions *unprotectedNotificationProtobuf; // @synthesize unprotectedNotificationProtobuf=_unprotectedNotificationProtobuf;
 @property(retain, nonatomic) NNMKProtoMessageDeletions *protectedProtobuf; // @synthesize protectedProtobuf=_protectedProtobuf;
-- (void).cxx_destruct;
 
 @end
 

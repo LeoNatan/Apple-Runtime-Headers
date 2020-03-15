@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)loggerProvider;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNGeminiLogger> geminiLogger; // @synthesize geminiLogger=_geminiLogger;
 @property(retain, nonatomic) id <CNFavoritesLogger> favoritesLogger; // @synthesize favoritesLogger=_favoritesLogger;
 @property(retain, nonatomic) id <CNRegulatoryLogger> regulatoryLogger; // @synthesize regulatoryLogger=_regulatoryLogger;
 @property(retain, nonatomic) id <CNSpotlightIndexingLogger> spotlightIndexingLogger; // @synthesize spotlightIndexingLogger=_spotlightIndexingLogger;
 @property(retain, nonatomic) id <CNContactsLogger> contactsLogger; // @synthesize contactsLogger=_contactsLogger;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

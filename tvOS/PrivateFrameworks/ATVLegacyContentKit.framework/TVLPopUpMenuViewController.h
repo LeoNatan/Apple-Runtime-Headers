@@ -21,10 +21,10 @@
     NSIndexPath *_currentFocusedIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
 @property(retain, nonatomic) TVTableView *listView; // @synthesize listView=_listView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-- (void).cxx_destruct;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)preferredFocusEnvironments;

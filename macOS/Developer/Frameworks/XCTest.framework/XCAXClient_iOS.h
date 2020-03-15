@@ -20,17 +20,18 @@
     NSMutableDictionary *_cachedAccessibilityLoadedValuesForPIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *cachedAccessibilityLoadedValuesForPIDs; // @synthesize cachedAccessibilityLoadedValuesForPIDs=_cachedAccessibilityLoadedValuesForPIDs;
 @property(retain) NSMutableDictionary *userTestingNotificationHandlers; // @synthesize userTestingNotificationHandlers=_userTestingNotificationHandlers;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) id <XCUIRemoteAccessibilityInterface> remoteAccessibilityInterface; // @synthesize remoteAccessibilityInterface=_remoteAccessibilityInterface;
 @property(readonly) id <XCUIApplicationProcessTracker> applicationProcessTracker; // @synthesize applicationProcessTracker=_applicationProcessTracker;
-- (void).cxx_destruct;
 - (id)accessibilityElementForElementAtPoint:(struct CGPoint)arg1 error:(id *)arg2;
 - (void)performWhenMenuOpens:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)removeObserver:(id)arg1 forAXNotification:(id)arg2;
 - (id)addObserverForAXNotification:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)registerForAXNotificationsForApplicationWithPID:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)unregisterForAXNotificationsForApplicationWithPID:(int)arg1;
+- (void)registerForAXNotificationsForApplicationWithPID:(int)arg1 timeout:(double)arg2 completion:(CDUnknownBlockType)arg3;
 @property double AXTimeout;
 - (BOOL)_setAXTimeout:(double)arg1 error:(id *)arg2;
 - (BOOL)performAction:(id)arg1 onElement:(id)arg2 value:(id)arg3 error:(id *)arg4;
@@ -46,6 +47,7 @@
 @property(readonly) BOOL supportsAnimationsInactiveNotifications;
 - (void)notifyWhenEventLoopIsIdleForApplication:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)interruptingUIElementsAffectingSnapshot:(id)arg1 checkForHandledElement:(id)arg2 containsHandledElement:(char *)arg3;
+- (BOOL)isMacCatalystForPID:(int)arg1;
 @property(readonly) BOOL usePointTransformationsForFrameConversions;
 @property(readonly) BOOL supportsHostedViewCoordinateTransformations;
 @property(readonly) BOOL axNotificationsIncludeElement;

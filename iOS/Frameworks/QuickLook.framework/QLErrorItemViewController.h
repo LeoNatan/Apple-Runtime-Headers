@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     QLItem *_previewItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) QLItem *previewItem; // @synthesize previewItem=_previewItem;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)_updateLabelsWithCurrentErrorIfNeeded;
 - (_Bool)canPinchToDismiss;
 - (_Bool)canSwipeToDismiss;

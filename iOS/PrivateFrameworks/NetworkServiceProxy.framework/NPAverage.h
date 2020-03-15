@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *samples; // @synthesize samples=_samples;
 @property unsigned long long size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)shortDescription;
 - (id)description;
 @property(readonly) _Bool isAnyValid;

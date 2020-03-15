@@ -34,6 +34,7 @@
 + (_Bool)supportsMenuInteraction;
 + (_Bool)supportsQuicklook;
 + (_Bool)useRecencyRankedSearchForMode:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool queryRunning; // @synthesize queryRunning=_queryRunning;
 @property(nonatomic) _Bool suppressAvatars; // @synthesize suppressAvatars=_suppressAvatars;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
@@ -44,7 +45,6 @@
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSString *currentSearchText; // @synthesize currentSearchText=_currentSearchText;
 @property(nonatomic) __weak id <CKSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)handleSelectionForResult:(id)arg1;
 - (void)didSelectResult:(id)arg1;
 - (id)_activityItemProviderForResult:(id)arg1;

@@ -14,7 +14,7 @@
 - (_Bool)shouldCacheNodeForPipelineState:(id)arg1;
 @property(readonly, nonatomic) NURenderNode *inputNode;
 - (id)initWithInput:(id)arg1 settings:(id)arg2;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

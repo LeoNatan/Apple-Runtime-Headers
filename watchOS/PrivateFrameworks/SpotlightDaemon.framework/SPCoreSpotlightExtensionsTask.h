@@ -13,10 +13,10 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType performBlock; // @synthesize performBlock=_performBlock;
 @property(copy, nonatomic) CDUnknownBlockType filterBlock; // @synthesize filterBlock=_filterBlock;
-- (void).cxx_destruct;
 - (void)start;
 - (void)_performWithExtensionsEnumerator:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 

@@ -38,6 +38,7 @@
     UIImpactFeedbackGenerator *_impactFeedbackGenerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImpactFeedbackGenerator *impactFeedbackGenerator; // @synthesize impactFeedbackGenerator=_impactFeedbackGenerator;
 @property(retain, nonatomic) HUAnimationApplier *animationApplier; // @synthesize animationApplier=_animationApplier;
 @property(nonatomic) _Bool reachable; // @synthesize reachable=_reachable;
@@ -57,7 +58,6 @@
 @property(readonly, nonatomic) HFItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) UIViewController *settingsViewController; // @synthesize settingsViewController=_settingsViewController;
 @property(readonly, nonatomic) HUQuickControlContainerViewController *quickControlViewController; // @synthesize quickControlViewController=_quickControlViewController;
-- (void).cxx_destruct;
 - (id)hu_prepareForDismissalAnimated:(_Bool)arg1;
 - (struct CGSize)overridingContentSizeForPresentedViewController:(id)arg1;
 - (void)itemManager:(id)arg1 didUpdateResultsForSourceItem:(id)arg2;

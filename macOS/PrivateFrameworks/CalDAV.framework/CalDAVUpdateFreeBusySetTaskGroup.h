@@ -21,12 +21,12 @@
     CoreDAVPropFindTask *_fetchTask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CoreDAVPropFindTask *fetchTask; // @synthesize fetchTask=_fetchTask;
 @property(retain, nonatomic) NSString *suffixToFilterOut; // @synthesize suffixToFilterOut=_suffixToFilterOut;
 @property(retain, nonatomic) NSURL *urlToAdd; // @synthesize urlToAdd=_urlToAdd;
 @property(retain, nonatomic) NSURL *inboxURL; // @synthesize inboxURL=_inboxURL;
 @property(nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)taskGroupWillCancelWithError:(id)arg1;
 - (void)propPatchTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;
 - (void)propFindTask:(id)arg1 parsedResponses:(id)arg2 error:(id)arg3;

@@ -14,8 +14,8 @@
     CRKBook *_book;
 }
 
-@property(readonly, nonatomic) CRKBook *book; // @synthesize book=_book;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CRKBook *book; // @synthesize book=_book;
 - (void)parseBookContentsOperationDidFinish:(id)arg1;
 - (void)parseContentsFilePathOperationDidFinish:(id)arg1;
 - (void)main;

@@ -16,8 +16,8 @@
     id <SXQuickLookStyler> _styler;
 }
 
-@property(readonly, nonatomic) id <SXQuickLookStyler> styler; // @synthesize styler=_styler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXQuickLookStyler> styler; // @synthesize styler=_styler;
 - (void)renderErrorMessage:(id)arg1 view:(id)arg2;
 - (void)renderThumbnailImage:(id)arg1 view:(id)arg2;
 - (void)render:(id)arg1 attributes:(id)arg2;

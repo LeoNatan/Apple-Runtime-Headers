@@ -17,8 +17,8 @@
 }
 
 + (id)wrapperWithDelegate:(id)arg1;
-@property __weak id <CNAutocompleteResultWindowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <CNAutocompleteResultWindowDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)iconTypeForResult:(id)arg1 selected:(BOOL)arg2;
 - (id)addressStringForResult:(id)arg1;
 - (id)accountStringForResult:(id)arg1;

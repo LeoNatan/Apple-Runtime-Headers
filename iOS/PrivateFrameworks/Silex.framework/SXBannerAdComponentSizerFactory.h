@@ -17,9 +17,9 @@
     id <SXAdControllerProvider> _adControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXAdControllerProvider> adControllerProvider; // @synthesize adControllerProvider=_adControllerProvider;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
-- (void).cxx_destruct;
 - (id)sizerForComponent:(id)arg1 componentLayout:(id)arg2 layoutOptions:(id)arg3 DOMObjectProvider:(id)arg4;
 @property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) NSString *type;

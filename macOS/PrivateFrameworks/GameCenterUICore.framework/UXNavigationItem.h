@@ -24,6 +24,7 @@
 
 + (id)titleTextAttributes;
 + (id)allocWithZone:(struct _NSZone *)arg1;
+- (void).cxx_destruct;
 @property BOOL allowRearangement; // @synthesize allowRearangement=_allowRearangement;
 @property BOOL spinnerEnabled; // @synthesize spinnerEnabled=_spinnerEnabled;
 @property(nonatomic) int cancelButtonLocation; // @synthesize cancelButtonLocation=_cancelButton;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSView *titleView; // @synthesize titleView=_titleView;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (BOOL)cancel;
 - (id)cancelButton;
 - (id)description;

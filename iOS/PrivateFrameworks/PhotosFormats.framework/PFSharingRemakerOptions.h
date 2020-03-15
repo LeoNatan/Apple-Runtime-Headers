@@ -24,6 +24,7 @@
     NSString *_exportFileType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *exportFileType; // @synthesize exportFileType=_exportFileType;
 @property(copy, nonatomic) NSString *exportPreset; // @synthesize exportPreset=_exportPreset;
 @property(copy, nonatomic) NSString *outputFilename; // @synthesize outputFilename=_outputFilename;
@@ -34,7 +35,6 @@
 @property(nonatomic) _Bool shouldConvertToSRGB; // @synthesize shouldConvertToSRGB=_shouldConvertToSRGB;
 @property(nonatomic) _Bool shouldStripAllMetadata; // @synthesize shouldStripAllMetadata=_shouldStripAllMetadata;
 @property(nonatomic) _Bool shouldStripLocation; // @synthesize shouldStripLocation=_shouldStripLocation;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

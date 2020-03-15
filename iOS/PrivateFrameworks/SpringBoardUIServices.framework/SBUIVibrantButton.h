@@ -35,6 +35,7 @@
 }
 
 + (id)_labelFont;
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic, getter=isVibrancyAllowed) _Bool vibrancyAllowed; // @synthesize vibrancyAllowed=_vibrancyAllowed;
@@ -45,7 +46,6 @@
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(nonatomic) double minimumTitleScaleFactor; // @synthesize minimumTitleScaleFactor=_minimumTitleScaleFactor;
 @property(retain, nonatomic) UIImage *glyphImage; // @synthesize glyphImage=_glyphImage;
-- (void).cxx_destruct;
 - (void)setLegibilitySettings:(id)arg1 textStrength:(double)arg2;
 - (void)setBackgroundView:(id)arg1;
 - (void)_updateForState;

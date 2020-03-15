@@ -13,8 +13,8 @@
     id <PKNFCTagReaderSessionDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PKNFCTagReaderSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PKNFCTagReaderSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)readNDEFMessageFromTag:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)endSession;
 - (void)stopPolling;

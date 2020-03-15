@@ -15,8 +15,8 @@
     NSExtensionContext *_extensionContext;
 }
 
-@property(readonly, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (id)openURL:(id)arg1 isSensitive:(_Bool)arg2 connectionEndpoint:(id)arg3 withScheduler:(id)arg4;
 - (id)openURL:(id)arg1 isSensitive:(_Bool)arg2 withScheduler:(id)arg3;
 - (id)openURL:(id)arg1 withScheduler:(id)arg2;

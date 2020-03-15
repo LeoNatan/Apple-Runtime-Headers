@@ -27,9 +27,9 @@
     id <NPTOVideoPlayerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool playing; // @synthesize playing=_playing;
 @property(nonatomic) __weak id <NPTOVideoPlayerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)play;
 - (void)_play;
 - (void)preroll;

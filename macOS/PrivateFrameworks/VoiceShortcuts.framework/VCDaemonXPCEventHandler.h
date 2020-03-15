@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSMapTable *observers; // @synthesize observers=_observers;
 @property(readonly, copy, nonatomic) NSArray *streams; // @synthesize streams=_streams;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1 name:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3;

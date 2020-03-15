@@ -25,6 +25,7 @@
 }
 
 + (id)ddmObjectIdentifierWithBookID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) HPDHelpBook *cachedHelpBook; // @synthesize cachedHelpBook=_cachedHelpBook;
 @property(readonly) NSArray *tocItems; // @synthesize tocItems=_tocItems;
 @property(readonly) DDMMisc *miscAttributes; // @synthesize miscAttributes=_miscAttributes;
@@ -37,7 +38,6 @@
 @property(readonly) NSString *product; // @synthesize product=_product;
 @property(readonly) NSString *tocID; // @synthesize tocID=_tocID;
 @property(readonly) NSString *bookID; // @synthesize bookID=_bookID;
-- (void).cxx_destruct;
 - (id)ddmObjectIdentifier;
 - (id)description;
 @property(readonly) NSString *language;

@@ -33,6 +33,7 @@
 + (BOOL)isEventKitSyncEnabledForReminderKit;
 + (BOOL)dataaccessDaemonStopSyncingReminders;
 + (BOOL)notificationsEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) REMStore *nonUserInteractiveStore; // @synthesize nonUserInteractiveStore=_nonUserInteractiveStore;
 @property(nonatomic) BOOL assertOnMainThreadFetches; // @synthesize assertOnMainThreadFetches=_assertOnMainThreadFetches;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) _REMInProgressSaveRequestsContainer *l_inProgressSaveRequestsContainer; // @synthesize l_inProgressSaveRequestsContainer=_l_inProgressSaveRequestsContainer;
 @property(readonly, nonatomic) REMStoreContainerToken *storeContainerToken; // @synthesize storeContainerToken=_storeContainerToken;
-- (void).cxx_destruct;
 - (BOOL)_isUserInteractiveStore;
 - (void)_incrementStoreGeneration;
 - (id)_withInProgressSaveRequestContainer:(CDUnknownBlockType)arg1;

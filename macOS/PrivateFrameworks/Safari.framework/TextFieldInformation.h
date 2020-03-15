@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     WBSFormControlMetadata *_metadata;
 }
 
-@property(readonly, copy, nonatomic) WBSFormControlMetadata *metadata; // @synthesize metadata=_metadata;
-@property(readonly, nonatomic) struct Frame frame; // @synthesize frame=_frame;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) WBSFormControlMetadata *metadata; // @synthesize metadata=_metadata;
+@property(readonly, nonatomic) struct Frame frame; // @synthesize frame=_frame;
 - (void)noteThatTextDidChangeIfNecessary;
 - (BOOL)isTextFieldInformationForFieldWithMetadata:(id)arg1 inFrame:(const struct Frame *)arg2;
 - (id)initWithFrame:(const struct Frame *)arg1 textFieldMetadata:(id)arg2;

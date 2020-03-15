@@ -17,9 +17,9 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *APNs; // @synthesize APNs=_APNs;
 @property(retain, nonatomic) MCAPNConfiguration *attachAPN; // @synthesize attachAPN=_attachAPN;
-- (void).cxx_destruct;
 - (id)installationWarnings;
 - (id)subtitle2Description;
 - (id)subtitle2Label;

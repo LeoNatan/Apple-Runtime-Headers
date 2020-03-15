@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) CDUnknownBlockType writtenByteCountHandler; // @synthesize writtenByteCountHandler=_writtenByteCountHandler;
 @property(copy, nonatomic) CDUnknownBlockType expectedByteCountHandler; // @synthesize expectedByteCountHandler=_expectedByteCountHandler;
 @property(readonly, nonatomic) NSURLRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didFinishDownloadingToURL:(id)arg3;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;

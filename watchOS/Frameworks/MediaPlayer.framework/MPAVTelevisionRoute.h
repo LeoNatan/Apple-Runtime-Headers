@@ -14,8 +14,8 @@
     void *_television;
 }
 
-@property(readonly, nonatomic) void *television; // @synthesize television=_television;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) void *television; // @synthesize television=_television;
 - (int)routeSubtype;
 - (int)routeType;
 - (id)routeUID;

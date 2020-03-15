@@ -23,6 +23,7 @@
 }
 
 + (id)softwakeWithAlarmTime:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *tickleTimer; // @synthesize tickleTimer=_tickleTimer;
 @property(retain, nonatomic) CSLPIBacklightAssertion *backlightAssertion; // @synthesize backlightAssertion=_backlightAssertion;
 @property(retain, nonatomic) NSTimer *stepTimer; // @synthesize stepTimer=_stepTimer;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned int step; // @synthesize step=_step;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) NSDate *alarmTime; // @synthesize alarmTime=_alarmTime;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_cancelBrightnessStepping;
 - (void)_stepBrightness;

@@ -18,8 +18,8 @@
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
 - (void)setTTYDictionaryAvailability:(BOOL)arg1;
 - (id)valueForTTYSetting:(id)arg1;
 - (BOOL)contactIsTTYContact:(id)arg1;

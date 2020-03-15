@@ -26,6 +26,7 @@
     NSMutableArray *_mutableRedundantInterfaceSections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *mutableRedundantInterfaceSections; // @synthesize mutableRedundantInterfaceSections=_mutableRedundantInterfaceSections;
 @property(readonly, nonatomic) NSMutableDictionary *mutableSynchronousRemoteViewControllersByInitialInterfaceSection; // @synthesize mutableSynchronousRemoteViewControllersByInitialInterfaceSection=_mutableSynchronousRemoteViewControllersByInitialInterfaceSection;
 @property(readonly, nonatomic) NSMutableSet *handledParameters; // @synthesize handledParameters=_handledParameters;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSMutableArray *mutableSynchronousRemoteViewControllers; // @synthesize mutableSynchronousRemoteViewControllers=_mutableSynchronousRemoteViewControllers;
 @property(nonatomic) _Bool requiresUserConsent; // @synthesize requiresUserConsent=_requiresUserConsent;
 @property(nonatomic) __weak id <INUICKPViewControllerAllocatingDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (double)boundingWidthForSynchronousRemoteViewController:(id)arg1;
 - (id)organizedInterfaceSections;
 - (id)_unhandledParametersForInterfaceSection:(id)arg1;

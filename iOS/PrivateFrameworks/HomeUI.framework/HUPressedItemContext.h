@@ -20,6 +20,7 @@
     NSTimer *_programmaticBounceTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *programmaticBounceTimer; // @synthesize programmaticBounceTimer=_programmaticBounceTimer;
 @property(nonatomic) _Bool isUserInitiated; // @synthesize isUserInitiated=_isUserInitiated;
 @property(nonatomic) double currentViewScale; // @synthesize currentViewScale=_currentViewScale;
@@ -28,7 +29,6 @@
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(retain, nonatomic) HUElasticApplier *applier; // @synthesize applier=_applier;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 
 @end
 

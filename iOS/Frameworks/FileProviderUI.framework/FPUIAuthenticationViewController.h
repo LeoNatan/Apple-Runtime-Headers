@@ -16,10 +16,10 @@
     FPUIAuthenticationLandingViewController *_landingViewController;
 }
 
+- (void).cxx_destruct;
 @property __weak FPUIAuthenticationLandingViewController *landingViewController; // @synthesize landingViewController=_landingViewController;
 @property(copy, nonatomic) NSURL *initialConnectionURL; // @synthesize initialConnectionURL=_initialConnectionURL;
 @property(nonatomic) __weak id <FPUIAuthenticationDelegate> authenticationDelegate; // @synthesize authenticationDelegate=_authenticationDelegate;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (id)initWithServerURL:(id)arg1;
 

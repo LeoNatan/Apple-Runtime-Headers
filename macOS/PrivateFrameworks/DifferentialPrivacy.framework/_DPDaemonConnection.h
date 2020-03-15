@@ -17,8 +17,8 @@
 
 + (id)daemonAgentConnection;
 + (id)daemonConnection;
-@property(readonly, nonatomic) NSXPCConnection *daemonConnection; // @synthesize daemonConnection=_daemonConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *daemonConnection; // @synthesize daemonConnection=_daemonConnection;
 - (void)retireReports:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)reportsNotYetSubmittedWithReply:(CDUnknownBlockType)arg1;
 - (void)recordWords:(id)arg1 forKey:(id)arg2 withReply:(CDUnknownBlockType)arg3;

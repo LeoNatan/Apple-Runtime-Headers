@@ -22,11 +22,11 @@
 + (id)keyPathsForValuesAffectingPageZoom;
 + (id)keyPathsForValuesAffectingWebDocument;
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MUIWKWebViewController *wkWebViewController; // @synthesize wkWebViewController=_wkWebViewController;
 @property(copy, nonatomic) CDUnknownBlockType prepareToLayoutSynchronouslyCompletionHandler; // @synthesize prepareToLayoutSynchronouslyCompletionHandler=_prepareToLayoutSynchronouslyCompletionHandler;
 @property(nonatomic) BOOL preparingToLayoutSynchronously; // @synthesize preparingToLayoutSynchronously=_preparingToLayoutSynchronously;
 @property(readonly, nonatomic) NSView *snapshotView; // @synthesize snapshotView=_snapshotView;
-- (void).cxx_destruct;
 - (void)exportAttachmentsToApplication:(id)arg1;
 - (BOOL)canExportAttachmentsToApplication:(id)arg1;
 - (void)saveAttachments:(id)arg1 toDirectory:(id)arg2 makePathsUnique:(BOOL)arg3;

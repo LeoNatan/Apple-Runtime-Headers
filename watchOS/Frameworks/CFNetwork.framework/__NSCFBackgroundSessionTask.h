@@ -18,6 +18,8 @@
 }
 
 @property(retain) NSError *immediateError; // @synthesize immediateError=_immediateError;
+- (void)set_TLSMaximumSupportedProtocolVersion:(unsigned short)arg1;
+- (void)set_TLSMinimumSupportedProtocolVersion:(unsigned short)arg1;
 - (void)set_discretionaryOverride:(int)arg1;
 - (id)_timingData;
 - (void)setTaskDescription:(id)arg1;

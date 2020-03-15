@@ -16,8 +16,8 @@
     NSObject<OS_dispatch_queue> *_backgroundQueue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
 - (void)moveiPhotoLibraryMediaWithReply:(CDUnknownBlockType)arg1;
 - (void)dataMigrationWillFinishWithReply:(CDUnknownBlockType)arg1;
 - (void)cleanupModelForDataMigrationForRestoreType:(long long)arg1 reply:(CDUnknownBlockType)arg2;

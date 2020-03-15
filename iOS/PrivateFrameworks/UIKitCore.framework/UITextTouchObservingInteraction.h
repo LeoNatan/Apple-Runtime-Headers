@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     UILongPressGestureRecognizer *_longPressGesture;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGesture; // @synthesize longPressGesture=_longPressGesture;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)longPressObserved:(id)arg1;
 - (void)_createGestureRecognizersIfNecessary;
 - (void)_removeGestureRecognizers;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UIImageView *__suggestedImageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *_suggestedImageView; // @synthesize _suggestedImageView=__suggestedImageView;
 @property(readonly, nonatomic) UIImageView *_checkmarkImageView; // @synthesize _checkmarkImageView=__checkmarkImageView;
 @property(readonly, nonatomic) UIImageView *_thumbnailImageView; // @synthesize _thumbnailImageView=__thumbnailImageView;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isSuggested) _Bool suggested; // @synthesize suggested=_suggested;
 @property(nonatomic, getter=isFavorite) _Bool favorite; // @synthesize favorite=_favorite;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)_updateSuggestedView;
 - (void)_updateFavoriteView;
 - (void)_updateThumbnailImageView;

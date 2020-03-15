@@ -27,12 +27,12 @@ __attribute__((visibility("hidden")))
     UIImageView *_userRatingStarImageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float userRating; // @synthesize userRating=_userRating;
 @property(retain, nonatomic) SKUIItemState *itemState; // @synthesize itemState=_itemState;
 @property(retain, nonatomic) SSLookupItemOffer *itemOffer; // @synthesize itemOffer=_itemOffer;
 @property(readonly, nonatomic) UIControl *closeButton; // @synthesize closeButton=_closeButton;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_reloadItemState;
 - (id)_newDefaultLabel;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

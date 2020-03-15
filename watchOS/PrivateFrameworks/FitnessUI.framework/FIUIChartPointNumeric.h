@@ -17,9 +17,9 @@
 }
 
 + (id)chartPointWithXValue:(id)arg1 yValue:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *yValue; // @synthesize yValue=_yValue;
 @property(copy, nonatomic) NSDate *xValue; // @synthesize xValue=_xValue;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSNumber *maxYValue;
 @property(readonly, nonatomic) NSNumber *minYValue;

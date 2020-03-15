@@ -29,6 +29,7 @@
     NSMutableArray *_articleIDsRequests;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *articleIDsRequests; // @synthesize articleIDsRequests=_articleIDsRequests;
 @property(retain, nonatomic) NSMutableArray *articleListRequests; // @synthesize articleListRequests=_articleListRequests;
 @property(copy, nonatomic) NSDate *fetchDate; // @synthesize fetchDate=_fetchDate;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(copy, nonatomic) id <FCNewsAppConfiguration> appConfiguration; // @synthesize appConfiguration=_appConfiguration;
-- (void).cxx_destruct;
 - (void)_fetchArticleListAndArticleIDsResultsIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fetchForYouResultsIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (void)operationWillFinishWithError:(id)arg1;

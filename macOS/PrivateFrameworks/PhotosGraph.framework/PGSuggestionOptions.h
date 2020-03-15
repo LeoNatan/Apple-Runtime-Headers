@@ -28,6 +28,7 @@
     NSIndexSet *_suggestionSubtypeBlacklist;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL computeReasons; // @synthesize computeReasons=_computesReasons;
 @property(nonatomic) BOOL generateInvalidSuggestions; // @synthesize generateInvalidSuggestions=_generatesInvalidSuggestions;
 @property(retain, nonatomic) NSIndexSet *suggestionSubtypeBlacklist; // @synthesize suggestionSubtypeBlacklist=_suggestionSubtypeBlacklist;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSDate *universalEndDate; // @synthesize universalEndDate=_universalEndDate;
 @property(retain, nonatomic) NSDate *universalStartDate; // @synthesize universalStartDate=_universalStartDate;
 @property(retain, nonatomic) NSDate *localToday; // @synthesize localToday=_localToday;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

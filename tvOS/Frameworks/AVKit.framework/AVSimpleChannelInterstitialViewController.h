@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     AVLoadingIndicatorView *_loadingIndicator;
 }
 
-@property(readonly, nonatomic) AVLoadingIndicatorView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVLoadingIndicatorView *loadingIndicator; // @synthesize loadingIndicator=_loadingIndicator;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;

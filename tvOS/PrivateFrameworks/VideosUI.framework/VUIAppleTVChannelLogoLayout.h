@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUITextLayout *channelsTextLayout; // @synthesize channelsTextLayout=_channelsTextLayout;
 @property(retain, nonatomic) TVImageLayout *channelLogoImageLayout; // @synthesize channelLogoImageLayout=_channelLogoImageLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

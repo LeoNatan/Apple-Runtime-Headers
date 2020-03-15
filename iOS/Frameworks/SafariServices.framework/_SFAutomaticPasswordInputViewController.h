@@ -21,6 +21,7 @@
     long long _currentInterfaceOrientation;
     long long _keyboardType;
     _Bool _logGeneratedPasswordAcceptedImplicitly;
+    NSString *_autoFillContextProtocolObjectUUID;
 }
 
 + (void)inputViewControllerWithAutoFillContext:(id)arg1 passwordRules:(id)arg2 completion:(CDUnknownBlockType)arg3;

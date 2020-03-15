@@ -14,9 +14,9 @@
     NSArray *_buttons;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

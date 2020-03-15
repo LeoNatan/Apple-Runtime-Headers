@@ -25,6 +25,7 @@
 + (id)adjustedImage:(id)arg1 maxWidth:(double)arg2 screenScale:(double)arg3;
 + (id)imageAttachmentAttributedStringWithContentId:(id)arg1 imageSize:(struct CGSize)arg2 mergingAttributes:(id)arg3;
 + (id)attachmentAttributedStringWithContentId:(id)arg1 mergingAttributes:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDataDetector *dataDetector; // @synthesize dataDetector=_dataDetector;
 @property(retain, nonatomic) NSMutableDictionary *imageAtachmentsDataByContentId; // @synthesize imageAtachmentsDataByContentId=_imageAtachmentsDataByContentId;
 @property(nonatomic) _Bool *partiallyParsed; // @synthesize partiallyParsed=_partiallyParsed;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long maxLength; // @synthesize maxLength=_maxLength;
 @property(retain, nonatomic) NSMutableAttributedString *parsedAttributedString; // @synthesize parsedAttributedString=_parsedAttributedString;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (_Bool)isWebLink:(id)arg1;
 - (_Bool)_validateURLsAndHTMLTagsInParsedString:(id)arg1 urlsFound:(id *)arg2;
 - (void)_addDataDetectionAttributes:(id)arg1;

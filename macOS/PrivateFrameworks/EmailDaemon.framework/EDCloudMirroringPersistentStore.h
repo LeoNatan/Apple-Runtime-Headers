@@ -19,11 +19,11 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain, nonatomic) EDTaskScheduler *exportScheduler; // @synthesize exportScheduler=_exportScheduler;
 @property(retain, nonatomic) EDTaskScheduler *importScheduler; // @synthesize importScheduler=_importScheduler;
 @property(readonly, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_wrapCompletion:(CDUnknownBlockType)arg1 forRequestKind:(int)arg2;
 - (void)_executeRequestWithKind:(int)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)_schedulerForKind:(int)arg1;

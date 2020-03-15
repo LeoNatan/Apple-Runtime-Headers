@@ -20,10 +20,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 @property(copy, nonatomic) NSArray *allLabelsWithConfidences; // @synthesize allLabelsWithConfidences=_allLabelsWithConfidences;
 @property(copy, nonatomic) VNClassificationObservation *label; // @synthesize label=_mostLikelyLabel;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

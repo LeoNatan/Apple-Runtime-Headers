@@ -37,6 +37,7 @@
     NSDate *_now;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool applyHasBeenSuccessful; // @synthesize applyHasBeenSuccessful=_applyHasBeenSuccessful;
 @property(readonly, nonatomic) _Bool diffHasBeenSuccessful; // @synthesize diffHasBeenSuccessful=_diffHasBeenSuccessful;
 @property(readonly, nonatomic) _Bool expandHasBeenSuccessful; // @synthesize expandHasBeenSuccessful=_expandHasBeenSuccessful;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) CPLChangeBatch *expandedBatch; // @synthesize expandedBatch=_expandedBatch;
 @property(readonly, nonatomic) CPLEngineStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic) CPLChangeBatch *incomingBatch; // @synthesize incomingBatch=_incomingBatch;
-- (void).cxx_destruct;
 - (_Bool)shouldCancelSyncSessionTryingToUploadChange:(id)arg1;
 - (_Bool)applyChangesToClientCacheWithError:(id *)arg1;
 @property(readonly, nonatomic) NSDictionary *resourcesToUpload;

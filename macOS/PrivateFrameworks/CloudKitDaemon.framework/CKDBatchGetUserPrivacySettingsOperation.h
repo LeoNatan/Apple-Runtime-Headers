@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)appPermissionGroupsFromContainerPrivacySettings:(id)arg1;
-@property(copy, nonatomic) NSArray *containerPrivacySettings; // @synthesize containerPrivacySettings=_containerPrivacySettings;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *containerPrivacySettings; // @synthesize containerPrivacySettings=_containerPrivacySettings;
 - (void)main;
 - (BOOL)shouldCheckAppVersion;
 - (id)activityCreate;

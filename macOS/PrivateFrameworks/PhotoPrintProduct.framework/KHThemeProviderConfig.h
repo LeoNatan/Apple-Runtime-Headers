@@ -17,10 +17,10 @@
 }
 
 + (id)themeProviderConfigWithProvider:(id)arg1 config:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) KHThemePreview *themePreview; // @synthesize themePreview=_themePreview;
 @property(retain, nonatomic) KHThemeProvider *themeProvider; // @synthesize themeProvider=_themeProvider;
 @property(retain, nonatomic) NSMutableDictionary *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)requestPreviewImageForCountryCode:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestPreviewImageWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadThemePreview;

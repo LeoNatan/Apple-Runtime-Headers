@@ -15,8 +15,8 @@
     NSMutableArray *_predicates;
 }
 
-@property(retain, nonatomic) NSMutableArray *predicates; // @synthesize predicates=_predicates;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *predicates; // @synthesize predicates=_predicates;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

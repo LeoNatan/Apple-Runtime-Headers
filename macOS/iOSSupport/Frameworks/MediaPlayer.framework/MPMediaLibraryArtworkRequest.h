@@ -26,8 +26,8 @@
     ICUserIdentity *_userIdentity;
 }
 
-@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void)_onQueue_updateTokens;
 - (void)promoteFetchableArtworkTokenIfNeeded;
 - (void)clearFailedFetchableToken;

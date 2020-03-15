@@ -13,8 +13,8 @@
     SXEmbedResource *_embedResource;
 }
 
-@property(retain, nonatomic) SXEmbedResource *embedResource; // @synthesize embedResource=_embedResource;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SXEmbedResource *embedResource; // @synthesize embedResource=_embedResource;
 
 @end
 

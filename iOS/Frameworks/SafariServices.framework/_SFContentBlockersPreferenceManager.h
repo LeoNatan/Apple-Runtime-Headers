@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSContentBlockersPreferenceManager.h>
+#import <SafariSharedUI/WBSContentBlockersPreferenceManager.h>
 
 #import <SafariServices/SFContentBlockerManagerObserver-Protocol.h>
 
@@ -16,7 +16,6 @@
 }
 
 @property(readonly, nonatomic) _Bool hasEnabledContentBlockers; // @synthesize hasEnabledContentBlockers=_hasEnabledContentBlockers;
-- (void)didUpdatePreference:(id)arg1 toValue:(id)arg2 forDomain:(id)arg3;
 - (void)contentBlockerManagerExtensionListDidChange:(id)arg1;
 - (void)_checkForContentBlockers;
 - (void)dealloc;

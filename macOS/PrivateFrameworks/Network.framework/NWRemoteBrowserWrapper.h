@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NWBrowser *_browser;
 }
 
+- (void).cxx_destruct;
 @property(retain) NWBrowser *browser; // @synthesize browser=_browser;
 @property(retain) NSUUID *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 
 @end
 

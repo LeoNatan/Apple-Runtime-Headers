@@ -23,6 +23,7 @@
 + (id)_orderedDisplayTypeContextResults:(id)arg1;
 + (id)_minMaxStatisticsFromChartPoints:(id)arg1 dateInterval:(id)arg2;
 + (void)enumerateDisplayTypeContextsWithBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 @property(retain, nonatomic) NSMutableDictionary *sampleResults; // @synthesize sampleResults=_sampleResults;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue; // @synthesize resourceQueue=_resourceQueue;
@@ -30,7 +31,6 @@
 @property(nonatomic) long long timeScope; // @synthesize timeScope=_timeScope;
 @property(retain, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(nonatomic) __weak id <HKHeartRateQueryHandler> queryHandler; // @synthesize queryHandler=_queryHandler;
-- (void).cxx_destruct;
 - (void)setupQueries;
 - (id)initWithQueryHandler:(id)arg1 dateInterval:(id)arg2 timeScope:(long long)arg3 resultsHandler:(CDUnknownBlockType)arg4;
 

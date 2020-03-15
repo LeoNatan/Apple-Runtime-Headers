@@ -29,6 +29,7 @@
     TUICandidateBackdropView *_backdropView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool changingLayout; // @synthesize changingLayout=_changingLayout;
 @property(nonatomic) _Bool shouldShowArrowButton; // @synthesize shouldShowArrowButton=_shouldShowArrowButton;
 @property(nonatomic) _Bool showingSortControl; // @synthesize showingSortControl=_showingSortControl;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) NSString *inlineText; // @synthesize inlineText=_inlineText;
 @property(retain, nonatomic) TIKeyboardCandidateResultSet *candidateResultSet; // @synthesize candidateResultSet=_candidateResultSet;
 @property(retain, nonatomic) id <TUICandidateViewState> state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)filteredCandidates;
 - (id)visibleCandidates;
 - (void)candidateGridNeedsToExpand:(id)arg1;

@@ -16,11 +16,11 @@
     CNObservable *_rawUncachedObservable;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CNObservable *rawUncachedObservable; // @synthesize rawUncachedObservable=_rawUncachedObservable;
 @property(readonly) CNObservable *rawCachedObservable; // @synthesize rawCachedObservable=_rawCachedObservable;
 @property(readonly) CNObservable *uncachedObservable; // @synthesize uncachedObservable=_uncachedObservable;
 @property(readonly) CNObservable *cachedObservable; // @synthesize cachedObservable=_cachedObservable;
-- (void).cxx_destruct;
 - (void)assemble;
 - (id)description;
 - (id)initWithRawCachedObservable:(id)arg1 rawUncachedObservable:(id)arg2;

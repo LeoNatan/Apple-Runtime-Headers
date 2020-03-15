@@ -17,9 +17,9 @@
 
 + (id)_parameterForStyle:(int)arg1;
 + (id)_parameterForSize:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int compassViewStyle; // @synthesize compassViewStyle=_compassViewStyle;
 @property(readonly, nonatomic) int compassViewSize; // @synthesize compassViewSize=_compassViewSize;
-- (void).cxx_destruct;
 - (_Bool)isPointInNorthEastHalf:(struct CGPoint)arg1;
 - (struct CGSize)intrinsicContentSize;
 @property(nonatomic) double yaw;

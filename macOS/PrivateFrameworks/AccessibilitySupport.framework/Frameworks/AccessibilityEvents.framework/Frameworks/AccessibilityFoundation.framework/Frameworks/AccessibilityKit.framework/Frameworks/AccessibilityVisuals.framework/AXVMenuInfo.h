@@ -20,11 +20,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long rowCountToShow; // @synthesize rowCountToShow=_rowCountToShow;
 @property(copy, nonatomic) NSArray *addedMenuItems; // @synthesize addedMenuItems=_addedMenuItems;
 @property(copy, nonatomic) NSArray *menuItems; // @synthesize menuItems=_menuItems;
 @property(copy, nonatomic) NSString *menuTitle; // @synthesize menuTitle=_menuTitle;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)_isEqualToMenuInfo:(id)arg1;
 - (unsigned long long)hash;

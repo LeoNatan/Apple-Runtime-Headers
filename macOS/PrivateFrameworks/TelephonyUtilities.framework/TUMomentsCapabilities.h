@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *supportedMediaTypes; // @synthesize supportedMediaTypes=_supportedMediaTypes;
 @property(readonly, nonatomic) int availability; // @synthesize availability=_availability;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqualToCapabilities:(id)arg1;

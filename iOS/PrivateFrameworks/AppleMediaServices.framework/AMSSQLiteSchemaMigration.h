@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     _Bool _success;
 }
 
+- (void).cxx_destruct;
 @property(readonly) _Bool success; // @synthesize success=_success;
 @property(readonly) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)_executeStatement:(id)arg1 canFailMigration:(_Bool)arg2 bindings:(CDUnknownBlockType)arg3;
 - (void)executeStatement:(id)arg1 bindings:(CDUnknownBlockType)arg2;
 - (void)executeStatement:(id)arg1;

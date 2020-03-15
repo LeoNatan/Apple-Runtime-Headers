@@ -28,8 +28,8 @@
     BOOL _supportsSamplingAndSectionGrouping;
 }
 
-@property(nonatomic) BOOL supportsSamplingAndSectionGrouping; // @synthesize supportsSamplingAndSectionGrouping=_supportsSamplingAndSectionGrouping;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL supportsSamplingAndSectionGrouping; // @synthesize supportsSamplingAndSectionGrouping=_supportsSamplingAndSectionGrouping;
 - (long long)__debugUnsampledIndexForRealIndexPath:(struct PUSimpleIndexPath)arg1;
 - (id)visibleUnsampledIndexesForCombinedRealSections:(id)arg1;
 - (void)enumerateRealMainItemIndexPathsForVisualSection:(long long)arg1 inVisualItemRange:(struct _NSRange)arg2 usingBlock:(CDUnknownBlockType)arg3;

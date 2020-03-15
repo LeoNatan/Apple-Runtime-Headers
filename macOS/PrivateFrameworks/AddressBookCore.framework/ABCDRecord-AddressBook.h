@@ -21,6 +21,7 @@
 + (id)copyPublicRecordsForClass:(Class)arg1 withDatabaseImpls:(id)arg2 inAddressBook:(id)arg3;
 + (id)copyPublicRecordForClass:(Class)arg1 withDatabaseImpl:(id)arg2 inAddressBook:(id)arg3;
 + (BOOL)abEntityKnowsKey:(id)arg1 inAddressBook:(id)arg2;
++ (id)abEntityDescriptionInManagedObjectContext:(id)arg1;
 + (id)abEntityDescriptionInAddressBook:(id)arg1;
 + (id)metadataType;
 + (id)managedObjectContextForAddressBook:(id)arg1;

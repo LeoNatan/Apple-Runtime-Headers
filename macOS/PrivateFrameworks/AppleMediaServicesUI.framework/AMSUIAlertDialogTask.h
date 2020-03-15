@@ -11,17 +11,17 @@
 @interface AMSUIAlertDialogTask : AMSTask
 {
     AMSDialogRequest *_request;
-    struct NSViewController *_presentingViewController;
+    NSViewController *_presentingViewController;
 }
 
-+ (struct NSTextField *)_convertTextField:(id)arg1;
++ (id)_convertTextField:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(readonly) AMSDialogRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
-- (void)_presentMacAlertFromRequest:(id)arg1 viewController:(struct NSViewController *)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_presentMacAlertFromRequest:(id)arg1 viewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_createMacAlertFromRequest:(id)arg1;
 - (id)present;
-- (id)initWithRequest:(id)arg1 presentingViewController:(struct NSViewController *)arg2;
+- (id)initWithRequest:(id)arg1 presentingViewController:(id)arg2;
 
 @end
 

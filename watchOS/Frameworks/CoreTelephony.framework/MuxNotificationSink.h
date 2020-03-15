@@ -17,8 +17,9 @@ __attribute__((visibility("hidden")))
     id <MuxNotificationSinkDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MuxNotificationSinkDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MuxNotificationSinkDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)clientDidTriggerFault:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 

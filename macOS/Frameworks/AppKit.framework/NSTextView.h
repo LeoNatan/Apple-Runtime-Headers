@@ -484,6 +484,7 @@
 @property long long spellCheckingType;
 @property long long autocorrectionType;
 - (id)textCheckingController;
+- (BOOL)textCheckingControllerUsesStringAnnotations;
 - (BOOL)usesTextCheckingController;
 - (BOOL)_isAccessibilityContentSectionCandidate;
 - (BOOL)accessibilityIsTextInputMarkedRangeAttributeSettable;

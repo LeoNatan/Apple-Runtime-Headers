@@ -46,6 +46,7 @@
 - (void)setDirName:(id)arg1;
 - (id)dirName;
 @property _Bool autofocus;
+- (int)structuralComplexityContribution;
 - (_Bool)_isEdited;
 - (int)_autocapitalizeType;
 - (int)structuralComplexityContribution;

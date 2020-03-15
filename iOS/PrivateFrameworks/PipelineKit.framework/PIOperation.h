@@ -53,6 +53,7 @@
 + (id)_stringForState:(unsigned long long)arg1;
 + (id)operationWithExecutionBlock:(CDUnknownBlockType)arg1;
 + (id)operation;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property _Bool needsToRetry; // @synthesize needsToRetry=_needsToRetry;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -66,7 +67,6 @@
 @property(copy, nonatomic) id key; // @synthesize key=_key;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak PIGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)description;
 - (void)performSubOperationsAsynchronously:(id)arg1 waitUntilFinishedUsingBlock:(CDUnknownBlockType)arg2;
 - (id)performSubOperationSynchronously:(id)arg1 error:(id *)arg2;

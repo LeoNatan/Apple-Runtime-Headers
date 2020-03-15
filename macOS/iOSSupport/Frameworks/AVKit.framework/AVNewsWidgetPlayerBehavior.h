@@ -17,8 +17,8 @@
 }
 
 + (Class)behaviorContextClass;
-@property(nonatomic) __weak AVNewsWidgetPlayerBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AVNewsWidgetPlayerBehaviorContext *behaviorContext; // @synthesize behaviorContext=_behaviorContext;
 - (void)didCancelContentTransition;
 - (void)willCancelContentTransition;
 - (void)didCompleteContentTransition;

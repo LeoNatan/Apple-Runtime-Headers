@@ -24,6 +24,7 @@
     UIPageControl *_pageControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAtEdge; // @synthesize isAtEdge=_isAtEdge;
 @property(readonly, nonatomic) __weak UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(readonly, nonatomic) __weak TVCollectionView *collectionView; // @synthesize collectionView=_collectionView;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) TVLPagedGridElement *pagedGridElement; // @synthesize pagedGridElement=_pagedGridElement;
 @property(readonly, nonatomic) TVLPagedGridCollectionViewLayout *gridViewLayout; // @synthesize gridViewLayout=_gridViewLayout;
 @property(readonly, copy, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
-- (void).cxx_destruct;
 - (void)updateWithFeedElement:(id)arg1;
 - (id)currentFeedElement;
 - (void)restoreState:(id)arg1;

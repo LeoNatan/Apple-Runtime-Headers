@@ -17,12 +17,12 @@ __attribute__((visibility("hidden")))
     vector_8b7b626a _outputShape;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) vector_8b7b626a outputShape; // @synthesize outputShape=_outputShape;
 @property(readonly, nonatomic) vector_8b7b626a inputShape; // @synthesize inputShape=_inputShape;
 @property(readonly, nonatomic) vector_8b7b626a multiples; // @synthesize multiples=_multiples;
 @property(readonly, nonatomic) unsigned long inputRank; // @synthesize inputRank=_inputRank;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)setWeightData:(id)arg1 error:(id *)arg2;
 - (id)outputShapesForInputShapes:(id)arg1 error:(id *)arg2;
 - (id)initWithParameterDictionary:(id)arg1 error:(id *)arg2;

@@ -51,6 +51,7 @@
 + (void)_checkInRentalWithDSID:(id)arg1 rentalID:(id)arg2;
 + (void)checkInOrphanedRentals;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *contentRatingDomain; // @synthesize contentRatingDomain=_contentRatingDomain;
 @property(retain, nonatomic) MPMediaItem *mpMediaItem; // @synthesize mpMediaItem=_mpMediaItem;
 @property(retain, nonatomic) NSOperationQueue *rottenTomatoesOperationQueue; // @synthesize rottenTomatoesOperationQueue=_rottenTomatoesOperationQueue;
@@ -79,7 +80,6 @@
 @property(copy, nonatomic) NSURL *hlsPlaylistURL; // @synthesize hlsPlaylistURL=_hlsPlaylistURL;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(copy, nonatomic) NSString *actionParams; // @synthesize actionParams=_actionParams;
-- (void).cxx_destruct;
 - (id)_preferredStoreAssetDictFromStoreItemDict:(id)arg1;
 - (void)_initializePlaybackType;
 - (void)_updateRentalExpirationDate:(id)arg1 playbackStartDate:(id)arg2;

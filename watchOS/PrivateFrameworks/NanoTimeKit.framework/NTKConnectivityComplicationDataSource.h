@@ -17,8 +17,8 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-@property(retain, nonatomic) NTKConnectivityModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKConnectivityModel *model; // @synthesize model=_model;
 - (void)connectivityModelConnectivityDidChange:(id)arg1;
 - (void)resume;
 - (void)pause;

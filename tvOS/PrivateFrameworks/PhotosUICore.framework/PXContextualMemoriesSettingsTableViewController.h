@@ -20,11 +20,11 @@
 }
 
 + (id)title;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *progressIndicatorView; // @synthesize progressIndicatorView=_progressIndicatorView;
 @property(nonatomic) _Bool showsLocationPicker; // @synthesize showsLocationPicker=_showsLocationPicker;
 @property(nonatomic) _Bool showsDatePicker; // @synthesize showsDatePicker=_showsDatePicker;
 @property(retain, nonatomic) PXContextualMemoriesSettings *settings; // @synthesize settings=_settings;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)contactPicker:(id)arg1 didSelectContacts:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;

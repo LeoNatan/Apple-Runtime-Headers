@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     NSString *_bundleId;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

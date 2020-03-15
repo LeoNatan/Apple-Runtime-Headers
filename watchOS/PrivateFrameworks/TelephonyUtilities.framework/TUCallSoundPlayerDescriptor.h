@@ -16,11 +16,11 @@
     double _pauseDuration;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double pauseDuration; // @synthesize pauseDuration=_pauseDuration;
 @property(nonatomic) unsigned int iterations; // @synthesize iterations=_iterations;
 @property(retain, nonatomic) NSNumber *sound; // @synthesize sound=_sound;
 @property(nonatomic) int soundType; // @synthesize soundType=_soundType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSoundType:(int)arg1 provider:(id)arg2 video:(_Bool)arg3 region:(int)arg4;
 - (id)initWithSoundType:(int)arg1 call:(id)arg2;

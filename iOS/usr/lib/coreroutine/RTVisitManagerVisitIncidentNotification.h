@@ -13,8 +13,8 @@
     RTVisit *_visitIncident;
 }
 
-@property(readonly, nonatomic) RTVisit *visitIncident; // @synthesize visitIncident=_visitIncident;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) RTVisit *visitIncident; // @synthesize visitIncident=_visitIncident;
 - (id)initWithVisitIncident:(id)arg1;
 - (id)init;
 

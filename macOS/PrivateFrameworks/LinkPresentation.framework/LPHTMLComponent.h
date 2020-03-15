@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 + (id)ruleDictionaryForStyleWithDarkInterface:(id)arg1;
 + (id)styleSet;
 + (id)ruleDictionaryForStyle:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *themePath; // @synthesize themePath=_themePath;
 @property(readonly, nonatomic) DOMElement *element; // @synthesize element=_element;
 @property(readonly, nonatomic) __weak LPLinkHTMLGenerator *generator; // @synthesize generator=_generator;
-- (void).cxx_destruct;
 - (id)childThemePathWithName:(id)arg1;
 - (void)addChild:(id)arg1;
 - (id)initWithTagName:(id)arg1 themePath:(id)arg2 generator:(id)arg3;

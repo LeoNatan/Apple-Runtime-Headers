@@ -15,8 +15,8 @@
 
 + (CDUnknownBlockType)_unlockDeviceHandler;
 + (void)setEnsureUnlockedDeviceHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <PXActionPerformerDelegate> performerDelegate; // @synthesize performerDelegate=_performerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXActionPerformerDelegate> performerDelegate; // @synthesize performerDelegate=_performerDelegate;
 - (id)systemImageNameForActionType:(id)arg1;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)actionPerformerForActionType:(id)arg1;

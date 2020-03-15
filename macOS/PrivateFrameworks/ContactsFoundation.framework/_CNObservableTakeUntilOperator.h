@@ -21,12 +21,12 @@
     id <CNCancelable> _signalToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <CNCancelable> signalToken; // @synthesize signalToken=_signalToken;
 @property(retain) id <CNCancelable> inputToken; // @synthesize inputToken=_inputToken;
 @property(getter=isActive) BOOL active; // @synthesize active=_active;
 @property(readonly) CNObservable *signal; // @synthesize signal=_signal;
 @property(readonly) CNObservable *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (void)signalDidGenerateEventWithObserver:(id)arg1;
 - (BOOL)shouldMirrorEvent:(id)arg1;
 - (void)cancel;

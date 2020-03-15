@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     VEKSuggestion *_suggestion;
 }
 
-@property(retain, nonatomic) VEKSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VEKSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 - (id)initWithSuggestion:(id)arg1;
 
 @end

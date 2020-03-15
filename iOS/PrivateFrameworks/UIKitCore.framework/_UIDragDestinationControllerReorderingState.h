@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     _UIDragMovementCadenceSettings *_reorderCadenceSettings;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIDragMovementCadenceSettings *reorderCadenceSettings; // @synthesize reorderCadenceSettings=_reorderCadenceSettings;
 @property(nonatomic) long long dragMovementPhase; // @synthesize dragMovementPhase=_dragMovementPhase;
 @property(nonatomic) double reorderBecamePossibleTime; // @synthesize reorderBecamePossibleTime=_reorderBecamePossibleTime;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long reorderCount; // @synthesize reorderCount=_reorderCount;
 @property(nonatomic) _Bool supportsLocalSessionReordering; // @synthesize supportsLocalSessionReordering=_supportsLocalSessionReordering;
 @property(retain, nonatomic) _UIVelocityIntegrator *velocityIntegrator; // @synthesize velocityIntegrator=_velocityIntegrator;
-- (void).cxx_destruct;
 - (id)_reorderCadenceSettings;
 - (void)velocityExceededThreshold;
 - (_Bool)hasEnoughTimeElapsedSizeReorderingBecamePossibleForInterval:(double)arg1;

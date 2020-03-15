@@ -15,10 +15,10 @@
     UILabel *_deviceDetailLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *deviceDetailLabel; // @synthesize deviceDetailLabel=_deviceDetailLabel;
 @property(retain, nonatomic) BPSCheckMarkView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(retain, nonatomic) BPSRemoveMigrationWatchView *watchView; // @synthesize watchView=_watchView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

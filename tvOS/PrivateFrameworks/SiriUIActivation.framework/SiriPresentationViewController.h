@@ -30,7 +30,9 @@
     CDUnknownBlockType _buttonTrigger;
     _Bool _receivedIncomingPhoneCall;
     NSObject<OS_dispatch_queue> *_watchdogQueue;
-    NSTimer *_dismissalRequestNotTriggeredThresholdTimer;
+    struct os_unfair_lock_s _dismissalProcessingLock;
+    _Bool _isDismissing;
+    CDUnknownBlockType _dismissalCompletion;
     _Bool _springBoardIdleTimerDisabled;
     _Bool _waitingForTelephonyToStart;
     _Bool _startGuidedAccessOnDismissal;
@@ -64,6 +66,7 @@
 
 + (_Bool)testIsSyntheticActivation:(id)arg1;
 + (id)extractTestingInputsFromContext:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic, getter=_testInputQueue) AFQueue *testInputQueue; // @synthesize testInputQueue=_testInputQueue;
 @property(copy, nonatomic, setter=_setCurrentTestID:) NSString *_currentTestID; // @synthesize _currentTestID=__currentTestID;
 @property(copy, nonatomic, setter=_setCurrentTestName:) NSString *_currentTestName; // @synthesize _currentTestName=__currentTestName;
@@ -92,7 +95,6 @@
 @property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) id <SiriPresentationControllerDelegate> siriPresentationControllerDelegate; // @synthesize siriPresentationControllerDelegate;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
@@ -157,6 +159,7 @@
 - (void)siriViewControllerSessionDidResetContext:(id)arg1;
 - (void)siriViewControllerDidFinishDismissing:(id)arg1;
 - (void)_resetStateForInstrumentation;
+- (unsigned long long)_dismissalReasonForDismissalWithOptions:(id)arg1;
 - (void)_emitInstrumentationDismissalStateForViewMode:(long long)arg1 withDismissalReason:(unsigned long long)arg2;
 - (unsigned long long)_impliedDismissalReasonFromState;
 - (void)_dismissDueToUnexpectedError:(id)arg1;
@@ -164,12 +167,12 @@
 - (_Bool)_isDeviceButton:(long long)arg1;
 - (_Bool)_releaseExistingTrigger;
 - (void)_siriDidOpenURL:(id)arg1;
-- (void)_wasDismissed;
+- (void)_wasDismissedWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_dismissSiriSetup;
 - (void)_handleContextClearForRequestOptions:(id)arg1;
 - (void)_invalidateCarSiriButtonHoldToTalkTimer;
 - (void)_finishClearingSiriViewController:(id)arg1;
-- (void)_clearSiriViewController;
+- (void)_clearSiriViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_cleanupUnownedConnection;
 - (void)_processConnectionHouseKeeping;
 - (void)_scheduleConnectionHouseKeepingAfterDelay:(double)arg1;
@@ -196,6 +199,7 @@
 - (oneway void)preheat;
 - (void)_setUpUnownedConnectionIfNecessary;
 - (oneway void)cancelTTS;
+- (void)_presentationDismissalRequestedWithOptions:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (oneway void)presentationDismissalRequestedWithOptions:(id)arg1;
 - (id)_fallbackScreenForIdentifier:(long long)arg1;
 - (struct CGRect)_fallbackFrameForScreen:(id)arg1 withIdentifier:(long long)arg2;

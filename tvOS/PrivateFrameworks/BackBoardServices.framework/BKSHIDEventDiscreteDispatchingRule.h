@@ -20,9 +20,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)ruleForDispatchingDiscreteEventsMatchingPredicate:(id)arg1 toTarget:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) BKSHIDEventDispatchingTarget *target; // @synthesize target=_target;
 @property(readonly, copy, nonatomic) BKSHIDEventDiscreteDispatchingPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

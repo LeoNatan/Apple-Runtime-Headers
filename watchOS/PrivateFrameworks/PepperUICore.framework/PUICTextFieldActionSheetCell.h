@@ -14,8 +14,8 @@
 }
 
 + (float)heightForRowWithCellWidth:(float)arg1;
-@property(retain, nonatomic) PUICTextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PUICTextField *textField; // @synthesize textField=_textField;
 
 @end
 

@@ -22,9 +22,9 @@
     unsigned long long _customContentLocation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidesNotificationContent; // @synthesize hidesNotificationContent=_hidesNotificationContent;
 @property(nonatomic) unsigned long long customContentLocation; // @synthesize customContentLocation=_customContentLocation;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;

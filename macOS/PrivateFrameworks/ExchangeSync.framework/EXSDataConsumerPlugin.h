@@ -17,11 +17,11 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) long long interestedFolderType; // @synthesize interestedFolderType=_interestedFolderType;
 @property(nonatomic) long long interestedDataclass; // @synthesize interestedDataclass=_interestedDataclass;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly, nonatomic) Class dataConsumerClass; // @synthesize dataConsumerClass=_dataConsumerClass;
-- (void).cxx_destruct;
 - (BOOL)interestedInEnabledDataclasses:(unsigned long long)arg1;
 - (id)newInstanceForAccount:(id)arg1 withDataManager:(id)arg2 dispatchWorkloop:(id)arg3;
 - (id)initWithBundle:(id)arg1;

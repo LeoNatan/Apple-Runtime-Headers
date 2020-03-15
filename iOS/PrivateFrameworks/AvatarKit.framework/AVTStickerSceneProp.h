@@ -13,11 +13,11 @@
     SCNScene *_scene;
 }
 
-@property(readonly, nonatomic) SCNScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SCNScene *scene; // @synthesize scene=_scene;
 - (void)buildNodeForAvatar:(id)arg1 withCamera:(id)arg2 forExport:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithScene:(id)arg1 scale:(struct SCNVector3)arg2 position:(struct SCNVector3)arg3 rotation:(struct SCNVector3)arg4 renderLast:(_Bool)arg5 palettesDescriptions:(id)arg6 modifiers:(id)arg7;
+- (id)initWithScene:(id)arg1 scale:(struct SCNVector3)arg2 position:(struct SCNVector3)arg3 rotation:(struct SCNVector3)arg4 renderLast:(_Bool)arg5 palettesDescriptions:(id)arg6 modifiers:(id)arg7 adjustments:(id)arg8;
 
 @end
 

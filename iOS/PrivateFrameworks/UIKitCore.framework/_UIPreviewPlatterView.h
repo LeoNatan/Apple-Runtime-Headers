@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     _Bool _shouldMorphContents;
     _Bool _frozen;
     _Bool _contentSizeDidChange;
-    int _preferredMorphingAxis;
     UITargetedPreview *_collapsedPreview;
     UITargetedPreview *_expandedPreview;
     UIView *_collapsedClippingView;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
     _UIPlatterTransformView *_expandedTransformView;
     _UIPlatterSoftShadowView *_pathShadowView;
     _UIRoundedRectShadowView *_rectangularShadowView;
+    unsigned long long _preferredMorphingAxis;
     UIViewFloatAnimatableProperty *_expansionProgress;
     UIViewFloatAnimatableProperty *_platterWidth;
     UIViewFloatAnimatableProperty *_platterHeight;
@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     UIViewFloatAnimatableProperty *_expandedContentHeight;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *expandedContentHeight; // @synthesize expandedContentHeight=_expandedContentHeight;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *expandedContentWidth; // @synthesize expandedContentWidth=_expandedContentWidth;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *collapsedContentHeight; // @synthesize collapsedContentHeight=_collapsedContentHeight;
@@ -44,7 +45,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *platterHeight; // @synthesize platterHeight=_platterHeight;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *platterWidth; // @synthesize platterWidth=_platterWidth;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *expansionProgress; // @synthesize expansionProgress=_expansionProgress;
-@property(nonatomic) int preferredMorphingAxis; // @synthesize preferredMorphingAxis=_preferredMorphingAxis;
+@property(nonatomic) unsigned long long preferredMorphingAxis; // @synthesize preferredMorphingAxis=_preferredMorphingAxis;
 @property(nonatomic) _Bool contentSizeDidChange; // @synthesize contentSizeDidChange=_contentSizeDidChange;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 @property(retain, nonatomic) _UIRoundedRectShadowView *rectangularShadowView; // @synthesize rectangularShadowView=_rectangularShadowView;
@@ -61,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
 @property(retain, nonatomic) UITargetedPreview *expandedPreview; // @synthesize expandedPreview=_expandedPreview;
 @property(retain, nonatomic) UITargetedPreview *collapsedPreview; // @synthesize collapsedPreview=_collapsedPreview;
-- (void).cxx_destruct;
 - (void)updateContentSize;
 - (id)_overrideTraitCollectionForView:(id)arg1 combinedWithTraits:(id)arg2;
 - (void)_installPreview:(id)arg1 inClippingView:(id)arg2 transformView:(id)arg3;

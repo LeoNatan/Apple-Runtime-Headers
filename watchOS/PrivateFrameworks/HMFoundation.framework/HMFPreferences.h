@@ -24,9 +24,9 @@
 + (Class)preferenceClassForPreferenceKey:(id)arg1;
 + (id)classRegistry;
 + (id)sharedPreferences;
+- (void).cxx_destruct;
 @property(readonly) HMFClassRegistry *classRegistry; // @synthesize classRegistry=_classRegistry;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (id)preferenceForKey:(id)arg1;
 @property(readonly, copy) NSArray *preferences;
 - (void)setPreferenceClass:(Class)arg1 forPreferenceKey:(id)arg2;

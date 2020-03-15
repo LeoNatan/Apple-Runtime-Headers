@@ -22,10 +22,10 @@
     NSString *_bodyText;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showDebitCardHeroView; // @synthesize showDebitCardHeroView=_showDebitCardHeroView;
 @property(copy, nonatomic) NSString *bodyText; // @synthesize bodyText=_bodyText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)_terminateSetupFlow;
 - (void)_handleNextStep;
 - (id)_paymentSetupNavigationControllerForProvisioningController:(id)arg1;

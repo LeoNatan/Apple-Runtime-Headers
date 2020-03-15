@@ -18,11 +18,11 @@
     NSMutableOrderedSet *_requiredColumns;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *requiredColumns; // @synthesize requiredColumns=_requiredColumns;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) unsigned long long conflictResolution; // @synthesize conflictResolution=_conflictResolution;
 @property(retain, nonatomic) NSString *table; // @synthesize table=_table;
-- (void).cxx_destruct;
 - (id)addValue;
 - (void)enumerateBindingNamesAndValuesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateBindingIndicesAndValuesUsingBlock:(CDUnknownBlockType)arg1;

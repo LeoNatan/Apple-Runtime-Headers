@@ -21,8 +21,8 @@
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) NSString *deviceID; // @synthesize deviceID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *deviceID; // @synthesize deviceID;
 - (id)logIdentifier;
 @property(readonly, copy) NSString *description;
 - (void)cancelConfigurationWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -39,6 +39,7 @@
 + (id)assetResourcesForAsset:(id)arg1 includeDerivatives:(BOOL)arg2 includeMetadata:(BOOL)arg3 includeAdjustmentOverflowDataBlob:(BOOL)arg4;
 + (id)assetResourcesForAsset:(id)arg1 includeDerivatives:(BOOL)arg2 includeMetadata:(BOOL)arg3;
 + (id)assetResourcesForAsset:(id)arg1 includeDerivatives:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCurrent) BOOL current; // @synthesize current=_current;
 @property(retain, nonatomic) NSURL *privateFileURL; // @synthesize privateFileURL=_privateFileURL;
 @property(nonatomic, getter=isLocallyAvailable) BOOL locallyAvailable; // @synthesize locallyAvailable=_locallyAvailable;
@@ -50,11 +51,10 @@
 @property(readonly, copy, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
 @property(readonly, copy, nonatomic) NSString *assetLocalIdentifier; // @synthesize assetLocalIdentifier=_assetLocalIdentifier;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)initWithType:(long long)arg1 livePhoto:(id)arg2;
-- (id)initWithResource:(id)arg1 asset:(id)arg2;
+- (id)initWithResource:(id)arg1 asset:(id)arg2 hasAdjustments:(BOOL)arg3;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary;
 @property(readonly, nonatomic) unsigned long long fileSize;
 @property(readonly, nonatomic) long long analysisType;

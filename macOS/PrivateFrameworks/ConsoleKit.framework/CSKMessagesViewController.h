@@ -25,12 +25,12 @@
     NSMapTable *_expandedRowsCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *expandedRowsCache; // @synthesize expandedRowsCache=_expandedRowsCache;
 @property(nonatomic) double defaultRowHeight; // @synthesize defaultRowHeight=_defaultRowHeight;
 @property(nonatomic) unsigned long long anchorROWID; // @synthesize anchorROWID=_anchorROWID;
 @property(nonatomic) BOOL allowsMessagesInsertion; // @synthesize allowsMessagesInsertion=_allowsMessagesInsertion;
 @property(nonatomic) __weak id <CSKMessagesViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)scrollRangeToVisible:(struct _NSRange)arg1;
 - (struct _NSRange)firstSelectedRange;
 - (unsigned long long)stringLength;

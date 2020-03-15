@@ -26,12 +26,12 @@
 + (id)entryEventPointDefinitions;
 + (id)defaults;
 + (void)load;
+- (void).cxx_destruct;
 @property(retain) PLXPCListenerOperatorComposition *vTSessionListener; // @synthesize vTSessionListener=_vTSessionListener;
 @property(retain) PLXPCListenerOperatorComposition *cMCrabsListener; // @synthesize cMCrabsListener=_cMCrabsListener;
 @property(retain) PLXPCListenerOperatorComposition *cMHlsListener; // @synthesize cMHlsListener=_cMHlsListener;
 @property(retain) PLXPCListenerOperatorComposition *cMFileListener; // @synthesize cMFileListener=_cMFileListener;
 @property(retain) PLXPCListenerOperatorComposition *notification; // @synthesize notification=_notification;
-- (void).cxx_destruct;
 - (void)logEventBackwardVTSessionWithEntry:(id)arg1;
 - (void)logEventBackwardCMCrabsWithEntry:(id)arg1;
 - (void)logEventBackwardCMHlsWithEntry:(id)arg1;

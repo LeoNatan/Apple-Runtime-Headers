@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSItemIdType *ReferenceItemId; // @synthesize ReferenceItemId=_ReferenceItemId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSItemIdType *ReferenceItemId; // @synthesize ReferenceItemId=_ReferenceItemId;
 
 @end
 

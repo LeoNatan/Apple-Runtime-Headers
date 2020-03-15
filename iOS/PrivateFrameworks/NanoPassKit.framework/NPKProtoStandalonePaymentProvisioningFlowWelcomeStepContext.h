@@ -16,8 +16,8 @@
 }
 
 + (Class)heroImagesType;
-@property(retain, nonatomic) NSMutableArray *heroImages; // @synthesize heroImages=_heroImages;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *heroImages; // @synthesize heroImages=_heroImages;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

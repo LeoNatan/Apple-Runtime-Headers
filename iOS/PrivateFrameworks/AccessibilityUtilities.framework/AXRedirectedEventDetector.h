@@ -18,9 +18,9 @@
 
 + (void)setFlushEventsTimerDelay:(double)arg1;
 + (void)flushEvents;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXDispatchTimer *flushEventsTimer; // @synthesize flushEventsTimer=_flushEventsTimer;
 @property(retain, nonatomic) NSMutableArray *recentEvents; // @synthesize recentEvents=_recentEvents;
-- (void).cxx_destruct;
 - (double)_elapsedTimeFrom:(unsigned long long)arg1 to:(unsigned long long)arg2;
 - (_Bool)isRedirectedEvent:(id)arg1;
 - (void)addEvent:(id)arg1;

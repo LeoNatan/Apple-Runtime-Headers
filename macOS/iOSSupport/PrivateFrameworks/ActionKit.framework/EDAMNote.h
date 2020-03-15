@@ -32,6 +32,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMNoteLimits *limits; // @synthesize limits=_limits;
 @property(retain, nonatomic) EDAMNoteRestrictions *restrictions; // @synthesize restrictions=_restrictions;
 @property(retain, nonatomic) NSArray *sharedNotes; // @synthesize sharedNotes=_sharedNotes;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 
 @end
 

@@ -35,13 +35,13 @@
     unsigned long long _connectionsJournalingMode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isLocked) _Bool locked; // @synthesize locked=_locked;
 @property(nonatomic) unsigned long long connectionsJournalingMode; // @synthesize connectionsJournalingMode=_connectionsJournalingMode;
 @property(readonly, nonatomic) unsigned long long maxWriters; // @synthesize maxWriters=_maxWriters;
 @property(readonly, nonatomic) unsigned long long maxReaders; // @synthesize maxReaders=_maxReaders;
 @property(nonatomic) __weak id <ML3DatabaseConnectionPoolDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
-- (void).cxx_destruct;
 - (void)_setLocalConnection:(id)arg1 forThread:(id)arg2;
 - (id)_localConnectionForThread:(id)arg1;
 - (void)_setConnection:(id)arg1 forIdentifier:(id)arg2;

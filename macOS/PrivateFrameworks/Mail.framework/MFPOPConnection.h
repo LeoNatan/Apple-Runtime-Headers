@@ -30,6 +30,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL connectionShouldPrefetchMessages; // @synthesize connectionShouldPrefetchMessages=_connectionShouldPrefetchMessages;
 @property(nonatomic) unsigned long long numberOfMessagesAvailable; // @synthesize numberOfMessagesAvailable=_numberOfMessagesAvailable;
 @property(nonatomic) long long activityMonitorKey; // @synthesize activityMonitorKey=_activityMonitorKey;
@@ -39,7 +40,6 @@
 @property(nonatomic) unsigned long long numberOfMessagesFetched; // @synthesize numberOfMessagesFetched=_numberOfMessagesFetched;
 @property(nonatomic) unsigned long long numberOfMessagesToFetch; // @synthesize numberOfMessagesToFetch=_numberOfMessagesToFetch;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_logServerResponse:(id)arg1;
 - (BOOL)_readMultilineResponseWithMaxSize:(unsigned long long)arg1 intoMutableData:(id)arg2 informDelegate:(BOOL)arg3;
 - (BOOL)_parseSingleLineResponse:(id)arg1 status:(long long)arg2 responseCode:(long long *)arg3 textRange:(struct _NSRange *)arg4 humanReadableText:(id *)arg5;

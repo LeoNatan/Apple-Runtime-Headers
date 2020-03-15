@@ -20,12 +20,12 @@
     UICollectionViewLayout *__transitionLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setTransitionLayout:) UICollectionViewLayout *_transitionLayout; // @synthesize _transitionLayout=__transitionLayout;
 @property(nonatomic) __weak id <PUOneUpPhotosSharingTransitionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PUOneUpPhotosSharingTransitionContext *oneUpPhotosSharingTransitionContext; // @synthesize oneUpPhotosSharingTransitionContext=_oneUpPhotosSharingTransitionContext;
 @property(nonatomic) __weak UIViewController<PUOneUpAssetTransitionViewController> *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) __weak UIViewController<PUOneUpPhotosSharingTransitionViewController><PUOneUpAssetTransitionViewController> *sharingTransitionViewController; // @synthesize sharingTransitionViewController=_sharingTransitionViewController;
-- (void).cxx_destruct;
 - (void)animateDismissTransition;
 - (void)animatePresentTransition;
 

@@ -15,10 +15,10 @@
     NSMutableDictionary *_fileURLsByKey;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSMutableDictionary *fileURLsByKey; // @synthesize fileURLsByKey=_fileURLsByKey;
 @property(copy, nonatomic) NSString *preferredExtension; // @synthesize preferredExtension=_preferredExtension;
 @property(copy, nonatomic) NSString *directoryPath; // @synthesize directoryPath=_directoryPath;
-- (void).cxx_destruct;
 - (unsigned long long)_sizeOfFileAtURL:(id)arg1;
 - (id)_keyForFileName:(id)arg1;
 - (id)_filePathForKey:(id)arg1;

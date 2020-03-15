@@ -77,11 +77,12 @@
 + (id)fetchHashSaltFromJournalUsingImpoExpoService:(id)arg1;
 + (id)hashPrimaryKey:(id)arg1 withSalt:(id)arg2;
 + (id)hashPrimaryKey:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL removeOldRecordsNow; // @synthesize removeOldRecordsNow=_removeOldRecordsNow;
 @property(nonatomic) BOOL delegateToProxyAnalytics; // @synthesize delegateToProxyAnalytics=_delegateToProxyAnalytics;
-- (void).cxx_destruct;
 - (void)performPersistentStoreHealthCheckComplete:(id)arg1 error:(id)arg2;
 - (void)_trainModelAndScore:(BOOL)arg1;
+- (void)_performPeriodicTasks:(BOOL)arg1;
 - (void)_awdCaptureIn:(id)arg1 replyQueue:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_awdCaptureHistorical:(id)arg1 replyQueue:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_awdCaptureInstant:(id)arg1 replyQueue:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -136,6 +137,7 @@
 - (void)_handleRouteClosing:(struct __NStatSource *)arg1;
 - (void)_handleRouteData:(struct __NStatSource *)arg1;
 - (_Bool)_shouldAcceptRouteSource:(struct __NStatSource *)arg1;
+- (BOOL)_radioTechnologyTypeIsNonLTECellular:(unsigned char)arg1;
 - (id)_mapRadioTechnologyTypeToString:(unsigned char)arg1;
 - (void)_setRadioTechnology:(unsigned char)arg1 forInterfaceType:(long long)arg2;
 - (void)_actUponLoadedLqmChangeFrom:(int)arg1 to:(int)arg2 onInterfaceType:(long long)arg3;

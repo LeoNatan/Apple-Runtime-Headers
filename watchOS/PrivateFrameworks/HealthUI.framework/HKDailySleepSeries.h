@@ -14,9 +14,9 @@
     HKStrokeStyle *_selectedStrokeStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKStrokeStyle *selectedStrokeStyle; // @synthesize selectedStrokeStyle=_selectedStrokeStyle;
 @property(retain, nonatomic) HKStrokeStyle *unselectedStrokeStyle; // @synthesize unselectedStrokeStyle=_unselectedStrokeStyle;
-- (void).cxx_destruct;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (_Bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (float)_maximumYForCoordinate:(id)arg1;

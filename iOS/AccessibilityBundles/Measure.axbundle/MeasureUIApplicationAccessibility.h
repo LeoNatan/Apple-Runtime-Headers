@@ -13,7 +13,9 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (void)_accessibilityLoadAccessibilityInformation;
 - (_Bool)accessibilityPerformMagicTap;
+- (long long)_accessibilityOrientationForCompareGeometry;
 
 @end
 

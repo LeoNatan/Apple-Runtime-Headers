@@ -18,12 +18,12 @@
     NSButton *_zoomOutButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSButton *zoomOutButton; // @synthesize zoomOutButton=_zoomOutButton;
 @property(retain, nonatomic) NSButton *zoomInButton; // @synthesize zoomInButton=_zoomInButton;
 @property(retain, nonatomic) NSSlider *zoomSlider; // @synthesize zoomSlider=_zoomSlider;
 @property(retain, nonatomic) NSStackView *zoomStackView; // @synthesize zoomStackView=_zoomStackView;
 @property __weak id <CNPhotoLikenessEditorZoomDelegate> zoomDelegate; // @synthesize zoomDelegate=_zoomDelegate;
-- (void).cxx_destruct;
 - (void)setZoomFraction:(double)arg1;
 - (void)zoomOut:(id)arg1;
 - (void)zoomIn:(id)arg1;

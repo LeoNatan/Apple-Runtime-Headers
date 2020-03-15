@@ -18,13 +18,13 @@
     struct CGAffineTransform _depthTransform;
 }
 
+- (void).cxx_destruct;
 @property(retain) PVImageBuffer *alphaMaskImageBuffer; // @synthesize alphaMaskImageBuffer=_alphaMaskImageBuffer;
 @property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) AVDepthData *depthData; // @synthesize depthData=_depthData;
 @property(readonly, nonatomic) struct opaqueCMSampleBuffer *colorSampleBuffer; // @synthesize colorSampleBuffer=_colorSampleBuffer;
 @property(nonatomic) struct CGAffineTransform depthTransform; // @synthesize depthTransform=_depthTransform;
 @property(nonatomic) struct CGAffineTransform colorTransform; // @synthesize colorTransform=_colorTransform;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PVImageBuffer *colorImageBuffer;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 presentationTimeStamp;
 - (void)dealloc;

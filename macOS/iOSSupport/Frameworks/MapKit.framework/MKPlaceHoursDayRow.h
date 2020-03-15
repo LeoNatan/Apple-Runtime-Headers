@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_topAnchorToTopLabelBaseline;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *topAnchorToTopLabelBaseline; // @synthesize topAnchorToTopLabelBaseline=_topAnchorToTopLabelBaseline;
 @property(retain, nonatomic) MKPlaceHoursView *hoursView; // @synthesize hoursView=_hoursView;
-- (void).cxx_destruct;
 - (void)hoursViewDidUpdate:(id)arg1;
 - (void)_setUpConstraints;
 - (void)_setUpViewsForPlaceHoursDayRow;

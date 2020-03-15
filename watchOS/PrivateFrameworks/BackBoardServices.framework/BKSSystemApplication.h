@@ -20,10 +20,10 @@
     double _systemIdleSleepInterval;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double systemIdleSleepInterval; // @synthesize systemIdleSleepInterval=_systemIdleSleepInterval;
 @property(nonatomic) _Bool waitForDataMigration; // @synthesize waitForDataMigration=_waitForDataMigration;
 @property(nonatomic) __weak id <BKSSystemApplicationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)clientIsAliveForWatchdog:(id)arg1;
 - (void)sendActions:(id)arg1;
 - (void)finishBooting;

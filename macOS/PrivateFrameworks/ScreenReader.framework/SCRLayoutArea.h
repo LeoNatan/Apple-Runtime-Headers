@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSString *_lastPositionDescription;
 }
 
-@property(retain, nonatomic) NSString *lastPositionDescription; // @synthesize lastPositionDescription=_lastPositionDescription;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *lastPositionDescription; // @synthesize lastPositionDescription=_lastPositionDescription;
 - (BOOL)canStopInteracting;
 - (BOOL)canFocusOutInto;
 - (BOOL)isContainerElement;

@@ -51,10 +51,10 @@
     BOOL _removedHistoryItemsArePendingSave;
 }
 
-@property(nonatomic) unsigned long long numberOfDevicesInSyncCircle; // @synthesize numberOfDevicesInSyncCircle=_numberOfDevicesInSyncCircle;
-@property(nonatomic) BOOL removedHistoryItemsArePendingSave; // @synthesize removedHistoryItemsArePendingSave=_removedHistoryItemsArePendingSave;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long numberOfDevicesInSyncCircle; // @synthesize numberOfDevicesInSyncCircle=_numberOfDevicesInSyncCircle;
+@property(nonatomic) BOOL removedHistoryItemsArePendingSave; // @synthesize removedHistoryItemsArePendingSave=_removedHistoryItemsArePendingSave;
 - (void)fetchDateOfNextPermittedSaveChangesAttemptWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetForAccountChangeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

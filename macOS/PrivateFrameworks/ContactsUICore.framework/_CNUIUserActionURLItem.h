@@ -14,9 +14,9 @@
     CNFuture *_url;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isSensitive; // @synthesize isSensitive=_isSensitive;
 @property(readonly, nonatomic) CNFuture *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

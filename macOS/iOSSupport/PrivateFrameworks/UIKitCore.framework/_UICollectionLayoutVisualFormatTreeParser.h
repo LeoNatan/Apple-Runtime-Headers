@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)treeParserWithVisualFormats:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *visualFormats; // @synthesize visualFormats=_visualFormats;
 @property(retain, nonatomic) _UICollectionLayoutVisualTreeNode *root; // @synthesize root=_root;
-- (void).cxx_destruct;
 - (id)_normalizeFractionsOfLayoutVFLItemsForItems:(id)arg1;
 - (id)_nodeForParser:(id)arg1 withParserDict:(id)arg2 size:(id)arg3;
 - (id)_parse;

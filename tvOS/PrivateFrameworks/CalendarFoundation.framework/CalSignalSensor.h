@@ -15,9 +15,9 @@
     CDUnknownBlockType _fireBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType fireBlock; // @synthesize fireBlock=_fireBlock;
 @property(nonatomic) int signal; // @synthesize signal=_signal;
-- (void).cxx_destruct;
 - (void)_shutDownSource;
 - (void)stopSensor;
 - (void)startSensor;

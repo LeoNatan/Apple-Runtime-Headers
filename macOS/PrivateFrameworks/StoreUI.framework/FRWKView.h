@@ -33,6 +33,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSDate *loadStartTime; // @synthesize loadStartTime=_loadStartTime;
 @property(retain, nonatomic) NSURL *loadingURL; // @synthesize loadingURL=_loadingURL;
 @property(retain) NSData *resumeBuyData; // @synthesize resumeBuyData=_resumeBuyData;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) FRJSRootObject *rootObject; // @synthesize rootObject=_rootObject;
 @property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(nonatomic) __weak id <FRWKViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_immediateActionAnimationControllerForHitTestResult:(struct OpaqueWKHitTestResult *)arg1 withType:(unsigned int)arg2 userData:(void *)arg3;
 - (struct WKPageContextMenuClientV3)_contextMenuClient;
 - (struct WKPageUIClientV5)_uiClient;

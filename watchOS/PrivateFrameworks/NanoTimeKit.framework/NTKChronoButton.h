@@ -21,13 +21,13 @@
     struct UIEdgeInsets _touchEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets touchEdgeInsets; // @synthesize touchEdgeInsets=_touchEdgeInsets;
 @property(retain, nonatomic) UIColor *ringSwapColor; // @synthesize ringSwapColor=_ringSwapColor;
 @property(retain, nonatomic) UIColor *ringColor; // @synthesize ringColor=_ringColor;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(retain, nonatomic) UIColor *swapColor; // @synthesize swapColor=_swapColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_updateColors;
 - (void)_performTouchAnimationThroughColor:(id)arg1 toColor:(id)arg2 toRingColor:(id)arg3;

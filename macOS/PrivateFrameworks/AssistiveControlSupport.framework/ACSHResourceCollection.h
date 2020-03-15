@@ -18,12 +18,12 @@
 }
 
 + (BOOL)isUserResource:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *_lock; // @synthesize _lock=__lock;
 @property(retain, nonatomic) NSMutableDictionary *_images; // @synthesize _images=__images;
 @property(retain, nonatomic) NSMutableDictionary *_unsavedAssets; // @synthesize _unsavedAssets=__unsavedAssets;
 @property(retain, nonatomic) NSMutableDictionary *_directoryFileWrapperByAssetIdentifier; // @synthesize _directoryFileWrapperByAssetIdentifier=__directoryFileWrapperByAssetIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *_assetDictionaryByAssetIdentifier; // @synthesize _assetDictionaryByAssetIdentifier=__assetDictionaryByAssetIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryForSaving;
 - (id)assetsMatchingType:(unsigned long long)arg1;

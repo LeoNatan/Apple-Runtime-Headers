@@ -46,12 +46,12 @@
 + (id)_clearInstantiatedPublishersByPersonID;
 + (id)existingPublisherForPersonID:(id)arg1;
 + (id)publisherForPersonID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) int publishBatchSize; // @synthesize publishBatchSize=_publishBatchSize;
 @property(nonatomic) long long publishTargetByteCount; // @synthesize publishTargetByteCount=_publishTargetByteCount;
 @property(retain, nonatomic) NSURL *storageProtocolURL; // @synthesize storageProtocolURL=_storageProtocolURL;
 @property(nonatomic) MSMediaStreamDaemon *daemon; // @synthesize daemon=_daemon;
 @property(nonatomic) id <MSPublisherDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_isInRetryState;
 - (void)stop;
 - (void)abort;

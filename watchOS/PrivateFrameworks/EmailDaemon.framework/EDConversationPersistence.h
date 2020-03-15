@@ -29,11 +29,11 @@
 + (id)tablesAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)conversationsTableName;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDUbiquitousConversationManager *conversationManager; // @synthesize conversationManager=_conversationManager;
 @property(readonly, nonatomic) __weak EDPersistenceDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)flaggedConversationsChangedBetweenStartAnchor:(long long)arg1 endAnchor:(long long)arg2;
 - (void)setNewPreviousSyncAnchorForDailyExport:(long long)arg1;
 - (long long)currentSyncAnchorForDailyExport;

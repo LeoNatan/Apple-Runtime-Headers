@@ -15,10 +15,10 @@
     NSString *_network;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *network; // @synthesize network=_network;
 @property(readonly, nonatomic) NSDate *finaleDate; // @synthesize finaleDate=_finaleDate;
 @property(readonly, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
 

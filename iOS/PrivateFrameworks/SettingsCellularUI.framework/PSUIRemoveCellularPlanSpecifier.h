@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     PSListController *_hostController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool popViewControllerOnPlanDeletion; // @synthesize popViewControllerOnPlanDeletion=_popViewControllerOnPlanDeletion;
 @property(nonatomic) __weak PSListController *hostController; // @synthesize hostController=_hostController;
 @property(retain, nonatomic) PSUICellularPlanManagerCache *planManagerCache; // @synthesize planManagerCache=_planManagerCache;
 @property(retain, nonatomic) CTCellularPlanManager *cellularPlanManager; // @synthesize cellularPlanManager=_cellularPlanManager;
 @property(retain, nonatomic) PSUICellularPlanUniversalReference *planReference; // @synthesize planReference=_planReference;
-- (void).cxx_destruct;
 - (void)removeCellularPlanConfirmed:(id)arg1;
 - (void)removeCellularPlan:(id)arg1;
 - (void)alignLeft;

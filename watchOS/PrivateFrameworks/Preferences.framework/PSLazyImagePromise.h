@@ -21,8 +21,8 @@
 + (id)imagePromiseWithLoadBlock:(CDUnknownBlockType)arg1;
 + (id)imagePromiseWithImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imagePromiseWithImagePath:(id)arg1;
-@property(readonly, nonatomic, getter=isImageLoaded) _Bool imageLoaded; // @synthesize imageLoaded=_imageLoaded;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isImageLoaded) _Bool imageLoaded; // @synthesize imageLoaded=_imageLoaded;
 @property(readonly, nonatomic) UIImage *image;
 - (void)loadImage;
 

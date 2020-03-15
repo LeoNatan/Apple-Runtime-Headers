@@ -22,6 +22,7 @@
 
 + (int)segmentedControlIndexForPriority:(int)arg1;
 + (int)numberOfExclamationMarksForPriority:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NRKChangeRequest *changeRequest; // @synthesize changeRequest=_changeRequest;
 @property(retain, nonatomic) UIColor *parentListColor; // @synthesize parentListColor=_parentListColor;
 @property(nonatomic) unsigned int displayOrder; // @synthesize displayOrder=_displayOrder;
@@ -30,7 +31,6 @@
 @property(nonatomic) unsigned int parentIndex; // @synthesize parentIndex=_parentIndex;
 @property(retain, nonatomic) id clientLinkage; // @synthesize clientLinkage=_clientLinkage;
 @property(retain, nonatomic) NSString *reminderId; // @synthesize reminderId=_reminderId;
-- (void).cxx_destruct;
 - (id)description;
 - (void)removeChangeRequest:(id)arg1;
 - (int)compareCompletedChange:(id)arg1 toChange:(id)arg2;

@@ -12,13 +12,17 @@ __attribute__((visibility("hidden")))
 @interface UIScrollEvent : UIEvent
 {
     NSMapTable *_gestureRecognizersByWindow;
-    struct CGPoint _screenLocation;
+    struct CGPoint _sceneReferenceLocation;
+    unsigned long long _lastDeliveredPhase;
     unsigned long long _phase;
 }
 
-@property(readonly) unsigned long long phase; // @synthesize phase=_phase;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long phase; // @synthesize phase=_phase;
 - (id)_windows;
+- (void)_sendCancelToGestureRecognizer:(id)arg1;
+- (BOOL)_hasDeliveredTerminalPhase;
+- (void)_wasDeliveredToGestureRecognizers;
 - (BOOL)_sendEventToGestureRecognizer:(id)arg1;
 - (void)_removeGestureRecognizersFromWindows;
 - (void)_removeGestureRecognizer:(id)arg1;

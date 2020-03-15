@@ -17,9 +17,9 @@
 }
 
 + (id)os_log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)contactLikenessesModel;
 - (id)initWithPersonaStore:(id)arg1 contact:(id)arg2;

@@ -25,6 +25,7 @@
     NSArray *_managedViewControllers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *managedViewControllers; // @synthesize managedViewControllers=_managedViewControllers;
 @property(retain, nonatomic) CSLNavigationStackContainerView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) BSEventQueueLock *transactionLock; // @synthesize transactionLock=_transactionLock;
@@ -34,7 +35,6 @@
 @property(nonatomic, getter=isBackgroundColorFrozen) _Bool backgroundColorFrozen; // @synthesize backgroundColorFrozen=_backgroundColorFrozen;
 @property(nonatomic) __weak id <CSLNavigationStackControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSArray *viewControllers; // @synthesize viewControllers=_viewControllers;
-- (void).cxx_destruct;
 - (id)navigationStackContainerView:(id)arg1 pairedViewForManagedView:(id)arg2;
 - (_Bool)navigationStackContainerView:(id)arg1 isViewManaged:(id)arg2;
 - (void)transactionDidComplete:(id)arg1;

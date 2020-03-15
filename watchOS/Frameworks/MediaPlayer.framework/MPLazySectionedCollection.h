@@ -23,9 +23,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) id <MPLazySectionedCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <MPLazySectionedCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)_updateCacheWithObject:(id)arg1 atIndexPath:(id)arg2;
 - (id)_cachedObjectAtIndexPath:(id)arg1;
 - (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;

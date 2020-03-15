@@ -15,8 +15,8 @@
     NSMutableArray *_services;
 }
 
-@property(readonly, nonatomic) NSMutableArray *services; // @synthesize services=_services;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *services; // @synthesize services=_services;
 - (id)appLayouts;
 - (id)serviceBundleIdentifiers;
 - (id)serviceForBundleIdentifier:(id)arg1;

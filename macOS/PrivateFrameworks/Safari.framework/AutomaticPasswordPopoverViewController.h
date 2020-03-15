@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     NSButton *_useStrongPasswordButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSButton *useStrongPasswordButton; // @synthesize useStrongPasswordButton=_useStrongPasswordButton;
 @property(nonatomic) __weak NSButton *doNotUseButton; // @synthesize doNotUseButton=_doNotUseButton;
 @property(nonatomic) __weak NSStackView *rootStackView; // @synthesize rootStackView=_rootStackView;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSStackView *popoverTitleStackView; // @synthesize popoverTitleStackView=_popoverTitleStackView;
 @property(nonatomic) __weak NSBox *horizontalDivider; // @synthesize horizontalDivider=_horizontalDivider;
 @property(nonatomic) __weak id <AutomaticPasswordPopoverViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_useStrongPasswordButtonTitle;
 - (id)_doNotUseStrongPasswordButtonTitle;
 - (void)_notifyDelegateToUseStrongPassword:(BOOL)arg1;

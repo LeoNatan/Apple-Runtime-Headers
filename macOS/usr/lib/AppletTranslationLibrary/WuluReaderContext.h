@@ -6,28 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, NSMutableArray, NSNumber;
+@class NSData, NSMutableArray, NSNumber;
 
 __attribute__((visibility("hidden")))
 @interface WuluReaderContext : NSObject
 {
     NSData *_file15;
     NSData *_file17;
-    NSMutableArray *_file18_array;
-    NSMutableArray *_file1E_array;
-    NSDictionary *_file1A_dict;
+    NSMutableArray *_file18;
+    NSMutableArray *_file1E;
+    NSMutableArray *_file1A;
     NSNumber *_balance;
 }
 
 + (id)readAllFiles:(id)arg1 debug:(BOOL)arg2 error:(id *)arg3;
-@property(nonatomic) NSNumber *balance; // @synthesize balance=_balance;
-@property(nonatomic) NSDictionary *file1A_dict; // @synthesize file1A_dict=_file1A_dict;
-@property(nonatomic) NSMutableArray *file1E_array; // @synthesize file1E_array=_file1E_array;
-@property(nonatomic) NSMutableArray *file18_array; // @synthesize file18_array=_file18_array;
-@property(nonatomic) NSData *file17; // @synthesize file17=_file17;
-@property(nonatomic) NSData *file15; // @synthesize file15=_file15;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *balance; // @synthesize balance=_balance;
+@property(retain, nonatomic) NSMutableArray *file1A; // @synthesize file1A=_file1A;
+@property(retain, nonatomic) NSMutableArray *file1E; // @synthesize file1E=_file1E;
+@property(retain, nonatomic) NSMutableArray *file18; // @synthesize file18=_file18;
+@property(retain, nonatomic) NSData *file17; // @synthesize file17=_file17;
+@property(retain, nonatomic) NSData *file15; // @synthesize file15=_file15;
 - (id)readBalance:(id)arg1 error:(id *)arg2;
 - (id)readBinary:(id)arg1 sfi:(unsigned char)arg2 error:(id *)arg3;
+- (id)readExtendedRecord:(id)arg1 sfi:(unsigned char)arg2 index:(unsigned char)arg3 error:(id *)arg4;
 - (id)readRecord:(id)arg1 sfi:(unsigned char)arg2 index:(unsigned char)arg3 error:(id *)arg4;
 - (void)dumpAllFiles;
 - (id)readAll:(id)arg1 debug:(BOOL)arg2 error:(id *)arg3;

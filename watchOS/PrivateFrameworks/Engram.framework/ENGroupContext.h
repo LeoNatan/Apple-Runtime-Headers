@@ -20,11 +20,11 @@
 
 + (id)_missingItemsInNotFoundError:(id)arg1 remainingErrors:(id *)arg2;
 + (id)_errorWithNotFoundItems:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ENGroupContextDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) NSMutableArray *middlewares; // @synthesize middlewares=_middlewares;
 @property(retain, nonatomic) ENAccountIdentity *accountIdentity; // @synthesize accountIdentity=_accountIdentity;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_qDidReceiveRegistrationIdentityUpdate;
 - (void)_qDidReceiveDecryptionFailureForGroup:(id)arg1;
 - (void)_qDidUpdateGroup:(id)arg1 withGroup:(id)arg2;

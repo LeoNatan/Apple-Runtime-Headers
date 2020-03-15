@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _WKAutomationSession *_automationSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _WKAutomationSession *automationSession; // @synthesize automationSession=_automationSession;
 @property(nonatomic) BOOL userInteractionAllowed; // @synthesize userInteractionAllowed=_userInteractionAllowed;
-- (void).cxx_destruct;
 - (long long)_automationSession:(id)arg1 currentPresentationForWebView:(id)arg2;
 - (long long)_automationSession:(id)arg1 typeOfCurrentJavaScriptDialogForWebView:(id)arg2;
 - (void)_automationSession:(id)arg1 setUserInput:(id)arg2 forCurrentJavaScriptDialogForWebView:(id)arg3;
@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldWhitelistUserAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;
 - (BOOL)shouldAllowAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;
 - (void)_allowsRemoteAutomationChanged;
+- (void)_webDriverSecurePreferencesDidUpdate;
 @property(readonly, copy, nonatomic) WKPreferences *preferencesForAutomation;
 @property(nonatomic) BOOL allowsRemoteAutomation;
 - (BOOL)_uninstallAutomationSession;
@@ -50,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)_lockAllAutomationWindowsForUserInteraction;
 - (void)_unlockAllAutomationWindowsForUserInteraction;
 - (void)_closeAllAutomationWindowsSkippingInspected:(BOOL)arg1;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

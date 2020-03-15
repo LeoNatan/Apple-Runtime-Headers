@@ -25,6 +25,7 @@
     REFeature *_biasFeature;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float varianceEpsilon; // @synthesize varianceEpsilon=_varianceEpsilon;
 @property(nonatomic) float initialProbability; // @synthesize initialProbability=_initialProbability;
 @property(nonatomic) float trainingSimulationExploreBias; // @synthesize trainingSimulationExploreBias=_trainingSimulationExploreBias;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) REFeature *selectionFeature; // @synthesize selectionFeature=_selectionFeature;
 @property(retain, nonatomic) REFeature *identificationFeature; // @synthesize identificationFeature=_identificationFeature;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;

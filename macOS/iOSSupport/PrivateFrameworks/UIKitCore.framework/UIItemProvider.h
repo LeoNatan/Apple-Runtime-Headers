@@ -13,8 +13,8 @@
     NSDictionary *_teamMetadata;
 }
 
-@property(copy, nonatomic) NSDictionary *teamMetadata; // @synthesize teamMetadata=_teamMetadata;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *teamMetadata; // @synthesize teamMetadata=_teamMetadata;
 @property(copy, nonatomic) NSNumber *size;
 @property(copy, nonatomic) NSDate *modificationDate;
 @property(copy, nonatomic) NSString *name;
@@ -43,6 +43,7 @@
 - (void)registerDataRepresentationForTypeIdentifier:(id)arg1 loadHandler:(CDUnknownBlockType)arg2;
 - (void)registerFileRepresentationForTypeIdentifier:(id)arg1 fileOptions:(long long)arg2 options:(id)arg3 loadHandler:(CDUnknownBlockType)arg4;
 - (void)registerDataRepresentationForTypeIdentifier:(id)arg1 options:(id)arg2 loadHandler:(CDUnknownBlockType)arg3;
+- (id)loadObjectOfClass:(Class)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

@@ -17,11 +17,11 @@
     NSLayoutConstraint *_glyphViewRightAnchor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *glyphViewRightAnchor; // @synthesize glyphViewRightAnchor=_glyphViewRightAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *glyphViewLeftAnchor; // @synthesize glyphViewLeftAnchor=_glyphViewLeftAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *balloonImageViewRightAnchor; // @synthesize balloonImageViewRightAnchor=_balloonImageViewRightAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *balloonImageViewLeftAnchor; // @synthesize balloonImageViewLeftAnchor=_balloonImageViewLeftAnchor;
-- (void).cxx_destruct;
 - (int)semanticContentAttribute;
 - (void)prepareForDisplay;
 - (void)setOrientation:(BOOL)arg1;

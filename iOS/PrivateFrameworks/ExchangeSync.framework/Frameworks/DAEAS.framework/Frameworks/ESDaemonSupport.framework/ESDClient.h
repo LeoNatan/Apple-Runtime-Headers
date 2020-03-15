@@ -27,6 +27,7 @@
 }
 
 + (id)clientsToInterrogate;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *agentMonitoringTokens; // @synthesize agentMonitoringTokens=_agentMonitoringTokens;
 @property(retain, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(retain, nonatomic) NSMutableDictionary *actionDelegatesById; // @synthesize actionDelegatesById=_actionDelegatesById;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *clientUniqueID; // @synthesize clientUniqueID=_clientUniqueID;
 @property(retain, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(readonly, nonatomic) _Bool persistent; // @synthesize persistent=_persistent;
-- (void).cxx_destruct;
 - (id)rawConnection;
 - (void)_dispatchMessage:(id)arg1;
 - (void)_clientDiedWithReason:(id)arg1;

@@ -17,10 +17,10 @@
 
 + (id)bitmapsForViews:(id)arg1 scaleFactor:(double)arg2;
 + (id)bitmapForView:(id)arg1 scaleFactor:(double)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) CDStruct_c519178c padding; // @synthesize padding=_padding;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)createBitmap;
 @property(readonly, nonatomic) UIImage *image;
 - (id)initWithView:(id)arg1 scale:(double)arg2;

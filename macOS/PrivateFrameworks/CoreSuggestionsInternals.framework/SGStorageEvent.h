@@ -28,6 +28,7 @@
 }
 
 + (id)storageEventFromEntity:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL curated; // @synthesize curated=_curated;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSData *structuredData; // @synthesize structuredData=_structuredData;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSString *sourceKey; // @synthesize sourceKey=_sourceKey;
 @property(readonly, nonatomic) SGDuplicateKey *duplicateKey; // @synthesize duplicateKey=_duplicateKey;
 @property(readonly, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
-- (void).cxx_destruct;
 - (id)poiFilters;
 - (unsigned long long)geocodingMode;
 - (id)geocodedEventWithStartDate:(id)arg1 startTimeZone:(id)arg2 endDate:(id)arg3 endTimeZone:(id)arg4 locations:(id)arg5;

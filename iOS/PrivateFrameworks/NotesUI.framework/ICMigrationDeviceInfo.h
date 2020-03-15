@@ -22,6 +22,7 @@
 }
 
 + (void)logDeviceList:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isIOSDevice; // @synthesize isIOSDevice=_isIOSDevice;
 @property(readonly, nonatomic) _Bool isOSXDevice; // @synthesize isOSXDevice=_isOSXDevice;
 @property(readonly, nonatomic) _Bool upgradableToIOS13; // @synthesize upgradableToIOS13=_upgradableToIOS13;
@@ -29,8 +30,7 @@
 @property(readonly, nonatomic) _Bool upgradedToIOS13; // @synthesize upgradedToIOS13=_upgradedToIOS13;
 @property(readonly, nonatomic) _Bool upgraded; // @synthesize upgraded=_upgraded;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
-- (id)attributedStringWithAttributes:(id)arg1 asteriskColor:(struct UIColor *)arg2;
+- (id)attributedStringWithAttributes:(id)arg1 asteriskColor:(id)arg2;
 - (id)loggableDescription;
 - (_Bool)shouldBeHidden;
 - (id)copyWithZone:(struct _NSZone *)arg1;

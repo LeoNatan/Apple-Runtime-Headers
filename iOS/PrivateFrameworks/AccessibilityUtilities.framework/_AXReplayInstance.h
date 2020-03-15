@@ -25,6 +25,7 @@
 }
 
 + (id)replayBlock:(CDUnknownBlockType)arg1 name:(id)arg2 attempts:(long long)arg3 interval:(double)arg4 async:(_Bool)arg5 queue:(id)arg6 completion:(CDUnknownBlockType)arg7;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) id underlyingResult; // @synthesize underlyingResult=_underlyingResult;
 @property(retain, nonatomic) NSError *underlyingError; // @synthesize underlyingError=_underlyingError;
@@ -36,7 +37,6 @@
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy, nonatomic) CDUnknownBlockType replayBlock; // @synthesize replayBlock=_replayBlock;
-- (void).cxx_destruct;
 - (id)_genericFailError;
 - (void)_dispatchAsynchronously;
 - (void)_dispatchSynchronously;

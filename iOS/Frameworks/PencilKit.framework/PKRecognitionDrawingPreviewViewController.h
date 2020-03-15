@@ -17,10 +17,10 @@
     UIImageView *_imageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIImage *drawingImage; // @synthesize drawingImage=_drawingImage;
-- (void).cxx_destruct;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)scrollViewDidZoom:(id)arg1;
 - (void)centerImageView;

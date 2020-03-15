@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 + (id)animatingCell;
 + (id)cellNibForContacts;
 + (id)cellNibForMode:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic) _Bool gestureActivated; // @synthesize gestureActivated=_gestureActivated;
 @property(nonatomic) double lastScrollDirectionTimestamp; // @synthesize lastScrollDirectionTimestamp=_lastScrollDirectionTimestamp;
@@ -68,7 +69,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) long long context; // @synthesize context=_context;
 @property(retain, nonatomic) CNQuickAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)trackHighlight:(id)arg1;
 - (void)_animateActions:(id)arg1 fromIndex:(unsigned long long)arg2 withDelta:(long long)arg3 scrollDirection:(unsigned long long)arg4;
 - (void)trackSwipe:(id)arg1;

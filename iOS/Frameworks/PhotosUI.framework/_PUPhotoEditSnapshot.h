@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSData *_baseImageData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *baseImageData; // @synthesize baseImageData=_baseImageData;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) PHAdjustmentData *adjustmentData; // @synthesize adjustmentData=_adjustmentData;
 @property(nonatomic) long long workImageVersion; // @synthesize workImageVersion=_workImageVersion;
-- (void).cxx_destruct;
 - (id)_copyData:(id)arg1;
 
 @end

@@ -18,13 +18,13 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, copy, nonatomic) NSString *loggingKey; // @synthesize loggingKey=_loggingKey;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) long long destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) NSURLSession *URLSession; // @synthesize URLSession=_URLSession;
 @property(readonly, copy, nonatomic) NSURLRequest *URLRequest; // @synthesize URLRequest=_URLRequest;
-- (void).cxx_destruct;
 - (id)initWithURLRequest:(id)arg1 session:(id)arg2 destination:(long long)arg3 priority:(long long)arg4 loggingKey:(id)arg5 completion:(CDUnknownBlockType)arg6;
 
 @end

@@ -19,8 +19,8 @@
     id <SBPowerDownViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBPowerDownViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBPowerDownViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_resetScreenBrightness;
 - (void)_endTimeTrackingIncludingReportWithKey:(id)arg1;
 - (void)_incrementCountForKey:(id)arg1;

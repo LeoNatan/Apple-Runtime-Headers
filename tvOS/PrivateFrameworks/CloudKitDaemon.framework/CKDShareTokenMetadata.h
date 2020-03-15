@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSData *_privateTokenData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *privateTokenData; // @synthesize privateTokenData=_privateTokenData;
 @property(retain, nonatomic) NSData *publicTokenData; // @synthesize publicTokenData=_publicTokenData;
 @property(nonatomic) _Bool forceDSRefetch; // @synthesize forceDSRefetch=_forceDSRefetch;
 @property(retain, nonatomic) NSData *shortSharingTokenData; // @synthesize shortSharingTokenData=_shortSharingTokenData;
 @property(retain, nonatomic) NSString *routingKey; // @synthesize routingKey=_routingKey;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *shortSharingTokenHashData;
 @property(readonly, nonatomic) NSString *shortSharingToken;
 - (id)copyWithZone:(struct _NSZone *)arg1;

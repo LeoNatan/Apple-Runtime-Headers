@@ -25,6 +25,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool configurationRefreshed; // @synthesize configurationRefreshed=_configurationRefreshed;
 @property(nonatomic) unsigned char maximumTargets; // @synthesize maximumTargets=_maximumTargets;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) NSMutableSet *configuredTargets; // @synthesize configuredTargets=_configuredTargets;
 @property(readonly, nonatomic) __weak HMDHAPAccessory *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)_configureTargetAccessories:(id)arg1 reason:(id)arg2 targetAccessories:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_handleConfigureTargets:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)handleConfigureTargets:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;

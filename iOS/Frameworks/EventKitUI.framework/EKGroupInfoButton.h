@@ -13,8 +13,8 @@
     EKGroupInfo *_groupInfo;
 }
 
-@property __weak EKGroupInfo *groupInfo; // @synthesize groupInfo=_groupInfo;
 - (void).cxx_destruct;
+@property __weak EKGroupInfo *groupInfo; // @synthesize groupInfo=_groupInfo;
 
 @end
 

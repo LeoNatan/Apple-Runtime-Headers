@@ -23,6 +23,7 @@
     float _curRightBend;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float curRightBend; // @synthesize curRightBend=_curRightBend;
 @property(nonatomic) float curLeftBend; // @synthesize curLeftBend=_curLeftBend;
 @property(nonatomic) float rightShoulderAdjustment; // @synthesize rightShoulderAdjustment=_rightShoulderAdjustment;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSNumber *texArm; // @synthesize texArm=_texArm;
 @property(retain, nonatomic) NSNumber *texHandHour; // @synthesize texHandHour=_texHandHour;
 @property(retain, nonatomic) NSArray *texHandMnut; // @synthesize texHandMnut=_texHandMnut;
-- (void).cxx_destruct;
 
 @end
 

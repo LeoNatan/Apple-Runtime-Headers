@@ -23,8 +23,8 @@
     id <FBSynchronizedTransactionGroupDelegate> _synchronizationDelegate;
 }
 
-@property(nonatomic) __weak id <FBSynchronizedTransactionDelegate> synchronizationDelegate; // @synthesize synchronizationDelegate=_synchronizationDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FBSynchronizedTransactionDelegate> synchronizationDelegate; // @synthesize synchronizationDelegate=_synchronizationDelegate;
 - (void)synchronizedTransaction:(id)arg1 didCommitSynchronizedTransactions:(id)arg2;
 - (void)synchronizedTransaction:(id)arg1 willCommitSynchronizedTransactions:(id)arg2;
 - (void)synchronizedTransactionReadyToCommit:(id)arg1;

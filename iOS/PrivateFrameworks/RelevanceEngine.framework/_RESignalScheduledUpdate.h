@@ -15,10 +15,10 @@
     NSDate *_lastFireDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastFireDate; // @synthesize lastFireDate=_lastFireDate;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
-- (void).cxx_destruct;
 
 @end
 

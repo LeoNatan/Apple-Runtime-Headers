@@ -16,8 +16,8 @@
     unsigned long long _currentLocation;
 }
 
-@property(nonatomic) unsigned long long currentLocation; // @synthesize currentLocation=_currentLocation;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long currentLocation; // @synthesize currentLocation=_currentLocation;
 - (_Bool)handleEvent:(unsigned long long)arg1 withContext:(id)arg2;
 - (id)init;
 

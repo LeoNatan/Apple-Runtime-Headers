@@ -16,10 +16,10 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFWallpaperEditCollectionBuilder *wallpaperBuilder; // @synthesize wallpaperBuilder=_wallpaperBuilder;
 @property(copy, nonatomic) NSString *userNotes; // @synthesize userNotes=_userNotes;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)updateUserNotes;
 - (id)updateName;
 - (id)createHome;

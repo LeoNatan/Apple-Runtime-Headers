@@ -13,8 +13,8 @@
     NSButton *_appleLogoButton;
 }
 
-@property(retain) NSButton *appleLogoButton; // @synthesize appleLogoButton=_appleLogoButton;
 - (void).cxx_destruct;
+@property(retain) NSButton *appleLogoButton; // @synthesize appleLogoButton=_appleLogoButton;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

@@ -20,12 +20,12 @@
 + (id)_showMoreLocalizedString;
 + (id)_labelFont;
 + (id)_grayTextColor;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *originalLabelFontColor; // @synthesize originalLabelFontColor=_originalLabelFontColor;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
 @property(nonatomic) double leftInset; // @synthesize leftInset=_leftInset;
 @property(retain, nonatomic) NSArray *persistentConstraints; // @synthesize persistentConstraints=_persistentConstraints;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)_setText:(id)arg1 textColor:(id)arg2 spinnerEnabled:(_Bool)arg3;
 - (void)setAvailabilityRequestInProgressState;
 - (void)setShowMoreState;

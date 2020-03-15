@@ -19,14 +19,14 @@
     _Bool _gestureStartedInside;
     UIPanGestureRecognizer *_valueChangeGestureRecognizer;
     _UIEdgeFeedbackGenerator *_edgeFeedbackGenerator;
-    int _axis;
     double _continuousSliderCornerRadius;
+    unsigned long long _axis;
 }
 
-@property(readonly, nonatomic) UIView *valueIndicatorClippingView; // @synthesize valueIndicatorClippingView=_valueIndicatorClippingView;
-@property(nonatomic) int axis; // @synthesize axis=_axis;
-@property(nonatomic) double continuousSliderCornerRadius; // @synthesize continuousSliderCornerRadius=_continuousSliderCornerRadius;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *valueIndicatorClippingView; // @synthesize valueIndicatorClippingView=_valueIndicatorClippingView;
+@property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
+@property(nonatomic) double continuousSliderCornerRadius; // @synthesize continuousSliderCornerRadius=_continuousSliderCornerRadius;
 - (void)_endTrackingWithGestureRecognizer:(id)arg1;
 - (void)_continueTrackingWithGestureRecognizer:(id)arg1;
 - (void)_beginTrackingWithGestureRecognizer:(id)arg1;

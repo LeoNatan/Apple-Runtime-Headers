@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKImage *frontFaceImage; // @synthesize frontFaceImage=_frontFaceImage;
 @property(readonly, nonatomic) _Bool optionUnavailable; // @synthesize optionUnavailable=_optionUnavailable;
 @property(readonly, nonatomic) long long shippingTimeUnit; // @synthesize shippingTimeUnit=_shippingTimeUnit;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) unsigned long long minimumEstimatedShippingTime; // @synthesize minimumEstimatedShippingTime=_minimumEstimatedShippingTime;
 @property(retain, nonatomic) NSURL *frontFaceImageURL; // @synthesize frontFaceImageURL=_frontFaceImageURL;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

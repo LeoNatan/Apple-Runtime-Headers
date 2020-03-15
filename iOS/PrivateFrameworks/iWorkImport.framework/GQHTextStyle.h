@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 + (const char *)name;
 + (void)mapStyle:(id)arg1 style:(id)arg2 state:(id)arg3 isSpan:(_Bool)arg4;
 + (void)mapStyle:(id)arg1 style:(id)arg2 state:(id)arg3;
-+ (_Bool)platformGetDefaultLineHeight:(struct __CFString *)arg1 fontSize:(float)arg2 defLineHeight:(int *)arg3;
++ (_Bool)platformGetDefaultLineHeight:(struct __CTFont *)arg1 fontSize:(float)arg2 defLineHeight:(int *)arg3;
 + (struct __CFString *)platformCreateCssFontFamilyStringFromFontName:(struct __CFString *)arg1;
-+ (struct __CTFont *)createFontFromName:(struct __CFString *)arg1 size:(float)arg2;
++ (void)platformGetTraitsFromFont:(struct __CTFont *)arg1 hasBold:(_Bool *)arg2 hasItalic:(_Bool *)arg3;
 
 @end
 

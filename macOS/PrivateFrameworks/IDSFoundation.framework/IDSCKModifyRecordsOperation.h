@@ -14,9 +14,9 @@
 
 + (id)alloc;
 + (Class)__class;
+- (void).cxx_destruct;
 @property(nonatomic) long long savePolicy; // @synthesize savePolicy=_savePolicy;
 @property(copy, nonatomic) CDUnknownBlockType modifyRecordsCompletionBlock; // @synthesize modifyRecordsCompletionBlock=_modifyRecordsCompletionBlock;
-- (void).cxx_destruct;
 
 @end
 

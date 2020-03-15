@@ -28,13 +28,16 @@ __attribute__((visibility("hidden")))
     UISwipeActionController *_swipeController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UISwipeActionController *swipeController; // @synthesize swipeController=_swipeController;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(readonly, nonatomic) unsigned long long currentSwipeState; // @synthesize currentSwipeState=_currentSwipeState;
-- (void).cxx_destruct;
 - (void)_moveSwipedItemToOffset:(double)arg1 animated:(BOOL)arg2 usingSpringWithStiffness:(double)arg3 isTracking:(BOOL)arg4;
 - (CDStruct_8b31afb2)_currentSwipeInfoWithTargetOffset:(double)arg1 animated:(BOOL)arg2 usingSpringWithStiffness:(double)arg3;
 @property(readonly, nonatomic) CDStruct_db0d4e35 currentSwipeConfig;
+- (BOOL)_delegateWantsToDismissOnTouchDownForGestureRecognizer:(id)arg1;
+- (void)_cancelExistingSwipe;
+- (void)_cancelExistingSwipeForGestureBeganIfNecessary:(id)arg1;
 - (void)resetSwipe;
 - (void)initiateSwipeWithDirection:(unsigned long long)arg1 configuration:(id)arg2 location:(struct CGPoint)arg3 userInitiated:(BOOL)arg4;
 - (void)_swipeRecognizerEnded:(id)arg1 wasCancelled:(BOOL)arg2;

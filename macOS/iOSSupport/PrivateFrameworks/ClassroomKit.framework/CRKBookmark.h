@@ -19,10 +19,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)bookmarkFromDMFBookmark:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *childBookmarks; // @synthesize childBookmarks=_childBookmarks;
 @property(copy, nonatomic) NSString *urlString; // @synthesize urlString=_urlString;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

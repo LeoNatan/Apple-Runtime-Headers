@@ -15,8 +15,8 @@
     CDUnknownBlockType _preferredContentSizeDidChange;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType preferredContentSizeDidChange; // @synthesize preferredContentSizeDidChange=_preferredContentSizeDidChange;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType preferredContentSizeDidChange; // @synthesize preferredContentSizeDidChange=_preferredContentSizeDidChange;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)setPreferredContentSize:(struct CGSize)arg1;
 

@@ -42,12 +42,12 @@ __attribute__((visibility("hidden")))
     unsigned int mCurrentRowMaxColumnIndex;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
 @property(retain, nonatomic) CXNamespace *EXSpreadsheetRelationsNamespace; // @synthesize EXSpreadsheetRelationsNamespace=mEXSpreadsheetRelationsNamespace;
 @property(retain, nonatomic) CXNamespace *EXSpreadsheetDrawingNamespace; // @synthesize EXSpreadsheetDrawingNamespace=mEXSpreadsheetDrawingNamespace;
 @property(retain, nonatomic) CXNamespace *EXSpreadsheetMLNamespace; // @synthesize EXSpreadsheetMLNamespace=mEXSpreadsheetMLNamespace;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setupNSForXMLFormat:(int)arg1;
 - (BOOL)isCancelled;
 - (void)reportWorksheetWarning:(id)arg1;

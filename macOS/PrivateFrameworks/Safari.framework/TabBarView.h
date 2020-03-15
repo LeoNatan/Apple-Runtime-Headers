@@ -73,12 +73,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)accessibilityLabelForNumberOfTabs:(unsigned long long)arg1 andNumberOfPinnedTabs:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ButtonInTabSyncGroup> buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion; // @synthesize buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion=_buttonThatSyncsWithPlaceholderTabInEmptyUnpinnedRegion;
 @property(readonly, nonatomic) NSArray *tabButtons; // @synthesize tabButtons=_tabButtons;
 @property(copy, nonatomic) NSArray *tabBarViewItems; // @synthesize tabBarViewItems=_tabBarViewItems;
 @property(nonatomic) BOOL forcesActiveWindowState; // @synthesize forcesActiveWindowState=_forcesActiveWindowState;
 @property(nonatomic) __weak id <TabBarViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)button:(id)arg1 didSetHighlightStateToPressed:(BOOL)arg2 hovered:(BOOL)arg3;
 - (void)_toggleTransparencyIfNecessary;
 - (void)_accessibilityDisplayOptionsDidChange:(id)arg1;

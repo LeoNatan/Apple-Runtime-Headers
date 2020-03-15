@@ -17,10 +17,10 @@
     struct UIEdgeInsets touchInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canEncrypt; // @synthesize canEncrypt=_canEncrypt;
 @property(nonatomic) _Bool wantsEncryption; // @synthesize wantsEncryption=_wantsEncryption;
 @property(nonatomic) struct UIEdgeInsets touchInsets; // @synthesize touchInsets;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_closeLock;
 - (void)_openLock;

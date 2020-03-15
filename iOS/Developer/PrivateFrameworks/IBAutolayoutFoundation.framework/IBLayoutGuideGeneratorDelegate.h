@@ -18,8 +18,8 @@
     id <IBAutolayoutInfoProvider> _layoutInfo;
 }
 
-@property(readonly) id <IBAutolayoutInfoProvider> layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 - (void).cxx_destruct;
+@property(readonly) id <IBAutolayoutInfoProvider> layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 - (Class)symbolicLayoutConstantClassForLayoutGuideGenerator:(id)arg1;
 - (Class)layoutConstantClassForLayoutGuideGenerator:(id)arg1;
 - (long long)userInterfaceLayoutDirectionForLayoutGuideGenerator:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (id)atomWithEditRange:(struct _NSRange)arg1 replacementText:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *replacementText; // @synthesize replacementText=_replacementText;
 @property(nonatomic) struct _NSRange editRange; // @synthesize editRange=_editRange;
-- (void).cxx_destruct;
 - (_Bool)isEqualToEditScriptAtomRanged:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

@@ -12,9 +12,9 @@
     struct CGSize _preferredSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)commonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

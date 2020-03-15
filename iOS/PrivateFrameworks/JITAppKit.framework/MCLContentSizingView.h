@@ -14,8 +14,8 @@
     UIScrollView *_contentView;
 }
 
-@property(retain, nonatomic) UIScrollView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIScrollView *contentView; // @synthesize contentView=_contentView;
 - (struct CGSize)intrinsicContentSize;
 
 @end

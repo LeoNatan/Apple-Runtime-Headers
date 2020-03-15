@@ -23,6 +23,7 @@
     NSProgressIndicator *_spinner;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) NSButton *okButton; // @synthesize okButton=_okButton;
 @property(retain) NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
@@ -32,7 +33,6 @@
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
 @property(retain) NSWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)saveAccount:(id)arg1;
 - (void)cancel:(id)arg1;

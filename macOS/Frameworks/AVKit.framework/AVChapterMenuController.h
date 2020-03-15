@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSMenu *_menu;
 }
 
-@property(retain) NSMenu *menu; // @synthesize menu=_menu;
 - (void).cxx_destruct;
+@property(retain) NSMenu *menu; // @synthesize menu=_menu;
 - (void)_selection:(id)arg1;
 - (void)_updateMenu;
 - (void)setChapters:(id)arg1 selectedIndex:(long long)arg2;

@@ -23,6 +23,7 @@
 }
 
 + (Class)_histogramClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUHistogram *luminance; // @synthesize luminance=_luminance;
 @property(readonly, nonatomic) NUHistogram *blue; // @synthesize blue=_blue;
 @property(readonly, nonatomic) NUHistogram *green; // @synthesize green=_green;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) long long sampleCount; // @synthesize sampleCount=_sampleCount;
 @property(readonly, nonatomic) CDStruct_59a221c9 range; // @synthesize range=_range;
 @property(readonly, nonatomic) long long binCount; // @synthesize binCount=_binCount;
-- (void).cxx_destruct;
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)immutableCopyWithZone:(struct _NSZone *)arg1;

@@ -21,10 +21,10 @@
     WBSHistoryDeletionPlan *_deletionPlan;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryDeletionPlan *deletionPlan; // @synthesize deletionPlan=_deletionPlan;
 @property(readonly, nonatomic) NSSet *itemsToDiscard; // @synthesize itemsToDiscard=_itemsToDiscard;
 @property(readonly, nonatomic) NSSet *itemsToKeep; // @synthesize itemsToKeep=_itemsToKeep;
-- (void).cxx_destruct;
 - (id)_itemsToDiscard;
 - (void)execute;
 - (void)prepare;

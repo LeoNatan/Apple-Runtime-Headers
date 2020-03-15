@@ -15,8 +15,8 @@
 }
 
 + (id)sharedFormatter;
-@property(readonly, nonatomic) long long localWeightUnit; // @synthesize localWeightUnit=_localWeightUnit;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long localWeightUnit; // @synthesize localWeightUnit=_localWeightUnit;
 - (id)stringFromWeightValue:(double)arg1 inUnit:(long long)arg2;
 - (id)stringFromWeightInKilograms:(id)arg1;
 - (void)_updateRoundingIncrement;

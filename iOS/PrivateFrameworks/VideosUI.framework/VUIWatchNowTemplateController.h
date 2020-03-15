@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIImageView *_gradientImageView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUpNextFocused) _Bool upNextFocused; // @synthesize upNextFocused=_upNextFocused;
 @property(nonatomic) _Bool shouldFocusUpNext; // @synthesize shouldFocusUpNext=_shouldFocusUpNext;
 @property(retain, nonatomic) UIImageView *gradientImageView; // @synthesize gradientImageView=_gradientImageView;
 @property(retain, nonatomic) VUIWatchNowTemplateBackgroundLayer *backgroundImageGradientLayer; // @synthesize backgroundImageGradientLayer=_backgroundImageGradientLayer;
 @property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
-- (void).cxx_destruct;
 - (_Bool)shouldAdjustForTabBarSafeAreaInsets;
 - (void)_updateBackgroundImage;
 - (id)_watchNowBannerScrollStop;
@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)showcaseFactorDidChange;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)focusUpNextAnimated:(_Bool)arg1;
+- (void)updateWithViewElement:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;

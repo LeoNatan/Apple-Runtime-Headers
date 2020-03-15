@@ -27,9 +27,9 @@
     long long _intent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_intent, setter=_setIntent:) long long intent; // @synthesize intent=_intent;
 @property(nonatomic, getter=_retainExistingSizingInfoForEstimates, setter=_setRetainExistingSizingInfoForEstimates:) _Bool retainExistingSizingInfoForEstimates; // @synthesize retainExistingSizingInfoForEstimates=_retainExistingSizingInfoForEstimates;
-- (void).cxx_destruct;
 @property(nonatomic, setter=_setInteractiveMovementTarget:) struct CGPoint interactiveMovementTarget;
 @property(copy, nonatomic, setter=_setTargetIndexPathsForInteractivelyMovingItems:) NSArray *targetIndexPathsForInteractivelyMovingItems;
 @property(copy, nonatomic, setter=_setPreviousIndexPathsForInteractivelyMovingItems:) NSArray *previousIndexPathsForInteractivelyMovingItems;

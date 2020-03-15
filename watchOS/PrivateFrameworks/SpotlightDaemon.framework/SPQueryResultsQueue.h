@@ -26,6 +26,7 @@
 + (id)findResultsQueueWithIdentifier:(id)arg1;
 + (void)stopTrackingResultsQueueWithIdentifier:(id)arg1;
 + (void)startTrackingResultsQueue:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shared; // @synthesize shared=_shared;
 @property(nonatomic) _Bool live; // @synthesize live=_live;
 @property(nonatomic) _Bool tracked; // @synthesize tracked=_tracked;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSMutableDictionary *jobs; // @synthesize jobs=_jobs;
 @property(nonatomic) struct __SIResultQueue *siResultsQueue; // @synthesize siResultsQueue=_siResultsQueue;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_processResults;
 - (void)resumeResults;
 - (void)pauseResults;

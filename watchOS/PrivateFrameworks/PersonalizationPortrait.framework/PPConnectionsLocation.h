@@ -41,6 +41,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (unsigned int)round:(double)arg1 toNearest:(double)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *lifetime; // @synthesize lifetime=_lifetime;
 @property(copy, nonatomic) NSDate *createdAt; // @synthesize createdAt=_createdAt;
 @property(copy, nonatomic) NSString *trigger; // @synthesize trigger=_trigger;
@@ -65,7 +66,6 @@
 @property(copy, nonatomic) NSString *fullFormattedAddress; // @synthesize fullFormattedAddress=_fullFormattedAddress;
 @property(copy, nonatomic) NSString *originatingBundleID; // @synthesize originatingBundleID=_originatingBundleID;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)isEqualToConnectionsLocation:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -20,9 +20,9 @@
 + (id)resultWithHistoricalDataRequests:(id)arg1 error:(id)arg2;
 + (id)success;
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSArray *historicalDataRequests; // @synthesize historicalDataRequests=_historicalDataRequests;
-- (void).cxx_destruct;
 - (_Bool)isEqualToResult:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

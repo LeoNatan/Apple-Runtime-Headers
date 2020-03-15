@@ -13,8 +13,8 @@
     EDPersistenceDatabaseConnection *_connection;
 }
 
-@property(retain, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (_Bool)performMigrationStep;
 - (id)actionFlagsTableSchema;
 - (id)actionLabelsTableSchema;

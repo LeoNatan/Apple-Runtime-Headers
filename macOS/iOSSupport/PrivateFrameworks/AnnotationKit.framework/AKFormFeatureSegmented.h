@@ -16,10 +16,10 @@
 }
 
 + (id)segments:(id)arg1 withEnclosingRect:(struct CGRect)arg2 baseline:(id)arg3 onPage:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *characterSegmentRects; // @synthesize characterSegmentRects=_characterSegmentRects;
 @property(nonatomic) struct CGRect enclosingRegionRect; // @synthesize enclosingRegionRect=_enclosingRegionRect;
 @property(retain, nonatomic) AKFormFeatureLine *baseline; // @synthesize baseline=_baseline;
-- (void).cxx_destruct;
 - (id)initWithCharacterSegments:(id)arg1 enclosingRect:(struct CGRect)arg2 baseline:(id)arg3 onPage:(id)arg4;
 
 @end

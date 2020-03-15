@@ -14,8 +14,8 @@
     _Bool _showSpinner;
 }
 
-@property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (id)initWithReuseIdentifier:(id)arg1;

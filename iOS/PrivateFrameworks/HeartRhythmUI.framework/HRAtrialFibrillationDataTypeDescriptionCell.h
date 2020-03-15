@@ -20,13 +20,13 @@
     NSArray *_unavailableVerticalConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *unavailableVerticalConstraints; // @synthesize unavailableVerticalConstraints=_unavailableVerticalConstraints;
 @property(retain, nonatomic) NSArray *availableVerticalConstraints; // @synthesize availableVerticalConstraints=_availableVerticalConstraints;
 @property(retain, nonatomic) HKAttributionTextView *settingsLinkTextView; // @synthesize settingsLinkTextView=_settingsLinkTextView;
 @property(retain, nonatomic) UITextView *settingsDescriptionTextView; // @synthesize settingsDescriptionTextView=_settingsDescriptionTextView;
 @property(retain, nonatomic) UITextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(nonatomic) _Bool featureAvailable; // @synthesize featureAvailable=_featureAvailable;
-- (void).cxx_destruct;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateTextForDescriptionTextView;

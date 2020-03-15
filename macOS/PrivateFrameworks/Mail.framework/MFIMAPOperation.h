@@ -15,9 +15,9 @@
 }
 
 + (id)newOperationWithSerializedData:(id)arg1 cursor:(unsigned long long *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL usesRealUids; // @synthesize usesRealUids=_usesRealUids;
 @property(readonly, copy, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char operationType;
 - (id)init;
 - (id)_initWithMailboxName:(id)arg1;

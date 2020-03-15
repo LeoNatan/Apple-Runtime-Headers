@@ -24,6 +24,7 @@
 + (struct CGSize)_desiredImageSizeForRequestedViewSizeInPixels:(struct CGSize)arg1 isAspectFill:(_Bool)arg2 srcAspectRatio:(double)arg3;
 + (id)_suppportedFullSizeFormatIDs;
 + (id)defaultFormatChooser;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLImageFormat *landscapeScrubberThumbnailFormat; // @synthesize landscapeScrubberThumbnailFormat=_landscapeScrubberThumbnailFormat;
 @property(readonly, nonatomic) PLImageFormat *portraitScrubberThumbnailFormat; // @synthesize portraitScrubberThumbnailFormat=_portraitScrubberThumbnailFormat;
 @property(readonly, nonatomic) PLImageFormat *masterThumbnailFormat; // @synthesize masterThumbnailFormat=_masterThumbnailFormat;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) PLImageFormat *indexSheetUnbakedFormat; // @synthesize indexSheetUnbakedFormat=_indexSheetUnbakedFormat;
 @property(readonly, nonatomic) PLImageFormat *fullScreenFormatForCurrentDevice; // @synthesize fullScreenFormatForCurrentDevice=_fullScreenFormatForCurrentDevice;
 @property(readonly, nonatomic) NSArray *supportedDerivativeFormats; // @synthesize supportedDerivativeFormats=_supportedDerivativeFormats;
-- (void).cxx_destruct;
 - (struct CGSize)posterThumbnailSize;
 - (void)chooseFormatsForSize:(struct CGSize)arg1 specificVersionType:(long long)arg2 contentMode:(long long)arg3 demoteFactor:(double)arg4 srcAspectRatio:(double)arg5 degradedFormatPolicy:(long long)arg6 hasAdjustmentsHandler:(CDUnknownBlockType)arg7 desiredImagePixelSize:(struct CGSize *)arg8 bestFormat:(id *)arg9 degradedFormat:(id *)arg10;
 - (id)_fastestDegradedFormatFallingBackFromFormat:(id)arg1;

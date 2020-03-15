@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(copy, nonatomic) NSDateComponents *exerciseIntervalComponents; // @synthesize exerciseIntervalComponents=_exerciseIntervalComponents;
 @property(copy, nonatomic) NSDateComponents *moveIntervalComponents; // @synthesize moveIntervalComponents=_moveIntervalComponents;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 + (id)loadFromClientStateInSession:(id)arg1;
 + (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) __weak NSObject<OS_dispatch_queue> *assertionQueue; // @synthesize assertionQueue=_assertionQueue;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<OS_dispatch_queue> *assertionQueue; // @synthesize assertionQueue=_assertionQueue;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)assertQueue;

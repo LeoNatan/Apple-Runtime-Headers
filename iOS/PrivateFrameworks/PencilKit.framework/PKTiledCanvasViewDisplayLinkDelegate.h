@@ -13,8 +13,8 @@
     PKTiledCanvasView *_view;
 }
 
-@property(nonatomic) __weak PKTiledCanvasView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PKTiledCanvasView *view; // @synthesize view=_view;
 - (void)display:(id)arg1;
 
 @end

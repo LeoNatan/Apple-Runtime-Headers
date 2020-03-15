@@ -17,9 +17,9 @@
     NSArray *_contacts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(nonatomic) __weak id <CNVCardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContactNavigationController *contactNavigationController;
 - (void)contactNavigationControllerDidCancel:(id)arg1;
 - (void)contactNavigationControllerDidComplete:(id)arg1;

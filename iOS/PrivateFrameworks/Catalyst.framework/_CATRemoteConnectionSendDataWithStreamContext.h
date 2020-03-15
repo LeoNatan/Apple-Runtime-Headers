@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _bytesWritten;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long bytesWritten; // @synthesize bytesWritten=_bytesWritten;
 @property(readonly, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(readonly, nonatomic) unsigned long long dataLength; // @synthesize dataLength=_dataLength;
 @property(readonly, copy, nonatomic) NSInputStream *stream; // @synthesize stream=_stream;
-- (void).cxx_destruct;
 - (id)bufferedDataWithError:(id *)arg1;
 @property(readonly, nonatomic) unsigned long long clientBytesWritten;
 @property(readonly, nonatomic) _Bool hasBytesRemaining;

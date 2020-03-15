@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _cornerPathBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType cornerPathBlock; // @synthesize cornerPathBlock=_cornerPathBlock;
 @property(readonly, nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(readonly, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (id)initWithBackgroundColor:(id)arg1 borderColor:(id)arg2 borderWidth:(double)arg3 cornerPathBlock:(CDUnknownBlockType)arg4;
 - (id)initWithBackgroundColor:(id)arg1 borderColor:(id)arg2 borderWidth:(double)arg3 cornerRadius:(double)arg4;
 

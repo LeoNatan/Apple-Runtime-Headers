@@ -22,6 +22,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *_maxWidthPerDevice; // @synthesize _maxWidthPerDevice=__maxWidthPerDevice;
 @property(readonly, nonatomic) long long maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(readonly, nonatomic) int ringBufferSize; // @synthesize ringBufferSize=_ringBufferSize;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) CDStruct_1b6d18a9 minimumFramerate; // @synthesize minimumFramerate=_minimumFramerate;
 @property(readonly, nonatomic) long long sampleBufferHeight; // @synthesize sampleBufferHeight=_sampleBufferHeight;
 @property(readonly, nonatomic) long long sampleBufferWidth; // @synthesize sampleBufferWidth=_sampleBufferWidth;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (long long)maxWidthForDevice:(long long)arg1;

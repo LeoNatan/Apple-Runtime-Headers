@@ -11,6 +11,7 @@
 @interface NSExtension (SafariServicesExtras)
 @property(readonly, nonatomic) NSUUID *sf_uniqueIdentifier;
 @property(readonly, nonatomic) BOOL sf_containingAppIsValidAppBundle;
+- (id)sf_untrustedCodeSigningDictionaryFromCodeRef:(struct __SecCode *)arg1 enforcingCodeSigningRequirement:(BOOL)arg2 skipValidityCheck:(BOOL)arg3 failedCodeSigningRequirements:(char *)arg4;
 - (id)sf_untrustedCodeSigningDictionaryFromCodeRef:(struct __SecCode *)arg1 enforcingCodeSigningRequirement:(BOOL)arg2 skipValidityCheck:(BOOL)arg3;
 - (id)sf_untrustedCodeSigningDictionaryEnforcingCodeSigningRequirement:(BOOL)arg1 skipValidityCheck:(BOOL)arg2;
 @property(readonly, nonatomic) struct __SecCode *sf_createUntrustedCodeRef;

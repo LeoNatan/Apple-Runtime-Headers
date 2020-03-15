@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *receivedAnchors; // @synthesize receivedAnchors=_receivedAnchors;
 @property(readonly, nonatomic) NSSet *removedAnchors; // @synthesize removedAnchors=_removedAnchors;
 @property(readonly, nonatomic) NSSet *addedAnchors; // @synthesize addedAnchors=_addedAnchors;
 @property(readonly, nonatomic) NSSet *updatedAnchors; // @synthesize updatedAnchors=_updatedAnchors;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)initWithCoder:(id)arg1;

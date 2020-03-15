@@ -6,19 +6,21 @@
 
 #import <RemoteManagementModel/RMModelPayloadBase.h>
 
-@class NSString;
+@class NSString, RMProtocolSynchronizationTokens;
 
 @interface RMProtocolPushMessage : RMModelPayloadBase
 {
     NSString *_messageEnrollmentToken;
+    RMProtocolSynchronizationTokens *_messageSyncTokens;
 }
 
-+ (id)requestWithEnrollmentToken:(id)arg1;
-@property(copy, nonatomic) NSString *messageEnrollmentToken; // @synthesize messageEnrollmentToken=_messageEnrollmentToken;
++ (id)requestWithEnrollmentToken:(id)arg1 syncTokens:(id)arg2;
 - (void).cxx_destruct;
+@property(copy, nonatomic) RMProtocolSynchronizationTokens *messageSyncTokens; // @synthesize messageSyncTokens=_messageSyncTokens;
+@property(copy, nonatomic) NSString *messageEnrollmentToken; // @synthesize messageEnrollmentToken=_messageEnrollmentToken;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)serializePayloadWithType:(short)arg1;
-- (_Bool)loadPayload:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
+- (id)serializeWithType:(short)arg1;
+- (_Bool)loadFromDictionary:(id)arg1 serializationType:(short)arg2 error:(id *)arg3;
 
 @end
 

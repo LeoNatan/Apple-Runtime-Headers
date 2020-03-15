@@ -24,10 +24,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSConcurrentObserverStore *screenOffFilteredObservers; // @synthesize screenOffFilteredObservers=_screenOffFilteredObservers;
 @property(retain, nonatomic) CSLSConcurrentObserverStore *filteredObservers; // @synthesize filteredObservers=_filteredObservers;
 @property(retain, nonatomic) CSLSConcurrentObserverStore *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
 - (void)wakeGestureRecognized:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1 observeFilteredGestures:(_Bool)arg2 includingWhenScreenOff:(_Bool)arg3;

@@ -24,6 +24,7 @@
 }
 
 + (id)cloudErrorBadgeImage;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize checkmarkImageSize; // @synthesize checkmarkImageSize=_checkmarkImageSize;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UIImageView *badgeView; // @synthesize badgeView=_badgeView;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) PXPersonImageRequest *imageRequest; // @synthesize imageRequest=_imageRequest;
 @property(nonatomic) unsigned long long presentationStatus; // @synthesize presentationStatus=_presentationStatus;
 @property(nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;
-- (void).cxx_destruct;
 - (void)_updateCellSizing;
 - (_Bool)_isRTL;
 @property(retain, nonatomic) UIImage *image;

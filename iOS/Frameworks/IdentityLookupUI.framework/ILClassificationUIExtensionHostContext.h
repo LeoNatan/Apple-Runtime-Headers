@@ -19,9 +19,9 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <ILClassificationUIExtensionHostContextDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (oneway void)setReadyForClassificationResponse:(_Bool)arg1;
 - (void)classificationResponseForRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;

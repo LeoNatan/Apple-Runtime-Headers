@@ -13,9 +13,9 @@
 }
 
 + (id)replyHolderWithReply:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType reply; // @synthesize reply=_reply;
 @property(nonatomic) _Bool hasCompletedReply; // @synthesize hasCompletedReply=_hasCompletedReply;
-- (void).cxx_destruct;
 
 @end
 

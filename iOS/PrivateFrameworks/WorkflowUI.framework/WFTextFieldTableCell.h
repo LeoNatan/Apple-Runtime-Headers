@@ -18,11 +18,11 @@
     UITextField *_textField;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(nonatomic) __weak WFTextFieldTableItem *tableItem; // @synthesize tableItem=_tableItem;
 - (id)textLabel;
-- (void).cxx_destruct;
 - (void)textDidChange:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)prepareForReuse;

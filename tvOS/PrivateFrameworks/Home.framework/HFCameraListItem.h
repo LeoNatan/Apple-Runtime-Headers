@@ -15,10 +15,10 @@
     HMRoom *_room;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool onlyShowsFavorites; // @synthesize onlyShowsFavorites=_onlyShowsFavorites;
 @property(readonly, nonatomic) HMRoom *room; // @synthesize room=_room;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)init;
 - (id)initWithHome:(id)arg1 room:(id)arg2;

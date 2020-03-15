@@ -17,7 +17,10 @@
     BOOL _OTAWordListCandidate;
     BOOL _regionalCandidate;
     BOOL _responseKitCandidate;
+    BOOL _bilingualCandidate;
+    BOOL _asIsCandidate;
     BOOL _continuousPathConversion;
+    BOOL _partialCandidate;
     NSString *_candidate;
     NSString *_input;
     NSNumber *_mecabraCandidatePointerValue;
@@ -28,7 +31,11 @@
 
 + (int)type;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
+- (BOOL)isPartialCandidate;
 @property(nonatomic, getter=isContinuousPathConversion) BOOL continuousPathConversion; // @synthesize continuousPathConversion=_continuousPathConversion;
+- (BOOL)isAsIsCandidate;
+- (BOOL)isBilingualCandidate;
 - (id)responseKitCategory;
 - (BOOL)isResponseKitCandidate;
 - (long long)cursorMovement;
@@ -41,7 +48,6 @@
 @property(retain, nonatomic) NSNumber *mecabraCandidatePointerValue; // @synthesize mecabraCandidatePointerValue=_mecabraCandidatePointerValue;
 - (id)input;
 - (id)candidate;
-- (void).cxx_destruct;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

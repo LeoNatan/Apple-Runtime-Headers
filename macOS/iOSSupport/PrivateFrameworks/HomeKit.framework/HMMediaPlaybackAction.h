@@ -26,11 +26,11 @@
 + (BOOL)supportsSecureCoding;
 + (id)mediaPlaybackActionWithProtoBuf:(id)arg1 home:(id)arg2;
 + (BOOL)isSupportedForHome:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPPlaybackArchive *playbackArchive; // @synthesize playbackArchive=_playbackArchive;
 @property(retain, nonatomic) NSNumber *volume; // @synthesize volume=_volume;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSSet *mediaProfiles; // @synthesize mediaProfiles=_mediaProfiles;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;

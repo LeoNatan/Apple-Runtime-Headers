@@ -22,10 +22,10 @@
     SBFloatingDockViewController *_floatingDockViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBFloatingDockViewController *floatingDockViewController; // @synthesize floatingDockViewController=_floatingDockViewController;
 @property(readonly, nonatomic) SBWallpaperController *wallpaperController; // @synthesize wallpaperController=_wallpaperController;
 @property(readonly, nonatomic) SBIconController *iconController; // @synthesize iconController=_iconController;
-- (void).cxx_destruct;
 - (void)configureIconView:(id)arg1 forIcon:(id)arg2;
 - (_Bool)isIconViewRecycled:(id)arg1;
 - (void)recycleIconView:(id)arg1;

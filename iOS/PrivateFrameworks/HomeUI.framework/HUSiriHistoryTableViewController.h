@@ -17,8 +17,8 @@
     HUSiriHistoryItemManager *_siriHistoryItemManager;
 }
 
-@property(retain, nonatomic) HUSiriHistoryItemManager *siriHistoryItemManager; // @synthesize siriHistoryItemManager=_siriHistoryItemManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HUSiriHistoryItemManager *siriHistoryItemManager; // @synthesize siriHistoryItemManager=_siriHistoryItemManager;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

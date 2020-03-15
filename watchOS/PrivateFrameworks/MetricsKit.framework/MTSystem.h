@@ -16,10 +16,10 @@
     id <MTEventFilter> _eventFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MTEventFilter> eventFilter; // @synthesize eventFilter=_eventFilter;
 @property(retain, nonatomic) MTEventRecorder *eventRecorder; // @synthesize eventRecorder=_eventRecorder;
 @property(retain, nonatomic) MTEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (id)initWithMetricsKit:(id)arg1;
 
 @end

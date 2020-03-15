@@ -18,10 +18,10 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *nonChaperonePairingAllowedNum; // @synthesize nonChaperonePairingAllowedNum=_nonChaperonePairingAllowedNum;
 @property(readonly, nonatomic) _Bool nonChaperonePairingAllowed; // @synthesize nonChaperonePairingAllowed=_nonChaperonePairingAllowed;
 @property(readonly, retain, nonatomic) NSData *pairingCertificateData; // @synthesize pairingCertificateData=_pairingCertificateData;
-- (void).cxx_destruct;
 - (id)payloadDescriptionKeyValueSections;
 - (id)description;
 - (id)subtitle2Description;

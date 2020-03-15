@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *mainColorWeights; // @synthesize mainColorWeights=_mainColorWeights;
 @property(retain, nonatomic) NSArray *mainColors; // @synthesize mainColors=_mainColors;
 @property(nonatomic) double remainingColorWeight; // @synthesize remainingColorWeight=_remainingColorWeight;
-- (void).cxx_destruct;
 - (void)enumerateMainColors:(CDUnknownBlockType)arg1;
 - (void)setMainColors:(id)arg1 weights:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

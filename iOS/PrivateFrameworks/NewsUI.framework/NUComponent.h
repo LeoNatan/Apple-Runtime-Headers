@@ -18,9 +18,9 @@
 }
 
 + (id)componentWithSizer:(id)arg1 node:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUSizer> sizer; // @synthesize sizer=_sizer;
 @property(readonly, nonatomic) id <NUNode> node; // @synthesize node=_node;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithSizer:(id)arg1 node:(id)arg2;
 

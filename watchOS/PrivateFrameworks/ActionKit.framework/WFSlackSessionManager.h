@@ -18,11 +18,11 @@
     NSMapTable *_progressTable;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *progressTable; // @synthesize progressTable=_progressTable;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(copy, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 task:(id)arg2 didSendBodyData:(long long)arg3 totalBytesSent:(long long)arg4 totalBytesExpectedToSend:(long long)arg5;
 - (void)sendRequest:(id)arg1 progress:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)uploadFile:(id)arg1 progress:(id)arg2 toChannel:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

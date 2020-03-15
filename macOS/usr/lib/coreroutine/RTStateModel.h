@@ -20,11 +20,11 @@
 + (double)deriveClusterThresholdFromUncClustAplha:(double)arg1 andUncClustBeta:(double)arg2;
 + (double)getOutOfStateConfidenceWithOneStatePred:(id)arg1;
 + (double)getDistfromLat:(double)arg1 fromLon:(double)arg2 toLat:(double)arg3 toLon:(double)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *stateModelLut; // @synthesize stateModelLut=_stateModelLut;
 @property(retain, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) RTStateModelEarliestLatestEl *earliestLatestStateModelEl; // @synthesize earliestLatestStateModelEl=_earliestLatestStateModelEl;
-- (void).cxx_destruct;
 - (void)collectMetricsWithIntervalSinceLastUpdate:(double)arg1;
 - (id)getPredictedLocationsOfInterestBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)getPredictedExitDatesFromLocation:(id)arg1 onDate:(id)arg2;

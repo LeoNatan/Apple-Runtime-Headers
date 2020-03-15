@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool onState; // @synthesize onState=_onState;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 onState:(_Bool)arg2;
 
 @end

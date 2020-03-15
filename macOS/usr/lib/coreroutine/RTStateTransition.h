@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSMutableArray *listTransitions; // @synthesize listTransitions=_listTransitions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *listTransitions; // @synthesize listTransitions=_listTransitions;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)count;

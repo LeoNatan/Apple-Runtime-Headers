@@ -27,9 +27,9 @@
 
 + (id)stringForDigest:(const array_019f9a10 *)arg1;
 + (void)readWithChannel:(id)arg1 handler:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) __weak TSPObjectContext *context; // @synthesize context=_context;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak TSPObjectContext *context; // @synthesize context=_context;
 - (void)removeFileAtPath:(id)arg1;
 - (id)checkForPersistenceWarningsWithPackageURL:(id)arg1;
 - (void)addData:(id)arg1;

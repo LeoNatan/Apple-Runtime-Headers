@@ -13,8 +13,8 @@
     NSArray *_subparts;
 }
 
-@property(copy, nonatomic) NSArray *subparts; // @synthesize subparts=_subparts;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *subparts; // @synthesize subparts=_subparts;
 @property(readonly, copy, nonatomic) NSString *title;
 - (id)pasteboardItems;
 - (Class)balloonViewClass;

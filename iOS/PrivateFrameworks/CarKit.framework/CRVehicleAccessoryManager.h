@@ -23,11 +23,11 @@
 + (id)managerInfoDataCache;
 + (id)vehicleAccessQueue;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CARObserverHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSMutableDictionary *vehiclesBySerialNumber; // @synthesize vehiclesBySerialNumber=_vehiclesBySerialNumber;
 @property(retain, nonatomic) EAAccessoryManager *accessoryManager; // @synthesize accessoryManager=_accessoryManager;
 @property(nonatomic) __weak id <CRVehicleAccessoryManagerDelegate> vehicleAccessoryDelegate; // @synthesize vehicleAccessoryDelegate=_vehicleAccessoryDelegate;
-- (void).cxx_destruct;
 - (id)vehicleAccessoryForiAPConnectionIdentifier:(unsigned long long)arg1;
 - (id)vehicleAccessoryForCertificateSerial:(id)arg1;
 - (id)connectedVehicleAccessories;

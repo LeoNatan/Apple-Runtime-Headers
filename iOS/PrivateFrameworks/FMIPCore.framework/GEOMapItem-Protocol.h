@@ -10,6 +10,7 @@
 @protocol GEOEncyclopedicInfo, GEOMapItem, GEOMapItemTransitInfo, GEOMapItemVenueInfo, GEOTransitAttribution, GEOTransitVehiclePosition;
 
 @protocol GEOMapItem <NSObject>
+- (NSArray *)_alternateSearchableNames;
 - (_Bool)_showSuggestAnEditButton;
 - (_Bool)_enableRAPLightweightFeedback;
 - (NSString *)_walletCategoryIdentifier;
@@ -175,6 +176,7 @@
 // Remaining properties
 @property(nonatomic, readonly) NSArray *additionalPlaceInfos;
 @property(nonatomic, readonly) int addressGeocodeAccuracy;
+@property(nonatomic, readonly) NSArray *alternateSearchableNames;
 @property(nonatomic, readonly) NSArray *amenities;
 @property(nonatomic, readonly) double areaInMeters;
 @property(nonatomic, readonly) GEOAssociatedApp *associatedApp;

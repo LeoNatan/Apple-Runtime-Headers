@@ -35,6 +35,7 @@
     NSObject<OS_dispatch_queue> *_imageLoadingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *imageLoadingQueue; // @synthesize imageLoadingQueue=_imageLoadingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *thumbnailLoadingQueue; // @synthesize thumbnailLoadingQueue=_thumbnailLoadingQueue;
 @property(nonatomic) int scrollOrientation; // @synthesize scrollOrientation=_scrollOrientation;
@@ -46,7 +47,6 @@
 @property(nonatomic) _Bool loadahead; // @synthesize loadahead=_loadahead;
 @property(nonatomic) __weak id <NPTOPhoto1UpViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NPTOPhoto1UpViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)gridCellZoomScaleDidChange:(id)arg1;
 - (void)gridCellDidEndScrolling:(id)arg1;
 - (void)gridCellDidBeginScrolling:(id)arg1;

@@ -13,8 +13,8 @@
     UIImage *_cachedSnapshotImage;
 }
 
-@property(retain, nonatomic) UIImage *cachedSnapshotImage; // @synthesize cachedSnapshotImage=_cachedSnapshotImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIImage *cachedSnapshotImage; // @synthesize cachedSnapshotImage=_cachedSnapshotImage;
 - (id)snapshotImage;
 - (double)contrastInRect:(struct CGRect)arg1 contrastWithinBoxes:(double *)arg2 contrastBetweenBoxes:(double *)arg3;
 - (id)averageColorInRect:(struct CGRect)arg1 withSmudgeRadius:(double)arg2;

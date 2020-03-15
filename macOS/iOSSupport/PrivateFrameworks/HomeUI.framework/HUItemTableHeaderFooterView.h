@@ -17,11 +17,11 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomSpacingConstraint; // @synthesize bottomSpacingConstraint=_bottomSpacingConstraint;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(nonatomic) BOOL includeBottomSpacing; // @synthesize includeBottomSpacing=_includeBottomSpacing;
 @property(retain, nonatomic) UITextView *messageTextView; // @synthesize messageTextView=_messageTextView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (double)_bottomSpacing;
 @property(nonatomic) unsigned long long numberOfLines;

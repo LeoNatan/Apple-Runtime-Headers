@@ -43,13 +43,13 @@
 
 + (id)logStringForPutItemState:(int)arg1;
 + (id)logStringForGetItemState:(int)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDone; // @synthesize isDone=_isDone;
 @property(retain, nonatomic) NSTimer *threadKeepAliveTimer; // @synthesize threadKeepAliveTimer=_threadKeepAliveTimer;
 @property(retain, nonatomic) NSThread *workThread; // @synthesize workThread=_workThread;
 @property(nonatomic) _Bool isMetricsGatheringEnabled; // @synthesize isMetricsGatheringEnabled=_isMetricsGatheringEnabled;
 @property(nonatomic) _Bool autoGenerateItemID; // @synthesize autoGenerateItemID=_autoGenerateItemID;
 @property(nonatomic) __weak id <MMCSEngineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned long long)_nextItemID;
 - (void)_initItemIDPersistence;
 - (void)_removeRequestorContext:(id)arg1;

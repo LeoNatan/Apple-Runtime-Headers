@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (void)_enumerateObservableKeysWithBlock:(CDUnknownBlockType)arg1;
 + (id)_defaultValues;
+- (void).cxx_destruct;
 @property(nonatomic) long long numberOfObservers; // @synthesize numberOfObservers=_numberOfObservers;
 @property(nonatomic) __weak id defaultsDidChangeObserver; // @synthesize defaultsDidChangeObserver=_defaultsDidChangeObserver;
 @property(retain, nonatomic) TVSPreferences *preferences; // @synthesize preferences=_preferences;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 @property(nonatomic) double chapterSnappingVelocityFactor;

@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *userAccountCount; // @synthesize userAccountCount=_userAccountCount;
 @property(copy, nonatomic) AFAccount *activeAccount; // @synthesize activeAccount=_activeAccount;
 @property(copy, nonatomic) NSString *assistantVersion; // @synthesize assistantVersion=_assistantVersion;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

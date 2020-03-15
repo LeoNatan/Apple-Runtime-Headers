@@ -25,6 +25,7 @@
 
 + (id)requestForClientType:(unsigned char)arg1;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long priorityValue; // @synthesize priorityValue=_priorityValue;
 @property BOOL stopOnAdvertisingAddressChange; // @synthesize stopOnAdvertisingAddressChange=_stopOnAdvertisingAddressChange;
 @property(retain) NSDictionary *advertisingOptions; // @synthesize advertisingOptions=_advertisingOptions;
@@ -33,7 +34,6 @@
 @property long long advertisingRate; // @synthesize advertisingRate=_advertisingRate;
 @property(retain, nonatomic) NSData *advertisingData; // @synthesize advertisingData=_advertisingData;
 @property(nonatomic) unsigned char clientType; // @synthesize clientType=_clientType;
-- (void).cxx_destruct;
 - (void)changePriorityValue:(long long)arg1;
 - (long long)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

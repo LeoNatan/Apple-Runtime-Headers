@@ -14,9 +14,9 @@
     NSMutableDictionary *_remainingSectionsBySectionQueueDescriptors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *remainingSectionsBySectionQueueDescriptors; // @synthesize remainingSectionsBySectionQueueDescriptors=_remainingSectionsBySectionQueueDescriptors;
 @property(retain, nonatomic) NSMutableArray *sectionQueueDescriptors; // @synthesize sectionQueueDescriptors=_sectionQueueDescriptors;
-- (void).cxx_destruct;
 - (void)removeSectionDescriptors:(id)arg1;
 - (id)sectionDescriptorsAtHeadsOfQueues;
 - (id)initWithSectionQueueDescriptors:(id)arg1;

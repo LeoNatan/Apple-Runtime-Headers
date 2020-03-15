@@ -20,11 +20,11 @@
 }
 
 + (Class)eventParametersType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *eventParameters; // @synthesize eventParameters=_eventParameters;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(nonatomic) long long dSID; // @synthesize dSID=_dSID;
 @property(retain, nonatomic) NSString *applicationMessageIdentifier; // @synthesize applicationMessageIdentifier=_applicationMessageIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

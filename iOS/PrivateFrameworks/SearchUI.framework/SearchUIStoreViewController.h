@@ -16,8 +16,8 @@
     id <SFFeedbackListener> _feedbackListener;
 }
 
-@property __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
 - (void).cxx_destruct;
+@property __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
 - (void)productViewController:(id)arg1 didFinishWithResult:(long long)arg2;
 - (id)initWithIdentifier:(id)arg1 feedbackListener:(id)arg2;
 

@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInsets;
 }
 
-@property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 - (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 - (void)flashScrollIndicators;
 - (void)_updateFontStyling;
 - (void)setPreferredMaxLayoutWidth:(double)arg1;

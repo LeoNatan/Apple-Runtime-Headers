@@ -29,11 +29,11 @@ __attribute__((visibility("hidden")))
     id <QLDownloadingItemViewControllerDelegate> _downloadingDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsLoadingPreviewSpinner; // @synthesize showsLoadingPreviewSpinner=_showsLoadingPreviewSpinner;
 @property(nonatomic) _Bool downloaded; // @synthesize downloaded=_downloaded;
 @property(nonatomic) __weak id <QLDownloadingItemViewControllerDelegate> downloadingDelegate; // @synthesize downloadingDelegate=_downloadingDelegate;
 @property(readonly, nonatomic) QLRoundProgressView *progressView; // @synthesize progressView=_progressView;
-- (void).cxx_destruct;
 - (void)_startDownloadOperation;
 - (void)_presentConnectivityAlert;
 - (void)_setDownloading:(_Bool)arg1 animated:(_Bool)arg2;

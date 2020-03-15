@@ -23,6 +23,7 @@
     NSDateComponents *_birthDateComponents;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int todayAsJulianDay; // @synthesize todayAsJulianDay=_todayAsJulianDay;
 @property(nonatomic) float projectionOffCoefficient; // @synthesize projectionOffCoefficient=_projectionOffCoefficient;
 @property(nonatomic) float fertilityEndCoefficient; // @synthesize fertilityEndCoefficient=_fertilityEndCoefficient;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSNumber *userReportedMenstruationLength; // @synthesize userReportedMenstruationLength=_userReportedMenstruationLength;
 @property(retain, nonatomic) NSNumber *julianDayOfUserReportedCycleLength; // @synthesize julianDayOfUserReportedCycleLength=_julianDayOfUserReportedCycleLength;
 @property(retain, nonatomic) NSNumber *userReportedCycleLength; // @synthesize userReportedCycleLength=_userReportedCycleLength;
-- (void).cxx_destruct;
 
 @end
 

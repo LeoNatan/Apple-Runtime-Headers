@@ -36,6 +36,7 @@
     id _activityAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain) id activityAssertion; // @synthesize activityAssertion=_activityAssertion;
 @property(retain) PCSLockAssertion *lockAssertion; // @synthesize lockAssertion=_lockAssertion;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
@@ -58,7 +59,6 @@
 @property long long timeoutValue; // @synthesize timeoutValue=_timeoutValue;
 @property struct __PCSLogContext *log; // @synthesize log=_log;
 @property struct _PCSIdentitySetData *set; // @synthesize set=_set;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)resetIdentities;
 - (id)init;

@@ -20,11 +20,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreDocumentSupport; // @synthesize ignoreDocumentSupport=_ignoreDocumentSupport;
 @property(readonly, nonatomic) NSSet *persistenceWarnings; // @synthesize persistenceWarnings=_persistenceWarnings;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSURL *packageURL; // @synthesize packageURL=_packageURL;
-- (void).cxx_destruct;
 - (id)persistenceWarningsForData:(id)arg1 isReadable:(_Bool)arg2 isExternal:(_Bool)arg3;
 - (void)performReadUsingAccessor:(CDUnknownBlockType)arg1;
 - (void)addPersistenceWarnings:(id)arg1;

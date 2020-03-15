@@ -15,9 +15,9 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *quotas; // @synthesize quotas=_quotas;
 @property(copy, nonatomic) NSString *quotaRootName; // @synthesize quotaRootName=_quotaRootName;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

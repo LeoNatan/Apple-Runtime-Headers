@@ -19,12 +19,12 @@
     CSLSPasscodePrompt *_passcodePrompt;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSPasscodePrompt *passcodePrompt; // @synthesize passcodePrompt=_passcodePrompt;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) unsigned int currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(retain, nonatomic) NSMutableArray *completedFields; // @synthesize completedFields=_completedFields;
 @property(retain, nonatomic) NSArray *providedFields; // @synthesize providedFields=_providedFields;
-- (void).cxx_destruct;
 - (void)passcodePromptWasDismissed:(id)arg1;
 - (void)passcodePromptDidBailForUserHasAlphanumericPasscode:(id)arg1;
 - (void)passcodePrompt:(id)arg1 didProvidePasscode:(id)arg2;

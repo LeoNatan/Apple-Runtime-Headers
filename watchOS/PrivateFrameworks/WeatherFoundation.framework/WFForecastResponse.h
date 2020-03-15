@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *rawAPIData; // @synthesize rawAPIData=_rawAPIData;
 @property(nonatomic) _Bool responseWasFromCache; // @synthesize responseWasFromCache=_responseWasFromCache;
 @property(nonatomic) unsigned int forecastType; // @synthesize forecastType=_forecastType;
 @property(retain, nonatomic) WFWeatherConditions *forecast; // @synthesize forecast=_forecast;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

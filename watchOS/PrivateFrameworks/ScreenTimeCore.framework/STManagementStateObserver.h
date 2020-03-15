@@ -20,13 +20,13 @@
 }
 
 + (void)createObserverWithDSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly) int screenTimeSettingsChangeNotifyToken; // @synthesize screenTimeSettingsChangeNotifyToken=_screenTimeSettingsChangeNotifyToken;
 @property(readonly) NSObject<OS_dispatch_queue> *screenTimeSettingsChangeQueue; // @synthesize screenTimeSettingsChangeQueue=_screenTimeSettingsChangeQueue;
 @property(retain) STManagementStateObserver *me; // @synthesize me=_me;
 @property(retain) STManagementState *managementState; // @synthesize managementState=_managementState;
 @property(readonly, copy) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property long long contactManagementState; // @synthesize contactManagementState=_contactManagementState;
-- (void).cxx_destruct;
 - (void)_screenTimeSettingsDidChange;
 - (void)dealloc;
 - (id)_initWithDSID:(id)arg1;

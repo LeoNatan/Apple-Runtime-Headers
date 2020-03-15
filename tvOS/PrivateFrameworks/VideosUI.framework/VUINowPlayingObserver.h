@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _updateObservationContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long updateObservationContext; // @synthesize updateObservationContext=_updateObservationContext;
 @property(nonatomic, getter=isObserving) _Bool observing; // @synthesize observing=_observing;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(nonatomic) __weak id <VUINowPlayingObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_notifyDelegateLatestObservationDidChange:(id)arg1;
 - (void)_updateLatestObservationWithBundleIdentifier:(id)arg1 playbackState:(unsigned int)arg2;
 - (void)_updateLatestObservation;

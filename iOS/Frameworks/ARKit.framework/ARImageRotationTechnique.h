@@ -16,6 +16,7 @@
 
 @property(readonly, nonatomic) long long mirrorMode; // @synthesize mirrorMode=_mirrorMode;
 @property(readonly, nonatomic) long long rotationAngle; // @synthesize rotationAngle=_rotationAngle;
+- (id)_fullDescription;
 - (_Bool)isEqual:(id)arg1;
 - (id)processData:(id)arg1;
 - (int)_rotateAccelerate:(struct __CVBuffer *)arg1 pOutputBuffer:(struct __CVBuffer **)arg2;

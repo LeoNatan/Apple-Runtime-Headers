@@ -45,6 +45,7 @@
     id _cropsCompositingFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id cropsCompositingFilter; // @synthesize cropsCompositingFilter=_cropsCompositingFilter;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
@@ -56,7 +57,6 @@
 @property(retain, nonatomic) UIColor *cornerColor; // @synthesize cornerColor=_cornerColor;
 @property(nonatomic) double cornerEdgeLength; // @synthesize cornerEdgeLength=_cornerEdgeLength;
 @property(nonatomic) double cornerAlpha; // @synthesize cornerAlpha=_cornerAlpha;
-- (void).cxx_destruct;
 - (void)_updateGeometryOrDeferLayoutUsingModelBounds;
 - (void)_updateGeometryForBounds:(struct CGRect)arg1 shouldUsePresentationValues:(_Bool)arg2;
 - (void)_setPresentationValue:(id)arg1 forKey:(id)arg2;

@@ -29,6 +29,7 @@
 + (double)preferredHeight;
 + (id)headingFont;
 + (struct NSDirectionalEdgeInsets)contentViewInsets;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutConstraint *chevronHiddenConstraint; // @synthesize chevronHiddenConstraint=_chevronHiddenConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *chevronVisibleConstraint; // @synthesize chevronVisibleConstraint=_chevronVisibleConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *contentViewTrailingConstraint; // @synthesize contentViewTrailingConstraint=_contentViewTrailingConstraint;
@@ -41,7 +42,6 @@
 @property(nonatomic) _Bool toolbarDisabled; // @synthesize toolbarDisabled=_toolbarDisabled;
 @property(copy, nonatomic) NSArray *contentClasses; // @synthesize contentClasses=_contentClasses;
 @property(nonatomic) __weak id <WFContentClassesToolbarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)accessibilityActivate;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;

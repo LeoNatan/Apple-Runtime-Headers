@@ -30,9 +30,9 @@
 
 + (id)contactImageForContact:(id)arg1 withDiameter:(float)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSeparatorHidden) _Bool separatorHidden; // @synthesize separatorHidden=_separatorHidden;
 @property(readonly, nonatomic) UIImageView *contactImageView; // @synthesize contactImageView=_contactImageView;
-- (void).cxx_destruct;
 - (id)_destinationStringForContact:(id)arg1;
 - (float)_scaleFactorForLabel:(id)arg1;
 - (void)_updateDynamicConstraints;

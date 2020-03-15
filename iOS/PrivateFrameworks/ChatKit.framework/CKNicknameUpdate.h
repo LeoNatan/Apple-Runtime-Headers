@@ -16,11 +16,11 @@
     unsigned long long _updateType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long updateType; // @synthesize updateType=_updateType;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) IMNickname *nickname; // @synthesize nickname=_nickname;
 @property(retain, nonatomic) IMHandle *handle; // @synthesize handle=_handle;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 

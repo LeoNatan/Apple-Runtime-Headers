@@ -16,11 +16,11 @@
     struct _NEFlow *_flowDivertFlow;
 }
 
+- (void).cxx_destruct;
 @property struct _NEFlow *flowDivertFlow; // @synthesize flowDivertFlow=_flowDivertFlow;
 @property(retain) NWParameters *internalParameters; // @synthesize internalParameters=_internalParameters;
 @property(retain) NWEndpoint *internalEndpoint; // @synthesize internalEndpoint=_internalEndpoint;
 @property(retain) NSUUID *clientID; // @synthesize clientID=_clientID;
-- (void).cxx_destruct;
 - (id)clientIdentifier;
 - (id)parameters;
 - (id)endpoint;

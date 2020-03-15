@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)overlayViewFromElement:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUICountDownProgressIndicator *autoPlayIndicator; // @synthesize autoPlayIndicator=_autoPlayIndicator;
 @property(retain, nonatomic) NSNumber *autoPlayDuration; // @synthesize autoPlayDuration=_autoPlayDuration;
 @property(nonatomic) _Bool isFocused; // @synthesize isFocused=_isFocused;
@@ -72,7 +73,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) CALayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) VUIUpNextOverlayLayout *overlayLayout; // @synthesize overlayLayout=_overlayLayout;
-- (void).cxx_destruct;
 - (void)textBadgeViewContentsUpdated:(id)arg1;
 - (void)reset;
 - (void)layoutSubviews;

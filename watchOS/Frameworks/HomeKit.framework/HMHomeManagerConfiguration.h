@@ -24,6 +24,7 @@
 
 + (id)defaultPrivateConfiguration;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(readonly) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 @property(readonly) HMFLocationAuthorization *locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
 @property(readonly) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
@@ -31,7 +32,6 @@
 @property(readonly) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) _Bool shouldConnect; // @synthesize shouldConnect=_shouldConnect;
 @property(nonatomic) unsigned int cachePolicy; // @synthesize cachePolicy=_cachePolicy;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) _Bool canUseCache;

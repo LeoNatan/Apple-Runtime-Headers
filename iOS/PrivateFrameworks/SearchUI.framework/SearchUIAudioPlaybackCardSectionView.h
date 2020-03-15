@@ -20,11 +20,11 @@
     SearchUIButton *_playButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
 @property(retain, nonatomic) SearchUISelectableTextView *subtitleView; // @synthesize subtitleView=_subtitleView;
 @property(retain, nonatomic) SearchUISelectableTextView *titleTextView; // @synthesize titleTextView=_titleTextView;
 @property(retain, nonatomic) SearchUILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
-- (void).cxx_destruct;
 - (void)selectableTextView:(id)arg1 presentViewController:(id)arg2;
 - (void)_updateStateFromCardSection:(id)arg1 animated:(_Bool)arg2;
 - (void)_playButtonPressed:(id)arg1;

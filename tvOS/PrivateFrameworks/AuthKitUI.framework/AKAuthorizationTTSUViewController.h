@@ -20,13 +20,13 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) LSApplicationProxy *applicationProxy; // @synthesize applicationProxy=_applicationProxy;
 @property(retain, nonatomic) NSTimer *footerTimer; // @synthesize footerTimer=_footerTimer;
 @property(retain, nonatomic) AKAuthorizationTTSUContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIImage *appIconImage; // @synthesize appIconImage=_appIconImage;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) __weak id <AKAuthorizationTTSUViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_startAuthorizationInProgressAnimation;
 - (void)authorizationInProgress;
 - (void)userInteractedWithEndorsingDevice;

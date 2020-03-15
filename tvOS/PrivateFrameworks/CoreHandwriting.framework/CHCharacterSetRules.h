@@ -47,6 +47,8 @@
 + (unsigned long long)expectedMinStrokeCount:(unsigned int)arg1;
 + (unsigned long long)expectedMaxStrokeCount:(unsigned int)arg1;
 + (id)sharedCharacterSetRules;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *_charSetRulesQueue; // @synthesize _charSetRulesQueue=__charSetRulesQueue;
 @property(nonatomic) map_fc1db4e5 signatureUniChar; // @synthesize signatureUniChar=_signatureUniChar;
 @property(nonatomic) map_0512c6b1 strokeMaxPenalties; // @synthesize strokeMaxPenalties=_strokeMaxPenalties;
@@ -75,8 +77,6 @@
 @property(retain, nonatomic) NSCharacterSet *digitCharSet; // @synthesize digitCharSet=_digitCharSet;
 @property(retain, nonatomic) NSCharacterSet *uppercaseCharSet; // @synthesize uppercaseCharSet=_uppercaseCharSet;
 @property(retain, nonatomic) NSCharacterSet *lowercaseCharSet; // @synthesize lowercaseCharSet=_lowercaseCharSet;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (unsigned long long)_expectedMaxDotCount:(unsigned int)arg1;
 - (unsigned long long)_characterType:(unsigned int)arg1;
 - (unsigned long long)_expectedMinStrokeCount:(unsigned int)arg1;

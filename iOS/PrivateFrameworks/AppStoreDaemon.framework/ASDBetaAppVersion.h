@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)versionWithBundleID:(id)arg1 bundleVersion:(id)arg2 andShortVersion:(id)arg3;
+- (void).cxx_destruct;
 @property(copy) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(copy) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

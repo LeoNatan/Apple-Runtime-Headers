@@ -18,8 +18,8 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property(nonatomic) __weak RPBroadcastHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak RPBroadcastHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (oneway void)updateBroadcastHandlerListenerEndpoint:(CDUnknownBlockType)arg1;
 - (oneway void)completeSetupWithBroadcastURL:(id)arg1;
 - (id)extensionObjectProxy;

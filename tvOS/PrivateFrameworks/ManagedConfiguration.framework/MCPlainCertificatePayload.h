@@ -19,11 +19,11 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, retain, nonatomic) NSData *certificateData; // @synthesize certificateData=_certificateData;
 @property(readonly, nonatomic) int dataEncoding; // @synthesize dataEncoding=_dataEncoding;
 @property(readonly, retain, nonatomic) NSString *certificateFileName; // @synthesize certificateFileName=_certificateFileName;
-- (void).cxx_destruct;
 - (_Bool)isIdentity;
 - (id)persistentResourceID;
 - (id)description;

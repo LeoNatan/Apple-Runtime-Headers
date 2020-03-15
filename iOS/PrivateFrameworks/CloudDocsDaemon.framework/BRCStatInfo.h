@@ -33,6 +33,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) BRCUserRowID *creatorRowID; // @synthesize creatorRowID=_creatorRowID;
 @property(retain, nonatomic) BRCItemID *trashPutBackParentID; // @synthesize trashPutBackParentID=_trashPutBackParentID;
 @property(retain, nonatomic) NSString *trashPutBackPath; // @synthesize trashPutBackPath=_trashPutBackPath;
@@ -50,7 +51,6 @@
 @property(nonatomic) BOOL type; // @synthesize type=_type;
 @property(nonatomic) BOOL state; // @synthesize state=_state;
 @property(retain, nonatomic) BRFieldCKInfo *ckInfo; // @synthesize ckInfo=_ckInfo;
-- (void).cxx_destruct;
 - (_Bool)isEtagEqual:(id)arg1;
 - (id)displayName;
 - (_Bool)isWritable;

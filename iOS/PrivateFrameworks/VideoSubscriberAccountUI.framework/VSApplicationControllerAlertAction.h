@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)styleFromString:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

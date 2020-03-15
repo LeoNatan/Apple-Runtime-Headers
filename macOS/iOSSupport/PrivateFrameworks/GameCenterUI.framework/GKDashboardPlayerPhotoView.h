@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
+#import <GameCenterUI/CNAvatarViewControllerDelegate-Protocol.h>
+
 @class CNAvatarViewController, GKPlayer, NSObject, UIImageView;
 @protocol GKPlayerAvatarViewDelegate;
 
-@interface GKDashboardPlayerPhotoView : UIView
+@interface GKDashboardPlayerPhotoView : UIView <CNAvatarViewControllerDelegate>
 {
     BOOL _useDarkerPlaceholder;
     BOOL _usingPlaceholder;
@@ -21,6 +23,7 @@
     UIImageView *_avatarImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *avatarImageView; // @synthesize avatarImageView=_avatarImageView;
 @property(retain, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property(nonatomic) long long avatarSize; // @synthesize avatarSize=_avatarSize;
@@ -29,11 +32,11 @@
 @property(nonatomic, getter=isUsingPlaceholder) BOOL usingPlaceholder; // @synthesize usingPlaceholder=_usingPlaceholder;
 @property(nonatomic) BOOL useDarkerPlaceholder; // @synthesize useDarkerPlaceholder=_useDarkerPlaceholder;
 @property(retain, nonatomic) GKPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)invalidatePhoto;
+- (void)didUpdateContentForAvatarViewController:(id)arg1;
 - (void)refreshImageWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setContactOnAvatarViewController:(id)arg1;
 - (void)setPlayer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

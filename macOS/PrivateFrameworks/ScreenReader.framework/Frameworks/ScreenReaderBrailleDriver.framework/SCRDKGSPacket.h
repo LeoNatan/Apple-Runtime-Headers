@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned char subCommand; // @synthesize subCommand=_subCommand;
 @property(nonatomic) unsigned char command; // @synthesize command=_command;
-- (void).cxx_destruct;
 
 @end
 

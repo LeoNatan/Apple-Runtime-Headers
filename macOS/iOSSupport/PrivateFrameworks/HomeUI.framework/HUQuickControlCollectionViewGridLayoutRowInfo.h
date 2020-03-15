@@ -16,11 +16,11 @@
     struct CGPoint _rowOrigin;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *itemLayouts; // @synthesize itemLayouts=_itemLayouts;
 @property(nonatomic) struct CGPoint rowOrigin; // @synthesize rowOrigin=_rowOrigin;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) unsigned long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
-- (void).cxx_destruct;
 
 @end
 

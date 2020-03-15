@@ -40,6 +40,7 @@
 
 + (_Bool)resetSyncShouldPreserveContentForReason:(unsigned long long)arg1;
 + (id)imageGeneratorForEnvironment:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType userRequestedBackupActivityCompletion; // @synthesize userRequestedBackupActivityCompletion=_userRequestedBackupActivityCompletion;
 @property(copy, nonatomic) CDUnknownBlockType migrationActivityCompletion; // @synthesize migrationActivityCompletion=_migrationActivityCompletion;
 @property(nonatomic) _Bool setupCompleted; // @synthesize setupCompleted=_setupCompleted;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) AVTCoreEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTStoreBackend> backend; // @synthesize backend=_backend;
-- (void).cxx_destruct;
 - (void)clientDidCheckInForServer:(id)arg1;
 - (void)mirroringHandler:(id)arg1 didResetSyncWithReason:(unsigned long long)arg2;
 - (void)mirroringHandler:(id)arg1 willResetSyncWithReason:(unsigned long long)arg2;

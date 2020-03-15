@@ -20,8 +20,8 @@
 
 + (void)retrieveFirstTimeExperienceTextWithReply:(CDUnknownBlockType)arg1;
 + (void)initialize;
-@property(nonatomic) _Bool infinitePatience; // @synthesize infinitePatience=_infinitePatience;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool infinitePatience; // @synthesize infinitePatience=_infinitePatience;
 - (void)dealloc;
 - (void)finishRanking:(id)arg1 blendingDuration:(double)arg2;
 - (void)deactivate;

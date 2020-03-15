@@ -44,6 +44,7 @@
 }
 
 + (void)warmupShaders;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) CAOpenGLLayer *cachedLayer; // @synthesize cachedLayer=_cachedLayer;
 @property(nonatomic) NSOpenGLContext *context; // @synthesize context=_context;
@@ -77,7 +78,6 @@
 @property(nonatomic) BOOL isDying; // @synthesize isDying=_isDying;
 @property(readonly, nonatomic) float currentTimeIndex; // @synthesize currentTimeIndex=_currentTimeIndex;
 @property(readonly, nonatomic) float currentTimeClock; // @synthesize currentTimeClock=_currentTimeClock;
-- (void).cxx_destruct;
 - (void)render;
 - (struct CGImage *)createRenderedFrameImageUsingAlpha:(BOOL)arg1;
 - (void)_warmupShaders;

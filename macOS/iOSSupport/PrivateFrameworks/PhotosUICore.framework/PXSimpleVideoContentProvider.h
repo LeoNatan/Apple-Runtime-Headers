@@ -15,12 +15,12 @@
     double _loadingProgress;
 }
 
+- (void).cxx_destruct;
 - (void)setLoadingProgress:(double)arg1;
 - (double)loadingProgress;
 - (id)contentIdentifier;
 - (void)setLoadingResult:(id)arg1;
 - (id)loadingResult;
-- (void).cxx_destruct;
 - (id)description;
 - (void)beginLoadingWithPriority:(long long)arg1;
 - (id)initWithPlayerItem:(id)arg1 contentIdentifier:(id)arg2;

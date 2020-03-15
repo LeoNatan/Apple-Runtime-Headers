@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSDate *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSNumber *playCount; // @synthesize playCount=_playCount;
 @property(retain, nonatomic) NSNumber *hasBeenPlayed; // @synthesize hasBeenPlayed=_hasBeenPlayed;
 @property(retain, nonatomic) NSNumber *bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
 @property(nonatomic) long long keyType; // @synthesize keyType=_keyType;
 @property(copy, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-- (void).cxx_destruct;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_uppDictionary;
 - (void)markAsUnwatched;

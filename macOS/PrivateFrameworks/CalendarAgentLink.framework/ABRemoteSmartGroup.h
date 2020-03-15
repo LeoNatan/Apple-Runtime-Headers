@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain) NSData *searchElement; // @synthesize searchElement=_searchElement;
 - (void).cxx_destruct;
+@property(retain) NSData *searchElement; // @synthesize searchElement=_searchElement;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

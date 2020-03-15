@@ -29,6 +29,7 @@
 + (id)_templateClientInterface;
 + (void)_whitelistClassesForBaseTemplateProvider:(id)arg1;
 + (id)_templateProvidingInterface;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPWindowProviding> windowProvider; // @synthesize windowProvider=_windowProvider;
 @property(retain, nonatomic) CPWindow *carWindow; // @synthesize carWindow=_carWindow;
 @property(retain, nonatomic) CPTemplate *lastPresentedTemplate; // @synthesize lastPresentedTemplate=_lastPresentedTemplate;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) CPTemplate *rootTemplate; // @synthesize rootTemplate=_rootTemplate;
 @property(nonatomic) _Bool prefersDarkUserInterfaceStyle; // @synthesize prefersDarkUserInterfaceStyle=_prefersDarkUserInterfaceStyle;
 @property(nonatomic) __weak id <CPInterfaceControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)bannerTappedWithIdentifier:(id)arg1;
 - (void)bannerDidDisappearWithIdentifier:(id)arg1;
 - (void)bannerDidAppearWithIdentifier:(id)arg1;
@@ -62,7 +62,6 @@
 - (void)_connectToListenerEndpoint:(id)arg1;
 - (void)_invalidate;
 - (void)_sceneConnect:(id)arg1;
-- (_Bool)_applicationHasMapsEntitlement;
 - (void)_presentAlertTemplate:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentActionSheetTemplate:(id)arg1 animated:(_Bool)arg2;
 - (void)_pushSearchTemplate:(id)arg1 presentationStyle:(unsigned long long)arg2 animated:(_Bool)arg3;

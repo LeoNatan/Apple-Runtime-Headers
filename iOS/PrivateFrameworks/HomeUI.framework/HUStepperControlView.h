@@ -24,6 +24,7 @@
 
 + (Class)valueClass;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(readonly, nonatomic) UILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) UIStepper *stepper; // @synthesize stepper=_stepper;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <HUControlViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_stepperValueChanged:(id)arg1;
 - (void)_stepperTouchUp:(id)arg1;
 - (void)_stepperTouchDown:(id)arg1;

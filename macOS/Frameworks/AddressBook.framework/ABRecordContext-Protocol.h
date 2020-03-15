@@ -11,7 +11,7 @@
 @protocol ABRecordContext <NSObject>
 - (NSArray *)lazyGroupsForGroups:(NSArray *)arg1;
 - (ABLazyGroup *)lazyGroupForGroup:(ABGroup *)arg1;
-- (BOOL)save;
+- (BOOL)saveWithOptions:(unsigned long long)arg1;
 - (BOOL)removeRecords:(NSArray *)arg1 error:(id *)arg2;
 - (BOOL)recordExistsForUniqueId:(NSString *)arg1;
 - (ABRecord *)recordForUniqueId:(NSString *)arg1;

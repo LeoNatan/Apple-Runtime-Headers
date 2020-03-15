@@ -31,6 +31,7 @@
 + (id)imageForActionType:(id)arg1;
 + (id)reuseIdentifier;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isContentViewLayoutConstraintsLoaded) _Bool contentViewLayoutConstraintsLoaded; // @synthesize contentViewLayoutConstraintsLoaded=_contentViewLayoutConstraintsLoaded;
 @property(nonatomic, getter=isContentViewLoaded) _Bool contentViewLoaded; // @synthesize contentViewLoaded=_contentViewLoaded;
 @property(retain, nonatomic) NSLayoutConstraint *transportNameLabelLeadingLayoutConstraint; // @synthesize transportNameLabelLeadingLayoutConstraint=_transportNameLabelLeadingLayoutConstraint;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) UIImage *transportImage; // @synthesize transportImage=_transportImage;
 @property(retain, nonatomic) UILabel *contactNameLabel; // @synthesize contactNameLabel=_contactNameLabel;
 @property(readonly, nonatomic) UIView *avatarContentView; // @synthesize avatarContentView=_avatarContentView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double transportNameLabelLeadingLayoutConstraintConstant;
 @property(readonly, nonatomic) double transportNameLabelBaselineLayoutConstraintConstant;
 @property(readonly, nonatomic) double contactNameLabelBaselineLayoutConstraintConstant;

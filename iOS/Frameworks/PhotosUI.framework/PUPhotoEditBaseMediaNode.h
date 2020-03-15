@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
     PUEditableMediaProviderAdjustmentDataNode *_adjustmentNode;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PUEditableMediaProviderAdjustmentDataNode *adjustmentNode; // @synthesize adjustmentNode=_adjustmentNode;
 @property(readonly, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
 @property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 - (void)runNode:(id)arg1 didCompleteWithError:(id)arg2;
 - (void)run;
 - (id)initWithAdjustmentNode:(id)arg1;

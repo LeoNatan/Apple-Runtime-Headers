@@ -19,6 +19,7 @@
     struct CGSize _lastLegendSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLegendSize; // @synthesize lastLegendSize=_lastLegendSize;
 @property(retain, nonatomic) HKLegendView *legendView; // @synthesize legendView=_legendView;
 @property(retain, nonatomic) NSArray *axesToShowSimultaneously; // @synthesize axesToShowSimultaneously=_axesToShowSimultaneously;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) _HKGraphViewSelectionContext *selectionContext; // @synthesize selectionContext=_selectionContext;
 @property(retain, nonatomic) NSMutableArray *currentSeries; // @synthesize currentSeries=_currentSeries;
 @property(retain, nonatomic) NSMutableDictionary *zoomToSeriesMapping; // @synthesize zoomToSeriesMapping=_zoomToSeriesMapping;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

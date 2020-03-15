@@ -4,21 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreTelephony/CoreTelephonyClientCallDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientCapabilitiesDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientCarrierBundleDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientCarrierServicesDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientDataDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientEmergencyDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientPNRDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientRegistrationDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientSMSDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientSubscriberDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientSuppServicesDelegate-Protocol.h>
-#import <CoreTelephony/CoreTelephonyClientVoicemailDelegate-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientCallDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientCapabilitiesDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientCarrierBundleDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientCarrierServicesDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientCellularUsagePolicyDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientDataDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientEmergencyDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientPNRDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientRegistrationDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientSMSDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientSubscriberDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientSuppServicesDelegateInternal-Protocol.h>
+#import <CoreTelephony/CoreTelephonyClientVoicemailDelegateInternal-Protocol.h>
 #import <CoreTelephony/NSObject-Protocol.h>
 
-@protocol CoreTelephonyClientDelegateProxyInterface <NSObject, CoreTelephonyClientDelegate, CoreTelephonyClientRegistrationDelegate, CoreTelephonyClientDataDelegate, CoreTelephonyClientSubscriberDelegate, CoreTelephonyClientEmergencyDelegate, CoreTelephonyClientSMSDelegate, CoreTelephonyClientVoicemailDelegate, CoreTelephonyClientPNRDelegate, CoreTelephonyClientCarrierBundleDelegate, CoreTelephonyClientCapabilitiesDelegate, CoreTelephonyClientSuppServicesDelegate, CoreTelephonyClientCallDelegate, CoreTelephonyClientCarrierServicesDelegate>
+@class NSString;
+
+@protocol CoreTelephonyClientDelegateProxyInterface <NSObject, CoreTelephonyClientDelegateInternal, CoreTelephonyClientCellularUsagePolicyDelegateInternal, CoreTelephonyClientRegistrationDelegateInternal, CoreTelephonyClientDataDelegateInternal, CoreTelephonyClientSubscriberDelegateInternal, CoreTelephonyClientEmergencyDelegateInternal, CoreTelephonyClientSMSDelegateInternal, CoreTelephonyClientVoicemailDelegateInternal, CoreTelephonyClientPNRDelegateInternal, CoreTelephonyClientCarrierBundleDelegateInternal, CoreTelephonyClientCapabilitiesDelegateInternal, CoreTelephonyClientSuppServicesDelegateInternal, CoreTelephonyClientCallDelegateInternal, CoreTelephonyClientCarrierServicesDelegateInternal>
+- (void)clientDidTriggerFault:(NSString *)arg1;
 @end
 

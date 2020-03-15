@@ -33,7 +33,7 @@
 - (BOOL)writeCombinedUpdates:(id *)arg1;
 - (BOOL)writeDomainUpdates:(id *)arg1;
 - (BOOL)writeData:(id)arg1 toFile:(id)arg2 error:(id *)arg3;
-- (void)populateDictionary:(id)arg1 withFeatures:(struct NSMutableDictionary *)arg2;
+- (void)populateDictionary:(id)arg1 withFeatures:(id)arg2;
 - (BOOL)createDirectoryAtURL:(id)arg1 error:(id *)arg2;
 - (void)setValue:(long long)arg1 feature:(id)arg2 domain:(id)arg3 level:(long long)arg4;
 - (void)createMutableDomainConfig:(id)arg1 level:(long long)arg2;
@@ -44,7 +44,7 @@
 - (void)loadDomain:(id)arg1 level:(long long)arg2;
 - (void)addFeaturesForDomain:(id)arg1 pathIndex:(int)arg2 fromURL:(id)arg3;
 - (void)loadCombinedDataForLevel:(long long)arg1;
-- (struct NSMutableDictionary *)makeFeatureDictionaryFrom:(id)arg1 forDomain:(id)arg2;
+- (id)makeFeatureDictionaryFrom:(id)arg1 forDomain:(id)arg2;
 - (id)fileURLForLevel:(long long)arg1 pathIndex:(int)arg2;
 - (id)fileURLForDomain:(id)arg1 pathIndex:(int)arg2;
 - (void)validateName:(id)arg1;

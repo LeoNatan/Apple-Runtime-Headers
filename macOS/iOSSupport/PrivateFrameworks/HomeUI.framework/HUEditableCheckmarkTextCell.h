@@ -30,6 +30,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *checkmarkTapRecognizer; // @synthesize checkmarkTapRecognizer=_checkmarkTapRecognizer;
 @property(retain, nonatomic) NSArray *dynamicConstraints; // @synthesize dynamicConstraints=_dynamicConstraints;
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
@@ -42,7 +43,6 @@
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (id)accessoryView;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_checkmarkTapped:(id)arg1;
 - (void)updateUIWithAnimation:(BOOL)arg1;

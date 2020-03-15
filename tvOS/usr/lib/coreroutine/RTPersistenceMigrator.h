@@ -22,6 +22,7 @@
     NSManagedObjectModel *_nextModel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSManagedObjectModel *nextModel; // @synthesize nextModel=_nextModel;
 @property unsigned long long state; // @synthesize state=_state;
 @property(readonly) __weak id <RTPersistenceDelegate> delegate; // @synthesize delegate=_delegate;
@@ -30,7 +31,6 @@
 @property(readonly) _Bool didVacuumStore; // @synthesize didVacuumStore=_didVacuumStore;
 @property(readonly) NSDate *migrationEndDate; // @synthesize migrationEndDate=_migrationEndDate;
 @property(readonly) NSDate *migrationStartDate; // @synthesize migrationStartDate=_migrationStartDate;
-- (void).cxx_destruct;
 - (void)__cleanupAfterImportWithStore:(id)arg1 coordinator:(id)arg2;
 - (unsigned long long)__executeImportStepWithSourceStore:(id)arg1 sourceCoordinator:(id)arg2 destinationStore:(id)arg3 destinationCoordinator:(id)arg4 model:(id)arg5;
 - (unsigned long long)__prepareImportStepWithSourceStore:(id)arg1 sourceCoordinator:(id)arg2 destinationStore:(id)arg3 destinationCoordinator:(id)arg4 model:(id)arg5 allowMigration:(_Bool)arg6;

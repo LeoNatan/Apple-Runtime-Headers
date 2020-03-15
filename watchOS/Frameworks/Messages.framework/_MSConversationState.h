@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *draftAssetArchives; // @synthesize draftAssetArchives=_draftAssetArchives;
 @property(retain, nonatomic) NSArray *recipientAddresses; // @synthesize recipientAddresses=_recipientAddresses;
 @property(retain, nonatomic) NSString *senderAddress; // @synthesize senderAddress=_senderAddress;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSArray *recipientIdentifiers; // @synthesize recipientIdentifiers=_recipientIdentifiers;
 @property(retain, nonatomic) NSUUID *senderIdentifier; // @synthesize senderIdentifier=_senderIdentifier;
 @property(retain, nonatomic) NSUUID *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

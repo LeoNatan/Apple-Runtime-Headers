@@ -16,10 +16,10 @@
 }
 
 + (id)actionWithTitle:(id)arg1 actionHandler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *textFieldValue; // @synthesize textFieldValue=_textFieldValue;
 @property(copy, nonatomic) NSString *textContentType; // @synthesize textContentType=_textContentType;
 @property(nonatomic) _Bool isTextFieldSecure; // @synthesize isTextFieldSecure=_isTextFieldSecure;
-- (void).cxx_destruct;
 
 @end
 

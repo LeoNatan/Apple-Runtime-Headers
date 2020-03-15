@@ -18,10 +18,10 @@
     id <SXAnalyticsReportingProvider> _analyticsReportingProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXAnalyticsReportingProvider> analyticsReportingProvider; // @synthesize analyticsReportingProvider=_analyticsReportingProvider;
 @property(readonly, nonatomic) id <SXActionSerializer> actionSerializer; // @synthesize actionSerializer=_actionSerializer;
 @property(readonly, nonatomic) id <SXActionManager> actionManager; // @synthesize actionManager=_actionManager;
-- (void).cxx_destruct;
 - (id)interactionHandlerForAction:(id)arg1;
 - (id)initWithActionManager:(id)arg1 actionSerializer:(id)arg2 analyticsReportingProvider:(id)arg3;
 

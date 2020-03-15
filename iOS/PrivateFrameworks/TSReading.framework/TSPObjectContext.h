@@ -56,6 +56,8 @@
 }
 
 + (void)waitForPendingEndSaveGroup:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TSPObject *supportObject; // @synthesize supportObject=_supportObject;
 @property(readonly, nonatomic) NSUUID *versionUUID; // @synthesize versionUUID=_versionUUID;
 @property(readonly, nonatomic) NSUUID *documentUUID; // @synthesize documentUUID=_documentUUID;
@@ -70,8 +72,6 @@
 @property(nonatomic) _Bool isPasswordProtected; // @synthesize isPasswordProtected=_isPasswordProtected;
 @property(nonatomic) _Bool isSupportModified; // @synthesize isSupportModified=_isSupportModified;
 @property(nonatomic) _Bool isDocumentModified; // @synthesize isDocumentModified=_isDocumentModified;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forLazyReference:(id)arg3;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2 forObjectIdentifier:(long long)arg3 objectOrNil:(id)arg4;
 - (void)runObjectNotificationsInQueue:(id)arg1;

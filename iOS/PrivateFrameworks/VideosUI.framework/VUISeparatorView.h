@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIView *_line;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *line; // @synthesize line=_line;
 @property(nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
 @property(retain, nonatomic) UIColor *darkColor; // @synthesize darkColor=_darkColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateLineColor;
 - (void)layoutSubviews;

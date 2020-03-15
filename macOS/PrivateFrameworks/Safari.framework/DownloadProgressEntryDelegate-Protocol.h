@@ -6,13 +6,13 @@
 
 #import <Safari/NSObject-Protocol.h>
 
-@class DownloadProgressEntry, NSDate, NSString;
+@class DownloadProgressEntry, NSDate, NSString, _WKDownload;
 
 @protocol DownloadProgressEntryDelegate <NSObject>
 - (void)downloadProgressEntry:(DownloadProgressEntry *)arg1 didUpdateFractionCompletedForPath:(NSString *)arg2 fractionCompleted:(float)arg3;
 - (void)downloadProgressEntry:(DownloadProgressEntry *)arg1 didMarkDownloadBundleAsInProgressAtBundlePath:(NSString *)arg2 creationDate:(NSDate *)arg3;
 - (void)downloadProgressEntryDidFinish:(DownloadProgressEntry *)arg1 shouldClear:(BOOL)arg2;
 - (void)downloadProgressEntryDidStop:(DownloadProgressEntry *)arg1;
-- (void)downloadProgressEntry:(DownloadProgressEntry *)arg1 didResumeWithWK2Download:(struct Download *)arg2;
+- (void)downloadProgressEntry:(DownloadProgressEntry *)arg1 didResumeWithWK2Download:(_WKDownload *)arg2;
 @end
 

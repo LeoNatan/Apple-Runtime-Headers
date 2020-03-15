@@ -14,8 +14,8 @@
 }
 
 + (id)relevanceSimulatorID;
-@property(readonly, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 - (id)description;
 - (unsigned int)_hash;
 - (_Bool)isEqual:(id)arg1;

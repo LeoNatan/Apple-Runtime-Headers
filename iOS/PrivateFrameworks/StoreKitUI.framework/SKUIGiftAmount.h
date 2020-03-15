@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSNumber *_value;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *partNumber; // @synthesize partNumber=_partNumber;
 @property(copy, nonatomic) NSString *displayLabel; // @synthesize displayLabel=_displayLabel;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)HTTPBodyDictionary;
 - (id)initWithAmountDictionary:(id)arg1;

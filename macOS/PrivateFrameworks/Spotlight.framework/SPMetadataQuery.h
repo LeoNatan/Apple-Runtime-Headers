@@ -48,6 +48,7 @@
 + (id)defaultSortingAttributes;
 + (void)preheat;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSString *queryCorrection; // @synthesize queryCorrection=_queryCorrection;
 @property(retain) NSObject<OS_dispatch_semaphore> *correctionSem; // @synthesize correctionSem=_correctionSem;
 @property(retain) NSString *updatedUserQueryString; // @synthesize updatedUserQueryString=_updatedUserQueryString;
@@ -69,7 +70,6 @@
 @property(readonly) long long nlpBitCount; // @synthesize nlpBitCount=_nlpBitCount;
 @property(retain) NSString *correctedQuery; // @synthesize correctedQuery=_correctedQuery;
 @property BOOL isRewrite; // @synthesize isRewrite=_isRewrite;
-- (void).cxx_destruct;
 - (void)sendPerformanceFeedback:(id)arg1 forKey:(id)arg2;
 - (void)willSendPerformanceFeedback:(int)arg1;
 - (void)updateWithQueryCorrection:(id)arg1;

@@ -18,9 +18,9 @@
     id <WebBookmarksXPCConnectionDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <WebBookmarksXPCConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)sendMessage:(id)arg1 withReplyHandler:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1;
 - (id)messageWithName:(const char *)arg1;

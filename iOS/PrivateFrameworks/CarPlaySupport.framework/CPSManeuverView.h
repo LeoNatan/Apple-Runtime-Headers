@@ -4,25 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CarPlaySupport/CPSInheritedBackgroundColorView.h>
+#import <UIKit/UIView.h>
 
 @class CPManeuver, CPTravelEstimates;
 
-@interface CPSManeuverView : CPSInheritedBackgroundColorView
+@interface CPSManeuverView : UIView
 {
-    CPManeuver *_representedManeuver;
+    _Bool _usesDefaultGuidanceBackgroundColor;
+    CPManeuver *_maneuver;
     long long _style;
     CPTravelEstimates *_currentTravelEstimates;
     unsigned long long _guidanceStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long guidanceStyle; // @synthesize guidanceStyle=_guidanceStyle;
 @property(retain, nonatomic) CPTravelEstimates *currentTravelEstimates; // @synthesize currentTravelEstimates=_currentTravelEstimates;
 @property(nonatomic) long long style; // @synthesize style=_style;
-@property(readonly, nonatomic) CPManeuver *representedManeuver; // @synthesize representedManeuver=_representedManeuver;
-- (void).cxx_destruct;
+@property(nonatomic) _Bool usesDefaultGuidanceBackgroundColor; // @synthesize usesDefaultGuidanceBackgroundColor=_usesDefaultGuidanceBackgroundColor;
+@property(readonly, nonatomic) CPManeuver *maneuver; // @synthesize maneuver=_maneuver;
 - (id)accessibilityName:(id)arg1;
-- (id)initWithManeuver:(id)arg1 style:(long long)arg2;
+- (id)initWithManeuver:(id)arg1;
 
 @end
 

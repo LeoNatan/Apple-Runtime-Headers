@@ -18,11 +18,11 @@
     CDUnknownBlockType _appraiser;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType appraiser; // @synthesize appraiser=_appraiser;
 @property(readonly, nonatomic) double budget; // @synthesize budget=_budget;
 @property(copy, nonatomic) NSDictionary *costByFeedItemIDsForLastTransformation; // @synthesize costByFeedItemIDsForLastTransformation=_costByFeedItemIDsForLastTransformation;
 @property(nonatomic) double costOfFeedItemsForLastTransformation; // @synthesize costOfFeedItemsForLastTransformation=_costOfFeedItemsForLastTransformation;
-- (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
 - (id)initWithBudget:(double)arg1 appraiser:(CDUnknownBlockType)arg2;
 - (id)init;

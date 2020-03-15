@@ -24,6 +24,7 @@
 + (short)logModeForEntryKey:(id)arg1 withKey:(id)arg2 andValue:(id)arg3;
 + (short)canLogMode:(id)arg1 fullMode:(BOOL)arg2;
 + (BOOL)shouldLogForEntryKey:(id)arg1;
++ (id)getSessionsWhitelist;
 + (id)getWhiteblacklist;
 + (id)hashString:(id)arg1;
 + (BOOL)isUDMDevice;

@@ -28,6 +28,7 @@
     NSArray *_attributionConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *attributionConstraints; // @synthesize attributionConstraints=_attributionConstraints;
 @property(retain) NSArray *imageConstraints; // @synthesize imageConstraints=_imageConstraints;
 @property(retain) NSArray *activeConstraints; // @synthesize activeConstraints=_activeConstraints;
@@ -41,7 +42,6 @@
 @property PRSImageView *embeddedImageView; // @synthesize embeddedImageView=_embeddedImageView;
 @property PRSImageView *imageView; // @synthesize imageView=_imageView;
 @property NSTextField *titleTextField; // @synthesize titleTextField=_titleTextField;
-- (void).cxx_destruct;
 @property(retain) NSImage *image;
 @property struct CGSize imageMargin;
 @property unsigned long long imageAlignment;

@@ -19,9 +19,9 @@
     id <CPLFileWatcherDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPLFileWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void).cxx_destruct;
 - (void)stopWatching;
 - (void)startWatching;
 - (void)_stopWatchingParent;

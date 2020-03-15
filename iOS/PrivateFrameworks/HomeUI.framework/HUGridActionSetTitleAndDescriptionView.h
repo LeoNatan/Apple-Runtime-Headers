@@ -18,12 +18,12 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *titleDescriptionSpacingConstraint; // @synthesize titleDescriptionSpacingConstraint=_titleDescriptionSpacingConstraint;
 @property(retain, nonatomic) NSArray *titleAndDescriptionConstraints; // @synthesize titleAndDescriptionConstraints=_titleAndDescriptionConstraints;
 @property(nonatomic) double titleDescriptionLineSpacing; // @synthesize titleDescriptionLineSpacing=_titleDescriptionLineSpacing;
 @property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)updateTitleText:(id)arg1 descriptionText:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 titleLabelSuperview:(id)arg2;

@@ -17,12 +17,12 @@
     NSNumber *_fertilityEndJulianDay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDeterminant; // @synthesize isDeterminant=_isDeterminant;
 @property(nonatomic) unsigned int julianDayOfMenstruationEnd; // @synthesize julianDayOfMenstruationEnd=_julianDayOfMenstruationEnd;
 @property(nonatomic) unsigned int julianDayOfMenstruationStart; // @synthesize julianDayOfMenstruationStart=_julianDayOfMenstruationStart;
 @property(retain, nonatomic) NSNumber *fertilityEndJulianDay; // @synthesize fertilityEndJulianDay=_fertilityEndJulianDay;
 @property(retain, nonatomic) NSNumber *fertilityStartJulianDay; // @synthesize fertilityStartJulianDay=_fertilityStartJulianDay;
-- (void).cxx_destruct;
 
 @end
 

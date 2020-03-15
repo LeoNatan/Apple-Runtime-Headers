@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _badgeFrame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *badgeType; // @synthesize badgeType=_badgeType;
 @property(nonatomic) struct CGRect badgeFrame; // @synthesize badgeFrame=_badgeFrame;
 @property(nonatomic) struct CGSize badgeSize; // @synthesize badgeSize=_badgeSize;
 @property(retain, nonatomic) IKViewElement *badgeElement; // @synthesize badgeElement=_badgeElement;
 @property(retain, nonatomic) _TVImageView *badgeView; // @synthesize badgeView=_badgeView;
-- (void).cxx_destruct;
 
 @end
 

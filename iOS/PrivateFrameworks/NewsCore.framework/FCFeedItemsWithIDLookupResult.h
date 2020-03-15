@@ -14,9 +14,9 @@
     NSArray *_feedItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *feedItems; // @synthesize feedItems=_feedItems;
 @property(retain, nonatomic) NSDictionary *sectionIDsByFeedID; // @synthesize sectionIDsByFeedID=_sectionIDsByFeedID;
-- (void).cxx_destruct;
 - (id)initWithSectionIDByFeedID:(id)arg1 feedItems:(id)arg2;
 - (id)init;
 

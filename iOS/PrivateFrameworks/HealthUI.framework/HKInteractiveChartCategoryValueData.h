@@ -16,9 +16,9 @@
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long value; // @synthesize value=_value;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

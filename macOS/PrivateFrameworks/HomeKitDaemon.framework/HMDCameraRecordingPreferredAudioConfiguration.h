@@ -14,9 +14,9 @@
     long long _sampleRate;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(readonly) NSNumber *bitRate; // @synthesize bitRate=_bitRate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSampleRate:(long long)arg1 bitRate:(id)arg2;
 

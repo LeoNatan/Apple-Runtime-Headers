@@ -32,6 +32,7 @@
     struct CGSize _livePreviewAspectRatio;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL playbackControlsShowsLoadingIndicator; // @synthesize playbackControlsShowsLoadingIndicator=_playbackControlsShowsLoadingIndicator;
 @property(retain, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(retain, nonatomic) AVPlayerController *playerControllerToRestore; // @synthesize playerControllerToRestore=_playerControllerToRestore;
@@ -47,7 +48,6 @@
 @property(nonatomic) BOOL playbackControlsIncludeTransportControls; // @synthesize playbackControlsIncludeTransportControls=_playbackControlsIncludeTransportControls;
 @property(nonatomic) __weak AVHomeIPCameraBehavior *behavior; // @synthesize behavior=_behavior;
 @property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
-- (void).cxx_destruct;
 - (void)_updatePlaybackControlsControllerAndZoomingBehavior;
 - (void)endScrubbing;
 - (void)scrubToTime:(double)arg1 resolution:(double)arg2;

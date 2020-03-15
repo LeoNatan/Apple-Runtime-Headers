@@ -15,6 +15,7 @@
 - (void)audioStreamProvider:(id <CSAudioStreamProviding>)arg1 didStopStreamUnexpectly:(long long)arg2;
 
 @optional
+- (void)audioStreamProvider:(id <CSAudioStreamProviding>)arg1 remoteRecorderDidDetectedTwoShotAtTime:(double)arg2;
 - (void)audioStreamProvider:(id <CSAudioStreamProviding>)arg1 didHardwareConfigurationChange:(long long)arg2;
 @end
 

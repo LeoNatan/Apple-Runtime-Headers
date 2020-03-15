@@ -15,8 +15,8 @@
     NSString *_uniqueIdentifier;
 }
 
-- (id)uniqueIdentifier;
 - (void).cxx_destruct;
+- (id)uniqueIdentifier;
 - (_Bool)section:(id)arg1 supportsShuffleType:(int)arg2;
 - (void)reloadSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)itemForItem:(id)arg1 inSection:(id)arg2;

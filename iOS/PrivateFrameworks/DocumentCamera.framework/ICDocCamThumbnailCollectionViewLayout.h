@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _itemSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *insertIndexPaths; // @synthesize insertIndexPaths=_insertIndexPaths;
 @property(retain, nonatomic) NSMutableArray *deleteIndexPaths; // @synthesize deleteIndexPaths=_deleteIndexPaths;
 @property(retain, nonatomic) NSDictionary *layoutInfo; // @synthesize layoutInfo=_layoutInfo;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic) __weak id <ICDocCamThumbnailViewLayoutDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
-- (void).cxx_destruct;
 - (id)finalLayoutAttributesForDisappearingDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initialLayoutAttributesForAppearingDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;

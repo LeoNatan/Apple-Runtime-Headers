@@ -13,16 +13,16 @@
     BOOL _scaleImageToIconSize;
     NSURL *_url;
     double _scale;
-    struct NSImage *_image;
+    NSImage *_image;
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) BOOL scaleImageToIconSize; // @synthesize scaleImageToIconSize=_scaleImageToIconSize;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFallbackURL:(id)arg1 withSize:(struct CGSize)arg2;
 - (id)initWithImageURL:(id)arg1;

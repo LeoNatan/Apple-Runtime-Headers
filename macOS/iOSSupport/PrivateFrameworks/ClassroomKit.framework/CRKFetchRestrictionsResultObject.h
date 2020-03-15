@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *valuesByRestriction; // @synthesize valuesByRestriction=_valuesByRestriction;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *valuesByRestriction; // @synthesize valuesByRestriction=_valuesByRestriction;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

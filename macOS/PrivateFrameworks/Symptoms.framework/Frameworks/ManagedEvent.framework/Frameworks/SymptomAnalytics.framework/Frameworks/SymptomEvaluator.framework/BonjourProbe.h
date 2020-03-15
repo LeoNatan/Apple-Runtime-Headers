@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct _DNSServiceRef_t *_dnsRef;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _DNSServiceRef_t *dnsRef; // @synthesize dnsRef=_dnsRef;
 @property(nonatomic) double bonjourBrowserTimerDuration; // @synthesize bonjourBrowserTimerDuration=_bonjourBrowserTimerDuration;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *bonjourBrowserTimer; // @synthesize bonjourBrowserTimer=_bonjourBrowserTimer;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property BOOL includeAWDL; // @synthesize includeAWDL=_includeAWDL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *scanQueue; // @synthesize scanQueue=_scanQueue;
 @property(retain) id <BonjourProbeDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dnsResolver:(id)arg1 encounteredDNSError:(int)arg2;
 - (void)stopAllResolvers;
 - (void)stopTest;

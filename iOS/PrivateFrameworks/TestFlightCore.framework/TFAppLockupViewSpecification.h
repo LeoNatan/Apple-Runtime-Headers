@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIFont *_subtitleLabelFont;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIFont *subtitleLabelFont; // @synthesize subtitleLabelFont=_subtitleLabelFont;
 @property(readonly, nonatomic) UIFont *titleLabelFont; // @synthesize titleLabelFont=_titleLabelFont;
 @property(readonly, nonatomic) double firstSubtitleLabelBaselineToSecondSubtitleLabelBaseline; // @synthesize firstSubtitleLabelBaselineToSecondSubtitleLabelBaseline=_firstSubtitleLabelBaselineToSecondSubtitleLabelBaseline;
 @property(readonly, nonatomic) double titleLabelBaselineToFirstSubtitleLabelBaseline; // @synthesize titleLabelBaselineToFirstSubtitleLabelBaseline=_titleLabelBaselineToFirstSubtitleLabelBaseline;
-- (void).cxx_destruct;
 - (id)_subtitleFontStyle;
 - (id)_createSubtitleLabelFontWithTraitCollection:(id)arg1;
 - (id)_titleFontStyle;

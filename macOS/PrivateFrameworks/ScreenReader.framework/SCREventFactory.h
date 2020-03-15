@@ -125,6 +125,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)isSecurityApprovedEvent:(struct __CGEvent *)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setTrackpadCommanderCapsLockOffHash:) unsigned long long _trackpadCommanderCapsLockOffHash; // @synthesize _trackpadCommanderCapsLockOffHash=__trackpadCommanderCapsLockOffHash;
 @property(nonatomic, setter=_setTrackpadCommanderCapsLockOnHash:) unsigned long long _trackpadCommanderCapsLockOnHash; // @synthesize _trackpadCommanderCapsLockOnHash=__trackpadCommanderCapsLockOnHash;
@@ -144,7 +145,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setCapsLockDetector:) SCREventCapsLockDetector *_capsLockDetector; // @synthesize _capsLockDetector=__capsLockDetector;
 @property(nonatomic, setter=_setControlAndOptionPressed:) BOOL _isControlAndOptionPressed; // @synthesize _isControlAndOptionPressed=__isControlAndOptionPressed;
 @property(nonatomic, setter=_setKeysToUseForVOModifier:) long long _keysToUseForVOModifier; // @synthesize _keysToUseForVOModifier=__keysToUseForVOModifier;
-- (void).cxx_destruct;
 - (void)postKeyboardKeyIgnoringEventTap:(unsigned short)arg1 isDown:(BOOL)arg2;
 - (void)_delayedHandleEvent:(id)arg1;
 - (void)processKeyString:(id)arg1 withModifierMask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;

@@ -57,6 +57,7 @@
 }
 
 + (id)placeholderURLForDownloadsFolder;
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *itemSubtitleColor; // @synthesize itemSubtitleColor=_itemSubtitleColor;
 @property(copy, nonatomic) UIColor *itemTitleColor; // @synthesize itemTitleColor=_itemTitleColor;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
@@ -87,7 +88,6 @@
 @property(nonatomic) BOOL allowsPickingMultipleItems; // @synthesize allowsPickingMultipleItems=_allowsPickingMultipleItems;
 @property(nonatomic) BOOL allowsDocumentCreation; // @synthesize allowsDocumentCreation=_allowsDocumentCreation;
 @property(nonatomic) __weak id <UIDocumentBrowserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_presentationController:(id)arg1 prepareAdaptivePresentationController:(id)arg2;
 - (void)forwardHostSceneIdentifier:(id)arg1;
 - (id)recentDocumentsTypesFromInfoPlist;
@@ -102,7 +102,9 @@
 - (void)_didTriggerCustomActionWithIdentifier:(id)arg1 onItems:(id)arg2;
 - (void)_commitDocumentURLPreview:(id)arg1;
 - (void)_presentActivityViewControllerForItems:(id)arg1 withPopoverTracker:(id)arg2 isContentManaged:(BOOL)arg3 additionalActivities:(id)arg4 activityProxy:(id)arg5;
+- (void)_establishFirstResponderOnServiceSideForKeyCommand:(id)arg1;
 - (void)dismissingKeyCommandWasPerformed:(id)arg1;
+- (void)_awakingNoOpKeyCommandWasPerformed:(id)arg1;
 - (void)keyCommandWasPerformed:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
@@ -137,6 +139,7 @@
 @property(readonly, copy, nonatomic) NSArray *allowedContentTypes;
 - (void)didTapTryAgainInErrorViewController:(id)arg1;
 - (void)remoteViewController:(id)arg1 didTerminateViewServiceWithError:(id)arg2;
+- (void)applicationDidBecomeActive:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_importDocumentAtURL:(id)arg1 neighbourURL:(id)arg2 mode:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)importDocumentAtURL:(id)arg1 byMoving:(BOOL)arg2 toCurrentBrowserLocationWithCompletion:(CDUnknownBlockType)arg3;

@@ -16,9 +16,9 @@
     CFCommandQueuer *_commandQueuer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CFCommandQueuer *commandQueuer; // @synthesize commandQueuer=_commandQueuer;
 @property(retain, nonatomic) CFServiceHelper *serviceHelper; // @synthesize serviceHelper=_serviceHelper;
-- (void).cxx_destruct;
 - (id)initWithServiceHelper:(id)arg1 commandQueuer:(id)arg2;
 - (void)isDeviceLockedWithPasscodeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleCommand:(id)arg1 reply:(CDUnknownBlockType)arg2;

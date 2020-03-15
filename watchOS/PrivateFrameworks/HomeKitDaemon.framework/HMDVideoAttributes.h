@@ -21,11 +21,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)translateImageResolution:(id)arg1 imageWidth:(id *)arg2 imageHeight:(id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *framerate; // @synthesize framerate=_framerate;
 @property(readonly, copy, nonatomic) HMDVideoResolution *videoResolution; // @synthesize videoResolution=_videoResolution;
 @property(readonly, copy, nonatomic) NSNumber *imageHeight; // @synthesize imageHeight=_imageHeight;
 @property(readonly, copy, nonatomic) NSNumber *imageWidth; // @synthesize imageWidth=_imageWidth;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;

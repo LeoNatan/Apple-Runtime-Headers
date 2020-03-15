@@ -14,8 +14,8 @@
 }
 
 + (id)defaultExtractor;
-@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (id)queueType;
 - (id)featuresForTextString:(id)arg1 inMessageUnit:(id)arg2 context:(id)arg3;
 - (id)init;

@@ -23,10 +23,10 @@
 + (void)resetAllBlacklists;
 + (id)blacklistForKey:(id)arg1 systemBlacklistDirectory:(id)arg2 runtimeBlacklistDirectory:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSSet *blacklist; // @synthesize blacklist=_blacklist;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 fromConfigurationsFile:(id)arg2;
 - (id)init;
 

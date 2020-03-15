@@ -16,11 +16,11 @@
     NSDate *_createdDate;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDate *createdDate; // @synthesize createdDate=_createdDate;
 @property(retain) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(getter=isRecoverable) _Bool recoverable; // @synthesize recoverable=_recoverable;
 @property long long size; // @synthesize size=_size;
-- (void).cxx_destruct;
 
 @end
 

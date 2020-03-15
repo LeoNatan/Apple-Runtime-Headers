@@ -14,8 +14,8 @@
 }
 
 + (Class)configurationClass;
-@property(readonly, copy, nonatomic) NSArray *inputFaceObservations; // @synthesize inputFaceObservations=_inputFaceObservations;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *inputFaceObservations; // @synthesize inputFaceObservations=_inputFaceObservations;
 - (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;

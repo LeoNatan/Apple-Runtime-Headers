@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
 @property(readonly, copy, nonatomic) NSString *streamUID; // @synthesize streamUID=_streamUID;
 @property(readonly, copy, nonatomic) AFAnalyticsEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithEvent:(id)arg1 streamUID:(id)arg2 dateCreated:(id)arg3;

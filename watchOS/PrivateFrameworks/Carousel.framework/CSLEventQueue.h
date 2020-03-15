@@ -13,8 +13,8 @@
     id <CSLEventQueueDelegate> _delegate;
 }
 
-@property(retain, nonatomic) id <CSLEventQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CSLEventQueueDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_noteQueueDidUnlock;
 - (void)_noteQueueDidLock;
 

@@ -14,9 +14,9 @@
     struct CGRect _elementFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect elementFrame; // @synthesize elementFrame=_elementFrame;
 @property(copy, nonatomic) NSString *elementDescription; // @synthesize elementDescription=_elementDescription;
-- (void).cxx_destruct;
 
 @end
 

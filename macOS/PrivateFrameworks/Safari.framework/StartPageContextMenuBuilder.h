@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _showLessHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType showLessHandler; // @synthesize showLessHandler=_showLessHandler;
 @property(copy, nonatomic) CDUnknownBlockType showMoreHandler; // @synthesize showMoreHandler=_showMoreHandler;
-- (void).cxx_destruct;
 - (id)buildMenu;
 
 @end

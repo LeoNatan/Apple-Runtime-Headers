@@ -21,6 +21,7 @@
     FCFeedGroupEmittingCursor *_resultCursor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool resultFinished; // @synthesize resultFinished=_resultFinished;
 @property(retain, nonatomic) FCFeedGroupEmittingCursor *resultCursor; // @synthesize resultCursor=_resultCursor;
 @property(retain, nonatomic) NSArray *resultGroups; // @synthesize resultGroups=_resultGroups;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) FCFeedGroupEmittingCursor *fromCursor; // @synthesize fromCursor=_fromCursor;
 @property(readonly, nonatomic) FCFeedGroupEmittingContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType groupEmittingCompletionHandler; // @synthesize groupEmittingCompletionHandler=_groupEmittingCompletionHandler;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (id)initWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3 groupEmitterIdentifier:(id)arg4;
 

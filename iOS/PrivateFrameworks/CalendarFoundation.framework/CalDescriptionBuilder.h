@@ -16,11 +16,11 @@
     NSString *_keyDelimiter;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *keyDelimiter; // @synthesize keyDelimiter=_keyDelimiter;
 @property(nonatomic) _Bool sortedByKey; // @synthesize sortedByKey=_sortedByKey;
 @property(copy, nonatomic) NSString *superclassDescription; // @synthesize superclassDescription=_superclassDescription;
 @property(retain, nonatomic) NSMutableDictionary *descriptionUnderConstruction; // @synthesize descriptionUnderConstruction=_descriptionUnderConstruction;
-- (void).cxx_destruct;
 - (id)build;
 - (void)setKey:(id)arg1 withDispatchSource:(id)arg2;
 - (void)setKey:(id)arg1 withDispatchQueue:(id)arg2;

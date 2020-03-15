@@ -13,8 +13,8 @@
     id <NPKPeerPaymentTransactionViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <NPKPeerPaymentTransactionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <NPKPeerPaymentTransactionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleCancelStatusBarTitleTappedNotification:(id)arg1;
 - (void)viewDidLoad;
 

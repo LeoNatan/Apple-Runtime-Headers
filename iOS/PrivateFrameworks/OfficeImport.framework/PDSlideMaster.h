@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     PDPresentation *mPresentation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dateTimePlaceholderIsVisible; // @synthesize dateTimePlaceholderIsVisible=mDateTimePlaceholderIsVisible;
 @property(nonatomic) _Bool slideNumberPlaceholderIsVisible; // @synthesize slideNumberPlaceholderIsVisible=mSlideNumberPlaceholderIsVisible;
 @property(nonatomic) _Bool footerPlaceholderIsVisible; // @synthesize footerPlaceholderIsVisible=mFooterPlaceholderIsVisible;
 @property(nonatomic) _Bool headerPlaceholderIsVisible; // @synthesize headerPlaceholderIsVisible=mHeaderPlaceholderIsVisible;
 @property(retain, nonatomic) NSMutableArray *slideLayouts; // @synthesize slideLayouts=mSlideLayouts;
 @property(readonly, nonatomic) __weak PDPresentation *presentation; // @synthesize presentation=mPresentation;
-- (void).cxx_destruct;
 - (id)description;
 - (void)removeUnnecessaryOverrides;
 - (void)setUpPropertyHierarchyPreservingEffectiveValues;

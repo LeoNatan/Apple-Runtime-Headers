@@ -24,13 +24,13 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) int contentTypePatchVersion; // @synthesize contentTypePatchVersion=_contentTypePatchVersion;
 @property(nonatomic) int contentTypeMinorVersion; // @synthesize contentTypeMinorVersion=_contentTypeMinorVersion;
 @property(retain, nonatomic) NSData *content; // @synthesize content=_content;
 @property(nonatomic) int contentType; // @synthesize contentType=_contentType;
 @property(nonatomic) int contentTypeVersion; // @synthesize contentTypeVersion=_contentTypeVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

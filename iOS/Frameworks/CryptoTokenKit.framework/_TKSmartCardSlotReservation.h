@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSNumber *_protocols;
 }
 
+- (void).cxx_destruct;
 @property _Bool exclusive; // @synthesize exclusive=_exclusive;
 @property(retain) NSNumber *protocols; // @synthesize protocols=_protocols;
-- (void).cxx_destruct;
 
 @end
 

@@ -27,8 +27,8 @@
     int _referencingCount;
 }
 
-@property(retain, nonatomic) VMUClassInfoMap *indexedClassInfos; // @synthesize indexedClassInfos=_knownClassInfos;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VMUClassInfoMap *indexedClassInfos; // @synthesize indexedClassInfos=_knownClassInfos;
 - (void *)createMapForIntersectGraph:(id)arg1;
 - (void *)createMapForMinusGraph:(id)arg1;
 - (void *)_compareWithGraph:(id)arg1 andMarkOnMatch:(_Bool)arg2;
@@ -56,6 +56,8 @@
 - (void)dealloc;
 - (id)initWithNodesNoCopy:(struct _VMUBlockNode *)arg1 nodeCount:(unsigned int)arg2;
 - (id)initWithNodeCount:(unsigned int)arg1 nodeProvider:(CDUnknownBlockType)arg2;
+- (_Bool)isRootNode:(unsigned int)arg1;
+- (_Bool)isGroupNode:(unsigned int)arg1;
 - (id)subgraphWithUniquePathsFromNode:(unsigned int)arg1 toNodes:(void *)arg2;
 - (id)subgraphWithShortestPathsFromNode:(unsigned int)arg1 toNodes:(void *)arg2;
 - (void)stronglyConnectedComponentSearch:(unsigned int)arg1 withRecorder:(CDUnknownBlockType)arg2;

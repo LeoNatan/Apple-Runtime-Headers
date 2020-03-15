@@ -30,10 +30,10 @@
 + (void)_unregisterConnection;
 + (_Bool)_tryRegisterNewConnection;
 + (unsigned long long)maxNumberOfOpenConnections;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasEverConnected; // @synthesize hasEverConnected=_hasEverConnected;
 @property(retain, nonatomic) CADDatabaseInitializationOptions *initializationOptions; // @synthesize initializationOptions=_initializationOptions;
 @property __weak id <EKDaemonConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)CADClientReceiveOccurrenceCacheSearchResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(_Bool)arg3;
 - (void)_finishAllRepliesOnServerDeath;
 - (void)cancelRemoteOperation:(unsigned int)arg1;

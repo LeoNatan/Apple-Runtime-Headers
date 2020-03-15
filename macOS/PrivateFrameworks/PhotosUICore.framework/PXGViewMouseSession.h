@@ -32,6 +32,7 @@
     long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) BOOL allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property(readonly, nonatomic) BOOL allowsEmptySelection; // @synthesize allowsEmptySelection=_allowsEmptySelection;
@@ -39,7 +40,6 @@
 @property(nonatomic) __weak id <PXGViewMouseSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(readonly, nonatomic) PXGView *gridView; // @synthesize gridView=_gridView;
-- (void).cxx_destruct;
 - (BOOL)handleEvent:(id)arg1;
 - (void)deselectAllNow;
 - (BOOL)extendRangeSelectionToIndexPath:(struct PXSimpleIndexPath)arg1;

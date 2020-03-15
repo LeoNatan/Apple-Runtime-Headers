@@ -18,10 +18,10 @@
 }
 
 + (id)sharedStore;
+- (void).cxx_destruct;
 @property(nonatomic) double recentHeartRateTime; // @synthesize recentHeartRateTime=_recentHeartRateTime;
 @property(nonatomic) unsigned long long recentHeartRate; // @synthesize recentHeartRate=_recentHeartRate;
 @property(retain, nonatomic) HKQuery *heartRateQuery; // @synthesize heartRateQuery=_heartRateQuery;
-- (void).cxx_destruct;
 - (void)_updateHeartRateEnabled;
 - (void)_updateHeartRateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)recentHeartRateWithCompletion:(CDUnknownBlockType)arg1;

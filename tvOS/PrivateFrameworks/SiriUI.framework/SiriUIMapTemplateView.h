@@ -25,8 +25,8 @@
     id <SiriUIMapTemplateViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SiriUIMapTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SiriUIMapTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleTapGesture:(id)arg1;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(_Bool)arg2;
 - (void)_mapButtonPressed:(id)arg1;

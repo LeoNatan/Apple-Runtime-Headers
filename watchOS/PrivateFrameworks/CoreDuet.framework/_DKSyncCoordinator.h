@@ -34,8 +34,8 @@
 }
 
 + (void)validateConfigurationWithStorePath:(id)arg1;
-@property(readonly, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void)deleteRemoteStateWithReply:(CDUnknownBlockType)arg1;
 - (void)_deleteRemoteCloudEventsAndStorage;
 - (void)_deleteRemoteCloudEvents;

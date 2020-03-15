@@ -14,9 +14,9 @@
     NSArray *_services;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(readonly) NSArray *services; // @synthesize services=_services;
-- (void).cxx_destruct;
 - (id)setupViewControllerForServices:(id)arg1;
 - (id)initWithBundle:(id)arg1;
 

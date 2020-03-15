@@ -13,8 +13,8 @@
     NSURL *_localAppURL;
 }
 
-@property(retain, nonatomic) NSURL *localAppURL; // @synthesize localAppURL=_localAppURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *localAppURL; // @synthesize localAppURL=_localAppURL;
 - (void)fetchBootURLWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithLocalAppURL:(id)arg1;
 - (id)init;

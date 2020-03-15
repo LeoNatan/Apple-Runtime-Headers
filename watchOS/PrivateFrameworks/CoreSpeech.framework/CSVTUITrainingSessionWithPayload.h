@@ -24,8 +24,8 @@
     NSDictionary *_voiceTriggerEventInfo;
 }
 
-@property(retain, nonatomic) NSDictionary *voiceTriggerEventInfo; // @synthesize voiceTriggerEventInfo=_voiceTriggerEventInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *voiceTriggerEventInfo; // @synthesize voiceTriggerEventInfo=_voiceTriggerEventInfo;
 - (void)matchRecognitionResult:(id)arg1 withMatchedBlock:(CDUnknownBlockType)arg2 withNonMatchedBlock:(CDUnknownBlockType)arg3;
 - (void)speechRecognitionTask:(id)arg1 didFinishSuccessfully:(_Bool)arg2;
 - (void)speechRecognitionTask:(id)arg1 didFinishRecognition:(id)arg2;

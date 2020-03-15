@@ -24,10 +24,10 @@
     BOOL _shouldInstallIAL;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldInstallIAL; // @synthesize shouldInstallIAL=_shouldInstallIAL;
 @property BOOL isSoftwareUpdate; // @synthesize isSoftwareUpdate=_isSoftwareUpdate;
 @property BOOL isOSInstall; // @synthesize isOSInstall=_isOSInstall;
-- (void).cxx_destruct;
 - (BOOL)_isValidCompatibilityUpdatePackage:(id)arg1;
 - (void)updateSUProgress;
 - (double)estimatedTimeToComplete;

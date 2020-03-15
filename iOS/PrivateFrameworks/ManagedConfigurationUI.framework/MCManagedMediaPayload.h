@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
-@property(retain, nonatomic) MCBook *managedBook; // @synthesize managedBook=_managedBook;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MCBook *managedBook; // @synthesize managedBook=_managedBook;
 - (id)title;
 - (id)initWithManagedMedia:(id)arg1 profile:(id)arg2;
 

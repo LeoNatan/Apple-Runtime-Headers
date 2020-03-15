@@ -19,13 +19,13 @@
 }
 
 + (void)resetSavedPolicyState;
+- (void).cxx_destruct;
 @property(retain) NSTimer *policyResetTimer; // @synthesize policyResetTimer=_policyResetTimer;
 @property(retain) NSDate *policyStartDate; // @synthesize policyStartDate=_policyStartDate;
 @property(nonatomic) unsigned long long currentLevelIndex; // @synthesize currentLevelIndex=_currentLevelIndex;
 @property(nonatomic) unsigned long long currentBatchCount; // @synthesize currentBatchCount=_currentBatchCount;
 @property double resetInterval; // @synthesize resetInterval=_resetInterval;
 @property(retain, nonatomic) NSArray *throttlingLevels; // @synthesize throttlingLevels=_throttlingLevels;
-- (void).cxx_destruct;
 - (void)savePolicyState;
 - (void)loadSavedPolicyState;
 - (void)startPolicyResetTimer;

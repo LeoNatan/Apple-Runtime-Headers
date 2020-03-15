@@ -16,8 +16,8 @@
     NSObject<OS_os_log> *_loggingConnection;
 }
 
-@property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (id)_ingestStreamEventSession:(id)arg1 graph:(id)arg2 performerNodesByName:(id)arg3;
 - (void)processMusicForGraph:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (void)runWithGraphUpdate:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;

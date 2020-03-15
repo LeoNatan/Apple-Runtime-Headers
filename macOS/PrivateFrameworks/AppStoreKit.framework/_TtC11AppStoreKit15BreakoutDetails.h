@@ -14,6 +14,7 @@
     // Error parsing type: , name: callToActionButtonAction
     // Error parsing type: , name: backgroundStyle
     // Error parsing type: , name: textAlignment
+    // Error parsing type: , name: badgeColorOverride
 }
 
 @end

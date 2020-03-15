@@ -21,13 +21,13 @@
     WFContentCollection *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFContentCollection *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak WFNumericPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(readonly, nonatomic) QLPreviewController *previewController; // @synthesize previewController=_previewController;
 @property(nonatomic) __weak id <WFModulesQuickLookViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WFContentCollection *content; // @synthesize content=_content;
-- (void).cxx_destruct;
 - (void)numericPageControl:(id)arg1 changedPageTo:(long long)arg2;
 - (void)sharePressed:(id)arg1;
 - (void)fullscreenPressed;

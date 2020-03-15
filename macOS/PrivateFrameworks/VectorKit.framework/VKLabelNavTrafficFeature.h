@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newFeatureForExternalFeature:(id)arg1 previousMercatorPoint:(const Mercator2_57ec32b6 *)arg2 nextMercatorPoint:(const Mercator2_57ec32b6 *)arg3;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char labelNavMode; // @synthesize labelNavMode=_labelNavMode;
 @property(readonly, nonatomic) unsigned char currentIconState; // @synthesize currentIconState=_iconState;
 @property(nonatomic) unsigned char tailDirection; // @synthesize tailDirection=_tailDirection;
@@ -42,8 +44,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct PolylineCoordinate routeOffset; // @synthesize routeOffset=_routeOffset;
 @property(readonly, nonatomic) BOOL isAwayFromRoute; // @synthesize isAwayFromRoute=_isAwayFromRoute;
 @property(readonly, nonatomic) BOOL isOnRoute; // @synthesize isOnRoute=_isOnRoute;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (BOOL)isSignal;
 - (BOOL)isCamera;
 - (BOOL)hasLabelWithArtwork;

@@ -33,6 +33,7 @@
 }
 
 + (id)controlItemPredicate;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool areControlItemsRequestingToBeHidden; // @synthesize areControlItemsRequestingToBeHidden=_areControlItemsRequestingToBeHidden;
 @property(readonly, nonatomic) HUQuickControlSimpleItemUpdater *internalItemUpdater; // @synthesize internalItemUpdater=_internalItemUpdater;
 @property(nonatomic) unsigned long long preferredControl; // @synthesize preferredControl=_preferredControl;
@@ -46,7 +47,6 @@
 @property(nonatomic) __weak id <HUQuickControlContentHosting> quickControlHost; // @synthesize quickControlHost=_quickControlHost;
 @property(nonatomic) __weak id <HUQuickControlContentCharacteristicWritingDelegate> characteristicWritingDelegate; // @synthesize characteristicWritingDelegate=_characteristicWritingDelegate;
 @property(nonatomic, getter=areControlsVisible) _Bool controlsVisible; // @synthesize controlsVisible=_controlsVisible;
-- (void).cxx_destruct;
 - (void)quickControlItemUpdater:(id)arg1 didUpdateResultsForControlItems:(id)arg2;
 - (void)_updateControlItemHiddenStateNotifyingHost:(_Bool)arg1;
 - (id)viewControllerForTouchContinuation;

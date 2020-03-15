@@ -21,12 +21,12 @@
     HMAccessorySelectionSetting *_selectionSetting;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMAccessorySelectionSetting *selectionSetting; // @synthesize selectionSetting=_selectionSetting;
 @property(readonly, nonatomic) HMSettingGroup *settingGroup; // @synthesize settingGroup=_settingGroup;
 @property(retain, nonatomic) NSDictionary *usageOptions; // @synthesize usageOptions=_usageOptions;
 @property(readonly, nonatomic) HFAccessorySettingsEntity *entity; // @synthesize entity=_entity;
 @property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
-- (void).cxx_destruct;
 - (void)_decorateHiddenOrDisabled:(id)arg1;
 - (BOOL)_validateKeyPathDependencies;
 - (id)_displayTitle;

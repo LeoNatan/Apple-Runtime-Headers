@@ -19,13 +19,13 @@
 }
 
 + (id)borderColorForUserInterfaceStyle:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _SBFloatingDockPlatterMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) UIImageView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool hasShadow; // @synthesize hasShadow=_hasShadow;
 @property(nonatomic) double maximumContinuousCornerRadius; // @synthesize maximumContinuousCornerRadius=_maximumContinuousCornerRadius;
 @property(nonatomic) double referenceHeight; // @synthesize referenceHeight=_referenceHeight;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)updateBorderVisualStyling;
 - (struct UIEdgeInsets)_shadowInsetsForMetrics:(id)arg1;

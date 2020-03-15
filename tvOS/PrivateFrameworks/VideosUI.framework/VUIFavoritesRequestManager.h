@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *ongoingEntityIDOperationDictionary; // @synthesize ongoingEntityIDOperationDictionary=_ongoingEntityIDOperationDictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *ongoingEntityIDOperationDictionary; // @synthesize ongoingEntityIDOperationDictionary=_ongoingEntityIDOperationDictionary;
 - (void)sendRequestForEntityID:(id)arg1 teamName:(id)arg2 action:(unsigned long long)arg3;
 - (id)init;
 - (id)_init;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 + (id)notificationFromItem:(id)arg1 relpath:(id)arg2;
 + (id)notificationGatheredFromItem:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isInTrashScope; // @synthesize isInTrashScope=_isInTrashScope;
 @property(readonly, nonatomic) _Bool isInDataScope; // @synthesize isInDataScope=_isInDataScope;
 @property(readonly, nonatomic) _Bool isInDocumentScope; // @synthesize isInDocumentScope=_isInDocumentScope;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long oldParentFileID; // @synthesize oldParentFileID=_oldParentFileID;
 @property(readonly, nonatomic) BRCItemGlobalID *parentGlobalID; // @synthesize parentGlobalID=_parentGlobalID;
 @property(readonly, nonatomic) BRCItemGlobalID *itemGlobalID; // @synthesize itemGlobalID=_itemGlobalID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isDocumentsFolder;
 - (void)generateLogicalExtension:(id)arg1 physicalExtension:(id)arg2;
 - (void)merge:(id)arg1;

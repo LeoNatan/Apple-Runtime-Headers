@@ -33,11 +33,11 @@ __attribute__((visibility("hidden")))
     double _parallaxIntensity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double parallaxIntensity; // @synthesize parallaxIntensity=_parallaxIntensity;
 @property(nonatomic) __weak id <UIScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
 @property(nonatomic) __weak id <QLPageViewControllerDataSource> indexedDataSource; // @synthesize indexedDataSource=_indexedDataSource;
 @property(nonatomic) unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
-- (void).cxx_destruct;
 - (void)setDataSource:(id)arg1;
 - (void)setViewControllers:(id)arg1 direction:(long long)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithCoder:(id)arg1;

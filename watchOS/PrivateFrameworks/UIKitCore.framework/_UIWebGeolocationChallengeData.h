@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSURL, UIWindow;
+@class NSString, NSURL, UIView;
 @protocol WebAllowDenyPolicyListener;
 
 __attribute__((visibility("hidden")))
@@ -14,12 +14,12 @@ __attribute__((visibility("hidden")))
 {
     NSString *_token;
     NSURL *_requestingURL;
-    UIWindow *_window;
+    UIView *_view;
     id <WebAllowDenyPolicyListener> _listener;
 }
 
 @property(retain, nonatomic) id <WebAllowDenyPolicyListener> listener; // @synthesize listener=_listener;
-@property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
+@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(retain, nonatomic) NSURL *requestingURL; // @synthesize requestingURL=_requestingURL;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 - (void)dealloc;

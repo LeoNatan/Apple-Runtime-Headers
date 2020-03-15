@@ -23,6 +23,7 @@
 }
 
 + (id)errorForMissingEntitlement:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool forSyncMessaging; // @synthesize forSyncMessaging=_forSyncMessaging;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) id <NSXPCProxyCreating> remoteObject; // @synthesize remoteObject=_remoteObject;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableDictionary *pendingTransactions; // @synthesize pendingTransactions=_pendingTransactions;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_cleanupAllPendingTransactions;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(_Bool)arg3;
 - (_Bool)hasEntitlement:(id)arg1;

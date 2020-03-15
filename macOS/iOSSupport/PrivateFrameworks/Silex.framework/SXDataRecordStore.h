@@ -14,9 +14,9 @@
     NSArray *_records;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *records; // @synthesize records=_records;
 @property(readonly, nonatomic) NSArray *descriptors; // @synthesize descriptors=_descriptors;
-- (void).cxx_destruct;
 - (id)recordsUsingSortDescriptors:(id)arg1;
 - (unsigned long long)numberOfRecords;
 - (id)initWithRecords:(id)arg1 andDescriptors:(id)arg2;

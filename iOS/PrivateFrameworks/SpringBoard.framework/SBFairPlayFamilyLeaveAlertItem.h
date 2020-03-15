@@ -13,8 +13,8 @@
     FBSApplicationInfo *_appInfo;
 }
 
-@property(retain, nonatomic) FBSApplicationInfo *appInfo; // @synthesize appInfo=_appInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FBSApplicationInfo *appInfo; // @synthesize appInfo=_appInfo;
 - (void)configure:(_Bool)arg1 requirePasscodeForActions:(_Bool)arg2;
 - (_Bool)dismissOnLock;
 - (id)initWithAppInfo:(id)arg1;

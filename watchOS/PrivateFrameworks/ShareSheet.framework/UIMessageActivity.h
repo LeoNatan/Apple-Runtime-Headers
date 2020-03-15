@@ -21,10 +21,10 @@
 + (id)applicationBundleID;
 + (int)activityCategory;
 + (unsigned int)_xpcAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFMessageComposeViewController *messageComposeViewController; // @synthesize messageComposeViewController=_messageComposeViewController;
 @property(copy, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
-- (void).cxx_destruct;
 - (void)_cleanup;
 - (id)activityViewController;
 - (void)_prepareWithActivityItems:(id)arg1 completion:(CDUnknownBlockType)arg2;

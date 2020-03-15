@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long bucketCount; // @synthesize bucketCount=_bucketCount;
 @property(readonly) NSMeasurement *bucketEnd; // @synthesize bucketEnd=_bucketEnd;
 @property(readonly) NSMeasurement *bucketStart; // @synthesize bucketStart=_bucketStart;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -24,6 +24,7 @@
     IDSMessageContext *_idsContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSMessageContext *idsContext; // @synthesize idsContext=_idsContext;
 @property(retain, nonatomic) id pbResponse; // @synthesize pbResponse=_pbResponse;
 @property(retain, nonatomic) NSDictionary *requestPersistentUserInfo; // @synthesize requestPersistentUserInfo=_requestPersistentUserInfo;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) unsigned short messageID; // @synthesize messageID=_messageID;
 @property(retain, nonatomic) NSString *sourceDeviceID; // @synthesize sourceDeviceID;
-- (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
 @property(readonly, copy) NSString *description;
 

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)assetAuthorizationResponsesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *assetAuthorizationResponses; // @synthesize assetAuthorizationResponses=_assetAuthorizationResponses;
 @property(retain, nonatomic) CKCDPError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSData *serializedResult; // @synthesize serializedResult=_serializedResult;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -26,11 +26,11 @@
 + (_Bool)isAppleInternalInstall;
 + (_Bool)isMobileKeyBagDisabledOrDeviceUnlockedSinceBoot;
 + (id)sharedBehavior;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 @property(readonly, nonatomic) _Bool isM8Device; // @synthesize isM8Device=_isM8Device;
 @property(readonly, nonatomic) _Bool isAppleInternalInstall; // @synthesize isAppleInternalInstall=_isAppleInternalInstall;
 @property(readonly, nonatomic) _Bool isMobileKeyBagDisabledOrDeviceUnlockedSinceBoot; // @synthesize isMobileKeyBagDisabledOrDeviceUnlockedSinceBoot=_isMobileKeyBagDisabledOrDeviceUnlockedSinceBoot;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

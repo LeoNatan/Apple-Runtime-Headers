@@ -15,8 +15,8 @@
     CDUnknownBlockType _primaryAccountChangeObserver;
 }
 
-@property(copy) CDUnknownBlockType primaryAccountChangeObserver; // @synthesize primaryAccountChangeObserver=_primaryAccountChangeObserver;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType primaryAccountChangeObserver; // @synthesize primaryAccountChangeObserver=_primaryAccountChangeObserver;
 - (void)accountStore:(id)arg1 primaryAccountChanged:(id)arg2;
 
 // Remaining properties

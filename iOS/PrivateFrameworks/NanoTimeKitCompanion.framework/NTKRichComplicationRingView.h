@@ -23,8 +23,8 @@
 }
 
 + (id)_disabledLayerActions;
-@property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
 - (void)_layoutHeadTailView:(id)arg1 forProgress:(double)arg2;
 - (id)_createHeadTailViewWithStartAngle:(double)arg1 endAngle:(double)arg2 clockwise:(_Bool)arg3 additionalWidth:(double)arg4;
 - (void)_updateGradient;

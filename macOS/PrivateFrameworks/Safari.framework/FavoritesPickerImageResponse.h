@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSSiteMetadataResponse.h>
+#import <SafariSharedUI/WBSSiteMetadataResponse.h>
 
 @class NSColor, NSImage;
 
@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)responseWithURL:(id)arg1 image:(id)arg2 themeColor:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *themeColor; // @synthesize themeColor=_themeColor;
 @property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithURL:(id)arg1 image:(id)arg2 themeColor:(id)arg3;
 - (id)initWithURL:(id)arg1;
 

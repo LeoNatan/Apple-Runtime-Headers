@@ -17,12 +17,12 @@
     long long _rightEyeTargetIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long rightEyeTargetIndex; // @synthesize rightEyeTargetIndex=_rightEyeTargetIndex;
 @property(nonatomic) long long leftEyeTargetIndex; // @synthesize leftEyeTargetIndex=_leftEyeTargetIndex;
 @property(retain, nonatomic) SCNMaterial *rightEyeMaterial; // @synthesize rightEyeMaterial=_rightEyeMaterial;
 @property(retain, nonatomic) SCNMaterial *leftEyeMaterial; // @synthesize leftEyeMaterial=_leftEyeMaterial;
 @property(retain, nonatomic) SCNNode *readMorpherNode; // @synthesize readMorpherNode=_readMorpherNode;
-- (void).cxx_destruct;
 
 @end
 

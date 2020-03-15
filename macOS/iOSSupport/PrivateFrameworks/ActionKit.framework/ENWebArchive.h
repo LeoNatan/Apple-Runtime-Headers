@@ -17,10 +17,10 @@
 
 + (id)webArchiveWithDictionary:(id)arg1;
 + (id)webArchiveWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subframeArchives; // @synthesize subframeArchives=_subframeArchives;
 @property(retain, nonatomic) NSArray *subresources; // @synthesize subresources=_subresources;
 @property(retain, nonatomic) ENWebResource *mainResource; // @synthesize mainResource=_mainResource;
-- (void).cxx_destruct;
 - (id)data;
 - (id)propertyList;
 - (id)initWithMainResource:(id)arg1 subresources:(id)arg2 subframeArchives:(id)arg3;

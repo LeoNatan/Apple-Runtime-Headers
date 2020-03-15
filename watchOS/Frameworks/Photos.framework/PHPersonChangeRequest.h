@@ -35,6 +35,7 @@
 + (void)deletePersons:(id)arg1;
 + (id)changeRequestForPerson:(id)arg1;
 + (id)creationRequestForPerson;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *invalidMergeCandidatesHelper; // @synthesize invalidMergeCandidatesHelper=_invalidMergeCandidatesHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *mergeCandidatesHelper; // @synthesize mergeCandidatesHelper=_mergeCandidatesHelper;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *rejectedFacesHelper; // @synthesize rejectedFacesHelper=_rejectedFacesHelper;
@@ -42,7 +43,6 @@
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *facesHelper; // @synthesize facesHelper=_facesHelper;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) PHPerson *targetPerson; // @synthesize targetPerson=_targetPerson;
-- (void).cxx_destruct;
 - (void)_setGraphDedupePersons:(id)arg1;
 - (void)addInvalidMergeCandidatePersons:(id)arg1;
 - (void)rejectMergeCandidatePersons:(id)arg1;
@@ -84,7 +84,7 @@
 @property(copy, nonatomic) NSDictionary *contactMatchingDictionary;
 @property(nonatomic) unsigned short genderType;
 @property(nonatomic) unsigned short ageType;
-@property(nonatomic) int questionType;
+@property(nonatomic) unsigned short questionType;
 @property(nonatomic) int verifiedType;
 @property(nonatomic, getter=isInPersonNamingModel) _Bool inPersonNamingModel;
 @property(copy, nonatomic) NSString *personUri;

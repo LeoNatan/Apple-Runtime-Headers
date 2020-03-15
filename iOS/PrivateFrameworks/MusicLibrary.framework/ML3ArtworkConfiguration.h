@@ -18,11 +18,11 @@
 }
 
 + (id)systemConfiguration;
+- (void).cxx_destruct;
 @property(nonatomic) double mainScreenScale; // @synthesize mainScreenScale=_mainScreenScale;
 @property(retain, nonatomic) NSMutableDictionary *supportedSizesCache; // @synthesize supportedSizesCache=_supportedSizesCache;
 @property(retain, nonatomic) NSDictionary *artworkConfigurationDictionary; // @synthesize artworkConfigurationDictionary=_artworkConfigurationDictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
-- (void).cxx_destruct;
 - (id)_supportedSizeKeysForMediaType:(unsigned int)arg1 artworkType:(long long)arg2;
 - (id)description;
 - (id)sizesToAutogenerateForMediaType:(unsigned int)arg1 artworkType:(long long)arg2;

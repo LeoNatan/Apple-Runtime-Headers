@@ -16,9 +16,9 @@
 }
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
+- (void).cxx_destruct;
 @property long long limitValue; // @synthesize limitValue=_limitValue;
 @property BOOL restrictPurchase; // @synthesize restrictPurchase=_restrictPurchase;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)saveImmediately;
 - (void)initializeFromPreferences;

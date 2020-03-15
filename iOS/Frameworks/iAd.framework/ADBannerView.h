@@ -67,6 +67,7 @@
 + (struct CGSize)sizeFromBannerContentSizeIdentifier:(id)arg1;
 + (void)setServerURL:(id)arg1;
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ADBannerViewDelegate> weakDelegate; // @synthesize weakDelegate=_weakDelegate;
 @property(nonatomic) double bannerLoadTime; // @synthesize bannerLoadTime=_bannerLoadTime;
 @property(nonatomic) double adDataLoadTime; // @synthesize adDataLoadTime=_adDataLoadTime;
@@ -109,7 +110,6 @@
 @property(nonatomic) int slotPosition; // @synthesize slotPosition=_slotPosition;
 @property(nonatomic) int screenfuls; // @synthesize screenfuls=_screenfuls;
 @property(copy, nonatomic) NSString *adResponseId; // @synthesize adResponseId=_adResponseId;
-- (void).cxx_destruct;
 - (id)currentAdIdentifier;
 - (void)unregisterVideoPlayerForAdAnalytics:(id)arg1;
 - (void)registerVideoPlayerForAdAnalytics:(id)arg1;

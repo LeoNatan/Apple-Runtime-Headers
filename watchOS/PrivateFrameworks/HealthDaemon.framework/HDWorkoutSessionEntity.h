@@ -15,7 +15,7 @@
 + (id)foreignKeys;
 + (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
-+ (id)sessionIdentifierForRecoveryInProfile:(id)arg1 error:(id *)arg2;
++ (id)sessionIdentifierForRecoveryInProfile:(id)arg1 expirationInterval:(double)arg2 error:(id *)arg3;
 + (id)sessionsExcludingIdentifiers:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)sessionsForSource:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)createSessionWithIdentifier:(id)arg1 source:(id)arg2 configuration:(id)arg3 state:(int)arg4 profile:(id)arg5 error:(id *)arg6;

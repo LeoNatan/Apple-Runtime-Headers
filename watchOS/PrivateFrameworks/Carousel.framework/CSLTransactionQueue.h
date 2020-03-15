@@ -35,13 +35,13 @@
     CSLTransactionQueue *_secondaryQueueToLockWhileExecuting;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLTransactionQueue *secondaryQueueToLockWhileExecuting; // @synthesize secondaryQueueToLockWhileExecuting=_secondaryQueueToLockWhileExecuting;
 @property(readonly, nonatomic) CSLContinuingTransactions *continuingTransactions; // @synthesize continuingTransactions=_continuingTransactions;
 @property(readonly, nonatomic) unsigned int watchdogPolicy; // @synthesize watchdogPolicy=_watchdogPolicy;
 @property(readonly, nonatomic) _Bool shouldContinueAfterWatchdog; // @synthesize shouldContinueAfterWatchdog=_shouldContinueAfterWatchdog;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) id <CSLTransactionQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

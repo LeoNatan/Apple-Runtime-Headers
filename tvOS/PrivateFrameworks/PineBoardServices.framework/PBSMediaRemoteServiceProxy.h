@@ -22,13 +22,13 @@
 }
 
 + (_Bool)_booleanStateForToken:(int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *pendingCompletionHandlers; // @synthesize pendingCompletionHandlers=_pendingCompletionHandlers;
 @property(retain, nonatomic) id <_PBSMediaRemoteServiceInternalInterface> remoteProxy; // @synthesize remoteProxy=_remoteProxy;
 @property(nonatomic) _Bool reliableTVAVRPowerControlAvailable; // @synthesize reliableTVAVRPowerControlAvailable=_reliableTVAVRPowerControlAvailable;
 @property(nonatomic) int TVAVRPowerControlNotifyToken; // @synthesize TVAVRPowerControlNotifyToken=_TVAVRPowerControlNotifyToken;
 @property(nonatomic) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) int volumeControlNotifyToken; // @synthesize volumeControlNotifyToken=_volumeControlNotifyToken;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_removeCompletionHandlerForToken:(id)arg1;
 - (void)_addCompletionHandler:(CDUnknownBlockType)arg1 forToken:(id)arg2;
 - (void)noteUserPresenceDetected;

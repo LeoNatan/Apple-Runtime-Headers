@@ -35,6 +35,7 @@
 }
 
 + (id)sharedMonitor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long currentThermalLevel; // @synthesize currentThermalLevel=_currentThermalLevel;
 @property(readonly, nonatomic, getter=isRemoteServerReachable) _Bool remoteServerReachable; // @synthesize remoteServerReachable=_remoteServerReachable;
 @property(readonly, nonatomic) int lastKnownNetworkType; // @synthesize lastKnownNetworkType=_lastKnownNetworkType;
@@ -50,7 +51,6 @@
 @property(readonly, copy, nonatomic) NSString *telephonyOperatorName; // @synthesize telephonyOperatorName=_telephonyOperatorName;
 @property(readonly, nonatomic, getter=isRemoteServerLikelyReachable) _Bool remoteServerLikelyReachable; // @synthesize remoteServerLikelyReachable=_isRemoteServerLikelyReachable;
 @property(readonly, nonatomic, getter=isCharging) _Bool charging; // @synthesize charging=_isCharging;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_handleCTServerConnectionNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_handleApplicationDidEnterForegroundNotification:(id)arg1;

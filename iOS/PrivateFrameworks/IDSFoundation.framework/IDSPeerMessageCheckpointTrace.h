@@ -17,10 +17,10 @@
     NSMutableArray *_mutableAggregateMessageSendCheckpoints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableAggregateMessageSendCheckpoints; // @synthesize mutableAggregateMessageSendCheckpoints=_mutableAggregateMessageSendCheckpoints;
 @property(retain, nonatomic) NSMutableArray *mutableEncryptionCheckpoints; // @synthesize mutableEncryptionCheckpoints=_mutableEncryptionCheckpoints;
 @property(readonly, nonatomic) NSString *guid; // @synthesize guid=_guid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CUTCheckpointRange *messageOnQueue; // @synthesize messageOnQueue=_messageOnQueue;
 @property(readonly, nonatomic) CUTCheckpointRange *IDQuery; // @synthesize IDQuery=_IDQuery;
 - (id)aggregateMessageSendCheckpoints;

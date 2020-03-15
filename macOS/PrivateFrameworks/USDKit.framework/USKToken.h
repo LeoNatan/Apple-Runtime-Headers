@@ -17,6 +17,7 @@
 + (id)tokenWithNodeType:(id)arg1;
 + (id)dataTypeWithTfToken:(struct TfToken)arg1;
 + (id)roleTypeWithTfToken:(struct TfToken)arg1;
++ (id)schemaTypeWithTfToken:(struct TfToken)arg1;
 + (id)nodeTypeWithTfToken:(struct TfToken)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;

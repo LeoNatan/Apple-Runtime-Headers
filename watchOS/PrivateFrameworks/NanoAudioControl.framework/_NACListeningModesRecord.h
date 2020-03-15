@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSString *currentListeningMode; // @synthesize currentListeningMode=_currentListeningMode;
 @property(retain, nonatomic) NSOrderedSet *availableListeningModes; // @synthesize availableListeningModes=_availableListeningModes;
-- (void).cxx_destruct;
 
 @end
 

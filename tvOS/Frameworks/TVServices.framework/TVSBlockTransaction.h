@@ -11,8 +11,8 @@
     CDUnknownBlockType _failsForChildTransactionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType failsForChildTransactionBlock; // @synthesize failsForChildTransactionBlock=_failsForChildTransactionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType failsForChildTransactionBlock; // @synthesize failsForChildTransactionBlock=_failsForChildTransactionBlock;
 - (_Bool)_shouldFailForChildTransaction:(id)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 failsForChildTransaction:(CDUnknownBlockType)arg2;
 

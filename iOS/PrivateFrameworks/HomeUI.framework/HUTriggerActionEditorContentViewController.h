@@ -19,11 +19,11 @@
     unsigned long long _forceDisableReasonsForSecureCharacteristicControl;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long forceDisableReasonsForSecureCharacteristicControl; // @synthesize forceDisableReasonsForSecureCharacteristicControl=_forceDisableReasonsForSecureCharacteristicControl;
 @property(readonly, nonatomic) UINavigationItem *effectiveNavigationItem; // @synthesize effectiveNavigationItem=_effectiveNavigationItem;
 @property(retain, nonatomic) HUTriggerActionFlow *flow; // @synthesize flow=_flow;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
-- (void).cxx_destruct;
 - (unsigned long long)_triggerForceDisableReasonsForActionItem:(id)arg1;
 - (void)_validateDoneButton;
 - (void)_updateOrRemoveDeletedMediaItems:(id)arg1 fromTriggerBuilder:(id)arg2;

@@ -16,8 +16,8 @@
     id <SXAnalyticsReporting> _analyticsReporting;
 }
 
-@property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 - (void)registerAnalyticsReporting:(id)arg1;
 
 // Remaining properties

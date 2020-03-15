@@ -47,6 +47,7 @@
 }
 
 + (id)_associatedTransitionContextForObject:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setIsPresentation:) _Bool _isPresentation; // @synthesize _isPresentation=__isPresentation;
 @property(nonatomic, setter=_setPresentationStyle:) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(copy, nonatomic, setter=_setPostInteractiveCompletionHandler:) CDUnknownBlockType _postInteractiveCompletionHandler; // @synthesize _postInteractiveCompletionHandler=__postInteractiveCompletionHandler;
@@ -67,7 +68,6 @@
 @property(nonatomic, setter=_setInteractor:) __weak id <UIViewControllerInteractiveTransitioning> _interactor; // @synthesize _interactor=__interactor;
 @property(nonatomic, setter=_setPercentOffset:) double _percentOffset; // @synthesize _percentOffset=__percentOffset;
 @property(retain, nonatomic, setter=_setContainerViews:) NSArray *_containerViews; // @synthesize _containerViews=__containerViews;
-- (void).cxx_destruct;
 - (void)_enableInteractionForDisabledViews;
 - (void)_disableInteractionForViews:(id)arg1;
 - (long long)_alongsideAnimationsCount;

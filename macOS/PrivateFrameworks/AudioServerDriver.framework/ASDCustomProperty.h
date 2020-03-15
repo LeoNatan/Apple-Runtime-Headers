@@ -17,12 +17,12 @@
     ASDObject *_owner;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak ASDObject *owner; // @synthesize owner=_owner;
 @property(nonatomic, getter=isSettable) BOOL settable; // @synthesize settable=_settable;
 @property(readonly, nonatomic) unsigned int qualifierDataType; // @synthesize qualifierDataType=_qualifierDataType;
 @property(readonly, nonatomic) unsigned int propertyDataType; // @synthesize propertyDataType=_propertyDataType;
 @property(readonly, copy, nonatomic) ASDPropertyAddress *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id value;
 @property(readonly, nonatomic) unsigned int element;
 @property(readonly, nonatomic) unsigned int scope;

@@ -24,12 +24,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)performCommitTransitionWithDelegate:(id)arg1 forViewController:(id)arg2 previewViewController:(id)arg3 previewInteractionController:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(retain, nonatomic) NSMutableDictionary *animationsByPresentationPhase; // @synthesize animationsByPresentationPhase=_animationsByPresentationPhase;
 @property(retain, nonatomic) NSDictionary *viewsParticipatingInCommitTransition; // @synthesize viewsParticipatingInCommitTransition=_viewsParticipatingInCommitTransition;
 @property(nonatomic) unsigned long long targetPresentationPhase; // @synthesize targetPresentationPhase=_targetPresentationPhase;
 @property(retain, nonatomic) UIInteractionProgress *interactionProgress; // @synthesize interactionProgress=_interactionProgress;
-- (void).cxx_destruct;
 - (void)_completeAnimationWithPresentationPhase:(unsigned long long)arg1 finished:(BOOL)arg2;
 - (void)_layoutForPresentationPhase:(unsigned long long)arg1;
 - (void)_animateCommitTransition:(id)arg1;

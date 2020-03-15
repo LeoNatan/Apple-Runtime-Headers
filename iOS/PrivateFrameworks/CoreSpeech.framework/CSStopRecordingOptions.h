@@ -9,8 +9,10 @@
 @interface CSStopRecordingOptions : NSObject
 {
     unsigned long long _stopRecordingReason;
+    unsigned long long _expectedStopHostTime;
 }
 
+@property(nonatomic) unsigned long long expectedStopHostTime; // @synthesize expectedStopHostTime=_expectedStopHostTime;
 @property(nonatomic) unsigned long long stopRecordingReason; // @synthesize stopRecordingReason=_stopRecordingReason;
 - (id)description;
 

@@ -14,9 +14,9 @@
     NSString *_assetLocalIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int workerFlags; // @synthesize workerFlags=_workerFlags;
 @property(readonly, copy, nonatomic) NSString *assetLocalIdentifier; // @synthesize assetLocalIdentifier=_assetLocalIdentifier;
-- (void).cxx_destruct;
 - (id)initWithAssetLocalIdentifier:(id)arg1 workerFlags:(int)arg2;
 
 @end

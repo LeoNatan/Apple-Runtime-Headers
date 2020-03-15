@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _resultBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType resultBlock; // @synthesize resultBlock=_resultBlock;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) _Bool cameraRecognized; // @synthesize cameraRecognized=_cameraRecognized;
-- (void).cxx_destruct;
 - (id)_performRequestWithProperties:(id)arg1 error:(id *)arg2;
 - (id)_requestPropertiesForThankYouWithURL:(id)arg1;
 - (void)_applyThankYouDictionary:(id)arg1 toRedeem:(id)arg2;

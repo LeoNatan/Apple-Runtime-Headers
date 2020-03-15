@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AVPlayerViewController *_playerViewController;
 }
 
-@property(nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 - (long long)_handleDisableLegibleLanguageOptionCommand;
 - (long long)_handleEnableLanguageOptionCommandWithLegibleOption:(id)arg1;
 - (long long)_handleDisableAudibleLanguageOptionCommand;

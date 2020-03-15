@@ -16,9 +16,9 @@
     NSMutableDictionary *_modules;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *modules; // @synthesize modules=_modules;
 @property __weak JSContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)require:(id)arg1;
 - (id)evaluateMainModuleScript:(id)arg1;
 - (id)requireModule:(id)arg1;

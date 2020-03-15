@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_remoteViewControllerInterface;
-@property(readonly, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 - (void)_willAppearInRemoteViewController;
 
 @end

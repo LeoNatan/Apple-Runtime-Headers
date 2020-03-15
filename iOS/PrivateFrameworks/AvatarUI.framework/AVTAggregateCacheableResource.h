@@ -15,8 +15,8 @@
     NSArray *_cacheableResources;
 }
 
-@property(readonly, nonatomic) NSArray *cacheableResources; // @synthesize cacheableResources=_cacheableResources;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *cacheableResources; // @synthesize cacheableResources=_cacheableResources;
 - (id)identifierForScope:(id)arg1 persistent:(_Bool)arg2;
 - (id)persistentIdentifierForScope:(id)arg1;
 - (id)volatileIdentifierForScope:(id)arg1;

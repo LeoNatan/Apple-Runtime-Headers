@@ -26,6 +26,7 @@
 + (id)attributionImageWithLocalResourceName:(id)arg1 pressedResourceName:(id)arg2 localPunchOut:(id)arg3 bundle:(id)arg4;
 + (id)attributionImageFromImageResource:(id)arg1;
 + (id)attributionImageFromAppPunchOut:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize logoSize; // @synthesize logoSize=_logoSize;
 @property(nonatomic) double remotePressedScale; // @synthesize remotePressedScale=_remotePressedScale;
 @property(nonatomic) double remoteScale; // @synthesize remoteScale=_remoteScale;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) SAUIAppPunchOut *localPunchOut; // @synthesize localPunchOut=_localPunchOut;
 @property(copy, nonatomic) NSString *localPressedResourceName; // @synthesize localPressedResourceName=_localPressedResourceName;
 @property(copy, nonatomic) NSString *localResourceName; // @synthesize localResourceName=_localResourceName;
-- (void).cxx_destruct;
 - (void)_fetchRemoteResourcesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_imageInLocalResourceBundleNamed:(id)arg1;
 - (void)_fetchLocalResourcesWithCompletion:(CDUnknownBlockType)arg1;

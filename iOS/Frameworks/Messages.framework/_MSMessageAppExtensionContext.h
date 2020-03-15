@@ -25,6 +25,7 @@
 + (id)_extensionContextHostProtocolAllowedClassesForItems;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CFRunLoopObserver *principalObjectCreationObserver; // @synthesize principalObjectCreationObserver=_principalObjectCreationObserver;
 @property(readonly, nonatomic) struct CGRect initialFrameOfHostView; // @synthesize initialFrameOfHostView=_initialFrameOfHostView;
 @property(retain, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) unsigned long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(retain, nonatomic) id <_MSMessageComposeHostImplProtocol> hostContext; // @synthesize hostContext=_hostContext;
-- (void).cxx_destruct;
 - (void)endDisablingUserInteraction;
 - (void)beginDisablingUserInteraction;
 - (void)contentDidLoad;

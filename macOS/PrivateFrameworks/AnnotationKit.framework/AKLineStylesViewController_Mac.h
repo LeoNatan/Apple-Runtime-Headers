@@ -17,11 +17,11 @@
 }
 
 + (id)generateLineImageForTag:(long long)arg1 isVariableWidth:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *viewItems; // @synthesize viewItems=_viewItems;
 @property(retain) NSStackView *stackView; // @synthesize stackView=_stackView;
 @property(copy) CDUnknownBlockType actionBlock; // @synthesize actionBlock=_actionBlock;
 @property __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (id)_lineStyleToolTipForTag:(long long)arg1;
 - (id)_imageForTag:(long long)arg1;
 - (id)_separatorView;

@@ -13,8 +13,8 @@
     NSSet *_slotComponents;
 }
 
-@property(readonly) NSSet *slotComponents; // @synthesize slotComponents=_slotComponents;
 - (void).cxx_destruct;
+@property(readonly) NSSet *slotComponents; // @synthesize slotComponents=_slotComponents;
 - (id)description;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;
 - (id)initWithSlotComponents:(id)arg1;

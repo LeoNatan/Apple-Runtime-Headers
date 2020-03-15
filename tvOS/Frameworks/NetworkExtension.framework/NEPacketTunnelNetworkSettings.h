@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSNumber *MTU; // @synthesize MTU=_MTU;
 @property(copy) NSNumber *tunnelOverheadBytes; // @synthesize tunnelOverheadBytes=_tunnelOverheadBytes;
 @property(copy) NEIPv6Settings *IPv6Settings; // @synthesize IPv6Settings=_IPv6Settings;
 @property(copy) NEIPv4Settings *IPv4Settings; // @synthesize IPv4Settings=_IPv4Settings;
-- (void).cxx_destruct;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;

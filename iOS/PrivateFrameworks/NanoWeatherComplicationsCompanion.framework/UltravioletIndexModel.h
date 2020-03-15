@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ultravioletIndexModelForConditions:(id)arg1 indexNumberFormatter:(id)arg2 useRoundedVariant:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) NSString *localizedIndex; // @synthesize localizedIndex=_localizedIndex;
 @property(readonly, nonatomic) double fraction; // @synthesize fraction=_fraction;
-- (void).cxx_destruct;
 
 @end
 

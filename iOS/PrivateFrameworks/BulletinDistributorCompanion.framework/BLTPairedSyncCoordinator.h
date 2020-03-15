@@ -23,11 +23,11 @@
 + (void)reportProgress:(double)arg1;
 + (void)syncDidComplete;
 + (id)syncState;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clientSyncComplete; // @synthesize clientSyncComplete=_clientSyncComplete;
 @property(retain, nonatomic) PSYSyncSessionObserver *pairedSyncObserver; // @synthesize pairedSyncObserver=_pairedSyncObserver;
 @property(retain, nonatomic) PSYInitialSyncStateObserver *pairedInitialSyncObserver; // @synthesize pairedInitialSyncObserver=_pairedInitialSyncObserver;
 @property(retain, nonatomic) PSYSyncCoordinator *pairedSyncCoordinator; // @synthesize pairedSyncCoordinator=_pairedSyncCoordinator;
-- (void).cxx_destruct;
 - (void)initialSyncStateObserver:(id)arg1 syncDidCompleteForPairingIdentifier:(id)arg2;
 - (void)initialSyncStateObserver:(id)arg1 syncDidResetForPairingIdentifier:(id)arg2;
 - (void)initialSyncStateObserver:(id)arg1 initialSyncDidCompleteForPairingIdentifier:(id)arg2;

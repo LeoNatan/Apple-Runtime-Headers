@@ -21,10 +21,10 @@
 
 + (void)setDefaultRequestService:(id)arg1;
 + (id)defaultRequestService;
+- (void).cxx_destruct;
 @property unsigned char loadMode; // @synthesize loadMode=_loadMode;
 @property(retain) PAImageRequestTileHint *tileHint; // @synthesize tileHint=_tileHint;
 @property(retain) PAImageRequestCacheHint *cacheHint; // @synthesize cacheHint=_cacheHint;
-- (void).cxx_destruct;
 - (id)description;
 - (id)submitSynchronous:(id)arg1;
 - (id)requestService;

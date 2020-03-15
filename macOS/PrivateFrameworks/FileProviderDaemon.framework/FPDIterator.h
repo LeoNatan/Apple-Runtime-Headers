@@ -16,12 +16,13 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
++ (id)iteratorForLocator:(id)arg1 wantsDisk:(BOOL)arg2 provider:(id)arg3;
 + (id)iteratorForLocator:(id)arg1 provider:(id)arg2;
 + (id)iteratorForLocator:(id)arg1 manager:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldDecorateItems; // @synthesize shouldDecorateItems=_shouldDecorateItems;
 @property(nonatomic) BOOL skipMaterializedTreeTraversal; // @synthesize skipMaterializedTreeTraversal=_skipMaterializedTreeTraversal;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numFoldersPopped;
 @property(readonly, nonatomic) BOOL done;
 - (id)nextItem;

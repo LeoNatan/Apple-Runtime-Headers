@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CNPostalAddressEditorView *_addressEditor;
 }
 
-@property(retain, nonatomic) CNPostalAddressEditorView *addressEditor; // @synthesize addressEditor=_addressEditor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNPostalAddressEditorView *addressEditor; // @synthesize addressEditor=_addressEditor;
 - (void)layoutMarginsDidChange;
 - (void)setBackgroundColor:(id)arg1;
 @property(copy, nonatomic) UIColor *editorSeparatorColor;

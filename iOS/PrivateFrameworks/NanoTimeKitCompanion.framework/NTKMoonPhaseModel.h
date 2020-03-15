@@ -19,6 +19,7 @@
     long long _event;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
 @property(readonly, nonatomic) long long hemisphere; // @synthesize hemisphere=_hemisphere;
 @property(readonly, nonatomic) unsigned long long phaseNumber; // @synthesize phaseNumber=_phaseNumber;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSDate *eventDate; // @synthesize eventDate=_eventDate;
 @property(readonly, nonatomic) NSDate *entryDate; // @synthesize entryDate=_entryDate;
-- (void).cxx_destruct;
 - (id)initWithDate:(id)arg1 location:(id)arg2;
 
 @end

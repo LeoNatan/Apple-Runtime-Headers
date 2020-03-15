@@ -17,10 +17,10 @@
 
 + (id)fromProto:(id)arg1;
 + (id)toProto:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cacheIdentifier; // @synthesize cacheIdentifier=_cacheIdentifier;
 @property(retain, nonatomic) SPAssetCacheAssets *transientCache; // @synthesize transientCache=_transientCache;
 @property(retain, nonatomic) SPAssetCacheAssets *permanentCache; // @synthesize permanentCache=_permanentCache;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

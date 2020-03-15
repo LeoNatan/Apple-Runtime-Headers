@@ -16,9 +16,9 @@
 
 + (unsigned int)minimumSupportedVersion;
 + (unsigned int)serializationVersion;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loadNonInkingStrokes; // @synthesize loadNonInkingStrokes=_loadNonInkingStrokes;
 @property(retain, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
-- (void).cxx_destruct;
 - (id)serializeCurrentVersion:(unsigned int *)arg1;
 - (void)mergeVersion:(unsigned int)arg1 fromData:(id)arg2;
 - (unsigned long long)mergeWithDrawingVersionedDocument:(id)arg1;

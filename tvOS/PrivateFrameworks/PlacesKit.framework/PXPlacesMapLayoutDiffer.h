@@ -16,9 +16,9 @@
     id <PXPlacesMapLayoutResult> _targetLayoutResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXPlacesMapLayoutResult> targetLayoutResult; // @synthesize targetLayoutResult=_targetLayoutResult;
 @property(readonly, nonatomic) id <PXPlacesMapLayoutResult> sourceLayoutResult; // @synthesize sourceLayoutResult=_sourceLayoutResult;
-- (void).cxx_destruct;
 - (void)_relateSourceLayoutItem:(id)arg1 withTargetLayoutItem:(id)arg2;
 - (void)_removeSourceLayoutItem:(id)arg1;
 - (void)_addTargetLayoutItem:(id)arg1;

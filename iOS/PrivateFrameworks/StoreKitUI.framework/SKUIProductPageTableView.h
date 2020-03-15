@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_productPageHeaderView;
 }
 
-@property(retain, nonatomic) UIView *productPageHeaderView; // @synthesize productPageHeaderView=_productPageHeaderView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *productPageHeaderView; // @synthesize productPageHeaderView=_productPageHeaderView;
 - (void)_addContentSubview:(id)arg1 atBack:(_Bool)arg2;
 
 @end

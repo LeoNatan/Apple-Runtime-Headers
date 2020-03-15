@@ -16,9 +16,9 @@
 }
 
 + (id)_groupIdentifiersByType;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *groupConfigurationsByIdentifier; // @synthesize groupConfigurationsByIdentifier=_groupConfigurationsByIdentifier;
 @property(readonly, nonatomic) double weekendGreatStoriesYouMissedTimeRange; // @synthesize weekendGreatStoriesYouMissedTimeRange=_weekendGreatStoriesYouMissedTimeRange;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)_identifierForGroupType:(long long)arg1;

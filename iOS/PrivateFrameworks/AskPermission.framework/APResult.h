@@ -16,11 +16,11 @@
     NSString *_productType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(readonly, nonatomic) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(readonly, nonatomic) NSString *buyParams; // @synthesize buyParams=_buyParams;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)compile;
 - (id)initWithDictionary:(id)arg1;

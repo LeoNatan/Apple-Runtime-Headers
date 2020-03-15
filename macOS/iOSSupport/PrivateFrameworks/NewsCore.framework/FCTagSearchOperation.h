@@ -23,6 +23,7 @@
     NSError *_searchError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *searchError; // @synthesize searchError=_searchError;
 @property(retain, nonatomic) FCStreamingResults *searchResults; // @synthesize searchResults=_searchResults;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
@@ -33,7 +34,6 @@
 @property(nonatomic) unsigned long long tagType; // @synthesize tagType=_tagType;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
-- (void).cxx_destruct;
 - (id)_establishStreamOfTags;
 - (id)_localIdentifier;
 - (void)_performSearchQuery:(CDUnknownBlockType)arg1;

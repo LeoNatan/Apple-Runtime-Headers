@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSString *_inchUnitString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *inchUnitString; // @synthesize inchUnitString=_inchUnitString;
 @property(retain, nonatomic) NSString *feetUnitString; // @synthesize feetUnitString=_feetUnitString;
-- (void).cxx_destruct;
 - (void)setTitle:(id)arg1;
 - (void)beginEditing;
 - (id)generateValue;

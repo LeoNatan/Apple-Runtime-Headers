@@ -19,12 +19,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBSceneTransform *transform; // @synthesize transform=_transform;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *listener; // @synthesize listener=_listener;
 @property int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic, getter=isWornOnRightArm) _Bool wornOnRightArm; // @synthesize wornOnRightArm=_wornOnRightArm;
 @property(nonatomic, getter=isInverted) _Bool inverted; // @synthesize inverted=_inverted;
-- (void).cxx_destruct;
 - (void)_deprecateMe_removeSettingsObservers;
 - (void)_deprecateMe_addSettingsObservers;
 - (void)_aggdLogCurrentCrownOrientation;

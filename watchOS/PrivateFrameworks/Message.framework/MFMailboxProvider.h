@@ -27,6 +27,7 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EFScheduler> observerScheduler; // @synthesize observerScheduler=_observerScheduler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *mailboxCacheQueue; // @synthesize mailboxCacheQueue=_mailboxCacheQueue;
 @property(retain) NSArray *allMailboxCache; // @synthesize allMailboxCache=_allMailboxCache;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) MFMailboxUidTransformer *mailboxUidTransformer; // @synthesize mailboxUidTransformer=_mailboxUidTransformer;
 @property(nonatomic) __weak id <EDAccountsProvider> accountsProvider; // @synthesize accountsProvider=_accountsProvider;
 @property(nonatomic) __weak id <EDMailboxProviderDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (int)mailboxTypeForMailboxObjectID:(id)arg1;
 - (id)mailboxObjectIDsForMailboxType:(int)arg1;
 - (void)invalidateMailboxes;

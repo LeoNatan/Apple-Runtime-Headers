@@ -27,6 +27,7 @@
 + (id)pictureURLJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool shared; // @synthesize shared=_shared;
 @property(readonly, nonatomic) NSURL *pictureURL; // @synthesize pictureURL=_pictureURL;
 @property(readonly, nonatomic) NSNumber *capacity; // @synthesize capacity=_capacity;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned long long productGroup; // @synthesize productGroup=_productGroup;
 @property(readonly, nonatomic) NSString *productDescription; // @synthesize productDescription=_productDescription;
 @property(readonly, nonatomic) NSString *productId; // @synthesize productId=_productId;
-- (void).cxx_destruct;
 - (id)initWithProductId:(id)arg1;
 
 // Remaining properties

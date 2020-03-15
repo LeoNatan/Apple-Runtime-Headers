@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/FCForYouMagazineFeedCursor-Protocol.h>
-
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface _TtC7NewsUI230ForYouMagazineFeedGroupsCursor : NSObject <FCForYouMagazineFeedCursor>
+@interface _TtC7NewsUI230ForYouMagazineFeedGroupsCursor : NSObject
 {
     // Error parsing type: , name: groups
     // Error parsing type: , name: identifier

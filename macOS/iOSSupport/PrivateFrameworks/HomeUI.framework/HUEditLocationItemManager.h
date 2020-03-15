@@ -28,6 +28,7 @@
     HFHomeBuilder *_homeBuilder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFHomeBuilder *homeBuilder; // @synthesize homeBuilder=_homeBuilder;
 @property(readonly, nonatomic) unsigned long long context; // @synthesize context=_context;
 @property(retain, nonatomic) HFItem *removeItem; // @synthesize removeItem=_removeItem;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) HFItem *usersItem; // @synthesize usersItem=_usersItem;
 @property(retain, nonatomic) HFItem *nameItem; // @synthesize nameItem=_nameItem;
 @property(retain, nonatomic) HUUserNotificationTopicListModule *notificationSettingsModule; // @synthesize notificationSettingsModule=_notificationSettingsModule;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)_itemsToHideInSet:(id)arg1;
 - (id)_homeFuture;

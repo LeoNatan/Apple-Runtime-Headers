@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     _Bool _usingInlinePlayback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *mediaURLString; // @synthesize mediaURLString=_mediaURLString;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) __weak id <SKUIEmbeddedMediaViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_thumbnailView;
 - (void)_tearDownMoviePlayer;
 - (struct CGSize)_sizeToFitImageSize:(struct CGSize)arg1 bounds:(struct CGRect)arg2;

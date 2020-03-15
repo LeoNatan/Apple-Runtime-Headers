@@ -25,9 +25,9 @@
 + (id)recursiveSharedLockWithLockFilePath:(id)arg1;
 + (id)sharedLockWithLockFilePath:(id)arg1;
 + (id)os_log;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *lockFilePath; // @synthesize lockFilePath=_lockFilePath;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)errorUserInfoWithDescription:(id)arg1;
 - (id)errorUserInfo;

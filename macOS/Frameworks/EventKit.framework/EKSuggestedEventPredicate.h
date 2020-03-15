@@ -15,10 +15,10 @@
     NSDate *_startDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(copy, nonatomic) NSString *opaqueKey; // @synthesize opaqueKey=_opaqueKey;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)predicateFormat;
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _since;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long since; // @synthesize since=_since;
 @property struct fsid fsid; // @synthesize fsid=_fsid;
 @property _Bool historyDone; // @synthesize historyDone=_historyDone;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property struct __FSEventStream *stream; // @synthesize stream=_stream;
 @property(copy, nonatomic) CDUnknownBlockType consumer; // @synthesize consumer=_consumer;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)consumeStream:(struct __FSEventStream *)arg1 forVolume:(id)arg2;
 - (void)callback:(id)arg1;
 - (void)dealloc;

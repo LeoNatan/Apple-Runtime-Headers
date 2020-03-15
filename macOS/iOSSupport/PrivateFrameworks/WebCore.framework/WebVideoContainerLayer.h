@@ -6,13 +6,19 @@
 
 #import <QuartzCore/CALayer.h>
 
+@class AVPlayerLayer;
+
 __attribute__((visibility("hidden")))
 @interface WebVideoContainerLayer : CALayer
 {
+    struct RetainPtr<AVPlayerLayer> _playerLayer;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)setPosition:(struct CGPoint)arg1;
 - (void)setBounds:(struct CGRect)arg1;
+@property(retain, nonatomic) AVPlayerLayer *playerLayer;
 
 @end
 

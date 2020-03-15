@@ -17,12 +17,12 @@
     NSString *_separator;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *separator; // @synthesize separator=_separator;
 @property(copy) NSDictionary *listing; // @synthesize listing=_listing;
 @property long long options; // @synthesize options=_options;
 @property(copy) NSString *referenceName; // @synthesize referenceName=_referenceName;
 @property(copy) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
-- (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
 - (BOOL)executeOnConnection:(id)arg1;

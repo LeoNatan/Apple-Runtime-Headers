@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)padStringWithSpaces:(id)arg1 toSize:(long long)arg2;
 + (void)appendString:(id)arg1 toLogFile:(id)arg2;
 + (_Bool)isLogEnabled;
+- (void).cxx_destruct;
 @property(readonly) NSString *fileNameBase; // @synthesize fileNameBase=_fileNameBase;
 @property(readonly) _Bool logEnabled; // @synthesize logEnabled=_logEnabled;
 @property(readonly) NSURL *logFileURL; // @synthesize logFileURL=_logFileURL;
 @property(readonly) NSURL *logFolderURL; // @synthesize logFolderURL=_logFolderURL;
-- (void).cxx_destruct;
 - (void)logClusterLookupMapL1:(const map_ad20a682 *)arg1;
 - (void)logClusterMapL1:(const map_ad20a682 *)arg1;
 - (void)logClusterLookupMapL0:(const map_ad20a682 *)arg1;

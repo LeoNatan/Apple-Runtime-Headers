@@ -16,8 +16,8 @@
 }
 
 + (id)stateProviderWithName:(id)arg1 type:(unsigned int)arg2 typeName:(id)arg3;
-@property(copy, nonatomic) CDUnknownBlockType encoder; // @synthesize encoder=_encoder;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType encoder; // @synthesize encoder=_encoder;
 - (id)_encodedState;
 - (void)updateState:(id)arg1;
 - (void)dealloc;

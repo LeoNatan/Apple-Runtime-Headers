@@ -16,11 +16,11 @@
     NSTimeZone *_endDateTimeZone;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *endDateTimeZone; // @synthesize endDateTimeZone=_endDateTimeZone;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSTimeZone *startDateTimeZone; // @synthesize startDateTimeZone=_startDateTimeZone;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 
 @end
 

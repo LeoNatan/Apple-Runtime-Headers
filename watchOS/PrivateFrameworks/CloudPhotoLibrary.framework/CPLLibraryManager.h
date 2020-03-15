@@ -51,6 +51,7 @@
 + (id)descriptionForProvideContentResult:(unsigned int)arg1;
 + (id)stateDescriptionForState:(unsigned int)arg1;
 + (void)useCloudPhotoDaemonImplementation;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *effectiveClientBundleIdentifier; // @synthesize effectiveClientBundleIdentifier=_effectiveClientBundleIdentifier;
 @property(copy, nonatomic) NSString *userOverride; // @synthesize userOverride=_userOverride;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
@@ -74,7 +75,6 @@
 @property(readonly, copy, nonatomic) NSURL *cloudLibraryStateStorageURL; // @synthesize cloudLibraryStateStorageURL=_cloudLibraryStateStorageURL;
 @property(readonly, copy, nonatomic) NSURL *clientLibraryBaseURL; // @synthesize clientLibraryBaseURL=_clientLibraryBaseURL;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
-- (void).cxx_destruct;
 - (void)provideCloudResource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)provideRecordWithCloudScopeIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)provideLibraryInfoForScopeWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

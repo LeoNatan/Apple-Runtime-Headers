@@ -18,9 +18,9 @@
 + (id)newInProcessViewController;
 + (id)newViewServiceViewController;
 + (id)newDefaultViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=setChildViewController:) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
 @property(nonatomic) __weak id <VNDocumentCameraViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

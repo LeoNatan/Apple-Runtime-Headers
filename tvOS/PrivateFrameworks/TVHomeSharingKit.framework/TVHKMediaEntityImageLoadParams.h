@@ -37,6 +37,7 @@
 + (id)_imageLoadParamsWithDictionaryRepresentation:(id)arg1;
 + (id)imageLoadParamsWithStringRepresentation:(id)arg1;
 + (id)imageLoadParamsWithMediaEntity:(id)arg1 imageType:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 @property(nonatomic) struct CGRect cutOutRect; // @synthesize cutOutRect=_cutOutRect;
 @property(nonatomic) unsigned long long playlistType; // @synthesize playlistType=_playlistType;
@@ -53,7 +54,6 @@
 @property(nonatomic) unsigned long long mediaEntitySubtype; // @synthesize mediaEntitySubtype=_mediaEntitySubtype;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;

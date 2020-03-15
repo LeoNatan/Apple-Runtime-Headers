@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     BOOL _didShortCircuit;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL didShortCircuit; // @synthesize didShortCircuit=_didShortCircuit;
 @property(readonly, nonatomic) NSSet *movePairs; // @synthesize movePairs=_movePairs;
-- (void).cxx_destruct;
 - (id)_computeMovePairsSTL;
 - (id)_computeMovePairsFoundation;
 - (id)initWithItemDiffer:(id)arg1 beforeDataSourceInfo:(id)arg2 afterDataSourceInfo:(id)arg3;

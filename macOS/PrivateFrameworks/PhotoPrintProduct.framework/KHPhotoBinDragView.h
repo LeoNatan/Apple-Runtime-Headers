@@ -16,8 +16,8 @@
     id <KHPhotoBinDragViewDelegate> _delegate;
 }
 
-@property __weak id <KHPhotoBinDragViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <KHPhotoBinDragViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)endGestureWithEvent:(id)arg1;
 - (BOOL)performDragOperation:(id)arg1;
 - (BOOL)prepareForDragOperation:(id)arg1;

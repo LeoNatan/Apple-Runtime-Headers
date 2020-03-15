@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long keyCounter; // @synthesize keyCounter=_keyCounter;
 @property _Bool validKey; // @synthesize validKey=_validKey;
 @property(getter=isDefaultPairedDevice) _Bool defaultPairedDevice; // @synthesize defaultPairedDevice=_defaultPairedDevice;
@@ -37,7 +38,6 @@
 @property(copy) NSString *productName; // @synthesize productName=_productName;
 @property(copy) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 @property(copy) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;

@@ -25,11 +25,11 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowKeyboardShortcuts; // @synthesize payloadAllowKeyboardShortcuts=_payloadAllowKeyboardShortcuts;
 @property(copy, nonatomic) NSNumber *payloadAllowSpellCheck; // @synthesize payloadAllowSpellCheck=_payloadAllowSpellCheck;
 @property(copy, nonatomic) NSNumber *payloadAllowAutoCorrection; // @synthesize payloadAllowAutoCorrection=_payloadAllowAutoCorrection;
 @property(copy, nonatomic) NSNumber *payloadAllowPredictiveKeyboard; // @synthesize payloadAllowPredictiveKeyboard=_payloadAllowPredictiveKeyboard;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -13,6 +13,7 @@
     _Bool _loadSuccessful;
     _Bool _httpNonGet;
     _Bool _synthesized;
+    int _score;
     long long _databaseID;
     long long _redirectSourceDatabaseID;
     long long _redirectDestinationDatabaseID;
@@ -21,22 +22,22 @@
     long long _origin;
     double _visitTime;
     NSString *_title;
-    unsigned long long _score;
     unsigned long long _attributes;
     WBSHistoryVisit *_redirectSource;
     WBSHistoryVisit *_redirectDestination;
 }
 
 + (id)synthesizedVisitWithHistoryItem:(id)arg1 visitTime:(double)arg2;
-+ (float)weightedVisitCountFromScore:(unsigned long long)arg1;
-+ (unsigned long long)scoreForWeightedVisitCount:(float)arg1;
++ (float)weightedVisitCountFromScore:(int)arg1;
++ (int)scoreForWeightedVisitCount:(float)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WBSHistoryVisit *redirectDestination; // @synthesize redirectDestination=_redirectDestination;
 @property(retain, nonatomic) WBSHistoryVisit *redirectSource; // @synthesize redirectSource=_redirectSource;
 @property(readonly, nonatomic, getter=isSynthesized) _Bool synthesized; // @synthesize synthesized=_synthesized;
 @property(readonly, nonatomic, getter=wasHTTPNonGet) _Bool httpNonGet; // @synthesize httpNonGet=_httpNonGet;
 @property(nonatomic, getter=loadWasSuccessful) _Bool loadSuccessful; // @synthesize loadSuccessful=_loadSuccessful;
 @property(nonatomic) unsigned long long attributes; // @synthesize attributes=_attributes;
-@property(nonatomic) unsigned long long score; // @synthesize score=_score;
+@property(nonatomic) int score; // @synthesize score=_score;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) double visitTime; // @synthesize visitTime=_visitTime;
 @property(nonatomic) long long origin; // @synthesize origin=_origin;
@@ -45,7 +46,6 @@
 @property(nonatomic) long long redirectDestinationDatabaseID; // @synthesize redirectDestinationDatabaseID=_redirectDestinationDatabaseID;
 @property(nonatomic) long long redirectSourceDatabaseID; // @synthesize redirectSourceDatabaseID=_redirectSourceDatabaseID;
 @property(nonatomic) long long databaseID; // @synthesize databaseID=_databaseID;
-- (void).cxx_destruct;
 - (double)_weight;
 - (void)recomputeScore;
 - (_Bool)hasAttributes:(unsigned long long)arg1;

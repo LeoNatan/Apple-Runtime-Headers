@@ -14,9 +14,9 @@
     CKRecordZoneSubscription *_subscription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecordZoneSubscription *subscription; // @synthesize subscription=_subscription;
 @property(retain, nonatomic) HMDBackingStoreCacheGroup *record; // @synthesize record=_record;
-- (void).cxx_destruct;
 - (id)mainReturningError;
 - (id)initWithGroup:(id)arg1 subscription:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 

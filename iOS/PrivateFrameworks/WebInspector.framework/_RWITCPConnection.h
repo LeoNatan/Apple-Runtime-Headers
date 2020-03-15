@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 + (id)TCPConnectionWithResolvedNetService:(id)arg1;
 + (id)TCPConnectionWithSocketPath:(id)arg1;
 + (id)TCPConnectionWithPort:(unsigned short)arg1;
-@property(nonatomic) __weak id <_RWITCPConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_RWITCPConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_processIncomingBytes:(const char *)arg1 length:(long long)arg2;
 - (void)_handleInput;
 - (void)_closeInputStream;

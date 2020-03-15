@@ -45,6 +45,7 @@
 + (id)signingErrorForTrustEvaluation:(id)arg1;
 + (int)_addDataConvertingLineEndingsFromUnixToNetwork:(id)arg1 toCMSEncoder:(struct _CMSEncoder *)arg2;
 + (id)newEncryptedPartWithData:(id)arg1 certificates:(id)arg2 encryptedData:(id *)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *dateReceived; // @synthesize dateReceived=_dateReceived;
 @property(copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(nonatomic) unsigned long long headerEncodingHint; // @synthesize headerEncodingHint=_headerEncodingHint;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *contentTransferEncoding; // @synthesize contentTransferEncoding=_contentTransferEncoding;
 @property(readonly, copy, nonatomic) NSData *encodedBodyData; // @synthesize encodedBodyData=_encodedBodyData;
 @property(readonly, copy, nonatomic) NSData *headerData; // @synthesize headerData=_headerData;
-- (void).cxx_destruct;
 - (id)_decodeMultipartAppledouble;
 - (id)_decodeApplicationApplefile;
 - (id)_decodeApplicationMacBinHex;

@@ -24,12 +24,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long externalSyncObjectCode; // @synthesize externalSyncObjectCode=_externalSyncObjectCode;
 @property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(retain, nonatomic) HDCodableMetadataDictionary *metadataDictionary; // @synthesize metadataDictionary=_metadataDictionary;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

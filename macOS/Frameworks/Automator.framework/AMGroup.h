@@ -28,6 +28,7 @@
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)groupWithName:(id)arg1 smallIcon:(id)arg2 largeIcon:(id)arg3;
 + (id)groupWithName:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *childGroups; // @synthesize childGroups=_childGroups;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(retain, nonatomic) NSArray *assetSortDescriptors; // @synthesize assetSortDescriptors=_assetSortDescriptors;
@@ -39,7 +40,6 @@
 @property(retain) NSImage *smallIcon; // @synthesize smallIcon=_smallIcon;
 @property(copy) NSString *type; // @synthesize type=_type;
 @property(copy) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (long long)localizedCaseInsensitiveCompareForVariableCategories:(id)arg1;
 - (long long)localizedCaseInsensitiveCompareForActionCategories:(id)arg1;

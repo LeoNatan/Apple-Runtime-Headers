@@ -28,10 +28,10 @@
 + (void)removeBudgetWithName:(id)arg1;
 + (id)budgetWithName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) _DPPrivacyBudgetRecord *budgetRecord; // @synthesize budgetRecord=_budgetRecord;
 @property(readonly, nonatomic) _DPPrivacyBudgetProperties *budgetProperties; // @synthesize budgetProperties=_budgetProperties;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)initializeBudgetRecordFrom:(id)arg1;
 - (id)description;
 - (id)initWithName:(id)arg1 budgetProperties:(id)arg2;

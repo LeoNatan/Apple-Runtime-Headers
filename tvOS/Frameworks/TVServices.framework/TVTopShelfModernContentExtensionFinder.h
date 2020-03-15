@@ -17,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_serialDispatchQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialDispatchQueue; // @synthesize serialDispatchQueue=_serialDispatchQueue;
 @property(retain, nonatomic) id extensionMatchingToken; // @synthesize extensionMatchingToken=_extensionMatchingToken;
 @property(retain, nonatomic) NSDictionary *extensionRegistry; // @synthesize extensionRegistry=_extensionRegistry;
 @property(copy, nonatomic) NSString *extensionPointIdentifier; // @synthesize extensionPointIdentifier=_extensionPointIdentifier;
-- (void).cxx_destruct;
 - (void)_handleMatchingExtensions:(id)arg1;
 - (id)_extensionMatchingAttributes;
 - (id)_extensionRegistryFromExtensions:(id)arg1;

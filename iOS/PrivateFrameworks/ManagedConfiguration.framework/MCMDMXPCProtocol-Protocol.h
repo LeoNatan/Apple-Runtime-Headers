@@ -10,7 +10,7 @@
 @class NSDictionary;
 
 @protocol MCMDMXPCProtocol <NSObject, MCMDMClientProtocol>
-- (void)processDeviceRequest:(NSDictionary *)arg1 completion:(void (^)(NSError *, NSDictionary *))arg2;
+- (void)processDeviceRequest:(NSDictionary *)arg1 encodeResponse:(_Bool)arg2 completion:(void (^)(NSError *, NSDictionary *, NSData *))arg3;
 - (void)uprootMDMWithCompletion:(void (^)(NSError *))arg1;
 - (void)migrateMDMWithContext:(int)arg1 completion:(void (^)(NSError *))arg2;
 - (void)retryNotNowWithCompletion:(void (^)(NSError *))arg1;

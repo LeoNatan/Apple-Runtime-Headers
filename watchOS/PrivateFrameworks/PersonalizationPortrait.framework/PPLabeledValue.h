@@ -20,9 +20,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<NSCopying><NSSecureCoding> *value; // @synthesize value=_value;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (_Bool)isEqualToLabeledValue:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

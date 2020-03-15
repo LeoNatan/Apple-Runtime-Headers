@@ -15,10 +15,10 @@
     struct CGAffineTransform _inversePreviewTransform;
 }
 
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType _cropImageReadyHandler; // @synthesize _cropImageReadyHandler=__cropImageReadyHandler;
 @property struct CGAffineTransform inversePreviewTransform; // @synthesize inversePreviewTransform=_inversePreviewTransform;
 @property(retain) PACropModeDrawingDelegate *drawingDelegate; // @synthesize drawingDelegate=_drawingDelegate;
-- (void).cxx_destruct;
 - (void)compositionForAssetType:(id)arg1 imageItemController:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (CDUnknownBlockType)compositionReplacedFilter;
 - (void)deactivateWithView:(id)arg1;

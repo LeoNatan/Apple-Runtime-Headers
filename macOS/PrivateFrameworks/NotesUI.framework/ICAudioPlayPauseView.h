@@ -19,13 +19,13 @@
     ICNoteEditorIconImageView *_pauseView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICNoteEditorIconImageView *pauseView; // @synthesize pauseView=_pauseView;
 @property(retain, nonatomic) ICNoteEditorIconImageView *playView; // @synthesize playView=_playView;
 @property(retain, nonatomic) CALayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(retain, nonatomic) ICMZoomController *zoomController; // @synthesize zoomController=_zoomController;
 @property(retain, nonatomic) ICAttachment *audioAttachment; // @synthesize audioAttachment=_audioAttachment;
-- (void).cxx_destruct;
-- (struct NSColor *)foregroundStrokeColor;
+- (id)foregroundStrokeColor;
 - (void)hostViewDidZoom:(id)arg1;
 - (void)didPlayToEndNotification:(id)arg1;
 - (void)audioPlaybackTimeChangedNotification:(id)arg1;

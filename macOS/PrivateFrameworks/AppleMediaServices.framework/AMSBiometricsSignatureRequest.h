@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     NSDictionary *_localAuthOptions;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *localAuthOptions; // @synthesize localAuthOptions=_localAuthOptions;
 @property(readonly) LAContext *localAuthContext; // @synthesize localAuthContext=_localAuthContext;
 @property(readonly) AMSKeychainOptions *keychainOptions; // @synthesize keychainOptions=_keychainOptions;
 @property(readonly, copy) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly, copy) NSString *challenge; // @synthesize challenge=_challenge;
 @property(readonly, copy) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)_localAuthOptions;
 - (void)dealloc;
 - (void)setLocalAuthAccessControlRef:(struct __SecAccessControl *)arg1;

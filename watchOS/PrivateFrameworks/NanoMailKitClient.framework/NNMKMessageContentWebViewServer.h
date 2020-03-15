@@ -17,10 +17,10 @@
 
 + (void)preWarmWebView;
 + (id)instance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKMessageContentWebView *webViewInstance; // @synthesize webViewInstance=_webViewInstance;
 @property(nonatomic) _Bool webViewLocked; // @synthesize webViewLocked=_webViewLocked;
 @property(nonatomic) __weak NSObject *ownerObject; // @synthesize ownerObject=_ownerObject;
-- (void).cxx_destruct;
 - (_Bool)performBlockIfWebViewAlreadyReservedForClientThenRelease:(id)arg1 operationBlock:(CDUnknownBlockType)arg2;
 - (_Bool)performBlockWhileWebViewReservedForClient:(id)arg1 operationBlock:(CDUnknownBlockType)arg2 setupBlockIfNewOwner:(CDUnknownBlockType)arg3;
 - (_Bool)setWebViewLockState:(_Bool)arg1 forClient:(id)arg2 setupBlockIfNewOwner:(CDUnknownBlockType)arg3;

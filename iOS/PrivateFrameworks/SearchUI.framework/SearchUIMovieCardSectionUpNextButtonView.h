@@ -13,8 +13,8 @@
     SearchUIWatchListUtilities *_watchListUtility;
 }
 
-@property(retain, nonatomic) SearchUIWatchListUtilities *watchListUtility; // @synthesize watchListUtility=_watchListUtility;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SearchUIWatchListUtilities *watchListUtility; // @synthesize watchListUtility=_watchListUtility;
 - (void)buttonPressed;
 - (void)updateUpNextStatus;
 - (id)initIsInUpNext:(_Bool)arg1 cardSectionView:(id)arg2;

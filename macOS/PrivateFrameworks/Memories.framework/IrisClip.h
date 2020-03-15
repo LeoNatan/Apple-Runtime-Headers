@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allowedTransitions;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IrisMovieClip *outroClip; // @synthesize outroClip=_outroClip;
 @property(retain, nonatomic) IrisMovieClip *introClip; // @synthesize introClip=_introClip;
 @property(retain, nonatomic) NSArray *containedClips; // @synthesize containedClips=_containedClips;
 @property(retain, nonatomic) IrisClipStyle *irisClipStyle; // @synthesize irisClipStyle=_irisClipStyle;
 @property(nonatomic) unsigned long long irisStyle; // @synthesize irisStyle=_irisStyle;
-- (void).cxx_destruct;
 - (id)containedClipsWithInTransition:(id)arg1 outTransition:(id)arg2;
 @property(readonly, nonatomic) BOOL outroClipAvailable;
 @property(readonly, nonatomic) BOOL introClipAvailable;

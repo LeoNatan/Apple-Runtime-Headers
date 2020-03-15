@@ -27,9 +27,9 @@
 + (void)requestRemovalOfLexiconForRecentInputIdentifier:(id)arg1;
 + (void)requestLexiconForRecentInputIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)recentInputAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(nonatomic) BOOL needsSync; // @synthesize needsSync=_needsSync;
-- (void).cxx_destruct;
 - (void)storeIfNecessary;
 - (id)lexiconByRemovingEntry:(id)arg1;
 - (id)lexiconWithAdditionalEntry:(id)arg1 maximumSize:(long long)arg2;

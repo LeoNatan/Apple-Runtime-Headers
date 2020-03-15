@@ -19,7 +19,7 @@
 - (_Bool)showHearingDevicesControl:(_Bool)arg1;
 - (_Bool)showControlCenter:(_Bool)arg1;
 - (_Bool)canShowControlCenter;
-- (_Bool)isNonExclusiveSystemUIFocusable;
+- (_Bool)isNonExclusiveSystemUIFocusableIncludingPIPWindow:(_Bool)arg1;
 - (_Bool)isControlCenterVisible;
 - (_Bool)showNotificationCenter:(_Bool)arg1;
 - (_Bool)canShowNotificationCenter;

@@ -33,19 +33,19 @@
 
 + (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)sharedSettings;
+- (void).cxx_destruct;
 @property _Bool hasOutstandingChanges; // @synthesize hasOutstandingChanges=_hasOutstandingChanges;
 @property int ignoreChangesCount; // @synthesize ignoreChangesCount=_ignoreChangesCount;
 @property(readonly, copy, nonatomic) NSDate *lastSyncToCloudDate; // @synthesize lastSyncToCloudDate=_lastSyncToCloudDate;
 @property(readonly, copy, nonatomic) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(copy, nonatomic) NSNumber *optedInVal; // @synthesize optedInVal=_optedInVal;
-- (void).cxx_destruct;
 - (id)_connection;
 - (void)endIgnoringChanges;
 - (void)beginIgnoringChanges;
 - (void)_tickleKVO;
 - (void)_removeWatchListApp:(id)arg1;
 - (id)_appsForChannelID:(id)arg1;
-- (void)_accountStoreChangedNotification:(id)arg1;
+- (void)_activeAccountChangedNotification:(id)arg1;
 - (void)_attemptCullingOfObsoleteApp:(id)arg1;
 - (_Bool)synchronize:(unsigned int)arg1;
 - (void)synchronize:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;

@@ -20,6 +20,7 @@
     struct CGSize _suggestedSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *infoForRendering; // @synthesize infoForRendering=_infoForRendering;
 @property(readonly, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic) struct CGSize suggestedSize; // @synthesize suggestedSize=_suggestedSize;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) id <SXComponentStyle> componentStyle; // @synthesize componentStyle=_componentStyle;
 @property(readonly, nonatomic) id <SXComponentLayout> componentLayout; // @synthesize componentLayout=_componentLayout;
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
-- (void).cxx_destruct;
 - (void)saveInfo:(id)arg1 forRenderingPhaseWithIdentifier:(id)arg2;
 - (struct UIEdgeInsets)bordersInsetsWithUnitConverter:(id)arg1;
 - (struct UIEdgeInsets)layoutMarginsWithUnitConverter:(id)arg1;

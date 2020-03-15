@@ -29,7 +29,6 @@
 - (id)description;
 - (id)init;
 - (id)initWithEnabled:(_Bool)arg1 type:(long long)arg2 isEmergencyText:(_Bool)arg3;
-- (id)initWithEnabled:(_Bool)arg1 type:(long long)arg2;
 
 @end
 

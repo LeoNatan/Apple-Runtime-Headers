@@ -17,8 +17,8 @@
 
 + (id)textWithAttributedString:(id)arg1;
 + (id)textWithDOMElement:(id)arg1 usingParseBlock:(CDUnknownBlockType)arg2;
-@property(readonly, retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

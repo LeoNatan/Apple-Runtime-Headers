@@ -21,14 +21,15 @@
 
 + (void)profileMigrationComplete;
 + (id)getServiceIDForPayload:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NEConfiguration *ingestedConfiguration; // @synthesize ingestedConfiguration=_ingestedConfiguration;
 @property(retain) NSMutableArray *currentConfigurations; // @synthesize currentConfigurations=_currentConfigurations;
 @property(readonly) NEConfigurationManager *manager; // @synthesize manager=_manager;
 @property(readonly) NSString *payloadType; // @synthesize payloadType=_payloadType;
 @property(readonly) NSString *clientName; // @synthesize clientName=_clientName;
-- (void).cxx_destruct;
 - (_Bool)updateManagedAppRules:(id)arg1;
 - (id)findMostSpecificAppRuleForBundleID:(id)arg1 config:(id)arg2;
+- (_Bool)updateAccountIdentifiers:(id)arg1;
 - (_Bool)updateAppLayerVPNMappingRules:(id)arg1;
 - (_Bool)isAutoCreatedRule:(id)arg1;
 - (void)enableDefaultService;

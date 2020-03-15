@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsSyncUp; // @synthesize needsSyncUp=_needsSyncUp;
 @property(retain, nonatomic) NSNumber *pendingRequestID; // @synthesize pendingRequestID=_pendingRequestID;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addProblemWithType:(int)arg1 recordName:(id)arg2;
 - (void)_addProblem:(id)arg1;

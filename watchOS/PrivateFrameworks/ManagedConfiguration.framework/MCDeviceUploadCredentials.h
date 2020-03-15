@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *dsToken; // @synthesize dsToken=_dsToken;
 @property(readonly, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDsid:(id)arg1 dsToken:(id)arg2;

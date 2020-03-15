@@ -18,11 +18,11 @@
 
 + (id)transportButtonWithType:(long long)arg1;
 + (id)transportButton;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) UIColor *glyphColor; // @synthesize glyphColor=_glyphColor;
 @property(nonatomic) _Bool showBackgroundPlatter; // @synthesize showBackgroundPlatter=_showBackgroundPlatter;
 @property(nonatomic) long long transportType; // @synthesize transportType=_transportType;
-- (void).cxx_destruct;
 - (void)_updateTouchInsetsToFillContainerWithSize:(struct CGSize)arg1;
 - (void)_updateImageWithType:(long long)arg1;
 - (void)tintColorDidChange;

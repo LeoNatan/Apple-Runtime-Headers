@@ -52,6 +52,7 @@
 + (BOOL)supportsSecureCoding;
 + (void)endMonitoringProviderDomainChanges:(id)arg1;
 + (id)beginMonitoringProviderDomainChangesWithHandler:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldHideDomainDisplayName; // @synthesize shouldHideDomainDisplayName=_shouldHideDomainDisplayName;
 @property(nonatomic) BOOL shouldHideExtensionName; // @synthesize shouldHideExtensionName=_shouldHideExtensionName;
 @property(retain, nonatomic) NSString *version; // @synthesize version=_version;
@@ -78,7 +79,6 @@
 @property(nonatomic, getter=isReadOnly) BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property(readonly, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic, getter=isEmpty) BOOL empty;
 @property(readonly, nonatomic) BOOL isMainiCloudDriveDomain;

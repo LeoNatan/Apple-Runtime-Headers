@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *internalTrailingBarButtons; // @synthesize internalTrailingBarButtons=_internalTrailingBarButtons;
 @property(retain, nonatomic) NSArray *internalLeadingBarButtons; // @synthesize internalLeadingBarButtons=_internalLeadingBarButtons;
 @property(nonatomic) __weak id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) id <CPBaseTemplateProviding> templateProvider; // @synthesize templateProvider=_templateProvider;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) CPBarButton *backButton; // @synthesize backButton=_backButton;
-- (void).cxx_destruct;
 - (_Bool)barButton:(id)arg1 setTitle:(id)arg2;
 - (_Bool)barButton:(id)arg1 setImage:(id)arg2;
 - (_Bool)control:(id)arg1 setEnabled:(_Bool)arg2;

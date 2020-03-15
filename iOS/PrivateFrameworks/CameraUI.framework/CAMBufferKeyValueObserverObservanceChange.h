@@ -15,10 +15,10 @@
     NSDictionary *_change;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *change; // @synthesize change=_change;
 @property(readonly, nonatomic) __weak NSObject *object; // @synthesize object=_object;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
-- (void).cxx_destruct;
 - (id)initWithKeyPath:(id)arg1 ofObject:(id)arg2 withChange:(id)arg3;
 
 @end

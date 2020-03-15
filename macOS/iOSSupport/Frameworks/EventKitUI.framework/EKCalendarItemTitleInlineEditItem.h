@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     BOOL _drawsOwnRowSeparators;
 }
 
-@property(nonatomic) BOOL drawsOwnRowSeparators; // @synthesize drawsOwnRowSeparators=_drawsOwnRowSeparators;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL drawsOwnRowSeparators; // @synthesize drawsOwnRowSeparators=_drawsOwnRowSeparators;
 - (void)_setDrawsOwnRowSeparatorsForCell:(id)arg1;
 - (id)searchStringForEventAutocomplete;
 - (BOOL)textFieldShouldClear:(id)arg1;

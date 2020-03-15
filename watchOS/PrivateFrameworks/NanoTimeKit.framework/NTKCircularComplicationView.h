@@ -43,6 +43,7 @@
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 + (id)mediumViewForComplicationType:(unsigned int)arg1;
 + (id)viewForComplicationType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
 @property(retain, nonatomic) UIColor *tritium_overridePlatterColor; // @synthesize tritium_overridePlatterColor=_tritium_overridePlatterColor;
 @property(retain, nonatomic) UIColor *tritium_overrideForegroundColor; // @synthesize tritium_overrideForegroundColor=_tritium_overrideForegroundColor;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
-- (void).cxx_destruct;
 - (id)_fontForDynamicFontSize:(int)arg1;
 - (CDStruct_4eca2615)_layoutConstants;
 - (void)_updateForTemplateChange;

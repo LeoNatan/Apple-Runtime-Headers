@@ -18,10 +18,10 @@
 
 + (id)alertWithTitle:(id)arg1 attributedMessage:(id)arg2;
 + (id)alertWithTitle:(id)arg1 message:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSAttributedString *attributedMessage; // @synthesize attributedMessage=_attributedMessage;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_executeAction:(id)arg1;
 @property(readonly, nonatomic) NSArray *actions;
 - (void)addAction:(id)arg1;

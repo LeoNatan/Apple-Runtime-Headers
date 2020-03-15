@@ -23,6 +23,7 @@
 }
 
 + (id)spaceWithUUID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _securityAgentActive; // @synthesize _securityAgentActive=__securityAgentActive;
 @property(nonatomic) BOOL _lockScreenActive; // @synthesize _lockScreenActive=__lockScreenActive;
 @property(nonatomic) BOOL _levelTemporarilyRaised; // @synthesize _levelTemporarilyRaised=__levelTemporarilyRaised;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) AXFApplicationManager *_applicationManager; // @synthesize _applicationManager=__applicationManager;
 @property(nonatomic) BOOL automaticallyRiseToVoiceOverLevelWhenEncounteringSecurityAgent; // @synthesize automaticallyRiseToVoiceOverLevelWhenEncounteringSecurityAgent=_automaticallyRiseToVoiceOverLevelWhenEncounteringSecurityAgent;
 @property(nonatomic) BOOL automaticallyRiseToVoiceOverLevelInLockScreen; // @synthesize automaticallyRiseToVoiceOverLevelInLockScreen=_automaticallyRiseToVoiceOverLevelInLockScreen;
-- (void).cxx_destruct;
 - (BOOL)_shouldRestoreOriginalLevel;
 - (void)_restoreOriginalLevelIfNeeded;
 - (BOOL)_shouldTemporarilyRaiseLevelToVoiceOverLevel;

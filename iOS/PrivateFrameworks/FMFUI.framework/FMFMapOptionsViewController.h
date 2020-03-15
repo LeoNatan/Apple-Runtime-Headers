@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
     MKMapAttribution *_mapAttribution;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapAttribution *mapAttribution; // @synthesize mapAttribution=_mapAttribution;
 @property(retain, nonatomic) UIView *bottomWhitePane; // @synthesize bottomWhitePane=_bottomWhitePane;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) UIView *topTapView; // @synthesize topTapView=_topTapView;
 @property(retain, nonatomic) UIButton *mapAttributionButton; // @synthesize mapAttributionButton=_mapAttributionButton;
 @property(nonatomic) __weak id <FMFMapOptionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)segmentedControlChanged:(id)arg1;
 - (void)attributionButtonPressed:(id)arg1;
 - (void)openInMaps:(id)arg1;

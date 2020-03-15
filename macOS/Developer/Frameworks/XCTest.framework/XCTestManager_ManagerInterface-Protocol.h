@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <XCTest/XCTestManager_ProtectedResources-Protocol.h>
+
 @class NSString, NSUUID, XCTCapabilities, XCTSpindumpRequestSpecification;
 
-@protocol XCTestManager_ManagerInterface
+@protocol XCTestManager_ManagerInterface <XCTestManager_ProtectedResources>
 - (void)_XCT_requestBackgroundAssertionWithReply:(void (^)(void))arg1;
 - (void)_XCT_requestBackgroundAssertionForPID:(int)arg1 reply:(void (^)(BOOL))arg2;
 - (void)_XCT_requestScreenshotWithReply:(void (^)(NSData *, NSError *))arg1;

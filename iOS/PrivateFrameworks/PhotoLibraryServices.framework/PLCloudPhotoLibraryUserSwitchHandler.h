@@ -16,8 +16,8 @@
     id <PLCloudUserSessionHandling> _sessionHandler;
 }
 
-@property(retain) id <PLCloudUserSessionHandling> sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 - (void).cxx_destruct;
+@property(retain) id <PLCloudUserSessionHandling> sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 - (void)willSwitchUser;
 - (void)dealloc;
 - (id)init;

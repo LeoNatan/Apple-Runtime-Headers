@@ -17,10 +17,11 @@
     NSHashTable *_pendingMessageReplies;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *pendingMessageReplies; // @synthesize pendingMessageReplies=_pendingMessageReplies;
 @property(retain, nonatomic) id <PBSDisplayManagerServiceInterface> remoteProxy; // @synthesize remoteProxy=_remoteProxy;
-- (void).cxx_destruct;
 - (void)enableModeSwitchingForFrameRate:(_Bool)arg1;
+- (void)enableAtmos:(_Bool)arg1;
 - (void)enableModeSwitchingForDynamicRange:(_Bool)arg1;
 - (void)fetchCurrentDisplayStateWithReply:(CDUnknownBlockType)arg1;
 - (void)setAudioLatency:(id)arg1 forKey:(id)arg2;

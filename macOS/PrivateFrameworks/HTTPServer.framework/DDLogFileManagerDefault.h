@@ -16,8 +16,8 @@
     NSString *_logsDirectory;
 }
 
-@property unsigned long long maximumNumberOfLogFiles; // @synthesize maximumNumberOfLogFiles;
 - (void).cxx_destruct;
+@property unsigned long long maximumNumberOfLogFiles; // @synthesize maximumNumberOfLogFiles;
 - (id)createNewLogFile;
 - (id)generateShortUUID;
 - (id)sortedLogFileInfos;

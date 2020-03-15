@@ -31,6 +31,7 @@
 + (_Bool)supportsSecureCoding;
 + (long long)version;
 + (id)paymentMerchantSessionWithProtobuf:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *retryNonce; // @synthesize retryNonce=_retryNonce;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) NSArray *signedFields; // @synthesize signedFields=_signedFields;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) NSString *merchantSessionIdentifier; // @synthesize merchantSessionIdentifier=_merchantSessionIdentifier;
 @property(readonly, nonatomic) unsigned long long expiresAt; // @synthesize expiresAt=_expiresAt;
 @property(readonly, nonatomic) unsigned long long epochTimestamp; // @synthesize epochTimestamp=_epochTimestamp;
-- (void).cxx_destruct;
 - (id)signedData;
 - (_Bool)_isModern;
 - (_Bool)supportsURL:(id)arg1;

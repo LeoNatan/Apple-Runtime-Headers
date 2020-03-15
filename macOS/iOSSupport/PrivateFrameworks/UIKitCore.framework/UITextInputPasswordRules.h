@@ -18,8 +18,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)passwordRulesWithDescriptor:(id)arg1;
-@property(readonly, nonatomic) NSString *passwordRulesDescriptor; // @synthesize passwordRulesDescriptor=_passwordRulesDescriptor;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *passwordRulesDescriptor; // @synthesize passwordRulesDescriptor=_passwordRulesDescriptor;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -17,8 +17,8 @@
 }
 
 + (id)keyPathsForValuesAffectingIPAddress;
-@property(readonly, nonatomic) id <CRKIPAddressProviding> baseProvider; // @synthesize baseProvider=_baseProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CRKIPAddressProviding> baseProvider; // @synthesize baseProvider=_baseProvider;
 @property(readonly, copy, nonatomic) NSString *IPAddress;
 - (id)makeProviderForCurrentPlatform;
 - (id)init;

@@ -37,12 +37,12 @@
 + (Class)layoutAccessibilityClass;
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *accessibilityRoleDescription; // @synthesize accessibilityRoleDescription=_accessibilityRoleDescription;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) NSString *accessibilityIdentifier; // @synthesize accessibilityIdentifier=_accessibilityIdentifier;
 @property(readonly, nonatomic) UXCollectionViewLayoutAccessibility *layoutAccessibility; // @synthesize layoutAccessibility=_layoutAccessibility;
 @property(readonly, nonatomic) __weak UXCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *accessibilityChildren; // @synthesize accessibilityChildren=_accessibilityChildren;
 - (id)indexPathOfItemBelow:(id)arg1;
 - (id)indexPathOfItemAbove:(id)arg1;

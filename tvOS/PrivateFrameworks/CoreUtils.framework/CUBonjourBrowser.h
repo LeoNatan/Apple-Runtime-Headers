@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUBonjourBrowser : NSObject
@@ -16,7 +16,7 @@
     struct BonjourBrowser *_bonjourBrowser;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
-    struct NSMutableDictionary *_deviceMap;
+    NSMutableDictionary *_deviceMap;
     struct LogCategory *_ucat;
     _Bool _browseFlagsChanged;
     unsigned int _changeFlags;
@@ -34,6 +34,7 @@
     CDUnknownBlockType _invalidationHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceChangedHandler; // @synthesize deviceChangedHandler=_deviceChangedHandler;
@@ -47,7 +48,6 @@
 @property(nonatomic) unsigned int controlFlags; // @synthesize controlFlags=_controlFlags;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
 @property(nonatomic) unsigned long long browseFlags; // @synthesize browseFlags=_browseFlags;
-- (void).cxx_destruct;
 - (void)_bonjourHandleRemoveDevice:(id)arg1;
 - (void)_bonjourHandleAddOrUpdateDevice:(id)arg1;
 - (void)_bonjourHandleEventType:(unsigned int)arg1 info:(id)arg2;

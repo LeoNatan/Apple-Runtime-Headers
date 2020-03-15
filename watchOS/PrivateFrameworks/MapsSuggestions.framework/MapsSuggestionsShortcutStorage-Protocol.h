@@ -6,7 +6,7 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class MapsSuggestionsShortcut;
+@class MapsSuggestionsShortcut, NSArray;
 
 @protocol MapsSuggestionsShortcutStorage <MapsSuggestionsObject>
 - (void)setChangeHandler:(void (^)(void))arg1;
@@ -15,8 +15,8 @@
 - (_Bool)moveShortcut:(MapsSuggestionsShortcut *)arg1 afterShortcut:(MapsSuggestionsShortcut *)arg2 handler:(void (^)(_Bool))arg3;
 - (_Bool)moveShortcut:(MapsSuggestionsShortcut *)arg1 beforeShortcut:(MapsSuggestionsShortcut *)arg2 handler:(void (^)(_Bool))arg3;
 - (_Bool)moveShortcut:(MapsSuggestionsShortcut *)arg1 toIndex:(int)arg2 handler:(void (^)(_Bool))arg3;
-- (_Bool)removeShortcuts:(struct NSArray *)arg1 handler:(void (^)(_Bool))arg2;
-- (_Bool)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(void (^)(_Bool))arg2;
-- (_Bool)loadAllShortcutsWithHandler:(void (^)(struct NSArray *, NSError *))arg1;
+- (_Bool)removeShortcuts:(NSArray *)arg1 handler:(void (^)(_Bool))arg2;
+- (_Bool)addOrUpdateShortcuts:(NSArray *)arg1 handler:(void (^)(_Bool))arg2;
+- (_Bool)loadAllShortcutsWithHandler:(void (^)(NSArray *, NSError *))arg1;
 @end
 

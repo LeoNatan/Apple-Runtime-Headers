@@ -30,6 +30,7 @@
     CDStruct_b48b9fb5 _shadowAttributes;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) CDStruct_b48b9fb5 shadowAttributes; // @synthesize shadowAttributes=_shadowAttributes;
 @property(nonatomic) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
@@ -37,7 +38,6 @@
 @property(nonatomic) _Bool usesBackgroundView; // @synthesize usesBackgroundView=_usesBackgroundView;
 @property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred; // @synthesize backgroundBlurred=_backgroundBlurred;
-- (void).cxx_destruct;
 - (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 @property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
 - (id)visualStylingProviderForCategory:(long long)arg1;

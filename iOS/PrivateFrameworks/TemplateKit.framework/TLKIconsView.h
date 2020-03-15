@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _prominence;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long prominence; // @synthesize prominence=_prominence;
 @property(retain, nonatomic) NSMutableArray *imageViews; // @synthesize imageViews=_imageViews;
-- (void).cxx_destruct;
 - (void)updateIcons:(id)arg1;
 - (id)init;
 

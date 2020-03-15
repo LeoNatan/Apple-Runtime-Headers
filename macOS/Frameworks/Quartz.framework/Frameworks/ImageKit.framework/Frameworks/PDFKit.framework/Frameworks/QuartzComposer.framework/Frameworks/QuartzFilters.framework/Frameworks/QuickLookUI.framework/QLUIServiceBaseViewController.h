@@ -22,12 +22,12 @@
 }
 
 + (unsigned int)declinedEventMask;
+- (void).cxx_destruct;
 @property(getter=isDragging) BOOL dragging; // @synthesize dragging=_dragging;
 @property(retain) QLPreviewDragController *dragController; // @synthesize dragController=_dragController;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(retain) NSClickGestureRecognizer *doubleClickRecognizer; // @synthesize doubleClickRecognizer=_doubleClickRecognizer;
 @property(retain) NSPanGestureRecognizer *dragRecognizer; // @synthesize dragRecognizer=_dragRecognizer;
-- (void).cxx_destruct;
 - (id)beginDraggingSessionWithItems:(id)arg1 event:(id)arg2 source:(id)arg3;
 - (struct CGRect)sourceFrame;
 - (void)getImageRepresentationWithFrame:(struct CGRect)arg1 completion:(CDUnknownBlockType)arg2;

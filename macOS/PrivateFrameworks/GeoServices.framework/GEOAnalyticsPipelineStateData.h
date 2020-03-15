@@ -22,6 +22,8 @@
     double _lookaroundSessionEndTime;
     double _lookaroundSessionStartTime;
     double _lookaroundZoom;
+    NSString *_mapLaunchLaunchuri;
+    NSString *_mapLaunchSourceappid;
     double _mapViewLocationTouristTimestamp;
     GEOMapRegion *_mapViewMapRegion;
     double _mapViewZoomLevel;
@@ -158,6 +160,8 @@
         unsigned int read_deviceInputLocale:1;
         unsigned int read_deviceOutputLocale:1;
         unsigned int read_lookaroundLocation:1;
+        unsigned int read_mapLaunchLaunchuri:1;
+        unsigned int read_mapLaunchSourceappid:1;
         unsigned int read_mapViewMapRegion:1;
         unsigned int read_mapsServerMetadataSuggestionEntryDisplayeds:1;
         unsigned int read_mapsServerMetadataSuggestionEntryTappedOn:1;
@@ -184,6 +188,8 @@
         unsigned int wrote_lookaroundSessionEndTime:1;
         unsigned int wrote_lookaroundSessionStartTime:1;
         unsigned int wrote_lookaroundZoom:1;
+        unsigned int wrote_mapLaunchLaunchuri:1;
+        unsigned int wrote_mapLaunchSourceappid:1;
         unsigned int wrote_mapViewLocationTouristTimestamp:1;
         unsigned int wrote_mapViewMapRegion:1;
         unsigned int wrote_mapViewZoomLevel:1;
@@ -271,6 +277,12 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *mapLaunchLaunchuri;
+@property(readonly, nonatomic) BOOL hasMapLaunchLaunchuri;
+- (void)_readMapLaunchLaunchuri;
+@property(retain, nonatomic) NSString *mapLaunchSourceappid;
+@property(readonly, nonatomic) BOOL hasMapLaunchSourceappid;
+- (void)_readMapLaunchSourceappid;
 - (int)StringAsRestoreUitarget:(id)arg1;
 - (id)restoreUitargetAsString:(int)arg1;
 @property(nonatomic) BOOL hasRestoreUitarget;

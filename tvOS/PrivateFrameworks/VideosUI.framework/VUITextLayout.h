@@ -12,6 +12,8 @@
 
 @interface VUITextLayout : NSObject <NSCopying>
 {
+    _Bool _shouldUpdateTextColor;
+    _Bool _shouldAllowParagraphHyphenation;
     _Bool _alwaysFocusable;
     unsigned int _fontTraits;
     int _blendMode;
@@ -41,8 +43,10 @@
     struct UIEdgeInsets _margin;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool alwaysFocusable; // @synthesize alwaysFocusable=_alwaysFocusable;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
+@property(nonatomic) _Bool shouldAllowParagraphHyphenation; // @synthesize shouldAllowParagraphHyphenation=_shouldAllowParagraphHyphenation;
 @property(nonatomic) long long lineBreakMode; // @synthesize lineBreakMode=_lineBreakMode;
 @property(retain, nonatomic) NSNumber *letterSpacing; // @synthesize letterSpacing=_letterSpacing;
 @property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
@@ -56,6 +60,7 @@
 @property(retain, nonatomic) NSString *compositingFilter; // @synthesize compositingFilter=_compositingFilter;
 @property(retain, nonatomic) UIColor *darkSeeMoreTextColor; // @synthesize darkSeeMoreTextColor=_darkSeeMoreTextColor;
 @property(retain, nonatomic) UIColor *seeMoreTextColor; // @synthesize seeMoreTextColor=_seeMoreTextColor;
+@property(nonatomic) _Bool shouldUpdateTextColor; // @synthesize shouldUpdateTextColor=_shouldUpdateTextColor;
 @property(retain, nonatomic) UIColor *darkHighlightOrSelectedColor; // @synthesize darkHighlightOrSelectedColor=_darkHighlightOrSelectedColor;
 @property(retain, nonatomic) UIColor *highlightOrSelectedColor; // @synthesize highlightOrSelectedColor=_highlightOrSelectedColor;
 @property(retain, nonatomic) UIColor *darkColor; // @synthesize darkColor=_darkColor;
@@ -68,10 +73,9 @@
 @property(retain, nonatomic) NSString *fontFamily; // @synthesize fontFamily=_fontFamily;
 @property(retain, nonatomic) NSString *maximumContentSizeCategory; // @synthesize maximumContentSizeCategory=_maximumContentSizeCategory;
 @property(nonatomic) long long textStyle; // @synthesize textStyle=_textStyle;
-- (void).cxx_destruct;
 - (id)_defaultParagraphStyle;
 - (unsigned long long)numberOfLinesForTraitCollection:(id)arg1;
-- (id)attributedStringWithAttributedString:(id)arg1 view:(id)arg2;
+- (id)attributedStringWithAttributedString:(id)arg1 view:(id)arg2 updateTextColor:(_Bool)arg3;
 - (id)attributedStringWithString:(id)arg1 view:(id)arg2;
 - (id)attributedStringWithString:(id)arg1;
 - (void)setColorWithOpacityType:(long long)arg1;

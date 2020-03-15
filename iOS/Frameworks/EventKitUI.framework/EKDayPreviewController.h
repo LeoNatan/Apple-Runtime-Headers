@@ -36,13 +36,13 @@
     EKEvent *_event;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 @property(nonatomic) _Bool respectsSelectedCalendarsFilter; // @synthesize respectsSelectedCalendarsFilter=_respectsSelectedCalendarsFilter;
 @property(nonatomic) _Bool hidesAllDayEvents; // @synthesize hidesAllDayEvents=_hidesAllDayEvents;
 @property(nonatomic) __weak UIViewController *hostingViewController; // @synthesize hostingViewController=_hostingViewController;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) long long overriddenParticipantStatus; // @synthesize overriddenParticipantStatus=_overriddenParticipantStatus;
-- (void).cxx_destruct;
 - (void)renderPressHighlight:(_Bool)arg1;
 - (void)toggleExpandedState;
 - (_Bool)_shouldShowAllVisibleEvents;

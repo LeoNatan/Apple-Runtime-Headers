@@ -19,6 +19,7 @@
     unsigned int _transitionReason;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int transitionReason; // @synthesize transitionReason=_transitionReason;
 @property(nonatomic) unsigned int activationReason; // @synthesize activationReason=_activationReason;
 @property(nonatomic) _Bool screenOnAtCompletion; // @synthesize screenOnAtCompletion=_screenOnAtCompletion;
@@ -26,7 +27,6 @@
 @property(nonatomic) unsigned int transactionID; // @synthesize transactionID=_transactionID;
 @property(retain, nonatomic) FBApplicationProcess *process; // @synthesize process=_process;
 @property(retain, nonatomic) FBScene *scene; // @synthesize scene=_scene;
-- (void).cxx_destruct;
 
 @end
 

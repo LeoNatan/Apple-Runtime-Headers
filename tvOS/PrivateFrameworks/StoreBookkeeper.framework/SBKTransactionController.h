@@ -30,6 +30,7 @@
     long long _conflictResolutionAttempts;
 }
 
+- (void).cxx_destruct;
 @property long long conflictResolutionAttempts; // @synthesize conflictResolutionAttempts=_conflictResolutionAttempts;
 @property __weak id networkTypeObserver; // @synthesize networkTypeObserver=_networkTypeObserver;
 @property(retain) SBKTaskAssertion *backgroundTaskAssertion; // @synthesize backgroundTaskAssertion=_backgroundTaskAssertion;
@@ -45,7 +46,6 @@
 @property(readonly) NSURL *requestURL; // @synthesize requestURL=_requestURL;
 @property(readonly, copy) NSString *domain; // @synthesize domain=_domain;
 @property __weak id <SBKTransactionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;

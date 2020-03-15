@@ -18,11 +18,11 @@
 
 + (id)sharedInstance;
 + (id)initWithContext:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long inexpensiveNetworkPathStatus; // @synthesize inexpensiveNetworkPathStatus=_inexpensiveNetworkPathStatus;
 @property(nonatomic) long long networkPathStatus; // @synthesize networkPathStatus=_networkPathStatus;
 @property(retain, nonatomic) NSObject<OS_os_log> *dasSystemContextLog; // @synthesize dasSystemContextLog=_dasSystemContextLog;
 @property(retain, nonatomic) id <_CDLocalContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (BOOL)allowDiscretionaryWorkForUtilityTask:(id)arg1 withParameters:(id)arg2;
 - (BOOL)allowDiscretionaryWorkForBackgroundTask:(id)arg1 withParameters:(id)arg2;
 - (BOOL)allowsDiscretionaryWorkForTask:(id)arg1 withPriority:(unsigned long long)arg2 withParameters:(id)arg3;

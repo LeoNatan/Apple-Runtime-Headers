@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_phrases;
 }
 
-@property(retain, nonatomic) NSMutableArray *phrases; // @synthesize phrases=_phrases;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *phrases; // @synthesize phrases=_phrases;
 - (id)description;
 - (id)lastPhrase;
 - (void)addPhrase;

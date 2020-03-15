@@ -23,6 +23,7 @@
 + (id)_displayValueForCachedValue:(id)arg1 characteristicType:(id)arg2 accessoryInfoService:(id)arg3;
 + (CDUnknownBlockType)accessoryInfoServiceDetailComparator;
 + (id)preferredCharacteristicOrderArray;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFAccessoryInfoItem *wifiItem; // @synthesize wifiItem=_wifiItem;
 @property(readonly, nonatomic) HFAccessoryInfoItem *softwareItem; // @synthesize softwareItem=_softwareItem;
 @property(readonly, nonatomic) HFAccessoryInfoItem *firmwareItem; // @synthesize firmwareItem=_firmwareItem;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableSet *accessoryInfoDetailItems; // @synthesize accessoryInfoDetailItems=_accessoryInfoDetailItems;
 @property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

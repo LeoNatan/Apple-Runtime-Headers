@@ -19,9 +19,6 @@
     NSObject<SSDevicesAndContactsDelegate> *_delegate;
     NSMutableOrderedSet *_deviceComputers;
     NSArray *_idsDevices;
-    NSMutableDictionary *_deviceIconMapBW;
-    NSMutableDictionary *_deviceIconMapColor;
-    NSMutableDictionary *_deviceIconMapPlaceholders;
     NSArray *_vettedAppleIDs;
     NSString *_localDeviceID;
     IDSBatchIDQueryController *_idQueryController;
@@ -40,9 +37,6 @@
 @property(retain) IDSBatchIDQueryController *idQueryController; // @synthesize idQueryController=_idQueryController;
 @property(retain) NSString *localDeviceID; // @synthesize localDeviceID=_localDeviceID;
 @property(retain) NSArray *vettedAppleIDs; // @synthesize vettedAppleIDs=_vettedAppleIDs;
-@property(retain) NSMutableDictionary *deviceIconMapPlaceholders; // @synthesize deviceIconMapPlaceholders=_deviceIconMapPlaceholders;
-@property(retain) NSMutableDictionary *deviceIconMapColor; // @synthesize deviceIconMapColor=_deviceIconMapColor;
-@property(retain) NSMutableDictionary *deviceIconMapBW; // @synthesize deviceIconMapBW=_deviceIconMapBW;
 @property(retain) NSArray *idsDevices; // @synthesize idsDevices=_idsDevices;
 @property(retain) NSMutableOrderedSet *deviceComputers; // @synthesize deviceComputers=_deviceComputers;
 @property NSObject<SSDevicesAndContactsDelegate> *delegate; // @synthesize delegate=_delegate;
@@ -57,11 +51,9 @@
 - (id)recentAvailableComputers;
 - (id)recentAvailableContacts;
 - (void)loadDeviceList:(id)arg1;
-- (struct CGImageSource *)placeholderIconForModelID:(id)arg1;
 - (void)loadRecentItemsAtPath:(id)arg1 sinceDate:(id)arg2;
 - (void)clearRecentItems;
 - (id)modelNameWithModelID:(id)arg1 major:(long long *)arg2 minor:(long long *)arg3;
-- (void)buildDeviceIconMap;
 - (void)addDevices:(id)arg1 withLoginID:(id)arg2 isIOS:(BOOL)arg3;
 - (id)deviceForUniqueID:(id)arg1;
 - (id)componentsForBuildVersion:(id)arg1;

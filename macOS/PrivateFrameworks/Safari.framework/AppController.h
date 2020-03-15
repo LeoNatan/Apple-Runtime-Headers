@@ -18,11 +18,11 @@
 #import <Safari/NSUserInterfaceValidations-Protocol.h>
 #import <Safari/WBSDigitalHealthManagerDelegate-Protocol.h>
 
-@class AutoFillLocalAuthenticationManager, AutoplayPreferenceManager, AutoplayQuirkWhitelistManager, BookmarksMenuController, BrowserSessionPersistentState, BrowserTabViewItem, BrowserViewController, BrowserViewControllerNavigationManager, CKContextClient, ClosedTabOrWindowStateManager, CombinedFavoritesController, ContentBlockersPreferenceManager, DownloadAlertsManager, DownloadsManager, DownloadsPreferenceManager, ExternalJavaScriptEvaluationPolicyController, FaviconProvider, ForYouRecommendationMediator, FormTextStatusWatcher, LaunchTimePerformanceMonitor, ManagedPlugInsController, ManagedPlugInsControllerHistoryListener, MutableMediaStateTracker, NSAlert, NSArray, NSMenu, NSMenuItem, NSMutableArray, NSMutableSet, NSStatusItem, NSString, NSTimer, NSUserActivity, PopUpWindowPreferenceManager, ResourcePreferencesController, SFAuthorization, SafariAutomationController, SandboxFileExtensionController, SandboxRuntimeExtensionController, SecureDefaultsMigrator, TabSnapshotSensitiveDataPurger, TemplateIconCache, WBSAutomaticReaderActivationManager, WBSCoalescedAsynchronousWriter, WBSCyclerConnectionManager, WBSDigitalHealthManager, WBSForYouRecentParsecResultsManager, WBSFormAutoFillCorrectionsHistoryObserver, WBSLeadImageCache, WBSOneTimeCodeMonitor, WBSPeriodicActivityScheduler, WBSQuickWebsiteSearchController, WBSSiteMetadataManager, WBSTabDialogManager, WKProcessPool, ZoomPreferenceManager, _WKVisitedLinkStore;
+@class AutoFillLocalAuthenticationManager, BookmarksMenuController, BrowserDataImportUIController, BrowserSessionPersistentState, BrowserTabViewItem, BrowserViewController, BrowserViewControllerNavigationManager, CKContextClient, ClosedTabOrWindowStateManager, CombinedFavoritesController, ContentBlockersPreferenceManager, DownloadAlertsManager, DownloadsManager, DownloadsPreferenceManager, ExternalJavaScriptEvaluationPolicyController, FaviconProvider, ForYouRecommendationMediator, FormTextStatusWatcher, ManagedPlugInsController, ManagedPlugInsControllerHistoryListener, MutableMediaStateTracker, NSAlert, NSArray, NSMenu, NSMenuItem, NSMutableArray, NSMutableSet, NSString, NSTimer, NSUserActivity, PopUpWindowPreferenceManager, ResourcePreferencesController, SFAuthorization, SafariAutomationController, SandboxFileExtensionController, SandboxRuntimeExtensionController, SecureDefaultsMigrator, TabSnapshotCacheWithPersistence, TabSnapshotSensitiveDataPurger, TemplateIconCache, WBSAutomaticReaderActivationManager, WBSAutoplayPreferenceManager, WBSAutoplayQuirkWhitelistManager, WBSCoalescedAsynchronousWriter, WBSCyclerConnectionManager, WBSDigitalHealthManager, WBSForYouRecentParsecResultsManager, WBSFormAutoFillCorrectionsHistoryObserver, WBSLeadImageCache, WBSOneTimeCodeMonitor, WBSParsecABGroupManager, WBSPeriodicActivityScheduler, WBSQuickWebsiteSearchController, WBSSiteMetadataManager, WBSTabDialogManager, WBSUserAgentQuirksManager, WKProcessPool, ZoomPreferenceManager, _WKVisitedLinkStore;
 @protocol EncryptionProvider, OS_dispatch_queue, TabSnapshotSensitiveDataPurging, TabSnapshotVending;
 
 __attribute__((visibility("hidden")))
-@interface AppController : NSObject <WBSDigitalHealthManagerDelegate, DownloadAlertsManagerDelegate, DownloadsManagerDecisionResponder, DownloadsManagerDelegate, ManagedPlugInsControllerDelegate, MutableMediaStateTrackerDataSource, MutableMediaStateTrackerDelegate, NSApplicationDelegate, NSMenuDelegate, NSUserInterfaceValidations, FormTextStatusWatcherDelegate>
+@interface AppController : NSObject <WBSDigitalHealthManagerDelegate, DownloadAlertsManagerDelegate, DownloadsManagerDecisionResponder, DownloadsManagerDelegate, MutableMediaStateTrackerDataSource, MutableMediaStateTrackerDelegate, ManagedPlugInsControllerDelegate, NSApplicationDelegate, NSMenuDelegate, NSUserInterfaceValidations, FormTextStatusWatcherDelegate>
 {
     NSMenuItem *_aboutSafariMenuItem;
     NSMenuItem *_openPreferencesMenuItem;
@@ -77,7 +77,6 @@ __attribute__((visibility("hidden")))
     NSTimer *_updateContinuityTimer;
     BOOL _didFinishLaunching;
     BOOL _shouldPrepareBrowserContentViewControllerForNewUserActivityWhenFinishedLaunching;
-    NSStatusItem *_mediaCaptureStatusItem;
     SafariAutomationController *_automationController;
     struct Context _processContext;
     struct PageGroup _contentPageGroup;
@@ -107,12 +106,16 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_tabSnapshotMachineryAccessQueue;
     id <TabSnapshotVending> _tabSnapshotVendor;
     TabSnapshotSensitiveDataPurger *_tabSnapshotSensitiveDataPurger;
+    BrowserDataImportUIController *_browserDataImportUIController;
     WBSPeriodicActivityScheduler *_sandboxFileExtensionMaintenanceScheduler;
     SecureDefaultsMigrator *_secureDefaultsMigrator;
     AutoFillLocalAuthenticationManager *_autoFillLocalAuthenticationManager;
+    TabSnapshotCacheWithPersistence *_tabSnapshotCacheWithPersistence;
+    WBSParsecABGroupManager *_abGroupManager;
     BrowserViewControllerNavigationManager *_navigationManager;
-    AutoplayPreferenceManager *_autoplayPreferenceManager;
-    AutoplayQuirkWhitelistManager *_autoplayQuirksWhitelistManager;
+    WBSAutoplayPreferenceManager *_autoplayPreferenceManager;
+    WBSAutoplayQuirkWhitelistManager *_autoplayQuirksWhitelistManager;
+    WBSUserAgentQuirksManager *_userAgentQuirksManager;
     SandboxFileExtensionController *_sandboxFileExtensionController;
     SandboxRuntimeExtensionController *_sandboxRuntimeExtensionController;
     WBSOneTimeCodeMonitor *_oneTimeCodeMonitor;
@@ -123,7 +126,6 @@ __attribute__((visibility("hidden")))
     _WKVisitedLinkStore *_visitedLinkStore;
     NSString *_defaultUserAgent;
     WBSDigitalHealthManager *_digitalHealthManager;
-    LaunchTimePerformanceMonitor *_launchTimePerformanceMonitor;
     NSMenuItem *_bookmarksMenuItem;
     NSMenuItem *_newWindowMenuItem;
     ClosedTabOrWindowStateManager *_closedTabOrWindowStateManager;
@@ -140,6 +142,7 @@ __attribute__((visibility("hidden")))
     NSMenu *_historyMenu;
     NSMenu *_helpMenu;
     NSMenuItem *_importBookmarksMenuItem;
+    NSMenuItem *_importFromMenuItem;
     NSMenuItem *_showHistoryMenuItem;
     NSMenuItem *_muteCurrentTabToggleMenuItem;
     NSMenuItem *_muteOtherTabsToggleMenuItem;
@@ -152,9 +155,12 @@ __attribute__((visibility("hidden")))
 + (id)webWidgetIdentifier;
 + (id)appSleepAssertionWithReason:(id)arg1;
 + (id)sharedAppController;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSMenuItem *muteOtherTabsToggleMenuItem; // @synthesize muteOtherTabsToggleMenuItem=_muteOtherTabsToggleMenuItem;
 @property(nonatomic) __weak NSMenuItem *muteCurrentTabToggleMenuItem; // @synthesize muteCurrentTabToggleMenuItem=_muteCurrentTabToggleMenuItem;
 @property(nonatomic) __weak NSMenuItem *showHistoryMenuItem; // @synthesize showHistoryMenuItem=_showHistoryMenuItem;
+@property(nonatomic) __weak NSMenuItem *importFromMenuItem; // @synthesize importFromMenuItem=_importFromMenuItem;
 @property(nonatomic) __weak NSMenuItem *importBookmarksMenuItem; // @synthesize importBookmarksMenuItem=_importBookmarksMenuItem;
 @property(nonatomic) __weak NSMenu *helpMenu; // @synthesize helpMenu=_helpMenu;
 @property(nonatomic) __weak NSMenu *historyMenu; // @synthesize historyMenu=_historyMenu;
@@ -174,26 +180,29 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) AutoFillLocalAuthenticationManager *autoFillLocalAuthenticationManager; // @synthesize autoFillLocalAuthenticationManager=_autoFillLocalAuthenticationManager;
 @property(nonatomic) __weak NSMenuItem *newWindowMenuItem; // @synthesize newWindowMenuItem=_newWindowMenuItem;
 @property(retain, nonatomic) NSMenuItem *bookmarksMenuItem; // @synthesize bookmarksMenuItem=_bookmarksMenuItem;
-@property(readonly, nonatomic) LaunchTimePerformanceMonitor *launchTimePerformanceMonitor; // @synthesize launchTimePerformanceMonitor=_launchTimePerformanceMonitor;
 @property(readonly, nonatomic) WBSDigitalHealthManager *digitalHealthManager; // @synthesize digitalHealthManager=_digitalHealthManager;
 @property(readonly, nonatomic) const struct PageGroup *contentPageGroup; // @synthesize contentPageGroup=_contentPageGroup;
 @property(readonly, nonatomic) const struct Context *processContext; // @synthesize processContext=_processContext;
 @property(readonly, nonatomic) NSString *defaultUserAgent; // @synthesize defaultUserAgent=_defaultUserAgent;
-- (id).cxx_construct;
-- (void).cxx_destruct;
+- (void)_sendABGroupIdentifierToWebKit;
+- (void)_abGroupIdentifierDidChange:(id)arg1;
+- (void)_sendToWebKitABTestingIsEnabled:(BOOL)arg1;
+- (void)_parsecBagDidLoad:(id)arg1;
 - (id)createRecommendationMediatorOrReuseExistingOneIfPossible;
 @property(readonly, nonatomic) WBSForYouRecentParsecResultsManager *forYouRecentParsecResultsManager; // @synthesize forYouRecentParsecResultsManager=_forYouRecentParsecResultsManager;
 - (unsigned long long)updateUsageStateForUnselectedURL:(id)arg1 fromWindow:(id)arg2;
 - (void)_toggleDigitalHealthOverlayGivenOverlayStates:(id)arg1;
 - (void)policyDidChangeForDigitalHealthManager:(id)arg1;
+@property(readonly, nonatomic) TabSnapshotCacheWithPersistence *tabSnapshotCacheWithPersistence;
 @property(readonly, nonatomic) id <TabSnapshotSensitiveDataPurging> tabSnapshotSensitiveDataPurger;
 - (id)_tabSnapshotSensitiveDataPurger;
 @property(readonly, nonatomic) id <TabSnapshotVending> tabSnapshotVendor;
 - (void)_ensureTabSnapshotVendor;
-- (void)downloadsManager:(id)arg1 allowDownloadOnPage:(const struct Page *)arg2 originatingURL:(id)arg3 withDecisionHandler:(CDUnknownBlockType)arg4;
+- (void)downloadsManager:(id)arg1 allowDownloadOnPage:(const struct Page *)arg2 fromSecurityOrigin:(id)arg3 originatingURL:(id)arg4 withDecisionHandler:(CDUnknownBlockType)arg5;
 - (void)shouldAllowDownloadOnDomain:(id)arg1 originatingURL:(id)arg2 forBrowserViewController:(id)arg3 withDecisionHandler:(CDUnknownBlockType)arg4;
-@property(readonly, nonatomic) AutoplayQuirkWhitelistManager *autoplayQuirksWhitelistManager; // @synthesize autoplayQuirksWhitelistManager=_autoplayQuirksWhitelistManager;
-@property(readonly, nonatomic) AutoplayPreferenceManager *autoplayPreferenceManager; // @synthesize autoplayPreferenceManager=_autoplayPreferenceManager;
+@property(readonly, nonatomic) WBSUserAgentQuirksManager *userAgentQuirksManager; // @synthesize userAgentQuirksManager=_userAgentQuirksManager;
+@property(readonly, nonatomic) WBSAutoplayQuirkWhitelistManager *autoplayQuirksWhitelistManager; // @synthesize autoplayQuirksWhitelistManager=_autoplayQuirksWhitelistManager;
+@property(readonly, nonatomic) WBSAutoplayPreferenceManager *autoplayPreferenceManager; // @synthesize autoplayPreferenceManager=_autoplayPreferenceManager;
 @property(readonly, nonatomic) TemplateIconCache *templateIconCache;
 @property(readonly, nonatomic) FaviconProvider *faviconProvider;
 - (id)_leadImageCache;
@@ -249,8 +258,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isPageUnresponsive:(const struct Page *)arg1;
 @property(readonly, nonatomic) BrowserViewControllerNavigationManager *navigationManager; // @synthesize navigationManager=_navigationManager;
 - (void)contentBlockerCrashReporterMessageChanged;
-- (void)appExtensionCrashReporterMessageChanged;
-- (void)appExtensionBaseURIMapChanged;
+- (void)extensionCrashReporterMessageChangedForExtensionsController:(id)arg1;
+- (void)extensionBaseURIMapChangedForExtensionsController:(id)arg1;
 - (void)extensionsCrashReporterMessageChanged;
 - (void)localFileRestrictionsChanged;
 - (void)permissionToPromptForPushNotificationsChanged;
@@ -279,7 +288,6 @@ __attribute__((visibility("hidden")))
 - (id)_firstBrowserViewControllerWithMutableMediaState:(unsigned long long)arg1;
 - (id)browserViewControllerToToggleMute;
 @property(readonly, nonatomic) BrowserViewController *browserViewControllerToToggleScreenCapture;
-- (void)_updateCaptureIconInMenuBar;
 - (void)muteAllPagesPlayingMutableMediaExcludingPageWithBrowserViewController:(id)arg1;
 - (void)saveCloudTabsAndContinuityActivityForCurrentDeviceSoon;
 - (void)_cancelPendingUpdateContinuityActivityTimer;
@@ -320,7 +328,6 @@ __attribute__((visibility("hidden")))
 - (void)_newWindowFromDock:(id)arg1;
 - (id)_lastSessionState;
 - (void)_initializeNSUserDefaults;
-- (void)_initializeLaunchPerformanceMonitor;
 - (void)_appExtensionBlacklistDidChange:(id)arg1;
 - (void)contentBlockerDidChange;
 - (void)_hideBookmarksMenu;
@@ -556,6 +563,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)validate_togglePerTabWebProcessesPreference:(id)arg1;
 - (void)togglePerTabWebProcessesPreference:(id)arg1;
 - (BOOL)validate_toggleAlwaysLoadReadingListArchives:(id)arg1;
+- (BOOL)validate_toggleCloseTabsToRight:(id)arg1;
+- (void)toggleCloseTabsToRight:(id)arg1;
+- (BOOL)validate_toggleDuplicateTab:(id)arg1;
+- (void)toggleDuplicateTab:(id)arg1;
 - (void)toggleAlwaysLoadReadingListArchives:(id)arg1;
 - (BOOL)validate_toggleRocketEffectTestEnabled:(id)arg1;
 - (void)toggleRocketEffectTestEnabled:(id)arg1;
@@ -574,7 +585,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)validate_toggleNewWindowsHavePerformanceBindings:(id)arg1;
 - (void)toggleNewWindowsHavePerformanceBindings:(id)arg1;
 - (BOOL)validate_showNetworkingWindow:(id)arg1;
-- (void)showNetworkingWindow:(id)arg1;
 - (BOOL)validate_toggleDebugRegionOverlayVisible:(id)arg1;
 - (void)toggleDebugRegionOverlayVisible:(id)arg1;
 - (BOOL)validate_toggleUseGiantTiles:(id)arg1;

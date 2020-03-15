@@ -13,8 +13,8 @@
     NSObject<OS_dispatch_queue> *_providerQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *providerQueue; // @synthesize providerQueue=_providerQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *providerQueue; // @synthesize providerQueue=_providerQueue;
 - (void)_postDidChangeUnitDefaultsPreference;
 - (int)_providerQueue_changeUnit:(int)arg1;
 - (int)_providerQueue_readUnit;

@@ -39,6 +39,7 @@
 + (struct CGSize)defaultSizeForStyle:(long long)arg1;
 + (id)_loadResourcesForArtworkBasedStyle:(long long)arg1;
 + (id)_imageSetNameForArtworkBasedStyle:(long long)arg1 outImageCount:(out long long *)arg2;
+- (void).cxx_destruct;
 @property BOOL spinning; // @synthesize spinning=_spinning;
 @property(nonatomic) BOOL hasShadow; // @synthesize hasShadow=_hasShadow;
 @property(nonatomic) double width; // @synthesize width=_width;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic, getter=_animatingImageView) UIImageView *animatingImageView; // @synthesize animatingImageView=_animatingImageView;
 @property(nonatomic) BOOL hidesWhenStopped; // @synthesize hidesWhenStopped=_hidesWhenStopped;
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_duration;
-- (void).cxx_destruct;
 - (void)stopAnimation;
 - (void)startAnimation;
 @property(nonatomic, getter=isAnimating) BOOL animating; // @synthesize animating=_animating;

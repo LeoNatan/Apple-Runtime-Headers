@@ -14,8 +14,8 @@
     unsigned long long _mutations;
 }
 
-@property(readonly, nonatomic) NSArray *references; // @synthesize references=_references;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *references; // @synthesize references=_references;
 - (void)replaceObjectsInRange:(struct _NSRange)arg1 withObjectsFromArray:(id)arg2 range:(struct _NSRange)arg3;
 - (void)replaceObjectsInRange:(struct _NSRange)arg1 withObjectsFromArray:(id)arg2;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;

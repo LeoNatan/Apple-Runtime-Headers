@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 + (SEL)setFontSelectorForFontType:(int)arg1;
 + (SEL)fontOverriddenSelectorForFontType:(int)arg1;
 + (SEL)fontSelectorForFontType:(int)arg1;
-@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (void).cxx_destruct;
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
 - (id)description;
 - (void)copyPropertiesInto:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

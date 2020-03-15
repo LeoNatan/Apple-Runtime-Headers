@@ -22,11 +22,11 @@
 
 + (unsigned long long)costForItem:(id)arg1 scope:(id)arg2;
 + (id)keyForItem:(id)arg1 scope:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *storageLock; // @synthesize storageLock=_storageLock;
 @property(readonly, nonatomic) NSMutableArray *orderedEntries; // @synthesize orderedEntries=_orderedEntries;
 @property(readonly, nonatomic) NSCache *storage; // @synthesize storage=_storage;
-- (void).cxx_destruct;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
 - (void)handleChangeForItemForKey:(id)arg1;
 - (id)observeChangesForItem:(id)arg1 key:(id)arg2;

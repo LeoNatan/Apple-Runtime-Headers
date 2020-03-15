@@ -16,11 +16,11 @@
     CDStruct_1b6d18a9 _validatedImageDisplayTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 validatedImageDisplayTime; // @synthesize validatedImageDisplayTime=_validatedImageDisplayTime;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 validatedVideoDuration; // @synthesize validatedVideoDuration=_validatedVideoDuration;
 @property(readonly, nonatomic) NSString *validatedPairingIdentifier; // @synthesize validatedPairingIdentifier=_validatedPairingIdentifier;
 @property(readonly, nonatomic) __weak PHAssetCreationRequest *assetCreationRequest; // @synthesize assetCreationRequest=_assetCreationRequest;
-- (void).cxx_destruct;
 - (void)getLivePhotoVideoMetadataFromURL:(id)arg1 pairingIdentifier:(id *)arg2 videoDuration:(CDStruct_1b6d18a9 *)arg3 imageDisplayTime:(CDStruct_1b6d18a9 *)arg4;
 - (id)initWithAssetCreationRequest:(id)arg1;
 

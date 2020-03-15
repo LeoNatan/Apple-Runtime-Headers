@@ -19,11 +19,11 @@
 }
 
 + (id)showAlertForProcessName:(id)arg1 afterSeconds:(int)arg2 dismissalBlock:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissalBlock; // @synthesize dismissalBlock=_dismissalBlock;
 @property(retain, nonatomic) CSLSecureWindow *secureWindow; // @synthesize secureWindow=_secureWindow;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(retain, nonatomic) CSLAlertSheetViewController *alertViewController; // @synthesize alertViewController=_alertViewController;
-- (void).cxx_destruct;
 - (void)dismiss;
 - (void)show;
 - (void)actionSheetController:(id)arg1 didTapActionAtIndexPath:(id)arg2;

@@ -19,13 +19,13 @@
 }
 
 + (id)elementWithName:(id)arg1 singularName:(id)arg2 displayName:(id)arg3 code:(unsigned int)arg4 readOnly:(BOOL)arg5 writeOnly:(BOOL)arg6;
+- (void).cxx_destruct;
 @property BOOL writeOnly; // @synthesize writeOnly=_writeOnly;
 @property BOOL readOnly; // @synthesize readOnly=_readOnly;
 @property unsigned int code; // @synthesize code=_code;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *singularName; // @synthesize singularName=_singularName;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 singularName:(id)arg2 displayName:(id)arg3 code:(unsigned int)arg4 readOnly:(BOOL)arg5 writeOnly:(BOOL)arg6;
 
 @end

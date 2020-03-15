@@ -33,11 +33,11 @@
 
 + (void)initialize;
 + (id)delayedInvocationWithTerminationDisablingReason:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *terminationDisablingReason; // @synthesize terminationDisablingReason=_terminationDisablingReason;
 @property(copy, nonatomic) NSArray *runLoopModes; // @synthesize runLoopModes=_runLoopModes;
 @property(readonly) DVTStackBacktrace *schedulingBacktrace; // @synthesize schedulingBacktrace=_schedulingBacktrace;
 @property(copy, nonatomic) DVTDelayedInvocationScheduler *scheduler; // @synthesize scheduler=_scheduler;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)appWillTerminate:(id)arg1;
 - (void)invoke;

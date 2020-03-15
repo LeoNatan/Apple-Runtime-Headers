@@ -16,8 +16,8 @@
 }
 
 + (Class)sectionBulletinListType;
-@property(retain, nonatomic) NSMutableArray *sectionBulletinLists; // @synthesize sectionBulletinLists=_sectionBulletinLists;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *sectionBulletinLists; // @synthesize sectionBulletinLists=_sectionBulletinLists;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

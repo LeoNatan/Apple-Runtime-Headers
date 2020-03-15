@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UILabel *_nameLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(nonatomic) __weak CAShapeLayer *outlineLayer; // @synthesize outlineLayer=_outlineLayer;
 @property(retain, nonatomic) WFContentCoercionNode *node; // @synthesize node=_node;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateColors;
 - (void)layoutSubviews;

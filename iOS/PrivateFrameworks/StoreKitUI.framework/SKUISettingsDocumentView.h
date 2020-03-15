@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <SKUISettingsDocumentViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SKUISettingsDocumentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUISettingsDocumentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)tintColorDidChange;
 
 @end

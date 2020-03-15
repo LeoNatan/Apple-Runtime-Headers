@@ -30,6 +30,7 @@
     SBLongPressGestureRecognizer *_shutdownGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBLongPressGestureRecognizer *shutdownGestureRecognizer; // @synthesize shutdownGestureRecognizer=_shutdownGestureRecognizer;
 @property(retain, nonatomic) SBSOSLockGestureObserver *sosLockGestureObserver; // @synthesize sosLockGestureObserver=_sosLockGestureObserver;
 @property(retain, nonatomic) SBSOSClawGestureObserver *sosClawGestureObserver; // @synthesize sosClawGestureObserver=_sosClawGestureObserver;
@@ -41,7 +42,6 @@
 @property(nonatomic) __weak SBHomeHardwareButton *homeHardwareButton; // @synthesize homeHardwareButton=_homeHardwareButton;
 @property(retain, nonatomic) SBClickGestureRecognizer *screenshotGestureRecognizer; // @synthesize screenshotGestureRecognizer=_screenshotGestureRecognizer;
 @property(retain, nonatomic) SBCombinationHardwareButtonActions *buttonActions; // @synthesize buttonActions=_buttonActions;
-- (void).cxx_destruct;
 - (void)_backlightChanged:(id)arg1;
 - (void)_setScreenshotDisabled:(_Bool)arg1 forReason:(id)arg2;
 - (void)_sosTriggerMechanismDidChange;

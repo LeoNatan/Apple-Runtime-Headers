@@ -18,9 +18,9 @@
     id <TLKObserver> observer;
 }
 
+- (void).cxx_destruct;
 @property _Bool inBatchUpdate; // @synthesize inBatchUpdate;
 @property __weak id <TLKObserver> observer; // @synthesize observer;
-- (void).cxx_destruct;
 - (void)propertiesDidChange;
 
 // Remaining properties

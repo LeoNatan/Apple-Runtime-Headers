@@ -13,8 +13,8 @@
     NTKPageScrollViewControllerAccessibility *_referencedScrollViewController;
 }
 
-@property(nonatomic) __weak NTKPageScrollViewControllerAccessibility *referencedScrollViewController; // @synthesize referencedScrollViewController=_referencedScrollViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NTKPageScrollViewControllerAccessibility *referencedScrollViewController; // @synthesize referencedScrollViewController=_referencedScrollViewController;
 
 @end
 

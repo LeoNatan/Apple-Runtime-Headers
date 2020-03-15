@@ -15,15 +15,17 @@
     NSString *_key;
     NSString *_runSource;
     NSString *_actionIdentifier;
+    NSString *_automationType;
 }
 
 + (Class)codableEventClass;
+- (void).cxx_destruct;
+@property(copy, nonatomic) NSString *automationType; // @synthesize automationType=_automationType;
 @property(nonatomic) _Bool completed; // @synthesize completed=_completed;
 @property(copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(copy, nonatomic) NSString *runSource; // @synthesize runSource=_runSource;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

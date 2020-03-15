@@ -11,20 +11,20 @@
 
 @interface TKToken : NSObject
 {
+    TKTokenConfiguration *_configuration;
     TKTokenDriver *_tokenDriver;
     id <TKTokenDelegate> _delegate;
-    TKTokenConfiguration *_configuration;
     TKTokenKeychainContents *_keychainContents;
     TKTokenID *_tokenID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) TKTokenID *tokenID; // @synthesize tokenID=_tokenID;
 @property(retain) TKTokenKeychainContents *keychainContents; // @synthesize keychainContents=_keychainContents;
-@property(readonly) TKTokenConfiguration *configuration; // @synthesize configuration=_configuration;
 @property __weak id <TKTokenDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) TKTokenDriver *tokenDriver; // @synthesize tokenDriver=_tokenDriver;
-- (void).cxx_destruct;
 - (void)terminate;
+@property(readonly) TKTokenConfiguration *configuration;
 - (id)initWithTokenDriver:(id)arg1 instanceID:(id)arg2;
 - (id)description;
 

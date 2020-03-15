@@ -18,11 +18,11 @@
     long long _recordCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long recordCount; // @synthesize recordCount=_recordCount;
 @property(retain, nonatomic) NSDateComponents *statisticsInterval; // @synthesize statisticsInterval=_statisticsInterval;
 @property(retain, nonatomic) NSString *timePeriodPrefix; // @synthesize timePeriodPrefix=_timePeriodPrefix;
 @property(nonatomic) double timePeriod; // @synthesize timePeriod=_timePeriod;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

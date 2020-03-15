@@ -75,13 +75,13 @@
 + (id)_keepAliveCachePath;
 + (id)intervalCacheDictionaries;
 + (Class)growthAlgorithmClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool powerOptimizationsForExpensiveNetworkingDisabled; // @synthesize powerOptimizationsForExpensiveNetworkingDisabled=_powerOptimizationsForExpensiveNetworkingDisabled;
 @property(nonatomic) _Bool alwaysWantsInterfaceChangeCallbacks; // @synthesize alwaysWantsInterfaceChangeCallbacks=_alwaysWantsInterfaceChangeCallbacks;
 @property(nonatomic) double nonCellularEarlyFireConstantInterval; // @synthesize nonCellularEarlyFireConstantInterval=_nonCellularEarlyFireConstantInterval;
 @property(readonly, nonatomic) int lastProcessedAction; // @synthesize lastProcessedAction=_lastProcessedAction;
 @property(nonatomic) int interfaceIdentifier; // @synthesize interfaceIdentifier=_interfaceIdentifier;
 @property(nonatomic) double keepAliveGracePeriod; // @synthesize keepAliveGracePeriod=_keepAliveGracePeriod;
-- (void).cxx_destruct;
 - (id)_stringForAddressFamily:(int)arg1;
 - (id)_stringForEvent:(int)arg1;
 - (id)_stringForAction:(int)arg1;

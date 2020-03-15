@@ -19,13 +19,13 @@
 }
 
 + (id)pushResultByMergingPushResult:(id)arg1 withPushResult:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool fatalError; // @synthesize fatalError=_fatalError;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSDictionary *conflicts; // @synthesize conflicts=_conflicts;
 @property(readonly, nonatomic) NSDictionary *partialErrors; // @synthesize partialErrors=_partialErrors;
 @property(readonly, nonatomic) NSSet *deleted; // @synthesize deleted=_deleted;
 @property(readonly, nonatomic) NSSet *updated; // @synthesize updated=_updated;
-- (void).cxx_destruct;
 - (id)initWithUpdated:(id)arg1 deleted:(id)arg2 conflicts:(id)arg3 error:(id)arg4;
 - (id)initWithUpdated:(id)arg1 deleted:(id)arg2 conflicts:(id)arg3 partialErrors:(id)arg4 fatalError:(_Bool)arg5 error:(id)arg6;
 

@@ -17,7 +17,6 @@
     unsigned int _faceColor;
 }
 
-+ (int)uiSensitivity;
 - (void).cxx_destruct;
 - (id)tritium_createFaceAnimator;
 - (void)tritium_didTransitionToTritiumOff;

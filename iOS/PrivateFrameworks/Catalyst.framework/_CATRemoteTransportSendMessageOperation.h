@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CATMessage *_message;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATMessage *message; // @synthesize message=_message;
 @property(nonatomic) __weak CATRemoteTransport *transport; // @synthesize transport=_transport;
-- (void).cxx_destruct;
 - (void)didFailWithError:(id)arg1;
 - (void)didSendData;
 - (void)didEncodeData:(id)arg1;

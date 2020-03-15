@@ -29,8 +29,8 @@
     NSString *_undecoratedSubtitleWhenLocked;
     double _weight;
     NSDate *_expires;
-    struct GEOMapItemStorage *_geoMapItem;
-    struct NSString *_originatingSourceName;
+    GEOMapItemStorage *_geoMapItem;
+    NSString *_originatingSourceName;
 }
 
 + (id)entryFromSerializedString:(id)arg1;
@@ -40,6 +40,7 @@
 + (BOOL)supportsSecureCoding;
 + (int)defaultDirectionsTransportType;
 + (id)entryWithType:(long long)arg1 title:(id)arg2 subtitle:(id)arg3 weight:(double)arg4 expires:(id)arg5 sourceSpecificInfo:(id)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *originatingSourceName; // @synthesize originatingSourceName=_originatingSourceName;
 @property(retain, nonatomic) GEOMapItemStorage *geoMapItem; // @synthesize geoMapItem=_geoMapItem;
 @property(nonatomic) BOOL deleted; // @synthesize deleted=_deleted;
@@ -55,7 +56,6 @@
 @property(retain, nonatomic) NSString *titleWhenLocked; // @synthesize titleWhenLocked=_titleWhenLocked;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (BOOL)_wasEverOneOfTypes:(id)arg1;
 - (BOOL)_wasEverOfType:(long long)arg1;
 - (void)_overrideType:(long long)arg1;
@@ -69,7 +69,7 @@
 @property(readonly, copy, nonatomic) NSString *shortDescription;
 @property(readonly, copy, nonatomic) NSString *description;
 - (id)contacts;
-- (struct NSData *)mapItemHandleData;
+- (id)mapItemHandleData;
 - (id)ETAForKey:(id)arg1;
 - (id)UUIDForKey:(id)arg1;
 - (id)URLForKey:(id)arg1;
@@ -79,12 +79,12 @@
 - (unsigned long long)uint64ForKey:(id)arg1;
 - (long long)integerForKey:(id)arg1;
 - (id)numberForKey:(id)arg1;
-- (struct NSArray *)stringArrayForKey:(id)arg1;
+- (id)stringArrayForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (id)_valueForKey:(id)arg1 class:(Class)arg2;
 - (BOOL)containsKey:(id)arg1;
 - (void)setContacts:(id)arg1;
-- (void)setMapItemHandleData:(struct NSData *)arg1;
+- (void)setMapItemHandleData:(id)arg1;
 - (void)setETA:(id)arg1 forKey:(id)arg2;
 - (void)setUUID:(id)arg1 forKey:(id)arg2;
 - (void)setURL:(id)arg1 forKey:(id)arg2;
@@ -92,7 +92,7 @@
 - (void)setBoolean:(BOOL)arg1 forKey:(id)arg2;
 - (void)setInteger:(long long)arg1 forKey:(id)arg2;
 - (void)setNumber:(id)arg1 forKey:(id)arg2;
-- (void)setStringArray:(struct NSArray *)arg1 forKey:(id)arg2;
+- (void)setStringArray:(id)arg1 forKey:(id)arg2;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (void)_setValue:(id)arg1 forKey:(id)arg2 class:(Class)arg3;
 - (void)setSourceSpecificInfo:(id)arg1;
@@ -103,7 +103,7 @@
 - (BOOL)isEqualToEntry:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithType:(long long)arg1 title:(id)arg2 subtitle:(id)arg3 weight:(double)arg4 expires:(id)arg5 geoMapItem:(struct GEOMapItemStorage *)arg6 sourceSpecificInfo:(id)arg7;
+- (id)initWithType:(long long)arg1 title:(id)arg2 subtitle:(id)arg3 weight:(double)arg4 expires:(id)arg5 geoMapItem:(id)arg6 sourceSpecificInfo:(id)arg7;
 - (id)initWithType:(long long)arg1 title:(id)arg2 subtitle:(id)arg3 weight:(double)arg4 expires:(id)arg5 sourceSpecificInfo:(id)arg6;
 - (id)initWithType:(long long)arg1 title:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,14 +15,15 @@
     WFAccountAccessResource *_accessResource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasLoadedProjects; // @synthesize hasLoadedProjects=_hasLoadedProjects;
 @property(nonatomic) __weak WFAccountAccessResource *accessResource; // @synthesize accessResource=_accessResource;
 - (id)possibleStates;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)projectNamed:(id)arg1;
 - (void)setProjects:(id)arg1;
 - (id)projects;
+- (id)accessoryColorForPossibleState:(id)arg1;
 - (id)localizedLabelForPossibleState:(id)arg1;
 - (void)loadProjectsFromCache;
 - (void)fetchProjectsIfNeeded;

@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)separatorViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double lineHeight; // @synthesize lineHeight=_lineHeight;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) __weak UIView *separatorComponent; // @synthesize separatorComponent=_separatorComponent;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)preferredFocusEnvironments;

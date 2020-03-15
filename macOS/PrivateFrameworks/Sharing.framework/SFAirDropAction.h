@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 @property(nonatomic) BOOL shouldUpdateUserResponse; // @synthesize shouldUpdateUserResponse=_shouldUpdateUserResponse;
 @property(nonatomic) BOOL requiresUnlockedUI; // @synthesize requiresUnlockedUI=_requiresUnlockedUI;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(copy, nonatomic) NSString *singleItemLocalizedTitle; // @synthesize singleItemLocalizedTitle=_singleItemLocalizedTitle;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-- (void).cxx_destruct;
 - (void)triggerAction;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

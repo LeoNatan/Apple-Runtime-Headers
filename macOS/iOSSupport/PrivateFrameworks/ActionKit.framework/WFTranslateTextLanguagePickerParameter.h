@@ -14,8 +14,8 @@
     NSArray *_possibleStates;
 }
 
-@property(readonly, nonatomic) BOOL supportsLanguageDetection; // @synthesize supportsLanguageDetection=_supportsLanguageDetection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL supportsLanguageDetection; // @synthesize supportsLanguageDetection=_supportsLanguageDetection;
 - (id)localizedLabelForPossibleState:(id)arg1;
 @property(readonly, nonatomic) NSArray *possibleStates; // @synthesize possibleStates=_possibleStates;
 - (id)defaultSerializedRepresentation;

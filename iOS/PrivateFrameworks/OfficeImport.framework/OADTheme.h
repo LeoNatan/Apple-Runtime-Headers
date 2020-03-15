@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     OADDrawableDefaults *mDrawableDefaults;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) OADDrawableDefaults *drawableDefaults; // @synthesize drawableDefaults=mDrawableDefaults;
 @property(retain, nonatomic) OADBaseStyles *baseStyles; // @synthesize baseStyles=mBaseStyles;
 @property(copy, nonatomic) NSString *name; // @synthesize name=mName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)validateTheme;
 - (_Bool)isEmpty;

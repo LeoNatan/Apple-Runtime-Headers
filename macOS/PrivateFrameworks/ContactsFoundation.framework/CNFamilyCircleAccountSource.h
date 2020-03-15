@@ -15,8 +15,8 @@
     FAFamilyCircle *_familyCircle;
 }
 
-@property(readonly, nonatomic) FAFamilyCircle *familyCircle; // @synthesize familyCircle=_familyCircle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FAFamilyCircle *familyCircle; // @synthesize familyCircle=_familyCircle;
 - (id)delegateAccounts;
 - (id)primaryAccount;
 - (id)myFamilyMemberRecord;

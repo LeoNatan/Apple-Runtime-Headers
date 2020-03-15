@@ -20,11 +20,11 @@
 + (id)decodedObjectOfClasses:(id)arg1 fromPackage:(id)arg2 error:(id *)arg3;
 + (id)decodedObjectOfClass:(Class)arg1 fromPackage:(id)arg2 userInfo:(id)arg3 error:(id *)arg4;
 + (id)decodedObjectOfClass:(Class)arg1 fromPackage:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) NSArray *subcoders; // @synthesize subcoders=_subcoders;
 @property(retain, nonatomic) Class rootClass; // @synthesize rootClass=_rootClass;
 @property(retain, nonatomic) MSVSegmentedCodingPackage *package; // @synthesize package=_package;
-- (void).cxx_destruct;
 - (id)_coderForKey:(id)arg1;
 - (void)msv_setUserInfo:(id)arg1;
 - (id)msv_userInfo;

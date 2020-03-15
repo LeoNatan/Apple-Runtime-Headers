@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *entries; // @synthesize entries=_entries;
 @property(retain) AMFFeedMetadata *metadata; // @synthesize metadata=_metadata;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

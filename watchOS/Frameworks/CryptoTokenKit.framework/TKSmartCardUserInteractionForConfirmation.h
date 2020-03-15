@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property __weak TKSmartCardSlot *slot; // @synthesize slot=_slot;
 @property _Bool result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)runWithReply:(CDUnknownBlockType)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

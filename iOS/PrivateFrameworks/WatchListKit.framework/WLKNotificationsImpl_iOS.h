@@ -20,9 +20,9 @@
 }
 
 + (id)_JSONDictForResponse:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool topicsAreInitialized; // @synthesize topicsAreInitialized=_topicsAreInitialized;
 @property(nonatomic) __weak id <WLKNotificationCenterDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (void)userNotificationCenter:(id)arg1 didChangeSettings:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 didOpenApplicationForResponse:(id)arg2;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

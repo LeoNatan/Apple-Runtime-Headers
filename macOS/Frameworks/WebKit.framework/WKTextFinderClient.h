@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)getImageForMatchResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didGetImageForMatchResult:(struct WebImage *)arg1;
-- (void)didFindStringMatchesWithRects:(const Vector_dad0b2b1 *)arg1 didWrapAround:(BOOL)arg2;
+- (void)didFindStringMatchesWithRects:(const Vector_1a4b9340 *)arg1 didWrapAround:(BOOL)arg2;
 - (void)scrollFindMatchToVisible:(id)arg1;
 - (void)selectFindMatch:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSelectedText:(CDUnknownBlockType)arg1;

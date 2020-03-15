@@ -17,9 +17,9 @@
     id <SVVideoViewControllerProviding> _videoViewControllerProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideoViewControllerProviding> videoViewControllerProvider; // @synthesize videoViewControllerProvider=_videoViewControllerProvider;
 @property(retain, nonatomic) UILayoutGuide *accessoryBarLayoutGuide; // @synthesize accessoryBarLayoutGuide=_accessoryBarLayoutGuide;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UILayoutGuide *unobscuredTopAreaLayoutGuide; // @dynamic unobscuredTopAreaLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *animatedUnobscuredCenterAreaLayoutGuide; // @dynamic animatedUnobscuredCenterAreaLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *unobscuredCenterAreaLayoutGuide; // @dynamic unobscuredCenterAreaLayoutGuide;

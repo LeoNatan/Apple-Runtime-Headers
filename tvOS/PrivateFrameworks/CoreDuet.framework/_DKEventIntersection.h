@@ -16,10 +16,10 @@
 }
 
 + (id)eventIntersectionWithStartDate:(id)arg1 endDate:(id)arg2 events:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly) NSArray *events; // @synthesize events=_events;
 @property(readonly) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 events:(id)arg3;
 
 @end

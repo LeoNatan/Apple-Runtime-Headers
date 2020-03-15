@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_unconvertableHandles;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasBeenInterpreted; // @synthesize hasBeenInterpreted=_hasBeenInterpreted;
 @property(readonly, nonatomic) NSMutableArray *unconvertableHandles; // @synthesize unconvertableHandles=_unconvertableHandles;
 @property(readonly, nonatomic) NSMutableArray *phoneNumbersImpl; // @synthesize phoneNumbersImpl=_phoneNumbersImpl;
 @property(readonly, nonatomic) NSMutableArray *emailAddressesImpl; // @synthesize emailAddressesImpl=_emailAddressesImpl;
 @property(readonly, nonatomic) CNHandleStringClassification *classification; // @synthesize classification=_classification;
-- (void).cxx_destruct;
 @property(readonly) NSArray *phoneNumbers;
 @property(readonly) NSArray *emailAddresses;
 - (void)interpretUnknownsAsEmailAddresses;

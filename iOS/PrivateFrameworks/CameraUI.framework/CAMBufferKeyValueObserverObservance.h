@@ -14,9 +14,9 @@
     NSString *_keyPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(readonly, nonatomic) __weak NSObject *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)teardownObservanceForBuffer:(id)arg1;
 - (void)setupObservanceForBuffer:(id)arg1;
 - (_Bool)shouldBeFulfilledByChange:(id)arg1;

@@ -23,13 +23,13 @@
 + (void)locallyProcessAddedComments:(id)arg1 assetGUID:(id)arg2 albumGUID:(id)arg3 info:(id)arg4;
 + (void)deleteSharedCommentFromServer:(id)arg1;
 + (void)publishCommentToServer:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *mstreamdInfoDictionary; // @synthesize mstreamdInfoDictionary=_mstreamdInfoDictionary;
 @property(retain, nonatomic) NSString *albumGUID; // @synthesize albumGUID=_albumGUID;
 @property(retain, nonatomic) NSString *assetGUID; // @synthesize assetGUID=_assetGUID;
 @property(retain, nonatomic) NSString *commentGUID; // @synthesize commentGUID=_commentGUID;
 @property(retain, nonatomic) NSArray *msASComments; // @synthesize msASComments=_msASComments;
 @property(nonatomic) long long jobType; // @synthesize jobType=_jobType;
-- (void).cxx_destruct;
 - (void)executeDeleteCommentFromServer;
 - (void)executePublishCommentToServer;
 - (void)executeProcessServerNotificationOfCommentChanges;

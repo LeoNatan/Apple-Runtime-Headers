@@ -13,8 +13,8 @@
     id <AXKKeyboardFocusListener> _listener;
 }
 
-@property(nonatomic) __weak id <AXKKeyboardFocusListener> listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AXKKeyboardFocusListener> listener; // @synthesize listener=_listener;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithListener:(id)arg1;

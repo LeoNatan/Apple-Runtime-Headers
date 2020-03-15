@@ -15,8 +15,9 @@
     CLAPIEngine *_engine;
 }
 
-@property(retain, nonatomic) CLAPIEngine *engine; // @synthesize engine=_engine;
++ (_Bool)outputIsExemptFromTaintTrackingInheritance;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CLAPIEngine *engine; // @synthesize engine=_engine;
 - (void)requestDidFailWithError:(id)arg1 connectionIdentifier:(id)arg2 userInfo:(id)arg3;
 - (void)fileUploadDidSucceedWithResultingItem:(id)arg1 connectionIdentifier:(id)arg2 userInfo:(id)arg3;
 - (void)fileUploadDidProgress:(double)arg1 connectionIdentifier:(id)arg2 userInfo:(id)arg3;

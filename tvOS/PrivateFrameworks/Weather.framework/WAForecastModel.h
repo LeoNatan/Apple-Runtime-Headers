@@ -27,6 +27,7 @@
     NSArray *_underlyingDailyConditions;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *underlyingDailyConditions; // @synthesize underlyingDailyConditions=_underlyingDailyConditions;
 @property(retain, nonatomic) NSArray *underlyingHourlyConditions; // @synthesize underlyingHourlyConditions=_underlyingHourlyConditions;
 @property(retain, nonatomic) WFWeatherConditions *underlyingCurrentConditions; // @synthesize underlyingCurrentConditions=_underlyingCurrentConditions;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) WACurrentForecast *currentConditions; // @synthesize currentConditions=_currentConditions;
 @property(retain, nonatomic) WFLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) City *city; // @synthesize city=_city;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPopulated;
 - (id)description;
 - (unsigned long long)hash;

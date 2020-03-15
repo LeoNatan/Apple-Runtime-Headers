@@ -21,13 +21,13 @@
     unsigned long long _priorityLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long priorityLevel; // @synthesize priorityLevel=_priorityLevel;
 @property(retain, nonatomic) NSUUID *existingTransactionIdentifier; // @synthesize existingTransactionIdentifier=_existingTransactionIdentifier;
 @property(readonly, nonatomic) ML3DatabaseConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 @property(readonly, nonatomic) NSMutableArray *statementQueue; // @synthesize statementQueue=_statementQueue;
 @property(nonatomic) unsigned long long statementThreshold; // @synthesize statementThreshold=_statementThreshold;
-- (void).cxx_destruct;
 - (BOOL)_onQueueFlushAndWait:(BOOL)arg1;
 - (BOOL)flushAndWait:(BOOL)arg1;
 - (BOOL)enqueueStatement:(id)arg1;

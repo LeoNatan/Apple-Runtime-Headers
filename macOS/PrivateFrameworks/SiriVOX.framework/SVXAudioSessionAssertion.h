@@ -15,9 +15,9 @@
     id <SVXTaskTracking> _taskTracker;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVXTaskTracking> taskTracker; // @synthesize taskTracker=_taskTracker;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)relinquish;
 - (id)initWithReason:(id)arg1 taskTracker:(id)arg2;
 - (void)dealloc;

@@ -12,9 +12,9 @@
     CDUnknownBlockType _failureBlock;
 }
 
+- (void).cxx_destruct;
 @property(getter=isCompleted) _Bool completed; // @synthesize completed=_completed;
 @property(readonly, nonatomic) CDUnknownBlockType failureBlock; // @synthesize failureBlock=_failureBlock;
-- (void).cxx_destruct;
 - (void)complete;
 - (void)dealloc;
 - (id)initWithFailureBlock:(CDUnknownBlockType)arg1;

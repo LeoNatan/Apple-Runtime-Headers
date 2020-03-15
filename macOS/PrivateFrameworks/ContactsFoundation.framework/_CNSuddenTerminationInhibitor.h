@@ -13,8 +13,8 @@
     NSProcessInfo *_processInfo;
 }
 
-@property(retain, nonatomic) NSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 - (void)stop;
 - (void)start;
 - (id)initWithProcessInfo:(id)arg1;

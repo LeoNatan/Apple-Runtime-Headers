@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, getter=isDictionaryMessage) _Bool dictionaryMessage; // @synthesize dictionaryMessage=_dictionaryMessage;
 @property(readonly, copy) NSData *data; // @synthesize data=_data;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *pairingID; // @synthesize pairingID=_pairingID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

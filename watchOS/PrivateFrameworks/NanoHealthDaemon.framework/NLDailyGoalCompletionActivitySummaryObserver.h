@@ -20,11 +20,11 @@
     HKActivitySummary *_previousActivitySummary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKActivitySummary *previousActivitySummary; // @synthesize previousActivitySummary=_previousActivitySummary;
 @property(retain, nonatomic) HKActivitySummary *currentActivitySummary; // @synthesize currentActivitySummary=_currentActivitySummary;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) __weak id <NLDailyActivityGoalDetectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)currentActivitySummaryHelper:(id)arg1 didUpdateYesterdayActivitySummary:(id)arg2 changedFields:(unsigned int)arg3;
 - (void)currentActivitySummaryHelper:(id)arg1 didUpdateTodayActivitySummary:(id)arg2 changedFields:(unsigned int)arg3;
 - (_Bool)runGoalCompletionForStandWithNewActivitySummary:(id)arg1;

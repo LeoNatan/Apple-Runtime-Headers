@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(getter=isPresentation) _Bool presentation; // @synthesize presentation=_presentation;
-- (void).cxx_destruct;
 - (void)_animateTransition:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

@@ -13,8 +13,8 @@
     ARSession *_session;
 }
 
-@property __weak ARSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property __weak ARSession *session; // @synthesize session=_session;
 - (void)updateFromTimer:(id)arg1;
 - (void)startUpdateTimer;
 - (_Bool)result:(id)arg1 isCloseEnoughToInitialResultForRaycast:(id)arg2;

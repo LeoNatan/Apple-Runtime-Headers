@@ -16,8 +16,8 @@
     id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider;
 }
 
-@property(nonatomic) __weak id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider; // @synthesize pipelineComponentProvider;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PXPlacesMapPipelineComponentProvider> pipelineComponentProvider; // @synthesize pipelineComponentProvider;
 - (void)reset;
 - (id)selectedGeotaggablesForRenderable:(id)arg1 mapView:(id)arg2;
 

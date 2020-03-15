@@ -15,9 +15,9 @@
 }
 
 + (id)autofillSuggestionWithUsername:(id)arg1 password:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, copy, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)_keyboardCandidate;
 - (id)initWithUsername:(id)arg1 password:(id)arg2;
 

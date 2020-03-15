@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AMPDevice, DS_TKeyValueObserverGlue, DeviceCollection, FITNode, NSArray, NSIndexSet, NSMetadataQuery, NSMutableArray, NSObject, NSProgress;
+@class AMPDevice, DS_TKeyValueObserverGlue, DeviceCollection, FITNode, FPItemCollection, NSArray, NSError, NSIndexSet, NSMetadataQuery, NSMutableArray, NSObject, NSProgress;
 
 #pragma mark Named Structures
 
 struct AuthorizationOpaqueRef;
 
 struct TConditionVariable {
-    struct condition_variable_any _field1;
-    int _field2;
+    struct condition_variable_any fCondition;
+    int fWaitCount;
 };
 
 struct TDSHelperContext {
@@ -61,8 +61,24 @@ struct TNSRef<FITNode, void> {
     FITNode *fRef;
 };
 
+struct TNSRef<FPItemCollection, void> {
+    FPItemCollection *fRef;
+};
+
 struct TNSRef<NSArray<AMPDevice *>, void> {
     id _field1;
+};
+
+struct TNSRef<NSArray<FPItem *>, void> {
+    NSArray *fRef;
+};
+
+struct TNSRef<NSArray<FPProviderDomain *>, void> {
+    NSArray *fRef;
+};
+
+struct TNSRef<NSError, void> {
+    NSError *fRef;
 };
 
 struct TNSRef<NSIndexSet, void> {
@@ -75,6 +91,10 @@ struct TNSRef<NSMetadataQuery, void> {
 
 struct TNSRef<NSMutableArray<AMPDevice *>, void> {
     NSMutableArray *fRef;
+};
+
+struct TNSRef<NSObject, void> {
+    NSObject *fRef;
 };
 
 struct TNSRef<NSProgress, void> {
@@ -110,14 +130,14 @@ struct _opaque_pthread_mutex_t {
 
 struct condition_variable {
     struct _opaque_pthread_cond_t {
-        long long _field1;
-        char _field2[40];
-    } _field1;
+        long long __sig;
+        char __opaque[40];
+    } __cv_;
 };
 
 struct condition_variable_any {
-    struct condition_variable _field1;
-    struct shared_ptr<std::__1::mutex> _field2;
+    struct condition_variable __cv_;
+    struct shared_ptr<std::__1::mutex> __mut_;
 };
 
 struct function<void ()> {
@@ -131,12 +151,12 @@ struct function<void (NSDictionary<NSString *, NSObject *>*)> {
 };
 
 struct mutex {
-    struct _opaque_pthread_mutex_t _field1;
+    struct _opaque_pthread_mutex_t __m_;
 };
 
 struct shared_ptr<std::__1::mutex> {
-    struct mutex *_field1;
-    struct __shared_weak_count *_field2;
+    struct mutex *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct type {
@@ -183,6 +203,18 @@ struct vector<TKeyValueObserver, std::__1::allocator<TKeyValueObserver>> {
 typedef struct TNSRef<NSArray<AMPDevice *>, void> {
     id _field1;
 } TNSRef_16a0d36a;
+
+typedef struct TNSRef<NSArray<FPItem *>, void> {
+    NSArray *fRef;
+} TNSRef_29886eb6;
+
+typedef struct TNSRef<NSArray<FPProviderDomain *>, void> {
+    NSArray *fRef;
+} TNSRef_55d335d4;
+
+typedef struct TNSRef<NSError, void> {
+    NSError *fRef;
+} TNSRef_090b95aa;
 
 typedef struct TNSRef<NSProgress, void> {
     NSProgress *fRef;

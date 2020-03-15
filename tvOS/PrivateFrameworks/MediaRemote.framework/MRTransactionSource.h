@@ -18,9 +18,9 @@
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _MRNowPlayingPlayerPathProtobuf *playerPath; // @synthesize playerPath=_playerPath;
 @property(readonly, nonatomic) unsigned long long name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_processMessage:(id)arg1;
 - (void)_begin;
 - (id)initWithName:(unsigned long long)arg1 playerPath:(id)arg2 packets:(id)arg3 delegate:(id)arg4;

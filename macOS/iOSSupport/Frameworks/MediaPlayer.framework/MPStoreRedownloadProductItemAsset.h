@@ -13,8 +13,8 @@
     NSDictionary *_responseDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(readonly, copy, nonatomic) NSURL *URL;
 @property(readonly, copy, nonatomic) NSArray *sinfs;
 @property(readonly, copy, nonatomic) NSString *flavor;

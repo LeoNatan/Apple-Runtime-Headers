@@ -17,8 +17,8 @@
     IOSSHLApplication *_application;
 }
 
-@property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IOSSHLApplication *application; // @synthesize application=_application;
 - (void)allActivateUIAssertionsReleasedForBundleID:(id)arg1;
 - (_Bool)_deviceUnlockedSinceBoot;
 - (void)_cleanupIfNeeded;

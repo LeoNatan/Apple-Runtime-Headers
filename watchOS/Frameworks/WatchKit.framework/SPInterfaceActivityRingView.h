@@ -29,6 +29,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKActivityRingView *hkRingView; // @synthesize hkRingView=_hkRingView;
 @property(nonatomic) struct CGSize cachedSize; // @synthesize cachedSize=_cachedSize;
 @property(nonatomic) struct CGSize cachedContainerSize; // @synthesize cachedContainerSize=_cachedContainerSize;
@@ -44,7 +45,6 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (void)willDisappearForNotificationUI;
 - (void)willAppearForNotificationUI;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

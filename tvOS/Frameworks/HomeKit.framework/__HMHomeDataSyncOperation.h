@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     HMHomeManager *_manager;
 }
 
+- (void).cxx_destruct;
 @property(getter=isRefresh) _Bool refresh; // @synthesize refresh=_refresh;
 @property(readonly) __weak HMHomeManager *manager; // @synthesize manager=_manager;
-- (void).cxx_destruct;
 - (void)main;
 - (id)initWithHomeManager:(id)arg1 timeout:(double)arg2;
 - (id)initWithHomeManager:(id)arg1;

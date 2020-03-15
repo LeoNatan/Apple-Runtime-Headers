@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     SKUIRedeemTextField *_textField;
 }
 
-@property(nonatomic) __weak id <SKUIRedeemCameraViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SKUIRedeemCameraViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_newTextFieldWithClientContext:(id)arg1 placeholderColor:(id)arg2;
 - (void)_hideKeyboard;
 - (double)_adjustVerticalSpacingForHeight:(double)arg1;

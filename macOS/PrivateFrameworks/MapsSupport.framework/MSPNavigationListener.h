@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     GEOSharedNavState *_currentState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOSharedNavState *currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) __weak id <MSPNavigationListenerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)navigationServiceDidArrive:(id)arg1;
 - (void)navigationService:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)navigationService:(id)arg1 didReroute:(id)arg2 traffic:(id)arg3;

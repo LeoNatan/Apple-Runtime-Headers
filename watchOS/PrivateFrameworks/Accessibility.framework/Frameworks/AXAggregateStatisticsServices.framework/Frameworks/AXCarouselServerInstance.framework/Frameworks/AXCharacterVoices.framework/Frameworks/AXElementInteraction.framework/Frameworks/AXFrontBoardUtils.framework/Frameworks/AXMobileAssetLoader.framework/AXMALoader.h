@@ -18,10 +18,10 @@
 
 + (id)mobileAssetLoaderWithAssetType:(id)arg1 qosClass:(unsigned int)arg2;
 + (id)mobileAssetLoaderWithAssetType:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *mobileAssetQueue; // @synthesize mobileAssetQueue=_mobileAssetQueue;
 @property(readonly, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)_handleAssetPurge:(id)arg1 withPurgeResult:(int)arg2;
 - (void)_handleAssetCompletedDownload:(id)arg1 withDownloadResult:(int)arg2;

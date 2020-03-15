@@ -26,11 +26,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *geoData; // @synthesize geoData=_geoData;
 @property(nonatomic) double nextEntryTime; // @synthesize nextEntryTime=_nextEntryTime;
 @property(nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(retain, nonatomic) HDCodableRoutineLocation *locationOfInterest; // @synthesize locationOfInterest=_locationOfInterest;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

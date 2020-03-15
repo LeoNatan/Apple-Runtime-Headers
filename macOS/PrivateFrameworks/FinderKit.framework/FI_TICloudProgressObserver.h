@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)singleton;
-@property(nonatomic) double percentageComplete; // @synthesize percentageComplete=_percentageComplete;
-@property(copy, nonatomic) NSString *iCloudDriveStatus; // @synthesize iCloudDriveStatus=_iCloudDriveStatus;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) double percentageComplete; // @synthesize percentageComplete=_percentageComplete;
+@property(copy, nonatomic) NSString *iCloudDriveStatus; // @synthesize iCloudDriveStatus=_iCloudDriveStatus;
 @property(readonly) NSArray *progresses; // @dynamic progresses;
 - (void)stopObserving;
 - (void)startObserving;

@@ -14,8 +14,8 @@
     NSDictionary *params;
 }
 
-@property(readonly, nonatomic) NSDictionary *params; // @synthesize params;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *params; // @synthesize params;
 - (id)description;
 - (id)body;
 - (id)url;

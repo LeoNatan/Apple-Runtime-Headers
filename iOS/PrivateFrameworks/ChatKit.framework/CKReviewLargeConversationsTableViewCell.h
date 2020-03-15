@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)leftHandSideViewSize;
 + (double)requestedHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(retain, nonatomic) IMChat *chat; // @synthesize chat=_chat;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (id)leftHandSideView;
 - (void)setModelObject:(id)arg1;

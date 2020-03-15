@@ -32,6 +32,7 @@
 
 + (_Bool)shouldScrollGivenTitleSizes:(id)arg1 fittingWidth:(double)arg2;
 + (double)estimatedContentWidthForTitleSizes:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) NSIndexPath *shimmeringItemIndexPath; // @synthesize shimmeringItemIndexPath=_shimmeringItemIndexPath;
 @property(retain, nonatomic) AVTGroupDialMaskingView *maskingView; // @synthesize maskingView=_maskingView;
 @property(nonatomic) _Bool hasFinalizedSelection; // @synthesize hasFinalizedSelection=_hasFinalizedSelection;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) NSArray *groupTitles; // @synthesize groupTitles=_groupTitles;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(nonatomic) __weak id <AVTGroupDialDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;

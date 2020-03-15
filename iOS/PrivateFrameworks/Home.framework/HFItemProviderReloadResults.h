@@ -17,10 +17,10 @@
     NSSet *_existingItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *existingItems; // @synthesize existingItems=_existingItems;
 @property(retain, nonatomic) NSSet *removedItems; // @synthesize removedItems=_removedItems;
 @property(retain, nonatomic) NSSet *addedItems; // @synthesize addedItems=_addedItems;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSSet *allItems;
 - (id)resultsByMergingWithResults:(id)arg1;

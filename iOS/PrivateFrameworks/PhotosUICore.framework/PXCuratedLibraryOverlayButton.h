@@ -25,13 +25,14 @@
 }
 
 + (id)defaultTitleColor;
-+ (struct UIFont *)defaultTitleFont;
++ (id)defaultTitleFont;
 + (void)_getSize:(out struct CGSize *)arg1 titleFrame:(out struct CGRect *)arg2 captionFrame:(out struct CGRect *)arg3 iconFrame:(out struct CGRect *)arg4 forConfiguration:(id)arg5 title:(id)arg6;
 + (struct CGSize)sizeWithConfiguration:(id)arg1;
-+ (struct CGSize)_sizeOfTitle:(id)arg1 withFont:(struct UIFont *)arg2;
++ (struct CGSize)_sizeOfTitle:(id)arg1 withFont:(id)arg2;
 + (id)roundedCornerMaskImage:(CDStruct_2bd92d94)arg1 size:(struct CGSize)arg2;
 + (id)buttonSizeCache;
 + (id)titleSizeCache;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets hitTestInsets; // @synthesize hitTestInsets=_hitTestInsets;
 @property(retain, nonatomic) UILabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -41,11 +42,11 @@
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(copy, nonatomic) PXCuratedLibraryOverlayButtonConfiguration *userData; // @synthesize userData=_userData;
-- (void).cxx_destruct;
 - (void)_updateEffectView;
 - (void)_updateEffectViewBackgroundStyle;
 - (void)_platformSpecificViewSetup;
 - (void)_setupEffectView;
+- (_Bool)canBecomeFocused;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_performAction:(id)arg1;
 - (void)_updateButtonWithConfiguration:(id)arg1;

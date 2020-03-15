@@ -15,10 +15,10 @@
     HMUserCloudShareClientInfo *_clientInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly) HMUserCloudShareClientInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly) HMUser *ownerUser; // @synthesize ownerUser=_ownerUser;
 @property(readonly) CKShareParticipant *participant; // @synthesize participant=_participant;
-- (void).cxx_destruct;
 - (id)initWithOwnerUser:(id)arg1 pariticipant:(id)arg2 clientInfo:(id)arg3;
 
 @end

@@ -31,6 +31,7 @@
     unsigned long long _toInlineAppExposeRoles;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isContinuityTransition) _Bool continuityTransition; // @synthesize continuityTransition=_continuityTransition;
 @property(nonatomic, getter=isMorphToPiPTransition) _Bool morphToPiPTransition; // @synthesize morphToPiPTransition=_morphToPiPTransition;
 @property(nonatomic, getter=isInlineAppExposeTransition) _Bool inlineAppExposeTransition; // @synthesize inlineAppExposeTransition=_inlineAppExposeTransition;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) SBAppLayout *fromFloatingAppLayout; // @synthesize fromFloatingAppLayout=_fromFloatingAppLayout;
 @property(nonatomic) _Bool toAppLayoutWantsExclusiveForeground; // @synthesize toAppLayoutWantsExclusiveForeground=_toAppLayoutWantsExclusiveForeground;
 @property(nonatomic) _Bool fromAppLayoutWantsExclusiveForeground; // @synthesize fromAppLayoutWantsExclusiveForeground=_fromAppLayoutWantsExclusiveForeground;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (long long)type;
 

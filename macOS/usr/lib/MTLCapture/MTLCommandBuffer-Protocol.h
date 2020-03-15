@@ -32,6 +32,7 @@
 - (void)waitUntilCompleted;
 - (void)addCompletedHandler:(void (^)(id <MTLCommandBuffer>))arg1;
 - (void)waitUntilScheduled;
+- (void)presentDrawable:(id <MTLDrawable>)arg1 afterMinimumDuration:(double)arg2;
 - (void)presentDrawable:(id <MTLDrawable>)arg1 atTime:(double)arg2;
 - (void)presentDrawable:(id <MTLDrawable>)arg1;
 - (void)addScheduledHandler:(void (^)(id <MTLCommandBuffer>))arg1;

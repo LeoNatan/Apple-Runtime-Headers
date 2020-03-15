@@ -10,11 +10,12 @@
 @protocol WBSURLCompletionMatchData;
 
 @protocol WBSURLCompletionMatchData <NSObject>
+@property(readonly, nonatomic) _Bool shouldPreload;
 @property(readonly, nonatomic) _Bool lastVisitWasFailure;
 @property(readonly, nonatomic) double lastVisitedTimeInterval;
 @property(readonly, nonatomic) _Bool containsBookmark;
 @property(readonly, nonatomic) NSString *originalURLString;
-- (float)topSitesScoreForPageTitleAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
+- (float)topSitesScoreForPageTitleAtTime:(double)arg1;
 - (float)topSitesScoreForURLStringAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
 - (_Bool)matchesAutocompleteTrigger:(NSString *)arg1;
 - (NSString *)pageTitleForUserVisibleURLStringAtIndex:(unsigned long long)arg1;

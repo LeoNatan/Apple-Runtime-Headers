@@ -19,6 +19,7 @@
     HKLineSeriesPointMarkerStyle *_selectedPointMarkerStyle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool extendFirstValue; // @synthesize extendFirstValue=_extendFirstValue;
 @property(nonatomic) _Bool extendLastValue; // @synthesize extendLastValue=_extendLastValue;
 @property(nonatomic) _Bool flatLastValue; // @synthesize flatLastValue=_flatLastValue;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *selectedPresentationStyles; // @synthesize selectedPresentationStyles=_selectedPresentationStyles;
 @property(retain, nonatomic) NSArray *highlightedPresentationStyles; // @synthesize highlightedPresentationStyles=_highlightedPresentationStyles;
 @property(retain, nonatomic) NSArray *unhighlightedPresentationStyles; // @synthesize unhighlightedPresentationStyles=_unhighlightedPresentationStyles;
-- (void).cxx_destruct;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (_Bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (_Bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect)arg1 blockCoordinate:(id)arg2;

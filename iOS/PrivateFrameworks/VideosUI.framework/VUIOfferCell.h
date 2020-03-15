@@ -8,19 +8,25 @@
 
 #import <VideosUI/VUIRentalExpirationLabelDelegate-Protocol.h>
 
-@class IKViewElement, NSString, VUIOfferView;
+@class IKViewElement, NSString, VUIImageView, VUILabel, VUIOfferView;
 
 __attribute__((visibility("hidden")))
 @interface VUIOfferCell : VUIFocusableCollectionViewCell <VUIRentalExpirationLabelDelegate>
 {
     IKViewElement *_viewElement;
     VUIOfferView *_offerView;
+    VUILabel *_belowCardTextLabel;
+    VUIImageView *_secondChinImageView;
+    struct CGSize _cardSize;
 }
 
 + (id)configureViewWithElement:(id)arg1 existingCell:(id)arg2;
+- (void).cxx_destruct;
+@property(retain, nonatomic) VUIImageView *secondChinImageView; // @synthesize secondChinImageView=_secondChinImageView;
+@property(retain, nonatomic) VUILabel *belowCardTextLabel; // @synthesize belowCardTextLabel=_belowCardTextLabel;
+@property(nonatomic) struct CGSize cardSize; // @synthesize cardSize=_cardSize;
 @property(retain, nonatomic) VUIOfferView *offerView; // @synthesize offerView=_offerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)rentalExpirationLabelNeedsRelayout:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

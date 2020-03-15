@@ -24,6 +24,7 @@
 
 + (id)joinAlertEventWithSource:(unsigned long long)arg1 action:(unsigned long long)arg2 visibleDuration:(id)arg3;
 + (id)joinRecommendationEventWithSource:(unsigned long long)arg1 action:(unsigned long long)arg2 BSSID:(id)arg3 latitude:(id)arg4 longitude:(id)arg5 score:(id)arg6 visibleDuration:(id)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) NSNumber *visibleDuration; // @synthesize visibleDuration=_visibleDuration;
 @property(retain, nonatomic) NSNumber *score; // @synthesize score=_score;
 @property(retain, nonatomic) NSNumber *longitude; // @synthesize longitude=_longitude;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
 @property(nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *eventName;
 @property(readonly, nonatomic) NSDictionary *eventDictionary;
 

@@ -53,6 +53,7 @@
 }
 
 + (id)keyPathsForValuesAffectingIsZoomedIn;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _swipeScrollDirectionIsNatural; // @synthesize _swipeScrollDirectionIsNatural=__swipeScrollDirectionIsNatural;
 @property(retain, nonatomic) AXVOverlayWindow *_zoomPreviewOverlayWindow; // @synthesize _zoomPreviewOverlayWindow=__zoomPreviewOverlayWindow;
 @property(retain, nonatomic) AXVHighlightOutlineView *_zoomPreviewView; // @synthesize _zoomPreviewView=__zoomPreviewView;
@@ -72,7 +73,6 @@
 @property(nonatomic) BOOL zoomedOutForTouchBarZoom; // @synthesize zoomedOutForTouchBarZoom=_zoomedOutForTouchBarZoom;
 @property(nonatomic) BOOL isStarted; // @synthesize isStarted=_isStarted;
 @property(nonatomic) __weak id <ZMFZManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateSwipeScrollDirectionBasedOnPreferences;
 - (void)_swipeScrollDirectionChanged:(id)arg1;
 - (void)_handleDFRHUDHiding:(id)arg1;

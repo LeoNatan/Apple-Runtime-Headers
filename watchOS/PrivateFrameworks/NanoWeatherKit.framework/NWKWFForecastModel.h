@@ -15,10 +15,10 @@
     NSArray *_dailyForecasts;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *dailyForecasts; // @synthesize dailyForecasts=_dailyForecasts;
 @property(readonly, nonatomic) NSArray *hourlyForecasts; // @synthesize hourlyForecasts=_hourlyForecasts;
 @property(readonly, nonatomic) WFWeatherConditions *currentConditions; // @synthesize currentConditions=_currentConditions;
-- (void).cxx_destruct;
 
 @end
 

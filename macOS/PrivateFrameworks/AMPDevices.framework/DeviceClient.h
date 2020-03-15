@@ -15,8 +15,8 @@
     NSXPCConnection *_connectionToDiscoveryService;
 }
 
-@property(nonatomic) __weak NSXPCConnection *connectionToDiscoveryService; // @synthesize connectionToDiscoveryService=_connectionToDiscoveryService;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSXPCConnection *connectionToDiscoveryService; // @synthesize connectionToDiscoveryService=_connectionToDiscoveryService;
 - (void)pairDeviceWithIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)initWithConnection:(id)arg1;
 

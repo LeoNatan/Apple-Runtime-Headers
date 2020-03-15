@@ -9,7 +9,7 @@
 @interface NSError (IMSharedUtilitiesAdditions)
 + (id)serializedErrorArrayFromErrorArray_im:(id)arg1;
 + (id)errorArrayFromSerializedErrorArray_im:(id)arg1;
-- (struct NSDictionary *)serializedError_im;
-- (id)initWithSerializedError_im:(struct NSDictionary *)arg1;
+- (id)serializedError_im;
+- (id)initWithSerializedError_im:(id)arg1;
 @end
 

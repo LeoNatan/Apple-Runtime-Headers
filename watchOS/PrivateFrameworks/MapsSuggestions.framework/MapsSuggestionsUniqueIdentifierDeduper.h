@@ -13,7 +13,7 @@
 @interface MapsSuggestionsUniqueIdentifierDeduper : MapsSuggestionsBaseDeduper <MapsSuggestionsDeduper>
 {
     int _type;
-    struct NSString *_name;
+    NSString *_name;
 }
 
 + (_Bool)isEnabled;

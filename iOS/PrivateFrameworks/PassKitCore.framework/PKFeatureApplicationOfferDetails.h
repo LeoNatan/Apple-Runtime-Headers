@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(copy, nonatomic) NSDecimalNumber *aprForPurchase; // @synthesize aprForPurchase=_aprForPurchase;
 @property(copy, nonatomic) NSDecimalNumber *annualFee; // @synthesize annualFee=_annualFee;
 @property(copy, nonatomic) NSDecimalNumber *creditLimit; // @synthesize creditLimit=_creditLimit;
 @property(copy, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
 @property(copy, nonatomic) NSString *offerTermsIdentifier; // @synthesize offerTermsIdentifier=_offerTermsIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

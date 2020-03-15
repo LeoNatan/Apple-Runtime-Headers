@@ -15,9 +15,9 @@
     NSMapTable *_accessories;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *accessories; // @synthesize accessories=_accessories;
 @property(readonly, nonatomic) __weak id <HMDSiriAccessoryMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)accessory:(id)arg1 setSupportsDragonSiri:(_Bool)arg2;
 - (void)setTargetableAccessory:(id)arg1 withControllers:(id)arg2;
 - (void)_removeAccessory:(id)arg1;

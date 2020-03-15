@@ -42,11 +42,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_timeZoneLocalizedString;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <EKEventDateEditItemDelegate> eventDateEditItemDelegate; // @synthesize eventDateEditItemDelegate=_eventDateEditItemDelegate;
 @property(retain, nonatomic) NSDate *pendingProposedTime; // @synthesize pendingProposedTime=_pendingProposedTime;
 @property(nonatomic) BOOL proposedTime; // @synthesize proposedTime=_proposedTime;
 @property(nonatomic) BOOL showsAllDay; // @synthesize showsAllDay=_showsAllDay;
-- (void).cxx_destruct;
 - (BOOL)_shouldShowTimeZone;
 - (id)_dateComponentsInSystemCalendarFromDate:(id)arg1;
 - (id)_dateFromComponents:(id)arg1 timeZone:(id)arg2;

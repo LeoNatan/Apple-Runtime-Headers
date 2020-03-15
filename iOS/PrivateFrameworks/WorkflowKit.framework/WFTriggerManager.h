@@ -13,8 +13,8 @@
     WFDatabase *_database;
 }
 
-@property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 - (id)configuredTriggerWithID:(id)arg1;
 - (id)allConfiguredTriggers;
 - (void)deleteTriggerWithIdentifier:(id)arg1 notifyDaemon:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

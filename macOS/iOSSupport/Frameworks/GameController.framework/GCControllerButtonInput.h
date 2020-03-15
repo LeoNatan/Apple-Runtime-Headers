@@ -18,11 +18,11 @@
     CDUnknownBlockType _pressedChangedHandler;
 }
 
+- (void).cxx_destruct;
 @property BOOL nonAnalog; // @synthesize nonAnalog=_nonAnalog;
 @property(readonly, nonatomic) float value; // @synthesize value=_value;
 @property(copy, nonatomic) CDUnknownBlockType pressedChangedHandler; // @synthesize pressedChangedHandler=_pressedChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
-- (void).cxx_destruct;
 - (void)setValue:(float)arg1;
 - (id)description;
 @property(readonly, nonatomic, getter=isPressed) BOOL pressed;

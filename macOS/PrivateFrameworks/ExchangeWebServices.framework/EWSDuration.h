@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *EndTime; // @synthesize EndTime=_EndTime;
 @property(retain, nonatomic) NSDateComponents *StartTime; // @synthesize StartTime=_StartTime;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

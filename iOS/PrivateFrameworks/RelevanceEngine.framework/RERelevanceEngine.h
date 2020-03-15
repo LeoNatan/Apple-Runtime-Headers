@@ -49,9 +49,9 @@
 }
 
 + (void)prewarmWithConfiguration:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool automaticallyResumeEngine; // @synthesize automaticallyResumeEngine=_automaticallyResumeEngine;
 @property(readonly, nonatomic) RERelevanceEngineConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)removePreferencesForObject:(id)arg1;
 - (void)setPreferences:(id)arg1 forObject:(id)arg2;
 @property(readonly, nonatomic) RERelevanceEnginePreferences *effectivePreferences;

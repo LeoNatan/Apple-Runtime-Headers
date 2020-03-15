@@ -23,6 +23,7 @@
     id <AXETimer> __flickTimeoutTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AXETimer> _flickTimeoutTimer; // @synthesize _flickTimeoutTimer=__flickTimeoutTimer;
 @property(retain, nonatomic) NSArray *_lastTouchingTouches; // @synthesize _lastTouchingTouches=__lastTouchingTouches;
 @property(retain, nonatomic) AXETrackingTouchEvent *_flickStartTouchEvent; // @synthesize _flickStartTouchEvent=__flickStartTouchEvent;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) double maximumFlickDuration; // @synthesize maximumFlickDuration=_maximumFlickDuration;
 @property(readonly, nonatomic) double minimumFlickVelocity; // @synthesize minimumFlickVelocity=_minimumFlickVelocity;
 @property(readonly, nonatomic) double minimumFlickDistance; // @synthesize minimumFlickDistance=_minimumFlickDistance;
-- (void).cxx_destruct;
 - (void)_signalFlickAborted:(id)arg1;
 - (void)_signalFlickRecognized:(double)arg1;
 - (void)_transitionToState:(unsigned long long)arg1;

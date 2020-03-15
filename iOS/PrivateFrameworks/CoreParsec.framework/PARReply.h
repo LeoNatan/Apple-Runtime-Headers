@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *localSuggestions; // @synthesize localSuggestions=_localSuggestions;
 @property(copy, nonatomic) NSString *geoSessionEntityString; // @synthesize geoSessionEntityString=_geoSessionEntityString;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;
 @property(retain, nonatomic) NSURLRequest *httpRequest; // @synthesize httpRequest=_httpRequest;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rawResponse;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

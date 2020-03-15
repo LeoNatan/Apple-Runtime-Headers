@@ -15,10 +15,10 @@
     AVCaptureSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isConfigured) BOOL configured; // @synthesize configured=_configured;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 @property(retain, nonatomic) AVCaptureSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 
 @end
 

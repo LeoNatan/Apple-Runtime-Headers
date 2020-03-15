@@ -19,15 +19,15 @@ __attribute__((visibility("hidden")))
 
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_f92c3047 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property BOOL isGlobalForcedIdle; // @synthesize isGlobalForcedIdle=_isGlobalForcedIdle;
 @property unsigned long long dispatchQueueId; // @synthesize dispatchQueueId=_dispatchQueueId;
 @property unsigned long long threadId; // @synthesize threadId=_threadId;
 @property(retain) SAThreadState *threadState; // @synthesize threadState=_threadState;
-- (void).cxx_destruct;
 - (void)populateReferencesUsingBuffer:(const CDStruct_f92c3047 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 - (void)addSelfToSerializationDictionary:(id)arg1;
-- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (BOOL)addSelfToBuffer:(void *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 
 @end
 

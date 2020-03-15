@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_separatorLine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)_updateConstraintsWithLabel:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

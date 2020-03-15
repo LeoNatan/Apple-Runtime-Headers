@@ -30,6 +30,7 @@
 }
 
 + (Class)attachmentType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *htmlContentData; // @synthesize htmlContentData=_htmlContentData;
 @property(retain, nonatomic) NNMKProtoMessage *notificationMessage; // @synthesize notificationMessage=_notificationMessage;
 @property(retain, nonatomic) NSMutableArray *attachments; // @synthesize attachments=_attachments;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 @property(retain, nonatomic) NSData *dateSynced; // @synthesize dateSynced=_dateSynced;
 @property(nonatomic) unsigned int fullSyncVersion; // @synthesize fullSyncVersion=_fullSyncVersion;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

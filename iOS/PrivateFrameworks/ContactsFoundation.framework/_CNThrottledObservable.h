@@ -20,6 +20,7 @@
     _Bool _isCoalescing;
 }
 
+- (void).cxx_destruct;
 @property _Bool isCoalescing; // @synthesize isCoalescing=_isCoalescing;
 @property(retain) id <CNCancelable> delayToken; // @synthesize delayToken=_delayToken;
 @property(retain) id mostRecentResult; // @synthesize mostRecentResult=_mostRecentResult;
@@ -28,7 +29,6 @@
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly) double interval; // @synthesize interval=_interval;
 @property(readonly) CNObservable *observable; // @synthesize observable=_observable;
-- (void).cxx_destruct;
 - (void)observerScheduler_sendResultToObserver:(id)arg1;
 - (id)subscribe:(id)arg1;
 - (void)dealloc;

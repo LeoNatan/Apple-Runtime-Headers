@@ -6,19 +6,25 @@
 
 #import <UIKit/UIViewController.h>
 
-@class IKViewElement, VUIChannelBannerView;
+@class IKViewElement, VUIChannelBannerView, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUIChannelBannerViewController : UIViewController
 {
+    _TVImageView *_bgImageView;
     IKViewElement *_viewElement;
     VUIChannelBannerView *_bannerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUIChannelBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
+@property(retain, nonatomic) _TVImageView *bgImageView; // @synthesize bgImageView=_bgImageView;
 - (id)preferredFocusEnvironments;
+- (void)_configureSubviews;
+- (void)viewDidLayoutSubviews;
+- (void)viewDidLoad;
+- (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

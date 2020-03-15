@@ -17,10 +17,10 @@
     NSNotificationCenter *_notificationCenter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(readonly, copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
 @property(readonly, copy, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (void)stopObservingChanges;
 - (void)startObservingChanges;
 - (void)handleNotification:(id)arg1;

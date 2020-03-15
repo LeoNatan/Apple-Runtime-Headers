@@ -19,8 +19,8 @@
     id <SXDocumentProviding> _documentProvider;
 }
 
-@property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SXDocumentProviding> documentProvider; // @synthesize documentProvider=_documentProvider;
 @property(readonly, nonatomic) NSString *language;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) SXMetaData *metadata;

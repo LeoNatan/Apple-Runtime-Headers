@@ -24,13 +24,13 @@
 
 + (id)protocolMessageWithProtobufData:(id)arg1;
 + (unsigned long long)currentProtocolVersion;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isReply; // @synthesize isReply=_isReply;
 @property(nonatomic) __weak MRProtocolClientConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) PBCodable *underlyingCodableMessage; // @synthesize underlyingCodableMessage=_underlyingCodableMessage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSData *protobufData;
 - (BOOL)replyWithMessage:(id)arg1;
 - (BOOL)reply;

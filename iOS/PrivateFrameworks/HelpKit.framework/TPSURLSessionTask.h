@@ -29,6 +29,7 @@
 }
 
 + (struct TPSURLSessionDelegateResponds)delegateRespondsWithDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *sessionTaskDelegates; // @synthesize sessionTaskDelegates=_sessionTaskDelegates;
 @property(retain, nonatomic) NSError *dataError; // @synthesize dataError=_dataError;
 @property(retain, nonatomic) NSMutableData *dataTaskData; // @synthesize dataTaskData=_dataTaskData;
@@ -43,7 +44,6 @@
 @property(nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) struct TPSURLSessionDelegateResponds delegateResponds; // @synthesize delegateResponds=_delegateResponds;
 @property(nonatomic) __weak id <TPSURLSessionDelegate> networkDelegate; // @synthesize networkDelegate=_networkDelegate;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)resume;
 - (void)unregisterDelegate:(id)arg1;

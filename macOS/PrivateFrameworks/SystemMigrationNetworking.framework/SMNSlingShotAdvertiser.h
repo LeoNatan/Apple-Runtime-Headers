@@ -14,8 +14,8 @@
 }
 
 + (id)createSlingShotServiceWithName:(id)arg1 isWindows:(BOOL)arg2;
-@property(retain) NSNetService *netService; // @synthesize netService=_netService;
 - (void).cxx_destruct;
+@property(retain) NSNetService *netService; // @synthesize netService=_netService;
 - (void)start;
 - (id)initWithName:(id)arg1 isWindows:(BOOL)arg2;
 

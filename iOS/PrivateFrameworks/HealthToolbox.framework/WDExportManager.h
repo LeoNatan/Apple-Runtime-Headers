@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allSupportedMedicalTypes;
+- (void).cxx_destruct;
 @property _Bool exportFailed; // @synthesize exportFailed=_exportFailed;
 @property _Bool exportInProgress; // @synthesize exportInProgress=_exportInProgress;
-- (void).cxx_destruct;
 - (id)_formatTimeForBeatToBeatReading:(id)arg1;
 - (id)_formatBPMForBeatToBeatReading:(id)arg1;
 - (id)_preferredUnitForObjectType:(id)arg1;

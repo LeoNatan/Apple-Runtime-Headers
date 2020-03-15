@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 
 + (double)defaultScaleFactor;
 + (void)setDefaultScaleFactor:(double)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINSSceneView *sceneView; // @synthesize sceneView=_sceneView;
 @property(retain, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
-- (void).cxx_destruct;
 - (void)setNeedsSizeRestrictionsUpdate;
 - (void)_setMinimumSizeForScreenInUIKit;
 - (void)updateViewConstraints;

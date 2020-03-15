@@ -58,6 +58,7 @@
 + (void)restartNextSuspendedQuery;
 + (void)queueSuspendedQuery:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *privateBundleID; // @synthesize privateBundleID=_privateBundleID;
 @property(nonatomic) BOOL suspended; // @synthesize suspended=_suspended;
 @property(nonatomic) BOOL userFSIndex; // @synthesize userFSIndex=_userFSIndex;
@@ -86,7 +87,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy) CDUnknownBlockType foundItemsHandler; // @synthesize foundItemsHandler=_foundItemsHandler;
-- (void).cxx_destruct;
 - (void)didFinishWithError:(id)arg1;
 - (void)didReturnResults:(long long)arg1 resultsData:(id)arg2 oidData:(id)arg3 protectionClass:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)processLiveResultsData:(id)arg1 oidData:(id)arg2 protectionClass:(id)arg3;

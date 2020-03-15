@@ -16,10 +16,10 @@
 }
 
 + (id)sharedEngine;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXMFaceDetectorNode *faceNode; // @synthesize faceNode=_faceNode;
 @property(retain, nonatomic) AXMImageNode *imageNode; // @synthesize imageNode=_imageNode;
 @property(retain, nonatomic) AXMVisionEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (void)analyzeImage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
 

@@ -15,10 +15,10 @@
     NSString *_displayName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool accessGranted; // @synthesize accessGranted=_accessGranted;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
-- (void).cxx_destruct;
 - (long long)compareWithIntentsApp:(id)arg1;
 - (id)initWithAppId:(id)arg1 displayName:(id)arg2 accessGranted:(_Bool)arg3;
 

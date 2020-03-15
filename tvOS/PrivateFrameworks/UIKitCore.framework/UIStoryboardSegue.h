@@ -19,13 +19,13 @@
 }
 
 + (id)segueWithIdentifier:(id)arg1 source:(id)arg2 destination:(id)arg3 performHandler:(CDUnknownBlockType)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id sender; // @synthesize sender=_sender;
 @property(copy, nonatomic) CDUnknownBlockType prepareHandler; // @synthesize prepareHandler=_prepareHandler;
 @property(copy, nonatomic) CDUnknownBlockType performHandler; // @synthesize performHandler=_performHandler;
 @property(readonly, nonatomic) UIViewController *destinationViewController; // @synthesize destinationViewController=_destinationViewController;
 @property(readonly, nonatomic) UIViewController *sourceViewController; // @synthesize sourceViewController=_sourceViewController;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_prepare;
 - (void)perform;
 - (id)init;

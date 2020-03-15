@@ -20,6 +20,7 @@
     PVPersonDeduperProfile *_profile;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool shouldStop; // @synthesize shouldStop=_shouldStop;
 @property(readonly, nonatomic) PVPersonDeduperProfile *profile; // @synthesize profile=_profile;
@@ -27,7 +28,6 @@
 @property(readonly, nonatomic) NSMapTable *mergeRelations; // @synthesize mergeRelations=_mergeRelations;
 @property(readonly, nonatomic) NSDictionary *invalidCandidatesMapping; // @synthesize invalidCandidatesMapping=_invalidCandidatesMapping;
 @property(readonly, nonatomic) PVPersonClusterManager *personClusterManager; // @synthesize personClusterManager=_personClusterManager;
-- (void).cxx_destruct;
 - (float)adjustedThreshold:(float)arg1 forMinAgeType:(unsigned short)arg2;
 - (_Bool)addPotentialMergeCandidateForPerson:(id)arg1 withOtherPerson:(id)arg2 updateBlock:(CDUnknownBlockType)arg3;
 - (id)mergeCandidatePersonsWithUpdateBlock:(CDUnknownBlockType)arg1;

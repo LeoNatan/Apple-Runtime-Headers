@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSString *_timeFormat;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *timeFormat; // @synthesize timeFormat=_timeFormat;
 @property(nonatomic) double time; // @synthesize time=_time;
 @property(retain, nonatomic) UIImageView *waveformImageView; // @synthesize waveformImageView=_waveformImageView;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <CKMessageEntryRecordedAudioViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) CKAudioMediaObject *audioMediaObject; // @synthesize audioMediaObject=_audioMediaObject;
-- (void).cxx_destruct;
 - (void)audioControllerDidStop:(id)arg1;
 - (void)audioControllerDidPause:(id)arg1;
 - (void)audioController:(id)arg1 mediaObjectProgressDidChange:(id)arg2 currentTime:(double)arg3 duration:(double)arg4;

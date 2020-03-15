@@ -15,7 +15,6 @@
 - (void)clearAllCompletions;
 - (void)clearCompletionsFromDate:(id)arg1 toDate:(id)arg2;
 - (void)addCompletion:(id)arg1 forInput:(id)arg2;
-- (id)init;
 
 @end
 

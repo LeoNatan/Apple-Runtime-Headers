@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)typicalBarPosition;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hidesShadow; // @synthesize hidesShadow=_hidesShadow;
 @property(retain, nonatomic) UIImage *topShadowImage; // @synthesize topShadowImage=_topShadowImage;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage=_shadowImage;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *topBackgroundImage; // @synthesize topBackgroundImage=_topBackgroundImage;
 @property(retain, nonatomic) UIImage *miniBackgroundImage; // @synthesize miniBackgroundImage=_miniBackgroundImage;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
-- (void).cxx_destruct;
 
 @end
 

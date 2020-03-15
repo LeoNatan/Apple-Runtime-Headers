@@ -29,9 +29,9 @@
 
 + (id)submanagerIdentifier;
 + (id)_createProgressEvents;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
-- (void).cxx_destruct;
 - (void)_todayActivityChanged:(id)arg1;
 - (void)_calendarDayChanged:(id)arg1;
 - (void)_unprotectedUserDefaultsDidSync:(id)arg1;

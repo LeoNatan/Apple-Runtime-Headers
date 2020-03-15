@@ -100,6 +100,7 @@
 + (Class)momentsCaptionCellClass;
 + (Class)momentsCellClass;
 + (void)initialize;
+- (void).cxx_destruct;
 @property long long globalPerformCount; // @synthesize globalPerformCount=_globalPerformCount;
 @property(readonly, nonatomic) BOOL isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
@@ -108,7 +109,6 @@
 @property(nonatomic) BOOL allowsMagnifyNavigation; // @synthesize allowsMagnifyNavigation=_allowsMagnifyNavigation;
 @property(nonatomic) __weak id <MOPhotosViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MOPhotosViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (void)mouseEntered:(id)arg1;

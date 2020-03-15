@@ -17,9 +17,9 @@
 + (_Bool)transportSupportsDevice:(id)arg1;
 + (long long)priorityForMessage:(id)arg1;
 + (unsigned long long)restriction;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDCompanionManager *companionManager; // @synthesize companionManager=_companionManager;
 @property(readonly, nonatomic) HMDWatchManager *watchManager; // @synthesize watchManager=_watchManager;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (id)sendMessage:(id)arg1 fromHandle:(id)arg2 destination:(id)arg3 priority:(long long)arg4 timeout:(double)arg5 options:(unsigned long long)arg6 error:(id *)arg7;
 - (_Bool)isDeviceConnected:(id)arg1;

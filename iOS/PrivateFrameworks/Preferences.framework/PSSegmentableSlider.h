@@ -18,12 +18,12 @@
     UISelectionFeedbackGenerator *_feedbackGenerator;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(nonatomic) unsigned long long segmentCount; // @synthesize segmentCount=_segmentCount;
 @property(nonatomic) _Bool snapsToSegment; // @synthesize snapsToSegment=_snapsToSegment;
 @property(nonatomic) _Bool locksToSegment; // @synthesize locksToSegment=_locksToSegment;
 @property(nonatomic, getter=isSegmented) _Bool segmented; // @synthesize segmented=_segmented;
-- (void).cxx_destruct;
 - (void)controlInteractionEnded:(id)arg1;
 - (void)controlInteractionBegan:(id)arg1;
 - (struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3;

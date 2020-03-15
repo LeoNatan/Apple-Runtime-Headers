@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (Class)subtitleLocalizedArgumentsType;
 + (Class)titleLocalizedArgumentsType;
 + (Class)localizedArgumentsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *subtitleLocalizedArguments; // @synthesize subtitleLocalizedArguments=_subtitleLocalizedArguments;
 @property(retain, nonatomic) NSString *subtitleLocalizedKey; // @synthesize subtitleLocalizedKey=_subtitleLocalizedKey;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *localizedArguments; // @synthesize localizedArguments=_localizedArguments;
 @property(retain, nonatomic) NSString *localizedKey; // @synthesize localizedKey=_localizedKey;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

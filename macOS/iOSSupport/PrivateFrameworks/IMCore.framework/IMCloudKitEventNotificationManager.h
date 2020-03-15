@@ -24,6 +24,7 @@
 + (id)sharedInstance;
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
+- (void).cxx_destruct;
 @property(retain) IMCloudKitSyncProgress *progressToSend; // @synthesize progressToSend=_progressToSend;
 @property(retain) IMCloudKitSyncState *previousState; // @synthesize previousState=_previousState;
 @property __weak NSTimer *fetchStatsTimer; // @synthesize fetchStatsTimer=_fetchStatsTimer;
@@ -31,7 +32,6 @@
 @property(readonly) IMWeakReferenceCollection *eventHandlers; // @synthesize eventHandlers=_eventHandlers;
 @property double progressPollingInterval; // @synthesize progressPollingInterval=_progressPollingInterval;
 @property __weak id <IMCloudKitEventHandlerAccountInfoProvider> accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
-- (void).cxx_destruct;
 - (void)fetchSyncDebuggingInfo:(id)arg1;
 - (void)_updateProgressWithState:(id)arg1;
 - (void)_sendHiddenProgressToEventListeners;

@@ -13,8 +13,8 @@
     NSString *_sender;
 }
 
-@property(readonly, nonatomic) NSString *sender; // @synthesize sender=_sender;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *sender; // @synthesize sender=_sender;
 - (id)_initWithItem:(id)arg1 senderHandle:(id)arg2;
 
 @end

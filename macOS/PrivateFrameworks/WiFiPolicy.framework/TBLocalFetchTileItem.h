@@ -19,11 +19,11 @@
     id <TBTile> _tile;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <TBTile> tile; // @synthesize tile=_tile;
 @property(readonly, nonatomic) unsigned long long status; // @synthesize status=_status;
 @property(readonly, nonatomic) NSSet *networks; // @synthesize networks=_networks;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (id)initWithTile:(id)arg1 error:(id)arg2;
 
 // Remaining properties

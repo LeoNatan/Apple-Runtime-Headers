@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_tapRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapRecognizer; // @synthesize tapRecognizer=_tapRecognizer;
 @property(retain, nonatomic) _UIPrototypingMenuSlider *slider; // @synthesize slider=_slider;
 @property(retain, nonatomic) UILabel *maxLabel; // @synthesize maxLabel=_maxLabel;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double current; // @synthesize current=_current;
 @property(nonatomic) double max; // @synthesize max=_max;
 @property(nonatomic) double min; // @synthesize min=_min;
-- (void).cxx_destruct;
 - (void)_sliderDidChangeValue:(id)arg1;
 - (void)_prototypingSettingDidChange;
 - (void)_tapRecognizerDidRecognizer:(id)arg1;

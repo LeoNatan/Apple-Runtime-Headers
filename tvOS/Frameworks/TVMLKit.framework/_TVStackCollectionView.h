@@ -18,8 +18,8 @@
     NSIndexPath *_indexPathForLastFocusedItem;
 }
 
-@property(readonly, copy, nonatomic) NSIndexPath *indexPathForLastFocusedItem; // @synthesize indexPathForLastFocusedItem=_indexPathForLastFocusedItem;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSIndexPath *indexPathForLastFocusedItem; // @synthesize indexPathForLastFocusedItem=_indexPathForLastFocusedItem;
 - (struct CGRect)_visibleBounds;
 - (void)_performWithoutLayoutBelow:(CDUnknownBlockType)arg1;
 - (void)layoutBelowIfNeeded;

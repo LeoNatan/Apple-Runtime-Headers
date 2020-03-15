@@ -23,13 +23,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *serializedUserInfo; // @synthesize serializedUserInfo=_serializedUserInfo;
 @property(retain, nonatomic) NSURL *referrerURL; // @synthesize referrerURL=_referrerURL;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(copy, nonatomic) NSArray *queryItems; // @synthesize queryItems=_queryItems;
 @property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 @property(retain, nonatomic) NSURL *cloudServiceSetupURL; // @synthesize cloudServiceSetupURL=_cloudServiceSetupURL;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

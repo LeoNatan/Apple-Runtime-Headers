@@ -16,9 +16,12 @@
     AMSBagFrozenDataSource *_dataSource;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AMSBagFrozenDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)dictionaryForKey:(id)arg1;
 - (id)URLForKey:(id)arg1;
 - (id)stringForKey:(id)arg1;

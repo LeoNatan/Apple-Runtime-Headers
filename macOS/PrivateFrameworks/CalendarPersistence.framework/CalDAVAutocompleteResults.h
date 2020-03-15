@@ -14,9 +14,9 @@
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *searchString; // @synthesize searchString=_searchString;
 @property(retain) NSArray *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,9 +16,9 @@
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)_setSelectedSegment:(long long)arg1;
 @property(nonatomic) long long selectedSegment;
 - (id)menuForSegment:(long long)arg1;

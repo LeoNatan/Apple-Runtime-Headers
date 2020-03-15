@@ -18,10 +18,10 @@
 }
 
 + (id)metadataForNotificationRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy) NSString *notificationIdentifier; // @synthesize notificationIdentifier=_notificationIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -24,13 +24,13 @@
 
 + (void)addStringFromTXTDictionary:(id)arg1 forKey:(id)arg2 toDictionary:(id)arg3;
 + (id)decodeSystemDescriptionFromSlingShotRock:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *resolvingServices; // @synthesize resolvingServices=_resolvingServices;
 @property(retain) NSObject<OS_dispatch_queue> *serviceMapQueue; // @synthesize serviceMapQueue=_serviceMapQueue;
 @property(retain) NSNetServiceBrowser *browser; // @synthesize browser=_browser;
 @property(copy) CDUnknownBlockType systemDisappearedBlock; // @synthesize systemDisappearedBlock=_systemDisappearedBlock;
 @property(copy) CDUnknownBlockType newSystemAppearedBlock; // @synthesize newSystemAppearedBlock=_newSystemAppearedBlock;
 @property(copy) CDUnknownBlockType knownSystemBlock; // @synthesize knownSystemBlock=_knownSystemBlock;
-- (void).cxx_destruct;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netServiceDidResolveAddress:(id)arg1;

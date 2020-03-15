@@ -27,6 +27,7 @@
     NSString *_watermark;
 }
 
+- (void).cxx_destruct;
 @property BOOL shouldSubscribe; // @synthesize shouldSubscribe=_shouldSubscribe;
 @property(copy) NSString *watermark; // @synthesize watermark=_watermark;
 @property(copy) NSString *subscriptionId; // @synthesize subscriptionId=_subscriptionId;
@@ -36,7 +37,6 @@
 @property(copy) NSArray *eventTypes; // @synthesize eventTypes=_eventTypes;
 @property(copy) NSArray *folderIds; // @synthesize folderIds=_folderIds;
 @property __weak id <EWSSubscriptionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)exchangeServiceBindingTask:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)_clearTask:(id)arg1;
 - (void)exchangeServiceBindingTaskCompleted:(id)arg1;

@@ -17,11 +17,11 @@
     NSString *_lastString;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *lastString; // @synthesize lastString=_lastString;
 @property(copy) NSNumber *lastTimestamp; // @synthesize lastTimestamp=_lastTimestamp;
 @property(readonly) NSMutableString *reproStringStorage; // @synthesize reproStringStorage=_reproStringStorage;
 @property(readonly) id <CNTimeProvider> timeProvider; // @synthesize timeProvider=_timeProvider;
-- (void).cxx_destruct;
 - (id)stringForKeystrokesSinceLastString:(id)arg1;
 - (id)stringForIntervalSinceLastTimestamp:(double)arg1;
 - (void)recordString:(id)arg1;

@@ -15,10 +15,10 @@
     unsigned long long _updateTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long updateTypes; // @synthesize updateTypes=_updateTypes;
 @property(retain, nonatomic) PGGraphMomentNode *momentNode; // @synthesize momentNode=_momentNode;
 @property(readonly, nonatomic) NSString *momentLocalIdentifier; // @synthesize momentLocalIdentifier=_momentLocalIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)type;
 - (void)mergeChange:(id)arg1;

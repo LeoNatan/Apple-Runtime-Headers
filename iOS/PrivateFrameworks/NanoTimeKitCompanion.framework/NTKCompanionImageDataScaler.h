@@ -18,12 +18,12 @@
     struct CGRect _inputCrop;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize outputSize; // @synthesize outputSize=_outputSize;
 @property(readonly, nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) struct CGRect inputCrop; // @synthesize inputCrop=_inputCrop;
 @property(readonly, nonatomic) struct CGSize inputSize; // @synthesize inputSize=_inputSize;
-- (void).cxx_destruct;
 - (void)cropAndScaleWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithSize:(struct CGSize)arg1 crop:(struct CGRect)arg2 data:(id)arg3 orientation:(long long)arg4 outputSize:(struct CGSize)arg5;
 

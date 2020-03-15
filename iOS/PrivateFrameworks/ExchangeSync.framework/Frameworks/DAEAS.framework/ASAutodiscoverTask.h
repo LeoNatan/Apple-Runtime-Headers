@@ -20,9 +20,9 @@
     NSString *_originalURLScheme;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool wasRedirectedThroughHTTP; // @synthesize wasRedirectedThroughHTTP=_wasRedirectedThroughHTTP;
 @property(retain, nonatomic) NSString *originalURLScheme; // @synthesize originalURLScheme=_originalURLScheme;
-- (void).cxx_destruct;
 - (_Bool)shouldLogIncomingData;
 - (_Bool)requiresEASVersionInformaton;
 - (void)finishWithError:(id)arg1;

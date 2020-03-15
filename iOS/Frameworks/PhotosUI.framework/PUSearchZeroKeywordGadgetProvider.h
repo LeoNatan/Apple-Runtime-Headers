@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     PUSearchZeroKeywordDataSource *_zeroKeywordDataSource;
 }
 
-@property(readonly, nonatomic) PUSearchZeroKeywordDataSource *zeroKeywordDataSource; // @synthesize zeroKeywordDataSource=_zeroKeywordDataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUSearchZeroKeywordDataSource *zeroKeywordDataSource; // @synthesize zeroKeywordDataSource=_zeroKeywordDataSource;
 - (void)ppt_prepareZeroKeywordRequest:(CDUnknownBlockType)arg1;
 - (void)didUpdateSections:(id)arg1;
 - (void)generateGadgets;

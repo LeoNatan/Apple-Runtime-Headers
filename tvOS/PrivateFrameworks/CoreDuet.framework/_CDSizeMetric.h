@@ -25,10 +25,10 @@
     _CDSizeMetricFamily *_family;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak _CDSizeMetricFamily *family; // @synthesize family=_family;
 @property(readonly) NSString *string; // @synthesize string=_string;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly) NSDate *lastUpdate;
 @property(readonly) NSDate *firstUpdate;
 @property(readonly) double averageSize;

@@ -14,8 +14,8 @@
 }
 
 + (_Bool)canPerformWithFetchResult:(id)arg1;
-@property(readonly, nonatomic) PHFetchResult *assetsFetchResult; // @synthesize assetsFetchResult=_assetsFetchResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PHFetchResult *assetsFetchResult; // @synthesize assetsFetchResult=_assetsFetchResult;
 - (void)performUserInteractionTask;
 - (_Bool)canPerformWithActivityItems:(id)arg1 forActivity:(id)arg2;
 - (id)activitySystemImageName;

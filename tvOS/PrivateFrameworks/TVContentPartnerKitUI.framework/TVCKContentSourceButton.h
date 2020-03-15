@@ -27,6 +27,7 @@
     struct UIEdgeInsets _borderWidths;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *selectRecognizer; // @synthesize selectRecognizer=_selectRecognizer;
 @property(retain, nonatomic) CALayer *imageMask; // @synthesize imageMask=_imageMask;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -41,7 +42,6 @@
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)canBecomeFocused;

@@ -16,9 +16,9 @@
     _Bool _usesLocalNetworking;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool usesLocalNetworking; // @synthesize usesLocalNetworking=_usesLocalNetworking;
 @property(retain, nonatomic) SSVFairPlaySAPSession *SAPSession; // @synthesize SAPSession=_SAPSession;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

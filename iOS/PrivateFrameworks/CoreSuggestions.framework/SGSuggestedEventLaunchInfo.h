@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 @property(readonly, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 @property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain, nonatomic) NSString *userActivityString; // @synthesize userActivityString=_userActivityString;
 @property(readonly, nonatomic) NSString *localizedShowInString; // @synthesize localizedShowInString=_localizedShowInString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUserActivity *userActivity;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

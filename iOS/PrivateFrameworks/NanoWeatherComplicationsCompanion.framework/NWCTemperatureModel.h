@@ -21,6 +21,7 @@
 }
 
 + (id)temperatureModelForCurrentObservation:(id)arg1 dailyForecastedConditions:(id)arg2 temperatureFormatter:(id)arg3 shouldUseNoUnitCurrentTemperature:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *spectrumTicks; // @synthesize spectrumTicks=_spectrumTicks;
 @property(readonly, nonatomic) NSArray *spectrum; // @synthesize spectrum=_spectrum;
 @property(readonly, nonatomic) UIColor *tintColorLow; // @synthesize tintColorLow=_tintColorLow;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSString *localizedTemperatureHigh; // @synthesize localizedTemperatureHigh=_localizedTemperatureHigh;
 @property(readonly, nonatomic) NSString *localizedTemperatureCurrent; // @synthesize localizedTemperatureCurrent=_localizedTemperatureCurrent;
 @property(readonly, nonatomic) double fraction; // @synthesize fraction=_fraction;
-- (void).cxx_destruct;
 
 @end
 

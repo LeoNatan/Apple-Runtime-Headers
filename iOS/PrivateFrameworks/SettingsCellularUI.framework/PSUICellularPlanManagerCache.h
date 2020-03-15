@@ -28,9 +28,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property _Bool carrierListFetchInProgress; // @synthesize carrierListFetchInProgress=_carrierListFetchInProgress;
 @property(retain) NSArray *cachedCarrierItems; // @synthesize cachedCarrierItems=_cachedCarrierItems;
-- (void).cxx_destruct;
 - (id)subscriptionContextForPlanItem:(id)arg1 cachedSubscriptionContexts:(id)arg2;
 - (void)setLabel:(id)arg1 forPlan:(id)arg2;
 - (id)predefinedLabels;

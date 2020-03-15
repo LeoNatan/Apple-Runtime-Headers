@@ -30,9 +30,9 @@
 }
 
 + (id)pipe;
+- (void).cxx_destruct;
 @property(readonly, retain) NSFileHandle *fileHandleForWriting; // @synthesize fileHandleForWriting=_fileHandleForWriting;
 @property(readonly, retain) NSFileHandle *fileHandleForReading; // @synthesize fileHandleForReading=_fileHandleForReading;
-- (void).cxx_destruct;
 - (void)_writeBufferedData;
 - (void)_inputReadyForReading:(unsigned long long)arg1;
 - (void)_outputReadyForWriting:(unsigned long long)arg1;

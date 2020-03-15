@@ -18,15 +18,15 @@
     CSLPrelaunchBlacklist *_blacklist;
 }
 
-@property(nonatomic) __weak CSLPrelaunchBlacklist *blacklist; // @synthesize blacklist=_blacklist;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSLPrelaunchBlacklist *blacklist; // @synthesize blacklist=_blacklist;
 - (void)monitor:(id)arg1 watchKitAppDidExit:(id)arg2 reason:(unsigned int)arg3;
 - (void)monitor:(id)arg1 watchKitAppDidLaunch:(id)arg2;
 - (void)_didRemoveApplications:(id)arg1;
 - (void)_didReplaceApplications:(id)arg1;
 - (void)_didAddApplications:(id)arg1;
 - (void)_didAddPlaceholders:(id)arg1;
-- (void)applicationProcessDidExit:(id)arg1 withContext:(struct FBProcessExitContext *)arg2;
+- (void)applicationProcessDidExit:(id)arg1 withContext:(id)arg2;
 - (void)applicationProcessDidFailToLaunch:(id)arg1;
 - (void)applicationProcessDidLaunch:(id)arg1;
 - (void)processManager:(id)arg1 didRemoveProcess:(id)arg2;

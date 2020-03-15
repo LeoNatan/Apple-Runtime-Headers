@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 
 + (void)setDeleteAllVideosAndKeysOnInitializationForAppRemoval:(_Bool)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(retain, nonatomic) NSManagedObjectContext *backgroundManagedObjectContext; // @synthesize backgroundManagedObjectContext=_backgroundManagedObjectContext;
 @property(retain, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
-- (void).cxx_destruct;
 - (void)_dumpDatabaseToLogIfEnabled;
 - (void)_activeAccountDidChange:(id)arg1;
 - (void)_removeDownloadsForNonSignedInUsers;

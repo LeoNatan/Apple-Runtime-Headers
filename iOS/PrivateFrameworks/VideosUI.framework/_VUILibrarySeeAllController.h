@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _shelfType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long shelfType; // @synthesize shelfType=_shelfType;
 @property(retain, nonatomic) VUILibraryGridCollectionViewController *gridViewController; // @synthesize gridViewController=_gridViewController;
-- (void).cxx_destruct;
 
 @end
 

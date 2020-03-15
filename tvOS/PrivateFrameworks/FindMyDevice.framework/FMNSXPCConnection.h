@@ -17,10 +17,10 @@
     FMFuture *_future;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool _testMockConnection; // @synthesize _testMockConnection=__testMockConnection;
 @property(retain, nonatomic) FMFuture *future; // @synthesize future=_future;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)destroyXPCConnection;
 - (void)invalidate;
 @property(readonly, nonatomic) long long state;

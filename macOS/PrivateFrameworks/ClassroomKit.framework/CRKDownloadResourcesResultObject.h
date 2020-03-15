@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSArray *resourceFileURLs; // @synthesize resourceFileURLs=_resourceFileURLs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *resourceFileURLs; // @synthesize resourceFileURLs=_resourceFileURLs;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

@@ -21,6 +21,7 @@
     CDStruct_361c14a1 _dragHandleShape;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setBackgrounded:) _Bool _backgrounded; // @synthesize _backgrounded=__backgrounded;
 @property(readonly, nonatomic) id <MTLRenderPipelineState> _renderPipelineState; // @synthesize _renderPipelineState=__renderPipelineState;
 @property(readonly, nonatomic) id <MTLCommandQueue> _commandQueue; // @synthesize _commandQueue=__commandQueue;
@@ -30,7 +31,6 @@
 @property(nonatomic) _Bool showDragHandle; // @synthesize showDragHandle=_showDragHandle;
 @property(nonatomic) CDStruct_361c14a1 dragHandleShape; // @synthesize dragHandleShape=_dragHandleShape;
 @property(nonatomic) CDStruct_361c14a1 centerShape; // @synthesize centerShape=_centerShape;
-- (void).cxx_destruct;
 -     // Error parsing type: {?=[4]}40@0:8f16f20f24f28f32f36, name: _orthographicMatrixWithLeft:right:bottom:top:near:far:
 - (CDStruct_869f9c67)_fragmentForShape:(CDStruct_361c14a1)arg1 scale:(double)arg2;
 - (void)dealloc;

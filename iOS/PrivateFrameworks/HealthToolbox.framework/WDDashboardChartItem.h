@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     long long _timeScope;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool localeDidChange; // @synthesize localeDidChange=_localeDidChange;
 @property(readonly, nonatomic) HKActivitySummaryDataProvider *activitySummaryProvider; // @synthesize activitySummaryProvider=_activitySummaryProvider;
 @property(readonly, nonatomic) long long timeScope; // @synthesize timeScope=_timeScope;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WDDashboardCellSecondaryValueSourceDelegate> secondaryValueSourceDelegate; // @synthesize secondaryValueSourceDelegate=_secondaryValueSourceDelegate;
 @property(nonatomic) __weak id <WDDashboardCellPrimaryValueSourceDelegate> primaryValueSourceDelegate; // @synthesize primaryValueSourceDelegate=_primaryValueSourceDelegate;
 @property(readonly, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
-- (void).cxx_destruct;
 - (void)activitySummaryDataProviderDidUpdateActivitySummaries:(id)arg1;
 - (struct UIEdgeInsets)_chartInsetsForTimeScope:(long long)arg1;
 - (void)dataProviderDidUpdateValues:(id)arg1;

@@ -14,8 +14,8 @@
     NSObject<OS_dispatch_semaphore> *_doneWaitingForUpdateControl;
 }
 
-@property(retain) NSObject<OS_dispatch_semaphore> *doneWaitingForUpdateControl; // @synthesize doneWaitingForUpdateControl=_doneWaitingForUpdateControl;
 - (void).cxx_destruct;
+@property(retain) NSObject<OS_dispatch_semaphore> *doneWaitingForUpdateControl; // @synthesize doneWaitingForUpdateControl=_doneWaitingForUpdateControl;
 - (void)bridgeOSSoftwareUpdateController:(id)arg1 updateControlGranted:(BOOL)arg2 error:(id)arg3;
 - (void)cancel;
 - (id)description;

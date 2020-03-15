@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (int)pidForJobLabel:(id)arg1 error:(out id *)arg2;
 + (id)jobWithLabel:(id)arg1 launchdData:(struct _launch_data *)arg2 error:(out id *)arg3;
 + (id)newJobWithIdentity:(id)arg1 launchContext:(id)arg2 error:(out id *)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *managedPersona; // @synthesize managedPersona=_managedPersona;
 @property(readonly, nonatomic) _Bool buildDYLDClosure; // @synthesize buildDYLDClosure=_buildDYLDClosure;
 @property(readonly, nonatomic) _Bool waitForDebugger; // @synthesize waitForDebugger=_waitForDebugger;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, copy, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, copy, nonatomic) RBLaunchdJobLabel *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (struct _launch_data *)generateData;
 - (_Bool)_lock_acquireTaskNameRightForOperation:(id)arg1 error:(out id *)arg2;
 - (id)debugDescription;

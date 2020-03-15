@@ -37,6 +37,10 @@
 - (id)boundingBoxesWithOwner:(id)arg1;
 - (struct _WKQuad)absoluteQuadWithOwner:(id)arg1;
 - (struct CGRect)boundingBoxWithOwner:(id)arg1;
+- (id)absoluteQuadsWithOwner:(id)arg1;
+- (id)boundingBoxesWithOwner:(id)arg1;
+- (struct _WKQuad)absoluteQuadWithOwner:(id)arg1;
+- (struct CGRect)boundingBoxWithOwner:(id)arg1;
 
 @end
 

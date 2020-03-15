@@ -34,6 +34,7 @@
     HUQuickControlContentCharacteristicWritingUpdateAdapter *_characteristicWritingAdapter;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUQuickControlContentCharacteristicWritingUpdateAdapter *characteristicWritingAdapter; // @synthesize characteristicWritingAdapter=_characteristicWritingAdapter;
 @property(readonly, nonatomic) HFSimpleItemManager *reachabilityItemManager; // @synthesize reachabilityItemManager=_reachabilityItemManager;
 @property(readonly, nonatomic) HFItem *reachabilityItem; // @synthesize reachabilityItem=_reachabilityItem;
@@ -51,7 +52,6 @@
 @property(nonatomic) __weak id <HUQuickControlViewControllerCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HFItem<NSCopying> *item; // @synthesize item=_item;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)quickControlViewControllerDidUpdateStatusOverrides:(id)arg1;
 - (id)_controllerForControllableCharacteristic:(id)arg1;
 - (id)valueSource:(id)arg1 overrideValueForCharacteristic:(id)arg2;

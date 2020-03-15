@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIWindow *starkWindow; // @synthesize starkWindow=_starkWindow;
 @property(retain, nonatomic) UIViewController *starkRootViewController; // @synthesize starkRootViewController=_starkRootViewController;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isStarkConnected;
 - (id)_assistantContextForRecipientID:(id)arg1;
 - (void)activateForRecipient:(id)arg1;

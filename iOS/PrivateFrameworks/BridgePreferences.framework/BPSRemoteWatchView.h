@@ -17,12 +17,12 @@
     unsigned long long _style;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(retain, nonatomic) UIImageView *watchScreen; // @synthesize watchScreen=_watchScreen;
 @property(retain, nonatomic) BPSWatchView *watch; // @synthesize watch=_watch;
 @property(retain, nonatomic) PBBridgeAssetsManager *assetManager; // @synthesize assetManager=_assetManager;
 @property(copy, nonatomic) NSString *advertisingName; // @synthesize advertisingName=_advertisingName;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setAdvertisingName:(id)arg1 andStyle:(unsigned long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     AVPlayerViewController *_playerViewController;
 }
 
-@property(retain, nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

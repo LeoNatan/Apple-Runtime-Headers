@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSView *_containerView;
 }
 
-@property(readonly) NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(readonly) NSView *containerView; // @synthesize containerView=_containerView;
 - (BOOL)isAccessibilityElement;
 - (void)_setUpBorderView;
 - (void)_setUpContentViews;

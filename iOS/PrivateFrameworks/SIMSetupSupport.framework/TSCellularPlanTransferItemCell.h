@@ -14,9 +14,9 @@
     UILabel *_planInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) UILabel *planInfo; // @synthesize planInfo=_planInfo;
 @property(retain) UILabel *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -24,11 +24,11 @@
 + (id)requestForAvatarWithIdentifier:(id)arg1;
 + (id)requestForAllAvatarsExcluding:(id)arg1;
 + (id)requestForAllAvatars;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(readonly, nonatomic) long long criteria; // @synthesize criteria=_criteria;
 @property(readonly, copy, nonatomic) NSArray *excludingIdentifiers; // @synthesize excludingIdentifiers=_excludingIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCriteria:(long long)arg1 identifiers:(id)arg2 excludedIdentifiers:(id)arg3 fetchLimit:(long long)arg4;

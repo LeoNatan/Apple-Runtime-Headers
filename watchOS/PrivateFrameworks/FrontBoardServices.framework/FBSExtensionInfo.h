@@ -14,9 +14,9 @@
     NSString *_extensionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *extensionIdentifier; // @synthesize extensionIdentifier=_extensionIdentifier;
 @property(readonly, copy, nonatomic) NSString *typeIdentifier; // @synthesize typeIdentifier=_typeIdentifier;
-- (void).cxx_destruct;
 - (id)_initWithPlugInKitProxy:(id)arg1;
 - (id)_initWithBundleProxy:(id)arg1 url:(id)arg2;
 - (id)_initWithBundleIdentifier:(id)arg1 url:(id)arg2;

@@ -19,16 +19,16 @@ __attribute__((visibility("hidden")))
     id <PassFileDownloadDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PassFileDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)wkDownloadProcessDidCrash:(const struct Download *)arg1;
-- (void)wkDownloadDidCancel:(const struct Download *)arg1;
-- (void)wkDownload:(const struct Download *)arg1 didFailWithError:(const struct Error *)arg2;
-- (void)wkDownloadDidFinish:(const struct Download *)arg1;
-- (struct String)wkDownload:(const struct Download *)arg1 decideDestinationWithSuggestedFilename:(const struct String *)arg2 allowOverwrite:(_Bool *)arg3;
+@property(nonatomic) __weak id <PassFileDownloadDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)wkDownloadProcessDidCrash:(id)arg1;
+- (void)wkDownloadDidCancel:(id)arg1;
+- (void)wkDownload:(id)arg1 didFailWithError:(const struct Error *)arg2;
+- (void)wkDownloadDidFinish:(id)arg1;
+- (struct String)wkDownload:(id)arg1 decideDestinationWithSuggestedFilename:(const struct String *)arg2 allowOverwrite:(_Bool *)arg3;
 - (void)_reportError:(id)arg1;
 - (void)_deleteTempFile;
-- (void)openPassFileDownload:(const struct Download *)arg1;
+- (void)openPassFileDownload:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

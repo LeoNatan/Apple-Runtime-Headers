@@ -27,10 +27,10 @@
 }
 
 + (id)allSupportedProperties;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MPMutableSectionedCollection *flatSectionedItems; // @synthesize flatSectionedItems=_flatSectionedItems;
 @property(readonly, nonatomic) NSDictionary *storeItemMetadataResults; // @synthesize storeItemMetadataResults=_storeItemMetadataResults;
 @property(readonly, nonatomic) MPPropertySet *requestedPropertySet; // @synthesize requestedPropertySet=_requestedPropertySet;
-- (void).cxx_destruct;
 - (id)convertToStoreItemMetadataDictionary:(id)arg1;
 - (id)storeItemMetadataWithMusicAPIMetadataDictionary:(id)arg1;
 - (id)modelObjectForRecommendationChildDictionary:(id)arg1 parentGroup:(id)arg2 subgroupsAccumulator:(id)arg3 userIdentity:(id)arg4;

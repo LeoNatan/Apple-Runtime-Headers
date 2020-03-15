@@ -22,11 +22,11 @@
 + (BOOL)image:(id)arg1 isEqualToImage:(id)arg2;
 + (id)imageWithSFImage:(id)arg1 variantForAppIcon:(unsigned long long)arg2;
 + (id)imageWithSFImage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needsTinting; // @synthesize needsTinting=_needsTinting;
 @property(nonatomic) BOOL useFastPathShadow; // @synthesize useFastPathShadow=_useFastPathShadow;
 @property(retain, nonatomic) SFImage *sfImage; // @synthesize sfImage=_sfImage;
 @property(retain, nonatomic) NSImage *uiImage; // @synthesize uiImage=_uiImage;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)imageData;

@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     UILabel *_associatedLabel;
 }
 
-@property(nonatomic) __weak UILabel *associatedLabel; // @synthesize associatedLabel=_associatedLabel;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UILabel *associatedLabel; // @synthesize associatedLabel=_associatedLabel;
 - (id)_parentSegment;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)_disabledFontColor;

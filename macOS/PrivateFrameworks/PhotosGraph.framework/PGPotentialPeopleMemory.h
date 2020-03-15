@@ -16,10 +16,10 @@
     NSArray *_facedAssets;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *facedAssets; // @synthesize facedAssets=_facedAssets;
 @property(readonly) long long year; // @synthesize year=_year;
 @property(retain) PGGraphNode *peopleNode; // @synthesize peopleNode=_peopleNode;
-- (void).cxx_destruct;
 - (void)addMomentNode:(id)arg1;
 - (id)initWithSubcategory:(unsigned long long)arg1 peopleNode:(id)arg2 year:(long long)arg3;
 

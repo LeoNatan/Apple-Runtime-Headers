@@ -31,6 +31,7 @@
 
 + (id)defaultMenu;
 + (id)editingTextView;
+- (void).cxx_destruct;
 @property(retain) NSTextField *debugTextField; // @synthesize debugTextField=_debugTextField;
 @property BOOL textIsDirty; // @synthesize textIsDirty=_textIsDirty;
 @property(retain) KHFrame *autoColorSource; // @synthesize autoColorSource=_autoColorSource;
@@ -42,7 +43,6 @@
 @property id <KHTextViewEditingProtocol> editingDelegate; // @synthesize editingDelegate=_editingDelegate;
 @property(nonatomic) double drawingScale; // @synthesize drawingScale=_drawingScale;
 @property(retain, nonatomic) KHFrame *textFrame; // @synthesize textFrame=_textFrame;
-- (void).cxx_destruct;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

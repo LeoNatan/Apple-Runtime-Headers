@@ -16,9 +16,9 @@
     PHFetchResult *_faces;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PHFetchResult *faces; // @synthesize faces=_faces;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)modelObjectForIndex:(long long)arg1;
 @property(readonly, nonatomic) long long action;
 - (void)imageAtIndex:(unsigned long long)arg1 targetSize:(struct CGSize)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;

@@ -36,6 +36,7 @@
     struct CGRect _positionRelativeToRect;
 }
 
+- (void).cxx_destruct;
 @property BOOL didAddPass; // @synthesize didAddPass=_didAddPass;
 @property BOOL attachToHostWindow; // @synthesize attachToHostWindow=_attachToHostWindow;
 @property long long closeAnimationStyle; // @synthesize closeAnimationStyle=_closeAnimationStyle;
@@ -46,7 +47,6 @@
 @property(readonly) PKPassViewerViewController *passViewController; // @synthesize passViewController=_passViewController;
 @property(getter=isActive) BOOL active; // @synthesize active=_active;
 @property(retain) NSWindow *clientWindow; // @synthesize clientWindow=_clientWindow;
-- (void).cxx_destruct;
 - (void)passViewer:(id)arg1 didChangePass:(id)arg2;
 - (void)passViewer:(id)arg1 didAddToPassbook:(id)arg2;
 - (void)passViewer:(id)arg1 closeClicked:(id)arg2;

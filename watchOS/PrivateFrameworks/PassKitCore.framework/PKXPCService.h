@@ -33,9 +33,9 @@
 }
 
 + (void)setForegroundActiveArbiter:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_newErrorHandlerWithSemaphore:(id)arg1;
 - (CDUnknownBlockType)_newWrappedErrorHandlerForHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) _Bool forceConnectionOnResume;

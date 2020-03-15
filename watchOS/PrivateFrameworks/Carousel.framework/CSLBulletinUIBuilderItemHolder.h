@@ -15,9 +15,9 @@
 }
 
 + (id)itemHolderWithAlertItem:(id)arg1 buildItem:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLBulletinBuildItem *buildItem; // @synthesize buildItem=_buildItem;
 @property(nonatomic) __weak CSLBulletinAlertItem *alertItem; // @synthesize alertItem=_alertItem;
-- (void).cxx_destruct;
 
 @end
 

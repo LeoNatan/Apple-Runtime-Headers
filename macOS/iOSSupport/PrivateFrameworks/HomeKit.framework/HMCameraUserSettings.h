@@ -22,10 +22,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property __weak id <HMCameraUserSettingsDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_mergeNewSettings:(id)arg1 operations:(id)arg2;
 - (void)_callSettingsDidUpdateDelegate;
 @property(readonly, getter=isCameraManuallyDisabled) BOOL cameraManuallyDisabled;

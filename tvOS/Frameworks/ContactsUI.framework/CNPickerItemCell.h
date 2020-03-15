@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UITextField *_textField;
 }
 
-@property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void)endEditing;
 - (void)beginEditing;
 - (void)layoutSubviews;

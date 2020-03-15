@@ -15,9 +15,9 @@
 }
 
 + (id)defaultPasscodeLockAlertPolicy;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *lockAlertIdentifier; // @synthesize lockAlertIdentifier=_lockAlertIdentifier;
 @property(readonly, nonatomic) CSLDeviceLockManager *lockManager; // @synthesize lockManager=_lockManager;
-- (void).cxx_destruct;
 - (_Bool)canRemoveAlertItem:(id)arg1;
 - (id)initWithLockManager:(id)arg1 lockAlertIdentifier:(id)arg2;
 

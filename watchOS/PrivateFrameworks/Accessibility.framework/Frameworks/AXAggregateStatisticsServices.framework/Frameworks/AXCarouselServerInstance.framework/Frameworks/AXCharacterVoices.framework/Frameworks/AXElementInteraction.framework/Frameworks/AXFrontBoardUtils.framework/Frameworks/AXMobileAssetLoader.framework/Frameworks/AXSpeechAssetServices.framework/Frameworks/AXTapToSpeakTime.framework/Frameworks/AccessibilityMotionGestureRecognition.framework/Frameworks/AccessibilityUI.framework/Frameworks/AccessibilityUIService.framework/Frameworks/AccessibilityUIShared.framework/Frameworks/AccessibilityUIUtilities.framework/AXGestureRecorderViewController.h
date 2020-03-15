@@ -30,6 +30,7 @@
     double _trackingTouchesDidStartTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *instantReplayPartialFingerPaths; // @synthesize instantReplayPartialFingerPaths=_instantReplayPartialFingerPaths;
 @property(retain, nonatomic) NSMutableDictionary *instantReplayTimestampIndexes; // @synthesize instantReplayTimestampIndexes=_instantReplayTimestampIndexes;
 @property(nonatomic) int recorderType; // @synthesize recorderType=_recorderType;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) AXGestureRecorderFingerPathCollection *fingerPathCollection; // @synthesize fingerPathCollection=_fingerPathCollection;
 @property(nonatomic) __weak id <AXGestureRecorderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AXGestureRecorderStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
-- (void).cxx_destruct;
 - (void)gestureRecorderFingerPathCollection:(id)arg1 didUpdateFingerPathAtIndex:(unsigned int)arg2;
 - (void)gestureRecorderFingerPathCollection:(id)arg1 didInsertFingerPathAtIndex:(unsigned int)arg2;
 - (void)gestureRecorderView:(id)arg1 setChromeVisible:(_Bool)arg2;

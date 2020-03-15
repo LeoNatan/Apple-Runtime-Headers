@@ -13,8 +13,8 @@
     id <TUCallHistoryManagerDataSource> _dataSource;
 }
 
-@property(readonly, nonatomic) id <TUCallHistoryManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <TUCallHistoryManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void)updateOutgoingLocalParticipantUUID:(id)arg1 forCallsWithOutgoingLocalParticipantUUID:(id)arg2;
 - (void)updateOutgoingLocalParticipantUUID:(id)arg1 forCallsWithLocalParticipantUUID:(id)arg2;
 - (void)dealloc;

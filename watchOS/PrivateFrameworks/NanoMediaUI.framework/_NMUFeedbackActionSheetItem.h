@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     int _representedFeedbackAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int representedFeedbackAction; // @synthesize representedFeedbackAction=_representedFeedbackAction;
 @property(nonatomic) __weak NMUNowPlayingFeedbackViewController *controller; // @synthesize controller=_controller;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
-- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title;
 @property(nonatomic, getter=isActive) _Bool active; // @dynamic active;
 @property(nonatomic, getter=isEnabled) _Bool enabled;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     double _latestImageTimestamp;
 }
 
+- (void).cxx_destruct;
 @property int version; // @synthesize version=_version;
 @property _Bool forceFaceDetailsEnable; // @synthesize forceFaceDetailsEnable=_forceFaceDetailsEnable;
 @property int lastFaceIndex; // @synthesize lastFaceIndex=_lastFaceIndex;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 @property _Bool forceFaceDetectionEnable; // @synthesize forceFaceDetectionEnable;
 @property double timeFaceDetectionDone; // @synthesize timeFaceDetectionDone;
 @property double timeBlinkDetectionDone; // @synthesize timeBlinkDetectionDone;
-- (void).cxx_destruct;
 - (void)dumpFaceInfoArray;
 - (void)addFacesToImageStat:(id)arg1 imageSize:(struct CGSize)arg2;
 - (void)extractFacesFromMetadata:(id)arg1;

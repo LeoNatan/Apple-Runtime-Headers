@@ -18,10 +18,10 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDMessageChangeManager *changeManager; // @synthesize changeManager=_changeManager;
 @property(readonly, nonatomic) MFMessageStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSArray *mutedMessages; // @synthesize mutedMessages=_mutedMessages;
-- (void).cxx_destruct;
 - (void)_setMutedMessagesFromMessages:(id)arg1;
 - (void)performActionWithChangeManager:(id)arg1;
 - (void)performActionWithStore:(id)arg1;

@@ -31,6 +31,7 @@
 }
 
 + (_Bool)isDirectionsRequestURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_walkingOptions, setter=_setWalkingOptions:) GEOWalkingOptions *walkingOptions; // @synthesize walkingOptions=_walkingOptions;
 @property(retain, nonatomic, getter=_transitOptions, setter=_setTransitOptions:) GEOTransitOptions *transitOptions; // @synthesize transitOptions=_transitOptions;
 @property(retain, nonatomic, getter=_automobileOptions, setter=_setAutomobileOptions:) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) _Bool _includeTravelTimes; // @synthesize _includeTravelTimes;
 @property(retain, nonatomic) MKMapItem *destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) MKMapItem *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 - (id)dictionaryRepresentation;
 - (id)description;

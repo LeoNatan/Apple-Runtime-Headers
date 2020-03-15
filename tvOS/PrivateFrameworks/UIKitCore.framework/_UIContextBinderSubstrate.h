@@ -15,8 +15,8 @@
     FBSScene *_scene;
 }
 
-@property(readonly, nonatomic) FBSScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FBSScene *scene; // @synthesize scene=_scene;
 - (void)detachContext:(id)arg1;
 - (void)attachContext:(id)arg1;
 - (id)initWithScene:(id)arg1;

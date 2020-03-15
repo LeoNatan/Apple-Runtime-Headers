@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_installedSources;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool uninstalledSourcesExist; // @synthesize uninstalledSourcesExist=_uninstalledSourcesExist;
 @property(copy, nonatomic) NSArray *installedSources; // @synthesize installedSources=_installedSources;
-- (void).cxx_destruct;
 - (void)didSelectRow:(unsigned long long)arg1 representedByCell:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)_uninstalledSourcesCellWithTableView:(id)arg1;
 - (id)_sourceCellForRow:(unsigned long long)arg1 tableView:(id)arg2;

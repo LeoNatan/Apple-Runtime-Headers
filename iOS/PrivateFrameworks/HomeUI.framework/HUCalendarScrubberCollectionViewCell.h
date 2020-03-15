@@ -18,13 +18,13 @@
     UILabel *_dayMonthLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *dayMonthLabel; // @synthesize dayMonthLabel=_dayMonthLabel;
 @property(retain, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(retain, nonatomic) UIView *circleView; // @synthesize circleView=_circleView;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *dateString; // @synthesize dateString=_dateString;
 @property(copy, nonatomic) NSString *dayOfWeekString; // @synthesize dayOfWeekString=_dayOfWeekString;
-- (void).cxx_destruct;
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

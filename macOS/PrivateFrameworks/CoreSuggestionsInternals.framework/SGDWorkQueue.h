@@ -19,8 +19,8 @@
 
 + (id)pathForOldMessagesQueue;
 + (id)pathForNewMessagesQueue;
-@property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 - (void)closeDatabase;
 - (id)description;
 - (id)popDictionaryBySourceId:(id)arg1 messageId:(id)arg2;

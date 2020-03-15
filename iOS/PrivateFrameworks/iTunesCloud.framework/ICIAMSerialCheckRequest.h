@@ -17,9 +17,9 @@
     CDStruct_f07dd4d9 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property(nonatomic) long long dSID; // @synthesize dSID=_dSID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

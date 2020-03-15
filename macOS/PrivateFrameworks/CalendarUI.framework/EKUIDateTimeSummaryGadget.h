@@ -18,10 +18,10 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) NSTextField *rightTextField; // @synthesize rightTextField=_rightTextField;
 @property(retain) EKUISummaryTextButton *leftTextField; // @synthesize leftTextField=_leftTextField;
 @property(retain) NSView *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)summaryString;
 - (id)attributedSummaryString;
 - (void)updateWithChanges:(id)arg1;

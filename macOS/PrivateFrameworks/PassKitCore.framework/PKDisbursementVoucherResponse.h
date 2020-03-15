@@ -14,9 +14,9 @@
     NSURL *_redemptionURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *redemptionURL; // @synthesize redemptionURL=_redemptionURL;
 @property(readonly, copy, nonatomic) NSString *voucher; // @synthesize voucher=_voucher;
-- (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
 
 @end

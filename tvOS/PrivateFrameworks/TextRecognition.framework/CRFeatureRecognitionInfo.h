@@ -17,11 +17,11 @@
 }
 
 + (id)infoForFeature:(id)arg1 scale:(float)arg2 bounds:(struct CGRect)arg3 rotatedROI:(struct CGRect)arg4;
+- (void).cxx_destruct;
 @property struct CGRect rotatedROI; // @synthesize rotatedROI=_rotatedROI;
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
 @property float scale; // @synthesize scale=_scale;
 @property(retain) CRTextFeature *feature; // @synthesize feature=_feature;
-- (void).cxx_destruct;
 
 @end
 

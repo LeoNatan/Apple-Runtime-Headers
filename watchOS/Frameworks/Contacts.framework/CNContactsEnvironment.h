@@ -32,6 +32,7 @@
 + (id)inMemoryURL;
 + (id)currentEnvironment;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNContactsLoggerProvider> loggerProvider; // @synthesize loggerProvider=_loggerProvider;
 @property(retain, nonatomic) CNiOSABPredicateRunner *abPredicateRunner; // @synthesize abPredicateRunner=_abPredicateRunner;
 @property(retain, nonatomic) NSArray *delegateInfos; // @synthesize delegateInfos=_delegateInfos;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) id <SGSuggestionsServiceContactsProtocol> suggestionsService; // @synthesize suggestionsService=_suggestionsService;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CNiOSAddressBook *addressBook;
 - (void)setAddressBook:(id)arg1;
 - (id)copyWithDelegateInfos:(id)arg1;

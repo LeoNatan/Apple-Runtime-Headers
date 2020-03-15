@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_assertionWorkQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assertionWorkQueue; // @synthesize assertionWorkQueue=_assertionWorkQueue;
 @property(retain, nonatomic) AXDispatchTimer *assertionRetryTimer; // @synthesize assertionRetryTimer=_assertionRetryTimer;
 @property(retain, nonatomic) NSMutableArray *assertionWorkBacklog; // @synthesize assertionWorkBacklog=_assertionWorkBacklog;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *serverIdentifier; // @synthesize serverIdentifier=_serverIdentifier;
 @property(retain, nonatomic) AXIPCClient *client; // @synthesize client=_client;
 @property(retain, nonatomic) AXIPCServer *server; // @synthesize server=_server;
-- (void).cxx_destruct;
 - (id)_serviceName;
 - (void)_connectServerIfNecessary;
 - (BOOL)_connectIfNecessary;

@@ -25,12 +25,12 @@
 + (id)webResourceWithHTMLString:(id)arg1 baseURL:(id)arg2;
 + (id)webResourceWithURL:(id)arg1;
 + (id)webResourceWithData:(id)arg1 MIMEType:(id)arg2 textEncodingName:(id)arg3 baseURL:(id)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *frameName; // @synthesize frameName=_frameName;
 @property(readonly, nonatomic) NSString *textEncodingName; // @synthesize textEncodingName=_textEncodingName;
 @property(readonly, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)serializedRepresentation;

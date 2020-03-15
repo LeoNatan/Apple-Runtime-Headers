@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cardHeadingIconShadow;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) float opacity; // @synthesize opacity=_opacity;
 @property(nonatomic) float radius; // @synthesize radius=_radius;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastThrottleCheck; // @synthesize lastThrottleCheck=_lastThrottleCheck;
 @property unsigned long long throttleCount; // @synthesize throttleCount=_throttleCount;
-- (void).cxx_destruct;
 - (_Bool)incrementThrottleCountAndCheckThottleMax:(unsigned long long)arg1;
 
 @end

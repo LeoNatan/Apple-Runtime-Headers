@@ -13,8 +13,8 @@
     NSString *_peerAddress;
 }
 
-@property(retain) NSString *peerAddress; // @synthesize peerAddress=_peerAddress;
 - (void).cxx_destruct;
+@property(retain) NSString *peerAddress; // @synthesize peerAddress=_peerAddress;
 - (id)sharingPrefsAnchor;
 - (id)verboseText;
 - (id)externalRepresentation;

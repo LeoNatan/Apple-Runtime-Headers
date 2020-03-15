@@ -16,8 +16,8 @@
     NSString *_name;
 }
 
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) struct CGImage *image;
 - (long long)compareTo:(id)arg1;
 - (struct CLLocationCoordinate2D)coordinate;

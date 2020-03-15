@@ -31,12 +31,12 @@ __attribute__((visibility("hidden")))
     MKMuninView *_muninView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MKMuninView *muninView; // @synthesize muninView=_muninView;
 @property(nonatomic) _Bool pinchingEnabled; // @synthesize pinchingEnabled=_pinchingEnabled;
 @property(nonatomic) _Bool panningEnabled; // @synthesize panningEnabled=_panningEnabled;
 @property(nonatomic) _Bool navigatingEnabled; // @synthesize navigatingEnabled=_navigatingEnabled;
 @property(nonatomic) __weak id <MKMuninGestureControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_handlePinch:(id)arg1;
 - (void)_handlePan:(id)arg1;

@@ -27,12 +27,12 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)suggestedValuesType;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setEncodeLegacyGloryData:) BOOL _encodeLegacyGloryData; // @synthesize _encodeLegacyGloryData=__encodeLegacyGloryData;
 @property(copy, nonatomic) NSArray *suggestedValues; // @synthesize suggestedValues=_suggestedValues;
 @property(nonatomic) int mobileSpace; // @synthesize mobileSpace=_mobileSpace;
 @property(retain, nonatomic) _INPBLocationValue *location; // @synthesize location=_location;
 @property(nonatomic) int event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

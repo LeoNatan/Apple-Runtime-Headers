@@ -17,10 +17,10 @@
     struct CGSize _containerViewSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize containerViewSize; // @synthesize containerViewSize=_containerViewSize;
 @property(retain, nonatomic) CAContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) HMCameraView *cameraView; // @synthesize cameraView=_cameraView;
-- (void).cxx_destruct;
 - (id)interfaceDescriptionForDynamicCreation;
 - (void)setCameraSource:(id)arg1;
 - (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(int)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5;

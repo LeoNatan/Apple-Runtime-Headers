@@ -17,9 +17,9 @@
 }
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDAudioStreamCodecParameters *codecParameters; // @synthesize codecParameters=_codecParameters;
 @property(retain, nonatomic) HMDAudioStreamCodecType *codecType; // @synthesize codecType=_codecType;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

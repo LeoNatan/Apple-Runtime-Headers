@@ -24,6 +24,7 @@
     NSMapTable *_invalidBlocks;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *invalidBlocks; // @synthesize invalidBlocks=_invalidBlocks;
 @property(readonly, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(readonly, nonatomic) NSMutableArray *failureBlocks; // @synthesize failureBlocks=_failureBlocks;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic, getter=isFinalized) _Bool finalized; // @synthesize finalized=_finalized;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) id result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (void)_onQueue_finalize;
 - (id)description;
 - (void)dealloc;

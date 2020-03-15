@@ -29,10 +29,10 @@
 + (id)targetWithProcessIdentity:(id)arg1;
 + (id)currentProcess;
 + (id)systemTarget;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) RBSProcessIdentity *processIdentity; // @synthesize processIdentity=_processIdentity;
 @property(readonly, nonatomic) RBSProcessIdentifier *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSystem) BOOL system;
 @property(readonly, nonatomic) NSString *picoDesc; // @synthesize picoDesc=_picoDesc;
 - (unsigned int)euid;

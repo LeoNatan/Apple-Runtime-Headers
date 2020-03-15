@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (long long)_mediaTypeForMediaTypeString:(id)arg1;
 + (long long)_blendModeForBlendModeString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _TVStackedMediaDocumentVersion *documentVersion; // @synthesize documentVersion=_documentVersion;
 @property(nonatomic) struct CGImage *imageRef; // @synthesize imageRef=_imageRef;
 @property(nonatomic) long long blendMode; // @synthesize blendMode=_blendMode;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSURL *localAssetURL; // @synthesize localAssetURL=_localAssetURL;
 @property(retain, nonatomic) NSString *remoteAssetFileName; // @synthesize remoteAssetFileName=_remoteAssetFileName;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1 documentVersion:(id)arg2 directory:(id)arg3 fileNamePrefix:(id)arg4;
 
 @end

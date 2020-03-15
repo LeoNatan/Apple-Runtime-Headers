@@ -31,8 +31,8 @@ __attribute__((visibility("hidden")))
     IKLockupElement *_lockup;
 }
 
-@property(nonatomic) __weak IKLockupElement *lockup; // @synthesize lockup=_lockup;
 - (void).cxx_destruct;
+@property(nonatomic) __weak IKLockupElement *lockup; // @synthesize lockup=_lockup;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(_Bool)arg2;
 - (void)performZoomingImageTransitionWithContext:(id)arg1;

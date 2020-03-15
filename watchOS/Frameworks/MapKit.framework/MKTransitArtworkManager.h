@@ -14,8 +14,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) VKIconManager *iconManager; // @synthesize iconManager=_iconManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VKIconManager *iconManager; // @synthesize iconManager=_iconManager;
 - (id)_imageFroMVKImage:(id)arg1;
 - (id)_createImageWithBlockInAutoreleasePoolIfNeeded:(CDUnknownBlockType)arg1;
 - (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 nightMode:(_Bool)arg5 withWidthPaddingMultiple:(float)arg6 fullBleedColor:(id *)arg7;

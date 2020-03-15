@@ -16,11 +16,11 @@
     HUInstructionsItem *_instructionsItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUInstructionsItem *instructionsItem; // @synthesize instructionsItem=_instructionsItem;
 @property(retain, nonatomic) HFStaticItem *addShortcutItem; // @synthesize addShortcutItem=_addShortcutItem;
 @property(retain, nonatomic) HFStaticItem *addShortcutHeader; // @synthesize addShortcutHeader=_addShortcutHeader;
 @property(retain, nonatomic) HFStaticItem *gridItem; // @synthesize gridItem=_gridItem;
-- (void).cxx_destruct;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;
 - (id)initWithInstructionsItem:(id)arg1 andDelegate:(id)arg2 showShortcutItem:(_Bool)arg3;
 

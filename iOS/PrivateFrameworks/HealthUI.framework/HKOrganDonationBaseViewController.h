@@ -15,10 +15,10 @@
     CDUnknownBlockType _registrationCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType registrationCompletionHandler; // @synthesize registrationCompletionHandler=_registrationCompletionHandler;
 @property(retain, nonatomic) NSString *completionButtonTitle; // @synthesize completionButtonTitle=_completionButtonTitle;
 @property(retain, nonatomic) _HKMedicalIDData *medicalIDData; // @synthesize medicalIDData=_medicalIDData;
-- (void).cxx_destruct;
 - (id)initWithMedicalIDData:(id)arg1;
 
 @end

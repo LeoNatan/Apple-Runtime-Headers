@@ -20,10 +20,10 @@
 + (id)_stringFromOperator:(long long)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)filterWithProperty:(id)arg1 op:(long long)arg2 value:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 @property(nonatomic) long long op; // @synthesize op=_op;
 @property(retain, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isQueryFilter;

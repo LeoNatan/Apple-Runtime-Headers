@@ -19,8 +19,8 @@
 
 + (_Bool)_isMemoryTriggered:(id)arg1;
 + (id)sharedInstance;
-@property(retain, nonatomic, setter=_setRelatedLookupTable:) NSHashTable *_relatedLookupTable; // @synthesize _relatedLookupTable=__relatedLookupTable;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setRelatedLookupTable:) NSHashTable *_relatedLookupTable; // @synthesize _relatedLookupTable=__relatedLookupTable;
 - (void)_aggdJumpCountLoggingDryrun:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
 - (void)_aggdDurationLoggingDryrun:(unsigned long long)arg1 duration:(double)arg2;
 - (void)_aggdDurationLoggingDryrunForSubState:(unsigned long long)arg1 duration:(double)arg2;

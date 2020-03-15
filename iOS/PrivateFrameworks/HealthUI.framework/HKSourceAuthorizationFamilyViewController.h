@@ -18,13 +18,13 @@
     HKHealthStore *_healthStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) UIViewController *healthDataAuthorizationSettingsViewController; // @synthesize healthDataAuthorizationSettingsViewController=_healthDataAuthorizationSettingsViewController;
 @property(retain, nonatomic) UIViewController *clinicalAuthorizationSettingsViewController; // @synthesize clinicalAuthorizationSettingsViewController=_clinicalAuthorizationSettingsViewController;
 @property(retain, nonatomic) HKSourceAuthorizationController *healthDataAuthorizationController; // @synthesize healthDataAuthorizationController=_healthDataAuthorizationController;
 @property(retain, nonatomic) HKClinicalSourceAuthorizationController *clinicalAuthorizationController; // @synthesize clinicalAuthorizationController=_clinicalAuthorizationController;
 @property(readonly, copy, nonatomic) HKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;

@@ -55,13 +55,13 @@
 + (id)createQueryWithFilter:(id)arg1 tableID:(unsigned long long)arg2;
 + (id)makeQueryWithFilters:(id)arg1 sortDesriptor:(id)arg2 tableID:(unsigned long long)arg3;
 + (id)sortIdentifierToDBColumnIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSortDescriptor *defaultSortdescriptor; // @synthesize defaultSortdescriptor=_defaultSortdescriptor;
 @property(retain, nonatomic) NSString *dbPath; // @synthesize dbPath=_dbPath;
 @property(retain, nonatomic) NSSortDescriptor *sortdescriptor; // @synthesize sortdescriptor=_sortdescriptor;
 @property(retain, nonatomic) NSString *archivePath; // @synthesize archivePath=_archivePath;
 @property(readonly, nonatomic) BOOL isSearching; // @synthesize isSearching=_isSearching;
 @property(nonatomic) BOOL readOnly; // @synthesize readOnly=_readOnly;
-- (void).cxx_destruct;
 - (BOOL)_bindArguments:(id)arg1 inStatement:(struct sqlite3_stmt *)arg2;
 - (BOOL)_bindArgumentsDictionary:(id)arg1 inStatement:(struct sqlite3_stmt *)arg2;
 - (id)_stringRowsForQuery:(id)arg1;

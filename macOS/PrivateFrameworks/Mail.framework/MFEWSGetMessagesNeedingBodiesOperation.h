@@ -15,9 +15,9 @@
     NSArray *_mailboxes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *mailboxes; // @synthesize mailboxes=_mailboxes;
 @property(nonatomic) __weak id <MFEWSGetMessagesNeedingBodiesOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)main;
 - (id)init;
 - (id)initWithMailboxes:(id)arg1;

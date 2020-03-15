@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) long long error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDate *transactionDate; // @synthesize transactionDate=_transactionDate;
 @property(nonatomic) _Bool didSucceed; // @synthesize didSucceed=_didSucceed;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSString *merchantURL; // @synthesize merchantURL=_merchantURL;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) PKValueAddedMerchant *merchant; // @synthesize merchant=_merchant;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

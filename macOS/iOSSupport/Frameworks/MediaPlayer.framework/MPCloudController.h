@@ -46,6 +46,7 @@
 + (BOOL)isMediaApplication;
 + (id)controllers;
 + (id)globalSerialQueue;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isJaliscoInitialImport) BOOL jaliscoInitialImport; // @synthesize jaliscoInitialImport=_jaliscoInitialImport;
 @property(nonatomic, getter=isJaliscoUpdateInProgress) BOOL jaliscoUpdateInProgress; // @synthesize jaliscoUpdateInProgress=_jaliscoUpdateInProgress;
 @property(nonatomic, getter=isCloudLibraryInitialImport) BOOL cloudLibraryInitialImport; // @synthesize cloudLibraryInitialImport=_cloudLibraryInitialImport;
@@ -69,7 +70,6 @@
 @property(readonly, nonatomic, getter=isJaliscoGeniusEnabled) BOOL jaliscoGeniusEnabled; // @synthesize jaliscoGeniusEnabled=_jaliscoGeniusEnabled;
 @property(readonly, nonatomic) ICCloudClient *cloudClient; // @synthesize cloudClient=_cloudClient;
 @property(nonatomic, getter=isCloudEnabled) BOOL cloudEnabled; // @synthesize cloudEnabled=_cloudEnabled;
-- (void).cxx_destruct;
 - (void)_resignActive;
 - (void)_becomeActiveAndWaitUntilDone:(BOOL)arg1;
 - (void)_performBlockOnControllerHandlingTheSameAccount:(CDUnknownBlockType)arg1;

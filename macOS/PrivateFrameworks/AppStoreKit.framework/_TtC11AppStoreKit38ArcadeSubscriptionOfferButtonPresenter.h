@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: view
     // Error parsing type: , name: buttonAction
+    // Error parsing type: , name: subscribedButtonAction
     // Error parsing type: , name: offerDisplayProperties
     // Error parsing type: , name: theme
     // Error parsing type: , name: alignment

@@ -26,11 +26,11 @@
 + (_Bool)supportsSecureCoding;
 + (id)preProcessMediaSystemMessage:(id)arg1 home:(id)arg2;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) NSMutableArray *mediaSystems; // @synthesize mediaSystems=_mediaSystems;
-- (void).cxx_destruct;
 - (void)_userAssistantAccessControlDidUpdate:(id)arg1 accessories:(id)arg2;
 - (id)_currentMediaSystemIfPrimary;
 @property(readonly, copy) NSSet *messageReceiverChildren;

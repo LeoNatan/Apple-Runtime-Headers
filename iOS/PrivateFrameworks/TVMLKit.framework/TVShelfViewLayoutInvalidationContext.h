@@ -15,10 +15,10 @@
     NSIndexPath *_focusedItemIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *focusedItemIndexPath; // @synthesize focusedItemIndexPath=_focusedItemIndexPath;
 @property(nonatomic) _Bool invalidateVerticalBumps; // @synthesize invalidateVerticalBumps=_invalidateVerticalBumps;
 @property(nonatomic) _Bool invalidateLayout; // @synthesize invalidateLayout=_invalidateLayout;
-- (void).cxx_destruct;
 
 @end
 

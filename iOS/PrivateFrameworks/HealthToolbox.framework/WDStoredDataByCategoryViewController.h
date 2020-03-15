@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSArray *_savedCategories;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool queryReturned; // @synthesize queryReturned=_queryReturned;
 @property(retain) NSArray *savedCategories; // @synthesize savedCategories=_savedCategories;
 @property(retain, nonatomic) UIFont *bodyFont; // @synthesize bodyFont=_bodyFont;
 @property(retain, nonatomic) NSArray *capturedSampleTypes; // @synthesize capturedSampleTypes=_capturedSampleTypes;
 @property(retain, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)selectSourceStoredDataTableViewCell:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

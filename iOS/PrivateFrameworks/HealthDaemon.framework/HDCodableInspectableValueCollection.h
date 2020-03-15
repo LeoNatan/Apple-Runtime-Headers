@@ -21,10 +21,10 @@
 }
 
 + (Class)collectionType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCodingList *elementTags; // @synthesize elementTags=_elementTags;
 @property(retain, nonatomic) NSMutableArray *collections; // @synthesize collections=_collections;
 @property(nonatomic) long long collectionType; // @synthesize collectionType=_collectionType;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

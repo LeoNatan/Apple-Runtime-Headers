@@ -16,9 +16,9 @@
     ISWrappedAVPlayer *_videoPlayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ISWrappedAVPlayer *videoPlayer; // @synthesize videoPlayer=_videoPlayer;
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *contentLayer;
 - (void)_performCommonISVideoPlayerViewInitialization;
 - (void)layout;

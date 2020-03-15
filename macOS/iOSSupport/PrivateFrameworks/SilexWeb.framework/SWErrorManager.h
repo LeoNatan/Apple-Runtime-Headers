@@ -20,10 +20,10 @@
     id <SWLogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(copy, nonatomic, setter=onError:) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)didReceiveMessage:(id)arg1 securityOrigin:(id)arg2;
 - (void)reportError:(id)arg1;
 - (id)initWithMessageHandlerManager:(id)arg1 timeoutManager:(id)arg2 logger:(id)arg3;

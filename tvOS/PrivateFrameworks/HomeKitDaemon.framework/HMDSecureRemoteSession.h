@@ -31,6 +31,7 @@
 + (id)logCategory;
 + (_Bool)isSecureRemoteSessionMessage:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSMutableArray *serverStreams; // @synthesize serverStreams=_serverStreams;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) HMDRemoteDeviceMonitor *deviceMonitor; // @synthesize deviceMonitor=_deviceMonitor;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly) HMDDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (id)logIdentifier;
 - (id)dumpState;

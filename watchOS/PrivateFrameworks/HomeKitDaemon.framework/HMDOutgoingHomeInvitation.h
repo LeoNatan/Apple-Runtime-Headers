@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *messageIdentifier; // @synthesize messageIdentifier=_messageIdentifier;
 @property(nonatomic) _Bool responseReceived; // @synthesize responseReceived=_responseReceived;
 @property(retain, nonatomic) NSString *inviteeDestinationAddress; // @synthesize inviteeDestinationAddress=_inviteeDestinationAddress;
 @property(retain, nonatomic) HMDUser *user; // @synthesize user=_user;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
 - (id)emptyModelObjectWithChangeType:(unsigned int)arg1;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;

@@ -17,10 +17,10 @@
     NSDictionary *_pluginUpgradeInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *pluginUpgradeInfo; // @synthesize pluginUpgradeInfo=_pluginUpgradeInfo;
 @property(retain) NSMutableDictionary *pendingCertificates; // @synthesize pendingCertificates=_pendingCertificates;
 @property(retain, nonatomic) NSDictionary *payloadAtom; // @synthesize payloadAtom=_payloadAtom;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)addCertificatePending:(id)arg1 certificateTag:(id)arg2 accessGroup:(id)arg3;
 - (_Bool)addCertificatePending:(id)arg1 certificateTag:(id)arg2;

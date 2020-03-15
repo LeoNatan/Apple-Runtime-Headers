@@ -15,8 +15,8 @@
 
 + (id)noteSearchCreatedByThisApplication;
 + (id)noteSearchWithSearchString:(id)arg1;
-@property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 - (id)initWithSearchString:(id)arg1;
 - (id)init;
 

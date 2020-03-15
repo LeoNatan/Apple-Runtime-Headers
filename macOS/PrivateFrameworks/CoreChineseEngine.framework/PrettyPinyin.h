@@ -13,8 +13,8 @@
     NSDictionary *_finalToneDictionary;
 }
 
-@property(readonly, nonatomic) NSDictionary *finalToneDictionary; // @synthesize finalToneDictionary=_finalToneDictionary;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *finalToneDictionary; // @synthesize finalToneDictionary=_finalToneDictionary;
 - (id)toneStringFromToneNumberString:(id)arg1;
 - (id)init;
 - (id)_toneStringWithDictionary:(id)arg1;

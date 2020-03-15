@@ -31,10 +31,10 @@
 + (id)compositionWithController:(id)arg1 source:(id)arg2 overcaptureSource:(id)arg3;
 + (id)compositionWithController:(id)arg1 source:(id)arg2;
 + (void)configureNeutrinoCacheDirectoryIfNeeded;
+- (void).cxx_destruct;
 @property(nonatomic) int smartFiltersCubeSize; // @synthesize smartFiltersCubeSize=_smartFiltersCubeSize;
 @property(retain, nonatomic) PLEditSource *overcaptureEditSource; // @synthesize overcaptureEditSource=_overcaptureEditSource;
 @property(readonly, retain, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
-- (void).cxx_destruct;
 - (void)applySourceChangesToCompositionController:(id)arg1 source:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)calculateLongExposureFusionParametersWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_smartBWAdjustments;

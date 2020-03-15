@@ -20,6 +20,7 @@
     CAMZoomButton *__zoomButton3;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CAMZoomButton *_zoomButton3; // @synthesize _zoomButton3=__zoomButton3;
 @property(readonly, nonatomic) CAMZoomButton *_zoomButton2; // @synthesize _zoomButton2=__zoomButton2;
 @property(readonly, nonatomic) CAMZoomButton *_zoomButton1; // @synthesize _zoomButton1=__zoomButton1;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(copy, nonatomic) NSArray *zoomFactors; // @synthesize zoomFactors=_zoomFactors;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
-- (void).cxx_destruct;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 @property(nonatomic) long long orientation;
 - (id)_createPlatterImageForContentSize:(id)arg1;

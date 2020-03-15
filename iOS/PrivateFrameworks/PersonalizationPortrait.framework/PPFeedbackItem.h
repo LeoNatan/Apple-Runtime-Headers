@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)stringForItemFeedbackType:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int itemFeedbackType; // @synthesize itemFeedbackType=_itemFeedbackType;
 @property(readonly, nonatomic) NSString *itemString; // @synthesize itemString=_itemString;
-- (void).cxx_destruct;
 - (_Bool)isEqualToPPFeedbackItem:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

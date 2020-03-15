@@ -34,6 +34,7 @@
     long long _firstDayOfWeek;
 }
 
+- (void).cxx_destruct;
 @property BOOL activeScrubberIsScrolling; // @synthesize activeScrubberIsScrolling=_activeScrubberIsScrolling;
 @property BOOL activeScrubberHasInteraction; // @synthesize activeScrubberHasInteraction=_activeScrubberHasInteraction;
 @property BOOL scrubbersLoaded; // @synthesize scrubbersLoaded=_scrubbersLoaded;
@@ -50,7 +51,6 @@
 @property(retain) NSView *scrubberContainer; // @synthesize scrubberContainer=_scrubberContainer;
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CalUIDateScrubberTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)startDateInUnit:(unsigned long long)arg1 forDate:(id)arg2;
 - (long long)_indexForDate:(id)arg1 unit:(unsigned long long)arg2;
 - (id)_dateForIndex:(long long)arg1 unit:(unsigned long long)arg2;

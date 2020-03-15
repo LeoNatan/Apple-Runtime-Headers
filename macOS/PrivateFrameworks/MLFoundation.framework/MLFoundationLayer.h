@@ -32,6 +32,7 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSMutableArray *fusedLayers; // @synthesize fusedLayers=_fusedLayers;
 @property(copy, nonatomic) MLFoundationTensor *lossInitialGradientTensor; // @synthesize lossInitialGradientTensor=_lossInitialGradientTensor;
 @property(copy, nonatomic) MLFoundationTensor *sourceGradientTensor; // @synthesize sourceGradientTensor=_sourceGradientTensor;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned long long kernelHeight; // @synthesize kernelHeight=_kernelHeight;
 @property(nonatomic) unsigned long long kernelWidth; // @synthesize kernelWidth=_kernelWidth;
 @property(nonatomic) unsigned long long layerID; // @synthesize layerID=_layerID;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)computeResultSizeFromSourceSize:(unsigned long long)arg1 dimension:(unsigned long long)arg2;
 - (void)assignLayerID:(unsigned long long)arg1;

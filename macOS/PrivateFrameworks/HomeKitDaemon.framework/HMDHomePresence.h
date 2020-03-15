@@ -19,10 +19,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDDevice *lastUpdateByDevice; // @synthesize lastUpdateByDevice=_lastUpdateByDevice;
 @property(readonly, nonatomic) NSDictionary *userPresenceMap; // @synthesize userPresenceMap=_userPresenceMap;
 @property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (BOOL)areUsersNotAtHome:(id)arg1;
 - (BOOL)areUsersAtHome:(id)arg1;
 - (BOOL)isPresenceRegionKnownForUser:(id)arg1;

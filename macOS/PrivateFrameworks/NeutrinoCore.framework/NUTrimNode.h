@@ -17,10 +17,10 @@
 - (id)_evaluateVideoComposition:(out id *)arg1;
 - (BOOL)requiresVideoComposition;
 - (id)_evaluateImage:(out id *)arg1;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
 - (id)_transformWithError:(out id *)arg1;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 - (id)initWithTimeRange:(CDStruct_e83c9415)arg1 input:(id)arg2;
 
 @end

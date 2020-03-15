@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
     id <AVInfoPanelViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <AVInfoPanelViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *customViewControllers; // @synthesize customViewControllers=_customViewControllers;
 @property(readonly) AVInfoPanelSubtitlesViewController *subtitlesViewController; // @synthesize subtitlesViewController=_subtitlesViewController;
 @property(readonly) AVInfoPanelAudioViewController *audioViewController; // @synthesize audioViewController=_audioViewController;
-- (void).cxx_destruct;
 - (void)_playPauseButtonGestureDetected:(id)arg1;
 - (void)_menuButtonGestureDetected:(id)arg1;
 - (void)_upArrowGestureDetected:(id)arg1;

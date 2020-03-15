@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     SFService *_service;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFService *service; // @synthesize service=_service;
 @property(nonatomic) unsigned long long sendLastTicks; // @synthesize sendLastTicks=_sendLastTicks;
-- (void).cxx_destruct;
 - (int)_pairVerifyCompleted:(int)arg1;
 - (void)pairVerify:(id)arg1 start:(_Bool)arg2;
 - (int)_pairSetupCompleted:(int)arg1;

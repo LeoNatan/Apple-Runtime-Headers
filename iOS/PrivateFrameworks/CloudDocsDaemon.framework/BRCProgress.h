@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)_progressForDocument:(id)arg1 group:(BOOL)arg2 sizeInfo:(id)arg3;
 + (id)uploadProgressForDocument:(id)arg1 sizeInfo:(id)arg2;
 + (id)downloadProgressForDocument:(id)arg1 sizeInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *parentFileIDs; // @synthesize parentFileIDs=_parentFileIDs;
 @property(readonly, nonatomic) _Bool isPublished; // @synthesize isPublished=_published;
-- (void).cxx_destruct;
 - (void)addAliasItem:(id)arg1;
 - (id)initWithGroup:(BOOL)arg1 parentFileIDs:(id)arg2 session:(id)arg3;
 - (void)brc_unpublish;

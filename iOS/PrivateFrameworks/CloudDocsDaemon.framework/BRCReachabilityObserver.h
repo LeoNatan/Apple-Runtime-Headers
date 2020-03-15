@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _networkReachabilityDidChangeHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType networkReachabilityDidChangeHandler; // @synthesize networkReachabilityDidChangeHandler=_networkReachabilityDidChangeHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType networkReachabilityDidChangeHandler; // @synthesize networkReachabilityDidChangeHandler=_networkReachabilityDidChangeHandler;
 - (void)networkReachabilityChanged:(_Bool)arg1;
 - (void)stopObservingNetworkReachabilityChanges;
 - (void)startObservingNetworkReachabilityChanges;

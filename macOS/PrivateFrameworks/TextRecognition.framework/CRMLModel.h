@@ -20,12 +20,12 @@
     long long _cpuBatchSize;
 }
 
+- (void).cxx_destruct;
 @property long long cpuBatchSize; // @synthesize cpuBatchSize=_cpuBatchSize;
 @property long long gpuBatchSize; // @synthesize gpuBatchSize=_gpuBatchSize;
 @property(retain) NSArray *modelShape; // @synthesize modelShape=_modelShape;
 @property(readonly) int classCount; // @synthesize classCount=_classCount;
 @property(readonly) const int *codeMap; // @synthesize codeMap=_codeMap;
-- (void).cxx_destruct;
 - (id)predict:(id)arg1 error:(id *)arg2;
 @property(readonly) NSString *modelName;
 @property(readonly) int inputHeight;

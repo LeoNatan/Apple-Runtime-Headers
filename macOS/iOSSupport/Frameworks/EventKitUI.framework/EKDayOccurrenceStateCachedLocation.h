@@ -17,12 +17,12 @@
     NSString *_originalOccurrenceLocationWithoutPrediction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL originalHasNewTimeProposed; // @synthesize originalHasNewTimeProposed=_originalHasNewTimeProposed;
 @property(readonly, nonatomic) BOOL originalOccurrenceLocationIsPrediction; // @synthesize originalOccurrenceLocationIsPrediction=_originalOccurrenceLocationIsPrediction;
 @property(readonly, nonatomic) NSString *originalOccurrenceLocationWithoutPrediction; // @synthesize originalOccurrenceLocationWithoutPrediction=_originalOccurrenceLocationWithoutPrediction;
 @property(readonly, nonatomic) NSString *originalOccurrenceLocation; // @synthesize originalOccurrenceLocation=_originalOccurrenceLocation;
 @property(readonly, nonatomic) NSString *generatedLocationString; // @synthesize generatedLocationString=_generatedLocationString;
-- (void).cxx_destruct;
 - (id)initWithGeneratedLocationString:(id)arg1 originalOccurrenceLocation:(id)arg2 originalOccurrenceLocationWithoutPrediction:(id)arg3 originalOccurrenceLocationIsPrediction:(BOOL)arg4 originalHasNewTimeProposed:(BOOL)arg5;
 
 @end

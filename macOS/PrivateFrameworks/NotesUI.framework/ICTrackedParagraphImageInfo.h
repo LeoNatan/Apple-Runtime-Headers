@@ -13,12 +13,13 @@
     BOOL _estimated;
     ICTrackedParagraph *_trackedParagraph;
     NSString *_uuid;
-    struct NSImage *_image;
-    struct NSImageView *_imageViewIfExists;
+    NSImage *_image;
+    NSImageView *_imageViewIfExists;
     struct CGRect _boundingRect;
     struct CGRect _rect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL estimated; // @synthesize estimated=_estimated;
 @property(retain, nonatomic) NSImageView *imageViewIfExists; // @synthesize imageViewIfExists=_imageViewIfExists;
 @property(nonatomic) struct CGRect rect; // @synthesize rect=_rect;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
-- (void).cxx_destruct;
 
 @end
 

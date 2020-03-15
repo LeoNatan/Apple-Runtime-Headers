@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
     TVPPlayheadView *_playerHead;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPPlayheadView *playerHead; // @synthesize playerHead=_playerHead;
 @property(retain, nonatomic) UIView *alternateElapsedTimeAccessory; // @synthesize alternateElapsedTimeAccessory=_alternateElapsedTimeAccessory;
 @property(nonatomic) _Bool shouldUseAlternateElapsedTimeAccessory; // @synthesize shouldUseAlternateElapsedTimeAccessory=_shouldUseAlternateElapsedTimeAccessory;
@@ -81,7 +82,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double playbackProgress; // @synthesize playbackProgress=_playbackProgress;
 @property(copy, nonatomic) NSString *bottomTitle; // @synthesize bottomTitle=_bottomTitle;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)_updateUserInteractionEnabled;
 - (void)setLabelAlpha:(double)arg1;
 @property(readonly, nonatomic) struct CGRect playerHeadFrame;

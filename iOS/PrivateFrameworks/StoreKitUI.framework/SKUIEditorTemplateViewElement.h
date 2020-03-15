@@ -13,8 +13,8 @@
     NSNumber *_contentId;
 }
 
-@property(readonly, nonatomic) NSNumber *contentId; // @synthesize contentId=_contentId;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSNumber *contentId; // @synthesize contentId=_contentId;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

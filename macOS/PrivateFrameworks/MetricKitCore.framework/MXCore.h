@@ -27,6 +27,7 @@
 }
 
 + (id)sharedCore;
+- (void).cxx_destruct;
 @property(retain) MXSource *source; // @synthesize source=_source;
 @property long long currentDataActivityRetryCount; // @synthesize currentDataActivityRetryCount=_currentDataActivityRetryCount;
 @property(retain, nonatomic) NSString *currentDataActivityDate; // @synthesize currentDataActivityDate=_currentDataActivityDate;
@@ -37,7 +38,6 @@
 @property(retain) NSObject<OS_os_log> *MXCoreXcodeSupportLogHandle; // @synthesize MXCoreXcodeSupportLogHandle=_MXCoreXcodeSupportLogHandle;
 @property(retain) NSObject<OS_os_log> *MXCoreLogHandle; // @synthesize MXCoreLogHandle=_MXCoreLogHandle;
 @property(readonly, retain) NSMutableSet *services; // @synthesize services=_services;
-- (void).cxx_destruct;
 - (void)deliverDummyPayloadForXcodeClient:(id)arg1;
 - (id)getDummyPayloadForClient:(id)arg1 dateString:(id)arg2;
 - (id)getMetricPayloadForClient:(id)arg1 dateString:(id)arg2;

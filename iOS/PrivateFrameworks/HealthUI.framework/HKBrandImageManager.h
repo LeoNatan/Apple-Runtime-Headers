@@ -19,11 +19,11 @@
 + (id)_fetchOrCreateSalt;
 + (id)imageManagerWithHealthRecordsStore:(id)arg1;
 + (double)defaultLogoDimension;
+- (void).cxx_destruct;
 @property(retain) NSOperationQueue *fileOperationQueue; // @synthesize fileOperationQueue=_fileOperationQueue;
 @property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
 @property(retain, nonatomic) NSMutableDictionary *outstandingRequests; // @synthesize outstandingRequests=_outstandingRequests;
 @property(retain, nonatomic) NSCache *fetchedImages; // @synthesize fetchedImages=_fetchedImages;
-- (void).cxx_destruct;
 - (id)_hashedSaltedStringFromString:(id)arg1;
 - (id)_logoURLForBrand:(id)arg1;
 - (void)_writeImageData:(id)arg1 brand:(id)arg2;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSURL *_URL;
 }
 
-@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void)dealloc;
 - (id)init;
 - (id)initWithURL:(id)arg1;

@@ -26,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *exceptionApps; // @synthesize exceptionApps=_exceptionApps;
 @property long long tunnelType; // @synthesize tunnelType=_tunnelType;
 @property(copy) NEVPNProtocol *protocol; // @synthesize protocol=_protocol;
@@ -33,7 +34,6 @@
 @property(nonatomic, getter=isDisconnectOnDemandEnabled) _Bool disconnectOnDemandEnabled; // @synthesize disconnectOnDemandEnabled=_disconnectOnDemandEnabled;
 @property(getter=isOnDemandEnabled) _Bool onDemandEnabled; // @synthesize onDemandEnabled=_onDemandEnabled;
 @property(getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)description;

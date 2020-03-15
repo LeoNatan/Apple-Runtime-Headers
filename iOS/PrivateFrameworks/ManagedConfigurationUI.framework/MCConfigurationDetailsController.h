@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 + (id)organizationForUserInfo:(id)arg1;
 + (id)displayNameForUserInfo:(id)arg1;
 + (void)updateUserInfo:(id)arg1 withProfile:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id profileListChangedObserver; // @synthesize profileListChangedObserver=_profileListChangedObserver;
 @property(retain, nonatomic) NSArray *viewControllersAfterTransition; // @synthesize viewControllersAfterTransition=_viewControllersAfterTransition;
 @property(retain, nonatomic) UITextField *passwordField; // @synthesize passwordField=_passwordField;
@@ -56,7 +57,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MCProfile *cachedProfile; // @synthesize cachedProfile=_cachedProfile;
 @property(nonatomic) _Bool delayUserInput; // @synthesize delayUserInput=_delayUserInput;
 @property(copy, nonatomic) NSString *profileId; // @synthesize profileId=_profileId;
-- (void).cxx_destruct;
 - (void)_profileListChanged:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

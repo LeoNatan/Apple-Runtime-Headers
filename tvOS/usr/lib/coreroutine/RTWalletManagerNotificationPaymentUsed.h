@@ -18,13 +18,13 @@
     NSNumber *_provider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSNumber *muid; // @synthesize muid=_muid;
 @property(readonly, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, copy, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 @property(readonly, copy, nonatomic) NSString *passIdentifier; // @synthesize passIdentifier=_passIdentifier;
-- (void).cxx_destruct;
 
 @end
 

@@ -25,6 +25,7 @@
     BOOL _showsBottomLine;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsBottomLine; // @synthesize showsBottomLine=_showsBottomLine;
 @property(retain, nonatomic) IMKUICandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSArray *candidateItems; // @synthesize candidateItems=_candidateItems;
 @property(nonatomic) double candidateItemMargin; // @synthesize candidateItemMargin=_candidateItemMargin;
 @property(nonatomic) __weak id <IMKUICandidateAccessibilityDelegate> accessibilityController; // @synthesize accessibilityController=_accessibilityController;
-- (void).cxx_destruct;
 - (long long)accessibilityOrientation;
 - (id)accessibilityRows;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;

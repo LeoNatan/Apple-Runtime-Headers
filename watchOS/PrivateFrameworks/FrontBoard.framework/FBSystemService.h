@@ -24,10 +24,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) FBServiceFacilityServer *server; // @synthesize server=_server;
 @property(nonatomic) __weak id <FBSystemServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FBSSerialQueue *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (unsigned int)_mapShutdownOptionsToOptions:(id)arg1;
 - (_Bool)_isWhitelistedLaunchSuspendedApp:(id)arg1;
 - (_Bool)_isTrustedRequest:(id)arg1 forCaller:(id)arg2 fromClient:(id)arg3 forApplication:(id)arg4 withOptions:(id)arg5 fatalError:(out id *)arg6;

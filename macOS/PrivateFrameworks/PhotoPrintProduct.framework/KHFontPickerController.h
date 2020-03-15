@@ -21,6 +21,7 @@
     KHTextView *_textView;
 }
 
+- (void).cxx_destruct;
 @property(retain) KHTextView *textView; // @synthesize textView=_textView;
 @property(retain) NSArray *fontList; // @synthesize fontList=_fontList;
 @property(retain) KHFrame *frame; // @synthesize frame=_frame;
@@ -28,7 +29,6 @@
 @property(retain) NSComboBox *fontSizeButton; // @synthesize fontSizeButton=_fontSizeButton;
 @property(retain) NSPopUpButton *fontFaceButton; // @synthesize fontFaceButton=_fontFaceButton;
 @property(retain) NSPopUpButton *fontMenuButton; // @synthesize fontMenuButton=_fontMenuButton;
-- (void).cxx_destruct;
 - (BOOL)control:(id)arg1 textShouldEndEditing:(id)arg2;
 - (void)comboBoxSelectionDidChange:(id)arg1;
 - (void)itemChosen:(id)arg1;

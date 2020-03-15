@@ -16,10 +16,10 @@
 }
 
 + (id)eventFromPayload:(id)arg1 usingTypeDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) long long platform; // @synthesize platform=_platform;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqualToEvent:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

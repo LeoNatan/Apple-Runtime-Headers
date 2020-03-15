@@ -23,8 +23,8 @@
     _Bool _paused;
 }
 
-@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 - (void)_updateWithCalendarUnits:(unsigned int)arg1;
 - (void)_timerFired:(id)arg1;
 - (void)_handleTimeChange:(id)arg1;

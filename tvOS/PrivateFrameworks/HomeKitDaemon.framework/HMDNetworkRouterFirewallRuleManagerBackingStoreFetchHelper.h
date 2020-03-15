@@ -26,6 +26,7 @@
 + (unsigned long long)maxRetryCount;
 + (unsigned long long)__integerForPreferenceKey:(id)arg1 defaultValue:(unsigned long long)arg2;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSDate *operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) CKOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
 @property(readonly, nonatomic) HMBProcessingOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)finishWithError:(id)arg1;
 - (void)finishWithResult:(id)arg1;

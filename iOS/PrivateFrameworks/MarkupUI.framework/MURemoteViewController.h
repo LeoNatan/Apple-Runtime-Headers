@@ -19,10 +19,10 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+- (void).cxx_destruct;
 @property _Bool shouldResignFirstResponder; // @synthesize shouldResignFirstResponder=_shouldResignFirstResponder;
 @property long long sandboxExtensionHandle; // @synthesize sandboxExtensionHandle=_sandboxExtensionHandle;
 @property(copy, nonatomic) CDUnknownBlockType finishedWithResultsCompletionBlock; // @synthesize finishedWithResultsCompletionBlock=_finishedWithResultsCompletionBlock;
-- (void).cxx_destruct;
 - (void)beginDismissWithInfo:(id)arg1;
 - (void)serviceDidFinishwithResults:(id)arg1 andSandboxExtension:(id)arg2;
 - (void)motionEnded:(long long)arg1 withEvent:(id)arg2;

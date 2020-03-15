@@ -19,12 +19,12 @@
     double _similarityScoreNormalizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double similarityScoreNormalizer; // @synthesize similarityScoreNormalizer=_similarityScoreNormalizer;
 @property(retain, nonatomic) NSDictionary *sceneFeatures; // @synthesize sceneFeatures=_sceneFeatures;
 @property(retain, nonatomic) NSDictionary *personFeatures; // @synthesize personFeatures=_personFeatures;
 @property(retain, nonatomic) NSSet *goldAssets; // @synthesize goldAssets=_goldAssets;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (id)dataToPersist;
 - (void)personAndSceneFeaturesFromGoldAssetsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)_semanticScoreByAssetUUIDForAssets:(id)arg1 normalize:(_Bool)arg2;

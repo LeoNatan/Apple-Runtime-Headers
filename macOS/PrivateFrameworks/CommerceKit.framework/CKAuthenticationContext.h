@@ -18,10 +18,10 @@
 }
 
 + (id)authenticationContextForStoreClient:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CKAuthenticationSettings *settings; // @synthesize settings=_settings;
 @property(retain) CKDialogContext *dialogContext; // @synthesize dialogContext=_dialogContext;
 @property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_viewControllerForAuthentication;
 - (void)authenticateWithDialog:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

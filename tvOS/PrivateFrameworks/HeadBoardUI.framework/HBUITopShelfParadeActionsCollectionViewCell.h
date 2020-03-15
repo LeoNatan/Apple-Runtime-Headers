@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UIView *_contentViewControllerContainerView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *contentViewControllerContainerView; // @synthesize contentViewControllerContainerView=_contentViewControllerContainerView;
 @property(readonly, nonatomic) UIView *backgroundViewControllerContainerView; // @synthesize backgroundViewControllerContainerView=_backgroundViewControllerContainerView;
-- (void).cxx_destruct;
 - (void)paradeContentViewDidChange:(id)arg1;
 - (void)paradeBackgroundViewDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

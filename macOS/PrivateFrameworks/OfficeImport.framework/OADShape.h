@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     OADOrientedBounds *mTextOrientedBounds;
 }
 
-@property(retain, nonatomic) OADOrientedBounds *textOrientedBounds; // @synthesize textOrientedBounds=mTextOrientedBounds;
 - (void).cxx_destruct;
+@property(retain, nonatomic) OADOrientedBounds *textOrientedBounds; // @synthesize textOrientedBounds=mTextOrientedBounds;
 - (id)description;
 - (BOOL)isTextBox;
 - (void)createPresetGeometryWithShapeType:(int)arg1;

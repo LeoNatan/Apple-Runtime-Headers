@@ -8,32 +8,36 @@
 
 #import <ContactsUI/ABPersonViewClientProtocol-Protocol.h>
 
-@class ABAPIAdapter, CNContact;
+@class ABAPIAdapter, CNContact, CNContainer;
 @protocol ABPersonViewProtocol, CNContactViewControllerDelegate;
 
 @interface CNContactViewController : NSViewController <ABPersonViewClientProtocol>
 {
     ABAPIAdapter<ABPersonViewProtocol> *_apiAdapter;
-    CNContact *_primitiveContact;
+    CNContact *_contactStorage;
     id <CNContactViewControllerDelegate> _contactViewControllerDelegate;
     double _desiredHeight;
+    unsigned long long _mode;
+    unsigned long long _authorizedMode;
+    CNContainer *_parentContainer;
 }
 
-+ (id)CNToABCNKeyMap;
 + (id)allPropertyKeys;
 + (id)descriptorForRequiredKeys;
 + (id)os_log;
+- (void).cxx_destruct;
+@property(retain, nonatomic) CNContainer *parentContainer; // @synthesize parentContainer=_parentContainer;
+@property(nonatomic) unsigned long long authorizedMode; // @synthesize authorizedMode=_authorizedMode;
+@property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) double desiredHeight; // @synthesize desiredHeight=_desiredHeight;
 @property(nonatomic) __weak id <CNContactViewControllerDelegate> contactViewControllerDelegate; // @synthesize contactViewControllerDelegate=_contactViewControllerDelegate;
-@property(copy) CNContact *primitiveContact; // @synthesize primitiveContact=_primitiveContact;
-- (void).cxx_destruct;
+@property(retain) CNContact *contactStorage; // @synthesize contactStorage=_contactStorage;
 - (void)startSharingSessionForServiceNamed:(id)arg1 listenerEndpoint:(id)arg2;
 - (void)desiredHeightChangedTo:(double)arg1;
 - (void)headerWasClicked;
 - (void)setPropertyKeysToDisplay:(id)arg1;
 @property(copy) CNContact *contact;
 - (id)serviceViewControllerProxy;
-- (id)_localPersonView;
 - (id)_remotePersonView;
 - (void)loadView;
 - (id)init;

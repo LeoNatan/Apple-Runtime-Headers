@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool captureImplicitLoadingContextOnDecode;
 }
 
+- (void).cxx_destruct;
 @property _Bool captureImplicitLoadingContextOnDecode; // @synthesize captureImplicitLoadingContextOnDecode;
 @property(nonatomic) _Bool instantiatingForSimulator; // @synthesize instantiatingForSimulator;
 @property(retain, nonatomic) UINibDecoder *nibDecoder; // @synthesize nibDecoder;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle;
 @property(copy, nonatomic) NSString *bundleDirectoryName; // @synthesize bundleDirectoryName;
 @property(copy, nonatomic) NSString *bundleResourceName; // @synthesize bundleResourceName;
-- (void).cxx_destruct;
 
 @end
 

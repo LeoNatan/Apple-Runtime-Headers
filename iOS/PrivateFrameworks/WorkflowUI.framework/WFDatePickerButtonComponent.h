@@ -15,9 +15,9 @@
 }
 
 + (id)newWithAttributes:(const struct WFDatePickerAttributes *)arg1 updateBlock:(CDUnknownBlockType)arg2 variableBlock:(CDUnknownBlockType)arg3 size:(const struct CKComponentSize *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool becomeFirstResponder; // @synthesize becomeFirstResponder=_becomeFirstResponder;
 @property(readonly, nonatomic) __weak WFCustomButtonComponent *buttonComponent; // @synthesize buttonComponent=_buttonComponent;
-- (void).cxx_destruct;
 
 @end
 

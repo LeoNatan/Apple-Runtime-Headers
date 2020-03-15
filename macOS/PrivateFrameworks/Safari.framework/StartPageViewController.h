@@ -6,7 +6,7 @@
 
 #import <AppKit/NSViewController.h>
 
-@class BrowserViewController, ForYouRecommendationMediator, KeyLoopSplicingContainerView, NSLayoutConstraint, NSString, NSView, NSVisualEffectView, SiriSuggestionsStartPageViewController, TestDriveMigrationBannerViewController, TopSitesViewController;
+@class BrowserViewController, ForYouRecommendationMediator, KeyLoopSplicingContainerView, NSLayoutConstraint, NSString, NSView, NSVisualEffectView, SiriSuggestionsStartPageViewController, TopSitesViewController;
 @protocol StartPageContentViewController;
 
 __attribute__((visibility("hidden")))
@@ -16,9 +16,7 @@ __attribute__((visibility("hidden")))
     NSViewController<StartPageContentViewController> *_currentMainContainerViewController;
     TopSitesViewController *_topSitesViewController;
     SiriSuggestionsStartPageViewController *_siriSuggestionsStartPageViewController;
-    TestDriveMigrationBannerViewController *_testDriveMigrationBannerViewController;
     double _defaultBottomBannerContainerToMainContainerBottomConstraintConstant;
-    BOOL _canShowTestDriveMigrationBanner;
     int _mode;
     BrowserViewController *_browserContentViewController;
     NSView *_externalCenteringView;
@@ -35,6 +33,7 @@ __attribute__((visibility("hidden")))
 + (int)defaultStartPageMode;
 + (id)pageTitleForURL:(id)arg1;
 + (id)defaultPageTitle;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *bottomBannerContainerToMainContainerBottomConstraint; // @synthesize bottomBannerContainerToMainContainerBottomConstraint=_bottomBannerContainerToMainContainerBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *mainContainerToBottomBannerContainerConstraint; // @synthesize mainContainerToBottomBannerContainerConstraint=_mainContainerToBottomBannerContainerConstraint;
 @property(nonatomic) __weak NSView *bottomBannerContainer; // @synthesize bottomBannerContainer=_bottomBannerContainer;
@@ -42,15 +41,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSVisualEffectView *windowBackdropVisualEffectView; // @synthesize windowBackdropVisualEffectView=_windowBackdropVisualEffectView;
 @property(nonatomic) __weak KeyLoopSplicingContainerView *mainContainerView; // @synthesize mainContainerView=_mainContainerView;
 @property(retain, nonatomic) ForYouRecommendationMediator *mediator; // @synthesize mediator=_mediator;
-@property(nonatomic) BOOL canShowTestDriveMigrationBanner; // @synthesize canShowTestDriveMigrationBanner=_canShowTestDriveMigrationBanner;
 @property(retain, nonatomic) NSView *externalCenteringView; // @synthesize externalCenteringView=_externalCenteringView;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak BrowserViewController *browserContentViewController; // @synthesize browserContentViewController=_browserContentViewController;
-- (void).cxx_destruct;
-- (void)_stopObservingMigrationState;
-- (void)_startObservingMigrationState;
-- (void)_testDriveMigrationBannerStatusDidChange:(id)arg1;
-- (void)_updateTestDriveMigrationBannerVisibilityAnimated:(BOOL)arg1;
 - (void)_updateBottomBanner;
 - (void)_animateBottomBannerIn:(id)arg1;
 - (void)_animateBottomBannerOut;
@@ -58,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (void)setBottomBanner:(id)arg1 animated:(BOOL)arg2;
 - (void)_setMainContainerViewControllerUsingMode:(int)arg1;
 - (void)_updateWindowAndTabTitle;
-- (void)viewDidLoad;
 - (void)loadView;
 @property(readonly, nonatomic) struct CGRect startPageViewContentRect;
 @property(readonly, nonatomic) NSString *pageTitle;

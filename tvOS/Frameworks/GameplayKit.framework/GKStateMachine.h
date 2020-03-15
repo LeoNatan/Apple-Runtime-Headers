@@ -15,8 +15,8 @@
 }
 
 + (id)stateMachineWithStates:(id)arg1;
-@property(readonly, nonatomic) GKState *currentState; // @synthesize currentState=_currentState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GKState *currentState; // @synthesize currentState=_currentState;
 - (id)_dotStringInstanceData;
 - (id)_instanceData;
 - (id)stateForClass:(Class)arg1;

@@ -18,11 +18,11 @@
 
 + (id)sharedLogger;
 + (id)logger;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *loggerQueue; // @synthesize loggerQueue=_loggerQueue;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) unsigned long long logLevel; // @synthesize logLevel=_logLevel;
 @property(copy, nonatomic) CDUnknownBlockType logBlock; // @synthesize logBlock=_logBlock;
-- (void).cxx_destruct;
 - (void)logError:(id)arg1;
 - (void)logWarn:(id)arg1;
 - (void)logInfo:(id)arg1;

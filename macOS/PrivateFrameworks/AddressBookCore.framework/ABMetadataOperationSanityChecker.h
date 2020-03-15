@@ -15,10 +15,10 @@
     unsigned long long _excessiveDataLoggingThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long excessiveDataLoggingThreshold; // @synthesize excessiveDataLoggingThreshold=_excessiveDataLoggingThreshold;
 @property(retain, nonatomic) NSCountedSet *writeHistory; // @synthesize writeHistory=_writeHistory;
 @property(nonatomic) unsigned long long totalBytesWritten; // @synthesize totalBytesWritten=_totalBytesWritten;
-- (void).cxx_destruct;
 - (void)checkForExcessiveTotalData:(unsigned long long)arg1;
 - (void)checkForExcessiveWritesToURL:(id)arg1;
 - (void)checkLength:(unsigned long long)arg1 ofIndividualFile:(id)arg2;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CNQuickActionButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showBackgroundPlatter; // @synthesize showBackgroundPlatter=_showBackgroundPlatter;
 @property(retain, nonatomic) CNQuickActionButton *button; // @synthesize button=_button;
 @property(nonatomic) _Bool showTitle; // @synthesize showTitle=_showTitle;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

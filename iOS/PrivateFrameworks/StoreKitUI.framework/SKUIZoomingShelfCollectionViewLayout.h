@@ -28,12 +28,12 @@ __attribute__((visibility("hidden")))
 + (double)snapToBoundariesDecelerationRate;
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic) double scaledItemWidth; // @synthesize scaledItemWidth=_scaledItemWidth;
 @property(nonatomic) double itemWidth; // @synthesize itemWidth=_itemWidth;
 @property(nonatomic) double interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) double focusedItemHorizontalCenterOffset; // @synthesize focusedItemHorizontalCenterOffset=_focusedItemHorizontalCenterOffset;
 @property(retain, nonatomic) SKUIShelfLayoutData *layoutData; // @synthesize layoutData=_layoutData;
-- (void).cxx_destruct;
 - (void)setMenuBarFocusedItemIndexPath:(id)arg1 withTransitionProgress:(double)arg2;
 - (id)menuBarFocusedItemIndexPathWithTransitionProgress:(double *)arg1;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;

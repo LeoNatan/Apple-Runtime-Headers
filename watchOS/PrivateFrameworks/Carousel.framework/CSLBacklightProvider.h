@@ -40,11 +40,11 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <CSLSScreenWakeProvider> screenWakeProvider; // @synthesize screenWakeProvider=_screenWakeProvider;
 @property(readonly, nonatomic) CSLDisplayBlankingService *blankingService; // @synthesize blankingService=_blankingService;
 @property(nonatomic, getter=isEclipseEnabled) _Bool eclipseEnabled; // @synthesize eclipseEnabled=_eclipseEnabled;
 @property(readonly, nonatomic) CSLBacklightProviderConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)hideBlankingWindowForRequestObject:(id)arg1 withValidityCheck:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)hideBlankingWindowForConfigChange:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)hideBlankingWindowForRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

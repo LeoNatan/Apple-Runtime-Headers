@@ -14,9 +14,9 @@
     NSArray *_audioDevicesActiveWithin24Hours;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL carPlayActiveWithin24Hours; // @synthesize carPlayActiveWithin24Hours=_carPlayActiveWithin24Hours;
 @property(copy, nonatomic) NSArray *audioDevicesActiveWithin24Hours; // @synthesize audioDevicesActiveWithin24Hours=_audioDevicesActiveWithin24Hours;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

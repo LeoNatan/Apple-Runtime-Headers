@@ -20,11 +20,11 @@
     id <_AXFFaultingArrayDataSource> __source;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_AXFFaultingArrayDataSource> _source; // @synthesize _source=__source;
 @property(nonatomic) unsigned long long _blockSize; // @synthesize _blockSize=__blockSize;
 @property(retain, nonatomic) NSMutableIndexSet *_faultedBlocks; // @synthesize _faultedBlocks=__faultedBlocks;
 @property(nonatomic) unsigned long long _count; // @synthesize _count=__count;
-- (void).cxx_destruct;
 - (id)descriptionWithLocale:(id)arg1 indent:(unsigned long long)arg2;
 - (unsigned long long)elementsCount;
 - (id)copyElementsForRange:(struct _NSRange)arg1;

@@ -28,6 +28,7 @@
     TVHKMediaQueryResult *_homeVideosResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVHKMediaQueryResult *homeVideosResult; // @synthesize homeVideosResult=_homeVideosResult;
 @property(retain, nonatomic) TVHKMediaQueryResult *audiobookChaptersResult; // @synthesize audiobookChaptersResult=_audiobookChaptersResult;
 @property(retain, nonatomic) TVHKMediaQueryResult *audiobooksResult; // @synthesize audiobooksResult=_audiobooksResult;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) TVHKMediaQueryResult *movieRentalsResult; // @synthesize movieRentalsResult=_movieRentalsResult;
 @property(retain, nonatomic) TVHKMediaQueryResult *moviesResult; // @synthesize moviesResult=_moviesResult;
 @property(readonly, nonatomic) long long queryReason; // @synthesize queryReason=_queryReason;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithQueryReason:(long long)arg1;
 - (id)init;

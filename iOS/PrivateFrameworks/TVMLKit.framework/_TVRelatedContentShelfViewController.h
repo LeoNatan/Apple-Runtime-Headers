@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     _TVShelfViewController *_shelfViewController;
 }
 
-@property(retain, nonatomic) _TVShelfViewController *shelfViewController; // @synthesize shelfViewController=_shelfViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _TVShelfViewController *shelfViewController; // @synthesize shelfViewController=_shelfViewController;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)shelfViewController:(id)arg1 updateRelatedView:(id)arg2;

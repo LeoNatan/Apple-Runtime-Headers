@@ -16,10 +16,10 @@
 }
 
 + (int)actionID;
+- (void).cxx_destruct;
 @property(retain) NSArray *omitPaths; // @synthesize omitPaths=_omitPaths;
 @property(retain) NSArray *paths; // @synthesize paths=_paths;
 @property(retain) NSString *operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 - (id)resultDictionary;
 - (id)slingshotServerInformation;
 - (BOOL)success;

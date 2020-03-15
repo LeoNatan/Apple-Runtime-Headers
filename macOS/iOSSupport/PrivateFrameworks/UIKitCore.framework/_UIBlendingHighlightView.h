@@ -20,8 +20,8 @@
 + (id)_blendingPressedView;
 + (id)_blendingSeparatorView;
 + (BOOL)isBorderView;
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void)_enumerateAllBlendingViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateBlendingBorderViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)setPressed:(BOOL)arg1;

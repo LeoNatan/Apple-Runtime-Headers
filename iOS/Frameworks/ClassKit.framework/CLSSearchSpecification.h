@@ -42,6 +42,7 @@
 
 + (id)newlineAnchoredPredicateValueForToken:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property unsigned long long requiredClassMemberRole; // @synthesize requiredClassMemberRole=_requiredClassMemberRole;
 @property(copy) NSArray *requiredClassMemberClassIDs; // @synthesize requiredClassMemberClassIDs=_requiredClassMemberClassIDs;
 @property(copy) NSArray *prohibitedLocationPersonIDs; // @synthesize prohibitedLocationPersonIDs=_prohibitedLocationPersonIDs;
@@ -67,7 +68,6 @@
 @property(copy) NSString *searchString; // @synthesize searchString=_searchString;
 @property(nonatomic) unsigned long long behaviors; // @synthesize behaviors=_behaviors;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (_Bool)isClassMemberSearch;
 - (_Bool)isLocationSearch;
 - (_Bool)isClassSearch;

@@ -20,8 +20,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) ARSkeleton3D *skeleton; // @synthesize skeleton=_skeleton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ARSkeleton3D *skeleton; // @synthesize skeleton=_skeleton;
 - (id)initWithAnchor:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToARBodyAnchor:(id)arg1;

@@ -32,10 +32,10 @@
 + (id)storeFrontURLBagKeyForItemKind:(id)arg1;
 + (void)_loadItemKindURLBagKeyMap;
 + (id)_sharedBagBackend;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
 @property(nonatomic) _Bool loadedFromDiskCache; // @synthesize loadedFromDiskCache=_loadedFromDiskCache;
 @property(nonatomic) double invalidationTime; // @synthesize invalidationTime=_invalidationTime;
-- (void).cxx_destruct;
 - (void)_writeURLResolutionCacheFile;
 - (void)_writeNetworkConstraintsCacheFile;
 - (void)_setBagBackendWithDictionary:(id)arg1;

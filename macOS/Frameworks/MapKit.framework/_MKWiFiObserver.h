@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     id <_MKWiFiObserverDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_MKWiFiObserverDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isWifiEnabled) BOOL wifiEnabled; // @synthesize wifiEnabled=_wifiEnabled;
-- (void).cxx_destruct;
 - (void)_updateWiFiState:(BOOL)arg1;
 - (id)init;
 

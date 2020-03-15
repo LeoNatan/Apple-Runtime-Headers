@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)ruleWithPrefix:(id)arg1 category:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

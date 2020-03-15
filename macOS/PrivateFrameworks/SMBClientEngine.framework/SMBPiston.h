@@ -25,12 +25,12 @@
     NSString *_realm;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *realm; // @synthesize realm=_realm;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(retain) NSString *userName; // @synthesize userName=_userName;
 @property __weak SMBSocket *sock; // @synthesize sock=_sock;
 @property(retain) NSMutableDictionary *shareList; // @synthesize shareList=_shareList;
-- (void).cxx_destruct;
 - (void)share_list_unlock;
 - (void)share_list_lock;
 - (void)setOption:(const char *)arg1 toValue:(unsigned int)arg2;

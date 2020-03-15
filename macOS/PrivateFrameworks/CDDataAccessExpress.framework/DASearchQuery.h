@@ -21,6 +21,7 @@
 }
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *searchID; // @synthesize searchID=_searchID;
 @property(nonatomic) __weak id <DASearchQueryConsumer> consumer; // @synthesize consumer=_consumer;
@@ -28,7 +29,6 @@
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
 @property(copy, nonatomic) NSPredicate *searchPredicate; // @synthesize searchPredicate=_searchPredicate;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int maxResults;
 - (id)dictionaryRepresentation;
 - (void)sendFinishedToConsumerWithError:(id)arg1;

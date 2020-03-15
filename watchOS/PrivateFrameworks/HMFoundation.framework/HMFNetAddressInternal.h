@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_addressString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *addressString; // @synthesize addressString=_addressString;
 @property(readonly, nonatomic) unsigned int addressFamily; // @synthesize addressFamily=_addressFamily;
-- (void).cxx_destruct;
 - (id)dataUsingEncoding:(unsigned int)arg1;
 
 @end

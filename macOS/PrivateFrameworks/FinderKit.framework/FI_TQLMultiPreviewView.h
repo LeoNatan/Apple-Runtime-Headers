@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 
 + (id)keyPathsForValuesAffectingIsLoaded;
 + (id)qlMultiPreviewView:(const struct CGRect *)arg1;
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (void)close;
 @property(readonly) BOOL isLoaded;
 - (void)flushCachedMultiIcon;

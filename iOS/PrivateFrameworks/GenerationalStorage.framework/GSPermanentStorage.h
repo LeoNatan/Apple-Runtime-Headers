@@ -27,15 +27,15 @@
 
 + (id)storageIDForItemAtURL:(id)arg1 error:(id *)arg2;
 + (id)storagePrefixForFileDescriptor:(int)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long storageID; // @synthesize storageID=_storageID;
 @property(readonly, nonatomic) id <NSCopying><NSSecureCoding> persistentIdentifier; // @synthesize persistentIdentifier=_documentID;
 @property(retain, nonatomic) GSStagingPrefix *stagingPrefix; // @synthesize stagingPrefix=_stagingPrefix;
 @property(retain) NSURL *documentURL; // @synthesize documentURL=_documentURL;
-- (void).cxx_destruct;
 - (_Bool)transferToItemAtURL:(id)arg1 error:(id *)arg2;
 - (void)removeAllAdditionsForNamespaces:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAdditions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (struct NSEnumerator *)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
+- (id)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
 - (id)additionsWithNames:(id)arg1 inNameSpace:(id)arg2 error:(id *)arg3;
 - (id)additionWithName:(id)arg1 inNameSpace:(id)arg2 error:(id *)arg3;
 - (_Bool)replaceDocumentWithContentsOfItemAtURL:(id)arg1 preservingCurrentVersionWithCreationInfo:(id)arg2 createdAddition:(id *)arg3 error:(id *)arg4;

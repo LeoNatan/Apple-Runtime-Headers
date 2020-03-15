@@ -30,13 +30,13 @@
     int _labelNumberOfLines;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsBoldValueText; // @synthesize showsBoldValueText=_showsBoldValueText;
 @property(nonatomic) int labelNumberOfLines; // @synthesize labelNumberOfLines=_labelNumberOfLines;
 @property(nonatomic, getter=isProcessing) _Bool processing; // @synthesize processing=_processing;
 @property(nonatomic) _Bool isPendingTotal; // @synthesize isPendingTotal=_isPendingTotal;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(nonatomic) PKPaymentAuthorizationLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (id)_valueAttributedStringWithString:(id)arg1;
 - (id)_labelAttributedStringWithString:(id)arg1;
 - (void)_prepareConstraints;

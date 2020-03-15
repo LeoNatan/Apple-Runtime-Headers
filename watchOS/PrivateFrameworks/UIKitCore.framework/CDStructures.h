@@ -68,6 +68,11 @@ struct CGAffineTransform {
     float ty;
 };
 
+struct CGPathElement {
+    int _field1;
+    struct CGPoint *_field2;
+};
+
 struct CGPoint {
     float x;
     float y;
@@ -93,10 +98,6 @@ struct NSDirectionalEdgeInsets {
     float leading;
     float bottom;
     float trailing;
-};
-
-struct NSObject {
-    Class _field1;
 };
 
 struct UIEdgeInsets {
@@ -159,15 +160,6 @@ struct _UIBoundingPathBitmapDataCorner {
 struct _UIBoundingPathBitmapDataSkipRegion {
     unsigned int y;
     unsigned int height;
-};
-
-struct _UICollectionViewCompositionLayout {
-    Class _field1;
-};
-
-struct _UICollectionViewCompositionLayoutInvalidationContext {
-    Class _field1;
-    id _field2;
 };
 
 struct _UIIntegralCornerRadii {
@@ -298,16 +290,6 @@ struct vector<int, std::__1::allocator<int>> {
     struct __compressed_pair<int *, std::__1::allocator<int>> {
         int *__value_;
     } __end_cap_;
-};
-
-struct work_interval_instance {
-    unsigned long long _field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-    unsigned long long _field4;
-    unsigned long long _field5;
-    unsigned long long _field6;
-    unsigned int _field7;
 };
 
 #pragma mark Typedef'd Structures

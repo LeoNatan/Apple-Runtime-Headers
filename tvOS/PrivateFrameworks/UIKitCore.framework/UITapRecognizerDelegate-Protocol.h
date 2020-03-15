@@ -13,5 +13,8 @@
 - (void)tapRecognizerFailedToRecognizeTap:(UITapRecognizer *)arg1;
 - (void)tapRecognizerRecognizedTap:(UITapRecognizer *)arg1;
 - (_Bool)tapIsPossibleForTapRecognizer:(UITapRecognizer *)arg1;
+
+@optional
+- (void)resetTapCountForTapRecognizer:(UITapRecognizer *)arg1;
 @end
 

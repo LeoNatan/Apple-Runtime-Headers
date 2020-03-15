@@ -14,9 +14,9 @@
     UIColor *_tintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)init;
 

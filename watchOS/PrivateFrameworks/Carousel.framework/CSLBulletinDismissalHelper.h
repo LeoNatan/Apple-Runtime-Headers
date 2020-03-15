@@ -18,12 +18,12 @@
     CUISAlertViewController<CSLBulletinPresenter> *_alertViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak CUISAlertViewController<CSLBulletinPresenter> *alertViewController; // @synthesize alertViewController=_alertViewController;
 @property(retain, nonatomic) NSMutableArray *dismissedItems; // @synthesize dismissedItems=_dismissedItems;
 @property(nonatomic) _Bool shouldNotifyFactoryOfDismissal; // @synthesize shouldNotifyFactoryOfDismissal=_shouldNotifyFactoryOfDismissal;
 @property(nonatomic) unsigned int coalesceDismissReason; // @synthesize coalesceDismissReason=_coalesceDismissReason;
 @property(nonatomic) __weak id <CSLBulletinPresenterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)logAggDWithReason:(unsigned int)arg1;
 - (void)_snapshotOnDismissItem:(id)arg1 withReason:(unsigned int)arg2;
 - (void)sendDismissActionForItem:(id)arg1 shouldDeactivate:(_Bool)arg2;

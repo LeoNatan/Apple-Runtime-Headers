@@ -18,12 +18,12 @@
     NSMutableArray *_dbs;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool drainScheduled; // @synthesize drainScheduled=_drainScheduled;
 @property(retain, nonatomic) NSMutableArray *dbs; // @synthesize dbs=_dbs;
 @property(nonatomic) _Bool traced; // @synthesize traced=_traced;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) CDUnknownBlockType factory; // @synthesize factory=_factory;
-- (void).cxx_destruct;
 - (void)_drain;
 - (void)_scheduleDrain;
 - (void)_closeDatabase:(id)arg1;

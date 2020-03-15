@@ -22,6 +22,7 @@
 }
 
 + (id)reusableIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MFRoundProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) UIImageView *selectedBadgeView; // @synthesize selectedBadgeView=_selectedBadgeView;
 @property(retain, nonatomic) UIImageView *mediaTypeBadgeView; // @synthesize mediaTypeBadgeView=_mediaTypeBadgeView;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(retain, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(copy, nonatomic) NSString *representedAssetIdentifier; // @synthesize representedAssetIdentifier=_representedAssetIdentifier;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setSelected:(_Bool)arg1;
 - (void)resetProgress;

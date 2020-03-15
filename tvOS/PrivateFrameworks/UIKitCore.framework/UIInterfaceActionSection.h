@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)actionsFromSections:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)copyOfActions;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

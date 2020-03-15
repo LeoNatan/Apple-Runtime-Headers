@@ -16,9 +16,9 @@
     NSDate *_displayDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) _Bool isTreatedAsNew;
 @property(readonly, nonatomic) NSString *shortExcerpt;

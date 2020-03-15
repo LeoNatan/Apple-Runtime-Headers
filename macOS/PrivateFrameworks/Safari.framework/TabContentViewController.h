@@ -4,35 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSViewController.h>
+#import <Safari/BrowserContainerViewController.h>
 
 #import <Safari/ReaderInstallationTarget-Protocol.h>
 #import <Safari/TabContentViewDelegate-Protocol.h>
 #import <Safari/VisualTabPickerThumbnailSnapshotProviding-Protocol.h>
 
-@class BrowserViewController, BrowserWindowController, ContinuousReadingListPageItem, ContinuousReadingListViewController, NSHashTable, NSString, NSView, ReaderContainerViewController, TabContentView, TabDialogInstaller;
+@class BrowserViewController, BrowserWindowController, ContinuousReadingListPageItem, ContinuousReadingListViewController, NSHashTable, NSString, NSView, NSViewController, ReaderContainerViewController, TabContentView;
 
 __attribute__((visibility("hidden")))
-@interface TabContentViewController : NSViewController <TabContentViewDelegate, ReaderInstallationTarget, VisualTabPickerThumbnailSnapshotProviding>
+@interface TabContentViewController : BrowserContainerViewController <TabContentViewDelegate, ReaderInstallationTarget, VisualTabPickerThumbnailSnapshotProviding>
 {
+    BrowserViewController *_browserViewController;
     ReaderContainerViewController *_readerContainerViewController;
-    TabDialogInstaller *_tabDialogInstaller;
-    NSView *_firstResponderViewBeforeDimmingViewPresentation;
     NSHashTable *_nativeContentViewControllersThatWereShownInWindow;
     CDUnknownBlockType _updateVisualTabPickerSnapshotBlock;
-    BrowserViewController *_browserViewController;
+    BOOL _didFireCloseEvent;
     BrowserViewController *_currentBrowserViewController;
     double _topContentInset;
     NSViewController *_currentViewController;
     ContinuousReadingListViewController *_continuousReadingListViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ContinuousReadingListViewController *continuousReadingListViewController; // @synthesize continuousReadingListViewController=_continuousReadingListViewController;
 @property(readonly, nonatomic) NSViewController *currentViewController; // @synthesize currentViewController=_currentViewController;
 @property(nonatomic) double topContentInset; // @synthesize topContentInset=_topContentInset;
 @property(readonly, nonatomic) BrowserViewController *currentBrowserViewController; // @synthesize currentBrowserViewController=_currentBrowserViewController;
-@property(readonly, nonatomic) BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
-- (void).cxx_destruct;
+@property(nonatomic) BOOL didFireCloseEvent; // @synthesize didFireCloseEvent=_didFireCloseEvent;
 - (id)webContentModalViewInTabContentView:(id)arg1;
 @property(readonly, nonatomic) struct CGRect visualTabPickerThumbnailContentViewVisibleBounds;
 @property(readonly, nonatomic) NSView *visualTabPickerThumbnailContentView;
@@ -48,15 +47,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) ContinuousReadingListPageItem *currentContinuousReadingListPageItem;
 @property(readonly, nonatomic) BOOL continuousPageViewIsHandlingPageTransitionOrLoadingPageItem;
 @property(readonly, nonatomic, getter=isInContinuousMode) BOOL inContinuousMode;
-- (void)uninstallTabDialogViewAnimated:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)transplantTabDialogView:(id)arg1 andDimmingView:(id)arg2 placement:(long long)arg3;
-- (void)installTabDialogView:(id)arg1 andDimmingView:(id)arg2 placement:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)uninstallModalDialogDimmingViewAnimated:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)dimContentViewForModalDialogPresentation;
-- (void)_didFinishShowingDialog;
-- (void)_willShowDialog;
-- (void)prepareForModalDialogPresentation;
-- (id)_tabDialogInstaller;
 - (void)endDeferringWebViewInWindowChangesSync;
 - (void)endDeferringWebViewInWindowChanges;
 - (void)beginDeferringWebViewInWindowChanges;
@@ -72,10 +62,12 @@ __attribute__((visibility("hidden")))
 - (void)installViewController:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldDisableTitlebarBlurringForCurrentContentView;
 @property(readonly, nonatomic) BOOL isActiveWebViewMagnified;
+@property(readonly, nonatomic) struct CGRect contentVisibleBounds;
 @property(readonly, nonatomic) NSView *dockedInspectorView;
 @property(readonly, nonatomic) NSView *currentDialogOrContentView;
 @property(readonly, nonatomic) TabContentView *tabContentView;
 @property(readonly, nonatomic) BrowserWindowController *browserWindowController;
+- (id)browserViewController;
 - (void)willClose;
 - (void)viewDidAppear;
 - (void)viewDidLoad;

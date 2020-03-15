@@ -18,10 +18,10 @@
 }
 
 + (Class)flowLayoutClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *collectionChanges; // @synthesize collectionChanges=_collectionChanges;
 @property(readonly, nonatomic) NSOperationQueue *backfillQueue; // @synthesize backfillQueue=_backfillQueue;
 @property(retain, nonatomic) KHLayoutCollectionDataSource *collectionDataSource; // @synthesize collectionDataSource=_collectionDataSource;
-- (void).cxx_destruct;
 - (void)collectionDataSourceDidFinishContentGeneration:(id)arg1;
 - (void)collectionDataSource:(id)arg1 didFinishPreviewForProject:(id)arg2;
 - (void)collectionDataSourceDidChangeMetadata:(id)arg1;

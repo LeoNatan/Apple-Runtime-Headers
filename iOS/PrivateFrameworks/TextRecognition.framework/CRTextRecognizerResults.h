@@ -18,13 +18,13 @@
     CRLatticeResults *_latticeResults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CRLatticeResults *latticeResults; // @synthesize latticeResults=_latticeResults;
 @property(retain, nonatomic) NSArray *codeMaps; // @synthesize codeMaps=_codeMaps;
 @property(retain, nonatomic) NSArray *textFeatures; // @synthesize textFeatures=_textFeatures;
 @property(retain, nonatomic) NSDate *endTime; // @synthesize endTime=_endTime;
 @property(retain, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) NSDictionary *inputOptions; // @synthesize inputOptions=_inputOptions;
-- (void).cxx_destruct;
 
 @end
 

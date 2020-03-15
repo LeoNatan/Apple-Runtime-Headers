@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
 + (double)width;
 + (id)installNewTabButtonInView:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSyncedWithOtherButton) BOOL syncedWithOtherButton; // @synthesize syncedWithOtherButton=_syncedWithOtherButton;
 @property(nonatomic) __weak id <NSTabBarSyncedButtonDelegate> buttonInTabSyncGroupDelegate; // @synthesize buttonInTabSyncGroupDelegate=_buttonInTabSyncGroupDelegate;
-- (void).cxx_destruct;
 - (void)setHighlightStateToPressed:(BOOL)arg1 hovered:(BOOL)arg2;
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (void)concludeDragOperation:(id)arg1;

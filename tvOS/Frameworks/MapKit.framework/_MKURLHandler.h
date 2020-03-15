@@ -15,8 +15,8 @@
 
 + (unsigned char)_MKGetURLSchemeTypeFor:(id)arg1;
 + (_Bool)canHandleURL:(id)arg1;
-@property(nonatomic) __weak id <_MKURLHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_MKURLHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)_handleMapItems:(id)arg1 withOptions:(id)arg2 url:(id)arg3 sourceApplication:(id)arg4 context:(id)arg5;
 - (_Bool)_handleMapItemHandlesURL:(id)arg1 sourceApplication:(id)arg2 context:(id)arg3;
 - (void)adjustOptionsForRAP:(id)arg1 options:(id *)arg2;

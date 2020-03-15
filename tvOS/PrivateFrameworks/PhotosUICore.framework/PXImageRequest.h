@@ -23,6 +23,7 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool resultIsInCloud; // @synthesize resultIsInCloud=_resultIsInCloud;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
 @property(readonly, nonatomic) id <PXUIImageProvider> mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-- (void).cxx_destruct;
 - (id)description;
 - (void)performWithResultHandler:(CDUnknownBlockType)arg1;
 - (void)cancel;

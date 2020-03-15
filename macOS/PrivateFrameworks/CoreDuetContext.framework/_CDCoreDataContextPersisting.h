@@ -20,10 +20,10 @@
 
 + (id)persistenceWithStorage:(id)arg1;
 + (id)persistenceWithDirectory:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCountedSet *keyPathRegistrationCount; // @synthesize keyPathRegistrationCount=_keyPathRegistrationCount;
 @property(readonly, nonatomic) _DKCoreDataStorage *storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (id)loadRegistrations;
 - (id)loadValues;
 - (void)deleteDataCreatedBefore:(id)arg1;

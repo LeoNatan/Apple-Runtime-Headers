@@ -14,9 +14,9 @@
     NSArray *_highlights;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *highlights; // @synthesize highlights=_highlights;
 @property(retain, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 
 @end
 

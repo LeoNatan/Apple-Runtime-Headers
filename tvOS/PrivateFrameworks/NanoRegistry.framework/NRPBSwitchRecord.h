@@ -21,10 +21,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int switchIndex; // @synthesize switchIndex=_switchIndex;
 @property(nonatomic) double dateTimeInterval; // @synthesize dateTimeInterval=_dateTimeInterval;
 @property(retain, nonatomic) NSData *deviceIDBytes; // @synthesize deviceIDBytes=_deviceIDBytes;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

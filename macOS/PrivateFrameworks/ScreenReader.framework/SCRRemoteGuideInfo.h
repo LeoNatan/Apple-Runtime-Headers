@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     long long _selectionIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectionIndex; // @synthesize selectionIndex=_selectionIndex;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(nonatomic) BOOL lazyFetch; // @synthesize lazyFetch=_lazyFetch;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *guideItems; // @synthesize guideItems=_guideItems;
 @property(copy, nonatomic) NSArray *results; // @synthesize results=_results;
 @property(copy, nonatomic) NSSet *searchKeys; // @synthesize searchKeys=_searchKeys;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

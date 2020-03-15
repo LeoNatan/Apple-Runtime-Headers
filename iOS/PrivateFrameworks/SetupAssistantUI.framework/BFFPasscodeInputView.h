@@ -18,12 +18,12 @@
     UIButton *_instructionsLinkButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *instructionsLinkButton; // @synthesize instructionsLinkButton=_instructionsLinkButton;
 @property(retain, nonatomic) UIButton *footerButton; // @synthesize footerButton=_footerButton;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UILabel *instructions; // @synthesize instructions=_instructions;
 @property(nonatomic) __weak id <BFFPasscodeInputViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)shakePasscode;
 - (void)disable;

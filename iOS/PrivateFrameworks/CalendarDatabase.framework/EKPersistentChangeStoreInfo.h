@@ -15,10 +15,10 @@
     NSString *_minConsumedClientIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int secondMinConsumedSequenceNumber; // @synthesize secondMinConsumedSequenceNumber=_secondMinConsumedSequenceNumber;
 @property(retain, nonatomic) NSString *minConsumedClientIdentifier; // @synthesize minConsumedClientIdentifier=_minConsumedClientIdentifier;
 @property(nonatomic) int minConsumedSequenceNumber; // @synthesize minConsumedSequenceNumber=_minConsumedSequenceNumber;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

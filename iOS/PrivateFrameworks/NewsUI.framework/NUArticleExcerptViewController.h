@@ -19,11 +19,11 @@
     NUArticleExcerptView *_excerptView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUArticleExcerptView *excerptView; // @synthesize excerptView=_excerptView;
 @property(retain, nonatomic) NUArticleExcerptTraits *traits; // @synthesize traits=_traits;
 @property(readonly, nonatomic) FCArticle *article; // @synthesize article=_article;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
-- (void).cxx_destruct;
 - (void)loadExcerptFromArticle:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadHeadlineImageFromArticle:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)traitCollectionDidChange:(id)arg1;

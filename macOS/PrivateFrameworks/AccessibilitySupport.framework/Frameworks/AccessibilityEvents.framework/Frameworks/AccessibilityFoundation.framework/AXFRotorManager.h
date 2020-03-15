@@ -14,9 +14,9 @@
     AXFUIElement *_rotorProviderElement;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldGoUpHierarchy; // @synthesize shouldGoUpHierarchy=_shouldGoUpHierarchy;
 @property(nonatomic) __weak AXFUIElement *rotorProviderElement; // @synthesize rotorProviderElement=_rotorProviderElement;
-- (void).cxx_destruct;
 - (id)_webRotorItemResultsForProvider:(id)arg1 withPredicate:(id)arg2;
 - (id)allResultsForWebRotorType:(id)arg1;
 - (id)_customRotorItemResultsForProvider:(id)arg1 withPredicate:(id)arg2;

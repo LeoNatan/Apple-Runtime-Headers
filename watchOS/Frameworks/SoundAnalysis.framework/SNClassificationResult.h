@@ -18,9 +18,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_e83c9415 timeRange; // @synthesize timeRange=_timeRange;
 @property(copy, nonatomic) NSArray *classifications; // @synthesize classifications=_classifications;
-- (void).cxx_destruct;
 - (id)_init;
 - (id)init;
 

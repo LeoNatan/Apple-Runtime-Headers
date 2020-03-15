@@ -14,9 +14,9 @@
     CNContact *_contact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) ABUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
-- (void).cxx_destruct;
 - (id)defaultNameOrder;
 - (id)phoneticNameKeys;
 - (id)nameKeys;

@@ -21,11 +21,12 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) int regexStyle; // @synthesize regexStyle=_regexStyle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) int regexStyle; // @synthesize regexStyle=_regexStyle;
 - (void)resetStoredRules;
 - (_Bool)hasStoredRules;
+- (id)boostRules;
 - (id)regexRules;
 - (id)_processReplacementStringForSpecialCharacters:(id)arg1;
 - (id)_nsApplyRulesForText:(id)arg1 rangeAdjustments:(id)arg2;

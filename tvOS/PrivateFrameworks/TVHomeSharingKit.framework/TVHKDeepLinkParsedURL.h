@@ -32,6 +32,7 @@
 + (unsigned long long)_mediaItemTypeFromString:(id)arg1;
 + (unsigned long long)_mediaCategoryTypeFromString:(id)arg1;
 + (id)deepLinkParsedURLFromURL:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *showTitle; // @synthesize showTitle=_showTitle;
 @property(retain, nonatomic) TVHKMediaEntityIdentifier *seasonIdentifier; // @synthesize seasonIdentifier=_seasonIdentifier;
 @property(copy, nonatomic) NSString *albumArtistTitle; // @synthesize albumArtistTitle=_albumArtistTitle;
@@ -47,7 +48,6 @@
 @property(copy, nonatomic) NSString *action; // @synthesize action=_action;
 @property(copy, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

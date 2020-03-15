@@ -41,6 +41,7 @@
 @property(retain, nonatomic) UNUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 - (id)_groupHashForHandles:(id)arg1 lastAddressedHandle:(id)arg2;
 - (void)_setContactInMessageDictionary:(struct _IMDHandleRecordStruct *)arg1 messageDictionary:(id)arg2;
+- (BOOL)_chatHasDNDSetBasedOnChatGUID:(id)arg1 chatIdentifier:(id)arg2 groupID:(id)arg3 handles:(id)arg4 lastAddressedHandleString:(id)arg5 style:(long long)arg6;
 - (BOOL)_chatHasDNDSetBasedOnDNDIdentifier:(id)arg1;
 - (BOOL)_messageShouldBeSilentlyDeliveredForBusinessChat:(id)arg1;
 -     // Error parsing type: @24@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16, name: _chatDictionaryForMessageRecord:
@@ -48,6 +49,7 @@
 -     // Error parsing type: @28@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16c24, name: _generateNotificationRequestForDeliveryError:isCarouselUITriggered:
 -     // Error parsing type: @44@0:8^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}16c24c28c32^c36, name: _generateNotificationRequestForMessageRecord:isUrgentMessage:isCarouselUITriggered:isMostActive:shouldAdvanceLastAlertedMessageDate:
 - (unsigned long long)screenTimeNotificationOptionsForChatDictionary:(id)arg1;
+- (unsigned long long)screenTimeNotificationOptionsForContext:(id)arg1;
 - (BOOL)_shouldPostNotificationRequest:(id)arg1;
 - (BOOL)_haveMigrated;
 - (BOOL)_shouldOverrideChatSilencingBecauseImMentioned:(id)arg1;

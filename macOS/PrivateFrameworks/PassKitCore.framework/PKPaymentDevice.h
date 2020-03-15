@@ -26,8 +26,8 @@
 
 + (id)clientHardwarePlatformInfoHTTPHeader;
 + (id)clientInfoHTTPHeader;
-@property(nonatomic) BOOL skipLocationCheck; // @synthesize skipLocationCheck=_skipLocationCheck;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL skipLocationCheck; // @synthesize skipLocationCheck=_skipLocationCheck;
 - (void)configurationDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)queueConnectionToTrustedServiceManagerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_executeDeviceMetadataFetchTasksCompletionHandlers;

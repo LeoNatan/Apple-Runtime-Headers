@@ -16,8 +16,8 @@
     NSMutableSet *_displayReasons;
 }
 
-@property(readonly, nonatomic) id <SBStarkNotificationsConfiguring> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SBStarkNotificationsConfiguring> configuration; // @synthesize configuration=_configuration;
 - (void)_callOrFaceTimeStateChanged;
 - (_Bool)_inCallOrFaceTime;
 - (_Bool)isStarkBannerItem;

@@ -20,6 +20,7 @@
 }
 
 + (id)valuesAtCaptureFromImageProperties:(id)arg1 error:(out id *)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_6ed351db versionInfo; // @synthesize versionInfo=_versionInfo;
 @property(nonatomic) unsigned long long portraitMinorVersion; // @synthesize portraitMinorVersion=_portraitMinorVersion;
 @property(nonatomic) unsigned long long portraitMajorVersion; // @synthesize portraitMajorVersion=_portraitMajorVersion;
@@ -27,7 +28,6 @@
 @property(retain, nonatomic) NSNumber *minimumAperture; // @synthesize minimumAperture=_minimumAperture;
 @property(nonatomic) float portraitStrength; // @synthesize portraitStrength=_portraitStrength;
 @property(nonatomic) float aperture; // @synthesize aperture=_aperture;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -16,11 +16,11 @@
     NSString *_filterString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filterString; // @synthesize filterString=_filterString;
 @property(retain, nonatomic) NSIndexPath *currentlySelectedIndexPath; // @synthesize currentlySelectedIndexPath=_currentlySelectedIndexPath;
 @property(retain, nonatomic) NSArray *themes; // @synthesize themes=_themes;
 @property(readonly, nonatomic) NSArray *filteredThemes; // @synthesize filteredThemes=_filteredThemes;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *themesIfFiltered;
 - (id)indexPathMatchingSearchString:(id)arg1;
 - (id)themeProviderAtIndexPath:(id)arg1;

@@ -25,6 +25,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *provisionUUID; // @synthesize provisionUUID=_provisionUUID;
 @property(retain, nonatomic) NSData *token2; // @synthesize token2=_token2;
 @property(retain, nonatomic) NSData *token1; // @synthesize token1=_token1;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) long long role; // @synthesize role=_role;
 @property(readonly) __weak id <HAPAuthSessionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleTokenUpdateResponse:(id)arg1 withHeader:(_Bool)arg2;
 - (_Bool)getToken:(id *)arg1 uuid:(id *)arg2;
 - (void)_sendTokenUpdateRequest:(id)arg1;

@@ -18,8 +18,8 @@
 
 + (id)configurationWithIncomingItemsIdentifierFunction:(CDUnknownBlockType)arg1 publishedItemsIdentifierFunction:(CDUnknownBlockType)arg2;
 + (id)identityConfiguration;
-@property(retain, nonatomic) id <CRKArrayDifferenceConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CRKArrayDifferenceConfiguration> configuration; // @synthesize configuration=_configuration;
 - (void)updateWithNewArray:(id)arg1;
 - (id)initWithObject:(id)arg1 keyPath:(id)arg2 configuration:(id)arg3;
 

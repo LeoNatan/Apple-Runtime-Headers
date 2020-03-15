@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     MKMapView *_mapView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
 @property(nonatomic) float mapZoomScale; // @synthesize mapZoomScale=_mapZoomScale;
 @property(nonatomic) __weak id <MKOverlayContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 - (void)_insertDrawable:(id)arg1 forOverlay:(id)arg2 atIndex:(int)arg3 level:(int)arg4;
 - (void)_updateContentScale:(id)arg1;

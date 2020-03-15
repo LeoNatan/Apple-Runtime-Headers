@@ -31,7 +31,7 @@
 + (void)_debugDrawOnePixelFrameRect:(struct CGRect)arg1 color:(id)arg2 draw:(BOOL)arg3;
 + (BOOL)_segmentStyleShowsSelectedInBezelWithTracking:(long long)arg1 tracking:(unsigned long long)arg2;
 + (BOOL)_segmentStyleWantsOnStateWhenPressedWithMomentaryTracking:(long long)arg1;
-+ (unsigned long long)_image_state_for_visual_state:(unsigned long long)arg1 style:(long long)arg2 trackingMode:(unsigned long long)arg3;
++ (unsigned long long)_image_state_for_visual_state:(unsigned long long)arg1 style:(long long)arg2 drawsBezel:(BOOL)arg3 trackingMode:(unsigned long long)arg4;
 + (BOOL)_givenState:(unsigned long long)arg1 hasState:(unsigned long long)arg2;
 + (BOOL)_segmentStyleIsFakedWithButtonArt:(long long)arg1;
 + (struct CGRect)_cuiRectForProposedRect:(struct CGRect)arg1 style:(long long)arg2 controlSize:(unsigned long long)arg3 scale:(double)arg4 currentAppearance:(id)arg5 controlView:(id)arg6;

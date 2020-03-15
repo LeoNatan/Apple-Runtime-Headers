@@ -32,10 +32,10 @@
 + (id)scopeOrderForSentMailbox;
 + (id)geniusForMails;
 + (id)geniusForFiles;
+- (void).cxx_destruct;
 @property(readonly) BOOL usesSimpleTokens; // @synthesize usesSimpleTokens;
 @property(copy) NSArray *scopeOrder; // @synthesize scopeOrder;
 @property(readonly) NSArray *allAttributeNames; // @synthesize allAttributeNames;
-- (void).cxx_destruct;
 - (void)_parseInputString:(id)arg1 withGroup:(id)arg2;
 - (id)_parseResultForGroup:(id)arg1 queryCanceled:(char *)arg2;
 @property(retain, setter=_setOverrideDate:) NSDate *overrideDate;

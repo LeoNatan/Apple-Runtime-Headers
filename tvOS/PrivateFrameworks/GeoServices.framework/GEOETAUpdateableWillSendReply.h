@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) GEOETATrafficUpdateRequest *updatedRequest; // @synthesize updatedRequest=_updatedRequest;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOETATrafficUpdateRequest *updatedRequest; // @synthesize updatedRequest=_updatedRequest;
 - (_Bool)isValid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

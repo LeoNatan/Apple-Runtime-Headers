@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     id <PUFilteredMomentsDataSourceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 @property(nonatomic) __weak id <PUFilteredMomentsDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)fetchResult;
 - (void)mergePendingChanges;
 - (void)_inqClearPendingChanges;

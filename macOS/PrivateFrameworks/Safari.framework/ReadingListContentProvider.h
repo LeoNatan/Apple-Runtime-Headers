@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _maximumNumberOfItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maximumNumberOfItems; // @synthesize maximumNumberOfItems=_maximumNumberOfItems;
 @property(nonatomic) BOOL showsOnlyUnreadItems; // @synthesize showsOnlyUnreadItems=_showsOnlyUnreadItems;
-- (void).cxx_destruct;
 - (void)_updateCachedUnreadItems:(id)arg1;
 - (void)updateCachedUnreadItemsAfterUpdatingItemReadState:(id)arg1;
 - (void)_rebuildCachedUnreadItems;

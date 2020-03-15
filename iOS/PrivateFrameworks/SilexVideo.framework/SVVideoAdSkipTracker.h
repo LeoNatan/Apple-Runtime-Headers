@@ -17,9 +17,9 @@
     id <SVVideoProviderProviding> _videoProviderProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SVVideoProviderProviding> videoProviderProvider; // @synthesize videoProviderProvider=_videoProviderProvider;
 @property(readonly, nonatomic) id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (id)initWithQueueProvider:(id)arg1 videoProviderProvider:(id)arg2;
 

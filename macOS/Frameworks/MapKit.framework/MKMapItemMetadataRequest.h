@@ -13,8 +13,8 @@
     MKMapItem *_mapItem;
 }
 
-@property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(readonly, nonatomic) NSURLRequest *urlRequest;
 @property(readonly, nonatomic) NSURL *url;
 - (void)handleError:(id)arg1;

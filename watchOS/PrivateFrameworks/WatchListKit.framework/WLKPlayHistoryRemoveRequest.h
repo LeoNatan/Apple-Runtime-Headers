@@ -15,9 +15,9 @@
     NSString *_externalID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (void)makeRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithBundleID:(id)arg1 externalID:(id)arg2;
 

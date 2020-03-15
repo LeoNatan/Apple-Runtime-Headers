@@ -21,11 +21,11 @@
 
 + (id)_lunarCalendarIdentifier;
 + (_Bool)showAlternateDate;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBUILegibilityLabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) double strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
-- (void).cxx_destruct;
 - (id)_alternateDateString;
 @property(readonly, nonatomic) struct UIEdgeInsets characterOverflowInsets;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;

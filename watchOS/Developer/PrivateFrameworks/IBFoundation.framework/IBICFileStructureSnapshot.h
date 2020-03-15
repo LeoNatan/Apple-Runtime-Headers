@@ -21,6 +21,7 @@
 }
 
 + (id)snapshotOfPath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly) __weak IBICFileStructureSnapshot *parent; // @synthesize parent=_parent;
 @property(readonly) NSArray *children; // @synthesize children=_children;
 @property(readonly) _Bool isDirectory; // @synthesize isDirectory=_isDirectory;
@@ -28,7 +29,6 @@
 @property(readonly) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(readonly) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)descriptionWithIndent:(long long)arg1 includeChildren:(_Bool)arg2;
 - (id)childWithFileName:(id)arg1;

@@ -14,9 +14,9 @@
     NNMKProtoFetchRequest *_latestFetchRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKProtoFetchRequest *latestFetchRequest; // @synthesize latestFetchRequest=_latestFetchRequest;
 @property(retain, nonatomic) NSMutableDictionary *messagesToBeSentInBatch; // @synthesize messagesToBeSentInBatch=_messagesToBeSentInBatch;
-- (void).cxx_destruct;
 - (id)diffFromMessages:(id)arg1 maxMessagesToAdd:(unsigned long long)arg2;
 - (id)init;
 

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     SCRSelectionChangeHelper *__selectionChangeHelper;
 }
 
-@property(retain, nonatomic) SCRSelectionChangeHelper *_selectionChangeHelper; // @synthesize _selectionChangeHelper=__selectionChangeHelper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCRSelectionChangeHelper *_selectionChangeHelper; // @synthesize _selectionChangeHelper=__selectionChangeHelper;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (BOOL)allowFocusThroughSingleChild;
 - (id)moveToUIElement:(id)arg1 options:(unsigned long long)arg2;

@@ -32,13 +32,13 @@
     float _modalShadowVisibility;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float modalShadowVisibility; // @synthesize modalShadowVisibility=_modalShadowVisibility;
 @property(nonatomic, getter=isModallyPresented) _Bool modallyPresented; // @synthesize modallyPresented=_modallyPresented;
 @property(nonatomic) unsigned int suppressedContent; // @synthesize suppressedContent=_suppressedContent;
 @property(nonatomic) int contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) __weak id <WLCardViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
-- (void).cxx_destruct;
 - (void)_updateFrontFaceSuppressedContent;
 - (_Bool)_visibleFaceShouldClipForCurrentViewMode:(float *)arg1;
 - (unsigned int)_regionsForCurrentModes;

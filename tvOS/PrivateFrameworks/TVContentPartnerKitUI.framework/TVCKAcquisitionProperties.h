@@ -22,6 +22,7 @@
 }
 
 + (id)acquisitionPropertiesWithBuyParams:(id)arg1 urlbagKey:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoresForcedPasswordRestriction; // @synthesize ignoresForcedPasswordRestriction=_ignoresForcedPasswordRestriction;
 @property(nonatomic) _Bool shouldCacheDataItem; // @synthesize shouldCacheDataItem=_shouldCacheDataItem;
 @property(copy, nonatomic) NSString *strongToken; // @synthesize strongToken=_strongToken;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(copy, nonatomic) NSString *urlBagKey; // @synthesize urlBagKey=_urlBagKey;
 @property(copy, nonatomic) NSString *buyParams; // @synthesize buyParams=_buyParams;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

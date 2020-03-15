@@ -13,8 +13,8 @@
     NSDictionary *_hidDictionary;
 }
 
-@property(copy, nonatomic) NSDictionary *hidDictionary; // @synthesize hidDictionary=_hidDictionary;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDictionary *hidDictionary; // @synthesize hidDictionary=_hidDictionary;
 - (id)initWithTriggerType:(unsigned long long)arg1 actionType:(unsigned long long)arg2 action:(unsigned long long)arg3 customName:(id)arg4 customNameIsLocalized:(BOOL)arg5 uuid:(id)arg6;
 - (id)propertyList;
 - (id)initWithHIDDictionary:(id)arg1 actionType:(unsigned long long)arg2 action:(unsigned long long)arg3 customName:(id)arg4 customNameIsLocalized:(BOOL)arg5 uuid:(id)arg6;

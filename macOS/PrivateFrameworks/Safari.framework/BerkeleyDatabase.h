@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     NSURL *_databaseURL;
 }
 
-@property(retain, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 - (BOOL)_tryOpeningDatabaseOfType:(int)arg1 atPath:(const char *)arg2;
 - (BOOL)_tryOpeningDatabaseAtPath:(const char *)arg1 error:(id *)arg2;
 - (id)dataForKey:(id)arg1;

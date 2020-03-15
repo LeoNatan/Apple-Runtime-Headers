@@ -14,9 +14,9 @@
     PASampleThreadData *_sampleThread;
 }
 
+- (void).cxx_destruct;
 @property(readonly) PASampleThreadData *sampleThread; // @synthesize sampleThread=_sampleThread;
 @property unsigned long long lastTimestampIndex; // @synthesize lastTimestampIndex=_lastTimestampIndex;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithSampleThread:(id)arg1 atTimestampIndex:(unsigned long long)arg2;
 

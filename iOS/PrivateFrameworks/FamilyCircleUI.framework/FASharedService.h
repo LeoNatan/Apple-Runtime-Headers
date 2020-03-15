@@ -23,6 +23,7 @@
     NSString *_actionURLString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *actionURLString; // @synthesize actionURLString=_actionURLString;
 @property(readonly, nonatomic) NSString *iconURLStringx3; // @synthesize iconURLStringx3=_iconURLStringx3;
 @property(readonly, nonatomic) NSString *iconURLStringx2; // @synthesize iconURLStringx2=_iconURLStringx2;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) _Bool isDefault; // @synthesize isDefault=_isDefault;
 @property(readonly, nonatomic) _Bool isSeparator; // @synthesize isSeparator=_isSeparator;
-- (void).cxx_destruct;
 - (_Bool)isEqualToSharedService:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

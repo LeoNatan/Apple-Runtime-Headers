@@ -36,11 +36,11 @@ __attribute__((visibility("hidden")))
     struct CGRect _disabledScrollingRegion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect disabledScrollingRegion; // @synthesize disabledScrollingRegion=_disabledScrollingRegion;
 @property(nonatomic) float pageSpacing; // @synthesize pageSpacing=_pageSpacing;
 @property(nonatomic) __weak id <_UIQueuingScrollViewDataSource> qDataSource; // @synthesize qDataSource=_qDataSource;
 @property(nonatomic) __weak id <_UIQueuingScrollViewDelegate> qDelegate; // @synthesize qDelegate=_qDelegate;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFocused;
 - (void)_didEndProgrammaticScroll;
 - (void)_didEndManualScroll;

@@ -22,13 +22,13 @@
     CNContactStore *_contactStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(copy, nonatomic) NSArray *people; // @synthesize people=_people;
 @property(copy, nonatomic) NSString *senderIdentityLabel; // @synthesize senderIdentityLabel=_senderIdentityLabel;
 @property(nonatomic) __weak id <NCABPersonListViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
-- (void).cxx_destruct;
 - (void)_contentSizeChanged:(id)arg1;
 - (void)_loadData;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

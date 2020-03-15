@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 @property(readonly, nonatomic) VUITextLayout *headerTextLayout; // @synthesize headerTextLayout=_headerTextLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

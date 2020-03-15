@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double bottomSpeed; // @synthesize bottomSpeed=_bottomSpeed;
 @property(readonly, nonatomic) double topSpeed; // @synthesize topSpeed=_topSpeed;
 @property(readonly, nonatomic) double averageSpeed; // @synthesize averageSpeed=_averageSpeed;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSArray *allValidLocations; // @synthesize allValidLocations=_allValidLocations;
 @property(readonly, nonatomic) HKWorkout *workout; // @synthesize workout=_workout;
 @property(readonly, nonatomic) _Bool isSmoothed; // @synthesize isSmoothed=_isSmoothed;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)lastObject;

@@ -28,6 +28,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *siteCodeCache; // @synthesize siteCodeCache=_siteCodeCache;
 @property(retain, nonatomic) NSString *networkHomeDirectory; // @synthesize networkHomeDirectory=_networkHomeDirectory;
 @property(retain, nonatomic) NSString *datePasswordExpires; // @synthesize datePasswordExpires=_datePasswordExpires;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSUUID *credentialUUID; // @synthesize credentialUUID=_credentialUUID;
 @property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(retain, nonatomic) NSString *userPrincipalName; // @synthesize userPrincipalName=_userPrincipalName;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)siteCodeForNetworkFingerprint:(id)arg1;

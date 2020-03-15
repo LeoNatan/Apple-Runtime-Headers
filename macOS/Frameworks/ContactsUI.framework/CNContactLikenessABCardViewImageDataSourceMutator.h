@@ -18,9 +18,9 @@
 }
 
 + (id)imageFromLikeness:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) id <ABCardViewImageDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)setLikenessAsCurrent:(id)arg1;
 - (id)deleteLikeness:(id)arg1;
 - (id)updateLikeness:(id)arg1;

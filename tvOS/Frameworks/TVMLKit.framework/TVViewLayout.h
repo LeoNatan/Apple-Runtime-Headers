@@ -40,6 +40,7 @@
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
 + (Class)layoutClassForElement:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *group; // @synthesize group=_group;
 @property(copy, nonatomic) NSString *progressStyle; // @synthesize progressStyle=_progressStyle;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
@@ -66,7 +67,6 @@
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) struct UIEdgeInsets margin; // @synthesize margin=_margin;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (CDUnknownBlockType)tv_layoutPropertyGetterForStyle:(id)arg1;
 - (CDUnknownBlockType)tv_layoutPropertySetterForStyle:(id)arg1;

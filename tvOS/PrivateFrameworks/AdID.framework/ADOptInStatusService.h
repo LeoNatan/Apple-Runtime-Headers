@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requestInFlight; // @synthesize requestInFlight=_requestInFlight;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (id)optInStatusString:(long long)arg1;
 - (void)advertisingIdentifier:(CDUnknownBlockType)arg1;
 - (void)advertisingIdentifierChanged:(CDUnknownBlockType)arg1;

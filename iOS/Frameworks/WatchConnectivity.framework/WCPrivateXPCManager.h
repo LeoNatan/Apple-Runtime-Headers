@@ -25,11 +25,11 @@
 + (id)privateClientInterface;
 + (id)privateDaemonInterface;
 + (void)initialize;
+- (void).cxx_destruct;
 @property int privateServiceShouldConnectToken; // @synthesize privateServiceShouldConnectToken=_privateServiceShouldConnectToken;
 @property int listenerResumedToken; // @synthesize listenerResumedToken=_listenerResumedToken;
 @property(readonly) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak NSObject<WCPrivateXPCManagerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)handlePairedSyncComplicationsStartedWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)isExtensionPrivileged:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handlePingForExtensionBundleID:(id)arg1;

@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)intrinsicContentSizeForOrientation:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIStatusBarRegion *radarRegion; // @synthesize radarRegion=_radarRegion;
 @property(retain, nonatomic) _UIStatusBarRegion *timeRegion; // @synthesize timeRegion=_timeRegion;
 @property(retain, nonatomic) NSDictionary *orderedDisplayItemPlacements; // @synthesize orderedDisplayItemPlacements=_orderedDisplayItemPlacements;
 @property(nonatomic) __weak _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
-- (void).cxx_destruct;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (id)_animationForQuietMode;
 - (id)_animationForBackgroundActivityPill;

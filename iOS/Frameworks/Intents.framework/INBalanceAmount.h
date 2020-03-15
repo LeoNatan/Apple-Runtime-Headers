@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(readonly, nonatomic) long long balanceType; // @synthesize balanceType=_balanceType;
 @property(readonly, copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)description;
@@ -34,7 +34,7 @@
 - (id)initWithAmount:(id)arg1 balanceType:(long long)arg2 currencyCode:(id)arg3;
 - (id)initWithAmount:(id)arg1 currencyCode:(id)arg2;
 - (id)initWithAmount:(id)arg1 balanceType:(long long)arg2;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 
 @end
 

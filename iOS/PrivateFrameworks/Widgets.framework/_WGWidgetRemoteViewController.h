@@ -20,10 +20,10 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isValid, setter=_setValid:) _Bool valid; // @synthesize valid=_valid;
 @property(nonatomic) __weak WGWidgetHostingViewController *managingHost; // @synthesize managingHost=_managingHost;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *managingHostQueue; // @synthesize managingHostQueue=_managingHostQueue;
-- (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)__closeTransactionForAppearanceCallWithState:(int)arg1 withIdentifier:(id)arg2;
 - (void)__setLargestAvailableDisplayMode:(long long)arg1;

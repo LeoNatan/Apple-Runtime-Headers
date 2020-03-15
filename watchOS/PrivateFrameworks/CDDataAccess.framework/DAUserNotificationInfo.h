@@ -16,10 +16,10 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
-- (void).cxx_destruct;
 
 @end
 

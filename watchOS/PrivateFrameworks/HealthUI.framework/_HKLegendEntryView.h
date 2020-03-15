@@ -17,8 +17,8 @@
     HKLegendEntry *_legendEntry;
 }
 
-@property(retain, nonatomic) HKLegendEntry *legendEntry; // @synthesize legendEntry=_legendEntry;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HKLegendEntry *legendEntry; // @synthesize legendEntry=_legendEntry;
 - (id)initWithLegendEntry:(id)arg1;
 
 @end

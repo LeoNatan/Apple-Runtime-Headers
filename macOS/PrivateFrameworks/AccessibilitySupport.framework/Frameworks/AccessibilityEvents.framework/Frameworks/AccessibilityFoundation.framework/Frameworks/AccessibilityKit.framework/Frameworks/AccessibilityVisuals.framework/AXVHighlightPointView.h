@@ -15,10 +15,10 @@
     struct CGPoint _highlightPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCircleLayer:) CAShapeLayer *_circleLayer; // @synthesize _circleLayer=__circleLayer;
 @property(retain, nonatomic) NSColor *highlightPointColor; // @synthesize highlightPointColor=_highlightPointColor;
 @property(nonatomic) struct CGPoint highlightPoint; // @synthesize highlightPoint=_highlightPoint;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFrameSpanningAllScreens;
 

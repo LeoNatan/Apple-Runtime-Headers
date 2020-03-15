@@ -35,6 +35,7 @@
     NSArray *_attachmentUUIDsToUpload;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *attachmentUUIDsToUpload; // @synthesize attachmentUUIDsToUpload=_attachmentUUIDsToUpload;
 @property(retain, nonatomic) CalDiagAccountSync *accountSyncDiagnostics; // @synthesize accountSyncDiagnostics=_accountSyncDiagnostics;
 @property(retain, nonatomic) NSString *calendarHomeSyncToken; // @synthesize calendarHomeSyncToken=_calendarHomeSyncToken;
@@ -51,7 +52,6 @@
 @property(nonatomic) __weak MobileCalDAVAccount *account; // @synthesize account=_account;
 @property(nonatomic) _Bool shouldCancel; // @synthesize shouldCancel=_shouldCancel;
 @property(retain, nonatomic) CalDAVRefreshContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_sendResultToAccount;
 - (void)_calendarCollectionsWereRefreshed;
 - (void)_uploadAttachments;

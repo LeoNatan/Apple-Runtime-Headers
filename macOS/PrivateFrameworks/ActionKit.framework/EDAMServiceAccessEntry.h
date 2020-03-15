@@ -20,13 +20,13 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *businessAdmin; // @synthesize businessAdmin=_businessAdmin;
 @property(retain, nonatomic) NSNumber *apiKeyId; // @synthesize apiKeyId=_apiKeyId;
 @property(retain, nonatomic) NSNumber *authenticatedClientUserId; // @synthesize authenticatedClientUserId=_authenticatedClientUserId;
 @property(retain, nonatomic) NSNumber *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSNumber *accessTime; // @synthesize accessTime=_accessTime;
-- (void).cxx_destruct;
 
 @end
 

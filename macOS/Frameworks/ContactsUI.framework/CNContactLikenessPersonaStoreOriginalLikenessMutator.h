@@ -17,10 +17,10 @@
     CNUIMeContactMonitor *_meMonitor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNUIMeContactMonitor *meMonitor; // @synthesize meMonitor=_meMonitor;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
-- (void).cxx_destruct;
 - (BOOL)shouldSaveOriginalLikenessOfLikeness:(id)arg1;
 - (id)setLikenessAsCurrent:(id)arg1;
 - (id)deleteLikeness:(id)arg1;

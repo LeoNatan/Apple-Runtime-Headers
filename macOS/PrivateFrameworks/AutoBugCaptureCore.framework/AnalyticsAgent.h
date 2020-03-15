@@ -24,10 +24,10 @@ __attribute__((visibility("hidden")))
 + (id)_awdSymptomsDiagnosticIncidentReportMetricForDiagnosticCase:(id)arg1;
 + (id)_awdSymptomsDiagnosticNotificationTokenMetricForTokenString:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *awdSymptomsConfiguredMetricIds; // @synthesize awdSymptomsConfiguredMetricIds=_awdSymptomsConfiguredMetricIds;
 @property(retain) AWDServerConnection *symptomsAWDConnection; // @synthesize symptomsAWDConnection=_symptomsAWDConnection;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)postMetricForSignificantEventWithName:(id)arg1 errorContext:(int)arg2 error:(id)arg3 status:(int)arg4;
 - (void)postMetricForSignificantEvent:(int)arg1 errorContext:(int)arg2 error:(id)arg3 status:(int)arg4;
 - (void)postDiagnosticIncidentReportForCase:(id)arg1;

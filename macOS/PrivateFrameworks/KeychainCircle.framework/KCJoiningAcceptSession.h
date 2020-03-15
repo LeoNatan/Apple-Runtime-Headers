@@ -27,6 +27,7 @@
 }
 
 + (id)sessionWithInitialMessage:(id)arg1 secretDelegate:(id)arg2 circleDelegate:(id)arg3 dsid:(unsigned long long)arg4 error:(id *)arg5;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) OTControl *otControl; // @synthesize otControl=_otControl;
 @property(retain, nonatomic) OTJoiningConfiguration *joiningConfiguration; // @synthesize joiningConfiguration=_joiningConfiguration;
@@ -40,12 +41,13 @@
 @property __weak id <KCJoiningAcceptCircleDelegate> circleDelegate; // @synthesize circleDelegate=_circleDelegate;
 @property __weak id <KCJoiningAcceptSecretDelegate> secretDelegate; // @synthesize secretDelegate=_secretDelegate;
 @property(readonly) unsigned long long dsid; // @synthesize dsid=_dsid;
-- (void).cxx_destruct;
+- (id)accessSession;
 - (void)setConfiguration:(id)arg1;
 - (void)setControlObject:(id)arg1;
 - (_Bool)isDone;
 - (id)processMessage:(id)arg1 error:(id *)arg2;
 - (id)processApplication:(id)arg1 error:(id *)arg2;
+- (id)createTLKRequestResponse:(id *)arg1;
 - (id)createPairingMessageFromJoiningMessage:(id)arg1 error:(id *)arg2;
 - (id)processSOSApplication:(id)arg1 error:(id *)arg2;
 - (id)processResponse:(id)arg1 error:(id *)arg2;

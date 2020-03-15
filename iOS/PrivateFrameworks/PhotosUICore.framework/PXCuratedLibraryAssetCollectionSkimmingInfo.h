@@ -20,6 +20,7 @@
     struct PXSimpleIndexPath _currentChildCollectionIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct PXSimpleIndexPath currentChildCollectionIndexPath; // @synthesize currentChildCollectionIndexPath=_currentChildCollectionIndexPath;
 @property(retain, nonatomic) PXIndexPathSet *childCollectionsIndexes; // @synthesize childCollectionsIndexes=_childCollectionsIndexes;
 @property(nonatomic) long long childCollectionsZoomLevel; // @synthesize childCollectionsZoomLevel=_childCollectionsZoomLevel;
@@ -27,7 +28,6 @@
 @property(nonatomic) _Bool touchInteractionStarted; // @synthesize touchInteractionStarted=_touchInteractionStarted;
 @property(nonatomic) _Bool slideshowStarted; // @synthesize slideshowStarted=_slideshowStarted;
 @property(nonatomic) _Bool hintsVisible; // @synthesize hintsVisible=_hintsVisible;
-- (void).cxx_destruct;
 
 @end
 

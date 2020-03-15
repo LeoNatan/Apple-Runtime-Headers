@@ -34,6 +34,7 @@
     UIBarButtonItem *_doneButtonItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *actualSections; // @synthesize actualSections=_actualSections;
 @property(retain, nonatomic) UIBarButtonItem *doneButtonItem; // @synthesize doneButtonItem=_doneButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) HKSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(nonatomic) __weak id <HKHealthPrivacyServicePromptControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_configurationFailedWithError:(id)arg1;
 - (void)_addHeaderView;
 - (_Bool)shouldPresent;

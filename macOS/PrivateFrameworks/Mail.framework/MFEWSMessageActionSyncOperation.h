@@ -16,10 +16,10 @@
     id <MFEWSMessageActionSyncOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MFEWSMessageActionSyncOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) ECLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
-- (void).cxx_destruct;
 - (id)folderIDStringForMailboxURLString:(id)arg1;
 - (id)folderIDStringForMailbox:(id)arg1;
 - (BOOL)isRecoverableError:(id)arg1;

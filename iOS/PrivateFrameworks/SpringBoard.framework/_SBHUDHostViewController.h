@@ -22,11 +22,11 @@
     id <_SBHUDHostViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *presentingHUDs; // @synthesize presentingHUDs=_presentingHUDs;
 @property(readonly, nonatomic) NSSet *presentedHUDs; // @synthesize presentedHUDs=_presentedHUDs;
 @property(nonatomic) __weak id <_SBHUDHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak SBHUDController *HUDController; // @synthesize HUDController=_HUDController;
-- (void).cxx_destruct;
 - (void)_executeViewControllerTransitionContext:(id)arg1;
 - (void)_executeDismissHUD:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_executePresentNewHUD:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

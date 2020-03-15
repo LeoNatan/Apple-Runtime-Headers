@@ -22,8 +22,8 @@
     NSString *_terminalStateReasoning;
 }
 
-@property(nonatomic) __weak id <SBHomeButtonShowPasscodeRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBHomeButtonShowPasscodeRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_minimumTimerFired;
 - (void)_invalidateMinimumTimer;
 - (void)_simulateTimerFiring;

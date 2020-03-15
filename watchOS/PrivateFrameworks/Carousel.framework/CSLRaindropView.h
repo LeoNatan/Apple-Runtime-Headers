@@ -16,9 +16,9 @@
     float _holeRadius;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float holeRadius; // @synthesize holeRadius=_holeRadius;
 @property(nonatomic) float percentRounded; // @synthesize percentRounded=_percentRounded;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_configureShapeLayer:(id)arg1 withPath:(id)arg2;
 - (id)_raindropPathForPercent:(float)arg1;

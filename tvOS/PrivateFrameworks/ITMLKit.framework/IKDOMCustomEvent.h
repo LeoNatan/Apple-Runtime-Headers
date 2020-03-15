@@ -15,8 +15,8 @@
     IKJSObject *_detail;
 }
 
-@property(retain, nonatomic) IKJSObject *detail; // @synthesize detail=_detail;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKJSObject *detail; // @synthesize detail=_detail;
 - (id)initWithAppContext:(id)arg1 type:(id)arg2 xmlAttribute:(id)arg3 canBubble:(_Bool)arg4 isCancelable:(_Bool)arg5 detail:(id)arg6;
 - (id)initWithType:(id)arg1 eventInit:(id)arg2;
 

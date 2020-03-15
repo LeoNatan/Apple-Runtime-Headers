@@ -41,6 +41,7 @@
     id <EKUILocationSearchModelDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) id <EKUILocationSearchModelDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *textualSearchResults; // @synthesize textualSearchResults=_textualSearchResults;
 @property(readonly, nonatomic) NSArray *eventsSearchResults; // @synthesize eventsSearchResults=_eventsSearchResults;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSArray *mapCompletionSearchResults; // @synthesize mapCompletionSearchResults=_mapCompletionSearchResults;
 @property(retain, nonatomic) EKStructuredLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
 @property(nonatomic) unsigned long long supportedSearchTypes; // @synthesize supportedSearchTypes=_supportedSearchTypes;
-- (void).cxx_destruct;
 - (void)selectCurrentLocation;
 - (void)selectLocation:(id)arg1;
 - (void)selectMapSearchCompletion:(id)arg1;

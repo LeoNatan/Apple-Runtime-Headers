@@ -22,8 +22,9 @@
 + (id)outputTypes;
 + (id)ownedTypes;
 + (_Bool)supportedTypeMustBeDeterminedByInstance:(id)arg1;
-@property(retain, nonatomic) NSArray *extensionSubItems; // @synthesize extensionSubItems=_extensionSubItems;
++ (id)itemWithObject:(id)arg1 sourceAppBundleIdentifier:(id)arg2;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *extensionSubItems; // @synthesize extensionSubItems=_extensionSubItems;
 - (_Bool)cachesSupportedTypes;
 - (void)preloadImportantItemsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)coerceToItemClasses:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

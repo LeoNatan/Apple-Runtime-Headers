@@ -18,8 +18,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)canHandleArtworkFormat:(id)arg1;
 + (id)artworkForSize:(long long)arg1 artworkDictionaries:(id)arg2;
-@property(copy, nonatomic) NSArray *artworks; // @synthesize artworks=_artworks;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *artworks; // @synthesize artworks=_artworks;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

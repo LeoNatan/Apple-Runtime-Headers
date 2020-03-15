@@ -19,11 +19,11 @@
     long long _packetNumber;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long packetNumber; // @synthesize packetNumber=_packetNumber;
 @property(retain, nonatomic) NSArray *packets; // @synthesize packets=_packets;
 @property(copy, nonatomic) NSString *refId; // @synthesize refId=_refId;
 @property(copy, nonatomic) NSString *aceId; // @synthesize aceId=_aceId;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)siriCore_supportedByLocalSession;
 - (id)groupIdentifier;

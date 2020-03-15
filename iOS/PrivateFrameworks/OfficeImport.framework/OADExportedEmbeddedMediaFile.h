@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
     TSPData *_tspData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TSPData *tspData; // @synthesize tspData=_tspData;
 - (void)setIsAudioOnly:(_Bool)arg1;
 - (_Bool)isAudioOnly;
-- (void).cxx_destruct;
 
 @end
 

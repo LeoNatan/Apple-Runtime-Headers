@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     UILabel *_detailLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)tintColorDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
 

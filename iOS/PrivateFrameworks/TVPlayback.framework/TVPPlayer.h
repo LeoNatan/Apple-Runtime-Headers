@@ -24,6 +24,8 @@
     _Bool _updatesMediaRemoteInfoAutomatically;
     _Bool _isLive;
     _Bool _limitsBandwidthForCellularAccess;
+    _Bool _allowsCellularUsage;
+    _Bool _allowsConstrainedNetworkUsage;
     _Bool _invalidated;
     _Bool _handleRemoteCommandsWithoutUpdatingMediaRemote;
     _Bool _pausesOnRouteChange;
@@ -124,9 +126,11 @@
 + (void)setShouldDeactivateAVAudioSession:(_Bool)arg1;
 + (_Bool)shouldDeactivateAVAudioSession;
 + (void)_playerWillBecomeActive:(id)arg1;
++ (long long)tvpVideoRangeForVideoDynamicRange:(int)arg1;
 + (void)removeTemporaryDownloadDirectory;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool initialMediaItemHasCompletedInitialLoading; // @synthesize initialMediaItemHasCompletedInitialLoading=_initialMediaItemHasCompletedInitialLoading;
 @property(nonatomic) _Bool remainLoadingWhenSeekCompletes; // @synthesize remainLoadingWhenSeekCompletes=_remainLoadingWhenSeekCompletes;
 @property(nonatomic) _Bool mediaRemoteUpdatingEnabled; // @synthesize mediaRemoteUpdatingEnabled=_mediaRemoteUpdatingEnabled;
@@ -202,7 +206,6 @@
 @property(nonatomic) _Bool waitsAfterPreparingMediaItems; // @synthesize waitsAfterPreparingMediaItems=_waitsAfterPreparingMediaItems;
 @property(nonatomic) __weak id <TVPASyncPlaybackDelegate> asyncDelegate; // @synthesize asyncDelegate=_asyncDelegate;
 @property(nonatomic) __weak id <TVPPlaybackDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)_savePreferredAudioLanguageFromAudioOption:(id)arg1;
 - (void)_populatePlayerItem:(id)arg1 withMetadataFromMediaItem:(id)arg2;
@@ -214,7 +217,6 @@
 - (id)_descriptionForVideoResolutionClass:(long long)arg1;
 - (id)_audioAssetTracksFromTracks:(id)arg1;
 - (id)_videoAssetTracksFromTracks:(id)arg1;
-- (long long)_tvpVideoRangeForVideoDynamicRange:(int)arg1;
 - (void)_updateMediaRemoteManager;
 - (id)_bitRateString:(double)arg1;
 - (void)_logAccessLogEvents;
@@ -227,7 +229,7 @@
 - (void)_enqueueAsyncDelegateOperation:(id)arg1;
 - (void)_updateIsLiveForElapsedTime:(CDStruct_1b6d18a9)arg1;
 - (id)_soundCheckNormalizationForMediaItem:(id)arg1;
-- (id)tvp_PlaybackErrorFromError:(id)arg1;
+- (id)tvp_PlaybackErrorFromError:(id)arg1 forMediaItem:(id)arg2;
 - (_Bool)_isPlaybackLikelyToKeepUp;
 - (void)_updateVideoViewsWithAVQueuePlayer:(id)arg1;
 - (void)_HDCPUnprotectedTooLongTimerFired:(id)arg1;
@@ -308,6 +310,8 @@
 - (void)_subtitleSettingsDidChange;
 - (void)_preferVideoDescriptionsSettingDidChange;
 - (long long)externalPlaybackType;
+@property(nonatomic) _Bool allowsConstrainedNetworkUsage; // @synthesize allowsConstrainedNetworkUsage=_allowsConstrainedNetworkUsage;
+@property(nonatomic) _Bool allowsCellularUsage; // @synthesize allowsCellularUsage=_allowsCellularUsage;
 @property(nonatomic) _Bool limitsBandwidthForCellularAccess; // @synthesize limitsBandwidthForCellularAccess=_limitsBandwidthForCellularAccess;
 @property(nonatomic) struct CGSize preferredMaximumResolution; // @synthesize preferredMaximumResolution=_preferredMaximumResolution;
 @property(nonatomic) double preferredForwardBufferDuration; // @synthesize preferredForwardBufferDuration=_preferredForwardBufferDuration;

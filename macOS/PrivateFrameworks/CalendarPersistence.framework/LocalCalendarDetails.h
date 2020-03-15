@@ -14,9 +14,9 @@
     BOOL _targetsVTODO;
 }
 
+- (void).cxx_destruct;
 @property BOOL targetsVTODO; // @synthesize targetsVTODO=_targetsVTODO;
 @property(retain) CalManagedCalendar *localCalendar; // @synthesize localCalendar=_localCalendar;
-- (void).cxx_destruct;
 
 @end
 

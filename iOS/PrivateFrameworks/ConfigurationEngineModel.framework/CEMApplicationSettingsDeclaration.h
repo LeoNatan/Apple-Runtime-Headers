@@ -30,6 +30,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowAutomaticAppUpdatesModification; // @synthesize payloadAllowAutomaticAppUpdatesModification=_payloadAllowAutomaticAppUpdatesModification;
 @property(copy, nonatomic) NSNumber *payloadAllowAutomaticAppUpdates; // @synthesize payloadAllowAutomaticAppUpdates=_payloadAllowAutomaticAppUpdates;
 @property(copy, nonatomic) NSNumber *payloadAllowDiagnosticSubmissionModification; // @synthesize payloadAllowDiagnosticSubmissionModification=_payloadAllowDiagnosticSubmissionModification;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSNumber *payloadAllowDiagnosticSubmission; // @synthesize payloadAllowDiagnosticSubmission=_payloadAllowDiagnosticSubmission;
 @property(copy, nonatomic) NSNumber *payloadAppAnalytics; // @synthesize payloadAppAnalytics=_payloadAppAnalytics;
 @property(copy, nonatomic) NSNumber *payloadDiagnosticSubmission; // @synthesize payloadDiagnosticSubmission=_payloadDiagnosticSubmission;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

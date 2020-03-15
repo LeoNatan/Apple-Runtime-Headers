@@ -14,9 +14,9 @@
     NSString *_originalLine;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *originalLine; // @synthesize originalLine=_originalLine;
 @property(copy) NSString *propertyName; // @synthesize propertyName=_propertyName;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 

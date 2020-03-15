@@ -17,8 +17,8 @@
 + (id)_valueInRecord:(id)arg1 forKey:(id)arg2 type:(Class)arg3 encrypted:(_Bool)arg4 error:(id *)arg5;
 + (_Bool)hasFutureSchema:(id)arg1;
 + (id)recordWithCKRecord:(id)arg1 error:(id *)arg2;
-@property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 - (id)initWithCKRecord:(id)arg1 schemaVersion:(long long)arg2;
 
 @end

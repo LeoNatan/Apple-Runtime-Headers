@@ -28,6 +28,7 @@
 }
 
 + (void)addViewIfNecessary:(id)arg1 toStackView:(id)arg2 removeFromStackView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *accessoryViewControllers; // @synthesize accessoryViewControllers=_accessoryViewControllers;
 @property(retain, nonatomic) TLKDetailsView *detailsView; // @synthesize detailsView=_detailsView;
 @property(retain, nonatomic) NSMutableArray *leadingViewControllers; // @synthesize leadingViewControllers=_leadingViewControllers;
@@ -38,7 +39,6 @@
 @property(nonatomic) __weak id <SearchUIDetailedViewDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
 @property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 @property(nonatomic) BOOL isVerticalAlignment; // @synthesize isVerticalAlignment=_isVerticalAlignment;
-- (void).cxx_destruct;
 - (void)footnoteButtonPressed;
 - (BOOL)arrangedViewMustCenter:(id)arg1;
 - (void)updateWithRowModel:(id)arg1;

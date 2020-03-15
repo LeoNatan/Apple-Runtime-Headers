@@ -28,12 +28,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int iconAttributeValue; // @synthesize iconAttributeValue=_iconAttributeValue;
 @property(nonatomic) unsigned int iconAttributeKey; // @synthesize iconAttributeKey=_iconAttributeKey;
 @property(nonatomic) unsigned int defaultTransitType; // @synthesize defaultTransitType=_defaultTransitType;
 @property(nonatomic) unsigned int cartoID; // @synthesize cartoID=_cartoID;
 @property(nonatomic) int iconType; // @synthesize iconType=_iconType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

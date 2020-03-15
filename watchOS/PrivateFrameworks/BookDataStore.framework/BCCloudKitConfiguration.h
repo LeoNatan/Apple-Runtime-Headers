@@ -25,6 +25,7 @@
 }
 
 + (id)configuration;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool requiresDeviceToDeviceEncryption; // @synthesize requiresDeviceToDeviceEncryption=_requiresDeviceToDeviceEncryption;
 @property(retain, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 @property(retain, nonatomic) NSString *dbSubscriptionID; // @synthesize dbSubscriptionID=_dbSubscriptionID;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic) NSArray *appZones; // @synthesize appZones=_appZones;
 @property(retain, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(retain, nonatomic) NSString *queueIdentifier; // @synthesize queueIdentifier=_queueIdentifier;
-- (void).cxx_destruct;
 - (_Bool)shouldPerformDatabaseSubscriptionForServiceMode:(_Bool)arg1;
 - (_Bool)shouldArchiveData:(id)arg1;
 

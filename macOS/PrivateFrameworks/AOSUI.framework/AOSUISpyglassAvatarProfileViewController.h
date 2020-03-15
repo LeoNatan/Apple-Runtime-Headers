@@ -20,12 +20,12 @@
     MM_Account *_mmAccount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MM_Account *mmAccount; // @synthesize mmAccount=_mmAccount;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 @property __weak NSTextField *userNameTextField; // @synthesize userNameTextField=_userNameTextField;
 @property __weak NSTextField *nameTextField; // @synthesize nameTextField=_nameTextField;
 @property __weak NSView *imageWell; // @synthesize imageWell=_imageWell;
-- (void).cxx_destruct;
 - (void)avatarViewController:(id)arg1 contactAvatarDidChange:(id)arg2;
 - (void)_loadProfilePictureFromAccount;
 - (void)_accountProfilePictureDidChange:(id)arg1;

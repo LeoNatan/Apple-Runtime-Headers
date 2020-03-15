@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 - (void).cxx_destruct;
+@property(readonly) NSDate *lastUpdated; // @synthesize lastUpdated=_lastUpdated;
 - (id)initWithConverter:(id)arg1;
 - (BOOL)isCurrency;
 - (void)encodeWithCoder:(id)arg1;

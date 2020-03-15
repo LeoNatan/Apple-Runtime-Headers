@@ -16,9 +16,9 @@
 }
 
 + (id)_messageFromRecord:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSCKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)disabled_fetchChangesSinceToken:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_transportRecordZoneID;
 - (void)dropZone:(CDUnknownBlockType)arg1;

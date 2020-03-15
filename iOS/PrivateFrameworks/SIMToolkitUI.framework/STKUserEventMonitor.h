@@ -19,10 +19,10 @@
     AWAttentionAwarenessClient *_attentionAwarenessClient;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWAttentionAwarenessClient *attentionAwarenessClient; // @synthesize attentionAwarenessClient=_attentionAwarenessClient;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <STKUserEventMonitorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_suspend;
 - (void)_resume;
 - (void)_queue_handleAttentionAwarenessEvent:(id)arg1;

@@ -26,6 +26,7 @@
 
 + (void)addNeededSCToWhitelist:(id)arg1;
 + (BOOL)filterPassesRequiredSCForCAInstrumentation:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isConciseFormat; // @synthesize isConciseFormat=_isConciseFormat;
 @property(nonatomic) unsigned int curFrameSeed; // @synthesize curFrameSeed=_curFrameSeed;
 @property(retain, nonatomic) SignpostEvent *curFrameLifetimeBegin; // @synthesize curFrameLifetimeBegin=_curFrameLifetimeBegin;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) CDUnknownBlockType frameLatencyBlock; // @synthesize frameLatencyBlock=_frameLatencyBlock;
 @property(copy, nonatomic) CDUnknownBlockType transactionLifetimeBlock; // @synthesize transactionLifetimeBlock=_transactionLifetimeBlock;
 @property(copy, nonatomic) CDUnknownBlockType commitIntervalBlock; // @synthesize commitIntervalBlock=_commitIntervalBlock;
-- (void).cxx_destruct;
 - (id)newConfiguredExtractor;
 - (void)handleDeviceReboot;
 - (BOOL)handleSignpostEvent:(id)arg1;

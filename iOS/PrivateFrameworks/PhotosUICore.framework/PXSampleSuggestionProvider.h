@@ -20,12 +20,12 @@
     PXAssetsDataSourceManager *_oneUpDataSourceManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXAssetsDataSourceManager *oneUpDataSourceManager; // @synthesize oneUpDataSourceManager=_oneUpDataSourceManager;
 @property(retain, nonatomic) PXAssetReference *oneUpInitialAssetReference; // @synthesize oneUpInitialAssetReference=_oneUpInitialAssetReference;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 @property(retain, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(nonatomic) _Bool includeHorizontal; // @synthesize includeHorizontal=_includeHorizontal;
-- (void).cxx_destruct;
 - (id)_gadgetForAssetReference:(id)arg1;
 - (long long)oneUpPresentationActionContext:(id)arg1;
 - (void)oneUpPresentation:(id)arg1 scrollAssetReferenceToVisible:(id)arg2;

@@ -19,11 +19,11 @@
     NSSet *_autofetchAccounts;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *autofetchAccounts; // @synthesize autofetchAccounts=_autofetchAccounts;
 @property(copy, nonatomic) NSSet *displayedAccounts; // @synthesize displayedAccounts=_displayedAccounts;
 @property(copy, nonatomic) NSArray *orderedAccounts; // @synthesize orderedAccounts=_orderedAccounts;
 @property(copy, nonatomic) NSArray *mailAccounts; // @synthesize mailAccounts=_mailAccounts;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *receivingAddresses;
 @property(readonly, nonatomic, getter=isDisplayingMultipleAccounts) _Bool displayingMultipleAccounts;
 

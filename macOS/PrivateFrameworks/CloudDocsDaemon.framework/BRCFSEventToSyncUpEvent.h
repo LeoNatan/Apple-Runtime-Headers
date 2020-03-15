@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _syncUpBatchSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long syncUpBatchSize; // @synthesize syncUpBatchSize=_syncUpBatchSize;
 @property(nonatomic) BOOL isPackage; // @synthesize isPackage=_isPackage;
 @property(nonatomic) unsigned long long contentSize; // @synthesize contentSize=_contentSize;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) BRCItemID *itemID; // @synthesize itemID=_itemID;
 @property(nonatomic) unsigned int genID; // @synthesize genID=_genID;
 @property(nonatomic) unsigned long long fileID; // @synthesize fileID=_fileID;
-- (void).cxx_destruct;
 - (id)subDescription;
 - (id)additionalPayload;
 

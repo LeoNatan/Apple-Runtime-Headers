@@ -16,9 +16,9 @@
     CDUnknownBlockType _loginHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType loginHandler; // @synthesize loginHandler=_loginHandler;
 @property(retain, nonatomic) PocketAPI *pocket; // @synthesize pocket=_pocket;
-- (void).cxx_destruct;
 - (void)logOut;
 - (BOOL)canLogOut;
 - (id)username;

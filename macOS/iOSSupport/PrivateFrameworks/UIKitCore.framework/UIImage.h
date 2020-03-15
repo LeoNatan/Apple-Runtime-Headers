@@ -141,8 +141,8 @@
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)readableTypeIdentifiersForItemProvider;
-@property(retain, nonatomic, setter=_setImageAsset:) UIImageAsset *imageAsset; // @synthesize imageAsset=_imageAsset;
 - (void).cxx_destruct;
+@property(retain, nonatomic, setter=_setImageAsset:) UIImageAsset *imageAsset; // @synthesize imageAsset=_imageAsset;
 - (BOOL)_suppressesAccessibilityHairlineThickening;
 - (id)_imageThatSuppressesAccessibilityHairlineThickening;
 - (id)_imageWithSize:(struct CGSize)arg1;

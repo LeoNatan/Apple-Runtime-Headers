@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     BrowserWindowController *_windowController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak BrowserWindowController *windowController; // @synthesize windowController=_windowController;
 @property(retain, nonatomic) ReadingListTableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
-- (void).cxx_destruct;
 - (id)_readingListTableView;
 - (void)_selectReadingListItemWithRowIndexFromBlock:(CDUnknownBlockType)arg1;
 - (void)wasInstalledBySidebarViewController:(id)arg1;

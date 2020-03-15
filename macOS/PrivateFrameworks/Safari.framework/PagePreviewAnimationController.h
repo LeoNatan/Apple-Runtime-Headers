@@ -31,12 +31,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _originRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect originRect; // @synthesize originRect=_originRect;
 @property(readonly, nonatomic) __weak NSView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(nonatomic) __weak NSViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) __weak id <PagePreviewAnimationControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dismissPagePreviewViewController:(id)arg1;
 - (void)pagePreviewViewController:(id)arg1 addURLToReadingList:(id)arg2;
 - (void)pagePreviewViewController:(id)arg1 handleClickInPreviewBrowserViewController:(id)arg2;

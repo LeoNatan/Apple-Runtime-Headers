@@ -14,8 +14,8 @@
 }
 
 + (id)_roomWithHMRoom:(id)arg1;
-@property(retain, nonatomic) HMRoom *hmRoom; // @synthesize hmRoom=_hmRoom;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMRoom *hmRoom; // @synthesize hmRoom=_hmRoom;
 - (id)description;
 @property(readonly) NSString *name;
 

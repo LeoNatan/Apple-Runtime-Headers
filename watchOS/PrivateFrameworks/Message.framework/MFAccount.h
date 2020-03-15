@@ -52,10 +52,10 @@
 + (id)newAccountWithDictionary:(id)arg1;
 + (_Bool)shouldHealAccounts;
 + (void)setShouldHealAccounts:(_Bool)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(readonly, nonatomic) ECAccount *baseAccount; // @synthesize baseAccount=_baseAccount;
 @property(readonly, copy, nonatomic) NSArray *emailAddressStrings; // @synthesize emailAddressStrings;
-- (void).cxx_destruct;
 - (void)setMissingPasswordError;
 - (id)copyDiagnosticInformation;
 - (_Bool)isSyncingNotes;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSData *_cachedData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *cachedData; // @synthesize cachedData=_cachedData;
 @property(nonatomic) _Bool useCachedDataOnly; // @synthesize useCachedDataOnly=_useCachedDataOnly;
-- (void).cxx_destruct;
 - (void)_performLibraryImportChangeRequestWithModelObjects:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performLookupRequestWithModelObjects:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performForYouRequestWithCompletion:(CDUnknownBlockType)arg1;

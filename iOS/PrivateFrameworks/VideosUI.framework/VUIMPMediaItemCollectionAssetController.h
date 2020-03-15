@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_downloadingAssetControllersWithAssetControllers:(id)arg1;
 + (id)_stateFromDownloadingAssetControllers:(id)arg1 fullyDownloadedAssetBytes:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fullyDownloadedAssetBytes; // @synthesize fullyDownloadedAssetBytes=_fullyDownloadedAssetBytes;
 @property(retain, nonatomic) NSArray *assetControllers; // @synthesize assetControllers=_assetControllers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) VUIMediaEntityAssetControllerState *state; // @synthesize state=_state;
 @property(copy, nonatomic) NSObject<VUIMediaEntityIdentifier> *mediaEntityIdentifier; // @synthesize mediaEntityIdentifier=_mediaEntityIdentifier;
 @property(readonly, nonatomic) _Bool supportsStartingDownload; // @synthesize supportsStartingDownload=_supportsStartingDownload;
-- (void).cxx_destruct;
 - (void)_notifyDelegateStateDidChange:(id)arg1;
 - (_Bool)_allAssetsDownloaded;
 - (void)_enqueueCompletionQueueBlock:(CDUnknownBlockType)arg1;
@@ -45,13 +45,13 @@ __attribute__((visibility("hidden")))
 - (void)_onProcessingQueue_cancelAndRemoveDownload;
 - (void)_onProcessingQueue_resumeDownload;
 - (void)_onProcessingQueue_pauseDownload;
-- (void)_onProcessingQueue_startDownloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_onProcessingQueue_startDownloadAllowingCellular:(_Bool)arg1 quality:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_onProcessingQueue_invalidate;
 - (void)mediaEntityAssetController:(id)arg1 stateDidChange:(id)arg2;
 - (void)cancelAndRemoveDownload;
 - (void)resumeDownload;
 - (void)pauseDownload;
-- (void)startDownloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)startDownloadAllowingCellular:(_Bool)arg1 quality:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidate;
 @property(readonly, copy, nonatomic) VUIMediaEntityType *mediaEntityType;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionDispatchQueue; // @synthesize completionDispatchQueue=_completionDispatchQueue;

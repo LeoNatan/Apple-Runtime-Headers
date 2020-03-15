@@ -26,6 +26,7 @@
 + (double)minZoomForImage:(struct CGImage *)arg1 containerSize:(struct CGSize)arg2;
 + (struct CGImage *)cgImageRefFromNSImage:(id)arg1;
 + (struct CGPoint)adjustProposedCenterPoint:(struct CGPoint)arg1 toKeepEdgesOfImageWithSize:(struct CGSize)arg2 fromMovingOutsideOfBoundsOfRect:(struct CGRect)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) long long zoomIndex; // @synthesize zoomIndex=_zoomIndex;
 @property(nonatomic) double fittingZoom; // @synthesize fittingZoom=_fittingZoom;
 @property(retain, nonatomic) CIImage *currentImage; // @synthesize currentImage=_currentImage;
@@ -33,7 +34,6 @@
 @property(nonatomic) double zoomPosition; // @synthesize zoomPosition=_zoomPosition;
 @property(nonatomic) BOOL shouldUpdateCropRect; // @synthesize shouldUpdateCropRect=_shouldUpdateCropRect;
 @property(nonatomic) __weak id <CNPhotoLikenessEditorCroppingDataSource> croppingDataSource; // @synthesize croppingDataSource=_croppingDataSource;
-- (void).cxx_destruct;
 - (struct CGPoint)imageCenterPoint;
 - (void)mouseDragged:(id)arg1;
 - (void)updateZoomPosition;

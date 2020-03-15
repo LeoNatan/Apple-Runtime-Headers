@@ -19,10 +19,10 @@
     UIView *_view;
 }
 
-@property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-@property(readonly, nonatomic) __weak CKComponent *component; // @synthesize component=_component;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
+@property(readonly, nonatomic) __weak CKComponent *component; // @synthesize component=_component;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)nextResponder;

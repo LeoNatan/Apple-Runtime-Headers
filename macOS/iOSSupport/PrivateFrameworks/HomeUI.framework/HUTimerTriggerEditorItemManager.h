@@ -24,6 +24,7 @@
     NSMutableDictionary *_significantEventToDefaultOffsetMap;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *significantEventToDefaultOffsetMap; // @synthesize significantEventToDefaultOffsetMap=_significantEventToDefaultOffsetMap;
 @property(retain, nonatomic) HUInstructionsItem *recurrencesInstructionsItem; // @synthesize recurrencesInstructionsItem=_recurrencesInstructionsItem;
 @property(retain, nonatomic) HUInstructionsItem *instructionsItem; // @synthesize instructionsItem=_instructionsItem;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) HUTriggerConditionEditorItemModule *conditionModule; // @synthesize conditionModule=_conditionModule;
 @property(readonly, nonatomic) HFTimerTriggerBuilder *timerTriggerBuilder; // @synthesize timerTriggerBuilder=_timerTriggerBuilder;
 @property(retain, nonatomic) NSDateComponents *defaultFireTimeComponents; // @synthesize defaultFireTimeComponents=_defaultFireTimeComponents;
-- (void).cxx_destruct;
 - (void)setDefaultOffset:(id)arg1 forSignificantEvent:(id)arg2;
 - (id)defaultOffsetForSignificantEvent:(id)arg1;
 - (void)updateForSignificantEventOffsetChange;

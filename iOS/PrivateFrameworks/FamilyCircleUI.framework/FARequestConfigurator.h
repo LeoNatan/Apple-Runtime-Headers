@@ -23,9 +23,9 @@
     AKAppleIDAuthenticationContext *_authContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAppleIDAuthenticationContext *authContext; // @synthesize authContext=_authContext;
 @property(nonatomic) _Bool attachSetupHeader; // @synthesize attachSetupHeader=_attachSetupHeader;
-- (void).cxx_destruct;
 - (id)_serviceOwnersManager;
 - (id)_familyTokenForGrandSlamAccount:(id)arg1 andTokenID:(id)arg2;
 - (void)_addAccountForServiceType:(id)arg1 toPayload:(id)arg2 forKey:(id)arg3;

@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_clientApplicationParameterValueForSearchType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *connectionRequestOperation; // @synthesize connectionRequestOperation=_connectionRequestOperation;
 @property(nonatomic) unsigned long long searchType; // @synthesize searchType=_searchType;
 @property(copy, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSDictionary *results; // @synthesize results=_results;
-- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1;
 - (void)cancel;
 - (void)executionDidBegin;

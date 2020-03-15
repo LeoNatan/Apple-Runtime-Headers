@@ -16,10 +16,10 @@
     NSMutableArray *_displayedNotifications;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *displayedNotifications; // @synthesize displayedNotifications=_displayedNotifications;
 @property(retain, nonatomic) NSMutableArray *deliveredNotifications; // @synthesize deliveredNotifications=_deliveredNotifications;
 @property(retain, nonatomic) NSMutableArray *scheduledNotifications; // @synthesize scheduledNotifications=_scheduledNotifications;
-- (void).cxx_destruct;
 - (void)removeCachedDeliveredNotificationWithID:(id)arg1;
 - (void)reset;
 - (id)initWithCenter:(id)arg1;

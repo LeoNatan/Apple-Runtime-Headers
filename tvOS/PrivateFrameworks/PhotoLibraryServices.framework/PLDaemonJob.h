@@ -24,9 +24,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)runDaemonSideWithXPCEvent:(id)arg1 libraryServicesManager:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PLAssetsdClient *assetsdClient; // @synthesize assetsdClient=_assetsdClient;
 @property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *jobDescription;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcReply;
 - (void)run;

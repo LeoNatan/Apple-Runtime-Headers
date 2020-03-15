@@ -34,9 +34,9 @@
     SFSession *_sfSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_runReachabilityStart;
 - (void)_runJoinStart:(int)arg1;
 - (void)_runScanResults:(id)arg1 error:(id)arg2 channel:(int)arg3;

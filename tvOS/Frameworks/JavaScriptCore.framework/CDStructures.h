@@ -122,7 +122,7 @@ struct String {
 
 struct StringImpl;
 
-struct Strong<JSC::JSObject> {
+struct Strong<JSC::JSObject, JSC::ShouldStrongDestructorGrabLock::No> {
     struct JSValue *m_slot;
 };
 

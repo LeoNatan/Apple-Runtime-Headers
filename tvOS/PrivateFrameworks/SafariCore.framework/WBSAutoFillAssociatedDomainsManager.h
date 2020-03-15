@@ -18,9 +18,9 @@
     NSArray *_domainsToConsiderIdentical;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *domainsToConsiderIdentical; // @synthesize domainsToConsiderIdentical=_domainsToConsiderIdentical;
 @property(copy, nonatomic) NSArray *domainsWithAssociatedCredentials; // @synthesize domainsWithAssociatedCredentials=_domainsWithAssociatedCredentials;
-- (void).cxx_destruct;
 - (void)_updateDomainToDomainsToConsiderIdentical;
 - (void)_updateDomainToDomainsWithAssociatedCredentials;
 - (id)domainsToConsiderIdenticalToDomain:(id)arg1;

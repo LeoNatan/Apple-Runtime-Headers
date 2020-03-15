@@ -12,9 +12,9 @@
     id _toLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id toLabel; // @synthesize toLabel=_toLabel;
 @property(retain, nonatomic) id fromLabel; // @synthesize fromLabel=_fromLabel;
-- (void).cxx_destruct;
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityLabel;
 

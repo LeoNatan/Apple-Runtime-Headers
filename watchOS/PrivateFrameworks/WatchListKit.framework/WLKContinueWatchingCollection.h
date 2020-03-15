@@ -15,10 +15,10 @@
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *collectionID; // @synthesize collectionID=_collectionID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 

@@ -27,6 +27,7 @@
     _TVAnimatedImageView *_nextMarqueeView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak _TVAnimatedImageView *nextMarqueeView; // @synthesize nextMarqueeView=_nextMarqueeView;
 @property(readonly, nonatomic) __weak _TVAnimatedImageView *currentMarqueeView; // @synthesize currentMarqueeView=_currentMarqueeView;
 @property(nonatomic) double underPosterOutset; // @synthesize underPosterOutset=_underPosterOutset;
@@ -39,7 +40,6 @@
 @property(nonatomic) double marqueeDelay; // @synthesize marqueeDelay=_marqueeDelay;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
-- (void).cxx_destruct;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationWillResignActiveNotification:(id)arg1;
 - (void)setMarqueeRunning:(_Bool)arg1;

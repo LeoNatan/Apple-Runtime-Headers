@@ -11,8 +11,8 @@
     CDUnknownBlockType _finishBlock;
 }
 
-@property(readonly, copy, nonatomic) CDUnknownBlockType finishBlock; // @synthesize finishBlock=_finishBlock;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType finishBlock; // @synthesize finishBlock=_finishBlock;
 - (void)cleanup;
 - (void)cancel;
 - (void)execute;

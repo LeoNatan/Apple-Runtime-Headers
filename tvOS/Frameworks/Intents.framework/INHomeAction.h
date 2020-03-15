@@ -22,13 +22,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 @property(readonly, nonatomic) long long integerValue; // @synthesize integerValue=_integerValue;
 @property(readonly, nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(readonly, nonatomic) _Bool boolValue; // @synthesize boolValue=_boolValue;
 @property(readonly, nonatomic) long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

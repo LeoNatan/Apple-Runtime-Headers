@@ -15,10 +15,10 @@
     NSUUID *_cameraID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSUUID *cameraID; // @synthesize cameraID=_cameraID;
 @property unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, copy) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (id)attributeDescriptions;
 @property(readonly, copy) NSUUID *ephemeralCameraID;
 @property(readonly) unsigned long long endTimestamp;

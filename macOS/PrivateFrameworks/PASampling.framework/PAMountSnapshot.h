@@ -19,10 +19,10 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) NSArray *blockedThreadIDs; // @synthesize blockedThreadIDs=_blockedThreadIDs;
 @property(readonly) double machTimestampOfLastResponse; // @synthesize machTimestampOfLastResponse=_machTimestampOfLastResponse;
 @property(readonly) double machTimestampWhenMeasured; // @synthesize machTimestampWhenMeasured=_machTimestampWhenMeasured;
-- (void).cxx_destruct;
 @property(readonly) BOOL isUnresponsive;
 - (BOOL)isBlockingThread:(unsigned long long)arg1;
 - (id)initWithStatus:(struct netfs_status *)arg1 atMachTime:(double)arg2;

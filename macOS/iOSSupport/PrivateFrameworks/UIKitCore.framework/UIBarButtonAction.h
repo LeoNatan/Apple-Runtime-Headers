@@ -22,12 +22,12 @@
 
 + (id)actionWithImage:(id)arg1 handler:(CDUnknownBlockType)arg2;
 + (id)actionWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, setter=_setPropertyObserver:) id <UIBarButtonActionMutablePropertyObserving> propertyObserver; // @synthesize propertyObserver=_propertyObserver;
 @property(nonatomic, getter=isChecked) BOOL checked; // @synthesize checked=_checked;
 @property(copy, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)_performHandler;
 - (void)_setChecked:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -18,11 +18,11 @@
 
 + (void)signRequest:(id)arg1 withParameters:(id)arg2 consumerKey:(id)arg3 consumerSecret:(id)arg4 token:(id)arg5 tokenSecret:(id)arg6;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *threeLeggedOAuthTokenSecret; // @synthesize threeLeggedOAuthTokenSecret=_threeLeggedOAuthTokenSecret;
 @property(copy, nonatomic) CDUnknownBlockType threeLeggedOAuthCallback; // @synthesize threeLeggedOAuthCallback=_threeLeggedOAuthCallback;
 @property(copy, nonatomic) NSString *OAuthConsumerSecret; // @synthesize OAuthConsumerSecret=_OAuthConsumerSecret;
 @property(copy, nonatomic) NSString *OAuthConsumerKey; // @synthesize OAuthConsumerKey=_OAuthConsumerKey;
-- (void).cxx_destruct;
 - (void)xAuth:(id)arg1 password:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (_Bool)handleOpenURL:(id)arg1;
 - (void)authenticate:(id)arg1 webView:(id)arg2 callback:(CDUnknownBlockType)arg3;

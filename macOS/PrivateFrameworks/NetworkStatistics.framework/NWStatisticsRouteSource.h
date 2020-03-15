@@ -14,8 +14,8 @@
     NSData *_destination;
 }
 
-@property(retain) NSData *destination; // @synthesize destination=_destination;
 - (void).cxx_destruct;
+@property(retain) NSData *destination; // @synthesize destination=_destination;
 - (id)initWithManager:(id)arg1 destination:(const struct sockaddr *)arg2 mask:(const struct sockaddr *)arg3 interface:(unsigned int)arg4;
 - (id)description;
 - (id)_currentSnapshot;

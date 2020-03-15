@@ -20,10 +20,10 @@
 }
 
 + (void)load;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *remainingBlockingTasks; // @synthesize remainingBlockingTasks=_remainingBlockingTasks;
 @property(copy, nonatomic) NSArray *remainingApplications; // @synthesize remainingApplications=_remainingApplications;
 @property(retain, nonatomic) SBLogoutProgressTransientOverlayViewController *logoutProgressTransientOverlayViewController; // @synthesize logoutProgressTransientOverlayViewController=_logoutProgressTransientOverlayViewController;
-- (void).cxx_destruct;
 - (id)_defaultPendingApplications;
 - (id)_defaultBlockingTasks;
 - (id)debugBlockingTasksForLogoutProgressTransientOverlayViewController:(id)arg1;

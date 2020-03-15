@@ -17,11 +17,11 @@
     struct CGPoint _menuTargetOrigin;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXVStyledMenuTargetView *_targetView; // @synthesize _targetView=__targetView;
 @property(nonatomic) struct CGPoint menuTargetOrigin; // @synthesize menuTargetOrigin=_menuTargetOrigin;
 @property(nonatomic) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) struct CGSize menuItemSize; // @synthesize menuItemSize=_menuItemSize;
-- (void).cxx_destruct;
 - (void)_updateMenuItem:(id)arg1 withOrigin:(struct CGPoint)arg2;
 - (void)_updateListLayout;
 - (void)_updateCircularLayout;

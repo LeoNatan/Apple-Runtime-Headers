@@ -14,16 +14,18 @@
 {
     double _obfuscatedpTTR;
     ADAdVector *_adVector;
+    NSString *_addendum;
     NSString *_obfuscationID;
     struct {
         unsigned int obfuscatedpTTR:1;
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *addendum; // @synthesize addendum=_addendum;
 @property(retain, nonatomic) NSString *obfuscationID; // @synthesize obfuscationID=_obfuscationID;
 @property(nonatomic) double obfuscatedpTTR; // @synthesize obfuscatedpTTR=_obfuscatedpTTR;
 @property(retain, nonatomic) ADAdVector *adVector; // @synthesize adVector=_adVector;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -33,6 +35,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasAddendum;
 @property(readonly, nonatomic) BOOL hasObfuscationID;
 @property(nonatomic) BOOL hasObfuscatedpTTR;
 @property(readonly, nonatomic) BOOL hasAdVector;

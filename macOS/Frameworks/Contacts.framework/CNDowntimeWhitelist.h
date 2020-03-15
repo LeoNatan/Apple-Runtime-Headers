@@ -6,27 +6,42 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore;
+@class ACAccountStore, CNContactStore, NSString;
 @protocol NSObject;
 
 @interface CNDowntimeWhitelist : NSObject
 {
-    CNContactStore *_store;
+    NSString *_primaryiCloudContainerIdentifier;
+    CNContactStore *_contactStore;
+    ACAccountStore *_accountStore;
     id <NSObject> _contactStoreDidChangeNotificationToken;
+    id <NSObject> _accountStoreDidChangeNotificationToken;
 }
 
 + (BOOL)isWhitelistedContact:(id)arg1;
++ (BOOL)anyContactIsWhitelisted:(id)arg1;
++ (id)keyDescriptor;
 + (id)os_log;
-@property(readonly) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
-@property(readonly) CNContactStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
-- (id)allWhitelistedHandleStrings;
-- (BOOL)anyContactIsWhitelisted:(id)arg1;
-- (id)keys;
+@property(readonly, nonatomic) id <NSObject> accountStoreDidChangeNotificationToken; // @synthesize accountStoreDidChangeNotificationToken=_accountStoreDidChangeNotificationToken;
+@property(readonly, nonatomic) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
+@property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+@property(retain, nonatomic) NSString *primaryiCloudContainerIdentifier; // @synthesize primaryiCloudContainerIdentifier=_primaryiCloudContainerIdentifier;
+- (void)setTestAcountStore:(id)arg1;
+- (void)setTestPrimaryiCloudContainerIdentifier:(id)arg1;
+- (id)fetchPrimaryiCloudCardDAVAccountIdentifier;
+- (id)fetchPrimaryiCloudCardDAVContainerIdentifier;
+- (id)identifierOfContainerSupporingDowntimeContacts;
+- (id)requestForNonUnifiedContacts;
+- (id)requestForContactsInPermittedContainers;
+- (id)requestForContactsInPermittedContainersWithHandles:(id)arg1;
 - (id)allWhitelistedContacts;
+- (id)allWhitelistedHandleStrings;
 - (BOOL)isHandleStringWhitelisted:(id)arg1;
 - (id)whitelistedHandleStringsFromHandleStrings:(id)arg1;
 - (void)dealloc;
+- (void)beginObservingChangeNotifications;
 - (id)initWithContactStore:(id)arg1;
 - (id)init;
 

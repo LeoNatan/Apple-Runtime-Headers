@@ -18,10 +18,10 @@
 }
 
 + (id)withEmailMapping:(id)arg1 linkMapping:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *linkMapping; // @synthesize linkMapping=_linkMapping;
 @property(retain) NSString *emailMapping; // @synthesize emailMapping=_emailMapping;
 @property(retain) NSDataDetector *dataDetector; // @synthesize dataDetector=_dataDetector;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToEntityMappingTransformer:(id)arg1;

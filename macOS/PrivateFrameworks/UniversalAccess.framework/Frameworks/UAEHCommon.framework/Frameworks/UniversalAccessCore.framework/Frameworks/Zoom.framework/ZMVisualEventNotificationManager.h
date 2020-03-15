@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     AXKElementController *__frontmostApp;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AXKElementController *_frontmostApp; // @synthesize _frontmostApp=__frontmostApp;
 @property(retain, nonatomic) AXKApplicationController *_notificationCenterApp; // @synthesize _notificationCenterApp=__notificationCenterApp;
 @property(nonatomic) BOOL isStarted; // @synthesize isStarted=_isStarted;
 @property(nonatomic) __weak id <ZMVisualEventNotificationManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)workspaceManager:(id)arg1 didUpdateFrontmostApplicationController:(id)arg2;
 - (void)workspaceManagerDidUpdateMenuExtraInformation:(id)arg1;
 - (void)workspaceManager:(id)arg1 didUpdateRunningApplications:(id)arg2;

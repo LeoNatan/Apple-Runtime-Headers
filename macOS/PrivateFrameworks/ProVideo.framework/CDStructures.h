@@ -626,14 +626,6 @@ struct Mat4f {
     struct Vec4f _field1[4];
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct OMEdge;
 
 struct OMSamples {

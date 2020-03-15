@@ -20,12 +20,12 @@
 
 + (long long)indexOfItem:(id)arg1 inItems:(id)arg2;
 + (id)selectedItemFromItems:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
 @property(nonatomic) long long selectedExtendedColorIndex; // @synthesize selectedExtendedColorIndex=_selectedExtendedColorIndex;
 @property(nonatomic) long long selectedPrimaryColorIndex; // @synthesize selectedPrimaryColorIndex=_selectedPrimaryColorIndex;
 @property(nonatomic) id <AVTAvatarAttributeEditorSectionColorDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVTAvatarAttributeEditorColorSection *colorSection; // @synthesize colorSection=_colorSection;
-- (void).cxx_destruct;
 - (id)indexPathOfExtendedIcon;
 - (void)selectSectionItemAtIndexPath:(id)arg1;
 - (id)sectionItemAtIndex:(long long)arg1;

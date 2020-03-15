@@ -16,9 +16,9 @@
     NSString *_feedURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *feedURL; // @synthesize feedURL=_feedURL;
 @property(readonly, nonatomic) NSNumber *storeID; // @synthesize storeID=_storeID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned int)hash;

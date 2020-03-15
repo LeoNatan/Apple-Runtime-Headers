@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSString *_tableNameToMatch;
 }
 
-@property(copy) NSString *tableNameToMatch; // @synthesize tableNameToMatch=_tableNameToMatch;
 - (void).cxx_destruct;
+@property(copy) NSString *tableNameToMatch; // @synthesize tableNameToMatch=_tableNameToMatch;
 @property(readonly) NSDictionary *loadedUnitDescriptions;
 @property(readonly) NSDictionary *loadedTableNames;
 - (BOOL)visualizationUnarchiver:(id)arg1 didReadUnit:(unsigned int)arg2 inTable:(unsigned int)arg3 summary:(id)arg4 description:(id)arg5;

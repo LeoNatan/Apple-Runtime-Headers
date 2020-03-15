@@ -21,10 +21,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sandboxToken; // @synthesize sandboxToken=_sandboxToken;
 @property(readonly, nonatomic) _EFInvokeOnDeallocToken *invocable; // @synthesize invocable=_invocable;
 @property(readonly) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)addInvalidationHandler:(CDUnknownBlockType)arg1;

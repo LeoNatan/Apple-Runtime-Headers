@@ -17,12 +17,12 @@
     CDUnknownBlockType _resetCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType resetCompletionHandler; // @synthesize resetCompletionHandler=_resetCompletionHandler;
 @property(nonatomic) BOOL restoreZoneContents; // @synthesize restoreZoneContents=_restoreZoneContents;
 @property(nonatomic) BOOL restoreSecureSentinel; // @synthesize restoreSecureSentinel=_restoreSecureSentinel;
 @property(nonatomic) BOOL deleteZones; // @synthesize deleteZones=_deleteZones;
 @property(retain, nonatomic) FCCKPrivateDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (id)_rawRecordsToSave;
 - (id)_rawZonesToRecreate;
 - (id)_rawZoneIDsToDelete;

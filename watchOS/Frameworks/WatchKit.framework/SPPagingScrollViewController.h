@@ -14,9 +14,9 @@
     SPInterfaceListView *_listView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SPInterfaceListView *listView; // @synthesize listView=_listView;
 @property(readonly, nonatomic) int initialViewIndex; // @synthesize initialViewIndex=_initialViewIndex;
-- (void).cxx_destruct;
 - (void)setViewControllers:(id)arg1 initialViewIndex:(int)arg2 listView:(id)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

@@ -15,8 +15,8 @@
     FCTagSettings *_tagSettings;
 }
 
-@property(readonly, nonatomic) FCTagSettings *tagSettings; // @synthesize tagSettings=_tagSettings;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) FCTagSettings *tagSettings; // @synthesize tagSettings=_tagSettings;
 - (long long)textSizeForContentSizeCategory:(id)arg1;
 - (id)contentSizeCategoryForSize:(long long)arg1;
 - (void)updateContentScale:(long long)arg1 forArticle:(id)arg2;

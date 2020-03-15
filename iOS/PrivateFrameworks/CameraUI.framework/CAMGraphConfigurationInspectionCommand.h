@@ -14,9 +14,9 @@
     CAMCaptureGraphConfiguration *__resolvedGraphConfiguration;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setResolvedGraphConfiguration:) CAMCaptureGraphConfiguration *_resolvedGraphConfiguration; // @synthesize _resolvedGraphConfiguration=__resolvedGraphConfiguration;
 @property(readonly, nonatomic) CAMCaptureGraphConfiguration *_knownGraphConfiguration; // @synthesize _knownGraphConfiguration=__knownGraphConfiguration;
-- (void).cxx_destruct;
 - (id)userInfo;
 - (long long)_resolvedVideoConfigurationFromContext:(id)arg1;
 - (void)executeWithContext:(id)arg1;

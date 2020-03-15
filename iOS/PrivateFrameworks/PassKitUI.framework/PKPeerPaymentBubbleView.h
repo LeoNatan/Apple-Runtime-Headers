@@ -48,6 +48,7 @@
 + (struct CGSize)referenceSizeForState:(unsigned long long)arg1;
 + (struct CGSize)referenceSize;
 + (id)applePayLogo;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isLiveRenderingEnabled) _Bool liveRenderingEnabled; // @synthesize liveRenderingEnabled=_liveRenderingEnabled;
 @property(nonatomic) _Bool displaysApplePayLogo; // @synthesize displaysApplePayLogo=_displaysApplePayLogo;
 @property(nonatomic) _Bool usesWatchColors; // @synthesize usesWatchColors=_usesWatchColors;
@@ -61,7 +62,6 @@
 @property(copy, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)didMoveToWindow;
 - (void)performPostRender:(CDUnknownBlockType)arg1;
 - (id)generatedSnapshot;

@@ -24,6 +24,7 @@
 }
 
 + (id)sharedInstanceIfExists;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *updateLastCompletionDate; // @synthesize updateLastCompletionDate=_updateLastCompletionDate;
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(copy, nonatomic) WAForecastModel *currentForecastModel; // @synthesize currentForecastModel=_currentForecastModel;
@@ -32,7 +33,6 @@
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(nonatomic) _Bool locationServicesActive; // @synthesize locationServicesActive=_locationServicesActive;
 @property(retain, nonatomic) WATodayPadView *todayView; // @synthesize todayView=_todayView;
-- (void).cxx_destruct;
 - (void)getLocationServicesAuthorizationStatus:(CDUnknownBlockType)arg1;
 - (void)_delegateUpdateDidFailWithError:(id)arg1;
 - (void)_delegateDidUpdate;

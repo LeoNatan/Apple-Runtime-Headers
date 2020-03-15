@@ -37,6 +37,7 @@
     PUPlayheadView *__playheadView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPlayheadView:) PUPlayheadView *_playheadView; // @synthesize _playheadView=__playheadView;
 @property(retain, nonatomic, setter=_setVideoScrubberController:) PXVideoScrubberController *_videoScrubberController; // @synthesize _videoScrubberController=__videoScrubberController;
 @property(retain, nonatomic, setter=_setFilmStripView:) UIView<PHVideoScrubberFilmstripView> *_filmStripView; // @synthesize _filmStripView=__filmStripView;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) UIImage *placeholderThumbnail; // @synthesize placeholderThumbnail=_placeholderThumbnail;
 @property(nonatomic) double estimatedDuration; // @synthesize estimatedDuration=_estimatedDuration;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)videoScrubberControllerDidUpdate:(id)arg1;
 - (double)_lengthForDuration:(double)arg1;
 - (double)videoScrubberController:(id)arg1 lengthForDuration:(double)arg2;

@@ -40,14 +40,6 @@ __attribute__((visibility("hidden")))
     NSPopUpButton *_favoritesCollectionPopUpButton;
     NSView *_nonDefaultBrowserInformativeView;
     NSView *_homepageFieldContainerView;
-    NSLayoutConstraint *_launchBehaviorLabelBaselineAlignmentConstraint;
-    NSLayoutConstraint *_launchBehaviorLabelLeadingSpaceConstraint;
-    NSLayoutConstraint *_launchBehaviorLabelHorizontalSpaceConstraint;
-    NSLayoutConstraint *_launchBehaviorLabelTrailingAlignmentConstraint;
-    NSLayoutConstraint *_launchBehaviorPopupBottomSpaceConstraint;
-    NSLayoutConstraint *_launchBehaviorPopupTopSpaceToMainContentViewConstraint;
-    NSLayoutConstraint *_launchBehaviorPopupTrailingAlignmentConstraint;
-    NSLayoutConstraint *_launchBehaviorPopupLeadingAlignmentConstraint;
     NSLayoutConstraint *_nonDefaultBrowserInformativeViewTopSpaceConstraint;
     NSLayoutConstraint *_nonDefaultBrowserInformativeViewTrailingSpaceConstraint;
     NSLayoutConstraint *_nonDefaultBrowserInformativeViewBottomSpaceToMainContentViewConstraint;
@@ -55,26 +47,18 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_nonDefaultBrowserInformativeViewCenteringConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *nonDefaultBrowserInformativeViewCenteringConstraint; // @synthesize nonDefaultBrowserInformativeViewCenteringConstraint=_nonDefaultBrowserInformativeViewCenteringConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *nonDefaultBrowserInformativeViewLeadingSpaceConstraint; // @synthesize nonDefaultBrowserInformativeViewLeadingSpaceConstraint=_nonDefaultBrowserInformativeViewLeadingSpaceConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *nonDefaultBrowserInformativeViewBottomSpaceToMainContentViewConstraint; // @synthesize nonDefaultBrowserInformativeViewBottomSpaceToMainContentViewConstraint=_nonDefaultBrowserInformativeViewBottomSpaceToMainContentViewConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *nonDefaultBrowserInformativeViewTrailingSpaceConstraint; // @synthesize nonDefaultBrowserInformativeViewTrailingSpaceConstraint=_nonDefaultBrowserInformativeViewTrailingSpaceConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *nonDefaultBrowserInformativeViewTopSpaceConstraint; // @synthesize nonDefaultBrowserInformativeViewTopSpaceConstraint=_nonDefaultBrowserInformativeViewTopSpaceConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorPopupLeadingAlignmentConstraint; // @synthesize launchBehaviorPopupLeadingAlignmentConstraint=_launchBehaviorPopupLeadingAlignmentConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorPopupTrailingAlignmentConstraint; // @synthesize launchBehaviorPopupTrailingAlignmentConstraint=_launchBehaviorPopupTrailingAlignmentConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorPopupTopSpaceToMainContentViewConstraint; // @synthesize launchBehaviorPopupTopSpaceToMainContentViewConstraint=_launchBehaviorPopupTopSpaceToMainContentViewConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorPopupBottomSpaceConstraint; // @synthesize launchBehaviorPopupBottomSpaceConstraint=_launchBehaviorPopupBottomSpaceConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorLabelTrailingAlignmentConstraint; // @synthesize launchBehaviorLabelTrailingAlignmentConstraint=_launchBehaviorLabelTrailingAlignmentConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorLabelHorizontalSpaceConstraint; // @synthesize launchBehaviorLabelHorizontalSpaceConstraint=_launchBehaviorLabelHorizontalSpaceConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorLabelLeadingSpaceConstraint; // @synthesize launchBehaviorLabelLeadingSpaceConstraint=_launchBehaviorLabelLeadingSpaceConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *launchBehaviorLabelBaselineAlignmentConstraint; // @synthesize launchBehaviorLabelBaselineAlignmentConstraint=_launchBehaviorLabelBaselineAlignmentConstraint;
 @property(nonatomic) __weak NSView *homepageFieldContainerView; // @synthesize homepageFieldContainerView=_homepageFieldContainerView;
 @property(retain, nonatomic) NSView *nonDefaultBrowserInformativeView; // @synthesize nonDefaultBrowserInformativeView=_nonDefaultBrowserInformativeView;
 @property(nonatomic) __weak NSPopUpButton *favoritesCollectionPopUpButton; // @synthesize favoritesCollectionPopUpButton=_favoritesCollectionPopUpButton;
 @property(nonatomic) __weak NSTextField *favoritesCollectionTextField; // @synthesize favoritesCollectionTextField=_favoritesCollectionTextField;
 @property(nonatomic) __weak NSLayoutConstraint *downloadLocationPopUpButtonMinimizeWidthConstraint; // @synthesize downloadLocationPopUpButtonMinimizeWidthConstraint=_downloadLocationPopUpButtonMinimizeWidthConstraint;
 @property(nonatomic) __weak NSView *mainContentView; // @synthesize mainContentView=_mainContentView;
-- (void).cxx_destruct;
 - (void)_updateFavoritesCollectionPopUpButton;
 - (void)_bookmarksChanged:(id)arg1;
 - (void)_stopObservingBookmarkChanges;
@@ -93,7 +77,6 @@ __attribute__((visibility("hidden")))
 - (long long)_userDefaultsTagByPersistingPopUpTagToDefaults:(long long)arg1;
 - (long long)_userDefaultsToPopUpTag:(long long)arg1;
 - (void)_updateLaunchBehaviorViews;
-- (void)_setUpLaunchBehaviorPopup;
 - (void)_removeOpensWithANewPrivateWindowSettingIfNecessary;
 - (void)_performSynchronousRemoteHomepageUpdateOnlyIfFieldIsFirstResponder:(BOOL)arg1;
 - (void)_updateHomePageViews;

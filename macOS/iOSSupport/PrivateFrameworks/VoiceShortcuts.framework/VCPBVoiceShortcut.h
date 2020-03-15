@@ -23,6 +23,7 @@
     NSString *_shortcutName;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *keyImageData; // @synthesize keyImageData=_keyImageData;
 @property(retain, nonatomic) NSData *serializedWorkflowData; // @synthesize serializedWorkflowData=_serializedWorkflowData;
 @property(nonatomic) double dateLastModified; // @synthesize dateLastModified=_dateLastModified;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *shortcutName; // @synthesize shortcutName=_shortcutName;
 @property(retain, nonatomic) NSString *phrase; // @synthesize phrase=_phrase;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

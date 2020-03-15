@@ -7,18 +7,15 @@
 #import <Photos/PHResourceAvailabilityRequest.h>
 
 @class NSSet;
-@protocol PHResourceRepairRequestDelegate;
 
 @interface PHResourceRepairRequest : PHResourceAvailabilityRequest
 {
-    id <PHResourceRepairRequestDelegate> _delegate;
     NSSet *_errorCodesToRepair;
 }
 
 + (BOOL)appyCorrectionsToResource:(id)arg1 assetObjectID:(id)arg2 errorCodes:(id)arg3 context:(id)arg4;
-@property(retain, nonatomic) NSSet *errorCodesToRepair; // @synthesize errorCodesToRepair=_errorCodesToRepair;
-@property(nonatomic) __weak id <PHResourceRepairRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *errorCodesToRepair; // @synthesize errorCodesToRepair=_errorCodesToRepair;
 - (id)initWithTaskIdentifier:(id)arg1 dataStoreKey:(id)arg2 store:(id)arg3 assetObjectID:(id)arg4 context:(id)arg5 validationErrors:(id)arg6;
 - (id)initWithTaskIdentifier:(id)arg1 resource:(id)arg2 assetObjectID:(id)arg3 validationErrors:(id)arg4;
 - (void)runDaemonSide;

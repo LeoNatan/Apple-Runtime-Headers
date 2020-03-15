@@ -19,10 +19,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long maximumCacheAge; // @synthesize maximumCacheAge=_maximumCacheAge;
 @property(copy, nonatomic) NSArray *ANQPElementIDList; // @synthesize ANQPElementIDList=_ANQPElementIDList;
 @property(copy, nonatomic) NSArray *scanResults; // @synthesize scanResults=_scanResults;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

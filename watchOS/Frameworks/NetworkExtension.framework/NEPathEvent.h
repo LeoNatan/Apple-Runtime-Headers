@@ -14,9 +14,9 @@
     NSString *_bundleID;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(int)arg1 bundleID:(id)arg2;
 
 @end

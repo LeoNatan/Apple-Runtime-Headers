@@ -17,10 +17,10 @@
 
 + (id)_randomPasscode;
 + (id)standardCredentials;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *passcode; // @synthesize passcode=_passcode;
 @property(nonatomic) unsigned int characterCount; // @synthesize characterCount=_characterCount;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 
 @end
 

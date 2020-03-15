@@ -28,6 +28,7 @@
     struct CGSize _nextResize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize nextResize; // @synthesize nextResize=_nextResize;
 @property(nonatomic) BOOL isAppearing; // @synthesize isAppearing=_isAppearing;
 @property(nonatomic) BOOL isLiveResizing; // @synthesize isLiveResizing=_isLiveResizing;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *searchTerm; // @synthesize searchTerm=_searchTerm;
 @property(retain, nonatomic) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
 @property(nonatomic) __weak NSPopover *popover; // @synthesize popover=_popover;
-- (void).cxx_destruct;
 - (BOOL)view:(id)arg1 shouldResize:(struct CGSize)arg2;
 - (void)_updateContentSizeFromNextResize;
 - (void)windowDidEndLiveResize:(id)arg1;

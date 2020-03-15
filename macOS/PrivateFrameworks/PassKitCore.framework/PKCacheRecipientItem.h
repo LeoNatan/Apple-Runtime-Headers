@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) PKPeerPaymentRecipient *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PKPeerPaymentRecipient *item; // @synthesize item=_item;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isNewerThan:(id)arg1;

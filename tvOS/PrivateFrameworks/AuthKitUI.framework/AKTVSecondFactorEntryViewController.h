@@ -8,27 +8,23 @@
 
 #import <AuthKitUI/_TVDigitEntryViewControllerDelegate-Protocol.h>
 
-@class NSString, TVActivityIndicatorViewController, _TVDigitEntryViewController;
+@class AKBasicLoginSecondFactorActions, NSString, TVActivityIndicatorViewController, _TVDigitEntryViewController;
 
 @interface AKTVSecondFactorEntryViewController : UIViewController <_TVDigitEntryViewControllerDelegate>
 {
     _Bool _didPerformAction;
-    CDUnknownBlockType _ak_cancelAction;
-    CDUnknownBlockType _ak_regenerateCodeAction;
-    CDUnknownBlockType _ak_codeEnteredAction;
+    AKBasicLoginSecondFactorActions *_secondFactorActions;
     _TVDigitEntryViewController *_pinViewController;
     TVActivityIndicatorViewController *_spinnerController;
     unsigned long long _state;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didPerformAction; // @synthesize didPerformAction=_didPerformAction;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) TVActivityIndicatorViewController *spinnerController; // @synthesize spinnerController=_spinnerController;
 @property(readonly, nonatomic) _TVDigitEntryViewController *pinViewController; // @synthesize pinViewController=_pinViewController;
-@property(copy, nonatomic) CDUnknownBlockType ak_codeEnteredAction; // @synthesize ak_codeEnteredAction=_ak_codeEnteredAction;
-@property(copy, nonatomic) CDUnknownBlockType ak_regenerateCodeAction; // @synthesize ak_regenerateCodeAction=_ak_regenerateCodeAction;
-@property(copy, nonatomic) CDUnknownBlockType ak_cancelAction; // @synthesize ak_cancelAction=_ak_cancelAction;
-- (void).cxx_destruct;
+@property(copy, nonatomic) AKBasicLoginSecondFactorActions *secondFactorActions; // @synthesize secondFactorActions=_secondFactorActions;
 - (void)performCancelAction;
 - (void)performRegenerateCodeAction;
 - (void)performCodeEnteredAction;

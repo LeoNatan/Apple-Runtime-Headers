@@ -13,8 +13,8 @@
     HKGraphSeriesDataBlock *_dataBlock;
 }
 
-@property(readonly, nonatomic) HKGraphSeriesDataBlock *dataBlock; // @synthesize dataBlock=_dataBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) HKGraphSeriesDataBlock *dataBlock; // @synthesize dataBlock=_dataBlock;
 - (struct CGRect)unionWithExtent:(struct CGRect)arg1;
 - (id)cachedBlockForPath:(CDStruct_48c31d0d)arg1 context:(id)arg2;
 - (void)blocksRequestedFromPath:(CDStruct_48c31d0d)arg1 toPath:(CDStruct_48c31d0d)arg2;

@@ -32,6 +32,7 @@
     id <PXBarAppearanceImplementationDelegate> _implementationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXBarAppearanceImplementationDelegate> implementationDelegate; // @synthesize implementationDelegate=_implementationDelegate;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
@@ -43,7 +44,6 @@
 @property(readonly, nonatomic) BOOL prefersNavigationBarVisible; // @synthesize prefersNavigationBarVisible=_prefersNavigationBarVisible;
 @property(readonly, nonatomic) BOOL prefersStatusBarVisible; // @synthesize prefersStatusBarVisible=_prefersStatusBarVisible;
 @property(nonatomic, setter=_setImplementationDelegate:) __weak id <PXBarAppearanceImplementationDelegate> _implementationDelegate; // @synthesize _implementationDelegate=__implementationDelegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_performBarsTransition:(CDUnknownBlockType)arg1;
 - (void)_setTabBarVisible:(BOOL)arg1 withAnimationOptions:(id)arg2;

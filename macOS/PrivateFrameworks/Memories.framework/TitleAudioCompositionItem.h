@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_baseFilename;
 }
 
-@property(retain, nonatomic) NSString *baseFilename; // @synthesize baseFilename=_baseFilename;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *baseFilename; // @synthesize baseFilename=_baseFilename;
 - (id)speedRangesForSourceRange:(CDStruct_e83c9415)arg1 destinationRange:(CDStruct_e83c9415)arg2;
 - (void)switchToAsset:(int)arg1;
 - (BOOL)hasSeparateInOut;

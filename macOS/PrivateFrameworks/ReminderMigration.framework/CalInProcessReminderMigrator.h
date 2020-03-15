@@ -17,9 +17,9 @@
     id <CalReminderMigrationDefaultsProvider> _defaultsProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CalReminderMigrationDefaultsProvider> defaultsProvider; // @synthesize defaultsProvider=_defaultsProvider;
 @property(readonly, nonatomic) id <CalReminderKitProvider> reminderKitProvider; // @synthesize reminderKitProvider=_reminderKitProvider;
-- (void).cxx_destruct;
 - (BOOL)attemptMigrationWithHomeDirectory:(id)arg1;
 - (id)initWithReminderKitProvider:(id)arg1 defaultsProvider:(id)arg2;
 

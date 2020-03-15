@@ -19,13 +19,13 @@
     HUMonogramView *_unitBadgeLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUMonogramView *unitBadgeLabel; // @synthesize unitBadgeLabel=_unitBadgeLabel;
 @property(nonatomic) BOOL isAnimatingPop; // @synthesize isAnimatingPop=_isAnimatingPop;
 @property(nonatomic) __weak id <HUHomePodDetailViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UIView *unitImageView; // @synthesize unitImageView=_unitImageView;
 @property(readonly, nonatomic) UILabel *unitNameLabel; // @synthesize unitNameLabel=_unitNameLabel;
 @property(readonly, nonatomic) unsigned long long role; // @synthesize role=_role;
-- (void).cxx_destruct;
 - (void)_speakerTapped;
 @property(copy, nonatomic) id <HFStringGenerator> unitName; // @dynamic unitName;
 - (void)_updateImagesForRole;

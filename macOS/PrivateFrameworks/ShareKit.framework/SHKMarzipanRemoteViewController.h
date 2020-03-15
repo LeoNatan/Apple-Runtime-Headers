@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)requestMarzipanViewControllerForExtensionWithIdentifier:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 connectionHandler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property __weak SHKRemoteWindowController *remoteWindowController; // @synthesize remoteWindowController=_remoteWindowController;
-- (void).cxx_destruct;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;

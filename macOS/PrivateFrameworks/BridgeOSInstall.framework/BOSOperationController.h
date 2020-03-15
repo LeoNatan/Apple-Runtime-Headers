@@ -27,6 +27,7 @@
 }
 
 + (double)totalEstimatedTimeForRequest:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDate *lastTimeRemainingEstimate; // @synthesize lastTimeRemainingEstimate=_lastTimeRemainingEstimate;
 @property double totalEstimatedTime; // @synthesize totalEstimatedTime=_totalEstimatedTime;
 @property double completedTime; // @synthesize completedTime=_completedTime;
@@ -38,7 +39,6 @@
 @property(copy) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain) BOSRequest *request; // @synthesize request=_request;
 @property(retain) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (id)bridgeOSSoftwareUpdateControllerRequestSSOTicket:(id)arg1;
 - (BOOL)bridgeOSSoftwareUpdateController:(id)arg1 updateControlRequested:(id)arg2;
 - (void)bridgeOSSoftwareUpdateController:(id)arg1 connectionFailure:(id)arg2;

@@ -14,8 +14,8 @@
 }
 
 + (id)createPuppetRecords;
-@property(copy, nonatomic) NSArray *puppetRecords; // @synthesize puppetRecords=_puppetRecords;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *puppetRecords; // @synthesize puppetRecords=_puppetRecords;
 - (id)allAvatarPuppetsWithError:(id *)arg1;
 - (id)allAvatarPuppetsExcluding:(id)arg1 error:(id *)arg2;
 - (id)avatarsWithIdentifiers:(id)arg1 error:(id *)arg2;

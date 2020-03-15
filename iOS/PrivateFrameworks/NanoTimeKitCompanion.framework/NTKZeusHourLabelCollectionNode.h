@@ -18,9 +18,9 @@
 }
 
 + (id)hours12ZeusWithFont:(long long)arg1 bleed:(unsigned long long)arg2 forDevice:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *visibleNodesForCurrentDensity; // @synthesize visibleNodesForCurrentDensity=_visibleNodesForCurrentDensity;
 @property(nonatomic) unsigned long long density; // @synthesize density=_density;
-- (void).cxx_destruct;
 - (_Bool)_hourNumberAtIndex:(unsigned long long)arg1 isVisibleWithDensity:(unsigned long long)arg2;
 - (void)applyTransitionFraction:(double)arg1 fromDensity:(unsigned long long)arg2 toDensity:(unsigned long long)arg3;
 - (struct CGPoint)childStatusPositionForIndex:(long long)arg1;

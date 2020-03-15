@@ -94,6 +94,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)maximumSizeForFrameImages;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *dateCorrespondingToTimeRemainingTextLabel; // @synthesize dateCorrespondingToTimeRemainingTextLabel=_dateCorrespondingToTimeRemainingTextLabel;
 @property(retain, nonatomic) NSDate *dateCorrespondingToStartTimeTextLabel; // @synthesize dateCorrespondingToStartTimeTextLabel=_dateCorrespondingToStartTimeTextLabel;
 @property(readonly) NSDateFormatter *currentDateFormatter; // @synthesize currentDateFormatter=_currentDateFormatter;
@@ -128,7 +129,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIVisualEffectBackdropView *transportBarCaptureView; // @synthesize transportBarCaptureView=_transportBarCaptureView;
 @property(retain, nonatomic) UIImage *maskImage; // @synthesize maskImage=_maskImage;
 @property(readonly, nonatomic, getter=isAnimatingVisibility) _Bool animatingVisibility; // @synthesize animatingVisibility=_animatingVisibility;
-- (void).cxx_destruct;
 - (id)accessibilityElements;
 - (id)makeMaskImageWasDirty:(_Bool *)arg1;
 @property(retain, nonatomic) NSArray *interstitialDisplayTimes;

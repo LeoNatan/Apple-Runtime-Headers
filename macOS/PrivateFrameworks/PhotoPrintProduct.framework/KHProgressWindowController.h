@@ -23,13 +23,13 @@
     NSProgress *_progress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(copy, nonatomic) CDUnknownBlockType cancelBlock; // @synthesize cancelBlock=_cancelBlock;
 @property(copy, nonatomic) NSString *status; // @synthesize status=_status;
 @property __weak NSTextField *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
-- (void).cxx_destruct;
 - (BOOL)windowShouldZoom:(id)arg1 toFrame:(struct CGRect)arg2;
 - (struct CGSize)windowWillResize:(id)arg1 toSize:(struct CGSize)arg2;
 - (void)dismissWithCode:(long long)arg1;

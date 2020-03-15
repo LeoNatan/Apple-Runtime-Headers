@@ -16,9 +16,9 @@
     NSMutableArray *_keyValuePairs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
 @property(readonly, nonatomic) HKInteractiveChartDataFormatter *formatter; // @synthesize formatter=_formatter;
-- (void).cxx_destruct;
 - (_Bool)showSeparators;
 - (id)valueViewForColumnAtIndex:(long long)arg1 orientation:(long long)arg2;
 - (long long)numberOfValuesForAnnotationView:(id)arg1;

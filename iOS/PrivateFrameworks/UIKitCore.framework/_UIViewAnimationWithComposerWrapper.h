@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)instanceWithAnimation:(id)arg1 composer:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIViewAnimationComposing> composer; // @synthesize composer=_composer;
 @property(retain, nonatomic) id <UIIntervalAnimating> animation; // @synthesize animation=_animation;
-- (void).cxx_destruct;
 
 @end
 

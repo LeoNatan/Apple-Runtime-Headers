@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIView *_shadowView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 @property(retain, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(copy, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
 @property(nonatomic) _Bool shouldBlurBackground; // @synthesize shouldBlurBackground=_shouldBlurBackground;
-- (void).cxx_destruct;
 - (void)_updateBackdropViewGroupName;
 - (void)_updateBackground;
 - (void)setItems:(id)arg1 animated:(_Bool)arg2;

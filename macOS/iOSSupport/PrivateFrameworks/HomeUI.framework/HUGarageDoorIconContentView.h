@@ -37,6 +37,7 @@
 + (double)_referenceHeightForPanelAtPosition:(unsigned long long)arg1 open:(BOOL)arg2;
 + (double)_referenceOriginYForPanelAtPosition:(unsigned long long)arg1 open:(BOOL)arg2;
 + (double)_scaleFactorForBounds:(struct CGRect)arg1 referenceSize:(struct CGSize)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HUGarageDoorStateTransition *activeTransition; // @synthesize activeTransition=_activeTransition;
 @property(nonatomic) BOOL clipBottomPanelShapesToBounds; // @synthesize clipBottomPanelShapesToBounds=_clipBottomPanelShapesToBounds;
 @property(nonatomic, getter=isOpen) BOOL open; // @synthesize open=_open;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) HUShapeLayerView *carView; // @synthesize carView=_carView;
 @property(retain, nonatomic) HUVisualEffectContainerView *buildingContainerView; // @synthesize buildingContainerView=_buildingContainerView;
 @property(retain, nonatomic) HUShapeLayerView *buildingView; // @synthesize buildingView=_buildingView;
-- (void).cxx_destruct;
 - (struct CATransform3D)_panelHingeSublayerTransformWithOpenState:(BOOL)arg1;
 - (struct CATransform3D)_doorHingeSublayerTransformForOpenState:(BOOL)arg1;
 - (struct CGRect)_frameForPanelAtPosition:(unsigned long long)arg1 open:(BOOL)arg2 relativeToHinge:(BOOL)arg3;

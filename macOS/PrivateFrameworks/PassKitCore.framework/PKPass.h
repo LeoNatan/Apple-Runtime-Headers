@@ -9,7 +9,7 @@
 #import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSDictionary, NSNumber, NSSet, NSString, NSURL, PKBarcode, PKImage, PKLiveRenderedShaderSet, PKNFCPayload, PKPassDisplayProfile, PKPassLiveRenderedImageSet, PKPassPersonalization, PKPaymentPass;
+@class NSArray, NSData, NSDate, NSDictionary, NSNumber, NSSet, NSString, NSURL, PKBarcode, PKImage, PKLiveRenderedShaderSet, PKNFCPayload, PKPassDisplayProfile, PKPassLiveRenderedImageSet, PKPassPersonalization, PKPaymentPass, PKSecureElementPass;
 
 @interface PKPass : PKObject <NSCopying, NSSecureCoding>
 {
@@ -53,6 +53,7 @@
 + (unsigned long long)defaultSettings;
 + (BOOL)isValidObjectWithFileURL:(id)arg1 warnings:(id *)arg2 orError:(id *)arg3;
 + (Class)classForPassType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isRevoked) BOOL revoked; // @synthesize revoked=_revoked;
 @property(retain, nonatomic) NSDate *modifiedDate; // @synthesize modifiedDate=_modifiedDate;
 @property(retain, nonatomic) NSDate *ingestedDate; // @synthesize ingestedDate=_ingestedDate;
@@ -85,7 +86,6 @@
 @property(copy, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(nonatomic) unsigned long long passType; // @synthesize passType=_passType;
-- (void).cxx_destruct;
 - (id)_changeMessageForFieldKey:(id)arg1;
 - (id)_localizationKeyForMultipleDiff;
 - (id)dictionariesForSemanticKey:(id)arg1;
@@ -149,13 +149,14 @@
 - (BOOL)hasValidNFCPayload;
 - (BOOL)hasLocationRelevancyInfo;
 - (BOOL)hasTimeOrLocationRelevancyInfo;
+@property(readonly, nonatomic) PKSecureElementPass *secureElementPass;
 @property(readonly, nonatomic) PKPaymentPass *paymentPass;
 @property(readonly, nonatomic) NSString *pluralLocalizedName;
 @property(readonly, nonatomic) NSString *lowercaseLocalizedName;
 @property(readonly, copy, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) long long style;
 - (unsigned long long)itemType;
-- (id)recordTypesAndNames;
+- (id)recordTypesAndNamesIncludingServerData:(BOOL)arg1;
 - (void)encodeWithCloudStoreCoder:(id)arg1;
 - (id)initWithCloudStoreCoder:(id)arg1;
 - (void)downloadRemoteAssetsWithCompletion:(CDUnknownBlockType)arg1;

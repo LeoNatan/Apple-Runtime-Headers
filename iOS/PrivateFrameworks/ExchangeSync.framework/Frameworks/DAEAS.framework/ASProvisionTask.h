@@ -17,12 +17,12 @@
     NSString *_key;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) ASPolicy *policy; // @synthesize policy=_policy;
 @property(nonatomic) _Bool accountOnlyRemoteWipeSuccess; // @synthesize accountOnlyRemoteWipeSuccess=_accountOnlyRemoteWipeSuccess;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) NSDictionary *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (_Bool)processContext:(id)arg1;
 - (_Bool)getTopLevelToken:(char *)arg1 outStatusCodePage:(char *)arg2 outStatusToken:(char *)arg3;

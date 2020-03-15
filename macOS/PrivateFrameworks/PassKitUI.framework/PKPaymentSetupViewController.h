@@ -81,6 +81,7 @@
     PKPaymentCredential *_inFlightCardOnFileCredential;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL selectCardsOnFileSkippedDueToSingleCredential; // @synthesize selectCardsOnFileSkippedDueToSingleCredential=_selectCardsOnFileSkippedDueToSingleCredential;
 @property(retain, nonatomic) PKPaymentCredential *inFlightCardOnFileCredential; // @synthesize inFlightCardOnFileCredential=_inFlightCardOnFileCredential;
 @property(retain, nonatomic) PKPaymentCardVerificationViewController *verificationMethodsConditionsVC; // @synthesize verificationMethodsConditionsVC=_verificationMethodsConditionsVC;
@@ -140,7 +141,6 @@
 @property BOOL nextButtonEnabled; // @synthesize nextButtonEnabled=_nextButtonEnabled;
 @property(nonatomic) BOOL prefPaneIsUnselected; // @synthesize prefPaneIsUnselected=_prefPaneIsUnselected;
 @property(nonatomic) BOOL isProcessingRequest; // @synthesize isProcessingRequest=_isProcessingRequest;
-- (void).cxx_destruct;
 - (void)logAggDCheckpointForKey:(id)arg1;
 - (void)logAggDContextSpecificCheckpointForKey:(id)arg1;
 - (id)_contextSpecificStringForAggDKey:(id)arg1;

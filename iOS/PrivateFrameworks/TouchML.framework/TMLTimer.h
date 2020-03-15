@@ -21,13 +21,13 @@
 
 + (void)initializeJSContext:(id)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(copy, nonatomic) NSString *runLoopMode; // @synthesize runLoopMode=_runLoopMode;
 @property(nonatomic) _Bool running; // @synthesize running=_running;
 @property(nonatomic) double tolerance; // @synthesize tolerance=_tolerance;
 @property(nonatomic) double interval; // @synthesize interval=_interval;
 @property(nonatomic) _Bool repeats; // @synthesize repeats=_repeats;
-- (void).cxx_destruct;
 - (void)fire;
 - (void)stop;
 - (void)start;

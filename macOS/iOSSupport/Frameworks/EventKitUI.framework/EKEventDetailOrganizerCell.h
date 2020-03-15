@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_organizerFont;
 + (id)_titleFont;
-@property(nonatomic) BOOL hideDisclosureIndicator; // @synthesize hideDisclosureIndicator=_hideDisclosureIndicator;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hideDisclosureIndicator; // @synthesize hideDisclosureIndicator=_hideDisclosureIndicator;
 - (void)_updateDisclosureIndicator;
 - (id)_organizerView;
 - (id)_organizerLabel;

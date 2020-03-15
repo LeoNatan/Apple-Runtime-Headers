@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     CKRecord *_record;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) CKDModifyRecordsOperation *modifyOperation; // @synthesize modifyOperation=_modifyOperation;
 @property(retain, nonatomic) CKDFetchRecordsOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isPackage; // @synthesize isPackage=_isPackage;
 @property(nonatomic) _Bool recovered; // @synthesize recovered=_recovered;
 @property(retain, nonatomic) CKRecordID *repairRecordID; // @synthesize repairRecordID=_repairRecordID;
-- (void).cxx_destruct;
 - (void)main;
 - (void)_updateMissingAssetStatus;
 - (id)nameForState:(unsigned long long)arg1;

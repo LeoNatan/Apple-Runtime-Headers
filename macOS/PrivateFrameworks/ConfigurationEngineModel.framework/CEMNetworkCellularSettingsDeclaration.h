@@ -27,13 +27,13 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowAppCellularDataModification; // @synthesize payloadAllowAppCellularDataModification=_payloadAllowAppCellularDataModification;
 @property(copy, nonatomic) NSNumber *payloadAllowCellularPlanModification; // @synthesize payloadAllowCellularPlanModification=_payloadAllowCellularPlanModification;
 @property(copy, nonatomic) NSNumber *payloadAllowGlobalBackgroundFetchWhenRoaming; // @synthesize payloadAllowGlobalBackgroundFetchWhenRoaming=_payloadAllowGlobalBackgroundFetchWhenRoaming;
 @property(copy, nonatomic) NSNumber *payloadAllowPersonalHotspot; // @synthesize payloadAllowPersonalHotspot=_payloadAllowPersonalHotspot;
 @property(copy, nonatomic) NSNumber *payloadAllowVoiceRoaming; // @synthesize payloadAllowVoiceRoaming=_payloadAllowVoiceRoaming;
 @property(copy, nonatomic) NSNumber *payloadAllowDataRoaming; // @synthesize payloadAllowDataRoaming=_payloadAllowDataRoaming;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

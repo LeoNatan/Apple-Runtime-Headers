@@ -13,8 +13,8 @@
     TVLJavaScriptContext *_javaScriptContext;
 }
 
-@property(retain, nonatomic) TVLJavaScriptContext *javaScriptContext; // @synthesize javaScriptContext=_javaScriptContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVLJavaScriptContext *javaScriptContext; // @synthesize javaScriptContext=_javaScriptContext;
 - (void)startLoadingKeyResponseDataForRequest:(id)arg1;
 - (void)startLoadingContentIdentifierDataForRequest:(id)arg1;
 - (void)startLoadingCertificateDataForRequest:(id)arg1;

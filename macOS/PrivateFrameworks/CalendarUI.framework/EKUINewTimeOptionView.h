@@ -24,6 +24,7 @@
     NSImage *_busyStatusIcon;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *busyStatusIcon; // @synthesize busyStatusIcon=_busyStatusIcon;
 @property(retain) CalUILabel *attendeesLabel; // @synthesize attendeesLabel=_attendeesLabel;
 @property(retain) CalUILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) EKInviteeAlternativeTime *alternativeTime; // @synthesize alternativeTime=_alternativeTime;
 @property __weak id <EKUINewTimeOptionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;
 - (void)keyDown:(id)arg1;

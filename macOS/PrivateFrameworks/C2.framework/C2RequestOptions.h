@@ -48,6 +48,7 @@
 + (id)stringForDuetPreClearedMode:(unsigned long long)arg1;
 + (id)stringForDiscretionaryNetworkBehavior:(unsigned long long)arg1;
 + (id)stringForQualityOfService:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_sessionGroupCreated; // @synthesize testBehavior_sessionGroupCreated=_testBehavior_sessionGroupCreated;
 @property(copy, nonatomic) NSURL *invokedURL; // @synthesize invokedURL=_invokedURL;
 @property(nonatomic) BOOL metricRequest; // @synthesize metricRequest=_metricRequest;
@@ -76,7 +77,6 @@
 @property(nonatomic) BOOL _allowsExpensiveAccess; // @synthesize _allowsExpensiveAccess=__allowsExpensiveAccess;
 @property(copy, nonatomic) NSString *outOfProcessPoolName; // @synthesize outOfProcessPoolName=_outOfProcessPoolName;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     UIImage *_successImage;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *successImage; // @synthesize successImage=_successImage;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) UIImage *landingImage; // @synthesize landingImage=_landingImage;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIImage *inputImage; // @synthesize inputImage=_inputImage;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (void)_setSuccessImage:(id)arg1;
 - (void)_setLandingImage:(id)arg1;
 - (void)_setInputImage:(id)arg1;

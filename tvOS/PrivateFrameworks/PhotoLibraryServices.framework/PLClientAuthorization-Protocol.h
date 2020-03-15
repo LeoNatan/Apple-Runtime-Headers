@@ -10,6 +10,7 @@
 
 @protocol PLClientAuthorization <NSObject>
 @property(readonly, nonatomic) _Bool directDatabaseWriteAuthorized;
+@property(readonly, nonatomic) _Bool directDatabaseAccessAuthorized;
 @property(readonly, nonatomic) CDStruct_4c969caf clientAuditToken;
 @property(readonly, nonatomic) _Bool photoKitEntitled;
 @property(readonly, nonatomic) int clientProcessIdentifier;

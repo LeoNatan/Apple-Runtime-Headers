@@ -18,12 +18,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(nonatomic) BOOL autoAccept; // @synthesize autoAccept=_autoAccept;
 @property(copy, nonatomic) NSData *previewImageData; // @synthesize previewImageData=_previewImageData;
 @property(copy, nonatomic) NSString *senderName; // @synthesize senderName=_senderName;
 @property(copy, nonatomic) NSSet *fileItems; // @synthesize fileItems=_fileItems;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

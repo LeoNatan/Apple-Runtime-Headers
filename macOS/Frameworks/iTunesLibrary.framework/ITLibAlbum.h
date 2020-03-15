@@ -25,6 +25,7 @@
 }
 
 + (id)albumWithDict:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSString *sortAlbumArtist; // @synthesize sortAlbumArtist=_sortAlbumArtist;
 @property(copy, nonatomic) NSString *albumArtist; // @synthesize albumArtist=_albumArtist;
@@ -37,7 +38,6 @@
 @property(nonatomic, getter=isCompilation) BOOL compilation; // @synthesize compilation=_compilation;
 @property(copy, nonatomic) NSString *sortTitle; // @synthesize sortTitle=_sortTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) ITLibArtist *artist;
 
 @end

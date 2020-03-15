@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)server;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) weak_ptr_7745b585 lifetime_event_handler; // @synthesize lifetime_event_handler=_lifetime_event_handler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *lifetime_event_queue; // @synthesize lifetime_event_queue=_lifetime_event_queue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -33,8 +35,6 @@ __attribute__((visibility("hidden")))
 @property _Bool definitely_die; // @synthesize definitely_die=_definitely_die;
 @property _Bool first_contact; // @synthesize first_contact=_first_contact;
 @property(retain, nonatomic) NSXPCConnection *current_connection; // @synthesize current_connection=_current_connection;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)lazy_get_connection;
 - (id)_lazy_get_connection;
 - (void)register_for_resurrection_notification;

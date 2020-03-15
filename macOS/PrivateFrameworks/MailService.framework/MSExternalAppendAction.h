@@ -16,10 +16,10 @@
 }
 
 + (id)entityName;
+- (void).cxx_destruct;
 @property(readonly) int mailboxType; // @synthesize mailboxType=_mailboxType;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
 @property(readonly) MCMessage *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)managedObjectForContext:(id)arg1;
 - (id)initWithManagedObject:(id)arg1;
 - (id)initWithMessage:(id)arg1 account:(id)arg2 mailboxType:(int)arg3;

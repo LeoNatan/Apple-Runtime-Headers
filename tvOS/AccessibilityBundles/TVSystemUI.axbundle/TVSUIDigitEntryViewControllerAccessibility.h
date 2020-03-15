@@ -13,6 +13,7 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)accessibilityHeaderElements;
 - (void)viewDidLoad;
 - (id)_accessibilityDigitEntryDescription;
 - (void)_accessibilityLoadAccessibilityInformation;

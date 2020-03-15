@@ -24,6 +24,7 @@
     CDUnknownBlockType _work;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType work; // @synthesize work=_work;
 @property(copy, nonatomic) CDUnknownBlockType canceledCallback; // @synthesize canceledCallback=_canceledCallback;
 @property(copy, nonatomic) CDUnknownBlockType task; // @synthesize task=_task;
@@ -36,7 +37,6 @@
 @property(nonatomic) double backoffMultiplier; // @synthesize backoffMultiplier=_backoffMultiplier;
 @property(nonatomic) double maxBackOffInterval; // @synthesize maxBackOffInterval=_maxBackOffInterval;
 @property(nonatomic) double initialDelay; // @synthesize initialDelay=_initialDelay;
-- (void).cxx_destruct;
 - (void)_cancelTimer;
 - (void)_incrementBackoffInterval;
 - (void)_reportReachabilityChange:(id)arg1;

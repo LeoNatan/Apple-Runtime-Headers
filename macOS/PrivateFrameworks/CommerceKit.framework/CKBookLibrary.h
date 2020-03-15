@@ -28,6 +28,7 @@
 + (id)authorSortDescriptors;
 + (id)titleSortDescriptors;
 + (id)_sharedDAAPLibrary;
+- (void).cxx_destruct;
 @property(retain) id token; // @synthesize token=_token;
 @property(retain) NSMutableDictionary *observers; // @synthesize observers=_observers;
 @property(readonly) CKStoreDAAPLibrary *library; // @synthesize library=_library;
@@ -35,7 +36,6 @@
 @property(copy) NSPredicate *searchPredicate; // @synthesize searchPredicate=_searchPredicate;
 @property(copy) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly) long long libraryType; // @synthesize libraryType=_libraryType;
-- (void).cxx_destruct;
 - (void)pollForPurchasedBooks;
 - (id)_bookFromDAAPItem:(id)arg1;
 - (void)storeDAAPLibrary:(id)arg1 addedItems:(id)arg2 removedItems:(id)arg3;

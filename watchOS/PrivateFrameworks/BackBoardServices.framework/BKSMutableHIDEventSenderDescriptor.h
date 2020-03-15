@@ -13,6 +13,7 @@
 }
 
 + (id)new;
+@property(nonatomic) unsigned long long senderID; // @dynamic senderID;
 - (void)setPrimaryPage:(unsigned int)arg1 primaryUsage:(unsigned int)arg2;
 @property(copy, nonatomic) BKSHIDEventDisplay *associatedDisplay; // @dynamic associatedDisplay;
 @property(nonatomic, getter=isAuthenticated) _Bool authenticated; // @dynamic authenticated;

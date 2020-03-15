@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfFilesTransferred; // @synthesize numberOfFilesTransferred=_numberOfFilesTransferred;
 @property(nonatomic) _Bool inAppleStore; // @synthesize inAppleStore=_inAppleStore;
 @property(nonatomic) int connectionType; // @synthesize connectionType=_connectionType;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long transferDuration; // @synthesize transferDuration=_transferDuration;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

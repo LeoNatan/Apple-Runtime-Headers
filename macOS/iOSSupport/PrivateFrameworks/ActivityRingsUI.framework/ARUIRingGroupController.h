@@ -34,6 +34,7 @@
 + (double)defaultAnimationDuration;
 + (id)ringGroupControllerConfiguredForCompanionWithRingType:(long long)arg1 withIcon:(BOOL)arg2;
 + (id)ringGroupControllerConfiguredForWatchWithRingType:(long long)arg1 withIcon:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ARUIRingGroupControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *rings; // @synthesize rings=_rings;
 @property(nonatomic) double additionalSpacingAtIndex; // @synthesize additionalSpacingAtIndex=_additionalSpacingAtIndex;
@@ -50,7 +51,6 @@
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
 @property(retain, nonatomic) ARUISpriteSheet *spriteSheet; // @synthesize spriteSheet=_spriteSheet;
 @property(readonly, nonatomic) long long numberOfRings; // @synthesize numberOfRings=_numberOfRings;
-- (void).cxx_destruct;
 - (unsigned long long)_lastRingFrameNumberForRingAtIndex:(unsigned long long)arg1;
 - (void)update:(double)arg1;
 - (id)_newAnimatablePropertyForType:(unsigned long long)arg1;

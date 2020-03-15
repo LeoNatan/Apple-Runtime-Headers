@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)taggedMessageWithMessageText:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *messageText; // @synthesize messageText=mMessageText;
 @property(readonly, nonatomic) int messageTag; // @synthesize messageTag=mMessageTag;
-- (void).cxx_destruct;
 - (id)initWithMessageText:(id)arg1;
 
 @end

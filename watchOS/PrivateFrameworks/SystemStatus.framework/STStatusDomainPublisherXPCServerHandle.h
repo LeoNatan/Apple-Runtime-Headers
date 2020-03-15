@@ -21,11 +21,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *serverXPCConnection; // @synthesize serverXPCConnection=_serverXPCConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) BSMutableIntegerMap *hasSentDataByDomain; // @synthesize hasSentDataByDomain=_hasSentDataByDomain;
 @property(retain, nonatomic) BSMutableIntegerMap *dataByDomain; // @synthesize dataByDomain=_dataByDomain;
-- (void).cxx_destruct;
 - (void)_tearDownXPCConnection;
 - (void)_resendData;
 - (void)_internalQueue_setupXPCConnectionIfNecessary;

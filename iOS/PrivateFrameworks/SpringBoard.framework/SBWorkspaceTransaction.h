@@ -19,13 +19,13 @@
     SBLayoutStateTransitionCoordinator *_layoutStateTransitionCoordinator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBSceneManager *sceneManager; // @synthesize sceneManager=_sceneManager;
 @property(readonly, nonatomic) SBLayoutStateTransitionCoordinator *layoutStateTransitionCoordinator; // @synthesize layoutStateTransitionCoordinator=_layoutStateTransitionCoordinator;
 @property(nonatomic) _Bool clearsCompletionAsynchronously; // @synthesize clearsCompletionAsynchronously=_clearsCompletionAsynchronously;
 @property(retain, nonatomic) SBUIAnimationController *suggestedAnimationController; // @synthesize suggestedAnimationController=_suggestedAnimationController;
 @property(readonly, nonatomic) SBSceneLayoutViewController *layoutController; // @synthesize layoutController=_layoutController;
 @property(readonly, nonatomic) SBWorkspaceTransitionRequest *transitionRequest; // @synthesize transitionRequest=_transitionRequest;
-- (void).cxx_destruct;
 - (void)_didInterruptForTransitionRequest:(id)arg1;
 - (void)_willInterruptForTransitionRequest:(id)arg1;
 - (id)_transitionRequestForInterruption;

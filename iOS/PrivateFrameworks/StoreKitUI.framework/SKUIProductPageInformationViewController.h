@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     NSOperationQueue *_operationQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) SKUIProductPageItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
-- (void).cxx_destruct;
 - (void)_updateLinesWithRatingImage:(id)arg1;
 - (id)_informationLinesWithProductInfo:(id)arg1;
 - (id)_informationLinesWithItem:(id)arg1 ratingImage:(id)arg2;

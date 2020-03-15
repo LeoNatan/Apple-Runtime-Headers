@@ -27,6 +27,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *floorLevel; // @synthesize floorLevel=_floorLevel;
 @property(nonatomic) double courseAccuracy; // @synthesize courseAccuracy=_courseAccuracy;
 @property(nonatomic) double course; // @synthesize course=_course;
@@ -38,7 +39,6 @@
 @property(nonatomic) double longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

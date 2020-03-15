@@ -11,8 +11,8 @@
     id _mailApplicationScene;
 }
 
-@property(nonatomic) __weak id mailApplicationScene; // @synthesize mailApplicationScene=_mailApplicationScene;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id mailApplicationScene; // @synthesize mailApplicationScene=_mailApplicationScene;
 - (void)_accessibilityWithdrawActiveItem;
 - (_Bool)accessibilityPerformEscape;
 - (_Bool)accessibilityActivate;

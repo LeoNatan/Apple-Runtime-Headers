@@ -47,6 +47,7 @@
 + (id)isUniversalJSONTransformer;
 + (id)JSONKeyPathsByPropertyKey;
 + (id)allowedSecureCodingClassesByPropertyKey;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *numberOfRatingsLatestVersion; // @synthesize numberOfRatingsLatestVersion=_numberOfRatingsLatestVersion;
 @property(readonly, nonatomic) NSNumber *averageRatingLatestVersion; // @synthesize averageRatingLatestVersion=_averageRatingLatestVersion;
 @property(readonly, nonatomic) NSNumber *numberOfRatings; // @synthesize numberOfRatings=_numberOfRatings;
@@ -72,7 +73,6 @@
 @property(readonly, nonatomic) NSDate *releaseDate; // @synthesize releaseDate=_releaseDate;
 @property(readonly, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(readonly, nonatomic) NSString *artistID; // @synthesize artistID=_artistID;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

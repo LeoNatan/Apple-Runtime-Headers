@@ -14,9 +14,9 @@
     UIButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(nonatomic) double yOffset; // @synthesize yOffset=_yOffset;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

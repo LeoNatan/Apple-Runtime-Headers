@@ -40,6 +40,7 @@
 + (_Bool)isPrimaryAccountManagedAppleID;
 + (void)prewarm;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) int tccNotifyToken; // @synthesize tccNotifyToken=_tccNotifyToken;
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(nonatomic) _Bool cachedIsGlobalICloudDriveSyncOptedIn; // @synthesize cachedIsGlobalICloudDriveSyncOptedIn=_cachedIsGlobalICloudDriveSyncOptedIn;
@@ -49,7 +50,6 @@
 @property(nonatomic) _Bool cachedICloudValuesPrewarmed; // @synthesize cachedICloudValuesPrewarmed=_cachedICloudValuesPrewarmed;
 @property(nonatomic) _Bool cachedIsPrimaryAccountManagedAppleID; // @synthesize cachedIsPrimaryAccountManagedAppleID=_cachedIsPrimaryAccountManagedAppleID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *prewarmQueue; // @synthesize prewarmQueue=_prewarmQueue;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)_evaluateIsGlobalICloudDriveSyncOptedInForAccount:(id)arg1;
 - (id)_evaluateICloudIdentityForAccount:(id)arg1;

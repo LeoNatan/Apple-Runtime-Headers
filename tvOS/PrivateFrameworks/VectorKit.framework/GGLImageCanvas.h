@@ -51,6 +51,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _signpostId;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct RenderTargetFormat resolvedRenderTargetFormat; // @synthesize resolvedRenderTargetFormat=_resolvedRenderTargetFormat;
 @property(nonatomic) _Bool allowAlpha; // @synthesize allowAlpha=_allowAlpha;
 @property(readonly, nonatomic) _Bool multiSample; // @synthesize multiSample=_useMultisampling;
@@ -58,8 +60,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) double contentScale; // @synthesize contentScale=_contentScale;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)didDrawView;
 - (void)willDrawView;
 - (void)renderWithTimestamp:(double)arg1 completion:(function_d3afe2e2)arg2;

@@ -16,10 +16,10 @@
     id <CFRRestrictionManaging> _serviceProxy;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CFRRestrictionManaging> serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType connectionErrorHandler; // @synthesize connectionErrorHandler=_connectionErrorHandler;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (id)initWithConnectionErrorHandler:(CDUnknownBlockType)arg1;
 

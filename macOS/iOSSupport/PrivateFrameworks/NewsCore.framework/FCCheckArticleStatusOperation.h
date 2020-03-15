@@ -18,12 +18,12 @@
     long long _resultStatus;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long resultStatus; // @synthesize resultStatus=_resultStatus;
 @property(copy, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(retain) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(copy) CDUnknownBlockType checkStatusCompletion; // @synthesize checkStatusCompletion=_checkStatusCompletion;
-- (void).cxx_destruct;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
 - (BOOL)validateOperation;

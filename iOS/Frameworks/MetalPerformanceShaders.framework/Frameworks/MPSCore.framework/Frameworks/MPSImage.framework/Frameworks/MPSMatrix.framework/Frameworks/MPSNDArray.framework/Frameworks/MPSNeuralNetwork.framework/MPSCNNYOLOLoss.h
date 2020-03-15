@@ -50,9 +50,9 @@
 @property(readonly, retain, nonatomic) MPSCNNLoss *lossWH; // @synthesize lossWH=_lossWH;
 @property(readonly, retain, nonatomic) MPSCNNLoss *lossXY; // @synthesize lossXY=_lossXY;
 - (unsigned long long)maxBatchSize;
-- (float)countPresetobjectsSourceImages:(struct NSArray *)arg1 labels:(struct NSArray *)arg2;
-- (struct NSArray *)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 labels:(struct NSArray *)arg3;
-- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 labels:(struct NSArray *)arg3 destinationImages:(struct NSArray *)arg4;
+- (float)countPresetobjectsSourceImages:(id)arg1 labels:(id)arg2;
+- (id)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 labels:(id)arg3;
+- (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(id)arg2 labels:(id)arg3 destinationImages:(id)arg4;
 - (id)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 labels:(id)arg3;
 - (void)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 labels:(id)arg3 destinationImage:(id)arg4;
 - (id)temporaryResultStateForCommandBuffer:(id)arg1 sourceImage:(id)arg2 sourceStates:(id)arg3;

@@ -13,8 +13,8 @@
     MFEWSGetItemsResponseOperation *_getItemsResponse;
 }
 
-@property(readonly, nonatomic) MFEWSGetItemsResponseOperation *getItemsResponse; // @synthesize getItemsResponse=_getItemsResponse;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MFEWSGetItemsResponseOperation *getItemsResponse; // @synthesize getItemsResponse=_getItemsResponse;
 - (id)prepareRequest;
 - (id)initWithGateway:(id)arg1 errorHandler:(id)arg2;
 - (id)initWithGetItemsResponse:(id)arg1 gateway:(id)arg2;

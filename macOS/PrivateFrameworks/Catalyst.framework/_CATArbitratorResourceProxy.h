@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     BOOL _isExclusive;
 }
 
-@property(readonly, nonatomic) BOOL isExclusive; // @synthesize isExclusive=_isExclusive;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isExclusive; // @synthesize isExclusive=_isExclusive;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

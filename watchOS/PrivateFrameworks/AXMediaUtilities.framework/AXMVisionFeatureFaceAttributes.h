@@ -25,6 +25,7 @@
 
 + (id)unitTestingFaceAttributes;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *results; // @synthesize results=_results;
 @property(readonly, nonatomic) int glassesCategory; // @synthesize glassesCategory=_glassesCategory;
 @property(readonly, nonatomic) int baldCategory; // @synthesize baldCategory=_baldCategory;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) int eyesCategory; // @synthesize eyesCategory=_eyesCategory;
 @property(readonly, nonatomic) int genderCategory; // @synthesize genderCategory=_genderCategory;
 @property(readonly, nonatomic) int ageCategory; // @synthesize ageCategory=_ageCategory;
-- (void).cxx_destruct;
 - (id)accessibilityLabelForAttributes;
 - (id)_accessibilityLabelForAgeCategory;
 - (id)_accessibilityLabelForGlassesCategory;

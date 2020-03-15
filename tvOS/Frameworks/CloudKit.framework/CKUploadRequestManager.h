@@ -19,8 +19,8 @@
 + (double)retryableErrorRetryTime;
 + (double)tryAgainLaterRetryTime;
 + (double)recurringFetchPeriod;
-@property(readonly, nonatomic) CKUploadRequestManagerInternals *internals; // @synthesize internals=_internals;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKUploadRequestManagerInternals *internals; // @synthesize internals=_internals;
 - (void)setCallback:(CDUnknownBlockType)arg1 forOverridePoint:(long long)arg2;
 - (void)cancelAllOperations;
 - (void)scheduleOrInvokeRepairsNow;

@@ -21,6 +21,7 @@
     struct CGSize _targetSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool assetLoadingAsRaw; // @synthesize assetLoadingAsRaw=_assetLoadingAsRaw;
 @property(nonatomic, setter=_setResolvedVersion:) long long _resolvedVersion; // @synthesize _resolvedVersion=__resolvedVersion;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
@@ -28,7 +29,6 @@
 @property(nonatomic) __weak id <PUPhotoEditResourceLoaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool requireAdjustments; // @synthesize requireAdjustments=_requireAdjustments;
 @property(nonatomic) _Bool requireLocalResources; // @synthesize requireLocalResources=_requireLocalResources;
-- (void).cxx_destruct;
 - (void)_assertWorkVersionResolved;
 - (_Bool)_isWorkVersionResolved;
 - (void)_resolveVersionIfNeededWithWorkVersion:(long long)arg1;

@@ -22,10 +22,10 @@
 + (id)lifetimeDetailsUntilMorning;
 + (id)lifetimeDetailsUntilEvening;
 + (id)lifetimeDetailsForOneHour;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *metadata; // @synthesize metadata=_metadata;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;

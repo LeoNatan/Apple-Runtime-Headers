@@ -23,6 +23,7 @@
 + (id)_fontWithSize:(double)arg1 textStyleAttribute:(struct __CFString *)arg2;
 + (id)_secondaryLabelFont;
 + (id)_primaryLabelFont;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) UIVisualEffectView *toastView; // @synthesize toastView=_toastView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) SKUIToastPresentationWindow *presentationWindow; // @synthesize presentationWindow=_presentationWindow;
 @property(copy, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-- (void).cxx_destruct;
 - (void)_dismissWithDelay:(double)arg1;
 - (void)presentFromViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)present;

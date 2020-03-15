@@ -14,8 +14,8 @@
 }
 
 + (id)serialQueue;
-@property(retain, nonatomic) NSMutableArray *snapshotters; // @synthesize snapshotters=_snapshotters;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *snapshotters; // @synthesize snapshotters=_snapshotters;
 - (CDUnknownBlockType)snapShotWithOptions:(id)arg1 annotations:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)init;
 

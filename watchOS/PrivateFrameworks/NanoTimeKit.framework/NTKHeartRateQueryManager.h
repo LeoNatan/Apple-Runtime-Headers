@@ -25,8 +25,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic, getter=hasCheckedDefaults) _Bool checkedDefaults; // @synthesize checkedDefaults=_checkedDefaults;
 - (void).cxx_destruct;
+@property(nonatomic, getter=hasCheckedDefaults) _Bool checkedDefaults; // @synthesize checkedDefaults=_checkedDefaults;
 @property(readonly, nonatomic) _Bool canUseFutureSamples; // @synthesize canUseFutureSamples=_canUseFutureSamples;
 - (void)setHeartRateSamples:(id)arg1;
 - (void)setLatestHeartRateSummary:(id)arg1;

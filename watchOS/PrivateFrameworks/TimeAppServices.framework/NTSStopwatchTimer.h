@@ -31,7 +31,7 @@
 - (void)stopUpdatesForToken:(id)arg1;
 - (id)startDigitalTimeUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (id)startUpdatesWithHandler:(CDUnknownBlockType)arg1;
-- (struct NSNumber *)_nextToken;
+- (id)_nextToken;
 - (void)dealloc;
 - (id)init;
 

@@ -33,6 +33,7 @@
 
 + (void)logAllResults:(id)arg1;
 + (BOOL)drawingIsValidForRecognition:(id)arg1 withPath:(struct CGPath *)arg2;
+- (void).cxx_destruct;
 @property(retain) AKCandidatePickerViewController *candidateViewController; // @synthesize candidateViewController=_candidateViewController;
 @property(retain) NSPopover *candidatePopover; // @synthesize candidatePopover=_candidatePopover;
 @property(retain, nonatomic) NSMutableDictionary *candidateAKTagsToAnnotationInfoMap; // @synthesize candidateAKTagsToAnnotationInfoMap=_candidateAKTagsToAnnotationInfoMap;
@@ -49,7 +50,6 @@
 @property(nonatomic) __weak AKAnnotation *candidateAnnotation; // @synthesize candidateAnnotation=_candidateAnnotation;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
 @property(nonatomic) __weak id <AKShapeDetectionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)logLastDrawingToDisk;
 - (id)convertDrawingBoundsInInputView:(struct CGRect)arg1 outBoundsInPageModel:(struct CGRect *)arg2;
 - (id)createInkResultFromInkDrawing:(id)arg1 annotation:(id)arg2;

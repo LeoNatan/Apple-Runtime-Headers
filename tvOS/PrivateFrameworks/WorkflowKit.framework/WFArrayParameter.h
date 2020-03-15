@@ -14,9 +14,9 @@
     NSSet *_allowedValueTypes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *allowedValueTypes; // @synthesize allowedValueTypes=_allowedValueTypes;
 @property(readonly, nonatomic) _Bool supportsVariables; // @synthesize supportsVariables=_supportsVariables;
-- (void).cxx_destruct;
 - (id)defaultSupportedVariableTypes;
 - (id)defaultSerializedRepresentation;
 - (id)initWithDefinition:(id)arg1;

@@ -26,6 +26,7 @@
 + (id)createWithLearnedLocationOfInterestTransitionMO:(id)arg1;
 + (id)createWithLearnedTransitionMO:(id)arg1;
 + (id)createWithManagedObject:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long predominantMotionActivityType; // @synthesize predominantMotionActivityType=_predominantMotionActivityType;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSDate *stopDate; // @synthesize stopDate=_stopDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

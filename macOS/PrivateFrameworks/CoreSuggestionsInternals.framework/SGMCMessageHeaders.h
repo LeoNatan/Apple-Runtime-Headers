@@ -16,8 +16,8 @@
     NSArray *_allHeaderKeys;
 }
 
-@property(readonly) NSArray *allHeaderKeys; // @synthesize allHeaderKeys=_allHeaderKeys;
 - (void).cxx_destruct;
+@property(readonly) NSArray *allHeaderKeys; // @synthesize allHeaderKeys=_allHeaderKeys;
 - (id)headersForKey:(id)arg1;
 - (id)_headersForKey:(id)arg1;
 - (id)firstHeaderForKey:(id)arg1;

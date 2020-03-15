@@ -20,12 +20,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *summaryItems; // @synthesize summaryItems=_summaryItems;
 @property(nonatomic) long long requestSchedule; // @synthesize requestSchedule=_requestSchedule;
 @property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
-- (void).cxx_destruct;
 - (BOOL)isEqualToDisbursementRequest:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

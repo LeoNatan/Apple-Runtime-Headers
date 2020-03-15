@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class PMLMultiLabelLogisticRegressionModel, SGQuickResponsesTransformerInstance;
+@class SGQuickResponsesTransformerInstance;
+@protocol PMLMultiLabelClassifierModelProtocol;
 
 @interface SGQuickResponsesModel : NSObject
 {
-    PMLMultiLabelLogisticRegressionModel *_model;
+    id <PMLMultiLabelClassifierModelProtocol> _model;
     SGQuickResponsesTransformerInstance *_transformer;
 }
 
@@ -19,7 +20,7 @@
 + (id)transformerInstanceForLanguage:(id)arg1 mode:(unsigned long long)arg2 plistPath:(id)arg3;
 + (id)transformerInstanceForLanguage:(id)arg1 mode:(unsigned long long)arg2;
 + (id)modelForEntity:(id)arg1 type:(id)arg2 mode:(unsigned long long)arg3 language:(id)arg4 class:(Class)arg5 chunkPath:(id)arg6 plistPath:(id)arg7;
-+ (id)modelForName:(id)arg1 language:(id)arg2 mode:(unsigned long long)arg3 chunkPath:(id)arg4 plistPath:(id)arg5;
++ (id)modelForLanguage:(id)arg1 mode:(unsigned long long)arg2 chunkPath:(id)arg3 plistPath:(id)arg4;
 + (_Bool)shouldSampleForLabel:(id)arg1 inLanguage:(id)arg2;
 + (id)labelOf:(id)arg1 inLanguage:(id)arg2;
 + (id)labelOf:(id)arg1 withLabeler:(id)arg2;

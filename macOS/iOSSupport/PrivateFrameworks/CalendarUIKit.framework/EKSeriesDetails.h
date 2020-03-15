@@ -17,10 +17,10 @@
     NSSet *_exceptionDates;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSSet *exceptionDates; // @synthesize exceptionDates=_exceptionDates;
 @property(retain) NSArray *detachedEvents; // @synthesize detachedEvents=_detachedEvents;
 @property(retain) EKEvent *masterEvent; // @synthesize masterEvent=_masterEvent;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -14,9 +14,9 @@
     NSSet *_targetedServices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *targetedServices; // @synthesize targetedServices=_targetedServices;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1;
 - (void)execute;
 

@@ -25,6 +25,7 @@
 + (CDUnknownBlockType)_userItemComparator;
 + (id)footerSectionID;
 + (id)sectionID;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HULocationDeviceManager *locationDeviceManager; // @synthesize locationDeviceManager=_locationDeviceManager;
 @property(readonly, nonatomic) HFStaticItemProvider *staticItemProvider; // @synthesize staticItemProvider=_staticItemProvider;
 @property(readonly, nonatomic) NSDictionary *activationOptionStateByGranularity; // @synthesize activationOptionStateByGranularity=_activationOptionStateByGranularity;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HFItem *singleUserSummaryItem; // @synthesize singleUserSummaryItem=_singleUserSummaryItem;
 @property(readonly, nonatomic) HFItem *footerItem; // @synthesize footerItem=_footerItem;
-- (void).cxx_destruct;
 - (_Bool)_isPresenceAuthorizedForUser:(id)arg1;
 - (id)_allSelectedAndSupportedUsers;
 - (void)_updateSelected:(_Bool)arg1 forUserHandle:(id)arg2;

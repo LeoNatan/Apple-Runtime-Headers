@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct __SCNetworkReachability *_networkReachabilityRef;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int currentNetworkFlags; // @synthesize currentNetworkFlags=_currentNetworkFlags;
 @property(readonly, nonatomic) struct __SCNetworkReachability *networkReachabilityRef; // @synthesize networkReachabilityRef=_networkReachabilityRef;
 - (id)netAddress;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)handleNetworkReachabilityChange:(unsigned int)arg1;
 - (unsigned long long)reachabilityPath;

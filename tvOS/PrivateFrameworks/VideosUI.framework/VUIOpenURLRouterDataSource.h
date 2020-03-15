@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)routerDataSourceWithDict:(id)arg1 appContext:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool actionFirst; // @synthesize actionFirst=_actionFirst;
 @property(retain, nonatomic) NSString *nativePageName; // @synthesize nativePageName=_nativePageName;
 @property(copy, nonatomic) NSDictionary *localLibraryLink; // @synthesize localLibraryLink=_localLibraryLink;
 @property(retain, nonatomic) NSString *tabIdentifier; // @synthesize tabIdentifier=_tabIdentifier;
 @property(retain, nonatomic) VUIAction *action; // @synthesize action=_action;
 @property(copy, nonatomic) NSArray *documentDataSources; // @synthesize documentDataSources=_documentDataSources;
-- (void).cxx_destruct;
 
 @end
 

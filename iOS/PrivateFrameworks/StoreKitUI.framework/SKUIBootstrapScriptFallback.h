@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 
 + (id)cacheFilenameForStoreFrontIdentifier:(id)arg1;
 + (id)defaultCacheFolder;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property double maximumAge; // @synthesize maximumAge=_maximumAge;
 @property(readonly, copy, nonatomic) NSString *cacheFilename; // @synthesize cacheFilename=_cacheFilename;
 @property(readonly, nonatomic) NSURL *cacheFolder; // @synthesize cacheFolder=_cacheFolder;
-- (void).cxx_destruct;
 - (_Bool)_setCacheAge:(id)arg1 error:(id *)arg2;
 - (void)_runWhenBackgroundWorkFinished:(CDUnknownBlockType)arg1;
 - (void)_logError:(id)arg1 forOperation:(id)arg2;

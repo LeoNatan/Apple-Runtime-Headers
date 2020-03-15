@@ -18,9 +18,10 @@
     float _balloonAlpha;
     float _contentAlpha;
     CAFilter *_textCompositingFilter;
-    struct UIColor *_textColor;
+    UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(copy, nonatomic) CAFilter *textCompositingFilter; // @synthesize textCompositingFilter=_textCompositingFilter;
 @property(nonatomic) float contentAlpha; // @synthesize contentAlpha=_contentAlpha;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSArray *balloonFilters; // @synthesize balloonFilters=_balloonFilters;
 @property(nonatomic) unsigned int direction; // @synthesize direction=_direction;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -42,6 +42,7 @@
 + (id)longLabelForSegmentType:(unsigned long long)arg1;
 + (id)shortLabelForSegmentType:(unsigned long long)arg1;
 + (id)readInfoFromAudioFileAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *nameSuffix; // @synthesize nameSuffix=_nameSuffix;
 @property(readonly, copy, nonatomic) NSString *nameIndex; // @synthesize nameIndex=_nameIndex;
 @property(readonly, copy, nonatomic) NSString *nameStem; // @synthesize nameStem=_nameStem;
@@ -60,7 +61,6 @@
 @property(nonatomic) long long bars; // @synthesize bars=_bars;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)metadataValueForKey:(id)arg1;
 - (void)addMetadataValue:(id)arg1 forKey:(id)arg2;
 - (BOOL)relinkAllTransitions;

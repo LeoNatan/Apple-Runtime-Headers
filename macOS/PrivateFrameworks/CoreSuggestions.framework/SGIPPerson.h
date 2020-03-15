@@ -20,10 +20,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)personWithIPPerson:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *handleType; // @synthesize handleType=_handleType;
 @property(retain, nonatomic) NSString *handle; // @synthesize handle=_handle;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPerson:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

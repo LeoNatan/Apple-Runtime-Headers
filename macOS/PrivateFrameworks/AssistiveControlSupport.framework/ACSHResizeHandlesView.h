@@ -15,8 +15,8 @@
 
 + (void)initialize;
 + (double)handleSize;
-@property(retain, nonatomic) NSArray *_resizeHandles; // @synthesize _resizeHandles=__resizeHandles;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *_resizeHandles; // @synthesize _resizeHandles=__resizeHandles;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)isFlipped;
 - (void)resumeTracking;

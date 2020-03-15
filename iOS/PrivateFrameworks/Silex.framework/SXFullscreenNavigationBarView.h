@@ -17,11 +17,11 @@
     UIButton *_button;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic) UIVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
 @property(nonatomic) __weak id <SXFullscreenNavigationBarViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)doneButtonPressed:(id)arg1;
 - (void)createDoneButton;
 - (void)createBackgroundView;

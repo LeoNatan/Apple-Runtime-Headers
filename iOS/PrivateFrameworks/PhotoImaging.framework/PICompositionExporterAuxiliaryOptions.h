@@ -18,13 +18,13 @@
     NUAdjustment *_reframeVideoAdjustment;
 }
 
+- (void).cxx_destruct;
 @property(retain) NUAdjustment *reframeVideoAdjustment; // @synthesize reframeVideoAdjustment=_reframeVideoAdjustment;
 @property(retain) NUAdjustment *reframeCropAdjustment; // @synthesize reframeCropAdjustment=_reframeCropAdjustment;
 @property _Bool renderCompanionResources; // @synthesize renderCompanionResources=_renderCompanionResources;
 @property(retain) NSURL *videoPosterFrameURL; // @synthesize videoPosterFrameURL=_videoPosterFrameURL;
 @property(retain) NSURL *videoComplementURL; // @synthesize videoComplementURL=_videoComplementURL;
 @property(retain) NSURL *primaryURL; // @synthesize primaryURL=_primaryURL;
-- (void).cxx_destruct;
 
 @end
 

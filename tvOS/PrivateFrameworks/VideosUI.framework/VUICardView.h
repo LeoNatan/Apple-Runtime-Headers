@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *debugString; // @synthesize debugString=_debugString;
 @property(retain, nonatomic) VUIButton *button; // @synthesize button=_button;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) VUICardViewLayoutFactory *layoutFactory; // @synthesize layoutFactory=_layoutFactory;
-- (void).cxx_destruct;
 - (double)_maxTextWidthForImagePosition:(long long)arg1 width:(double)arg2 appImageLayout:(id)arg3 textLayout:(id)arg4;
 - (void)_mainImageLoaded;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

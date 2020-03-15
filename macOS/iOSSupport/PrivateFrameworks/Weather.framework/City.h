@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CLLocation, NSArray, NSDate, NSDictionary, NSError, NSHashTable, NSNumber, NSString, NSTimeZone, NSTimer, NSURL, WFGeocodeRequest, WFLocation, WFTemperature;
+@class CLLocation, NSArray, NSDate, NSDictionary, NSError, NSHashTable, NSNumber, NSString, NSTimeZone, NSTimer, NSURL, WFAQIScaleCategory, WFGeocodeRequest, WFLocation, WFTemperature;
 
 @interface City : NSObject
 {
@@ -51,6 +51,7 @@
     unsigned long long _pressureRising;
     NSNumber *_airQualityIdx;
     NSNumber *_airQualityCategory;
+    WFAQIScaleCategory *_airQualityScaleCategory;
     WFLocation *_wfLocation;
     unsigned long long _lastUpdateStatus;
     long long _updateInterval;
@@ -62,6 +63,7 @@
 
 + (id)cityContainingLocation:(id)arg1 expectedName:(id)arg2 fromCities:(id)arg3;
 + (id)_ISO8601Calendar;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) NSHashTable *cityUpdateObservers; // @synthesize cityUpdateObservers=_cityUpdateObservers;
 @property(retain, nonatomic) WFGeocodeRequest *activeGeocodeRequest; // @synthesize activeGeocodeRequest=_activeGeocodeRequest;
@@ -73,6 +75,7 @@
 @property(nonatomic) unsigned long long lastUpdateStatus; // @synthesize lastUpdateStatus=_lastUpdateStatus;
 @property(retain, nonatomic) WFLocation *wfLocation; // @synthesize wfLocation=_wfLocation;
 @property(nonatomic) BOOL autoUpdate; // @synthesize autoUpdate=_autoUpdate;
+@property(retain, nonatomic) WFAQIScaleCategory *airQualityScaleCategory; // @synthesize airQualityScaleCategory=_airQualityScaleCategory;
 @property(retain, nonatomic) NSNumber *airQualityCategory; // @synthesize airQualityCategory=_airQualityCategory;
 @property(retain, nonatomic) NSNumber *airQualityIdx; // @synthesize airQualityIdx=_airQualityIdx;
 @property(nonatomic) float heatIndex; // @synthesize heatIndex=_heatIndex;
@@ -106,7 +109,6 @@
 @property(nonatomic) BOOL isLocalWeatherCity; // @synthesize isLocalWeatherCity=_isLocalWeatherCity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *updateTimeString; // @synthesize updateTimeString=_updateTimeString;
-- (void).cxx_destruct;
 - (BOOL)_dataIsValid;
 - (void)updateCityForModel:(id)arg1;
 - (void)_generateLocalizableStrings;

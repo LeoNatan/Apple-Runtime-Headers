@@ -22,11 +22,11 @@
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 + (void)requestEmergencyCallControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(nonatomic) double blurRadius; // @synthesize blurRadius=_blurRadius;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) _Bool blursSelf; // @synthesize blursSelf=_blursSelf;
-- (void).cxx_destruct;
 - (void)_createAndAddBlurViewIfNecessary;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)dismiss;

@@ -23,11 +23,11 @@
 }
 
 + (id)extractAuthenticatedBlob:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy) NSDictionary *launchInfo; // @synthesize launchInfo=_launchInfo;
 @property(copy) NSString *connectionType; // @synthesize connectionType=_connectionType;
 @property(copy) NSArray *internalWhitelist; // @synthesize internalWhitelist=_internalWhitelist;
 @property BOOL allowUnsignedBlobs; // @synthesize allowUnsignedBlobs=_allowUnsignedBlobs;
-- (void).cxx_destruct;
 - (void)postContent:(id)arg1 withHeaders:(id)arg2;
 - (void)abort;
 - (BOOL)submitLogsUsingPolicy:(id)arg1 resultsCallback:(CDUnknownBlockType)arg2;

@@ -29,6 +29,7 @@
 + (id)_imageFromTag:(long long)arg1;
 + (id)_accessibilityIdentifierForTag:(long long)arg1;
 + (id)_accessibilityLabelFromTag:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSGroupTouchBarItem *mainTouchBar; // @synthesize mainTouchBar=_mainTouchBar;
 @property(retain) NSTouchBarItem *textItem; // @synthesize textItem=_textItem;
 @property(retain) NSTouchBarItem *sketchItem; // @synthesize sketchItem=_sketchItem;
@@ -39,7 +40,6 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property BOOL isInDFRAction; // @synthesize isInDFRAction=_isInDFRAction;
 @property(copy) CDUnknownBlockType updateDFRBlock; // @synthesize updateDFRBlock=_updateDFRBlock;
-- (void).cxx_destruct;
 - (void)_validateDefaultTools;
 - (void)_validateButton:(id)arg1;
 - (void)_validateLineTools;

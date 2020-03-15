@@ -15,10 +15,10 @@
     NSNumber *_tex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float height; // @synthesize height=_height;
 @property(nonatomic) float width; // @synthesize width=_width;
 @property(retain, nonatomic) NSNumber *tex; // @synthesize tex=_tex;
-- (void).cxx_destruct;
 
 @end
 

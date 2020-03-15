@@ -32,6 +32,7 @@
 }
 
 + (id)_speechSynthesizerWithVoice:(id)arg1 downloadVoice:(BOOL)arg2;
+- (void).cxx_destruct;
 @property BOOL synthNeedsDefrost; // @synthesize synthNeedsDefrost=_synthNeedsDefrost;
 @property(retain, nonatomic) AVAudioPlayer *serverAudioPlayer; // @synthesize serverAudioPlayer=_serverAudioPlayer;
 @property(retain, nonatomic, getter=_synthesizer) NSSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) id <AFUISpeechSynthesisDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <AFUISpeechSynthesisLocalDelegate> localDelegate; // @synthesize localDelegate=_localDelegate;
 @property(nonatomic) BOOL disableAudioDucking; // @synthesize disableAudioDucking=_disableAudioDucking;
-- (void).cxx_destruct;
 - (unsigned long long)_AFUISetAudioSessionActiveOptionsForElement:(id)arg1;
 - (void)_processProvisionalElements;
 - (void)_handleText:(id)arg1;

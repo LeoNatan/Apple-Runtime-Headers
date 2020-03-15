@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _timeout;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *queueOne; // @synthesize queueOne=_queueOne;
 @property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) PBCodable *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 
 @end
 

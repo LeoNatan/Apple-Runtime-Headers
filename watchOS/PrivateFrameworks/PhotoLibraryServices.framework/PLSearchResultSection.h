@@ -15,10 +15,10 @@
     unsigned long long _categoryMask;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
 @property(readonly, nonatomic) unsigned long long categoryMask; // @synthesize categoryMask=_categoryMask;
 @property(readonly, nonatomic) unsigned int resultTypes; // @synthesize resultTypes=_resultTypes;
-- (void).cxx_destruct;
 - (id)initWithResultTypes:(unsigned int)arg1 categoryMask:(unsigned long long)arg2 searchResults:(id)arg3;
 
 @end

@@ -23,12 +23,12 @@
 }
 
 + (id)interactionControllerForAnimationController:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool startedInteractively; // @synthesize startedInteractively=_startedInteractively;
 @property(nonatomic) double visibleInteractiveProgress; // @synthesize visibleInteractiveProgress=_visibleInteractiveProgress;
 @property(nonatomic, setter=_setInteractiveProgress:) double interactiveProgress; // @synthesize interactiveProgress=_interactiveProgress;
 @property(nonatomic, getter=isInteractive, setter=_setInteractive:) _Bool interactive; // @synthesize interactive=_interactive;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

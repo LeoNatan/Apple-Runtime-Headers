@@ -23,6 +23,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *supportsBusinessOnlyAccounts; // @synthesize supportsBusinessOnlyAccounts=_supportsBusinessOnlyAccounts;
 @property(retain, nonatomic) NSNumber *supportsTwoFactor; // @synthesize supportsTwoFactor=_supportsTwoFactor;
 @property(retain, nonatomic) NSString *deviceDescription; // @synthesize deviceDescription=_deviceDescription;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *ssoLoginToken; // @synthesize ssoLoginToken=_ssoLoginToken;
 @property(retain, nonatomic) NSString *password; // @synthesize password=_password;
 @property(retain, nonatomic) NSString *usernameOrEmail; // @synthesize usernameOrEmail=_usernameOrEmail;
-- (void).cxx_destruct;
 
 @end
 

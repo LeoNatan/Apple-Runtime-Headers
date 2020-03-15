@@ -15,10 +15,10 @@
     NSString *_legacyImageName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *legacyImageName; // @synthesize legacyImageName=_legacyImageName;
 @property(readonly, nonatomic) NSString *fullScreenImageName; // @synthesize fullScreenImageName=_fullScreenImageName;
 @property(readonly, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
-- (void).cxx_destruct;
 - (id)folderImage;
 - (id)backgroundImage;
 @property(readonly, nonatomic) _Bool isBackgroundImageFullScreen;

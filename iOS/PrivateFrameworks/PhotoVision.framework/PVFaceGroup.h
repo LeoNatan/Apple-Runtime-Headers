@@ -16,11 +16,11 @@
     NSArray *_faces;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *faces; // @synthesize faces=_faces;
 @property(copy, nonatomic) NSString *representativeFaceLocalIdentifier; // @synthesize representativeFaceLocalIdentifier=_representativeFaceLocalIdentifier;
 @property(copy, nonatomic) NSString *personLocalIdentifier; // @synthesize personLocalIdentifier=_personLocalIdentifier;
 @property(nonatomic) long long personBuilderState; // @synthesize personBuilderState=_personBuilderState;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_setPropertiesFrom:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

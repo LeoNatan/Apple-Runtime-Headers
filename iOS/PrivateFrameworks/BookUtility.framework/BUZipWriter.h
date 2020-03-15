@@ -36,6 +36,7 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long writtenOffset; // @synthesize writtenOffset=_writtenOffset;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) id <BURandomWriteChannel> writeChannel; // @synthesize writeChannel=_writeChannel;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *channelQueue; // @synthesize channelQueue=_channelQueue;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)truncateToOffsetImpl:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)truncateToOffset:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)truncateToNumberOfEntriesImpl:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;

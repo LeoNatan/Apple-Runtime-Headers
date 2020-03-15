@@ -25,8 +25,8 @@
     id <CSLEclipseAnimatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CSLEclipseAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLEclipseAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_animate:(float)arg1;
 - (void)_tick:(id)arg1;
 - (void)_updateDisplayLink;

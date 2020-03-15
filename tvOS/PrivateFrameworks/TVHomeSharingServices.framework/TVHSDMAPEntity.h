@@ -19,12 +19,12 @@
     NSMutableDictionary *_mutableAttributeValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *mutableAttributeValues; // @synthesize mutableAttributeValues=_mutableAttributeValues;
 @property(retain, nonatomic) NSData *taggedData; // @synthesize taggedData=_taggedData;
 @property(retain, nonatomic) TVHSDMAPEntityKind *kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 - (id)_attributeValueForTagCode:(unsigned int)arg1 tagPayload:(id)arg2 attribute:(id)arg3;
 - (void)_setAttributeWithTagCode:(unsigned int)arg1 tagPayload:(id)arg2 attributes:(id)arg3;
 - (void)_populateAttributes:(id)arg1 withTaggedData:(id)arg2;

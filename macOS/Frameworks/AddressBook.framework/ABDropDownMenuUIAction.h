@@ -13,10 +13,13 @@
 @interface ABDropDownMenuUIAction : NSObject <ABUserInterfaceAction>
 {
     NSPopUpButtonCell *_popUpCell;
+    BOOL executionWasAuthorized;
 }
 
+@property(nonatomic) BOOL executionWasAuthorized; // @synthesize executionWasAuthorized;
 - (void)performWithSender:(id)arg1;
 - (BOOL)validateWithMenuItem:(id)arg1;
+@property(readonly, nonatomic) BOOL requiresAuthorizationBeforeExecution;
 - (void)dealloc;
 - (id)initWithMenu:(id)arg1;
 

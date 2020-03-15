@@ -13,8 +13,8 @@
     REMAccount *_account;
 }
 
-@property(retain, nonatomic) REMAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMAccount *account; // @synthesize account=_account;
 - (id)fetchGroupsWithError:(id *)arg1;
 - (id)initWithAccount:(id)arg1;
 

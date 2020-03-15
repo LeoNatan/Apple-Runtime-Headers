@@ -14,8 +14,8 @@
     float _operationBackoffRatio;
 }
 
-@property(readonly, nonatomic) float operationBackoffRatio; // @synthesize operationBackoffRatio=_operationBackoffRatio;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) float operationBackoffRatio; // @synthesize operationBackoffRatio=_operationBackoffRatio;
 - (id)_descriptionForErrorCode:(int)arg1;
 - (id)_errorWithCode:(int)arg1 userInfo:(id)arg2;
 - (id)_errorWithCode:(int)arg1;

@@ -16,11 +16,11 @@
     CDUnknownBlockType _remXPCCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType remXPCCompletion; // @synthesize remXPCCompletion=_remXPCCompletion;
 @property(retain, nonatomic) NSString *delegateID; // @synthesize delegateID=_delegateID;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (id)initWithAccountID:(id)arg1;
 

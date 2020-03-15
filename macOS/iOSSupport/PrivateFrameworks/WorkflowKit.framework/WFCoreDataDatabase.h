@@ -17,10 +17,10 @@
     NSManagedObjectContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL transactionInProgress; // @synthesize transactionInProgress=_transactionInProgress;
 @property(retain, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSPersistentContainer *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)_syncToken;
 - (id)syncToken;
 - (void)setSyncToken:(id)arg1;

@@ -22,11 +22,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAssertWoW; // @synthesize shouldAssertWoW=_shouldAssertWoW;
 @property(readonly, nonatomic) id <HMFWiFiManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy) HMFMACAddress *MACAddress; // @synthesize MACAddress=_MACAddress;
-- (void).cxx_destruct;
 - (void)currentNetworkDidChangeForDataSource:(id)arg1;
 - (void)dataSource:(id)arg1 didChangeLinkAvailability:(_Bool)arg2;
 - (void)dataSource:(id)arg1 didChangeWoWState:(_Bool)arg2;

@@ -10,7 +10,7 @@
 {
 }
 
-+ (struct NSDictionary *)deserializeSettingsFromDictionary:(id)arg1 key:(id)arg2 error:(out id *)arg3;
++ (id)deserializeSettingsFromDictionary:(id)arg1 key:(id)arg2 error:(out id *)arg3;
 + (id)deserializeAttributesFromDictionary:(id)arg1 error:(out id *)arg2;
 + (id)deserializeFromDictionary:(id)arg1 error:(out id *)arg2;
 + (id)supportedAttributes;

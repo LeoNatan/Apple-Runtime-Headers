@@ -7,15 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <ARKit/ARResultData-Protocol.h>
+#import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class ARVideoFormat, ARWorldTrackingState, NSDictionary, NSString;
+@class ARLineCloud, ARVideoFormat, ARWorldTrackingState, NSDictionary, NSString;
 
-@interface ARWorldTrackingPoseData : NSObject <ARResultData, NSSecureCoding>
+@interface ARWorldTrackingPoseData : NSObject <ARResultData, NSSecureCoding, NSCopying>
 {
     double _timestamp;
     ARWorldTrackingState *_worldTrackingState;
     NSDictionary *_vioStateDetails;
+    ARLineCloud *_lineCloud;
     ARVideoFormat *_currentlyActiveVideoFormat;
     long long _worldMappingStatus;
     // Error parsing type: {?="columns"[4]}, name: _visionCameraTransform
@@ -23,20 +25,22 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 // Error parsing type for property cameraTransform:
 // Property attributes: T{?=[4]},N,V_cameraTransform
 
 @property(nonatomic) long long worldMappingStatus; // @synthesize worldMappingStatus=_worldMappingStatus;
 @property(retain, nonatomic) ARVideoFormat *currentlyActiveVideoFormat; // @synthesize currentlyActiveVideoFormat=_currentlyActiveVideoFormat;
+@property(retain, nonatomic) ARLineCloud *lineCloud; // @synthesize lineCloud=_lineCloud;
 @property(copy, nonatomic) NSDictionary *vioStateDetails; // @synthesize vioStateDetails=_vioStateDetails;
 @property(copy, nonatomic) ARWorldTrackingState *worldTrackingState; // @synthesize worldTrackingState=_worldTrackingState;
 // Error parsing type for property visionCameraTransform:
 // Property attributes: T{?=[4]},N,V_visionCameraTransform
 
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTimestamp:(double)arg1;

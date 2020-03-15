@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     LPPadding *_emailCompatibleMargin;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) LPPadding *emailCompatibleMargin; // @synthesize emailCompatibleMargin=_emailCompatibleMargin;
 @property(readonly, retain, nonatomic) LPPadding *captionTextPadding; // @synthesize captionTextPadding=_captionTextPadding;
 @property(nonatomic) _Bool shouldAlignToBaselines; // @synthesize shouldAlignToBaselines=_shouldAlignToBaselines;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) LPTextRowStyle *aboveTopCaption; // @synthesize aboveTopCaption=_aboveTopCaption;
 @property(retain, nonatomic) LPPointUnit *lastLineDescent; // @synthesize lastLineDescent=_lastLineDescent;
 @property(retain, nonatomic) LPPointUnit *firstLineLeading; // @synthesize firstLineLeading=_firstLineLeading;
-- (void).cxx_destruct;
 - (void)applyToAllTextViewStyles:(CDUnknownBlockType)arg1;
 - (id)initWithPlatform:(long long)arg1;
 

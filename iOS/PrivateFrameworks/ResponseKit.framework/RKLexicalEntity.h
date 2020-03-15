@@ -19,6 +19,7 @@
     struct _NSRange _tokenRange;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *internalWord; // @synthesize internalWord=_internalWord;
 @property struct _NSRange tokenRange; // @synthesize tokenRange=_tokenRange;
 @property(retain) NSString *language; // @synthesize language=_language;
@@ -26,7 +27,6 @@
 @property(retain) NSString *partOfSpeech; // @synthesize partOfSpeech=_partOfSpeech;
 @property(retain) NSString *tokenType; // @synthesize tokenType=_tokenType;
 @property(retain) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 @property(readonly) NSString *word;
 - (id)description;
 

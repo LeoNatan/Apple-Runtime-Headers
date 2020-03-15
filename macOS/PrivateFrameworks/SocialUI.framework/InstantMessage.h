@@ -18,13 +18,13 @@
     NSMutableAttributedString *_textWithAppAttributes;
 }
 
+- (void).cxx_destruct;
 @property BOOL didParseSubject; // @synthesize didParseSubject=_didParseSubject;
 @property BOOL didParseText; // @synthesize didParseText=_didParseText;
 @property BOOL didHighlightMyName; // @synthesize didHighlightMyName=_didHighlightMyName;
 @property(retain) NSMutableAttributedString *textWithAppAttributes; // @synthesize textWithAppAttributes=_textWithAppAttributes;
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(getter=isSaved) BOOL saved; // @synthesize saved=_saved;
-- (void).cxx_destruct;
 - (void)highlightMyNameAtRange:(struct _NSRange)arg1;
 - (id)senderName;
 - (BOOL)isAddressedToMe;

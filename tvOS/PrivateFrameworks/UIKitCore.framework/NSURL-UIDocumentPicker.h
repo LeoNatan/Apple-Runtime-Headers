@@ -15,6 +15,8 @@
 + (id)URLWithDisplayIdentifier:(id)arg1 forSearchResultDomain:(int)arg2 andIdentifier:(unsigned long long)arg3;
 + (id)mapsURLWithSourceAddress:(id)arg1 destinationAddress:(id)arg2;
 + (id)mapsURLWithQuery:(id)arg1;
++ (void)_setAllowsCreationOfFileURLFromItemProvider:(_Bool)arg1;
++ (_Bool)_allowsCreationOfFileURLFromItemProvider;
 - (id)ui_URLByResolvingSymlinksAndCopyingSecurityScope;
 - (id)ui_downloadOperationForActivity:(id)arg1 inScene:(id)arg2;
 - (id)ui_downloadOperationForActivity:(id)arg1;

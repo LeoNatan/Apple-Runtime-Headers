@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     _UIContentUnavailableView *_noContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIContentUnavailableView *noContentView; // @synthesize noContentView=_noContentView;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSArray *allSettings; // @synthesize allSettings=_allSettings;
-- (void).cxx_destruct;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;

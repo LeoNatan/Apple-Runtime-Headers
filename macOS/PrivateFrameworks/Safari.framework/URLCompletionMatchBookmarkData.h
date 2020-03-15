@@ -13,13 +13,15 @@
 __attribute__((visibility("hidden")))
 @interface URLCompletionMatchBookmarkData : NSObject <WBSURLCompletionMatchData>
 {
+    BOOL _shouldPreload;
     WebBookmarkLeaf *_bookmark;
 }
 
-@property(readonly, nonatomic) WebBookmarkLeaf *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WebBookmarkLeaf *bookmark; // @synthesize bookmark=_bookmark;
+@property(readonly, nonatomic) BOOL shouldPreload; // @synthesize shouldPreload=_shouldPreload;
 - (float)topSitesScoreForURLStringAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
-- (float)topSitesScoreForPageTitleAtIndex:(unsigned long long)arg1 atTime:(double)arg2;
+- (float)topSitesScoreForPageTitleAtTime:(double)arg1;
 - (BOOL)matchesAutocompleteTrigger:(id)arg1;
 @property(readonly, nonatomic) BOOL containsBookmark;
 @property(readonly, nonatomic) BOOL lastVisitWasFailure;
@@ -32,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)userVisibleURLStringAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *originalURLString;
 - (id)matchDataByMergingWithMatchData:(id)arg1;
+- (id)initWithBookmark:(id)arg1 shouldPreload:(BOOL)arg2;
 - (id)initWithBookmark:(id)arg1;
 
 // Remaining properties

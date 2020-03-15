@@ -15,8 +15,8 @@
     _MRPlaybackSessionProtobuf *_playbackSession;
 }
 
-@property(retain, nonatomic) _MRPlaybackSessionProtobuf *playbackSession; // @synthesize playbackSession=_playbackSession;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _MRPlaybackSessionProtobuf *playbackSession; // @synthesize playbackSession=_playbackSession;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,10 +16,10 @@
     id <NDAnalyticsEnvelopeTracker> _envelopeTracker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NDAnalyticsEnvelopeTracker> envelopeTracker; // @synthesize envelopeTracker=_envelopeTracker;
 @property(retain, nonatomic) FCAsyncSerialQueue *uploadQueue; // @synthesize uploadQueue=_uploadQueue;
 @property(retain, nonatomic) FCAnalyticsEndpointConnection *endpointConnection; // @synthesize endpointConnection=_endpointConnection;
-- (void).cxx_destruct;
 - (void)uploadPayloadsForInfos:(id)arg1 withEnvelopeStore:(id)arg2 perPayloadCompletion:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)initWithAppConfigurationManager:(id)arg1 envelopeTracker:(id)arg2;
 - (id)init;

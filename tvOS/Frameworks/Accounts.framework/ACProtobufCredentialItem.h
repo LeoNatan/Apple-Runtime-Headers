@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)dirtyPropertiesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dirtyProperties; // @synthesize dirtyProperties=_dirtyProperties;
 @property(retain, nonatomic) ACProtobufURL *objectID; // @synthesize objectID=_objectID;
 @property(nonatomic) _Bool isPersistent; // @synthesize isPersistent=_isPersistent;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) ACProtobufDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -16,9 +16,9 @@
     RUIStyle *_customRUIStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RUIStyle *customRUIStyle; // @synthesize customRUIStyle=_customRUIStyle;
 @property(nonatomic) __weak UIViewController *presenter; // @synthesize presenter=_presenter;
-- (void).cxx_destruct;
 - (void)_performOperationWithContext:(id)arg1 viewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_presentViewServiceWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_contextRequiresRemoteService:(id)arg1;

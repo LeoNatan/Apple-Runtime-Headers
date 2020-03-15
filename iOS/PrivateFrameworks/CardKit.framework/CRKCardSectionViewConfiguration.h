@@ -21,6 +21,7 @@
     CRKCardSectionViewController *_cardKitCardSectionViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_cardKitCardSectionViewController, setter=_setCardKitCardSectionViewController:) CRKCardSectionViewController *cardKitCardSectionViewController; // @synthesize cardKitCardSectionViewController=_cardKitCardSectionViewController;
 @property(nonatomic, getter=_debugModeEnabled, setter=_setDebugModeEnabled:) _Bool debugModeEnabled; // @synthesize debugModeEnabled=_debugModeEnabled;
 @property(retain, nonatomic, getter=_debugOverlayView, setter=_setDebugOverlayView:) _CRKDebugOverlayView *debugOverlayView; // @synthesize debugOverlayView=_debugOverlayView;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id <CRKFeedbackDelegateProxying> feedbackDelegateProxy; // @synthesize feedbackDelegateProxy=_feedbackDelegateProxy;
 @property(retain, nonatomic) UIView<CRKCardSectionView> *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 @property(retain, nonatomic) id <CRCardSection> cardSection; // @synthesize cardSection=_cardSection;
-- (void).cxx_destruct;
 - (void)_updateDebugOverlayViewText:(id)arg1;
 
 @end

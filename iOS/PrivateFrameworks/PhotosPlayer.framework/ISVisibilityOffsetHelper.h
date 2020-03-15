@@ -19,15 +19,15 @@
     struct CGPoint __targetContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setTargetContentOffset:) struct CGPoint _targetContentOffset; // @synthesize _targetContentOffset=__targetContentOffset;
 @property(retain, nonatomic, setter=_setScrollView:) UIScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
 @property(nonatomic) double maximumDistanceLag; // @synthesize maximumDistanceLag=_maximumDistanceLag;
 @property(nonatomic) double maximumDistance; // @synthesize maximumDistance=_maximumDistance;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
-- (void)getVisibility:(_Bool *)arg1 offset:(double *)arg2 targetVisibilityOffset:(double *)arg3 forView:(struct NSObject *)arg4;
-- (struct CGRect)boundsForView:(struct NSObject *)arg1 inScrollView:(struct NSObject *)arg2;
-- (struct CGRect)visibleRectForScrollView:(struct NSObject *)arg1;
+- (void)getVisibility:(_Bool *)arg1 offset:(double *)arg2 targetVisibilityOffset:(double *)arg3 forView:(id)arg4;
+- (struct CGRect)boundsForView:(id)arg1 inScrollView:(id)arg2;
+- (struct CGRect)visibleRectForScrollView:(id)arg1;
 - (struct ISVisibilityRange)_visibilityRangeForRect:(struct CGRect)arg1;
 - (void)_updateDirectionIfNeeded;
 - (void)computeVisibilityOffsetsInScrollView:(id)arg1 withTargetContentOffset:(struct CGPoint)arg2 usingBlock:(CDUnknownBlockType)arg3;

@@ -15,6 +15,7 @@
 - (UIView *)_webView:(WKWebView *)arg1 focusedElementContextViewForInputSession:(id <_WKFormInputSession>)arg2;
 - (double)_webView:(WKWebView *)arg1 focusedElementContextViewHeightForFittingSize:(struct CGSize)arg2 inputSession:(id <_WKFormInputSession>)arg3;
 - (_Bool)_webView:(WKWebView *)arg1 shouldRevealFocusOverlayForInputSession:(id <_WKFormInputSession>)arg2;
+- (NSDictionary *)_webViewAdditionalContextForStrongPasswordAssistance:(WKWebView *)arg1;
 - (_Bool)_webView:(WKWebView *)arg1 focusRequiresStrongPasswordAssistance:(id <_WKFocusedElementInfo>)arg2;
 - (void)_webView:(WKWebView *)arg1 willStartInputSession:(id <_WKFormInputSession>)arg2;
 - (void)_webView:(WKWebView *)arg1 insertTextSuggestion:(UITextSuggestion *)arg2 inInputSession:(id <_WKFormInputSession>)arg3;

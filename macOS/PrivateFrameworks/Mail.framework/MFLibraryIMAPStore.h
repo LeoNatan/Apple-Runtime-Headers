@@ -28,12 +28,12 @@
 }
 
 + (id)largeDeleteLog;
+- (void).cxx_destruct;
 @property(copy) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 @property(nonatomic) BOOL supportsCustomPermanentFlags; // @synthesize supportsCustomPermanentFlags=_supportsCustomPermanentFlags;
 @property BOOL isOpenedByUser; // @synthesize isOpenedByUser=_isOpenedByUser;
 @property BOOL supportsModificationSequences; // @synthesize supportsModificationSequences=_supportsModificationSequences;
 @property unsigned long long totalCount; // @synthesize totalCount=_totalCount;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSString *stateStringForDiagnostics;
 - (void)updateUidValidityFromMailbox:(id)arg1;

@@ -19,13 +19,13 @@
     id <CNCancelable> _occlusionDidChangeToken;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL animateOccluderVisibility; // @synthesize animateOccluderVisibility=_animateOccluderVisibility;
 @property(retain, nonatomic) id <CNCancelable> occlusionDidChangeToken; // @synthesize occlusionDidChangeToken=_occlusionDidChangeToken;
 @property(retain, nonatomic) CNUIViewRevealer *viewRevealer; // @synthesize viewRevealer=_viewRevealer;
 @property(nonatomic) __weak NSView *bottomOccluder; // @synthesize bottomOccluder=_bottomOccluder;
 @property(nonatomic) __weak NSView *topOccluder; // @synthesize topOccluder=_topOccluder;
 @property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
-- (void).cxx_destruct;
 - (void)adjustOccluders:(id)arg1;
 - (void)dealloc;
 - (id)makeOcclusionDidChangeObservable;

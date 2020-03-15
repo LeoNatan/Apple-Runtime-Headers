@@ -23,9 +23,9 @@ __attribute__((visibility("hidden")))
 + (id)progressPrettyPrintUtility:(struct xtcpprogress_indicators *)arg1;
 + (id)probeForInterface:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long interfaceIndex; // @synthesize interfaceIndex=_interfaceIndex;
 @property(nonatomic) BOOL localFlowTracking; // @synthesize localFlowTracking=_localFlowTracking;
-- (void).cxx_destruct;
 - (BOOL)interfaceMappingIsCurrent;
 - (BOOL)fetchMetricsForFlowsAged:(double)arg1 metrics:(struct xtcpprogress_indicators *)arg2;
 - (BOOL)manage:(unsigned int)arg1 outValue:(unsigned int *)arg2;

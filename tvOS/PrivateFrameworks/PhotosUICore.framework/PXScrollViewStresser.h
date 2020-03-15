@@ -17,11 +17,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) long long scrollCount; // @synthesize scrollCount=_scrollCount;
 @property(nonatomic) unsigned int scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
-- (void).cxx_destruct;
 - (void)stopScrolling;
 @property(readonly, nonatomic, getter=isScrolling) _Bool scrolling;
 - (void)_handleDisplayLink:(id)arg1;

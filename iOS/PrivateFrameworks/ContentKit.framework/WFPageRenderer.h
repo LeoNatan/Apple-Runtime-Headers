@@ -16,10 +16,10 @@
     struct CGSize _inputSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool includeMargin; // @synthesize includeMargin=_includeMargin;
 @property(nonatomic) _Bool matchInputSize; // @synthesize matchInputSize=_matchInputSize;
 @property(nonatomic) struct CGSize inputSize; // @synthesize inputSize=_inputSize;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double margin;
 - (void)updateRendererSize;
 @property(readonly, nonatomic) UIPrintPageRenderer *renderer; // @synthesize renderer=_renderer;

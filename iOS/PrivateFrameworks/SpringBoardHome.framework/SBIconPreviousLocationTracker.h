@@ -14,8 +14,8 @@
     SBHIconModel *_iconModel;
 }
 
-@property(retain, nonatomic) SBHIconModel *iconModel; // @synthesize iconModel=_iconModel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBHIconModel *iconModel; // @synthesize iconModel=_iconModel;
 - (id)previousLocationInfoForIcon:(id)arg1;
 - (void)captureLocationInfoForIcon:(id)arg1 inModel:(id)arg2;
 

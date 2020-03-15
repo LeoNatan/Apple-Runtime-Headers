@@ -15,10 +15,10 @@
     long long _mediaItemIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long mediaItemIdentifier; // @synthesize mediaItemIdentifier=_mediaItemIdentifier;
 @property(retain, nonatomic) NSString *debugLabel; // @synthesize debugLabel=_debugLabel;
 @property(nonatomic) double displayTime; // @synthesize displayTime=_displayTime;
-- (void).cxx_destruct;
 - (id)initWithMediaItemIdentifier:(long long)arg1 displayTime:(double)arg2 debugLabel:(id)arg3;
 
 @end

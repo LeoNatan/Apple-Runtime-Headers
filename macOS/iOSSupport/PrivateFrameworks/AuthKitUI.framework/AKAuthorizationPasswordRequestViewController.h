@@ -24,12 +24,12 @@
     AKAuthorizationSubPaneConfirmButton *_confirmButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AKAuthorizationSubPaneConfirmButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(nonatomic) __weak AKAuthorizationViewController *authorizationViewController; // @synthesize authorizationViewController=_authorizationViewController;
 @property(readonly, nonatomic) AKAuthorizationPresentationContext *presentationContext; // @synthesize presentationContext=_presentationContext;
 @property(nonatomic) BOOL editableScopeChoicesChanged; // @synthesize editableScopeChoicesChanged=_editableScopeChoicesChanged;
 @property(readonly, nonatomic) AKAuthorizationScopeChoices *editableScopeChoices; // @synthesize editableScopeChoices=_editableScopeChoices;
-- (void).cxx_destruct;
 - (void)passwordAuthenticationCompletedWithResults:(id)arg1 error:(id)arg2;
 - (void)_performAppleIDPasswordAuthenticationIfNeeded;
 - (BOOL)validateReadyForAuthorization;

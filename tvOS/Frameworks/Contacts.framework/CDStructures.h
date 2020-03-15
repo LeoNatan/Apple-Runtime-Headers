@@ -25,12 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct CNPair {
-    Class _field1;
-    id _field2;
-    id _field3;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;

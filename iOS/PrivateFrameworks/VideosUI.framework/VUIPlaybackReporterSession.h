@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
 + (id)transitionReasonForMediaControllerStopReason:(id)arg1 autoStart:(id)arg2;
 + (id)transitionReasonForMediaControllerStartReason:(id)arg1 autoStart:(id)arg2;
 + (id)transitionTypeForMediaControllerAutoStart:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reportingEnabled; // @synthesize reportingEnabled=_reportingEnabled;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) __weak NSObject<TVPPlayback> *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (id)consumeMetadataForKey:(id)arg1;
 - (void)setMetadata:(id)arg1 forKey:(id)arg2;
 - (id)metadataForKey:(id)arg1;

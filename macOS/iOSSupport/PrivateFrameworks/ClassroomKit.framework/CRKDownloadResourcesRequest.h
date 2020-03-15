@@ -20,13 +20,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(nonatomic) BOOL openAfterDownloadCompletes; // @synthesize openAfterDownloadCompletes=_openAfterDownloadCompletes;
 @property(retain, nonatomic) NSData *previewImageData; // @synthesize previewImageData=_previewImageData;
 @property(copy, nonatomic) NSString *resourcesDescription; // @synthesize resourcesDescription=_resourcesDescription;
 @property(copy, nonatomic) NSArray *resources; // @synthesize resources=_resources;
 @property(copy, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

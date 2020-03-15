@@ -17,8 +17,8 @@
     struct sqlite3_stmt *_stmt;
 }
 
-@property(readonly, nonatomic) struct sqlite3_stmt *stmt; // @synthesize stmt=_stmt;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct sqlite3_stmt *stmt; // @synthesize stmt=_stmt;
 - (BOOL)isColumnNull:(int)arg1;
 - (BOOL)isNullForColumnAlias:(const char *)arg1;
 - (id)getDoubleAsNSNumberForColumnAlias:(const char *)arg1;

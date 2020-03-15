@@ -19,6 +19,7 @@
     double _touchStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double touchStartTime; // @synthesize touchStartTime=_touchStartTime;
 @property(retain, nonatomic) id <ASVTouch> touch; // @synthesize touch=_touch;
 @property(readonly, nonatomic) unsigned long long enabledGestureTypes; // @synthesize enabledGestureTypes=_enabledGestureTypes;
@@ -30,7 +31,6 @@
 // Property attributes: T,N,V_initialTouchLocation
 
 @property(nonatomic) _Bool panThresholdPassed; // @synthesize panThresholdPassed=_panThresholdPassed;
-- (void).cxx_destruct;
 - (void)finishGesture;
 - (_Bool)generatesTransforms;
 - (_Bool)generatesTaps;

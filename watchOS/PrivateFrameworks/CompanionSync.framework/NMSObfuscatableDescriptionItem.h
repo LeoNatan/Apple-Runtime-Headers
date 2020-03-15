@@ -16,10 +16,10 @@
     id <NSObject> _value;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool obfuscated; // @synthesize obfuscated=_obfuscated;
 @property(retain, nonatomic) id <NSObject> value; // @synthesize value=_value;
 @property(retain, nonatomic) NSString *format; // @synthesize format=_format;
-- (void).cxx_destruct;
 - (id)initWithFormat:(id)arg1 value:(id)arg2 obfuscated:(_Bool)arg3;
 
 @end

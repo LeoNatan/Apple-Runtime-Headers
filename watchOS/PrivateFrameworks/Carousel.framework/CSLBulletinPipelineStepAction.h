@@ -17,11 +17,11 @@
 }
 
 + (id)actionWithBulletin:(id)arg1 oldBulletin:(id)arg2 feed:(unsigned int)arg3 actionType:(unsigned int)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) unsigned int feed; // @synthesize feed=_feed;
 @property(retain, nonatomic) CSLBulletin *oldBulletin; // @synthesize oldBulletin=_oldBulletin;
 @property(retain, nonatomic) CSLBulletin *bulletin; // @synthesize bulletin=_bulletin;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

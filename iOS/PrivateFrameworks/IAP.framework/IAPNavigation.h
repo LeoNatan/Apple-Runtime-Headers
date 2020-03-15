@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_processingQ;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *processingQ; // @synthesize processingQ=_processingQ;
 @property _Bool connected; // @synthesize connected=_connected;
 @property(retain) NSObject<OS_xpc_object> *iap2d_connection; // @synthesize iap2d_connection=_iap2d_connection;
 @property(retain) NSSet *availableAccessories; // @synthesize availableAccessories=_availableAccessories;
 @property __weak id <IAPNavigationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_convert_xpc_array_to_NSArray:(id)arg1;
 - (void)_updateInternalStateWithArrayOfAccessories:(id)arg1;
 - (void)_getConnectedAccessories;

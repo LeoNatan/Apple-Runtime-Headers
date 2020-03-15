@@ -18,8 +18,8 @@
 }
 
 + (long long)_touchIDStatusForError:(long long)arg1;
-@property long long currentTouchIDStatus; // @synthesize currentTouchIDStatus=_currentTouchIDStatus;
 - (void).cxx_destruct;
+@property long long currentTouchIDStatus; // @synthesize currentTouchIDStatus=_currentTouchIDStatus;
 @property(readonly, nonatomic) BOOL isBiometricAuthenticationAvailable;
 - (void)updateTouchIDSupportAndAvailability;
 - (id)authenticateWithReason:(id)arg1 delegate:(id)arg2;

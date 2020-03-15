@@ -25,10 +25,10 @@
 + (id)photoWithItemProvider:(id)arg1 extensionContext:(id)arg2 extensionItem:(id)arg3;
 + (id)photoWithFileURL:(id)arg1;
 + (id)imageLoadingQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) KHPhotoLocationMetadata *locationMetadata; // @synthesize locationMetadata=_locationMetadata;
 @property(readonly, nonatomic) id rawAsset; // @synthesize rawAsset=_rawAsset;
 @property(nonatomic) unsigned long long imageOrientation; // @synthesize imageOrientation=_imageOrientation;
-- (void).cxx_destruct;
 @property(readonly) NSString *pageLayoutPhotoID;
 - (id)pageLayoutImage;
 @property(readonly) NSDate *pageLayoutPhotoModificationDate;

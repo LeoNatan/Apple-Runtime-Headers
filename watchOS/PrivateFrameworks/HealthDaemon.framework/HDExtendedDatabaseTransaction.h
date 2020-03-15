@@ -26,6 +26,7 @@
     double _continuationTimeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double continuationTimeout; // @synthesize continuationTimeout=_continuationTimeout;
 @property(readonly, nonatomic) double transactionTimeout; // @synthesize transactionTimeout=_transactionTimeout;
 @property(nonatomic) _Bool pendingWorkDidSucceed; // @synthesize pendingWorkDidSucceed=_pendingWorkDidSucceed;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *transactionQueue; // @synthesize transactionQueue=_transactionQueue;
 @property(readonly, nonatomic) __weak HDDatabase *database; // @synthesize database=_database;
 @property(readonly, copy, nonatomic) NSUUID *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
-- (void).cxx_destruct;
 - (void)_transaction_runTransactionWithContext:(id)arg1;
 - (void)_enableAutomaticRollbackTimer;
 - (_Bool)rollbackDueToError:(id)arg1 errorOut:(id *)arg2;

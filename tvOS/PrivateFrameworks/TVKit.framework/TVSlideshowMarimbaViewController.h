@@ -45,6 +45,7 @@
     NSString *_slideshowStyle;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *slideshowStyle; // @synthesize slideshowStyle=_slideshowStyle;
 @property(nonatomic) _Bool didPauseMarimbaRenderer; // @synthesize didPauseMarimbaRenderer=_didPauseMarimbaRenderer;
 @property(nonatomic) _Bool displayThemeOptions; // @synthesize displayThemeOptions=_displayThemeOptions;
@@ -73,7 +74,6 @@
 @property(nonatomic) long long slideshowStartIndex; // @synthesize slideshowStartIndex=_slideshowStartIndex;
 @property(nonatomic) _Bool displaysTransitionStyleOptions; // @synthesize displaysTransitionStyleOptions=_displaysTransitionStyleOptions;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)_initializeSlideshowMarimbaParametersWithOptions:(id)arg1 displayThemeOptions:(_Bool)arg2;
 - (void)refreshPhotoAssets:(id)arg1;
 - (void)addImageProxies:(id)arg1;

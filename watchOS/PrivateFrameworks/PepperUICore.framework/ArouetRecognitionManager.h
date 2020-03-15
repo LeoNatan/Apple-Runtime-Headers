@@ -19,13 +19,13 @@
 }
 
 + (id)_recognitionQueue;
+- (void).cxx_destruct;
 @property(copy) NSIndexSet *_canceledRequestIDs; // @synthesize _canceledRequestIDs=__canceledRequestIDs;
 @property(retain, nonatomic) NSMutableIndexSet *_activeRequestIDs; // @synthesize _activeRequestIDs=__activeRequestIDs;
 @property(nonatomic) int _highestRequestID; // @synthesize _highestRequestID=__highestRequestID;
 @property(retain, nonatomic) CHRecognizer *_recognizer; // @synthesize _recognizer=__recognizer;
 @property(nonatomic) double minRecognitionDuration; // @synthesize minRecognitionDuration=_minRecognitionDuration;
 @property(readonly) ArouetLanguageSpec *languageSpec; // @synthesize languageSpec=_languageSpec;
-- (void).cxx_destruct;
 - (int)_recognizerContentTypeForUITextContentType:(id)arg1;
 - (void)_updateRecognizer;
 - (_Bool)canUsePrewarmedRecognizerForLanguageSpec:(id)arg1;

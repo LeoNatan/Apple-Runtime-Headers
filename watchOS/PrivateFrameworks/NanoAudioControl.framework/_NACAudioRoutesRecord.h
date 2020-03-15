@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _timestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) NSMutableSet *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSArray *deferredAudioRoutes; // @synthesize deferredAudioRoutes=_deferredAudioRoutes;
 @property(retain, nonatomic) NSArray *audioRoutes; // @synthesize audioRoutes=_audioRoutes;
-- (void).cxx_destruct;
 
 @end
 

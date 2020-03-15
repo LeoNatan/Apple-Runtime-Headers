@@ -17,10 +17,10 @@
     UIPageControl *_pageControl;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIPageControl *pageControl; // @synthesize pageControl=_pageControl;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(copy, nonatomic) NSString *initialWorkflowType; // @synthesize initialWorkflowType=_initialWorkflowType;
-- (void).cxx_destruct;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)done;

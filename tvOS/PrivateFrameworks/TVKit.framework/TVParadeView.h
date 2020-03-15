@@ -26,6 +26,7 @@
     struct CGRect _maximumImageBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *transformKeyframes; // @synthesize transformKeyframes=_transformKeyframes;
 @property(retain, nonatomic) NSArray *depthKeyframes; // @synthesize depthKeyframes=_depthKeyframes;
 @property(retain, nonatomic) NSArray *positionKeyframes; // @synthesize positionKeyframes=_positionKeyframes;
@@ -37,7 +38,6 @@
 @property(nonatomic, getter=isShuffled) _Bool shuffled; // @synthesize shuffled=_shuffled;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (id)_sublayerWithAnimation:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)_stopAnimations;

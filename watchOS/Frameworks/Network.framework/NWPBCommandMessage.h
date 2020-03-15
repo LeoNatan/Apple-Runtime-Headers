@@ -19,8 +19,8 @@
     } _has;
 }
 
-@property(retain, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *messageData; // @synthesize messageData=_messageData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

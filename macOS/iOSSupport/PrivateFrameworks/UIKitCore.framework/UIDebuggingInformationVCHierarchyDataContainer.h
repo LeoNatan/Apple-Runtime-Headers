@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     long long _level;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long level; // @synthesize level=_level;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)initWithViewController:(id)arg1 atLevel:(long long)arg2;
 
 @end

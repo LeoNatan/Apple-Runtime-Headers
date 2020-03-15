@@ -15,10 +15,10 @@
     NSArray *_positionalArguments;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *positionalArguments; // @synthesize positionalArguments=_positionalArguments;
 @property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(readonly, nonatomic) _PASArgSubcommand *subcommand; // @synthesize subcommand=_subcommand;
-- (void).cxx_destruct;
 - (id)initWithSubcommand:(id)arg1 options:(id)arg2 positionalArguments:(id)arg3;
 
 @end

@@ -20,11 +20,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) NSHashTable *receivers; // @synthesize receivers=_receivers;
 @property(retain, nonatomic) NviContext *nviCtx; // @synthesize nviCtx=_nviCtx;
-- (void).cxx_destruct;
 - (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
 - (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectly:(long long)arg2;
 - (void)audioStreamProvider:(id)arg1 avBufferAvailable:(id)arg2;

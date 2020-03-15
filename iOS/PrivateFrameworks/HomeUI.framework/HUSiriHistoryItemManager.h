@@ -15,8 +15,8 @@
     HFStaticItem *_deleteSiriHistoryItem;
 }
 
-@property(retain, nonatomic) HFStaticItem *deleteSiriHistoryItem; // @synthesize deleteSiriHistoryItem=_deleteSiriHistoryItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HFStaticItem *deleteSiriHistoryItem; // @synthesize deleteSiriHistoryItem=_deleteSiriHistoryItem;
 - (id)didUpdateItemAtIndexPath:(id)arg1;
 - (id)didSelectItemAtIndexPath:(id)arg1;
 - (id)_buildSectionsWithDisplayedItems:(id)arg1;

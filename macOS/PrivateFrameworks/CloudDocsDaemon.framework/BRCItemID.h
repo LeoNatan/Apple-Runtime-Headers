@@ -63,7 +63,7 @@
 - (id)_directoryRecordNameWithSession:(id)arg1;
 - (id)sideCarRecordIDWithZone:(id)arg1;
 - (id)sideCarRecordNameWithZone:(id)arg1;
-- (id)structureRecordIDForItemType:(BOOL)arg1 zone:(id)arg2;
+- (id)structureRecordIDForItemType:(BOOL)arg1 zone:(id)arg2 aliasTargetZoneIsShared:(BOOL)arg3;
 - (id)pcsChainDocumentStructureReferenceInZoneID:(id)arg1;
 - (id)pcsChainParentReferenceInZone:(id)arg1;
 - (id)validatingDirectoryReferenceInZone:(id)arg1;

@@ -24,6 +24,7 @@
     NSMutableArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) SVTimeBasedAction *impressionAction; // @synthesize impressionAction=_impressionAction;
 @property(readonly, nonatomic) id <SVVideoDurationObserving> durationObserver; // @synthesize durationObserver=_durationObserver;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) double impressionThreshold; // @synthesize impressionThreshold=_impressionThreshold;
 @property(copy, nonatomic, setter=uponQuartileImpression:) CDUnknownBlockType quartileImpressionBlock; // @synthesize quartileImpressionBlock=_quartileImpressionBlock;
 @property(copy, nonatomic, setter=uponThresholdImpression:) CDUnknownBlockType thresholdImpressionBlock; // @synthesize thresholdImpressionBlock=_thresholdImpressionBlock;
-- (void).cxx_destruct;
 - (void)configureTimelineForQuartileReportingWithDuration:(double)arg1;
 - (void)configureTimelineForImpressionReportingWithDuration:(double)arg1;
 - (void)dealloc;

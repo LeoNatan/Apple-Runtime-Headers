@@ -14,8 +14,8 @@
 }
 
 + (BOOL)canPerformOnAssetCollection:(id)arg1 people:(id)arg2;
-@property(retain, nonatomic) NSString *userResponse; // @synthesize userResponse=_userResponse;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *userResponse; // @synthesize userResponse=_userResponse;
 - (void)applyBlacklistFeatureWithActionType:(id)arg1;
 - (void)performBackgroundTask;
 - (id)_memoryFeatureFromMemory:(id)arg1 forActionType:(id)arg2;

@@ -35,6 +35,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *displayCSN; // @synthesize displayCSN=_displayCSN;
 @property(retain, nonatomic) NSString *CSN; // @synthesize CSN=_CSN;
 @property(retain, nonatomic) NSString *effectiveICCID; // @synthesize effectiveICCID=_effectiveICCID;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSString *currentSubscriberId; // @synthesize currentSubscriberId=_currentSubscriberId;
 @property(retain, nonatomic) NSString *currentMobileId; // @synthesize currentMobileId=_currentMobileId;
 @property(nonatomic) long long slotId; // @synthesize slotId=_slotId;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

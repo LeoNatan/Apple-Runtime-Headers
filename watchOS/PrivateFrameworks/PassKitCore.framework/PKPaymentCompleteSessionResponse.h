@@ -13,8 +13,8 @@
     NSString *_retryNonce;
 }
 
-@property(readonly, copy, nonatomic) NSString *retryNonce; // @synthesize retryNonce=_retryNonce;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *retryNonce; // @synthesize retryNonce=_retryNonce;
 
 @end
 

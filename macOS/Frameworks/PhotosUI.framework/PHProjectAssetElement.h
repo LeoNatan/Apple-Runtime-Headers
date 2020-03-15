@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL verticallyFlipped; // @synthesize verticallyFlipped=_verticallyFlipped;
 @property(readonly, nonatomic) BOOL horizontallyFlipped; // @synthesize horizontallyFlipped=_horizontallyFlipped;
 @property(retain, nonatomic) NSArray *regionsOfInterest; // @synthesize regionsOfInterest=_regionsOfInterest;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(retain, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 @property(readonly, nonatomic) PHCloudIdentifier *cloudAssetIdentifier; // @synthesize cloudAssetIdentifier=_cloudAssetIdentifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description:(BOOL)arg1;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     SEL _action;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *services; // @synthesize services=_services;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)update;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithOptions:(unsigned long long)arg1;

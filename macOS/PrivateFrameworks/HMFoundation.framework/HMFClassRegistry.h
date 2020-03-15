@@ -15,8 +15,8 @@
     Class _defaultClass;
 }
 
-@property(readonly) Class defaultClass; // @synthesize defaultClass=_defaultClass;
 - (void).cxx_destruct;
+@property(readonly) Class defaultClass; // @synthesize defaultClass=_defaultClass;
 - (void)setClass:(Class)arg1 forKey:(id)arg2;
 - (Class)classForKey:(id)arg1;
 - (id)initWithDefaultClass:(Class)arg1;

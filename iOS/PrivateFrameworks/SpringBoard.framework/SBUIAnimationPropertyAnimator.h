@@ -20,10 +20,10 @@
     CDUnknownBlockType _generator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType generator; // @synthesize generator=_generator;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
-- (void).cxx_destruct;
 - (void)_executeGenerator:(id)arg1;
 - (void)cancelTransition:(id)arg1 withCompletionSpeed:(double)arg2 completionCurve:(long long)arg3;
 - (void)prepareToRunAnimation:(id)arg1;

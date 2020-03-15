@@ -34,11 +34,11 @@ __attribute__((visibility("hidden")))
 + (id)_headerLabelFont;
 + (_Bool)requiresConstraintBasedLayout;
 + (id)defaultReuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) NSArray *storeItems; // @synthesize storeItems=_storeItems;
 @property(nonatomic) __weak id <WDAppSwooshTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

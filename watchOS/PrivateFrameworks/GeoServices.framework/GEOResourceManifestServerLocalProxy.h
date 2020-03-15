@@ -48,8 +48,8 @@
     NSProgress *_currentUpdateProgress;
 }
 
-@property(nonatomic) __weak id <GEOResourceManifestServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <GEOResourceManifestServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_notifyOpportunisticManifestUpdateCompletionHandlers:(id)arg1;
 - (void)_addOpportunisticManifestUpdateCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_notifyManifestUpdateCompletionHandlers:(id)arg1;

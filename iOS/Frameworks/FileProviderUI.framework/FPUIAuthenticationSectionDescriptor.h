@@ -26,6 +26,7 @@
     NSString *_rowCellReuseIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(copy, nonatomic) NSString *rowCellReuseIdentifier; // @synthesize rowCellReuseIdentifier=_rowCellReuseIdentifier;
 @property(copy, nonatomic) Class rowCellClass; // @synthesize rowCellClass=_rowCellClass;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool shouldHighlightRows; // @synthesize shouldHighlightRows=_shouldHighlightRows;
 @property(nonatomic) double footerHeight; // @synthesize footerHeight=_footerHeight;
 @property(nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -17,9 +17,9 @@
     float _scaleFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)fetchImage;
 - (id)initWithSceneSnapshot:(id)arg1;
 

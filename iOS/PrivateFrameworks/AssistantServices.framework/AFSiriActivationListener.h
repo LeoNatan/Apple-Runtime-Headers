@@ -22,24 +22,24 @@
 }
 
 - (void).cxx_destruct;
-- (void)_deactivateForReason:(long long)arg1 options:(unsigned long long)arg2 analyticsContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_activateWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_prewarmWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_deactivateForReason:(long long)arg1 options:(unsigned long long)arg2 context:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_activateWithRequestInfo:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_prewarmWithRequestInfo:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_invalidate;
 - (void)_stop;
 - (void)_startWithDelegate:(id)arg1;
 - (oneway void)handleIntent:(id)arg1 inBackgroundAppWithBundleId:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (oneway void)handleContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)deactivateForReason:(long long)arg1 options:(unsigned long long)arg2 analyticsContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (oneway void)activateWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)prewarmWithRequestInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (oneway void)deactivateForReason:(long long)arg1 options:(unsigned long long)arg2 context:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (oneway void)activateWithRequestInfo:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (oneway void)prewarmWithRequestInfo:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)notifyObserver:(id)arg1 didChangeStateFrom:(unsigned long long)arg2 to:(unsigned long long)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)invalidate;
 - (void)stop;
 - (void)startWithDelegate:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithServicePort:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

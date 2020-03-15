@@ -19,13 +19,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSMeasurement *cumulativeThreeKilometersAccuracyTime; // @synthesize cumulativeThreeKilometersAccuracyTime=_cumulativeThreeKilometersAccuracyTime;
 @property(readonly) NSMeasurement *cumulativeKilometerAccuracyTime; // @synthesize cumulativeKilometerAccuracyTime=_cumulativeKilometerAccuracyTime;
 @property(readonly) NSMeasurement *cumulativeHundredMetersAccuracyTime; // @synthesize cumulativeHundredMetersAccuracyTime=_cumulativeHundredMetersAccuracyTime;
 @property(readonly) NSMeasurement *cumulativeNearestTenMetersAccuracyTime; // @synthesize cumulativeNearestTenMetersAccuracyTime=_cumulativeNearestTenMetersAccuracyTime;
 @property(readonly) NSMeasurement *cumulativeBestAccuracyForNavigationTime; // @synthesize cumulativeBestAccuracyForNavigationTime=_cumulativeBestAccuracyForNavigationTime;
 @property(readonly) NSMeasurement *cumulativeBestAccuracyTime; // @synthesize cumulativeBestAccuracyTime=_cumulativeBestAccuracyTime;
-- (void).cxx_destruct;
 - (id)toDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

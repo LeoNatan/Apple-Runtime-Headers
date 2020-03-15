@@ -18,11 +18,11 @@
     HKValueRange *_axisBounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *axisRangeOverrides; // @synthesize axisRangeOverrides=_axisRangeOverrides;
 @property(retain, nonatomic) HKValueRange *axisBounds; // @synthesize axisBounds=_axisBounds;
 @property(nonatomic) int portraitPrettyNumberRule; // @synthesize portraitPrettyNumberRule=_portraitPrettyNumberRule;
 @property(readonly, nonatomic) double defaultYAxisRange; // @synthesize defaultYAxisRange=_defaultYAxisRange;
-- (void).cxx_destruct;
 - (double)_rangeForZoomLevel:(int)arg1;
 - (id)portraitYValueRangeForRange:(id)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
 - (id)yValueRangeForRange:(id)arg1 zoomLevel:(int)arg2;

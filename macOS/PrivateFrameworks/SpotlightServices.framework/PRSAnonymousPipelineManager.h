@@ -34,6 +34,7 @@
 + (id)logURLForCurrentTimeAndBundle:(id)arg1;
 + (id)relativePositionKey;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SFFeedbackListener> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL submissionEnabled; // @synthesize submissionEnabled=_submissionEnabled;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSString *lastTopHitQueryString; // @synthesize lastTopHitQueryString=_lastTopHitQueryString;
 @property BOOL isInternalDevice; // @synthesize isInternalDevice=_isInternalDevice;
 @property(retain) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
-- (void).cxx_destruct;
 - (void)setFeedbackDelegate:(id)arg1;
 - (void)userEngagedItemWithIdentifier:(id)arg1 forBundle:(id)arg2 forQuery:(id)arg3;
 - (void)queryWillFinishWithItems:(id)arg1 forClient:(id)arg2 forQuery:(id)arg3 anonymousDataCollectionAllowed:(BOOL)arg4;

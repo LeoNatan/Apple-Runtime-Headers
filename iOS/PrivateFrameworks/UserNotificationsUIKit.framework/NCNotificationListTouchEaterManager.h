@@ -20,12 +20,12 @@
     NCTouchEaterGestureRecognizer *_touchEater;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NCTouchEaterGestureRecognizer *touchEater; // @synthesize touchEater=_touchEater;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsHandler> coalescingControlsHandlerInClearState; // @synthesize coalescingControlsHandlerInClearState=_coalescingControlsHandlerInClearState;
 @property(nonatomic) __weak NCNotificationListSectionHeaderView *headerViewInClearState; // @synthesize headerViewInClearState=_headerViewInClearState;
 @property(nonatomic) __weak NCNotificationListCell *cellWithRevealedActions; // @synthesize cellWithRevealedActions=_cellWithRevealedActions;
-- (void).cxx_destruct;
 - (void)_handleEatenTouchEndStateForGestureRecognizer:(id)arg1;
 - (void)_handleEatenTouchBeginStateForGestureRecognizer:(id)arg1;
 - (_Bool)_shouldReceiveTouch:(id)arg1 forGestureRecognizer:(id)arg2;

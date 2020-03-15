@@ -39,10 +39,6 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct NSObject {
-    Class _field1;
-};
-
 struct PLPrimaryDataStoreKeyStrategy_FilePath_KeyStruct_V1 {
     unsigned int strategy:8;
     unsigned int version:2;

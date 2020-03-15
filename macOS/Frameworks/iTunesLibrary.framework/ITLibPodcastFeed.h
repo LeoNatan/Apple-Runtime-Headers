@@ -16,6 +16,8 @@
     NSNumber *_persistentID;
     NSString *_url;
     NSString *_link;
+    NSString *_title;
+    NSString *_sortTitle;
     NSString *_author;
     NSString *_provider;
     NSDate *_addedDate;
@@ -28,6 +30,7 @@
 }
 
 + (id)podcastFeedWithDict:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long removePlayedRule; // @synthesize removePlayedRule=_removePlayedRule;
 @property(nonatomic) unsigned long long limitRule; // @synthesize limitRule=_limitRule;
 @property(nonatomic) unsigned long long downloadAction; // @synthesize downloadAction=_downloadAction;
@@ -39,11 +42,12 @@
 @property(nonatomic, getter=isExplicitContent) BOOL explicitContent; // @synthesize explicitContent=_explicitContent;
 @property(copy, nonatomic) NSString *provider; // @synthesize provider=_provider;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
+@property(copy, nonatomic) NSString *sortTitle; // @synthesize sortTitle=_sortTitle;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *link; // @synthesize link=_link;
 @property(copy, nonatomic) NSString *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSString *description; // @synthesize description;
-- (void).cxx_destruct;
 
 @end
 

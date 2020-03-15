@@ -14,8 +14,8 @@
 }
 
 + (BOOL)handlesResponseWithName:(const char *)arg1 ofLength:(unsigned long long)arg2;
-@property(copy, nonatomic) NSSet *flags; // @synthesize flags=_flags;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSSet *flags; // @synthesize flags=_flags;
 - (id)description;
 
 @end

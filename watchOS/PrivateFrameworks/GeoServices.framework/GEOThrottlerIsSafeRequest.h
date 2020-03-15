@@ -22,13 +22,13 @@
 
 + (Class)replyClass;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEODataRequestThrottlerToken *throttlerToken; // @synthesize throttlerToken=_throttlerToken;
 @property(nonatomic) _Bool includeToken; // @synthesize includeToken=_includeToken;
 @property(nonatomic) _Bool availableRequestCount; // @synthesize availableRequestCount=_availableRequestCount;
 @property(nonatomic) _Bool nextSafeRequestTime; // @synthesize nextSafeRequestTime=_nextSafeRequestTime;
 @property(nonatomic) int requestKindSubtype; // @synthesize requestKindSubtype=_requestKindSubtype;
 @property(nonatomic) int requestKindType; // @synthesize requestKindType=_requestKindType;
-- (void).cxx_destruct;
 - (_Bool)expectsReply;
 - (_Bool)isValid;
 - (void)encodeWithCoder:(id)arg1;

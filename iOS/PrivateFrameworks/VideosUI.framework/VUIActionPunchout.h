@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     IKAppContext *_appContext;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(copy, nonatomic) NSString *contentTitle; // @synthesize contentTitle=_contentTitle;
 @property(nonatomic) _Bool isPlaybackURL; // @synthesize isPlaybackURL=_isPlaybackURL;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isEntitledToPlay; // @synthesize isEntitledToPlay=_isEntitledToPlay;
 @property(retain, nonatomic) WLKChannelDetails *channelDetails; // @synthesize channelDetails=_channelDetails;
 @property(retain, nonatomic) NSURL *punchoutURL; // @synthesize punchoutURL=_punchoutURL;
-- (void).cxx_destruct;
 - (_Bool)isAccountRequired;
 - (_Bool)_isValidAppInstalled;
 - (void)_openPunchoutURL:(CDUnknownBlockType)arg1;

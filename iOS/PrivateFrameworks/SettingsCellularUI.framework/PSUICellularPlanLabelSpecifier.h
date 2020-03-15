@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     PSUICellularPlanUniversalReference *_planReference;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSUICellularPlanUniversalReference *planReference; // @synthesize planReference=_planReference;
 @property(retain, nonatomic) PSUICellularPlanManagerCache *planManagerCache; // @synthesize planManagerCache=_planManagerCache;
-- (void).cxx_destruct;
 - (id)cellularPlanLabel:(id)arg1;
 - (void)updateValuesAndTitles;
 - (id)initWithPlanUniversalReference:(id)arg1 planManagerCache:(id)arg2;

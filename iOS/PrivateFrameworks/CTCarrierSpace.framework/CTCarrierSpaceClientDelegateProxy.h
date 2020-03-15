@@ -16,8 +16,8 @@
     id <CTCarrierSpaceClientDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <CTCarrierSpaceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CTCarrierSpaceClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)purchasedPlan:(id)arg1 didChangeStatus:(long long)arg2 context:(id)arg3;
 - (void)dataPlanMetricsDidChange;
 - (void)appsDidChange;

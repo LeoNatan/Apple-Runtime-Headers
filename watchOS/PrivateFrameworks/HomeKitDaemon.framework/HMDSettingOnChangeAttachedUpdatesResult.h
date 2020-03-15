@@ -15,10 +15,10 @@
     CDUnknownBlockType _onCommitCompletion;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CDUnknownBlockType onCommitCompletion; // @synthesize onCommitCompletion=_onCommitCompletion;
 @property(readonly) NSArray *modelsToUpdate; // @synthesize modelsToUpdate=_modelsToUpdate;
 @property(readonly) NSArray *settingsToUpdate; // @synthesize settingsToUpdate=_settingsToUpdate;
-- (void).cxx_destruct;
 - (id)initWithSettingsToUpdate:(id)arg1 models:(id)arg2 onCommitCompletion:(CDUnknownBlockType)arg3;
 
 @end

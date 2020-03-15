@@ -17,11 +17,11 @@
 }
 
 + (id)dataWithUniqueIdentifier:(id)arg1 title:(id)arg2 dateAdded:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *actionSetType; // @synthesize actionSetType=_actionSetType;
 @property(copy, nonatomic) NSDate *dateAdded; // @synthesize dateAdded=_dateAdded;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 
 @end
 

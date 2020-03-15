@@ -16,9 +16,9 @@
 
 + (id)contactGroupWithCNGroup:(id)arg1;
 + (id)allContactGroups;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *cachedMembers; // @synthesize cachedMembers=_cachedMembers;
 @property(readonly, nonatomic) CNGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (BOOL)containsContact:(id)arg1;
 @property(readonly, nonatomic) NSArray *contacts;
 - (id)name;

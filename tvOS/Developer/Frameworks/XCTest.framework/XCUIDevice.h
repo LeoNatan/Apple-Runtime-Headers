@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, XCUIRemote, XCUISiriService, XCUITestContext;
-@protocol XCUIAccessibilityInterface, XCUIApplicationAutomationSessionProviding, XCUIApplicationManaging, XCUIApplicationMonitor, XCUIDeviceEventAndStateInterface, XCUIEventSynthesizing, XCUIScreenDataSource, XCUIXcodeApplicationManaging;
+@class NSString, XCUIRemote, XCUISiriService;
+@protocol XCUIAccessibilityInterface, XCUIApplicationAutomationSessionProviding, XCUIApplicationManaging, XCUIApplicationMonitor, XCUIDeviceEventAndStateInterface, XCUIEventSynthesizing, XCUIInterruptionMonitoring, XCUIResetAuthorizationStatusOfProtectedResourcesInterface, XCUIScreenDataSource, XCUIXcodeApplicationManaging;
 
 @interface XCUIDevice : NSObject
 {
@@ -24,14 +24,18 @@
     XCUISiriService *_siriService;
     id <XCUIScreenDataSource> _screenDataSource;
     NSString *_uniqueIdentifier;
-    XCUITestContext *_testContext;
     XCUIRemote *_remote;
+    id <XCUIInterruptionMonitoring> _interruptionMonitor;
+    id <XCUIResetAuthorizationStatusOfProtectedResourcesInterface> _resetAuthorizationStatusInterface;
 }
 
 + (id)sharedDevice;
++ (void)setLocalDevice:(id)arg1;
 + (id)localDevice;
+- (void).cxx_destruct;
+- (id)resetAuthorizationStatusInterface;
+- (id)interruptionMonitor;
 - (id)remote;
-- (id)testContext;
 - (_Bool)isSimulatorDevice;
 - (id)uniqueIdentifier;
 - (id)screenDataSource;
@@ -44,7 +48,6 @@
 - (id)accessibilityInterface;
 - (long long)platform;
 - (_Bool)isLocal;
-- (void).cxx_destruct;
 - (void)remoteAutomationSessionDidDisconnect:(id)arg1;
 - (void)attachLocalizableStringsData;
 - (void)rotateDigitalCrown:(double)arg1 velocity:(double)arg2;

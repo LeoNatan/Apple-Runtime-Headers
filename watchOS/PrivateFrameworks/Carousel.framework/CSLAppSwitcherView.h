@@ -111,12 +111,12 @@
 + (id)criticallyDampedSpringWithDuration:(float)arg1;
 + (id)_criticallyDampedSpringValues;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool launcherIsListView; // @synthesize launcherIsListView=_launcherIsListView;
 @property(nonatomic) __weak id <CSLAppSwitcherViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) float offset; // @synthesize offset=_offset;
 @property(retain, nonatomic) NSArray *switcherControllers; // @synthesize switcherControllers=_switcherControllers;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (float)_addModeAdjustedRelativeProgress:(float)arg1 forIndex:(unsigned int)arg2;
 - (float)_scrollOffsetDeconvertedForLauncherButton:(float)arg1;
 - (float)_relativeProgressAdjustedForLauncherButton:(float)arg1;

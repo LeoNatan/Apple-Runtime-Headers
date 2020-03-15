@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)configureWithExistingView:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUITextLayout *buttonTextLayout; // @synthesize buttonTextLayout=_buttonTextLayout;
 @property(retain, nonatomic) _TVImageView *chevronDownImageView; // @synthesize chevronDownImageView=_chevronDownImageView;
 @property(retain, nonatomic) VUILabel *altLabel; // @synthesize altLabel=_altLabel;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long currentIndex; // @synthesize currentIndex=_currentIndex;
 @property(nonatomic) __weak id <VUISeasonPickerButtonDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *seasonTitles; // @synthesize seasonTitles=_seasonTitles;
-- (void).cxx_destruct;
 - (void)switchToIndex:(unsigned long long)arg1;
 - (void)_updateLabelsWithSeasonTitles:(id)arg1;
 - (void)_buttonTapped:(id)arg1;

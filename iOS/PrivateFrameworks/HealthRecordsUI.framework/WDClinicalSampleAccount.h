@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_batches;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *batches; // @synthesize batches=_batches;
 @property(retain, nonatomic) WDClinicalSampleAccountProvider *provider; // @synthesize provider=_provider;
 @property(copy, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 
 @end
 

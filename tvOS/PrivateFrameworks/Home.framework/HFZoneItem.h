@@ -20,9 +20,9 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HMZone *zone; // @synthesize zone=_zone;
-- (void).cxx_destruct;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)hf_deleteItem;

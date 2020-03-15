@@ -26,10 +26,10 @@
 
 + (id)serverInterface;
 + (id)clientInterface;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) HKTaskServerProxyProvider *proxyProvider; // @synthesize proxyProvider=_proxyProvider;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)_lock_startTaskServerIfNeeded;
 - (void)_startTaskServerIfNeeded;
 - (void)clientRemote_didUpdateWorkoutSnapshot:(id)arg1;

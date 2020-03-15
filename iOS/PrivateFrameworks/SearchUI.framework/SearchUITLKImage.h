@@ -13,8 +13,8 @@
     SFImage *_sfImage;
 }
 
-@property(retain) SFImage *sfImage; // @synthesize sfImage=_sfImage;
 - (void).cxx_destruct;
+@property(retain) SFImage *sfImage; // @synthesize sfImage=_sfImage;
 - (id)initWithSFImage:(id)arg1;
 
 @end

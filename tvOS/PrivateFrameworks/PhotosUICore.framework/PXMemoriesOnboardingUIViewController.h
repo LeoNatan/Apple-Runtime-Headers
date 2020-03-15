@@ -25,12 +25,12 @@
     PXOnboardingStatusUIView *__statusView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setStatusView:) PXOnboardingStatusUIView *_statusView; // @synthesize _statusView=__statusView;
 @property(nonatomic, setter=_setWelcomeView:) PXOnboardingWelcomeUIView *_welcomeView; // @synthesize _welcomeView=__welcomeView;
 @property(nonatomic, setter=_setStage:) unsigned long long _stage; // @synthesize _stage=__stage;
 @property(readonly, nonatomic) PXPhotoAnalysisStatusController *_statusController; // @synthesize _statusController=__statusController;
 @property(nonatomic) __weak id <PXMemoriesOnboardingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateProgressIfNeeded;
 - (void)_invalidateProgress;

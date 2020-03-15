@@ -17,11 +17,11 @@
     NSMutableArray *_preflightActions;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *preflightActions; // @synthesize preflightActions=_preflightActions;
 @property(nonatomic) __weak NSObject<SMCopyEngineDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) NSURL *targetSystemPath; // @synthesize targetSystemPath=_targetSystemPath;
 @property __weak SMPreflightEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (unsigned long long)totalSize;
 - (BOOL)run;
 - (void)addAction:(id)arg1;

@@ -16,10 +16,10 @@
     id <CSWallpaperViewProviding> _wallpaperViewProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSWallpaperViewProviding> wallpaperViewProvider; // @synthesize wallpaperViewProvider=_wallpaperViewProvider;
 @property(nonatomic) __weak id <CSWallpaperColorProvider> wallpaperColorProvider; // @synthesize wallpaperColorProvider=_wallpaperColorProvider;
 @property(readonly, nonatomic) UIView<CSWallpaperView> *effectView; // @synthesize effectView=_effectView;
-- (void).cxx_destruct;
 - (void)_updateVibrancy;
 - (void)setLegibilitySettings:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

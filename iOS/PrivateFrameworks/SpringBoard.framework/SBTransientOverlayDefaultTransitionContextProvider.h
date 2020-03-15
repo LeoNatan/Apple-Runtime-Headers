@@ -20,8 +20,8 @@
     _Bool animated;
 }
 
-@property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isAnimated) _Bool animated; // @synthesize animated;
 - (void)transitionAlongsideUsingBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performAlongsideTransitions;
 - (void)completeTransition:(_Bool)arg1;

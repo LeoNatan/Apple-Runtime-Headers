@@ -27,6 +27,7 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) double currentTimerValue; // @synthesize currentTimerValue=_currentTimerValue;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) HMFTimer *timer; // @synthesize timer=_timer;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) __weak id <HMDSharedHomeUpdateSessionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (id)dumpState;
 - (void)_callDelegate;
 - (void)timerDidFire:(id)arg1;

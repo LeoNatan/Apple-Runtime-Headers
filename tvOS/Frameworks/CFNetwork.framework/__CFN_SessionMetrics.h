@@ -17,8 +17,8 @@
     NSUUID *_UUID;
 }
 
-@property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 - (void)taskCreate:(id)arg1 request:(id)arg2;
 - (void)delegateEnd:(SEL)arg1;
 - (void)delegateBegin:(SEL)arg1;

@@ -17,10 +17,10 @@
     NSString *_sanitizedPrimaryAccountNumber;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *longDescription; // @synthesize longDescription=_longDescription;
 @property(retain, nonatomic) NSString *expiration; // @synthesize expiration=_expiration;
 @property(retain, nonatomic) NSString *sanitizedPrimaryAccountNumber; // @synthesize sanitizedPrimaryAccountNumber=_sanitizedPrimaryAccountNumber;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

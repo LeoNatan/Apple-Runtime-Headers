@@ -22,8 +22,8 @@
     BOOL _shouldUsePlaylistEntry;
 }
 
-@property(nonatomic) BOOL shouldUsePlaylistEntry; // @synthesize shouldUsePlaylistEntry=_shouldUsePlaylistEntry;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldUsePlaylistEntry; // @synthesize shouldUsePlaylistEntry=_shouldUsePlaylistEntry;
 - (id)_modelObjectWithUniqueContentItemIDForModelObject:(id)arg1;
 - (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2 userIdentity:(id)arg3;
 

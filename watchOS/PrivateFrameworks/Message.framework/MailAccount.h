@@ -124,10 +124,10 @@
 + (struct os_unfair_recursive_lock_s *)lock;
 + (void)initialize;
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFLocalActionReplayHandler *replayHandler; // @synthesize replayHandler=_replayHandler;
 @property(retain, nonatomic) id <EFScheduler> mailboxCacheWriteScheduler; // @synthesize mailboxCacheWriteScheduler=_mailboxCacheWriteScheduler;
 @property(readonly, nonatomic) _Bool supportsFastRemoteBodySearch; // @synthesize supportsFastRemoteBodySearch=_supportsFastRemoteBodySearch;
-- (void).cxx_destruct;
 - (_Bool)supportsMailDrop;
 - (_Bool)supportsHandoffType:(id)arg1;
 - (id)unsupportedHandoffTypes;

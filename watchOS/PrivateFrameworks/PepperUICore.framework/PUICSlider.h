@@ -54,6 +54,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hapticFeedbackEnabled; // @synthesize hapticFeedbackEnabled=_hapticFeedbackEnabled;
 @property(retain, nonatomic) UIView *maximumValueView; // @synthesize maximumValueView=_maximumValueView;
 @property(retain, nonatomic) UIView *minimumValueView; // @synthesize minimumValueView=_minimumValueView;
@@ -63,7 +64,6 @@
 @property(nonatomic) _Bool shouldAutomaticallAdjustValueOnTouch; // @synthesize shouldAutomaticallAdjustValueOnTouch=_shouldAutomaticallAdjustValueOnTouch;
 @property(nonatomic) unsigned int numberOfSteps; // @synthesize numberOfSteps=_numberOfSteps;
 @property(nonatomic) __weak id <PUICSliderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)detentService:(id)arg1 detentsDisabledChanged:(_Bool)arg2;
 - (void)_setupNotchProviderIfNecessary;
 - (void)_playEdgeDetentIfNecessary;

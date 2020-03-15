@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
     UICollectionViewLayout *_transitionLayout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isAnimatingTransition) _Bool animatingTransition; // @synthesize animatingTransition=_animatingTransition;
 @property(retain, nonatomic) UICollectionViewLayout *transitionLayout; // @synthesize transitionLayout=_transitionLayout;
 @property(retain, nonatomic) NSMutableArray *itemsNeedingRelayout; // @synthesize itemsNeedingRelayout=_itemsNeedingRelayout;
@@ -101,7 +102,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PUImportOneUpViewControllerSpecManager *specManager; // @synthesize specManager=_specManager;
 @property(nonatomic) _Bool isCommitingPreview; // @synthesize isCommitingPreview=_isCommitingPreview;
 @property(readonly, nonatomic) PXAssetReference *startingAssetReference; // @synthesize startingAssetReference=_startingAssetReference;
-- (void).cxx_destruct;
 - (id)nextIndexPath:(id)arg1;
 - (id)previousIndexPath:(id)arg1;
 - (long long)nextSectionWithItems:(long long)arg1;

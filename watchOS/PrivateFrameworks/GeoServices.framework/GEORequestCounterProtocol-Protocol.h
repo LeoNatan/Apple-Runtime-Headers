@@ -6,15 +6,17 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class NSDate, NSObject, NSString;
+@class NSDate, NSDateInterval, NSObject, NSString;
 @protocol GEORequestCounterTicket, OS_dispatch_queue;
 
 @protocol GEORequestCounterProtocol <NSObject>
 @property(nonatomic) _Bool countersEnabled;
+- (void)fetchRoutePreloadSessionsFrom:(NSDate *)arg1 completion:(void (^)(NSArray *))arg2 completionQueue:(NSObject<OS_dispatch_queue> *)arg3;
+- (void)recordRoutePreloadSessionAt:(NSDateInterval *)arg1 transportType:(int)arg2 tilesPreloaded:(unsigned int)arg3 tilesUsed:(unsigned int)arg4 tilesMissed:(unsigned int)arg5;
 - (void)fetchAnalyticsHandlingDataFrom:(NSDate *)arg1 completion:(void (^)(NSArray *))arg2 completionQueue:(NSObject<OS_dispatch_queue> *)arg3;
 - (void)recordAnalyticsDBExpireCount:(int)arg1 logMsgType:(int)arg2 at:(NSDate *)arg3;
 - (void)recordAnalyticsUploadFailureCount:(int)arg1 logMsgType:(int)arg2 at:(NSDate *)arg3;
-- (void)recordAnalyticsUploadSuccessCount:(int)arg1 bytes:(int)arg2 logMsgType:(int)arg3 at:(NSDate *)arg4;
+- (void)recordAnalyticsUploadSuccessCount:(int)arg1 bytes:(int)arg2 logMsgType:(int)arg3 usedCellular:(_Bool)arg4 at:(NSDate *)arg5;
 - (void)recordAnalyticsPersistCount:(int)arg1 logMsgType:(int)arg2 at:(NSDate *)arg3;
 - (void)readProactiveTileDownloadsSince:(NSDate *)arg1 handler:(void (^)(NSArray *, NSError *))arg2;
 - (void)finishedProactiveTileDownloadForIdentifier:(NSString *)arg1 policy:(unsigned char)arg2 tilesConsidered:(unsigned int)arg3 tileDownloadAttempts:(unsigned int)arg4 successes:(unsigned int)arg5 failures:(unsigned int)arg6 bytesDownloaded:(unsigned int)arg7;

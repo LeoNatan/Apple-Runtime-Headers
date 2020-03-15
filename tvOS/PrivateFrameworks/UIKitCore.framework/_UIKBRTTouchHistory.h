@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     _Bool _isLeftHand;
 }
 
-@property(nonatomic) _Bool isLeftHand; // @synthesize isLeftHand=_isLeftHand;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isLeftHand; // @synthesize isLeftHand=_isLeftHand;
 - (void)_updateOffset;
 - (void)reset;
 - (void)_decayHistoryToSize:(unsigned long long)arg1;

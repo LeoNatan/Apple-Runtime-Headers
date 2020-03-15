@@ -15,10 +15,10 @@
     UILabel *_textLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) SearchUICheckView *checkView; // @synthesize checkView=_checkView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
-- (void).cxx_destruct;
 - (void)animateCheckmark;
 - (void)layoutSubviews;
 - (id)init;

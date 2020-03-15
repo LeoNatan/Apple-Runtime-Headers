@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     UITextView *_textView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(copy, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
-- (void).cxx_destruct;
 - (void)updatePlaceholderText:(_Bool)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;

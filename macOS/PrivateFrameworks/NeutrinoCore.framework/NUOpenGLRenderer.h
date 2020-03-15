@@ -15,8 +15,8 @@
     NUGLContext *_glContext;
 }
 
-@property(readonly, nonatomic) NUGLContext *glContext; // @synthesize glContext=_glContext;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NUGLContext *glContext; // @synthesize glContext=_glContext;
 - (void)_renderImage:(id)arg1 toTexture:(id)arg2 bounds:(CDStruct_996ac03c)arg3 withColorSpace:(id)arg4;
 - (id)name;
 - (id)initWithGLContext:(id)arg1 options:(id)arg2;

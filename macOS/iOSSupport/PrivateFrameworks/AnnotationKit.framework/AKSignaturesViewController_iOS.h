@@ -31,6 +31,7 @@
     UIResponder *_responderToRestore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIResponder *responderToRestore; // @synthesize responderToRestore=_responderToRestore;
 @property(retain, nonatomic) NSArray *leftBarItems; // @synthesize leftBarItems=_leftBarItems;
 @property(retain, nonatomic) NSArray *editingLeftBarItems; // @synthesize editingLeftBarItems=_editingLeftBarItems;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL presentedInAlert; // @synthesize presentedInAlert=_presentedInAlert;
 @property(nonatomic) __weak id <AKSignaturesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)signatureCreationControllerDidCreateSignature:(id)arg1;
 - (long long)positionForBar:(id)arg1;

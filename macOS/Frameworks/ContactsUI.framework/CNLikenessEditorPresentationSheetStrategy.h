@@ -16,8 +16,8 @@
 }
 
 + (id)strategy;
-@property(retain) NSWindowController *sheetWindowController; // @synthesize sheetWindowController=_sheetWindowController;
 - (void).cxx_destruct;
+@property(retain) NSWindowController *sheetWindowController; // @synthesize sheetWindowController=_sheetWindowController;
 - (void)close;
 - (void)presentController:(id)arg1 onView:(id)arg2;
 - (id)init;

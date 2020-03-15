@@ -32,10 +32,10 @@ __attribute__((visibility("hidden")))
     UITapGestureRecognizer *_tapRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIPhysicalCirclesDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <SKUIPhysicalCirclesDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) struct SKUIPhysicalCircleConstants constants; // @synthesize constants=_constants;
-- (void).cxx_destruct;
 - (void)_stopFluctuationForCircleView:(id)arg1;
 - (void)_startFluctuationForCircleView:(id)arg1;
 - (void)_removeCircleBodies:(id)arg1;

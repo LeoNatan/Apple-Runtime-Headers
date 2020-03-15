@@ -13,8 +13,8 @@
     MCDNowPlayingButton *_nowPlayingButton;
 }
 
-@property(readonly, nonatomic) MCDNowPlayingButton *nowPlayingButton; // @synthesize nowPlayingButton=_nowPlayingButton;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MCDNowPlayingButton *nowPlayingButton; // @synthesize nowPlayingButton=_nowPlayingButton;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

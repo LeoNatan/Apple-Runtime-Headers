@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)thumbnailViewForImage:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) NSString *symbolImageName; // @synthesize symbolImageName=_symbolImageName;
 @property(retain, nonatomic) UIView *symbolImageView; // @synthesize symbolImageView=_symbolImageView;
-- (void).cxx_destruct;
 - (void)updateTintColorIfNeeded:(id)arg1;
 - (id)backgroundColorWithTintColor:(id)arg1;
 - (id)imageForImageNamed:(id)arg1 withTintColor:(id)arg2;

@@ -18,9 +18,9 @@
 + (id)_mediaEntityIdentifierStringForIdentifier:(id)arg1;
 + (id)_mediaItemTypeStringForMediaItem:(id)arg1;
 + (id)_mediaCategoryTypeStringForMediaItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *mediaServerIdentifierHexString; // @synthesize mediaServerIdentifierHexString=_mediaServerIdentifierHexString;
 @property(retain, nonatomic) TVHKMediaEntityServer *mediaEntityServer; // @synthesize mediaEntityServer=_mediaEntityServer;
-- (void).cxx_destruct;
 - (id)_URLQueryStringForMediaItem:(id)arg1 displayType:(id)arg2;
 - (id)_URLForMediaItem:(id)arg1 action:(id)arg2 displayType:(id)arg3;
 - (id)_displayMusicURLForMediaItem:(id)arg1 displayType:(id)arg2;

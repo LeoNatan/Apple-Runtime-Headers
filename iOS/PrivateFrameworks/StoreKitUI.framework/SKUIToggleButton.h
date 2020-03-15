@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     long long _toggleButtonType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long toggleButtonType; // @synthesize toggleButtonType=_toggleButtonType;
 @property(retain, nonatomic) id toggledContents; // @synthesize toggledContents=_toggledContents;
 @property(retain, nonatomic) id nonToggledContents; // @synthesize nonToggledContents=_nonToggledContents;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(nonatomic) long long autoIncrementCount; // @synthesize autoIncrementCount=_autoIncrementCount;
 @property(nonatomic) _Bool autoIncrement; // @synthesize autoIncrement=_autoIncrement;
-- (void).cxx_destruct;
 - (void)itemStateCenter:(id)arg1 itemStateChanged:(id)arg2;
 - (id)_toggledLayout;
 - (id)_titleAttributes;

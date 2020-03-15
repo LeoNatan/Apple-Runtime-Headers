@@ -18,8 +18,8 @@
 }
 
 + (id)sharedMenuController;
-@property(nonatomic) long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
 - (void).cxx_destruct;
+@property(nonatomic) long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
 @property(readonly, nonatomic) struct CGRect menuFrame;
 - (void)update;
 @property(copy, nonatomic) NSArray *menuItems;

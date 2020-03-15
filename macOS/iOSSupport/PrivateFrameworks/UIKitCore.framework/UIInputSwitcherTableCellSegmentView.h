@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_fontForBiasLabel;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIInputSwitcherTableCellBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(nonatomic) BOOL usesDarkTheme; // @synthesize usesDarkTheme=_usesDarkTheme;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

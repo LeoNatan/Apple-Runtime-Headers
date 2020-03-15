@@ -13,8 +13,8 @@
     NSMutableDictionary *_store;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *store; // @synthesize store=_store;
 - (void)storeCallbackDefinition:(id)arg1 forKey:(id)arg2 scope:(id)arg3;
 - (id)lookupForKey:(id)arg1;
 - (id)init;

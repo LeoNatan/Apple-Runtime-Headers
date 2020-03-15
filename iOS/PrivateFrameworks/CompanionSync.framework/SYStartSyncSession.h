@@ -22,6 +22,7 @@
     _Bool _isResetSync;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSData *metadata; // @synthesize metadata=_metadata;
 @property(nonatomic) double sessionTimeout; // @synthesize sessionTimeout=_sessionTimeout;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) _Bool isResetSync; // @synthesize isResetSync=_isResetSync;
 @property(retain, nonatomic) SYMessageHeader *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

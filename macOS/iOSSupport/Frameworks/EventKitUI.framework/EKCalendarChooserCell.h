@@ -26,6 +26,7 @@
     UIColor *_selectionCheckmarkColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *selectionCheckmarkColor; // @synthesize selectionCheckmarkColor=_selectionCheckmarkColor;
 @property(retain, nonatomic) NSString *textLabelText; // @synthesize textLabelText=_textLabelText;
 @property(nonatomic) BOOL showsColorDot; // @synthesize showsColorDot=_showsColorDot;
@@ -34,7 +35,6 @@
 @property(nonatomic) BOOL showCheckmarksOnLeft; // @synthesize showCheckmarksOnLeft=_showCheckmarksOnLeft;
 @property(nonatomic) BOOL multiSelectStyle; // @synthesize multiSelectStyle=_multiSelectStyle;
 @property(nonatomic) BOOL showingSelectionCheckmark; // @synthesize showingSelectionCheckmark=_showingSelectionCheckmark;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (double)textLeadingIndent;
 - (void)updateSelectionCheckmark;

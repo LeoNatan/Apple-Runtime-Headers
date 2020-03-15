@@ -16,11 +16,11 @@
     HKElectrocardiogramAxisView *_axisView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKElectrocardiogramAxisView *axisView; // @synthesize axisView=_axisView;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) HKElectrocardiogramInfoView *infoView; // @synthesize infoView=_infoView;
 @property(retain, nonatomic) HKElectrocardiogramChartView *chartView; // @synthesize chartView=_chartView;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize gridSize;
 - (void)_updateMargins;
 - (void)layoutMarginsDidChange;

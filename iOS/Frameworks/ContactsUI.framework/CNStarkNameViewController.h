@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(readonly, nonatomic) UILabel *primaryLabel; // @synthesize primaryLabel=_primaryLabel;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *firstBaselineAnchor;
 - (void)setupLayoutConstraints;
 - (void)updateViewConstraints;

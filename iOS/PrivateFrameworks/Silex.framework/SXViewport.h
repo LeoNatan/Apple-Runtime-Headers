@@ -27,6 +27,7 @@
     struct CGRect _contentFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIScrollView *view; // @synthesize view=_view;
 @property(nonatomic) _Bool groupChanges; // @synthesize groupChanges=_groupChanges;
 @property(retain, nonatomic) SXViewport *viewportBeforeUpdates; // @synthesize viewportBeforeUpdates=_viewportBeforeUpdates;
@@ -42,7 +43,6 @@
 @property(nonatomic) struct CGSize documentSize; // @synthesize documentSize=_documentSize;
 @property(nonatomic) struct CGRect dynamicBounds; // @synthesize dynamicBounds=_dynamicBounds;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescriptionForViewport:(id)arg1;
 - (id)stringForAppearState:(unsigned long long)arg1;

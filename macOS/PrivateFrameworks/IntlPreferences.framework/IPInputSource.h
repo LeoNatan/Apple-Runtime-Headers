@@ -30,13 +30,13 @@
 + (id)sortedInputSources;
 + (id)inputSources;
 + (id)HIToolboxUserDefaults;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isSystemProvided; // @synthesize isSystemProvided=_isSystemProvided;
 @property(readonly, nonatomic) BOOL isPluginIM; // @synthesize isPluginIM=_isPluginIM;
 @property(readonly, nonatomic) BOOL isChineseHandwriting; // @synthesize isChineseHandwriting=_isChineseHandwriting;
 @property(readonly, nonatomic) BOOL isInputMode; // @synthesize isInputMode=_isInputMode;
 @property(readonly, nonatomic) IPInputSource *parentInputSource; // @synthesize parentInputSource=_parentInputSource;
 @property(readonly, nonatomic) struct __TISInputSource *inputSourceRef; // @synthesize inputSourceRef=_inputSourceRef;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSColor *textColor;
 @property(readonly, nonatomic) BOOL shouldGrayOutInputSourceItem;
 @property(readonly, nonatomic) BOOL allowToChangeEnablingState;

@@ -18,13 +18,13 @@
     struct CGRect _frame;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CATextLayer *textLayer; // @synthesize textLayer=_textLayer;
 @property(retain, nonatomic) CAContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) float displayScale; // @synthesize displayScale=_displayScale;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(copy, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
-- (void).cxx_destruct;
 - (void)_createTextLayer;
 - (id)initWithFrame:(struct CGRect)arg1 displayScale:(float)arg2;
 

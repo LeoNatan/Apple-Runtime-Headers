@@ -12,8 +12,8 @@
 }
 
 + (_Bool)allowsReverseTransformation;
-@property(copy, nonatomic) CDUnknownBlockType valueTransformBlock; // @synthesize valueTransformBlock=_valueTransformBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType valueTransformBlock; // @synthesize valueTransformBlock=_valueTransformBlock;
 - (id)transformedValue:(id)arg1;
 - (id)initWithValueTransformBlock:(CDUnknownBlockType)arg1;
 - (id)init;

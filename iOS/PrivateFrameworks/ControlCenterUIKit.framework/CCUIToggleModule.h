@@ -18,9 +18,9 @@
     CCUICAPackageDescription *_glyphPackageDescription;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
 @property(retain, nonatomic) CCUIContentModuleContext *contentModuleContext; // @synthesize contentModuleContext=_contentModuleContext;
-- (void).cxx_destruct;
 - (id)contentViewControllerForContext:(id)arg1;
 - (void)reconfigureView;
 - (void)refreshState;

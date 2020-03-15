@@ -19,11 +19,11 @@
     CDUnknownBlockType _invalidationBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, copy, nonatomic) NSString *reference; // @synthesize reference=_reference;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @dynamic valid;
 - (void)invalidatedAtTimestamp:(double)arg1;
 - (void)invalidate;

@@ -35,6 +35,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDocumentBrowserActionDescriptor *uiActionDescriptor; // @synthesize uiActionDescriptor=_uiActionDescriptor;
 @property(nonatomic) long long actionStyle; // @synthesize actionStyle=_actionStyle;
 @property(nonatomic) _Bool performActionExitsEditMode; // @synthesize performActionExitsEditMode=_performActionExitsEditMode;
@@ -54,7 +55,6 @@
 @property(nonatomic) long long availability; // @synthesize availability=_availability;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

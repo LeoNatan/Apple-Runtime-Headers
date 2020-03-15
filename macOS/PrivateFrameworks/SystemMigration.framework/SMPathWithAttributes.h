@@ -15,9 +15,9 @@
 }
 
 + (id)sortedPaths:(id)arg1 withAttributes:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain) NSString *pathname; // @synthesize pathname=_pathname;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithPathname:(id)arg1 andAttributes:(id)arg2;
 

@@ -14,8 +14,8 @@
 }
 
 + (id)entryViewControllerWithDefinitionValue:(id)arg1;
-@property(retain) DUDefinitionValue *definitionValue; // @synthesize definitionValue=_definitionValue;
 - (void).cxx_destruct;
+@property(retain) DUDefinitionValue *definitionValue; // @synthesize definitionValue=_definitionValue;
 - (void)viewDidLoad;
 - (id)initWithDefinitionValue:(id)arg1;
 

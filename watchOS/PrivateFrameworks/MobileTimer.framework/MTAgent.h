@@ -37,6 +37,7 @@
 }
 
 + (id)agent;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTCoreDuetMonitor *coreDuetMonitor; // @synthesize coreDuetMonitor=_coreDuetMonitor;
 @property(retain, nonatomic) MTTimerIntentDonor *timerIntentDonor; // @synthesize timerIntentDonor=_timerIntentDonor;
 @property(retain, nonatomic) MTAlarmIntentDonor *alarmIntentDonor; // @synthesize alarmIntentDonor=_alarmIntentDonor;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(nonatomic) _Bool systemReady; // @synthesize systemReady=_systemReady;
 @property(retain, nonatomic) NSDate *launchDate; // @synthesize launchDate=_launchDate;
-- (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)_diagnosticProviders;

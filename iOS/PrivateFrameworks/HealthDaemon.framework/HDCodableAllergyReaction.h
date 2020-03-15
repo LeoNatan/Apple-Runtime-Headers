@@ -18,10 +18,10 @@
 }
 
 + (Class)manifestationCodingsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalDate *onsetDate; // @synthesize onsetDate=_onsetDate;
 @property(retain, nonatomic) HDCodableMedicalCoding *severityCoding; // @synthesize severityCoding=_severityCoding;
 @property(retain, nonatomic) NSMutableArray *manifestationCodings; // @synthesize manifestationCodings=_manifestationCodings;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

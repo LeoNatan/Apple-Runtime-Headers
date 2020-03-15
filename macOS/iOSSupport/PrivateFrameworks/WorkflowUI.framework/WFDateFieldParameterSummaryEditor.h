@@ -16,9 +16,9 @@
     NSDateFormatter *_hintDateFormatter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateFormatter *hintDateFormatter; // @synthesize hintDateFormatter=_hintDateFormatter;
 @property(nonatomic) __weak WFTextEditingHintView *hintView; // @synthesize hintView=_hintView;
-- (void).cxx_destruct;
 - (void)parameterAttributesDidChange:(id)arg1;
 - (id)hintTextForVariableString:(id)arg1;
 - (void)updateHintView;

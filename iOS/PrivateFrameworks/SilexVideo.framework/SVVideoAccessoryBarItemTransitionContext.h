@@ -19,12 +19,12 @@
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(nonatomic) _Bool transitionWasCancelled; // @synthesize transitionWasCancelled=_transitionWasCancelled;
 @property(readonly, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(readonly, nonatomic) UIView *toView; // @synthesize toView=_toView;
 @property(readonly, nonatomic) UIView *fromView; // @synthesize fromView=_fromView;
-- (void).cxx_destruct;
 - (void)completeTransition:(_Bool)arg1;
 - (id)initWithContainerView:(id)arg1 fromView:(id)arg2 toView:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 

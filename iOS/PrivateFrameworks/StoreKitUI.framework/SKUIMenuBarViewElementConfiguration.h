@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     id <_SKUIMenuBarViewElementConfigurationReloadDelegate> _reloadDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_reloadDelegate, setter=_setReloadDelegate:) __weak id <_SKUIMenuBarViewElementConfigurationReloadDelegate> reloadDelegate; // @synthesize reloadDelegate=_reloadDelegate;
 @property(nonatomic, getter=_needsReload, setter=_setNeedsReload:) _Bool needsReload; // @synthesize needsReload=_needsReload;
 @property(readonly, nonatomic) _Bool scrollEnabled; // @synthesize scrollEnabled=_scrollEnabled;
 @property(nonatomic) __weak id <SKUIMenuBarViewElementConfigurationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_reloadWithMenuBarStyle:(long long)arg1 menuItemViewElements:(id)arg2 scrollEnabled:(_Bool)arg3;
 - (void)_ensureDataLoaded;
 - (void)contentWillAppearForMenuItemAtIndex:(unsigned long long)arg1 withEntityValueProvider:(id)arg2 clientContext:(id)arg3;

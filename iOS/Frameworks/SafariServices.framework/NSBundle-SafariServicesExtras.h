@@ -7,6 +7,8 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (SafariServicesExtras)
++ (_Bool)_sf_isSafariViewServiceBundle;
++ (_Bool)_sf_isWebSheetApplicationBundle;
 + (id)_sf_safariServicesBundle;
 @end
 

@@ -16,9 +16,9 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) PHPhotosPickerOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (_Bool)_updateSpecIfNeeded;
 - (void)_handlePickerViewControllerDidFinish:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

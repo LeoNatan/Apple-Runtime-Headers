@@ -24,8 +24,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, copy) NSUUID *applicationDataIdentifier;
 - (void)_updateRoomName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;

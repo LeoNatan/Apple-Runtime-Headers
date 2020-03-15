@@ -14,8 +14,8 @@
     _HMCameraSource *_source;
 }
 
-@property(retain, nonatomic) _HMCameraSource *source; // @synthesize source=_source;
 - (void).cxx_destruct;
+@property(retain, nonatomic) _HMCameraSource *source; // @synthesize source=_source;
 - (id)aspectRatio;
 - (id)initWithSource:(id)arg1;
 

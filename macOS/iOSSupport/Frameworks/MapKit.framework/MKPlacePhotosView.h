@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
     id <MKPlacePhotosViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <MKPlacePhotosViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <MKPlacePhotosViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (unsigned long long)indexForPhotoAtXOffset:(double)arg1 pageWidth:(double)arg2 numberOfPhotos:(unsigned long long)arg3;
 - (double)xPositionForPhotoAtIndex:(unsigned long long)arg1 numberOfPhotos:(unsigned long long)arg2 pageWidth:(double)arg3;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;

@@ -15,6 +15,9 @@
     NSMutableDictionary *_defaults;
 }
 
++ (id)resetProtectedData:(id)arg1 error:(id *)arg2;
++ (int)getCDPStatus:(id)arg1 error:(id *)arg2;
++ (_Bool)setCDPEnabled:(id)arg1 error:(id *)arg2;
 + (void)recoverOctagonUsingData:(id)arg1 recoveryKey:(id)arg2 reply:(CDUnknownBlockType)arg3;
 + (void)setNewRecoveryKeyWithData:(id)arg1 recoveryKey:(id)arg2 reply:(CDUnknownBlockType)arg3;
 + (id)recoverWithContextData:(id)arg1 bottleID:(id)arg2 escrowedEntropy:(id)arg3 error:(id *)arg4;
@@ -23,10 +26,10 @@
 + (id)newFriendsWithContextData:(id)arg1 resetReason:(int)arg2 error:(id *)arg3;
 + (id)newFriendsWithContextData:(id)arg1 error:(id *)arg2;
 + (_Bool)platformSupportsSOS;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *defaults; // @synthesize defaults=_defaults;
 @property(retain, nonatomic) OTConfigurationContext *ctx; // @synthesize ctx=_ctx;
 @property(copy, nonatomic) NSString *cliqueMemberIdentifier; // @synthesize cliqueMemberIdentifier=_cliqueMemberIdentifier;
-- (void).cxx_destruct;
 - (void)performedSuccessfulCDPStateMachineRun:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)performedFailureCDPStateMachineRun:(id)arg1 error:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (_Bool)waitForOctagonUpgrade:(id *)arg1;
@@ -58,6 +61,7 @@
 - (_Bool)resetAndEstablish:(int)arg1 error:(id *)arg2;
 - (_Bool)establish:(id *)arg1;
 - (id)makeOTControl:(id *)arg1;
+- (id)initWithContextData:(id)arg1;
 - (id)initWithContextData:(id)arg1 error:(id *)arg2;
 - (void)removePairingDefault;
 - (void)setPairingDefault:(_Bool)arg1;

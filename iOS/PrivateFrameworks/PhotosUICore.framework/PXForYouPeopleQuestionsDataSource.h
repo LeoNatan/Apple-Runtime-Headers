@@ -15,8 +15,8 @@
 
 + (id)_suggestedNames;
 + (id)_fetchData;
-@property(retain, nonatomic) NSArray *questions; // @synthesize questions=_questions;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *questions; // @synthesize questions=_questions;
 - (id)init;
 
 @end

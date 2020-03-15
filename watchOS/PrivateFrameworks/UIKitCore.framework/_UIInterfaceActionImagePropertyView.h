@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSString *_imageProperty;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *imageProperty; // @synthesize imageProperty=_imageProperty;
 @property(readonly, nonatomic) UIInterfaceAction *action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (id)_visualStyle;
 - (void)_reloadImageContent;
 - (struct CGSize)_sizeToOccupy;

@@ -17,12 +17,12 @@
     UIColor *_symbolTintColor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isUsingDynamicBackground; // @synthesize isUsingDynamicBackground=_isUsingDynamicBackground;
 @property(retain, nonatomic) UIColor *symbolTintColor; // @synthesize symbolTintColor=_symbolTintColor;
 @property(retain, nonatomic) UIImage *symbolImage; // @synthesize symbolImage=_symbolImage;
 @property(retain, nonatomic) UIColor *dynamicBackgroundColor; // @synthesize dynamicBackgroundColor=_dynamicBackgroundColor;
 @property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSymbolImageWithName:(id)arg1 configuration:(id)arg2;
 - (void)setSymbolImageWithName:(id)arg1;

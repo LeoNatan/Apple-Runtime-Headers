@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_reviews;
 }
 
-@property(readonly, nonatomic) NSArray *reviews; // @synthesize reviews=_reviews;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *reviews; // @synthesize reviews=_reviews;
 @property(readonly, nonatomic) NSMutableDictionary *cacheRepresentation;
 - (id)initWithCacheRepresentation:(id)arg1;
 @property(readonly, nonatomic) NSURL *writeReviewURL;

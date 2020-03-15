@@ -14,8 +14,8 @@
     NSString *_title;
 }
 
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void)applyToAllCancelButtons:(CDUnknownBlockType)arg1;
 - (void)applyToAllVisibleButtons:(CDUnknownBlockType)arg1;
 - (unsigned long long)indexOfButton:(id)arg1;

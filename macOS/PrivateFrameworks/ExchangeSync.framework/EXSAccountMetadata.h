@@ -15,10 +15,10 @@
     NSString *_accountKey;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *accountKey; // @synthesize accountKey=_accountKey;
 @property unsigned long long enabledDataclasses; // @synthesize enabledDataclasses=_enabledDataclasses;
 @property long long accountID; // @synthesize accountID=_accountID;
-- (void).cxx_destruct;
 - (BOOL)isEqualToMetadata:(id)arg1;
 - (void)updateWithACAccount:(id)arg1;
 

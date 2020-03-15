@@ -36,6 +36,7 @@
     NSString *_bannerValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool autocloses; // @synthesize autocloses=_autocloses;
 @property(readonly, getter=isDefaultViewControllerVisible) _Bool defaultViewControllerVisible; // @synthesize defaultViewControllerVisible=_defaultViewControllerVisible;
 @property(copy, nonatomic) NSString *bannerValue; // @synthesize bannerValue=_bannerValue;
@@ -56,7 +57,6 @@
 @property(copy, nonatomic) NSPredicate *predicateForEnablingContact; // @synthesize predicateForEnablingContact=_predicateForEnablingContact;
 @property(nonatomic) __weak id <CNContactPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *displayedPropertyKeys; // @synthesize displayedPropertyKeys=_displayedPropertyKeys;
-- (void).cxx_destruct;
 - (void)pickerDidCancel;
 - (void)pickerDidSelectContacts:(id)arg1 properties:(id)arg2;
 - (void)pickerDidSelectContact:(id)arg1 property:(id)arg2;

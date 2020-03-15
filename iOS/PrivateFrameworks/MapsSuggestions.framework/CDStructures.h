@@ -22,79 +22,6 @@ struct CLLocationCoordinate2D {
     double _field2;
 };
 
-struct GEOMapItemStorage {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    unsigned int _field12;
-    unsigned int _field13;
-    struct os_unfair_lock_s _field14;
-    struct {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-    } _field15;
-};
-
-struct NSArray {
-    Class _field1;
-};
-
-struct NSData {
-    Class _field1;
-};
-
-struct NSDateInterval {
-    Class _field1;
-};
-
-struct NSDictionary {
-    Class _field1;
-};
-
-struct NSMutableArray {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSMutableSet {
-    Class _field1;
-};
-
-struct NSSet {
-    Class _field1;
-};
-
-struct NSString {
-    Class _field1;
-};
-
 struct Queue {
     NSObject *_innerQueue;
     NSString *_name;
@@ -111,10 +38,6 @@ struct SignalPack {
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*> *__next_;
-};
-
-struct os_unfair_lock_s {
-    unsigned int _field1;
 };
 
 struct unique_ptr<MSg::Queue, std::__1::default_delete<MSg::Queue>> {

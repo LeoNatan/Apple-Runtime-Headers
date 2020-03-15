@@ -14,9 +14,9 @@
     NSDictionary *_responseDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSError *serverError;
 @property(readonly, copy, nonatomic) ICStoreDialogResponse *dialog;
 @property(readonly, nonatomic) long long version;

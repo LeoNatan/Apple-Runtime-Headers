@@ -18,10 +18,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) REMLElementComparator *comparator; // @synthesize comparator=_comparator;
 @property(copy, nonatomic) CDUnknownBlockType featureMapGenerator; // @synthesize featureMapGenerator=_featureMapGenerator;
-- (void).cxx_destruct;
 - (_Bool)shouldHideElement:(id)arg1;
 
 // Remaining properties

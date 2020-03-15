@@ -27,6 +27,7 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 @property(copy, nonatomic) NSString *proxiedBundleIdentifier;
+@property(nonatomic) long long parsecCategory;
 @property(copy, nonatomic) NSArray *alternativeResults;
 @property(copy, nonatomic) NSArray *audioSearchResults;
 @property(copy, nonatomic) NSArray *hashedRouteUIDs;
@@ -57,7 +58,7 @@
 - (id)_typedBackingStore;
 - (id)initWithMediaItems:(id)arg1 mediaContainer:(id)arg2 playShuffled:(id)arg3 playbackRepeatMode:(long long)arg4 resumePlayback:(id)arg5;
 - (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
-- (id)_titleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
+- (id)_titleWithLocalizer:(id)arg1 fromBundleURL:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

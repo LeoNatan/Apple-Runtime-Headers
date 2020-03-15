@@ -23,11 +23,11 @@
 }
 
 + (BOOL)adoptsDefaultGridLayoutMargins;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasViewEverAppeared; // @synthesize hasViewEverAppeared=_hasViewEverAppeared;
 @property(copy, nonatomic) NSString *editingName; // @synthesize editingName=_editingName;
 @property(nonatomic) __weak id <HUServiceGroupEditorViewControllerDelegate> serviceGroupEditorDelegate; // @synthesize serviceGroupEditorDelegate=_serviceGroupEditorDelegate;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
-- (void).cxx_destruct;
 - (void)_validateDoneButton;
 - (void)_updateServiceGroupBuilderName;
 - (void)serviceGroupEditorGrid:(id)arg1 didUpdateServiceGroupBuilder:(id)arg2;

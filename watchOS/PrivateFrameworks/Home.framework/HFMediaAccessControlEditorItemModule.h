@@ -18,9 +18,9 @@
 }
 
 + (id)_descriptionFooterTextForAccessControlDescriptor:(id)arg1 hasNonPeerToPeerMediaAccessories:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFMediaAccessControlEditorItemProvider *accessControlEditorItemProvider; // @synthesize accessControlEditorItemProvider=_accessControlEditorItemProvider;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (void)home:(id)arg1 didUpdateMediaPassword:(id)arg2;
 - (void)home:(id)arg1 didUpdateMediaPeerToPeerEnabled:(_Bool)arg2;
 - (void)home:(id)arg1 didUpdateMinimumMediaUserPrivilege:(int)arg2;

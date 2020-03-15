@@ -17,11 +17,11 @@
     NSString *_realFunctionName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *className; // @synthesize className=_className;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(readonly, nonatomic) unsigned long long address; // @synthesize address=_address;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *executableName;
 - (id)description;
 - (id)initWithReturnAddress:(unsigned long long)arg1;

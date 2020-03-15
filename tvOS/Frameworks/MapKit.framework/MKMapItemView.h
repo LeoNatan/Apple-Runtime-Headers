@@ -26,10 +26,10 @@
     MKMapItem *_mapItem;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowBorders; // @synthesize shouldShowBorders=_shouldShowBorders;
 @property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) _Bool shouldResolveMapItem; // @synthesize shouldResolveMapItem=_shouldResolveMapItem;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)triggerAnimation;
 - (void)_resetState;
@@ -47,6 +47,8 @@
 - (void)layoutSubviews;
 - (void)_takeSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1 isReload:(_Bool)arg2;
 - (CDStruct_c3b9c2ee)_clampCoordinateSpan:(CDStruct_c3b9c2ee)arg1;
+- (void)_callCompletionHandlerWithInvalidBoundsError;
+- (_Bool)_areBoundsValid;
 - (void)loadMapItem:(id)arg1 coordinateSpan:(CDStruct_c3b9c2ee)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -19,8 +19,8 @@
 + (id)findCodeInImage:(struct vImage_Buffer)arg1 maxStage:(unsigned long long)arg2 roi:(struct CGRect)arg3;
 + (id)findCodeInImage:(struct vImage_Buffer)arg1 maxStage:(unsigned long long)arg2;
 + (unsigned long long)isCRCodeRedeemerAvailable;
-@property __weak id <CRCodeRedeemerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <CRCodeRedeemerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cameraReaderDidFindTarget:(id)arg1;
 - (void)cameraReaderDidEnd:(id)arg1;
 - (void)cameraReaderDidDisplayMessage:(id)arg1;

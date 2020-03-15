@@ -13,8 +13,8 @@
     NSDate *_assetExpirationDate;
 }
 
-@property(readonly, copy, nonatomic) NSDate *assetExpirationDate; // @synthesize assetExpirationDate=_assetExpirationDate;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDate *assetExpirationDate; // @synthesize assetExpirationDate=_assetExpirationDate;
 @property(readonly, copy, nonatomic) NSArray *tracks;
 @property(readonly, nonatomic) long long tracklistActionType;
 @property(readonly, nonatomic) ICRadioStationMetadata *stationMetadata;

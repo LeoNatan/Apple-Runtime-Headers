@@ -4,13 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ActionKit/WFACEAction.h>
+#import <WorkflowKit/WFHandleSystemIntentAction.h>
 
-@interface WFStartTimerAction : WFACEAction
+@interface WFStartTimerAction : WFHandleSystemIntentAction
 {
 }
 
-- (void)constructAceCommandWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)selectedHandlerBundleIdentifier;
+- (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end
 

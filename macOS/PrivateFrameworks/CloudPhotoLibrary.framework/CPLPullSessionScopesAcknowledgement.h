@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) CPLChangeBatch *scopesChangeBatch; // @synthesize scopesChangeBatch=_scopesChangeBatch;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CPLChangeBatch *scopesChangeBatch; // @synthesize scopesChangeBatch=_scopesChangeBatch;
 - (id)statusDescription;
 - (id)storageForStatusInStore:(id)arg1;
 - (BOOL)discardFromStore:(id)arg1 error:(id *)arg2;

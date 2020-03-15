@@ -6,12 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/FCForYouBridgedConfiguration-Protocol.h>
-
 @class NSArray;
 
 __attribute__((visibility("hidden")))
-@interface _TtC7NewsUI218TodayBridgedConfig : NSObject <FCForYouBridgedConfiguration>
+@interface _TtC7NewsUI218TodayBridgedConfig : NSObject
 {
     // Error parsing type: , name: todayConfig
     // Error parsing type: , name: groupConfigs

@@ -15,10 +15,10 @@
     CAContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CAContext *context; // @synthesize context=_context;
 @property(retain, nonatomic) CSLStatusBarGlobalContextView *globalContextView; // @synthesize globalContextView=_globalContextView;
 @property(readonly, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
-- (void).cxx_destruct;
 - (void)dealloc;
 @property(readonly, nonatomic) unsigned int contextID;
 - (id)initWithFrame:(struct CGRect)arg1 debugName:(id)arg2;

@@ -22,6 +22,7 @@
     SBApplication *_destinationApplication;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool confirmedNotInPocket; // @synthesize confirmedNotInPocket=_confirmedNotInPocket;
 @property(nonatomic) _Bool forceAlertAuthenticationUI; // @synthesize forceAlertAuthenticationUI=_forceAlertAuthenticationUI;
 @property(nonatomic) _Bool wantsBiometricPresentation; // @synthesize wantsBiometricPresentation=_wantsBiometricPresentation;
@@ -30,7 +31,6 @@
 @property(nonatomic) int intent; // @synthesize intent=_intent;
 @property(nonatomic) int source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

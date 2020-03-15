@@ -38,10 +38,10 @@
 
 + (id)requestedDarwinNotifications;
 + (id)logHandle;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(readonly, nonatomic) EKTimedEventStorePurger *eventStorePurger; // @synthesize eventStorePurger=_eventStorePurger;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
-- (void).cxx_destruct;
 - (void)trackChangesInEventStore;
 - (void)_syncDidEnd:(id)arg1;
 - (void)_syncDidStart;

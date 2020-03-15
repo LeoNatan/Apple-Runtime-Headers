@@ -20,10 +20,10 @@
     Protocol *_destinationProtocol;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Protocol *destinationProtocol; // @synthesize destinationProtocol=_destinationProtocol;
 @property(readonly, nonatomic) Protocol *sourceProtocol; // @synthesize sourceProtocol=_sourceProtocol;
 @property(readonly, nonatomic) __weak id <HKDataFlowLinkProcessor> processor; // @synthesize processor=_processor;
-- (void).cxx_destruct;
 - (id)description;
 - (void)destination:(id)arg1 didAddDownstreamDestination:(id)arg2;
 - (void)removeDestination:(id)arg1;

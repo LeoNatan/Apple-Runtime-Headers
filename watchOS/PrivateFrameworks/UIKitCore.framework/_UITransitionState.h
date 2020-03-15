@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSDate *_beginDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *beginDate; // @synthesize beginDate=_beginDate;
 @property(readonly, nonatomic) int transitionDirection; // @synthesize transitionDirection=_transitionDirection;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isCompatibleWithTransitionInDirection:(int)arg1;
 @property(readonly, nonatomic) int effectiveTransitionDirection;

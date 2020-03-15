@@ -16,11 +16,11 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(copy, nonatomic) NSDictionary *images; // @synthesize images=_images;
 @property(copy, nonatomic) NSDictionary *attributedTexts; // @synthesize attributedTexts=_attributedTexts;
-- (void).cxx_destruct;
 - (id)initWithAttributedTexts:(id)arg1;
 - (id)initWithAttributedTexts:(id)arg1 images:(id)arg2 imageSize:(struct CGSize)arg3;
 - (id)initWithAttributedTexts:(id)arg1 images:(id)arg2 imageSize:(struct CGSize)arg3 highlighted:(_Bool)arg4;

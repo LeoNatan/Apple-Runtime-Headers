@@ -13,8 +13,8 @@
     id _applicationStubController;
 }
 
-@property(retain) AMApplicationStubController *applicationStubController; // @synthesize applicationStubController=_applicationStubController;
 - (void).cxx_destruct;
+@property(retain) AMApplicationStubController *applicationStubController; // @synthesize applicationStubController=_applicationStubController;
 - (BOOL)runWorkflowAtPath:(id)arg1 withInput:(id)arg2 error:(id *)arg3;
 - (BOOL)loadWorkflowAtPath:(id)arg1 error:(id *)arg2;
 - (void)_presentRecoverableErrorAndTerminateIfNeeded:(id)arg1;

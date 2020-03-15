@@ -16,9 +16,9 @@
     BOOL _didRun;
 }
 
+- (void).cxx_destruct;
 @property BOOL didRun; // @synthesize didRun=_didRun;
 @property(retain) AMApplicationStubController *applicationStubController; // @synthesize applicationStubController=_applicationStubController;
-- (void).cxx_destruct;
 - (void)applicationDidFinishLaunching:(id)arg1;
 - (void)application:(id)arg1 openFiles:(id)arg2;
 - (BOOL)application:(id)arg1 openFile:(id)arg2;

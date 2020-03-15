@@ -16,11 +16,11 @@
     CDUnknownBlockType _unlockDeviceStatus;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unlockDeviceStatus; // @synthesize unlockDeviceStatus=_unlockDeviceStatus;
 @property(copy, nonatomic) CDUnknownBlockType unlockDeviceHandler; // @synthesize unlockDeviceHandler=_unlockDeviceHandler;
 @property(retain, nonatomic) Class barsControllerClass; // @synthesize barsControllerClass=_barsControllerClass;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

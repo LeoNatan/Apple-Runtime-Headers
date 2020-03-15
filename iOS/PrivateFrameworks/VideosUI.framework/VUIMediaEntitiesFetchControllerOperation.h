@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSOperation *_currentSubOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *currentSubOperation; // @synthesize currentSubOperation=_currentSubOperation;
 @property(retain, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *currentFetchResponses; // @synthesize currentFetchResponses=_currentFetchResponses;
 @property(copy, nonatomic) NSArray *requests; // @synthesize requests=_requests;
 @property(nonatomic) long long fetchReason; // @synthesize fetchReason=_fetchReason;
-- (void).cxx_destruct;
 - (id)_resultWithResponses:(id)arg1;
 - (void)_startChangesOperationWithMediaEntityFetchResponses:(id)arg1 currentFetchResponses:(id)arg2;
 - (void)_handleCompletdFetchWithResponses:(id)arg1 error:(id)arg2;

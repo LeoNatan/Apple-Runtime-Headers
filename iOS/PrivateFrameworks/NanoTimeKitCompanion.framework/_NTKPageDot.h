@@ -18,8 +18,8 @@
     _Bool _representsCurrentPage;
 }
 
-@property(nonatomic) _Bool representsCurrentPage; // @synthesize representsCurrentPage=_representsCurrentPage;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool representsCurrentPage; // @synthesize representsCurrentPage=_representsCurrentPage;
 - (void)_updateImage;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithDiameter:(double)arg1 currentPageColor:(id)arg2 otherPageColor:(id)arg3 forDevice:(id)arg4;

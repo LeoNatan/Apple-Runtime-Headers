@@ -13,8 +13,8 @@
     HMDDevice *_device;
 }
 
-@property(readonly) HMDDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly) HMDDevice *device; // @synthesize device=_device;
 - (id)initWithIdentity:(id)arg1 device:(id)arg2;
 - (id)initWithIdentity:(id)arg1;
 

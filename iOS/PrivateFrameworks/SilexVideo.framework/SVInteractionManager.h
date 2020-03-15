@@ -22,6 +22,7 @@
     NSMapTable *_interactionObserverFactories;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *interactionObserverFactories; // @synthesize interactionObserverFactories=_interactionObserverFactories;
 @property(readonly, nonatomic) NSMapTable *interactionObservers; // @synthesize interactionObservers=_interactionObservers;
 @property(readonly, nonatomic) NSMapTable *interactionHandlerFactories; // @synthesize interactionHandlerFactories=_interactionHandlerFactories;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSMapTable *registeredObservers; // @synthesize registeredObservers=_registeredObservers;
 @property(readonly, nonatomic) NSMapTable *registeredHandlers; // @synthesize registeredHandlers=_registeredHandlers;
 @property(readonly, nonatomic) NSMutableSet *interactions; // @synthesize interactions=_interactions;
-- (void).cxx_destruct;
 - (void)configureInteraction:(id)arg1 withHandler:(id)arg2 observer:(id)arg3;
 - (id)interactionObserverForInteraction:(id)arg1 withVideo:(id)arg2;
 - (id)interactionHandlerForInteraction:(id)arg1 withVideo:(id)arg2;

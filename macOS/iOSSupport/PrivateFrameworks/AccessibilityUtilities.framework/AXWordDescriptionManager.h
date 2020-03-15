@@ -17,8 +17,8 @@
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) NSString *languageDialectCode; // @synthesize languageDialectCode;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *languageDialectCode; // @synthesize languageDialectCode;
 @property(readonly, nonatomic) NSManagedObjectModel *managedObjectModel; // @synthesize managedObjectModel=_managedObjectModel;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
 - (id)languageCode;

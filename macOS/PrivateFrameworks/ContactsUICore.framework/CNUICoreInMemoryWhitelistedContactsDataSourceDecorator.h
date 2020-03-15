@@ -25,8 +25,9 @@
     id <CNCancelable> _endEditingNotificationToken;
 }
 
-+ (id)modelBuilderForUpdatedContacts:(id)arg1 withContactTypeAssessor:(id)arg2;
++ (id)modelBuilderForContacts:(id)arg1 withContactTypeAssessor:(id)arg2;
 + (id)modelBuilderForAddedContacts:(id)arg1 withContactTypeAssessor:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNCancelable> endEditingNotificationToken; // @synthesize endEditingNotificationToken=_endEditingNotificationToken;
 @property(retain, nonatomic) NSArray *familyMemberContactItemsSnapshot; // @synthesize familyMemberContactItemsSnapshot=_familyMemberContactItemsSnapshot;
 @property(retain, nonatomic) CNUICoreContactEditingSession *editingSession; // @synthesize editingSession=_editingSession;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) id <CNUICoreContactStoreFacade> mainContactStore; // @synthesize mainContactStore=_mainContactStore;
 @property(readonly, nonatomic) id <CNUICoreFamilyMemberWhitelistedContactsDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <CNUICoreFamilyMemberContactsObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (void)finishPersistenceOfInMemoryContactsWhitelistState;
 - (void)persistInMemoryContactsWhitelistState;
 - (void)finishWhitelistedContactsTasks;

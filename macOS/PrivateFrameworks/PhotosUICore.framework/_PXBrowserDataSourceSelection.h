@@ -16,9 +16,9 @@
     id <PXDisplayAssetDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXDisplayAssetDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSArray *indexPaths; // @synthesize indexPaths=_indexPaths;
-- (void).cxx_destruct;
 - (id)modelObjects;
 - (long long)estimatedModelObjectsCount;
 - (long long)indexOfAssetReference:(id)arg1;

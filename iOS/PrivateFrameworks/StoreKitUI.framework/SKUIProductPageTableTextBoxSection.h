@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) SKUILayoutCache *textLayoutCache; // @synthesize textLayoutCache=_textLayoutCache;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(nonatomic) long long stringIndex; // @synthesize stringIndex=_stringIndex;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (id)tableViewCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (id)selectionActionForTableView:(id)arg1 indexPath:(id)arg2;
 - (long long)numberOfRowsInSection;

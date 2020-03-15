@@ -16,8 +16,8 @@
     NSArray *_queries;
 }
 
-@property(retain, nonatomic) NSArray *queries; // @synthesize queries=_queries;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *queries; // @synthesize queries=_queries;
 - (void)completedWithResults:(id)arg1 error:(id)arg2;
 - (void)stopOperation;
 - (void)startOperationWithCompletion:(CDUnknownBlockType)arg1;

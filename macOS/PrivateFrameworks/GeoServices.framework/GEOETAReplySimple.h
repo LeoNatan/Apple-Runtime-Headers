@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) GEOETAResponse *response; // @synthesize response=_response;
 - (void).cxx_destruct;
+@property(retain, nonatomic) GEOETAResponse *response; // @synthesize response=_response;
 - (BOOL)isValid;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

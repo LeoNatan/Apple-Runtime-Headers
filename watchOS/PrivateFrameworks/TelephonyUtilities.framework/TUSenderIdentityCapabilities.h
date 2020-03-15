@@ -16,11 +16,11 @@
     TUCallCapabilitiesXPCClient *_client;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TUCallCapabilitiesXPCClient *client; // @synthesize client=_client;
 @property(readonly, copy, nonatomic) TUSenderIdentityCapabilitiesState *state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *thumperCallingLocalDeviceID; // @synthesize thumperCallingLocalDeviceID=_thumperCallingLocalDeviceID;
 @property(readonly, copy, nonatomic) NSUUID *senderIdentityUUID; // @synthesize senderIdentityUUID=_senderIdentityUUID;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (void)_sendNotificationsAndCallbacksComparingToOldSenderIdentityCapabilities:(id)arg1;
 - (void)cancelPinRequestFromPrimaryDeviceForThumperCalling;

@@ -32,6 +32,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int unsafeState; // @synthesize unsafeState=_unsafeState;
 @property(nonatomic) _Bool live; // @synthesize live=_live;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
@@ -44,7 +45,6 @@
 @property(nonatomic) _Bool forceStableResults; // @synthesize forceStableResults=_forceStableResults;
 @property(nonatomic) __weak NSObject<SPQueryTaskDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSObject<OS_dispatch_queue> *queryProcessor; // @synthesize queryProcessor=_queryProcessor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *suggestionsDebugLog;
 - (id)unsafeCombinedSuggestions;
 - (_Bool)_shouldPromptUserToOpenTTR;

@@ -28,6 +28,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property BOOL isAnimating; // @synthesize isAnimating=_isAnimating;
 @property __weak AMVariablesEditorWindow *_editorWindow; // @synthesize _editorWindow;
 @property __weak AMVariablesEditorView *_editorView; // @synthesize _editorView;
@@ -41,7 +42,6 @@
 @property __weak id control; // @synthesize control=_control;
 @property struct CGPoint tokenFieldPoint; // @synthesize tokenFieldPoint=_tokenFieldPoint;
 @property __weak AMWorkflowView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)animateWindowRelocate:(id)arg1;
 - (void)animateWindowScale:(id)arg1;
 - (void)setEditorWindowScale:(double)arg1;

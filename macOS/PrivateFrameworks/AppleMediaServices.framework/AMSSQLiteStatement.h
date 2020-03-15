@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     AMSSQLiteStatement *_strongSelf;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct sqlite3_stmt *sqlite3_stmt; // @synthesize sqlite3_stmt=_statement;
 @property(readonly, nonatomic) AMSSQLiteConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (int)clearBindings;
 - (void)bindURL:(id)arg1 atPosition:(int)arg2;
 - (void)bindStringCopy:(id)arg1 atPosition:(int)arg2;

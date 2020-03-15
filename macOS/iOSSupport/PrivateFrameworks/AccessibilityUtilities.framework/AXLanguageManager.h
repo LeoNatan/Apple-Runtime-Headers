@@ -28,11 +28,11 @@
 + (id)nonlocalizedNameForLanguage:(id)arg1;
 + (BOOL)voiceOverSupportedInCurrentLanguage;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL _unitTest_didUpdateForLocaleChange; // @synthesize _unitTest_didUpdateForLocaleChange=__unitTest_didUpdateForLocaleChange;
 @property(copy, nonatomic) NSLocale *userLocale; // @synthesize userLocale=_userLocale;
 @property(retain, nonatomic) NSCharacterSet *commonCharacters; // @synthesize commonCharacters=_commonCharacters;
 @property(retain, nonatomic) NSArray *langMaps; // @synthesize langMaps=_langMaps;
-- (void).cxx_destruct;
 - (BOOL)didUpdateForLocaleChange;
 - (void)_handleUserLocaleDidChange:(id)arg1;
 - (id)_loadLangMaps;

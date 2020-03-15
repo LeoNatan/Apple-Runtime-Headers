@@ -23,6 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *attribution_url; // @synthesize attribution_url=_attribution_url;
 @property(readonly, nonatomic) NSImage *attribution_image; // @synthesize attribution_image=_attribution_image;
 @property(readonly, nonatomic) NSImage *value_image; // @synthesize value_image=_value_image;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) BOOL key_nowrap; // @synthesize key_nowrap=_key_nowrap;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
 @property(readonly, nonatomic) BOOL card_padding_bottom; // @synthesize card_padding_bottom=_card_padding_bottom;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 

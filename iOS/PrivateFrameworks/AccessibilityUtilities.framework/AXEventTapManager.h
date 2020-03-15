@@ -23,10 +23,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType installationEventRepPost; // @synthesize installationEventRepPost=_installationEventRepPost;
 @property(copy, nonatomic) CDUnknownBlockType installationHIDCallback; // @synthesize installationHIDCallback=_installationHIDCallback;
 @property(copy, nonatomic) CDUnknownBlockType installationGSCallback; // @synthesize installationGSCallback=_installationGSCallback;
-- (void).cxx_destruct;
 - (void)_runMatchingServiceHandler:(id)arg1;
 - (void)runMatchingServiceHandlerForEventTap:(id)arg1;
 - (void)_removeHIDEventTapFilter:(id)arg1;

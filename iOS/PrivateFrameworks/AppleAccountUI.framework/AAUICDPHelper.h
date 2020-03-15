@@ -18,9 +18,9 @@
 + (id)cdpContextForPrimaryAccount;
 + (id)cdpContextForAccount:(id)arg1;
 + (id)helperWithPresenter:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(nonatomic) _Bool forceInline; // @synthesize forceInline=_forceInline;
-- (void).cxx_destruct;
 - (id)cdpStateControllerWithContext:(id)arg1;
 - (id)cdpStateControllerForPrimaryAccount;
 

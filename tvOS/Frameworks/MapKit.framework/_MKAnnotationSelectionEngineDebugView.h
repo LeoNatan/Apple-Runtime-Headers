@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     struct CGPoint _touchPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint touchPoint; // @synthesize touchPoint=_touchPoint;
 @property(nonatomic) struct CGPoint touchAnchorPoint; // @synthesize touchAnchorPoint=_touchAnchorPoint;
-- (void).cxx_destruct;
 - (void)_updateTouchLine;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int upToSixMinCount; // @synthesize upToSixMinCount=_upToSixMinCount;
 @property(readonly, nonatomic) int upToFiveMinCount; // @synthesize upToFiveMinCount=_upToFiveMinCount;
 @property(readonly, nonatomic) int upToFourMinCount; // @synthesize upToFourMinCount=_upToFourMinCount;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) int upToTwoMinCount; // @synthesize upToTwoMinCount=_upToTwoMinCount;
 @property(readonly, nonatomic) NSString *reasonStr; // @synthesize reasonStr=_reasonStr;
 @property(readonly, nonatomic) int reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

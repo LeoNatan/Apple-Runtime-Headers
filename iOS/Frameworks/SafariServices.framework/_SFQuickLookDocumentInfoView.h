@@ -24,11 +24,11 @@ __attribute__((visibility("hidden")))
     NSString *_fileType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *fileType; // @synthesize fileType=_fileType;
 @property(retain, nonatomic) NSString *fileSize; // @synthesize fileSize=_fileSize;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
-- (void).cxx_destruct;
 - (void)_updateDocumentSizeLabel;
 - (void)_updatePropertiesDefinedByContentSizeCategory;
 - (void)_configureOrientationBasedConstraints:(long long)arg1;

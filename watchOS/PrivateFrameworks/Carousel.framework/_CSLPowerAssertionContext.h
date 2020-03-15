@@ -14,9 +14,9 @@
     CDUnknownBlockType _collectionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType collectionBlock; // @synthesize collectionBlock=_collectionBlock;
 @property(copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
-- (void).cxx_destruct;
 
 @end
 

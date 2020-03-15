@@ -15,8 +15,8 @@
     DeviceCollection *_deviceCollection;
 }
 
-@property(nonatomic) __weak DeviceCollection *deviceCollection; // @synthesize deviceCollection=_deviceCollection;
 - (void).cxx_destruct;
+@property(nonatomic) __weak DeviceCollection *deviceCollection; // @synthesize deviceCollection=_deviceCollection;
 - (void)discoveryServiceWillTerminate;
 - (void)completedOperationForDeviceWithIdentifier:(id)arg1;
 - (void)startedOperationForDeviceWithIdentifier:(id)arg1 allowCancel:(BOOL)arg2;

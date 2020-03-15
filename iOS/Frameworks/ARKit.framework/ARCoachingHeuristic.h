@@ -12,7 +12,7 @@
 }
 
 @property(nonatomic) _Bool satisfied; // @synthesize satisfied=_satisfied;
-- (void)updateWithFrame:(id)arg1;
+- (void)updateWithFrame:(id)arg1 cache:(id)arg2;
 @property(readonly, nonatomic) long long requirements;
 
 @end

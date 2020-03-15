@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     FULabel *_loadingLabel;
 }
 
-@property(retain) FULabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 - (void).cxx_destruct;
+@property(retain) FULabel *loadingLabel; // @synthesize loadingLabel=_loadingLabel;
 - (void)setStyleProvider:(id)arg1;
 - (id)init;
 

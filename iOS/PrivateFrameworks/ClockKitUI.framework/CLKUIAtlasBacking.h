@@ -21,9 +21,9 @@
 + (id)atlasBackingWithArt:(id)arg1 uuid:(id)arg2;
 + (id)atlasBackingWithImage:(id)arg1 uuid:(id)arg2 mipmap:(_Bool)arg3;
 + (id)atlasBackingWithImage:(id)arg1 uuid:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLKUIAtlasBackingStructure structure; // @synthesize structure=_structure;
 @property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned char filter; // @dynamic filter;
 @property(nonatomic) unsigned char wrap; // @dynamic wrap;
 @property(readonly, nonatomic) _Bool mipmaps;

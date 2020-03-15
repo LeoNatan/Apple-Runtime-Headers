@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)updateLayer;
-- (void)setSafeBrowsingBackgroundColor:(struct NSColor *)arg1;
+- (void)setSafeBrowsingBackgroundColor:(id)arg1;
 
 @end
 

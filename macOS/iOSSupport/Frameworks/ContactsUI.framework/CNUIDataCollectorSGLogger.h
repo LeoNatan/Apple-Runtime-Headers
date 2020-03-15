@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)loggerWithSGSuggestionsServiceProvider:(CDUnknownBlockType)arg1 schedulerProvider:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNScheduler> workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy, nonatomic) CDUnknownBlockType serviceProvider; // @synthesize serviceProvider=_serviceProvider;
-- (void).cxx_destruct;
 - (void)logSearchResultsIncludedPureSuggestionsWithBundleID:(id)arg1;
 - (void)logContactCreated:(id)arg1 contactIdentifier:(id)arg2 bundleID:(id)arg3;
 - (void)logSuggestedContactDetailUsed:(id)arg1 contactIdentifier:(id)arg2 bundleID:(id)arg3;

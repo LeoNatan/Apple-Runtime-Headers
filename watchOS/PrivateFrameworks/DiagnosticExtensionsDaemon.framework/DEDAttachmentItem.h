@@ -23,12 +23,12 @@
 + (id)itemWithDEItem:(id)arg1;
 + (id)itemWithDictionary:(id)arg1;
 + (id)itemWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSURL *attachedPath; // @synthesize attachedPath=_attachedPath;
 @property(retain) NSNumber *fileSize; // @synthesize fileSize=_fileSize;
 @property(retain) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain) NSString *deviceID; // @synthesize deviceID=_deviceID;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isLocal;
 - (id)serialize;

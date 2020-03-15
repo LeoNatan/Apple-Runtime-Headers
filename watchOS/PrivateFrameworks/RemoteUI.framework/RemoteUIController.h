@@ -34,6 +34,7 @@
     NSUUID *_UUID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) RUIStyle *style; // @synthesize style=_style;
 @property(copy, nonatomic) NSURLSessionConfiguration *sessionConfiguration; // @synthesize sessionConfiguration=_sessionConfiguration;
@@ -42,7 +43,6 @@
 @property(copy, nonatomic) NSString *userAgentString; // @synthesize userAgentString=_userAgentString;
 @property(retain, nonatomic) RUILoader *loader; // @synthesize loader=_loader;
 @property(nonatomic) __weak UIViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
-- (void).cxx_destruct;
 @property(nonatomic) __weak UINavigationController *navigationController;
 - (_Bool)isListeningForHSATokenAutoFill;
 - (void)stopListeningForHSATokenAutoFill;

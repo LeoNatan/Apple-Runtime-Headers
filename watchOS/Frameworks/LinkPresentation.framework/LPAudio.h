@@ -24,11 +24,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
 @property(readonly, retain, nonatomic) NSURL *streamingURL; // @synthesize streamingURL=_streamingURL;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) AVAsset *_asset; // @synthesize _asset;
-- (void).cxx_destruct;
 - (_Bool)_shouldEncodeData;
 - (void)_mapDataFromFileURL;
 @property(readonly, copy, nonatomic) LPAudioProperties *properties;

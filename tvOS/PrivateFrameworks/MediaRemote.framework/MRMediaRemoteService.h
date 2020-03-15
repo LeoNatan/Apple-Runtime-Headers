@@ -62,6 +62,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_agentQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *agentQueue; // @synthesize agentQueue=_agentQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *televisionQueue; // @synthesize televisionQueue=_televisionQueue;
@@ -72,7 +73,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) MRXPCConnection *mrXPCConnection; // @synthesize mrXPCConnection=_mrXPCConnection;
-- (void).cxx_destruct;
 
 @end
 

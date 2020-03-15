@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     unsigned long long _vmStepsExecuted;
 }
 
-@property(readonly, nonatomic) unsigned long long vmStepsExecuted; // @synthesize vmStepsExecuted=_vmStepsExecuted;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long vmStepsExecuted; // @synthesize vmStepsExecuted=_vmStepsExecuted;
 - (void)autovacuumIfNeeded;
 - (_Bool)needsAutovacuum;
 - (long long)sizeInBytes;

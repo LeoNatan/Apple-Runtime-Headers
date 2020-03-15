@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     long long _datePickerMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long datePickerMode; // @synthesize datePickerMode=_datePickerMode;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
-- (void).cxx_destruct;
 - (void)setTitle:(id)arg1;
 - (void)beginEditing;
 - (void)setValue:(id)arg1;

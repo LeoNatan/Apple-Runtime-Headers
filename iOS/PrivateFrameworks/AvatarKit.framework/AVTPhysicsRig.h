@@ -17,6 +17,7 @@
     // Error parsing type: , name: restDown
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double applyDownForce; // @synthesize applyDownForce;
 // Error parsing type for property restDown:
 // Property attributes: T,N,VrestDown
@@ -26,7 +27,6 @@
 
 @property(retain, nonatomic) SCNNode *chainRoot; // @synthesize chainRoot;
 @property(retain, nonatomic) SCNNode *rig; // @synthesize rig;
-- (void).cxx_destruct;
 
 @end
 

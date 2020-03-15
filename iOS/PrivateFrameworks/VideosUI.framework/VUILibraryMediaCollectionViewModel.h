@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_episodesBySeasonIdentifer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *episodesBySeasonIdentifer; // @synthesize episodesBySeasonIdentifer=_episodesBySeasonIdentifer;
 @property(retain, nonatomic) NSDictionary *productLockupViewBySeasonIdentifier; // @synthesize productLockupViewBySeasonIdentifier=_productLockupViewBySeasonIdentifier;
 @property(retain, nonatomic) NSDictionary *episodeShelfViewControllerBySeasonIdentifier; // @synthesize episodeShelfViewControllerBySeasonIdentifier=_episodeShelfViewControllerBySeasonIdentifier;
 @property(retain, nonatomic) NSDictionary *seasonBySeasonIdentifier; // @synthesize seasonBySeasonIdentifier=_seasonBySeasonIdentifier;
 @property(retain, nonatomic) NSArray *seasonViewModels; // @synthesize seasonViewModels=_seasonViewModels;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasContent;
 
 @end

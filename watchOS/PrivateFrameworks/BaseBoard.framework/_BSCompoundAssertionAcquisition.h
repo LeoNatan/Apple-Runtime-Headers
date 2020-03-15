@@ -18,10 +18,10 @@
     id _context;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) __weak BSCompoundAssertion *assertion; // @synthesize assertion=_assertion;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)invalidate;
 

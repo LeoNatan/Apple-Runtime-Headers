@@ -23,6 +23,7 @@
     HDXPCListener *_listener;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly, nonatomic) __weak id <HDTaskServer> taskServer; // @synthesize taskServer=_taskServer;
 @property(readonly, nonatomic) __weak id <HDTaskServerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) HKTaskConfiguration *taskConfiguration; // @synthesize taskConfiguration=_taskConfiguration;
 @property(readonly, copy, nonatomic) NSUUID *taskUUID; // @synthesize taskUUID=_taskUUID;
 @property(readonly, nonatomic) Class taskServerClass; // @synthesize taskServerClass=_taskServerClass;
-- (void).cxx_destruct;
 - (void)connectionConfiguredForListener:(id)arg1 client:(id)arg2 exportedObject:(id)arg3;
 - (id)exportObjectForListener:(id)arg1 client:(id)arg2 error:(id *)arg3;
 - (void)invalidate;

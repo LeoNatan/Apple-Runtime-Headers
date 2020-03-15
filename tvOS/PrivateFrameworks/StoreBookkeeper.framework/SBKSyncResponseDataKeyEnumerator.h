@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSEnumerator *_deletedKeysEnumerator;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSEnumerator *deletedKeysEnumerator; // @synthesize deletedKeysEnumerator=_deletedKeysEnumerator;
 @property(retain) NSEnumerator *conflictedKeysEnumerator; // @synthesize conflictedKeysEnumerator=_conflictedKeysEnumerator;
 @property(retain) NSEnumerator *updatedKeysEnumerator; // @synthesize updatedKeysEnumerator=_updatedKeysEnumerator;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain) SBKSyncTransaction *transaction; // @synthesize transaction=_transaction;
 @property(retain) SBKSyncResponseData *responseData; // @synthesize responseData=_responseData;
-- (void).cxx_destruct;
 - (void)_processNextKey;
 - (void)_processDeletedKey:(id)arg1 isDirty:(_Bool *)arg2;
 - (void)_processUpdatedKey:(id)arg1 isConflict:(_Bool)arg2 isDirty:(_Bool *)arg3;

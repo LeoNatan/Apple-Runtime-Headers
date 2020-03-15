@@ -22,10 +22,10 @@
 + (id)placeholderEntryWithSize:(struct CGSize)arg1;
 + (id)entryWithImage:(id)arg1;
 + (id)entryWithAttributedString:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long visibilityPriority; // @synthesize visibilityPriority=_visibilityPriority;
 @property(nonatomic) long long entryType; // @synthesize entryType=_entryType;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @synthesize contentEdgeInsets=_contentEdgeInsets;
-- (void).cxx_destruct;
 - (void)_drawInRect:(struct CGRect)arg1;
 - (void)_tintColorDidChange;
 - (void)_drawContentInRect:(struct CGRect)arg1;

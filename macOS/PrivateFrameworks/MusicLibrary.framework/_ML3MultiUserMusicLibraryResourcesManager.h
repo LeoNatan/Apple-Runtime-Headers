@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     id <MLMediaLibraryResourcesServiceProtocol> _libraryResourcesServices;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <MLMediaLibraryResourcesServiceProtocol> libraryResourcesServices; // @synthesize libraryResourcesServices=_libraryResourcesServices;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-- (void).cxx_destruct;
 - (void)terminateForFailureToPerformDatabasePathChange;
 - (void)emergencyDisconnectWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performDatabasePathChange:(id)arg1 completion:(CDUnknownBlockType)arg2;

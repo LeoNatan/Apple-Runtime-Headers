@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class ABCNContact, ABCardViewStyle, ABPerson, NSArray, NSDictionary, NSImage, NSString;
+@class ABCardViewStyle, ABPerson, CNContact, CNContainer, NSArray, NSDictionary, NSImage, NSString;
 
 @protocol ABPersonViewProtocol
 @property(nonatomic) BOOL showsShowInMapsButtons;
 @property(readonly) BOOL canEditContact;
 @property BOOL autoSave;
+@property(retain) CNContact *contact;
 @property(retain) ABPerson *person;
 @property(nonatomic) BOOL _quicklook_fetchAsynchronously;
 @property(readonly) BOOL hasChanges;
@@ -23,7 +24,7 @@
 @property BOOL drawsBackground;
 @property BOOL shouldShowLinkedPeople;
 @property BOOL editing;
-- (void)setPropertyKeysToDisplay:(NSArray *)arg1;
+- (void)setShouldSave:(BOOL)arg1;
 - (NSImage *)profilePhotoImage;
 - (struct CGRect)profilePhotoScreenRect;
 - (void)clearCustomImage;
@@ -34,11 +35,14 @@
 - (void)setDisplayAttributes:(NSDictionary *)arg1 forProperty:(NSString *)arg2 identifier:(NSString *)arg3 key:(NSString *)arg4;
 - (void)setDisplayAttributes:(NSDictionary *)arg1 forProperty:(NSString *)arg2;
 - (void)notifyDelegateActionWasPerformed;
-- (void)_setContact:(ABCNContact *)arg1 shouldShowLinkedPeople:(BOOL)arg2;
+- (void)setPropertyKeysToDisplay:(NSArray *)arg1;
+- (void)setParentContainer:(CNContainer *)arg1;
+- (void)setAuthorizedMode:(unsigned long long)arg1;
+- (void)setMode:(unsigned long long)arg1;
+- (void)setContact:(CNContact *)arg1 shouldShowLinkedContacts:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
+- (void)setContact:(CNContact *)arg1 shouldShowLinkedContacts:(BOOL)arg2;
 - (void)setPerson:(ABPerson *)arg1 shouldShowLinkedPeople:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3;
 - (void)setPerson:(ABPerson *)arg1 shouldShowLinkedPeople:(BOOL)arg2;
-- (ABCNContact *)_contact;
-- (void)_setContact:(ABCNContact *)arg1;
 - (void)refreshView;
 - (void)commitEditing;
 - (void)setHighlighted:(BOOL)arg1 forProperty:(NSString *)arg2 identifier:(NSString *)arg3;

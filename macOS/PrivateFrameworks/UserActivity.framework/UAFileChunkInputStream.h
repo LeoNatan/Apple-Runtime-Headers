@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _status;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long status; // @synthesize status=_status;
 @property long long readSize; // @synthesize readSize=_readSize;
 @property(retain) NSNumber *currentOffset; // @synthesize currentOffset=_currentOffset;
 @property long long chunkSize; // @synthesize chunkSize=_chunkSize;
 @property(retain) NSNumber *chunkOffset; // @synthesize chunkOffset=_chunkOffset;
 @property(retain) NSFileHandle *file; // @synthesize file=_file;
-- (void).cxx_destruct;
 - (id)streamError;
 - (unsigned long long)streamStatus;
 - (void)close;

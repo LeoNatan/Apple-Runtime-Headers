@@ -6,12 +6,13 @@
 
 #import <UIKitCore/UIPressesEvent.h>
 
-@class NSString;
+@class NSString, UINSEvent;
 
 __attribute__((visibility("hidden")))
 @interface UIPhysicalKeyboardEvent : UIPressesEvent
 {
     BOOL _canPrivatize;
+    UINSEvent *_uinsEvent;
     BOOL __externalEvent;
     int _inputFlags;
     NSString *_modifiedInput;
@@ -23,10 +24,15 @@ __attribute__((visibility("hidden")))
     NSString *_privateInput;
     long long _privateModifierFlags;
     NSString *_hint;
+    long long __keyCode;
+    unsigned long long _source;
 }
 
 + (id)_eventWithInput:(id)arg1 inputFlags:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_isExternalEvent) BOOL _externalEvent; // @synthesize _externalEvent=__externalEvent;
+@property(nonatomic) unsigned long long source; // @synthesize source=_source;
+@property(nonatomic) long long _keyCode; // @synthesize _keyCode=__keyCode;
 @property(retain, nonatomic) NSString *_hint; // @synthesize _hint;
 @property(nonatomic) long long _privateModifierFlags; // @synthesize _privateModifierFlags;
 @property(retain, nonatomic) NSString *_privateInput; // @synthesize _privateInput;
@@ -37,17 +43,20 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *_shiftModifiedInput; // @synthesize _shiftModifiedInput;
 @property(retain, nonatomic) NSString *_unmodifiedInput; // @synthesize _unmodifiedInput;
 @property(retain, nonatomic) NSString *_modifiedInput; // @synthesize _modifiedInput;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long _gsModifierFlags;
+- (long long)modifierFlags;
 - (void)_privatize;
 - (id)_cloneEvent;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)_matchesKeyCommand:(id)arg1;
 - (void)_setHIDEvent:(struct __IOHIDEvent *)arg1 keyboard:(struct __GSKeyboard *)arg2;
+- (id)_uinsEvent;
+- (void)_setUINSEvent:(id)arg1;
 @property(readonly, nonatomic) BOOL _isARepeat;
 @property(readonly, nonatomic) BOOL _isModifierKey;
-@property(readonly, nonatomic) long long _keyCode;
+- (BOOL)_isPhysicalKeyEvent;
 @property(readonly, nonatomic) BOOL _isGlobeKey;
+@property(readonly, nonatomic) BOOL _isEjectKey;
 @property(readonly, nonatomic) BOOL _isKeyDown;
 - (long long)type;
 

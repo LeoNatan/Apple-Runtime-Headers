@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *dismissDarwinNotification; // @synthesize dismissDarwinNotification=_dismissDarwinNotification;
 @property(nonatomic) __weak WKExtendedRuntimeSession *runningSession; // @synthesize runningSession=_runningSession;
-- (void).cxx_destruct;
 
 @end
 

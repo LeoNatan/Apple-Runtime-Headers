@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsInteractiveCounterRotationDismissals;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak AVPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(nonatomic) _Bool allowsPausingWhenTransitionCompletes; // @synthesize allowsPausingWhenTransitionCompletes=_allowsPausingWhenTransitionCompletes;
 @property(retain, nonatomic) AVPresentationContextTransition *dismissingTransition; // @synthesize dismissingTransition=_dismissingTransition;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) UIView *touchBlockingView; // @synthesize touchBlockingView=_touchBlockingView;
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
-- (void).cxx_destruct;
 - (id)dismissalToView;
 - (id)presentationFromView;
 @property(readonly, nonatomic) _Bool canBeInteractivelyDismissed;

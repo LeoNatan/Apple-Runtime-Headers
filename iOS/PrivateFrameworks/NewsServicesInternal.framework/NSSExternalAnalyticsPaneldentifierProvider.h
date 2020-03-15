@@ -14,9 +14,9 @@
     NSArray *_hostNames;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *hostNames; // @synthesize hostNames=_hostNames;
 @property(readonly, nonatomic) NSString *panelIdentifier; // @synthesize panelIdentifier=_panelIdentifier;
-- (void).cxx_destruct;
 - (id)panelIdentifierWithHostNames:(id)arg1;
 - (id)initWithHostNames:(id)arg1;
 

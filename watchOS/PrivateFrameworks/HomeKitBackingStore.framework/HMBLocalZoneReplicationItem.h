@@ -14,9 +14,9 @@
     HMBModel *_previousValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMBModel *previousValue; // @synthesize previousValue=_previousValue;
 @property(readonly, nonatomic) HMBModel *updatedValue; // @synthesize updatedValue=_updatedValue;
-- (void).cxx_destruct;
 
 @end
 

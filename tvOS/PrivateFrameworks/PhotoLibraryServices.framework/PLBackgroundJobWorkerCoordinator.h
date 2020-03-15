@@ -18,8 +18,8 @@
     id <PLBackgroundJobWorkerCoordinatorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <PLBackgroundJobWorkerCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PLBackgroundJobWorkerCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_handleAllWorkersCompleted;
 - (void)_processNextWorker;
 - (void)stopAllBackgorundJobs;

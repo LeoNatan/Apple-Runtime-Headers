@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     long long _visibilityBehaviorOptions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInitiallyHidden) _Bool initiallyHidden; // @synthesize initiallyHidden=_initiallyHidden;
 @property(nonatomic) long long visibilityBehaviorOptions; // @synthesize visibilityBehaviorOptions=_visibilityBehaviorOptions;
 @property(retain, nonatomic) NSArray *controls; // @synthesize controls=_controls;
-- (void).cxx_destruct;
 
 @end
 

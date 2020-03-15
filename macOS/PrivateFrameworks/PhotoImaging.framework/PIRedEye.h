@@ -16,11 +16,11 @@
     NSString *_inputCameraModel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *inputCameraModel; // @synthesize inputCameraModel=_inputCameraModel;
 @property(retain, nonatomic) NSArray *inputCorrectionInfo; // @synthesize inputCorrectionInfo=_inputCorrectionInfo;
 @property(retain, nonatomic) CIImage *inputDestinationImage; // @synthesize inputDestinationImage=_inputDestinationImage;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 
 @end

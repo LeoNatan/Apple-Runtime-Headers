@@ -11,8 +11,8 @@
 #import <PhotosUI/PUPhotoStreamsAlbumsTableViewControllerDelegate-Protocol.h>
 #import <PhotosUI/SLSheetViewHostProtocol-Protocol.h>
 
-@class NSArray, NSString;
-@protocol PUPhotoStreamComposeServiceDelegate;
+@class NSArray, NSObject, NSString;
+@protocol PLAlbumContainer, PLAlbumProtocol, PUPhotoStreamComposeServiceDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PUPhotoStreamComposeServiceViewController : SLComposeServiceViewController <PUPhotoStreamsAlbumsTableViewControllerDelegate, PUPhotoStreamCreateTitleDelegate, PUCloudSharedCreateAlbumViewControllerDelegate, SLSheetViewHostProtocol>
@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
         unsigned int hasDidPost:1;
         unsigned int hasDidCancel:1;
     } _delegateFlags;
-    struct NSObject *_selectedAlbum;
+    NSObject<PLAlbumProtocol> *_selectedAlbum;
     NSArray *_actions;
-    struct NSObject *_albumList;
+    NSObject<PLAlbumContainer> *_albumList;
     _Bool _inCreateNewAlbum;
     NSArray *_recipients;
     _Bool _shouldShowPost;
@@ -35,12 +35,12 @@ __attribute__((visibility("hidden")))
     NSString *_albumTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *albumTitle; // @synthesize albumTitle=_albumTitle;
 @property(nonatomic) _Bool addToExistingWorkflow; // @synthesize addToExistingWorkflow=_addToExistingWorkflow;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) _Bool shouldAllowAlbumPicking; // @synthesize shouldAllowAlbumPicking=_shouldAllowAlbumPicking;
 @property(nonatomic) __weak id <PUPhotoStreamComposeServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_pushTitleController;
 - (void)userDidCancelWithoutAnimation;
 - (void)shouldShowNetworkActivityIndicator:(id)arg1;
@@ -52,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)titleController:(id)arg1 didSetTitle:(id)arg2;
 - (void)titleControllerDidCancel:(id)arg1;
 - (void)controllerWillCreateNewAlbum:(id)arg1;
-- (void)controller:(id)arg1 didSelectAlbum:(struct NSObject *)arg2;
+- (void)controller:(id)arg1 didSelectAlbum:(id)arg2;
 - (id)albumListAction;
 - (void)failWithError:(id)arg1;
 - (void)cancel;

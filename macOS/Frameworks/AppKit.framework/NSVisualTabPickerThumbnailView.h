@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     CALayer *_exposeBorderLayer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExposeBorderVisible) BOOL exposeBorderVisible; // @synthesize exposeBorderVisible=_exposeBorderVisible;
 @property(nonatomic, getter=isCloseButtonVisible) BOOL closeButtonVisible; // @synthesize closeButtonVisible=_closeButtonVisible;
 @property(nonatomic) __weak id <NSVisualTabPickerThumbnailDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NSVisualTabPickerThumbnailDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)accessibilityPerformAction:(id)arg1;
 - (id)accessibilityActionNames;
 - (id)accessibilityAttributeValue:(id)arg1;

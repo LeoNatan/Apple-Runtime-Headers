@@ -26,10 +26,10 @@
     NSString *_selectedDataType;
 }
 
+- (void).cxx_destruct;
 @property double timeout; // @synthesize timeout=_timeout;
 @property NSObject<SPDocumentDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *selectedDataType; // @synthesize selectedDataType=_selectedDataType;
-- (void).cxx_destruct;
 - (id)handleUploadCommand:(id)arg1;
 - (BOOL)uploadToURL:(id)arg1 usingCompression:(BOOL)arg2;
 - (id)printOperationWithSettings:(id)arg1 error:(id *)arg2;

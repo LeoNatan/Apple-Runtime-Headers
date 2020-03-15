@@ -6,9 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <NewsUI2/TSForYouTodayModuleType-Protocol.h>
-
-@interface TSForYouTodayModule : NSObject <TSForYouTodayModuleType>
+@interface TSForYouTodayModule : NSObject
 {
     // Error parsing type: , name: resolver
     // Error parsing type: , name: tracker

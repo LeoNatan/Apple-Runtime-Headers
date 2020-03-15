@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NGMPublicPreKey *_publicPrekey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NGMPublicPreKey *publicPrekey; // @synthesize publicPrekey=_publicPrekey;
 @property(readonly, nonatomic) DHKey *dhKey; // @synthesize dhKey=_dhKey;
-- (void).cxx_destruct;
 - (_Bool)delete;
 - (id)description;
 - (id)pbDevicePrekey;

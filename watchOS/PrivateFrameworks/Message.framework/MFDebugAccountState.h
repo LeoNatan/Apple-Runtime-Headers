@@ -15,10 +15,10 @@
     MailAccount *_mailAccount;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MailAccount *mailAccount; // @synthesize mailAccount=_mailAccount;
 @property(retain, nonatomic) NSArray *lastKnownCapabilities; // @synthesize lastKnownCapabilities=_lastKnownCapabilities;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)initWithStateEventDictionary:(id)arg1 identifier:(id)arg2 lastKnownCapabilities:(id)arg3;
 

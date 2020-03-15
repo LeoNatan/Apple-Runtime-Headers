@@ -23,13 +23,13 @@
 
 + (id)keyPathsForValuesAffectingIsNewContact;
 + (id)_addressDictionaryFromComponents:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *totalHeightConstraint; // @synthesize totalHeightConstraint=_totalHeightConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *contentHeightConstraint; // @synthesize contentHeightConstraint=_contentHeightConstraint;
 @property(nonatomic) __weak id <SuggestedContactPopoverControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak _ABPersonView *personView; // @synthesize personView=_personView;
 @property(retain, nonatomic) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain, nonatomic) ABPerson *representedPerson; // @synthesize representedPerson=_representedPerson;
-- (void).cxx_destruct;
 - (void)updateContacts:(id)arg1;
 - (void)ignoreContact:(id)arg1;
 @property(readonly, nonatomic) BOOL isNewContact;

@@ -17,12 +17,12 @@
     NSDictionary *_receivedMessageDictionary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *receivedMessageDictionary; // @synthesize receivedMessageDictionary=_receivedMessageDictionary;
 @property(retain, nonatomic) NSDictionary *replyMessageDictionary; // @synthesize replyMessageDictionary=_replyMessageDictionary;
 @property(retain, nonatomic) NSDictionary *jsonDictionary; // @synthesize jsonDictionary=_jsonDictionary;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (void)decodeData:(id)arg1 dictionaryKey:(id)arg2;
 @property(readonly, nonatomic) NSArray *imagesArray;
 @property(readonly, nonatomic) NSDictionary *combinedDictionary;

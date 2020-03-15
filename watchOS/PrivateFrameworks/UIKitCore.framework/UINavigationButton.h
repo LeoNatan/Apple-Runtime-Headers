@@ -38,6 +38,7 @@
 
 + (void)_resetRenderingModesForBackgroundImageView:(id)arg1 inBarStyle:(int)arg2 isEnabled:(_Bool)arg3 withAccessibilityBackground:(_Bool)arg4 wantsBlendModeForAccessibilityBackgrounds:(_Bool)arg5 accessibilityBackgroundTintColor:(id)arg6;
 + (id)defaultFont;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setBarItemHidden:) _Bool _barItemHidden; // @synthesize _barItemHidden=__barItemHidden;
 @property(nonatomic) __weak UIBarButtonItem *originatingButtonItem; // @synthesize originatingButtonItem=_originatingButtonItem;
 @property(nonatomic) __weak UINavigationItem *originatingNavigationItem; // @synthesize originatingNavigationItem=_originatingNavigationItem;
@@ -55,7 +56,6 @@
 @property(nonatomic, setter=_setCreatedByBarButtonItem:) _Bool _createdByBarButtonItem; // @synthesize _createdByBarButtonItem;
 @property(copy, nonatomic, setter=_setStylesForSizingTitles:) NSDictionary *_stylesForSizingTitles; // @synthesize _stylesForSizingTitles;
 @property(nonatomic, setter=_setButtonItemStyle:) int _buttonItemStyle; // @synthesize _buttonItemStyle;
-- (void).cxx_destruct;
 - (void)_uinavigationbar_prepareToAppearInNavigationItem:(id)arg1 onLeft:(_Bool)arg2;
 - (id)_externalUnfocusedBorderColor;
 - (_Bool)_isExternalRoundedRectButton;

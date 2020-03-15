@@ -19,9 +19,9 @@
 }
 
 + (id)resetServerObjectWithPersonID:(id)arg1 baseURL:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) MSMediaStreamDaemon *daemon; // @synthesize daemon=_daemon;
 @property(readonly, nonatomic) NSString *personID; // @synthesize personID=_personID;
-- (void).cxx_destruct;
 - (void)resetServerProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)resetServerProtocol:(id)arg1 didFinishWithError:(id)arg2;
 - (void)resetServer;

@@ -16,9 +16,9 @@
     NSDate *_lastBeginDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastBeginDate; // @synthesize lastBeginDate=_lastBeginDate;
 @property(nonatomic) _Bool shouldLogNextEvent; // @synthesize shouldLogNextEvent=_shouldLogNextEvent;
-- (void).cxx_destruct;
 - (void)logProximityEventReceivedAfterTimeout;
 - (void)logTimeout;
 - (void)logDetectionStartedAfterTimeout;

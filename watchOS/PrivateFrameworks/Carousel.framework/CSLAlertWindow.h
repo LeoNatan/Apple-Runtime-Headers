@@ -13,8 +13,8 @@
     id <CSLAlertWindowHitTestDelegate> _hitTestDelegate;
 }
 
-@property(nonatomic) __weak id <CSLAlertWindowHitTestDelegate> hitTestDelegate; // @synthesize hitTestDelegate=_hitTestDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CSLAlertWindowHitTestDelegate> hitTestDelegate; // @synthesize hitTestDelegate=_hitTestDelegate;
 - (_Bool)accessibilityViewIsModal;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 

@@ -25,12 +25,12 @@
     id <CSLSUITriggerRemoteClientServiceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSXPCConnection *connectionFromServer; // @synthesize connectionFromServer=_connectionFromServer;
 @property(retain, nonatomic) NSXPCConnection *connectionToServer; // @synthesize connectionToServer=_connectionToServer;
 @property(nonatomic) __weak id <CSLSUITriggerRemoteClientServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_createXPCService;
 - (void)_connect;
 - (void)handleUITriggerWithName:(id)arg1 dictionary:(id)arg2 reason:(int)arg3 completion:(CDUnknownBlockType)arg4;

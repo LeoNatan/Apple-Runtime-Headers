@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)exportedInterface;
 + (id)passwordServiceViewControllerName;
 + (id)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <SFPasswordRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SFPasswordRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)willDismissServiceViewController;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 

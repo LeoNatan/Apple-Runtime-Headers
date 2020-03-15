@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSImageView *_iconView;
 }
 
+- (void).cxx_destruct;
 @property __weak NSImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain) NSString *summaryTitle; // @synthesize summaryTitle=_summaryTitle;
 @property BOOL allowsStashing; // @synthesize allowsStashing=_allowsStashing;
 @property(nonatomic) __weak id <SiriUICardHeaderViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *icon; // @dynamic icon;
 - (void)stashPressed:(id)arg1;
 - (id)nibBundle;

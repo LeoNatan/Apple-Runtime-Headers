@@ -20,12 +20,12 @@
 }
 
 + (void)_enableTestMode;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) int buttonIndex; // @synthesize buttonIndex=_buttonIndex;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak RUIObjectModel<RUIAlertViewDelegate> *objectModel; // @synthesize objectModel=_objectModel;
-- (void).cxx_destruct;
 - (void)runAlertInController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)alertController;
 - (void)addButtonWithTitle:(id)arg1 URL:(id)arg2 style:(int)arg3 attributes:(id)arg4;

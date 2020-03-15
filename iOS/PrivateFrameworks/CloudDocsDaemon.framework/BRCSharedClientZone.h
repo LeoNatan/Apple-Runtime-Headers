@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (void)removeAllShareAcceptationSidefaults;
 - (id)shareAcceptOperationForItemID:(id)arg1;
 - (void)addAcceptOperation:(id)arg1 forItemID:(id)arg2;
-- (struct PQLResultSet *)shareAcceptationSidefaultEnumerator;
+- (id)shareAcceptationSidefaultEnumerator;
 - (id)rootItemID;
 - (void)setServerZone:(id)arg1;
 @property(readonly, nonatomic) BRCSharedServerZone *sharedZone;

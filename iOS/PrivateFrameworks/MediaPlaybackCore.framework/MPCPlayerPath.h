@@ -30,13 +30,13 @@
 + (id)pathWithRoute:(id)arg1 bundleID:(id)arg2 playerID:(id)arg3;
 + (id)systemMusicPathWithRoute:(id)arg1 playerID:(id)arg2;
 + (id)deviceActivePlayerPath;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isResolved) _Bool resolved; // @synthesize resolved=_resolved;
 @property(readonly, nonatomic) MPAVRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) NSString *deviceUID; // @synthesize deviceUID=_deviceUID;
 @property(readonly, nonatomic) void *mediaRemotePlayerPath; // @synthesize mediaRemotePlayerPath=_mediaRemotePlayerPath;
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (id)pathByAppendingPlayerIDSuffix:(id)arg1;
 @property(readonly, nonatomic) void *origin;
 - (void)resolveWithRouteResolvedHandler:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

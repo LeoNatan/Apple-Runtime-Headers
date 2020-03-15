@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_source> *_source;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *source; // @synthesize source=_source;
 @property(nonatomic) __weak CLTimer *timer; // @synthesize timer;
-- (void).cxx_destruct;
 - (void)reflectNextFireDelay:(double)arg1 fireInterval:(double)arg2;
 - (void)dealloc;
 - (id)initWithDispatchSilo:(id)arg1;

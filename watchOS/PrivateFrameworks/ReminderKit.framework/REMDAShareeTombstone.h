@@ -18,11 +18,11 @@
     NSString *_address;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *address; // @synthesize address=_address;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSUUID *owningListIdentifier; // @synthesize owningListIdentifier=_owningListIdentifier;
 @property(retain, nonatomic) NSUUID *objectIdentifier; // @synthesize objectIdentifier=_objectIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

@@ -30,18 +30,19 @@
     _Bool _gestureHasEnded;
     unsigned long long _numberOfTouchSamples;
     SBHomeGestureDockSwitcherModifier *_dockModifier;
+    long long _startingEnvironmentMode;
     _Bool _scrunchInitiated;
-    _Bool _startingInAppSwitcher;
     _Bool _continuingGesture;
+    long long _touchType;
     id <SBHomeGestureFinalDestinationSwitcherModifierDelegate> _finalDestinationDelegate;
     _Bool _hasSeenAccelerationDipForAppSwitcher;
     NSString *_finalDestinationReason;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasSeenAccelerationDipForAppSwitcher; // @synthesize hasSeenAccelerationDipForAppSwitcher=_hasSeenAccelerationDipForAppSwitcher;
 @property(readonly, nonatomic) NSString *finalDestinationReason; // @synthesize finalDestinationReason=_finalDestinationReason;
 @property(retain, nonatomic) SBHomeGestureDockSwitcherModifier *dockModifier; // @synthesize dockModifier=_dockModifier;
-- (void).cxx_destruct;
 - (void)_applyPrototypeSettings;
 - (double)_unconditionalDistanceThresholdForHome;
 - (_Bool)_isTranslationPastDistanceThresholdToUnconditionallyGoHome:(double)arg1;
@@ -59,7 +60,7 @@
 - (id)handleSwitcherSettingsChangedEvent:(id)arg1;
 - (id)handleHomeGestureSettingsChangedEvent:(id)arg1;
 - (void)didMoveToParentModifier:(id)arg1;
-- (id)initWithDelegate:(id)arg1 initialTranslationAdjustment:(struct CGPoint)arg2 startingInAppSwitcher:(_Bool)arg3 continuingGesture:(_Bool)arg4;
+- (id)initWithDelegate:(id)arg1 initialTranslationAdjustment:(struct CGPoint)arg2 startingEnvironmentMode:(long long)arg3 continuingGesture:(_Bool)arg4;
 
 @end
 

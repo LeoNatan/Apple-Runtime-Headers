@@ -26,6 +26,7 @@
     long long _maxFrameCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int layoutAxis; // @synthesize layoutAxis=_layoutAxis;
 @property(readonly, nonatomic) long long maxFrameCount; // @synthesize maxFrameCount=_maxFrameCount;
 @property(readonly, nonatomic) long long solutionRecursionDepth; // @synthesize solutionRecursionDepth=_solutionRecursionDepth;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) NSObject *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) id <NSCollectionLayoutContainer> container; // @synthesize container=_container;
 @property(readonly, nonatomic) NSCollectionLayoutItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)auxiliaryHostPreferredSizes;
 - (id)auxiliaryHostSupplementaryEnroller;
 - (long long)auxiliaryHostAuxiliaryKind;

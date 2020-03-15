@@ -18,12 +18,12 @@
     NSString *_fallbackContainerWidgetType;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *fallbackContainerWidgetType; // @synthesize fallbackContainerWidgetType=_fallbackContainerWidgetType;
 @property(copy, nonatomic) NSString *fallbackWidgetType; // @synthesize fallbackWidgetType=_fallbackWidgetType;
 @property(readonly) NSObject<IBAutolayoutItem> *coordinateSpaceView; // @synthesize coordinateSpaceView=_coordinateSpaceView;
 @property(retain) id <IBLayoutGuideGeneratorSnappingDelegate> snappingDelegate; // @synthesize snappingDelegate=_snappingDelegate;
 @property(readonly) id <IBLayoutGuideGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)generateGuidesForRootedView:(id)arg1 optionsMask:(unsigned long long)arg2;
 - (id)generateGuidesForUnionedBoundingRect:(struct CGRect)arg1 ofViews:(id)arg2 targetSuperview:(id)arg3 siblings:(id)arg4 baselines:(id)arg5 knobPosition:(CDUnion_42e99c75)arg6 snapDistance:(double)arg7 optionsMask:(unsigned long long)arg8;
 - (long long)_layoutRuleSubKeyForWidgetType:(id)arg1;

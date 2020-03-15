@@ -15,24 +15,23 @@
     NSString *_name;
 }
 
-+ (id)nodeWithDictionary:(id)arg1 name:(id)arg2 keyComparisonSelector:(SEL)arg3;
-+ (id)nodeWithNestedDictionary:(id)arg1 firstName:(id)arg2 firstKeyComparator:(CDUnknownBlockType)arg3 secondName:(id)arg4 secondKeyComparator:(CDUnknownBlockType)arg5;
-+ (id)nodeWithDictionary:(id)arg1 name:(id)arg2 keyComparator:(CDUnknownBlockType)arg3 objectNodeGenerator:(CDUnknownBlockType)arg4;
-+ (id)nodeWithDictionary:(id)arg1 name:(id)arg2 keyComparator:(CDUnknownBlockType)arg3;
++ (id)nodeWithNestedDictionary:(id)arg1 firstName:(id)arg2 secondName:(id)arg3;
++ (id)nodeWithDictionary:(id)arg1 name:(id)arg2 objectNodeGenerator:(CDUnknownBlockType)arg3;
 + (id)nodeWithDictionary:(id)arg1 name:(id)arg2;
-+ (id)nodeWithSet:(id)arg1 name:(id)arg2 comparisonSelector:(SEL)arg3;
-+ (id)nodeWithSet:(id)arg1 name:(id)arg2 comparator:(CDUnknownBlockType)arg3;
++ (id)nodeWithSet:(id)arg1 name:(id)arg2;
 + (id)nodeWithArray:(id)arg1 name:(id)arg2;
 + (id)nodeWithObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(readonly) NSArray *subnodes; // @synthesize subnodes=_subnodes;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
+- (id)debugDescription;
 - (void)generateOutput:(id)arg1 indent:(long long)arg2;
 - (id)attributeText;
 - (void)appendIndent:(long long)arg1 toBuffer:(id)arg2;
 - (void)setValue:(id)arg1 forAttribute:(id)arg2;
 - (void)addNode:(id)arg1;
+- (long long)compare:(id)arg1;
 - (id)initWithName:(id)arg1;
 
 @end

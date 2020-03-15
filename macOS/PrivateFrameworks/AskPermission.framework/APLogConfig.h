@@ -29,11 +29,11 @@
 + (id)sharedExtensionConfig;
 + (id)sharedDaemonConfig;
 + (id)sharedConfig;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *propertyAccessQueue; // @synthesize propertyAccessQueue=_propertyAccessQueue;
 @property(retain) NSObject<OS_os_log> *backingOSLogObject; // @synthesize backingOSLogObject=_backingOSLogObject;
 @property(copy) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(copy) NSString *category; // @synthesize category=_category;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     AVPlayerItem *_playerItem;
 }
 
+- (void).cxx_destruct;
 @property(getter=isSeekPending) _Bool seekPending; // @synthesize seekPending=_seekPending;
 @property(getter=isSeeking) _Bool seeking; // @synthesize seeking=_seeking;
 @property(readonly) AVPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) double toleranceAfter; // @synthesize toleranceAfter=_toleranceAfter;
 @property(readonly) double toleranceBefore; // @synthesize toleranceBefore=_toleranceBefore;
 @property(nonatomic) double desiredTimeInterval; // @synthesize desiredTimeInterval=_desiredTimeInterval;
-- (void).cxx_destruct;
 - (void)prefetchForTimes:(id)arg1;
 - (void)prefetchForTime:(double)arg1;
 - (_Bool)isExact;

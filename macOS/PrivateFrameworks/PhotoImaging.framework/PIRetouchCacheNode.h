@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (id)outputRegion;
 - (void)resolveWithInputImage:(id)arg1 retouchStrokes:(id)arg2 cacheKey:(id)arg3;
-- (void)_resolveSourceWithResponse:(struct NUResponse *)arg1;
+- (void)_resolveSourceWithResponse:(id)arg1;
 - (BOOL)_setupRenderRequest:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (id)_modifyEvaluatedGeometry:(id)arg1;
@@ -35,7 +35,7 @@
 - (id)baseIdentifier;
 - (BOOL)_tryLoad:(out id *)arg1;
 - (BOOL)tryLoadPersistentURL:(id)arg1 error:(out id *)arg2;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
 - (id)retouchInputNode;
 - (long long)subsampleFactorForScale:(CDStruct_912cb5d2)arg1;

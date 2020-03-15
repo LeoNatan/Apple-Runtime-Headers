@@ -11,7 +11,7 @@
 }
 
 + (Class)processingValueClass;
-- (void)processWithVariableSource:(id)arg1 parameter:(id)arg2 isInputParameter:(_Bool)arg3 userInputRequiredHandler:(CDUnknownBlockType)arg4 valueHandler:(CDUnknownBlockType)arg5;
+- (void)processWithContext:(id)arg1 userInputRequiredHandler:(CDUnknownBlockType)arg2 valueHandler:(CDUnknownBlockType)arg3;
 
 @end
 

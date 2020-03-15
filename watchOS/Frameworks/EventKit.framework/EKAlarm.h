@@ -32,11 +32,11 @@
 + (id)knownRelationshipMultiValueKeys;
 + (id)knownRelationshipSingleValueKeys;
 + (Class)frozenClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *soundName; // @synthesize soundName=_soundName;
 @property(copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (_Bool)shouldIncludeInNormalAlarms;
 - (void)setIsTimeToLeaveAlarm:(_Bool)arg1;
 - (_Bool)isTimeToLeaveAlarm;

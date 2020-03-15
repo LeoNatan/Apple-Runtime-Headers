@@ -8,8 +8,8 @@
 
 #import <NewsToday/FCFeedPersonalizing-Protocol.h>
 
-@class FCKeyValueStore, FCPersonalizationTreatment, NSString;
-@protocol FCReadonlyPersonalizationAggregateStore, FCTodayPrivateData, FRRingBufferContainer;
+@class FCPersonalizationTreatment, NSString;
+@protocol FCReadonlyPersonalizationAggregateStore, FCTodayPrivateData;
 
 @interface NTFeedPersonalizer : NSObject <FCFeedPersonalizing>
 {
@@ -20,12 +20,9 @@
     double _articleDiversificationUniquePublisherExpectationSlope;
     double _articleDiversificationUniquePublisherExpectationYIntercept;
     id <FCTodayPrivateData> _todayData;
-    id <FRRingBufferContainer> _globalScoresRingBufferContainer;
-    FCKeyValueStore *_globalScoreRangesValueStore;
 }
 
-@property(retain, nonatomic) FCKeyValueStore *globalScoreRangesValueStore; // @synthesize globalScoreRangesValueStore=_globalScoreRangesValueStore;
-@property(retain, nonatomic) id <FRRingBufferContainer> globalScoresRingBufferContainer; // @synthesize globalScoresRingBufferContainer=_globalScoresRingBufferContainer;
+- (void).cxx_destruct;
 @property(copy, nonatomic) id <FCTodayPrivateData> todayData; // @synthesize todayData=_todayData;
 @property(nonatomic) double articleDiversificationUniquePublisherExpectationYIntercept; // @synthesize articleDiversificationUniquePublisherExpectationYIntercept=_articleDiversificationUniquePublisherExpectationYIntercept;
 @property(nonatomic) double articleDiversificationUniquePublisherExpectationSlope; // @synthesize articleDiversificationUniquePublisherExpectationSlope=_articleDiversificationUniquePublisherExpectationSlope;
@@ -33,9 +30,7 @@
 @property(nonatomic) double articleDiversificationSimilarityExpectationStart; // @synthesize articleDiversificationSimilarityExpectationStart=_articleDiversificationSimilarityExpectationStart;
 @property(retain, nonatomic) id <FCReadonlyPersonalizationAggregateStore> readonlyPersonalizationAggregateStore; // @synthesize readonlyPersonalizationAggregateStore=_readonlyPersonalizationAggregateStore;
 @property(copy, nonatomic) FCPersonalizationTreatment *personalizationTreatment; // @synthesize personalizationTreatment=_personalizationTreatment;
-- (void).cxx_destruct;
 - (id)_userProfile;
-- (id)scoreProfilesForItems:(id)arg1 configurationSet:(long long)arg2;
 - (id)limitItemsByMinimumItemQuality:(id)arg1;
 - (double)decayedPublisherDiversificationPenalty;
 - (unsigned long long)whitelistLevelForTagID:(id)arg1;

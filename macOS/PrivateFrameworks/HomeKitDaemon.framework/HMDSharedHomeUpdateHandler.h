@@ -25,12 +25,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL pendingRequestDataFromResident; // @synthesize pendingRequestDataFromResident=_pendingRequestDataFromResident;
 @property(getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(nonatomic) BOOL firstFetchComplete; // @synthesize firstFetchComplete=_firstFetchComplete;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (id)dumpState;
 - (void)didCompleteHomeUpdateSession:(id)arg1 withError:(id)arg2;
 @property(retain, nonatomic) HMDSharedHomeUpdateSession *pendingRequestDataFromResidentSession; // @synthesize pendingRequestDataFromResidentSession=_pendingRequestDataFromResidentSession;

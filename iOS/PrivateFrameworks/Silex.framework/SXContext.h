@@ -18,11 +18,11 @@
 }
 
 + (void)prewarm;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <SXResourceDataSource> resourceDataSource; // @synthesize resourceDataSource=_resourceDataSource;
 @property(readonly, nonatomic) id <SXTextContentProvider> textContentProvider; // @synthesize textContentProvider=_textContentProvider;
 @property(readonly, nonatomic) SXDocumentController *documentController; // @synthesize documentController=_documentController;
 @property(readonly, nonatomic) id <SXHost> host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 shareURL:(id)arg2 JSONData:(id)arg3 resourceDataSource:(id)arg4 host:(id)arg5 error:(id *)arg6;
 
 @end

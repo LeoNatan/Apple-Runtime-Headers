@@ -15,10 +15,10 @@
     HMDCameraVideoTier *_videoTier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMDCameraVideoTier *videoTier; // @synthesize videoTier=_videoTier;
 @property(readonly, nonatomic) HMDH264Level *level; // @synthesize level=_level;
 @property(readonly, nonatomic) HMDH264Profile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)initWithProfile:(id)arg1 level:(id)arg2 videoTier:(id)arg3;

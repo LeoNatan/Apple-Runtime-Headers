@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     NSProgressIndicator *_progressIndicator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSProgressIndicator *progressIndicator; // @synthesize progressIndicator=_progressIndicator;
 @property(nonatomic) __weak NSButton *sendFeedbackButton; // @synthesize sendFeedbackButton=_sendFeedbackButton;
 @property(nonatomic) __weak NSButton *shareURLSwitch; // @synthesize shareURLSwitch=_shareURLSwitch;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(copy, nonatomic) CDUnknownBlockType didSendFeedbackHandler; // @synthesize didSendFeedbackHandler=_didSendFeedbackHandler;
 @property(retain, nonatomic) CKContextResponse *contextResponse; // @synthesize contextResponse=_contextResponse;
-- (void).cxx_destruct;
 - (void)sendFeedback:(id)arg1;
 - (void)_saveGradeFromLevelIndicator:(id)arg1 forResult:(id)arg2 toMapTable:(id)arg3;
 - (void)_didSelectGradeForCategory:(id)arg1;

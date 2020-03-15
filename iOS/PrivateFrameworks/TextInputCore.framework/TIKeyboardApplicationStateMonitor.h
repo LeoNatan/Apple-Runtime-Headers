@@ -29,6 +29,7 @@
     double _activeKeyboardStartTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double activeKeyboardStartTime; // @synthesize activeKeyboardStartTime=_activeKeyboardStartTime;
 @property(retain, nonatomic) NSMutableArray *keyboardUsageTimes; // @synthesize keyboardUsageTimes=_keyboardUsageTimes;
 @property(retain, nonatomic) NSCalendar *utcCalendar; // @synthesize utcCalendar=_utcCalendar;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) NSString *activeAppBundleID; // @synthesize activeAppBundleID=_activeAppBundleID;
 @property(retain, nonatomic) BKSApplicationStateMonitor *applicationStateMonitor; // @synthesize applicationStateMonitor=_applicationStateMonitor;
 @property(nonatomic) __weak NSObject<TIKeyboardApplicationStateResponses> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)ignoreAppExtension:(id)arg1;
 - (_Bool)flushPendingChangesToDisk;
 - (_Bool)threadUnsafeFlushChangesToDiskWithImmediacy:(_Bool)arg1;

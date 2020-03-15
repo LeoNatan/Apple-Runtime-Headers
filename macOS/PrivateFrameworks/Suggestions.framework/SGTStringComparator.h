@@ -21,9 +21,9 @@
     NSString *_stringB;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringB; // @synthesize stringB=_stringB;
 @property(copy, nonatomic) NSString *stringA; // @synthesize stringA=_stringA;
-- (void).cxx_destruct;
 - (id)spotlightScore;
 - (id)last2WordsScore;
 - (id)lastWordScore;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     struct CGPoint _highlightPoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setPointView:) AXVHighlightPointView *_pointView; // @synthesize _pointView=__pointView;
 @property(nonatomic) struct CGPoint highlightPoint; // @synthesize highlightPoint=_highlightPoint;
 @property(nonatomic) BOOL encircledPointEnabled; // @synthesize encircledPointEnabled=_encircledPointEnabled;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

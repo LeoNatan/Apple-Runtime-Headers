@@ -181,6 +181,8 @@
 - (_Bool)isCharIndex:(unsigned long long)arg1 withEolAffinity:(_Bool)arg2 atBoundary:(long long)arg3 inDirection:(long long)arg4;
 - (unsigned long long)p_charIndexAtPoint:(struct CGPoint)arg1 isAtEndOfLine:(_Bool *)arg2;
 - (unsigned long long)closestCharIndexToPoint:(struct CGPoint)arg1 isAtEndOfLine:(_Bool *)arg2;
+- (_Bool)allowAutomaticTextEditingToBeginWithDifferentEditor;
+- (void)beginAutomaticTextEditingIfNeededForPoint:(struct CGPoint)arg1;
 - (id)p_highlightSelectionForSelection:(id)arg1;
 - (_Bool)canAcceptOrRejectChange;
 - (_Bool)canAddOrShowComment;

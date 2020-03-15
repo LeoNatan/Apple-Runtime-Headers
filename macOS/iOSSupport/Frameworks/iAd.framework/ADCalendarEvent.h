@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_queue> *_calendarEventQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calendarEventQueue; // @synthesize calendarEventQueue=_calendarEventQueue;
 @property(nonatomic) BOOL allDay; // @synthesize allDay=_allDay;
 @property(retain, nonatomic) NSDate *end; // @synthesize end=_end;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSString *eventDescription; // @synthesize eventDescription=_eventDescription;
-- (void).cxx_destruct;
 - (void)createNewCalendarEvent;
 - (id)initWithDictionary:(id)arg1;
 

@@ -13,8 +13,8 @@
     NSDictionary *_providerSourceDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *providerSourceDictionary; // @synthesize providerSourceDictionary=_providerSourceDictionary;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *providerSourceDictionary; // @synthesize providerSourceDictionary=_providerSourceDictionary;
 - (id)providerSourceForModel:(id)arg1;
 - (id)initWithModels:(id)arg1 providerSourceDictionary:(id)arg2;
 

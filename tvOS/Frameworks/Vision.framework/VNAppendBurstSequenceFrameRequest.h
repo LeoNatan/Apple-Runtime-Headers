@@ -15,9 +15,9 @@
 }
 
 + (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(copy, nonatomic) NSString *burstFrameIdentifier; // @synthesize burstFrameIdentifier=_burstFrameIdentifier;
-- (void).cxx_destruct;
 - (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (id)sequencedRequestPreviousObservationsKey;

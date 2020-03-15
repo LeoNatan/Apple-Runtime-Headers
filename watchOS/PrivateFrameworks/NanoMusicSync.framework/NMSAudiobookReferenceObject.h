@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned int _downloadLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int downloadLimit; // @synthesize downloadLimit=_downloadLimit;
 @property(readonly, nonatomic) NSNumber *audiobookIdentifier; // @synthesize audiobookIdentifier=_audiobookIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)audiobookMediaItem;
 - (_Bool)isEqual:(id)arg1;

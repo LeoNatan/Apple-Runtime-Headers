@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     struct __AXObserver *_appObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRApplication *applicationBeforeShowingExpose; // @synthesize applicationBeforeShowingExpose=_applicationBeforeShowingExpose;
 @property(nonatomic) BOOL isTabDockActive; // @synthesize isTabDockActive=_isTabDockActive;
-- (void).cxx_destruct;
 - (void)_handleNotification:(id)arg1 withAXElement:(id)arg2;
 - (void)_uiElementWasDestroyed:(id)arg1;
 - (void)_handleSelectionChange:(id)arg1;

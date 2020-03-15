@@ -13,8 +13,8 @@
     NSMutableArray *_sections;
 }
 
-@property(readonly, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *sections; // @synthesize sections=_sections;
 - (id)sectionAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfItems;
 @property(readonly, nonatomic) unsigned long long numberOfSections;

@@ -20,9 +20,9 @@
     NTKCachedPhoto *_cachedPhoto;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NTKCachedPhoto *cachedPhoto; // @synthesize cachedPhoto=_cachedPhoto;
 @property(nonatomic) __weak id <NTKPhotoImageViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mediaAssetViewDidEndPlaying:(id)arg1;
 - (void)mediaAssetViewDidBeginPlaying:(id)arg1;
 @property(readonly, nonatomic) NSString *localIdentifier;

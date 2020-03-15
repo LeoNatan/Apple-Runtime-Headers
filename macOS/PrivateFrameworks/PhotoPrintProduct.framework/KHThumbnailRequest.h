@@ -14,10 +14,10 @@
 }
 
 + (id)requestWithScale:(double)arg1 completion:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) unsigned long long sizeType; // @synthesize sizeType=_sizeType;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
-- (void).cxx_destruct;
 
 @end
 

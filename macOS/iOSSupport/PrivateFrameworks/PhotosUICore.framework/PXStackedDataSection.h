@@ -23,9 +23,9 @@
 }
 
 + (id)dataSectionForAssetsInCollections:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *childDataSections; // @synthesize childDataSections=_childDataSections;
 - (long long)count;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)_nextEnumerator;

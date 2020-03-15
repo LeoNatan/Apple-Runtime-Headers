@@ -19,13 +19,13 @@
 
 + (id)modelForExtensionInputWithTapAction:(CKTypedComponentAction_173db1b5)arg1;
 + (id)modelForAction:(id)arg1 withTapAction:(CKTypedComponentAction_173db1b5)arg2;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CKTypedComponentAction_173db1b5 tapAction; // @synthesize tapAction=_tapAction;
 @property(readonly, nonatomic) UIImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic, getter=isExtensionInput) _Bool extensionInput; // @synthesize extensionInput=_extensionInput;
 @property(readonly, nonatomic) WFAction *action; // @synthesize action=_action;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithExtensionInputAndTapAction:(CKTypedComponentAction_173db1b5)arg1;

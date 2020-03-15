@@ -24,13 +24,13 @@
 + (id)supportedCommands;
 + (id)zoneMergeHandler;
 + (id)zoneSchema;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) SCKStartupQueue *startupQueue; // @synthesize startupQueue=_startupQueue;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) id <SCWatchlistDefaultsProviding> defaultsProvider; // @synthesize defaultsProvider=_defaultsProvider;
 @property(retain, nonatomic) id <SCWatchlistMetadataProviding> metadataProvider; // @synthesize metadataProvider=_metadataProvider;
 @property(retain, nonatomic) SCKDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)_enqueueStartupSequence;
 - (id)_sortedStocks:(id)arg1 withSymbolOrder:(id)arg2;
 - (void)database:(id)arg1 didChangeZone:(id)arg2 from:(id)arg3 to:(id)arg4;

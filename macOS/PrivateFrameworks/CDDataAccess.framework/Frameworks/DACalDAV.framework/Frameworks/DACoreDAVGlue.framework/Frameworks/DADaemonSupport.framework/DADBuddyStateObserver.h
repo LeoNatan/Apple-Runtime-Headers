@@ -20,8 +20,8 @@
 + (BOOL)isSetupUser;
 + (unsigned int)kMBSetupUserUID;
 + (Class)saUserSetupStateClass;
-@property(copy, nonatomic) CDUnknownBlockType buddyDidFinishHandler; // @synthesize buddyDidFinishHandler=_buddyDidFinishHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType buddyDidFinishHandler; // @synthesize buddyDidFinishHandler=_buddyDidFinishHandler;
 - (void)buddyDidFinish;
 - (void)checkBuddyStatus;
 - (void)createPeriodicPollingTimer;

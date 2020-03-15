@@ -42,6 +42,7 @@
 + (id)previewSummaryForPluginBundle:(id)arg1;
 + (id)unlocalizedPreviewSummaryForPluginBundle:(id)arg1 pluginDisplayName:(id)arg2;
 + (BOOL)supportsURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long messageIDOfLastMessageInSession; // @synthesize messageIDOfLastMessageInSession=_messageIDOfLastMessageInSession;
 @property(readonly, retain, nonatomic) NSString *guidOfLastMessageInSession; // @synthesize guidOfLastMessageInSession=_guidOfLastMessageInSession;
 @property(readonly, nonatomic, getter=isShowingLatestMessageAsBreadcrumb) BOOL showingLatestMessageAsBreadcrumb; // @synthesize showingLatestMessageAsBreadcrumb=_showingLatestMessageAsBreadcrumb;
@@ -64,7 +65,6 @@
 @property(nonatomic) BOOL payloadInShelf; // @synthesize payloadInShelf=_payloadInShelf;
 @property(retain, nonatomic) IMPluginPayload *pluginPayload; // @synthesize pluginPayload=_pluginPayload;
 @property(retain, nonatomic) IMChat *chat; // @synthesize chat=_chat;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_reloadLatestUnconsumedBreadcrumb;
 - (void)endShowingLastConsumedBreadcrumb;

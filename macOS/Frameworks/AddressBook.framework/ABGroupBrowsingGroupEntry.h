@@ -17,10 +17,10 @@
 
 + (id)identifierForGroupWithIdentifier:(id)arg1;
 + (id)identifierForGroup:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain) ABGroup *group; // @synthesize group=_group;
 @property(readonly, retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
 @property(readonly, retain) ABAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (id)iconWithStyleProvider:(id)arg1;
@@ -42,6 +42,7 @@
 - (BOOL)canSendEmailToGroup;
 - (BOOL)canExportGroupVCard;
 - (BOOL)canEditDistributionLists;
+- (BOOL)isRestricted;
 - (BOOL)canRename;
 - (id)actionScope;
 - (id)initWithAccount:(id)arg1 addressBook:(id)arg2 group:(id)arg3;

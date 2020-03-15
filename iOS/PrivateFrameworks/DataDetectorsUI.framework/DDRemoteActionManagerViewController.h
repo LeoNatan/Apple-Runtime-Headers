@@ -36,11 +36,11 @@ __attribute__((visibility("hidden")))
     id <NSCopying> _request;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NSCopying> request; // @synthesize request=_request;
 @property(retain) NSExtension *extension; // @synthesize extension=_extension;
 @property __weak DDRemoteAction *action; // @synthesize action=_action;
 @property(nonatomic) _Bool previewMode; // @synthesize previewMode=_previewMode;
-- (void).cxx_destruct;
 - (void)DDRemoteActionDidTerminateWithError:(id)arg1;
 - (void)showErrorView;
 - (void)removeLoadingViewToShowView:(id)arg1;

@@ -16,11 +16,11 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *contentRatingSystem; // @synthesize contentRatingSystem=_contentRatingSystem;
 @property(readonly, nonatomic) unsigned int ratingValue; // @synthesize ratingValue=_ratingValue;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
 

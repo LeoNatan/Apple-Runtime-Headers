@@ -13,8 +13,8 @@
     UILabel *_placeholderLabel;
 }
 
-@property(nonatomic) __weak UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UILabel *placeholderLabel; // @synthesize placeholderLabel=_placeholderLabel;
 - (void)textDidChange;
 - (void)setAttributedText:(id)arg1;
 - (void)setText:(id)arg1;

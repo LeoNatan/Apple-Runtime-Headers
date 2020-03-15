@@ -17,10 +17,10 @@
     struct CGSize _imageSizeToAlignWith;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(nonatomic) double inset; // @synthesize inset=_inset;
 @property(nonatomic) struct CGSize imageSizeToAlignWith; // @synthesize imageSizeToAlignWith=_imageSizeToAlignWith;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

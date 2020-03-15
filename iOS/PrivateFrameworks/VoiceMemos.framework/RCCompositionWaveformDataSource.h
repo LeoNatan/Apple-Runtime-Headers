@@ -23,12 +23,12 @@
     _RCTimeRangeFileInputWaveformDataSource *_activeFragmentDataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain) _RCTimeRangeFileInputWaveformDataSource *activeFragmentDataSource; // @synthesize activeFragmentDataSource=_activeFragmentDataSource;
 @property(nonatomic) _Bool highlightLastDecomposedFragment; // @synthesize highlightLastDecomposedFragment=_highlightLastDecomposedFragment;
 @property(nonatomic) _Bool saveGeneratedWaveform; // @synthesize saveGeneratedWaveform=_saveGeneratedWaveform;
 @property(readonly, nonatomic) _Bool preferLoadingFragmentWaveforms; // @synthesize preferLoadingFragmentWaveforms=_preferLoadingFragmentWaveforms;
 @property(readonly, nonatomic) RCComposition *composition; // @synthesize composition=_composition;
-- (void).cxx_destruct;
 - (void)waveformDataSource:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformDataSourceDidFinishLoading:(id)arg1;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;

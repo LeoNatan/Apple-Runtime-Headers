@@ -16,11 +16,11 @@
     long long _maxRetryCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
 @property(nonatomic) _Bool indicatorExists; // @synthesize indicatorExists=_indicatorExists;
 @property(nonatomic) long long retryCount; // @synthesize retryCount=_retryCount;
 @property(readonly, nonatomic) NSURL *indicatorURL; // @synthesize indicatorURL=_indicatorURL;
-- (void).cxx_destruct;
 - (void)_removeIndicator;
 - (void)_readIndicator;
 - (void)clear;

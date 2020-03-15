@@ -36,13 +36,13 @@
 + (id)defaultLocalOptions;
 + (id)optionsWithSource:(unsigned long long)arg1 destination:(unsigned long long)arg2 mustReplay:(BOOL)arg3 mustPush:(BOOL)arg4;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL mustPush; // @synthesize mustPush=_mustPush;
 @property(readonly, nonatomic) BOOL mustReplay; // @synthesize mustReplay=_mustReplay;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) NSDate *committed; // @synthesize committed=_committed;
 @property(readonly, nonatomic) unsigned long long destination; // @synthesize destination=_destination;
 @property(readonly, nonatomic) unsigned long long source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)debugString:(BOOL)arg1;
 - (id)logIdentifier;
 @property(readonly, copy) NSString *description;

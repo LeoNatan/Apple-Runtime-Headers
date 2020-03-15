@@ -14,9 +14,9 @@
     VSOptional *_result;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) NSString *buyParams; // @synthesize buyParams=_buyParams;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)init;
 

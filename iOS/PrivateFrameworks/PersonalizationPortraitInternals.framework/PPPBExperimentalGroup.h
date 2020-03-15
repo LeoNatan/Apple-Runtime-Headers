@@ -16,9 +16,9 @@
     NSString *_experimentId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *abGroupIdentifier; // @synthesize abGroupIdentifier=_abGroupIdentifier;
 @property(retain, nonatomic) NSString *experimentId; // @synthesize experimentId=_experimentId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

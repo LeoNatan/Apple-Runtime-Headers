@@ -38,9 +38,9 @@
 
 + (id)_createTemporaryDirectory;
 + (id)temporaryDirectory;
+- (void).cxx_destruct;
 @property float audioVolume; // @synthesize audioVolume=_audioVolume;
 @property(readonly) CDStruct_1b6d18a9 photoTime; // @synthesize photoTime=_photoTime;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)_exportToDestination:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)exportToDestination:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

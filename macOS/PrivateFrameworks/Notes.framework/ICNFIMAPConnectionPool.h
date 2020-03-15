@@ -20,9 +20,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy) NSString *defaultIdleMailboxName; // @synthesize defaultIdleMailboxName=_defaultIdleMailboxName;
 @property unsigned long long maximumConnectionCount; // @synthesize maximumConnectionCount=_maximumConnectionCount;
-- (void).cxx_destruct;
 @property(readonly, copy) NSArray *connections;
 - (id)_keyForMailboxName:(id)arg1;
 - (void)_removeSuspendedGateway:(id)arg1;

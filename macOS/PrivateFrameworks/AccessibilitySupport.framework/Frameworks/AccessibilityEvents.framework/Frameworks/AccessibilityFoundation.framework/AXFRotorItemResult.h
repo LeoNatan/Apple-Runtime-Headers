@@ -18,11 +18,11 @@
     NSString *_descriptionOverride;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *descriptionOverride; // @synthesize descriptionOverride=_descriptionOverride;
 @property(retain, nonatomic) NSValue *textRange; // @synthesize textRange=_textRange;
 @property(retain, nonatomic) AXFUIElement *uiElement; // @synthesize uiElement=_uiElement;
 @property(copy, nonatomic) NSString *rotorIdentifier; // @synthesize rotorIdentifier=_rotorIdentifier;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUIElement:(id)arg1;

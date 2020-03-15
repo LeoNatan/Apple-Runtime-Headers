@@ -24,13 +24,13 @@
     NSXPCInterface *_interface;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCInterface *interface; // @synthesize interface=_interface;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *receiverQueue; // @synthesize receiverQueue=_receiverQueue;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property _Bool shouldReconnectWhenConnectionIsInterrupted; // @synthesize shouldReconnectWhenConnectionIsInterrupted=_shouldReconnectWhenConnectionIsInterrupted;
 @property __weak id <NNMKNanoMailServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_pingServerAndNotifyDelegateDidResetXPCConnection;
 - (void)_pingServer;
 - (void)pingServer;
@@ -113,6 +113,7 @@
 - (void)requestFirstConversations:(unsigned int)arg1 forMailboxFilter:(id)arg2;
 - (void)requestMailboxSelection;
 - (void)updateMailboxSelection:(id)arg1;
+- (void)invalidate;
 - (void)dealloc;
 - (void)_handleConnectionInvalidated;
 - (void)_initializeXPCConnection;

@@ -29,11 +29,11 @@
 + (id)_fastPathResultForPredicate:(id)arg1 inStore:(id)arg2;
 + (BOOL)_fastPathAvailableForPredicate:(id)arg1 inStore:(id)arg2;
 + (id)searchWithPredicate:(id)arg1 store:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_queue> *queryQueue; // @synthesize queryQueue=_queryQueue;
 @property(copy) CDUnknownBlockType cancelCallback; // @synthesize cancelCallback=_cancelCallback;
 @property(copy) CDUnknownBlockType completionCallback; // @synthesize completionCallback=_completionCallback;
 @property(retain) NSMutableSet *currentResults; // @synthesize currentResults=_currentResults;
-- (void).cxx_destruct;
 - (void)cancelSearch;
 - (void)cancel;
 - (void)startWithCompletionCallback:(CDUnknownBlockType)arg1 cancelCallback:(CDUnknownBlockType)arg2 synchronous:(BOOL)arg3 batchCompletion:(BOOL)arg4;

@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)isEnabled;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *touchHistoryViewMap; // @synthesize touchHistoryViewMap=_touchHistoryViewMap;
 @property(retain, nonatomic) UIView *touchHistoryFeedbackView; // @synthesize touchHistoryFeedbackView=_touchHistoryFeedbackView;
 @property(retain, nonatomic) UIView *rightDriftFeedbackView; // @synthesize rightDriftFeedbackView=_rightDriftFeedbackView;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *touches; // @synthesize touches=_touches;
 @property(retain, nonatomic) NSArray *indexSearchOrder; // @synthesize indexSearchOrder=_indexSearchOrder;
 @property(nonatomic) id <_UIKBRTTouchDriftingDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateDriftViewTimer:(id)arg1;
 - (void)_updateDriftView;
 - (struct CGPoint)_pinOffset:(struct CGPoint)arg1;

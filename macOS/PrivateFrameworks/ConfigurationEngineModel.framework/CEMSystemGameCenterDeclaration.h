@@ -24,10 +24,10 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowAddingGameCenterFriends; // @synthesize payloadAllowAddingGameCenterFriends=_payloadAllowAddingGameCenterFriends;
 @property(copy, nonatomic) NSNumber *payloadAllowMultiplayerGaming; // @synthesize payloadAllowMultiplayerGaming=_payloadAllowMultiplayerGaming;
 @property(copy, nonatomic) NSNumber *payloadAllowGameCenter; // @synthesize payloadAllowGameCenter=_payloadAllowGameCenter;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

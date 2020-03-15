@@ -21,8 +21,9 @@
 + (_Bool)supportsSecureCoding;
 @property _Bool handledByDataProvider; // @synthesize handledByDataProvider=_handledByDataProvider;
 @property _Bool updateRules; // @synthesize updateRules=_updateRules;
-- (id)description;
+- (long long)filterAction;
 - (id)init;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

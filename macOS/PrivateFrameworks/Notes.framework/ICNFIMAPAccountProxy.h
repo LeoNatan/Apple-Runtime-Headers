@@ -26,13 +26,13 @@
 }
 
 + (id)accountTypeString;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICNFIMAPMailboxProxy *defaultHighPriorityMailbox; // @synthesize defaultHighPriorityMailbox=_defaultHighPriorityMailbox;
 @property(retain) ICNFIMAPGateway *offlineRecoveryGateway; // @synthesize offlineRecoveryGateway=_offlineRecoveryGateway;
 @property unsigned int readBufferSize; // @synthesize readBufferSize=_readBufferSize;
 @property(copy) NSDictionary *serverID; // @synthesize serverID=_serverID;
 @property BOOL recoveringFromConnectionLoss; // @synthesize recoveringFromConnectionLoss=_recoveringFromConnectionLoss;
 @property(copy) NSString *separatorCharacter; // @synthesize separatorCharacter=_separatorCharacter;
-- (void).cxx_destruct;
 - (id)_serverNameComponentForMailboxName:(id)arg1;
 - (id)_serverNameForMailbox:(id)arg1 parentMailbox:(id)arg2 separatorCharacter:(id)arg3;
 - (id)_separatorCharacterWithGateway:(id)arg1;

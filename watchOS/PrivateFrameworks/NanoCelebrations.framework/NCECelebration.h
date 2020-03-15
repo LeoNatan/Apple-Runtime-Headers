@@ -18,10 +18,10 @@
 
 + (id)availableCelebrationNames;
 + (id)celebrationByName:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didCallWarmup; // @synthesize didCallWarmup=_didCallWarmup;
 @property(nonatomic) _Bool highPriority; // @synthesize highPriority=_highPriority;
 @property(retain, nonatomic) NSDate *onOrAfter; // @synthesize onOrAfter=_onOrAfter;
-- (void).cxx_destruct;
 - (id)description;
 - (id)statisticsSuffix;
 - (id)name;

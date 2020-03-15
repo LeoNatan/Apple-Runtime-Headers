@@ -31,6 +31,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NNMKMessageBodyTextStorage *bodyContentTextStorage; // @synthesize bodyContentTextStorage=_bodyContentTextStorage;
 @property(retain, nonatomic) NNMKMessageBodyLayoutManager *bodyContentLayoutManager; // @synthesize bodyContentLayoutManager=_bodyContentLayoutManager;
 @property(retain, nonatomic) NSTextContainer *bodyContentTextContainer; // @synthesize bodyContentTextContainer=_bodyContentTextContainer;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NNMKMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) NNMKMessageContent *content; // @synthesize content=_content;
 @property(nonatomic) __weak id <NNMKMessageContentViewDelegate> messageContentViewDelegate; // @synthesize messageContentViewDelegate=_messageContentViewDelegate;
-- (void).cxx_destruct;
 - (float)calculateHeaderPlusContentHeight;
 - (void)_updateFooterViewPosition;
 - (void)_updateTextContainerInset;

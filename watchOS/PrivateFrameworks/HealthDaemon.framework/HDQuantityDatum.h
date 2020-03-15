@@ -19,10 +19,10 @@
 + (id)quantityDatumWithHKQuantityDatum:(id)arg1 metadata:(id)arg2;
 + (id)quantityDataForDifferencesInData:(id)arg1 baseDatum:(id)arg2 unit:(id)arg3 differenceHandler:(CDUnknownBlockType)arg4 intervalHandler:(CDUnknownBlockType)arg5;
 + (id)hdt_quantityDatumForType:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 value:(double)arg4;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType saveCompletion; // @synthesize saveCompletion=_saveCompletion;
 @property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, copy, nonatomic) HKQuantity *quantity; // @synthesize quantity=_quantity;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct __CVBuffer *_pixelBuffer;
     id <MTLTexture> _mtlTexture;
     unsigned long long _texturePixelFormat;
+    unsigned char _videoSourceFormat;
     unsigned long long _width;
     unsigned long long _height;
 }
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)unregisterPlayer:(id)arg1;
 - (void)registerPlayer:(id)arg1;
+- (void)setVideoSourceFormat:(unsigned char)arg1;
 - (void)discardVideoData;
 - (id)init;
 

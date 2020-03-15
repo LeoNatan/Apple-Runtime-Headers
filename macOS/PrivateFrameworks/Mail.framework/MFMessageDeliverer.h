@@ -24,11 +24,11 @@
 + (BOOL)deliverMessage:(id)arg1;
 + (BOOL)deliverMessage:(id)arg1 askForReadReceipt:(BOOL)arg2;
 + (id)newWithMessage:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) long long deliveryStatus; // @synthesize deliveryStatus=_deliveryStatus;
 @property(retain, nonatomic) MCMessage *message; // @synthesize message=_message;
 @property(nonatomic) BOOL askForReadReceipt; // @synthesize askForReadReceipt=_askForReadReceipt;
 @property(nonatomic) __weak id <MFMessageDelivererDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)deliverMessageHeaderData:(id)arg1 bodyData:(id)arg2 toRecipients:(id)arg3;
 - (long long)deliverSynchronously;
 - (void)deliverAsynchronously;

@@ -17,10 +17,10 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *includeBusinessLinkedNotebooks; // @synthesize includeBusinessLinkedNotebooks=_includeBusinessLinkedNotebooks;
 @property(retain, nonatomic) NSNumber *includePersonalLinkedNotebooks; // @synthesize includePersonalLinkedNotebooks=_includePersonalLinkedNotebooks;
 @property(retain, nonatomic) NSNumber *includeAccount; // @synthesize includeAccount=_includeAccount;
-- (void).cxx_destruct;
 
 @end
 

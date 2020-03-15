@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSString *_backdropGroupName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(readonly, nonatomic) UITabBar *tabBar; // @synthesize tabBar=_tabBar;
-- (void).cxx_destruct;
 - (double)defaultAnimationDuration;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;

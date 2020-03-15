@@ -19,10 +19,10 @@
     id <CSWallpaperColorProvider> _wallpaperColorProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSWallpaperColorProvider> wallpaperColorProvider; // @synthesize wallpaperColorProvider=_wallpaperColorProvider;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings;
 @property(nonatomic) double strength; // @synthesize strength=_legibilityStrength;
-- (void).cxx_destruct;
 - (void)_updateVibrancy;
 - (id)initWithColor:(id)arg1;
 - (id)init;

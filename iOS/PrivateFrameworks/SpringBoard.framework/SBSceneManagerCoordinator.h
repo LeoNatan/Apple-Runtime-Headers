@@ -27,8 +27,8 @@
 + (id)secureMainDisplaySceneManager;
 + (id)mainDisplaySceneManager;
 + (id)sharedInstance;
-@property(readonly, nonatomic) UIApplicationSceneDeactivationManager *sceneDeactivationManager; // @synthesize sceneDeactivationManager=_sceneDeactivationManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIApplicationSceneDeactivationManager *sceneDeactivationManager; // @synthesize sceneDeactivationManager=_sceneDeactivationManager;
 - (void)sceneManagerDidInvalidateForReference:(id)arg1;
 - (void)displayMonitor:(id)arg1 willDisconnectIdentity:(id)arg2;
 - (void)displayMonitor:(id)arg1 didConnectIdentity:(id)arg2 withConfiguration:(id)arg3;

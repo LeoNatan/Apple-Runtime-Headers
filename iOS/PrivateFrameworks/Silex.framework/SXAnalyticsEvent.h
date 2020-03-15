@@ -14,9 +14,9 @@
     NSDate *_endDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)determineEndDate;
 - (id)init;

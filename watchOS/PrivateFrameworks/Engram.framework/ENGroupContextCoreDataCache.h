@@ -17,9 +17,9 @@
     NSPersistentContainer *_container;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPersistentContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)groupContext:(id)arg1 fetchAllKnownGroups:(CDUnknownBlockType)arg2;
 - (void)deleteCachedValueForForGroupContext:(id)arg1 withGroupID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deleteAllKnownGroupsForGroupContext:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -19,8 +19,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) CDUnknownBlockType resumeContextProvider; // @synthesize resumeContextProvider=_resumeContextProvider;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resumeContextProvider; // @synthesize resumeContextProvider=_resumeContextProvider;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

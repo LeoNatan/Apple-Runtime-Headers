@@ -15,6 +15,7 @@
 }
 
 + (id)sharedClientSideListener;
+- (void)accountDidChange:(id)arg1 forType:(id)arg2;
 - (void)accountCredentialsDidChangeForAccountWithIdentifier:(id)arg1;
 
 // Remaining properties

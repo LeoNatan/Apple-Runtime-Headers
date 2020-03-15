@@ -15,10 +15,10 @@
     NSError *__deferredLinkError;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSError *_deferredLinkError; // @synthesize _deferredLinkError=__deferredLinkError;
 @property(retain) NSURLRequest *_resumedOriginalRequest; // @synthesize _resumedOriginalRequest=__resumedOriginalRequest;
 @property(copy) CDUnknownBlockType _clientLocationCompletionHandler; // @synthesize _clientLocationCompletionHandler=__clientLocationCompletionHandler;
-- (void).cxx_destruct;
 - (BOOL)_isUpload;
 - (id)initWithNSURLDownloadTaskCreator:(CDUnknownBlockType)arg1 initialRequest:(id)arg2 forSession:(id)arg3;
 - (void)cancelByProducingResumeData:(CDUnknownBlockType)arg1;

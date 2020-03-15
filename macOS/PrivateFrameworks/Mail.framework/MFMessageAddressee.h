@@ -17,9 +17,9 @@
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) id <MFScriptingMessage> message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (id)objectSpecifier;
 @property(copy, nonatomic) NSString *address;
 @property(copy, nonatomic) NSString *displayName;

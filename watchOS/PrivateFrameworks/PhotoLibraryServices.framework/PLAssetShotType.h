@@ -18,12 +18,12 @@
 }
 
 + (id)allShotTypes;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 @property(nonatomic) int procFlags; // @synthesize procFlags=_procFlags;
 @property(nonatomic) int captureFlags; // @synthesize captureFlags=_captureFlags;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(int)arg1 captureFlags:(int)arg2 procFlags:(int)arg3 devices:(id)arg4 name:(id)arg5;
 
 @end

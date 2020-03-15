@@ -50,6 +50,7 @@
 
 + (id)keyPathsForValuesAffectingContentWidth;
 + (id)keyPathsForValuesAffectingScrollView;
+- (void).cxx_destruct;
 @property(retain) GKServerWebViewJSRoot *jsRoot; // @synthesize jsRoot=_jsRoot;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(retain, nonatomic) GKAppearanceWebViewWrapper *webViewWrapper; // @synthesize webViewWrapper=_webViewWrapper;
@@ -79,7 +80,6 @@
 @property(retain, nonatomic) NSString *cancelCallback; // @synthesize cancelCallback=_cancelCallback;
 @property(retain, nonatomic) NSString *okCallback; // @synthesize okCallback=_okCallback;
 @property(retain, nonatomic) WebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)uploadContacts;
 - (void)changePhoto;
 - (void)alertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;

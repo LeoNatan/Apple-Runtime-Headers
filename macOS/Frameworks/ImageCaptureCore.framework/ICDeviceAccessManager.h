@@ -17,11 +17,19 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedAccessManager;
 @property NSObject<OS_dispatch_queue> *deviceAccessQueue; // @synthesize deviceAccessQueue=_deviceAccessQueue;
+- (BOOL)validateControlApplicationBundleIdentifier:(id)arg1 withNotification:(id)arg2;
+- (BOOL)controlApplicationWithBundleIdentifierHasAccess:(id)arg1;
+- (void)addControlApplicationWithBundleIdentifier:(id)arg1 whitelisted:(BOOL)arg2;
+- (void)revokeControlApplicationWithBundleIdentifier:(id)arg1;
+- (id)bundleIdentifiersControllingExternalCameras;
 - (void)displayAlertForApplication:(id)arg1 notificationDict:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)validateBundleIdentifier:(id)arg1 withNotification:(id)arg2;
 - (BOOL)internalApplicationWithBundleIdentifierHasAccess:(id)arg1;
-- (BOOL)applicationWithBundleIdentifierHasAccess:(id)arg1;
+- (BOOL)applicationWithBundleIdentifierHasAccess:(id)arg1 enabled:(char *)arg2;
+- (BOOL)validateBundleIdentifierInstallDate:(id)arg1 control:(BOOL)arg2;
 - (void)addApplicationWithBundleIdentifier:(id)arg1 whitelist:(BOOL)arg2;
+- (id)bundleIdentifiersAccessingExternalCamerasWithStatus;
+- (void)updateApplicationWithBundleIdentifier:(id)arg1 withStatus:(BOOL)arg2;
 - (void)revokeApplicationWithBundleIdentifier:(id)arg1;
 - (id)bundleIdentifiersAccessingExternalCameras;
 - (void)dealloc;

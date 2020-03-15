@@ -15,9 +15,9 @@
     id <NUScalePolicy> _scalePolicy;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
 @property(copy) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithComposition:(id)arg1 destinationURL:(id)arg2;
 - (id)initWithComposition:(id)arg1;

@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
     AVPlayerItem *_currentPlayerItemForPlayerItemDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak AVPlayerItem *currentPlayerItemForPlayerItemDelegate; // @synthesize currentPlayerItemForPlayerItemDelegate=_currentPlayerItemForPlayerItemDelegate;
 @property(nonatomic) _Bool resumePlaybackAfterNextSuccessfulSeek; // @synthesize resumePlaybackAfterNextSuccessfulSeek=_resumePlaybackAfterNextSuccessfulSeek;
 @property(nonatomic, getter=isLastObservedEffectiveRateNonZero) _Bool lastObservedEffectiveRateNonZero; // @synthesize lastObservedEffectiveRateNonZero=_lastObservedEffectiveRateNonZero;
@@ -61,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVDelegateManager *delegateManager; // @synthesize delegateManager=_delegateManager;
 @property(retain, nonatomic) AVKeyValueObserverCollection *kvoPlayerItem; // @synthesize kvoPlayerItem=_kvoPlayerItem;
 @property(retain, nonatomic) AVKeyValueObserverCollection *kvoPlayer; // @synthesize kvoPlayer=_kvoPlayer;
-- (void).cxx_destruct;
 - (void)didRequestSeek;
 - (void)willRequestSeek;
 @property(readonly) _Bool isRequestingSeek;

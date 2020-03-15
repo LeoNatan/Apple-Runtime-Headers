@@ -15,10 +15,10 @@
     UIColor *_tintColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) HKDisplayType *displayType; // @synthesize displayType=_displayType;
 @property(retain, nonatomic) HKGraphSeries *graphSeries; // @synthesize graphSeries=_graphSeries;
-- (void).cxx_destruct;
 
 @end
 

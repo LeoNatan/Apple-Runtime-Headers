@@ -15,10 +15,10 @@
     CKStoreRequest *_storeRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKStoreRequest *storeRequest; // @synthesize storeRequest=_storeRequest;
 @property(retain, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 @property(retain, nonatomic) SGTInput *input; // @synthesize input=_input;
-- (void).cxx_destruct;
 - (void)_getHints;
 - (id)initWithStoreClient:(id)arg1;
 

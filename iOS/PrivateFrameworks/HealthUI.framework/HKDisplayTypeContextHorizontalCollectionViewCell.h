@@ -23,9 +23,9 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <HKDisplayTypeContextHorizontalCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HKDisplayTypeContextItem *contextItem; // @synthesize contextItem=_contextItem;
-- (void).cxx_destruct;
 - (double)_bottomOffsetFromDateBaseline;
 - (double)_dateBaselineOffsetFromValue;
 - (id)_dateLabelFont;

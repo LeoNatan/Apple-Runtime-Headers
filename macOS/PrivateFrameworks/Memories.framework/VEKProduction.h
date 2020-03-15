@@ -29,6 +29,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double maxDuration; // @synthesize maxDuration=_maxDuration;
 @property(retain, nonatomic) VEKProduction_MiroMemory_Bridge *bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) NSSet *suggestions; // @synthesize suggestions=_suggestions;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *requestedMood; // @synthesize requestedMood=_requestedMood;
 @property(nonatomic) double requestedDuration; // @synthesize requestedDuration=_requestedDuration;
 @property(readonly, nonatomic) PHAssetCollection *collection; // @synthesize collection=_collection;
-- (void).cxx_destruct;
 - (void)makeProjectWithProgressHandler:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)exportWithPresets:(id)arg1 progressHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)makePlayerItemWithProgressHandler:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -13,8 +13,8 @@
     NSMutableDictionary *_flows;
 }
 
-@property(retain) NSMutableDictionary *flows; // @synthesize flows=_flows;
 - (void).cxx_destruct;
+@property(retain) NSMutableDictionary *flows; // @synthesize flows=_flows;
 - (void)freeUpBufferSpace;
 - (unsigned long long)getLongestContiguousHammingWeightForFlowId:(unsigned long long)arg1;
 - (unsigned long long)getHammingWeightForFlowId:(unsigned long long)arg1;

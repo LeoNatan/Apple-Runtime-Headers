@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long layoutType; // @synthesize layoutType=_layoutType;
 @property(readonly, nonatomic) struct UIEdgeInsets headerImagePadding; // @synthesize headerImagePadding=_headerImagePadding;
 @property(retain, nonatomic) UIColor *darkHighlightColor; // @synthesize darkHighlightColor=_darkHighlightColor;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) VUITextLayout *sourceTextLayout; // @synthesize sourceTextLayout=_sourceTextLayout;
 @property(readonly, nonatomic) VUITextLayout *headerSubtitleLayout; // @synthesize headerSubtitleLayout=_headerSubtitleLayout;
 @property(readonly, nonatomic) VUITextLayout *headerTitleLayout; // @synthesize headerTitleLayout=_headerTitleLayout;
-- (void).cxx_destruct;
 - (void)_setupLayout:(long long)arg1;
 - (id)initWithLayoutType:(long long)arg1;
 

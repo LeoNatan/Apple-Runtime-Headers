@@ -52,6 +52,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)emptyIdentifierSet;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPlaceholder) BOOL placeholder; // @synthesize placeholder=_placeholder;
 @property(nonatomic) BOOL shouldExcludeFromShuffle; // @synthesize shouldExcludeFromShuffle=_shouldExcludeFromShuffle;
 @property(readonly, nonatomic) MPModelKind *modelKind; // @synthesize modelKind=_modelKind;
@@ -92,7 +93,6 @@
 - (void)setPersistentID:(long long)arg1;
 @property(readonly, nonatomic) long long persistentID;
 @property(readonly, nonatomic) NSString *databaseID; // @synthesize databaseID=_databaseID;
-- (void).cxx_destruct;
 - (void)_setDefaultPersonIDIfNeeded;
 - (void)_setDefaultDatabaseIDIfNeeded;
 - (id)identifierDescriptions;

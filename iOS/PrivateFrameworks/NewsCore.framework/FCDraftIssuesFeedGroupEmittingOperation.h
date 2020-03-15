@@ -13,8 +13,8 @@
     NSString *_issueListID;
 }
 
-@property(readonly, nonatomic) NSString *issueListID; // @synthesize issueListID=_issueListID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *issueListID; // @synthesize issueListID=_issueListID;
 - (void)performOperation;
 - (_Bool)validateOperation;
 - (id)initWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3 groupEmitterIdentifier:(id)arg4 issueListID:(id)arg5;

@@ -13,9 +13,9 @@
     id <SBFluidSwitcherScrollProvidingDelegate> _scrollDelegate;
 }
 
+- (void).cxx_destruct;
 - (void)setScrollDelegate:(id)arg1;
 - (id)scrollDelegate;
-- (void).cxx_destruct;
 - (double)_cardWidth;
 - (double)leadingOffsetForIndex:(unsigned long long)arg1 displayItemsCount:(unsigned long long)arg2 scrollProgress:(double)arg3;
 - (double)scrollProgressForIndex:(unsigned long long)arg1 displayItemsCount:(unsigned long long)arg2 frameOrigin:(double)arg3;

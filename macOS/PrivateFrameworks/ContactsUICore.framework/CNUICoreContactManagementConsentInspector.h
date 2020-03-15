@@ -18,9 +18,9 @@
 }
 
 + (unsigned long long)contactManagementConsentStateFromSTContactManagementState:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) STManagementState *managementState; // @synthesize managementState=_managementState;
-- (void).cxx_destruct;
 - (id)contactManagementConsentStateFutureForDSID:(id)arg1;
 - (unsigned long long)contactManagementConsentStateOfDelegateWithInfo:(id)arg1;
 - (id)initWithManagementState:(id)arg1 schedulerProvider:(id)arg2;

@@ -26,6 +26,7 @@
 + (_Bool)canCellExpandWithResults:(id)arg1 forView:(id)arg2;
 + (id)reuseIdentifierForResult:(id)arg1;
 + (id)cellViewForRowModel:(id)arg1 feedbackDelegate:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIViewController<SearchUIResultShortLook> *shortLookViewController; // @synthesize shortLookViewController=_shortLookViewController;
 @property(retain, nonatomic) SearchUIDragSource *dragSource; // @synthesize dragSource=_dragSource;
 @property(retain, nonatomic) UIView *sizingContainer; // @synthesize sizingContainer=_sizingContainer;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
 @property(retain, nonatomic) UIView *platterView; // @synthesize platterView=_platterView;
 @property(retain, nonatomic) SearchUIRowModel *rowModel; // @synthesize rowModel=_rowModel;
-- (void).cxx_destruct;
 - (void)removeKeyboardHandler;
 - (_Bool)navigateKeyboardDown;
 - (_Bool)navigateKeyboardUp;

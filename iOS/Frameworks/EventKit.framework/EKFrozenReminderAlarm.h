@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (id)_setTimeOrLocationAlarm:(id)arg1;
 - (void)_setTimeAndLocationAlarms:(id)arg1;
 - (id)updatedFrozenObjectWithChanges:(id)arg1 updatedChildren:(id)arg2;
-- (id)initWithAlternateUniverseObject:(EKPersistentObject_556b3b22 *)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
+- (id)initWithAlternateUniverseObject:(id)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
 - (id)initWithAlarms:(id)arg1 inStore:(id)arg2 withChanges:(id)arg3;
 - (id)initWithAlarms:(id)arg1 inStore:(id)arg2;
 - (id)initWithREMObject:(id)arg1 inStore:(id)arg2 withChanges:(id)arg3;

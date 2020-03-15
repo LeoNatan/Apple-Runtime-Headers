@@ -26,12 +26,12 @@
     PSRegion *_currentRegion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PSRegion *currentRegion; // @synthesize currentRegion=_currentRegion;
 @property(retain, nonatomic) NSArray *regionsList; // @synthesize regionsList=_regionsList;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSArray *filteredListContent; // @synthesize filteredListContent=_filteredListContent;
 @property(retain, nonatomic) PSLocaleSelector *localeSelector; // @synthesize localeSelector=_localeSelector;
-- (void).cxx_destruct;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (void)searchBarTextDidBeginEditing:(id)arg1;
 - (id)filteredRegionsForRegionList:(id)arg1 searchString:(id)arg2;

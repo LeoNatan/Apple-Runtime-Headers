@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tableViewSectionClasses;
+- (void).cxx_destruct;
 @property(retain) HRProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) NSArray *tableSections; // @synthesize tableSections=_tableSections;
-- (void).cxx_destruct;
 - (void)sectionAddedChildViewController:(id)arg1;
 - (void)pushViewController:(id)arg1;
 - (void)reloadSection:(unsigned long long)arg1 animated:(_Bool)arg2;

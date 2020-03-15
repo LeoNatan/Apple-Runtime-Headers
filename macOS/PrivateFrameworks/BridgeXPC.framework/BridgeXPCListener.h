@@ -23,9 +23,9 @@
     NSObject<OS_dispatch_queue> *targetQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *targetQueue; // @synthesize targetQueue;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancel;
 - (void)acceptSocket:(int)arg1;

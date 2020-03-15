@@ -14,6 +14,7 @@
     NSString *_callID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *callID; // @synthesize callID=_callID;
 @property(readonly, copy, nonatomic) NSString *callState; // @synthesize callState=_callState;
 

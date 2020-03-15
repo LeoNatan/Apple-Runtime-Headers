@@ -25,13 +25,13 @@
 
 + (id)logCategory;
 + (id)sharedSession;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSOperationQueue *requestOperationQueue; // @synthesize requestOperationQueue=_requestOperationQueue;
 @property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(retain, nonatomic) HMFTimer *fairPlaySessionTimer; // @synthesize fairPlaySessionTimer=_fairPlaySessionTimer;
 @property(retain, nonatomic) HMDFairPlaySAPSession *fairPlaySAPSession; // @synthesize fairPlaySAPSession=_fairPlaySAPSession;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)session:(id)arg1 didReceiveClientExchangeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)session:(id)arg1 didReceiveServerCertificateRequestWithCompletionHandler:(CDUnknownBlockType)arg2;

@@ -24,12 +24,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int alternativesCorrectionsCount; // @synthesize alternativesCorrectionsCount=_alternativesCorrectionsCount;
 @property(nonatomic) unsigned int tap2editCorrectionsCount; // @synthesize tap2editCorrectionsCount=_tap2editCorrectionsCount;
 @property(nonatomic) unsigned int spellingCorrectionsCount; // @synthesize spellingCorrectionsCount=_spellingCorrectionsCount;
 @property(retain, nonatomic) SiriCoreCorrectionPronunciation *pronunciationData; // @synthesize pronunciationData=_pronunciationData;
 @property(retain, nonatomic) NSString *correctedText; // @synthesize correctedText=_correctedText;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

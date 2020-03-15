@@ -28,13 +28,13 @@
 + (struct CGSize)_validateAllowedSize:(struct CGSize)arg1;
 + (void)_updateStringDrawingContext:(id)arg1 withMaximumNumberOfLines:(unsigned int)arg2;
 + (id)_drawingContextForText:(id)arg1 allowedSize:(struct CGSize)arg2 fromCache:(id)arg3 usingReusableStringDrawingContext:(id)arg4 reusableTextDrawingCacheKey:(id)arg5 textAttributes:(id)arg6 maximumNumberOfLines:(unsigned int)arg7 opaque:(_Bool)arg8 displayScale:(float)arg9 attributedTextProvider:(CDUnknownBlockType)arg10;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_usesImageCachingInsteadOfStringDrawingContextCaching, setter=_setUsesImageCachingInsteadOfStringDrawingContextCaching:) _Bool usesImageCachingInsteadOfStringDrawingContextCaching; // @synthesize usesImageCachingInsteadOfStringDrawingContextCaching=_usesImageCachingInsteadOfStringDrawingContextCaching;
 @property(nonatomic, getter=_isOpaque, setter=_setOpaque:) _Bool opaque; // @synthesize opaque=_opaque;
 @property(copy, nonatomic) CDUnknownBlockType attributedTextProvider; // @synthesize attributedTextProvider=_attributedTextProvider;
 @property(nonatomic) float displayScale; // @synthesize displayScale=_displayScale;
 @property(nonatomic) unsigned int maximumNumberOfLines; // @synthesize maximumNumberOfLines=_maximumNumberOfLines;
 @property(copy, nonatomic) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
-- (void).cxx_destruct;
 - (void)_notifyInvalidationObservers;
 - (void)_invalidate;
 - (void)preHeatForStrings:(id)arg1 allowedSize:(struct CGSize)arg2;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)canShowResultsForRedeem:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool extendedMessageIsExpanded; // @synthesize extendedMessageIsExpanded=_extendedMessageIsExpanded;
 @property(nonatomic) unsigned long long currentItemStateFlag; // @synthesize currentItemStateFlag=_currentItemStateFlag;
 @property(retain, nonatomic) SKUIRedeemITunesPassLockup *passbookLockup; // @synthesize passbookLockup=_passbookLockup;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SKUITextLayout *extendedMessageTextLayout; // @synthesize extendedMessageTextLayout=_extendedMessageTextLayout;
 @property(retain, nonatomic) UIButton *anotherButton; // @synthesize anotherButton=_anotherButton;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (void)_setHeaderImage:(id)arg1;
 - (void)_setItemImage:(id)arg1;
 - (void)_reloadSections;

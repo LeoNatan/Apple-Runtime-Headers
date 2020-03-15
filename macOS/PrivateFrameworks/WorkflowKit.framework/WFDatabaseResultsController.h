@@ -20,13 +20,13 @@
     struct _WFDatabaseResultsSlice _slice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 @property(readonly, nonatomic) NSMapTable *observers; // @synthesize observers=_observers;
 @property(copy, nonatomic) NSOrderedSet *currentObjects; // @synthesize currentObjects=_currentObjects;
 @property(nonatomic) struct _WFDatabaseResultsSlice slice; // @synthesize slice=_slice;
 @property(readonly, nonatomic) WFDatabaseResult *result; // @synthesize result=_result;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
-- (void).cxx_destruct;
 - (void)_databaseResult:(id)arg1 didUpdateObjects:(id)arg2 inserted:(id)arg3 removed:(id)arg4;
 - (void)databaseResult:(id)arg1 didUpdateObjects:(id)arg2 inserted:(id)arg3 removed:(id)arg4;
 - (void)removeObserver:(id)arg1;

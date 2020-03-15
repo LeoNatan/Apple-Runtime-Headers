@@ -16,10 +16,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL restrictDomains; // @synthesize restrictDomains=_restrictDomains;
 @property BOOL noRestriction; // @synthesize noRestriction=_noRestriction;
 @property(copy) NSArray *appRules; // @synthesize appRules=_appRules;
-- (void).cxx_destruct;
 - (void)updateAppRulesForUID:(unsigned int)arg1;
 - (BOOL)installSigningIdentifiersWithFlowDivertControlSocket:(int)arg1;
 - (id)copyUniqueSigningIdentifiers;

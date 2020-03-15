@@ -15,6 +15,7 @@
 + (id)safeCategoryTargetClassName;
 - (id)_axLongLookView;
 - (void)dismissViewControllerWithTransition:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_logNotificationMessage:(id)arg1;
 - (void)_axNotifyDidEndUserInteraction;
 - (void)_axNotifyWillBeginUserInteraction:(_Bool)arg1;
 - (void)_axHandleAnnouncementFinished;

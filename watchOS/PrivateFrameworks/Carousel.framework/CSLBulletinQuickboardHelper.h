@@ -20,12 +20,12 @@
     CUISBulletinClientFactory *_factory;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUISBulletinClientFactory *factory; // @synthesize factory=_factory;
 @property(retain, nonatomic) PUICQuickboardMessageViewController *quickboardController; // @synthesize quickboardController=_quickboardController;
 @property(copy) CDUnknownBlockType textInputCompletion; // @synthesize textInputCompletion=_textInputCompletion;
 @property(retain, nonatomic) UIViewController<CUISBulletinQuickLongLook> *requestingController; // @synthesize requestingController=_requestingController;
 @property(nonatomic) __weak UIViewController *presentingController; // @synthesize presentingController=_presentingController;
-- (void).cxx_destruct;
 - (void)quickboard:(id)arg1 languageDidChange:(id)arg2;
 - (void)quickboardInputCancelled:(id)arg1;
 - (void)quickboard:(id)arg1 textEntered:(id)arg2;

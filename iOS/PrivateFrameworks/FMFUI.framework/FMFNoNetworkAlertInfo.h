@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSURL *_actionURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *actionURL; // @synthesize actionURL=_actionURL;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 
 @end
 

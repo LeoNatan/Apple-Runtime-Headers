@@ -38,6 +38,7 @@
 }
 
 + (Class)eventsType;
+- (void).cxx_destruct;
 @property(nonatomic) double totalFlightsClimbedInCanonicalUnit; // @synthesize totalFlightsClimbedInCanonicalUnit=_totalFlightsClimbedInCanonicalUnit;
 @property(nonatomic) double totalSwimmingStrokeCountInCanonicalUnit; // @synthesize totalSwimmingStrokeCountInCanonicalUnit=_totalSwimmingStrokeCountInCanonicalUnit;
 @property(nonatomic) double totalBasalEnergyBurnedInCanonicalUnit; // @synthesize totalBasalEnergyBurnedInCanonicalUnit=_totalBasalEnergyBurnedInCanonicalUnit;
@@ -49,7 +50,6 @@
 @property(retain, nonatomic) NSMutableArray *events; // @synthesize events=_events;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) HDCodableSample *sample; // @synthesize sample=_sample;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

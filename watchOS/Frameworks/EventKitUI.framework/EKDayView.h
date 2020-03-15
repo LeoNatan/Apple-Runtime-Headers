@@ -38,6 +38,7 @@
     NSTimer *_timeMarkerTimer;
     struct CGPoint _lastPinchDistance;
     struct CGPoint _lastPinchPoint1;
+    float _lastPinchScale;
     _Bool _pinching;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
@@ -67,6 +68,7 @@
     double _scrollAnimationDurationOverride;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float hourScale; // @synthesize hourScale=_hourScale;
 @property(nonatomic) double scrollAnimationDurationOverride; // @synthesize scrollAnimationDurationOverride=_scrollAnimationDurationOverride;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
@@ -91,7 +93,6 @@
 @property(copy, nonatomic) NSDateComponents *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) __weak id <EKDayViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <EKDayViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)configureOccurrenceViewForGestureController:(id)arg1;
 - (void)addViewToScroller:(id)arg1 isAllDay:(_Bool)arg2;
 - (_Bool)isAllDayLabelHighlighted;
@@ -115,6 +116,7 @@
 - (float)minimumHourScale;
 - (struct CGPoint)_pinchDistanceForGestureRecognizer:(id)arg1;
 - (void)_doubleTap:(id)arg1;
+- (id)dayViewContent:(id)arg1 selectedCopyViewForOccurrenceView:(id)arg2;
 - (void)_timeViewTapped:(id)arg1;
 - (void)dayViewContentDidCompleteAsyncLoadAndLayout:(id)arg1;
 - (void)dayViewContent:(id)arg1 didTapPinnedOccurrence:(id)arg2;

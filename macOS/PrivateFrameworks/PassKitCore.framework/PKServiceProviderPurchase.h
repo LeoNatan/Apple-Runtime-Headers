@@ -27,6 +27,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)purchaseWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) NSString *partnerMetadata; // @synthesize partnerMetadata=_partnerMetadata;
 @property(copy, nonatomic) NSString *signature; // @synthesize signature=_signature;
@@ -38,7 +39,6 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(copy, nonatomic) NSString *visibleTransactionIdentifier; // @synthesize visibleTransactionIdentifier=_visibleTransactionIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isEqualToServiceProviderPurchase:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

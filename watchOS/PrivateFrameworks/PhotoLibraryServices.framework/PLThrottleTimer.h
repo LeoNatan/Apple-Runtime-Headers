@@ -23,10 +23,10 @@
     double _maxTimeout;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double maxTimeout; // @synthesize maxTimeout=_maxTimeout;
 @property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(readonly, nonatomic) SEL action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)setPaused:(_Bool)arg1;
 - (void)ping;

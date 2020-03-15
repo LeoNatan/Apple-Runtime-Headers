@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     NSString *_stringToAnnounce;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringToAnnounce; // @synthesize stringToAnnounce=_stringToAnnounce;
 @property(nonatomic) BOOL performElementUpdateImmediately; // @synthesize performElementUpdateImmediately=_performElementUpdateImmediately;
 @property(nonatomic) BOOL forceUpdate; // @synthesize forceUpdate=_forceUpdate;
 @property(nonatomic) BOOL screenChanged; // @synthesize screenChanged=_screenChanged;
 @property(retain, nonatomic) SCRApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)aggregateNotificationInfo:(id)arg1;
 - (struct __AXUIElement *)elementToFocus;

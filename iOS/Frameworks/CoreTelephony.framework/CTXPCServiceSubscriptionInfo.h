@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subscriptionsValid; // @synthesize subscriptionsValid=_subscriptionsValid;
 @property(retain, nonatomic) NSArray *subscriptionsInUse; // @synthesize subscriptionsInUse=_subscriptionsInUse;
 @property(retain, nonatomic) NSArray *subscriptions; // @synthesize subscriptions=_subscriptions;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

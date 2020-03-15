@@ -20,9 +20,9 @@
     WBSHistoryURLCompletionDataStore *_urlCompletionDataStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBSHistoryURLCompletionDataStore *urlCompletionDataStore; // @synthesize urlCompletionDataStore=_urlCompletionDataStore;
 @property(readonly, nonatomic) WBSHistoryDatabaseAccessBroker *databaseAccessBroker; // @synthesize databaseAccessBroker=_databaseAccessBroker;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *databaseURL;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (BOOL)_connectionIsEntitledToUseUserDatabase:(id)arg1;

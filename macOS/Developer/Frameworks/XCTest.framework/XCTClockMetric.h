@@ -18,8 +18,8 @@
 
 + (id)realTime;
 + (id)monotonicTime;
-@property(retain, nonatomic) MXMClockMetric *_underlyingMetric; // @synthesize _underlyingMetric=__underlyingMetric;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MXMClockMetric *_underlyingMetric; // @synthesize _underlyingMetric=__underlyingMetric;
 - (id)reportMeasurementsFromStartTime:(id)arg1 toEndTime:(id)arg2 error:(id *)arg3;
 - (void)didStopMeasuringAtTimestamp:(id)arg1;
 - (void)didStartMeasuringAtTimestamp:(id)arg1;

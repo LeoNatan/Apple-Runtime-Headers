@@ -32,9 +32,9 @@
     MPVolumeController *_volumeController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPAVItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak MPInlineVideoController *masterController; // @synthesize masterController=_masterController;
-- (void).cxx_destruct;
 - (void)_viewWasPinched:(id)arg1;
 - (void)_viewWasTapped:(id)arg1;
 - (void)_showOverlayDidEnd;

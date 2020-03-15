@@ -15,8 +15,8 @@
     _Bool _showsSearchField;
 }
 
-@property(nonatomic) _Bool showsSearchField; // @synthesize showsSearchField=_showsSearchField;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showsSearchField; // @synthesize showsSearchField=_showsSearchField;
 @property(readonly, nonatomic) float searchFieldOffset;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

@@ -23,10 +23,10 @@
     id <MMTermsOfServiceControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLRequest *tosURLRequest; // @synthesize tosURLRequest=_tosURLRequest;
 @property(retain, nonatomic) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
 @property(nonatomic) id <MMTermsOfServiceControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;
 - (void)mmWebKitViewControllerDidFailLoading:(id)arg1 error:(id)arg2;
 - (void)mmWebKitViewControllerDidSucceed:(id)arg1;

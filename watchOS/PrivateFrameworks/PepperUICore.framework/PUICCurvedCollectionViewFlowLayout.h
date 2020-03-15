@@ -24,9 +24,9 @@
 
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets centeringRectInsets; // @synthesize centeringRectInsets=_centeringRectInsets;
 @property(readonly, nonatomic) NSArray *sectionTitleOffsets; // @synthesize sectionTitleOffsets=_sectionTitleOffsets;
-- (void).cxx_destruct;
 - (void)getProposedContentOffset:(struct CGPoint *)arg1 andMostVisibleIndexPath:(id *)arg2 forContentOffset:(struct CGPoint)arg3;
 - (id)mostVisibleIndexPathForProposedContentOffset:(struct CGPoint)arg1;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;

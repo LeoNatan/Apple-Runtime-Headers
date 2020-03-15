@@ -16,8 +16,8 @@
     id <EKUISummary> _gadget;
 }
 
-@property __weak id <EKUISummary> gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
+@property __weak id <EKUISummary> gadget; // @synthesize gadget=_gadget;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (BOOL)accessibilityPerformPress;
 - (id)accessibilityLabel;

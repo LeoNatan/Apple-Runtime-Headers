@@ -17,12 +17,12 @@
     long long _personFaceCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;
 @property(readonly, nonatomic) long long personFaceCount; // @synthesize personFaceCount=_personFaceCount;
 @property(readonly, copy, nonatomic) NSString *personLocalIdentifier; // @synthesize personLocalIdentifier=_personLocalIdentifier;
 @property(readonly, copy, nonatomic) NSString *keyFaceLocalIdentifier; // @synthesize keyFaceLocalIdentifier=_keyFaceLocalIdentifier;
 @property(readonly, nonatomic) long long keyFaceClusterSequenceNumber; // @synthesize keyFaceClusterSequenceNumber=_keyFaceClusterSequenceNumber;
-- (void).cxx_destruct;
 - (id)description;
 - (id)suggestionDictionaryRepresentation;
 - (id)initWithSuggestionDictionary:(id)arg1;

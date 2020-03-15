@@ -26,12 +26,12 @@
 }
 
 + (id)defaultValueForKey:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_0b1c536a clearColor; // @synthesize clearColor=_clearColor;
 @property(nonatomic) BOOL clearsBackground; // @synthesize clearsBackground=_clearsBackground;
 @property(nonatomic) int colorMode; // @synthesize colorMode=_colorMode;
 @property(nonatomic) BOOL rendersAsynchronously; // @synthesize rendersAsynchronously=_rendersAsynchronously;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)waitUntilAsyncRenderingCompleted;
 - (void)_scheduleCollection;

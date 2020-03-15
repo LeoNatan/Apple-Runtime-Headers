@@ -17,10 +17,10 @@
     UINavigationController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(readonly, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)_backButtonView;
 - (void)_enumerateDestinationViewControllersUsingBlock:(CDUnknownBlockType)arg1;

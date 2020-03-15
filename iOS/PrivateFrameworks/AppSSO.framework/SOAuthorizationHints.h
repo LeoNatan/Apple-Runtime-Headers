@@ -13,8 +13,8 @@
     NSString *_localizedExtensionBundleDisplayName;
 }
 
-@property(readonly, nonatomic) NSString *localizedExtensionBundleDisplayName; // @synthesize localizedExtensionBundleDisplayName=_localizedExtensionBundleDisplayName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *localizedExtensionBundleDisplayName; // @synthesize localizedExtensionBundleDisplayName=_localizedExtensionBundleDisplayName;
 - (id)description;
 - (id)initWithAuthorizationHintsCore:(id)arg1;
 

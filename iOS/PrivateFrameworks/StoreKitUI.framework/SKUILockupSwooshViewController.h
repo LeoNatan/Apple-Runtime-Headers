@@ -34,12 +34,12 @@
 }
 
 + (long long)_swooshTypeForLockups:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *seeAllURL; // @synthesize seeAllURL=_seeAllURL;
 @property(nonatomic, getter=isSeeAllHidden) _Bool seeAllHidden; // @synthesize seeAllHidden=_seeAllHidden;
 @property(nonatomic) long long swooshType; // @synthesize swooshType=_swooshType;
 @property(copy, nonatomic) NSArray *lockups; // @synthesize lockups=_lockups;
 @property(readonly, nonatomic) SKUIItemArtworkContext *artworkContext; // @synthesize artworkContext=_artworkContext;
-- (void).cxx_destruct;
 - (CDStruct_df87b2ae)_lockupSwooshMetrics;
 - (void)_reloadSizes;
 - (id)_newLockupComponentWithItem:(id)arg1 defaultStyle:(struct SKUILockupStyle)arg2;

@@ -23,11 +23,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long timeSinceLastSuccess; // @synthesize timeSinceLastSuccess=_timeSinceLastSuccess;
 @property(nonatomic) unsigned long long countSinceLastSuccess; // @synthesize countSinceLastSuccess=_countSinceLastSuccess;
 @property(retain, nonatomic) HDAWDHealthKitCloudSyncEvent *event; // @synthesize event=_event;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

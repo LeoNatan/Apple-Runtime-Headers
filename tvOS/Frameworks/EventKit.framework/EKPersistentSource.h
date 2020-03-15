@@ -16,8 +16,8 @@
 + (Class)meltedClass;
 + (id)relations;
 + (id)defaultPropertiesToLoad;
-@property(retain) EKFrozenReminderSource *reminderSource; // @synthesize reminderSource=_reminderSource;
 - (void).cxx_destruct;
+@property(retain) EKFrozenReminderSource *reminderSource; // @synthesize reminderSource=_reminderSource;
 - (id)description;
 - (void)setDelegatedAccountOwnerStoreID:(id)arg1;
 - (id)delegatedAccountOwnerStoreID;

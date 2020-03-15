@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) NSString *packagePath; // @synthesize packagePath=_packagePath;
 @property(retain, nonatomic) NSString *anchorPath; // @synthesize anchorPath=_anchorPath;
-- (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

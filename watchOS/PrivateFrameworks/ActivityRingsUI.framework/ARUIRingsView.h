@@ -45,6 +45,7 @@
 + (id)ringsViewConfiguredForOneRingOnWatchOfType:(int)arg1;
 + (id)ringsViewConfiguredForThreeRingsOnWatchWithRenderer:(id)arg1;
 + (id)ringsViewConfiguredForThreeRingsOnWatch;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float screenScale; // @synthesize screenScale=_screenScale;
 @property(retain, nonatomic) UIImage *iconSpriteImage; // @synthesize iconSpriteImage=_iconSpriteImage;
 @property(nonatomic) unsigned int iconTextureColumns; // @synthesize iconTextureColumns=_iconTextureColumns;
@@ -57,7 +58,6 @@
 @property(nonatomic) _Bool discardBackBuffers; // @synthesize discardBackBuffers=_discardBackBuffers;
 @property(nonatomic) _Bool shouldBypassApplicationStateChecking; // @synthesize shouldBypassApplicationStateChecking=_shouldBypassApplicationStateChecking;
 @property(readonly, nonatomic) ARUIRingsViewRenderer *renderer; // @synthesize renderer=_renderer;
-- (void).cxx_destruct;
 - (void)setShouldRenderOnLayout:(_Bool)arg1;
 - (_Bool)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;

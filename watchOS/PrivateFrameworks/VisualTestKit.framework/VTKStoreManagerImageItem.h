@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)itemWithImage:(id)arg1 itemType:(unsigned int)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *fileSufix; // @synthesize fileSufix=_fileSufix;
 @property(readonly, nonatomic) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(readonly, nonatomic) unsigned int itemType; // @synthesize itemType=_itemType;
 @property(readonly, nonatomic) NSData *itemData; // @synthesize itemData=_itemData;
-- (void).cxx_destruct;
 - (id)attachWithThestID:(id)arg1;
 - (id)fileNameWithTestID:(id)arg1;
 - (id)initWithData:(id)arg1 itemType:(unsigned int)arg2;

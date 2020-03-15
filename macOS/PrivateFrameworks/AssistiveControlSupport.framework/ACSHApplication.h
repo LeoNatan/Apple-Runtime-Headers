@@ -17,11 +17,11 @@
 }
 
 + (id)createWithItemAtPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *_icon; // @synthesize _icon=__icon;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 - (void)_resetDisplayValues;
 @property(readonly, copy, nonatomic) NSString *resolvedPath;
 @property(readonly, nonatomic) NSImage *icon;

@@ -15,8 +15,8 @@
 }
 
 + (id)reuseIdentifier;
-@property(nonatomic) _Bool showsTopSeparator; // @synthesize showsTopSeparator=_showsTopSeparator;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showsTopSeparator; // @synthesize showsTopSeparator=_showsTopSeparator;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (double)rowHeight;

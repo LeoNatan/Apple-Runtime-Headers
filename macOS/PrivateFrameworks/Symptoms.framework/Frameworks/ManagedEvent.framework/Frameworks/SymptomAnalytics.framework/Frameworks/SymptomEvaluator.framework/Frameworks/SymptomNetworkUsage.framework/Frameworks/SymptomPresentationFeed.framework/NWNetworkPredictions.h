@@ -19,11 +19,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) long long resolutionSeconds; // @synthesize resolutionSeconds=_resolutionSeconds;
 @property(readonly) double confidence; // @synthesize confidence=_confidence;
 @property(readonly) long long toQuality; // @synthesize toQuality=_toQuality;
 @property(readonly) NSDate *changePointAt; // @synthesize changePointAt=_changePointAt;
-- (void).cxx_destruct;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

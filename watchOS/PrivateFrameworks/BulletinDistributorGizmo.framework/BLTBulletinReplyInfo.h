@@ -16,11 +16,11 @@
     NSString *_contactIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(nonatomic) _Bool overridesDND; // @synthesize overridesDND=_overridesDND;
 @property(copy, nonatomic) NSString *sectionMatchID; // @synthesize sectionMatchID=_sectionMatchID;
 @property(retain, nonatomic) BLTBulletinReplyInfoCompanionInfo *companionInfo; // @synthesize companionInfo=_companionInfo;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasShouldPlayLightsAndSirensState;
 @property(readonly, nonatomic) _Bool hasCompletedReply;
 - (void)_sendReply;

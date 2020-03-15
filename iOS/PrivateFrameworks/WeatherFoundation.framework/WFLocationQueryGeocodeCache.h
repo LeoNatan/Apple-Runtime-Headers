@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     double _expirationInterval;
 }
 
-@property(nonatomic) double expirationInterval; // @synthesize expirationInterval=_expirationInterval;
 - (void).cxx_destruct;
+@property(nonatomic) double expirationInterval; // @synthesize expirationInterval=_expirationInterval;
 - (_Bool)_shouldEvictObjectWithDate:(id)arg1;
 - (void)_setObject:(id)arg1 forKey:(id)arg2 withDate:(id)arg3;
 - (void)removeObjectForKey:(id)arg1;

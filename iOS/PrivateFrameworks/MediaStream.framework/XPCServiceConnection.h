@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak XPCServiceListener *serviceListener; // @synthesize serviceListener=_serviceListener;
 @property(retain, nonatomic) id <NSObject> context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *client; // @synthesize client=_client;
 @property(nonatomic) __weak id <XPCServiceConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (void)shutDownCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)sendMessage:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)workQueueShutDown;

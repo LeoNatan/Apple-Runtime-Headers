@@ -17,11 +17,11 @@
     id <_DUIServerSessionSystemApp> _serverSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_serverSession) id <_DUIServerSessionSystemApp> serverSession; // @synthesize serverSession=_serverSession;
 @property(retain, nonatomic) UIDraggingSystemTouchRoutingPolicy *routingPolicy; // @synthesize routingPolicy=_routingPolicy;
 @property(retain, nonatomic) UIDraggingSystemSessionInfo *info; // @synthesize info=_info;
 @property(nonatomic, getter=isCommandeered) _Bool commandeered; // @synthesize commandeered=_commandeered;
-- (void).cxx_destruct;
 - (void)loadUserActivityForItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)loadURLForItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)_indexOfDragItemInSession:(id)arg1;

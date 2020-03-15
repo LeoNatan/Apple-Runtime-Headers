@@ -27,24 +27,29 @@
     NSObject<OS_dispatch_source> *mHUPSource;
     struct AudioServerPlugInIOCycleInfo _lastIoCycleInfo;
     unsigned int _lastIoBufferFrameSizeSamples;
+    unsigned long long _lastIoBufferWriteTime;
     void *_bufferOfZeroes;
     unsigned int _bufferOfZeroesSizeSamples;
     unsigned int _bufferOfZeroesSizeBytes;
+    unsigned int _tailProcessingLengthInMs;
+    unsigned int _tailMuteAUGraphParamID;
     BOOL _isRunning;
     BOOL _keepGraphInitialized;
     BOOL _processGraphOutputTailOnStop;
     ASDStreamDSPConfiguration *_currentDSPConfiguration;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL processGraphOutputTailOnStop; // @synthesize processGraphOutputTailOnStop=_processGraphOutputTailOnStop;
 @property(nonatomic) BOOL keepGraphInitialized; // @synthesize keepGraphInitialized=_keepGraphInitialized;
 @property(retain, nonatomic) ASDStreamDSPConfiguration *currentDSPConfiguration; // @synthesize currentDSPConfiguration=_currentDSPConfiguration;
 @property(readonly, nonatomic) BOOL isRunning; // @synthesize isRunning=_isRunning;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)driverClassName;
 - (id)diagnosticDescriptionWithIndent:(id)arg1 walkTree:(BOOL)arg2;
+- (void)disableMuteOnStop;
+- (void)enableMuteOnStopUsingParam:(unsigned int)arg1 duration:(unsigned int)arg2;
 - (CDUnknownBlockType)writeMixBlock;
 - (CDUnknownBlockType)processOutputBlock;
 - (CDUnknownBlockType)readInputBlock;
@@ -73,6 +78,7 @@
 - (BOOL)_allocateStreamingResources;
 - (BOOL)changePhysicalFormat:(id)arg1;
 - (void)stopStream;
+- (void)sleepForNumberOfSamples:(unsigned long long)arg1;
 - (void)startStream;
 @property(nonatomic) long long graphAudioValidationMode;
 @property(copy, nonatomic) NSArray *underlyingStreams;

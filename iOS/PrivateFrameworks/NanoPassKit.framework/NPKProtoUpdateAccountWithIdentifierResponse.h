@@ -18,10 +18,10 @@
     CDStruct_eab6c78c _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *errorData; // @synthesize errorData=_errorData;
 @property(retain, nonatomic) NSData *accountData; // @synthesize accountData=_accountData;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

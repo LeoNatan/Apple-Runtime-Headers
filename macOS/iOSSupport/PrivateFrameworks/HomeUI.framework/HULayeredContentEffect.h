@@ -16,9 +16,9 @@
 
 + (id)contentWithTintColor:(id)arg1;
 + (id)contentWithVibrancyEffect:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIVibrancyEffect *vibrancyEffect; // @synthesize vibrancyEffect=_vibrancyEffect;
-- (void).cxx_destruct;
 
 @end
 

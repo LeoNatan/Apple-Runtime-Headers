@@ -19,12 +19,12 @@
     NSUUID *_requestID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *requestID; // @synthesize requestID=_requestID;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(copy) NSArray *results; // @synthesize results=_results;
 @property(readonly) TVSSPlaybackActionOperationRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)start;
 - (_Bool)isAsynchronous;

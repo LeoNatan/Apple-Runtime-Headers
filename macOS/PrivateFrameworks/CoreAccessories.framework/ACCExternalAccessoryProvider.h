@@ -22,13 +22,13 @@
 }
 
 + (id)accessoryDictionaryForLogging:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *currentlyConnectedAccessories; // @synthesize currentlyConnectedAccessories=_currentlyConnectedAccessories;
 @property(retain, nonatomic) NSDictionary *eaClientRegistrationInfo; // @synthesize eaClientRegistrationInfo=_eaClientRegistrationInfo;
 @property(nonatomic) int clientCapabilities; // @synthesize clientCapabilities=_clientCapabilities;
 @property(retain, nonatomic) id <ACCExternalAccessoryXPCServerProtocol> remoteObject; // @synthesize remoteObject=_remoteObject;
 @property(retain, nonatomic) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
 @property(nonatomic) __weak id <ACCExternalAccessoryProviderProtocol> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)updateAccessoryInfo:(id)arg1 forUUID:(id)arg2;
 - (void)vehicleStatusUpdate:(id)arg1 forUUID:(id)arg2;
 - (id)currentVehicleInfo:(id)arg1;

@@ -21,12 +21,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) double actualFontShrinkageFactor; // @synthesize actualFontShrinkageFactor=_actualFontShrinkageFactor;
 @property(retain, nonatomic) GKTextStyle *appliedStyle; // @synthesize appliedStyle=_appliedStyle;
 @property(nonatomic) _Bool shouldInhibitReplay; // @synthesize shouldInhibitReplay=_shouldInhibitReplay;
 @property(readonly, nonatomic) _Bool usingAttributedText; // @synthesize usingAttributedText=_usingAttributedText;
 @property(nonatomic) _Bool shouldEnforcePreferredWidth; // @synthesize shouldEnforcePreferredWidth=_shouldEnforcePreferredWidth;
-- (void).cxx_destruct;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)updateConstraints;
 - (struct CGSize)shrinkFontToFitSize:(struct CGSize)arg1;

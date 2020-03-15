@@ -27,12 +27,12 @@
 + (id)synchronousServer;
 + (void)setAsynchronousServer:(id)arg1;
 + (id)asynchronousServer;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUCallCapabilitiesState *state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) int token; // @synthesize token=_token;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_updateState:(id)arg1;
 - (void)_retrieveState;
 - (oneway void)capabilityStateUpdated:(id)arg1;

@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     long long _parsecQueryID;
 }
 
-@property(readonly, nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
+- (void).cxx_destruct;
+@property(nonatomic) long long parsecQueryID; // @synthesize parsecQueryID=_parsecQueryID;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier; // @synthesize parsecDomainIdentifier=_parsecDomainIdentifier;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue; // @synthesize sfSearchResultValue=_sfSearchResultValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 - (id)initWithResult:(id)arg1 parsecDomainIdentifier:(id)arg2 forQueryID:(long long)arg3;
 

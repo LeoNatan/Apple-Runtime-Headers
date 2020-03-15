@@ -16,10 +16,10 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSFolderIdType *ParentFolderId; // @synthesize ParentFolderId=_ParentFolderId;
 @property(retain, nonatomic) id ItemOrFolderId; // @synthesize ItemOrFolderId=_ItemOrFolderId;
 @property(retain, nonatomic) NSDateComponents *TimeStamp; // @synthesize TimeStamp=_TimeStamp;
-- (void).cxx_destruct;
 
 @end
 

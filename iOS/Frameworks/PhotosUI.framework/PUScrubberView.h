@@ -59,6 +59,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint __decelerationTargetOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool currentDragBeganOnContent; // @synthesize currentDragBeganOnContent=_currentDragBeganOnContent;
 @property(nonatomic, setter=_setHandlingScrollViewWillEndDragging:) _Bool _isHandlingScrollViewWillEndDragging; // @synthesize _isHandlingScrollViewWillEndDragging=__isHandlingScrollViewWillEndDragging;
 @property(nonatomic, setter=_setScrubbingTransitionProgress:) double _scrubbingTransitionProgress; // @synthesize _scrubbingTransitionProgress=__scrubbingTransitionProgress;
@@ -82,7 +83,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PUScrubberViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(retain, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
-- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)playbackTimeIndicatorTileViewControllerCanFlashIndicator:(id)arg1;

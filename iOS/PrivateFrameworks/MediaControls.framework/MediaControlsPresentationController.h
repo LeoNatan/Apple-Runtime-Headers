@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_backgroundEffectForTraitCollection:(id)arg1 interactive:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTMaterialView *materialView; // @synthesize materialView=_materialView;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(nonatomic) struct CGPoint sourcePoint; // @synthesize sourcePoint=_sourcePoint;
 @property(nonatomic) __weak UIView *presentingView; // @synthesize presentingView=_presentingView;
-- (void).cxx_destruct;
 - (void)_dismissTap:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (struct CGRect)frameOfPresentedViewInContainerView;

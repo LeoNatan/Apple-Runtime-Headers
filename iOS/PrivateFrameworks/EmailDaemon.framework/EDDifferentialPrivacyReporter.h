@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_queue> *_recordingQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *recordingQueue; // @synthesize recordingQueue=_recordingQueue;
 @property(copy, nonatomic) CDUnknownBlockType recordingHandler; // @synthesize recordingHandler=_recordingHandler;
 @property(retain, nonatomic) EDMailDynamicDataAsset *_mailDynamicData; // @synthesize _mailDynamicData;
 @property(nonatomic) __weak id <EMUserProfileProvider> _profileProvider; // @synthesize _profileProvider;
 @property(retain, nonatomic) _MSTTLReference *_userDomains; // @synthesize _userDomains;
 @property(retain, nonatomic) NSString *_recordingKey; // @synthesize _recordingKey;
-- (void).cxx_destruct;
 - (id)_localeIdentifier;
 - (void)_recordSenders:(id)arg1;
 - (_Bool)_isUserAccountDomain:(id)arg1;

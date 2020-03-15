@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     NSArray *_placeHoursViews;
 }
 
-@property(retain, nonatomic) NSArray *placeHoursViews; // @synthesize placeHoursViews=_placeHoursViews;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *placeHoursViews; // @synthesize placeHoursViews=_placeHoursViews;
 - (void)hoursViewDidUpdate:(id)arg1;
 - (void)_setUpConstraints;
 - (void)_contentSizeDidChange;

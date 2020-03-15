@@ -17,11 +17,11 @@
 }
 
 + (id)_descriptionForElementType:(int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MSVLyricsAgent *agent; // @synthesize agent=_agent;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -16,9 +16,9 @@
     HDCodableMedicalDateInterval *_timingPeriod;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalDateInterval *timingPeriod; // @synthesize timingPeriod=_timingPeriod;
 @property(retain, nonatomic) NSString *instruction; // @synthesize instruction=_instruction;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

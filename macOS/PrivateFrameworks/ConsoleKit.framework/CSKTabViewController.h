@@ -21,6 +21,7 @@
     long long _currentSegment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long currentSegment; // @synthesize currentSegment=_currentSegment;
 @property(nonatomic) __weak NSLayoutConstraint *separatorAndContentVerticalConstraint; // @synthesize separatorAndContentVerticalConstraint=_separatorAndContentVerticalConstraint;
 @property(nonatomic) __weak NSBox *horizontalSeparator; // @synthesize horizontalSeparator=_horizontalSeparator;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL showsSeparator; // @synthesize showsSeparator=_showsSeparator;
 @property(nonatomic) __weak id <CSKTabViewControllerDataSource> datasource; // @synthesize datasource=_datasource;
 @property(nonatomic) __weak id <CSKTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)segmentedControlDidClick:(id)arg1;
 - (void)_showSeparator:(BOOL)arg1;
 - (void)_updateContentViewWithCurrentSegment;

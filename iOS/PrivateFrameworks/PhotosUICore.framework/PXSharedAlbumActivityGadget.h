@@ -34,6 +34,7 @@
 }
 
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *oneUpHiddenAssetReferences; // @synthesize oneUpHiddenAssetReferences=_oneUpHiddenAssetReferences;
 @property(copy, nonatomic) NSAttributedString *caption; // @synthesize caption=_caption;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
@@ -50,8 +51,8 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (void)_navigateToAssetView:(id)arg1;
 - (void)_handleCollageViewTap:(id)arg1;
 - (void)_handleActionTap:(id)arg1;
 - (struct CGSize)_performLayoutInRect:(struct CGRect)arg1 updateSubviewFrames:(_Bool)arg2;
@@ -75,7 +76,9 @@
 - (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)uniqueGadgetIdentifier;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)userDidSelectGadget;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)contentViewDidDisappear;
 - (void)contentViewWillAppear;
@@ -93,9 +96,6 @@
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 
 @end
 

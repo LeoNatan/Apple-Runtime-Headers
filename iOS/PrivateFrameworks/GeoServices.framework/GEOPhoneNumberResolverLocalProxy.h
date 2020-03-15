@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     GEOPNRReadersCache *_readersCache;
 }
 
-@property(readonly, retain, nonatomic) GEOPNRReadersCache *readersCache; // @synthesize readersCache=_readersCache;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) GEOPNRReadersCache *readersCache; // @synthesize readersCache=_readersCache;
 - (void)resolvePhoneNumbers:(id)arg1 handler:(CDUnknownBlockType)arg2 queue:(id)arg3;
 - (id)resolveFullyQualifiedPhoneNumber:(id)arg1 inCountry:(id)arg2 withError:(id *)arg3;
 - (id)resolveUnknownFormatPhoneNumber:(id)arg1 inCountry:(id)arg2 withError:(id *)arg3;

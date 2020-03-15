@@ -18,11 +18,11 @@
     SGDHarvestQueueInMemory *_inMemory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SGDHarvestQueueInMemory *inMemory; // @synthesize inMemory=_inMemory;
 @property(readonly, nonatomic) SGDHarvestQueueLegacy *legacyLowPriority; // @synthesize legacyLowPriority=_legacyLowPriority;
 @property(readonly, nonatomic) SGDHarvestQueueLegacy *legacyHighPriority; // @synthesize legacyHighPriority=_legacyHighPriority;
 @property(readonly, nonatomic) SGDHarvestQueueOnDisk *onDisk; // @synthesize onDisk=_onDisk;
-- (void).cxx_destruct;
 - (void)close;
 - (void)countHighPriorityItems:(unsigned long long *)arg1 lowPriorityItems:(unsigned long long *)arg2;
 - (unsigned long long)count;

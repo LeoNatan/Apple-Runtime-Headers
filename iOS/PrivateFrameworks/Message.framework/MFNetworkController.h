@@ -43,8 +43,8 @@
 
 + (id)networkAssertionWithIdentifier:(id)arg1;
 + (id)sharedInstance;
-@property(readonly) int dataIndicator; // @synthesize dataIndicator=_dataIndicator;
 - (void).cxx_destruct;
+@property(readonly) int dataIndicator; // @synthesize dataIndicator=_dataIndicator;
 @property(readonly, nonatomic) AWDMailNetworkDiagnosticsReport *awdNetworkDiagnosticReport;
 - (id)copyDiagnosticInformation;
 - (void)airplaneModeChanged;

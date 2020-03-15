@@ -19,10 +19,10 @@
     struct CLLocationCoordinate2D _coordinates;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinates; // @synthesize coordinates=_coordinates;
 @property(readonly, nonatomic) PGGraphMomentNode *momentNode; // @synthesize momentNode=_momentNode;
 @property(readonly, nonatomic) id <CLSTimeLocationTuple> timeLocationTuple; // @synthesize timeLocationTuple=_timeLocationTuple;
-- (void).cxx_destruct;
 - (void)_createAttendanceDateIntervals;
 @property(readonly, nonatomic) PGMeaningfulEventMatchingCriteria *matchingCriteria; // @synthesize matchingCriteria=_matchingCriteria;
 @property(readonly, nonatomic) NSDateInterval *expandedAttendanceDateInterval; // @synthesize expandedAttendanceDateInterval=_expandedAttendanceDateInterval;

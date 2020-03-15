@@ -18,9 +18,9 @@
 
 + (id)withFilePath:(id)arg1;
 + (id)withFilePath:(id)arg1 contentType:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *httpContentType; // @synthesize httpContentType=_httpContentType;
 @property(copy, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
-- (void).cxx_destruct;
 - (long long)httpContentLength;
 - (id)httpInputStream;
 - (id)initWithFilePath:(id)arg1 contentType:(id)arg2;

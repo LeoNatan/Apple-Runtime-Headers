@@ -28,9 +28,9 @@
 + (_Bool)removeObjectsForKeys:(id)arg1 serviceSpecifier:(id)arg2 error:(id *)arg3;
 + (_Bool)removeObjectsForKeys:(id)arg1 serviceType:(id)arg2 error:(id *)arg3;
 + (id)_log;
+- (void).cxx_destruct;
 @property(readonly) _SWCGeneration *generation; // @synthesize generation=_generation;
 @property(readonly) _SWCServiceSpecifier *serviceSpecifier; // @synthesize serviceSpecifier=_serviceSpecifier;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)redactedDescription;

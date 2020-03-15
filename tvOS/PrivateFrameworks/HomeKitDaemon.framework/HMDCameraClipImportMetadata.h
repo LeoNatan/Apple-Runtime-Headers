@@ -16,11 +16,11 @@
     NSArray *_posterFrames;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSArray *posterFrames; // @synthesize posterFrames=_posterFrames;
 @property(readonly) NSArray *videoSegments; // @synthesize videoSegments=_videoSegments;
 @property(readonly) double targetFragmentDuration; // @synthesize targetFragmentDuration=_targetFragmentDuration;
 @property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)initClipData:(id)arg1;
 
 @end

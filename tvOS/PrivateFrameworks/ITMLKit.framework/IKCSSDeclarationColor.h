@@ -15,9 +15,9 @@
 }
 
 + (id)_stringForColor:(id)arg1 sourceType:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKColor *color; // @synthesize color=_color;
 @property long long sourceType; // @synthesize sourceType=_sourceType;
-- (void).cxx_destruct;
 - (id)_kolorFromParseObject:(id)arg1 sourceType:(long long *)arg2;
 - (id)_linearGradientKolorFromParseFunction:(id)arg1;
 - (id)_keywordKolorFromParseToken:(id)arg1;

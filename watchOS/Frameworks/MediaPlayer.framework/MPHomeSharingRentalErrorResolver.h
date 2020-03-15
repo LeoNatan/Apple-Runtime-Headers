@@ -21,9 +21,9 @@
     SSRentalCheckoutRequest *_request;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long itemID; // @synthesize itemID=_itemID;
 @property(retain, nonatomic) MPHomeSharingML3DataProvider *dataProvider; // @synthesize dataProvider=_dataProvider;
-- (void).cxx_destruct;
 - (_Bool)_errorIsFairPlayError:(id)arg1;
 - (void)requestDidFinish:(id)arg1;
 - (void)request:(id)arg1 didFailWithError:(id)arg2;

@@ -8,13 +8,13 @@
 
 #import <Safari/NSTextFieldDelegate-Protocol.h>
 
-@class NSButton, NSLayoutConstraint, NSSecureTextField, NSString, NSTextField;
+@class NSBundle, NSButton, NSLayoutConstraint, NSSecureTextField, NSString, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface BrowserDataImportPasswordRequestPanelController : NSWindowController <NSTextFieldDelegate>
 {
     BOOL _showsWrongPasswordWarning;
-    long long _importSource;
+    NSBundle *_importSource;
     long long _requestReason;
     NSTextField *_titleLabel;
     NSTextField *_explanationLabel;
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_warningLabelAndSecureTextFieldSpacingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *warningLabelAndSecureTextFieldSpacingConstraint; // @synthesize warningLabelAndSecureTextFieldSpacingConstraint=_warningLabelAndSecureTextFieldSpacingConstraint;
 @property(nonatomic) __weak NSButton *importPasswordsButton; // @synthesize importPasswordsButton=_importPasswordsButton;
 @property(nonatomic) __weak NSSecureTextField *passwordField; // @synthesize passwordField=_passwordField;
@@ -32,8 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSTextField *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) BOOL showsWrongPasswordWarning; // @synthesize showsWrongPasswordWarning=_showsWrongPasswordWarning;
 @property(readonly, nonatomic) long long requestReason; // @synthesize requestReason=_requestReason;
-@property(readonly, nonatomic) long long importSource; // @synthesize importSource=_importSource;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) NSBundle *importSource; // @synthesize importSource=_importSource;
 - (void)_updateWrongPasswordWarning;
 - (void)_updateLabels;
 - (void)_updateTitle;
@@ -41,8 +41,8 @@ __attribute__((visibility("hidden")))
 - (void)controlTextDidChange:(id)arg1;
 - (void)close:(id)arg1;
 - (void)runModalPasswordRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithImportSource:(long long)arg1;
-- (id)initWithImportSource:(long long)arg1 reason:(long long)arg2;
+- (id)initWithImportSource:(id)arg1;
+- (id)initWithImportSource:(id)arg1 reason:(long long)arg2;
 - (void)windowDidLoad;
 - (id)windowNibName;
 - (id)initWithWindow:(id)arg1;

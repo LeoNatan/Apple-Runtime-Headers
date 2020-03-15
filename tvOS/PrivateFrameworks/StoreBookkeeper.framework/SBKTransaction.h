@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_userInfo;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain) SBKRequest *activeRequest; // @synthesize activeRequest=_activeRequest;
 @property(retain) NSURL *requestURL; // @synthesize requestURL=_requestURL;
 @property(readonly, copy) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (id)newRequest;
 - (id)clampsKey;
 - (void)processDataInResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;

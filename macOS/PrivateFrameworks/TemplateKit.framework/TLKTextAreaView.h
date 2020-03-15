@@ -23,6 +23,7 @@
 }
 
 + (id)footNoteLabelFont;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL disableAllObservers; // @synthesize disableAllObservers=_disableAllObservers;
 @property(retain, nonatomic) NUIContainerStackView *footnoteContainer; // @synthesize footnoteContainer=_footnoteContainer;
 @property(retain, nonatomic) TLKTextButton *footnoteButton; // @synthesize footnoteButton=_footnoteButton;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSMutableArray *detailsFields; // @synthesize detailsFields=_detailsFields;
 @property(retain, nonatomic) TLKTitleContainerView *titleContainer; // @synthesize titleContainer=_titleContainer;
 @property __weak id <TLKTextAreaViewDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
-- (void).cxx_destruct;
 - (id)footnoteLabelString;
 - (id)secondaryTitleLabelString;
 - (id)titleLabelString;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (id)serializedInterpretationFromTokens:(id)arg1 transform:(const struct __CFString *)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) double averageConfidenceScore; // @synthesize averageConfidenceScore=_averageConfidenceScore;
 @property(readonly, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)serializedInterpretationWithTransform:(const struct __CFString *)arg1;

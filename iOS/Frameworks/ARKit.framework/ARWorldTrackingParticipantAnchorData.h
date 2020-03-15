@@ -15,8 +15,8 @@
     NSSet *_anchors;
 }
 
-@property(readonly, nonatomic) NSSet *anchors; // @synthesize anchors=_anchors;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSSet *anchors; // @synthesize anchors=_anchors;
 -     // Error parsing type: @160@0:8{?=[4]}16{?=[4]}80@144@152, name: anchorsForCameraWithTransform:referenceOriginTransform:existingAnchors:anchorsToRemove:
 - (id)initWithAnchors:(id)arg1;
 

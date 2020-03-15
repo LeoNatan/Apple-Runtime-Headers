@@ -17,12 +17,12 @@
     NSNumber *_flowUpdatedJulianDay;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char ovulationTestResult; // @synthesize ovulationTestResult=_ovulationTestResult;
 @property(retain, nonatomic) NSNumber *flowUpdatedJulianDay; // @synthesize flowUpdatedJulianDay=_flowUpdatedJulianDay;
 @property(nonatomic) _Bool spotting; // @synthesize spotting=_spotting;
 @property(nonatomic) unsigned char flow; // @synthesize flow=_flow;
 @property(nonatomic) unsigned int julianDay; // @synthesize julianDay=_julianDay;
-- (void).cxx_destruct;
 
 @end
 

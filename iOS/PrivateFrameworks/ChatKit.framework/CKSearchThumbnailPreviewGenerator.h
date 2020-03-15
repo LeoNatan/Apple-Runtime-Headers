@@ -24,6 +24,7 @@
 + (id)sharedInstance;
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *keysWithInFlightLPLinkMetadataGeneration; // @synthesize keysWithInFlightLPLinkMetadataGeneration=_keysWithInFlightLPLinkMetadataGeneration;
 @property(retain, nonatomic) NSMutableSet *keysWithInFlightVideoDurationCalculation; // @synthesize keysWithInFlightVideoDurationCalculation=_keysWithInFlightVideoDurationCalculation;
 @property(retain, nonatomic) NSMutableSet *keysWithInFlightLivePhotoStatus; // @synthesize keysWithInFlightLivePhotoStatus=_keysWithInFlightLivePhotoStatus;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSCache *videoDurationCache; // @synthesize videoDurationCache=_videoDurationCache;
 @property(retain, nonatomic) NSCache *livePhotoStatusCache; // @synthesize livePhotoStatusCache=_livePhotoStatusCache;
 @property(retain, nonatomic) NSCache *thumbnailCache; // @synthesize thumbnailCache=_thumbnailCache;
-- (void).cxx_destruct;
 - (void)_IMSPIQueryMessageItemsWithGUIDs:(id)arg1 results:(CDUnknownBlockType)arg2;
 - (void)_prewarmLinkMetadata:(id)arg1;
 - (id)cachedLinkMetadataForQueryResult:(id)arg1;

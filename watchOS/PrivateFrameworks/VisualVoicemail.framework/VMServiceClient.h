@@ -14,8 +14,8 @@
 }
 
 + (id)sharedClient;
-@property(retain, nonatomic) VMVoicemailManager *voicemailManager; // @synthesize voicemailManager=_voicemailManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VMVoicemailManager *voicemailManager; // @synthesize voicemailManager=_voicemailManager;
 - (void)handleOnlineStatusChangedNotification:(id)arg1;
 - (void)handleSubscriptionStatusChangedNotification:(id)arg1;
 - (void)handleVoicemailsChangedNotification:(id)arg1;

@@ -15,8 +15,8 @@
     NSString *_text;
 }
 
-@property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithText:(id)arg1;

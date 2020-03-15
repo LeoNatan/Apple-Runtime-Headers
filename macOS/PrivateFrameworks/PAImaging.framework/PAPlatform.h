@@ -31,6 +31,7 @@
 }
 
 + (id)platform;
+- (void).cxx_destruct;
 @property BOOL hasRetainedDiscreteGPU; // @synthesize hasRetainedDiscreteGPU=_hasRetainedDiscreteGPU;
 @property(readonly) unsigned long long temporaryCacheSize; // @synthesize temporaryCacheSize=_temporaryCacheSize;
 @property(readonly) unsigned long long thumbnailCacheSize; // @synthesize thumbnailCacheSize=_thumbnailCacheSize;
@@ -44,7 +45,6 @@
 @property(readonly) BOOL hasMuxedGraphics; // @synthesize hasMuxedGraphics=_hasMuxedGraphics;
 @property(readonly) BOOL hasHeadlessGPU; // @synthesize hasHeadlessGPU=_hasHeadlessGPU;
 @property(readonly) NSString *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)_updateMUXLockDown;
 - (void)_updateMUXLockDownIfNeeded;
 - (BOOL)_isPluggedIn;

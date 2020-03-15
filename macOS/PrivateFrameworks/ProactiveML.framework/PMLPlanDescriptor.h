@@ -17,13 +17,13 @@
     NSString *_locale;
 }
 
-+ (struct NSString *)planIdFromString:(id)arg1;
-+ (id)descriptorFromPlanId:(struct NSString *)arg1;
-+ (BOOL)isValidPlanId:(struct NSString *)arg1;
++ (id)planIdFromString:(id)arg1;
++ (id)descriptorFromPlanId:(id)arg1;
++ (BOOL)isValidPlanId:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

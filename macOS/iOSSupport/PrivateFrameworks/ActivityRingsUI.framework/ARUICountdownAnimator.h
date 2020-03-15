@@ -26,10 +26,10 @@
     id <ARUICountdownAnimatorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ARUICountdownAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak ARUICountdownView *countdownView; // @synthesize countdownView=_countdownView;
 @property(retain, nonatomic) ARUICountdownTimeline *timeline; // @synthesize timeline=_timeline;
-- (void).cxx_destruct;
 - (void)_delegate_didFinishAnimating;
 - (void)_delegate_completedAnimation:(id)arg1;
 - (void)_delegate_performingAnimation:(id)arg1 withDuration:(double)arg2;

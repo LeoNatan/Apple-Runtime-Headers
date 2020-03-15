@@ -16,20 +16,20 @@
     NSMutableDictionary *_secondaryCurrentStates;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *secondaryCurrentStates; // @synthesize secondaryCurrentStates=_secondaryCurrentStates;
 @property(readonly) NSMutableDictionary *primaryCurrentStates; // @synthesize primaryCurrentStates=_primaryCurrentStates;
 @property(readonly) NSMutableDictionary *inputImagesToFirstKernel; // @synthesize inputImagesToFirstKernel=_inputImagesToFirstKernel;
 @property(readonly) NSMutableDictionary *inputImagesToSecondKernel; // @synthesize inputImagesToSecondKernel=_inputImagesToSecondKernel;
-- (void).cxx_destruct;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3 params:(CDStruct_96916c69 *)arg4;
-- (void)updateSecondaryCurrentState:(struct NSArray *)arg1 index:(id)arg2 inference:(BOOL)arg3;
-- (void)updateSecondaryCurrentState:(struct NSArray *)arg1 inference:(BOOL)arg2;
-- (void)updatePrimaryCurrentState:(struct NSArray *)arg1 index:(id)arg2 inference:(BOOL)arg3;
-- (void)updatePrimaryCurrentState:(struct NSArray *)arg1 inference:(BOOL)arg2;
-- (void)updateInputToSecondKernel:(struct NSArray *)arg1 index:(id)arg2 inference:(BOOL)arg3;
-- (void)updateInputToSecondKernel:(struct NSArray *)arg1 inference:(BOOL)arg2;
-- (void)updateInputToFirstKernel:(struct NSArray *)arg1 index:(id)arg2 inference:(BOOL)arg3;
-- (void)updateInputToFirstKernel:(struct NSArray *)arg1 inference:(BOOL)arg2;
+- (void)updateSecondaryCurrentState:(id)arg1 index:(id)arg2 inference:(BOOL)arg3;
+- (void)updateSecondaryCurrentState:(id)arg1 inference:(BOOL)arg2;
+- (void)updatePrimaryCurrentState:(id)arg1 index:(id)arg2 inference:(BOOL)arg3;
+- (void)updatePrimaryCurrentState:(id)arg1 inference:(BOOL)arg2;
+- (void)updateInputToSecondKernel:(id)arg1 index:(id)arg2 inference:(BOOL)arg3;
+- (void)updateInputToSecondKernel:(id)arg1 inference:(BOOL)arg2;
+- (void)updateInputToFirstKernel:(id)arg1 index:(id)arg2 inference:(BOOL)arg3;
+- (void)updateInputToFirstKernel:(id)arg1 inference:(BOOL)arg2;
 @property(readonly) NSArray *secondaryCurrentState;
 @property(readonly) NSArray *primaryCurrentState;
 @property(readonly) NSArray *inputToFirstKernel;

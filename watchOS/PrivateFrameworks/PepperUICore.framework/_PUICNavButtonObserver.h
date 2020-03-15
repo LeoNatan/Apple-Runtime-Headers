@@ -15,8 +15,8 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) __weak UINavigationController *currentNavController; // @synthesize currentNavController=_currentNavController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UINavigationController *currentNavController; // @synthesize currentNavController=_currentNavController;
 - (void)_navBackButtonPressed:(id)arg1;
 - (void)_configureObserving;
 

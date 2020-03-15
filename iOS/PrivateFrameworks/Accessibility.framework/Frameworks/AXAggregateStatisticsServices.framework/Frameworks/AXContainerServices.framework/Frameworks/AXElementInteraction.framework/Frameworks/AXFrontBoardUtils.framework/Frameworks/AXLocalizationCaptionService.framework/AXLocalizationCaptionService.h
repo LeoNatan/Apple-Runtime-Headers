@@ -19,8 +19,8 @@
 + (void)startService;
 + (void)_sendMessage:(id)arg1 withIdentifier:(unsigned long long)arg2 errorHandler:(CDUnknownBlockType)arg3;
 + (id)service;
-@property(retain, nonatomic) AXUIClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXUIClient *client; // @synthesize client=_client;
 - (void)connectionWithServiceWasInterruptedForUserInterfaceClient:(id)arg1;
 - (id)_clientIdentifier;
 

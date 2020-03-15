@@ -30,14 +30,17 @@ __attribute__((visibility("hidden")))
     UIFocusAnimationCoordinator *_focusAnimationCoordinator;
     _Bool _shouldAnimateSelectionPlatterInPlace;
     _Bool _prevFocused;
+    _Bool _deferViewUpdateToFocusUpdate;
     _Bool _focused;
     UITabBarButton *_selectedButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool focused; // @synthesize focused=_focused;
 @property(nonatomic) __weak UITabBarButton *selectedButton; // @synthesize selectedButton=_selectedButton;
-- (void).cxx_destruct;
+@property(nonatomic) _Bool deferViewUpdateToFocusUpdate; // @synthesize deferViewUpdateToFocusUpdate=_deferViewUpdateToFocusUpdate;
 - (void)appearance:(id)arg1 categoriesChanged:(long long)arg2;
+- (void)_updateFocusForSnapshotDidEnd:(id)arg1;
 - (struct CGRect)__getRectForPlatterForView:(id)arg1 withFocus:(_Bool)arg2 finalSize:(_Bool)arg3;
 - (struct CGRect)_getRectForFocusedSelectionPlatterForView:(id)arg1 finalSize:(_Bool)arg2;
 - (struct CGRect)_getRectForUnfocusedSelectionPlatterForView:(id)arg1;
@@ -47,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateMotionEffect;
 - (void)_updateColorsWithTitleAnimationDuration:(double)arg1 withDelay:(double)arg2;
 - (void)_updateColors;
-- (void)_updateScrollOffsetIfNeeded;
+- (void)_updateScrollOffset;
 - (void)_updateViews;
 - (void)_updateBackground;
 - (void)_updateBackgroundModern;
@@ -66,6 +69,7 @@ __attribute__((visibility("hidden")))
 - (void)_shim_setCustomBackgroundView:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusedView;
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

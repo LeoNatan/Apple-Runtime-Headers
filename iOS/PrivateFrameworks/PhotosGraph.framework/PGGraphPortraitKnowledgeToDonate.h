@@ -15,10 +15,10 @@
     NSArray *_locationNamedEntities;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *locationNamedEntities; // @synthesize locationNamedEntities=_locationNamedEntities;
 @property(readonly, nonatomic) NSArray *namedEntities; // @synthesize namedEntities=_namedEntities;
 @property(readonly, nonatomic) NSDictionary *topics; // @synthesize topics=_topics;
-- (void).cxx_destruct;
 - (id)initWithTopics:(id)arg1 namedEntities:(id)arg2 locationNamedEntities:(id)arg3;
 
 @end

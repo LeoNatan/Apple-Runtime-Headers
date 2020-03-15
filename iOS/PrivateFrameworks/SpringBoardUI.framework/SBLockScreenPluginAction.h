@@ -18,10 +18,10 @@
 
 + (id)actionWithCompletion:(CDUnknownBlockType)arg1;
 + (id)action;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) long long authenticationPolicy; // @synthesize authenticationPolicy=_authenticationPolicy;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)sendResponseWithSuccess:(_Bool)arg1;
 - (id)initWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;

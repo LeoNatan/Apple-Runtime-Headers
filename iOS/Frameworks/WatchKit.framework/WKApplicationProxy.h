@@ -16,8 +16,8 @@
 + (id)gizmoAppBundleUrlWithPluginUrl:(id)arg1;
 + (id)watchAppBundleUrlWithContainerUrl:(id)arg1;
 + (id)applicationsForContainerProxy:(id)arg1;
-@property(readonly, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 - (id)initWithBundleURL:(id)arg1;
 
 @end

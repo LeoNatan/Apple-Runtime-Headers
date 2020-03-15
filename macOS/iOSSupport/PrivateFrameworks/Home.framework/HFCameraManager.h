@@ -26,6 +26,7 @@
     HFExecutionEnvironment *_executionEnvironment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFExecutionEnvironment *executionEnvironment; // @synthesize executionEnvironment=_executionEnvironment;
 @property(nonatomic) unsigned long long snapshotErrorCount; // @synthesize snapshotErrorCount=_snapshotErrorCount;
 @property(retain, nonatomic) NSDate *snapshotErrorDate; // @synthesize snapshotErrorDate=_snapshotErrorDate;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) NSMapTable *snapshotRequesters; // @synthesize snapshotRequesters=_snapshotRequesters;
 @property(readonly, nonatomic) __weak HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 @property(retain, nonatomic) NSError *cachedStreamError; // @synthesize cachedStreamError=_cachedStreamError;
-- (void).cxx_destruct;
 - (BOOL)_hasStreamRequesters;
 - (BOOL)_hasSnapshotRequesters;
 - (void)executionEnvironmentDidBecomeVisible:(id)arg1;

@@ -35,6 +35,7 @@
 + (id)_defaultRichLinkWhiteList;
 + (id)_newMessagePartsForMessageItem:(id)arg1;
 + (id)_guidForMessage:(id)arg1 url:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isWhitelistedRichLinkSender) BOOL whitelistedRichLinkSender; // @synthesize whitelistedRichLinkSender=_whitelistedRichLinkSender;
 @property(readonly, copy, nonatomic) NSAttributedString *fallbackCorruptText; // @synthesize fallbackCorruptText=_fallbackCorruptText;
 @property(nonatomic) BOOL chatInScrutinyMode; // @synthesize chatInScrutinyMode=_chatInScrutinyMode;
@@ -43,7 +44,6 @@
 @property(nonatomic) struct _NSRange messagePartRange; // @synthesize messagePartRange=_messagePartRange;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(readonly, copy, nonatomic) NSAttributedString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL requiresSiriAttribution;
 - (BOOL)canSendMessageAcknowledgment;
 - (void)_setMessageEditChatItems:(id)arg1;

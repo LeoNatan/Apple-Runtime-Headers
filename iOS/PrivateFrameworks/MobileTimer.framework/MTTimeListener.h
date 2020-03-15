@@ -18,10 +18,10 @@
     MTObserverStore *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MTObserverStore *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
-- (void).cxx_destruct;
 - (void)registerObserver:(id)arg1;
 - (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (double)assertionTimeOutForNotification:(id)arg1 ofType:(long long)arg2;

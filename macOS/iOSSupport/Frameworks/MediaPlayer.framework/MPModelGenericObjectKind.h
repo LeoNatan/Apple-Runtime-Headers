@@ -16,8 +16,8 @@
 + (BOOL)supportsSecureCoding;
 + (id)kindWithRelationshipKinds:(id)arg1;
 + (id)identityKind;
-@property(readonly, nonatomic) NSDictionary *relationshipKinds; // @synthesize relationshipKinds=_relationshipKinds;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *relationshipKinds; // @synthesize relationshipKinds=_relationshipKinds;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

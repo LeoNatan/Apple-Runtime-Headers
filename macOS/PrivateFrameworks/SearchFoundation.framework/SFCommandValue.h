@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) SFReferentialCommand *referentialCommand; // @synthesize referentialCommand=_referentialCommand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SFReferentialCommand *referentialCommand; // @synthesize referentialCommand=_referentialCommand;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

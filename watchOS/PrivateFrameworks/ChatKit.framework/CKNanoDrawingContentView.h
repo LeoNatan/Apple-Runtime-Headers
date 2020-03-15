@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _drawRectBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType drawRectBlock; // @synthesize drawRectBlock=_drawRectBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType drawRectBlock; // @synthesize drawRectBlock=_drawRectBlock;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

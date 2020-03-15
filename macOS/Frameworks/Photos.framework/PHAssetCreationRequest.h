@@ -9,7 +9,7 @@
 #import <Photos/PHInsertChangeRequest-Protocol.h>
 #import <Photos/PHMomentSharePropertySet-Protocol.h>
 
-@class NSData, NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationMetadataCopyOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper, PLManagedAsset;
+@class NSData, NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableDictionary, NSObject, NSString, PHAssetCreationAdjustmentBakeInOptions, PHAssetCreationMetadataCopyOptions, PHAssetCreationPhotoStreamPublishingRequest, PHAssetResourceBag, PHMomentShare, PHRelationshipChangeRequestHelper, PLManagedAsset;
 
 @interface PHAssetCreationRequest : PHAssetChangeRequest <PHInsertChangeRequest, PHMomentSharePropertySet>
 {
@@ -20,8 +20,8 @@
     BOOL _shouldCreateScreenshot;
     CDUnknownBlockType _concurrentWorkBlock;
     PLManagedAsset *_asset;
-    struct NSObject *_previewImage;
-    struct NSObject *_thumbnailImage;
+    NSObject *_previewImage;
+    NSObject *_thumbnailImage;
     NSData *_originalHash;
     BOOL _shouldPerformConcurrentWork;
     BOOL _duplicateLivePhotoAsStill;
@@ -56,6 +56,7 @@
 + (id)creationRequestForAssetFromImageData:(id)arg1;
 + (id)creationRequestForAsset;
 + (id)_creationRequestForAssetUsingUUID:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setDestinationAssetAvailabilityHandler:) CDUnknownBlockType destinationAssetAvailabilityHandler; // @synthesize destinationAssetAvailabilityHandler=_destinationAssetAvailabilityHandler;
 @property(copy, nonatomic, setter=_setMetadataCopyOptions:) PHAssetCreationMetadataCopyOptions *metadataCopyOptions; // @synthesize metadataCopyOptions=_metadataCopyOptions;
 @property(copy, nonatomic, setter=_setAdjustmentBakeInOptions:) PHAssetCreationAdjustmentBakeInOptions *adjustmentBakeInOptions; // @synthesize adjustmentBakeInOptions=_adjustmentBakeInOptions;
@@ -73,7 +74,6 @@
 @property(retain, nonatomic, setter=_setPhotoStreamPublishingRequest:) PHAssetCreationPhotoStreamPublishingRequest *_photoStreamPublishingRequest; // @synthesize _photoStreamPublishingRequest=__photoStreamPublishingRequest;
 @property(retain, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
 @property(nonatomic) short importedBy; // @synthesize importedBy=_importedBy;
-- (void).cxx_destruct;
 @property(nonatomic, getter=_shouldCreateScreenshot, setter=_setShouldCreateScreenshot:) BOOL shouldCreateScreenshot;
 @property(nonatomic, setter=_setDuplicateAllowsPrivateMetadata:) BOOL duplicateAllowsPrivateMetadata;
 - (BOOL)isNew;

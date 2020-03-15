@@ -22,13 +22,13 @@
     NSDate *_lastSessionTimestamp;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastSessionTimestamp; // @synthesize lastSessionTimestamp=_lastSessionTimestamp;
 @property(retain, nonatomic) TVRCKeyboardAttributes *currentAttributes; // @synthesize currentAttributes=_currentAttributes;
 @property(retain, nonatomic) RTIInputSystemSourceSession *currentSession; // @synthesize currentSession=_currentSession;
 @property(nonatomic) BOOL editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) _TVRCMRTelevisionWrapper *television; // @synthesize television=_television;
 @property(nonatomic) __weak _TVRXKeyboardController *keyboardController; // @synthesize keyboardController=_keyboardController;
-- (void).cxx_destruct;
 - (BOOL)_shouldAllowSourceSession;
 - (void)_receivedInputSourceSession:(id)arg1;
 - (void)_stopObservingTelevisionEditingSession;

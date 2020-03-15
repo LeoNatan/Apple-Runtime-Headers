@@ -14,9 +14,9 @@
     unsigned int _priority;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) PLPhotoLibraryBundle *bundle; // @synthesize bundle=_bundle;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithBundle:(id)arg1 priority:(unsigned int)arg2;

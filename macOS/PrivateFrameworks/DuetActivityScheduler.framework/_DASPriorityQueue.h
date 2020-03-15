@@ -17,11 +17,11 @@
 }
 
 + (id)priorityQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *highestPriority; // @synthesize highestPriority=_highestPriority;
 @property(retain, nonatomic) NSNumber *lowestPriority; // @synthesize lowestPriority=_lowestPriority;
 @property(retain, nonatomic) NSMutableDictionary *objects; // @synthesize objects=_objects;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 - (id)description;
 - (id)allObjects;
 - (void)removeObject:(id)arg1 atPriority:(unsigned long long)arg2;

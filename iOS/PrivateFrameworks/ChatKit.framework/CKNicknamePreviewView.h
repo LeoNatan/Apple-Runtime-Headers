@@ -19,6 +19,7 @@
     CNContact *_contact;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) CKCNSharingProfileAvatarItemProvider *avatarItemProvider; // @synthesize avatarItemProvider=_avatarItemProvider;
 @property(retain, nonatomic) NSArray *senderStrings; // @synthesize senderStrings=_senderStrings;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *avatarViews; // @synthesize avatarViews=_avatarViews;
 @property(retain, nonatomic) UILabel *senderLabel; // @synthesize senderLabel=_senderLabel;
 @property(nonatomic) _Bool shouldStopAnimation; // @synthesize shouldStopAnimation=_shouldStopAnimation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CNSharingProfileAvatarItemProviderConfiguration *avatarItemProviderConfiguration;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)senderStringForAvatarType:(long long)arg1;

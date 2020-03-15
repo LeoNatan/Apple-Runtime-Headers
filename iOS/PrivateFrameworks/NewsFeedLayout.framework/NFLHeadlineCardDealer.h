@@ -23,13 +23,13 @@
     double _tileProminenceScoreBalanceValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double tileProminenceScoreBalanceValue; // @synthesize tileProminenceScoreBalanceValue=_tileProminenceScoreBalanceValue;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(retain, nonatomic) NSOperationQueue *tilingOperationQueue; // @synthesize tilingOperationQueue=_tilingOperationQueue;
 @property(retain, nonatomic) NFLRankedLayoutSource *rankedLayoutSource; // @synthesize rankedLayoutSource=_rankedLayoutSource;
 @property(copy, nonatomic) NFLFeedSettings *feedSettings; // @synthesize feedSettings=_feedSettings;
 @property(copy, nonatomic) id <NFLFeedLayoutSearchConfiguration> feedLayoutSearchConfiguration; // @synthesize feedLayoutSearchConfiguration=_feedLayoutSearchConfiguration;
-- (void).cxx_destruct;
 - (void)_validateFeedLayout;
 - (CDUnknownBlockType)_segmentTypeDescriptionProvider;
 - (Class)rankedLayoutSource:(id)arg1 rankedLayoutGenerationOperationClassForRequest:(id)arg2;

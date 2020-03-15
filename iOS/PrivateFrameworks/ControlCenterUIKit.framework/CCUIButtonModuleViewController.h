@@ -16,8 +16,8 @@
     _Bool _expanded;
 }
 
-@property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 - (void)didTransitionToExpandedContentMode:(_Bool)arg1;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;

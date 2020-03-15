@@ -17,9 +17,9 @@
     unsigned int _numberOfGroupsQueried;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned int numberOfGroupsQueried; // @synthesize numberOfGroupsQueried=_numberOfGroupsQueried;
 @property(readonly) unsigned int numberOfGroupsChecked; // @synthesize numberOfGroupsChecked=_numberOfGroupsChecked;
-- (void).cxx_destruct;
 - (unsigned long long)idOfGroupWithText:(id)arg1 identifier:(id)arg2 category:(unsigned int)arg3 owningGroupId:(unsigned long long)arg4 didUpdateGroup:(out _Bool *)arg5;
 - (id)initWithDelegate:(id)arg1;
 

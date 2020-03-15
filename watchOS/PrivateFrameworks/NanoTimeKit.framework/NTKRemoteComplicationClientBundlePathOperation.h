@@ -11,8 +11,8 @@
     CDUnknownBlockType _bundlePathHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType bundlePathHandler; // @synthesize bundlePathHandler=_bundlePathHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType bundlePathHandler; // @synthesize bundlePathHandler=_bundlePathHandler;
 - (void)activateWithClient:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)canCoalesceWithOperation:(id)arg1;
 

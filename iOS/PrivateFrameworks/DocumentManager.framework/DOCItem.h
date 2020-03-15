@@ -26,11 +26,11 @@
 + (id)documentsURLsForItems:(id)arg1;
 + (void)_fetchDocumentURLFromBookmarkableString:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)_wrapperForURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) FPItem *fileProviderItem; // @synthesize fileProviderItem=_fileProviderItem;
 @property(retain) NSString *bookmarkableString; // @synthesize bookmarkableString=_bookmarkableString;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(copy, nonatomic) NSString *contentType; // @synthesize contentType=_contentType;
-- (void).cxx_destruct;
 - (void)setNeedsToBeImported:(_Bool)arg1;
 - (_Bool)needsToBeImported;
 - (id)description;

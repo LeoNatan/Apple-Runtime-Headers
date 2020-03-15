@@ -31,6 +31,7 @@
 }
 
 + (id)configurationWithCreditAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimeZone *productTimeZone; // @synthesize productTimeZone=_productTimeZone;
 @property(copy, nonatomic) NSArray *futurePayments; // @synthesize futurePayments=_futurePayments;
 @property(copy, nonatomic) NSArray *periodTransactions; // @synthesize periodTransactions=_periodTransactions;
@@ -48,8 +49,8 @@
 @property(nonatomic) long long compoundingPeriods; // @synthesize compoundingPeriods=_compoundingPeriods;
 @property(retain, nonatomic, setter=setAPR:) NSDecimalNumber *apr; // @synthesize apr=_apr;
 @property(nonatomic) unsigned long long calculationMethod; // @synthesize calculationMethod=_calculationMethod;
-- (void).cxx_destruct;
 - (id)description;
+- (long long)_daysInYearForDate:(id)arg1 withTimeZone:(id)arg2;
 - (void)updateWithCreditAccount:(id)arg1;
 - (id)init;
 

@@ -24,6 +24,7 @@
 }
 
 + (id)sharedRegistry;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *actionsByCategory; // @synthesize actionsByCategory=_actionsByCategory;
 @property(readonly, nonatomic) NSMapTable *actionsByActionProvider; // @synthesize actionsByActionProvider=_actionsByActionProvider;
 @property(readonly, nonatomic) NSDictionary *actionsByIdentifier; // @synthesize actionsByIdentifier=_actionsByIdentifier;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) NSArray *actionProvidersForFilling; // @synthesize actionProvidersForFilling=_actionProvidersForFilling;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cacheUpdateAndFillQueue; // @synthesize cacheUpdateAndFillQueue=_cacheUpdateAndFillQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateAccessQueue; // @synthesize stateAccessQueue=_stateAccessQueue;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)actionProviderDidChange:(id)arg1 updatedActions:(id)arg2 removedActions:(id)arg3 addedActions:(id)arg4;
 - (void)addActions:(id)arg1 fromActionProvider:(id)arg2;

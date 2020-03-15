@@ -18,13 +18,13 @@
     struct CGRect _headerRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long visualPosition; // @synthesize visualPosition=_visualPosition;
 @property(readonly, nonatomic) id <PXDisplayAsset> headerAsset; // @synthesize headerAsset=_headerAsset;
 @property(readonly, nonatomic) CDStruct_2bd92d94 headerCornerRadius; // @synthesize headerCornerRadius=_headerCornerRadius;
 @property(readonly, nonatomic) struct CGRect headerRect; // @synthesize headerRect=_headerRect;
 @property(readonly, nonatomic) struct CGRect keyAssetRect; // @synthesize keyAssetRect=_keyAssetRect;
 @property(readonly, nonatomic) struct CGRect sectionRect; // @synthesize sectionRect=_sectionRect;
-- (void).cxx_destruct;
 - (CDStruct_2bd92d94)cornerRadiusForRect:(struct CGRect)arg1;
 - (struct CGRect)resizeRect:(struct CGRect)arg1 fromGeometryDesciptor:(id)arg2 inContainer:(long long)arg3 resizing:(unsigned long long)arg4;
 - (id)sectionGeometryDescriptorWithHeaderRect:(struct CGRect)arg1;

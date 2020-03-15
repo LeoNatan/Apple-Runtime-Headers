@@ -14,8 +14,8 @@
 }
 
 + (id)sharedReporter;
-@property(retain) SDRDiagnosticReporter *diagnosticReporter; // @synthesize diagnosticReporter=_diagnosticReporter;
 - (void).cxx_destruct;
+@property(retain) SDRDiagnosticReporter *diagnosticReporter; // @synthesize diagnosticReporter=_diagnosticReporter;
 - (void)reportIssue:(id)arg1 subtype:(id)arg2 description:(id)arg3;
 - (void)reportIssue:(id)arg1 subtype:(id)arg2 description:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)init;

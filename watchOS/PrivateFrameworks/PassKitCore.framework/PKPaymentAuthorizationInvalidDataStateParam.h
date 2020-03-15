@@ -17,11 +17,11 @@
 }
 
 + (id)paramWithDataType:(int)arg1 status:(int)arg2 error:(id)arg3 clientErrors:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSArray *clientErrors; // @synthesize clientErrors=_clientErrors;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) int dataType; // @synthesize dataType=_dataType;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

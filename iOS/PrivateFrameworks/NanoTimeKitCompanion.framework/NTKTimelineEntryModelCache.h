@@ -21,10 +21,10 @@
 + (id)_startOfDayAfterDate:(id)arg1;
 + (id)_startOfDayBeforeDate:(id)arg1;
 + (id)_startOfDayForDate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <NTKTimelineEntryModelCacheDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSDate *cacheEndDate; // @synthesize cacheEndDate=_cacheEndDate;
 @property(readonly, nonatomic) NSDate *cacheStartDate; // @synthesize cacheStartDate=_cacheStartDate;
-- (void).cxx_destruct;
 - (id)calendar;
 - (id)_cachedEntryModelAfterDate:(id)arg1 limit:(unsigned long long)arg2;
 - (id)_cachedEntryModelBeforeDate:(id)arg1 limit:(unsigned long long)arg2;

@@ -20,10 +20,10 @@
 + (id)dimensionsForVideoMarker;
 + (id)localizedLearnMoreText;
 + (id)localizedAdMarkerText;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *constraintWidth; // @synthesize constraintWidth=_constraintWidth;
 @property(retain, nonatomic) NSLayoutConstraint *constraintHeight; // @synthesize constraintHeight=_constraintHeight;
 @property(nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)accessibilityLabel;
 - (id)accessibilityElements;

@@ -17,9 +17,9 @@
     SBBannerContextView *_bannerContextView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBBannerContextView *bannerContextView; // @synthesize bannerContextView=_bannerContextView;
 @property(retain, nonatomic) id <SBStarkNotificationsConfiguring> starkNotificationsConfiguration; // @synthesize starkNotificationsConfiguration=_starkNotificationsConfiguration;
-- (void).cxx_destruct;
 - (id)bannerContext;
 - (_Bool)_disableRasterizeInAnimations;
 - (void)prepareForReuse;

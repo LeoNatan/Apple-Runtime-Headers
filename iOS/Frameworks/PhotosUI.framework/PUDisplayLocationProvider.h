@@ -16,9 +16,9 @@
     struct CGPoint __point;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <UICoordinateSpace> _coordinateSpace; // @synthesize _coordinateSpace=__coordinateSpace;
 @property(readonly, nonatomic) struct CGPoint _point; // @synthesize _point=__point;
-- (void).cxx_destruct;
 - (struct CGPoint)locationInView:(id)arg1;
 - (id)initWithPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (id)init;

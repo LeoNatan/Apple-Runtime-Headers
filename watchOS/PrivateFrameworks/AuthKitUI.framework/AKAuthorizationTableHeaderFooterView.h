@@ -15,10 +15,10 @@
     NSLayoutConstraint *_topConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(nonatomic) float customTextLabelPaddingFromTop; // @synthesize customTextLabelPaddingFromTop=_customTextLabelPaddingFromTop;
 @property(readonly, nonatomic) UILabel *customTextLabel; // @synthesize customTextLabel=_customTextLabel;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_updateBaselineConstraints;
 - (void)_setUpCustomTextLabel;

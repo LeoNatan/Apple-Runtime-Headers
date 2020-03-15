@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct UIOffset _sharingBadgesOffset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *zoomingCellIndexPath; // @synthesize zoomingCellIndexPath=_zoomingCellIndexPath;
 @property(nonatomic) unsigned long long sharingBadgesCorner; // @synthesize sharingBadgesCorner=_sharingBadgesCorner;
 @property(nonatomic) struct UIOffset sharingBadgesOffset; // @synthesize sharingBadgesOffset=_sharingBadgesOffset;
-- (void).cxx_destruct;
 - (void)_didFinishLayoutTransitionAnimations:(_Bool)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

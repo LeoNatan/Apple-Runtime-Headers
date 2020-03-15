@@ -35,6 +35,7 @@
 + (id)predicateForKeyPath:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateForChangeAtKeyPaths:(id)arg1;
 + (id)predicateForChangeAtKeyPath:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *circularLocationRegions; // @synthesize circularLocationRegions=_circularLocationRegions;
 @property(retain, nonatomic) NSOrderedSet *timeBasedPredicateEvaluationIntervals; // @synthesize timeBasedPredicateEvaluationIntervals=_timeBasedPredicateEvaluationIntervals;
 @property(nonatomic) BOOL evaluateOnEveryKeyPathUpdate; // @synthesize evaluateOnEveryKeyPathUpdate=_evaluateOnEveryKeyPathUpdate;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) NSPredicate *predicateForPreviousState; // @synthesize predicateForPreviousState=_predicateForPreviousState;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSSet *keyPaths; // @synthesize keyPaths=_keyPaths;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

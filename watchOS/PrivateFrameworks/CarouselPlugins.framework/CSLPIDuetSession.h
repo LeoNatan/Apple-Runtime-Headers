@@ -16,9 +16,9 @@
 }
 
 + (id)carouselDuetSession;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *clientDictionary; // @synthesize clientDictionary=_clientDictionary;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_setFocusedBundleIDs:(id)arg1 forClient:(id)arg2;
 - (id)_allFocusedBundleIDs;
 - (void)setFocusedBundleIDs:(id)arg1 forClient:(id)arg2;

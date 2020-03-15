@@ -15,9 +15,9 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(readonly, nonatomic) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithIdentifiers:(id)arg1 andLabel:(id)arg2 showIcon:(_Bool)arg3 isDonation:(_Bool)arg4;
 

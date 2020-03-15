@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     _UICollectionPreferredSizes *_preferredSizes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UICollectionPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
 @property(readonly, nonatomic) id <_UICollectionLayoutSectionSolver> solution; // @synthesize solution=_solution;
-- (void).cxx_destruct;
 - (id)initWithSolution:(id)arg1 preferredSizes:(id)arg2;
 
 @end

@@ -19,6 +19,7 @@
     NSNumber *_ontologyVersion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *ontologyVersion; // @synthesize ontologyVersion=_ontologyVersion;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long compoundIndex; // @synthesize compoundIndex=_compoundIndex;
@@ -26,7 +27,6 @@
 @property(readonly, nonatomic) long long conceptVersion; // @synthesize conceptVersion=_conceptVersion;
 @property(readonly, nonatomic) long long conceptIdentifier; // @synthesize conceptIdentifier=_conceptIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *sampleUUID; // @synthesize sampleUUID=_sampleUUID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

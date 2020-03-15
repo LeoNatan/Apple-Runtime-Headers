@@ -19,9 +19,9 @@
 + (BOOL)isDerivedRelationship;
 + (Class)frozenClass;
 + (id)uniqueIdentifierForObject:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *uniqueKey; // @synthesize uniqueKey=_uniqueKey;
 @property(readonly, copy, nonatomic) NSString *opaqueKey; // @synthesize opaqueKey=_opaqueKey;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timestampAsDate;
 @property(nonatomic) unsigned long long changedFields;
 @property(nonatomic) double timestamp;

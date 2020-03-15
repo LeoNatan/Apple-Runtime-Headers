@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double ratio; // @synthesize ratio=_ratio;
 @property(readonly, nonatomic) NSString *country; // @synthesize country=_country;
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (_Bool)isVisibleForDSID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

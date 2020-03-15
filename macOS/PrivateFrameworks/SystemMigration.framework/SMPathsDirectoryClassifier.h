@@ -57,6 +57,7 @@
     NSMutableSet *_activeUserFileClassification;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL statistical; // @synthesize statistical=_statistical;
 @property(nonatomic) BOOL doNotCoalesce; // @synthesize doNotCoalesce=_doNotCoalesce;
 @property(nonatomic) __weak NSMutableSet *activeUserFileClassification; // @synthesize activeUserFileClassification=_activeUserFileClassification;
@@ -78,7 +79,6 @@
 @property(retain, nonatomic) NSMutableSet *systemFiles; // @synthesize systemFiles=_systemFiles;
 @property(nonatomic) __weak SMPaths *pather; // @synthesize pather=_pather;
 @property(retain, nonatomic) NSURL *directory; // @synthesize directory=_directory;
-- (void).cxx_destruct;
 - (void)absorbChildClassifier:(id)arg1;
 - (void)setupActiveClassification;
 - (void)noteDoNotScanPath;

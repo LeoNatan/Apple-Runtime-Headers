@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <StoreKit/NSObject-Protocol.h>
+#import <StoreKit/ASDNotificationCenterDialogObserver-Protocol.h>
 
 @class NSArray, NSDictionary, NSString;
 
-@protocol ASDStoreKitClientProtocol <NSObject>
+@protocol ASDStoreKitClientProtocol <ASDNotificationCenterDialogObserver>
 - (void)shouldContinueTransaction:(NSDictionary *)arg1 withNewStorefront:(NSString *)arg2 replyBlock:(void (^)(BOOL))arg3;
 - (void)storefrontChanged:(NSDictionary *)arg1;
 - (void)downloadRemoved:(NSDictionary *)arg1;
@@ -16,5 +16,6 @@
 - (void)downloadAdded:(NSDictionary *)arg1;
 - (void)removedTransactions:(NSArray *)arg1;
 - (void)updatedTransactions:(NSArray *)arg1;
+- (void)askToShowMessageWithReplyBlock:(void (^)(BOOL))arg1;
 @end
 

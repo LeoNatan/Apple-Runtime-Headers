@@ -36,14 +36,15 @@
 }
 
 + (id)authorNameToHighlightForNote:(id)arg1 fromSearchResult:(id)arg2 textCheckingResult:(id *)arg3;
-+ (id)attributedStringWithMatchHighlighted:(id)arg1 textCheckingResult:(id)arg2 usingAttributes:(id)arg3 highlightColor:(struct UIColor *)arg4 insideFrame:(struct CGRect)arg5 centered:(_Bool)arg6;
-+ (id)attributesByHighlightingAttributes:(id)arg1 withHighlightColor:(struct UIColor *)arg2;
++ (id)attributedStringWithMatchHighlighted:(id)arg1 textCheckingResult:(id)arg2 usingAttributes:(id)arg3 highlightColor:(id)arg4 insideFrame:(struct CGRect)arg5 centered:(_Bool)arg6;
++ (id)attributesByHighlightingAttributes:(id)arg1 withHighlightColor:(id)arg2;
 + (_Bool)canFitAttributedString:(id)arg1 ellipses:(id)arg2 shouldPrefixWithEllipses:(_Bool)arg3 insideFrame:(struct CGRect)arg4 centered:(_Bool)arg5;
 + (struct CGRect)boundingRectForAttributedString:(id)arg1 fittingSize:(struct CGSize)arg2;
 + (id)tokensInString:(id)arg1;
 + (id)regularExpressionForSearchString:(id)arg1 matchWordBoundaries:(_Bool)arg2;
 + (id)regularExpressionMatchOfString:(id)arg1 inContent:(id)arg2 matchWordBoundaries:(_Bool)arg3;
 + (id)matchOfString:(id)arg1 inContent:(id)arg2 isSubstringMatch:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRegularExpression *highlightPatternRegex; // @synthesize highlightPatternRegex=_highlightPatternRegex;
 @property(nonatomic) _Bool displayingParticipantMatch; // @synthesize displayingParticipantMatch=_displayingParticipantMatch;
 @property(retain, nonatomic) id <ICSearchIndexable> currentContextObject; // @synthesize currentContextObject=_currentContextObject;
@@ -65,9 +66,8 @@
 @property(readonly, nonatomic) unsigned long long relevanceBitField; // @synthesize relevanceBitField=_relevanceBitField;
 @property(readonly, nonatomic) double rankingScore; // @synthesize rankingScore=_rankingScore;
 @property(readonly, nonatomic) id <ICSearchIndexable> object; // @synthesize object=_object;
-- (void).cxx_destruct;
-- (id)snippetWithBaseAttributes:(id)arg1 highlightColor:(struct UIColor *)arg2 insideFrame:(struct CGRect)arg3;
-- (id)attributedTitleWithBaseAttributes:(id)arg1 highlightColor:(struct UIColor *)arg2 insideFrame:(struct CGRect)arg3;
+- (id)snippetWithBaseAttributes:(id)arg1 highlightColor:(id)arg2 insideFrame:(struct CGRect)arg3;
+- (id)attributedTitleWithBaseAttributes:(id)arg1 highlightColor:(id)arg2 insideFrame:(struct CGRect)arg3;
 - (id)firstRangeValueInNoteForMatchString:(id)arg1 textCheckingResult:(id)arg2;
 - (id)matchInTextContent:(id)arg1;
 @property(readonly, nonatomic) NSArray *csEvaluatorMatches;

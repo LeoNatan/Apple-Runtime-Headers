@@ -16,11 +16,11 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property(retain) NSSet *grantedPermissions; // @synthesize grantedPermissions=_grantedPermissions;
 @property(retain) ACDClient *client; // @synthesize client=_client;
 @property BOOL isGranted; // @synthesize isGranted=_isGranted;
-- (void).cxx_destruct;
 - (id)initForClient:(id)arg1;
 
 @end

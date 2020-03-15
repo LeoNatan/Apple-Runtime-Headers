@@ -23,11 +23,11 @@ __attribute__((visibility("hidden")))
     id <QLMediaScrubberGestureDelegate> _scrubberDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(nonatomic) float minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic) float value; // @synthesize value=_value;
 @property(nonatomic) __weak id <QLMediaScrubberGestureDelegate> scrubberDelegate; // @synthesize scrubberDelegate=_scrubberDelegate;
-- (void).cxx_destruct;
 - (void)scrubbGestureDidChange:(id)arg1;
 - (float)clampedEstimatedFrameRate;
 - (float)nominalFrameRate;

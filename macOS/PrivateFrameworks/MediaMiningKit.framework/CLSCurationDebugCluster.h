@@ -15,9 +15,9 @@
     NSString *_reason;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSString *reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) NSSet *unclusteredDebugItems; // @synthesize unclusteredDebugItems=_unclusteredDebugItems;
-- (void).cxx_destruct;
 - (id)timestamp;
 - (id)dictionaryRepresentation;
 - (void)resetWithReason:(id)arg1 agent:(id)arg2 stage:(id)arg3;

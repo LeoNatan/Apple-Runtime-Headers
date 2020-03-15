@@ -9,10 +9,11 @@
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKInspectableValue, NSArray;
+@class HKConcept, HKInspectableValue, NSArray;
 
 @interface HKCodedValue : NSObject <NSSecureCoding, NSCopying>
 {
+    HKConcept *_concept;
     NSArray *_codings;
     HKInspectableValue *_value;
     NSArray *_referenceRanges;
@@ -20,10 +21,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)codedValueWithCodings:(id)arg1 value:(id)arg2 referenceRanges:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *referenceRanges; // @synthesize referenceRanges=_referenceRanges;
 @property(readonly, copy, nonatomic) HKInspectableValue *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSArray *codings; // @synthesize codings=_codings;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -31,6 +32,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)chartableCodedQuantitySetWithDate:(id)arg1 error:(id *)arg2;
 - (id)chartableCodedQuantityWithError:(id *)arg1;
+@property(readonly, copy, nonatomic) HKConcept *concept;
+- (void)_setConcept:(id)arg1;
 - (id)initWithCodings:(id)arg1 value:(id)arg2 referenceRanges:(id)arg3;
 - (id)init;
 

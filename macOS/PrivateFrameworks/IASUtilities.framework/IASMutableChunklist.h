@@ -18,13 +18,13 @@
     unsigned long long _fileLength;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long fileLength; // @synthesize fileLength=_fileLength;
 @property unsigned long long memoryBufferSize; // @synthesize memoryBufferSize=_memoryBufferSize;
 @property char *memoryBuffer; // @synthesize memoryBuffer=_memoryBuffer;
 @property BOOL setSignatureHeaderOnly; // @synthesize setSignatureHeaderOnly=_setSignatureHeaderOnly;
 @property unsigned int defaultChunkSize; // @synthesize defaultChunkSize=_defaultChunkSize;
 @property(retain) NSURL *mappedFileURL; // @synthesize mappedFileURL=_mappedFileURL;
-- (void).cxx_destruct;
 - (void)_updateChunk:(unsigned long long)arg1 withData:(id)arg2;
 - (void)_resizeFileToLength:(unsigned long long)arg1;
 - (BOOL)_addSHA256Checksum;

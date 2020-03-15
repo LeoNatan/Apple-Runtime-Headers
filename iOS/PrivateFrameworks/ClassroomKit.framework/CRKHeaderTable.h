@@ -18,10 +18,10 @@
     NSArray *_objects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 @property(readonly, copy, nonatomic) NSArray *keyPaths; // @synthesize keyPaths=_keyPaths;
 @property(readonly, copy, nonatomic) NSArray *headers; // @synthesize headers=_headers;
-- (void).cxx_destruct;
 - (id)tableString;
 @property(readonly, nonatomic) CRKTable *table; // @synthesize table=_table;
 - (id)crk_JSONRepresentationWithPrettyPrinting:(_Bool)arg1 sortKeys:(_Bool)arg2;

@@ -114,10 +114,6 @@ struct LockedInput {
     unsigned int _field2;
 };
 
-struct NSDictionary {
-    Class _field1;
-};
-
 struct Parameters {
     float _field1;
     float _field2;

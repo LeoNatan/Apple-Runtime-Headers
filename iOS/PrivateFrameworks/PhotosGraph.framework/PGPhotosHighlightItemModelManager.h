@@ -18,10 +18,10 @@
     NSMutableDictionary *_visibilityStateByDayHighlighItemUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *visibilityStateByDayHighlighItemUUID; // @synthesize visibilityStateByDayHighlighItemUUID=_visibilityStateByDayHighlighItemUUID;
 @property(readonly, nonatomic) unsigned short kind; // @synthesize kind=_kind;
 @property(readonly, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
-- (void).cxx_destruct;
 - (void)addVisibleHighlight:(id)arg1 inMonth:(id)arg2;
 @property(readonly, nonatomic) NSSet *highlightUUIDsWithVisibilityStateChange;
 - (unsigned short)visibilityStateForHighlightItem:(id)arg1;

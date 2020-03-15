@@ -21,13 +21,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property BOOL waiting; // @synthesize waiting=_waiting;
 @property(nonatomic, getter=isCancelled) BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isFailed) BOOL failed; // @synthesize failed=_failed;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) SSDownloadPhase *activePhase; // @synthesize activePhase=_activePhase;
-- (void).cxx_destruct;
 - (void)setOperationProgress:(id)arg1;
 @property(readonly, nonatomic) long long phaseTimeRemaining;
 @property(readonly, nonatomic) float phasePercentComplete;

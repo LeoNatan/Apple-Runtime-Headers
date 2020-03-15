@@ -33,6 +33,8 @@ __attribute__((visibility("hidden")))
     AVPlayer *playerBeingObserved;
     NSSet *KVOInvokers;
     struct CGSize latestAppliedPresentationSize;
+    _Bool honorContentScale;
+    float screenScale;
 }
 
 @end

@@ -14,9 +14,9 @@
     NSImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(retain) NSString *imagePath; // @synthesize imagePath=_imagePath;
-- (void).cxx_destruct;
 - (id)imageRepresentation;
 - (id)imageRepresentationType;
 - (id)imageUID;

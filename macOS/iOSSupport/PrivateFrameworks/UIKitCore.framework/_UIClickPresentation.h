@@ -19,13 +19,13 @@
     id <_UIClickPresentationTransition> _disappearanceTransition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <_UIClickPresentationTransition> disappearanceTransition; // @synthesize disappearanceTransition=_disappearanceTransition;
 @property(retain, nonatomic) id <_UIClickPresentationTransition> appearanceTransition; // @synthesize appearanceTransition=_appearanceTransition;
 @property(retain, nonatomic) UIView *customViewForTouchContinuation; // @synthesize customViewForTouchContinuation=_customViewForTouchContinuation;
 @property(retain, nonatomic) UIView *customContainerView; // @synthesize customContainerView=_customContainerView;
 @property(readonly, nonatomic) UIPresentationController *presentationController; // @synthesize presentationController=_presentationController;
 @property(readonly, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)initWithPresentedViewController:(id)arg1 presentationController:(id)arg2;
 
 @end

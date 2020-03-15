@@ -28,13 +28,13 @@
 + (id)FSMStateToString:(unsigned long long)arg1;
 + (double)MinStaticIntervalForSLVArrivalWithHint;
 + (double)MinStaticIntervalForSLVArrival;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) RTVisitHyperParameter *hyperParameter; // @synthesize hyperParameter=_hyperParameter;
 @property(retain, nonatomic) RTHintManager *hintManager; // @synthesize hintManager=_hintManager;
 @property(readonly, nonatomic) unsigned long long lcFSMState; // @synthesize lcFSMState=_lcFSMState;
 @property(readonly, nonatomic) unsigned long long fsmState; // @synthesize fsmState=_fsmState;
 @property(readonly, nonatomic) RTVisitSCIStayCluster *workingHypothesis; // @synthesize workingHypothesis=_workingHypothesis;
-- (void).cxx_destruct;
 - (id)process:(id)arg1;
 - (void)processPoints:(id)arg1;
 - (id)handleFSM:(unsigned long long)arg1 point:(id)arg2;

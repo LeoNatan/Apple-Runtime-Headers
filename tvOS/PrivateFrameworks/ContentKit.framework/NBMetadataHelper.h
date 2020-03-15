@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)hasValue:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cachedMetaDataKey; // @synthesize cachedMetaDataKey=_cachedMetaDataKey;
 @property(retain, nonatomic) NBPhoneMetaData *cachedMetaData; // @synthesize cachedMetaData=_cachedMetaData;
-- (void).cxx_destruct;
 - (id)getMetadataForNonGeographicalRegion:(id)arg1;
 - (id)getMetadataForRegion:(id)arg1;
 - (id)normalizeNonBreakingSpace:(id)arg1;

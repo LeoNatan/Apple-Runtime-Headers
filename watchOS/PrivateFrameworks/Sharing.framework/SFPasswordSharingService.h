@@ -26,10 +26,10 @@
 }
 
 + (unsigned int)passwordSharingAvailability;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *networkName; // @synthesize networkName=_networkName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) __weak id <SFPasswordSharingServiceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)__testReceivedObject:(id)arg1 withFlags:(unsigned int)arg2;
 - (_Bool)__invalidateCalled;
 - (_Bool)__activateCalled;

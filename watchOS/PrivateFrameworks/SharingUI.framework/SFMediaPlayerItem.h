@@ -20,6 +20,7 @@
     id _observerToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id observerToken; // @synthesize observerToken=_observerToken;
 @property(retain, nonatomic) NSMutableArray *playerItems; // @synthesize playerItems=_playerItems;
 @property(copy, nonatomic) CDUnknownBlockType completedHandler; // @synthesize completedHandler=_completedHandler;
@@ -28,7 +29,6 @@
 @property(readonly, copy, nonatomic) NSArray *playbackNotificationTimeRanges; // @synthesize playbackNotificationTimeRanges=_playbackNotificationTimeRanges;
 @property(nonatomic) _Bool shouldLoop; // @synthesize shouldLoop=_shouldLoop;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)description;

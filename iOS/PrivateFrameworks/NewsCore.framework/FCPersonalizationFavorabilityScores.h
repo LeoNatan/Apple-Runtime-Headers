@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSDictionary *tagIDToScores; // @synthesize tagIDToScores=_tagIDToScores;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *tagIDToScores; // @synthesize tagIDToScores=_tagIDToScores;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -24,20 +24,20 @@
     NSDate *_timeTravelRightBoundary;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *timeTravelRightBoundary; // @synthesize timeTravelRightBoundary=_timeTravelRightBoundary;
 @property(retain, nonatomic) NSDate *timeTravelLeftBoundary; // @synthesize timeTravelLeftBoundary=_timeTravelLeftBoundary;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(retain, nonatomic) NSDate *timeTravelDate; // @synthesize timeTravelDate=_timeTravelDate;
 @property(nonatomic) __weak id <NTKComplicationTimelineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_recycleAllNodes;
 - (id)_effectiveTimeTravelDate;
 - (void)_updateTimeTravelWindow;
 - (void)_updateNowWindow;
 - (id)_timeTravelNode;
 - (id)_nowNode;
-- (struct NSArray *)_sortedEntries:(struct NSArray *)arg1;
-- (id)_timelineSegmentFromSortedEntries:(struct NSArray *)arg1 withLowerBound:(id)arg2 upperBound:(id)arg3;
+- (id)_sortedEntries:(id)arg1;
+- (id)_timelineSegmentFromSortedEntries:(id)arg1 withLowerBound:(id)arg2 upperBound:(id)arg3;
 - (void)_setupWithEntry:(id)arg1;
 - (void)_trimTimeline;
 - (id)_afterGapDate;
@@ -52,8 +52,8 @@
 - (id)nowWindow;
 - (id)timeTravelEntry;
 - (id)nowEntry;
-- (void)extendLeftFromDate:(id)arg1 withEntries:(struct NSArray *)arg2 tritiumUpdatePriority:(long long)arg3;
-- (void)extendRightFromDate:(id)arg1 withEntries:(struct NSArray *)arg2 tritiumUpdatePriority:(long long)arg3;
+- (void)extendLeftFromDate:(id)arg1 withEntries:(id)arg2 tritiumUpdatePriority:(long long)arg3;
+- (void)extendRightFromDate:(id)arg1 withEntries:(id)arg2 tritiumUpdatePriority:(long long)arg3;
 - (void)resetWithEntry:(id)arg1 withTritiumUpdatePriority:(long long)arg2;
 - (void)clearTimeTravelCache;
 - (void)dealloc;

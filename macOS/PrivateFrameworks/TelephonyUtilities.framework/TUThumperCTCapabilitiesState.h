@@ -24,13 +24,13 @@
 
 + (id)unarchivedObjectClasses;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsDefaultPairedDevice; // @synthesize supportsDefaultPairedDevice=_supportsDefaultPairedDevice;
 @property(copy, nonatomic) NSString *localDeviceID; // @synthesize localDeviceID=_localDeviceID;
 @property(nonatomic, getter=isAssociated) BOOL associated; // @synthesize associated=_associated;
 @property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(copy, nonatomic) NSSet *approvedSecondaryDeviceIDs; // @synthesize approvedSecondaryDeviceIDs=_approvedSecondaryDeviceIDs;
 @property(nonatomic, getter=isApproved) BOOL approved; // @synthesize approved=_approved;
-- (void).cxx_destruct;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone *)arg1;
 - (id)publiclyAccessibleCopy;
 - (BOOL)isEqual:(id)arg1;

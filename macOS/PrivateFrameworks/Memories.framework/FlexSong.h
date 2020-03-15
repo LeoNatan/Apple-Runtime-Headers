@@ -32,6 +32,7 @@
 + (long long)_findMinLengthInSamplesForEarlyFadeOutForOutroSegment:(id)arg1 withOptions:(id)arg2;
 + (long long)_findMaxLengthInSamplesToReserveForOutroSegment:(id)arg1 withOptions:(id)arg2;
 + (id)numberToString:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *transSegments; // @synthesize transSegments=_transSegments;
 @property(readonly, nonatomic) NSArray *outroSegments; // @synthesize outroSegments=_outroSegments;
 @property(readonly, nonatomic) NSArray *bodySegments; // @synthesize bodySegments=_bodySegments;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSArray *mainSegments; // @synthesize mainSegments=_mainSegments;
 @property(readonly, nonatomic) NSObject<FlexSongAssetProviderProtocol> *assetProvider; // @synthesize assetProvider=_assetProvider;
 @property(readonly, nonatomic) NSString *audioFileExtension; // @synthesize audioFileExtension=_audioFileExtension;
-- (void).cxx_destruct;
 - (id)timedMetadataItemsWithIdentifier:(id)arg1 forRendition:(id)arg2;
 - (BOOL)verifyAssetsWithFailureReason:(id *)arg1;
 - (BOOL)_verifyAssetsForSegment:(id)arg1 withFailureReason:(id *)arg2;

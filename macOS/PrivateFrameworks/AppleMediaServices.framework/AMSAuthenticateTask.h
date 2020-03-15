@@ -21,6 +21,7 @@
     ACAccount *_authenticatedAccount;
 }
 
+- (void).cxx_destruct;
 @property(retain) ACAccount *authenticatedAccount; // @synthesize authenticatedAccount=_authenticatedAccount;
 @property(retain) NSString *username; // @synthesize username=_username;
 @property(retain) NSUUID *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;
@@ -30,7 +31,6 @@
 @property(retain) NSString *multiUserToken; // @synthesize multiUserToken=_multiUserToken;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(readonly) AMSAuthenticateOptions *options; // @synthesize options=_options;
-- (void).cxx_destruct;
 - (void)setHomeUserID:(id)arg1;
 - (void)setHomeID:(id)arg1;
 - (id)homeUserID;

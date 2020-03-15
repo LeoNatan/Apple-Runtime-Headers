@@ -22,9 +22,9 @@
     id <FASharedSubscriptionSpecifierProviderDelegeate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <FASharedSubscriptionSpecifierProviderDelegeate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *specifiers; // @synthesize specifiers=_specifiers;
-- (void).cxx_destruct;
 - (void)reloadSpecifiers;
 - (void)_handleSubscriptionListResponse:(id)arg1;
 - (void)_loadSubscriptionServices;

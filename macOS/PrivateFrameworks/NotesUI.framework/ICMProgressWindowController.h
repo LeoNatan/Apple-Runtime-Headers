@@ -26,6 +26,7 @@
 }
 
 + (id)progressWindowControllerWithDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) ICSelectorDelayer *showSelectorDelayer; // @synthesize showSelectorDelayer=_showSelectorDelayer;
 @property(retain) NSWindow *containingWindow; // @synthesize containingWindow=_containingWindow;
 @property __weak NSButton *stopButton; // @synthesize stopButton=_stopButton;
@@ -37,7 +38,6 @@
 @property(nonatomic) BOOL isVisible; // @synthesize isVisible=_isVisible;
 @property(nonatomic) double showHideThreshold; // @synthesize showHideThreshold=_showHideThreshold;
 @property(nonatomic) __weak id <ICMProgressWindowControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)showWithDelayInWindow;
 - (void)hide;
 - (void)showInWindow:(id)arg1;

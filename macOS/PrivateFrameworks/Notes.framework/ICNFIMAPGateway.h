@@ -33,6 +33,7 @@
 + (id)sharedKeySetForMessageInfo;
 + (double)IMAPIdleRefreshDelay;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) ICNFIMAPConnection *primitiveConnection; // @synthesize primitiveConnection=_primitiveConnection;
 @property __weak ICNFIMAPConnectionPool *connectionPool; // @synthesize connectionPool=_connectionPool;
 @property BOOL primaryClientAllowsYielding; // @synthesize primaryClientAllowsYielding=_primaryClientAllowsYielding;
@@ -41,7 +42,6 @@
 @property BOOL remainedDeserted; // @synthesize remainedDeserted=_remainedDeserted;
 @property BOOL canYield; // @synthesize canYield=_canYield;
 @property(retain) ICNFIMAPClientOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-- (void).cxx_destruct;
 - (void)restoreSavedQualityOfService;
 - (BOOL)saveCurrentQualityOfServiceAndBoostTo:(long long)arg1;
 - (id)debugDescription;

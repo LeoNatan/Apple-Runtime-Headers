@@ -13,8 +13,8 @@
     NSString *_JSONString;
 }
 
-@property(readonly, copy, nonatomic) NSString *JSONString; // @synthesize JSONString=_JSONString;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *JSONString; // @synthesize JSONString=_JSONString;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithJSONString:(id)arg1;

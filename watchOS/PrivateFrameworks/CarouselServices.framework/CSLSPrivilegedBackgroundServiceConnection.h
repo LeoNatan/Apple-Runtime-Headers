@@ -20,10 +20,10 @@
     id <CSLSBackgroundServiceDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLSBackgroundServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CSLSPrivilegedBackgroundPriorityStateCache *priorityStateCache; // @synthesize priorityStateCache=_priorityStateCache;
 @property(retain, nonatomic) CSLSBackgroundServiceConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)registerPrivilegedSnapshotClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 returnToPrimaryUIInterval:(double)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)registerPrivilegedBackgroundClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_resendPriorities;

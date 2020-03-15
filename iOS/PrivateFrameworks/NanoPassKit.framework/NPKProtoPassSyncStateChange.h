@@ -30,6 +30,7 @@
 }
 
 + (Class)remoteAssetsForPartialUpdateType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *remoteAssetsForPartialUpdates; // @synthesize remoteAssetsForPartialUpdates=_remoteAssetsForPartialUpdates;
 @property(retain, nonatomic) NSData *baseManifestHashForPartialUpdate; // @synthesize baseManifestHashForPartialUpdate=_baseManifestHashForPartialUpdate;
 @property(retain, nonatomic) NPKProtoCatalog *catalog; // @synthesize catalog=_catalog;
@@ -41,7 +42,6 @@
 @property(nonatomic) int changeType; // @synthesize changeType=_changeType;
 @property(retain, nonatomic) NSData *lastKnownReconciledPassSyncStateHash; // @synthesize lastKnownReconciledPassSyncStateHash=_lastKnownReconciledPassSyncStateHash;
 @property(retain, nonatomic) NSData *changeUUID; // @synthesize changeUUID=_changeUUID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

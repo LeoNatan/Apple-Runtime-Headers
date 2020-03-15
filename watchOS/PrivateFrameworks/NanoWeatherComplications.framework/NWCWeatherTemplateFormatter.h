@@ -16,8 +16,8 @@
 }
 
 + (id)sharedFormatter;
-@property(retain, nonatomic) NWMTemperatureFormatter *temperatureFormatter; // @synthesize temperatureFormatter=_temperatureFormatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NWMTemperatureFormatter *temperatureFormatter; // @synthesize temperatureFormatter=_temperatureFormatter;
 - (id)_utilitarianLargeTemplateForConditions:(id)arg1 isLoading:(_Bool)arg2;
 - (id)_modularLargeTemplateForLocation:(id)arg1 airQualityConditions:(id)arg2 conditions:(id)arg3 dailyForecastedConditions:(id)arg4 isLoading:(_Bool)arg5;
 - (id)switcherTemplateWithFamily:(int)arg1;

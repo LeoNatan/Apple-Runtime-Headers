@@ -37,6 +37,7 @@
 + (Class)articleResultIdsType;
 + (Class)channelResultFeedIdsType;
 + (Class)topicResultFeedIdsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *articleResultIds; // @synthesize articleResultIds=_articleResultIds;
 @property(retain, nonatomic) NSString *topResultTopicId; // @synthesize topResultTopicId=_topResultTopicId;
 @property(retain, nonatomic) NSString *topResultChannelId; // @synthesize topResultChannelId=_topResultChannelId;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) NSString *topResultFeedId; // @synthesize topResultFeedId=_topResultFeedId;
 @property(nonatomic) int totalResults; // @synthesize totalResults=_totalResults;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

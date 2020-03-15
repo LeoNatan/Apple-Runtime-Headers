@@ -15,10 +15,10 @@
     SCRCPhotoEvaluatorResult *_luminanceResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SCRCPhotoEvaluatorResult *luminanceResult; // @synthesize luminanceResult=_luminanceResult;
 @property(readonly, nonatomic) SCRCPhotoEvaluatorResult *colorResult; // @synthesize colorResult=_colorResult;
 @property(readonly, nonatomic) SCRCPhotoEvaluatorResult *blurResult; // @synthesize blurResult=_blurResult;
-- (void).cxx_destruct;
 - (id)initWithBlurResult:(id)arg1 colorResult:(id)arg2 luminanceResult:(id)arg3;
 
 @end

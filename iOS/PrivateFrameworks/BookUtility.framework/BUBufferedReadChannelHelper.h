@@ -15,8 +15,8 @@
     BUBufferedReadChannel *_bufferedReadChannel;
 }
 
-@property(nonatomic) __weak BUBufferedReadChannel *bufferedReadChannel; // @synthesize bufferedReadChannel=_bufferedReadChannel;
 - (void).cxx_destruct;
+@property(nonatomic) __weak BUBufferedReadChannel *bufferedReadChannel; // @synthesize bufferedReadChannel=_bufferedReadChannel;
 - (void)close;
 - (void)readWithHandler:(CDUnknownBlockType)arg1;
 - (id)init;

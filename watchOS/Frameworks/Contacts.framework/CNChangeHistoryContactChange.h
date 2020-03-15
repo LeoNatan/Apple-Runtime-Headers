@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *imagesChanged; // @synthesize imagesChanged=_imagesChanged;
 @property(retain, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(retain, nonatomic) NSNumber *changeID; // @synthesize changeID=_changeID;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) int changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

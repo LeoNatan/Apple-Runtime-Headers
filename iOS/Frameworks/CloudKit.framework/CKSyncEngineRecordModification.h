@@ -19,9 +19,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)recordModificationsWithOppositeTypeFromRecordModifications:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

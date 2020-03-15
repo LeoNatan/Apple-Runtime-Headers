@@ -14,9 +14,9 @@
     NSMutableSet *_triggerEvents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *triggerEvents; // @synthesize triggerEvents=_triggerEvents;
 @property(nonatomic) BOOL markTriggerAsHomeAppCreated; // @synthesize markTriggerAsHomeAppCreated=_markTriggerAsHomeAppCreated;
-- (void).cxx_destruct;
 - (id)_lazilyMarkTriggerAsHomeAppCreated;
 - (id)_allTriggerValuesForCharacteristic:(id)arg1 similarToValue:(id)arg2;
 - (id)_performValidation;

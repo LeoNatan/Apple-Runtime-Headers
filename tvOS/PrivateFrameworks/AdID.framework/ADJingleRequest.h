@@ -23,6 +23,7 @@
 }
 
 + (id)incrementToken;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *requestHeaders; // @synthesize requestHeaders=_requestHeaders;
 @property(retain, nonatomic) NSData *requestBody; // @synthesize requestBody=_requestBody;
 @property(retain, nonatomic) NSString *bagKey; // @synthesize bagKey=_bagKey;
@@ -33,7 +34,6 @@
 @property(retain) NSDictionary *responseHeaders; // @synthesize responseHeaders=_responseHeaders;
 @property(retain) NSData *responseBody; // @synthesize responseBody=_responseBody;
 @property(retain, nonatomic) NSNumber *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)sendJingleRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleJingleResponse;
 - (void)send;

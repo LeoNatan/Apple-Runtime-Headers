@@ -116,13 +116,13 @@
 - (id)_allHandles;
 - (_Bool)repairDuplicateChatsIfNeeded;
 - (_Bool)_mergeDuplicateGroupsIfNeeded;
-- (struct NSArray *)_createGroupChatsArray;
-- (id)_findLosingChatGUIDsInArrayOfChats:(struct NSArray *)arg1 withWinner:(id)arg2;
-- (id)_findChatWinnerInDuplicateChatArray:(struct NSArray *)arg1 fixDisplayName:(_Bool *)arg2;
-- (struct NSArray *)findDuplicateChats:(struct NSArray *)arg1;
+- (id)_createGroupChatsArray;
+- (id)_findLosingChatGUIDsInArrayOfChats:(id)arg1 withWinner:(id)arg2;
+- (id)_findChatWinnerInDuplicateChatArray:(id)arg1 fixDisplayName:(_Bool *)arg2;
+- (id)findDuplicateChats:(id)arg1;
 - (_Bool)_chat:(id)arg1 isDuplicateOfChat:(id)arg2;
 - (_Bool)_updateDuplicateUnnamedGroupsWithNewGroupIDIfNeeded;
-- (struct NSArray *)findDuplicateUnnamedGroups:(struct NSArray *)arg1;
+- (id)findDuplicateUnnamedGroups:(id)arg1;
 - (void)_makeAllAttachmentsClassC;
 - (void)systemDidUnlock;
 - (void)systemDidLeaveFirstDataProtectionLock;

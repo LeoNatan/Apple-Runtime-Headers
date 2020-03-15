@@ -20,11 +20,11 @@
 + (id)resultWithError:(id)arg1;
 + (id)resultWithCloudDataProtectionEnabled:(BOOL)arg1 shouldCompleteSignIn:(BOOL)arg2 peeriCloudKeychainState:(unsigned long long)arg3 error:(id)arg4;
 + (id)resultWithCloudDataProtectionEnabled:(BOOL)arg1 shouldCompleteSignIn:(BOOL)arg2 error:(id)arg3;
+- (void).cxx_destruct;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property unsigned long long peeriCloudKeychainState; // @synthesize peeriCloudKeychainState=_peeriCloudKeychainState;
 @property BOOL shouldCompleteSignIn; // @synthesize shouldCompleteSignIn=_shouldCompleteSignIn;
 @property BOOL cloudDataProtectionEnabled; // @synthesize cloudDataProtectionEnabled=_cloudDataProtectionEnabled;
-- (void).cxx_destruct;
 
 @end
 

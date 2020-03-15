@@ -16,11 +16,11 @@
     UIViewController *_viewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ownsJavascriptContext; // @synthesize ownsJavascriptContext=_ownsJavascriptContext;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) TVLRootElement *rootElement; // @synthesize rootElement=_rootElement;
 @property(retain, nonatomic) TVLLegacyJSContext *javaScriptContext; // @synthesize javaScriptContext=_javaScriptContext;
-- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

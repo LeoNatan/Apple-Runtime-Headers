@@ -26,6 +26,7 @@
 
 + (struct __CFString *)_keyForScreenRequestOrigin:(long long)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLastScreenRequestOrigin:) long long _lastScreenRequestOrigin; // @synthesize _lastScreenRequestOrigin=__lastScreenRequestOrigin;
 @property(retain, nonatomic, setter=_setLastScreenRequestDate:) NSDate *_lastScreenRequestDate; // @synthesize _lastScreenRequestDate=__lastScreenRequestDate;
 @property(retain, nonatomic, setter=_setLastScreenConnectDate:) NSDate *_lastScreenConnectDate; // @synthesize _lastScreenConnectDate=__lastScreenConnectDate;
@@ -35,7 +36,6 @@
 @property(retain, nonatomic, setter=_setRootViewController:) PUAirPlayRootViewController *_rootViewController; // @synthesize _rootViewController=__rootViewController;
 @property(retain, nonatomic, setter=_setScreenDetector:) PUAirPlayScreenDetector *_screenDetector; // @synthesize _screenDetector=__screenDetector;
 @property(retain, nonatomic, setter=_setCurrentScreen:) PUAirPlayScreen *_currentScreen; // @synthesize _currentScreen=__currentScreen;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (id)_screenAvailabilityName;
 - (void)_recordSessionEnded;

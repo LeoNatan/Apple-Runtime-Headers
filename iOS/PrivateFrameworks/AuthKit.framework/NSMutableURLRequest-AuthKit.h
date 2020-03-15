@@ -47,6 +47,8 @@
 - (void)ak_setJSONBodyWithParameters:(id)arg1;
 - (void)ak_setBodyWithParameters:(id)arg1;
 - (void)_setAuthorizationHeaderWithToken:(id)arg1 altDSID:(id)arg2 key:(id)arg3;
+- (id)ak_valueForEncodedHeaderWithKey:(id)arg1;
+- (void)ak_addURLSwitchingHeaderWithURLKey:(id)arg1 altDSID:(id)arg2;
 - (void)ak_addShortLivedTokenHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addRecoveryHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addICSCRecoveryHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;

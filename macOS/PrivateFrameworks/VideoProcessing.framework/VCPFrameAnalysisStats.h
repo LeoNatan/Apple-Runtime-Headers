@@ -27,6 +27,7 @@
     VCPVideoActivityDescriptor *_videoActivityDescriptor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCPVideoActivityDescriptor *videoActivityDescriptor; // @synthesize videoActivityDescriptor=_videoActivityDescriptor;
 @property(retain, nonatomic) NSMutableArray *detectedFaces; // @synthesize detectedFaces=_detectedFaces;
 @property(nonatomic) BOOL frameProcessedByFaceDetector; // @synthesize frameProcessedByFaceDetector=_frameProcessedByFaceDetector;
@@ -42,7 +43,6 @@
 @property(nonatomic) float subjectActionScore; // @synthesize subjectActionScore=_subjectActionScore;
 @property(nonatomic) float cameraMotionScore; // @synthesize cameraMotionScore=_cameraMotionScore;
 @property(nonatomic) BOOL frameProcessedByVideoAnalyzer; // @synthesize frameProcessedByVideoAnalyzer=_frameProcessedByVideoAnalyzer;
-- (void).cxx_destruct;
 - (void)reset;
 - (id)init;
 

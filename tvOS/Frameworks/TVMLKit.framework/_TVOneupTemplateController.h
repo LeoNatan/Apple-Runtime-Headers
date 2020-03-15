@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_indexPathForItemAtFlattenedIndex:(long long)arg1 inSections:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType indexMapBlock; // @synthesize indexMapBlock=_indexMapBlock;
 @property(nonatomic) _Bool requiresReload; // @synthesize requiresReload=_requiresReload;
 @property(nonatomic) unsigned long long indexToConfigure; // @synthesize indexToConfigure=_indexToConfigure;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKViewElement *oneupElement; // @synthesize oneupElement=_oneupElement;
 @property(nonatomic) __weak _TVOneupView *oneupView; // @synthesize oneupView=_oneupView;
 @property(nonatomic) unsigned long long transition; // @synthesize transition=_transition;
-- (void).cxx_destruct;
 - (void)_dispatchEvent:(id)arg1 forItemAtFlattenedIndex:(unsigned long long)arg2 cell:(id)arg3;
 - (id)_imgElementFromLockup:(id)arg1;
 - (void)_configureSupplementaryView:(id)arg1 withLockup:(id)arg2;

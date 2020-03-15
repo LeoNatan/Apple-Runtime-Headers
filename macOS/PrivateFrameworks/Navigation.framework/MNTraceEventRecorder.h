@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
     NSUUID *_lastSecondarySignID;
 }
 
-@property(readonly, nonatomic) NSArray *eventHistory; // @synthesize eventHistory=_eventHistory;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *eventHistory; // @synthesize eventHistory=_eventHistory;
 - (void)navigationSession:(id)arg1 didAnnounceArrival:(id)arg2;
 - (void)navigationSession:(id)arg1 hideLaneDirectionsForId:(id)arg2;
 - (void)navigationSession:(id)arg1 showLaneDirections:(id)arg2;

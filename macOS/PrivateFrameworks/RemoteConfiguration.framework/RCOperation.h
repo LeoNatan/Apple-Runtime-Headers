@@ -31,6 +31,7 @@
     NSObject<OS_dispatch_group> *_finishedGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *finishedGroup; // @synthesize finishedGroup=_finishedGroup;
 @property(retain, nonatomic) RCOnce *startOnce; // @synthesize startOnce=_startOnce;
 @property(retain, nonatomic) RCMutexLock *childOperationsLock; // @synthesize childOperationsLock=_childOperationsLock;
@@ -43,7 +44,6 @@
 @property(nonatomic) double timeoutDuration; // @synthesize timeoutDuration=_timeoutDuration;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;
-- (void).cxx_destruct;
 - (id)longOperationDescription;
 - (id)shortOperationDescription;
 - (id)_errorUserInfo;

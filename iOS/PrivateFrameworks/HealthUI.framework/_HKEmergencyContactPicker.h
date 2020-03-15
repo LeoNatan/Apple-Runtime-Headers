@@ -17,9 +17,9 @@
     id <_HKEmergencyContactPickerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_HKEmergencyContactPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIViewController *owningViewController; // @synthesize owningViewController=_owningViewController;
-- (void).cxx_destruct;
 - (id)_meContactIdentifier;
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;

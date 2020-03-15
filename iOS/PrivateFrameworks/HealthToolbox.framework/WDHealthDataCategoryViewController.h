@@ -48,12 +48,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)activitiesForLevelLocators:(id)arg1 startAt:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WDContextChartViewController *contextChartViewController; // @synthesize contextChartViewController=_contextChartViewController;
 @property(retain, nonatomic) HKDisplayCategory *category; // @synthesize category=_category;
 @property(readonly, nonatomic) WDProfile *profile; // @synthesize profile=_profile;
 @property(retain, nonatomic) NSArray *displayTypes; // @synthesize displayTypes=_displayTypes;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void).cxx_destruct;
 - (void)updateHeight:(double)arg1 forCell:(id)arg2;
 - (void)productViewControllerDidFinish:(id)arg1;
 - (void)appsCell:(id)arg1 showStorePageWithStoreID:(id)arg2;
@@ -63,7 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)applyChangeActivity:(id)arg1;
 - (void)_addActivityForDisplayType:(id)arg1 newResponder:(id)arg2;
 - (void)_updateActivityForViewDidAppear;
-- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(struct NSDictionary *)arg2;
+- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(id)arg2;
 - (void)favoriteDisplayTypesControllerDidUpdate:(id)arg1;
 - (void)dateCacheDidUpdate:(id)arg1 onNotification:(id)arg2;
 - (id)_pushControllerForDisplayType:(id)arg1 displayDate:(id)arg2 animated:(_Bool)arg3;

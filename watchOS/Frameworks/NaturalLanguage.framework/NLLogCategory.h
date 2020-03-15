@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 + (id)categoryWithName:(id)arg1;
 + (id)defaultCategory;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *loggingSubsystem; // @synthesize loggingSubsystem=_loggingSubsystem;
 @property(readonly, nonatomic) NSString *loggingCategory; // @synthesize loggingCategory=_loggingCategory;
 @property(readonly, nonatomic) NSObject<OS_os_log> *internal; // @synthesize internal=_internal;
-- (void).cxx_destruct;
 - (id)initCategory:(id)arg1 inSubsystem:(id)arg2;
 
 @end

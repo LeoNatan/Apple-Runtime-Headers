@@ -40,8 +40,8 @@
 + (_Bool)_reviewCapturedItems;
 + (_Bool)_isMediaTypeAvailable:(id)arg1 forSource:(long long)arg2;
 + (_Bool)isSourceTypeAvailable:(long long)arg1;
-@property(retain, nonatomic) NSExtension *photosExtension; // @synthesize photosExtension=_photosExtension;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSExtension *photosExtension; // @synthesize photosExtension=_photosExtension;
 - (void)_imagePickerDidCompleteWithInfoArray:(id)arg1;
 - (void)_imagePickerDidCompleteWithInfo:(id)arg1;
 - (void)_imagePickerDidCancel;

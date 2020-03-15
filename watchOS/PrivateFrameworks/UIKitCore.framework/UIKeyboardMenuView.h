@@ -38,16 +38,20 @@ __attribute__((visibility("hidden")))
     double m_timeDismissed;
     _Bool _usesStraightLeftEdge;
     _Bool _usesDarkTheme;
+    _Bool _showsSingleCellOnly;
+    int _indexForSingleCell;
     UIKBTree *_referenceKey;
     UIKeyboardLayoutStar *_layout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) UIKeyboardLayoutStar *layout; // @synthesize layout=_layout;
 @property(nonatomic) UIKBTree *referenceKey; // @synthesize referenceKey=_referenceKey;
+@property(nonatomic) int indexForSingleCell; // @synthesize indexForSingleCell=_indexForSingleCell;
+@property(nonatomic) _Bool showsSingleCellOnly; // @synthesize showsSingleCellOnly=_showsSingleCellOnly;
 @property(nonatomic) _Bool usesDarkTheme; // @synthesize usesDarkTheme=_usesDarkTheme;
 @property(nonatomic) _Bool usesStraightLeftEdge; // @synthesize usesStraightLeftEdge=_usesStraightLeftEdge;
 @property(nonatomic) int mode; // @synthesize mode=m_mode;
-- (void).cxx_destruct;
 - (id)subtitleFontForItemAtIndex:(unsigned int)arg1;
 - (id)subtitleForItemAtIndex:(unsigned int)arg1;
 - (id)fontForItemAtIndex:(unsigned int)arg1;

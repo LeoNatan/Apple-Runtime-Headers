@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *operationType; // @synthesize operationType=_operationType;
 @property(copy, nonatomic) NSString *operationId; // @synthesize operationId=_operationId;
 @property(copy, nonatomic) C2MetricOperationGroupOptions *operationGroup; // @synthesize operationGroup=_operationGroup;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

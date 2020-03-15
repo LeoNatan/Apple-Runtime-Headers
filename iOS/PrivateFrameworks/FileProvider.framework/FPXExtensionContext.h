@@ -32,9 +32,9 @@ __attribute__((visibility("hidden")))
 + (void)setPrincipalClass:(Class)arg1;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool usesFPFS; // @synthesize usesFPFS=_usesFPFS;
 @property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
-- (void).cxx_destruct;
 - (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
 - (void)importDidFinishWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)signalEnumeratorForMaterializedItemsWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)_currentSpeechAttributeTypeFromPreferences;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *_voiceGuideItems; // @synthesize _voiceGuideItems=__voiceGuideItems;
 @property(readonly, nonatomic) NSArray *_percentValueGuideItems; // @synthesize _percentValueGuideItems=__percentValueGuideItems;
 @property(readonly, nonatomic) NSDictionary *_attributeTypeToKeyNames; // @synthesize _attributeTypeToKeyNames=__attributeTypeToKeyNames;
 @property(readonly, nonatomic) NSArray *_orderedSpeechAttributeTypes; // @synthesize _orderedSpeechAttributeTypes=__orderedSpeechAttributeTypes;
 @property(nonatomic, setter=_setCurrentAttributeIndex:) long long _currentAttributeIndex; // @synthesize _currentAttributeIndex=__currentAttributeIndex;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)_removeSpeechAttributeGuideObservers;
 - (void)_closeSpeechAttributeRotor;

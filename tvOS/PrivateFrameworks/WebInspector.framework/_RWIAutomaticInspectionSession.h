@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _currentDebuggerIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *debuggers; // @synthesize debuggers=_debuggers;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)matchesPageId:(id)arg1 applicationIdentifier:(id)arg2;
 - (void)_sendQuery;
 - (_Bool)receivedRejectResponse;

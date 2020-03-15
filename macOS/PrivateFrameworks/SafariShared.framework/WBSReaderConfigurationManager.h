@@ -20,9 +20,9 @@
     BOOL _darkModeEnabled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL darkModeEnabled; // @synthesize darkModeEnabled=_darkModeEnabled;
 @property(nonatomic) BOOL javaScriptEnabled; // @synthesize javaScriptEnabled=_javaScriptEnabled;
-- (void).cxx_destruct;
 - (void)_migrateToVersion5IfNecessary;
 - (long long)_effectiveTextZoomIndex;
 - (long long)_defaultThemeForAppearance:(long long)arg1;

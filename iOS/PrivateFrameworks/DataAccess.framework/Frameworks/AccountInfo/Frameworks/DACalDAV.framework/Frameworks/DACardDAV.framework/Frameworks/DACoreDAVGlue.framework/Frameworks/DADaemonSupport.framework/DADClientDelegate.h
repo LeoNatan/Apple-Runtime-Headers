@@ -17,12 +17,12 @@
     NSString *_accountID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool consumerCancelled; // @synthesize consumerCancelled=_consumerCancelled;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(nonatomic) __weak DADClient *client; // @synthesize client=_client;
 @property(retain, nonatomic) NSString *delegateID; // @synthesize delegateID=_delegateID;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)userRequestsCancel;
 - (void)disable;

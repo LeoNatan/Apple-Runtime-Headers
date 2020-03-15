@@ -19,9 +19,9 @@
 + (id)scrollToVisibleAction;
 + (id)detectAnimationsNonActiveAction;
 + (id)beginMonitoringIdleRunLoopAction;
+- (void).cxx_destruct;
 @property(readonly) unsigned int actionNumber; // @synthesize actionNumber=_actionNumber;
 @property(readonly) NSString *actionName; // @synthesize actionName=_actionName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithAXAction:(unsigned int)arg1;
 - (id)initWithActionName:(id)arg1;

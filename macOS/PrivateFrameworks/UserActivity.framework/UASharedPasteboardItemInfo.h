@@ -17,8 +17,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy) NSDictionary *types; // @synthesize types=_types;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *types; // @synthesize types=_types;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;

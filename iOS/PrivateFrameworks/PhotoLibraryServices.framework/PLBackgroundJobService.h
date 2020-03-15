@@ -36,8 +36,8 @@
 
 + (id)_activityIdentifierForPriority:(unsigned long long)arg1;
 + (id)_criteriaForActivityPriority:(unsigned long long)arg1;
-@property(nonatomic) __weak id <PLBackgroundJobServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PLBackgroundJobServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)cameraWatcherDidChangeState:(id)arg1;
 - (void)foregroundMonitor:(id)arg1 changedStateToForeground:(_Bool)arg2 forBundleIdentifier:(id)arg3;
 - (void)libraryCoordinatorFinishedJobsOnAllSubmittedBundles;

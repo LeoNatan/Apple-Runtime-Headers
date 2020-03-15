@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSArray *_polygons;
 }
 
-@property(retain, nonatomic) NSArray *polygons; // @synthesize polygons=_polygons;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *polygons; // @synthesize polygons=_polygons;
 - (_Bool)_loadWithJSONObject:(id)arg1 error:(id *)arg2;
 - (_Bool)_loadWithRootJSONObject:(id)arg1 error:(id *)arg2;
 - (_Bool)coordinateLiesInRegion:(struct CLLocationCoordinate2D)arg1;

@@ -14,8 +14,8 @@
     id <PLBackgroundJobCameraWatcherDelegate> _delegate;
 }
 
-@property(readonly) __weak id <PLBackgroundJobCameraWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly) __weak id <PLBackgroundJobCameraWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)isCameraRunning;
 - (id)initWithDispatchQueue:(id)arg1 delegate:(id)arg2;
 

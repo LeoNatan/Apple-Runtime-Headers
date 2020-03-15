@@ -12,6 +12,7 @@
 {
 }
 
+- (id)targetDataInfo;
 - (void)selectedStorageServiceChanged;
 - (void)runAsynchronouslyWithInput:(id)arg1 storageService:(id)arg2;
 - (id)showPickerKey;

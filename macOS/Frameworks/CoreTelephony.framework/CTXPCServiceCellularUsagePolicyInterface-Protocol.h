@@ -9,5 +9,7 @@
 @protocol CTXPCServiceCellularUsagePolicyInterface
 - (void)setSaveDataMode:(CTServiceDescriptor *)arg1 enable:(BOOL)arg2 completion:(void (^)(NSError *))arg3;
 - (void)saveDataMode:(CTServiceDescriptor *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (void)setReliableNetworkFallback:(CTServiceDescriptor *)arg1 enable:(BOOL)arg2 completion:(void (^)(NSError *))arg3;
+- (void)reliableNetworkFallback:(CTServiceDescriptor *)arg1 completion:(void (^)(BOOL, BOOL, NSError *))arg2;
 @end
 

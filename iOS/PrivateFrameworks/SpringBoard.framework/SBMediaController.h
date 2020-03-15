@@ -43,8 +43,8 @@
 + (void)sendResetPlaybackTimeoutCommand;
 + (_Bool)applicationCanBeConsideredNowPlaying:(id)arg1;
 + (id)sharedInstance;
-@property(nonatomic) int nowPlayingProcessPID; // @synthesize nowPlayingProcessPID=_nowPlayingProcessPID;
 - (void).cxx_destruct;
+@property(nonatomic) int nowPlayingProcessPID; // @synthesize nowPlayingProcessPID=_nowPlayingProcessPID;
 - (void)_updateLastRecentActivityDate;
 - (void)cache:(id)arg1 didUpdateAirplayDisplayActive:(_Bool)arg2;
 - (void)cacheDidRebuildAfterServerDeath:(id)arg1;

@@ -34,8 +34,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)isCarrierMetricTypeValid:(int)arg1;
 + (int)carrierMetricTypeForString:(id)arg1;
 + (id)sharedManager;
-@property(retain, nonatomic) CTCarrierSpaceClient *carrierSpaceClient; // @synthesize carrierSpaceClient=_carrierSpaceClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CTCarrierSpaceClient *carrierSpaceClient; // @synthesize carrierSpaceClient=_carrierSpaceClient;
 - (void)userConsentFlowInfoDidChange;
 - (void)appsDidChange;
 - (void)plansDidChange;

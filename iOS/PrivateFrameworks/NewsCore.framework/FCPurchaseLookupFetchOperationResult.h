@@ -14,9 +14,9 @@
     NSDictionary *_bundleChannelIDsByPurchaseID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *bundleChannelIDsByPurchaseID; // @synthesize bundleChannelIDsByPurchaseID=_bundleChannelIDsByPurchaseID;
 @property(copy, nonatomic) NSDictionary *channelIDsByPurchaseID; // @synthesize channelIDsByPurchaseID=_channelIDsByPurchaseID;
-- (void).cxx_destruct;
 - (id)initWithChannelIDsByPurchaseID:(id)arg1 bundleChannelIDsByPurchaseID:(id)arg2;
 
 @end

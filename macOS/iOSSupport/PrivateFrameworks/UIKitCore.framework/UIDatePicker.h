@@ -9,19 +9,52 @@
 #import <UIKitCore/NSCoding-Protocol.h>
 #import <UIKitCore/UIPickerViewScrollTesting-Protocol.h>
 
-@class NSCalendar, NSDate, NSLocale, NSTimeZone, UIColor, _UIDatePickerView;
+@class NSCalendar, NSDate, NSLocale, NSTimeZone, UIColor, UIView, _UIDatePickerDataModel;
+@protocol _UIDatePickerViewComponent;
 
 @interface UIDatePicker : UIControl <UIPickerViewScrollTesting, NSCoding>
 {
-    _UIDatePickerView *_pickerView;
+    UIView<_UIDatePickerViewComponent> *_pickerView;
+    _UIDatePickerDataModel *_data;
     BOOL _useCurrentDateDuringDecoding;
-    BOOL shouldAnimateSetDateCall;
+    long long _preferredDatePickerStyle;
 }
 
-@property(nonatomic, getter=_shouldAnimateSetDateCall, setter=_setShouldAnimateSetDateCall:) BOOL shouldAnimateSetDateCall; // @synthesize shouldAnimateSetDateCall;
 - (void).cxx_destruct;
-- (void)didReceiveBindingsUpdate;
-- (void)willReceiveBindingsUpdate;
+@property(nonatomic) long long preferredDatePickerStyle; // @synthesize preferredDatePickerStyle=_preferredDatePickerStyle;
+- (id)_lastSelectedDateComponents;
+- (id)_labelTextForCalendarUnit:(unsigned long long)arg1;
+- (id)_selectedTextForCalendarUnit:(unsigned long long)arg1;
+@property(nonatomic) double timeInterval; // @dynamic timeInterval;
+@property(readonly, nonatomic) long long datePickerStyle;
+@property(nonatomic, getter=_useCurrentDateDuringDecoding, setter=_setUseCurrentDateDuringDecoding:) BOOL useCurrentDateDuringDecoding;
+@property(retain, nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor;
+@property(retain, nonatomic, getter=_textShadowColor, setter=_setTextShadowColor:) UIColor *textShadowColor;
+@property(retain, nonatomic, getter=_textColor, setter=_setTextColor:) UIColor *textColor;
+@property(retain, nonatomic, getter=_highlightColor, setter=_setHighlightColor:) UIColor *highlightColor;
+@property(nonatomic, getter=_allowsZeroTimeInterval, setter=_setAllowsZeroTimeInterval:) BOOL allowsZeroTimeInterval; // @dynamic allowsZeroTimeInterval;
+@property(nonatomic, getter=_allowsZeroCountDownDuration, setter=_setAllowsZeroCountDownDuration:) BOOL allowsZeroCountDownDuration; // @dynamic allowsZeroCountDownDuration;
+@property(nonatomic, getter=_drawsBackground, setter=_setDrawsBackground:) BOOL drawsBackground; // @dynamic drawsBackground;
+@property(nonatomic, getter=_usesBlackChrome, setter=_setUsesBlackChrome:) BOOL usesBlackChrome; // @dynamic usesBlackChrome;
+@property(readonly, nonatomic, getter=_dateUnderSelectionBar) NSDate *dateUnderSelectionBar; // @dynamic dateUnderSelectionBar;
+- (void)_setHidesLabels:(BOOL)arg1;
+- (void)_setHighlightsToday:(BOOL)arg1;
+@property(readonly, nonatomic, getter=_contentWidth) double contentWidth; // @dynamic contentWidth;
+@property(readonly, nonatomic, getter=_isTimeIntervalMode) BOOL isTimeIntervalMode; // @dynamic isTimeIntervalMode;
+- (void)setEnabled:(BOOL)arg1;
+- (void)setBounds:(struct CGRect)arg1;
+- (void)setFrame:(struct CGRect)arg1;
+- (void)setDate:(id)arg1 animate:(BOOL)arg2;
+- (void)setBackgroundColor:(id)arg1;
+- (int)second;
+- (int)minute;
+- (int)hour;
+- (void)setHighlightsToday:(BOOL)arg1;
+- (void)setStaggerTimeIntervals:(BOOL)arg1;
+- (void)setDateComponents:(id)arg1;
+- (id)dateComponents;
+- (void)setDelegate:(id)arg1;
+- (id)_systemDefaultFocusGroupDescriptor;
 - (void)_emitValueChanged;
 - (unsigned long long)_controlEventsForActionTriggered;
 - (void)_performScrollTest:(id)arg1 withIterations:(long long)arg2 rowsToScroll:(long long)arg3 inComponent:(long long)arg4;
@@ -51,37 +84,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_installPickerView:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
-- (void)setBounds:(struct CGRect)arg1;
-- (void)setFrame:(struct CGRect)arg1;
-- (void)setDate:(id)arg1 animate:(BOOL)arg2;
-- (void)setBackgroundColor:(id)arg1;
-- (int)second;
-- (int)minute;
-- (int)hour;
-- (void)setHighlightsToday:(BOOL)arg1;
-- (void)setStaggerTimeIntervals:(BOOL)arg1;
-- (void)setDateComponents:(id)arg1;
-- (id)dateComponents;
-- (void)setDelegate:(id)arg1;
-@property(nonatomic, getter=_useCurrentDateDuringDecoding, setter=_setUseCurrentDateDuringDecoding:) BOOL useCurrentDateDuringDecoding;
-@property(retain, nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor;
-@property(retain, nonatomic, getter=_textShadowColor, setter=_setTextShadowColor:) UIColor *textShadowColor;
-@property(retain, nonatomic, getter=_textColor, setter=_setTextColor:) UIColor *textColor;
-@property(retain, nonatomic, getter=_highlightColor, setter=_setHighlightColor:) UIColor *highlightColor;
-@property(nonatomic, getter=_allowsZeroTimeInterval, setter=_setAllowsZeroTimeInterval:) BOOL allowsZeroTimeInterval; // @dynamic allowsZeroTimeInterval;
-@property(nonatomic, getter=_allowsZeroCountDownDuration, setter=_setAllowsZeroCountDownDuration:) BOOL allowsZeroCountDownDuration; // @dynamic allowsZeroCountDownDuration;
-@property(nonatomic, getter=_drawsBackground, setter=_setDrawsBackground:) BOOL drawsBackground; // @dynamic drawsBackground;
-@property(nonatomic, getter=_usesBlackChrome, setter=_setUsesBlackChrome:) BOOL usesBlackChrome; // @dynamic usesBlackChrome;
-@property(readonly, nonatomic, getter=_dateUnderSelectionBar) NSDate *dateUnderSelectionBar; // @dynamic dateUnderSelectionBar;
-- (void)_setHidesLabels:(BOOL)arg1;
-- (void)_setHighlightsToday:(BOOL)arg1;
-@property(readonly, nonatomic, getter=_contentWidth) double contentWidth; // @dynamic contentWidth;
-@property(readonly, nonatomic, getter=_isTimeIntervalMode) BOOL isTimeIntervalMode; // @dynamic isTimeIntervalMode;
-- (id)_lastSelectedDateComponents;
-- (id)_labelTextForCalendarUnit:(unsigned long long)arg1;
-- (id)_selectedTextForCalendarUnit:(unsigned long long)arg1;
-@property(nonatomic) double timeInterval; // @dynamic timeInterval;
 
 @end
 

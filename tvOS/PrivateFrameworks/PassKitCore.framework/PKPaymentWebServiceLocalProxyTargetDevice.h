@@ -18,8 +18,8 @@
     NSXPCConnection *_connection;
 }
 
-@property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
 - (void)paymentWebService:(id)arg1 passOwnershipTokenWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -66,11 +66,13 @@
 - (void)noteProvisioningUserInterfaceDidAppear;
 - (_Bool)supportsAutomaticPassPresentation;
 - (id)deviceRegion;
+- (id)osVersion;
 - (id)deviceVersion;
 - (id)deviceClass;
 - (id)bridgedClientInfo;
 - (id)deviceName;
 - (id)deviceDescriptionForPaymentWebService:(id)arg1;
+- (int)registrationSupportedInCurrentRegionForWebService:(id)arg1;
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (id)appleAccountInformation;
 - (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;

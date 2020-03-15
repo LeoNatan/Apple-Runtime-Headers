@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     NSString *_mimeType;
 }
 
-@property(copy) NSString *mimeType; // @synthesize mimeType=_mimeType;
-@property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(copy) NSString *mimeType; // @synthesize mimeType=_mimeType;
+@property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void)previewItem:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)failWithError:(id)arg1;
 - (void)finish:(struct URL)arg1;

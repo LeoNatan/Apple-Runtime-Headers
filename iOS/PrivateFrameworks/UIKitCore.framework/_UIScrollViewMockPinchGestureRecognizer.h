@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     UIScrollViewPinchGestureRecognizer *_gestureRecognizer;
 }
 
-@property(retain, nonatomic) UIScrollViewPinchGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIScrollViewPinchGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 - (id)_activeTouchesForEvent:(id)arg1;
 - (struct CGPoint)anchorPoint;
 - (double)velocity;

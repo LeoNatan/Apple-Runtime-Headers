@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _evictionCompletionBlock;
 }
 
-@property(copy) CDUnknownBlockType evictionCompletionBlock; // @synthesize evictionCompletionBlock=_evictionCompletionBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType evictionCompletionBlock; // @synthesize evictionCompletionBlock=_evictionCompletionBlock;
 - (void)receiveProgressUpdates:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (oneway void)invalidate;
 - (BOOL)shouldRetryForError:(id)arg1;

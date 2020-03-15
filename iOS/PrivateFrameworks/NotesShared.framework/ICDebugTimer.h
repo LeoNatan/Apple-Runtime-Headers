@@ -16,9 +16,9 @@
 
 + (void)enableTimersForClass:(Class)arg1;
 + (id)debugTimerForClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDate *startingDate; // @synthesize startingDate=_startingDate;
 @property double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)resume;
 - (void)pause;

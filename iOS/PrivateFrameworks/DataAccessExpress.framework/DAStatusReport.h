@@ -30,6 +30,7 @@
     NSDate *_creationDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int numHBIDataPoints; // @synthesize numHBIDataPoints=_numHBIDataPoints;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSDate *lastFailureDate; // @synthesize lastFailureDate=_lastFailureDate;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSString *accountType; // @synthesize accountType=_accountType;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSString *persistentUUID; // @synthesize persistentUUID=_persistentUUID;
-- (void).cxx_destruct;
 - (void)noteFalseMoreAvailableResponse;
 - (void)noteTimeSpentInNetworking:(double)arg1;
 - (void)noteNewHBIDataPoint:(int)arg1;

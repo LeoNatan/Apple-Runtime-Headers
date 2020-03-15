@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 + (id)reportingStringForModelUpdates:(float *)arg1 count:(unsigned long long)arg2;
 + (struct __CFData *)copyToFlatBuffer:(void *)arg1;
 + (void)initialize;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *privacyIdentifier; // @synthesize privacyIdentifier=_privacyIdentifier;
 @property(readonly, nonatomic) NSNumber *trainingLoss; // @synthesize trainingLoss=_trainingLoss;
 @property(readonly, nonatomic) NSNumber *initialLoss; // @synthesize initialLoss=_initialLoss;
@@ -36,8 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *gradientClipMin; // @synthesize gradientClipMin=_gradientClipMin;
 @property(retain, nonatomic) NSNumber *learningRate; // @synthesize learningRate=_learningRate;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)writeModelToURL:(id)arg1;
 - (id)getWeightUpdatesAddNoise:(_Bool)arg1 encryptionKey:(id)arg2;
 - (_Bool)trainOn:(id)arg1 forNEpochs:(unsigned long long)arg2;

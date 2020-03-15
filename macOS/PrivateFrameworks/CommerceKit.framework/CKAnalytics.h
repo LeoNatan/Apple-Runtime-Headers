@@ -18,10 +18,10 @@
 
 + (void)reportForCategory:(unsigned short)arg1 payload:(id)arg2;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) RTCReporting *activeRTCReportingSession; // @synthesize activeRTCReportingSession=_activeRTCReportingSession;
 @property(readonly) NSMutableArray *payloadArray; // @synthesize payloadArray=_payloadArray;
 @property(readonly) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (id)_retrieveCategoryName:(unsigned short)arg1;
 - (BOOL)_isNetworkReachable;
 - (id)_createRTCReportingSessionAndSend;

@@ -39,6 +39,7 @@
 
 + (void)preloadResources;
 + (id)createInboxDataSourceManager;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(retain, nonatomic) id <PXInboxModel> lastSelectedModel; // @synthesize lastSelectedModel=_lastSelectedModel;
 @property(retain, nonatomic) PXPhotoKitUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
@@ -54,7 +55,6 @@
 @property(readonly, nonatomic) unsigned long long accessoryButtonType; // @synthesize accessoryButtonType=_accessoryButtonType;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
-- (void).cxx_destruct;
 - (void)ppt_performBlockAfterLoadingCompletes:(CDUnknownBlockType)arg1;
 - (void)oneUpPresentation:(id)arg1 setHiddenAssetReferences:(id)arg2;
 - (id)oneUpPresentation:(id)arg1 regionOfInterestForAssetReference:(id)arg2;
@@ -75,9 +75,10 @@
 - (unsigned long long)_numberOfRows;
 - (void)_updateTableViewFrameAndBounds;
 - (void)gadgetControllerHasAppeared;
-- (struct NSObject *)contentViewController;
+- (id)contentViewController;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) _Bool hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -103,9 +104,6 @@
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 
 @end
 

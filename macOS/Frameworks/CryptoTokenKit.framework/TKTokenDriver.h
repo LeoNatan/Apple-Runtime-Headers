@@ -20,12 +20,12 @@
 }
 
 + (id)createDriver;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *extensionAttributes; // @synthesize extensionAttributes=_extensionAttributes;
 @property(retain, nonatomic) TKSharedResourceSlot *keepAliveResourceSlot; // @synthesize keepAliveResourceSlot=_keepAliveResourceSlot;
 @property(readonly, nonatomic) NSMutableDictionary *tokenConnections; // @synthesize tokenConnections=_tokenConnections;
 @property(nonatomic) __weak TKTokenDriverContext *context; // @synthesize context=_context;
 @property __weak id <TKTokenDriverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)auditAuthOperation:(id)arg1 auditToken:(CDStruct_6ad76789)arg2 success:(BOOL)arg3;
 - (void)terminate;
 - (void)getTokenWithAttributes:(id)arg1 reply:(CDUnknownBlockType)arg2;

@@ -16,8 +16,8 @@
     NSProgress *_progress;
 }
 
-@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)handleEvent:(unsigned int)arg1;
 - (id)stateMachineForProgressIndicatorViewController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

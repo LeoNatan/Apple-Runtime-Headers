@@ -8,7 +8,7 @@
 
 #import <AWDSupportFramework/NSCopying-Protocol.h>
 
-@class AWDNWL2Report, NSMutableArray, NSString;
+@class AWDNWDeviceReport, AWDNWL2Report, NSMutableArray, NSString;
 
 @interface AWDNWConnectionReport : PBCodable <NSCopying>
 {
@@ -54,6 +54,7 @@
     int _connectedInterfaceType;
     int _connectionMode;
     NSString *_connectionUUID;
+    AWDNWDeviceReport *_deviceReport;
     int _failureReason;
     int _firstAddressFamily;
     AWDNWL2Report *_l2Report;
@@ -157,6 +158,7 @@
 }
 
 + (Class)activitiesType;
+@property(retain, nonatomic) AWDNWDeviceReport *deviceReport; // @synthesize deviceReport=_deviceReport;
 @property(retain, nonatomic) AWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
 @property(nonatomic) _Bool prohibitsConstrained; // @synthesize prohibitsConstrained=_prohibitsConstrained;
 @property(nonatomic) _Bool prohibitsExpensive; // @synthesize prohibitsExpensive=_prohibitsExpensive;
@@ -228,6 +230,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasDeviceReport;
 @property(readonly, nonatomic) _Bool hasL2Report;
 @property(nonatomic) _Bool hasProhibitsConstrained;
 @property(nonatomic) _Bool hasProhibitsExpensive;

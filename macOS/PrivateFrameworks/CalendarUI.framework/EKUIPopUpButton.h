@@ -19,12 +19,12 @@
 
 + (void)setupAppearanceForPopUpButton:(id)arg1 withViewController:(id)arg2;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property __weak EKViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain) NSFont *titleFont; // @synthesize titleFont=_titleFont;
 @property double targetWidth; // @synthesize targetWidth=_targetWidth;
 @property(retain) NSMutableDictionary *abbreviatedTitles; // @synthesize abbreviatedTitles=_abbreviatedTitles;
 @property(retain) NSString *deemphasizedString; // @synthesize deemphasizedString=_deemphasizedString;
-- (void).cxx_destruct;
 - (BOOL)selectItemWithTag:(long long)arg1;
 - (BOOL)canBecomeKeyView;
 - (id)hitTest:(struct CGPoint)arg1;

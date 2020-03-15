@@ -18,12 +18,12 @@
     BOOL _writeResultsToCache;
 }
 
+- (void).cxx_destruct;
 @property BOOL writeResultsToCache; // @synthesize writeResultsToCache=_writeResultsToCache;
 @property BOOL readResultsFromCache; // @synthesize readResultsFromCache=_readResultsFromCache;
 @property(readonly) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(retain) NSMutableDictionary *mailServers; // @synthesize mailServers=_mailServers;
 @property(retain) NSString *serverAddress; // @synthesize serverAddress=_serverAddress;
-- (void).cxx_destruct;
 - (void)beginQuerySync;
 - (BOOL)hasPrimaryMailHost:(id)arg1;
 - (id)_sortedHostPairs;

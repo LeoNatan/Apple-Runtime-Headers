@@ -14,12 +14,12 @@
     CNLabeledValue *_donatedValueToReject;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNLabeledValue *donatedValueToReject; // @synthesize donatedValueToReject=_donatedValueToReject;
 @property(retain, nonatomic) CNDonationStore *donationStore; // @synthesize donationStore=_donationStore;
-- (void).cxx_destruct;
 - (void)executeWithCNSaveRequest:(id)arg1;
-- (id)initWithContactStore:(id)arg1 donationStore:(id)arg2 donatedValueToReject:(id)arg3;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithContactStore:(id)arg1 donationStore:(id)arg2 donatedValueToReject:(id)arg3 ignoresGuardianRestrictions:(BOOL)arg4;
+- (id)initWithContactStore:(id)arg1 ignoresGuardianRestrictions:(BOOL)arg2;
 
 @end
 

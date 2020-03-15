@@ -17,9 +17,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned long long)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithOperatorType:(unsigned long long)arg1 comparisonDate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long operatorType; // @synthesize operatorType=_operatorType;
 @property(readonly, nonatomic) NSDate *comparisonDate; // @synthesize comparisonDate=_comparisonDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

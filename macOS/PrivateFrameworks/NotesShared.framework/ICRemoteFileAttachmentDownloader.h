@@ -19,9 +19,9 @@
 + (void)releaseSharedDownloaderIfPossible;
 + (void)initializeDownloaderAfterDelayIfNecessary;
 + (id)sharedDownloader;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain, nonatomic) NSMutableDictionary *operationsByAttachmentIdentifier; // @synthesize operationsByAttachmentIdentifier=_operationsByAttachmentIdentifier;
-- (void).cxx_destruct;
 - (void)reachabilityChanged:(id)arg1;
 - (void)downloadRemoteFileForAttachmentObjectID:(id)arg1;
 - (void)downloadRemoteFileForAttachment:(id)arg1;

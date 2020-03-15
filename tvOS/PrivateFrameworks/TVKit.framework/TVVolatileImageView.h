@@ -13,8 +13,8 @@
     TVVolatileImage *_volatileImage;
 }
 
-@property(retain, nonatomic) TVVolatileImage *volatileImage; // @synthesize volatileImage=_volatileImage;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TVVolatileImage *volatileImage; // @synthesize volatileImage=_volatileImage;
 
 @end
 

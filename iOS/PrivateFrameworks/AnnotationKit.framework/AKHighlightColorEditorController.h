@@ -22,6 +22,7 @@
     UIAlertController *_alertController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(nonatomic) int pageTheme; // @synthesize pageTheme=_pageTheme;
 @property(retain, nonatomic) UIButton *shareButton; // @synthesize shareButton=mShareButton;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) UIButton *addNoteButton; // @synthesize addNoteButton=mAddNoteButton;
 @property(retain, nonatomic) UIView *colorControls; // @synthesize colorControls=mColorControls;
 @property(retain, nonatomic) AKCalloutBar *calloutBar; // @synthesize calloutBar=mCalloutBar;
-- (void).cxx_destruct;
 - (id)p_noteGlyphForTag:(long long)arg1 pageTheme:(int)arg2;
 - (id)p_monochromaticImageFromImage:(id)arg1 withColor:(id)arg2;
 - (id)p_paletteImageForTag:(long long)arg1 pageTheme:(int)arg2;

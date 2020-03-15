@@ -29,6 +29,7 @@
 }
 
 + (id)splashPageWithBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(copy) CDUnknownBlockType defaultButtonHandler; // @synthesize defaultButtonHandler=_defaultButtonHandler;
 @property(retain) UIButton *unifiedAboutButton; // @synthesize unifiedAboutButton=_unifiedAboutButton;
 @property(retain) UILabel *linkToPrivacyGateway; // @synthesize linkToPrivacyGateway=_linkToPrivacyGateway;
@@ -44,7 +45,6 @@
 @property(nonatomic) BOOL showLinkToPrivacyGateway; // @synthesize showLinkToPrivacyGateway=_showLinkToPrivacyGateway;
 @property BOOL allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property BOOL suppressPerPageAnalyticsLogging; // @synthesize suppressPerPageAnalyticsLogging=_suppressPerPageAnalyticsLogging;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (void)defaultButtonPressed:(id)arg1;
 - (void)updateFontForUnifiedAboutButton;

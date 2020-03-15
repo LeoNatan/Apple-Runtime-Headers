@@ -28,12 +28,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AWDHomeKitVendorInformation *vendorDetails; // @synthesize vendorDetails=_vendorDetails;
 @property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) unsigned int duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

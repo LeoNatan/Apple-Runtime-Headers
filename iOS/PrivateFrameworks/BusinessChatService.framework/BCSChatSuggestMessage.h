@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 + (Class)callToActionsType;
 + (Class)phoneOpenHoursType;
 + (Class)chatOpenHoursType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *group; // @synthesize group=_group;
 @property(retain, nonatomic) NSString *intentId; // @synthesize intentId=_intentId;
 @property(retain, nonatomic) NSMutableArray *visibilities; // @synthesize visibilities=_visibilities;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *bizId; // @synthesize bizId=_bizId;
 @property(nonatomic) long long phoneHash; // @synthesize phoneHash=_phoneHash;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     AVObservationController *_observationController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
 @property(retain, nonatomic) CADisplay *debugInfoDisplay; // @synthesize debugInfoDisplay=_debugInfoDisplay;
 @property(nonatomic) __weak AVSecondScreenViewController *secondScreenViewController; // @synthesize secondScreenViewController=_secondScreenViewController;
 @property(copy, nonatomic) NSString *debugText; // @synthesize debugText=_debugText;
 @property(nonatomic) __weak UIScene *scene; // @synthesize scene=_scene;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_actuallyUpdateDebugLabelTextWithCurrentResolution:(id)arg1 currentVideoDynamicRange:(id)arg2;
 - (void)_updateDebugLabelText;
 - (id)_currentVideoDynamicRange;

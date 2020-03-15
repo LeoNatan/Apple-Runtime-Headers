@@ -19,10 +19,10 @@
     float _endAngle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
 @property(nonatomic) float endAngle; // @synthesize endAngle=_endAngle;
 @property(nonatomic) float beginAngle; // @synthesize beginAngle=_beginAngle;
-- (void).cxx_destruct;
 - (id)colorForView:(id)arg1 accented:(_Bool)arg2;
 - (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
 - (id)filterForView:(id)arg1 style:(int)arg2;

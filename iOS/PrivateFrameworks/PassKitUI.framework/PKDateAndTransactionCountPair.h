@@ -14,9 +14,9 @@
     unsigned long long _transactionCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long transactionCount; // @synthesize transactionCount=_transactionCount;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 

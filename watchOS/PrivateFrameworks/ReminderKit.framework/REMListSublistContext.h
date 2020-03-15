@@ -13,8 +13,8 @@
     REMList *_list;
 }
 
-@property(retain, nonatomic) REMList *list; // @synthesize list=_list;
 - (void).cxx_destruct;
+@property(retain, nonatomic) REMList *list; // @synthesize list=_list;
 - (id)fetchListsWithError:(id *)arg1;
 - (id)initWithList:(id)arg1;
 

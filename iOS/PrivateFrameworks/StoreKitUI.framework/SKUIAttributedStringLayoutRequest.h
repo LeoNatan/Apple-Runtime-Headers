@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     double _width;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double width; // @synthesize width=_width;
 @property(nonatomic) _Bool wantsBaselineOffset; // @synthesize wantsBaselineOffset=_wantsBaselineOffset;
 @property(nonatomic) long long numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(readonly, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) Class layoutClass;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithAttributedString:(id)arg1;

@@ -58,6 +58,7 @@
 + (id)defaultOptionsForViewSize:(struct CGSize)arg1 columnStyle:(unsigned long long)arg2;
 + (id)defaultOptionsForViewSize:(struct CGSize)arg1 overrideSizeSubclass:(long long)arg2;
 + (id)defaultOptionsForViewSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *overrideViewSizeSubclass; // @synthesize overrideViewSizeSubclass=_overrideViewSizeSubclass;
 @property(readonly, nonatomic) long long numberOfCameraCellsPerRow; // @synthesize numberOfCameraCellsPerRow=_numberOfCameraCellsPerRow;
 @property(copy, nonatomic) HUGridStatusBannerCellLayoutOptions *statusBannerCellOptions; // @synthesize statusBannerCellOptions=_statusBannerCellOptions;
@@ -96,7 +97,6 @@
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(readonly, nonatomic) struct CGSize viewSize; // @synthesize viewSize=_viewSize;
 @property(nonatomic) unsigned long long contentColorStyle; // @synthesize contentColorStyle=_contentColorStyle;
-- (void).cxx_destruct;
 - (id)_childDisplayOptions;
 - (double)_preferredSectionHeightForNumberOfRows:(unsigned long long)arg1 withCellHeight:(double)arg2;
 - (double)preferredSectionHeightForNumberOfServiceRows:(unsigned long long)arg1 spanningColumns:(unsigned long long)arg2;

@@ -16,9 +16,9 @@
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(readonly, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
-- (void).cxx_destruct;
 - (id)initWithSourceView:(id)arg1 sourceRect:(struct CGRect)arg2;
 
 // Remaining properties

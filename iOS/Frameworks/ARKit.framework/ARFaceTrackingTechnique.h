@@ -16,9 +16,9 @@
 }
 
 + (_Bool)isSupported;
+- (void).cxx_destruct;
 @property _Bool isFaceTracked; // @synthesize isFaceTracked=_isFaceTracked;
 @property(readonly, nonatomic) long long maximumNumberOfTrackedFaces; // @synthesize maximumNumberOfTrackedFaces=_maximumNumberOfTrackedFaces;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)processData:(id)arg1;
 - (id)resultDataClasses;

@@ -18,8 +18,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (void)load;
-@property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -16,9 +16,9 @@
     FCNetworkReachability *_networkReachability;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FCNetworkReachability *networkReachability; // @synthesize networkReachability=_networkReachability;
 @property(copy, nonatomic) CDUnknownBlockType availabilityChangedNotificationBlock; // @synthesize availabilityChangedNotificationBlock=_availabilityChangedNotificationBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isAvailable) _Bool available;
 @property(readonly, nonatomic) Class todayResultsFetchDescriptorClass;
 - (id)initWithNetworkReachability:(id)arg1;

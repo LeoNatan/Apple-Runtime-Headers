@@ -22,12 +22,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *userID; // @synthesize userID=_userID;
 @property(copy, nonatomic) NSString *reviewBody; // @synthesize reviewBody=_reviewBody;
 @property(copy, nonatomic) NSString *reviewTitle; // @synthesize reviewTitle=_reviewTitle;
 @property(nonatomic) short starRating; // @synthesize starRating=_starRating;
 @property(copy, nonatomic) NSString *assetReviewID; // @synthesize assetReviewID=_assetReviewID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)configuredRecordFromAttributes;

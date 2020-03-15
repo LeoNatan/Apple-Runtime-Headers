@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     VUIMediaTagsView *_badgeView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIMediaTagsView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) VUIFocusableTextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(retain, nonatomic) VUILabel *badgeDummyLabel; // @synthesize badgeDummyLabel=_badgeDummyLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUINowPlayingHudMetaDataViewLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_updateAppearance;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_configureSubviews;

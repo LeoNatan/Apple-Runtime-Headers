@@ -14,9 +14,9 @@
     NSArray *_fieldSchemas;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *fieldSchemas; // @synthesize fieldSchemas=_fieldSchemas;
 @property(readonly, copy, nonatomic) NSString *recordType; // @synthesize recordType=_recordType;
-- (void).cxx_destruct;
 - (_Bool)isValidRecord:(id)arg1;
 - (id)schemaForFieldName:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *fieldNames;

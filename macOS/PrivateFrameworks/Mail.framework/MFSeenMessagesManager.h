@@ -18,9 +18,9 @@
 + (BOOL)migrateAccountFromAccountUID:(id)arg1 toSystemAccountIdentifier:(id)arg2 error:(id *)arg3;
 + (void)closeSeenMessageStore;
 + (id)_sharedSeenMessagesStore;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) NSManagedObject *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)saveChanges;
 - (void)removeMessagesNotOnServer:(id)arg1;
 - (void)removeServerDeletedMessages;

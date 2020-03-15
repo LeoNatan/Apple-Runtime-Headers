@@ -20,9 +20,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)dateRangeWithEarlierDate:(id)arg1 laterDate:(id)arg2;
 + (id)dateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_comment;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *comment; // @synthesize comment=_comment;
 @property(readonly, copy, nonatomic) NSString *address; // @synthesize address=_address;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *fullAddress;
 - (id)initWithAddress:(id)arg1 comment:(id)arg2;
 

@@ -17,9 +17,9 @@
 + (id)attributionWithSenderName:(id)arg1;
 + (id)noAttribution;
 + (id)unknownAttribution;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *senderName; // @synthesize senderName=_senderName;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithType:(long long)arg1 senderName:(id)arg2;
 

@@ -18,13 +18,13 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool centerGrowth; // @synthesize centerGrowth=_centerGrowth;
 @property(retain, nonatomic) NSString *urlFormat; // @synthesize urlFormat=_urlFormat;
 @property(retain, nonatomic) NSString *cropCode; // @synthesize cropCode=_cropCode;
 @property(nonatomic) double focusSizeIncrease; // @synthesize focusSizeIncrease=_focusSizeIncrease;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initUrlWithProperties:(id)arg1 imageSize:(struct CGSize)arg2 focusSizeIncrease:(double)arg3 cropCode:(id)arg4 urlFormat:(id)arg5;
 
 @end

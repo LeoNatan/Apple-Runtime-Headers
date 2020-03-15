@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <UISpringLoadedInteractionEffect> _blinkEffect;
 }
 
-@property(retain, nonatomic) id <UISpringLoadedInteractionEffect> blinkEffect; // @synthesize blinkEffect=_blinkEffect;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <UISpringLoadedInteractionEffect> blinkEffect; // @synthesize blinkEffect=_blinkEffect;
 - (void)interaction:(id)arg1 didChangeWithContext:(id)arg2;
 - (id)init;
 

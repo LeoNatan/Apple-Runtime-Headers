@@ -12,20 +12,27 @@
 
 @interface CNContactSharingEnabledWarningViewController : NSViewController <CNContactCardWidget>
 {
+    NSString *_warningMessage;
     ABCardViewStyleProvider *_styleProvider;
     NSTextField *_warningLabel;
     CNContact *_contact;
 }
 
++ (id)whitespaceText;
++ (id)lockGlyphAttachmentText;
 + (id)labelWithText:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) NSTextField *warningLabel; // @synthesize warningLabel=_warningLabel;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;
-- (void).cxx_destruct;
+@property(retain, nonatomic) NSString *warningMessage; // @synthesize warningMessage=_warningMessage;
+- (id)paragraphStyle;
+- (id)warningMessageText;
+- (id)attributedStringValue;
+- (void)updateWarningLabel;
 - (BOOL)shouldBeIncludedInKeyViewLoop;
 - (void)setContact:(id)arg1;
 - (double)desiredHeight;
-- (void)commitEditing;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)setupWarningLabel;

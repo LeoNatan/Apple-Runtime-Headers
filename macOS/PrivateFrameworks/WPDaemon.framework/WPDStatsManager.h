@@ -13,14 +13,15 @@
 {
     NSString *_name;
     NSDictionary *_scanArray;
-    struct NSMutableArray *_regularScanArray;
-    struct NSMutableArray *_aggressiveScanArray;
-    struct NSMutableArray *_advertisingArray;
+    NSMutableArray *_regularScanArray;
+    NSMutableArray *_aggressiveScanArray;
+    NSMutableArray *_advertisingArray;
     NSObject<OS_dispatch_queue> *_reportQueue;
     double _nextPushTime;
 }
 
 + (id)getStringFromActivity:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double nextPushTime; // @synthesize nextPushTime=_nextPushTime;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *reportQueue; // @synthesize reportQueue=_reportQueue;
 @property(retain, nonatomic) NSMutableArray *advertisingArray; // @synthesize advertisingArray=_advertisingArray;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSMutableArray *regularScanArray; // @synthesize regularScanArray=_regularScanArray;
 @property(retain, nonatomic) NSDictionary *scanArray; // @synthesize scanArray=_scanArray;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)reportPLStats;
 - (id)timeArrayFromArray:(id)arg1;
 - (id)getStatsDictionary;

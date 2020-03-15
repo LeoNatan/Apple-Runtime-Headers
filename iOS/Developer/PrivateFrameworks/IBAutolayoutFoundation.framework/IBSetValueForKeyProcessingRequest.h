@@ -15,10 +15,10 @@
     NSObject *_value;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject *value; // @synthesize value=_value;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(retain, nonatomic) NSObject *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (_Bool)requiresSynchronousResultProcessing;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;

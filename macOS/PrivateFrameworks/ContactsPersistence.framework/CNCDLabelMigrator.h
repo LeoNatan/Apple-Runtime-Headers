@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)log;
 - (void)updateLabelsForEntityNamed:(id)arg1 fromLabel:(id)arg2 toLabel:(id)arg3;
 - (void)migrateLabels;
 - (void)migrate;

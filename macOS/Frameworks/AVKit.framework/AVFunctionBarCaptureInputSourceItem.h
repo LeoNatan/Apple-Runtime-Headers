@@ -17,12 +17,12 @@
     id _representedObject;
 }
 
+- (void).cxx_destruct;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, getter=isNoAudioItem) BOOL noAudioItem; // @synthesize noAudioItem=_noAudioItem;
 @property(readonly, getter=isBuiltIn) BOOL builtIn; // @synthesize builtIn=_builtIn;
 @property(readonly) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithTitle:(id)arg1 builtIn:(BOOL)arg2 noAudioItem:(BOOL)arg3 enabled:(BOOL)arg4;

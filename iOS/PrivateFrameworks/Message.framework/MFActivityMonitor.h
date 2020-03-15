@@ -47,11 +47,11 @@
 + (void)destroyMonitor;
 + (id)pushNewMonitor;
 + (id)currentMonitor;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long transportType; // @synthesize transportType=_transportType;
 @property(nonatomic) _Bool isRemoteSearch; // @synthesize isRemoteSearch=_isRemoteSearch;
 @property(copy) CDUnknownBlockType startedFetch; // @synthesize startedFetch=_startedFetch;
 @property(retain) MFMailboxUid *mailbox; // @synthesize mailbox=_mailbox;
-- (void).cxx_destruct;
 - (void)recordTransportType:(long long)arg1;
 @property(readonly, nonatomic) unsigned long long bytesWritten;
 @property(readonly, nonatomic) unsigned long long bytesRead;

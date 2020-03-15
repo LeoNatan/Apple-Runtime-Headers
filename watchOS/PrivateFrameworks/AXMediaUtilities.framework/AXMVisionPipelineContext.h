@@ -38,6 +38,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)contextWithSourceParameters:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<NSSecureCoding> *userContext; // @synthesize userContext=_userContext;
 @property(retain, nonatomic) AXMSequenceRequestManager *sequenceRequestManager; // @synthesize sequenceRequestManager=_sequenceRequestManager;
 @property(nonatomic) int imageRegistrationState; // @synthesize imageRegistrationState=_imageRegistrationState;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) AXMVisionAnalysisOptions *analysisOptions; // @synthesize analysisOptions=_analysisOptions;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) _Bool shouldProcessRemotely; // @synthesize shouldProcessRemotely=_shouldProcessRemotely;
-- (void).cxx_destruct;
 - (void)didFinishProcessingContext;
 - (void)willBeginProcessingContext;
 @property(readonly, nonatomic) AXMPipelineContextInput *sourceInput;

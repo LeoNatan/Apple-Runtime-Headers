@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _cachedCollectionViewContentSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long indexOfVisibleItemForBoundsChange; // @synthesize indexOfVisibleItemForBoundsChange=_indexOfVisibleItemForBoundsChange;
 @property(nonatomic) struct CGSize cachedCollectionViewContentSize; // @synthesize cachedCollectionViewContentSize=_cachedCollectionViewContentSize;
 @property(retain, nonatomic) NSDictionary *cachedLayoutAttributes; // @synthesize cachedLayoutAttributes=_cachedLayoutAttributes;
-- (void).cxx_destruct;
 - (double)_spaceBetweenItemsForCollectionViewBounds:(struct CGRect)arg1;
 - (double)_spaceBetweenItems;
 - (double)_neighboringItemVisibleWidth;

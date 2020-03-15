@@ -11,17 +11,17 @@
 @interface HUPresenceActivationOptionState : NSObject
 {
     _Bool _expanded;
-    struct HFTransformItemProvider *_userOptionItemProvider;
+    HFTransformItemProvider *_userOptionItemProvider;
     HUPresenceActivationOptionItem *_activationOptionItem;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HUPresenceActivationOptionItem *activationOptionItem; // @synthesize activationOptionItem=_activationOptionItem;
 @property(readonly, nonatomic) HFTransformItemProvider *userOptionItemProvider; // @synthesize userOptionItemProvider=_userOptionItemProvider;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
-- (void).cxx_destruct;
 @property(nonatomic, getter=isSelected) _Bool selected;
 @property(readonly, nonatomic) unsigned long long activationGranularity;
-- (id)initWithUserOptionItemProvider:(struct HFTransformItemProvider *)arg1 activationOptionItem:(id)arg2;
+- (id)initWithUserOptionItemProvider:(id)arg1 activationOptionItem:(id)arg2;
 - (id)init;
 
 @end

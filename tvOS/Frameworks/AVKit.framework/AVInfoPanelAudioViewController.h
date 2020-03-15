@@ -38,11 +38,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVSpeakerManager *speakerManager; // @synthesize speakerManager=_speakerManager;
 @property(nonatomic) unsigned long long selectedSoundOptionIndex; // @synthesize selectedSoundOptionIndex=_selectedSoundOptionIndex;
 @property(nonatomic) unsigned long long selectedLanguageOptionIndex; // @synthesize selectedLanguageOptionIndex=_selectedLanguageOptionIndex;
 @property(nonatomic) __weak id <AVInfoPanelLanguageDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_textAlignmentForUserInterfaceLayout;
 - (id)_newHeaderViewWithTitle:(id)arg1;
 - (void)_updateAvailableSpeakers;

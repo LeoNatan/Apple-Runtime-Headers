@@ -33,6 +33,7 @@
     struct CGSize _transitioningSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *replayViewTransitions; // @synthesize replayViewTransitions=_replayViewTransitions;
 @property(readonly, nonatomic) _Bool scrollViewStartedScrolling; // @synthesize scrollViewStartedScrolling=_scrollViewStartedScrolling;
 @property(readonly, nonatomic) struct CGSize transitioningSize; // @synthesize transitioningSize=_transitioningSize;
@@ -50,7 +51,6 @@
 @property(retain, nonatomic) UIViewController *visibleViewController; // @synthesize visibleViewController=_visibleViewController;
 @property(nonatomic) __weak id <NUPageViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NUPageViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (id)childViewControllerForStatusBarHidden;
 - (_Bool)isTransitioningToViewController;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

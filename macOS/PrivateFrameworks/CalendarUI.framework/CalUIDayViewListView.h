@@ -23,6 +23,7 @@
 }
 
 + (id)viewWithEvent:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CalUILabel *locationField; // @synthesize locationField=_locationField;
 @property(retain) CalUILabel *titleField; // @synthesize titleField=_titleField;
 @property(retain) CalUILayerBackedView *eventView; // @synthesize eventView=_eventView;
@@ -33,7 +34,6 @@
 @property(nonatomic) BOOL dimmed; // @synthesize dimmed=_dimmed;
 @property(nonatomic) BOOL selected; // @synthesize selected=_selected;
 @property(retain) EKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (void)updateLayer;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateWithEvent:(id)arg1;

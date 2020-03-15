@@ -17,9 +17,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_os_log> *oslog; // @synthesize oslog=_oslog;
 @property(copy, nonatomic) NSString *facility; // @synthesize facility=_facility;
-- (void).cxx_destruct;
 - (void)_logOSMessage:(const char *)arg1 args:(struct __va_list_tag [1])arg2 returnAddress:(void *)arg3;
 - (void)logMessage:(id)arg1 args:(struct __va_list_tag [1])arg2;
 - (void)logMessage:(id)arg1;

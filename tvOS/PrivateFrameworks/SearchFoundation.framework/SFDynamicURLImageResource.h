@@ -27,12 +27,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *imageOptions; // @synthesize imageOptions=_imageOptions;
 @property(nonatomic) _Bool supportsResizing; // @synthesize supportsResizing=_supportsResizing;
 @property(copy, nonatomic) NSString *formatURL; // @synthesize formatURL=_formatURL;
 @property(nonatomic) double pixelHeight; // @synthesize pixelHeight=_pixelHeight;
 @property(nonatomic) double pixelWidth; // @synthesize pixelWidth=_pixelWidth;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;

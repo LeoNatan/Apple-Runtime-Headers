@@ -14,9 +14,9 @@
     PSYSyncSession *_updatedSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PSYSyncSession *updatedSession; // @synthesize updatedSession=_updatedSession;
 @property(readonly, nonatomic) PSYSyncSession *originalSession; // @synthesize originalSession=_originalSession;
-- (void).cxx_destruct;
 - (_Bool)didUpdateCompleteSyncSession;
 - (void)enumerateNewlyCompletedActivitiesWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateNewlyRunningActivitiesWithBlock:(CDUnknownBlockType)arg1;

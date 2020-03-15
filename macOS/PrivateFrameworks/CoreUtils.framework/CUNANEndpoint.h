@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     WiFiAwareDiscoveryResult *_discoveryResult;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WiFiAwareDiscoveryResult *discoveryResult; // @synthesize discoveryResult=_discoveryResult;
 @property(readonly, copy, nonatomic) NSDictionary *textInfo; // @synthesize textInfo=_textInfo;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) int port; // @synthesize port=_port;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (unsigned int)updateWithDiscoveryResult:(id)arg1;
 - (id)descriptionWithLevel:(int)arg1;
 - (id)description;

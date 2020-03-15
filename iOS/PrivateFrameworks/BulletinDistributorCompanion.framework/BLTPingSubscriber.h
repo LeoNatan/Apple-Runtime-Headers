@@ -18,9 +18,9 @@
     id <BLTPingService> _service;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BLTPingService> service; // @synthesize service=_service;
 @property(retain, nonatomic) NSMutableDictionary *pingHandlers; // @synthesize pingHandlers=_pingHandlers;
-- (void).cxx_destruct;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(CDUnknownBlockType)arg2;

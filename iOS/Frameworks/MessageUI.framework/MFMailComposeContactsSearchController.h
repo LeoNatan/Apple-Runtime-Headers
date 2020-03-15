@@ -23,9 +23,9 @@
     NSNumber *_taskID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *taskID; // @synthesize taskID=_taskID;
 @property(nonatomic) __weak id <MFMailComposeContactsSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)_finishSearch;

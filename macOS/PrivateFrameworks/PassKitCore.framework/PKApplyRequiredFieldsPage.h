@@ -13,8 +13,8 @@
     PKPaymentSetupFieldsModel *_fieldModel;
 }
 
-@property(retain, nonatomic) PKPaymentSetupFieldsModel *fieldModel; // @synthesize fieldModel=_fieldModel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentSetupFieldsModel *fieldModel; // @synthesize fieldModel=_fieldModel;
 - (id)initWithDictionary:(id)arg1 fieldOptions:(id)arg2 featureApplication:(id)arg3;
 
 @end

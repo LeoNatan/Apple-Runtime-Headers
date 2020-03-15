@@ -21,9 +21,9 @@
     id <SBDashBoardIdleTimerProviderDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SBIdleTimer> idleTimer; // @synthesize idleTimer=_idleTimer;
 @property(nonatomic) __weak id <SBDashBoardIdleTimerProviderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_proposeIdleTimerBehavior:(id)arg1 forReason:(id)arg2;
 - (void)_proposeEffectiveIdleTimerBehaviorForReason:(id)arg1;
 - (id)_copyIdleTimerBehaviorForBehaviorProvider:(id)arg1;

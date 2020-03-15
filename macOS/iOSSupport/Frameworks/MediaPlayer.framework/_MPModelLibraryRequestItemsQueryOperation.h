@@ -13,8 +13,8 @@
     MPMediaLibraryView *_libraryView;
 }
 
-@property(retain, nonatomic) MPMediaLibraryView *libraryView; // @synthesize libraryView=_libraryView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MPMediaLibraryView *libraryView; // @synthesize libraryView=_libraryView;
 - (void)execute;
 
 @end

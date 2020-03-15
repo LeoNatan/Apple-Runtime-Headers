@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     ABCAdministrator *_administrator;
 }
 
-@property(nonatomic) __weak ABCAdministrator *administrator; // @synthesize administrator=_administrator;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ABCAdministrator *administrator; // @synthesize administrator=_administrator;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)diagnosticExtensionController;
 - (void)shutdown;

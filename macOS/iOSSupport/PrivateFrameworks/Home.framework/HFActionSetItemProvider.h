@@ -21,6 +21,7 @@
     id <HFCharacteristicValueSource> _overrideValueSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <HFCharacteristicValueSource> overrideValueSource; // @synthesize overrideValueSource=_overrideValueSource;
 @property(retain, nonatomic) NSMutableSet *actionSetItems; // @synthesize actionSetItems=_actionSetItems;
 @property(copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
@@ -29,7 +30,6 @@
 @property(nonatomic) BOOL onlyShowsFavorites; // @synthesize onlyShowsFavorites=_onlyShowsFavorites;
 @property(retain, nonatomic) HMRoom *room; // @synthesize room=_room;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_favoriteFilter;
 - (CDUnknownBlockType)_roomFilter;
 @property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource;

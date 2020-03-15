@@ -25,13 +25,13 @@
     _Bool _idleTimerDisabled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=idleTimerDisabled, setter=setIdleTimerDisabled:) _Bool idleTimerDisabled; // @synthesize idleTimerDisabled=_idleTimerDisabled;
 @property(nonatomic) _Bool registeredForPlayerNotifications; // @synthesize registeredForPlayerNotifications=_registeredForPlayerNotifications;
 @property(nonatomic) long long orientation; // @synthesize orientation=_interfaceOrientation;
 @property(retain, nonatomic) MPAVItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) MPAVController *player; // @synthesize player=_player;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_canReloadView;
 - (void)removeChildViewController:(id)arg1;
 - (void)addChildViewController:(id)arg1;

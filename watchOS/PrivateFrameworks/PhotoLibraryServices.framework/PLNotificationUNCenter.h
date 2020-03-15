@@ -29,8 +29,8 @@
 + (id)_updatesLikedCategory;
 + (id)_updatesCategory;
 + (id)_UNNotificationInitialize;
-@property(nonatomic) __weak id <PLNotificationUNCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PLNotificationUNCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_updateAppBadge;
 - (id)_copiedContentFromContent:(id)arg1 WithImageData:(id)arg2 identifier:(id)arg3;
 - (id)_notificationContentWithNotification:(id)arg1 withImageURL:(id)arg2 sound:(_Bool)arg3;

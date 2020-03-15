@@ -20,6 +20,7 @@
     NSString *_projectVersion;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *projectVersion; // @synthesize projectVersion=_projectVersion;
 @property BOOL isAppleInternalBuild; // @synthesize isAppleInternalBuild=_isAppleInternalBuild;
 @property(retain) NSString *fromMacOSBuild; // @synthesize fromMacOSBuild=_fromMacOSBuild;
@@ -28,7 +29,6 @@
 @property(retain) BOSRequest *request; // @synthesize request=_request;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
-- (void).cxx_destruct;
 - (void)__submitToInstallerDiagnostics;
 - (void)_submitToInstallerDiagnostics;
 - (id)_shortDescriptionForAction:(unsigned long long)arg1;

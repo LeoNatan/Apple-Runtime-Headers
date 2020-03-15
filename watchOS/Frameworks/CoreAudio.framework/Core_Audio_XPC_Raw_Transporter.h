@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)object:(id)arg1;
-@property(retain, nonatomic) NSObject<OS_xpc_object> *object; // @synthesize object=_object;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *object; // @synthesize object=_object;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     ICDocCamThumbnailCollectionViewLayout *_layout;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL needReloadAfterBatchUpdates; // @synthesize needReloadAfterBatchUpdates=_needReloadAfterBatchUpdates;
 @property(nonatomic) BOOL isPerformingBatchUpdates; // @synthesize isPerformingBatchUpdates=_isPerformingBatchUpdates;
 @property(retain, nonatomic) ICDocCamThumbnailCollectionViewLayout *layout; // @synthesize layout=_layout;
 @property(nonatomic) __weak id <ICDocCamThumbnailViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ICDocCamImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) NSMutableArray *documentInfoArray; // @synthesize documentInfoArray=_documentInfoArray;
-- (void).cxx_destruct;
 - (BOOL)_canShowWhileLocked;
 - (void)animateLayoutChange;
 - (void)addNewDocument:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

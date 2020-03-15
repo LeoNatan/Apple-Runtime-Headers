@@ -14,9 +14,9 @@
     ICAttachmentModel *_attachmentModel;
 }
 
+- (void).cxx_destruct;
 @property(retain) ICAttachmentModel *attachmentModel; // @synthesize attachmentModel=_attachmentModel;
 @property(retain) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
-- (void).cxx_destruct;
 - (void)main;
 - (unsigned long long)type;
 

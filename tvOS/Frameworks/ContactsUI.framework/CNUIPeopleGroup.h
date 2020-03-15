@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)peopleGroupWithName:(id)arg1 identifier:(id)arg2 sourceKind:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sourceKind; // @synthesize sourceKind=_sourceKind;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -14,9 +14,9 @@
     NSScrollView *_scrollView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) NSTextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)setText:(id)arg1;
 - (id)init;
 

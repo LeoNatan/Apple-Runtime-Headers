@@ -17,10 +17,10 @@
     MDLMatrix4x4Array *_jointRestTransforms;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MDLMatrix4x4Array *jointRestTransforms; // @synthesize jointRestTransforms=_jointRestTransforms;
 @property(readonly, nonatomic) MDLMatrix4x4Array *jointBindTransforms; // @synthesize jointBindTransforms=_jointBindTransforms;
 @property(readonly, nonatomic) NSArray *jointPaths; // @synthesize jointPaths=_jointPaths;
-- (void).cxx_destruct;
 - (id)initWithName:(id)arg1 jointPaths:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

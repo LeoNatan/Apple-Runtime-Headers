@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)entryTypeClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *entriesMapTable; // @synthesize entriesMapTable=_entriesMapTable;
 @property(readonly, nonatomic) NSSet *entries; // @synthesize entries=_entries;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly) unsigned int hash;

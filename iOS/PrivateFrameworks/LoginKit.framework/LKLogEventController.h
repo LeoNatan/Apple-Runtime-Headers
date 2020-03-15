@@ -21,6 +21,7 @@
 }
 
 + (id)loginDetailsPredicate;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType logEventHandler; // @synthesize logEventHandler=_logEventHandler;
 @property(nonatomic) _Bool streamingLogs; // @synthesize streamingLogs=_streamingLogs;
 @property(retain, nonatomic) NSDate *logEnumarationEndTime; // @synthesize logEnumarationEndTime=_logEnumarationEndTime;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) LKSwitchOperation *switchOperation; // @synthesize switchOperation=_switchOperation;
 @property(retain, nonatomic) NSMutableDictionary *mutableKeychainItemsAddedByActivityID; // @synthesize mutableKeychainItemsAddedByActivityID=_mutableKeychainItemsAddedByActivityID;
 @property(retain, nonatomic) NSMutableArray *switchOperationsMutableArray; // @synthesize switchOperationsMutableArray=_switchOperationsMutableArray;
-- (void).cxx_destruct;
 - (id)loginDetailsWithStartDate:(id)arg1 logArchivePath:(id)arg2;
 - (void)enumuratePersistentLogsSynchronouslyFromDate:(id)arg1 logArchivePath:(id)arg2 predicate:(id)arg3 logEventHandler:(CDUnknownBlockType)arg4;
 - (void)enumurateLogEventsSynchronouslyFromDate:(id)arg1 predicate:(id)arg2 logEventHandler:(CDUnknownBlockType)arg3;

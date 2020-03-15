@@ -16,8 +16,8 @@
 + (BOOL)supportsSecureCoding;
 + (BOOL)shouldCache;
 + (long long)imageSetType;
-@property(retain, nonatomic) PKImage *cardHolderPicture; // @synthesize cardHolderPicture=_cardHolderPicture;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKImage *cardHolderPicture; // @synthesize cardHolderPicture=_cardHolderPicture;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

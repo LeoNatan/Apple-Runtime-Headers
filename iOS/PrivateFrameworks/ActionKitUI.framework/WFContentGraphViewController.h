@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     WFContentCoercionNodeView *_rootNodeView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool coercing; // @synthesize coercing=_coercing;
 @property(retain, nonatomic) WFContentCoercionNodeView *rootNodeView; // @synthesize rootNodeView=_rootNodeView;
 @property(retain, nonatomic) CKForceLayoutAnimator *animator; // @synthesize animator=_animator;
 @property(readonly, nonatomic) WFContentItem *contentItem; // @synthesize contentItem=_contentItem;
-- (void).cxx_destruct;
 - (void)panNode:(id)arg1;
 - (void)done;
 - (void)tapNode:(id)arg1;

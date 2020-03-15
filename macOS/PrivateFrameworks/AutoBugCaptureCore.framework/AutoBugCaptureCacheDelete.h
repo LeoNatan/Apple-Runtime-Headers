@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     DiagnosticStorageManager *_storageManager;
 }
 
-@property(retain, nonatomic) DiagnosticStorageManager *storageManager; // @synthesize storageManager=_storageManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) DiagnosticStorageManager *storageManager; // @synthesize storageManager=_storageManager;
 - (void)registerCallbacks:(const char *)arg1;
 - (unsigned long long)allowableDiskUsageSizeForUrgency:(int)arg1;
 - (id)cacheDeletePeriodicWithInfo:(struct __CFDictionary *)arg1;

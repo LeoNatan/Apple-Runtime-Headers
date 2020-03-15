@@ -15,9 +15,9 @@
 }
 
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NSData *certificateData; // @synthesize certificateData=_certificateData;
 @property unsigned int encoding; // @synthesize encoding=_encoding;
-- (void).cxx_destruct;
 - (_Bool)parsePayloadData;
 - (_Bool)generatePayloadData;
 - (_Bool)hasRequiredFields;

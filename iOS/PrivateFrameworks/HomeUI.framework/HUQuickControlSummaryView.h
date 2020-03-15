@@ -24,6 +24,7 @@
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILayoutGuide *lastBaselineLayoutGuide; // @synthesize lastBaselineLayoutGuide=_lastBaselineLayoutGuide;
 @property(retain, nonatomic) NSArray *contentConstraints; // @synthesize contentConstraints=_contentConstraints;
 @property(nonatomic) unsigned long long iconSize; // @synthesize iconSize=_iconSize;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) UILabel *secondaryStatusLabel; // @synthesize secondaryStatusLabel=_secondaryStatusLabel;
 @property(readonly, nonatomic) UILabel *primaryStatusLabel; // @synthesize primaryStatusLabel=_primaryStatusLabel;
 @property(readonly, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (id)_secondaryFont;
 - (id)_primaryFont;
 - (id)_primaryFontTextStyle;

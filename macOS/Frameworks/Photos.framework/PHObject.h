@@ -55,12 +55,12 @@
 + (id)propertySetAccessorsByPropertySet;
 + (id)propertySetsForPropertyFetchHints:(unsigned long long)arg1;
 + (unsigned long long)propertyFetchHintsForPropertySets:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property unsigned long long propertyHint; // @synthesize propertyHint=_propertyHint;
 @property(readonly) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, getter=isDeleted) BOOL deleted; // @synthesize deleted=_deleted;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, getter=isTransient) BOOL transient;
 @property(readonly) unsigned long long hash;

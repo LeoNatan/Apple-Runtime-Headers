@@ -16,10 +16,10 @@
     UIButton *_toggleButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *toggleButton; // @synthesize toggleButton=_toggleButton;
 @property(nonatomic) __weak id <HUToggleSectionHeaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long toggleState; // @synthesize toggleState=_toggleState;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool toggleButtonHidden;
 - (void)_toggle:(id)arg1;
 - (void)prepareForReuse;

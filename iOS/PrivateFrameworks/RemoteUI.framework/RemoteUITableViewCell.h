@@ -24,6 +24,7 @@
     struct CGSize _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RUIWebContainerView *webContainerView; // @synthesize webContainerView=_webContainerView;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(nonatomic) _Bool activityIndicatorVisible; // @synthesize activityIndicatorVisible=_activityIndicatorVisible;
@@ -31,7 +32,6 @@
 @property(nonatomic) long long remoteUIAccessoryType; // @synthesize remoteUIAccessoryType=_remoteUIAccessoryType;
 @property(nonatomic) _Bool leftAlignDetailLabel; // @synthesize leftAlignDetailLabel=_leftAlignDetailLabel;
 @property(nonatomic) _Bool forceFullSizeDetailLabel; // @synthesize forceFullSizeDetailLabel=_forceFullSizeDetailLabel;
-- (void).cxx_destruct;
 - (void)setRowInvalid:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)detailLinkButton;

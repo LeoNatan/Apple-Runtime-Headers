@@ -8,15 +8,19 @@
 
 #import <UIKitMacHelper/NSServicesMenuRequestor-Protocol.h>
 #import <UIKitMacHelper/NSTextInputClient-Protocol.h>
+#import <UIKitMacHelper/UINSKeyboardEventHandler-Protocol.h>
 
-@class NSString, NSTrackingArea, UINSMouseEventTranslator, UINSSceneView;
+@class NSEvent, NSMutableSet, NSString, NSTrackingArea, UINSMouseEventTranslator, UINSSceneView;
 
 __attribute__((visibility("hidden")))
-@interface UINSInputView : NSView <NSTextInputClient, NSServicesMenuRequestor>
+@interface UINSInputView : NSView <NSTextInputClient, NSServicesMenuRequestor, UINSKeyboardEventHandler>
 {
     NSTrackingArea *_mouseTrackingArea;
     UINSMouseEventTranslator *_mouseEventTranslator;
     BOOL _trackingDragLocally;
+    NSMutableSet *_currentlyHeldModifierKeyCodes;
+    id _keyUpEventMonitor;
+    NSEvent *_resentEvent;
 }
 
 - (void).cxx_destruct;
@@ -76,6 +80,7 @@ __attribute__((visibility("hidden")))
 - (void)_forwardKeyboardAction:(id)arg1 propagateUpHostResponderChain:(BOOL)arg2;
 - (BOOL)_isValidKeyView:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
+- (void)forwardUINSEventToAppKit:(id)arg1;
 - (void)cancelOutstandingMouseButtons;
 - (void)forwardDraggingEnded:(id)arg1;
 - (BOOL)forwardPerformDragOperation:(id)arg1;
@@ -101,9 +106,16 @@ __attribute__((visibility("hidden")))
 - (void)mouseEntered:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)keyDown:(id)arg1;
+- (BOOL)_shouldSendEventToUIKitFirst:(id)arg1;
 - (void)keyUp:(id)arg1;
+- (BOOL)performKeyEquivalent:(id)arg1;
+- (BOOL)_keyboardDelegateRequiresKeyEvents;
+- (BOOL)_isResentEvent:(id)arg1;
+- (BOOL)performDefaultBehaviorForEvent:(id)arg1;
+- (BOOL)handleEventByInputContext:(id)arg1;
+- (BOOL)_runHandleEventByInputMethod:(id)arg1;
+- (BOOL)handleEventByInputMethod:(id)arg1;
 - (BOOL)_sendKeyEvent:(id)arg1 isDown:(BOOL)arg2;
-- (id)convertKeyCodeToUIKeyInput:(id)arg1;
 - (void)flagsChanged:(id)arg1;
 - (struct CGRect)convertRectFromUnitCoordinates:(struct CGRect)arg1;
 - (struct CGPoint)convertPointToUnitCoordinates:(struct CGPoint)arg1;

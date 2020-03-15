@@ -20,13 +20,13 @@
 }
 
 + (id)cachePath;
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTStarkManager *starkManager; // @synthesize starkManager=_starkManager;
 @property(retain, nonatomic) RTDataProtectionManager *dataProtectionManager; // @synthesize dataProtectionManager=_dataProtectionManager;
 @property(retain, nonatomic) NSArray *nextPredictedLocationsOfInterest; // @synthesize nextPredictedLocationsOfInterest=_nextPredictedLocationsOfInterest;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <RTNextPredictedLocationsOfInterestCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)handleStarkTrustedConnectionEstablished:(_Bool)arg1;
 - (void)onStarkNotification:(id)arg1;
 - (void)handleUnlockedSinceBoot:(_Bool)arg1;

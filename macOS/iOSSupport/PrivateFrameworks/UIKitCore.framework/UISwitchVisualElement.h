@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)preferredContentSize;
+- (void).cxx_destruct;
 @property(nonatomic) double enabledAlpha; // @synthesize enabledAlpha=_enabledAlpha;
 @property(nonatomic) __weak id <UISwitchControl> switchControl; // @synthesize switchControl=_switchControl;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)setShowsOnOffLabel:(BOOL)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;

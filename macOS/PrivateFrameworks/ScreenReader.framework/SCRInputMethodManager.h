@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)shared;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRElement *_currentInputMethodWindow; // @synthesize _currentInputMethodWindow=__currentInputMethodWindow;
 @property(retain, nonatomic) SCRApplication *currentApplication; // @synthesize currentApplication=_currentApplication;
-- (void).cxx_destruct;
 - (void)_delayedSendingRequest:(id)arg1;
 - (void)_handleListSelectionChangeForUIElement:(id)arg1;
 - (void)_inputMethodSelectionChanged:(id)arg1;

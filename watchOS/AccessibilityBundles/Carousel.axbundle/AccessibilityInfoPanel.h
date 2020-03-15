@@ -20,8 +20,8 @@
     _Bool _displayOnBottomEdge;
 }
 
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (id)_rootView;
 - (id)_accessibilityInfoPanelView;
 - (void)_layoutSubviews;

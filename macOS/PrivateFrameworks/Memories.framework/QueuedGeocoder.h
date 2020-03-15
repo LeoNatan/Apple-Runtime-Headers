@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedGeocoder;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSRecursiveLock *lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) Reachability *reachability; // @synthesize reachability=_reachability;
 @property(retain, nonatomic) GeocodeRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMapTable *locationToPlacemarksMap; // @synthesize locationToPlacemarksMap=_locationToPlacemarksMap;
 @property(retain, nonatomic) CLGeocoder *geocoder; // @synthesize geocoder=_geocoder;
 @property(nonatomic) double placemarkDifferentationDistance; // @synthesize placemarkDifferentationDistance=_placemarkDifferentationDistance;
-- (void).cxx_destruct;
 - (void)dequeueRequest;
 - (void)reverseGeocodeLocation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_init;

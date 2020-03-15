@@ -18,10 +18,10 @@
     long long _itemCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long itemCount; // @synthesize itemCount=_itemCount;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

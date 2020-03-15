@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     ACAccount *_nativeAccount;
 }
 
-@property(readonly) ACAccount *nativeAccount; // @synthesize nativeAccount=_nativeAccount;
 - (void).cxx_destruct;
+@property(readonly) ACAccount *nativeAccount; // @synthesize nativeAccount=_nativeAccount;
 @property(readonly, nonatomic) NSString *username;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *DSID;

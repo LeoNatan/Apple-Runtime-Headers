@@ -6,9 +6,7 @@
 
 #import <TeaUI/TUSettingsAssembly.h>
 
-#import <TeaUI/NFAssembly-Protocol.h>
-
-@interface TUSettingsAssembly (TeaUI) <NFAssembly>
+@interface TUSettingsAssembly (TeaUI)
 - (void)loadInRegistry:(id)arg1;
 @end
 

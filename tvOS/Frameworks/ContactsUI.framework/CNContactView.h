@@ -45,6 +45,7 @@
 + (id)cellIdentifierForPropertyPlaceholder;
 + (id)cellIdentifierForSplitActions;
 + (id)cellIdentifierForActions;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsUpdateVisibleCells; // @synthesize needsUpdateVisibleCells=_needsUpdateVisibleCells;
 @property(nonatomic) struct CGSize oldSize; // @synthesize oldSize=_oldSize;
 @property(nonatomic) struct UIEdgeInsets contentMargins; // @synthesize contentMargins=_contentMargins;
@@ -58,7 +59,6 @@
 @property(nonatomic, getter=isCellsLayoutCachingEnabled) _Bool cellsLayoutCachingEnabled; // @synthesize cellsLayoutCachingEnabled=_cellsLayoutCachingEnabled;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) UIView *customHeaderView; // @synthesize customHeaderView=_customHeaderView;
-- (void).cxx_destruct;
 - (void)applyCellAppearance:(id)arg1;
 - (void)updateFontSizes;
 - (void)updateVisibleCellsIfNeeded;

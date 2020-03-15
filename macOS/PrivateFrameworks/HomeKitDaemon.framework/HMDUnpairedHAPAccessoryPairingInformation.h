@@ -14,6 +14,8 @@
     BOOL _provideNetworkCredentialsToAccessory;
     BOOL _setupCodeProvided;
     BOOL _needsUserConsent;
+    BOOL _wacAccessory;
+    BOOL _legacyWAC;
     long long _linkType;
     HMFTimer *_pairingInterruptionTimer;
     CDUnknownBlockType _addAccessoryCompletionHandler;
@@ -31,6 +33,9 @@
     NSData *_ownershipToken;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) BOOL legacyWAC; // @synthesize legacyWAC=_legacyWAC;
+@property(nonatomic) BOOL wacAccessory; // @synthesize wacAccessory=_wacAccessory;
 @property(retain, nonatomic) NSData *ownershipToken; // @synthesize ownershipToken=_ownershipToken;
 @property(retain, nonatomic) NSString *setupID; // @synthesize setupID=_setupID;
 @property(retain, nonatomic) NSString *setupCode; // @synthesize setupCode=_setupCode;
@@ -50,7 +55,6 @@
 @property(copy, nonatomic) CDUnknownBlockType addAccessoryCompletionHandler; // @synthesize addAccessoryCompletionHandler=_addAccessoryCompletionHandler;
 @property(retain, nonatomic) HMFTimer *pairingInterruptionTimer; // @synthesize pairingInterruptionTimer=_pairingInterruptionTimer;
 @property(nonatomic) long long linkType; // @synthesize linkType=_linkType;
-- (void).cxx_destruct;
 - (BOOL)matchesAccessoryServer:(id)arg1;
 - (BOOL)matchesUnpairedAccessory:(id)arg1;
 - (id)description;

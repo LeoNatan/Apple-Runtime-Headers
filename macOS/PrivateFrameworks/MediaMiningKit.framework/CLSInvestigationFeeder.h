@@ -18,11 +18,11 @@
     NSSet *_focusPeopleUUIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *focusPeopleUUIDs; // @synthesize focusPeopleUUIDs=_focusPeopleUUIDs;
 @property(readonly, nonatomic) NSMutableSet *focusItems; // @synthesize focusItems=_focusItems;
 @property(nonatomic) BOOL allowsInterview; // @synthesize allowsInterview=_allowsInterview;
 @property(nonatomic) unsigned long long locationClusteringAlgorithm; // @synthesize locationClusteringAlgorithm=_locationClusteringAlgorithm;
-- (void).cxx_destruct;
 - (struct CGImage *)itemThumbnailInInvestigation:(id)arg1 atIndex:(unsigned long long)arg2 withResolution:(unsigned long long)arg3;
 - (unsigned long long)numberOfItemsInInvestigation:(id)arg1;
 - (id)prepareWithProgressBlock:(CDUnknownBlockType)arg1;

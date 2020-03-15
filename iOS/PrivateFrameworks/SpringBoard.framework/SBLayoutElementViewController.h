@@ -26,6 +26,7 @@
     struct CGRect _referenceFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long contentWrapperInterfaceOrientation; // @synthesize contentWrapperInterfaceOrientation=_contentWrapperInterfaceOrientation;
 @property(readonly, nonatomic) unsigned long long supportedContentInterfaceOrientations; // @synthesize supportedContentInterfaceOrientations=_supportedContentInterfaceOrientations;
 @property(readonly, nonatomic) struct CGRect referenceFrame; // @synthesize referenceFrame=_referenceFrame;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_displayIdentity;
 @property(nonatomic, getter=isDragging) _Bool dragging; // @synthesize dragging=_dragging;
 @property(readonly, nonatomic) UIView *_contentContainerView; // @synthesize _contentContainerView;
-- (void).cxx_destruct;
 - (id)containerViewForBlurContentView;
 - (id)initialRimShadowFilters;
 - (id)initialDiffuseShadowFilters;

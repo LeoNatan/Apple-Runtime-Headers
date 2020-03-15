@@ -17,12 +17,12 @@
     UILabel *_trackNumberLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *trackNumberLabel; // @synthesize trackNumberLabel=_trackNumberLabel;
 @property(nonatomic) unsigned long long trackNumber; // @synthesize trackNumber=_trackNumber;
 @property(nonatomic) _Bool showsTrackNumber; // @synthesize showsTrackNumber=_showsTrackNumber;
 @property(nonatomic) _Bool playable; // @synthesize playable=_playable;
 @property(retain, nonatomic) UIView *accessoryViewForFocus; // @synthesize accessoryViewForFocus=_accessoryViewForFocus;
-- (void).cxx_destruct;
 - (id)_trackNumberLabel;
 - (void)_updateTrackNumberLabel;
 - (void)layoutSubviews;

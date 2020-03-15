@@ -19,12 +19,12 @@
     NSMutableArray *_deletedRecordIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *deletedRecordIDs; // @synthesize deletedRecordIDs=_deletedRecordIDs;
 @property(retain, nonatomic) NSMutableDictionary *recordsToSaveByID; // @synthesize recordsToSaveByID=_recordsToSaveByID;
 @property(retain, nonatomic) NSMutableDictionary *workingRecordsByID; // @synthesize workingRecordsByID=_workingRecordsByID;
 @property(retain, nonatomic) NSMutableDictionary *originalRecordsByID; // @synthesize originalRecordsByID=_originalRecordsByID;
 @property(retain, nonatomic) SCKZoneSchema *zoneSchema; // @synthesize zoneSchema=_zoneSchema;
-- (void).cxx_destruct;
 - (_Bool)_shouldAssertRecordValidity;
 @property(readonly, copy, nonatomic) SCKZoneDiff *diff;
 - (_Bool)recordExistsWithName:(id)arg1;

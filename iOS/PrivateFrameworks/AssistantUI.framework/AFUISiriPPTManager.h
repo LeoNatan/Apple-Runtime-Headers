@@ -16,10 +16,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *testOptions; // @synthesize testOptions=_testOptions;
 @property(readonly, copy, nonatomic) NSString *currentTestName; // @synthesize currentTestName=_currentTestName;
 @property(readonly, nonatomic) _Bool runningPPT; // @synthesize runningPPT=_runningPPT;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)setRunningPPT:(_Bool)arg1 withTestName:(id)arg2 testOptions:(id)arg3;
 - (_Bool)isRunningTestName:(id)arg1;

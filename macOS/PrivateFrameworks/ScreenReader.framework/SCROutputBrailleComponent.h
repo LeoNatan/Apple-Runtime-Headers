@@ -43,11 +43,11 @@ __attribute__((visibility("hidden")))
     unsigned int _toggledSCROModifierKeys;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int toggledSCROModifierKeys; // @synthesize toggledSCROModifierKeys=_toggledSCROModifierKeys;
 @property(nonatomic) BOOL _showExtendedTextStatus; // @synthesize _showExtendedTextStatus=__showExtendedTextStatus;
 @property(nonatomic) BOOL _showTextStatus; // @synthesize _showTextStatus=__showTextStatus;
 @property(nonatomic) BOOL _showGeneralStatus; // @synthesize _showGeneralStatus=__showGeneralStatus;
-- (void).cxx_destruct;
 - (void)_dispatchBrailleDidPanWithSuccess:(id)arg1 token:(id)arg2 appToken:(id)arg3 direction:(int)arg4;
 - (void)_speakUntranslatedText:(id)arg1 speakLiterally:(BOOL)arg2;
 - (void)handleBrailleDeletedUntranslatedText:(id)arg1 speakLiterally:(BOOL)arg2;

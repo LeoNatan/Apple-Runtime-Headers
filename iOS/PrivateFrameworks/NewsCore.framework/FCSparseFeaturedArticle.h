@@ -19,10 +19,10 @@
 }
 
 + (id)requiredArticleRecordKeysWithStorefrontID:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores *scores; // @synthesize scores=_scores;
 @property(readonly, copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(readonly, nonatomic) CKRecord *articleRecord; // @synthesize articleRecord=_articleRecord;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool canBePurchased;
 @property(readonly, nonatomic) long long publisherArticleVersion;
 @property(readonly, nonatomic) long long minimumNewsVersion;

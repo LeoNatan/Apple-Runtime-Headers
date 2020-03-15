@@ -19,13 +19,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastHeadphoneSampleEndDate; // @synthesize lastHeadphoneSampleEndDate=_lastHeadphoneSampleEndDate;
 @property(nonatomic) _Bool didGenerateHeadphoneAudioExposureSamples; // @synthesize didGenerateHeadphoneAudioExposureSamples=_didGenerateHeadphoneAudioExposureSamples;
 @property(nonatomic) double nextHeadphoneAudioExposureSampleTime; // @synthesize nextHeadphoneAudioExposureSampleTime=_nextHeadphoneAudioExposureSampleTime;
 @property(retain, nonatomic) NSDate *lastEnvironmentalSampleEndDate; // @synthesize lastEnvironmentalSampleEndDate=_lastEnvironmentalSampleEndDate;
 @property(nonatomic) _Bool didGenerateEnvironmentalAudioExposureSamples; // @synthesize didGenerateEnvironmentalAudioExposureSamples=_didGenerateEnvironmentalAudioExposureSamples;
 @property(nonatomic) double nextEnvironmentalAudioExposureSampleTime; // @synthesize nextEnvironmentalAudioExposureSampleTime=_nextEnvironmentalAudioExposureSampleTime;
-- (void).cxx_destruct;
 - (id)_headphoneAudioExposureMetadata;
 - (id)_makeUnknownHeadphones;
 - (id)_makeBeatsHeadphones;

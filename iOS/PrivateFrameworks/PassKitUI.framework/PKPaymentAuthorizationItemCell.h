@@ -20,24 +20,22 @@
     NSMutableArray *_constraints;
     _Bool _constraintsDirty;
     _Bool _showsDisclosure;
-    _Bool _showsSeperator;
-    NSAttributedString *_label;
-    UIImage *_labelImage;
+    _Bool _showsSeparator;
+    _Bool _centered;
     NSString *_accessibilityLabel;
-    NSAttributedString *_value;
 }
 
-@property(nonatomic) _Bool showsSeperator; // @synthesize showsSeperator=_showsSeperator;
-@property(nonatomic) _Bool showsDisclosure; // @synthesize showsDisclosure=_showsDisclosure;
-@property(copy, nonatomic) NSAttributedString *value; // @synthesize value=_value;
-@property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
-@property(copy, nonatomic) UIImage *labelImage; // @synthesize labelImage=_labelImage;
-@property(copy, nonatomic) NSAttributedString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
+@property(nonatomic) _Bool showsSeparator; // @synthesize showsSeparator=_showsSeparator;
+@property(nonatomic) _Bool showsDisclosure; // @synthesize showsDisclosure=_showsDisclosure;
+@property(copy, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 - (void)updateConstraints;
-- (void)setValue:(id)arg1 type:(unsigned long long)arg2;
 - (id)addValue:(id)arg1 type:(unsigned long long)arg2;
+- (id)addValue:(id)arg1;
 - (id)colorForValueType:(unsigned long long)arg1;
+@property(copy, nonatomic) UIImage *labelImage;
+@property(copy, nonatomic) NSAttributedString *label;
 - (id)_applyStylingToValueString:(id)arg1 defaultColor:(id)arg2;
 - (id)_createValueView;
 - (void)_createSubviews;

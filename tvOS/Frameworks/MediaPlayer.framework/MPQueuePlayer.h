@@ -36,10 +36,10 @@
     float _rawRate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float rawRate; // @synthesize rawRate=_rawRate;
 @property(nonatomic) long long defaultItemEQPresetType; // @synthesize defaultItemEQPresetType=_defaultItemEQPresetType;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueCommitHandler; // @synthesize playbackQueueCommitHandler=_playbackQueueCommitHandler;
-- (void).cxx_destruct;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (float)_userVolume;
 - (void)_setWantsVolumeChangesWhenPausedOrInactive:(_Bool)arg1;

@@ -34,6 +34,7 @@
     struct CGSize _cachedSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKUserLocationView *userLocationAnnotationView; // @synthesize userLocationAnnotationView=_userLocationAnnotationView;
 @property(retain, nonatomic) NSMutableArray *annotationViews; // @synthesize annotationViews=_annotationViews;
 @property(retain, nonatomic) NSMutableArray *annotations; // @synthesize annotations=_annotations;
@@ -53,7 +54,6 @@
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
-- (void).cxx_destruct;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (void)handleTapGesture:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

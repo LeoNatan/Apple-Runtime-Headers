@@ -15,9 +15,9 @@
     NSURL *_editedFileURL;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *editedFileURL; // @synthesize editedFileURL=_editedFileURL;
 @property(copy, nonatomic) id <QLPreviewItem> item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)initWithItem:(id)arg1 editedFileURL:(id)arg2;
 
 @end

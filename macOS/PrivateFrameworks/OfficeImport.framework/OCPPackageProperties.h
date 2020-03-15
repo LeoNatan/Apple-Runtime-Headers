@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
     NSString *mCompany;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *company; // @synthesize company=mCompany;
 @property(retain) NSString *subject; // @synthesize subject=mSubject;
-- (void).cxx_destruct;
 - (id)appVersion;
 - (id)title;
 - (id)keywords;

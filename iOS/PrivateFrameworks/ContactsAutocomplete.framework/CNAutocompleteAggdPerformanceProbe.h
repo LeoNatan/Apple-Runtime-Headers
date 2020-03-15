@@ -16,9 +16,9 @@
     NSMutableDictionary *_pendingAddData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *pendingAddData; // @synthesize pendingAddData=_pendingAddData;
 @property(retain, nonatomic) CNAutocompleteAggdProbe *aggdProbe; // @synthesize aggdProbe=_aggdProbe;
-- (void).cxx_destruct;
 - (void)sendData;
 - (void)recordNumberOfCalendarServerResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;
 - (void)recordNumberOfSupplementalResults:(unsigned long long)arg1 inTimeInterval:(double)arg2;

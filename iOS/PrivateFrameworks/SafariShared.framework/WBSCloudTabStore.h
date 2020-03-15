@@ -29,9 +29,9 @@
 
 + (id)_debugErrorMessageForCode:(long long)arg1;
 + (id)errorWithCode:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool syncAgentIsAvailable; // @synthesize syncAgentIsAvailable=_syncAgentIsAvailable;
 @property(nonatomic) __weak id <WBSCloudTabStoreDelegate> wbsDelegate; // @synthesize wbsDelegate=_wbsDelegate;
-- (void).cxx_destruct;
 - (void)_closeRequestedTabIfPossible:(id)arg1;
 - (void)_removeObjectFromKeyValueStore:(long long)arg1 forKey:(id)arg2;
 - (void)_setDictionaryInKeyValueStore:(long long)arg1 dictionary:(id)arg2 forKey:(id)arg3;

@@ -56,11 +56,11 @@
 + (_Bool)removeExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 onFileDescriptor:(int)arg3 error:(id *)arg4;
 + (_Bool)setPropertyList:(id)arg1 forExtendedAttributeNamed:(const char *)arg2 flags:(unsigned long long)arg3 onFileDescriptor:(int)arg4 error:(id *)arg5;
 + (id)plistInExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 onFileDescriptor:(int)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property long long additionURLSandboxToken; // @synthesize additionURLSandboxToken=_additionURLSandboxToken;
 @property(retain) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(retain) NSDictionary *thumbnailDataDictionary; // @synthesize thumbnailDataDictionary=_thumbnailDataDictionary;
 @property(retain) NSURL *additionURL; // @synthesize additionURL=_additionURL;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long additionSize;
 - (id)allImageURLs;
 @property(readonly) GSAddition *genStoreAddition;

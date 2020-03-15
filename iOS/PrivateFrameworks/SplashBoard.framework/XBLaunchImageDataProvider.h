@@ -17,8 +17,8 @@
     XBSnapshotDataProviderContext *_context;
 }
 
-@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) XBSnapshotDataProviderContext *context; // @synthesize context=_context;
 - (void)invalidateImage;
 - (id)fetchImage;
 - (id)initWithRequest:(id)arg1 contextID:(unsigned int)arg2 opaque:(_Bool)arg3;

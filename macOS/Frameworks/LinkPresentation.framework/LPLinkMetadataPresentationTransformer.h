@@ -20,6 +20,7 @@
     double _scaleFactor;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(copy, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(retain, nonatomic) LPImage *sourceContextIcon; // @synthesize sourceContextIcon=_sourceContextIcon;
@@ -28,7 +29,6 @@
 @property(nonatomic, getter=isComplete) BOOL complete; // @synthesize complete=_complete;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(copy, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
-- (void).cxx_destruct;
 - (void)_populateProperties:(id)arg1 withPrimaryIcon:(id)arg2 iconProperties:(id)arg3;
 - (void)_populateProperties:(id)arg1 withPrimaryIcon:(id)arg2;
 - (void)_populateProperties:(id)arg1 withPrimaryImage:(id)arg2;

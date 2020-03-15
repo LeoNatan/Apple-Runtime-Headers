@@ -25,12 +25,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *clientCacheIdentifier; // @synthesize clientCacheIdentifier=_clientCacheIdentifier;
 @property(readonly, nonatomic) _Bool batchCanLowerQuota; // @synthesize batchCanLowerQuota=_batchCanLowerQuota;
 @property(nonatomic, getter=isFull) _Bool full; // @synthesize full=_full;
 @property(readonly, nonatomic) unsigned long long resourceSize; // @synthesize resourceSize=_resourceSize;
 @property(readonly, nonatomic) CPLChangeBatch *batch; // @synthesize batch=_batch;
-- (void).cxx_destruct;
 - (void)forceScopeIndexOnAllRecordsTo:(long long)arg1;
 - (unsigned long long)effectiveResourceSizeToUploadUsingStorage:(id)arg1;
 - (id)uploadIdentifiers;

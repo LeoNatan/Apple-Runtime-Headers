@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     UIView *_interactionView;
 }
 
-@property(retain, nonatomic) UIView *interactionView; // @synthesize interactionView=_interactionView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *interactionView; // @synthesize interactionView=_interactionView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 

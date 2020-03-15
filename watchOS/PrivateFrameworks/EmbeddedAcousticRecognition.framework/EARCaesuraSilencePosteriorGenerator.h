@@ -16,9 +16,9 @@
 }
 
 + (void)initialize;
-@property(nonatomic) __weak id <EARCaesuraSilencePosteriorGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <EARCaesuraSilencePosteriorGeneratorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (void)endAudio;
 - (void)_startComputeTask;

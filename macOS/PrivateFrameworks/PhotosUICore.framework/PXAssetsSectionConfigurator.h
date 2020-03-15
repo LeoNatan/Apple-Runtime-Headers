@@ -14,8 +14,8 @@
     struct NSEdgeInsets _containerInsets;
 }
 
-@property(readonly, nonatomic) struct NSEdgeInsets containerInsets; // @synthesize containerInsets=_containerInsets;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct NSEdgeInsets containerInsets; // @synthesize containerInsets=_containerInsets;
 - (struct CGRect)containerFrameForAssetSectionLayout:(id)arg1;
 - (void)configureAssetSectionLayout:(id)arg1;
 - (id)updatedHeaderLayout:(id)arg1 withHeaderStyle:(long long)arg2 forAssetSectionLayout:(id)arg3;

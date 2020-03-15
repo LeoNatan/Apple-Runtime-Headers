@@ -17,10 +17,10 @@
 }
 
 + (id)lockedEntry;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *profileImage; // @synthesize profileImage=_profileImage;
 @property(readonly, nonatomic) NSString *abbreviation; // @synthesize abbreviation=_abbreviation;
 @property(readonly, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
-- (void).cxx_destruct;
 - (id)templateForComplicationFamily:(int)arg1;
 - (id)initWithFullName:(id)arg1 abbreviation:(id)arg2 profileImage:(id)arg3;
 

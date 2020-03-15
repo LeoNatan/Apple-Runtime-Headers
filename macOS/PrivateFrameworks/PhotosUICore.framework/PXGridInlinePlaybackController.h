@@ -31,6 +31,7 @@
     BOOL _autoplaySettingEnabled;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL autoplaySettingEnabled; // @synthesize autoplaySettingEnabled=_autoplaySettingEnabled;
 @property(nonatomic) BOOL lowPowerModeEnabled; // @synthesize lowPowerModeEnabled=_lowPowerModeEnabled;
 @property(nonatomic) BOOL applicationActive; // @synthesize applicationActive=_applicationActive;
@@ -41,7 +42,6 @@
 @property(nonatomic) BOOL isContextMenuInteractionActive; // @synthesize isContextMenuInteractionActive=_isContextMenuInteractionActive;
 @property(nonatomic) BOOL isOneUpVisible; // @synthesize isOneUpVisible=_isOneUpVisible;
 @property(nonatomic) BOOL isContentViewVisible; // @synthesize isContentViewVisible=_isContentViewVisible;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *currentRecords;
 - (BOOL)_hasAnyPlaybackRecords;
 - (BOOL)_isDisplayAssetEligibleForAutoPlayback:(id)arg1;

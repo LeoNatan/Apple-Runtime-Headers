@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     double _maxTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isStarting) _Bool starting; // @synthesize starting=_starting;
 @property(nonatomic) double maxTime; // @synthesize maxTime=_maxTime;
 @property(nonatomic) double minTime; // @synthesize minTime=_minTime;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 @property(retain, nonatomic) AVTimeRangeCollection *interstitialTimeRangeCollection; // @synthesize interstitialTimeRangeCollection=_interstitialTimeRangeCollection;
 @property(nonatomic, getter=isScanningActive) _Bool scanningActive; // @synthesize scanningActive=_scanningActive;
-- (void).cxx_destruct;
 - (void)stopScanningPlayerViewController:(id)arg1;
 - (long long)playerViewController:(id)arg1 scanFromElapsedTime:(CDStruct_1b6d18a9)arg2 rate:(double)arg3 imageBlock:(CDUnknownBlockType)arg4;
 - (void)_didFireDisplayLink:(id)arg1;

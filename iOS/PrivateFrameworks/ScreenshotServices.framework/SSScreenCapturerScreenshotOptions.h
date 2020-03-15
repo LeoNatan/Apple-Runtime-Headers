@@ -15,10 +15,10 @@
     unsigned long long _externalFlashLayerRenderID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int externalFlashLayerContextID; // @synthesize externalFlashLayerContextID=_externalFlashLayerContextID;
 @property(nonatomic) unsigned long long externalFlashLayerRenderID; // @synthesize externalFlashLayerRenderID=_externalFlashLayerRenderID;
 @property(retain, nonatomic) UIImage *preparedImage; // @synthesize preparedImage=_preparedImage;
-- (void).cxx_destruct;
 
 @end
 

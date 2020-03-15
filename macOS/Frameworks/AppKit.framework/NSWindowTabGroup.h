@@ -13,8 +13,8 @@
     NSString *_identifier;
 }
 
-@property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(getter=isTabBarEnabled) BOOL tabBarEnabled; // @dynamic tabBarEnabled;
 - (id)plusTab;
 - (void)removeWindow:(id)arg1;

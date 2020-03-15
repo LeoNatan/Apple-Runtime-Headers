@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     id <ParsecTableCellViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ParsecTableCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_actionButton;
 - (void)_configureActionButtonWithImage:(id)arg1 caption:(id)arg2;
 - (void)_configureUsingActionButton:(id)arg1 session:(id)arg2;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)responseWithResponse:(id)arg1 transaction:(id)arg2;
-@property(readonly) SBKSyncResponseData *syncResponseData; // @synthesize syncResponseData=_syncResponseData;
 - (void).cxx_destruct;
+@property(readonly) SBKSyncResponseData *syncResponseData; // @synthesize syncResponseData=_syncResponseData;
 - (void)deserializeResponseBodyWithTransaction:(id)arg1;
 
 @end

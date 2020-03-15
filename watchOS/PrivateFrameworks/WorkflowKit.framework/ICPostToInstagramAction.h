@@ -13,8 +13,8 @@
     WFFileRepresentation *_instagramRepresentation;
 }
 
-@property(retain, nonatomic) WFFileRepresentation *instagramRepresentation; // @synthesize instagramRepresentation=_instagramRepresentation;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFFileRepresentation *instagramRepresentation; // @synthesize instagramRepresentation=_instagramRepresentation;
 - (void)shareAsImageFileWithItem:(id)arg1 caption:(id)arg2 userInterface:(id)arg3 successHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5;
 - (void)shareAsALAssetWithItem:(id)arg1 caption:(id)arg2 userInterface:(id)arg3 successHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5;
 - (void)performActionWithInput:(id)arg1 parameters:(id)arg2 userInterface:(id)arg3 successHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5;

@@ -7,20 +7,25 @@
 #import <PhotosUICore/PXLayoutGenerator.h>
 
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
+#import <PhotosUICore/PXPresentedGridLayout-Protocol.h>
 
 @class NSString, PXExploreLayoutMetrics, PXExploreParsingState;
 
-@interface PXExploreLayoutGenerator : PXLayoutGenerator <PXGDiagnosticsProvider>
+@interface PXExploreLayoutGenerator : PXLayoutGenerator <PXGDiagnosticsProvider, PXPresentedGridLayout>
 {
     long long _count;
     long long _capacity;
     struct {
         long long _field1;
-        unsigned long long _field2;
-        double _field3;
+        long long _field2;
+        unsigned long long _field3;
         double _field4;
+        double _field5;
     } *_inputItemInfos;
     struct _PXLayoutGeometry *_outputGeometries;
+    long long *_outputParseLocationToItemIndex;
+    CDStruct_e6148bb0 *_outputItemLocations;
+    long long *_outputNumberOfColumnsAtRow;
     BOOL _isPrepared;
     struct CGPoint _origin;
     long long _row;
@@ -37,8 +42,14 @@
     struct CGSize _buildingBlockSize;
 }
 
-@property(readonly, nonatomic) PXExploreParsingState *localState; // @synthesize localState=_localState;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXExploreParsingState *localState; // @synthesize localState=_localState;
+- (id)presentedItemsBetweenItem:(long long)arg1 andItem:(long long)arg2;
+- (id)presentedItemsInRect:(struct CGRect)arg1;
+- (CDStruct_e6148bb0)presentedItemLocationForItemAtIndex:(long long)arg1;
+- (struct CGRect)presentedRectForItemAtIndex:(long long)arg1;
+- (long long)presentedNumberOfColumnsAtRow:(long long)arg1;
+@property(readonly, nonatomic) long long presentedNumberOfRows;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (struct _PXCornerSpriteIndexes)cornerSpriteIndexes;
 - (unsigned long long)attributesForNextItemAtIndex:(long long)arg1;
@@ -62,7 +73,6 @@
 - (void)beginRowWithNumberOfColumns:(long long)arg1;
 @property(readonly, nonatomic) long long numberOfRemainingItems;
 - (void)_prepareIfNeeded;
-- (struct CGRect)presentedRectForItemAtIndex:(long long)arg1;
 - (void)getGeometries:(struct _PXLayoutGeometry *)arg1 inRange:(struct _NSRange)arg2 withKind:(long long)arg3;
 @property(readonly, nonatomic) struct CGSize buildingBlockSize; // @synthesize buildingBlockSize=_buildingBlockSize;
 @property(readonly, nonatomic) struct CGSize minimumItemSize; // @synthesize minimumItemSize=_minimumItemSize;

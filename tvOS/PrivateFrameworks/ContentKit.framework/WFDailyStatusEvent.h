@@ -18,12 +18,12 @@
 }
 
 + (Class)codableEventClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool homeAutomationsEnabled; // @synthesize homeAutomationsEnabled=_homeAutomationsEnabled;
 @property(nonatomic) _Bool personalAutomationsEnabled; // @synthesize personalAutomationsEnabled=_personalAutomationsEnabled;
 @property(nonatomic) _Bool sharingEnabled; // @synthesize sharingEnabled=_sharingEnabled;
 @property(nonatomic) _Bool installed; // @synthesize installed=_installed;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

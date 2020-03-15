@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     long long _textAlignment;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(nonatomic) long long preferredAlignment; // @synthesize preferredAlignment=_preferredAlignment;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (struct CGRect)textRectWithAlignment:(long long)arg1 inLayoutBounds:(struct CGRect)arg2;

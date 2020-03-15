@@ -16,9 +16,9 @@
     AVSemanticSegmentationMatte *_avSemanticSegmentationMatte;
 }
 
+- (void).cxx_destruct;
 @property(readonly) AVSemanticSegmentationMatte *avSemanticSegmentationMatte; // @synthesize avSemanticSegmentationMatte=_avSemanticSegmentationMatte;
 @property(readonly) long long auxiliaryImageType; // @synthesize auxiliaryImageType=_auxiliaryImageType;
-- (void).cxx_destruct;
 - (struct __CVBuffer *)cvPixelBufferRef;
 - (unsigned int)pixelFormatType;
 - (id)dictionaryRepresentationForAuxiliaryDataType:(id *)arg1;

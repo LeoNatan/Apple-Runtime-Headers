@@ -20,11 +20,11 @@
 }
 
 + (id)getInstance;
+- (void).cxx_destruct;
 @property int state; // @synthesize state;
 @property(retain, nonatomic) NSMutableSet *delegates; // @synthesize delegates;
 @property(retain, nonatomic) CBCentralManager *centralManager; // @synthesize centralManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue;
-- (void).cxx_destruct;
 - (void)registerCentralManagerDelegate:(id)arg1;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (id)_getCentralManager;

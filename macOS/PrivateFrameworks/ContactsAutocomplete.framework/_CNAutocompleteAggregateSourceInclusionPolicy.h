@@ -15,8 +15,8 @@
     NSArray *_policies;
 }
 
-@property(readonly) NSArray *policies; // @synthesize policies=_policies;
 - (void).cxx_destruct;
+@property(readonly) NSArray *policies; // @synthesize policies=_policies;
 @property(readonly) BOOL includeSupplementalResults;
 @property(readonly) BOOL includeCalendarServers;
 @property(readonly) BOOL includeDirectoryServers;

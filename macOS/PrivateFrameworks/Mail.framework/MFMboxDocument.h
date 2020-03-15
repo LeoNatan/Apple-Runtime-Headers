@@ -27,6 +27,7 @@
 }
 
 + (BOOL)isValidItem:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *messagesToExport; // @synthesize messagesToExport=_messagesToExport;
 @property(readonly, nonatomic) unsigned long long fromSpaceStaticLength; // @synthesize fromSpaceStaticLength=_fromSpaceStaticLength;
 @property(readonly, copy, nonatomic) NSData *newlineFromSpace; // @synthesize newlineFromSpace=_newlineFromSpace;
@@ -37,7 +38,6 @@
 @property(readonly, copy, nonatomic) NSData *newline; // @synthesize newline=_newline;
 @property(readonly, copy, nonatomic) NSData *space; // @synthesize space=_space;
 @property(readonly, copy, nonatomic) NSData *fromSpace; // @synthesize fromSpace=_fromSpace;
-- (void).cxx_destruct;
 - (id)_escapedMessageDataForMessage:(id)arg1;
 - (id)emptyFileForWritingToURL:(id)arg1 error:(id *)arg2;
 - (BOOL)exportMessagesToURL:(id)arg1 error:(id *)arg2 shouldExport:(CDUnknownBlockType)arg3;

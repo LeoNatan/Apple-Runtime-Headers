@@ -22,13 +22,13 @@
     struct UIEdgeInsets _perPageContentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long startPage; // @synthesize startPage=_startPage;
 @property(nonatomic) struct UIEdgeInsets perPageContentInsets; // @synthesize perPageContentInsets=_perPageContentInsets;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) double maximumContentWidth; // @synthesize maximumContentWidth=_maximumContentWidth;
 @property(nonatomic) double maximumContentHeight; // @synthesize maximumContentHeight=_maximumContentHeight;
 @property(nonatomic) __weak UIPrintPageRenderer *printPageRenderer; // @synthesize printPageRenderer=_printPageRenderer;
-- (void).cxx_destruct;
 - (void)drawInRect:(struct CGRect)arg1 forPageAtIndex:(long long)arg2;
 - (struct CGRect)rectForPageAtIndex:(long long)arg1;
 - (struct CGRect)_pageContentRect:(BOOL)arg1;

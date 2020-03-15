@@ -18,10 +18,10 @@
 
 + (id)searchBundles;
 + (void)setSearchBundles:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <ASKImageRequestDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
 @property(readonly, nonatomic) id <ASKResourceDataConsumer> dataConsumer; // @synthesize dataConsumer=_dataConsumer;
-- (void).cxx_destruct;
 - (void)didLoadResource:(id)arg1 error:(id)arg2;
 - (id)makeLoadOperation;
 - (unsigned long long)cacheOptions;

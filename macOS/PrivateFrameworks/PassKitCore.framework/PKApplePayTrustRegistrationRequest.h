@@ -13,8 +13,8 @@
     PKApplePayTrustKey *_applePayTrustKey;
 }
 
-@property(retain, nonatomic) PKApplePayTrustKey *applePayTrustKey; // @synthesize applePayTrustKey=_applePayTrustKey;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKApplePayTrustKey *applePayTrustKey; // @synthesize applePayTrustKey=_applePayTrustKey;
 - (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 appleAccountInformation:(id)arg3;
 
 @end

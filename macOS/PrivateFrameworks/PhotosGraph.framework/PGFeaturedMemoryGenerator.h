@@ -15,10 +15,10 @@
     NSDate *_upperBoundLocalDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL oldMemory; // @synthesize oldMemory=_oldMemory;
 @property(nonatomic) BOOL usesLowRequirements; // @synthesize usesLowRequirements=_usesLowRequirements;
 @property(retain, nonatomic) NSDate *upperBoundLocalDate; // @synthesize upperBoundLocalDate=_upperBoundLocalDate;
-- (void).cxx_destruct;
 
 @end
 

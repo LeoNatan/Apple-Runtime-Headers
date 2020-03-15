@@ -25,12 +25,12 @@
 + (long long)defaultKeySizeInBits;
 + (_Bool)supportsSecureCoding;
 + (id)configurationWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool addsClientAuthAndServerAuthEKUs; // @synthesize addsClientAuthAndServerAuthEKUs=_addsClientAuthAndServerAuthEKUs;
 @property(nonatomic) unsigned int hashingAlgorithm; // @synthesize hashingAlgorithm=_hashingAlgorithm;
 @property(nonatomic) _Bool createsCertificateAuthority; // @synthesize createsCertificateAuthority=_createsCertificateAuthority;
 @property(nonatomic) long long keySizeInBits; // @synthesize keySizeInBits=_keySizeInBits;
 @property(readonly, copy, nonatomic) NSString *commonName; // @synthesize commonName=_commonName;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

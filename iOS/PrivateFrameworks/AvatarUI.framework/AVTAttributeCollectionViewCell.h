@@ -17,9 +17,9 @@
 }
 
 + (id)cellIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *attributeView; // @synthesize attributeView=_attributeView;
 @property(copy, nonatomic) CDUnknownBlockType discardableContentHandler; // @synthesize discardableContentHandler;
-- (void).cxx_destruct;
 - (void)discardContent;
 - (void)prepareForReuse;
 @property(readonly, nonatomic) AVTAttributeValueView *valueView;

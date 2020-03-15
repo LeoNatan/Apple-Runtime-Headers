@@ -36,6 +36,7 @@
 
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) LPImage *darkImage; // @synthesize darkImage=_darkImage;
 @property(retain, nonatomic) LPImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSNumber *distance; // @synthesize distance=_distance;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) NSString *address; // @synthesize address=_address;
 @property(nonatomic) struct CLLocationCoordinate2D location; // @synthesize location=_location;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)_enumerateAsynchronousFields:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

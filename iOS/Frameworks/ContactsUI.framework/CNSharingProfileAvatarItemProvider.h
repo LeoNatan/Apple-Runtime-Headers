@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (id)contactImageItemWithContact:(id)arg1 renderer:(id)arg2 logger:(id)arg3 type:(long long)arg4;
 + (id)silhouetteImageItemWithRenderer:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNPhotoPickerColorVariant *animojiColor; // @synthesize animojiColor=_animojiColor;
 @property(nonatomic) _Bool useRTL; // @synthesize useRTL=_useRTL;
 @property(retain, nonatomic) CNSharingProfileAvatarItem *monogramItem; // @synthesize monogramItem=_monogramItem;
@@ -59,7 +60,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldIncludePhoto; // @synthesize shouldIncludePhoto=_shouldIncludePhoto;
 @property(nonatomic) _Bool shouldIncludeAnimoji; // @synthesize shouldIncludeAnimoji=_shouldIncludeAnimoji;
 @property(nonatomic) _Bool shouldIncludeSilhouette; // @synthesize shouldIncludeSilhouette=_shouldIncludeSilhouette;
-- (void).cxx_destruct;
 - (void)clearCachedItems;
 - (id)animojColor;
 @property(retain, nonatomic) PRMonogramColor *monogramColor;

@@ -19,6 +19,7 @@
     NSTimer *_timer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTimer *timer; // @synthesize timer=_timer;
 @property(nonatomic) double maxTimeInterval; // @synthesize maxTimeInterval=_maxTimeInterval;
 @property(nonatomic) unsigned long long backoffCount; // @synthesize backoffCount=_backoffCount;
@@ -26,7 +27,6 @@
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(nonatomic) double initialTimeInterval; // @synthesize initialTimeInterval=_initialTimeInterval;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
-- (void).cxx_destruct;
 - (void)fire;
 - (void)scheduleToFire;
 - (_Bool)isScheduled;

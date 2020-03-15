@@ -18,8 +18,8 @@
     id <SKUIEntityProviding> _entityProvider;
 }
 
-@property(retain, nonatomic) id <SKUIEntityProviding> entityProvider; // @synthesize entityProvider=_entityProvider;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <SKUIEntityProviding> entityProvider; // @synthesize entityProvider=_entityProvider;
 - (void)_loadDataIfNeeded;
 - (void)reloadData;
 - (struct _NSRange)rangeForSectionAtIndex:(long long)arg1;

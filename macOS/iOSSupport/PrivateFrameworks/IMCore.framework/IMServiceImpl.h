@@ -74,6 +74,7 @@
 + (id)allServices;
 + (void)setServiceClass:(Class)arg1;
 + (Class)serviceClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *cardMap; // @synthesize cardMap=_cardMap;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(readonly, nonatomic) NSString *shortName; // @synthesize shortName=_localizedShortName;
@@ -100,7 +101,6 @@
 @property(readonly, nonatomic) BOOL supportsIDStatusLookup; // @synthesize supportsIDStatusLookup=_supportsIDStatusLookup;
 @property(retain, nonatomic) NSDictionary *defaultAccountSettings; // @synthesize defaultAccountSettings=_defaultSettings;
 @property(retain, nonatomic) NSDictionary *serviceDefaults; // @synthesize serviceDefaults=_serviceDefaults;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) Class accountClass;
 - (void)activeAccountsChanged:(id)arg1;
 - (void)defaultsChanged:(id)arg1;

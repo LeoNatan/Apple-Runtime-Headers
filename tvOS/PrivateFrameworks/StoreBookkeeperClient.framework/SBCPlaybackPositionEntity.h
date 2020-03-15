@@ -27,6 +27,7 @@
 + (id)ubiquitousIdentifierWithPodcastFeedURL:(id)arg1 feedGUID:(id)arg2;
 + (id)ubiquitousIdentifierWithItemTitle:(id)arg1 albumName:(id)arg2 itemArtistName:(id)arg3;
 + (id)ubiquitousIdentifierWithUniqueStoreID:(long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBeenPlayed; // @synthesize hasBeenPlayed=_hasBeenPlayed;
 @property(nonatomic) unsigned long long userPlayCount; // @synthesize userPlayCount=_userPlayCount;
 @property(nonatomic) double bookmarkTime; // @synthesize bookmarkTime=_bookmarkTime;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) long long foreignDatabaseEntityID; // @synthesize foreignDatabaseEntityID=_foreignDatabaseEntityID;
 @property(readonly, nonatomic) NSString *ubiquitousIdentifier; // @synthesize ubiquitousIdentifier=_ubiquitousIdentifier;
 @property(readonly, nonatomic) SBCPlaybackPositionDomain *playbackPositionDomain; // @synthesize playbackPositionDomain=_playbackPositionDomain;
-- (void).cxx_destruct;
 - (_Bool)bookmarkTimestampModified;
 - (_Bool)bookmarkTimeModified;
 - (_Bool)userPlayCountModified;

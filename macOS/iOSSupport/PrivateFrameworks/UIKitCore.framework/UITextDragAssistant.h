@@ -66,10 +66,10 @@ __attribute__((visibility("hidden")))
     UIDropInteraction *_dropInteraction;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(readonly, nonatomic) __weak UIDragInteraction *dragInteraction; // @synthesize dragInteraction=_dragInteraction;
 @property(readonly, nonatomic) __weak UIView<UITextDragSupporting><UITextDropSupporting> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)_shrinkingPreview:(id)arg1 toPosition:(id)arg2;
 - (id)_previewForTopmostItem:(id)arg1;
 - (id)_previewForIrrelevantItemFromPreview:(id)arg1;

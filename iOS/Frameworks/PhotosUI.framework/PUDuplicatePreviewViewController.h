@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     CDStruct_1b6d18a9 _stillImageTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_1b6d18a9 stillImageTime; // @synthesize stillImageTime=_stillImageTime;
 @property(copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (void)_handleVideoResult:(id)arg1 info:(id)arg2 forIndex:(int)arg3;
 - (void)_handleImageResult:(id)arg1 info:(id)arg2 forIndex:(int)arg3;
 - (struct CGSize)preferredContentSize;

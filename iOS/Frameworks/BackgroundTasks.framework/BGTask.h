@@ -19,13 +19,13 @@
     CDUnknownBlockType __completionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
 @property(retain, nonatomic, setter=_setHandlerQueue:) NSObject<OS_dispatch_queue> *_handlerQueue; // @synthesize _handlerQueue=__handlerQueue;
 @property(nonatomic, setter=_setLock:) struct os_unfair_lock_s _lock; // @synthesize _lock=__lock;
 @property(nonatomic, setter=_setCompleted:) _Bool _completed; // @synthesize _completed=__completed;
 @property(copy) CDUnknownBlockType expirationHandler; // @synthesize expirationHandler=_expirationHandler;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)_callExpirationHandler;
 - (void)dealloc;
 - (void)_setTaskCompletedWithSuccess:(_Bool)arg1 actionsIfNotAlreadyCompleted:(CDUnknownBlockType)arg2;

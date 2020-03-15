@@ -26,13 +26,13 @@
 + (_Bool)supportsSecureCoding;
 + (id)_classesRequiredToDecode;
 + (id)descriptorWithName:(id)arg1 display:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInterstitial, setter=_setInterstitial:) _Bool interstitial; // @synthesize interstitial=_interstitial;
 @property(retain, nonatomic) BKSDisplayProgressIndicatorProperties *progressIndicatorProperties; // @synthesize progressIndicatorProperties=_progressIndicatorProperties;
 @property(nonatomic) _Bool lockBacklight; // @synthesize lockBacklight=_lockBacklight;
 @property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(copy, nonatomic) NSString *displayUUID; // @synthesize displayUUID=_displayUUID;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -6,9 +6,10 @@
 
 #import <SiriTVUI/SiriUIViewController-Protocol.h>
 
-@protocol SiriTVUIAceViewControllerDelegate;
+@protocol SiriTVUIAceViewControllerDelegate, SiriTVUIAnalyticsDelegate;
 
 @protocol SiriTVUIAceViewController <SiriUIViewController>
+@property(nonatomic) __weak id <SiriTVUIAnalyticsDelegate> analyticsDelegate;
 @property(nonatomic) __weak id <SiriTVUIAceViewControllerDelegate> aceViewControllerDelegate;
 
 @optional

@@ -31,7 +31,6 @@
 - (void)recoverFromCrashIfNeeded;
 - (void)importFileSystemAssetsWithReason:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getPhotoLibraryStoreXPCListenerEndpointWithReply:(CDUnknownBlockType)arg1;
-- (void)shutdownPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
 - (void)_sendClientReply:(CDUnknownBlockType)arg1 sandboxExtensionsByPath:(id)arg2 error:(id)arg3;
 - (id)upgradePhotoLibraryDatabaseWithOptions:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)postOpenProgressWithReply:(CDUnknownBlockType)arg1;

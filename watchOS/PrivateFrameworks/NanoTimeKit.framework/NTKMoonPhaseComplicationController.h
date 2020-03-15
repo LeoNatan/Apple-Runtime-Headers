@@ -24,14 +24,14 @@
     NSTimer *_afterEventTimer;
     _Bool _paused;
     _Bool _missedUpdateWhilePaused;
-    struct NSString *_token;
+    NSString *_token;
     CLLocation *_location;
 }
 
 + (_Bool)_acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)_afterEventTimerFired:(id)arg1;
 - (void)_scheduleAfterEventTimer:(id)arg1;
 - (void)_invalidateEventTimer;

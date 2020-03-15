@@ -18,13 +18,13 @@
     struct CGRect _sourceRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPresentationAdjustedToSizeClass) _Bool presentationAdjustedToSizeClass; // @synthesize presentationAdjustedToSizeClass=_presentationAdjustedToSizeClass;
 @property(retain, nonatomic) UIBarButtonItem *popOverSourceBarButtonItem; // @synthesize popOverSourceBarButtonItem=_popOverSourceBarButtonItem;
 @property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) unsigned long long popOverArrowDirection; // @synthesize popOverArrowDirection=_popOverArrowDirection;
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
-- (void).cxx_destruct;
 
 @end
 

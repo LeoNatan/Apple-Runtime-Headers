@@ -40,6 +40,7 @@
 }
 
 + (Class)affectedEntitiesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *affectedEntities; // @synthesize affectedEntities=_affectedEntities;
 @property(nonatomic) _Bool blockingIncident; // @synthesize blockingIncident=_blockingIncident;
 @property(nonatomic) unsigned int lastUpdatedDatetime; // @synthesize lastUpdatedDatetime=_lastUpdatedDatetime;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;

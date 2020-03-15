@@ -9,12 +9,12 @@
 #import <CarPlayServices/BSServiceConnectionListenerDelegate-Protocol.h>
 #import <CarPlayServices/CRSInCallClientToServerInterface-Protocol.h>
 
-@class BSServiceConnectionListener, NSHashTable, NSMutableDictionary, NSString;
+@class BSServiceConnectionListener, CARObserverHashTable, NSHashTable, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CRSInCallAssertionService : NSObject <BSServiceConnectionListenerDelegate, CRSInCallClientToServerInterface>
 {
-    NSHashTable *_observers;
+    CARObserverHashTable *_observers;
     BSServiceConnectionListener *_listener;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     NSMutableDictionary *_connections;
@@ -23,13 +23,13 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *bannersAllowedConnections; // @synthesize bannersAllowedConnections=_bannersAllowedConnections;
 @property(retain, nonatomic) NSHashTable *activatedConnections; // @synthesize activatedConnections=_activatedConnections;
 @property(retain, nonatomic) NSMutableDictionary *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain, nonatomic) BSServiceConnectionListener *listener; // @synthesize listener=_listener;
-@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-- (void).cxx_destruct;
+@property(retain, nonatomic) CARObserverHashTable *observers; // @synthesize observers=_observers;
 - (void)_connectionQueue_removeConnection:(id)arg1;
 - (void)_connectionQueue_addConnection:(id)arg1;
 - (oneway void)setAllowsBanners:(id)arg1;

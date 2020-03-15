@@ -22,8 +22,8 @@
 + (id)buttonWithMediumWeightFont;
 + (id)buttonWithLightWeightFont;
 + (id)button;
-@property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 - (id)_siriUIContentButtonCell;
 - (void)setContentInsets:(struct NSEdgeInsets)arg1;
 - (BOOL)wantsUpdateLayer;

@@ -18,9 +18,9 @@
 
 + (id)startEventWithProfile:(id)arg1 operation:(int)arg2 operationIdentifier:(id)arg3 reason:(int)arg4 options:(unsigned int)arg5 syncContainerPrefix:(id)arg6 containerIdentifier:(id)arg7 cloudKitIdentifier:(id)arg8 syncIdentifier:(id)arg9 repositorySettings:(unsigned int)arg10;
 + (id)startEventForOperation:(int)arg1 operationIdentifier:(id)arg2 configuration:(id)arg3 container:(id)arg4 cloudKitIdentifier:(id)arg5;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *timeIntervalSinceLastSuccess; // @synthesize timeIntervalSinceLastSuccess=_timeIntervalSinceLastSuccess;
 @property(readonly, copy, nonatomic) NSNumber *countSinceLastSuccess; // @synthesize countSinceLastSuccess=_countSinceLastSuccess;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)codableRepresentationForAWDSubmission;
 - (unsigned int)AWDMetricID;

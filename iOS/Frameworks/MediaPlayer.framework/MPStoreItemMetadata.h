@@ -27,8 +27,8 @@
 + (id)storeServerCalendar;
 + (id)artworkRequestTokenForStorePlatformArtworkValue:(id)arg1;
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) MPStoreItemMetadata *parentStoreItemMetadata; // @synthesize parentStoreItemMetadata=_parentStoreItemMetadata;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) MPStoreItemMetadata *parentStoreItemMetadata; // @synthesize parentStoreItemMetadata=_parentStoreItemMetadata;
 - (id)_storePlatformLastModifiedDateFormatter;
 - (id)_musicAPIDateFormatter;
 - (id)_storePlatformReleaseDateFormatter;
@@ -44,11 +44,13 @@
 - (id)descriptionTextWithStyle:(id)arg1;
 - (id)childStorePlatformDictionaryForStoreID:(id)arg1;
 - (id)childStorePlatformDictionaryForArtworkTrackID:(id)arg1;
+- (id)stationGlyphRequestTokenForStorePlatformDictionary:(id)arg1;
 - (id)artworkRequestTokenForStorePlatformDictionary:(id)arg1;
 - (id)avatarArtworkRequestToken;
 - (id)artworkRequestTokenForUberArtworkKind:(id)arg1;
 - (id)artworkRequestTokenForScreenshotArtwork;
 - (id)artworkRequestTokenForEditorialArtworkKind:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *radioStationEvents;
 @property(readonly, copy, nonatomic) NSString *radioStationProviderName;
 @property(readonly, nonatomic) _Bool isChart;
 @property(readonly, nonatomic) long long radioStationTypeID;
@@ -123,6 +125,7 @@
 @property(readonly, copy, nonatomic) NSArray *childrenStoreIDs;
 @property(readonly, nonatomic, getter=isBeats1) _Bool beats1;
 @property(readonly, copy, nonatomic) NSArray *artworkTrackIDs;
+@property(readonly, nonatomic) MPStoreArtworkRequestToken *stationGlyphRequestToken;
 @property(readonly, nonatomic) MPStoreArtworkRequestToken *artworkRequestToken;
 @property(readonly, copy, nonatomic) NSString *artistUploadedContentType;
 @property(readonly, copy, nonatomic) id artistStoreID;

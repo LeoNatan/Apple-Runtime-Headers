@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSPublicAccountIdentity *accountIdentity; // @synthesize accountIdentity=_accountIdentity;
 @property(readonly, nonatomic) IDSMPPublicDeviceIdentity *modernIdentity; // @synthesize modernIdentity=_modernIdentity;
 @property(readonly, nonatomic) IDSMPPublicLegacyIdentity *legacyIdentity; // @synthesize legacyIdentity=_legacyIdentity;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

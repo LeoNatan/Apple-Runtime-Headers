@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _attributes;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) IKDataBindingValue *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 value:(id)arg2 attributes:(unsigned long long)arg3;
 
 @end

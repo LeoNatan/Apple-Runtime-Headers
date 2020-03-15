@@ -24,6 +24,7 @@
     NSString *_urlToLoadAfterAuth;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *urlToLoadAfterAuth; // @synthesize urlToLoadAfterAuth=_urlToLoadAfterAuth;
 @property(copy, nonatomic) NSString *failureInstructions; // @synthesize failureInstructions=_failureInstructions;
 @property(copy, nonatomic) NSString *failureTitle; // @synthesize failureTitle=_failureTitle;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *accountNameInstructions; // @synthesize accountNameInstructions=_accountNameInstructions;
 @property(copy, nonatomic) NSString *accountNameTitle; // @synthesize accountNameTitle=_accountNameTitle;
 @property(retain, nonatomic) TVLImageElement *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 feedDocument:(id)arg2;
 

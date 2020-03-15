@@ -49,6 +49,7 @@
     _Bool _hideCloseActionForCarPlay;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hideCloseActionForCarPlay; // @synthesize hideCloseActionForCarPlay=_hideCloseActionForCarPlay;
 @property(readonly, nonatomic) _Bool playMediaWhenRaised; // @synthesize playMediaWhenRaised=_playMediaWhenRaised;
 @property(readonly, nonatomic) _Bool allowActionsForCarPlay; // @synthesize allowActionsForCarPlay=_allowActionsForCarPlay;
@@ -82,7 +83,6 @@
 @property(readonly, nonatomic) _Bool dismissAutomatically; // @synthesize dismissAutomatically=_dismissAutomatically;
 @property(readonly, copy, nonatomic) NSString *alternateActionLabel; // @synthesize alternateActionLabel=_alternateActionLabel;
 @property(readonly, copy, nonatomic) NSSet *alertSuppressionContexts; // @synthesize alertSuppressionContexts=_alertSuppressionContexts;
-- (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

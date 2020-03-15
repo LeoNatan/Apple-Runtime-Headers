@@ -14,8 +14,8 @@
 }
 
 + (id)loadOperationForDay:(id)arg1 block:(CDUnknownBlockType)arg2;
-@property(retain, nonatomic) NSDate *day; // @synthesize day=_day;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDate *day; // @synthesize day=_day;
 
 @end
 

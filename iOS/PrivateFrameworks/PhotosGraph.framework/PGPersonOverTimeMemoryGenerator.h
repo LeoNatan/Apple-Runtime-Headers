@@ -15,8 +15,8 @@
     NSString *_personUUID;
 }
 
-@property(retain, nonatomic) NSString *personUUID; // @synthesize personUUID=_personUUID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *personUUID; // @synthesize personUUID=_personUUID;
 - (_Bool)canFallbackToDejunkAndDedupeForShowMore;
 - (id)_potentialMemoriesForDryTesting;
 - (void)_generateExtendedCuratedSetForMemory:(id)arg1 withPotentialMemory:(id)arg2;

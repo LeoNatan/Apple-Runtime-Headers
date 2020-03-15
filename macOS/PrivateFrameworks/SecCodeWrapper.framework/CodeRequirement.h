@@ -15,8 +15,8 @@
     NSString *_text;
 }
 
-@property(readonly) struct __SecRequirement *requirementRef; // @synthesize requirementRef=_secRequirementRef;
 - (void).cxx_destruct;
+@property(readonly) struct __SecRequirement *requirementRef; // @synthesize requirementRef=_secRequirementRef;
 - (BOOL)validateCode:(id)arg1 flags:(unsigned int)arg2 error:(id *)arg3;
 - (id)description;
 - (id)stringValue;

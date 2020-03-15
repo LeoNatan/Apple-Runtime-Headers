@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     CKDPDateStatistics *_timeStatistics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPRecord *serverFields; // @synthesize serverFields=_serverFields;
 @property(retain, nonatomic) CKDPDateStatistics *timeStatistics; // @synthesize timeStatistics=_timeStatistics;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

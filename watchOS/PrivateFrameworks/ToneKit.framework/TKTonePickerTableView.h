@@ -14,9 +14,9 @@
     id <TKTonePickerTableViewSeparatorObserver> _separatorObserver;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <TKTonePickerTableViewSeparatorObserver> separatorObserver; // @synthesize separatorObserver=_separatorObserver;
 @property(nonatomic) __weak id <TKTonePickerTableViewLayoutMarginsObserver> layoutMarginsObserver; // @synthesize layoutMarginsObserver=_layoutMarginsObserver;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setSeparatorColor:(id)arg1;
 - (void)_handleSeparatorColorDidChange;

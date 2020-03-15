@@ -21,10 +21,10 @@
 }
 
 + (id)transportButton;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *tintedImage; // @synthesize tintedImage=_tintedImage;
 @property(retain, nonatomic) UIColor *regularImageColor; // @synthesize regularImageColor=_regularImageColor;
 @property(retain, nonatomic) UIImage *regularImage; // @synthesize regularImage=_regularImage;
-- (void).cxx_destruct;
 - (void)_updateRegularImage;
 @property(readonly, nonatomic, getter=_tintedButton) UIButton *tintedButton;
 - (_Bool)_shouldForwardSelectedState;

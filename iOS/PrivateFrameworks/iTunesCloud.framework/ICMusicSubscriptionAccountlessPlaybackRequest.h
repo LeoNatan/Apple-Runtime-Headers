@@ -16,11 +16,11 @@
     long long _storeSubscriptionAdamID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long storeSubscriptionAdamID; // @synthesize storeSubscriptionAdamID=_storeSubscriptionAdamID;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(readonly, copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(copy, nonatomic) NSString *assetSourceStorefrontID; // @synthesize assetSourceStorefrontID=_assetSourceStorefrontID;
-- (void).cxx_destruct;
 - (id)performWithResponseHandler:(CDUnknownBlockType)arg1;
 - (id)initWithRequestContext:(id)arg1 storeSubscriptionAdamID:(long long)arg2;
 

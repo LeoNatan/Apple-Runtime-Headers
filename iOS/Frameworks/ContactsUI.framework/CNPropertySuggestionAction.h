@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CNContactSuggestionViewController *_suggestionViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactSuggestionViewController *suggestionViewController; // @synthesize suggestionViewController=_suggestionViewController;
 @property(nonatomic) long long selectedChoice; // @synthesize selectedChoice=_selectedChoice;
-- (void).cxx_destruct;
 - (void)reject;
 - (void)confirm;
 - (_Bool)_confirmOrRejectDonation:(_Bool)arg1;

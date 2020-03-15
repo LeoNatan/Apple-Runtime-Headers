@@ -26,6 +26,7 @@
     NSMapTable *_visibilityScoreByAsset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned short enrichmentState; // @synthesize enrichmentState=_enrichmentState;
 @property(retain, nonatomic) NSMapTable *visibilityScoreByAsset; // @synthesize visibilityScoreByAsset=_visibilityScoreByAsset;
 @property(nonatomic) unsigned long long mood; // @synthesize mood=_mood;
@@ -39,7 +40,6 @@
 @property(nonatomic) double promotionScore; // @synthesize promotionScore=_promotionScore;
 @property(nonatomic) BOOL clearCurations; // @synthesize clearCurations=_clearCurations;
 @property(readonly) id <PGHighlightModel> highlight; // @synthesize highlight=_highlight;
-- (void).cxx_destruct;
 @property(readonly) BOOL hasChanges;
 - (id)initWithHighlight:(id)arg1;
 

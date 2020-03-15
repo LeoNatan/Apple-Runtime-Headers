@@ -15,9 +15,9 @@
 }
 
 + (id)actionWithPanelUUID:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *panelInfo; // @synthesize panelInfo=_panelInfo;
 @property(copy, nonatomic) NSString *panelUUID; // @synthesize panelUUID=_panelUUID;
-- (void).cxx_destruct;
 - (id)paramDescription;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

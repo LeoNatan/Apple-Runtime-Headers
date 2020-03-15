@@ -25,6 +25,7 @@
 + (id)attributeFixupBlocks;
 + (id)whitelistedAttributedStringKeys;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *decodeDate; // @synthesize decodeDate=_decodeDate;
 @property(readonly, nonatomic) BOOL canProvideSubtypes; // @synthesize canProvideSubtypes=_canProvideSubtypes;
 @property(copy, nonatomic, setter=_setSubtypeDescriptions:) NSArray *subtypeDescriptions; // @synthesize subtypeDescriptions=_subtypeDescriptions;
@@ -33,7 +34,6 @@
 @property(readonly, copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 @property(readonly, copy, nonatomic) NSString *projectType; // @synthesize projectType=_projectType;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

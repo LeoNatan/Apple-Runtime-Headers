@@ -15,10 +15,10 @@
     NSManagedObjectID *_managedObjectID;
 }
 
+- (void).cxx_destruct;
 @property BOOL isAttachment; // @synthesize isAttachment=_isAttachment;
 @property(retain) NSManagedObjectID *managedObjectID; // @synthesize managedObjectID=_managedObjectID;
 @property(retain) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithUrl:(id)arg1 managedObjectId:(id)arg2;
 
 @end

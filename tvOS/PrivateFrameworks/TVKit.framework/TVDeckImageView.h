@@ -27,6 +27,7 @@
     struct CGRect _imageFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double newDataTransitionDuration; // @synthesize newDataTransitionDuration=_newDataTransitionDuration;
 @property(nonatomic) double transitionDuration; // @synthesize transitionDuration=_transitionDuration;
 @property(nonatomic) double cycleInterval; // @synthesize cycleInterval=_cycleInterval;
@@ -36,7 +37,6 @@
 @property(nonatomic, getter=isShuffled) _Bool shuffledParade; // @synthesize shuffledParade=_shuffledParade;
 @property(nonatomic) struct CGRect imageFrame; // @synthesize imageFrame=_imageFrame;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (unsigned long long)_viewTypeForNumberOfImages:(long long)arg1;
 - (unsigned long long)_paradeThreshold;
 - (void)_displayPlaceholderView;

@@ -21,11 +21,11 @@
     MFSyncedSignatureContentsFile *_syncedFile;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isDirty; // @synthesize isDirty=_isDirty;
 @property(readonly, nonatomic) BOOL isSavedAsRich; // @synthesize isSavedAsRich=_isSavedAsRich;
 @property(readonly, nonatomic) MFSyncedSignatureContentsFile *syncedFile; // @synthesize syncedFile=_syncedFile;
 @property(readonly, copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 @property(nonatomic) BOOL isRich;

@@ -18,8 +18,12 @@ __attribute__((visibility("hidden")))
     NSHMDIOSurfaceDrawable *_drawable;
 }
 
+- (void)addPresentedHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) double presentedTime;
+- (void)presentAfterMinimumDuration:(double)arg1;
 - (void)presentAtTime:(double)arg1;
 - (void)present;
+@property(readonly, nonatomic) unsigned long long drawableID;
 @property(readonly) id <MTLTexture> texture;
 - (void)presentAtTimestamp:(double)arg1;
 @property unsigned long long debugSignpost;

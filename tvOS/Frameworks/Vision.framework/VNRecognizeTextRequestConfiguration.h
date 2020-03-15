@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     long long _recognitionLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float minimumTextHeight; // @synthesize minimumTextHeight=_minimumTextHeight;
 @property(nonatomic) _Bool usesLanguageCorrection; // @synthesize usesLanguageCorrection=_usesLanguageCorrection;
 @property(nonatomic) long long recognitionLevel; // @synthesize recognitionLevel=_recognitionLevel;
 @property(copy, nonatomic) NSArray *customWords; // @synthesize customWords=_customWords;
 @property(copy, nonatomic) NSArray *recognitionLanguages; // @synthesize recognitionLanguages=_recognitionLanguages;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestClass:(Class)arg1;
 

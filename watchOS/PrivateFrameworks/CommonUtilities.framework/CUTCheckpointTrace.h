@@ -13,8 +13,8 @@
     NSMutableArray *_mutableCheckpoints;
 }
 
-@property(retain, nonatomic) NSMutableArray *mutableCheckpoints; // @synthesize mutableCheckpoints=_mutableCheckpoints;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *mutableCheckpoints; // @synthesize mutableCheckpoints=_mutableCheckpoints;
 - (void)setAssertsUseAfterFreeze:(_Bool)arg1;
 - (void)freeze;
 - (id)_identifierWithExtraIdentifier:(id)arg1;

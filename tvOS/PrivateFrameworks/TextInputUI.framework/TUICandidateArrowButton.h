@@ -21,6 +21,7 @@
     TUICandidateBackdropView *_backdropView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TUICandidateBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) UIView *highlightBackgroundView; // @synthesize highlightBackgroundView=_highlightBackgroundView;
@@ -29,7 +30,6 @@
 @property(nonatomic) long long arrowDirection; // @synthesize arrowDirection=_arrowDirection;
 @property(copy, nonatomic) NSString *arrowImageName; // @synthesize arrowImageName=_arrowImageName;
 @property(nonatomic) _Bool showsBackground; // @synthesize showsBackground=_showsBackground;
-- (void).cxx_destruct;
 - (void)updateStyle;
 - (id)rotatedImageForImage:(id)arg1 scale:(double)arg2;
 - (double)imageViewAlpha;

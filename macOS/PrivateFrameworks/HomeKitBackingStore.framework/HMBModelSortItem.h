@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     unsigned long long _mark;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mark; // @synthesize mark=_mark;
 @property(retain, nonatomic) NSMutableSet *dependentModels; // @synthesize dependentModels=_dependentModels;
 @property(retain, nonatomic) NSUUID *parentModelID; // @synthesize parentModelID=_parentModelID;
 @property(retain, nonatomic) NSUUID *modelID; // @synthesize modelID=_modelID;
 @property(retain, nonatomic) HMBModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (id)initWithModel:(id)arg1;
 
 @end

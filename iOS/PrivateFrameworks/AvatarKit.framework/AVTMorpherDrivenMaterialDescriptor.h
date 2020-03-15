@@ -21,6 +21,7 @@
     NSString *_propertyName;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float decel; // @synthesize decel=_decel;
 @property(nonatomic) float accel; // @synthesize accel=_accel;
 @property(nonatomic) float threshold; // @synthesize threshold=_threshold;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) SCNMaterial *material; // @synthesize material=_material;
 @property(nonatomic) long long morphTargetIndex; // @synthesize morphTargetIndex=_morphTargetIndex;
 @property(retain, nonatomic) SCNNode *readMorpherNode; // @synthesize readMorpherNode=_readMorpherNode;
-- (void).cxx_destruct;
 
 @end
 

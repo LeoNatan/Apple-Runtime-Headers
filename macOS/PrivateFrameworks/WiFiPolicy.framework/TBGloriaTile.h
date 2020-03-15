@@ -26,6 +26,7 @@
 
 + (unsigned char)defaultZoomLevel;
 + (id)gloriaTileWithLat:(double)arg1 lng:(double)arg2 zoom:(unsigned char)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double west; // @synthesize west=_west;
 @property(nonatomic) double east; // @synthesize east=_east;
 @property(nonatomic) double south; // @synthesize south=_south;
@@ -36,7 +37,6 @@
 @property(nonatomic) double lng; // @synthesize lng=_lng;
 @property(nonatomic) double lat; // @synthesize lat=_lat;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)neighborTileKeysWithRadius:(double)arg1;
 - (id)adjacentTileKeysWithLevel:(unsigned int)arg1;
 - (id)initWithLat:(double)arg1 lng:(double)arg2 zoom:(unsigned char)arg3;

@@ -21,13 +21,13 @@
     BOOL _clearEventFromQueueAfterForce;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSString *serverFilename; // @synthesize serverFilename=_serverFilename;
 @property(retain) NSString *entityLocalUID; // @synthesize entityLocalUID=_entityLocalUID;
 @property(retain) NSString *entitySharedUID; // @synthesize entitySharedUID=_entitySharedUID;
 @property(retain) NSString *principalTitle; // @synthesize principalTitle=_principalTitle;
 @property(retain) NSString *calendarTitle; // @synthesize calendarTitle=_calendarTitle;
 @property(retain) CalDAVCalendarSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)configureOperationDependencies;
 - (void)queueAttachmentOperations:(id)arg1 event:(id)arg2;
 - (void)setError:(id)arg1 withResponseStatus:(id)arg2 forItem:(id)arg3;

@@ -19,11 +19,11 @@
     NSMutableDictionary *_prefetchers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *prefetchers; // @synthesize prefetchers=_prefetchers;
 @property(readonly, nonatomic) id <SVPrefetcherFactory> prefetcherFactory; // @synthesize prefetcherFactory=_prefetcherFactory;
 @property(readonly, nonatomic) id <SVVideoQueueObserving> queueObserver; // @synthesize queueObserver=_queueObserver;
 @property(readonly, nonatomic) id <SVVideoQueueProviding> queueProvider; // @synthesize queueProvider=_queueProvider;
-- (void).cxx_destruct;
 - (void)createPrefetcherForVideo:(id)arg1 afterVideo:(id)arg2;
 - (void)updatePrefetchersWithCurrentVideo:(id)arg1;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;

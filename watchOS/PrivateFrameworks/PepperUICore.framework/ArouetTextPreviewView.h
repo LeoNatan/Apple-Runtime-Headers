@@ -16,8 +16,8 @@
     id <ArouetTextPreviewViewDelegate> _textPreviewViewDelegate;
 }
 
-@property(nonatomic) __weak id <ArouetTextPreviewViewDelegate> textPreviewViewDelegate; // @synthesize textPreviewViewDelegate=_textPreviewViewDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ArouetTextPreviewViewDelegate> textPreviewViewDelegate; // @synthesize textPreviewViewDelegate=_textPreviewViewDelegate;
 - (_Bool)canBecomeFirstResponder;
 - (void)layoutSubviews;
 - (struct CGRect)placeholderRectForBounds:(struct CGRect)arg1;

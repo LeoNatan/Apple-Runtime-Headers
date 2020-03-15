@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     _HBUITopShelfTextContentRatingWrapperView *_contentRatingTextWrapperView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HBUITopShelfTextContentRatingWrapperView *contentRatingTextWrapperView; // @synthesize contentRatingTextWrapperView=_contentRatingTextWrapperView;
 @property(readonly, nonatomic) UIImageView *contentRatingBadgeImageView; // @synthesize contentRatingBadgeImageView=_contentRatingBadgeImageView;
 @property(readonly, nonatomic) HBUITopShelfParadeActionsView *actionsView; // @synthesize actionsView=_actionsView;
@@ -53,7 +54,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UILabel *genreLabel; // @synthesize genreLabel=_genreLabel;
 @property(readonly, nonatomic) UILabel *namedAttributesLabel; // @synthesize namedAttributesLabel=_namedAttributesLabel;
 @property(readonly, nonatomic) UILabel *summaryLabel; // @synthesize summaryLabel=_summaryLabel;
-- (void).cxx_destruct;
 - (_Bool)canBecomeFocused;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;

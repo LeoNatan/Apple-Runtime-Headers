@@ -31,8 +31,8 @@
 @property(readonly, nonatomic) int reductionType; // @synthesize reductionType=_reductionType;
 @property(readonly, nonatomic) unsigned int lossType; // @synthesize lossType=_lossType;
 - (unsigned long long)maxBatchSize;
-- (struct NSArray *)encodeBatchToCommandBuffer:(id)arg1 sourceGradients:(struct NSArray *)arg2 sourceImages:(struct NSArray *)arg3 labels:(struct NSArray *)arg4 weights:(struct NSArray *)arg5 sourceStates:(struct NSArray *)arg6;
-- (void)encodeBatchToCommandBuffer:(id)arg1 sourceGradients:(struct NSArray *)arg2 sourceImages:(struct NSArray *)arg3 labels:(struct NSArray *)arg4 weights:(struct NSArray *)arg5 sourceStates:(struct NSArray *)arg6 destinationGradients:(struct NSArray *)arg7;
+- (id)encodeBatchToCommandBuffer:(id)arg1 sourceGradients:(id)arg2 sourceImages:(id)arg3 labels:(id)arg4 weights:(id)arg5 sourceStates:(id)arg6;
+- (void)encodeBatchToCommandBuffer:(id)arg1 sourceGradients:(id)arg2 sourceImages:(id)arg3 labels:(id)arg4 weights:(id)arg5 sourceStates:(id)arg6 destinationGradients:(id)arg7;
 - (id)destinationImageDescriptorForSourceImages:(id)arg1 sourceStates:(id)arg2;
 - (id)debugDescription;
 - (void)dealloc;

@@ -21,6 +21,7 @@
     SignpostSupportObjectExtractor *_extractor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SignpostSupportObjectExtractor *extractor; // @synthesize extractor=_extractor;
 @property(retain, nonatomic) NSMutableArray *outstandingLogMessage; // @synthesize outstandingLogMessage=_outstandingLogMessage;
 @property(retain, nonatomic) NSMutableArray *outstandingSignpostObjects; // @synthesize outstandingSignpostObjects=_outstandingSignpostObjects;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) CDUnknownBlockType serializedSignpostEventBlock; // @synthesize serializedSignpostEventBlock=_serializedSignpostEventBlock;
 @property(nonatomic) unsigned long long maxBytesSize; // @synthesize maxBytesSize=_maxBytesSize;
 @property(nonatomic) unsigned long long maxBatchSize; // @synthesize maxBatchSize=_maxBatchSize;
-- (void).cxx_destruct;
 - (_Bool)serializeNotificationsWithIntervalTimeoutInSeconds:(unsigned long long)arg1 errorOut:(id *)arg2;
 - (_Bool)serializeLogArchiveWithPath:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 errorOut:(id *)arg4;
 - (id)_sanityCheckParameters;

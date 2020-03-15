@@ -62,12 +62,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) long long userInterfaceDirectionPolicy; // @synthesize userInterfaceDirectionPolicy=_userInterfaceDirectionPolicy;
 @property(nonatomic) unsigned long long mediaTypesRequiringUserActionForPlayback; // @synthesize mediaTypesRequiringUserActionForPlayback=_mediaTypesRequiringUserActionForPlayback;
 @property(nonatomic) BOOL allowsAirPlayForMediaPlayback; // @synthesize allowsAirPlayForMediaPlayback=_allowsAirPlayForMediaPlayback;
 @property(nonatomic) BOOL suppressesIncrementalRendering; // @synthesize suppressesIncrementalRendering=_suppressesIncrementalRendering;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (Ref_1d7364d1)copyPageConfiguration;
 @property(retain, nonatomic, setter=_setWebsiteDataStore:) _WKWebsiteDataStore *_websiteDataStore;
 - (id)urlSchemeHandlerForURLScheme:(id)arg1;
@@ -108,6 +108,8 @@
 @property(nonatomic, setter=_setRequiresUserActionForAudioPlayback:) BOOL _requiresUserActionForAudioPlayback;
 @property(nonatomic, setter=_setRequiresUserActionForVideoPlayback:) BOOL _requiresUserActionForVideoPlayback;
 @property(nonatomic, setter=_setDrawsBackground:) BOOL _drawsBackground;
+@property(copy, nonatomic, setter=_setCORSDisablingPatterns:) NSArray *_corsDisablingPatterns;
+@property(readonly, nonatomic) WKWebsiteDataStore *_websiteDataStoreIfExists;
 @property(nonatomic, setter=_setShouldDeferAsynchronousScriptsUntilAfterDocumentLoad:) BOOL _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
 @property(nonatomic, setter=_setIncompleteImageBorderEnabled:) BOOL _incompleteImageBorderEnabled;
 @property(nonatomic, setter=_setColorFilterEnabled:) BOOL _colorFilterEnabled;

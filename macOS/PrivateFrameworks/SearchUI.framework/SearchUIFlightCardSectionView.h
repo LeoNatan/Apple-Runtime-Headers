@@ -18,9 +18,9 @@
 }
 
 + (int)separatorStyleForCardSection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long lastSelectedLegIndex; // @synthesize lastSelectedLegIndex=_lastSelectedLegIndex;
 @property(retain, nonatomic) FUFlightViewController *flightViewController; // @synthesize flightViewController=_flightViewController;
-- (void).cxx_destruct;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)flightController:(id)arg1 didSelectLeg:(long long)arg2 ofFlight:(long long)arg3;
 - (void)updateChevronVisible:(BOOL)arg1 leaveSpaceForChevron:(BOOL)arg2;

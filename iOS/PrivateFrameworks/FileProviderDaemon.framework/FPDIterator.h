@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 
 + (id)iteratorForLocator:(id)arg1 provider:(id)arg2;
 + (id)iteratorForLocator:(id)arg1 manager:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDecorateItems; // @synthesize shouldDecorateItems=_shouldDecorateItems;
 @property(nonatomic) _Bool skipMaterializedTreeTraversal; // @synthesize skipMaterializedTreeTraversal=_skipMaterializedTreeTraversal;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long numFoldersPopped;
 @property(readonly, nonatomic) _Bool done;
 - (id)nextItem;

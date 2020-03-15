@@ -20,6 +20,7 @@
 }
 
 + (id)sharedTaxonomy;
+- (void).cxx_destruct;
 @property(retain) NSMapTable *nameIndex; // @synthesize nameIndex=_nameIndex;
 @property(retain) NSMapTable *sceneClassIndex; // @synthesize sceneClassIndex=_sceneClassIndex;
 @property(copy) NSString *tableName; // @synthesize tableName=_tableName;
@@ -27,7 +28,6 @@
 @property(copy) NSURL *graphURL; // @synthesize graphURL=_graphURL;
 @property(readonly, copy) NSString *sha256Hash; // @synthesize sha256Hash=_sha256Hash;
 @property(readonly) PVSceneTaxonomyNode *rootNode; // @synthesize rootNode=_rootNode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)buildNodesFromGraphURL:(id)arg1 sha256Hash:(id *)arg2;
 - (void)putNodeInIndex:(id)arg1;

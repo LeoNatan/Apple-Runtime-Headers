@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) NSString *currentOrientation;
 @property(readonly, nonatomic) NSString *nativeOrientation;
 @property(readonly, nonatomic, getter=isCloningSupported) _Bool cloningSupported;
+@property(readonly, nonatomic, getter=isCloning) _Bool cloning;
 @property(readonly, nonatomic, getter=isCloned) _Bool cloned;
 @property(copy, nonatomic) NSString *overscanAdjustment;
 @property(readonly, nonatomic) struct CGSize overscanAmounts;
@@ -58,6 +59,7 @@
 @property(readonly, nonatomic) NSString *uniqueId;
 @property(readonly, nonatomic) unsigned int connectionSeed;
 @property(readonly, nonatomic) unsigned int seed;
+@property(readonly, nonatomic) int displayType;
 @property(readonly, nonatomic) unsigned int displayId;
 @property(readonly, nonatomic) NSString *deviceName;
 @property(readonly, nonatomic) NSString *name;

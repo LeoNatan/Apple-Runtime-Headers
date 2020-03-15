@@ -14,9 +14,9 @@
     Protocol *_delegateProtocol;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Protocol *delegateProtocol; // @synthesize delegateProtocol=_delegateProtocol;
 @property(readonly, nonatomic) NSHashTable *children; // @synthesize children=_children;
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;

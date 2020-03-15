@@ -20,10 +20,10 @@
 
 + (id)notificationRecordsFromPersistentNotificationStorageWithPath:(id)arg1 error:(id *)arg2;
 + (id)persistentNotificationStorageWithPath:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) CALNInMemoryNotificationStorage *inMemoryStorage; // @synthesize inMemoryStorage=_inMemoryStorage;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (BOOL)_saveNotificationsWithError:(id *)arg1;
 - (BOOL)_loadNotificationsWithError:(id *)arg1;
 - (void)removeNotificationRecordsPassingTest:(CDUnknownBlockType)arg1;

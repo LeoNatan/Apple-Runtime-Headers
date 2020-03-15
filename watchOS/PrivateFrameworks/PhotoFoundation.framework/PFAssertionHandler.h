@@ -16,8 +16,8 @@
 + (_Bool)runningUnitTests;
 + (void)install;
 + (id)currentHandler;
-@property(retain) id <PFAssertionPolicyHandler> policy; // @synthesize policy=_policy;
 - (void).cxx_destruct;
+@property(retain) id <PFAssertionPolicyHandler> policy; // @synthesize policy=_policy;
 - (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4;
 - (void)handleFailureInMethod:(SEL)arg1 object:(id)arg2 file:(id)arg3 lineNumber:(int)arg4 description:(id)arg5;
 - (void)continueAfterAssertInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4 arguments:(char *)arg5;

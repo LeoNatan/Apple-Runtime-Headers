@@ -18,10 +18,10 @@
     id <NUDocumentSectionItemHeightProvider> _heightProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id <NUDocumentSectionItemHeightProvider> heightProvider; // @synthesize heightProvider=_heightProvider;
 @property(readonly) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (id)sectionItemViewController;
 - (double)sectionItemHeightForSize:(struct CGSize)arg1 traitCollection:(id)arg2;
 - (id)initWithViewController:(id)arg1 heightProvider:(id)arg2;

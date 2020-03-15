@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSDictionary *_assignedTreatmentDict;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *assignedTreatmentDict; // @synthesize assignedTreatmentDict=_assignedTreatmentDict;
 @property(nonatomic) int assignedTreatmentStyle; // @synthesize assignedTreatmentStyle=_assignedTreatmentStyle;
 @property(nonatomic) BOOL treatmentApplied; // @synthesize treatmentApplied=_treatmentApplied;
 @property(nonatomic) unsigned long long assignedKBStyle; // @synthesize assignedKBStyle=_assignedKBStyle;
 @property(nonatomic) int requiredTreatmentStyle; // @synthesize requiredTreatmentStyle=_requiredTreatmentStyle;
 @property(nonatomic) double altAspect; // @synthesize altAspect=_altAspect;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

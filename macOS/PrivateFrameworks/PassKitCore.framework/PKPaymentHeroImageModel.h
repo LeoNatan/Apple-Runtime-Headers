@@ -14,9 +14,9 @@
     NSString *_imageSha;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *imageSha; // @synthesize imageSha=_imageSha;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

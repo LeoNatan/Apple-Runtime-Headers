@@ -25,6 +25,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic, getter=isInterrupted) _Bool interrupted; // @synthesize interrupted=_interrupted;
 @property(nonatomic) __weak id exportedObject; // @synthesize exportedObject=_exportedObject;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) CDUnknownBlockType onInterruptBlock; // @synthesize onInterruptBlock=_onInterruptBlock;
 @property(copy, nonatomic) CDUnknownBlockType onResumeBlock; // @synthesize onResumeBlock=_onResumeBlock;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isResumed) _Bool resumed;
 - (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;

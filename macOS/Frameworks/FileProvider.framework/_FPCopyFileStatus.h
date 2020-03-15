@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_lastBytesCopiedByFile;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *lastBytesCopiedByFile; // @synthesize lastBytesCopiedByFile=_lastBytesCopiedByFile;
 @property(retain) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)finishCopyingFile:(id)arg1 state:(struct _copyfile_state *)arg2;
 - (void)updateCopyingFile:(id)arg1 state:(struct _copyfile_state *)arg2;
 - (void)beginCopyingFile:(id)arg1 state:(struct _copyfile_state *)arg2;

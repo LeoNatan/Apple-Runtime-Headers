@@ -7,7 +7,7 @@
 #import <AppKit/NSFont.h>
 
 @interface NSFont (IC)
-+ (struct NSFont *)ic_preferredFontForStyle:(unsigned int)arg1 contentSizeCategory:(id)arg2;
++ (id)ic_preferredFontForStyle:(unsigned int)arg1 contentSizeCategory:(id)arg2;
 + (double)ic_fontSizeForSubheaderImport;
 + (double)ic_fontSizeForHeaderImport;
 + (id)ic_preferredFontAndLineHeight:(double *)arg1 forAttachmentBoldTextWithZoomController:(id)arg2;
@@ -16,7 +16,7 @@
 + (id)ic_preferredFontForFixedWidthText;
 + (id)ic_preferredFontForDateTextWithZoomFactor:(double)arg1;
 + (id)ic_preferredFontForDateText;
-+ (struct NSFont *)ic_preferredFontForBodyTextWithContentSizeCategory:(id)arg1;
++ (id)ic_preferredFontForBodyTextWithContentSizeCategory:(id)arg1;
 + (id)ic_preferredFontForBodyText;
 + (id)ic_preferredFontForSubheadingTextWithContentSizeCategory:(id)arg1;
 + (id)ic_preferredFontForSubheadingText;

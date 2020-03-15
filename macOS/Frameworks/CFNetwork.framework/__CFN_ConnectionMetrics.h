@@ -47,6 +47,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *cachedSubflowCounts; // @synthesize cachedSubflowCounts=_cachedSubflowCounts;
 @property(nonatomic) BOOL needsCachedSubflowCounts; // @synthesize needsCachedSubflowCounts=_needsCachedSubflowCounts;
 @property(retain, nonatomic) NSDictionary *cachedTCPInfoAtEnd; // @synthesize cachedTCPInfoAtEnd=_cachedTCPInfoAtEnd;
@@ -77,8 +79,6 @@
 @property(retain, nonatomic) NSUUID *initiatingTransactionID; // @synthesize initiatingTransactionID=_initiatingTransactionID;
 @property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)subflowCounts;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     struct CGImage *_photo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *contentLayer; // @synthesize contentLayer=_contentLayer;
 @property(readonly, nonatomic) struct CGImage *photo; // @synthesize photo=_photo;
-- (void).cxx_destruct;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
 - (void)_commonISPhotoNSViewInitialization;

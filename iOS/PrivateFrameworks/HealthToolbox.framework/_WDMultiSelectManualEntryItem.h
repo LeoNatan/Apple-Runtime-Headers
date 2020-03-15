@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     long long _selectedIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(retain, nonatomic) NSArray *titles; // @synthesize titles=_titles;
-- (void).cxx_destruct;
 - (id)generateValue;
 - (void)cellForItemTapped:(id)arg1;
 - (id)tableViewCells;

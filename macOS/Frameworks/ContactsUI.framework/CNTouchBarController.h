@@ -18,10 +18,10 @@
     NSTouchBar *_touchBar;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <CNTouchBarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (void)updateTouchBar;
 - (id)initWithDelegate:(id)arg1 userActionListDataSource:(id)arg2;
 - (id)initWithDelegate:(id)arg1;

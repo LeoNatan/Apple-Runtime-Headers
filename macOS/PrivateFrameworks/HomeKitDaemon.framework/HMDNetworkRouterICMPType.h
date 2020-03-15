@@ -19,9 +19,9 @@
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
 + (id)typeFromICMPType:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *typeValue; // @synthesize typeValue=_typeValue;
 @property(retain, nonatomic) HMDNetworkRouterIPProtocolVersion *protocol; // @synthesize protocol=_protocol;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

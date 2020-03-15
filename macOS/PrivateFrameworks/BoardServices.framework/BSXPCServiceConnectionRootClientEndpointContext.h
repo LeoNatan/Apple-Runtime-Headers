@@ -16,9 +16,9 @@
 }
 
 + (id)uniqueClientContextWithEndpoint:(id)arg1 nonLaunching:(BOOL)arg2 description:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isNonLaunching) BOOL nonLaunching; // @synthesize nonLaunching=_nonLaunching;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *endpoint; // @synthesize endpoint=_endpoint;
-- (void).cxx_destruct;
 - (BOOL)isClient;
 - (id)_initWithEndpoint:(id)arg1 nonLaunching:(BOOL)arg2 eDesc:(id)arg3;
 

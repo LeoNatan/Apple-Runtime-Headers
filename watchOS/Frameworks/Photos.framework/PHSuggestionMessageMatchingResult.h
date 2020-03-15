@@ -15,10 +15,10 @@
     NSMutableDictionary *_scoreByCMMSuggestionMatchingType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *scoreByCMMSuggestionMatchingType; // @synthesize scoreByCMMSuggestionMatchingType=_scoreByCMMSuggestionMatchingType;
 @property(retain, nonatomic) PHSuggestionMessageContext *messageContext; // @synthesize messageContext=_messageContext;
 @property(retain, nonatomic) PHSuggestion *suggestion; // @synthesize suggestion=_suggestion;
-- (void).cxx_destruct;
 - (double)scoreForSuggestionMatchingType:(int)arg1;
 - (void)registerMatchingType:(int)arg1 weight:(double)arg2;
 - (id)initWithSuggestion:(id)arg1 messageContext:(id)arg2;

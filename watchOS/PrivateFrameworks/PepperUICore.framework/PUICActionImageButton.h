@@ -17,8 +17,8 @@
 }
 
 + (id)defaultLayoutFont;
-@property(nonatomic) _Bool needsLongTitleLayout; // @synthesize needsLongTitleLayout=_needsLongTitleLayout;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool needsLongTitleLayout; // @synthesize needsLongTitleLayout=_needsLongTitleLayout;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)backgroundRectForBounds:(struct CGRect)arg1;

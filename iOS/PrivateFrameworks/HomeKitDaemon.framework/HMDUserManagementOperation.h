@@ -40,6 +40,7 @@
 + (id)removeUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
 + (id)addUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMFTimer *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
 @property(readonly, nonatomic) double backoffInterval; // @synthesize backoffInterval=_backoffInterval;
 @property(readonly, nonatomic) HMFTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
@@ -52,7 +53,6 @@
 @property(readonly, nonatomic) unsigned long long operationType; // @synthesize operationType=_operationType;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMDUserManagementOperationDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (void)timerDidFire:(id)arg1;
 - (id)dictionaryEncoding;

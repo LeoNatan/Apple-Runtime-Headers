@@ -13,8 +13,8 @@
     id <AMSMediaTokenServiceProtocol> _tokenService;
 }
 
-@property(readonly, nonatomic) id <AMSMediaTokenServiceProtocol> tokenService; // @synthesize tokenService=_tokenService;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <AMSMediaTokenServiceProtocol> tokenService; // @synthesize tokenService=_tokenService;
 - (void)reconfigureNewRequest:(id)arg1 originalTask:(id)arg2 redirect:(_Bool)arg3 error:(id *)arg4;
 - (id)handleResponse:(id)arg1 task:(id)arg2;
 - (id)initWithTokenService:(id)arg1;

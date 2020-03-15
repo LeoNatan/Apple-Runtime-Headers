@@ -26,13 +26,13 @@
     id <CPTemplateDelegate> _templateDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didDisappear; // @synthesize didDisappear=_didDisappear;
 @property(nonatomic) _Bool didPop; // @synthesize didPop=_didPop;
 @property(retain, nonatomic) id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(retain, nonatomic) CPTemplate *associatedTemplate; // @synthesize associatedTemplate=_associatedTemplate;
 @property(nonatomic) __weak id <CPSTemplateViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
 @property(readonly, nonatomic) NAFuture *templateProviderFuture; // @synthesize templateProviderFuture=_templateProviderFuture;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)didDismissSearchController:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;

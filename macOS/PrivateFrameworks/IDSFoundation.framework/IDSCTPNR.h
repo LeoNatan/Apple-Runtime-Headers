@@ -20,8 +20,8 @@
     NSString *_uniqueIdentifier;
 }
 
-@property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (id)_initWithCoreTelephonyClient:(id)arg1 SIM:(id)arg2;
 - (BOOL)issuePNRForMechanism:(id)arg1 pushToken:(id)arg2 attemptCount:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) IDSCTPNRInfo *PNRInfo;

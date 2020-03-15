@@ -20,6 +20,7 @@
     NSString *_user_id;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *user_id; // @synthesize user_id=_user_id;
 @property(readonly, nonatomic) NSString *errorMessage; // @synthesize errorMessage=_errorMessage;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
@@ -28,7 +29,6 @@
 @property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSDictionary *data; // @synthesize data=_data;
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
-- (void).cxx_destruct;
 - (id)usernameFromJWTToken:(id)arg1;
 - (id)initWithData:(id)arg1 urlResponse:(id)arg2 error:(id)arg3;
 

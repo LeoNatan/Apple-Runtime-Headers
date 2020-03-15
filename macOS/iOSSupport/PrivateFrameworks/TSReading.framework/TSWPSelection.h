@@ -29,6 +29,8 @@
 + (id)selectionWithRange:(struct _NSRange)arg1 type:(int)arg2 leadingEdge:(BOOL)arg3 storage:(id)arg4;
 + (id)selectionWithRange:(struct _NSRange)arg1;
 + (Class)archivedSelectionClass;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL validVisualRanges; // @synthesize validVisualRanges=_validVisualRanges;
 @property(readonly, nonatomic) int caretAffinity; // @synthesize caretAffinity=_caretAffinity;
 @property(readonly, nonatomic) int styleInsertionBehavior; // @synthesize styleInsertionBehavior=_styleInsertionBehavior;
@@ -39,8 +41,6 @@
 @property(readonly, nonatomic) struct _NSRange smartFieldRange; // @synthesize smartFieldRange=_smartFieldRange;
 @property(readonly, nonatomic) struct _NSRange rawRange; // @synthesize rawRange=_range;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isAtEndOfLine;
 - (BOOL)intersectsRange:(struct _NSRange)arg1;
 - (BOOL)containsCharacterAtIndex:(unsigned long long)arg1 allowRightEdge:(BOOL)arg2;

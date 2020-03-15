@@ -15,7 +15,7 @@
 + (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2 uploadedDate:(id)arg3;
 + (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2;
 + (id)fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1;
-+ (struct _HKFitnessFriendActivitySnapshot *)fitnessFriendActivitySnapshotWithRecord:(id)arg1 friendUUID:(id)arg2;
++ (id)fitnessFriendActivitySnapshotWithRecord:(id)arg1 friendUUID:(id)arg2;
 - (id)recordWithZoneID:(id)arg1;
 @property(readonly, nonatomic) ASCodableCloudKitActivitySnapshot *codableSnapshot;
 - (_Bool)isAmm;

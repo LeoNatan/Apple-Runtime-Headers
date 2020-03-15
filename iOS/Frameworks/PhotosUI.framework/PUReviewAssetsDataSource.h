@@ -16,10 +16,10 @@
     NSArray *__assetIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *_assetIdentifiers; // @synthesize _assetIdentifiers=__assetIdentifiers;
 @property(readonly, nonatomic) NSDictionary *_assetsByIdentifier; // @synthesize _assetsByIdentifier=__assetsByIdentifier;
 @property(readonly, nonatomic) id <PUDisplayAssetCollection> _reviewAssetCollection; // @synthesize _reviewAssetCollection=__reviewAssetCollection;
-- (void).cxx_destruct;
 - (id)_identifierAtIndexPath:(id)arg1;
 - (_Bool)isEmpty;
 - (id)startingAssetReference;

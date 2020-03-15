@@ -31,6 +31,7 @@
     id <SWDatastoreSynchronizationManager> _datastoreSynchronizationManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWDatastoreSynchronizationManager> datastoreSynchronizationManager; // @synthesize datastoreSynchronizationManager=_datastoreSynchronizationManager;
 @property(readonly, nonatomic) id <SWSessionManager> sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(retain, nonatomic) SWLoader *loader; // @synthesize loader=_loader;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) id <SWNavigationManager> navigationManager; // @synthesize navigationManager=_navigationManager;
 @property(readonly, nonatomic) id <SWMessageHandlerManager> messageHandlerManager; // @synthesize messageHandlerManager=_messageHandlerManager;
 @property(readonly, nonatomic) id <SWScriptsManager> scriptsManager; // @synthesize scriptsManager=_scriptsManager;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 commitPreviewingViewController:(id)arg2;
 - (id)webView:(id)arg1 previewingViewControllerForElement:(id)arg2 defaultActions:(id)arg3;
 - (_Bool)webView:(id)arg1 shouldPreviewElement:(id)arg2;

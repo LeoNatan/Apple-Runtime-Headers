@@ -18,10 +18,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
 @property(retain, nonatomic) NSMutableDictionary *clients; // @synthesize clients=_clients;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
-- (void).cxx_destruct;
 - (void)removeClientForToken:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)init;

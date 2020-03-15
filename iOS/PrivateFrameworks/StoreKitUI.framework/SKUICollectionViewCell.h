@@ -21,11 +21,11 @@
     struct UIEdgeInsets _separatorInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets separatorInsets; // @synthesize separatorInsets=_separatorInsets;
 @property(nonatomic) struct UIEdgeInsets separatorWidths; // @synthesize separatorWidths=_separatorWidths;
 @property(retain, nonatomic) UIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
-- (void).cxx_destruct;
 - (void)_updateBorderVisibility;
 - (_Bool)_showsTopBorder;
 - (_Bool)_showsRightBorder;

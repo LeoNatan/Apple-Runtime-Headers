@@ -29,6 +29,7 @@
     NSMutableDictionary *_cachedItemsByIndicies;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *cachedItemsByIndicies; // @synthesize cachedItemsByIndicies=_cachedItemsByIndicies;
 @property(retain, nonatomic) NSMutableDictionary *cachedIndiciesByIdentifier; // @synthesize cachedIndiciesByIdentifier=_cachedIndiciesByIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialAccessContainerQueue; // @synthesize serialAccessContainerQueue=_serialAccessContainerQueue;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) __weak MCDPCItem *rootItem; // @synthesize rootItem=_rootItem;
-- (void).cxx_destruct;
 - (id)cachedIndexByIdentifier:(id)arg1;
 - (id)cachedItemForIdentifier:(id)arg1;
 - (id)cachedItemForIndex:(long long)arg1;

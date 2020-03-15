@@ -15,9 +15,9 @@
 }
 
 + (id)wrappertlv:(unsigned int)arg1 name:(id)arg2 objectCreator:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType objectCreator; // @synthesize objectCreator=_objectCreator;
 @property(retain, nonatomic) NSArray *field; // @synthesize field=_field;
-- (void).cxx_destruct;
 
 @end
 

@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
     id <ResponsiveDesignContainerViewDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ResponsiveDesignContainerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
-- (void).cxx_destruct;
 - (void)_initalize;
 - (void)updateConstraints;
 - (BOOL)requiresConstraintBasedLayout;

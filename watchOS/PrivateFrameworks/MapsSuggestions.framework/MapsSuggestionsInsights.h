@@ -35,10 +35,10 @@
 @property(readonly, nonatomic) NSString *uniqueName;
 - (id)signalPackForHere;
 - (id)signalPackForDestinationEntry:(id)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2;
-- (id)signalPackForDestinationMapItem:(struct GEOMapItemStorage *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2;
+- (id)signalPackForDestinationMapItem:(id)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2;
 - (_Bool)signalPackForHereWithHandler:(CDUnknownBlockType)arg1;
 - (_Bool)signalPackForDestinationEntry:(id)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(CDUnknownBlockType)arg3;
-- (_Bool)signalPackForDestinationMapItem:(struct GEOMapItemStorage *)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)signalPackForDestinationMapItem:(id)arg1 originCoordinate:(struct CLLocationCoordinate2D)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)preload;
 - (double)isTouristHere;
 - (id)confidenceScoresForContacts:(id)arg1 addresses:(id)arg2;

@@ -23,8 +23,8 @@
 
 + (id)sharedInstanceWithPortName:(id)arg1;
 + (id)sharedInstance;
-@property(nonatomic) BOOL shouldWaitToSetTopics; // @synthesize shouldWaitToSetTopics=_shouldWaitToSetTopics;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL shouldWaitToSetTopics; // @synthesize shouldWaitToSetTopics=_shouldWaitToSetTopics;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(BOOL)arg2;
 - (void)connectionDidReconnect:(id)arg1;
 - (void)connection:(id)arg1 didFailToSendOutgoingMessage:(id)arg2 error:(id)arg3;

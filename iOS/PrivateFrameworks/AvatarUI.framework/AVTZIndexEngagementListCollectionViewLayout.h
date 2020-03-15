@@ -17,12 +17,12 @@
     AVTUIEnvironment *_environment;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(nonatomic) double minAlphaFactor; // @synthesize minAlphaFactor=_minAlphaFactor;
 @property(retain, nonatomic) UICollectionViewUpdateItem *currentUpdateItem; // @synthesize currentUpdateItem=_currentUpdateItem;
 @property(retain, nonatomic) NSIndexPath *plusButtonIndexPath; // @synthesize plusButtonIndexPath=_plusButtonIndexPath;
 @property(retain, nonatomic) NSIndexPath *backIndexPath; // @synthesize backIndexPath=_backIndexPath;
-- (void).cxx_destruct;
 - (void)finalizeCollectionViewUpdates;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;

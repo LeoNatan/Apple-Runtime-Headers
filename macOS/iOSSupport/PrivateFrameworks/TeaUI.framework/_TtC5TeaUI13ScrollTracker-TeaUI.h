@@ -6,9 +6,7 @@
 
 #import <TeaUI/_TtC5TeaUI13ScrollTracker.h>
 
-#import <TeaUI/UIScrollViewDelegate-Protocol.h>
-
-@interface _TtC5TeaUI13ScrollTracker (TeaUI) <UIScrollViewDelegate>
+@interface _TtC5TeaUI13ScrollTracker (TeaUI)
 - (void)scrollViewDidScroll:(id)arg1;
 @end
 

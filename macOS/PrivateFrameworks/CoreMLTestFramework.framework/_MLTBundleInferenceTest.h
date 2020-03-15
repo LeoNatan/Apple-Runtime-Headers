@@ -16,11 +16,11 @@
     NSString *_testDataPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *testDataPath; // @synthesize testDataPath=_testDataPath;
 @property(retain, nonatomic) NSString *modelPath; // @synthesize modelPath=_modelPath;
 @property(retain, nonatomic) NSError *testError; // @synthesize testError=_testError;
 @property(nonatomic) BOOL testExecuted; // @synthesize testExecuted=_testExecuted;
-- (void).cxx_destruct;
 - (id)initWithModelPath:(id)arg1 testData:(id)arg2;
 
 @end

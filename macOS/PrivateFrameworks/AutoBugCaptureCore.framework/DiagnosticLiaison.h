@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <DiagnosticLiaisonDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)checkForUIImpactScenarioForCase:(id)arg1;
 - (void)processPayloadVersionTwoFromIDSTransport:(id)arg1 incomingTime:(id)arg2;
 - (void)processPayloadVersionOneFromIDSTransport:(id)arg1 incomingTime:(id)arg2;

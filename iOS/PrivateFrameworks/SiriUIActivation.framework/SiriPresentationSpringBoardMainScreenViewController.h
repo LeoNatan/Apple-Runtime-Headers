@@ -12,6 +12,7 @@
 {
 }
 
+- (_Bool)_canShowWhileLocked;
 - (void)prewarmFlamesWithPresentationFrame:(struct CGRect)arg1;
 - (void)setFluidDismissalState:(id)arg1;
 - (void)setShowsStatusBar:(_Bool)arg1;

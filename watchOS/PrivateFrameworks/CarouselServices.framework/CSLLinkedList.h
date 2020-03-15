@@ -20,8 +20,8 @@
     unsigned int _count;
 }
 
-@property(readonly, nonatomic) unsigned int count; // @synthesize count=_count;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int count; // @synthesize count=_count;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (void)removeObjectAtIndex:(unsigned int)arg1;
 - (void)removeObject:(id)arg1;

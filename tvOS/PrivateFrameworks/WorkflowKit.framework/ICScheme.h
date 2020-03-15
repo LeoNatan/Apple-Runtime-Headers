@@ -17,12 +17,12 @@
     NSDictionary *_definition;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
 @property(readonly, nonatomic) NSArray *capabilities; // @synthesize capabilities=_capabilities;
 @property(readonly, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, nonatomic) NSString *scheme; // @synthesize scheme=_scheme;
 @property(readonly, nonatomic) __weak ICApp *app; // @synthesize app=_app;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

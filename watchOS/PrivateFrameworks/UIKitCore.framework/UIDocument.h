@@ -61,10 +61,10 @@
 + (id)_customizationOfError:(id)arg1 withDescription:(id)arg2 recoverySuggestion:(id)arg3 recoveryAttempter:(id)arg4;
 + (id)_typeForContentsOfURL:(id)arg1 error:(id *)arg2;
 + (id)_fileModificationDateForURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *differenceSinceSaving; // @synthesize differenceSinceSaving=_differenceSinceSaving;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *differenceSincePreservingPreviousVersion; // @synthesize differenceSincePreservingPreviousVersion=_differenceSincePreservingPreviousVersion;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *differenceDueToRecentChanges; // @synthesize differenceDueToRecentChanges=_differenceDueToRecentChanges;
-- (void).cxx_destruct;
 - (void)disableEditing;
 - (void)enableEditing;
 - (void)presentedItemHasUnsavedChangesWithCompletionHandler:(CDUnknownBlockType)arg1;

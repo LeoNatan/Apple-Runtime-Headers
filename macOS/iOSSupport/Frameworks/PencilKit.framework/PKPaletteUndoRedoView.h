@@ -29,6 +29,7 @@
     NSLayoutConstraint *_redoButtonHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *redoButtonHeightConstraint; // @synthesize redoButtonHeightConstraint=_redoButtonHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *redoButtonWidthConstraint; // @synthesize redoButtonWidthConstraint=_redoButtonWidthConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *undoButtonHeightConstraint; // @synthesize undoButtonHeightConstraint=_undoButtonHeightConstraint;
@@ -42,7 +43,6 @@
 @property(nonatomic) __weak id <PKPaletteUndoRedoViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)handleRedo:(id)arg1;

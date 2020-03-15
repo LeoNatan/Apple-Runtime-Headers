@@ -13,8 +13,8 @@
     HKQuantityType *_quantityType;
 }
 
-@property(readonly, copy, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 - (id)dataObjectsFromSensorDatum:(id)arg1 error:(id *)arg2;
 - (Class)sensorDatumClass;
 - (id)objectType;

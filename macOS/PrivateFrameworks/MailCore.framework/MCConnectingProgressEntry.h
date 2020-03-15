@@ -14,8 +14,8 @@
 }
 
 + (id)keyPathsForValuesAffectingStatusText;
-@property(copy, nonatomic) NSArray *connectingAccountNames; // @synthesize connectingAccountNames=_connectingAccountNames;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *connectingAccountNames; // @synthesize connectingAccountNames=_connectingAccountNames;
 - (BOOL)indeterminate;
 - (id)statusText;
 - (id)progressSlice;

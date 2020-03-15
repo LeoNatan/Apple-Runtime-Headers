@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) WebBookmarkList *topBookmark; // @synthesize topBookmark=_topBookmark;
-- (void).cxx_destruct;
 - (id)initWithPath:(id)arg1;
 - (id)unescapeHTML:(id)arg1;
 

@@ -19,8 +19,8 @@
     id <SBIconIndexMutableListObserver> _observer;
 }
 
-@property(nonatomic) __weak id <SBIconIndexMutableListObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBIconIndexMutableListObserver> observer; // @synthesize observer=_observer;
 - (id)indexDescriptionWithPrefix:(id)arg1;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)nodeDidMoveContainedNodes:(id)arg1;

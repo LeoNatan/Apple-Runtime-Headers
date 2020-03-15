@@ -36,6 +36,7 @@
 + (Class)requiredAnchorsType;
 + (Class)objectDataType;
 + (id)changeWithNanoSyncEntityClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableEntityIdentifier *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
 @property(nonatomic) _Bool complete; // @synthesize complete=_complete;
 @property(nonatomic) long long sequence; // @synthesize sequence=_sequence;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSMutableArray *objectDatas; // @synthesize objectDatas=_objectDatas;
 @property(nonatomic) long long endAnchor; // @synthesize endAnchor=_endAnchor;
 @property(nonatomic) long long startAnchor; // @synthesize startAnchor=_startAnchor;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

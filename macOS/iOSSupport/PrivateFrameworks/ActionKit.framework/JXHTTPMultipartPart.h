@@ -18,12 +18,12 @@
 }
 
 + (id)withMultipartType:(int)arg1 key:(id)arg2 data:(id)arg3 contentType:(id)arg4 fileName:(id)arg5 boundary:(id)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *postData; // @synthesize postData=_postData;
 @property(retain, nonatomic) NSData *contentData; // @synthesize contentData=_contentData;
 @property(retain, nonatomic) NSData *preData; // @synthesize preData=_preData;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
 @property(nonatomic) int multipartType; // @synthesize multipartType=_multipartType;
-- (void).cxx_destruct;
 - (unsigned long long)loadMutableData:(id)arg1 withDataInRange:(struct _NSRange)arg2;
 - (long long)contentLength;
 - (long long)dataLength;

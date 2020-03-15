@@ -25,11 +25,11 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *payloadApplications; // @synthesize payloadApplications=_payloadApplications;
 @property(copy, nonatomic) NSNumber *payloadEnableStealthMode; // @synthesize payloadEnableStealthMode=_payloadEnableStealthMode;
 @property(copy, nonatomic) NSNumber *payloadBlockAllIncoming; // @synthesize payloadBlockAllIncoming=_payloadBlockAllIncoming;
 @property(copy, nonatomic) NSNumber *payloadEnableFirewall; // @synthesize payloadEnableFirewall=_payloadEnableFirewall;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

@@ -37,6 +37,7 @@
     CDUnknownBlockType _animationTransactionCompletion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsCATransactionActivate; // @synthesize needsCATransactionActivate=_needsCATransactionActivate;
 @property(copy, nonatomic) CDUnknownBlockType animationTransactionCompletion; // @synthesize animationTransactionCompletion=_animationTransactionCompletion;
 @property(retain, nonatomic) SBViewControllerTransitionContext *transition; // @synthesize transition=_transition;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) BSTransaction *notifyObserversTransaction; // @synthesize notifyObserversTransaction=_notifyObserversTransaction;
 @property(readonly, nonatomic) BSTransaction *animationTransaction; // @synthesize animationTransaction=_animationTransaction;
 @property(retain, nonatomic) id <SBUIAnimationControllerTransitionContextProvider> transitionContextProvider; // @synthesize transitionContextProvider=_transitionContextProvider;
-- (void).cxx_destruct;
 - (void)transitionDidFinish:(id)arg1;
 - (id)coordinatingAnimationControllers;
 - (void)startInteractiveTransition:(id)arg1;

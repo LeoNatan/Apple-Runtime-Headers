@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)identifier;
-@property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType actionHandler; // @synthesize actionHandler=_actionHandler;
 - (void)_buttonPressed:(id)arg1;
 - (void)setData:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

@@ -17,10 +17,10 @@
     EDPETSubmittedEvent *_submittedEvent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *rawData; // @synthesize rawData=_rawData;
 @property(retain, nonatomic) EDPETSubmittedEvent *submittedEvent; // @synthesize submittedEvent=_submittedEvent;
 @property(retain, nonatomic) EDPETQuotaReachedEvent *quotaEvent; // @synthesize quotaEvent=_quotaEvent;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

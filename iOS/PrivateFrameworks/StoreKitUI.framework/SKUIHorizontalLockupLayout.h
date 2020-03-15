@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 + (id)fontForOrdinalViewElement:(id)arg1 context:(id)arg2;
 + (id)fontForLabelViewElement:(id)arg1 context:(id)arg2;
 + (id)fontForButtonViewElement:(id)arg1 context:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets metadataColumnEdgeInsets; // @synthesize metadataColumnEdgeInsets=_metadataColumnEdgeInsets;
 @property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
-- (void).cxx_destruct;
 - (struct CGSize)_sizeForViewElement:(id)arg1 width:(long long)arg2 context:(id)arg3;
 - (struct CGSize)_sizeForRightAlignedColumn:(id)arg1 width:(double)arg2 context:(id)arg3;
 - (double)_heightForMetadataColumn:(id)arg1 width:(double)arg2 context:(id)arg3;

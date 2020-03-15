@@ -16,10 +16,10 @@
 }
 
 + (Class)layoutAttributesClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *currentIndexPath; // @synthesize currentIndexPath=_currentIndexPath;
 @property(nonatomic, getter=isSingleCoverModeEnabled) _Bool singleCoverModeEnabled; // @synthesize singleCoverModeEnabled=_singleCoverModeEnabled;
 @property(nonatomic) _Bool shouldDisableFocusEffects; // @synthesize shouldDisableFocusEffects=_shouldDisableFocusEffects;
-- (void).cxx_destruct;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (_Bool)_shouldScrollToContentBeginningInRightToLeft;

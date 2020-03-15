@@ -28,11 +28,11 @@ __attribute__((visibility("hidden")))
     SKUIFlexibleSegmentedControl *_segmentedControl;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) long long numberOfVisibleColumns; // @synthesize numberOfVisibleColumns=_numberOfVisibleColumns;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(copy, nonatomic) NSArray *chartViewControllers; // @synthesize chartViewControllers=_allViewControllers;
-- (void).cxx_destruct;
 - (void)_reloadColumnViews;
 - (id)_headerViewWithViewControllers:(id)arg1;
 - (void)segmentedControl:(id)arg1 didSelectSegmentIndex:(long long)arg2;

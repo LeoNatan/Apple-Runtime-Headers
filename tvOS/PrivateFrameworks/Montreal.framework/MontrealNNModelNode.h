@@ -26,6 +26,7 @@
     CDStruct_96916c69 _parameters;
 }
 
+- (void).cxx_destruct;
 @property _Bool parametersSet; // @synthesize parametersSet=_parametersSet;
 @property(readonly) MontrealNNModelQuantization *quantization; // @synthesize quantization=_quantization;
 @property(readonly) NSArray *weights; // @synthesize weights=_weights;
@@ -38,7 +39,6 @@
 @property(readonly) NSArray *activations; // @synthesize activations=_activations;
 @property(readonly) NSString *nodeStr; // @synthesize nodeStr=_nodeStr;
 @property CDStruct_96916c69 parameters; // @synthesize parameters=_parameters;
-- (void).cxx_destruct;
 @property(readonly, getter=isValid) _Bool valid;
 - (id)createDataContainer;
 - (void)generateJSONAtPath:(id)arg1;

@@ -22,9 +22,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)playlistDestinationWithName:(id)arg1;
 + (id)libraryDestination;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *playlistName; // @synthesize playlistName=_playlistName;
 @property(readonly, nonatomic) int mediaDestinationType; // @synthesize mediaDestinationType=_mediaDestinationType;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
@@ -35,7 +35,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
 - (id)initWithMediaDestinationType:(int)arg1 playlistName:(id)arg2;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,11 +20,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPLMomentShare *momentShare; // @synthesize momentShare=_momentShare;
 @property(copy, nonatomic) NSData *accountFlagsData; // @synthesize accountFlagsData=_accountFlagsData;
 @property(retain, nonatomic) CPLFeatureVersionHistory *featureVersionHistory; // @synthesize featureVersionHistory=_featureVersionHistory;
 @property(copy, nonatomic) NSDictionary *assetCounts; // @synthesize assetCounts=_assetCounts;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CPLAccountFlags *accountFlags;
 - (id)prettyDescriptionWithAnchorDesciptionBlock:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

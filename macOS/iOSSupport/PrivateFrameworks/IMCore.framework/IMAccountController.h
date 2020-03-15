@@ -24,9 +24,9 @@
 
 + (id)bestAccountFromAccounts:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL networkDataAvailable; // @synthesize networkDataAvailable=_networkDataAvailable;
 @property(copy) NSArray *accounts; // @synthesize accounts=_accounts;
-- (void).cxx_destruct;
 - (void)_rebuildOperationalAccountsCache:(BOOL)arg1;
 - (void)_disableCache;
 - (void)_enableCache;

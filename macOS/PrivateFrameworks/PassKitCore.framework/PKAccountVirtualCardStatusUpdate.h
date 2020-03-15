@@ -20,9 +20,9 @@
 + (id)recordNamePrefix;
 + (id)recordType;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *updatedVirtualCards; // @synthesize updatedVirtualCards=_updatedVirtualCards;
 @property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;

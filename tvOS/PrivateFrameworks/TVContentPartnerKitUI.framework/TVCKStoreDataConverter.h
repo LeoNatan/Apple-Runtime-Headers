@@ -19,10 +19,10 @@
 + (id)adamIDForNumber:(id)arg1;
 + (id)releaseDateFromString:(id)arg1;
 + (id)sharedFormatter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumberFormatter *numberFormatter; // @synthesize numberFormatter=_numberFormatter;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) id <NSLocking> lock; // @synthesize lock=_lock;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

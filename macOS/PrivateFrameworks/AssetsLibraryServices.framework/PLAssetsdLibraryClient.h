@@ -6,16 +6,15 @@
 
 #import <AssetsLibraryServices/PLAssetsdBaseClient.h>
 
-@class NSMutableDictionary;
+@class PLAssetsdClientSandboxExtensions;
 
 @interface PLAssetsdLibraryClient : PLAssetsdBaseClient
 {
-    NSMutableDictionary *_securityScopedURLs;
     // Error parsing type: AB, name: _isOpen
+    PLAssetsdClientSandboxExtensions *_sandboxExtensions;
 }
 
 - (void).cxx_destruct;
-- (void)_stopUsingSecurityScopedURLs;
 - (BOOL)_consumeSandboxExtensions:(id)arg1;
 - (void)pendingEventsForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)publishRemoteChangeEvent:(id)arg1 delayedSaveActionsDetail:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -28,14 +27,13 @@
 - (void)importFileSystemAssetsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)synchronouslyImportFileSystemAssetsWithError:(id *)arg1;
 - (id)getPhotoLibraryStoreXPCListenerEndpoint;
-- (BOOL)shutdownPhotoLibraryDatabaseWithError:(id *)arg1;
 - (id)upgradePhotoLibraryDatabaseWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)openPhotoLibraryDatabaseWithoutProgressIfNeeded:(id *)arg1;
 - (BOOL)openPhotoLibraryDatabaseWithPostOpenProgress:(id *)arg1 error:(id *)arg2;
 - (BOOL)createPhotoLibraryDatabaseWithError:(id *)arg1;
 - (long long)getCurrentModelVersion;
 - (void)launchAssetsd;
-- (void)dealloc;
+- (id)initWithQueue:(id)arg1 proxyCreating:(id)arg2 proxyGetter:(SEL)arg3 sandboxExtensions:(id)arg4;
 
 @end
 

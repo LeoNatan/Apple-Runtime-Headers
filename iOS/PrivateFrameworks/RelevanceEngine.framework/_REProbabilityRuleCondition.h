@@ -18,11 +18,11 @@
     long long _relation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) float threshold; // @synthesize threshold=_threshold;
 @property(readonly, nonatomic) long long relation; // @synthesize relation=_relation;
 @property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
 @property(readonly, nonatomic) NSString *interaction; // @synthesize interaction=_interaction;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -15,10 +15,10 @@
     INImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) INImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
-- (void).cxx_destruct;
 - (id)initWithCodableAttribute:(id)arg1 value:(id)arg2 image:(id)arg3;
 
 @end

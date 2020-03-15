@@ -20,6 +20,7 @@
     id <MBSecondPartyHost> _assistant;
 }
 
+- (void).cxx_destruct;
 @property id <MBSecondPartyHost> assistant; // @synthesize assistant=_assistant;
 @property(retain) AKiCDPValidationDevice *selectedDevice; // @synthesize selectedDevice=_selectedDevice;
 @property(retain) AKiCDPWaitForApprovalViewController *approvalVC; // @synthesize approvalVC;
@@ -27,7 +28,6 @@
 @property(retain) AKiCDPEnrollmentDeviceListViewController *deviceListVC; // @synthesize deviceListVC;
 @property unsigned long long state; // @synthesize state;
 @property id <AKiCDPValidationDelegate> delegate; // @synthesize delegate;
-- (void).cxx_destruct;
 - (id)localizedStringForKey:(id)arg1 deviceClass:(id)arg2;
 - (BOOL)shouldUseJustDeviceNameForDevice:(id)arg1;
 - (void)showRunOutOfDevicesOptionsSheetForDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

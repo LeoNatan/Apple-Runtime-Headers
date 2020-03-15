@@ -16,10 +16,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *discoveredRecords; // @synthesize discoveredRecords=_discoveredRecords;
 @property(readonly, copy, nonatomic) NSString *servicePrefix; // @synthesize servicePrefix=_servicePrefix;
 @property(readonly, copy, nonatomic) NSString *host; // @synthesize host=_host;
-- (void).cxx_destruct;
 - (BOOL)lookup;
 - (id)init;
 - (id)initWithServicePrefix:(id)arg1 onHost:(id)arg2;

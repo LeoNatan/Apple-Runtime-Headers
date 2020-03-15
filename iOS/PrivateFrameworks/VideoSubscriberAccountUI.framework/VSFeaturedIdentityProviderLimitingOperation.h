@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     VSStoreURLBag *_bag;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VSStoreURLBag *bag; // @synthesize bag=_bag;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) NSArray *unlimitedIdentityProviders; // @synthesize unlimitedIdentityProviders=_unlimitedIdentityProviders;
-- (void).cxx_destruct;
 - (void)executionDidBegin;
 - (id)init;
 

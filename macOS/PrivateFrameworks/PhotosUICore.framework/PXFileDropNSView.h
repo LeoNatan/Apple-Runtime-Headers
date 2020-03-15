@@ -15,9 +15,9 @@
     id <NSDraggingDestination> _draggingDestinationDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) __weak id <NSDraggingDestination> draggingDestinationDelegate; // @synthesize draggingDestinationDelegate=_draggingDestinationDelegate;
-- (void).cxx_destruct;
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (BOOL)wantsPeriodicDraggingUpdates;
 - (void)draggingEnded:(id)arg1;

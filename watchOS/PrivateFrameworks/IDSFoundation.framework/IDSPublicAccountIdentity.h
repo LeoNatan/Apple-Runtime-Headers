@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IDSMPPublicServiceIdentitySigning *signingIdentity; // @synthesize signingIdentity=_signingIdentity;
 @property(readonly, nonatomic) IDSMPPublicServiceIdentityAdmin *adminIdentity; // @synthesize adminIdentity=_adminIdentity;
 @property(readonly, nonatomic) IDSMPPublicAccountIdentity *accountIdentity; // @synthesize accountIdentity=_accountIdentity;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -34,6 +34,7 @@
 + (id)actionItemWithImage:(id)arg1 title:(id)arg2 actionItems:(id)arg3;
 + (id)actionItemWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (id)actionItemWithImage:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) SEL action; // @synthesize action=_action;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
 @property(retain, nonatomic) PUICActionGroup *actionGroup; // @synthesize actionGroup=_actionGroup;
@@ -47,7 +48,6 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) int tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (void)_setNeedsItemUpdateNotification;
 @property(copy, nonatomic) NSArray *actionItems;
 - (id)_initWithImage:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4 actionGroup:(id)arg5;

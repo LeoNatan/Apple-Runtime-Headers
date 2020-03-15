@@ -15,10 +15,10 @@
     VUIMediaItemEntityTypesFetchResponseChanges *_fetchChanges;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIMediaItemEntityTypesFetchResponseChanges *fetchChanges; // @synthesize fetchChanges=_fetchChanges;
 @property(retain, nonatomic) VUIMediaItemEntityTypesFetchResponse *fetchResponse; // @synthesize fetchResponse=_fetchResponse;
 @property(nonatomic) long long fetchReason; // @synthesize fetchReason=_fetchReason;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithFetchReason:(long long)arg1 fetchResponse:(id)arg2;
 - (id)init;

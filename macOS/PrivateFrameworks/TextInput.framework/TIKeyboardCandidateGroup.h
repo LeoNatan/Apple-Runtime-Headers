@@ -18,9 +18,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSOrderedSet *candidates; // @synthesize candidates=_candidates;
 @property(copy) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (void)addCandidate:(id)arg1;
 - (BOOL)hasAlternativeText;

@@ -46,10 +46,10 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *accessibilityChildrenForRows; // @synthesize accessibilityChildrenForRows=_accessibilityChildrenForRows;
 @property(readonly, retain, nonatomic) CALayer *loupeLayer; // @synthesize loupeLayer=_loupeLayer;
 @property(readonly, nonatomic) BOOL isShowingLoupe; // @synthesize isShowingLoupe=_isShowingLoupe;
-- (void).cxx_destruct;
 - (void)cancelAllPrepareOperations;
 - (void)cancelPrepareOperationForSegmentIndexPath:(id)arg1;
 - (BOOL)hasPrepareOperationForSegmentIndexPath:(id)arg1;

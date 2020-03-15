@@ -18,10 +18,10 @@
 }
 
 + (id)fromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *companionBundleID; // @synthesize companionBundleID=_companionBundleID;
 @property(retain, nonatomic) NSDate *lastUsed; // @synthesize lastUsed=_lastUsed;
 @property(retain, nonatomic) NSString *watchBundleID; // @synthesize watchBundleID=_watchBundleID;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

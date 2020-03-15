@@ -15,9 +15,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MPMusicPlayerPlayParameters *startItemPlayParameters; // @synthesize startItemPlayParameters=_startItemPlayParameters;
 @property(copy, nonatomic) NSArray *playParametersQueue; // @synthesize playParametersQueue=_playParametersQueue;
-- (void).cxx_destruct;
+- (_Bool)isEmpty;
 - (void)setEndTime:(double)arg1 forItemWithPlayParameters:(id)arg2;
 - (void)setStartTime:(double)arg1 forItemWithPlayParameters:(id)arg2;
 - (id)description;

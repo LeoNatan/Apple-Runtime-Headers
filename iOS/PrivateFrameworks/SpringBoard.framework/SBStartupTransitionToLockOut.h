@@ -14,8 +14,8 @@
     SBFUserAuthenticationController *_authController;
 }
 
-@property(readonly, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SBLockScreenManager *lockScreenManager; // @synthesize lockScreenManager=_lockScreenManager;
 - (void)performTransitionWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)suggestedLockAnimationForTransitionRequest:(id)arg1;
 - (id)initWithDestination:(unsigned long long)arg1 context:(id)arg2;

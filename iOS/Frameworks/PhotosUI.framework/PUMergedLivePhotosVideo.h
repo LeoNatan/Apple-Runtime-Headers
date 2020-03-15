@@ -19,6 +19,7 @@
     unsigned long long _options;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) double videoAspectRatio; // @synthesize videoAspectRatio=_videoAspectRatio;
 @property(readonly, nonatomic) AVVideoComposition *mergedVideoComposition; // @synthesize mergedVideoComposition=_mergedVideoComposition;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSArray *keyTimes; // @synthesize keyTimes=_keyTimes;
 @property(readonly, copy, nonatomic) NSArray *startTimes; // @synthesize startTimes=_startTimes;
 @property(readonly, copy, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (long long)_assetIndexAtTime:(CDStruct_1b6d18a9)arg1;
 - (id)assetAtTime:(CDStruct_1b6d18a9)arg1 progress:(out double *)arg2;

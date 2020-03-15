@@ -74,10 +74,10 @@
 + (void)_registerSceneComponentClass:(Class)arg1 withKey:(id)arg2 predicate:(id)arg3;
 + (id)_sceneForFBSScene:(id)arg1 usingPredicate:(id)arg2;
 + (id)_sceneForFBSScene:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_cachedInterfaceOrientation, setter=_setCachedInterfaceOrientation:) NSNumber *_cachedInterfaceOrientation; // @synthesize _cachedInterfaceOrientation=__cachedInterfaceOrientation;
 @property(nonatomic, setter=_setIsRespondingToLifecycleEvent:) _Bool _respondingToLifecycleEvent; // @synthesize _respondingToLifecycleEvent;
 @property(readonly, nonatomic) FBSSceneSettings *_oldSettings; // @synthesize _oldSettings;
-- (void).cxx_destruct;
 - (void)_removeInheritingScene:(id)arg1;
 - (void)_addInheritingScene:(id)arg1;
 @property(readonly, nonatomic) NSArray *_sceneBSActionHandlers;

@@ -58,6 +58,7 @@
 + (id)undoButtonImage;
 + (id)redoButtonImageWithStyle:(unsigned long long)arg1;
 + (id)undoButtonImageWithStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL wantsClearBackgroundColorInCompactSize; // @synthesize wantsClearBackgroundColorInCompactSize=_wantsClearBackgroundColorInCompactSize;
 @property(nonatomic) __weak id <AKToolbarViewOpacityEditingDelegate> opacityEditingDelegate; // @synthesize opacityEditingDelegate=_opacityEditingDelegate;
 @property(nonatomic) BOOL contentsHidden; // @synthesize contentsHidden=_contentsHidden;
@@ -66,7 +67,6 @@
 @property(nonatomic) BOOL alwaysShowUndoButton; // @synthesize alwaysShowUndoButton=_alwaysShowUndoButton;
 @property(nonatomic) BOOL undoRedoButtonsHidden; // @synthesize undoRedoButtonsHidden=_undoRedoButtonsHidden;
 @property(nonatomic) __weak AKController *annotationController; // @synthesize annotationController=_annotationController;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (struct CGRect)frameObscuredInView:(id)arg1;
 - (id)inkPicker;

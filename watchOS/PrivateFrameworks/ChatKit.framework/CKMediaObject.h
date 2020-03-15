@@ -30,6 +30,7 @@
 + (_Bool)shouldShadePreview;
 + (_Bool)shouldScaleUpPreview;
 + (_Bool)isPreviewable;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int oopPreviewRequestCount; // @synthesize oopPreviewRequestCount=_oopPreviewRequestCount;
 @property(nonatomic) _Bool forceInlinePreviewGeneration; // @synthesize forceInlinePreviewGeneration=_forceInlinePreviewGeneration;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *highQualityFetchInProgressGroup; // @synthesize highQualityFetchInProgressGroup=_highQualityFetchInProgressGroup;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool suppressPreviewForUnknownSender; // @synthesize suppressPreviewForUnknownSender=_suppressPreviewForUnknownSender;
 @property(nonatomic) _Bool isFromMe; // @synthesize isFromMe=_isFromMe;
 @property(retain, nonatomic) id <CKFileTransfer> transfer; // @synthesize transfer=_transfer;
-- (void).cxx_destruct;
 - (_Bool)isPromisedItem;
 - (id)previewItemURL;
 @property(readonly, nonatomic) _Bool canShareItem;

@@ -11,8 +11,8 @@
     id _assertion;
 }
 
-@property(nonatomic) __weak id assertion; // @synthesize assertion=_assertion;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id assertion; // @synthesize assertion=_assertion;
 
 @end
 

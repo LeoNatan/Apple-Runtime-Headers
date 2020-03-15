@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy) NSArray *connectionRules; // @synthesize connectionRules=_connectionRules;
 - (void).cxx_destruct;
+@property(copy) NSArray *connectionRules; // @synthesize connectionRules=_connectionRules;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;

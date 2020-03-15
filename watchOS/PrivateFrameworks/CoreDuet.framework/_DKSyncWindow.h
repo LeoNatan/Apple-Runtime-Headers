@@ -31,10 +31,10 @@
 + (id)windowsThatOverlapWithWindowMinimumDate:(id)arg1 windowMaximumDate:(id)arg2 sortedSyncWindows:(id)arg3;
 + (id)sortedUnionOfSortedWindows:(id)arg1 andSortedWindows:(id)arg2;
 + (id)syncWindowWithStartDate:(id)arg1 endDate:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(retain, nonatomic) _DKEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)description;
 - (int)compare:(id)arg1;

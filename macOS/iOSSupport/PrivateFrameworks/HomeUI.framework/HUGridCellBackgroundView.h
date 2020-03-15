@@ -22,6 +22,7 @@
 }
 
 + (id)_sharedBlurEffect;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *ccMaterialView; // @synthesize ccMaterialView=_ccMaterialView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) HUGridCellBackgroundDisplayOptions *displayOptions; // @synthesize displayOptions=_displayOptions;
 @property(nonatomic, getter=isPressed) BOOL pressed; // @synthesize pressed=_pressed;
 @property(nonatomic) unsigned long long backgroundState; // @synthesize backgroundState=_backgroundState;
-- (void).cxx_destruct;
 - (id)_normalBackgroundColor;
 - (BOOL)_shouldUsePrecomputedWallpaperContents;
 - (BOOL)_shouldUseVisualEffectStyle;

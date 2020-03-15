@@ -14,9 +14,9 @@
     NSMutableDictionary *__dictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *_dictionary; // @synthesize _dictionary=__dictionary;
 @property(readonly, nonatomic) _Bool memoizesNil; // @synthesize memoizesNil=_memoizesNil;
-- (void).cxx_destruct;
 - (void)enumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)objectForKey:(id)arg1 memoizationBlock:(CDUnknownBlockType)arg2;
 - (id)init;

@@ -15,16 +15,16 @@
     EKTextViewWithLabelTextMetrics *_locationView;
     NSURL *_locationURL;
     UITapGestureRecognizer *_locationTapRecognizer;
+    _Bool _locationIsAttendee;
     int _locationStatus;
+    NSString *_locationComment;
     _Bool _hasMapItemLaunchOptionFromTimeToLeaveNotification;
-    _Bool _hasLocationStatus;
     NSString *_locationTitle;
 }
 
-@property(retain) NSString *locationTitle; // @synthesize locationTitle=_locationTitle;
-@property _Bool hasLocationStatus; // @synthesize hasLocationStatus=_hasLocationStatus;
-@property _Bool hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 - (void).cxx_destruct;
+@property(retain) NSString *locationTitle; // @synthesize locationTitle=_locationTitle;
+@property _Bool hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 - (void)_locationTapped;
 - (void)textViewDidChangeSelection:(id)arg1;
 - (id)locationView;

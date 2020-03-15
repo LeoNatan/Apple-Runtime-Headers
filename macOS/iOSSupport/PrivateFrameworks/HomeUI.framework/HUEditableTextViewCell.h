@@ -18,11 +18,11 @@
     UITextView *_textView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showingPlaceholder; // @synthesize showingPlaceholder=_showingPlaceholder;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) BOOL editEnabled; // @synthesize editEnabled=_editEnabled;
 @property(copy, nonatomic) NSString *placeholderText; // @synthesize placeholderText=_placeholderText;
-- (void).cxx_destruct;
 - (id)trimmedStringForText:(id)arg1;
 - (void)updateTextColor;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;

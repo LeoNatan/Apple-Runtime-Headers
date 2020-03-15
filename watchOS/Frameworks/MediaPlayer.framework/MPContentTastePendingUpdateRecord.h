@@ -17,12 +17,12 @@
     long long _storeAdamID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) int tasteType; // @synthesize tasteType=_tasteType;
 @property(readonly, nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(readonly, nonatomic) NSString *playlistGlobalID; // @synthesize playlistGlobalID=_playlistGlobalID;
-- (void).cxx_destruct;
 - (void)_initializeWithType:(int)arg1 tasteType:(int)arg2;
 - (id)initWithStoreAdamID:(long long)arg1 tasteType:(int)arg2;
 - (id)initWithPlaylistGlobalID:(id)arg1 tasteType:(int)arg2;

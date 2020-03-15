@@ -25,12 +25,12 @@
     NSMapTable *__accessoryViewControllers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *_accessoryViewControllers; // @synthesize _accessoryViewControllers=__accessoryViewControllers;
 @property(copy, nonatomic) CDUnknownBlockType unlockDeviceHandler; // @synthesize unlockDeviceHandler=_unlockDeviceHandler;
 @property(copy, nonatomic) CDUnknownBlockType unlockDeviceStatus; // @synthesize unlockDeviceStatus=_unlockDeviceStatus;
 @property(nonatomic) __weak id <PUOneUpAccessoryViewControllersManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (_Bool)photosDetailsUIViewControllerRequestDismissal:(id)arg1;
 - (id)_createAccessoryViewControllerForAssetReference:(id)arg1;

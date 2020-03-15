@@ -18,8 +18,8 @@
 + (id)deviceActivityLikelihoodQueryPredicate;
 + (id)predictorLog;
 + (id)predictorWithKnowledgeStore:(id)arg1;
-@property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 - (id)expectedInBedPeriod;
 - (id)localInBedPeriod;
 - (id)predictionForStreamsWithNames:(id)arg1 withPredicate:(id)arg2 withPredictionType:(unsigned long long)arg3 withDataPartitionType:(unsigned long long)arg4 asOfDate:(id)arg5;

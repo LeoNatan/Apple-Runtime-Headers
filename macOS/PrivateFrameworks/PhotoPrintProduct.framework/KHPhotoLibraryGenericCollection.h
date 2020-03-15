@@ -20,11 +20,11 @@
     id <KHPhotoLibraryCollection> __parentCollection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <KHPhotoLibraryCollection> _parentCollection; // @synthesize _parentCollection=__parentCollection;
 @property(readonly, nonatomic) NSArray *collections; // @synthesize collections=_collections;
 @property(readonly, nonatomic) NSArray *imagePaths; // @synthesize imagePaths=_imagePaths;
 @property(readonly, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
-- (void).cxx_destruct;
 @property(readonly) NSArray *pageLayoutPhotoIDs;
 @property(readonly) NSArray *pageLayoutPhotos;
 @property(readonly) unsigned long long pageLayoutPhotoCount;

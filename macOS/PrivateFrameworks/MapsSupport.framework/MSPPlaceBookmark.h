@@ -24,11 +24,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int droppedPinFloorOrdinal; // @synthesize droppedPinFloorOrdinal=_droppedPinFloorOrdinal;
 @property(retain, nonatomic) GEOLatLng *droppedPinCoordinate; // @synthesize droppedPinCoordinate=_droppedPinCoordinate;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) GEOMapItemStorage *mapItemStorage; // @synthesize mapItemStorage=_mapItemStorage;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;

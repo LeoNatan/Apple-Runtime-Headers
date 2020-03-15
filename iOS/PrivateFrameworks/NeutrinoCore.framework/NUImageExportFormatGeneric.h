@@ -15,10 +15,10 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *options; // @synthesize options=_options;
 @property int renderFormat; // @synthesize renderFormat=_renderFormat;
 @property(copy) NSString *fileType; // @synthesize fileType=_fileType;
-- (void).cxx_destruct;
 - (void)addImageDestinationOptionsToImageProperties:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFileType:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NMUNowPlayingTitlesView *_titlesView;
 }
 
-@property(readonly, nonatomic) NMUNowPlayingTitlesView *titlesView; // @synthesize titlesView=_titlesView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NMUNowPlayingTitlesView *titlesView; // @synthesize titlesView=_titlesView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *packetizationModes; // @synthesize packetizationModes=_packetizationModes;
 @property(readonly, copy, nonatomic) NSArray *levels; // @synthesize levels=_levels;
 @property(readonly, copy, nonatomic) NSArray *h264Profiles; // @synthesize h264Profiles=_h264Profiles;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)description:(id)arg1 indent:(id)arg2;

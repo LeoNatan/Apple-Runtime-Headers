@@ -33,6 +33,7 @@
 
 + (double)defaultSectionHeaderHeight;
 + (double)defaultRowHeight;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType autoUpdatePreviewViewControllerBlock; // @synthesize autoUpdatePreviewViewControllerBlock=_autoUpdatePreviewViewControllerBlock;
 @property(nonatomic) _Bool fadeThroughPreviews; // @synthesize fadeThroughPreviews=_fadeThroughPreviews;
 @property(retain, nonatomic) UIView *previewView; // @synthesize previewView=_previewView;
@@ -44,7 +45,6 @@
 @property(nonatomic) struct UIEdgeInsets tableViewPadding; // @synthesize tableViewPadding=_tableViewPadding;
 @property(nonatomic) double tableViewWidth; // @synthesize tableViewWidth=_tableViewWidth;
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
-- (void).cxx_destruct;
 - (void)_setPreviewPaused:(_Bool)arg1;
 - (struct CGRect)_frameForPreview;
 - (struct CGRect)_frameForTable;

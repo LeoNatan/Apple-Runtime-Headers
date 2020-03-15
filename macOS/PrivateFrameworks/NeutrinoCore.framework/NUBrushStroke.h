@@ -23,11 +23,11 @@
 
 + (id)dictionaryFromBrushStroke:(id)arg1;
 + (id)brushStrokeFromDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long pressureMode; // @synthesize pressureMode=_pressureMode;
 @property(readonly, nonatomic) float opacity; // @synthesize opacity=_opacity;
 @property(readonly, nonatomic) float softness; // @synthesize softness=_softness;
 @property(readonly, nonatomic) float radius; // @synthesize radius=_radius;
-- (void).cxx_destruct;
 - (void)_updateExtent;
 - (id)_createDataFromPointArray:(id)arg1;
 - (id)_createPointArrayFromData:(id)arg1;

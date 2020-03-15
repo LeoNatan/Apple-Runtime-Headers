@@ -24,12 +24,12 @@
     NSMapTable *_observersToObserverBehaviors;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_manuallyControlsLifecycle, setter=_setManuallyControlsLifecycle:) _Bool manuallyControlsLifecycle; // @synthesize manuallyControlsLifecycle=_manuallyControlsLifecycle;
 @property(retain, nonatomic, getter=_sceneMonitor, setter=_setSceneMonitor:) FBSceneMonitor *sceneMonitor; // @synthesize sceneMonitor=_sceneMonitor;
 @property(readonly, nonatomic, getter=_definition) FBSSceneDefinition *definition; // @synthesize definition=_definition;
 @property(retain, nonatomic, setter=_setDisplayIdentity:) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_displayIdentity;
 @property(readonly, nonatomic) FBScene *sceneIfExists; // @synthesize sceneIfExists=_scene;
-- (void).cxx_destruct;
 - (void)_setScene:(id)arg1;
 - (void)sceneContentStateDidChange:(id)arg1;
 - (void)sceneMonitor:(id)arg1 pairingStatusDidChangeForExternalSceneIDs:(id)arg2;

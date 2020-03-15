@@ -22,6 +22,7 @@
     CDUnknownBlockType _daemonInvokeBlock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finishInvoked; // @synthesize finishInvoked=_finishInvoked;
 @property(readonly, nonatomic) CDUnknownBlockType daemonInvokeBlock; // @synthesize daemonInvokeBlock=_daemonInvokeBlock;
 @property(readonly, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
 @property(nonatomic) _Bool isExecuting; // @synthesize isExecuting=_isExecuting;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
-- (void).cxx_destruct;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
 - (void)_setIsExecuting:(_Bool)arg1;

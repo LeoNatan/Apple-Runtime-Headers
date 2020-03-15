@@ -11,10 +11,14 @@
 }
 
 + (id)contextToIdentifierMap;
+- (BOOL)_supportsFaceID;
+- (BOOL)_isBiometricCapable;
+- (BOOL)_isBiometricAuthEnrolled;
 - (id)_userInfoForPrefPaneWithCommandKey:(id)arg1;
 - (id)_localizedStringForKey:(id)arg1;
 - (unsigned long long)secretType;
 - (id)_baseFollowUpItemWithContext:(id)arg1;
+- (id)_followUpForSettingUpBiometricsWithContext:(id)arg1;
 - (id)_followUpActionForRecoveryKeyRepair;
 - (id)_followUpForRecoveryKeyRepairWithContext:(id)arg1;
 - (id)_followUpActionForRepair;

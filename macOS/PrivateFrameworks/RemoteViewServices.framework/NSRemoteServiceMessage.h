@@ -18,8 +18,8 @@
     NSObject<OS_xpc_object> *_ports;
 }
 
-@property(readonly) NSObject<OS_xpc_object> *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_xpc_object> *message; // @synthesize message=_message;
 - (id)_unarchiveArguments:(id)arg1;
 - (id)_archiveArguments:(id)arg1;
 - (id)serializedMessage;

@@ -24,12 +24,12 @@
     UIImageView *_thumbnailView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsAlert; // @synthesize showsAlert=_showsAlert;
 @property(readonly, nonatomic) UIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
 @property(nonatomic) _Bool subtitleDescribesError; // @synthesize subtitleDescribesError=_subtitleDescribesError;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *cardDescription; // @synthesize cardDescription=_cardDescription;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)_prepareImageAndValueConstraints;
 - (id)_formatTextForString:(id)arg1 alerting:(_Bool)arg2;

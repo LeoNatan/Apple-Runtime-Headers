@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSSet *autoBlueDotSeasons; // @synthesize autoBlueDotSeasons=_autoBlueDotSeasons;
 @property(copy, nonatomic) NSDate *autoBlueDotDate; // @synthesize autoBlueDotDate=_autoBlueDotDate;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)shouldDetermineStatusOfEpisodeWithReleaseDate:(id)arg1 inSeasonWithID:(id)arg2;

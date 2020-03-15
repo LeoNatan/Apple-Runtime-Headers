@@ -16,11 +16,13 @@
     id <CSKeywordAnalyzerNDEAPIScoreDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSKeywordAnalyzerNDEAPIScoreDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int activeChannel; // @synthesize activeChannel=_activeChannel;
-- (void).cxx_destruct;
 - (void)reset;
 - (void)processAudioChunk:(id)arg1;
+- (void)processAudioBytes:(void *)arg1 withNumberOfSamples:(int)arg2;
+- (void)checkForTriggerWithBytes:(const short *)arg1 withNumberOfSamples:(int)arg2;
 - (void)dealloc;
 - (id)initWithBlob:(id)arg1;
 

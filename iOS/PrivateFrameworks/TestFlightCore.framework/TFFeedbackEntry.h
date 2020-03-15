@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithType:(unsigned long long)arg1 identifier:(id)arg2 title:(id)arg3;
 
 @end

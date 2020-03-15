@@ -29,6 +29,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableMedicalCodingList *reasonEndedCodings; // @synthesize reasonEndedCodings=_reasonEndedCodings;
 @property(retain, nonatomic) HDCodableMedicalCodingList *reasonCodings; // @synthesize reasonCodings=_reasonCodings;
 @property(retain, nonatomic) HDCodableMedicalCoding *statusCoding; // @synthesize statusCoding=_statusCoding;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) NSString *prescriber; // @synthesize prescriber=_prescriber;
 @property(retain, nonatomic) HDCodableMedicalCodingList *medicationCodings; // @synthesize medicationCodings=_medicationCodings;
 @property(retain, nonatomic) HDCodableMedicalRecord *medicalRecord; // @synthesize medicalRecord=_medicalRecord;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

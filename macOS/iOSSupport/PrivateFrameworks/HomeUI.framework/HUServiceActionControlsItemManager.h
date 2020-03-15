@@ -15,10 +15,10 @@
     HFControlPanelItemProvider *_controlPanelItemProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFControlPanelItemProvider *controlPanelItemProvider; // @synthesize controlPanelItemProvider=_controlPanelItemProvider;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFServiceActionItem *serviceActionItem; // @synthesize serviceActionItem=_serviceActionItem;
-- (void).cxx_destruct;
 - (id)_sectionIdentifierForControlPanelItem:(id)arg1;
 - (id)_sectionIdentifiers;
 - (id)_actionControlsDelegate;

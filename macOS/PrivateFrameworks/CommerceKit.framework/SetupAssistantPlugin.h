@@ -15,9 +15,10 @@
     CKStoreClient *_storeClient;
 }
 
-@property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void)_authenticateUsername:(id)arg1 password:(id)arg2 canMakeActive:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)_addUnauthenticatedAccountWithSetupResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)terminateSetupCompletion;
 - (void)completeSetupWithResponse:(id)arg1 account:(id)arg2 store:(id)arg3 context:(long long)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)delegateAccountInformation;

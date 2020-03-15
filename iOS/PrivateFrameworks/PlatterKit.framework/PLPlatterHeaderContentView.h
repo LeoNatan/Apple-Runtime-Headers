@@ -37,6 +37,7 @@
 
 + (id)_titleLabelFontFromFontProvider:(id)arg1;
 + (double)contentBaselineToBoundsBottomWithWidth:(double)arg1 scale:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_utilityButtonHorizontalLayoutReference, setter=_setUtilityButtonHorizontalLayoutReference:) double utilityButtonHorizontalLayoutReference; // @synthesize utilityButtonHorizontalLayoutReference=_utilityButtonHorizontalLayoutReference;
 @property(nonatomic, getter=_usesLargeTextLayout, setter=_setUsesLargeTextLayout:) _Bool usesLargeTextLayout; // @synthesize usesLargeTextLayout=_usesLargeTextLayout;
 @property(retain, nonatomic, getter=_titleLabel, setter=_setTitleLabel:) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (void)dateLabelDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)setVisualStylingProvider:(id)arg1;
@@ -98,6 +98,7 @@
 - (void)_configureTitleLabel:(id)arg1;
 - (void)_updateStylingForTitleLabel:(id)arg1;
 - (void)_configureIconButton:(id)arg1 withIcon:(id)arg2;
+- (id)_newIconButton;
 - (double)_headerHeightForWidth:(double)arg1;
 @property(readonly, nonatomic, getter=_iconTrailingPadding) double iconTrailingPadding;
 @property(readonly, nonatomic, getter=_iconLeadingPadding) double iconLeadingPadding;

@@ -43,6 +43,7 @@
 + (Class)subclassForLocale:(id)arg1;
 + (Class)subclassForLanguageIdentifier:(id)arg1;
 + (id)languageIdentifierFromClassName;
+- (void).cxx_destruct;
 @property(retain) NSString *RKLinguisticTagDataDetected; // @synthesize RKLinguisticTagDataDetected=_RKLinguisticTagDataDetected;
 @property(retain) NSArray *dataDetected; // @synthesize dataDetected=_dataDetected;
 @property(retain) NSArray *appreciations; // @synthesize appreciations=_appreciations;
@@ -62,7 +63,6 @@
 @property(readonly) NSString *languageIdentifier; // @synthesize languageIdentifier=_languageIdentifier;
 @property(retain) NSArray *matchedRanges; // @synthesize matchedRanges=_matchedRanges;
 @property(retain) NSArray *sentenceEntities; // @synthesize sentenceEntities=_sentenceEntities;
-- (void).cxx_destruct;
 - (id)classifySentence;
 - (void)analyzeSentence;
 - (id)addSentenceTerminatorQuestion:(id)arg1;

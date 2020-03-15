@@ -9,7 +9,15 @@
 __attribute__((visibility("hidden")))
 @interface WKDataListSuggestionWindow : NSWindow
 {
+    struct RetainPtr<NSVisualEffectView> _backdropView;
 }
+
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (unsigned long long)shadowOptions;
+- (BOOL)hasKeyAppearance;
+- (BOOL)canBecomeKeyWindow;
+- (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 
 @end
 

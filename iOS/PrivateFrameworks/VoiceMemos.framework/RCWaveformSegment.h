@@ -29,9 +29,9 @@
 + (_Bool)supportsSecureCoding;
 + (id)emptySegmentWithTimeRange:(CDStruct_73a5d3ca)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isRendered; // @synthesize isRendered=_isRendered;
 @property(readonly, nonatomic) CDStruct_73a5d3ca timeRange; // @synthesize timeRange=_timeRange;
-- (void).cxx_destruct;
 - (id)_segmentsByJoiningIfNecessaryGreaterSegment:(id)arg1 averagePowerLevelJoinLimit:(unsigned long long)arg2;
 - (id)_segmentWithValuesInContainedTimeRange:(CDStruct_73a5d3ca)arg1;
 - (id)segmentByClippingToTimeRange:(CDStruct_73a5d3ca)arg1;

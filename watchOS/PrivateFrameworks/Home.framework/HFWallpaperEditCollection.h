@@ -15,10 +15,10 @@
     HFWallpaperSlice *_processedSlice;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HFWallpaperSlice *processedSlice; // @synthesize processedSlice=_processedSlice;
 @property(readonly, nonatomic) HFWallpaperSlice *originalSlice; // @synthesize originalSlice=_originalSlice;
 @property(readonly, nonatomic) HFWallpaper *wallpaper; // @synthesize wallpaper=_wallpaper;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithWallpaper:(id)arg1 originalSlice:(id)arg2 processedSlice:(id)arg3;
 

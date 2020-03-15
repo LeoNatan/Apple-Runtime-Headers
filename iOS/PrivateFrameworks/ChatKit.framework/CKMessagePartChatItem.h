@@ -13,8 +13,8 @@
     NSArray *_visibleAssociatedMessageChatItems;
 }
 
-@property(readonly, nonatomic) NSArray *visibleAssociatedMessageChatItems; // @synthesize visibleAssociatedMessageChatItems=_visibleAssociatedMessageChatItems;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *visibleAssociatedMessageChatItems; // @synthesize visibleAssociatedMessageChatItems=_visibleAssociatedMessageChatItems;
 @property(readonly, nonatomic) UIItemProvider *dragItemProvider;
 @property(readonly, nonatomic) _Bool isBlackholed;
 @property(readonly, nonatomic) _Bool isCorrupt;

@@ -13,8 +13,8 @@
     UIActivityIndicatorView *_activityIndicator;
 }
 
-@property(retain) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (void).cxx_destruct;
+@property(retain) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 - (void)stopAnimating;
 - (void)startAnimating;
 - (id)init;

@@ -14,10 +14,10 @@
     optional_4dd3a29b format;
 }
 
-@property(nonatomic) optional_4dd3a29b format; // @synthesize format;
-@property(nonatomic) __weak id <aura_Stream> stream; // @synthesize stream;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(nonatomic) optional_4dd3a29b format; // @synthesize format;
+@property(nonatomic) __weak id <aura_Stream> stream; // @synthesize stream;
 
 @end
 

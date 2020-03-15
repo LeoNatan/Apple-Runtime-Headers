@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     TVPStateMachine *_stateMachine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) TVPlaybackProgressAnimation *animation; // @synthesize animation=_animation;
 @property(nonatomic) __weak CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double effectivePlaybackRate; // @synthesize effectivePlaybackRate=_effectivePlaybackRate;
 @property(nonatomic) __weak id <TVPPlaybackProgressAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) TVPTransportBarView *transportBarView; // @synthesize transportBarView=_transportBarView;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)moveModeratelyToElapsedTime:(double)arg1;
 - (void)moveQuicklyToElapsedTime:(double)arg1;

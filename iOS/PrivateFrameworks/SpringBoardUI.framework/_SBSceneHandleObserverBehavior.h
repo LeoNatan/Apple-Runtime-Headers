@@ -20,6 +20,7 @@
 }
 
 + (id)behaviorFromObserver:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didUpdatePairingStatusForExternalSceneIdentifiers; // @synthesize didUpdatePairingStatusForExternalSceneIdentifiers=_didUpdatePairingStatusForExternalSceneIdentifiers;
 @property(nonatomic) _Bool didUpdateClientSettingsWithDiff; // @synthesize didUpdateClientSettingsWithDiff=_didUpdateClientSettingsWithDiff;
 @property(nonatomic) _Bool didUpdateSettingsWithDiff; // @synthesize didUpdateSettingsWithDiff=_didUpdateSettingsWithDiff;
@@ -27,7 +28,6 @@
 @property(nonatomic) _Bool didDestroyScene; // @synthesize didDestroyScene=_didDestroyScene;
 @property(nonatomic) _Bool didCreateScene; // @synthesize didCreateScene=_didCreateScene;
 @property(readonly, nonatomic) __weak id <SBSceneHandleObserver> observer; // @synthesize observer=_observer;
-- (void).cxx_destruct;
 - (id)initWithObserver:(id)arg1;
 
 @end

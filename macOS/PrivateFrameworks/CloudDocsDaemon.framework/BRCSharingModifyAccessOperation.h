@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)main;
 - (id)createActivity;
-- (BOOL)shouldRetryForError:(id)arg1;
 - (id)initWithItem:(id)arg1 allowAccess:(BOOL)arg2;
 
 // Remaining properties

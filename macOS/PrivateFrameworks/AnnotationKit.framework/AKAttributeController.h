@@ -28,6 +28,7 @@
 + (void)initialize;
 + (id)defaultTextAttributes;
 + (id)defaultFont;
+- (void).cxx_destruct;
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property(nonatomic) long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
 @property(retain) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
@@ -41,7 +42,6 @@
 @property(retain) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(retain, nonatomic) NSColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) AKPageModelController *modelControllerToObserveForSelections; // @synthesize modelControllerToObserveForSelections;
-- (void).cxx_destruct;
 - (void)_updateStateOnSenderFromSelf:(id)arg1 segment:(long long)arg2;
 - (BOOL)_updateStateOnSender:(id)arg1 segment:(long long)arg2 fromSelectedAnnotations:(id)arg3;
 - (long long)_allAnnotations:(id)arg1 shareAttributeFromTag:(long long)arg2;

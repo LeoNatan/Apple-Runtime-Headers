@@ -13,8 +13,8 @@
     ICSuzeLeaseSession *_icSuzeLeaseSession;
 }
 
-@property(readonly, nonatomic) ICSuzeLeaseSession *icSuzeLeaseSession; // @synthesize icSuzeLeaseSession=_icSuzeLeaseSession;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ICSuzeLeaseSession *icSuzeLeaseSession; // @synthesize icSuzeLeaseSession=_icSuzeLeaseSession;
 - (void)endAutomaticallyRefreshingLease;
 - (void)beginAutomaticallyRefreshingLease;
 - (id)initWithICSuzeLeaseSession:(id)arg1;

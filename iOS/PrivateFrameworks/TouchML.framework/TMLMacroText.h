@@ -16,10 +16,10 @@
 }
 
 + (id)macroTextWithMacroText:(id)arg1 basePath:(id)arg2 filename:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename;
 @property(retain, nonatomic) NSString *basePath; // @synthesize basePath;
 @property(retain, nonatomic) NSString *macroText; // @synthesize macroText;
-- (void).cxx_destruct;
 
 @end
 

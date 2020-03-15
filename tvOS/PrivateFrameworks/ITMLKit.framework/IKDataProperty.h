@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_property;
 }
 
-@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *property; // @synthesize property=_property;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

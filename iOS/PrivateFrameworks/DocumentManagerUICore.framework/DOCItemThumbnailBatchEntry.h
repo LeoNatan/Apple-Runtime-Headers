@@ -14,9 +14,9 @@
     unsigned long long _fetchOptions;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long fetchOptions; // @synthesize fetchOptions=_fetchOptions;
 @property(retain, nonatomic) DOCItemThumbnail *thumbnail; // @synthesize thumbnail=_thumbnail;
-- (void).cxx_destruct;
 
 @end
 

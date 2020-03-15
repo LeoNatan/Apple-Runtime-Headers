@@ -13,8 +13,8 @@
     NSArray *_details;
 }
 
-@property(retain, nonatomic) NSArray *details; // @synthesize details=_details;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *details; // @synthesize details=_details;
 - (void)setDetailsWithCertificateTrust:(struct __SecTrust *)arg1 certificateExpiration:(id)arg2 certificateIsTrusted:(_Bool)arg3;
 - (void)setCertificateTrust:(struct __SecTrust *)arg1 certificateExpiration:(id)arg2 certificateIsTrusted:(_Bool)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <ClassroomKit/CRKCloudStoringSubItem-Protocol.h>
 #import <ClassroomKit/NSCopying-Protocol.h>
 #import <ClassroomKit/NSSecureCoding-Protocol.h>
 
 @class CRKImage, NSData, NSPersonNameComponents, NSString;
 
-@interface CRKUser : NSObject <NSSecureCoding, NSCopying, CRKCloudStoringSubItem>
+@interface CRKUser : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _useMeCardIfAvailable;
     NSString *_userIdentifier;
@@ -29,14 +28,10 @@
     CRKImage *_userImage;
 }
 
-+ (id)instanceWithParentObject:(id)arg1 keyValue:(id)arg2;
-+ (id)instanceWithKeyValue:(id)arg1;
-+ (id)instanceWithRecord:(id)arg1;
-+ (id)recordType;
-+ (id)skeletonInstance;
 + (BOOL)supportsSecureCoding;
 + (id)customUserFromMeCardUser:(id)arg1;
 + (id)meCardUser;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CRKImage *userImage; // @synthesize userImage=_userImage;
 @property(copy, nonatomic) NSData *userImageData; // @synthesize userImageData=_userImageData;
 @property(nonatomic, getter=shouldUseMeCardIfAvailable) BOOL useMeCardIfAvailable; // @synthesize useMeCardIfAvailable=_useMeCardIfAvailable;
@@ -50,17 +45,13 @@
 @property(copy, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *userIdentifier; // @synthesize userIdentifier=_userIdentifier;
-- (void).cxx_destruct;
-- (BOOL)isChangedFrom:(id)arg1;
-- (void)applyFieldsToRecord:(id)arg1;
-- (id)recordName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqualToUser:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
-@property(readonly, copy) NSString *description;
+- (unsigned long long)hash;
+- (id)description;
 - (void)updateUserImage;
 @property(readonly, nonatomic) BOOL isValid;
 @property(readonly, nonatomic) BOOL isMeCardUser;
@@ -68,10 +59,6 @@
 @property(readonly, copy, nonatomic) NSPersonNameComponents *nameComponents;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

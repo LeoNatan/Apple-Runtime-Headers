@@ -24,6 +24,7 @@
     WFIntentDynamicResolutionRequest *_lastDynamicResolutionRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFIntentDynamicResolutionRequest *lastDynamicResolutionRequest; // @synthesize lastDynamicResolutionRequest=_lastDynamicResolutionRequest;
 @property(readonly, nonatomic) WFIntentDynamicResolver *dynamicResolver; // @synthesize dynamicResolver=_dynamicResolver;
 @property(readonly, copy, nonatomic) INSchema *schema; // @synthesize schema=_schema;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSString *className; // @synthesize className=_className;
 @property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (int)intentCategory;
-- (void).cxx_destruct;
 - (void)dynamicResolveParameterDidEndResolutionSession:(id)arg1;
 - (void)localizedDisambiguationPromptForItems:(id)arg1 intent:(id)arg2 dynamicResolveParameter:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)resolveOptionsForUserInput:(id)arg1 forDynamicResolveParameter:(id)arg2 completion:(CDUnknownBlockType)arg3;

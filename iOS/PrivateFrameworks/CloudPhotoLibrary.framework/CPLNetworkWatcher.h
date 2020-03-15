@@ -18,10 +18,10 @@
     id <CPLNetworkWatcherDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPLNetworkWatcherDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CPLNetworkState *networkState; // @synthesize networkState=_networkState;
 @property(readonly, nonatomic) NSString *endPoint; // @synthesize endPoint=_endPoint;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (id)initWithQueue:(id)arg1;

@@ -15,10 +15,10 @@
     NSString *_serverCacheTag;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *serverCacheTag; // @synthesize serverCacheTag=_serverCacheTag;
 @property(readonly, nonatomic) NSValue *cropRect; // @synthesize cropRect=_cropRect;
 @property(readonly, nonatomic) NSData *photoData; // @synthesize photoData=_photoData;
-- (void).cxx_destruct;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 
 @end

@@ -20,6 +20,7 @@
     NSArray *_nestedGroups;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *nestedGroups; // @synthesize nestedGroups=_nestedGroups;
 @property(retain) NSArray *groupMembership; // @synthesize groupMembership=_groupMembership;
 @property(retain) NSArray *groupMembers; // @synthesize groupMembers=_groupMembers;
@@ -28,7 +29,6 @@
 @property(retain) NSNumber *groupID; // @synthesize groupID=_groupID;
 @property unsigned int gid; // @synthesize gid=_gid;
 @property(retain) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

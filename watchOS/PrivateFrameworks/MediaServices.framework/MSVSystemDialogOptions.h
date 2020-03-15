@@ -22,6 +22,7 @@
     NSString *_alternateButtonTitle;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool dismissOverlaysOnLockscreen; // @synthesize dismissOverlaysOnLockscreen=_dismissOverlaysOnLockscreen;
 @property(nonatomic) _Bool showOnLockscreen; // @synthesize showOnLockscreen=_showOnLockscreen;
 @property(nonatomic) _Bool forceModalAlertAppearance; // @synthesize forceModalAlertAppearance=_forceModalAlertAppearance;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSURL *alertIconURL; // @synthesize alertIconURL=_alertIconURL;
 @property(copy, nonatomic) NSString *alertMessage; // @synthesize alertMessage=_alertMessage;
 @property(copy, nonatomic) NSString *alertHeader; // @synthesize alertHeader=_alertHeader;
-- (void).cxx_destruct;
 
 @end
 

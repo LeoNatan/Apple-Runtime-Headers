@@ -23,9 +23,9 @@
     NSDictionary *_info;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *info; // @synthesize info=_info;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)needsReply;
 - (void)sendReply:(id)arg1;
 - (id)_createXPCMessage;

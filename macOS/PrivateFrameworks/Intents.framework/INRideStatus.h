@@ -34,6 +34,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *additionalActionActivities; // @synthesize additionalActionActivities=_additionalActionActivities;
 @property(retain) NSUserActivity *userActivityForCancelingInApplication; // @synthesize userActivityForCancelingInApplication=_userActivityForCancelingInApplication;
 @property(copy) INRideOption *rideOption; // @synthesize rideOption=_rideOption;
@@ -48,7 +49,6 @@
 @property(copy) INRideCompletionStatus *completionStatus; // @synthesize completionStatus=_completionStatus;
 @property long long phase; // @synthesize phase=_phase;
 @property(copy) NSString *rideIdentifier; // @synthesize rideIdentifier=_rideIdentifier;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

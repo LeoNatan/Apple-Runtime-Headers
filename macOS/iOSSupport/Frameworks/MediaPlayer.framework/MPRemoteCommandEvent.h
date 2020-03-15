@@ -18,9 +18,9 @@
 }
 
 + (id)eventWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) MPRemoteCommand *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (long long)playbackQueueOffset;
 - (id)contentItemID;
 - (id)interfaceID;

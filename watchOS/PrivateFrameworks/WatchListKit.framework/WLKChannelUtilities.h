@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, WLKChannelsResponse;
+@class NSArray, NSDictionary, NSError, WLKChannelsResponse;
 @protocol OS_dispatch_queue;
 
 @interface WLKChannelUtilities : NSObject
@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     _Bool _filtered;
     WLKChannelsResponse *_cachedResponse;
+    NSError *_error;
     NSDictionary *_channelsByBundleID;
 }
 
@@ -21,8 +22,10 @@
 + (_Bool)isItunesBundleID:(id)arg1;
 + (id)sharedInstance;
 + (id)sharedInstanceFiltered;
-@property(readonly, copy, nonatomic) NSDictionary *channelsByBundleID; // @synthesize channelsByBundleID=_channelsByBundleID;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *channelsByBundleID; // @synthesize channelsByBundleID=_channelsByBundleID;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+- (void)_loadConfigIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_configuration;
 - (_Bool)isItunesOrFirstPartyBundleID:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *orderedChannels;
@@ -30,6 +33,8 @@
 - (id)channelForBundleID:(id)arg1;
 - (id)channelForID:(id)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *channelsByID;
+@property(readonly, nonatomic) _Bool loaded;
+- (void)loadIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initFiltered:(_Bool)arg1;
 

@@ -22,12 +22,12 @@
 + (_Bool)supportsSecureCoding;
 + (id)new;
 + (id)emptyCredential;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSHTTPURLResponse *authenticatedResponse; // @synthesize authenticatedResponse=_authenticatedResponse;
 @property(readonly, copy, nonatomic) NSArray *authorizedScopes; // @synthesize authorizedScopes=_authorizedScopes;
 @property(readonly, copy, nonatomic) NSData *identityToken; // @synthesize identityToken=_identityToken;
 @property(readonly, copy, nonatomic) NSData *accessToken; // @synthesize accessToken=_accessToken;
 @property(readonly, copy, nonatomic) NSString *state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

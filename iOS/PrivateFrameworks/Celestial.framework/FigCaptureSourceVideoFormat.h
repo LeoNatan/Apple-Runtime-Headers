@@ -55,6 +55,7 @@
 @property(readonly, getter=isStreamingDisparitySupported) _Bool streamingDisparitySupported;
 @property(readonly) NSArray *AVCaptureSessionPresets;
 @property(readonly, getter=isHighProfileH264Supported) _Bool highProfileH264Supported;
+@property(readonly, getter=isSIFRStillImageCaptureWithDepthDataDisabled) _Bool sifrStillImageCaptureWithDepthDataDisabled;
 @property(readonly) float maxPortraitLightingEffectStrength;
 @property(readonly) float minPortraitLightingEffectStrength;
 @property(readonly) float defaultPortraitLightingEffectStrength;
@@ -99,6 +100,7 @@
 @property(readonly, getter=isStagePreviewRenderingSupported) _Bool stagePreviewRenderingSupported;
 @property(readonly, getter=isStudioAndContourPreviewRenderingSupported) _Bool studioAndContourPreviewRenderingSupported;
 @property(readonly, getter=isSecondaryScalerUnavailable) _Bool secondaryScalerUnavailable;
+@property(readonly, getter=isCameraCalibrationDataDeliverySupported) _Bool cameraCalibrationDataDeliverySupported;
 @property(readonly, getter=isVisionDataDeliverySupported) _Bool visionDataDeliverySupported;
 @property(readonly, getter=isLowLightVideoCaptureSupported) _Bool lowLightVideoCaptureSupported;
 @property(readonly, getter=isVariableFrameRateVideoCaptureSupported) _Bool variableFrameRateVideoCaptureSupported;
@@ -136,6 +138,7 @@
 - (float)cinematicStabilizationExtendedLookAheadDuration;
 - (float)stabilizationOverscanPercentageOverrideForCinematic;
 - (int)stabilizationTypeOverrideForCinematic;
+- (float)stabilizationOverscanPercentageOverrideForStandard;
 - (int)stabilizationTypeOverrideForStandard;
 - (_Bool)isStabilizationModeSupported:(int)arg1;
 @property(readonly, getter=isBinned) _Bool binned;

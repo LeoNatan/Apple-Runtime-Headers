@@ -24,11 +24,11 @@
 + (void)setActiveVacuum:(id)arg1;
 + (id)activeVacuum;
 + (id)activeVacuumQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType postVacuumHandler; // @synthesize postVacuumHandler=_postVacuumHandler;
 @property(copy, nonatomic) CDUnknownBlockType preVacuumHandler; // @synthesize preVacuumHandler=_preVacuumHandler;
-- (void).cxx_destruct;
 - (void)vacuumHTMLDatabase;
 - (void)vacuum;
 - (void)timerFired:(id)arg1;

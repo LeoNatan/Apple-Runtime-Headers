@@ -19,12 +19,12 @@
 
 + (id)arrowImage;
 + (double)readMoreButtonHeight;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *arrowImageView; // @synthesize arrowImageView=_arrowImageView;
 @property(readonly, nonatomic) UILabel *domainLabel; // @synthesize domainLabel=_domainLabel;
 @property(readonly, nonatomic) UILabel *readStoryLabel; // @synthesize readStoryLabel=_readStoryLabel;
 @property(retain, nonatomic) NSURL *domainURL; // @synthesize domainURL=_domainURL;
 @property(nonatomic) unsigned long long excerptLenthType; // @synthesize excerptLenthType=_excerptLenthType;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

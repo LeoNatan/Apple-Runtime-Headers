@@ -14,9 +14,9 @@
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) unsigned long long imageType; // @synthesize imageType=_imageType;
-- (void).cxx_destruct;
 - (id)initWithImageType:(unsigned long long)arg1 image:(id)arg2;
 
 @end

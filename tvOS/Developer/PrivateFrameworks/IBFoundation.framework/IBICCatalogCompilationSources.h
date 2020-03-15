@@ -25,6 +25,7 @@
     IBICCatalogCompilerResult *_selectionResult;
 }
 
+- (void).cxx_destruct;
 @property(readonly) IBICCatalogCompilerResult *selectionResult; // @synthesize selectionResult=_selectionResult;
 @property(retain) IBICStickerPack *itemForStickerPack; // @synthesize itemForStickerPack=_itemForStickerPack;
 @property(retain) NSSet *itemsForLaunchImageCompiler; // @synthesize itemsForLaunchImageCompiler=_itemsForLaunchImageCompiler;
@@ -37,7 +38,6 @@
 @property(retain) NSSet *ignoredItems; // @synthesize ignoredItems=_ignoredItems;
 @property(readonly) NSSet *pathsToDeleteAtEndOfCompilation; // @synthesize pathsToDeleteAtEndOfCompilation=_pathsToDeleteAtEndOfCompilation;
 @property(retain) IBICCatalogCollection *catalogCollection; // @synthesize catalogCollection=_catalogCollection;
-- (void).cxx_destruct;
 - (id)description;
 - (_Bool)hasAppIconForCARFileNamed:(id)arg1;
 - (void)addPathToDeleteAtEndOfCompilation:(id)arg1;

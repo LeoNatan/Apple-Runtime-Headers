@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)objectInArray:(id)arg1 withPossiblyOutOfRangeIndex:(unsigned long long)arg2 defaultValue:(id)arg3;
-@property(copy, nonatomic) NSString *name; // @synthesize name=mName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *name; // @synthesize name=mName;
 - (id)description;
 - (_Bool)isEmpty;
 - (void)validateStyleMatrix;

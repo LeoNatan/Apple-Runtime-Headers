@@ -25,12 +25,12 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreViewHierarchyChange; // @synthesize ignoreViewHierarchyChange=_ignoreViewHierarchyChange;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) __weak id <PUICActivityIndicatorViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool hidesWhenStopped; // @synthesize hidesWhenStopped=_hidesWhenStopped;
 @property(nonatomic) int activityIndicatorViewStyle; // @synthesize activityIndicatorViewStyle=_activityIndicatorViewStyle;
-- (void).cxx_destruct;
 - (float)spinUpProgress;
 - (void)setSpinUpProgress:(float)arg1;
 - (void)_didAnimateOut;

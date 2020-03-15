@@ -21,13 +21,13 @@
     PXMemoriesFeedUIViewController *_memoriesViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXMemoriesFeedUIViewController *memoriesViewController; // @synthesize memoriesViewController=_memoriesViewController;
 @property(nonatomic) _Bool hasAnyMemories; // @synthesize hasAnyMemories=_hasAnyMemories;
 @property(readonly, nonatomic) UIBarButtonItem *toggleButton; // @synthesize toggleButton=_toggleButton;
 @property(nonatomic, setter=setShouldOnlyShowFavorites:) _Bool onlyShowFavorites; // @synthesize onlyShowFavorites=_onlyShowFavorites;
 @property(retain, nonatomic) PXMemoriesUIViewController *favoriteMemoriesViewController; // @synthesize favoriteMemoriesViewController=_favoriteMemoriesViewController;
 @property(retain, nonatomic) PXFetchResultBasedMemoriesDataSourceManager *favoriteMemoriesDataSourceManager; // @synthesize favoriteMemoriesDataSourceManager=_favoriteMemoriesDataSourceManager;
-- (void).cxx_destruct;
 - (void)_reloadCurrentViewController;
 - (void)_transitionFromViewController:(id)arg1 toViewController:(id)arg2;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;

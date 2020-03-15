@@ -28,6 +28,7 @@
     unsigned long long _editingLevel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long editingLevel; // @synthesize editingLevel=_editingLevel;
 @property(readonly, nonatomic) NSMutableSet *mutableTypingSlots; // @synthesize mutableTypingSlots=_mutableTypingSlots;
 @property(readonly, nonatomic) NSMutableSet *mutableSelectedSlots; // @synthesize mutableSelectedSlots=_mutableSelectedSlots;
@@ -36,7 +37,6 @@
 @property(readonly, nonatomic) long long contentsTextAlignment; // @synthesize contentsTextAlignment=_contentsTextAlignment;
 @property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)enumerateContentInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)slotAtCharacterIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2 effectiveContentRange:(struct _NSRange *)arg3;
 - (struct _NSRange)characterRangeForSlot:(id)arg1 includingInsideSpacingOpportunities:(BOOL)arg2;

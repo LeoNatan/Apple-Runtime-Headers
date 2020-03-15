@@ -17,12 +17,12 @@
     CDUnknownBlockType _issueDelegateMessagesBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL debug_wasPerformed; // @synthesize debug_wasPerformed=_debug_wasPerformed;
 @property(readonly, copy, nonatomic) CDUnknownBlockType issueDelegateMessagesBlock; // @synthesize issueDelegateMessagesBlock=_issueDelegateMessagesBlock;
 @property(readonly, copy, nonatomic) CDUnknownBlockType applyChangesBlock; // @synthesize applyChangesBlock=_applyChangesBlock;
 @property(readonly, nonatomic, getter=isInitialUpdate) BOOL initialUpdate; // @synthesize initialUpdate=_initialUpdate;
 @property(readonly, nonatomic) HFGroupedItemDiff *changes; // @synthesize changes=_changes;
-- (void).cxx_destruct;
 - (id)description;
 - (void)performWithOptions:(unsigned long long)arg1;
 - (id)initWithChanges:(id)arg1 isInitialUpdate:(BOOL)arg2 applyChangesBlock:(CDUnknownBlockType)arg3 issueDelegateMessagesBlock:(CDUnknownBlockType)arg4;

@@ -17,12 +17,12 @@
     struct NSEdgeInsets _separatorInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSLayoutConstraint *separatorViewRightConstraint; // @synthesize separatorViewRightConstraint=_separatorViewRightConstraint;
 @property(nonatomic) NSLayoutConstraint *separatorViewLeftConstraint; // @synthesize separatorViewLeftConstraint=_separatorViewLeftConstraint;
 @property(nonatomic) NSLayoutConstraint *separatorViewHeightConstraint; // @synthesize separatorViewHeightConstraint=_separatorViewHeightConstraint;
 @property(retain, nonatomic) NSView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) struct NSEdgeInsets separatorInset; // @synthesize separatorInset=_separatorInset;
-- (void).cxx_destruct;
 - (void)applySeparatorStyleWithCurrentRowModel:(id)arg1 nextRowModel:(id)arg2;
 - (void)drawSelectionInRect:(struct CGRect)arg1;
 - (void)viewDidChangeBackingProperties;

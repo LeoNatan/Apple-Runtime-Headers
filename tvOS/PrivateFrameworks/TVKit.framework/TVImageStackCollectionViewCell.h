@@ -38,6 +38,7 @@
 
 + (id)_titleHeightCache;
 + (struct CGSize)_scaledSizeForSize:(struct CGSize)arg1 sizeIncreaseOffset:(double)arg2;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_holdsPress, setter=_setHoldsPress:) _Bool holdsPress; // @synthesize holdsPress=_holdsPress;
 @property(nonatomic, getter=_focusDirection, setter=_setFocusDirection:) struct CGPoint focusDirection; // @synthesize focusDirection=_focusDirection;
 @property(retain, nonatomic) UIColor *unhighlightedTextColor; // @synthesize unhighlightedTextColor=_unhighlightedTextColor;
@@ -54,7 +55,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) TVImageStackView *imageStackView; // @synthesize imageStackView=_imageStackView;
 @property(retain, nonatomic) _UIStackedImageContainerView *layeredImageView; // @synthesize layeredImageView=_layeredImageView;
-- (void).cxx_destruct;
 - (void)_updateTitleShadowForFocus:(_Bool)arg1;
 - (void)_updateTitleTextColorForFocus:(_Bool)arg1;
 - (void)_updateTitleLayerAlphas;

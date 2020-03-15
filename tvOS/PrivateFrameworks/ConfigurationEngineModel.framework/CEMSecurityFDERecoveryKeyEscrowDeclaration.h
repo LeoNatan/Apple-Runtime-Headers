@@ -24,10 +24,10 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadDeviceKey; // @synthesize payloadDeviceKey=_payloadDeviceKey;
 @property(copy, nonatomic) NSString *payloadEncryptCertPayloadUUID; // @synthesize payloadEncryptCertPayloadUUID=_payloadEncryptCertPayloadUUID;
 @property(copy, nonatomic) NSString *payloadLocation; // @synthesize payloadLocation=_payloadLocation;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

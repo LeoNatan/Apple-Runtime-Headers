@@ -17,9 +17,9 @@
     id <SXImageViewFactory> _imageViewFactory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SXImageViewFactory> imageViewFactory; // @synthesize imageViewFactory=_imageViewFactory;
 @property(readonly, nonatomic) id <SXDOMObjectProviding> DOMObjectProvider; // @synthesize DOMObjectProvider=_DOMObjectProvider;
-- (void).cxx_destruct;
 - (id)createImageFillViewForImageFill:(id)arg1;
 - (id)initWithDOMObjectProvider:(id)arg1 imageViewFactory:(id)arg2;
 

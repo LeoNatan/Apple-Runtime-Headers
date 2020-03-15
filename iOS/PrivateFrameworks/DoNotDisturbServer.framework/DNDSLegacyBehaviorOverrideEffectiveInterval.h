@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned long long repeatInterval; // @synthesize repeatInterval=_repeatInterval;
 @property(readonly, copy, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier=_calendarIdentifier;
 @property(readonly, copy, nonatomic) NSDateComponents *endComponents; // @synthesize endComponents=_endComponents;
 @property(readonly, copy, nonatomic) NSDateComponents *startComponents; // @synthesize startComponents=_startComponents;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

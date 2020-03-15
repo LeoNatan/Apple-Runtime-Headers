@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_attributesByName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *attributesByName; // @synthesize attributesByName=_attributesByName;
 @property(copy, nonatomic) NSArray *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSString *DMAPShuffleSortArgumentValue; // @synthesize DMAPShuffleSortArgumentValue=_DMAPShuffleSortArgumentValue;
 @property(retain, nonatomic) TVHSDMAPEntityKind *DAMPEntityKind; // @synthesize DAMPEntityKind=_DAMPEntityKind;
 @property(copy, nonatomic) NSString *entityClassName; // @synthesize entityClassName=_entityClassName;
-- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)attributeForName:(id)arg1;

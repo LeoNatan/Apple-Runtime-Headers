@@ -17,10 +17,10 @@
     CDUnknownBlockType _textureProviderDidProvideCGImageHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType textureProviderDidProvideCGImageHandler; // @synthesize textureProviderDidProvideCGImageHandler=_textureProviderDidProvideCGImageHandler;
 @property(retain, nonatomic) PXGPPTStringsLayout *stringsLayout; // @synthesize stringsLayout=_stringsLayout;
 @property(retain, nonatomic) PXGStringTextureProvider *stringTextureProvider; // @synthesize stringTextureProvider=_stringTextureProvider;
-- (void).cxx_destruct;
 - (void)textureProvider:(id)arg1 didProvideNothingForRequestID:(int)arg2;
 - (void)textureProvider:(id)arg1 didProvidePayload:(id)arg2 forRequestID:(int)arg3;
 - (void)textureProviderNeedsToUnregisterFromDisplayLinkUpdates:(id)arg1;

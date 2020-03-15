@@ -37,6 +37,7 @@
 + (id)forceSyncPolicy;
 + (id)policy;
 + (id)userDefaults;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int policyDownloadIntervalInDays; // @synthesize policyDownloadIntervalInDays=_policyDownloadIntervalInDays;
 @property(nonatomic) _Bool forceSync; // @synthesize forceSync=_forceSync;
 @property(nonatomic) unsigned int triggeredSyncDelayInSeconds; // @synthesize triggeredSyncDelayInSeconds=_triggeredSyncDelayInSeconds;
@@ -54,7 +55,6 @@
 @property(nonatomic) unsigned int assetThresholdInBytes; // @synthesize assetThresholdInBytes=_assetThresholdInBytes;
 @property(nonatomic) _Bool alwaysSyncUpAndDown; // @synthesize alwaysSyncUpAndDown=_alwaysSyncUpAndDown;
 @property(nonatomic) _Bool syncDisabled; // @synthesize syncDisabled=_syncDisabled;
-- (void).cxx_destruct;
 - (id)description;
 - (double)hoursBetweenSyncsWhenIsSingleDevice:(_Bool)arg1;
 - (id)queryStartDateFromLastDaySyncDates:(id)arg1 lastSyncDate:(id)arg2 isSingleDevice:(_Bool)arg3 isTriggeredSync:(_Bool)arg4;

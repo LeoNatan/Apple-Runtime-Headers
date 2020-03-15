@@ -17,9 +17,9 @@
 + (id)_dashTrackingTextProviderWithDashes:(id)arg1 tracking:(double)arg2 weight:(double)arg3;
 + (id)_dashTrackingTextProviderWithDashes:(id)arg1 tracking:(double)arg2;
 + (id)textProviderWithText:(id)arg1 overrideBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType overrideBlock; // @synthesize overrideBlock=_overrideBlock;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

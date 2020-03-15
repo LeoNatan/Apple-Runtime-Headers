@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
     BOOL _exitingToStandardFullscreen;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isExitingToStandardFullscreen) BOOL exitingToStandardFullscreen; // @synthesize exitingToStandardFullscreen=_exitingToStandardFullscreen;
 @property(nonatomic) struct CGSize videoDimensions; // @synthesize videoDimensions=_videoDimensions;
 @property(nonatomic, getter=isPlaying) BOOL playing; // @synthesize playing=_playing;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)pipActionStop:(id)arg1;
 - (void)pipActionPause:(id)arg1;
 - (void)pipActionPlay:(id)arg1;

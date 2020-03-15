@@ -17,11 +17,11 @@
     NSMutableArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableArray *sections; // @synthesize sections=_sections;
 @property(readonly) NSMutableArray *projectBundles; // @synthesize projectBundles=_projectBundles;
 @property(readonly) KHProjectManager *projectManager; // @synthesize projectManager=_projectManager;
 @property(nonatomic) __weak id <KHProjectBrowserDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)sectionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)numberOfSections;
 - (id)itemAtIndex:(unsigned long long)arg1;

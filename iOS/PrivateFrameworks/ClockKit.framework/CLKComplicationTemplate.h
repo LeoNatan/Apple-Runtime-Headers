@@ -23,10 +23,10 @@
 
 + (id)complicationTemplateWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic, setter=setUISensitivity:) long long uiSensitivity; // @synthesize uiSensitivity=_uiSensitivity;
 @property(readonly, nonatomic, getter=isLinkedOnOrAfterGrace) _Bool linkedOnOrAfterGrace; // @synthesize linkedOnOrAfterGrace=_linkedOnOrAfterGrace;
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (void)_enumerateAllKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateScalarKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_setProvidersPaused:(_Bool)arg1;

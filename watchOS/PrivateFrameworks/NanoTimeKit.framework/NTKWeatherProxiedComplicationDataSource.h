@@ -17,8 +17,8 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (Class)proxyClass;
-@property(retain, nonatomic) id proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id proxy; // @synthesize proxy=_proxy;
 - (id)tritium_randomizedComplicationTemplateForDate:(id)arg1 prevTemplateDate:(id)arg2;
 - (float)tritium_randomizedPossibility;
 - (id)_randomWeatherConditionsForDate:(id)arg1 expirationDate:(id)arg2;

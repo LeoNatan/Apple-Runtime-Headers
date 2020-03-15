@@ -14,12 +14,12 @@
     NSMutableDictionary *_dynamicProperties;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *dynamicProperties; // @synthesize dynamicProperties=_dynamicProperties;
 @property(retain, nonatomic) NSMutableDictionary *systemProperties; // @synthesize systemProperties=_systemProperties;
-- (void).cxx_destruct;
-- (struct NSObject *)propertyForKey:(id)arg1 forEventName:(id)arg2 withPayload:(id)arg3;
+- (id)propertyForKey:(id)arg1 forEventName:(id)arg2 payloadForSystemPropertyExtraction:(id)arg3;
 - (void)addDynamicProperty:(id)arg1 withProvider:(id)arg2;
-- (void)addProperty:(id)arg1 withValue:(struct NSObject *)arg2;
+- (void)addProperty:(id)arg1 withValue:(id)arg2;
 - (id)init;
 
 @end

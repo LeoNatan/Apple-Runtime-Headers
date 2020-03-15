@@ -20,13 +20,13 @@
     CDUnknownBlockType _acknowledge;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType acknowledge; // @synthesize acknowledge=_acknowledge;
 @property(nonatomic) unsigned long long acknowledgementTimeout; // @synthesize acknowledgementTimeout=_acknowledgementTimeout;
 @property(copy, nonatomic) NSDictionary *info; // @synthesize info=_info;
 @property(copy, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(copy, nonatomic) CWFEventID *eventID; // @synthesize eventID=_eventID;
 @property(copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

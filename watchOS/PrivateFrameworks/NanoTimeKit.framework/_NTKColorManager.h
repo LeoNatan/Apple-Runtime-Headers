@@ -14,9 +14,9 @@
     UIColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *contentColor;
 - (_Bool)shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateFilterColor;

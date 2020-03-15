@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     JSValue *_callback;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) JSValue *callback; // @synthesize callback=_callback;
 @property(copy, nonatomic) NSString *style; // @synthesize style=_style;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

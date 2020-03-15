@@ -13,8 +13,8 @@
     UIButton *_accountInformationButton;
 }
 
-@property(retain, nonatomic) UIButton *accountInformationButton; // @synthesize accountInformationButton=_accountInformationButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIButton *accountInformationButton; // @synthesize accountInformationButton=_accountInformationButton;
 - (struct CGSize)_sizeForButton:(id)arg1 constrainedToSize:(struct CGSize)arg2;
 - (void)setButtonsEnabled:(_Bool)arg1;
 - (void)layoutSubviews;

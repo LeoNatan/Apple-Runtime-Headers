@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     shared_ptr_3c219583 _clientObjectMap;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) shared_ptr_3c219583 clientObjectMap; // @synthesize clientObjectMap=_clientObjectMap;
 @property(retain, nonatomic) NSXPCListenerEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)handle_server_reconnected;
 - (void)handle_server_disconnected;
 - (_Bool)has_endpoint;

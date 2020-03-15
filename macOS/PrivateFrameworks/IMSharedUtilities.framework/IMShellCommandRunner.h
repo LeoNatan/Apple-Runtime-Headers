@@ -17,10 +17,10 @@
 
 + (id)runCommand:(id)arg1 args:(id)arg2;
 + (id)runBashScript:(id)arg1 args:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) int exitCode; // @synthesize exitCode=_exitCode;
 @property(readonly) NSString *standardOut; // @synthesize standardOut=_standardOut;
 @property(readonly) NSString *standardErr; // @synthesize standardErr=_standardErr;
-- (void).cxx_destruct;
 @property(readonly) NSError *error;
 - (void)run:(id)arg1 args:(id)arg2;
 - (void)_setStderrOnTask:(id)arg1;

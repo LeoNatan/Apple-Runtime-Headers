@@ -23,8 +23,8 @@
     NSURL *_initialConnectionURL;
 }
 
-@property(copy, nonatomic) NSURL *initialConnectionURL; // @synthesize initialConnectionURL=_initialConnectionURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *initialConnectionURL; // @synthesize initialConnectionURL=_initialConnectionURL;
 - (void)removeServerWithRepresentation:(id)arg1;
 - (void)textFieldDidChange:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;

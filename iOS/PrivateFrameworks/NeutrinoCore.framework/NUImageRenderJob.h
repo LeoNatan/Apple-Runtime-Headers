@@ -21,12 +21,12 @@
     CIRenderTask *_renderTask;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CIRenderTask *renderTask; // @synthesize renderTask=_renderTask;
 @property(readonly, nonatomic) id <NUPurgeableImage> renderedImage; // @synthesize renderedImage=_renderedImage;
 @property(readonly, nonatomic) NURegion *renderedRegion; // @synthesize renderedRegion=_renderedRegion;
 @property(readonly, nonatomic) id <NUMutablePurgeableImage> targetImage; // @synthesize targetImage=_targetImage;
 @property(readonly, nonatomic) NURegion *regionToRender; // @synthesize regionToRender=_regionToRender;
-- (void).cxx_destruct;
 - (void)cleanUp;
 - (_Bool)copyStorage:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toImage:(id)arg3 atPoint:(CDStruct_912cb5d2)arg4;
 - (_Bool)complete:(out id *)arg1;

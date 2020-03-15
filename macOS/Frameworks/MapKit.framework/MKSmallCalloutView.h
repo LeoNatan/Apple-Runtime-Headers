@@ -59,10 +59,10 @@ __attribute__((visibility("hidden")))
     NSView *_titlesContainerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(readonly, nonatomic) NSView *titlesContainerView; // @synthesize titlesContainerView=_titlesContainerView;
 @property(nonatomic) struct NSEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
-- (void).cxx_destruct;
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 @property(retain, nonatomic) NSView *detailView;

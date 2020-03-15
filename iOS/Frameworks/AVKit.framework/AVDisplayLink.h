@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) __weak id observer; // @synthesize observer=_observer;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(copy, nonatomic) CDUnknownBlockType linkFired; // @synthesize linkFired=_linkFired;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double runningTime;
 - (void)linkFired:(id)arg1;
 - (void)invalidate;

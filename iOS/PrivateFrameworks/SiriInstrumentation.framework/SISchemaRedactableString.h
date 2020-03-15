@@ -15,8 +15,8 @@
     NSString *_value;
 }
 
-@property(readonly, nonatomic) unsigned long long which_String; // @synthesize which_String=_which_String;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long which_String; // @synthesize which_String=_which_String;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

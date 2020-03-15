@@ -13,8 +13,8 @@
     CUTUnsafePromise *_promise;
 }
 
-@property(retain, nonatomic) CUTUnsafePromise *promise; // @synthesize promise=_promise;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CUTUnsafePromise *promise; // @synthesize promise=_promise;
 - (void)failWithError:(id)arg1;
 - (void)fulfillWithValue:(id)arg1;
 - (id)init;

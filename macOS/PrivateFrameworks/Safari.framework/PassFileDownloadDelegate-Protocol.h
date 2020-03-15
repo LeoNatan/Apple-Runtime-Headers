@@ -6,9 +6,9 @@
 
 #import <Safari/NSObject-Protocol.h>
 
-@class PassFileDownload;
+@class PassFileDownload, _WKDownload;
 
 @protocol PassFileDownloadDelegate <NSObject>
-- (void)passFileDownload:(PassFileDownload *)arg1 downloadDidEnd:(const struct Download *)arg2;
+- (void)passFileDownload:(PassFileDownload *)arg1 downloadDidEnd:(_WKDownload *)arg2;
 @end
 

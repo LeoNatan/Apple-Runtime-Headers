@@ -20,10 +20,10 @@
 + (id)visibleEffects;
 + (id)allEffects;
 + (id)_effectWithFilterName:(id)arg1 displayName:(id)arg2 hidden:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hidden; // @synthesize hidden=_hidden;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *filterName; // @synthesize filterName=_filterName;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) CIFilter *filter;
 
 @end

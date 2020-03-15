@@ -15,10 +15,10 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSData *data; // @synthesize data=_data;
 @property(readonly) _Bool isLast; // @synthesize isLast=_isLast;
 @property(readonly, copy) NSNumber *sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)attributeDescriptions;

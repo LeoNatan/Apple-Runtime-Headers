@@ -20,12 +20,12 @@
     CDStruct_497cfc99 _slot;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPresented) BOOL presented; // @synthesize presented=_presented;
 @property(readonly, nonatomic, getter=isDismissed) BOOL dismissed; // @synthesize dismissed=_dismissed;
 @property(readonly, nonatomic, getter=isBlockingWebProcess) BOOL blockingWebProcess; // @synthesize blockingWebProcess=_blockingWebProcess;
 @property(copy, nonatomic) NSArray *cancellationExemptions; // @synthesize cancellationExemptions=_cancellationExemptions;
 @property(nonatomic) CDStruct_497cfc99 slot; // @synthesize slot=_slot;
-- (void).cxx_destruct;
 - (BOOL)isExemptFromCancellationInContext:(id)arg1;
 - (void)dismissWithResponse:(id)arg1;
 - (void)presentIfNeeded;

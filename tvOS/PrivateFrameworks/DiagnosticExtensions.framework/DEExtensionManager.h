@@ -18,11 +18,11 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool extendedLoaded; // @synthesize extendedLoaded=_extendedLoaded;
 @property(copy, nonatomic) CDUnknownBlockType afterExtendedBlock; // @synthesize afterExtendedBlock=_afterExtendedBlock;
 @property(retain, nonatomic) NSArray *extensions; // @synthesize extensions=_extensions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *initialLoadQueue; // @synthesize initialLoadQueue=_initialLoadQueue;
-- (void).cxx_destruct;
 - (id)extensionsWithFilter:(id)arg1;
 - (void)loadExtensions;
 - (id)init;

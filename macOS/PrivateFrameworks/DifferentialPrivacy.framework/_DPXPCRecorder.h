@@ -13,8 +13,8 @@
     _DPDaemonConnection *_connection;
 }
 
-@property(readonly, nonatomic) _DPDaemonConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _DPDaemonConnection *connection; // @synthesize connection=_connection;
 - (void)recordWords:(id)arg1;
 - (void)recordStrings:(id)arg1;
 - (void)recordBitValues:(id)arg1;

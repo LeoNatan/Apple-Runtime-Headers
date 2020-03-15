@@ -14,9 +14,9 @@
     SBSyncController *_syncController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_syncController, setter=_setSyncController:) SBSyncController *syncController; // @synthesize syncController=_syncController;
 @property(readonly, nonatomic) SBFUserAuthenticationController *userAuthenticationController; // @synthesize userAuthenticationController=_userAuthenticationController;
-- (void).cxx_destruct;
 - (_Bool)shouldAutoUnlockForSource:(int)arg1;
 - (id)_initWithUserAuthenticationController:(id)arg1 syncController:(id)arg2;
 - (id)initWithUserAuthenticationController:(id)arg1;

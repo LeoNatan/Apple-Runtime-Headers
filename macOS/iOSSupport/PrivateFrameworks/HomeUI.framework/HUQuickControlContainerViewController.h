@@ -43,6 +43,7 @@
 + (id)_controlAlphaAnimationSettingsForPresenting:(BOOL)arg1;
 + (id)_controlScaleAnimationSettingsForPresenting:(BOOL)arg1;
 + (id)_easeOutTimingFunction;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL presentedDetailView; // @synthesize presentedDetailView=_presentedDetailView;
 @property(retain, nonatomic) HUQuickControlViewController *activeControlViewController; // @synthesize activeControlViewController=_activeControlViewController;
 @property(retain, nonatomic) HUQuickControlViewControllerCoordinator *viewControllerCoordinator; // @synthesize viewControllerCoordinator=_viewControllerCoordinator;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HFItem<NSCopying> *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) HFItem *hu_presentedItem;
 - (id)viewForTouchContinuation;
 - (void)hideAuxiliaryViewForQuickControlContent:(id)arg1;

@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     BOOL _shouldFetchAnotherBatch;
 }
 
-@property(readonly, nonatomic) BOOL shouldFetchAnotherBatch; // @synthesize shouldFetchAnotherBatch=_shouldFetchAnotherBatch;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL shouldFetchAnotherBatch; // @synthesize shouldFetchAnotherBatch=_shouldFetchAnotherBatch;
 - (void)main;
 - (void)_completedWithServerChangeToken:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;

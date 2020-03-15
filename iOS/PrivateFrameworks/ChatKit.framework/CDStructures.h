@@ -116,10 +116,6 @@ struct NSDirectionalEdgeInsets {
     double _field4;
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct UIEdgeInsets {
     double top;
     double left;

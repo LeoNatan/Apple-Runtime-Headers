@@ -21,8 +21,8 @@
 }
 
 + (id)imageWithImage:(id)arg1;
-@property(readonly, nonatomic) PADevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PADevice *device; // @synthesize device=_device;
 - (BOOL)isValid;
 - (unsigned long long)foregroundLevelForImageSize:(struct CGSize)arg1;
 - (unsigned long long)backgroundLevelForImageSize:(struct CGSize)arg1;

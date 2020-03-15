@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     ESDContainer *mBstoreContainerHolder;
 }
 
-@property(retain, nonatomic) ESDContainer *bstoreContainerHolder; // @synthesize bstoreContainerHolder=mBstoreContainerHolder;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ESDContainer *bstoreContainerHolder; // @synthesize bstoreContainerHolder=mBstoreContainerHolder;
 - (_Bool)useXmlBlobs;
 - (id)xmlDrawingState;
 - (void)resetForNewDrawing;

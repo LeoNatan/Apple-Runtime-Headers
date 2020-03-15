@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 + (id)_mediaEntityTypePredicateWithMediaItemType:(unsigned long long)arg1 mediaCategoryType:(unsigned long long)arg2;
 + (id)_sortedMediaEntitiesWithMediaEntities:(id)arg1;
 + (_Bool)_updateMediaEntitiesDictionary:(id)arg1 withMediaEntityFetchResponse:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *albumArtists; // @synthesize albumArtists=_albumArtists;
 @property(copy, nonatomic) NSArray *albums; // @synthesize albums=_albums;
 @property(copy, nonatomic) NSArray *mediaItems; // @synthesize mediaItems=_mediaItems;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *movies; // @synthesize movies=_movies;
 @property(nonatomic) unsigned long long revision; // @synthesize revision=_revision;
 @property(copy, nonatomic) TVHSMediaServerIdentifier *mediaServerIdentifier; // @synthesize mediaServerIdentifier=_mediaServerIdentifier;
-- (void).cxx_destruct;
 - (id)_albumsWithMediaCategoryType:(unsigned long long)arg1;
 - (id)_albumArtistsWithMediaCategoryType:(unsigned long long)arg1;
 - (id)_mediaItemsWithMediaItemType:(unsigned long long)arg1 mediaCategoryType:(unsigned long long)arg2;

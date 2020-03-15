@@ -14,8 +14,8 @@
     UIColor *_textColor;
 }
 
-@property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (void).cxx_destruct;
+@property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) long long textAlignment;
 @property(nonatomic) long long numberOfLines;
 @property(retain, nonatomic) UIFont *font;

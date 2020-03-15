@@ -11,8 +11,8 @@
     UIView *_reviewView;
 }
 
-@property(retain, nonatomic) UIView *reviewView; // @synthesize reviewView=_reviewView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIView *reviewView; // @synthesize reviewView=_reviewView;
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

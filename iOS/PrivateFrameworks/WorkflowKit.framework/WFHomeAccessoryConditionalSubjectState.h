@@ -19,13 +19,13 @@
 }
 
 + (id)subjectType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSFormatter *characteristicValueFormatter; // @synthesize characteristicValueFormatter=_characteristicValueFormatter;
 @property(retain, nonatomic) WFHMCharacteristicSubstitutableState *characteristicSubstitutableState; // @synthesize characteristicSubstitutableState=_characteristicSubstitutableState;
 @property(retain, nonatomic) WFHMServiceParameterState *serviceParameterState; // @synthesize serviceParameterState=_serviceParameterState;
 @property(retain, nonatomic) NSDictionary *serializedWFHMCharacteristicSubstitutableState; // @synthesize serializedWFHMCharacteristicSubstitutableState=_serializedWFHMCharacteristicSubstitutableState;
 @property(retain, nonatomic) NSDictionary *serializedWFHMServiceParameter; // @synthesize serializedWFHMServiceParameter=_serializedWFHMServiceParameter;
 @property(readonly, nonatomic) _Bool negatesValue; // @synthesize negatesValue=_negatesValue;
-- (void).cxx_destruct;
 - (id)localizedLabelForEnumerationPossibleState:(id)arg1;
 - (void)getEnumerationPossibleStatesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)isEnumeration;
@@ -35,7 +35,7 @@
 - (id)minimumValue;
 - (id)maximumLength;
 - (long long)contentType;
-- (void)getContentWithVariableSource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getContentWithContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly, nonatomic) HMCharacteristic *characteristic;

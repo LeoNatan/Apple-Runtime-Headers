@@ -6,33 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, _UIHIDPathCollection, _UIStateMachine;
+@class NSMutableArray, NSMutableDictionary, _UIHIDPathCollection, _UIStateMachine;
 
 __attribute__((visibility("hidden")))
 @interface _UIHIDTransformer : NSObject
 {
-    _UIStateMachine *_stateMachine;
     NSMutableArray *_hidEvents;
-    struct CGAffineTransform _pinchTransform;
+    NSMutableDictionary *_pathCollectionByContextId;
+    NSMutableDictionary *_stateMachineByContextId;
     unsigned int _contextId;
-    _UIHIDPathCollection *_pathCollection;
     struct __IOHIDEvent *_hidEvent;
     struct CGSize _canvasSize;
     struct CGAffineTransform _eventTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __IOHIDEvent *hidEvent; // @synthesize hidEvent=_hidEvent;
 @property(nonatomic) struct CGAffineTransform eventTransform; // @synthesize eventTransform=_eventTransform;
-@property(readonly, nonatomic) _UIHIDPathCollection *pathCollection; // @synthesize pathCollection=_pathCollection;
 @property(nonatomic) unsigned int contextId; // @synthesize contextId=_contextId;
 @property(nonatomic) struct CGSize canvasSize; // @synthesize canvasSize=_canvasSize;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long currentState;
 - (id)drainOutputHIDEvents;
 - (void)addOutputHIDEvent:(id)arg1;
-- (unsigned long long)_inputEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_inputEventsForHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)handleHIDEvent:(struct __IOHIDEvent *)arg1;
-- (void)_setupSchema;
-- (id)init;
+- (void)_setupSchemaForStateMachine:(id)arg1;
+@property(readonly, nonatomic) _UIStateMachine *stateMachine;
+@property(readonly, nonatomic) _UIHIDPathCollection *pathCollection;
+- (id)initWithRunLoop:(struct __CFRunLoop *)arg1;
 
 @end
 

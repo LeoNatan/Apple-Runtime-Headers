@@ -24,12 +24,12 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *points; // @synthesize points=_points;
 @property(retain, nonatomic) NSData *delays; // @synthesize delays=_delays;
 @property(nonatomic) float normalizedCenterY; // @synthesize normalizedCenterY=_normalizedCenterY;
 @property(nonatomic) float normalizedCenterX; // @synthesize normalizedCenterX=_normalizedCenterX;
 @property(nonatomic) float duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

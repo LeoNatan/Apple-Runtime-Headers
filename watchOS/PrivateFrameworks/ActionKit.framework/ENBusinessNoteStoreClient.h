@@ -16,9 +16,9 @@
 }
 
 + (id)noteStoreClientForBusiness;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *noteStoreUrl; // @synthesize noteStoreUrl=_noteStoreUrl;
 @property(nonatomic) __weak id <ENBusinessNoteStoreClientDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)createBusinessNotebook:(id)arg1 success:(CDUnknownBlockType)arg2 failure:(CDUnknownBlockType)arg3;
 - (void)createBusinessNotebook:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)authenticationToken;

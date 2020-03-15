@@ -23,6 +23,7 @@
 }
 
 + (id)feedbackEventsFromAppUsageEvents:(id)arg1 playingEvents:(id)arg2 microLocationEvents:(id)arg3 feedbackEvents:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfMicrolocations; // @synthesize numberOfMicrolocations=_numberOfMicrolocations;
 @property(copy, nonatomic) NSString *failure; // @synthesize failure=_failure;
 @property(copy, nonatomic) NSString *correctionTiming; // @synthesize correctionTiming=_correctionTiming;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *suppressionReason; // @synthesize suppressionReason=_suppressionReason;
 @property(copy, nonatomic) NSString *predictionReason; // @synthesize predictionReason=_predictionReason;
 @property(copy, nonatomic) NSString *prediction; // @synthesize prediction=_prediction;
-- (void).cxx_destruct;
 - (id)analyticsDictionary;
 - (id)description;
 - (id)init;

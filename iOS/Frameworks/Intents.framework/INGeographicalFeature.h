@@ -20,9 +20,9 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *geographicalFeatureDescriptors; // @synthesize geographicalFeatureDescriptors=_geographicalFeatureDescriptors;
 @property(readonly, copy, nonatomic) NSString *geographicalFeatureType; // @synthesize geographicalFeatureType=_geographicalFeatureType;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

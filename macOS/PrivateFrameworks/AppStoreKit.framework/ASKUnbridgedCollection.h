@@ -11,8 +11,8 @@
     id _collection;
 }
 
-@property(readonly, nonatomic) id collection; // @synthesize collection=_collection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id collection; // @synthesize collection=_collection;
 - (id)debugDescription;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

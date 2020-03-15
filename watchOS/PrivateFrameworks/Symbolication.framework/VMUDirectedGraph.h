@@ -37,12 +37,12 @@
 + (id)_archivedObject:(id)arg1 options:(unsigned int)arg2;
 + (void *)_copyUnarchived:(id)arg1 length:(unsigned int *)arg2 options:(unsigned int)arg3;
 + (id)_archivedBytes:(const void *)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool graphIs64bit; // @synthesize graphIs64bit=_graphIs64bit;
 @property(copy, nonatomic) NSDictionary *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property(readonly, nonatomic) unsigned int edgeNamespaceSize; // @synthesize edgeNamespaceSize=_nextEdgeName;
 @property(readonly, nonatomic) unsigned int nodeNamespaceSize; // @synthesize nodeNamespaceSize=_nextNodeName;
 @property(readonly, nonatomic) unsigned int nodeCount; // @synthesize nodeCount=_nodeCount;
-- (void).cxx_destruct;
 - (id)invertedGraph;
 - (id)renormalizedGraph;
 - (id)subgraphWithMarkedNodes:(void *)arg1;
@@ -74,7 +74,7 @@
 - (_Bool)isNodePresent:(unsigned int)arg1;
 - (void)removeMarkedEdges:(void *)arg1;
 - (void)removeMarkedNodes:(void *)arg1;
-- (void *)_deadNodeMap;
+- (void *)deadNodeMap;
 - (void)_faultDeadNodeMap;
 - (void)_removeEdges:(CDUnknownBlockType)arg1;
 - (unsigned int)addEdgeFromNode:(unsigned int)arg1 toNode:(unsigned int)arg2;

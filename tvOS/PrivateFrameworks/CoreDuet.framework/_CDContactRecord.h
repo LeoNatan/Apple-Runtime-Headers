@@ -13,8 +13,8 @@
     _CDContact *contact;
 }
 
-@property(retain) _CDContact *contact; // @synthesize contact;
 - (void).cxx_destruct;
+@property(retain) _CDContact *contact; // @synthesize contact;
 
 // Remaining properties
 @property(nonatomic) double creationDate; // @dynamic creationDate;

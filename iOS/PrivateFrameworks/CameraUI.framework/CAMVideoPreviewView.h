@@ -16,11 +16,11 @@
     long long _previewViewAspectMode;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSquare) _Bool square; // @synthesize square=_square;
 @property(nonatomic) long long previewViewAspectMode; // @synthesize previewViewAspectMode=_previewViewAspectMode;
 @property(readonly, nonatomic) UIView *previewLayerView; // @synthesize previewLayerView=_previewLayerView;
 @property(retain, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer; // @synthesize videoPreviewLayer=_videoPreviewLayer;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGRect)_frameForSubviewsAccountForSquare:(_Bool)arg1;
 - (void)_updateAspectModeForSublayers;

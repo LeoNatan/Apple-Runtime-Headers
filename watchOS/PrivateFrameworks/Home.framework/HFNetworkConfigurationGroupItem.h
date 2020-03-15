@@ -17,9 +17,9 @@
     id <HFCharacteristicValueSource> _valueSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) HMAccessoryNetworkProtectionGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)copyWithValueSource:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)_subclass_updateWithOptions:(id)arg1;

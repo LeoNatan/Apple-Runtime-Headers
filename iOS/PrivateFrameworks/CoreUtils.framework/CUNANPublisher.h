@@ -8,7 +8,7 @@
 
 #import <CoreUtils/WiFiAwarePublisherDelegate-Protocol.h>
 
-@class NSDictionary, NSString, WiFiAwarePublisher;
+@class NSDictionary, NSMutableDictionary, NSString, WiFiAwarePublisher;
 @protocol OS_dispatch_queue;
 
 @interface CUNANPublisher : NSObject <WiFiAwarePublisherDelegate>
@@ -16,11 +16,12 @@
     CDUnknownBlockType _activateCompletion;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
-    struct NSMutableDictionary *_sessions;
+    NSMutableDictionary *_sessions;
     struct LogCategory *_ucat;
     WiFiAwarePublisher *_wfaPublisher;
     _Bool _dataPathEnabled;
     int _port;
+    unsigned int _trafficFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_label;
     NSString *_name;
@@ -32,10 +33,12 @@
     CDUnknownBlockType _dataSessionEndedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dataSessionEndedHandler; // @synthesize dataSessionEndedHandler=_dataSessionEndedHandler;
 @property(copy, nonatomic) CDUnknownBlockType dataSessionStartedHandler; // @synthesize dataSessionStartedHandler=_dataSessionStartedHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
+@property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(copy, nonatomic) NSDictionary *textInfo; // @synthesize textInfo=_textInfo;
 @property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(nonatomic) int port; // @synthesize port=_port;
@@ -43,7 +46,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) _Bool dataPathEnabled; // @synthesize dataPathEnabled=_dataPathEnabled;
-- (void).cxx_destruct;
 - (void)publisher:(id)arg1 dataTerminatedForHandle:(id)arg2 reason:(long long)arg3;
 - (void)_publisher:(id)arg1 dataConfirmedForHandle:(id)arg2 localInterfaceIndex:(unsigned int)arg3 serviceSpecificInfo:(id)arg4;
 - (void)publisher:(id)arg1 dataConfirmedForHandle:(id)arg2 localInterfaceIndex:(unsigned int)arg3 serviceSpecificInfo:(id)arg4;

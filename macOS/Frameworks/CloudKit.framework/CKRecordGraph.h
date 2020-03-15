@@ -15,9 +15,9 @@
 }
 
 + (id)topologicallySortRecords:(id)arg1 withError:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sortedRecords; // @synthesize sortedRecords=_sortedRecords;
 @property(retain, nonatomic) NSMutableArray *nodes; // @synthesize nodes=_nodes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)recordsByTopologicalSortWithError:(id *)arg1;
 - (id)init;

@@ -14,8 +14,8 @@
 }
 
 + (void)configureSecuritydXPCProtocol:(id)arg1;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (id)init;
 
 @end

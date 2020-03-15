@@ -45,6 +45,7 @@
 + (id)testingDatabaseWithCKDatabase:(id)arg1 middleware:(id)arg2 schema:(id)arg3;
 + (id)testingDatabaseWithCKDatabase:(id)arg1 middleware:(id)arg2;
 + (id)testingDatabase;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *zonePruningAssistants; // @synthesize zonePruningAssistants=_zonePruningAssistants;
 @property(readonly, nonatomic) NSArray *zoneRestorationSources; // @synthesize zoneRestorationSources=_zoneRestorationSources;
 @property(retain, nonatomic) NSDate *dateOfLastFailedStartUpAttempt; // @synthesize dateOfLastFailedStartUpAttempt=_dateOfLastFailedStartUpAttempt;
@@ -71,7 +72,6 @@
 @property(getter=isEncryptionEnabled) BOOL encryptionEnabled; // @synthesize encryptionEnabled=_encryptionEnabled;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 @property(readonly, nonatomic) __weak id <FCCKDatabaseEncryptionDelegate> encryptionDelegate; // @synthesize encryptionDelegate=_encryptionDelegate;
-- (void).cxx_destruct;
 - (void)_possiblySimulateCrashForError:(id)arg1 message:(id)arg2;
 - (void)reportFatalStartUpError:(id)arg1;
 - (void)reportPostMigrationCleanupError:(id)arg1;

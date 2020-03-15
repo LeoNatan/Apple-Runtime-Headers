@@ -23,11 +23,11 @@
 + (Class)whitelistedClassForResultObject;
 + (id)_descriptionForAction:(unsigned long long)arg1;
 + (BOOL)_action:(unsigned long long *)arg1 fromString:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL useDelay; // @synthesize useDelay=_useDelay;
 @property(copy, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(copy, nonatomic) NSString *productKey; // @synthesize productKey=_productKey;
 @property(nonatomic) unsigned long long action; // @synthesize action=_action;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

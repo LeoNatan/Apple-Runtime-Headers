@@ -14,8 +14,8 @@
 }
 
 + (BOOL)currentHardwareHasBridgeOS;
-@property(retain) NSString *client; // @synthesize client=_client;
 - (void).cxx_destruct;
+@property(retain) NSString *client; // @synthesize client=_client;
 - (id)_queryCurrentStateWithError:(id *)arg1;
 - (id)cancelPendingUpdate;
 - (BOOL)checkForUpdateFailureWithError:(id *)arg1;

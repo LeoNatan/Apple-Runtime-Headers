@@ -21,6 +21,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *messagingPermitExpires; // @synthesize messagingPermitExpires=_messagingPermitExpires;
 @property(retain, nonatomic) NSData *messagingPermit; // @synthesize messagingPermit=_messagingPermit;
 @property(retain, nonatomic) NSNumber *photoLastUpdated; // @synthesize photoLastUpdated=_photoLastUpdated;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSNumber *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *id; // @synthesize id=_id;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 
 @end
 

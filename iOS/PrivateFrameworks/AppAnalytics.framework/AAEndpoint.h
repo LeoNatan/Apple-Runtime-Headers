@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <AppAnalytics/AAEndpointType-Protocol.h>
-
 @class NSString, NSURL;
 
-@interface AAEndpoint : NSObject <AAEndpointType>
+@interface AAEndpoint : NSObject
 {
     // Error parsing type: , name: url
     // Error parsing type: , name: name

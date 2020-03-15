@@ -20,6 +20,7 @@
     KHCalendarProjectLayoutsDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property __weak KHCalendarProjectLayoutsDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain) NSTextField *numberOfMonthsLabel; // @synthesize numberOfMonthsLabel=_numberOfMonthsLabel;
 @property(retain) NSTextField *startLabel; // @synthesize startLabel=_startLabel;
@@ -28,7 +29,6 @@
 @property(retain) NSPopUpButton *numberOfMonthsMenuButton; // @synthesize numberOfMonthsMenuButton=_numberOfMonthsMenuButton;
 @property(retain) NSPopUpButton *yearMenuButton; // @synthesize yearMenuButton=_yearMenuButton;
 @property(retain) NSPopUpButton *monthMenuButton; // @synthesize monthMenuButton=_monthMenuButton;
-- (void).cxx_destruct;
 - (void)numberOfMonthsChanged:(id)arg1;
 - (void)changeStartDate:(id)arg1;
 - (void)loadView;

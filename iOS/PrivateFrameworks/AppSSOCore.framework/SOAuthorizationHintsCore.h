@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *localizedExtensionBundleDisplayName; // @synthesize localizedExtensionBundleDisplayName=_localizedExtensionBundleDisplayName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *localizedExtensionBundleDisplayName; // @synthesize localizedExtensionBundleDisplayName=_localizedExtensionBundleDisplayName;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

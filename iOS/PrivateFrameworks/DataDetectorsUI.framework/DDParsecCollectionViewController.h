@@ -34,11 +34,11 @@
     id <DDParsecCollectionDelegate> _parsecDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <DDParsecCollectionDelegate> parsecDelegate; // @synthesize parsecDelegate=_parsecDelegate;
 @property(copy) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(copy) CDUnknownBlockType dismissCompletionHandler; // @synthesize dismissCompletionHandler=_dismissCompletionHandler;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;

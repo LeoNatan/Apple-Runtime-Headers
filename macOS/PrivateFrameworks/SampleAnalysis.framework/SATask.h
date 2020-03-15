@@ -47,6 +47,7 @@
 + (id)taskWithoutReferencesFromPAStyleSerializedTask:(const CDStruct_d00202c1 *)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_f669fa55 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property struct _CSArchitecture architecture; // @synthesize architecture=_architecture;
 @property(retain) NSMutableSet *rootFrames; // @synthesize rootFrames=_rootFrames;
 @property BOOL alreadyGatheredDataFromLiveProcess; // @synthesize alreadyGatheredDataFromLiveProcess=_alreadyGatheredDataFromLiveProcess;
@@ -70,7 +71,6 @@
 @property(readonly) NSDictionary *dispatchQueues; // @synthesize dispatchQueues=_dispatchQueues;
 @property(readonly) NSDictionary *threads; // @synthesize threads=_threads;
 @property(readonly) NSArray *taskStates; // @synthesize taskStates=_taskStates;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)fixupFrameInstructions;
 - (void)enumerateFrames:(CDUnknownBlockType)arg1;
@@ -116,9 +116,9 @@
 - (void)addTaskState:(id)arg1;
 - (id)removeStacksOutsideThisProcess;
 - (void)populateReferencesUsingPAStyleSerializedTask:(const CDStruct_d00202c1 *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
-- (void)populateReferencesUsingBuffer:(const CDStruct_f669fa55 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(struct NSMutableDictionary *)arg3 andDataBufferDictionary:(struct NSMutableDictionary *)arg4;
-- (void)addSelfToSerializationDictionary:(struct NSMutableDictionary *)arg1;
-- (BOOL)addSelfToBuffer:(CDStruct_f669fa55 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(struct NSMutableDictionary *)arg3;
+- (void)populateReferencesUsingBuffer:(const CDStruct_f669fa55 *)arg1 bufferLength:(unsigned long long)arg2 andDeserializationDictionary:(id)arg3 andDataBufferDictionary:(id)arg4;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (BOOL)addSelfToBuffer:(CDStruct_f669fa55 *)arg1 bufferLength:(unsigned long long)arg2 withCompletedSerializationDictionary:(id)arg3;
 - (unsigned long long)sizeInBytesForSerializedVersion;
 
 // Remaining properties

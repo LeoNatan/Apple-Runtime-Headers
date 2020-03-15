@@ -20,10 +20,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)rangingPeerWithMACAddress:(id)arg1 PMK:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long numberOfMeasurements; // @synthesize numberOfMeasurements=_numberOfMeasurements;
 @property(copy, nonatomic) NSData *PMK; // @synthesize PMK=_PMK;
 @property(copy, nonatomic) NSString *MACAddress; // @synthesize MACAddress=_MACAddress;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

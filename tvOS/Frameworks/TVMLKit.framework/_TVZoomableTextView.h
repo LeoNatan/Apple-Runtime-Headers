@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _previousTargetSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize previousTargetSize; // @synthesize previousTargetSize=_previousTargetSize;
 @property(nonatomic) struct CGSize cachedSizeThatFits; // @synthesize cachedSizeThatFits=_cachedSizeThatFits;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
-- (void).cxx_destruct;
 - (void)_clearCachedValues;
 - (void)updateWithViewElement:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

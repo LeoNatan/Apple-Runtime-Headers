@@ -15,8 +15,8 @@
     CSKMessage *_message;
 }
 
-@property(nonatomic) __weak CSKMessage *message; // @synthesize message=_message;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CSKMessage *message; // @synthesize message=_message;
 - (void)extendedTextFieldDidSwitch:(id)arg1 showsAlternate:(BOOL)arg2;
 - (void)_updateHeaderViewsWithMessage:(id)arg1;
 - (void)viewDidLoad;

@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
 + (id)actionMessageWithCommand:(id)arg1 account:(id)arg2 options:(id)arg3;
 + (id)replyForMessage:(id)arg1 withSuccess:(_Bool)arg2 error:(id)arg3;
 + (id)replyForMessage:(id)arg1 withSuccess:(_Bool)arg2 result:(id)arg3 error:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isReply; // @synthesize isReply=_isReply;
 @property(nonatomic) _Bool needsReply; // @synthesize needsReply=_needsReply;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSData *data;
 - (void)_invalidateCachedData;

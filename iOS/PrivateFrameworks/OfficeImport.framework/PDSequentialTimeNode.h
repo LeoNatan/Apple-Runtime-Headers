@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 + (id)newSequentialTimeNodeGroupForAnimationInfoWithClass:(Class)arg1 target:(id)arg2;
 + (unsigned long long)buildPartsFromTarget:(id)arg1;
 + (id)timeNodeUnion:(id)arg1 initWithClass:(Class)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *nextConditions; // @synthesize nextConditions=mNextConditions;
 @property(retain, nonatomic) NSMutableArray *previousConditions; // @synthesize previousConditions=mPreviousConditions;
 @property(nonatomic) int nextAction; // @synthesize nextAction=mNextAction;
 @property(nonatomic) int previousAction; // @synthesize previousAction=mPreviousAction;
 @property(nonatomic) _Bool concurrent; // @synthesize concurrent=mConcurrent;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupId;
 @property(nonatomic) double direction;
 @property(nonatomic) double delay;

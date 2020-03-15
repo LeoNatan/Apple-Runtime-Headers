@@ -15,9 +15,9 @@
     _Bool _invalidateEverything;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool invalidateEverything; // @synthesize invalidateEverything=_invalidateEverything;
 @property(nonatomic) _Bool flushEverything; // @synthesize flushEverything=_flushEverything;
-- (void).cxx_destruct;
 - (void)tileset:(unsigned int *)arg1 edition:(unsigned int *)arg2 provider:(unsigned int *)arg3 invalidateOnly:(_Bool *)arg4 atIndex:(unsigned long long)arg5;
 - (unsigned long long)tilesetCount;
 - (void)addTileset:(unsigned int)arg1 edition:(unsigned int)arg2 provider:(unsigned int)arg3 invalidateOnly:(_Bool)arg4;

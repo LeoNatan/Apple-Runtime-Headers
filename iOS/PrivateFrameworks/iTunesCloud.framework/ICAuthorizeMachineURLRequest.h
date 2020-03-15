@@ -15,10 +15,10 @@
     NSData *_tokenData;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSData *tokenData; // @synthesize tokenData=_tokenData;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(copy, nonatomic) NSString *keybagPath; // @synthesize keybagPath=_keybagPath;
-- (void).cxx_destruct;
 - (void)buildStoreURLRequestWithURLRequest:(id)arg1 builderProperties:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end

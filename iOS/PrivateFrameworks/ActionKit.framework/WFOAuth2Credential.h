@@ -21,11 +21,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *responseObject; // @synthesize responseObject=_responseObject;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
 @property(readonly, nonatomic) NSString *accessToken; // @synthesize accessToken=_accessToken;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

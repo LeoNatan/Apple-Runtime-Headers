@@ -13,9 +13,9 @@
 }
 
 + (id)targetSelectorWithTarget:(id)arg1 selector:(SEL)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) SEL selector; // @synthesize selector=_selector;
 @property(nonatomic) __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;
 

@@ -26,13 +26,13 @@
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (Class)assetRepClass;
 + (Class)assetSetClass;
+- (void).cxx_destruct;
 @property(readonly) IBICSubtype *subtype; // @synthesize subtype=_subtype;
 @property(readonly) IBICRole *role; // @synthesize role=_role;
 @property(readonly) IBICScale *scale; // @synthesize scale=_scale;
 @property(readonly) IBICSize *size; // @synthesize size=_size;
 @property(readonly) IBICIdiom *idiom; // @synthesize idiom=_idiom;
 @property(readonly) IBICPlatform *platform; // @synthesize platform=_platform;
-- (void).cxx_destruct;
 - (id)requiredPixelSize;
 - (id)outputFileNameGivenBaseName:(id)arg1 andExtension:(id)arg2;
 - (id)detailAreaPath;

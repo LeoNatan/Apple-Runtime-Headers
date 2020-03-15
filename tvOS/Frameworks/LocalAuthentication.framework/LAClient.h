@@ -9,7 +9,7 @@
 #import <LocalAuthentication/LAContextCallbackXPC-Protocol.h>
 #import <LocalAuthentication/LAContextXPC-Protocol.h>
 
-@class LACachedExternalizedContext, NSData, NSError, NSMutableArray, NSNumber, NSString, NSUUID, NSXPCConnection;
+@class LACachedExternalizedContext, LAContext, NSData, NSError, NSMutableArray, NSNumber, NSString, NSUUID, NSXPCConnection;
 @protocol LAContextXPC, LAUIDelegate;
 
 __attribute__((visibility("hidden")))
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     _Bool _synchronous;
     id <LAUIDelegate> _uiDelegate;
     NSUUID *_uuid;
+    LAContext *_context;
     NSXPCConnection *_serverConnection;
     NSObject<LAContextXPC> *_remoteContext;
     NSObject<LAContextXPC> *_synchronousRemoteContext;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 + (id)createConnection:(const unsigned int *)arg1 legacyService:(_Bool)arg2;
 + (id)_recoveryQueue;
 + (id)_queue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *existingContext; // @synthesize existingContext=_existingContext;
 @property(readonly, nonatomic) NSNumber *userSession; // @synthesize userSession=_userSession;
 @property(retain) NSError *permanentError; // @synthesize permanentError=_permanentError;
@@ -41,10 +43,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<LAContextXPC> *synchronousRemoteContext; // @synthesize synchronousRemoteContext=_synchronousRemoteContext;
 @property(retain, nonatomic) NSObject<LAContextXPC> *remoteContext; // @synthesize remoteContext=_remoteContext;
 @property(readonly, nonatomic) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
+@property(nonatomic) __weak LAContext *context; // @synthesize context=_context;
 @property(nonatomic) _Bool synchronous; // @synthesize synchronous=_synchronous;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) __weak id <LAUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
-- (void).cxx_destruct;
 - (void)setShowingCoachingHint:(_Bool)arg1 event:(long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)resetWithReply:(CDUnknownBlockType)arg1;
 - (void)prearmTouchIdWithReply:(CDUnknownBlockType)arg1;

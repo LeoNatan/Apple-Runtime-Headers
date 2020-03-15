@@ -21,10 +21,10 @@
     CDStruct_dff5684f _observedRange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 @property(nonatomic) CDStruct_dff5684f observedRange; // @synthesize observedRange=_observedRange;
 @property(nonatomic) __weak id <NMRPlaybackQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_itemWithIdentifier:(id)arg1;
 - (id)_metadataForItemWithIdentifier:(id)arg1;
 - (_Bool)_needsMetadataForMediaRemoteItem:(void *)arg1;

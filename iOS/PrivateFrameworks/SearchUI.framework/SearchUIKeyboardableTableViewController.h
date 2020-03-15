@@ -19,11 +19,11 @@
     id <SearchUIKeyboardableTableViewScrollDelegate> _scrollDelegate;
 }
 
+- (void).cxx_destruct;
 @property __weak id <SearchUIKeyboardableTableViewScrollDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
 @property(nonatomic) double currentKeyboardHeight; // @synthesize currentKeyboardHeight=_currentKeyboardHeight;
 @property(nonatomic) _Bool shouldHideTableCellsUnderKeyboard; // @synthesize shouldHideTableCellsUnderKeyboard=_shouldHideTableCellsUnderKeyboard;
 @property __weak UIControl<UITextInput> *textField; // @synthesize textField=_textField;
-- (void).cxx_destruct;
 - (void)showKeyboard;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;

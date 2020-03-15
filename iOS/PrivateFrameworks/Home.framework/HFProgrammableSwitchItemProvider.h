@@ -15,10 +15,10 @@
     NSMutableSet *_programmableSwitchAccessoryItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *programmableSwitchAccessoryItems; // @synthesize programmableSwitchAccessoryItems=_programmableSwitchAccessoryItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)invalidationReasons;
 - (id)items;
 - (id)reloadItems;

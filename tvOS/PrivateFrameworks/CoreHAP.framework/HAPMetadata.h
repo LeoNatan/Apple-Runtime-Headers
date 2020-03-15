@@ -29,6 +29,7 @@
 + (id)getSharedInstance;
 + (id)getBuiltinInstance;
 + (void)setBuiltinInstanceWithDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *hapServiceNameTypeMap; // @synthesize hapServiceNameTypeMap=_hapServiceNameTypeMap;
 @property(retain, nonatomic) NSDictionary *hapCharacteristicNameTypeMap; // @synthesize hapCharacteristicNameTypeMap=_hapCharacteristicNameTypeMap;
 @property(retain, nonatomic) NSSet *hapSupportsAuthDataSet; // @synthesize hapSupportsAuthDataSet=_hapSupportsAuthDataSet;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) NSString *hapBaseUUIDSuffix; // @synthesize hapBaseUUIDSuffix=_hapBaseUUIDSuffix;
 @property(retain, nonatomic) NSNumber *schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (id)generateHAPMetadataTuplesDictionary:(id)arg1;
 - (id)generateDictionary;
 - (_Bool)updateRawPlist;

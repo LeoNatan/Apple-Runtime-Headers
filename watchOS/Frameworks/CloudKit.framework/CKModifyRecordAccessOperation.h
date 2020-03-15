@@ -20,12 +20,12 @@
     NSMutableArray *_revokedRecordIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *revokedRecordIDs; // @synthesize revokedRecordIDs=_revokedRecordIDs;
 @property(retain, nonatomic) NSMutableArray *grantedRecordIDs; // @synthesize grantedRecordIDs=_grantedRecordIDs;
 @property(retain, nonatomic) NSMutableDictionary *recordErrors; // @synthesize recordErrors=_recordErrors;
 @property(retain, nonatomic) NSArray *recordIDsToRevoke; // @synthesize recordIDsToRevoke=_recordIDsToRevoke;
 @property(retain, nonatomic) NSArray *recordIDsToGrant; // @synthesize recordIDsToGrant=_recordIDsToGrant;
-- (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)performCKOperation;

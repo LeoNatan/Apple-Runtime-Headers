@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)standardTitleLayoutWithStyle:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGPoint contentMotionTranslation; // @synthesize contentMotionTranslation=_contentMotionTranslation;
 @property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
 @property(nonatomic, getter=isBlurEnabled) _Bool blurEnabled; // @synthesize blurEnabled=_blurEnabled;
@@ -30,9 +31,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(readonly, nonatomic) unsigned long long titleStyle; // @synthesize titleStyle=_titleStyle;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_configureTextualButton;
 - (void)_configurePrimaryButton;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithType:(unsigned long long)arg1 titleStyle:(unsigned long long)arg2;
 - (id)initWithType:(unsigned long long)arg1;
 

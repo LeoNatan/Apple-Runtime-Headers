@@ -28,11 +28,11 @@
 + (unsigned int)_axCaptionPanelContextId;
 + (id)springBoardServerInstance;
 + (id)springBoardServerInstanceIfExists;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableControlCenterAssertionHeld; // @synthesize disableControlCenterAssertionHeld=_disableControlCenterAssertionHeld;
 @property(nonatomic) _Bool disableNotificationCenterAssertionHeld; // @synthesize disableNotificationCenterAssertionHeld=_disableNotificationCenterAssertionHeld;
 @property(retain, nonatomic) _AXAssertionServer *assertionServer; // @synthesize assertionServer=_assertionServer;
 @property(nonatomic) __weak id <AXSpringBoardServerInstanceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_getSplashImageForApp:(id)arg1;
 - (id)_performVoiceShortcut:(id)arg1;
 - (id)_activateSOSMode:(id)arg1;
@@ -78,12 +78,11 @@
 - (id)_isMediaPlaying:(id)arg1;
 - (id)_isPointInAXInspector:(id)arg1;
 - (id)_handleIsInspectorMinimized:(id)arg1;
-- (id)_handleSetLockScreenDimTimerEnabled:(id)arg1;
-- (id)_handleUserEventOccurred:(id)arg1;
 - (id)_handleIsMagnifierVisible:(id)arg1;
 - (id)_handleLaunchMagnifierApp:(id)arg1;
 - (id)_handleReactivateInCallService:(id)arg1;
 - (id)_handleLoadGAXBundleForUnmanagedASAM:(id)arg1;
+- (id)_isPIPWindowVisible:(id)arg1;
 - (id)_isSpotlightVisible:(id)arg1;
 - (id)_isGuidedAccessActive:(id)arg1;
 - (id)_toggleDarkMode:(id)arg1;

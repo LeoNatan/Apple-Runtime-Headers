@@ -14,9 +14,9 @@
     CPSNavigationAlertFocusButton *_secondaryButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPSNavigationAlertFocusButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
 @property(retain, nonatomic) CPSNavigationAlertFocusButton *primaryButton; // @synthesize primaryButton=_primaryButton;
-- (void).cxx_destruct;
 - (id)initWithPrimaryAction:(id)arg1 secondaryAction:(id)arg2 progressView:(id)arg3;
 
 @end

@@ -46,8 +46,8 @@
 + (id)_otherNonpurgeableVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (id)_otherVersionsOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2 withoutOptions:(unsigned long long)arg3;
-+ (struct NSObject *)_libraryForURL:(id)arg1 temporaryStorageIdentifier:(id *)arg2;
-+ (struct NSObject *)_existingLibraryForURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
++ (id)_libraryForURL:(id)arg1 temporaryStorageIdentifier:(id *)arg2;
++ (id)_existingLibraryForURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (_Bool)_permanentVersionStorageSupportedForURL:(id)arg1 temporaryStorageIdentifier:(id *)arg2 error:(id *)arg3;
 + (id)_makeTemporaryStorageIdentifier;
 + (id)_makePermanentStorageLibraryForURL:(id)arg1 temporaryStorageRequired:(_Bool *)arg2 error:(id *)arg3;

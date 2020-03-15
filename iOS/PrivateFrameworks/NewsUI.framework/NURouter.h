@@ -16,8 +16,8 @@
     id <NUURLHandling> _urlHandler;
 }
 
-@property(readonly, nonatomic) id <NUURLHandling> urlHandler; // @synthesize urlHandler=_urlHandler;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <NUURLHandling> urlHandler; // @synthesize urlHandler=_urlHandler;
 - (void)routeToNewsAppForYouFeed;
 - (id)initWithURLHandler:(id)arg1;
 

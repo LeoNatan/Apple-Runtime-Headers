@@ -21,6 +21,7 @@
     CDUnknownBlockType _valueForKeyTransform;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType valueForKeyTransform; // @synthesize valueForKeyTransform=_valueForKeyTransform;
 @property(readonly, copy, nonatomic) CDUnknownBlockType fromAddressBookTransform; // @synthesize fromAddressBookTransform=_fromAddressBookTransform;
 @property(readonly, copy, nonatomic) CDUnknownBlockType toAddressBookTransform; // @synthesize toAddressBookTransform=_toAddressBookTransform;
@@ -30,7 +31,6 @@
 @property(readonly, copy, nonatomic) NSString *coreDataKey; // @synthesize coreDataKey=_coreDataKey;
 @property(readonly, copy, nonatomic) NSString *addressBookProperty; // @synthesize addressBookProperty=_addressBookProperty;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)decodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (void)encodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (BOOL)isValue:(id)arg1 preferredToEquivalentValue:(id)arg2;

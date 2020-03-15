@@ -24,9 +24,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)backgroundInsetAmount;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowShadow; // @synthesize shouldShowShadow=_shouldShowShadow;
 @property(nonatomic) _Bool shouldUseTintColorAsBackgroundColor; // @synthesize shouldUseTintColorAsBackgroundColor=_shouldUseTintColorAsBackgroundColor;
-- (void).cxx_destruct;
 - (id)_displayedBackgroundColor;
 - (float)_alphaForHighlighted:(_Bool)arg1 pressed:(_Bool)arg2;
 - (void)setPressed:(_Bool)arg1;

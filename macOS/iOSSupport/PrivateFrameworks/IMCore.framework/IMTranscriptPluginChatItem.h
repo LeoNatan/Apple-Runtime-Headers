@@ -20,13 +20,13 @@
     IMBalloonPluginDataSource *_dataSource;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMBalloonPluginDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) BOOL parentChatHasKnownParticipants; // @synthesize parentChatHasKnownParticipants=_parentChatHasKnownParticipants;
 @property(nonatomic) BOOL hasSetIsLastChatItemOfPluginType; // @synthesize hasSetIsLastChatItemOfPluginType=_hasSetIsLastChatItemOfPluginType;
 @property(nonatomic, setter=setLastChatItemOfPluginType:) BOOL isLastChatItemOfPluginType; // @synthesize isLastChatItemOfPluginType=_isLastChatItemOfPluginType;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) IMPluginPayload *initialPayload; // @synthesize initialPayload=_initialPayload;
-- (void).cxx_destruct;
 - (BOOL)wantsAutoPlayback;
 @property(readonly, nonatomic) BOOL isSaved;
 @property(readonly, nonatomic) BOOL isPlayed;

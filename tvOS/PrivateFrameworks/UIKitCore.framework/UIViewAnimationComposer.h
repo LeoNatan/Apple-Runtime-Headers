@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     id <UIVectorOperatable> _targetVelocity;
 }
 
-@property(retain, nonatomic) id <UIVectorOperatable> targetVelocity; // @synthesize targetVelocity=_targetVelocity;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <UIVectorOperatable> targetVelocity; // @synthesize targetVelocity=_targetVelocity;
 - (id)projectValue:(id)arg1 decelerationFactor:(double)arg2;
 - (id)composeAnimation:(id)arg1 withNewAnimationDescription:(id)arg2 interactive:(_Bool)arg3 currentValue:(id)arg4 targetValue:(id)arg5;
 - (id)createAnimationFromDescription:(id)arg1 currentValue:(id)arg2 velocity:(id)arg3 targetValue:(id)arg4;

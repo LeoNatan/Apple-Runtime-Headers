@@ -29,6 +29,7 @@
 }
 
 + (_Bool)supportsSetupPayloadRetry;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *accessoryNotFoundSoftTimeoutTimer; // @synthesize accessoryNotFoundSoftTimeoutTimer=_accessoryNotFoundSoftTimeoutTimer;
 @property(retain, nonatomic) NSTimer *accessoryNotFoundFatalTimeoutTimer; // @synthesize accessoryNotFoundFatalTimeoutTimer=_accessoryNotFoundFatalTimeoutTimer;
 @property(retain, nonatomic) NSDate *phaseStartDate; // @synthesize phaseStartDate=_phaseStartDate;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) HMAccessorySetupCompletedInfo *completedInfo; // @synthesize completedInfo=_completedInfo;
 @property(retain, nonatomic) HFSetupAccessoryResult *setupResult; // @synthesize setupResult=_setupResult;
 @property(readonly, nonatomic) HFSetupPairingContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_assertValidTransitionFromPhase:(unsigned long long)arg1 toPhase:(unsigned long long)arg2;
 - (void)_updateStatusTextAndNotifyDelegate:(_Bool)arg1;
 - (void)_finishPairingWithAccessories:(id)arg1 completedInfo:(id)arg2;

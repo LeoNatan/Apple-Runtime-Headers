@@ -15,8 +15,8 @@
     NSString *_appDisplayName;
 }
 
-@property(retain, nonatomic) NSString *appDisplayName; // @synthesize appDisplayName=_appDisplayName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *appDisplayName; // @synthesize appDisplayName=_appDisplayName;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

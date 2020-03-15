@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
     struct CGImage *_fillImage;
 }
 
-@property __weak CMDrawableMapper *mapper; // @synthesize mapper=_mapper;
 - (void).cxx_destruct;
+@property __weak CMDrawableMapper *mapper; // @synthesize mapper=_mapper;
 - (void)_restoreLastTransform;
 - (void)_addTransform:(id)arg1;
 - (void)_applyTransform:(id)arg1;

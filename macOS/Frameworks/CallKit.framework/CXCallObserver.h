@@ -19,11 +19,11 @@
     id <CXCallObserverDataSource> _dataSource;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CXCallObserverDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *concurrentQueue; // @synthesize concurrentQueue=_concurrentQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXCallObserverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dataSource:(id)arg1 callChanged:(id)arg2;
 - (void)_performDelegateCallback:(CDUnknownBlockType)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;

@@ -15,8 +15,8 @@
 }
 
 + (id)searchStringsForPlacemark:(id)arg1;
-@property(nonatomic) _Bool updatingPlace; // @synthesize updatingPlace;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool updatingPlace; // @synthesize updatingPlace;
 - (void)didTurnIntoFault;
 - (void)setLocationFromPlacemark:(id)arg1;
 - (void)setLocationFromURL:(id)arg1;

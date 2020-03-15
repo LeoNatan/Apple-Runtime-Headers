@@ -13,8 +13,8 @@
     EKBackingStore *_backingStore;
 }
 
-@property(readonly, nonatomic) __weak EKBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak EKBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 - (void)_validateAttendeesForEvent:(id)arg1 toCalendar:(id)arg2;
 - (id)_moveEventHelperDoRemoveAttendees:(id)arg1 requirements:(long long)arg2;
 - (id)_moveEventHelperDoReinviteAttendees:(id)arg1 toCalendar:(id)arg2 requirements:(long long)arg3;

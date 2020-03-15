@@ -10,9 +10,12 @@
 
 @protocol AXPIFingerAppearanceDelegate <NSObject>
 - (double)fingerDiameter;
+- (_Bool)showInnerCircle;
 - (double)fingerInnerCircleInnerRadius;
 - (double)fingerInnerRadius;
 - (double)fingerOuterRadius;
+- (_Bool)showFingerOutlines;
+- (double)innerCircleStrokeOutlineWidth;
 - (double)strokeOutlineWidth;
 - (double)strokeWidth;
 - (UIColor *)pressedCircularProgressFillColor;

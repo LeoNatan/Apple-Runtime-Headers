@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     NSArray *_finalURLs;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *finalURLs; // @synthesize finalURLs=_finalURLs;
 @property(readonly, nonatomic) _Bool isAbstract; // @synthesize isAbstract=_isAbstract;
 @property(readonly, copy, nonatomic) NSArray *styleSheetURLs; // @synthesize styleSheetURLs=_styleSheetURLs;
 @property(readonly, copy, nonatomic) NSString *templateName; // @synthesize templateName=_templateName;
-- (void).cxx_destruct;
 - (void)addDerivedTemplateNode:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *derivedTemplateNodes;
 - (id)initWithTemplateName:(id)arg1 styleSheetURLs:(id)arg2 abstract:(_Bool)arg3;

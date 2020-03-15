@@ -16,11 +16,11 @@
     NSArray *_specialEventArticleIDs;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *specialEventArticleIDs; // @synthesize specialEventArticleIDs=_specialEventArticleIDs;
 @property(retain, nonatomic) NSArray *breakingNewsArticleIDs; // @synthesize breakingNewsArticleIDs=_breakingNewsArticleIDs;
 @property(readonly, nonatomic) NSDictionary *specialEventsArticleMetadataByArticleID; // @synthesize specialEventsArticleMetadataByArticleID=_specialEventsArticleMetadataByArticleID;
 @property(retain, nonatomic) NSArray *specialEventItems; // @synthesize specialEventItems=_specialEventItems;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *groupMicaAnimationFileURLStringiPad;
 @property(readonly, nonatomic) NSString *groupMicaAnimationFileURLString;
 - (id)initWithDictionary:(id)arg1;

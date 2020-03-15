@@ -15,10 +15,10 @@
     double _lastRequestTimeInterval;
 }
 
+- (void).cxx_destruct;
 @property double lastRequestTimeInterval; // @synthesize lastRequestTimeInterval=_lastRequestTimeInterval;
 @property double initialRequestTimeInterval; // @synthesize initialRequestTimeInterval=_initialRequestTimeInterval;
 @property(retain) NSPointerArray *remainingObjects; // @synthesize remainingObjects=_remainingObjects;
-- (void).cxx_destruct;
 
 @end
 

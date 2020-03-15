@@ -16,8 +16,8 @@
 }
 
 + (Class)errorsType;
-@property(retain, nonatomic) NSMutableArray *errors; // @synthesize errors=_errors;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *errors; // @synthesize errors=_errors;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

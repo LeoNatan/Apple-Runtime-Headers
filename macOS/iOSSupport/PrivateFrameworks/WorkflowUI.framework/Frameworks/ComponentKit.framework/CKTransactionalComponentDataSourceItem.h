@@ -16,11 +16,11 @@
     struct CKComponentBoundsAnimation _boundsAnimation;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CKComponentBoundsAnimation boundsAnimation; // @synthesize boundsAnimation=_boundsAnimation;
 @property(readonly, nonatomic) CKComponentScopeRoot *scopeRoot; // @synthesize scopeRoot=_scopeRoot;
 @property(readonly, nonatomic) id model; // @synthesize model=_model;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (const struct CKComponentLayout *)layout;
 - (id)initWithLayout:(const struct CKComponentLayout *)arg1 model:(id)arg2 scopeRoot:(id)arg3 boundsAnimation:(struct CKComponentBoundsAnimation)arg4;
 

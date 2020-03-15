@@ -18,13 +18,12 @@
     int _resourceNotificationToken;
 }
 
-@property(readonly, nonatomic) __weak id <GEOTileServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <GEOTileServerProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)generateRequestedFromTileLoaderEndSignpost:(unsigned long long)arg1;
 - (void)generateRequestedFromTileLoaderBeginSignpost:(unsigned long long)arg1 tileKey:(const struct _GEOTileKey *)arg2 options:(unsigned long long)arg3;
-- (_Bool)skipNetworkForKeysWhenPreloading:(id)arg1;
 - (void)endPreloadSession;
-- (void)beginPreloadSessionOfSize:(unsigned long long)arg1 exclusive:(_Bool)arg2;
+- (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
 - (unsigned long long)shrinkDiskCacheToSizeSync:(unsigned long long)arg1;
 - (unsigned long long)calculateFreeableSizeSync;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1;

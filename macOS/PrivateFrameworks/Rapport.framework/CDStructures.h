@@ -49,18 +49,6 @@ struct LogCategoryPrivate;
 
 struct LogOutput;
 
-struct NSMutableArray {
-    Class _field1;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSMutableSet {
-    Class _field1;
-};
-
 struct in6_addr {
     union {
         unsigned char __u6_addr8[16];

@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint __initialContentOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXVerticalSwipeGestureRecognizerHelper *verticalSwipeGestureRecognizerHelper; // @synthesize verticalSwipeGestureRecognizerHelper=_verticalSwipeGestureRecognizerHelper;
 @property(retain, nonatomic, setter=_setSwipeDirectionValueFilter:) PUChangeDirectionValueFilter *_swipeDirectionValueFilter; // @synthesize _swipeDirectionValueFilter=__swipeDirectionValueFilter;
 @property(retain, nonatomic, setter=_setVerticalDirectionValueFilter:) PUChangeDirectionValueFilter *_verticalDirectionValueFilter; // @synthesize _verticalDirectionValueFilter=__verticalDirectionValueFilter;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
 @property(nonatomic) __weak id <PUAccessoryVisibilityInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

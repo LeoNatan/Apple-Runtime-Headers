@@ -14,8 +14,8 @@
 }
 
 + (id)sectionIdentifier;
-@property(retain, nonatomic) CKAttachmentSearchResultCell *sizingCell; // @synthesize sizingCell=_sizingCell;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CKAttachmentSearchResultCell *sizingCell; // @synthesize sizingCell=_sizingCell;
 - (id)layoutGroupWithEnvironment:(id)arg1;
 
 @end

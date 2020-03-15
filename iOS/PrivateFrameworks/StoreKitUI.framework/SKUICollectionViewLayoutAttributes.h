@@ -20,13 +20,13 @@
     double _zoomingImageLambda;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=_zoomingImageLambda, setter=_setZoomingImageLambda:) double zoomingImageLambda; // @synthesize zoomingImageLambda=_zoomingImageLambda;
 @property(nonatomic) double zoomingImageImposedAlphaOfOtherViews; // @synthesize zoomingImageImposedAlphaOfOtherViews=_zoomingImageImposedAlphaOfOtherViews;
 @property(nonatomic) double zoomingImageWidth; // @synthesize zoomingImageWidth=_zoomingImageWidth;
 @property(nonatomic) double zoomingImageAlpha; // @synthesize zoomingImageAlpha=_zoomingImageAlpha;
 @property(nonatomic) long long position; // @synthesize position=_position;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

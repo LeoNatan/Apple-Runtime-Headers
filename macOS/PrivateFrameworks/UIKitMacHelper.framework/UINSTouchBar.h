@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedTouchBar;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType itemChangeHandler; // @synthesize itemChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler;
 @property(nonatomic) BOOL allowsCustomization; // @synthesize allowsCustomization;
 @property(retain, nonatomic) NSString *principalItemIdentifier; // @synthesize principalItemIdentifier;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *templateItems;
 
 // Remaining properties

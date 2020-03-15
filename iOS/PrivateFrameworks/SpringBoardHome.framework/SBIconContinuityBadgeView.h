@@ -23,13 +23,13 @@
 
 + (id)_checkoutImageForContinuityBadgeType:(long long)arg1 highlighted:(_Bool)arg2;
 + (id)backgroundImageCache;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImageView *foregroundView; // @synthesize foregroundView=_foregroundView;
 @property(readonly, nonatomic) SBDarkeningImageView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain, nonatomic) SBIconAccessoryImage *foregroundImage; // @synthesize foregroundImage=_foregroundImage;
 @property(readonly, nonatomic) SBIconAccessoryImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(nonatomic) long long badgeType; // @synthesize badgeType=_badgeType;
 @property(retain, nonatomic) id <SBIconListLayout> listLayout; // @synthesize listLayout=_listLayout;
-- (void).cxx_destruct;
 - (void)_clearIcon;
 - (id)_checkoutBackgroundImage;
 - (void)setAccessoryBrightness:(double)arg1;

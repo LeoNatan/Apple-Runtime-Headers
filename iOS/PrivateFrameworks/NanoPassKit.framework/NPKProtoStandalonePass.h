@@ -29,6 +29,7 @@
 }
 
 + (Class)userInfosType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(nonatomic) _Bool remotePass; // @synthesize remotePass=_remotePass;
 @property(retain, nonatomic) NSMutableArray *userInfos; // @synthesize userInfos=_userInfos;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(retain, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
 @property(retain, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

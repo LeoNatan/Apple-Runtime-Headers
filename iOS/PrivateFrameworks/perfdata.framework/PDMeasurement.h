@@ -29,6 +29,7 @@
     NSString *_cachedMetricFilter;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *cachedMetricFilter; // @synthesize cachedMetricFilter=_cachedMetricFilter;
 @property(nonatomic) __weak PDContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSDictionary *measurement; // @synthesize measurement=_measurement;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSDictionary *variables; // @synthesize variables=_variables;
 @property(retain, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(retain, nonatomic) NSString *metric; // @synthesize metric=_metric;
-- (void).cxx_destruct;
 - (_Bool)enumeratePercentilesWithError:(id *)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long percentileCount;
 - (_Bool)enumerateHistogramBucketsWithError:(id *)arg1 usingBlock:(CDUnknownBlockType)arg2;

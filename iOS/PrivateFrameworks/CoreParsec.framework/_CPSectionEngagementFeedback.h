@@ -19,10 +19,10 @@
     _CPResultSectionForFeedback *_section;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 @property(retain, nonatomic) _CPResultSectionForFeedback *section; // @synthesize section=_section;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

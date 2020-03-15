@@ -22,6 +22,7 @@
 }
 
 + (long long)maximumNumberOfItems;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXRoundedCornerOverlayView *_roundedCornerOverlayView; // @synthesize _roundedCornerOverlayView=__roundedCornerOverlayView;
 @property(readonly, nonatomic) NSPointerArray *_imageSizes; // @synthesize _imageSizes=__imageSizes;
 @property(readonly, nonatomic) NSArray *_imageViews; // @synthesize _imageViews=__imageViews;
@@ -31,7 +32,6 @@
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
 @property(nonatomic) double spacing; // @synthesize spacing=_spacing;
-- (void).cxx_destruct;
 - (void)_updateRoundedCornerOverlayView;
 - (void)_updateImageViews;
 - (void)setImage:(id)arg1 forItemAtIndex:(long long)arg2;

@@ -15,9 +15,9 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(copy, nonatomic) NSBezierPath *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (id)shapeLayer;
 - (id)init;
 - (id)makeBackingLayer;

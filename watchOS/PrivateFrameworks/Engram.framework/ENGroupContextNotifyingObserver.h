@@ -19,11 +19,11 @@
     CDUnknownBlockType _onGroupUpdate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onGroupUpdate; // @synthesize onGroupUpdate=_onGroupUpdate;
 @property(copy, nonatomic) CDUnknownBlockType onGroupCreate; // @synthesize onGroupCreate=_onGroupCreate;
 @property(copy, nonatomic) CDUnknownBlockType onGroupCache; // @synthesize onGroupCache=_onGroupCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)groupContext:(id)arg1 didUpdateGroup:(id)arg2 withNewGroup:(id)arg3;
 - (void)groupContext:(id)arg1 didCacheGroup:(id)arg2;
 - (void)groupContext:(id)arg1 didCreateGroup:(id)arg2;

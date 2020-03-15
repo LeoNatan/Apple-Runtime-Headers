@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property int outcome; // @synthesize outcome=_outcome;
-- (void).cxx_destruct;
 - (id)initWithOutcome:(int)arg1 attributes:(id)arg2;
 
 @end

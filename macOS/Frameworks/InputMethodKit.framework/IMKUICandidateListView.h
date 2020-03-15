@@ -31,6 +31,7 @@
     id <IMKUICandidateListViewState> _stateDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMKUICandidateListViewState> stateDelegate; // @synthesize stateDelegate=_stateDelegate;
 @property(nonatomic) BOOL showsScrollBars; // @synthesize showsScrollBars=_showsScrollBars;
 @property(nonatomic) BOOL showsNoCandidatesMessage; // @synthesize showsNoCandidatesMessage=_showsNoCandidatesMessage;
@@ -47,7 +48,6 @@
 @property(nonatomic) __weak id <IMKUICandidateItemViewHandling> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMKUIAbstractCandidateLayout *candidateLayout; // @synthesize candidateLayout=_candidateLayout;
 @property(nonatomic) __weak id <IMKUICandidateAccessibilityDelegate> accessibilityController; // @synthesize accessibilityController=_accessibilityController;
-- (void).cxx_destruct;
 - (long long)accessibilityOrientation;
 - (id)accessibilityRows;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;

@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_resourceByName;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMutableDictionary *resourceByName; // @synthesize resourceByName=_resourceByName;
 @property(retain) id <ISCompositorRecipe> recipe; // @synthesize recipe=_recipe;
-- (void).cxx_destruct;
 - (id)resourceNamed:(id)arg1;
 - (void)clearResources;
 - (void)addResourcesFromDictionary:(id)arg1;

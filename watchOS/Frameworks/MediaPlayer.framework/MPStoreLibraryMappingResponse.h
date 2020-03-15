@@ -14,8 +14,8 @@
     int _libraryAddedStatus;
 }
 
-@property(nonatomic) int libraryAddedStatus; // @synthesize libraryAddedStatus=_libraryAddedStatus;
 - (void).cxx_destruct;
+@property(nonatomic) int libraryAddedStatus; // @synthesize libraryAddedStatus=_libraryAddedStatus;
 - (void)setLibraryIdentifierSet:(id)arg1 forIdentifierSet:(id)arg2;
 - (id)libraryIdentifierSetForIdentifierSet:(id)arg1;
 

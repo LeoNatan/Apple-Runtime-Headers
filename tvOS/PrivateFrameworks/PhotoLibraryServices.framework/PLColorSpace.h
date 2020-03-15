@@ -17,8 +17,8 @@
 + (id)commonColorSpace_unspecified;
 + (id)commonColorSpace_sRGB;
 + (id)colorSpaceFromName:(id)arg1;
-@property(copy, nonatomic) NSString *colorSpaceName; // @synthesize colorSpaceName=_colorSpaceName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *colorSpaceName; // @synthesize colorSpaceName=_colorSpaceName;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithName:(id)arg1;

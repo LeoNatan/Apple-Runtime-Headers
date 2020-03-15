@@ -44,12 +44,12 @@
     _Bool _wantsActivityViewController;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIProductPage *productPage; // @synthesize productPage=_productPage;
 @property(readonly, nonatomic) SKUIItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <SKUIIPhoneProductPageDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *bannerText; // @synthesize bannerText=_bannerText;
 @property(nonatomic) _Bool askPermission; // @synthesize askPermission=_askPermission;
-- (void).cxx_destruct;
 - (id)_viewControllerForSectionIndex:(unsigned long long)arg1;
 - (void)_showActivityViewController;
 - (void)_showError:(id)arg1;

@@ -18,10 +18,10 @@
     HKHealthStore *_healthStore;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(nonatomic) __weak id <_HKFitnessMachineConnectionInitiatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (void)_simulateDisconnect;
 - (void)_simulateAccept;
 - (void)_simulateTapWithFitnessMachineType:(unsigned long long)arg1;

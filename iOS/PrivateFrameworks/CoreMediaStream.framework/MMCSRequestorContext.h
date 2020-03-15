@@ -20,6 +20,7 @@
 }
 
 + (id)contextWithEngine:(id)arg1 type:(int)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) char **authTokens; // @synthesize authTokens=_authTokens;
 @property(nonatomic) unsigned int *itemFlags; // @synthesize itemFlags=_itemFlags;
@@ -27,7 +28,6 @@
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(nonatomic) char **signatures; // @synthesize signatures=_signatures;
 @property(nonatomic) __weak MMCSEngine *engine; // @synthesize engine=_engine;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithEngine:(id)arg1 type:(int)arg2;

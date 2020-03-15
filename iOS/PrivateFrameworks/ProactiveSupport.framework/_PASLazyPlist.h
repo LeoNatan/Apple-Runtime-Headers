@@ -31,8 +31,8 @@
 + (id)propertyListWithPath:(id)arg1 fileRange:(struct _NSRange)arg2 error:(id *)arg3;
 + (id)propertyListWithPath:(id)arg1 error:(id *)arg2;
 + (id)propertyListWithData:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) const struct __CFAllocator *stringContentsDeallocator; // @synthesize stringContentsDeallocator=_stringContentsDeallocator;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) const struct __CFAllocator *stringContentsDeallocator; // @synthesize stringContentsDeallocator=_stringContentsDeallocator;
 - (id)_objectForValue:(CDStruct_c0454aff)arg1 errMsg:(id *)arg2;
 - (_Bool)_decodeDictionaryKeyValue:(CDStruct_c0454aff)arg1 handleString:(CDUnknownBlockType)arg2 errMsg:(id *)arg3;
 - (_Bool)_decodeValue:(CDStruct_c0454aff)arg1 handleBoolean:(CDUnknownBlockType)arg2 handleTaggedInt:(CDUnknownBlockType)arg3 handleBoxedInt:(CDUnknownBlockType)arg4 handleTaggedFloat:(CDUnknownBlockType)arg5 handleBoxedFloat:(CDUnknownBlockType)arg6 handleDate:(CDUnknownBlockType)arg7 handleData:(CDUnknownBlockType)arg8 handleString:(CDUnknownBlockType)arg9 handleDict:(CDUnknownBlockType)arg10 handleArray:(CDUnknownBlockType)arg11 errMsg:(id *)arg12;

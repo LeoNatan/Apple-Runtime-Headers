@@ -18,12 +18,12 @@
     // Error parsing type: {?="columns"[4]}, name: _meshBindTransform
 }
 
+- (void).cxx_destruct;
 // Error parsing type for property meshBindTransform:
 // Property attributes: T{?=[4]},R,N,V_meshBindTransform
 
 @property(readonly, nonatomic) NSData *jointBindTransforms; // @synthesize jointBindTransforms=_jointBindTransforms;
 @property(readonly, nonatomic) NSArray *jointPaths; // @synthesize jointPaths=_jointPaths;
-- (void).cxx_destruct;
 -     // Error parsing type: I16@0:4^{?=[4]}8I12, name: copyJointBindTransformsInto:maxCount:
 -     // Error parsing type: @84@0:4@8r^{?=[4]}12I16{?=[4]}20, name: initWithJointPaths:jointBindTransforms:count:meshBindTransform:
 -     // Error parsing type: @80@0:4@8@12{?=[4]}16, name: initWithJointPaths:jointBindTransforms:meshBindTransform:

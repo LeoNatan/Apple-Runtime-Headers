@@ -35,6 +35,7 @@
     HLPHelpSearchResultTableViewController *_searchResultTableViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HLPHelpSearchResultTableViewController *searchResultTableViewController; // @synthesize searchResultTableViewController=_searchResultTableViewController;
 @property(retain, nonatomic) HLPHelpSearchIndexController *helpSearchIndexController; // @synthesize helpSearchIndexController=_helpSearchIndexController;
 @property(retain, nonatomic) UIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSArray *searchTerms; // @synthesize searchTerms=_searchTerms;
 @property(nonatomic) __weak id <HLPHelpTableOfContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool fullBookView; // @synthesize fullBookView=_fullBookView;
-- (void).cxx_destruct;
 - (void)spotlightSearchDelay;
 - (void)cancelSpotlightSearchDelay;
 - (void)updateSearchResultsForSearchController:(id)arg1;

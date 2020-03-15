@@ -134,14 +134,10 @@
 - (BOOL)updateMediaPresentation;
 @property unsigned long long mediaPresentation;
 - (BOOL)setDefaultMediaPresentation:(unsigned long long)arg1;
-- (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void *)arg4;
-- (void)registerForNotifications:(id)arg1 options:(id)arg2;
 - (long long)cameraFilesContentSizeInBytes;
 - (void)popMediaFiles:(id)arg1;
 - (void)pushMediaFiles:(id)arg1;
 - (void)removeCameraFileFromIndex:(id)arg1;
-- (void)indexCameraFileDate:(id)arg1;
-- (void)indexCameraFileUUID:(id)arg1;
 - (void)addCameraFileToIndex:(id)arg1;
 - (void)removeCameraFolderFromIndex:(id)arg1;
 - (void)addCameraFolderToIndex:(id)arg1;
@@ -149,6 +145,7 @@
 - (void)removeMediaFile:(id)arg1;
 - (BOOL)addMediaFiles:(id)arg1;
 - (void)storageAvailable;
+- (BOOL)containsRestrictedStorage;
 - (void)removeFolder:(id)arg1;
 - (void)addFolder:(id)arg1;
 - (void)resetContent;
@@ -156,6 +153,7 @@
 - (void)getContent;
 - (void)requestSendPTPCommand:(id)arg1 outData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestSendPTPCommand:(id)arg1 outData:(id)arg2 sendCommandDelegate:(id)arg3 didSendCommandSelector:(SEL)arg4 contextInfo:(void *)arg5;
+- (void)dumpPTPPassthruCommand:(id)arg1 andData:(id)arg2;
 - (void)requestReadDataFromFile:(id)arg1 atOffset:(long long)arg2 length:(long long)arg3 readDelegate:(id)arg4 didReadDataSelector:(SEL)arg5 contextInfo:(void *)arg6;
 - (void)requestUploadFile:(id)arg1 options:(id)arg2 uploadDelegate:(id)arg3 didUploadSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)cancelDownload;
@@ -220,9 +218,7 @@
 - (void)setIsAccessRestrictedAppleDevice:(BOOL)arg1;
 @property(readonly) unsigned long long estimatedNumberOfDownloadableItems;
 - (void)dealloc;
-- (id)init;
 - (id)description;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)updateProperties:(id)arg1;
 - (void)bringupCameraProperties;
 - (void)teardownCameraProperties;

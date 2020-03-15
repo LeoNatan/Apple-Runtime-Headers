@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultClient;
-@property(retain) ATVUPPClientState *state; // @synthesize state=_state;
 - (void).cxx_destruct;
+@property(retain) ATVUPPClientState *state; // @synthesize state=_state;
 - (id)allRecords;
 - (void)_updateBoundActiveStoreAccount;
 - (void)tvs_bindActiveStoreAccountBindingToObject:(id)arg1 withKeyPath:(id)arg2 options:(id)arg3;

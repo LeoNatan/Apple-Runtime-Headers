@@ -37,6 +37,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)defaultSectionInfoForType:(long long)arg1;
 + (id)defaultSectionInfoForSection:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(copy, nonatomic) NSArray *dataProviderIDs; // @synthesize dataProviderIDs=_dataProviderIDs;
 @property(copy, nonatomic) NSString *factorySectionID; // @synthesize factorySectionID=_factorySectionID;
@@ -55,7 +56,6 @@
 @property(nonatomic) long long sectionType; // @synthesize sectionType=_sectionType;
 @property(copy, nonatomic) NSString *subsectionID; // @synthesize subsectionID=_subsectionID;
 @property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-- (void).cxx_destruct;
 - (id)awakeAfterUsingCoder:(id)arg1;
 - (id)replacementObjectForCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

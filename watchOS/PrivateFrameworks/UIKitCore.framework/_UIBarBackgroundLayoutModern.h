@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     _UIBarBackgroundAppearanceData *_backgroundData2;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIBarBackgroundAppearanceData *backgroundData2; // @synthesize backgroundData2=_backgroundData2;
 @property(retain, nonatomic) _UIBarBackgroundAppearanceData *backgroundData1; // @synthesize backgroundData1=_backgroundData1;
-- (void).cxx_destruct;
 - (void)describeInto:(id)arg1;
 - (float)bg2ShadowAlpha;
 - (id)bg2ShadowTint;

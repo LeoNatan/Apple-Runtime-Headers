@@ -17,10 +17,10 @@
     NSObject *_supplementalInterestToken;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject *supplementalInterestToken; // @synthesize supplementalInterestToken=_supplementalInterestToken;
 @property(readonly, copy, nonatomic) SFRankingFeedback *rankingFeedback; // @synthesize rankingFeedback=_rankingFeedback;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)resultsByCombiningWithResults:(id)arg1;
 - (id)copyWithItems:(id)arg1;
 - (unsigned long long)hash;

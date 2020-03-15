@@ -25,6 +25,7 @@
     NSString *_totalGiftAmountString;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *totalGiftAmountString; // @synthesize totalGiftAmountString=_totalGiftAmountString;
 @property(copy, nonatomic) SKUIGiftTheme *theme; // @synthesize theme=_theme;
 @property(copy, nonatomic) NSString *senderName; // @synthesize senderName=_senderName;
@@ -36,7 +37,6 @@
 @property(copy, nonatomic) NSString *giftAmountString; // @synthesize giftAmountString=_giftAmountString;
 @property(nonatomic) long long giftAmount; // @synthesize giftAmount=_giftAmount;
 @property(copy, nonatomic) NSDate *deliveryDate; // @synthesize deliveryDate=_deliveryDate;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)reset;
 - (id)HTTPBodyDictionary;

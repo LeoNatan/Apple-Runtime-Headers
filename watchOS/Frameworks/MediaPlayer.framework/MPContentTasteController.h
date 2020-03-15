@@ -24,8 +24,8 @@
 + (id)_tasteControllerWithUserIdentity:(id)arg1 isSingleton:(_Bool)arg2 createIfRequired:(_Bool)arg3;
 + (id)controllers;
 + (id)globalSerialQueue;
-@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (id)_pendingUpdateRecordForPlaylistGlobalID:(id)arg1;
 - (id)_pendingUpdateRecordForStoreAdamID:(long long)arg1;
 - (id)_pendingUpdateRecordForKey:(id)arg1 inDictionary:(id)arg2;

@@ -19,13 +19,13 @@
     unsigned long long _colorCircleSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressRecognizer; // @synthesize longPressRecognizer=_longPressRecognizer;
 @property(retain, nonatomic) ETPaletteCircleView *selectedCircle; // @synthesize selectedCircle=_selectedCircle;
 @property(retain, nonatomic) NSArray *paletteCircles; // @synthesize paletteCircles=_paletteCircles;
 @property(nonatomic) unsigned long long colorCircleSize; // @synthesize colorCircleSize=_colorCircleSize;
 @property(nonatomic, getter=isDimmed) _Bool dimmed; // @synthesize dimmed=_dimmed;
 @property(nonatomic) __weak id <DTSColorPickerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)showColorWheel;
 - (void)didReceiveLongPress:(id)arg1;
 - (void)paletteCircleTapped:(id)arg1;

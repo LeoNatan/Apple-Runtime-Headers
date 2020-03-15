@@ -34,6 +34,7 @@
 }
 
 + (id)tokenFromSearchEntity:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) double blurProgress; // @synthesize blurProgress=_blurProgress;
 @property _Bool offersCompletions; // @synthesize offersCompletions=_offersCompletions;
 @property(retain) SPUITextField *searchField; // @synthesize searchField=_searchField;
@@ -51,7 +52,6 @@
 @property(nonatomic) long long activeInterfaceOrientation; // @synthesize activeInterfaceOrientation=_activeInterfaceOrientation;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) __weak id <SPUIHeaderInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
-- (void).cxx_destruct;
 @property(nonatomic) _Bool useInPlaceFilteredBlur;
 - (double)bottomPadding;
 - (double)topPadding;

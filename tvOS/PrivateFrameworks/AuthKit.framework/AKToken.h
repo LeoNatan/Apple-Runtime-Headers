@@ -17,10 +17,10 @@
 
 + (id)tokenWithBase64String:(id)arg1;
 + (id)tokenWithValue:(id)arg1 lifetime:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
-- (void).cxx_destruct;
 
 @end
 

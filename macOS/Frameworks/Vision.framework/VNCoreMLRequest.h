@@ -15,8 +15,8 @@
 
 + (Class)configurationClass;
 + (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
-@property(readonly, nonatomic) VNCoreMLModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) VNCoreMLModel *model; // @synthesize model=_model;
 - (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (id)sequencedRequestPreviousObservationsKey;

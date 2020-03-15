@@ -16,9 +16,9 @@
 
 + (id)taskForDeletingIndividualWebsiteDataWithRecord:(id)arg1;
 + (id)taskWithType:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WBWebsiteDataRecord *websiteDataRecord; // @synthesize websiteDataRecord=_websiteDataRecord;
 @property(readonly, nonatomic) long long taskType; // @synthesize taskType=_taskType;
-- (void).cxx_destruct;
 - (id)initWithType:(long long)arg1 websiteDataRecord:(id)arg2;
 
 @end

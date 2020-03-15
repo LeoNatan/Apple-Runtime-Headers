@@ -16,9 +16,9 @@
     NSString *_relationshipShareURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *relationshipShareURL; // @synthesize relationshipShareURL=_relationshipShareURL;
 @property(retain, nonatomic) NSString *activityShareURL; // @synthesize activityShareURL=_activityShareURL;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

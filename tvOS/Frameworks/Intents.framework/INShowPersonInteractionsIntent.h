@@ -17,9 +17,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *focusItemIdentifier; // @synthesize focusItemIdentifier=_focusItemIdentifier;
 @property(copy, nonatomic) INPerson *person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

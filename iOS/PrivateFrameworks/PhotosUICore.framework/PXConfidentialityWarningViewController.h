@@ -17,12 +17,12 @@
     UIButton *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(readonly, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
 @property(readonly, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(readonly, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(copy, nonatomic) CDUnknownBlockType cancellationHandler; // @synthesize cancellationHandler=_cancellationHandler;
-- (void).cxx_destruct;
 - (void)_handleButton:(id)arg1;
 - (void)presentAsOverlayInWindowScene:(id)arg1;
 - (void)viewWillLayoutSubviews;

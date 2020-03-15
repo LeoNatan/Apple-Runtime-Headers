@@ -15,8 +15,8 @@
     NSString *_identifier;
 }
 
-@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void)invalidate;
 - (void)resume;
 - (void)suspend;

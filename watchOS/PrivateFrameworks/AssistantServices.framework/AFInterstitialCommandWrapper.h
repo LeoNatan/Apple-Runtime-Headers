@@ -16,9 +16,9 @@
     AceObject<SAAceCommand> *_defaultReply;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AceObject<SAAceCommand> *defaultReply; // @synthesize defaultReply=_defaultReply;
 @property(readonly, nonatomic) AceObject<SAAceCommand> *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (void)dispatchCompletionWithReply:(id)arg1 error:(id)arg2;
 - (id)initWithCommand:(id)arg1 defaultReply:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;

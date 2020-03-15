@@ -17,9 +17,9 @@
 }
 
 + (void)runTestsIfNeeded;
+- (void).cxx_destruct;
 @property _Bool shouldTearDown; // @synthesize shouldTearDown=_shouldTearDown;
 @property(retain, nonatomic) IMCloudKitHookTestSingleton *cloudKitHooks; // @synthesize cloudKitHooks=_cloudKitHooks;
-- (void).cxx_destruct;
 - (void)tearDown;
 - (void)cloudKitEventNotificationManager:(id)arg1 syncProgressDidUpdate:(id)arg2;
 - (void)setUp;

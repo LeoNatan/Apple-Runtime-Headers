@@ -15,8 +15,8 @@
     NSArray *_properties;
 }
 
-@property(readonly) NSArray *properties; // @synthesize properties=_properties;
 - (void).cxx_destruct;
+@property(readonly) NSArray *properties; // @synthesize properties=_properties;
 - (id)structTag;
 - (const char *)extendedObjCType;
 - (unsigned long long)hash;

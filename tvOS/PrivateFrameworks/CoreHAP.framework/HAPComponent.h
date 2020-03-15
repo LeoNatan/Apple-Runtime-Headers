@@ -13,8 +13,8 @@
     id <HAPBTLECentralManagerDelegate> centralManagerDelegate;
 }
 
-@property(nonatomic) __weak id <HAPBTLECentralManagerDelegate> centralManagerDelegate; // @synthesize centralManagerDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <HAPBTLECentralManagerDelegate> centralManagerDelegate; // @synthesize centralManagerDelegate;
 - (id)initWithDelegate:(id)arg1;
 
 @end

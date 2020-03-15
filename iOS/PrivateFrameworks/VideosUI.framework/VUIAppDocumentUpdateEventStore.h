@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_eventByEventDescriptor;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *eventByEventDescriptor; // @synthesize eventByEventDescriptor=_eventByEventDescriptor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *eventByEventDescriptor; // @synthesize eventByEventDescriptor=_eventByEventDescriptor;
 - (id)description;
 - (void)removeAllEvents;
 - (void)addEvents:(id)arg1;

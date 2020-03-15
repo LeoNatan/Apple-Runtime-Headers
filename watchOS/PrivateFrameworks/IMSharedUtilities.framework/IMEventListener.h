@@ -28,6 +28,7 @@
 + (id)eventListener;
 + (id)allListeners;
 + (id)_mutableListenerDictionary;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool willRepeat; // @synthesize willRepeat=_willRepeat;
 @property(copy) CDUnknownBlockType didInvokeCompletion; // @synthesize didInvokeCompletion=_didInvokeCompletion;
 @property(copy) CDUnknownBlockType willInvokeCompletion; // @synthesize willInvokeCompletion=_willInvokeCompletion;
@@ -35,7 +36,6 @@
 @property(readonly) unsigned int eventCount; // @synthesize eventCount=_eventCount;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *semaphore; // @synthesize semaphore=_semaphore;
 @property(nonatomic) double timerStart; // @synthesize timerStart=_timerStart;
-- (void).cxx_destruct;
 - (void)_didReceiveEvent:(_Bool)arg1 userInfo:(id)arg2 error:(id)arg3;
 @property double timeout; // @synthesize timeout=_timeout;
 - (void)reset;

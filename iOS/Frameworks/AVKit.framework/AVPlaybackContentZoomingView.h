@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _previousBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIWindow *lastKnownWindow; // @synthesize lastKnownWindow=_lastKnownWindow;
 @property(nonatomic) struct CGRect previousBounds; // @synthesize previousBounds=_previousBounds;
 @property(nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect videoContentFrame; // @synthesize videoContentFrame=_videoContentFrame;
 @property(nonatomic, getter=isPlayingOnSecondScreen) _Bool playingOnSecondScreen; // @synthesize playingOnSecondScreen=_playingOnSecondScreen;
 @property(readonly, nonatomic) AVPlaybackContentContainerView *activeContentView; // @synthesize activeContentView=_activeContentView;
-- (void).cxx_destruct;
 - (struct UIEdgeInsets)_contentInsets;
 - (void)_updateMinMaxZoomScales:(_Bool)arg1;
 - (void)_updateMinMaxZoomScales;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(readonly, nonatomic) CRKCardPresentation *cardPresentation; // @synthesize cardPresentation=_cardPresentation;
 @property(readonly, nonatomic) CRKCardPresentationConfiguration *configuration; // @synthesize configuration=_configuration;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WFIntentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool requiresConfirmation; // @synthesize requiresConfirmation=_requiresConfirmation;
 @property(readonly, nonatomic) PLClickPresentationInteractionManager *clickPresentationInteractionManager; // @synthesize clickPresentationInteractionManager=_clickPresentationInteractionManager;
-- (void).cxx_destruct;
 - (void)clickPresentationInteractionManager:(id)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
 - (id)presentedViewControllerForClickPresentationInteractionManager:(id)arg1;
 - (double)preferredContentHeightForLongLook:(id)arg1;

@@ -18,11 +18,11 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(nonatomic) long long channelSubscriptionStatus; // @synthesize channelSubscriptionStatus=_channelSubscriptionStatus;
 @property(nonatomic) long long bundleSubscriptionStatus; // @synthesize bundleSubscriptionStatus=_bundleSubscriptionStatus;
 @property(nonatomic) unsigned long long viewingLocation; // @synthesize viewingLocation=_viewingLocation;
-- (void).cxx_destruct;
 - (void)notifyObservers;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

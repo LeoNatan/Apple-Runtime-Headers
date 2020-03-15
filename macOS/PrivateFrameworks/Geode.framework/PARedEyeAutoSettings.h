@@ -13,8 +13,8 @@
     NSArray *_spots;
 }
 
-@property(retain, nonatomic) NSArray *spots; // @synthesize spots=_spots;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *spots; // @synthesize spots=_spots;
 - (BOOL)_applyArchiveDictionary:(id)arg1;
 - (void)_archiveIntoDictionary:(id)arg1;
 

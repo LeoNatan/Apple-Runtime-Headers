@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     VUITextLayout *_titleTextLayout;
     VUITextLayout *_subtitleTextLayout;
     VUITextLayout *_textLayout;
-    VUITextLayout *_focusedTextLayout;
+    VUITextLayout *_belowCardTextLayout;
     TVImageLayout *_badgeLayout;
     VUIMediaTagsViewLayout *_tagsLayout;
     VUIButtonLayout *_versionsButtonLayout;
@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (struct UIEdgeInsets)offerCardPadding;
 + (double)subtitleBaselineMargin;
 + (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) struct TVCornerRadii borderRadii; // @synthesize borderRadii=_borderRadii;
@@ -39,7 +40,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIButtonLayout *versionsButtonLayout; // @synthesize versionsButtonLayout=_versionsButtonLayout;
 @property(retain, nonatomic) VUIMediaTagsViewLayout *tagsLayout; // @synthesize tagsLayout=_tagsLayout;
 @property(retain, nonatomic) TVImageLayout *badgeLayout; // @synthesize badgeLayout=_badgeLayout;
-@property(retain, nonatomic) VUITextLayout *focusedTextLayout; // @synthesize focusedTextLayout=_focusedTextLayout;
+@property(retain, nonatomic) VUITextLayout *belowCardTextLayout; // @synthesize belowCardTextLayout=_belowCardTextLayout;
 @property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 @property(retain, nonatomic) VUITextLayout *subtitleTextLayout; // @synthesize subtitleTextLayout=_subtitleTextLayout;
 @property(retain, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVImageLayout *logoLayout; // @synthesize logoLayout=_logoLayout;
 @property(retain, nonatomic) TVImageLayout *appIconLayout; // @synthesize appIconLayout=_appIconLayout;
 @property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

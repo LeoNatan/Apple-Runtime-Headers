@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (struct CGSize)preferredImageSizeForViewSize:(struct CGSize)arg1;
-@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (id)_borderColor;
 - (void)tintColorDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

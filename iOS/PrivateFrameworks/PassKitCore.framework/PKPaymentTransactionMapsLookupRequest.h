@@ -17,8 +17,8 @@
     _Bool _clearingAttempt;
 }
 
-@property(nonatomic, getter=isClearingAttempt) _Bool clearingAttempt; // @synthesize clearingAttempt=_clearingAttempt;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isClearingAttempt) _Bool clearingAttempt; // @synthesize clearingAttempt=_clearingAttempt;
 - (id)_brandFromMapItem:(id)arg1;
 - (id)_merchantFromMapItem:(id)arg1;
 - (id)_merchantLookupRequest;

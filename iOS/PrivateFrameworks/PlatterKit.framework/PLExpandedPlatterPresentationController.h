@@ -45,13 +45,13 @@
 + (struct CGSize)_sizeOfExpandedPlatter:(id)arg1 withPreferredContentSize:(struct CGSize)arg2 inContainerViewWithBounds:(struct CGRect)arg3;
 + (struct CGRect)useableContainerViewBoundsForExpandedPlatter:(id)arg1 inContainerViewWithBounds:(struct CGRect)arg2;
 + (struct CGSize)_sizeOfViewWithPreferredContentSize:(struct CGSize)arg1 inUseableContainerViewBounds:(struct CGRect)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_keyboardHomeAffordance, setter=_setKeyboardHomeAffordance:) id <PLKeyboardHomeAffordanceAssertion> keyboardHomeAffordance; // @synthesize keyboardHomeAffordance=_keyboardHomeAffordance;
 @property(nonatomic, getter=_keyboardFrame, setter=_setKeyboardFrame:) struct CGRect keyboardFrame; // @synthesize keyboardFrame=_keyboardFrame;
 @property(nonatomic) double additionalHomeAffordanceSpacing; // @synthesize additionalHomeAffordanceSpacing=_additionalHomeAffordanceSpacing;
 @property(retain, nonatomic) UIPanGestureRecognizer *homeAffordancePanGesture; // @synthesize homeAffordancePanGesture=_homeAffordancePanGesture;
 @property(nonatomic, getter=isHomeAffordanceVisible) _Bool homeAffordanceVisible; // @synthesize homeAffordanceVisible=_homeAffordanceVisible;
 @property(nonatomic) __weak id <PLExpandedPlatterPresentationControllerDelegate> presentationControllerDelegate; // @synthesize presentationControllerDelegate=_presentationControllerDelegate;
-- (void).cxx_destruct;
 - (void)keyboardWillHide:(id)arg1;
 - (void)keyboardWillShow:(id)arg1;
 - (void)viewControllerAnimatorDidFinishFirstResponderChanges:(id)arg1;

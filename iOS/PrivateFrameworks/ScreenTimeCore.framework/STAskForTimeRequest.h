@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *requestingUserDisplayName; // @synthesize requestingUserDisplayName=_requestingUserDisplayName;
 @property(retain, nonatomic) NSNumber *requestingUserDSID; // @synthesize requestingUserDSID=_requestingUserDSID;
 @property(retain, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) NSString *resourceDisplayName; // @synthesize resourceDisplayName=_resourceDisplayName;
 @property(readonly, copy, nonatomic) NSString *requestedResourceIdentifier; // @synthesize requestedResourceIdentifier=_requestedResourceIdentifier;
 @property(readonly, nonatomic) long long usageType; // @synthesize usageType=_usageType;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *payload;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

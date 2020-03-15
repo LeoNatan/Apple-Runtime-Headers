@@ -17,10 +17,10 @@
 }
 
 + (id)optionsWithDelegate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setStartsInactive:) _Bool _startsInactive; // @synthesize _startsInactive;
 @property(retain, nonatomic) FBSSerialQueue *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
 @property(readonly, nonatomic) id <FBSWorkspaceDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_initWithDelegate:(id)arg1;
 - (id)init;
 

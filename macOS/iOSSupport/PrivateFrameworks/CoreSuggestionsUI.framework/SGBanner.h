@@ -44,10 +44,10 @@
 + (double)_topMarginConstant;
 + (id)_subtitleFont;
 + (id)_titleFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutXAxisAnchor *closeButtonCenterXAnchor; // @synthesize closeButtonCenterXAnchor=_closeButtonCenterXAnchor;
 @property(nonatomic) long long accessoryType; // @synthesize accessoryType=_accessoryType;
 @property(copy, nonatomic) NSArray *images; // @synthesize images=_images;
-- (void).cxx_destruct;
 - (void)tappableTextView:(id)arg1 didTapRange:(struct _NSRange)arg2;
 - (void)_onDismiss:(id)arg1;
 - (void)_onAction:(id)arg1;

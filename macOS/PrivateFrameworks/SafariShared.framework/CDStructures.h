@@ -22,22 +22,18 @@ struct BookmarkAndHistoryCompletionMatch {
     float _field7;
 };
 
-struct CGSize {
-    double width;
-    double height;
-};
-
 struct DeletionPlan {
     unordered_map_fcbaed0a _field1;
     unordered_set_da619913 _field2;
     unordered_set_da619913 _field3;
     unordered_set_da619913 _field4;
     id _field5;
+    id _field6;
 };
 
 struct FrameMetadata {
     CDUnknownFunctionPointerType *_field1;
-    struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16> _field2;
+    struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _field2;
     struct OpaqueJSValue *_field3;
     struct OpaqueJSValue *_field4;
     struct OpaqueJSContext *_field5;
@@ -51,38 +47,22 @@ struct HashMap<OpaqueFormAutoFillFrame *, std::__1::unique_ptr<SafariShared::Fra
 
 struct HashTable<OpaqueFormAutoFillFrame *, WTF::KeyValuePair<OpaqueFormAutoFillFrame *, std::__1::unique_ptr<SafariShared::FrameMetadata, std::__1::default_delete<SafariShared::FrameMetadata>>>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<OpaqueFormAutoFillFrame *, std::__1::unique_ptr<SafariShared::FrameMetadata, std::__1::default_delete<SafariShared::FrameMetadata>>>>, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashMap<OpaqueFormAutoFillFrame *, std::__1::unique_ptr<SafariShared::FrameMetadata, std::__1::default_delete<SafariShared::FrameMetadata>>, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashTraits<OpaqueFormAutoFillFrame *>, WTF::HashTraits<std::__1::unique_ptr<SafariShared::FrameMetadata, std::__1::default_delete<SafariShared::FrameMetadata>>>>::KeyValuePairTraits, WTF::HashTraits<OpaqueFormAutoFillFrame *>> {
     struct KeyValuePair<OpaqueFormAutoFillFrame *, std::__1::unique_ptr<SafariShared::FrameMetadata, std::__1::default_delete<SafariShared::FrameMetadata>>> *m_table;
-    unsigned int m_tableSize;
-    unsigned int m_tableSizeMask;
-    unsigned int m_keyCount;
-    unsigned int m_deletedCount;
 };
 
 struct HashTable<SafariShared::URLCompletionEntryKey, SafariShared::URLCompletionEntry, SafariShared::URLCompletionEntryKeyExtractor, SafariShared::URLCompletionEntryHash, SafariShared::URLCompletionEntryValueTraits, SafariShared::URLCompletionEntryKeyTraits> {
     struct URLCompletionEntry *m_table;
-    unsigned int m_tableSize;
-    unsigned int m_tableSizeMask;
-    unsigned int m_keyCount;
-    unsigned int m_deletedCount;
 };
 
 struct HistoryURLCompletionItem;
+
+struct JSRetainPtr<OpaqueJSContext *> {
+    struct OpaqueJSContext *m_ptr;
+};
 
 struct KeyValuePair<OpaqueFormAutoFillFrame *, std::__1::unique_ptr<SafariShared::FrameMetadata, std::__1::default_delete<SafariShared::FrameMetadata>>>;
 
 struct LatestVisitInformationMap {
     struct unordered_map<long long, SafariShared::LatestVisitInformation, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, SafariShared::LatestVisitInformation>>> _map;
-};
-
-struct NSMapTable {
-    Class _field1;
-};
-
-struct NSMutableArray {
-    Class _field1;
-};
-
-struct NSMutableSet {
-    Class _field1;
 };
 
 struct OpaqueJSContext;
@@ -135,35 +115,37 @@ struct URLCompletionEntryMap {
     struct unordered_map<WTF::RetainPtr<NSString>, std::__1::unique_ptr<SafariShared::URLCompletionEntryExtras, std::__1::default_delete<SafariShared::URLCompletionEntryExtras>>, std::__1::hash<RetainPtr<NSString>>, std::__1::equal_to<RetainPtr<NSString>>, std::__1::allocator<std::__1::pair<const WTF::RetainPtr<NSString>, std::__1::unique_ptr<SafariShared::URLCompletionEntryExtras, std::__1::default_delete<SafariShared::URLCompletionEntryExtras>>>>> _extras;
 };
 
-struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16> {
+struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
     struct OpaqueJSValue **_field1;
     unsigned int _field2;
     unsigned int _field3;
 };
 
-struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16> {
+struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
     struct RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
 };
 
-struct Vector<double, 0, WTF::CrashOnOverflow, 16> {
+struct Vector<double, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
     double *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
 };
 
-struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> {
+struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
     id *m_buffer;
     unsigned int m_capacity;
     unsigned int m_size;
 };
 
-struct Vector<int, 0, WTF::CrashOnOverflow, 16> {
-    int *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
+struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+    int *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
 };
+
+struct WBSHistoryItemVisitCountScoresStorage;
 
 struct _HistoryStreamedItem {
     CDStruct_c0454aff _field1;
@@ -176,8 +158,6 @@ struct _HistoryStreamedItem {
     unsigned long long _field8;
     int *_field9;
     unsigned long long _field10;
-    char *_field11;
-    unsigned long long _field12;
 };
 
 struct _HistoryStreamedMatchData {
@@ -217,7 +197,7 @@ struct _HistoryStreamedVisit {
     char _field5;
     char _field6;
     char _field7;
-    long long _field8;
+    int _field8;
     long long _field9;
     long long _field10;
     long long _field11;
@@ -267,10 +247,6 @@ struct duration<long long, std::__1::ratio<1, 1000>> {
     long long __rep_;
 };
 
-struct os_unfair_lock_s {
-    unsigned int _os_unfair_lock_opaque;
-};
-
 struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000>>> {
     struct duration<long long, std::__1::ratio<1, 1000000000>> __d_;
 };
@@ -290,6 +266,12 @@ struct unique_ptr<SafariShared::_HistoryStreamedMatchData, std::__1::default_del
 struct unique_ptr<SafariShared::_HistoryStreamedMatchEntry, std::__1::default_delete<SafariShared::_HistoryStreamedMatchEntry>> {
     struct __compressed_pair<SafariShared::_HistoryStreamedMatchEntry *, std::__1::default_delete<SafariShared::_HistoryStreamedMatchEntry>> {
         struct _HistoryStreamedMatchEntry *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<WBSHistoryItemVisitCountScoresStorage, std::__1::default_delete<WBSHistoryItemVisitCountScoresStorage>> {
+    struct __compressed_pair<WBSHistoryItemVisitCountScoresStorage *, std::__1::default_delete<WBSHistoryItemVisitCountScoresStorage>> {
+        struct WBSHistoryItemVisitCountScoresStorage *__value_;
     } __ptr_;
 };
 
@@ -542,17 +524,17 @@ typedef struct RetainPtr<const __CTFontDescriptor *> {
     void *_field1;
 } RetainPtr_887fe677;
 
-typedef struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16> {
+typedef struct Vector<WTF::RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
     struct RefPtr<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
-} Vector_fc835981;
+} Vector_3aefaf4b;
 
-typedef struct Vector<int, 0, WTF::CrashOnOverflow, 16> {
-    int *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
-} Vector_3b5d2a9f;
+typedef struct Vector<int, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> {
+    int *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+} Vector_b217f6ec;
 
 typedef struct duration<long long, std::__1::ratio<1, 1000>> {
     long long __rep_;

@@ -17,8 +17,8 @@
 
 + (id)debugDescription;
 + (id)requestQueueWithIdentifier:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType processItemBlock; // @synthesize processItemBlock=_processItemBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType processItemBlock; // @synthesize processItemBlock=_processItemBlock;
 - (id)description;
 - (void)_itemCompleted;
 - (void)_processItem:(id)arg1;

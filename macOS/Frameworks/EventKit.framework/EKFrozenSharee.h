@@ -20,12 +20,12 @@
 }
 
 + (Class)meltedClass;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCurrentUserForSharing; // @synthesize isCurrentUserForSharing;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL;
 @property(readonly, copy, nonatomic) NSString *status; // @synthesize status;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name;
 @property(readonly, copy, nonatomic) NSString *accessLevel; // @synthesize accessLevel;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isCurrentUserForScheduling;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 

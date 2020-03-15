@@ -19,12 +19,12 @@
 
 + (id)migrationStepWithForeignKeysDisabledFrom:(int)arg1 to:(int)arg2 handler:(CDUnknownBlockType)arg3;
 + (id)migrationStepFrom:(int)arg1 to:(int)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int requiredPrimarySchemaVersion; // @synthesize requiredPrimarySchemaVersion=_requiredPrimarySchemaVersion;
 @property(readonly, copy, nonatomic) NSString *schemaName; // @synthesize schemaName=_schemaName;
 @property(nonatomic) int foreignKeyStatus; // @synthesize foreignKeyStatus=_foreignKeyStatus;
 @property(readonly, nonatomic) int finalSchemaVersion; // @synthesize finalSchemaVersion=_finalSchemaVersion;
 @property(readonly, copy, nonatomic) CDUnknownBlockType migrationHandler; // @synthesize migrationHandler=_migrationHandler;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initForSchema:(id)arg1 toVersion:(int)arg2 requiringVersion:(int)arg3 foreignKeys:(int)arg4 handler:(CDUnknownBlockType)arg5;
 

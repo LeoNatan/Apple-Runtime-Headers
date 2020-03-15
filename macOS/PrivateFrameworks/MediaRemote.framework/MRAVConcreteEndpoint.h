@@ -19,8 +19,8 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 - (BOOL)canModifyGroupMembership;
 - (BOOL)isProxyGroupPlayer;
 @property(retain, nonatomic) MRTransportExternalDevice *externalDevice;

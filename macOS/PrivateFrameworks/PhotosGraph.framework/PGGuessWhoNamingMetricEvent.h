@@ -28,6 +28,7 @@
     double _numberOfPeopleWithAHighConfidenceContactSuggestion;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double numberOfPeopleWithAHighConfidenceContactSuggestion; // @synthesize numberOfPeopleWithAHighConfidenceContactSuggestion=_numberOfPeopleWithAHighConfidenceContactSuggestion;
 @property(nonatomic) double recallHighConfidenceContactSuggestion; // @synthesize recallHighConfidenceContactSuggestion=_recallHighConfidenceContactSuggestion;
 @property(nonatomic) double numberOfPeopleWithAContactSuggestion; // @synthesize numberOfPeopleWithAContactSuggestion=_numberOfPeopleWithAContactSuggestion;
@@ -41,7 +42,6 @@
 @property(nonatomic) unsigned long long numberOfPeople; // @synthesize numberOfPeople=_numberOfPeople;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)gatherMetricsWithProgressBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSDictionary *payload; // @synthesize payload=_payload;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (id)reuseIdentifier;
 + (double)_heightForTextViewWithText:(id)arg1 font:(id)arg2 isHeader:(_Bool)arg3 fittingWidth:(double)arg4 inTraitEnvironment:(id)arg5;
 + (struct CGSize)itemSizeWithText:(id)arg1 isHeader:(_Bool)arg2 fittingSize:(struct CGSize)arg3 inTraitEnvironment:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isHeader; // @synthesize isHeader=_isHeader;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
-- (void).cxx_destruct;
 - (void)_prepareForDisplayWithTraitCollection:(id)arg1;
 - (void)_updateTextViewWithLinkMap:(id)arg1;
 - (void)applyText:(id)arg1 withTextLinkMap:(id)arg2 isHeader:(_Bool)arg3;

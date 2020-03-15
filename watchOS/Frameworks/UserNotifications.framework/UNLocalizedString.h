@@ -17,10 +17,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)localizedStringForKey:(id)arg1 arguments:(id)arg2 value:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(readonly, copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)un_localizedStringValue;
 - (id)un_localizedStringKey;

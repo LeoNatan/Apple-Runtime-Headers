@@ -14,8 +14,8 @@
 }
 
 + (id)defaultStore;
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (id)_fallbackContactWithEmailAddress:(id)arg1 phoneNumber:(id)arg2;
 - (id)contactForPhoneNumber:(id)arg1 withKeys:(id)arg2;
 - (id)contactForEmailAddress:(id)arg1 withKeys:(id)arg2;

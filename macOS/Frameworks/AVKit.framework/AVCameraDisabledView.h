@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSTextField *_cameraDisabledReasonTextField;
 }
 
-@property(retain) NSTextField *cameraDisabledReasonTextField; // @synthesize cameraDisabledReasonTextField=_cameraDisabledReasonTextField;
 - (void).cxx_destruct;
+@property(retain) NSTextField *cameraDisabledReasonTextField; // @synthesize cameraDisabledReasonTextField=_cameraDisabledReasonTextField;
 - (id)makeBackingLayer;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

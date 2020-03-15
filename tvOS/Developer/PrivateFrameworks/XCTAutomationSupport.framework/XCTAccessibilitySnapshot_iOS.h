@@ -20,12 +20,12 @@ __attribute__((visibility("hidden")))
     struct CGRect _mainWindowFrame;
 }
 
+- (void).cxx_destruct;
 @property(readonly) long long appOrientation; // @synthesize appOrientation=_appOrientation;
 @property(readonly) struct CGRect mainWindowFrame; // @synthesize mainWindowFrame=_mainWindowFrame;
 @property(readonly) struct __AXUIElement *mainWindowRef; // @synthesize mainWindowRef=_mainWindowRef;
 @property(readonly) NSDictionary *snapshotOptions; // @synthesize snapshotOptions=_snapshotOptions;
 @property(readonly) NSDictionary *userTestingSnapshot; // @synthesize userTestingSnapshot=_userTestingSnapshot;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithUserTestingSnapshot:(id)arg1 snapshotOptions:(id)arg2 mainWindowRef:(struct __AXUIElement *)arg3 mainWindowFrame:(struct CGRect)arg4 appOrientation:(long long)arg5;

@@ -23,9 +23,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)shortDescription;
+- (void).cxx_destruct;
 @property __weak HMAccessoryCollectionSetting *setting; // @synthesize setting=_setting;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

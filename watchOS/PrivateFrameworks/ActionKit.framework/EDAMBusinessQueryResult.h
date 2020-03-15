@@ -18,11 +18,11 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *matchingNotebooks; // @synthesize matchingNotebooks=_matchingNotebooks;
 @property(retain, nonatomic) NSArray *experts; // @synthesize experts=_experts;
 @property(retain, nonatomic) NSDictionary *totalNotesByNotebook; // @synthesize totalNotesByNotebook=_totalNotesByNotebook;
 @property(retain, nonatomic) NSNumber *totalNotebooks; // @synthesize totalNotebooks=_totalNotebooks;
-- (void).cxx_destruct;
 
 @end
 

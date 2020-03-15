@@ -34,6 +34,7 @@
 + (id)_eventTapForEventTapID:(long long)arg1;
 + (id)_eventTapIDToEventTapInfoMap;
 + (id)_eventTapIDQueue;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long _eventTapID; // @synthesize _eventTapID=__eventTapID;
 @property(nonatomic, setter=_setReconnectCount:) unsigned int _reconnectCount; // @synthesize _reconnectCount=__reconnectCount;
 @property(nonatomic, setter=_setLastReconnectTimestamp:) double _lastReconnectTimestamp; // @synthesize _lastReconnectTimestamp=__lastReconnectTimestamp;
@@ -45,7 +46,6 @@
 @property(readonly, nonatomic) unsigned int _location; // @synthesize _location=__location;
 @property(readonly) unsigned long long eventsOfInterest; // @synthesize eventsOfInterest=_eventsOfInterest;
 @property(readonly) BOOL isActiveEventTap; // @synthesize isActiveEventTap=_isActiveEventTap;
-- (void).cxx_destruct;
 @property(setter=_setEnabled:) BOOL isEnabled;
 - (void)_setRunLoopSource:(struct __CFRunLoopSource *)arg1;
 - (struct __CFRunLoopSource *)_runLoopSource;

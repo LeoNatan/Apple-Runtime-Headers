@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     TVPlaylist *_publicObj;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVPlaylist *publicObj; // @synthesize publicObj=_publicObj;
 @property(readonly, nonatomic) IKAppPlaylistBridge *bridge; // @synthesize bridge=_bridge;
-- (void).cxx_destruct;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id)objectsAtIndexes:(id)arg1;
 - (void)insertObjects:(id)arg1 atIndexes:(id)arg2;

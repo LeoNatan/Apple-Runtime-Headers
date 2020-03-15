@@ -14,9 +14,9 @@
     NSString *_primaryLanguage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldShowSurf; // @synthesize shouldShowSurf=_shouldShowSurf;
 @property(copy, nonatomic) NSString *primaryLanguage; // @synthesize primaryLanguage=_primaryLanguage;
-- (void).cxx_destruct;
 - (struct CGSize)loadSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;
 - (_Bool)displayDuringSend;
 - (Class)cellClass;

@@ -19,11 +19,11 @@
     double _lastInsertedYOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double lastInsertedYOffset; // @synthesize lastInsertedYOffset=_lastInsertedYOffset;
 @property(nonatomic) long long insertedCount; // @synthesize insertedCount=_insertedCount;
 @property(readonly, nonatomic) id <SXAdvertisingSettingsFactory> advertisingSettingsFactory; // @synthesize advertisingSettingsFactory=_advertisingSettingsFactory;
 @property(readonly, nonatomic) id <SXComponentInsertionConditionEngine> conditionEngine; // @synthesize conditionEngine=_conditionEngine;
-- (void).cxx_destruct;
 - (unsigned long long)adTypeFromBannerType:(unsigned long long)arg1;
 - (void)componentInsertionCompleted;
 - (id)cacheValidatorForCache:(id)arg1 DOMObjectProvider:(id)arg2;

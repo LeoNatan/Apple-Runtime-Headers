@@ -20,11 +20,11 @@
 }
 
 + (Class)homeKitRepresentationClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
 @property(nonatomic) _Bool isFavorite; // @synthesize isFavorite;
 @property(retain, nonatomic) HFRoomBuilder *room; // @synthesize room;
 @property(copy, nonatomic) NSString *name; // @synthesize name;
-- (void).cxx_destruct;
 - (id)_lazilyUpdateFavorite;
 - (id)_lazilyUpdateRoom;
 - (id)_lazilyUpdateName;

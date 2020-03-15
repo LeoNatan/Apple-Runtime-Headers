@@ -28,7 +28,7 @@
 - (BOOL)requiresVideoComposition;
 - (id)_evaluateVideo:(out id *)arg1;
 - (id)nodeByReplayingAgainstCache:(id)arg1 pipelineState:(id)arg2 error:(out id *)arg3;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 fadeStartTime;
@@ -37,7 +37,7 @@
 @property(readonly, nonatomic) CDStruct_1b6d18a9 loopDuration;
 @property(readonly, nonatomic) NURenderNode *input;
 - (id)initWithInput:(id)arg1 frameDuration:(CDStruct_1b6d18a9)arg2 trimRange:(CDStruct_5c5366e1)arg3 settings:(id)arg4;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

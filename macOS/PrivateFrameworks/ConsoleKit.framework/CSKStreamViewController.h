@@ -42,6 +42,7 @@
     unsigned long long _currentDisplayedItemsCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long currentDisplayedItemsCount; // @synthesize currentDisplayedItemsCount=_currentDisplayedItemsCount;
 @property(nonatomic) __weak CSKTableViewController *currentViewControllerProxy; // @synthesize currentViewControllerProxy=_currentViewControllerProxy;
 @property(nonatomic) __weak NSViewController *currentDetailsViewControllerProxy; // @synthesize currentDetailsViewControllerProxy=_currentDetailsViewControllerProxy;
@@ -68,7 +69,6 @@
 @property(readonly, nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
 @property(nonatomic) __weak id <CSKStreamViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CSKStreamSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_activitiesObserverRemovalCompletion;
 - (CDUnknownBlockType)_activitiesObserverAdditionCompletion;
 - (CDUnknownBlockType)_activitiesObserverResetCompletion;

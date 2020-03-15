@@ -23,13 +23,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) int sortMode; // @synthesize sortMode=_sortMode;
 @property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(copy, nonatomic) NSString *collectionDescription; // @synthesize collectionDescription=_collectionDescription;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *collectionID; // @synthesize collectionID=_collectionID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)configuredRecordFromAttributes;

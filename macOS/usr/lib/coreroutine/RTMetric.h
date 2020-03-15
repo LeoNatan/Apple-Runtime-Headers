@@ -22,10 +22,10 @@
 + (id)metricName;
 + (id)supportedMetricKeys;
 + (CDStruct_b8464340)event;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL submitted; // @synthesize submitted=_submitted;
 @property(nonatomic) BOOL loggingEnabled; // @synthesize loggingEnabled=_loggingEnabled;
 @property(readonly, nonatomic) NSMutableDictionary *metrics; // @synthesize metrics=_metrics;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)setAllMetrics:(id)arg1 error:(id *)arg2;
 - (BOOL)submitMetricsWithError:(id *)arg1;

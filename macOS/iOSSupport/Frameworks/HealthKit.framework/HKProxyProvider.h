@@ -26,11 +26,11 @@
 }
 
 + (id)_relaunchQueue;
+- (void).cxx_destruct;
 @property BOOL shouldRetryOnInterruption; // @synthesize shouldRetryOnInterruption=_shouldRetryOnInterruption;
 @property(readonly, nonatomic) __weak id <_HKXPCExportable> exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(readonly, nonatomic) NSString *proxyIdentifier; // @synthesize proxyIdentifier=_proxyIdentifier;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
-- (void).cxx_destruct;
 - (void)fetchProxyServiceEndpointForIdentifier:(id)arg1 endpointHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (id)description;
 - (void)_lock_flushContinuationsWithConnection:(id)arg1 error:(id)arg2;

@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
     _UIInternalDraggingSessionDestination *_sessionDestination;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _UIInternalDraggingSessionDestination *sessionDestination; // @synthesize sessionDestination=_sessionDestination;
 @property(nonatomic) unsigned long long progressIndicatorStyle; // @synthesize progressIndicatorStyle=_progressIndicatorStyle;
 @property(readonly, nonatomic) id <UIDragSession> localDragSession; // @synthesize localDragSession=_localDragSession;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) long long _dataOwner;
 @property(readonly, nonatomic, getter=_allowsItemsToUpdate) _Bool _allowsItemsToUpdate;
 - (void)_itemsNeedUpdate:(id)arg1;

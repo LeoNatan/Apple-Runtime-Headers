@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id <MKPlaceAttributionCellButtonDelegate> _buttonDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MKPlaceAttributionCellButtonDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
 - (_Bool)isHighlighted;
-- (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
 
 @end

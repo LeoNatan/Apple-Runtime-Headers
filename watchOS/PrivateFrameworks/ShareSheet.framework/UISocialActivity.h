@@ -21,12 +21,12 @@
 
 + (id)_activityExtensionItemsForActivityItemValues:(id)arg1 extensionItemDataRequest:(id)arg2;
 + (int)activityCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *initialText; // @synthesize initialText=_initialText;
 @property(retain, nonatomic) SLComposeViewController *socialComposeViewController; // @synthesize socialComposeViewController=_socialComposeViewController;
 @property(copy, nonatomic) NSString *builtinActivityType; // @synthesize builtinActivityType=_builtinActivityType;
 @property(copy, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
-- (void).cxx_destruct;
 - (_Bool)_wantsInitialSocialText;
 - (_Bool)_wantsAttachmentURLItemData;
 - (_Bool)_wantsThumbnailItemData;

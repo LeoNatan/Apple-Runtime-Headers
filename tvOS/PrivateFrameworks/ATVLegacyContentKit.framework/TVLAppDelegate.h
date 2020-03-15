@@ -26,6 +26,7 @@
 }
 
 + (void)_setupLogging;
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIAlertController *networkUnavailableAlertController; // @synthesize networkUnavailableAlertController=_networkUnavailableAlertController;
 @property(nonatomic) __weak UIAlertController *applianceUnavailableAlertController; // @synthesize applianceUnavailableAlertController=_applianceUnavailableAlertController;
 @property(copy) NSDictionary *launchOptions; // @synthesize launchOptions=_launchOptions;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) TVLAppliance *headlessAppliance; // @synthesize headlessAppliance=_headlessAppliance;
 @property(retain, nonatomic) TVLAppliance *appliance; // @synthesize appliance=_appliance;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
-- (void).cxx_destruct;
 - (void)_startAppliance;
 - (void)_internetAvailabilityChanged:(id)arg1;
 - (void)_startForegroundApplicationWithCompletion:(CDUnknownBlockType)arg1;

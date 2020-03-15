@@ -29,6 +29,7 @@
 + (id)smallUtility:(id)arg1;
 + (id)smallModular:(id)arg1;
 + (id)largeModular:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *animationGroup; // @synthesize animationGroup=_animationGroup;
 @property(nonatomic) _Bool currentEvent; // @synthesize currentEvent=_currentEvent;
 @property(retain, nonatomic) NSDate *eventDate; // @synthesize eventDate=_eventDate;
@@ -36,7 +37,6 @@
 @property(nonatomic) int hemisphere; // @synthesize hemisphere=_hemisphere;
 @property(nonatomic) unsigned int phaseNumber; // @synthesize phaseNumber=_phaseNumber;
 @property(retain, nonatomic) NSString *phaseName; // @synthesize phaseName=_phaseName;
-- (void).cxx_destruct;
 - (id)templateForComplicationFamily:(int)arg1;
 
 @end

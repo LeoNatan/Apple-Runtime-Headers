@@ -19,11 +19,11 @@
     id <ABCollectionItemMessagingAvailabilityHelperDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ABCollectionItemMessagingAvailabilityHelperDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic, getter=isAvailableForMessaging) BOOL availableForMessaging; // @synthesize availableForMessaging=_availableForMessaging;
 @property(retain, nonatomic) ABFaceTimeCommunicationsBridge *bridge; // @synthesize bridge=_bridge;
-- (void).cxx_destruct;
 - (void)faceTimeCommunicationsBridge:(id)arg1 messagingAvailabilityChanged:(BOOL)arg2 forEndpoint:(id)arg3;
 - (void)startAvailabilityCheckForEndpoint:(id)arg1 property:(id)arg2;
 - (id)init;

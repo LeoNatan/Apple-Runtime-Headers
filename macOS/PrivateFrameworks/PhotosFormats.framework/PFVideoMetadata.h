@@ -10,6 +10,8 @@
 {
 }
 
++ (void)enumerateVideoTrackFormatDescriptionsInAsset:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (BOOL)videoAssetIsHighDynamicRange:(id)arg1;
 + (BOOL)videoAssetIsPlayable:(id)arg1;
 + (BOOL)videoAssetIsDecodable:(id)arg1;
 + (id)arrayByRemovingMetadataItemOfType:(unsigned char)arg1 fromArray:(id)arg2 error:(id *)arg3;

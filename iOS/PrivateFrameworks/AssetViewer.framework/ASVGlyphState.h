@@ -17,8 +17,8 @@
     id <ASVGlyphStateDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ASVGlyphStateDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ASVGlyphStateDelegate> delegate; // @synthesize delegate=_delegate;
 -     // Error parsing type: 16@0:8, name: computeTranslationTarget
 -     // Error parsing type: 16@0:8, name: computeScaleTarget
 - (CDStruct_183601bc)computeQuaternionTarget;

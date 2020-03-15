@@ -6,15 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, PUICQuickboardSessionAnalytics;
 
 @interface PUICQuickboardUsageLogger : NSObject
 {
+    PUICQuickboardSessionAnalytics *_currentQuickboardUsageSession;
     NSString *_currentQuickboardUsageKey;
 }
 
++ (_Bool)isReportingEnabled;
 + (id)sharedLogger;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PUICQuickboardSessionAnalytics *currentQuickboardUsageSession; // @synthesize currentQuickboardUsageSession=_currentQuickboardUsageSession;
+- (void)logScribbleUsedCandidateSelection;
+- (void)logScribbleCharacterDeletion:(unsigned int)arg1;
+- (void)logScribbleInputLength:(unsigned int)arg1;
 - (void)logUsedMemojiSticker;
 - (void)logUsedAnimojiSticker;
 - (void)logUsedAudioMessage;
@@ -25,12 +31,14 @@
 - (void)logUsedAnimatedEmoji;
 - (void)logUsedArouet;
 - (void)logUsedSmartReplyAtIndex:(int)arg1;
-- (void)logUsedCannedReply;
 - (void)logUsedSmartReply;
+- (void)logQuickboardInputLanguage:(id)arg1;
 - (void)logQuickboardResponseCancelled;
 - (void)logQuickboardResponseSent;
+- (void)logQuickboardResponseAccepted;
 - (void)_logQuickboardUsage:(id)arg1;
 - (void)_logKey:(id)arg1;
+- (id)init;
 
 @end
 

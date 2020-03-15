@@ -32,6 +32,7 @@
     UIBarButtonItem *_flexibleSpaceItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *flexibleSpaceItem; // @synthesize flexibleSpaceItem=_flexibleSpaceItem;
 @property(retain, nonatomic) UIBarButtonItem *shareItem; // @synthesize shareItem=_shareItem;
 @property(retain, nonatomic) UIBarButtonItem *stopItem; // @synthesize stopItem=_stopItem;
@@ -49,7 +50,6 @@
 @property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
 @property(nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(nonatomic) __weak NSUndoManager *workflowUndoManager; // @synthesize workflowUndoManager=_workflowUndoManager;
-- (void).cxx_destruct;
 - (long long)positionForBar:(id)arg1;
 - (void)addTapped;
 - (void)redoTapped;

@@ -13,8 +13,8 @@
     NSString *_syncState;
 }
 
-@property(readonly, copy, nonatomic) NSString *syncState; // @synthesize syncState=_syncState;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *syncState; // @synthesize syncState=_syncState;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSSyncFolderHierarchyResponseOperation *responseOperation;
 - (id)prepareRequest;

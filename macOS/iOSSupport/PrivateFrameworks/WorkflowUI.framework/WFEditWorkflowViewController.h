@@ -23,7 +23,6 @@
 {
     NSUndoManager *_undoManager;
     id <WFVariableUIDelegate> _variableUIDelegate;
-    double _bottomContentInset;
     NSAttributedString *_emptyStateInstructionText;
     NSHashTable *_currentDragControllers;
     NSHashTable *_moduleDragControllers;
@@ -45,6 +44,7 @@
 }
 
 + (BOOL)displaysEmptyView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFEditShortcutEvent *editShortcutEvent; // @synthesize editShortcutEvent=_editShortcutEvent;
 @property(nonatomic) struct CGPoint actionRevealInitialOffset; // @synthesize actionRevealInitialOffset=_actionRevealInitialOffset;
 @property(retain, nonatomic) NSIndexPath *actionRevealToIndexPath; // @synthesize actionRevealToIndexPath=_actionRevealToIndexPath;
@@ -63,10 +63,8 @@
 @property(readonly, nonatomic) NSHashTable *moduleDragControllers; // @synthesize moduleDragControllers=_moduleDragControllers;
 @property(readonly, nonatomic) NSHashTable *currentDragControllers; // @synthesize currentDragControllers=_currentDragControllers;
 @property(copy, nonatomic) NSAttributedString *emptyStateInstructionText; // @synthesize emptyStateInstructionText=_emptyStateInstructionText;
-@property(nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
 @property(nonatomic) __weak id <WFVariableUIDelegate> variableUIDelegate; // @synthesize variableUIDelegate=_variableUIDelegate;
 @property(readonly, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
-- (void).cxx_destruct;
 - (void)logEditEventIfNeccesary;
 - (void)updateEditEvent;
 - (void)shareWorkflow:(id)arg1;

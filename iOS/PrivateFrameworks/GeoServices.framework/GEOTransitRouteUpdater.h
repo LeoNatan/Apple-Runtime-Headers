@@ -16,10 +16,10 @@
     NSSet *_requests;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(copy, nonatomic) NSSet *requests; // @synthesize requests=_requests;
 @property(nonatomic) __weak id <GEOTransitRouteUpdaterDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 andInitialTTL:(double)arg2;
 

@@ -16,10 +16,10 @@
     NSBox *_resizingSeparator;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) NSBox *resizingSeparator; // @synthesize resizingSeparator=_resizingSeparator;
 @property(readonly, nonatomic) NSMutableSet *separators; // @synthesize separators=_separators;
 @property(nonatomic) __weak id <KHEditorViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)cursorUpdate:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;

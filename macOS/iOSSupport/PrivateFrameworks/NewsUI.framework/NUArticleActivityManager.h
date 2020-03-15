@@ -23,6 +23,7 @@
     id <NUArticleActivityOptionsProvider> _optionsProvider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <NUArticleActivityOptionsProvider> optionsProvider; // @synthesize optionsProvider=_optionsProvider;
 @property(readonly, nonatomic) id <NUURLModifying> URLModifier; // @synthesize URLModifier=_URLModifier;
 @property(readonly, nonatomic) id <NUReportConcernViewPresenter> reportConcernViewPresenter; // @synthesize reportConcernViewPresenter=_reportConcernViewPresenter;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) FCReadingList *readingList; // @synthesize readingList=_readingList;
 @property(readonly, nonatomic) FCReadingHistory *readingHistory; // @synthesize readingHistory=_readingHistory;
 @property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
-- (void).cxx_destruct;
 - (BOOL)channelMutedForHeadline:(id)arg1;
 - (BOOL)articleSavedForHeadline:(id)arg1;
 - (BOOL)articleDislikedForHeadline:(id)arg1;

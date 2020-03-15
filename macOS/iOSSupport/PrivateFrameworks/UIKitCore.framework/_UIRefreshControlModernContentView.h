@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
     double _impactIntensity;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double impactIntensity; // @synthesize impactIntensity=_impactIntensity;
 @property(nonatomic) double currentPopStiffness; // @synthesize currentPopStiffness=_currentPopStiffness;
 @property(readonly, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(nonatomic) BOOL areAnimationsValid; // @synthesize areAnimationsValid=_areAnimationsValid;
-- (void).cxx_destruct;
 - (id)attributedTitle;
 - (void)setAttributedTitle:(id)arg1;
 - (void)setTintColor:(id)arg1;

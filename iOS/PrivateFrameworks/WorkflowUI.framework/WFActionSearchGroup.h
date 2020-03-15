@@ -15,10 +15,10 @@
     NSArray *_actions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 localizedName:(id)arg2 actions:(id)arg3;
 
 @end

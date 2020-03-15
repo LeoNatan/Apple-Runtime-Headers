@@ -19,6 +19,7 @@
     NSDate *_startDate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool beginPlaybackAtStartDate; // @synthesize beginPlaybackAtStartDate=_beginPlaybackAtStartDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) float bookmarkNetTimeSec; // @synthesize bookmarkNetTimeSec=_bookmarkNetTimeSec;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *eventGroups; // @synthesize eventGroups=_eventGroups;
 @property(retain, nonatomic) TVLTrickPlayConfigElement *trickPlayConfig; // @synthesize trickPlayConfig=_trickPlayConfig;
 @property(nonatomic) _Bool indefiniteDuration; // @synthesize indefiniteDuration=_indefiniteDuration;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithXMLElement:(id)arg1 parentFeedElement:(id)arg2;
 

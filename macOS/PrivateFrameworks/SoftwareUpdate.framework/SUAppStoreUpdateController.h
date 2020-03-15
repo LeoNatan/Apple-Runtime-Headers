@@ -96,7 +96,6 @@
 - (void)_setAvailableUpdatesAndNotify:(id)arg1 withMajorOSUpdates:(id)arg2 currentStatus:(id)arg3 deferredUpdatesChanged:(BOOL)arg4;
 - (void)blockUntilInitialAvailableUpdatesPopulated;
 - (void)fetchMajorProductForUpdate:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (id)latestQualifyingMajorOSUpdate;
 - (id)availableMajorOSUpdates;
 - (id)availableUpdates;
 - (void)_updateCanStartUpdate:(id)arg1;

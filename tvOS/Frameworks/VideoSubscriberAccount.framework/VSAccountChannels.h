@@ -19,11 +19,11 @@
 }
 
 + (id)deserializationResultWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *providerInfo; // @synthesize providerInfo=_providerInfo;
 @property(copy, nonatomic) NSSet *channelIDs; // @synthesize channelIDs=_channelIDs;
 @property(copy, nonatomic) NSString *adamID; // @synthesize adamID=_adamID;
 @property(copy, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -47,6 +47,8 @@
 }
 
 + (Class)layerClass;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) double delayBetweenStrokes; // @synthesize delayBetweenStrokes=_delayBetweenStrokes;
 @property(nonatomic) unsigned long vertexOffset; // @synthesize vertexOffset=_vertexOffset;
 @property(nonatomic) vector_8b7b626a secondaryVertexBatchCount; // @synthesize secondaryVertexBatchCount=_secondaryVertexBatchCount;
@@ -69,8 +71,6 @@
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(retain, nonatomic) ETSketchMessage *messageData; // @synthesize messageData=_messageData;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)sketchRendererDidReachVertexLimit:(id)arg1;
 - (void)clearAllPoints;
 - (void)didCompleteStroke;

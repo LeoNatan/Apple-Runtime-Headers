@@ -23,11 +23,11 @@
     struct CGRect _superviewBounds;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPulsating; // @synthesize isPulsating=_isPulsating;
 @property(nonatomic) _Bool shouldPause; // @synthesize shouldPause=_shouldPause;
 @property(nonatomic) struct CGRect superviewBounds; // @synthesize superviewBounds=_superviewBounds;
 @property(nonatomic, getter=isFadingOut) _Bool fadingOut; // @synthesize fadingOut=_fadingOut;
-- (void).cxx_destruct;
 - (void)_resumeAnimations;
 - (void)_pauseAnimations;
 - (void)setAnimationsEnabled:(_Bool)arg1;

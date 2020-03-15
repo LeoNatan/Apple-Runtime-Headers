@@ -21,13 +21,13 @@
     NSObject<OS_dispatch_queue> *_outstandingRequestsModQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *outstandingRequestsModQueue; // @synthesize outstandingRequestsModQueue=_outstandingRequestsModQueue;
 @property(retain, nonatomic) NSMutableDictionary *registeredRequestHandlers; // @synthesize registeredRequestHandlers=_registeredRequestHandlers;
 @property(retain, nonatomic) NSMutableDictionary *outstandingRequests; // @synthesize outstandingRequests=_outstandingRequests;
 @property(nonatomic) unsigned int minVersion; // @synthesize minVersion=_minVersion;
 @property(retain, nonatomic) NSString *serviceId; // @synthesize serviceId=_serviceId;
 @property(retain, nonatomic) IDSService *service; // @synthesize service=_service;
-- (void).cxx_destruct;
 - (_Bool)_checkMinVersionDeviceID:(id)arg1;
 - (id)_sendProtobuf:(id)arg1 priority:(long long)arg2 responseIdentifier:(id)arg3 expectsResponse:(_Bool)arg4 bypassingDuet:(_Bool)arg5 deviceID:(id)arg6;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;

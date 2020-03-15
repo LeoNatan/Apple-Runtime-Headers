@@ -21,13 +21,13 @@
 + (double)leewayForPriority:(int)arg1;
 + (id)prelaunchActivityFor:(id)arg1 priority:(int)arg2 schedule:(id)arg3 firstPrelaunch:(_Bool)arg4;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _DASActivity *duetActivity; // @synthesize duetActivity=_duetActivity;
 @property(readonly, nonatomic) _Bool firstPrelaunch; // @synthesize firstPrelaunch=_firstPrelaunch;
 @property(readonly, nonatomic) double leeway; // @synthesize leeway=_leeway;
 @property(readonly, nonatomic) NSDate *schedule; // @synthesize schedule=_schedule;
 @property(readonly, nonatomic) int priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (unsigned int)duetPriority;
 - (id)name;
 - (id)description;

@@ -23,9 +23,9 @@
 + (id)offeringWithResponse:(id)arg1 localItemsQuery:(id)arg2;
 + (long long)defaultOfferVariant;
 + (void)setDefaultOfferVariant:(long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(readonly, nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) MPStoreOfferMediaItemCollection *collectionWithCompletionItems;
 @property(nonatomic) long long preferredStoreOfferVariant;
 - (void)_loadOfferingData;

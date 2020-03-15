@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 + (id)templateImageWithType:(unsigned char)arg1;
 + (id)imageWithType:(unsigned char)arg1 color:(BOOL)arg2;
 + (float)progressForTime:(double)arg1 duration:(double)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IMManualUpdater *displayUpdater; // @synthesize displayUpdater=_displayUpdater;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(nonatomic) BOOL color; // @synthesize color=_color;
 @property(nonatomic, getter=isPlayed) _Bool played; // @synthesize played=_played;
 @property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (void)setNeedsPrepareForDisplay;
 - (void)prepareForDisplayIfNeeded;
 - (void)prepareForDisplay;

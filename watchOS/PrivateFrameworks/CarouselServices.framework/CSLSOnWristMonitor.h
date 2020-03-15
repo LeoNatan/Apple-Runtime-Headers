@@ -22,6 +22,7 @@
     CSLOnWristClientExportedObject *_exportedObject;
 }
 
+- (void).cxx_destruct;
 @property(getter=isActivated) _Bool activated; // @synthesize activated=_activated;
 @property(retain, nonatomic) CSLOnWristClientExportedObject *exportedObject; // @synthesize exportedObject=_exportedObject;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <CSLSOnWristMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
 @property(retain) CSLSOnWristState *lastState; // @synthesize lastState=_lastState;
-- (void).cxx_destruct;
 - (void)_queue_onWristStateChanged:(id)arg1;
 - (void)_queue_didGetOnWristState:(id)arg1 notify:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_getCSLSWristState:(CDUnknownBlockType)arg1 notify:(_Bool)arg2;

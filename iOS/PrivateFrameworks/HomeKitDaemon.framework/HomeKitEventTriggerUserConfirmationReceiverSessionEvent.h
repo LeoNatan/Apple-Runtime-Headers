@@ -18,9 +18,9 @@
 
 + (id)uuid;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) AWDHomeKitEventTriggerUserConfirmationReceiverSession *metric; // @synthesize metric=_metric;
-- (void).cxx_destruct;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 - (id)initWithSessionID:(id)arg1;

@@ -19,11 +19,11 @@
     unsigned int _currentImageIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(readonly, nonatomic) unsigned int currentImageIndex; // @synthesize currentImageIndex=_currentImageIndex;
 @property(readonly, nonatomic) unsigned int maxImageIndex; // @synthesize maxImageIndex=_maxImageIndex;
 @property(copy, nonatomic) NSString *animatedImagePath; // @synthesize animatedImagePath=_animatedImagePath;
-- (void).cxx_destruct;
 - (void)_updateImage;
 - (void)_stepAnimation;
 - (void)didMoveToSuperview;

@@ -16,10 +16,10 @@
     CDUnknownBlockType _loadingCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType loadingCompletionHandler; // @synthesize loadingCompletionHandler=_loadingCompletionHandler;
 @property(copy, nonatomic) NSString *pluginMode; // @synthesize pluginMode=_pluginMode;
 @property(retain, nonatomic) TVSSSearchResult *searchResult; // @synthesize searchResult=_searchResult;
-- (void).cxx_destruct;
 - (void)appController:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (id)_launchOptions;
 - (struct CGSize)preferredContentSize;

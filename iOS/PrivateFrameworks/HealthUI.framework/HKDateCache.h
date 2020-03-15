@@ -30,9 +30,9 @@
     NSCalendar *_calendar;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endOfYesterdayMidnight; // @synthesize endOfYesterdayMidnight=_endOfYesterdayMidnight;
 @property(readonly, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 - (void)_flushCacheAndNotifyObservers:(id)arg1;
 - (void)flushCache;
 - (_Bool)isDayOfWeekNumberOnWeekend:(id)arg1;

@@ -18,11 +18,11 @@
 
 + (id)targetValueWithValue:(id)arg1;
 + (id)thresholdValueWithMinimumValue:(id)arg1 maximumValue:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *targetValue; // @synthesize targetValue=_targetValue;
 @property(copy, nonatomic) NSNumber *maximumValue; // @synthesize maximumValue=_maximumValue;
 @property(copy, nonatomic) NSNumber *minimumValue; // @synthesize minimumValue=_minimumValue;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

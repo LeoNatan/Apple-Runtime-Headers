@@ -22,11 +22,11 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *bodyType; // @synthesize bodyType=_bodyType;
 @property(retain, nonatomic) NSString *replyMessage; // @synthesize replyMessage=_replyMessage;
 @property(retain, nonatomic) NSNumber *enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSNumber *audience; // @synthesize audience=_audience;
-- (void).cxx_destruct;
 - (void)parseASParseContext:(id)arg1 root:(id)arg2 parent:(id)arg3 callbackDict:(id)arg4 streamCallbackDict:(id)arg5 account:(id)arg6;
 - (id)description;
 - (void)appliesToExternalUnknown:(id)arg1;

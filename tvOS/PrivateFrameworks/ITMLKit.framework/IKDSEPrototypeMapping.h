@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)prototypeMappingFromAppPrototype:(id)arg1 dataSourceElement:(id)arg2 elementFactory:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSIndexSet *usageIndexes; // @synthesize usageIndexes=_usageIndexes;
 @property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(readonly, nonatomic) IKAppPrototypeIdentifier *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 viewElement:(id)arg2 usageIndexes:(id)arg3;
 
 @end

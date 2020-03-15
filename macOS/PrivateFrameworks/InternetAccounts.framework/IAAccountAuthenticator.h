@@ -31,6 +31,7 @@
 + (id)errorForHTTPStatus:(long long)arg1;
 + (id)parseGoogleResponse:(id)arg1;
 + (long long)authType;
+- (void).cxx_destruct;
 @property BOOL result; // @synthesize result=_result;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(readonly) NSHTTPURLResponse *urlResponse; // @synthesize urlResponse=_urlResponse;
@@ -38,7 +39,6 @@
 @property(retain) NSURLRequest *urlRequest; // @synthesize urlRequest=_urlRequest;
 @property long long authType; // @synthesize authType=_authType;
 @property(retain) NSURLCredential *credential; // @synthesize credential=_credential;
-- (void).cxx_destruct;
 - (BOOL)plugin:(id)arg1 handleCertificateError:(id)arg2;
 - (void)plugin:(id)arg1 didChangeAccountUID:(id)arg2;
 - (void)plugin:(id)arg1 didDeleteAccountUID:(id)arg2;

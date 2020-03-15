@@ -20,10 +20,10 @@
     UIView *_targetContentView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *targetContentView; // @synthesize targetContentView=_targetContentView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <PXTranscriptBubbleDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;

@@ -24,9 +24,10 @@
     unsigned long long _migratableItemsSupported;
 }
 
++ (id)fdeSignedUsersFilter;
 + (id)secureTokenAdminUsersFilter;
-+ (id)secureTokenUsersFilter;
 + (id)migratableUsersFilter;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long migratableItemsSupported; // @synthesize migratableItemsSupported=_migratableItemsSupported;
 @property(retain) NSString *modelUTI; // @synthesize modelUTI=_modelUTI;
 @property(retain) NSString *modelID; // @synthesize modelID=_modelID;
@@ -39,7 +40,6 @@
 @property unsigned long long state; // @synthesize state=_state;
 @property BOOL valid; // @synthesize valid=_valid;
 @property(retain) NSURL *path; // @synthesize path=_path;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)scannerInit;
 - (void)unmount;

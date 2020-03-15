@@ -14,8 +14,8 @@
 }
 
 + (id)itemForAsset:(id)arg1;
-@property(retain) PHAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
+@property(retain) PHAsset *asset; // @synthesize asset=_asset;
 - (void)assetDidChange:(id)arg1;
 - (id)initWithAsset:(id)arg1;
 

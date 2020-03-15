@@ -22,13 +22,13 @@
     NSString *_context;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *context; // @synthesize context=_context;
 @property(nonatomic) int grade; // @synthesize grade=_grade;
 @property(nonatomic) _Bool discarded; // @synthesize discarded=_discarded;
 @property(copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(retain, nonatomic) _CPRange *hintRange; // @synthesize hintRange=_hintRange;
 @property(nonatomic) unsigned long long timestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

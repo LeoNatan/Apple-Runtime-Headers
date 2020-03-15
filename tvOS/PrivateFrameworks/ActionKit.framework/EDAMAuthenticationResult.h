@@ -24,6 +24,7 @@
 
 + (id)structFields;
 + (id)structName;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EDAMUserUrls *urls; // @synthesize urls=_urls;
 @property(retain, nonatomic) NSString *secondFactorDeliveryHint; // @synthesize secondFactorDeliveryHint=_secondFactorDeliveryHint;
 @property(retain, nonatomic) NSNumber *secondFactorRequired; // @synthesize secondFactorRequired=_secondFactorRequired;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) NSNumber *expiration; // @synthesize expiration=_expiration;
 @property(retain, nonatomic) NSString *authenticationToken; // @synthesize authenticationToken=_authenticationToken;
 @property(retain, nonatomic) NSNumber *currentTime; // @synthesize currentTime=_currentTime;
-- (void).cxx_destruct;
 
 @end
 

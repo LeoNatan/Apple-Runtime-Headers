@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     id <CNScheduler> _mainThreadScheduler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNScheduler> mainThreadScheduler; // @synthesize mainThreadScheduler=_mainThreadScheduler;
 @property(retain, nonatomic) CNUINavigationListViewController *listController; // @synthesize listController=_listController;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNHealthStoreManager *healthStoreManager; // @synthesize healthStoreManager=_healthStoreManager;
 @property(nonatomic) _Bool addingToEmergency; // @synthesize addingToEmergency=_addingToEmergency;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-- (void).cxx_destruct;
 - (void)medicalIDViewControllerDidFinish:(id)arg1;
 - (void)medicalIDViewControllerDidSave:(id)arg1;
 - (void)medicalIDViewControllerDidCancel:(id)arg1;

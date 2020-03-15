@@ -24,6 +24,7 @@
     EMBlockedSenderManager *_blockedSenderManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) EMBlockedSenderManager *blockedSenderManager; // @synthesize blockedSenderManager=_blockedSenderManager;
 - (void)setIsDefaultRule:(BOOL)arg1;
 - (BOOL)isDefaultRule;
@@ -47,7 +48,6 @@
 - (long long)flagsToApply;
 - (void)setRuleName:(id)arg1;
 - (id)ruleName;
-- (void).cxx_destruct;
 - (id)description;
 - (void)setIsActive:(BOOL)arg1;
 - (BOOL)isActive;

@@ -24,9 +24,9 @@
 + (BOOL)shouldUseActionsWithContext:(id)arg1;
 + (BOOL)hitWindowIsPopover;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property __weak id <DDActionsManagerDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property BOOL forceWindowAnimationsFromRight; // @synthesize forceWindowAnimationsFromRight=_forceWindowAnimationsFromRight;
-- (void).cxx_destruct;
 - (id)runActionForDictionary:(id)arg1;
 - (void)requestBubbleClosureUnanchorOnFailure:(BOOL)arg1;
 - (void)unanchorBubbles;

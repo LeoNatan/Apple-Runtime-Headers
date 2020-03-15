@@ -38,10 +38,10 @@
 + (id)alarm;
 + (id)alarmWithDefaultAlarm:(id)arg1;
 + (id)alarmWithAlarm:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *sharedUID; // @synthesize sharedUID;
 @property(nonatomic) BOOL isSnoozed; // @synthesize isSnoozed;
 @property(readonly, nonatomic) BOOL isDefault; // @synthesize isDefault;
-- (void).cxx_destruct;
 - (BOOL)isTopographicallyEqualToAlarm:(id)arg1;
 @property(copy, nonatomic) NSArray *snoozedAlarms;
 @property(retain, nonatomic) EKAlarm *originalAlarm;

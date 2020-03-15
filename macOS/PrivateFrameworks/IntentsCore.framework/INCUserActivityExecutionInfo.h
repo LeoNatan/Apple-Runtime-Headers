@@ -14,8 +14,8 @@
 }
 
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSString *userActivityType; // @synthesize userActivityType=_userActivityType;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *userActivityType; // @synthesize userActivityType=_userActivityType;
 - (BOOL)canRunOnLocalDevice;
 - (id)_initWithUserActivityType:(id)arg1 launchableAppBundleId:(id)arg2 containingAppBundleURL:(id)arg3;
 - (id)initWithUserActivityType:(id)arg1 launchableAppBundleId:(id)arg2;

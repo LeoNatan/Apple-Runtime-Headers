@@ -13,8 +13,8 @@
     AVCaptureVideoPreviewLayer *_previewLayer;
 }
 
-@property(retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer; // @synthesize previewLayer=_previewLayer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVCaptureVideoPreviewLayer *previewLayer; // @synthesize previewLayer=_previewLayer;
 - (void)addPreviewLayer:(id)arg1;
 - (void)layoutSubviews;
 

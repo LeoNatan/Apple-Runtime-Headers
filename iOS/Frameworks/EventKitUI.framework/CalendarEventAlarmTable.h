@@ -28,6 +28,7 @@
     id <EKStyleProvider> _styleProvider;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool eventHasTravelTime; // @synthesize eventHasTravelTime=_eventHasTravelTime;
 @property(nonatomic) _Bool leaveNowAlarmSelected; // @synthesize leaveNowAlarmSelected=_leaveNowAlarmSelected;
 @property(nonatomic) _Bool shouldShowLeaveNowOption; // @synthesize shouldShowLeaveNowOption=_shouldShowLeaveNowOption;
@@ -36,7 +37,6 @@
 @property(nonatomic) _Bool useAllDayAlarms; // @synthesize useAllDayAlarms=_useAllDayAlarms;
 @property(retain, nonatomic) id <EKStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(nonatomic) __weak id <CalendarEventAlarmTableDelegate> alarmTableDelegate; // @synthesize alarmTableDelegate=_alarmTableDelegate;
-- (void).cxx_destruct;
 - (long long)presetIdentifierAtIndex:(unsigned long long)arg1;
 - (unsigned long long)countOfPresets;
 - (int)intervalForPresetIdentifier:(long long)arg1;

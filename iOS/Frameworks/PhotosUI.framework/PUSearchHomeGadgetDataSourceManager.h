@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     long long _filteringState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long filteringState; // @synthesize filteringState=_filteringState;
 @property(retain, nonatomic) PUSearchZeroKeywordGadgetProvider *zeroKeywordGadgetProvider; // @synthesize zeroKeywordGadgetProvider=_zeroKeywordGadgetProvider;
-- (void).cxx_destruct;
 - (void)ppt_prepareZeroKeywordRequest:(CDUnknownBlockType)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (id)_sortingRankForGadget:(id)arg1;

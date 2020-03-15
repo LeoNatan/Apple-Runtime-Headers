@@ -15,10 +15,10 @@
     NSSet *_momentNodes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *momentNodes; // @synthesize momentNodes=_momentNodes;
 @property(retain, nonatomic) PHMemory *memory; // @synthesize memory=_memory;
 @property(retain, nonatomic) PGGraph *graph; // @synthesize graph=_graph;
-- (void).cxx_destruct;
 - (id)_predominantSuperset;
 - (id)_areaNodeForAreaMemory;
 - (id)_personNodeForPersonMemory;

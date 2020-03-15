@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isValidDestination:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSData *pushToken; // @synthesize pushToken=_pushToken;
 @property(readonly, copy) HMDAccountHandle *accountHandle; // @synthesize accountHandle=_accountHandle;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)destination;

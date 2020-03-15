@@ -13,8 +13,8 @@
     ICCache *_imageCache;
 }
 
-@property(retain, nonatomic) ICCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void)removeAllThumbnailData;
 - (id)thumbnailDataForKey:(id)arg1;
 - (void)removeThumbnailDataForKey:(id)arg1;

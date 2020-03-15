@@ -45,6 +45,7 @@
     UIBarButtonItem *_cancelButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIBarButtonItem *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) NSString *addNewTagTitle; // @synthesize addNewTagTitle=_addNewTagTitle;
@@ -70,7 +71,6 @@
 @property(nonatomic) _Bool pinTextFieldToTopBound; // @synthesize pinTextFieldToTopBound=_pinTextFieldToTopBound;
 @property(nonatomic) _Bool useCompactColorPicker; // @synthesize useCompactColorPicker=_useCompactColorPicker;
 @property(nonatomic) _Bool showAddTagConfirmButtons; // @synthesize showAddTagConfirmButtons=_showAddTagConfirmButtons;
-- (void).cxx_destruct;
 - (void)tagEditor:(id)arg1 userDidDeselectTag:(id)arg2;
 - (void)tagEditor:(id)arg1 userDidSelectTag:(id)arg2;
 - (void)tagEditor:(id)arg1 userDidCreateTag:(id)arg2;

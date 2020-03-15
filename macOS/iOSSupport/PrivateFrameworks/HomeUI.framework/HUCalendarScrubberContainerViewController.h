@@ -24,6 +24,7 @@
     NSDate *_lastSelectedDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastSelectedDate; // @synthesize lastSelectedDate=_lastSelectedDate;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(retain, nonatomic) NSLayoutConstraint *backgroundWidthConstraint; // @synthesize backgroundWidthConstraint=_backgroundWidthConstraint;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) UIButton *nextWeekButton; // @synthesize nextWeekButton=_nextWeekButton;
 @property(retain, nonatomic) UIButton *prevWeekButton; // @synthesize prevWeekButton=_prevWeekButton;
 @property(retain, nonatomic) HUCalendarScrubberViewController *calendarScrubber; // @synthesize calendarScrubber=_calendarScrubber;
-- (void).cxx_destruct;
 - (void)playbackEngine:(id)arg1 didUpdateTimeControlStatus:(unsigned long long)arg2;
 - (void)playbackEngine:(id)arg1 didUpdateClips:(id)arg2;
 - (void)playbackEngine:(id)arg1 didUpdatePlaybackPosition:(id)arg2;

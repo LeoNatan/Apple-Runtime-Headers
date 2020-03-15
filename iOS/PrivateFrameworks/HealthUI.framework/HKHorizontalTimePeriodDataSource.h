@@ -15,10 +15,10 @@
     NSArray *_valueOrder;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *valueOrder; // @synthesize valueOrder=_valueOrder;
 @property(copy, nonatomic) CDUnknownBlockType userInfoCreationBlock; // @synthesize userInfoCreationBlock=_userInfoCreationBlock;
 @property(retain, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
-- (void).cxx_destruct;
 - (id)_organizeSamplesByValueAndDateInterval:(id)arg1;
 - (void)_handleSamples:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)queriesForStartDate:(id)arg1 endDate:(id)arg2 statisticsInterval:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

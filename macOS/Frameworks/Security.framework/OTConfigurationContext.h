@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, OTControl, SFSignInAnalytics;
+@class CKKSControl, NSString, OTControl, SFSignInAnalytics;
 
 @interface OTConfigurationContext : NSObject
 {
@@ -14,17 +14,25 @@
     NSString *_dsid;
     NSString *_altDSID;
     SFSignInAnalytics *_analytics;
+    NSString *_authenticationAppleID;
+    NSString *_passwordEquivalentToken;
     OTControl *_otControl;
+    CKKSControl *_ckksControl;
     id _sbd;
 }
 
+- (void).cxx_destruct;
 @property(retain) id sbd; // @synthesize sbd=_sbd;
+@property(retain) CKKSControl *ckksControl; // @synthesize ckksControl=_ckksControl;
 @property(retain) OTControl *otControl; // @synthesize otControl=_otControl;
+@property(copy, nonatomic) NSString *passwordEquivalentToken; // @synthesize passwordEquivalentToken=_passwordEquivalentToken;
+@property(copy, nonatomic) NSString *authenticationAppleID; // @synthesize authenticationAppleID=_authenticationAppleID;
 @property(retain, nonatomic) SFSignInAnalytics *analytics; // @synthesize analytics=_analytics;
 @property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 @property(copy, nonatomic) NSString *context; // @synthesize context=_context;
-- (void).cxx_destruct;
+- (id)init;
+- (id)makeCKKSControl:(id *)arg1;
 - (id)makeOTControl:(id *)arg1;
 
 @end

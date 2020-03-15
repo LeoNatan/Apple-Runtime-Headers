@@ -23,11 +23,11 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDCameraMediaConfigGenerator *configGenerator; // @synthesize configGenerator=_configGenerator;
 @property(retain, nonatomic) HMDRemoteStreamSession *streamSession; // @synthesize streamSession=_streamSession;
 @property(readonly, copy, nonatomic) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
 @property(readonly, copy, nonatomic) NSUUID *profileUniqueIdentifier; // @synthesize profileUniqueIdentifier=_profileUniqueIdentifier;
-- (void).cxx_destruct;
 - (void)_sendUpdatedConfiguration;
 - (void)_dispatchReconfigureToResident:(id)arg1;
 - (void)_reconfigureStreams;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *properties; // @synthesize properties=_properties;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 
 @end
 

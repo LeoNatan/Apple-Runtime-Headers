@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDate *_dateSelected;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *dateSelected; // @synthesize dateSelected=_dateSelected;
 @property(nonatomic) _Bool wasSelected; // @synthesize wasSelected=_wasSelected;
-- (void).cxx_destruct;
 - (void)updateForState:(long long)arg1 touchInside:(_Bool)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 

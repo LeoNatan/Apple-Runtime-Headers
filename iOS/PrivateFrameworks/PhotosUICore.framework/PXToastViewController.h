@@ -29,6 +29,7 @@
 + (id)_primaryLabelFont;
 + (id)checkmarkToastWithTitle:(id)arg1 message:(id)arg2;
 + (id)toastWithTitle:(id)arg1 message:(id)arg2 image:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UINotificationFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) CAShapeLayer *checkLayer; // @synthesize checkLayer=_checkLayer;
 @property(retain, nonatomic) UIVisualEffectView *toastView; // @synthesize toastView=_toastView;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(nonatomic) __weak id <PXToastViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_animateCheckMark;
 - (void)_dismissAfterDelay:(double)arg1;
 - (void)present;

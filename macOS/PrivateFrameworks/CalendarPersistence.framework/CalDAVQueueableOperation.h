@@ -24,11 +24,11 @@
 }
 
 + (id)_createTimerWithInterval:(double)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *timerOfDeath; // @synthesize timerOfDeath=_timerOfDeath;
 @property(readonly, retain) CalCalDAVTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(retain) CalDAVAccountInfoProvider *accountInfoProvider; // @synthesize accountInfoProvider=_accountInfoProvider;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (BOOL)_isLowPriority;
 - (BOOL)_shouldKillAgentIfThisTakesTooLong;
 - (BOOL)_shouldCoalesceWithOperations:(id)arg1;

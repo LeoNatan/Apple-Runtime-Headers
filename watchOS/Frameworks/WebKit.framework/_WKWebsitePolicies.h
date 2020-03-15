@@ -18,7 +18,7 @@
 - (struct Object *)_apiObject;
 - (id)description;
 @property(copy, nonatomic) NSString *customNavigatorPlatform;
-@property(copy, nonatomic) NSString *customJavaScriptUserAgentAsSiteSpecificQuirks;
+@property(copy, nonatomic) NSString *customUserAgentAsSiteSpecificQuirks;
 @property(copy, nonatomic) NSString *customUserAgent;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(copy, nonatomic) NSDictionary *customHeaderFields;

@@ -24,6 +24,7 @@
     _NotificationObserver *_refilterNotificationObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) _NotificationObserver *refilterNotificationObserver; // @synthesize refilterNotificationObserver=_refilterNotificationObserver;
 @property(retain, nonatomic) NSMutableOrderedSet *mutableFilteredContents; // @synthesize mutableFilteredContents=_mutableFilteredContents;
 @property(readonly, retain, nonatomic) _NotificationObserver *resortNotificationObserver; // @synthesize resortNotificationObserver=_resortNotificationObserver;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) CDUnknownBlockType filterBlock; // @synthesize filterBlock=_filterBlock;
 @property(copy, nonatomic) CDUnknownBlockType comparatorBlock; // @synthesize comparatorBlock=_comparatorBlock;
 @property(nonatomic) __weak id <SOOrderedSetControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (void)_unregisterObjectForNotifications:(id)arg1;

@@ -15,10 +15,10 @@
     ASVRubberBand *_rubberBand;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ASVRubberBand *rubberBand; // @synthesize rubberBand=_rubberBand;
 @property(nonatomic) float previousRubberBandedOffset; // @synthesize previousRubberBandedOffset=_previousRubberBandedOffset;
 @property(nonatomic) float currentOffset; // @synthesize currentOffset=_currentOffset;
-- (void).cxx_destruct;
 - (float)decelerationDelta;
 - (id)initWithVelocity:(float)arg1 minEndDelta:(float)arg2 startingOffset:(float)arg3 decelerationRate:(float)arg4 rubberBand:(id)arg5;
 

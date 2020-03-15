@@ -21,10 +21,10 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak HMDBackingStore *backingStore; // @synthesize backingStore=_backingStore;
 @property(retain, nonatomic) NSMutableDictionary *homeZones; // @synthesize homeZones=_homeZones;
-- (void).cxx_destruct;
 @property(retain, nonatomic) CKServerChangeToken *databaseServerChangeToken;
 - (void)deleteHomeZoneWithName:(id)arg1;
 - (void)deleteAllZones;

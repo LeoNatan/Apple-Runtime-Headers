@@ -14,9 +14,9 @@
     NSUUID *_frozenIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *frozenIdentifier; // @synthesize frozenIdentifier=_frozenIdentifier;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (id)initWithStatus:(long long)arg1 frozenIdentifier:(id)arg2;
 
 @end

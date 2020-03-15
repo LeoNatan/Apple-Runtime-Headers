@@ -18,8 +18,8 @@
 
 + (id)dateRangeSet;
 + (id)dateRangeSetWithDateRange:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *_dateRanges; // @synthesize _dateRanges=__dateRanges;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *_dateRanges; // @synthesize _dateRanges=__dateRanges;
 - (id)description;
 - (id)dateRanges;
 - (_Bool)isEqual:(id)arg1;

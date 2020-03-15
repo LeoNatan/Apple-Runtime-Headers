@@ -38,6 +38,7 @@
 
 + (_Bool)wantsVerticalBarForLayoutStyle:(long long)arg1;
 + (struct CGRect)shutterButtonAlignmentRectInBounds:(struct CGRect)arg1 forLayoutStyle:(long long)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setExpandedMenuButton:) CAMExpandableMenuButton *_expandedMenuButton; // @synthesize _expandedMenuButton=__expandedMenuButton;
 @property(nonatomic) double utilityBarExtensionDistance; // @synthesize utilityBarExtensionDistance=_utilityBarExtensionDistance;
 @property(retain, nonatomic) CAMUtilityBar *utilityBar; // @synthesize utilityBar=_utilityBar;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (void)apertureButtonNeedsLayout:(id)arg1 animated:(_Bool)arg2;
 - (void)selectedByAccessibilityHUDManager:(id)arg1;
 - (id)hudItemForAccessibilityHUDManager:(id)arg1;

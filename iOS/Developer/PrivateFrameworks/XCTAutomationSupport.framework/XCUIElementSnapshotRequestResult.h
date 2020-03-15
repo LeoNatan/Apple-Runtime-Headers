@@ -21,9 +21,9 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)shouldRuntimeIssueContext:(id)arg1 reportIssue:(id)arg2;
 + (void)provideCapabilitiesToBuilder:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSOrderedSet *runtimeIssues; // @synthesize runtimeIssues=_runtimeIssues;
 @property(readonly) XCElementSnapshot *rootElementSnapshot; // @synthesize rootElementSnapshot=_rootElementSnapshot;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRootElementSnapshot:(id)arg1 runtimeIssues:(id)arg2;

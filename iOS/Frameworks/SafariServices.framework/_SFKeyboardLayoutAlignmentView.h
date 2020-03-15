@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     _Bool _automaticKeyboardFrameTrackingDisabled;
 }
 
-@property(nonatomic) _Bool automaticKeyboardFrameTrackingDisabled; // @synthesize automaticKeyboardFrameTrackingDisabled=_automaticKeyboardFrameTrackingDisabled;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool automaticKeyboardFrameTrackingDisabled; // @synthesize automaticKeyboardFrameTrackingDisabled=_automaticKeyboardFrameTrackingDisabled;
 - (void)_startObservingKeyboardNotificationsForScreen:(id)arg1;
 - (void)_stopObservingKeyboardNotifications;
 - (void)dealloc;

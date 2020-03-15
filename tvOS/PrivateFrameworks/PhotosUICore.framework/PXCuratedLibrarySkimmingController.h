@@ -28,6 +28,7 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTimer *slideshowTimer; // @synthesize slideshowTimer=_slideshowTimer;
 @property(nonatomic) unsigned long long skimmingDataSourceIdentifier; // @synthesize skimmingDataSourceIdentifier=_skimmingDataSourceIdentifier;
 @property(retain, nonatomic) NSArray *skimmingIndexes; // @synthesize skimmingIndexes=_skimmingIndexes;
@@ -38,7 +39,6 @@
 @property(nonatomic) _Bool skimmingSlideshowEnabled; // @synthesize skimmingSlideshowEnabled=_skimmingSlideshowEnabled;
 @property(nonatomic) __weak id <PXCuratedLibrarySkimmingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXCuratedLibraryAssetCollectionSkimmingModel *skimmingModel; // @synthesize skimmingModel=_skimmingModel;
-- (void).cxx_destruct;
 - (void)_enterIdleStatePersistSkimmingState:(_Bool)arg1;
 - (void)_adoptIndexesFromSkimmingModel;
 - (void)_cancelEnteringTouchingState;

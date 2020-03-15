@@ -70,6 +70,7 @@
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
 + (void)setSystemTimeZoneNameForUnitTests:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDTStampUpdateOnly; // @synthesize isDTStampUpdateOnly=_isDTStampUpdateOnly;
 @property(nonatomic) _Bool isAttendeeUpdateOnly; // @synthesize isAttendeeUpdateOnly=_isAttendeeUpdateOnly;
 @property(nonatomic) _Bool haveCheckedOrganizerEmail; // @synthesize haveCheckedOrganizerEmail=_haveCheckedOrganizerEmail;
@@ -113,7 +114,6 @@
 @property(retain, nonatomic) NSNumber *allDayEvent; // @synthesize allDayEvent=_allDayEvent;
 @property(retain, nonatomic) ASTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) void *calEvent; // @synthesize calEvent=_calEvent;
-- (void).cxx_destruct;
 - (id)eventByMergingInEvent:(id)arg1 account:(id)arg2;
 - (id)eventByMergingInLosingEvent:(id)arg1 account:(id)arg2;
 - (_Bool)isEqualToEvent:(id)arg1;

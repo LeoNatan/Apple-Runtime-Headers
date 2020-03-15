@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)parentInfoWithPlaceItem:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MKMapItem *parentMapItem; // @synthesize parentMapItem=_parentMapItem;
 @property(retain, nonatomic) MKMapItem *childMapItem; // @synthesize childMapItem=_childMapItem;
 @property(retain, nonatomic) NSLayoutConstraint *baselineToBottomConstraint; // @synthesize baselineToBottomConstraint=_baselineToBottomConstraint;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(nonatomic) __weak id <MKPlaceParentInfoViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
-- (void).cxx_destruct;
 - (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)_updateFont;

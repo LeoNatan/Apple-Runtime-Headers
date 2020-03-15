@@ -33,6 +33,7 @@
 + (id)buildRequiredOnlyWithBundleIdentifier:(id)arg1 withExternalVersionIdentifier:(id)arg2 withVersion:(id)arg3 withShortVersion:(id)arg4 withName:(id)arg5 withAppStoreVendable:(id)arg6 withDeviceBasedVPP:(id)arg7 withBetaApp:(id)arg8 withAdHocCodeSigned:(id)arg9 withHasUpdateAvailable:(id)arg10;
 + (id)buildWithBundleIdentifier:(id)arg1 withExternalVersionIdentifier:(id)arg2 withVersion:(id)arg3 withShortVersion:(id)arg4 withName:(id)arg5 withBundleSize:(id)arg6 withDynamicSize:(id)arg7 withIsValidated:(id)arg8 withInstalling:(id)arg9 withAppStoreVendable:(id)arg10 withDeviceBasedVPP:(id)arg11 withBetaApp:(id)arg12 withAdHocCodeSigned:(id)arg13 withHasUpdateAvailable:(id)arg14 withDownloadFailed:(id)arg15 withDownloadWaiting:(id)arg16 withDownloadPaused:(id)arg17 withDownloadCancelled:(id)arg18;
 + (id)allowedStatusKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *statusDownloadCancelled; // @synthesize statusDownloadCancelled=_statusDownloadCancelled;
 @property(copy, nonatomic) NSNumber *statusDownloadPaused; // @synthesize statusDownloadPaused=_statusDownloadPaused;
 @property(copy, nonatomic) NSNumber *statusDownloadWaiting; // @synthesize statusDownloadWaiting=_statusDownloadWaiting;
@@ -51,7 +52,6 @@
 @property(copy, nonatomic) NSString *statusVersion; // @synthesize statusVersion=_statusVersion;
 @property(copy, nonatomic) NSString *statusExternalVersionIdentifier; // @synthesize statusExternalVersionIdentifier=_statusExternalVersionIdentifier;
 @property(copy, nonatomic) NSString *statusBundleIdentifier; // @synthesize statusBundleIdentifier=_statusBundleIdentifier;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

@@ -18,11 +18,11 @@
 
 + (id)actionWithTitle:(id)arg1 alertStyle:(long long)arg2 shouldDismissQuickLookAutomatically:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)actionWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldDismissQuickLookAutomatically; // @synthesize shouldDismissQuickLookAutomatically=_shouldDismissQuickLookAutomatically;
 @property(nonatomic) long long alertStyle; // @synthesize alertStyle=_alertStyle;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithTitle:(id)arg1 alertStyle:(long long)arg2 shouldDismissQuickLookAutomatically:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 
 @end

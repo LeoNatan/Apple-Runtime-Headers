@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     AVMetadataItem *_imageMetadataItem;
 }
 
-@property(retain, nonatomic) AVMetadataItem *imageMetadataItem; // @synthesize imageMetadataItem=_imageMetadataItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVMetadataItem *imageMetadataItem; // @synthesize imageMetadataItem=_imageMetadataItem;
 - (void)_loadChapterNameFromMetadataItem:(id)arg1;
 - (id)initWithAVTimedMetadataGroup:(id)arg1 filterByLanguages:(id)arg2;
 

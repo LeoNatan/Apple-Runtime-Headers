@@ -17,10 +17,10 @@
 
 + (id)sequenceWithItems:(id)arg1 loops:(BOOL)arg2;
 + (id)sequenceWithItems:(id)arg1 loops:(BOOL)arg2 restrictEnteringSequence:(BOOL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=restrictsEnteringSequence) BOOL restrictEnteringSequence; // @synthesize restrictEnteringSequence=_restrictEnteringSequence;
 @property(readonly, nonatomic, getter=isLooping) BOOL looping; // @synthesize looping=_looping;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
-- (void).cxx_destruct;
 - (id)initWithItems:(id)arg1 loops:(BOOL)arg2 restrictEnteringSequence:(BOOL)arg3;
 - (id)initWithItems:(id)arg1 loops:(BOOL)arg2;
 - (id)init;

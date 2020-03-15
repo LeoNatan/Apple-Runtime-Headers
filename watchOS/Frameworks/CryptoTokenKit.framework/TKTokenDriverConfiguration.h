@@ -6,25 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, TKTokenConfigurationProxy;
+@class NSDictionary, NSString, TKTokenConfigurationConnection;
 
 @interface TKTokenDriverConfiguration : NSObject
 {
-    TKTokenConfigurationProxy *_proxy;
+    TKTokenConfigurationConnection *_configurationConnection;
     NSString *_classID;
 }
 
 + (id)driverConfigurations;
-+ (void)setConfigurationServer:(id)arg1;
-+ (id)configurationServer;
-@property(readonly, nonatomic) NSString *classID; // @synthesize classID=_classID;
++ (id)driverConfigurationsWithClient:(id)arg1;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *classID; // @synthesize classID=_classID;
 - (void)removeTokenConfigurationForTokenInstanceID:(id)arg1;
 - (id)createTokenConfigurationWithInstanceID:(id)arg1 persistent:(_Bool)arg2;
 - (id)addTokenConfigurationForTokenInstanceID:(id)arg1;
 - (id)beginTransaction;
 @property(readonly, copy, nonatomic) NSDictionary *tokenConfigurations;
-- (id)initWithClassID:(id)arg1 proxy:(id)arg2;
+- (id)initWithClassID:(id)arg1 configurationConnection:(id)arg2;
 
 @end
 

@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)_shouldTreatAsTextNavigationForElement:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) SCRElement *_readFromBeginningStopElement; // @synthesize _readFromBeginningStopElement=__readFromBeginningStopElement;
 @property(nonatomic) BOOL isAutoInteractingWithText; // @synthesize isAutoInteractingWithText=_isAutoInteractingWithText;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_resetFocusedTextNavigationElement;
 - (BOOL)_handleMoveToPreviousLineInContentWithRequest:(id)arg1;

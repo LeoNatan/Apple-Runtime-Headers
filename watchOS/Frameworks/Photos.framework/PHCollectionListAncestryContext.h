@@ -15,9 +15,9 @@
     NSMutableDictionary *_collectionListsByOID;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *collectionListsByOID; // @synthesize collectionListsByOID=_collectionListsByOID;
 @property(retain) id <NSFastEnumeration> allCollectionLists; // @synthesize allCollectionLists=_allCollectionLists;
-- (void).cxx_destruct;
 - (id)folderForID:(id)arg1;
 - (id)initWithCollectionLists:(id)arg1;
 

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     OS_remote_device *_disconnected_callback_self_retain;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OS_remote_device *disconnected_callback_self_retain; // @synthesize disconnected_callback_self_retain=_disconnected_callback_self_retain;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *disconnected_callback_queue; // @synthesize disconnected_callback_queue=_disconnected_callback_queue;
 @property(copy, nonatomic) CDUnknownBlockType disconnected_callback; // @synthesize disconnected_callback=_disconnected_callback;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_xpc_object> *properties; // @synthesize properties=_properties;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dq; // @synthesize dq=_dq;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

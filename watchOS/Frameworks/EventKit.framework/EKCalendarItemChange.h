@@ -28,6 +28,7 @@
 + (void)fetchCalendarItemChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchCalendarItemChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (int)entityType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool allDayChanged; // @synthesize allDayChanged=_allDayChanged;
 @property(readonly, nonatomic) _Bool notesChanged; // @synthesize notesChanged=_notesChanged;
 @property(readonly, nonatomic) _Bool endTimezoneChanged; // @synthesize endTimezoneChanged=_endTimezoneChanged;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(readonly, nonatomic) EKObjectID *oldCalendarID; // @synthesize oldCalendarID=_oldCalendarID;
 @property(readonly, nonatomic) EKObjectID *calendarID; // @synthesize calendarID=_calendarID;
-- (void).cxx_destruct;
 - (id)initWithChangeProperties:(id)arg1;
 
 @end

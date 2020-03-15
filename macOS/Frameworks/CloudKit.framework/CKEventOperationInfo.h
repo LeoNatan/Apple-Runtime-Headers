@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *operationGroupID; // @synthesize operationGroupID=_operationGroupID;
 @property(readonly, nonatomic) NSString *operationType; // @synthesize operationType=_operationType;
 @property(readonly, nonatomic) NSString *operationID; // @synthesize operationID=_operationID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithOperation:(id)arg1;

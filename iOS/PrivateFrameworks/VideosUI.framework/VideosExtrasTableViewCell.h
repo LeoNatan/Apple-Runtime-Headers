@@ -31,9 +31,9 @@ __attribute__((visibility("hidden")))
     IKListItemLockupElement *_element;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) IKListItemLockupElement *element; // @synthesize element=_element;
 @property(readonly, nonatomic) VideosExtrasConstrainedArtworkContainerView *artworkContainerView; // @synthesize artworkContainerView=_artworkContainer;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;

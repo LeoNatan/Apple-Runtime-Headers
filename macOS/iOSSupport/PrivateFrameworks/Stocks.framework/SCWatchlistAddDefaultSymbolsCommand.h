@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL deferUpload; // @synthesize deferUpload=_deferUpload;
 @property(readonly, copy, nonatomic) NSArray *symbols; // @synthesize symbols=_symbols;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)shouldDeferUpload;

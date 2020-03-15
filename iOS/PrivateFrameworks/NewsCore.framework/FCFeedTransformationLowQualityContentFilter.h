@@ -17,8 +17,8 @@
 }
 
 + (id)transformationWithPersonalizer:(id)arg1;
-@property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

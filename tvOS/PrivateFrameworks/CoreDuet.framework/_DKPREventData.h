@@ -20,10 +20,10 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long uncompressedLength; // @synthesize uncompressedLength=_uncompressedLength;
 @property(retain, nonatomic) NSData *event; // @synthesize event=_event;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

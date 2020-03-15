@@ -19,11 +19,11 @@
     VCCompanionSyncService *_service;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) VCCompanionSyncService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) VCDaemonXPCEventHandler *eventHandler; // @synthesize eventHandler=_eventHandler;
 @property(readonly, nonatomic) id <VCSyncDataEndpoint> syncDataEndpoint; // @synthesize syncDataEndpoint=_syncDataEndpoint;
-- (void).cxx_destruct;
 - (void)handleDidUnpairNotification:(id)arg1;
 - (void)handleDeviceDidChangeVersionNotification;
 - (void)stopObservingWatchChangeNotifications;

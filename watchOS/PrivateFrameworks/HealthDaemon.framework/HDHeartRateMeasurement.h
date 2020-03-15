@@ -22,13 +22,13 @@
 
 + (id)_buildWithBinaryValue:(id)arg1 error:(id *)arg2;
 + (id)uuid;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rrIntervals; // @synthesize rrIntervals=_rrIntervals;
 @property(nonatomic) _Bool sensorContact; // @synthesize sensorContact=_sensorContact;
 @property(nonatomic) _Bool hasSensorContact; // @synthesize hasSensorContact=_hasSensorContact;
 @property(nonatomic) int energyExpended; // @synthesize energyExpended=_energyExpended;
 @property(nonatomic) _Bool hasEnergyExpended; // @synthesize hasEnergyExpended=_hasEnergyExpended;
 @property(nonatomic) int heartRateValue; // @synthesize heartRateValue=_heartRateValue;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int derivedContactStatus;
 - (id)description;
 - (id)generateDatums:(id)arg1;

@@ -13,8 +13,8 @@
     MFComposeRecipient *_recipient;
 }
 
-@property(readonly, nonatomic) MFComposeRecipient *recipient; // @synthesize recipient=_recipient;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) MFComposeRecipient *recipient; // @synthesize recipient=_recipient;
 - (id)description;
 - (id)initWithRecipient:(id)arg1;
 - (id)initWithContact:(id)arg1 address:(id)arg2 nameComponents:(id)arg3 recipientKind:(long long)arg4;

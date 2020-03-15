@@ -14,8 +14,8 @@
 }
 
 + (void)loadPackageViewWithContentsOfURL:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(CDUnknownBlockType)arg3;
-@property(copy, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
 - (id)description;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (_Bool)_supportsPushingBottomCornerRadiusToSubviews:(double)arg1;

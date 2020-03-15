@@ -41,6 +41,7 @@
 + (id)codedUniqueIdentifiers:(id)arg1;
 + (void)initialize;
 + (BOOL)isIndexingAvailable;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *indexID; // @synthesize indexID=_indexID;
 @property(nonatomic) BOOL batchOpen; // @synthesize batchOpen=_batchOpen;
 @property(nonatomic) long long options; // @synthesize options=_options;
@@ -50,7 +51,6 @@
 @property(copy, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
-- (void).cxx_destruct;
 - (void)_bulkFetchPartialPathsForObjects:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)bulkFetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 objects:(id)arg4 attributeKeyIndex:(long long)arg5 includeParents:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)slowFetchAttributes:(id)arg1 protectionClass:(id)arg2 bundleID:(id)arg3 identifiers:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;

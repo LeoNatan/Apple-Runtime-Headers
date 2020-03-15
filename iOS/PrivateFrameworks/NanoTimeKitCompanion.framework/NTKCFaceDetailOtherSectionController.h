@@ -19,11 +19,11 @@
     NTKCFaceDetailShowSecondsCell *_showSecondsCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NTKCFaceDetailShowSecondsCell *showSecondsCell; // @synthesize showSecondsCell=_showSecondsCell;
 @property(retain, nonatomic) NTKCFaceDetailMonogramEditCell *monogramEditCell; // @synthesize monogramEditCell=_monogramEditCell;
 @property(retain, nonatomic) NTKCFaceDetailMonogramComplicationCell *monogramCell; // @synthesize monogramCell=_monogramCell;
 @property(nonatomic) __weak id <NTKCFaceDetailOtherSectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)toggleCell:(id)arg1 didToggle:(_Bool)arg2;
 - (void)removeShowSecondsRow;
 - (void)addShowSecondsRow:(id)arg1;

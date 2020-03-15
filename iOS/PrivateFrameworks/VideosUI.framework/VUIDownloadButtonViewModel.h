@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     NSArray *_downloadStateToString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *downloadStateToString; // @synthesize downloadStateToString=_downloadStateToString;
 @property(retain, nonatomic) NSString *downloadStateStringValue; // @synthesize downloadStateStringValue=_downloadStateStringValue;
 @property(retain, nonatomic) NSObject<VUIMediaEntityAssetController> *assetController; // @synthesize assetController=_assetController;
 @property(nonatomic) double downloadProgress; // @synthesize downloadProgress=_downloadProgress;
 @property(nonatomic) unsigned long long downloadState; // @synthesize downloadState=_downloadState;
 @property(retain, nonatomic) VUIVideosPlayable *videosPlayable; // @synthesize videosPlayable=_videosPlayable;
-- (void).cxx_destruct;
 - (id)_createDownloadStateToStringArrayMap;
 - (unsigned long long)_downloadStateFromAssetsControllerStatus:(unsigned long long)arg1;
 - (void)_updateDownloadStateFromAssetControllerState:(id)arg1;
@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)stopDownload;
 - (void)resumeDownload;
 - (void)pauseDownload;
-- (void)startDownload;
+- (void)startDownloadAllowingCellular:(_Bool)arg1 quality:(long long)arg2;
 - (void)dealloc;
 - (id)initWithAssetController:(id)arg1;
 - (id)initWithVideosPlayable:(id)arg1;

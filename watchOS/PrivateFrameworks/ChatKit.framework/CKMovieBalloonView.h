@@ -17,11 +17,11 @@
     AVPlayerLayer *_avPlayerLayer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=setAVPlayerLayer:) AVPlayerLayer *avPlayerLayer; // @synthesize avPlayerLayer=_avPlayerLayer;
 @property(retain, nonatomic, setter=setAVPlayer:) AVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(retain, nonatomic, setter=setAVPlayerItem:) AVPlayerItem *avPlayerItem; // @synthesize avPlayerItem=_avPlayerItem;
 @property(retain, nonatomic) CKMovieMediaObject *mediaObject; // @synthesize mediaObject=_mediaObject;
-- (void).cxx_destruct;
 - (void)cleanupPlayerIfNeeded;
 - (void)videoDidReachEnd:(id)arg1;
 - (void)tapGestureRecognized:(id)arg1;

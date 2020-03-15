@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) id destination; // @synthesize destination=_destination;
 @property(retain, nonatomic) id source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (void)connectForSimulator;
 - (void)connect;
 - (void)encodeWithCoder:(id)arg1;

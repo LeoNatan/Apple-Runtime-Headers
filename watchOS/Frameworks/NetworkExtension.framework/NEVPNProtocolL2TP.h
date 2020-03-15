@@ -19,13 +19,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool machineIdentityDataImported; // @synthesize machineIdentityDataImported=_machineIdentityDataImported;
 @property(copy) NSData *machineIdentityDataInternal; // @synthesize machineIdentityDataInternal=_machineIdentityDataInternal;
 @property(retain) NEIdentityKeychainItem *machineIdentity; // @synthesize machineIdentity=_machineIdentity;
 @property(copy) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
 @property(copy) NEKeychainItem *sharedSecretKeychainItem; // @synthesize sharedSecretKeychainItem=_sharedSecretKeychainItem;
 @property int machineAuthenticationMethod; // @synthesize machineAuthenticationMethod=_machineAuthenticationMethod;
-- (void).cxx_destruct;
 - (_Bool)updateWithServiceProtocolsFromService:(struct __SCNetworkService *)arg1;
 - (_Bool)setServiceProtocolsInService:(struct __SCNetworkService *)arg1;
 - (struct __SCNetworkInterface *)createInterface;

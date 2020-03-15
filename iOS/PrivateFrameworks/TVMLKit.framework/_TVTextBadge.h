@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)textBadgeViewWithElement:(id)arg1 existingView:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) double lineWidth; // @synthesize lineWidth=_lineWidth;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSAttributedString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 

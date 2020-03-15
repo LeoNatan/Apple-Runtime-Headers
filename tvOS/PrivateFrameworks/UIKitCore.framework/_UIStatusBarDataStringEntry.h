@@ -15,8 +15,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)entryWithStringValue:(id)arg1;
-@property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
 - (id)_ui_descriptionBuilder;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

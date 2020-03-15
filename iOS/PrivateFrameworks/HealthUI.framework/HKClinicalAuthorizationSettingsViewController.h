@@ -28,6 +28,7 @@
     HKLookUpAppPrivacyPolicyURLOperation *_lookUpAppPrivacyPolicyURLOperation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKLookUpAppPrivacyPolicyURLOperation *lookUpAppPrivacyPolicyURLOperation; // @synthesize lookUpAppPrivacyPolicyURLOperation=_lookUpAppPrivacyPolicyURLOperation;
 @property(copy, nonatomic) NSArray *appInformationSectionCells; // @synthesize appInformationSectionCells=_appInformationSectionCells;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) HKClinicalAuthorizationSequenceContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <HKHealthPrivacyServicePromptControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=shouldCommitUpdatesImmediately) _Bool commitUpdatesImmediately;
 @property(readonly, nonatomic) _Bool isPrompting;
 @property(readonly, copy, nonatomic) NSString *readUsageDescription;

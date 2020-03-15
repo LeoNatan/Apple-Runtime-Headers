@@ -19,10 +19,10 @@
     NSString *_title;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsBoldValueText; // @synthesize showsBoldValueText=_showsBoldValueText;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) PKPaymentAuthorizationLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (id)_valueAttributedStringWithString:(id)arg1 type:(unsigned long long)arg2;
 - (id)_labelAttributedStringWithString:(id)arg1 withDarkColor:(_Bool)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 andLayout:(_Bool)arg2;

@@ -22,8 +22,8 @@
     CDUnknownBlockType _significantDatesChangedHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType significantDatesChangedHandler; // @synthesize significantDatesChangedHandler=_significantDatesChangedHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType significantDatesChangedHandler; // @synthesize significantDatesChangedHandler=_significantDatesChangedHandler;
 - (void)_load;
 - (void)_requestDate:(id)arg1;
 - (id)firstOfOverlayYearsForCalendarMonth:(id)arg1;

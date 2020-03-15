@@ -15,8 +15,8 @@
 
 + (Class)transformedValueClass;
 + (BOOL)allowsReverseTransformation;
-@property(retain, nonatomic) CNSocialProfile *lastSocialProfile; // @synthesize lastSocialProfile=_lastSocialProfile;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CNSocialProfile *lastSocialProfile; // @synthesize lastSocialProfile=_lastSocialProfile;
 - (id)_serviceFromDisplayValue:(id)arg1;
 - (id)_usernameFromDisplayValue:(id)arg1 service:(id)arg2;
 - (id)_urlStringFromDisplayValue:(id)arg1 service:(id)arg2 username:(id)arg3;

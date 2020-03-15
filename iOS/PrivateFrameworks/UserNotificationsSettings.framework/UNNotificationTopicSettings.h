@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) UNNotificationSettings *topicSettings; // @synthesize topicSettings=_topicSettings;
 @property(readonly, copy, nonatomic) UNNotificationTopic *topic; // @synthesize topic=_topic;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

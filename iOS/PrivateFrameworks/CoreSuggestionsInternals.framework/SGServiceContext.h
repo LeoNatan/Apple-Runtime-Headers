@@ -13,8 +13,8 @@
     SGSqlEntityStore *_store;
 }
 
-@property(readonly, nonatomic) SGSqlEntityStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SGSqlEntityStore *store; // @synthesize store=_store;
 - (id)initWithStore:(id)arg1;
 - (id)init;
 

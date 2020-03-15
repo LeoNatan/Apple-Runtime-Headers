@@ -35,6 +35,7 @@
     AVTSimpleAvatarPickerHeaderView *_headerView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowEditing; // @synthesize allowEditing=_allowEditing;
 @property(nonatomic) __weak AVTSimpleAvatarPickerHeaderView *headerView; // @synthesize headerView=_headerView;
 @property(readonly, nonatomic) AVTRenderingScope *renderingScope; // @synthesize renderingScope=_renderingScope;
@@ -47,7 +48,6 @@
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_minimumInteritemSpacing;
 @property(nonatomic) __weak id <AVTAvatarPickerDelegate> avatarPickerDelegate; // @synthesize avatarPickerDelegate;
 @property(nonatomic) __weak id <AVTPresenterDelegate> presenterDelegate; // @synthesize presenterDelegate;
-- (void).cxx_destruct;
 - (void)notifyingContainerViewDidChangeSize:(struct CGSize)arg1;
 - (void)notifyingContainerViewWillChangeSize:(struct CGSize)arg1;
 - (id)avatarActionsViewController:(id)arg1 recordUpdateForDeletingRecord:(id)arg2;

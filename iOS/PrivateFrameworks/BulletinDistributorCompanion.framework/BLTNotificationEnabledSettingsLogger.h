@@ -15,8 +15,8 @@
 }
 
 + (id)sharedNotificationEnabledSettingsLogger:(id)arg1;
-@property(retain, nonatomic) BLTSectionInfoList *sectionInfoList; // @synthesize sectionInfoList=_sectionInfoList;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BLTSectionInfoList *sectionInfoList; // @synthesize sectionInfoList=_sectionInfoList;
 - (void)_performActivity:(id)arg1;
 - (void)_registerActivity;
 - (void)_log;

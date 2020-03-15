@@ -15,8 +15,8 @@
     NSDictionary *_dictionaryRepresentation;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation; // @synthesize dictionaryRepresentation=_dictionaryRepresentation;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentation; // @synthesize dictionaryRepresentation=_dictionaryRepresentation;
 @property(readonly, nonatomic) SVXSystemObserver *systemObserver;
 @property(readonly, nonatomic) SVXSpeechSynthesizer *speechSynthesizer;
 @property(readonly, nonatomic) SVXSessionManager *sessionManager;

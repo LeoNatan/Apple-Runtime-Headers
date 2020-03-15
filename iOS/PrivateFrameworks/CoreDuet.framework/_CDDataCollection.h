@@ -26,6 +26,7 @@
     _CDEventStreamsRegister *_eventStreamsRegister;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _CDEventStreamsRegister *eventStreamsRegister; // @synthesize eventStreamsRegister=_eventStreamsRegister;
 @property(nonatomic) _Bool deleteSessionOnCleanup; // @synthesize deleteSessionOnCleanup=_deleteSessionOnCleanup;
 @property(nonatomic) _Bool selectedForDataCollection; // @synthesize selectedForDataCollection=_selectedForDataCollection;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) CDUnknownBlockType submissionBlock; // @synthesize submissionBlock=_submissionBlock;
 @property(readonly, nonatomic) id <_DKKnowledgeQuerying> storage; // @synthesize storage=_storage;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (_Bool)submitDataForCollection;
 - (id)truncatedFileHandle;
 @property(readonly, copy, nonatomic) NSString *dataPath;

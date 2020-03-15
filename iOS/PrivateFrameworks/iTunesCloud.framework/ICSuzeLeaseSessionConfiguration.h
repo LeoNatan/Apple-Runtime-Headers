@@ -17,10 +17,10 @@
     ICStoreRequestContext *_requestContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) ICStoreRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(readonly, nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly, nonatomic) id leaseID; // @synthesize leaseID=_leaseID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRequestContext:(id)arg1 leaseID:(id)arg2 mediaType:(long long)arg3;
 

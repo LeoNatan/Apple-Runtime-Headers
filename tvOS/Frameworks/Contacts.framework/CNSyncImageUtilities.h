@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 + (id)syncImageResultForImageData:(id)arg1 cropRect:(struct CGRect)arg2 isPNG:(_Bool)arg3 maxSize:(long long)arg4;
 + (id)os_log;
 + (id)descriptorForRequiredKeys;
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void)saveSyncImageResult:(id)arg1 toContact:(id)arg2;
 - (id)syncImageResultForContact:(id)arg1 maxSize:(long long)arg2;
 - (id)generateSyncImageForContact:(id)arg1;

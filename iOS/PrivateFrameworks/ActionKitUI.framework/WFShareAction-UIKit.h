@@ -8,7 +8,7 @@
 
 @interface WFShareAction (UIKit)
 - (id)excludedActivityTypes;
-- (void)presentActivityViewControllerForItems:(id)arg1 withUserInterface:(id)arg2;
+- (void)presentActivityViewControllerForItems:(id)arg1 withUserInterface:(id)arg2 isContentManaged:(_Bool)arg3;
 - (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 @end
 

@@ -20,11 +20,11 @@
 + (long long)nearbyTypeFromClientType:(unsigned char)arg1;
 + (unsigned char)clientTypeFromNearbyType:(long long)arg1;
 + (BOOL)holdVoucherForConnections;
+- (void).cxx_destruct;
 @property(retain) NSArray *leCapablePeers; // @synthesize leCapablePeers=_leCapablePeers;
 @property(retain) NSMutableDictionary *transfers; // @synthesize transfers=_transfers;
 @property(nonatomic) __weak id <WPNearbyDelegate> delegate; // @synthesize delegate=_delegate;
 @property long long btBandwidthState; // @synthesize btBandwidthState=_btBandwidthState;
-- (void).cxx_destruct;
 - (void)stateDidChange:(long long)arg1;
 - (void)bandwidthStateUpdated:(id)arg1;
 - (void)lostPeer:(id)arg1 ofType:(unsigned char)arg2;

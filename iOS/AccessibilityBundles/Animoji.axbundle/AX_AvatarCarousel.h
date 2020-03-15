@@ -11,8 +11,8 @@
     id _messagesController;
 }
 
-@property(nonatomic) __weak id messagesController; // @synthesize messagesController=_messagesController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id messagesController; // @synthesize messagesController=_messagesController;
 - (_Bool)_accessibilitySupportsActivateAction;
 - (struct CGRect)accessibilityFrameInContainerSpace;
 - (void)accessibilityDecrement;

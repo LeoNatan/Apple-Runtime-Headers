@@ -14,9 +14,9 @@
     CLKTextProvider *_textProvider;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLKTextProvider *textProvider; // @synthesize textProvider=_textProvider;
 @property(copy, nonatomic) CLKComplicationTemplateGraphicCircular *circularTemplate; // @synthesize circularTemplate=_circularTemplate;
-- (void).cxx_destruct;
 - (void)_enumerateEmbeddedTemplateKeysWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateTextProviderKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)isCompatibleWithFamily:(int)arg1;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_labelsToDeleteOnCommit;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *labelsToDeleteOnCommit; // @synthesize labelsToDeleteOnCommit=_labelsToDeleteOnCommit;
 @property(readonly, nonatomic) __weak CNPropertyGroupItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (void)pickedItem:(id)arg1;
 - (void)removeCustomItem:(id)arg1;
 - (id)titleForPickerItem:(id)arg1;

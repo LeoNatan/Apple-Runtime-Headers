@@ -17,11 +17,11 @@
 }
 
 + (id)textFieldWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *value; // @synthesize value=_value;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(getter=isSecure) BOOL secure; // @synthesize secure=_secure;
 @property long long keyboardType; // @synthesize keyboardType=_keyboardType;
-- (void).cxx_destruct;
 
 @end
 

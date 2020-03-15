@@ -13,10 +13,10 @@
 @interface PXGadgetSectionHeaderUIView : UICollectionReusableView <PXChangeObserver>
 {
     CDStruct_d97c9657 _updateFlags;
-    PXGadgetSectionHeader *_headerModel;
     UILabel *_titleLabel;
     UIButton *_accessoryButton;
     UIView *_divider;
+    PXGadgetSectionHeader *_headerModel;
 }
 
 + (id)_accessoryButtonFont;
@@ -26,17 +26,19 @@
 + (double)_preferredHeightForText:(id)arg1 fittingWidth:(double)arg2 style:(unsigned long long)arg3 dividerHidden:(_Bool)arg4;
 + (double)_heightThatFitsFirstToLastBaselineWithText:(id)arg1 width:(double)arg2 font:(id)arg3;
 + (double)preferredHeightForText:(id)arg1 buttonType:(unsigned long long)arg2 fittingWidth:(double)arg3 style:(unsigned long long)arg4 dividerHidden:(_Bool)arg5;
-@property(retain, nonatomic) UIView *divider; // @synthesize divider=_divider;
-@property(retain, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(readonly, nonatomic) PXGadgetSectionHeader *headerModel; // @synthesize headerModel=_headerModel;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) PXGadgetSectionHeader *headerModel; // @synthesize headerModel=_headerModel;
+@property(readonly, nonatomic) UIView *divider; // @synthesize divider=_divider;
+@property(readonly, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_buttonPressed;
 - (void)layoutSubviews;
-- (void)_updateButton;
+- (void)configureAccessoryButton:(id)arg1;
+- (void)_updateAccessoryButton;
+- (void)configureTitleLabel:(id)arg1;
 - (void)_updateTitle;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

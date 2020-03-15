@@ -26,11 +26,11 @@
 + (id)bundle;
 + (id)_sharedInstance;
 + (void)setupWithConfigurationAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CPAnalyticsSystemProperties *systemProperties; // @synthesize systemProperties=_systemProperties;
 @property(readonly) long long lastSignpostID; // @synthesize lastSignpostID=_lastSignpostID;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *eventsQueue; // @synthesize eventsQueue=_eventsQueue;
 @property(readonly, nonatomic) CPAnalyticsDestinationsRegistry *registry; // @synthesize registry=_registry;
-- (void).cxx_destruct;
 - (void)_activateEventQueue;
 - (long long)_generateNextSignpostID;
 - (void)_registerPropertyProviders;

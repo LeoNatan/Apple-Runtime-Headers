@@ -18,12 +18,12 @@
 }
 
 + (id)displayFriendlyMeasurement:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *unitSymbol; // @synthesize unitSymbol=_unitSymbol;
 @property(readonly) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(readonly, copy) NSMeasurement *value; // @synthesize value=_value;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)initWithIdentifier:(id)arg1 displayName:(id)arg2 value:(id)arg3;
 - (id)initWithIdentifier:(id)arg1 displayName:(id)arg2 doubleValue:(double)arg3 unitSymbol:(id)arg4;
 

@@ -23,6 +23,7 @@
 }
 
 + (id)imageForRect:(struct CGRect)arg1 fromImage:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSImage *bottomRight; // @synthesize bottomRight=_bottomRight;
 @property(retain, nonatomic) NSImage *bottom; // @synthesize bottom=_bottom;
 @property(retain, nonatomic) NSImage *bottomLeft; // @synthesize bottomLeft=_bottomLeft;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSImage *top; // @synthesize top=_top;
 @property(retain, nonatomic) NSImage *topLeft; // @synthesize topLeft=_topLeft;
 @property(nonatomic) __weak NSLayoutConstraint *widthConstraint; // @synthesize widthConstraint=_widthConstraint;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setImage:(id)arg1 withInsets:(struct NSEdgeInsets)arg2;
 - (id)init;

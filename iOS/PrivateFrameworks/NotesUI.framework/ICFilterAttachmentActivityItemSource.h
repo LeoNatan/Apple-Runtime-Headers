@@ -16,8 +16,8 @@
     id _attachmentItem;
 }
 
-@property(retain, nonatomic) id attachmentItem; // @synthesize attachmentItem=_attachmentItem;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id attachmentItem; // @synthesize attachmentItem=_attachmentItem;
 - (id)activityViewController:(id)arg1 attachmentNameForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;

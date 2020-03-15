@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)differWithBeforeDataSourceInfo:(id)arg1 afterDataSourceInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <UIDiffableDataSourceInfo> afterDataSourceInfo; // @synthesize afterDataSourceInfo=_afterDataSourceInfo;
 @property(retain, nonatomic) id <UIDiffableDataSourceInfo> beforeDataSourceInfo; // @synthesize beforeDataSourceInfo=_beforeDataSourceInfo;
-- (void).cxx_destruct;
 - (_Bool)_verifyForUpdates:(id)arg1;
 - (id)_sectionUpdatesForDiffResults:(id)arg1 deletedSections:(id)arg2 insertedSections:(id)arg3;
 - (id)_itemUpdatesForDiffResults:(id)arg1 sectionBoundaryMoves:(id)arg2 deletedSections:(id)arg3 insertedSections:(id)arg4;

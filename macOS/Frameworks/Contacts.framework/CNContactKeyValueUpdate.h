@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) CNPropertyDescription *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

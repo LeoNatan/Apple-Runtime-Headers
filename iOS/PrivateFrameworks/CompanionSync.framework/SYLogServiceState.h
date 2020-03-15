@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)transportOptionsType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *peerGenerationID; // @synthesize peerGenerationID=_peerGenerationID;
 @property(retain, nonatomic) NSString *peerID; // @synthesize peerID=_peerID;
 @property(retain, nonatomic) NSMutableArray *transportOptions; // @synthesize transportOptions=_transportOptions;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SYLogSessionState *session; // @synthesize session=_session;
 @property(retain, nonatomic) SYLogEngineState *engine; // @synthesize engine=_engine;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

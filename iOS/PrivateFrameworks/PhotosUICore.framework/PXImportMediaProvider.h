@@ -21,8 +21,9 @@
     NSMutableDictionary *_extensionPlaceholderCachesByRequestSize;
 }
 
-+ (void)unregisterPXImportMediaProviderNotificationsReceiver:(struct NSObject *)arg1;
-+ (void)registerPXImportMediaProviderNotificationsReceiver:(struct NSObject *)arg1;
++ (void)unregisterPXImportMediaProviderNotificationsReceiver:(id)arg1;
++ (void)registerPXImportMediaProviderNotificationsReceiver:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasBeenIdle; // @synthesize hasBeenIdle=_hasBeenIdle;
 @property(retain, nonatomic) NSMutableDictionary *extensionPlaceholderCachesByRequestSize; // @synthesize extensionPlaceholderCachesByRequestSize=_extensionPlaceholderCachesByRequestSize;
 @property(nonatomic) long long lastRequestsInflight; // @synthesize lastRequestsInflight=_lastRequestsInflight;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) unsigned short thumbnailImageFormat; // @synthesize thumbnailImageFormat=_thumbnailImageFormat;
 @property(nonatomic) long long nextRequestID; // @synthesize nextRequestID=_nextRequestID;
 @property(retain, nonatomic) PXLoadingStatusManager *loadingStatusManager; // @synthesize loadingStatusManager;
-- (void).cxx_destruct;
 - (id)_placeholderForItem:(id)arg1 size:(unsigned long long)arg2;
 @property(readonly, nonatomic) struct CGSize gridItemSize;
 - (id)_placeholderExtensionForItem:(id)arg1;

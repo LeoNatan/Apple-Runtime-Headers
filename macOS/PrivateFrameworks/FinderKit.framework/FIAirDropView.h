@@ -18,9 +18,9 @@
     _Bool _isTransferInProgress;
 }
 
-@property(readonly, nonatomic) _Bool isTransferInProgress; // @synthesize isTransferInProgress=_isTransferInProgress;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isTransferInProgress; // @synthesize isTransferInProgress=_isTransferInProgress;
 - (struct CGRect)fileImageFrame;
 - (id)recipientNames;
 - (void)cancel;

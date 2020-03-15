@@ -26,12 +26,12 @@ __attribute__((visibility("hidden")))
 
 + (struct CGSize)defaultInitialImageSize;
 + (id)defaultImage;
+- (void).cxx_destruct;
 @property(readonly) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
 @property(readonly) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
 @property(nonatomic) struct CGSize initialImageSize; // @synthesize initialImageSize=_initialImageSize;
 @property(retain, nonatomic) NSImage *hopImage; // @synthesize hopImage=_hopImage;
 @property(nonatomic) __weak NSObject<ImageHopAnimationDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (void)animationDidEnd:(id)arg1;
 - (void)startAnimationFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2;

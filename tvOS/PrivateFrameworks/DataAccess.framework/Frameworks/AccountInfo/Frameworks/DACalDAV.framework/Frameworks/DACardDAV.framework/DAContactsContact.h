@@ -16,9 +16,9 @@
     CNMutableContact *_mutableContact;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool markedForDeletion; // @synthesize markedForDeletion=_markedForDeletion;
 @property(readonly, nonatomic) CNMutableContact *mutableContact; // @synthesize mutableContact=_mutableContact;
-- (void).cxx_destruct;
 - (void *)asPerson;
 - (id)asContact;
 - (void)updateSaveRequest:(id)arg1;

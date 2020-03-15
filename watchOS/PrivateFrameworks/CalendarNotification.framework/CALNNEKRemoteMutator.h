@@ -15,8 +15,8 @@
     NEKRemoteMutator *_remoteMutatorInternal;
 }
 
-@property(readonly, nonatomic) NEKRemoteMutator *remoteMutatorInternal; // @synthesize remoteMutatorInternal=_remoteMutatorInternal;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NEKRemoteMutator *remoteMutatorInternal; // @synthesize remoteMutatorInternal=_remoteMutatorInternal;
 - (_Bool)deleteEvent:(id)arg1 withSpan:(int)arg2;
 - (void)setParticipantStatus:(int)arg1 span:(int)arg2 event:(id)arg3;
 - (void)setSnoozeTimeInterval:(double)arg1 alarm:(id)arg2 calendarItem:(id)arg3;

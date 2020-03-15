@@ -18,8 +18,8 @@
     id <_SFNanoSecurityContextViewDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_SFNanoSecurityContextViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFNanoSecurityContextViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)domainViewDidUpdateExpandedState:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithDomain:(id)arg1 isSecure:(_Bool)arg2 isSensitiveInputField:(_Bool)arg3 accessoryText:(id)arg4;

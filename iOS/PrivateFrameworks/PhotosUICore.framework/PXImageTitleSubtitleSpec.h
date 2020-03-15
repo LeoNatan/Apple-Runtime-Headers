@@ -14,9 +14,9 @@
     PXImageViewSpec *_imageSpec;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXImageViewSpec *imageSpec; // @synthesize imageSpec=_imageSpec;
 @property(retain, nonatomic) PXTitleSubtitleLabelSpec *titleSubtitleSpec; // @synthesize titleSubtitleSpec=_titleSubtitleSpec;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

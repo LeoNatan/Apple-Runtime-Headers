@@ -13,8 +13,8 @@
     CUTResult *_result;
 }
 
-@property(retain, nonatomic) CUTResult *result; // @synthesize result=_result;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CUTResult *result; // @synthesize result=_result;
 - (void)registerResultBlock:(CDUnknownBlockType)arg1;
 - (id)initWithResult:(id)arg1;
 

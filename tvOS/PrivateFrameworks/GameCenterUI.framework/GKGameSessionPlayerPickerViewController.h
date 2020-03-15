@@ -22,6 +22,7 @@
     UITextField *_messageField;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UITextField *messageField; // @synthesize messageField=_messageField;
 @property(nonatomic) __weak UIButton *customizeMessageButton; // @synthesize customizeMessageButton=_customizeMessageButton;
 @property(nonatomic) __weak UIButton *sendButton; // @synthesize sendButton=_sendButton;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSArray *initiallySelectedPlayers; // @synthesize initiallySelectedPlayers=_initiallySelectedPlayers;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
-- (void).cxx_destruct;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)setSearchText:(id)arg1;

@@ -26,6 +26,7 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool filterSockets; // @synthesize filterSockets=_filterSockets;
 @property(nonatomic) _Bool filterBrowsers; // @synthesize filterBrowsers=_filterBrowsers;
 @property(copy, nonatomic) NSString *pluginBundleID; // @synthesize pluginBundleID=_pluginBundleID;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSArray *permittedURLStrings; // @synthesize permittedURLStrings=_permittedURLStrings;
 @property(nonatomic) _Bool autoFilterEnabled; // @synthesize autoFilterEnabled=_autoFilterEnabled;
 @property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
-- (void).cxx_destruct;
 - (id)installationWarnings;
 - (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     IKColor *_kolor;
 }
 
-@property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)_createGradient:(id)arg1 withGradientType:(long long)arg2;
 - (void)layoutSubviews;

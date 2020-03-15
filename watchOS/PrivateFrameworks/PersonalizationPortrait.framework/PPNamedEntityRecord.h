@@ -30,11 +30,11 @@
 + (id)describeChangeType:(unsigned char)arg1;
 + (id)describeAlgorithm:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NSString *extractionOsBuild; // @synthesize extractionOsBuild=_extractionOsBuild;
 @property(readonly, nonatomic) PPSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) PPNamedEntity *entity; // @synthesize entity=_entity;
-- (void).cxx_destruct;
 - (_Bool)isEqualToNamedEntityRecord:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

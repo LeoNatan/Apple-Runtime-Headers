@@ -26,8 +26,8 @@
 
 + (id)autocompleteAccountsForRepository:(id)arg1;
 + (id)observableWithFetchRequest:(id)arg1 scheduler:(id)arg2;
-@property(retain) CNAutocompleteResultTracing *tracer; // @synthesize tracer=_tracer;
 - (void).cxx_destruct;
+@property(retain) CNAutocompleteResultTracing *tracer; // @synthesize tracer=_tracer;
 - (void)searchOperation:(id)arg1 foundRecords:(id)arg2;
 - (id)addressBook;
 - (id)searchOperationsForRequest:(id)arg1;

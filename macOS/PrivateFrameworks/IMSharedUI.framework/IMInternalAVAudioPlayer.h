@@ -23,9 +23,9 @@
     id <IMInternalAVAudioPlayerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <IMInternalAVAudioPlayerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) long long playerType; // @synthesize playerType=_playerType;
-- (void).cxx_destruct;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
 - (void)_notifyPlayerDidPrepareAudioFileSuccessfully:(BOOL)arg1;
 - (void)_notifyPlayerDidFinishSuccessfully:(BOOL)arg1;

@@ -31,6 +31,7 @@
     id <CSLanguageDetectorDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSLanguageDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSString *interactionID; // @synthesize interactionID=_interactionID;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) CSStartOfSpeechDetector *startOfSpeechDetector; // @synthesize startOfSpeechDetector=_startOfSpeechDetector;
 @property(retain, nonatomic) _EARLanguageDetectorAudioBuffer *audioBuffer; // @synthesize audioBuffer=_audioBuffer;
 @property(retain, nonatomic) _EARLanguageDetector *languageDetector; // @synthesize languageDetector=_languageDetector;
-- (void).cxx_destruct;
 - (void)startOfSpeechDetector:(id)arg1 foundStartSampleAt:(unsigned long long)arg2;
 - (void)languageDetectorDidCompleteProcessing:(id)arg1 loggingInfo:(id)arg2;
 - (void)languageDetector:(id)arg1 result:(id)arg2;

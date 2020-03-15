@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     WKDataListSuggestionsControl *_control;
 }
 
-@property(nonatomic) __weak WKDataListSuggestionsControl *control; // @synthesize control=_control;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WKDataListSuggestionsControl *control; // @synthesize control=_control;
 - (void)controlEndEditing;
 - (void)controlBeginEditing;
 - (id)controlView;

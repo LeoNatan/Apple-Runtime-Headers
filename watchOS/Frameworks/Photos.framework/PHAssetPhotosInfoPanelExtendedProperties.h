@@ -33,6 +33,7 @@
 + (id)keyPathFromPrimaryObject;
 + (id)entityName;
 + (id)propertySetName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *trackFormat; // @synthesize trackFormat=_trackFormat;
 @property(readonly, nonatomic) NSNumber *bitrate; // @synthesize bitrate=_bitrate;
 @property(readonly, nonatomic) NSNumber *sampleRate; // @synthesize sampleRate=_sampleRate;
@@ -50,7 +51,6 @@
 @property(readonly, nonatomic) NSString *lensModel; // @synthesize lensModel=_lensModel;
 @property(readonly, nonatomic) NSString *cameraModel; // @synthesize cameraModel=_cameraModel;
 @property(readonly, nonatomic) NSString *cameraMake; // @synthesize cameraMake=_cameraMake;
-- (void).cxx_destruct;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 
 @end

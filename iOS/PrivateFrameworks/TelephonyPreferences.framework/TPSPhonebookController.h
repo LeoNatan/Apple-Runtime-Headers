@@ -19,10 +19,10 @@
     CTXPCServiceSubscriptionContext *_subscriptionContext;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CTXPCServiceSubscriptionContext *subscriptionContext; // @synthesize subscriptionContext=_subscriptionContext;
 @property(readonly, nonatomic) TPSPhonebookTelephonyController *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(nonatomic) __weak id <TPSPhonebookControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)phonebookController:(id)arg1 didChangePhoneNumberInfo:(id)arg2;
 - (void)updateSubscriptionTelephoneNumber:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSString *localizedSubscriptionTelephoneNumber;

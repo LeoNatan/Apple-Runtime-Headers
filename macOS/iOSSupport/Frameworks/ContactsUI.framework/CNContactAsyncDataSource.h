@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_resultingContacts;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *resultingContacts; // @synthesize resultingContacts=_resultingContacts;
 @property(retain, nonatomic) CNPublishingSubject *reloadStream; // @synthesize reloadStream=_reloadStream;
 @property(retain, nonatomic) id <CNSchedulerProvider> reloadSchedulerProvider; // @synthesize reloadSchedulerProvider=_reloadSchedulerProvider;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CNContactStoreFilter *filter; // @synthesize filter=_filter;
 @property(retain, nonatomic) CNContactStore *store; // @synthesize store=_store;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
-- (void).cxx_destruct;
 - (void)invalidate;
 - (void)invalidateSearch;
 - (void)invalidateResults;

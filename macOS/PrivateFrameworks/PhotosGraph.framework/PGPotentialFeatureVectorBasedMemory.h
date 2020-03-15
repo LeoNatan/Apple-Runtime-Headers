@@ -21,6 +21,7 @@
     double _neighborScore;
 }
 
+- (void).cxx_destruct;
 @property double neighborScore; // @synthesize neighborScore=_neighborScore;
 @property double contentScore; // @synthesize contentScore=_contentScore;
 @property double matchingScore; // @synthesize matchingScore=_matchingScore;
@@ -30,7 +31,6 @@
 @property(retain) NSDictionary *momentKeywords; // @synthesize momentKeywords=_momentKeywords;
 @property(retain) NSDictionary *referenceKeywords; // @synthesize referenceKeywords=_referenceKeywords;
 @property(retain) NSDictionary *matchingKeywords; // @synthesize matchingKeywords=_matchingKeywords;
-- (void).cxx_destruct;
 
 @end
 

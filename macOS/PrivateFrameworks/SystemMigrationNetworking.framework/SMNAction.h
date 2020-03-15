@@ -25,13 +25,13 @@
 + (id)actionWithPayload:(id)arg1;
 + (id)descriptionForActionID:(int)arg1;
 + (int)actionID;
+- (void).cxx_destruct;
 @property(retain) NSString *selectiveDescription; // @synthesize selectiveDescription=_selectiveDescription;
 @property(retain) NSDictionary *result; // @synthesize result=_result;
 @property(retain) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(readonly) int returnCode; // @synthesize returnCode=_returnCode;
 @property(copy) CDUnknownBlockType shouldContinueBlock; // @synthesize shouldContinueBlock=_shouldContinueBlock;
 @property(retain) NSURL *systemPath; // @synthesize systemPath=_systemPath;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)receiveResultPortionOnStream:(id)arg1 error:(id *)arg2;
 - (BOOL)receivePreV4ResultPortionOnStream:(id)arg1 error:(id *)arg2;

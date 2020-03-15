@@ -31,8 +31,8 @@
     id <CSLFlipbookFrameCoordinatorProvider> _frameCoordinatorProvider;
 }
 
-@property __weak id <CSLFlipbookFrameCoordinatorProvider> frameCoordinatorProvider; // @synthesize frameCoordinatorProvider=_frameCoordinatorProvider;
 - (void).cxx_destruct;
+@property __weak id <CSLFlipbookFrameCoordinatorProvider> frameCoordinatorProvider; // @synthesize frameCoordinatorProvider=_frameCoordinatorProvider;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 @property(readonly, nonatomic) id <CSLSFlipbookFrameCoordinator> frameCoordinator;
 - (void)updateToFrame:(id)arg1;

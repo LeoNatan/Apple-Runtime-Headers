@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIViewController *_viewController;
 }
 
-@property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void)dealloc;
 - (id)init;
 

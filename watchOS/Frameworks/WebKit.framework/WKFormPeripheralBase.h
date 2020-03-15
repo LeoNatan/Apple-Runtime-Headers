@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     WKContentView *_view;
 }
 
-@property(readonly, nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
-@property(readonly, nonatomic) WKContentView *view; // @synthesize view=_view;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
+@property(readonly, nonatomic) WKContentView *view; // @synthesize view=_view;
 - (_Bool)handleKeyEvent:(id)arg1;
 @property(readonly, nonatomic) NSObject<WKFormControl> *control;
 - (id)assistantView;

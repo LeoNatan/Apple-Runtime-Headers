@@ -22,6 +22,7 @@
     NSURL *_searchableItemURL;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSURL *searchableItemURL; // @synthesize searchableItemURL=_searchableItemURL;
 @property(copy) NSString *searchableItemTitle; // @synthesize searchableItemTitle=_searchableItemTitle;
 @property(copy) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
@@ -29,7 +30,6 @@
 @property(copy) NSURL *previewItemURL; // @synthesize previewItemURL=_previewItemURL;
 @property(copy) NSString *extensionPath; // @synthesize extensionPath=_extensionPath;
 @property(copy) NSString *queryString; // @synthesize queryString=_queryString;
-- (void).cxx_destruct;
 - (BOOL)isPreviewable;
 - (id)initWithSafariSearchableItemUniqueIdentifier:(id)arg1 url:(id)arg2 title:(id)arg3 applicationBundleIdentifier:(id)arg4;
 - (id)initWithURL:(id)arg1;

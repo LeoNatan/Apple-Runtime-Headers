@@ -35,10 +35,6 @@ struct LogCategoryPrivate;
 
 struct LogOutput;
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

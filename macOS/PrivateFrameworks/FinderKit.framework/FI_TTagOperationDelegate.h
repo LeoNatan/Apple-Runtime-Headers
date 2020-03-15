@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     _Bool tornDown;
 }
 
-@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (void)aboutToTearDown;
 - (int)asyncNodeOperation:(id)arg1 errorNotification:(const struct TOperationMonitor *)arg2 error:(const struct OperationErrorRecord *)arg3 reply:(struct NodeEventReply *)arg4;
 - (int)asyncNodeOperation:(id)arg1 statusNotification:(const struct TOperationMonitor *)arg2;

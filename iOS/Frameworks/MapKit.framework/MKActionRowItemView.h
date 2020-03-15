@@ -31,13 +31,13 @@ __attribute__((visibility("hidden")))
 + (id)glyphFont;
 + (id)labelFont;
 + (double)widthBrandItem;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) _Bool fullWidthMode; // @synthesize fullWidthMode=_fullWidthMode;
 @property(nonatomic) _Bool touched; // @synthesize touched=_touched;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) MKPlaceCardActionItem *actionRowItem; // @synthesize actionRowItem=_actionRowItem;
 @property(nonatomic) __weak id <MKActionRowItemViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

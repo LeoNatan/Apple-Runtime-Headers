@@ -52,12 +52,12 @@
 + (void)setGroupSize:(unsigned long long)arg1 domain:(id)arg2;
 + (void)setMaxGroupCount:(unsigned long long)arg1 domain:(id)arg2;
 + (id)managerForDomain:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *changeLog; // @synthesize changeLog=_changeLog;
 @property(retain, nonatomic) FKDelayedOperation *saveOperation; // @synthesize saveOperation=_saveOperation;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(nonatomic, getter=didLastLoadHaveChanges) _Bool lastLoadHadChanges; // @synthesize lastLoadHadChanges=_lastLoadHadChanges;
 @property(nonatomic, getter=isRefreshAgainstContactsEnabled) _Bool refreshAgainstContactsEnabled; // @synthesize refreshAgainstContactsEnabled=_refreshAgainstContactsEnabled;
-- (void).cxx_destruct;
 - (void)markFriendListAsNormalized;
 - (void)saveFriendGroupTitles;
 - (_Bool)refreshAgainstAddressBook;

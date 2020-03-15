@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _Bool _checked;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;
 @property(nonatomic) _Bool usesDetailAppearance; // @synthesize usesDetailAppearance=_usesDetailAppearance;
-- (void).cxx_destruct;
 - (void)checkmarkButtonTapped:(id)arg1;
 - (void)setValue:(id)arg1 property:(id)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

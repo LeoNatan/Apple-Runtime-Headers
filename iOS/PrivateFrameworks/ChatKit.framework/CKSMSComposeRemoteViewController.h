@@ -19,8 +19,8 @@
 + (id)serviceViewControllerInterface;
 + (id)exportedInterface;
 + (id)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <CKSMSComposeRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <CKSMSComposeRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (_Bool)_canShowWhileLocked;
 - (void)smsComposeControllerEntryViewContentInserted;
 - (void)smsComposeControllerCancelled;

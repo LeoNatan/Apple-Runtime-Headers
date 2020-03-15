@@ -12,7 +12,7 @@
 #import <EmailDaemon/EMMessageListItemQueryResultsObserver-Protocol.h>
 
 @class EDMessagePersistence, EDPersistenceHookRegistry, EDThreadPersistence, EDVIPManager, EFLocked, EFQuery, EMObjectID, EMThreadScope, NSString;
-@protocol EDRemoteSearchProvider, EDThreadQueryHandlerDelegate, EMMessageListItemQueryResultsObserver;
+@protocol EDRemoteSearchProvider, EDResumable, EDThreadQueryHandlerDelegate, EMMessageListItemQueryResultsObserver;
 
 @interface EDThreadQueryHandler : NSObject <EDThreadMigratorDelegate, EMMessageListItemQueryResultsObserver, EFLoggable, EDMessageRepositoryQueryHandler>
 {
@@ -29,9 +29,12 @@
     id <EDRemoteSearchProvider> _remoteSearchProvider;
     EFLocked *_underlyingHandler;
     id <EDThreadQueryHandlerDelegate> _delegate;
+    id <EDResumable> _observerResumer;
 }
 
 + (id)log;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) id <EDResumable> observerResumer; // @synthesize observerResumer=_observerResumer;
 @property(readonly, nonatomic) __weak id <EDThreadQueryHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) EFLocked *underlyingHandler; // @synthesize underlyingHandler=_underlyingHandler;
 @property(readonly, nonatomic) id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
@@ -43,7 +46,6 @@
 @property(readonly, nonatomic) id <EMMessageListItemQueryResultsObserver> resultsObserver; // @synthesize resultsObserver=_resultsObserver;
 @property(readonly, nonatomic) EFQuery *query; // @synthesize query=_query;
 @property(readonly, nonatomic) EMThreadScope *threadScope; // @synthesize threadScope=_threadScope;
-- (void).cxx_destruct;
 - (void)observer:(id)arg1 matchedOldestItemsUpdatedForMailboxes:(id)arg2;
 - (void)observerWillRestart:(id)arg1;
 - (void)observer:(id)arg1 replacedExistingObjectID:(id)arg2 withNewObjectID:(id)arg3;
@@ -68,7 +70,7 @@
 - (void)cancel;
 - (void)start;
 - (void)_createUnderlyingHandlerIfNeededAndStart;
-- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 threadPersistence:(id)arg3 hookRegistry:(id)arg4 vipManager:(id)arg5 remoteSearchProvider:(id)arg6 observer:(id)arg7 observationIdentifier:(id)arg8 delegate:(id)arg9;
+- (id)initWithQuery:(id)arg1 messagePersistence:(id)arg2 threadPersistence:(id)arg3 hookRegistry:(id)arg4 vipManager:(id)arg5 remoteSearchProvider:(id)arg6 observer:(id)arg7 observationIdentifier:(id)arg8 delegate:(id)arg9 observationResumer:(id)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

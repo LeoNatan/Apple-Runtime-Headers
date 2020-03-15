@@ -16,10 +16,10 @@
     NSArray *_privateDataControllers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled; // @synthesize privateDataSyncingEnabled=_privateDataSyncingEnabled;
 @property(copy, nonatomic) NSArray *privateDataControllers; // @synthesize privateDataControllers=_privateDataControllers;
 @property(retain, nonatomic) id <FCNonDestructivePrivateDataActionProvider> privateDataActionProvider; // @synthesize privateDataActionProvider=_privateDataActionProvider;
-- (void).cxx_destruct;
 - (void)handleMigration;
 - (id)initWithPrivateDataActionProvider:(id)arg1 privateDataControllers:(id)arg2 privateDataSyncingEnabled:(_Bool)arg3;
 - (id)init;

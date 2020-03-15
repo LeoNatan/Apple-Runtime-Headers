@@ -40,8 +40,8 @@
     NSDictionary *_stringsForIntendedStrings;
 }
 
-@property(readonly) BOOL canEmitSequenceIDAndKeyState; // @synthesize canEmitSequenceIDAndKeyState=_canEmitSequenceIDAndKeyState;
 - (void).cxx_destruct;
+@property(readonly) BOOL canEmitSequenceIDAndKeyState; // @synthesize canEmitSequenceIDAndKeyState=_canEmitSequenceIDAndKeyState;
 @property(readonly, copy) NSString *description;
 - (id)stringForIntendedString:(id)arg1;
 - (id)stringForInputs:(id)arg1;

@@ -33,6 +33,7 @@
     float _interactiveTargetValue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float interactiveTargetValue; // @synthesize interactiveTargetValue=_interactiveTargetValue;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) CDUnknownBlockType applier; // @synthesize applier=_applier;
@@ -43,7 +44,6 @@
 @property(nonatomic) float currentVelocity; // @synthesize currentVelocity=_currentVelocity;
 @property(nonatomic) float currentValue; // @synthesize currentValue=_currentValue;
 @property(nonatomic) float initialSpringDelaySeconds; // @synthesize initialSpringDelaySeconds=_initialSpringDelaySeconds;
-- (void).cxx_destruct;
 - (_Bool)isAnimating;
 - (void)finishAnimating;
 - (void)animatorDisplayLinkFired:(id)arg1;

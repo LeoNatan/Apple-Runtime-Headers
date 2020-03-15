@@ -28,6 +28,7 @@
     NSString *_deleteConfirmationAlertMessage;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *deleteConfirmationAlertMessage; // @synthesize deleteConfirmationAlertMessage=_deleteConfirmationAlertMessage;
 @property(copy, nonatomic) NSString *deleteConfirmationAlertTitle; // @synthesize deleteConfirmationAlertTitle=_deleteConfirmationAlertTitle;
 @property(copy, nonatomic) NSSet *unsupportedTriggers; // @synthesize unsupportedTriggers=_unsupportedTriggers;
@@ -42,7 +43,6 @@
 @property(nonatomic) BOOL showActionSetsInstructions; // @synthesize showActionSetsInstructions=_showActionSetsInstructions;
 @property(nonatomic) BOOL showTriggerEnableSwitch; // @synthesize showTriggerEnableSwitch=_showTriggerEnableSwitch;
 @property(nonatomic) BOOL showTriggerSummary; // @synthesize showTriggerSummary=_showTriggerSummary;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithTriggerBuilderContext:(id)arg1;
 

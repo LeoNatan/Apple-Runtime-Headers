@@ -18,10 +18,10 @@
     Class _provider;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) Class provider; // @synthesize provider=_provider;
 @property(retain, nonatomic) CNContactRelationsDescriptionLabels *cachedLabels; // @synthesize cachedLabels=_cachedLabels;
 @property(readonly) NSObject<OS_dispatch_queue> *generationQueue; // @synthesize generationQueue=_generationQueue;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)fromPlistTransform;
 - (CDUnknownBlockType)plistTransform;
 - (Class)labeledValueClass;

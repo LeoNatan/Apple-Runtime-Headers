@@ -39,8 +39,8 @@
 + (id)predicateForEvaluatingTriggerOccurringBeforeSignificantEvent:(id)arg1 applyingOffset:(id)arg2;
 + (id)negateOffset:(id)arg1;
 + (_Bool)__validateRecurrences:(id)arg1;
-@property(retain, nonatomic) HMMutableArray *currentEvents; // @synthesize currentEvents=_currentEvents;
 - (void).cxx_destruct;
+@property(retain, nonatomic) HMMutableArray *currentEvents; // @synthesize currentEvents=_currentEvents;
 - (_Bool)compatibleWithApp;
 - (_Bool)containsSharedTriggerActivationBits;
 - (_Bool)_updateCharacterisiticReferenceInNewEvent:(id)arg1;

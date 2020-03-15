@@ -19,6 +19,7 @@
 - (id)_axLabelForEntry:(id)arg1;
 - (void)_accessibilityJumpToTableIndex:(id)arg1;
 - (long long)_axCurrentPosition;
+- (id)_accessibiityDisplayEntryNearestToContentOffset:(struct CGPoint)arg1;
 - (id)_axEntries;
 - (id)accessibilityFlowToElements;
 - (void)accessibilityDecrement;

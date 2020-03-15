@@ -8,7 +8,7 @@
 
 #import <CoreUtils/CBCentralManagerDelegate-Protocol.h>
 
-@class CBCentralManager, CUSystemMonitor, NSDictionary, NSString;
+@class CBCentralManager, CUSystemMonitor, NSDictionary, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CUBLEScanner : NSObject <CBCentralManagerDelegate>
@@ -16,7 +16,7 @@
     _Bool _activateCalled;
     CBCentralManager *_centralManager;
     _Bool _changesPending;
-    struct NSMutableDictionary *_devices;
+    NSMutableDictionary *_devices;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     int _rssiThreshold;
@@ -37,6 +37,7 @@
     NSString *_label;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int scanRate; // @synthesize scanRate=_scanRate;
 @property(nonatomic) unsigned int scanFlags; // @synthesize scanFlags=_scanFlags;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -48,7 +49,6 @@
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
 @property(nonatomic) int bluetoothState; // @synthesize bluetoothState=_bluetoothState;
-- (void).cxx_destruct;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)_updateScanRules:(id *)arg1 payloadType:(unsigned char)arg2 rssiThreshold:(int)arg3;

@@ -27,6 +27,7 @@
 
 + (long long)codeItemTypeFromString:(id)arg1;
 + (id)_codeItemQueue;
+- (void).cxx_destruct;
 @property(nonatomic) __weak AXCodeItem *targetCodeItem; // @synthesize targetCodeItem=_targetCodeItem;
 @property(nonatomic) unsigned short loadOrder; // @synthesize loadOrder=_loadOrder;
 @property(nonatomic) long long targetType; // @synthesize targetType=_targetType;
@@ -35,7 +36,6 @@
 @property(nonatomic) __weak AXCodeItem *associatedAccessibilityCodeItem; // @synthesize associatedAccessibilityCodeItem=_associatedAccessibilityCodeItem;
 @property(retain, nonatomic) NSString *path; // @synthesize path=_path;
 @property(retain, nonatomic) NSMutableDictionary *platformToTarget; // @synthesize platformToTarget=_platformToTarget;
-- (void).cxx_destruct;
 - (void)loadWithStrategy:(long long)arg1 onQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)prepareBackingBundleIfNeeded:(id *)arg1;
 @property(readonly, nonatomic) NSBundle *cachedBundle;

@@ -15,10 +15,10 @@
     struct CGSize _fullSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize fullSize; // @synthesize fullSize=_fullSize;
 @property(readonly, nonatomic) NSArray *DODs; // @synthesize DODs=_DODs;
 @property(readonly, nonatomic) NSArray *buffers; // @synthesize buffers=_buffers;
-- (void).cxx_destruct;
 - (id)initWithCVPixelBuffers:(id)arg1 DODs:(id)arg2 fullSize:(struct CGSize)arg3;
 
 @end

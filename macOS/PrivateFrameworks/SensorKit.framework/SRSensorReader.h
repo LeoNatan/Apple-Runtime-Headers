@@ -41,6 +41,7 @@
 + (id)remoteInterface;
 + (id)clientInterface;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL bypassHoldingPeriod; // @synthesize bypassHoldingPeriod=_bypassHoldingPeriod;
 @property(readonly, nonatomic) Class exportingSampleClass; // @synthesize exportingSampleClass=_exportingSampleClass;
 @property(readonly, nonatomic) Class sampleClass; // @synthesize sampleClass=_sampleClass;
@@ -53,7 +54,6 @@
 @property(retain) NSDictionary *nextDatastoreFiles; // @synthesize nextDatastoreFiles=_nextDatastoreFiles;
 @property __weak id <SRSensorReaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *sensor; // @synthesize sensor=_sensor;
-- (void).cxx_destruct;
 - (void)authorizedServicesDidChange:(id)arg1 forBundleIdentifier:(id)arg2;
 @property(readonly, getter=isAuthorized) BOOL authorized;
 - (id)authorizedServices;

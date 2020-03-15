@@ -14,8 +14,8 @@
 }
 
 + (_Bool)refreshesAvailabilityOnApplicationResume;
-@property(readonly, nonatomic) ICScheme *scheme; // @synthesize scheme=_scheme;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ICScheme *scheme; // @synthesize scheme=_scheme;
 - (void)makeAvailableAtGlobalLevelWithUserInterface:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)globalLevelStatus;
 - (id)protectedResourceDescription;

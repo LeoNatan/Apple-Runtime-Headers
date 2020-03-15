@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     VUISeparatorView *_separatorView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
 @property(retain, nonatomic) _TVImageView *availabilityImageView; // @synthesize availabilityImageView=_availabilityImageView;
 @property(retain, nonatomic) VUILabel *availabilityTextView; // @synthesize availabilityTextView=_availabilityTextView;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *rowLabels; // @synthesize rowLabels=_rowLabels;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) VUISportsProductBannerLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (double)_maxScoreWidthForColumn:(unsigned long long)arg1 availableWidth:(double)arg2;
 - (double)_totalMaxScoreWidthWithAvailableWidth:(double)arg1;
 - (void)_layoutLabels:(id)arg1 scoreLabels:(id)arg2 withOrigin:(struct CGPoint)arg3 maxWidth:(double)arg4;

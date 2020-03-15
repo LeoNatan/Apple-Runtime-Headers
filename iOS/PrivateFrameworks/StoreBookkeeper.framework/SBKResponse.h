@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (id)responseWithResponse:(id)arg1;
 + (id)responseWithCode:(unsigned long long)arg1 headerFields:(id)arg2 responseDictionary:(id)arg3 MIMEType:(id)arg4 error:(id)arg5;
 + (id)responseWithURLResponse:(id)arg1 responseDictionary:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SBKResponseStatus *responseStatus; // @synthesize responseStatus=_responseStatus;
 @property(readonly, nonatomic) NSString *MIMEType; // @synthesize MIMEType=_MIMEType;
 @property(readonly) double retrySeconds; // @synthesize retrySeconds=_retrySeconds;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSDictionary *responseHeaderFields; // @synthesize responseHeaderFields=_responseHeaderFields;
 @property(readonly, nonatomic) unsigned long long responseCode; // @synthesize responseCode=_responseCode;
 @property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
-- (void).cxx_destruct;
 @property(readonly) _Bool isPuntedError;
 @property(readonly) _Bool isValidationError;
 @property(readonly) _Bool isAuthenticationError;

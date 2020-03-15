@@ -21,6 +21,7 @@
     NSObject<OS_dispatch_group> *_operationExecutionGroup;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *operationExecutionGroup; // @synthesize operationExecutionGroup=_operationExecutionGroup;
 @property(retain, nonatomic) NSMutableDictionary *cancelHandlersByKey; // @synthesize cancelHandlersByKey=_cancelHandlersByKey;
 @property(nonatomic) long long maxConcurrentOperationCount; // @synthesize maxConcurrentOperationCount=_maxConcurrentOperationCount;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *executionQueue; // @synthesize executionQueue=_executionQueue;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(nonatomic) __weak id <FCKeyedOperationQueueDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_enqueueOperationIfNeeded;
 - (void)_cancelOperationsIfNeeded;
 - (void)notifyWhenAllOperationsAreFinishedUsingBlock:(CDUnknownBlockType)arg1;

@@ -18,8 +18,8 @@
     id <SBLockScreenBatteryChargingViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBLockScreenBatteryChargingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBLockScreenBatteryChargingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (long long)presentationStyle;
 - (void)_visibilityTimerFired:(id)arg1;
 - (void)showChargeLevelWithBatteryVisible:(_Bool)arg1;

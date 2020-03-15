@@ -23,10 +23,10 @@
 }
 
 + (void)clearCachedRenders;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL cachesUnadjustedImageForRequestedAssets; // @synthesize cachesUnadjustedImageForRequestedAssets=_cachesUnadjustedImageForRequestedAssets;
 @property(nonatomic) BOOL delayRenders; // @synthesize delayRenders=_delayRenders;
 @property(nonatomic) BOOL useCachedRenders; // @synthesize useCachedRenders=_useCachedRenders;
-- (void).cxx_destruct;
 - (void)_removeRequestforID:(long long)arg1;
 - (void)cancelImageRequest:(long long)arg1;
 - (void)_handleRequestCompletedWithID:(long long)arg1 info:(id)arg2;

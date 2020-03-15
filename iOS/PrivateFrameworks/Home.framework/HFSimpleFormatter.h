@@ -14,9 +14,9 @@
     CDUnknownBlockType _attributedFormatterBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType attributedFormatterBlock; // @synthesize attributedFormatterBlock=_attributedFormatterBlock;
 @property(readonly, copy, nonatomic) CDUnknownBlockType formatterBlock; // @synthesize formatterBlock=_formatterBlock;
-- (void).cxx_destruct;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)stringForObjectValue:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -21,10 +21,10 @@
 
 + (id)logCategory;
 + (id)accessoryBagURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) __weak HMDRelayManager *relayManager; // @synthesize relayManager=_relayManager;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)relayManager:(id)arg1 didUpdateControllerIdentifier:(id)arg2;
 - (void)requestAccessTokenForAccessoryIdentifier:(id)arg1 pairingToken:(id)arg2;

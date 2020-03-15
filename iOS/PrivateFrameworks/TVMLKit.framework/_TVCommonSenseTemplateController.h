@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     IKViewElement *_templateElement;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) IKViewElement *templateElement; // @synthesize templateElement=_templateElement;
 @property(retain, nonatomic) _TVCommonSenseView *commonSenseView; // @synthesize commonSenseView=_commonSenseView;
-- (void).cxx_destruct;
 - (id)_infoTableFromElement:(id)arg1;
 - (void)_updateFooterWithElement:(id)arg1;
 - (void)_updateHeaderWithElement:(id)arg1;

@@ -33,6 +33,7 @@
     NSObject<OS_dispatch_queue> *_contextUpdateQueue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *contextUpdateQueue; // @synthesize contextUpdateQueue=_contextUpdateQueue;
 @property(retain, nonatomic) HKOverlayContextLocation *initialSelectedContextLocation; // @synthesize initialSelectedContextLocation=_initialSelectedContextLocation;
 @property(retain, nonatomic) NSArray *overlayContextSections; // @synthesize overlayContextSections=_overlayContextSections;
@@ -48,14 +49,13 @@
 @property(nonatomic) int controllerMode; // @synthesize controllerMode=_controllerMode;
 @property(copy, nonatomic) NSDate *displayDate; // @synthesize displayDate=_displayDate;
 @property(retain, nonatomic) HKOverlayRoomApplicationItems *applicationItems; // @synthesize applicationItems=_applicationItems;
-- (void).cxx_destruct;
 - (void)_refreshContextItemsAndUpdateChart:(_Bool)arg1;
 - (void)_invalidateContextItems;
-- (_Bool)_shouldUpdateContextItemsForChanges:(struct NSDictionary *)arg1;
+- (_Bool)_shouldUpdateContextItemsForChanges:(id)arg1;
 - (void)_refreshUpdatedItemsWithChartUpdate:(_Bool)arg1 invalidateChartItems:(_Bool)arg2;
 - (void)updateController:(id)arg1 didReceiveHighFrequencyUpdateForType:(id)arg2;
 - (void)updateController:(id)arg1 didReceiveUpdateForType:(id)arg2 samplesAdded:(id)arg3 objectsRemoved:(id)arg4;
-- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(struct NSDictionary *)arg2;
+- (void)sampleTypeDateRangeController:(id)arg1 didUpdateDateRanges:(id)arg2;
 - (void)newDataArrivedWithValueRange:(id)arg1;
 - (void)didUpdateVisibleValueRange:(id)arg1 changeContext:(int)arg2;
 - (void)didUpdateFromDateZoom:(int)arg1 toDateZoom:(int)arg2 newVisibleRange:(id)arg3;

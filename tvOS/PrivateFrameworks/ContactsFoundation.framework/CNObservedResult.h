@@ -29,11 +29,11 @@
 + (id)resultWithTimeInterval:(double)arg1 tolerance:(double)arg2 value:(id)arg3;
 + (id)resultWithTime:(unsigned long long)arg1 tolerance:(unsigned long long)arg2 value:(id)arg3;
 + (id)resultWithTime:(unsigned long long)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long logTime; // @synthesize logTime=_logTime;
 @property(readonly) unsigned long long tolerance; // @synthesize tolerance=_tolerance;
 @property(readonly) id value; // @synthesize value=_value;
 @property(readonly) unsigned long long time; // @synthesize time=_time;
-- (void).cxx_destruct;
 - (struct _NSRange)timeRange;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

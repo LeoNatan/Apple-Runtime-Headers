@@ -14,9 +14,9 @@
     NSMutableArray *_mutableCols;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *mutableCols; // @synthesize mutableCols=_mutableCols;
 @property(retain, nonatomic) NSArray *cols; // @synthesize cols=_cols;
-- (void).cxx_destruct;
 - (id)transcriptionOfPath:(id)arg1 tokenProcessingBlock:(CDUnknownBlockType)arg2;
 - (void)sortCols;
 @property(readonly) unsigned long long colCount;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (long long)activityCategory;
-@property(readonly, copy, nonatomic) NSString *internalSystemImageName; // @synthesize internalSystemImageName=_internalSystemImageName;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *internalSystemImageName; // @synthesize internalSystemImageName=_internalSystemImageName;
 - (id)_systemImageName;
 - (id)initWithPlugin:(id)arg1 systemImageName:(id)arg2;
 

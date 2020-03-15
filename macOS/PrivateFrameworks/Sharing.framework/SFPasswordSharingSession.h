@@ -28,6 +28,7 @@
     CDUnknownBlockType _promptForPINHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType promptForPINHandler; // @synthesize promptForPINHandler=_promptForPINHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSString *hashedEmail; // @synthesize hashedEmail=_hashedEmail;
 @property(retain, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_receivedObject:(id)arg1 flags:(unsigned int)arg2;
 - (void)_runPasswordShareReceiveResponse:(id)arg1;
 - (void)_runPasswordShareSendInfo;

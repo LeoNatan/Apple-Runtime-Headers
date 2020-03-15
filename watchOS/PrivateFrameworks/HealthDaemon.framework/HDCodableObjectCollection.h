@@ -44,6 +44,7 @@
 + (Class)workoutsType;
 + (Class)quantitySamplesType;
 + (Class)categorySamplesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDCodableProvenance *provenance; // @synthesize provenance=_provenance;
 @property(retain, nonatomic) HDCodableGeneratedObjectCollection *generatedObjectCollection; // @synthesize generatedObjectCollection=_generatedObjectCollection;
 @property(retain, nonatomic) NSMutableArray *medicalRecords; // @synthesize medicalRecords=_medicalRecords;
@@ -61,7 +62,6 @@
 @property(retain, nonatomic) NSMutableArray *categorySamples; // @synthesize categorySamples=_categorySamples;
 @property(retain, nonatomic) HDCodableSource *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

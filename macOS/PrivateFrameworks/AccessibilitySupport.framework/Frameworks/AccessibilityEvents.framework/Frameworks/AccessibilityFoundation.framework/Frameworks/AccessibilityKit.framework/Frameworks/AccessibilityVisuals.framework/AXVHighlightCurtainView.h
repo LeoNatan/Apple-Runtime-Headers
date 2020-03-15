@@ -15,10 +15,10 @@
     struct CGRect _nonCoveredRect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setCurtainLayer:) CAShapeLayer *_curtainLayer; // @synthesize _curtainLayer=__curtainLayer;
 @property(nonatomic) struct CGRect nonCoveredRect; // @synthesize nonCoveredRect=_nonCoveredRect;
 @property(retain, nonatomic) NSColor *curtainColor; // @synthesize curtainColor=_curtainColor;
-- (void).cxx_destruct;
 - (void)_setCurtainLayerPath:(id)arg1;
 - (id)init;
 - (id)initWithFrameSpanningAllScreens;

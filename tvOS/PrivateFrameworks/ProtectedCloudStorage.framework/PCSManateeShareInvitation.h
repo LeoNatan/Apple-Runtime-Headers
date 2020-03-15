@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     NSData *_shareePublicKeyData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *shareePublicKeyData; // @synthesize shareePublicKeyData=_shareePublicKeyData;
 @property(retain, nonatomic) NSData *exportedPCSData; // @synthesize exportedPCSData=_exportedPCSData;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class FPXExtensionContext, FPXSpotlightIndexer, NSFileProviderDomain, NSFileProviderExtension;
-@protocol OS_os_log;
+@protocol NSFileProviderReplicatedExtension, OS_os_log;
 
 __attribute__((visibility("hidden")))
 @interface FPXDomainContext : NSObject
@@ -15,20 +15,22 @@ __attribute__((visibility("hidden")))
     BOOL _usesFPFS;
     unsigned long long _extensionCapabilities;
     FPXExtensionContext *_extensionContext;
-    NSFileProviderExtension *_vendorInstance;
+    NSObject<NSFileProviderReplicatedExtension> *_vendorInstance;
     NSFileProviderDomain *_domain;
     NSObject<OS_os_log> *_log;
     FPXSpotlightIndexer *_spotlightIndexer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPXSpotlightIndexer *spotlightIndexer; // @synthesize spotlightIndexer=_spotlightIndexer;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(readonly, nonatomic) BOOL usesFPFS; // @synthesize usesFPFS=_usesFPFS;
 @property(readonly, nonatomic) NSFileProviderDomain *domain; // @synthesize domain=_domain;
-@property(readonly, nonatomic) NSFileProviderExtension *vendorInstance; // @synthesize vendorInstance=_vendorInstance;
+@property(readonly, nonatomic) NSObject<NSFileProviderReplicatedExtension> *vendorInstance; // @synthesize vendorInstance=_vendorInstance;
 @property(readonly, nonatomic) __weak FPXExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(readonly, nonatomic) unsigned long long extensionCapabilities; // @synthesize extensionCapabilities=_extensionCapabilities;
-- (void).cxx_destruct;
+- (id)instanceWithPrivateSelector:(SEL)arg1;
+@property(readonly, nonatomic) NSFileProviderExtension *v2Instance;
 - (void)invalidate;
 - (id)itemIDsFromVendorItemIDs:(id)arg1;
 - (id)itemsFromVendorItems:(id)arg1;

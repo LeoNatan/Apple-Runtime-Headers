@@ -19,13 +19,13 @@
 }
 
 + (id)JSONKeyPathsByPropertyKey;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *actionList; // @synthesize actionList=_actionList;
 @property(copy, nonatomic) NSString *runtimeJavaScriptString; // @synthesize runtimeJavaScriptString=_runtimeJavaScriptString;
 @property(readonly, nonatomic) NSString *preRuntimeJavaScriptString; // @synthesize preRuntimeJavaScriptString=_preRuntimeJavaScriptString;
 @property(readonly, nonatomic) NSDictionary *preRuntimeJavaScriptSerializedRepresentation; // @synthesize preRuntimeJavaScriptSerializedRepresentation=_preRuntimeJavaScriptSerializedRepresentation;
 @property(retain, nonatomic) NSURL *targetURL; // @synthesize targetURL=_targetURL;
 @property(nonatomic) unsigned long long runtimeType; // @synthesize runtimeType=_runtimeType;
-- (void).cxx_destruct;
 - (id)defaultLocalizedDeniedErrorMessage;
 - (id)defaultLocalizedDeniedErrorTitle;
 - (id)defaultLocalizedPromptMessage;

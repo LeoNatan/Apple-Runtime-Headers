@@ -21,9 +21,9 @@ __attribute__((visibility("hidden")))
 
 + (id)viewPropertyAnimatorWithParameters:(id)arg1;
 + (id)springTimingParameters;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldMovePresentingViewInParallel; // @synthesize shouldMovePresentingViewInParallel=_shouldMovePresentingViewInParallel;
 @property(nonatomic) long long transitionDirection; // @synthesize transitionDirection=_transitionDirection;
-- (void).cxx_destruct;
 - (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (struct CGRect)finalFrameForViewController:(id)arg1;

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 + (id)emptyBlueprint;
 + (BOOL)supportsSecureCoding;
 + (id)keysAffectingAutoEdit;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *requestedMusicGenreDistribution; // @synthesize requestedMusicGenreDistribution=_requestedMusicGenreDistribution;
 @property(copy, nonatomic) NSArray *requestedKeywords; // @synthesize requestedKeywords=_requestedKeywords;
 @property(retain, nonatomic) NSString *songID; // @synthesize songID=_songID;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL songIsLocked; // @synthesize songIsLocked=_songIsLocked;
 @property(retain, nonatomic) NSMutableDictionary *moodDictionary; // @synthesize moodDictionary=_moodDictionary;
 @property(retain, nonatomic) NSArray *moodIDs; // @synthesize moodIDs=_moodIDs;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)_moodPaceKey;
 - (id)_pacingKey;

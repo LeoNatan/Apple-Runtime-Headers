@@ -59,6 +59,7 @@
 }
 
 + (id)_defaultFocusAnimationConfiguration;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType focusAnimationConfigurationHandler; // @synthesize focusAnimationConfigurationHandler=_focusAnimationConfigurationHandler;
 @property(nonatomic) NSString *cornerCurve; // @synthesize cornerCurve=_cornerCurve;
 @property(nonatomic) _Bool showsHighContrastFocusIndicator; // @synthesize showsHighContrastFocusIndicator=_showsHighContrastFocusIndicator;
@@ -86,7 +87,6 @@
 @property(nonatomic) float visualEffectContainerViewScaleFactor; // @synthesize visualEffectContainerViewScaleFactor=_visualEffectContainerViewScaleFactor;
 @property(nonatomic) struct CGPoint focusScaleAnchorPoint; // @synthesize focusScaleAnchorPoint=_focusScaleAnchorPoint;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-- (void).cxx_destruct;
 - (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
 - (void)_setShadowImageIfNeeded;
 - (void)_updateShadowContentsScaleForPrimaryState:(unsigned int)arg1;

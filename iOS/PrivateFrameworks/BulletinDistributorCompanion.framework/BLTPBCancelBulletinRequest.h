@@ -22,11 +22,11 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double date; // @synthesize date=_date;
 @property(nonatomic) unsigned int feed; // @synthesize feed=_feed;
 @property(retain, nonatomic) NSString *publisherMatchID; // @synthesize publisherMatchID=_publisherMatchID;
 @property(retain, nonatomic) NSString *universalSectionID; // @synthesize universalSectionID=_universalSectionID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

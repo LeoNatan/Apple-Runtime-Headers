@@ -14,8 +14,8 @@
 }
 
 + (id)appLifeCycleHandler;
-@property(retain, nonatomic) NSMutableDictionary *identifierBlockMap; // @synthesize identifierBlockMap=_identifierBlockMap;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *identifierBlockMap; // @synthesize identifierBlockMap=_identifierBlockMap;
 - (void)cancelAll;
 - (void)cancelBlocksWithStringIdentifier:(id)arg1;
 - (void)dispatchAfter:(double)arg1 stringIdentifier:(id)arg2 withBlock:(CDUnknownBlockType)arg3;

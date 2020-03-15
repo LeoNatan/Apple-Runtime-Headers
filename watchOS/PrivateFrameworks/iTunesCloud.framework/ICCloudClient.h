@@ -26,18 +26,17 @@
     ICCloudClientCloudService *_cloudService;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) ICCloudClientCloudService *cloudService; // @synthesize cloudService=_cloudService;
 @property(readonly, nonatomic) ICCloudClientAvailabilityService *availabilityService; // @synthesize availabilityService=_availabilityService;
 @property(nonatomic) int preferredVideoQuality; // @synthesize preferredVideoQuality=_preferredVideoQuality;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialAccessQueue; // @synthesize serialAccessQueue=_serialAccessQueue;
 @property(copy, nonatomic) CDUnknownBlockType updateJaliscoInProgressChangedHandler; // @synthesize updateJaliscoInProgressChangedHandler=_updateJaliscoInProgressChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType updateSagaInProgressChangedHandler; // @synthesize updateSagaInProgressChangedHandler=_updateSagaInProgressChangedHandler;
-- (void).cxx_destruct;
 - (void)_deauthenticateAndDisableActiveLockerAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_serverJaliscoUpdateInProgressDidChange;
 - (void)_serverSagaUpdateInProgressDidChange;
 - (void)_serverDidLaunch;
-- (void)_sendConfigurationToDaemon;
 @property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) NSXPCConnection *xpcListenerEndpointProviderConnection; // @synthesize xpcListenerEndpointProviderConnection=_xpcListenerEndpointProviderConnection;
 - (void)_tearDownNotifications;
@@ -145,6 +144,7 @@
 - (void)addStorePlaylistWithGlobalID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)sdk_addStoreItemWithOpaqueID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addStoreItemWithAdamID:(long long)arg1 referral:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)updatePinnedSubscribedPlaylistsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateSubscribedPlaylistsWithSagaIDs:(id)arg1 ignoreMinRefreshInterval:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)uploadArtworkForPlaylistWithPersistentID:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)publishPlaylistWithSagaID:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -24,12 +24,12 @@
 + (struct CGSize)defaultBoundingSize;
 + (id)previewForURL:(id)arg1 title:(id)arg2;
 + (id)previewForURL:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *_springboardParameters; // @synthesize _springboardParameters=__springboardParameters;
 @property(nonatomic) _Bool avoidAnimation; // @synthesize avoidAnimation=_avoidAnimation;
 @property(nonatomic, getter=_preventAfterScreenUpdatesSnapshot, setter=_setPreventAfterScreenUpdatesSnapshot:) _Bool preventAfterScreenUpdatesSnapshot; // @synthesize preventAfterScreenUpdatesSnapshot=_preventAfterScreenUpdatesSnapshot;
 @property(readonly, copy, nonatomic) UIDragPreviewParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) _Bool _springboardPlatterStyle;
 @property(nonatomic) struct CGPoint preferredAnchorPoint;

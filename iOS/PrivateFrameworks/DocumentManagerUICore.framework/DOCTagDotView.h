@@ -20,13 +20,13 @@
     struct CGSize _dotSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *checkmarkLayer; // @synthesize checkmarkLayer=_checkmarkLayer;
 @property(readonly, nonatomic) CAShapeLayer *dotLayer; // @synthesize dotLayer=_dotLayer;
 @property(readonly, nonatomic) CAShapeLayer *noneDotLayer; // @synthesize noneDotLayer=_noneDotLayer;
 @property(nonatomic) struct CGSize dotSize; // @synthesize dotSize=_dotSize;
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;
 @property(nonatomic) long long tagColor; // @synthesize tagColor=_tagColor;
-- (void).cxx_destruct;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateLayoutOfLayers;

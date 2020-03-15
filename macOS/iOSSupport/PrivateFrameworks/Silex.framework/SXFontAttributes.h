@@ -18,11 +18,11 @@
     long long _style;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) long long weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
-- (void).cxx_destruct;
 - (id)stringForWidth:(long long)arg1;
 - (id)stringForWeight:(long long)arg1;
 - (id)stringForStyle:(long long)arg1;

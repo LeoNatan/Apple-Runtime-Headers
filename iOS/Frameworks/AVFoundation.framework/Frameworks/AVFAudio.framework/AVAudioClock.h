@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (struct AudioTimeStamp)currentAudioTimeStamp;
 @property(readonly, nonatomic) AVAudioTime *currentTime;
 - (void)dealloc;
--     // Error parsing type: @24@0:8^{AVAudioNodeImplBase=^^?^{AVAudioEngineImpl}@{vector<bool, std::__1::allocator<bool> >=^QQ{__compressed_pair<unsigned long, std::__1::allocator<unsigned long> >=Q}}BB^{AVAudioMixingImpl}^{map<std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *, std::__1::less<std::__1::pair<AVAudioNode *, unsigned int> >, std::__1::allocator<std::__1::pair<const std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *> > >}Bqd{atomic<double>=Ad}}16, name: initWithNode:
+-     // Error parsing type: @24@0:8^{AVAudioNodeImplBase=^^?^{AVAudioEngineImpl}@{vector<bool, std::__1::allocator<bool> >=^QQ{__compressed_pair<unsigned long, std::__1::allocator<unsigned long> >=Q}}BB^{AVAudioMixingImpl}^{map<std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *, std::__1::less<std::__1::pair<AVAudioNode *, unsigned int> >, std::__1::allocator<std::__1::pair<const std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *> > >}Bqd{atomic<double>={__cxx_atomic_impl<double, std::__1::__cxx_atomic_base_impl<double> >=Ad}}}16, name: initWithNode:
 - (id)init;
 
 @end

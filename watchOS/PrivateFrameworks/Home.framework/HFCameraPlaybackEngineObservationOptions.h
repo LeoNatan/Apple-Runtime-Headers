@@ -14,8 +14,8 @@
 }
 
 + (id)defaultOptions;
-@property(copy, nonatomic) NSNumber *periodicTimeUpdateInterval; // @synthesize periodicTimeUpdateInterval=_periodicTimeUpdateInterval;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *periodicTimeUpdateInterval; // @synthesize periodicTimeUpdateInterval=_periodicTimeUpdateInterval;
 
 @end
 

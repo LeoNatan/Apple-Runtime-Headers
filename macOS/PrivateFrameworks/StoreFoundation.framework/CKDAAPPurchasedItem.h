@@ -16,8 +16,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy) NSDictionary *daapDictionary; // @synthesize daapDictionary=_daapDictionary;
 - (void).cxx_destruct;
+@property(copy) NSDictionary *daapDictionary; // @synthesize daapDictionary=_daapDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

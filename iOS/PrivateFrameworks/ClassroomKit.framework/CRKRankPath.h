@@ -13,8 +13,8 @@
     NSArray *_ranks;
 }
 
-@property(copy, nonatomic) NSArray *ranks; // @synthesize ranks=_ranks;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *ranks; // @synthesize ranks=_ranks;
 @property(readonly, nonatomic) long long length;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

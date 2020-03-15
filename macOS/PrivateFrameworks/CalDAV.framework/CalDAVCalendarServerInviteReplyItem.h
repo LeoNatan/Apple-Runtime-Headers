@@ -20,6 +20,7 @@
     NSURL *_acceptedURL;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURL *acceptedURL; // @synthesize acceptedURL=_acceptedURL;
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) CoreDAVItemWithHrefChildItem *hostURL; // @synthesize hostURL=_hostURL;
 @property(retain, nonatomic) CoreDAVItemWithNoChildren *inviteStatus; // @synthesize inviteStatus=_inviteStatus;
 @property(retain, nonatomic) CoreDAVHrefItem *href; // @synthesize href=_href;
-- (void).cxx_destruct;
 - (id)copyParseRules;
 - (void)setAcceptedURLItem:(id)arg1;
 - (void)setLastNameItem:(id)arg1;

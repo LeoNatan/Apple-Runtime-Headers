@@ -69,6 +69,8 @@
 + (id)_databaseCorruptionDefaultKeyForDatabaseWithName:(id)arg1;
 + (id)allCurrentAndFutureEntityClasses;
 + (void)loadEntityClasses;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_didWaitForJournalMergeHandler; // @synthesize unitTest_didWaitForJournalMergeHandler=_unitTest_didWaitForJournalMergeHandler;
 @property(nonatomic) _Bool didRunPostMigrationUpdates; // @synthesize didRunPostMigrationUpdates=_didRunPostMigrationUpdates;
 @property(nonatomic) double protectedDataFlushInterval; // @synthesize protectedDataFlushInterval=_protectedDataFlushInterval;
@@ -93,8 +95,6 @@
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, nonatomic) HDDatabaseJournal *cloudSyncJournal; // @synthesize cloudSyncJournal=_cloudSyncJournal;
 @property(readonly, nonatomic) HDDatabaseJournal *journal; // @synthesize journal=_journal;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)unitTest_currentTransaction;
 - (void)unitTest_setContentProtectionStateAndWait:(int)arg1;
 - (void)obliterateWithReason:(id)arg1 preserveCopy:(_Bool)arg2;

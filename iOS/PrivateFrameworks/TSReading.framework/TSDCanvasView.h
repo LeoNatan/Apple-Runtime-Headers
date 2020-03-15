@@ -24,6 +24,7 @@
 @property(nonatomic) id <TSDCanvasLayerHosting> layerHost; // @synthesize layerHost=mLayerHost;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)_requestTextItemConstrainedToLineAtPoint:(struct CGPoint)arg1 resultHandler:(CDUnknownBlockType)arg2;
 - (_Bool)willInteractWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)startLongInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)cancelInteractionWithLink;

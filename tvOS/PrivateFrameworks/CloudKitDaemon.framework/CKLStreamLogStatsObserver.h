@@ -14,9 +14,9 @@
     NSMutableDictionary *_totalCountByLine;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *totalCountByLine; // @synthesize totalCountByLine=_totalCountByLine;
 @property(retain) NSMutableDictionary *totalSizeByLine; // @synthesize totalSizeByLine=_totalSizeByLine;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)eventMatched:(id)arg1;
 - (id)initWithLogTypes:(unsigned long long)arg1;

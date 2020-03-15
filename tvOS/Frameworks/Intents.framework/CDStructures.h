@@ -10,17 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NSCache {
-    Class _field1;
-    id _field2;
-    void *_field3[5];
-    void *_field4;
-};
-
-struct NSMutableDictionary {
-    Class _field1;
-};
-
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;

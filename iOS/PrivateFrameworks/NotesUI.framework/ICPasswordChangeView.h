@@ -13,8 +13,8 @@
     ICPasswordChangeViewController *_parentViewController;
 }
 
-@property(nonatomic) __weak ICPasswordChangeViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak ICPasswordChangeViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 - (void)updateConstraints;
 - (void)layoutSubviews;
 

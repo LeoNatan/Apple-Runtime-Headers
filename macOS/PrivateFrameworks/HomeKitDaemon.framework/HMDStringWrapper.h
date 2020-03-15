@@ -14,8 +14,8 @@
 }
 
 + (id)wrappertlv:(unsigned long long)arg1 name:(id)arg2;
-@property(retain, nonatomic) NSString *field; // @synthesize field=_field;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *field; // @synthesize field=_field;
 
 @end
 

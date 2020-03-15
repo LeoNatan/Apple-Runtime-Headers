@@ -16,11 +16,11 @@
     double _whiteFactor;
 }
 
+- (void).cxx_destruct;
 @property double whiteFactor; // @synthesize whiteFactor=_whiteFactor;
 @property double whiteValue; // @synthesize whiteValue=_whiteValue;
 @property(retain) NSArray *xyzToCamera2; // @synthesize xyzToCamera2=_xyzToCamera2;
 @property(retain) NSArray *xyzToCamera1; // @synthesize xyzToCamera1=_xyzToCamera1;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

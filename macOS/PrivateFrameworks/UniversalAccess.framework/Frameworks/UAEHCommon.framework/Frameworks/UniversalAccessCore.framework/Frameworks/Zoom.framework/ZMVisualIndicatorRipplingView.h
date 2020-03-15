@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct CGRect _startingBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CABasicAnimation *_growAnimation; // @synthesize _growAnimation=__growAnimation;
 @property(retain, nonatomic) CAShapeLayer *_ringShapeLayer; // @synthesize _ringShapeLayer=__ringShapeLayer;
 @property(nonatomic) struct CGRect startingBounds; // @synthesize startingBounds=_startingBounds;
-- (void).cxx_destruct;
 - (void)startAnimation;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

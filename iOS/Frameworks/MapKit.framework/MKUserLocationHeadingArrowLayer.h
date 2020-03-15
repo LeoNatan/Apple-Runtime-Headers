@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
     double _headingRadians;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double headingRadians; // @synthesize headingRadians=_headingRadians;
 @property(readonly, nonatomic) __weak _MKPuckAnnotationView *userLocationView; // @synthesize userLocationView=_userLocationView;
-- (void).cxx_destruct;
 - (double)_tipRadiusWhenVisible:(_Bool)arg1;
 - (double)_baseRadiusWhenVisible:(_Bool)arg1;
 - (struct CGPoint)_positionWhenVisible:(_Bool)arg1;

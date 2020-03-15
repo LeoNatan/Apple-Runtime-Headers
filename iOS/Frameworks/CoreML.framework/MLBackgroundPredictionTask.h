@@ -17,10 +17,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (Class)taskRunnerClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) MLPredictionOptions *predictionOptions; // @synthesize predictionOptions=_predictionOptions;
 @property(copy, nonatomic) MLModelConfiguration *modelConfiguration; // @synthesize modelConfiguration=_modelConfiguration;
 @property(copy, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

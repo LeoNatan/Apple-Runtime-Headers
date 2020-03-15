@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
-@property(copy, nonatomic) NSURL *resourceURL; // @synthesize resourceURL=_resourceURL;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSURL *resourceURL; // @synthesize resourceURL=_resourceURL;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

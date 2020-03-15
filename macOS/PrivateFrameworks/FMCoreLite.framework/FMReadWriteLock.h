@@ -14,9 +14,9 @@
     struct _opaque_pthread_rwlock_t _lock;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct _opaque_pthread_rwlock_t lock; // @synthesize lock=_lock;
 @property(retain, nonatomic) NSString *lockName; // @synthesize lockName=_lockName;
-- (void).cxx_destruct;
 - (void)performWithWriteLock:(CDUnknownBlockType)arg1;
 - (void)performWithReadLock:(CDUnknownBlockType)arg1;
 - (id)initWithLockName:(id)arg1;

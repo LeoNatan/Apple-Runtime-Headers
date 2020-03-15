@@ -22,11 +22,11 @@
     IMAPMailboxSyncState *_syncState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isSelected; // @synthesize isSelected=_isSelected;
 @property(retain, nonatomic) IMAPMailboxSyncState *syncState; // @synthesize syncState=_syncState;
 @property(readonly, nonatomic) IMAPTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(nonatomic) __weak IMAPTask *lastTaskSource; // @synthesize lastTaskSource=_lastTaskSource;
-- (void).cxx_destruct;
 - (void)connection:(id)arg1 receivedUnhandledUntaggedResponse:(id)arg2 forMailbox:(id)arg3 forCommand:(id)arg4;
 - (void)connection:(id)arg1 receivedFetchResponse:(id)arg2 forMailbox:(id)arg3;
 - (void)connection:(id)arg1 receivedExists:(unsigned long long)arg2 forMailbox:(id)arg3;

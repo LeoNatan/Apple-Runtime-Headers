@@ -16,9 +16,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXFeedbackSender *feedbackSender; // @synthesize feedbackSender=_feedbackSender;
 @property(readonly, nonatomic) PXFeedbackCollector *feedbackCollector; // @synthesize feedbackCollector=_feedbackCollector;
-- (void).cxx_destruct;
 - (void)removeFeedbackEntry:(id)arg1;
 - (void)provideUserFeedbackEntry:(id)arg1;
 - (id)provideUserFeedbackFromDictionary:(id)arg1 forFeedbackType:(unsigned long long)arg2;

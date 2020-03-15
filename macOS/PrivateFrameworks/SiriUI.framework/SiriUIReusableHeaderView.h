@@ -25,12 +25,12 @@
 + (id)elementKind;
 + (double)defaultHeight;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SiriUIKeyline *keyline; // @synthesize keyline=_keyline;
 @property(readonly, nonatomic) SiriUIContentLabel *headerLabel; // @synthesize headerLabel=_headerLabel;
 @property(nonatomic) long long keylineType; // @synthesize keylineType=_keylineType;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(nonatomic) __weak SiriUISnippetViewController *snippetViewController; // @synthesize snippetViewController=_snippetViewController;
-- (void).cxx_destruct;
 - (BOOL)wantsLayer;
 - (BOOL)isFlipped;
 - (void)setAttributedTitleText:(id)arg1;

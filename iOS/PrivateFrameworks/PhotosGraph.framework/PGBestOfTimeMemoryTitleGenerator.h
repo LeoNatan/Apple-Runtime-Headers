@@ -15,10 +15,10 @@
     long long _year;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long year; // @synthesize year=_year;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)_generateSubtitle;
 - (id)_bestOfYearTitle;
 - (id)_bestOfPastTimeTitle;

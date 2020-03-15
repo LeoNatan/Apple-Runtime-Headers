@@ -24,6 +24,7 @@
     NSLayoutConstraint *_buttonsBaselineConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *spinnerToDefaultSpacingConstraints; // @synthesize spinnerToDefaultSpacingConstraints=_spinnerToDefaultSpacingConstraints;
 @property __weak NSLayoutConstraint *buttonsBaselineConstraint; // @synthesize buttonsBaselineConstraint=_buttonsBaselineConstraint;
 @property __weak NSLayoutConstraint *spinnerToAlternateSpacingConstraint; // @synthesize spinnerToAlternateSpacingConstraint=_spinnerToAlternateSpacingConstraint;
@@ -35,7 +36,6 @@
 @property __weak NSTextField *titleField; // @synthesize titleField=_titleField;
 @property __weak NSImageView *iconView; // @synthesize iconView=_iconView;
 @property(retain) NSWindow *dialogSheet; // @synthesize dialogSheet=_dialogSheet;
-- (void).cxx_destruct;
 - (void)setAlternateButtonTitle:(id)arg1;
 - (void)setDefaultButtonTitle:(id)arg1;
 - (void)setIcon:(id)arg1;

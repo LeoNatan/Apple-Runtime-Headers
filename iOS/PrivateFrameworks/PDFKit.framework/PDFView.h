@@ -63,6 +63,7 @@
 - (_Bool)handleTabInTextWidget:(id)arg1;
 - (void)interactWithAnnotation:(id)arg1;
 - (void)addMarkupWithStyle:(unsigned long long)arg1 fromSelection:(id)arg2;
+- (_Bool)isUpdatingSelectionMarkups;
 - (unsigned long long)activeMarkupStyle;
 - (void)setActiveMarkupStyle:(unsigned long long)arg1;
 - (void)_tileRefresh;
@@ -145,9 +146,10 @@
 - (_Bool)_shouldHandleAnnotationAtLocation:(struct CGPoint)arg1 forGestureType:(unsigned long long)arg2;
 - (id)hitTestForSubviewsOfView:(id)arg1 atLocation:(struct CGPoint)arg2 withEvent:(id)arg3;
 - (unsigned long long)typeForGestureRecognizer:(id)arg1;
-- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4;
+- (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3 locationOfFirstTouch:(struct CGPoint)arg4 isIndirectTouch:(_Bool)arg5;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)addGestureRecognizer:(id)arg1;
 - (void)gestureInit;

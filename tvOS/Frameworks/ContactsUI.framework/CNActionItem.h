@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disabled; // @synthesize disabled=_disabled;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 
 @end
 

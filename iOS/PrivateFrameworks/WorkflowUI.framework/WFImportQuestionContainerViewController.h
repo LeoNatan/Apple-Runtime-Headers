@@ -18,10 +18,10 @@
     OBWelcomeController *_welcomeController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) OBWelcomeController *welcomeController; // @synthesize welcomeController=_welcomeController;
 @property(nonatomic) _Bool backButtonHidden; // @synthesize backButtonHidden=_backButtonHidden;
 @property(nonatomic) __weak id <WFImportQuestionContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)keyboardWillChange:(id)arg1;
 - (void)didTapSkip;
 - (void)didTapNext;

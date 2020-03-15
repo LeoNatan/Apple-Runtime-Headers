@@ -21,12 +21,12 @@
     CDUnknownBlockType _intentProceedHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType intentProceedHandler; // @synthesize intentProceedHandler=_intentProceedHandler;
 @property(retain, nonatomic) WFLWorkflowController *workflowController; // @synthesize workflowController=_workflowController;
 @property(nonatomic) __weak id <APUIWFLIntentControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long executionContext; // @synthesize executionContext=_executionContext;
 @property(retain, nonatomic) INIntent *intent; // @synthesize intent=_intent;
-- (void).cxx_destruct;
 - (void)handleIntentAction:(id)arg1 requiresUserConfirmation:(_Bool)arg2 requiresUserAuthentication:(_Bool)arg3 withIntentResponse:(id)arg4 proceedHandler:(CDUnknownBlockType)arg5;
 - (void)logDebugInformation:(id)arg1;
 - (id)workflowController:(id)arg1 userInterfaceForRunningAction:(id)arg2;

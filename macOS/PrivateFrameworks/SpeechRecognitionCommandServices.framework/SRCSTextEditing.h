@@ -16,9 +16,9 @@
 
 + (long long)doesArrayOfWords:(id)arg1 containArrayOfArrayWords:(id)arg2;
 + (id)wordsFromString:(id)arg1;
+- (void).cxx_destruct;
 @property double delayAfterSelectionBeforeExecutingAction; // @synthesize delayAfterSelectionBeforeExecutingAction=_delayAfterSelectionBeforeExecutingAction;
 @property __weak id <SRCSTextEditingProviderProtocol> provider; // @synthesize provider=_provider;
-- (void).cxx_destruct;
 - (id)init;
 - (id)_capitalizedStringFromString:(id)arg1;
 - (id)_strippedPhraseStringsFromStrings:(id)arg1;

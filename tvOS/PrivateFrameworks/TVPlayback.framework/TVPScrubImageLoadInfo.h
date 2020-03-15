@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     UIImage *_image;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) double imageTime; // @synthesize imageTime=_imageTime;
 @property(nonatomic) double requestedTime; // @synthesize requestedTime=_requestedTime;
 @property(retain, nonatomic) id loadingToken; // @synthesize loadingToken=_loadingToken;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

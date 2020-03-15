@@ -17,9 +17,9 @@
     id <_DKKnowledgeSaving> _knowledgeStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <_DKKnowledgeSaving> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 @property(readonly, nonatomic) NSMutableArray *matchers; // @synthesize matchers=_matchers;
-- (void).cxx_destruct;
 - (void)_addCoreDuetDatasetSample:(id)arg1 toDataset:(id)arg2;
 - (id)_datasetSampleFromEvent:(id)arg1 andMatcher:(id)arg2;
 - (void)processEvent:(id)arg1;

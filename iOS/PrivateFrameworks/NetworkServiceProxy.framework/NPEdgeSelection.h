@@ -20,6 +20,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSDate *probeDate; // @synthesize probeDate=_probeDate;
 @property unsigned long long nextBestEdgeRTT; // @synthesize nextBestEdgeRTT=_nextBestEdgeRTT;
 @property(retain) NSString *nextBestEdge; // @synthesize nextBestEdge=_nextBestEdge;
@@ -27,7 +28,6 @@
 @property unsigned long long bestEdgeRTT; // @synthesize bestEdgeRTT=_bestEdgeRTT;
 @property(retain) NSString *bestEdge; // @synthesize bestEdge=_bestEdge;
 @property(nonatomic) __weak NPWaldo *waldoInfo; // @synthesize waldoInfo=_waldoInfo;
-- (void).cxx_destruct;
 - (id)copyEdgeSelectionTelemetry;
 - (id)description;
 - (void)updateEdgeSelection:(unsigned long long)arg1;

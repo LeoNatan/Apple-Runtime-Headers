@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long rootID; // @synthesize rootID=_rootID;
 @property(nonatomic) unsigned long long latestEventID; // @synthesize latestEventID=_latestEventID;
 @property(retain, nonatomic) NSUUID *streamUUID; // @synthesize streamUUID=_streamUUID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

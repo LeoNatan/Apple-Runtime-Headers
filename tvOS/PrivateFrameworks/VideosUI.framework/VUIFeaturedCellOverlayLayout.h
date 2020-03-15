@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)layoutWithLayout:(id)arg1 overlayType:(long long)arg2 element:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUIButtonLayout *buttonLayout; // @synthesize buttonLayout=_buttonLayout;
 @property(retain, nonatomic) VUITextLayout *disclaimerLayout; // @synthesize disclaimerLayout=_disclaimerLayout;
 @property(retain, nonatomic) VUITextLayout *subtitleLayout; // @synthesize subtitleLayout=_subtitleLayout;
 @property(retain, nonatomic) VUITextLayout *titleLayout; // @synthesize titleLayout=_titleLayout;
 @property(retain, nonatomic) VUIAppleTVChannelLogoLayout *channelLogoLayout; // @synthesize channelLogoLayout=_channelLogoLayout;
 @property(nonatomic) long long overlayType; // @synthesize overlayType=_overlayType;
-- (void).cxx_destruct;
 - (void)_setupLayouts;
 - (id)initWithOverlayType:(long long)arg1;
 

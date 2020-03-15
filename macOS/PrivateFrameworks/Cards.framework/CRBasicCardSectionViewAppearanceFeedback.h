@@ -16,8 +16,8 @@
     id <CRCardSection> _cardSection;
 }
 
-@property(retain, nonatomic) id <CRCardSection> cardSection; // @synthesize cardSection=_cardSection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CRCardSection> cardSection; // @synthesize cardSection=_cardSection;
 
 // Remaining properties
 @property(readonly, nonatomic) SFFeedback *backingFeedback;

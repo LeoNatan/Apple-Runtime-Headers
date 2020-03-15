@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sanitizedErrors:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPeerPaymentTransactionMetadata *peerPaymentTransactionMetadata; // @synthesize peerPaymentTransactionMetadata=_peerPaymentTransactionMetadata;
 @property(copy, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

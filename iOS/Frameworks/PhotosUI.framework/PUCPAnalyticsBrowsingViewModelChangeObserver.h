@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     id <PUDisplayAsset> _lastObservedAsset;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <PUDisplayAsset> lastObservedAsset; // @synthesize lastObservedAsset=_lastObservedAsset;
 @property(nonatomic) long long viewTimeSignpostID; // @synthesize viewTimeSignpostID=_viewTimeSignpostID;
 @property(nonatomic) _Bool isTracking; // @synthesize isTracking=_isTracking;
-- (void).cxx_destruct;
 - (void)_startViewingAsset:(id)arg1;
 - (void)_endViewingAsset:(id)arg1;
 - (void)_handleAssetUpdate:(id)arg1;

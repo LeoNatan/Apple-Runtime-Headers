@@ -15,8 +15,8 @@
     RPBroadcastPickerHostViewController *_hostViewController;
 }
 
-@property(retain, nonatomic) RPBroadcastPickerHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) RPBroadcastPickerHostViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 - (void)viewControllerDidFinish;
 
 // Remaining properties

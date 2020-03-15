@@ -20,9 +20,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPhysicsBody *bodyB; // @synthesize bodyB=_bodyB;
 @property(retain, nonatomic) PKPhysicsBody *bodyA; // @synthesize bodyA=_bodyA;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double reactionTorque;
 @property(readonly, nonatomic) struct CGVector reactionForce;
 - (id)init;

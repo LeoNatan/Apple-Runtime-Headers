@@ -14,8 +14,8 @@
     NSString *_groupIdentifier;
 }
 
-@property(copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (CDUnknownBlockType)handler;
 - (void)setHandler:(CDUnknownBlockType)arg1;
 

@@ -14,9 +14,9 @@
     KHBehavior *_behavior;
 }
 
+- (void).cxx_destruct;
 @property(retain) KHBehavior *behavior; // @synthesize behavior=_behavior;
 @property __weak id target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (BOOL)_object:(id)arg1 greaterThan:(id)arg2;
 - (BOOL)_object:(id)arg1 equalsValue:(id)arg2;
 - (BOOL)_object:(id)arg1 containsValue:(id)arg2;

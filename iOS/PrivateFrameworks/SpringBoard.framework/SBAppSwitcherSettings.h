@@ -90,6 +90,7 @@
 }
 
 + (id)settingsControllerModule;
+- (void).cxx_destruct;
 @property _Bool showFloats; // @synthesize showFloats=_showFloats;
 @property _Bool simplicityOptionNoSnapshotBkg; // @synthesize simplicityOptionNoSnapshotBkg=_simplicityOptionNoSnapshotBkg;
 @property _Bool simplicityOptionNoControlCenter; // @synthesize simplicityOptionNoControlCenter=_simplicityOptionNoControlCenter;
@@ -166,7 +167,6 @@
 @property _Bool shouldRoundCornersDuringSwipeUp; // @synthesize shouldRoundCornersDuringSwipeUp=_shouldRoundCornersDuringSwipeUp;
 @property _Bool useAsynchronousRendering; // @synthesize useAsynchronousRendering=_useAsynchronousRendering;
 @property long long switcherStyle; // @synthesize switcherStyle=_switcherStyle;
-- (void).cxx_destruct;
 - (long long)effectiveSwitcherStyle;
 - (_Bool)shouldSimplifyForOptions:(long long)arg1;
 @property long long simplicityOptions; // @dynamic simplicityOptions;

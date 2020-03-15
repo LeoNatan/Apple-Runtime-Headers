@@ -32,6 +32,7 @@
 + (_Bool)hasAnalysisProgressForMode:(long long)arg1 analysisStatus:(id)arg2 serviceStatus:(id)arg3 serviceUIStatus:(id)arg4 userDefaults:(id)arg5 outAnimatedIconMode:(long long *)arg6 outProgress:(float *)arg7 outTitle:(id *)arg8 outDescription:(id *)arg9;
 + (_Bool)_hasSyncProgressStatusForSyncAlbums:(id)arg1 outImportOperations:(int *)arg2;
 + (id)_titleWithOptionalDescription:(id *)arg1 progress:(float *)arg2 forMode:(long long)arg3 itemCountsController:(id)arg4 analysisStatus:(id)arg5 serviceStatus:(id)arg6 inRebuild:(_Bool)arg7;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isFooterShown; // @synthesize isFooterShown=_isFooterShown;
 @property(readonly, nonatomic) PXFooterSettings *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) PXCuratedLibraryItemCountsController *itemCountsController; // @synthesize itemCountsController=_itemCountsController;
@@ -40,9 +41,8 @@
 @property(readonly, nonatomic) _Bool hasImportantInformation; // @synthesize hasImportantInformation=_hasImportantInformation;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <PXCuratedLibraryFooterViewModelPresentationDelegate> presentingDelegate; // @synthesize presentingDelegate=_presentingDelegate;
-- (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
-- (struct NSObject *)presentingViewControllerForCloudQuotaController:(id)arg1;
+- (id)presentingViewControllerForCloudQuotaController:(id)arg1;
 - (void)cloudQuotaController:(id)arg1 presentInformationBanner:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateExposedProperties;

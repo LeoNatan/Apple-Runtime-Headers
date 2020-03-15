@@ -27,12 +27,12 @@
     NSMutableDictionary *_handlers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL perPidService; // @synthesize perPidService=_perPidService;
 @property(readonly, nonatomic) unsigned int machPort; // @synthesize machPort=_serverPort;
 @property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
-- (void).cxx_destruct;
 - (id)_clientIdentificationForAuditToken:(CDStruct_4c969caf)arg1;
 - (BOOL)_handleErrorWithMessage:(id)arg1 outError:(id *)arg2;
 - (void)_handleIncomingMessage:(id)arg1 securityToken:(CDStruct_52eb0d21)arg2 auditToken:(CDStruct_4c969caf)arg3 clientPort:(unsigned int)arg4 completion:(CDUnknownBlockType)arg5;

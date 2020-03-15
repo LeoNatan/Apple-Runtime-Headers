@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_originalRequestConfigurations;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *originalRequestConfigurations; // @synthesize originalRequestConfigurations=_originalRequestConfigurations;
 @property(copy, nonatomic) NSDictionary *detectorConfigurationOptions; // @synthesize detectorConfigurationOptions=_detectorConfigurationOptions;
 @property(copy, nonatomic) NSString *detectorType; // @synthesize detectorType=_detectorType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

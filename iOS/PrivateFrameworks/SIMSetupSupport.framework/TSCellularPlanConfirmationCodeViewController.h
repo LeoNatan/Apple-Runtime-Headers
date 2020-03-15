@@ -26,12 +26,12 @@
     NSLayoutConstraint *_infoTableViewHeightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSLayoutConstraint *infoTableViewHeightConstraint; // @synthesize infoTableViewHeightConstraint=_infoTableViewHeightConstraint;
 @property(nonatomic) __weak UITableView *infoTableView; // @synthesize infoTableView=_infoTableView;
 @property(nonatomic) __weak UILabel *confirmationCodeTitleLabel; // @synthesize confirmationCodeTitleLabel=_confirmationCodeTitleLabel;
 @property(readonly, nonatomic) NSString *confirmationCode; // @synthesize confirmationCode=_confirmationCode;
 @property(nonatomic) __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)canBeShownFromSuspendedState;
 - (void)confirm:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;

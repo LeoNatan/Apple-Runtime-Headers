@@ -16,9 +16,9 @@
     NSSet *_substitutionVariables;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *substitutionVariables; // @synthesize substitutionVariables=_substitutionVariables;
 @property(nonatomic) _Bool predicateContainsSubstitutionVariables; // @synthesize predicateContainsSubstitutionVariables=_predicateContainsSubstitutionVariables;
-- (void).cxx_destruct;
 - (void)visitPredicateOperator:(id)arg1;
 - (void)visitPredicateExpression:(id)arg1;
 - (void)_inspectExpression:(id)arg1;

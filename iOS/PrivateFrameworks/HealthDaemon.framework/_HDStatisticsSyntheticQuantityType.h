@@ -19,10 +19,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)syntheticQuantityTypeWithUnderlyingSampleType:(id)arg1 aggregationStyle:(long long)arg2 canonicalUnit:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) HKUnit *overriddenCanonicalUnit; // @synthesize overriddenCanonicalUnit=_overriddenCanonicalUnit;
 @property(readonly, nonatomic) long long overriddenAggregationStyle; // @synthesize overriddenAggregationStyle=_overriddenAggregationStyle;
 @property(readonly, copy, nonatomic) HKSampleType *underlyingSampleType; // @synthesize underlyingSampleType=_underlyingSampleType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)dataObjectClass;

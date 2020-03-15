@@ -22,6 +22,7 @@
 }
 
 + (id)defaultOptionsForViewSizeSubclass:(long long)arg1 containerLeadingMargin:(double)arg2 containerTrailingMargin:(double)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) double containerTrailingMargin; // @synthesize containerTrailingMargin=_containerTrailingMargin;
 @property(nonatomic) double containerLeadingMargin; // @synthesize containerLeadingMargin=_containerLeadingMargin;
 @property(readonly, nonatomic) long long viewSizeSubclass; // @synthesize viewSizeSubclass=_viewSizeSubclass;
@@ -29,7 +30,6 @@
 @property(nonatomic) double height; // @synthesize height=_height;
 @property(nonatomic) double bottomMargin; // @synthesize bottomMargin=_bottomMargin;
 @property(nonatomic) double topMargin; // @synthesize topMargin=_topMargin;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double trailingMargin;
 @property(readonly, nonatomic) double leadingMargin;
 - (id)copyWithZone:(struct _NSZone *)arg1;

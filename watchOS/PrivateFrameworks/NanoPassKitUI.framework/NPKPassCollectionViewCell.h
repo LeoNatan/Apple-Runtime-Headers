@@ -40,6 +40,7 @@
 }
 
 + (Class)_contentViewClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *scrollViewDidEndScrollingAnimationBlocks; // @synthesize scrollViewDidEndScrollingAnimationBlocks=_scrollViewDidEndScrollingAnimationBlocks;
 @property(nonatomic) _Bool passHasForeignReferences; // @synthesize passHasForeignReferences=_passHasForeignReferences;
 @property(retain, nonatomic) UIView *opaqueBackgroundView; // @synthesize opaqueBackgroundView=_opaqueBackgroundView;
@@ -59,7 +60,6 @@
 @property(retain, nonatomic) PKPass *pass; // @synthesize pass=_pass;
 @property(nonatomic) __weak id <NPKPassActionControllerProtocol> actionControllerDelegate; // @synthesize actionControllerDelegate=_actionControllerDelegate;
 @property(nonatomic) __weak id <NPKPassCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (float)_scrollViewBottomContentInsetWithPass:(id)arg1;
 - (void)standardPassView:(id)arg1 didDismissAccessoryViewController:(id)arg2;
 - (void)fadeAndScaleAndimationCoordinator:(id)arg1 didUpdateSideButtonAlignedAlpha:(float)arg2 otherContentAlpha:(float)arg3 scale:(float)arg4;

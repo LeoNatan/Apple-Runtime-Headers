@@ -54,6 +54,7 @@
 }
 
 + (id)sortOrder;
+- (void).cxx_destruct;
 @property(retain) NSMutableArray *migrationElementsProgressPercentage; // @synthesize migrationElementsProgressPercentage=_migrationElementsProgressPercentage;
 @property(retain) NSObject<OS_dispatch_source> *batteryLogSource; // @synthesize batteryLogSource=_batteryLogSource;
 @property BOOL reportTimeRemaining; // @synthesize reportTimeRemaining=_reportTimeRemaining;
@@ -88,7 +89,6 @@
 @property(retain) NSString *tracingUUID; // @synthesize tracingUUID=_tracingUUID;
 @property(retain) SMEngineDelegateProxy *delegate; // @synthesize delegate=_delegate;
 @property(retain) SMMigrationRequest *migrationRequest; // @synthesize migrationRequest=_migrationRequest;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)pathingProgressFormatKey:(id)arg1 arguments:(id)arg2;
 - (void)aggregateEngineErrorsAndWarnings;

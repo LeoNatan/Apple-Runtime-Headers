@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
     unsigned int __actualChangeCount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int _actualChangeCount; // @synthesize _actualChangeCount=__actualChangeCount;
 @property(readonly, nonatomic) unsigned int _changeCount; // @synthesize _changeCount=__changeCount;
 @property(nonatomic) __weak UIMenuSystem *system; // @synthesize system=_system;
-- (void).cxx_destruct;
 - (void)removeMenuForIdentifier:(id)arg1;
 - (void)insertChildMenu:(id)arg1 atEndOfMenuForIdentifier:(id)arg2;
 - (void)insertChildMenu:(id)arg1 atStartOfMenuForIdentifier:(id)arg2;

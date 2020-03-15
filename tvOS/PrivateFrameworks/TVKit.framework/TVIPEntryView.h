@@ -20,12 +20,12 @@
     UIButton *_doneButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) NSString *ipString; // @synthesize ipString=_ipString;
 @property(retain, nonatomic) NSArray *dotViews; // @synthesize dotViews=_dotViews;
 @property(retain, nonatomic) NSArray *digitViews; // @synthesize digitViews=_digitViews;
 @property(nonatomic) __weak id <TVIPEntryViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (long long)_octetForBlockIndex:(unsigned long long)arg1;
 - (void)_updateDigitLimits;
 - (void)doneButton:(id)arg1;

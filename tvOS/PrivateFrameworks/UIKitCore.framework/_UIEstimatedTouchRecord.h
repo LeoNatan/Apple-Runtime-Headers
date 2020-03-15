@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSNumber *_contextID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *contextID; // @synthesize contextID=_contextID;
 @property(readonly, nonatomic) NSArray *touchables; // @synthesize touchables=_touchables;
 @property(readonly, nonatomic) UITouch *frozenTouch; // @synthesize frozenTouch=_frozenTouch;
 @property(readonly, nonatomic) UITouch *liveTouch; // @synthesize liveTouch=_liveTouch;
-- (void).cxx_destruct;
 - (void)dispatchUpdateWithPressure:(double)arg1 stillEstimated:(_Bool)arg2;
 - (void)removeTouchable:(id)arg1;
 - (void)addTouchable:(id)arg1;

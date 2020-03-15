@@ -26,6 +26,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)normalizeAddressString:(id)arg1;
 + (id)postalAddressWithThoroughfare:(id)arg1 subThoroughfare:(id)arg2 locality:(id)arg3 subLocality:(id)arg4 administrativeArea:(id)arg5 subAdministrativeArea:(id)arg6 postalCode:(id)arg7 country:(id)arg8;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *country; // @synthesize country=_country;
 @property(readonly, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
 @property(readonly, nonatomic) NSString *subAdministrativeArea; // @synthesize subAdministrativeArea=_subAdministrativeArea;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) NSString *locality; // @synthesize locality=_locality;
 @property(readonly, nonatomic) NSString *subThoroughfare; // @synthesize subThoroughfare=_subThoroughfare;
 @property(readonly, nonatomic) NSString *thoroughfare; // @synthesize thoroughfare=_thoroughfare;
-- (void).cxx_destruct;
 - (BOOL)isEqualToPostalAddress:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

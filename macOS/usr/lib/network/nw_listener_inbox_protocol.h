@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     struct nw_listen_protocol _listen_protocol;
 }
 
-- (BOOL)cancel;
+- (_Bool)cancel;
 - (id)description;
 - (id)initWithProtocol:(struct nw_protocol *)arg1 delegate:(id)arg2;
 

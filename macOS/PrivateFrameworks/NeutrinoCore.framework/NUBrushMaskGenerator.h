@@ -19,6 +19,7 @@
     NSNumber *_inputPressureMode;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *inputPressureMode; // @synthesize inputPressureMode=_inputPressureMode;
 @property(retain, nonatomic) NSNumber *inputClosed; // @synthesize inputClosed=_inputClosed;
 @property(retain, nonatomic) NSNumber *inputTiled; // @synthesize inputTiled=_inputTiled;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSNumber *inputOpacity; // @synthesize inputOpacity=_inputOpacity;
 @property(retain, nonatomic) NSNumber *inputSoftness; // @synthesize inputSoftness=_inputSoftness;
 @property(retain, nonatomic) NSNumber *inputRadius; // @synthesize inputRadius=_inputRadius;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (void)setDefaults;
 - (id)_applyOpacity:(double)arg1 toMask:(id)arg2;

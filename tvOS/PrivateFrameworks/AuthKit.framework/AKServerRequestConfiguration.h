@@ -20,12 +20,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *whitelistedPathURLs; // @synthesize whitelistedPathURLs=_whitelistedPathURLs;
 @property(nonatomic) unsigned long long presentationType; // @synthesize presentationType=_presentationType;
 @property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
 @property(retain, nonatomic) AKAppleIDServerResourceLoadDelegate *resourceLoadDelegate; // @synthesize resourceLoadDelegate=_resourceLoadDelegate;
 @property(retain, nonatomic) NSURLRequest *request; // @synthesize request=_request;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithRequest:(id)arg1 requestType:(unsigned long long)arg2;
 - (void)encodeWithCoder:(id)arg1;

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _barSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double navigationAlpha; // @synthesize navigationAlpha=_navigationAlpha;
 @property(retain, nonatomic) NSArray *interstitialTimes; // @synthesize interstitialTimes=_interstitialTimes;
 @property(nonatomic) long long fillStyle; // @synthesize fillStyle=_fillStyle;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double savedPosition; // @synthesize savedPosition=_savedPosition;
 @property(nonatomic) double xNeedlePosition; // @synthesize xNeedlePosition=_xNeedlePosition;
 @property(nonatomic) struct CGSize barSize; // @synthesize barSize=_barSize;
-- (void).cxx_destruct;
 - (id)_newMaskImage;
 @property(readonly) UIImage *maskImage;
 @property(readonly, getter=isDirty) _Bool dirty;

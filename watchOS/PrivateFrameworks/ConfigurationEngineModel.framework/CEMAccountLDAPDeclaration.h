@@ -27,13 +27,13 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *payloadLDAPCredentials; // @synthesize payloadLDAPCredentials=_payloadLDAPCredentials;
 @property(copy, nonatomic) CEMAccountLDAPDeclaration_CommunicationServiceRules *payloadCommunicationServiceRules; // @synthesize payloadCommunicationServiceRules=_payloadCommunicationServiceRules;
 @property(copy, nonatomic) NSArray *payloadLDAPSearchSettings; // @synthesize payloadLDAPSearchSettings=_payloadLDAPSearchSettings;
 @property(copy, nonatomic) NSNumber *payloadLDAPAccountUseSSL; // @synthesize payloadLDAPAccountUseSSL=_payloadLDAPAccountUseSSL;
 @property(copy, nonatomic) NSString *payloadLDAPAccountHostName; // @synthesize payloadLDAPAccountHostName=_payloadLDAPAccountHostName;
 @property(copy, nonatomic) NSString *payloadLDAPAccountDescription; // @synthesize payloadLDAPAccountDescription=_payloadLDAPAccountDescription;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

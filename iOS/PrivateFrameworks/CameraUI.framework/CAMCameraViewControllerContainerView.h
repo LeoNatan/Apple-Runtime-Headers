@@ -14,10 +14,10 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *additionalContentView; // @synthesize additionalContentView=_additionalContentView;
 @property(retain, nonatomic) UIView *customOverlayView; // @synthesize customOverlayView=_customOverlayView;
 @property(retain, nonatomic) UIView *viewfinderView; // @synthesize viewfinderView=_viewfinderView;
-- (void).cxx_destruct;
 - (void)verifyViewOrdering;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (void)layoutSubviews;

@@ -18,11 +18,11 @@
     PKProtobufPaymentToken *_token;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKProtobufShippingMethod *shippingMethod; // @synthesize shippingMethod=_shippingMethod;
 @property(retain, nonatomic) NSData *shippingContact; // @synthesize shippingContact=_shippingContact;
 @property(retain, nonatomic) NSData *billingContact; // @synthesize billingContact=_billingContact;
 @property(retain, nonatomic) PKProtobufPaymentToken *token; // @synthesize token=_token;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

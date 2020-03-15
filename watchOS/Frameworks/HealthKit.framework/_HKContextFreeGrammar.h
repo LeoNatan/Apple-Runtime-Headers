@@ -19,9 +19,9 @@
 
 + (id)grammarWithRootNonTerminal:(id)arg1 emptyStringEvaluator:(CDUnknownBlockType)arg2;
 + (id)grammarWithRootNonTerminal:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType emptyStringEvaluator; // @synthesize emptyStringEvaluator=_emptyStringEvaluator;
 @property(readonly, nonatomic) _HKCFGNonTerminal *rootNonTerminal; // @synthesize rootNonTerminal=_rootNonTerminal;
-- (void).cxx_destruct;
 - (void)_gatherExpressionsStartingAt:(id)arg1;
 - (void)_gatherExpressions;
 - (void)invalidate;

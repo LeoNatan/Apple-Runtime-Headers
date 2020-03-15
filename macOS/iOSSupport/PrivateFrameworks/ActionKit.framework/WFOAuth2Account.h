@@ -21,8 +21,8 @@
 + (id)clientID;
 + (id)sessionManager;
 + (id)migrate:(id)arg1;
-@property(copy, nonatomic) WFOAuth2Credential *credential; // @synthesize credential=_credential;
 - (void).cxx_destruct;
+@property(copy, nonatomic) WFOAuth2Credential *credential; // @synthesize credential=_credential;
 - (void)refreshWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)isValid;
 

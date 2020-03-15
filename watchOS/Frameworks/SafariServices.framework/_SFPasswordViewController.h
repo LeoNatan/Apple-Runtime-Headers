@@ -18,8 +18,8 @@
     id <_SFPasswordViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <_SFPasswordViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_SFPasswordViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)serviceProxyWillQueueInvocation:(id)arg1;
 - (void)_dismissPasswordViewController;
 - (void)remoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;

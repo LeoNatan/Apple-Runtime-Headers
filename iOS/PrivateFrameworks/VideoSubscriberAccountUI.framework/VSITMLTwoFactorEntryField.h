@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     IKTextFieldElement *_associatedTextFieldElement;
 }
 
-@property(retain, nonatomic) IKTextFieldElement *associatedTextFieldElement; // @synthesize associatedTextFieldElement=_associatedTextFieldElement;
 - (void).cxx_destruct;
+@property(retain, nonatomic) IKTextFieldElement *associatedTextFieldElement; // @synthesize associatedTextFieldElement=_associatedTextFieldElement;
 - (void)textDidChangeForKeyboard:(id)arg1;
 
 // Remaining properties

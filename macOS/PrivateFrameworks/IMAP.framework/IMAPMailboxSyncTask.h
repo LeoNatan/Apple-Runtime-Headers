@@ -55,6 +55,7 @@
 }
 
 + (id)signpostLog;
+- (void).cxx_destruct;
 @property(nonatomic) long long verificationState; // @synthesize verificationState=_verificationState;
 @property(nonatomic) BOOL foundNewUnreadInboxMessage; // @synthesize foundNewUnreadInboxMessage=_foundNewUnreadInboxMessage;
 @property(readonly, nonatomic) NSProgress *checkProgress; // @synthesize checkProgress=_checkProgress;
@@ -76,7 +77,6 @@
 @property(readonly) IMAPTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(nonatomic) BOOL wasReset; // @synthesize wasReset=_wasReset;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)verifyMailboxOperation:(id)arg1 foundInconsistencies:(BOOL)arg2;
 - (void)_finishCheckForMailProgressIfNecessary;
 - (void)_setFoundNewUnreadMessageInInbox;

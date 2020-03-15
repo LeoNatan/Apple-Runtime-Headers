@@ -22,6 +22,7 @@
     long long _family;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long family; // @synthesize family=_family;
 @property(nonatomic) unsigned long long totalHeadlineCount; // @synthesize totalHeadlineCount=_totalHeadlineCount;
 @property(nonatomic) unsigned long long headlineIndex; // @synthesize headlineIndex=_headlineIndex;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *sectionName; // @synthesize sectionName=_sectionName;
 @property(copy, nonatomic) NSString *headlineTitle; // @synthesize headlineTitle=_headlineTitle;
 @property(copy, nonatomic) NSString *headlineIdentifier; // @synthesize headlineIdentifier=_headlineIdentifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)init;

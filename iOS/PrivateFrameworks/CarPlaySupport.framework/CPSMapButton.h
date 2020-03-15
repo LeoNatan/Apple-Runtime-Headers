@@ -14,8 +14,8 @@
 }
 
 + (id)buttonWithCPMapButton:(id)arg1;
-@property(retain, nonatomic) CPMapButton *mapButton; // @synthesize mapButton=_mapButton;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CPMapButton *mapButton; // @synthesize mapButton=_mapButton;
 - (void)_updateButtonImages;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setCharge:(float)arg1;

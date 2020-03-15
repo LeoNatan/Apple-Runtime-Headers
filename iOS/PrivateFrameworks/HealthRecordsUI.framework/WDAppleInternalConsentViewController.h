@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _completionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(retain, nonatomic) UIViewController *actionViewController; // @synthesize actionViewController=_actionViewController;
-- (void).cxx_destruct;
 - (void)declineButtonTapped:(id)arg1;
 - (void)acceptButtonTapped:(id)arg1;
 - (void)cancelButtonTapped:(id)arg1;

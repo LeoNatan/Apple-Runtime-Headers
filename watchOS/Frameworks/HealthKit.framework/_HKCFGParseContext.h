@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     _HKCFGNodeCache *_cache;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _HKCFGNodeCache *cache; // @synthesize cache=_cache;
 @property(readonly, nonatomic) unsigned int recursiveDepth; // @synthesize recursiveDepth=_recursiveDepth;
 @property(readonly, nonatomic) unsigned int lengthAllowance; // @synthesize lengthAllowance=_lengthAllowance;
 @property(readonly, nonatomic) NSScanner *scanner; // @synthesize scanner=_scanner;
-- (void).cxx_destruct;
 - (void)increaseLengthAllowance:(unsigned int)arg1;
 - (void)decreaseLengthAllowance:(unsigned int)arg1;
 - (void)decrementRecursiveDepth;

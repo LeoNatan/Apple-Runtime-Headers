@@ -16,9 +16,9 @@
     UILabel *_bubbleAmountLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIView *pluginBalloonView; // @synthesize pluginBalloonView=_pluginBalloonView;
 @property(readonly, nonatomic) UILabel *bubbleAmountLabel; // @synthesize bubbleAmountLabel=_bubbleAmountLabel;
-- (void).cxx_destruct;
 - (unsigned int)_bubbleStateForRegistrationState:(unsigned int)arg1;
 - (id)_bubbleAmountLabelTextAttributes;
 - (id)_bubbleAmountLabelTextWithAmount:(id)arg1;

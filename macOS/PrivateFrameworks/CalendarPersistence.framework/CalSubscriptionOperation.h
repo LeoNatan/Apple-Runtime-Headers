@@ -30,11 +30,11 @@
 
 + (id)scrubSchemeOnSubscriptionURL:(id)arg1;
 + (BOOL)canHandleURL:(id)arg1;
+- (void).cxx_destruct;
 @property BOOL calendarIsTaskContainer; // @synthesize calendarIsTaskContainer=_calendarIsTaskContainer;
 @property BOOL calendarIsEventContainer; // @synthesize calendarIsEventContainer=_calendarIsEventContainer;
 @property BOOL isSynchronous; // @synthesize isSynchronous=_isSynchronous;
 @property(retain) NSError *error; // @synthesize error=_error;
-- (void).cxx_destruct;
 - (void)abortOperation;
 - (void)update:(id)arg1;
 - (id)_createCalendarHelper:(id)arg1 withAccount:(id)arg2 context:(id)arg3;

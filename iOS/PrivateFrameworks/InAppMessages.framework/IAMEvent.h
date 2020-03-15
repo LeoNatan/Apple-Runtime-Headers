@@ -16,9 +16,9 @@
     long long _type;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (_Bool)matchesWithKey:(id)arg1;
 - (id)initWithName:(id)arg1 type:(long long)arg2;
 

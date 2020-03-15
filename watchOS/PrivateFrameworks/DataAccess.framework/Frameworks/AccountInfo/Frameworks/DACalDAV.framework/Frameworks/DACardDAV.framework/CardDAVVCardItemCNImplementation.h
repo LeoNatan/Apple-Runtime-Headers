@@ -21,6 +21,7 @@
 }
 
 + (id)keysToFetch;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void)setClientID:(id)arg1;
 - (id)clientID;
@@ -34,7 +35,6 @@
 - (id)cardDAVRecordItem;
 - (void)setDataPayload:(id)arg1;
 - (id)dataPayload;
-- (void).cxx_destruct;
 - (id)_localItemAsGroup;
 - (id)_localItemAsContact;
 - (void)setLocalItem:(void *)arg1;

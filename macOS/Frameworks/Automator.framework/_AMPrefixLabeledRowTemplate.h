@@ -16,11 +16,11 @@
     BOOL _hasCreatedViews;
 }
 
+- (void).cxx_destruct;
 @property BOOL hasCreatedViews; // @synthesize hasCreatedViews=_hasCreatedViews;
 @property(retain) NSPopUpButton *labelPopupButton; // @synthesize labelPopupButton=_labelPopupButton;
 @property(copy, nonatomic) NSFormatter *formatter; // @synthesize formatter=_formatter;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)templateViews;
 - (void)createViewsIfNecessary;
 - (id)copyWithZone:(struct _NSZone *)arg1;

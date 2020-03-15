@@ -27,6 +27,7 @@
     NSLayoutConstraint *_datePickerWidthConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSLayoutConstraint *datePickerWidthConstraint; // @synthesize datePickerWidthConstraint=_datePickerWidthConstraint;
 @property(retain) NSSegmentedControl *dateSelector; // @synthesize dateSelector=_dateSelector;
 @property(retain) NSButton *allDayButton; // @synthesize allDayButton=_allDayButton;
@@ -38,7 +39,6 @@
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property BOOL hasDuration; // @synthesize hasDuration=_hasDuration;
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
-- (void).cxx_destruct;
 - (void)eventTimeDidChange;
 - (void)eventTimeIsChanging;
 - (long long)endingWorkHour;

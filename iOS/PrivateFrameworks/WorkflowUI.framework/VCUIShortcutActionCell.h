@@ -14,9 +14,9 @@
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *iconView; // @synthesize iconView=_iconView;
-- (void).cxx_destruct;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

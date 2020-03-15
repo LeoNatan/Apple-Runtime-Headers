@@ -21,6 +21,7 @@
     id <AVTUILogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 @property(retain, nonatomic) NSMutableDictionary *cancelationTokens; // @synthesize cancelationTokens=_cancelationTokens;
 @property(readonly, nonatomic) AVTPresetResourceLoader *resourceLoader; // @synthesize resourceLoader=_resourceLoader;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) AVTAvatarConfiguration *avatarConfiguration; // @synthesize avatarConfiguration=_avatarConfiguration;
 @property(readonly, copy, nonatomic) AVTAvatarRecord *avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(readonly, nonatomic) AVTMemoji *avatar; // @synthesize avatar=_avatar;
-- (void).cxx_destruct;
 - (void)updateAvatarWithAvatarUpdater:(CDUnknownBlockType)arg1 animated:(_Bool)arg2;
 - (void)updateAvatarBySelectingHeaderPickerItem:(id)arg1 animated:(_Bool)arg2;
 - (void)updateAvatarBySelectingSectionItem:(id)arg1 animated:(_Bool)arg2;

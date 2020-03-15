@@ -15,10 +15,10 @@
     long long _key;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

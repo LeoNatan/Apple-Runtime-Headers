@@ -24,6 +24,7 @@
     id <TBNetwork> _network;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL unwantedNetworkName; // @synthesize unwantedNetworkName=_unwantedNetworkName;
 @property(retain, nonatomic) id <TBNetwork> network; // @synthesize network=_network;
 @property(copy, nonatomic) NSString *SSID; // @synthesize SSID=_SSID;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) id <TBScore> qualityScore; // @synthesize qualityScore=_qualityScore;
 @property(readonly, nonatomic) NSSet *attributes; // @synthesize attributes=_attributes;
 @property(readonly, copy, nonatomic) NSString *password; // @synthesize password;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)containsAccessPointMatchingBSSIDs:(id)arg1;
 @property(readonly, nonatomic) long long source;

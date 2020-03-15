@@ -19,6 +19,7 @@
     NSString *_reasonType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool useGroupsWhenFindingRecipient; // @synthesize useGroupsWhenFindingRecipient=_useGroupsWhenFindingRecipient;
 @property(readonly, copy, nonatomic) NSString *reasonType; // @synthesize reasonType=_reasonType;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
@@ -26,7 +27,6 @@
 @property(readonly, copy, nonatomic) NSString *contactID; // @synthesize contactID=_contactID;
 @property(readonly, copy, nonatomic) NSString *interactionRecipients; // @synthesize interactionRecipients=_interactionRecipients;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

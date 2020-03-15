@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *diskAccessQueue; // @synthesize diskAccessQueue=_diskAccessQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *diskAccessQueue; // @synthesize diskAccessQueue=_diskAccessQueue;
 - (id)loadCachedStaticLocations;
 - (void)clearCachedStaticLocations;
 - (void)cacheStaticLocations:(id)arg1;

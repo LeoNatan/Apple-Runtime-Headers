@@ -16,8 +16,8 @@
     IKAppMediaItemBridge *_bridge;
 }
 
-@property(readonly, nonatomic) IKAppMediaItemBridge *bridge; // @synthesize bridge=_bridge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) IKAppMediaItemBridge *bridge; // @synthesize bridge=_bridge;
 - (void)loadKeyDataForURI:(id)arg1 requestData:(id)arg2 withCallback:(CDUnknownBlockType)arg3;
 - (void)loadContentIdentifierDataForURI:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
 - (void)loadCertificateDataForURI:(id)arg1 withCallback:(CDUnknownBlockType)arg2;

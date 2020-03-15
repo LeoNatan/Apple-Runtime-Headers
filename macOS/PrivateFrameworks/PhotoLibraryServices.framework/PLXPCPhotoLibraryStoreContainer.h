@@ -15,8 +15,8 @@
 }
 
 + (id)newContainerWithPathManager:(id)arg1;
-@property(readonly) NSXPCStoreServer *server; // @synthesize server=_server;
 - (void).cxx_destruct;
+@property(readonly) NSXPCStoreServer *server; // @synthesize server=_server;
 @property(readonly) NSXPCListenerEndpoint *listenerEndpoint;
 - (id)initWithServer:(id)arg1 listener:(id)arg2;
 

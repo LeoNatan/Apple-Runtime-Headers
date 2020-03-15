@@ -26,10 +26,10 @@
 + (_Bool)refreshesAvailabilityOnApplicationResume;
 + (_Bool)isSingleton;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateAccessQueue; // @synthesize stateAccessQueue=_stateAccessQueue;
 @property(readonly, nonatomic) _Bool shouldRefreshAvailability; // @synthesize shouldRefreshAvailability=_shouldRefreshAvailability;
 @property(readonly, copy, nonatomic) NSDictionary *definition; // @synthesize definition=_definition;
-- (void).cxx_destruct;
 - (void)applicationContext:(id)arg1 applicationStateDidChange:(long long)arg2;
 - (void)invalidateAvailability;
 - (void)updateAvailability:(_Bool)arg1 withError:(id)arg2;

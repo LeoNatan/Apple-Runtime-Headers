@@ -18,9 +18,9 @@
     id <SVVideo> _video;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <SVVideo> video; // @synthesize video=_video;
 @property(readonly, nonatomic) id <SVVideoEventTrackerProviding> eventTrackerProvider; // @synthesize eventTrackerProvider=_eventTrackerProvider;
-- (void).cxx_destruct;
 - (void)willTransitionToVideo:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)muteStateChanged:(id)arg1;
 - (id)initWithEventTrackerProvider:(id)arg1;

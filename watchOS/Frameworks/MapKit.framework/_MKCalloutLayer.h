@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     UIColor *_strokeColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) float arrowOffset; // @synthesize arrowOffset=_arrowOffset;
 @property(nonatomic) int arrowPosition; // @synthesize arrowPosition=_arrowPosition;
-- (void).cxx_destruct;
 - (void)layoutSublayers;
 - (void)setContentsScale:(float)arg1;
 - (void)dealloc;

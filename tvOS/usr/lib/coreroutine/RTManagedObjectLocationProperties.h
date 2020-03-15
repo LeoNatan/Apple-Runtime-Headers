@@ -15,10 +15,10 @@
     NSArray *_referenceFramePropertyPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *referenceFramePropertyPath; // @synthesize referenceFramePropertyPath=_referenceFramePropertyPath;
 @property(retain, nonatomic) NSArray *longitudePropertyPath; // @synthesize longitudePropertyPath=_longitudePropertyPath;
 @property(retain, nonatomic) NSArray *latitudePropertyPath; // @synthesize latitudePropertyPath=_latitudePropertyPath;
-- (void).cxx_destruct;
 - (id)initWithLatitudePropertyPath:(id)arg1 longitudePropertyPath:(id)arg2 referenceFramePropertyPath:(id)arg3;
 
 @end

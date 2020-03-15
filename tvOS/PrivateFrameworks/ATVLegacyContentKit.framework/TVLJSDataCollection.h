@@ -13,8 +13,8 @@
     NSDictionary *_dictionary;
 }
 
-@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *dictionary; // @synthesize dictionary=_dictionary;
 - (id)concreteValueForProperty:(id)arg1;
 - (id)initWithDataClient:(id)arg1 dictionary:(id)arg2;
 

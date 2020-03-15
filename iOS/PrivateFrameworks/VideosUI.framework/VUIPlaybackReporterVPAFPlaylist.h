@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSArray *_items;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isLive; // @synthesize isLive=_isLive;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak NSObject<TVPPlayback> *player; // @synthesize player=_player;
 @property(retain, nonatomic) NSArray *eventData; // @synthesize eventData=_eventData;
-- (void).cxx_destruct;
 - (id)itemsBetweenStartOverallPosition:(unsigned long long)arg1 endOverallPosition:(unsigned long long)arg2;
 - (id)itemAtOverallPosition:(unsigned long long)arg1 rangeOptions:(long long)arg2;
 - (id)initWithPlayer:(id)arg1;

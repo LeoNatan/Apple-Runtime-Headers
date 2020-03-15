@@ -34,6 +34,7 @@
 + (id)viewWithContact:(id)arg1 keys:(id)arg2;
 + (id)_viewWithContactPreference:(id)arg1 atIndex:(unsigned long long)arg2;
 + (id)_viewWithShippingMethodPreference:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hasValidConstraints; // @synthesize hasValidConstraints=_hasValidConstraints;
 @property(retain, nonatomic) NSLayoutConstraint *lastBaselineConstraint; // @synthesize lastBaselineConstraint=_lastBaselineConstraint;
 @property(retain, nonatomic) NSLayoutGuide *textFieldTrailingLayoutGuide; // @synthesize textFieldTrailingLayoutGuide=_textFieldTrailingLayoutGuide;
@@ -48,7 +49,6 @@
 @property(copy, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(copy, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
 @property(nonatomic) long long style; // @synthesize style=_style;
-- (void).cxx_destruct;
 - (id)_attributedStringWithString:(id)arg1 color:(id)arg2 font:(id)arg3;
 - (id)_secondaryTextColorSelected:(BOOL)arg1;
 - (id)_primaryTextFont;

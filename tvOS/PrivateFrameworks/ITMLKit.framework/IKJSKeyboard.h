@@ -16,8 +16,8 @@
     id <IKAppKeyboardBridge> _appBridge;
 }
 
-@property(retain, nonatomic) id <IKAppKeyboardBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <IKAppKeyboardBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (void)jsTextDidChange;
 @property(copy, nonatomic) NSString *text;
 

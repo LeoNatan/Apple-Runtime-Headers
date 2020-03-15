@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     CDStruct_6e486683 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *table; // @synthesize table=_table;
 @property(nonatomic) unsigned int error; // @synthesize error=_error;
 @property(nonatomic) unsigned int domain; // @synthesize domain=_domain;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

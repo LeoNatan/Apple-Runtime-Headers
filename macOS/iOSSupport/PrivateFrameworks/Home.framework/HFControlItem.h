@@ -21,10 +21,10 @@
 
 + (id)na_identity;
 + (Class)valueClass;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *displayResults; // @synthesize displayResults=_displayResults;
 @property(readonly, nonatomic) HFControlItemCharacteristicOptions *characteristicOptions; // @synthesize characteristicOptions=_characteristicOptions;
 @property(readonly, nonatomic) id <HFAggregatedCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *debugDescription;

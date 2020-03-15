@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CKDPListPosition *_right;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKDPListPosition *right; // @synthesize right=_right;
 @property(retain, nonatomic) CKDPListPosition *left; // @synthesize left=_left;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

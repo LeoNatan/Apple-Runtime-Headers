@@ -22,13 +22,13 @@ __attribute__((visibility("hidden")))
     UIView *_footerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIButton *doNotAllowButton; // @synthesize doNotAllowButton=_doNotAllowButton;
 @property(retain, nonatomic) UIButton *allowButton; // @synthesize allowButton=_allowButton;
 @property(retain, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) HRProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)_setOptInStatus:(long long)arg1;
 - (void)aboutPrivacyButtonTapped:(id)arg1;
 - (void)doNotAllowButtonTapped:(id)arg1;

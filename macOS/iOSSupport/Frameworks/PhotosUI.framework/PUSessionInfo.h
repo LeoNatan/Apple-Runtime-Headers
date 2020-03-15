@@ -22,7 +22,7 @@
     PUPhotoSelectionManager *_photoSelectionManager;
     PHAssetCollection *_sourceAlbum;
     NSOrderedSet *_transferredAssets;
-    struct NSObject *_targetAlbum;
+    NSObject<PLAlbumProtocol> *_targetAlbum;
     NSString *_targetAlbumName;
     NSString *_localizedPrompt;
     long long _promptLocation;
@@ -30,6 +30,7 @@
     unsigned long long _selectionLimit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsFileSizePicker; // @synthesize showsFileSizePicker=_showsFileSizePicker;
 @property(nonatomic) BOOL enforcesSelectionLimitByDelesectingOtherAssets; // @synthesize enforcesSelectionLimitByDelesectingOtherAssets=_enforcesSelectionLimitByDelesectingOtherAssets;
 @property(nonatomic) unsigned long long selectionLimit; // @synthesize selectionLimit=_selectionLimit;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic, getter=isSelectingTargetAlbum) BOOL selectingTargetAlbum; // @synthesize selectingTargetAlbum=_selectingTargetAlbum;
 @property(readonly, nonatomic, getter=isSelectingAssets) BOOL selectingAssets; // @synthesize selectingAssets=_selectingAssets;
 @property(nonatomic) long long status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)photoSelectionManagerSelectionDidChange:(id)arg1;
 - (void)_enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)removeSessionInfoObserver:(id)arg1;

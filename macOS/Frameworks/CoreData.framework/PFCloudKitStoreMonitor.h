@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSString *_storeIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(readonly, nonatomic) BOOL declaredDead; // @synthesize declaredDead=_declaredDead;
 @property(readonly, nonatomic) int timeoutSeconds; // @synthesize timeoutSeconds=_timeoutSeconds;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak NSPersistentStoreCoordinator *monitoredCoordinator; // @synthesize monitoredCoordinator=_monitoredCoordinator;
 @property(readonly, nonatomic) BOOL storeIsAlive; // @synthesize storeIsAlive=_storeIsAlive;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *monitorGroup; // @synthesize monitorGroup=_monitorGroup;
-- (void).cxx_destruct;
 - (id)instantiateNewBackgroundContext;
 - (id)newBackgroundContextForMonitoredCoordinator;
 - (id)retainedMonitoredCoordinator;

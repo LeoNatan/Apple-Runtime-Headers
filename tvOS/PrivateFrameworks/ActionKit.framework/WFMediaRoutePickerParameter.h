@@ -16,8 +16,8 @@
     WFMediaRoutePicker *_routePicker;
 }
 
-@property(retain, nonatomic) WFMediaRoutePicker *routePicker; // @synthesize routePicker=_routePicker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) WFMediaRoutePicker *routePicker; // @synthesize routePicker=_routePicker;
 - (void)routePickerDidUpdateAvailableRoutes:(id)arg1;
 - (void)stopUpdatingPossibleValues;
 - (void)startUpdatingPossibleValues;

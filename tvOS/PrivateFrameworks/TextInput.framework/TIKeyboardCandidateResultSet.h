@@ -40,6 +40,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned long long)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned long long)arg9 proactiveTriggers:(id)arg10;
 + (id)setWithCandidates:(id)arg1 initialSelectedIndex:(unsigned long long)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 initiallyHiddenCandidates:(id)arg8 selectedHiddenCandidateIndex:(unsigned long long)arg9;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool inputManagerHasPendingCandidatesUpdate; // @synthesize inputManagerHasPendingCandidatesUpdate=_inputManagerHasPendingCandidatesUpdate;
 @property(retain, nonatomic) TIKeyboardCandidate *acceptedCandidate; // @synthesize acceptedCandidate=_acceptedCandidate;
 @property(retain, nonatomic) TIKeyboardIntermediateText *uncommittedText; // @synthesize uncommittedText=_uncommittedText;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) TIKeyboardCandidate *defaultCandidate; // @synthesize defaultCandidate=_defaultCandidate;
 @property(nonatomic) unsigned long long initialSelectedIndex; // @synthesize initialSelectedIndex=_initialSelectedIndex;
 @property(retain, nonatomic) NSArray *candidates; // @synthesize candidates=_candidates;
-- (void).cxx_destruct;
 - (_Bool)isSubsetOf:(id)arg1;
 - (id)setByAppendingSet:(id)arg1;
 - (id)initWithCandidates:(id)arg1 initialSelectedIndex:(unsigned long long)arg2 defaultCandidate:(id)arg3 sortMethods:(id)arg4 sortMethodGroups:(id)arg5 indexTitles:(id)arg6 showExtensionCandidates:(id)arg7 disambiguationCandidates:(id)arg8 selectedDisambiguationCandidateIndex:(unsigned long long)arg9 proactiveTriggers:(id)arg10;

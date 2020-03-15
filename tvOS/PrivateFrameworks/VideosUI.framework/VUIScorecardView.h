@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _scorecardSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool delegateRespondsToBackgroundBlendModeForScoreValueInRowAtIndex; // @synthesize delegateRespondsToBackgroundBlendModeForScoreValueInRowAtIndex=_delegateRespondsToBackgroundBlendModeForScoreValueInRowAtIndex;
 @property(nonatomic) _Bool delegateRespondsToBackgroundImageForScorecardViewMaterial; // @synthesize delegateRespondsToBackgroundImageForScorecardViewMaterial=_delegateRespondsToBackgroundImageForScorecardViewMaterial;
 @property(retain, nonatomic) UIImage *darkMaterialImage; // @synthesize darkMaterialImage=_darkMaterialImage;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool didCalculatedSize; // @synthesize didCalculatedSize=_didCalculatedSize;
 @property(retain, nonatomic) VUIScoreboardLayout *scoreboardLayout; // @synthesize scoreboardLayout=_scoreboardLayout;
 @property(nonatomic) __weak id <VUIScorecardViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGSize)_calculateMetricsOfScorecard;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_calculateColumnSpacing;

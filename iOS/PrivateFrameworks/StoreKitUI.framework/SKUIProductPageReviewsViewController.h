@@ -41,12 +41,12 @@ __attribute__((visibility("hidden")))
     _Bool _askPermission;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUIProductPage *productPage; // @synthesize productPage=_productPage;
 @property(retain, nonatomic) SKUIProductPageHeaderViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(nonatomic) __weak id <SKUIProductPageChildViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) SKUIClientContext *clientContext; // @synthesize clientContext=_clientContext;
 @property(nonatomic) _Bool askPermission; // @synthesize askPermission=_askPermission;
-- (void).cxx_destruct;
 - (id)_urlStringWithPageNumber:(long long)arg1;
 - (id)_textLayoutRequestWithText:(id)arg1;
 - (id)_textBoxCellForTableView:(id)arg1 indexPath:(id)arg2;

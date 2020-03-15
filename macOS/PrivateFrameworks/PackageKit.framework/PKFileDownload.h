@@ -23,8 +23,8 @@
 
 + (BOOL)canDownloadWithResumeData:(id)arg1;
 + (BOOL)canDownloadURL:(id)arg1;
-- (id)delegate;
 - (void).cxx_destruct;
+- (id)delegate;
 - (void)_currentThreadCallback:(id)arg1;
 - (int)_fileCopyThread:(id)arg1;
 - (void)setDestination:(id)arg1 allowOverwrite:(BOOL)arg2;

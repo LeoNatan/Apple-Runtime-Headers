@@ -33,6 +33,7 @@
     NSArray *_customConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *customConstraints; // @synthesize customConstraints=_customConstraints;
 @property(retain, nonatomic) NSView *rightTopBarView; // @synthesize rightTopBarView=_rightTopBarView;
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
@@ -54,7 +55,6 @@
 @property(retain, nonatomic) ABBookSearchField *searchField; // @synthesize searchField=_searchField;
 @property(nonatomic) __weak CNGroupListView *groupListView; // @synthesize groupListView=_groupListView;
 @property(nonatomic) __weak CNContactListView *contactListView; // @synthesize contactListView=_contactListView;
-- (void).cxx_destruct;
 - (void)showSectionWithIdentifier:(id)arg1;
 - (id)sectionWithIdentifier:(id)arg1;
 - (void)addSection:(id)arg1;

@@ -14,9 +14,9 @@
     UIButton *_nearbyAccessoryButton;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIButton *nearbyAccessoryButton; // @synthesize nearbyAccessoryButton=_nearbyAccessoryButton;
 @property(retain, nonatomic) UIButton *liveButton; // @synthesize liveButton=_liveButton;
-- (void).cxx_destruct;
 - (void)viewDidLoad;
 - (id)platterWithView:(id)arg1;
 

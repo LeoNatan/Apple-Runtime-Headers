@@ -21,9 +21,9 @@
 }
 
 + (id)log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDActivityPersistence *activityPersistence; // @synthesize activityPersistence=_activityPersistence;
-- (void).cxx_destruct;
 - (void)removedActivityWithID:(id)arg1;
 - (void)activityWithID:(id)arg1 setCompletedCount:(long long)arg2 totalCount:(long long)arg3;
 - (void)activityWithID:(id)arg1 setUserInfoObject:(id)arg2 forKey:(id)arg3;

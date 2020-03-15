@@ -14,8 +14,8 @@
 }
 
 + (CDUnknownBlockType)calloutBlockForCommand:(id)arg1;
-@property(retain, nonatomic) MSASEnqueuedCommand *lastEnqueuedCommand; // @synthesize lastEnqueuedCommand=_lastEnqueuedCommand;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MSASEnqueuedCommand *lastEnqueuedCommand; // @synthesize lastEnqueuedCommand=_lastEnqueuedCommand;
 - (void)MSASModel:(id)arg1 didDeleteComment:(id)arg2 forAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5;
 - (void)MSASModel:(id)arg1 didFindNewComment:(id)arg2 forAssetCollection:(id)arg3 inAlbum:(id)arg4 info:(id)arg5;
 - (void)MSASModel:(id)arg1 didFindDeletedInvitation:(id)arg2 info:(id)arg3;

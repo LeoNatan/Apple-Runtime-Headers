@@ -14,9 +14,9 @@
     id _sample;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id sample; // @synthesize sample=_sample;
 @property(retain, nonatomic) ASFriend *friend; // @synthesize friend=_friend;
-- (void).cxx_destruct;
 
 @end
 

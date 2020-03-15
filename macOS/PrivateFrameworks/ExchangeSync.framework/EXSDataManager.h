@@ -22,6 +22,7 @@
 
 + (id)distinguishedFolderTypeToString:(long long)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long stateToken; // @synthesize stateToken=_stateToken;
 @property(retain, nonatomic) NSMutableDictionary *changeTrackingCache; // @synthesize changeTrackingCache=_changeTrackingCache;
 @property(retain, nonatomic) NSMutableArray *accountMetadataCache; // @synthesize accountMetadataCache=_accountMetadataCache;
@@ -29,7 +30,6 @@
 @property BOOL dbConnectionOpen; // @synthesize dbConnectionOpen=_dbConnectionOpen;
 @property(retain, nonatomic) PQLConnection *databaseConnection; // @synthesize databaseConnection=_databaseConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *databaseQueue; // @synthesize databaseQueue=_databaseQueue;
-- (void).cxx_destruct;
 - (void)changeTrackingCacheSource:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (long long)getLastInsertedRowID:(id)arg1;
 - (void)auditLogInsertResyncFolderItemsForAccountID:(long long)arg1 folderID:(long long)arg2 initiatedBy:(id)arg3 result:(id)arg4;

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain) id <MTLDevice> preferredDevice; // @synthesize preferredDevice=_preferredDevice;
 - (void).cxx_destruct;
+@property(retain) id <MTLDevice> preferredDevice; // @synthesize preferredDevice=_preferredDevice;
 - (void)setPreferredDeviceFromDevices:(id)arg1;
 - (BOOL)shouldPreferDevice:(id)arg1 overDevice:(id)arg2;
 - (void)dealloc;

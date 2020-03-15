@@ -14,14 +14,21 @@ __attribute__((visibility("hidden")))
     BOOL _reducedWidth;
     BOOL _inlineRectIsVertical;
     int _position;
+    int _adjustMode;
     NSString *_inlineText;
     double _maxX;
     double _extendedStateAdditionalHeight;
     struct CGSize _preferredSize;
     struct CGRect _inlineRect;
     struct CGRect _previousCollapsedFrame;
+    struct UIEdgeInsets _extraInsets;
+    struct UIEdgeInsets _cellPadding;
 }
 
+- (void).cxx_destruct;
+@property(nonatomic) struct UIEdgeInsets cellPadding; // @synthesize cellPadding=_cellPadding;
+@property(nonatomic) struct UIEdgeInsets extraInsets; // @synthesize extraInsets=_extraInsets;
+@property(nonatomic) int adjustMode; // @synthesize adjustMode=_adjustMode;
 @property(nonatomic) struct CGRect previousCollapsedFrame; // @synthesize previousCollapsedFrame=_previousCollapsedFrame;
 @property(nonatomic) int position; // @synthesize position=_position;
 @property(readonly, nonatomic, getter=isReducedWidth) BOOL reducedWidth; // @synthesize reducedWidth=_reducedWidth;
@@ -31,12 +38,13 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL inlineRectIsVertical; // @synthesize inlineRectIsVertical=_inlineRectIsVertical;
 @property(nonatomic) struct CGRect inlineRect; // @synthesize inlineRect=_inlineRect;
 @property(copy, nonatomic) NSString *inlineText; // @synthesize inlineText=_inlineText;
-- (void).cxx_destruct;
+- (id)traitCollection;
 - (BOOL)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (void)setInlineText:(id)arg1 inlineRect:(struct CGRect)arg2 maxX:(double)arg3 layout:(BOOL)arg4;
 - (BOOL)shouldExtendUpwards;
 - (void)adjustFrameForInlineText:(id)arg1 inlineRect:(struct CGRect)arg2 maxX:(double)arg3;
+- (struct CGRect)adjustedFrameFromDesiredFrame:(struct CGRect)arg1 textWidth:(double)arg2;
 - (struct CGRect)adjustedFrameFromDesiredFrame:(struct CGRect)arg1 textHeight:(double)arg2;
 - (BOOL)isAcceptableFrame:(struct CGRect)arg1 afterScrollBy:(double)arg2;
 - (struct CGRect)adjustedInlineRectFromInlineText:(id)arg1 inlineRect:(struct CGRect)arg2;

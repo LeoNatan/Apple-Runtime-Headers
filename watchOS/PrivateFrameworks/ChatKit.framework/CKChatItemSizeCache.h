@@ -25,6 +25,7 @@
 
 + (id)test_cachePath;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *test_cacheData; // @synthesize test_cacheData=_test_cacheData;
 @property(nonatomic) _Bool test_throwExceptionDuringInflate; // @synthesize test_throwExceptionDuringInflate=_test_throwExceptionDuringInflate;
 @property(retain, nonatomic) NSString *preferredLocalization; // @synthesize preferredLocalization=_preferredLocalization;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) IMDoubleLinkedList *orderedKeys; // @synthesize orderedKeys=_orderedKeys;
 @property(retain, nonatomic) NSMutableDictionary *chatItemGUIDToCacheKeyMap; // @synthesize chatItemGUIDToCacheKeyMap=_chatItemGUIDToCacheKeyMap;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (void)systemApplicationDidSuspend;
 - (void)_updateKeyMap:(id)arg1 forKey:(id)arg2 sizeCacheKey:(id)arg3;
 - (id)_generateChatItemGuidToCacheKeyMapWithCache:(id)arg1;

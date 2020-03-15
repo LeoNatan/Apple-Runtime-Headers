@@ -30,6 +30,7 @@
     SBNCAlertingController *_alertingController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBNCAlertingController *alertingController; // @synthesize alertingController=_alertingController;
 @property(retain, nonatomic) SBCommunicationPolicyManager *communicationPolicyManager; // @synthesize communicationPolicyManager=_communicationPolicyManager;
 @property(retain, nonatomic) SBNotificationLegacyCarDestination *carDestination; // @synthesize carDestination=_carDestination;
@@ -44,7 +45,6 @@
 @property(readonly, nonatomic) SBWalletNotificationSource *walletNotificationSource; // @synthesize walletNotificationSource=_walletNotificationSource;
 @property(readonly, nonatomic) id <SBNotificationDestination> dashBoardDestination; // @synthesize dashBoardDestination=_dashBoardDestination;
 @property(readonly, nonatomic) SBNotificationBannerDestination *bannerDestination; // @synthesize bannerDestination=_bannerDestination;
-- (void).cxx_destruct;
 - (_Bool)isNotificationContentExtensionVisible:(id)arg1;
 - (void)coverSheetViewController:(id)arg1 didChangeActiveBehavior:(id)arg2;
 - (_Bool)_lockScreenWantsBanners;

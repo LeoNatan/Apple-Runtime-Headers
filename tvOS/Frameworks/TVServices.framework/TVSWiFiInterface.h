@@ -24,13 +24,13 @@
 + (_Bool)_supportsInterface:(struct __SCNetworkInterface *)arg1;
 + (void)enableNetworkManagement;
 + (id)WiFiInterface;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVSWiFiDisassociationOperation *pendingDisassociationOperation; // @synthesize pendingDisassociationOperation=_pendingDisassociationOperation;
 @property(retain, nonatomic) _TVSWiFiNetworkAssociationContext *associationContext; // @synthesize associationContext=_associationContext;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSArray *availableNetworks; // @synthesize availableNetworks=_availableNetworks;
 @property(retain, nonatomic) TVSWiFiNetwork *associatedNetwork; // @synthesize associatedNetwork=_associatedNetwork;
 @property(copy, nonatomic) NSString *networkName; // @synthesize networkName=_networkName;
-- (void).cxx_destruct;
 - (id)_wifiQueue;
 - (void)_updateSignalStrengthObservation;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

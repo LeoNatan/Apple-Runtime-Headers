@@ -18,10 +18,10 @@
 }
 
 + (id)interestedChangeKeys;
+- (void).cxx_destruct;
 @property(retain) EKUIPopUpButton *statusPicker; // @synthesize statusPicker=_statusPicker;
 @property(retain) EKUISummaryTextButton *textField; // @synthesize textField=_textField;
 @property(retain) NSView *container; // @synthesize container=_container;
-- (void).cxx_destruct;
 - (id)summaryString;
 - (id)attributedSummaryString;
 - (void)updateWithChanges:(id)arg1;

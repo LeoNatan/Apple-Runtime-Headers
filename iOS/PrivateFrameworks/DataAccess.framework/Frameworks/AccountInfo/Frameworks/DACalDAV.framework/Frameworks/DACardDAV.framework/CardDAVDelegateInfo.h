@@ -20,11 +20,11 @@
 + (id)appleIDForAccount:(id)arg1;
 + (id)altDSIDForAccount:(id)arg1;
 + (id)dsidForAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(retain, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(retain, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(retain, nonatomic) NSString *principalPath; // @synthesize principalPath=_principalPath;
-- (void).cxx_destruct;
 - (id)_hardCodedPrincipalPathForFamilyMember:(id)arg1;
 - (void)setPropertiesOnAccount:(id)arg1;
 - (id)initWithFamilyMember:(id)arg1;

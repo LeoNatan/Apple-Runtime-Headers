@@ -32,6 +32,7 @@
 + (double)_intervalPreferenceForKey:(id)arg1 defaultValue:(double)arg2;
 + (id)sharedInstance;
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFUnfairLock *propertyLock; // @synthesize propertyLock=_propertyLock;
 @property(readonly, nonatomic) id <HMDNetworkRouterFirewallRuleManagerBackingStoreCoordinatorFactory> coordinatorFactory; // @synthesize coordinatorFactory=_coordinatorFactory;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) NSNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) NSMutableArray *shutdownCompletions; // @synthesize shutdownCompletions=_shutdownCompletions;
 @property(retain, nonatomic) NSMutableArray *startupCompletions; // @synthesize startupCompletions=_startupCompletions;
-- (void).cxx_destruct;
 - (void)forceFetchCloudChangesAndForceChangeNotifications:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeOverridesForProductGroup:(id)arg1 productNumber:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeAllOverridesWithCompletion:(CDUnknownBlockType)arg1;

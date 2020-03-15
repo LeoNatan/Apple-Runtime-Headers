@@ -19,10 +19,10 @@
 }
 
 + (Class)userInfoType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *userInfos; // @synthesize userInfos=_userInfos;
 @property(nonatomic) int code; // @synthesize code=_code;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

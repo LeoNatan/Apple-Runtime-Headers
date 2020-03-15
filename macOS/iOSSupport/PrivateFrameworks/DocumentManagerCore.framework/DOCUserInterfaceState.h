@@ -22,13 +22,13 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
 @property(retain, nonatomic) NSNumber *browseTabSelected; // @synthesize browseTabSelected=_browseTabSelected;
 @property(retain, nonatomic) NSDictionary *sortingMode; // @synthesize sortingMode=_sortingMode;
 @property(retain, nonatomic) NSNumber *displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) NSData *mostRecentEffectiveRootLocation; // @synthesize mostRecentEffectiveRootLocation=_mostRecentEffectiveRootLocation;
 @property(retain, nonatomic) NSData *mostRecentlyVisitedLocation; // @synthesize mostRecentlyVisitedLocation=_mostRecentlyVisitedLocation;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

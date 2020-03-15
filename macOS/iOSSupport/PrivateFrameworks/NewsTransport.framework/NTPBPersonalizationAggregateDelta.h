@@ -19,17 +19,20 @@
     } _events;
     double _defaultClicks;
     double _defaultImpressions;
+    double _groupBias;
     double _impressionBias;
     unsigned long long _timestamp;
     NSString *_featureKey;
     struct {
         unsigned int defaultClicks:1;
         unsigned int defaultImpressions:1;
+        unsigned int groupBias:1;
         unsigned int impressionBias:1;
         unsigned int timestamp:1;
     } _has;
 }
 
+@property(nonatomic) double groupBias; // @synthesize groupBias=_groupBias;
 @property(nonatomic) double impressionBias; // @synthesize impressionBias=_impressionBias;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) double defaultImpressions; // @synthesize defaultImpressions=_defaultImpressions;
@@ -43,6 +46,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasGroupBias;
 @property(nonatomic) BOOL hasImpressionBias;
 @property(nonatomic) BOOL hasTimestamp;
 - (void)setEvents:(unsigned int *)arg1 count:(unsigned long long)arg2;

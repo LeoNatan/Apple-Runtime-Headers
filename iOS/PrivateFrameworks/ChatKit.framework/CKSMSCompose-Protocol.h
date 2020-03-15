@@ -28,6 +28,7 @@
 - (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3;
 - (void)setTextEntryContentsVisible:(_Bool)arg1;
 - (void)disableCameraAttachments;
+- (void)setShouldDisableEntryField:(_Bool)arg1;
 - (void)setCanEditRecipients:(_Bool)arg1;
 - (void)setPendingAddresses:(NSArray *)arg1;
 - (_Bool)insertMessage:(MSMessage *)arg1;

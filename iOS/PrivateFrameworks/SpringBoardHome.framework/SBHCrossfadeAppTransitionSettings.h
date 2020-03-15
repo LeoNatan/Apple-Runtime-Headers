@@ -14,8 +14,8 @@
 }
 
 + (id)settingsControllerModule;
-@property(retain, nonatomic) SBFAnimationSettings *appSnapshotCornerRadiusSettings; // @synthesize appSnapshotCornerRadiusSettings=_appSnapshotCornerRadiusSettings;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SBFAnimationSettings *appSnapshotCornerRadiusSettings; // @synthesize appSnapshotCornerRadiusSettings=_appSnapshotCornerRadiusSettings;
 - (void)setDefaultValues;
 
 @end

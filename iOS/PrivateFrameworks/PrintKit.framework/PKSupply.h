@@ -23,6 +23,7 @@
 + (id)suppliesForIPPResponse:(struct _ipp_s *)arg1;
 + (unsigned long long)numRequiredIPPAttributes;
 + (const char **)requiredIPPAttributes;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long supplyType; // @synthesize supplyType=_supplyType;
 @property(nonatomic) int highLevel; // @synthesize highLevel=_highLevel;
 @property(nonatomic) int lowLevel; // @synthesize lowLevel=_lowLevel;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(retain, nonatomic) NSString *markerType; // @synthesize markerType=_markerType;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(const char *)arg1 markerType:(const char *)arg2 colors:(const char *)arg3 level:(int)arg4 lowLevel:(int)arg5 highLevel:(int)arg6;
 

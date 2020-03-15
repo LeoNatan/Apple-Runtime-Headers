@@ -25,6 +25,7 @@
 + (id)payloadPropertyWithKey:(id)arg1 andType:(unsigned long long)arg2;
 + (id)payloadPropertyWithKey:(id)arg1 relationPropertyNames:(id)arg2;
 + (id)payloadPropertyForUUID;
+- (void).cxx_destruct;
 @property(nonatomic) __weak PLJournalEntryPayloadProperty *parentProperty; // @synthesize parentProperty=_parentProperty;
 @property(readonly, nonatomic) _Bool isToManySubRelationship; // @synthesize isToManySubRelationship=_isToManySubRelationship;
 @property(readonly, nonatomic) NSDictionary *subRelationshipProperties; // @synthesize subRelationshipProperties=_subRelationshipProperties;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) _Bool isUUIDKey; // @synthesize isUUIDKey=_isUUIDKey;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPropertyListSupportedType;
 @property(readonly, nonatomic) _Bool requiresConversion;
 - (id)description;

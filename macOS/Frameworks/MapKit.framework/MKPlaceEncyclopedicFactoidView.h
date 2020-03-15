@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
     _MKUILabel *_valueLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(retain, nonatomic) _MKUILabel *keyLabel; // @synthesize keyLabel=_keyLabel;
-- (void).cxx_destruct;
 - (void)_contentSizeDidChange;
 - (id)_keyLabelFont;
 - (void)setUpConstraints;

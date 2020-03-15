@@ -31,6 +31,7 @@
     NSURL *_largeBlobDirectoryURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isProtectedDataAvailable; // @synthesize isProtectedDataAvailable=_isProtectedDataAvailable;
 @property(nonatomic) BOOL observeLocalDatabaseChanges; // @synthesize observeLocalDatabaseChanges=_observeLocalDatabaseChanges;
 @property(readonly, nonatomic) NSURL *largeBlobDirectoryURL; // @synthesize largeBlobDirectoryURL=_largeBlobDirectoryURL;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) NSPersistentStoreCoordinator *observedCoordinator; // @synthesize observedCoordinator=_observedCoordinator;
 @property(readonly, nonatomic) __weak NSPersistentStore *observedStore; // @synthesize observedStore=_observedStore;
-- (void).cxx_destruct;
 - (void)_setApsConnection:(id)arg1;
 - (void)_setContainer:(id)arg1;
 - (void)_setDatabase:(id)arg1;

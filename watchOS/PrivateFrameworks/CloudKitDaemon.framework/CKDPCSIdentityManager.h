@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 + (struct _PCSIdentitySetData *)_getTestAccountIdentitySetForService:(id)arg1 forBackingFakeAccount:(id)arg2 withError:(id *)arg3;
 + (id)sharedFakeIdentitySetsByServiceByUsername;
 + (struct _PCSIdentitySetData *)_copyStingrayIdentitiesForService:(id)arg1 forBackingFakeAccount:(id)arg2 withError:(id *)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) struct _PCSIdentityData *debugIdentity; // @synthesize debugIdentity=_debugIdentity;
 @property(retain) NSMutableDictionary *PCSIdentityWrappersByServiceName; // @synthesize PCSIdentityWrappersByServiceName=_PCSIdentityWrappersByServiceName;
 @property(retain) NSString *cachedAccountDSID; // @synthesize cachedAccountDSID=_cachedAccountDSID;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isSiloed; // @synthesize isSiloed=_isSiloed;
 @property(retain) CKDAccount *account; // @synthesize account=_account;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (id)PCSServiceStringFromCKServiceType:(unsigned int)arg1;
 - (id)internalServicesToCombineWithLiverpoolKey;
 - (_Bool)_hasCurrentKeyForService:(id)arg1 inIdentitySet:(struct _PCSIdentitySetData *)arg2 withError:(id *)arg3;

@@ -14,11 +14,11 @@
     struct Hex _targetHex;
 }
 
+- (id).cxx_construct;
 @property(nonatomic) struct Hex targetHex; // @synthesize targetHex=_targetHex;
 @property(readonly, nonatomic) float defaultPixelDiameter; // @synthesize defaultPixelDiameter=_defaultPixelDiameter;
 @property(nonatomic) float percentComplete; // @synthesize percentComplete=_percentComplete;
 @property(nonatomic) struct CGPoint contentOffset; // @synthesize contentOffset=_contentOffset;
-- (id).cxx_construct;
 - (struct CGPoint)contentPointFromScrolledPoint:(struct CGPoint)arg1;
 - (struct CGPoint)scrolledPointFromContentPoint:(struct CGPoint)arg1;
 @property(readonly, nonatomic) struct Hex centeredHex;

@@ -16,7 +16,8 @@
 
 + (id)descriptor;
 - (_Bool)verifyWithError:(id *)arg1;
-- (id)copyManagedObjectWithError:(id *)arg1;
+- (id)createManagedObjectWithError:(id *)arg1;
+- (id)copyManagedObject:(id *)arg1;
 @property(readonly) LogHead *parsedLogHead;
 @property(retain) TransparencyManagedDataStore *dataStore;
 @property(retain) TransparencySignatureVerifier *verifier;

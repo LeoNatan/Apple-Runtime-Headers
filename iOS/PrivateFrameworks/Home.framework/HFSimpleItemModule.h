@@ -14,9 +14,9 @@
     CDUnknownBlockType _sectionBuilder;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sectionBuilder; // @synthesize sectionBuilder=_sectionBuilder;
 @property(retain, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
-- (void).cxx_destruct;
 - (id)buildSectionsWithDisplayedItems:(id)arg1;
 - (id)initWithItemUpdater:(id)arg1;
 - (id)initWithItemUpdater:(id)arg1 itemProviders:(id)arg2 sectionBuilder:(CDUnknownBlockType)arg3;

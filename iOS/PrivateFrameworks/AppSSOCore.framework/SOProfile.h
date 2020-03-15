@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)stringWithProfileType:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *realm; // @synthesize realm=_realm;
 @property(retain, nonatomic) NSString *extensionBundleIdentifier; // @synthesize extensionBundleIdentifier=_extensionBundleIdentifier;
 @property(retain, nonatomic) NSArray *hosts; // @synthesize hosts=_hosts;
 @property(retain, nonatomic) NSArray *URLPrefix; // @synthesize URLPrefix=_URLPrefix;
 @property(nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

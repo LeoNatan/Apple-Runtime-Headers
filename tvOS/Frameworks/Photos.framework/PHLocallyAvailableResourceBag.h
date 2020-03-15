@@ -23,6 +23,7 @@
     id <PLResourceDataStoreKey> _dataStoreKey;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDefaultOrientation; // @synthesize isDefaultOrientation=_isDefaultOrientation;
 @property(nonatomic) _Bool isPrimaryFormat; // @synthesize isPrimaryFormat=_isPrimaryFormat;
 @property(nonatomic) _Bool isDegraded; // @synthesize isDegraded=_isDegraded;
@@ -30,7 +31,6 @@
 @property(retain, nonatomic) id <PLResourceDataStoreKey> dataStoreKey; // @synthesize dataStoreKey=_dataStoreKey;
 @property(retain, nonatomic) id <PLResourceDataStore> dataStore; // @synthesize dataStore=_dataStore;
 @property(retain, nonatomic) id <PLAssetID> assetID; // @synthesize assetID=_assetID;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)prepareForReuse;
 - (id)resourceData;

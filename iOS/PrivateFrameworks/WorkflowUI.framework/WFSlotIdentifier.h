@@ -17,10 +17,10 @@
     long long _arrayIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long arrayIndex; // @synthesize arrayIndex=_arrayIndex;
 @property(readonly, nonatomic) NSString *parameterKey; // @synthesize parameterKey=_parameterKey;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)identifierBySettingArrayIndex:(long long)arg1;

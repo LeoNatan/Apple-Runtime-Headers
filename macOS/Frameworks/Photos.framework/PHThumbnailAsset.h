@@ -22,9 +22,9 @@
 
 + (id)propertiesToFetch;
 + (id)entityName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
-- (void).cxx_destruct;
 - (id)pl_photoLibrary;
 - (unsigned long long)effectiveThumbnailIndex;
 @property(readonly, nonatomic) long long cloudPlaceholderKind;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProxy;
-@property(nonatomic) __weak id <SidecarServiceProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SidecarServiceProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)sidecarServiceTerminate;
 - (void)sidecarSession:(id)arg1 receivedMessage:(id)arg2;
 - (void)sidecarSessionStarted:(id)arg1;

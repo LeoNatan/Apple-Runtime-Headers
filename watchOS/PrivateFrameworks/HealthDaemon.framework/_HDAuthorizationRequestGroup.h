@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_source> *_sessionTimeoutSource;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isInTransaction) _Bool inTransaction; // @synthesize inTransaction=_inTransaction;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *sessionTimeoutSource; // @synthesize sessionTimeoutSource=_sessionTimeoutSource;
 @property(retain, nonatomic) NSMutableArray *completions; // @synthesize completions=_completions;
@@ -31,7 +32,6 @@
 @property(readonly, copy, nonatomic) NSSet *typesToRead; // @synthesize typesToRead=_typesToRead;
 @property(readonly, copy, nonatomic) NSSet *typesToWrite; // @synthesize typesToWrite=_typesToWrite;
 @property(readonly, copy, nonatomic) HKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (void)_cancelTimeoutSource;
 - (void)beginTransaction;

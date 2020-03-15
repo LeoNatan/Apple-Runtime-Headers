@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sceneDisplayLinkForWindowScene:(id)arg1;
-@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
+@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void)_displayLinkTick:(id)arg1;
 - (void)_updateStatus;
 - (void)_scene:(id)arg1 didTransitionFromActivationState:(long long)arg2 withReasonsMask:(unsigned long long)arg3;

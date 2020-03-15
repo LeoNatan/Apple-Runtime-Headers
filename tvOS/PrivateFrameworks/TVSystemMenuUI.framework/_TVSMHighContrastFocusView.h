@@ -11,8 +11,8 @@
     UIView *_innerFocusRing;
 }
 
-@property(readonly, nonatomic) UIView *innerFocusRing; // @synthesize innerFocusRing=_innerFocusRing;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *innerFocusRing; // @synthesize innerFocusRing=_innerFocusRing;
 - (void)_updateForAccessibilityChange;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)_setCornerRadius:(double)arg1;

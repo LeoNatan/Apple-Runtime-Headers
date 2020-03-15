@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_contributorsFromStoreCredits:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSOperation *productOperation; // @synthesize productOperation=_productOperation;
 @property(nonatomic) unsigned long long mediaCategoryType; // @synthesize mediaCategoryType=_mediaCategoryType;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVHKStoreVideoCredits *videoCredits; // @synthesize videoCredits=_videoCredits;
 @property(nonatomic) unsigned long long storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(nonatomic) unsigned long long storeID; // @synthesize storeID=_storeID;
-- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1;
 - (void)cancel;
 - (void)executionDidBegin;

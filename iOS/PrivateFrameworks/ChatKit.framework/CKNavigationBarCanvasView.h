@@ -44,6 +44,7 @@
 + (double)heightWithButtonViews;
 + (double)heightWithoutButtonViews;
 + (double)maxHeight;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoreNextWidthChange; // @synthesize ignoreNextWidthChange=_ignoreNextWidthChange;
 @property(nonatomic) _Bool isAnimatingAvatars; // @synthesize isAnimatingAvatars=_isAnimatingAvatars;
 @property(nonatomic) _Bool isTearingDownButtonViews; // @synthesize isTearingDownButtonViews=_isTearingDownButtonViews;
@@ -67,7 +68,6 @@
 @property(retain, nonatomic) UIView *leftItemView; // @synthesize leftItemView=_leftItemView;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 @property(nonatomic) __weak id <CKNavigationBarCanvasViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (struct CGRect)_calculateFrameForButtonPositionType:(long long)arg1 shouldOffset:(_Bool)arg2;
 - (void)layoutSubviews;
 - (void)layoutTitleViewIfNeeded:(struct CGRect)arg1;

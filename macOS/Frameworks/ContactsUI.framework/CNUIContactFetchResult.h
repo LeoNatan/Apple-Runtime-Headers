@@ -14,9 +14,9 @@
     CNContainer *_containerOfContact;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CNContainer *containerOfContact; // @synthesize containerOfContact=_containerOfContact;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)initWithContact:(id)arg1 containerOfContact:(id)arg2;
 
 @end

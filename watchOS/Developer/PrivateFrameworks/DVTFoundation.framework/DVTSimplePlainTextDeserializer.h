@@ -14,8 +14,8 @@
     unsigned long long _streamFormatVersion;
 }
 
-@property unsigned long long streamFormatVersion; // @synthesize streamFormatVersion=_streamFormatVersion;
 - (void).cxx_destruct;
+@property unsigned long long streamFormatVersion; // @synthesize streamFormatVersion=_streamFormatVersion;
 - (id)decodeObjectList;
 - (id)decodeObject;
 - (id)decodeString;

@@ -15,8 +15,8 @@
     PFStateMachineNode *_initialNode;
 }
 
-@property(retain) PFStateMachineNode *initialNode; // @synthesize initialNode=_initialNode;
 - (void).cxx_destruct;
+@property(retain) PFStateMachineNode *initialNode; // @synthesize initialNode=_initialNode;
 - (id)dot:(_Bool)arg1;
 - (id)findNodeWithName:(id)arg1;
 - (id)transitionForEventName:(id)arg1;

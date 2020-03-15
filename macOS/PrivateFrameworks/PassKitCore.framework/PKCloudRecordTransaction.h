@@ -15,8 +15,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)dateFormatter;
-@property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (id)_descriptionWithIncludeItem:(BOOL)arg1;
 - (id)description;
 - (id)descriptionWithItem:(BOOL)arg1;

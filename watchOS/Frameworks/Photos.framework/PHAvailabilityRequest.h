@@ -6,23 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectID, NSString, NSXPCConnection, PLPhotoLibrary;
+#import <Photos/PLTrackableRequest-Protocol.h>
 
-@interface PHAvailabilityRequest : NSObject
+@class NSManagedObjectID, NSString, NSXPCConnection, PLPhotoLibrary;
+@protocol PLTrackableRequestDelegate;
+
+@interface PHAvailabilityRequest : NSObject <PLTrackableRequest>
 {
     // Error parsing type: AB, name: _isCancelled
     PLPhotoLibrary *_photoLibrary;
+    id <PLTrackableRequestDelegate> _delegate;
     NSManagedObjectID *_assetObjectID;
     NSString *_taskIdentifier;
     NSXPCConnection *_clientConnection;
     unsigned long long _signpostID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(readonly, copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(readonly, nonatomic) NSManagedObjectID *assetObjectID; // @synthesize assetObjectID=_assetObjectID;
-- (void).cxx_destruct;
 - (_Bool)isCancelled;
 - (void)cancel;
 - (void)abortClientSide;
@@ -32,6 +36,7 @@
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
 - (id)initWithTaskIdentifier:(id)arg1 assetObjectID:(id)arg2;
+@property __weak id <PLTrackableRequestDelegate> delegate;
 
 @end
 

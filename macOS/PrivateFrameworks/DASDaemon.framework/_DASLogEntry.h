@@ -16,10 +16,10 @@
 }
 
 + (id)logEntryForDate:(id)arg1 category:(id)arg2 message:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

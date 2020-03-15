@@ -26,8 +26,8 @@
     id <FAFamilySetupPageDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FAFamilySetupPageDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FAFamilySetupPageDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_getStartedButtonWasTapped:(id)arg1;
 - (double)_heightForText:(id)arg1 constrainedToWidth:(double)arg2;

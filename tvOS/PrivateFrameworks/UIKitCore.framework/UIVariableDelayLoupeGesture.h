@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldUseLegacyBehavior;
 - (_Bool)isWithinRecentTap;
 - (_Bool)isCloseToCaret;
+- (_Bool)_allowsForShortDelay;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)invalidate;
 

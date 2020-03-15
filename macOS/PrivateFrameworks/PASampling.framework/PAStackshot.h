@@ -18,11 +18,11 @@
     NSSet *_deadPids;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSSet *deadPids; // @synthesize deadPids=_deadPids;
 @property(readonly) PAMicrostackshotData *microstackshotData; // @synthesize microstackshotData=_microstackshotData;
 @property(readonly) double wallTimestamp; // @synthesize wallTimestamp=_wallTimestamp;
 @property(readonly) double machTimestamp; // @synthesize machTimestamp=_machTimestamp;
-- (void).cxx_destruct;
 - (BOOL)iterateTasks:(CDUnknownBlockType)arg1;
 - (id)initWithTraceData:(id)arg1 machTimestamp:(double)arg2 wallTimestamp:(double)arg3;
 @property(readonly) BOOL isMicrostackshot;

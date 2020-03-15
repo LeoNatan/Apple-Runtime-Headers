@@ -19,12 +19,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *wakeSouceToEventDict; // @synthesize wakeSouceToEventDict=_wakeSouceToEventDict;
 @property(nonatomic) unsigned int backlightService; // @synthesize backlightService=_backlightService;
 @property(nonatomic) unsigned int timesyncService; // @synthesize timesyncService=_timesyncService;
 @property(nonatomic) long long homeButtonType; // @synthesize homeButtonType=_homeButtonType;
 @property(nonatomic) _Bool trackingWake; // @synthesize trackingWake=_trackingWake;
-- (void).cxx_destruct;
 - (void)_lock_wakeDidBegin:(long long)arg1;
 - (void)lockDidBegin;
 - (void)wakeDidEnd;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
     double _mapLocationDistanceThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool fileProtectionDeactivated; // @synthesize fileProtectionDeactivated=_fileProtectionDeactivated;
 @property(nonatomic) double mapLocationDistanceThreshold; // @synthesize mapLocationDistanceThreshold=_mapLocationDistanceThreshold;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *pendingImageQueue; // @synthesize pendingImageQueue=_pendingImageQueue;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *noLocationImageMetaData; // @synthesize noLocationImageMetaData=_noLocationImageMetaData;
 @property(retain, nonatomic) NSMutableDictionary *gridImageMetaData; // @synthesize gridImageMetaData=_gridImageMetaData;
 @property(retain, nonatomic) NSMutableDictionary *cacheMetaData; // @synthesize cacheMetaData=_cacheMetaData;
-- (void).cxx_destruct;
 - (double)pruneIntervalInSeconds;
 - (double)cacheExpiryInSeconds;
 - (id)mapImageKeyForLocation:(id)arg1 altitude:(double)arg2 pitch:(double)arg3 width:(double)arg4 andHeight:(double)arg5;

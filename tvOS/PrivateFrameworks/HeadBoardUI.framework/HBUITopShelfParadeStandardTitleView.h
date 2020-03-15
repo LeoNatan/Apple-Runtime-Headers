@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     HBUITopShelfImageView *_contextImageView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HBUITopShelfImageView *contextImageView; // @synthesize contextImageView=_contextImageView;
 @property(readonly, nonatomic) UILabel *contextTitleLabel; // @synthesize contextTitleLabel=_contextTitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

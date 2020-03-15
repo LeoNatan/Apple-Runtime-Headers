@@ -17,10 +17,10 @@
     CLGeocoder *_geocoder;
 }
 
+- (void).cxx_destruct;
 @property(retain) CLGeocoder *geocoder; // @synthesize geocoder=_geocoder;
 @property(retain) KHMapView *mapView; // @synthesize mapView=_mapView;
 @property(retain, nonatomic) KHFrame *frameObject; // @synthesize frameObject=_frameObject;
-- (void).cxx_destruct;
 - (void)updateCoordinates;
 - (void)mapView:(id)arg1 didStopRespondingToGesture:(long long)arg2 zoomDirection:(long long)arg3 didDecelerate:(BOOL)arg4 tiltDirection:(long long)arg5;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;

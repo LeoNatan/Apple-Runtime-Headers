@@ -19,7 +19,7 @@
 @property(nonatomic) BOOL scaleDrawingToFitCanvas;
 @property(nonatomic) __weak id <DKInkRendererDelegate> delegate;
 @property(retain, nonatomic) NSColor *inkColor;
-- (NSImage *)snapshot;
+- (NSImage *)snapshotImage;
 - (void)teardown;
 - (void)completeAnimationsImmediately;
 - (void)resetRendererState;

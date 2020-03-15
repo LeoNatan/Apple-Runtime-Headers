@@ -21,13 +21,13 @@
     double _approachVolumeMax;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double approachVolumeMax; // @synthesize approachVolumeMax=_approachVolumeMax;
 @property(nonatomic) double approachCurvature; // @synthesize approachCurvature=_approachCurvature;
 @property(nonatomic) double approachEnd; // @synthesize approachEnd=_approachEnd;
 @property(nonatomic) double approachStart; // @synthesize approachStart=_approachStart;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackContinuousPlayable> *approachFeedback; // @synthesize approachFeedback=_approachFeedback;
 @property(retain, nonatomic) _UIFeedback<_UIFeedbackDiscretePlayable> *thresholdFeedback; // @synthesize thresholdFeedback=_thresholdFeedback;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

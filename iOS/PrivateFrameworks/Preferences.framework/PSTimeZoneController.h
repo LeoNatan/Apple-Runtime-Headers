@@ -21,10 +21,10 @@
 }
 
 + (void)setTimeZone:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(nonatomic) __weak PSListController *parentController; // @synthesize parentController=_parentController;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
-- (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -83,6 +83,7 @@
 + (BOOL)hasSharedPhotoLibrary;
 + (void)assertRunningInExtension;
 + (BOOL)shouldDisplayMergeCandidates:(id)arg1 forPerson:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PAVideoConversionServiceClient *videoConversionServiceClient; // @synthesize videoConversionServiceClient=_videoConversionServiceClient;
 @property(retain, nonatomic) PAImageConversionServiceClient *imageConversionServiceClient; // @synthesize imageConversionServiceClient=_imageConversionServiceClient;
 @property(nonatomic) BOOL clearsOIDCacheAfterFetchResultDealloc; // @synthesize clearsOIDCacheAfterFetchResultDealloc=_clearsOIDCacheAfterFetchResultDealloc;
@@ -105,7 +106,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) NSError *unavailabilityReason; // @synthesize unavailabilityReason=_unavailabilityReason;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)countOfReferencedMediaWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL canUpdatePersonState;
 - (void)_notifiyPersistentChangeObservers;
@@ -149,6 +149,7 @@
 - (void)_addObserver:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;
+- (void)appPrivateDataWriteFailedWithError:(id)arg1;
 - (void)_onQueueNotifyAvailabilityObserversWithReason:(id)arg1;
 - (void)_notifyAvailabilityObserversWithReason:(id)arg1;
 - (BOOL)_setUnavailabilityReason:(id)arg1;
@@ -190,6 +191,7 @@
 - (id)initWithPLPhotoLibrary:(id)arg1 type:(unsigned short)arg2;
 - (id)initWithPLPhotoLibrary:(id)arg1;
 - (BOOL)isPHPhotoLibraryForCMM;
+- (void)closeWithReason:(id)arg1;
 - (void)close;
 - (id)upgradePhotoLibraryWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)openAndWaitWithUpgrade:(BOOL)arg1 error:(id *)arg2;
@@ -246,6 +248,7 @@
 - (void)requestSearchIndexUpdates:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)unloadGraph;
 - (void)loadGraph;
+- (void)requestGenerateQuestionsWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)runPFLWithAttachments:(id)arg1 recipeUserInfo:(id)arg2 resultBlock:(CDUnknownBlockType)arg3;
 - (id)requestTextFeaturesForMomentLocalIdentifiers:(id)arg1 error:(id *)arg2;
 - (void)simulateMemoriesNotificationWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;

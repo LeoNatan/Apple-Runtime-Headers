@@ -15,10 +15,10 @@
     NSLayoutConstraint *_heightConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UIImageView *routeImageView; // @synthesize routeImageView=_routeImageView;
-- (void).cxx_destruct;
 - (void)setRouteImage:(id)arg1;
 - (void)setupConstraints;
 - (id)init;

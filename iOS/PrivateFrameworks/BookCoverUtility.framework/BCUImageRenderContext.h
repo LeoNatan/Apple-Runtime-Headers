@@ -17,11 +17,11 @@
     NSHashTable *_filterOperations;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *filterOperations; // @synthesize filterOperations=_filterOperations;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(readonly, nonatomic) BCUCoverEffects *coverEffects; // @synthesize coverEffects=_coverEffects;
 @property(readonly, nonatomic) BCULayerRenderer *renderer; // @synthesize renderer=_renderer;
-- (void).cxx_destruct;
 - (void)filteredImageFromImage:(struct CGImage *)arg1 filterInfo:(id)arg2 size:(struct CGSize)arg3 contentsScale:(double)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)init;
 

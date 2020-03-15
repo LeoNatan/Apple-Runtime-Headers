@@ -26,6 +26,7 @@
 }
 
 + (id)onlyPeopleLocationTitleOptions;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL allowFamilyHome; // @synthesize allowFamilyHome=_allowFamilyHome;
 @property(nonatomic) BOOL useDistrict; // @synthesize useDistrict=_useDistrict;
 @property(nonatomic) BOOL useBusinessItems; // @synthesize useBusinessItems=_useBusinessItems;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) NSSet *curationAddressNodes; // @synthesize curationAddressNodes=_curationAddressNodes;
 @property(retain, nonatomic) PGGraphAddressNode *keyAssetAddressNode; // @synthesize keyAssetAddressNode=_keyAssetAddressNode;
 @property(retain, nonatomic) NSSet *momentNodes; // @synthesize momentNodes=_momentNodes;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

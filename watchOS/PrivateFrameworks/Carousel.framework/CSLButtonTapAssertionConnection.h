@@ -17,10 +17,10 @@
     unsigned int _buttons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int buttons; // @synthesize buttons=_buttons;
 @property(nonatomic) __weak CSLProcessButtonTapAssertions *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (void)deactivate;
 - (void)activate;
 - (void)initializeWithButtons:(unsigned int)arg1;

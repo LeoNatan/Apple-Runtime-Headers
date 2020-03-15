@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
-@property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSDictionary *webSharingIdentityDataByRecordID; // @synthesize webSharingIdentityDataByRecordID=_webSharingIdentityDataByRecordID;
 
 @end
 

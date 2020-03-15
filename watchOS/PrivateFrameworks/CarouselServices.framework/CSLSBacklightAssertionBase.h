@@ -21,9 +21,9 @@
     CDUnknownBlockType _timeoutBlock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType timeoutBlock; // @synthesize timeoutBlock=_timeoutBlock;
 @property(readonly, nonatomic) CSLSBacklightAssertionSpecification *specification; // @synthesize specification=_specification;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) double secondsSinceTaken;
 - (void)_releaseAssertionCompletion:(CDUnknownBlockType)arg1 logAction:(const char *)arg2 logIfNotAsserted:(_Bool)arg3;

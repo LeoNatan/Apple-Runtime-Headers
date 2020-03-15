@@ -27,11 +27,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setCreationDate:) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(copy, nonatomic, setter=_setModificationDate:) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(copy, nonatomic, setter=_setPersistentIdentifier:) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(retain, nonatomic) _SFServiceIdentifier *primaryServiceIdentifier; // @synthesize primaryServiceIdentifier=_primaryServiceIdentifier;
-- (void).cxx_destruct;
 @property(retain, nonatomic, getter=_changeToken, setter=_setChangeToken:) NSData *changeToken;
 @property(retain, nonatomic, getter=_accessGroup, setter=_setAccessGroup:) NSString *accessGroup;
 @property(nonatomic, getter=_keyclass, setter=_setKeyclass:) int keyclass;

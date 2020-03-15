@@ -16,8 +16,8 @@
 + (_Bool)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2 person:(id)arg3;
 + (id)editOperationType;
 + (id)editOperationManager;
-@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void)cancelActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performBackgroundTask;
 

@@ -14,8 +14,8 @@
 }
 
 + (id)shortNameForContact:(id)arg1;
-@property(copy) NSString *sortOrder; // @synthesize sortOrder=_sortOrder;
 - (void).cxx_destruct;
+@property(copy) NSString *sortOrder; // @synthesize sortOrder=_sortOrder;
 - (id)preferredEmphasisKeysForSortOrder:(id)arg1;
 - (id)nameKeysForNameOrder:(long long)arg1;
 - (id)emphasisAttributes;

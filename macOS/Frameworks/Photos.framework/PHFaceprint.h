@@ -14,9 +14,9 @@
     NSData *_faceprintData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSData *faceprintData; // @synthesize faceprintData=_faceprintData;
 @property(readonly, nonatomic) long long faceprintVersion; // @synthesize faceprintVersion=_faceprintVersion;
-- (void).cxx_destruct;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)initWithFaceprintData:(id)arg1 faceprintVersion:(long long)arg2;

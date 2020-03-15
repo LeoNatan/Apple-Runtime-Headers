@@ -17,10 +17,10 @@
     NSArray *_errors;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(nonatomic) NSString *status; // @synthesize status=_status;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BCError *error;
 @property(readonly, nonatomic) NSDictionary *dictionaryValue;
 - (id)initWithDictionary:(id)arg1;

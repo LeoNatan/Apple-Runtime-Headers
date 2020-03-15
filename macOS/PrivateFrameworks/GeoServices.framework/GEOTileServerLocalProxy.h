@@ -30,9 +30,8 @@
 - (void)generateRequestedFromTileLoaderEndSignpost:(unsigned long long)arg1;
 - (void)generateRequestedFromTileLoaderBeginSignpost:(unsigned long long)arg1 tileKey:(const struct _GEOTileKey *)arg2 options:(unsigned long long)arg3;
 - (void)flushPendingWrites;
-- (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 - (void)endPreloadSession;
-- (void)beginPreloadSessionOfSize:(unsigned long long)arg1 exclusive:(BOOL)arg2;
+- (void)beginPreloadSessionOfSize:(unsigned long long)arg1;
 - (unsigned long long)shrinkDiskCacheToSizeSync:(unsigned long long)arg1;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1;
 - (unsigned long long)calculateFreeableSizeSync;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (double)_titleLabelLastBaselineToBottom;
 + (double)_titleLabelTopToFirstBaseline;
 + (id)_titleLabelFont;
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(copy, nonatomic) NSString *title;
 - (void)setupSubviews;
 

@@ -22,6 +22,7 @@
 + (id)suggestionSetWithIdentifier:(id)arg1 addingSlots:(id)arg2 groupID:(id)arg3 title:(id)arg4 displayOrder:(double)arg5;
 + (id)suggestionSetWithIdentifier:(id)arg1 slotClass:(Class)arg2 groupID:(id)arg3 title:(id)arg4 displayOrder:(double)arg5 indentLevel:(long long)arg6 actions:(id)arg7;
 + (id)suggestionSetWithIdentifier:(id)arg1 slotClass:(Class)arg2 groupID:(id)arg3 title:(id)arg4 displayOrder:(double)arg5 actions:(id)arg6;
+- (void).cxx_destruct;
 @property(readonly) NSSet *actions; // @synthesize actions=_actions;
 @property(readonly) double displayOrder; // @synthesize displayOrder=_displayOrder;
 @property(readonly) long long indentLevel; // @synthesize indentLevel=_indentLevel;
@@ -29,7 +30,6 @@
 @property(readonly) NSString *title; // @synthesize title=_title;
 @property(readonly) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 @property(readonly) Class slotClass; // @synthesize slotClass=_slotClass;
-- (void).cxx_destruct;
 - (void)ibic_generateAttributes:(CDUnknownBlockType)arg1;
 - (void)ibic_generateSubNodes:(CDUnknownBlockType)arg1;
 - (long long)compareDisplayOrder:(id)arg1;

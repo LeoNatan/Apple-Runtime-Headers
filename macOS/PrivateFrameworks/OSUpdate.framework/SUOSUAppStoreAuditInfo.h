@@ -16,10 +16,10 @@
 }
 
 + (id)cacheUpdateAuditInfo:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSArray *appsFailedToQuit; // @synthesize appsFailedToQuit=_appsFailedToQuit;
 @property(retain) NSString *failureDescription; // @synthesize failureDescription=_failureDescription;
 @property unsigned long long failureReason; // @synthesize failureReason=_failureReason;
-- (void).cxx_destruct;
 - (void)_parseAuditInfo:(id)arg1;
 - (id)initWithSUOSUURL:(id)arg1;
 - (id)initWithURL:(id)arg1;

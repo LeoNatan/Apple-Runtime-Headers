@@ -22,6 +22,7 @@
     NSDate *_latestEventDate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *latestEventDate; // @synthesize latestEventDate=_latestEventDate;
 @property(readonly, copy, nonatomic) NSDate *earliestEventDate; // @synthesize earliestEventDate=_earliestEventDate;
 @property(readonly, nonatomic) NSNumber *cleanupTime; // @synthesize cleanupTime=_cleanupTime;
@@ -30,7 +31,6 @@
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 @property(readonly, copy, nonatomic) NSString *externalServiceID; // @synthesize externalServiceID=_externalServiceID;
 @property(readonly, copy, nonatomic) NSString *serviceID; // @synthesize serviceID=_serviceID;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_isDate:(id)arg1 containedByDate:(id)arg2 andDate:(id)arg3;

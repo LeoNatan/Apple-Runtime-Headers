@@ -16,8 +16,8 @@
     NSObject<OS_os_log> *_os_log;
 }
 
-@property(readonly) NSObject<OS_os_log> *os_log; // @synthesize os_log=_os_log;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_os_log> *os_log; // @synthesize os_log=_os_log;
 - (void)didReturnCacheFalsePositives:(id)arg1;
 - (void)didReturnCacheFalseNegatives:(id)arg1;
 - (id)init;

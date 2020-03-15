@@ -22,9 +22,9 @@
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (id)keyFromSelector:(SEL)arg1;
 + (id)CRProperties;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *fields; // @synthesize fields=_fields;
 @property(readonly, nonatomic) NSUUID *identity; // @synthesize identity=_identity;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

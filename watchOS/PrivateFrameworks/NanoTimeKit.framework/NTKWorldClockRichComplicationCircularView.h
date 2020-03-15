@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NTKRichComplicationCircularBaseView.h>
 
-@class NTKRichComplicationDialView, NTKWorldClockRichComplicationHandsView, UIColor, UILabel, WorldClockCity;
+@class NSNumber, NTKRichComplicationDialView, NTKWorldClockRichComplicationHandsView, UIColor, UILabel, WorldClockCity;
 
 @interface NTKWorldClockRichComplicationCircularView : NTKRichComplicationCircularBaseView
 {
@@ -22,7 +22,7 @@
     UILabel *_cityNameLabel;
     NTKWorldClockRichComplicationHandsView *_handsView;
     WorldClockCity *_city;
-    struct NSNumber *_clockTimerToken;
+    NSNumber *_clockTimerToken;
     _Bool _positionLabelNorthSide;
     UIColor *_daytimeBackgroundColor;
     UIColor *_daytimeHandsColor;

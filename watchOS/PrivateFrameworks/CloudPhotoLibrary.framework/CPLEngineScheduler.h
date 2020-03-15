@@ -49,11 +49,11 @@
 
 + (id)validElements;
 + (id)platformImplementationProtocol;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType shouldBackOffOnErrorBlock; // @synthesize shouldBackOffOnErrorBlock=_shouldBackOffOnErrorBlock;
 @property(copy, nonatomic) CDUnknownBlockType requiredStateObserverBlock; // @synthesize requiredStateObserverBlock=_requiredStateObserverBlock;
 @property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int requiredState;
 - (void)_resetFirstSynchronizationMarker;
 - (id)_minimalDateForFirstSync;

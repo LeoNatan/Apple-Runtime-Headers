@@ -10,8 +10,8 @@
 {
 }
 
-+ (BOOL)saveToFilePath:(id)arg1 storage:(struct NSMutableDictionary *)arg2 ETAValidUntilDate:(id)arg3;
-+ (BOOL)loadFromFilePath:(id)arg1 storage:(struct NSMutableDictionary **)arg2 ETAValidUntilDate:(id *)arg3;
++ (BOOL)saveToFilePath:(id)arg1 storage:(id)arg2 ETAValidUntilDate:(id)arg3;
++ (BOOL)loadFromFilePath:(id)arg1 storage:(id *)arg2 ETAValidUntilDate:(id *)arg3;
 
 @end
 

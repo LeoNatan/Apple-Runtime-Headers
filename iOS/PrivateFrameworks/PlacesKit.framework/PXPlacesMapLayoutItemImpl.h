@@ -16,9 +16,9 @@
     struct CLLocationCoordinate2D _coordinate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableOrderedSet *layoutGeotaggables; // @synthesize layoutGeotaggables=_layoutGeotaggables;
 @property struct CLLocationCoordinate2D coordinate; // @synthesize coordinate=_coordinate;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSOrderedSet *geotaggables;
 - (_Bool)isEqualToLayoutItem:(id)arg1;

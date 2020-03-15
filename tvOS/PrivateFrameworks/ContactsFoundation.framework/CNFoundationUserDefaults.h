@@ -19,8 +19,8 @@
 + (id)sharedDefaults;
 + (id)registeredDefaults;
 + (id)makeRegisteredDefaults;
-@property(retain) CNUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 - (void).cxx_destruct;
+@property(retain) CNUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(nonatomic) NSDictionary *filteredAccountsAndContainers;
 @property(nonatomic, getter=isShortNameFormatEnabled) _Bool shortNameFormatEnabled;
 @property unsigned long long shortNameFormat;

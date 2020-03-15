@@ -25,6 +25,7 @@
     struct UIEdgeInsets _customSafeAreaInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets customSafeAreaInsets; // @synthesize customSafeAreaInsets=_customSafeAreaInsets;
 @property(readonly, nonatomic) UIView *buttonTray; // @synthesize buttonTray=_buttonTray;
 @property(readonly, nonatomic) UIButton *smallChoice; // @synthesize smallChoice=_smallChoice;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) RUISubHeaderElement *subHeader; // @synthesize subHeader=_subHeader;
 @property(retain, nonatomic) RUIElement *header; // @synthesize header=_header;
 @property(nonatomic) __weak RUIChoiceViewElement *target; // @synthesize target=_target;
-- (void).cxx_destruct;
 - (void)setHeaderTitle:(id)arg1;
 - (id)titleLabel;
 - (void)_updateTrayBackdrop;

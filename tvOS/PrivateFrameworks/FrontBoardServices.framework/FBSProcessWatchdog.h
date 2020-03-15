@@ -22,10 +22,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) FBSProcessWatchdogPolicy *policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) __weak id <FBSProcess> process; // @synthesize process=_process;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -25,11 +25,11 @@
     CDUnknownBlockType _pendingPingCompletionHandler;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isFirstTunnel; // @synthesize isFirstTunnel=_isFirstTunnel;
 @property(copy, nonatomic) CDUnknownBlockType pendingPingCompletionHandler; // @synthesize pendingPingCompletionHandler=_pendingPingCompletionHandler;
 @property(nonatomic) BOOL ignoreWaldoTimestamp; // @synthesize ignoreWaldoTimestamp=_ignoreWaldoTimestamp;
 @property(nonatomic) void *clientRef; // @synthesize clientRef=_clientRef;
-- (void).cxx_destruct;
 - (BOOL)isTFOProbeSucceeded;
 @property(readonly, nonatomic) NSDate *dayPassCreationDate;
 @property(readonly, nonatomic) unsigned int dayPassSessionCounter;

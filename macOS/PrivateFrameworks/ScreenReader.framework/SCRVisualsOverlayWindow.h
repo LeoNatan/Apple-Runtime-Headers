@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     SCRCUserDefaults *__userDefaults;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain, nonatomic, setter=_setHighlightView:) AXVHighlightOutlineView *_highlightView; // @synthesize _highlightView=__highlightView;
 @property(retain, nonatomic, setter=_setOverlayWindow:) AXVOverlayWindow *_overlayWindow; // @synthesize _overlayWindow=__overlayWindow;
 @property(readonly, nonatomic) SCRVisualsEncircledPoint *encircledPoint; // @synthesize encircledPoint=_encircledPoint;
 @property(readonly, nonatomic) SCRVisualsHighlightCurtain *highlightCurtain; // @synthesize highlightCurtain=_highlightCurtain;
 @property(readonly, nonatomic) SCRVisualsHighlightCursor *voCursor; // @synthesize voCursor=_voCursor;
-- (void).cxx_destruct;
 - (void)_updateOverlayWindowVisibility;
 - (struct CGRect)convertRectToWindowFromScreen:(struct CGRect)arg1;
 - (void)highlightWithRect:(struct CGRect)arg1;

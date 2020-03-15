@@ -24,8 +24,8 @@
     id <TXRDataSourceProvider> _dataSourceProvider;
 }
 
-@property(readonly) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly) NSError *error; // @synthesize error=_error;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initAsLevel:(unsigned long long)arg1 element:(unsigned long long)arg2 face:(unsigned long long)arg3 dataSourceProvider:(id)arg4;
 - (id)initWithBytesPerRow:(unsigned long long)arg1 bytesPerImage:(unsigned long long)arg2 buffer:(id)arg3 offset:(unsigned long long)arg4;

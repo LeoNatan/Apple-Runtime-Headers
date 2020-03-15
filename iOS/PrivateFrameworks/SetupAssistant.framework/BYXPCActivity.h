@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)activityWithXPCActivity:(id)arg1;
-@property(retain, nonatomic) NSObject<OS_xpc_object> *xpcActivity; // @synthesize xpcActivity=_xpcActivity;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *xpcActivity; // @synthesize xpcActivity=_xpcActivity;
 @property(copy, nonatomic) NSObject<OS_xpc_object> *criteria;
 - (long long)state;
 - (_Bool)setState:(long long)arg1;

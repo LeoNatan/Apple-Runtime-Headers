@@ -16,11 +16,11 @@
     NSString *_currency;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(nonatomic) double chartValue; // @synthesize chartValue=_chartValue;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 
 @end
 

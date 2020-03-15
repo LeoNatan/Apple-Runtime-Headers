@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int limInterfaceType; // @synthesize limInterfaceType=_limInterfaceType;
 @property(nonatomic) unsigned int limULDetected; // @synthesize limULDetected=_limULDetected;
 @property(nonatomic) unsigned int limDLDetected; // @synthesize limDLDetected=_limDLDetected;
@@ -55,7 +56,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long limDLMaxBWBps; // @synthesize limDLMaxBWBps=_limDLMaxBWBps;
 @property(retain, nonatomic) NSData *limSignature; // @synthesize limSignature=_limSignature;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

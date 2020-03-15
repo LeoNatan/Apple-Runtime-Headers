@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UINavigationController *_navigationController;
 }
 
+- (void).cxx_destruct;
 @property(retain) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property _Bool translucentToolbar; // @synthesize translucentToolbar=_translucentToolbar;
 @property _Bool translucentNavigationBar; // @synthesize translucentNavigationBar=_translucentNavigationBar;
 @property _Bool toolBarHidden; // @synthesize toolBarHidden=_toolBarHidden;
 @property _Bool navigationBarHidden; // @synthesize navigationBarHidden=_navigationBarHidden;
-- (void).cxx_destruct;
 
 @end
 

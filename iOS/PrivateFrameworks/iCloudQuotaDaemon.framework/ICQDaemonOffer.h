@@ -26,11 +26,11 @@
 + (id)placeholderKeysInString:(id)arg1 fromKeys:(id)arg2;
 + (id)defaultPlaceholderKeys;
 + (_Bool)placeholderExistsInString:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _ICQFollowupSpecification *internalFollowupSpecification; // @synthesize internalFollowupSpecification=_internalFollowupSpecification;
 @property(retain, nonatomic) _ICQAlertSpecification *internalAlertSpecification; // @synthesize internalAlertSpecification=_internalAlertSpecification;
 @property(copy, nonatomic) NSString *offerId; // @synthesize offerId=_offerId;
 @property(retain, nonatomic) NSString *notificationID; // @synthesize notificationID=_notificationID;
-- (void).cxx_destruct;
 - (void)_initSubclassFromServerDictionary;
 - (id)_mutablePersistenceDictionary;
 - (void)setServerDictionary:(id)arg1;

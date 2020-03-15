@@ -20,12 +20,12 @@
     UIImage *_contentImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *contentImage; // @synthesize contentImage=_contentImage;
 @property(copy, nonatomic) NSString *confirmString; // @synthesize confirmString=_confirmString;
 @property(copy, nonatomic) NSString *subtitleString; // @synthesize subtitleString=_subtitleString;
 @property(copy, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSString *re_shortcut_confirmButtonString;
 @property(readonly, nonatomic) UIColor *re_shortcut_confirmButtonColor;

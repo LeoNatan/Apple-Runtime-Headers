@@ -22,13 +22,13 @@
 }
 
 + (id)buildWithSetterBlock:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) GEOLatLng *latlng; // @synthesize latlng=_latlng;
 @property(retain, nonatomic) GEOMapRegion *mapRegion; // @synthesize mapRegion=_mapRegion;
 @property(retain, nonatomic) GEOAddress *address; // @synthesize address=_address;
 @property(nonatomic) int referenceFrame; // @synthesize referenceFrame=_referenceFrame;
 @property(retain, nonatomic) GEOLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)build;
 - (id)init;
 

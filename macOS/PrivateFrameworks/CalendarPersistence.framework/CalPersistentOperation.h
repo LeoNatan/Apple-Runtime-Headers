@@ -21,9 +21,9 @@
 + (id)dearchive:(id)arg1;
 + (id)archive:(id)arg1 inContext:(id)arg2;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(retain) NSManagedObjectID *managedObjectID; // @synthesize managedObjectID=_managedObjectID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

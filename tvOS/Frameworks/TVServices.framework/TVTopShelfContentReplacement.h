@@ -15,9 +15,10 @@
     id <TVTopShelfContent> _replacementContent;
 }
 
++ (id)_replacementContentAllowedClasses;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) id <TVTopShelfContent> replacementContent; // @synthesize replacementContent=_replacementContent;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <TVTopShelfContent> replacementContent; // @synthesize replacementContent=_replacementContent;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

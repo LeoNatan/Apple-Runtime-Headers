@@ -16,7 +16,7 @@
 - (id)updateMediaRemotePairedDevice:(id)arg1;
 - (id)pairedPeerFromPeerDevice:(void *)arg1;
 - (void *)_createPeerDeviceFromPairedPeer:(id)arg1;
-- (struct NSMutableDictionary *)mediaRemotePairedDevices;
+- (id)mediaRemotePairedDevices;
 - (id)pairedPeerDevices;
 - (id)pairedPeerDevice;
 - (id)updatePeer;

@@ -6,8 +6,6 @@
 
 #import <HealthRecordsUI/HRViewControllerFactory.h>
 
-#import <HealthRecordsUI/HRRecordViewControllerFactory-Protocol.h>
-
-@interface HRViewControllerFactory (HealthRecordsUI2) <HRRecordViewControllerFactory>
+@interface HRViewControllerFactory (HealthRecordsUI2)
 @end
 

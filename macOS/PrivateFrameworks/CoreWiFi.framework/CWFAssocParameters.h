@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL rememberUponSuccessfulAssociation; // @synthesize rememberUponSuccessfulAssociation=_rememberUponSuccessfulAssociation;
 @property(copy, nonatomic) CWFEAPCredentials *EAPCredentials; // @synthesize EAPCredentials=_EAPCredentials;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) CWFNetworkProfile *knownNetworkProfile; // @synthesize knownNetworkProfile=_knownNetworkProfile;
 @property(copy, nonatomic) CWFScanResult *scanResult; // @synthesize scanResult=_scanResult;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

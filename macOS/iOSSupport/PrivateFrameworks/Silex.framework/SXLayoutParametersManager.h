@@ -13,8 +13,8 @@
     NSMutableDictionary *_durations;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *durations; // @synthesize durations=_durations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableDictionary *durations; // @synthesize durations=_durations;
 - (id)layoutParametersForTask:(id)arg1 previousLayoutOptions:(id)arg2;
 - (void)layoutFinishedForTask:(id)arg1 result:(id)arg2;
 - (id)init;

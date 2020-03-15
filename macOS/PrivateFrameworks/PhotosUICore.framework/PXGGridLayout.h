@@ -44,6 +44,7 @@
     struct NSEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint contentOrigin; // @synthesize contentOrigin=_contentOrigin;
 @property(nonatomic) BOOL loadItemsOutsideAnchorViewport; // @synthesize loadItemsOutsideAnchorViewport=_loadItemsOutsideAnchorViewport;
 @property(nonatomic) struct CGPoint anchorViewportCenter; // @synthesize anchorViewportCenter=_anchorViewportCenter;
@@ -67,7 +68,6 @@
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) BOOL canHandleVisibleRectRejection; // @synthesize canHandleVisibleRectRejection=_canHandleVisibleRectRejection;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (id)itemsInRect:(struct CGRect)arg1 inLayout:(id)arg2;
 - (id)itemsBetweenItem:(long long)arg1 andItem:(long long)arg2;
@@ -83,6 +83,7 @@
 - (BOOL)shouldUpdateDecorationMediaTargetSizes;
 - (unsigned int)spriteIndexForObjectReference:(id)arg1 options:(unsigned long long)arg2 updatedObjectReference:(out id *)arg3;
 - (id)itemsGeometry;
+- (struct CGSize)sizeForItem:(long long)arg1;
 - (struct _NSRange)itemsToLoad;
 - (struct CGRect)_pageAlignedRectForVisibleRect:(struct CGRect)arg1;
 - (struct _NSRange)_itemsToLoadForVisibleRect:(struct CGRect)arg1;

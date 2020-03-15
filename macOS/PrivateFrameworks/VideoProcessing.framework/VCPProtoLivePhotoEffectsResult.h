@@ -19,10 +19,10 @@
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *recipeBlob; // @synthesize recipeBlob=_recipeBlob;
 @property(nonatomic) unsigned long long longExposureSuggestionState; // @synthesize longExposureSuggestionState=_longExposureSuggestionState;
 @property(nonatomic) unsigned long long loopSuggestionState; // @synthesize loopSuggestionState=_loopSuggestionState;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

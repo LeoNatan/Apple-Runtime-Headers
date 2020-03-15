@@ -22,11 +22,11 @@
 + (id)readerForMemoriesWithResourceDirectory:(id)arg1;
 + (id)readerForSyncedAlbumWithResourceDirectory:(id)arg1;
 + (id)readerForResourceDirectory:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mutationCount; // @synthesize mutationCount=_mutationCount;
 @property(retain, nonatomic) NSString *assetCollection; // @synthesize assetCollection=_assetCollection;
 @property(nonatomic) __weak id <NTKPhotosReaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *resourceDirectory; // @synthesize resourceDirectory=_resourceDirectory;
-- (void).cxx_destruct;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (id)lastObject;
 - (id)firstObject;

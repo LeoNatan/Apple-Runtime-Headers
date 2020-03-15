@@ -16,8 +16,8 @@
     BKSProcessAssertion *_appKeepAliveAssertion;
 }
 
-@property(retain, nonatomic) BKSProcessAssertion *appKeepAliveAssertion; // @synthesize appKeepAliveAssertion=_appKeepAliveAssertion;
 - (void).cxx_destruct;
+@property(retain, nonatomic) BKSProcessAssertion *appKeepAliveAssertion; // @synthesize appKeepAliveAssertion=_appKeepAliveAssertion;
 - (id)_createAssertionForBundleID:(id)arg1;
 - (void)_activateAppIfNeeded:(id)arg1;
 - (double)wakeDuration;

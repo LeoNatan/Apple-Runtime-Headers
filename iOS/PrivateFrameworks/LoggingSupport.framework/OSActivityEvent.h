@@ -32,6 +32,7 @@
 }
 
 + (id)activityEventFromStreamEntry:(struct os_activity_stream_entry_s *)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *timezoneName; // @synthesize timezoneName=_timezoneName;
 @property(readonly, nonatomic) struct timezone tz; // @synthesize tz=_tz;
 @property(readonly, nonatomic) struct timeval timeGMT; // @synthesize timeGMT=_timeGMT;
@@ -50,7 +51,6 @@
 @property(readonly, copy, nonatomic) NSUUID *processImageUUID; // @synthesize processImageUUID=_processImageUUID;
 @property(readonly, nonatomic) unsigned long long processUniqueID; // @synthesize processUniqueID=_processUniqueID;
 @property(readonly, nonatomic) int processID; // @synthesize processID=_processID;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *sender;
 @property(readonly, copy, nonatomic) NSString *process;
 - (void)_addProperties:(id)arg1;

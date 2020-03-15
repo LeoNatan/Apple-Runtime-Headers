@@ -7,6 +7,6 @@
 #import <Foundation/NSNull.h>
 
 @interface NSNull (Readable)
-- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_readableDescriptionWithLocalizer:(id)arg1 metadata:(id)arg2;
 @end
 

@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
     long _singleAllowableExternalTouchPathIndex;
 }
 
-@property(nonatomic) long singleAllowableExternalTouchPathIndex; // @synthesize singleAllowableExternalTouchPathIndex=_singleAllowableExternalTouchPathIndex;
 - (void).cxx_destruct;
+@property(nonatomic) long singleAllowableExternalTouchPathIndex; // @synthesize singleAllowableExternalTouchPathIndex=_singleAllowableExternalTouchPathIndex;
 - (void)_setHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)predictedTouchesForTouch:(id)arg1;
 - (id)coalescedTouchesForTouch:(id)arg1;

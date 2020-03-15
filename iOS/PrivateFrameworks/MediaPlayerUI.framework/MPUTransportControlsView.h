@@ -29,6 +29,7 @@
 }
 
 + (id)defaultTransportControls;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_usesLegacyLayoutHeuristics, setter=_setUsesLegacyLayoutHeuristics:) _Bool usesLegacyLayoutHeuristics; // @synthesize usesLegacyLayoutHeuristics=_usesLegacyLayoutHeuristics;
 @property(nonatomic) _Bool sortByGroup; // @synthesize sortByGroup=_sortByGroup;
 @property(nonatomic) unsigned long long minimumNumberOfTransportButtonsForLayout; // @synthesize minimumNumberOfTransportButtonsForLayout=_minimumNumberOfTransportButtonsForLayout;
@@ -36,7 +37,6 @@
 @property(nonatomic) __weak id <MPUTransportControlsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MPUTransportControlsViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSArray *availableTransportControls; // @synthesize availableTransportControls=_availableTransportControls;
-- (void).cxx_destruct;
 - (void)_willRemoveTransportButton:(id)arg1;
 - (id)_visibleTransportControlAtIndex:(unsigned long long)arg1;
 - (id)_typesOfVisibleControls;

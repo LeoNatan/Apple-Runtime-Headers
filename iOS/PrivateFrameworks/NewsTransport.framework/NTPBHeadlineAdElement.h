@@ -38,6 +38,7 @@
 + (Class)channelIAdKeywordsType;
 + (Class)articleIAdSectionIDsType;
 + (Class)articleIAdCategoriesType;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *articleIAdKeywords; // @synthesize articleIAdKeywords=_articleIAdKeywords;
 @property(nonatomic) long long channelContentProviderID; // @synthesize channelContentProviderID=_channelContentProviderID;
 @property(retain, nonatomic) NSMutableArray *channelIAdCategories; // @synthesize channelIAdCategories=_channelIAdCategories;
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) NSMutableArray *articleIAdCategories; // @synthesize articleIAdCategories=_articleIAdCategories;
 @property(retain, nonatomic) NSString *articleRating; // @synthesize articleRating=_articleRating;
 @property(retain, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

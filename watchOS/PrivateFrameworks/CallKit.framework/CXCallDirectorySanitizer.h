@@ -15,10 +15,10 @@
     NSCharacterSet *_phoneNumbersIgnoredCharacterSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSCharacterSet *phoneNumbersIgnoredCharacterSet; // @synthesize phoneNumbersIgnoredCharacterSet=_phoneNumbersIgnoredCharacterSet;
 @property(readonly, nonatomic) NSCharacterSet *nonPhoneNumbersCharacterSet; // @synthesize nonPhoneNumbersCharacterSet=_nonPhoneNumbersCharacterSet;
 @property(readonly, nonatomic) NSCharacterSet *phoneNumbersCharacterSet; // @synthesize phoneNumbersCharacterSet=_phoneNumbersCharacterSet;
-- (void).cxx_destruct;
 - (id)canonicalizedPhoneNumber:(id)arg1;
 - (id)init;
 

@@ -17,9 +17,9 @@
     id <CSStatusTextViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CSStatusTextViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *overrideFooterText; // @synthesize overrideFooterText=_overrideFooterText;
-- (void).cxx_destruct;
 - (id)_legalContact;
 - (id)_legalString;
 - (void)_updateTextForLegal;

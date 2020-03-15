@@ -14,9 +14,9 @@
     NSPointerArray *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSPointerArray *observers; // @synthesize observers=_observers;
 @property(nonatomic) struct os_unfair_lock_s observersLock; // @synthesize observersLock=_observersLock;
-- (void).cxx_destruct;
 - (void)enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)performSelectorOnMainThreadWithRespondingObservers:(SEL)arg1 object:(id)arg2 waitUntilDone:(_Bool)arg3;
 - (void)removeObserver:(id)arg1;

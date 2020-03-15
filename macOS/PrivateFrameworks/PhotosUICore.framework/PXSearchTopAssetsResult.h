@@ -27,6 +27,7 @@
 + (id)sortedPreviewAssetsFrom:(id)arg1 priorityAssetUUID:(id)arg2 numberOfTopAssets:(long long)arg3;
 + (id)_fetchAssetsForAssetUUIDs:(id)arg1;
 + (id)_fetchResultForTopAssets:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *hiddenObjects; // @synthesize hiddenObjects=_hiddenObjects;
 @property(readonly, copy, nonatomic) NSArray *removedObjects; // @synthesize removedObjects=_removedObjects;
 @property(readonly, copy, nonatomic) NSString *priorityAssetUUID; // @synthesize priorityAssetUUID=_priorityAssetUUID;
@@ -34,7 +35,6 @@
 @property(nonatomic) __weak id <PXSearchTopAssetsResultChangeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PHFetchResult *topAssetsFetchResult; // @synthesize topAssetsFetchResult=_topAssetsFetchResult;
 @property(readonly, nonatomic) NSArray *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
-- (void).cxx_destruct;
 - (id)init;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) NSDictionary *debugDictionary;

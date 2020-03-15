@@ -20,8 +20,8 @@
 + (id)reachabilityForInternetConnection;
 + (id)reachabilityWithAddress:(const struct sockaddr_in *)arg1;
 + (id)reachabilityWithHostName:(id)arg1;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *reachabilityQueue; // @synthesize reachabilityQueue=_reachabilityQueue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *reachabilityQueue; // @synthesize reachabilityQueue=_reachabilityQueue;
 - (long long)currentReachabilityStatus;
 - (BOOL)interventionRequired;
 - (BOOL)connectionRequired;

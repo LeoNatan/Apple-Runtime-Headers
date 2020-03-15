@@ -23,11 +23,11 @@
 + (id)requestForSelf;
 + (id)requestForPID:(int)arg1;
 + (id)requestForPID:(int)arg1 fromPOSIX:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isFromPOSIX) _Bool fromPOSIX; // @synthesize fromPOSIX=_fromPOSIX;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(readonly, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSString *shortDescription;

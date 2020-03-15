@@ -33,6 +33,7 @@
     struct _xmlSAXHandler _parsingSAXHandler;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *currentImgTagSource; // @synthesize currentImgTagSource=_currentImgTagSource;
 @property(nonatomic) unsigned long long currentImgTagStartIndex; // @synthesize currentImgTagStartIndex=_currentImgTagStartIndex;
 @property(nonatomic) unsigned long long currentHeadTagStartIndex; // @synthesize currentHeadTagStartIndex=_currentHeadTagStartIndex;
@@ -54,7 +55,6 @@
 @property(nonatomic) _Bool parsingBody; // @synthesize parsingBody=_parsingBody;
 @property(nonatomic) _Bool parsingHead; // @synthesize parsingHead=_parsingHead;
 @property(nonatomic) _Bool containsBlacklistedElements; // @synthesize containsBlacklistedElements=_containsBlacklistedElements;
-- (void).cxx_destruct;
 - (void)_appendImageFromAttributes:(const char **)arg1;
 - (void)_appendString:(id)arg1;
 - (void)_flushCharactersIfNeeded;

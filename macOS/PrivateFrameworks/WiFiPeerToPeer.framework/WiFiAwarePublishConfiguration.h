@@ -21,12 +21,12 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) WiFiAwarePublishDatapathConfiguration *datapathConfiguration; // @synthesize datapathConfiguration=_datapathConfiguration;
 @property(nonatomic) BOOL jumboServiceDiscoveryMessages; // @synthesize jumboServiceDiscoveryMessages=_jumboServiceDiscoveryMessages;
 @property(nonatomic) BOOL furtherServiceDiscoveryRequired; // @synthesize furtherServiceDiscoveryRequired=_furtherServiceDiscoveryRequired;
 @property(copy, nonatomic) WiFiAwarePublishServiceSpecificInfo *serviceSpecificInfo; // @synthesize serviceSpecificInfo=_serviceSpecificInfo;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

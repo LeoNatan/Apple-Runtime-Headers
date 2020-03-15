@@ -8,7 +8,6 @@
 
 @interface _TtC8FMIPCore27FMIPDeviceActionsController : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: beaconManager
     // Error parsing type: , name: ownerSession
     // Error parsing type: , name: serverInteractionController
     // Error parsing type: , name: mockAuthenticator

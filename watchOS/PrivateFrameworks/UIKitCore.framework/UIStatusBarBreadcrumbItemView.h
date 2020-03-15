@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_destinationText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *destinationText; // @synthesize destinationText=_destinationText;
 @property(retain, nonatomic) UISystemNavigationAction *systemNavigationAction; // @synthesize systemNavigationAction=_systemNavigationAction;
-- (void).cxx_destruct;
 - (float)extraRightPadding;
 - (id)shortenedTitleWithCompressionLevel:(int)arg1;
 - (void)userDidActivateButton:(id)arg1;

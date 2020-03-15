@@ -19,13 +19,13 @@
     NSURL *_keyServerURL;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isiTunesStoreStream) BOOL iTunesStoreStream; // @synthesize iTunesStoreStream=_iTunesStoreStream;
 @property(readonly, copy, nonatomic) NSURL *keyServerURL; // @synthesize keyServerURL=_keyServerURL;
 @property(readonly, copy, nonatomic) NSURL *keyCertificateURL; // @synthesize keyCertificateURL=_keyCertificateURL;
 @property(readonly, copy, nonatomic) NSURL *streamURL; // @synthesize streamURL=_streamURL;
 @property(readonly, nonatomic) long long streamProtocol; // @synthesize streamProtocol=_streamProtocol;
 @property(readonly, nonatomic) long long flavor; // @synthesize flavor=_flavor;
-- (void).cxx_destruct;
 - (id)initWithiTunesCloudStoreRadioStreamAssetInfo:(id)arg1;
 
 @end

@@ -16,8 +16,8 @@
 }
 
 + (id)blockFilterWithPredicate:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

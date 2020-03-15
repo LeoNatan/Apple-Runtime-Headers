@@ -16,11 +16,14 @@
     PKPaymentSetupProduct *_product;
 }
 
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKPaymentSetupProduct *product; // @synthesize product=_product;
 @property(retain, nonatomic) NSArray *setupFields; // @synthesize setupFields=_setupFields;
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

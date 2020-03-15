@@ -32,6 +32,7 @@
 + (id)buddyPictureWithData:(id)arg1;
 + (void)setMyPicture:(id)arg1;
 + (id)myPicture;
+- (void).cxx_destruct;
 @property(nonatomic) double lastFrameChange; // @synthesize lastFrameChange=_lastFrameChange;
 @property(retain, nonatomic) NSDate *lastDrawn; // @synthesize lastDrawn=_lastDrawn;
 @property(retain, nonatomic) NSMutableSet *cacheKeys; // @synthesize cacheKeys=_cacheKeys;
@@ -40,7 +41,6 @@
 @property(retain, nonatomic) SODataRetainingImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) BOOL pictureIsIcon; // @synthesize pictureIsIcon=_pictureIsIcon;
-- (void).cxx_destruct;
 - (id)animatedGIFDataWithSize:(struct CGSize)arg1 minSize:(struct CGSize)arg2 maxDataSize:(float)arg3;
 - (id)dataWithMaxSize:(struct CGSize)arg1 minSize:(struct CGSize)arg2 maxDataSize:(float)arg3 allowAnimated:(BOOL)arg4;
 - (void)drawInRect:(struct CGRect)arg1 operation:(unsigned long long)arg2 fraction:(float)arg3 firstFrameOnly:(BOOL)arg4 scaled:(BOOL)arg5;

@@ -18,8 +18,8 @@
 + (void)removeHostView:(id)arg1;
 + (void)addHostView:(id)arg1;
 + (id)hostViewDisablements;
-@property(nonatomic) __weak UIView *hostView; // @synthesize hostView=_hostView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIView *hostView; // @synthesize hostView=_hostView;
 - (void)didMoveToWindow;
 - (void)_disablement:(id)arg1;
 - (void)_setDisabled:(_Bool)arg1;

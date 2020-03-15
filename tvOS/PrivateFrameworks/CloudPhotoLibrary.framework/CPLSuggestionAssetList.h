@@ -18,9 +18,9 @@
 }
 
 + (Class)assetType;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(retain, nonatomic) NSMutableArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

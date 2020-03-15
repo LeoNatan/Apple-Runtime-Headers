@@ -6,12 +6,13 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class _UISheetInteraction;
+@class UIEvent, UIGestureRecognizer, _UISheetInteraction;
 
 @protocol _UISheetInteractionDelegate <NSObject>
 
 @optional
-- (_Bool)sheetInteraction:(_UISheetInteraction *)arg1 shouldBeginHorizontalRubberBandingAtPoint:(struct CGPoint)arg2;
+- (_Bool)sheetInteraction:(_UISheetInteraction *)arg1 shouldAllowVerticalRubberBandingWithEvent:(UIEvent *)arg2;
+- (_Bool)sheetInteraction:(_UISheetInteraction *)arg1 shouldBeginHorizontalRubberBandingWithGestureRecognizer:(UIGestureRecognizer *)arg2;
 - (struct CGPoint)offsetForInterruptedAnimationInSheetInteraction:(_UISheetInteraction *)arg1;
 - (void)sheetInteraction:(_UISheetInteraction *)arg1 didChangeOffset:(struct CGPoint)arg2;
 @end

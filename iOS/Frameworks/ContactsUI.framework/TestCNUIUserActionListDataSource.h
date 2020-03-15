@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 + (id)allSupportedActionTypesWithCapabilities:(id)arg1;
 + (id)allSupportedActionTypes;
 + (id)allActionTypes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) NSDictionary *actionsByActionTypeByContact; // @synthesize actionsByActionTypeByContact=_actionsByActionTypeByContact;
 @property(retain, nonatomic) NSDictionary *userActionListModelResultBlocksByActionTypeAskedFor; // @synthesize userActionListModelResultBlocksByActionTypeAskedFor=_userActionListModelResultBlocksByActionTypeAskedFor;
 @property(nonatomic) _Bool tracksChanges; // @synthesize tracksChanges=_tracksChanges;
-- (void).cxx_destruct;
 - (id)consumer:(id)arg1 imageForActionType:(id)arg2;
 - (id)thirdPartyActionsForCurrentContactAndPropertyKey:(id)arg1 identifier:(id)arg2;
 - (id)thirdPartyActionsForContactProperty:(id)arg1;

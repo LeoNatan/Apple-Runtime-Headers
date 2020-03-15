@@ -16,8 +16,8 @@
     _MXExtensionProvider *_extensionProvider;
 }
 
-@property(readonly, nonatomic) __weak _MXExtensionProvider *extensionProvider; // @synthesize extensionProvider=_extensionProvider;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak _MXExtensionProvider *extensionProvider; // @synthesize extensionProvider=_extensionProvider;
 - (void)removeExtensionUpdateHandler:(id)arg1;
 - (id)addExtensionsUpdateHandler:(CDUnknownBlockType)arg1;
 - (void)dispatchExtensions:(id)arg1 error:(id)arg2;

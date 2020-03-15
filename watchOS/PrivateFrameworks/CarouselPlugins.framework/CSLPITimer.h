@@ -31,6 +31,7 @@
 }
 
 + (id)scheduledTimerWithFireInterval:(double)arg1 leewayInterval:(double)arg2 serviceIdentifier:(id)arg3 queue:(id)arg4 handler:(CDUnknownBlockType)arg5;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
@@ -38,7 +39,6 @@
 @property(nonatomic) double leewayInterval; // @synthesize leewayInterval=_leewayInterval;
 @property(nonatomic) double fireInterval; // @synthesize fireInterval=_fireInterval;
 @property(nonatomic, getter=isScheduled) _Bool scheduled; // @synthesize scheduled=_scheduled;
-- (void).cxx_destruct;
 - (_Bool)_scheduleWake;
 - (void)_rescheduleAfterSystemWake;
 - (void)_unschedule;

@@ -18,9 +18,9 @@
 
 + (Class)currentSettingParamsType;
 + (id)options;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *currentSettingParams; // @synthesize currentSettingParams=_currentSettingParams;
 @property(retain, nonatomic) NSString *iAdIDString; // @synthesize iAdIDString=_iAdIDString;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

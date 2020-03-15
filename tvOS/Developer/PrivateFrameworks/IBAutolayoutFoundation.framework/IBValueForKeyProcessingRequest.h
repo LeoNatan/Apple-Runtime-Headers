@@ -14,9 +14,9 @@
     NSString *_keyPath;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
 @property(retain, nonatomic) NSObject *object; // @synthesize object=_object;
-- (void).cxx_destruct;
 - (void)encodeWithBinaryArchiver:(id)arg1;
 - (id)initWithBinaryUnarchiver:(id)arg1;
 - (id)initWithObject:(id)arg1 keyPath:(id)arg2 resultPhase:(long long)arg3 postProcessingBlock:(CDUnknownBlockType)arg4;

@@ -22,10 +22,10 @@ __attribute__((visibility("hidden")))
 + (id)textViewWithElement:(id)arg1 textLayout:(id)arg2 titleElement:(id)arg3 titleLayout:(id)arg4 existingTextView:(id)arg5;
 + (id)textViewWithString:(id)arg1 textLayout:(id)arg2 titleString:(id)arg3 titleLayout:(id)arg4 existingTextView:(id)arg5;
 + (id)textViewWithString:(id)arg1 textLayout:(id)arg2 existingTextView:(id)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VUITextLayout *titleTextLayout; // @synthesize titleTextLayout=_titleTextLayout;
 @property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 @property(retain, nonatomic) VUILabel *computationLabel; // @synthesize computationLabel=_computationLabel;
-- (void).cxx_destruct;
 - (void)_updateTextColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (double)bottomMarginWithBaselineMargin:(double)arg1;

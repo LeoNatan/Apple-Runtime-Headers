@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     AVStreamDataParser *_parser;
 }
 
-@property Box_1b51c224 abortSemaphore; // @synthesize abortSemaphore=_abortSemaphore;
-@property WeakPtr_1d7f609b parent; // @synthesize parent=_parent;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property Box_1b51c224 abortSemaphore; // @synthesize abortSemaphore=_abortSemaphore;
+@property WeakPtr_1d7f609b parent; // @synthesize parent=_parent;
 - (void)streamDataParser:(id)arg1 didProvideContentKeyRequestInitializationData:(id)arg2 forTrackID:(int)arg3;
 - (void)streamDataParserWillProvideContentKeyRequestInitializationData:(id)arg1 forTrackID:(int)arg2;
 - (void)streamDataParser:(id)arg1 didReachEndOfTrackWithTrackID:(int)arg2 mediaType:(id)arg3;

@@ -14,9 +14,9 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *confirmationDialogType; // @synthesize confirmationDialogType=_confirmationDialogType;
-- (void).cxx_destruct;
 - (id)jsonData;
 
 @end

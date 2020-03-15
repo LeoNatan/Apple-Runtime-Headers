@@ -10,10 +10,11 @@
 #import <ContentKit/WFContentItemClass-Protocol.h>
 #import <ContentKit/WFCopying-Protocol.h>
 
-@class NSExtensionItem, NSItemProvider, NSMutableDictionary, NSString, WFImage, WFRepresentation, WFType;
+@class NSExtensionItem, NSItemProvider, NSMutableDictionary, NSString, WFContentSource, WFImage, WFRepresentation, WFType;
 
 @interface WFContentItem : NSObject <WFContentItemClass, WFCopying, NSSecureCoding>
 {
+    WFContentSource *_contentSource;
     NSMutableDictionary *_representationsByType;
     NSMutableDictionary *_subItemsByClass;
     WFType *_internalRepresentationType;
@@ -41,6 +42,7 @@
 + (id)allProperties;
 + (id)properties;
 + (id)propertyBuilders;
++ (id)defaultSourceForRepresentation:(id)arg1;
 + (_Bool)canLowercaseTypeDescription;
 + (id)countDescription;
 + (id)localizedPluralFilterDescription;
@@ -55,17 +57,24 @@
 + (id)ownedPasteboardTypes;
 + (id)ownedTypes;
 + (_Bool)isAvailableOnPlatform:(int)arg1;
-+ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3;
-+ (id)itemFromSerializedItem:(id)arg1 withItemClass:(Class)arg2 forType:(id)arg3 nameIfKnown:(id)arg4 sourceName:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
++ (id)itemWithSerializedItem:(id)arg1 forType:(id)arg2 named:(id)arg3 contentSource:(id)arg4;
++ (id)itemFromSerializedItem:(id)arg1 withItemClass:(Class)arg2 forType:(id)arg3 nameIfKnown:(id)arg4 sourceName:(id)arg5 contentSource:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 + (void)getContentItemFromSerializedItem:(id)arg1 sourceName:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasFileOutput;
 + (_Bool)hasStringOutput;
 + (_Bool)isContentItemSubclass;
++ (id)itemWithFile:(id)arg1 contentSource:(id)arg2;
 + (id)itemWithFile:(id)arg1;
++ (id)itemWithRepresentation:(id)arg1 contentSource:(id)arg2 includesDefaultContentSource:(_Bool)arg3;
++ (id)itemWithRepresentation:(id)arg1 contentSource:(id)arg2;
 + (id)itemWithRepresentation:(id)arg1;
++ (id)itemWithRepresentation:(id)arg1 forType:(id)arg2 contentSource:(id)arg3 includesDefaultContentSource:(_Bool)arg4;
++ (id)itemWithRepresentation:(id)arg1 forType:(id)arg2 contentSource:(id)arg3;
 + (id)itemWithRepresentation:(id)arg1 forType:(id)arg2;
++ (id)itemWithObject:(id)arg1 named:(id)arg2 contentSource:(id)arg3;
 + (id)itemWithObject:(id)arg1 named:(id)arg2;
++ (id)itemWithObject:(id)arg1 contentSource:(id)arg2;
 + (id)itemWithObject:(id)arg1;
 + (id)badCoercionErrorForObjectClass:(Class)arg1;
 + (id)badCoercionErrorForType:(id)arg1;
@@ -75,10 +84,11 @@
 + (id)badCoercionErrorWithReasonString:(id)arg1;
 + (_Bool)errorIsBadCoercionError:(id)arg1;
 + (id)pasteboardValueClasses;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) WFType *internalRepresentationType; // @synthesize internalRepresentationType=_internalRepresentationType;
 @property(retain, nonatomic) NSMutableDictionary *subItemsByClass; // @synthesize subItemsByClass=_subItemsByClass;
 @property(retain, nonatomic) NSMutableDictionary *representationsByType; // @synthesize representationsByType=_representationsByType;
-- (void).cxx_destruct;
+@property(readonly, nonatomic) WFContentSource *contentSource; // @synthesize contentSource=_contentSource;
 - (id)subItemForClass:(Class)arg1;
 - (id)subItemsForClass:(Class)arg1;
 - (void)setSubItems:(id)arg1 forClass:(Class)arg2;
@@ -93,7 +103,9 @@
 - (void)setRepresentations:(id)arg1 forType:(id)arg2;
 - (id)representationForType:(id)arg1;
 - (id)representationsForType:(id)arg1;
-- (id)initWithRepresentation:(id)arg1 forType:(id)arg2;
+- (id)initWithRepresentationsByType:(id)arg1 forType:(id)arg2 subItemsByClass:(id)arg3 contentSource:(id)arg4 includesDefaultContentSource:(_Bool)arg5;
+- (id)initWithRepresentation:(id)arg1 forType:(id)arg2 contentSource:(id)arg3 includesDefaultContentSource:(_Bool)arg4;
+- (id)initWithRepresentation:(id)arg1 forType:(id)arg2 contentSource:(id)arg3;
 - (id)description;
 - (id)allSupportedItemClasses;
 - (id)supportedItemClasses;
@@ -124,6 +136,7 @@
 - (_Bool)canPerformCoercion:(id)arg1;
 - (void)performCoercion:(id)arg1;
 - (id)typeForCoercionRequest:(id)arg1;
+- (id)contentItemByMergingContentSource:(id)arg1;
 - (id)generateSubItemsForItemClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)generateSubItemsForItemClasses:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)generateFirstLevelSubItemsForItemClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;

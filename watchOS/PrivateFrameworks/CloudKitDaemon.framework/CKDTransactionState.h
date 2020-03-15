@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_itemByAssetId;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *itemByAssetId; // @synthesize itemByAssetId=_itemByAssetId;
 @property(retain, nonatomic) CKDAssetBatch *assetBatch; // @synthesize assetBatch=_assetBatch;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

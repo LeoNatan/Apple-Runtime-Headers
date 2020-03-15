@@ -18,13 +18,13 @@
     long long _externalAudienceType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long externalAudienceType; // @synthesize externalAudienceType=_externalAudienceType;
 @property(readonly, nonatomic) EWSEmailAddress *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly, nonatomic) EWSDuration *duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) EWSReplyBodyType *externalReply; // @synthesize externalReply=_externalReply;
 @property(readonly, nonatomic) EWSReplyBodyType *internalReply; // @synthesize internalReply=_internalReply;
 @property(readonly, nonatomic) long long oofState; // @synthesize oofState=_oofState;
-- (void).cxx_destruct;
 - (id)prepareRequest;
 - (id)newResponseOperationWithGateway:(id)arg1 errorHandler:(id)arg2;
 @property(retain, nonatomic) MFEWSSetUserOofSettingsResponseOperation *responseOperation;

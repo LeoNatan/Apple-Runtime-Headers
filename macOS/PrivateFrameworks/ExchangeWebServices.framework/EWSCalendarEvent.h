@@ -19,11 +19,11 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) EWSCalendarEventDetails *CalendarEventDetails; // @synthesize CalendarEventDetails=_CalendarEventDetails;
 @property(nonatomic) long long BusyType; // @synthesize BusyType=_BusyType;
 @property(retain, nonatomic) NSDateComponents *EndTime; // @synthesize EndTime=_EndTime;
 @property(retain, nonatomic) NSDateComponents *StartTime; // @synthesize StartTime=_StartTime;
-- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

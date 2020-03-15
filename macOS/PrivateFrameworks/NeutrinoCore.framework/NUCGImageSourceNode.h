@@ -26,6 +26,7 @@
 }
 
 + (BOOL)isFusedOvercaptureFromCGImageProperties:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *auxiliaryImagesProperties; // @synthesize auxiliaryImagesProperties=_auxiliaryImagesProperties;
 @property long long componentInfo; // @synthesize componentInfo=_componentInfo;
 @property long long alphaInfo; // @synthesize alphaInfo=_alphaInfo;
@@ -37,7 +38,6 @@
 @property BOOL loaded; // @synthesize loaded=_loaded;
 @property(readonly) NSString *UTI; // @synthesize UTI=_UTI;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (id)_evaluateImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImageGeometryWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
@@ -50,7 +50,7 @@
 - (BOOL)_load:(out id *)arg1;
 - (BOOL)_setAuxiliaryImagePropertiesFromCGProperties:(id)arg1 error:(out id *)arg2;
 - (BOOL)_setGeometryFromProperties:(id)arg1 error:(out id *)arg2;
-- (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
+- (id)resolvedNodeWithCachedInputs:(id)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)preparedNodeWithSourceContainer:(id)arg1 pipelineState:(id)arg2 pipelineSettings:(id)arg3 sourceSettings:(id)arg4 error:(out id *)arg5;
 - (id)resolvedAuxiliaryImageNodeForPipelineState:(id)arg1 error:(out id *)arg2;
 - (id)auxiliaryImagePropertiesForAuxImageType:(long long)arg1;

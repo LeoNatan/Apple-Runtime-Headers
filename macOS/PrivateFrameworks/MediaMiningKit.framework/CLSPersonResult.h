@@ -15,9 +15,9 @@
 }
 
 + (id)personResultWithPerson:(id)arg1 andConfidence:(float)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(retain, nonatomic) CLSPerson *person; // @synthesize person=_person;
-- (void).cxx_destruct;
 - (id)description;
 - (void)mergeWithResult:(id)arg1;
 - (BOOL)isSamePersonAsResult:(id)arg1;

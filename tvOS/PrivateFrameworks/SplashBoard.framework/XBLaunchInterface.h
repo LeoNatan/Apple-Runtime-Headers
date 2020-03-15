@@ -21,12 +21,12 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *urlSchemes; // @synthesize urlSchemes=_urlSchemes;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(nonatomic, getter=_isDefault) _Bool _default; // @synthesize _default;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isXIB;
 @property(readonly, nonatomic) _Bool isStoryboard;
 @property(readonly, copy) NSString *description;

@@ -22,12 +22,12 @@
 + (id)identityForCompatibilityInfo:(id)arg1;
 + (id)identityForApplicationInfo:(id)arg1;
 + (id)identityForBundleProxy:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *snapshotContainerPath; // @synthesize snapshotContainerPath=_snapshotContainerPath;
 @property(readonly, copy, nonatomic) NSString *bundleContainerPath; // @synthesize bundleContainerPath=_bundleContainerPath;
 @property(readonly, copy, nonatomic) NSString *dataContainerPath; // @synthesize dataContainerPath=_dataContainerPath;
 @property(readonly, copy, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

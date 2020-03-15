@@ -18,9 +18,9 @@
 }
 
 + (unsigned short)messageType;
+- (void).cxx_destruct;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) struct CGPoint normalizedCenter; // @synthesize normalizedCenter=_normalizedCenter;
-- (void).cxx_destruct;
 - (double)messageDuration;
 - (id)messageTypeAsString;
 - (void)setNormalizedPoint:(struct CGPoint)arg1 atRelativeTime:(double)arg2 inScene:(id)arg3;

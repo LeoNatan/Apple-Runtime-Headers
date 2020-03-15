@@ -15,8 +15,8 @@
     SBIconListModel *_dock;
 }
 
-- (id)dock;
 - (void).cxx_destruct;
+- (id)dock;
 - (void)nodeDidMoveContainedNodes:(id)arg1;
 - (void)node:(id)arg1 didRemoveContainedNodeIdentifiers:(id)arg2;
 - (void)node:(id)arg1 didAddContainedNodeIdentifiers:(id)arg2;

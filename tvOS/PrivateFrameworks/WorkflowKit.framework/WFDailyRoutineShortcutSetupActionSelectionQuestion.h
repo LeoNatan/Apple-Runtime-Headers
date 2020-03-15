@@ -11,8 +11,8 @@
     CDUnknownBlockType _fetchDonationsHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType fetchDonationsHandler; // @synthesize fetchDonationsHandler=_fetchDonationsHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType fetchDonationsHandler; // @synthesize fetchDonationsHandler=_fetchDonationsHandler;
 
 @end
 

@@ -8,7 +8,7 @@
 
 @interface LSEnumerator : NSEnumerator
 {
-    // Error parsing type: {atomic_flag="__a_"AB}, name: _hasFiredErrorHandler
+    // Error parsing type: {atomic_flag="__a_"{__cxx_atomic_impl<bool, std::__1::__cxx_atomic_base_impl<bool> >="__a_value"AB}}, name: _hasFiredErrorHandler
     CDUnknownBlockType _errorHandler;
 }
 
@@ -20,8 +20,8 @@
 + (id)enumeratorForApplicationProxiesWithOptions:(unsigned long long)arg1;
 + (id)new;
 + (id)_log;
-@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 - (id)nextObject;
 - (id)init;
 - (void)_fireErrorHandlerWithError:(id)arg1;

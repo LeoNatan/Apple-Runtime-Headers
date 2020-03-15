@@ -20,8 +20,8 @@
 + (id)_keyQueryAttributesForKeyIdentifiedByName:(id)arg1;
 + (id)_identifyingAttributesForKeyIdentifiedByName:(id)arg1;
 + (id)tokenKeychainItemSecurityClass;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (_Bool)deleteWithError:(id *)arg1;
 - (_Bool)storeToken:(id)arg1 error:(id *)arg2;
 - (id)fetchWithError:(id *)arg1;

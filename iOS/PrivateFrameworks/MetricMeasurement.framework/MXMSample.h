@@ -25,13 +25,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MXMSampleTag *tag; // @synthesize tag=_tag;
 @property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(readonly, nonatomic) unsigned long long valueType; // @synthesize valueType=_valueType;
 @property(readonly, copy, nonatomic) NSSet *attributes; // @synthesize attributes=_attributes;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly, nonatomic) NSData *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (id)convertToUnit:(id)arg1;
 - (id)description;
 - (void)dealloc;

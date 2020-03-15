@@ -22,6 +22,7 @@
 }
 
 + (id)sharedDaemon;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VCShareSheetWorkflowStatusUpdater *shareSheetStatusUpdater; // @synthesize shareSheetStatusUpdater=_shareSheetStatusUpdater;
 @property(retain, nonatomic) VCCKNotificationCenter *cloudKitNotificationCenter; // @synthesize cloudKitNotificationCenter=_cloudKitNotificationCenter;
 @property(readonly, nonatomic) VCSpotlightSyncService *spotlightLibrarySyncService; // @synthesize spotlightLibrarySyncService=_spotlightLibrarySyncService;
@@ -31,7 +32,6 @@
 @property(readonly, nonatomic) VCDaemonXPCEventHandler *xpcEventHandler; // @synthesize xpcEventHandler=_xpcEventHandler;
 @property(readonly, nonatomic) VCDaemonDatabaseProvider *databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) VCXPCServer *xpcServer; // @synthesize xpcServer=_xpcServer;
-- (void).cxx_destruct;
 - (void)assistantPreferencesDidChange;
 - (void)applicationWasUnregistered:(id)arg1;
 - (void)startEventObservation;

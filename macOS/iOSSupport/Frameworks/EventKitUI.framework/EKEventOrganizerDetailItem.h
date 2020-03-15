@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     id <EKIdentityProtocol> _organizerOverride;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL hideDisclosureIndicator; // @synthesize hideDisclosureIndicator=_hideDisclosureIndicator;
 @property(retain) id <EKIdentityProtocol> organizerOverride; // @synthesize organizerOverride=_organizerOverride;
-- (void).cxx_destruct;
 - (void)_updateDisclosureIndicator;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;

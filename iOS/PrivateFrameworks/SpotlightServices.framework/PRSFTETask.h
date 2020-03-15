@@ -13,8 +13,8 @@
     CDUnknownBlockType _reply;
 }
 
-@property(copy) CDUnknownBlockType reply; // @synthesize reply=_reply;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType reply; // @synthesize reply=_reply;
 - (_Bool)allowLocation;
 - (void)triggerQuery:(_Bool)arg1;
 - (id)initWithReply:(CDUnknownBlockType)arg1;

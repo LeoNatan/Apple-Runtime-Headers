@@ -15,8 +15,8 @@
     NSError *_lastImportError;
 }
 
-@property(retain, nonatomic) NSError *lastImportError; // @synthesize lastImportError=_lastImportError;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSError *lastImportError; // @synthesize lastImportError=_lastImportError;
 - (void)_handleImportOperationCancelled:(id)arg1;
 - (void)_handleImportOperationCompleted:(id)arg1;
 - (id)_suspendedImportOperations;

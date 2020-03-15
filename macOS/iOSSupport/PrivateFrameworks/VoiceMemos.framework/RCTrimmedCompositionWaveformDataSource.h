@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSURL *_destinationWaveformURL;
 }
 
-@property(readonly, nonatomic) NSURL *destinationWaveformURL; // @synthesize destinationWaveformURL=_destinationWaveformURL;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *destinationWaveformURL; // @synthesize destinationWaveformURL=_destinationWaveformURL;
 - (id)generatedWaveformOutputURL;
 - (BOOL)preferLoadingFragmentWaveforms;
 - (id)initWithSourceComposition:(id)arg1 destinationWaveformURL:(id)arg2;

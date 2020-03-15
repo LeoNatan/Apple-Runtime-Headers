@@ -15,13 +15,13 @@ __attribute__((visibility("hidden")))
 {
     id _identityAttributesInternal;
     NSString *persistentIdentifier;
-    struct NSString *_privateKeyDomain;
+    NSString *_privateKeyDomain;
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *privateKeyDomain; // @synthesize privateKeyDomain=_privateKeyDomain;
 @property(readonly, copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasCertificate;
 @property(copy, nonatomic) NSString *identityName;
 - (void)setKeySpecifier:(id)arg1;

@@ -21,6 +21,7 @@
 }
 
 + (unsigned long long)requiredScannerState;
+- (void).cxx_destruct;
 @property(retain) SKBindableDisk *bindableSKDisk; // @synthesize bindableSKDisk=_bindableSKDisk;
 @property __weak SKAPFSDisk *apfsSKDisk; // @synthesize apfsSKDisk=_apfsSKDisk;
 @property __weak SKDisk<SKEncryptedDiskProtocol> *encryptedSKDisk; // @synthesize encryptedSKDisk=_encryptedSKDisk;
@@ -28,7 +29,6 @@
 @property(retain) NSString *deviceBus; // @synthesize deviceBus=_deviceBus;
 @property(retain) id cachedPrimaryIdentifier; // @synthesize cachedPrimaryIdentifier;
 @property(retain) SKDisk *skDisk; // @synthesize skDisk;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)addFDEUsers:(id)arg1 removeUsers:(id)arg2 diskUnlockPassword:(id)arg3;
 - (BOOL)encryptDiskWithUsers:(id)arg1 iCloudUser:(id)arg2 iCloudPassword:(id)arg3 andBag:(id)arg4 returningError:(id *)arg5;

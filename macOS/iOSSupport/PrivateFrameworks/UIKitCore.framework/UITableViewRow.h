@@ -18,9 +18,9 @@
 }
 
 + (id)row;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITableViewCell *cell; // @synthesize cell=_cell;
 @property(nonatomic) double height; // @synthesize height=_height;
-- (void).cxx_destruct;
 - (long long)indentationLevel;
 - (void)setIndentationLevel:(long long)arg1;
 - (void)encodeWithCoder:(id)arg1;

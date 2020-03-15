@@ -19,12 +19,12 @@
     NSSet *_contributingPids;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *contributingPids; // @synthesize contributingPids=_contributingPids;
 @property(readonly, nonatomic) unsigned long long lateFrameCount; // @synthesize lateFrameCount=_lateFrameCount;
 @property(readonly, nonatomic) unsigned long long totalFrameCount; // @synthesize totalFrameCount=_totalFrameCount;
 @property(readonly, nonatomic) unsigned int swapId; // @synthesize swapId=_swapId;
 @property(readonly, nonatomic) unsigned int frameSeed; // @synthesize frameSeed=_frameSeed;
-- (void).cxx_destruct;
 - (id)initWithStartMCT:(unsigned long long)arg1 endMCT:(unsigned long long)arg2 timebaseRatio:(double)arg3 swapID:(unsigned int)arg4 frameSeed:(unsigned int)arg5 totalFrameCount:(unsigned long long)arg6 lateFrameCount:(unsigned long long)arg7;
 - (id)initWithFrameLatencyInterval:(id)arg1 isLong:(BOOL)arg2;
 

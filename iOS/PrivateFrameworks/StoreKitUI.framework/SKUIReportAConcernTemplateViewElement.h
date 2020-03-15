@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_reportConcernExplanation;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *reportConcernExplanation; // @synthesize reportConcernExplanation=_reportConcernExplanation;
 @property(readonly, nonatomic) long long itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property(readonly, copy, nonatomic) NSURL *reportConcernURL; // @synthesize reportConcernURL=_reportConcernURL;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *reasonElements;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

@@ -16,11 +16,11 @@
     IMKAppleSpellCandidateEngine *_candidateEngine;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) IMKAppleSpellCandidateEngine *candidateEngine; // @synthesize candidateEngine=_candidateEngine;
 @property(nonatomic) BOOL useMarkedText; // @synthesize useMarkedText=_useMarkedText;
 @property(retain, nonatomic) IMKTextDocumentTextInputAdaptor *textDocument; // @synthesize textDocument=_textDocument;
 @property(nonatomic, getter=isDeactivating) BOOL deactivating; // @synthesize deactivating=_deactivating;
-- (void).cxx_destruct;
 - (id)candidateControllerForTouchBar;
 - (void)handleIMKCandidateSelection:(id)arg1;
 - (void)commitComposition:(id)arg1;

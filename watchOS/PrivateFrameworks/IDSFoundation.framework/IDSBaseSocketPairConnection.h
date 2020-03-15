@@ -24,8 +24,8 @@
     _Bool _writeSourceIsResumed;
 }
 
-@property(readonly, nonatomic) int socket; // @synthesize socket=_connectedSocket;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int socket; // @synthesize socket=_connectedSocket;
 - (_Bool)sendData:(id)arg1;
 - (void)_setupWriteSource;
 - (void)_sendToConnectedSocket;

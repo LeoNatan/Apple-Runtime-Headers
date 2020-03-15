@@ -20,11 +20,11 @@
 }
 
 + (id)sharedUpdatesBasedServiceHolderInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCInterface *interface; // @synthesize interface=_interface;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) NSHashTable *delegates; // @synthesize delegates=_delegates;
 @property(retain, nonatomic) NNMKNanoMailService *nanomailService; // @synthesize nanomailService=_nanomailService;
-- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (void)_setupOrTeardownNanoMailServiceInstance;

@@ -21,6 +21,7 @@
     NSMutableDictionary *_itemPathsByIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *itemPathsByIdentifier; // @synthesize itemPathsByIdentifier=_itemPathsByIdentifier;
 @property(readonly, nonatomic) NSMutableArray *spineItemIdentifiers; // @synthesize spineItemIdentifiers=_spineItemIdentifiers;
 @property(copy, nonatomic) NSString *tableOfContentsMediaType; // @synthesize tableOfContentsMediaType=_tableOfContentsMediaType;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *bookIdentifierType; // @synthesize bookIdentifierType=_bookIdentifierType;
 @property(copy, nonatomic) NSString *bookIdentifier; // @synthesize bookIdentifier=_bookIdentifier;
-- (void).cxx_destruct;
 - (id)urlWithItemIdentifier:(id)arg1 fragment:(id)arg2;
 - (id)cfiWithItemIdentifier:(id)arg1 fragment:(id)arg2;
 - (id)itemIdentifierForHref:(id)arg1 fragment:(id *)arg2;

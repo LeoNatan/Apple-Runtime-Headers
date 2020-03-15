@@ -41,6 +41,7 @@
     RTFMCScoreBoard *_scoreBoardForUsualLocation;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RTFMCScoreBoard *scoreBoardForUsualLocation; // @synthesize scoreBoardForUsualLocation=_scoreBoardForUsualLocation;
 @property(retain, nonatomic) RTFMCScoreBoard *scoreBoardForUnusualLocation; // @synthesize scoreBoardForUnusualLocation=_scoreBoardForUnusualLocation;
 @property(retain, nonatomic) RTFMCScoreBoard *scoreBoard; // @synthesize scoreBoard=_scoreBoard;
@@ -67,7 +68,6 @@
 @property(retain, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(retain, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *finalizeLocationEstimateTimer; // @synthesize finalizeLocationEstimateTimer=_finalizeLocationEstimateTimer;
-- (void).cxx_destruct;
 - (void)fetchFMCEnabledWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchAutomaticVehicleEventDetectionSupportedWithHandler:(CDUnknownBlockType)arg1;
 - (void)onLearnedLocationManagerNotification:(id)arg1;

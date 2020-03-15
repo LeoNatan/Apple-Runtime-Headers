@@ -15,8 +15,8 @@
 
 + (id)face;
 + (id)faceFromManagedObject:(id)arg1;
-@property(retain, nonatomic) VNFaceprint *faceprint; // @synthesize faceprint=_faceprint;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VNFaceprint *faceprint; // @synthesize faceprint=_faceprint;
 - (id)description;
 - (id)managedObjectForContext:(id)arg1;
 

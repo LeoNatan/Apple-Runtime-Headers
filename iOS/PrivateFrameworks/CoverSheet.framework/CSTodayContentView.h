@@ -15,10 +15,10 @@
     UIView *_todayView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isBouncing) _Bool bouncing; // @synthesize bouncing=_bouncing;
 @property(nonatomic) __weak UIView *todayView; // @synthesize todayView=_todayView;
 @property(nonatomic) __weak UIView *navigationView; // @synthesize navigationView=_navigationView;
-- (void).cxx_destruct;
 - (void)_resetContentAfterEdgeBounce;
 - (void)_adjustContentForEdgeBounce;
 - (void)layoutSubviews;

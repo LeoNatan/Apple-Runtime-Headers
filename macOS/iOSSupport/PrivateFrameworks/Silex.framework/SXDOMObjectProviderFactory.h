@@ -18,10 +18,10 @@
     SXJSONObjectMerger *_componentTextStyleMerger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SXJSONObjectMerger *componentTextStyleMerger; // @synthesize componentTextStyleMerger=_componentTextStyleMerger;
 @property(readonly, nonatomic) SXJSONObjectMerger *componentStyleMerger; // @synthesize componentStyleMerger=_componentStyleMerger;
 @property(readonly, nonatomic) id <SXDocumentControllerProvider> documentControllerProvider; // @synthesize documentControllerProvider=_documentControllerProvider;
-- (void).cxx_destruct;
 - (id)createDOMObjectProvider;
 - (id)initWithDocumentControllerProvider:(id)arg1 componentStyleMerger:(id)arg2 componentTextStyleMerger:(id)arg3;
 

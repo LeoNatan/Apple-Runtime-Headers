@@ -15,8 +15,8 @@
     NAFuture *_future;
 }
 
-@property(readonly) NAFuture *future; // @synthesize future=_future;
 - (void).cxx_destruct;
+@property(readonly) NAFuture *future; // @synthesize future=_future;
 - (CDUnknownBlockType)errorOnlyCompletionHandlerAdapter;
 - (CDUnknownBlockType)completionHandlerAdapter;
 - (_Bool)finishWithNoResult;

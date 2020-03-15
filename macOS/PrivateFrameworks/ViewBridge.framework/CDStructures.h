@@ -34,14 +34,6 @@ struct NSEdgeInsets {
     double right;
 };
 
-struct NSMutableDictionary {
-    Class _field1;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
 struct __va_list_tag {
     unsigned int _field1;
     unsigned int _field2;

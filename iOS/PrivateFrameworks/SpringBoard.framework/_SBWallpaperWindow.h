@@ -15,8 +15,8 @@
     id <SBWallpaperWindowDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBWallpaperWindowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBWallpaperWindowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)traitCollectionDidChange:(id)arg1;
 - (long long)activeInterfaceOrientation;
 - (void)_observeDefaults;

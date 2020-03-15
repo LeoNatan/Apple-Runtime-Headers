@@ -82,6 +82,7 @@
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool transitionedToSameDay; // @synthesize transitionedToSameDay=_transitionedToSameDay;
 @property(retain, nonatomic) NSTimer *showNowTimer; // @synthesize showNowTimer=_showNowTimer;
 @property(copy, nonatomic) NSDateComponents *pendingPreviousDate; // @synthesize pendingPreviousDate=_pendingPreviousDate;
@@ -105,7 +106,6 @@
 @property(copy, nonatomic) NSDateComponents *displayDate; // @synthesize displayDate=_displayDate;
 @property(nonatomic) __weak id <EKDayViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <EKDayViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)__cutLongTailCallbackForScrollAnimationFromExternalSource;
 - (void)__cutLongCallbackTailForDecelerationFromUserInput;
 - (void)_cancelAllLongTailCuttingCallbacks;
@@ -169,19 +169,24 @@
 - (double)eventGestureController:(id)arg1 heightForOccurrenceViewOfDuration:(double)arg2 allDay:(_Bool)arg3;
 - (double)eventGestureController:(id)arg1 widthForOccurrenceViewOfDays:(unsigned long long)arg2;
 - (struct CGPoint)eventGestureController:(id)arg1 pointAtDate:(double)arg2 isAllDay:(_Bool)arg3;
+- (struct CGPoint)pointAtDate:(double)arg1 isAllDay:(_Bool)arg2;
 - (double)eventGestureController:(id)arg1 dateAtPoint:(struct CGPoint)arg2;
 - (_Bool)eventGestureController:(id)arg1 isAllDayAtPoint:(struct CGPoint)arg2 requireInsistence:(_Bool)arg3;
 - (id)eventGestureController:(id)arg1 occurrenceViewForOccurrence:(id)arg2;
 - (id)eventGestureController:(id)arg1 occurrenceViewAtPoint:(struct CGPoint)arg2;
 - (void)eventGestureController:(id)arg1 addViewToScroller:(id)arg2 isAllDay:(_Bool)arg3;
 - (double)eventGestureController:(id)arg1 yPositionPerhapsMatchingAllDayOccurrence:(id)arg2 atPoint:(struct CGPoint)arg3;
+- (void)hideTimelineHighlight;
+- (void)showTimelineHighlightForTime:(id)arg1;
 - (id)createEventForEventGestureController:(id)arg1;
 - (void)eventGestureController:(id)arg1 adjustDraggingViewForAllDay:(_Bool)arg2;
 - (void)updateFrameForProposedTimeView;
 - (id)createOccurrenceViewForEventGestureController:(id)arg1;
+- (id)createOccurrenceViewForEventGestures;
 - (double)horizontalOffsetForPagingForEventGestureController:(id)arg1;
 - (id)occurrenceViewSuperviewForEventGestureController:(id)arg1;
 - (id)touchTrackingViewForEventGestureController:(id)arg1;
+@property(readonly, nonatomic) UIView *effectiveEventGestureSuperview;
 - (id)_eventGestureSuperview;
 - (void)dayViewDidTapEmptySpace:(id)arg1;
 - (void)_highlightDayViewDate:(double)arg1 isAllDay:(_Bool)arg2;
@@ -218,6 +223,7 @@
 - (void)dayView:(id)arg1 firstVisibleSecondChanged:(unsigned long long)arg2;
 - (void)_setNextAndPreviousFirstVisibleSecondToCurrent;
 - (void)_setDisplayDateInternal:(id)arg1;
+- (id)dayView:(id)arg1 selectedCopyViewForOccurrence:(id)arg2;
 - (void)dayViewDidCompleteAsyncLoadAndLayout:(id)arg1;
 - (void)dayView:(id)arg1 isPinchingDayViewWithScale:(double)arg2;
 - (void)dayView:(id)arg1 didScaleDayViewWithScale:(double)arg2;

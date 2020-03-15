@@ -15,10 +15,10 @@
     id <NACancelable> _timerCancellationToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NACancelable> timerCancellationToken; // @synthesize timerCancellationToken=_timerCancellationToken;
 @property(readonly, nonatomic) double targetEffectiveProgress; // @synthesize targetEffectiveProgress=_targetEffectiveProgress;
 @property(readonly, copy, nonatomic) CDUnknownBlockType observerBlock; // @synthesize observerBlock=_observerBlock;
-- (void).cxx_destruct;
 - (id)initWithTargetEffectiveProgress:(double)arg1 observerBlock:(CDUnknownBlockType)arg2;
 
 @end

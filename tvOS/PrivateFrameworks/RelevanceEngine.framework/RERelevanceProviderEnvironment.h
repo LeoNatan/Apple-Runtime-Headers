@@ -31,9 +31,9 @@
     id <RERelevanceProviderEnvironmentDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsLocationUse; // @synthesize allowsLocationUse=_allowsLocationUse;
 @property(nonatomic) __weak id <RERelevanceProviderEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *allProviderValues;
 @property(readonly, nonatomic) REFeatureSet *supportedFeatures;
 - (id)createRelevaneProviderWithType:(id)arg1 withOptions:(id)arg2;
@@ -56,6 +56,7 @@
 - (void)_addRelevanceValue:(id)arg1 forProvider:(id)arg2;
 - (void)_removeRelevanceValueForProvider:(id)arg1;
 - (void)_queue_performUpdate:(CDUnknownBlockType)arg1;
+- (void)_setupRelevanceProviderManagers;
 - (void)resume;
 - (void)pause;
 - (void)dealloc;

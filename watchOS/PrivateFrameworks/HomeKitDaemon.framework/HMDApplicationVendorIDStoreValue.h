@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool spiClient; // @synthesize spiClient=_spiClient;
 @property(readonly, nonatomic) NSString *companionAppBundleId; // @synthesize companionAppBundleId=_companionAppBundleId;
 @property(readonly, nonatomic) NSString *applicationBundleId; // @synthesize applicationBundleId=_applicationBundleId;
 @property(readonly, nonatomic) NSData *vendorIdSha1; // @synthesize vendorIdSha1=_vendorIdSha1;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

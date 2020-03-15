@@ -18,12 +18,12 @@
 }
 
 + (id)_buttonContentWithFrame:(struct CGRect)arg1 blurEffectStyle:(long long)arg2 blurEnabled:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType playActionHandler; // @synthesize playActionHandler=_playActionHandler;
 @property(copy, nonatomic) CDUnknownBlockType selectActionHandler; // @synthesize selectActionHandler=_selectActionHandler;
 @property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(copy, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
 @property(readonly, nonatomic) TVButtonContent *buttonContent; // @synthesize buttonContent=_buttonContent;
-- (void).cxx_destruct;
 - (void)_updateFocusStateWithCoordinator:(id)arg1;
 - (void)_setFocused:(_Bool)arg1 animationCoordinator:(id)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;

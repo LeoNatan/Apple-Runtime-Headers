@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     VUIDebugMetricsEvent *_event;
 }
 
-@property(retain, nonatomic) VUIDebugMetricsEvent *event; // @synthesize event=_event;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIDebugMetricsEvent *event; // @synthesize event=_event;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

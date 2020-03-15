@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     WebBookmark *_originalBookmark;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool foundDuplicates; // @synthesize foundDuplicates=_foundDuplicates;
 @property(readonly, nonatomic) WebBookmark *originalBookmark; // @synthesize originalBookmark=_originalBookmark;
-- (void).cxx_destruct;
 - (void)removeAllDuplicates;
 - (void)exchangeOriginalBookmarkWithBookmark:(id)arg1;
 - (void)addDuplicateBookmarkToKeep:(id)arg1;

@@ -35,6 +35,7 @@
     NSString *_currentRoadName;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType navigationVoiceVolumeUpdatedHandler; // @synthesize navigationVoiceVolumeUpdatedHandler=_navigationVoiceVolumeUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType trafficIncidentAlertDetailsDataUpdatedHandler; // @synthesize trafficIncidentAlertDetailsDataUpdatedHandler=_trafficIncidentAlertDetailsDataUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType positionFromDestinationUpdatedHandler; // @synthesize positionFromDestinationUpdatedHandler=_positionFromDestinationUpdatedHandler;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) NSString *currentRoadName; // @synthesize currentRoadName=_currentRoadName;
 @property(readonly, nonatomic) unsigned int navigationState; // @synthesize navigationState=_navigationState;
 @property(nonatomic) __weak id <GEONavigationListenerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (unsigned int)_listenerStateForSessionState:(unsigned int)arg1;
 - (void)_notifyWithNavigationVoiceVolume:(int)arg1;
 - (void)_notifyWithTrafficIncidentDetailsData:(id)arg1;

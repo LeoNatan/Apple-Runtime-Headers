@@ -13,8 +13,6 @@
 @property(readonly, nonatomic) BOOL isUsingInMemoryDatabase;
 @property(nonatomic) double historyAgeLimit;
 @property(nonatomic) __weak id <WBSHistoryStoreDelegate> delegate;
-- (void)removeAllTestDriveVisitsWithCompletionHandler:(void (^)(void))arg1;
-- (void)makePermanentAllTestDriveVisits;
 - (void)updateHistoryAfterSuccessfulPersistedLongLivedSaveOperationWithGeneration:(long long)arg1 completion:(void (^)(void))arg2;
 - (void)visitIdentifiersMatchingExistingVisits:(NSSet *)arg1 populateAssociatedVisits:(BOOL)arg2 completion:(void (^)(NSSet *))arg3;
 - (void)getVisitsAndTombstonesNeedingSyncWithVisitSyncWindow:(double)arg1 completion:(void (^)(NSSet *, NSSet *, long long, void (^)(BOOL)))arg2;

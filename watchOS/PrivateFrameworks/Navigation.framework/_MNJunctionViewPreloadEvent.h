@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     GEOComposedGuidanceEvent *_junctionViewEvent;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool needsPreload; // @synthesize needsPreload=_needsPreload;
 @property(retain, nonatomic) GEOComposedGuidanceEvent *junctionViewEvent; // @synthesize junctionViewEvent=_junctionViewEvent;
-- (void).cxx_destruct;
 
 @end
 

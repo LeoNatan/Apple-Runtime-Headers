@@ -31,12 +31,12 @@
     NSString *_processName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
 @property(readonly, copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(readonly, nonatomic) long long XPCServiceType; // @synthesize XPCServiceType=_XPCServiceType;
 @property(readonly, retain, nonatomic) NSXPCConnection *XPCConnection; // @synthesize XPCConnection=_XPCConnection;
 @property(retain) id <CWFXPCConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)queryDeviceUUIDWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryAutoJoinStatusWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryJoinStatusWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;

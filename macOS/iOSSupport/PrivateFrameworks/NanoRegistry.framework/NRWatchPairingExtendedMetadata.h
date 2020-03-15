@@ -18,10 +18,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL postFailsafeObliteration; // @synthesize postFailsafeObliteration=_postFailsafeObliteration;
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic) long long chipID; // @synthesize chipID=_chipID;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;

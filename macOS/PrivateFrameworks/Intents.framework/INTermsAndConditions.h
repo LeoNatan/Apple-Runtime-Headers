@@ -20,10 +20,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly) NSURL *termsAndConditionsURL; // @synthesize termsAndConditionsURL=_termsAndConditionsURL;
 @property(readonly) NSURL *privacyPolicyURL; // @synthesize privacyPolicyURL=_privacyPolicyURL;
 @property(readonly) NSString *localizedTermsAndConditionsText; // @synthesize localizedTermsAndConditionsText=_localizedTermsAndConditionsText;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

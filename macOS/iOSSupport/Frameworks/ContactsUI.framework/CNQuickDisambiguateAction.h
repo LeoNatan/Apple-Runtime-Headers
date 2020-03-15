@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     CNQuickAction *_mainAction;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL ignoreMainAction; // @synthesize ignoreMainAction=_ignoreMainAction;
 @property(nonatomic) __weak CNQuickAction *mainAction; // @synthesize mainAction=_mainAction;
 @property(retain, nonatomic) NSOrderedSet *actions; // @synthesize actions=_actions;
-- (void).cxx_destruct;
 - (id)description;
 - (void)performWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)subtitleForContext:(long long)arg1;

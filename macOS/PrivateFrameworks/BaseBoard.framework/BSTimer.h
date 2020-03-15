@@ -27,10 +27,10 @@
 }
 
 + (id)scheduledTimerWithFireInterval:(double)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double repeatInterval; // @synthesize repeatInterval=_repeatInterval;
 @property(readonly, nonatomic) double fireInterval; // @synthesize fireInterval=_fireInterval;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
-- (void).cxx_destruct;
 - (void)_callOutQueue_noteTimerFired;
 - (void)_queue_cancel;
 - (void)cancel;

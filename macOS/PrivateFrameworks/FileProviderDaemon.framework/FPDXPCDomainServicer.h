@@ -10,27 +10,35 @@
 #import <FileProviderDaemon/FPDLifetimeServicing-Protocol.h>
 
 @class FPDDomain, FPDExtensionSession, FPDProvider, FPDServer, FPDXPCDomainServicerLifetimeExtender, NSString;
-@protocol OS_dispatch_queue, OS_os_transaction;
+@protocol OS_dispatch_queue, OS_os_log, OS_os_transaction;
 
 __attribute__((visibility("hidden")))
 @interface FPDXPCDomainServicer : NSObject <FPDDomainServicing, FPDLifetimeServicing>
 {
     FPDServer *_server;
     FPDProvider *__provider;
+    FPDDomain *_domain;
     NSObject<OS_dispatch_queue> *_requestQueue;
     id _activePresenterObservation;
     FPDXPCDomainServicerLifetimeExtender *_lifetimeExtender;
     BOOL _isALifetimerExtender;
     NSObject<OS_os_transaction> *_serviceTransaction;
+    NSObject<OS_os_log> *_log;
     NSString *_providerDomainID;
 }
 
-@property(readonly, nonatomic) NSString *providerDomainID; // @synthesize providerDomainID=_providerDomainID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *providerDomainID; // @synthesize providerDomainID=_providerDomainID;
 - (void)_t_setFilePresenterObserver:(id)arg1;
 - (id)description;
+- (void)currentMaterializedSetSyncAnchorWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)enumerateMaterializedSetFromSyncAnchor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)evictItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setDownloadPolicy:(unsigned long long)arg1 forItemWithIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)reimportItemsBelowItemWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)ingestFromCacheItemWithIdentifier:(id)arg1 requestedFields:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)fetchAndStartEnumeratingWithSettings:(id)arg1 observer:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)setDomainWithIdentifier:(id)arg1 ejectable:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setDomainEjectable:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didChangeItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteSearchableItemsWithSpotlightDomainIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -47,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (int)pid;
 - (void)dealloc;
 - (void)invalidate;
-- (id)initWithServer:(id)arg1 providerDomainID:(id)arg2 pid:(int)arg3;
+- (id)initWithServer:(id)arg1 providerDomainID:(id)arg2 domain:(id)arg3 pid:(int)arg4;
 
 @end
 

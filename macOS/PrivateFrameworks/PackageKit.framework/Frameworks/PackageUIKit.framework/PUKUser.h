@@ -15,10 +15,10 @@
     NSNumber *_sessionIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSNumber *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property unsigned int userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(retain) NSString *accountUserName; // @synthesize accountUserName=_accountUserName;
-- (void).cxx_destruct;
 - (id)runningProcesses;
 @property(readonly, getter=isCurrentUser) BOOL currentUser;
 - (id)initWithSessionID:(id)arg1 userIdentifier:(unsigned int)arg2 name:(id)arg3;

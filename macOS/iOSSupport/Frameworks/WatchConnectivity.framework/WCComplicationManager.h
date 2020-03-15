@@ -17,9 +17,9 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak NSObject<WCComplicationManagerDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)xpcManager:(id)arg1 handlePairedSyncComplicationsStartedWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)xpcManager:(id)arg1 isExtensionPrivileged:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)xpcManager:(id)arg1 handlePingForExtensionBundleID:(id)arg2;

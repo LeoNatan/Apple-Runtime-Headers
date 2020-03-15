@@ -30,10 +30,10 @@
 }
 
 + (Class)_activityIndicatorClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *_associatedView; // @synthesize _associatedView;
 @property(retain, nonatomic) UINavigationBar *_navigationBar; // @synthesize _navigationBar;
 @property(retain, nonatomic) UIToolbar *_toolbar; // @synthesize _toolbar;
-- (void).cxx_destruct;
 - (void)_goToNextMode:(id)arg1;
 @property(nonatomic, setter=_setState:) int _state;
 - (void)_updateForState:(int)arg1;

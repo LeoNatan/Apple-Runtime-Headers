@@ -18,6 +18,7 @@
 + (id)_currentFocusItem;
 + (void)_updateActiveFocusLayers;
 + (void)_removeActiveFocusLayers;
++ (id)_currentFocusItemForClient:(id)arg1;
 + (void)updateRingForFocusItem:(id)arg1 forClient:(id)arg2;
 + (void)updateRingForFocusItem:(id)arg1;
 + (void)removeRingFromFocusItem:(id)arg1 forClient:(id)arg2;
@@ -26,8 +27,8 @@
 + (void)moveRingToFocusItem:(id)arg1;
 + (id)manager;
 + (Class)shapeLayerClassForClient:(id)arg1;
-@property(retain, nonatomic) NSMutableDictionary *focusRingStateForClient; // @synthesize focusRingStateForClient=_focusRingStateForClient;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *focusRingStateForClient; // @synthesize focusRingStateForClient=_focusRingStateForClient;
 - (void)_updateFocusLayerFrames;
 - (void)_geometryChanges:(id)arg1 forAncestor:(id)arg2;
 - (id)_viewToAddFocusLayerForItem:(id)arg1;

@@ -15,10 +15,10 @@
     struct UIOffset _firstPageOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIOffset firstPageOffset; // @synthesize firstPageOffset=_firstPageOffset;
 @property(nonatomic) float deltaToContentOffset; // @synthesize deltaToContentOffset=_deltaToContentOffset;
 @property(nonatomic) __weak UIScrollView *targetScrollView; // @synthesize targetScrollView=_targetScrollView;
-- (void).cxx_destruct;
 - (id)_subviewsThatNeedNotches;
 - (struct UIEdgeInsets)adjustedSafeAreaInsetForNotchesTriggerPoint:(struct UIEdgeInsets)arg1;
 - (void)configureMinorDetentsBasedOnResultingNotches;

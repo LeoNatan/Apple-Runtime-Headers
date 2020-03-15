@@ -20,8 +20,8 @@
     CDUnknownBlockType _visibilityBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType visibilityBlock; // @synthesize visibilityBlock=_visibilityBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType visibilityBlock; // @synthesize visibilityBlock=_visibilityBlock;
 - (void)_handleCloudMusicLibraryEnabledStateDidChangeNotification:(id)arg1;
 - (void)_deleteFromLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_addToLibraryWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -25,6 +25,7 @@
     struct CGPoint _center;
 }
 
+- (void).cxx_destruct;
 @property BOOL animating; // @synthesize animating=_animating;
 @property(retain) NSTextField *text; // @synthesize text=_text;
 @property(nonatomic) double metersPerPixel; // @synthesize metersPerPixel=_metersPerPixel;
@@ -37,7 +38,6 @@
 @property(retain) id <MKOverlay> circleOverlay; // @synthesize circleOverlay=_circleOverlay;
 @property(retain) id <MKAnnotation> annotation; // @synthesize annotation=_annotation;
 @property(retain) NSView *handleImageView; // @synthesize handleImageView=_handleImageView;
-- (void).cxx_destruct;
 - (BOOL)usesMetric;
 - (void)recalcMetersPerPixel;
 - (void)resizeCircleDragEnded:(BOOL)arg1;

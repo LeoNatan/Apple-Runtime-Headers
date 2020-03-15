@@ -26,6 +26,7 @@
     struct os_unfair_lock_s _summaryLock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct os_unfair_lock_s summaryLock; // @synthesize summaryLock=_summaryLock;
 @property(retain, nonatomic) NSMapTable *summaryLoadersMapTable; // @synthesize summaryLoadersMapTable=_summaryLoadersMapTable;
 @property(readonly, nonatomic) int dateSortOrder; // @synthesize dateSortOrder=_dateSortOrder;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(readonly, copy, nonatomic) EFQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)_distinctObjectIDs:(id)arg1 queryHandlerLog:(id)arg2;
 - (void)requestSummaryForMessageObjectID:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *mailboxes; // @synthesize mailboxes=_mailboxes;

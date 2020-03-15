@@ -14,8 +14,8 @@
     long long _count;
 }
 
-@property(retain) RBNode *root; // @synthesize root=_root;
 - (void).cxx_destruct;
+@property(retain) RBNode *root; // @synthesize root=_root;
 - (long long)count;
 - (id)description;
 - (id)allNodes;

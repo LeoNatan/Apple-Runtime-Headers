@@ -17,6 +17,7 @@
 }
 
 @property(readonly, nonatomic) MTLToolsPointerArray *functions; // @synthesize functions=_functions;
+@property(readonly) unsigned long long type;
 @property(readonly) NSArray *externFunctionNames;
 @property(readonly) NSArray *functionNames;
 - (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 functionCache:(id)arg3 error:(id *)arg4;

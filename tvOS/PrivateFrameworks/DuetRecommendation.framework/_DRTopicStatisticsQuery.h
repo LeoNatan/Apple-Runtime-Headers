@@ -22,8 +22,8 @@
 + (id)countExpression;
 + (id)topicStatisticsQueryWithFilter:(id)arg1;
 + (id)topicStatisticsQuery;
-@property(retain) _DRTopicInterestSummary *summary; // @synthesize summary=_summary;
 - (void).cxx_destruct;
+@property(retain) _DRTopicInterestSummary *summary; // @synthesize summary=_summary;
 - (id)executeUsingCoreDataStorage:(id)arg1 error:(id *)arg2;
 - (id)handleResults:(id)arg1 error:(id)arg2;
 - (void)clearSummary;

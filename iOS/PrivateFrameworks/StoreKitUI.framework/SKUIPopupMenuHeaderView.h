@@ -26,11 +26,11 @@ __attribute__((visibility("hidden")))
     UILabel *_titleLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long selectedMenuItemIndex; // @synthesize selectedMenuItemIndex=_selectedMenuItemIndex;
 @property(copy, nonatomic) NSString *menuLabelTitle; // @synthesize menuLabelTitle=_menuLabelTitle;
 @property(copy, nonatomic) NSArray *menuItemTitles; // @synthesize menuItemTitles=_menuItemTitles;
 @property(nonatomic) __weak id <SKUIPopupMenuDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_titleLabel;
 - (void)_reloadMenuButton;
 - (void)_menuButtonAction:(id)arg1;

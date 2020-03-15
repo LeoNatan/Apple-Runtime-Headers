@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SafariShared/WBSSiteMetadataResponse.h>
+#import <SafariSharedUI/WBSSiteMetadataResponse.h>
 
 @class NSImage;
 
@@ -14,8 +14,8 @@
 }
 
 + (id)responseWithURL:(id)arg1 snapshot:(id)arg2;
-@property(readonly, nonatomic) NSImage *snapshot; // @synthesize snapshot=_snapshot;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSImage *snapshot; // @synthesize snapshot=_snapshot;
 - (id)initWithURL:(id)arg1 snapshot:(id)arg2;
 - (id)initWithURL:(id)arg1;
 

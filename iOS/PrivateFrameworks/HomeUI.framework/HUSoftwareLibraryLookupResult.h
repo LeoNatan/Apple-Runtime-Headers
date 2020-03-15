@@ -19,10 +19,10 @@
 + (id)_libraryResultForRequests:(id)arg1;
 + (id)resultForRequests:(id)arg1;
 + (id)resultForAccessories:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *unmatchedRequests; // @synthesize unmatchedRequests=_unmatchedRequests;
 @property(retain, nonatomic) NSSet *matchedStoreItems; // @synthesize matchedStoreItems=_matchedStoreItems;
 @property(retain, nonatomic) NSSet *matchedLibraryItems; // @synthesize matchedLibraryItems=_matchedLibraryItems;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

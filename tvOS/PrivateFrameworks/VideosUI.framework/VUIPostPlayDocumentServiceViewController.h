@@ -6,7 +6,7 @@
 
 #import <VideosUI/VUIAppDocumentServiceViewController.h>
 
-@class TVMediaInfo;
+@class TVMediaInfo, VUIViewUserInteractionMonitor;
 @protocol VUIPostPlayControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -18,19 +18,23 @@ __attribute__((visibility("hidden")))
     _Bool _delegateRespondsToDocumentUpdate;
     id <VUIPostPlayControllerDelegate> _postPlayDelegate;
     TVMediaInfo *_lastSelectedMediaInfo;
+    VUIViewUserInteractionMonitor *_userInteractionMonitor;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) VUIViewUserInteractionMonitor *userInteractionMonitor; // @synthesize userInteractionMonitor=_userInteractionMonitor;
 @property(nonatomic) _Bool delegateRespondsToDocumentUpdate; // @synthesize delegateRespondsToDocumentUpdate=_delegateRespondsToDocumentUpdate;
 @property(nonatomic) _Bool delegateRespondsToEventOccurred; // @synthesize delegateRespondsToEventOccurred=_delegateRespondsToEventOccurred;
 @property(nonatomic) _Bool delegateRespondsToMediaChange; // @synthesize delegateRespondsToMediaChange=_delegateRespondsToMediaChange;
 @property(nonatomic) _Bool delegateRespondsToDocumentCreationStatus; // @synthesize delegateRespondsToDocumentCreationStatus=_delegateRespondsToDocumentCreationStatus;
 @property(retain, nonatomic) TVMediaInfo *lastSelectedMediaInfo; // @synthesize lastSelectedMediaInfo=_lastSelectedMediaInfo;
 @property(nonatomic) __weak id <VUIPostPlayControllerDelegate> postPlayDelegate; // @synthesize postPlayDelegate=_postPlayDelegate;
-- (void).cxx_destruct;
 - (_Bool)automaticallyProvidesMediaController;
 - (void)documentDidUpdate:(id)arg1;
 - (void)didCompleteDocumentCreationWithStatus:(long long)arg1 errorDictionary:(id)arg2;
 - (_Bool)handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id *)arg4;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 
 @end
 

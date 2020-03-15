@@ -17,10 +17,10 @@
     AKAuthWebTabView *_webviewController;
 }
 
+- (void).cxx_destruct;
 @property(retain) AKAuthWebTabView *webviewController; // @synthesize webviewController=_webviewController;
 @property(retain) AKAppleIDAuthenticationiCloudPrefPaneSecondFactorViewController *prefPaneSignInViewSecondFactorController; // @synthesize prefPaneSignInViewSecondFactorController=_prefPaneSignInViewSecondFactorController;
 @property(retain) AKAppleIDAuthenticationiCloudPrefPaneViewController *prefPaneSignInViewController; // @synthesize prefPaneSignInViewController=_prefPaneSignInViewController;
-- (void).cxx_destruct;
 - (void)skipAndContinueSignIn;
 - (void)sizeChangedFrom:(struct CGSize)arg1 toSize:(struct CGSize)arg2 webViewName:(id)arg3 callback:(id)arg4;
 - (void)loadFailed:(id)arg1 withError:(id)arg2;

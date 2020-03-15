@@ -34,8 +34,8 @@
     id <SBCommandTabViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SBCommandTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <SBCommandTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_updateForUserInterfaceStyle;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_handleUIGesture:(id)arg1;

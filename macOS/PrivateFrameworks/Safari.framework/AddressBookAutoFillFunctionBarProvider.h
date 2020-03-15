@@ -11,9 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)didShowAutoFillQuickTypeForItem:(const struct CompletionListItem *)arg1;
-- (id)textForCompletionListItem:(const struct CompletionListItem *)arg1;
-- (id)imageForCompletionListItem:(const struct CompletionListItem *)arg1;
+-     // Error parsing type: c24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: didShowAutoFillQuickTypeForItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: textForCompletionListItem:
+-     // Error parsing type: @24@0:8r^{CompletionListItem=^^?{atomic<unsigned int>={__cxx_atomic_impl<unsigned int, std::__1::__cxx_atomic_base_impl<unsigned int> >=AI}}@BQ@@}16, name: imageForCompletionListItem:
 
 @end
 

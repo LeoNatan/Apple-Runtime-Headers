@@ -38,6 +38,7 @@
     struct UIEdgeInsets _cachedThumnailViewInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets cachedThumnailViewInsets; // @synthesize cachedThumnailViewInsets=_cachedThumnailViewInsets;
 @property BOOL didSetup; // @synthesize didSetup=_didSetup;
 @property BOOL viewTransitionPreviousAutoscalingState; // @synthesize viewTransitionPreviousAutoscalingState=_viewTransitionPreviousAutoscalingState;
@@ -59,7 +60,6 @@
 @property(retain) NSArray *sourceContentReplacedAnnotationMaps; // @synthesize sourceContentReplacedAnnotationMaps=_sourceContentReplacedAnnotationMaps;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(readonly) PDFDocument *pdfDocument; // @synthesize pdfDocument=_pdfDocument;
-- (void).cxx_destruct;
 - (struct CGAffineTransform)_compensatingAffineTransformForPage:(id)arg1;
 - (void)_userChangedScrollViewMagnificationNotification:(id)arg1;
 - (void)_updateMinMaxZoomFactor;

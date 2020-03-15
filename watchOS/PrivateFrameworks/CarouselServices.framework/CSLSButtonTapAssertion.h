@@ -19,10 +19,10 @@
     unsigned int _buttons;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) unsigned int buttons; // @synthesize buttons=_buttons;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
-- (void).cxx_destruct;
 - (void)deactivate:(_Bool)arg1;
 - (void)deactivate;
 - (void)activate;

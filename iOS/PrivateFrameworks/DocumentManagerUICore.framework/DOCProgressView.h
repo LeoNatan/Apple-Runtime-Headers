@@ -23,6 +23,7 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) _Bool graduallyIncreasingProgress; // @synthesize graduallyIncreasingProgress=_graduallyIncreasingProgress;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
@@ -33,7 +34,6 @@
 @property(retain, nonatomic) NSProgress *observedProgress; // @synthesize observedProgress=_observedProgress;
 @property(copy, nonatomic) UIColor *activeStrokeColor; // @synthesize activeStrokeColor=_activeStrokeColor;
 @property(copy, nonatomic) UIColor *inactiveStrokeColor; // @synthesize inactiveStrokeColor=_inactiveStrokeColor;
-- (void).cxx_destruct;
 - (void)handleTap:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;

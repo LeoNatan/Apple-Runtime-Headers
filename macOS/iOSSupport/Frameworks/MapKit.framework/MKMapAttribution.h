@@ -18,12 +18,12 @@
 }
 
 + (id)attributionUrlFromRegionalAttributions:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *providerName; // @synthesize providerName=_providerName;
 @property(readonly, nonatomic) NSString *providerString; // @synthesize providerString=_providerString;
 @property(readonly, nonatomic) UIImage *providerImage; // @synthesize providerImage=_providerImage;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) NSAttributedString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)initWithStringAttributes:(id)arg1 regionalAttributions:(id)arg2 underlineText:(BOOL)arg3 applyLinkAttribution:(BOOL)arg4 scale:(double)arg5;
 - (id)disclosureArrow;
 - (id)attributedStringWithImage:(id)arg1;

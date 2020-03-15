@@ -22,8 +22,8 @@
 }
 
 + (struct CGSize)_intrinsicDownloadIndicatorViewSize;
-@property(nonatomic) float progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) float progress; // @synthesize progress=_progress;
 - (void)_stopProgressAnimation;
 - (void)_handleDisplayLinkDidFire:(id)arg1;
 - (void)setProgress:(float)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;

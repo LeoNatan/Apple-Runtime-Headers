@@ -21,9 +21,9 @@
 + (id)weakSharedInstance;
 + (id)remoteReceiverProtocol;
 + (id)receiverProtocol;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SOUnreadCountHelperDelegate> unreadCountDelegate; // @synthesize unreadCountDelegate=_unreadCountDelegate;
 @property(readonly, nonatomic) unsigned long long unreadCount; // @synthesize unreadCount=_unreadCount;
-- (void).cxx_destruct;
 - (id)unreadFormatForParticipants:(long long)arg1 andUnreadCount:(id)arg2;
 - (void)markChatGUIDAsRead:(id)arg1;
 - (void)processUnreadCountForChatGUID:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

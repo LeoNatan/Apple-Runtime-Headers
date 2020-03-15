@@ -17,11 +17,11 @@
     IASThreadSafeEvent *_hasDataEvent;
 }
 
+- (void).cxx_destruct;
 @property(retain) IASThreadSafeEvent *hasDataEvent; // @synthesize hasDataEvent=_hasDataEvent;
 @property(retain) NSMutableArray *queue; // @synthesize queue=_queue;
 @property(retain) NSLock *queueLock; // @synthesize queueLock=_queueLock;
 @property(retain) NSObject<OS_dispatch_semaphore> *fifoSemaphore; // @synthesize fifoSemaphore=_fifoSemaphore;
-- (void).cxx_destruct;
 - (id)pop;
 - (void)push:(id)arg1;
 - (id)initWithDepth:(unsigned long long)arg1;

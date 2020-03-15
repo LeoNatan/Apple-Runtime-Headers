@@ -16,9 +16,9 @@
     CDUnknownBlockType _cameraTransformCallback;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cameraTransformCallback; // @synthesize cameraTransformCallback=_cameraTransformCallback;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
-- (void).cxx_destruct;
 - (id)resultDataOfClass:(Class)arg1;
 - (id)imageData;
 

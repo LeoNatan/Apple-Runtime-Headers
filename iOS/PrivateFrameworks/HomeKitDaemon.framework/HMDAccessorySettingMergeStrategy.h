@@ -14,9 +14,9 @@
     long long _strategy;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long strategy; // @synthesize strategy=_strategy;
 @property(readonly, nonatomic) NSNumber *conflictValue; // @synthesize conflictValue=_conflictValue;
-- (void).cxx_destruct;
 - (id)initWithMergeStrategy:(id)arg1;
 
 @end

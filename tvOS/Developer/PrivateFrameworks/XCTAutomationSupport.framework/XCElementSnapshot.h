@@ -14,13 +14,13 @@
 
 @interface XCElementSnapshot : NSObject <NSSecureCoding, NSCopying>
 {
-    unsigned int _faultedInProperties;
     _Bool _isMainWindow;
     _Bool _enabled;
     _Bool _selected;
     _Bool _hasFocus;
     _Bool _hasKeyboardFocus;
     _Bool _isTruncatedValue;
+    unsigned int _faultedInProperties;
     id <XCUIElementSnapshotApplication> _application;
     unsigned long long _generation;
     id <XCTElementSnapshotAttributeDataSource> _dataSource;
@@ -45,7 +45,7 @@
 }
 
 + (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_iOS:(id)arg2 useLegacyElementType:(_Bool)arg3;
-+ (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_macOS:(id)arg2 useLegacyElementType:(_Bool)arg3;
++ (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_macOS:(id)arg2 macCatalystStatusProvider:(id)arg3 useLegacyElementType:(_Bool)arg4;
 + (id)axAttributesForSnapshotAttributes:(id)arg1 isMacOS:(_Bool)arg2;
 + (id)requiredAXAttributesForElementSnapshotHierarchyOnMacOS:(_Bool)arg1;
 + (id)sanitizedElementSnapshotHierarchyAttributesForAttributes:(id)arg1 isMacOS:(_Bool)arg2;
@@ -53,13 +53,14 @@
 + (id)axAttributesForElementSnapshotKeyPaths:(id)arg1 isMacOS:(_Bool)arg2;
 + (id)elementWithAccessibilityElement:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) XCTLocalizableStringInfo *localizableStringInfo; // @synthesize localizableStringInfo=_localizableStringInfo;
 @property XCElementSnapshot *parent; // @synthesize parent=_parent;
 @property(retain) XCAccessibilityElement *parentAccessibilityElement; // @synthesize parentAccessibilityElement=_parentAccessibilityElement;
 @property(readonly, copy, nonatomic) XCAccessibilityElement *accessibilityElement; // @synthesize accessibilityElement=_accessibilityElement;
+@property unsigned int faultedInProperties; // @synthesize faultedInProperties=_faultedInProperties;
 @property _Bool isTruncatedValue; // @synthesize isTruncatedValue=_isTruncatedValue;
 @property(copy) NSDictionary *additionalAttributes; // @synthesize additionalAttributes=_additionalAttributes;
-- (void).cxx_destruct;
 @property(readonly) _Bool isMacOS;
 @property(readonly) _Bool isTopLevelTouchBarElement;
 @property(readonly) _Bool isTouchBarElement;
@@ -83,6 +84,7 @@
 - (id)_nearestAncestorMatchingAnyOfTypes:(id)arg1;
 - (id)nearestAncestorMatchingType:(long long)arg1;
 - (id)localizableStringsDataIncludingChildren;
+- (_Bool)_frameFuzzyMatchesElement:(id)arg1 tolerance:(double)arg2;
 - (_Bool)_frameFuzzyMatchesElement:(id)arg1;
 - (_Bool)_fuzzyMatchesElement:(id)arg1;
 - (_Bool)_matchesElement:(id)arg1;

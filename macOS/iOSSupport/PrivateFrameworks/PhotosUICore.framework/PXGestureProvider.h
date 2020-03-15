@@ -16,10 +16,10 @@
     UIView *_hostingView;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIView *hostingView; // @synthesize hostingView=_hostingView;
 @property(nonatomic) __weak id <PXGestureProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
-- (void).cxx_destruct;
 - (void)hostingViewDidChange;
 
 @end

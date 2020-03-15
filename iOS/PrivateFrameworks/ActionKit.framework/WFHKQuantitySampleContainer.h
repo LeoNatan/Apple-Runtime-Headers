@@ -23,13 +23,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *subcontainers; // @synthesize subcontainers=_subcontainers;
 @property(retain, nonatomic) HKQuantitySample *quantitySample; // @synthesize quantitySample=_quantitySample;
 @property(retain, nonatomic) NSArray *subsamples; // @synthesize subsamples=_subsamples;
 @property(readonly, nonatomic) double value; // @synthesize value=_value;
 @property(readonly, nonatomic) _Bool canProvideDataSamples; // @synthesize canProvideDataSamples=_canProvideDataSamples;
 @property(retain, nonatomic) HKUnit *unit; // @synthesize unit=_unit;
-- (void).cxx_destruct;
 - (void)updateValue:(id)arg1 fromStatisticsOperation:(long long)arg2;
 @property(readonly, nonatomic) NSArray *dataSamples;
 @property(readonly, copy, nonatomic) NSString *wfName;

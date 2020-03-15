@@ -13,8 +13,8 @@
     NSArray *_statsIDs;
 }
 
-@property(readonly, copy, nonatomic) NSArray *statsIDs; // @synthesize statsIDs=_statsIDs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *statsIDs; // @synthesize statsIDs=_statsIDs;
 - (void)makeRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithStatsIDs:(id)arg1;
 - (id)init;

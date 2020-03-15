@@ -20,10 +20,10 @@
 + (void)checkHostForPrincipal:(id)arg1 matchesBaseURL:(id)arg2 inOperation:(id)arg3 goodMatchBlock:(CDUnknownBlockType)arg4 noMatchBlock:(CDUnknownBlockType)arg5;
 + (id)searchTaskForAddresses:(id)arg1 withMappings:(id)arg2 withMainAccountInfoProvider:(id)arg3;
 + (BOOL)_accountSupportsCUASetSearch:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) CalCalDAVTaskManager *taskManager; // @synthesize taskManager=_taskManager;
 @property(retain) NSArray *discoveredPrincipals; // @synthesize discoveredPrincipals=_principals;
 @property(retain) NSArray *addresses; // @synthesize addresses=_addresses;
-- (void).cxx_destruct;
 - (void)getPrincipalsSynchronously;
 - (void)dealloc;
 - (id)initWithAddresses:(id)arg1 forAccountInfoProvider:(id)arg2;

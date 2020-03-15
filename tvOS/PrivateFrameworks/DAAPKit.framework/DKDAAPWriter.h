@@ -16,11 +16,11 @@
     NSMutableArray *_containerStack;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *containerStack; // @synthesize containerStack=_containerStack;
 @property(readonly, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
-- (void).cxx_destruct;
 - (void)_writeDataToOutputStream:(id)arg1;
 - (void)_performWriteWithBuffer:(CDUnknownBlockType)arg1;
 - (void)writeContainerData:(id)arg1;

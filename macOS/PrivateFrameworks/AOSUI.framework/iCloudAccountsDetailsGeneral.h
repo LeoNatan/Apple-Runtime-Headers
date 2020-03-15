@@ -39,12 +39,12 @@
     CNAvatarViewController *_avatarViewController;
 }
 
+- (void).cxx_destruct;
 @property id <iCloudWebViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(copy) NSString *lastName; // @synthesize lastName=_lastName;
 @property(copy) NSString *firstName; // @synthesize firstName=_firstName;
 @property MM_Account *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (void)avatarViewController:(id)arg1 contactAvatarDidChange:(id)arg2;
 @property(readonly, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 - (void)_closeWebViewWindow;

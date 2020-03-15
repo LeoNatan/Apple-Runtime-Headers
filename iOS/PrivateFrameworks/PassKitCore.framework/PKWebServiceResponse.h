@@ -18,9 +18,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)responseWithData:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id JSONObject; // @synthesize JSONObject=_JSONObject;
 @property(readonly, nonatomic) NSData *rawData; // @synthesize rawData=_rawData;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)debugDescription;

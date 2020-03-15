@@ -30,6 +30,7 @@
 
 + (id)old2xLetterpressStyle;
 + (id)defaultLetterpressStyle;
+- (void).cxx_destruct;
 @property(nonatomic) double innerOpacity; // @synthesize innerOpacity;
 @property(retain, nonatomic) UIColor *bottomGradientColor; // @synthesize bottomGradientColor;
 @property(retain, nonatomic) UIColor *topGradientColor; // @synthesize topGradientColor;
@@ -44,7 +45,6 @@
 @property(nonatomic) double embossSize; // @synthesize embossSize;
 @property(retain, nonatomic) UIColor *embossShadowColor; // @synthesize embossShadowColor;
 @property(retain, nonatomic) UIColor *embossHighlightColor; // @synthesize embossHighlightColor;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) struct UIEdgeInsets edgeInsets;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

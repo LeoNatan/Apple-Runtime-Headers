@@ -17,9 +17,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id Item; // @synthesize Item=_Item;
 @property(retain, nonatomic) EWSPathToExtendedFieldType *ExtendedFieldURI; // @synthesize ExtendedFieldURI=_ExtendedFieldURI;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

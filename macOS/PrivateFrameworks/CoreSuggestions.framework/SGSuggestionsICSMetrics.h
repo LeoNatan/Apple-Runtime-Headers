@@ -15,8 +15,8 @@
 
 + (void)recordWithTimezoneValue:(struct SGMFoundInAppsICSTZValue_)arg1 datetimeType:(struct SGMFoundInAppsDatetimeType_)arg2;
 + (id)instance;
-@property(retain, nonatomic) SGMFoundInAppsICS *foundInAppsICS; // @synthesize foundInAppsICS=_foundInAppsICS;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SGMFoundInAppsICS *foundInAppsICS; // @synthesize foundInAppsICS=_foundInAppsICS;
 - (id)init;
 
 @end

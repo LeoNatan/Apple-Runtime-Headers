@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct CGPoint _targetOffset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint targetOffset; // @synthesize targetOffset=_targetOffset;
 @property(nonatomic) _Bool useCustomMaskForScrolling; // @synthesize useCustomMaskForScrolling=_useCustomMaskForScrolling;
 @property(retain, nonatomic) UIView *snapshotViewForWindow; // @synthesize snapshotViewForWindow=_snapshotViewForWindow;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int scrollStyle; // @synthesize scrollStyle=_scrollStyle;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic) __weak id <_UITVScrollViewManagerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (id)_customScrollViewMaskForScrolling:(struct CGRect)arg1;
 - (void)_removeScreenshotViewIfNeeded;

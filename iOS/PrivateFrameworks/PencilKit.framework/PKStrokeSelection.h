@@ -23,11 +23,11 @@
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)readableTypeIdentifiersForItemProvider;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PKDrawing *drawing; // @synthesize drawing=_drawing;
 @property(copy, nonatomic) UIImage *strokeImage; // @synthesize strokeImage=_strokeImage;
 @property(readonly, nonatomic) PKStroke *lassoStroke; // @synthesize lassoStroke=_lassoStroke;
 @property(readonly, nonatomic) NSMutableOrderedSet *strokes; // @synthesize strokes=_strokes;
-- (void).cxx_destruct;
 - (_Bool)containsBitmapData;
 - (id)strokeDataForSelection;
 - (id)legacyStrokeDataForSelection;

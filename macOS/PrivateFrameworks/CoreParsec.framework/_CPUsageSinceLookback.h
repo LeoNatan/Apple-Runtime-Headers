@@ -23,6 +23,7 @@
     _CPDeviceContext *_context;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) int totalEngagements; // @synthesize totalEngagements=_totalEngagements;
 @property(nonatomic) int activeDaysInCollectionPeriod; // @synthesize activeDaysInCollectionPeriod=_activeDaysInCollectionPeriod;
 @property(nonatomic) int configuredLookbackTimeInDays; // @synthesize configuredLookbackTimeInDays=_configuredLookbackTimeInDays;
@@ -31,7 +32,6 @@
 @property(nonatomic) int client; // @synthesize client=_client;
 @property(nonatomic) long long collectionEndTimestamp; // @synthesize collectionEndTimestamp=_collectionEndTimestamp;
 @property(nonatomic) long long collectionStartTimestamp; // @synthesize collectionStartTimestamp=_collectionStartTimestamp;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long FirstDayOfWeek; // @synthesize FirstDayOfWeek=_FirstDayOfWeek;
 @property(copy, nonatomic) NSIndexSet *DaysOfWeek; // @synthesize DaysOfWeek=_DaysOfWeek;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,6 +16,7 @@
 - (void)triggerLogCollection:(int)arg1 reply:(void (^)(_Bool))arg2;
 - (void)getPowerStatsSync:(unsigned int)arg1 reply:(void (^)(PRGetPowerStatsResponse *))arg2;
 - (void)sendHelloSync:(unsigned int)arg1 reply:(void (^)(PRHelloResponse *))arg2;
+- (void)hasFailedRoseUpdate:(void (^)(_Bool))arg1;
 - (void)getPreflightInfo:(void (^)(NSDictionary *))arg1;
 - (void)getChipInfo:(void (^)(PRChipInfo *))arg1;
 @end

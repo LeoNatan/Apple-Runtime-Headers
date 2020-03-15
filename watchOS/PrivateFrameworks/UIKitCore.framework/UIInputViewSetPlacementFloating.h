@@ -9,7 +9,7 @@
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 #import <UIKitCore/_UIGeometryChangeObserver-Protocol.h>
 
-@class NSString, UIInputViewSetPlacementFloatingShadow, UIResponder, UIView;
+@class NSString, UIInputViewSetPlacementOnScreen, UIResponder, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIInputViewSetPlacementFloating : UIInputViewSetPlacementUndocked <_UIGeometryChangeObserver, NSSecureCoding>
@@ -18,16 +18,16 @@ __attribute__((visibility("hidden")))
     UIView *_responderToFollow;
     struct CGRect _responderRect;
     struct CGSize _lastSize;
-    UIInputViewSetPlacementFloatingShadow *_cachedSecondaryPlacement;
+    UIInputViewSetPlacementOnScreen *_cachedSecondaryPlacement;
 }
 
 + (id)infoWithPoint:(struct CGPoint)arg1 forOwner:(id)arg2;
 + (_Bool)supportsSecureCoding;
 + (struct CGRect)frameAtOffset:(struct CGPoint)arg1 keyboardSize:(struct CGSize)arg2 screenSize:(struct CGSize)arg3;
 + (id)placementWithUndockedOffset:(struct CGPoint)arg1 chromeBuffer:(struct UIEdgeInsets)arg2 floatingWidth:(float)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) float floatingWidth; // @synthesize floatingWidth=_floatingWidth;
 @property(nonatomic) UIResponder *responderToFollow; // @synthesize responderToFollow=_responderToFollow;
-- (void).cxx_destruct;
 - (_Bool)isFloating;
 - (struct CGRect)adjustBoundsForNotificationsWithOwner:(id)arg1;
 - (id)expiringPlacement;

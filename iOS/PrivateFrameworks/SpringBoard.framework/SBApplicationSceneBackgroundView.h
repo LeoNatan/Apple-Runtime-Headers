@@ -18,10 +18,10 @@
     _Bool _shouldUseBrightMaterial;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseBrightMaterial; // @synthesize shouldUseBrightMaterial=_shouldUseBrightMaterial;
 @property(nonatomic) _Bool needsClassicModeBackground; // @synthesize needsClassicModeBackground=_needsClassicModeBackground;
 @property(nonatomic) long long wallpaperStyle; // @synthesize wallpaperStyle=_wallpaperStyle;
-- (void).cxx_destruct;
 - (void)_teardownBackgroundWallpaperEffectView;
 - (id)_backgroundWallpaperEffectView;
 - (id)_opaqueBackgroundColorOrClearColor;

@@ -27,10 +27,10 @@
 }
 
 + (struct CGSize)sizeOfFirstItemWithShelfElement:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isPartOfShelfList) _Bool partOfShelfList; // @synthesize partOfShelfList=_partOfShelfList;
 @property(readonly, copy, nonatomic) NSIndexPath *currentFocusedIndexPath; // @synthesize currentFocusedIndexPath=_currentFocusedIndexPath;
 @property(nonatomic) _Bool forceAlwaysShowsTitles; // @synthesize forceAlwaysShowsTitles=_forceAlwaysShowsTitles;
-- (void).cxx_destruct;
 - (void)updateWithFeedElement:(id)arg1 state:(id)arg2 forceReload:(_Bool)arg3;
 - (void)updateWithFeedElement:(id)arg1;
 - (id)currentFeedElement;

@@ -14,9 +14,9 @@
     NSArray *_categories;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithName:(id)arg1 categories:(id)arg2;
 

@@ -20,13 +20,13 @@
     unsigned long long _originalMatchType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long originalMatchType; // @synthesize originalMatchType=_originalMatchType;
 @property(nonatomic) long long locationEventType; // @synthesize locationEventType=_locationEventType;
 @property(retain, nonatomic) MNLocationMatchInfo *matchInfo; // @synthesize matchInfo=_matchInfo;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) MNLocation *location; // @synthesize location=_location;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) double position;
 
 // Remaining properties

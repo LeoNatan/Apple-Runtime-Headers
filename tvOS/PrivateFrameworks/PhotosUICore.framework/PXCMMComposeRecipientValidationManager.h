@@ -19,9 +19,9 @@
 }
 
 + (id)new;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXCMMComposeRecipientValidationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) PXCMMComposeRecipientDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)_handleAddressQueryResults:(id)arg1 error:(id)arg2;
 - (long long)validationTypeForComposeRecipient:(id)arg1;
 - (void)_requestValidationForComposeRecipientsAtIndexes:(id)arg1;

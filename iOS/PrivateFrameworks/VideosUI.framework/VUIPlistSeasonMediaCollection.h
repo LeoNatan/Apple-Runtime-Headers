@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     VUIPlistMediaDatabaseSeason *_databaseSeason;
 }
 
-@property(retain, nonatomic) VUIPlistMediaDatabaseSeason *databaseSeason; // @synthesize databaseSeason=_databaseSeason;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VUIPlistMediaDatabaseSeason *databaseSeason; // @synthesize databaseSeason=_databaseSeason;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)mediaItemCount;
 - (id)_valueForPropertyDescriptor:(id)arg1;

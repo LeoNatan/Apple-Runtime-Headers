@@ -18,8 +18,8 @@
 }
 
 + (id)new;
-@property(readonly, nonatomic) ACDDatabase *database; // @synthesize database=_database;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) ACDDatabase *database; // @synthesize database=_database;
 - (void)scheduleBackupIfNonexistent;
 - (void)scheduleBackup;
 - (void)_registerActivitySchedulingBackup:(_Bool)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *listObjectID; // @synthesize listObjectID=_listObjectID;
 @property(readonly, nonatomic) NSArray *daCalendarItemUniqueIdentifiers; // @synthesize daCalendarItemUniqueIdentifiers=_daCalendarItemUniqueIdentifiers;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

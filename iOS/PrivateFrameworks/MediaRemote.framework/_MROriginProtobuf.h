@@ -23,10 +23,10 @@
 }
 
 + (id)localOrigin;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MRDeviceInfoMessageProtobuf *deviceInfoDeprecated; // @synthesize deviceInfoDeprecated=_deviceInfoDeprecated;
 @property(nonatomic) int identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

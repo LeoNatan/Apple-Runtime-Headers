@@ -20,12 +20,12 @@
     _DKKnowledgeContentProvider *_knowledgeContentProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _DKKnowledgeContentProvider *knowledgeContentProvider; // @synthesize knowledgeContentProvider=_knowledgeContentProvider;
 @property(retain, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *defaultResponseQueue; // @synthesize defaultResponseQueue=_defaultResponseQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queryQueue; // @synthesize queryQueue=_queryQueue;
 @property(retain, nonatomic) _DKContentProviderCache *contentProviderCache; // @synthesize contentProviderCache=_contentProviderCache;
-- (void).cxx_destruct;
 - (id)contentProviderQueriesFromQuery:(id)arg1 error:(id *)arg2;
 - (void)executeQuery:(id)arg1 responseQueue:(id)arg2;
 - (void)executeQuery:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;

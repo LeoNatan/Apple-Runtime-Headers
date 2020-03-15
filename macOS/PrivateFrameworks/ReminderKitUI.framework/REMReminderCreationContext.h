@@ -26,6 +26,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL titleIsGeneratedSuggestion; // @synthesize titleIsGeneratedSuggestion=_titleIsGeneratedSuggestion;
 @property(nonatomic) BOOL wantsExtendedDetailOnlyView; // @synthesize wantsExtendedDetailOnlyView=_wantsExtendedDetailOnlyView;
 @property(retain, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSDateComponents *dueDateComponents; // @synthesize dueDateComponents=_dueDateComponents;
 @property(copy, nonatomic) NSAttributedString *notes; // @synthesize notes=_notes;
 @property(copy, nonatomic) NSAttributedString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDelegate:(id)arg1;

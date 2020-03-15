@@ -74,11 +74,11 @@
     id <MNTraceRecorderBackgroundGuard> _backgroundGuardDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <MNTraceRecorderBackgroundGuard> backgroundGuardDelegate; // @synthesize backgroundGuardDelegate=_backgroundGuardDelegate;
 @property(copy, nonatomic) CDUnknownBlockType timeSinceRecordingBeganHandler; // @synthesize timeSinceRecordingBeganHandler=_timeSinceRecordingBeganHandler;
 @property(retain, nonatomic) NSDate *recordingStartTime; // @synthesize recordingStartTime=_recordingStartTime;
 @property(readonly, nonatomic) MNTrace *trace; // @synthesize trace=_trace;
-- (void).cxx_destruct;
 - (void)_executeStatementForQuery:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_updateNavigationEventsWithLocationReference:(id)arg1;
 - (void)recordDirectionsFeedback:(id)arg1;

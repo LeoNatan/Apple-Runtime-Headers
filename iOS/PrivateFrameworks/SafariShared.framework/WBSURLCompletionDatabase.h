@@ -11,10 +11,10 @@
 
 @interface WBSURLCompletionDatabase : NSObject
 {
-    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> _fullTextBookmarkMatchesCache;
-    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> _fullTextHistoryMatchesCache;
-    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> _prefixBookmarkMatchesCache;
-    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16> _prefixHistoryMatchesCache;
+    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _fullTextBookmarkMatchesCache;
+    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _fullTextHistoryMatchesCache;
+    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _prefixBookmarkMatchesCache;
+    struct Vector<id<WBSURLCompletionMatchData>, 0, WTF::CrashOnOverflow, 16, WTF::FastMalloc> _prefixHistoryMatchesCache;
     NSString *_fullTextBookmarkMatchesCacheString;
     NSString *_fullTextHistoryMatchesCacheString;
     NSString *_prefixBookmarkMatchesCacheString;
@@ -24,15 +24,15 @@
 
 + (_Bool)_matchIsNotURLMatchAndTitleLooksLikeURLForBookmarkAndHistoryCompletionMatch:(const struct BookmarkAndHistoryCompletionMatch *)arg1;
 + (void)initializeURLCompletionOnMainThread;
-@property(nonatomic) __weak id <WBSURLCompletionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)_getUnsortedPrefixMatchesForTypedString:(id)arg1 historyMatches:(Vector_fc835981 *)arg2 bookmarkMatches:(Vector_fc835981 *)arg3;
-- (void)_getUnsortedFullTextMatchesForTypedString:(id)arg1 historyMatches:(Vector_fc835981 *)arg2 bookmarkMatches:(Vector_fc835981 *)arg3 dataTypes:(unsigned int)arg4;
-- (void)_getSortedMatchesForTypedString:(id)arg1 topHits:(Vector_fc835981 *)arg2 historyMatches:(Vector_fc835981 *)arg3 historyLimit:(unsigned long long)arg4 bookmarkMatches:(Vector_fc835981 *)arg5 bookmarkLimit:(unsigned long long)arg6 prefixMatchesOnly:(_Bool)arg7;
-- (void)_removeMatchesWithTitlesThatLookLikeURLsRemovedFromMatches:(Vector_fc835981 *)arg1;
-- (void)_getSortedPrefixMatchesForTypedString:(id)arg1 topHits:(Vector_fc835981 *)arg2 historyMatches:(Vector_fc835981 *)arg3 historyLimit:(unsigned long long)arg4 bookmarkMatches:(Vector_fc835981 *)arg5 bookmarkLimit:(unsigned long long)arg6;
-- (void)_getSortedFullTextMatchesForTypedString:(id)arg1 topHits:(Vector_fc835981 *)arg2 historyMatches:(Vector_fc835981 *)arg3 historyLimit:(unsigned long long)arg4 bookmarkMatches:(Vector_fc835981 *)arg5 bookmarkLimit:(unsigned long long)arg6;
+@property(nonatomic) __weak id <WBSURLCompletionDataSource> dataSource; // @synthesize dataSource=_dataSource;
+- (void)_getUnsortedPrefixMatchesForTypedString:(id)arg1 historyMatches:(Vector_3aefaf4b *)arg2 bookmarkMatches:(Vector_3aefaf4b *)arg3;
+- (void)_getUnsortedFullTextMatchesForTypedString:(id)arg1 historyMatches:(Vector_3aefaf4b *)arg2 bookmarkMatches:(Vector_3aefaf4b *)arg3 dataTypes:(unsigned int)arg4;
+- (void)_getSortedMatchesForTypedString:(id)arg1 topHits:(Vector_3aefaf4b *)arg2 historyMatches:(Vector_3aefaf4b *)arg3 historyLimit:(unsigned long long)arg4 bookmarkMatches:(Vector_3aefaf4b *)arg5 bookmarkLimit:(unsigned long long)arg6 prefixMatchesOnly:(_Bool)arg7;
+- (void)_removeMatchesWithTitlesThatLookLikeURLsRemovedFromMatches:(Vector_3aefaf4b *)arg1;
+- (void)_getSortedPrefixMatchesForTypedString:(id)arg1 topHits:(Vector_3aefaf4b *)arg2 historyMatches:(Vector_3aefaf4b *)arg3 historyLimit:(unsigned long long)arg4 bookmarkMatches:(Vector_3aefaf4b *)arg5 bookmarkLimit:(unsigned long long)arg6;
+- (void)_getSortedFullTextMatchesForTypedString:(id)arg1 topHits:(Vector_3aefaf4b *)arg2 historyMatches:(Vector_3aefaf4b *)arg3 historyLimit:(unsigned long long)arg4 bookmarkMatches:(Vector_3aefaf4b *)arg5 bookmarkLimit:(unsigned long long)arg6;
 - (void)clearMatchesCaches;
 - (void)clearHistoryMatchesCache;
 - (void)clearBookmarkMatchesCaches;

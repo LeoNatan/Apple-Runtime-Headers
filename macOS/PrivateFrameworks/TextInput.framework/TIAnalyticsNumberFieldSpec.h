@@ -15,10 +15,10 @@
     NSNumber *_maxValue;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *maxValue; // @synthesize maxValue=_maxValue;
 @property(readonly, nonatomic) NSNumber *minValue; // @synthesize minValue=_minValue;
 @property(readonly, nonatomic) BOOL isInteger; // @synthesize isInteger=_isInteger;
-- (void).cxx_destruct;
 - (BOOL)validate:(id)arg1 error:(id *)arg2;
 - (id)initWithName:(id)arg1 isInteger:(BOOL)arg2 minValue:(id)arg3 maxValue:(id)arg4;
 

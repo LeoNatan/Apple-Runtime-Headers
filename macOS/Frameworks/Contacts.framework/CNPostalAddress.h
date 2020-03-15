@@ -30,8 +30,8 @@
 + (id)postalAddressWithDictionaryRepresentation:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
 + (id)postalAddressWithAddressBookDictionaryRepresentation:(id)arg1;
-@property(copy) NSString *formattedAddress; // @synthesize formattedAddress=_formattedAddress;
 - (void).cxx_destruct;
+@property(copy) NSString *formattedAddress; // @synthesize formattedAddress=_formattedAddress;
 @property(copy) NSString *ISOCountryCode; // @synthesize ISOCountryCode=_ISOCountryCode;
 @property(copy) NSString *country; // @synthesize country=_country;
 @property(copy) NSString *postalCode; // @synthesize postalCode=_postalCode;

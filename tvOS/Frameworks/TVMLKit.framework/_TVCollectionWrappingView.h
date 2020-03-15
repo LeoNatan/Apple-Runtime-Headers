@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)gradientConfigForCollection:(id)arg1 gradientMask:(long long)arg2 gradientLengths:(struct UIEdgeInsets *)arg3 gradientInset:(struct UIEdgeInsets *)arg4 gradientBoundsInset:(struct UIEdgeInsets *)arg5;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHeaderFocused) _Bool headerFocused; // @synthesize headerFocused=_headerFocused;
 @property(nonatomic) long long collectionGradientMask; // @synthesize collectionGradientMask=_collectionGradientMask;
 @property(nonatomic, getter=isHeaderHidden) _Bool headerHidden; // @synthesize headerHidden=_headerHidden;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(retain, nonatomic) _TVCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
-- (void).cxx_destruct;
 - (void)_updateSubviews;
 - (id)_currentHeaderView;
 - (double)_showcaseContentScaleForExpectedWidth:(double)arg1;

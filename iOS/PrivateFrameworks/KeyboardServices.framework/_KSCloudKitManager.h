@@ -28,6 +28,7 @@
 }
 
 + (id)prepareContainerForID:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool subscriptionOperationInProgress; // @synthesize subscriptionOperationInProgress=_subscriptionOperationInProgress;
 @property(nonatomic) _Bool recordZoneOperationInProgress; // @synthesize recordZoneOperationInProgress=_recordZoneOperationInProgress;
 @property(readonly, nonatomic) NSString *lastKnownUserKey; // @synthesize lastKnownUserKey=_lastKnownUserKey;
@@ -38,7 +39,6 @@
 @property(retain, nonatomic) CKContainer *cloudKitContainer; // @synthesize cloudKitContainer=_cloudKitContainer;
 @property(nonatomic) __weak id <_KSCloudKitManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
-- (void).cxx_destruct;
 - (void)_ckDeleteRecordZoneWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_ckSaveRecordZone:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_ckFetchRecordZoneWithID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -64,6 +64,7 @@
 - (void)_checkAccountStatusWithCompletionHandler:(CDUnknownBlockType)arg1 withRetryCount:(unsigned long long)arg2;
 - (_Bool)isAccountAvailable;
 - (void)queryAccountStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)changeInUserAccountDetected;
 - (void)identityUpdated:(id)arg1;
 - (void)accountStatusDidChange:(id)arg1;
 - (void)setupAccountDidChange:(_Bool)arg1;

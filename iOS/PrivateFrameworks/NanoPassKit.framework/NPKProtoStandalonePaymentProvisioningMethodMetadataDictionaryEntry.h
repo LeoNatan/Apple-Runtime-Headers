@@ -16,9 +16,9 @@
     NSString *_type;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NPKProtoStandalonePaymentProvisioningMethodMetadata *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

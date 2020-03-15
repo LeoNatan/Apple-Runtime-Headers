@@ -20,8 +20,8 @@
 
 + (unsigned int)optimalBatchSize;
 + (id)sharedStoreItemMetadataRequestController;
-@property(nonatomic) int cacheSize; // @synthesize cacheSize=_cacheSize;
 - (void).cxx_destruct;
+@property(nonatomic) int cacheSize; // @synthesize cacheSize=_cacheSize;
 - (void)_removeExpiredItemsPeriodically;
 - (id)getStoreItemMetadataForRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)requestStoreItemMetadataForReason:(unsigned int)arg1 withItemIdentifiers:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;

@@ -19,13 +19,13 @@
 }
 
 + (id)instantiateViewController;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILabel *verificationCodeLabel; // @synthesize verificationCodeLabel=_verificationCodeLabel;
 @property(retain, nonatomic) UILabel *subTitleLabel; // @synthesize subTitleLabel=_subTitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;
-- (void).cxx_destruct;
 - (void)_updatePasswordUI;
 - (void)handleCancelButton:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;

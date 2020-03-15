@@ -15,9 +15,9 @@
     double _buttonBackgroundAlpha;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double buttonBackgroundAlpha; // @synthesize buttonBackgroundAlpha=_buttonBackgroundAlpha;
 @property(nonatomic) _Bool numberButtonsEnabled; // @synthesize numberButtonsEnabled=_numberButtonsEnabled;
-- (void).cxx_destruct;
 - (void)buttonLongPressed:(id)arg1;
 - (void)buttonCancelled:(id)arg1;
 - (void)buttonDown:(id)arg1;

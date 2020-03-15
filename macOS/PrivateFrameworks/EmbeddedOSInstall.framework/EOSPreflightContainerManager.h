@@ -16,9 +16,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSString *customRepositoryPath; // @synthesize customRepositoryPath=_customRepositoryPath;
 @property(retain) NSObject<OS_dispatch_queue> *repositoryQueue; // @synthesize repositoryQueue=_repositoryQueue;
-- (void).cxx_destruct;
 - (BOOL)_savePreflightContainer:(id)arg1;
 - (id)_loadPreflightContainerFromURL:(id)arg1;
 - (id)_preflightContainerRepositoryURL;

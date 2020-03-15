@@ -19,10 +19,10 @@
     CSLSchedulerActivityHistory *_history;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CSLSchedulerActivityHistory *history; // @synthesize history=_history;
 @property(readonly) CSLActivityBudget *budget; // @synthesize budget=_budget;
 @property(retain) id <CSLActivityDateSource> dateSource; // @synthesize dateSource=_dateSource;
-- (void).cxx_destruct;
 - (void)performQuery:(CDUnknownBlockType)arg1;
 - (void)activityScheduler:(id)arg1 didStartActivity:(id)arg2;
 - (void)activityScheduler:(id)arg1 willRequestStartActivity:(id)arg2;

@@ -15,8 +15,8 @@
     SOAController *_controller;
 }
 
-@property __weak SOAController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak SOAController *controller; // @synthesize controller=_controller;
 - (void)setupComplete;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

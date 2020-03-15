@@ -41,13 +41,13 @@
     CDUnknownBlockType _promptForPickerHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType promptForPickerHandler; // @synthesize promptForPickerHandler=_promptForPickerHandler;
 @property(copy, nonatomic) CDUnknownBlockType promptForPINHandler; // @synthesize promptForPINHandler=_promptForPINHandler;
 @property(copy, nonatomic) CDUnknownBlockType pairingFinishedHandler; // @synthesize pairingFinishedHandler=_pairingFinishedHandler;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completedHandler; // @synthesize completedHandler=_completedHandler;
-- (void).cxx_destruct;
 - (void)_receivedObject:(id)arg1 flags:(unsigned int)arg2;
 - (void)_handleSendCredentialsResponse:(id)arg1 error:(id)arg2;
 - (int)_runSendCredentials;

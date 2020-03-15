@@ -16,8 +16,8 @@
     id <NUAuxiliaryImage> _auxiliaryImage;
 }
 
-@property(retain) id <NUAuxiliaryImage> auxiliaryImage; // @synthesize auxiliaryImage=_auxiliaryImage;
 - (void).cxx_destruct;
+@property(retain) id <NUAuxiliaryImage> auxiliaryImage; // @synthesize auxiliaryImage=_auxiliaryImage;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -21,11 +21,11 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSString *restaurantIdentifier; // @synthesize restaurantIdentifier=_restaurantIdentifier;
 @property(copy) NSString *vendorIdentifier; // @synthesize vendorIdentifier=_vendorIdentifier;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) CLLocation *location; // @synthesize location=_location;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

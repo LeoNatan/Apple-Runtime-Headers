@@ -8,7 +8,7 @@
 
 #import <Sharing/VSSpeechSynthesizerDelegate-Protocol.h>
 
-@class NSString, SFSiriRequest, VSSpeechSynthesizer;
+@class NSMutableArray, NSString, SFSiriRequest, VSSpeechSynthesizer;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SFSiriClient : NSObject <VSSpeechSynthesizerDelegate>
@@ -18,17 +18,17 @@
     SFSiriRequest *_currentRequest;
     NSObject<OS_dispatch_source> *_currentTimer;
     NSString *_languageCode;
-    struct NSMutableArray *_requests;
+    NSMutableArray *_requests;
     VSSpeechSynthesizer *_speechSynthesizer;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _invalidationHandler;
     CDUnknownBlockType _siriDialogHandler;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType siriDialogHandler; // @synthesize siriDialogHandler=_siriDialogHandler;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)speechSynthesizer:(id)arg1 didFinishSynthesisRequest:(id)arg2 withInstrumentMetrics:(id)arg3 error2:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didFinishSynthesisRequest:(id)arg2 withInstrumentMetrics:(id)arg3 error:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 withError2:(id)arg4;

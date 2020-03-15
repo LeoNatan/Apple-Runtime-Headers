@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
 + (id)_filePathForMetadataPlist;
 + (id)_filePathForHash:(id)arg1;
 + (id)_thumbnailFilePath;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *thumbnailsToWrite; // @synthesize thumbnailsToWrite=_thumbnailsToWrite;
 @property(retain, nonatomic) NSTimer *diskTimer; // @synthesize diskTimer=_diskTimer;
 @property(retain, nonatomic) PXPlacesSearchProvider *placesProvider; // @synthesize placesProvider=_placesProvider;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *metadataQueue; // @synthesize metadataQueue=_metadataQueue;
 @property(retain, nonatomic) NSMutableDictionary *metadataPlist; // @synthesize metadataPlist=_metadataPlist;
 @property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)_imageForHomeZeroKeywordWithMapImage:(id)arg1;
 - (void)_writeMetadataPlistToDisk;
 - (void)_setMetadataDate:(id)arg1 forKey:(id)arg2;

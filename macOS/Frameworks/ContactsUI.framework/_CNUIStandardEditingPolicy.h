@@ -10,17 +10,20 @@
 
 @interface _CNUIStandardEditingPolicy : CNUIEditingPolicy
 {
+    BOOL _temporarilyIgnoringGuardianRestictions;
     id <CNUICoreScreentimePasscodeCheck> _passcodeCheck;
 }
 
-@property(readonly, nonatomic) id <CNUICoreScreentimePasscodeCheck> passcodeCheck; // @synthesize passcodeCheck=_passcodeCheck;
 - (void).cxx_destruct;
-- (id)evaluateWithContact:(id)arg1 container:(id)arg2;
-- (BOOL)shouldAuthorizeDeletionOfContact:(id)arg1 fromContainer:(id)arg2;
-- (BOOL)shouldAuthorizeUpdateOfContact:(id)arg1 inContainer:(id)arg2;
-- (BOOL)shouldAuthorizeInsertionOfNewContactToContainer:(id)arg1;
+@property(nonatomic) BOOL temporarilyIgnoringGuardianRestictions; // @synthesize temporarilyIgnoringGuardianRestictions=_temporarilyIgnoringGuardianRestictions;
+@property(readonly, nonatomic) id <CNUICoreScreentimePasscodeCheck> passcodeCheck; // @synthesize passcodeCheck=_passcodeCheck;
+- (void)executeActionWhileIgnoringGuardianRestrictions:(CDUnknownBlockType)arg1;
+- (BOOL)shouldIgnoreGuardianRestrictions;
+- (BOOL)shouldBypassRestrictionsWhenSavingContact:(id)arg1 inContainer:(id)arg2 givenAuhtorizationResult:(long long)arg3;
+- (BOOL)shouldPromptForAuthoriationWhenDeletingContact:(id)arg1 fromContainer:(id)arg2;
+- (BOOL)shouldPromptForAuthoriationWhenUpdatingContact:(id)arg1 inContainer:(id)arg2;
+- (BOOL)shouldPromptForAuthorizationWhenInsertingNewContactToContainer:(id)arg1;
 - (BOOL)shouldSignalSharedAccessToContact:(id)arg1 inContainer:(id)arg2;
-- (id)initWithPasscodeCheck:(id)arg1;
 
 @end
 

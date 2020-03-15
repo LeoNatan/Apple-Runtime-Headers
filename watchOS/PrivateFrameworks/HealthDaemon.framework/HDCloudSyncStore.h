@@ -30,6 +30,7 @@
 + (id)syncStoreForProfile:(id)arg1 storeIdentifier:(id)arg2 syncCircleName:(id)arg3 ownerIdentifier:(id)arg4 containerIdentifier:(id)arg5 sharingIdentifier:(id)arg6 predicate:(id)arg7 error:(id *)arg8;
 + (id)syncStoreForProfile:(id)arg1 storeIdentifier:(id)arg2 syncCircleName:(id)arg3 ownerIdentifier:(id)arg4 containerIdentifier:(id)arg5 error:(id *)arg6;
 + (void)samplesDeletedInProfile:(id)arg1 byUser:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 @property(readonly, nonatomic) _Bool syncTombstonesOnly; // @synthesize syncTombstonesOnly=_syncTombstonesOnly;
 @property(readonly, nonatomic) HDSharingPredicate *sharingPredicate; // @synthesize sharingPredicate=_sharingPredicate;
@@ -39,7 +40,6 @@
 @property(readonly, copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(readonly, copy, nonatomic) NSString *ownerIdentifier; // @synthesize ownerIdentifier=_ownerIdentifier;
 @property(readonly, copy, nonatomic) NSUUID *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setExpectedSequenceNumber:(int)arg1 forSyncEntityClass:(Class)arg2;
 - (int)expectedSequenceNumberForSyncEntityClass:(Class)arg1;

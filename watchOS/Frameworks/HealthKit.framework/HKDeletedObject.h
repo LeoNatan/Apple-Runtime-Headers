@@ -20,10 +20,10 @@
 + (_Bool)supportsSecureCoding;
 + (id)_metadataWithSyncIdentifier:(id)arg1 syncVersion:(id)arg2;
 + (id)_deletedObjectWithUUID:(id)arg1 metadata:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) int externalSyncObjectCode; // @synthesize externalSyncObjectCode=_externalSyncObjectCode;
 @property(copy) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;

@@ -19,8 +19,8 @@
 + (double)backgroundJobTimeout;
 + (id)backgroundJobName;
 + (BOOL)supportsBackgroundJob;
-@property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 - (void)enrichDataModelWithManager:(id)arg1 graphUpdateInventory:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
 
 // Remaining properties

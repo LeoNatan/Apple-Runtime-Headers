@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     SCRVisualsManager *__visualsManager;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SCRVisualsManager *_visualsManager; // @synthesize _visualsManager=__visualsManager;
 @property(readonly, nonatomic) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(readonly, nonatomic) SCRCThreadKey *_threadKey; // @synthesize _threadKey=__threadKey;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableOrderedSet *_activeRotors; // @synthesize _activeRotors=__activeRotors;
 @property(retain, nonatomic) SCRElement *currentElement; // @synthesize currentElement=_currentElement;
 @property(retain, nonatomic) NSString *currentRotorType; // @synthesize currentRotorType=_currentRotorType;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *currentChooserCustomName;
 @property(readonly, nonatomic) BOOL isCurrentChooserCustom;
 - (void)removeRotorForType:(id)arg1;

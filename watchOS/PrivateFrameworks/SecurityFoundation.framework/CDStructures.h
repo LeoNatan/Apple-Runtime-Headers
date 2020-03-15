@@ -45,10 +45,6 @@ struct CC_SHA512state_st {
     unsigned long long wbuf[16];
 };
 
-struct NSString {
-    Class _field1;
-};
-
 struct ccdigest_info {
     unsigned int _field1;
     unsigned int _field2;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     IKAppContext *_appContext;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 @property(retain, nonatomic) NSDictionary *contextData; // @synthesize contextData=_contextData;
-- (void).cxx_destruct;
 - (void)performWithTargetResponder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithContextData:(id)arg1 appContext:(id)arg2;
 

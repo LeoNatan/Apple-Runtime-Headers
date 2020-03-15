@@ -11,8 +11,8 @@
     id _nonRetainedObject;
 }
 
-@property(nonatomic) __weak id nonRetainedObject; // @synthesize nonRetainedObject=_nonRetainedObject;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id nonRetainedObject; // @synthesize nonRetainedObject=_nonRetainedObject;
 - (id)initWithObject:(id)arg1;
 
 @end

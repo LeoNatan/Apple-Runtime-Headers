@@ -20,7 +20,9 @@
     NSMutableDictionary *_fakeElementCache;
 }
 
++ (id)sharediOSInstance;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool supportsDelegateTokens; // @synthesize supportsDelegateTokens=_supportsDelegateTokens;
 @property(retain, nonatomic) NSMutableDictionary *fakeElementCache; // @synthesize fakeElementCache=_fakeElementCache;
 @property(nonatomic) __weak id <AXPTranslationSystemAppDelegate> systemAppDelegate; // @synthesize systemAppDelegate=_systemAppDelegate;
@@ -28,7 +30,8 @@
 @property(nonatomic) __weak id <AXPTranslationTokenDelegateHelper> bridgeTokenDelegate; // @synthesize bridgeTokenDelegate=_bridgeTokenDelegate;
 @property(nonatomic) __weak id <AXPTranslationDelegateHelper> bridgeDelegate; // @synthesize bridgeDelegate=_bridgeDelegate;
 @property(nonatomic) _Bool accessibilityEnabled; // @synthesize accessibilityEnabled=_accessibilityEnabled;
-- (void).cxx_destruct;
+- (id)remoteTranslationDataWithTranslation:(id)arg1 pid:(int)arg2;
+- (id)translationObjectFromData:(id)arg1;
 - (id)platformElementFromTranslation:(id)arg1;
 - (void)initializeAXRuntimeForSystemAppServer;
 - (void)enableAccessibility;

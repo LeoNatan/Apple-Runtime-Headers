@@ -23,10 +23,10 @@
 + (id)arbitrationUnitsAtAndBelowObject:(id)arg1 withLayoutInfo:(id)arg2;
 + (id)arbitrationUnitsForObjects:(id)arg1 withLayoutInfo:(id)arg2;
 + (id)arbitrationUnitForObject:(id)arg1 withLayoutInfo:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) id <IBAutolayoutInfoProvider> layoutInfo; // @synthesize layoutInfo=_layoutInfo;
 @property(readonly, copy) NSSet *objects; // @synthesize objects=_objects;
 @property(readonly) id rootObject; // @synthesize rootObject=_rootObject;
-- (void).cxx_destruct;
 - (id)engineEvaluatedConstantValuesOfConstraints:(id)arg1 error:(id *)arg2;
 - (_Bool)doesChangingPriorityOfConstraint:(id)arg1 to:(double)arg2 preventClippingContentOfView:(id)arg3 inEngine:(id)arg4;
 - (_Bool)doesChangingPriorityOfConstraint:(id)arg1 to:(double)arg2 preventClippingContentOfView:(id)arg3;

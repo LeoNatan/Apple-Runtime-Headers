@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
     NSString *_category;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) SCROutputAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) id owner; // @synthesize owner=_owner;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 
 @end
 

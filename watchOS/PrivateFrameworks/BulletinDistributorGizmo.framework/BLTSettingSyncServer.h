@@ -20,10 +20,10 @@
     BLTPreviouslySentMessageStore *_sectionSubtypeParametersIconsPreviouslySentMessageStore;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BLTPreviouslySentMessageStore *sectionSubtypeParametersIconsPreviouslySentMessageStore; // @synthesize sectionSubtypeParametersIconsPreviouslySentMessageStore=_sectionSubtypeParametersIconsPreviouslySentMessageStore;
 @property(retain, nonatomic) BLTPreviouslySentMessageStore *sectionInfoPreviouslySentMessageStore; // @synthesize sectionInfoPreviouslySentMessageStore=_sectionInfoPreviouslySentMessageStore;
 @property(nonatomic) __weak id <BLTSettingSyncingClient> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1;
 - (void)handleSetRemoteGlobalSpokenSettingEnabledRequest:(id)arg1;
 - (void)handleSetNotificationsCriticalAlertRequest:(id)arg1;

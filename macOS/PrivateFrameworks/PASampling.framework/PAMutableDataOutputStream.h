@@ -13,8 +13,8 @@
     NSMutableData *_outputData;
 }
 
-@property(readonly, nonatomic) NSMutableData *outputData; // @synthesize outputData=_outputData;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableData *outputData; // @synthesize outputData=_outputData;
 - (int)printWithFormat:(const char *)arg1;
 - (id)initWithMutableData:(id)arg1;
 

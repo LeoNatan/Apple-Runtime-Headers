@@ -32,6 +32,7 @@
     NSHashTable *__clientConnections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *_clientConnections; // @synthesize _clientConnections=__clientConnections;
 @property(readonly, nonatomic) BKSApplicationStateMonitor *_applicationStateMonitor; // @synthesize _applicationStateMonitor=__applicationStateMonitor;
 @property(nonatomic, getter=_coordinationQueue_isCrashRecoveryNeeded, setter=_coordinationQueue_setCrashRecoveryNeeded:) _Bool _crashRecoveryNeeded; // @synthesize _crashRecoveryNeeded=__crashRecoveryNeeded;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic) CAMPersistenceController *_persistenceController; // @synthesize _persistenceController=__persistenceController;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_linkWorkQueue; // @synthesize _linkWorkQueue=__linkWorkQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_coordinationQueue; // @synthesize _coordinationQueue=__coordinationQueue;
-- (void).cxx_destruct;
 - (_Bool)_removeItemAtURL:(id)arg1;
 - (_Bool)_removeItemAtURL:(id)arg1 maxAttempts:(long long)arg2;
 - (void)_coordinationQueue_destroyApplicationStateMonitor;

@@ -14,9 +14,9 @@
     NSColor *_color;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
-- (void).cxx_destruct;
 - (BOOL)allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

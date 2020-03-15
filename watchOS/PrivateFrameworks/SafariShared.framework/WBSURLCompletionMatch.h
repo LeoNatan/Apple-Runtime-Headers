@@ -18,10 +18,11 @@
 
 + (int)matchLocationForString:(id)arg1 inTitle:(id)arg2;
 + (int)matchLocationForString:(id)arg1 inURLString:(id)arg2;
-@property(readonly, nonatomic) int matchLocation; // @synthesize matchLocation=_matchLocation;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int matchLocation; // @synthesize matchLocation=_matchLocation;
 - (id)matchingStringWithUserTypedPrefix:(id)arg1;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;
+@property(readonly, nonatomic) _Bool shouldPreload;
 @property(readonly, nonatomic, getter=isTopHit) _Bool topHit;
 - (id)userVisibleURLString;
 - (id)title;

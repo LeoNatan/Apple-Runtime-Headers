@@ -11,17 +11,17 @@
 __attribute__((visibility("hidden")))
 @interface _UICollectionLayoutVisualTreeNode : _UICollectionLayoutVisualFormatItem
 {
-    int _axis;
     NSArray *_children;
+    unsigned long long _axis;
 }
 
-@property(nonatomic) int axis; // @synthesize axis=_axis;
-@property(retain, nonatomic) NSArray *children; // @synthesize children=_children;
 - (void).cxx_destruct;
+@property(nonatomic) unsigned long long axis; // @synthesize axis=_axis;
+@property(retain, nonatomic) NSArray *children; // @synthesize children=_children;
 - (BOOL)isVerticalGroup;
 - (BOOL)isHorizontalGroup;
 - (id)description;
-- (id)initWithParent:(id)arg1 children:(id)arg2 axis:(int)arg3;
+- (id)initWithParent:(id)arg1 children:(id)arg2 axis:(unsigned long long)arg3;
 
 @end
 

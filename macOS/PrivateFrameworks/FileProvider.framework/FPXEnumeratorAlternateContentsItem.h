@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <FileProvider/NSFileProviderItemDecorating-Protocol.h>
 #import <FileProvider/NSFileProviderItem_Private-Protocol.h>
 
-@class FPItem, NSData, NSDate, NSDictionary, NSError, NSFileProviderItemVersion, NSNumber, NSPersonNameComponents, NSSet, NSString, NSURL;
+@class FPItem, NSArray, NSData, NSDate, NSDictionary, NSError, NSFileProviderItemVersion, NSNumber, NSPersonNameComponents, NSSet, NSString, NSURL;
 @protocol NSFileProviderItemFlags;
 
 __attribute__((visibility("hidden")))
-@interface FPXEnumeratorAlternateContentsItem : NSObject <NSFileProviderItem_Private>
+@interface FPXEnumeratorAlternateContentsItem : NSObject <NSFileProviderItem_Private, NSFileProviderItemDecorating>
 {
     FPItem *_documentItem;
     NSDictionary *_resourceValues;
@@ -31,6 +32,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, getter=isDownloadRequested) NSNumber *downloadRequested;
 @property(readonly, copy) NSString *containerDisplayName;
 @property(readonly, copy) NSNumber *hasUnresolvedConflicts;
+@property(readonly, nonatomic) NSFileProviderItemVersion *itemVersion;
+@property(readonly, nonatomic) NSData *versionIdentifier;
+@property(readonly, nonatomic, getter=isTopLevelSharedItem) BOOL topLevelSharedItem;
+@property(readonly, nonatomic) NSArray *decorations;
 @property(readonly, nonatomic) NSDictionary *userInfo;
 @property(readonly, nonatomic) NSPersonNameComponents *mostRecentEditorNameComponents;
 @property(readonly, nonatomic) NSPersonNameComponents *ownerNameComponents;
@@ -76,13 +81,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, getter=fp_isUbiquitous) BOOL fp_ubiquitous;
 @property(readonly) unsigned long long hash;
 @property(readonly, getter=isHidden) BOOL hidden;
-@property(readonly, nonatomic) NSFileProviderItemVersion *itemVersion;
 @property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
 @property(readonly, nonatomic) NSString *preformattedOwnerName;
 @property(readonly, copy) NSString *providerIdentifier;
+@property(readonly, copy, nonatomic) NSData *quarantineBlob;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic, getter=isTopLevelSharedItem) BOOL topLevelSharedItem;
-@property(readonly, nonatomic) NSData *versionIdentifier;
+@property(readonly, copy, nonatomic) NSString *symlinkTargetPath;
+@property(getter=isSyncRoot) BOOL syncRoot;
 
 @end
 

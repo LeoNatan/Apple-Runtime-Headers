@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)userList;
 + (id)server;
 + (id)client;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void)_executeWithSelf:(id)arg1 block:(CDUnknownBlockType)arg2 synchronously:(_Bool)arg3;
 - (void)executeWithSelf:(id)arg1 synchronously:(CDUnknownBlockType)arg2;
 - (void)executeWithSelf:(id)arg1 asynchronously:(CDUnknownBlockType)arg2;

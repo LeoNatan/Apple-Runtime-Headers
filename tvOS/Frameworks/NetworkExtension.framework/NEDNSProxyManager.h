@@ -18,10 +18,10 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly) NEConfigurationManager *configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain) NEConfiguration *configuration; // @synthesize configuration=_configuration;
 @property _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
-- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 @property(copy) NSString *localizedDescription;

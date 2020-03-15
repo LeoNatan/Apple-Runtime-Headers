@@ -13,8 +13,8 @@
     NSString *_protectedDatabaseName;
 }
 
-@property(copy, nonatomic) NSString *protectedDatabaseName; // @synthesize protectedDatabaseName=_protectedDatabaseName;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *protectedDatabaseName; // @synthesize protectedDatabaseName=_protectedDatabaseName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) const char *protectedDatabaseFileSystemPath;
 @property(readonly, nonatomic) NSString *protectedDatabasePath;

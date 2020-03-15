@@ -16,8 +16,8 @@
 }
 
 + (id)transformationWithReadingHistory:(id)arg1;
-@property(retain, nonatomic) FCReadingHistory *history; // @synthesize history=_history;
 - (void).cxx_destruct;
+@property(retain, nonatomic) FCReadingHistory *history; // @synthesize history=_history;
 - (id)transformFeedItems:(id)arg1;
 
 // Remaining properties

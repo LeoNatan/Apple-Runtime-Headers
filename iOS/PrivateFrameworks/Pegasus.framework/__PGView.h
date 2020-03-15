@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_animatedLayerProperties;
 }
 
-@property(copy, nonatomic) NSArray *animatedLayerProperties; // @synthesize animatedLayerProperties=_animatedLayerProperties;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *animatedLayerProperties; // @synthesize animatedLayerProperties=_animatedLayerProperties;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 
 @end

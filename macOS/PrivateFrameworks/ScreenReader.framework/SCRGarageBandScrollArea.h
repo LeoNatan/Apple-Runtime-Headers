@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     } _flags;
 }
 
-@property(retain, nonatomic) SCRUIElement *currentTimeLineGroup; // @synthesize currentTimeLineGroup=_currentTimeLineGroup;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SCRUIElement *currentTimeLineGroup; // @synthesize currentTimeLineGroup=_currentTimeLineGroup;
 - (BOOL)addSelectionDescriptionToRequest:(id)arg1;
 - (BOOL)moveToLinkedItemWithEvent:(id)arg1 andInteract:(BOOL)arg2 request:(id)arg3;
 - (BOOL)handleNavigationEvent:(id)arg1 request:(id)arg2 commandKey:(id)arg3 selector:(SEL)arg4 canScroll:(BOOL)arg5 canWrap:(BOOL)arg6;

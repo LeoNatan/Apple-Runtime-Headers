@@ -35,6 +35,7 @@
     RadiosPreferences *_radioPreferences;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RadiosPreferences *radioPreferences; // @synthesize radioPreferences=_radioPreferences;
 @property(retain, nonatomic) CoreTelephonyClient *coreTelephonyClient; // @synthesize coreTelephonyClient=_coreTelephonyClient;
 @property(retain, nonatomic) PSUICellularUsageSchedulingGroup *appUsageGroup; // @synthesize appUsageGroup=_appUsageGroup;
@@ -46,7 +47,7 @@
 @property(retain, nonatomic) PSUICellularDataPlanSetupGroup *cellularDataPlanSetupGroup; // @synthesize cellularDataPlanSetupGroup=_cellularDataPlanSetupGroup;
 @property(retain, nonatomic) PSUICellularDataOptionsController *cellularDataOptionsController; // @synthesize cellularDataOptionsController=_cellularDataOptionsController;
 @property(retain, nonatomic) PSUICellularDataSpecifier *cellularDataSpecifier; // @synthesize cellularDataSpecifier=_cellularDataSpecifier;
-- (void).cxx_destruct;
+- (id)selectSpecifier:(id)arg1;
 - (void)carrierItemsChanged;
 - (void)wirelessDataUsageChangedNotification;
 - (void)cellularPlanChanged:(id)arg1;

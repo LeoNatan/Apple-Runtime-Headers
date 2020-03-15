@@ -23,10 +23,10 @@
     NSString *_machServiceName;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSString *machServiceName; // @synthesize machServiceName=_machServiceName;
 @property(retain, nonatomic) NSXPCConnection *incomingConnection; // @synthesize incomingConnection=_incomingConnection;
 @property(nonatomic) __weak id <CSLUIUITriggerRemoteClientProxyDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_clearOutgoingConnection;
 - (void)_connectIfNecessary;
 - (void)_clearTriggers;

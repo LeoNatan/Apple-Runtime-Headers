@@ -34,17 +34,19 @@
     GTResourceDownloader *_downloader;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) GTResourceDownloader *downloader; // @synthesize downloader=_downloader;
 @property(readonly, nonatomic) struct GTResourceHarvester *harvester; // @synthesize harvester=_harvester;
-- (void).cxx_destruct;
 - (id)vendorName;
 - (id)utilityBufferForRenderCommandEncoder:(id)arg1;
 - (id)utilityBufferForComputeCommandEncoder:(id)arg1;
 - (BOOL)useDeviceResourceTableForType:(unsigned long long)arg1;
 - (void)unmapShaderSampleBuffer;
 - (void)unloadShaderCaches;
+- (BOOL)supportsVertexAmplificationCount:(unsigned long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
 - (BOOL)supportsSampleCount:(unsigned long long)arg1;
+- (BOOL)supportsRasterizationRateMapWithLayerCount:(unsigned long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
 - (BOOL)supportsFamily:(long long)arg1;
 - (void)startCollectingPipelineDescriptorsUsingPrefixForNames:(id)arg1;
@@ -57,6 +59,7 @@
 - (unsigned long long)resourceIndexFromIndirectBufferAddress:(unsigned long long)arg1;
 - (void)reserveResourceIndicesForResourceType:(unsigned long long)arg1 indices:(unsigned long long *)arg2 indexCount:(unsigned long long)arg3;
 - (BOOL)requiresIndirectionForAllResourceTypes;
+- (unsigned long long)requiredLinearTextureBytesPerRowForDescriptor:(id)arg1;
 - (void)removeResourceFromGlobalResourceTable:(unsigned long long)arg1 resourceType:(unsigned long long)arg2;
 - (id)productName;
 - (CDStruct_c0454aff)pipelineCacheStats;
@@ -90,10 +93,13 @@
 - (id)newBufferWithIOSurface:(struct __IOSurface *)arg1;
 - (id)newBufferWithBytes:(const void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 atResourceIndex:(unsigned long long)arg4;
 - (id)newBufferWithBytes:(const void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (id)newBinaryArchiveWithDescriptor:(id)arg1 error:(id *)arg2;
 - (id)newArgumentEncoderWithLayout:(id)arg1;
 - (id)motionEstimatorCapabilities;
 - (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
+- (unsigned long long)minLinearTexturePitchAlignmentForDescriptor:(id)arg1 mustMatchExactly:(unsigned long long *)arg2;
+- (unsigned long long)minLinearTextureBaseAddressAlignmentForDescriptor:(id)arg1;
 - (unsigned long long)minLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)mapShaderSampleBufferWithBuffer:(CDStruct_32a7f38a *)arg1 capacity:(unsigned long long)arg2 size:(unsigned long long)arg3;
 - (CDStruct_c0454aff)libraryCacheStats;
@@ -139,6 +145,9 @@
 @property(readonly, getter=isQuadDataSharingSupported) BOOL quadDataSharingSupported;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
 @property(readonly, getter=isPlacementHeapSupported) BOOL placementHeapSupported;
+@property(readonly) unsigned int peerIndex;
+@property(readonly) unsigned long long peerGroupID;
+@property(readonly) unsigned int peerCount;
 @property(readonly) NSString *name;
 @property(readonly) unsigned long long minConstantBufferAlignmentBytes;
 @property(readonly) unsigned long long minBufferNoCopyAlignmentBytes;
@@ -150,6 +159,9 @@
 @property(readonly) unsigned long long maxVertexInlineDataSize;
 @property(readonly) unsigned long long maxVertexBuffers;
 @property(readonly) unsigned long long maxVertexAttributes;
+@property(readonly) unsigned long long maxVertexAmplificationFactor;
+@property(readonly) unsigned long long maxVertexAmplificationCount;
+@property(readonly) unsigned long long maxTransferRate;
 @property(readonly) unsigned long long maxTotalComputeThreadsPerThreadgroup;
 @property(readonly) CDStruct_14f26992 maxThreadsPerThreadgroup;
 @property(readonly) unsigned long long maxThreadgroupMemoryLength;
@@ -163,6 +175,7 @@
 @property(readonly) unsigned long long maxTextureDepth3D;
 @property(readonly) unsigned long long maxTextureBufferWidth;
 @property(readonly) unsigned long long maxTessellationFactor;
+@property(readonly) unsigned long long maxRasterizationRateLayerCount;
 @property(readonly) float maxPointSize;
 @property(readonly) float maxLineWidth;
 @property(readonly) unsigned long long maxInterpolatedComponents;
@@ -184,13 +197,16 @@
 @property(readonly) unsigned long long maxComputeLocalMemorySizes;
 @property(readonly) unsigned long long maxComputeInlineDataSize;
 @property(readonly) unsigned long long maxComputeBuffers;
+@property(readonly) unsigned long long maxComputeAttributes;
 @property(readonly) unsigned long long maxColorAttachments;
 @property(readonly) unsigned long long maxBufferLength;
 @property(readonly) unsigned long long maxArgumentBufferSamplerCount;
 @property(readonly, getter=isMagicMipmapSupported) BOOL magicMipmapSupported;
 @property(readonly, getter=isLowPower) BOOL lowPower;
+@property(readonly) unsigned long long locationNumber;
+@property(readonly) unsigned long long location;
 @property(readonly) unsigned long long linearTextureAlignmentBytes;
-@property(readonly) const CDStruct_daf93e08 *limits;
+@property(readonly) const CDStruct_d36c2e50 *limits;
 @property(readonly) unsigned long long iosurfaceTextureAlignmentBytes;
 @property(readonly) unsigned long long iosurfaceReadOnlyTextureAlignmentBytes;
 @property(readonly) struct IndirectArgumentBufferCapabilities indirectArgumentBufferCapabilities;
@@ -222,6 +238,7 @@
 - (void)touch;
 - (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 deallocator:(CDUnknownBlockType)arg4;
 - (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 atResourceIndex:(unsigned long long)arg4 deallocator:(CDUnknownBlockType)arg5;
+- (id)newRasterizationRateMapWithDescriptor:(id)arg1;
 - (id)newPipelineLibraryWithFilePath:(id)arg1 error:(id *)arg2;
 - (void)_setDeviceWrapper:(id)arg1;
 - (id)newSharedTextureWithHandle:(id)arg1;
@@ -286,13 +303,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) BOOL hasUnifiedMemory;
 @property(readonly) unsigned long long hash;
-@property(readonly) unsigned long long location;
-@property(readonly) unsigned long long locationNumber;
-@property(readonly) unsigned long long maxComputeAttributes;
-@property(readonly) unsigned long long maxTransferRate;
-@property(readonly) unsigned int peerCount;
-@property(readonly) unsigned long long peerGroupID;
-@property(readonly) unsigned int peerIndex;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) BOOL supports2DLinearTexArraySPI;
 @property(readonly, nonatomic) BOOL supports32bpcMSAATextures;
@@ -305,6 +315,8 @@
 @property(readonly, nonatomic) BOOL supportsArrayOfTextures;
 @property(readonly, nonatomic) BOOL supportsBCTextureCompression;
 @property(readonly, nonatomic) BOOL supportsBaseVertexInstanceDrawing;
+@property(readonly, nonatomic) BOOL supportsBinaryArchives;
+@property(readonly, nonatomic) BOOL supportsBinaryLibraries;
 @property(readonly, nonatomic) BOOL supportsBlackOrWhiteSamplerBorderColors;
 @property(readonly, nonatomic) BOOL supportsBufferWithIOSurface;
 @property(readonly, nonatomic) BOOL supportsBufferlessClientStorageTexture;
@@ -315,6 +327,7 @@
 @property(readonly, nonatomic) BOOL supportsCustomBorderColor;
 @property(readonly, nonatomic) BOOL supportsDepthClipMode;
 @property(readonly, nonatomic) BOOL supportsDepthClipModeClampExtended;
+@property(readonly, nonatomic) BOOL supportsDynamicLibraries;
 @property(readonly, nonatomic) BOOL supportsFP32TessFactors;
 @property(readonly, nonatomic) BOOL supportsFastMathInfNaNPropagation;
 @property(readonly, nonatomic) BOOL supportsFloat16BCubicFiltering;
@@ -389,6 +402,8 @@
 @property(readonly, nonatomic) BOOL supportsTextureOutOfBoundsReads;
 @property(readonly, nonatomic) BOOL supportsTextureSwizzle;
 @property(readonly, nonatomic) BOOL supportsTileShaders;
+@property(readonly, nonatomic) BOOL supportsVariableRateRasterization;
+@property(readonly, nonatomic) BOOL supportsVertexAmplification;
 @property(readonly, nonatomic) BOOL supportsViewportAndScissorArray;
 
 @end

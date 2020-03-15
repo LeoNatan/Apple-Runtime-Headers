@@ -17,11 +17,11 @@
 }
 
 + (id)secureCodedPropertyKeys;
+- (void).cxx_destruct;
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(nonatomic) long long startIndex; // @synthesize startIndex=_startIndex;
 @property(nonatomic) BOOL friendsOnly; // @synthesize friendsOnly=_friendsOnly;
 @property(retain, nonatomic) NSArray *participantStates; // @synthesize participantStates=_participantStates;
-- (void).cxx_destruct;
 
 @end
 

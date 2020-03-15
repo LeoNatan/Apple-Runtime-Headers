@@ -19,11 +19,11 @@
 }
 
 + (long long)conflictDetectionType;
+- (void).cxx_destruct;
 @property(retain) SBKSyncTransaction *transaction; // @synthesize transaction=_transaction;
 @property unsigned long long itemCount; // @synthesize itemCount=_itemCount;
 @property(readonly) unsigned long long responseItemCount; // @synthesize responseItemCount=_responseItemCount;
 @property _Bool loadsRemoteItemCount; // @synthesize loadsRemoteItemCount=_loadsRemoteItemCount;
-- (void).cxx_destruct;
 - (void)runWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties

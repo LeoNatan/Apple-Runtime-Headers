@@ -20,11 +20,11 @@
 + (id)classDictionaryKey;
 + (void)parseKTrace:(struct ktrace_session *)arg1 findingHIDEvents:(CDUnknownBlockType)arg2;
 + (id)hidEventWithHIDEventType:(unsigned int)arg1 atMachTime:(double)arg2 andMachAbs:(unsigned long long)arg3;
+- (void).cxx_destruct;
 @property(readonly) unsigned int hidEventType; // @synthesize hidEventType=_hidEventType;
 @property(readonly) double hidEventTimestamp; // @synthesize hidEventTimestamp=_hidEventTimestamp;
 @property(readonly) unsigned long long hidEventMachAbs; // @synthesize hidEventMachAbs=_hidEventMachAbs;
 @property(readonly) NSArray *steps; // @synthesize steps=_steps;
-- (void).cxx_destruct;
 - (void)populateReferencesUsingBufferPosition:(const void *)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (id)initWithSerializedHIDEvent:(const CDStruct_55f67497 *)arg1;
 - (void)addSelfToSerializationDictionary:(id)arg1;

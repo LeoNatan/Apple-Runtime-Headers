@@ -8,19 +8,5 @@
 
 @interface NSURLCredentialStorage (SafariExtras)
 - (id)safari_addSynchronizableCopyOfCredentialIfNeeded:(id)arg1 forProtectionSpace:(id)arg2;
-- (id)_safari_interactivelyConfigureFirefoxCredentialDecrypterForReason:(long long)arg1;
-- (void)_safari_removeAllAlternateRealmCredentials;
-- (void)_safari_makePermanentTestDriveURLCredential:(id)arg1 inProtectionSpace:(id)arg2;
-- (void)_safari_makePermanentDecryptedTestDriveURLCredential:(id)arg1 encryptedURLCredential:(id)arg2 inEncryptedProtectionSpace:(id)arg3;
-- (void)_safari_enumerateTestDriveCredentialsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)_safari_enumerateEncryptedTestDriveCredentialsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)_safari_replaceEncryptedTestDriveCredential:(id)arg1 inEncryptedProtectionSpace:(id)arg2 withDecryptedCredential:(id)arg3;
-- (id)_safari_decryptedTestDriveCredential:(id)arg1 forProtectionSpace:(id)arg2 withPersistence:(unsigned long long)arg3 usingDecrypter:(id)arg4;
-- (void)_safari_decryptAllTestDriveCredentialsUsingDecrypter:(id)arg1;
-- (BOOL)safari_containsTestDriveCredential;
-- (void)safari_discardAllTestDriveCredentials;
-- (void)safari_makePermanentAllTestDriveCredentials;
-- (void)safari_setDefaultCredentialForTestDrive:(id)arg1 forProtectionSpace:(id)arg2 isCredentialEncrypted:(BOOL)arg3;
-- (id)safari_credentialByDecryptingCredentialIfNeeded:(id)arg1 inProtectionSpace:(id)arg2;
 @end
 

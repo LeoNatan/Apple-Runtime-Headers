@@ -25,6 +25,7 @@
     CDUnknownBlockType _didInvalidate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType didInvalidate; // @synthesize didInvalidate=_didInvalidate;
 @property(copy, nonatomic) CDUnknownBlockType sessionDidInvalidate; // @synthesize sessionDidInvalidate=_sessionDidInvalidate;
 @property(copy, nonatomic) CDUnknownBlockType sessionDidDisconnect; // @synthesize sessionDidDisconnect=_sessionDidDisconnect;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) CDUnknownBlockType sessionDidReceiveNotification; // @synthesize sessionDidReceiveNotification=_sessionDidReceiveNotification;
 @property(copy, nonatomic) CDUnknownBlockType sessionDidConnect; // @synthesize sessionDidConnect=_sessionDidConnect;
 @property(readonly, copy, nonatomic) NSArray *clientSessions; // @synthesize clientSessions=_clientSessions;
-- (void).cxx_destruct;
 - (void)serverDidInvalidate:(id)arg1;
 - (void)server:(id)arg1 clientSessionDidInvalidate:(id)arg2;
 - (void)server:(id)arg1 clientSessionDidDisconnect:(id)arg2;

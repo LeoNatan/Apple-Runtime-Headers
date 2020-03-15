@@ -30,6 +30,7 @@
     BKSButtonHapticsDefinition *_buttonDefinition;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BKSButtonHapticsDefinition *buttonDefinition; // @synthesize buttonDefinition=_buttonDefinition;
 @property(retain, nonatomic) NSMutableDictionary *emulatedPerSenderDownCount; // @synthesize emulatedPerSenderDownCount=_emulatedPerSenderDownCount;
 @property(nonatomic) _Bool longPressDidOccur; // @synthesize longPressDidOccur=_longPressDidOccur;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) SBHardwareButtonGestureParameters *buttonGestureParameters; // @synthesize buttonGestureParameters=_buttonGestureParameters;
 @property(retain, nonatomic) SBHomeHardwareButtonActions *buttonActions; // @synthesize buttonActions=_buttonActions;
 @property(nonatomic) __weak SBNotificationBannerDestination *bannerDestination; // @synthesize bannerDestination=_bannerDestination;
-- (void).cxx_destruct;
 - (_Bool)_isMenuDoublePressAllowed:(id *)arg1;
 - (_Bool)_isMenuDoublePressDisabled;
 - (void)_cancelGestureRecognizer:(id)arg1;

@@ -52,6 +52,7 @@
 + (Class)classForStoredClassName:(id)arg1 forCPLArchiver:(id)arg2;
 + (BOOL)cplShouldIgnorePropertyForEquality:(id)arg1;
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL serverRecordIsCorrupted; // @synthesize serverRecordIsCorrupted=_serverRecordIsCorrupted;
 @property(copy, nonatomic) NSData *recordChangeData; // @synthesize recordChangeData=_recordChangeData;
 @property(copy, nonatomic) NSString *realIdentifier; // @synthesize realIdentifier=_realIdentifier;
@@ -62,7 +63,6 @@
 @property(nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
 @property(copy, nonatomic) NSDate *recordModificationDate; // @synthesize recordModificationDate=_recordModificationDate;
 @property(copy, nonatomic) CPLScopedIdentifier *scopedIdentifier; // @synthesize scopedIdentifier=_scopedIdentifier;
-- (void).cxx_destruct;
 - (BOOL)isAssetChange;
 - (BOOL)isMasterChange;
 - (id)copyChangeType:(unsigned long long)arg1;

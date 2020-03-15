@@ -69,6 +69,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL IsAssociatedSpecified; // @synthesize IsAssociatedSpecified=_IsAssociatedSpecified;
 @property(nonatomic) BOOL IsAssociated; // @synthesize IsAssociated=_IsAssociated;
 @property(copy, nonatomic) NSString *NetShowUrl; // @synthesize NetShowUrl=_NetShowUrl;
@@ -125,7 +126,6 @@
 @property(retain, nonatomic) NSDateComponents *DateTimeStamp; // @synthesize DateTimeStamp=_DateTimeStamp;
 @property(retain, nonatomic) NSDateComponents *RecurrenceId; // @synthesize RecurrenceId=_RecurrenceId;
 @property(copy, nonatomic) NSString *UID; // @synthesize UID=_UID;
-- (void).cxx_destruct;
 
 @end
 

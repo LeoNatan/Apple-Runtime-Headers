@@ -13,8 +13,8 @@
     NSString *_name;
 }
 
-@property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) NSString *name; // @synthesize name=_name;
 - (unsigned long long)type;
 - (id)description;
 - (id)dictionary;

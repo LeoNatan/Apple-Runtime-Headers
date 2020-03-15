@@ -15,8 +15,8 @@
     NSString *_messageId;
 }
 
-@property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

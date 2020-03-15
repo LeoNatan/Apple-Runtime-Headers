@@ -28,6 +28,7 @@
     NSStoryboard *_mainStoryboard;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSStoryboard *mainStoryboard; // @synthesize mainStoryboard=_mainStoryboard;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) NSViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) BOOL allowManualIP; // @synthesize allowManualIP=_allowManualIP;
-- (void).cxx_destruct;
 - (void)uiDismissed;
 - (void)dismiss;
 - (void)pairingManagerUIInvalidated;

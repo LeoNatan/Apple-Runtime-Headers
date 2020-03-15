@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSArray *_contactStores;
 }
 
-@property(copy, nonatomic) NSArray *contactStores; // @synthesize contactStores=_contactStores;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *contactStores; // @synthesize contactStores=_contactStores;
 - (BOOL)executeChangeHistoryClearRequest:(id)arg1 error:(id *)arg2;
 - (BOOL)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id *)arg3;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id *)arg2;

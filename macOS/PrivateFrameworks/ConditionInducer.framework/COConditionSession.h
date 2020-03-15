@@ -43,6 +43,7 @@
 + (id)bundleToDict:(id)arg1;
 + (id)getBundleURLsAtPath:(id)arg1;
 + (id)_loadExternalConditionBundleInfo:(id)arg1 supportedConditionData:(id)arg2 error:(id *)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType notifyTeardownBeganCallback; // @synthesize notifyTeardownBeganCallback=_notifyTeardownBeganCallback;
 @property(copy, nonatomic) CDUnknownBlockType statusBarPopupFinishedTeardownCallback; // @synthesize statusBarPopupFinishedTeardownCallback=_statusBarPopupFinishedTeardownCallback;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *tearDownQueue; // @synthesize tearDownQueue=_tearDownQueue;
@@ -56,7 +57,6 @@
 @property(readonly, nonatomic) NSArray *additionalArguments; // @synthesize additionalArguments=_additionalArguments;
 @property(readonly, copy, nonatomic) NSString *selectedProfile; // @synthesize selectedProfile=_selectedProfile;
 @property(readonly, copy, nonatomic) NSString *selectedCondition; // @synthesize selectedCondition=_selectedCondition;
-- (void).cxx_destruct;
 - (BOOL)stopConditionWithCallback:(CDUnknownBlockType)arg1;
 - (BOOL)startConditionWithCallback:(CDUnknownBlockType)arg1 teardownStartedCallback:(CDUnknownBlockType)arg2 teardownFinishedCallback:(CDUnknownBlockType)arg3;
 - (BOOL)startConditionWithCallback:(CDUnknownBlockType)arg1 andStatusBarNotificationCallback:(CDUnknownBlockType)arg2;

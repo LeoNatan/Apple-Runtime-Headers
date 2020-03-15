@@ -18,13 +18,13 @@
     long long _merchantCategory;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long merchantCategory; // @synthesize merchantCategory=_merchantCategory;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(copy, nonatomic) NSDecimalNumber *amount; // @synthesize amount=_amount;
 @property(nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (long long)compare:(id)arg1;

@@ -35,9 +35,9 @@
 + (id)attachmentPreviewImageWithIdentifier:(id)arg1 inContext:(id)arg2;
 + (void)purgeAllAttachmentPreviewImagesInContext:(id)arg1;
 + (id)newAttachmentPreviewImageWithIdentifier:(id)arg1 attachment:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long imageID; // @synthesize imageID=_imageID;
 @property(nonatomic) __weak ICAccount *placeholderAccount; // @synthesize placeholderAccount;
-- (void).cxx_destruct;
 - (void)saveAndClearDecryptedData;
 - (id)_decryptedImageData;
 - (id)decryptedImageData;

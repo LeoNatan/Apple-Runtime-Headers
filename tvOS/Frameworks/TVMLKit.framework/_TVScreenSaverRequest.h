@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) CDUnknownBlockType responseBlock; // @synthesize responseBlock=_responseBlock;
-- (void).cxx_destruct;
 
 @end
 

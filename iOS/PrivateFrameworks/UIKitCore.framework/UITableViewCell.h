@@ -146,11 +146,11 @@
 
 + (void)_initializeForIdiom:(long long)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=_accessoryManager) UICellAccessoryManager *accessoryManager; // @synthesize accessoryManager=_accessoryManager;
 @property(nonatomic, getter=_isLayoutEngineSuspended, setter=_setLayoutEngineSuspended:) _Bool _layoutEngineSuspended; // @synthesize _layoutEngineSuspended=_isLayoutEngineSuspended;
 @property(retain, nonatomic, getter=_reorderControlFocusGuide, setter=_setReorderControlFocusGuide:) UIFocusGuide *reorderControlFocusGuide; // @synthesize reorderControlFocusGuide=_reorderControlFocusGuide;
 @property(retain, nonatomic, getter=_editControlFocusGuide, setter=_setEditControlFocusGuide:) UIFocusGuide *editControlFocusGuide; // @synthesize editControlFocusGuide=_editControlFocusGuide;
-- (void).cxx_destruct;
 - (void)_setNeedsAccessoriesUpdate;
 - (void)_setNeedsAccessoriesUpdateForced:(_Bool)arg1;
 - (void)_updateAccessoriesIfNeeded;
@@ -178,6 +178,7 @@
 - (void)_updateDefaultLabelsForFocus:(_Bool)arg1;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusedView;
+- (long long)_focusTouchSensitivityStyle;
 - (_Bool)canBecomeFocused;
 - (void)_removeFocusedFloatingContentView;
 - (void)_ensureFocusedFloatingContentView;

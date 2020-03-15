@@ -18,9 +18,9 @@
 + (id)labelsForKeys;
 + (id)valueFont;
 + (id)labelFont;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSTextField *value; // @synthesize value=_value;
 @property(retain, nonatomic) NSTextField *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)setValueString:(id)arg1;
 - (void)setLabelKey:(id)arg1;

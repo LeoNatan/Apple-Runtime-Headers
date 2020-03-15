@@ -27,10 +27,10 @@
     SBFolder *_folder;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak SBFolder *folder; // @synthesize folder=_folder;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(nonatomic) __weak id <SBTreeNode> parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

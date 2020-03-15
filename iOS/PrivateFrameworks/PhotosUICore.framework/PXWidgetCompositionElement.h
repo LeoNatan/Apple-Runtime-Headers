@@ -35,6 +35,7 @@
 + (id)elementWithWidget:(id)arg1 scrollViewController:(id)arg2;
 + (Class)footerBarClass;
 + (Class)headerBarClass;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setNotifyingWidget:) _Bool _isNotifyingWidget; // @synthesize _isNotifyingWidget=__isNotifyingWidget;
 @property(readonly, nonatomic) PXWidgetBar *_footer; // @synthesize _footer=__footer;
 @property(readonly, nonatomic) PXWidgetBar *_header; // @synthesize _header=__header;
@@ -46,11 +47,10 @@
 @property(nonatomic) __weak id <PXWidgetCompositionElementDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(readonly, nonatomic) id <PXWidget> widget; // @synthesize widget=_widget;
-- (void).cxx_destruct;
 - (void)widgetBarDidSelectDisclosureAffordance:(id)arg1;
 - (void)widgetBarDidSelectSubtitle:(id)arg1;
 - (_Bool)widget:(id)arg1 requestViewControllerDismissalAnimated:(_Bool)arg2;
-- (_Bool)widget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 withTransitionType:(long long)arg3;
+- (_Bool)widget:(id)arg1 transitionToViewController:(id)arg2 withTransitionType:(long long)arg3;
 - (long long)widgetDefaultContentViewAnchoringTypeForDisclosureHeightChange:(id)arg1;
 - (void)widgetInvalidateContentLayoutStyle:(id)arg1;
 - (void)widgetInvalidateContentViewAnchoringType:(id)arg1;
@@ -63,9 +63,9 @@
 - (void)widgetLocalizedTitleDidChange:(id)arg1;
 - (void)widget:(id)arg1 animateChanges:(CDUnknownBlockType)arg2 withAnimationOptions:(id)arg3;
 - (id)widgetExtendedTraitCollection:(id)arg1;
-- (struct NSObject *)widgetViewControllerHostingWidget:(id)arg1;
+- (id)widgetViewControllerHostingWidget:(id)arg1;
 - (id)widgetScrollViewControllerHostingWidget:(id)arg1;
-- (struct NSObject *)widgetViewHostingGestureRecognizers:(id)arg1;
+- (id)widgetViewHostingGestureRecognizers:(id)arg1;
 - (void)_performChanges:(CDUnknownBlockType)arg1 withAnimationOptions:(id)arg2;
 - (void)_updateFooter;
 - (void)_invalidateFooter;

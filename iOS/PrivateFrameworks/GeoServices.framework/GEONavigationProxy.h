@@ -42,8 +42,8 @@
     id <GEOServerFormattedStepStringFormatter> _formatter;
 }
 
-@property(retain, nonatomic) id <GEOServerFormattedStepStringFormatter> formatter; // @synthesize formatter=_formatter;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <GEOServerFormattedStepStringFormatter> formatter; // @synthesize formatter=_formatter;
 - (void)_sendNavigationVoiceVolume;
 - (void)_sendTrafficIncidentAlertDetailsData;
 - (void)_sendPositionFromDestination;

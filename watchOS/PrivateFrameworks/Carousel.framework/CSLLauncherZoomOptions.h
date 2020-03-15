@@ -23,6 +23,7 @@
     CDStruct_cbf5dcb2 _snapshot;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_cbf5dcb2 snapshot; // @synthesize snapshot=_snapshot;
 @property(retain, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(retain, nonatomic) CSLHexLayout *universeLayoutOverride; // @synthesize universeLayoutOverride=_universeLayoutOverride;
@@ -33,7 +34,6 @@
 @property(nonatomic) _Bool shouldCenterThenZoom; // @synthesize shouldCenterThenZoom=_shouldCenterThenZoom;
 @property(nonatomic) _Bool shouldBeginAsInteractive; // @synthesize shouldBeginAsInteractive=_shouldBeginAsInteractive;
 @property(nonatomic) unsigned int operation; // @synthesize operation=_operation;
-- (void).cxx_destruct;
 
 @end
 

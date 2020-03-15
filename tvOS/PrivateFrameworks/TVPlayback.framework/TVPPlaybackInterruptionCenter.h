@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultInterruptionCenter;
+- (void).cxx_destruct;
 @property(retain, nonatomic) TVPPlaybackInterruptionGroup *uninterruptedGroup; // @synthesize uninterruptedGroup=_uninterruptedGroup;
 @property(retain, nonatomic) NSMutableDictionary *interruptionGroupByInterruptionID; // @synthesize interruptionGroupByInterruptionID=_interruptionGroupByInterruptionID;
-- (void).cxx_destruct;
 - (void)removeInterruptable:(id)arg1;
 - (void)addInterruptable:(id)arg1;
 - (void)interruptionDidEndWithID:(id)arg1;

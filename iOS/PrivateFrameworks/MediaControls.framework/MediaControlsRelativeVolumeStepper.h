@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSBundle *_mediaControlsBundle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSBundle *mediaControlsBundle; // @synthesize mediaControlsBundle=_mediaControlsBundle;
 @property(retain, nonatomic) MPButton *decreaseButton; // @synthesize decreaseButton=_decreaseButton;
 @property(retain, nonatomic) MPButton *increaseButton; // @synthesize increaseButton=_increaseButton;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MTMaterialView *increaseBackground; // @synthesize increaseBackground=_increaseBackground;
 @property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(retain, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
-- (void).cxx_destruct;
 - (void)increaseButtonHoldReleased:(id)arg1;
 - (void)increaseButtonHoldBegan:(id)arg1;
 - (void)increaseTouchUpInside:(id)arg1;

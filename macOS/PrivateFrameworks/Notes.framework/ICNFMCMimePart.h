@@ -34,6 +34,7 @@
 }
 
 + (BOOL)mimeParameterIsHumanReadable:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <ICNFMCMessageDataSource> decryptedMessageDataSource; // @synthesize decryptedMessageDataSource=_decryptedMessageDataSource;
 @property(retain, nonatomic) ICNFMCMessage *decryptedMessage; // @synthesize decryptedMessage=_decryptedMessage;
 @property(retain, nonatomic) ICNFMCMessageBody *decryptedMessageBody; // @synthesize decryptedMessageBody=_decryptedMessageBody;
@@ -41,7 +42,6 @@
 @property(nonatomic) BOOL isMimeEncrypted; // @synthesize isMimeEncrypted=_isMimeEncrypted;
 @property(copy, nonatomic) NSString *contentTransferEncoding; // @synthesize contentTransferEncoding=_contentTransferEncoding;
 @property(nonatomic) struct _NSRange range; // @synthesize range=_range;
-- (void).cxx_destruct;
 - (id)decodeMultipartAppledoubleWithContext:(id)arg1;
 - (id)decodeApplicationApplefileWithContext:(id)arg1;
 - (id)decodeApplicationMac_binhex40WithContext:(id)arg1;

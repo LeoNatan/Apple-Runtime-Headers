@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     OBPrivacyLinkView *_linkView;
 }
 
-@property(retain, nonatomic) OBPrivacyLinkView *linkView; // @synthesize linkView=_linkView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) OBPrivacyLinkView *linkView; // @synthesize linkView=_linkView;
 - (void)setLinkEnabled:(_Bool)arg1;
 - (void)loadView;
 - (id)initWithBundleIdentifiers:(id)arg1;

@@ -56,6 +56,7 @@
 
 + (id)nfl_layoutAttributesForWidgetProperties:(id)arg1 feedSettings:(id)arg2;
 + (id)zeroHeightLayoutAttributesWithFeedSettings:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool titleTruncates; // @synthesize titleTruncates=_titleTruncates;
 @property(nonatomic) double whiteSpace; // @synthesize whiteSpace=_whiteSpace;
 @property(nonatomic) _Bool layoutHasTooMuchWhiteSpaceInCurrentState; // @synthesize layoutHasTooMuchWhiteSpaceInCurrentState=_layoutHasTooMuchWhiteSpaceInCurrentState;
@@ -98,7 +99,6 @@
 @property(nonatomic) double selectionCornerRadius; // @synthesize selectionCornerRadius=_selectionCornerRadius;
 @property(nonatomic) struct UIEdgeInsets selectionInset; // @synthesize selectionInset=_selectionInset;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

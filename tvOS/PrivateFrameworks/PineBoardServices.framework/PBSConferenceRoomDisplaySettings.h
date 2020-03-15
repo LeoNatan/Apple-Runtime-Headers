@@ -23,12 +23,12 @@
 + (id)_CRDPhotoPath;
 + (id)_CRDPhotoDirectoryPath;
 + (unsigned long long)migrateWithContext:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSUserDefaults *defaults; // @synthesize defaults=_defaults;
 @property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
 @property(copy, nonatomic) NSString *conferenceRoomDisplayBackgroundPhotoName; // @synthesize conferenceRoomDisplayBackgroundPhotoName=_conferenceRoomDisplayBackgroundPhotoName;
 @property(copy, nonatomic) NSString *conferenceRoomDisplayMessage; // @synthesize conferenceRoomDisplayMessage=_conferenceRoomDisplayMessage;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (id)_backgroundPhotoNotificationKey;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_updateMode;

@@ -19,11 +19,11 @@
     struct UIEdgeInsets _padding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double crossfadeDuration; // @synthesize crossfadeDuration=_crossfadeDuration;
 @property(nonatomic) double crossfadePeriod; // @synthesize crossfadePeriod=_crossfadePeriod;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(copy, nonatomic) NSArray *imageProxies; // @synthesize imageProxies=_imageProxies;
-- (void).cxx_destruct;
 - (void)_crossfadeToImage:(id)arg1;
 - (void)_loadNextImage:(id)arg1;
 - (void)_startTimer;

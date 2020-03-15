@@ -29,6 +29,7 @@
 @property(copy) NSString *frameBorder;
 @property(copy) NSString *align;
 - (int)structuralComplexityContribution;
+- (int)structuralComplexityContribution;
 @property(readonly, nonatomic) WebFrame *contentFrame;
 
 @end

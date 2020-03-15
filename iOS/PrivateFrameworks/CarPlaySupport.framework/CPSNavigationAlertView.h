@@ -20,13 +20,13 @@
     CPSNavigationAlertProgressView *_progressView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CPSNavigationAlertProgressView *progressView; // @synthesize progressView=_progressView;
 @property(retain, nonatomic) CPSNavigationAlertButtonView *buttonView; // @synthesize buttonView=_buttonView;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) CPSAbridgableLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) CPSAbridgableLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) CPNavigationAlert *navigationAlert; // @synthesize navigationAlert=_navigationAlert;
-- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateNavigationAlert:(id)arg1;
 - (void)startAnimating;

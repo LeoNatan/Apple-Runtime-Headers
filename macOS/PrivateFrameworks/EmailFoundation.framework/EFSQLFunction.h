@@ -40,9 +40,9 @@
 + (id)coalesce:(id)arg1;
 + (id)char:(id)arg1;
 + (id)abs:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)ef_aggregateColumnExpression;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
 - (id)initWithName:(id)arg1 arguments:(id)arg2;

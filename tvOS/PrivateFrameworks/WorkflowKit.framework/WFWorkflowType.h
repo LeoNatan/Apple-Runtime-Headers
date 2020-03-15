@@ -15,8 +15,8 @@
 
 + (id)requiredProperties;
 + (id)primaryKey;
-@property(copy) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(copy) NSString *type; // @synthesize type=_type;
 
 @end
 

@@ -30,6 +30,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *siriIsSupported; // @synthesize siriIsSupported=_siriIsSupported;
 @property(retain, nonatomic) NSNumber *siriIsRestricted; // @synthesize siriIsRestricted=_siriIsRestricted;
 @property(retain, nonatomic) NSNumber *siriIsEnabled; // @synthesize siriIsEnabled=_siriIsEnabled;
@@ -44,7 +45,6 @@
 @property(retain, nonatomic) NSNumber *deviceIsBlocked; // @synthesize deviceIsBlocked=_deviceIsBlocked;
 @property(retain, nonatomic) NSNumber *unlockedSinceBoot; // @synthesize unlockedSinceBoot=_unlockedSinceBoot;
 @property(retain, nonatomic) NSString *currentSpokenLanguageCode; // @synthesize currentSpokenLanguageCode=_currentSpokenLanguageCode;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

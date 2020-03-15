@@ -19,12 +19,12 @@
     NSMutableDictionary *_elementIDToAnimationBlock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *elementIDToAnimationBlock; // @synthesize elementIDToAnimationBlock=_elementIDToAnimationBlock;
 @property(retain, nonatomic) NSMutableDictionary *queuedRemoves; // @synthesize queuedRemoves=_queuedRemoves;
 @property(nonatomic) BOOL anyTextSelectable; // @synthesize anyTextSelectable=_anyTextSelectable;
 @property(nonatomic) BOOL selectedMessagesAreTextSelectable; // @synthesize selectedMessagesAreTextSelectable=_selectedMessagesAreTextSelectable;
 @property(readonly, nonatomic) __weak TranscriptDOMController *domController; // @synthesize domController=_domController;
-- (void).cxx_destruct;
 - (BOOL)_isContextualMenuMouseDownEvent:(id)arg1;
 - (void)handleEvent:(id)arg1;
 - (void)checkAndPerformStickerMouseDown:(id)arg1;

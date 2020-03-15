@@ -25,6 +25,7 @@
 
 + (id)contactActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(BOOL)arg4;
 + (id)contactActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL canPerformAction; // @synthesize canPerformAction=_canPerformAction;
 @property(nonatomic) BOOL showBackgroundPlatter; // @synthesize showBackgroundPlatter=_showBackgroundPlatter;
 @property(nonatomic) long long transportType; // @synthesize transportType=_transportType;
@@ -35,7 +36,6 @@
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) __weak id <CNContactActionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)description;
 - (void)performActionWithSender:(id)arg1;
 @property(readonly, nonatomic) CNMutableContact *mutableContact;

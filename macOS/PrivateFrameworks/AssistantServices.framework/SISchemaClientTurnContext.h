@@ -15,8 +15,8 @@
     NSData *_turnID;
 }
 
-@property(retain, nonatomic) NSData *turnID; // @synthesize turnID=_turnID;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *turnID; // @synthesize turnID=_turnID;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

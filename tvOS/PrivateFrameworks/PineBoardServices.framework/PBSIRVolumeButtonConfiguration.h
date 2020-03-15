@@ -17,10 +17,10 @@
     NSUUID *_configurationUUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isBuiltIn; // @synthesize isBuiltIn=_isBuiltIn;
 @property(readonly, nonatomic) NSUUID *configurationUUID; // @synthesize configurationUUID=_configurationUUID;
 @property(readonly, nonatomic) NSString *configurationName; // @synthesize configurationName=_configurationName;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)debugDescription;

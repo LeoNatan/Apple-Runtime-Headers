@@ -36,10 +36,10 @@
 + (void)_preventAssertionsForDuplicateStorageIdentifiersInContainersCreatedPerfomingBlock:(CDUnknownBlockType)arg1;
 + (void)_disableLogging;
 + (void)mutableObjectContentDidUpdate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_simulatesClearingDiscardableDataAfterOperations, setter=_setSimulatesClearingDiscardableDataAfterOperations:) _Bool simulatesClearingDiscardableDataAfterOperations; // @synthesize simulatesClearingDiscardableDataAfterOperations=_simulatesClearingDiscardableDataAfterOperations;
 @property(readonly, nonatomic) _Bool _preventsAssertionsForDuplicateStorageIdentifiers; // @synthesize _preventsAssertionsForDuplicateStorageIdentifiers;
 @property(readonly, nonatomic) MSPContainerPersister *persister; // @synthesize persister=_persister;
-- (void).cxx_destruct;
 - (void)_commitEditWithFinalContents:(id)arg1 context:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_commitPendingCoalescedEditsIfAny;
 - (_Bool)_checkAndAddCoalescedEditForContext:(id)arg1 identifiers:(id)arg2 enqueuedBlock:(CDUnknownBlockType)arg3 completionQueue:(id)arg4 completion:(CDUnknownBlockType)arg5;

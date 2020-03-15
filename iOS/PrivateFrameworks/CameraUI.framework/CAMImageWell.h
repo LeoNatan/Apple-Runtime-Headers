@@ -25,6 +25,7 @@
     struct UIEdgeInsets _tappableEdgeInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setUuid:) NSString *_uuid; // @synthesize _uuid=__uuid;
 @property(retain, nonatomic, setter=_setPlaceholderImage:) UIImage *_placeholderImage; // @synthesize _placeholderImage=__placeholderImage;
 @property(retain, nonatomic, setter=_setThumbnailImage:) UIImage *_thumbnailImage; // @synthesize _thumbnailImage=__thumbnailImage;
@@ -36,7 +37,6 @@
 @property(nonatomic) struct UIEdgeInsets tappableEdgeInsets; // @synthesize tappableEdgeInsets=_tappableEdgeInsets;
 @property(nonatomic) long long cameraOrientation; // @synthesize cameraOrientation=_cameraOrientation;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-- (void).cxx_destruct;
 - (double)_cornerRadiusForLayoutStyle:(long long)arg1;
 - (id)_placeholderImageForLayoutStyle:(long long)arg1;
 - (void)_updateForLayoutStyle;

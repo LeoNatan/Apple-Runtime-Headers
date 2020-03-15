@@ -26,6 +26,7 @@
 + (id)stringFromClientType:(unsigned long long)arg1;
 + (id)mediaItemsForDataItems:(id)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
 + (id)mediaItemsForDataItems:(id)arg1;
+- (void).cxx_destruct;
 @property __weak TVCKDataServer *dataServer; // @synthesize dataServer=_dataServer;
 @property(nonatomic) int maxConcurrentQueryCount; // @synthesize maxConcurrentQueryCount=_maxConcurrentQueryCount;
 @property(retain) NSMutableDictionary *metadataDict; // @synthesize metadataDict=_metadataDict;
@@ -33,7 +34,6 @@
 @property long long status; // @synthesize status=_status;
 @property(nonatomic) unsigned long long clientType; // @synthesize clientType=_clientType;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)cancelLoad:(id)arg1;
 - (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)imageKeyForObject:(id)arg1;

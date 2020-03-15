@@ -13,8 +13,8 @@
     NSMutableArray *_undoBlocks;
 }
 
-@property(readonly, nonatomic) NSMutableArray *undoBlocks; // @synthesize undoBlocks=_undoBlocks;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *undoBlocks; // @synthesize undoBlocks=_undoBlocks;
 - (id)immutableCopy;
 - (void)addUndoBlock:(CDUnknownBlockType)arg1;
 - (id)init;

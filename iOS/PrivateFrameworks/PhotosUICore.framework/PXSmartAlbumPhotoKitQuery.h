@@ -33,13 +33,13 @@
 + (void)_editSmartAlbum:(id)arg1 title:(id)arg2 query:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)_createSmartAlbumWithTitle:(id)arg1 inCollectionList:(id)arg2 query:(id)arg3 photoLibrary:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (id)queryWithSmartAlbum:(id)arg1 collectionList:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <PXSmartAlbumQueryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
 @property(nonatomic) _Bool canPersistChanges; // @synthesize canPersistChanges=_canPersistChanges;
 @property(retain, nonatomic) NSArray *conditions; // @synthesize conditions=_conditions;
 @property(readonly, nonatomic) NSArray *conjunctionValues; // @synthesize conjunctionValues=_conjunctionValues;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)assetCountObserver:(id)arg1 didChangeNumberOfAssets:(long long)arg2;
 - (void)_updateStatusString;
 - (void)conditionDidChange:(id)arg1;

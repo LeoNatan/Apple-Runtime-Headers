@@ -25,6 +25,7 @@
 + (id)_imageLoadParamsWithDictionaryRepresentation:(id)arg1;
 + (id)imageLoadParamsWithStringRepresentation:(id)arg1;
 + (id)imageLoadParamsWithContributorName:(id)arg1 mediaItem:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
 @property(nonatomic) unsigned long long storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(nonatomic) unsigned long long storeID; // @synthesize storeID=_storeID;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long mediaCategoryType; // @synthesize mediaCategoryType=_mediaCategoryType;
 @property(nonatomic) unsigned long long mediaItemType; // @synthesize mediaItemType=_mediaItemType;
 @property(copy, nonatomic) NSString *contributorName; // @synthesize contributorName=_contributorName;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;

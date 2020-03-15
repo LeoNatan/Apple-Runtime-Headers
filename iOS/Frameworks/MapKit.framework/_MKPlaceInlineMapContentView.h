@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
     MKMapItemView *_mapItemView;
 }
 
-@property(retain, nonatomic) MKMapItemView *mapItemView; // @synthesize mapItemView=_mapItemView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) MKMapItemView *mapItemView; // @synthesize mapItemView=_mapItemView;
 - (struct CGSize)intrinsicContentSize;
 - (double)mapViewHeight;
 @property(retain, nonatomic) UIImage *map;

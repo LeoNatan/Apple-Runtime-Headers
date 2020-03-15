@@ -24,13 +24,13 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+- (void).cxx_destruct;
 @property(nonatomic) int anchorStrategyChangeCountLimit; // @synthesize anchorStrategyChangeCountLimit=_anchorStrategyChangeCountLimit;
 @property(nonatomic) int changeDetailsQueryStrategy; // @synthesize changeDetailsQueryStrategy=_changeDetailsQueryStrategy;
 @property(readonly, copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(readonly, copy, nonatomic) NSArray *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
 @property(readonly, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 @property(nonatomic) _Bool includeChangeDetails; // @synthesize includeChangeDetails=_includeChangeDetails;
-- (void).cxx_destruct;
 - (void)client_deliverQueryAnchor:(id)arg1 sampleTypeChanges:(id)arg2 queryUUID:(id)arg3;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_deliverError:(id)arg1;

@@ -18,8 +18,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) SGReminder *reminder; // @synthesize reminder=_reminder;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SGReminder *reminder; // @synthesize reminder=_reminder;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqualToRealtimeReminder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

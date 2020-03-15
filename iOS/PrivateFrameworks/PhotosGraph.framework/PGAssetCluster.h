@@ -14,9 +14,9 @@
     CLCircularRegion *_region;
 }
 
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) CLCircularRegion *region; // @synthesize region=_region;
 @property(readonly, retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
-- (void).cxx_destruct;
 - (id)initWithAssets:(id)arg1 region:(id)arg2;
 
 @end

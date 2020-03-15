@@ -17,9 +17,9 @@
     HKWorkoutSession *_workoutSession;
 }
 
+- (void).cxx_destruct;
 @property(readonly) __weak HKWorkoutSession *workoutSession; // @synthesize workoutSession=_workoutSession;
 @property __weak id <HKLiveWorkoutBuilderDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)connectionInterrupted;
 - (void)clientRemote_didUpdateMetadata:(id)arg1;
 - (void)clientRemote_didUpdateStatistics:(id)arg1;

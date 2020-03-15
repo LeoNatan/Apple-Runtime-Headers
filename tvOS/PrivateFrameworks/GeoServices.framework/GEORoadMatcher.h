@@ -14,8 +14,8 @@
     _Bool _useRawLocations;
 }
 
-@property(nonatomic) _Bool useRawLocations; // @synthesize useRawLocations=_useRawLocations;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool useRawLocations; // @synthesize useRawLocations=_useRawLocations;
 - (id)_bestCandidateSegmentForLocation:(id)arg1 transportType:(int)arg2;
 - (id)matchLocation:(id)arg1 forTransportType:(int)arg2;
 - (void)dealloc;

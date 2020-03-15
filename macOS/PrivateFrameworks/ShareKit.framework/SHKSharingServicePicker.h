@@ -41,6 +41,7 @@
 
 + (void)incrementUseCount;
 + (unsigned long long)useCount;
+- (void).cxx_destruct;
 @property(nonatomic) long long totalProviderCount; // @synthesize totalProviderCount=_totalProviderCount;
 @property(retain) SHKSharingService *selectedSharingService; // @synthesize selectedSharingService=_selectedSharingService;
 @property(retain) SHKSharingServicePickerMenuLatencyMetric *menuLatencyMetric; // @synthesize menuLatencyMetric=_menuLatencyMetric;
@@ -57,7 +58,6 @@
 @property(retain, nonatomic) NSOperationQueue *serviceItemProviderOperationQueue; // @synthesize serviceItemProviderOperationQueue=_serviceItemProviderOperationQueue;
 @property __weak NSSharingServicePicker *nsSharingServicePicker; // @synthesize nsSharingServicePicker=_nsSharingServicePicker;
 @property __weak id <SHKMenuControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (BOOL)worksWhenModal;
 - (void)showRelativeToRect:(struct CGRect)arg1 ofView:(id)arg2 preferredEdge:(unsigned long long)arg3;
 - (void)handlePickerQueryWithID:(id)arg1 completedWithMenuItems:(id)arg2 sharingServices:(id)arg3;

@@ -22,12 +22,12 @@ __attribute__((visibility("hidden")))
     NSMapTable *_windowSnapshots;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSMapTable *windowSnapshots; // @synthesize windowSnapshots=_windowSnapshots;
 @property __weak NSTabBarItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property __weak id <NSTabPickerDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL isShown; // @synthesize isShown=_isShown;
 @property(retain) NSVisualTabPickerRootViewController *tabPickerController; // @synthesize tabPickerController=_tabPickerController;
-- (void).cxx_destruct;
 - (void)selectedTabDidChange;
 - (void)selectItemAtIndex:(long long)arg1;
 - (BOOL)entryOrExitAnimationInProgress;

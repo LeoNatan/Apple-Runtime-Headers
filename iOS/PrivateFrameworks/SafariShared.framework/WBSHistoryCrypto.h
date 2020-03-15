@@ -14,8 +14,8 @@
     NSData *_salt;
 }
 
-@property(readonly, nonatomic) NSData *salt; // @synthesize salt=_salt;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *salt; // @synthesize salt=_salt;
 - (id)decryptDictionary:(id)arg1;
 - (id)encryptDictionary:(id)arg1;
 @property(readonly, nonatomic) NSData *cryptographicKey;

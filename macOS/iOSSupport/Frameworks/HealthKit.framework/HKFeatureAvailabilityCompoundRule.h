@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)ruleIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *rules; // @synthesize rules=_rules;
 @property(retain, nonatomic) NSString *grouping; // @synthesize grouping=_grouping;
-- (void).cxx_destruct;
 - (BOOL)evaluate;
 - (void)processUserInfo:(id)arg1;
 

@@ -26,12 +26,12 @@
     WFActionDrawerCategoriesMetrics *_categoriesMetrics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFActionDrawerCategoriesMetrics *categoriesMetrics; // @synthesize categoriesMetrics=_categoriesMetrics;
 @property(nonatomic) _Bool shouldDisplayCategoriesVertically; // @synthesize shouldDisplayCategoriesVertically=_shouldDisplayCategoriesVertically;
 @property(retain, nonatomic) id <NSObject> actionRegistryFilledNotificationObserver; // @synthesize actionRegistryFilledNotificationObserver=_actionRegistryFilledNotificationObserver;
 @property(readonly, nonatomic) WFActionDrawerResultsController *actionDrawerResultsController; // @synthesize actionDrawerResultsController=_actionDrawerResultsController;
 @property(nonatomic) __weak id <WFActionDrawerSuggestionsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)reloadCategoriesSection;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;

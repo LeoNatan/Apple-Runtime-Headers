@@ -15,8 +15,8 @@
     ABCardViewPersonMapper *_personMapper;
 }
 
-@property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ABCardViewPersonMapper *personMapper; // @synthesize personMapper=_personMapper;
 - (id)reverseTransformMultiValue:(id)arg1;
 - (id)transformMultiValue:(id)arg1;
 - (id)initWithPersonMapper:(id)arg1;

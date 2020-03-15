@@ -13,8 +13,8 @@
     NSArray *_products;
 }
 
-@property(retain, nonatomic) NSArray *products; // @synthesize products=_products;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *products; // @synthesize products=_products;
 - (id)description;
 - (id)initWithRequestContext:(id)arg1;
 

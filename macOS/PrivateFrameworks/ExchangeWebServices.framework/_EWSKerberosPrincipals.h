@@ -14,9 +14,9 @@
     NSString *_servicePrincipal;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *servicePrincipal; // @synthesize servicePrincipal=_servicePrincipal;
 @property(copy, nonatomic) NSString *clientPrincipal; // @synthesize clientPrincipal=_clientPrincipal;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

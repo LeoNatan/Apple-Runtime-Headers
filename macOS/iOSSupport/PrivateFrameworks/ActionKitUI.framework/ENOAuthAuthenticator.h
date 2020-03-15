@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 + (id)scrubString:(id)arg1 usingRegex:(id)arg2 withMaxLength:(unsigned short)arg3;
 + (id)deviceDescription;
 + (id)deviceIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) NSMutableData *receivedData; // @synthesize receivedData=_receivedData;
 @property(nonatomic) BOOL userSelectedLinkedAppNotebook; // @synthesize userSelectedLinkedAppNotebook=_userSelectedLinkedAppNotebook;
@@ -68,7 +69,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *consumerSecret; // @synthesize consumerSecret=_consumerSecret;
 @property(copy, nonatomic) NSString *consumerKey; // @synthesize consumerKey=_consumerKey;
 @property(nonatomic) __weak id <ENAuthenticatorDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)loadingViewControllerDidCancel:(id)arg1;
 - (void)getOAuthTokenForURL:(id)arg1;
 - (void)gotCallbackURL:(id)arg1;

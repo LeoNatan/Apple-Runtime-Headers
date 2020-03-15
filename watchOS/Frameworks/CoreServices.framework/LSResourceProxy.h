@@ -19,9 +19,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setBoundIconInfo:) _LSBoundIconInfo *_boundIconInfo; // @synthesize _boundIconInfo=__boundIconInfo;
 @property(copy, nonatomic, setter=_setLocalizedName:) NSString *localizedName; // @synthesize localizedName=_localizedName;
-- (void).cxx_destruct;
 @property(nonatomic) unsigned int propertyListCachingStrategy;
 - (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (id)_privateDocumentFileNamesAsCacheKey;

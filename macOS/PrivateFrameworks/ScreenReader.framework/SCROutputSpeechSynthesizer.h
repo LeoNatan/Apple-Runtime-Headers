@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSLock *__synthesizerLock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLock *_synthesizerLock; // @synthesize _synthesizerLock=__synthesizerLock;
 @property(nonatomic) float customizedMaxIntonation; // @synthesize customizedMaxIntonation=_customizedMaxIntonation;
 @property(nonatomic) float customizedMinIntonation; // @synthesize customizedMinIntonation=_customizedMinIntonation;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) SCROutputAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) id owner; // @synthesize owner=_owner;
-- (void).cxx_destruct;
 - (void)_outputTestingLogging:(id)arg1;
 - (BOOL)_setObject:(id)arg1 forProperty:(struct __CFString *)arg2;
 - (void)_clearOptions;

@@ -19,11 +19,11 @@
 
 + (id)applicationNodeForLanguage:(unsigned long long)arg1;
 + (unsigned long long)currentPlatform;
+- (void).cxx_destruct;
 @property(retain) NSMutableString *previousTyping; // @synthesize previousTyping=_previousTyping;
 @property(retain) XCAccessibilityElement *previousFocusedAccessibilityElement; // @synthesize previousFocusedAccessibilityElement=_previousFocusedAccessibilityElement;
 @property unsigned long long _compareSnapshotsLikePlatform; // @synthesize _compareSnapshotsLikePlatform;
 @property unsigned long long language; // @synthesize language=_language;
-- (void).cxx_destruct;
 - (id)performWithKeyModifiersAndBlockNodeForModifierFlags:(unsigned long long)arg1;
 - (id)gestureNodesForKeyDownEventWithCharacters:(id)arg1 charactersIgnoringModifiers:(id)arg2 modifierFlags:(unsigned long long)arg3 focusedAccessibilityElement:(id)arg4 didAppendToPreviousString:(_Bool *)arg5;
 - (id)_stringConstantForString:(id)arg1;

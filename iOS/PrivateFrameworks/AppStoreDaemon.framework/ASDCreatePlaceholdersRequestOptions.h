@@ -16,10 +16,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) _Bool createAsMobileBackup; // @synthesize createAsMobileBackup=_createAsMobileBackup;
 @property(nonatomic) _Bool completeDataPromise; // @synthesize completeDataPromise=_completeDataPromise;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

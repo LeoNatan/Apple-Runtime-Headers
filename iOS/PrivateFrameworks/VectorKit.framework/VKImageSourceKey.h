@@ -27,6 +27,7 @@
     NSArray *_fallbackImageKeys;
 }
 
+- (id).cxx_construct;
 @property(retain, nonatomic) NSArray *fallbackImageKeys; // @synthesize fallbackImageKeys=_fallbackImageKeys;
 @property(nonatomic) struct CGPoint imageCenter; // @synthesize imageCenter=_imageCenter;
 @property(nonatomic) unsigned int dataValue; // @synthesize dataValue=_dataValue;
@@ -41,7 +42,6 @@
 @property(readonly, nonatomic) NSString *shieldText; // @synthesize shieldText=_shieldText;
 @property(readonly, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(readonly, nonatomic) unsigned int keyType; // @synthesize keyType=_keyType;
-- (id).cxx_construct;
 - (void)dealloc;
 @property(readonly, nonatomic) CDStruct_83984b6f transitLineColor;
 - (id)initWithLabelImageKey:(const shared_ptr_85e81048 *)arg1;

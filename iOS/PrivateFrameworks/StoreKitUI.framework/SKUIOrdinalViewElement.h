@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     SKUIViewElementText *_text;
 }
 
-@property(readonly, nonatomic) SKUIViewElementText *text; // @synthesize text=_text;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) SKUIViewElementText *text; // @synthesize text=_text;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 

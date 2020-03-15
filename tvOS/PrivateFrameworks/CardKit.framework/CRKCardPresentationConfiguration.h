@@ -16,10 +16,10 @@
     CRSCardRequest *_cardRequest;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool loadsBundleProviders; // @synthesize loadsBundleProviders=_loadsBundleProviders;
 @property(nonatomic) _Bool respectsUserConsent; // @synthesize respectsUserConsent=_respectsUserConsent;
 @property(readonly, nonatomic) CRSCardRequest *cardRequest; // @synthesize cardRequest=_cardRequest;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CRContent> content;
 - (id)initWithCardRequest:(id)arg1;
 - (id)initWithContent:(id)arg1;

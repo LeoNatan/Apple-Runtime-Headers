@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSNumber *_dsid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(readonly, nonatomic) NSNumber *rentalID; // @synthesize rentalID=_rentalID;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithRentalID:(id)arg1 dsid:(id)arg2;

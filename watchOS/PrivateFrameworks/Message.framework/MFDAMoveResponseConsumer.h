@@ -16,10 +16,12 @@
     NSMutableDictionary *_destinationRemoteIDsBySourceRemoteIDs;
     NSMutableSet *_failures;
     MFError *_error;
+    int _statusCode;
 }
 
-@property(retain, nonatomic) MFError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
+@property(retain, nonatomic) MFError *error; // @synthesize error=_error;
 - (void)resultsForMessageMove:(id)arg1;
 - (void)taskFailed:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
 - (id)initWithSourceRemoteIDs:(id)arg1 destinationRemoteIDsBySourceRemoteIDs:(id)arg2 failures:(id)arg3;

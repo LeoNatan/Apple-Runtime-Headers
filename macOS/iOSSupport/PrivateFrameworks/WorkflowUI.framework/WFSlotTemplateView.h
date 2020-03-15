@@ -35,6 +35,7 @@
 }
 
 + (double)heightForWidth:(double)arg1 withContents:(id)arg2 horizontalPadding:(double)arg3 font:(id)arg4 unpopulatedFont:(id)arg5 paragraphStyle:(id)arg6;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *accessibilityElements; // @synthesize accessibilityElements=_accessibilityElements;
 @property(nonatomic) unsigned long long lastLayoutManagerLineCount; // @synthesize lastLayoutManagerLineCount=_lastLayoutManagerLineCount;
 @property(nonatomic) BOOL typingAllowsMultipleLines; // @synthesize typingAllowsMultipleLines=_typingAllowsMultipleLines;
@@ -51,7 +52,6 @@
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) double horizontalPadding; // @synthesize horizontalPadding=_horizontalPadding;
 @property(nonatomic) __weak id <WFSlotTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)accessibilityShiftFocusBackToView;
 - (void)updateAccessibilityElements;
 - (BOOL)isAccessibilityElement;

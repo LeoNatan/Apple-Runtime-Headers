@@ -19,17 +19,17 @@
     CDStruct_d58201db _imageSize;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NUImageLayout *layout; // @synthesize layout=_layout;
 @property(readonly, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly, nonatomic) NUPixelFormat *pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(readonly, nonatomic) CDStruct_912cb5d2 imageSize; // @synthesize imageSize=_imageSize;
-- (void).cxx_destruct;
 - (id)debugQuickLookObject;
 - (id)_newImage;
 - (id)_image;
 @property(readonly, nonatomic) id <NUMutablePurgeableImage> image;
 - (id)initWithImageSize:(CDStruct_912cb5d2)arg1 tileSize:(CDStruct_912cb5d2)arg2 borderSize:(CDStruct_912cb5d2)arg3 pixelFormat:(id)arg4 colorSpace:(id)arg5 input:(id)arg6;
-- (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
+- (id)initWithSettings:(id)arg1 inputs:(id)arg2;
 
 @end
 

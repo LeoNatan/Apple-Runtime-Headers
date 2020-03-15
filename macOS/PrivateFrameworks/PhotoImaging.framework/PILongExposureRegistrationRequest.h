@@ -14,9 +14,9 @@
     CDStruct_996ac03c _cleanAperture;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) CDStruct_996ac03c cleanAperture; // @synthesize cleanAperture=_cleanAperture;
 @property(copy, nonatomic) NSDictionary *recipe; // @synthesize recipe=_recipe;
-- (void).cxx_destruct;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;
 - (id)newRenderJob;

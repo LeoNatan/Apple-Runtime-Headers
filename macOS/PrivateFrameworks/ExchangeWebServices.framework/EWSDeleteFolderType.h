@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(nonatomic) long long DeleteType; // @synthesize DeleteType=_DeleteType;
 @property(copy, nonatomic) NSArray *FolderIds; // @synthesize FolderIds=_FolderIds;
-- (void).cxx_destruct;
 
 @end
 

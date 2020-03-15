@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     UIButton *_checkMarkButton;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIButton *checkMarkButton; // @synthesize checkMarkButton=_checkMarkButton;
 @property(readonly, nonatomic) UIImage *thumbail; // @synthesize thumbail=_thumbail;
 @property(readonly, nonatomic) id <PXDisplayCollection> collection; // @synthesize collection=_collection;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (_Bool)isSelectable;
 - (void)setSelected:(_Bool)arg1;

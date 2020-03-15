@@ -22,9 +22,9 @@
 + (id)currentDevice;
 + (void)setCurrentDevice:(id)arg1;
 + (id)log;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property _Bool isInternal; // @synthesize isInternal=_isInternal;
-- (void).cxx_destruct;
 @property(readonly) NSString *platformName;
 - (id)_init;
 

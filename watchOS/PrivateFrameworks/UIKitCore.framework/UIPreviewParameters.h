@@ -8,24 +8,33 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class UIBezierPath, UIColor;
+@class NSArray, UIBezierPath, UIColor;
 
 @interface UIPreviewParameters : NSObject <NSCopying>
 {
+    NSArray *_textLineRects;
     _Bool _appliesShadow;
     UIBezierPath *_visiblePath;
     UIColor *_backgroundColor;
     int _previewMode;
+    float _textPathCornerRadius;
+    UIBezierPath *_shadowPath;
+    struct UIEdgeInsets _textPathInsets;
 }
 
+- (void).cxx_destruct;
+@property(copy, nonatomic) UIBezierPath *shadowPath; // @synthesize shadowPath=_shadowPath;
+@property(nonatomic, getter=_textPathCornerRadius, setter=_setTextPathCornerRadius:) float textPathCornerRadius; // @synthesize textPathCornerRadius=_textPathCornerRadius;
+@property(nonatomic, getter=_textPathInsets, setter=_setTextPathInsets:) struct UIEdgeInsets textPathInsets; // @synthesize textPathInsets=_textPathInsets;
 @property(nonatomic) _Bool appliesShadow; // @synthesize appliesShadow=_appliesShadow;
 @property(nonatomic, getter=_previewMode, setter=_setPreviewMode:) int previewMode; // @synthesize previewMode=_previewMode;
 @property(copy, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(copy, nonatomic) UIBezierPath *visiblePath; // @synthesize visiblePath=_visiblePath;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) UIBezierPath *effectiveShadowPath;
+@property(readonly, nonatomic, getter=_isSingleLineText) _Bool singleLineText;
 - (id)_initWithMode:(int)arg1 visiblePath:(id)arg2 backgroundColor:(id)arg3;
 - (id)initWithTextLineRects:(id)arg1;
 - (id)init;

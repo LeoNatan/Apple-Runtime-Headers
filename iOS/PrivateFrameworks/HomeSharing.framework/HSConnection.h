@@ -25,6 +25,7 @@
     NSString *_homeSharingGroupID;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) unsigned int basePlaylistContainerID; // @synthesize basePlaylistContainerID=_basePlaylistContainerID;
 @property(nonatomic) unsigned int databaseRevision; // @synthesize databaseRevision=_databaseRevision;
@@ -34,7 +35,6 @@
 @property(nonatomic) long long connectionState; // @synthesize connectionState=_connectionState;
 @property(readonly, nonatomic) long long connectionType; // @synthesize connectionType=_connectionType;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-- (void).cxx_destruct;
 - (id)_onSerialQueue_connectionSession;
 - (void)_onSerialQueue_sendRequest:(id)arg1 withInternalResponseHandler:(CDUnknownBlockType)arg2;
 - (void)_sendRequest:(id)arg1 withInternalResponseHandler:(CDUnknownBlockType)arg2;

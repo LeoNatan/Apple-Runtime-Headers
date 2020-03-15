@@ -16,11 +16,11 @@
     NSURL *_modelURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 @property(readonly) NSArray *outputs; // @synthesize outputs=_outputs;
 @property(readonly) NSArray *inputs; // @synthesize inputs=_inputs;
 @property(readonly) NSArray *layerNames; // @synthesize layerNames=_layerNames;
-- (void).cxx_destruct;
 - (id)initWithInferenceNetworkPath:(id)arg1 inferenceInputs:(id)arg2 inferenceOutputs:(id)arg3 error:(id *)arg4;
 - (id)initWithInferenceNetworkPath:(id)arg1 error:(id *)arg2;
 

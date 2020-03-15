@@ -13,8 +13,8 @@
     NSSet *_hiddenIndexPaths;
 }
 
-@property(retain, nonatomic) NSSet *hiddenIndexPaths; // @synthesize hiddenIndexPaths=_hiddenIndexPaths;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *hiddenIndexPaths; // @synthesize hiddenIndexPaths=_hiddenIndexPaths;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1 withIndexPaths:(id)arg2 movedToIndexPath:(id)arg3 atPoint:(struct CGPoint)arg4;
 - (long long)dropPositionForPoint:(struct CGPoint)arg1 withIndexPaths:(id)arg2 movedToIndexPath:(id)arg3;

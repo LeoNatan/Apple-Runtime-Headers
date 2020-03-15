@@ -21,12 +21,12 @@
 + (_Bool)shouldCacheResults:(id)arg1;
 + (id)stringByRemovingLastCharacterFromString:(id)arg1;
 + (id)cache_os_log;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) CNAutocompleteQueryCacheMissAuditor *cacheMissAuditor; // @synthesize cacheMissAuditor=_cacheMissAuditor;
 @property(readonly, nonatomic) CNObservable *serverSearchObservable; // @synthesize serverSearchObservable=_serverSearchObservable;
 @property(readonly, copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
-- (void).cxx_destruct;
 - (id)observablesForSearchString:(id)arg1 withCachedResults:(id)arg2;
 - (id)remoteResultsForSearchString:(id)arg1 andCompletePromise:(id)arg2;
 - (id)remoteResultsForSearchString:(id)arg1;

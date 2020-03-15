@@ -17,11 +17,11 @@
     _Bool _isValid;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_isValid;
 @property(readonly, nonatomic) id <SBUIBannerTarget> target; // @synthesize target=_target;
 @property(readonly, nonatomic) id <SBUIBannerSource> source; // @synthesize source=_source;
 @property(readonly, nonatomic) SBUIBannerItem *item; // @synthesize item=_item;
-- (void).cxx_destruct;
 - (id)description;
 - (void)invalidate;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3;

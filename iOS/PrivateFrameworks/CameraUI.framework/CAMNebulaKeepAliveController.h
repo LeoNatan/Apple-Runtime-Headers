@@ -17,11 +17,11 @@
     NSMutableSet *__nebuladKeepAliveIdentifiers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setDidCreateKeepAliveDirectory:) _Bool _didCreateKeepAliveDirectory; // @synthesize _didCreateKeepAliveDirectory=__didCreateKeepAliveDirectory;
 @property(readonly, nonatomic) NSMutableSet *_nebuladKeepAliveIdentifiers; // @synthesize _nebuladKeepAliveIdentifiers=__nebuladKeepAliveIdentifiers;
 @property(nonatomic, setter=_setNebuladKeepAliveFileDescriptor:) int _nebuladKeepAliveFileDescriptor; // @synthesize _nebuladKeepAliveFileDescriptor=__nebuladKeepAliveFileDescriptor;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_syncQueue; // @synthesize _syncQueue=__syncQueue;
-- (void).cxx_destruct;
 - (void)removeKeepAliveFileIfNotKeptForAnyIdentifiers;
 - (void)stopKeepAliveForIdentifier:(id)arg1;
 - (void)startKeepAliveForIdentifier:(id)arg1;

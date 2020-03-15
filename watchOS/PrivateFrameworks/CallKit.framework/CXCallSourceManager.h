@@ -24,6 +24,7 @@
     CXTransactionManager *_transactionManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CXTransactionManager *transactionManager; // @synthesize transactionManager=_transactionManager;
 @property(retain, nonatomic) CXTransactionGroup *uncommittedTransactionGroup; // @synthesize uncommittedTransactionGroup=_uncommittedTransactionGroup;
 @property(retain, nonatomic) NSMutableSet *mutableCallSources; // @synthesize mutableCallSources=_mutableCallSources;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <CXCallSourceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)transactionManager:(id)arg1 transactionGroupCompleted:(id)arg2;
 - (void)transactionManager:(id)arg1 actionTimedOut:(id)arg2 forCallSource:(id)arg3;
 - (void)callSource:(id)arg1 actionCompleted:(id)arg2;

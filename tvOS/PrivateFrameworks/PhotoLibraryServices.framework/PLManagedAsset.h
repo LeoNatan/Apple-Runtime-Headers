@@ -43,9 +43,9 @@
     NSURL *cachedNonPersistedVideoPlaybackURL;
     NSDate *cachedNonPersistedVideoPlaybackURLExpiration;
     NSError *cachedNonPersistedVideoPlaybackURLError;
-    struct NSObject *inflightImageInMemory;
+    NSObject *inflightImageInMemory;
     NSString *inflightImagePath;
-    struct NSObject *inflightIndexSheetImage;
+    NSObject *inflightIndexSheetImage;
     NSDictionary *inflightMetadata;
 }
 
@@ -157,7 +157,7 @@
 + (id)baseSearchIndexPredicate;
 + (id)assetsToConsiderForTypePromotionInContext:(id)arg1 withExtensions:(id)arg2 error:(id *)arg3;
 + (void)computePreCropThumbnailSize:(struct CGSize *)arg1 andPostCropSize:(struct CGSize *)arg2 forOrientedOriginalSize:(struct CGSize)arg3 andCroppedSize:(struct CGSize)arg4 isLargeThumbnail:(_Bool)arg5;
-+ (void)createThumbnailImage:(struct NSObject **)arg1 previewImage:(struct NSObject **)arg2 withToBeReleasedImageSource:(struct CGImageSource *)arg3;
++ (void)createThumbnailImage:(id *)arg1 previewImage:(id *)arg2 withToBeReleasedImageSource:(struct CGImageSource *)arg3;
 + (id)_newPathAndDateDictionariesByAssetUUIDFromFetchResults:(id)arg1 photoLibrary:(id)arg2;
 + (id)pathAndDateDictionariesForAllIncompleteAssetsInManagedObjectContext:(id)arg1;
 + (long long)pfAdjustmentsBaseVersionFromAdjustmentBaseVersion:(long long)arg1;
@@ -172,6 +172,7 @@
 + (id)_notPushedAssetsToUploadInitiallyInManagedObjectContext:(id)arg1 withSavedAssetTypePredicate:(id)arg2 shouldSort:(_Bool)arg3 limit:(unsigned long long)arg4;
 + (id)assetsToUploadInitiallyInManagedObjectContext:(id)arg1 limit:(unsigned long long)arg2;
 + (id)_syncablePredicate;
++ (unsigned long long)countOfNotUploadedAssetsInPhotoLibrary:(id)arg1 forAssetType:(short)arg2 error:(id *)arg3;
 + (unsigned long long)totalSizeOfUnpushedOriginalsInPhotoLibrary:(id)arg1 outMasterList:(id)arg2;
 + (_Bool)assetTypeIsSupportedForUpload:(short)arg1;
 + (id)predicateForUploadableAssetsWithCloudLocalState:(short)arg1;
@@ -207,6 +208,7 @@
 + (id)calculateImageRequestHintsFromSortedResources:(id)arg1 asset:(id)arg2;
 + (id)debugDescriptionForHintData:(id)arg1 assetWidth:(long long)arg2 assetHeight:(long long)arg3 assetID:(id)arg4;
 + (id)predicateFilteringForNonDerivativeRecipeIDs;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool disableFileSystemPersistency; // @synthesize disableFileSystemPersistency=_disableFileSystemPersistency;
 @property(nonatomic) _Bool disableDupeAnalysis; // @synthesize disableDupeAnalysis=_disableDupeAnalysis;
 @property(nonatomic) _Bool needsMomentUpdate; // @synthesize needsMomentUpdate=_needsMomentUpdate;
@@ -219,7 +221,6 @@
 @property(retain, nonatomic) NSURL *cachedNonPersistedVideoPlaybackURL; // @synthesize cachedNonPersistedVideoPlaybackURL;
 @property(retain, nonatomic) PLManagedAssetID *assetID; // @synthesize assetID=_assetID;
 @property(retain, nonatomic) CLLocation *cachedLocation; // @synthesize cachedLocation=_cachedLocation;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *pl_date;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
@@ -249,16 +250,16 @@
 - (id)assetURLForSidecarFile:(id)arg1;
 - (id)assetURLWithExtension:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *textBadgeString;
-- (struct NSObject *)filteredImage:(struct NSObject *)arg1 withCIContext:(id)arg2;
+- (id)filteredImage:(id)arg1 withCIContext:(id)arg2;
 - (id)pasteBoardRepresentation;
 - (id)largestAvailableDataRepresentationAndType:(id *)arg1;
 - (void)_getLargestAvailableDataRepresentation:(id *)arg1 type:(id *)arg2;
-- (struct NSObject *)newLowResolutionFullScreenImage;
-- (struct NSObject *)newFullSizeImage;
-- (struct NSObject *)newFullScreenImage:(const struct __CFDictionary **)arg1;
-- (struct NSObject *)indexSheetImage;
-- (struct NSObject *)imageWithFormat:(unsigned short)arg1 outImageProperties:(const struct __CFDictionary **)arg2;
-- (struct NSObject *)imageWithFormat:(unsigned short)arg1;
+- (id)newLowResolutionFullScreenImage;
+- (id)newFullSizeImage;
+- (id)newFullScreenImage:(const struct __CFDictionary **)arg1;
+- (id)indexSheetImage;
+- (id)imageWithFormat:(unsigned short)arg1 outImageProperties:(const struct __CFDictionary **)arg2;
+- (id)imageWithFormat:(unsigned short)arg1;
 - (id)pathForCameraSpatialOverCaptureMetadataDiagnosticFile;
 - (id)pathForCameraMetadataDiagnosticFile;
 - (id)pathForReframeDiagnosticFile;
@@ -352,7 +353,7 @@
 - (void)_cleanupPenultimateResources;
 - (void)updateDeferredAdjustmentWithFullSizeRenderImageURL:(id)arg1 videoURL:(id)arg2 videoPosterURL:(id)arg3;
 - (void)_ingestAndApplyMetadataChangesFromAdjustmentRenderedContentURL:(id)arg1 fullSizeRenderURL:(id)arg2 renderedVideoComplementContentURL:(id)arg3 videoPosterContentURL:(id)arg4 videoPosterRenderURL:(id)arg5 ingestionType:(long long)arg6 updateAdjustmentDictionary:(id)arg7 shouldUpdateAttributes:(_Bool)arg8 isSubstandardRender:(_Bool)arg9 isRevertToOriginal:(_Bool)arg10;
-- (void)_updateDerivativesAndThumbnails:(_Bool)arg1 withPreviewImage:(struct NSObject *)arg2 thumbnailImage:(struct NSObject *)arg3 didRevertToOriginal:(_Bool)arg4 updateInternalResources:(_Bool)arg5 isSubstandardRender:(_Bool)arg6 isDeferred:(_Bool)arg7;
+- (void)_updateDerivativesAndThumbnails:(_Bool)arg1 withPreviewImage:(id)arg2 thumbnailImage:(id)arg3 didRevertToOriginal:(_Bool)arg4 updateInternalResources:(_Bool)arg5 isSubstandardRender:(_Bool)arg6 isDeferred:(_Bool)arg7;
 - (void)setAdjustments:(id)arg1 renderedContentURL:(id)arg2 penultimateRenderedJPEGData:(id)arg3 penultimateRenderedVideoContentURL:(id)arg4 isSubstandardRender:(_Bool)arg5 deferredProcessingNeeded:(_Bool)arg6 fullSizeRenderSize:(struct CGSize)arg7 renderedVideoComplementContentURL:(id)arg8 penultimateRenderedVideoComplementContentURL:(id)arg9 renderedVideoPosterContentURL:(id)arg10 shouldUpdateAttributes:(_Bool)arg11 fileIngestionType:(long long)arg12 shouldGenerateThumbnails:(_Bool)arg13;
 - (void)setAdjustments:(id)arg1 renderedContentURL:(id)arg2 penultimateRenderedJPEGData:(id)arg3 penultimateRenderedVideoContentURL:(id)arg4 isSubstandardRender:(_Bool)arg5 fullSizeRenderSize:(struct CGSize)arg6 renderedVideoComplementContentURL:(id)arg7 penultimateRenderedVideoComplementContentURL:(id)arg8 renderedVideoPosterContentURL:(id)arg9 shouldUpdateAttributes:(_Bool)arg10 fileIngestionType:(long long)arg11;
 - (void)_writeOutAdjustmentsToFile:(id)arg1;
@@ -433,9 +434,9 @@
 - (id)imageDataForThumbGenerationAndIfNeededRAWUTI:(id *)arg1;
 - (void)setFaceRegionsFromImageMetadata:(struct CGImageMetadata *)arg1;
 - (void)setFaceRegionsFromCGImageProperties:(id)arg1;
-- (void)generateAndUpdateThumbnailsWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(_Bool)arg5 forceSRGBConversion:(_Bool)arg6 saveCameraPreviewWellImage:(_Bool)arg7;
-- (void)generateAndUpdateThumbnailsWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(_Bool)arg5 forceSRGBConversion:(_Bool)arg6;
-- (void)createTHMFileWithPreviewImage:(struct NSObject *)arg1 thumbnailImage:(struct NSObject *)arg2;
+- (void)generateAndUpdateThumbnailsWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(_Bool)arg5 forceSRGBConversion:(_Bool)arg6 saveCameraPreviewWellImage:(_Bool)arg7;
+- (void)generateAndUpdateThumbnailsWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2 fromImageSource:(struct CGImageSource *)arg3 imageData:(id)arg4 updateExistingLargePreview:(_Bool)arg5 forceSRGBConversion:(_Bool)arg6;
+- (void)createTHMFileWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2;
 - (_Bool)setVideoInfoFromFileAtURL:(id)arg1 fullSizeRenderURL:(id)arg2 overwriteOriginalProperties:(_Bool)arg3;
 - (void)updateVideoAttributesFromAVAsset:(id)arg1;
 - (void)updateVideoExtendedAttributesFromAVAsset:(id)arg1;
@@ -663,7 +664,7 @@
 - (id)createPlaceNamesSortedByCategoryAllowFallbackToCompoundNameInfo:(_Bool)arg1;
 - (_Bool)promoteFromUnknownKind;
 - (_Bool)attemptPromoteFromUnknownKindUsingCloudMaster;
-- (void)generateThumbnailsWithImageSource:(struct CGImageSource *)arg1 imageData:(id)arg2 updateExistingLargePreview:(_Bool)arg3 allowMediumPreview:(_Bool)arg4 forceSRGBConversion:(_Bool)arg5 outSmallThumbnail:(struct NSObject **)arg6 outLargeThumbnail:(struct NSObject **)arg7;
+- (void)generateThumbnailsWithImageSource:(struct CGImageSource *)arg1 imageData:(id)arg2 updateExistingLargePreview:(_Bool)arg3 allowMediumPreview:(_Bool)arg4 forceSRGBConversion:(_Bool)arg5 outSmallThumbnail:(id *)arg6 outLargeThumbnail:(id *)arg7;
 @property(retain, nonatomic) NSData *faceRegions;
 @property(retain, nonatomic) NSString *title;
 @property(retain, nonatomic) NSString *longDescription;

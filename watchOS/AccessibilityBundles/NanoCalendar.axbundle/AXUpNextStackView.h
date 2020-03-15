@@ -11,8 +11,8 @@
     id _parentViewController;
 }
 
-@property(retain, nonatomic) id parentViewController; // @synthesize parentViewController=_parentViewController;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id parentViewController; // @synthesize parentViewController=_parentViewController;
 - (id)_accessibilityOrderedIndexPaths;
 - (id)_accessibilityCurrentIndexPath;
 - (id)_accessibilityCurrentRepresentedTile;

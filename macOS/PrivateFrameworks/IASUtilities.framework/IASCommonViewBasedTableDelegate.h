@@ -16,9 +16,9 @@
     NSArrayController *backingData;
 }
 
+- (void).cxx_destruct;
 @property __weak NSArrayController *backingData; // @synthesize backingData;
 @property(retain) NSMutableDictionary *prototypeCellViews; // @synthesize prototypeCellViews;
-- (void).cxx_destruct;
 - (double)tableView:(id)arg1 widthOfRow:(long long)arg2;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (struct CGSize)tableView:(id)arg1 sizeOfRow:(long long)arg2;

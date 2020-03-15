@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     int _repeatMode;
     int _shuffleMode;
     NSString *_title;
+    NSData *_userInfoData;
     _Bool _isAdvertisement;
     _Bool _isAlwaysLive;
     _Bool _isExplicitTrack;
@@ -56,6 +57,8 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSData *userInfoData; // @synthesize userInfoData=_userInfoData;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(retain, nonatomic) NSString *artworkURL; // @synthesize artworkURL=_artworkURL;
 @property(retain, nonatomic) NSData *collectionInfoData; // @synthesize collectionInfoData=_collectionInfoData;
@@ -78,7 +81,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSString *artist; // @synthesize artist=_artist;
 @property(retain, nonatomic) NSString *album; // @synthesize album=_album;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -88,6 +90,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasUserInfoData;
 @property(nonatomic) _Bool hasStoreAdamID;
 @property(readonly, nonatomic) _Bool hasArtworkURL;
 @property(readonly, nonatomic) _Bool hasCollectionInfoData;

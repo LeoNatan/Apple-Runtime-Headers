@@ -22,11 +22,11 @@
     NSMutableArray *_observers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
 @property(nonatomic) struct OpaqueFFTSetup *fftSetup; // @synthesize fftSetup=_fftSetup;
 @property(nonatomic) float powerLevel; // @synthesize powerLevel=_powerLevel;
 @property(nonatomic) float sampleRate; // @synthesize sampleRate=_sampleRate;
-- (void).cxx_destruct;
 - (void)_freeBuffers;
 - (void)_resizeOrResetBuffers:(unsigned long)arg1;
 - (void)_analyzeFrequencies:(struct AudioBufferList *)arg1 numberFrames:(long)arg2 timeRange:(CDStruct_3c1748cc)arg3;

@@ -18,9 +18,9 @@
     NSHashTable *_profileObservers;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *profileObservers; // @synthesize profileObservers=_profileObservers;
 @property(nonatomic) _Bool isSettingUp; // @synthesize isSettingUp=_isSettingUp;
-- (void).cxx_destruct;
 - (void)_setupDebugHandler;
 - (id)_beginMonitoringSettingsKeyPath:(id)arg1;
 - (_Bool)shouldShowSettingsEntity:(id)arg1;

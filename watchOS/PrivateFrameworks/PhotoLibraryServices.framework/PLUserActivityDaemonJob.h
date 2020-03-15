@@ -30,13 +30,13 @@
 + (void)userDidNavigateIntoSharedAlbum:(id)arg1;
 + (void)userDidViewCloudFeedContent:(int)arg1;
 + (id)newUserActivityDaemonJob;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *momentShareUUID; // @synthesize momentShareUUID=_momentShareUUID;
 @property(copy, nonatomic) NSString *suggestedCMMUUID; // @synthesize suggestedCMMUUID=_suggestedCMMUUID;
 @property(nonatomic) int cloudFeedContent; // @synthesize cloudFeedContent=_cloudFeedContent;
 @property(retain, nonatomic) NSArray *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(copy, nonatomic) NSString *albumUUID; // @synthesize albumUUID=_albumUUID;
 @property long long actionType; // @synthesize actionType=_actionType;
-- (void).cxx_destruct;
 - (void)runDaemonSide;
 - (void)run;
 - (long long)daemonOperation;

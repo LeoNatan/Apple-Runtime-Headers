@@ -16,9 +16,9 @@
 
 + (id)userAddressFromDictionaryRepresentation:(id)arg1 forAccount:(id)arg2;
 + (id)userAddress:(id)arg1 forAccount:(id)arg2;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSURL *address; // @synthesize address=_address;
 @property(nonatomic) __weak MobileCalDAVAccount *account; // @synthesize account=_account;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)initWithAddress:(id)arg1 account:(id)arg2;

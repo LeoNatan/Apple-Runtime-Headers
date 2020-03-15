@@ -15,10 +15,10 @@
     NSMutableArray *_remainingSensorData;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSMutableArray *remainingSensorData; // @synthesize remainingSensorData=_remainingSensorData;
 @property(readonly, copy, nonatomic) NSArray *consumedSensorData; // @synthesize consumedSensorData=_consumedSensorData;
 @property(readonly, copy, nonatomic) NSArray *aggregatedSamples; // @synthesize aggregatedSamples=_aggregatedSamples;
-- (void).cxx_destruct;
 - (id)initWithAggregatedSamples:(id)arg1 consumedData:(id)arg2 remainingData:(id)arg3;
 
 @end

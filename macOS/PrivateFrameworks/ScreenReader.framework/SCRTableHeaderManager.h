@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     long long _orientation;
 }
 
-@property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 - (void).cxx_destruct;
+@property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 - (struct CGPoint)mouseInsertAfterChildElement:(id)arg1;
 - (struct CGPoint)mouseInsertBeforeChildElement:(id)arg1;
 - (BOOL)interactDownShiftWithEvent:(id)arg1 request:(id)arg2;

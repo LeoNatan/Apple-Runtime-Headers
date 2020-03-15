@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     VSSpeechConnection *_connection;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak VSSpeechConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) VSPresynthesizedAudioRequest *presynthesizedAudioRequest; // @synthesize presynthesizedAudioRequest=_presynthesizedAudioRequest;
 @property(retain, nonatomic) NSMutableDictionary *concurrentSynthesisRequests; // @synthesize concurrentSynthesisRequests=_concurrentSynthesisRequests;
 @property(retain, nonatomic) VSSpeechRequest *request; // @synthesize request=_request;
 @property(nonatomic) __weak id <VSSpeechConnectionDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (oneway void)presynthesizedAudioRequestSuccessWithInstrumentMetrics:(id)arg1 error:(id)arg2;
 - (oneway void)presynthesizedAudioRequestDidStopAtEnd:(_Bool)arg1 error:(id)arg2;
 - (oneway void)presynthesizedAudioRequestDidStart;

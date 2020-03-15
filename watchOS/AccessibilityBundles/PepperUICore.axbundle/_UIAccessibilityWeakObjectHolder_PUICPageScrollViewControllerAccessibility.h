@@ -13,8 +13,8 @@
     PUICPageScrollViewControllerAccessibility *_referencedScrollViewController;
 }
 
-@property(nonatomic) __weak PUICPageScrollViewControllerAccessibility *referencedScrollViewController; // @synthesize referencedScrollViewController=_referencedScrollViewController;
 - (void).cxx_destruct;
+@property(nonatomic) __weak PUICPageScrollViewControllerAccessibility *referencedScrollViewController; // @synthesize referencedScrollViewController=_referencedScrollViewController;
 
 @end
 

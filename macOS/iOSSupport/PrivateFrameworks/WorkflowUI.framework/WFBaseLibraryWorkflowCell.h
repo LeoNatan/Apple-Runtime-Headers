@@ -29,6 +29,7 @@
     CALayer *_backgroundLayer;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CALayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
 @property(readonly, nonatomic) UIView *maskedBackgroundView; // @synthesize maskedBackgroundView=_maskedBackgroundView;
 @property(readonly, nonatomic) CALayer *iconLayer; // @synthesize iconLayer=_iconLayer;
@@ -43,7 +44,6 @@
 @property(copy, nonatomic) WFWorkflowReference *workflowReference; // @synthesize workflowReference=_workflowReference;
 @property(copy, nonatomic) id <WFBaseLibraryWorkflowCellMetrics> layoutMetrics; // @synthesize layoutMetrics=_layoutMetrics;
 @property(nonatomic) __weak id <WFBaseLibraryWorkflowCellDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)presentAlert:(id)arg1;
 @property(readonly, nonatomic) UIView *view;
 @property(readonly, nonatomic) UIViewController *viewController;

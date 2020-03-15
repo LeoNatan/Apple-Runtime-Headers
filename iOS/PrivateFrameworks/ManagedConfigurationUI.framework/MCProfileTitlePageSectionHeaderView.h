@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     UIView *_separatorLine;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *separatorLine; // @synthesize separatorLine=_separatorLine;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

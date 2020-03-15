@@ -29,6 +29,7 @@
 + (_Bool)_addValueForQuantitySeriesSample:(id)arg1 calculator:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
 + (_Bool)_enumerateSampleTypeWithProfile:(id)arg1 quantityType:(id)arg2 predicate:(id)arg3 error:(id *)arg4 block:(CDUnknownBlockType)arg5;
 + (_Bool)_enumerateWithProfile:(id)arg1 quantityType:(id)arg2 predicate:(id)arg3 filter:(id)arg4 isQuantityType:(_Bool)arg5 includeUnfrozenSeries:(_Bool)arg6 error:(id *)arg7 block:(CDUnknownBlockType)arg8;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType shouldContinueHandler; // @synthesize shouldContinueHandler=_shouldContinueHandler;
 @property(nonatomic) long long shouldContinueFrequency; // @synthesize shouldContinueFrequency=_shouldContinueFrequency;
 @property(copy, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
@@ -38,7 +39,6 @@
 @property(copy, nonatomic) HDSQLitePredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (_Bool)_addValuesForQuantitySamples:(id)arg1 calculator:(id)arg2 requiresSeriesValues:(_Bool)arg3 transaction:(id)arg4 error:(id *)arg5;
 - (_Bool)addValuesForQuantitySamples:(id)arg1 calculator:(id)arg2 includeSeries:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)collectionCalculator:(id)arg1 queryForInterval:(id)arg2 error:(id *)arg3 sampleHandler:(CDUnknownBlockType)arg4;

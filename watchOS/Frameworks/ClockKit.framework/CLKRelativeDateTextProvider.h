@@ -34,6 +34,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)_configureFormatter:(id)arg1 fallbackIndex:(unsigned int)arg2 style:(int)arg3;
 + (id)textProviderWithDate:(id)arg1 style:(int)arg2 units:(unsigned int)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool pauseTimerAtZero; // @synthesize pauseTimerAtZero=_pauseTimerAtZero;
 @property(nonatomic) _Bool wantsSubseconds; // @synthesize wantsSubseconds=_wantsSubseconds;
 @property(nonatomic) _Bool showLeadingMinutes; // @synthesize showLeadingMinutes=_showLeadingMinutes;
@@ -46,7 +47,6 @@
 @property(nonatomic) unsigned int calendarUnits; // @synthesize calendarUnits=_calendarUnits;
 @property(nonatomic) int relativeDateStyle; // @synthesize relativeDateStyle=_relativeDateStyle;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (_Bool)tritium_requiresCopy;
 - (id)JSONObjectRepresentation;
 - (id)_initWithJSONObjectRepresentation:(id)arg1;

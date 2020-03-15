@@ -24,13 +24,13 @@
     NSArray *__layoutConstraints;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setLayoutConstraints:) NSArray *_layoutConstraints; // @synthesize _layoutConstraints=__layoutConstraints;
 @property(retain, nonatomic, setter=_setSpec:) PXButtonSpec *_spec; // @synthesize _spec=__spec;
 @property(readonly, nonatomic) UIButton *_button; // @synthesize _button=__button;
 @property(readonly, nonatomic) UIView *_view; // @synthesize _view=__view;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <PXUIButtonTileDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 @property(readonly, nonatomic) UIView *view;

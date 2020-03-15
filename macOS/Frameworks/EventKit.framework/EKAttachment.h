@@ -27,11 +27,11 @@
 + (id)filePathForAttachment:(id)arg1 event:(id)arg2;
 + (id)attachmentWithAttachment:(id)arg1;
 + (id)createTempDestinationURLWithExtension:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, retain) NSString *uuid; // @synthesize uuid;
 @property(readonly, retain) NSNumber *isAutoArchivedNumber; // @synthesize isAutoArchivedNumber;
 @property(readonly, retain) NSString *filenameSuggestedByServer; // @synthesize filenameSuggestedByServer;
 @property(readonly, retain) NSString *contentType; // @synthesize contentType;
-- (void).cxx_destruct;
 @property(retain) NSString *attachmentIDOnServer;
 @property(readonly, retain) NSURL *urlOnServer;
 @property(retain) NSString *contentTypeFromServer;

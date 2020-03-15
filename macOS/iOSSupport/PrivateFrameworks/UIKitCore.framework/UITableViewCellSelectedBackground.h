@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     BOOL _multiselect;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *noneStyleBackgroundColor; // @synthesize noneStyleBackgroundColor=_noneStyleBackgroundColor;
 @property(retain, nonatomic) UIColor *selectionTintColor; // @synthesize selectionTintColor=_selectionTintColor;
 @property(retain, nonatomic) UIColor *multiselectBackgroundColor; // @synthesize multiselectBackgroundColor=_multiselectBackgroundColor;
 @property(nonatomic) long long selectionStyle; // @synthesize selectionStyle=_selectionStyle;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)_canDrawContent;
 - (void)layoutSubviews;

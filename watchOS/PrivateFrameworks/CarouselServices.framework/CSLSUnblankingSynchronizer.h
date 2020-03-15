@@ -12,9 +12,9 @@
     CDUnknownBlockType _prepareForUnblankBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType prepareForUnblankBlock; // @synthesize prepareForUnblankBlock=_prepareForUnblankBlock;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
-- (void).cxx_destruct;
 - (void)readyForUnblank:(unsigned int)arg1;
 
 @end

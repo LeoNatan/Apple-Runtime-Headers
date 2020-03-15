@@ -53,19 +53,11 @@ struct GEOOnce_s {
     char didRun;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
 struct NSEdgeInsets {
     double top;
     double left;
     double bottom;
     double right;
-};
-
-struct NSViewController {
-    Class _field1;
 };
 
 struct _GEOFlyoverKey {
@@ -157,10 +149,6 @@ struct _GEOTransitLineSelectionKey {
     unsigned int x:25;
     unsigned int y:25;
     unsigned int muid:64;
-};
-
-struct _MKUIViewController {
-    Class _field1;
 };
 
 struct _NSRange {

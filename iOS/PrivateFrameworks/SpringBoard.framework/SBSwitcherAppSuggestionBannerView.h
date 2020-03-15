@@ -19,8 +19,8 @@
     UIView *_highlightDarkeningView;
 }
 
-@property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void)_createDarkeningView;
 - (void)_createIconViewForSuggestion:(id)arg1;
 - (id)_iconImageFromAppWithBundleIdentifier:(id)arg1 withIconImageCache:(id)arg2;

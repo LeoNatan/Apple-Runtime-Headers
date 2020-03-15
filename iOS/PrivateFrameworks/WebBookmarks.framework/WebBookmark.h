@@ -42,6 +42,7 @@
 
 + (id)_trimmedPreviewText:(id)arg1;
 + (id)_trimmedTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *localAttributes; // @synthesize localAttributes=_localAttributes;
 @property(retain, nonatomic) NSDictionary *extraAttributes; // @synthesize extraAttributes=_extraAttributes;
 @property(retain, nonatomic) NSData *iconData; // @synthesize iconData=_iconData;
@@ -59,8 +60,8 @@
 @property(readonly, nonatomic) int parentID; // @synthesize parentID=_parentID;
 @property(retain, nonatomic) NSString *address; // @synthesize address=_url;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isBuiltinBookmark;
 - (_Bool)isFrequentlyVisitedSitesFolder;
 - (_Bool)isWebFilterWhiteListFolder;
 - (_Bool)isReadingListFolder;

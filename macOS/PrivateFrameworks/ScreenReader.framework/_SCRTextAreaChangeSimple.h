@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _length;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long length; // @synthesize length=_length;
 @property(retain, nonatomic) SCRTextMarker *marker; // @synthesize marker=_marker;
 @property(copy, nonatomic) NSString *value; // @synthesize value=_value;
 @property(nonatomic) long long editType; // @synthesize editType=_editType;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)containedByRange:(id)arg1 forUIElement:(id)arg2;
 - (void)addValueToOutputRequest:(id)arg1 typingEchoPreference:(long long)arg2;

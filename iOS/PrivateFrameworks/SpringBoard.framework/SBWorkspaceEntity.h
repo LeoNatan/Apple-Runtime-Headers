@@ -24,11 +24,11 @@
 }
 
 + (id)entity;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_mainDisplayPreferredInterfaceOrientation, setter=_setMainDisplayPreferredInterfaceOrientation:) long long _mainDisplayPreferredInterfaceOrientation; // @synthesize _mainDisplayPreferredInterfaceOrientation=__mainDisplayPreferredInterfaceOrientation;
 @property(readonly, nonatomic) SBDeactivationSettings *deactivationSettings; // @synthesize deactivationSettings=_deactivationSettings;
 @property(readonly, nonatomic) SBActivationSettings *activationSettings; // @synthesize activationSettings=_activationSettings;
 @property(nonatomic) long long layoutRole; // @synthesize layoutRole=_layoutRole;
-- (void).cxx_destruct;
 - (_Bool)hasLayoutAttributes:(unsigned long long)arg1;
 - (_Bool)supportsLayoutRole:(long long)arg1;
 @property(readonly, copy, nonatomic) CDUnknownBlockType entityGenerator;

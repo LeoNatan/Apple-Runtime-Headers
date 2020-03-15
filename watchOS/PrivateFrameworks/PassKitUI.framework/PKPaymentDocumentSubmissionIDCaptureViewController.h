@@ -30,6 +30,7 @@
 - (void)captureController:(id)arg1 showLoading:(_Bool)arg2;
 - (void)updateUIWithState:(int)arg1;
 - (void)cancel;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

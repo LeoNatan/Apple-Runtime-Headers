@@ -29,12 +29,12 @@
 + (id)textFeaturesFromString:(id)arg1 type:(unsigned long long)arg2 weight:(float)arg3 options:(unsigned long long)arg4;
 + (id)_stringToIndexFromTokens:(id)arg1;
 + (id)textFeaturesFromNode:(id)arg1 type:(unsigned long long)arg2 weight:(float)arg3 options:(unsigned long long)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long origin; // @synthesize origin=_origin;
 @property(readonly, nonatomic) float weight; // @synthesize weight=_weight;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *originalString; // @synthesize originalString=_originalString;
 @property(readonly, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (void)markAsStrippedOut;
 - (id)description;
 - (id)initWithString:(id)arg1 originalString:(id)arg2 type:(unsigned long long)arg3 weight:(float)arg4 origin:(unsigned long long)arg5;

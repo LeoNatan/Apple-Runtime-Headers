@@ -26,11 +26,11 @@
     SFDevice *_peerDevice;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)_sendQueuedMesssages;
 - (void)_sendCommand:(int)arg1 options:(id)arg2;
 - (void)sendCommand:(int)arg1 options:(id)arg2;

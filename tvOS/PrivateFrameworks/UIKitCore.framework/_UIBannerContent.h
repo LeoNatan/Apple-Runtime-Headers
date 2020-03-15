@@ -22,13 +22,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)bannerContentWithTitle:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *contentColor; // @synthesize contentColor=_contentColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

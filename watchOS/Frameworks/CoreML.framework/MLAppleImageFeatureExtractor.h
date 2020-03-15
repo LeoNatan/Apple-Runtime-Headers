@@ -20,8 +20,8 @@
 }
 
 + (id)loadModelFromSpecification:(struct _MLModelSpecification *)arg1 configuration:(id)arg2 error:(id *)arg3;
-@property(readonly) MLAppleImageFeatureExtractorParameters *parameters; // @synthesize parameters=_parameters;
 - (void).cxx_destruct;
+@property(readonly) MLAppleImageFeatureExtractorParameters *parameters; // @synthesize parameters=_parameters;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)computeScenePrintFeatures:(struct __CVBuffer *)arg1 handle:(id)arg2 useCPUOnly:(_Bool)arg3 error:(id *)arg4;
 - (id)featureValueFromScenePrint:(id)arg1 elementSize:(unsigned int)arg2;

@@ -18,9 +18,9 @@
     HFItem<HFServiceLikeItem> *_accessoryItem;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HFItem<HFServiceLikeItem> *accessoryItem; // @synthesize accessoryItem=_accessoryItem;
 @property(retain, nonatomic) HFAccessoryBuilder *accessoryBuilder; // @synthesize accessoryBuilder=_accessoryBuilder;
-- (void).cxx_destruct;
 - (id)namingComponentForHomeKitObject;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource;
 - (id)accessories;

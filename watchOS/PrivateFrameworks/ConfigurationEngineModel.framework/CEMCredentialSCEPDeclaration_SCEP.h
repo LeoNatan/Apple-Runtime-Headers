@@ -28,6 +28,7 @@
 + (id)buildRequiredOnlyWithURL:(id)arg1;
 + (id)buildWithURL:(id)arg1 withName:(id)arg2 withSubject:(id)arg3 withKeysize:(id)arg4 withKeyType:(id)arg5 withKeyUsage:(id)arg6 withCAFingerprint:(id)arg7 withRetries:(id)arg8 withRetryDelay:(id)arg9 withSubjectAltName:(id)arg10 withKeyIsExtractable:(id)arg11 withChallengeCredential:(id)arg12 withAllowAllAppsAccess:(id)arg13;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadAllowAllAppsAccess; // @synthesize payloadAllowAllAppsAccess=_payloadAllowAllAppsAccess;
 @property(copy, nonatomic) NSString *payloadChallengeCredential; // @synthesize payloadChallengeCredential=_payloadChallengeCredential;
 @property(copy, nonatomic) NSNumber *payloadKeyIsExtractable; // @synthesize payloadKeyIsExtractable=_payloadKeyIsExtractable;
@@ -41,7 +42,6 @@
 @property(copy, nonatomic) NSArray *payloadSubject; // @synthesize payloadSubject=_payloadSubject;
 @property(copy, nonatomic) NSString *payloadName; // @synthesize payloadName=_payloadName;
 @property(copy, nonatomic) NSString *payloadURL; // @synthesize payloadURL=_payloadURL;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (_Bool)loadPayload:(id)arg1 error:(id *)arg2;

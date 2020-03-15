@@ -62,6 +62,7 @@
 + (id)predicateForMessageWithInternalID:(long long)arg1;
 + (id)predicateForMessageWithObjectID:(id)arg1;
 + (id)predicateForMessageWithItemID:(id)arg1 mailboxPredicate:(id)arg2 mailboxTypeResolver:(id)arg3;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSUUID *documentID; // @synthesize documentID=_documentID;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress; // @synthesize senderAddress=_senderAddress;
@@ -103,7 +104,6 @@
 @property(readonly) ECSubject *subject;
 - (void)setDate:(id)arg1;
 @property(readonly) NSDate *date;
-- (void).cxx_destruct;
 - (id)requestRepresentationWithOptions:(id)arg1 delegate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)requestRepresentationWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setDisplayName:(id)arg1;

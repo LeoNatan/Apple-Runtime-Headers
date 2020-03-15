@@ -19,10 +19,10 @@
 + (id)defaultTransactionAuthorKeysToExclude;
 + (id)internalTransactionAuthorKeysToExclude;
 + (id)entityNamesToIncludeFromTrackingWithOptionProvider:(Class)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *transactionAuthorKeysToExclude; // @synthesize transactionAuthorKeysToExclude=_transactionAuthorKeysToExclude;
 @property(readonly, nonatomic) id <REMDaemonController> daemonController; // @synthesize daemonController=_daemonController;
 @property(readonly, nonatomic) id <REMChangeTrackingClientIdentifying> changeTrackingClientID; // @synthesize changeTrackingClientID=_changeTrackingClientID;
-- (void).cxx_destruct;
 - (id)changeSetByFilteringTransactionAuthorKeysToExcludeFromChangeSet:(id)arg1;
 - (void)_performChangeTrackingWithReason:(id)arg1 block:(CDUnknownBlockType)arg2 xpcErrorHandler:(CDUnknownBlockType)arg3;
 - (id)persistenceStoreIDForAccountID:(id)arg1 error:(id *)arg2;

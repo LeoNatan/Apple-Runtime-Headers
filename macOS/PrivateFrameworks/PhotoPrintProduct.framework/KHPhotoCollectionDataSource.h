@@ -14,8 +14,8 @@
 }
 
 + (id)dataSourceWithPhotoGroup:(id)arg1;
-@property(readonly, nonatomic) id <KHPhotoGroupProtocol> photoGroup; // @synthesize photoGroup=_photoGroup;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <KHPhotoGroupProtocol> photoGroup; // @synthesize photoGroup=_photoGroup;
 - (id)photoAtIndexPath:(id)arg1;
 - (long long)numberOfRowsInSection:(long long)arg1;
 - (long long)numberOfSections;

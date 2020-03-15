@@ -37,6 +37,7 @@
     id <NSObject> _actionRegistryFilledNotificationObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <NSObject> actionRegistryFilledNotificationObserver; // @synthesize actionRegistryFilledNotificationObserver=_actionRegistryFilledNotificationObserver;
 @property(retain, nonatomic) id <WFActionDrawerResultsControlling> actionDrawerResultsControllingDelegate; // @synthesize actionDrawerResultsControllingDelegate=_actionDrawerResultsControllingDelegate;
 @property(retain, nonatomic) WFDragController *currentDragController; // @synthesize currentDragController=_currentDragController;
@@ -53,7 +54,6 @@
 @property(nonatomic) __weak id <WFActionDrawerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) WFActionDrawerResultsController *actionDrawerResultsController; // @synthesize actionDrawerResultsController=_actionDrawerResultsController;
 @property(readonly, nonatomic) WFActionDrawerSearchResultsViewController *searchResultsViewController; // @synthesize searchResultsViewController=_searchResultsViewController;
-- (void).cxx_destruct;
 - (_Bool)moveToState:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
 - (void)suggestionsViewController:(id)arg1 didSelectCategoryForContentType:(id)arg2 title:(id)arg3;

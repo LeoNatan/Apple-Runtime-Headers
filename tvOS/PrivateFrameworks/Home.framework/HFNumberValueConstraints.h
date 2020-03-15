@@ -18,10 +18,10 @@
 }
 
 + (id)na_identity;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *stepValue; // @synthesize stepValue=_stepValue;
 @property(readonly, copy, nonatomic) NSNumber *maxValue; // @synthesize maxValue=_maxValue;
 @property(readonly, copy, nonatomic) NSNumber *minValue; // @synthesize minValue=_minValue;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

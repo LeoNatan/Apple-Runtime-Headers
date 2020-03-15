@@ -18,8 +18,8 @@
 + (_Bool)_performMigrationWithContext:(id)arg1;
 + (_Bool)performMigrationIfNeeded;
 + (void)registerMigration:(id)arg1;
-@property(readonly, nonatomic) NSMutableArray *allMigrations; // @synthesize allMigrations=_allMigrations;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSMutableArray *allMigrations; // @synthesize allMigrations=_allMigrations;
 - (void)_performMigrationsWithContext:(id)arg1;
 - (id)_init;
 - (id)init;

@@ -27,8 +27,8 @@
     id <PKAddPassesCardStackViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) id <PKAddPassesCardStackViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) id <PKAddPassesCardStackViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)_configureAddOrNextButtonItemAsPending:(_Bool)arg1;
 - (void)_configureNavigationItemTitle;
 - (void)_nextButtonPressedForAutomaticPresentation:(id)arg1;

@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *_contacts;
 }
 
-@property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (double)suggestedHeaderWidth;
 - (void)viewDidLoad;
 - (id)initWithContacts:(id)arg1;

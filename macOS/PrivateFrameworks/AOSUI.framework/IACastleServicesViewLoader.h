@@ -13,8 +13,8 @@
     IACastleServicesView *_servicesView;
 }
 
-@property(readonly) IACastleServicesView *servicesView; // @synthesize servicesView=_servicesView;
 - (void).cxx_destruct;
+@property(readonly) IACastleServicesView *servicesView; // @synthesize servicesView=_servicesView;
 
 @end
 

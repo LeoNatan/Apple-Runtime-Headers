@@ -16,8 +16,8 @@
     NSObject<NSURLSessionTaskDelegate> *_delegate;
 }
 
-@property(nonatomic) __weak NSObject<NSURLSessionTaskDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak NSObject<NSURLSessionTaskDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 

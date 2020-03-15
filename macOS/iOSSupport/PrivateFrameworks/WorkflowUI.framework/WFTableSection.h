@@ -25,6 +25,7 @@
 + (id)sectionWithStyle:(long long)arg1 representedObjects:(id)arg2 configurationBlock:(CDUnknownBlockType)arg3;
 + (id)sectionWithItems:(id)arg1;
 + (id)section;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
 @property(readonly, nonatomic) Class cellClass; // @synthesize cellClass=_cellClass;
 @property(readonly, nonatomic) long long cellStyle; // @synthesize cellStyle=_cellStyle;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) WFTableSectionTreeNode *node; // @synthesize node=_node;
 @property(retain, nonatomic) NSString *footerText; // @synthesize footerText=_footerText;
 @property(retain, nonatomic) NSString *headerText; // @synthesize headerText=_headerText;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;
 - (unsigned long long)currentIndex;

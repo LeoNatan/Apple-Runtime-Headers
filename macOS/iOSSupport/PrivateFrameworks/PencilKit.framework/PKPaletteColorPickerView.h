@@ -9,6 +9,7 @@
 #import <PencilKit/PKColorPickerDelegate-Protocol.h>
 #import <PencilKit/PKEdgeLocatable-Protocol.h>
 #import <PencilKit/PKPalettePopoverDismissing-Protocol.h>
+#import <PencilKit/PKPalettePopoverUpdating-Protocol.h>
 #import <PencilKit/PKPaletteQuickColorPicking-Protocol.h>
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
 #import <PencilKit/UICollectionViewDataSource-Protocol.h>
@@ -20,7 +21,7 @@
 @class NSArray, NSString, PKColorPicker, UICollectionView, UIColor, UILongPressGestureRecognizer;
 @protocol PKPalettePopoverPresenting><PKPaletteColorPickerViewDelegate;
 
-@interface PKPaletteColorPickerView : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, PKColorPickerDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate, PKEdgeLocatable, PKPaletteQuickColorPicking, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
+@interface PKPaletteColorPickerView : UIView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, PKColorPickerDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate, PKEdgeLocatable, PKPaletteQuickColorPicking, PKPalettePopoverUpdating, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
 {
     unsigned long long _edgeLocation;
     double _scalingFactor;
@@ -35,6 +36,7 @@
 }
 
 + (id)collectionViewFlowLayoutWithItemSize:(struct CGSize)arg1 minimumLineSpacing:(double)arg2 minimumInteritemSpacing:(double)arg3;
+- (void).cxx_destruct;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) NSArray *swatchColors; // @synthesize swatchColors=_swatchColors;
@@ -45,13 +47,13 @@
 @property(nonatomic) __weak id <PKPalettePopoverPresenting><PKPaletteColorPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
-- (void).cxx_destruct;
 - (id)traitCollectionWithCurrentInterfaceStyle;
 - (void)reloadColorsForCurrentColorPickerMode;
 - (void)toggleColorSelectionPopover;
 - (void)_reloadSwatchColorsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
+- (void)updatePopoverUI;
 - (id)_popoverPresentingSourceview;
 - (struct CGRect)_popoverPresentingSourceRect;
 - (void)_showColorSelectionPopover;

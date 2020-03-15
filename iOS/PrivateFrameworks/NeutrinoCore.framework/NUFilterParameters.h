@@ -14,9 +14,9 @@
     NSDictionary *_settings;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *settings; // @synthesize settings=_settings;
 @property(copy) NSDictionary *inputNodes; // @synthesize inputNodes=_inputNodes;
-- (void).cxx_destruct;
 - (id)description;
 - (id)init;
 

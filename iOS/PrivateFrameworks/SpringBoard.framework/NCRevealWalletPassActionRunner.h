@@ -18,10 +18,10 @@
     CDUnknownBlockType _pluginCompletionBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType pluginCompletionBlock; // @synthesize pluginCompletionBlock=_pluginCompletionBlock;
 @property(readonly, retain, nonatomic) SBSCardItem *cardItem; // @synthesize cardItem=_cardItem;
 @property(nonatomic) _Bool shouldForwardAction; // @synthesize shouldForwardAction=_shouldForwardAction;
-- (void).cxx_destruct;
 - (void)didDismissLockScreenPlugin:(id)arg1;
 - (void)willDismissLockScreenPlugin:(id)arg1;
 - (void)didPresentLockScreenPlugin:(id)arg1;

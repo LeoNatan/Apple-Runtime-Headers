@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_keyString;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *keyString; // @synthesize keyString=_keyString;
 @property(nonatomic) double lastSeen; // @synthesize lastSeen=_lastSeen;
 @property(nonatomic) long long count; // @synthesize count=_count;
-- (void).cxx_destruct;
 
 @end
 

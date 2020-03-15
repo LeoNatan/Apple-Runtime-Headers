@@ -14,8 +14,8 @@
 }
 
 + (id)convenienceFormatter;
-@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (id)stringForObjectValue:(id)arg1;
 - (long long)precipitationUnit;
 - (double)convertDistanceInMetric:(double)arg1 to:(long long)arg2;

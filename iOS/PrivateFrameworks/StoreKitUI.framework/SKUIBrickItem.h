@@ -18,13 +18,13 @@
     SKUILink *_link;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SKUILink *link; // @synthesize link=_link;
 @property(readonly, nonatomic) SKUIEditorialComponent *editorial; // @synthesize editorial=_editorial;
 @property(readonly, nonatomic) SKUICountdown *countdown; // @synthesize countdown=_countdown;
 @property(readonly, nonatomic) long long brickIdentifier; // @synthesize brickIdentifier=_brickIdentifier;
 @property(readonly, nonatomic) SKUIArtwork *artwork; // @synthesize artwork=_artwork;
 @property(readonly, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
-- (void).cxx_destruct;
 - (void)_setLinkInfoWithLinkDictionary:(id)arg1 context:(id)arg2;
 - (id)description;
 - (void)_setLinkItem:(id)arg1;

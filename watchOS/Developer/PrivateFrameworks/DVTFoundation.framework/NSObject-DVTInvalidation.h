@@ -62,7 +62,7 @@
 - (id)_dvt_observerTokensForKeyPath;
 - (void)dvt_removeSharedObserverForKeyPath:(id)arg1;
 - (id)dvt_sharedObserverForKeyPath:(id)arg1;
-- (void)_dvt_removeObserverFromSharedObserver:(id)arg1 withTrackingIndex:(unsigned int)arg2 fromKeyPath:(id)arg3;
+- (void)_dvt_removeObserverFromSharedObserver:(id)arg1 fromKeyPath:(id)arg2 trackingIndexProvider:(CDUnknownBlockType)arg3;
 - (id)_dvt_addSharedObserverForKeyPath:(id)arg1 observeInitial:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
 @end
 

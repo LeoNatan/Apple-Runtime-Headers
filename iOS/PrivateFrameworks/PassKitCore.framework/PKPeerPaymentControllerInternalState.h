@@ -21,6 +21,7 @@
     PKPeerPaymentRequestToken *requestToken;
     PKPeerPaymentQuote *quote;
     PKPeerPaymentPerformResponse *performQuoteResponse;
+    _Bool supportsPreserveCurrentBalance;
     PKPeerPaymentQuoteCertificatesResponse *quoteCertificatesResponse;
     NSString *accountName;
     NSString *accountNumber;

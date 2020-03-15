@@ -16,8 +16,8 @@
     SFSafariExtensionContext *_extensionContext;
 }
 
-@property(nonatomic) __weak SFSafariExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void).cxx_destruct;
+@property(nonatomic) __weak SFSafariExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)_connectChildView;
 - (void)invalidate;
 - (void)connectToContextWithSessionID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -23,13 +23,13 @@
 
 + (id)makeLogHandleWithCategory:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSHashTable *subscribers; // @synthesize subscribers=_subscribers;
 @property(nonatomic) int metricToken; // @synthesize metricToken=_metricToken;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) NSObject<OS_os_log> *managerLogHandle; // @synthesize managerLogHandle=_managerLogHandle;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *iVarQueue; // @synthesize iVarQueue=_iVarQueue;
 @property(retain) NSArray *pastPayloads; // @synthesize pastPayloads=_pastPayloads;
-- (void).cxx_destruct;
 - (void)registrationProcessed;
 - (void)_checkAndDeliverMetricReports;
 - (BOOL)_cachedPayloadAvailable;

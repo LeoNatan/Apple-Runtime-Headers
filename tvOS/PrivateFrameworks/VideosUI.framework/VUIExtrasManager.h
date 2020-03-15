@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reverseDismissal; // @synthesize reverseDismissal=_reverseDismissal;
 @property(nonatomic) _Bool presenting; // @synthesize presenting=_presenting;
 @property(retain, nonatomic) _TVProductTemplateZoomAnimator *dismissingAnimator; // @synthesize dismissingAnimator=_dismissingAnimator;
 @property(retain, nonatomic) _TVNavigationZoomAnimator *presentingAnimator; // @synthesize presentingAnimator=_presentingAnimator;
 @property(retain, nonatomic) VUIExtrasApplicationController *applicationController; // @synthesize applicationController=_applicationController;
 @property(copy, nonatomic) NSString *unrestrictedActionParams; // @synthesize unrestrictedActionParams=_unrestrictedActionParams;
-- (void).cxx_destruct;
 - (void)appController:(id)arg1 evaluateAppJavaScriptInContext:(id)arg2;
 - (void)_showAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)_presentExtrasApplicationController:(id)arg1 usingAppNavigationController:(id)arg2 withPreviousAppNavigationController:(id)arg3 presentImmediately:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;

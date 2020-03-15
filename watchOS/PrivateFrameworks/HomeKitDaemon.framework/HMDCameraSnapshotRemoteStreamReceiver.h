@@ -21,9 +21,9 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDCameraSnapshotIDSStreamReceiver *relayReceiver; // @synthesize relayReceiver=_relayReceiver;
 @property(readonly, nonatomic) __weak id <HMDCameraSnapshotRemoteStreamReceiverDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)relayReceiver:(id)arg1 didReceiveFile:(id)arg2;
 - (void)_callDidSaveImageDelegateWithError:(id)arg1;
 - (void)_callGettingImageDelegate:(id)arg1;

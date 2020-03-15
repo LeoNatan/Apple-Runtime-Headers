@@ -19,12 +19,12 @@
 }
 
 + (id)assetForURL:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) int photoEXIFOrientation; // @synthesize photoEXIFOrientation=_photoEXIFOrientation;
 @property(readonly, nonatomic) double photoTime; // @synthesize photoTime=_photoTime;
 @property(readonly, nonatomic) struct CGImage *photo; // @synthesize photo=_photo;
 @property(readonly, copy, nonatomic) AVAsset *videoAsset; // @synthesize videoAsset=_videoAsset;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasColorAdjustments;
 - (void)resetAVObjects;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 photoCMTime;

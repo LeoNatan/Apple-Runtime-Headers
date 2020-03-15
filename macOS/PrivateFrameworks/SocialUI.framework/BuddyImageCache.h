@@ -15,9 +15,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *abPersonIDToConsumeTag; // @synthesize abPersonIDToConsumeTag=_abPersonIDToConsumeTag;
 @property(readonly, nonatomic) NSMutableDictionary *abPersonIDToImageData; // @synthesize abPersonIDToImageData=_abPersonIDToImageData;
-- (void).cxx_destruct;
 - (void)_abChanged:(id)arg1;
 - (void)clearCacheForPerson:(id)arg1;
 - (id)blockingImageDataForPerson:(id)arg1;

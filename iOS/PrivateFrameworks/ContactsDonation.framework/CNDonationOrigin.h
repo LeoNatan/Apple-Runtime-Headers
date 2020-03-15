@@ -23,12 +23,12 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)originWithUpdatedDonationIdentifier:(id)arg1 fromOrigin:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, copy, nonatomic) NSDate *donationDate; // @synthesize donationDate=_donationDate;
 @property(readonly, copy, nonatomic) NSString *clusterIdentifier; // @synthesize clusterIdentifier=_clusterIdentifier;
 @property(readonly, copy, nonatomic) NSString *donationIdentifier; // @synthesize donationIdentifier=_donationIdentifier;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *propertyListRepresentation;
 - (id)initWithPropertyListRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -98,6 +98,7 @@
 
 + (id)_defaultTextColor;
 + (_Bool)_isCompatibilityTextView;
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UITextViewVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(readonly, nonatomic) NSTextStorage *textStorage; // @synthesize textStorage=_textStorage;
 @property(readonly, nonatomic) NSLayoutManager *layoutManager; // @synthesize layoutManager=_layoutManager;
@@ -110,7 +111,6 @@
 - (double)_multilineContextWidth;
 @property(nonatomic) __weak id <UITextPasteDelegate> pasteDelegate; // @synthesize pasteDelegate=_pasteDelegate;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-- (void).cxx_destruct;
 - (id)_getDelegateZoomView;
 - (void)droppingFinished;
 - (void)droppingStarted;
@@ -128,7 +128,8 @@
 @property(readonly, nonatomic) UIDragInteraction *textDragInteraction;
 - (_Bool)_allowHighlightForTextInteractableItem:(id)arg1;
 - (_Bool)_interactionPossibleWithAttachment:(id)arg1;
-- (id)_textInteractableItemAtPoint:(struct CGPoint)arg1;
+- (id)_textInteractableItemAtPoint:(struct CGPoint)arg1 precision:(unsigned long long)arg2;
+- (id)_anyTextItemConstrainedToLineAtPoint:(struct CGPoint)arg1;
 - (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
 - (void)startInteractionWithLinkAtPoint:(struct CGPoint)arg1;

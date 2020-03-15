@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (struct CGRect)_responderSelectionRectForWindow:(id)arg1;
 - (BOOL)_canChangeFirstResponder:(id)arg1 toResponder:(id)arg2;
 - (BOOL)canResignFirstResponder;
 - (BOOL)canBecomeFirstResponder;

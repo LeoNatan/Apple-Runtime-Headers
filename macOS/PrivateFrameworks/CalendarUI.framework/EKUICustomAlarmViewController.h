@@ -18,10 +18,10 @@
 }
 
 + (BOOL)popupForAlarmGadget:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) EKUICustomAlarmView *alarmView; // @synthesize alarmView=_alarmView;
 @property(retain) EKUIAlarmGadget *gadget; // @synthesize gadget=_gadget;
 @property(retain) IGPopupWindowController *popup; // @synthesize popup=_popup;
-- (void).cxx_destruct;
 - (void)cancelClicked;
 - (void)okClicked;
 - (void)loadView;

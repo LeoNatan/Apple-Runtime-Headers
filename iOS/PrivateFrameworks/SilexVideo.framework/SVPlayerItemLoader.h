@@ -24,6 +24,7 @@
     CDUnknownBlockType _cancellationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType cancellationBlock; // @synthesize cancellationBlock=_cancellationBlock;
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) AVPlayerItem *item; // @synthesize item=_item;
@@ -33,7 +34,6 @@
 @property(readonly, nonatomic) id <SVVideoMetadata> metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) id <SVURLAssetLoading> URLAssetLoader; // @synthesize URLAssetLoader=_URLAssetLoader;
 @property(readonly, nonatomic) id <SVPlayerItemFactory> playerItemFactory; // @synthesize playerItemFactory=_playerItemFactory;
-- (void).cxx_destruct;
 - (void)loadPlayerItemWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)onLoadingStateChange:(CDUnknownBlockType)arg1;
 - (void)load;

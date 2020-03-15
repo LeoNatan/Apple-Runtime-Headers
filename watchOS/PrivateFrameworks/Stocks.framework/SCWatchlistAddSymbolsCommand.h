@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, copy, nonatomic) NSArray *symbols; // @synthesize symbols=_symbols;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *symbols; // @synthesize symbols=_symbols;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)executeWithZone:(id)arg1;

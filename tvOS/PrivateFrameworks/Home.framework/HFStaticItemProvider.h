@@ -14,9 +14,9 @@
     NSSet *_staticItems;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasProvidedItems; // @synthesize hasProvidedItems=_hasProvidedItems;
 @property(retain, nonatomic) NSSet *staticItems; // @synthesize staticItems=_staticItems;
-- (void).cxx_destruct;
 - (id)items;
 - (id)reloadItems;
 - (id)copyWithZone:(struct _NSZone *)arg1;

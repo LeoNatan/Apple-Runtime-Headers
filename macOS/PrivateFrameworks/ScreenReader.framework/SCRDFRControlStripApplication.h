@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSArray *__applicationFunctionRows;
 }
 
-@property(retain, nonatomic) NSArray *_applicationFunctionRows; // @synthesize _applicationFunctionRows=__applicationFunctionRows;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *_applicationFunctionRows; // @synthesize _applicationFunctionRows=__applicationFunctionRows;
 - (BOOL)allowsFocusInto;
 - (void)handleBrailleRoutingEvent:(id)arg1 request:(id)arg2;
 - (BOOL)isDFRControlStripApplication;

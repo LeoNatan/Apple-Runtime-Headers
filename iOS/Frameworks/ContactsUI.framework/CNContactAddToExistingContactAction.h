@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
     CNContactPickerViewController *_contactPicker;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CNContactPickerViewController *contactPicker; // @synthesize contactPicker=_contactPicker;
 @property(retain, nonatomic) CNContact *chosenContact; // @synthesize chosenContact=_chosenContact;
-- (void).cxx_destruct;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;

@@ -16,11 +16,11 @@
     NSLock *_storeLock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSLock *storeLock; // @synthesize storeLock=_storeLock;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSMutableDictionary *store; // @synthesize store=_store;
 @property(retain, nonatomic) NSOperationQueue *diskAccessQueue; // @synthesize diskAccessQueue=_diskAccessQueue;
-- (void).cxx_destruct;
 - (id)callFunction:(id)arg1 withArguments:(id)arg2;
 - (void)_readStoreFromDisk;
 - (void)_writeStoreToDisk;

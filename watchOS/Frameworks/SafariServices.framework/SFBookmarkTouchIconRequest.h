@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WebUI/WBSTouchIconRequest.h>
+#import <SafariSharedUI/WBSTouchIconRequest.h>
 
 @class WebBookmark;
 
@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)requestWithBookmark:(id)arg1;
 + (id)requestWithBookmark:(id)arg1 iconGenerationEnabled:(_Bool)arg2;
-@property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (id)uniqueIdentifier;
 - (id)initWithBookmark:(id)arg1 iconGenerationEnabled:(_Bool)arg2;
 - (id)initWithBookmark:(id)arg1;

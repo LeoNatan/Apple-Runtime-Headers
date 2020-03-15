@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_errorsDict;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int byteCount; // @synthesize byteCount=_byteCount;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *errors;
 - (void)addErrorWithDomain:(id)arg1 code:(long long)arg2;
 - (_Bool)wouldWrapWithByteCount:(unsigned int)arg1;

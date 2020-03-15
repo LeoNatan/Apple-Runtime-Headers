@@ -19,13 +19,13 @@
     PUICClientSideAnimation *_animation;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isComplete) _Bool complete; // @synthesize complete=_complete;
 @property(retain, nonatomic) PUICClientSideAnimation *animation; // @synthesize animation=_animation;
 @property(nonatomic) _Bool firstAnimationComplete; // @synthesize firstAnimationComplete=_firstAnimationComplete;
 @property(nonatomic) float currentZoom; // @synthesize currentZoom=_currentZoom;
 @property(nonatomic) float speed; // @synthesize speed=_speed;
 @property(nonatomic) __weak id <CSLBuddyToClockZoomSequencerAnimationDelegate> animationDelegate; // @synthesize animationDelegate=_animationDelegate;
-- (void).cxx_destruct;
 - (float)zoom;
 - (void)_performBuddyToMazdaAnimationWithProgress:(float)arg1;
 - (void)_performMazdaToClockAnimationWithProgress:(float)arg1;

@@ -22,8 +22,8 @@
 + (void)configureSlider:(id)arg1 thumbView:(id)arg2 loadedTrackView:(id)arg3;
 + (void)applySecondaryGlyphTintToView:(id)arg1;
 + (void)applyPrimaryGlyphTintToView:(id)arg1;
-@property(nonatomic) __weak UIImageView *currentThumbView; // @synthesize currentThumbView=_currentThumbView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak UIImageView *currentThumbView; // @synthesize currentThumbView=_currentThumbView;
 - (id)createThumbView;
 - (struct CGRect)trackRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3;

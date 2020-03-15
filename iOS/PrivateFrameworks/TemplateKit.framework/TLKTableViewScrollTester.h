@@ -19,6 +19,7 @@
     double _startTime;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool finishedFirstScroll; // @synthesize finishedFirstScroll=_finishedFirstScroll;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(nonatomic) _Bool directionUp; // @synthesize directionUp=_directionUp;
@@ -26,7 +27,6 @@
 @property(copy, nonatomic) CDUnknownBlockType firstScroll; // @synthesize firstScroll=_firstScroll;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) double scrollTime; // @synthesize scrollTime=_scrollTime;
-- (void).cxx_destruct;
 - (void)fire:(id)arg1;
 - (void)performScrollTestOnTableView:(id)arg1 firstScroll:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)performScrollTestOnTableView:(id)arg1 completion:(CDUnknownBlockType)arg2;

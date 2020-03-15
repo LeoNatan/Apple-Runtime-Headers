@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *ipv6Address; // @synthesize ipv6Address=_ipv6Address;
 @property(readonly, nonatomic) NSArray *ipv4Address; // @synthesize ipv4Address=_ipv4Address;
 @property(readonly, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initResponseForHostname:(id)arg1 ipv4Address:(id)arg2 ipv6Address:(id)arg3;

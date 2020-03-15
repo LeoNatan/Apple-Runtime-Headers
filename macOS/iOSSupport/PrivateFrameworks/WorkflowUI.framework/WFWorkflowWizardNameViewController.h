@@ -21,12 +21,12 @@
     WFIconComposeViewController *_iconComposeViewController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak WFIconComposeViewController *iconComposeViewController; // @synthesize iconComposeViewController=_iconComposeViewController;
 @property(retain, nonatomic) NSString *updatedName; // @synthesize updatedName=_updatedName;
 @property(retain, nonatomic) WFWorkflowWizardNameConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFWorkflowWizardNameViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)dequeueNameSuggestionCellAtIndexPath:(id)arg1;
 - (id)dequeueNameCellAtIndexPath:(id)arg1;
 - (void)updateNameCell:(id)arg1;

@@ -14,9 +14,9 @@
     NSString *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy) NSString *countryCode; // @synthesize countryCode=_countryCode;
-- (void).cxx_destruct;
 - (id)description;
 - (id)_initWithIdentifier:(id)arg1 countryCode:(id)arg2;
 

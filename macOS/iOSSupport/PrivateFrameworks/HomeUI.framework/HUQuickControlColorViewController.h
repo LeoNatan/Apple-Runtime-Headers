@@ -19,11 +19,11 @@
 }
 
 + (Class)controlItemClass;
+- (void).cxx_destruct;
 @property(nonatomic) __weak HUQuickControlColorViewController *presentingColorViewController; // @synthesize presentingColorViewController=_presentingColorViewController;
 @property(retain, nonatomic) HUQuickControlColorViewController *colorViewController; // @synthesize colorViewController=_colorViewController;
 @property(retain, nonatomic) NSIndexPath *selectedColorIndexPath; // @synthesize selectedColorIndexPath=_selectedColorIndexPath;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
-- (void).cxx_destruct;
 - (struct CGSize)preferredContentSize;
 - (void)quickControlItemUpdater:(id)arg1 didUpdateResultsForControlItems:(id)arg2;
 - (void)doneButtonTapped;

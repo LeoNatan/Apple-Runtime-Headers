@@ -18,11 +18,11 @@
 
 + (id)imageWithSize:(struct CGSize)arg1 format:(id)arg2 actions:(CDUnknownBlockType)arg3;
 + (Class)_concreteContentViewClass;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *circularImage; // @synthesize circularImage=_circularImage;
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSPersonNameComponents *personNameComponents; // @synthesize personNameComponents=_personNameComponents;
-- (void).cxx_destruct;
 - (id)_defaultFillColor;
 - (id)_placeholderImage;
 - (void)_updateFocusSizeIncrease;

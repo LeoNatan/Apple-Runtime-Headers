@@ -16,8 +16,8 @@
 }
 
 + (_Bool)mustBeAvailableForDisplay;
-@property(nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
+@property(nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void)refreshAvailability;
 - (_Bool)workflowEnvironmentIsValid;
 

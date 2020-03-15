@@ -34,10 +34,10 @@
 + (id)sharedSystemScreenContext;
 + (id)sharedSystemAudioContext;
 + (id)sharedAudioPresentationContext;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVOutputContext *avOutputContext; // @synthesize avOutputContext=_avOutputContext;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (void)_scheduleOutputContextDevicesDidChangeNotification;
 - (void)_scheduleOutputContextDeviceDidChangeNotification;
 - (void)_reloadOutputDevicesForInitialLoad:(_Bool)arg1;

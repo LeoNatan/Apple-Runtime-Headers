@@ -60,6 +60,7 @@
 
 + (BOOL)_shouldApplyVisualEffectsToPresentingView;
 + (id)_backgroundEffectForTraitCollection:(id)arg1 interactive:(BOOL)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIInteractionProgress *interactionProgressForPresentation; // @synthesize interactionProgressForPresentation=_interactionProgressForPresentation;
 @property(nonatomic) __weak id <UIViewControllerPreviewing> previewingContext; // @synthesize previewingContext=_previewingContext;
 @property(nonatomic) __weak UIPreviewInteractionController *previewInteractionController; // @synthesize previewInteractionController=_previewInteractionController;
@@ -100,7 +101,6 @@
 @property(nonatomic) BOOL _sourceViewSnapshotAndScaleTransformSuppressed; // @synthesize _sourceViewSnapshotAndScaleTransformSuppressed;
 @property(copy, nonatomic) CDUnknownBlockType presentationPhaseCompletionBlock; // @synthesize presentationPhaseCompletionBlock=_presentationPhaseCompletionBlock;
 @property(retain, nonatomic) UIGestureRecognizer *panningGestureRecognizer; // @synthesize panningGestureRecognizer=_panningGestureRecognizer;
-- (void).cxx_destruct;
 - (BOOL)_shouldSavePresentedViewControllerForStateRestoration;
 @property(readonly, nonatomic) UIView *_revealContainerView;
 - (BOOL)previewActionSheetCanSelectItem:(id)arg1;

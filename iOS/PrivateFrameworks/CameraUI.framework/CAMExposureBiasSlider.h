@@ -22,6 +22,7 @@
     double __lastInteractionTime;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double _lastInteractionTime; // @synthesize _lastInteractionTime=__lastInteractionTime;
 @property(readonly, retain, nonatomic) UIView *_maxTrackMaskView; // @synthesize _maxTrackMaskView=__maxTrackMaskView;
 @property(readonly, retain, nonatomic) UIView *_minTrackMaskView; // @synthesize _minTrackMaskView=__minTrackMaskView;
@@ -32,7 +33,6 @@
 @property(nonatomic) float exposureBiasValue; // @synthesize exposureBiasValue=_exposureBiasValue;
 @property(nonatomic) float exposureBiasMax; // @synthesize exposureBiasMax=_exposureBiasMax;
 @property(nonatomic) float exposureBiasMin; // @synthesize exposureBiasMin=_exposureBiasMin;
-- (void).cxx_destruct;
 - (double)_trackAlpha;
 - (void)_animateTrackAlpha:(double)arg1 withDuration:(double)arg2;
 - (void)_dimTrackForInactivity;

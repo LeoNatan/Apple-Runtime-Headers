@@ -51,9 +51,9 @@
 + (void)flush;
 + (id)temporaryBuffers;
 + (id)temporaryBufferFactoryForSize:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long maximumSize; // @synthesize maximumSize=_maximumSize;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)flush;
 - (id)statistics;
 - (void)recylePurgeableData:(id)arg1;

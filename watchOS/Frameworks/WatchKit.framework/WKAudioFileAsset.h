@@ -20,13 +20,13 @@
 
 + (id)assetWithURL:(id)arg1 title:(id)arg2 albumTitle:(id)arg3 artist:(id)arg4;
 + (id)assetWithURL:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) NSString *artist; // @synthesize artist=_artist;
 @property(readonly, nonatomic) NSString *albumTitle; // @synthesize albumTitle=_albumTitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)_initWithURL:(id)arg1 title:(id)arg2 albumTitle:(id)arg3 artist:(id)arg4;
 - (id)init;

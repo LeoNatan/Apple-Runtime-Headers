@@ -19,9 +19,9 @@
     RUIStyle *_customRUIStyle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RUIStyle *customRUIStyle; // @synthesize customRUIStyle=_customRUIStyle;
 @property(retain, nonatomic) UIViewController *presenter; // @synthesize presenter=_presenter;
-- (void).cxx_destruct;
 - (void)FACircleRemoteUIDelegate:(id)arg1 completedWithSuccess:(_Bool)arg2 error:(id)arg3;
 - (void)loadRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_serverHookHandlerWithRemoteUIController:(id)arg1;

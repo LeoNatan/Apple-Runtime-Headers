@@ -24,9 +24,12 @@
     NSNumber *_calDataVersion;
     NSNumber *_moduleID;
     NSNumber *_modemInitVersion;
+    NSString *_extraBytes;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(copy) NSString *extraBytes; // @synthesize extraBytes=_extraBytes;
 @property(copy) NSNumber *modemInitVersion; // @synthesize modemInitVersion=_modemInitVersion;
 @property(copy) NSNumber *moduleID; // @synthesize moduleID=_moduleID;
 @property(copy) NSNumber *calDataVersion; // @synthesize calDataVersion=_calDataVersion;
@@ -38,7 +41,6 @@
 @property(readonly, nonatomic) unsigned char hsiVersionMinor; // @synthesize hsiVersionMinor=_hsiVersionMinor;
 @property(readonly, nonatomic) unsigned char hsiVersionMajor; // @synthesize hsiVersionMajor=_hsiVersionMajor;
 @property(readonly, nonatomic) NSString *roseFirmwareVersion; // @synthesize roseFirmwareVersion=_roseFirmwareVersion;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

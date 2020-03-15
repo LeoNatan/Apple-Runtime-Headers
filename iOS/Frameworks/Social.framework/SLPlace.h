@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property double distance; // @synthesize distance=_distance;
 @property double longitude; // @synthesize longitude=_longitude;
 @property double latitude; // @synthesize latitude=_latitude;
@@ -30,7 +31,6 @@
 @property(retain) NSURL *pictureURL; // @synthesize pictureURL=_pictureURL;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

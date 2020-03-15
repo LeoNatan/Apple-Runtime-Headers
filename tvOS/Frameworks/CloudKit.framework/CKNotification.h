@@ -37,6 +37,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)notificationFromRemoteNotificationDictionary:(id)arg1;
 + (id)_realNotificationFromRemoteNotificationDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CKRecordID *subscriptionOwnerUserRecordID; // @synthesize subscriptionOwnerUserRecordID=_subscriptionOwnerUserRecordID;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(copy, nonatomic) NSString *subscriptionID; // @synthesize subscriptionID=_subscriptionID;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
 @property(copy, nonatomic) CKNotificationID *notificationID; // @synthesize notificationID=_notificationID;
 @property(nonatomic) long long notificationType; // @synthesize notificationType=_notificationType;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isRead;

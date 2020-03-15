@@ -23,6 +23,7 @@
     NSDate *_lastAnalyzeInputDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastAnalyzeInputDate; // @synthesize lastAnalyzeInputDate=_lastAnalyzeInputDate;
 @property(retain, nonatomic) NSMutableArray *environmentCandidates; // @synthesize environmentCandidates=_environmentCandidates;
 @property(nonatomic) int shuangpinType; // @synthesize shuangpinType=_shuangpinType;
@@ -34,7 +35,6 @@
 @property(nonatomic) unsigned long long candidateInternalIndex; // @synthesize candidateInternalIndex=_candidateInternalIndex;
 @property(nonatomic) unsigned long long candidateIndex; // @synthesize candidateIndex=_candidateIndex;
 @property(copy, nonatomic) NSString *appContext; // @synthesize appContext=_appContext;
-- (void).cxx_destruct;
 - (void *)createMecabraCandidateFromString:(id)arg1;
 - (void)setKeyboardLayout:(id)arg1;
 - (void)setGeometryModel:(void *)arg1 modelData:(struct __CFArray *)arg2;

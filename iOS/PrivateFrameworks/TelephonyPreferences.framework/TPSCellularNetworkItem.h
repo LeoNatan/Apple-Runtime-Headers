@@ -15,10 +15,10 @@
     NSString *_localizedName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqualToCellularNetworkItem:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

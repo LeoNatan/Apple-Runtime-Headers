@@ -37,6 +37,7 @@
 + (id)layoutAttributesForDecorationViewOfKind:(id)arg1 withIndexPath:(id)arg2;
 + (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 withIndexPath:(id)arg2;
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_defaultLayoutMargins, setter=_setDefaultLayoutMargins:) struct UIEdgeInsets defaultLayoutMargins; // @synthesize defaultLayoutMargins=_defaultLayoutMargins;
 @property(nonatomic, getter=_maskedCorners, setter=_setMaskedCorners:) unsigned int maskedCorners; // @synthesize maskedCorners=_maskedCorners;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
@@ -45,7 +46,6 @@
 @property(nonatomic) struct CATransform3D transform3D; // @synthesize transform3D=_transform;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) struct CGPoint center; // @synthesize center=_center;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *representedElementKind;
 @property(readonly, nonatomic) unsigned int representedElementCategory;
 - (_Bool)_isSupplementaryView;

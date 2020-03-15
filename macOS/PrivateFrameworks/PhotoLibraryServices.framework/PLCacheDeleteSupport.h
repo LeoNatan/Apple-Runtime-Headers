@@ -21,9 +21,10 @@
 + (id)purgeableStateDescriptionForFile:(id)arg1;
 + (BOOL)isPurgeableFile:(id)arg1 outIsPhotoType:(char *)arg2 outUrgencyLevel:(long long *)arg3;
 + (BOOL)clearPurgeableFlagsForAllResourcesInPhotoLibraryURL:(id)arg1;
++ (BOOL)markPurgeableForFileAtURL:(id)arg1 withUrgency:(long long)arg2 outInode:(unsigned long long *)arg3;
 + (void)registerNullHandler;
-@property(copy, nonatomic) NSDate *exitDeleteTime; // @synthesize exitDeleteTime=_exitDeleteTime;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSDate *exitDeleteTime; // @synthesize exitDeleteTime=_exitDeleteTime;
 - (void)_markAsNotLocallyAvailableForResourcesWithFileIDsToPath:(id)arg1;
 - (void)_rescanResourcesFromFileSystem;
 - (BOOL)_isFilePurgedForFileID:(id)arg1 purgedPath:(id)arg2;
@@ -32,6 +33,8 @@
 - (BOOL)clearPurgeableFlagsForAllResources;
 - (BOOL)clearPurgeableFlagForResource:(id)arg1;
 - (BOOL)markResourceAsPurgeable:(id)arg1 withUrgency:(long long)arg2;
+- (void)dealloc;
+- (void)invalidate;
 - (id)initWithPhotoLibrary:(id)arg1 cplStatus:(id)arg2;
 
 @end

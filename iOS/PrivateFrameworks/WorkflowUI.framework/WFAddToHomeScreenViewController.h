@@ -23,12 +23,12 @@
     WFWorkflowWizardNameCell *_editorCell;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWorkflowWizardNameCell *editorCell; // @synthesize editorCell=_editorCell;
 @property(retain, nonatomic) WFAddToHomeIconPreviewCell *previewCell; // @synthesize previewCell=_previewCell;
 @property(retain, nonatomic) WFHomeScreenIcon *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(nonatomic) __weak id <WFAddToHomeScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
 - (void)didTapAdd;
 - (void)imagePickerControllerDidCancel:(id)arg1;

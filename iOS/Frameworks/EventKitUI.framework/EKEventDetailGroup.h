@@ -15,10 +15,10 @@
     NSString *_headerTitle;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *headerTitle; // @synthesize headerTitle=_headerTitle;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (void)updateCellLayoutsForRowCountIfNeededUsingWidth:(double)arg1;
 - (id)description;
 - (_Bool)hasSubitemForIndexPathRow:(unsigned long long)arg1;

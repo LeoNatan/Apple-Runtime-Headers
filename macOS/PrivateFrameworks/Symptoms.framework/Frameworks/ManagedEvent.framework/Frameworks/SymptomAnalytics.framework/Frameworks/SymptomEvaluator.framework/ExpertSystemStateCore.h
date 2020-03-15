@@ -21,6 +21,7 @@
     ExpertSystemStateCore *_previousState;
 }
 
+- (void).cxx_destruct;
 @property(retain) ExpertSystemStateCore *previousState; // @synthesize previousState=_previousState;
 @property int loopTokens; // @synthesize loopTokens=_loopTokens;
 @property(copy, nonatomic) CDUnknownBlockType exitAction; // @synthesize exitAction=_exitAction;
@@ -30,7 +31,6 @@
 @property(readonly) NSDictionary *entryPreds; // @synthesize entryPreds=_entryPreds;
 @property(readonly) unsigned long long rank; // @synthesize rank=_rank;
 @property(readonly) NSString *label; // @synthesize label=_label;
-- (void).cxx_destruct;
 - (id)initStateWithLabel:(id)arg1 rank:(unsigned long long)arg2 entryPreds:(id)arg3;
 
 @end

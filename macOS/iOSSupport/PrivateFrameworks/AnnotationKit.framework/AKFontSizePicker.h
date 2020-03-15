@@ -24,6 +24,7 @@
     NSArray *_sizeListValues;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *sizeListValues; // @synthesize sizeListValues=_sizeListValues;
 @property(retain, nonatomic) UICollectionView *sizeList; // @synthesize sizeList=_sizeList;
 @property(retain, nonatomic) UISlider *slider; // @synthesize slider=_slider;
@@ -33,7 +34,6 @@
 @property(copy, nonatomic) CDUnknownBlockType didEndTrackingUpdates; // @synthesize didEndTrackingUpdates=_didEndTrackingUpdates;
 @property(copy, nonatomic) CDUnknownBlockType willBeginTrackingUpdates; // @synthesize willBeginTrackingUpdates=_willBeginTrackingUpdates;
 @property(nonatomic) double value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;

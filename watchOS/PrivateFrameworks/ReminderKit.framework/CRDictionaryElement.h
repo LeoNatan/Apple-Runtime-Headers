@@ -16,9 +16,9 @@
 }
 
 + (id)temporaryElementWithValue:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CRVectorTimestamp *timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) id <CRDataType> value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)description;
 - (void)mergeWith:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

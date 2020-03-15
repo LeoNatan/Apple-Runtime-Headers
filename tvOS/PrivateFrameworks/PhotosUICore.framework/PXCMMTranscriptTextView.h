@@ -17,9 +17,9 @@
     NSString *_secondaryText;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(copy, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
-- (void).cxx_destruct;
 - (void)_updateSecondaryLabel;
 - (void)_updatePrimaryLabel;
 - (struct CGSize)_performLayoutInSize:(struct CGSize)arg1 minimizingSize:(_Bool)arg2 updateSubviewFrames:(_Bool)arg3;

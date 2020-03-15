@@ -20,6 +20,7 @@
     NSDictionary *_footerAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *footerAttributes; // @synthesize footerAttributes=_footerAttributes;
 @property(retain, nonatomic) NSDictionary *headerAttributes; // @synthesize headerAttributes=_headerAttributes;
 @property(retain, nonatomic) NSDictionary *itemAttributes; // @synthesize itemAttributes=_itemAttributes;
@@ -28,7 +29,6 @@
 @property(nonatomic) double extraSectionHeaderToCellSpace; // @synthesize extraSectionHeaderToCellSpace=_extraSectionHeaderToCellSpace;
 @property(nonatomic) long long autoWidthColumns; // @synthesize autoWidthColumns=_autoWidthColumns;
 @property(nonatomic) BOOL centersItemsInExcessSpace; // @synthesize centersItemsInExcessSpace=_centersItemsInExcessSpace;
-- (void).cxx_destruct;
 - (long long)lastValidSection;
 - (struct CGSize)collectionViewContentSize;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;

@@ -25,13 +25,13 @@
 + (id)RGBToYIQKernel;
 + (id)colorBalanceKernels;
 + (id)customAttributes;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *q; // @synthesize q=_q;
 @property(retain, nonatomic) NSNumber *i; // @synthesize i=_i;
 @property(retain, nonatomic) NSNumber *y; // @synthesize y=_y;
 @property(retain, nonatomic) NSNumber *warmth; // @synthesize warmth=_warmth;
 @property(retain, nonatomic) NSNumber *strength; // @synthesize strength=_strength;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage=_inputImage;
-- (void).cxx_destruct;
 - (id)outputImage;
 - (_Bool)isDefaultWarmth:(double)arg1;
 - (id)applyOutputConversion:(id)arg1;

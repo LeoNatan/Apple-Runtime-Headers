@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)isEnabledByDefault;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMapTable *cellsAnimatingCancel; // @synthesize cellsAnimatingCancel=_cellsAnimatingCancel;
 @property(retain, nonatomic) NSMutableOrderedSet *tentativeIndexPaths; // @synthesize tentativeIndexPaths=_tentativeIndexPaths;
 @property(retain, nonatomic) NSIndexPath *tentativeInitiatingIndexPath; // @synthesize tentativeInitiatingIndexPath=_tentativeInitiatingIndexPath;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <UIDragSession> dragSession; // @synthesize dragSession=_dragSession;
 @property(nonatomic) BOOL forceEnabledForReordering; // @synthesize forceEnabledForReordering=_forceEnabledForReordering;
 @property(nonatomic) long long clientEnabledState; // @synthesize clientEnabledState=_clientEnabledState;
-- (void).cxx_destruct;
 - (BOOL)_dragInteraction:(id)arg1 sessionSupportsSystemDrag:(id)arg2;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForAddingToSession:(id)arg2 withTouchAtPoint:(struct CGPoint)arg3;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;

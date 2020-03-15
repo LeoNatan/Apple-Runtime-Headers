@@ -22,13 +22,13 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sampleTypeChangeWithSampleType:(id)arg1 dateInterval:(id)arg2 samplesWereDeleted:(_Bool)arg3 hasUnfrozenSeries:(_Bool)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int queryStrategy; // @synthesize queryStrategy=_queryStrategy;
 @property(readonly, nonatomic) double endTime; // @synthesize endTime=_endTime;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) _Bool hasUnfrozenSeries; // @synthesize hasUnfrozenSeries=_hasUnfrozenSeries;
 @property(readonly, nonatomic) _Bool samplesWereDeleted; // @synthesize samplesWereDeleted=_samplesWereDeleted;
 @property(readonly, copy, nonatomic) HKSampleType *sampleType; // @synthesize sampleType=_sampleType;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

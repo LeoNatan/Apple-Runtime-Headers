@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (id)defaultDeciderForEvent:(id)arg1;
 + (id)defaultDeciderForCurrentEvent;
 + (id)defaultDecider;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType shouldNavigateToFavoriteInResponseToKeyEventDecider; // @synthesize shouldNavigateToFavoriteInResponseToKeyEventDecider=_shouldNavigateToFavoriteInResponseToKeyEventDecider;
 @property(nonatomic) unsigned int navigationType; // @synthesize navigationType=_navigationType;
 @property(nonatomic) BOOL newTabsAndWindowsOpenInFront; // @synthesize newTabsAndWindowsOpenInFront=_newTabsAndWindowsOpenInFront;
@@ -38,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long eventModifierFlags; // @synthesize eventModifierFlags=_eventModifierFlags;
 @property(nonatomic) unsigned long long eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSEvent *event; // @synthesize event=_event;
-- (void).cxx_destruct;
 - (long long)_decidePolicyForNavigationEvent;
 - (long long)_decidePolicyForCreatingWindowOrTab;
 - (long long)_decidePolicyForStandardEvent;

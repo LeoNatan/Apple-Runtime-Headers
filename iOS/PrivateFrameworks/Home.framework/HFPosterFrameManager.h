@@ -20,13 +20,13 @@
 
 + (id)clipIdentifierStringFromDate:(id)arg1;
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *inProgressOperations; // @synthesize inProgressOperations=_inProgressOperations;
 @property(retain, nonatomic) NSMutableDictionary *generationObservers; // @synthesize generationObservers=_generationObservers;
 @property(retain, nonatomic) NSMutableDictionary *posterFrameObservers; // @synthesize posterFrameObservers=_posterFrameObservers;
 @property(retain, nonatomic) HFPosterFrameImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) NSOperationQueue *posterFrameQueue; // @synthesize posterFrameQueue=_posterFrameQueue;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)cacheDemoPosterFramesForAsset:(id)arg1 forClip:(id)arg2;
 - (void)_addPosterFrameImage:(id)arg1 forClip:(id)arg2 withOffset:(double)arg3;

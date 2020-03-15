@@ -4,10 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class ABCNContact, ABCardViewStyle, NSArray, NSDictionary, NSString;
+@class ABCardViewStyle, CNContact, CNContainer, NSArray, NSDictionary, NSString;
 
 @protocol AsyncABPersonViewProtocol
 - (void)setPropertyKeysToDisplay:(NSArray *)arg1 withCompletionHandler:(void (^)(void))arg2;
+- (void)setParentContainer:(CNContainer *)arg1 withCompletionHandler:(void (^)(void))arg2;
+- (void)setAuthorizedMode:(unsigned long long)arg1 withCompletionHandler:(void (^)(void))arg2;
+- (void)setMode:(unsigned long long)arg1 withCompletionHandler:(void (^)(void))arg2;
 - (void)sharingItemsListenerEndpointWithCompletionHandler:(void (^)(NSXPCListenerEndpoint *))arg1;
 - (void)profilePhotoImageWithCompletionHandler:(void (^)(NSImage *))arg1;
 - (void)profilePhotoScreenRectWithCompletionHandler:(void (^)(struct CGRect))arg1;
@@ -27,8 +30,8 @@
 - (void)_setStyle:(ABCardViewStyle *)arg1 withCompletionHandler:(void (^)(void))arg2;
 - (void)set_quicklook_fetchAsynchronously:(BOOL)arg1 withCompletionHandler:(void (^)(void))arg2;
 - (void)_quicklook_fetchAsynchronouslyWithCompletionHandler:(void (^)(BOOL))arg1;
-- (void)_setContact:(ABCNContact *)arg1 shouldShowLinkedPeople:(BOOL)arg2 withCompletionHandler:(void (^)(void))arg3;
 - (void)refreshViewWithCompletionHandler:(void (^)(void))arg1;
+- (void)setShouldSave:(BOOL)arg1 withCompletionHandler:(void (^)(void))arg2;
 - (void)commitEditingWithCompletionHandler:(void (^)(void))arg1;
 - (void)setHighlighted:(BOOL)arg1 forProperty:(NSString *)arg2 identifier:(NSString *)arg3 withCompletionHandler:(void (^)(void))arg4;
 - (void)imageFrameWithCompletionHandler:(void (^)(struct CGRect))arg1;
@@ -46,8 +49,10 @@
 - (void)drawsBackgroundWithCompletionHandler:(void (^)(BOOL))arg1;
 - (void)setShouldShowLinkedPeople:(BOOL)arg1 withCompletionHandler:(void (^)(void))arg2;
 - (void)shouldShowLinkedPeopleWithCompletionHandler:(void (^)(BOOL))arg1;
-- (void)_setContact:(ABCNContact *)arg1 withCompletionHandler:(void (^)(void))arg2;
-- (void)_contactWithCompletionHandler:(void (^)(ABCNContact *))arg1;
+- (void)setContact:(CNContact *)arg1 shouldShowLinkedContacts:(BOOL)arg2 shouldShowSuggestedFields:(BOOL)arg3 withCompletionHandler:(void (^)(void))arg4;
+- (void)setContact:(CNContact *)arg1 shouldShowLinkedContacts:(BOOL)arg2 withCompletionHandler:(void (^)(void))arg3;
+- (void)setContact:(CNContact *)arg1 withCompletionHandler:(void (^)(void))arg2;
+- (void)contactWithCompletionHandler:(void (^)(CNContact *))arg1;
 - (void)setEditing:(BOOL)arg1 withCompletionHandler:(void (^)(void))arg2;
 - (void)editingWithCompletionHandler:(void (^)(BOOL))arg1;
 @end

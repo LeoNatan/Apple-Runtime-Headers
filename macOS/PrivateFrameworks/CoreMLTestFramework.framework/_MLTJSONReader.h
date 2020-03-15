@@ -37,6 +37,7 @@
 + (id)modelUpdateTestConfigurationFromFile:(id)arg1 error:(id *)arg2;
 + (id)readConfigurationFromFile:(id)arg1 forTest:(id)arg2 error:(id *)arg3;
 + (id)readJSONFile:(id)arg1 error:(id *)arg2;
+- (void).cxx_destruct;
 @property(retain) NSString *modelArchitecture; // @synthesize modelArchitecture=_modelArchitecture;
 @property(retain) NSDictionary *gradientTestData; // @synthesize gradientTestData=_gradientTestData;
 @property(retain) NSArray *validationData; // @synthesize validationData=_validationData;
@@ -58,7 +59,6 @@
 @property(nonatomic) unsigned long long skippedSamples; // @synthesize skippedSamples=_skippedSamples;
 @property(copy, nonatomic) NSArray *featureNames; // @synthesize featureNames=_featureNames;
 @property(copy, nonatomic) NSString *datafilePath; // @synthesize datafilePath=_datafilePath;
-- (void).cxx_destruct;
 - (id)trainingDataSampleForModelUpdateGradientTest:(id *)arg1;
 - (id)biasGradientsForLayerName:(id)arg1 error:(id *)arg2;
 - (id)weightGradientsForLayerName:(id)arg1 error:(id *)arg2;

@@ -18,13 +18,13 @@
     unsigned long long _containsBButNotA;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool relatednessCalculated; // @synthesize relatednessCalculated=_relatednessCalculated;
 @property(nonatomic) unsigned long long containsBButNotA; // @synthesize containsBButNotA=_containsBButNotA;
 @property(nonatomic) unsigned long long containsAAndB; // @synthesize containsAAndB=_containsAAndB;
 @property(nonatomic) unsigned long long containsAButNotB; // @synthesize containsAButNotB=_containsAButNotB;
 @property(retain, nonatomic) FCTopicalNode *b; // @synthesize b=_b;
 @property(retain, nonatomic) FCTopicalNode *a; // @synthesize a=_a;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) unsigned long long totalObservations;
 - (unsigned long long)independentCountForNode:(id)arg1;

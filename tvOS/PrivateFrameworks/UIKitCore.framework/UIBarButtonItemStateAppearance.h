@@ -16,9 +16,9 @@
     NSArray *_itemEffects;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *itemEffects; // @synthesize itemEffects=_itemEffects;
 @property(retain, nonatomic) _UIBarButtonItemData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 @property(nonatomic) struct UIOffset backgroundImagePositionAdjustment;
 @property(retain, nonatomic) UIImage *backgroundImage;
 @property(nonatomic) struct UIOffset titlePositionAdjustment;

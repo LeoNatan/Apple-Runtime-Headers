@@ -15,9 +15,9 @@
 }
 
 + (id)criticallyDampedSpringSettings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CASpringAnimation *springAnimation; // @synthesize springAnimation=_springAnimation;
 @property(nonatomic) double completionEpsilon; // @synthesize completionEpsilon=_completionEpsilon;
-- (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_updateDuration;
 - (double)interpolatedProgressForProgress:(double)arg1;

@@ -22,9 +22,9 @@
     SBSecureAppManager *_secureAppManager;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBSecureAppManager *secureAppManager; // @synthesize secureAppManager=_secureAppManager;
 @property(retain, nonatomic) CSCoverSheetViewController *coverSheetViewController; // @synthesize coverSheetViewController=_coverSheetViewController;
-- (void).cxx_destruct;
 - (_Bool)_backgroundLaunchCamera;
 - (void)_coolCameraIfNecessary;
 - (void)_prewarmCamera;

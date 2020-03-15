@@ -20,6 +20,7 @@
 }
 
 + (id)textInputItemWithTitle:(id)arg1 description:(id)arg2 representedObject:(id)arg3 keyPath:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool useFormatterError; // @synthesize useFormatterError=_useFormatterError;
 @property(copy, nonatomic) NSString *recentsCategory; // @synthesize recentsCategory=_recentsCategory;
 @property(copy, nonatomic) NSString *localizedTextEntryInstructions; // @synthesize localizedTextEntryInstructions=_localizedTextEntryInstructions;
@@ -27,7 +28,6 @@
 @property(nonatomic) long long autocapitalizationType; // @synthesize autocapitalizationType=_autocapitalizationType;
 @property(nonatomic) long long keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(nonatomic, getter=isSecure) _Bool secure; // @synthesize secure=_secure;
-- (void).cxx_destruct;
 - (id)localizedValue;
 - (id)initWithTitle:(id)arg1 description:(id)arg2 representedObject:(id)arg3 keyPath:(id)arg4 readOnly:(_Bool)arg5 accessoryTypes:(unsigned long long)arg6 childControllerClass:(Class)arg7;
 

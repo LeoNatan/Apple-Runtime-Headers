@@ -18,13 +18,13 @@
     id <CSLMainClockUIStateMachineDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isMainClockUIEffectivelyVisible; // @synthesize isMainClockUIEffectivelyVisible=_isMainClockUIEffectivelyVisible;
 @property(nonatomic, getter=isScreenOn) _Bool screenOn; // @synthesize screenOn=_screenOn;
 @property(nonatomic, getter=isMainUIHosted) _Bool mainUIHosted; // @synthesize mainUIHosted=_mainUIHosted;
 @property(nonatomic, getter=isSlowModeEnabled) _Bool slowModeEnabled; // @synthesize slowModeEnabled=_slowModeEnabled;
 @property(nonatomic, getter=isViewVisible) _Bool viewVisible; // @synthesize viewVisible=_viewVisible;
 @property(nonatomic) __weak id <CSLMainClockUIStateMachineDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_evaluateCurrentState;
 
 @end

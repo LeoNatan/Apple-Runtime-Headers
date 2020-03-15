@@ -36,6 +36,7 @@
 + (id)buildRequiredOnlyWithAcceptEAPTypes:(id)arg1;
 + (id)buildWithAcceptEAPTypes:(id)arg1 withUserName:(id)arg2 withUserPassword:(id)arg3 withOneTimePassword:(id)arg4 withPayloadCertificateAnchorUUID:(id)arg5 withTLSTrustedCertificates:(id)arg6 withTLSTrustedServerNames:(id)arg7 withTLSAllowTrustExceptions:(id)arg8 withTLSCertificateIsRequired:(id)arg9 withTTLSInnerAuthentication:(id)arg10 withTLSMinimumVersion:(id)arg11 withTLSMaximumVersion:(id)arg12 withOuterIdentity:(id)arg13 withEAPFASTUsePAC:(id)arg14 withEAPFASTProvisionPAC:(id)arg15 withEAPFASTProvisionPACAnonymously:(id)arg16 withEAPSIMNumberOfRANDs:(id)arg17 withSystemModeCredentialsSource:(id)arg18 withSystemModeUseOpenDirectoryCredentials:(id)arg19 withOneTimeUserPassword:(id)arg20 withEAPSIMAKAEncryptedIdentityEnabled:(id)arg21;
 + (id)allowedPayloadKeys;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSNumber *payloadEAPSIMAKAEncryptedIdentityEnabled; // @synthesize payloadEAPSIMAKAEncryptedIdentityEnabled=_payloadEAPSIMAKAEncryptedIdentityEnabled;
 @property(copy, nonatomic) NSNumber *payloadOneTimeUserPassword; // @synthesize payloadOneTimeUserPassword=_payloadOneTimeUserPassword;
 @property(copy, nonatomic) NSNumber *payloadSystemModeUseOpenDirectoryCredentials; // @synthesize payloadSystemModeUseOpenDirectoryCredentials=_payloadSystemModeUseOpenDirectoryCredentials;
@@ -57,7 +58,6 @@
 @property(copy, nonatomic) NSString *payloadUserPassword; // @synthesize payloadUserPassword=_payloadUserPassword;
 @property(copy, nonatomic) NSString *payloadUserName; // @synthesize payloadUserName=_payloadUserName;
 @property(copy, nonatomic) NSArray *payloadAcceptEAPTypes; // @synthesize payloadAcceptEAPTypes=_payloadAcceptEAPTypes;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

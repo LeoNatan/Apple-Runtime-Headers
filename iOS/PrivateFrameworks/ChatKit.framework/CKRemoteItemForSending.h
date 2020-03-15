@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 + (_Bool)hasAppendedVideo:(id)arg1;
 + (id)previewQueue;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *previewCreationSemaphore; // @synthesize previewCreationSemaphore=_previewCreationSemaphore;
 @property(copy, nonatomic) MSMessage *appendedMessage; // @synthesize appendedMessage=_appendedMessage;
 @property(copy, nonatomic) NSData *appendedRichLinkData; // @synthesize appendedRichLinkData=_appendedRichLinkData;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool previewIsFullyRealizedByChatKit; // @synthesize previewIsFullyRealizedByChatKit=_previewIsFullyRealizedByChatKit;
 @property(retain, nonatomic) NSString *attachmentDescription; // @synthesize attachmentDescription=_attachmentDescription;
 @property(retain, nonatomic) NSURL *attachmentURL; // @synthesize attachmentURL=_attachmentURL;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)previewUIImage;

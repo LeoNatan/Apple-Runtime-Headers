@@ -21,9 +21,9 @@
 }
 
 + (id)classSubstitions;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(copy, nonatomic) NSString *stateName; // @synthesize stateName=_stateName;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
 - (void)_updateColors;

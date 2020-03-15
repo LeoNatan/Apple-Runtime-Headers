@@ -15,10 +15,10 @@
     struct CGSize _size;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIColor *parentBackgroundColor; // @synthesize parentBackgroundColor=_parentBackgroundColor;
 @property(readonly, nonatomic) BOOL videoPlaybackEnabled; // @synthesize videoPlaybackEnabled=_videoPlaybackEnabled;
 @property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)initWithSize:(struct CGSize)arg1 videoPlaybackEnabled:(BOOL)arg2 parentBackgroundColor:(id)arg3;
 
 @end

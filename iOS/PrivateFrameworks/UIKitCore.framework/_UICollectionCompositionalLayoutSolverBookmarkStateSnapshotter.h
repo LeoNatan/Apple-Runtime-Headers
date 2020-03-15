@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     long long _originalSectionIndex;
 }
 
-@property(readonly, nonatomic) long long originalSectionIndex; // @synthesize originalSectionIndex=_originalSectionIndex;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long originalSectionIndex; // @synthesize originalSectionIndex=_originalSectionIndex;
 - (void)applyStateToBookmark:(id)arg1;
 - (id)initWithBookmark:(id)arg1 originalSectionIndex:(long long)arg2;
 

@@ -22,12 +22,12 @@
 
 + (id)makeIMessageRequestsCache;
 + (id)makeFaceTimeRequestsCache;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <CNScheduler> resourceLock; // @synthesize resourceLock=_resourceLock;
 @property(retain, nonatomic) NSArray *requestFutures; // @synthesize requestFutures=_requestFutures;
 @property(retain, nonatomic) CNUIDSHandleAvailabilityCache *iMessageRequests; // @synthesize iMessageRequests=_iMessageRequests;
 @property(retain, nonatomic) CNUIDSHandleAvailabilityCache *faceTimeRequests; // @synthesize faceTimeRequests=_faceTimeRequests;
 @property(retain, nonatomic) id <CNUIIDSIDQueryControllerWrapper> queryControllerWrapper; // @synthesize queryControllerWrapper=_queryControllerWrapper;
-- (void).cxx_destruct;
 - (id)validateHandlesForIMessage:(id)arg1 schedulerProvider:(id)arg2;
 - (id)validateHandlesForFaceTime:(id)arg1 schedulerProvider:(id)arg2;
 - (id)validateHandles:(id)arg1 forService:(long long)arg2 schedulerProvider:(id)arg3;

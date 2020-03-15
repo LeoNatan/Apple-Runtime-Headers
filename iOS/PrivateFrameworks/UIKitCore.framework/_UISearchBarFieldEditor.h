@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_atomViews;
 }
 
-@property(retain) NSMutableSet *_atomViews; // @synthesize _atomViews;
 - (void).cxx_destruct;
+@property(retain) NSMutableSet *_atomViews; // @synthesize _atomViews;
 - (id)selectionRectsForRange:(id)arg1;
 - (void)_updateTokenViews;
 - (void)layoutManager:(id)arg1 didCompleteLayoutForTextContainer:(id)arg2 atEnd:(_Bool)arg3;

@@ -14,8 +14,8 @@
     NSArray *_objects;
 }
 
-@property(readonly, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform _coordinateAdjustment;
 }
 
-@property(readonly, nonatomic) struct CGAffineTransform coordinateAdjustment; // @synthesize coordinateAdjustment=_coordinateAdjustment;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGAffineTransform coordinateAdjustment; // @synthesize coordinateAdjustment=_coordinateAdjustment;
 - (void)_layoutIfNeeded;
 - (id)layoutDescription;
 - (id)description;

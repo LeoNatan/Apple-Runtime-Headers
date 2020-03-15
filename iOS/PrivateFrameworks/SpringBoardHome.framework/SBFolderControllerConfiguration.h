@@ -33,6 +33,7 @@
     struct CGRect _initialViewFrame;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGRect initialViewFrame; // @synthesize initialViewFrame=_initialViewFrame;
 @property(nonatomic) unsigned long long userInterfaceLayoutDirectionHandling; // @synthesize userInterfaceLayoutDirectionHandling=_userInterfaceLayoutDirectionHandling;
 @property(copy, nonatomic) NSString *originatingIconLocation; // @synthesize originatingIconLocation=_originatingIconLocation;
@@ -50,7 +51,6 @@
 @property(nonatomic) unsigned long long allowedOrientations; // @synthesize allowedOrientations=_allowedOrientations;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(retain, nonatomic) SBFolder *folder; // @synthesize folder=_folder;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;

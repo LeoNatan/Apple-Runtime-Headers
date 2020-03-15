@@ -10,7 +10,7 @@
 #import <ViewBridge/NSVBRedactedProtocol-Protocol.h>
 
 @class CALayerHost, NSAccessibilityRemoteUIElement, NSAppearance, NSArray, NSCFRunLoopSemaphore, NSColor, NSData, NSDictionary, NSFakeServiceResponder, NSMutableArray, NSMutableSet, NSProxy, NSRemoteView, NSSet, NSString, NSTrackingArea, NSVBAccessoryWindow, NSViewBridge, NSViewRemoteBridge, NSXPCConnection, NSXPCInterface, NSXPCListenerEndpoint;
-@protocol NSXPCProxyCreating;
+@protocol NSRemoteViewDelegate, NSXPCProxyCreating;
 
 __attribute__((visibility("hidden")))
 @interface NSRemoteViewMarshal : NSObject <NSRemoteViewMarshal, NSVBRedactedProtocol>
@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     NSCFRunLoopSemaphore *_invalidationSemaphore;
     NSRemoteView *_spawnedBy;
     NSRemoteView *_view;
-    struct NSObject *_delegate;
+    NSObject<NSRemoteViewDelegate> *_delegate;
     NSString *_frameRequestTransactionInProgress;
     double _accessoryViewVerticalOffset;
     double _mostRecentlyReportedScaleFactor;

@@ -33,6 +33,7 @@
     struct CGRect _maskZoomStartingBounds;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *borrowedTimeView; // @synthesize borrowedTimeView=_borrowedTimeView;
 @property(retain, nonatomic) UIView *borrowedCircleView; // @synthesize borrowedCircleView=_borrowedCircleView;
 @property(nonatomic) struct CGRect maskZoomStartingBounds; // @synthesize maskZoomStartingBounds=_maskZoomStartingBounds;
@@ -41,7 +42,6 @@
 @property(retain, nonatomic) UIImageView *zoomVignette; // @synthesize zoomVignette=_zoomVignette;
 @property(retain, nonatomic) UIView *zoomMaskView; // @synthesize zoomMaskView=_zoomMaskView;
 @property(readonly, nonatomic) UIView *backgroundContainerView; // @synthesize backgroundContainerView=_backgroundContainerView;
-- (void).cxx_destruct;
 - (void)_removeAllSubviewsFrom:(id)arg1;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)_didTransitionToOptionView:(id)arg1;

@@ -22,6 +22,7 @@
     NSArray *_layoutGuides;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *layoutGuides; // @synthesize layoutGuides=_layoutGuides;
 @property(copy, nonatomic) NSArray *verticalConstraints; // @synthesize verticalConstraints=_verticalConstraints;
 @property(copy, nonatomic) NSArray *horizontalConstraints; // @synthesize horizontalConstraints=_horizontalConstraints;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) id <_UIStatusBarRegionAxisLayout> horizontalLayout; // @synthesize horizontalLayout=_horizontalLayout;
 @property(copy, nonatomic) NSArray *displayItems; // @synthesize displayItems=_displayItems;
 @property(nonatomic) __weak _UIStatusBarRegion *region; // @synthesize region=_region;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool fitsAllItems;
 - (_Bool)mayFitDisplayItems:(id)arg1;
 - (void)_updateConstraints;

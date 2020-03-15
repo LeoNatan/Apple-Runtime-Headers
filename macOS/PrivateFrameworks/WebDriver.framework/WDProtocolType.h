@@ -18,11 +18,11 @@
 }
 
 + (id)typeFromPayload:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isEnum; // @synthesize isEnum=_isEnum;
 @property(readonly, nonatomic) long long platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) SEL factoryMethod; // @synthesize factoryMethod=_factoryMethod;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (BOOL)isEqualToType:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

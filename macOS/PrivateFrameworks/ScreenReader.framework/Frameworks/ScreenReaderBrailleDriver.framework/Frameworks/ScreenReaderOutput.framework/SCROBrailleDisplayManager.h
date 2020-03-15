@@ -50,9 +50,9 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType eventHandled; // @synthesize eventHandled=_eventHandled;
 @property(readonly, nonatomic) SCROBrailleDisplayManagedQueue *managedDisplayQueue; // @synthesize managedDisplayQueue=_managedDisplayQueue;
-- (void).cxx_destruct;
 - (id)_eventQueue_activeDisplayForToken:(int)arg1;
 - (void)_enumerateActiveDisplays:(CDUnknownBlockType)arg1;
 - (void)_eventQueue_setBrailleKeyDebounceTimeout:(double)arg1;

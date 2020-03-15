@@ -16,8 +16,8 @@
     UIPinchGestureRecognizer *_pinchGesture;
 }
 
-@property(readonly, nonatomic) UIPinchGestureRecognizer *pinchGesture; // @synthesize pinchGesture=_pinchGesture;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIPinchGestureRecognizer *pinchGesture; // @synthesize pinchGesture=_pinchGesture;
 - (void)_updatePinchScale:(double)arg1;
 - (void)_handlePinchGesture:(id)arg1;
 @property(readonly, nonatomic) double minPinchScale;

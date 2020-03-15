@@ -37,6 +37,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(nonatomic) BOOL isFromMe; // @synthesize isFromMe=_isFromMe;
 @property(nonatomic) __weak IMBalloonPluginDataSource *datasource; // @synthesize datasource=_datasource;
@@ -58,7 +59,6 @@
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSAttributedString *text; // @synthesize text=_text;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1 additionalAllowedClasses:(id)arg2;
 - (id)initWithCoder:(id)arg1;

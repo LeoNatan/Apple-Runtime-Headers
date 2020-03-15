@@ -14,9 +14,9 @@
     NSSet *_upcomingHolidayNames;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSSet *upcomingHolidayNames; // @synthesize upcomingHolidayNames=_upcomingHolidayNames;
 @property(retain, nonatomic) NSDate *localDate; // @synthesize localDate=_localDate;
-- (void).cxx_destruct;
 - (id)_potentialMemoriesForDryTesting;
 - (id)_holidayNodeForMomentNodes:(id)arg1;
 - (void)_postProcessMemory:(id)arg1 withPotentialMemory:(id)arg2;

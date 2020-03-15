@@ -15,8 +15,8 @@
     NSString *_zoneName;
 }
 
-@property(retain, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *zoneName; // @synthesize zoneName=_zoneName;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

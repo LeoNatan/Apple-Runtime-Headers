@@ -19,11 +19,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *typesRequiringReadAuthorization; // @synthesize typesRequiringReadAuthorization=_typesRequiringReadAuthorization;
 @property(readonly, copy, nonatomic) NSSet *typesRequiringShareAuthorization; // @synthesize typesRequiringShareAuthorization=_typesRequiringShareAuthorization;
 @property(readonly, copy, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, copy, nonatomic) HKSource *source; // @synthesize source=_source;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

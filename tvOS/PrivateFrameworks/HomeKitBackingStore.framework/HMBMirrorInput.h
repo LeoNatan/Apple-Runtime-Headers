@@ -18,10 +18,10 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 @property(readonly, nonatomic) HMBLocalSQLContextInputBlock *block; // @synthesize block=_block;
 @property(readonly, nonatomic) __weak HMBLocalZone *localZone; // @synthesize localZone=_localZone;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)abort;
 - (id)commitWithOptions:(id)arg1 error:(id *)arg2;

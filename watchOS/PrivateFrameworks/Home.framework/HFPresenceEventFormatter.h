@@ -15,10 +15,10 @@
     HMHome *_home;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 @property(nonatomic) unsigned int nameType; // @synthesize nameType=_nameType;
-- (void).cxx_destruct;
 - (id)_formattedListForSelectedUsers:(id)arg1 inHome:(id)arg2;
 - (id)stringForPresenceEventBuilder:(id)arg1;
 - (id)stringForPresenceEvent:(id)arg1;

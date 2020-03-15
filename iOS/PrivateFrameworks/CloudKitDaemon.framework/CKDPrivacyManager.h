@@ -16,9 +16,9 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *operations; // @synthesize operations=_operations;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *privacyManagerQueue; // @synthesize privacyManagerQueue=_privacyManagerQueue;
-- (void).cxx_destruct;
 - (void)_resetPrivacySettingsForAppContainerAccountTuple:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetPrivacySettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_init;

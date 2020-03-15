@@ -14,9 +14,9 @@
     id _mockSliderDelegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id mockSliderDelegate; // @synthesize mockSliderDelegate=_mockSliderDelegate;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (void)accessibilityDecrement;
 - (void)accessibilityIncrement;
 - (_Bool)accessibilityScroll:(long long)arg1;

@@ -15,9 +15,9 @@
     HDDataCollectorState *_state;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HDDataCollectorState *state; // @synthesize state=_state;
 @property(nonatomic) __weak id <HDDataCollector> collector; // @synthesize collector=_collector;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

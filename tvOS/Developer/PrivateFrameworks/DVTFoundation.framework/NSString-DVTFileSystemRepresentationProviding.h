@@ -56,6 +56,7 @@
 - (_Bool)dvt_hasCaseInsensitivePrefix:(id)arg1;
 - (id)dvt_arrayByParsingAsStringList;
 - (void)dvt_enumerateWhitespaceSeparatedSubstringsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)dvt_substringFromIndex:(long long)arg1 toIndex:(long long)arg2;
 - (void)dvt_enumerateOccurrencesOfSubstring:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)dvt_md5Hash;
 - (id)dvt_stringByRepeating:(unsigned long long)arg1;
@@ -65,6 +66,7 @@
 - (id)dvt_capitalizedWordsFromString;
 - (id)dvt_wordsFromString;
 - (id)dvt_wordsFromStringWithLetterCasing:(unsigned long long)arg1;
+- (id)dvt_stringWithLetterCasing:(unsigned long long)arg1;
 - (id)dvt_stringByManglingToLegalC99ExtendedIdentifier;
 - (id)dvt_stringByManglingToLegalCIdentifier;
 - (id)dvt_stringByManglingToLegalRFC1034Identifier;

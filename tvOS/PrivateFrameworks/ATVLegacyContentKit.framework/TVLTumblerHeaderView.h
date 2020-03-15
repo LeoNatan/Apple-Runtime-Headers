@@ -16,11 +16,11 @@
     UIView *_rightArrowView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *rightArrowView; // @synthesize rightArrowView=_rightArrowView;
 @property(retain, nonatomic) UIView *leftArrowView; // @synthesize leftArrowView=_leftArrowView;
 @property(nonatomic) _Bool showsRightArrow; // @synthesize showsRightArrow=_showsRightArrow;
 @property(nonatomic) _Bool showsLeftArrow; // @synthesize showsLeftArrow=_showsLeftArrow;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)setTitle:(id)arg1 animateFromDirection:(long long)arg2;
 - (id)initWithHeaderElement:(id)arg1;

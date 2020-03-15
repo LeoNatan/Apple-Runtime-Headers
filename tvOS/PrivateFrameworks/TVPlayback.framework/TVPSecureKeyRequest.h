@@ -26,6 +26,7 @@
     NSDate *_requestStartDate;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDate *requestStartDate; // @synthesize requestStartDate=_requestStartDate;
 @property(copy, nonatomic) NSDate *requestEndDate; // @synthesize requestEndDate=_requestEndDate;
 @property(retain, nonatomic) NSNumber *requestCompletionTime; // @synthesize requestCompletionTime=_requestCompletionTime;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSData *contentIdentifierData; // @synthesize contentIdentifierData=_contentIdentifierData;
 @property(copy, nonatomic) NSData *certificateData; // @synthesize certificateData=_certificateData;
 @property(readonly, nonatomic) unsigned long long requestID; // @synthesize requestID=_requestID;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool offlineKeyUsageAllowed;
 @property(readonly, nonatomic) _Bool isRenewal;
 - (void)finishLoadingWithResponseData:(id)arg1 renewalDate:(id)arg2 keyType:(long long)arg3;

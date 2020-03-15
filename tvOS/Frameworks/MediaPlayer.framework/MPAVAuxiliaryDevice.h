@@ -18,12 +18,12 @@
 }
 
 + (id)otherConnectedDevicesFromRouteDescription:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(readonly, nonatomic) NSString *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(readonly, nonatomic) NSString *productName; // @synthesize productName=_productName;
 @property(readonly, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 
 @end

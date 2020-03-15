@@ -43,6 +43,7 @@
     long long _nowPlayingAlbumArtMode;
     long long _userInterfaceStyle;
     NSString *_manufacturerIconLabel;
+    NSArray *_manufacturerIcons;
     struct NSEdgeInsets _viewAreaInsets;
     struct NSEdgeInsets _dashboardRoundedCorners;
 }
@@ -52,7 +53,9 @@
 + (id)descriptionForUserInterfaceStyle:(long long)arg1;
 + (id)descriptionForCapability:(long long)arg1;
 + (id)_descriptionForTransportType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool hasAccessory; // @synthesize hasAccessory=_hasAccessory;
+@property(readonly, nonatomic) NSArray *manufacturerIcons; // @synthesize manufacturerIcons=_manufacturerIcons;
 @property(readonly, nonatomic) _Bool manufacturerIconVisible; // @synthesize manufacturerIconVisible=_manufacturerIconVisible;
 @property(readonly, copy, nonatomic) NSString *manufacturerIconLabel; // @synthesize manufacturerIconLabel=_manufacturerIconLabel;
 @property(readonly, nonatomic) _Bool supportsSiriMixable; // @synthesize supportsSiriMixable=_supportsSiriMixable;
@@ -87,7 +90,6 @@
 @property(readonly, copy, nonatomic) NSString *manufacturerName; // @synthesize manufacturerName=_manufacturerName;
 @property(readonly, copy, nonatomic) NSString *modelName; // @synthesize modelName=_modelName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)screenInfoForScreenID:(id)arg1;
 - (id)description;
 - (id)valueForUndefinedKey:(id)arg1;

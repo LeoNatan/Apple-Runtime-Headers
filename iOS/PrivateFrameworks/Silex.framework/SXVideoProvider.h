@@ -22,6 +22,7 @@
     unsigned long long _playMethod;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long playMethod; // @synthesize playMethod=_playMethod;
 @property(readonly, nonatomic) NSString *mediaIdentifier; // @synthesize mediaIdentifier=_mediaIdentifier;
 @property(nonatomic) double pausedAtTime; // @synthesize pausedAtTime=_pausedAtTime;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <SVVideoMetadata> metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) id <SXAnalyticsReporting> analyticsReporter; // @synthesize analyticsReporter=_analyticsReporter;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void).cxx_destruct;
 - (_Bool)supportsQuartileReporting;
 - (void)playbackResumedAtTime:(double)arg1;
 - (void)playbackPausedAtTime:(double)arg1;

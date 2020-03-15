@@ -22,12 +22,12 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct IONotificationPort *notificationPort; // @synthesize notificationPort=_notificationPort;
 @property(nonatomic, getter=isRunning) BOOL running; // @synthesize running=_running;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly) BOOL hasBattery; // @synthesize hasBattery=_hasBattery;
 @property(readonly, nonatomic) unsigned int interestNotification; // @synthesize interestNotification=_interestNotification;
-- (void).cxx_destruct;
 - (void)_deregisterForPowerSourceNotifications:(BOOL)arg1;
 - (void)_registerForPowerSourceNotifications;
 - (void)updateBatteryState:(unsigned int)arg1;

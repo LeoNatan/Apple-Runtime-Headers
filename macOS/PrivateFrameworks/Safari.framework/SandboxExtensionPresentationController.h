@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     SafariSandboxBrokerConnection *_sandboxBrokerConnection;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SafariSandboxBrokerConnection *sandboxBrokerConnection; // @synthesize sandboxBrokerConnection=_sandboxBrokerConnection;
 @property(readonly, nonatomic) SandboxFileExtensionController *sandboxExtensionController; // @synthesize sandboxExtensionController=_sandboxExtensionController;
 @property(nonatomic) long long tag; // @synthesize tag=_tag;
-- (void).cxx_destruct;
 - (id)openFileURL:(id)arg1 permissions:(unsigned long long)arg2 identifier:(id)arg3 category:(long long)arg4 delegate:(id)arg5 error:(id *)arg6;
 - (void)openFileURL:(id)arg1 permissions:(unsigned long long)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_tryCreatingTokenForURLWithoutUI:(id)arg1 permissions:(unsigned long long)arg2 error:(id *)arg3;

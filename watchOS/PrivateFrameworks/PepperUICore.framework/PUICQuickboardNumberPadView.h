@@ -22,11 +22,11 @@
 }
 
 + (int)_numberPadCharacterForTag:(unsigned int)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) PUICQuickboardKeypadButton *okButton; // @synthesize okButton=_okButton;
 @property(nonatomic) __weak id <PUICQuickboardNumberPadViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic, getter=isDialer) _Bool dialer; // @synthesize dialer=_dialer;
-- (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

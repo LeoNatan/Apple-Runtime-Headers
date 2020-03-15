@@ -20,12 +20,12 @@
     NSString *_name;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *accessibilityDescription; // @synthesize accessibilityDescription=_accessibilityDescription;
 @property(copy, nonatomic) NSString *score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *record; // @synthesize record=_record;
 @property(retain, nonatomic) _SFPBImage *logo; // @synthesize logo=_logo;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

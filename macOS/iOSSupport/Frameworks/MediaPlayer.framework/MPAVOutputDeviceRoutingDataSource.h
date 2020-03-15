@@ -27,12 +27,12 @@
 }
 
 + (id)_globalAudioSessionLock;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsRoutePrediction; // @synthesize supportsRoutePrediction=_supportsRoutePrediction;
 @property(retain, nonatomic) NSString *initiator; // @synthesize initiator=_initiator;
 @property(retain, nonatomic) MPAVEndpointRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
 @property(nonatomic) BOOL supportsMultipleSelection; // @synthesize supportsMultipleSelection=_supportsMultipleSelection;
 @property(retain, nonatomic) MPMRAVOutputContextWrapper *applicationOutputContext; // @synthesize applicationOutputContext=_applicationOutputContext;
-- (void).cxx_destruct;
 - (void)_setShouldSourceOutputDevicesFromAVODDS:(BOOL)arg1;
 - (id)_outputDeviceRouteWithUID:(id)arg1;
 - (void)_outputDevicesDidChange:(id)arg1;

@@ -14,9 +14,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)policyWithType:(unsigned char)arg1 value:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) id value; // @synthesize value=_value;
 @property unsigned char type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)processMetadata:(id)arg1;
 - (_Bool)metadataNeedsProcessing:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -27,6 +27,7 @@
 
 + (void)nodeWithParameters:(struct smb_create *)arg1 onPiston:(id)arg2 onShareID:(unsigned int)arg3 withName:(id)arg4 withStreamName:(id)arg5 callBack:(CDUnknownBlockType)arg6;
 + (void)nodeForCmpd:(id)arg1 onShareID:(unsigned int)arg2 callBack:(CDUnknownBlockType)arg3;
+- (void).cxx_destruct;
 @property unsigned int onEncryptedShare; // @synthesize onEncryptedShare=_onEncryptedShare;
 @property unsigned int treeID; // @synthesize treeID=_treeID;
 @property unsigned long long cmpdNextCmdOffset; // @synthesize cmpdNextCmdOffset=_cmpdNextCmdOffset;
@@ -39,7 +40,6 @@
 @property(copy) NSString *name; // @synthesize name=_name;
 @property unsigned int shareID; // @synthesize shareID=_shareID;
 @property(retain) SMBPiston *pd; // @synthesize pd=_pd;
-- (void).cxx_destruct;
 - (int)resetCmpdRequest;
 - (void)sendCmpdRequest:(CDUnknownBlockType)arg1;
 - (int)parseNextHeader:(unsigned short)arg1 retNTStatus:(unsigned int *)arg2 retMdpp:(struct mdchain **)arg3;

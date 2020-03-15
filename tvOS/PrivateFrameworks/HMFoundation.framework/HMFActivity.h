@@ -36,13 +36,13 @@
 + (void)activityWithName:(id)arg1 parent:(id)arg2 assertions:(unsigned long long)arg3 block:(CDUnknownBlockType)arg4;
 + (void)activityWithName:(id)arg1 parent:(id)arg2 block:(CDUnknownBlockType)arg3;
 + (void)activityWithName:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) NSArray *internalAssertions; // @synthesize internalAssertions=_internalAssertions;
 @property(readonly) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) __weak HMFActivity *parent; // @synthesize parent=_parent;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)blockWithQualityOfService:(long long)arg1 block:(CDUnknownBlockType)arg2;

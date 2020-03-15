@@ -81,12 +81,12 @@
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 + (BOOL)_allowActionsToQueue;
+- (void).cxx_destruct;
 @property(nonatomic) double edgeInset; // @synthesize edgeInset=_edgeInset;
 @property(nonatomic) double minimumTrimLength; // @synthesize minimumTrimLength=_minTrimmedLength;
 @property(nonatomic) double maximumTrimLength; // @synthesize maximumTrimLength=_maxTrimmedLength;
 @property(nonatomic) BOOL showTimeViews; // @synthesize showTimeViews=_showTimeViews;
 @property(nonatomic) double zoomDelay; // @synthesize zoomDelay=_zoomDelay;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isZoomAnimating) BOOL zoomAnimating;
 @property(readonly, nonatomic) double zoomMaximumValue;
 @property(readonly, nonatomic) double zoomMinimumValue;

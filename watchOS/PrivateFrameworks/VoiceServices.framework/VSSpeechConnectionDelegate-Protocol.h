@@ -7,6 +7,7 @@
 @class NSArray, NSError, NSString, VSInstrumentMetrics, VSPresynthesizedAudioRequest, VSSpeechConnection, VSSpeechRequest;
 
 @protocol VSSpeechConnectionDelegate
+- (void)connection:(VSSpeechConnection *)arg1 invalidatedWithError:(NSError *)arg2;
 - (void)connection:(VSSpeechConnection *)arg1 presynthesizedAudioRequest:(VSPresynthesizedAudioRequest *)arg2 successWithInstrumentMetrics:(VSInstrumentMetrics *)arg3 error:(NSError *)arg4;
 - (void)connection:(VSSpeechConnection *)arg1 presynthesizedAudioRequest:(VSPresynthesizedAudioRequest *)arg2 didStopAtEnd:(_Bool)arg3 error:(NSError *)arg4;
 - (void)connection:(VSSpeechConnection *)arg1 presynthesizedAudioRequestDidStart:(VSPresynthesizedAudioRequest *)arg2;

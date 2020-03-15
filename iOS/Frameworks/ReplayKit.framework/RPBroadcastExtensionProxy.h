@@ -24,6 +24,7 @@
     NSXPCListenerEndpoint *_listenerEndpoint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 @property(copy, nonatomic) CDUnknownBlockType connectionReadyHandler; // @synthesize connectionReadyHandler=_connectionReadyHandler;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(copy, nonatomic) CDUnknownBlockType broadcastURLHandler; // @synthesize broadcastURLHandler=_broadcastURLHandler;
 @property(copy, nonatomic) CDUnknownBlockType serviceInfoHandler; // @synthesize serviceInfoHandler=_serviceInfoHandler;
-- (void).cxx_destruct;
 - (void)processPayload:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)finishBroadcastWithError:(id)arg1;
 - (void)ping;

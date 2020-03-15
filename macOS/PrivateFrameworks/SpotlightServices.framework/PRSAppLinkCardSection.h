@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *appTitle; // @synthesize appTitle=_appTitle;
 @property(readonly, nonatomic) NSArray *appLinks; // @synthesize appLinks=_appLinks;
-- (void).cxx_destruct;
 - (long long)type;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 appLinks:(id)arg2;

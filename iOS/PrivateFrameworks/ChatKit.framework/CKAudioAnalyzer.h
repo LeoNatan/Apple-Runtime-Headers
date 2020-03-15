@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) float heuristicTransitionRatio; // @synthesize heuristicTransitionRatio=_heuristicTransitionRatio;
 @property(nonatomic) float heuristicWindowSec; // @synthesize heuristicWindowSec=_heuristicWindowSec;
 @property(nonatomic) float decoderLatency; // @synthesize decoderLatency=_decoderLatency;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 @property double interspeechWaitTime; // @synthesize interspeechWaitTime=_interspeechWaitTime;
 @property double startWaitTime; // @synthesize startWaitTime=_startWaitTime;
 @property int endpointMode; // @synthesize endpointMode=_endpointMode;
-- (void).cxx_destruct;
 - (void)reset;
 - (int)getStatus:(struct AudioQueueBuffer *)arg1;
 - (_Bool)configureWithSampleRate:(double)arg1 andFrameRate:(unsigned int)arg2;

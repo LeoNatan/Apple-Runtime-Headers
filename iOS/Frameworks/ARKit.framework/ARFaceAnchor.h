@@ -24,11 +24,11 @@
 + (id)mirroredBlendShapeMapping;
 + (id)blendShapeMapping;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *trackingError; // @synthesize trackingError=_trackingError;
 @property(nonatomic) _Bool isTracked; // @synthesize isTracked=_isTracked;
 @property(retain, nonatomic) ARFaceTrackingData *trackingData; // @synthesize trackingData=_trackingData;
 @property(readonly, nonatomic) ARFaceGeometry *geometry; // @synthesize geometry=_geometry;
-- (void).cxx_destruct;
 - (_Bool)isEqualToFaceAnchor:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsRowModel:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldCenter; // @synthesize shouldCenter=_shouldCenter;
 @property(retain, nonatomic) TLKAuxilliaryTextView *auxilliaryTextView; // @synthesize auxilliaryTextView=_auxilliaryTextView;
-- (void).cxx_destruct;
 - (unsigned long long)type;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupView;

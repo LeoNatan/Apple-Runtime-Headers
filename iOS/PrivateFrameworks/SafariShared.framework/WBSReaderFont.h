@@ -23,16 +23,15 @@
 + (id)systemSerifFont;
 + (id)systemFontWithDisplayName:(id)arg1;
 + (id)systemFont;
-@property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
+@property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (RetainPtr_887fe677)_fontDescriptorRefForFontFamilyName:(id)arg1 restrictToEnabled:(_Bool)arg2;
 - (id)_localizedName;
-- (id)fontOfSize:(double)arg1;
-- (void)isInstalledWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isInstalled) _Bool installed;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) NSString *familyNameForWebContent;

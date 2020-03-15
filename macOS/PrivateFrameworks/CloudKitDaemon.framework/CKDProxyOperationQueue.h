@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     CKDClientProxy *_proxy;
 }
 
-@property(nonatomic) __weak CKDClientProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+@property(nonatomic) __weak CKDClientProxy *proxy; // @synthesize proxy=_proxy;
 - (void)addOperation:(id)arg1;
 - (id)initWithProxy:(id)arg1;
 

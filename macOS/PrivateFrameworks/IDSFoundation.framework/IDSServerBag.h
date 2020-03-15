@@ -44,6 +44,7 @@
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) IDSRateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
 @property(copy) CDUnknownBlockType connectionMonitorCreationBlock; // @synthesize connectionMonitorCreationBlock=_connectionMonitorCreationBlock;
 @property(copy) CDUnknownBlockType remoteURLCreationBlock; // @synthesize remoteURLCreationBlock=_remoteURLCreationBlock;
@@ -69,7 +70,6 @@
 @property(retain) NSString *apsEnvironmentName; // @synthesize apsEnvironmentName=_apsEnvironmentName;
 @property(retain) NSURL *bagURL; // @synthesize bagURL=_bagURL;
 @property(retain) IMConnectionMonitor *_connectionMonitor; // @synthesize _connectionMonitor;
-- (void).cxx_destruct;
 - (void)connectionMonitorDidUpdate:(id)arg1;
 @property(readonly) BOOL isServerAvailable;
 - (id)urlWithKey:(id)arg1;

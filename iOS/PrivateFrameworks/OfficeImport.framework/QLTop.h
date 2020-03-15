@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
 + (id)metadataForBinaryOfficeFileAtURL:(id)arg1 error:(id *)arg2;
 + (void)fillHTMLArchiveForOfficeFile:(id)arg1 dataFormat:(unsigned long long)arg2 archiver:(id)arg3;
 + (void)fillHTMLArchiveForOfficeFile:(id)arg1 orData:(id)arg2 dataFileName:(id)arg3 dataFormat:(unsigned long long)arg4 archiver:(id)arg5;
+- (void).cxx_destruct;
 @property _Bool forIndexing; // @synthesize forIndexing=_forIndexing;
 @property(readonly) CMState *state; // @synthesize state=_state;
 @property(readonly) CMMapper *mapper; // @synthesize mapper=_mapper;
-- (void).cxx_destruct;
 - (void)readerDidEndDocument:(id)arg1;
 - (void)readerDidReadElement:(id)arg1 atIndex:(unsigned long long)arg2 inDocument:(id)arg3 isLastElement:(_Bool)arg4;
 - (void)readerDidStartDocument:(id)arg1 withElementCount:(long long)arg2;

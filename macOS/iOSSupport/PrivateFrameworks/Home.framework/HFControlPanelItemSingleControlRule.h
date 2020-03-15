@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _displayResultsGenerator;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) CDUnknownBlockType displayResultsGenerator; // @synthesize displayResultsGenerator=_displayResultsGenerator;
 @property(readonly, copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
-- (void).cxx_destruct;
 - (id)controlPanelItemForControlItems:(id)arg1;
 - (id)initWithFilter:(CDUnknownBlockType)arg1 displayResultsGenerator:(CDUnknownBlockType)arg2;
 

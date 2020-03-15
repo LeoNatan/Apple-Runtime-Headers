@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)shouldHighlight;
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldUseLayoutMargins; // @synthesize shouldUseLayoutMargins=_shouldUseLayoutMargins;
 @property(retain, nonatomic) UIView *childViewControllerView; // @synthesize childViewControllerView=_childViewControllerView;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

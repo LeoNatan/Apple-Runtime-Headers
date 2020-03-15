@@ -15,8 +15,8 @@
     NSData *_formatSettingsPlistData;
 }
 
-@property(retain, nonatomic) NSData *formatSettingsPlistData; // @synthesize formatSettingsPlistData=_formatSettingsPlistData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *formatSettingsPlistData; // @synthesize formatSettingsPlistData=_formatSettingsPlistData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

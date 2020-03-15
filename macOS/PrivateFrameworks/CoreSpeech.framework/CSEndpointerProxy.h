@@ -22,12 +22,12 @@
     id <CSEndpointAnalyzerImpl> _activeEndpointer;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL recordingDidStop; // @synthesize recordingDidStop=_recordingDidStop;
 @property(nonatomic) __weak id <CSEndpointAnalyzerImpl> activeEndpointer; // @synthesize activeEndpointer=_activeEndpointer;
 @property(retain, nonatomic) id <CSEndpointAnalyzerImpl> nnvadEndpointer; // @synthesize nnvadEndpointer=_nnvadEndpointer;
 @property(retain, nonatomic) id <CSEndpointAnalyzerImpl> hybridEndpointer; // @synthesize hybridEndpointer=_hybridEndpointer;
 @property(nonatomic) __weak id <CSEndpointAnalyzerDelegate> endpointerDelegate; // @synthesize endpointerDelegate=_endpointerDelegate;
-- (void).cxx_destruct;
 - (void)reset;
 @property(nonatomic) BOOL saveSamplesSeenInReset;
 @property(nonatomic) double minimumDurationForEndpointer;

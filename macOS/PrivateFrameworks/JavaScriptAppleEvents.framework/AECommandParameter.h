@@ -17,11 +17,11 @@
 }
 
 + (id)parameterWithCode:(unsigned int)arg1 types:(id)arg2 optional:(BOOL)arg3 displayName:(id)arg4;
+- (void).cxx_destruct;
 @property BOOL optional; // @synthesize optional=_optional;
 @property unsigned int code; // @synthesize code=_code;
 @property(retain) NSArray *types; // @synthesize types=_types;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
-- (void).cxx_destruct;
 - (id)initWithCode:(unsigned int)arg1 types:(id)arg2 optional:(BOOL)arg3 displayName:(id)arg4;
 
 @end

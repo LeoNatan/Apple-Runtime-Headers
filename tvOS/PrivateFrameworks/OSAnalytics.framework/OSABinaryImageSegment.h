@@ -15,10 +15,11 @@
     unsigned long long _used_index;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long used_index; // @synthesize used_index=_used_index;
 @property int source; // @synthesize source=_source;
 @property(readonly, nonatomic) OSASymbolInfo *symbolInfo; // @synthesize symbolInfo=_symbolInfo;
-- (void).cxx_destruct;
+- (id)legacy_details;
 - (id)details;
 - (id)initWithAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 for:(unsigned char [16])arg3;
 - (id)initWithSymbol:(id)arg1;

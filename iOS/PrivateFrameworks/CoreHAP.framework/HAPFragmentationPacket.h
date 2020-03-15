@@ -16,11 +16,11 @@
     NSData *_data;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) unsigned int offset; // @synthesize offset=_offset;
 @property(readonly, nonatomic) unsigned int length; // @synthesize length=_length;
 @property(readonly, nonatomic) unsigned short transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
-- (void).cxx_destruct;
 - (id)serialize;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

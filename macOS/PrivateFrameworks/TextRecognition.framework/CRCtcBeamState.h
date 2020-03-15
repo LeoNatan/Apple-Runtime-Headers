@@ -13,8 +13,8 @@
     NSMutableDictionary *_mutablePaths;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *mutablePaths; // @synthesize mutablePaths=_mutablePaths;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *mutablePaths; // @synthesize mutablePaths=_mutablePaths;
 - (void)mergePathsWithTrailingWhitespaces;
 - (void)kBest:(id *)arg1 discarded:(id *)arg2 k:(unsigned long long)arg3;
 - (id)sortedKeys;

@@ -45,6 +45,7 @@
     UISwipeGestureRecognizer *_rightSwipeGesture;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPerformingTransitionAnimation; // @synthesize isPerformingTransitionAnimation=_isPerformingTransitionAnimation;
 @property(nonatomic) __weak UISwipeGestureRecognizer *rightSwipeGesture; // @synthesize rightSwipeGesture=_rightSwipeGesture;
 @property(nonatomic) __weak UISwipeGestureRecognizer *leftSwipeGesture; // @synthesize leftSwipeGesture=_leftSwipeGesture;
@@ -63,7 +64,6 @@
 @property(nonatomic) unsigned long long transition; // @synthesize transition=_transition;
 @property(nonatomic) id <TVOneupViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) id <TVOneupViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)_isValidIndex:(long long)arg1;
 - (void)_performNextEventTransitionIfRequired;
 - (void)_performPushTransitionToView:(id)arg1 atNewIndex:(long long)arg2;

@@ -18,9 +18,9 @@
 + (id)_persistentStoreOptionsForStoreOfType:(id)arg1 storeURL:(id)arg2;
 + (void)_clearPSCForUnitTests;
 + (id)defaultPersistentStoreCoordinator;
+- (void).cxx_destruct;
 @property BOOL isForMigration; // @synthesize isForMigration=_isForMigration;
 @property(retain) NSString *calendarStorePath; // @synthesize calendarStorePath=_calendarStorePath;
-- (void).cxx_destruct;
 - (id)restorePersistentStoreViaTemp:(id *)arg1;
 - (BOOL)restorePersistentStoreInBatches:(BOOL)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)restorePersistentStoreInBatches:(BOOL)arg1 error:(id *)arg2;

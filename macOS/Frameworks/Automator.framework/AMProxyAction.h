@@ -19,13 +19,13 @@
     NSArray *_conversionPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id _realObject; // @synthesize _realObject;
 @property(retain, nonatomic) NSArray *conversionPath; // @synthesize conversionPath=_conversionPath;
 @property(nonatomic) long long conversionLabel; // @synthesize conversionLabel=_conversionLabel;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *cacheDictionary; // @synthesize cacheDictionary=_cacheDictionary;
 @property(retain, nonatomic) AMCacheLocationEntry *cacheLocationEntry; // @synthesize cacheLocationEntry=_cacheLocationEntry;
-- (void).cxx_destruct;
 - (void)clearConversionPath;
 - (void)addToConversionPath:(id)arg1;
 - (id)_descriptionViewItem;

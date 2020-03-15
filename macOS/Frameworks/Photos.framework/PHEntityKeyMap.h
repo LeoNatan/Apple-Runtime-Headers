@@ -6,18 +6,20 @@
 
 #import <objc/NSObject.h>
 
+@class NSDictionary;
+
 @interface PHEntityKeyMap : NSObject
 {
-    struct NSDictionary *_propertyKeysByEntityKey;
-    struct NSDictionary *_entityKeysByPropertyKey;
+    NSDictionary *_propertyKeysByEntityKey;
+    NSDictionary *_entityKeysByPropertyKey;
 }
 
-+ (void)assertPropertyKey:(id)arg1 doesNotExistForEntityKey:(id)arg2 inEntityKeysByProperty:(struct NSDictionary *)arg3;
-+ (struct NSDictionary *)transposePropertyKeysByEntityKey:(struct NSDictionary *)arg1;
++ (void)assertPropertyKey:(id)arg1 doesNotExistForEntityKey:(id)arg2 inEntityKeysByProperty:(id)arg3;
++ (id)transposePropertyKeysByEntityKey:(id)arg1;
 - (void).cxx_destruct;
 - (id)propertyKeyForEntityKey:(id)arg1;
 - (id)entityKeyForPropertyKey:(id)arg1;
-- (id)initWithPropertyKeysByEntityKey:(struct NSDictionary *)arg1;
+- (id)initWithPropertyKeysByEntityKey:(id)arg1;
 
 @end
 

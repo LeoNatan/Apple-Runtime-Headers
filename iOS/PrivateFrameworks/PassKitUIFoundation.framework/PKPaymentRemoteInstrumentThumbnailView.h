@@ -10,13 +10,13 @@
 
 @interface PKPaymentRemoteInstrumentThumbnailView : UIView
 {
-    struct UIImageView *_placeholderImageView;
-    struct UIImageView *_cardImageView;
+    UIImageView *_placeholderImageView;
+    UIImageView *_cardImageView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImageView *cardImageView; // @synthesize cardImageView=_cardImageView;
 @property(retain, nonatomic) UIImageView *placeholderImageView; // @synthesize placeholderImageView=_placeholderImageView;
-- (void).cxx_destruct;
 - (void)_updateCardImage:(struct CGImage *)arg1;
 - (void)_prepareConstraints;
 - (id)initWithRemotePaymentInstrument:(id)arg1;

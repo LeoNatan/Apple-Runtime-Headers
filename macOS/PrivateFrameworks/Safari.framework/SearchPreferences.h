@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     NSTextField *_smartSearchFieldLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak NSTextField *smartSearchFieldLabel; // @synthesize smartSearchFieldLabel=_smartSearchFieldLabel;
 @property(nonatomic) __weak NSTextField *searchEngineLabel; // @synthesize searchEngineLabel=_searchEngineLabel;
 @property(nonatomic) __weak NSButton *showFavoritesCheckbox; // @synthesize showFavoritesCheckbox=_showFavoritesCheckbox;
 @property(nonatomic) __weak NSButton *enableParsecCheckbox; // @synthesize enableParsecCheckbox=_enableParsecCheckbox;
 @property(nonatomic) __weak NSPopUpButton *defaultSearchEnginePopUpButton; // @synthesize defaultSearchEnginePopUpButton=_defaultSearchEnginePopUpButton;
 @property(retain, nonatomic) WebsiteSpecificSearchEditor *websiteSpecificSearchEditor; // @synthesize websiteSpecificSearchEditor=_websiteSpecificSearchEditor;
-- (void).cxx_destruct;
 - (void)_updateParsecCheckboxState;
 - (void)changeDefaultSearchEngine:(id)arg1;
 - (void)_updateDefaultSearchEngineMenu;

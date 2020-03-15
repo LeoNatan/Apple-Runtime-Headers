@@ -16,10 +16,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) SDRDiagnosticReporter *reporter; // @synthesize reporter=_reporter;
-- (void).cxx_destruct;
-- (void)submitDiagnosticReportWithType:(id)arg1 withSubType:(id)arg2 withContext:(id)arg3;
+- (void)submitDiagnosticReportWithType:(id)arg1 withSubType:(id)arg2 withDuration:(double)arg3 withContext:(id)arg4;
+- (void)submitAudioIssueReport:(id)arg1;
+- (void)submitVoiceIdIssueReport:(id)arg1;
 - (id)init;
 
 @end

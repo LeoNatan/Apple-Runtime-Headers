@@ -24,6 +24,7 @@
     struct UIEdgeInsets _paneContentInsets;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *actionFutures; // @synthesize actionFutures=_actionFutures;
 @property(nonatomic) BOOL didHideToolbar; // @synthesize didHideToolbar=_didHideToolbar;
 @property(retain, nonatomic) SlidingPaneViewState *paneState; // @synthesize paneState=_paneState;
@@ -34,7 +35,6 @@
 @property(nonatomic) struct UIEdgeInsets paneContentInsets; // @synthesize paneContentInsets=_paneContentInsets;
 @property(nonatomic) struct UIEdgeInsets paneInsets; // @synthesize paneInsets=_paneInsets;
 @property(nonatomic) __weak id <FMSlidingPaneViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)completeFuture:(id)arg1;
 @property(readonly, nonatomic) FMFuture *currentFuture;
 - (id)newActionFuture;

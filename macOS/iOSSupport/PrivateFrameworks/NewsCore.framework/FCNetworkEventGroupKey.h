@@ -17,10 +17,10 @@
     NSString *_respondingPOP;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *respondingPOP; // @synthesize respondingPOP=_respondingPOP;
 @property(nonatomic) unsigned long long sessionID; // @synthesize sessionID=_sessionID;
 @property(nonatomic) long long eventType; // @synthesize eventType=_eventType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

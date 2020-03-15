@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)detailsLabel;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *detailsLabels; // @synthesize detailsLabels=_detailsLabels;
 @property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-- (void).cxx_destruct;
 - (void)updateWithTitle:(id)arg1 contents:(id)arg2;
 - (id)init;
 

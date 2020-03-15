@@ -15,9 +15,9 @@
 }
 
 + (id)paramWithCallbackKind:(long long)arg1 object:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id object; // @synthesize object=_object;
 @property(nonatomic) long long kind; // @synthesize kind=_kind;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) PKAccountServicePaymentMethod *accountServicePaymentMethod;
 @property(readonly, nonatomic) PKApplePayTrustSignature *applePayTrustSignature;

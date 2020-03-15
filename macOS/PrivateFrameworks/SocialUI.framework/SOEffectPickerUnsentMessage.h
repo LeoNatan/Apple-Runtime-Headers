@@ -13,8 +13,8 @@
     NSAttributedString *_draft;
 }
 
-@property(copy) NSAttributedString *draft; // @synthesize draft=_draft;
 - (void).cxx_destruct;
+@property(copy) NSAttributedString *draft; // @synthesize draft=_draft;
 
 @end
 

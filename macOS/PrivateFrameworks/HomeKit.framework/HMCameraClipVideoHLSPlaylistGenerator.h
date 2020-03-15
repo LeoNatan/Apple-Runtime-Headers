@@ -15,9 +15,9 @@
 }
 
 + (id)_hlsPlaylistEncryptionMethodNameForScheme:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSMutableString *hlsPlaylistString; // @synthesize hlsPlaylistString=_hlsPlaylistString;
-- (void).cxx_destruct;
 - (void)finish;
 - (void)addSegments:(id)arg1;
 - (void)addSegment:(id)arg1;

@@ -34,8 +34,8 @@
 + (void)requestRaiseToSpeakBypassing:(BOOL)arg1 timeout:(double)arg2;
 + (void)requestPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
 + (void)requestVoiceTriggerEnabled:(BOOL)arg1 forReason:(id)arg2;
-@property(retain, nonatomic) VTCoreSpeechKeepAliveHandler *coreSpeechKeepAliveHandler; // @synthesize coreSpeechKeepAliveHandler=_coreSpeechKeepAliveHandler;
 - (void).cxx_destruct;
+@property(retain, nonatomic) VTCoreSpeechKeepAliveHandler *coreSpeechKeepAliveHandler; // @synthesize coreSpeechKeepAliveHandler=_coreSpeechKeepAliveHandler;
 
 @end
 

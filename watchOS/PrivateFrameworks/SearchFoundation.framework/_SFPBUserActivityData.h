@@ -17,9 +17,9 @@
     NSArray *_userInfos;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *userInfos; // @synthesize userInfos=_userInfos;
 @property(copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
-- (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

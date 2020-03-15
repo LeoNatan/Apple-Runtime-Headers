@@ -20,6 +20,7 @@
     NSSet *_requestedProperties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSSet *requestedProperties; // @synthesize requestedProperties=_requestedProperties;
 @property(readonly, nonatomic) VUIMediaEntityKind *kind; // @synthesize kind=_kind;
 @property(nonatomic) _Bool cachesPropertiesOnFirstAccess; // @synthesize cachesPropertiesOnFirstAccess=_cachesPropertiesOnFirstAccess;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSObject<VUIMediaEntityIdentifierInternal> *identifierInternal; // @synthesize identifierInternal=_identifierInternal;
 @property(nonatomic, getter=hasLocalChanges) _Bool localChanges; // @synthesize localChanges=_localChanges;
 @property(retain, nonatomic) VUIMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
-- (void).cxx_destruct;
 - (id)_defaultValueForPropertyDescriptor:(id)arg1;
 - (id)_valueForPropertyDescriptor:(id)arg1;
 - (id)_propertyValueForKey:(id)arg1;

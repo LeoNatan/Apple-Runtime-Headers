@@ -13,8 +13,8 @@
     NTKWhistlerAnalogColorPalette *_palette;
 }
 
-@property(retain, nonatomic) NTKWhistlerAnalogColorPalette *palette; // @synthesize palette=_palette;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NTKWhistlerAnalogColorPalette *palette; // @synthesize palette=_palette;
 - (id)_digitalTimeLabelColorForColor:(unsigned long long)arg1;
 - (id)_secondHandColorForColor:(unsigned long long)arg1;
 - (id)_hourMinuteHandStrokeColorForColor:(unsigned long long)arg1;

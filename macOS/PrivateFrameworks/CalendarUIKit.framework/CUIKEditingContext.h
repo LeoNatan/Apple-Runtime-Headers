@@ -27,6 +27,7 @@
     NSArray *_pendingGroupUpdates;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *pendingGroupUpdates; // @synthesize pendingGroupUpdates=_pendingGroupUpdates;
 @property(retain) NSArray *pendingObserverUpdates; // @synthesize pendingObserverUpdates=_pendingObserverUpdates;
 @property(retain) NSArray *objectsBeingEdited; // @synthesize objectsBeingEdited=_objectsBeingEdited;
@@ -39,7 +40,6 @@
 @property unsigned long long interfaceType; // @synthesize interfaceType=_interfaceType;
 @property __weak CUIKEditingManager *editingManager; // @synthesize editingManager=_editingManager;
 @property __weak CUIKEditingContextGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (void)trackedObjectsDidRevert:(id)arg1;
 - (void)relatedObjectsDidUpdate:(id)arg1;
 - (void)notifyObservers;

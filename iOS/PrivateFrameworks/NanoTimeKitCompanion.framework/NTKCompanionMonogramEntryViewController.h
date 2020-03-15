@@ -18,9 +18,9 @@
 
 + (id)localizedDescription;
 + (id)localizedTitle;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showsDoneButton; // @synthesize showsDoneButton=_showsDoneButton;
 @property(retain, nonatomic) UITextField *monogramEntry; // @synthesize monogramEntry=_monogramEntry;
-- (void).cxx_destruct;
 - (void)_doneTapped;
 - (void)_resetEntryField;
 - (id)customMonogram:(id)arg1;

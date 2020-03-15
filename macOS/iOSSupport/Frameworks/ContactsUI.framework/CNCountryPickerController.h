@@ -23,13 +23,13 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_selectedIndexPath;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(copy, nonatomic) NSArray *countries; // @synthesize countries=_countries;
 @property(retain, nonatomic) UILocalizedIndexedCollation *collation; // @synthesize collation=_collation;
 @property(retain, nonatomic) UITableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
 @property(copy, nonatomic) NSString *selectedCountryCode; // @synthesize selectedCountryCode=_selectedCountryCode;
-- (void).cxx_destruct;
 - (void)_configureSections;
 - (void)_loadCountryCodes;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;

@@ -33,6 +33,7 @@
 + (id)fieldWithClass:(Class)arg1 options:(id)arg2;
 + (id)optionalFieldWithClass:(Class)arg1;
 + (id)fieldWithClass:(Class)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType descriptionBlock; // @synthesize descriptionBlock=_descriptionBlock;
 @property(copy, nonatomic) CDUnknownBlockType decodeBlock; // @synthesize decodeBlock=_decodeBlock;
 @property(copy, nonatomic) CDUnknownBlockType encodeBlock; // @synthesize encodeBlock=_encodeBlock;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) NSString *externalRecordField; // @synthesize externalRecordField=_externalRecordField;
 @property(nonatomic) _Bool encrypted; // @synthesize encrypted=_encrypted;
 @property(readonly, nonatomic) Class classObj; // @synthesize classObj=_classObj;
-- (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionForEncodedQueryableValue:(id)arg1;

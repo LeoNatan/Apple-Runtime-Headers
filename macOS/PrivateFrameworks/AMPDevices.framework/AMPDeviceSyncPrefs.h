@@ -13,6 +13,8 @@
 
 @interface AMPDeviceSyncPrefs : NSObject <NSCopying, NSSecureCoding>
 {
+    BOOL _needsActivation;
+    BOOL _needsSetupAssistant;
     BOOL _configured;
     BOOL _isHomeMusicLibrary;
     BOOL _isHomePodcastLibrary;
@@ -25,18 +27,26 @@
     BOOL _hasSyncedPodcasts;
     BOOL _hasSyncedTVShows;
     BOOL _hasSyncedPhotos;
+    BOOL _hasDownloadedTracks;
+    BOOL _hasDownloadedMusic;
+    BOOL _hasDownloadedMovies;
+    BOOL _hasDownloadedTVShows;
+    BOOL _hasDownloadedPodcasts;
+    BOOL _hasDownloadedAudiobooks;
+    BOOL _hasDownloadedBooks;
     BOOL _disableMusic;
     BOOL _disableMusicVideos;
     BOOL _disableMovies;
     BOOL _disableHomeVideos;
     BOOL _disableTVShows;
-    BOOL _disableAudioPodcasts;
-    BOOL _disableVideoPodcasts;
+    BOOL _disablePodcasts;
     BOOL _disableAudiobooks;
     BOOL _disableVoiceMemos;
     BOOL _disableRingtones;
     BOOL _disableBooks;
     BOOL _disablePhotos;
+    BOOL _disableBackup;
+    BOOL _disableRestoreFromBackup;
     BOOL _launchApplication;
     BOOL _dontSyncWhenConnected;
     BOOL _enableDiskMode;
@@ -110,7 +120,7 @@
     NSSet *_rentalTransferToTrackIDs;
     NSSet *_rentalTransferFromTrackIDs;
     NSSet *_rentalDeleteTrackIDs;
-    AMPPhotoSyncPrefs *_photoPrefs;
+    AMPPhotoSyncPrefs *_photoSyncPrefs;
     unsigned long long _speechClipsMode;
     NSString *_voiceOverLanguage;
     unsigned long long _voiceMemoUpdateMode;
@@ -124,6 +134,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL supportsMultipleCalendars; // @synthesize supportsMultipleCalendars=_supportsMultipleCalendars;
 @property(nonatomic) unsigned long long calendarSyncDaysLimit; // @synthesize calendarSyncDaysLimit=_calendarSyncDaysLimit;
 @property(nonatomic) long long deviceDefaultCalendar; // @synthesize deviceDefaultCalendar=_deviceDefaultCalendar;
@@ -145,7 +156,7 @@
 @property(nonatomic) unsigned long long speechClipsMode; // @synthesize speechClipsMode=_speechClipsMode;
 @property(nonatomic) BOOL generateSpeechClips; // @synthesize generateSpeechClips=_generateSpeechClips;
 @property(nonatomic) BOOL deleteExistingPhotos; // @synthesize deleteExistingPhotos=_deleteExistingPhotos;
-@property(retain, nonatomic) AMPPhotoSyncPrefs *photoPrefs; // @synthesize photoPrefs=_photoPrefs;
+@property(retain, nonatomic) AMPPhotoSyncPrefs *photoSyncPrefs; // @synthesize photoSyncPrefs=_photoSyncPrefs;
 @property(retain, nonatomic) NSSet *rentalDeleteTrackIDs; // @synthesize rentalDeleteTrackIDs=_rentalDeleteTrackIDs;
 @property(retain, nonatomic) NSSet *rentalTransferFromTrackIDs; // @synthesize rentalTransferFromTrackIDs=_rentalTransferFromTrackIDs;
 @property(retain, nonatomic) NSSet *rentalTransferToTrackIDs; // @synthesize rentalTransferToTrackIDs=_rentalTransferToTrackIDs;
@@ -208,18 +219,26 @@
 @property(nonatomic) BOOL enableDiskMode; // @synthesize enableDiskMode=_enableDiskMode;
 @property(nonatomic) BOOL dontSyncWhenConnected; // @synthesize dontSyncWhenConnected=_dontSyncWhenConnected;
 @property(nonatomic) BOOL launchApplication; // @synthesize launchApplication=_launchApplication;
+@property(nonatomic) BOOL disableRestoreFromBackup; // @synthesize disableRestoreFromBackup=_disableRestoreFromBackup;
+@property(nonatomic) BOOL disableBackup; // @synthesize disableBackup=_disableBackup;
 @property(nonatomic) BOOL disablePhotos; // @synthesize disablePhotos=_disablePhotos;
 @property(nonatomic) BOOL disableBooks; // @synthesize disableBooks=_disableBooks;
 @property(nonatomic) BOOL disableRingtones; // @synthesize disableRingtones=_disableRingtones;
 @property(nonatomic) BOOL disableVoiceMemos; // @synthesize disableVoiceMemos=_disableVoiceMemos;
 @property(nonatomic) BOOL disableAudiobooks; // @synthesize disableAudiobooks=_disableAudiobooks;
-@property(nonatomic) BOOL disableVideoPodcasts; // @synthesize disableVideoPodcasts=_disableVideoPodcasts;
-@property(nonatomic) BOOL disableAudioPodcasts; // @synthesize disableAudioPodcasts=_disableAudioPodcasts;
+@property(nonatomic) BOOL disablePodcasts; // @synthesize disablePodcasts=_disablePodcasts;
 @property(nonatomic) BOOL disableTVShows; // @synthesize disableTVShows=_disableTVShows;
 @property(nonatomic) BOOL disableHomeVideos; // @synthesize disableHomeVideos=_disableHomeVideos;
 @property(nonatomic) BOOL disableMovies; // @synthesize disableMovies=_disableMovies;
 @property(nonatomic) BOOL disableMusicVideos; // @synthesize disableMusicVideos=_disableMusicVideos;
 @property(nonatomic) BOOL disableMusic; // @synthesize disableMusic=_disableMusic;
+@property(nonatomic) BOOL hasDownloadedBooks; // @synthesize hasDownloadedBooks=_hasDownloadedBooks;
+@property(nonatomic) BOOL hasDownloadedAudiobooks; // @synthesize hasDownloadedAudiobooks=_hasDownloadedAudiobooks;
+@property(nonatomic) BOOL hasDownloadedPodcasts; // @synthesize hasDownloadedPodcasts=_hasDownloadedPodcasts;
+@property(nonatomic) BOOL hasDownloadedTVShows; // @synthesize hasDownloadedTVShows=_hasDownloadedTVShows;
+@property(nonatomic) BOOL hasDownloadedMovies; // @synthesize hasDownloadedMovies=_hasDownloadedMovies;
+@property(nonatomic) BOOL hasDownloadedMusic; // @synthesize hasDownloadedMusic=_hasDownloadedMusic;
+@property(nonatomic) BOOL hasDownloadedTracks; // @synthesize hasDownloadedTracks=_hasDownloadedTracks;
 @property(nonatomic) BOOL hasSyncedPhotos; // @synthesize hasSyncedPhotos=_hasSyncedPhotos;
 @property(nonatomic) BOOL hasSyncedTVShows; // @synthesize hasSyncedTVShows=_hasSyncedTVShows;
 @property(nonatomic) BOOL hasSyncedPodcasts; // @synthesize hasSyncedPodcasts=_hasSyncedPodcasts;
@@ -232,7 +251,8 @@
 @property(nonatomic) BOOL isHomePodcastLibrary; // @synthesize isHomePodcastLibrary=_isHomePodcastLibrary;
 @property(nonatomic) BOOL isHomeMusicLibrary; // @synthesize isHomeMusicLibrary=_isHomeMusicLibrary;
 @property(nonatomic) BOOL configured; // @synthesize configured=_configured;
-- (void).cxx_destruct;
+@property(nonatomic) BOOL needsSetupAssistant; // @synthesize needsSetupAssistant=_needsSetupAssistant;
+@property(nonatomic) BOOL needsActivation; // @synthesize needsActivation=_needsActivation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-@property(copy, nonatomic) NSArray *artworkURLTemplates; // @synthesize artworkURLTemplates=_artworkURLTemplates;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *artworkURLTemplates; // @synthesize artworkURLTemplates=_artworkURLTemplates;
 - (id)customDictionaryRepresentation;
 @property(copy, nonatomic) NSDictionary *deviceSpecificUserInfo;
 @property(copy, nonatomic) NSDate *currentPlaybackDate;

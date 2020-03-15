@@ -17,12 +17,12 @@
     NSString *_youTubeUsername;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *youTubeUsername; // @synthesize youTubeUsername=_youTubeUsername;
 @property(readonly, nonatomic) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSString *username; // @synthesize username=_username;
-- (void).cxx_destruct;
 - (id)initWithUsername:(id)arg1 token:(id)arg2 displayName:(id)arg3 refreshToken:(id)arg4 youTubeUsername:(id)arg5;
 
 @end

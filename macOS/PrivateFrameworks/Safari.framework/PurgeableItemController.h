@@ -13,8 +13,8 @@
     NSArray *_purgeableItems;
 }
 
-@property(retain, nonatomic) NSArray *purgeableItems; // @synthesize purgeableItems=_purgeableItems;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *purgeableItems; // @synthesize purgeableItems=_purgeableItems;
 - (BOOL)purgeItemsOfMinimalPurgeOrder:(unsigned long long)arg1 totalSizeOfItemsPurged:(unsigned long long *)arg2;
 - (unsigned long long)sizeOfPurgeableItemsOfMinimalPurgeOrder:(unsigned long long)arg1;
 - (id)initWithPurgeableItems:(id)arg1;

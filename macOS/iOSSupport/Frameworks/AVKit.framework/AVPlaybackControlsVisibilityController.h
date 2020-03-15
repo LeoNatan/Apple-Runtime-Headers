@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
     AVPlayerController *_playerController;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL showsItemsWhenPaused; // @synthesize showsItemsWhenPaused=_showsItemsWhenPaused;
 @property(nonatomic) BOOL showsItemsWhileWaitingToPlay; // @synthesize showsItemsWhileWaitingToPlay=_showsItemsWhileWaitingToPlay;
 @property(nonatomic, getter=isPopoverPresented) BOOL popoverPresented; // @synthesize popoverPresented=_popoverPresented;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL canHideItems; // @synthesize canHideItems=_canHideItems;
 @property __weak id <AVPlaybackControlsVisibilityControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
-- (void).cxx_destruct;
 - (BOOL)_userIsInteractingWithItems;
 - (void)_stopInitiallyHidingItemsThatAreShownForVolumeChanges;
 - (void)_stopInitiallyHidingItems;

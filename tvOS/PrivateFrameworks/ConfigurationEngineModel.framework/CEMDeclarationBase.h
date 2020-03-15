@@ -22,6 +22,7 @@
 + (id)declarationForData:(id)arg1 error:(id *)arg2;
 + (id)declarationForPayload:(id)arg1 error:(id *)arg2;
 + (id)declarationClass;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMAnyPayload *declarationPayload; // @synthesize declarationPayload=_declarationPayload;
 @property(copy, nonatomic) NSString *declarationActivationScope; // @synthesize declarationActivationScope=_declarationActivationScope;
 @property(copy, nonatomic) NSNumber *declarationRequiresNetworkTether; // @synthesize declarationRequiresNetworkTether=_declarationRequiresNetworkTether;
@@ -29,7 +30,6 @@
 @property(copy, nonatomic) NSString *declarationDescription; // @synthesize declarationDescription=_declarationDescription;
 @property(copy, nonatomic) NSString *declarationIdentifier; // @synthesize declarationIdentifier=_declarationIdentifier;
 @property(copy, nonatomic) NSString *declarationType; // @synthesize declarationType=_declarationType;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateServerHash;
 - (id)serializeAsDataWithError:(id *)arg1;

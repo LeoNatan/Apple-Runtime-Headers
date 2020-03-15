@@ -18,9 +18,9 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(retain) PBSBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(retain, nonatomic) id <PBSBulletinServiceInterface> bulletinService; // @synthesize bulletinService=_bulletinService;
-- (void).cxx_destruct;
 - (void)bulletinService:(id)arg1 didDismissBulletin:(id)arg2 withReason:(unsigned long long)arg3;
 - (void)_presentPeripheralHUD:(long long)arg1;
 - (void)remoteConnected:(_Bool)arg1;

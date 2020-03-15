@@ -19,12 +19,13 @@
     _UIButtonBarButtonVisualProvider *_visualProvider;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _UIButtonBarButtonVisualProvider *visualProvider; // @synthesize visualProvider=_visualProvider;
 @property(nonatomic) __weak id <TUIButtonBarViewProvider> buttonProvider; // @synthesize buttonProvider=_buttonProvider;
 @property(nonatomic) double itemSpacing; // @synthesize itemSpacing=_itemSpacing;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(retain, nonatomic) UIBarButtonItemGroup *barButtonItemGroup; // @synthesize barButtonItemGroup=_barButtonItemGroup;
-- (void).cxx_destruct;
+- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_itemDidChangeHiddenState:(id)arg1;
 - (void)_itemDidChangeWidth:(id)arg1;
 - (void)_itemStandardViewNeedsUpdate:(id)arg1;

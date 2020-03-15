@@ -18,11 +18,11 @@
 }
 
 + (id)buttonWithGridButton:(id)arg1 templateDelegate:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(retain, nonatomic) CPGridButton *gridButton; // @synthesize gridButton=_gridButton;
 @property(retain, nonatomic) UIView *focusView; // @synthesize focusView=_focusView;
 @property(retain, nonatomic) CPSAbridgableLabel *customTitleLabel; // @synthesize customTitleLabel=_customTitleLabel;
-- (void).cxx_destruct;
 - (void)_updateLabelColor;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;

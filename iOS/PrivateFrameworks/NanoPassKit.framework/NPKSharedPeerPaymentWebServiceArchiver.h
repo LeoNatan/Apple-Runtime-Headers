@@ -15,8 +15,8 @@
     NPKCompanionAgentConnection *_connection;
 }
 
-@property(retain, nonatomic) NPKCompanionAgentConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NPKCompanionAgentConnection *connection; // @synthesize connection=_connection;
 - (void)archiveContext:(id)arg1;
 - (id)initWithCompanionAgentConnection:(id)arg1;
 

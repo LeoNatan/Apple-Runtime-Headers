@@ -20,11 +20,11 @@
     NSObject<OS_os_log> *_log;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property __weak DEDSharingConnection *connection; // @synthesize connection=_connection;
 @property(retain) SFSession *session; // @synthesize session=_session;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)didCancelSession:(id)arg1;
 - (void)cancelNotificationForSession:(id)arg1;
 - (void)scheduleNotificationForSession:(id)arg1;

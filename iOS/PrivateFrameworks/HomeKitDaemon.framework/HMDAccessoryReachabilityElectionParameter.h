@@ -14,9 +14,9 @@
     NSUUID *_identifier;
 }
 
+- (void).cxx_destruct;
 @property(readonly, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

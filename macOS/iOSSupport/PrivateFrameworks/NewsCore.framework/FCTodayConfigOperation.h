@@ -20,6 +20,7 @@
     NSDictionary *_resultHeldRecordsByType;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *resultHeldRecordsByType; // @synthesize resultHeldRecordsByType=_resultHeldRecordsByType;
 @property(copy, nonatomic) NTPBTodayConfig *resultTodayConfig; // @synthesize resultTodayConfig=_resultTodayConfig;
 @property(copy, nonatomic) CDUnknownBlockType todayConfigCompletionHandler; // @synthesize todayConfigCompletionHandler=_todayConfigCompletionHandler;
@@ -27,7 +28,6 @@
 @property(copy, nonatomic) NSString *widgetConfigID; // @synthesize widgetConfigID=_widgetConfigID;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy) id <FCCoreConfiguration> configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (void)_collectRecordIDsReferencedBySectionConfig:(id)arg1 withArticleListIDs:(id)arg2 articleIDs:(id)arg3;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

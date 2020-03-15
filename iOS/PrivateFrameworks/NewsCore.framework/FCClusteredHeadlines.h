@@ -16,11 +16,11 @@
     NSDictionary *_d_headlinesByNonWhitelistedTopicID;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *d_headlinesByNonWhitelistedTopicID; // @synthesize d_headlinesByNonWhitelistedTopicID=_d_headlinesByNonWhitelistedTopicID;
 @property(copy, nonatomic) NSArray *discardedOrphanedHeadlines; // @synthesize discardedOrphanedHeadlines=_discardedOrphanedHeadlines;
 @property(copy, nonatomic) NSArray *orphanedHeadlines; // @synthesize orphanedHeadlines=_orphanedHeadlines;
 @property(copy, nonatomic) NSDictionary *headlinesByTopicID; // @synthesize headlinesByTopicID=_headlinesByTopicID;
-- (void).cxx_destruct;
 - (void)filterClustersToTopicIDs:(id)arg1;
 - (void)d_sanityCheckAgainstInputHeadlines:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *d_allHeadlines;

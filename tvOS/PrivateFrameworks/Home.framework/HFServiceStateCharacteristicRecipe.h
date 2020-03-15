@@ -22,10 +22,10 @@
 + (id)na_identity;
 + (id)recipesForRootServiceCharacteristicTypes:(id)arg1 required:(_Bool)arg2;
 + (id)recipeForRootServiceCharacteristicType:(id)arg1 required:(_Bool)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isRequired) _Bool required; // @synthesize required=_required;
 @property(readonly, nonatomic) id <HFServiceTreeMatching> servicePredicate; // @synthesize servicePredicate=_servicePredicate;
 @property(readonly, copy, nonatomic) NSString *characteristicType; // @synthesize characteristicType=_characteristicType;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;

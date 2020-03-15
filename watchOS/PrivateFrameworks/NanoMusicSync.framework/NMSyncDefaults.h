@@ -42,6 +42,7 @@
 }
 
 + (id)sharedDefaults;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowOffChargerAssetSync; // @synthesize allowOffChargerAssetSync=_allowOffChargerAssetSync;
 @property(retain, nonatomic, setter=setAssetSyncPlaylistPersistentID:) NSNumber *assetSyncPlaylistPersistentID; // @synthesize assetSyncPlaylistPersistentID=_assetSyncPlaylistPersistentID;
 @property(nonatomic) unsigned int assetSyncType; // @synthesize assetSyncType=_assetSyncType;
@@ -49,7 +50,6 @@
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(copy, nonatomic) NSNumber *lastFullySentAssetSyncPlaylistVersion; // @synthesize lastFullySentAssetSyncPlaylistVersion=_lastFullySentAssetSyncPlaylistVersion;
 @property(copy, nonatomic) NSNumber *lastFullySentAssetSyncPlaylistPersistentID; // @synthesize lastFullySentAssetSyncPlaylistPersistentID=_lastFullySentAssetSyncPlaylistPersistentID;
-- (void).cxx_destruct;
 - (void)_notifyChangesForKey:(id)arg1;
 - (void)_setBool:(_Bool)arg1 forKey:(id)arg2;
 - (_Bool)_boolForKey:(id)arg1 defaultValue:(_Bool)arg2;

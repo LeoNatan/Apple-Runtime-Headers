@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGPoint _currentlyInspectedPoint;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIDebuggingZoomDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct CGPoint currentlyInspectedPoint; // @synthesize currentlyInspectedPoint=_currentlyInspectedPoint;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

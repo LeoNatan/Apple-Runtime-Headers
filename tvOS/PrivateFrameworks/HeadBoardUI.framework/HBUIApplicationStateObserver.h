@@ -6,26 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class UIWindow;
-
 @interface HBUIApplicationStateObserver : NSObject
 {
-    struct {
-        _Bool inactive;
-        _Bool background;
-    } _applicationStateFlags;
+    long long _applicationState;
     unsigned long long _applicationDeactivationReasons;
-    UIWindow *_controlCenterWindow;
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) UIWindow *controlCenterWindow; // @synthesize controlCenterWindow=_controlCenterWindow;
-@property(nonatomic) unsigned long long applicationDeactivationReasons; // @synthesize applicationDeactivationReasons=_applicationDeactivationReasons;
-- (void).cxx_destruct;
-- (void)_applicationWillEnterForeground;
-- (void)_applicationDidEnterBackground;
-- (void)_applicationWillResignActive;
-- (void)_applicationDidBecomeActive;
+@property(readonly, nonatomic) unsigned long long applicationDeactivationReasons; // @synthesize applicationDeactivationReasons=_applicationDeactivationReasons;
+@property(readonly, nonatomic) long long applicationState; // @synthesize applicationState=_applicationState;
+- (void)_updateApplicationState;
 - (void)_applicationDidRemoveDeactivationReason:(id)arg1;
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
 @property(readonly, nonatomic) _Bool canPlayVideo;

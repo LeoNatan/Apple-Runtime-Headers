@@ -25,12 +25,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned long long)_defaultPresentationOptions;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL preventsResigningAsPrincipalWindow; // @synthesize preventsResigningAsPrincipalWindow=_preventsResigningAsPrincipalWindow;
 @property(nonatomic) __weak _NSFullScreenContentController *surrogateContentController; // @synthesize surrogateContentController=_surrogateContentController;
 @property(nonatomic) unsigned long long presentationOptions; // @synthesize presentationOptions=_presentationOptions;
 @property(retain, nonatomic) NSHIPresentationInstance *presentationInstance; // @synthesize presentationInstance=_presentationInstance;
 @property(retain, nonatomic) _NSFullScreenSpace *space; // @synthesize space=_space;
-- (void).cxx_destruct;
 - (void)addSiblingWindow:(long long)arg1 position:(unsigned long long)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)queryCanAddSiblingWindow:(long long)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (BOOL)isOnActiveSpace;

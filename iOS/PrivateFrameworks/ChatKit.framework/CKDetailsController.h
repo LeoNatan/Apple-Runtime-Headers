@@ -58,6 +58,7 @@
     unsigned long long _downloadButtonState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDisplayingPhotos; // @synthesize isDisplayingPhotos=_isDisplayingPhotos;
 @property(nonatomic) unsigned long long downloadButtonState; // @synthesize downloadButtonState=_downloadButtonState;
 @property(nonatomic) unsigned long long undownloadedPhotoAttachmentCount; // @synthesize undownloadedPhotoAttachmentCount=_undownloadedPhotoAttachmentCount;
@@ -88,7 +89,6 @@
 @property(retain, nonatomic) CKDetailsTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) __weak id <CKDetailsControllerDelegate> detailsControllerDelegate; // @synthesize detailsControllerDelegate=_detailsControllerDelegate;
-- (void).cxx_destruct;
 - (void)_batchDownloadNotificationFired:(id)arg1;
 - (void)_updateDownloadButtonStateIfNeeded;
 @property(readonly, nonatomic) _Bool shouldShowDownloadMoreCell;

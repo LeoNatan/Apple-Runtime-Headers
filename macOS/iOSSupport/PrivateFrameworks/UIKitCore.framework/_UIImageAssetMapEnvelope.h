@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)wrapAsset:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *assetName; // @synthesize assetName=_assetName;
 @property(nonatomic) __weak UIImageAsset *imageAsset; // @synthesize imageAsset=_imageAsset;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

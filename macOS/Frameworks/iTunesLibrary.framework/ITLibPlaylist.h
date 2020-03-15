@@ -17,9 +17,9 @@
 }
 
 + (id)playlistWithDict:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <ITLibPlaylistDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *itemIDs; // @synthesize itemIDs=_itemIDs;
-- (void).cxx_destruct;
 - (BOOL)containsMediaKind:(unsigned long long)arg1;
 - (id)artwork;
 @property(nonatomic) unsigned long long kind;

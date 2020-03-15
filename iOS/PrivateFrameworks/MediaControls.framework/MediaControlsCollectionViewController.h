@@ -43,6 +43,7 @@
 
 + (id)alphaAnimatorWithAnimations:(CDUnknownBlockType)arg1;
 + (id)frameAnimator;
+- (void).cxx_destruct;
 @property(nonatomic) double preferredItemHeight; // @synthesize preferredItemHeight=_preferredItemHeight;
 @property(nonatomic) long long displayMode; // @synthesize displayMode=_displayMode;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -52,7 +53,6 @@
 @property(nonatomic) struct UIEdgeInsets scrollViewInsets; // @synthesize scrollViewInsets=_scrollViewInsets;
 @property(nonatomic) __weak id <MediaControlsCollectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MediaControlsCollectionViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (double)_backgroundCornerRadius;
 - (_Bool)_isScrollViewAnimatingScroll;
 - (id)_visibleBottomViewControllers;

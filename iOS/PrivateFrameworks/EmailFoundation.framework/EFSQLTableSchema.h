@@ -23,11 +23,11 @@
     unsigned long long _primaryKeyConflictResolution;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long primaryKeyConflictResolution; // @synthesize primaryKeyConflictResolution=_primaryKeyConflictResolution;
 @property(readonly, copy, nonatomic) NSString *rowIDColumnName; // @synthesize rowIDColumnName=_rowIDColumnName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSArray *primaryKeyColumns; // @synthesize primaryKeyColumns=_primaryKeyColumns;
-- (void).cxx_destruct;
 - (void)addIndexForColumns:(id)arg1;
 - (void)addIndex:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *indexes;
@@ -38,6 +38,7 @@
 - (void)addCheckConstraintForExpression:(id)arg1;
 - (id)_columnsForColumnNames:(id)arg1;
 - (void)addUniquenessConstraintForColumns:(id)arg1 conflictResolution:(unsigned long long)arg2;
+- (void)removeColumn:(id)arg1;
 - (void)addColumn:(id)arg1;
 - (id)columnForName:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *checkConstraints;

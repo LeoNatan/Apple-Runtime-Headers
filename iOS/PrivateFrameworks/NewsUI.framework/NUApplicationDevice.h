@@ -16,9 +16,9 @@
     UIScreen *_screen;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
 @property(readonly, nonatomic) UIApplication *application; // @synthesize application=_application;
-- (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isSplitScreen) _Bool splitScreen;
 - (id)initWithApplication:(id)arg1 screen:(id)arg2;
 

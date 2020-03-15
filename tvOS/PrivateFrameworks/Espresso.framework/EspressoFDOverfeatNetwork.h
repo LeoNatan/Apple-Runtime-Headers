@@ -44,6 +44,8 @@
     shared_ptr_ae8b808b _context_cpu;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) shared_ptr_ae8b808b context_cpu; // @synthesize context_cpu=_context_cpu;
 @property(nonatomic) shared_ptr_ae8b808b context_metal; // @synthesize context_metal=_context_metal;
 @property(nonatomic) int cpin; // @synthesize cpin=_cpin;
@@ -55,8 +57,6 @@
 @property(nonatomic) float maxScale; // @synthesize maxScale=_maxScale;
 @property(nonatomic) int scalingMode; // @synthesize scalingMode=_scalingMode;
 @property(nonatomic) _Bool useGPUScaler; // @synthesize useGPUScaler=_useGPUScaler;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)setContextCpu:(id)arg1;
 - (void)setContextMetal:(id)arg1;
 - (id)errorForLayers;

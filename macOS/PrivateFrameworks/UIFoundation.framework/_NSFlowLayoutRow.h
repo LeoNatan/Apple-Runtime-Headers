@@ -24,6 +24,7 @@
     BOOL _fixedItemSize;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double availableSpace; // @synthesize availableSpace=_availableSpace;
 @property(nonatomic) BOOL fixedItemSize; // @synthesize fixedItemSize=_fixedItemSize;
 @property(nonatomic) BOOL complete; // @synthesize complete=_complete;
@@ -33,7 +34,6 @@
 @property(nonatomic) struct CGRect rowFrame; // @synthesize rowFrame=_rowFrame;
 @property(nonatomic) struct CGSize rowSize; // @synthesize rowSize=_rowSize;
 @property(nonatomic) __weak _NSFlowLayoutSection *section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (long long)indexOfNearestItemAtPoint:(struct CGPoint)arg1;
 - (id)copyFromSection:(id)arg1;
 - (id)snapshot;

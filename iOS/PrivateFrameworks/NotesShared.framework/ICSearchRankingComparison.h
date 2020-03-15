@@ -13,8 +13,8 @@
     NSMutableArray *_rankingValues;
 }
 
-@property(retain, nonatomic) NSMutableArray *rankingValues; // @synthesize rankingValues=_rankingValues;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *rankingValues; // @synthesize rankingValues=_rankingValues;
 - (id)description;
 @property(nonatomic) unsigned long long preSubBucketRankingResult;
 @property(nonatomic) unsigned long long preSubRecencyRankingResult;

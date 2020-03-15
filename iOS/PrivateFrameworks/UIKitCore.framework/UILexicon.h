@@ -16,8 +16,8 @@
 }
 
 + (id)_lexiconWithTILexicon:(id)arg1;
-@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

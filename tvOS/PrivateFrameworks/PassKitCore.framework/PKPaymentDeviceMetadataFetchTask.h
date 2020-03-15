@@ -16,11 +16,11 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) unsigned long long requestedFields; // @synthesize requestedFields=_requestedFields;
 @property(nonatomic) unsigned long long remaningFields; // @synthesize remaningFields=_remaningFields;
 @property(retain, nonatomic) PKPaymentDeviceMetadata *deviceMetadata; // @synthesize deviceMetadata=_deviceMetadata;
-- (void).cxx_destruct;
 
 @end
 

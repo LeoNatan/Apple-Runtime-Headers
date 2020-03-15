@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <CNUINavigationListStyle> _navigationListStyle;
 }
 
-@property(readonly, nonatomic) id <CNUINavigationListStyle> navigationListStyle; // @synthesize navigationListStyle=_navigationListStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <CNUINavigationListStyle> navigationListStyle; // @synthesize navigationListStyle=_navigationListStyle;
 - (void)applyCollapsedBackgroundNavigationListStyleToCell:(id)arg1;
 - (void)applyExpandedBackgroundNavigationListStyleToCell:(id)arg1;
 - (void)applyNavigationListStyleToDetailCell:(id)arg1;

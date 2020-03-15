@@ -15,9 +15,9 @@
 }
 
 + (id)optionWithSyntax:(id)arg1 description:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *optionDescription; // @synthesize optionDescription=_optionDescription;
 @property(readonly, nonatomic) NSString *optionSyntax; // @synthesize optionSyntax=_optionSyntax;
-- (void).cxx_destruct;
 - (id)initWithSyntax:(id)arg1 description:(id)arg2;
 
 @end

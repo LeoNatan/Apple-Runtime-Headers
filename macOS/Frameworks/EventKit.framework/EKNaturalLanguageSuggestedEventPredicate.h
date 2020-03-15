@@ -14,9 +14,9 @@
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)description;
 - (id)predicateFormat;
 - (BOOL)evaluateWithObject:(id)arg1;

@@ -19,13 +19,13 @@
     NSMutableDictionary *_changedObjectMap;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *changedObjectMap; // @synthesize changedObjectMap=_changedObjectMap;
 @property(retain) NSMutableDictionary *changeHistory; // @synthesize changeHistory=_changeHistory;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) EKChangeListener *changeListener; // @synthesize changeListener=_changeListener;
 @property(retain) NSMutableSet *editingContextGroups; // @synthesize editingContextGroups=_editingContextGroups;
 @property __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
-- (void).cxx_destruct;
 - (id)_allOpenEditingContexts;
 - (BOOL)_commitChangesForContext:(id)arg1 forceCommit:(BOOL)arg2 shouldClose:(char *)arg3;
 - (BOOL)commitChangesFromEditingContextWithoutClosing:(id)arg1;

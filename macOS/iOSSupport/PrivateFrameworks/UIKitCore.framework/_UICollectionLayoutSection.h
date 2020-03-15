@@ -26,6 +26,7 @@
 }
 
 + (id)layoutSectionWithLayoutGroup:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSIndexSet *pinnedSupplementaryItemIndexes; // @synthesize pinnedSupplementaryItemIndexes=_pinnedSupplementaryItemIndexes;
 @property(copy, nonatomic) NSArray *supplementaryItems; // @synthesize supplementaryItems=_supplementaryItems;
 @property(copy, nonatomic) NSArray *decorationItems; // @synthesize decorationItems=_decorationItems;
@@ -35,7 +36,6 @@
 @property(nonatomic) long long orthogonalScrollingBehavior; // @synthesize orthogonalScrollingBehavior=_orthogonalScrollingBehavior;
 @property(nonatomic) double interGroupSpacing; // @synthesize interGroupSpacing=_interGroupSpacing;
 @property(nonatomic) struct NSDirectionalEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void).cxx_destruct;
 - (id)_apiRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithLayoutGroup:(id)arg1;

@@ -29,6 +29,7 @@
     struct CGRect _placeholderImageContentsRect;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsEdgeAntialiasing; // @synthesize allowsEdgeAntialiasing=_allowsEdgeAntialiasing;
 @property(nonatomic) long long videoViewContentMode; // @synthesize videoViewContentMode=_videoViewContentMode;
 @property(readonly, nonatomic, getter=isDisplayingPlaceHolder) _Bool displayingPlaceholder; // @synthesize displayingPlaceholder=_displayingPlaceholder;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
 @property(retain, nonatomic) ISWrappedAVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) __weak id <PXVideoPlayerViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)generateSnapshotImage;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;

@@ -65,6 +65,7 @@
 @property double frameInterval;
 @property(getter=isEnabled) _Bool enabled;
 @property long long preferredFramesPerSecond;
+- (_Bool)CAMLTypeSupportedForKey:(id)arg1;
 - (id)CAMLTypeForKey:(id)arg1;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;

@@ -32,6 +32,7 @@
 
 + (struct HKAxisMinMaxDefinition)contractByPointsLow:(float)arg1 high:(float)arg2 modelRange:(struct HKAxisMinMaxDefinition)arg3 pointRange:(struct HKAxisMinMaxDefinition)arg4;
 + (struct HKAxisMinMaxDefinition)expandByPointsLow:(float)arg1 high:(float)arg2 modelRange:(struct HKAxisMinMaxDefinition)arg3 pointRange:(struct HKAxisMinMaxDefinition)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKAxisLabelCache *axisLabelCache; // @synthesize axisLabelCache=_axisLabelCache;
 @property(retain, nonatomic) NSMutableArray *axisAnnotations; // @synthesize axisAnnotations=_axisAnnotations;
 @property(retain, nonatomic) HKValueRange *chartableValueRange; // @synthesize chartableValueRange=_chartableValueRange;
@@ -46,7 +47,6 @@
 @property(retain, nonatomic) HKAxisStyle *secondaryStyle; // @synthesize secondaryStyle=_secondaryStyle;
 @property(retain, nonatomic) HKAxisStyle *preferredStyle; // @synthesize preferredStyle=_preferredStyle;
 @property(readonly, nonatomic) _Bool requiresScaling; // @synthesize requiresScaling=_requiresScaling;
-- (void).cxx_destruct;
 - (void)clearCache;
 - (void)clearAnnotations;
 - (int)axisAnnotationCount;

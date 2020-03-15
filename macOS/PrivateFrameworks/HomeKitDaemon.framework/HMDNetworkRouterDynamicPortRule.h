@@ -24,13 +24,13 @@
 
 + (id)parsedFromData:(id)arg1 error:(id *)arg2;
 + (id)ruleFromFirewallRuleLAN:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDNetworkRouterServiceType *serviceType; // @synthesize serviceType=_serviceType;
 @property(retain, nonatomic) HMDTLVUnsignedNumberValue *flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) HMDNetworkRouterAdvertisementProtocol *advertisementProtocol; // @synthesize advertisementProtocol=_advertisementProtocol;
 @property(retain, nonatomic) HMDNetworkRouterProtocol *protocol; // @synthesize protocol=_protocol;
 @property(retain, nonatomic) HMDNetworkRouterLANIdentifierList *lanIdentifierList; // @synthesize lanIdentifierList=_lanIdentifierList;
 @property(retain, nonatomic) HMDNetworkRouterRuleDirection *direction; // @synthesize direction=_direction;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

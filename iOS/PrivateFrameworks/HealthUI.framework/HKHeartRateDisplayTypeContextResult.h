@@ -14,9 +14,9 @@
     HKStatistics *_statistics;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) HKStatistics *statistics; // @synthesize statistics=_statistics;
 @property(nonatomic) long long context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithContext:(long long)arg1 statistics:(id)arg2;
 

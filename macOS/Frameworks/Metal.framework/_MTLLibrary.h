@@ -8,7 +8,7 @@
 
 #import <Metal/MTLLibrarySPI-Protocol.h>
 
-@class NSArray, NSData, NSMutableDictionary, NSString;
+@class NSArray, NSMutableDictionary, NSString;
 @protocol MTLDevice;
 
 @interface _MTLLibrary : _MTLObjectWithLabel <MTLLibrarySPI>
@@ -26,6 +26,7 @@
 @property(readonly, copy) NSString *description;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (void)dealloc;
+@property(readonly) unsigned long long type; // @dynamic type;
 - (id)initWithLibraryContainer:(struct MTLLibraryContainer *)arg1 device:(id)arg2;
 - (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 pipelineLibrary:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -36,10 +37,12 @@
 - (id)newFunctionWithName:(id)arg1;
 - (id)newExternFunctionWithName:(id)arg1;
 - (id)newFunctionWithNameInternal:(id)arg1;
+@property(readonly) NSArray *linkedLibraries;
 @property(readonly, retain) NSArray *externFunctionNames; // @dynamic externFunctionNames;
 @property(readonly, retain) NSArray *functionNames; // @dynamic functionNames;
 @property(copy) NSString *overrideTriple; // @dynamic overrideTriple;
-@property(readonly, copy) NSData *libraryDataContents;
+- (id)libraryDataContents;
+@property(readonly) NSArray *variableList;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,9 +15,9 @@
 }
 
 + (id)stackItemWithContainer:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

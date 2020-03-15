@@ -34,6 +34,7 @@
 }
 
 + (id)context;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL targetIsSystem; // @synthesize targetIsSystem=_targetIsSystem;
 @property(retain, nonatomic) id <RBDomainAttributeManaging> domainAttributeManager; // @synthesize domainAttributeManager=_domainAttributeManager;
 @property(retain, nonatomic) id <RBBundlePropertiesManaging> bundlePropertiesManager; // @synthesize bundlePropertiesManager=_bundlePropertiesManager;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) RBProcess *originatorProcess; // @synthesize originatorProcess=_originatorProcess;
 @property(retain, nonatomic) RBSAssertionDescriptor *assertionDescriptor; // @synthesize assertionDescriptor=_assertionDescriptor;
 @property(retain, nonatomic) RBAssertionDescriptorValidator *assertionDescriptionValidator; // @synthesize assertionDescriptionValidator=_assertionDescriptionValidator;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) RBSProcessIdentity *originatorIdentity;
 @property(readonly, nonatomic) id <RBEntitlementPossessing> originatorEntitlements;

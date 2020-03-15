@@ -30,11 +30,11 @@
 + (id)sharedManager;
 + (id)downloadRepresentationsAtURL:(id)arg1;
 + (id)defaultDownloadsHistoryURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double totalProgress; // @synthesize totalProgress=_totalProgress;
 @property(readonly, nonatomic) _SFDownloadIconCache *iconCache; // @synthesize iconCache=_iconCache;
 @property(nonatomic) __weak id <_SFDownloadDelegate> extraDownloadDelegate; // @synthesize extraDownloadDelegate=_extraDownloadDelegate;
 @property(readonly, nonatomic) NSURL *downloadsRootURL; // @synthesize downloadsRootURL=_downloadsRootURL;
-- (void).cxx_destruct;
 - (void)downloadWillBeDeleted:(id)arg1;
 - (void)downloadContentsDidChange:(id)arg1;
 - (void)downloadShouldContinueAfterReceivingResponse:(id)arg1 decisionHandler:(CDUnknownBlockType)arg2;
@@ -47,10 +47,12 @@
 - (void)downloadDidStart:(id)arg1;
 - (void)downloadDidFail:(id)arg1;
 - (void)downloadDidFinish:(id)arg1;
+- (_Bool)_canExpireDownloadOnCompletion:(id)arg1;
 - (double)_calculateTotalProgress;
 - (void)_updateTotalProgress:(id)arg1;
 - (void)_startUpdateTotalProgressTimerIfNeeded;
 - (id)_busyDownloads;
+- (_Bool)shouldExcludeDownloadFromList:(id)arg1;
 - (_Bool)shouldExcludeDownloadFromFileSystem:(id)arg1;
 - (void)_removeOldDownloadsAndUpdateTimerIfNeeded;
 - (void)_removeDeletedDownloads;
@@ -62,7 +64,9 @@
 - (void)getDownloadsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)savePendingChangesBeforeTermination;
 @property(readonly, copy, nonatomic) NSArray *downloads;
+- (void)_loadDownloadHistoryAsynchronous:(_Bool)arg1;
 - (void)_loadDownloadHistory;
+- (void)reloadDownloadsSynchronously;
 - (id)_dataForPersistingToHistory;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

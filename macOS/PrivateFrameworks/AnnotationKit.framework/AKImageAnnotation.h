@@ -26,13 +26,13 @@
 + (id)displayNameForUndoablePropertyChangeWithKey:(id)arg1;
 + (id)keyPathsForValuesAffectingDrawingBounds;
 + (id)keyPathsForValuesAffectingHitTestBounds;
+- (void).cxx_destruct;
 @property double rotationAngle; // @synthesize rotationAngle=_rotationAngle;
 @property BOOL horizontallyFlipped; // @synthesize horizontallyFlipped=_horizontallyFlipped;
 @property BOOL verticallyFlipped; // @synthesize verticallyFlipped=_verticallyFlipped;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property BOOL hasShadow; // @synthesize hasShadow=_hasShadow;
 @property struct CGRect rectangle; // @synthesize rectangle=_rectangle;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)translateBy:(struct CGPoint)arg1;

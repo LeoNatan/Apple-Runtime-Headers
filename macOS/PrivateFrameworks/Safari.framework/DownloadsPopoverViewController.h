@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 + (void)determinePopoverAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (BOOL)canShowPopover;
 + (id)sharedController;
-@property(retain, nonatomic) NSPopover *popover; // @synthesize popover=_popover;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSPopover *popover; // @synthesize popover=_popover;
 - (void)_updateContentSizeForDownloadsChange;
 - (void)_updateContentSizeAllowingSmallerWidth:(BOOL)arg1;
 - (void)_downloadsDidChange:(id)arg1;

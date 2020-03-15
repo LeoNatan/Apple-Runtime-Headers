@@ -17,9 +17,9 @@
 }
 
 + (unsigned long long)updateMode;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType moduleControllerBuilder; // @synthesize moduleControllerBuilder=_moduleControllerBuilder;
 @property(readonly, nonatomic) NSArray *moduleControllers; // @synthesize moduleControllers=_moduleControllers;
-- (void).cxx_destruct;
 - (void)dismissTextViewController;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (id)tableView:(id)arg1 viewForFooterInSection:(long long)arg2;

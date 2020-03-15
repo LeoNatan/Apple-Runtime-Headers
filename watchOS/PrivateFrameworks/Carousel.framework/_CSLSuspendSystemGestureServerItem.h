@@ -15,9 +15,9 @@
     CSLSSuspendSystemGestureAssertionConfiguration *_configuration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CSLSSuspendSystemGestureAssertionConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) id <BSXPCServerClient> owningClient; // @synthesize owningClient=_owningClient;
-- (void).cxx_destruct;
 - (id)initWithConfiguration:(id)arg1;
 
 @end

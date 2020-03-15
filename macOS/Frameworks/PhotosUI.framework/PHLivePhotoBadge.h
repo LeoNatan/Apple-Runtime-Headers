@@ -18,8 +18,8 @@
 }
 
 + (id)_livePhotoOverlayBadgeLabelTextAttributesOfSize:(double)arg1;
-@property(nonatomic) __weak id <PHLivePhotoBadgeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <PHLivePhotoBadgeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)mouseUp:(id)arg1;

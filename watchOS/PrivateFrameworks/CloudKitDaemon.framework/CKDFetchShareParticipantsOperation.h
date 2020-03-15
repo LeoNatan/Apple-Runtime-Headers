@@ -15,10 +15,10 @@
     NSArray *_userIdentityLookupInfos;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *userIdentityLookupInfos; // @synthesize userIdentityLookupInfos=_userIdentityLookupInfos;
 @property(retain, nonatomic) CKDPublicIdentityLookupRequest *pendingRequest; // @synthesize pendingRequest=_pendingRequest;
 @property(copy, nonatomic) CDUnknownBlockType shareParticipantFetchedBlock; // @synthesize shareParticipantFetchedBlock=_shareParticipantFetchedBlock;
-- (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)main;

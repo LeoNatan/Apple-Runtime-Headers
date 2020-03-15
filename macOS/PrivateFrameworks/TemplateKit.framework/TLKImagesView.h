@@ -17,10 +17,10 @@
     NSMutableArray *_imageViews;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(nonatomic, getter=isPaddingDisabled) BOOL paddingDisabled; // @synthesize paddingDisabled=_paddingDisabled;
 @property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
-- (void).cxx_destruct;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (void)updateWithImages:(id)arg1;
 - (void)updateForPaddingDisabled:(BOOL)arg1;

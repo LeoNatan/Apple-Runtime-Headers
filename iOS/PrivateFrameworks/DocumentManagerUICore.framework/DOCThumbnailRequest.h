@@ -14,8 +14,8 @@
 + (id)iconRequestForItem:(id)arg1 descriptor:(id)arg2 thumbnailGenerator:(id)arg3;
 + (id)iconRequestForURL:(id)arg1 descriptor:(id)arg2 thumbnailGenerator:(id)arg3;
 + (id)requestForItem:(id)arg1 descriptor:(id)arg2 thumbnailGenerator:(id)arg3;
-@property(copy, nonatomic) CDUnknownBlockType thumbnailGenerationRequiresDownloadHandler; // @synthesize thumbnailGenerationRequiresDownloadHandler=_thumbnailGenerationRequiresDownloadHandler;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType thumbnailGenerationRequiresDownloadHandler; // @synthesize thumbnailGenerationRequiresDownloadHandler=_thumbnailGenerationRequiresDownloadHandler;
 - (void)cancel;
 - (void)generateThumbnailWithCompletionHandler:(CDUnknownBlockType)arg1;
 

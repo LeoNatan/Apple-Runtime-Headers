@@ -20,8 +20,8 @@
     _Bool _userPresenceDetectedSinceWake;
 }
 
-@property(readonly, nonatomic) _Bool userPresenceDetectedSinceWake; // @synthesize userPresenceDetectedSinceWake=_userPresenceDetectedSinceWake;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool userPresenceDetectedSinceWake; // @synthesize userPresenceDetectedSinceWake=_userPresenceDetectedSinceWake;
 - (void)_updateFaceDetectionState;
 - (_Bool)_isFaceDetectPermitted;
 - (_Bool)_handleBiometricEvent:(unsigned long long)arg1;

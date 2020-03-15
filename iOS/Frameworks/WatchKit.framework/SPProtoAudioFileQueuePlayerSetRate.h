@@ -16,9 +16,9 @@
     float _rate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float rate; // @synthesize rate=_rate;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

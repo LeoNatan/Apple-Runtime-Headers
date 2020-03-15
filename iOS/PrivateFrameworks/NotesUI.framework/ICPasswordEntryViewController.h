@@ -26,6 +26,7 @@
     NSString *_contentSizeCategory;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
 @property(nonatomic) __weak NSLayoutConstraint *titleLabelBottomConstraintForAXLargerTextSizes; // @synthesize titleLabelBottomConstraintForAXLargerTextSizes=_titleLabelBottomConstraintForAXLargerTextSizes;
 @property(nonatomic) __weak NSLayoutConstraint *titleLabelBaselineConstraint; // @synthesize titleLabelBaselineConstraint=_titleLabelBaselineConstraint;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool isAnimatingOut; // @synthesize isAnimatingOut=_isAnimatingOut;
 @property(nonatomic) unsigned long long intent; // @synthesize intent=_intent;
 @property(retain, nonatomic) ICNote *note; // @synthesize note=_note;
-- (void).cxx_destruct;
 - (_Bool)_canShowWhileLocked;
 - (void)updateforAccessibilityDarkerSystemColors;
 - (void)traitCollectionDidChange:(id)arg1;

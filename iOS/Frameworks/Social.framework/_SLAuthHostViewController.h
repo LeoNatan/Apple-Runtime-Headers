@@ -11,8 +11,8 @@
     CDUnknownBlockType _viewServiceTerminationBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType viewServiceTerminationBlock; // @synthesize viewServiceTerminationBlock=_viewServiceTerminationBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType viewServiceTerminationBlock; // @synthesize viewServiceTerminationBlock=_viewServiceTerminationBlock;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

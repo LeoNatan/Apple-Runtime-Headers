@@ -20,6 +20,7 @@
     NSString *_message;
 }
 
+- (void).cxx_destruct;
 @property _Bool isFatal; // @synthesize isFatal=_isFatal;
 @property(retain) NSString *message; // @synthesize message=_message;
 @property unsigned long long lineNumber; // @synthesize lineNumber=_lineNumber;
@@ -28,7 +29,6 @@
 @property _Bool isClassMethod; // @synthesize isClassMethod=_isClassMethod;
 @property(retain) Class objectClass; // @synthesize objectClass=_objectClass;
 @property SEL selector; // @synthesize selector=_selector;
-- (void).cxx_destruct;
 - (_Bool)isWarning;
 - (id)description;
 - (id)prettyMethodName;

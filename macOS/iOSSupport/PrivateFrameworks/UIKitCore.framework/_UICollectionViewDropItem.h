@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     struct CGSize _previewSize;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSIndexPath *sourceIndexPath; // @synthesize sourceIndexPath=_sourceIndexPath;
 @property(nonatomic) struct CGSize previewSize; // @synthesize previewSize=_previewSize;
 @property(retain, nonatomic) UIDragItem *dragItem; // @synthesize dragItem=_dragItem;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)initWithDragItem:(id)arg1 previewSize:(struct CGSize)arg2 sourceIndexPath:(id)arg3;
 

@@ -19,12 +19,12 @@
     EDAMSharedNotebook *_sharedNotebook;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isDefaultNotebookOverride; // @synthesize isDefaultNotebookOverride=_isDefaultNotebookOverride;
 @property(nonatomic) _Bool isShared; // @synthesize isShared=_isShared;
 @property(retain, nonatomic) EDAMSharedNotebook *sharedNotebook; // @synthesize sharedNotebook=_sharedNotebook;
 @property(retain, nonatomic) EDAMLinkedNotebook *linkedNotebook; // @synthesize linkedNotebook=_linkedNotebook;
 @property(retain, nonatomic) EDAMNotebook *notebook; // @synthesize notebook=_notebook;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

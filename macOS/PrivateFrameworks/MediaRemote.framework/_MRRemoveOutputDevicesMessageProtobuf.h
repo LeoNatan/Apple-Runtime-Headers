@@ -16,8 +16,8 @@
 }
 
 + (Class)outputDeviceUIDsType;
-@property(retain, nonatomic) NSMutableArray *outputDeviceUIDs; // @synthesize outputDeviceUIDs=_outputDeviceUIDs;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableArray *outputDeviceUIDs; // @synthesize outputDeviceUIDs=_outputDeviceUIDs;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -15,8 +15,8 @@
     NSData *_jpegData;
 }
 
-@property(retain, nonatomic) NSData *jpegData; // @synthesize jpegData=_jpegData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSData *jpegData; // @synthesize jpegData=_jpegData;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

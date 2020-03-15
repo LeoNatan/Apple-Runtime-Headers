@@ -19,10 +19,10 @@
 
 + (id)_descriptorForRequiredKeysWithDescription:(id)arg1;
 + (id)descriptorForRequiredKeys;
+- (void).cxx_destruct;
 @property(nonatomic) void *abRecord; // @synthesize abRecord=_abRecord;
 @property(retain, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)initWithABRecord:(void *)arg1 fullName:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

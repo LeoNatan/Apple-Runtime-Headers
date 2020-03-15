@@ -18,10 +18,10 @@
     id <SWLogger> _logger;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <SWLogger> logger; // @synthesize logger=_logger;
 @property(readonly, nonatomic) id <SWScriptsManager> scriptsManager; // @synthesize scriptsManager=_scriptsManager;
 @property(readonly, nonatomic) id <SWSession> session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)refresh;
 - (id)initWithScriptsManager:(id)arg1 logger:(id)arg2;
 

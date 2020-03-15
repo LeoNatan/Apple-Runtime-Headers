@@ -16,10 +16,10 @@
     NSMutableDictionary *_localMetadata;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *localMetadata; // @synthesize localMetadata=_localMetadata;
 @property(retain, nonatomic) NSSet *localMetadataKeys; // @synthesize localMetadataKeys=_localMetadataKeys;
 @property(retain, nonatomic) NSObject<TVPMediaItem> *mediaItem; // @synthesize mediaItem=_mediaItem;
-- (void).cxx_destruct;
 - (_Bool)isKindOfClass:(Class)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (_Bool)conformsToProtocol:(id)arg1;

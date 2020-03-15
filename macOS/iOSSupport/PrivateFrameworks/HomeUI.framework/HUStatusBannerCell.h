@@ -28,6 +28,7 @@
 
 + (Class)layoutOptionsClass;
 + (BOOL)requiresConstraintBasedLayout;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutConstraints; // @synthesize layoutConstraints=_layoutConstraints;
 @property(retain, nonatomic) UILabel *continueLabel; // @synthesize continueLabel=_continueLabel;
 @property(retain, nonatomic) UIView *lipView; // @synthesize lipView=_lipView;
@@ -39,7 +40,6 @@
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) HUGridStatusBannerCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic, getter=areCellContentsHidden) BOOL cellContentsHidden; // @synthesize cellContentsHidden=_cellContentsHidden;
-- (void).cxx_destruct;
 - (BOOL)_isCellSizeSubclassSmallPhone;
 @property(readonly, copy) NSString *description;
 - (void)_configureBannerForUnfinishedOnboardingFlowKeyPath:(id)arg1;

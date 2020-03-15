@@ -22,8 +22,8 @@
     int _skipCount;
 }
 
-@property(nonatomic) __weak id <ENHTMLtoENMLConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ENHTMLtoENMLConverterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)xmlWriterDidEndWritingDocument:(id)arg1;
 - (void)xmlWriter:(id)arg1 didGenerateData:(id)arg2;
 - (void)parser:(id)arg1 didFailWithError:(id)arg2;

@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)autoFillFrameWithWebProcessPlugInFrame:(id)arg1;
-@property(readonly, nonatomic) WKWebProcessPlugInFrame *plugInFrame; // @synthesize plugInFrame=_plugInFrame;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WKWebProcessPlugInFrame *plugInFrame; // @synthesize plugInFrame=_plugInFrame;
 - (void)enumerateChildFramesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)committedURL;
 - (struct OpaqueJSValue *)jsWrapperInMetadataControllerScriptWorldForNode:(id)arg1;

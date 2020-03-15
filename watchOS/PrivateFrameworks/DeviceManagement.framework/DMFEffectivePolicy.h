@@ -25,12 +25,12 @@
 + (id)unblockableCategoryIdentifiers;
 + (id)unblockableBundleIdentifiers;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int defaultPriority; // @synthesize defaultPriority=_defaultPriority;
 @property(readonly, nonatomic) int defaultPolicy; // @synthesize defaultPolicy=_defaultPolicy;
 @property(readonly, copy, nonatomic) NSDictionary *prioritiesByIdentifier; // @synthesize prioritiesByIdentifier=_prioritiesByIdentifier;
 @property(readonly, copy, nonatomic) NSDictionary *currentPoliciesByIdentifier; // @synthesize currentPoliciesByIdentifier=_currentPoliciesByIdentifier;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (int)priorityForIdentifier:(id)arg1;
 - (int)policyForIdentifier:(id)arg1;
 @property(readonly, nonatomic) _Bool downtimeEnforced;

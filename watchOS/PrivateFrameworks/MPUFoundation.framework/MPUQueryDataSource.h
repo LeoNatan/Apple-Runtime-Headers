@@ -22,9 +22,9 @@
     MPMediaQuery *_query;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool ignoringInvalidationDueToBackgroundApplicationState; // @synthesize ignoringInvalidationDueToBackgroundApplicationState=_ignoringInvalidationDueToBackgroundApplicationState;
 @property(readonly, nonatomic) MPMediaQuery *query; // @synthesize query=_query;
-- (void).cxx_destruct;
 - (id)_sectionInfo;
 - (void)_invalidateForDisplayValuesChangeIfNeeded;
 - (_Bool)_deleteHidesFromCloudForIndex:(unsigned int)arg1 hidesAll:(out _Bool *)arg2;

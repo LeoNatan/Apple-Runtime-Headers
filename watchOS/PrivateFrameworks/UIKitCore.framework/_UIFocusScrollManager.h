@@ -16,10 +16,12 @@ __attribute__((visibility("hidden")))
     NSHashTable *_activelyScrollingContainers;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSHashTable *activelyScrollingContainers; // @synthesize activelyScrollingContainers=_activelyScrollingContainers;
 @property(readonly, nonatomic) _UIFocusDisplayLinkScrollAnimator *scrollAnimator; // @synthesize scrollAnimator=_scrollAnimator;
 @property(readonly, nonatomic) __weak UIScreen *screen; // @synthesize screen=_screen;
-- (void).cxx_destruct;
+- (struct CGPoint)_contentOffsetForNonPagingContainer:(id)arg1 toShowFocusItemWithInfo:(id)arg2 itemFrame:(struct CGRect)arg3 targetOffset:(struct CGPoint)arg4 targetBounds:(struct CGRect)arg5;
+- (struct CGPoint)_contentOffsetForPagingContainer:(id)arg1 itemFrame:(struct CGRect)arg2 targetOffset:(struct CGPoint)arg3;
 - (struct CGPoint)_contentOffsetForScrollableContainer:(id)arg1 toShowFocusItemWithInfo:(id)arg2 itemFrame:(struct CGRect)arg3 targetOffset:(struct CGPoint)arg4 targetBounds:(struct CGRect)arg5;
 - (struct CGPoint)_contentOffsetForScrollableContainer:(id)arg1 toShowFocusItemWithInfo:(id)arg2;
 - (struct CGPoint)contentOffsetForScrollableContainer:(id)arg1 toShowRect:(struct CGRect)arg2 targetOffset:(struct CGPoint)arg3 targetBounds:(struct CGRect)arg4;

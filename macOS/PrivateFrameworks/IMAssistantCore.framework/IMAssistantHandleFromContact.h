@@ -18,13 +18,13 @@
     long long _handleType;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long handleType; // @synthesize handleType=_handleType;
 @property(readonly, nonatomic) NSString *displayID; // @synthesize displayID=_displayID;
 @property(readonly, nonatomic) NSString *businessID; // @synthesize businessID=_businessID;
 @property(readonly, nonatomic) CNLabeledValue *labeledPhoneNumber; // @synthesize labeledPhoneNumber=_labeledPhoneNumber;
 @property(readonly, nonatomic) CNLabeledValue *labeledEmailAddress; // @synthesize labeledEmailAddress=_labeledEmailAddress;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)matchesIMHandle:(id)arg1;
 - (BOOL)matchesHandleID:(id)arg1;

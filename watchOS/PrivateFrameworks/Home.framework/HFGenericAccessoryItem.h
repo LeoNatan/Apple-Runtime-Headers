@@ -18,9 +18,9 @@
     HMAccessory *_accessory;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
-- (void).cxx_destruct;
 - (id)namingComponentForHomeKitObject;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 @property(readonly, nonatomic) NSSet *services;

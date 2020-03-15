@@ -15,10 +15,10 @@
     NSGradient *_gradient;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSGradient *gradient; // @synthesize gradient=_gradient;
 @property(retain, nonatomic) NSButton *button; // @synthesize button=_button;
 @property(retain) NSDictionary *showWhenRunItemDictionary; // @synthesize showWhenRunItemDictionary=_showWhenRunItemDictionary;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)selectedChanged:(id)arg1;
 - (void)viewDidMoveToSuperview;

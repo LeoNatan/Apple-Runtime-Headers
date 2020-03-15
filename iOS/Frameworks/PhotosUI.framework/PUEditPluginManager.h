@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManagerForMediaType:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic, setter=_setPlugins:) NSArray *_plugins; // @synthesize _plugins=__plugins;
 @property(readonly) unsigned long long mediaType; // @synthesize mediaType=_mediaType;
-- (void).cxx_destruct;
 - (id)pluginActivities;
 - (void)_discoveredAvailableExtensions:(id)arg1;
 - (void)rediscoverAvailablePlugins;

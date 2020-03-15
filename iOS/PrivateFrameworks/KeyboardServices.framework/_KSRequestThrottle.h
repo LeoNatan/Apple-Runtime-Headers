@@ -19,9 +19,9 @@
     NSString *_debugIdentifier;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)_launch;
 - (void)postRequest:(CDUnknownBlockType)arg1;
 - (id)initWithCurve:(CDUnknownBlockType)arg1 maximumDelay:(double)arg2;

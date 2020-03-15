@@ -17,10 +17,10 @@
     NSData *_sourceChannelRecordData;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSData *masterIssueRecordData; // @synthesize masterIssueRecordData=_masterIssueRecordData;
 @property(retain, nonatomic) NSData *sourceChannelRecordData; // @synthesize sourceChannelRecordData=_sourceChannelRecordData;
 @property(retain, nonatomic) NSData *articleRecordData; // @synthesize articleRecordData=_articleRecordData;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

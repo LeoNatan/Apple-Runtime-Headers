@@ -21,9 +21,9 @@
 + (void)setEnabled:(_Bool)arg1;
 + (_Bool)isEnabled;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *curatedAssetCountByMomentUUID; // @synthesize curatedAssetCountByMomentUUID=_curatedAssetCountByMomentUUID;
 @property(retain, nonatomic) NSCalendar *calendar; // @synthesize calendar=_calendar;
-- (void).cxx_destruct;
 - (id)_aggregationMomentClustersForMomentClusters:(id)arg1;
 - (id)processAggregationsWithSortedMomentClusters:(id)arg1 momentsContainedInOtherHighlights:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
 - (_Bool)_shouldAggregateMoment:(id)arg1;

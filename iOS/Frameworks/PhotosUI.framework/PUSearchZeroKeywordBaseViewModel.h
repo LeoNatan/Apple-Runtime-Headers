@@ -16,11 +16,11 @@
     id _displayInfo;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id displayInfo; // @synthesize displayInfo=_displayInfo;
 @property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) long long itemType; // @synthesize itemType=_itemType;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *debugDictionary;
 - (id)description;
 - (id)initWithType:(long long)arg1 title:(id)arg2 representedObject:(id)arg3 displayInfo:(id)arg4;

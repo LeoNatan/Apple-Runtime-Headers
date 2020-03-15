@@ -20,12 +20,12 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool listening; // @synthesize listening=_listening;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (_Bool)_removeObserver;
 - (_Bool)_addObserver;
 - (void)_notificationWithNameReceived:(id)arg1;

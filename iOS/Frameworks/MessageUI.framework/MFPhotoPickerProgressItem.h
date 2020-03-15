@@ -15,10 +15,10 @@
     AVAssetExportSession *_exportSession;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVAssetExportSession *exportSession; // @synthesize exportSession=_exportSession;
 @property(nonatomic) int imageRequestID; // @synthesize imageRequestID=_imageRequestID;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -20,11 +20,11 @@
 
 + (id)logCategory;
 + (void)submitPresenceReportMetricWithPresenceAuth:(id)arg1 presenceCompute:(id)arg2 reason:(id)arg3 error:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDUserPresenceFeed *lastSentFeed; // @synthesize lastSentFeed=_lastSentFeed;
 @property(retain, nonatomic) HMDUserPresenceFeedSession *currentFeedSession; // @synthesize currentFeedSession=_currentFeedSession;
 @property(readonly, nonatomic) HMDBackgroundTaskAgentTimer *btaUpdateTimer; // @synthesize btaUpdateTimer=_btaUpdateTimer;
 @property(nonatomic) unsigned long long presenceRegionStatus; // @synthesize presenceRegionStatus=_presenceRegionStatus;
-- (void).cxx_destruct;
 - (void)notifyDidLeaveHomeRegion;
 - (void)notifyDidEnterHomeRegion;
 - (void)notifyDidLeaveHome;

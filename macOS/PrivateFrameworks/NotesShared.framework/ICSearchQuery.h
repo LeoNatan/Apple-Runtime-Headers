@@ -23,6 +23,7 @@
 }
 
 + (id)defaultAttributesToReturnFromCoreSpotlight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSObject<OS_dispatch_semaphore> *synchronousSemaphore; // @synthesize synchronousSemaphore=_synchronousSemaphore;
 @property(retain, nonatomic) CSSearchQuery *searchQuery; // @synthesize searchQuery=_searchQuery;
 @property(retain, nonatomic) NSArray *rankingQueries; // @synthesize rankingQueries=_rankingQueries;
@@ -32,7 +33,6 @@
 @property(nonatomic) unsigned long long rankingInterpretation; // @synthesize rankingInterpretation=_rankingInterpretation;
 @property(retain, nonatomic) NSString *highlightString; // @synthesize highlightString=_highlightString;
 @property(retain, nonatomic) NSDictionary *queryResults; // @synthesize queryResults=_queryResults;
-- (void).cxx_destruct;
 - (id)description;
 - (void)cancel;
 - (void)forceStop;

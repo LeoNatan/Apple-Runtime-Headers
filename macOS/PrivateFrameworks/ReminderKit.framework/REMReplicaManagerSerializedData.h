@@ -18,9 +18,9 @@
 
 + (id)serializedDataRepresentingDiscardedReplicaManager;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSData *managerData; // @synthesize managerData=_managerData;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isRepresentingDiscardedReplicaManager;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;

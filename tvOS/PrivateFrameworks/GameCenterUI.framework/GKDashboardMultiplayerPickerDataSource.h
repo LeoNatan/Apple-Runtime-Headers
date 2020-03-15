@@ -33,6 +33,7 @@
     NSArray *_hiddenPlayers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool didLoad; // @synthesize didLoad=_didLoad;
 @property(nonatomic) _Bool browsingForNearbyPlayers; // @synthesize browsingForNearbyPlayers=_browsingForNearbyPlayers;
 @property(retain, nonatomic) NSArray *hiddenPlayers; // @synthesize hiddenPlayers=_hiddenPlayers;
@@ -53,7 +54,6 @@
 @property(retain, nonatomic) GKTournament *tournament; // @synthesize tournament=_tournament;
 @property(nonatomic) long long maxSelectable; // @synthesize maxSelectable=_maxSelectable;
 @property(retain, nonatomic) NSMutableDictionary *playerStates; // @synthesize playerStates=_playerStates;
-- (void).cxx_destruct;
 - (_Bool)_canShowMoreFriends;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

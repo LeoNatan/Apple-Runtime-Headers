@@ -16,9 +16,9 @@
     NSMutableDictionary *_hostNameFactories;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *hostNameFactories; // @synthesize hostNameFactories=_hostNameFactories;
 @property(readonly, nonatomic) NSMutableDictionary *additionFactories; // @synthesize additionFactories=_additionFactories;
-- (void).cxx_destruct;
 - (void)registerFactory:(id)arg1 URLHost:(id)arg2;
 - (void)registerFactory:(id)arg1 additionType:(Class)arg2;
 - (id)actionForURL:(id)arg1;

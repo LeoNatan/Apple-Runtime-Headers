@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
     ADNotificationBus *_eventBus;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ADNotificationBus *eventBus; // @synthesize eventBus=_eventBus;
 @property(retain, nonatomic) id <ADNotificationRegistrationToken> delegateToken; // @synthesize delegateToken=_delegateToken;
 @property(retain, nonatomic) ADNotificationDarwinNotificationToken *muxToken; // @synthesize muxToken=_muxToken;
 @property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
 @property(retain, nonatomic) NSString *notificationName; // @synthesize notificationName=_notificationName;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (void)busWillSleep:(id)arg1;
 - (void)busWillWakeUp:(id)arg1;

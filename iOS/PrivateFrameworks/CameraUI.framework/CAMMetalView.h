@@ -13,8 +13,8 @@
     id <CAMMetalViewDelegate> _metalViewDelegate;
 }
 
-@property(retain, nonatomic) id <CAMMetalViewDelegate> metalViewDelegate; // @synthesize metalViewDelegate=_metalViewDelegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <CAMMetalViewDelegate> metalViewDelegate; // @synthesize metalViewDelegate=_metalViewDelegate;
 
 @end
 

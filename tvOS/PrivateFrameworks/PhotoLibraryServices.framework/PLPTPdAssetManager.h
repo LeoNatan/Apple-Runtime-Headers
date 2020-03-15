@@ -24,8 +24,8 @@
     NSFileManager *fileManager;
 }
 
-@property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager;
 - (id)fetchObjectIDsForAssetsExposedToPTPFromObjectIDs:(id)arg1;
 - (id)managedObjectContext;
 - (id)_performResultTransactionAndWait:(CDUnknownBlockType)arg1;
@@ -77,10 +77,10 @@
 - (void)managedObjectContext:(id)arg1 libraryChangedWithInsertedAssetIDs:(id)arg2 deletedAssetIDs:(id)arg3 changedAssetIDs:(id)arg4 adjustedAssetIDs:(id)arg5;
 @property(retain) PFMediaCapabilities *peerMediaCapabilities;
 - (void)deleteAsset:(id)arg1;
-- (id)infoForAsset:(struct NSObject *)arg1;
-- (id)assetsInAssociation:(struct NSObject *)arg1;
-- (id)associationsInAlbum:(struct NSObject *)arg1;
-- (id)infoForAlbum:(struct NSObject *)arg1;
+- (id)infoForAsset:(id)arg1;
+- (id)assetsInAssociation:(id)arg1;
+- (id)associationsInAlbum:(id)arg1;
+- (id)infoForAlbum:(id)arg1;
 - (id)albumHandles;
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (void)handlePhotoLibraryAvailableNotification;

@@ -39,6 +39,7 @@
     HMFUnfairLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) HMFUnfairLock *lock; // @synthesize lock=_lock;
 @property(readonly, nonatomic) CUWiFiDevice *cuWiFiDevice; // @synthesize cuWiFiDevice=_cuWiFiDevice;
 @property(nonatomic) double discoveryTime; // @synthesize discoveryTime=_discoveryTime;
@@ -60,7 +61,6 @@
 @property(readonly, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isAirPlayAccessory; // @synthesize isAirPlayAccessory=_isAirPlayAccessory;
 @property(readonly, nonatomic) BOOL isHomeKitAccessory; // @synthesize isHomeKitAccessory=_isHomeKitAccessory;
 @property(readonly, nonatomic) BOOL supportsCertAuth; // @synthesize supportsCertAuth=_supportsCertAuth;

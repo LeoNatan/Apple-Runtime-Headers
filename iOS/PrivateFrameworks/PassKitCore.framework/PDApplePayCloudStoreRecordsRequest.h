@@ -13,8 +13,8 @@
     NSSet *_passUniqueIdentifiers;
 }
 
-@property(retain, nonatomic) NSSet *passUniqueIdentifiers; // @synthesize passUniqueIdentifiers=_passUniqueIdentifiers;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSSet *passUniqueIdentifiers; // @synthesize passUniqueIdentifiers=_passUniqueIdentifiers;
 
 @end
 

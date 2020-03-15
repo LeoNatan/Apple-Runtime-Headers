@@ -14,9 +14,9 @@
     IMRuntimeTest *_test;
 }
 
+- (void).cxx_destruct;
 @property(getter=hasSucceeded) BOOL succeeded; // @synthesize succeeded=_succeeded;
 @property(readonly) IMRuntimeTest *test; // @synthesize test=_test;
-- (void).cxx_destruct;
 - (void)stop;
 - (void)start;
 - (void)recordFailureWithDescription:(id)arg1 inFile:(id)arg2 atLine:(unsigned long long)arg3 expected:(BOOL)arg4;

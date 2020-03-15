@@ -21,9 +21,9 @@
 
 + (id)entryWithSerialisedDataAtURL:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, retain, nonatomic) NSMutableDictionary *extendedAttributes; // @synthesize extendedAttributes=_extendedAttributes;
 @property(readonly, retain, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)restoreToPath:(id)arg1;
 - (void)consistencyCheck;
 - (id)description;

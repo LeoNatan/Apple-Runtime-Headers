@@ -15,10 +15,10 @@
     NSMutableArray *_queuedRequests;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL acceptsRequests; // @synthesize acceptsRequests=_acceptsRequests;
 @property(readonly, nonatomic) NSMutableArray *queuedRequests; // @synthesize queuedRequests=_queuedRequests;
 @property(readonly, nonatomic) WDCommandRequest *currentRequest; // @synthesize currentRequest=_currentRequest;
-- (void).cxx_destruct;
 - (id)dequeueNextRequest;
 - (void)enqueueRequest:(id)arg1;
 - (void)finishCurrentRequest;

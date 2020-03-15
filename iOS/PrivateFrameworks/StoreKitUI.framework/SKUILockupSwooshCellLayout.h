@@ -27,10 +27,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _visibleFields;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long visibleFields; // @synthesize visibleFields=_visibleFields;
 @property(nonatomic) struct CGSize videoSize; // @synthesize videoSize=_videoSize;
 @property(nonatomic) struct CGSize maxImageSize; // @synthesize maxImageSize=_maxImageSize;
-- (void).cxx_destruct;
 - (void)_removeHighlightViews;
 - (void)_reloadHighlight;
 - (void)_reloadPriceLabel;

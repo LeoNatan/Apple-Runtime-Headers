@@ -15,9 +15,9 @@
     struct UIEdgeInsets _cellPadding;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets cellPadding; // @synthesize cellPadding=_cellPadding;
 @property(nonatomic) double peekAmount; // @synthesize peekAmount=_peekAmount;
-- (void).cxx_destruct;
 - (long long)_numberOfColumnsForSection:(unsigned long long)arg1;
 - (long long)_numberOfRowsForSection:(unsigned long long)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;

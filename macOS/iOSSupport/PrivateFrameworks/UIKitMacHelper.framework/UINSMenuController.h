@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedMenuController;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint location; // @synthesize location=_location;
 @property(copy, nonatomic) CDUnknownBlockType validateItem; // @synthesize validateItem=_validateItem;
 @property(copy, nonatomic) CDUnknownBlockType contextMenuDidClose; // @synthesize contextMenuDidClose=_contextMenuDidClose;
 @property(copy, nonatomic) CDUnknownBlockType performItemAction; // @synthesize performItemAction=_performItemAction;
 @property(readonly, nonatomic) id currentContextMenu; // @synthesize currentContextMenu=_currentContextMenu;
-- (void).cxx_destruct;
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
 - (void)showSharingMenuInNSWindow:(id)arg1 atLocationInWindow:(struct CGPoint)arg2 activityItemsConfiguration:(id)arg3;
 - (void)_showContextMenu:(id)arg1 forView:(id)arg2 withEvent:(id)arg3;

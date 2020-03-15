@@ -14,8 +14,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSDelegateUserType *DelegateUser; // @synthesize DelegateUser=_DelegateUser;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSDelegateUserType *DelegateUser; // @synthesize DelegateUser=_DelegateUser;
 
 @end
 

@@ -16,11 +16,11 @@
     NSDictionary *_answers;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *answers; // @synthesize answers=_answers;
 @property(copy, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 @property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-- (void).cxx_destruct;
 - (id)_urlRequestWithAppleAccountInformation:(id)arg1;
 
 @end

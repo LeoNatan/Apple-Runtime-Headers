@@ -16,11 +16,11 @@
     _MCMimeEnrichedWriterCommandStackEntry *_parent;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) _MCMimeEnrichedWriterCommandStackEntry *parent; // @synthesize parent=_parent;
 @property(retain, nonatomic) id parameter; // @synthesize parameter=_parameter;
 @property(nonatomic) unsigned long long attrStringIndex; // @synthesize attrStringIndex=_attrStringIndex;
 @property(nonatomic) __weak NSString *command; // @synthesize command=_command;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

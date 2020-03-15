@@ -15,10 +15,10 @@
     NSDictionary *_options;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool allowUnencrypted; // @synthesize allowUnencrypted=_allowUnencrypted;
-- (void).cxx_destruct;
 
 @end
 

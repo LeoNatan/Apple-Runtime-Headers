@@ -14,9 +14,9 @@
     HBRawFolder *_parentFolder;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak HBRawFolder *parentFolder; // @synthesize parentFolder=_parentFolder;
 @property(retain, nonatomic) NSNumber *itemOrderId; // @synthesize itemOrderId=_itemOrderId;
-- (void).cxx_destruct;
 
 @end
 

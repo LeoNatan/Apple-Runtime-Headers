@@ -35,6 +35,7 @@
 + (id)propertyGroupItemWithLabeledValue:(id)arg1 group:(id)arg2 contact:(id)arg3;
 + (id)initialValueForLabel:(id)arg1 group:(id)arg2;
 + (id)emptyValueForLabel:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long policyFlags; // @synthesize policyFlags=_policyFlags;
 @property(readonly, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) CNLabeledValue *originalLabeledValue; // @synthesize originalLabeledValue=_originalLabeledValue;
@@ -48,7 +49,6 @@
 @property(retain, nonatomic) NSString *property; // @synthesize property=_property;
 @property(readonly, nonatomic) __weak CNCardPropertyGroup *group; // @synthesize group=_group;
 @property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
-- (void).cxx_destruct;
 - (_Bool)shouldCreateNewMeContactToSaveChangesTo;
 - (void)saveChangesImmediately:(_Bool)arg1;
 - (void)rejectSuggestion;

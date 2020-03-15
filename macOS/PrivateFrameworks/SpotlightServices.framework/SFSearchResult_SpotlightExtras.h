@@ -48,6 +48,7 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property BOOL hasUsage; // @synthesize hasUsage=_hasUsage;
 @property(nonatomic) long long feedbackBlockId; // @synthesize feedbackBlockId=_feedbackBlockId;
 @property BOOL isUsed; // @synthesize isUsed=_isUsed;
@@ -77,7 +78,6 @@
 @property(readonly) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(readonly) NSString *relatedIdentifier; // @synthesize relatedIdentifier=_relatedIdentifier;
 @property(retain, nonatomic) PRSRankingItem *rankingItem; // @synthesize rankingItem=_rankingItem;
-- (void).cxx_destruct;
 - (void)prepareIcons;
 - (void)setCategory:(id)arg1;
 @property(readonly) NSString *category;

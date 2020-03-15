@@ -16,10 +16,10 @@
 }
 
 + (Class)layerClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool shouldAutomaticallyAdjustVideoGravity; // @synthesize shouldAutomaticallyAdjustVideoGravity=_shouldAutomaticallyAdjustVideoGravity;
 @property(retain, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
-- (void).cxx_destruct;
 - (void)_updateVideoGravityIfPossible;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (struct CGSize)intrinsicContentSize;

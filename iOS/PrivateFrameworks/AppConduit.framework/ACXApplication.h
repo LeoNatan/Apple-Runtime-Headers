@@ -29,6 +29,7 @@
 
 + (id)gizmoApplicationsFromCompanionAppProxy:(id)arg1 databaseUUID:(id)arg2 startingSequenceNumber:(unsigned long long)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long autoInstallOverride; // @synthesize autoInstallOverride=_autoInstallOverride;
 @property(copy, nonatomic) ACXApplicationStatus *deviceStatus; // @synthesize deviceStatus=_deviceStatus;
 @property(readonly, nonatomic) _Bool isEmbeddedPlaceholder; // @synthesize isEmbeddedPlaceholder=_isEmbeddedPlaceholder;
@@ -40,7 +41,6 @@
 @property(readonly, copy, nonatomic) NSArray *clockFaceExtensionPaths; // @synthesize clockFaceExtensionPaths=_clockFaceExtensionPaths;
 @property(readonly, nonatomic) unsigned long long lsSequenceNumber; // @synthesize lsSequenceNumber=_lsSequenceNumber;
 @property(readonly, nonatomic) NSURL *watchAppURL; // @synthesize watchAppURL=_watchAppURL;
-- (void).cxx_destruct;
 - (id)_localizedAppNameFromProxy:(id)arg1;
 - (id)_storeMetadataWithError:(id *)arg1;
 - (id)_watchKitApplicationNameFromWKAppInfoPlist:(id)arg1 containerProxy:(id)arg2;

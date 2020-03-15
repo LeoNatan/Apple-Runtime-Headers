@@ -18,8 +18,8 @@
     NSDictionary *_correctionIdentifier;
 }
 
-@property(readonly, nonatomic) NSDictionary *correctionIdentifier; // @synthesize correctionIdentifier=_correctionIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *correctionIdentifier; // @synthesize correctionIdentifier=_correctionIdentifier;
 - (id)description;
 - (id)streamingTokens;
 @property(readonly, nonatomic) NSArray *dictationResult;
@@ -27,7 +27,7 @@
 - (id)updateDictationResult:(id)arg1 withAlternativeUtteranceAtIndex:(unsigned long long)arg2;
 - (void)_updateUtteranceswithAlternativeUtteranceAtIndex:(unsigned long long)arg1 swapIndices:(id)arg2;
 - (void)_updatePhraseswithSwapIndices:(id)arg1;
-- (struct NSDictionary *)allRecognitionStringsAndScores;
+- (id)allRecognitionStringsAndScores;
 - (id)interpretationOfUtteranceAtIndex:(unsigned long long)arg1;
 - (id)textOfUtteranceAtIndex:(unsigned long long)arg1;
 - (id)rangeListOfDifferingTextFromTargetTokenList:(id)arg1 comparedToBaseTokenList:(id)arg2;

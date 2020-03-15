@@ -26,6 +26,7 @@
 }
 
 + (id)defaultContentViewWithFrame:(struct CGRect)arg1;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setLayoutPriority:) int _layoutPriority; // @synthesize _layoutPriority=__layoutPriority;
 @property(nonatomic, setter=_setDisplaysWhenSearchActive:) _Bool _displaysWhenSearchActive; // @synthesize _displaysWhenSearchActive=__displaysWhenSearchActive;
 @property(nonatomic, setter=_setContentViewMarginType:) unsigned int _contentViewMarginType; // @synthesize _contentViewMarginType=__contentViewMarginType;
@@ -37,7 +38,6 @@
 @property(nonatomic) float minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic) float preferredHeight; // @synthesize preferredHeight=_preferredHeight;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-- (void).cxx_destruct;
 - (void)_setupBackgroundViewIfNecessary;
 - (void)_resetHeightConstraintConstant;
 - (void)_resetConstraintConstants:(float)arg1;

@@ -23,6 +23,7 @@
     CDStruct_d58201db _borderSize;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <NUMutableImage> targetImage; // @synthesize targetImage=_targetImage;
 @property CDStruct_912cb5d2 borderSize; // @synthesize borderSize=_borderSize;
 @property CDStruct_912cb5d2 tileSize; // @synthesize tileSize=_tileSize;
@@ -31,7 +32,6 @@
 @property(retain) id <NUScalePolicy> scalePolicy; // @synthesize scalePolicy=_scalePolicy;
 @property(retain) id <NURegionPolicy> regionPolicy; // @synthesize regionPolicy=_regionPolicy;
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
-- (void).cxx_destruct;
 - (long long)mediaComponentType;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

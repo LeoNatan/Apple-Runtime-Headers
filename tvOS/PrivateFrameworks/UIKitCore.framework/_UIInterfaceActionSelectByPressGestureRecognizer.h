@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     UIInterfaceAction *_interfaceActionOnPressBegan;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak UIInterfaceAction *interfaceActionOnPressBegan; // @synthesize interfaceActionOnPressBegan=_interfaceActionOnPressBegan;
 @property(nonatomic) __weak UIInterfaceActionGroupView *actionGroupView; // @synthesize actionGroupView=_actionGroupView;
 @property(nonatomic) __weak id <UIFocusedInterfaceActionPressDelegate> pressDelegate; // @synthesize pressDelegate=_pressDelegate;
-- (void).cxx_destruct;
 - (void)_gestureChanged:(id)arg1;
 - (void)reset;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;

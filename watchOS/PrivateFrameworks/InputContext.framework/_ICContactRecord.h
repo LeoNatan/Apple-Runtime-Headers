@@ -15,10 +15,10 @@
     _ICContact *_contact;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned char changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) _ICContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToContactRecord:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -24,6 +24,7 @@
     UIView *_containerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UIButton *signInButton; // @synthesize signInButton=_signInButton;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *actionPromptMessage; // @synthesize actionPromptMessage=_actionPromptMessage;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)configureUIControls;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_onSelectSignIn:(id)arg1;

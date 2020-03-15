@@ -42,11 +42,11 @@
 + (void)registerStyle:(id)arg1 withType:(unsigned long long)arg2 inherited:(_Bool)arg3;
 + (id)propertiesForStyleName:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *overridingValuesByStyle; // @synthesize overridingValuesByStyle=_overridingValuesByStyle;
 @property(retain, nonatomic) NSMutableDictionary *styleDict; // @synthesize styleDict=_styleDict;
 @property(retain, nonatomic) NSArray *mediaQueryList; // @synthesize mediaQueryList=_mediaQueryList;
 @property(readonly, copy, nonatomic) IKCSSRule *cssRule; // @synthesize cssRule=_cssRule;
-- (void).cxx_destruct;
 - (id)_declarationForStyleName:(id)arg1 expectedClass:(Class)arg2;
 - (id)_styleNameForAlias:(id)arg1;
 - (void)_addDeclaration:(id)arg1;

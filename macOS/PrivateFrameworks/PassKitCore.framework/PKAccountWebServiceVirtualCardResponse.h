@@ -13,8 +13,8 @@
     PKVirtualCard *_virtualCard;
 }
 
-@property(readonly, copy, nonatomic) PKVirtualCard *virtualCard; // @synthesize virtualCard=_virtualCard;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) PKVirtualCard *virtualCard; // @synthesize virtualCard=_virtualCard;
 - (id)initWithData:(id)arg1;
 
 @end

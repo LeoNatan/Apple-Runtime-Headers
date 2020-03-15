@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 + (id)mediaItemForType:(long long)arg1 uniqueIdentifier:(id)arg2;
 + (id)mediaItemsForOKThemes;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *localizedName;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 @property(readonly, nonatomic) NSURL *audioURL;

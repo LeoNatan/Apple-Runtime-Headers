@@ -18,9 +18,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long changeType; // @synthesize changeType=_changeType;
 @property(readonly, nonatomic) NRDevicePropertyDiff *diff; // @synthesize diff=_diff;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (unsigned long long)hash;

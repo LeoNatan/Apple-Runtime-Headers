@@ -17,8 +17,8 @@
 
 + (id)uuid;
 + (void)initialize;
-@property(retain, nonatomic) NSNumber *referenceTimestamp; // @synthesize referenceTimestamp=_referenceTimestamp;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *referenceTimestamp; // @synthesize referenceTimestamp=_referenceTimestamp;
 - (id)initWithSessionID:(id)arg1 cameraAccessory:(id)arg2 isLocal:(BOOL)arg3;
 - (id)metricForAWD;
 - (void)addStreamMessaging:(id)arg1;

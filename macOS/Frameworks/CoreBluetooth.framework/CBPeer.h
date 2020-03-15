@@ -23,6 +23,7 @@
     struct __CFUUID *_UUID;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct __CFUUID *UUID; // @synthesize UUID=_UUID;
 @property(nonatomic) unsigned char connectedTransport; // @synthesize connectedTransport=_connectedTransport;
 @property(nonatomic) __weak CBManager *manager; // @synthesize manager=_manager;
@@ -32,7 +33,6 @@
 @property(nonatomic) long long pairingState; // @synthesize pairingState=_pairingState;
 @property(nonatomic) unsigned long long mtuLength; // @synthesize mtuLength=_mtuLength;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (BOOL)hasTag:(id)arg1;
 - (void)untag:(id)arg1;
 - (void)tag:(id)arg1;

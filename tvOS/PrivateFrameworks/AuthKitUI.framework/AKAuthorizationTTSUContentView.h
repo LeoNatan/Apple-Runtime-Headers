@@ -24,6 +24,7 @@
     NSArray *_constraintsToEnableWhenInProgress;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *constraintsToEnableWhenInProgress; // @synthesize constraintsToEnableWhenInProgress=_constraintsToEnableWhenInProgress;
 @property(retain, nonatomic) NSArray *constraintsToDisableWhenInProgress; // @synthesize constraintsToDisableWhenInProgress=_constraintsToDisableWhenInProgress;
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
@@ -36,7 +37,6 @@
 @property(retain, nonatomic) UIImageView *plusSignImageView; // @synthesize plusSignImageView=_plusSignImageView;
 @property(retain, nonatomic) UIImageView *appIconImageView; // @synthesize appIconImageView=_appIconImageView;
 @property(nonatomic) _Bool footerIsHidden; // @synthesize footerIsHidden=_footerIsHidden;
-- (void).cxx_destruct;
 - (void)startInProgressAnimation;
 - (void)setFooterIsHidden:(_Bool)arg1 animated:(_Bool)arg2;
 @property(retain, nonatomic) NSString *footer;

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 + (void)cleanupMarkup;
 + (void)markupDocumentInfo:(id)arg1 imageCache:(id)arg2 fromView:(id)arg3 presentingViewController:(id)arg4 inkStyle:(unsigned long long)arg5 frameBlock:(CDUnknownBlockType)arg6 startPresentBlock:(CDUnknownBlockType)arg7 completionBlock:(CDUnknownBlockType)arg8 dismissCompletionBlock:(CDUnknownBlockType)arg9;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType dismissCompletionBlock; // @synthesize dismissCompletionBlock=_dismissCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType startPresentBlock; // @synthesize startPresentBlock=_startPresentBlock;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MURemoteViewController *markupRemoteViewController; // @synthesize markupRemoteViewController=_markupRemoteViewController;
 @property(retain) ICDocCamImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain) ICDocCamDocumentInfo *documentInfo; // @synthesize documentInfo=_documentInfo;
-- (void).cxx_destruct;
 - (void)handleReturnedURL:(id)arg1;
 - (void)presentMarkupViewControllerFromView:(id)arg1;
 - (void)dismissMarkupViewController;

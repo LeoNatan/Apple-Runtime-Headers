@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _imageType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long imageType; // @synthesize imageType=_imageType;
 @property(copy, nonatomic) NSString *baseImageIdentifier; // @synthesize baseImageIdentifier=_baseImageIdentifier;
 @property(copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

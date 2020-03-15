@@ -18,11 +18,11 @@
 
 + (id)defaultActivityManagerConfiguration;
 + (id)defaultConfiguration;
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSLSnapshotComplicationPolicy *complicationPolicy; // @synthesize complicationPolicy=_complicationPolicy;
 @property(retain, nonatomic) CSLComplicationObserver *complicationObserver; // @synthesize complicationObserver=_complicationObserver;
 @property(retain, nonatomic) CSLSnapshotServiceEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(retain, nonatomic) CSLSnapshotActivityManager *activityManager; // @synthesize activityManager=_activityManager;
-- (void).cxx_destruct;
 
 @end
 

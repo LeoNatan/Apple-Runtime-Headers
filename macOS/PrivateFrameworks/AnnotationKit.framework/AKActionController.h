@@ -13,8 +13,8 @@
     AKController *_controller;
 }
 
-@property __weak AKController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+@property __weak AKController *controller; // @synthesize controller=_controller;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateSender:(id)arg1 segment:(long long)arg2;
 - (BOOL)validateSender:(id)arg1;

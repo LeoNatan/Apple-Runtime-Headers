@@ -31,6 +31,8 @@
     GEONavigationMatchInfo *_detailedMatchInfo;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEONavigationMatchInfo *detailedMatchInfo; // @synthesize detailedMatchInfo=_detailedMatchInfo;
 @property(nonatomic) _Bool isTunnelProjection; // @synthesize isTunnelProjection=_isTunnelProjection;
 @property(nonatomic) unsigned long long transitID; // @synthesize transitID=_transitID;
@@ -50,8 +52,6 @@
 @property(nonatomic) unsigned int stepIndex; // @synthesize stepIndex=_stepIndex;
 @property(nonatomic) CDStruct_c3b9c2ee locationCoordinate; // @synthesize locationCoordinate=_locationCoordinate;
 @property(readonly, nonatomic) struct PolylineCoordinate routeCoordinate; // @synthesize routeCoordinate=_routeCoordinate;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) GEOComposedTransitStationRouteStep *transitStationStep;
 @property(readonly, nonatomic) GEOComposedTransitTripRouteStep *transitTripStep;

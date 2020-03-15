@@ -21,11 +21,11 @@
 + (id)preferredMimeCharset;
 + (id)charsetForEncoding:(unsigned long long)arg1;
 + (id)allMimeCharsets;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL canBeUsedForOutgoingMessages; // @synthesize canBeUsedForOutgoingMessages=_canBeUsedForOutgoingMessages;
 @property(readonly, nonatomic) BOOL useBase64InHeaders; // @synthesize useBase64InHeaders=_useBase64InHeaders;
 @property(readonly, copy, nonatomic) NSString *charsetName; // @synthesize charsetName=_charsetName;
 @property(readonly) unsigned long long encoding; // @synthesize encoding=_encoding;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *displayName;
 - (id)init;

@@ -19,13 +19,13 @@
     NSNumber *_thresholdValue;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSNumber *thresholdValue; // @synthesize thresholdValue=_thresholdValue;
 @property(retain, nonatomic) HUCharacteristicEventOptionItem *childItem; // @synthesize childItem=_childItem;
 @property(readonly, copy, nonatomic) HMNumberRange *thresholdValueRange; // @synthesize thresholdValueRange=_thresholdValueRange;
 @property(readonly, copy, nonatomic) HMNumberRange *triggerValueRange; // @synthesize triggerValueRange=_triggerValueRange;
 @property(readonly, copy, nonatomic) id <NSCopying> triggerValue; // @synthesize triggerValue=_triggerValue;
 @property(readonly, nonatomic) NSSet *characteristics; // @synthesize characteristics=_characteristics;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) id representativeTriggerValue;
 - (id)localizedDescriptionForThresholdValue:(id)arg1;
 - (_Bool)isValidThresholdValue:(id)arg1;

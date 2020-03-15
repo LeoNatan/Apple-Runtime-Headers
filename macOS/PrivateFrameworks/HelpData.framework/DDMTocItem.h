@@ -24,6 +24,7 @@
     NSArray *_contents;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *contents; // @synthesize contents=_contents;
 @property(retain) NSArray *childIDs; // @synthesize childIDs=_childIDs;
 @property(readonly) __weak DDMBook *ddmBook; // @synthesize ddmBook=_ddmBook;
@@ -36,7 +37,6 @@
 @property(readonly) NSString *locale; // @synthesize locale=_locale;
 @property(readonly) NSString *createdDate; // @synthesize createdDate=_createdDate;
 @property(readonly) NSString *articleID; // @synthesize articleID=_articleID;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly) NSString *destinationProduct;
 @property(readonly) NSString *destinationID;

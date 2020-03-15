@@ -19,11 +19,11 @@
     GEOFeatureStyleAttributes *_styleAttributes;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) GEOFeatureStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(retain, nonatomic) NSString *localizedCategoryName; // @synthesize localizedCategoryName=_localizedCategoryName;
 @property(retain, nonatomic) NSArray *businessHours; // @synthesize businessHours=_businessHours;
-- (void).cxx_destruct;
 - (id)initWithGEOPDLinkedService:(id)arg1 timeZone:(id)arg2;
 
 @end

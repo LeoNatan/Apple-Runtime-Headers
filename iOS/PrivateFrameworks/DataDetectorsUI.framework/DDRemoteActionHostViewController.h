@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     id <DDRemoteActionHostViewControllerDelegate> _delegate;
 }
 
-@property __weak id <DDRemoteActionHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property __weak id <DDRemoteActionHostViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

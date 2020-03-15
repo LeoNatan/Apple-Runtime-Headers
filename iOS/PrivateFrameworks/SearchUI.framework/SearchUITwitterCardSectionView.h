@@ -15,8 +15,8 @@
     SearchUIImageView *_pictureView;
 }
 
-@property(retain, nonatomic) SearchUIImageView *pictureView; // @synthesize pictureView=_pictureView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) SearchUIImageView *pictureView; // @synthesize pictureView=_pictureView;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;
 - (id)setupContentView;
 - (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;

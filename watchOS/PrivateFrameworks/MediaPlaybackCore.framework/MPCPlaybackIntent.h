@@ -34,6 +34,7 @@
 + (id)radioPlaybackIntentFromAlbum:(id)arg1;
 + (id)radioPlaybackIntentFromReference:(id)arg1;
 + (id)intentFromQueueDescriptor:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *siriReferenceIdentifier; // @synthesize siriReferenceIdentifier=_siriReferenceIdentifier;
 @property(copy, nonatomic) NSString *siriAssetInfo; // @synthesize siriAssetInfo=_siriAssetInfo;
 @property(copy, nonatomic) NSData *playActivityRecommendationData; // @synthesize playActivityRecommendationData=_playActivityRecommendationData;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) id <NSSecureCoding> tracklistToken; // @synthesize tracklistToken=_tracklistToken;
 @property(nonatomic) int tracklistSource; // @synthesize tracklistSource=_tracklistSource;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-- (void).cxx_destruct;
 - (void)getArchiveWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getRepresentativeMetadataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;

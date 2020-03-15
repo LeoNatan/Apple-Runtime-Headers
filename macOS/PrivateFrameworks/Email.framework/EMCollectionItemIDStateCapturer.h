@@ -14,9 +14,9 @@
     id <EFCancelable> _stateCaptureCancelable;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id <EFCancelable> stateCaptureCancelable; // @synthesize stateCaptureCancelable=_stateCaptureCancelable;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *stateCaptureQueue; // @synthesize stateCaptureQueue=_stateCaptureQueue;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 delegate:(id)arg2;
 

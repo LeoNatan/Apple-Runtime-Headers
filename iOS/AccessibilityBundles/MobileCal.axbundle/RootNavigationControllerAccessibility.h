@@ -13,7 +13,10 @@
 + (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (id)_listViewSwitchBarButtonItem;
+- (id)_compactMonthDividedListSwitchBarButtonItem;
 - (void)todayPressed;
+- (void)_accessibilityLoadAccessibilityInformation;
 
 @end
 

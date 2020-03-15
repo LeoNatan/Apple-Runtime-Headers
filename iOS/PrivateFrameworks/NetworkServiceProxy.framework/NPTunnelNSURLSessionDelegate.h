@@ -19,12 +19,12 @@
     NSString *_leafOID;
 }
 
+- (void).cxx_destruct;
 @property _Bool revocationFailClosed; // @synthesize revocationFailClosed=_revocationFailClosed;
 @property(retain) NSString *leafOID; // @synthesize leafOID=_leafOID;
 @property _Bool ignoreInvalidCerts; // @synthesize ignoreInvalidCerts=_ignoreInvalidCerts;
 @property _Bool enableExtendedValidation; // @synthesize enableExtendedValidation=_enableExtendedValidation;
 @property(retain) NSString *validationHostname; // @synthesize validationHostname=_validationHostname;
-- (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties

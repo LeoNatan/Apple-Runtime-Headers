@@ -28,8 +28,8 @@
 + (BOOL)isRFC6455Request:(id)arg1;
 + (BOOL)isVersion76Request:(id)arg1;
 + (BOOL)isWebSocketRequest:(id)arg1;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *websocketQueue; // @synthesize websocketQueue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *websocketQueue; // @synthesize websocketQueue;
 - (void)socketDidDisconnect:(id)arg1 withError:(id)arg2;
 - (void)socket:(id)arg1 didReadData:(id)arg2 withTag:(long long)arg3;
 - (BOOL)isValidWebSocketFrame:(unsigned char)arg1;

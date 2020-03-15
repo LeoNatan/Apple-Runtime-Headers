@@ -17,12 +17,12 @@
     double _max;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double max; // @synthesize max=_max;
 @property(nonatomic) double min; // @synthesize min=_min;
 @property(nonatomic) unsigned long long position; // @synthesize position=_position;
 @property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(nonatomic) unsigned long long capacity; // @synthesize capacity=_capacity;
-- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *dictionary;
 - (void)insertValue:(double)arg1;

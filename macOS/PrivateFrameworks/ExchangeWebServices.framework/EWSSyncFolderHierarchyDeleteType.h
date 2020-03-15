@@ -16,8 +16,8 @@
 }
 
 + (id)definition;
-@property(retain, nonatomic) EWSFolderIdType *FolderId; // @synthesize FolderId=_FolderId;
 - (void).cxx_destruct;
+@property(retain, nonatomic) EWSFolderIdType *FolderId; // @synthesize FolderId=_FolderId;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

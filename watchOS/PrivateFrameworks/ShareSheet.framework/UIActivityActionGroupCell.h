@@ -22,6 +22,7 @@
     UIView *_fillView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *fillView; // @synthesize fillView=_fillView;
 @property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(retain, nonatomic) _UIHostActivityProxy *activityProxy; // @synthesize activityProxy=_activityProxy;
@@ -31,7 +32,6 @@
 @property(retain, nonatomic) UIImageView *activityImageView; // @synthesize activityImageView=_activityImageView;
 @property(retain, nonatomic) _UIActivityActionCellTitleLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) unsigned int sequence; // @synthesize sequence=_sequence;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;

@@ -17,9 +17,9 @@
 }
 
 + (id)uuid;
+- (void).cxx_destruct;
 @property(readonly, copy) NSError *error; // @synthesize error=_error;
 @property(readonly, copy) NSString *containerIdentifier; // @synthesize containerIdentifier=_containerIdentifier;
-- (void).cxx_destruct;
 - (id)initWithContainerIdentifier:(id)arg1 error:(id)arg2;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;

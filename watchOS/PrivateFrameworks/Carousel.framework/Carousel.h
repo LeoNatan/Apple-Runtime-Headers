@@ -50,6 +50,7 @@
 + (id)sharedApplicationLibrary;
 + (id)_newApplicationLibrary;
 + (id)_pptAnimationsByName;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableArray *policies; // @synthesize policies=_policies;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *bundleIdentifer; // @synthesize bundleIdentifer=_bundleIdentifer;
@@ -58,7 +59,6 @@
 @property(readonly, nonatomic) CSLDefaults *defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) UIWindow *mainWindow; // @synthesize mainWindow=_mainWindow;
 @property(readonly, nonatomic) CSLUIMainViewController *mainController; // @synthesize mainController=_mainController;
-- (void).cxx_destruct;
 - (_Bool)applicationIsAliveForSystemWatchdog:(id)arg1;
 - (id)systemAppBundleIdentifier;
 - (void)significantTimeChange;
@@ -94,7 +94,7 @@
 - (_Bool)shouldIgnoreTransitionRequestsForSetupOrDemo:(id)arg1;
 - (void)resetIdleTimerAndUndim:(_Bool)arg1;
 - (void)_openURLCore:(id)arg1 application:(id)arg2 animating:(_Bool)arg3 sender:(id)arg4 activationSettings:(id)arg5 systemServiceRequest:(id)arg6 withResult:(CDUnknownBlockType)arg7;
-- (void)_applicationOpenURL:(id)arg1 withApplication:(id)arg2 sender:(id)arg3 publicURLsOnly:(_Bool)arg4 animating:(_Bool)arg5 activationSettings:(id)arg6 systemServiceRequest:(id)arg7 withResult:(CDUnknownBlockType)arg8;
+- (void)_applicationOpenURL:(id)arg1 withApplication:(id)arg2 senderID:(id)arg3 publicURLsOnly:(_Bool)arg4 animating:(_Bool)arg5 activationSettings:(id)arg6 systemServiceRequest:(id)arg7 withResult:(CDUnknownBlockType)arg8;
 - (void)applicationOpenURL:(id)arg1 withApplication:(id)arg2 sender:(id)arg3 publicURLsOnly:(_Bool)arg4 animating:(_Bool)arg5 activationSettings:(id)arg6 systemServiceRequest:(id)arg7 withResult:(CDUnknownBlockType)arg8;
 - (void)applicationOpenURL:(id)arg1;
 - (_Bool)application:(id)arg1 handleOpenURL:(id)arg2;

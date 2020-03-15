@@ -30,9 +30,9 @@
 }
 
 + (id)_decorateImage:(id)arg1 decorator:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool appliedNavigationItem; // @synthesize appliedNavigationItem=_appliedNavigationItem;
 @property(retain, nonatomic) IKViewElement *navigationItemElement; // @synthesize navigationItemElement=_navigationItemElement;
-- (void).cxx_destruct;
 - (id)_stackViewWithMinSpacing:(double)arg1 layoutMargin:(struct UIEdgeInsets)arg2;
 - (void)_updateNavigationItem;
 - (void)_updateNavigationBarPadding;

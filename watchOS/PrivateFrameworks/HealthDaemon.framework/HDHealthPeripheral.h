@@ -28,6 +28,7 @@
 }
 
 + (id)implementedProperties;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *propertiesAwaiting; // @synthesize propertiesAwaiting=_propertiesAwaiting;
 @property(retain, nonatomic) NSMutableDictionary *serviceForProperty; // @synthesize serviceForProperty=_serviceForProperty;
 @property(nonatomic) _Bool discoveredServices; // @synthesize discoveredServices=_discoveredServices;
@@ -39,7 +40,6 @@
 @property(readonly, nonatomic) HKDevice *deviceInformation; // @synthesize deviceInformation=_deviceInformation;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) CBPeripheral *cbPeripheral; // @synthesize cbPeripheral=_cbPeripheral;
-- (void).cxx_destruct;
 - (void)peripheral:(id)arg1 didUpdateNotificationStateForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;

@@ -18,11 +18,11 @@
     struct CGRect _bounds;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVMetadataFaceObject *underlyingFaceObject; // @synthesize underlyingFaceObject=_underlyingFaceObject;
 @property(readonly, nonatomic) double rollAngle; // @synthesize rollAngle=_rollAngle;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (id)burstMetadataRepresentation;
 @property(readonly, nonatomic) AVMetadataObject *underlyingMetadataObject;
 @property(readonly, copy, nonatomic) NSString *metadataType;

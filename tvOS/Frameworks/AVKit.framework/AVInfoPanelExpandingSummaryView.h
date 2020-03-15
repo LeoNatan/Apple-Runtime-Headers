@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
     _Bool _highLighted;
 }
 
-@property(nonatomic, getter=isHighlighted) _Bool highLighted; // @synthesize highLighted=_highLighted;
 - (void).cxx_destruct;
+@property(nonatomic, getter=isHighlighted) _Bool highLighted; // @synthesize highLighted=_highLighted;
 - (id)_moreLabelExclusionPath;
 - (_Bool)_isTextTruncating;
 - (void)_updateAppearance;

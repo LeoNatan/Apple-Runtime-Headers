@@ -12,22 +12,27 @@
 
 @interface SPKernelExtensionHistoryItem : NSObject <NSSecureCoding>
 {
-    NSString *_path;
-    NSString *_teamID;
-    NSString *_bundleID;
-    NSString *_cdHash;
+    BOOL isNotarized;
+    BOOL isDeprecated;
+    BOOL isUnsupported;
+    NSString *path;
+    NSString *bundleID;
+    NSString *teamID;
+    NSString *cdHash;
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)kernelExtensionHistoryItemWithPath:(id)arg1 teamID:(id)arg2 bundleID:(id)arg3 cdHash:(id)arg4;
-@property(readonly, nonatomic) NSString *cdHash; // @synthesize cdHash=_cdHash;
-@property(readonly, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
-@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isUnsupported; // @synthesize isUnsupported;
+@property(readonly, nonatomic) BOOL isDeprecated; // @synthesize isDeprecated;
+@property(readonly, nonatomic) BOOL isNotarized; // @synthesize isNotarized;
+@property(readonly, nonatomic) NSString *cdHash; // @synthesize cdHash;
+@property(readonly, nonatomic) NSString *teamID; // @synthesize teamID;
+@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID;
+@property(readonly, nonatomic) NSString *path; // @synthesize path;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithPath:(id)arg1 teamID:(id)arg2 bundleID:(id)arg3 cdHash:(id)arg4;
+- (id)initWithPath:(id)arg1 teamID:(id)arg2 bundleID:(id)arg3 cdHash:(id)arg4 isNotarized:(BOOL)arg5 isDeprecated:(BOOL)arg6 isUnsupported:(BOOL)arg7;
 - (id)init;
 
 @end

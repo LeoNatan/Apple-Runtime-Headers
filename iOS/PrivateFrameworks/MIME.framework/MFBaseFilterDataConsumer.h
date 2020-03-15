@@ -18,9 +18,9 @@
 
 + (id)filterWithConsumer:(id)arg1;
 + (id)filterWithConsumers:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *consumers; // @synthesize consumers=_consumers;
 @property(nonatomic, getter=isSerialAppend) _Bool serialAppend; // @synthesize serialAppend=_serialAppend;
-- (void).cxx_destruct;
 - (void)done;
 - (long long)appendData:(id)arg1;
 - (id)initWithConsumer:(id)arg1;

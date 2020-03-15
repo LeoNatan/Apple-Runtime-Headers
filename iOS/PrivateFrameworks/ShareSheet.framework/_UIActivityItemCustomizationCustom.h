@@ -11,8 +11,8 @@
     CDUnknownBlockType __handler;
 }
 
-@property(copy, nonatomic, setter=_setHandler:) CDUnknownBlockType _handler; // @synthesize _handler=__handler;
 - (void).cxx_destruct;
+@property(copy, nonatomic, setter=_setHandler:) CDUnknownBlockType _handler; // @synthesize _handler=__handler;
 
 @end
 

@@ -168,6 +168,7 @@
 + (id)restrictedSplashboardClasses;
 + (void)setShouldRestrictViewsForSplashboard:(BOOL)arg1;
 + (BOOL)shouldRestrictViewsForSplashboard;
+- (void).cxx_destruct;
 @property(nonatomic, setter=_setContainedGestureRecognizersShouldRespectGestureServerInstructions:) BOOL _containedGestureRecognizersShouldRespectGestureServerInstructions; // @synthesize _containedGestureRecognizersShouldRespectGestureServerInstructions=__containedGestureRecognizersShouldRespectGestureServerInstructions;
 @property(readonly, nonatomic, getter=_focusEventRecognizer) _UIFocusEventRecognizer *focusEventRecognizer; // @synthesize focusEventRecognizer=_focusEventRecognizer;
 @property(nonatomic, setter=__setHostViewUnderlapsStatusBar:) BOOL __hostViewUnderlapsStatusBar; // @synthesize __hostViewUnderlapsStatusBar=___hostViewUnderlapsStatusBar;
@@ -191,7 +192,6 @@
 @property(retain, nonatomic, setter=_setTraitCollectionChangeTransitionCoordinator:) _UIViewControllerNullAnimationTransitionCoordinator *_traitCollectionChangeTransitionCoordinator; // @synthesize _traitCollectionChangeTransitionCoordinator;
 @property(retain, nonatomic, getter=_rootPresentationController, setter=_setRootPresentationController:) _UIRootPresentationController *rootPresentationController; // @synthesize rootPresentationController=_rootPresentationController;
 @property(retain, nonatomic) UIViewController *rootViewController; // @synthesize rootViewController=_rootViewController;
-- (void).cxx_destruct;
 @property(nonatomic, setter=setCanResizeToFitContent:) BOOL canResizeToFitContent;
 - (void)_setCanResizeToFitContent:(BOOL)arg1;
 - (BOOL)_canResizeToFitContent;
@@ -546,6 +546,7 @@
 - (BOOL)_wantsSceneAssociation;
 - (id)_debugName;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
+- (void)_forwardUIEventToAppKit:(id)arg1;
 - (id)_responderChainFromFirstResponder;
 @property(nonatomic, setter=_setHostWindow:) __weak id <UINSWindow> _hostWindow;
 - (long long)_interfaceOrientationForSceneSafeAreaInsetsIncludingStatusBar:(BOOL)arg1;

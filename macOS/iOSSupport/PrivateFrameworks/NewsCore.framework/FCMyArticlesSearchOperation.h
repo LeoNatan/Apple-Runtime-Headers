@@ -21,6 +21,7 @@
     NSDictionary *_resultFeedContextByFeedID;
 }
 
+- (void).cxx_destruct;
 @property(copy) NSDictionary *resultFeedContextByFeedID; // @synthesize resultFeedContextByFeedID=_resultFeedContextByFeedID;
 @property(retain, nonatomic) NSArray *resultFeedItems; // @synthesize resultFeedItems=_resultFeedItems;
 @property(copy, nonatomic) CDUnknownBlockType searchCompletionHandler; // @synthesize searchCompletionHandler=_searchCompletionHandler;
@@ -30,7 +31,6 @@
 @property(copy, nonatomic) FCDateRange *dateRange; // @synthesize dateRange=_dateRange;
 @property(copy, nonatomic) FCFeedItemFeature *feature; // @synthesize feature=_feature;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)_generateFeedRequestsForFeedRange:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;

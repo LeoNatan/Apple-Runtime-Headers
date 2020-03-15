@@ -15,10 +15,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) HMDRemoteLoginAuthentication *remoteAuthentication; // @synthesize remoteAuthentication=_remoteAuthentication;
 @property(readonly, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
-- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)initWithSessionID:(id)arg1 remoteAuthentication:(id)arg2 completion:(CDUnknownBlockType)arg3;

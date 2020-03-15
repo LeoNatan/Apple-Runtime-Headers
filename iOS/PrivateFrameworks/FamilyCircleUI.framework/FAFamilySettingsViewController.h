@@ -51,8 +51,8 @@
     id <FAFamilySettingsViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <FAFamilySettingsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <FAFamilySettingsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)didSelectSpecifier:(id)arg1;
 - (void)reloadSpecifiersForProvider:(id)arg1 oldSpecifiers:(id)arg2 animated:(_Bool)arg3;
 - (void)_updateMemberDetailsPageWithLinkedAppleID:(id)arg1;

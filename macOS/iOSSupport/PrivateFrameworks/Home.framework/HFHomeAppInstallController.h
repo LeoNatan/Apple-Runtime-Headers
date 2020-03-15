@@ -16,10 +16,10 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *statusUpdaters; // @synthesize statusUpdaters=_statusUpdaters;
 @property(nonatomic) long long lastReportedStatus; // @synthesize lastReportedStatus=_lastReportedStatus;
 @property(retain, nonatomic) NAFuture *activeHomeAppDownloadFuture; // @synthesize activeHomeAppDownloadFuture=_activeHomeAppDownloadFuture;
-- (void).cxx_destruct;
 - (id)downloadHomeAppWithUpdateBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) long long status; // @dynamic status;
 - (BOOL)_isHomeAppInstalled;

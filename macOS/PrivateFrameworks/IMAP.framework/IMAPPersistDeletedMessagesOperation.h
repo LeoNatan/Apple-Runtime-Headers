@@ -15,9 +15,9 @@
     id <IMAPPersistDeletedMessagesOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <IMAPPersistDeletedMessagesOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSIndexSet *uids; // @synthesize uids=_uids;
-- (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithDataSource:(id)arg1;

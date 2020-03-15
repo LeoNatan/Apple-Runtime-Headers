@@ -31,10 +31,10 @@
     SBNotificationBannerDestination *_bannerDestination;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak SBNotificationBannerDestination *bannerDestination; // @synthesize bannerDestination=_bannerDestination;
 @property(nonatomic) double currentLongPressDuration; // @synthesize currentLongPressDuration=_currentLongPressDuration;
 @property(nonatomic, getter=isButtonDown) _Bool buttonDown; // @synthesize buttonDown=_buttonDown;
-- (void).cxx_destruct;
 - (void)provider:(id)arg1 didUpdateButtonGestureParameters:(id)arg2;
 - (id)hardwareButtonGestureParameters;
 - (void)_logMenuButtonHoldTime;

@@ -14,8 +14,8 @@
 }
 
 + (id)tokenForCurrentIdentityIfCloudKitEnabled;
-@property(copy, nonatomic) NSString *token; // @synthesize token=_token;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *token; // @synthesize token=_token;
 - (id)_hashFor:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

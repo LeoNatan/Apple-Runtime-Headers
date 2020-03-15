@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     NSString *_imageIdentifierInternal;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageIdentifierInternal; // @synthesize imageIdentifierInternal=_imageIdentifierInternal;
 @property(nonatomic) unsigned long long imageTypeInternal; // @synthesize imageTypeInternal=_imageTypeInternal;
 @property(retain, nonatomic) VUIImageInfoManagedObject *imageInfo; // @synthesize imageInfo=_imageInfo;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) NSString *imageIdentifier;

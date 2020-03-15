@@ -19,13 +19,13 @@
     float _rowHeight;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(retain, nonatomic) NSString *rowName; // @synthesize rowName=_rowName;
 @property(nonatomic) _Bool fixedRowHeight; // @synthesize fixedRowHeight=_fixedRowHeight;
 @property(nonatomic) _Bool needsLayout; // @synthesize needsLayout=_needsLayout;
 @property(nonatomic) _Bool selectable; // @synthesize selectable=_selectable;
 @property(retain, nonatomic) UIView<SPInterfaceItem> *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 
 @end
 

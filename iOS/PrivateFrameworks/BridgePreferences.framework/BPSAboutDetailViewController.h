@@ -19,6 +19,7 @@
     CDUnknownBlockType _onDismiss;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType onDismiss; // @synthesize onDismiss=_onDismiss;
 @property(retain, nonatomic) UIImage *headerGlyph; // @synthesize headerGlyph=_headerGlyph;
 @property(retain, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
@@ -26,7 +27,6 @@
 @property(retain, nonatomic) NSArray *bullets; // @synthesize bullets=_bullets;
 @property(retain, nonatomic) NSString *footerString; // @synthesize footerString=_footerString;
 @property(retain, nonatomic) NSString *headerString; // @synthesize headerString=_headerString;
-- (void).cxx_destruct;
 - (void)presentWithController:(id)arg1 onDismiss:(CDUnknownBlockType)arg2;
 - (void)presentWithController:(id)arg1;
 - (void)donePressed;

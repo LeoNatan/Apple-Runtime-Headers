@@ -18,10 +18,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupId; // @synthesize groupId=_groupId;
 @property(retain, nonatomic) NSArray *groupOptionsList; // @synthesize groupOptionsList=_groupOptionsList;
 @property(nonatomic) long long planCategory; // @synthesize planCategory=_planCategory;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

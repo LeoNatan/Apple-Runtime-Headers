@@ -8,7 +8,7 @@
 
 #import <coreroutine/RTVisitPipelineModule-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, RTDistanceCalculator;
 
 @interface RTVisitPipelineModuleBurstNoiseFilter : NSObject <RTVisitPipelineModule>
 {
@@ -19,9 +19,12 @@
     double _minimumNoiseToLeftFlankDistance;
     unsigned long long _maximumWindowSize;
     double _maxHorizontalAccuracy;
+    RTDistanceCalculator *_distanceCalculator;
 }
 
 + (unsigned long long)getIndexInArray:(id)arg1 followedByCount:(unsigned long long)arg2;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(readonly, nonatomic) double maxHorizontalAccuracy; // @synthesize maxHorizontalAccuracy=_maxHorizontalAccuracy;
 @property(readonly, nonatomic) unsigned long long maximumWindowSize; // @synthesize maximumWindowSize=_maximumWindowSize;
 @property(readonly, nonatomic) double minimumNoiseToLeftFlankDistance; // @synthesize minimumNoiseToLeftFlankDistance=_minimumNoiseToLeftFlankDistance;
@@ -29,7 +32,6 @@
 @property(readonly, nonatomic) unsigned long long lastProcessedIndex; // @synthesize lastProcessedIndex=_lastProcessedIndex;
 @property(readonly, nonatomic) NSMutableArray *potentialNoiseLocations; // @synthesize potentialNoiseLocations=_potentialNoiseLocations;
 @property(readonly, nonatomic) _Bool firstTimeProcessingModule; // @synthesize firstTimeProcessingModule=_firstTimeProcessingModule;
-- (void).cxx_destruct;
 - (void)setLastProcessedIndex:(unsigned long long)arg1;
 - (id)process:(id)arg1;
 - (void)filterNoise;
@@ -40,6 +42,7 @@
 - (void)removeNoiseLocations;
 - (void)identifyNoiseInWindowRange:(struct _NSRange)arg1;
 - (id)initWithHyperParameter:(id)arg1;
+- (id)initWithMaximumFlankDistance:(double)arg1 minimumNoiseToLeftFlankDistance:(double)arg2 maximumWindowSize:(unsigned long long)arg3 maxHorizontalAccuracy:(double)arg4 distanceCalculator:(id)arg5;
 - (id)initWithMaximumFlankDistance:(double)arg1 minimumNoiseToLeftFlankDistance:(double)arg2 maximumWindowSize:(unsigned long long)arg3 maxHorizontalAccuracy:(double)arg4;
 - (void)addLocations:(id)arg1;
 

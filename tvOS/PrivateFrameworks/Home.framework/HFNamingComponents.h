@@ -29,6 +29,7 @@
 + (id)namingComponentFromAccessory:(id)arg1;
 + (id)namingComponentFromServiceGroup:(id)arg1;
 + (id)namingComponentFromService:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool allowsNullResettableName; // @synthesize allowsNullResettableName=_allowsNullResettableName;
 @property(nonatomic) _Bool allowsEmptyNameTextField; // @synthesize allowsEmptyNameTextField=_allowsEmptyNameTextField;
 @property(nonatomic) _Bool isTelevision; // @synthesize isTelevision=_isTelevision;
@@ -40,7 +41,6 @@
 @property(nonatomic) _Bool isAccessory; // @synthesize isAccessory=_isAccessory;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) id homeKitObject; // @synthesize homeKitObject=_homeKitObject;
-- (void).cxx_destruct;
 - (id)categoryName;
 - (id)configuredName;
 @property(readonly, nonatomic) NSString *defaultName;

@@ -18,10 +18,10 @@
     NSMapTable *_pendingReplies;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMapTable *pendingReplies; // @synthesize pendingReplies=_pendingReplies;
 @property(readonly, nonatomic) id <PBSAppInfoServiceInterface> remoteProxy; // @synthesize remoteProxy=_remoteProxy;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
-- (void).cxx_destruct;
 - (void)appInfoUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)setServiceDelegate:(id)arg1;
 - (void)handleConnectionInterruption:(id)arg1;

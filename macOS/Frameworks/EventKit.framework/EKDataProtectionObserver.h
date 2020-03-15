@@ -12,8 +12,8 @@
 }
 
 + (id)stateChangedNotificationName;
-@property(copy, nonatomic) CDUnknownBlockType stateChangedCallback; // @synthesize stateChangedCallback=_stateChangedCallback;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType stateChangedCallback; // @synthesize stateChangedCallback=_stateChangedCallback;
 @property(readonly, nonatomic) BOOL dataIsAccessible;
 
 @end

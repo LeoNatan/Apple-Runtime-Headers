@@ -40,8 +40,8 @@ __attribute__((visibility("hidden")))
     long long _controlsStyle;
 }
 
-@property(readonly, nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
 - (void)_handleDoubleDoubleTapGestureRecognizer:(id)arg1;
 - (void)_handleDoubleTapGestureRecognizer:(id)arg1;
 - (void)_handleSingleTapGestureRecognizer:(id)arg1;

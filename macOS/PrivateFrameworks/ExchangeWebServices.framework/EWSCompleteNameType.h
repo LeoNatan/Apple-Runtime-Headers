@@ -25,6 +25,7 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *YomiLastName; // @synthesize YomiLastName=_YomiLastName;
 @property(copy, nonatomic) NSString *YomiFirstName; // @synthesize YomiFirstName=_YomiFirstName;
 @property(copy, nonatomic) NSString *FullName; // @synthesize FullName=_FullName;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *MiddleName; // @synthesize MiddleName=_MiddleName;
 @property(copy, nonatomic) NSString *FirstName; // @synthesize FirstName=_FirstName;
 @property(copy, nonatomic) NSString *Title; // @synthesize Title=_Title;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

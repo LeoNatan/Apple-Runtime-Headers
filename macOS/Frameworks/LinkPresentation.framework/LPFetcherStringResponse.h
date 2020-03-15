@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *_string;
 }
 
-@property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 - (id)initWithString:(id)arg1 fetcher:(id)arg2;
 
 @end

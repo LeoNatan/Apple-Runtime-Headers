@@ -14,9 +14,9 @@
     PLRoutineService *_routineManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PLRoutineService *routineManager; // @synthesize routineManager=_routineManager;
 @property(retain, nonatomic) NSSet *currentFrequentLocations; // @synthesize currentFrequentLocations=_currentFrequentLocations;
-- (void).cxx_destruct;
 - (id)_createFrequentLocationsWithAllMoments:(id)arg1;
 - (BOOL)frequentLocationsDidChangeFromUpdateWithAllMoments:(id)arg1;
 - (id)init;

@@ -22,11 +22,11 @@
 }
 
 + (BOOL)supportsAccount:(id)arg1;
+- (void).cxx_destruct;
 @property(retain) NSProgressIndicator *spinner; // @synthesize spinner=_spinner;
 @property(retain) NSBox *webViewContainer; // @synthesize webViewContainer=_webViewContainer;
 @property(retain) WKWebView *webView; // @synthesize webView=_webView;
 @property __weak id <ACUIWebLoginDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)webView:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_evaluateDocumentTitleForWKWebView:(id)arg1 retryCount:(unsigned long long)arg2;

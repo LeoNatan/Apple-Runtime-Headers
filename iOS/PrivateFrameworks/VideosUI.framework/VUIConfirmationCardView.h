@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     UIVisualEffectView *_backdropView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *cardView; // @synthesize cardView=_cardView;
 @property(retain, nonatomic) _TVImageView *badgeView; // @synthesize badgeView=_badgeView;
 @property(retain, nonatomic) VUILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) VUIConfirmationCardLayout *layout; // @synthesize layout=_layout;
-- (void).cxx_destruct;
 - (void)_configureSubviews;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

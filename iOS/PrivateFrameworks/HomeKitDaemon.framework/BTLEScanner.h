@@ -23,12 +23,12 @@
 
 + (id)initializeScanner;
 + (id)sharedScanLock;
+- (void).cxx_destruct;
 @property(retain, nonatomic) HMDAccessoryQueues *scanQueue; // @synthesize scanQueue;
 @property(retain, nonatomic) HAPBTLECentralManager *centralManager; // @synthesize centralManager;
 @property(retain, nonatomic) CUBLEScanner *cubleScanner; // @synthesize cubleScanner;
 @property(retain, nonatomic) HMFTimer *scanTimer; // @synthesize scanTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue;
-- (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (void)_stopScan;
 - (_Bool)startScan:(id)arg1 timeout:(double)arg2;

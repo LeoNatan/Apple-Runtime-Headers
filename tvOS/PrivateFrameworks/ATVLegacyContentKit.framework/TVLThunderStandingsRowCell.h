@@ -14,9 +14,9 @@
     NSArray *_rowViewComponents;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *rowViewComponents; // @synthesize rowViewComponents=_rowViewComponents;
 @property(retain, nonatomic) NSArray *columnDefinitions; // @synthesize columnDefinitions=_columnDefinitions;
-- (void).cxx_destruct;
 - (id)_labelColor;
 - (id)_labelFont;
 - (void)layoutSubviews;

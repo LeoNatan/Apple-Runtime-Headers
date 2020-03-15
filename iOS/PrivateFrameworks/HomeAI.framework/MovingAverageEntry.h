@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSDate *_date;
 }
 
+- (void).cxx_destruct;
 @property(readonly) NSDate *date; // @synthesize date=_date;
 @property(readonly) NSNumber *value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)initWithValue:(id)arg1;
 
 @end

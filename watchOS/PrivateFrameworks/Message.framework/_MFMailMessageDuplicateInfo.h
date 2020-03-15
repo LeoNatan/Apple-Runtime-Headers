@@ -16,11 +16,11 @@
     NSMutableArray *_dates;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *dates; // @synthesize dates=_dates;
 @property(retain, nonatomic) NSMutableArray *flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSMutableSet *mailboxes; // @synthesize mailboxes=_mailboxes;
 @property(retain, nonatomic) MFMailboxProvider *mailboxProvider; // @synthesize mailboxProvider=_mailboxProvider;
-- (void).cxx_destruct;
 - (id)combinedDate;
 - (id)combinedMessageFlags;
 - (id)combinedMailboxes;

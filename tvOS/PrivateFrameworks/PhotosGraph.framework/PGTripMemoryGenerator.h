@@ -16,10 +16,10 @@
     unsigned long long _subcategory;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long subcategory; // @synthesize subcategory=_subcategory;
 @property(retain, nonatomic) PGGraphHighlightGroupNode *tripNode; // @synthesize tripNode=_tripNode;
 @property(retain, nonatomic) NSDate *lowerBoundLocalDate; // @synthesize lowerBoundLocalDate=_lowerBoundLocalDate;
-- (void).cxx_destruct;
 - (id)_potentialMemoriesForDryTesting;
 - (id)_tripNodeForPotentialMemory:(id)arg1;
 - (void)_postProcessMemory:(id)arg1 withPotentialMemory:(id)arg2;

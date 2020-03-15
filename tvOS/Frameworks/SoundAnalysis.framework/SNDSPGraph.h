@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     shared_ptr_f6ac7592 _graph;
 }
 
-@property(readonly, nonatomic) shared_ptr_f6ac7592 graph; // @synthesize graph=_graph;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) shared_ptr_f6ac7592 graph; // @synthesize graph=_graph;
 - (void)writeDotFileToPath:(id)arg1;
 @property(readonly, nonatomic) long long numberOfOutputs;
 @property(readonly, nonatomic) long long numberOfInputs;

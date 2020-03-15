@@ -23,6 +23,7 @@
     double _minimumContentHeight;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double minimumContentHeight; // @synthesize minimumContentHeight=_minimumContentHeight;
 @property(retain, nonatomic) PXNoContentGadgetView *noContentView; // @synthesize noContentView=_noContentView;
 @property(nonatomic) double contentHeightAdjustment; // @synthesize contentHeightAdjustment=_contentHeightAdjustment;
@@ -31,18 +32,18 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)prepareCollectionViewItem:(struct UICollectionViewCell *)arg1;
+- (void)prepareCollectionViewItem:(id)arg1;
 @property(readonly, nonatomic) Class collectionViewItemClass;
 - (_Bool)hasLoadedContentData;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
+@property(readonly, nonatomic) unsigned long long gadgetCapabilities;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (id)initWithLocalizedTitle:(id)arg1 localizedMessage:(id)arg2 minimumContentHeight:(double)arg3;
 - (id)initWithLocalizedTitle:(id)arg1 localizedMessage:(id)arg2;
 - (id)init;
-- (double)preferredHeightForViewController:(struct NSObject *)arg1;
+- (double)preferredHeightForViewController:(id)arg1;
 - (void)configureWithButtonTitle:(id)arg1 buttonAction:(CDUnknownBlockType)arg2;
 
 // Remaining properties
@@ -53,9 +54,6 @@
 @property(readonly, nonatomic) unsigned long long headerStyle;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) _Bool supportsAssetsDrop;
-@property(readonly, nonatomic) _Bool supportsHighlighting;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

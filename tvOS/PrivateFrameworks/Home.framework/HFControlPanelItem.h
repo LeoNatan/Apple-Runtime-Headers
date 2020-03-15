@@ -22,12 +22,12 @@
 + (id)na_identity;
 + (id)standardControlPanelItemsForControlItems:(id)arg1;
 + (id)_controlPanelItemRules;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *UUIDsByControlItemPointer; // @synthesize UUIDsByControlItemPointer=_UUIDsByControlItemPointer;
 @property(readonly, nonatomic) NSDictionary *controlItemsByUUID; // @synthesize controlItemsByUUID=_controlItemsByUUID;
 @property(readonly, nonatomic) NSDictionary *displayResults; // @synthesize displayResults=_displayResults;
 @property(readonly, copy, nonatomic) NSSet *controlItems; // @synthesize controlItems=_controlItems;
 @property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-- (void).cxx_destruct;
 - (long long)sortPriority;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;

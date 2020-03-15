@@ -17,9 +17,9 @@
     CDStruct_47fe53f2 _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *remotePaymentRequestIdentifier; // @synthesize remotePaymentRequestIdentifier=_remotePaymentRequestIdentifier;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

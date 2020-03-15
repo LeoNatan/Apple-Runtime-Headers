@@ -6,9 +6,7 @@
 
 #import <NewsArticles/_TtC12NewsArticles25TableOfContentsURLHandler.h>
 
-#import <NewsArticles/SXURLPreviewing-Protocol.h>
-
-@interface _TtC12NewsArticles25TableOfContentsURLHandler (NewsArticles1) <SXURLPreviewing>
+@interface _TtC12NewsArticles25TableOfContentsURLHandler (NewsArticles1)
 - (void)commitViewController:(id)arg1 URL:(id)arg2;
 - (id)viewControllerForURL:(id)arg1;
 @end

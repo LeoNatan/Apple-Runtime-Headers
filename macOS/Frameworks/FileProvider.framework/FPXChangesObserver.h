@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _finishedBlock;
 }
 
-@property(copy) CDUnknownBlockType finishedBlock; // @synthesize finishedBlock=_finishedBlock;
 - (void).cxx_destruct;
+@property(copy) CDUnknownBlockType finishedBlock; // @synthesize finishedBlock=_finishedBlock;
 - (void)finishEnumeratingWithError:(id)arg1;
 - (void)finishEnumeratingChangesUpToSyncAnchor:(id)arg1 moreComing:(BOOL)arg2;
 - (void)didUpdateItems:(id)arg1;

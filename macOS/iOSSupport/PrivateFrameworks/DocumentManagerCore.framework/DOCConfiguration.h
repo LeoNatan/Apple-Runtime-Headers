@@ -59,6 +59,7 @@
 + (id)configurationForExportingDocumentsToURLs:(id)arg1 mode:(unsigned long long)arg2;
 + (id)configurationForImportingDocumentsWithContentTypes:(id)arg1 mode:(unsigned long long)arg2;
 + (id)configurationForOpeningDocumentsOfApplicationWithBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *documentTypes; // @synthesize documentTypes=_documentTypes;
 @property double thumbnailFetchingTimeOut; // @synthesize thumbnailFetchingTimeOut=_thumbnailFetchingTimeOut;
 @property(copy) NSArray *forbiddenActionIdentifiers; // @synthesize forbiddenActionIdentifiers=_forbiddenActionIdentifiers;
@@ -98,7 +99,6 @@
 @property BOOL shouldIgnoreInteractionMode; // @synthesize shouldIgnoreInteractionMode=_shouldIgnoreInteractionMode;
 @property unsigned long long interactionMode; // @synthesize interactionMode=_interactionMode;
 @property(retain) DOCConcreteLocation *defaultLocation; // @synthesize defaultLocation=_defaultLocation;
-- (void).cxx_destruct;
 - (unsigned long long)interactionModeForPreparing;
 @property(readonly) BOOL isPopoverOrWidget;
 @property(readonly) BOOL isWidget;

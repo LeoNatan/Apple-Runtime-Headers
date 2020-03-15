@@ -11,7 +11,7 @@
 
 @interface HFAccessorySettingDeviceOptionsAdapterUtility : NSObject
 {
-    BOOL _isAccessoryActive;
+    BOOL _isAccessoryReachableOverRapport;
     BOOL _isAccessoryGrouped;
     id <HFAccessorySettingDeviceOptionsAdapterUtilityDelegate> _delegate;
     NAFuture *_inProgressSysdiagnoseCollectionFuture;
@@ -24,18 +24,18 @@
     NSMutableArray *_deviceIDArray;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableArray *deviceIDArray; // @synthesize deviceIDArray=_deviceIDArray;
 @property(nonatomic) BOOL isAccessoryGrouped; // @synthesize isAccessoryGrouped=_isAccessoryGrouped;
 @property(readonly, nonatomic) RPCompanionLinkClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) NAFuture *accessoryCompanionDevicesIDFuture; // @synthesize accessoryCompanionDevicesIDFuture=_accessoryCompanionDevicesIDFuture;
 @property(readonly, nonatomic) NAFuture *accessoryCompanionLinkDeviceFuture; // @synthesize accessoryCompanionLinkDeviceFuture=_accessoryCompanionLinkDeviceFuture;
 @property(readonly, nonatomic) NAFuture *linkIsActivatedFuture; // @synthesize linkIsActivatedFuture=_linkIsActivatedFuture;
-@property(nonatomic) BOOL isAccessoryActive; // @synthesize isAccessoryActive=_isAccessoryActive;
+@property(nonatomic) BOOL isAccessoryReachableOverRapport; // @synthesize isAccessoryReachableOverRapport=_isAccessoryReachableOverRapport;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
 @property(retain, nonatomic) NAFuture *inProgressSysdiagnoseCollectionFuture; // @synthesize inProgressSysdiagnoseCollectionFuture=_inProgressSysdiagnoseCollectionFuture;
 @property(nonatomic) __weak id <HFAccessorySettingDeviceOptionsAdapterUtilityDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)_home;
 - (id)mediaProfileContainer;
 - (id)_mediaSessionAccessoryUniqueIdentifier;
@@ -49,7 +49,7 @@
 - (id)restartAccessories;
 - (id)restartAccessory;
 - (id)identifyAccessory;
-- (id)requestSysdiagnose;
+- (id)requestSysdiagnoseWithRequest:(id)arg1 options:(id)arg2;
 - (id)initWithHomeKitSettingsVendor:(id)arg1 mode:(unsigned long long)arg2 groupedAccessory:(BOOL)arg3 delegate:(id)arg4;
 
 @end

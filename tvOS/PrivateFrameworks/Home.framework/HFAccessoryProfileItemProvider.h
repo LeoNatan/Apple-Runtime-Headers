@@ -17,10 +17,10 @@
     NSMutableSet *_profileItems;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *profileItems; // @synthesize profileItems=_profileItems;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HFAccessoryProfileFilterOptions *filterOptions; // @synthesize filterOptions=_filterOptions;
-- (void).cxx_destruct;
 - (id)_profileItemForProfile:(id)arg1;
 - (id)_supportedProfileClasses;
 - (id)invalidationReasons;

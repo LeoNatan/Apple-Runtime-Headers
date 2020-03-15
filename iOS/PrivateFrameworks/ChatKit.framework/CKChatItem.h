@@ -24,6 +24,7 @@
 
 + (id)chatItemWithNotification:(id)arg1 balloonMaxWidth:(double)arg2 otherMaxWidth:(double)arg3;
 + (id)chatItemWithIMChatItem:(id)arg1 balloonMaxWidth:(double)arg2 otherMaxWidth:(double)arg3 transcriptTraitCollection:(id)arg4;
+- (void).cxx_destruct;
 @property(nonatomic, getter=isSizeLoaded) _Bool sizeLoaded; // @synthesize sizeLoaded=_sizeLoaded;
 @property(copy, nonatomic) NSAttributedString *transcriptDrawerText; // @synthesize transcriptDrawerText=_transcriptDrawerText;
 @property(copy, nonatomic) NSAttributedString *transcriptText; // @synthesize transcriptText=_transcriptText;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) _Bool zOrder; // @synthesize zOrder=_zOrder;
 @property(retain, nonatomic) UNNotification *notification; // @synthesize notification=_notification;
 @property(retain, nonatomic) IMTranscriptChatItem *IMChatItem; // @synthesize IMChatItem=_imChatItem;
-- (void).cxx_destruct;
 - (void)_setSizeForTesting:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CKBalloonDescriptor_t balloonDescriptor; // @dynamic balloonDescriptor;
 - (id)loadTranscriptDrawerText;

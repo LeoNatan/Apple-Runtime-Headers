@@ -16,8 +16,8 @@
 }
 
 + (void)requestViewControllerWithCompletion:(CDUnknownBlockType)arg1;
-@property(nonatomic) __weak id <AKAuthorizationViewHostDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <AKAuthorizationViewHostDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)callCompletionWithAuthorization:(id)arg1 error:(id)arg2;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;

@@ -18,8 +18,8 @@
     id _delegate;
 }
 
-@property(retain) id <IAAppCheckboxMatrixRowItemDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(retain) id <IAAppCheckboxMatrixRowItemDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 - (double)rowHeight;
 - (id)selectedItems;
 - (id)itemForApp:(id)arg1;

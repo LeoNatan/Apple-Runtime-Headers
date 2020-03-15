@@ -18,11 +18,11 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)fetchObjectsWithPredicate:(id)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) BOOL shouldShowInPrimaryAccounts; // @synthesize shouldShowInPrimaryAccounts=_shouldShowInPrimaryAccounts;
 @property(nonatomic) BOOL isEventContainer; // @synthesize isEventContainer=_isEventContainer;
 @property(nonatomic) BOOL isTaskContainer; // @synthesize isTaskContainer=_isTaskContainer;
 @property(retain, nonatomic) CalStoreRemoteManagedGroup *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)saveWithError:(id *)arg1;
 - (BOOL)removeWithError:(id *)arg1;

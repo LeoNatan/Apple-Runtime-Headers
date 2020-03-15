@@ -15,9 +15,9 @@
 }
 
 + (id)definition;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDateComponents *EndDate; // @synthesize EndDate=_EndDate;
 @property(retain, nonatomic) NSDateComponents *StartDate; // @synthesize StartDate=_StartDate;
-- (void).cxx_destruct;
 
 @end
 

@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(int)arg3;
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) float width; // @synthesize width=_width;
 @property(nonatomic) struct _NSRange unitRange; // @synthesize unitRange=_unitRange;
 @property(readonly, nonatomic) unsigned int calendarUnit; // @synthesize calendarUnit=_calendarUnit;
 @property(readonly, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned int equivalentUnit;
 - (id)description;
 - (id)_initWithFormatString:(id)arg1 calendarUnit:(unsigned int)arg2;

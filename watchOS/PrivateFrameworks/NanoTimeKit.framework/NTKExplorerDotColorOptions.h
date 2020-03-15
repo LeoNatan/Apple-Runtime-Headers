@@ -19,10 +19,10 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *noServiceDotColor; // @synthesize noServiceDotColor=_noServiceDotColor;
 @property(retain, nonatomic) UIColor *connectedDotBackgroundColor; // @synthesize connectedDotBackgroundColor=_connectedDotBackgroundColor;
 @property(retain, nonatomic) UIColor *connectedDotColor; // @synthesize connectedDotColor=_connectedDotColor;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

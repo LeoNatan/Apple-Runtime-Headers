@@ -22,8 +22,8 @@
 }
 
 + (id)sharedMonitor;
-@property(nonatomic) _Bool isInitialSyncComplete; // @synthesize isInitialSyncComplete=_isInitialSyncComplete;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isInitialSyncComplete; // @synthesize isInitialSyncComplete=_isInitialSyncComplete;
 - (void)initialSyncStateObserver:(id)arg1 initialSyncDidCompleteForPairingIdentifier:(id)arg2;
 - (void)deviceBecameActive:(id)arg1;
 - (void)_handlePairedDeviceChangedNotification;

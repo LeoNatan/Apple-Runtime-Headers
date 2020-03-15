@@ -17,12 +17,12 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, copy, nonatomic) NSArray *samples; // @synthesize samples=_samples;
 @property(readonly, nonatomic) long long category; // @synthesize category=_category;
 @property(readonly, copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 category:(long long)arg3 samples:(id)arg4 duration:(double)arg5;
 
 @end

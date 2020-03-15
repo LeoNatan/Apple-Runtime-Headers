@@ -19,9 +19,9 @@
 
 + (id)badgeValueWithValue:(id)arg1;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSNumber *badgeNumber; // @synthesize badgeNumber=_badgeNumber;
 @property(readonly, copy, nonatomic) NSString *badgeString; // @synthesize badgeString=_badgeString;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

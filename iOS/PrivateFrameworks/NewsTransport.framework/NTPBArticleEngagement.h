@@ -34,6 +34,7 @@
     } _has;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(retain, nonatomic) NTPBIssueViewData *issueViewData; // @synthesize issueViewData=_issueViewData;
 @property(retain, nonatomic) NTPBIssueData *issueData; // @synthesize issueData=_issueData;
@@ -46,7 +47,6 @@
 @property(nonatomic) long long eventTimestamp; // @synthesize eventTimestamp=_eventTimestamp;
 @property(retain, nonatomic) NSString *userId; // @synthesize userId=_userId;
 @property(retain, nonatomic) NSData *sessionId; // @synthesize sessionId=_sessionId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

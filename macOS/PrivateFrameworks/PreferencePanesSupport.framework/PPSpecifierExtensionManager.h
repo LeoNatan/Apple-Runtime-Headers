@@ -24,11 +24,11 @@
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak PPSpecifierViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (BOOL)performSystemAdministrationBlock:(CDUnknownBlockType)arg1;
 - (BOOL)isAutorized;

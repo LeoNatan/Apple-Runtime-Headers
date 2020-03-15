@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 + (id)keyCommandWithKeyCommand:(id)arg1 identifier:(unsigned long long)arg2;
+- (void).cxx_destruct;
 @property unsigned long long keyCommandIdentifier; // @synthesize keyCommandIdentifier=_keyCommandIdentifier;
 @property(retain, nonatomic) UIKeyCommand *keyCommand; // @synthesize keyCommand=_keyCommand;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

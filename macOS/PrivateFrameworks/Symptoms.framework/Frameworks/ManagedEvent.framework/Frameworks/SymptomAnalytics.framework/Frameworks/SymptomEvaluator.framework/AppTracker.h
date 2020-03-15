@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 + (void)setWifiNeverNoteList:(id)arg1;
 + (void)setWifiAlwaysNoteList:(id)arg1;
 + (void)initialize;
+- (void).cxx_destruct;
 @property long long interfaceType; // @synthesize interfaceType=_interfaceType;
 @property BOOL sentThunderingHerdFlowCountExceededPolicySymptom; // @synthesize sentThunderingHerdFlowCountExceededPolicySymptom=_sentThunderingHerdFlowCountExceededPolicySymptom;
 @property BOOL sentFlowCountExceededPolicySymptom; // @synthesize sentFlowCountExceededPolicySymptom=_sentFlowCountExceededPolicySymptom;
@@ -70,7 +71,6 @@ __attribute__((visibility("hidden")))
 @property int prevFlowsForOthers; // @synthesize prevFlowsForOthers=_prevFlowsForOthers;
 @property int prevFlows; // @synthesize prevFlows=_prevFlows;
 @property(readonly) NSString *userName; // @synthesize userName=_userName;
-- (void).cxx_destruct;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (int)configureInstance:(id)arg1;
 - (void)generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

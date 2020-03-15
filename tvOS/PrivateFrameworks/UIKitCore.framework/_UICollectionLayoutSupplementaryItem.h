@@ -24,12 +24,12 @@
 
 + (id)supplementaryItemWithSize:(id)arg1 elementKind:(id)arg2 containerAnchor:(id)arg3 itemAnchor:(id)arg4;
 + (id)supplementaryItemWithSize:(id)arg1 elementKind:(id)arg2 containerAnchor:(id)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool canAdjustContentSize; // @synthesize canAdjustContentSize=_canAdjustContentSize;
 @property(readonly, nonatomic) _UICollectionLayoutAnchor *itemAnchor; // @synthesize itemAnchor=_itemAnchor;
 @property(readonly, nonatomic) _UICollectionLayoutAnchor *containerAnchor; // @synthesize containerAnchor=_containerAnchor;
 @property(readonly, nonatomic) NSString *elementKind; // @synthesize elementKind=_elementKind;
 @property(nonatomic) long long zIndex; // @synthesize zIndex=_zIndex;
-- (void).cxx_destruct;
 - (id)_apiRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSize:(id)arg1 elementKind:(id)arg2 zIndex:(long long)arg3 contentInsets:(struct NSDirectionalEdgeInsets)arg4 containerAnchor:(id)arg5 itemAnchor:(id)arg6 edgeSpacing:(id)arg7 name:(id)arg8 canAdjustContentSize:(_Bool)arg9;

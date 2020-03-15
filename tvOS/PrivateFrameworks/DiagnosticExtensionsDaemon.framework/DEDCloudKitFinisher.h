@@ -26,6 +26,7 @@
 
 + (id)archivedClasses;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *uploadedBytes; // @synthesize uploadedBytes=_uploadedBytes;
 @property(retain) NSMutableArray *attachments; // @synthesize attachments=_attachments;
 @property(retain) NSMutableArray *attachmentRecords; // @synthesize attachmentRecords=_attachmentRecords;
@@ -33,7 +34,6 @@
 @property unsigned long long totalUploadSize; // @synthesize totalUploadSize=_totalUploadSize;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property __weak DEDBugSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)didFinishAllCollections;
 - (void)didCollectAttachmentGroup:(id)arg1;
 - (void)didCancelCollectionOnExtension:(id)arg1;

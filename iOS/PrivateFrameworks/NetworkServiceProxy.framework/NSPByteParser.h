@@ -18,11 +18,11 @@
     unsigned long long _offset;
 }
 
+- (void).cxx_destruct;
 @property unsigned long long offset; // @synthesize offset=_offset;
 @property const char *cursor; // @synthesize cursor=_cursor;
 @property(readonly) const char *bytes; // @synthesize bytes=_bytes;
 @property(readonly) NSData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (id)parseAddressWithFamily:(unsigned char)arg1;
 - (const char *)parseBytes:(unsigned long long)arg1;
 - (unsigned int)parse32Bits:(_Bool *)arg1;

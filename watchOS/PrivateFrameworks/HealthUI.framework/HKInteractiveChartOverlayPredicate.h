@@ -14,9 +14,9 @@
     NSString *_localizedNameKey;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedNameKey; // @synthesize localizedNameKey=_localizedNameKey;
 @property(readonly, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-- (void).cxx_destruct;
 - (id)initWithPredicate:(id)arg1 name:(id)arg2;
 
 @end

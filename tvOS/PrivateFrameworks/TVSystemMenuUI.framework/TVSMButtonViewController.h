@@ -22,6 +22,7 @@
     TVSMModuleButtonView *_buttonView;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) TVSMModuleButtonView *buttonView; // @synthesize buttonView=_buttonView;
 @property(copy, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) __weak id <TVSMModuleContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_buttonPressed:(id)arg1;
 - (void)loadView;
 

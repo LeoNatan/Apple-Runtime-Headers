@@ -18,11 +18,11 @@
 }
 
 + (CDUnknownBlockType)_newComparatorForKey:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDictionary *comparatorsByKey; // @synthesize comparatorsByKey=_comparatorsByKey;
 @property(readonly, copy, nonatomic) NSDictionary *listsByKey; // @synthesize listsByKey=_listsByKey;
 @property(readonly, copy, nonatomic) NSArray *sortingKeys; // @synthesize sortingKeys=_sortingKeys;
 @property(nonatomic) __weak id <MCTaskListDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_insertTask:(id)arg1 intoListWithKey:(id)arg2;
 - (void)_extractTask:(id)arg1 fromListWithKey:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

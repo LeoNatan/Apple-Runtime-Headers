@@ -15,8 +15,8 @@
     UIColor *_color;
 }
 
-@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -21,6 +21,7 @@
     RCMutexLock *_lock;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) RCMutexLock *lock; // @synthesize lock=_lock;
 @property(nonatomic) long long relativePriority; // @synthesize relativePriority=_relativePriority;
 @property(retain, nonatomic) id <RCOperationCanceling><RCOperationPrioritizing> activeOperation; // @synthesize activeOperation=_activeOperation;
@@ -29,7 +30,6 @@
 @property(nonatomic) _Bool succeeded; // @synthesize succeeded=_succeeded;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 @property(copy, nonatomic) CDUnknownBlockType workBlock; // @synthesize workBlock=_workBlock;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool finishedExecutingWithFailure;
 @property(readonly, nonatomic) _Bool finishedExecuting;
 - (id)executeWithCompletionHandler:(CDUnknownBlockType)arg1;

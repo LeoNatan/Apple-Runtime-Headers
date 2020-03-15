@@ -6,10 +6,11 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PXCuratedLibraryFooterController;
+@class NSObject, PXCuratedLibraryFooterController;
+@protocol PXAnonymousViewController;
 
 @protocol PXCuratedLibraryFooterControllerDelegate <NSObject>
-- (struct NSObject *)presentingViewControllerForFooterController:(PXCuratedLibraryFooterController *)arg1;
+- (NSObject<PXAnonymousViewController> *)presentingViewControllerForFooterController:(PXCuratedLibraryFooterController *)arg1;
 - (void)footerControllerRevealFooter:(PXCuratedLibraryFooterController *)arg1;
 @end
 

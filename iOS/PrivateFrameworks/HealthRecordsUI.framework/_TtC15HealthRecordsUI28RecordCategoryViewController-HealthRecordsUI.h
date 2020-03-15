@@ -6,7 +6,9 @@
 
 #import <HealthRecordsUI/_TtC15HealthRecordsUI28RecordCategoryViewController.h>
 
-@interface _TtC15HealthRecordsUI28RecordCategoryViewController (HealthRecordsUI)
+#import <HealthRecordsUI/WDMedicalRecordCountProviderObserver-Protocol.h>
+
+@interface _TtC15HealthRecordsUI28RecordCategoryViewController (HealthRecordsUI) <WDMedicalRecordCountProviderObserver>
 - (void)medicalRecordCountProviderDidUpdateAllRecordsCount:(id)arg1;
 - (void)medicalRecordCountProvider:(id)arg1 didUpdateCountForSampleTypes:(id)arg2;
 - (void)medicalRecordCountProvider:(id)arg1 didUpdateCountForCategories:(id)arg2;

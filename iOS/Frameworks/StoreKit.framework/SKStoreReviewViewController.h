@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     NSString *_reviewRequestToken;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *reviewRequestToken; // @synthesize reviewRequestToken=_reviewRequestToken;
 @property(retain, nonatomic) SKRemoteReviewViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(retain, nonatomic) _UIAsyncInvocation *cancelRequest; // @synthesize cancelRequest=_cancelRequest;
 @property(retain, nonatomic) SKInvocationQueueProxy<SKUIServiceReviewViewController> *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
-- (void).cxx_destruct;
 - (void)_addRemoteView;
 - (void)_requestRemoteViewController;
 - (void)remoteReviewViewControllerTerminatedWithError:(id)arg1;

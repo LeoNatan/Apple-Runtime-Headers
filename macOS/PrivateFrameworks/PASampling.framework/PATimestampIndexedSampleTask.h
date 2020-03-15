@@ -14,9 +14,9 @@
     PASampleTaskData *_sampleTask;
 }
 
+- (void).cxx_destruct;
 @property(readonly) PASampleTaskData *sampleTask; // @synthesize sampleTask=_sampleTask;
 @property unsigned long long lastTimestampIndex; // @synthesize lastTimestampIndex=_lastTimestampIndex;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)initWithSampleTask:(id)arg1 atTimestampIndex:(unsigned long long)arg2;
 

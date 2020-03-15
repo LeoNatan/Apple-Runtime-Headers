@@ -20,8 +20,8 @@
 }
 
 + (id)paletteForColor:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long color; // @synthesize color=_color;
 @property(readonly, nonatomic) UIColor *platterTextColor;
 @property(readonly, nonatomic) long long richComplicationViewTheme;
 @property(readonly, nonatomic) UIColor *largeTickColor;

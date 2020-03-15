@@ -19,12 +19,12 @@
     long long _busyCount;
 }
 
+- (void).cxx_destruct;
 @property long long busyCount; // @synthesize busyCount=_busyCount;
 @property(readonly, nonatomic) NSMutableArray *registeredNotificationQueues; // @synthesize registeredNotificationQueues=_registeredNotificationQueues;
 @property(readonly, nonatomic) IMEventListenerList *eventListeners; // @synthesize eventListeners=_eventListeners;
 @property double eventTimeout; // @synthesize eventTimeout=_eventTimeout;
 @property(readonly, nonatomic) IMAutomaticEventNotificationQueue *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
-- (void).cxx_destruct;
 - (void)appendNotificationForEventHandler:(id)arg1 sender:(id)arg2 eventNotificationBlock:(CDUnknownBlockType)arg3;
 - (void)pushNotificationForEventHandler:(id)arg1 sender:(id)arg2 eventNotificationBlock:(CDUnknownBlockType)arg3;
 - (void)appendNotificationForEventHandler:(id)arg1 eventNotificationBlock:(CDUnknownBlockType)arg2;

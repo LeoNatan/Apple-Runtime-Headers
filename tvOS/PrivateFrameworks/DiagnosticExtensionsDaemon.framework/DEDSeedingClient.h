@@ -23,13 +23,13 @@
     NSURLSession *_backgroundSession;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSURLSession *backgroundSession; // @synthesize backgroundSession=_backgroundSession;
 @property(retain) NSString *bugSessionIdentifier; // @synthesize bugSessionIdentifier=_bugSessionIdentifier;
 @property(retain) NSURLSession *foregroundSession; // @synthesize foregroundSession=_foregroundSession;
 @property __weak id <DEDSeedingClientDelegate> uploadDelegate; // @synthesize uploadDelegate=_uploadDelegate;
 @property(retain) DEDBugSessionConfiguration *config; // @synthesize config=_config;
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
 - (_Bool)isLoggedIn;
 - (id)_keyValuePairsForKey:(id)arg1 value:(id)arg2;
 - (id)_formEncodedBodyForDictionary:(id)arg1;

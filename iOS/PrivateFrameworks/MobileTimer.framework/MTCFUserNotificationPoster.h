@@ -16,8 +16,8 @@
 + (void)cancelNotificationsWithIdentifiers:(id)arg1;
 + (void)postNotificationWithIdentifier:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButtonTitle:(id)arg4 otherButtonTitle:(id)arg5 bypassDND:(_Bool)arg6 handler:(CDUnknownBlockType)arg7;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSMutableDictionary *notifications; // @synthesize notifications=_notifications;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSMutableDictionary *notifications; // @synthesize notifications=_notifications;
 - (id)init;
 
 @end

@@ -36,6 +36,7 @@
 + (BOOL)canPrintURL:(id)arg1;
 + (id)printableUTIs;
 + (BOOL)isPrintingAvailable;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <UIPrintInteractionControllerActivityDelegate> printActivityDelegate; // @synthesize printActivityDelegate=_printActivityDelegate;
 @property(nonatomic) BOOL isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(retain, nonatomic) UIWindowScene *hostingWindowScene; // @synthesize hostingWindowScene=_hostingWindowScene;
@@ -48,7 +49,6 @@
 @property(nonatomic) BOOL showsPageRange; // @synthesize showsPageRange=_showsPageRange;
 @property(nonatomic) __weak id <UIPrintInteractionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIPrintInfo *printInfo; // @synthesize printInfo=_printInfo;
-- (void).cxx_destruct;
 - (void)_endPrintJob:(BOOL)arg1 error:(id)arg2;
 - (id)_printPageRenderer:(id)arg1;
 - (struct CGContext *)_newSaveContext:(id)arg1 withMediaRect:(struct CGRect)arg2;

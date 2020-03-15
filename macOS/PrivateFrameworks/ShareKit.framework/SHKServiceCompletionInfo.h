@@ -17,12 +17,12 @@
     CDUnknownBlockType _completionHandler;
 }
 
+- (void).cxx_destruct;
 @property BOOL viewServiceHasAnimated; // @synthesize viewServiceHasAnimated=_viewServiceHasAnimated;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain) NSArray *items; // @synthesize items=_items;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(readonly) BOOL success; // @synthesize success=_success;
-- (void).cxx_destruct;
 - (id)initWithItems:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithError:(id)arg1;
 

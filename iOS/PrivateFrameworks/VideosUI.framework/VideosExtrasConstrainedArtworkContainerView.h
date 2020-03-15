@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSArray *_overlaySizeConstraints;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *overlaySizeConstraints; // @synthesize overlaySizeConstraints=_overlaySizeConstraints;
 @property(retain, nonatomic) UIImageView *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic) double overlayScale; // @synthesize overlayScale=_overlayScale;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldBottomAlignArtwork; // @synthesize shouldBottomAlignArtwork=_shouldBottomAlignArtwork;
 @property(nonatomic) _Bool shouldAutoresizeMaskLayerToFillBounds; // @synthesize shouldAutoresizeMaskLayerToFillBounds=_shouldAutoresizeMaskLayerToFillBounds;
 @property(retain, nonatomic) MPUArtworkView *artworkView; // @synthesize artworkView=_artworkView;
-- (void).cxx_destruct;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

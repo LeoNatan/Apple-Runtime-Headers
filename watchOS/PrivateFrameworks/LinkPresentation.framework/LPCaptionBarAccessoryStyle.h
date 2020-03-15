@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     LPPadding *_margin;
 }
 
-@property(readonly, retain, nonatomic) LPPadding *margin; // @synthesize margin=_margin;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) LPPadding *margin; // @synthesize margin=_margin;
 - (id)init;
 
 @end

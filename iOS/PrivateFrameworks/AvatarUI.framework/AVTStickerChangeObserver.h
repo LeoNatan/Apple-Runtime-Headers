@@ -16,10 +16,10 @@
     AVTImageStore *_imageStore;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AVTImageStore *imageStore; // @synthesize imageStore=_imageStore;
 @property(readonly, nonatomic) id <AVTStickerBackend> stickerBackend; // @synthesize stickerBackend=_stickerBackend;
 @property(readonly, nonatomic) AVTCoreEnvironment *environment; // @synthesize environment=_environment;
-- (void).cxx_destruct;
 - (void)processChangesForChangeTracker:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithStickerBackend:(id)arg1 imageStore:(id)arg2 environment:(id)arg3;
 - (id)initWithStickerBackend:(id)arg1 environment:(id)arg2;

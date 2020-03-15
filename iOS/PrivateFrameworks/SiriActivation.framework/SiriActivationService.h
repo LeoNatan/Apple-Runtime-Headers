@@ -54,6 +54,7 @@
 
 + (id)new;
 + (id)service;
+- (void).cxx_destruct;
 @property(nonatomic, getter=_pocketStateFetchingInProgressForHeadsetActivation, setter=_setPocketStateFetchingInProgressForHeadsetActivation:) _Bool pocketStateFetchingInProgressForHeadsetActivation; // @synthesize pocketStateFetchingInProgressForHeadsetActivation=_pocketStateFetchingInProgressForHeadsetActivation;
 @property(nonatomic) _Bool canActivateFromDirectActionSource; // @synthesize canActivateFromDirectActionSource=_canActivateFromDirectActionSource;
 @property(nonatomic) _Bool buttonDownHasOccurredSinceActivation; // @synthesize buttonDownHasOccurredSinceActivation=_buttonDownHasOccurredSinceActivation;
@@ -78,7 +79,6 @@
 @property(retain, nonatomic) SASLockStateMonitor *lockStateMonitor; // @synthesize lockStateMonitor=_lockStateMonitor;
 @property(retain, nonatomic) AFPreferences *afPreferences; // @synthesize afPreferences=_afPreferences;
 @property(retain, nonatomic) SASSystemState *systemState; // @synthesize systemState=_systemState;
-- (void).cxx_destruct;
 - (void)callStateChangedToIsActive:(_Bool)arg1 isOutgoing:(_Bool)arg2;
 - (void)bulletinManagerDidChangeBulletins:(id)arg1;
 - (void)markBulletinWithIdentifier:(id)arg1 asRead:(_Bool)arg2;

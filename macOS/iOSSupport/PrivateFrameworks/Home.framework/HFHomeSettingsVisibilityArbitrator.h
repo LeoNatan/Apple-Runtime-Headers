@@ -20,14 +20,15 @@
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 @property(nonatomic) int homeKitPreferencesChangeNotifyToken; // @synthesize homeKitPreferencesChangeNotifyToken=_homeKitPreferencesChangeNotifyToken;
 @property(nonatomic) unsigned long long homeAppInstallState; // @synthesize homeAppInstallState=_homeAppInstallState;
 @property(nonatomic) BOOL homesConfigured; // @synthesize homesConfigured=_homesConfigured;
 @property(copy, nonatomic) CDUnknownBlockType visibilityStateChangeHandler; // @synthesize visibilityStateChangeHandler=_visibilityStateChangeHandler;
 @property(nonatomic) unsigned long long visibilityState; // @synthesize visibilityState=_visibilityState;
-- (void).cxx_destruct;
 - (void)homeManager:(id)arg1 didUpdateThisDeviceIsResidentCapable:(BOOL)arg2;
 - (void)_queryHomeAppInstallStateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_startListeningForManagedConfigurationChanges;
 - (void)_reloadVisibilityStateIncludingInstallState:(BOOL)arg1;
 - (void)reloadVisibilityState;
 - (void)dealloc;

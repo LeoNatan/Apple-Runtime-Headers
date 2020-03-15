@@ -17,9 +17,9 @@
 + (id)destructiveButtonWithTitle:(id)arg1 actionBlock:(CDUnknownBlockType)arg2;
 + (id)defaultButtonWithTitle:(id)arg1 actionBlock:(CDUnknownBlockType)arg2;
 + (id)buttonWithTitle:(id)arg1 actionBlock:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVTAvatarActionButtonBlockHandler *blockHandler; // @synthesize blockHandler=_blockHandler;
 @property(nonatomic) _Bool isDestructive; // @synthesize isDestructive=_isDestructive;
-- (void).cxx_destruct;
 - (void)performActionBlock;
 - (id)initWithFrame:(struct CGRect)arg1;
 

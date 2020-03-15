@@ -19,11 +19,11 @@
 }
 
 + (id)preparedBundleIdentifier:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) NSMutableDictionary *addData; // @synthesize addData=_addData;
 @property(retain, nonatomic) NSMutableDictionary *setData; // @synthesize setData=_setData;
 @property(readonly, copy, nonatomic) NSString *keyPrefix; // @synthesize keyPrefix=_keyPrefix;
-- (void).cxx_destruct;
 - (void)sendData;
 - (void)recordAddValue:(id)arg1 forKey:(id)arg2;
 - (void)recordSetValue:(id)arg1 forKey:(id)arg2;

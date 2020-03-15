@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     NSCache *__imageCache;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setImageCache:) NSCache *_imageCache; // @synthesize _imageCache=__imageCache;
 @property(nonatomic, setter=_setRequestNumber:) long long _requestNumber; // @synthesize _requestNumber=__requestNumber;
 @property(retain, nonatomic, setter=_setImageGenerator:) AVAssetImageGenerator *_imageGenerator; // @synthesize _imageGenerator=__imageGenerator;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double timeTolerance; // @synthesize timeTolerance=_timeTolerance;
 @property(readonly, nonatomic) AVVideoComposition *videoComposition; // @synthesize videoComposition=_videoComposition;
 @property(readonly, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
-- (void).cxx_destruct;
 - (void)_deliverPlaceholderImage;
 - (void)_deliverResult:(id)arg1;
 - (void)_deliverPendingResults;

@@ -25,6 +25,7 @@
 
 + (id)_lockShacklePathForBounds:(struct CGRect)arg1;
 + (id)_lockKeyholePathForBounds:(struct CGRect)arg1;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGSize lastLayoutSize; // @synthesize lastLayoutSize=_lastLayoutSize;
 @property(nonatomic) unsigned long long lockState; // @synthesize lockState=_lockState;
 @property(retain, nonatomic) HULockIconStateTransition *activeTransition; // @synthesize activeTransition=_activeTransition;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) HUShapeLayerView *lockKeyholeFillView; // @synthesize lockKeyholeFillView=_lockKeyholeFillView;
 @property(retain, nonatomic) HUVisualEffectContainerView *lockBodyContainerView; // @synthesize lockBodyContainerView=_lockBodyContainerView;
 @property(retain, nonatomic) HUShapeLayerView *lockBodyView; // @synthesize lockBodyView=_lockBodyView;
-- (void).cxx_destruct;
 - (id)_viewForTransitionAnimationType:(unsigned long long)arg1;
 - (id)_viewsAnimatedForStateTransition;
 - (void)_removeAllTransitionAnimations;

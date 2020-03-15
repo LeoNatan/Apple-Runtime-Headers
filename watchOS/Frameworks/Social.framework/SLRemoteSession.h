@@ -14,9 +14,9 @@
     SLDatabase *_database;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SLDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void).cxx_destruct;
 - (_Bool)clientHasEntitlement:(id)arg1;
 - (id)initWithConnection:(id)arg1 database:(id)arg2;
 

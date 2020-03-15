@@ -17,12 +17,12 @@
     SignpostSupportMessageArgument *_argument;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) SignpostSupportMessageArgument *argument; // @synthesize argument=_argument;
 @property(readonly, nonatomic) NSString *stringPrefix; // @synthesize stringPrefix=_stringPrefix;
 @property(readonly, nonatomic) NSArray *placeholderTokens; // @synthesize placeholderTokens=_placeholderTokens;
 @property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *typeNamespace; // @synthesize typeNamespace=_typeNamespace;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithArgumentObject:(id)arg1 typeNamespace:(id)arg2 type:(id)arg3 tokens:(id)arg4 stringPrefix:(id)arg5;
 - (id)initWithDictionary:(id)arg1;

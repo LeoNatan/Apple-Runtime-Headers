@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     id <VNPersonsModelDataDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long faceprintRequestRevision; // @synthesize faceprintRequestRevision=_faceprintRequestRevision;
 @property(readonly, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(nonatomic) __weak id <VNPersonsModelDataDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)faceModelFaceObservationAtIndex:(unsigned long long)arg1 forPersonAtIndex:(unsigned long long)arg2;
 - (unsigned long long)faceModelNumberOfFaceObservationsForPersonAtIndex:(unsigned long long)arg1;
 - (unsigned long long)faceModelIndexOfPersonWithUniqueIdentifier:(id)arg1;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)performBlockOnMainThread:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *authenticationResult; // @synthesize authenticationResult=_authenticationResult;
 @property(retain, nonatomic) LAContext *context; // @synthesize context=_context;
 @property(nonatomic, getter=isUiActive) _Bool uiActive; // @synthesize uiActive=_uiActive;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long biometryType; // @synthesize biometryType=_biometryType;
 @property(retain, nonatomic) UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak NSObject<LAUIAuthenticationCoreDelegate> *delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_biometricNoMatch;
 - (void)_biometryState:(long long)arg1;
 - (_Bool)_simpleStatusInParams:(id)arg1 touchId:(long long)arg2 faceId:(long long)arg3;

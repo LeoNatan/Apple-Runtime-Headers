@@ -15,9 +15,9 @@
     NSObject<OS_dispatch_source> *_resolveTimer;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSObject<OS_dispatch_source> *resolveTimer; // @synthesize resolveTimer=_resolveTimer;
 @property(copy) CDUnknownBlockType resolveCompletionHandler; // @synthesize resolveCompletionHandler=_resolveCompletionHandler;
-- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)resolveWithCompletionHandler:(CDUnknownBlockType)arg1;
 

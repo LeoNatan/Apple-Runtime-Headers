@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     id <TVPMediaRemoteCommandHandling> _defaultHandler;
 }
 
-@property(nonatomic) __weak id <TVPMediaRemoteCommandHandling> defaultHandler; // @synthesize defaultHandler=_defaultHandler;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <TVPMediaRemoteCommandHandling> defaultHandler; // @synthesize defaultHandler=_defaultHandler;
 - (long long)_handleChangePlaybackRateCommand:(id)arg1;
 - (long long)_handleSkipBackwardCommand:(id)arg1;
 - (long long)_handleSkipForwardCommand:(id)arg1;

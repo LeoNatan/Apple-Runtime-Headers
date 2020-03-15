@@ -17,9 +17,9 @@
     DeliveryAccount *_deliveryAccount;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) DeliveryAccount *deliveryAccount; // @synthesize deliveryAccount=_deliveryAccount;
 @property(nonatomic, getter=isManaged) _Bool managed; // @synthesize managed=_managed;
-- (void).cxx_destruct;
 - (Class)storeClass;
 - (_Bool)_shouldConfigureMailboxCache;
 - (_Bool)shouldFetchAgainWithError:(id)arg1 foregroundRequest:(_Bool)arg2;

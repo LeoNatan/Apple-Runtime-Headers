@@ -18,21 +18,23 @@
     id <CCUIStatusBarDelegate> _statusBarDelegate;
     unsigned long long _mode;
     double _backgroundAlpha;
-    double _contentAlpha;
+    double _chevronAlpha;
+    double _statusBarAlpha;
     double _contentAlphaMultiplier;
     struct UIEdgeInsets _edgeInsets;
     struct CGAffineTransform _contentTransform;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform contentTransform; // @synthesize contentTransform=_contentTransform;
 @property(nonatomic) double contentAlphaMultiplier; // @synthesize contentAlphaMultiplier=_contentAlphaMultiplier;
-@property(nonatomic) double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
+@property(nonatomic) double statusBarAlpha; // @synthesize statusBarAlpha=_statusBarAlpha;
+@property(nonatomic) double chevronAlpha; // @synthesize chevronAlpha=_chevronAlpha;
 @property(nonatomic) double backgroundAlpha; // @synthesize backgroundAlpha=_backgroundAlpha;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <CCUIStatusBarDelegate> statusBarDelegate; // @synthesize statusBarDelegate=_statusBarDelegate;
 @property(readonly, nonatomic) CCUIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
-- (void).cxx_destruct;
 - (void)_updateContentTransform;
 - (void)_updateAlpha;
 @property(nonatomic) unsigned long long chevronState; // @dynamic chevronState;

@@ -21,6 +21,7 @@
     CLLocation *_location;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSArray *peopleNames; // @synthesize peopleNames=_peopleNames;
 @property(copy, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
@@ -28,7 +29,6 @@
 @property(copy, nonatomic) NSString *caption; // @synthesize caption=_caption;
 @property(retain, nonatomic) NSTimeZone *creationTimeZone; // @synthesize creationTimeZone=_creationTimeZone;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
-- (void).cxx_destruct;
 - (id)combinedKeywordsAndPeople;
 - (void)setCreationDate:(id)arg1 timeZone:(id)arg2;
 - (id)init;

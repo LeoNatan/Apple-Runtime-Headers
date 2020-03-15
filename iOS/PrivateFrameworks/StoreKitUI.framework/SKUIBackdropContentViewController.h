@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
     UIViewController *_contentViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(nonatomic) long long backdropViewPrivateStyle; // @synthesize backdropViewPrivateStyle=_backdropViewPrivateStyle;
-- (void).cxx_destruct;
 - (void)loadView;
 - (id)initWithContentViewController:(id)arg1;
 

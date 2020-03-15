@@ -15,8 +15,8 @@
     SGFoundInSuggestionPresenter *_presenter;
 }
 
-@property(readonly) SGFoundInSuggestionPresenter *presenter; // @synthesize presenter=_presenter;
 - (void).cxx_destruct;
+@property(readonly) SGFoundInSuggestionPresenter *presenter; // @synthesize presenter=_presenter;
 - (void)suggestionPresenterWantsToHideBanner:(id)arg1;
 - (void)suggestionPresenterWantsToShowBanner:(id)arg1;
 - (id)nibBundle;

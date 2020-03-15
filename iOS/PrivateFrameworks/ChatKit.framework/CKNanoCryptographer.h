@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedCryptographer;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *cachedRecipientDigest; // @synthesize cachedRecipientDigest=_cachedRecipientDigest;
 @property(copy, nonatomic) NSString *cachedRecipientName; // @synthesize cachedRecipientName=_cachedRecipientName;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (id)stringDigestForName:(id)arg1;
 @property(readonly, nonatomic) NSData *deviceSalt;
 - (id)init;

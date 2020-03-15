@@ -21,6 +21,7 @@
     CNQuickActionView *_quickActionView;
 }
 
+- (void).cxx_destruct;
 @property BOOL menuVisible; // @synthesize menuVisible=_menuVisible;
 @property(nonatomic) __weak CNQuickActionView *quickActionView; // @synthesize quickActionView=_quickActionView;
 @property(retain, nonatomic) NSMenu *menu; // @synthesize menu=_menu;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) CNPromise *disambiguationPromise; // @synthesize disambiguationPromise=_disambiguationPromise;
 @property(retain, nonatomic) CNFuture *future; // @synthesize future=_future;
 @property(retain, nonatomic) CNUIUserActionListModel *model; // @synthesize model=_model;
-- (void).cxx_destruct;
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 - (struct CGRect)confinementRectForMenu:(id)arg1 onScreen:(id)arg2;

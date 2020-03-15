@@ -15,9 +15,9 @@
     NSArray *_headlines;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *headlines; // @synthesize headlines=_headlines;
 @property(retain, nonatomic) id <FCSectionProviding> section; // @synthesize section=_section;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithSection:(id)arg1 headlines:(id)arg2;
 - (id)init;

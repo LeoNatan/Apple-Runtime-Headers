@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> activeExtensionContext; // @synthesize activeExtensionContext=_activeExtensionContext;
 - (void).cxx_destruct;
+@property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> activeExtensionContext; // @synthesize activeExtensionContext=_activeExtensionContext;
 
 @end
 

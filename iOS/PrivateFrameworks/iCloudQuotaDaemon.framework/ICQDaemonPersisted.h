@@ -27,13 +27,13 @@
 + (id)persistedObject;
 + (id)_placeholderObject;
 + (id)_placeholderPersistenceDictionary;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDictionary *failureDetails; // @synthesize failureDetails=_failureDetails;
 @property(nonatomic) _Bool failedToFetchFromServer; // @synthesize failedToFetchFromServer=_failedToFetchFromServer;
 @property(retain, nonatomic) NSDictionary *serverDictionary; // @synthesize serverDictionary=_serverDictionary;
 @property(retain, nonatomic) NSString *accountAltDSID; // @synthesize accountAltDSID=_accountAltDSID;
 @property(nonatomic) double callbackInterval; // @synthesize callbackInterval=_callbackInterval;
 @property(retain, nonatomic) NSDate *retrievalDate; // @synthesize retrievalDate=_retrievalDate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *_cachedQuotaAvailable;
 - (double)_callbackIntervalFromServerObject:(id)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *_mutablePersistenceDictionary;

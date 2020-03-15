@@ -39,6 +39,7 @@
     unsigned long long _checkpointStatementThreshold;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL logQueryPlans; // @synthesize logQueryPlans=_logQueryPlans;
 @property(nonatomic) unsigned long long checkpointStatementThreshold; // @synthesize checkpointStatementThreshold=_checkpointStatementThreshold;
 @property(nonatomic) BOOL automaticCheckpointingEnabled; // @synthesize automaticCheckpointingEnabled=_automaticCheckpointingEnabled;
@@ -49,7 +50,6 @@
 @property(nonatomic, setter=setReadOnly:) BOOL isReadOnly; // @synthesize isReadOnly=_isReadOnly;
 @property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 @property(nonatomic) __weak id <ML3DatabaseConnectionDelegate> connectionDelegate; // @synthesize connectionDelegate=_connectionDelegate;
-- (void).cxx_destruct;
 - (void)_handleDatabaseProfileStatement:(const char *)arg1 executionTimeNS:(unsigned long long)arg2;
 - (void)_handleDatabaseTraceStatement:(const char *)arg1;
 - (BOOL)_handleZombieSQLiteConnection:(struct sqlite3 *)arg1;

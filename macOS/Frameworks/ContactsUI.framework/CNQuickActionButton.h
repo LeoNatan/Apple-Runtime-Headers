@@ -19,11 +19,11 @@
     id <CNCancelable> _showDisambiguationUIToken;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <CNCancelable> showDisambiguationUIToken; // @synthesize showDisambiguationUIToken=_showDisambiguationUIToken;
 @property(retain) id <CNCancelable> performDefaultActionToken; // @synthesize performDefaultActionToken=_performDefaultActionToken;
 @property(copy, nonatomic) CDUnknownBlockType secondaryMouseDownHandler; // @synthesize secondaryMouseDownHandler=_secondaryMouseDownHandler;
 @property(copy, nonatomic) CDUnknownBlockType mouseDownHandler; // @synthesize mouseDownHandler=_mouseDownHandler;
-- (void).cxx_destruct;
 - (void)layout;
 - (BOOL)allowsVibrancy;
 - (BOOL)accessibilityPerformPress;

@@ -24,6 +24,7 @@
 
 + (id)sharedAccount;
 + (void)enableStoreFrontLocking;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *overrideContentStoreFrontID; // @synthesize overrideContentStoreFrontID=_overrideContentStoreFrontID;
 @property(copy, nonatomic) NSString *contentStoreFrontID; // @synthesize contentStoreFrontID=_contentStoreFrontID;
 @property(copy, nonatomic) NSString *userStoreFrontID; // @synthesize userStoreFrontID=_userStoreFrontID;
@@ -32,7 +33,6 @@
 @property(retain) ACAccount *primaryAccount; // @synthesize primaryAccount=_primaryAccount;
 @property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(getter=isRunningPPT) BOOL runningPPT; // @synthesize runningPPT=_runningPPT;
-- (void).cxx_destruct;
 - (void)t_stopOverridingContentStoreFrontID;
 - (void)t_startOverridingContentStoreFrontID:(id)arg1;
 - (void)_reloadAccountsFromAccountStore;

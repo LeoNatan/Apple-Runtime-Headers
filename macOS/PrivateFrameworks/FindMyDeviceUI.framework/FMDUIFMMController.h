@@ -19,11 +19,11 @@
     NSError *_disableFMMError;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSError *disableFMMError; // @synthesize disableFMMError=_disableFMMError;
 @property(nonatomic) unsigned long long disableContext; // @synthesize disableContext=_disableContext;
 @property(retain) AKInlineSignInViewController *inlineSignInViewController; // @synthesize inlineSignInViewController=_inlineSignInViewController;
 @property(retain, nonatomic) NSImage *displayImage; // @synthesize displayImage=_displayImage;
-- (void).cxx_destruct;
 - (id)basicAuthHeaderValueForUsername:(id)arg1 password:(id)arg2;
 - (void)getWipeTokenForAccount:(id)arg1 passwordToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4 completion:(CDUnknownBlockType)arg5;

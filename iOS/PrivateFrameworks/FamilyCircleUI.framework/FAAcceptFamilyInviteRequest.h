@@ -13,8 +13,8 @@
     NSString *_inviteCode;
 }
 
-@property(copy, nonatomic) NSString *inviteCode; // @synthesize inviteCode=_inviteCode;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *inviteCode; // @synthesize inviteCode=_inviteCode;
 - (id)urlRequest;
 - (id)urlString;
 - (_Bool)isUserInitiated;

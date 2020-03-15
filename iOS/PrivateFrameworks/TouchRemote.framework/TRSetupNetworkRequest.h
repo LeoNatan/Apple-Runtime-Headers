@@ -15,9 +15,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *networkPassword; // @synthesize networkPassword=_networkPassword;
 @property(copy, nonatomic) NSString *networkSSID; // @synthesize networkSSID=_networkSSID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

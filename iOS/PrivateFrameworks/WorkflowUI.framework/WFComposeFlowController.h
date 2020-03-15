@@ -21,13 +21,13 @@
     WFWizardNamePresentationManager *_presentationManager;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WFWizardNamePresentationManager *presentationManager; // @synthesize presentationManager=_presentationManager;
 @property(readonly, nonatomic) __weak WFWorkflow *workflow; // @synthesize workflow=_workflow;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(readonly, nonatomic) __weak UIViewController *presenter; // @synthesize presenter=_presenter;
 @property(nonatomic) __weak id <WFComposeFlowControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)workflowWizardNameViewController:(id)arg1 didFinishWithName:(id)arg2;
 - (void)finishEditing:(_Bool)arg1;
 - (void)startSaveFlow;

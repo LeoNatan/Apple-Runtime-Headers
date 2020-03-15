@@ -16,9 +16,9 @@
 
 + (id)createPayloadWithType:(unsigned long long)arg1 fromData:(id)arg2;
 + (id)copyTypeDescription;
+- (void).cxx_destruct;
 @property(retain) NSData *payloadData; // @synthesize payloadData=_payloadData;
 @property _Bool isInbound; // @synthesize isInbound=_isInbound;
-- (void).cxx_destruct;
 - (id)copyPayloadData;
 @property(readonly) _Bool isValid;
 - (_Bool)parsePayloadData;

@@ -14,8 +14,8 @@
 }
 
 + (id)preferredStreamFromMasterPlaylist:(id)arg1;
-@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (id)setupDownloadTaskForFetchingMasterPlaylistAndSelectingStreamFromMasterPlaylistURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initCanUseCellularData:(_Bool)arg1 powerRequired:(_Bool)arg2;
 

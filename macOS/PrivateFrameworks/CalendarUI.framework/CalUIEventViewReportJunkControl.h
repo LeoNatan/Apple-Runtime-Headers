@@ -14,9 +14,9 @@
     NSButton *_junkButton;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSButton *junkButton; // @synthesize junkButton=_junkButton;
 @property(retain) NSButton *senderLabelButton; // @synthesize senderLabelButton=_senderLabelButton;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

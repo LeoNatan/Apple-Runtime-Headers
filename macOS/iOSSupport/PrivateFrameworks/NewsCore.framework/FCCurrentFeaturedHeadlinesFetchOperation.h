@@ -18,12 +18,12 @@
     NSArray *_resultHeadlines;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *resultHeadlines; // @synthesize resultHeadlines=_resultHeadlines;
 @property(nonatomic) BOOL useFallbackArticleSource; // @synthesize useFallbackArticleSource=_useFallbackArticleSource;
 @property(retain, nonatomic) id <FCFeedTransforming> transformation; // @synthesize transformation=_transformation;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
-- (void).cxx_destruct;
 - (id)_promiseTemporaryFallbackHeadlinesForFeedItems:(id)arg1;
 - (id)_promiseTemporaryFallbackFeedItemsWithConfiguration:(id)arg1;
 - (id)_promiseHeadlinesForArticleIDs:(id)arg1;

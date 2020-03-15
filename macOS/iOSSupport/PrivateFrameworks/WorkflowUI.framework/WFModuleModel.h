@@ -62,6 +62,8 @@
 + (id)modelForProcessingAction:(id)arg1 withParameters:(id)arg2 cancelAction:(CKTypedComponentAction_789af415)arg3 doneAction:(CKTypedComponentAction_789af415)arg4;
 + (id)modelForEditingAction:(id)arg1 withWorkflowTypes:(id)arg2 draggingIntoWorkflow:(BOOL)arg3 customConfigurationClass:(Class)arg4 variableUIDelegate:(id)arg5 delegate:(id)arg6;
 + (id)modelForViewingAction:(id)arg1 whileWorkflowRunning:(BOOL)arg2 withWorkflowTypes:(id)arg3 appearance:(id)arg4 showResourceErrors:(BOOL)arg5 dimmed:(BOOL)arg6 customConfigurationClass:(Class)arg7 delegate:(id)arg8;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <WFModuleDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak WFAction *action; // @synthesize action=_action;
 @property(readonly, nonatomic) NSArray *workflowTypes; // @synthesize workflowTypes=_workflowTypes;
@@ -104,8 +106,6 @@
 @property(readonly, copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)updatedModel;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

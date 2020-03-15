@@ -15,10 +15,10 @@
     double _topContentInset;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) double topContentInset; // @synthesize topContentInset=_topContentInset;
 @property(readonly, nonatomic) NSURL *activeURL; // @synthesize activeURL=_activeURL;
 @property(nonatomic) __weak FRViewNavigationController *navigationController; // @synthesize navigationController=_navigationController;
-- (void).cxx_destruct;
 - (unsigned long long)badgeCountForTab:(id)arg1;
 - (BOOL)isTabEnabled:(id)arg1;
 - (id)navigationTabs;

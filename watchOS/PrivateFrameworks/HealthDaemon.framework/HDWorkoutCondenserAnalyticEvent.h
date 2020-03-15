@@ -27,6 +27,7 @@
     double _duration;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) int deletedSamples; // @synthesize deletedSamples=_deletedSamples;
 @property(readonly, nonatomic) int createdSeries; // @synthesize createdSeries=_createdSeries;
 @property(readonly, nonatomic) int processedWorkouts; // @synthesize processedWorkouts=_processedWorkouts;
@@ -40,7 +41,6 @@
 @property(readonly, nonatomic) _Bool hasWatchSource; // @synthesize hasWatchSource=_hasWatchSource;
 @property(readonly, nonatomic) int batchSize; // @synthesize batchSize=_batchSize;
 @property(readonly, nonatomic) int reason; // @synthesize reason=_reason;
-- (void).cxx_destruct;
 - (id)codableRepresentationForAWDSubmission;
 - (unsigned int)AWDMetricID;
 @property(readonly, copy) NSString *description;

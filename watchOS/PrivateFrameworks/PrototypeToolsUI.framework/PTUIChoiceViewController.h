@@ -16,12 +16,12 @@
     PTChoiceRow *_row;
 }
 
-@property(retain, nonatomic) PTChoiceRow *row; // @synthesize row=_row;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PTChoiceRow *row; // @synthesize row=_row;
 - (void)_checkAppropriateCell;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)rowDidReload:(id)arg1;

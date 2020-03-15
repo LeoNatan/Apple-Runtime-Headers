@@ -20,10 +20,10 @@
 }
 
 + (id)crossfadeViewWithStartView:(id)arg1 endView:(id)arg2 translucent:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool adaptsAnimationFactoryTimingFunction; // @synthesize adaptsAnimationFactoryTimingFunction=_adaptsAnimationFactoryTimingFunction;
 @property(nonatomic) _Bool allowsGroupOpacityDuringCrossfade; // @synthesize allowsGroupOpacityDuringCrossfade=_allowsGroupOpacityDuringCrossfade;
 @property(retain, nonatomic) BSUIAnimationFactory *animationFactory; // @synthesize animationFactory=_animationFactory;
-- (void).cxx_destruct;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)crossfadeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)layoutSubviews;

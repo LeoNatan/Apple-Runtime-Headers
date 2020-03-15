@@ -13,8 +13,8 @@
     _HKReferenceRangeDotViewDot *_dotView;
 }
 
-@property(nonatomic) __weak _HKReferenceRangeDotViewDot *dotView; // @synthesize dotView=_dotView;
 - (void).cxx_destruct;
+@property(nonatomic) __weak _HKReferenceRangeDotViewDot *dotView; // @synthesize dotView=_dotView;
 @property(retain, nonatomic) UIColor *dotColor;
 - (struct CGRect)desiredDotViewFrame;
 - (void)setFrame:(struct CGRect)arg1;

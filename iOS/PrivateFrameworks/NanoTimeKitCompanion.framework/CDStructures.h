@@ -89,18 +89,6 @@ struct CharacterStateSpecs {
     float hourElbowBend;
 };
 
-struct NSArray {
-    Class _field1;
-};
-
-struct NSNumber {
-    Class _field1;
-};
-
-struct NSString {
-    Class _field1;
-};
-
 struct NTKAstronomyFaceViewAnimationPose {
     float _field1;
     float _field2;

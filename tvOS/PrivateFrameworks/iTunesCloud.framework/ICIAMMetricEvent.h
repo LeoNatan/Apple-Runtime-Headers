@@ -8,7 +8,7 @@
 
 #import <iTunesCloud/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class ICIAMImpressionNode, NSMutableArray, NSString;
 
 @interface ICIAMMetricEvent : PBCodable <NSCopying>
 {
@@ -16,6 +16,8 @@
     int _actionType;
     NSString *_actionURL;
     NSString *_eventType;
+    ICIAMImpressionNode *_impression;
+    NSString *_impressionType;
     NSMutableArray *_pageDetails;
     NSString *_pageId;
     int _pageType;
@@ -31,6 +33,9 @@
 
 + (Class)actionDetailsType;
 + (Class)pageDetailsType;
+- (void).cxx_destruct;
+@property(retain, nonatomic) ICIAMImpressionNode *impression; // @synthesize impression=_impression;
+@property(retain, nonatomic) NSString *impressionType; // @synthesize impressionType=_impressionType;
 @property(retain, nonatomic) NSString *pageUrl; // @synthesize pageUrl=_pageUrl;
 @property(retain, nonatomic) NSString *eventType; // @synthesize eventType=_eventType;
 @property(retain, nonatomic) NSMutableArray *actionDetails; // @synthesize actionDetails=_actionDetails;
@@ -38,7 +43,6 @@
 @property(retain, nonatomic) NSString *targetId; // @synthesize targetId=_targetId;
 @property(retain, nonatomic) NSMutableArray *pageDetails; // @synthesize pageDetails=_pageDetails;
 @property(retain, nonatomic) NSString *pageId; // @synthesize pageId=_pageId;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -48,6 +52,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasImpression;
+@property(readonly, nonatomic) _Bool hasImpressionType;
 @property(readonly, nonatomic) _Bool hasPageUrl;
 @property(readonly, nonatomic) _Bool hasEventType;
 - (id)actionDetailsAtIndex:(unsigned long long)arg1;

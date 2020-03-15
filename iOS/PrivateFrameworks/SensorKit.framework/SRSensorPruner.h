@@ -28,6 +28,7 @@
 + (id)remoteInterface;
 + (id)clientInterface;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain) SRDevice *device; // @synthesize device=_device;
 @property _Bool connectionDidInvalidate; // @synthesize connectionDidInvalidate=_connectionDidInvalidate;
@@ -35,7 +36,6 @@
 @property(retain) NSDictionary *nextDatastoreFiles; // @synthesize nextDatastoreFiles=_nextDatastoreFiles;
 @property(copy) NSString *sensor; // @synthesize sensor=_sensor;
 @property __weak id <SRSensorPrunerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)removeAllSamplesForAllSensors;
 - (void)removeAllSamples;
 - (void)continuePruneFrom:(double)arg1 to:(double)arg2 withDatastoreFiles:(id)arg3;

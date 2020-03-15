@@ -19,13 +19,13 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool takeOutTransactions; // @synthesize takeOutTransactions=_takeOutTransactions;
 @property(nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) _Bool performingWork; // @synthesize performingWork=_performingWork;
 @property(retain, nonatomic) NSMutableArray *remainingWork; // @synthesize remainingWork=_remainingWork;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSString *workQueueName; // @synthesize workQueueName=_workQueueName;
-- (void).cxx_destruct;
 - (void)performWork:(CDUnknownBlockType)arg1;
 - (void)_onQueue_doWorkIfNecessary;
 - (void)dealloc;

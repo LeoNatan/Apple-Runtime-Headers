@@ -15,8 +15,8 @@
 }
 
 + (id)shapeWithType:(long long)arg1;
-@property(readonly) long long shapeType; // @synthesize shapeType=_shapeType;
 - (void).cxx_destruct;
+@property(readonly) long long shapeType; // @synthesize shapeType=_shapeType;
 @property(readonly, nonatomic) UIImage *image;
 - (id)initWithShapeType:(long long)arg1;
 

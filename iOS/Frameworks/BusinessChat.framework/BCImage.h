@@ -15,10 +15,10 @@
     NSString *_imageDescription;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *imageDescription; // @synthesize imageDescription=_imageDescription;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) UIImage *image;
 @property(readonly, nonatomic) NSDictionary *dictionaryValue;
 - (id)initWithImageData:(id)arg1 identifier:(id)arg2 description:(id)arg3;

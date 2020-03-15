@@ -21,15 +21,15 @@ __attribute__((visibility("hidden")))
     SYSession *_session;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SYSession *session; // @synthesize session=_session;
 @property(copy, nonatomic) CDUnknownBlockType onComplete; // @synthesize onComplete=_onComplete;
 @property(copy, nonatomic) CDUnknownBlockType errorCallback; // @synthesize errorCallback=_errorCallback;
 @property(nonatomic) __weak SYStore *store; // @synthesize store=_store;
 @property(copy, nonatomic) NSDictionary *idsOptions; // @synthesize idsOptions=_idsOptions;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (void)syncSession:(id)arg1 didEndWithError:(id)arg2;
-- (void)syncSession:(id)arg1 applyChanges:(struct NSArray *)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)syncSession:(id)arg1 rollbackChangesWithError:(id *)arg2;
 - (_Bool)syncSession:(id)arg1 resetDataStoreWithError:(id *)arg2;
 - (int)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;

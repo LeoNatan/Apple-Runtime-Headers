@@ -21,11 +21,11 @@
 + (id)headerReuseIdentifier;
 + (id)cellReuseIdentifier;
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, nonatomic) PUICAnimojiStickerPack *stickerPack; // @synthesize stickerPack=_stickerPack;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)indexItem;
 - (void)configureHeaderView:(id)arg1;
 - (void)configureCell:(id)arg1 forItem:(int)arg2;

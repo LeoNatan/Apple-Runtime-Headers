@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     id <SKUIToolbarControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <SKUIToolbarControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *toolbarItems; // @synthesize toolbarItems=_toolbarItems;
 @property(readonly, nonatomic) SKUIToolbarViewElement *toolbarViewElement; // @synthesize toolbarViewElement=_viewElement;
-- (void).cxx_destruct;
 - (id)_barButtonItemWithButtonElement:(id)arg1;
 - (id)_barButtonItemWithElement:(id)arg1;
 - (_Bool)toolbarButtonsController:(id)arg1 shouldDispatchEventForButton:(id)arg2;

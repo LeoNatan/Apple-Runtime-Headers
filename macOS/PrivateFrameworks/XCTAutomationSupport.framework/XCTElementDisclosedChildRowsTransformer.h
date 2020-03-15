@@ -17,14 +17,13 @@
 }
 
 + (void)provideCapabilitiesToBuilder:(id)arg1;
+- (void).cxx_destruct;
 - (void)setStopsOnFirstMatch:(BOOL)arg1;
 - (BOOL)stopsOnFirstMatch;
 - (void)setTransformationDescription:(id)arg1;
 - (id)transformationDescription;
-- (void).cxx_destruct;
 - (id)requiredKeyPathsOrError:(id *)arg1;
 - (BOOL)supportsAttributeKeyPathAnalysis;
-- (BOOL)supportsRemoteEvaluation;
 - (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (id)iteratorForInput:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;

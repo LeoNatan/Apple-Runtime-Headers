@@ -13,8 +13,8 @@
     UIViewController *_accessViewController;
 }
 
-@property(readonly, nonatomic) UIViewController *accessViewController; // @synthesize accessViewController=_accessViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIViewController *accessViewController; // @synthesize accessViewController=_accessViewController;
 - (void)selectCellForIndex:(unsigned long long)arg1 navigationController:(id)arg2 animated:(_Bool)arg3;
 - (id)cellForIndex:(unsigned long long)arg1 tableView:(id)arg2;
 - (unsigned long long)numberOfRowsInSection;

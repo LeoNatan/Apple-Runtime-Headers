@@ -40,6 +40,7 @@
 + (id)changesForKeyPaths:(id)arg1 ofItems:(id)arg2;
 + (id)changeForKeyPaths:(id)arg1 ofItem:(id)arg2;
 + (id)changeFrom:(id)arg1 to:(id)arg2;
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <EMCollectionItemID> displayMessageItemID; // @synthesize displayMessageItemID=_displayMessageItemID;
 @property(retain, nonatomic) NSNumber *conversationID; // @synthesize conversationID=_conversationID;
 @property(retain, nonatomic) NSNumber *count; // @synthesize count=_count;
@@ -58,7 +59,6 @@
 @property(copy, nonatomic) id <EMMessageListItemChangeSummary> summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) id <EMMessageListItemChangeSubject> subject; // @synthesize subject=_subject;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)applyToMessageListItem:(id)arg1;

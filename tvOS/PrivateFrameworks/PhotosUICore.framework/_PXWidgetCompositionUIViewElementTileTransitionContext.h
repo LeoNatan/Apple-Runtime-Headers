@@ -15,10 +15,10 @@
     CDUnknownBlockType _alongsideAnimationCompletion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType alongsideAnimationCompletion; // @synthesize alongsideAnimationCompletion=_alongsideAnimationCompletion;
 @property(copy, nonatomic) CDUnknownBlockType alongsideAnimation; // @synthesize alongsideAnimation=_alongsideAnimation;
 @property(retain, nonatomic) PXBasicTileAnimationOptions *animationOptions; // @synthesize animationOptions=_animationOptions;
-- (void).cxx_destruct;
 
 @end
 

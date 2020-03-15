@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 
 + (id)localImageRequestOptions;
 + (struct CGSize)titleCardAssetSize;
+- (void).cxx_destruct;
 @property(retain, nonatomic) MiroAutoEditProjectPolish *polisher; // @synthesize polisher=_polisher;
 @property(retain, nonatomic) MiroAutoEdit_TrimController *trimController; // @synthesize trimController=_trimController;
 @property(nonatomic) BOOL shouldSkipPolish; // @synthesize shouldSkipPolish=_shouldSkipPolish;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) Project *project; // @synthesize project=_project;
 @property(retain, nonatomic) NSMapTable *trimRangeForClipMap; // @synthesize trimRangeForClipMap=_trimRangeForClipMap;
 @property(retain, nonatomic) MiroAutoEditLogger *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
 - (BOOL)_applyBackgroundMusicWithClip:(id)arg1;
 - (BOOL)applyBackgroundMusicWithMediaItem:(id)arg1;
 - (BOOL)applyBackgroundMusicWithSong:(id)arg1;

@@ -12,6 +12,7 @@
 
 @interface _UIStatusBarVisualProvider_Split : _UIStatusBarVisualProvider_Phone <_UIStatusBarCellularItemTypeStringProvider>
 {
+    _Bool _delayedSystemUpdateData;
     NSDictionary *_orderedDisplayItemPlacements;
     _UIStatusBarDisplayItemPlacement *_serviceNamePlacement;
     _UIStatusBarDisplayItemPlacement *_dualServiceNamePlacement;
@@ -61,6 +62,8 @@
 + (double)cornerRadius;
 + (double)height;
 + (Class)visualProviderSubclassForScreen:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) _Bool delayedSystemUpdateData; // @synthesize delayedSystemUpdateData=_delayedSystemUpdateData;
 @property(retain, nonatomic) NSTimer *airplaneModeIgnoreChangesTimer; // @synthesize airplaneModeIgnoreChangesTimer=_airplaneModeIgnoreChangesTimer;
 @property(retain, nonatomic) NSTimer *batteryExpansionTimer; // @synthesize batteryExpansionTimer=_batteryExpansionTimer;
 @property(retain, nonatomic) NSTimer *systemUpdatesTimer; // @synthesize systemUpdatesTimer=_systemUpdatesTimer;
@@ -74,7 +77,6 @@
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *dualServiceNamePlacement; // @synthesize dualServiceNamePlacement=_dualServiceNamePlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *serviceNamePlacement; // @synthesize serviceNamePlacement=_serviceNamePlacement;
 @property(retain, nonatomic) NSDictionary *orderedDisplayItemPlacements; // @synthesize orderedDisplayItemPlacements=_orderedDisplayItemPlacements;
-- (void).cxx_destruct;
 - (void)setExpanded:(_Bool)arg1;
 - (id)defaultAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (void)_updateExpandedTrailingRegion;
@@ -105,6 +107,10 @@
 - (id)regionIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
+- (void)dealloc;
+- (void)_resumeSystemUpdateData;
+- (void)_delaySystemUpdateData;
+- (id)_systemUpdateDelayedDataIdentifiers;
 - (void)statusBarRegionsUpdated;
 - (void)dataUpdated:(id)arg1;
 - (void)styleUpdatedFromStyle:(long long)arg1;

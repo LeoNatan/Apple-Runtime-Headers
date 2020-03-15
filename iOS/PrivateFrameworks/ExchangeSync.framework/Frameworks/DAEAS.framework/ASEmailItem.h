@@ -52,6 +52,7 @@
 + (_Bool)parsingWithSubItems;
 + (_Bool)parsingLeafNode;
 + (_Bool)acceptsTopLevelLeaves;
+- (void).cxx_destruct;
 @property(retain, nonatomic, setter=_setMeetingRequest:) ASMeetingRequest *meetingRequest; // @synthesize meetingRequest=_meetingRequest;
 @property(nonatomic) _Bool hasAttachments; // @synthesize hasAttachments=_hasAttachments;
 @property(retain, nonatomic) NSString *preview; // @synthesize preview=_preview;
@@ -84,7 +85,6 @@
 @property(copy, nonatomic) NSArray *from; // @synthesize from=_from;
 @property(copy, nonatomic) NSArray *cc; // @synthesize cc=_cc;
 @property(copy, nonatomic) NSArray *to; // @synthesize to=_to;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setReplyToString:(id)arg1;

@@ -19,13 +19,13 @@
 }
 
 + (id)infoWithConflictingEvents:(id)arg1 conflictingNeedsActionEvents:(id)arg2 adjacentEvents:(id)arg3 adjacentNeedsActionEvents:(id)arg4 conflictsInSeries:(unsigned int)arg5 outOf:(unsigned int)arg6;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int testedOccurrencesInSeries; // @synthesize testedOccurrencesInSeries=_testedOccurrencesInSeries;
 @property(nonatomic) unsigned int conflictsInSeries; // @synthesize conflictsInSeries=_conflictsInSeries;
 @property(retain) NSArray *adjacentNeedsActionEvents; // @synthesize adjacentNeedsActionEvents=_adjacentNeedsActionEvents;
 @property(retain) NSArray *adjacentEvents; // @synthesize adjacentEvents=_adjacentEvents;
 @property(retain) NSArray *conflictingNeedsActionEvents; // @synthesize conflictingNeedsActionEvents=_conflictingNeedsActionEvents;
 @property(retain) NSArray *conflictingEvents; // @synthesize conflictingEvents=_conflictingEvents;
-- (void).cxx_destruct;
 - (id)description;
 - (id)textRepresentationWithMaxTitleLength:(unsigned int)arg1;
 - (id)textRepresentation;

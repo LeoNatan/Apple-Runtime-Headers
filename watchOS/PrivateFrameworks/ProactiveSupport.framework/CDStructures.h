@@ -54,10 +54,6 @@ struct _PASLPObjectGraphStats {
     unsigned int _field16;
 };
 
-struct _PASTuple2 {
-    Class _field1;
-};
-
 struct __sbuf {
     char *_field1;
     int _field2;

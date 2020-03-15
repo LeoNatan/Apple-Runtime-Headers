@@ -23,6 +23,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) NSArray *softFailureItems; // @synthesize softFailureItems=_softFailureItems;
 @property(copy) NSArray *skippedItems; // @synthesize skippedItems=_skippedItems;
 @property(copy) NSArray *nextItems; // @synthesize nextItems=_nextItems;
@@ -30,7 +31,6 @@
 @property(copy) NSArray *hardFailureItems; // @synthesize hardFailureItems=_hardFailureItems;
 @property(readonly) NSArray *currentItems; // @synthesize currentItems=_currentItems;
 @property(copy) NSArray *bucketNames; // @synthesize bucketNames=_bucketNames;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

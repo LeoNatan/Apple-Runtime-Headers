@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSString *_footer;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(copy, nonatomic) NSString *body; // @synthesize body=_body;
 @property(copy, nonatomic) NSString *header; // @synthesize header=_header;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

@@ -63,6 +63,7 @@
 + (id)_malformedProfileError;
 + (id)profileWithData:(id)arg1 options:(id)arg2 outError:(id *)arg3;
 + (id)profileWithData:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(_Bool)arg3 outError:(id *)arg4;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedConsentText; // @synthesize localizedConsentText=_localizedConsentText;
 @property(nonatomic) _Bool mustInstallNonInteractively; // @synthesize mustInstallNonInteractively=_mustInstallNonInteractively;
 @property(retain, nonatomic) NSDictionary *installOptions; // @synthesize installOptions=_installOptions;
@@ -81,7 +82,6 @@
 @property(readonly, retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, retain, nonatomic) NSString *profileDescription; // @synthesize profileDescription=_profileDescription;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isManagedByMDM;
 - (void)replacePayloadWithUUID:(id)arg1 withPayload:(id)arg2;
 @property(readonly, nonatomic) _Bool shouldHaveFullSSLTrust;

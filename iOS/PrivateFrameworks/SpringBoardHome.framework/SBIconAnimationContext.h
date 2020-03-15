@@ -13,10 +13,10 @@
     CDUnknownBlockType _completion;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) double fraction; // @synthesize fraction=_fraction;
 @property(nonatomic) double delay; // @synthesize delay=_delay;
-- (void).cxx_destruct;
 
 @end
 

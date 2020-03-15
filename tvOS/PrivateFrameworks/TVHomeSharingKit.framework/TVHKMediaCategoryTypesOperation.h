@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     unsigned long long _photoLibraryState;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long photoLibraryState; // @synthesize photoLibraryState=_photoLibraryState;
 @property(copy, nonatomic) NSSet *mediaCategoryTypes; // @synthesize mediaCategoryTypes=_mediaCategoryTypes;
-- (void).cxx_destruct;
 - (id)_mediaCategoryTypesFromparsedResponse:(id)arg1;
 - (void)_handleResponse:(id)arg1;
 - (id)initWithMediaServerIdentifier:(id)arg1 databaseID:(unsigned long long)arg2 photoLibraryState:(unsigned long long)arg3;

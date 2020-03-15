@@ -21,10 +21,10 @@
 
 + (id)_intents_decodeWithJSONDecoder:(id)arg1 codableDescription:(id)arg2 from:(id)arg3;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *gate; // @synthesize gate=_gate;
 @property(readonly, copy, nonatomic) NSString *terminal; // @synthesize terminal=_terminal;
 @property(readonly, copy, nonatomic) INAirport *airport; // @synthesize airport=_airport;
-- (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;

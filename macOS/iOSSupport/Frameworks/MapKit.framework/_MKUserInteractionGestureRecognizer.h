@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     id <_MKUserInteractionGestureRecognizerTouchObserver> _touchObserver;
 }
 
-@property(nonatomic) __weak id <_MKUserInteractionGestureRecognizerTouchObserver> touchObserver; // @synthesize touchObserver=_touchObserver;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_MKUserInteractionGestureRecognizerTouchObserver> touchObserver; // @synthesize touchObserver=_touchObserver;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;

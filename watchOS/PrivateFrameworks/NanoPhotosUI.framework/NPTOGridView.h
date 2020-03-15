@@ -22,6 +22,8 @@
     struct CGSize _cellSize;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(retain, nonatomic) Class cellClass; // @synthesize cellClass=_cellClass;
 @property(nonatomic) __weak id <NPTOGridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <NPTOGridViewDelegate> gridViewDelegate; // @synthesize gridViewDelegate=_gridViewDelegate;
@@ -29,8 +31,6 @@
 @property(nonatomic) unsigned int numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 @property(nonatomic) unsigned int numberOfRows; // @synthesize numberOfRows=_numberOfRows;
 @property(nonatomic) struct CGSize cellSize; // @synthesize cellSize=_cellSize;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (id)cellAtPath:(CDStruct_8dbd68cd)arg1;
 - (id)cellAtPoint:(struct CGPoint)arg1;
 - (void)reloadData;

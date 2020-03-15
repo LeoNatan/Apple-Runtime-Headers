@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     NSDate *_fetchUntilDate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *fetchUntilDate; // @synthesize fetchUntilDate=_fetchUntilDate;
 @property(retain, nonatomic) HKQuery *currentQuery; // @synthesize currentQuery=_currentQuery;
 @property(retain, nonatomic) NSDate *earliestProcessedSampleDate; // @synthesize earliestProcessedSampleDate=_earliestProcessedSampleDate;
 @property(nonatomic, getter=isFetchingData) _Bool fetchingData; // @synthesize fetchingData=_fetchingData;
 @property(nonatomic) _Bool requiresPaging; // @synthesize requiresPaging=_requiresPaging;
-- (void).cxx_destruct;
 
 @end
 

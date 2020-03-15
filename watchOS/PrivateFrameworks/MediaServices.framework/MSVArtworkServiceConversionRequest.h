@@ -17,11 +17,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(nonatomic) float destinationCompressionQuality; // @synthesize destinationCompressionQuality=_destinationCompressionQuality;
 @property(nonatomic) int destinationFormat; // @synthesize destinationFormat=_destinationFormat;
 @property(copy, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
 @property(copy, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
-- (void).cxx_destruct;
 - (id)debugDescription;
 - (int)operationPriority;
 - (Class)operationClass;

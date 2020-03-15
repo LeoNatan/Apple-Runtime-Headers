@@ -19,11 +19,11 @@
     id <FPItemCollectionIndexPathBasedDelegate> _soleUpdatableDelegate;
 }
 
+- (void).cxx_destruct;
 @property(retain) id <FPItemCollectionIndexPathBasedDelegate> soleUpdatableDelegate; // @synthesize soleUpdatableDelegate=_soleUpdatableDelegate;
 @property(retain) NSMutableArray *delegates; // @synthesize delegates=_delegates;
 @property(retain) NSMutableArray *subscribers; // @synthesize subscribers=_subscribers;
 @property(retain) FPItemCollection *itemCollection; // @synthesize itemCollection=_itemCollection;
-- (void).cxx_destruct;
 - (void)collection:(id)arg1 didPerformBatchUpdateWithReplayBlock:(CDUnknownBlockType)arg2;
 - (void)dataForCollectionShouldBeReloaded:(id)arg1;
 - (void)collection:(id)arg1 didUpdateItemsAtIndexPaths:(id)arg2 changes:(id)arg3;

@@ -19,10 +19,10 @@
     UIImage *_processedArtworkImage;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isUnprocessedArtworkImageVisible) _Bool unprocessedArtworkImageVisible; // @synthesize unprocessedArtworkImageVisible=_unprocessedArtworkImageVisible;
 @property(copy, nonatomic) UIImage *processedArtworkImage; // @synthesize processedArtworkImage=_processedArtworkImage;
 @property(copy, nonatomic) UIImage *unprocessedArtworkImage; // @synthesize unprocessedArtworkImage=_unprocessedArtworkImage;
-- (void).cxx_destruct;
 - (void)_setDimmed:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)_imageCrossFadeTransition;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

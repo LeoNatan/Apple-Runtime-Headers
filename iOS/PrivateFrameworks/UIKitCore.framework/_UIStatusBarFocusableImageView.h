@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIColor *_focusedImageTintColor;
 }
 
-@property(retain, nonatomic) UIColor *focusedImageTintColor; // @synthesize focusedImageTintColor=_focusedImageTintColor;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIColor *focusedImageTintColor; // @synthesize focusedImageTintColor=_focusedImageTintColor;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)applyStyleAttributes:(id)arg1;
 - (_Bool)canBecomeFocused;

@@ -14,9 +14,9 @@
     double _topOffset;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double topOffset; // @synthesize topOffset=_topOffset;
 @property(readonly, nonatomic) SXDocumentSectionBlueprint *blueprint; // @synthesize blueprint=_blueprint;
-- (void).cxx_destruct;
 - (id)initWithBlueprint:(id)arg1 topOffset:(double)arg2;
 
 @end

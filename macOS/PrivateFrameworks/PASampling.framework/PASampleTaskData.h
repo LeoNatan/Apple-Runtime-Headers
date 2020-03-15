@@ -20,9 +20,9 @@
 
 + (id)newInstanceWithoutReferencesFromBufferPosition:(const void *)arg1;
 + (id)classDictionaryKey;
+- (void).cxx_destruct;
 @property(readonly) NSDictionary *sampleThreads; // @synthesize sampleThreads=_sampleThreadsDict;
 @property(retain) NSSet *donatingUniqueIds; // @synthesize donatingUniqueIds=_donatingUniqueIds;
-- (void).cxx_destruct;
 - (BOOL)isSameAsTask:(id)arg1;
 - (id)initWithTimeInsensitiveTaskData:(id)arg1;
 - (id)initWithKCDataStackshotDeltaTask:(const struct task_delta_snapshot_v2 *)arg1 andTimeInsensitiveTaskData:(id)arg2 andTerminatedThreadsInstructionCycles:(const struct instrs_cycles_snapshot *)arg3 machTimebase:(struct mach_timebase_info)arg4;

@@ -23,6 +23,7 @@
     long long _rightEyeLookUpTargetIndex;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long rightEyeLookUpTargetIndex; // @synthesize rightEyeLookUpTargetIndex=_rightEyeLookUpTargetIndex;
 @property(nonatomic) long long rightEyeLookOutTargetIndex; // @synthesize rightEyeLookOutTargetIndex=_rightEyeLookOutTargetIndex;
 @property(nonatomic) long long rightEyeLookInTargetIndex; // @synthesize rightEyeLookInTargetIndex=_rightEyeLookInTargetIndex;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) SCNNode *rightEyeJoint; // @synthesize rightEyeJoint=_rightEyeJoint;
 @property(retain, nonatomic) SCNNode *leftEyeJoint; // @synthesize leftEyeJoint=_leftEyeJoint;
 @property(retain, nonatomic) SCNNode *readMorpherNode; // @synthesize readMorpherNode=_readMorpherNode;
-- (void).cxx_destruct;
 
 @end
 

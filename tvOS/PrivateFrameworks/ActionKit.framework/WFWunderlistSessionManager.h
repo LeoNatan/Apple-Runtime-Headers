@@ -16,11 +16,11 @@
     NSURL *_baseURL;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *clientId; // @synthesize clientId=_clientId;
 @property(copy, nonatomic) WFOAuth2Credential *credential; // @synthesize credential=_credential;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
-- (void).cxx_destruct;
 - (void)requestPath:(id)arg1 method:(id)arg2 parameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)requestPath:(id)arg1 parameters:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createFileOnTask:(id)arg1 withFile:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

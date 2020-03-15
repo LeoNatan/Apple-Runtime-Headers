@@ -23,9 +23,9 @@
 }
 
 + (id)_remoteInterface;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType locationInformationChangedBlock; // @synthesize locationInformationChangedBlock=_locationInformationChangedBlock;
 @property(copy, nonatomic) CDUnknownBlockType connectionResetBlock; // @synthesize connectionResetBlock=_connectionResetBlock;
-- (void).cxx_destruct;
 - (id)serviceAccountTypeIdentifier;
 - (void)acceptLocationUpdate:(id)arg1;
 - (void)getPermaLinkFromLastStatusUpdate:(CDUnknownBlockType)arg1;

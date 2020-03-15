@@ -17,10 +17,10 @@
     NSNumber *_incrementalState;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *incrementalState; // @synthesize incrementalState=_incrementalState;
 @property(readonly, nonatomic) _Bool shouldForceLTR; // @synthesize shouldForceLTR=_shouldForceLTR;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-- (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;

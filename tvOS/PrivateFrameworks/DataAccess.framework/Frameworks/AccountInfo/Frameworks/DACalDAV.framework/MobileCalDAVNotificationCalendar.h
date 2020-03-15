@@ -13,8 +13,8 @@
     CalDiagNotificationCollectionSync *_notificationCollectionSyncDiagnostics;
 }
 
-@property(retain, nonatomic) CalDiagNotificationCollectionSync *notificationCollectionSyncDiagnostics; // @synthesize notificationCollectionSyncDiagnostics=_notificationCollectionSyncDiagnostics;
 - (void).cxx_destruct;
+@property(retain, nonatomic) CalDiagNotificationCollectionSync *notificationCollectionSyncDiagnostics; // @synthesize notificationCollectionSyncDiagnostics=_notificationCollectionSyncDiagnostics;
 - (_Bool)_handleResourceChanged:(id)arg1 withResource:(id)arg2 uid:(id)arg3;
 - (id)_changedAttributesFromCalendarChanges:(id)arg1;
 - (void *)_createResourceChange:(id)arg1 withType:(unsigned int)arg2 forNotification:(void *)arg3;

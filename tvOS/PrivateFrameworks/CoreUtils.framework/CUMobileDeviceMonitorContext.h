@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     CUMobileDeviceDiscovery *_discovery;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CUMobileDeviceDiscovery *discovery; // @synthesize discovery=_discovery;
 @property(retain, nonatomic) CUMobileDevice *device; // @synthesize device=_device;
-- (void).cxx_destruct;
 
 @end
 

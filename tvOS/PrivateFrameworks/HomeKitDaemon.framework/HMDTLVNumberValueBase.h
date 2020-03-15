@@ -16,8 +16,8 @@
     NSNumber *_value;
 }
 
-@property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_serialize;

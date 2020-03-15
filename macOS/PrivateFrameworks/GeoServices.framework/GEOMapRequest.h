@@ -16,10 +16,10 @@
     BOOL _isFinished;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isFinished; // @synthesize isFinished=_isFinished;
 @property(copy, nonatomic) CDUnknownBlockType cancellationHandler; // @synthesize cancellationHandler=_cancellationHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-- (void).cxx_destruct;
 - (void)_finishAndCallHandler:(CDUnknownBlockType)arg1;
 - (void)complete;
 - (void)cancel;

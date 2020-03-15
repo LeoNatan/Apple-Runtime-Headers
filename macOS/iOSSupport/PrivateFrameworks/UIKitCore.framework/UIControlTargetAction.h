@@ -15,8 +15,9 @@ __attribute__((visibility("hidden")))
     BOOL _cancelled;
 }
 
-@property(nonatomic) BOOL cancelled; // @synthesize cancelled=_cancelled;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL cancelled; // @synthesize cancelled=_cancelled;
+- (id)description;
 
 @end
 

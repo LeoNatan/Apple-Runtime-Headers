@@ -14,9 +14,9 @@
     AVCaptureDeviceFormat *_captureFormat;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) AVCaptureDeviceFormat *captureFormat; // @synthesize captureFormat=_captureFormat;
 @property(retain, nonatomic) AVCaptureDevice *captureDevice; // @synthesize captureDevice=_captureDevice;
-- (void).cxx_destruct;
 
 @end
 

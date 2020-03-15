@@ -22,6 +22,7 @@
     SFPunchout *_punchout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property(retain, nonatomic) NSArray *buyOptions; // @synthesize buyOptions=_buyOptions;
 @property(retain, nonatomic) NSArray *more_glyphs; // @synthesize more_glyphs=_more_glyphs;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
 - (id)initWithSFMediaItem:(id)arg1;
 
 @end

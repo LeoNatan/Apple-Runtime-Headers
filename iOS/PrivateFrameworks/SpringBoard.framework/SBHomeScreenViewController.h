@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class NSMutableSet, SBAppStatusBarSettingsAssertion, SBFloatingDockBehaviorAssertion, SBFloatingDockWindowLevelAssertion, SBHIconManager, SBIconController, SBUIController, UIView, _UILegibilitySettings;
+@class NSMapTable, NSMutableSet, SBAppStatusBarSettingsAssertion, SBFloatingDockBehaviorAssertion, SBHIconManager, SBIconController, SBUIController, UIView, _UILegibilitySettings;
 @protocol BSInvalidatable;
 
 @interface SBHomeScreenViewController : UIViewController
@@ -16,8 +16,8 @@
     SBFloatingDockBehaviorAssertion *_homeScreenFloatingDockAssertion;
     SBAppStatusBarSettingsAssertion *_childOrPresentedStatusBarAssertion;
     UIView *_contentView;
-    id <BSInvalidatable> _appIconForceTouchControllerOrientationUpdateDeferralAssertion;
-    SBFloatingDockWindowLevelAssertion *_appIconForceTouchControllerWindowLevelAssertion;
+    NSMapTable *_appIconForceTouchControllerOrientationUpdateDeferralAssertions;
+    NSMapTable *_appIconForceTouchControllerWindowLevelAssertions;
     _Bool _iconControllerHidden;
     _Bool _homeScreenAutorotatesEvenWhenIconIsDragging;
     SBIconController *_iconController;
@@ -26,17 +26,17 @@
     id <BSInvalidatable> _widgetEditViewControllerOrientationUpdateDeferralAssertion;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id <BSInvalidatable> widgetEditViewControllerOrientationUpdateDeferralAssertion; // @synthesize widgetEditViewControllerOrientationUpdateDeferralAssertion=_widgetEditViewControllerOrientationUpdateDeferralAssertion;
 @property(retain, nonatomic) SBFloatingDockBehaviorAssertion *widgetEditFloatingDockAssertion; // @synthesize widgetEditFloatingDockAssertion=_widgetEditFloatingDockAssertion;
 @property(nonatomic) _Bool homeScreenAutorotatesEvenWhenIconIsDragging; // @synthesize homeScreenAutorotatesEvenWhenIconIsDragging=_homeScreenAutorotatesEvenWhenIconIsDragging;
 @property(readonly, nonatomic) __weak SBUIController *UIController; // @synthesize UIController=_UIController;
 @property(readonly, nonatomic) __weak SBIconController *iconController; // @synthesize iconController=_iconController;
 @property(nonatomic, getter=isIconControllerHidden) _Bool iconControllerHidden; // @synthesize iconControllerHidden=_iconControllerHidden;
-- (void).cxx_destruct;
-- (void)_relinquishForceTouchWindowLevelAssertion;
+- (void)_relinquishForceTouchWindowLevelAssertionForIconView:(id)arg1;
 - (void)_acquireForceTouchWindowLevelAssertionForIconView:(id)arg1;
-- (void)_relinquishForceTouchOrientationUpdateDeferralAssertion;
-- (void)_acquireForceTouchOrientationUpdateDeferralAssertion;
+- (void)_relinquishForceTouchOrientationUpdateDeferralAssertionForIconView:(id)arg1;
+- (void)_acquireForceTouchOrientationUpdateDeferralAssertionForIconView:(id)arg1;
 - (void)_appIconForceTouchControllerDidDismissNotification:(id)arg1;
 - (void)_appIconForceTouchControllerWillPresentNotification:(id)arg1;
 - (void)_widgetEditViewDidDisappearImplementation;

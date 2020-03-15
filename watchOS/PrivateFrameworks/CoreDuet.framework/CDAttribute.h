@@ -38,6 +38,7 @@
     CDSession *_sessionWeak;
 }
 
+- (void).cxx_destruct;
 @property(readonly) unsigned long long integerId; // @synthesize integerId=_integerId;
 @property(readonly) NSObject<OS_dispatch_queue> *deferredRequestsQ; // @synthesize deferredRequestsQ=_deferredRequestsQ;
 @property(readonly) __weak CDSession *sessionWeak; // @synthesize sessionWeak=_sessionWeak;
@@ -45,7 +46,6 @@
 @property(readonly) int type; // @synthesize type=_type;
 @property(readonly) NSString *fullName; // @synthesize fullName=_fullName;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)requestStatisticFromDevice:(id)arg1 statistic:(int)arg2 forHistoryWindow:(id)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
 - (_Bool)requestPeerForecastFromDevice:(id)arg1 withValue:(id)arg2 forHistoryWindow:(id)arg3 forecastType:(int)arg4 error:(id *)arg5 handler:(CDUnknownBlockType)arg6;

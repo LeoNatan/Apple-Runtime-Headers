@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     AVCaptureDeviceInputSourceItem *_associatedAudioCaptureDeviceInputSourceItem;
 }
 
+- (void).cxx_destruct;
 @property(retain) AVCaptureDeviceInputSourceItem *associatedAudioCaptureDeviceInputSourceItem; // @synthesize associatedAudioCaptureDeviceInputSourceItem=_associatedAudioCaptureDeviceInputSourceItem;
 @property(readonly, getter=isBuiltIn) BOOL builtIn; // @synthesize builtIn=_builtIn;
 @property(readonly) NSString *mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly) AVCaptureDeviceInputSource *inputSource; // @synthesize inputSource=_inputSource;
 @property(readonly) AVCaptureDevice *captureDevice; // @synthesize captureDevice=_captureDevice;
-- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 @property(readonly, copy) NSString *localizedDisplayName;

@@ -16,11 +16,11 @@
     NSUUID *_peerUUID;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSUUID *peerUUID; // @synthesize peerUUID=_peerUUID;
 @property(nonatomic) BOOL receivedFirstPacket; // @synthesize receivedFirstPacket=_receivedFirstPacket;
 @property(nonatomic) unsigned short currentDataSize; // @synthesize currentDataSize=_currentDataSize;
 @property(retain, nonatomic) NSMutableData *currentReceivedData; // @synthesize currentReceivedData=_currentReceivedData;
-- (void).cxx_destruct;
 - (BOOL)addNewData:(id)arg1;
 - (void)resetTransfer;
 - (id)initDataTransferForPeer:(id)arg1;

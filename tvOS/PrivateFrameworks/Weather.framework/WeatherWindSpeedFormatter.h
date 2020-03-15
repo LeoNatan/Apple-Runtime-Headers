@@ -15,9 +15,9 @@
 }
 
 + (id)convenienceFormatter;
+- (void).cxx_destruct;
 @property(retain) NSDictionary *directionSubstringAttributes; // @synthesize directionSubstringAttributes=_directionSubstringAttributes;
 @property(retain) NSLocale *locale; // @synthesize locale=_locale;
-- (void).cxx_destruct;
 - (double)speedByConvertingToUserUnit:(double)arg1;
 - (int)windSpeedUnit;
 - (id)speedStringByConvertingToUserUnits:(float)arg1;

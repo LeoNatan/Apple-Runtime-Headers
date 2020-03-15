@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     double _height;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double height; // @synthesize height=_height;
 @property(readonly, nonatomic) UIView *headerFooterView; // @synthesize headerFooterView=_headerFooterView;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 view:(id)arg2 height:(double)arg3;

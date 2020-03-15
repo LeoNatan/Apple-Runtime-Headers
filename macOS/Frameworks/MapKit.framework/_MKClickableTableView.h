@@ -13,8 +13,8 @@
     id <_MKClickableTableViewDelegate> _clickableDelegate;
 }
 
-@property(nonatomic) __weak id <_MKClickableTableViewDelegate> clickableDelegate; // @synthesize clickableDelegate=_clickableDelegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <_MKClickableTableViewDelegate> clickableDelegate; // @synthesize clickableDelegate=_clickableDelegate;
 - (void)mouseDown:(id)arg1;
 
 @end

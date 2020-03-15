@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSArray *_supplies;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool showSupplyDataUnderPrinterName; // @synthesize showSupplyDataUnderPrinterName=_showSupplyDataUnderPrinterName;
 @property(retain, nonatomic) NSArray *supplies; // @synthesize supplies=_supplies;
-- (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 

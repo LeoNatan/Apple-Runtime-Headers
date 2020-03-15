@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
     float _fontScaleFactor;
 }
 
-@property(nonatomic) float fontScaleFactor; // @synthesize fontScaleFactor=_fontScaleFactor;
 - (void).cxx_destruct;
+@property(nonatomic) float fontScaleFactor; // @synthesize fontScaleFactor=_fontScaleFactor;
 - (void)setKeyCommands:(id)arg1 withVisualStyle:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
 

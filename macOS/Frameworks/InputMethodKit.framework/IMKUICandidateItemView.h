@@ -16,10 +16,10 @@
     NSString *_selectionKey;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *selectionKey; // @synthesize selectionKey=_selectionKey;
 @property(nonatomic) __weak id <IMKUICandidateItemViewHandling> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) IMKUICandidate *candidateItem; // @synthesize candidateItem=_candidateItem;
-- (void).cxx_destruct;
 - (BOOL)isFlipped;
 - (void)removeFromSuperview;
 - (void)drawRect:(struct CGRect)arg1;

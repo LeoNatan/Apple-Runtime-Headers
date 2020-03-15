@@ -9,9 +9,7 @@
 #import <FileProviderDaemon/FPDDomainBackend-Protocol.h>
 
 @class FPDDomain, NSArray, NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface FPDDomainExtensionBackend : NSObject <FPDDomainBackend>
 {
     FPDDomain *_domain;
@@ -33,6 +31,8 @@ __attribute__((visibility("hidden")))
 - (void)fetchOperationServiceOrEndpointWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)valuesForAttributes:(id)arg1 forURL:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)enumerateWithSettings:(id)arg1 lifetimeExtender:(id)arg2 observer:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)waitForStabilizationForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)copyDatabaseToURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpStateTo:(id)arg1 limitNumberOfItems:(BOOL)arg2;
 - (void)didIndexOneBatchWithError:(id)arg1 updatedItems:(id)arg2 deletedIDs:(id)arg3 anchor:(id)arg4;
 - (void)itemForItemID:(id)arg1 request:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -51,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSArray *rootURLs;
 - (void)invalidate;
 - (BOOL)startAndGetSyncAnchor:(id *)arg1;
-@property(readonly) NSObject<OS_dispatch_queue> *backendQueue;
 - (id)initWithDomain:(id)arg1;
 
 // Remaining properties

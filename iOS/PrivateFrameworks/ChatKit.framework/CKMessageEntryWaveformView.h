@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)waveformCurveTransform;
+- (void).cxx_destruct;
 @property(nonatomic) double minTimeLabelWidth; // @synthesize minTimeLabelWidth=_minTimeLabelWidth;
 @property(retain, nonatomic) UILabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 @property(retain, nonatomic) UIImageView *balloonImageView; // @synthesize balloonImageView=_balloonImageView;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImageView *waveformImageView; // @synthesize waveformImageView=_waveformImageView;
 @property(retain, nonatomic) NSMutableArray *powerLevels; // @synthesize powerLevels=_powerLevels;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
-- (void).cxx_destruct;
 - (void)updateWaveform;
 - (void)clearPowerLevels;
 - (void)appendPowerLevel:(double)arg1;

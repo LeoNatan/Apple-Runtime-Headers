@@ -28,6 +28,7 @@
     NSMutableArray *_presentScheduledHandlers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned int presentScheduledInsertSeed; // @synthesize presentScheduledInsertSeed=_presentScheduledInsertSeed;
 @property(nonatomic) _Bool presentScheduledInsertSeedValid; // @synthesize presentScheduledInsertSeedValid=_presentScheduledInsertSeedValid;
 @property(nonatomic) double presentedTime; // @synthesize presentedTime=_presentedTime;
@@ -35,7 +36,6 @@
 @property(nonatomic) unsigned int insertSeed; // @synthesize insertSeed=_insertSeed;
 @property(nonatomic) IOSurfaceSharedEvent *sharedEvent; // @synthesize sharedEvent=_sharedEvent;
 @property(nonatomic) unsigned long long drawableID; // @synthesize drawableID=_drawableID;
-- (void).cxx_destruct;
 @property(readonly) CAMetalLayer *layer;
 - (void)presentAtTime:(double)arg1;
 - (void)present;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     unsigned int _depth;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool reachedMaxDepth; // @synthesize reachedMaxDepth=_reachedMaxDepth;
 @property(nonatomic) unsigned int depth; // @synthesize depth=_depth;
 @property(readonly, nonatomic) EKObject *rootObject; // @synthesize rootObject=_rootObject;
-- (void).cxx_destruct;
 - (void)faultIfNeededForObject:(id)arg1;
 - (id)initWithRootObject:(id)arg1;
 

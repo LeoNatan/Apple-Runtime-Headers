@@ -29,6 +29,7 @@
 + (id)profileType;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CEMAnyPayload *payloadConfiguration; // @synthesize payloadConfiguration=_payloadConfiguration;
 @property(copy, nonatomic) NSNumber *payloadPreventDataBackup; // @synthesize payloadPreventDataBackup=_payloadPreventDataBackup;
 @property(copy, nonatomic) NSString *payloadVPNUUID; // @synthesize payloadVPNUUID=_payloadVPNUUID;
@@ -37,7 +38,6 @@
 @property(copy, nonatomic) NSNumber *payloadInstallWhenActivated; // @synthesize payloadInstallWhenActivated=_payloadInstallWhenActivated;
 @property(copy, nonatomic) NSNumber *payloadMandatory; // @synthesize payloadMandatory=_payloadMandatory;
 @property(copy, nonatomic) NSString *payloadApplication; // @synthesize payloadApplication=_payloadApplication;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;
 - (BOOL)loadPayload:(id)arg1 error:(id *)arg2;

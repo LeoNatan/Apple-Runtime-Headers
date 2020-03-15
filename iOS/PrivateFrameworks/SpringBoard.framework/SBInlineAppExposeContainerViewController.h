@@ -40,6 +40,7 @@
     SBDeviceApplicationSceneViewController *_deviceApplicationSceneViewController;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SBDeviceApplicationSceneViewController *deviceApplicationSceneViewController; // @synthesize deviceApplicationSceneViewController=_deviceApplicationSceneViewController;
 @property(nonatomic) _Bool clipsToBounds; // @synthesize clipsToBounds=_clipsToBounds;
 @property(nonatomic) unsigned long long maskedCorners; // @synthesize maskedCorners=_maskedCorners;
@@ -48,7 +49,6 @@
 @property(nonatomic) long long layoutRole; // @synthesize layoutRole=_layoutRole;
 @property(nonatomic) __weak id <SBInlineAppExposeContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isDragging) _Bool dragging; // @synthesize dragging=_dragging;
-- (void).cxx_destruct;
 - (id)_inlineAppLayoutForDisplayItem:(id)arg1;
 - (struct CGRect)_frameForInlineAppExposeItemAspectFill:(_Bool)arg1 referenceSize:(struct CGSize)arg2 interfaceOrientation:(long long)arg3 scale:(inout double *)arg4;
 - (void)_addAppLayoutToFront:(id)arg1;

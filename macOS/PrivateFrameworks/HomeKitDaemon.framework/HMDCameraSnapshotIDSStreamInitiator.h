@@ -22,12 +22,12 @@
 }
 
 + (id)logCategory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) __weak id <HMDCameraSnapshotIDSStreamInitiatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(retain, nonatomic) NSString *sendFileIdentifier; // @synthesize sendFileIdentifier=_sendFileIdentifier;
 @property(retain, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
 @property(retain, nonatomic) HMDSnapshotFile *snapshotFile; // @synthesize snapshotFile=_snapshotFile;
-- (void).cxx_destruct;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)_callFileTransferFailed:(id)arg1;
 - (void)dealloc;

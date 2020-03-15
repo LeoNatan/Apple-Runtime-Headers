@@ -30,6 +30,7 @@
 + (id)hysteresisBehaviorWithBeginningVelocity:(double)arg1 cancelingVelocity:(double)arg2;
 + (id)_defaultInteractionBehavior;
 + (id)_blinkEffect;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIDelayedAction *activateAction; // @synthesize activateAction=_activateAction;
 @property(retain, nonatomic) UIDelayedAction *emphasizeAction; // @synthesize emphasizeAction=_emphasizeAction;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
@@ -38,7 +39,6 @@
 @property(readonly, nonatomic) id <UISpringLoadedInteractionBehavior> interactionBehavior; // @synthesize interactionBehavior=_interactionBehavior;
 @property(nonatomic, setter=_setPossibleStateDuration:) double _possibleStateDuration; // @synthesize _possibleStateDuration;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
-- (void).cxx_destruct;
 - (_Bool)_shouldAllowInteractionWithContext:(id)arg1;
 - (void)_resetBehavior;
 - (void)_cancelActions;

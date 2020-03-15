@@ -13,8 +13,8 @@
     NSTextView *_fieldEditor;
 }
 
-@property(retain) NSTextView *fieldEditor; // @synthesize fieldEditor=_fieldEditor;
 - (void).cxx_destruct;
+@property(retain) NSTextView *fieldEditor; // @synthesize fieldEditor=_fieldEditor;
 - (id)fieldEditorForView:(id)arg1;
 - (void)configureWithFont:(id)arg1 textColor:(id)arg2 linkColor:(id)arg3;
 - (id)init;

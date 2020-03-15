@@ -29,6 +29,7 @@
     UIImage *_titleViewSnapshotImage;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIImage *titleViewSnapshotImage; // @synthesize titleViewSnapshotImage=_titleViewSnapshotImage;
 @property(copy, nonatomic) NSArray *rightSideAdditionalImagesInteractive; // @synthesize rightSideAdditionalImagesInteractive=_rightSideAdditionalImagesInteractive;
 @property(copy, nonatomic) NSArray *rightSideAdditionalImages; // @synthesize rightSideAdditionalImages=_rightSideAdditionalImages;
@@ -43,7 +44,6 @@
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

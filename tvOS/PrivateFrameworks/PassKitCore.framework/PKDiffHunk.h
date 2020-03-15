@@ -20,11 +20,11 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)hunkWithKey:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3 message:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) id valueNew; // @synthesize valueNew=_newValue;
 @property(retain, nonatomic) id valueOld; // @synthesize valueOld=_oldValue;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (long long)compare:(id)arg1;

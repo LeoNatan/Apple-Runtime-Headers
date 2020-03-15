@@ -22,6 +22,7 @@
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) CKSpotlightQueryResult *result; // @synthesize result=_result;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) UILabel *placeLabel; // @synthesize placeLabel=_placeLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct UIEdgeInsets marginInsets; // @synthesize marginInsets;
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_thumbnailGenerated:(id)arg1;
 - (void)_configurePlaceLabelWithResult:(id)arg1 searchText:(id)arg2;

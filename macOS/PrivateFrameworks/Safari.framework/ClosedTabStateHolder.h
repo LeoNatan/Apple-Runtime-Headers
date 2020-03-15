@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     BrowserTabPersistentState *_lastClosedTabState;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) BrowserTabPersistentState *lastClosedTabState; // @synthesize lastClosedTabState=_lastClosedTabState;
 @property(readonly, nonatomic) BrowserWindowController *browserWindowController; // @synthesize browserWindowController=_browserWindowController;
-- (void).cxx_destruct;
 - (void)_closeTabWithoutConfirming:(id)arg1;
 - (void)_undoCloseTabAtIndex:(unsigned long long)arg1 andSelect:(BOOL)arg2;
 - (void)clearLastClosedTabState;

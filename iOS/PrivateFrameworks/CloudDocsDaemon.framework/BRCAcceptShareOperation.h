@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _acceptShareCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType acceptShareCompletionBlock; // @synthesize acceptShareCompletionBlock=_acceptShareCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType acceptShareCompletionBlock; // @synthesize acceptShareCompletionBlock=_acceptShareCompletionBlock;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (_Bool)shouldRetryForError:(id)arg1;
 - (void)main;

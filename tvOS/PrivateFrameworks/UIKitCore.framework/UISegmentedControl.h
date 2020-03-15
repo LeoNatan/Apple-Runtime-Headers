@@ -11,10 +11,11 @@
 #import <UIKitCore/_UIBasicAnimationFactory-Protocol.h>
 #import <UIKitCore/_UIHostedFocusSystemDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, UIColor, UIImageView, UILongPressGestureRecognizer, UISegment, UIView, _UIHostedFocusSystem;
+@class NSMutableArray, NSString, UIColor, UIImageView, UILongPressGestureRecognizer, UISegment, UIVibrancyEffect, UIView, _UIHostedFocusSystem;
 
 @interface UISegmentedControl : UIControl <_UIBasicAnimationFactory, UIPopoverPresentationControllerDelegate, _UIHostedFocusSystemDelegate, NSCoding>
 {
+    UIView *_selectionIndicatorView;
     UIImageView *_selectionImageView;
     NSMutableArray *_segments;
     long long _selectedSegment;
@@ -27,6 +28,8 @@
     double _enabledAlpha;
     UIColor *_selectedSegmentTintColor;
     UIColor *_backgroundTintColor;
+    UIVibrancyEffect *_selectedSegmentVibrancyEffect;
+    double _innerSegmentSpacing;
     struct {
         unsigned int size:2;
         unsigned int delegateAlwaysNotifiesDelegateOfSegmentClicks:1;
@@ -40,6 +43,7 @@
         unsigned int translucentBackground:1;
         unsigned int appearanceNeedsUpdate:1;
         unsigned int selectionIndicatorDragged:1;
+        unsigned int useInnerSegmentSpacing:1;
     } _segmentedControlFlags;
     _UIHostedFocusSystem *_internalFocusSystem;
     UILongPressGestureRecognizer *_axLongPressGestureRecognizer;
@@ -60,8 +64,11 @@
 + (double)_sectionIndicatorOverflowForTraitCollection:(id)arg1 size:(int)arg2;
 + (id)_modernDividerImageBackground:(_Bool)arg1 traitCollection:(id)arg2 tintColor:(id)arg3 size:(int)arg4;
 + (struct CGColor *)_dividerPrimaryColorBackground:(_Bool)arg1 traitCollection:(id)arg2 tintColor:(id)arg3;
-+ (id)_modernBackgroundSelected:(_Bool)arg1 disableShadow:(_Bool)arg2 highlighted:(_Bool)arg3 traitCollection:(id)arg4 tintColor:(id)arg5 size:(int)arg6;
++ (id)_modernBackgroundSelected:(_Bool)arg1 disableShadow:(_Bool)arg2 maximumSize:(struct CGSize)arg3 highlighted:(_Bool)arg4 traitCollection:(id)arg5 tintColor:(id)arg6 size:(int)arg7;
++ (_Bool)_useShadowForSelectedTintColor:(id)arg1 traitCollection:(id)arg2;
 + (struct CGColor *)_backgroundPrimaryColorSelected:(_Bool)arg1 highlighted:(_Bool)arg2 traitCollection:(id)arg3 tintColor:(id)arg4;
++ (_Bool)_selectFocusedSegmentAfterFocusUpdate;
++ (double)_selectionOffsetAdjustmentForSegment:(id)arg1;
 + (id)_selectionOpacityAnimationFromValue:(float)arg1 toValue:(float)arg2;
 + (id)_selectionPopAnimationForKey:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
 + (struct CATransform3D)_highlightSelectionTransform;
@@ -71,9 +78,9 @@
 + (double)defaultHeightForStyle:(long long)arg1 size:(int)arg2;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (double)defaultHeight;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *axLongPressGestureRecognizer; // @synthesize axLongPressGestureRecognizer=_axLongPressGestureRecognizer;
 @property(retain, nonatomic) UIView *removedSegment; // @synthesize removedSegment=_removedSegment;
-- (void).cxx_destruct;
 - (id)_uiktest_segmentAtIndex:(unsigned long long)arg1;
 - (id)_uiktest_labelsWithState:(unsigned long long)arg1;
 - (void)_updateDividerImageForSegmentAtIndex:(unsigned long long)arg1;
@@ -113,8 +120,12 @@
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (void)_axLongPressHandler:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (double)_innerSegmentSpacing;
+- (void)_setInterSegmentSpacing:(double)arg1;
 - (id)_backgroundTintColor;
 - (void)_setBackgroundTintColor:(id)arg1;
+- (id)_selectedSegmentVibrancyEffect;
+- (void)_setSelectedSegmentVibrancyEffect:(id)arg1;
 @property(retain, nonatomic) UIColor *selectedSegmentTintColor;
 - (void)setAlpha:(double)arg1;
 - (void)setEnabled:(_Bool)arg1;

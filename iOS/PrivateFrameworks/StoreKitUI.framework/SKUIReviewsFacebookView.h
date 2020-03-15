@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets _contentInsets;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic, getter=isUserLiked) _Bool userLiked; // @synthesize userLiked=_userLiked;
 @property(readonly, nonatomic) UIControl *likeToggleButton; // @synthesize likeToggleButton=_likeButton;
 @property(copy, nonatomic) NSArray *friendNames; // @synthesize friendNames=_friendNames;
 @property(retain, nonatomic) SKUIColorScheme *colorScheme; // @synthesize colorScheme=_colorScheme;
-- (void).cxx_destruct;
 - (void)_reloadLikeButtonState;
 - (void)_reloadFriendNamesLabel;
 - (id)_composedStringForNames:(id)arg1 userLiked:(_Bool)arg2;

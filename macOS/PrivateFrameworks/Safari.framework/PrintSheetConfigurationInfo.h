@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     _WKFrameHandle *_frameHandle;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _WKFrameHandle *frameHandle; // @synthesize frameHandle=_frameHandle;
 @property(readonly, nonatomic, getter=shouldWaitUntilDone) BOOL waitUntilDone; // @synthesize waitUntilDone=_waitUntilDone;
-- (void).cxx_destruct;
 - (id)init;
 - (id)initWithFrameHandle:(id)arg1 shouldWaitUntilDone:(BOOL)arg2;
 

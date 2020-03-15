@@ -13,8 +13,8 @@
     UIDocumentInteractionController *_documentInteractionController;
 }
 
-@property(readonly, nonatomic) __weak UIDocumentInteractionController *documentInteractionController; // @synthesize documentInteractionController=_documentInteractionController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak UIDocumentInteractionController *documentInteractionController; // @synthesize documentInteractionController=_documentInteractionController;
 - (_Bool)_shouldExecuteItemOperationForActivity:(id)arg1;
 - (void)main;
 - (id)activityViewController:(id)arg1 openURLAnnotationForActivityType:(id)arg2;

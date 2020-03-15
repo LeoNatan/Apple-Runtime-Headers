@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)_topRowLayoutForIdiom:(long long)arg1;
 + (int)_backgroundColorBlendMode;
 + (id)_backgroundColorForIdiom:(long long)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(nonatomic) int separatorBlendMode; // @synthesize separatorBlendMode=_separatorBlendMode;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) int backgroundBlendMode; // @synthesize backgroundBlendMode=_backgroundBlendMode;
-- (void).cxx_destruct;
 
 @end
 

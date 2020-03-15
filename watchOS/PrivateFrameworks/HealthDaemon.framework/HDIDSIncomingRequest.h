@@ -23,6 +23,7 @@
     id _pbRequest;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) id pbRequest; // @synthesize pbRequest=_pbRequest;
 @property(nonatomic) __weak HDIDSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(retain, nonatomic) HDIDSOutgoingResponse *response; // @synthesize response=_response;
@@ -32,7 +33,6 @@
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(nonatomic) unsigned short messageID; // @synthesize messageID=_messageID;
 @property(retain, nonatomic) IDSDevice *fromDevice; // @synthesize fromDevice=_fromDevice;
-- (void).cxx_destruct;
 - (void)configureResponse;
 - (void)dealloc;
 @property(readonly, copy) NSString *description;

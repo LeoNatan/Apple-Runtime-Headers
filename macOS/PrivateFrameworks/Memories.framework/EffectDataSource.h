@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedDataSource;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *allTransitionDirtyPreviewsDict; // @synthesize allTransitionDirtyPreviewsDict=_allTransitionDirtyPreviewsDict;
 @property(retain, nonatomic) NSMutableDictionary *allTransitionPreviewsDict; // @synthesize allTransitionPreviewsDict=_allTransitionPreviewsDict;
 @property(retain, nonatomic) NSMutableDictionary *allTransitionNamesDict; // @synthesize allTransitionNamesDict=_allTransitionNamesDict;
@@ -74,7 +75,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableArray *factoryFilterIDsArray; // @synthesize factoryFilterIDsArray=_factoryFilterIDsArray;
 @property(nonatomic, getter=isGeneratingThumbsInterrupted) BOOL generatingThumbsInterrupted; // @synthesize generatingThumbsInterrupted=_generatingThumbsInterrupted;
 @property(nonatomic, getter=isGeneratingThumbs) BOOL generatingThumbs; // @synthesize generatingThumbs=_generatingThumbs;
-- (void).cxx_destruct;
 - (id)indexPathOfItemID:(id)arg1;
 - (id)itemIDAtIndexPath:(id)arg1;
 - (id)indexPathOfItemName:(id)arg1;

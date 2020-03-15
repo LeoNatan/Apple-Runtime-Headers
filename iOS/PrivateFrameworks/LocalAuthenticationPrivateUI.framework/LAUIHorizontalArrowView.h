@@ -33,14 +33,14 @@
     struct UIOffset _displacementOffset;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) struct UIOffset displacementOffset; // @synthesize displacementOffset=_displacementOffset;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) double displacement; // @synthesize displacement=_displacement;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) struct CGSize maximumLineSize; // @synthesize maximumLineSize=_maximum_line_size;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)boldTextStatusDidChange:(id)arg1;
 - (void)_updateLabelSize;

@@ -18,11 +18,11 @@
     NSLayoutConstraint *_labelTrailingConstraint;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *labelTrailingConstraint; // @synthesize labelTrailingConstraint=_labelTrailingConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *labelLeadingConstraint; // @synthesize labelLeadingConstraint=_labelLeadingConstraint;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UILabel *sizeLabel; // @synthesize sizeLabel=_sizeLabel;
-- (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)setTableView:(id)arg1;
 - (double)preferredHeightForWidth:(double)arg1 inTableView:(id)arg2;

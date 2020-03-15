@@ -33,11 +33,11 @@
 
 + (unsigned long long)typeForUrl:(id)arg1;
 + (unsigned long long)typeForResult:(struct __DDResult *)arg1;
+- (void).cxx_destruct;
 @property BOOL editedContent; // @synthesize editedContent=_editedContent;
 @property __weak id <DDActionViewPresenter> presenter; // @synthesize presenter=_presenter;
 @property BOOL editionMode; // @synthesize editionMode=_editionMode;
 @property(retain) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
-- (void).cxx_destruct;
 - (BOOL)viewShouldDragOldestAncestorWindow:(id)arg1;
 - (void)viewDidInvalidate:(id)arg1;
 - (BOOL)view:(id)arg1 shouldResize:(struct CGSize)arg2;

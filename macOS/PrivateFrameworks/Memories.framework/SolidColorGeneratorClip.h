@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSColor *_color;
 }
 
-@property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
 - (void)setContentsFromPlist:(id)arg1 inProject:(id)arg2;
 - (id)plistRepresentationFromProject:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

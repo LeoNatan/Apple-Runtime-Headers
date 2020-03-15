@@ -19,9 +19,9 @@
     id <WGWidgetViewControllerDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) WGWidgetHostingViewController *widgetHost; // @synthesize widgetHost=_widgetHost;
 @property(nonatomic) __weak id <WGWidgetViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (_Bool)isWidgetExtensionVisible:(id)arg1;
 - (void)widget:(id)arg1 didRemoveSnapshotAtURL:(id)arg2;
 - (long long)largestAvailableDisplayModeForWidget:(id)arg1;

@@ -16,8 +16,8 @@
     CDUnknownBlockType _createFolderCompletionBlock;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType createFolderCompletionBlock; // @synthesize createFolderCompletionBlock=_createFolderCompletionBlock;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType createFolderCompletionBlock; // @synthesize createFolderCompletionBlock=_createFolderCompletionBlock;
 - (void)presendNotifications;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)actionMain;

@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSURLAuthenticationChallenge *_challenge;
 }
 
-@property(readonly, nonatomic) NSURLAuthenticationChallenge *challenge; // @synthesize challenge=_challenge;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSURLAuthenticationChallenge *challenge; // @synthesize challenge=_challenge;
 - (void)callCompletionHandlerWithDisposition:(long long)arg1 credential:(id)arg2;
 - (id)initWithAuthenticationChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dealloc;

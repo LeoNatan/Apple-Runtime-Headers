@@ -15,9 +15,9 @@
 }
 
 + (void)setTaskDescription:(const char *)arg1;
+- (void).cxx_destruct;
 @property(retain) ICNFMCActivityMonitor *monitor; // @synthesize monitor=_monitor;
 @property(retain) ICNFMCActivityMonitor *parentMonitor; // @synthesize parentMonitor=_parentMonitor;
-- (void).cxx_destruct;
 - (void)cancel;
 - (void)dealloc;
 - (void)main;

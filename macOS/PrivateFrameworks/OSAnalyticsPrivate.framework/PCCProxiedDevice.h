@@ -26,9 +26,9 @@
     double _jobTimeout;
 }
 
+- (void).cxx_destruct;
 @property BOOL preserveFiles; // @synthesize preserveFiles=_preserveFiles;
 @property double jobTimeout; // @synthesize jobTimeout=_jobTimeout;
-- (void).cxx_destruct;
 - (void)startTimer;
 - (void)finish:(id)arg1 target:(id)arg2 event:(id)arg3 type:(id)arg4 result:(id)arg5;
 - (BOOL)doWork:(id)arg1;

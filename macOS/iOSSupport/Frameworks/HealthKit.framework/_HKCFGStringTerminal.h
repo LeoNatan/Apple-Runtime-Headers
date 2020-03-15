@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_string;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL caseSensitive; // @synthesize caseSensitive=_caseSensitive;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
-- (void).cxx_destruct;
 - (id)characterSet;
 - (unsigned long long)_minimumLength;
 - (id)_label;

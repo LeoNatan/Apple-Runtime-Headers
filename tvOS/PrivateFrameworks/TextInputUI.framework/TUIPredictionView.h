@@ -26,6 +26,7 @@
     UILongPressGestureRecognizer *_tapGestureRecognizer;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UILongPressGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) TUIPredictionViewStackView *cellStackView; // @synthesize cellStackView=_cellStackView;
 @property(retain, nonatomic) UIKBRenderConfig *renderConfig; // @synthesize renderConfig=_renderConfig;
@@ -37,7 +38,6 @@
 @property(retain, nonatomic) TIAutocorrectionList *autocorrectionList; // @synthesize autocorrectionList=_autocorrectionList;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(nonatomic) id <TUIPredictionViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (void)_updateHighlightedCellForTouch:(id)arg1;
 - (unsigned long long)_predictionCellIndexAtLocation:(struct CGPoint)arg1;
 - (void)_didRecognizeTapGesture:(id)arg1;

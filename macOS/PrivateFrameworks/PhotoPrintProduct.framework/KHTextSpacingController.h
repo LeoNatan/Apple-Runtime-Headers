@@ -25,6 +25,7 @@
     NSMutableDictionary *_attributes;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 @property(retain) KHTextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) double leading; // @synthesize leading=_leading;
@@ -36,7 +37,6 @@
 @property(retain) NSTextField *lineHeightValue; // @synthesize lineHeightValue=_lineHeightValue;
 @property(retain) NSTextField *trackingValue; // @synthesize trackingValue=_trackingValue;
 @property(retain) KHFrame *frame; // @synthesize frame=_frame;
-- (void).cxx_destruct;
 - (double)sliderValueFromLineSpacingValue:(double)arg1;
 - (double)lineSpacingValueFromSliderValue:(double)arg1;
 - (double)sliderValueFromTrackingValue:(double)arg1;

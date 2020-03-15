@@ -15,11 +15,11 @@
     SearchUILabel *_footnoteLabel;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) SearchUILabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(retain, nonatomic) SearchUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void)setThumbnailView:(id)arg1;
 - (id)thumbnailView;
-- (void).cxx_destruct;
 - (void)setCardSectionRowModel:(id)arg1;
 - (id)setupContentView;
 - (double)spacing;

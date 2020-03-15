@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_group;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 @property(retain) id value; // @synthesize value=_value;
-- (void).cxx_destruct;
 - (id)init;
 
 @end

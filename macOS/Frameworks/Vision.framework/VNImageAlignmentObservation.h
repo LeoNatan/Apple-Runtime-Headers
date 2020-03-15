@@ -15,9 +15,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(retain, nonatomic) VNImageRegistrationSignature *floatingImageSignature; // @synthesize floatingImageSignature=_floatingImageSignature;
 @property(retain, nonatomic) VNImageRegistrationSignature *referenceImageSignature; // @synthesize referenceImageSignature=_referenceImageSignature;
-- (void).cxx_destruct;
 @property(nonatomic) struct CGAffineTransform alignmentTransform;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

@@ -23,8 +23,8 @@
 
 + (unsigned long long)maxSizeBytes;
 + (id)sharedManager;
-@property(copy, nonatomic) CDUnknownBlockType cancel; // @synthesize cancel=_cancel;
 - (void).cxx_destruct;
+@property(copy, nonatomic) CDUnknownBlockType cancel; // @synthesize cancel=_cancel;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)flush;

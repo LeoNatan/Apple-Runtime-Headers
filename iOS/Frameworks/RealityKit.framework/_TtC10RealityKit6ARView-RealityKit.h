@@ -12,6 +12,7 @@
 
 @interface _TtC10RealityKit6ARView (RealityKit) <UIGestureRecognizerDelegate>
 + (Class)layerClass;
+- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handleSingleTapWithRecognizer:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

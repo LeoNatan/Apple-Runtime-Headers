@@ -20,8 +20,8 @@
 + (_Bool)isFeatureEnabled;
 + (id)debugFeatureName;
 + (id)loggingFacility;
-@property(retain, nonatomic) UIWindow *window; // @synthesize window;
 - (void).cxx_destruct;
+@property(retain, nonatomic) UIWindow *window; // @synthesize window;
 - (void)_setKeepAlive:(_Bool)arg1;
 - (void)_systemAppDidBecomeReady;
 - (void)_enabledPreferenceDidChange:(id)arg1;

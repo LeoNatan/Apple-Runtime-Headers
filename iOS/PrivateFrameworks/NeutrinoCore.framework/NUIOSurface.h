@@ -21,13 +21,13 @@
 }
 
 + (id)_internalFormatForPixelFormat:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NUGLTexture *texture; // @synthesize texture=_texture;
 @property(readonly, nonatomic) NUGLBuffer *buffer; // @synthesize buffer=_buffer;
 @property(readonly, nonatomic) NUPixelFormat *internalFormat; // @synthesize internalFormat=_internalFormat;
 @property(readonly, nonatomic) NUPixelFormat *format; // @synthesize format=_format;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
-- (void).cxx_destruct;
 - (id)newRenderDestination;
 - (_Bool)write:(CDUnknownBlockType)arg1;
 - (_Bool)read:(CDUnknownBlockType)arg1;

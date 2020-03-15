@@ -25,6 +25,7 @@
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;
 + (id)typeStrings;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSNumber *portNum; // @synthesize portNum=_portNum;
 @property(readonly, nonatomic) NSNumber *useSSLNum; // @synthesize useSSLNum=_useSSLNum;
 @property(copy, nonatomic) NSString *accountPersistentUUID; // @synthesize accountPersistentUUID=_accountPersistentUUID;
@@ -35,7 +36,6 @@
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 @property(readonly, retain, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(readonly, retain, nonatomic) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
-- (void).cxx_destruct;
 - (_Bool)containsSensitiveUserInformation;
 - (id)payloadDescriptionKeyValueSections;
 - (id)subtitle2Description;

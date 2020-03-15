@@ -34,12 +34,12 @@
 }
 
 + (id)_requestQueue;
+- (void).cxx_destruct;
 @property(retain) NSMutableDictionary *buttonBarDictionaries; // @synthesize buttonBarDictionaries=_buttonBarDictionaries;
 @property NSString *sectionToOpen; // @synthesize sectionToOpen=_sectionToOpen;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) MM_Account *account; // @synthesize account=_account;
 @property(retain) CastlePlugin *plugin; // @synthesize plugin=_plugin;
-- (void).cxx_destruct;
 - (void)cancelOperation:(id)arg1;
 - (void)button3Pressed:(id)arg1;
 - (void)button2Pressed:(id)arg1;

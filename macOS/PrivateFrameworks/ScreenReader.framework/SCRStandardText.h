@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     AXKTextNavigator *__navigator;
 }
 
-@property(retain, nonatomic) AXKTextNavigator *_navigator; // @synthesize _navigator=__navigator;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AXKTextNavigator *_navigator; // @synthesize _navigator=__navigator;
 - (id)substringWithRange:(id)arg1;
 @property(readonly, nonatomic) AXFTextRange *contentRange;
 - (id)rotorIdentifiers;

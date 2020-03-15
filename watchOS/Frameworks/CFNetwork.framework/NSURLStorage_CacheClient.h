@@ -21,9 +21,9 @@
     _Bool _networkStorageConnectionInterrupted;
 }
 
-@property _Bool networkStorageConnectionInterrupted; // @synthesize networkStorageConnectionInterrupted=_networkStorageConnectionInterrupted;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property _Bool networkStorageConnectionInterrupted; // @synthesize networkStorageConnectionInterrupted=_networkStorageConnectionInterrupted;
 - (void)notifyCacheClientOfTimeRelativeResponses:(id)arg1;
 - (void)notifyCachedURLResponseBecameFileBacked:(id)arg1 filePath:(id)arg2 forUUID:(id)arg3;
 - (void)flushWithCompletionHandler:(CDUnknownBlockType)arg1;

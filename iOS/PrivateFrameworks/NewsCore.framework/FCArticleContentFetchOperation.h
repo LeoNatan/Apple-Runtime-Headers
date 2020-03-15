@@ -21,6 +21,7 @@
     NSArray *_flintResources;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *flintResources; // @synthesize flintResources=_flintResources;
 @property(retain, nonatomic) FCArticleContentManifest *contentManifest; // @synthesize contentManifest=_contentManifest;
 @property(retain, nonatomic) NTPBArticleRecord *articleRecord; // @synthesize articleRecord=_articleRecord;
@@ -29,7 +30,6 @@
 @property(retain, nonatomic) NSString *articleID; // @synthesize articleID=_articleID;
 @property(retain, nonatomic) id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
-- (void).cxx_destruct;
 - (id)completeFetchOperation;
 - (id)fetchFlintResourcesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchFlintDocumentWithCompletion:(CDUnknownBlockType)arg1;

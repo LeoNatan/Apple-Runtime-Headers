@@ -22,6 +22,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property _Bool extendedAuthPasswordPrompt; // @synthesize extendedAuthPasswordPrompt=_extendedAuthPasswordPrompt;
 @property(copy) NSArray *legacyExchangeMode; // @synthesize legacyExchangeMode=_legacyExchangeMode;
 @property(copy) NSArray *legacyProposals; // @synthesize legacyProposals=_legacyProposals;
@@ -31,7 +32,6 @@
 @property(copy) NSData *sharedSecretReference; // @synthesize sharedSecretReference=_sharedSecretReference;
 @property _Bool useExtendedAuthentication; // @synthesize useExtendedAuthentication=_useExtendedAuthentication;
 @property int authenticationMethod; // @synthesize authenticationMethod=_authenticationMethod;
-- (void).cxx_destruct;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences *)arg1;
 - (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(_Bool)arg2;
 - (_Bool)needToUpdateKeychain;

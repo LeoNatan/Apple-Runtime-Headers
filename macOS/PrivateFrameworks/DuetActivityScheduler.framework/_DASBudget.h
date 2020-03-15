@@ -26,6 +26,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)budgetWithName:(id)arg1 capacity:(double)arg2 allocationType:(unsigned char)arg3;
 + (id)budgetWithName:(id)arg1 capacity:(double)arg2 balance:(double)arg3 allocationType:(unsigned char)arg4;
+- (void).cxx_destruct;
 @property(nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
 @property(nonatomic) double minBudgetValue; // @synthesize minBudgetValue=_minBudgetValue;
 @property(nonatomic) double maxBudgetValue; // @synthesize maxBudgetValue=_maxBudgetValue;
@@ -34,7 +35,6 @@
 @property(readonly, nonatomic) unsigned char allocationType; // @synthesize allocationType=_allocationType;
 @property(readonly, nonatomic) double capacity; // @synthesize capacity=_capacity;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

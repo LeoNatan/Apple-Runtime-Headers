@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSString *_colorName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *colorName; // @synthesize colorName=_colorName;
 @property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithColor:(id)arg1 named:(id)arg2;
 

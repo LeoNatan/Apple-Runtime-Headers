@@ -19,10 +19,10 @@
     struct AttributeCollection *mAttributeCollection;
 }
 
-@property(readonly, nonatomic) NSError *error; // @synthesize error=mError;
-@property(readonly, nonatomic) struct _xmlNs *ns; // @synthesize ns=mNS;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=mError;
+@property(readonly, nonatomic) struct _xmlNs *ns; // @synthesize ns=mNS;
 - (BOOL)isElement:(int)arg1 allowedInState:(int)arg2;
 - (int)state;
 - (void)popState;

@@ -25,11 +25,11 @@
 }
 
 + (id)perfMetricForFetchRequest:(id)arg1 type:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly) __weak _CDPerfMetricFamily *family; // @synthesize family=_family;
 @property(readonly) double totalElapsedTime; // @synthesize totalElapsedTime=_totalElapsedTime;
 @property(readonly) NSString *string; // @synthesize string=_string;
 @property(readonly) NSString *name; // @synthesize name=_name;
-- (void).cxx_destruct;
 @property(readonly) unsigned int errorCount;
 @property(readonly) unsigned int lastResultCount;
 @property(readonly) NSDate *lastUpdate;

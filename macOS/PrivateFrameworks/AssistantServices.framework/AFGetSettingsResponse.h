@@ -14,8 +14,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *settings; // @synthesize settings=_settings;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

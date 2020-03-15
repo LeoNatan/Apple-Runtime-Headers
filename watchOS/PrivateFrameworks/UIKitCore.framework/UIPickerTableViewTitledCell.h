@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     UIColor *_textColor;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool _isAttributed; // @synthesize _isAttributed;
 @property(readonly, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel;
-- (void).cxx_destruct;
 - (void)prepareForReuse;
 @property(retain, nonatomic) NSAttributedString *attributedTitle;
 @property(retain, nonatomic) NSString *title;

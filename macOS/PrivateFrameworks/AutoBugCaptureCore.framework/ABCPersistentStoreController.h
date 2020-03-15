@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
     id <ABCPersistentStoreControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <ABCPersistentStoreControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) __weak id <ABCPersistentStoreControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)removeAllCaseStorages;
 - (void)removeCaseStorageWithID:(id)arg1;
 - (void)removeCaseStoragesWithCaseIDs:(id)arg1;

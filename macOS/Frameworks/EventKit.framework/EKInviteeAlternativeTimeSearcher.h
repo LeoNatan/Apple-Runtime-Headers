@@ -50,6 +50,7 @@
 + (id)_addressesForParticipants:(id)arg1;
 + (id)_findLeftoverSpans:(id)arg1 usingFreeTimes:(id)arg2 andNonOptimalTimes:(id)arg3;
 + (id)stateAsString:(long long)arg1;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType stateChanged; // @synthesize stateChanged=_stateChanged;
 @property(nonatomic) BOOL internalSearchingForMoreTimesWhenSomeAttendeesCanAttend; // @synthesize internalSearchingForMoreTimesWhenSomeAttendeesCanAttend=_internalSearchingForMoreTimesWhenSomeAttendeesCanAttend;
 @property(nonatomic) BOOL internalSearchingForMoreTimesWhenAllAttendeesCanAttend; // @synthesize internalSearchingForMoreTimesWhenAllAttendeesCanAttend=_internalSearchingForMoreTimesWhenAllAttendeesCanAttend;
@@ -74,7 +75,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(nonatomic) BOOL noConflictRequired; // @synthesize noConflictRequired=_noConflictRequired;
-- (void).cxx_destruct;
 - (id)_generateTimeSpansForResults:(id)arg1 betweenStartDate:(id)arg2 endDate:(id)arg3;
 - (id)_filterOutUnreasonableTimeSlots:(id)arg1;
 - (id)_generateNonOptimalTimesFromTimeSpans:(id)arg1;

@@ -27,6 +27,7 @@
     PGMeaningfulEventSetTrait *_publicEventCategoriesTrait;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic, getter=isDebug) _Bool debug; // @synthesize debug=_debug;
 @property(retain, nonatomic) PGMeaningfulEventSetTrait *publicEventCategoriesTrait; // @synthesize publicEventCategoriesTrait=_publicEventCategoriesTrait;
 @property(retain, nonatomic) PGMeaningfulEventLocationMobilityTrait *locationMobilityTrait; // @synthesize locationMobilityTrait=_locationMobilityTrait;
@@ -42,7 +43,6 @@
 @property(retain, nonatomic) PGMeaningfulEventSetTrait *poisTrait; // @synthesize poisTrait=_poisTrait;
 @property(retain, nonatomic) PGMeaningfulEventSetTrait *roisTrait; // @synthesize roisTrait=_roisTrait;
 @property(retain, nonatomic) PGMeaningfulEventSceneSetTrait *scenesTrait; // @synthesize scenesTrait=_scenesTrait;
-- (void).cxx_destruct;
 - (id)_debugDescriptionWithMomentNode:(id)arg1;
 - (id)init;
 

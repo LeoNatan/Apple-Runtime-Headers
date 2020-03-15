@@ -17,8 +17,8 @@
 }
 
 + (id)shared;
-@property(readonly) NSDictionary *delegatesResponseDict; // @synthesize delegatesResponseDict=_delegatesResponseDict;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *delegatesResponseDict; // @synthesize delegatesResponseDict=_delegatesResponseDict;
 - (id)pluginObjectForIdentifier:(id)arg1;
 - (id)filterDelegateRequest:(id)arg1 forIdentifier:(id)arg2;
 - (void)updatePropertiesForAccount:(id)arg1 accountStore:(id)arg2 forIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;

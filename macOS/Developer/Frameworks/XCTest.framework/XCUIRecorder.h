@@ -20,11 +20,11 @@
 + (id)deviceRecorderWithConnection:(id)arg1;
 + (id)macRecorder;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(retain) XCSourceCodeRecording *recording; // @synthesize recording=_recording;
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property unsigned long long language; // @synthesize language=_language;
 @property int processPID; // @synthesize processPID=_processPID;
-- (void).cxx_destruct;
 @property(readonly, getter=isValid) BOOL valid;
 - (void)invalidate;
 - (void)recordTargetProcessPID:(int)arg1 forLanguage:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;

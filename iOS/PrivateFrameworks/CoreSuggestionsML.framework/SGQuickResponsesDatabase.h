@@ -17,8 +17,8 @@
 
 + (id)_openAnotherHandleForPath:(id)arg1;
 + (id)_openFreshHandleForPath:(id)arg1 inMemory:(_Bool)arg2;
-@property(readonly, nonatomic) _PASSqliteDatabase *db; // @synthesize db=_db;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _PASSqliteDatabase *db; // @synthesize db=_db;
 - (id)queriesToSkipFromEmptyToVersion:(unsigned int *)arg1;
 - (id)migrations;
 - (id)databaseHandle;

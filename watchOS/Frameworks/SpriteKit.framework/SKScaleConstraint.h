@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 + (id)constraintWithScaleRange:(id)arg1;
 + (id)constraintWithXRange:(id)arg1 YRange:(id)arg2;
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy) SKRange *yRange; // @synthesize yRange=_yRange;
 @property(copy) SKRange *xRange; // @synthesize xRange=_xRange;
-- (void).cxx_destruct;
 - (_Bool)isEqualToScaleConstraint:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

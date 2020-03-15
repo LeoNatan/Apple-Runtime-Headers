@@ -25,11 +25,11 @@
 }
 
 + (void)preloadResources;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) PXUIAssetBadgeView *_badgeView; // @synthesize _badgeView=__badgeView;
 @property(nonatomic, setter=_setBadgeOptions:) unsigned long long _badgeOptions; // @synthesize _badgeOptions=__badgeOptions;
 @property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
 @property(retain, nonatomic) PXAssetBadgeManager *badgeManager; // @synthesize badgeManager=_badgeManager;
-- (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateBadgeViewIfNeeded;
 - (void)_invalidateBadgeView;

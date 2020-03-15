@@ -14,11 +14,9 @@
 }
 
 - (void).cxx_destruct;
-- (void)_removeDiskRepresentation;
 - (id)archiveData;
 - (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 cloudStoreCoordinatorDelegate:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)dealloc;
 - (id)initWithData:(id)arg1 error:(id *)arg2;
 
 @end

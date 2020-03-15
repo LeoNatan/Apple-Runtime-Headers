@@ -17,9 +17,9 @@
 
 + (id)sharedResourcePathManager;
 + (id)userDictionaryURL;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableDictionary *updateDictionaryPaths; // @synthesize updateDictionaryPaths=_updateDictionaryPaths;
 @property(nonatomic) struct __FSEventStream *stream; // @synthesize stream=_stream;
-- (void).cxx_destruct;
 - (id)combinedResourcePathsForKeys:(id)arg1 inputMode:(id)arg2;
 - (id)resourcePathsForKey:(id)arg1 inputMode:(id)arg2;
 - (id)resourcePathsForUpdateDictionaries:(id)arg1;

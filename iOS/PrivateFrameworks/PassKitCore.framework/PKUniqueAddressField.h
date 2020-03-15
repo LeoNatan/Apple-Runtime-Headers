@@ -16,11 +16,11 @@
     NSString *_invalidText;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *invalidText; // @synthesize invalidText=_invalidText;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(nonatomic) long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSString *key; // @synthesize key=_key;
-- (void).cxx_destruct;
 
 @end
 

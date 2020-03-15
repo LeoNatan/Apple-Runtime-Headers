@@ -10,15 +10,15 @@
 
 @interface MLPImageDataBatch : MLPDataBatch
 {
-    struct NSArray *_images;
-    struct NSArray *_lossLabels;
+    NSArray *_images;
+    NSArray *_lossLabels;
     NSArray *_labels;
 }
 
+- (void).cxx_destruct;
 @property(retain) NSArray *labels; // @synthesize labels=_labels;
 @property(retain) NSArray *lossLabels; // @synthesize lossLabels=_lossLabels;
 @property(retain) NSArray *images; // @synthesize images=_images;
-- (void).cxx_destruct;
 - (id)initWithDataBatch:(id)arg1 batchSize:(unsigned long long)arg2 network:(id)arg3;
 
 @end

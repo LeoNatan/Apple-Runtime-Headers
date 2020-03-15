@@ -16,9 +16,9 @@
     NSString *_searchString;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 @property(readonly, nonatomic) __weak MPUSearchDataSource *dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
 - (void)main;
 - (void)executeSearch;
 - (id)description;

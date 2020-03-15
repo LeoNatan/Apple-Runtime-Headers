@@ -42,6 +42,7 @@
 + (id)fontWithName:(id)arg1 size:(double)arg2;
 + (id)_fallbackFontNames;
 + (id)fontNameWithWeight:(int)arg1;
+- (void).cxx_destruct;
 @property long long textWritingDirection; // @synthesize textWritingDirection=_textWritingDirection;
 @property(retain) NSString *eventTime; // @synthesize eventTime=_eventTime;
 @property(retain) NSString *location; // @synthesize location=_location;
@@ -63,7 +64,6 @@
 @property struct CGRect bounds; // @synthesize bounds=_bounds;
 @property struct CGRect dirtyRect; // @synthesize dirtyRect=_dirtyRect;
 @property(retain) CalDrawOccurrenceColor *color; // @synthesize color=_color;
-- (void).cxx_destruct;
 - (double)borderSize;
 - (void)drawRect;
 - (id)tileOptionsWithDashes:(BOOL)arg1;

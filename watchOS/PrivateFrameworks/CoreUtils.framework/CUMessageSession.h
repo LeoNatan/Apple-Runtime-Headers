@@ -9,7 +9,7 @@
 #import <CoreUtils/CUMessageSessionXPCClientInterface-Protocol.h>
 #import <CoreUtils/NSSecureCoding-Protocol.h>
 
-@class NSString, NSXPCConnection, NSXPCListenerEndpoint;
+@class NSMutableDictionary, NSString, NSXPCConnection, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue;
 
 @interface CUMessageSession : NSObject <CUMessageSessionXPCClientInterface, NSSecureCoding>
@@ -25,12 +25,13 @@
     _Bool _activateCalled;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
-    struct NSMutableDictionary *_requestMap;
+    NSMutableDictionary *_requestMap;
     NSXPCConnection *_xpcCnx;
     NSString *_label;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType sendRequestHandler; // @synthesize sendRequestHandler=_sendRequestHandler;
 @property(copy, nonatomic) CDUnknownBlockType registerRequestHandler; // @synthesize registerRequestHandler=_registerRequestHandler;
 @property(retain, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
@@ -39,7 +40,6 @@
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-- (void).cxx_destruct;
 - (void)remoteRequestID:(id)arg1 options:(id)arg2 request:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_sendRequestID:(id)arg1 options:(id)arg2 request:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)sendRequestID:(id)arg1 options:(id)arg2 request:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;

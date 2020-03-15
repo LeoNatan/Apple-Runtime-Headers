@@ -21,8 +21,8 @@
 }
 
 + (id)new;
-@property(retain, nonatomic) PXCMMSuggestionsDataSourceManager *suggestionsDataSourceManager; // @synthesize suggestionsDataSourceManager=_suggestionsDataSourceManager;
 - (void).cxx_destruct;
+@property(retain, nonatomic) PXCMMSuggestionsDataSourceManager *suggestionsDataSourceManager; // @synthesize suggestionsDataSourceManager=_suggestionsDataSourceManager;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)didSelectSuggestionGadget:(id)arg1;
 - (void)_setDataSource:(id)arg1 changes:(id)arg2;

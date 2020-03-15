@@ -16,8 +16,8 @@
 }
 
 + (id)sharedInstance;
-@property(readonly) AWDServerConnection *AWDServerConnection; // @synthesize AWDServerConnection=_AWDServerConnection;
 - (void).cxx_destruct;
+@property(readonly) AWDServerConnection *AWDServerConnection; // @synthesize AWDServerConnection=_AWDServerConnection;
 - (void)submitMetric:(id)arg1 withIdentifier:(unsigned int)arg2;
 - (id)init;
 - (BOOL)_shouldSubmit;

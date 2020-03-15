@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, WKWebView;
 
 __attribute__((visibility("hidden")))
 @interface BackgroundLoadConfiguration : NSObject
@@ -18,8 +18,11 @@ __attribute__((visibility("hidden")))
     BOOL _copyInitialSessionState;
     BOOL _setUpParentTabBackItem;
     NSString *_httpReferrer;
+    WKWebView *_relatedWebView;
 }
 
+- (void).cxx_destruct;
+@property(retain, nonatomic) WKWebView *relatedWebView; // @synthesize relatedWebView=_relatedWebView;
 @property(nonatomic) BOOL setUpParentTabBackItem; // @synthesize setUpParentTabBackItem=_setUpParentTabBackItem;
 @property(nonatomic) BOOL copyInitialSessionState; // @synthesize copyInitialSessionState=_copyInitialSessionState;
 @property(nonatomic) BOOL cancelExistingLoadsWithSameURL; // @synthesize cancelExistingLoadsWithSameURL=_cancelExistingLoadsWithSameURL;
@@ -27,7 +30,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL allowRemoteInspection; // @synthesize allowRemoteInspection=_allowRemoteInspection;
 @property(nonatomic) BOOL allowAccessToKeychain; // @synthesize allowAccessToKeychain=_allowAccessToKeychain;
 @property(copy, nonatomic) NSString *httpReferrer; // @synthesize httpReferrer=_httpReferrer;
-- (void).cxx_destruct;
 
 @end
 

@@ -16,9 +16,9 @@
     VCPProtoTime *_timestamp;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) float curationScore; // @synthesize curationScore=_curationScore;
 @property(retain, nonatomic) VCPProtoTime *timestamp; // @synthesize timestamp=_timestamp;
-- (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -19,8 +19,8 @@
     id <HDHealthDaemon> _healthDaemon;
 }
 
-@property(readonly, nonatomic) __weak id <HDHealthDaemon> healthDaemon; // @synthesize healthDaemon=_healthDaemon;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) __weak id <HDHealthDaemon> healthDaemon; // @synthesize healthDaemon=_healthDaemon;
 - (id)diagnosticDescription;
 - (id)serverWithClient:(id)arg1 error:(id *)arg2;
 - (id)exportObjectForListener:(id)arg1 client:(id)arg2 error:(id *)arg3;

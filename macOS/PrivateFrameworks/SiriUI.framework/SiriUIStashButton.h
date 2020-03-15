@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSView *_backgroundView;
 }
 
-@property(retain) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
+@property(retain) NSView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void)awakeFromNib;
 
 @end

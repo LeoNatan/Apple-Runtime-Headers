@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     TKTonePickerViewController *_tonePicker;
 }
 
-@property(retain, nonatomic) TKTonePickerViewController *tonePicker; // @synthesize tonePicker=_tonePicker;
 - (void).cxx_destruct;
+@property(retain, nonatomic) TKTonePickerViewController *tonePicker; // @synthesize tonePicker=_tonePicker;
 - (void)cancelButton:(id)arg1;
 - (void)doneButton:(id)arg1;
 - (id)initWithAlertType:(long long)arg1 activityAlert:(id)arg2;

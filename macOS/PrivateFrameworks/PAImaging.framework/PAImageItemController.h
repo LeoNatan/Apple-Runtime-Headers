@@ -34,9 +34,9 @@
 + (BOOL)shouldShowVideoComplementForAsset:(id)arg1;
 + (long long)videoComplementEnableStatusForAsset:(id)arg1;
 + (long long)videoComplementEnableStatusForVisibilityState:(unsigned short)arg1 asset:(id)arg2;
+- (void).cxx_destruct;
 @property(retain) id <NUImageProperties> imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(retain) id <PAAdjustmentFactory> adjustmentFactory; // @synthesize adjustmentFactory=_adjustmentFactory;
-- (void).cxx_destruct;
 - (id)descriptionEditController;
 - (void)requestRenderDescription:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)compositionIfEditing;

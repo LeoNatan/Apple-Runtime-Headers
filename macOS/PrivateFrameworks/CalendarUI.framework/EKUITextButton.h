@@ -16,10 +16,10 @@
 }
 
 + (Class)cellClass;
+- (void).cxx_destruct;
 @property(retain) NSImage *originalImage; // @synthesize originalImage=_originalImage;
 @property(retain) NSString *text; // @synthesize text=_text;
 @property(retain) NSDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
-- (void).cxx_destruct;
 - (void)setMouseoverTextColor:(id)arg1;
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;

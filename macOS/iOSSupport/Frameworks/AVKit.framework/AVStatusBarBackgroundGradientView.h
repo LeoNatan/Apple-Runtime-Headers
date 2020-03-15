@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)layerClass;
-@property(retain, nonatomic) AVStatusBarBackgroundGradientViewSubview *gradientView; // @synthesize gradientView=_gradientView;
 - (void).cxx_destruct;
+@property(retain, nonatomic) AVStatusBarBackgroundGradientViewSubview *gradientView; // @synthesize gradientView=_gradientView;
 - (void)layoutSubviews;
 - (void)setAlpha:(double)arg1;
 - (double)alpha;

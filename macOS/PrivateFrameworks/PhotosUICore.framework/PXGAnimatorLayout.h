@@ -14,9 +14,9 @@
     PXGLayout *_inputLayout;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) PXGLayout *inputLayout; // @synthesize inputLayout=_inputLayout;
 @property(readonly, nonatomic) __weak PXGAnimator *animator; // @synthesize animator=_animator;
-- (void).cxx_destruct;
 - (BOOL)isSpriteIndex:(unsigned int)arg1 decoratingSpriteWithIndex:(out unsigned int *)arg2;
 - (void)removeAllFences;
 - (id)fences;

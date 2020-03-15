@@ -18,10 +18,10 @@
     NSArray *_layoutOptionsKeys;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *layoutOptionsKeys; // @synthesize layoutOptionsKeys=_layoutOptionsKeys;
 @property(nonatomic) __weak id <HUPrototypeLayoutOptionsEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HUGridLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
-- (void).cxx_destruct;
 - (void)sliderValueTableViewCell:(id)arg1 didChangeValue:(double)arg2;
 - (id)_viewSizeSubclassDescription;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;

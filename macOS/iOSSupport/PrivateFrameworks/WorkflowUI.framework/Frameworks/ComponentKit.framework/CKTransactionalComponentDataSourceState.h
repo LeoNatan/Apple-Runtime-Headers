@@ -14,9 +14,9 @@
     NSArray *_sections;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly, nonatomic) CKTransactionalComponentDataSourceConfiguration *configuration; // @synthesize configuration=_configuration;
-- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

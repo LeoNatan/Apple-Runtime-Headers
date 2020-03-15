@@ -37,6 +37,7 @@
 + (id)logCategory;
 + (id)characteristicWithCharacteristicReference:(id)arg1 home:(id)arg2;
 + (id)characteristicWithSerializedDictionaryRepresentation:(id)arg1 home:(id)arg2;
+- (void).cxx_destruct;
 @property(nonatomic) _Bool notificationEnabledByThisClient; // @synthesize notificationEnabledByThisClient=_notificationEnabledByThisClient;
 @property(readonly, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
@@ -44,7 +45,6 @@
 @property(nonatomic) __weak HMService *service; // @synthesize service=_service;
 @property(copy, nonatomic) NSDate *valueUpdatedTime; // @synthesize valueUpdatedTime=_valueUpdatedTime;
 @property(nonatomic) _Bool requiresDeviceUnlock; // @synthesize requiresDeviceUnlock=_requiresDeviceUnlock;
-- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *localizedDescription;
 - (id)_characteristicTypeDescription;
 - (void)_updateAuthorizationData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

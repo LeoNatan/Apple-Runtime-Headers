@@ -16,9 +16,9 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)predicateWithProperty:(id)arg1 values:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *values; // @synthesize values=_values;
 @property(readonly, copy, nonatomic) NSString *property; // @synthesize property=_property;
-- (void).cxx_destruct;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

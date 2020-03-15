@@ -13,10 +13,10 @@
     AWDProactiveModelFittingModelInfo *_modelInfo;
 }
 
-+ (id)trackerForPlanId:(struct NSString *)arg1;
++ (id)trackerForPlanId:(id)arg1;
 + (id)trackerForModelName:(id)arg1 modelVersion:(id)arg2 modelLocale:(id)arg3;
-@property(readonly, nonatomic) AWDProactiveModelFittingModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AWDProactiveModelFittingModelInfo *modelInfo; // @synthesize modelInfo=_modelInfo;
 - (void)postMetricId:(unsigned int)arg1 message:(id)arg2;
 - (id)initWithModel:(id)arg1;
 

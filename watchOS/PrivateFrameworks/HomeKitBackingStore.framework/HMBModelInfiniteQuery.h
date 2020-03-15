@@ -14,8 +14,8 @@
 }
 
 + (id)queryWithSQLPredicate:(id)arg1 sequenceArgumentName:(id)arg2 indexedProperties:(id)arg3 arguments:(id)arg4;
-@property(readonly, copy) NSString *sequenceArgumentName; // @synthesize sequenceArgumentName=_sequenceArgumentName;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *sequenceArgumentName; // @synthesize sequenceArgumentName=_sequenceArgumentName;
 - (id)performQueryOn:(id)arg1 arguments:(id)arg2;
 - (id)initWithSQLPredicate:(id)arg1 sqlColumns:(id)arg2 sequenceArgumentName:(id)arg3 maximumRowsPerSelect:(unsigned int)arg4 indexNameSuffix:(id)arg5 indexedColumns:(id)arg6 arguments:(id)arg7;
 

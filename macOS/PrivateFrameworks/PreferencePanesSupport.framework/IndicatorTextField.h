@@ -16,8 +16,8 @@
 }
 
 + (id)_indicatorImage;
-@property(retain) NSTextField *noteField; // @synthesize noteField=mNoteField;
 - (void).cxx_destruct;
+@property(retain) NSTextField *noteField; // @synthesize noteField=mNoteField;
 - (void)setShowIndicator:(BOOL)arg1 noteString:(id)arg2;
 - (void)setShowIndicator:(BOOL)arg1;
 - (BOOL)isShowingIndicator;

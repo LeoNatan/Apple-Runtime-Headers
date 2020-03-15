@@ -24,13 +24,13 @@
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(readonly, copy) NSString *isoCountryCode; // @synthesize isoCountryCode=_isoCountryCode;
 @property(readonly) CXHandle *handle; // @synthesize handle=_handle;
 @property(readonly, copy) NSString *shortLabel; // @synthesize shortLabel=_shortLabel;
 @property(readonly, copy) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
-- (void).cxx_destruct;
 - (id)archivedDataWithError:(id *)arg1;
 - (BOOL)isEqualToAccount:(id)arg1;
 - (unsigned long long)hash;

@@ -15,9 +15,9 @@
     NSMutableSet *_affectedCharacteristics;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSMutableSet *affectedCharacteristics; // @synthesize affectedCharacteristics=_affectedCharacteristics;
 @property(readonly, nonatomic) id <NACancelable> cancellationToken; // @synthesize cancellationToken=_cancellationToken;
-- (void).cxx_destruct;
 - (id)initWithCancellationToken:(id)arg1;
 
 @end

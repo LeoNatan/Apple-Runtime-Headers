@@ -22,6 +22,7 @@
     NSDictionary *_defaultArgumentValues;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *defaultArgumentValues; // @synthesize defaultArgumentValues=_defaultArgumentValues;
 @property(readonly, nonatomic) NSDictionary *argumentFields; // @synthesize argumentFields=_argumentFields;
 @property(readonly, nonatomic) NSString *sqlSelect; // @synthesize sqlSelect=_sqlSelect;
@@ -32,7 +33,6 @@
 @property(readonly, nonatomic) unsigned long long maximumRowsPerSelect; // @synthesize maximumRowsPerSelect=_maximumRowsPerSelect;
 @property(readonly, nonatomic) NSArray *sqlColumns; // @synthesize sqlColumns=_sqlColumns;
 @property(readonly, nonatomic) NSString *sqlPredicate; // @synthesize sqlPredicate=_sqlPredicate;
-- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasExpectedIndexes;
 - (id)performQueryOn:(id)arg1 arguments:(id)arg2;
 - (id)description;

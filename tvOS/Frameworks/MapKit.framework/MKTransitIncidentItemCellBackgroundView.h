@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     UIColor *_strokeColor;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIColor *strokeColor; // @synthesize strokeColor=_strokeColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) long long position; // @synthesize position=_position;
-- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect)arg1;

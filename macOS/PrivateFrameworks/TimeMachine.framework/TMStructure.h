@@ -43,12 +43,12 @@
 + (id)closestAncestorStructureOfURL:(id)arg1;
 + (id)closestAncestorStructureTypeToURL:(id)arg1 isStructureRoot:(out char *)arg2;
 + (id)structureTypeAtURL:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSMutableOrderedSet *mutableChildren; // @synthesize mutableChildren=_mutableChildren;
 @property BOOL needsRefreshFromDisk; // @synthesize needsRefreshFromDisk=_needsRefreshFromDisk;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(readonly, retain) NSString *uuid; // @synthesize uuid=_uuid;
 @property __weak id <TMStructureProtocol> parent; // @synthesize parent=_parent;
-- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)addChild:(id)arg1;

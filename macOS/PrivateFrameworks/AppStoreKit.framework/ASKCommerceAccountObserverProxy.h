@@ -18,10 +18,10 @@
     id _changeObserver;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id changeObserver; // @synthesize changeObserver=_changeObserver;
 @property(readonly, nonatomic) __weak id <CKAccountObserver> target; // @synthesize target=_target;
 @property(readonly, nonatomic) CKAccountStore *accountStore; // @synthesize accountStore=_accountStore;
-- (void).cxx_destruct;
 - (void)accountStore:(id)arg1 primaryAccountChanged:(id)arg2;
 - (void)invalidate;
 - (id)initWithAccountStore:(id)arg1 target:(id)arg2;

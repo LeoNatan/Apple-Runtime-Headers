@@ -17,12 +17,12 @@
     CSKStreamMessagesObserver *_messagesObserver;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) CSKStreamMessagesObserver *messagesObserver; // @synthesize messagesObserver=_messagesObserver;
 @property(retain, nonatomic) CSKMessagesViewController *messagesViewController; // @synthesize messagesViewController=_messagesViewController;
 @property(retain, nonatomic) NSFont *defaultFont; // @synthesize defaultFont=_defaultFont;
 @property(nonatomic) __weak CSKStream *stream; // @synthesize stream=_stream;
 @property(retain, nonatomic) CSKActivity *activity; // @synthesize activity=_activity;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)_messagesObserverRemovalCompletion;
 - (CDUnknownBlockType)_messagesObserverAdditionCompletion;
 - (CDUnknownBlockType)_messagesObserverResetCompletion;

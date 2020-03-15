@@ -12,9 +12,9 @@
     id _value;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-- (void).cxx_destruct;
 - (id)initWithPropertyListRepresentation:(id)arg1 error:(id *)arg2;
 - (id)propertyListRepresentation;
 - (id)_valueForPropertyListRepresentation:(id)arg1 type:(long long)arg2;

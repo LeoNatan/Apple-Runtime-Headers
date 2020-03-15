@@ -14,9 +14,9 @@
     struct CGSize _dimensions;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) struct CGSize dimensions; // @synthesize dimensions=_dimensions;
-- (void).cxx_destruct;
 - (id)initWithDimensions:(struct CGSize)arg1 URL:(id)arg2;
 
 @end

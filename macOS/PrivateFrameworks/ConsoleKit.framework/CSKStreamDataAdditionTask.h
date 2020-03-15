@@ -17,11 +17,11 @@
 }
 
 + (id)name;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) unsigned long long direction; // @synthesize direction=_direction;
 @property(readonly, nonatomic) NSArray *entities; // @synthesize entities=_entities;
 @property(readonly, nonatomic) __weak CSKStreamData *data; // @synthesize data=_data;
-- (void).cxx_destruct;
 - (CDUnknownBlockType)handler;
 - (id)initWithData:(id)arg1 entities:(id)arg2 direction:(unsigned long long)arg3;
 - (id)init;

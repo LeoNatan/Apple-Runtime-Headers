@@ -15,10 +15,10 @@
     double _score;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;
 @property(readonly, nonatomic) PVFace *face2; // @synthesize face2=_face2;
 @property(readonly, nonatomic) PVFace *face1; // @synthesize face1=_face1;
-- (void).cxx_destruct;
 - (id)initWithFace:(id)arg1 andFace:(id)arg2 andScore:(double)arg3;
 
 @end

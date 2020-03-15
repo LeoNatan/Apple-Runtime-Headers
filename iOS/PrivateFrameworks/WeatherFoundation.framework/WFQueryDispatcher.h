@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_queriesPendingResponse;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableDictionary *queriesPendingResponse; // @synthesize queriesPendingResponse=_queriesPendingResponse;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
 - (void)fetchFavoriteLocationsWithTaskIdentifier:(id)arg1 results:(CDUnknownBlockType)arg2;
 - (void)invalidateCacheWithIdentifier:(id)arg1;
 - (void)cancelTaskWithIdentifier:(id)arg1;

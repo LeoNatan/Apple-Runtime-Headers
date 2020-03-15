@@ -25,6 +25,7 @@
     UXLabel *_bottomNoticeLabel;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL productsUpdated; // @synthesize productsUpdated=_productsUpdated;
 @property(nonatomic) BOOL compactMode; // @synthesize compactMode=_compactMode;
 @property(retain, nonatomic) UXLabel *bottomNoticeLabel; // @synthesize bottomNoticeLabel=_bottomNoticeLabel;
@@ -32,7 +33,6 @@
 @property(retain, nonatomic) NSDictionary *configurationOptions; // @synthesize configurationOptions=_configurationOptions;
 @property(readonly, nonatomic) UXBarButtonItem *cancelButtonItem; // @synthesize cancelButtonItem=_cancelButtonItem;
 @property(nonatomic) __weak id <KHProductChooserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-- (void).cxx_destruct;
 - (id)themeChooserViewControllerBackButtonTitle;
 - (void)productWasSelected:(id)arg1;
 - (void)collectionView:(id)arg1 itemWasRightClickedAtIndexPath:(id)arg2 withEvent:(id)arg3;

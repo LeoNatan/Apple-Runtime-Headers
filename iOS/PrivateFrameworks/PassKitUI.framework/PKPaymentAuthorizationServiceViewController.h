@@ -21,7 +21,6 @@
 @interface PKPaymentAuthorizationServiceViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, PKPaymentAuthorizationFooterViewDelegate, PKAuthenticatorDelegate, PKPaymentAuthorizationStateMachineDelegate, AKAppleIDAuthenticationInAppContextDelegate, PKPaymentAuthorizationServiceProtocol>
 {
     PKPaymentAuthorizationLayout *_layout;
-    long long _authorizationMode;
     UIView *_contentView;
     UITableView *_detailTableView;
     PKPaymentAuthorizationSummaryItemsView *_summaryItemsView;
@@ -33,6 +32,7 @@
     _Bool _needsToAccommodateKeyboard;
     UIBarButtonItem *_cancelBarButtonItem;
     _Bool _cancelButtonDisabled;
+    _Bool _scrollIndicatorShown;
     UIView *_passphraseSeparatorView;
     NSLayoutConstraint *_contentViewRightConstraint;
     PKPaymentPreferencesViewController *_shippingMethodPreferencesController;
@@ -79,6 +79,7 @@
     id <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> _delegate;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool blockingHardwareCancels; // @synthesize blockingHardwareCancels=_blockingHardwareCancels;
 @property(nonatomic) __weak id <PKPaymentAuthorizationServiceViewControllerDelegate><PKPaymentAuthorizationHostProtocol> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) LAUIPhysicalButtonView *physicalButtonView; // @synthesize physicalButtonView=_physicalButtonView;
@@ -87,11 +88,12 @@
 @property(readonly, nonatomic, getter=isUserIntentRequired) _Bool userIntentRequired; // @synthesize userIntentRequired=_userIntentRequired;
 @property(retain, nonatomic) PKAuthenticator *authenticator; // @synthesize authenticator=_authenticator;
 @property(retain, nonatomic) PKPaymentAuthorizationStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-- (void).cxx_destruct;
 - (void)contextWillBeginPresentingSecondaryUI:(id)arg1;
 - (void)_removeSimulatorHIDListener;
 - (void)_startSimulatorHIDListener;
 - (void)_sendDidEncounterAuthorizationEventIfNecessary:(unsigned long long)arg1;
+- (_Bool)_passwordRequired;
+- (_Bool)_passcodeAllowed;
 - (void)_updateCoachingInstruction;
 - (void)_updatePhysicalButtonInstruction;
 - (void)_setUserIntentRequired:(_Bool)arg1 shouldIgnorePhysicalButton:(_Bool)arg2;
@@ -116,6 +118,7 @@
 - (id)_availablePasses;
 - (void)_updateBankAccounts;
 - (void)_setupBankAccounts;
+- (_Bool)_shouldShowUsePeerPaymentBalanceToggle;
 - (void)_setupShippingContact;
 - (void)_setupShippingAddress;
 - (void)_setupShippingMethods;
@@ -134,6 +137,7 @@
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (_Bool)_shouldShowSeparatorForRowAtIndexPath:(id)arg1;
 - (_Bool)signInViewController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (void)authorizationFooterViewDidChangeConstraints:(id)arg1;
@@ -168,6 +172,7 @@
 - (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(long long)arg1;
 - (void)authorizationDidAuthorizePaymentCompleteWithResult:(id)arg1;
+- (void)authorizationDidAuthorizeContextCompleteWithResult:(id)arg1;
 - (void)_updateBackgroundedState:(_Bool)arg1;
 - (void)_hostApplicationDidEnterBackground;
 - (void)_hostApplicationWillEnterForeground;
@@ -175,6 +180,7 @@
 - (void)handleHostApplicationWillResignActive:(_Bool)arg1;
 - (void)handleDismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleHostApplicationDidCancel;
+- (void)_showScrollIndicatorIfNeeded;
 - (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)setFooterState:(long long)arg1 string:(id)arg2 animated:(_Bool)arg3;
 - (void)_selectOptionsForDataItem:(id)arg1;
@@ -205,7 +211,8 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)_setVisibility:(unsigned char)arg1;
-- (void)_setAMPBarItem;
+- (void)_setNavigationItemLeftItemForAMP;
+- (_Bool)_setNavigationItemLeftItemFromNavigationTitle;
 - (void)viewDidLoad;
 - (void)_createSubviews;
 - (void)dealloc;

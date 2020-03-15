@@ -20,12 +20,12 @@
     NSTextAttachment *_textAttachmentToEdit;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) _Bool isPickingMagicVariable; // @synthesize isPickingMagicVariable=_isPickingMagicVariable;
 @property(retain, nonatomic) NSTextAttachment *textAttachmentToEdit; // @synthesize textAttachmentToEdit=_textAttachmentToEdit;
 @property(retain, nonatomic) WFVariableInputCoordinator *variableCoordinator; // @synthesize variableCoordinator=_variableCoordinator;
 @property(readonly, nonatomic) WFVariableStringParameterState *stagedState; // @synthesize stagedState=_stagedState;
 @property(readonly, nonatomic) _Bool hasChangedText; // @synthesize hasChangedText=_hasChangedText;
-- (void).cxx_destruct;
 - (_Bool)variableMenuSupportsVariableSelectionForSlotWithIdentifier:(id)arg1;
 - (void)revealAction:(id)arg1 fromSourceView:(id)arg2 preScrollHandler:(CDUnknownBlockType)arg3 goBackHandler:(CDUnknownBlockType)arg4 scrolledAwayHandler:(CDUnknownBlockType)arg5;
 - (void)showActionOutputPickerFromSourceResponder:(id)arg1 allowExtensionInput:(_Bool)arg2 variableProvider:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -13,6 +13,7 @@
     BOOL _includeWhitelistedContactsOnly;
     BOOL _sortItemsByName;
     BOOL _markItemsAsPersisted;
+    BOOL _markItemsAsProposed;
     NSArray *_contacts;
     CNUICoreContactTypeAssessor *_contactTypeAssessor;
     long long _contactFormatterStyle;
@@ -24,19 +25,18 @@
 + (id)firstDisplayableEmailAddressForContact:(id)arg1;
 + (id)placeholderNameForNamelessContact:(id)arg1;
 + (id)formattedNameOfContact:(id)arg1 contactFormatterStyle:(long long)arg2;
-+ (id)familyMemberContactItemFromContact:(id)arg1 contactFormatterStyle:(long long)arg2 contactTypeAssessor:(id)arg3 itemHasBeenPersisted:(BOOL)arg4;
++ (id)familyMemberContactItemFromContact:(id)arg1 contactFormatterStyle:(long long)arg2 contactTypeAssessor:(id)arg3 itemHasBeenPersisted:(BOOL)arg4 itemIsProposed:(BOOL)arg5;
 + (BOOL)shouldIncludeContact:(id)arg1 givenIncludeWhitelistedContactsOnlySetting:(BOOL)arg2;
-@property(readonly, nonatomic) BOOL markItemsAsPersisted; // @synthesize markItemsAsPersisted=_markItemsAsPersisted;
-@property(readonly, nonatomic) BOOL sortItemsByName; // @synthesize sortItemsByName=_sortItemsByName;
-@property(readonly, nonatomic) BOOL includeWhitelistedContactsOnly; // @synthesize includeWhitelistedContactsOnly=_includeWhitelistedContactsOnly;
-@property(readonly, nonatomic) long long contactFormatterStyle; // @synthesize contactFormatterStyle=_contactFormatterStyle;
-@property(readonly, nonatomic) CNUICoreContactTypeAssessor *contactTypeAssessor; // @synthesize contactTypeAssessor=_contactTypeAssessor;
-@property(readonly, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL markItemsAsProposed; // @synthesize markItemsAsProposed=_markItemsAsProposed;
+@property(nonatomic) BOOL markItemsAsPersisted; // @synthesize markItemsAsPersisted=_markItemsAsPersisted;
+@property(nonatomic) BOOL sortItemsByName; // @synthesize sortItemsByName=_sortItemsByName;
+@property(nonatomic) BOOL includeWhitelistedContactsOnly; // @synthesize includeWhitelistedContactsOnly=_includeWhitelistedContactsOnly;
+@property(nonatomic) long long contactFormatterStyle; // @synthesize contactFormatterStyle=_contactFormatterStyle;
+@property(retain, nonatomic) CNUICoreContactTypeAssessor *contactTypeAssessor; // @synthesize contactTypeAssessor=_contactTypeAssessor;
+@property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (id)sortedFamilyMemberContactItems:(id)arg1;
 - (id)build;
-- (id)initWithContacts:(id)arg1 contactTypeAssessor:(id)arg2 contactFormatterStyle:(long long)arg3 includeWhitelistedContactsOnly:(BOOL)arg4 sortItemsByName:(BOOL)arg5 markItemsAsPersisted:(BOOL)arg6;
-- (id)initWithContacts:(id)arg1 contactTypeAssessor:(id)arg2 contactFormatterStyle:(long long)arg3 includeWhitelistedContactsOnly:(BOOL)arg4 sortItemsByName:(BOOL)arg5;
 - (id)init;
 
 @end

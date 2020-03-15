@@ -18,12 +18,12 @@
 }
 
 + (unsigned long long)milliSecondsIntervalForIndex:(unsigned long long)arg1;
+- (void).cxx_destruct;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property SEL selector; // @synthesize selector=_selector;
 @property __weak id listener; // @synthesize listener=_listener;
 @property unsigned long long milliSeconds; // @synthesize milliSeconds=_milliSeconds;
 @property(retain) NSString *group; // @synthesize group=_group;
-- (void).cxx_destruct;
 - (id)initWithMiliSeconds:(unsigned long long)arg1 listener:(id)arg2 selector:(SEL)arg3 group:(id)arg4;
 - (id)initWithMiliSeconds:(unsigned long long)arg1 listener:(id)arg2 selector:(SEL)arg3;
 - (id)description;

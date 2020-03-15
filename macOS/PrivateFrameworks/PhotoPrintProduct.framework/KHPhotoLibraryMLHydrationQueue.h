@@ -15,8 +15,8 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)shared;
-@property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

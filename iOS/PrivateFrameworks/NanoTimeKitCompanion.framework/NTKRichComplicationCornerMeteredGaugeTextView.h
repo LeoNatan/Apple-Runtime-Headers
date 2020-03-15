@@ -15,8 +15,8 @@
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 + (long long)progressFillStyle;
-@property(readonly, nonatomic) NTKRichComplicationImageView *outerImageView; // @synthesize outerImageView=_outerImageView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NTKRichComplicationImageView *outerImageView; // @synthesize outerImageView=_outerImageView;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)layoutSubviews;
 - (id)init;

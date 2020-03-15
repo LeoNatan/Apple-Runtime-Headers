@@ -24,6 +24,7 @@
 + (id)inputKeys;
 + (id)attributes;
 + (id)_stringsTableName;
+- (void).cxx_destruct;
 @property(copy) NSArray *inputCurvePoints; // @synthesize inputCurvePoints=_inputCurvePoints;
 @property(copy) NSNumber *inputVibrancy; // @synthesize inputVibrancy=_inputVibrancy;
 @property(copy) NSNumber *inputHighlights; // @synthesize inputHighlights=_inputHighlights;
@@ -32,7 +33,6 @@
 @property(copy) NSNumber *inputOrigI; // @synthesize inputOrigI=_inputOrigI;
 @property(copy) NSNumber *inputWarmth; // @synthesize inputWarmth=_inputWarmth;
 @property(copy) NSNumber *inputStrength; // @synthesize inputStrength=_inputStrength;
-- (void).cxx_destruct;
 @property(readonly) NSString *editSummary;
 - (BOOL)allowDough;
 - (id)initWithOperation:(id)arg1;

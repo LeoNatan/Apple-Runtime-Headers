@@ -16,9 +16,9 @@
     ECMessageFlagChange *_flagChange;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) ECMessageFlagChange *flagChange; // @synthesize flagChange=_flagChange;
 @property(copy, nonatomic) NSString *oldestPersistedRemoteID; // @synthesize oldestPersistedRemoteID=_oldestPersistedRemoteID;
-- (void).cxx_destruct;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;
 
 // Remaining properties

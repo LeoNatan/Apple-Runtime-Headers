@@ -13,11 +13,11 @@
     optional_4dd3a29b format;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(nonatomic) optional_4dd3a29b format; // @synthesize format;
 @property(nonatomic) optional_8bc927cc dspFlavor; // @synthesize dspFlavor;
 @property(nonatomic) unsigned int streamIndex; // @synthesize streamIndex;
-- (id).cxx_construct;
-- (void).cxx_destruct;
 
 @end
 

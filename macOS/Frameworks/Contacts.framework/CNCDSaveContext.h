@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
     CNCDRecordSaveCache *_groupCache;
 }
 
+- (void).cxx_destruct;
 @property(readonly) CNCDRecordSaveCache *groupCache; // @synthesize groupCache=_groupCache;
 @property(readonly) CNCDRecordSaveCache *contactCache; // @synthesize contactCache=_contactCache;
 @property(readonly) NSManagedObjectContext *context; // @synthesize context=_context;
 @property(readonly) CNCDPersistenceContext *persistenceContext; // @synthesize persistenceContext=_persistenceContext;
 @property(readonly) CNSaveRequest *saveRequest; // @synthesize saveRequest=_saveRequest;
-- (void).cxx_destruct;
 - (id)initWithSaveRequest:(id)arg1 persistenceContext:(id)arg2 context:(id)arg3;
 
 @end

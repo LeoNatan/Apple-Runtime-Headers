@@ -17,9 +17,9 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) REMObjectID *listID; // @synthesize listID=_listID;
 @property(readonly, nonatomic) BOOL includingSubtasks; // @synthesize includingSubtasks=_includingSubtasks;
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

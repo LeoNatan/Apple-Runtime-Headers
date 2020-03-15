@@ -13,8 +13,10 @@
     NSXPCConnection *_connectionToSiri;
 }
 
-@property(retain, nonatomic) NSXPCConnection *connectionToSiri; // @synthesize connectionToSiri=_connectionToSiri;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSXPCConnection *connectionToSiri; // @synthesize connectionToSiri=_connectionToSiri;
+- (void)endEducationActivtyWithReason:(id)arg1;
+- (void)beginEducationActivityWithReason:(id)arg1;
 - (void)endMainStagePresentationActivityWithReason:(id)arg1;
 - (void)beginMainStagePresentationActivityWithReason:(id)arg1;
 

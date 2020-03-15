@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)reuseIdentifier;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelTopConstraint; // @synthesize titleLabelTopConstraint=_titleLabelTopConstraint;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *highlightedImageView; // @synthesize highlightedImageView=_highlightedImageView;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIFont *preferredTitleLabelFont; // @synthesize preferredTitleLabelFont=_preferredTitleLabelFont;
 @property(nonatomic) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
 @property(retain, nonatomic) MKPlaceVenueBrowseItem *browseItem; // @synthesize browseItem=_browseItem;
-- (void).cxx_destruct;
 - (void)setHighlighted:(BOOL)arg1;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)setTitleLabelTextColor:(id)arg1;

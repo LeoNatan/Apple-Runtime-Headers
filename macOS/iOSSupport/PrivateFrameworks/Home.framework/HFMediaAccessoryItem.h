@@ -22,13 +22,13 @@
     long long _mediaAccessoryItemType;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) BOOL isItemInActionBuilder; // @synthesize isItemInActionBuilder=_isItemInActionBuilder;
 @property(readonly, nonatomic) long long mediaAccessoryItemType; // @synthesize mediaAccessoryItemType=_mediaAccessoryItemType;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject; // @synthesize homeKitObject=_homeKitObject;
-- (void).cxx_destruct;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (BOOL)actionsMayRequireDeviceUnlock;
 - (BOOL)containsActions;
@@ -39,12 +39,15 @@
 - (id)performStandardUpdateWithOptions:(id)arg1;
 - (void)_decorateWithMediaSystemSpecificKeys:(id)arg1;
 - (void)_decorateServiceLikeItemKeys:(id)arg1;
+- (void)_decorateSettingsSyncKeys:(id)arg1;
 - (void)_decorateWithMediaSessionKeys:(id)arg1;
 - (void)_decorateWithSoftwareUpdateStateKeys:(id)arg1;
 - (void)_decorateOutcomeWithAccessorySpecificKeys:(id)arg1;
 - (BOOL)supportsAlarmQuickControls;
 - (BOOL)supportsMediaQuickControls;
 - (BOOL)isSiriDisabled;
+- (BOOL)isAudioReceiver;
+- (BOOL)isHAPCapableSpeaker;
 - (BOOL)isSpeaker;
 - (BOOL)isAirPort;
 - (BOOL)isAppleTV;

@@ -20,6 +20,7 @@
     long long _completedItemsCount;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long completedItemsCount; // @synthesize completedItemsCount=_completedItemsCount;
 @property(retain, nonatomic) NSMutableArray *errorItems; // @synthesize errorItems=_errorItems;
 @property(retain, nonatomic) NSMutableArray *importedItems; // @synthesize importedItems=_importedItems;
@@ -28,7 +29,6 @@
 @property(retain, nonatomic) NSArray *itemsToImport; // @synthesize itemsToImport=_itemsToImport;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-- (void).cxx_destruct;
 
 @end
 

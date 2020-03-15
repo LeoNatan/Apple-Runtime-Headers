@@ -16,8 +16,8 @@
 }
 
 + (id)interestedChangeKeys;
-@property(retain) CalUITimeZonePicker *timeZonePicker; // @synthesize timeZonePicker=_timeZonePicker;
 - (void).cxx_destruct;
+@property(retain) CalUITimeZonePicker *timeZonePicker; // @synthesize timeZonePicker=_timeZonePicker;
 - (void)otherSelected:(CDUnknownBlockType)arg1;
 - (void)timeZoneSelected:(id)arg1;
 - (void)updateWithChanges:(id)arg1;

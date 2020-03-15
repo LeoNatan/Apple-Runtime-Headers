@@ -27,12 +27,12 @@
     UIView *_chevronContainerView;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) UIView *chevronContainerView; // @synthesize chevronContainerView=_chevronContainerView;
 @property(retain, nonatomic) CSLScreenEdgeChevronView *chevronView; // @synthesize chevronView=_chevronView;
 @property(retain, nonatomic) PUICPageIndicatorView *pageIndicator; // @synthesize pageIndicator=_pageIndicator;
 @property(retain, nonatomic) NSArray *pages; // @synthesize pages=_pages;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
-- (void).cxx_destruct;
 - (void)_resizePageIndictator;
 - (void)_updatePageIndicator;
 - (void)_loadViewControllersWithCompletion:(CDUnknownBlockType)arg1;

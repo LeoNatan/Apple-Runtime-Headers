@@ -50,6 +50,7 @@
 + (id)activeCollections;
 + (id)_bouncedItem:(id)arg1 withinItems:(id)arg2;
 + (void)initialize;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) FPPacer *updatePacer; // @synthesize updatePacer=_updatePacer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
 @property(nonatomic) _Bool observing; // @synthesize observing=_observing;
@@ -62,7 +63,6 @@
 @property(readonly, nonatomic, getter=isImmutable) BOOL immutable; // @synthesize immutable=_immutable;
 @property(nonatomic) __weak id <FPItemCollectionMinimalDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isGathering) BOOL gathering; // @synthesize gathering=_gathering;
-- (void).cxx_destruct;
 - (void)_setObserving:(BOOL)arg1;
 - (void)_replaceContentsWithVendorItems:(id)arg1;
 @property(retain, nonatomic) NSPredicate *itemFilteringPredicate;
@@ -109,6 +109,7 @@
 - (void)dataSource:(id)arg1 wasInvalidatedWithError:(id)arg2;
 - (void)dataSource:(id)arg1 receivedUpdatedItems:(id)arg2 deletedItems:(id)arg3 hasMoreChanges:(BOOL)arg4;
 - (void)dataSource:(id)arg1 replaceContentsWithItems:(id)arg2 hasMoreChanges:(BOOL)arg3;
+- (void)_startRegathering;
 - (void)startObserving;
 - (void)reachabilityMonitor:(id)arg1 didChangeReachabilityStatusTo:(BOOL)arg2;
 - (id)init;

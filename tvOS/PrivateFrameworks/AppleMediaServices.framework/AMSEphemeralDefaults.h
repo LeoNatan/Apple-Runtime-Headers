@@ -13,10 +13,14 @@
 + (void)_accessDataStoreUsingBlock:(CDUnknownBlockType)arg1;
 + (id)_propertyForKey:(id)arg1 defaultValue:(id)arg2 expectedType:(Class)arg3;
 + (void)_setProperty:(id)arg1 forKey:(id)arg2;
++ (void)setProcessAssertionsEnabled:(_Bool)arg1;
 + (void)setHARLoggingItemLimit:(long long)arg1;
 + (void)setHARLoggingEnabled:(_Bool)arg1;
++ (void)setBagKeyRegistrationEnabled:(_Bool)arg1;
++ (_Bool)processAssertionsEnabled;
 + (long long)HARLoggingItemLimit;
 + (_Bool)HARLoggingEnabled;
++ (_Bool)bagKeyRegistrationEnabled;
 
 @end
 

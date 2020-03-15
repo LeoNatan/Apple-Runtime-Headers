@@ -25,7 +25,7 @@
 - (void)_requestFileURLsForAsset:(id)arg1 withOptions:(id)arg2 networkAccessAllowed:(BOOL)arg3 progressHandler:(CDUnknownBlockType)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (void)exportWithOptions:(id)arg1 networkAccessAllowed:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)exportWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)preflightExportWithOptions:(id)arg1 isDownloadingRequired:(char *)arg2 isProcessingRequired:(char *)arg3 fileURLs:(id *)arg4 info:(id *)arg5;
+- (void)preflightExportWithOptions:(id)arg1 assetAvailability:(long long *)arg2 isProcessingRequired:(char *)arg3 fileURLs:(id *)arg4 info:(id *)arg5;
 - (id)initWithAsset:(id)arg1 variants:(id)arg2;
 
 @end

@@ -38,6 +38,7 @@
 + (id)schedulerWithEndpoint:(id)arg1;
 + (id)sharedScheduler;
 + (id)scheduler;
+- (void).cxx_destruct;
 @property(nonatomic) __weak id <_DASActivityBackgroundTasksSchedulerDelegate> backgroundTaskSchedulerDelegate; // @synthesize backgroundTaskSchedulerDelegate=_backgroundTaskSchedulerDelegate;
 @property(retain, nonatomic) NSObject<OS_os_log> *dasFrameworkLog; // @synthesize dasFrameworkLog=_dasFrameworkLog;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *runQueue; // @synthesize runQueue=_runQueue;
@@ -52,7 +53,6 @@
 @property(nonatomic) BOOL interrupted; // @synthesize interrupted=_interrupted;
 @property(retain, nonatomic) NSXPCListenerEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
-- (void).cxx_destruct;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)activityStoppedWithParameters:(id)arg1;
 - (void)activityStartedWithParameters:(id)arg1;

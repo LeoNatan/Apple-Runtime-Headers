@@ -32,6 +32,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)comment;
 + (id)MSASPCommentFromProtocolDictionary:(id)arg1;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *content; // @synthesize content=_content;
 @property(nonatomic) _Bool isMine; // @synthesize isMine=_isMine;
 @property(nonatomic) _Bool isDeletable; // @synthesize isDeletable=_isDeletable;
@@ -47,7 +48,6 @@
 @property(retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
 @property(nonatomic) int ID; // @synthesize ID=_ID;
 @property(retain, nonatomic) NSString *GUID; // @synthesize GUID=_GUID;
-- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

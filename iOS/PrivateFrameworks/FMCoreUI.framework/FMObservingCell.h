@@ -15,10 +15,10 @@
     NSMutableSet *_notificationTokens;
 }
 
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSMutableSet *notificationTokens; // @synthesize notificationTokens=_notificationTokens;
 @property(retain, nonatomic) NSMutableDictionary *kvoObservationTokens; // @synthesize kvoObservationTokens=_kvoObservationTokens;
 @property(nonatomic) __weak id representedObject; // @synthesize representedObject=_representedObject;
-- (void).cxx_destruct;
 - (void)removeNotificationTokens;
 - (void)addNotificationToken:(id)arg1;
 - (void)removeKVOObservationTokens;

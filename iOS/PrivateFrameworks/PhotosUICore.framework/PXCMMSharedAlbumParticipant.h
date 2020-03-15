@@ -19,11 +19,11 @@
     NSString *_firstName;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 @property(readonly, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 @property(readonly, nonatomic) NSString *phoneNumberString; // @synthesize phoneNumberString=_phoneNumberString;
 @property(readonly, nonatomic) NSString *emailAddressString; // @synthesize emailAddressString=_emailAddressString;
-- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRecord:(id)arg1;

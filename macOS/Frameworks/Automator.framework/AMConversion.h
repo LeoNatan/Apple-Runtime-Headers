@@ -23,13 +23,13 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)conversionWithInputType:(id)arg1 outputType:(id)arg2 paths:(id)arg3 error:(id)arg4;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *pathTaken; // @synthesize pathTaken=_pathTaken;
 @property(retain, nonatomic) NSArray *paths; // @synthesize paths=_paths;
 @property(retain, nonatomic) NSArray *preferredPath; // @synthesize preferredPath=_preferredPath;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *outputType; // @synthesize outputType=_outputType;
 @property(retain, nonatomic) NSString *inputType; // @synthesize inputType=_inputType;
-- (void).cxx_destruct;
 - (void)updateWithConversionFromXPC:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

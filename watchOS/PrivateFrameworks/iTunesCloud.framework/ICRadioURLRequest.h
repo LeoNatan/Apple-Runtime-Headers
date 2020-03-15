@@ -17,12 +17,12 @@
     CDUnknownBlockType _radioContentDictionaryCreationBlock;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType radioContentDictionaryCreationBlock; // @synthesize radioContentDictionaryCreationBlock=_radioContentDictionaryCreationBlock;
 @property(nonatomic) int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(copy, nonatomic, getter=isDelegatedPrivateListeningEnabled) NSNumber *delegatedPrivateListeningEnabled; // @synthesize delegatedPrivateListeningEnabled=_delegatedPrivateListeningEnabled;
 @property(copy, nonatomic, getter=isPrivateListeningEnabled) NSNumber *privateListeningEnabled; // @synthesize privateListeningEnabled=_privateListeningEnabled;
 @property(nonatomic, getter=isBackgroundRadioRequest) _Bool backgroundRadioRequest; // @synthesize backgroundRadioRequest=_backgroundRadioRequest;
-- (void).cxx_destruct;
 - (void)_decorateHeaderPropertiesForURLRequest:(id)arg1 withBuilderProperties:(id)arg2;
 - (void)buildStoreURLRequestWithURLRequest:(id)arg1 builderProperties:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithURLRequest:(id)arg1 requestContext:(id)arg2;

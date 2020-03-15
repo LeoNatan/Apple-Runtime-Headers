@@ -14,9 +14,9 @@
     long long _reservedNetworkPriority;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) long long reservedNetworkPriority; // @synthesize reservedNetworkPriority=_reservedNetworkPriority;
 @property(copy, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
-- (void).cxx_destruct;
 - (void)operationFinished:(id)arg1;
 - (void)trackOperation:(id)arg1;
 - (BOOL)mailboxIsUserVisibleUsingDataSource:(id)arg1;

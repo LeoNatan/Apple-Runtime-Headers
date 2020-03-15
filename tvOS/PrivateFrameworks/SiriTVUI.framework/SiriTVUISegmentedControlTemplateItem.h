@@ -15,10 +15,10 @@
     NSDictionary *_textColors;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSDictionary *textColors; // @synthesize textColors=_textColors;
 @property(copy, nonatomic) NSDictionary *backgroundColors; // @synthesize backgroundColors=_backgroundColors;
 @property(copy, nonatomic) NSArray *titles; // @synthesize titles=_titles;
-- (void).cxx_destruct;
 - (id)titleTextAttributesForUserIntefaceStyle:(long long)arg1;
 - (id)backgroundColorForUserInterfaceStyle:(long long)arg1;
 - (id)initWithTitles:(id)arg1 backgroundColors:(id)arg2 andTextColors:(id)arg3;

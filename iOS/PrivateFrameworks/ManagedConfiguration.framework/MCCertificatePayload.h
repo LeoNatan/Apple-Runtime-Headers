@@ -19,9 +19,9 @@
     NSString *_certIssuer;
 }
 
+- (void).cxx_destruct;
 @property(copy, nonatomic) NSString *installedOnDeviceID; // @synthesize installedOnDeviceID=_installedOnDeviceID;
 @property(retain, nonatomic) NSData *certificatePersistentID; // @synthesize certificatePersistentID=_certificatePersistentID;
-- (void).cxx_destruct;
 - (id)issuer;
 - (id)certificateSubject;
 @property(readonly, retain, nonatomic) NSDate *expiry;

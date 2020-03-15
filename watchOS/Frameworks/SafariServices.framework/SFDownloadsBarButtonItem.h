@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     double _progress;
 }
 
-@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
 - (void)setEnabled:(_Bool)arg1;
 - (void)pulse;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

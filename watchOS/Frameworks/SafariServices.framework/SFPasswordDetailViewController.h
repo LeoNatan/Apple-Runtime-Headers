@@ -6,58 +6,84 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class SFEditableTableViewCell, UIBarButtonItem, WBSSavedPassword;
+#import <SafariServices/SFEditableTableViewCellDelegate-Protocol.h>
+#import <SafariServices/_SFTableViewDiffableDataSourceDelegate-Protocol.h>
+
+@class NSArray, NSString, SFEditableTableViewCell, UIBarButtonItem, UITableViewCell, WBSSavedPassword, _SFTableViewDiffableDataSource;
 @protocol SFPasswordDetailViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface SFPasswordDetailViewController : UITableViewController
+@interface SFPasswordDetailViewController : UITableViewController <_SFTableViewDiffableDataSourceDelegate, SFEditableTableViewCellDelegate>
 {
     WBSSavedPassword *_savedPassword;
+    NSArray *_reusedSavedPasswords;
     _Bool _hidesPassword;
-    unsigned int _type;
+    unsigned int _options;
     UIBarButtonItem *_editBarButtonItem;
     UIBarButtonItem *_cancelBarButtonItem;
     UIBarButtonItem *_doneBarButtonItem;
     UIBarButtonItem *_backBarButtonItem;
     SFEditableTableViewCell *_userCell;
     SFEditableTableViewCell *_passwordCell;
+    UITableViewCell *_changePasswordCell;
+    _SFTableViewDiffableDataSource *_tableViewDiffableDataSource;
+    _Bool _showsChangePasswordControllerOnAppearance;
     id <SFPasswordDetailViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <SFPasswordDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool showsChangePasswordControllerOnAppearance; // @synthesize showsChangePasswordControllerOnAppearance=_showsChangePasswordControllerOnAppearance;
+@property(nonatomic) __weak id <SFPasswordDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)dataSource:(id)arg1 commitEditingStyle:(int)arg2 forItemIdentifier:(id)arg3;
+- (id)dataSource:(id)arg1 footerTextForSection:(int)arg2;
+- (id)dataSource:(id)arg1 headerTextForSection:(int)arg2;
+- (void)performAirDropActionForCell:(id)arg1;
+- (void)_sharePasswordFromCell:(id)arg1;
+- (void)safari_sharePassword:(id)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canBecomeFirstResponder;
+- (int)_itemTypeForIdentifier:(id)arg1;
+- (int)_sectionTypeForSection:(int)arg1;
+- (id)_lastModifiedDateString;
+- (void)_updateMenuItems;
 - (void)safari_copyPassword:(id)arg1;
 - (void)safari_copyUserName:(id)arg1;
 - (void)_willHideUIMenuController:(id)arg1;
 - (void)_textFieldChanged:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 performAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (_Bool)tableView:(id)arg1 shouldShowMenuForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (id)_savedPasswordWebsiteCellForTableView:(id)arg1 atIndexPath:(id)arg2;
 - (void)_configureCell:(id)arg1 withText:(id)arg2 detailText:(id)arg3 detailPlaceholderText:(id)arg4;
 - (void)_setHighLyLegibleFontForDetailTextInCell:(id)arg1;
 - (void)_configurePasswordCell:(id)arg1;
 - (void)_configureUserCell:(id)arg1;
 - (id)_editableCellWithCell:(id)arg1;
-- (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)_warningFooterText;
+- (void)_reloadTableViewDiffableDataSource;
+- (id)_cellForIdentifier:(id)arg1 indexPath:(id)arg2;
 - (void)_appWillResignActive:(id)arg1;
 - (void)_appDidBecomeActive:(id)arg1;
 - (void)dealloc;
-- (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_doneBarButtonItemTapped:(id)arg1;
 - (void)_cancelBarButtonItemTapped:(id)arg1;
 - (void)_editBarButtonItemTapped:(id)arg1;
+- (void)viewDidLoad;
+- (id)_passwordAuditor;
+- (_Bool)_allowAuditing;
 - (_Bool)_allowEditing;
-- (id)initWithSavedPassword:(id)arg1 type:(unsigned int)arg2;
+- (id)initWithSavedPassword:(id)arg1 options:(unsigned int)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

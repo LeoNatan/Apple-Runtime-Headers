@@ -25,6 +25,7 @@
     NSHashTable *_observers;
 }
 
+- (void).cxx_destruct;
 @property(nonatomic) unsigned char device; // @synthesize device=_device;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
@@ -34,7 +35,6 @@
 @property(retain, nonatomic) ACHEarnedInstanceDuplicateUtility *duplicateUtility; // @synthesize duplicateUtility=_duplicateUtility;
 @property(retain, nonatomic) ACHEarnedInstanceEntityWrapper *entityWrapper; // @synthesize entityWrapper=_entityWrapper;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-- (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_notifyObserversOfRemovedEarnedInstances:(id)arg1;

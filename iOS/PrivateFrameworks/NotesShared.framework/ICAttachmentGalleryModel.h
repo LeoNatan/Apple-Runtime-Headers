@@ -14,8 +14,8 @@
 }
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
-@property(retain, nonatomic) ICCRDTIdentifierOrderedSetVersionedDocument *attachmentIdentifiersOrderedSetDocument; // @synthesize attachmentIdentifiersOrderedSetDocument=_attachmentIdentifiersOrderedSetDocument;
 - (void).cxx_destruct;
+@property(retain, nonatomic) ICCRDTIdentifierOrderedSetVersionedDocument *attachmentIdentifiersOrderedSetDocument; // @synthesize attachmentIdentifiersOrderedSetDocument=_attachmentIdentifiersOrderedSetDocument;
 - (long long)previewImageOrientation;
 - (id)searchableStringArray;
 - (id)searchableTextContent;
